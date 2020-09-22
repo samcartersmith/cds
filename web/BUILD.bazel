@@ -72,7 +72,7 @@ ts_node(
 )
 
 pkg_npm(
-    name = "cds_web",
+    name = "cds_web_package",
     srcs = [
         "README.md",
     ],
@@ -85,14 +85,14 @@ pkg_npm(
 # Publishing to registry-npm-dev.cbhq.net
 node_package_deployable(
     name = "cds_web_dev",
-    pkg = "//eng/shared/design-system/web:cds_web",
+    pkg = "//eng/shared/design-system/web:cds_web_package",
     target = "development",
 )
 
 # Publishing to registry-npm.cbhq.net
 node_package_deployable(
     name = "cds_web",
-    pkg = "//eng/shared/design-system/web:cds_web",
+    pkg = "//eng/shared/design-system/web:cds_web_package",
     target = "corporate",
 )
 

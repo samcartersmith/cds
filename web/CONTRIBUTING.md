@@ -30,8 +30,8 @@ Generated code:
 4. Once the PR is merged, run the following to publish a new package to npm.
 
 ```bash
-ash_login # (assume-role development eng-ops)
-bazel run //eng/shared/design-system/web:cds_web
+assume-role development eng-ops
+bazel run //eng/shared/design-system/web:corporate
 ```
 
 ### Publishing to the development NPM registry
@@ -45,6 +45,6 @@ To publish to the [development Coinbase NPM registry](https://registry-npm-dev.c
 2. Run
 
 ```bash
-ash_login # (assume-role development eng-ops)
-bazel run //eng/shared/design-system/web:cds_web_dev
+assume-role development eng-ops
+bazel run //eng/shared/design-system/web:development
 ```
