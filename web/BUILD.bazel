@@ -1,0 +1,140 @@
+load("//tools:def.bzl", "node_package_deployable")
+load("@npm//ts-node:index.bzl", "ts_node")
+load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
+load("@npm_bazel_typescript//:index.bzl", "ts_project")
+load("//tools/js:eslint_test.bzl", "eslint_test")
+load("//tools/js:stylelint_test.bzl", "stylelint_test")
+
+cds_dependencies = [
+    "@npm//destyle.css",
+    "@npm//linaria",
+    "@npm//humps",
+]
+
+cds_peer_dependencies = [
+    "@npm//react",
+    "@npm//react-dom",
+]
+
+# Transpile typescript code and create declaration files
+ts_project(
+    srcs = glob(
+        [
+            "src/**/*",
+        ],
+        exclude = [
+            "**/*.test.ts?(x)",
+            "**/*.stories.mdx",
+        ],
+    ),
+    declaration = True,
+    extends = [
+        "//:tsconfig.json",
+    ],
+    source_map = False,
+    # We still need this file because @bazel/typescript version is not up to date
+    # and there is no way for us to use ts_project without tsconfig file
+    # and you can't use cli args to override otherwise bazel throws an error
+    tsconfig = "tsconfig.json",
+    deps = [
+        "@npm//@types/react",
+        "@npm//@types/humps",
+    ] + cds_dependencies + cds_peer_dependencies,
+)
+
+# Generate package.json file
+ts_node(
+    name = "package_json_gen",
+    outs = ["package.json"],
+    args = [
+        "-T $(execpath scripts/genPackageJson.ts)",
+        "--baseFile $(execpath basepackage.json)",
+        "--rootFile $(execpath //:package.json)",
+        "--outputFile $(@)",
+        "--prettierConfig $(execpath //:.prettierrc)",
+    ] + [
+        "--deps",
+        ",".join(cds_dependencies),
+    ] + [
+        "--peerDeps",
+        ",".join(cds_peer_dependencies),
+    ],
+    data = [
+        "scripts/genPackageJson.ts",
+        "scripts/writePrettyFile.ts",
+        "basepackage.json",
+        "//:package.json",
+        "//:.prettierrc",
+        "@npm//yargs",
+        "@npm//prettier",
+        "@npm//chalk",
+    ] + cds_dependencies + cds_peer_dependencies,
+)
+
+pkg_npm(
+    name = "cds_web",
+    srcs = [
+        "README.md",
+    ],
+    deps = [
+        ":package.json",
+        ":tsconfig",
+    ],
+)
+
+# Publishing to registry-npm-dev.cbhq.net
+node_package_deployable(
+    name = "cds_web_dev",
+    pkg = "//eng/shared/design-system/web:cds_web",
+    target = "development",
+)
+
+# Publishing to registry-npm.cbhq.net
+node_package_deployable(
+    name = "cds_web",
+    pkg = "//eng/shared/design-system/web:cds_web",
+    target = "corporate",
+)
+
+filegroup(
+    name = "lintable_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.js",
+            "**/*.jsx",
+            "**/*.mdx",
+        ],
+        exclude = [
+            ".storybook/**/*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "style_source",
+    srcs = [
+        ".stylelintrc.js",
+        ".browserslistrc",
+        ".babelrc.js",
+    ] + glob(
+        include = [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.css",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+eslint_test(
+    name = "eslint",
+    sources = ":lintable_source",
+)
+
+stylelint_test(
+    name = "stylelint",
+    sources = ":style_source",
+)

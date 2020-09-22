@@ -1,0 +1,108 @@
+import { withStoryLabel, withScaleProvider } from '@cb/design-system-web/internal/decorators';
+import { Meta, Canvas, Story, ArgsTable, Source } from '@storybook/addon-docs/blocks';
+
+import * as Type from './Text';
+
+<Meta
+  title="Core Components/Text"
+  component={Type.TextBody}
+  argTypes={{
+    children: { control: 'text' },
+  }}
+/>
+
+# Text
+
+`Text` is a component that allows us to show text in different typographies. Make sure that your app is wrapped with a `ScaleProvider` before using one of the typography text components. The style also depends on which scale is app is using. See [design documentation](https://docs.google.com/document/d/1-pl0GcLzJ3RAnkh3A5s6VpvVwNnndPcptlKjMj_3jRQ/edit).
+
+For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical information and thus it is important for heading tags to be applied for heading typographies. For non-heading typographies like body, label, and legal, you can use any html tags for text that makes the most sense for you by using `as` prop.
+
+<Canvas withToolbar>
+  <Story name="Normal" decorators={[withScaleProvider(), withStoryLabel('Normal')]}>
+    {args => (
+      <>
+        {Object.entries(Type).map(([name, Component]) => {
+          console.log('Component', Component.__docgenInfo?.props);
+          return (
+            <Component key={name} display="block" {...args}>
+              {args.children || name.slice(4)}
+            </Component>
+          );
+        })}
+      </>
+    )}
+  </Story>
+  <Story name="Dense" decorators={[withScaleProvider('xSmall'), withStoryLabel('Dense')]}>
+    {args => (
+      <>
+        {Object.entries(Type).map(([name, Component]) => (
+          <Component key={name} display="block" {...args}>
+            {args.children || name.slice(4)}
+          </Component>
+        ))}
+      </>
+    )}
+  </Story>
+</Canvas>
+
+## Tabular Numbers
+
+<Canvas>
+  <Story name="Label2 tabular numbers" decorators={[withScaleProvider(), withStoryLabel('Label2')]}>
+    {args => (
+      <>
+        <Type.TextLabel2 {...args}>{args.children || '91.23450'}</Type.TextLabel2>
+        <Type.TextLabel2 {...args}>{args.children || '11.98762'}</Type.TextLabel2>
+        <Type.TextLabel2 {...args}>{args.children || '20.23450'}</Type.TextLabel2>
+        <Type.TextLabel2 {...args}>{args.children || '75.32108'}</Type.TextLabel2>
+      </>
+    )}
+  </Story>
+  <Story
+    name="Caption tabular numbers"
+    decorators={[withScaleProvider(), withStoryLabel('Caption (align end)')]}
+    args={{ display: 'block', textAlign: 'end' }}
+  >
+    {args => (
+      <>
+        <Type.TextCaption {...args}>{args.children || '91.23450'}</Type.TextCaption>
+        <Type.TextCaption {...args}>{args.children || '11.98762'}</Type.TextCaption>
+        <Type.TextCaption {...args}>{args.children || '20.23450'}</Type.TextCaption>
+        <Type.TextCaption {...args}>{args.children || '75.32108'}</Type.TextCaption>
+      </>
+    )}
+  </Story>
+  <Story name="Title1 tabular numbers" decorators={[withScaleProvider(), withStoryLabel('Title1')]}>
+    {args => (
+      <>
+        <Type.TextTitle1 tnum {...args}>
+          {args.children || '91.23450'}
+        </Type.TextTitle1>
+        <Type.TextTitle1 tnum {...args}>
+          {args.children || '11.98762'}
+        </Type.TextTitle1>
+        <Type.TextTitle1 tnum {...args}>
+          {args.children || '20.23450'}
+        </Type.TextTitle1>
+        <Type.TextTitle1 tnum {...args}>
+          {args.children || '75.32108'}
+        </Type.TextTitle1>
+      </>
+    )}
+  </Story>
+</Canvas>
+
+# Usage
+
+<Source
+  code={`
+import { TextDisplay2, TextBody } from '@cb/design-system-web/Text/Text'
+\n
+<TextDisplay2 color="#161652" textAlign="center" noWrap>Coinbase Design System</TextDisplay2>
+<TextBody display="block" tnum>2020</TextBody>
+`}
+/>
+
+# API
+
+<ArgsTable components={{ NonHeading: Type.TextBody, Heading: Type.TextDisplay1 }} />
