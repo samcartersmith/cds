@@ -4,6 +4,7 @@ load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("@npm_bazel_typescript//:index.bzl", "ts_project")
 load("//tools/js:eslint_test.bzl", "eslint_test")
 load("//tools/js:stylelint_test.bzl", "stylelint_test")
+load("@npm//@storybook/react:index.bzl", "build_storybook")
 
 cds_dependencies = [
     "@npm//destyle.css",
@@ -118,7 +119,7 @@ filegroup(
     srcs = [
         ".stylelintrc.js",
         ".browserslistrc",
-        ".babelrc.js",
+        "//:babel.config.js",
     ] + glob(
         include = [
             "**/*.ts",
@@ -137,4 +138,70 @@ eslint_test(
 stylelint_test(
     name = "stylelint",
     sources = ":style_source",
+)
+
+filegroup(
+    name = "storybook_source",
+    srcs = glob(
+        include = [
+            "src/**/*",
+            "static/**/*",
+            ".storybook/**/*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+build_storybook(
+    name = "storybook_build",
+    args = [
+        "-c //eng/shared/design-system/web/.storybook",
+        "-s //eng/shared/design-system/web/static",
+        "-o $(@D)",
+        "--no-dll",
+    ],
+    data = [
+        ":storybook_source",
+        "//:babel.config.js",
+        "//:package.json",
+        "//:tsconfig.json",
+        "@npm//@babel/core",
+        "@npm//@babel/parser",
+        "@npm//@babel/plugin-transform-runtime",
+        "@npm//@babel/preset-env",
+        "@npm//@babel/preset-react",
+        "@npm//@babel/preset-typescript",
+        "@npm//@storybook/addon-a11y",
+        "@npm//@storybook/addon-actions",
+        "@npm//@storybook/addon-backgrounds",
+        "@npm//@storybook/addon-controls",
+        "@npm//@storybook/addon-docs",
+        "@npm//@storybook/addon-links",
+        "@npm//@storybook/addon-toolbars",
+        "@npm//@storybook/addon-viewport",
+        "@npm//@storybook/addons",
+        "@npm//@storybook/react",
+        "@npm//@storybook/theming",
+        "@npm//@svgr/core",
+        "@npm//@types/babel__template",
+        "@npm//@types/humps",
+        "@npm//@types/react",
+        "@npm//@types/react-dom",
+        "@npm//@types/webpack-env",
+        "@npm//babel-loader",
+        "@npm//babel-plugin-module-resolver",
+        "@npm//destyle.css",
+        "@npm//dotenv-webpack",
+        "@npm//html-webpack-plugin",
+        "@npm//humps",
+        "@npm//linaria",
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//storybook-addon-designs",
+        "@npm//tsconfig-paths-webpack-plugin",
+        "@npm//typescript",
+        "@npm//yargs",
+    ],
+    output_dir = True,
+    visibility = ["//visibility:public"],
 )
