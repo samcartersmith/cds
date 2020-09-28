@@ -1,13 +1,10 @@
 /**
  * DO NOT MODIFY
- * Generated from scripts/codegen/typography.ts based on definitions in
- * src/styles/typography/typography.ts
+ * Generated from scripts/codegen/main.ts
  */
 import * as React from 'react';
 
 import { TextProps } from '@cb/design-system-web/components/Text/TextProps';
-import { useScale } from '@cb/design-system-web/primitives/scale/context';
-import { getStyleName } from '@cb/design-system-web/primitives/typography/generateTypeStyles';
 import * as styles from '@cb/design-system-web/primitives/typography/styles';
 import { css, cx } from 'linaria';
 
@@ -27,16 +24,10 @@ export const TextDisplay1: React.FC<Omit<TextProps, 'as'>> = React.memo(function
   noWrap = false,
   tnum = false,
 }) {
-  const scale = useScale();
-
   return (
     <h1
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Display1', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.display1, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h1>
@@ -51,16 +42,10 @@ export const TextDisplay2: React.FC<Omit<TextProps, 'as'>> = React.memo(function
   noWrap = false,
   tnum = false,
 }) {
-  const scale = useScale();
-
   return (
     <h1
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Display2', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.display2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h1>
@@ -75,16 +60,10 @@ export const TextTitle1: React.FC<Omit<TextProps, 'as'>> = React.memo(function T
   noWrap = false,
   tnum = false,
 }) {
-  const scale = useScale();
-
   return (
     <h2
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Title1', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.title1, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h2>
@@ -99,16 +78,10 @@ export const TextTitle2: React.FC<Omit<TextProps, 'as'>> = React.memo(function T
   noWrap = false,
   tnum = false,
 }) {
-  const scale = useScale();
-
   return (
     <h2
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Title2', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.title2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h2>
@@ -123,16 +96,10 @@ export const TextTitle3: React.FC<Omit<TextProps, 'as'>> = React.memo(function T
   noWrap = false,
   tnum = false,
 }) {
-  const scale = useScale();
-
   return (
     <h3
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Title3', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.title3, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h3>
@@ -147,16 +114,10 @@ export const TextHeadline: React.FC<Omit<TextProps, 'as'>> = React.memo(function
   noWrap = false,
   tnum = false,
 }) {
-  const scale = useScale();
-
   return (
     <h4
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Headline', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.headline, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h4>
@@ -172,16 +133,10 @@ export const TextBody: React.FC<TextProps> = React.memo(function TextBody({
   tnum = false,
   as: Tag = 'span',
 }) {
-  const scale = useScale();
-
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Body', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.body, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -197,16 +152,10 @@ export const TextLabel1: React.FC<TextProps> = React.memo(function TextLabel1({
   tnum = false,
   as: Tag = 'span',
 }) {
-  const scale = useScale();
-
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Label1', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.label1, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -222,16 +171,10 @@ export const TextLabel2: React.FC<TextProps> = React.memo(function TextLabel2({
   tnum = true,
   as: Tag = 'span',
 }) {
-  const scale = useScale();
-
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Label2', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.label2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -247,16 +190,10 @@ export const TextCaption: React.FC<TextProps> = React.memo(function TextCaption(
   tnum = true,
   as: Tag = 'span',
 }) {
-  const scale = useScale();
-
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Caption', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.caption, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -272,16 +209,10 @@ export const TextLegal: React.FC<TextProps> = React.memo(function TextLegal({
   tnum = false,
   as: Tag = 'p',
 }) {
-  const scale = useScale();
-
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(
-        (styles as { [key: string]: string })[getStyleName('Legal', scale)],
-        noWrap && noLineWrap,
-        tnum && tabularNumber
-      )}
+      className={cx(styles.legal, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>

@@ -1,12 +1,14 @@
-import { StoryContainer } from '../internal/decorators';
+import { StoryContainer, withScale } from '../internal/decorators';
 import { css } from 'linaria';
+import { DEFAULT_SCALE } from '@cb/design-system-web/primitives/scale/scale';
 
 // font face declarations
 import '@cb/design-system-web/primitives/typography/fontFaces';
+import '@cb/design-system-web/primitives/globalStyles';
 // CSS reset
 import 'destyle.css';
 
-export const decorators = [StoryContainer];
+export const decorators = [StoryContainer, withScale(DEFAULT_SCALE)];
 
 const storyOrder = ['styles', 'icons', 'layout', 'core components'];
 

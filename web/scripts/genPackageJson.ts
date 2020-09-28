@@ -13,8 +13,8 @@ if (!rootFile) throw new Error('No rootFile specified for package.json generatio
 const baseFile: string = argv.baseFile as string;
 if (!baseFile) throw new Error('No baseFile specified for package.json generation');
 
-const outputFile: string = argv.outputFile as string;
-if (!outputFile) throw new Error('No outputFile specified for package.json generation');
+const outFile: string = argv.outputFile as string;
+if (!outFile) throw new Error('No outputFile specified for package.json generation');
 
 const prettierConfig: string = argv.prettierConfig as string;
 
@@ -56,16 +56,21 @@ const packageJson = async () => {
   };
 
   // Write 'package.json' file
-  await writePrettyFile(prettierConfig, outputFile, JSON.stringify(fileContentObj), 'json');
+  await writePrettyFile({
+    prettierConfig,
+    outFile,
+    contents: JSON.stringify(fileContentObj),
+    parser: 'json',
+  });
 };
 
 async function run() {
   try {
     await packageJson();
 
-    console.info(`${chalk.greenBright('Success:')} package.json file was generated.`);
     process.exit(0);
   } catch (error) {
+    console.error(`${chalk.redBright('failed')} Couldn't generate package.json.`);
     console.error(error);
     process.exit(1);
   }

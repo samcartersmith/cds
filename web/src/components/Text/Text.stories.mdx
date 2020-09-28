@@ -1,4 +1,4 @@
-import { withStoryLabel, withScaleProvider } from '@cb/design-system-web/internal/decorators';
+import { withStoryLabel, withScale } from '@cb/design-system-web/internal/decorators';
 import { Meta, Canvas, Story, ArgsTable, Source } from '@storybook/addon-docs/blocks';
 
 import * as Type from './Text';
@@ -13,18 +13,17 @@ import * as Type from './Text';
 
 # Text
 
-`Text` is a component that allows us to show text in different typographies. Make sure that your app is wrapped with a `ScaleProvider` before using one of the typography text components. The style also depends on which scale is app is using. See [design documentation](https://docs.google.com/document/d/1-pl0GcLzJ3RAnkh3A5s6VpvVwNnndPcptlKjMj_3jRQ/edit).
+`Text` is a component for showing text in different typography. The typography sizes vary based on the scale of the closest ancestor that has a scale class applied. If no scale class is applied to the entire document, the text components will not have the appropriate typography styles because styles are defined by CSS variables and the scale classes define the values for the CSS variables. See [design documentation](https://docs.google.com/document/d/1-pl0GcLzJ3RAnkh3A5s6VpvVwNnndPcptlKjMj_3jRQ/edit).
 
-For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical information and thus it is important for heading tags to be applied for heading typographies. For non-heading typographies like body, label, and legal, you can use any html tags for text that makes the most sense for you by using `as` prop.
+For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical information and thus it is important for heading tags to be applied for heading typographies. CDS enforces that typography styles for h1-h3 are defined and h4-h6 are optional. For non-heading typographies like body, label, and legal, you can use any html tags for text that makes the most sense for you by using `as` prop.
 
 <Canvas withToolbar>
-  <Story name="Normal" decorators={[withScaleProvider(), withStoryLabel('Normal')]}>
+  <Story name="Normal" decorators={[withStoryLabel('Normal (Large)')]}>
     {args => (
       <>
         {Object.entries(Type).map(([name, Component]) => {
-          console.log('Component', Component.__docgenInfo?.props);
           return (
-            <Component key={name} display="block" {...args}>
+            <Component key={name} {...args}>
               {args.children || name.slice(4)}
             </Component>
           );
@@ -32,14 +31,20 @@ For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical info
       </>
     )}
   </Story>
-  <Story name="Dense" decorators={[withScaleProvider('xSmall'), withStoryLabel('Dense')]}>
+  <Story
+    name="Dense"
+    decorators={[withScale('xSmall'), withStoryLabel('Dense (xSmall)')]}
+    args={{ display: 'block' }}
+  >
     {args => (
       <>
-        {Object.entries(Type).map(([name, Component]) => (
-          <Component key={name} display="block" {...args}>
-            {args.children || name.slice(4)}
-          </Component>
-        ))}
+        {Object.entries(Type).map(([name, Component]) => {
+          return (
+            <Component key={name} {...args}>
+              {args.children || name.slice(4)}
+            </Component>
+          );
+        })}
       </>
     )}
   </Story>
@@ -48,7 +53,7 @@ For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical info
 ## Tabular Numbers
 
 <Canvas>
-  <Story name="Label2 tabular numbers" decorators={[withScaleProvider(), withStoryLabel('Label2')]}>
+  <Story name="Label2 tabular numbers" decorators={[withStoryLabel('Label2')]}>
     {args => (
       <>
         <Type.TextLabel2 {...args}>{args.children || '91.23450'}</Type.TextLabel2>
@@ -60,7 +65,7 @@ For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical info
   </Story>
   <Story
     name="Caption tabular numbers"
-    decorators={[withScaleProvider(), withStoryLabel('Caption (align end)')]}
+    decorators={[withStoryLabel('Caption (align end)')]}
     args={{ display: 'block', textAlign: 'end' }}
   >
     {args => (
@@ -72,7 +77,7 @@ For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical info
       </>
     )}
   </Story>
-  <Story name="Title1 tabular numbers" decorators={[withScaleProvider(), withStoryLabel('Title1')]}>
+  <Story name="Title1 tabular numbers" decorators={[withStoryLabel('Title1')]}>
     {args => (
       <>
         <Type.TextTitle1 tnum {...args}>

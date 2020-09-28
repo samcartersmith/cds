@@ -1,6 +1,19 @@
 {
-  "name": "@cb/cds-web",
-  "version": "0.0.8",
+  "name": "@cb/design-system-web",
+  "version": "0.0.1",
   "description": "Coinbase Design System - Web",
-  "sideEffects": false
+  "keywords": ["design system", "component library", "react", "typescript"],
+  "sideEffects": false,
+  "homepage": "https://prime-design-system.cbhq.net/master/index.html?path=/docs/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:mono/repo.git",
+    "directory": "eng/shared/design-system/web"
+  },
+  "authors": {
+    "coinbase": "coinbase"
+  },
+  "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "types": "lib-esm/index.d.ts"
 }

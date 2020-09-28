@@ -1,37 +1,42 @@
-import { scales } from '@cb/design-system-web/primitives/scale/scales';
+import { scales, Scale } from '@cb/design-system-web/primitives/scale/scale';
 import { UNIT_SPACE } from '@cb/design-system-web/primitives/spacing';
 import {
   xHeight,
   TypeVariant,
-  typographies,
+  typography,
+  Typography,
 } from '@cb/design-system-web/primitives/typography/typography';
-import { decamelizeKeys, pascalize } from 'humps';
+import { decamelizeKeys } from 'humps';
 
-type GeneratedStyle = {
-  name: string;
-  // `decamelizeKeys` return type is object
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  style: object;
+type GeneratedTypeStyles = {
+  [key in Scale]: {
+    // `decamelizeKeys` return type is object
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    [key in Typography]: object;
+  };
 };
-
-export const getStyleName = (type: string, scaleName: string) =>
-  `${type.toLowerCase()}${pascalize(scaleName)}`;
 
 export const generateTypeStyles = (
   supportedScales: typeof scales,
-  typesConfig: typeof typographies
-): GeneratedStyle[] => {
-  const generatedStyles: GeneratedStyle[] = [];
-  Object.entries(supportedScales).forEach(([scaleName, scale]) => {
-    Object.entries(typesConfig).forEach(([type, styleConfig]) => {
-      generatedStyles.push({
-        name: getStyleName(type, scaleName),
-        style: decamelizeKeys(calculateVariantStyle(styleConfig, scale), { separator: '-' }),
-      });
-    });
-  });
+  typesConfig: typeof typography
+): GeneratedTypeStyles => {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  const styles: { [key: string]: { [key: string]: object } } = {};
+  for (const [scaleName, scale] of Object.entries(supportedScales)) {
+    for (const [type, styleConfig] of Object.entries(typesConfig)) {
+      if (!styles[scaleName as Scale]) {
+        styles[scaleName as Scale] = {};
+      }
+      styles[scaleName as Scale][type as Typography] = decamelizeKeys(
+        calculateVariantStyle(styleConfig, scale),
+        {
+          separator: '-',
+        }
+      );
+    }
+  }
 
-  return generatedStyles;
+  return styles as GeneratedTypeStyles;
 };
 
 type DistributeProps = {
@@ -41,6 +46,9 @@ type DistributeProps = {
   limit?: boolean;
 };
 
+/**
+ * Project value from rangeA to rangeB linearly.
+ */
 export const distribute = ({ value, rangeA, rangeB, limit = false }: DistributeProps) => {
   const [fromLow, fromHigh] = Array.from(rangeA);
   const [toLow, toHigh] = Array.from(rangeB);
@@ -53,12 +61,6 @@ export const distribute = ({ value, rangeA, rangeB, limit = false }: DistributeP
   } else {
     return result > toLow ? toLow : toHigh;
   }
-};
-
-/** Custom font fallback stack. The final stack will be concatenated with the system font stack */
-const customFontFallback = {
-  Graphik: 'Inter',
-  Inter: 'Graphik',
 };
 
 const calculateVariantStyle = (
@@ -82,7 +84,6 @@ const calculateVariantStyle = (
   };
 
   const font = {
-    fontFamily: `'${fontFamily}', '${customFontFallback[fontFamily]}'`,
     fontWeight,
   };
 

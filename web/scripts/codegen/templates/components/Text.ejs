@@ -1,14 +1,7 @@
-/**
- * DO NOT MODIFY
- * Generated from scripts/codegen/typography.ts based on definitions in
- * src/styles/typography/typography.ts
- */
 import * as React from 'react';
 
-import { useScale } from '@cb/design-system-web/styles/scale/context';
-import { getStyleName } from '@cb/design-system-web/styles/typography/generateTypeStyles';
-import * as styles from '@cb/design-system-web/styles/typography/styles';
-import { TextProps } from '@cb/design-system-web/Text/TextProps';
+import { TextProps } from '@cb/design-system-web/components/Text/TextProps';
+import * as styles from '@cb/design-system-web/primitives/typography/styles';
 import { css, cx } from 'linaria';
 
 const noLineWrap = css`
@@ -31,18 +24,16 @@ const tabularNumber = css`
         tnum = <%- tnum %>,
         <% if (!tag.startsWith('h')) { %> as: Tag = '<%- tag %>', <% } %>
     }) {
-        const scale = useScale();
-
         return (
             <<% if (!tag.startsWith('h')) { %> Tag <% } else { %> <%- tag %> <% } %>
                 style={{ display, color, textAlign }}
                 className={cx(
-                    (styles as { [key: string]: string })[getStyleName('<%- name %>', scale)],
+                    styles.<%- name.toLowerCase() %>,
                     noWrap && noLineWrap,
                     tnum && tabularNumber
                 )}
             >
-                {children}
+               {children}
             </<% if (!tag.startsWith('h')) { %> Tag <% } else { %> <%- tag %> <% } %>>
         );
     });

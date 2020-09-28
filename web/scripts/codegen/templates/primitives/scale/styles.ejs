@@ -1,0 +1,11 @@
+import { css } from 'linaria';
+
+<% Object.entries(scaleStyles).map(([scale, scaleStyles]) => { %>
+    export const <%- scale %> = css`
+        <%_ Object.entries(scaleStyles).map(([component, style]) => { _%>
+            <%_ Object.entries(style).map(([attr, value]) => { _%>
+                --<%- component.toLowerCase() %>-<%- attr %>:  <%- value %>;
+            <%_ }) _%>
+        <%_ }) _%>
+    `
+<% }) %>

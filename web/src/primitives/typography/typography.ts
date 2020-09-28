@@ -3,9 +3,9 @@ export type NonHeadingTextTags = 'span' | 'p' | 'div';
 export type HtmlTextTags = HeadingTags | NonHeadingTextTags;
 
 export enum FontWeight {
-  REGULAR = 400,
-  MEDIUM = 500,
-  SEMIBOLD = 600,
+  Regular = 400,
+  Medium = 500,
+  Semibold = 600,
 }
 
 export const xHeight = {
@@ -13,10 +13,18 @@ export const xHeight = {
   Inter: 0.55,
 };
 
+const fallbackStack =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+
+export const fontStack = {
+  Graphik: `'Graphik', 'Inter', ${fallbackStack}`,
+  Inter: `'Inter', 'Graphik', ${fallbackStack}`,
+};
+
 export type TypeVariant = {
   /**
    * Default HTML tag to be associated with the typography.
-   * None heading components can substitute other tags.
+   * Non-heading components can substitute other tags.
    */
   tag: HtmlTextTags;
   fontWeight: FontWeight;
@@ -41,65 +49,62 @@ export type TypeVariant = {
   tnum?: boolean;
 };
 
-export const fallbackStack =
-  "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
-
-export const typographies = {
+export const typography = {
   Display1: {
     tag: 'h1' as const,
     baseFontSize: 64,
     leading: 7,
     fontFamily: 'Graphik' as const,
-    fontWeight: FontWeight.REGULAR,
+    fontWeight: FontWeight.Regular,
   },
   Display2: {
     tag: 'h1' as const,
     baseFontSize: 34,
     leading: 7,
     fontFamily: 'Graphik' as const,
-    fontWeight: FontWeight.REGULAR,
+    fontWeight: FontWeight.Regular,
   },
   Title1: {
     tag: 'h2' as const,
     baseFontSize: 28,
     leading: 6,
     fontFamily: 'Graphik' as const,
-    fontWeight: FontWeight.MEDIUM,
+    fontWeight: FontWeight.Medium,
   },
   Title2: {
     tag: 'h2' as const,
     baseFontSize: 28,
     leading: 6,
     fontFamily: 'Graphik' as const,
-    fontWeight: FontWeight.REGULAR,
+    fontWeight: FontWeight.Regular,
   },
   Title3: {
     tag: 'h3' as const,
     baseFontSize: 20,
     leading: 5,
     fontFamily: 'Graphik' as const,
-    fontWeight: FontWeight.MEDIUM,
+    fontWeight: FontWeight.Medium,
   },
   Headline: {
     tag: 'h4' as const,
     baseFontSize: 16,
     leading: 5,
     fontFamily: 'Inter' as const,
-    fontWeight: FontWeight.SEMIBOLD,
+    fontWeight: FontWeight.Semibold,
   },
   Body: {
     tag: 'span' as const,
     baseFontSize: 16,
     leading: 5,
     fontFamily: 'Inter' as const,
-    fontWeight: FontWeight.REGULAR,
+    fontWeight: FontWeight.Regular,
   },
   Label1: {
     tag: 'span' as const,
     baseFontSize: 14,
     leading: 1,
     fontFamily: 'Inter' as const,
-    fontWeight: FontWeight.SEMIBOLD,
+    fontWeight: FontWeight.Semibold,
     allowAllCaps: true,
   },
   Label2: {
@@ -107,7 +112,7 @@ export const typographies = {
     baseFontSize: 14,
     leading: 1,
     fontFamily: 'Inter' as const,
-    fontWeight: FontWeight.REGULAR,
+    fontWeight: FontWeight.Regular,
     allowAllCaps: true,
     tnum: true,
   },
@@ -116,7 +121,7 @@ export const typographies = {
     baseFontSize: 13,
     leading: 1,
     fontFamily: 'Inter' as const,
-    fontWeight: FontWeight.SEMIBOLD,
+    fontWeight: FontWeight.Semibold,
     allowAllCaps: true,
     tnum: true,
   },
@@ -125,7 +130,9 @@ export const typographies = {
     baseFontSize: 13,
     leading: 2,
     fontFamily: 'Inter' as const,
-    fontWeight: FontWeight.REGULAR,
+    fontWeight: FontWeight.Regular,
     disableMinimums: true,
   },
 };
+
+export type Typography = keyof typeof typography;

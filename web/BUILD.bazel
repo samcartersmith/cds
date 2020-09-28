@@ -104,7 +104,6 @@ filegroup(
             "**/*.ts",
             "**/*.tsx",
             "**/*.js",
-            "**/*.jsx",
             "**/*.mdx",
         ],
         exclude = [

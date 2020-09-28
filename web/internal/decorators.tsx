@@ -1,17 +1,9 @@
 import * as React from 'react';
 
-import { ScaleProvider } from '@cb/design-system-web/primitives/scale/context';
-import { scales } from '@cb/design-system-web/primitives/scale/scales';
-import { fallbackStack } from '@cb/design-system-web/primitives/typography/typography';
+import { TextLabel1 } from '@cb/design-system-web/components/Text/Text';
+import { DEFAULT_SCALE, scales } from '@cb/design-system-web/primitives/scale/scale';
+import * as styles from '@cb/design-system-web/primitives/scale/styles';
 import { css } from 'linaria';
-
-export const globalStyle = css`
-  :global() {
-    body {
-      font-family: ${fallbackStack};
-    }
-  }
-`;
 
 type GetStory = () => React.ReactNode;
 
@@ -40,18 +32,7 @@ const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }) => {
         }
       `}
     >
-      <h2
-        className={css`
-          background-color: '#000';
-          color: '#fff';
-          padding: 4px 8px;
-          border-radius: 4px;
-          /* stylelint-disable plugin/no-unsupported-browser-features */
-          width: fit-content;
-        `}
-      >
-        {name}
-      </h2>
+      <TextLabel1>{name}</TextLabel1>
       {children}
     </div>
   );
@@ -61,6 +42,6 @@ export const withStoryLabel = (name: string) => (getStory: GetStory) => (
   <StoryNameLabel name={name}>{getStory()}</StoryNameLabel>
 );
 
-export const withScaleProvider = (scale?: keyof typeof scales) => (getStory: GetStory) => (
-  <ScaleProvider value={scale}>{getStory()}</ScaleProvider>
+export const withScale = (scale: keyof typeof scales = DEFAULT_SCALE) => (getStory: GetStory) => (
+  <div className={styles[scale]}>{getStory()}</div>
 );
