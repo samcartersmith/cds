@@ -98,6 +98,22 @@ node_package_deployable(
 )
 
 filegroup(
+    name = "runtime_source",
+    srcs = glob(
+        [
+            "internal/**/*",
+            "scripts/**/*",
+            "src/**/*",
+            "styles/**/*",
+        ],
+        exclude = [
+            "**/*.test.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
     name = "lintable_source",
     srcs = glob(
         include = [
@@ -202,5 +218,26 @@ build_storybook(
         "@npm//yargs",
     ],
     output_dir = True,
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "tests_source",
+    srcs = glob(
+        [
+            "**/*.test.ts",
+            "**/*.test.tsx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "tests_configuration",
+    srcs = [
+        "jest.config.js",
+        "jestSetup.ts",
+        "jestSetupAfterEnv.ts",
+    ],
     visibility = ["//visibility:public"],
 )

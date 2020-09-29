@@ -21,7 +21,7 @@ type StoryNameLabelProps = {
   name: string;
 };
 
-const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }) => {
+export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }) => {
   return (
     <div
       className={css`
