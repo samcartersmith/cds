@@ -14,6 +14,8 @@ const envFile = `.env${process.env.NODE_ENV === 'development' ? '.local' : ''}`;
 module.exports = ({ config, tsconfig, environmentFile }) => {
   const isProduction = config.mode === 'production';
 
+  config.stats = isProduction ? 'errors-only' : 'verbose';
+
   config.plugins = [
     ...config.plugins,
     new Dotenv({
