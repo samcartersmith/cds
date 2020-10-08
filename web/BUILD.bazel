@@ -161,6 +161,7 @@ filegroup(
         include = [
             "src/**/*",
             "static/**/*",
+            "internal/**/*",
             ".storybook/**/*",
         ],
     ),
@@ -170,8 +171,8 @@ filegroup(
 build_storybook(
     name = "storybook_build",
     args = [
-        "-c //eng/shared/design-system/web/.storybook",
-        "-s //eng/shared/design-system/web/static",
+        "-c eng/shared/design-system/web/.storybook",
+        "-s eng/shared/design-system/web/static",
         "-o $(@D)",
         "--no-dll",
     ],
