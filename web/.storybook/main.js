@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  stories: [path.resolve(__dirname, '../**/*.stories.@(tsx|mdx)')],
+  stories: [
+    path.resolve(__dirname, '../**/*.stories.@(tsx|mdx)'),
+    path.resolve(__dirname, '../../icons/**/*.stories.@(tsx|mdx)'),
+  ],
   addons: [
     '@storybook/addon-backgrounds',
     {

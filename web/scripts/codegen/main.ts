@@ -3,7 +3,7 @@ import * as chalk from 'chalk';
 import * as ejs from 'ejs';
 import * as path from 'path';
 
-import { writePrettyFile } from '../writePrettyFile';
+import { writePrettyFile } from '../../../../jsUtil/writePrettyFile';
 import { Type } from './Type';
 
 const prettierConfig = path.resolve('../../../../.prettierrc');

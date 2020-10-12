@@ -10,8 +10,6 @@ import 'destyle.css';
 
 export const decorators = [StoryContainer, withScale(DEFAULT_SCALE)];
 
-const storyOrder = ['styles', 'icons', 'layout', 'core components'];
-
 export const parameters = {
   layout: 'fullscreen',
   viewMode: 'docs',

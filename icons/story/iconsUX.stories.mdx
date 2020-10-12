@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import * as path from 'path';
+/**
+ * Import all .tsx files (icons) from directory
+ * See more about context module api in webpack docs:
+ * https://webpack.js.org/guides/dependency-management/#context-module-api
+ */
+const icons = {};
+const importAll = directory => {
+  directory.keys().forEach(file => {
+    const fileName = path.basename(file, path.extname(file));
+    // TODO: group icons by kind and
+    icons[fileName] = directory(file).default;
+  });
+};
+importAll(require.context('eng/shared/design-system/icons/react/', false, /\.tsx$/));
+
+<Meta title="Icons/UX" />
+
+# Icons
+
+There are 5 possible sizes for an icon **8px, 12px, 16px, 24px, and 32px**. There are also two illustration styles **heavy** and **light**. Each kind of icon will offer some of those sizes and eventually both styles.
+
+<Canvas>
+  <Story name="all">
+    {() => {
+      return (
+        <div>
+          {Object.keys(icons).map(name => {
+            const Component = icons[name];
+            return (
+              <div key={name} style={{ width: '48px', display: 'inline-block' }}>
+                <Component />
+              </div>
+            );
+          })}
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>

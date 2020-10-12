@@ -62,8 +62,8 @@ ts_node(
     ],
     data = [
         "scripts/genPackageJson.ts",
-        "scripts/writePrettyFile.ts",
         "basepackage.json",
+        "//eng/shared/jsUtil:writePrettyFile",
         "//:package.json",
         "//:.prettierrc",
         "@npm//yargs",
@@ -181,6 +181,7 @@ build_storybook(
         "//:babel.config.js",
         "//:package.json",
         "//:tsconfig.json",
+        "//eng/shared/design-system/icons:icons_story_source",
         "@npm//@babel/core",
         "@npm//@babel/parser",
         "@npm//@babel/plugin-transform-runtime",

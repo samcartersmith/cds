@@ -2,7 +2,7 @@ import * as chalk from 'chalk';
 import * as fs from 'fs';
 import { argv } from 'yargs';
 
-import { writePrettyFile } from './writePrettyFile';
+import { writePrettyFile } from '../../../jsUtil/writePrettyFile';
 
 const deps: string = argv.deps as string;
 const peerDeps: string = argv.peerDeps as string;
