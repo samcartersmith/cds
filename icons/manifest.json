@@ -279,6 +279,11 @@
     "name": "Icon/caretLeft_24_heavy",
     "description": ""
   },
+  "2375:11955": {
+    "key": "451a7b03feeb2468838d1b8e544a1de058677170",
+    "name": "Icon/trashCan_24_heavy",
+    "description": ""
+  },
   "2207:14": {
     "key": "648f2421ce11847479c38442ce3aa822b9e113d1",
     "name": "Icon/caretDown_24_heavy",
@@ -302,41 +307,6 @@
   "1292:247": {
     "key": "0606885f37944e22f9e95ab00c1c478765582e12",
     "name": "Icon/wireTransfer_24_heavy",
-    "description": ""
-  },
-  "1436:40": {
-    "key": "cf71bb390b46f6f480bf41a421c748c809378299",
-    "name": "Icon/copy_24_light",
-    "description": ""
-  },
-  "1847:11363": {
-    "key": "0d763c351484ef2e38a093d1b9da698921fc2381",
-    "name": "Icon/caretRight_24_light",
-    "description": ""
-  },
-  "1847:11360": {
-    "key": "d6efdd8b5595c1b1f68a8a37abfb86db5af3231e",
-    "name": "Icon/caretLeft_24_light",
-    "description": ""
-  },
-  "1847:11362": {
-    "key": "1f5e82a0460ce7d839a3638a8f00a1ad6bea3e9f",
-    "name": "Icon/caretUp_24_light",
-    "description": ""
-  },
-  "1847:11359": {
-    "key": "688951fe9497c30f15f5e6a7ce626a83749a110c",
-    "name": "Icon/caretDown_24_light",
-    "description": ""
-  },
-  "1847:11366": {
-    "key": "ddfd5e1391acc62e0e9b2beca97ea75b444aba18",
-    "name": "Icon/backspace_24_light",
-    "description": ""
-  },
-  "1847:11385": {
-    "key": "03f82f46c09ede1f4de134d23df2e9b7ff39edd6",
-    "name": "Icon/close_24_light",
     "description": ""
   },
   "1292:200": {
@@ -714,46 +684,6 @@
     "name": "Icon/arrowsVertical_12_heavy",
     "description": ""
   },
-  "1292:243": {
-    "key": "a92372846892966fe09cbad2c007a63057d723f3",
-    "name": "Icon/checkboxChecked_12_light",
-    "description": ""
-  },
-  "1292:250": {
-    "key": "f03aee1fb759143101c80cbec5cbd2efa3e2a3ca",
-    "name": "Icon/checkboxEmpty_12_light",
-    "description": ""
-  },
-  "1436:42": {
-    "key": "c318e03dea47b32c82d15d84e055ece47598f6fa",
-    "name": "Icon/copy_12_light",
-    "description": ""
-  },
-  "1292:188": {
-    "key": "2d02c1c2f16b84fb69fc8ae774cb114a11a27433",
-    "name": "Icon/externalLink_12_heavy",
-    "description": ""
-  },
-  "1292:211": {
-    "key": "7dad5aacf1e0aae495c43264c63c9e1a53f9a839",
-    "name": "Icon/gauge_12_light",
-    "description": ""
-  },
-  "1292:110": {
-    "key": "07e98498c379fc60a8a21b10a4760fa8c0398666",
-    "name": "Icon/clock_12_light",
-    "description": ""
-  },
-  "1292:111": {
-    "key": "7f47b5b0a8224143c0c09759151ef81aaa7c5279",
-    "name": "Icon/marketCap_12_light",
-    "description": ""
-  },
-  "1292:93": {
-    "key": "182f6b31b1db11fc51237fbdd13f2e7b88be5261",
-    "name": "Icon/trxReward_12_light",
-    "description": ""
-  },
   "1577:157": {
     "key": "e6d6ab9db270961cefb85f1a94b8f98d978e50e0",
     "name": "Icon/marketCap_12_heavy",
@@ -1129,9 +1059,19 @@
     "name": "Icon/arrowsVertical_16_heavy",
     "description": ""
   },
+  "1292:243": {
+    "key": "a92372846892966fe09cbad2c007a63057d723f3",
+    "name": "Icon/checkboxChecked_12_light",
+    "description": ""
+  },
   "1292:223": {
     "key": "d0d5b6583033cdeb26799e5fc07ec78c5aaa378e",
     "name": "Icon/checkboxChecked_16_light",
+    "description": ""
+  },
+  "1292:250": {
+    "key": "f03aee1fb759143101c80cbec5cbd2efa3e2a3ca",
+    "name": "Icon/checkboxEmpty_12_light",
     "description": ""
   },
   "1292:217": {
@@ -1139,34 +1079,29 @@
     "name": "Icon/checkboxEmpty_16_light",
     "description": ""
   },
+  "1436:40": {
+    "key": "cf71bb390b46f6f480bf41a421c748c809378299",
+    "name": "Icon/copy_24_light",
+    "description": ""
+  },
+  "1436:42": {
+    "key": "c318e03dea47b32c82d15d84e055ece47598f6fa",
+    "name": "Icon/copy_12_light",
+    "description": ""
+  },
   "1436:41": {
     "key": "f132409013192b6b2de3bb9038853eb79585fc24",
     "name": "Icon/copy_16_light",
     "description": ""
   },
-  "1847:11356": {
-    "key": "75cfe453649e84e419c9d8cc3a58fa33219b3477",
-    "name": "Icon/caretLeft_16_light",
+  "1292:93": {
+    "key": "182f6b31b1db11fc51237fbdd13f2e7b88be5261",
+    "name": "Icon/trxReward_12_light",
     "description": ""
   },
-  "1847:11358": {
-    "key": "430bedd37a77bff8e0fa56ba55bf4e218ea8f122",
-    "name": "Icon/caretUp_16_light",
-    "description": ""
-  },
-  "1847:11357": {
-    "key": "8b7d494d54eedc873d708e4ee5129c32ff95f65d",
-    "name": "Icon/caretDown_16_light",
-    "description": ""
-  },
-  "1847:11364": {
-    "key": "cfc431f75557642cbba090772a5800ad32101c4d",
-    "name": "Icon/backspace_16_light",
-    "description": ""
-  },
-  "1847:11384": {
-    "key": "9965ee16f14ca35c53f34c1dcdd6fcc56f742e16",
-    "name": "Icon/close_16_light",
+  "1847:11363": {
+    "key": "0d763c351484ef2e38a093d1b9da698921fc2381",
+    "name": "Icon/caretRight_24_light",
     "description": ""
   },
   "1847:11361": {
@@ -1179,9 +1114,29 @@
     "name": "Icon/caretRight_12_light",
     "description": ""
   },
+  "1847:11360": {
+    "key": "d6efdd8b5595c1b1f68a8a37abfb86db5af3231e",
+    "name": "Icon/caretLeft_24_light",
+    "description": ""
+  },
+  "1847:11356": {
+    "key": "75cfe453649e84e419c9d8cc3a58fa33219b3477",
+    "name": "Icon/caretLeft_16_light",
+    "description": ""
+  },
   "1847:11353": {
     "key": "10ffad4328a9102d466dd3a494acd5e931ee3002",
     "name": "Icon/caretLeft_12_light",
+    "description": ""
+  },
+  "1847:11362": {
+    "key": "1f5e82a0460ce7d839a3638a8f00a1ad6bea3e9f",
+    "name": "Icon/caretUp_24_light",
+    "description": ""
+  },
+  "1847:11358": {
+    "key": "430bedd37a77bff8e0fa56ba55bf4e218ea8f122",
+    "name": "Icon/caretUp_16_light",
     "description": ""
   },
   "1847:11354": {
@@ -1189,9 +1144,29 @@
     "name": "Icon/caretUp_12_light",
     "description": ""
   },
+  "1847:11359": {
+    "key": "688951fe9497c30f15f5e6a7ce626a83749a110c",
+    "name": "Icon/caretDown_24_light",
+    "description": ""
+  },
+  "1847:11357": {
+    "key": "8b7d494d54eedc873d708e4ee5129c32ff95f65d",
+    "name": "Icon/caretDown_16_light",
+    "description": ""
+  },
   "1847:11352": {
     "key": "3768be19789aae4b71cda03afc733468fc1fbda1",
     "name": "Icon/caretDown_12_light",
+    "description": ""
+  },
+  "1847:11366": {
+    "key": "ddfd5e1391acc62e0e9b2beca97ea75b444aba18",
+    "name": "Icon/backspace_24_light",
+    "description": ""
+  },
+  "1847:11364": {
+    "key": "cfc431f75557642cbba090772a5800ad32101c4d",
+    "name": "Icon/backspace_16_light",
     "description": ""
   },
   "1847:11365": {
@@ -1199,9 +1174,99 @@
     "name": "Icon/backspace_12_light",
     "description": ""
   },
+  "2375:12042": {
+    "key": "1844e2ede5b35ff4bf9294332796202216c6c215",
+    "name": "Icon/trashCan_24_light",
+    "description": ""
+  },
+  "2375:12040": {
+    "key": "b833b8db7ef690b77a62b79d2f76128c25e688af",
+    "name": "Icon/trashCan_16_light",
+    "description": ""
+  },
+  "2375:12038": {
+    "key": "a11653006017cfcab0ee7a560747f4f0aeceeb8d",
+    "name": "Icon/trashCan_12_light",
+    "description": ""
+  },
+  "1847:11385": {
+    "key": "03f82f46c09ede1f4de134d23df2e9b7ff39edd6",
+    "name": "Icon/close_24_light",
+    "description": ""
+  },
+  "1847:11384": {
+    "key": "9965ee16f14ca35c53f34c1dcdd6fcc56f742e16",
+    "name": "Icon/close_16_light",
+    "description": ""
+  },
   "1847:11383": {
     "key": "6d4242021f1c07e521153e44dc16d1c4d7c8d75e",
     "name": "Icon/close_12_light",
+    "description": ""
+  },
+  "2375:12041": {
+    "key": "084701c9b541ba77517a2655c0d8593ca9a7d813",
+    "name": "Icon/undo_24_light",
+    "description": ""
+  },
+  "2375:12039": {
+    "key": "f39a2aada9e01b862344c7dec4627f13b7d8f030",
+    "name": "Icon/undo_16_light",
+    "description": ""
+  },
+  "2375:12037": {
+    "key": "13bf6d9de576deaaca8ddbfa78227b28381f3c37",
+    "name": "Icon/undo_12_light",
+    "description": ""
+  },
+  "2375:12180": {
+    "key": "636ba9b4117cee6ea82863acb66cdc0b487d7033",
+    "name": "Icon/pencil_12_light",
+    "description": ""
+  },
+  "2375:12179": {
+    "key": "43bfd191c8b2c06f0595ae3302aba0c8cbde167a",
+    "name": "Icon/visible_12_light",
+    "description": ""
+  },
+  "2375:12177": {
+    "key": "68f06cbd3140ca0fdccf05ca5e2bba2fd6f9d6af",
+    "name": "Icon/plus_12_light",
+    "description": ""
+  },
+  "2375:12178": {
+    "key": "3557f3e64839f15362b0235b6548f5a8e193e2ae",
+    "name": "Icon/plus_8_light",
+    "description": ""
+  },
+  "2375:12176": {
+    "key": "e3129388f53ecdd69fa64ecdba2520562cbb9340",
+    "name": "Icon/notVisible_12_light",
+    "description": ""
+  },
+  "2375:12175": {
+    "key": "3a347e3732c5bb15f4b32394a0afad96eb2aabf9",
+    "name": "Icon/tradingChartLine_12_light",
+    "description": ""
+  },
+  "2375:12174": {
+    "key": "22af26b38cf5759130146e2da44f9fed927541c3",
+    "name": "Icon/minus_12_light",
+    "description": ""
+  },
+  "2375:12173": {
+    "key": "ac2ca46442b1116248d69c81dbc74a7843f8b07c",
+    "name": "Icon/minus_8_light",
+    "description": ""
+  },
+  "2375:12172": {
+    "key": "d844fb6f07600ba5d86ff53e3f483b15dc34a1d5",
+    "name": "Icon/tradingChartCandles_12_light",
+    "description": ""
+  },
+  "1292:188": {
+    "key": "2d02c1c2f16b84fb69fc8ae774cb114a11a27433",
+    "name": "Icon/externalLink_12_heavy",
     "description": ""
   },
   "1292:168": {
@@ -1209,14 +1274,29 @@
     "name": "Icon/externalLink_16_light",
     "description": ""
   },
+  "1292:211": {
+    "key": "7dad5aacf1e0aae495c43264c63c9e1a53f9a839",
+    "name": "Icon/gauge_12_light",
+    "description": ""
+  },
   "1292:167": {
     "key": "18f1465caa15e3aba667e174a6f57135e3e3bfb1",
     "name": "Icon/gauge_16_light",
     "description": ""
   },
+  "1292:110": {
+    "key": "07e98498c379fc60a8a21b10a4760fa8c0398666",
+    "name": "Icon/clock_12_light",
+    "description": ""
+  },
   "1292:63": {
     "key": "0a34f1754dc679a31fd2ab33e62dd18d290e8191",
     "name": "Icon/clock_16_light",
+    "description": ""
+  },
+  "1292:111": {
+    "key": "7f47b5b0a8224143c0c09759151ef81aaa7c5279",
+    "name": "Icon/marketCap_12_light",
     "description": ""
   },
   "1292:34": {
@@ -1259,6 +1339,11 @@
     "name": "Icon/caretLeft_16_heavy",
     "description": ""
   },
+  "2375:11954": {
+    "key": "9f3b2fadc498381d94b84a4354dc8e41dfb9e7ac",
+    "name": "Icon/trashCan_16_heavy",
+    "description": ""
+  },
   "1697:10593": {
     "key": "1a1f1a4d9f3d48e0def8e62638b3c040c2f90992",
     "name": "Icon/caretUp_16_heavy",
@@ -1267,6 +1352,141 @@
   "2207:54": {
     "key": "925f36d4488a9ca00744bb770dfea61f07e26f54",
     "name": "Icon/dot_16_heavy",
+    "description": ""
+  },
+  "2375:11982": {
+    "key": "581cdf5c62e75782a5c63ce53db932db14409d77",
+    "name": "Icon/tradingVertLine_24_light",
+    "description": ""
+  },
+  "2375:11980": {
+    "key": "23af6ab7a254f38b6f50bf8b1f4ba51a2e16a4f8",
+    "name": "Icon/tradingVertLine_16_light",
+    "description": ""
+  },
+  "2375:11969": {
+    "key": "14da033438f1f3ed8d66a17f59478b96dfc44911",
+    "name": "Icon/tradingVertLine_12_light",
+    "description": ""
+  },
+  "2375:11975": {
+    "key": "864357986c06dfeb89e54a1323c0bdc337b9cbd1",
+    "name": "Icon/tradingAnnotation_24_light",
+    "description": ""
+  },
+  "2375:11977": {
+    "key": "88147b4f8fcf28a931e27069bfd0f0c0b11af88b",
+    "name": "Icon/tradingAnnotation_16_light",
+    "description": ""
+  },
+  "2375:11973": {
+    "key": "03e6073ea045b010d29e967c2c5e4b9ee50d515a",
+    "name": "Icon/tradingAnnotation_12_light",
+    "description": ""
+  },
+  "2375:11981": {
+    "key": "d94575058588f64ca928b299d9da66b8b4205a80",
+    "name": "Icon/tradingFib_24_light",
+    "description": ""
+  },
+  "2375:11971": {
+    "key": "4fda5f449f198244ab973f91f6117efdd803fd9a",
+    "name": "Icon/tradingFib_16_light",
+    "description": ""
+  },
+  "2375:11979": {
+    "key": "642e5c122ed7cee8525ca35f76b9b57986403237",
+    "name": "Icon/tradingFib_12_light",
+    "description": ""
+  },
+  "2375:11970": {
+    "key": "4c90101591497528af6bdf0283e21bd2958a5261",
+    "name": "Icon/tradingHorizLine_24_light",
+    "description": ""
+  },
+  "2375:11964": {
+    "key": "d4fdbe5a1e07d8422336494a5329b151e42ff7b0",
+    "name": "Icon/tradingHorizLine_16_light",
+    "description": ""
+  },
+  "2375:11967": {
+    "key": "b2c97d3e74b54fdb46aab11673fb89aa2cc48ad0",
+    "name": "Icon/tradingHorizLine_12_light",
+    "description": ""
+  },
+  "2375:11978": {
+    "key": "dbae821f0855da9c08f31c6a8496141b93e4bf9f",
+    "name": "Icon/tradingAverage_24_light",
+    "description": ""
+  },
+  "2375:11963": {
+    "key": "7d12ad11db9d2b155edf7949365e2105e2e45535",
+    "name": "Icon/tradingAverage_16_light",
+    "description": ""
+  },
+  "2375:11962": {
+    "key": "d33eae8424d98a29f1fbed358fa2b836a3c8e590",
+    "name": "Icon/tradingAverage_12_light",
+    "description": ""
+  },
+  "2375:11961": {
+    "key": "c1b5c57cab641b40260b6148d2a0c27843a79980",
+    "name": "Icon/tradingCross_24_light",
+    "description": ""
+  },
+  "2375:11960": {
+    "key": "984e18b00b8d71098c9993baebc3047e38b4771e",
+    "name": "Icon/tradingCross_16_light",
+    "description": ""
+  },
+  "2375:11959": {
+    "key": "148f97229d63b660c10fdc9421fab2152eed56c7",
+    "name": "Icon/tradingCross_12_light",
+    "description": ""
+  },
+  "2375:11974": {
+    "key": "39abf77141ddcaf0d467275718dca3246596ff7e",
+    "name": "Icon/tradingUpArrow_24_light",
+    "description": ""
+  },
+  "2375:11976": {
+    "key": "a224efc86e188db185ac480f29e450b53a55cc25",
+    "name": "Icon/tradingUpArrow_16_light",
+    "description": ""
+  },
+  "2375:11972": {
+    "key": "b939487731cd3fa41121f4e541a3d10a2df5022a",
+    "name": "Icon/tradingUpArrow_12_light",
+    "description": ""
+  },
+  "2375:11968": {
+    "key": "7e7b92a950bc42394b9bfd5d3c634937fe58cf78",
+    "name": "Icon/tradingContinuous_24_light",
+    "description": ""
+  },
+  "2375:11965": {
+    "key": "a34e0c5c9fdb807d80850e17bd20246b6342f7da",
+    "name": "Icon/tradingContinuous_16_light",
+    "description": ""
+  },
+  "2375:11966": {
+    "key": "a4f164567af689b75ab0109db475d704db7a779d",
+    "name": "Icon/tradingContinuous_12_light",
+    "description": ""
+  },
+  "2375:11958": {
+    "key": "e75824532c4db5eab5e5cf6f619db7a8f86d3c0b",
+    "name": "Icon/tradingRectangle_24_light",
+    "description": ""
+  },
+  "2375:11957": {
+    "key": "c1027aeded4c22d5907da94fe45ffe8a153ef9da",
+    "name": "Icon/tradingRectangle_16_light",
+    "description": ""
+  },
+  "2375:11956": {
+    "key": "7c92772811fb2fd6df7b3a96ea1d4feb09b9c4b2",
+    "name": "Icon/tradingRectangle_12_light",
     "description": ""
   }
 }
