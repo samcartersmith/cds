@@ -16,7 +16,7 @@ const tabularNumber = css`
   font-feature-settings: 'tnum';
 `;
 
-export const TextDisplay1: React.FC<Omit<TextProps, 'as'>> = React.memo(function TextDisplay1({
+export const TextDisplay1: React.FC<TextProps> = React.memo(function TextDisplay1({
   children,
   color,
   display = 'initial',
@@ -34,7 +34,7 @@ export const TextDisplay1: React.FC<Omit<TextProps, 'as'>> = React.memo(function
   );
 });
 
-export const TextDisplay2: React.FC<Omit<TextProps, 'as'>> = React.memo(function TextDisplay2({
+export const TextDisplay2: React.FC<TextProps> = React.memo(function TextDisplay2({
   children,
   color,
   display = 'initial',
@@ -43,52 +43,16 @@ export const TextDisplay2: React.FC<Omit<TextProps, 'as'>> = React.memo(function
   tnum = false,
 }) {
   return (
-    <h1
+    <h2
       style={{ display, color, textAlign }}
       className={cx(styles.display2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
-    </h1>
-  );
-});
-
-export const TextTitle1: React.FC<Omit<TextProps, 'as'>> = React.memo(function TextTitle1({
-  children,
-  color,
-  display = 'initial',
-  textAlign = 'start',
-  noWrap = false,
-  tnum = false,
-}) {
-  return (
-    <h2
-      style={{ display, color, textAlign }}
-      className={cx(styles.title1, noWrap && noLineWrap, tnum && tabularNumber)}
-    >
-      {children}
     </h2>
   );
 });
 
-export const TextTitle2: React.FC<Omit<TextProps, 'as'>> = React.memo(function TextTitle2({
-  children,
-  color,
-  display = 'initial',
-  textAlign = 'start',
-  noWrap = false,
-  tnum = false,
-}) {
-  return (
-    <h2
-      style={{ display, color, textAlign }}
-      className={cx(styles.title2, noWrap && noLineWrap, tnum && tabularNumber)}
-    >
-      {children}
-    </h2>
-  );
-});
-
-export const TextTitle3: React.FC<Omit<TextProps, 'as'>> = React.memo(function TextTitle3({
+export const TextTitle1: React.FC<TextProps> = React.memo(function TextTitle1({
   children,
   color,
   display = 'initial',
@@ -99,14 +63,14 @@ export const TextTitle3: React.FC<Omit<TextProps, 'as'>> = React.memo(function T
   return (
     <h3
       style={{ display, color, textAlign }}
-      className={cx(styles.title3, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.title1, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h3>
   );
 });
 
-export const TextHeadline: React.FC<Omit<TextProps, 'as'>> = React.memo(function TextHeadline({
+export const TextTitle2: React.FC<TextProps> = React.memo(function TextTitle2({
   children,
   color,
   display = 'initial',
@@ -117,10 +81,46 @@ export const TextHeadline: React.FC<Omit<TextProps, 'as'>> = React.memo(function
   return (
     <h4
       style={{ display, color, textAlign }}
-      className={cx(styles.headline, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.title2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </h4>
+  );
+});
+
+export const TextTitle3: React.FC<TextProps> = React.memo(function TextTitle3({
+  children,
+  color,
+  display = 'initial',
+  textAlign = 'start',
+  noWrap = false,
+  tnum = false,
+}) {
+  return (
+    <h5
+      style={{ display, color, textAlign }}
+      className={cx(styles.title3, noWrap && noLineWrap, tnum && tabularNumber)}
+    >
+      {children}
+    </h5>
+  );
+});
+
+export const TextHeadline: React.FC<TextProps> = React.memo(function TextHeadline({
+  children,
+  color,
+  display = 'initial',
+  textAlign = 'start',
+  noWrap = false,
+  tnum = false,
+}) {
+  return (
+    <h6
+      style={{ display, color, textAlign }}
+      className={cx(styles.headline, noWrap && noLineWrap, tnum && tabularNumber)}
+    >
+      {children}
+    </h6>
   );
 });
 
@@ -131,7 +131,7 @@ export const TextBody: React.FC<TextProps> = React.memo(function TextBody({
   textAlign = 'start',
   noWrap = false,
   tnum = false,
-  as: Tag = 'span',
+  as: Tag = 'div',
 }) {
   return (
     <Tag
@@ -150,7 +150,7 @@ export const TextLabel1: React.FC<TextProps> = React.memo(function TextLabel1({
   textAlign = 'start',
   noWrap = false,
   tnum = false,
-  as: Tag = 'span',
+  as: Tag = 'div',
 }) {
   return (
     <Tag
@@ -169,7 +169,7 @@ export const TextLabel2: React.FC<TextProps> = React.memo(function TextLabel2({
   textAlign = 'start',
   noWrap = false,
   tnum = true,
-  as: Tag = 'span',
+  as: Tag = 'div',
 }) {
   return (
     <Tag
@@ -188,7 +188,7 @@ export const TextCaption: React.FC<TextProps> = React.memo(function TextCaption(
   textAlign = 'start',
   noWrap = false,
   tnum = true,
-  as: Tag = 'span',
+  as: Tag = 'div',
 }) {
   return (
     <Tag

@@ -32,7 +32,17 @@ export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }
         }
       `}
     >
-      <TextLabel1>{name}</TextLabel1>
+      <div
+        className={css`
+          background-color: #eee;
+          border-radius: 4px;
+          padding: 4px 8px;
+          /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+          width: fit-content;
+        `}
+      >
+        <TextLabel1>{name}</TextLabel1>
+      </div>
       {children}
     </div>
   );

@@ -3,6 +3,7 @@ import { css } from 'linaria';
 export const fontFaces = css`
   :global() {
     @font-face {
+      font-display: swap;
       font-family: 'Graphik';
       font-style: normal;
       font-weight: 400;
@@ -11,6 +12,7 @@ export const fontFaces = css`
     }
 
     @font-face {
+      font-display: swap;
       font-family: 'Graphik';
       font-style: normal;
       font-weight: 500;
@@ -19,6 +21,7 @@ export const fontFaces = css`
     }
 
     @font-face {
+      font-display: swap;
       font-family: 'Graphik';
       font-style: normal;
       font-weight: 600;
@@ -27,6 +30,7 @@ export const fontFaces = css`
     }
 
     @font-face {
+      font-display: swap;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 400;
@@ -35,6 +39,7 @@ export const fontFaces = css`
     }
 
     @font-face {
+      font-display: swap;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 500;
@@ -43,6 +48,7 @@ export const fontFaces = css`
     }
 
     @font-face {
+      font-display: swap;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 600;

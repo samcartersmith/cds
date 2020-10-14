@@ -79,7 +79,7 @@ const main = async () => {
 
   generateFromTemplate({
     template: 'components/Text.ejs',
-    data: { typographies: typography },
+    data: { typography },
     logInfo: 'typography components',
     extension: '.tsx',
     shouldCreateFolder: true,

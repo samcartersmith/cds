@@ -1,4 +1,4 @@
-import type { NonHeadingTextTags } from '@cb/design-system-web/primitives/typography/typography';
+import type { HtmlNonHeadingTextTags } from '@cb/design-system-web/primitives/typography/typography';
 
 export type TextProps = {
   /**
@@ -36,5 +36,5 @@ export type TextProps = {
    * Use a different html tag than the default one. Only applies to non heading typography
    * components. The default element is `span` for Body, Label1, Label2, Caption, and `p` for legal.
    */
-  as?: NonHeadingTextTags;
+  as?: HtmlNonHeadingTextTags;
 };

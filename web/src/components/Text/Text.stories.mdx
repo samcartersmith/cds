@@ -101,10 +101,15 @@ For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical info
 
 <Source
   code={`
-import { TextDisplay2, TextBody } from '@cb/design-system-web/Text/Text'
+import { TextDisplay2, TextBody } from '@cb/design-system-web/components'
+import { large } from '@cb/design-system-web/primitives'
 \n
-<TextDisplay2 color="#161652" textAlign="center" noWrap>Coinbase Design System</TextDisplay2>
-<TextBody display="block" tnum>2020</TextBody>
+// Make sure the scale class name is applied somewhere in the ancestor tree.
+// Only once in the app is needed unless the app is using multiple scales.
+<div className={large}>
+  <TextDisplay2 color="#161652" textAlign="center" noWrap>Coinbase Design System</TextDisplay2>
+  <TextBody display="block" tnum>2020</TextBody>
+<div>
 `}
 />
 

@@ -1,6 +1,6 @@
-export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-export type NonHeadingTextTags = 'span' | 'p' | 'div';
-export type HtmlTextTags = HeadingTags | NonHeadingTextTags;
+export type HtmlHeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type HtmlNonHeadingTextTags = 'div' | 'p' | 'div';
+export type HtmlTextTags = HtmlHeadingTags | HtmlNonHeadingTextTags;
 
 export enum FontWeight {
   Regular = 400,
@@ -24,6 +24,8 @@ export const fontStack = {
 export type TypeVariant = {
   /**
    * Default HTML tag to be associated with the typography.
+   * Potential heading typographies use the tag definition from theme configuration and thus
+   * do not have tag defined here.
    * Non-heading components can substitute other tags.
    */
   tag: HtmlTextTags;
@@ -58,49 +60,49 @@ export const typography = {
     fontWeight: FontWeight.Regular,
   },
   Display2: {
-    tag: 'h1' as const,
+    tag: 'h2' as const,
     baseFontSize: 34,
     leading: 7,
     fontFamily: 'Graphik' as const,
     fontWeight: FontWeight.Regular,
   },
   Title1: {
-    tag: 'h2' as const,
+    tag: 'h3' as const,
     baseFontSize: 28,
     leading: 6,
     fontFamily: 'Graphik' as const,
     fontWeight: FontWeight.Medium,
   },
   Title2: {
-    tag: 'h2' as const,
+    tag: 'h4' as const,
     baseFontSize: 28,
     leading: 6,
     fontFamily: 'Graphik' as const,
     fontWeight: FontWeight.Regular,
   },
   Title3: {
-    tag: 'h3' as const,
+    tag: 'h5' as const,
     baseFontSize: 20,
     leading: 5,
     fontFamily: 'Graphik' as const,
     fontWeight: FontWeight.Medium,
   },
   Headline: {
-    tag: 'h4' as const,
+    tag: 'h6' as const,
     baseFontSize: 16,
     leading: 5,
     fontFamily: 'Inter' as const,
     fontWeight: FontWeight.Semibold,
   },
   Body: {
-    tag: 'span' as const,
+    tag: 'div' as const,
     baseFontSize: 16,
     leading: 5,
     fontFamily: 'Inter' as const,
     fontWeight: FontWeight.Regular,
   },
   Label1: {
-    tag: 'span' as const,
+    tag: 'div' as const,
     baseFontSize: 14,
     leading: 1,
     fontFamily: 'Inter' as const,
@@ -108,7 +110,7 @@ export const typography = {
     allowAllCaps: true,
   },
   Label2: {
-    tag: 'span' as const,
+    tag: 'div' as const,
     baseFontSize: 14,
     leading: 1,
     fontFamily: 'Inter' as const,
@@ -117,7 +119,7 @@ export const typography = {
     tnum: true,
   },
   Caption: {
-    tag: 'span' as const,
+    tag: 'div' as const,
     baseFontSize: 13,
     leading: 1,
     fontFamily: 'Inter' as const,

@@ -12,20 +12,18 @@ const tabularNumber = css`
   font-feature-settings: 'tnum';
 `;
 
-<% Object.entries(typographies).forEach(([name, { tag, tnum = false }]) => { %>
-    export const Text<%- name %>: React.FC<
-        <% if (!tag.startsWith('h')) { %> TextProps <% } else { %> Omit<TextProps, 'as'> <% }%>
-    > = React.memo(function Text<%- name %>({
+<% Object.entries(typography).forEach(([name, { tag, tnum = false }]) => { %>
+    export const Text<%- name %>: React.FC<TextProps> = React.memo(function Text<%- name %>({
         children,
         color,
         display = 'initial',
         textAlign = 'start',
         noWrap = false,
         tnum = <%- tnum %>,
-        <% if (!tag.startsWith('h')) { %> as: Tag = '<%- tag %>', <% } %>
+        <%_ if (!tag.startsWith('h')) { _%> as: Tag = '<%- tag %>',  <%_ } _%>
     }) {
         return (
-            <<% if (!tag.startsWith('h')) { %> Tag <% } else { %> <%- tag %> <% } %>
+            <<%_ if (tag.startsWith('h')) { _%> <%- tag %>  <%_ } else { _%> Tag <%_ }_%>
                 style={{ display, color, textAlign }}
                 className={cx(
                     styles.<%- name.toLowerCase() %>,
@@ -34,7 +32,7 @@ const tabularNumber = css`
                 )}
             >
                {children}
-            </<% if (!tag.startsWith('h')) { %> Tag <% } else { %> <%- tag %> <% } %>>
+            </<%_ if (tag.startsWith('h')) { _%> <%- tag %>  <%_ } else { _%> Tag <%_ }_%>>
         );
     });
 <% }) %>
