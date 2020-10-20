@@ -4,7 +4,7 @@ export type TextProps = {
   /**
    * Text to be styled and wrapped with appropriate html tag.
    */
-  children: React.ReactText;
+  children: React.ReactText | React.ReactText[];
   /**
    * Set text color. Default color will be the text color for the theme.
    */
