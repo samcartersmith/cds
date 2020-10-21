@@ -6,5 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat(icons): Add fill prop to IconLight and IconHeavy by @hannah-jin (#7670)
+- feat(icons): Add IconHeavy and IconLight components for scale by @hannah-jin (#7307)
 - feat(icons): Add insto chart study and draw icons by @hannah-jin (#7259)
 - feat(icons): Generate CDS Icons from figma by @hannah-jin (#7152)

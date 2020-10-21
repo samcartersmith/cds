@@ -5,8 +5,10 @@ export type IconProps = {
    * Specifies the icon size. The actual icon size is determined based on this prop and the
    * current scale.
    */
-
   size: IconSize;
+  /** Set the fill color of the icon */
+  // TODO: update type to allowed colors
+  fill?: string;
 };
 
 export type IconSize = 'L' | 'M' | 'S' | 'XS';
