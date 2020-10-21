@@ -63,7 +63,7 @@ ts_node(
     data = [
         "scripts/genPackageJson.ts",
         "basepackage.json",
-        "//eng/shared/jsUtil:writePrettyFile",
+        "//tools/js:writePrettyFile.ts",
         "//:package.json",
         "//:.prettierrc",
         "@npm//yargs",
@@ -101,10 +101,10 @@ filegroup(
     name = "runtime_source",
     srcs = glob(
         [
-            "internal/**/*",
-            "scripts/**/*",
             "src/**/*",
-            "styles/**/*",
+            "static/**/*",
+            # for test only
+            "internal/**/*",
         ],
         exclude = [
             "**/*.test.*",

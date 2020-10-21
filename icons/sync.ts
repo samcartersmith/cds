@@ -1,3 +1,4 @@
+import { NodePath, parse, transformFromAstSync, types as t } from '@babel/core';
 import axios from 'axios';
 import * as chalk from 'chalk';
 import * as fs from 'fs';
@@ -5,6 +6,7 @@ import * as ora from 'ora';
 import * as path from 'path';
 import { promisify } from 'util';
 
+import { writePrettyFile } from '../../../../tools/js/writePrettyFile';
 import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 
@@ -15,6 +17,8 @@ const OUT_DIR = path.join(__dirname, 'svg/');
 
 const figmaClient = FigmaClient(HANNAH_PERSONAL_ACCESS_TOKEN);
 const writeFile = promisify(fs.writeFile);
+
+const prettierConfig = path.resolve('../../../../.prettierrc');
 
 type IconName = {
   type: 'icon';
@@ -35,6 +39,51 @@ const normalizeIconName = (imageName: string): IconName | void => {
     name,
     style,
   };
+};
+
+const updateIconProps = (filename: string, iconsInfoArray: IconName[]) => {
+  const code = fs.readFileSync(filename);
+  const ast = parse(code.toString(), {
+    presets: ['@babel/preset-typescript'],
+    filename: filename,
+  });
+  if (!ast) {
+    throw new Error(`Failed to parse the code for ${filename}.`);
+  }
+  // get unique icon kinds
+  const iconKinds = new Set<string>(iconsInfoArray.map(({ name }) => name));
+  // order icon names alphabetically
+  const kinds = Array.from(iconKinds).sort((first, second) => (first < second ? -1 : 1));
+  const result = transformFromAstSync(ast, code.toString(), {
+    plugins: [
+      () => ({
+        visitor: {
+          TSTypeAliasDeclaration(nodePath: NodePath<t.TSTypeAliasDeclaration>) {
+            if (nodePath.node.id.name === 'IconKind') {
+              nodePath.replaceWith(
+                t.tsTypeAliasDeclaration(
+                  t.identifier('IconKind'),
+                  null,
+                  t.tsUnionType(kinds.map(kind => t.tsLiteralType(t.stringLiteral(kind))))
+                )
+              );
+            }
+            nodePath.skip();
+          },
+        },
+      }),
+    ],
+  });
+  if (result && result.code) {
+    return writePrettyFile({
+      outFile: filename,
+      contents: result.code,
+      prettierConfig,
+      logInfo: false,
+    });
+  } else {
+    throw new Error(`Failed to transform the code to update IconKind for ${filename}.`);
+  }
 };
 
 const sync = async () => {
@@ -58,7 +107,6 @@ const sync = async () => {
       );
       return;
     }
-
     const { components } = iconsFileNode;
     // Filter out non icon components
     const iconsInfo: { [key: string]: IconName } = {};
@@ -71,7 +119,6 @@ const sync = async () => {
         iconComponents[id] = component;
       }
     }
-
     const iconIds = Object.keys(iconsInfo);
     spinner.text = `GET image urls for ${iconIds.length} icons in the figma node.`;
     const {
@@ -82,31 +129,39 @@ const sync = async () => {
       console.error(imageError);
       return;
     }
-
     spinner.text = 'Download svg images from urls in parallel.';
     const requests = Object.values(images).map(url => axios.get(url));
     const responses = await Promise.all(requests);
-
     spinner.text = 'Write svg icons to files.';
     if (fs.existsSync(OUT_DIR)) {
       fs.rmdirSync(OUT_DIR, { recursive: true });
     }
     fs.mkdirSync(OUT_DIR);
-    const writeSvgPromises = responses.map((res, index) => {
+    const writePromises: (Promise<unknown> | undefined)[] = responses.map((res, index) => {
       const id = iconIds[index];
       if (!res.data) {
         delete iconComponents[id];
         return;
       }
-
       const { type, name, size, style } = iconsInfo[id];
       return writeFile(path.join(OUT_DIR, `${[type, name, size, style].join('-')}.svg`), res.data);
     });
-    fs.writeFileSync(
-      path.resolve(__dirname, './manifest.json'),
-      JSON.stringify(iconComponents, null, 2)
+    writePromises.push(
+      writeFile(path.resolve(__dirname, './manifest.json'), JSON.stringify(iconComponents, null, 2))
     );
-    await Promise.all(writeSvgPromises);
+
+    const iconPropsFile = path.resolve(__dirname, './Icon/IconProps.ts');
+    if (fs.existsSync(iconPropsFile)) {
+      writePromises.push(updateIconProps(iconPropsFile, Object.values(iconsInfo)));
+    } else {
+      spinner.warn(
+        `${chalk.yellow(
+          'warn'
+        )} Cannot find IconProps file at ${iconPropsFile}. IconKind type is not updated. Please update the path in the script if the file has moved.`
+      );
+    }
+
+    await Promise.all(writePromises);
 
     spinner.succeed(
       `${chalk.greenBright('success')} Downloaded CDS ${

@@ -93,3 +93,15 @@ filegroup(
     ),
     visibility = ["//visibility:public"],
 )
+
+filegroup(
+    name = "runtime_source",
+    srcs = glob(
+        [
+            "Icon/*",
+            "react/*",
+            "styles.css",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
