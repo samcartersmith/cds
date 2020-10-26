@@ -12,7 +12,7 @@ const tabularNumber = css`
   font-feature-settings: 'tnum';
 `;
 
-<% Object.entries(typography).forEach(([name, { tag, tnum = false }]) => { %>
+<% Object.entries(typography).forEach(([name, { tag, fontFamily, tnum = false }]) => { %>
     export const Text<%- name %>: React.FC<TextProps> = React.memo(function Text<%- name %>({
         children,
         color,
@@ -20,19 +20,22 @@ const tabularNumber = css`
         textAlign = 'start',
         noWrap = false,
         tnum = <%- tnum %>,
-        <%_ if (!tag.startsWith('h')) { _%> as: Tag = '<%- tag %>',  <%_ } _%>
+        as <%_ if (!tag.startsWith('h')) { _%> : Tag = '<%- tag %>' <%_ } _%>
     }) {
+        <% if (tag.startsWith('h')) { %> const Tag = as || '<%- tag %>' <% } %>
+
         return (
-            <<%_ if (tag.startsWith('h')) { _%> <%- tag %>  <%_ } else { _%> Tag <%_ }_%>
+            <Tag
                 style={{ display, color, textAlign }}
                 className={cx(
+                    styles.<%- fontFamily.toLowerCase() %>,
                     styles.<%- name.toLowerCase() %>,
                     noWrap && noLineWrap,
                     tnum && tabularNumber
                 )}
             >
                {children}
-            </<%_ if (tag.startsWith('h')) { _%> <%- tag %>  <%_ } else { _%> Tag <%_ }_%>>
+            </Tag>
         );
     });
 <% }) %>

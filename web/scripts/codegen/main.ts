@@ -1,4 +1,4 @@
-import { typography } from '@cb/design-system-web/primitives/typography/typography';
+import { typography, fallbackStack } from '@cb/design-system-web/primitives/typography/typography';
 import * as chalk from 'chalk';
 import * as ejs from 'ejs';
 import * as path from 'path';
@@ -68,6 +68,7 @@ const generateStyles = () => {
   generateFromTemplate({
     template: 'primitives/typography/styles.ejs',
     data: {
+      fallbackStack,
       styleObjects: genericTypeStyles,
     },
     logInfo: 'typography styles',

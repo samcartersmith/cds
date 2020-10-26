@@ -1,7 +1,3 @@
-export type HtmlHeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-export type HtmlNonHeadingTextTags = 'div' | 'p' | 'div';
-export type HtmlTextTags = HtmlHeadingTags | HtmlNonHeadingTextTags;
-
 export enum FontWeight {
   Regular = 400,
   Medium = 500,
@@ -13,13 +9,8 @@ export const xHeight = {
   Inter: 0.55,
 };
 
-const fallbackStack =
+export const fallbackStack =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
-
-export const fontStack = {
-  Graphik: `'Graphik', 'Inter', ${fallbackStack}`,
-  Inter: `'Inter', 'Graphik', ${fallbackStack}`,
-};
 
 export type TypeVariant = {
   /**
@@ -138,3 +129,17 @@ export const typography = {
 };
 
 export type Typography = keyof typeof typography;
+export type HtmlHeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type HtmlNonHeadingTextTags =
+  | 'div'
+  | 'p'
+  | 'span'
+  | 'blockquote'
+  | 'code'
+  | 'pre'
+  | 'li'
+  | 'del'
+  | 'ins'
+  | 'sup'
+  | 'sub';
+export type HtmlTextTags = HtmlHeadingTags | HtmlNonHeadingTextTags;

@@ -3,23 +3,23 @@ load("//tools:def.bzl", "pkg_zip", "syn_deployable", "syn_file_asset")
 pkg_zip(
     name = "bundled_storybook_master",
     srcs = [
-        "//eng/shared/design-system/web:storybook_build",
+        "//eng/shared/design-system/web:storybook",
     ],
-    remap_paths = {"{gendir}/eng/shared/design-system/web/storybook_build": "master"},
+    remap_paths = {"{gendir}/eng/shared/design-system/web/storybook": "master"},
     visibility = ["//visibility:public"],
 )
 
 pkg_zip(
     name = "bundled_storybook_feature",
     srcs = [
-        "//eng/shared/design-system/web:storybook_build",
+        "//eng/shared/design-system/web:storybook",
     ],
-    remap_paths = {"{gendir}/eng/shared/design-system/web/storybook_build": "feature/YOUR_FEATURE_BRANCH_NAME"},
+    remap_paths = {"{gendir}/eng/shared/design-system/web/storybook": "feature/YOUR_FEATURE_BRANCH_NAME"},
     visibility = ["//visibility:public"],
 )
 
 syn_deployable(
-    name = "design-system",
+    name = "storybook",
     assets = [
         syn_file_asset(
             name = "bundled_storybook_asset",
@@ -33,7 +33,7 @@ syn_deployable(
 )
 
 syn_deployable(
-    name = "design-system-feature",
+    name = "storybook_feature",
     assets = [
         syn_file_asset(
             name = "bundled_storybook_asset_feature",

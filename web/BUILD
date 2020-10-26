@@ -169,7 +169,7 @@ filegroup(
 )
 
 build_storybook(
-    name = "storybook_build",
+    name = "storybook",
     args = [
         "-c eng/shared/design-system/web/.storybook",
         "-s eng/shared/design-system/web/static",

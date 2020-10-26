@@ -23,14 +23,17 @@ export const TextDisplay1: React.FC<TextProps> = React.memo(function TextDisplay
   textAlign = 'start',
   noWrap = false,
   tnum = false,
+  as,
 }) {
+  const Tag = as || 'h1';
+
   return (
-    <h1
+    <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.display1, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.graphik, styles.display1, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
-    </h1>
+    </Tag>
   );
 });
 
@@ -41,14 +44,17 @@ export const TextDisplay2: React.FC<TextProps> = React.memo(function TextDisplay
   textAlign = 'start',
   noWrap = false,
   tnum = false,
+  as,
 }) {
+  const Tag = as || 'h2';
+
   return (
-    <h2
+    <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.display2, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.graphik, styles.display2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
-    </h2>
+    </Tag>
   );
 });
 
@@ -59,14 +65,17 @@ export const TextTitle1: React.FC<TextProps> = React.memo(function TextTitle1({
   textAlign = 'start',
   noWrap = false,
   tnum = false,
+  as,
 }) {
+  const Tag = as || 'h3';
+
   return (
-    <h3
+    <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.title1, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.graphik, styles.title1, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
-    </h3>
+    </Tag>
   );
 });
 
@@ -77,14 +86,17 @@ export const TextTitle2: React.FC<TextProps> = React.memo(function TextTitle2({
   textAlign = 'start',
   noWrap = false,
   tnum = false,
+  as,
 }) {
+  const Tag = as || 'h4';
+
   return (
-    <h4
+    <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.title2, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.graphik, styles.title2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
-    </h4>
+    </Tag>
   );
 });
 
@@ -95,14 +107,17 @@ export const TextTitle3: React.FC<TextProps> = React.memo(function TextTitle3({
   textAlign = 'start',
   noWrap = false,
   tnum = false,
+  as,
 }) {
+  const Tag = as || 'h5';
+
   return (
-    <h5
+    <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.title3, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.graphik, styles.title3, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
-    </h5>
+    </Tag>
   );
 });
 
@@ -113,14 +128,17 @@ export const TextHeadline: React.FC<TextProps> = React.memo(function TextHeadlin
   textAlign = 'start',
   noWrap = false,
   tnum = false,
+  as,
 }) {
+  const Tag = as || 'h6';
+
   return (
-    <h6
+    <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.headline, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.inter, styles.headline, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
-    </h6>
+    </Tag>
   );
 });
 
@@ -136,7 +154,7 @@ export const TextBody: React.FC<TextProps> = React.memo(function TextBody({
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.body, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.inter, styles.body, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -155,7 +173,7 @@ export const TextLabel1: React.FC<TextProps> = React.memo(function TextLabel1({
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.label1, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.inter, styles.label1, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -174,7 +192,7 @@ export const TextLabel2: React.FC<TextProps> = React.memo(function TextLabel2({
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.label2, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.inter, styles.label2, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -193,7 +211,7 @@ export const TextCaption: React.FC<TextProps> = React.memo(function TextCaption(
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.caption, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.inter, styles.caption, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>
@@ -212,7 +230,7 @@ export const TextLegal: React.FC<TextProps> = React.memo(function TextLegal({
   return (
     <Tag
       style={{ display, color, textAlign }}
-      className={cx(styles.legal, noWrap && noLineWrap, tnum && tabularNumber)}
+      className={cx(styles.inter, styles.legal, noWrap && noLineWrap, tnum && tabularNumber)}
     >
       {children}
     </Tag>

@@ -1,9 +1,7 @@
 import { StoryContainer, withScale } from '../internal/decorators';
 import { css } from 'linaria';
 import { DEFAULT_SCALE } from '@cb/design-system-web/primitives/scale/scale';
-
-// font face declarations
-import '@cb/design-system-web/primitives/typography/fontFaces';
+import '@cb/design-system-web/globalStyles';
 // CSS reset
 import 'destyle.css';
 

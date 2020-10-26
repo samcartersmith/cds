@@ -15,7 +15,7 @@ import * as Type from './Text';
 
 `Text` is a component for showing text in different typography. The typography sizes vary based on the scale of the closest ancestor that has a scale class applied. If no scale class is applied to the entire document, the text components will not have the appropriate typography styles because styles are defined by CSS variables and the scale classes define the values for the CSS variables. See [design documentation](https://docs.google.com/document/d/1-pl0GcLzJ3RAnkh3A5s6VpvVwNnndPcptlKjMj_3jRQ/edit).
 
-For accessibility purpose, heading tags, i.e. `h1`-`h6`, imply hierarchical information and thus it is important for heading tags to be applied for heading typographies. CDS enforces that typography styles for h1-h3 are defined and h4-h6 are optional. For non-heading typographies like body, label, and legal, you can use any html tags for text that makes the most sense for you by using `as` prop.
+For accessibility purpose, heading tags, i.e. `h1`-`h6`, carry information hierarchy and therefore it is important for heading tags to be used consistently. They also matter for SEO. CDS enforces that typography styles for h1-h6 cannot be changed. Any typography can be used with any nonheading text html tag of choice.
 
 <Canvas withToolbar>
   <Story name="Normal" decorators={[withStoryLabel('Normal (Large)')]}>
@@ -115,4 +115,4 @@ import { large } from '@cb/design-system-web/primitives'
 
 # API
 
-<ArgsTable components={{ NonHeading: Type.TextBody, Heading: Type.TextDisplay1 }} />
+<ArgsTable of={Type.TextBody} />
