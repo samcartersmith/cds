@@ -8,6 +8,8 @@ import { TextProps } from '@cb/design-system-web/components/Text/TextProps';
 import * as styles from '@cb/design-system-web/primitives/typography/styles';
 import { css, cx } from 'linaria';
 
+export type { TextProps };
+
 const noLineWrap = css`
   white-space: nowrap;
 `;
