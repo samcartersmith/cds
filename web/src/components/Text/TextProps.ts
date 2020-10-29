@@ -4,15 +4,13 @@ export type TextProps = {
   /**
    * Text to be styled and wrapped with appropriate html tag.
    */
-  children: React.ReactText | React.ReactText[];
+  children: React.ReactText | (React.ReactElement | React.ReactText)[];
   /**
    * Set text color. Default color will be the text color for the theme.
    */
   color?: string; // TODO (hannah): type this better once palette is defined.
   /**
    * Set CSS display attribute.
-   *
-   * @default 'initial'
    */
   display?: 'block' | 'initial' | 'inline';
   /**

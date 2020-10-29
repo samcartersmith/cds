@@ -10,3 +10,4 @@ All notable changes to this project will be documented in this file.
 - feat(component): Change typography to use css variables by @hannah-jin (#6535)
 - feat(component): Typography styles and Text components by @hannah-jin (#5842)
 - chore: Move to design-system and add components folder and index files by @hannah-jin
+- fix(Text): remove display default value 'initial' by @hannah-jin (#7992)

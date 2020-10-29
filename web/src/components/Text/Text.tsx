@@ -21,7 +21,7 @@ const tabularNumber = css`
 export const TextDisplay1: React.FC<TextProps> = React.memo(function TextDisplay1({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -42,7 +42,7 @@ export const TextDisplay1: React.FC<TextProps> = React.memo(function TextDisplay
 export const TextDisplay2: React.FC<TextProps> = React.memo(function TextDisplay2({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -63,7 +63,7 @@ export const TextDisplay2: React.FC<TextProps> = React.memo(function TextDisplay
 export const TextTitle1: React.FC<TextProps> = React.memo(function TextTitle1({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -84,7 +84,7 @@ export const TextTitle1: React.FC<TextProps> = React.memo(function TextTitle1({
 export const TextTitle2: React.FC<TextProps> = React.memo(function TextTitle2({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -105,7 +105,7 @@ export const TextTitle2: React.FC<TextProps> = React.memo(function TextTitle2({
 export const TextTitle3: React.FC<TextProps> = React.memo(function TextTitle3({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -126,7 +126,7 @@ export const TextTitle3: React.FC<TextProps> = React.memo(function TextTitle3({
 export const TextHeadline: React.FC<TextProps> = React.memo(function TextHeadline({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -147,7 +147,7 @@ export const TextHeadline: React.FC<TextProps> = React.memo(function TextHeadlin
 export const TextBody: React.FC<TextProps> = React.memo(function TextBody({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -166,7 +166,7 @@ export const TextBody: React.FC<TextProps> = React.memo(function TextBody({
 export const TextLabel1: React.FC<TextProps> = React.memo(function TextLabel1({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
@@ -185,7 +185,7 @@ export const TextLabel1: React.FC<TextProps> = React.memo(function TextLabel1({
 export const TextLabel2: React.FC<TextProps> = React.memo(function TextLabel2({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = true,
@@ -204,7 +204,7 @@ export const TextLabel2: React.FC<TextProps> = React.memo(function TextLabel2({
 export const TextCaption: React.FC<TextProps> = React.memo(function TextCaption({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = true,
@@ -223,7 +223,7 @@ export const TextCaption: React.FC<TextProps> = React.memo(function TextCaption(
 export const TextLegal: React.FC<TextProps> = React.memo(function TextLegal({
   children,
   color,
-  display = 'initial',
+  display,
   textAlign = 'start',
   noWrap = false,
   tnum = false,
