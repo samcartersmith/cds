@@ -79,7 +79,7 @@ export const typography = {
     fontWeight: FontWeight.Medium,
   },
   Headline: {
-    tag: 'h6' as const,
+    tag: 'div' as const,
     baseFontSize: 16,
     leading: 5,
     fontFamily: 'Inter' as const,

@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- break(component): Make Text not wrap by default @hannah-jin (#8095)
 - feat(component): Change typography children prop type by @iuliasoimaru (#7566)
 - feat(component): Change typography to use css variables by @hannah-jin (#6535)
 - feat(component): Typography styles and Text components by @hannah-jin (#5842)

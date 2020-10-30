@@ -20,11 +20,11 @@ export type TextProps = {
    */
   textAlign?: 'center' | 'start' | 'end' | 'justify';
   /**
-   * Text will not wrap if `noWrap` is true.
+   * Text will wrap if true. Text does not wrap by default.
    *
    * @default false
    */
-  noWrap?: boolean;
+  wrap?: boolean;
   /**
    * Show numbers in monospace tabular style. It defaults to true for label2 and caption and false
    * in the other typographies.
