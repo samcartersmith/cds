@@ -119,7 +119,7 @@ export const typography = {
     tnum: true,
   },
   Legal: {
-    tag: 'p' as const,
+    tag: 'div' as const,
     baseFontSize: 13,
     leading: 2,
     fontFamily: 'Inter' as const,
