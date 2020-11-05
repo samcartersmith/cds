@@ -5,15 +5,15 @@ export type IconProps = {
    * Specifies the icon size. The actual icon size is determined based on this prop and the
    * current scale.
    */
+
   size: IconSize;
   /** Set the fill color of the icon */
   // TODO: update type to allowed colors
+
   fill?: string;
 };
-
 export type IconSize = 'L' | 'M' | 'S' | 'XS';
 export type Pixels = 32 | 24 | 16 | 12 | 8;
-
 type IconKind =
   | 'allTimeHigh'
   | 'api'
@@ -35,7 +35,9 @@ type IconKind =
   | 'cashUSD'
   | 'chartBar'
   | 'chartPie'
+  | 'chartPieCircle'
   | 'chartVolume'
+  | 'checkbox'
   | 'checkboxChecked'
   | 'checkboxEmpty'
   | 'checkmark'
@@ -51,6 +53,7 @@ type IconKind =
   | 'gauge'
   | 'gavel'
   | 'gear'
+  | 'giftBox'
   | 'globe'
   | 'heart'
   | 'home'
@@ -63,6 +66,7 @@ type IconKind =
   | 'lock'
   | 'marketCap'
   | 'minus'
+  | 'newsFeed'
   | 'notVisible'
   | 'paperAirplane'
   | 'pause'
@@ -81,6 +85,9 @@ type IconKind =
   | 'safe'
   | 'search'
   | 'sofort'
+  | 'soundOff'
+  | 'soundOn'
+  | 'speaker'
   | 'stake'
   | 'star'
   | 'statusDot'
@@ -103,6 +110,7 @@ type IconKind =
   | 'tradingFib'
   | 'tradingHorizLine'
   | 'tradingRectangle'
+  | 'tradingRemove'
   | 'tradingUpArrow'
   | 'tradingVertLine'
   | 'trashCan'

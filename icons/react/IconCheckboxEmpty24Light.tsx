@@ -12,7 +12,7 @@ interface Props
   title?: string;
   titleId?: string;
 }
-const SvgIconHome24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Props) => {
+const SvgIconCheckboxEmpty24Light = ({ fill = '#1652F0', title, titleId, ...props }: Props) => {
   const role = title ? 'img' : 'presentation';
   return (
     <svg
@@ -25,9 +25,9 @@ const SvgIconHome24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Prop
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
-      <path d="M12 0L0 8v16h9V14h6v10h9V8L12 0z" fill={fill} />
+      <path d="M21.5 2.5v19h-19v-19h19zM24 0H0v24h24V0z" fill={fill} />
     </svg>
   );
 };
 
-export default React.memo(SvgIconHome24Heavy);
+export default React.memo(SvgIconCheckboxEmpty24Light);

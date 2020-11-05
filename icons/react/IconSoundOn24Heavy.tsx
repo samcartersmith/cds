@@ -12,7 +12,7 @@ interface Props
   title?: string;
   titleId?: string;
 }
-const SvgIconHome24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Props) => {
+const SvgIconSoundOn24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Props) => {
   const role = title ? 'img' : 'presentation';
   return (
     <svg
@@ -25,9 +25,14 @@ const SvgIconHome24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Prop
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
-      <path d="M12 0L0 8v16h9V14h6v10h9V8L12 0z" fill={fill} />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 7h6l8-7v24l-8-7H0V7zm15-4.95v1.77c4.08.5 7.25 3.97 7.25 8.18 0 4.21-3.17 7.69-7.25 8.18v1.77c5.05-.5 9-4.76 9-9.95 0-5.19-3.95-9.45-9-9.95zm0 14.85v1.77c3.25-.49 5.75-3.29 5.75-6.67S18.25 5.82 15 5.33V7.1a5 5 0 010 9.8z"
+        fill={fill}
+      />
     </svg>
   );
 };
 
-export default React.memo(SvgIconHome24Heavy);
+export default React.memo(SvgIconSoundOn24Heavy);

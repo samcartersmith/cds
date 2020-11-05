@@ -279,11 +279,6 @@
     "name": "Icon/caretLeft_24_heavy",
     "description": ""
   },
-  "2375:11955": {
-    "key": "451a7b03feeb2468838d1b8e544a1de058677170",
-    "name": "Icon/trashCan_24_heavy",
-    "description": ""
-  },
   "2207:14": {
     "key": "648f2421ce11847479c38442ce3aa822b9e113d1",
     "name": "Icon/caretDown_24_heavy",
@@ -379,14 +374,29 @@
     "name": "Icon/api_12_heavy",
     "description": ""
   },
+  "2430:177": {
+    "key": "fd1d100118b4267462afcec10a6a947c397810c7",
+    "name": "Icon/soundOn_12_heavy",
+    "description": ""
+  },
   "2232:11362": {
     "key": "19e685a02e84809419b883f25770c5f996f02785",
     "name": "Icon/stake_12_heavy",
     "description": ""
   },
+  "2430:173": {
+    "key": "b038ef8fa9f2bfbf2af3fb7b2503d7b80a5c51f1",
+    "name": "Icon/soundOff_12_heavy",
+    "description": ""
+  },
   "2309:77": {
     "key": "c3bbc338d2a65e2b6f86b2b33fd885abbe3cf24b",
     "name": "Icon/safe_12_heavy",
+    "description": ""
+  },
+  "2430:172": {
+    "key": "9855d9f50263446ad7714b9d8a7033bc81a81331",
+    "name": "Icon/speaker_12_heavy",
     "description": ""
   },
   "1292:234": {
@@ -589,11 +599,6 @@
     "name": "Icon/initiator_12_heavy",
     "description": ""
   },
-  "1292:100": {
-    "key": "7f5c73f09fcb282437a0faf165f783b5ed877cbc",
-    "name": "Icon/trashCan_12_heavy",
-    "description": ""
-  },
   "1292:99": {
     "key": "9c5cd086ab933c750750af60db713a9973d6537c",
     "name": "Icon/circulatingSupply_12_heavy",
@@ -612,6 +617,11 @@
   "1292:78": {
     "key": "e825b6e112b13350c56a5365ab6905e5cd961be9",
     "name": "Icon/chartPie_12_heavy",
+    "description": ""
+  },
+  "2611:359": {
+    "key": "39037a1287f0eb248ff2b2583260fa9993c31ac5",
+    "name": "Icon/chartPieCircle_12_heavy",
     "description": ""
   },
   "1292:96": {
@@ -667,6 +677,16 @@
   "2273:15": {
     "key": "1327fd455c3faf22974a154aec5615dd7610e934",
     "name": "Icon/info_12_heavy",
+    "description": ""
+  },
+  "2611:35": {
+    "key": "0cfb3a60d6319cd7942b52779c0e7c065deb0b40",
+    "name": "Icon/giftBox_12_heavy",
+    "description": ""
+  },
+  "2611:325": {
+    "key": "701455b7226b58c7bcbd94ca2d2eb52c3e46bcb5",
+    "name": "Icon/newsFeed_12_heavy",
     "description": ""
   },
   "1792:162": {
@@ -744,14 +764,29 @@
     "name": "Icon/api_24_heavy",
     "description": ""
   },
+  "2430:175": {
+    "key": "a1fb9d1093ada6aae12001bed74d4ad4ae2073c6",
+    "name": "Icon/soundOn_24_heavy",
+    "description": ""
+  },
   "2232:11361": {
     "key": "7d2893ffceb283898e21d1a350a64791d02a445e",
     "name": "Icon/stake_24_heavy",
     "description": ""
   },
+  "2430:174": {
+    "key": "108ab53ffc3b7f35abda7abf143667c9d675d256",
+    "name": "Icon/soundOff_24_heavy",
+    "description": ""
+  },
   "2309:76": {
     "key": "e311a51930be3b099c5fc5eab73c17629409b4da",
     "name": "Icon/safe_24_heavy",
+    "description": ""
+  },
+  "2430:170": {
+    "key": "18c0a2bd68a5a07a022d5c44b66dacd78feb781d",
+    "name": "Icon/speaker_24_heavy",
     "description": ""
   },
   "1792:118": {
@@ -779,14 +814,29 @@
     "name": "Icon/api_16_heavy",
     "description": ""
   },
+  "2430:171": {
+    "key": "a29bbeb67b25b1481325ada154a08388af5f42f8",
+    "name": "Icon/soundOn_16_heavy",
+    "description": ""
+  },
   "2232:11360": {
     "key": "4fbfb172639f12e17bde2a637fafc44e5d600c02",
     "name": "Icon/stake_16_heavy",
     "description": ""
   },
+  "2430:169": {
+    "key": "e746581305da7e59bea6589f509aca268be5be9f",
+    "name": "Icon/soundOff_16_heavy",
+    "description": ""
+  },
   "2309:75": {
     "key": "ce5e5a495609f61000596d187e576410192be484",
     "name": "Icon/safe_16_heavy",
+    "description": ""
+  },
+  "2430:176": {
+    "key": "240d2531bcb6f1abe600af078936f08d0f508eb0",
+    "name": "Icon/speaker_16_heavy",
     "description": ""
   },
   "1292:202": {
@@ -1084,6 +1134,16 @@
     "name": "Icon/copy_24_light",
     "description": ""
   },
+  "2515:949": {
+    "key": "3edde38df1eb3addc565139d89018b800e451d45",
+    "name": "Icon/checkbox_24_light",
+    "description": ""
+  },
+  "2515:948": {
+    "key": "3ad07a46af49404352dff5237307d919f30ebff3",
+    "name": "Icon/checkboxEmpty_24_light",
+    "description": ""
+  },
   "1436:42": {
     "key": "c318e03dea47b32c82d15d84e055ece47598f6fa",
     "name": "Icon/copy_12_light",
@@ -1204,6 +1264,11 @@
     "name": "Icon/close_12_light",
     "description": ""
   },
+  "2694:1276": {
+    "key": "c0f42c8b508dc63225e12e70c71274ec53ebb788",
+    "name": "Icon/tradingRemove_12_light",
+    "description": ""
+  },
   "2375:12041": {
     "key": "084701c9b541ba77517a2655c0d8593ca9a7d813",
     "name": "Icon/undo_24_light",
@@ -1239,9 +1304,19 @@
     "name": "Icon/plus_8_light",
     "description": ""
   },
+  "2694:1259": {
+    "key": "e893c482968e42169073bc3d6eb05b6e53cfd713",
+    "name": "Icon/close_8_light",
+    "description": ""
+  },
   "2375:12176": {
     "key": "e3129388f53ecdd69fa64ecdba2520562cbb9340",
     "name": "Icon/notVisible_12_light",
+    "description": ""
+  },
+  "2611:34": {
+    "key": "f7e5036f143cf1c1f152eed1a4cf53b93a88a900",
+    "name": "Icon/giftBox_12_light",
     "description": ""
   },
   "2375:12175": {
@@ -1337,11 +1412,6 @@
   "1766:10686": {
     "key": "02c913e630ec3f56a25facc2dd2ac71573811459",
     "name": "Icon/caretLeft_16_heavy",
-    "description": ""
-  },
-  "2375:11954": {
-    "key": "9f3b2fadc498381d94b84a4354dc8e41dfb9e7ac",
-    "name": "Icon/trashCan_16_heavy",
     "description": ""
   },
   "1697:10593": {
@@ -1487,6 +1557,21 @@
   "2375:11956": {
     "key": "7c92772811fb2fd6df7b3a96ea1d4feb09b9c4b2",
     "name": "Icon/tradingRectangle_12_light",
+    "description": ""
+  },
+  "2375:11955": {
+    "key": "451a7b03feeb2468838d1b8e544a1de058677170",
+    "name": "Icon/trashCan_24_heavy",
+    "description": ""
+  },
+  "1292:100": {
+    "key": "7f5c73f09fcb282437a0faf165f783b5ed877cbc",
+    "name": "Icon/trashCan_12_heavy",
+    "description": ""
+  },
+  "2375:11954": {
+    "key": "9f3b2fadc498381d94b84a4354dc8e41dfb9e7ac",
+    "name": "Icon/trashCan_16_heavy",
     "description": ""
   }
 }

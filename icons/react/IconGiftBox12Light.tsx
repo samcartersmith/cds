@@ -12,12 +12,12 @@ interface Props
   title?: string;
   titleId?: string;
 }
-const SvgIconHome24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Props) => {
+const SvgIconGiftBox12Light = ({ fill = '#1652F0', title, titleId, ...props }: Props) => {
   const role = title ? 'img' : 'presentation';
   return (
     <svg
-      width={24}
-      height={24}
+      width={12}
+      height={12}
       fill="none"
       className="cds-icon"
       role={role}
@@ -25,9 +25,12 @@ const SvgIconHome24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Prop
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
-      <path d="M12 0L0 8v16h9V14h6v10h9V8L12 0z" fill={fill} />
+      <path
+        d="M8.5 3c.83 0 1.5-.67 1.5-1.5S9.33 0 8.5 0C6.64 0 6 3 6 3s-.64-3-2.5-3C2.67 0 2 .67 2 1.5S2.67 3 3.5 3H0v9h12V3H8.5zm-7 7.5v-6h3.75v6H1.5zm9 0H6.75v-6h3.75v6z"
+        fill={fill}
+      />
     </svg>
   );
 };
 
-export default React.memo(SvgIconHome24Heavy);
+export default React.memo(SvgIconGiftBox12Light);

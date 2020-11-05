@@ -25,7 +25,7 @@ const SvgIconHome16Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Prop
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
-      <path d="M8 0L0 6v10h6V9h4v7h6V6L8 0z" fill={fill} />
+      <path d="M8 0L0 5v11h6V9h4v7h6V5L8 0z" fill={fill} />
     </svg>
   );
 };
