@@ -20,4 +20,42 @@ export const Type = {
       allTypeStyles: stylesForAllScales,
     };
   },
+  generateScaleTable: () => {
+    const styles = Type.generateStylesForAllScales();
+
+    // include type names
+    const tableBody = Object.keys(typography).map(typeName => [`\`${typeName}\``]);
+    // concat type styles with corresponding type name
+    Object.values(styles).forEach(typeStylesAtScale => {
+      Object.values(typeStylesAtScale).forEach((style, index) =>
+        tableBody[index].push(`${style['font-size']} / ${style['line-height']}`)
+      );
+    });
+
+    return mdTable([
+      Object.entries(scales).map(
+        ([scale, offset]) => `${scale} (${offset > 0 ? `+${offset}` : offset})`
+      ),
+      ...tableBody,
+    ]);
+  },
+};
+
+const mdTable = ([header, ...rows]: string[][]) => {
+  const numCol = header.length;
+  header.unshift('', '');
+  header.push('');
+  const divider = Array(numCol).fill('---');
+  divider.unshift('');
+  divider.push('');
+  const tableBody = rows.map(row => {
+    row.unshift('');
+    row.push('');
+    return `${row.join(' | ')}`;
+  });
+
+  return `${header.join(' | ')}
+  ${divider.join(' | ')}
+  ${tableBody.join('\n')}
+  `;
 };

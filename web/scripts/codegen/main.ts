@@ -1,6 +1,7 @@
 import { typography, fallbackStack } from '@cb/design-system-web/primitives/typography/typography';
 import * as chalk from 'chalk';
 import * as ejs from 'ejs';
+import * as fs from 'fs';
 import * as path from 'path';
 
 import { writePrettyFile } from '../../../../../../tools/js/writePrettyFile';
@@ -75,9 +76,44 @@ const generateStyles = () => {
   });
 };
 
+const updateTextStory = () => {
+  const typeStylesTable = Type.generateScaleTable();
+  const textStoryFile = path.join(srcDir, 'components/Text/Text.stories.mdx');
+
+  if (fs.existsSync(textStoryFile)) {
+    const textStory = fs.readFileSync(textStoryFile);
+    const tableStart = '<!-- styles table start -->';
+    const tableEnd = '<!-- styles table end -->';
+    const sectionStartIndex = textStory.indexOf(tableStart);
+    const sectionEndIndex = textStory.indexOf(tableEnd);
+    if (sectionStartIndex !== -1) {
+      const updatedTextStory = `${textStory.slice(
+        0,
+        sectionStartIndex
+      )}${tableStart}\n\n${typeStylesTable}\n${textStory.slice(sectionEndIndex, textStory.length)}`;
+
+      writePrettyFile({
+        prettierConfig,
+        outFile: textStoryFile,
+        contents: updatedTextStory,
+        parser: 'mdx',
+      });
+    } else {
+      console.warn(
+        `${chalk.yellow('warn')} Could not find styles table section in Text story to update.}`
+      );
+    }
+  } else {
+    console.warn(
+      `${chalk.yellow(
+        'warn'
+      )} Text story has moved. Please update path in codegen script ${path.resolve(__filename)}.}`
+    );
+  }
+};
+
 const main = async () => {
   generateStyles();
-
   generateFromTemplate({
     template: 'components/Text.ejs',
     data: { typography },
@@ -85,6 +121,7 @@ const main = async () => {
     extension: '.tsx',
     shouldCreateFolder: true,
   });
+  updateTextStory();
 };
 
 main();

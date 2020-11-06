@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { TextLabel1 } from '@cb/design-system-web/components/Text/Text';
 import { DEFAULT_SCALE, scales } from '@cb/design-system-web/primitives/scale/scale';
 import * as styles from '@cb/design-system-web/primitives/scale/styles';
+import { fallbackStack } from '@cb/design-system-web/primitives/typography/typography';
 import { css } from 'linaria';
 
 type GetStory = () => React.ReactNode;
@@ -37,11 +37,16 @@ export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }
           background-color: #eee;
           border-radius: 4px;
           padding: 4px 8px;
+
+          font-family: ${fallbackStack};
+          font-size: 16px;
+          font-weight: 500;
+
           /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
           width: fit-content;
         `}
       >
-        <TextLabel1>{name}</TextLabel1>
+        {name}
       </div>
       {children}
     </div>

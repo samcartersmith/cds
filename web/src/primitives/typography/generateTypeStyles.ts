@@ -10,9 +10,12 @@ import { decamelizeKeys } from 'humps';
 
 type GeneratedTypeStyles = {
   [key in Scale]: {
-    // `decamelizeKeys` return type is object
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    [key in Typography]: object;
+    [key in Typography]: {
+      'font-size': string;
+      'line-height': string;
+      'letter-spacing': string;
+      'font-weight': string;
+    };
   };
 };
 
