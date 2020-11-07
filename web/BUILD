@@ -78,8 +78,8 @@ pkg_npm(
         "README.md",
     ],
     deps = [
+        "tsconfig.json",
         ":package.json",
-        ":tsconfig",
     ],
 )
 
