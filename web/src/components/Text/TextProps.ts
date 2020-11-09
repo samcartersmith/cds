@@ -1,10 +1,12 @@
+import type { ReactChild, ReactFragment } from 'react';
+
 import type { HtmlNonHeadingTextTags } from '@cb/design-system-web/primitives/typography/typography';
 
 export type TextProps = {
   /**
    * Text to be styled and wrapped with appropriate html tag.
    */
-  children: React.ReactText | (React.ReactElement | React.ReactText)[];
+  children: ReactChild | ReactFragment;
   /**
    * Set text color. Default color will be the text color for the theme.
    */
