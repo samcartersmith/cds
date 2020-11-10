@@ -4,6 +4,7 @@ load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("@npm_bazel_typescript//:index.bzl", "ts_project")
 load("//tools/js:eslint_test.bzl", "eslint_test")
 load("//tools/js:stylelint_test.bzl", "stylelint_test")
+load("//tools/js:node_package_gen.bzl", "node_package_gen")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 
 cds_dependencies = [
@@ -44,32 +45,11 @@ ts_project(
 )
 
 # Generate package.json file
-ts_node(
+node_package_gen(
     name = "package_json_gen",
-    outs = ["package.json"],
-    args = [
-        "-T $(execpath scripts/genPackageJson.ts)",
-        "--baseFile $(execpath basepackage.json)",
-        "--rootFile $(execpath //:package.json)",
-        "--outputFile $(@)",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ] + [
-        "--deps",
-        ",".join(cds_dependencies),
-    ] + [
-        "--peerDeps",
-        ",".join(cds_peer_dependencies),
-    ],
-    data = [
-        "scripts/genPackageJson.ts",
-        "basepackage.json",
-        "//tools/js:writePrettyFile.ts",
-        "//:package.json",
-        "//:.prettierrc",
-        "@npm//yargs",
-        "@npm//prettier",
-        "@npm//chalk",
-    ] + cds_dependencies + cds_peer_dependencies,
+    dependencies = cds_dependencies,
+    package_metadata = "basepackage.json",
+    peer_dependencies = cds_peer_dependencies,
 )
 
 pkg_npm(
@@ -79,7 +59,7 @@ pkg_npm(
     ],
     deps = [
         "tsconfig.json",
-        ":package.json",
+        ":package_json_gen",
     ],
 )
 
