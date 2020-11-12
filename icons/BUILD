@@ -86,6 +86,7 @@ filegroup(
     name = "icons_story_source",
     srcs = glob(
         include = [
+            "Icon/**/*",
             "react/**/*.tsx",
             "story/**/*",
             "styles.css",

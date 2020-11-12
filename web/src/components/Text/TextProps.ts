@@ -34,8 +34,8 @@ export type TextProps = {
   tnum?: boolean;
   /**
    * Use a different non heading html text tag than the default one. The default element is `div`
-   * for Body, Label1, Label2, Caption, and `p` for Legal. `h1`-`h6` are default for Display1,
-   * Display2, Title1, Title2, Title3, and Headline. It is not possible to override the html tag to
+   * for Headline, Body, Label1, Label2, Caption, and `p` for Legal. `h1`-`h5` are default for
+   * Display1, Display2, Title1, Title2, Title3. It is not possible to override the html tag to
    * another heading, but it is possible to use a heading typography as non heading.
    */
   as?: HtmlNonHeadingTextTags;

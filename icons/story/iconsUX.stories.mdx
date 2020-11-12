@@ -1,4 +1,5 @@
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { IconHeavy } from '@cb/design-system-icons/Icon/IconHeavy';
+import { Meta, Canvas, Story, ArgsTable, Source } from '@storybook/addon-docs/blocks';
 import * as path from 'path';
 /**
  * Import all .tsx files (icons) from directory
@@ -15,22 +16,43 @@ const importAll = directory => {
 };
 importAll(require.context('eng/shared/design-system/icons/react/', false, /\.tsx$/));
 
-<Meta title="Icons/UX" />
+<Meta
+  title="Icons/UX"
+  component={IconHeavy}
+  argTypes={{
+    title: { control: 'text' },
+  }}
+/>
 
 # Icons
 
-There are 5 possible sizes for an icon **8px, 12px, 16px, 24px, and 32px**. There are also two illustration styles **heavy** and **light**. Each kind of icon will offer some of those sizes and eventually both styles.
+There are 5 possible _dimensions_ for an icon **8px, 12px, 16px, 24px, and 32px**. There are also two illustration _styles_ **heavy** and **light**. Each kind of icon will offer some of those sizes and eventually both styles. When using icons in applications that are wrapped in CDS ScaleProvider, use the relative _size_ enums **XS, S, M, L**. The icon components `IconHeavy` and `IconLight` will pick the correct pixel dimension icon asset for the current scale. On web, the icons are rendered as inline svgs, allowing you to pass valid svg html attributes to it.
+
+<Source
+  code={`
+import { IconHeavy } from '@cb/design-system-icons'
+import { ScaleProvider } from '@cb/design-system-web/primitives'\n
+<ScaleProvider value="large">
+  <IconHeavy kind="bell" size="M" title="notifications" titleId="ux-icon-story-bell-M" />
+  <IconLight kind="heart" size="L" fill="red" title="like" titleId="ux-icon-story-like-L" />
+</ScaleProvider>
+`}
+/>
+
+## Icon library
+
+Hover over an icon for 3s to see the icon name.
 
 <Canvas>
   <Story name="all">
-    {() => {
+    {args => {
       return (
         <div>
           {Object.keys(icons).map(name => {
             const Component = icons[name];
             return (
               <div key={name} style={{ width: '48px', display: 'inline-block' }}>
-                <Component />
+                <Component title={name.slice(4)} titleId={name} {...args} />
               </div>
             );
           })}
@@ -39,3 +61,9 @@ There are 5 possible sizes for an icon **8px, 12px, 16px, 24px, and 32px**. Ther
     }}
   </Story>
 </Canvas>
+
+## API
+
+Props without any descriptions are native HTML attributes applicable to `<svg>` and can be referenced at [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute).
+
+<ArgsTable of={IconHeavy} />

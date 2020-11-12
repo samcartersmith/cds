@@ -5,7 +5,12 @@ import { pascalize } from 'humps';
 import { useIconPixelSize, placeholderStyles } from './constants';
 import type { IconProps } from './IconProps';
 
-export const IconHeavy: React.FC<IconProps> = React.memo(function IconHeavy({ size, kind, fill }) {
+export const IconHeavy: React.FC<IconProps> = React.memo(function IconHeavy({
+  size,
+  kind,
+  fill,
+  ...props
+}) {
   const px = useIconPixelSize(size);
   const iconName = `Icon${pascalize(kind)}${px}Heavy`;
 
@@ -13,7 +18,7 @@ export const IconHeavy: React.FC<IconProps> = React.memo(function IconHeavy({ si
 
   return (
     <React.Suspense fallback={<div className={placeholderStyles[px]} />}>
-      <LazyIcon fill={fill} />
+      <LazyIcon fill={fill} {...props} />
     </React.Suspense>
   );
 });

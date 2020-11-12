@@ -4,7 +4,7 @@
  */
 import * as React from 'react';
 
-import { TextProps } from '@cb/design-system-web/components/Text/TextProps';
+import type { TextProps } from '@cb/design-system-web/components/Text/TextProps';
 import * as styles from '@cb/design-system-web/primitives/typography/styles';
 import { css, cx } from 'linaria';
 
@@ -225,7 +225,7 @@ export const TextLegal: React.FC<TextProps> = React.memo(function TextLegal({
   textAlign = 'start',
   wrap = false,
   tnum = false,
-  as: Tag = 'p',
+  as: Tag = 'div',
 }) {
   return (
     <Tag
