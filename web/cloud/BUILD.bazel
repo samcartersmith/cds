@@ -1,4 +1,4 @@
-load("//tools:def.bzl", "pkg_zip", "syn_deployable", "syn_file_asset")
+load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_file_asset")
 
 pkg_zip(
     name = "bundled_storybook_master",
@@ -18,6 +18,11 @@ pkg_zip(
     visibility = ["//visibility:public"],
 )
 
+project_settings(
+    caf = False,
+    slack_channels = ["#design-systems-team"],
+)
+
 syn_deployable(
     name = "storybook",
     assets = [
@@ -29,6 +34,7 @@ syn_deployable(
         ),
     ],
     config_name = "storybook",  # config_name (i.e. Codeflow's config_name)
+    continuous_deployment = True,
     target = "development",  # environment to deploy to
 )
 
