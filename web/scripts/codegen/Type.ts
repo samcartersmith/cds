@@ -1,6 +1,7 @@
 import { DEFAULT_SCALE, scales } from '@cb/design-system-web/primitives/scale/scale';
-import { generateTypeStyles } from '@cb/design-system-web/primitives/typography/generateTypeStyles';
 import { typography } from '@cb/design-system-web/primitives/typography/typography';
+
+import { generateTypeStyles } from './generateTypeStyles';
 
 export const Type = {
   generateStylesForAllScales: () => generateTypeStyles(scales, typography),

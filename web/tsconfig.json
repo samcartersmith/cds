@@ -1,9 +1,0 @@
-{
-  "extends": "../../../../tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "target": "es5",
-    "sourceMap": false
-  },
-  "include": ["./src"]
-}

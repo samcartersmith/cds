@@ -1,0 +1,19 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cb/design-system-web/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths"
+      }
+    ]
+  },
+  "include": ["./src"],
+  "exclude": []
+}

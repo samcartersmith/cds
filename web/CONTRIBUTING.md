@@ -24,7 +24,7 @@ Generated code:
 
 ## Package
 
-To enable using CDS-web outside mono/repo, an npm package is available through the Coinbase internal npm registry. The package contains both a commonjs bundle created by rollup at `dist/` and babel transpiled ES modules at `lib/`. The typescript declarations are at `typing`. To split up the CSS code, we wrote a custom babel plugin to take linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
+To enable using CDS-web outside mono/repo, an npm package is available through the Coinbase internal npm registry. The package contains both a commonjs bundle created by rollup at `dist/` and babel transpiled ES modules at `lib/`. The typescript declarations are at `typings`. To split up the CSS code, we wrote a custom babel plugin to take linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
 
 ## Publishing
 

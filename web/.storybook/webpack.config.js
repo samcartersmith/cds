@@ -38,6 +38,7 @@ module.exports = ({ config, tsconfig, environmentFile }) => {
     options: {
       displayName: !isProduction,
       sourceMap: !isProduction,
+      babelOptions: { rootMode: 'upward' },
     },
   });
 

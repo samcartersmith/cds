@@ -1,4 +1,4 @@
-.PHONY: codegen story story.build stylelint
+.PHONY: codegen story story.build story.serve eslint eslint.fix stylelint test.unit test.unit.watch package
 
 codegen:
 	npx ts-node --project ../../../../tsconfig.json --files -r tsconfig-paths/register ./scripts/codegen/main.ts
@@ -9,8 +9,21 @@ story:
 story.build:
 	bazel build :storybook
 
+story.serve:
+	bazel run :storybook_server
+
+lint:
+	bazel run :eslint;
+	bazel run :stylelint;
+
+eslint:
+	bazel run :eslint
+
+eslint.fix:
+	bazel run :eslint -- --fix
+
 stylelint:
-	bazel run //:stylelint -- --report-needless-disables
+	bazel run :stylelint
 
 # Run unit tests with Jest
 test.unit:
@@ -18,3 +31,12 @@ test.unit:
 
 test.unit.watch:
 	cd ../../../../; ./node_modules/jest/bin/jest.js --projects eng/shared/design-system/web --watch;
+
+package:
+	bazel build :package
+
+publish:
+	assume-role development eng-ops && bazel run :corporate
+
+publish.dev:
+	assume-role development eng-ops && bazel run :development
