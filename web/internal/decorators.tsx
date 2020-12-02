@@ -53,10 +53,12 @@ export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }
   );
 };
 
+// eslint-disable-next-line react/display-name
 export const withStoryLabel = (name: string) => (getStory: GetStory) => (
   <StoryNameLabel name={name}>{getStory()}</StoryNameLabel>
 );
 
+// eslint-disable-next-line react/display-name
 export const withScale = (scale: keyof typeof scales = DEFAULT_SCALE) => (getStory: GetStory) => (
   <div className={styles[scale]}>{getStory()}</div>
 );
