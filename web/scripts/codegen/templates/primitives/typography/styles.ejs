@@ -1,13 +1,5 @@
 import { css } from 'linaria';
 
-export const graphik = css`
-    font-family: 'Graphik', 'Inter', <%- fallbackStack %>;
-`
-
-export const inter = css`
-    font-family: 'Inter', 'Graphik', <%- fallbackStack %>;
-`
-
 <% Object.entries(styleObjects).forEach(([name, styles ]) => { %>
     export const <%- name %> = css`
         <%_ Object.entries(styles).map(([attr, value]) => { _%>

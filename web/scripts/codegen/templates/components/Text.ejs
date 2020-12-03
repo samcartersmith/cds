@@ -14,7 +14,7 @@ const tabularNumber = css`
   font-feature-settings: 'tnum';
 `;
 
-<% Object.entries(typography).forEach(([name, { tag, fontFamily, tnum = false }]) => { %>
+<% Object.entries(typography).forEach(([name, { tag, tnum = false }]) => { %>
     export const Text<%- name %>: React.FC<TextProps> = React.memo(function Text<%- name %>({
         children,
         color,
@@ -30,7 +30,6 @@ const tabularNumber = css`
             <Tag
                 style={{ display, color, textAlign }}
                 className={cx(
-                    styles.<%- fontFamily.toLowerCase() %>,
                     styles.<%- name.toLowerCase() %>,
                     !wrap && noLineWrap,
                     tnum && tabularNumber

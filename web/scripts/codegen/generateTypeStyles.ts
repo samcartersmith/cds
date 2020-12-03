@@ -11,6 +11,7 @@ import { decamelizeKeys } from 'humps';
 type GeneratedTypeStyles = {
   [key in Scale]: {
     [key in Typography]: {
+      'font-family': string;
       'font-size': string;
       'line-height': string;
       'letter-spacing': string;

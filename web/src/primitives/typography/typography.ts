@@ -42,7 +42,7 @@ export type TypeVariant = {
   tnum?: boolean;
 };
 
-export const typography = {
+export const typography: { [key: string]: TypeVariant } = {
   Display1: {
     tag: 'h1' as const,
     baseFontSize: 64,

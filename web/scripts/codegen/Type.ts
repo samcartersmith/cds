@@ -1,7 +1,12 @@
 import { DEFAULT_SCALE, scales } from '@cb/design-system-web/primitives/scale/scale';
-import { typography } from '@cb/design-system-web/primitives/typography/typography';
+import { fallbackStack, typography } from '@cb/design-system-web/primitives/typography/typography';
 
 import { generateTypeStyles } from './generateTypeStyles';
+
+const customFontStack = {
+  Graphik: `'Graphik', 'Inter', ${fallbackStack}`,
+  Inter: `'Inter', 'Graphik', ${fallbackStack}`,
+};
 
 export const Type = {
   generateStylesForAllScales: () => generateTypeStyles(scales, typography),
@@ -11,7 +16,9 @@ export const Type = {
     // Use style for a scale to extrapolate styles for each type using CSS variables
     for (const [typePascal, styles] of Object.entries(stylesForAllScales[DEFAULT_SCALE])) {
       const type = typePascal.toLowerCase();
-      genericTypeStyles[type] = {};
+      genericTypeStyles[type] = {
+        'font-family': customFontStack[typography[typePascal].fontFamily],
+      };
       for (const attr of Object.keys(styles)) {
         genericTypeStyles[type][attr] = `var(--${type}-${attr})`;
       }
