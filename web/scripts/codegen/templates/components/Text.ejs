@@ -20,7 +20,7 @@ const tabularNumber = css`
         color,
         display,
         textAlign = 'start',
-        wrap = false,
+        noWrap = false,
         tnum = <%- tnum %>,
         as <%_ if (!tag.startsWith('h')) { _%> : Tag = '<%- tag %>' <%_ } _%>
     }) {
@@ -31,7 +31,7 @@ const tabularNumber = css`
                 style={{ display, color, textAlign }}
                 className={cx(
                     styles.<%- name.toLowerCase() %>,
-                    !wrap && noLineWrap,
+                    noWrap && noLineWrap,
                     tnum && tabularNumber
                 )}
             >

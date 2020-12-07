@@ -6,9 +6,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat(component): Add new icons from figma e.g., speaker, news feed, trading remove, gift box by @maureen-durnin (#8081)
+- break(component): Make Text back to wrap by default @hannah-jin (#)
 - break(component): Make Text not wrap by default @hannah-jin (#8095)
 - change(component): Set default html tag for legal to div @hannah-jin (#8167)
+- feat(component): Add new icons from figma e.g., speaker, news feed, trading remove, gift box by @maureen-durnin (#8081)
 - feat(component): Change typography children prop type by @iuliasoimaru (#7566)
 - feat(component): Change typography to use css variables by @hannah-jin (#6535)
 - feat(component): Typography styles and Text components by @hannah-jin (#5842)
