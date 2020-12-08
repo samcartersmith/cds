@@ -44,8 +44,7 @@ svgr(
     output_dir = True,
 )
 
-load("//tools/js:eslint_test.bzl", "eslint_test")
-load("//tools/js:eslint_fix.bzl", "eslint_fix")
+load("//tools:def.bzl", "eslint_fix", "eslint_test")
 
 fileTypes = [
     "ts",
