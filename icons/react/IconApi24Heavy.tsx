@@ -14,6 +14,7 @@ const SvgIconApi24Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Inter
       width={24}
       height={24}
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       className="cds-icon"
       role={role}
       aria-labelledby={titleId}

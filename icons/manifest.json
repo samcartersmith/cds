@@ -109,6 +109,26 @@
     "name": "Icon/statusDot_24_heavy",
     "description": ""
   },
+  "3120:149": {
+    "key": "d572bca4be539a783bb5ae2da9a6249a62197408",
+    "name": "Icon/more_24_heavy",
+    "description": ""
+  },
+  "3121:69": {
+    "key": "f05c8fc6634b3f19f362de33e7852ec6091b3123",
+    "name": "Icon/sortUp_24_heavy",
+    "description": ""
+  },
+  "3121:67": {
+    "key": "f49d435b52bc5897948e2ee6a5b3c91e0ff44227",
+    "name": "Icon/sortDown_24_heavy",
+    "description": ""
+  },
+  "3168:114": {
+    "key": "1fde88ddf69f3ff936c113d7bde8081bdf65ade6",
+    "name": "Icon/doubeChevronRight_24_heavy",
+    "description": "SEN, Transfer, Chevron, Right, L"
+  },
   "1292:140": {
     "key": "e3acf1e121408e9c8b51e0a61212d9bb00a55eab",
     "name": "Icon/indentityCard_24_heavy",
@@ -463,6 +483,26 @@
     "key": "3ce0bb527dcb9406c15764eabdc4528e3c67cb86",
     "name": "Icon/statusDot_12_heavy",
     "description": ""
+  },
+  "3120:148": {
+    "key": "f0389c1cdbb093ed2a8c227bbe9e53d4bfbaa077",
+    "name": "Icon/more_12_heavy",
+    "description": ""
+  },
+  "3121:66": {
+    "key": "e4f363e0466c021b7eed8067a3a35b127b5487ff",
+    "name": "Icon/sortUp_12_heavy",
+    "description": ""
+  },
+  "3121:68": {
+    "key": "92a8e1562f9e8959571adb551bcce86ea9026a2c",
+    "name": "Icon/sortDown_12_heavy",
+    "description": ""
+  },
+  "3168:113": {
+    "key": "018513be6abe0c5b31e3a511709d3a952e938a8f",
+    "name": "Icon/doubleChevronRight_12_heavy",
+    "description": "SEN, Transfer, Chevron, Right, S"
   },
   "1292:176": {
     "key": "f1f78590fc09887b71e12808a22ef443338cab76",
@@ -914,6 +954,26 @@
     "name": "Icon/statusDot_16_heavy",
     "description": ""
   },
+  "3120:147": {
+    "key": "89ad4802df76fe1e8d49747986fb3797f195f7c5",
+    "name": "Icon/more_16_heavy",
+    "description": ""
+  },
+  "3121:65": {
+    "key": "5556c3b3600ab720e095d9252bea5fd324aea4fe",
+    "name": "Icon/sortUp_16_heavy",
+    "description": ""
+  },
+  "3121:64": {
+    "key": "23813d9a5c4215079010b642324f4f9e942b3d96",
+    "name": "Icon/sortDown_16_heavy",
+    "description": ""
+  },
+  "3168:112": {
+    "key": "3fdd9e20330c87e151ca9348b3ef7b82f662741d",
+    "name": "Icon/doubleChevronRight_16_heavy",
+    "description": "SEN, Transfer, Chevron, Right, M"
+  },
   "1292:242": {
     "key": "84cf7d1035df66fd8d888b844cec7c249e0fb727",
     "name": "Icon/lock_16_heavy",
@@ -1134,6 +1194,11 @@
     "name": "Icon/copy_24_light",
     "description": ""
   },
+  "3162:113": {
+    "key": "12795de576ccd09df350050b92eb57e0c3c77ae5",
+    "name": "Icon/trxReward_24_light",
+    "description": ""
+  },
   "2515:949": {
     "key": "3edde38df1eb3addc565139d89018b800e451d45",
     "name": "Icon/checkbox_24_light",
@@ -1152,6 +1217,11 @@
   "1436:41": {
     "key": "f132409013192b6b2de3bb9038853eb79585fc24",
     "name": "Icon/copy_16_light",
+    "description": ""
+  },
+  "3162:112": {
+    "key": "d020bf08200a23be87e8079120012936bfeb573b",
+    "name": "Icon/trxReward_16_light",
     "description": ""
   },
   "1292:93": {
@@ -1239,9 +1309,19 @@
     "name": "Icon/trashCan_24_light",
     "description": ""
   },
+  "3120:104": {
+    "key": "452d7e73797bc6f5b44b2e0c604bc0c02b314404",
+    "name": "Icon/plus_24_light",
+    "description": ""
+  },
   "2375:12040": {
     "key": "b833b8db7ef690b77a62b79d2f76128c25e688af",
     "name": "Icon/trashCan_16_light",
+    "description": ""
+  },
+  "3120:102": {
+    "key": "384ab81d41c18f715aef659b4b87290eaad108c4",
+    "name": "Icon/plus_16_light",
     "description": ""
   },
   "2375:12038": {
@@ -1274,9 +1354,19 @@
     "name": "Icon/undo_24_light",
     "description": ""
   },
+  "3120:103": {
+    "key": "4da8924fbe7aba6bd9169b4f59b24f063b6fb840",
+    "name": "Icon/minus_24_light",
+    "description": ""
+  },
   "2375:12039": {
     "key": "f39a2aada9e01b862344c7dec4627f13b7d8f030",
     "name": "Icon/undo_16_light",
+    "description": ""
+  },
+  "3120:101": {
+    "key": "1f19481dc11c5db7253e7e931a4d83e356bf82f2",
+    "name": "Icon/minus_16_light",
     "description": ""
   },
   "2375:12037": {
@@ -1557,6 +1647,66 @@
   "2375:11956": {
     "key": "7c92772811fb2fd6df7b3a96ea1d4feb09b9c4b2",
     "name": "Icon/tradingRectangle_12_light",
+    "description": ""
+  },
+  "3122:151": {
+    "key": "0d2fcf30fdbfce0ec038ce528d8ae1f9a4e112d5",
+    "name": "Icon/reCenter_24_light",
+    "description": ""
+  },
+  "3122:149": {
+    "key": "112bc44601d1bce911ef523d5fe7a79f8b0a37d3",
+    "name": "Icon/reCenter_16_light",
+    "description": ""
+  },
+  "3122:148": {
+    "key": "7b154a61408002c27c524794f1a0b8f7822e68a8",
+    "name": "Icon/reCenter_12_light",
+    "description": ""
+  },
+  "3122:146": {
+    "key": "209688242c205dedba3419165891033838fb2cc1",
+    "name": "Icon/expand_24_light",
+    "description": ""
+  },
+  "3122:145": {
+    "key": "9dccde25a4a5a2d7760b5a51a366c7d4d601d769",
+    "name": "Icon/expand_16_light",
+    "description": ""
+  },
+  "3122:150": {
+    "key": "960411e313e4a77ad33dfec56aa99e36da55995d",
+    "name": "Icon/expand_12_light",
+    "description": ""
+  },
+  "3122:144": {
+    "key": "42e93658e88d7d790a56a23628fce03c506997e7",
+    "name": "Icon/expandAddress_24_light",
+    "description": ""
+  },
+  "3126:39": {
+    "key": "d950e08396463af707bda4f7d51636c4487b0cd2",
+    "name": "Icon/circleCheckmark_24_light",
+    "description": ""
+  },
+  "3122:147": {
+    "key": "aa8ea384dfcb2b53f4e941d0a9748cbf0d36f5be",
+    "name": "Icon/expandAddress_16_light",
+    "description": ""
+  },
+  "3126:38": {
+    "key": "665bb6461c53d03860698dd4077ed481401dd3d1",
+    "name": "Icon/circleCheckmark_16_light",
+    "description": ""
+  },
+  "3122:143": {
+    "key": "23ead685722ed55be367e1973a0813d61599cf7f",
+    "name": "Icon/expandAddress_12_light",
+    "description": ""
+  },
+  "3126:37": {
+    "key": "91c5b739674525f6da71def54b91f1499aecf9f4",
+    "name": "Icon/circleCheckmark_12_light",
     "description": ""
   },
   "2375:11955": {

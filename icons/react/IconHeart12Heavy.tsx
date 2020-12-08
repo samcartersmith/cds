@@ -14,6 +14,7 @@ const SvgIconHeart12Heavy = ({ fill = '#1652F0', title, titleId, ...props }: Int
       width={12}
       height={12}
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       className="cds-icon"
       role={role}
       aria-labelledby={titleId}

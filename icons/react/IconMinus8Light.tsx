@@ -14,6 +14,7 @@ const SvgIconMinus8Light = ({ fill = '#1652F0', title, titleId, ...props }: Inte
       width={8}
       height={8}
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       className="cds-icon"
       role={role}
       aria-labelledby={titleId}
