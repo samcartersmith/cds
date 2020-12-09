@@ -39,4 +39,8 @@ export type TextProps = {
    * another heading, but it is possible to use a heading typography as non heading.
    */
   as?: HtmlNonHeadingTextTags;
+  /**
+   * **DANGER** This is a migration escape hatch. It is not intended to be used normally.
+   */
+  dangerouslySetClassName?: string;
 };
