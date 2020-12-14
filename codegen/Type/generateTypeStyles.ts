@@ -5,7 +5,7 @@ import {
   TypeVariant,
   typography,
   Typography,
-} from '@cb/design-system-web/primitives/typography/typography';
+} from 'eng/shared/design-system/codegen/Type/config';
 import { decamelizeKeys } from 'humps';
 
 type GeneratedTypeStyles = {

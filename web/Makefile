@@ -1,7 +1,7 @@
 .PHONY: codegen story story.build story.serve eslint eslint.fix stylelint test.unit test.unit.watch package
 
 codegen:
-	npx ts-node --project ../../../../tsconfig.json --files -r tsconfig-paths/register ./scripts/codegen/main.ts
+	npx ts-node --project ../../../../tsconfig.json --files -r tsconfig-paths/register ../codegen/main.ts
 
 story:
 	cd ../../../../; ./node_modules/.bin/start-storybook -p 9009 -s eng/shared/design-system/web/static -c eng/shared/design-system/web/.storybook

@@ -1,5 +1,4 @@
-import { withStoryLabel, withScale } from '@cb/design-system-web/internal/decorators';
-import { typography } from '@cb/design-system-web/primitives/typography/typography';
+import { withStoryLabel, withScale } from '@cb/design-system/web/internal/decorators';
 import { Meta, Canvas, Story, ArgsTable, Source, SourceState } from '@storybook/addon-docs/blocks';
 
 import * as Type from './Text';
@@ -24,10 +23,9 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
       <>
         {Object.entries(Type).map(([name, Component]) => {
           const type = name.slice(4);
-          const text = `${type} <${typography[type].tag}>`;
           return (
             <Component key={name} {...args}>
-              {args.children || text}
+              {args.children || type}
             </Component>
           );
         })}
@@ -43,10 +41,9 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
       <>
         {Object.entries(Type).map(([name, Component]) => {
           const type = name.slice(4);
-          const text = `${type} <${typography[type].tag}>`;
           return (
             <Component key={name} {...args}>
-              {args.children || text}
+              {args.children || type}
             </Component>
           );
         })}

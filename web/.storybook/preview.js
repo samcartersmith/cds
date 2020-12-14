@@ -1,7 +1,7 @@
 import { StoryContainer, withScale } from '../internal/decorators';
 import { css } from 'linaria';
 import { DEFAULT_SCALE } from '@cb/design-system-web/primitives/scale/scale';
-import '@cb/design-system-web/globalStyles';
+import '@cb/design-system-web/styles/globalStyles';
 // CSS reset
 import 'destyle.css';
 

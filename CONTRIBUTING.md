@@ -1,26 +1,31 @@
 # Contribute to Coinbase Design System - Web
 
-## Local Setup
-
-For all make commands, make sure you are running them from this directory `eng/shared/design-system/web/`.
-
-```bash
-yarn
-make codegen
-```
-
-To run storybook locally
-
-```bash
-make story
-```
-
 ## Code Generation
+
+Please run codegen before running anything else to create necessary code.
+
+```
+yarn && make codegen
+```
 
 Generated code:
 
 - typography styles
 - Text components
+
+## Web
+
+In `eng/shared/design-system/web` directory, run storybook locally
+
+```bash
+make story
+```
+
+Build storybook locally and serve. This is useful when debugging issues with deployed storybook. For example, sometimes the component API types don't show up in the production build version.
+
+```bash
+make story.serve
+```
 
 ## Package
 

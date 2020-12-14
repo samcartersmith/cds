@@ -1,7 +1,5 @@
 import type { ReactChild, ReactFragment } from 'react';
 
-import type { HtmlNonHeadingTextTags } from '@cb/design-system-web/primitives/typography/typography';
-
 export type TextProps = {
   /**
    * Text to be styled and wrapped with appropriate html tag.
@@ -44,3 +42,18 @@ export type TextProps = {
    */
   dangerouslySetClassName?: string;
 };
+
+export type HtmlHeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type HtmlNonHeadingTextTags =
+  | 'div'
+  | 'p'
+  | 'span'
+  | 'blockquote'
+  | 'code'
+  | 'pre'
+  | 'li'
+  | 'del'
+  | 'ins'
+  | 'sup'
+  | 'sub';
+export type HtmlTextTags = HtmlHeadingTags | HtmlNonHeadingTextTags;

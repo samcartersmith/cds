@@ -1,0 +1,19 @@
+load("@npm//ts-node:index.bzl", "ts_node")
+
+ts_node(
+    name = "codegen",
+    args = [
+        "-r tsconfig-paths/register",
+        "--files",
+        "$(execpath codegen/main.ts)",
+        "--prettierConfig $(execpath //:.prettierrc)",
+    ],
+    data = [
+        "//tools/js:writePrettyFile.ts",
+        "//:.prettierrc",
+        "@npm//yargs",
+        "@npm//ejs",
+        "@npm//chalk",
+        "@npm//tsconfig-paths",
+    ] + glob(["codegen/**/*"]) + glob(["web/**/*"]),
+)

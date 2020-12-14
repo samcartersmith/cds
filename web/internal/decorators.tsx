@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { DEFAULT_SCALE, scales } from '@cb/design-system-web/primitives/scale/scale';
 import * as styles from '@cb/design-system-web/primitives/scale/styles';
-import { fallbackStack } from '@cb/design-system-web/primitives/typography/typography';
+import { fallbackStack } from '@cb/design-system-web/styles/shared';
 import { css } from 'linaria';
 
 type GetStory = () => React.ReactNode;

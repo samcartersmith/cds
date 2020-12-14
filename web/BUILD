@@ -1,5 +1,3 @@
-load("//tools:def.bzl", "node_package_deployable")
-load("@npm//ts-node:index.bzl", "ts_node")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("@npm_bazel_typescript//:index.bzl", "ts_project")
 load("@npm//ttypescript:index.bzl", "ttsc")
@@ -167,6 +165,8 @@ pkg_npm(
     ],
 )
 
+load("//tools:def.bzl", "node_package_deployable")
+
 # Publishing to registry-npm-dev.cbhq.net
 node_package_deployable(
     name = "cds_web_dev",
@@ -288,7 +288,6 @@ build_storybook(
         "@npm//@storybook/addons",
         "@npm//@storybook/react",
         "@npm//@storybook/theming",
-        "@npm//@svgr/core",
         "@npm//@types/babel__template",
         "@npm//@types/humps",
         "@npm//@types/react",
