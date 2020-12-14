@@ -1,7 +1,7 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("@npm_bazel_typescript//:index.bzl", "ts_project")
 load("@npm//ttypescript:index.bzl", "ttsc")
-load("//tools:def.bzl", "eslint_test", "node_package_gen", "stylelint_test")
+load("//tools:def.bzl", "node_package_gen")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@babel/cli:index.bzl", "babel")
 load("@npm//rollup:index.bzl", "rollup")
@@ -23,17 +23,13 @@ ts_project(
     ],
 )
 
-sourceFileTypes = [
-    ".ts",
-    ".tsx",
-    ".js",
-]
-
 filegroup(
     name = "source",
-    srcs = glob(
-        ["src/**/*" + fileType for fileType in sourceFileTypes],
-    ),
+    srcs = glob([
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.js",
+    ]),
 )
 
 # Emit type declarations with path aliases transformed
@@ -198,7 +194,7 @@ filegroup(
 )
 
 filegroup(
-    name = "lintable_source",
+    name = "eslint_source",
     srcs = glob(
         include = [
             "**/*.ts",
@@ -219,10 +215,8 @@ filegroup(
 filegroup(
     name = "style_source",
     srcs = [
-        ".stylelintrc.js",
         ".browserslistrc",
         ".babelrc.js",
-        "//:babel.config.js",
     ] + glob(
         include = [
             "**/*.ts",
@@ -231,16 +225,6 @@ filegroup(
         ],
     ),
     visibility = ["//visibility:public"],
-)
-
-eslint_test(
-    name = "eslint",
-    sources = ":lintable_source",
-)
-
-stylelint_test(
-    name = "stylelint",
-    sources = ":style_source",
 )
 
 filegroup(

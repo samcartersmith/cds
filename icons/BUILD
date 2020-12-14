@@ -7,7 +7,6 @@ filegroup(
             "svg/**/*.svg",
         ],
     ),
-    visibility = ["//visibility:public"],
 )
 
 ts_project(
@@ -44,43 +43,6 @@ svgr(
     output_dir = True,
 )
 
-load("//tools:def.bzl", "eslint_fix", "eslint_test")
-
-fileTypes = [
-    "ts",
-    "tsx",
-    "mdx",
-]
-
-[
-    filegroup(
-        name = "eslint_source_" + fileType,
-        srcs = glob(
-            include = [
-                "**/*." + fileType,
-            ],
-        ),
-        visibility = ["//visibility:public"],
-    )
-    for fileType in fileTypes
-]
-
-[
-    eslint_test(
-        name = "eslint_" + fileType,
-        sources = ":eslint_source_" + fileType,
-    )
-    for fileType in fileTypes
-]
-
-[
-    eslint_fix(
-        name = "eslint_fix_" + fileType,
-        sources = ":eslint_source_" + fileType,
-    )
-    for fileType in fileTypes
-]
-
 filegroup(
     name = "icons_story_source",
     srcs = glob(
@@ -101,6 +63,31 @@ filegroup(
             "Icon/*",
             "react/*",
             "styles.css",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "eslint_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.js",
+            "**/*.mdx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "style_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.css",
         ],
     ),
     visibility = ["//visibility:public"],

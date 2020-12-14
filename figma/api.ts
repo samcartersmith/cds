@@ -829,6 +829,7 @@ export interface FullComponentMetadata extends SharedElement {
   /** Data on component's containing frame, if component resides within a frame */
   readonly containing_frame: FrameInfo;
   /** Data on component's containing page, if component resides in a multi-page file */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   readonly containing_page: any; // broken link in the doc
 }
 

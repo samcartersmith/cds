@@ -17,3 +17,59 @@ ts_node(
         "@npm//tsconfig-paths",
     ] + glob(["codegen/**/*"]) + glob(["web/**/*"]),
 )
+
+load("//tools:def.bzl", "eslint_fix", "eslint_test", "stylelint_test")
+
+# All files and subdirectories (codegen) that are not bazel submodules.
+filegroup(
+    name = "other_eslint_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+            "**/*.js",
+        ],
+    ),
+)
+
+eslint_sources = {
+    "web": "//eng/shared/design-system/web:eslint_source",
+    "icons": "//eng/shared/design-system/icons:eslint_source",
+    "other": ":other_eslint_source",
+}
+
+[
+    eslint_test(
+        name = "eslint_" + name,
+        sources = source,
+    )
+    for (name, source) in eslint_sources.items()
+]
+
+[
+    eslint_fix(
+        name = "eslint_fix" + name,
+        sources = source,
+    )
+    for (name, source) in eslint_sources.items()
+]
+
+filegroup(
+    name = "style_source",
+    srcs = [
+        ".stylelintrc.js",
+        "//eng/shared/design-system/web:style_source",
+        "//eng/shared/design-system/icons:style_source",
+        "//:babel.config.js",
+    ] + glob(
+        include = [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.css",
+        ],
+    ),
+)
+
+stylelint_test(
+    name = "stylelint",
+    sources = ":style_source",
+)
