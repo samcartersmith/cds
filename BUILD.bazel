@@ -47,7 +47,7 @@ eslint_sources = {
 
 [
     eslint_fix(
-        name = "eslint_fix" + name,
+        name = "eslint_fix_" + name,
         sources = source,
     )
     for (name, source) in eslint_sources.items()

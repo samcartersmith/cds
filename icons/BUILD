@@ -10,7 +10,7 @@ filegroup(
 )
 
 ts_project(
-    srcs = ["iconReactTemplate.ts"],
+    srcs = ["scripts/iconReactTemplate.ts"],
     extends = ["//:tsconfig.json"],
     source_map = True,
     tsconfig = "//:tsconfig.json",
@@ -26,14 +26,14 @@ load("@npm//@svgr/cli:index.bzl", "svgr")
 svgr(
     name = "gen_react_icons",
     args = [
-        "--template $(execpath iconReactTemplate.js)",
-        "-d $(@D)/react",
+        "--template $(execpath scripts/iconReactTemplate.js)",
+        "-d $(@D)/src/components",
         "--config-file $(rootpath .svgrrc.js)",
         "$(execpaths :svg_source)",
     ],
     data = [
         ".svgrrc.js",
-        "iconReactTemplate.js",
+        "scripts/iconReactTemplate.js",
         "styles.css",
         ":svg_source",
         "//:.prettierrc",
@@ -47,8 +47,8 @@ filegroup(
     name = "icons_story_source",
     srcs = glob(
         include = [
-            "Icon/**/*",
-            "react/**/*.tsx",
+            "src/*",
+            "src/components/**/*.tsx",
             "story/**/*",
             "styles.css",
         ],
@@ -60,8 +60,7 @@ filegroup(
     name = "runtime_source",
     srcs = glob(
         [
-            "Icon/*",
-            "react/*",
+            "src/**/*",
             "styles.css",
         ],
     ),

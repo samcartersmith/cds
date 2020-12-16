@@ -6,6 +6,7 @@ module.exports = {
   memo: true,
   replaceAttrValues: {
     '#1652F0': '{fill}',
+    '#3453EB': '{fill}',
   },
   svgProps: {
     className: 'cds-icon',

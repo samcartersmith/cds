@@ -1,0 +1,19 @@
+{
+  "name": "@cb/design-system-icons",
+  "version": "0.0.1",
+  "description": "Coinbase Design System - Icons",
+  "keywords": ["design system", "icons", "icon fonts"],
+  "sideEffects": ["*.css"],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:mono/repo.git",
+    "directory": "eng/shared/design-system/icons"
+  },
+  "authors": {
+    "coinbase": "coinbase"
+  },
+  "main": "dist/index.js",
+  "module": "lib/index.js",
+  "typings": "typings/index.d.ts",
+  "files": ["fonts/", "dist/", "lib/", "typings/", "native.d.ts", "native.js", "styles.css"]
+}
