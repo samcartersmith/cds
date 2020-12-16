@@ -2,8 +2,8 @@ import { css } from 'linaria';
 
 <% Object.entries(data).map(([name, styles]) => { %>
   export const <%- name %> = css`
-    <%_ Object.entries(data[name]).map(([varName, value]) => { _%>
-      <%- varName %>:  <%- value %>;
+    <%_ Object.entries(data[name]).map(([key, value]) => { _%>
+      <%- key %>:  <%- value %>;
     <%_ }) _%>
   `;
 <% }) %> 

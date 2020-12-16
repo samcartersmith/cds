@@ -12,9 +12,11 @@ import {
   typographyScaleMapWithCssVariables,
   typographyScaleMapWithUnits,
   typographyPascalCaseConfig,
+  typographyScaleMapWithoutUnits,
 } from './generateTypeStyles';
 
 export const Type = {
+  native: typographyScaleMapWithoutUnits,
   pascalCaseConfig: typographyPascalCaseConfig,
   css: typographyCss,
   scaleCss: typographyScaleMapWithCssVariables,
@@ -39,10 +41,7 @@ export const Type = {
   },
   async updateTextStory() {
     const typeStylesTable = Type.generateScaleTable();
-    const textStoryFile = await getSourcePath(
-      __filename,
-      '../../../web/src/components/Text/Text.stories.mdx'
-    );
+    const textStoryFile = await getSourcePath('web/src/components/Text/Text.stories.mdx');
 
     if (fs.existsSync(textStoryFile)) {
       const textStory = fs.readFileSync(textStoryFile);

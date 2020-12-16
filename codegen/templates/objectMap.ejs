@@ -1,0 +1,5 @@
+
+<%_ Object.entries(data).map(([name, value]) => { _%>
+  export const <%- name %> =  <%- JSON.stringify(value) %> as const;
+  
+<%_ }) _%> 

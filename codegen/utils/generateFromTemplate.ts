@@ -16,54 +16,34 @@ const getFileDocString = (...additionalText: string[]) => `
  */
 `;
 
-export const outDirs = {
-  web: '../../../web/src',
-};
-
 export const sh = promisify(exec);
 
-export const getSourcePath = async (fromFile: string, ...relativePaths: string[]) => {
-  const { stdout: absoluteFilePath } = await sh(`readlink ${fromFile}`);
-  return path.join(absoluteFilePath, ...relativePaths);
+export const getSourcePath = async (dest: string) => {
+  const { stdout: absoluteFilePath } = await sh(`readlink ${__filename}`);
+  return path.join(absoluteFilePath, '../../..', dest);
 };
 
 export const generateFromTemplate = async ({
   template,
   data,
-  extension = '.ts',
-  outRoot,
-  shouldCreateFolder = false,
-  logInfo,
+  dest,
 }: {
   template: string;
-  outRoot: string;
+  dest: string;
   data: Record<string, unknown>;
-  logInfo: string;
-  extension?: '.ts' | '.tsx';
-  shouldCreateFolder?: boolean;
 }) => {
   try {
-    // generate text styles for all scales
     const templatePath = path.join(__dirname, '../templates', template);
     const code = await ejs.renderFile(templatePath, { data });
-
-    const fileName = path.basename(template, path.extname(template));
-    const outFile = await getSourcePath(
-      __filename,
-      outRoot,
-      path.dirname(template),
-      shouldCreateFolder ? fileName : '',
-      fileName + extension
-    );
-
+    const outFile = await getSourcePath(dest);
     await writePrettyFile({
       prettierConfig,
       outFile,
       contents: getFileDocString() + code,
-      logInfo,
+      logInfo: `Building ${dest}`,
     });
   } catch (error) {
-    console.error(`${chalk.redBright('failed')} Couldn't generate ${logInfo}.`);
+    console.error(`${chalk.redBright('failed')} Couldn't generate ${dest}.`);
     console.error(error);
   }
 };

@@ -1,35 +1,42 @@
+import { scaleConfig } from '@cb/design-system/codegen/configs/scaleConfig';
+import { mapValues } from '@cb/design-system/utils';
+
 import { Type } from './Type/Type';
-import { generateFromTemplate, outDirs } from './utils/generateFromTemplate';
+import { generateFromTemplate } from './utils/generateFromTemplate';
 
-const generateStyles = () => {
-  // global styles and css variable definitions
-  generateFromTemplate({
-    template: 'primitives/scale/styles.ejs',
-    outRoot: outDirs.web,
-    data: Type.scaleCss,
-    logInfo: 'scale styles',
-  });
+const web = {
+  typography: Type.css,
+  scale: Type.scaleCss,
+} as const;
 
-  generateFromTemplate({
-    template: 'primitives/typography/styles.ejs',
-    outRoot: outDirs.web,
-    data: Type.css,
-    logInfo: 'typography styles',
+const native = {
+  scale: mapValues(scaleConfig, (_, scale) => {
+    return {
+      typography: Type.native[scale],
+    };
+  }),
+} as const;
+
+(function () {
+  [
+    ...Object.entries(web).map(([name, data]) => ({
+      template: 'css.ejs',
+      dest: `theme/styles/${name}.ts`,
+      data,
+    })),
+    ...Object.entries(native).map(([name, data]) => ({
+      template: 'objectMap.ejs',
+      dest: `theme/styles/${name}.native.ts`,
+      data,
+    })),
+    {
+      template: 'components/Text.ejs',
+      dest: 'web/src/components/Text/Text.tsx',
+      data: Type.pascalCaseConfig,
+    },
+  ].forEach(config => {
+    generateFromTemplate(config);
   });
 
   Type.updateTextStory();
-};
-
-const main = async () => {
-  generateStyles();
-  generateFromTemplate({
-    template: 'components/Text.ejs',
-    outRoot: outDirs.web,
-    data: Type.pascalCaseConfig,
-    logInfo: 'typography components',
-    extension: '.tsx',
-    shouldCreateFolder: true,
-  });
-};
-
-main();
+})();
