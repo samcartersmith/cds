@@ -14,7 +14,7 @@ const tabularNumber = css`
   font-feature-settings: 'tnum';
 `;
 
-<% Object.entries(typography).forEach(([name, { tag, tnum = false }]) => { %>
+<% Object.entries(data).forEach(([name, { tag, tnum = false }]) => { %>
     export const Text<%- name %>: React.FC<TextProps> = React.memo(function Text<%- name %>({
         children,
         color,

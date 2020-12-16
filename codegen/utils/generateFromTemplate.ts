@@ -45,7 +45,7 @@ export const generateFromTemplate = async ({
   try {
     // generate text styles for all scales
     const templatePath = path.join(__dirname, '../templates', template);
-    const code = await ejs.renderFile(templatePath, data);
+    const code = await ejs.renderFile(templatePath, { data });
 
     const fileName = path.basename(template, path.extname(template));
     const outFile = await getSourcePath(
