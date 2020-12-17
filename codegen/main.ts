@@ -1,12 +1,14 @@
 import { scaleConfig } from '@cb/design-system/codegen/configs/scaleConfig';
 import { mapValues } from '@cb/design-system/utils';
 
+import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
 import { generateFromTemplate } from './utils/generateFromTemplate';
 
 const web = {
   typography: Type.css,
   scale: Type.scaleCss,
+  spectrum: Spectrum.css,
 } as const;
 
 const native = {
@@ -15,6 +17,7 @@ const native = {
       typography: Type.native[scale],
     };
   }),
+  spectrum: Spectrum.native,
 } as const;
 
 (function () {
