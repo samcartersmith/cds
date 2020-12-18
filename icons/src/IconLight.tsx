@@ -14,7 +14,9 @@ export const IconLight: React.FC<IconProps> = React.memo(function IconLight({
   const px = useIconPixelSize(size);
   const iconName = `Icon${pascalize(kind)}${px}Light`;
 
-  const LazyIcon = React.lazy(() => import(`./components/${iconName}`));
+  const LazyIcon = React.useMemo(() => {
+    return React.lazy(() => import(`./components/${iconName}`));
+  }, [iconName]);
 
   return (
     <React.Suspense fallback={<div style={{ width: px, height: px }} />}>

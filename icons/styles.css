@@ -1,3 +1,7 @@
 .cds-icon {
   flex-shrink: 0;
 }
+
+.cds-icon > * {
+  transition: fill 150ms ease-in-out;
+}
