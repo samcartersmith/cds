@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import type { TextProps } from '@cb/design-system-web/components/Text/TextProps';
-import * as styles from '@cb/design-system-web/primitives/typography/styles';
 import { css, cx } from 'linaria';
 
-export type { TextProps }
+import type { TextProps } from './TextProps';
+import * as styles from './textStyles';
+
+export type { TextProps };
 
 const noLineWrap = css`
   white-space: nowrap;

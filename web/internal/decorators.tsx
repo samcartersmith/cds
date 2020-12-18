@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { DEFAULT_SCALE, scales } from '@cb/design-system-web/primitives/scale/scale';
-import * as styles from '@cb/design-system-web/primitives/scale/styles';
+import { Scale } from '@cb/design-system-web/primitives';
 import { fallbackStack } from '@cb/design-system-web/styles/shared';
+import * as scaleStyles from '@cds/theme/styles/scale';
 import { css } from 'linaria';
 
 type GetStory = () => React.ReactNode;
@@ -59,6 +59,6 @@ export const withStoryLabel = (name: string) => (getStory: GetStory) => (
 );
 
 // eslint-disable-next-line react/display-name
-export const withScale = (scale: keyof typeof scales = DEFAULT_SCALE) => (getStory: GetStory) => (
-  <div className={styles[scale]}>{getStory()}</div>
+export const withScale = (scale: Scale) => (getStory: GetStory) => (
+  <div className={scaleStyles[scale]}>{getStory()}</div>
 );

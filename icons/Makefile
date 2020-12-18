@@ -18,7 +18,7 @@ sync:
 generate:
 	npx ts-node --project ../../../../tsconfig.json -r tsconfig-paths/register ./scripts/genIcons.ts
 
-react:
+components:
 	bazel build :gen_react_icons
 
 	rm -rf ./src/components

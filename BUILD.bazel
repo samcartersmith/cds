@@ -1,5 +1,25 @@
 load("@npm//ts-node:index.bzl", "ts_node")
 
+exports_files([
+    ".babelrc.js",
+    ".browserslistrc",
+])
+
+filegroup(
+    name = "web_source",
+    srcs = [
+        "//eng/shared/design-system/icons:web_source",
+        "//eng/shared/design-system/theme:web_source",
+        "//eng/shared/design-system/web:runtime_source",
+    ] + glob(
+        include = [
+            "**/*.ts",
+            "**/*.js",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
 ts_node(
     name = "codegen",
     args = [
@@ -34,6 +54,7 @@ filegroup(
 eslint_sources = {
     "web": "//eng/shared/design-system/web:eslint_source",
     "icons": "//eng/shared/design-system/icons:eslint_source",
+    "theme": "//eng/shared/design-system/theme:eslint_source",
     "other": ":other_eslint_source",
 }
 
@@ -72,4 +93,15 @@ filegroup(
 stylelint_test(
     name = "stylelint",
     sources = ":style_source",
+)
+
+filegroup(
+    name = "tests_configuration",
+    srcs = [
+        ".babelrc.js",
+        "jest.config.js",
+        "jestSetup.ts",
+        "jestSetupAfterEnv.ts",
+    ],
+    visibility = ["//visibility:public"],
 )

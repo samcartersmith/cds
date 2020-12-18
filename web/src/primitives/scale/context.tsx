@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { DEFAULT_SCALE, Scale } from '@cb/design-system-web/primitives/scale/scale';
+import * as scaleStyles from '@cds/theme/styles/scale';
 
-import * as scaleStyles from './styles';
+// TODO: move this to a more permanent place
+export type Scale = 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge' | 'xxLarge' | 'xxxLarge';
 
-const ScaleContext = React.createContext<Scale>(DEFAULT_SCALE);
+const ScaleContext = React.createContext<Scale>('large');
 const ScaleActionContext = React.createContext<
   React.Dispatch<React.SetStateAction<Scale>> | undefined
 >(undefined);

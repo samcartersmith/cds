@@ -1,27 +1,19 @@
 import { writePrettyFile } from '@tools/writePrettyFile';
 import * as chalk from 'chalk';
-import { exec } from 'child_process';
 import * as ejs from 'ejs';
 import * as path from 'path';
-import { promisify } from 'util';
 import { argv } from 'yargs';
+
+import { getSourcePath } from './getSourcePath';
 
 const prettierConfig = argv.prettierConfig as string;
 
-const getFileDocString = (...additionalText: string[]) => `
+const getFileDocString = () => `
 /**
  * DO NOT MODIFY
- * Generated from scripts/codegen/main.ts \
- ${additionalText.length ? `\n* ${additionalText.join('\n* ')}` : ''}
+ * Generated from scripts/codegen/main.ts
  */
 `;
-
-export const sh = promisify(exec);
-
-export const getSourcePath = async (dest: string) => {
-  const { stdout: absoluteFilePath } = await sh(`readlink ${__filename}`);
-  return path.join(absoluteFilePath, '../../..', dest);
-};
 
 export const generateFromTemplate = async ({
   template,
@@ -40,7 +32,7 @@ export const generateFromTemplate = async ({
       prettierConfig,
       outFile,
       contents: getFileDocString() + code,
-      logInfo: `Building ${dest}`,
+      logInfo: dest,
     });
   } catch (error) {
     console.error(`${chalk.redBright('failed')} Couldn't generate ${dest}.`);

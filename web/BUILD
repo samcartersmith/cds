@@ -29,7 +29,7 @@ filegroup(
         "src/**/*.ts",
         "src/**/*.tsx",
         "src/**/*.js",
-    ]),
+    ]) + ["//eng/shared/design-system/theme:web_source"],
 )
 
 # Emit type declarations with path aliases transformed
@@ -65,7 +65,7 @@ rollup(
         "rollup.config.js",
         ":source",
         "//:tsconfig.json",
-        ".babelrc.js",
+        "//eng/shared/design-system:.babelrc.js",
         "//:babel.config.js",
         "@npm//@rollup/plugin-commonjs",
         "@npm//@rollup/plugin-node-resolve",
@@ -215,8 +215,8 @@ filegroup(
 filegroup(
     name = "style_source",
     srcs = [
-        ".browserslistrc",
-        ".babelrc.js",
+        "//eng/shared/design-system:.babelrc.js",
+        "//eng/shared/design-system:.browserslistrc",
     ] + glob(
         include = [
             "**/*.ts",
@@ -249,12 +249,13 @@ build_storybook(
         "--no-dll",
     ],
     data = [
-        ".babelrc.js",
         ":storybook_source",
         "//:babel.config.js",
         "//:package.json",
         "//:tsconfig.json",
-        "//eng/shared/design-system/icons:icons_story_source",
+        "//eng/shared/design-system:.babelrc.js",
+        "//eng/shared/design-system/icons:story_source",
+        "//eng/shared/design-system/theme:story_source",
         "@npm//@babel/core",
         "@npm//@babel/parser",
         "@npm//@babel/plugin-transform-runtime",
@@ -314,16 +315,5 @@ filegroup(
             "**/*.test.tsx",
         ],
     ),
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
-    name = "tests_configuration",
-    srcs = [
-        ".babelrc.js",
-        "jest.config.js",
-        "jestSetup.ts",
-        "jestSetupAfterEnv.ts",
-    ],
     visibility = ["//visibility:public"],
 )

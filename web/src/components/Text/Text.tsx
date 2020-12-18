@@ -4,9 +4,10 @@
  */
 import * as React from 'react';
 
-import type { TextProps } from '@cb/design-system-web/components/Text/TextProps';
-import * as styles from '@cb/design-system-web/primitives/typography/styles';
 import { css, cx } from 'linaria';
+
+import type { TextProps } from './TextProps';
+import * as styles from './textStyles';
 
 export type { TextProps };
 

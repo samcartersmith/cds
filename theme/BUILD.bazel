@@ -1,0 +1,45 @@
+filegroup(
+    name = "story_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+        ],
+        exclude = [
+            "**/*.native.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "web_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+        ],
+        exclude = [
+            "**/*.native.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "eslint_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "style_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)

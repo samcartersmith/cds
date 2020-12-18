@@ -44,7 +44,7 @@ svgr(
 )
 
 filegroup(
-    name = "icons_story_source",
+    name = "story_source",
     srcs = glob(
         include = [
             "src/*",
@@ -57,7 +57,7 @@ filegroup(
 )
 
 filegroup(
-    name = "runtime_source",
+    name = "web_source",
     srcs = glob(
         [
             "src/**/*",

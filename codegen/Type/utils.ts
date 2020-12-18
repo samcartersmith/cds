@@ -1,11 +1,11 @@
-import { UNIT_SPACE } from '@cb/design-system-web/primitives/spacing';
-
 type DistributeProps = {
   value: number;
   rangeA: number[];
   rangeB: number[];
   limit?: boolean;
 };
+
+const UNIT_SPACE = 4;
 
 const convertToEm = (value: number) => {
   const em = Math.round(value) / 1000;
