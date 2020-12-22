@@ -1,0 +1,19 @@
+filegroup(
+    name = "source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "eslint_source",
+    srcs = glob(
+        include = [
+            "**/*.ts",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)

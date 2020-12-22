@@ -1,5 +1,4 @@
 import { writePrettyFile } from '@tools/writePrettyFile';
-import * as chalk from 'chalk';
 import * as ejs from 'ejs';
 import * as path from 'path';
 import { argv } from 'yargs';
@@ -35,7 +34,7 @@ export const generateFromTemplate = async ({
       logInfo: dest,
     });
   } catch (error) {
-    console.error(`${chalk.redBright('failed')} Couldn't generate ${dest}.`);
     console.error(error);
+    throw new Error(`Couldn't generate ${dest}.`);
   }
 };

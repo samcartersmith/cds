@@ -1,4 +1,9 @@
-export const paletteConfig = {
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
+
+export const defaultPalette = {
   foreground: 'gray100',
   foregroundMuted: 'gray60',
   background: 'gray0',

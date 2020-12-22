@@ -29,7 +29,10 @@ filegroup(
         "src/**/*.ts",
         "src/**/*.tsx",
         "src/**/*.js",
-    ]) + ["//eng/shared/design-system/theme:web_source"],
+    ]) + [
+        "//eng/shared/design-system/theme:web_source",
+        "//eng/shared/design-system/utils:source",
+    ],
 )
 
 # Emit type declarations with path aliases transformed
@@ -48,6 +51,7 @@ ttsc(
         "@npm//@zerollup/ts-transform-paths",
         "@npm//humps",
         "@npm//linaria",
+        "@npm//type-fest",
     ],
     output_dir = True,
 )

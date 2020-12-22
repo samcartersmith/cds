@@ -17,3 +17,4 @@ export const scaleConfig = {
 } as const;
 
 export type Scale = keyof typeof scaleConfig;
+export const scales = Object.keys(scaleConfig);

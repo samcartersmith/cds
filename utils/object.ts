@@ -2,6 +2,10 @@ import { AnyObject, StringKey } from './types';
 
 export const emptyObject = {};
 
+export function entries<T>(item: T) {
+  return Object.entries(item) as Array<[keyof T, T[keyof T]]>;
+}
+
 export function mapKeys<
   T extends AnyObject,
   K extends (value: T[keyof T], key: keyof T, obj: T) => StringKey<unknown>
