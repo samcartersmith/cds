@@ -1,0 +1,15 @@
+{
+  "name": "@cds/components",
+  "version": "0.0.1",
+  "description": "Coinbase Design System - Components",
+  "keywords": ["cds", "design system", "components"],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:mono/repo.git",
+    "directory": "eng/shared/design-system/components"
+  },
+  "authors": "Coinbase",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "typings": "index.ts"
+}
