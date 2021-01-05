@@ -11,9 +11,11 @@ filegroup(
         "//eng/shared/design-system/icons:web_source",
         "//eng/shared/design-system/theme:web_source",
         "//eng/shared/design-system/web:runtime_source",
+        "//eng/shared/design-system/utils:source",
     ] + glob(
         include = [
             "**/*.ts",
+            "**/*.tsx",
             "**/*.js",
         ],
     ),

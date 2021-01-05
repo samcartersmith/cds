@@ -12,3 +12,4 @@ All notable changes to this project will be documented in this file.
 - feat(icons): Add insto chart study and draw icons by @hannah-jin (#7259)
 - feat(icons): Generate CDS Icons from figma by @hannah-jin (#7152)
 - doc(icons): Improve icon story and pass through props in Icon components by @hannah-jin (#8280)
+- feat(icons): Replace useScale to pull from @cds/theme package @katherinemartinez (#10685)

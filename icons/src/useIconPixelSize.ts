@@ -1,4 +1,4 @@
-import { useScale, Scale } from '@cb/design-system-web/primitives';
+import { useScale, Scale } from '@cds/theme';
 
 import type { IconSize, IconPixels } from './types';
 

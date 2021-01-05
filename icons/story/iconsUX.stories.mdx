@@ -31,11 +31,11 @@ There are 5 possible _dimensions_ for an icon **8px, 12px, 16px, 24px, and 32px*
 <Source
   code={`
 import { IconHeavy } from '@cb/design-system-icons'
-import { ScaleProvider } from '@cb/design-system-web/primitives'\n
-<ScaleProvider value="large">
+import { ThemeProvider } from '@cds/theme'\n
+<ThemeProvider scale="large">
   <IconHeavy kind="bell" size="m" title="notifications" titleId="ux-icon-story-bell-m" />
   <IconLight kind="heart" size="l" fill="red" title="like" titleId="ux-icon-story-like-l" />
-</ScaleProvider>
+</ThemeProvider>
 `}
 />
 

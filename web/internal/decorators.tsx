@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Scale } from '@cb/design-system-web/primitives';
 import { fallbackStack } from '@cb/design-system-web/styles/shared';
+import { Scale } from '@cds/theme';
 import * as scaleStyles from '@cds/theme/styles/scale';
 import { css } from 'linaria';
 

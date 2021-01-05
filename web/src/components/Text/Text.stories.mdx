@@ -104,17 +104,17 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
 <Source
   code={`
 import { TextDisplay2, TextBody } from '@cb/design-system-web/components'
-import { ScaleProvider } from '@cb/design-system-web/primitives'
+import { ThemeProvider } from '@cds/theme'
 \n
 // Make sure the scale class name is applied somewhere in the ancestor tree.
 // Only once in the app is needed unless the app is using multiple scales.
-<ScaleProvider value="large">
+<ThemeProvider scale="large">
   <TextDisplay2 color="#161652" textAlign="center">Coinbase Design System</TextDisplay2>
   {/* Title2 is h4 by default */}
   <TextTitle2 as="span">Earn BTC</TextTitle2>
   <TextBody as="code" display="inline" tnum>2020</TextBody>
   <TextLegal wrap as="p">Buy and sell popular digital currencies</TextLegal>
-<ScaleProvider>
+<ThemeProvider>
 `}
 />
 

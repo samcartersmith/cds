@@ -3,9 +3,9 @@
 define HELP_TEXT
 Help:
 -----
-  $$ make sync			-- Synchronize with CDS Icons figma
-  $$ make generate	-- Generate an icon font and TypeScript types
-  $$ make react			-- Generate React components from svg icons
+  $$ make sync			 -- Synchronize with CDS Icons figma
+  $$ make generate	 -- Generate an icon font and TypeScript types
+  $$ make components -- Generate React components from svg icons
 endef
 export HELP_TEXT
 

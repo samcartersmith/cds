@@ -261,6 +261,7 @@ build_storybook(
         "//eng/shared/design-system:.babelrc.js",
         "//eng/shared/design-system/icons:story_source",
         "//eng/shared/design-system/theme:story_source",
+        "//eng/shared/design-system/utils:source",
         "@npm//@babel/core",
         "@npm//@babel/parser",
         "@npm//@babel/preset-env",
