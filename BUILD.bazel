@@ -105,3 +105,16 @@ filegroup(
     ],
     visibility = ["//visibility:public"],
 )
+
+ts_node(
+    name = "new_package",
+    args = [
+        "eng/shared/design-system/codegen/scaffold/newPackageFromTemplate.ts",
+        "--project $(execpath //:tsconfig.json)",
+    ],
+    data = [
+        "codegen/scaffold/newPackageFromTemplate.ts",
+        "//:tsconfig.json",
+        "@npm//chalk",
+    ],
+)

@@ -1,0 +1,15 @@
+{
+  "name": "@cds/<package>",
+  "version": "0.0.1",
+  "description": "Coinbase Design System - <description>",
+  "keywords": ["cds", "design system", "<keywords>"],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:mono/repo.git",
+    "directory": "eng/shared/design-system/<package>"
+  },
+  "authors": "Coinbase",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "typings": "index.ts"
+}
