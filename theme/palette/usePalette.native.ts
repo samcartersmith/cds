@@ -1,27 +1,24 @@
 import * as React from 'react';
 
-import { usePaletteConfig } from '@cds/theme/palette/usePaletteConfig';
-import { SpectrumAlias } from '@cds/theme/spectrum/types';
 import { useSpectrum } from '@cds/theme/spectrum/useSpectrum';
-import * as spectrum from '@cds/theme/styles/spectrum';
+// eslint-disable-next-line import/extensions
+import * as spectrum from '@cds/theme/styles/spectrum.native';
 import { mapValues } from '@cds/utils';
 
-type SpectrumObject = Record<SpectrumAlias, [number, number, number]>;
+import { UsePaletteFn } from './types';
+import { usePaletteConfig } from './usePaletteConfig';
 
-export const usePalette = () => {
+export const usePalette: UsePaletteFn = () => {
   const context = usePaletteConfig();
   const spectrumMode = useSpectrum();
-  const spectrumColors = (spectrum[spectrumMode] as unknown) as SpectrumObject;
+  const spectrumColors = spectrum[spectrumMode];
 
   return React.useMemo(() => {
     return mapValues(context, spectrumAlias => {
       const [alias, opacity = 1] =
         typeof spectrumAlias === 'string' ? [spectrumAlias] : spectrumAlias;
       const spectrumValue = spectrumColors[alias];
-      if (spectrumValue) {
-        return `rgba(${[...spectrumColors[alias], opacity].join(',')})`;
-      }
-      return spectrumValue;
+      return `rgba(${[...spectrumValue, opacity].join(',')})`;
     });
   }, [context, spectrumColors]);
 };

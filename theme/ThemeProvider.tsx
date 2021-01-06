@@ -11,7 +11,7 @@ import { ThemeManager } from '@cds/theme/ThemeManager';
 type ThemeProviderProps = {
   scale?: Scale;
   spectrum?: Spectrum;
-  palette?: Partial<PaletteConfig>;
+  palette?: PaletteConfig;
 };
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = React.memo(

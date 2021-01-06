@@ -1,8 +1,3 @@
-/**
- * DO NOT MODIFY
- * Generated from scripts/codegen/main.ts
- */
-
 export const defaultPalette = {
   foreground: 'gray100',
   foregroundMuted: 'gray60',
@@ -20,3 +15,28 @@ export const defaultPalette = {
   secondary: 'gray0',
   secondaryForeground: 'gray100',
 } as const;
+
+export const paletteForegrounds = [
+  'foreground',
+  'foregroundMuted',
+  'primary',
+  'primaryForeground',
+  'secondary',
+  'secondaryForeground',
+  'positive',
+  'positiveForeground',
+  'negative',
+  'negativeForeground',
+] as const;
+
+export const paletteBackgrounds = [
+  'background',
+  'backgroundAlternate',
+  'backgroundOverlay',
+  'divider',
+  'stroke',
+  'primary',
+  'secondary',
+  'positive',
+  'negative',
+] as const;

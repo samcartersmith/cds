@@ -46,8 +46,8 @@ const templates: Record<string, { dest: string; data: Record<string, unknown> }[
       data: Spectrum.native,
     },
     {
-      dest: 'theme/palette/defaultPalette.ts',
-      data: { defaultPalette: Palette.defaultPalette },
+      dest: 'theme/palette/paletteCssVarsMap.ts',
+      data: { paletteCssVarsMap: Palette.cssVariables },
     },
   ],
   'typescript.ejs': TypeScript,

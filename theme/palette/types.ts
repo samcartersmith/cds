@@ -1,42 +1,13 @@
-/**
- * DO NOT MODIFY
- * Generated from scripts/codegen/main.ts
- */
-
 import { ReadonlyDeep } from 'type-fest';
 
 import { SpectrumAlias, SpectrumAliasWithOpacity } from '../spectrum/types';
-import { defaultPalette } from './defaultPalette';
+import { defaultPalette, paletteBackgrounds, paletteForegrounds } from './constants';
 
 export type PaletteAlias = keyof typeof defaultPalette;
-
-export type PaletteForeground = Extract<
-  PaletteAlias,
-  | 'foreground'
-  | 'foregroundMuted'
-  | 'primary'
-  | 'primaryForeground'
-  | 'secondary'
-  | 'secondaryForeground'
-  | 'positive'
-  | 'positiveForeground'
-  | 'negative'
-  | 'negativeForeground'
->;
-
-export type PaletteBackground = Extract<
-  PaletteAlias,
-  | 'background'
-  | 'backgroundAlternate'
-  | 'backgroundOverlay'
-  | 'divider'
-  | 'stroke'
-  | 'primary'
-  | 'secondary'
-  | 'positive'
-  | 'negative'
->;
-
-export type PaletteConfig = ReadonlyDeep<
-  Record<PaletteAlias, SpectrumAlias | SpectrumAliasWithOpacity>
->;
+export type PaletteValue = SpectrumAlias | SpectrumAliasWithOpacity;
+export type PaletteForeground = Extract<PaletteAlias, typeof paletteForegrounds[number]>;
+export type PaletteBackground = Extract<PaletteAlias, typeof paletteBackgrounds[number]>;
+export type InternalPaletteConfig = ReadonlyDeep<Record<PaletteAlias, PaletteValue>>;
+export type PaletteConfig = Partial<InternalPaletteConfig>;
+// Web returns CSS variables and RN returns actual rgb values
+export type UsePaletteFn = () => ReadonlyDeep<Record<PaletteAlias, string>>;
