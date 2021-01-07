@@ -14,6 +14,7 @@ help:
 
 codegen:
 	bazel run :codegen
+	bazel run :eslint_fix_icons
 
 lint:
 	bazel run :eslint_web;
@@ -22,3 +23,6 @@ lint:
 
 new.package:
 	bazel run :new_package -- --root=$(PWD) --name=$(name)
+
+sync.icons:
+	bazel run :sync_icons

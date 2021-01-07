@@ -1,4 +1,5 @@
 load("@npm//ts-node:index.bzl", "ts_node")
+load("//tools:def.bzl", "eslint_fix", "eslint_test", "stylelint_test")
 
 exports_files([
     ".babelrc.js",
@@ -21,26 +22,6 @@ filegroup(
     ),
     visibility = ["//visibility:public"],
 )
-
-ts_node(
-    name = "codegen",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "$(execpath codegen/main.ts)",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = [
-        "//tools/js:writePrettyFile.ts",
-        "//:.prettierrc",
-        "@npm//yargs",
-        "@npm//ejs",
-        "@npm//chalk",
-        "@npm//tsconfig-paths",
-    ] + glob(["codegen/**/*"]) + glob(["web/**/*"]),
-)
-
-load("//tools:def.bzl", "eslint_fix", "eslint_test", "stylelint_test")
 
 # All files and subdirectories (codegen) that are not bazel submodules.
 filegroup(
@@ -106,6 +87,46 @@ filegroup(
         "jestSetupAfterEnv.ts",
     ],
     visibility = ["//visibility:public"],
+)
+
+# CODEGEN
+
+ts_node(
+    name = "codegen",
+    args = [
+        "-r tsconfig-paths/register",
+        "--files",
+        "$(execpath codegen/main.ts)",
+        "--prettierConfig $(execpath //:.prettierrc)",
+    ],
+    data = [
+        "//tools/js:writePrettyFile.ts",
+        "//:.prettierrc",
+        "@npm//chalk",
+        "@npm//ejs",
+        "@npm//humps",
+        "@npm//tsconfig-paths",
+        "@npm//webfont",
+        "@npm//yargs",
+    ] + glob(["codegen/**/*"]) + glob(["web/**/*"]),
+)
+
+ts_node(
+    name = "sync_icons",
+    args = [
+        "$(execpath codegen/scaffold/syncSvgsFromFigma.ts)",
+        "--project $(execpath //:tsconfig.json)",
+    ],
+    data = [
+        "codegen/figma/api.ts",
+        "codegen/figma/client.ts",
+        "codegen/scaffold/syncSvgsFromFigma.ts",
+        "codegen/utils/getSourcePath.ts",
+        "//:tsconfig.json",
+        "@npm//axios",
+        "@npm//chalk",
+        "@npm//ora",
+    ],
 )
 
 ts_node(

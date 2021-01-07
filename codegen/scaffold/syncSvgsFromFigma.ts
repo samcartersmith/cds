@@ -5,13 +5,13 @@ import * as ora from 'ora';
 import * as path from 'path';
 import { promisify } from 'util';
 
-import { ComponentMetadata } from '../../figma/api';
-import { FigmaClient } from '../../figma/client';
+import { ComponentMetadata } from '../figma/api';
+import { FigmaClient } from '../figma/client';
+import { getSourcePath } from '../utils/getSourcePath';
 
 const HANNAH_PERSONAL_ACCESS_TOKEN = '67699-f08bc020-d3f6-443f-ad2a-9e11bbf3dfce';
 const ICONS_FILE_ID = 'ZPu9gtLB5KTkzazHcf9Sfi';
 const NODE_ID = '1107:22364';
-const OUT_DIR = path.join(__dirname, '../svg/');
 
 const figmaClient = FigmaClient(HANNAH_PERSONAL_ACCESS_TOKEN);
 const writeFile = promisify(fs.writeFile);
@@ -84,10 +84,13 @@ const sync = async () => {
     const requests = Object.values(images).map(url => axios.get(url));
     const responses = await Promise.all(requests);
     spinner.text = 'Write svg icons to files.';
+
+    const OUT_DIR = await getSourcePath('icons/svg');
     if (fs.existsSync(OUT_DIR)) {
       fs.rmdirSync(OUT_DIR, { recursive: true });
     }
     fs.mkdirSync(OUT_DIR);
+
     const writePromises: (Promise<unknown> | undefined)[] = responses.map((res, index) => {
       const id = iconIds[index];
       if (!res.data) {
@@ -97,8 +100,12 @@ const sync = async () => {
       const { type, name, size, style } = iconsInfo[id];
       return writeFile(path.join(OUT_DIR, `${[type, name, size, style].join('-')}.svg`), res.data);
     });
+
     writePromises.push(
-      writeFile(path.resolve(__dirname, './manifest.json'), JSON.stringify(iconComponents, null, 2))
+      writeFile(
+        await getSourcePath('codegen/scaffold/iconsManifest.json'),
+        JSON.stringify(iconComponents, null, 2)
+      )
     );
 
     await Promise.all(writePromises);

@@ -3,6 +3,7 @@ import * as ejs from 'ejs';
 import * as path from 'path';
 import { argv } from 'yargs';
 
+import { formatTemplateType } from './formatTemplateType';
 import { getSourcePath } from './getSourcePath';
 
 const prettierConfig = argv.prettierConfig as string;
@@ -25,7 +26,7 @@ export const generateFromTemplate = async ({
 }) => {
   try {
     const templatePath = path.join(__dirname, '../templates', template);
-    const code = await ejs.renderFile(templatePath, { data });
+    const code = await ejs.renderFile(templatePath, { data, format: formatTemplateType });
     const outFile = await getSourcePath(dest);
     await writePrettyFile({
       prettierConfig,

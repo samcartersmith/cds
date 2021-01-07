@@ -1,11 +1,9 @@
 /**
  * DO NOT MODIFY
- * Generated automatically
+ * Generated from scripts/codegen/main.ts
  */
 
 export type IconSize = 'xs' | 's' | 'm' | 'l';
-
-export type IconPixels = 8 | 12 | 16 | 24 | 32;
 
 export type IconKind =
   | 'allTimeHigh'
@@ -263,3 +261,5 @@ export type IconName =
   | 'visibleLight'
   | 'walletHeavy'
   | 'wireTransferHeavy';
+
+export type IconPixels = 8 | 12 | 16 | 24 | 32;

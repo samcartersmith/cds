@@ -1,6 +1,7 @@
 import { scaleConfig } from '@cb/design-system/codegen/configs/scaleConfig';
 import { mapValues } from '@cb/design-system/utils';
 
+import { Icon } from './Icon';
 import { Palette } from './Palette';
 import { Spectrum } from './Spectrum/Spectrum';
 import { updateTextStory } from './story/updateTextStory';
@@ -9,62 +10,88 @@ import { TypeScript } from './Typescript';
 import { generateFromTemplate } from './utils/generateFromTemplate';
 import { logError } from './utils/logError';
 
-const templates: Record<string, { dest: string; data: Record<string, unknown> }[]> = {
-  'css.ejs': [
-    {
-      dest: 'web/src/components/Text/textStyles.ts',
-      data: Type.css,
-    },
-    {
-      dest: 'theme/styles/scale.ts',
-      data: Type.scaleCss,
-    },
-    {
-      dest: 'theme/styles/spectrum.ts',
-      data: Spectrum.css,
-    },
-    {
-      dest: 'theme/styles/foregroundColor.ts',
-      data: Palette.cssColor,
-    },
-    {
-      dest: 'theme/styles/backgroundColor.ts',
-      data: Palette.cssBackgroundColor,
-    },
-  ],
-  'objectMap.ejs': [
-    {
-      dest: 'theme/styles/scale.native.ts',
-      data: mapValues(scaleConfig, (_, scale) => {
-        return {
-          typography: Type.native[scale],
-        };
-      }),
-    },
-    {
-      dest: 'theme/styles/spectrum.native.ts',
-      data: Spectrum.native,
-    },
-    {
-      dest: 'theme/palette/paletteCssVarsMap.ts',
-      data: { paletteCssVarsMap: Palette.cssVariables },
-    },
-  ],
-  'typescript.ejs': TypeScript,
-  'components/Text.ejs': [
-    {
-      dest: 'web/src/components/Text/Text.tsx',
-      data: Type.pascalCaseConfig,
-    },
-  ],
-};
+async function loadTemplates(): Promise<
+  Record<string, { dest: string; data: Record<string, unknown> }[]>
+> {
+  const iconData = await Icon.data();
+
+  return {
+    'css.ejs': [
+      {
+        dest: 'web/src/components/Text/textStyles.ts',
+        data: Type.css,
+      },
+      {
+        dest: 'theme/styles/scale.ts',
+        data: Type.scaleCss,
+      },
+      {
+        dest: 'theme/styles/spectrum.ts',
+        data: Spectrum.css,
+      },
+      {
+        dest: 'theme/styles/foregroundColor.ts',
+        data: Palette.cssColor,
+      },
+      {
+        dest: 'theme/styles/backgroundColor.ts',
+        data: Palette.cssBackgroundColor,
+      },
+    ],
+    'objectMap.ejs': [
+      {
+        dest: 'theme/styles/scale.native.ts',
+        data: mapValues(scaleConfig, (_, scale) => {
+          return {
+            typography: Type.native[scale],
+          };
+        }),
+      },
+      {
+        dest: 'theme/styles/spectrum.native.ts',
+        data: Spectrum.native,
+      },
+      {
+        dest: 'theme/palette/paletteCssVarsMap.ts',
+        data: { paletteCssVarsMap: Palette.cssVariables },
+      },
+      {
+        dest: 'icons/src/native/glyphs.ts',
+        data: { glyphMap: iconData.glyphMap },
+      },
+    ],
+    'typescript.ejs': [
+      ...TypeScript,
+      {
+        dest: 'icons/src/types.ts',
+        data: {
+          types: {
+            IconSize: iconData.sizes,
+            IconKind: iconData.kinds,
+            IconName: iconData.names,
+            IconPixels: iconData.pixels,
+          },
+        },
+      },
+    ],
+    'components/Text.ejs': [
+      {
+        dest: 'web/src/components/Text/Text.tsx',
+        data: Type.pascalCaseConfig,
+      },
+    ],
+  };
+}
 
 (async function () {
   const templateInputs: { template: string; dest: string; data: Record<string, unknown> }[] = [];
+
   try {
     Palette.validate();
+
     await updateTextStory();
-    Object.entries(templates).forEach(([template, configs]) => {
+
+    Object.entries(await loadTemplates()).forEach(([template, configs]) => {
       configs.map(({ dest, data }) => {
         templateInputs.push({
           template,
@@ -73,7 +100,9 @@ const templates: Record<string, { dest: string; data: Record<string, unknown> }[
         });
       });
     });
+
     await Promise.all(templateInputs.map(generateFromTemplate));
+    await Icon.svgs();
   } catch (err) {
     logError(err);
   }

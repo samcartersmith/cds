@@ -7,7 +7,7 @@
 <% if(data.types){ %>
   <%_ Object.entries(data.types).map(([name, value]) => { _%>
     <% if(typeof value === 'object' && value.length){ %>
-      export type <%- name %> = <%- value.map(item => `"${item}"`).join('|') -%>;
+      export type <%- name %> = <%- value.map(format).join('|') -%>;
     <% } %>
     <% if(typeof value === 'string'){ %>
       export type <%- name %> = <%- value %>;

@@ -1,3 +1,8 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
+
 export const glyphMap = {
   '8': {
     closeLight: '',
@@ -674,4 +679,4 @@ export const glyphMap = {
     walletHeavy: '',
     wireTransferHeavy: '',
   },
-};
+} as const;
