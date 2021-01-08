@@ -25,14 +25,11 @@ ts_project(
 
 filegroup(
     name = "source",
-    srcs = glob([
+    srcs = ["//eng/shared/design-system:web_source"] + glob([
         "src/**/*.ts",
         "src/**/*.tsx",
         "src/**/*.js",
-    ]) + [
-        "//eng/shared/design-system/theme:web_source",
-        "//eng/shared/design-system/utils:source",
-    ],
+    ]),
 )
 
 # Emit type declarations with path aliases transformed
@@ -217,6 +214,13 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+load("//tools:def.bzl", "eslint_test", "stylelint_test")
+
+eslint_test(
+    name = "eslint",
+    sources = ":eslint_source",
+)
+
 filegroup(
     name = "style_source",
     srcs = [
@@ -230,6 +234,11 @@ filegroup(
         ],
     ),
     visibility = ["//visibility:public"],
+)
+
+stylelint_test(
+    name = "stylelint",
+    sources = ":style_source",
 )
 
 filegroup(
@@ -251,6 +260,7 @@ build_storybook(
         "-c eng/shared/design-system/web/.storybook",
         "-s eng/shared/design-system/web/static",
         "-o $(@D)",
+        "--quiet",
         "--no-dll",
     ],
     data = [
@@ -259,9 +269,7 @@ build_storybook(
         "//:package.json",
         "//:tsconfig.json",
         "//eng/shared/design-system:.babelrc.js",
-        "//eng/shared/design-system/icons:story_source",
-        "//eng/shared/design-system/theme:story_source",
-        "//eng/shared/design-system/utils:source",
+        "//eng/shared/design-system:storybook_source",
         "@npm//@babel/core",
         "@npm//@babel/parser",
         "@npm//@babel/preset-env",

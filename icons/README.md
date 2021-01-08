@@ -9,17 +9,13 @@ The icons are synchronized with the publish icon component library in [figma](ht
 To pull icons from figma, run:
 
 ```bash
-make sync
+bazel run //eng/shared/design-system:sync_icons
 ```
 
-To generate react inline svg components (for the web), run:
+To generate icon font and react components for all the icons, run:
 
 ```bash
-make react
-```
-
-To generate icon font (for React Native) and TypeScript types, run:
-
-```bash
-make generate
+bazel run //eng/shared/design-system:codegen
+# format generated icon components
+bazel run //eng/shared/design-system:eslint_fix_icons
 ```

@@ -1,5 +1,4 @@
 load("@npm//ts-node:index.bzl", "ts_node")
-load("//tools:def.bzl", "eslint_fix", "eslint_test", "stylelint_test")
 
 exports_files([
     ".babelrc.js",
@@ -9,52 +8,79 @@ exports_files([
 filegroup(
     name = "web_source",
     srcs = [
-        "//eng/shared/design-system/icons:web_source",
-        "//eng/shared/design-system/theme:web_source",
         "//eng/shared/design-system/web:runtime_source",
-        "//eng/shared/design-system/utils:source",
     ] + glob(
         include = [
+            "**/*.js",
             "**/*.ts",
             "**/*.tsx",
-            "**/*.js",
+            "**/*.css",
+        ],
+        exclude = [
+            "**/*.native.*",
+            "**/*.stories.*",
+            "**/*.test.*",
         ],
     ),
     visibility = ["//visibility:public"],
 )
 
-# All files and subdirectories (codegen) that are not bazel submodules.
 filegroup(
-    name = "other_eslint_source",
+    name = "storybook_source",
     srcs = glob(
         include = [
             "**/*.ts",
-            "**/*.js",
+            "**/*.tsx",
+            "**/*.stories.*",
+            "icons/styles.css",
+        ],
+        exclude = [
+            "**/*.native.*",
         ],
     ),
+    visibility = ["//visibility:public"],
 )
 
-eslint_sources = {
-    "web": "//eng/shared/design-system/web:eslint_source",
-    "icons": "//eng/shared/design-system/icons:eslint_source",
-    "theme": "//eng/shared/design-system/theme:eslint_source",
-    "other": ":other_eslint_source",
-}
+load("//tools:def.bzl", "eslint_fix", "eslint_test", "stylelint_test")
+
+eslint_dirs = [
+    "codegen",
+    # "components",
+    "icons",
+    "theme",
+    "utils",
+]
+
+[
+    filegroup(
+        name = "eslint_source_%s" % directory,
+        srcs = glob(
+            include = [
+                "%s/**/*.js" % directory,
+                "%s/**/*.ts" % directory,
+                "%s/**/*.tsx" % directory,
+                "%s/**/*.mdx" % directory,
+            ],
+        ),
+        visibility = ["//visibility:public"],
+    )
+    for directory in eslint_dirs
+]
 
 [
     eslint_test(
-        name = "eslint_" + name,
-        sources = source,
+        name = "eslint_%s" % directory,
+        sources = ":eslint_source_%s" % directory,
     )
-    for (name, source) in eslint_sources.items()
+    for directory in eslint_dirs
 ]
 
 [
     eslint_fix(
-        name = "eslint_fix_" + name,
-        sources = source,
+        name = "eslint_fix_%s" % directory,
+        sources = ":eslint_source_%s" % directory,
     )
-    for (name, source) in eslint_sources.items()
+    for directory in eslint_dirs
 ]
 
 filegroup(
@@ -62,7 +88,6 @@ filegroup(
     srcs = [
         ".stylelintrc.js",
         "//eng/shared/design-system/web:style_source",
-        "//eng/shared/design-system/icons:style_source",
         "//:babel.config.js",
     ] + glob(
         include = [
@@ -89,8 +114,9 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-# CODEGEN
-
+# ***************
+# *** codegen ***
+# ***************
 ts_node(
     name = "codegen",
     args = [
@@ -141,3 +167,4 @@ ts_node(
         "@npm//chalk",
     ],
 )
+# *** codegen end ***

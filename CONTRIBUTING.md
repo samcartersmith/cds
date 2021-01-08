@@ -2,16 +2,11 @@
 
 ## Code Generation
 
-Please run codegen before running anything else to create necessary code.
+Please run codegen before running anything else to create necessary code including icons.
 
 ```
 yarn && make codegen
 ```
-
-Generated code:
-
-- typography styles
-- Text components
 
 ## Web
 
