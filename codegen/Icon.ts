@@ -103,7 +103,7 @@ export const Icon = {
 
   async svgs() {
     const SVGS_DIR = await getSourcePath('icons/svg');
-    const COMPONENTS_DIR = await getSourcePath('icons/src/components');
+    const COMPONENTS_DIR = await getSourcePath('icons/components');
 
     const svgrConfig = {
       expandProps: 'end',

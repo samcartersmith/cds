@@ -1,6 +1,6 @@
 // Example index that imports from another package
 
-import { IconHeavy } from '@cb/design-system-icons';
+import { IconHeavy } from '@cds/icons';
 
 export type FakeType = string;
 

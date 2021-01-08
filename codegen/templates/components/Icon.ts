@@ -48,7 +48,7 @@ const iconReactTemplate = (
     import * as React from 'react';
 
     import type { InternalIconProps } from '../props';
-    import '../../styles.css';
+    import '../styles.css';
 
     const ${componentName} = (${props}) => {
         const role = title ? 'img' : 'presentation';

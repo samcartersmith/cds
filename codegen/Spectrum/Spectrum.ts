@@ -1,6 +1,6 @@
-import * as spectrumModes from '@cb/design-system/codegen/configs/spectrum';
-import { mapKeys, mapValues, toCssVar } from '@cb/design-system/utils';
+import { mapKeys, mapValues, toCssVar } from '@cds/utils';
 
+import * as spectrumModes from '../configs/spectrum';
 import { createSpectrum } from './createSpectrum';
 
 export const hueNames = [

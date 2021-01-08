@@ -1,6 +1,6 @@
-import { scaleConfig } from '@cb/design-system/codegen/configs/scaleConfig';
-import { mapValues } from '@cb/design-system/utils';
+import { mapValues } from '@cds/utils';
 
+import { scaleConfig } from './configs/scaleConfig';
 import { Icon } from './Icon';
 import { Palette } from './Palette';
 import { Spectrum } from './Spectrum/Spectrum';
@@ -56,14 +56,14 @@ async function loadTemplates(): Promise<
         data: { paletteCssVarsMap: Palette.cssVariables },
       },
       {
-        dest: 'icons/src/native/glyphs.ts',
+        dest: 'icons/native/glyphs.ts',
         data: { glyphMap: iconData.glyphMap },
       },
     ],
     'typescript.ejs': [
       ...TypeScript,
       {
-        dest: 'icons/src/types.ts',
+        dest: 'icons/types.ts',
         data: {
           types: {
             IconSize: iconData.sizes,

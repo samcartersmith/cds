@@ -1,4 +1,4 @@
-import { IconHeavy } from '@cb/design-system-icons';
+import { IconHeavy } from '@cds/icons';
 import { Meta, Canvas, Story, ArgsTable, Source } from '@storybook/addon-docs/blocks';
 import * as path from 'path';
 /**
@@ -14,7 +14,7 @@ const importAll = directory => {
     icons[fileName] = directory(file).default;
   });
 };
-importAll(require.context('eng/shared/design-system/icons/src/components/', false, /\.tsx$/));
+importAll(require.context('eng/shared/design-system/icons/components/', false, /\.tsx$/));
 
 <Meta
   title="Icons/UX"
@@ -30,7 +30,7 @@ There are 5 possible _dimensions_ for an icon **8px, 12px, 16px, 24px, and 32px*
 
 <Source
   code={`
-import { IconHeavy } from '@cb/design-system-icons'
+import { IconHeavy } from '@cds/icons'
 import { ThemeProvider } from '@cds/theme'\n
 <ThemeProvider scale="large">
   <IconHeavy kind="bell" size="m" title="notifications" titleId="ux-icon-story-bell-m" />

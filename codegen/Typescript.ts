@@ -1,5 +1,4 @@
-import { scales } from '@cb/design-system/codegen/configs/scaleConfig';
-
+import { scales } from './configs/scaleConfig';
 import { Spectrum } from './Spectrum/Spectrum';
 
 const templates = {

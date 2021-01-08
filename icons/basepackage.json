@@ -1,5 +1,5 @@
 {
-  "name": "@cb/design-system-icons",
+  "name": "@cds/icons",
   "version": "0.0.1",
   "description": "Coinbase Design System - Icons",
   "keywords": ["design system", "icons", "icon fonts"],
@@ -12,8 +12,7 @@
   "authors": {
     "coinbase": "coinbase"
   },
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "module": "lib/index.js",
-  "typings": "typings/index.d.ts",
-  "files": ["fonts/", "dist/", "lib/", "typings/", "native.d.ts", "native.js", "styles.css"]
+  "typings": "index.ts"
 }

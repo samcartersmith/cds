@@ -1,10 +1,10 @@
-import { Type } from '@cb/design-system/codegen/Type/Type';
 import { writePrettyFile } from '@tools/writePrettyFile';
 import chalk from 'chalk';
 import * as fs from 'fs';
 import * as path from 'path';
 import { argv } from 'yargs';
 
+import { Type } from '../Type/Type';
 import { getSourcePath } from '../utils/getSourcePath';
 
 export const updateTextStory = async () => {

@@ -1,18 +1,11 @@
-import { DEFAULT_SCALE, scaleConfig } from '@cb/design-system/codegen/configs/scaleConfig';
-import {
-  kebabCase,
-  mapKeys,
-  mapValues,
-  pascalCase,
-  toCssVar,
-  toCssVarFn,
-} from '@cb/design-system/utils';
+import { kebabCase, mapKeys, mapValues, pascalCase, toCssVar, toCssVarFn } from '@cds/utils';
 import {
   typographyConfig,
   TypographyConfig,
   cssFontFamilies,
 } from 'eng/shared/design-system/codegen/configs/typographyConfig';
 
+import { DEFAULT_SCALE, scaleConfig } from '../configs/scaleConfig';
 import { calculateLetterSpacing, calculateMinFontSize, round } from './utils';
 
 const calculateVariantStyle = (

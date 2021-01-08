@@ -1,6 +1,6 @@
-import { scaleConfig } from '@cb/design-system/codegen/configs/scaleConfig';
-import { pascalCase } from '@cb/design-system/utils';
+import { pascalCase } from '@cds/utils';
 
+import { scaleConfig } from '../configs/scaleConfig';
 import {
   typographyCss,
   typographyScaleMapWithCssVariables,

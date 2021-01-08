@@ -1,7 +1,7 @@
-import * as modes from '@cb/design-system/codegen/configs/spectrum';
-import { emptyObject } from '@cb/design-system/utils';
+import { emptyObject } from '@cds/utils';
 import { generate } from '@k-vyn/coloralgorithm';
 
+import * as modes from '../configs/spectrum';
 import {
   ColorOutput,
   ModeConfig,
@@ -28,7 +28,7 @@ export const createSpectrum = <T extends ColorOutput>(mode: keyof typeof modes, 
     return generate(item.properties, item.options);
   });
 
-  /* 
+  /*
     [ { inverted: false, colors: Color[], name: 'Blue' } ],
     [ { inverted: false, colors: Color[], name: 'Green' } ]
 
