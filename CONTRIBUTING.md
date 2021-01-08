@@ -8,6 +8,13 @@ Please run codegen before running anything else to create necessary code includi
 yarn && make codegen
 ```
 
+## Create A New Package
+
+1. Run `make new.package --name=<package>`.
+2. Edit [BUILD.bazel](./BUILD.bazel) `eslint_dirs` to include the new package.
+3. Check out `<package>/basepackage.json` and make necessary updates.
+4. Update `<package>/CHANGELOG.md`.
+
 ## Web
 
 In `eng/shared/design-system/web` directory, run storybook locally
