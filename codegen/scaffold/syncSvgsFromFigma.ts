@@ -9,11 +9,11 @@ import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 import { getSourcePath } from '../utils/getSourcePath';
 
-const HANNAH_PERSONAL_ACCESS_TOKEN = '67699-f08bc020-d3f6-443f-ad2a-9e11bbf3dfce';
+const CDS_UTILITY_ACCT_PERSONAL_ACCESS_TOKEN = '152081-24342ed1-00c8-449d-a736-eeec18ef9348';
 const ICONS_FILE_ID = 'ZPu9gtLB5KTkzazHcf9Sfi';
 const NODE_ID = '1107:22364';
 
-const figmaClient = FigmaClient(HANNAH_PERSONAL_ACCESS_TOKEN);
+const figmaClient = FigmaClient(CDS_UTILITY_ACCT_PERSONAL_ACCESS_TOKEN);
 const writeFile = promisify(fs.writeFile);
 
 type IconName = {
