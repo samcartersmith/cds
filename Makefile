@@ -5,6 +5,10 @@ Help:
   $$ make lint                     -- Run eslint on all sources.
   $$ make new.package name=<name>  -- Scaffold a new package with the defined name.
   $$ make sync.icons               -- Synchronize icons with figma.
+  $$ make start.website						 -- Start docusaurus website.
+  $$ make build.website						 -- Build docusaurus website.
+  $$ make serve.website						 -- Serve docusaurus website build locally.
+  $$ make deploy.website					 -- Deploy docusaurus website to cds.cbhq.net.
 endef
 export HELP_TEXT
 
@@ -34,3 +38,18 @@ new.package:
 sync.icons:
 	bazel run :sync_icons
 
+.PHONY: start.website
+start.website:
+	npx docusaurus start website
+
+.PHONY: build.website
+build.website:
+	bazel build website:build
+
+.PHONY: serve.website
+serve.website:
+	bazel run website:serve
+
+.PHONY: deploy.website
+deploy.website:
+	bazel run website/cloud:deploy

@@ -94,3 +94,35 @@ pkg_zip(
 ```bash
 bazel run //eng/shared/design-system/web/cloud:storybook_feature
 ```
+
+
+## CDS Website
+
+Our website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+
+### Local Development
+
+```console
+make start.website
+```
+
+This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```console
+make build.website
+```
+
+### Serve
+
+```console
+make serve.website
+```
+
+### Deploy
+
+```console
+make deploy.website
+```
+

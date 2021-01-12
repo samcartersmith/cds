@@ -1,0 +1,10 @@
+# Production
+/build
+
+# Generated files
+/.docusaurus
+/.cache-loader
+/.linaria-cache
+
+# Misc
+.DS_Store

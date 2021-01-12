@@ -1,0 +1,30 @@
+load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_file_asset")
+
+project_settings(
+    caf = False,
+    slack_channels = ["#design-systems-team"],
+)
+
+pkg_zip(
+    name = "bundled_source_zip",
+    srcs = [
+        "//eng/shared/design-system/website:build",
+    ],
+    remap_paths = {"{gendir}/eng/shared/design-system/website/build": "."},
+)
+
+syn_deployable(
+    name = "deploy",
+    assets = [
+        syn_file_asset(
+            name = "bundled_source_asset",
+            src = ":bundled_source_zip",
+            bucket = "coinbase-design-system-website",
+            is_zip = True,
+        ),
+    ],
+    config_name = "website",  # config_name (i.e. Codeflow's config_name)
+    target = "development",  # environment to deploy to
+    # TODO: uncomment once aws-resource is setup
+    # continuous_deployment = True,
+)

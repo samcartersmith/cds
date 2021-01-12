@@ -1,0 +1,61 @@
+load("@npm//@docusaurus/core:index.bzl", "docusaurus")
+
+filegroup(
+    name = "source",
+    srcs = glob(
+        include = [
+            "docs/**/*",
+            "static/**/*",
+            "babel.config.js",
+            "cds-docusaurus-plugin.js",
+            "docusaurus.config.js",
+            "sidebars.js",
+        ],
+    ),
+)
+
+DATA = [
+    ":source",
+    # configs
+    "//:tsconfig.json",
+    "//:babel.config.js",
+    # dependencies
+    "@npm//react",
+    "@npm//react-dom",
+    "@npm//@docusaurus/core",
+    "@npm//@docusaurus/preset-classic",
+    "@npm//linaria",
+    "@npm//@mdx-js/react",
+    # dev dependencies
+    "@npm//typescript",
+    "@npm//@babel/preset-typescript",
+    "@npm//babel-plugin-module-resolver",
+    "@npm//babel-plugin-transform-async-to-promises",
+    "@npm//@docusaurus/module-type-aliases",
+    "@npm//tsconfig-paths-webpack-plugin",
+    # types
+    "@npm//@tsconfig/docusaurus",
+    "@npm//@types/react-helmet",
+    "@npm//@types/react",
+    "@npm//@types/react-dom",
+    "@npm//@types/react-router-dom",
+]
+
+docusaurus(
+    name = "build",
+    args = [
+        "build eng/shared/design-system/website",
+        "--out-dir $(@D)",
+    ],
+    data = DATA,
+    output_dir = True,
+    visibility = ["//visibility:public"],
+)
+
+docusaurus(
+    name = "serve",
+    args = [
+        "serve eng/shared/design-system/website",
+    ],
+    data = [":build"],
+)
