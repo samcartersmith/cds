@@ -1,0 +1,115 @@
+---
+id: roadmap
+title: Roadmap
+---
+
+#### [Project tracker](https://docs.google.com/spreadsheets/d/1cwxrxbu7K-A1JyGBS0f89FK_F7EFnr8f4Dr1xAQxg7Q/edit#gid=1115838130)
+
+### Infrastructure
+
+#### Get the infrastructure in place, which helps build confidence in unification
+
+Last half, we invested in code sharing infrastructure that would allow us to build component libraries and let other products consume it as an NPM package. It works in theory, but we need to test it out and write guidance for how teams should go about consuming them as an external dependency. We also will be expanding our user base considerably, so we need to make investments in our tooling and support to help prevent future support cost.
+
+- ✅ Add a new CDS template package to base other packages on.
+- ✅ Update package names to use @cds prefix
+- ✅ Centralize all of our codegen logic so we run one command and it updates everything
+- ✅ Move icon generation logic from icons to codegen
+- ✅ Autogenerate any icon sizes that may not exist
+- ✅ Fix icon types for web components. A size may exist for one scale but not in another.
+- ✅ Scaffold docusaurus site in monorepo
+- ✅ Add build/deploy infra for docusaurus site
+- ✅ Host docusaurus site at cds.cbhq.net
+- 🚧 Handle linaria transpilation in packages
+- 🚧 Flatten web directory structure in monorepo to mirror other packages
+- 🚧 Prototype API which maps React props to Tailwind CSS classes
+- 🚧 Tailwind build test. Ensure unused Tailwind CSS is tree shaked.
+- 🚧 Tailwind typescript test. Ensure autocompletion is available filling our prop abstractions.
+- Update Tailwind config in web to pull colors from palette css variables. [Details here](https://tailwindcss.com/docs/customizing-colors#custom-colors)
+- Scaffold a react native app in monorepo (similar to debug menu in retail RN) to test/view RN components
+- Copy retail RN DS components to mobile package in monorepo
+- Website sidebar reorg. Based on outcome of this [discussion](https://coinbase.slack.com/files/UBVHL4UGJ/F01JUFRHRSQ/branding)
+- Add live codeblock editor to website
+- Extend docusaurus ThemeProvider to use CDS ThemeProvider
+- Add CDS web components as importable components within live editor of website
+- Add synced tab component for website with web/mobile options to use for component documentation. [Details here](https://v2.docusaurus.io/docs/markdown-features#syncing-tab-choices)
+- Add CI/CD automatic package publishing pipeline
+- Add CD for website
+- Add Algolia DocSearch functionality to website. [Details here](https://v2.docusaurus.io/docs/search/#using-algolia-docsearch)
+
+### Unification
+
+#### Unify our primitives (mobile and web), which will better position us and cut future revision and support cost
+
+Primitives such as Typography, Color, Layout are the most frequently used shared resources within a Design System. By offering these holistically, we immediately provide significant value to feature teams. We also prove that the unification is happening. Last half CDS invested in expanding Typography and Color to support more needs such as Legibility, Scale, and an algorithmic color approach.
+
+- ✅ Text component should assign appropriate styles internally based on active scale.
+- ✅ Text component color prop should assign appropriate styles based on active palette.
+- ✅ On web, update Text component to include a required `as` prop. Typescript types extend based on element passed in.
+- Icon component color prop should assign appropriate styles based on active palette.
+- On mobile, migrate Button to pull colors from palette.
+- _The following are contingent on ongoing design discussions_
+  - Align on heavy/light usage in Icon component.
+  - Unify Icon component API between web and mobile based on heavy/light outcome.
+  - Create an asset icons package which is dark mode compatible.
+  - Create an illustrations package which is dark mode compatible.
+
+### Component port
+
+Mobile has a wealth of good quality components we can port to the web. For each component, we will audit it’s compatibility for the Web, and make simple alterations needed for mobile (i.e. api naming, etc). We will prioritize components that are quick and seamless to transition to the web. This may result in some components that don’t replace all their similar components, but it will replace a significant number of one-off components.
+
+- 🚧 On web, update Text component to use new API based on Tailwind exploration work.
+- Create Box primitive. Replace `View` on mobile with `Box`.
+- Box component backgroundColor prop should assign appropriate styles based on active palette.
+- Box component spacing prop should assign appropriate styles based on active scale.
+- On web, create Flex and Grid components which extend Box primitive.
+- _The following require more details based on design outcomes_
+  - Buttons
+  - Inputs
+  - Controls
+  - Cards
+  - Sections
+  - Elevation
+  - Table/Cells
+
+### Fill in the gaps
+
+There are components on mobile i.e. Tab Bars or Trays that may not make sense as-is on the Web, so we’ll look at how we can unify the heuristics, naming, and guidance, but provide web-specific equivalents.
+
+- Continue audit & port components from React Native to Web that are higher cost and lower relevance
+
+## Timeline
+
+- **1/11/21**
+  - ✅ ThemeProvider with color and scale available for consumption in RN and web
+  - ✅ Launch cds.cbhq.net
+- **2/01/21**
+  - Consumable @cds/mobile and @cds/web with ThemeProvider powering Typography components
+- **2/08/21**
+  - @cds/mobile includes all Retail RN DS components powered by ThemeProvider
+- **2/22/21**
+  - Retail RN migration to @cds/mobile
+  - Buttons
+  - Inputs
+- **3/1/21**
+  - Controls
+- **3/15/21**
+  - Table/Cells
+- **3/22/21**
+  - Cards
+- **3/29/21**
+  - Sections
+  - Elevation
+
+## Goals
+
+- **Primitive Adoption**: To build a sense of consistency within Coinbase experiences, it’s important for us to have a high percentage or complete adoption of CDS primitives across all experiences. This will cut down variation and bugs while also streamlining contribution.
+- **Comprehensive web & mobile component library**: We want to ensure that web and mobile teams have the primitives, components, and resources to take on web and mobile work, so that they’re not starting from scratch and are building consistent experiences. While there is overlap between mobile and web, there may be some components that are web or mobile specific, and that’s ok.
+- **Partner**: In order for us to be effective in our work, we need to actively work on relationships and bring teams along with our work. We need to seek out opportunities to collaborate with other teams, facilitate work between teams, and be a point of contact for any new pattern.
+
+## Future work
+
+- Have website accessible from public domain
+- Add contentful integration for website
+- Add versioning to docusaurus website
+- Automate any major releases trigger creation of new version of website

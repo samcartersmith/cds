@@ -30,10 +30,15 @@ module.exports = {
       links: [
         {
           title: 'Docs',
+          // Add important links to display in footer here
           items: [
             {
               label: 'Overview',
               to: '/',
+            },
+            {
+              label: 'Roadmap',
+              to: 'roadmap/',
             },
           ],
         },

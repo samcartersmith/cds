@@ -1,0 +1,164 @@
+---
+id: typography
+title: Typography
+---
+
+Our typography system consists of Graphik and Inter. The sizes of type within the set have been selected for hierarchy and legibility for a range of scales.
+
+We based our definition of legibility on [2011 research published in Journal of Vision](https://jov.arvojournals.org/article.aspx?articleid=2191906#88123043). The study found a correlation between the degree of visual angle and reading speed. If we make the assumption that people are able to read faster when text is more legible, we are able to draw a correlation between visual arch and legibility.
+
+## Typefaces
+
+- **Graphik**: Graphik is a typeface by Christian Schwartz and is a sans-serif, neo-grotesque typeface. The design of Graphik was inspired by the lesser-known grotesques and geometric sans-serifs of the twentieth century. It supports Latin, Cyrillic, and Greek letters.
+
+- **Inter**: Inter is a typeface by Rasmus Andersson and is a sans-serif, neo-grotesque typeface. Inter is explicitly designed for type display on screens, and it's optimized for proper display of small type sizes.
+
+## Variants
+
+- [**Display**](#display)
+- [**Title**](#title)
+- [**Headline & Body**](#headline--body)
+- [**Label & Caption**](#label--caption)
+
+### Display
+
+Display styles are to be used very sparingly. Display styles supersede Title styles, so they are there for when you need to layer on more hierarchy.
+
+```jsx
+<ThemeProvider scale="xLarge">
+  <Display1 as="h1">Display1</Display1>
+  <Display2 as="h2">Display2</Display2>
+</ThemeProvider>
+```
+
+### Title
+
+Title styles are used to establish the primary hierarchy in a layout. They should be used to label sections.
+
+```jsx
+<ThemeProvider scale="xLarge">
+  <Title1 as="h3">Title1</Title1>
+  <Title2 as="h4">Title2</Title2>
+  <Title3 as="h5">Title3</Title3>
+</ThemeProvider>
+```
+
+### Headline & Body
+
+Headline and body styles are your essential content styles. They’re versatile styles that can be used for paragraphs, data, labels for buttons.
+
+```jsx
+<ThemeProvider scale="xLarge">
+  <Headline as="p">Headline</Headline>
+  <Body as="p">Body</Body>
+</ThemeProvider>
+```
+
+### Label & Caption
+
+Label and caption styles are when you need to add hierarchy in your content. They ideally are used in conjunction with Headline and Body styles, but in extraordinarily dense interfaces they can replace Headline & Body should you need to present large data sets to users. They’re also great candidates for presenting numbers to the user as they have tabular numbers by default.
+
+```jsx
+<ThemeProvider scale="xLarge">
+  <Label1 as="p">Label1</Label1>
+  <Label2 as="p">Label2</Label2>
+  <Caption as="p">Caption</Caption>
+  <Legal as="p">Legal</Legal>
+</ThemeProvider>
+```
+
+## Styling
+
+### Italics & Bold emphasis
+
+Italics and bold emphasis should generally be avoided at all times for a few reasons:
+
+- They do not translate across all languages.
+- Many non-latin character languages may not support either stylings.
+- The intended meaning would be unable to be displayed to the user.
+- Italics or bold emphasis do not have an explicit meaning across any local or language.
+- Screen readers will not inform users when italicized text is being used.
+
+### Alignment
+
+We generally left align all text and only center text when absolutely necessary.
+
+```jsx
+<ThemeProvider scale="xLarge">
+  <Headline as="p" textAlign="start">
+    Left aligned
+  </Headline>
+  <Headline as="p" textAlign="center">
+    Center aligned
+  </Headline>
+  <Headline as="p" textAlign="end">
+    Right aligned
+  </Headline>
+</ThemeProvider>
+```
+
+### Wrapping & Truncation
+
+At Coinbase, we often have to display interfaces with text strings. We also support multiple languages, so even if a text string can display in English does not guarantee it to be displayed in other languages.
+
+- **Wrapping**: is important to think about as it allows you to extend your strings to multiple lines.
+- **Start truncation**: will add ellipses to beginning of the text string and show the end of the string.
+- **Middle truncation**: will add ellipses to the middle of the text string and show the beginning and the end of the text string.
+- **End truncation**: will add ellipses to end of a text string and show the beginning of the text string.
+
+### Numbers
+
+Displaying numbers to users is a critical part of interfaces at Coinbase. With that, there are a few concepts that are important to be aware of and leverage when necessary.
+
+- **Proportional numbers**: have a width that fits to their letterform. For example, 1 is narrower than 6.
+- **Tabular numbers**: have consistent width across all numbers in the same typeface and font size. For example, 1 and 6 will have the same width.
+
+```jsx
+<ThemeProvider scale="xLarge">
+  <Display1 as="p" tnum>
+    $16,210.33
+  </Display1>
+</ThemeProvider>
+```
+
+## Text component
+
+Text is a component for showing text in different typography. The typography sizes vary based on the scale of the closest ancestor that has a scale class applied. If no scale class is applied to the entire document, the text components will not have the appropriate typography styles because styles are defined by CSS variables and the scale classes define the values for the CSS variables. See design documentation.
+
+For accessibility purposes, heading tags, i.e. h1-h6, carry hierarchy information and therefore it is important for heading tags to be used consistently. They also matter for SEO. CDS enforces that h1-h5 are always associated with the same typography styles. Optionally, any typography can be used with any non-heading html text tag of choice.
+
+### Playground
+
+**ThemeProvider scale**: xSmall | small | medium | large | xLarge | xxLarge | xxxLarge
+
+```jsx
+<ThemeProvider scale="xLarge">
+  <Display1 as="h1">Display1</Display1>
+  <Display2 as="h2">Display2</Display2>
+  <Title1 as="h3">Title1</Title1>
+  <Title2 as="h4">Title2</Title2>
+  <Title3 as="h5">Title3</Title3>
+  <Headline as="p">Headline</Headline>
+  <Body as="p">Body</Body>
+  <Label1 as="p">Label1</Label1>
+  <Label2 as="p">Label2</Label2>
+  <Caption as="p">Caption</Caption>
+  <Legal as="p">Legal</Legal>
+</ThemeProvider>
+```
+
+### Styles
+
+|            | xSmall (-3) | small (-2)  | medium (-1) | large (0)   | xLarge (+2) | xxLarge (+4) | xxxLarge (+6) |
+| ---------- | ----------- | ----------- | ----------- | ----------- | ----------- | ------------ | ------------- |
+| `Display1` | 61px / 68px | 62px / 72px | 63px / 72px | 64px / 72px | 66px / 76px | 68px / 76px  | 70px / 80px   |
+| `Display2` | 31px / 40px | 32px / 40px | 33px / 40px | 34px / 44px | 36px / 44px | 38px / 48px  | 40px / 48px   |
+| `Title1`   | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
+| `Title2`   | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
+| `Title3`   | 17px / 24px | 18px / 24px | 19px / 24px | 20px / 28px | 22px / 28px | 24px / 32px  | 26px / 32px   |
+| `Headline` | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
+| `Body`     | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
+| `Label1`   | 11px / 12px | 12px / 16px | 13px / 16px | 14px / 16px | 16px / 20px | 18px / 20px  | 20px / 24px   |
+| `Label2`   | 11px / 12px | 12px / 16px | 13px / 16px | 14px / 16px | 16px / 20px | 18px / 20px  | 20px / 24px   |
+| `Caption`  | 10px / 12px | 11px / 12px | 12px / 16px | 13px / 16px | 15px / 16px | 17px / 20px  | 19px / 20px   |
+| `Legal`    | 10px / 12px | 11px / 16px | 12px / 16px | 13px / 16px | 15px / 20px | 17px / 20px  | 19px / 24px   |

@@ -1,3 +1,3 @@
 module.exports = {
-  docs: ['overview'],
+  docs: ['overview', 'principles', 'scale', 'theming', 'typography', 'roadmap'],
 };
