@@ -4,7 +4,8 @@ load("@npm//ttypescript:index.bzl", "ttsc")
 load("//tools:def.bzl", "node_package_gen")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@babel/cli:index.bzl", "babel")
-load("@npm//rollup:index.bzl", "rollup")
+load(":scripts/build/gen_babel_preset.bzl", "gen_babel_preset")
+load("//tools:def.bzl", "node_package_deployable")
 
 ts_project(
     name = "transpile_babel_plugin",
@@ -53,46 +54,6 @@ ttsc(
     output_dir = True,
 )
 
-rollup(
-    name = "dist",
-    args = [
-        "-c $(execpath rollup.config.js)",
-        "-i eng/shared/design-system/web/src/index.ts",
-        "-o $(@D)/index.js",
-    ],
-    data = [
-        "basepackage.json",
-        "linaria.config.js",
-        "rollup.config.js",
-        ":source",
-        "//:tsconfig.json",
-        "//eng/shared/design-system:.babelrc.js",
-        "//:babel.config.js",
-        "@npm//@rollup/plugin-commonjs",
-        "@npm//@rollup/plugin-node-resolve",
-        "@npm//@types/react",
-        "@npm//destyle.css",
-        "@npm//linaria",
-        "@npm//postcss-url",
-        "@npm//react",
-        "@npm//rollup-plugin-babel",
-        "@npm//rollup-plugin-node-externals",
-        "@npm//rollup-plugin-postcss",
-        "@npm//rollup-plugin-terser",
-        # babel config dependencies
-        "@npm//yargs",
-        "@npm//@babel/plugin-proposal-class-properties",
-        "@npm//babel-plugin-transform-async-to-promises",
-        "@npm//babel-plugin-module-resolver",
-        "@npm//@babel/preset-env",
-        "@npm//@babel/preset-react",
-        "@npm//@babel/preset-typescript",
-    ],
-    output_dir = True,
-)
-
-load(":scripts/build/gen_babel_preset.bzl", "gen_babel_preset")
-
 gen_babel_preset(
     name = "babel_preset",
     out = "preset",
@@ -110,7 +71,7 @@ babel(
         "--presets ./$(execpath :babel_preset)",
     ],
     data = [
-        "linaria.config.js",
+        "//eng/shared/design-system:linaria.config.js",
         ":babel_preset",
         ":source",
         ":transpile_babel_plugin",
@@ -156,14 +117,11 @@ pkg_npm(
         "CHANGELOG.md",
     ] + glob(["static/**/*"]),
     deps = [
-        ":dist",
         ":lib",
         ":package_json_gen",
         ":typings",
     ],
 )
-
-load("//tools:def.bzl", "node_package_deployable")
 
 # Publishing to registry-npm-dev.cbhq.net
 node_package_deployable(

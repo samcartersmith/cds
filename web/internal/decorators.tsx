@@ -1,20 +1,22 @@
 import * as React from 'react';
 
 import { fallbackStack } from '@cb/design-system-web/styles/shared';
-import { Scale } from '@cds/theme';
-import * as scaleStyles from '@cds/theme/styles/scale';
+import { ThemeProvider } from '@cds/theme';
+import { DEFAULT_SCALE } from '@cds/theme/scale/context';
 import { css } from 'linaria';
 
 type GetStory = () => React.ReactNode;
 
 export const StoryContainer = (getStory: GetStory) => (
-  <div
-    className={css`
-      padding: 20px;
-    `}
-  >
-    {getStory()}
-  </div>
+  <ThemeProvider scale={DEFAULT_SCALE}>
+    <div
+      className={css`
+        padding: 20px;
+      `}
+    >
+      {getStory()}
+    </div>
+  </ThemeProvider>
 );
 
 type StoryNameLabelProps = {
@@ -56,9 +58,4 @@ export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }
 // eslint-disable-next-line react/display-name
 export const withStoryLabel = (name: string) => (getStory: GetStory) => (
   <StoryNameLabel name={name}>{getStory()}</StoryNameLabel>
-);
-
-// eslint-disable-next-line react/display-name
-export const withScale = (scale: Scale) => (getStory: GetStory) => (
-  <div className={scaleStyles[scale]}>{getStory()}</div>
 );

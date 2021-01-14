@@ -3,6 +3,7 @@ load("@npm//ts-node:index.bzl", "ts_node")
 exports_files([
     ".babelrc.js",
     ".browserslistrc",
+    "linaria.config.js",
 ])
 
 filegroup(

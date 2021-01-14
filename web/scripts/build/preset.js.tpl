@@ -6,7 +6,7 @@ const CDS_ROOT = 'eng/shared/design-system/web';
 
 // compose path to linaria.config.js in the bazel sandbox
 const sandboxRoot = Array(`{bazel_out}/${CDS_ROOT}`.split('/').length).fill('..').join('/')
-const linariaConfig = require(`${sandboxRoot}/${CDS_ROOT}/linaria.config`);
+const linariaConfig = require(`${sandboxRoot}/${CDS_ROOT}/../linaria.config`);
 console.log('linariaConfig', linariaConfig)
 
 module.exports = (babel, options, cwd) => {

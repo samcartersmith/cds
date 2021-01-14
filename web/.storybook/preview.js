@@ -1,10 +1,10 @@
-import { StoryContainer, withScale } from '../internal/decorators';
+import { StoryContainer } from '../internal/decorators';
 import { css } from 'linaria';
 import '@cb/design-system-web/styles/globalStyles';
 // CSS reset
 import 'destyle.css';
 
-export const decorators = [StoryContainer, withScale('large')];
+export const decorators = [StoryContainer];
 
 export const parameters = {
   layout: 'fullscreen',

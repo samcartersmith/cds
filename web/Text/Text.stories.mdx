@@ -1,11 +1,12 @@
-import { withStoryLabel, withScale } from '@cds/web/internal/decorators';
-import { Meta, Canvas, Story, ArgsTable, Source, SourceState } from '@storybook/addon-docs/blocks';
+import { ThemeProvider } from '@cds/theme';
+import { withStoryLabel } from '@cds/web/internal/decorators';
+import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs/blocks';
 
 import * as Type from './Text';
 
 <Meta
   title="Core Components/Text"
-  component={Type.TextBody}
+  component={Type.TextDisplay1}
   argTypes={{
     children: { control: 'text' },
   }}
@@ -13,12 +14,12 @@ import * as Type from './Text';
 
 # Text
 
-`Text` is a component for showing text in different typography. The typography sizes vary based on the scale of the closest ancestor that has a scale class applied. If no scale class is applied to the entire document, the text components will not have the appropriate typography styles because styles are defined by CSS variables and the scale classes define the values for the CSS variables. See [design documentation](https://docs.google.com/document/d/1-pl0GcLzJ3RAnkh3A5s6VpvVwNnndPcptlKjMj_3jRQ/edit).
-
-For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy information and therefore it is important for heading tags to be used consistently. They also matter for SEO. CDS enforces that h1-h5 are always associated with the same typography styles. Optionally, any typography can be used with any non-heading html text tag of choice.
-
 <Canvas withToolbar withSource={SourceState.OPEN}>
-  <Story name="Normal" decorators={[withStoryLabel('Normal (Large)')]}>
+  <Story
+    name="Normal"
+    decorators={[withStoryLabel('Normal (Large)')]}
+    args={{ as: 'p', display: 'block' }}
+  >
     {args => (
       <>
         {Object.entries(Type).map(([name, Component]) => {
@@ -34,11 +35,11 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
   </Story>
   <Story
     name="Dense"
-    decorators={[withScale('xSmall'), withStoryLabel('Dense (xSmall)')]}
-    args={{ display: 'block' }}
+    decorators={[withStoryLabel('Dense (xSmall)')]}
+    args={{ as: 'p', display: 'block' }}
   >
     {args => (
-      <>
+      <ThemeProvider scale="xSmall">
         {Object.entries(Type).map(([name, Component]) => {
           const type = name.slice(4);
           return (
@@ -47,7 +48,7 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
             </Component>
           );
         })}
-      </>
+      </ThemeProvider>
     )}
   </Story>
 </Canvas>
@@ -55,7 +56,7 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
 ## Tabular Numbers
 
 <Canvas>
-  <Story name="Label2 tabular numbers" decorators={[withStoryLabel('Label2')]}>
+  <Story name="Label2 tabular numbers" decorators={[withStoryLabel('Label2')]} args={{ as: 'p' }}>
     {args => (
       <>
         <Type.TextLabel2 {...args}>{args.children || '91.23450'}</Type.TextLabel2>
@@ -68,7 +69,7 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
   <Story
     name="Caption tabular numbers"
     decorators={[withStoryLabel('Caption (align end)')]}
-    args={{ display: 'block', textAlign: 'end' }}
+    args={{ as: 'p', display: 'block', align: 'end' }}
   >
     {args => (
       <>
@@ -79,7 +80,7 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
       </>
     )}
   </Story>
-  <Story name="Title1 tabular numbers" decorators={[withStoryLabel('Title1')]}>
+  <Story name="Title1 tabular numbers" decorators={[withStoryLabel('Title1')]} args={{ as: 'p' }}>
     {args => (
       <>
         <Type.TextTitle1 tnum {...args}>
@@ -101,22 +102,23 @@ For accessibility purposes, heading tags, i.e. `h1`-`h6`, carry hierarchy inform
 
 ## Usage
 
-<Source
-  code={`
-import { TextDisplay2, TextBody } from '@cb/design-system-web/components'
+```tsx
+import { TextDisplay2, TextBody } from '@cds/web/components'
 import { ThemeProvider } from '@cds/theme'
-\n
-// Make sure the scale class name is applied somewhere in the ancestor tree.
-// Only once in the app is needed unless the app is using multiple scales.
-<ThemeProvider scale="large">
-  <TextDisplay2 color="#161652" textAlign="center">Coinbase Design System</TextDisplay2>
-  {/* Title2 is h4 by default */}
-  <TextTitle2 as="span">Earn BTC</TextTitle2>
+
+// Text styles are provided through the theme provider
+<ThemeProvider scale="xSmall">
+  <TextDisplay2 as="h1" color="primary" align="center">Coinbase Design System</TextDisplay2>
+  <TextTitle2 as="p" wrap >Buy and sell popular <a href="/currencies">digital currencies</a></TextTitle2>
   <TextBody as="code" display="inline" tnum>2020</TextBody>
-  <TextLegal wrap as="p">Buy and sell popular digital currencies</TextLegal>
+  <ul>
+    <li><TextBody as="p">BTC</TextBody></li>
+    <li><TextBody as="p">ETH</TextBody></li>
+    <li><TextBody as="p">XRP</TextBody></li>
+    <li><TextBody as="p">DAI</TextBody></li>
+  </ul>
 <ThemeProvider>
-`}
-/>
+```
 
 ## Styles
 
@@ -142,4 +144,4 @@ At different scales, the style attributes `font-size`, `line-height`, and `lette
 
 ## API
 
-<ArgsTable of={Type.TextBody} />
+<ArgsTable />

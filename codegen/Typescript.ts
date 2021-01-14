@@ -1,4 +1,5 @@
 import { scales } from './configs/scaleConfig';
+import { typographyConfig } from './configs/typographyConfig';
 import { Spectrum } from './Spectrum/Spectrum';
 
 const templates = {
@@ -14,6 +15,11 @@ const templates = {
       SpectrumHueStep: Spectrum.hueSteps,
       SpectrumAlias: '`${SpectrumHue}${SpectrumHueStep}`',
       SpectrumAliasWithOpacity: '[SpectrumAlias, number]',
+    },
+  },
+  'core/Text/Typography.ts': {
+    types: {
+      Typography: Object.keys(typographyConfig),
     },
   },
 };

@@ -38,7 +38,7 @@ const calculateVariantStyle = (
   const minUpperCaseLetterSpacing = calculateLetterSpacing(minUpperCaseFontSize, unitless);
 
   const sharedProps = {
-    fontWeight,
+    fontWeight: unitless ? String(fontWeight) : fontWeight,
     ...(unitless ? { fontFamily } : {}),
   };
 

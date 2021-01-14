@@ -18,7 +18,7 @@ async function loadTemplates(): Promise<
   return {
     'css.ejs': [
       {
-        dest: 'web/src/components/Text/textStyles.ts',
+        dest: 'web/Text/textStyles.ts',
         data: Type.css,
       },
       {
@@ -72,12 +72,6 @@ async function loadTemplates(): Promise<
             IconPixels: iconData.pixels,
           },
         },
-      },
-    ],
-    'components/Text.ejs': [
-      {
-        dest: 'web/src/components/Text/Text.tsx',
-        data: Type.pascalCaseConfig,
       },
     ],
   };

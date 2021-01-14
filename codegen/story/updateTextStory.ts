@@ -9,7 +9,7 @@ import { getSourcePath } from '../utils/getSourcePath';
 
 export const updateTextStory = async () => {
   const typeStylesTable = Type.generateScaleTable();
-  const textStoryFile = await getSourcePath('web/src/components/Text/Text.stories.mdx');
+  const textStoryFile = await getSourcePath('web/Text/Text.stories.mdx');
 
   if (fs.existsSync(textStoryFile)) {
     const textStory = fs.readFileSync(textStoryFile);
