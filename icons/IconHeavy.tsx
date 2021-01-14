@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { pascalize } from 'humps';
+import { pascalCase } from '@cds/utils';
 
 import type { IconProps } from './props';
 import { useIconPixelSize } from './useIconPixelSize';
@@ -12,7 +12,7 @@ export const IconHeavy: React.FC<IconProps> = React.memo(function IconHeavy({
   ...props
 }) {
   const px = useIconPixelSize(size);
-  const iconName = `Icon${pascalize(kind)}${px}Heavy`;
+  const iconName = `Icon${pascalCase(kind)}${px}Heavy`;
 
   const LazyIcon = React.useMemo(() => {
     return React.lazy(() => import(`./components/${iconName}`));

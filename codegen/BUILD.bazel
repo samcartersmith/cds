@@ -1,0 +1,33 @@
+filegroup(
+    name = "base_source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# Needs to be separate since ejs files cant be linted
+filegroup(
+    name = "runtime_source",
+    srcs = [":base_source"] + glob(
+        [
+            "**/*.ejs",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# All files to lint and test
+filegroup(
+    name = "source",
+    srcs = [":base_source"] + glob(
+        [
+            "**/*.test.*",
+            "**/*.mdx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)

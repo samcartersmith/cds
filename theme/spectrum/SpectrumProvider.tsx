@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { SpectrumContext } from '@cds/theme/spectrum/context';
-import { Spectrum } from '@cds/theme/spectrum/types';
-import { useSpectrum } from '@cds/theme/spectrum/useSpectrum';
+import { SpectrumContext } from './context';
+import { Spectrum } from './types';
+import { useSpectrum } from './useSpectrum';
 
 type SpectrumProviderProps = {
   value?: Spectrum;

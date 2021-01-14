@@ -5,14 +5,14 @@
 Please run codegen before running anything else to create necessary code including icons.
 
 ```
-yarn && make codegen
+make codegen
 ```
 
 ## Create A New Package
 
 1. Run `make new.package --name=<package>`.
-2. Edit [BUILD.bazel](./BUILD.bazel) `eslint_dirs` to include the new package.
-3. Check out `<package>/basepackage.json` and make necessary updates.
+2. Edit [BUILD.bazel](./BUILD.bazel) `packages` to include the new package.
+3. Check out `<package>/basepackage.json` and `<package>/BUILD.bazel` and make necessary updates.
 4. Update `<package>/CHANGELOG.md`.
 
 ## Web
@@ -31,18 +31,18 @@ make story.serve
 
 ## Package
 
-To enable using CDS-web outside mono/repo, an npm package is available through the Coinbase internal npm registry. The package contains both a commonjs bundle created by rollup at `dist/` and babel transpiled ES modules at `lib/`. The typescript declarations are at `typings`. To split up the CSS code, we wrote a custom babel plugin to take linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
+To use CDS packages outside of mono/repo, NPM packages are available through the Coinbase's internal NPM registry. Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules at `lib/`. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
 
 ## Publishing
 
-1. Bump version in basepackage.json (Automated script coming)
-2. Update CHANGELOG.md with the new version and date.
+1. Bump version in `basepackage.json`. _(Automated script coming)_
+2. Update `CHANGELOG.md` with the new version and date.
 3. Create a PR to make sure the changes look good.
 4. Once the PR is merged, run the following to publish a new package to npm.
 
 ```bash
 assume-role development eng-ops
-bazel run //eng/shared/design-system/web:corporate
+bazel run //eng/shared/design-system/<package>:publish
 ```
 
 ### Publishing to the development NPM registry
@@ -57,7 +57,7 @@ To publish to the [development Coinbase NPM registry](https://registry-npm-dev.c
 
 ```bash
 assume-role development eng-ops
-bazel run //eng/shared/design-system/web:development
+bazel run //eng/shared/design-system/<package>:publish_dev
 ```
 
 ## Storybook

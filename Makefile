@@ -1,6 +1,9 @@
 define HELP_TEXT
 Help:
 -----
+  $$ make build.icons              -- Build the `icons` package.
+  $$ make build.theme              -- Build the `theme` package.
+  $$ make build.utils              -- Build the `utils` package.
   $$ make codegen                  -- Generate code in design system.
   $$ make lint                     -- Run eslint on all sources.
   $$ make new.package name=<name>  -- Scaffold a new package with the defined name.
@@ -16,6 +19,18 @@ export HELP_TEXT
 help:
 	@echo "$$HELP_TEXT"
 
+.PHONY: build.icons
+build.icons:
+	bazel build icons:package
+
+.PHONY: build.theme
+build.theme:
+	bazel build theme:package
+
+.PHONY: build.utils
+build.utils:
+	bazel build utils:package
+
 .PHONY: codegen
 codegen:
 	bazel run :codegen
@@ -24,7 +39,6 @@ codegen:
 .PHONY: lint
 lint:
 	bazel run :eslint_codegen
-	bazel run :eslint_figma
 	bazel run :eslint_icons
 	bazel run :eslint_theme
 	bazel run :eslint_utils

@@ -1,0 +1,59 @@
+load("//eng/shared/design-system:cds_package.bzl", "cds_package")
+
+filegroup(
+    name = "base_source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+        exclude = [
+            "story/**",
+            "**/*.test.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# Files to publish to NPM
+# Needs to be separate since css/ttf files cant be linted
+filegroup(
+    name = "runtime_source",
+    srcs = [
+        ":base_source",
+        "native.js",
+        "styles.css",
+    ] + glob(
+        [
+            "fonts/*.ttf",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# All files to lint and test
+filegroup(
+    name = "source",
+    srcs = [":base_source"] + glob(
+        [
+            "**/*.test.*",
+            "**/*.mdx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+cds_package(
+    name = "icons",
+    srcs = [":runtime_source"],
+    dependencies = [
+        "@npm//humps",
+    ],
+    monorepo_dependencies = [
+        "//eng/shared/design-system/theme:package_json",
+        "//eng/shared/design-system/utils:package_json",
+    ],
+    peer_dependencies = [
+        "@npm//react",
+    ],
+)

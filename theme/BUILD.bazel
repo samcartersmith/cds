@@ -1,0 +1,43 @@
+load("//eng/shared/design-system:cds_package.bzl", "cds_package")
+
+# Files to publish to NPM
+filegroup(
+    name = "runtime_source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+        exclude = [
+            "**/*.test.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+# All files to lint and test
+filegroup(
+    name = "source",
+    srcs = [":runtime_source"] + glob(
+        [
+            "**/*.test.*",
+            "**/*.mdx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+cds_package(
+    name = "theme",
+    srcs = [":runtime_source"],
+    dependencies = [
+        "@npm//linaria",
+        "@npm//type-fest",
+    ],
+    monorepo_dependencies = [
+        "//eng/shared/design-system/utils:package_json",
+    ],
+    peer_dependencies = [
+        "@npm//react",
+    ],
+)

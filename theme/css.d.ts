@@ -1,5 +1,5 @@
-import { PaletteAlias } from '@cds/theme/palette/types';
-import { usePalette } from '@cds/theme/palette/usePalette';
+import { PaletteAlias } from './palette/types';
+import { usePalette } from './palette/usePalette';
 
 type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: ReturnType<typeof usePalette>[key] };
 

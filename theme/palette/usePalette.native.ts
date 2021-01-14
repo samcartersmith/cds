@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { useSpectrum } from '@cds/theme/spectrum/useSpectrum';
-// eslint-disable-next-line import/extensions
-import * as spectrum from '@cds/theme/styles/spectrum.native';
 import { mapValues } from '@cds/utils';
 
+import { useSpectrum } from '../spectrum/useSpectrum';
+// eslint-disable-next-line import/extensions
+import * as spectrum from '../styles/spectrum.native';
 import { UsePaletteFn } from './types';
 import { usePaletteConfig } from './usePaletteConfig';
 

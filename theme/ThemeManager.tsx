@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import { usePaletteToCssVars } from '@cds/theme/palette/usePaletteToCssVars';
-import { useScale } from '@cds/theme/scale/useScale';
-import { useSpectrum } from '@cds/theme/spectrum/useSpectrum';
-import * as scaleCss from '@cds/theme/styles/scale';
-import * as spectrumCss from '@cds/theme/styles/spectrum';
 import { cx } from 'linaria';
+
+import { usePaletteToCssVars } from './palette/usePaletteToCssVars';
+import { useScale } from './scale/useScale';
+import { useSpectrum } from './spectrum/useSpectrum';
+import * as scaleCss from './styles/scale';
+import * as spectrumCss from './styles/spectrum';
 
 export const ThemeManager: React.FC = React.memo(({ children }) => {
   const scale = useScale();

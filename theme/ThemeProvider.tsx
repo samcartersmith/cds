@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { PaletteConfigProvider } from '@cds/theme/palette/PaletteConfigProvider';
-import { PaletteConfig } from '@cds/theme/palette/types';
-import { ScaleProvider } from '@cds/theme/scale/ScaleProvider';
-import { Scale } from '@cds/theme/scale/types';
-import { SpectrumProvider } from '@cds/theme/spectrum/SpectrumProvider';
-import { Spectrum } from '@cds/theme/spectrum/types';
-import { ThemeManager } from '@cds/theme/ThemeManager';
+import { PaletteConfigProvider } from './palette/PaletteConfigProvider';
+import { PaletteConfig } from './palette/types';
+import { ScaleProvider } from './scale/ScaleProvider';
+import { Scale } from './scale/types';
+import { SpectrumProvider } from './spectrum/SpectrumProvider';
+import { Spectrum } from './spectrum/types';
+import { ThemeManager } from './ThemeManager';
 
 type ThemeProviderProps = {
   scale?: Scale;

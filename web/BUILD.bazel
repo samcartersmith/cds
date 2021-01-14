@@ -7,6 +7,19 @@ load("@npm//@babel/cli:index.bzl", "babel")
 load(":scripts/build/gen_babel_preset.bzl", "gen_babel_preset")
 load("//tools:def.bzl", "node_package_deployable")
 
+# Files to lint and test
+filegroup(
+    name = "source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.mdx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
 ts_project(
     name = "transpile_babel_plugin",
     srcs = glob(
@@ -22,15 +35,6 @@ ts_project(
         "@npm//source-map",
         "@npm//stylis",
     ],
-)
-
-filegroup(
-    name = "source",
-    srcs = ["//eng/shared/design-system:web_source"] + glob([
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.js",
-    ]),
 )
 
 # Emit type declarations with path aliases transformed

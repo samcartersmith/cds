@@ -6,10 +6,18 @@ exports_files([
     "linaria.config.js",
 ])
 
+PACKAGES = [
+    "icons",
+    "theme",
+    "utils",
+    "web",
+]
+
 filegroup(
     name = "web_source",
     srcs = [
-        "//eng/shared/design-system/web:runtime_source",
+        "//eng/shared/design-system/%s:runtime_source" % p
+        for p in PACKAGES
     ] + glob(
         include = [
             "**/*.js",
@@ -20,7 +28,6 @@ filegroup(
         exclude = [
             "**/*.native.*",
             "**/*.stories.*",
-            "**/*.test.*",
         ],
     ),
     visibility = ["//visibility:public"],
@@ -28,60 +35,38 @@ filegroup(
 
 filegroup(
     name = "storybook_source",
-    srcs = glob(
-        include = [
-            "**/*.ts",
-            "**/*.tsx",
+    srcs = [":web_source"] + glob(
+        [
             "**/*.stories.*",
-            "icons/styles.css",
-        ],
-        exclude = [
-            "**/*.native.*",
         ],
     ),
     visibility = ["//visibility:public"],
 )
 
+# ***************
+# *** linting ***
+# ***************
+
 load("//tools:def.bzl", "eslint_fix", "eslint_test", "stylelint_test")
 
-eslint_dirs = [
+ESLINT_DIRS = PACKAGES + [
     "codegen",
-    # "components",
-    "icons",
-    "theme",
-    "utils",
-]
-
-[
-    filegroup(
-        name = "eslint_source_%s" % directory,
-        srcs = glob(
-            include = [
-                "%s/**/*.js" % directory,
-                "%s/**/*.ts" % directory,
-                "%s/**/*.tsx" % directory,
-                "%s/**/*.mdx" % directory,
-            ],
-        ),
-        visibility = ["//visibility:public"],
-    )
-    for directory in eslint_dirs
 ]
 
 [
     eslint_test(
         name = "eslint_%s" % directory,
-        sources = ":eslint_source_%s" % directory,
+        sources = "//eng/shared/design-system/%s:source" % directory,
     )
-    for directory in eslint_dirs
+    for directory in ESLINT_DIRS
 ]
 
 [
     eslint_fix(
         name = "eslint_fix_%s" % directory,
-        sources = ":eslint_source_%s" % directory,
+        sources = "//eng/shared/design-system/%s:source" % directory,
     )
-    for directory in eslint_dirs
+    for directory in ESLINT_DIRS
 ]
 
 filegroup(
@@ -104,6 +89,19 @@ stylelint_test(
     sources = ":style_source",
 )
 
+# ***************
+# *** testing ***
+# ***************
+
+filegroup(
+    name = "source",
+    srcs = [
+        "//eng/shared/design-system/%s:source" % p
+        for p in PACKAGES
+    ],
+    visibility = ["//visibility:public"],
+)
+
 filegroup(
     name = "tests_configuration",
     srcs = [
@@ -118,38 +116,40 @@ filegroup(
 # ***************
 # *** codegen ***
 # ***************
+
 ts_node(
     name = "codegen",
     args = [
         "-r tsconfig-paths/register",
         "--files",
-        "$(execpath codegen/main.ts)",
+        "eng/shared/design-system/codegen/main.ts",
         "--prettierConfig $(execpath //:.prettierrc)",
     ],
     data = [
-        "//tools/js:writePrettyFile.ts",
         "//:.prettierrc",
+        "//eng/shared/design-system/codegen:runtime_source",
+        "//eng/shared/design-system/icons:runtime_source",
+        "//eng/shared/design-system/theme:runtime_source",
+        "//eng/shared/design-system/web:runtime_source",
+        "//tools/js:writePrettyFile.ts",
         "@npm//chalk",
         "@npm//ejs",
         "@npm//humps",
         "@npm//tsconfig-paths",
         "@npm//webfont",
         "@npm//yargs",
-    ] + glob(["codegen/**/*"]) + glob(["web/**/*"]),
+    ],
 )
 
 ts_node(
     name = "sync_icons",
     args = [
-        "$(execpath codegen/scaffold/syncSvgsFromFigma.ts)",
+        "eng/shared/design-system/codegen/scaffold/syncSvgsFromFigma.ts",
         "--project $(execpath //:tsconfig.json)",
     ],
     data = [
-        "codegen/figma/api.ts",
-        "codegen/figma/client.ts",
-        "codegen/scaffold/syncSvgsFromFigma.ts",
-        "codegen/utils/getSourcePath.ts",
         "//:tsconfig.json",
+        "//eng/shared/design-system/codegen:runtime_source",
         "@npm//axios",
         "@npm//chalk",
         "@npm//ora",
@@ -163,8 +163,8 @@ ts_node(
         "--project $(execpath //:tsconfig.json)",
     ],
     data = [
-        "codegen/scaffold/newPackageFromTemplate.ts",
         "//:tsconfig.json",
+        "//eng/shared/design-system/codegen:runtime_source",
         "@npm//chalk",
     ],
 )
