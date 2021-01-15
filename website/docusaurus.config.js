@@ -73,4 +73,5 @@ module.exports = {
     ],
   ],
   plugins: [path.resolve(__dirname, './cds-docusaurus-plugin.js')],
+  clientModules: [require.resolve('./global.ts')],
 };

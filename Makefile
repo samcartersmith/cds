@@ -1,6 +1,7 @@
 define HELP_TEXT
 Help:
 -----
+  $$ make build.fonts              -- Build the `fonts` package.
   $$ make build.icons              -- Build the `icons` package.
   $$ make build.theme              -- Build the `theme` package.
   $$ make build.utils              -- Build the `utils` package.
@@ -18,6 +19,10 @@ export HELP_TEXT
 .PHONY: help
 help:
 	@echo "$$HELP_TEXT"
+
+.PHONY: build.fonts
+build.fonts:
+	bazel build fonts:package
 
 .PHONY: build.icons
 build.icons:

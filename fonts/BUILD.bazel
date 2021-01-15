@@ -1,0 +1,51 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
+load("//tools:def.bzl", "node_package_deployable", "node_package_gen")
+
+# Files to publish to NPM
+filegroup(
+    name = "runtime_source",
+    srcs = glob(
+        [
+            "**/*.woff2",
+            "**/*.css",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+node_package_gen(
+    name = "package_json",
+    dependencies = [],
+    monorepo_dependencies = [],
+    package_metadata = "basepackage.json",
+    peer_dependencies = [],
+)
+
+# Prepare a package for release by only copying files to publish
+pkg_npm(
+    name = "package",
+    srcs = [
+        "CHANGELOG.md",
+        "README.md",
+    ],
+    deps = [
+        ":package_json",
+        ":runtime_source",
+    ],
+)
+
+PKG = "//eng/shared/design-system/fonts:package"
+
+# Publishing to registry-npm-dev.cbhq.net
+node_package_deployable(
+    name = "publish_dev",
+    pkg = PKG,
+    target = "development",
+)
+
+# Publishing to registry-npm.cbhq.net
+node_package_deployable(
+    name = "publish",
+    pkg = PKG,
+    target = "corporate",
+)

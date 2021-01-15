@@ -9,6 +9,7 @@ filegroup(
             "babel.config.js",
             "cds-docusaurus-plugin.js",
             "docusaurus.config.js",
+            "global.ts",
             "sidebars.js",
         ],
     ),
@@ -19,6 +20,7 @@ DATA = [
     # configs
     "//:tsconfig.json",
     "//:babel.config.js",
+    "//eng/shared/design-system/fonts:runtime_source",
     # dependencies
     "@npm//react",
     "@npm//react-dom",
