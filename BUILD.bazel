@@ -3,6 +3,7 @@ load("@npm//ts-node:index.bzl", "ts_node")
 exports_files([
     ".babelrc.js",
     ".browserslistrc",
+    "babel.config.js",
     "linaria.config.js",
 ])
 
@@ -80,6 +81,9 @@ filegroup(
             "**/*.ts",
             "**/*.tsx",
             "**/*.css",
+        ],
+        exclude = [
+            "mobile/**",
         ],
     ),
 )

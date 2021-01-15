@@ -1,4 +1,6 @@
+// This is purely for testing purposes, otherwise
+// files that contain Linaria code would fail.
+
 module.exports = {
-  // TODO: preserve @cds/theme alias
   presets: ['linaria/babel'],
 };

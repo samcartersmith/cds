@@ -48,6 +48,7 @@ lint:
 	bazel run :eslint_theme
 	bazel run :eslint_utils
 	bazel run web:eslint
+	bazel run :stylelint
 
 .PHONY: new.package
 new.package:

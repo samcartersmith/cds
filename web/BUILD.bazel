@@ -1,10 +1,8 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
-load("@npm_bazel_typescript//:index.bzl", "ts_project")
 load("@npm//ttypescript:index.bzl", "ttsc")
 load("//tools:def.bzl", "node_package_gen")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@babel/cli:index.bzl", "babel")
-load(":scripts/build/gen_babel_preset.bzl", "gen_babel_preset")
 load("//tools:def.bzl", "node_package_deployable")
 
 # Files to lint and test
@@ -18,23 +16,6 @@ filegroup(
         ],
     ),
     visibility = ["//visibility:public"],
-)
-
-ts_project(
-    name = "transpile_babel_plugin",
-    srcs = glob(
-        ["babel/**/*.ts"],
-    ),
-    source_map = True,
-    tsconfig = "//:tsconfig.json",
-    deps = [
-        "@npm//@types/babel__core",
-        "@npm//@types/node",
-        "@npm//chalk",
-        "@npm//linaria",
-        "@npm//source-map",
-        "@npm//stylis",
-    ],
 )
 
 # Emit type declarations with path aliases transformed
@@ -58,38 +39,32 @@ ttsc(
     output_dir = True,
 )
 
-gen_babel_preset(
-    name = "babel_preset",
-    out = "preset",
-)
-
 babel(
     name = "lib",
     args = [
         "--config-file",
-        "$(execpath //:babel.config.js)",
+        "./$(execpath //eng/shared/design-system:babel.config.js)",
         "eng/shared/design-system/web/src",
         "--out-dir",
         "$(@D)",
         "--extensions .ts,.tsx",
-        "--presets ./$(execpath :babel_preset)",
     ],
     data = [
-        "//eng/shared/design-system:linaria.config.js",
-        ":babel_preset",
         ":source",
-        ":transpile_babel_plugin",
-        # only uses the root babel config and doesn't use the project babelrc
-        # it passes the custom preset for linaria in the args
-        "//:babel.config.js",
         "//:tsconfig.json",
+        "//eng/shared/design-system:babel.config.js",
+        "//eng/shared/design-system:linaria.config.js",
+        "//eng/shared/design-system/codegen:babel-plugins/linariaCssExtractPlugin.js",
+        "//eng/shared/design-system/codegen:babel-plugins/linariaPreset.js",
         "@npm//@babel/plugin-proposal-class-properties",
-        "@npm//babel-plugin-transform-async-to-promises",
         "@npm//@babel/preset-env",
         "@npm//@babel/preset-react",
         "@npm//@babel/preset-typescript",
         "@npm//babel-plugin-module-resolver",
+        "@npm//babel-plugin-transform-async-to-promises",
+        "@npm//chalk",
         "@npm//linaria",
+        "@npm//source-map",
         "@npm//yargs",
     ],
     output_dir = True,

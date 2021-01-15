@@ -1,3 +1,8 @@
+exports_files([
+    "babel-plugins/linariaCssExtractPlugin.js",
+    "babel-plugins/linariaPreset.js",
+])
+
 filegroup(
     name = "base_source",
     srcs = glob(

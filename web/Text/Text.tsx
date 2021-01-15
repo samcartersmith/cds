@@ -21,7 +21,6 @@ const tabularNumbers = css`
 `;
 
 const disableSelect = css`
-  // stylelint-disable-next-line plugin/no-unsupported-browser-features
   user-select: none;
 `;
 

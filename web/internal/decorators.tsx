@@ -44,7 +44,6 @@ export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }
           font-size: 16px;
           font-weight: 500;
 
-          /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
           width: fit-content;
         `}
       >
