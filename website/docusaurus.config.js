@@ -38,7 +38,7 @@ module.exports = {
             },
             {
               label: 'Roadmap',
-              to: 'roadmap/',
+              to: 'resources/roadmap/',
             },
           ],
         },

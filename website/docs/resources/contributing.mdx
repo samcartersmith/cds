@@ -1,0 +1,73 @@
+---
+title: Contributing
+---
+
+Does your feature require additional UX work outside of the existing design system (e.g. does it need new design system components, animations, interactions, etc)? The answer to this question can come up at any point during the design phase (sometimes not til the very end).
+
+It’s important to flag this to the design system team as soon as possible, as any work you need the team to design and implement for you will need at minimum 2-4 weeks lead time (this varies based on current demand and scope of work).
+
+That said, you can also elect to undertake the design and engineering work yourself. If that is the case, please follow this process for collaborating with the design system team.
+
+## How to start
+
+Contributing to the design system is a team effort! Any person is welcome to initiate the process, but to be successful this proposal should be a collaborative effort between eng and design.
+
+To start, you want to create a [doc](https://docs.google.com/document/d/10qsoMa5Tyj7Dh6Ux4r4g9GScNJ8sURvr2Asc8TUKd1E/edit#). This will help brainstorm ideas and collaborate with your partner and the DS team. Include links to relevant materials. Typically:
+
+- Link to a Figma file
+- Product spec
+- Inspiration (code or UX)
+
+## For designers
+
+You should start a Figma file to document why this is a valuable new component to introduce, (rationale) and how it should be designed (execution). Below are some things to touch on in each section.
+
+### Rationale
+
+The first step of proposing a new component is to get clear about your rationale: why do we need something new here? This breaks down to two major parts:
+
+**How is this meaningfully different from similar existing components?** What job is it uniquely doing that other components can’t do as well? Can you think of examples of applications other than the immediate one you have?
+
+**Why is it important that we make the investment in something new here?** There is a long list of patterns that we could build, not all of them are valuable. Why is this one particularly important to do right now? Does the benefit of having this component outweigh the increase in complexity? Is it a pattern we expect to be widely useful? Is it less widely applicable, but highly visible / impactful? You can think about this like building a wardrobe: is this a piece that you expect to wear all the time? Or maybe a statement piece? Both are important, but distinct.
+
+### Execution
+
+**Leverage existing material:** At the base, your new component should use existing primitives like type, color, and spacing. To the extent relevant, it should also use existing components. On a higher level, your new component should be cohesive with adjacent components – extending existing patterns, adding more utility, creating more flexibility. What you don’t want is a component that contradicts what already exists.
+
+**Complete your states:** Think about all the permutations of your component: does it look different when it’s empty, disabled, active? Does it have optional variations? How does it work when there’s a lot of content inside? When the text is particularly long, how does it handle overflow?
+
+**Accessibility:** At a minimum, it should meet color contrast accessibility. But also think about how someone with a screen reader might use it? Or if it’s easy to tap for folks with reduced dexterity.
+
+**Internationalization & translation:** Does this component still work if the text is in German and suddenly twice as long? What if a user’s currency is in Korean won, making $ numbers order of magnitude larger?
+
+**A good name:** Finally, you should work with your engineer to name your component in a way that clearly describes what this component is and is not potentially confusing with existing components.
+
+## For engineers
+
+CDS is established on principles that keep its components consistent. Understanding these concepts will help you better contribute to CDS.
+
+Our goal is to design simple, composable components that cater to real-life UI design problems. In order to do that, we developed a set of principles that help us always be on that path.
+
+- **Simplicity:** Strive to keep the component API fairly simple and show real world scenarios of using the component.
+
+- **Composition:** Break down components into smaller parts with minimal props to keep complexity low, and compose them together. This will ensure that the styles and functionality are flexible and extensible. Does the new code use other CDS components/hooks? If nothing exists to accomplish what we want, we should build it and add it to our CDS docs.
+
+- **Coverage:** Typically, adding a new hook or component for one use case can be re-used in existing features. We expect any old code which might benefit from the new abstraction to be updated during this phase. This is important to increase coverage and discoverability - it’s not uncommon for folks who are unfamiliar with the codebase to look at old code when trying to build new features.
+
+- **Quality:** Start by creating the new component in isolation. The web or react-native playground (coming soon) is a great place to start with a generic example. Stress test it. Does FPS stay at 60? Should it use React Native Animated or Reanimated + Pan Gesture Handler.
+
+- **Accessibility:** When creating a component, keep accessibility top of mind. This includes keyboard navigation, focus management, color contrast, voice over, and the correct `aria-*` attributes. Currently, we expose all attributes for a given element to unblock teams from adding these. In the future, we hope to offer a simpler API to make accessibility easier to integrate.
+
+- **Dark Mode:** Make components dark mode compatible by default. Avoid overriding the `spectrum` in nested ThemeProviders to get this functionality for free. [Learn more about dark mode](/components/theme-provider).
+
+- **Naming Props:** We all know naming is the hardest thing in this industry. Generally, ensure a prop name is indicative of what it does. Boolean props should be named using auxiliary verbs such as `does`, `has`, `is` and `should`. For example, `Button` uses `isDisabled`, `isLoading`, etc. Callback functions should be named using the `on` prefix. For example, `Input` uses `onChange`, etc.
+
+## Collaborative effort
+
+Design and Eng should work together to come up with any new constants/components and finalize naming. Names in code should match Figma as much as possible.
+
+**Example:** When building the ProgressCarousel component the naming was agreed between Design and Eng. The Figma version was added to the CDS Figma components and in the web or mobile CDS package. When design refers to this pattern it will be as ProgressCarousel and not Slider, Swiper, etc. to avoid confusion. This creates a shared vocabulary between Design and Eng as we scale.
+
+## Final review
+
+The designer making the proposal should ping #ask-cds with the proposal Figma. Once it’s approved, the engineer should get feedback on their doc from 1 CDS engineer before opening a PR. A sample document can be found [here](https://docs.google.com/document/d/10qsoMa5Tyj7Dh6Ux4r4g9GScNJ8sURvr2Asc8TUKd1E/edit#). The doc should include relevant research to existing libraries and a proposal with an example. If possible we want to avoid adding third party packages and opt for a simple implementation.

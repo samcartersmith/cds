@@ -24,7 +24,6 @@ syn_deployable(
         ),
     ],
     config_name = "website",  # config_name (i.e. Codeflow's config_name)
+    continuous_deployment = True,
     target = "development",  # environment to deploy to
-    # TODO: uncomment once aws-resource is setup
-    # continuous_deployment = True,
 )

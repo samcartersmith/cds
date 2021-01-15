@@ -4,8 +4,13 @@ filegroup(
     name = "source",
     srcs = glob(
         include = [
-            "docs/**/*",
-            "static/**/*",
+            "docs/**/*.mdx",
+            "docs/**/*.tsx",
+            "docs/**/*.ts",
+            "static/**/*.svg",
+            "static/**/*.ico",
+            "static/**/*.png",
+            "static/**/*.jpg",
             "babel.config.js",
             "cds-docusaurus-plugin.js",
             "docusaurus.config.js",

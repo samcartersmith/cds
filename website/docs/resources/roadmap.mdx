@@ -20,21 +20,25 @@ Last half, we invested in code sharing infrastructure that would allow us to bui
 - ✅ Scaffold docusaurus site in monorepo
 - ✅ Add build/deploy infra for docusaurus site
 - ✅ Host docusaurus site at cds.cbhq.net
+- ✅ Website sidebar reorg. Based on outcome of this [discussion](https://coinbase.slack.com/files/UBVHL4UGJ/F01JUFRHRSQ/branding)
+- ✅ Add CD for website
+- ✅ Extend docusaurus ThemeProvider to use CDS ThemeProvider
+- ✅ Create web package in monorepo design-system
+- ✅ Create mobile package in monorepo design-system
+- 🚧 Create fonts package in monorepo design-system
+- 🚧 Add live codeblock editor to website
 - 🚧 Handle linaria transpilation in packages
 - 🚧 Flatten web directory structure in monorepo to mirror other packages
-- 🚧 Prototype API which maps React props to Tailwind CSS classes
-- 🚧 Tailwind build test. Ensure unused Tailwind CSS is tree shaked.
-- 🚧 Tailwind typescript test. Ensure autocompletion is available filling our prop abstractions.
-- Update Tailwind config in web to pull colors from palette css variables. [Details here](https://tailwindcss.com/docs/customizing-colors#custom-colors)
+- 🚧 Prototype API which maps React props to CSS classes in web Text component
+- 🚧 Prototype API to allow responsive styles in Text component. This pattern will be used in other primitives
+- 🚧 Responsive API typescript test. Ensure autocompletion is available if string API is used. i.e. display="block mobile:inline-block"
+- Migrate projects in monorepo to pull in new web Text component and API
+- Build test for web package. Ensure unused CSS is tree shaked
 - Scaffold a react native app in monorepo (similar to debug menu in retail RN) to test/view RN components
-- Copy retail RN DS components to mobile package in monorepo
-- Website sidebar reorg. Based on outcome of this [discussion](https://coinbase.slack.com/files/UBVHL4UGJ/F01JUFRHRSQ/branding)
-- Add live codeblock editor to website
-- Extend docusaurus ThemeProvider to use CDS ThemeProvider
+- Create lottie package in monorepo design-system. This will contain all lottie JSON assets and AE files.
 - Add CDS web components as importable components within live editor of website
 - Add synced tab component for website with web/mobile options to use for component documentation. [Details here](https://v2.docusaurus.io/docs/markdown-features#syncing-tab-choices)
 - Add CI/CD automatic package publishing pipeline
-- Add CD for website
 - Add Algolia DocSearch functionality to website. [Details here](https://v2.docusaurus.io/docs/search/#using-algolia-docsearch)
 
 ### Unification
@@ -43,22 +47,26 @@ Last half, we invested in code sharing infrastructure that would allow us to bui
 
 Primitives such as Typography, Color, Layout are the most frequently used shared resources within a Design System. By offering these holistically, we immediately provide significant value to feature teams. We also prove that the unification is happening. Last half CDS invested in expanding Typography and Color to support more needs such as Legibility, Scale, and an algorithmic color approach.
 
+- ✅ Add Text component to web and mobile
 - ✅ Text component should assign appropriate styles internally based on active scale.
 - ✅ Text component color prop should assign appropriate styles based on active palette.
 - ✅ On web, update Text component to include a required `as` prop. Typescript types extend based on element passed in.
 - Icon component color prop should assign appropriate styles based on active palette.
 - On mobile, migrate Button to pull colors from palette.
+- Copy Text and View primitives from Retail RN DS to CDS mobile package. Pull in/unify props in CDS package.
+- Copy lottie assets from retail-web and retail-RN to lottie assets package
+- Copy Lottie component for retail-web to web package
+- Copy Lottie component from retail-RN to mobile package
 - _The following are contingent on ongoing design discussions_
   - Align on heavy/light usage in Icon component.
   - Unify Icon component API between web and mobile based on heavy/light outcome.
-  - Create an asset icons package which is dark mode compatible.
-  - Create an illustrations package which is dark mode compatible.
+  - Come up with plan for asset icons / spec for dark mode compatibity.
+  - Come up with plan for illustrations which are dark mode compatible.
 
 ### Component port
 
 Mobile has a wealth of good quality components we can port to the web. For each component, we will audit it’s compatibility for the Web, and make simple alterations needed for mobile (i.e. api naming, etc). We will prioritize components that are quick and seamless to transition to the web. This may result in some components that don’t replace all their similar components, but it will replace a significant number of one-off components.
 
-- 🚧 On web, update Text component to use new API based on Tailwind exploration work.
 - Create Box primitive. Replace `View` on mobile with `Box`.
 - Box component backgroundColor prop should assign appropriate styles based on active palette.
 - Box component spacing prop should assign appropriate styles based on active scale.
