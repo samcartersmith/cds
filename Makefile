@@ -1,24 +1,30 @@
 define HELP_TEXT
 Help:
 -----
+  $$ make build.core               -- Build the `core` package.
   $$ make build.fonts              -- Build the `fonts` package.
   $$ make build.icons              -- Build the `icons` package.
+  $$ make build.mobile             -- Build the `mobile` package.
   $$ make build.theme              -- Build the `theme` package.
   $$ make build.utils              -- Build the `utils` package.
   $$ make codegen                  -- Generate code in design system.
   $$ make lint                     -- Run eslint on all sources.
   $$ make new.package name=<name>  -- Scaffold a new package with the defined name.
   $$ make sync.icons               -- Synchronize icons with figma.
-  $$ make start.website						 -- Start docusaurus website.
-  $$ make build.website						 -- Build docusaurus website.
-  $$ make serve.website						 -- Serve docusaurus website build locally.
-  $$ make deploy.website					 -- Deploy docusaurus website to cds.cbhq.net.
+  $$ make start.website            -- Start docusaurus website.
+  $$ make build.website            -- Build docusaurus website.
+  $$ make serve.website            -- Serve docusaurus website build locally.
+  $$ make deploy.website           -- Deploy docusaurus website to cds.cbhq.net.
 endef
 export HELP_TEXT
 
 .PHONY: help
 help:
 	@echo "$$HELP_TEXT"
+
+.PHONY: build.core
+build.core:
+	bazel build core:package
 
 .PHONY: build.fonts
 build.fonts:
@@ -27,6 +33,10 @@ build.fonts:
 .PHONY: build.icons
 build.icons:
 	bazel build icons:package
+
+.PHONY: build.mobile
+build.mobile:
+	bazel build mobile:package
 
 .PHONY: build.theme
 build.theme:
@@ -44,7 +54,9 @@ codegen:
 .PHONY: lint
 lint:
 	bazel run :eslint_codegen
+	bazel run :eslint_core
 	bazel run :eslint_icons
+	bazel run :eslint_mobile
 	bazel run :eslint_theme
 	bazel run :eslint_utils
 	bazel run web:eslint

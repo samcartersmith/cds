@@ -1,10 +1,8 @@
 import * as React from 'react';
 
-import type { TextBaseProps } from '@cds/core/Text/TextBaseProps';
-import type { Typography } from '@cds/core/Text/Typography';
+import type { TextBaseProps, Typography } from '@cds/core';
 import { usePalette, useScale } from '@cds/theme';
-// eslint-disable-next-line import/extensions
-import * as scales from '@cds/theme/styles/scale.native';
+import { scales } from '@cds/theme/native';
 import { pascalCase } from '@cds/utils';
 import { Text, TextProps as RNTextProps, StyleSheet } from 'react-native';
 

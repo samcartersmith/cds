@@ -8,7 +8,9 @@ exports_files([
 ])
 
 PACKAGES = [
+    "core",
     "icons",
+    "mobile",
     "theme",
     "utils",
     "web",

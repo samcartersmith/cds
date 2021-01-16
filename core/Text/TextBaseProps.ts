@@ -1,6 +1,6 @@
 import type { ReactChild, ReactFragment } from 'react';
 
-import { PaletteForeground } from '@cds/theme/palette/types';
+import { PaletteForeground } from '@cds/theme';
 
 export interface TextBaseProps {
   /**

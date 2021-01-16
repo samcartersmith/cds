@@ -1,5 +1,5 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
-load("//tools:def.bzl", "node_package_deployable", "node_package_gen")
+load("//tools:def.bzl", "node_package_gen")
 
 # Files to publish to NPM
 filegroup(
@@ -28,24 +28,9 @@ pkg_npm(
         "CHANGELOG.md",
         "README.md",
     ],
+    visibility = ["//visibility:public"],
     deps = [
         ":package_json",
         ":runtime_source",
     ],
-)
-
-PKG = "//eng/shared/design-system/fonts:package"
-
-# Publishing to registry-npm-dev.cbhq.net
-node_package_deployable(
-    name = "publish_dev",
-    pkg = PKG,
-    target = "development",
-)
-
-# Publishing to registry-npm.cbhq.net
-node_package_deployable(
-    name = "publish",
-    pkg = PKG,
-    target = "corporate",
 )

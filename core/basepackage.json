@@ -1,0 +1,15 @@
+{
+  "name": "@cds/core",
+  "version": "0.0.1",
+  "description": "Coinbase Design System - Core Types",
+  "keywords": ["cds", "design system", "core", "types"],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:mono/repo.git",
+    "directory": "eng/shared/design-system/core"
+  },
+  "authors": "Coinbase",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "typings": "index.ts"
+}

@@ -1,0 +1,20 @@
+load("//tools:def.bzl", "project_settings")
+load("//eng/shared/design-system:cds_deployable.bzl", "cds_deployable")
+
+project_settings(
+    caf = False,
+    send_dev_notifications = False,
+    slack_channels = ["#design-systems-team"],
+)
+
+cds_deployable("core")
+
+cds_deployable("fonts")
+
+cds_deployable("icons")
+
+cds_deployable("mobile")
+
+cds_deployable("theme")
+
+cds_deployable("utils")

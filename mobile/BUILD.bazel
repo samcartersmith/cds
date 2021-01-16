@@ -11,9 +11,7 @@ filegroup(
         exclude = [
             "**/*.test.*",
         ],
-    ) + [
-        "native.js",
-    ],
+    ),
     visibility = ["//visibility:public"],
 )
 
@@ -30,16 +28,16 @@ filegroup(
 )
 
 cds_package(
-    name = "theme",
+    name = "mobile",
     srcs = [":runtime_source"],
-    dependencies = [
-        "@npm//linaria",
-        "@npm//type-fest",
-    ],
+    dependencies = [],
     monorepo_dependencies = [
+        "//eng/shared/design-system/core:package_json",
+        "//eng/shared/design-system/theme:package_json",
         "//eng/shared/design-system/utils:package_json",
     ],
     peer_dependencies = [
         "@npm//react",
+        "@npm//react-native",
     ],
 )

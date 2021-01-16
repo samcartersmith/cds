@@ -1,13 +1,9 @@
 load("@npm//@babel/cli:index.bzl", "babel")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
-load("//tools:def.bzl", "node_package_deployable", "node_package_gen")
+load("//tools:def.bzl", "node_package_gen")
 
 def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependencies):
     package_source_path = "eng/shared/design-system/%s" % name
-
-    package_label_path = "//%s" % package_source_path
-
-    deploy_label = "%s:package" % package_label_path
 
     # Generate a package.json
     node_package_gen(
@@ -57,18 +53,5 @@ def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependenci
             ":lib",
             ":package_json",
         ] + srcs,
-    )
-
-    # Publish to development
-    node_package_deployable(
-        name = "publish_dev",
-        pkg = deploy_label,
-        target = "development",
-    )
-
-    # Publish to corporate
-    node_package_deployable(
-        name = "publish",
-        pkg = deploy_label,
-        target = "corporate",
+        visibility = ["//visibility:public"],
     )
