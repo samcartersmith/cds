@@ -29,12 +29,21 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+# Dependencies
+filegroup(
+    name = "dependencies",
+    srcs = [
+        "@npm//linaria",
+        "@npm//type-fest",
+    ],
+    visibility = ["//visibility:public"],
+)
+
 cds_package(
     name = "theme",
     srcs = [":runtime_source"],
     dependencies = [
-        "@npm//linaria",
-        "@npm//type-fest",
+        ":dependencies",
     ],
     monorepo_dependencies = [
         "//eng/shared/design-system/utils:package_json",

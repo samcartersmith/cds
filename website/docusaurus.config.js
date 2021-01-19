@@ -56,6 +56,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },
   },
+  themes: ['@docusaurus/theme-live-codeblock'],
   presets: [
     [
       '@docusaurus/preset-classic',

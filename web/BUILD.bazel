@@ -18,6 +18,20 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+# Rename or remove after web build cleanup
+filegroup(
+    name = "runtime_source_new",
+    srcs = [
+        "index.ts",
+    ] + glob(
+        include = [
+            "Text/**/*.ts",
+            "Text/**/*.tsx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
 # Emit type declarations with path aliases transformed
 ttsc(
     name = "typings",

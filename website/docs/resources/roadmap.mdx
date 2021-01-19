@@ -25,18 +25,16 @@ Last half, we invested in code sharing infrastructure that would allow us to bui
 - ✅ Extend docusaurus ThemeProvider to use CDS ThemeProvider
 - ✅ Create web package in monorepo design-system
 - ✅ Create mobile package in monorepo design-system
-- 🚧 Create fonts package in monorepo design-system
-- 🚧 Add live codeblock editor to website
 - ✅ Handle linaria transpilation in packages
-- 🚧 Flatten web directory structure in monorepo to mirror other packages
-- 🚧 Prototype API which maps React props to CSS classes in web Text component
-- 🚧 Prototype API to allow responsive styles in Text component. This pattern will be used in other primitives
-- 🚧 Responsive API typescript test. Ensure autocompletion is available if string API is used. i.e. display="block mobile:inline-block"
+- ✅ Create fonts package in monorepo design-system
+- ✅ Add live codeblock editor to website
+- ✅ Add CDS web components as importable components within live editor of website
+- 🚧 Move storybook to root of design-system in prep for visual testing work
+- Flatten web directory structure in monorepo to mirror other packages
 - Migrate projects in monorepo to pull in new web Text component and API
 - Build test for web package. Ensure unused CSS is tree shaked
 - Scaffold a react native app in monorepo (similar to debug menu in retail RN) to test/view RN components
 - Create lottie package in monorepo design-system. This will contain all lottie JSON assets and AE files.
-- Add CDS web components as importable components within live editor of website
 - Add synced tab component for website with web/mobile options to use for component documentation. [Details here](https://v2.docusaurus.io/docs/markdown-features#syncing-tab-choices)
 - ✅ Add CI/CD automatic package publishing pipeline
 - Add Algolia DocSearch functionality to website. [Details here](https://v2.docusaurus.io/docs/search/#using-algolia-docsearch)
@@ -67,10 +65,10 @@ Primitives such as Typography, Color, Layout are the most frequently used shared
 
 Mobile has a wealth of good quality components we can port to the web. For each component, we will audit it’s compatibility for the Web, and make simple alterations needed for mobile (i.e. api naming, etc). We will prioritize components that are quick and seamless to transition to the web. This may result in some components that don’t replace all their similar components, but it will replace a significant number of one-off components.
 
-- Create Box primitive. Replace `View` on mobile with `Box`.
+- 🚧 Box component API exploration and thinking through other primitives which might extend from Box like a Flex or Grid component
 - Box component backgroundColor prop should assign appropriate styles based on active palette.
 - Box component spacing prop should assign appropriate styles based on active scale.
-- On web, create Flex and Grid components which extend Box primitive.
+- Replace `View` on mobile with `Box`.
 - _The following require more details based on design outcomes_
   - Buttons
   - Inputs
@@ -85,6 +83,7 @@ Mobile has a wealth of good quality components we can port to the web. For each 
 There are components on mobile i.e. Tab Bars or Trays that may not make sense as-is on the Web, so we’ll look at how we can unify the heuristics, naming, and guidance, but provide web-specific equivalents.
 
 - Continue audit & port components from React Native to Web that are higher cost and lower relevance
+- Define responsive breakpoints
 
 ## Timeline
 

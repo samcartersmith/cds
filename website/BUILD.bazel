@@ -11,6 +11,12 @@ filegroup(
             "static/**/*.ico",
             "static/**/*.png",
             "static/**/*.jpg",
+            "components/**/*.tsx",
+            "components/**/*.css",
+            # Docusaurus expects src structure for any component overrides
+            "src/**/*.ts",
+            "src/**/*.tsx",
+            # local configs
             "babel.config.js",
             "cds-docusaurus-plugin.js",
             "docusaurus.config.js",
@@ -25,6 +31,9 @@ DATA = [
     # configs
     "//:tsconfig.json",
     "//:babel.config.js",
+    "//eng/shared/design-system/web:runtime_source_new",
+    "//eng/shared/design-system/theme:runtime_source",
+    "//eng/shared/design-system/utils:runtime_source",
     "//eng/shared/design-system/fonts:runtime_source",
     # dependencies
     "@npm//react",
@@ -33,8 +42,12 @@ DATA = [
     "@npm//@docusaurus/preset-classic",
     "@npm//linaria",
     "@npm//@mdx-js/react",
+    "@npm//@docusaurus/theme-live-codeblock",
+    "//eng/shared/design-system/theme:dependencies",
+    "//eng/shared/design-system/utils:dependencies",
     # dev dependencies
     "@npm//typescript",
+    "@npm//url-loader",
     "@npm//@babel/preset-typescript",
     "@npm//babel-plugin-module-resolver",
     "@npm//babel-plugin-transform-async-to-promises",

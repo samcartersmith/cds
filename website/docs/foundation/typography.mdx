@@ -24,10 +24,10 @@ We based our definition of legibility on [2011 research published in Journal of 
 
 Display styles are to be used very sparingly. Display styles supersede Title styles, so they are there for when you need to layer on more hierarchy.
 
-```jsx
+```jsx live
 <ThemeProvider scale="xLarge">
-  <Display1 as="h1">Display1</Display1>
-  <Display2 as="h2">Display2</Display2>
+  <TextDisplay1 as="h1">Display1</TextDisplay1>
+  <TextDisplay2 as="h2">Display2</TextDisplay2>
 </ThemeProvider>
 ```
 
@@ -35,11 +35,11 @@ Display styles are to be used very sparingly. Display styles supersede Title sty
 
 Title styles are used to establish the primary hierarchy in a layout. They should be used to label sections.
 
-```jsx
+```jsx live
 <ThemeProvider scale="xLarge">
-  <Title1 as="h3">Title1</Title1>
-  <Title2 as="h4">Title2</Title2>
-  <Title3 as="h5">Title3</Title3>
+  <TextTitle1 as="h3">Title1</TextTitle1>
+  <TextTitle2 as="h4">Title2</TextTitle2>
+  <TextTitle3 as="p">Title3</TextTitle3>
 </ThemeProvider>
 ```
 
@@ -47,10 +47,10 @@ Title styles are used to establish the primary hierarchy in a layout. They shoul
 
 Headline and body styles are your essential content styles. They’re versatile styles that can be used for paragraphs, data, labels for buttons.
 
-```jsx
+```jsx live
 <ThemeProvider scale="xLarge">
-  <Headline as="p">Headline</Headline>
-  <Body as="p">Body</Body>
+  <TextHeadline as="p">Headline</TextHeadline>
+  <TextBody as="p">Body</TextBody>
 </ThemeProvider>
 ```
 
@@ -58,12 +58,12 @@ Headline and body styles are your essential content styles. They’re versatile 
 
 Label and caption styles are when you need to add hierarchy in your content. They ideally are used in conjunction with Headline and Body styles, but in extraordinarily dense interfaces they can replace Headline & Body should you need to present large data sets to users. They’re also great candidates for presenting numbers to the user as they have tabular numbers by default.
 
-```jsx
+```jsx live
 <ThemeProvider scale="xLarge">
-  <Label1 as="p">Label1</Label1>
-  <Label2 as="p">Label2</Label2>
-  <Caption as="p">Caption</Caption>
-  <Legal as="p">Legal</Legal>
+  <TextLabel1 as="p">Label1</TextLabel1>
+  <TextLabel2 as="p">Label2</TextLabel2>
+  <TextCaption as="p">Caption</TextCaption>
+  <TextLegal as="p">Legal</TextLegal>
 </ThemeProvider>
 ```
 
@@ -83,17 +83,17 @@ Italics and bold emphasis should generally be avoided at all times for a few rea
 
 We generally left align all text and only center text when absolutely necessary.
 
-```jsx
+```jsx live
 <ThemeProvider scale="xLarge">
-  <Headline as="p" textAlign="start">
+  <TextHeadline as="p" align="left">
     Left aligned
-  </Headline>
-  <Headline as="p" textAlign="center">
+  </TextHeadline>
+  <TextHeadline as="p" align="center">
     Center aligned
-  </Headline>
-  <Headline as="p" textAlign="end">
+  </TextHeadline>
+  <TextHeadline as="p" align="right">
     Right aligned
-  </Headline>
+  </TextHeadline>
 </ThemeProvider>
 ```
 
@@ -113,11 +113,11 @@ Displaying numbers to users is a critical part of interfaces at Coinbase. With t
 - **Proportional numbers**: have a width that fits to their letterform. For example, 1 is narrower than 6.
 - **Tabular numbers**: have consistent width across all numbers in the same typeface and font size. For example, 1 and 6 will have the same width.
 
-```jsx
+```jsx live
 <ThemeProvider scale="xLarge">
-  <Display1 as="p" tnum>
+  <TextDisplay1 as="p" tnum>
     $16,210.33
-  </Display1>
+  </TextDisplay1>
 </ThemeProvider>
 ```
 
@@ -131,19 +131,19 @@ For accessibility purposes, heading tags, i.e. h1-h6, carry hierarchy informatio
 
 **ThemeProvider scale**: xSmall | small | medium | large | xLarge | xxLarge | xxxLarge
 
-```jsx
+```jsx live
 <ThemeProvider scale="xLarge">
-  <Display1 as="h1">Display1</Display1>
-  <Display2 as="h2">Display2</Display2>
-  <Title1 as="h3">Title1</Title1>
-  <Title2 as="h4">Title2</Title2>
-  <Title3 as="h5">Title3</Title3>
-  <Headline as="p">Headline</Headline>
-  <Body as="p">Body</Body>
-  <Label1 as="p">Label1</Label1>
-  <Label2 as="p">Label2</Label2>
-  <Caption as="p">Caption</Caption>
-  <Legal as="p">Legal</Legal>
+  <TextDisplay1 as="h1">Display1</TextDisplay1>
+  <TextDisplay2 as="h2">Display2</TextDisplay2>
+  <TextTitle1 as="h3">Title1</TextTitle1>
+  <TextTitle2 as="h4">Title2</TextTitle2>
+  <TextTitle3 as="p">Title3</TextTitle3>
+  <TextHeadline as="p">Headline</TextHeadline>
+  <TextBody as="p">Body</TextBody>
+  <TextLabel1 as="p">Label1</TextLabel1>
+  <TextLabel2 as="p">Label2</TextLabel2>
+  <TextCaption as="p">Caption</TextCaption>
+  <TextLegal as="p">Legal</TextLegal>
 </ThemeProvider>
 ```
 

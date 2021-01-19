@@ -52,12 +52,11 @@ The spectrum is comprised of the following colors:
 CDS comes with the default palette below. If a portion of a palette is provided it will be merged with the closest parent ThemeProvider if present, if not it will be fallback to merging with the default CDS palette.
 
 ```jsx {28}
-import { ThemeProvider } from '@cds/theme';
 /**
  * Key is PaletteAlias i.e. foreground
  * Value is SpectrumAlias or SpectrumAliasWithOpacity i.e. gray100 or [gray100, 0.5].
  */
-export const myPalette = {
+export const defaultPalette = {
   foreground: 'gray100',
   foregroundMuted: 'gray60',
   background: 'gray0',
@@ -74,12 +73,23 @@ export const myPalette = {
   secondary: 'gray0',
   secondaryForeground: 'gray100',
 };
+```
 
-function MyApp() {
-  return (
-    <ThemeProvider palette={myPalette}>
-      <AppContent />
+### Nesting
+
+You can nest ThemeProviders to override a palette alias
+
+```jsx live
+<ThemeProvider>
+  <div>
+    <TextDisplay1 as="h1" color="primary">
+      Display1
+    </TextDisplay1>
+    <ThemeProvider palette={{ primary: 'pink60' }}>
+      <TextDisplay1 as="h1" color="primary">
+        Display1
+      </TextDisplay1>
     </ThemeProvider>
-  );
-}
+  </div>
+</ThemeProvider>
 ```
