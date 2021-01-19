@@ -1,5 +1,4 @@
-load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
-load("//tools:def.bzl", "node_package_gen")
+load("//eng/shared/design-system:cds_package_static.bzl", "cds_package_static")
 
 # Files to publish to NPM
 filegroup(
@@ -13,24 +12,10 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-node_package_gen(
-    name = "package_json",
+cds_package_static(
+    name = "fonts",
+    srcs = [":runtime_source"],
     dependencies = [],
     monorepo_dependencies = [],
-    package_metadata = "basepackage.json",
     peer_dependencies = [],
-)
-
-# Prepare a package for release by only copying files to publish
-pkg_npm(
-    name = "package",
-    srcs = [
-        "CHANGELOG.md",
-        "README.md",
-    ],
-    visibility = ["//visibility:public"],
-    deps = [
-        ":package_json",
-        ":runtime_source",
-    ],
 )

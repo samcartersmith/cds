@@ -48,6 +48,7 @@ def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependenci
         name = "package",
         srcs = [
             "CHANGELOG.md",
+            "README.md",
         ],
         deps = [
             ":lib",

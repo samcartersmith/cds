@@ -1,4 +1,4 @@
-# CDS - fonts
+# CDS - Fonts
 
 ## Typefaces
 
