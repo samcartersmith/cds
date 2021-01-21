@@ -27,7 +27,7 @@ stylelint:
 
 # Run unit tests with Jest
 test.unit:
-	cd ../../../../; ./node_modules/jest/bin/jest.js --projects eng/shared/design-system/web;
+	bazel test //eng/shared/design-system:unit_tests
 
 test.unit.watch:
 	cd ../../../../; ./node_modules/jest/bin/jest.js --projects eng/shared/design-system/web --watch;

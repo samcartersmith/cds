@@ -7,6 +7,7 @@ Help:
   $$ make build.mobile             -- Build the `mobile` package.
   $$ make build.theme              -- Build the `theme` package.
   $$ make build.utils              -- Build the `utils` package.
+	$$ make test.unit                -- Run unit tests.
   $$ make codegen                  -- Generate code in design system.
   $$ make lint                     -- Run eslint on all sources.
   $$ make new.package name=<name>  -- Scaffold a new package with the defined name.
@@ -45,6 +46,10 @@ build.theme:
 .PHONY: build.utils
 build.utils:
 	bazel build utils:package
+
+.PHONY: test.unit
+test.unit:
+	bazel test :unit_tests
 
 .PHONY: codegen
 codegen:

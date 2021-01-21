@@ -1,4 +1,5 @@
 load("@npm//ts-node:index.bzl", "ts_node")
+load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "stylelint_test")
 
 exports_files([
     ".babelrc.js",
@@ -49,8 +50,6 @@ filegroup(
 # ***************
 # *** linting ***
 # ***************
-
-load("//tools:def.bzl", "eslint_fix", "eslint_test", "stylelint_test")
 
 ESLINT_DIRS = PACKAGES + [
     "codegen",
@@ -117,6 +116,43 @@ filegroup(
         "jestSetupAfterEnv.ts",
     ],
     visibility = ["//visibility:public"],
+)
+
+jest_test(
+    name = "unit_tests",
+    srcs = [
+        "//:babel.config.js",
+        "//:package.json",
+        "//:tsconfig.json",
+        "//eng/shared/design-system:source",
+        "//eng/shared/design-system:tests_configuration",
+    ],
+    jest_config = "jest.config.js",
+    test_srcs = [
+        "//eng/shared/design-system/web:tests_source",
+    ],
+    deps = [
+        # common deps
+        "@npm//@babel/core",
+        "@npm//@babel/preset-env",
+        "@npm//@babel/preset-react",
+        "@npm//@babel/preset-typescript",
+        "@npm//@testing-library/jest-dom",
+        "@npm//@testing-library/react-hooks",
+        "@npm//@testing-library/react",
+        "@npm//babel-jest",
+        "@npm//babel-plugin-module-resolver",
+        "@npm//c8",  # used for bazel coverage in CI
+        "@npm//jest",
+        "@npm//react",
+
+        # project deps
+        "@npm//linaria",
+        "@npm//@babel/plugin-proposal-class-properties",
+        "@npm//text-encoding",
+        "@npm//humps",
+        "@npm//type-fest",
+    ],
 )
 
 # ***************
