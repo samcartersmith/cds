@@ -1,5 +1,6 @@
-load("//tools:def.bzl", "project_settings")
+load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_file_asset")
 load("//eng/shared/design-system:cds_deployable.bzl", "cds_deployable")
+load("//eng/shared/design-system:cds_package.bzl", "PACKAGES", "STATIC_PACKAGES")
 
 project_settings(
     caf = False,
@@ -7,14 +8,51 @@ project_settings(
     slack_channels = ["#design-systems-team"],
 )
 
-cds_deployable("core")
+[cds_deployable(name = package) for package in (PACKAGES + STATIC_PACKAGES)]
 
-cds_deployable("fonts")
+pkg_zip(
+    name = "bundled_storybook_master",
+    srcs = [
+        "//eng/shared/design-system:storybook",
+    ],
+    remap_paths = {"{gendir}/eng/shared/design-system/storybook": "."},
+    visibility = ["//visibility:public"],
+)
 
-cds_deployable("icons")
+pkg_zip(
+    name = "bundled_storybook_feature",
+    srcs = [
+        "//eng/shared/design-system:storybook",
+    ],
+    remap_paths = {"{gendir}/eng/shared/design-system/storybook": "feature/YOUR_FEATURE_BRANCH_NAME"},
+    visibility = ["//visibility:public"],
+)
 
-cds_deployable("mobile")
+syn_deployable(
+    name = "storybook",
+    assets = [
+        syn_file_asset(
+            name = "bundled_storybook_asset",
+            src = ":bundled_storybook_master",
+            bucket = "coinbase-design-system-storybook",
+            is_zip = True,
+        ),
+    ],
+    config_name = "storybook",  # config_name (i.e. Codeflow's config_name)
+    continuous_deployment = True,
+    target = "development",  # environment to deploy to
+)
 
-cds_deployable("theme")
-
-cds_deployable("utils")
+syn_deployable(
+    name = "storybook_feature",
+    assets = [
+        syn_file_asset(
+            name = "bundled_storybook_asset_feature",
+            src = ":bundled_storybook_feature",
+            bucket = "coinbase-design-system-storybook",
+            is_zip = True,
+        ),
+    ],
+    config_name = "storybook",  # config_name (i.e. Codeflow's config_name)
+    target = "development",  # environment to deploy to
+)

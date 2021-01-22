@@ -1,21 +1,24 @@
 define HELP_TEXT
 Help:
 -----
-  $$ make build.core               -- Build the `core` package.
-  $$ make build.fonts              -- Build the `fonts` package.
-  $$ make build.icons              -- Build the `icons` package.
-  $$ make build.mobile             -- Build the `mobile` package.
-  $$ make build.theme              -- Build the `theme` package.
-  $$ make build.utils              -- Build the `utils` package.
-	$$ make test.unit                -- Run unit tests.
-  $$ make codegen                  -- Generate code in design system.
-  $$ make lint                     -- Run eslint on all sources.
-  $$ make new.package name=<name>  -- Scaffold a new package with the defined name.
-  $$ make sync.icons               -- Synchronize icons with figma.
-  $$ make start.website            -- Start docusaurus website.
-  $$ make build.website            -- Build docusaurus website.
-  $$ make serve.website            -- Serve docusaurus website build locally.
-  $$ make deploy.website           -- Deploy docusaurus website to cds.cbhq.net.
+  $$ make build.core               	-- Build the `core` package.
+  $$ make build.fonts              	-- Build the `fonts` package.
+  $$ make build.icons              	-- Build the `icons` package.
+  $$ make build.mobile             	-- Build the `mobile` package.
+  $$ make build.theme              	-- Build the `theme` package.
+  $$ make build.utils              	-- Build the `utils` package.
+  $$ make test.unit                	-- Run unit tests.
+  $$ make codegen			-- Generate code in design system.
+  $$ make lint				-- Run eslint on all sources.
+  $$ make new.package name=<name>	-- Scaffold a new package with the defined name.
+  $$ make sync.icons			-- Synchronize icons with figma.
+  $$ make start.story			-- Start storybook local dev server.
+  $$ make start.website			-- Start docusaurus website.
+  $$ make build.story			-- Build storybook.
+  $$ make build.website			-- Build docusaurus website.
+  $$ make serve.story			-- Serve storybook build locally.
+  $$ make serve.website			-- Serve docusaurus website build locally.
+  $$ make deploy.website			-- Deploy docusaurus website to cds.cbhq.net.
 endef
 export HELP_TEXT
 
@@ -75,13 +78,25 @@ new.package:
 sync.icons:
 	bazel run :sync_icons
 
+.PHONY: start.story
+start.story:
+	cd ../../../; npx start-storybook -p 9009 -c eng/shared/design-system/storybook/.storybook -s eng/shared/design-system/fonts
+
 .PHONY: start.website
 start.website:
 	npx docusaurus start website
 
+.PHONY: build.story
+build.story:
+	bazel build :storybook
+
 .PHONY: build.website
 build.website:
 	bazel build website:build
+
+.PHONY: serve.story
+serve.story:
+	bazel run :storybook_server
 
 .PHONY: serve.website
 serve.website:

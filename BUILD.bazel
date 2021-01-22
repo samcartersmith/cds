@@ -1,5 +1,8 @@
 load("@npm//ts-node:index.bzl", "ts_node")
 load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "stylelint_test")
+load("@npm//serve:index.bzl", "serve")
+load("@npm//@storybook/react:index.bzl", "build_storybook")
+load("//eng/shared/design-system:cds_package.bzl", "PACKAGES", "STATIC_PACKAGES")
 
 exports_files([
     ".babelrc.js",
@@ -8,20 +11,11 @@ exports_files([
     "linaria.config.js",
 ])
 
-PACKAGES = [
-    "core",
-    "icons",
-    "mobile",
-    "theme",
-    "utils",
-    "web",
-]
-
 filegroup(
     name = "web_source",
     srcs = [
         "//eng/shared/design-system/%s:runtime_source" % p
-        for p in PACKAGES
+        for p in (PACKAGES + STATIC_PACKAGES)
     ] + glob(
         include = [
             "**/*.js",
@@ -31,17 +25,6 @@ filegroup(
         ],
         exclude = [
             "**/*.native.*",
-            "**/*.stories.*",
-        ],
-    ),
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
-    name = "storybook_source",
-    srcs = [":web_source"] + glob(
-        [
-            "**/*.stories.*",
         ],
     ),
     visibility = ["//visibility:public"],
@@ -74,8 +57,10 @@ ESLINT_DIRS = PACKAGES + [
 filegroup(
     name = "style_source",
     srcs = [
+        ".babelrc.js",
+        ".browserslistrc",
         ".stylelintrc.js",
-        "//eng/shared/design-system/web:style_source",
+        "//eng/shared/design-system/web:runtime_source",
         "//:babel.config.js",
     ] + glob(
         include = [
@@ -103,7 +88,10 @@ filegroup(
     srcs = [
         "//eng/shared/design-system/%s:source" % p
         for p in PACKAGES
-    ],
+    ] + glob([
+        "storybook/**/*.ts",
+        "storybook/**/*.tsx",
+    ]),
     visibility = ["//visibility:public"],
 )
 
@@ -118,6 +106,17 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+filegroup(
+    name = "tests_source",
+    srcs = [
+        "//eng/shared/design-system/web:tests_source",
+    ] + glob([
+        "**/*.test.ts",
+        "**/*.test.tsx",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
 jest_test(
     name = "unit_tests",
     srcs = [
@@ -129,7 +128,7 @@ jest_test(
     ],
     jest_config = "jest.config.js",
     test_srcs = [
-        "//eng/shared/design-system/web:tests_source",
+        "//eng/shared/design-system:tests_source",
     ],
     deps = [
         # common deps
@@ -211,3 +210,75 @@ ts_node(
     ],
 )
 # *** codegen end ***
+
+# *****************
+# *** storybook ***
+# *****************
+
+build_storybook(
+    name = "storybook",
+    args = [
+        "-c eng/shared/design-system/storybook/.storybook",
+        "-s eng/shared/design-system/fonts",
+        "-o $(@D)",
+        "--quiet",
+        "--no-dll",
+    ],
+    data = glob(["storybook/.storybook/**/*"]) + [
+        # story source
+        ":web_source",
+        "//eng/shared/design-system/icons:story_source",
+        "//eng/shared/design-system/web:story_source",
+        # deps
+        ".babelrc.js",
+        "//:babel.config.js",
+        "//:package.json",
+        "//:tsconfig.json",
+        "@npm//@babel/core",
+        "@npm//@babel/parser",
+        "@npm//@babel/preset-env",
+        "@npm//@babel/preset-react",
+        "@npm//@babel/preset-typescript",
+        "@npm//@storybook/addon-a11y",
+        "@npm//@storybook/addon-actions",
+        "@npm//@storybook/addon-backgrounds",
+        "@npm//@storybook/addon-controls",
+        "@npm//@storybook/addon-docs",
+        "@npm//@storybook/addon-links",
+        "@npm//@storybook/addon-toolbars",
+        "@npm//@storybook/addon-viewport",
+        "@npm//@storybook/addons",
+        "@npm//@storybook/react",
+        "@npm//@storybook/theming",
+        "@npm//@types/babel__template",
+        "@npm//@types/humps",
+        "@npm//@types/react",
+        "@npm//@types/react-dom",
+        "@npm//@types/webpack-env",
+        "@npm//babel-loader",
+        "@npm//babel-plugin-module-resolver",
+        "@npm//babel-plugin-transform-async-to-promises",
+        "@npm//destyle.css",
+        "@npm//dotenv-webpack",
+        "@npm//html-webpack-plugin",
+        "@npm//humps",
+        "@npm//linaria",
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//storybook-addon-designs",
+        "@npm//tsconfig-paths-webpack-plugin",
+        "@npm//typescript",
+    ],
+    output_dir = True,
+    visibility = ["//visibility:public"],
+)
+
+serve(
+    name = "storybook_server",
+    args = [
+        "eng/shared/design-system/storybook",
+        "-l 9000",
+    ],
+    data = [":storybook"],
+)
+# *** codegen storybook ***

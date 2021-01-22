@@ -1,277 +1,34 @@
-load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
-load("@npm//ttypescript:index.bzl", "ttsc")
-load("//tools:def.bzl", "node_package_gen")
-load("@npm//@storybook/react:index.bzl", "build_storybook")
-load("@npm//@babel/cli:index.bzl", "babel")
-load("//tools:def.bzl", "node_package_deployable")
+load("//eng/shared/design-system:cds_package.bzl", "cds_package")
 
-# Files to lint and test
-filegroup(
-    name = "source",
-    srcs = glob(
-        [
-            "**/*.ts",
-            "**/*.tsx",
-            "**/*.mdx",
-        ],
-    ),
-    visibility = ["//visibility:public"],
-)
-
-# Rename or remove after web build cleanup
-filegroup(
-    name = "runtime_source_new",
-    srcs = [
-        "index.ts",
-    ] + glob(
-        include = [
-            "Text/**/*.ts",
-            "Text/**/*.tsx",
-        ],
-    ),
-    visibility = ["//visibility:public"],
-)
-
-# Emit type declarations with path aliases transformed
-ttsc(
-    name = "typings",
-    args = [
-        "--project $(execpath tsconfig.build.json)",
-        "--outDir $(@D)",
-    ],
-    data = [
-        "tsconfig.build.json",
-        ":source",
-        "//:tsconfig.json",
-        "@npm//@types/humps",
-        "@npm//@types/react",
-        "@npm//@zerollup/ts-transform-paths",
-        "@npm//humps",
-        "@npm//linaria",
-        "@npm//type-fest",
-    ],
-    output_dir = True,
-)
-
-babel(
-    name = "lib",
-    args = [
-        "--config-file",
-        "./$(execpath //eng/shared/design-system:babel.config.js)",
-        "eng/shared/design-system/web/src",
-        "--out-dir",
-        "$(@D)",
-        "--extensions .ts,.tsx",
-    ],
-    data = [
-        ":source",
-        "//:tsconfig.json",
-        "//eng/shared/design-system:babel.config.js",
-        "//eng/shared/design-system:linaria.config.js",
-        "//eng/shared/design-system/codegen:babel-plugins/linariaCssExtractPlugin.js",
-        "//eng/shared/design-system/codegen:babel-plugins/linariaPreset.js",
-        "@npm//@babel/plugin-proposal-class-properties",
-        "@npm//@babel/preset-env",
-        "@npm//@babel/preset-react",
-        "@npm//@babel/preset-typescript",
-        "@npm//babel-plugin-module-resolver",
-        "@npm//babel-plugin-transform-async-to-promises",
-        "@npm//chalk",
-        "@npm//linaria",
-        "@npm//source-map",
-        "@npm//yargs",
-    ],
-    output_dir = True,
-)
-
-cds_dependencies = [
-    "@npm//destyle.css",
-    "@npm//linaria",
-    "@npm//humps",
-]
-
-cds_peer_dependencies = [
-    "@npm//react",
-    "@npm//react-dom",
-]
-
-# Generate package.json file
-node_package_gen(
-    name = "package_json_gen",
-    dependencies = cds_dependencies,
-    package_metadata = "basepackage.json",
-    peer_dependencies = cds_peer_dependencies,
-)
-
-pkg_npm(
-    name = "package",
-    srcs = [
-        "README.md",
-        "CHANGELOG.md",
-    ] + glob(["static/**/*"]),
-    deps = [
-        ":lib",
-        ":package_json_gen",
-        ":typings",
-    ],
-)
-
-# Publishing to registry-npm-dev.cbhq.net
-node_package_deployable(
-    name = "cds_web_dev",
-    pkg = "//eng/shared/design-system/web:package",
-    target = "development",
-)
-
-# Publishing to registry-npm.cbhq.net
-node_package_deployable(
-    name = "cds_web",
-    pkg = "//eng/shared/design-system/web:package",
-    target = "corporate",
-)
-
+# Files to publish to NPM
 filegroup(
     name = "runtime_source",
     srcs = glob(
         [
-            "src/**/*",
-            "static/**/*",
-            # for test only
-            "internal/**/*",
+            "**/*.ts",
+            "**/*.tsx",
         ],
         exclude = [
+            "**/*.stories.*",
             "**/*.test.*",
         ],
     ),
     visibility = ["//visibility:public"],
 )
 
+# Files to lint and test
 filegroup(
-    name = "eslint_source",
-    srcs = glob(
-        include = [
-            "**/*.ts",
-            "**/*.tsx",
-            "**/*.js",
-            "**/*.mdx",
-        ],
-        exclude = [
-            ".storybook/**/*",
-            # This root index.ts is only for npm package.
-            # It should be ignore by mono/repo tsconfig. Otherwise, vscode auto import won't work correctly.
-            "src/index.ts",
+    name = "source",
+    srcs = [":runtime_source"] + glob(
+        [
+            "**/*.stories.*",
+            "**/*.test.*",
         ],
     ),
     visibility = ["//visibility:public"],
 )
 
-load("//tools:def.bzl", "eslint_test", "stylelint_test")
-
-eslint_test(
-    name = "eslint",
-    sources = ":eslint_source",
-)
-
-filegroup(
-    name = "style_source",
-    srcs = [
-        "//eng/shared/design-system:.babelrc.js",
-        "//eng/shared/design-system:.browserslistrc",
-    ] + glob(
-        include = [
-            "**/*.ts",
-            "**/*.tsx",
-            "**/*.css",
-        ],
-    ),
-    visibility = ["//visibility:public"],
-)
-
-stylelint_test(
-    name = "stylelint",
-    sources = ":style_source",
-)
-
-filegroup(
-    name = "storybook_source",
-    srcs = glob(
-        include = [
-            "src/**/*",
-            "static/**/*",
-            "internal/**/*",
-            ".storybook/**/*",
-        ],
-    ),
-    visibility = ["//visibility:public"],
-)
-
-build_storybook(
-    name = "storybook",
-    args = [
-        "-c eng/shared/design-system/web/.storybook",
-        "-s eng/shared/design-system/web/static",
-        "-o $(@D)",
-        "--quiet",
-        "--no-dll",
-    ],
-    data = [
-        ":storybook_source",
-        "//:babel.config.js",
-        "//:package.json",
-        "//:tsconfig.json",
-        "//eng/shared/design-system:.babelrc.js",
-        "//eng/shared/design-system:storybook_source",
-        "@npm//@babel/core",
-        "@npm//@babel/parser",
-        "@npm//@babel/preset-env",
-        "@npm//@babel/preset-react",
-        "@npm//@babel/preset-typescript",
-        "@npm//@storybook/addon-a11y",
-        "@npm//@storybook/addon-actions",
-        "@npm//@storybook/addon-backgrounds",
-        "@npm//@storybook/addon-controls",
-        "@npm//@storybook/addon-docs",
-        "@npm//@storybook/addon-links",
-        "@npm//@storybook/addon-toolbars",
-        "@npm//@storybook/addon-viewport",
-        "@npm//@storybook/addons",
-        "@npm//@storybook/react",
-        "@npm//@storybook/theming",
-        "@npm//@types/babel__template",
-        "@npm//@types/humps",
-        "@npm//@types/react",
-        "@npm//@types/react-dom",
-        "@npm//@types/webpack-env",
-        "@npm//babel-loader",
-        "@npm//babel-plugin-module-resolver",
-        "@npm//babel-plugin-transform-async-to-promises",
-        "@npm//destyle.css",
-        "@npm//dotenv-webpack",
-        "@npm//html-webpack-plugin",
-        "@npm//humps",
-        "@npm//linaria",
-        "@npm//react",
-        "@npm//react-dom",
-        "@npm//storybook-addon-designs",
-        "@npm//tsconfig-paths-webpack-plugin",
-        "@npm//typescript",
-        "@npm//yargs",
-    ],
-    output_dir = True,
-    visibility = ["//visibility:public"],
-)
-
-load("@npm//serve:index.bzl", "serve")
-
-serve(
-    name = "storybook_server",
-    args = [
-        "eng/shared/design-system/web/storybook",
-        "-l 9000",
-    ],
-    data = [":storybook"],
-)
-
+# Tests
 filegroup(
     name = "tests_source",
     srcs = glob(
@@ -281,4 +38,33 @@ filegroup(
         ],
     ),
     visibility = ["//visibility:public"],
+)
+
+# Files for storybook
+filegroup(
+    name = "story_source",
+    srcs = glob(
+        [
+            "**/*.stories.*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+cds_package(
+    name = "web",
+    srcs = [":runtime_source"],
+    dependencies = [
+        "@npm//destyle.css",
+        "@npm//linaria",
+        "@npm//humps",
+    ],
+    monorepo_dependencies = [
+        "//eng/shared/design-system/core:package_json",
+        "//eng/shared/design-system/fonts:package_json",
+    ],
+    peer_dependencies = [
+        "@npm//react",
+        "@npm//react-dom",
+    ],
 )

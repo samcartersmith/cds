@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { StoryNameLabel } from './decorators';
+import { StoryNameLabel } from './withStoryLabel';
 
 describe('Decorators', () => {
   it('render children with a default label', () => {

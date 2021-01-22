@@ -1,3 +1,3 @@
 # CDS - Core
 
-Shared types between web and mobile.
+Shared types and hooks between web and mobile.

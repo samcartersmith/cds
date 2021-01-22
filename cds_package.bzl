@@ -2,6 +2,19 @@ load("@npm//@babel/cli:index.bzl", "babel")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("//tools:def.bzl", "node_package_gen")
 
+PACKAGES = [
+    "core",
+    "icons",
+    "mobile",
+    "theme",
+    "utils",
+    "web",
+]
+
+STATIC_PACKAGES = [
+    "fonts",
+]
+
 def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependencies):
     package_source_path = "eng/shared/design-system/%s" % name
 

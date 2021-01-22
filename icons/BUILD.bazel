@@ -31,7 +31,16 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-# All files to lint and test
+# Files for storybook
+filegroup(
+    name = "story_source",
+    srcs = glob([
+        "story/**/*",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+# Files to lint and test
 filegroup(
     name = "source",
     srcs = [":base_source"] + glob(

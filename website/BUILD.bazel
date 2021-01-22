@@ -31,7 +31,7 @@ DATA = [
     # configs
     "//:tsconfig.json",
     "//:babel.config.js",
-    "//eng/shared/design-system/web:runtime_source_new",
+    "//eng/shared/design-system/web:runtime_source",
     "//eng/shared/design-system/theme:runtime_source",
     "//eng/shared/design-system/utils:runtime_source",
     "//eng/shared/design-system/fonts:runtime_source",

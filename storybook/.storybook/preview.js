@@ -1,4 +1,4 @@
-import { StoryContainer } from '../internal/decorators';
+import { StoryContainer } from '../decorators/StoryContainer';
 import { css } from 'linaria';
 import '@cb/design-system-web/styles/globalStyles';
 // CSS reset

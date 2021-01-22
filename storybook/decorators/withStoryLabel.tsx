@@ -1,23 +1,8 @@
 import * as React from 'react';
 
 import { fallbackStack } from '@cb/design-system-web/styles/shared';
-import { ThemeProvider } from '@cds/theme';
-import { DEFAULT_SCALE } from '@cds/theme/scale/context';
+import { GetStory } from '@cds/storybook/decorators/types';
 import { css } from 'linaria';
-
-type GetStory = () => React.ReactNode;
-
-export const StoryContainer = (getStory: GetStory) => (
-  <ThemeProvider scale={DEFAULT_SCALE}>
-    <div
-      className={css`
-        padding: 20px;
-      `}
-    >
-      {getStory()}
-    </div>
-  </ThemeProvider>
-);
 
 type StoryNameLabelProps = {
   name: string;

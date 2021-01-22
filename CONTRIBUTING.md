@@ -11,23 +11,9 @@ make codegen
 ## Create A New Package
 
 1. Run `make new.package --name=<package>`.
-2. Edit [BUILD.bazel](./BUILD.bazel) `packages` to include the new package.
+2. Edit [cds_package.bzl](./cds_package.bzl) `PACKAGES` to include the new package.
 3. Check out `<package>/basepackage.json` and `<package>/BUILD.bazel` and make necessary updates.
 4. Update `<package>/CHANGELOG.md`.
-
-## Web
-
-In `eng/shared/design-system/web` directory, run storybook locally
-
-```bash
-make story
-```
-
-Build storybook locally and serve. This is useful when debugging issues with deployed storybook. For example, sometimes the component API types don't show up in the production build version.
-
-```bash
-make story.serve
-```
 
 ## Package
 
@@ -61,6 +47,18 @@ bazel run //eng/shared/design-system/<package>:publish_dev
 ```
 
 ## Storybook
+
+### Run Storybook Local Dev Server
+
+```bash
+make start.story
+```
+
+### Build Storybook
+
+```bash
+make build.story
+```
 
 ### Deploy Master Design System
 
