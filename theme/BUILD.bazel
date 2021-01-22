@@ -20,7 +20,10 @@ filegroup(
 # All files to lint and test
 filegroup(
     name = "source",
-    srcs = [":runtime_source"] + glob(
+    srcs = [
+        ":runtime_source",
+        "native.mock.js",
+    ] + glob(
         [
             "**/*.test.*",
             "**/*.mdx",

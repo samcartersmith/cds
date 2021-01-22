@@ -7,7 +7,10 @@ Help:
   $$ make build.mobile             	-- Build the `mobile` package.
   $$ make build.theme              	-- Build the `theme` package.
   $$ make build.utils              	-- Build the `utils` package.
-  $$ make test.unit                	-- Run unit tests.
+  $$ make build.web              	-- Build the `web` package.
+  $$ make test                     	-- Run web and mobile unit tests.
+  $$ make test.mobile              	-- Run mobile unit tests.
+  $$ make test.web                 	-- Run web unit tests.
   $$ make codegen			-- Generate code in design system.
   $$ make lint				-- Run eslint on all sources.
   $$ make new.package name=<name>	-- Scaffold a new package with the defined name.
@@ -50,9 +53,22 @@ build.theme:
 build.utils:
 	bazel build utils:package
 
-.PHONY: test.unit
-test.unit:
-	bazel test :unit_tests
+.PHONY: build.web
+build.web:
+	bazel build web:package
+
+.PHONY: test
+test:
+	bazel test :unit_tests_web
+	bazel test :unit_tests_mobile
+
+.PHONY: test.mobile
+test.mobile:
+	bazel test :unit_tests_mobile
+
+.PHONY: test.web
+test.web:
+	bazel test :unit_tests_web
 
 .PHONY: codegen
 codegen:
@@ -67,7 +83,7 @@ lint:
 	bazel run :eslint_mobile
 	bazel run :eslint_theme
 	bazel run :eslint_utils
-	bazel run web:eslint
+	bazel run :eslint_web
 	bazel run :stylelint
 
 .PHONY: new.package

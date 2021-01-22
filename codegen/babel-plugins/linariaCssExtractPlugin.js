@@ -106,16 +106,29 @@ module.exports = () => {
             cssMap.set(outputFile, processed);
           }
 
-          // Replace linaria import with CSS file import
+          // Include import to .css file
+          const cssImport = t.importDeclaration(
+            [],
+            t.stringLiteral(`./${path.basename(outputFile)}`)
+          );
+          let replacedLinaria = false;
+
           nodePath.node.body.forEach((node, index) => {
             if (node.type === 'ImportDeclaration' && node.source.value === 'linaria') {
-              nodePath
-                .get(`body.${index}`)
-                .replaceWith(
-                  t.importDeclaration([], t.stringLiteral(`./${path.basename(outputFile)}`))
-                );
+              node.specifiers = node.specifiers.filter(spec => spec.local.name !== 'css');
+
+              // Only `css` used, replace linaria
+              if (node.specifiers.length === 0) {
+                nodePath.get(`body.${index}`).replaceWith(cssImport);
+                replacedLinaria = true;
+              }
             }
           });
+
+          // Other linaria imports being used, add sibling import
+          if (!replacedLinaria) {
+            nodePath.node.body.unshift(cssImport);
+          }
         },
       },
     },

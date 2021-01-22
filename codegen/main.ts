@@ -30,11 +30,11 @@ async function loadTemplates(): Promise<
         data: Spectrum.css,
       },
       {
-        dest: 'theme/styles/foregroundColor.ts',
+        dest: 'web/styles/foregroundColor.ts',
         data: Palette.cssColor,
       },
       {
-        dest: 'theme/styles/backgroundColor.ts',
+        dest: 'web/styles/backgroundColor.ts',
         data: Palette.cssBackgroundColor,
       },
     ],

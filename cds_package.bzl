@@ -39,6 +39,7 @@ def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependenci
         data = [
             "//eng/shared/design-system/codegen:babel-plugins/linariaCssExtractPlugin.js",
             "//eng/shared/design-system/codegen:babel-plugins/linariaPreset.js",
+            "//eng/shared/design-system:.browserslistrc",
             "//eng/shared/design-system:babel.config.js",
             "//eng/shared/design-system:linaria.config.js",
             "//:tsconfig.json",

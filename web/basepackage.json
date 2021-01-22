@@ -4,7 +4,6 @@
   "description": "Coinbase Design System - Web",
   "keywords": ["design system", "component library", "react", "typescript"],
   "sideEffects": ["*.css"],
-  "homepage": "https://cds-web-storybook.cbhq.net/master/index.html?path=/docs",
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
@@ -15,5 +14,5 @@
   },
   "main": "lib/index.js",
   "module": "lib/index.js",
-  "typings": "typings/index.d.ts"
+  "typings": "index.ts"
 }

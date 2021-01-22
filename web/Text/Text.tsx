@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import type { Typography } from '@cds/core/Text/Typography';
-import * as foregroundStyles from '@cds/theme/styles/foregroundColor';
-import * as textAlignStyles from '@cds/theme/styles/textAlign';
+import type { Typography } from '@cds/core';
 import { pascalCase } from '@cds/utils';
 import type { DynamicElement } from '@cds/web/types';
 import { css, cx } from 'linaria';
 
+import * as foregroundStyles from '../styles/foregroundColor';
+import * as textAlignStyles from '../styles/textAlign';
 import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from './TextProps';
 import * as textStyles from './textStyles';
 

@@ -11,6 +11,7 @@ exports_files([
     "linaria.config.js",
 ])
 
+# TODO remove and replace with :source
 filegroup(
     name = "web_source",
     srcs = [
@@ -100,57 +101,68 @@ filegroup(
     srcs = [
         ".babelrc.js",
         "jest.config.js",
+        "jest.config.native.js",
         "jestSetup.ts",
-        "jestSetupAfterEnv.ts",
+        "linaria.config.js",
     ],
     visibility = ["//visibility:public"],
 )
 
-filegroup(
-    name = "tests_source",
-    srcs = [
-        "//eng/shared/design-system/web:tests_source",
-    ] + glob([
-        "**/*.test.ts",
-        "**/*.test.tsx",
-    ]),
-    visibility = ["//visibility:public"],
-)
+TEST_SRCS = [
+    "//:babel.config.js",
+    "//:package.json",
+    "//:tsconfig.json",
+    "//eng/shared/design-system:source",
+    "//eng/shared/design-system:tests_configuration",
+]
+
+TEST_DEPS = [
+    "@npm//@babel/core",
+    "@npm//@babel/plugin-proposal-class-properties",
+    "@npm//@babel/preset-env",
+    "@npm//@babel/preset-react",
+    "@npm//@babel/preset-typescript",
+    "@npm//babel-jest",
+    "@npm//babel-plugin-module-resolver",
+    "@npm//c8",  # Used for bazel coverage in CI
+    "@npm//humps",
+    "@npm//jest",
+    "@npm//linaria",
+    "@npm//react",
+    "@npm//text-encoding",
+]
 
 jest_test(
-    name = "unit_tests",
-    srcs = [
-        "//:babel.config.js",
-        "//:package.json",
-        "//:tsconfig.json",
-        "//eng/shared/design-system:source",
-        "//eng/shared/design-system:tests_configuration",
-    ],
+    name = "unit_tests_web",
+    srcs = TEST_SRCS,
     jest_config = "jest.config.js",
     test_srcs = [
-        "//eng/shared/design-system:tests_source",
+        "//eng/shared/design-system/icons:source",
+        "//eng/shared/design-system/theme:source",
+        "//eng/shared/design-system/utils:source",
+        "//eng/shared/design-system/web:source",
     ],
-    deps = [
-        # common deps
-        "@npm//@babel/core",
-        "@npm//@babel/preset-env",
-        "@npm//@babel/preset-react",
-        "@npm//@babel/preset-typescript",
+    deps = TEST_DEPS + [
         "@npm//@testing-library/jest-dom",
         "@npm//@testing-library/react-hooks",
         "@npm//@testing-library/react",
-        "@npm//babel-jest",
-        "@npm//babel-plugin-module-resolver",
-        "@npm//c8",  # used for bazel coverage in CI
-        "@npm//jest",
-        "@npm//react",
-
-        # project deps
-        "@npm//linaria",
-        "@npm//@babel/plugin-proposal-class-properties",
-        "@npm//text-encoding",
-        "@npm//humps",
         "@npm//type-fest",
+    ],
+)
+
+jest_test(
+    name = "unit_tests_mobile",
+    srcs = TEST_SRCS,
+    jest_config = "jest.config.native.js",
+    test_srcs = [
+        "//eng/shared/design-system/mobile:source",
+    ],
+    deps = TEST_DEPS + [
+        "@npm//@babel/preset-flow",
+        "@npm//@testing-library/jest-native",
+        "@npm//@testing-library/react-hooks",
+        "@npm//@testing-library/react-native",
+        "@npm//react-native",
     ],
 )
 

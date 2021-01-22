@@ -28,18 +28,6 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-# Tests
-filegroup(
-    name = "tests_source",
-    srcs = glob(
-        [
-            "**/*.test.ts",
-            "**/*.test.tsx",
-        ],
-    ),
-    visibility = ["//visibility:public"],
-)
-
 # Files for storybook
 filegroup(
     name = "story_source",

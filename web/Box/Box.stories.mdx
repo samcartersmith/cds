@@ -1,0 +1,187 @@
+import { withStoryLabel } from '@cds/storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs/blocks';
+
+import { Box } from './Box';
+
+export const Lipsum = () => (
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie tellus quis sem
+    suscipit molestie. In tincidunt hendrerit lectus fermentum euismod. Fusce interdum mollis
+    sodales. Aenean ac nibh eu velit condimentum laoreet quis in enim. Sed ut massa at purus auctor
+    convallis. Donec imperdiet posuere felis non luctus. Duis molestie at leo ac commodo. Fusce
+    facilisis lacus ac urna tempus, a dictum nibh ornare. In facilisis ipsum tempus velit consequat
+    lobortis.
+  </div>
+);
+
+<Meta title="Core Components/Box" component={Box} argTypes={{}} />
+
+# Box
+
+<Canvas withToolbar withSource={SourceState.OPEN}>
+  <Story name="Default" decorators={[withStoryLabel('Default')]} args={{ spacing: 2 }}>
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+# Flex
+
+<Canvas withToolbar withSource={SourceState.OPEN}>
+  <Story name="Flex controls" decorators={[withStoryLabel('Flex controls')]} args={{}}>
+    {() => (
+      <Box
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+        alignContent="center"
+      >
+        <Box background="positive" alignSelf="flex-end" spacing={1}>
+          <Lipsum />
+        </Box>
+        <Box background="backgroundAlternate" width="30%" spacing={1}>
+          <Lipsum />
+        </Box>
+        <Box background="backgroundOverlay" flexGrow={1} spacing={1}>
+          <Lipsum />
+        </Box>
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+# Backgrounds
+
+<Canvas withToolbar withSource={SourceState.OPEN}>
+  <Story
+    name="Alternate background"
+    decorators={[withStoryLabel('Alternate background')]}
+    args={{ background: 'backgroundAlternate', spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+  <Story
+    name="Overlay background"
+    decorators={[withStoryLabel('Overlay background')]}
+    args={{ background: 'backgroundOverlay', spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+  <Story
+    name="Primary background"
+    decorators={[withStoryLabel('Primary background')]}
+    args={{ background: 'primary', spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+  <Story
+    name="Secondary background"
+    decorators={[withStoryLabel('Secondary background')]}
+    args={{ background: 'secondary', spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+  <Story
+    name="Positive background"
+    decorators={[withStoryLabel('Positive background')]}
+    args={{ background: 'positive', spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+  <Story
+    name="Negative background"
+    decorators={[withStoryLabel('Negative background')]}
+    args={{ background: 'negative', spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+# Borders
+
+<Canvas withToolbar withSource={SourceState.OPEN}>
+  <Story
+    name="Bordered"
+    decorators={[withStoryLabel('Bordered')]}
+    args={{ bordered: true, spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+  <Story
+    name="Bordered & rounded"
+    decorators={[withStoryLabel('Bordered & rounded')]}
+    args={{ bordered: true, rounded: true, spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+  <Story
+    name="Rounded only"
+    decorators={[withStoryLabel('Rounded only')]}
+    args={{ background: 'backgroundAlternate', rounded: true, spacing: 2 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+# Positioning
+
+<Canvas withToolbar withSource={SourceState.OPEN}>
+  <Story name="Positioned" decorators={[withStoryLabel('Positioned')]} args={{}}>
+    {() => (
+      <Box
+        background="backgroundAlternate"
+        position="relative"
+        height="300px"
+        width="100%"
+        spacing={1}
+      >
+        <Box position="absolute" right="15px" bottom="15px" width="45%" spacing={1}>
+          <Lipsum />
+        </Box>
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

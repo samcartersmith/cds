@@ -1,0 +1,112 @@
+import React from 'react';
+
+import { BoxBaseProps } from '@cds/core';
+import { cx } from 'linaria';
+
+import * as backgroundColorStyles from '../styles/backgroundColor';
+import {
+  ArticleAccessibilityRole,
+  AsideAccessibilityRole,
+  DivAccessibilityRole,
+  HeaderFooterAccessibilityRole,
+  MainAccessibilityRole,
+  SectionAccessibilityRole,
+} from '../types';
+import * as styles from './boxStyles';
+
+export type InferBoxRole<As> = As extends 'article'
+  ? ArticleAccessibilityRole
+  : As extends 'aside'
+  ? AsideAccessibilityRole
+  : As extends 'div'
+  ? DivAccessibilityRole
+  : As extends 'footer' | 'header'
+  ? HeaderFooterAccessibilityRole
+  : As extends 'main'
+  ? MainAccessibilityRole
+  : As extends 'section'
+  ? SectionAccessibilityRole
+  : never;
+
+export type BoxElement = 'article' | 'aside' | 'div' | 'footer' | 'header' | 'main' | 'section';
+
+export interface BoxProps<As extends BoxElement = 'div'> extends BoxBaseProps {
+  as?: As;
+  role?: InferBoxRole<As>;
+  overflow?: 'visible' | 'hidden' | 'scroll';
+}
+
+export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
+  const {
+    as: Tag = 'div',
+    background = 'background',
+    bordered,
+    children,
+    overflow,
+    role,
+    rounded,
+    // Flex
+    alignContent,
+    alignItems,
+    alignSelf,
+    flexBasis,
+    flexDirection,
+    flexGrow,
+    flexShrink,
+    flexWrap,
+    justifyContent,
+    // Dimension
+    height,
+    maxHeight,
+    maxWidth,
+    minHeight,
+    minWidth,
+    width,
+    // Position
+    bottom,
+    left,
+    position,
+    right,
+    top,
+    zIndex,
+  } = props;
+
+  // TODO spacing
+  return (
+    <Tag
+      className={cx(
+        styles.box,
+        backgroundColorStyles[background],
+        alignContent && styles.alignContent[alignContent],
+        alignItems && styles.alignItems[alignItems],
+        alignSelf && styles.alignSelf[alignSelf],
+        flexDirection && styles.flexDirection[flexDirection],
+        flexWrap && styles.flexWrap[flexWrap],
+        justifyContent && styles.justifyContent[justifyContent],
+        overflow && styles.overflow[overflow],
+        position && styles.position[position],
+        bordered && styles.border,
+        rounded && styles.borderRadius
+      )}
+      role={role}
+      style={{
+        flexBasis,
+        flexGrow,
+        flexShrink,
+        height,
+        maxHeight,
+        maxWidth,
+        minHeight,
+        minWidth,
+        width,
+        bottom,
+        left,
+        right,
+        top,
+        zIndex,
+      }}
+    >
+      {children}
+    </Tag>
+  );
+};
