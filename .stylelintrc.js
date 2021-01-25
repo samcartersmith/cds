@@ -8,7 +8,7 @@ module.exports = {
     'number-max-precision': [
       0,
       {
-        ignoreUnits: ['em', 'rem', 's'],
+        ignoreUnits: ['em', 'rem', 's', ''],
       },
     ],
   },
