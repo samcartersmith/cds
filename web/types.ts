@@ -9,7 +9,7 @@ export type DynamicElement<
    * for that element will be available through the styled component.
    */
   readonly as: T;
-} & Omit<React.ComponentProps<T>, 'className' | 'style'>;
+} & Omit<React.ComponentProps<T>, 'className' | 'style' | 'dangerouslySetInnerHTML'>;
 
 // LINARIA
 

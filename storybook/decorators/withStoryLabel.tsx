@@ -21,7 +21,7 @@ export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }
     >
       <div
         className={css`
-          background-color: #eee;
+          background-color: var(--background-alternate);
           border-radius: 4px;
           padding: 4px 8px;
 

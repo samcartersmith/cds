@@ -4,11 +4,11 @@ import { scaleConfig } from './configs/scaleConfig';
 import { Icon } from './Icon';
 import { Palette } from './Palette';
 import { Spectrum } from './Spectrum/Spectrum';
-import { updateTextStory } from './story/updateTextStory';
 import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
 import { generateFromTemplate } from './utils/generateFromTemplate';
 import { logError } from './utils/logError';
+import { updateTextStylesTable } from './website/updateTextStylesTable';
 
 async function loadTemplates(): Promise<
   Record<string, { dest: string; data: Record<string, unknown> }[]>
@@ -83,7 +83,7 @@ async function loadTemplates(): Promise<
   try {
     Palette.validate();
 
-    await updateTextStory();
+    await updateTextStylesTable();
 
     Object.entries(await loadTemplates()).forEach(([template, configs]) => {
       configs.map(({ dest, data }) => {

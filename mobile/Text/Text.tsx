@@ -4,7 +4,7 @@ import type { TextBaseProps, Typography } from '@cds/core';
 import { usePalette, useScale } from '@cds/theme';
 import { scales } from '@cds/theme/native';
 import { pascalCase } from '@cds/utils';
-import { Text, TextProps as RNTextProps, StyleSheet } from 'react-native';
+import { I18nManager, Text, TextProps as RNTextProps, StyleSheet } from 'react-native';
 
 export type { Typography };
 
@@ -14,30 +14,47 @@ const styles = StyleSheet.create({
   },
 });
 
-export interface TextProps extends Readonly<Omit<RNTextProps, 'style'>>, TextBaseProps {}
+export interface TextProps
+  extends Readonly<Omit<RNTextProps, 'style' | 'selectable'>>,
+    TextBaseProps {}
 
 const createText = (name: Typography) => {
   const TextComponent: React.FC<TextProps> = ({
     color = 'foreground',
     align = 'left',
-    tnum = false,
-    // Default to true to match web behavior
-    selectable = true,
+    tabularNumbers = false,
+    // RN doesn't differentiate select behavior between text and all. Default to text to match web default. It behaves as true.
+    selectable = 'text',
     ...props
   }) => {
     const scale = useScale();
     const palette = usePalette();
 
+    const textAlign = React.useMemo(() => {
+      if (align === 'start') {
+        return I18nManager.isRTL ? 'right' : 'left';
+      }
+      if (align === 'end') {
+        return I18nManager.isRTL ? 'left' : 'right';
+      }
+      return align;
+    }, [align]);
+
+    const style = React.useMemo(
+      () => [
+        scales[scale].typography[name],
+        { color: palette[color], textAlign },
+        tabularNumbers && styles.tabularNumbers,
+      ],
+      [scale, palette, color, textAlign, tabularNumbers]
+    );
+
     return (
       <Text
         {...props}
         // TODO (hannah): Add iOS support for selectable. https://awesomeopensource.com/project/Astrocoders/react-native-selectable-text
-        selectable={selectable}
-        style={[
-          scales[scale].typography[name],
-          { color: palette[color], textAlign: align },
-          tnum && styles.tabularNumbers,
-        ]}
+        selectable={selectable !== 'none'}
+        style={style}
       />
     );
   };

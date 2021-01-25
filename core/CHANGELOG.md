@@ -2,4 +2,8 @@
 
 ## [Unreleased]
 
+- feat: Add Text shared props @hannah-jin ([#11435](https://github.cbhq.net/mono/repo/pull/11435)
+- feat: Add Box shared props @miles-johnson ([#11436](https://github.cbhq.net/mono/repo/pull/11436)
+
+## 0.0.3 (January 19th, 2021 12:15pm) [#11421](https://github.cbhq.net/mono/repo/pull/11421)
 - feat: Init @cds/core by @miles-johnson ([#11333](https://github.cbhq.net/mono/repo/pull/11333))

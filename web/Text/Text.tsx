@@ -2,51 +2,25 @@ import * as React from 'react';
 
 import type { Typography } from '@cds/core';
 import { pascalCase } from '@cds/utils';
+import { getTypographyStyles } from '@cds/web/styles/typography';
 import type { DynamicElement } from '@cds/web/types';
-import { css, cx } from 'linaria';
+import { cx } from 'linaria';
 
 import * as foregroundStyles from '../styles/foregroundColor';
-import * as textAlignStyles from '../styles/textAlign';
 import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from './TextProps';
 import * as textStyles from './textStyles';
 
 export type { TextProps, Typography };
 
-const noLineWrap = css`
-  white-space: nowrap;
-`;
-
-const tabularNumbers = css`
-  font-feature-settings: 'tnum';
-`;
-
-const disableSelect = css`
-  user-select: none;
-`;
-
 const createText = <E extends HTMLTextTags>(name: Typography) => {
   const TextComponent = <T extends E>({
     as,
     color = 'foreground',
-    align = 'left',
-    selectable = true,
-    tnum = false,
-    noWrap = false,
     ...props
   }: DynamicElement<T> & TextProps) =>
     React.createElement(as, {
       ...props,
-      className: cx(
-        textStyles[name],
-        foregroundStyles[color],
-        // TODO: replace with tailwind class
-        // #startregion
-        textAlignStyles[align],
-        tnum && tabularNumbers,
-        noWrap && noLineWrap,
-        !selectable && disableSelect
-        // #endregion
-      ),
+      className: cx(textStyles[name], foregroundStyles[color], ...getTypographyStyles(props)),
     });
 
   TextComponent.displayName = pascalCase(name);

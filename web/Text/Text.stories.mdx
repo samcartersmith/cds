@@ -1,6 +1,6 @@
 import { withStoryLabel } from '@cds/storybook/decorators/withStoryLabel';
 import { ThemeProvider } from '@cds/theme';
-import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import * as Type from './Text';
 
@@ -14,7 +14,7 @@ import * as Type from './Text';
 
 # Text
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story
     name="Normal"
     decorators={[withStoryLabel('Normal (Large)')]}
@@ -53,94 +53,133 @@ import * as Type from './Text';
   </Story>
 </Canvas>
 
-## Tabular Numbers
+## Numeric Styles
 
 <Canvas>
-  <Story name="Label2 tabular numbers" decorators={[withStoryLabel('Label2')]} args={{ as: 'p' }}>
-    {args => (
-      <>
-        <Type.TextLabel2 {...args}>{args.children || '91.23450'}</Type.TextLabel2>
-        <Type.TextLabel2 {...args}>{args.children || '11.98762'}</Type.TextLabel2>
-        <Type.TextLabel2 {...args}>{args.children || '20.23450'}</Type.TextLabel2>
-        <Type.TextLabel2 {...args}>{args.children || '75.32108'}</Type.TextLabel2>
-      </>
-    )}
+  <Story
+    name="Slashed zero"
+    decorators={[withStoryLabel('Slashed Zero')]}
+    args={{ as: 'p', slashedZero: true }}
+  >
+    {args => <Type.TextBody {...args}>{args.children || 'OZY28019'}</Type.TextBody>}
   </Story>
   <Story
-    name="Caption tabular numbers"
-    decorators={[withStoryLabel('Caption (align end)')]}
-    args={{ as: 'p', display: 'block', align: 'end' }}
+    name="Tabular numbers"
+    decorators={[withStoryLabel('Tabular numbers (align end)')]}
+    args={{ as: 'p', tnum: true, align: 'end' }}
   >
     {args => (
       <>
-        <Type.TextCaption {...args}>{args.children || '91.23450'}</Type.TextCaption>
-        <Type.TextCaption {...args}>{args.children || '11.98762'}</Type.TextCaption>
-        <Type.TextCaption {...args}>{args.children || '20.23450'}</Type.TextCaption>
-        <Type.TextCaption {...args}>{args.children || '75.32108'}</Type.TextCaption>
-      </>
-    )}
-  </Story>
-  <Story name="Title1 tabular numbers" decorators={[withStoryLabel('Title1')]} args={{ as: 'p' }}>
-    {args => (
-      <>
-        <Type.TextTitle1 tnum {...args}>
-          {args.children || '91.23450'}
-        </Type.TextTitle1>
-        <Type.TextTitle1 tnum {...args}>
-          {args.children || '11.98762'}
-        </Type.TextTitle1>
-        <Type.TextTitle1 tnum {...args}>
-          {args.children || '20.23450'}
-        </Type.TextTitle1>
-        <Type.TextTitle1 tnum {...args}>
-          {args.children || '75.32108'}
-        </Type.TextTitle1>
+        <Type.TextBody {...args}>{args.children || '91.23450'}</Type.TextBody>
+        <Type.TextBody {...args}>{args.children || '11.98762'}</Type.TextBody>
       </>
     )}
   </Story>
 </Canvas>
 
-## Usage
+## Selectable
 
-```tsx
-import { TextDisplay2, TextBody } from '@cds/web/components'
-import { ThemeProvider } from '@cds/theme'
+<Canvas>
+  <Story
+    name="Selectable none"
+    decorators={[withStoryLabel('None')]}
+    args={{ as: 'p', userSelect: 'none' }}
+  >
+    {args => <Type.TextBody {...args}>{args.children || 'BTC'}</Type.TextBody>}
+  </Story>
+  <Story
+    name="Selectable text"
+    decorators={[withStoryLabel('Text')]}
+    args={{ as: 'p', userSelect: 'text' }}
+  >
+    {args => <Type.TextBody {...args}>{args.children || 'Balance: 1,820,29.56'}</Type.TextBody>}
+  </Story>
+  <Story
+    name="Selectable all"
+    decorators={[withStoryLabel('All')]}
+    args={{ as: 'p', userSelect: 'all', slashedZero: true }}
+  >
+    {args => (
+      <Type.TextBody {...args}>
+        {args.children || 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh'}
+      </Type.TextBody>
+    )}
+  </Story>
+</Canvas>
 
-// Text styles are provided through the theme provider
-<ThemeProvider scale="xSmall">
-  <TextDisplay2 as="h1" color="primary" align="center">Coinbase Design System</TextDisplay2>
-  <TextTitle2 as="p" wrap >Buy and sell popular <a href="/currencies">digital currencies</a></TextTitle2>
-  <TextBody as="code" display="inline" tnum>2020</TextBody>
-  <ul>
-    <li><TextBody as="p">BTC</TextBody></li>
-    <li><TextBody as="p">ETH</TextBody></li>
-    <li><TextBody as="p">XRP</TextBody></li>
-    <li><TextBody as="p">DAI</TextBody></li>
-  </ul>
-<ThemeProvider>
-```
+## Text Decoration
 
-## Styles
+<Canvas>
+  <Story name="Underline" decorators={[withStoryLabel('None')]} args={{ as: 'p', underline: true }}>
+    {args => <Type.TextBody {...args}>{args.children || 'Learn more'}</Type.TextBody>}
+  </Story>
+  <Story name="Strikethrough" decorators={[withStoryLabel('Text')]} args={{ as: 's' }}>
+    {args => <Type.TextBody {...args}>{args.children || 'Manual verification'}</Type.TextBody>}
+  </Story>
+</Canvas>
 
-At different scales, the style attributes `font-size`, `line-height`, and `letter-spacing` (not shown below) that impact measurement of the component are different for each typography.
+## No Wrap and Overflow
 
-<!-- styles table start -->
+export const MediumContainer = props => (
+  <div
+    style={{ width: '35%', height: '50px', backgroundColor: 'var(--background-alternate)' }}
+    {...props}
+  />
+);
 
-|            | xSmall (-3) | small (-2)  | medium (-1) | large (0)   | xLarge (+2) | xxLarge (+4) | xxxLarge (+6) |
-| ---------- | ----------- | ----------- | ----------- | ----------- | ----------- | ------------ | ------------- |
-| `Display1` | 61px / 68px | 62px / 72px | 63px / 72px | 64px / 72px | 66px / 76px | 68px / 76px  | 70px / 80px   |
-| `Display2` | 31px / 40px | 32px / 40px | 33px / 40px | 34px / 44px | 36px / 44px | 38px / 48px  | 40px / 48px   |
-| `Title1`   | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
-| `Title2`   | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
-| `Title3`   | 17px / 24px | 18px / 24px | 19px / 24px | 20px / 28px | 22px / 28px | 24px / 32px  | 26px / 32px   |
-| `Headline` | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
-| `Body`     | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
-| `Label1`   | 11px / 12px | 12px / 16px | 13px / 16px | 14px / 16px | 16px / 20px | 18px / 20px  | 20px / 24px   |
-| `Label2`   | 11px / 12px | 12px / 16px | 13px / 16px | 14px / 16px | 16px / 20px | 18px / 20px  | 20px / 24px   |
-| `Caption`  | 10px / 12px | 11px / 12px | 12px / 16px | 13px / 16px | 15px / 16px | 17px / 20px  | 19px / 20px   |
-| `Legal`    | 10px / 12px | 11px / 16px | 12px / 16px | 13px / 16px | 15px / 20px | 17px / 20px  | 19px / 24px   |
+<Canvas>
+  <Story name="No wrap" decorators={[withStoryLabel('No wrap')]} args={{ as: 'p', noWrap: true }}>
+    {args => (
+      <MediumContainer>
+        <Type.TextBody {...args}>
+          {args.children || 'As with any asset, the value of Digital Currencies can'}
+        </Type.TextBody>
+      </MediumContainer>
+    )}
+  </Story>
+  <Story
+    name="Text overflow ellipsis"
+    decorators={[withStoryLabel('Overflow ellipsis')]}
+    args={{ as: 'p', overflow: 'ellipsis' }}
+  >
+    {args => (
+      <MediumContainer>
+        <Type.TextBody {...args}>
+          {args.children ||
+            'As with any asset, the value of Digital Currencies can go up or down and there can be a substantial risk that you lose money buying, selling, holding, or investing in digital currencies. You should carefully consider whether trading or holding Digital Currencies is suitable for you in light of your financial condition. Coinbase is not registered with the U.S. Securities and Exchange Commission and does not offer securities services in the United States or to U.S. persons.'}
+        </Type.TextBody>
+      </MediumContainer>
+    )}
+  </Story>
+  <Story
+    name="Text overflow clip"
+    decorators={[withStoryLabel('Overflow clip')]}
+    args={{ as: 'p', overflow: 'clip' }}
+  >
+    {args => (
+      <MediumContainer>
+        <Type.TextBody {...args}>
+          {args.children ||
+            'As with any asset, the value of Digital Currencies can go up or down and there can be a substantial risk that you lose money buying, selling, holding, or investing in digital currencies. You should carefully consider whether trading or holding Digital Currencies is suitable for you in light of your financial condition. Coinbase is not registered with the U.S. Securities and Exchange Commission and does not offer securities services in the United States or to U.S. persons.'}
+        </Type.TextBody>
+      </MediumContainer>
+    )}
+  </Story>
+</Canvas>
 
-<!-- styles table end -->
+## Text Transform
+
+<Canvas>
+  <Story name="Uppercase" args={{ as: 'p', transform: 'uppercase' }}>
+    {args => <Type.TextBody {...args}>{args.children || 'uppercase'}</Type.TextBody>}
+  </Story>
+  <Story name="Lowercase" args={{ as: 'p', transform: 'lowercase' }}>
+    {args => <Type.TextBody {...args}>{args.children || 'Lowercase'}</Type.TextBody>}
+  </Story>
+  <Story name="Capitalize" args={{ as: 'p', transform: 'capitalize' }}>
+    {args => <Type.TextBody {...args}>{args.children || 'capitalize'}</Type.TextBody>}
+  </Story>
+</Canvas>
 
 ## API
 

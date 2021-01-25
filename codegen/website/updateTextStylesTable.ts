@@ -7,9 +7,9 @@ import { argv } from 'yargs';
 import { Type } from '../Type/Type';
 import { getSourcePath } from '../utils/getSourcePath';
 
-export const updateTextStory = async () => {
+export const updateTextStylesTable = async () => {
   const typeStylesTable = Type.generateScaleTable();
-  const textStoryFile = await getSourcePath('web/Text/Text.stories.mdx');
+  const textStoryFile = await getSourcePath('website/docs/foundation/typography.mdx');
 
   if (fs.existsSync(textStoryFile)) {
     const textStory = fs.readFileSync(textStoryFile);
@@ -18,7 +18,7 @@ export const updateTextStory = async () => {
     const sectionStartIndex = textStory.indexOf(tableStart);
     const sectionEndIndex = textStory.indexOf(tableEnd);
     if (sectionStartIndex !== -1) {
-      const updatedTextStory = `${textStory.slice(
+      const updatedStylesTable = `${textStory.slice(
         0,
         sectionStartIndex
       )}${tableStart}\n\n${typeStylesTable}\n${textStory.slice(sectionEndIndex, textStory.length)}`;
@@ -26,20 +26,22 @@ export const updateTextStory = async () => {
       writePrettyFile({
         prettierConfig: argv.prettierConfig as string,
         outFile: textStoryFile,
-        contents: updatedTextStory,
+        contents: updatedStylesTable,
         parser: 'mdx',
         logInfo: 'Text story',
       });
     } else {
       console.warn(
-        `${chalk.yellow('warn')} Could not find styles table section in Text story to update.}`
+        `${chalk.yellow('warn')} Could not find styles table section in typography.mdx to update.}`
       );
     }
   } else {
     console.warn(
       `${chalk.yellow(
         'warn'
-      )} Text story has moved. Please update path in codegen script ${path.resolve(__filename)}.}`
+      )} Doc typography.mdx has moved. Please update path in codegen script ${path.resolve(
+        __filename
+      )}.}`
     );
   }
 };
