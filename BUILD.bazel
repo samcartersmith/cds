@@ -11,13 +11,19 @@ exports_files([
     "linaria.config.js",
 ])
 
+filegroup(
+    name = "build_source",
+    srcs = [
+        "//eng/shared/design-system/%s:build_source" % p
+        for p in (PACKAGES + STATIC_PACKAGES)
+    ],
+    visibility = ["//visibility:public"],
+)
+
 # TODO remove and replace with :source
 filegroup(
     name = "web_source",
-    srcs = [
-        "//eng/shared/design-system/%s:runtime_source" % p
-        for p in (PACKAGES + STATIC_PACKAGES)
-    ] + glob(
+    srcs = [":build_source"] + glob(
         include = [
             "**/*.js",
             "**/*.ts",
@@ -179,15 +185,13 @@ ts_node(
         "--prettierConfig $(execpath //:.prettierrc)",
     ],
     data = [
+        ":build_source",
         "//:.prettierrc",
+        "//:tsconfig.json",
         "//eng/shared/design-system/codegen:runtime_source",
-        "//eng/shared/design-system/icons:runtime_source",
-        "//eng/shared/design-system/theme:runtime_source",
-        "//eng/shared/design-system/web:runtime_source",
         "//tools/js:writePrettyFile.ts",
         "@npm//chalk",
         "@npm//ejs",
-        "@npm//humps",
         "@npm//tsconfig-paths",
         "@npm//webfont",
         "@npm//yargs",

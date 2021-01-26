@@ -27,6 +27,10 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+PEER_DEPENDENCIES = [
+    "@npm//react",
+]
+
 cds_package(
     name = "core",
     srcs = [":runtime_source"],
@@ -34,7 +38,12 @@ cds_package(
     monorepo_dependencies = [
         "//eng/shared/design-system/theme:package_json",
     ],
-    peer_dependencies = [
-        "@npm//react",
-    ],
+    peer_dependencies = PEER_DEPENDENCIES,
+)
+
+# Useful in Build of monorepo consumers
+filegroup(
+    name = "build_source",
+    srcs = [":runtime_source"] + PEER_DEPENDENCIES,
+    visibility = ["//visibility:public"],
 )

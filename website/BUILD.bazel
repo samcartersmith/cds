@@ -31,10 +31,7 @@ DATA = [
     # configs
     "//:tsconfig.json",
     "//:babel.config.js",
-    "//eng/shared/design-system/web:runtime_source",
-    "//eng/shared/design-system/theme:runtime_source",
-    "//eng/shared/design-system/utils:runtime_source",
-    "//eng/shared/design-system/fonts:runtime_source",
+    "//eng/shared/design-system:build_source",
     # dependencies
     "@npm//react",
     "@npm//react-dom",
@@ -43,8 +40,6 @@ DATA = [
     "@npm//linaria",
     "@npm//@mdx-js/react",
     "@npm//@docusaurus/theme-live-codeblock",
-    "//eng/shared/design-system/theme:dependencies",
-    "//eng/shared/design-system/utils:dependencies",
     # dev dependencies
     "@npm//typescript",
     "@npm//url-loader",

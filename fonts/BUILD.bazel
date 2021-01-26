@@ -19,3 +19,10 @@ cds_package_static(
     monorepo_dependencies = [],
     peer_dependencies = [],
 )
+
+# Useful in Build of monorepo consumers
+filegroup(
+    name = "build_source",
+    srcs = [":runtime_source"],
+    visibility = ["//visibility:public"],
+)

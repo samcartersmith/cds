@@ -27,22 +27,23 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-# Dependencies
-filegroup(
-    name = "dependencies",
-    srcs = [
-        "@npm//humps",
-        "@npm//type-fest",
-    ],
-    visibility = ["//visibility:public"],
-)
+DEPENDENCIES = [
+    "@npm//humps",
+    "@npm//@types/humps",
+    "@npm//type-fest",
+]
 
 cds_package(
     name = "utils",
     srcs = [":runtime_source"],
-    dependencies = [
-        ":dependencies",
-    ],
+    dependencies = DEPENDENCIES,
     monorepo_dependencies = [],
     peer_dependencies = [],
+)
+
+# Useful in Build of monorepo consumers
+filegroup(
+    name = "build_source",
+    srcs = [":runtime_source"] + DEPENDENCIES,
+    visibility = ["//visibility:public"],
 )

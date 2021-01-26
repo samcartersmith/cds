@@ -32,26 +32,28 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-# Dependencies
-filegroup(
-    name = "dependencies",
-    srcs = [
-        "@npm//linaria",
-        "@npm//type-fest",
-    ],
-    visibility = ["//visibility:public"],
-)
+DEPENDENCIES = [
+    "@npm//linaria",
+    "@npm//type-fest",
+]
+
+PEER_DEPENDENCIES = [
+    "@npm//react",
+]
 
 cds_package(
     name = "theme",
     srcs = [":runtime_source"],
-    dependencies = [
-        ":dependencies",
-    ],
+    dependencies = DEPENDENCIES,
     monorepo_dependencies = [
         "//eng/shared/design-system/utils:package_json",
     ],
-    peer_dependencies = [
-        "@npm//react",
-    ],
+    peer_dependencies = PEER_DEPENDENCIES,
+)
+
+# Useful in Build of monorepo consumers
+filegroup(
+    name = "build_source",
+    srcs = [":runtime_source"] + DEPENDENCIES + PEER_DEPENDENCIES,
+    visibility = ["//visibility:public"],
 )
