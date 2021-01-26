@@ -8,7 +8,11 @@ import { Box } from './Box';
 // TODO test animated, spacing, overflow
 describe('Box', () => {
   it('renders a view', () => {
-    const result = render(<Box>Child</Box>);
+    const result = render(
+      <Box>
+        <Text>Child</Text>
+      </Box>
+    );
 
     expect(result.UNSAFE_queryAllByType(View)).toHaveLength(1);
   });
@@ -43,7 +47,8 @@ describe('Box', () => {
 
   it('can dangerously override styles', async () => {
     const { getByText } = render(
-      <Box dangerouslySetStyle={{ backgroundColor: 'red' }}>
+      // eslint-disable-next-line react-native/no-inline-styles, react-native/no-color-literals
+      <Box dangerouslySetStyle={{ backgroundColor: '#000' }}>
         <Text>Child</Text>
       </Box>
     );
@@ -51,7 +56,7 @@ describe('Box', () => {
     await waitFor(() => getByText('Child'));
 
     expect(getByText('Child').parent).toHaveStyle({
-      backgroundColor: 'red',
+      backgroundColor: '#000',
     });
   });
 
