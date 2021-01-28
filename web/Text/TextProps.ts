@@ -1,4 +1,4 @@
-import type { TextBaseProps } from '@cds/core/Text/TextBaseProps';
+import type { TextBaseProps } from '@cds/core';
 
 export interface TextProps extends TextBaseProps {
   /**

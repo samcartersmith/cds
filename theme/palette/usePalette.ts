@@ -1,6 +1,6 @@
-import { paletteCssVarsMap } from './paletteCssVarsMap';
+import { palette } from './palette';
 import { UsePaletteFn } from './types';
 
 export const usePalette: UsePaletteFn = () => {
-  return paletteCssVarsMap;
+  return palette;
 };

@@ -1,9 +1,4 @@
-import {
-  defaultPalette,
-  paletteForegrounds,
-  paletteBackgrounds,
-} from '@cds/theme/palette/constants';
-import { PaletteAlias } from '@cds/theme/palette/types';
+import { defaultPalette, paletteForegrounds, paletteBackgrounds, PaletteAlias } from '@cds/theme';
 import { mapValues, toCssVarFn } from '@cds/utils';
 
 const arrayToObject = <T extends string>(arr: T[] | Readonly<T[]>) =>

@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import type { Typography } from '@cds/core';
 import { pascalCase } from '@cds/utils';
-import { getTypographyStyles } from '@cds/web/styles/typography';
-import type { DynamicElement } from '@cds/web/types';
 import { cx } from 'linaria';
 
 import * as foregroundStyles from '../styles/foregroundColor';
+import { getTypographyStyles } from '../styles/typography';
+import type { DynamicElement } from '../types';
 import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from './TextProps';
 import * as textStyles from './textStyles';
 

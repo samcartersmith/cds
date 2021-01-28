@@ -1,0 +1,12 @@
+{
+  "rules": {
+    // Dont import from itself
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": ["@cds/web"],
+        "patterns": ["@cds/web/*"]
+      }
+    ]
+  }
+}

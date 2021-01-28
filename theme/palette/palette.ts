@@ -3,7 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 
-export const paletteCssVarsMap = {
+export const palette = {
   foreground: 'var(--foreground)',
   foregroundMuted: 'var(--foreground-muted)',
   background: 'var(--background)',

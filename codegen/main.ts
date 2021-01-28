@@ -52,8 +52,8 @@ async function loadTemplates(): Promise<
         data: Spectrum.native,
       },
       {
-        dest: 'theme/palette/paletteCssVarsMap.ts',
-        data: { paletteCssVarsMap: Palette.cssVariables },
+        dest: 'theme/palette/palette.ts',
+        data: { palette: Palette.cssVariables },
       },
       {
         dest: 'icons/native/glyphs.ts',
