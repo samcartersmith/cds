@@ -281,6 +281,7 @@ build_storybook(
         "@npm//linaria",
         "@npm//react",
         "@npm//react-dom",
+        "@npm//react-popper",
         "@npm//storybook-addon-designs",
         "@npm//tsconfig-paths-webpack-plugin",
         "@npm//typescript",
