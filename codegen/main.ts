@@ -52,6 +52,14 @@ async function loadTemplates(): Promise<
         data: Spectrum.native,
       },
       {
+        dest: 'theme/palette/constants.ts',
+        data: {
+          defaultPalette: Palette.defaultPalette,
+          paletteForegrounds: Palette.paletteForegrounds,
+          paletteBackgrounds: Palette.paletteBackgrounds,
+        },
+      },
+      {
         dest: 'theme/palette/palette.ts',
         data: { palette: Palette.cssVariables },
       },

@@ -1,5 +1,47 @@
-import { defaultPalette, paletteForegrounds, paletteBackgrounds, PaletteAlias } from '@cds/theme';
 import { mapValues, toCssVarFn } from '@cds/utils';
+
+export const defaultPalette = {
+  foreground: 'gray100',
+  foregroundMuted: 'gray60',
+  background: 'gray0',
+  backgroundAlternate: 'gray5',
+  backgroundOverlay: ['blue90', 0.33],
+  divider: ['gray60', 0.33],
+  stroke: ['gray60', 0.66],
+  primary: 'blue60',
+  primaryForeground: 'gray0',
+  negative: 'red60',
+  negativeForeground: 'gray0',
+  positive: 'green60',
+  positiveForeground: 'gray0',
+  secondary: 'gray0',
+  secondaryForeground: 'gray100',
+} as const;
+
+export const paletteForegrounds = [
+  'foreground',
+  'foregroundMuted',
+  'primary',
+  'primaryForeground',
+  'secondary',
+  'secondaryForeground',
+  'positive',
+  'positiveForeground',
+  'negative',
+  'negativeForeground',
+] as const;
+
+export const paletteBackgrounds = [
+  'background',
+  'backgroundAlternate',
+  'backgroundOverlay',
+  'divider',
+  'stroke',
+  'primary',
+  'secondary',
+  'positive',
+  'negative',
+] as const;
 
 const arrayToObject = <T extends string>(arr: T[] | Readonly<T[]>) =>
   [...arr].reduce((prev, next) => {
@@ -37,9 +79,12 @@ export const Palette = {
   cssBorderColor,
   cssColor,
   cssVariables,
+  defaultPalette,
+  paletteForegrounds,
+  paletteBackgrounds,
   validate: () => {
-    const aliases = Object.keys(defaultPalette) as PaletteAlias[];
-    aliases.forEach((item: PaletteAlias) => {
+    const aliases = Object.keys(defaultPalette);
+    aliases.forEach(item => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       if (!paletteBackgrounds.includes(item) && !paletteForegrounds.includes(item)) {
