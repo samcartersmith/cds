@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 @cds/utils adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
 ## 0.0.4 (January 25th, 2021 3:30pm PST) [#11711](https://github.cbhq.net/mono/repo/pull/11711)
 
 - chore: Update dependencies in package.json by @katherinemartinez [#11711](https://github.cbhq.net/mono/repo/pull/11711)

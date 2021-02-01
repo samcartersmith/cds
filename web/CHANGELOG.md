@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.2 (February 1st, 2021 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)
+
 - break(component): Make Text back to wrap by default @hannah-jin [#9595](https://github.cbhq.net/mono/repo/pull/9595)
 - break(component): Make Text not wrap by default @hannah-jin [#8095](https://github.cbhq.net/mono/repo/pull/8095)
 - change(component): Set default html tag for legal to div @hannah-jin [#8167](https://github.cbhq.net/mono/repo/pull/8167)
