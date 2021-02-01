@@ -51,6 +51,7 @@ module.exports = {
         },
         'resources/roadmap',
         'resources/contributing',
+        'resources/release',
       ],
     },
   ],

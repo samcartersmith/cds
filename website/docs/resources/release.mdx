@@ -1,0 +1,82 @@
+---
+title: Release workflow
+---
+
+**Major** versions will be released at the start of each quarter. If there are no breaking changes or active deprecations, no major will be released.
+
+- Deprecations will be removed and or replaced with their new API.
+- Unstable APIs will be marked as stable.
+- Will provide a migration guide with each major release.
+- If needed, will also provide a codemod to automate migrations.
+
+**Minor** and **patch** versions will be released at the start of each week.
+
+- Based on unreleased changelog items.
+- Will always be backwards compatible.
+- Will only include updates which add new functionality or fix existing functionality.
+- Will sometimes release if no changes to keep dependencies synchronized on latest.
+
+At the end of each week.
+
+- Include a list of release updates for the current week.
+
+## Breaking changes
+
+### Props
+
+When a prop change requires breaking the API, it typically falls into 1 of 2 categories:
+
+- The prop name stays the same but the value and or functionality is different.
+
+|  Version  |              Workflow              |
+| :-------: | :--------------------------------: |
+| **1.0.0** |         `<Box foo="a" />`          |
+| **1.x.x** | `<Box foo="a" unstable_foo="b" />` |
+| **2.0.0** |         `<Box foo="b" />`          |
+
+- The prop is being removed completely. Sometimes a new prop replaces it.
+
+|  Version  |         Workflow          |
+| :-------: | :-----------------------: |
+| **1.0.0** |     `<Box foo="a" />`     |
+| **1.x.x** | `<Box foo="a" bar="b" />` |
+| **2.0.0** |     `<Box bar="b" />`     |
+
+### Components
+
+When multiple props change on a component, or styles/visuals are completely redesigned, or any change that is rather drastic, instead of modifying the old component, a new unstable component is created.
+
+|  Version  |                        Workflow                         |
+| :-------: | :-----------------------------------------------------: |
+| **1.0.0** |                 `<Box {...oldProps} />`                 |
+| **1.x.x** | `<Box {...oldProps} />` `<UnstableBox {...newProps} />` |
+| **2.0.0** |                 `<Box {...newProps} />`                 |
+
+## Deprecations
+
+When a feature is being removed or refactored, a deprecation notice will be applied to the feature in a minor/patch version before the actual change occurs in a major version (following the scenarios above).
+
+A deprecation notice consists of:
+
+- Adding a JSDOC `@deprecated` comment to the feature (prop, function, method, etc).
+- Logging a warning to the console with a deprecation/migration message.
+- Implementing a codemod to ease the migration.
+
+## Q1 tasks
+
+- Ensure every PR has a changelog entry.
+  - Use conventional commits-like format to determine semver changes.
+  - Define a checklist that all PRs should follow.
+- Provides a web and mobile implementation.
+- Accessibility support integrated.
+- Unit tests written with adequate code coverage.
+- Linting and other tests pass.
+
+## Q2 and beyond
+
+- Improve CI/CD by automating the package publishing.
+  - Will automatically determine semver version based on unreleased changelog items.
+  - Rely on conventional commits spec:
+    - Piggy back off this tooling if possible.
+    - Reduce maintenance burden on our end.
+- Build a codemod template for easily supporting breaking change migrations.
