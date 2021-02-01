@@ -78,6 +78,7 @@ codegen:
 .PHONY: lint
 lint:
 	bazel run :eslint_codegen
+	bazel run :eslint_codemod
 	bazel run :eslint_core
 	bazel run :eslint_icons
 	bazel run :eslint_mobile

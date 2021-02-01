@@ -1,0 +1,11 @@
+# All files to lint and test
+filegroup(
+    name = "source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.mdx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)

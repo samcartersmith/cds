@@ -43,6 +43,7 @@ filegroup(
 
 ESLINT_DIRS = PACKAGES + [
     "codegen",
+    "codemod",
 ]
 
 [
