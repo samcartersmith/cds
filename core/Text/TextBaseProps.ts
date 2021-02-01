@@ -29,7 +29,8 @@ export type TextBaseProps = Partial<
      */
     slashedZero: boolean;
     /**
-     * Set select behavior.
+     * Set select behavior. On mobile, selectable is binary, 'none' will be not selectable and
+     * either 'text' or 'all' will be selectable on Android. It is not yet supported on iOS.
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
      */
     selectable: 'none' | 'text' | 'all';

@@ -16,11 +16,32 @@ const createText = <E extends HTMLTextTags>(name: Typography) => {
   const TextComponent = <T extends E>({
     as,
     color = 'foreground',
+    align,
+    tabularNumbers,
+    slashedZero,
+    selectable,
+    underline,
+    noWrap,
+    overflow,
+    transform,
     ...props
   }: DynamicElement<T> & TextProps) =>
     React.createElement(as, {
       ...props,
-      className: cx(textStyles[name], foregroundStyles[color], ...getTypographyStyles(props)),
+      className: cx(
+        textStyles[name],
+        foregroundStyles[color],
+        ...getTypographyStyles({
+          align,
+          tabularNumbers,
+          slashedZero,
+          selectable,
+          underline,
+          noWrap,
+          overflow,
+          transform,
+        })
+      ),
     });
 
   TextComponent.displayName = pascalCase(name);

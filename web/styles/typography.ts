@@ -1,10 +1,12 @@
 import { TextBaseProps } from '@cds/core';
 import { css } from 'linaria';
 
+import { CSSMap } from '../types';
+
 export const fallbackStack =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
 
-const textAlign = {
+const textAlign: CSSMap<TextBaseProps['align']> = {
   left: css`
     text-align: left;
   `,
@@ -25,7 +27,7 @@ const textAlign = {
   `,
 };
 
-const userSelect = {
+const userSelect: CSSMap<TextBaseProps['selectable']> = {
   none: css`
     user-select: none;
   `,
@@ -37,7 +39,7 @@ const userSelect = {
   `,
 };
 
-const overflow = {
+const overflow: CSSMap<TextBaseProps['overflow']> = {
   truncate: css`
     overflow: hidden;
     text-overflow: ellipsis;
@@ -48,7 +50,7 @@ const overflow = {
   `,
 };
 
-const transform = {
+const transform: CSSMap<TextBaseProps['transform']> = {
   uppercase: css`
     text-transform: uppercase;
   `,

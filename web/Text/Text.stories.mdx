@@ -83,21 +83,21 @@ import * as Type from './Text';
   <Story
     name="Selectable none"
     decorators={[withStoryLabel('None')]}
-    args={{ as: 'p', userSelect: 'none' }}
+    args={{ as: 'p', selectable: 'none' }}
   >
     {args => <Type.TextBody {...args}>{args.children || 'BTC'}</Type.TextBody>}
   </Story>
   <Story
     name="Selectable text"
     decorators={[withStoryLabel('Text')]}
-    args={{ as: 'p', userSelect: 'text' }}
+    args={{ as: 'p', selectable: 'text' }}
   >
     {args => <Type.TextBody {...args}>{args.children || 'Balance: 1,820,29.56'}</Type.TextBody>}
   </Story>
   <Story
     name="Selectable all"
     decorators={[withStoryLabel('All')]}
-    args={{ as: 'p', userSelect: 'all', slashedZero: true }}
+    args={{ as: 'p', selectable: 'all', slashedZero: true }}
   >
     {args => (
       <Type.TextBody {...args}>
@@ -110,7 +110,11 @@ import * as Type from './Text';
 ## Text Decoration
 
 <Canvas>
-  <Story name="Underline" decorators={[withStoryLabel('None')]} args={{ as: 'p', underline: true }}>
+  <Story
+    name="Underline"
+    decorators={[withStoryLabel('Underline')]}
+    args={{ as: 'p', underline: true }}
+  >
     {args => <Type.TextBody {...args}>{args.children || 'Learn more'}</Type.TextBody>}
   </Story>
   <Story name="Strikethrough" decorators={[withStoryLabel('Text')]} args={{ as: 's' }}>
@@ -140,7 +144,7 @@ export const MediumContainer = props => (
   <Story
     name="Text overflow ellipsis"
     decorators={[withStoryLabel('Overflow ellipsis')]}
-    args={{ as: 'p', overflow: 'ellipsis' }}
+    args={{ as: 'p', overflow: 'truncate' }}
   >
     {args => (
       <MediumContainer>

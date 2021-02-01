@@ -12,7 +12,20 @@ const styles = StyleSheet.create({
   tabularNumbers: {
     fontVariant: ['tabular-nums'],
   },
+  underline: {
+    textDecorationLine: 'underline',
+  },
 });
+
+const overflowProps = {
+  truncate: {
+    ellipsisMode: 'tail',
+    numberOfLines: 1,
+  },
+  clip: {
+    ellipsisMode: 'clip',
+  },
+};
 
 export interface TextProps
   extends Readonly<Omit<RNTextProps, 'style' | 'selectable'>>,
@@ -23,8 +36,17 @@ const createText = (name: Typography) => {
     color = 'foreground',
     align = 'left',
     tabularNumbers = false,
+    // TODO: replace with glyph
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    slashedZero,
     // RN doesn't differentiate select behavior between text and all. Default to text to match web default. It behaves as true.
     selectable = 'text',
+    underline,
+    noWrap,
+    overflow,
+    transform,
+    // RN Text props
+    numberOfLines,
     ...props
   }) => {
     const scale = useScale();
@@ -43,15 +65,19 @@ const createText = (name: Typography) => {
     const style = React.useMemo(
       () => [
         scales[scale].typography[name],
-        { color: palette[color], textAlign },
+        { color: palette[color], textAlign, textTransform: transform },
         tabularNumbers && styles.tabularNumbers,
+        underline && styles.underline,
       ],
-      [scale, palette, color, textAlign, tabularNumbers]
+      [scale, palette, color, textAlign, tabularNumbers, underline, transform]
     );
 
     return (
       <Text
         {...props}
+        // NOTE: overflow needs to appear before numberOfLines.
+        {...(overflow && overflowProps[overflow])}
+        numberOfLines={noWrap ? 1 : numberOfLines}
         // TODO (hannah): Add iOS support for selectable. https://awesomeopensource.com/project/Astrocoders/react-native-selectable-text
         selectable={selectable !== 'none'}
         style={style}
