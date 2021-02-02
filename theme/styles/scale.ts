@@ -52,6 +52,17 @@ export const xSmall = css`
   --legal-line-height: 12px;
   --legal-letter-spacing: 0.014em;
   --legal-font-weight: 400;
+  --spacing-0\\.5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 12px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --spacing-5: 24px;
+  --spacing-6: 28px;
+  --spacing-7: 32px;
+  --spacing-8: 36px;
+  --spacing-9: 40px;
+  --spacing-10: 44px;
 `;
 
 export const small = css`
@@ -102,6 +113,17 @@ export const small = css`
   --legal-line-height: 16px;
   --legal-letter-spacing: 0.007em;
   --legal-font-weight: 400;
+  --spacing-0\\.5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 12px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --spacing-5: 24px;
+  --spacing-6: 28px;
+  --spacing-7: 32px;
+  --spacing-8: 36px;
+  --spacing-9: 40px;
+  --spacing-10: 44px;
 `;
 
 export const medium = css`
@@ -152,6 +174,17 @@ export const medium = css`
   --legal-line-height: 16px;
   --legal-letter-spacing: 0;
   --legal-font-weight: 400;
+  --spacing-0\\.5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 12px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --spacing-5: 24px;
+  --spacing-6: 28px;
+  --spacing-7: 32px;
+  --spacing-8: 36px;
+  --spacing-9: 40px;
+  --spacing-10: 44px;
 `;
 
 export const large = css`
@@ -200,6 +233,17 @@ export const large = css`
   --legal-line-height: 16px;
   --legal-letter-spacing: -0.006em;
   --legal-font-weight: 400;
+  --spacing-0\\.5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 56px;
+  --spacing-8: 64px;
+  --spacing-9: 72px;
+  --spacing-10: 80px;
 `;
 
 export const xLarge = css`
@@ -247,6 +291,17 @@ export const xLarge = css`
   --legal-line-height: 20px;
   --legal-letter-spacing: -0.016em;
   --legal-font-weight: 400;
+  --spacing-0\\.5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 56px;
+  --spacing-8: 64px;
+  --spacing-9: 72px;
+  --spacing-10: 80px;
 `;
 
 export const xxLarge = css`
@@ -294,6 +349,17 @@ export const xxLarge = css`
   --legal-line-height: 20px;
   --legal-letter-spacing: -0.026em;
   --legal-font-weight: 400;
+  --spacing-0\\.5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 56px;
+  --spacing-8: 64px;
+  --spacing-9: 72px;
+  --spacing-10: 80px;
 `;
 
 export const xxxLarge = css`
@@ -341,4 +407,15 @@ export const xxxLarge = css`
   --legal-line-height: 24px;
   --legal-letter-spacing: -0.021em;
   --legal-font-weight: 400;
+  --spacing-0\\.5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 56px;
+  --spacing-8: 64px;
+  --spacing-9: 72px;
+  --spacing-10: 80px;
 `;

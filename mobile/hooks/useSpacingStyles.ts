@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 
-import { SpacingStyles } from '@cds/core';
+import { SpacingScale, SpacingStyles } from '@cds/core';
+import { useScale } from '@cds/theme';
+import { scales } from '@cds/theme/native';
 import { I18nManager, ViewStyle } from 'react-native';
 
 export const useSpacingStyles = ({
@@ -12,16 +14,17 @@ export const useSpacingStyles = ({
   spacingTop,
   spacingVertical,
 }: SpacingStyles): ViewStyle => {
+  const scale = useScale();
+
   return useMemo(() => {
     const styles: ViewStyle = {};
 
-    // TODO multipliers/constants
-    const setSpacing = (prop: string, value: number) => {
-      if (value < 0) {
-        styles[prop.replace('spacing', 'margin') as 'margin'] = value * -1;
-      } else {
-        styles[prop.replace('spacing', 'padding') as 'padding'] = value * 1;
-      }
+    const setSpacing = (
+      prop: keyof SpacingStyles | 'spacingRight' | 'spacingLeft',
+      value: SpacingScale
+    ) => {
+      const spacingValue = value === 0 ? 0 : scales[scale].spacing[value];
+      styles[prop.replace('spacing', 'padding') as 'padding'] = spacingValue * 1;
     };
 
     if (spacing !== undefined) {
@@ -66,5 +69,6 @@ export const useSpacingStyles = ({
     spacingStart,
     spacingTop,
     spacingVertical,
+    scale,
   ]);
 };

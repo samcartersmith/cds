@@ -3,6 +3,7 @@ import { mapValues } from '@cds/utils';
 import { scaleConfig } from './configs/scaleConfig';
 import { Icon } from './Icon';
 import { Palette } from './Palette';
+import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
@@ -23,7 +24,12 @@ async function loadTemplates(): Promise<
       },
       {
         dest: 'theme/styles/scale.ts',
-        data: Type.scaleCss,
+        data: mapValues(scaleConfig, (_, scale) => {
+          return {
+            ...Type.scaleCss[scale],
+            ...Spacing.scaleCss[scale],
+          };
+        }),
       },
       {
         dest: 'theme/styles/spectrum.ts',
@@ -38,12 +44,23 @@ async function loadTemplates(): Promise<
         data: Palette.cssBackgroundColor,
       },
     ],
+    'cssMap.ejs': [
+      {
+        dest: 'web/styles/padding.ts',
+        data: Spacing.css('padding'),
+      },
+      {
+        dest: 'web/styles/margin.ts',
+        data: Spacing.css('margin'),
+      },
+    ],
     'objectMap.ejs': [
       {
         dest: 'theme/styles/scale.native.ts',
         data: mapValues(scaleConfig, (_, scale) => {
           return {
             typography: Type.native[scale],
+            spacing: Spacing.native[scale],
           };
         }),
       },

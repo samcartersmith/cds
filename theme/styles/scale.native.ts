@@ -86,6 +86,19 @@ export const xSmall = {
       fontFamily: 'Inter',
     },
   },
+  spacing: {
+    '1': 8,
+    '2': 12,
+    '3': 16,
+    '4': 20,
+    '5': 24,
+    '6': 28,
+    '7': 32,
+    '8': 36,
+    '9': 40,
+    '10': 44,
+    '0.5': 4,
+  },
 } as const;
 
 export const small = {
@@ -170,6 +183,19 @@ export const small = {
       fontWeight: '400',
       fontFamily: 'Inter',
     },
+  },
+  spacing: {
+    '1': 8,
+    '2': 12,
+    '3': 16,
+    '4': 20,
+    '5': 24,
+    '6': 28,
+    '7': 32,
+    '8': 36,
+    '9': 40,
+    '10': 44,
+    '0.5': 4,
   },
 } as const;
 
@@ -256,6 +282,19 @@ export const medium = {
       fontFamily: 'Inter',
     },
   },
+  spacing: {
+    '1': 8,
+    '2': 12,
+    '3': 16,
+    '4': 20,
+    '5': 24,
+    '6': 28,
+    '7': 32,
+    '8': 36,
+    '9': 40,
+    '10': 44,
+    '0.5': 4,
+  },
 } as const;
 
 export const large = {
@@ -339,6 +378,19 @@ export const large = {
       fontFamily: 'Inter',
     },
   },
+  spacing: {
+    '1': 8,
+    '2': 16,
+    '3': 24,
+    '4': 32,
+    '5': 40,
+    '6': 48,
+    '7': 56,
+    '8': 64,
+    '9': 72,
+    '10': 80,
+    '0.5': 4,
+  },
 } as const;
 
 export const xLarge = {
@@ -420,6 +472,19 @@ export const xLarge = {
       fontWeight: '400',
       fontFamily: 'Inter',
     },
+  },
+  spacing: {
+    '1': 8,
+    '2': 16,
+    '3': 24,
+    '4': 32,
+    '5': 40,
+    '6': 48,
+    '7': 56,
+    '8': 64,
+    '9': 72,
+    '10': 80,
+    '0.5': 4,
   },
 } as const;
 
@@ -503,6 +568,19 @@ export const xxLarge = {
       fontFamily: 'Inter',
     },
   },
+  spacing: {
+    '1': 8,
+    '2': 16,
+    '3': 24,
+    '4': 32,
+    '5': 40,
+    '6': 48,
+    '7': 56,
+    '8': 64,
+    '9': 72,
+    '10': 80,
+    '0.5': 4,
+  },
 } as const;
 
 export const xxxLarge = {
@@ -584,5 +662,18 @@ export const xxxLarge = {
       fontWeight: '400',
       fontFamily: 'Inter',
     },
+  },
+  spacing: {
+    '1': 8,
+    '2': 16,
+    '3': 24,
+    '4': 32,
+    '5': 40,
+    '6': 48,
+    '7': 56,
+    '8': 64,
+    '9': 72,
+    '10': 80,
+    '0.5': 4,
   },
 } as const;

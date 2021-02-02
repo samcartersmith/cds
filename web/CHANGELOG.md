@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - break(component): Make Text back to wrap by default @hannah-jin [#9595](https://github.cbhq.net/mono/repo/pull/9595)
 - break(component): Make Text not wrap by default @hannah-jin [#8095](https://github.cbhq.net/mono/repo/pull/8095)
 - change(component): Set default html tag for legal to div @hannah-jin [#8167](https://github.cbhq.net/mono/repo/pull/8167)
+- feat: Implement spacing props in Box component @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 - feat(component): Add Text component @hannah-jin ([#11435](https://github.cbhq.net/mono/repo/pull/11435)
 - feat(component): Add Box component @miles-johnson ([#11436](https://github.cbhq.net/mono/repo/pull/11436)
 - feat(component): Add dangerouslySetClassName in Text component for migration purpose by @hannah-jin [#9700](https://github.cbhq.net/mono/repo/pull/9700)

@@ -14,12 +14,16 @@ export const Lipsum = () => (
   </div>
 );
 
-<Meta title="Core Components/Box" component={Box} argTypes={{}} />
+<Meta title="Core Components/Box" component={Box} />
 
 # Box
 
 <Canvas withToolbar withSource={SourceState.OPEN}>
-  <Story name="Default" decorators={[withStoryLabel('Default')]} args={{ spacing: 2 }}>
+  <Story
+    name="Default"
+    decorators={[withStoryLabel('Default')]}
+    args={{ background: 'backgroundAlternate', spacing: 0.5 }}
+  >
     {args => (
       <Box {...args}>
         <Lipsum />

@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { BoxBaseProps } from '@cds/core';
+import type { BoxBaseProps } from '@cds/core';
 import { cx } from 'linaria';
 
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
 import {
   ArticleAccessibilityRole,
@@ -69,9 +70,16 @@ export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
     right,
     top,
     zIndex,
+    // Spacing
+    spacing,
+    spacingTop,
+    spacingBottom,
+    spacingStart,
+    spacingEnd,
+    spacingVertical,
+    spacingHorizontal,
   } = props;
 
-  // TODO spacing
   return (
     <Tag
       className={cx(
@@ -86,7 +94,16 @@ export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
         overflow && styles.overflow[overflow],
         position && styles.position[position],
         bordered && styles.border,
-        rounded && styles.borderRadius
+        rounded && styles.borderRadius,
+        useSpacingStyles({
+          all: spacing,
+          top: spacingTop,
+          bottom: spacingBottom,
+          start: spacingStart,
+          end: spacingEnd,
+          vertical: spacingVertical,
+          horizontal: spacingHorizontal,
+        })
       )}
       role={role}
       style={{
