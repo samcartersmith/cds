@@ -8,6 +8,7 @@ const ReactLiveScope = {
   React,
   ...React,
   ...CdsWeb,
+  Text: CdsWeb.TextBody,
   ThemeProvider,
 };
 

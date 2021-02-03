@@ -3,93 +3,69 @@ id: theme-provider
 title: ThemeProvider
 ---
 
-- Scale: xSmall | small | medium | large | xLarge | xxLarge | xxxLarge
-- Spectrum: light | dark
-- Palette: [PaletteConfig](#palette)
+import { ApiDetails } from '@cds/website/components/ApiDetails';
+import { Badge } from '@cds/website/components/Badge';
+import { ComponentDetails } from '@cds/website/components/ComponentDetails';
 
-### Scale
+<ComponentDetails componentName="ThemeProvider" templateName="intro" />
 
-**xSmall | small | medium | large | xLarge | xxLarge | xxxLarge**
+## Props
 
-The `scale` prop in `ThemeProvider` determines which sizes to pull for typography, spacing, icons and layout and is based on an applications information density.
+### palette
 
-```jsx {5}
-function MyApp() {
-  import { ThemeProvider } from '@cds/theme';
-  return (
-    // xSmall | small | medium | large | xLarge | xxLarge | xxxLarge
-    <ThemeProvider scale="small">
-      <AppContent />
-    </ThemeProvider>
-  );
-}
-```
+Takes a configurable palette. If a partial palette is provided it will be merged with the closest parent ThemeProvider if present, if not it will be fallback to merging with the default CDS palette.
 
-### Spectrum
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="palette"
+  required={false}
+  defaultValue=""
+  mobileOptions={['PaletteConfig']}
+  webOptions={['PaletteConfig']}
+  webReference=""
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
 
-**light | dark**
+<ComponentDetails componentName="ThemeProvider" templateName="palette" />
 
-The `spectrum` prop in ThemeProvider determines which spectrum a palette will pull from. For example, in the light spectrum, gray100, maps to black while in the dark spectrum gray100 maps to white. The default palette CDS ships with assigns foreground to gray100. `foreground` is then used in majority of our text components and is dark mode compatible by default.
+### scale
 
-```jsx {4}
-function MyApp() {
-  return (
-    // light | dark
-    <ThemeProvider spectrum="dark">
-      <AppContent />
-    </ThemeProvider>
-  );
-}
-```
+Determines which sizes to pull for typography, spacing, icons and layout and is based on an applications information density.
 
-The spectrum is comprised of the following colors:
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="scale"
+  required={false}
+  defaultValue=""
+  mobileOptions={['xSmall', 'small', 'medium', 'large', 'xLarge', 'xxLarge', 'xxxLarge']}
+  webOptions={['xSmall', 'small', 'medium', 'large', 'xLarge', 'xxLarge', 'xxxLarge']}
+  webReference=""
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
 
-- **Hues**: blue | green | orange | yellow | gray | indigo | pink | purple | red
-- **Hue Steps**: 0 | 5 | 10 | 15 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100
+<ComponentDetails componentName="ThemeProvider" templateName="scale" />
 
-### Palette
+### spectrum
 
-CDS comes with the default palette below. If a portion of a palette is provided it will be merged with the closest parent ThemeProvider if present, if not it will be fallback to merging with the default CDS palette.
+Determines which spectrum a palette will pull from. For example, in the light spectrum, gray100, maps to black while in the dark spectrum gray100 maps to white. The default palette CDS ships with assigns foreground to gray100. `foreground` is used as the default color in Text components.
 
-```jsx {28}
-/**
- * Key is PaletteAlias i.e. foreground
- * Value is SpectrumAlias or SpectrumAliasWithOpacity i.e. gray100 or [gray100, 0.5].
- */
-export const defaultPalette = {
-  foreground: 'gray100',
-  foregroundMuted: 'gray60',
-  background: 'gray0',
-  backgroundAlternate: 'gray5',
-  backgroundOverlay: ['blue90', 0.33],
-  divider: ['gray60', 0.33],
-  stroke: ['gray60', 0.66],
-  primary: 'blue60',
-  primaryForeground: 'gray0',
-  negative: 'red60',
-  negativeForeground: 'gray0',
-  positive: 'green60',
-  positiveForeground: 'gray0',
-  secondary: 'gray0',
-  secondaryForeground: 'gray100',
-};
-```
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="spectrum"
+  required={false}
+  defaultValue=""
+  mobileOptions={['dark', 'light']}
+  webOptions={['dark', 'light']}
+  webReference=""
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
 
-### Nesting
+<ComponentDetails componentName="ThemeProvider" templateName="spectrum" />
 
-You can nest ThemeProviders to override a palette alias
-
-```jsx live
-<ThemeProvider>
-  <div>
-    <TextDisplay1 as="h1" color="primary">
-      Display1
-    </TextDisplay1>
-    <ThemeProvider palette={{ primary: 'pink60' }}>
-      <TextDisplay1 as="h1" color="primary">
-        Display1
-      </TextDisplay1>
-    </ThemeProvider>
-  </div>
-</ThemeProvider>
-```
+<ComponentDetails componentName="ThemeProvider" templateName="outro" />

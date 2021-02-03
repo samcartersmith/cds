@@ -18,8 +18,9 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
+        { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: 'http://go/repo/blob/master/eng/shared/design-system',
+          href: 'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system',
           label: 'GitHub',
           position: 'right',
         },
@@ -64,11 +65,22 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'http://go/repo/edit/master/eng/shared/design-system/website/',
+          editUrl:
+            'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/website/',
+        },
+        blog: {
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'All Blog posts',
+          showReadingTime: true,
+          editUrl:
+            'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/website/blog',
+          feedOptions: {
+            type: 'all',
+            language: 'en',
+          },
         },
         theme: {
-          // TODO: add fonts package to CDS and import from there
-          // customCss: [path.resolve(__dirname, '../fonts.css')],
+          customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],

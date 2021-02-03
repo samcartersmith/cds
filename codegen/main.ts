@@ -9,6 +9,7 @@ import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
 import { generateFromTemplate } from './utils/generateFromTemplate';
 import { logError } from './utils/logError';
+import { docgen } from './website/docgen';
 import { updateTextStylesTable } from './website/updateTextStylesTable';
 
 async function loadTemplates(): Promise<
@@ -85,6 +86,7 @@ async function loadTemplates(): Promise<
         data: { glyphMap: iconData.glyphMap },
       },
     ],
+    'docgen.ejs': docgen,
     'typescript.ejs': [
       ...TypeScript,
       {

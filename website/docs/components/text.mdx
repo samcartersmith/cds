@@ -3,4 +3,243 @@ id: text
 title: Text
 ---
 
-🚧 Coming soon!
+import { ApiDetails } from '@cds/website/components/ApiDetails';
+import { Badge } from '@cds/website/components/Badge';
+import { ComponentDetails } from '@cds/website/components/ComponentDetails';
+
+<ComponentDetails componentName="Text" templateName="intro" />
+
+## Props
+
+### align
+
+Specifies text alignment.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="align"
+  required={false}
+  defaultValue="left"
+  mobileOptions={['center', 'left', 'right', 'start', 'end', 'justify']}
+  webOptions={['center', 'left', 'right', 'start', 'end', 'justify']}
+  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align"
+  webDescription=""
+  mobileReference="https://reactnative.dev/docs/text-style-props#textalign"
+  mobileDescription="The value `justify` is only supported on iOS and fallbacks to left on Android."
+/>
+
+<ComponentDetails componentName="Text" templateName="align" />
+
+### as <Badge variant="web" />
+
+Choose a semantic html element or a React component to be rendered. All native html attributefor that element will be available through the styled component.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="as"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+  webReference=""
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="as" />
+
+### color
+
+Text color. Accepts a valid PaletteForeground alias.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="color"
+  required={false}
+  defaultValue="foreground"
+  mobileOptions={[
+    'foreground',
+    'foregroundMuted',
+    'primary',
+    'primaryForeground',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'primary',
+    'primaryForeground',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+  webReference=""
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="color" />
+
+### display <Badge variant="web" />
+
+Set CSS display attribute.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="display"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['block', 'initial', 'inline']}
+  webReference=""
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="display" />
+
+### noWrap
+
+Text will not wrap if true. Text wraps by default.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="noWrap"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+  webReference=""
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="noWrap" />
+
+### overflow
+
+Set overflow behavior.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="overflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['clip', 'truncate']}
+  webOptions={['truncate', 'clip']}
+  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space"
+  webDescription=""
+  mobileReference="https://reactnative.dev/docs/text#ellipsizemode"
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="overflow" />
+
+### selectable
+
+Set select behavior.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="selectable"
+  required={false}
+  defaultValue="text"
+  mobileOptions={['none', 'text', 'all']}
+  webOptions={['text', 'none', 'all']}
+  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select"
+  webDescription=""
+  mobileReference="https://reactnative.dev/docs/text#selectable"
+  mobileDescription="On mobile, selectable is binary, 'none' will be not selectable and either 'text' or 'all' will be selectable on Android. It is not yet supported on iOS."
+/>
+
+<ComponentDetails componentName="Text" templateName="selectable" />
+
+### slashedZero
+
+Use character for number zero with a slash through it to differentiate it from the letter O.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="slashedZero"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric"
+  webDescription=""
+  mobileReference=""
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="slashedZero" />
+
+### tabularNumbers
+
+Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="tabularNumbers"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric"
+  webDescription=""
+  mobileReference="https://reactnative.dev/docs/text-style-props#fontvariant"
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="tabularNumbers" />
+
+### transform
+
+Transform text to all uppercase, all lowercase, or capitalized.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="transform"
+  required={false}
+  defaultValue=""
+  mobileOptions={['uppercase', 'lowercase', 'capitalize']}
+  webOptions={['uppercase', 'lowercase', 'capitalize']}
+  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"
+  webDescription=""
+  mobileReference="https://reactnative.dev/docs/text-style-props#texttransform"
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="transform" />
+
+### underline
+
+Set text decoration.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="underline"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"
+  webDescription=""
+  mobileReference="https://reactnative.dev/docs/text-style-props#textdecorationline"
+  mobileDescription=""
+/>
+
+<ComponentDetails componentName="Text" templateName="underline" />
+
+<ComponentDetails componentName="Text" templateName="outro" />

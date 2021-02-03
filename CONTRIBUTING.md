@@ -8,6 +8,23 @@ Please run codegen before running anything else to create necessary code includi
 make codegen
 ```
 
+## API Documentation
+
+Web + Mobile documentation is viewed together on our website and we try minimze API deviation. However, there are times when the behavior slightly varies or there is a unique callout we want to make for a specific platform. To accomadate this we use JSDOC tags within API definitions to aid in documentation generation.
+
+- `@default`: Default value of a property
+- `@danger`: Property which is used as an escape hatch and is not recommended.
+- `@mobile_description`: Description which is unique to the mobile API
+- `@web_description`: Description which is unique to the web API
+- `@web_reference`: Link to MDN or other documentation which is unique to the web API
+- `@mobile_reference`: Link to React Native or other documentation which is unique to the mobile API
+- `@experimental`: Experimental/unstable API's
+- `@deprecated`: Deprecated API's
+
+If you want to add a custom example or more details for a component you can create a directory in website/docs/components/examples matching the component's name. In that component's directory you can add mdx files for intro.mdx (shown at the very top of page), outro.mdx (at the very bottom of page) or for individual properties. For example, in examples/ThemeProvider we have a spectrum.mdx file with a live code example.
+
+Don't forget to add an index.ts to that component's example directory with exports for any children mdx files. You will also need to add a wildcard export for the directory in website/docs/components/examples/index.ts.
+
 ## Create A New Package
 
 1. Run `make new.package --name=<package>`.
@@ -93,7 +110,6 @@ pkg_zip(
 bazel run //eng/shared/design-system/web/cloud:storybook_feature
 ```
 
-
 ## CDS Website
 
 Our website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
@@ -123,4 +139,3 @@ make serve.website
 ```console
 make deploy.website
 ```
-

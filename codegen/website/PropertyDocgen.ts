@@ -1,0 +1,127 @@
+import { PropItem } from 'react-docgen-typescript';
+
+type CustomDocgenTag = keyof typeof regexes;
+export type PropOptions = string[] | number[];
+export type PropStatus = 'isMobileOnly' | 'isWebOnly' | 'isShared';
+export interface CustomPropItem extends PropItem {
+  badges?: string[];
+  webOptions: PropOptions;
+  mobileOptions: PropOptions;
+  status: PropStatus;
+}
+
+const regexes = {
+  danger: /@danger([^\\\n]*)/,
+  webReference: /@web_reference([^\\\n]*)/,
+  mobileReference: /@mobile_reference([^\\\n]*)/,
+  mobileDescription: /@mobile_description([^\\\n]*)/,
+  webDescription: /@web_description([^\\\n]*)/,
+  deprecated: /@deprecated([^\\\n]*)/,
+  experimental: /@experimental([^\\\n]*)/,
+  removeQuotes: /['"]+/g,
+};
+
+const removeQuotes = (content: string) => {
+  return content.replace(regexes.removeQuotes, '');
+};
+
+const formatOptions = (options: string[]) => {
+  if (options && options.includes('0')) {
+    return options.map(item => Number(item)).sort((first, second) => first - second);
+  }
+
+  return options;
+};
+
+export const normalizeOptions = (type: PropItem['type']) => {
+  return formatOptions(
+    type.value
+      ? type.value
+          .filter(({ value }: { value: unknown }) => value !== 'undefined')
+          .map(({ value }: { value: unknown }) =>
+            typeof value === 'string' ? removeQuotes(value) : value
+          )
+      : []
+  );
+};
+
+export class PropertyDocgen {
+  docgen: PropItem;
+  platformBadges: string[];
+  webOptions: PropOptions;
+  mobileOptions: PropOptions;
+  status: PropStatus;
+
+  constructor({ badges = [], webOptions, mobileOptions, status, ...item }: CustomPropItem) {
+    this.docgen = item;
+    this.platformBadges = badges;
+    this.webOptions = webOptions;
+    this.mobileOptions = mobileOptions;
+    this.status = status;
+  }
+
+  extractDocgen = (regex: CustomDocgenTag) => {
+    const match = this.docgen.description.match(regexes[regex]);
+    return match ? match[1].trim() : null;
+  };
+
+  get name() {
+    return this.docgen.name;
+  }
+
+  get required() {
+    return this.docgen.required;
+  }
+
+  get defaultValue() {
+    return this.docgen.defaultValue?.value;
+  }
+
+  get description() {
+    let contentCopy = this.docgen.description;
+    for (const regex of Object.values(regexes)) {
+      contentCopy = contentCopy.replace(regex, '').replace(/\n/g, '');
+    }
+    return contentCopy;
+  }
+
+  get danger() {
+    return this.extractDocgen('danger') ?? '';
+  }
+  get webReference() {
+    return this.extractDocgen('webReference');
+  }
+  get webDescription() {
+    return this.extractDocgen('webDescription');
+  }
+  get mobileReference() {
+    return this.extractDocgen('mobileReference');
+  }
+  get mobileDescription() {
+    return this.extractDocgen('mobileDescription');
+  }
+
+  get badges() {
+    const badgesCopy = this.platformBadges;
+    if (this.danger) {
+      badgesCopy.push(`<Badge variant="danger" />`);
+    }
+    if (this.extractDocgen('deprecated')) {
+      badgesCopy.push(`<Badge variant="deprecated" />`);
+    }
+    if (this.extractDocgen('experimental')) {
+      badgesCopy.push(`<Badge variant="experimental" />`);
+    }
+    if (this.status === 'isMobileOnly') {
+      badgesCopy.push(`<Badge variant="mobile" />`);
+    }
+    if (this.status === 'isWebOnly') {
+      badgesCopy.push(`<Badge variant="web" />`);
+    }
+    return badgesCopy.join(' ');
+  }
+
+  get heading() {
+    return `${this.name} ${this.badges}`;
+  }
+}

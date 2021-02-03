@@ -13,10 +13,20 @@ export type DangerousStyleProp = ViewStyle | ViewStyle[];
 export interface BoxProps<IsAnimated extends boolean = boolean>
   extends BoxBaseProps,
     Omit<ViewProps, 'style'> {
+  /**
+   * If value is true then style prop can take animated values
+   * @default false
+   */
   animated?: IsAnimated;
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
   dangerouslySetStyle?: IsAnimated extends true
     ? Animated.WithAnimatedValue<DangerousStyleProp>
     : DangerousStyleProp;
+  /**
+   * Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
+   */
   elevation?: ElevationLevels;
   overflow?: 'visible' | 'gradient';
 }

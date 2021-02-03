@@ -25,7 +25,7 @@ const createText = <E extends HTMLTextTags>(name: Typography) => {
     overflow,
     transform,
     ...props
-  }: DynamicElement<T> & TextProps) =>
+  }: DynamicElement<T, TextProps>) =>
     React.createElement(as, {
       ...props,
       className: cx(

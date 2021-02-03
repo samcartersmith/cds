@@ -26,11 +26,8 @@ module.exports = {
         'components/theme-provider',
         'components/text',
         'components/box',
-        'components/flex',
-        'components/grid',
         'components/icon',
         'components/button',
-        'components/input',
       ],
     },
     {
@@ -47,7 +44,13 @@ module.exports = {
         {
           type: 'link',
           label: 'Github',
-          href: 'http://go/repo/blob/master/eng/shared/design-system',
+          href: 'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system',
+        },
+        {
+          type: 'link',
+          label: 'Office hours',
+          href:
+            'https://docs.google.com/forms/d/e/1FAIpQLSeH1aUTyegkrycxq3PaufQzD8I6OOarlJfeni2z-MOLFxY4-A/viewform',
         },
         'resources/roadmap',
         'resources/contributing',

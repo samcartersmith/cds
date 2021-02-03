@@ -4,23 +4,19 @@ filegroup(
     name = "source",
     srcs = glob(
         include = [
-            "docs/**/*.mdx",
-            "docs/**/*.tsx",
-            "docs/**/*.ts",
+            "**/*.md",
+            "**/*.mdx",
+            "**/*.tsx",
+            "**/*.ts",
+            "**/*.css",
             "static/**/*.svg",
             "static/**/*.ico",
             "static/**/*.png",
             "static/**/*.jpg",
-            "components/**/*.tsx",
-            "components/**/*.css",
-            # Docusaurus expects src structure for any component overrides
-            "src/**/*.ts",
-            "src/**/*.tsx",
             # local configs
             "babel.config.js",
             "cds-docusaurus-plugin.js",
             "docusaurus.config.js",
-            "global.ts",
             "sidebars.js",
         ],
     ),

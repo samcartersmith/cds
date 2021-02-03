@@ -38,7 +38,7 @@ export type TextProps = {
    */
   as?: HtmlNonHeadingTextTags;
   /**
-   * **DANGER** This is a migration escape hatch. It is not intended to be used normally.
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetClassName?: string;
 };

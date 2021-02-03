@@ -1,0 +1,70 @@
+import * as path from 'path';
+import { PropItem, withCustomConfig } from 'react-docgen-typescript';
+
+import { ComponentDocgen } from './ComponentDocgen';
+
+type PackageName = 'theme' | 'icons';
+
+const TSCONFIG_PATH = path.resolve(__dirname, '../../../../../', 'tsconfig.json');
+const CDS_DIR = path.resolve(__dirname, '../..');
+const WEBSITE_COMPONENT_DOCS_DIR = 'website/docs/components';
+
+const parse = (fileName: string) => {
+  return withCustomConfig(TSCONFIG_PATH, {
+    savePropValueAsString: true,
+    shouldExtractValuesFromUnion: true,
+    shouldExtractLiteralValuesFromEnum: true,
+    shouldRemoveUndefinedFromOptional: true,
+    // Props need to be filtered since react-docgen shows all the props including
+    // inherited native props or React built-in props.
+    propFilter: (prop: PropItem) => {
+      return !prop.parent?.fileName.includes('node_modules');
+    },
+  }).parse(path.resolve(CDS_DIR, fileName));
+};
+
+const getDocgen = (packageName: string, componentName: string) =>
+  parse(`${packageName}/index.ts`).find(item => item.displayName === componentName);
+
+const getDocgenForPackage = ({
+  componentName,
+  displayName,
+  packageName,
+}: {
+  componentName: string;
+  displayName?: string;
+  packageName?: PackageName;
+}) => {
+  const webDocgen = getDocgen(packageName ?? 'web', componentName);
+  const mobileDocgen = getDocgen(packageName ?? 'mobile', componentName);
+
+  if (webDocgen && mobileDocgen) {
+    return new ComponentDocgen(webDocgen, mobileDocgen, displayName ?? componentName);
+  }
+};
+
+export const docgen = ([
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/text.mdx`,
+    data: getDocgenForPackage({ componentName: 'TextDisplay1', displayName: 'Text' }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/box.mdx`,
+    data: getDocgenForPackage({ componentName: 'Box' }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/theme-provider.mdx`,
+    data: getDocgenForPackage({ componentName: 'ThemeProvider', packageName: 'theme' }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/icon.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'IconHeavy',
+      displayName: 'Icon',
+      packageName: 'icons',
+    }),
+  },
+].filter(item => item.data !== undefined) as unknown) as {
+  dest: string;
+  data: Record<string, unknown>;
+}[];

@@ -1,0 +1,38 @@
+---
+id: <%- data.id %>
+title: <%- data.componentName %>
+---
+
+import { ApiDetails } from "@cds/website/components/ApiDetails";
+import { Badge } from "@cds/website/components/Badge";
+import { ComponentDetails } from "@cds/website/components/ComponentDetails";
+
+<ComponentDetails componentName="<%- data.componentName %>" templateName="intro" />
+
+## Props
+
+<%_ data.props.map(({ heading, name, description, defaultValue, required, danger, webReference, mobileReference, mobileDescription, webDescription, mobileOptions, webOptions }) => { _%>
+### <%- heading %>
+
+
+<%- description %>
+<%- danger %>
+
+<ApiDetails
+  componentName="<%- data.componentName %>"
+  propertyName="<%- name %>"
+  required={<%- required %>}
+  defaultValue="<%- defaultValue %>"
+  mobileOptions={<%- JSON.stringify(mobileOptions) %>}
+  webOptions={<%- JSON.stringify(webOptions) %>}
+  webReference="<%- webReference %>"
+  webDescription="<%- webDescription %>"
+  mobileReference="<%- mobileReference %>"
+  mobileDescription="<%- mobileDescription %>"
+/>
+
+<ComponentDetails componentName="<%- data.componentName %>" templateName="<%- name %>" />
+
+<% }) %>
+
+<ComponentDetails componentName="<%- data.componentName %>" templateName="outro" />
