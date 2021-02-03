@@ -4,13 +4,13 @@ import { scaleConfig } from '../configs/scaleConfig';
 import {
   typographyCss,
   typographyScaleMapWithCssVariables,
-  typographyScaleMapWithUnits,
+  typographyScaleMapForWeb,
   typographyPascalCaseConfig,
-  typographyScaleMapWithoutUnits,
+  typographyScaleMapForMobile,
 } from './generateTypeStyles';
 
 export const Type = {
-  native: typographyScaleMapWithoutUnits,
+  mobile: typographyScaleMapForMobile,
   pascalCaseConfig: typographyPascalCaseConfig,
   css: typographyCss,
   scaleCss: typographyScaleMapWithCssVariables,
@@ -20,7 +20,7 @@ export const Type = {
       `\`${pascalCase(typeName)}\``,
     ]);
     // concat type styles with corresponding type name
-    Object.values(typographyScaleMapWithUnits).forEach(typeStylesAtScale => {
+    Object.values(typographyScaleMapForWeb).forEach(typeStylesAtScale => {
       Object.values(typeStylesAtScale).forEach((style, index) =>
         tableBody[index].push(`${style['font-size']} / ${style['line-height']}`)
       );

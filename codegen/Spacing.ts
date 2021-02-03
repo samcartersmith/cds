@@ -29,7 +29,7 @@ export const Spacing = {
       spacingScale.map(size => [`--spacing-${escape(size)}`, `${scaleFunc(size)}px`])
     )
   ),
-  native: mapValues(spacingConfig, scaleFunc =>
+  mobile: mapValues(spacingConfig, scaleFunc =>
     Object.fromEntries(spacingScale.map(size => [size, scaleFunc(size)]))
   ),
 };

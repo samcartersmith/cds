@@ -1,10 +1,10 @@
 import { fallbackStack } from '@cb/design-system-web/styles/shared';
 
-enum FontWeight {
-  Regular = 400,
-  Medium = 500,
-  Semibold = 600,
-}
+export const fontWeights = {
+  Regular: 400,
+  Medium: 500,
+  Semibold: 600,
+} as const;
 
 export const xHeight = {
   Graphik: 0.53,
@@ -23,7 +23,7 @@ export const typographyConfig = {
     leading: 7,
     fontFamily: 'Graphik' as const,
     xHeight: xHeight.Graphik,
-    fontWeight: FontWeight.Regular,
+    fontWeight: 'Regular' as const,
   },
   display2: {
     tag: 'h2' as const,
@@ -31,7 +31,7 @@ export const typographyConfig = {
     leading: 7,
     fontFamily: 'Graphik' as const,
     xHeight: xHeight.Graphik,
-    fontWeight: FontWeight.Regular,
+    fontWeight: 'Regular' as const,
   },
   title1: {
     tag: 'h3' as const,
@@ -39,7 +39,7 @@ export const typographyConfig = {
     leading: 6,
     fontFamily: 'Graphik' as const,
     xHeight: xHeight.Graphik,
-    fontWeight: FontWeight.Medium,
+    fontWeight: 'Medium' as const,
   },
   title2: {
     tag: 'h4' as const,
@@ -47,7 +47,7 @@ export const typographyConfig = {
     leading: 6,
     fontFamily: 'Graphik' as const,
     xHeight: xHeight.Graphik,
-    fontWeight: FontWeight.Regular,
+    fontWeight: 'Regular' as const,
   },
   title3: {
     tag: 'h5' as const,
@@ -55,7 +55,7 @@ export const typographyConfig = {
     leading: 5,
     fontFamily: 'Graphik' as const,
     xHeight: xHeight.Graphik,
-    fontWeight: FontWeight.Medium,
+    fontWeight: 'Medium' as const,
   },
   headline: {
     tag: 'div' as const,
@@ -63,7 +63,7 @@ export const typographyConfig = {
     leading: 5,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: FontWeight.Semibold,
+    fontWeight: 'Semibold' as const,
   },
   body: {
     tag: 'div' as const,
@@ -71,7 +71,7 @@ export const typographyConfig = {
     leading: 5,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: FontWeight.Regular,
+    fontWeight: 'Regular' as const,
   },
   label1: {
     tag: 'div' as const,
@@ -79,7 +79,7 @@ export const typographyConfig = {
     leading: 1,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: FontWeight.Semibold,
+    fontWeight: 'Semibold' as const,
     allowAllCaps: true,
   },
   label2: {
@@ -88,7 +88,7 @@ export const typographyConfig = {
     leading: 1,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: FontWeight.Regular,
+    fontWeight: 'Regular' as const,
     allowAllCaps: true,
     tnum: true,
   },
@@ -98,7 +98,7 @@ export const typographyConfig = {
     leading: 1,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: FontWeight.Semibold,
+    fontWeight: 'Semibold' as const,
     allowAllCaps: true,
     tnum: true,
   },
@@ -108,7 +108,7 @@ export const typographyConfig = {
     leading: 2,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: FontWeight.Regular,
+    fontWeight: 'Regular' as const,
     disableMinimums: true,
   },
 };

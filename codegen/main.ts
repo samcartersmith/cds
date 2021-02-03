@@ -59,8 +59,8 @@ async function loadTemplates(): Promise<
         dest: 'theme/styles/scale.native.ts',
         data: mapValues(scaleConfig, (_, scale) => {
           return {
-            typography: Type.native[scale],
-            spacing: Spacing.native[scale],
+            typography: Type.mobile[scale],
+            spacing: Spacing.mobile[scale],
           };
         }),
       },
