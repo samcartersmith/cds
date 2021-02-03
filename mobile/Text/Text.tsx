@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { TextBaseProps, Typography } from '@cds/core';
+import type { TextBaseProps, Typography } from '@cds/common';
 import { usePalette, useScale } from '@cds/theme';
 import { scales } from '@cds/theme/native';
 import { pascalCase } from '@cds/utils';

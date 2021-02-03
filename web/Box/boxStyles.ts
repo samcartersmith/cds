@@ -1,4 +1,4 @@
-import { FlexStyles, PositionStyles } from '@cds/core';
+import { FlexStyles, PositionStyles } from '@cds/common';
 import { css } from 'linaria';
 
 import { CSSMap } from '../types';

@@ -1,7 +1,7 @@
 define HELP_TEXT
 Help:
 -----
-  $$ make build.core               	-- Build the `core` package.
+  $$ make build.common              -- Build the `common` package.
   $$ make build.fonts              	-- Build the `fonts` package.
   $$ make build.icons              	-- Build the `icons` package.
   $$ make build.mobile             	-- Build the `mobile` package.
@@ -29,9 +29,9 @@ export HELP_TEXT
 help:
 	@echo "$$HELP_TEXT"
 
-.PHONY: build.core
-build.core:
-	bazel build core:package
+.PHONY: build.common
+build.common:
+	bazel build common:package
 
 .PHONY: build.fonts
 build.fonts:
@@ -79,7 +79,7 @@ codegen:
 lint:
 	bazel run :eslint_codegen
 	bazel run :eslint_codemod
-	bazel run :eslint_core
+	bazel run :eslint_common
 	bazel run :eslint_icons
 	bazel run :eslint_mobile
 	bazel run :eslint_theme

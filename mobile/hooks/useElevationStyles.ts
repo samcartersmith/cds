@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { ElevationLevels } from '@cds/core';
+import { ElevationLevels } from '@cds/common';
 import { usePalette } from '@cds/theme/native';
 import { Platform, ViewStyle } from 'react-native';
 

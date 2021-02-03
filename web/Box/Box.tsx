@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { BoxBaseProps } from '@cds/core';
+import type { BoxBaseProps } from '@cds/common';
 import { cx } from 'linaria';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';

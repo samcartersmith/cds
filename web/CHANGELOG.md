@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- internal: Switched to common package @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
+
 ## 0.0.2 (February 1st, 2021 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)
 
 - break(component): Make Text back to wrap by default @hannah-jin [#9595](https://github.cbhq.net/mono/repo/pull/9595)

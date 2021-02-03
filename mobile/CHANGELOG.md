@@ -6,11 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- internal: Switched to common package @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
 - change: Update Box component spacing prop behavior @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 
 ## 0.0.5 (February 1st, 2021 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)
 
-- internal: Dependency sync.
+- internal: Dependency sync @miles-johnson
 
 ## 0.0.4 (January 28th, 2021 5:45pm PST) [#11919](https://github.cbhq.net/mono/repo/pull/11919)
 

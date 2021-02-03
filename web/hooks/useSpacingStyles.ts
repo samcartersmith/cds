@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { SpacingScale } from '@cds/core';
+import { SpacingScale } from '@cds/common';
 import { cx } from 'linaria';
 
 import * as marginStyles from '../styles/margin';

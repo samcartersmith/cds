@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { Typography } from '@cds/core';
+import type { Typography } from '@cds/common';
 import { pascalCase } from '@cds/utils';
 import { cx } from 'linaria';
 

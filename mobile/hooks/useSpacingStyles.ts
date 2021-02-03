@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { SpacingScale, SpacingStyles } from '@cds/core';
+import { SpacingScale, SpacingStyles } from '@cds/common';
 import { useScale } from '@cds/theme';
 import { scales } from '@cds/theme/native';
 import { I18nManager, ViewStyle } from 'react-native';

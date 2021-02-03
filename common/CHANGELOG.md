@@ -2,10 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-@cds/core adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+@cds/common adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- breaking: Renamed to common @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
 - change: Update spacing types by @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 
 ## 0.0.4 (February 1st, 2021 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)

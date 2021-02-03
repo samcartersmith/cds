@@ -32,7 +32,7 @@ PEER_DEPENDENCIES = [
 ]
 
 cds_package(
-    name = "core",
+    name = "common",
     srcs = [":runtime_source"],
     dependencies = [],
     monorepo_dependencies = [

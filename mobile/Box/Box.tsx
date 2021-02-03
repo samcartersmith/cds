@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { BoxBaseProps, ElevationLevels } from '@cds/core';
+import { BoxBaseProps, ElevationLevels } from '@cds/common';
 import { usePalette } from '@cds/theme/native';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 

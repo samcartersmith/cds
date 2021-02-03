@@ -53,7 +53,7 @@ cds_package(
     srcs = [":runtime_source"],
     dependencies = DEPENDENCIES,
     monorepo_dependencies = [
-        "//eng/shared/design-system/core:package_json",
+        "//eng/shared/design-system/common:package_json",
         "//eng/shared/design-system/fonts:package_json",
     ],
     peer_dependencies = PEER_DEPENDENCIES,

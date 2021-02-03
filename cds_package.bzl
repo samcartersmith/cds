@@ -3,7 +3,7 @@ load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("//tools:def.bzl", "node_package_gen")
 
 PACKAGES = [
-    "core",
+    "common",
     "icons",
     "mobile",
     "theme",
@@ -35,6 +35,7 @@ def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependenci
             "--config-file ./$(execpath //eng/shared/design-system:babel.config.js)",
             "--out-dir $(@D)",
             "--extensions .ts,.tsx",
+            "--copy-files",
         ],
         data = [
             "//eng/shared/design-system/codegen:babel-plugins/linariaCssExtractPlugin.js",

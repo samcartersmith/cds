@@ -1,12 +1,12 @@
 {
-  "name": "@cds/core",
+  "name": "@cds/common",
   "version": "0.0.4",
-  "description": "Coinbase Design System - Core",
-  "keywords": ["cds", "design system", "core", "types"],
+  "description": "Coinbase Design System - Common",
+  "keywords": ["cds", "design system", "core", "common", "types"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
-    "directory": "eng/shared/design-system/core"
+    "directory": "eng/shared/design-system/common"
   },
   "authors": "Coinbase",
   "main": "lib/index.js",

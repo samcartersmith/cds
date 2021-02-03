@@ -22,7 +22,6 @@ filegroup(
     name = "source",
     srcs = [
         ":runtime_source",
-        "native.mock.js",
     ] + glob(
         [
             "**/*.test.*",

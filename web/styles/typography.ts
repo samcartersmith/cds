@@ -1,4 +1,4 @@
-import { TextBaseProps } from '@cds/core';
+import { TextBaseProps } from '@cds/common';
 import { css } from 'linaria';
 
 import { CSSMap } from '../types';

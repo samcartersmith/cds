@@ -1,4 +1,4 @@
-import { SpacingScale, spacingScale } from '@cds/core';
+import { SpacingScale, spacingScale } from '@cds/common';
 import { mapValues } from '@cds/utils';
 
 import { spacingConfig } from './configs/spacingConfig';

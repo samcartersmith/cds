@@ -37,7 +37,7 @@ cds_package(
     srcs = [":runtime_source"],
     dependencies = [],
     monorepo_dependencies = [
-        "//eng/shared/design-system/core:package_json",
+        "//eng/shared/design-system/common:package_json",
         "//eng/shared/design-system/theme:package_json",
         "//eng/shared/design-system/utils:package_json",
     ],
