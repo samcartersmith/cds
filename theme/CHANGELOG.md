@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.5 (February 4th, 2021 3:40pm PST) [#12285](https://github.cbhq.net/mono/repo/pull/12285)
+
+- chore: Import css.d.ts in index.ts by @katherinemartinez [#12285](https://github.cbhq.net/mono/repo/pull/12285)
 - fix: Remove letting spacing from mobile Text component and correct font family by @hannah-jin [#12157](https://github.cbhq.net/mono/repo/pull/12157)
 - feat: Add spacing variables by @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 

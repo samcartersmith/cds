@@ -1,3 +1,5 @@
+import './css.d.ts';
+
 export { ThemeProvider } from './ThemeProvider';
 export { usePalette } from './palette/usePalette';
 export { useScale } from './scale/useScale';
