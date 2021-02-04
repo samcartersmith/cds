@@ -11,12 +11,16 @@ import { ComponentDetails } from "@cds/website/components/ComponentDetails";
 
 ## Props
 
-<%_ data.props.map(({ heading, name, description, defaultValue, required, danger, webReference, mobileReference, mobileDescription, webDescription, mobileOptions, webOptions }) => { _%>
+<%_ data.props.map(({ heading, name, description, link, defaultValue, required, danger, mobileOptions, webOptions }) => { _%>
 ### <%- heading %>
 
 
 <%- description %>
 <%- danger %>
+<% if (link){ %>
+**<%- link %>**
+<% } %>
+
 
 <ApiDetails
   componentName="<%- data.componentName %>"
@@ -25,10 +29,6 @@ import { ComponentDetails } from "@cds/website/components/ComponentDetails";
   defaultValue="<%- defaultValue %>"
   mobileOptions={<%- JSON.stringify(mobileOptions) %>}
   webOptions={<%- JSON.stringify(webOptions) %>}
-  webReference="<%- webReference %>"
-  webDescription="<%- webDescription %>"
-  mobileReference="<%- mobileReference %>"
-  mobileDescription="<%- mobileDescription %>"
 />
 
 <ComponentDetails componentName="<%- data.componentName %>" templateName="<%- name %>" />

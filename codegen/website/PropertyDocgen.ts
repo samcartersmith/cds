@@ -12,10 +12,7 @@ export interface CustomPropItem extends PropItem {
 
 const regexes = {
   danger: /@danger([^\\\n]*)/,
-  webReference: /@web_reference([^\\\n]*)/,
-  mobileReference: /@mobile_reference([^\\\n]*)/,
-  mobileDescription: /@mobile_description([^\\\n]*)/,
-  webDescription: /@web_description([^\\\n]*)/,
+  link: /@link([^\\\n]*)/,
   deprecated: /@deprecated([^\\\n]*)/,
   experimental: /@experimental([^\\\n]*)/,
   removeQuotes: /['"]+/g,
@@ -80,7 +77,7 @@ export class PropertyDocgen {
   get description() {
     let contentCopy = this.docgen.description;
     for (const regex of Object.values(regexes)) {
-      contentCopy = contentCopy.replace(regex, '').replace(/\n/g, '');
+      contentCopy = contentCopy.replace(regex, '');
     }
     return contentCopy;
   }
@@ -88,17 +85,9 @@ export class PropertyDocgen {
   get danger() {
     return this.extractDocgen('danger') ?? '';
   }
-  get webReference() {
-    return this.extractDocgen('webReference');
-  }
-  get webDescription() {
-    return this.extractDocgen('webDescription');
-  }
-  get mobileReference() {
-    return this.extractDocgen('mobileReference');
-  }
-  get mobileDescription() {
-    return this.extractDocgen('mobileDescription');
+
+  get link() {
+    return this.extractDocgen('link') ?? '';
   }
 
   get badges() {

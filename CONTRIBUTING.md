@@ -14,10 +14,7 @@ Web + Mobile documentation is viewed together on our website and we try minimze 
 
 - `@default`: Default value of a property
 - `@danger`: Property which is used as an escape hatch and is not recommended.
-- `@mobile_description`: Description which is unique to the mobile API
-- `@web_description`: Description which is unique to the web API
-- `@web_reference`: Link to MDN or other documentation which is unique to the web API
-- `@mobile_reference`: Link to React Native or other documentation which is unique to the mobile API
+- `@link`: Link to MDN React Native or other documentation which is relevant
 - `@experimental`: Experimental/unstable API's
 - `@deprecated`: Deprecated API's
 

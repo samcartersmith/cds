@@ -17,7 +17,7 @@ const templates = {
       SpectrumAliasWithOpacity: '[SpectrumAlias, number]',
     },
   },
-  'core/Text/Typography.ts': {
+  'common/Text/Typography.ts': {
     types: {
       Typography: Object.keys(typographyConfig),
     },

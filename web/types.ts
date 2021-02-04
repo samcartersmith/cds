@@ -6,8 +6,7 @@ export type DynamicElement<
   CustomProps extends unknown
 > = CustomProps & {
   /**
-   * Choose a semantic html element or a React component to be rendered. All native html attribute
-   * for that element will be available through the styled component.
+   * Choose a semantic html element or a React component to be rendered. All native html attribute for that element will be available through the styled component.
    */
   readonly as: T;
 } & Omit<

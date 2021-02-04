@@ -13,7 +13,9 @@ import { ComponentDetails } from '@cds/website/components/ComponentDetails';
 
 ### align
 
-Specifies text alignment.
+Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to left on Android.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) | [React Native docs](https://reactnative.dev/docs/text-style-props#textalign)**
 
 <ApiDetails
   componentName="Text"
@@ -22,17 +24,13 @@ Specifies text alignment.
   defaultValue="left"
   mobileOptions={['center', 'left', 'right', 'start', 'end', 'justify']}
   webOptions={['center', 'left', 'right', 'start', 'end', 'justify']}
-  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align"
-  webDescription=""
-  mobileReference="https://reactnative.dev/docs/text-style-props#textalign"
-  mobileDescription="The value `justify` is only supported on iOS and fallbacks to left on Android."
 />
 
 <ComponentDetails componentName="Text" templateName="align" />
 
 ### as <Badge variant="web" />
 
-Choose a semantic html element or a React component to be rendered. All native html attributefor that element will be available through the styled component.
+Choose a semantic html element or a React component to be rendered. All native html attribute for that element will be available through the styled component.
 
 <ApiDetails
   componentName="Text"
@@ -41,10 +39,6 @@ Choose a semantic html element or a React component to be rendered. All native h
   defaultValue=""
   mobileOptions={[]}
   webOptions={[]}
-  webReference=""
-  webDescription=""
-  mobileReference=""
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="as" />
@@ -82,10 +76,6 @@ Text color. Accepts a valid PaletteForeground alias.
     'secondary',
     'secondaryForeground',
   ]}
-  webReference=""
-  webDescription=""
-  mobileReference=""
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="color" />
@@ -101,10 +91,6 @@ Set CSS display attribute.
   defaultValue=""
   mobileOptions={[]}
   webOptions={['block', 'initial', 'inline']}
-  webReference=""
-  webDescription=""
-  mobileReference=""
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="display" />
@@ -120,10 +106,6 @@ Text will not wrap if true. Text wraps by default.
   defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
-  webReference=""
-  webDescription=""
-  mobileReference=""
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="noWrap" />
@@ -132,6 +114,8 @@ Text will not wrap if true. Text wraps by default.
 
 Set overflow behavior.
 
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space) | [React Native Docs](https://reactnative.dev/docs/text#ellipsizemode)**
+
 <ApiDetails
   componentName="Text"
   propertyName="overflow"
@@ -139,17 +123,15 @@ Set overflow behavior.
   defaultValue=""
   mobileOptions={['clip', 'truncate']}
   webOptions={['truncate', 'clip']}
-  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space"
-  webDescription=""
-  mobileReference="https://reactnative.dev/docs/text#ellipsizemode"
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="overflow" />
 
 ### selectable
 
-Set select behavior.
+Set select behavior. On mobile, selectable is binary, none will be not selectable and either text or all will be selectable on Android. It is not yet supported on iOS.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select) | [React Native Docs](https://reactnative.dev/docs/text#selectable)**
 
 <ApiDetails
   componentName="Text"
@@ -158,10 +140,6 @@ Set select behavior.
   defaultValue="text"
   mobileOptions={['none', 'text', 'all']}
   webOptions={['text', 'none', 'all']}
-  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select"
-  webDescription=""
-  mobileReference="https://reactnative.dev/docs/text#selectable"
-  mobileDescription="On mobile, selectable is binary, 'none' will be not selectable and either 'text' or 'all' will be selectable on Android. It is not yet supported on iOS."
 />
 
 <ComponentDetails componentName="Text" templateName="selectable" />
@@ -170,6 +148,8 @@ Set select behavior.
 
 Use character for number zero with a slash through it to differentiate it from the letter O.
 
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)**
+
 <ApiDetails
   componentName="Text"
   propertyName="slashedZero"
@@ -177,10 +157,6 @@ Use character for number zero with a slash through it to differentiate it from t
   defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
-  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric"
-  webDescription=""
-  mobileReference=""
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="slashedZero" />
@@ -189,6 +165,8 @@ Use character for number zero with a slash through it to differentiate it from t
 
 Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
 
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) | [React Native Docs](https://reactnative.dev/docs/text-style-props#fontvariant)**
+
 <ApiDetails
   componentName="Text"
   propertyName="tabularNumbers"
@@ -196,10 +174,6 @@ Activates the set of figures where numbers are all of the same size, allowing th
   defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
-  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric"
-  webDescription=""
-  mobileReference="https://reactnative.dev/docs/text-style-props#fontvariant"
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="tabularNumbers" />
@@ -208,6 +182,8 @@ Activates the set of figures where numbers are all of the same size, allowing th
 
 Transform text to all uppercase, all lowercase, or capitalized.
 
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) | [React Native Docs](https://reactnative.dev/docs/text-style-props#texttransform)**
+
 <ApiDetails
   componentName="Text"
   propertyName="transform"
@@ -215,10 +191,6 @@ Transform text to all uppercase, all lowercase, or capitalized.
   defaultValue=""
   mobileOptions={['uppercase', 'lowercase', 'capitalize']}
   webOptions={['uppercase', 'lowercase', 'capitalize']}
-  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"
-  webDescription=""
-  mobileReference="https://reactnative.dev/docs/text-style-props#texttransform"
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="transform" />
@@ -227,6 +199,8 @@ Transform text to all uppercase, all lowercase, or capitalized.
 
 Set text decoration.
 
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)**
+
 <ApiDetails
   componentName="Text"
   propertyName="underline"
@@ -234,10 +208,6 @@ Set text decoration.
   defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
-  webReference="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"
-  webDescription=""
-  mobileReference="https://reactnative.dev/docs/text-style-props#textdecorationline"
-  mobileDescription=""
 />
 
 <ComponentDetails componentName="Text" templateName="underline" />

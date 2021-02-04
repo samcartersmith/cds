@@ -5,7 +5,16 @@ import { css } from 'linaria';
 const tableStyles = css`
   display: table;
   border-collapse: collapse;
+  table-layout: fixed;
   width: 100%;
+  text-align: left;
+  li {
+    list-style-type: none;
+  }
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
 
   thead,
   tbody,
@@ -14,10 +23,6 @@ const tableStyles = css`
   td {
     width: 100%;
     white-space: nowrap;
-  }
-
-  thead th:first-child {
-    text-align: left;
   }
 
   td {
@@ -30,58 +35,65 @@ type ApiDetailsProps = {
   required: boolean;
   mobileOptions: string[];
   webOptions: string[];
-  webReference?: string;
-  webDescription?: string;
-  mobileReference?: string;
-  mobileDescription?: string;
   defaultValue?: string;
 };
 
 export const ApiDetails = ({
-  // mobileOptions,
+  mobileOptions,
   webOptions,
   propertyName,
   defaultValue,
   required,
 }: ApiDetailsProps) => {
-  // TODO: show web and mobile options as separate content in same table
-  const options = webOptions;
-  const formattedOptions = React.useMemo(() => {
-    if (options.length === 2 && options.includes('true')) {
-      return <code>boolean</code>;
-    }
+  const formatOptions = React.useCallback(
+    (options: string[]) => {
+      if (options.length === 2 && options.includes('true')) {
+        return <code>boolean</code>;
+      }
 
-    if (options.length === 2 && options.includes('string')) {
-      return <code>{`${options[0]} | ${options[1]}`}</code>;
-    }
+      if (options.length === 2 && options.includes('string')) {
+        return <code>{`${options[0]} | ${options[1]}`}</code>;
+      }
 
-    if (propertyName.includes('spacing')) {
-      return <code>{'0 - 10'}</code>;
-    }
+      if (propertyName.includes('spacing')) {
+        return <code>{'0 - 10'}</code>;
+      }
 
-    return (
-      <ul>
-        {options.map(item => (
-          <li key={`${propertyName}_${item}`}>
-            <code>{item}</code>
-          </li>
-        ))}
-      </ul>
-    );
-  }, [options, propertyName]);
+      return (
+        <ul>
+          {options.map(item => (
+            <li key={`${propertyName}_${item}`}>
+              <code>{item}</code>
+            </li>
+          ))}
+        </ul>
+      );
+    },
+    [propertyName]
+  );
+
+  const formattedWebOptions = formatOptions(webOptions);
+  const formattedMobileOptions = formatOptions(mobileOptions);
+  const stringifiedWebOptions = JSON.stringify(webOptions.sort());
+  const stringifiedMobileOptions = JSON.stringify(mobileOptions.sort());
+  const optionsAreEqual = stringifiedWebOptions === stringifiedMobileOptions;
 
   return (
     <table className={tableStyles}>
       <thead>
         <tr>
-          <th>Options</th>
+          {optionsAreEqual && <th>Options</th>}
+          {!optionsAreEqual && webOptions.length > 0 && <th>Web options</th>}
+          {!optionsAreEqual && mobileOptions.length > 0 && <th>Mobile options</th>}
           {required && <th>Required</th>}
           {defaultValue && <th>Default</th>}
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{formattedOptions}</td>
+          {optionsAreEqual && <td>{formattedWebOptions}</td>}
+          {!optionsAreEqual && webOptions.length > 0 && <td>{formattedWebOptions}</td>}
+          {!optionsAreEqual && mobileOptions.length > 0 && <td>{formattedMobileOptions}</td>}
           {required && <td>{`${required}`}</td>}
           {defaultValue && <td>{`${defaultValue}`}</td>}
         </tr>
