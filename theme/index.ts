@@ -1,4 +1,7 @@
-import './css.d.ts';
+// Consumers outside of monorepo need this reference import
+// for ThemeManager style tag to use custom CSS variables
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference path="css.d.ts" />
 
 export { ThemeProvider } from './ThemeProvider';
 export { usePalette } from './palette/usePalette';

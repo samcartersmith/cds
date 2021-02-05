@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.6 (February 5th, 2021 12:40pm PST) [#12347](https://github.cbhq.net/mono/repo/pull/12347)
+
+- chore: Use typescript reference import for css.d.ts in index.ts by @katherinemartinez [#12347](https://github.cbhq.net/mono/repo/pull/12347)
+
 ## 0.0.5 (February 4th, 2021 3:40pm PST) [#12285](https://github.cbhq.net/mono/repo/pull/12285)
 
 - chore: Import css.d.ts in index.ts by @katherinemartinez [#12285](https://github.cbhq.net/mono/repo/pull/12285)
