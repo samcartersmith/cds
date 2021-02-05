@@ -2,6 +2,7 @@ load("@npm//ts-node:index.bzl", "ts_node")
 load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "stylelint_test")
 load("@npm//serve:index.bzl", "serve")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
+load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load("//eng/shared/design-system:cds_package.bzl", "PACKAGES", "STATIC_PACKAGES")
 
 exports_files([
@@ -32,6 +33,7 @@ filegroup(
         ],
         exclude = [
             "**/*.native.*",
+            "**/*.test.*",
         ],
     ),
     visibility = ["//visibility:public"],
@@ -302,3 +304,77 @@ serve(
     data = [":storybook"],
 )
 # *** codegen storybook ***
+
+# *************************
+# ***      Percy        ***
+# *** visual diff tests ***
+# *************************
+build_storybook(
+    name = "storybook_build_for_percy",
+    args = [
+        "-c eng/shared/design-system/storybook/.storybook",
+        "-s eng/shared/design-system/fonts",
+        "-o $(@D)",
+        "--quiet",
+        "--no-dll",
+    ],
+    data = glob(["storybook/.storybook/**/*"]) + [
+        # story source
+        ":web_source",
+        # Currently the icons library is too large and it breaks the Percy upload for our visual tests
+        # Once the size problem is fixed we can remove this completly and only use :storybook
+        #  "//eng/shared/design-system/icons:story_source",
+        "//eng/shared/design-system/web:story_source",
+        # deps
+        ".babelrc.js",
+        "//:babel.config.js",
+        "//:package.json",
+        "//:tsconfig.json",
+        "@npm//@babel/core",
+        "@npm//@babel/parser",
+        "@npm//@babel/preset-env",
+        "@npm//@babel/preset-react",
+        "@npm//@babel/preset-typescript",
+        "@npm//@storybook/addon-a11y",
+        "@npm//@storybook/addon-actions",
+        "@npm//@storybook/addon-backgrounds",
+        "@npm//@storybook/addon-controls",
+        "@npm//@storybook/addon-docs",
+        "@npm//@storybook/addon-links",
+        "@npm//@storybook/addon-toolbars",
+        "@npm//@storybook/addon-viewport",
+        "@npm//@storybook/addons",
+        "@npm//@storybook/react",
+        "@npm//@storybook/theming",
+        "@npm//@types/babel__template",
+        "@npm//@types/humps",
+        "@npm//@types/react",
+        "@npm//@types/react-dom",
+        "@npm//@types/webpack-env",
+        "@npm//babel-loader",
+        "@npm//babel-plugin-module-resolver",
+        "@npm//babel-plugin-transform-async-to-promises",
+        "@npm//destyle.css",
+        "@npm//dotenv-webpack",
+        "@npm//html-webpack-plugin",
+        "@npm//humps",
+        "@npm//linaria",
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//storybook-addon-designs",
+        "@npm//tsconfig-paths-webpack-plugin",
+        "@npm//typescript",
+    ],
+    output_dir = True,
+    visibility = ["//visibility:public"],
+)
+
+percy_storybook(
+    name = "storybook_percy",
+    args = [
+        "-b eng/shared/design-system/storybook_build_for_percy",
+        "--widths=320",
+    ],
+    data = ["//eng/shared/design-system:storybook_build_for_percy"],
+)
+# *** end visual diff tests ***
