@@ -4,6 +4,7 @@ import type { Typography } from '@cds/common';
 import { pascalCase } from '@cds/utils';
 import { cx } from 'linaria';
 
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as foregroundStyles from '../styles/foregroundColor';
 import { getTypographyStyles } from '../styles/typography';
 import type { DynamicElement } from '../types';
@@ -16,7 +17,7 @@ const createText = <E extends HTMLTextTags>(name: Typography) => {
   const TextComponent = <T extends E>({
     as,
     color = 'foreground',
-    align,
+    align = 'start',
     tabularNumbers,
     slashedZero,
     selectable,
@@ -24,6 +25,14 @@ const createText = <E extends HTMLTextTags>(name: Typography) => {
     noWrap,
     overflow,
     transform,
+    // Spacing
+    spacing,
+    spacingTop,
+    spacingBottom,
+    spacingStart,
+    spacingEnd,
+    spacingVertical,
+    spacingHorizontal,
     ...props
   }: DynamicElement<T, TextProps>) =>
     React.createElement(as, {
@@ -40,6 +49,15 @@ const createText = <E extends HTMLTextTags>(name: Typography) => {
           noWrap,
           overflow,
           transform,
+        }),
+        useSpacingStyles({
+          all: spacing,
+          top: spacingTop,
+          bottom: spacingBottom,
+          start: spacingStart,
+          end: spacingEnd,
+          vertical: spacingVertical,
+          horizontal: spacingHorizontal,
         })
       ),
     });

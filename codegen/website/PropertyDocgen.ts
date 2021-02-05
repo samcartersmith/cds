@@ -44,14 +44,12 @@ export const normalizeOptions = (type: PropItem['type']) => {
 
 export class PropertyDocgen {
   docgen: PropItem;
-  platformBadges: string[];
   webOptions: PropOptions;
   mobileOptions: PropOptions;
   status: PropStatus;
 
-  constructor({ badges = [], webOptions, mobileOptions, status, ...item }: CustomPropItem) {
+  constructor({ webOptions, mobileOptions, status, ...item }: CustomPropItem) {
     this.docgen = item;
-    this.platformBadges = badges;
     this.webOptions = webOptions;
     this.mobileOptions = mobileOptions;
     this.status = status;
@@ -91,22 +89,24 @@ export class PropertyDocgen {
   }
 
   get badges() {
-    const badgesCopy = this.platformBadges;
-    if (this.danger) {
-      badgesCopy.push(`<Badge variant="danger" />`);
-    }
-    if (this.extractDocgen('deprecated')) {
-      badgesCopy.push(`<Badge variant="deprecated" />`);
-    }
-    if (this.extractDocgen('experimental')) {
-      badgesCopy.push(`<Badge variant="experimental" />`);
-    }
+    const badgesCopy = [];
     if (this.status === 'isMobileOnly') {
       badgesCopy.push(`<Badge variant="mobile" />`);
     }
     if (this.status === 'isWebOnly') {
       badgesCopy.push(`<Badge variant="web" />`);
     }
+
+    if (this.danger) {
+      badgesCopy.push(`<Badge variant="danger" order={${badgesCopy.length + 1}} />`);
+    }
+    if (this.docgen.description.includes('deprecated')) {
+      badgesCopy.push(`<Badge variant="deprecated" order={${badgesCopy.length + 1}} />`);
+    }
+    if (this.docgen.description.includes('experimental')) {
+      badgesCopy.push(`<Badge variant="experimental" order={${badgesCopy.length + 1}} />`);
+    }
+
     return badgesCopy.join(' ');
   }
 

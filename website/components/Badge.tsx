@@ -1,16 +1,17 @@
 import React from 'react';
 
 import { ThemeProvider } from '@cds/theme';
-import { css } from 'linaria';
+import { styled } from 'linaria/react';
 
 type BadgeVariant = keyof typeof badgePalettes;
 
 const badgePalettes = {
-  mobile: 'orange30',
+  mobile: 'orange40',
   web: 'purple40',
-  danger: 'red40',
+  danger: 'red60',
   cds: 'blue50',
   product: 'pink40',
+  deprecated: 'red60',
 } as const;
 
 const textOverrides = {
@@ -20,20 +21,22 @@ const textOverrides = {
 
 type Props = {
   variant: BadgeVariant;
+  order?: number;
 };
 
 // TODO: Fix babel config to work with importing palette from cds/theme package and interpolating below
-const badgeStyle = css`
+const BadgeContainer = styled.div<Props>`
   position: relative;
   text-transform: capitalize;
   top: -2px;
-  margin-left: 22px;
+  margin-left: ${({ order = 1 }) => `${order === 1 ? 22 : -5 * order}px`};
+  z-index: ${({ order = 1 }) => (order === 1 ? 1 : -1 * order)};
   line-height: 20px;
   display: inline-block;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--primary-foreground);
-  padding: 2px 12px;
+  padding: ${({ order = 1 }) => (order === 1 ? '2px 12px' : '2px 12px 2px 18px')};
   border-radius: 0 2px 2px 0;
   background: var(--primary);
 
@@ -58,11 +61,11 @@ const badgeStyle = css`
   }
 `;
 
-export const Badge: React.FC<Props> = ({ variant }) => {
+export const Badge: React.FC<Props> = ({ variant, order = 1 }) => {
   return (
     <div style={{ display: 'inline-flex' }}>
       <ThemeProvider palette={{ primary: badgePalettes[variant] }}>
-        <div className={badgeStyle}>{textOverrides[variant] ?? variant}</div>
+        <BadgeContainer {...{ variant, order }}>{textOverrides[variant] ?? variant}</BadgeContainer>
       </ThemeProvider>
     </div>
   );

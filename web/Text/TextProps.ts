@@ -6,11 +6,10 @@ export interface TextProps extends TextBaseProps {
    */
   readonly display?: 'block' | 'initial' | 'inline';
   /**
-   * Text will not wrap if true. Text wraps by default.
-   *
-   * @default false
+   * Set overflow behavior.
+   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space) | [React Native Docs](https://reactnative.dev/docs/text#ellipsizemode)
    */
-  readonly noWrap?: boolean;
+  readonly overflow?: 'truncate' | 'clip';
 }
 
 export type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4';

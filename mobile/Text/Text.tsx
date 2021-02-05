@@ -4,7 +4,17 @@ import type { TextBaseProps, Typography } from '@cds/common';
 import { usePalette, useScale } from '@cds/theme';
 import { scales } from '@cds/theme/native';
 import { pascalCase } from '@cds/utils';
-import { I18nManager, Text, TextProps as RNTextProps, StyleSheet, TextStyle } from 'react-native';
+import {
+  Animated,
+  I18nManager,
+  Text,
+  TextStyle,
+  TextProps as RNTextProps,
+  StyleSheet,
+} from 'react-native';
+
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { OmitStyle, DangerouslySetStyle } from '../types';
 
 export type { Typography };
 
@@ -17,25 +27,27 @@ const styles = StyleSheet.create({
   },
 });
 
-const overflowProps = {
-  truncate: {
-    ellipsisMode: 'tail',
-    numberOfLines: 1,
-  },
-  clip: {
-    ellipsisMode: 'clip',
-  },
-};
-
 export interface TextProps
-  extends Readonly<Omit<RNTextProps, 'style' | 'selectable'>>,
-    TextBaseProps {}
+  extends TextBaseProps,
+    OmitStyle<RNTextProps, 'selectable'>,
+    DangerouslySetStyle<TextStyle> {
+  ellipsize?: RNTextProps['ellipsizeMode'];
+  /**
+   * Override line-height. This is deprecated since overriding this prevents line height from being scale aware.
+   * @deprecated
+   */
+  deprecatedLineHeight?: number | 'none';
+}
 
 const createText = (name: Typography) => {
   const TextComponent: React.FC<TextProps> = ({
     color = 'foreground',
     align = 'start',
     tabularNumbers = false,
+    ellipsize,
+    animated,
+    dangerouslySetStyle,
+    deprecatedLineHeight,
     // TODO: replace with glyph
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     slashedZero,
@@ -43,10 +55,16 @@ const createText = (name: Typography) => {
     selectable = 'text',
     underline,
     noWrap,
-    overflow,
     transform,
+    // Spacing
+    spacing,
+    spacingTop,
+    spacingBottom,
+    spacingStart,
+    spacingEnd,
+    spacingVertical,
+    spacingHorizontal,
     // RN Text props
-    numberOfLines,
     ...props
   }) => {
     const scale = useScale();
@@ -62,22 +80,69 @@ const createText = (name: Typography) => {
       return align;
     }, [align]);
 
+    const textStyles = scales[scale].typography[name];
+
+    // TODO: Update React Native to not override this and remove deprecatedLineHeight
+    const lineHeight = React.useMemo(() => {
+      if (deprecatedLineHeight === undefined) {
+        return textStyles?.lineHeight;
+      } else if (deprecatedLineHeight === 'none') {
+        return undefined;
+      } else {
+        return deprecatedLineHeight;
+      }
+    }, [deprecatedLineHeight, textStyles?.lineHeight]);
+
+    const spacingStyles = useSpacingStyles({
+      all: spacing,
+      bottom: spacingBottom,
+      end: spacingEnd,
+      horizontal: spacingHorizontal,
+      start: spacingStart,
+      top: spacingTop,
+      vertical: spacingVertical,
+    });
+
+    // TODO: Maybe update to align web and mobile APIs
+    const numberOfLines = noWrap ? 1 : props.numberOfLines;
+    const ellipsizeProps = ellipsize && {
+      numberOfLines: numberOfLines || 1,
+      ellipsizeMode: ellipsize,
+    };
+
     const style = React.useMemo(
       () => [
+        spacingStyles,
         scales[scale].typography[name],
-        { color: palette[color], textAlign, textTransform: transform },
+        textStyles,
+        { color: palette[color], textAlign, textTransform: transform, lineHeight },
+
         tabularNumbers && styles.tabularNumbers,
         underline && styles.underline,
+        dangerouslySetStyle as TextStyle,
       ],
-      [scale, palette, color, textAlign, tabularNumbers, underline, transform]
+      [
+        spacingStyles,
+        scale,
+        textStyles,
+        lineHeight,
+        palette,
+        color,
+        textAlign,
+        transform,
+        tabularNumbers,
+        underline,
+        dangerouslySetStyle,
+      ]
     );
 
+    const TextComponent = animated ? Animated.Text : Text;
+
     return (
-      <Text
+      <TextComponent
+        numberOfLines={numberOfLines}
+        {...ellipsizeProps}
         {...props}
-        // NOTE: overflow needs to appear before numberOfLines.
-        {...(overflow && overflowProps[overflow])}
-        numberOfLines={noWrap ? 1 : numberOfLines}
         // TODO (hannah): Add iOS support for selectable. https://awesomeopensource.com/project/Astrocoders/react-native-selectable-text
         selectable={selectable !== 'none'}
         style={style as TextStyle}

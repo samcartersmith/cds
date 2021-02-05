@@ -1,18 +1,12 @@
 import * as React from 'react';
 
 import { UseSpacingStylesProps } from '@cds/common';
-import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { OmitStyle, DangerouslySetStyle } from '../types';
 
-export interface OffsetProps
-  extends UseSpacingStylesProps,
-    OmitStyle<ViewProps, 'isInverted'>,
-    DangerouslySetStyle<ViewStyle> {}
+export type OffsetProps = Omit<UseSpacingStylesProps, 'isInverted'>;
 
 export const Offset: React.FC<OffsetProps> = ({
-  animated,
   all,
   top,
   bottom,
@@ -20,7 +14,7 @@ export const Offset: React.FC<OffsetProps> = ({
   end,
   horizontal,
   vertical,
-  ...viewProps
+  children,
 }) => {
   const spacingStyles = useSpacingStyles({
     all: all,
@@ -33,7 +27,5 @@ export const Offset: React.FC<OffsetProps> = ({
     isInverted: true,
   });
 
-  const ViewComponent = animated ? Animated.View : View;
-
-  return <ViewComponent style={spacingStyles} {...viewProps} />;
+  return <div className={spacingStyles}>{children}</div>;
 };

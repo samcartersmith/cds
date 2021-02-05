@@ -78,16 +78,30 @@ const TextExamplesScreen = ({ component: Text }: { component: React.ComponentTyp
         </Box>
       </Example>
 
-      <Example title="Overflow">
+      <Example title="Ellipsize">
         <Box>
-          <Text overflow="truncate" numberOfLines={1}>
+          <Text ellipsize="head">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
           </Text>
         </Box>
 
         <Box>
-          <Text overflow="clip" numberOfLines={1}>
+          <Text ellipsize="middle">
+            Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
+            nulla. Nam eu blandit dui, a dignissim mi.
+          </Text>
+        </Box>
+
+        <Box>
+          <Text ellipsize="tail">
+            Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
+            nulla. Nam eu blandit dui, a dignissim mi.
+          </Text>
+        </Box>
+
+        <Box>
+          <Text ellipsize="clip">
             Clip. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo nulla.
             Nam eu blandit dui, a dignissim mi.
           </Text>

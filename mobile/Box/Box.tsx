@@ -6,24 +6,13 @@ import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-
-export type DangerousStyleProp = ViewStyle | ViewStyle[];
+import { OmitStyle, DangerouslySetStyle } from '../types';
 
 // TODO pin? onPress?
-export interface BoxProps<IsAnimated extends boolean = boolean>
+export interface BoxProps
   extends BoxBaseProps,
-    Omit<ViewProps, 'style'> {
-  /**
-   * If value is true then style prop can take animated values
-   * @default false
-   */
-  animated?: IsAnimated;
-  /**
-   * @danger This is a migration escape hatch. It is not intended to be used normally.
-   */
-  dangerouslySetStyle?: IsAnimated extends true
-    ? Animated.WithAnimatedValue<DangerousStyleProp>
-    : DangerousStyleProp;
+    OmitStyle<ViewProps>,
+    DangerouslySetStyle<ViewStyle> {
   /**
    * Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
    */

@@ -69,6 +69,8 @@ module.exports = {
             'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/website/',
         },
         blog: {
+          path: 'blog',
+          routeBasePath: 'blog',
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All Blog posts',
           showReadingTime: true,

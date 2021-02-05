@@ -1,12 +1,12 @@
-import { TextBaseProps } from '@cds/common';
 import { css } from 'linaria';
 
+import { TextProps } from '../Text/TextProps';
 import { CSSMap } from '../types';
 
 export const fallbackStack =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
 
-const textAlign: CSSMap<TextBaseProps['align']> = {
+const textAlign: CSSMap<TextProps['align']> = {
   start: css`
     text-align: start;
   `,
@@ -21,7 +21,7 @@ const textAlign: CSSMap<TextBaseProps['align']> = {
   `,
 };
 
-const userSelect: CSSMap<TextBaseProps['selectable']> = {
+const userSelect: CSSMap<TextProps['selectable']> = {
   none: css`
     user-select: none;
   `,
@@ -33,7 +33,7 @@ const userSelect: CSSMap<TextBaseProps['selectable']> = {
   `,
 };
 
-const overflow: CSSMap<TextBaseProps['overflow']> = {
+const overflow: CSSMap<TextProps['overflow']> = {
   truncate: css`
     overflow: hidden;
     text-overflow: ellipsis;
@@ -44,7 +44,7 @@ const overflow: CSSMap<TextBaseProps['overflow']> = {
   `,
 };
 
-const transform: CSSMap<TextBaseProps['transform']> = {
+const transform: CSSMap<TextProps['transform']> = {
   uppercase: css`
     text-transform: uppercase;
   `,
@@ -72,7 +72,7 @@ const noWrap = css`
   white-space: nowrap;
 `;
 
-export const getTypographyStyles = (props: Omit<TextBaseProps, 'children'>) => {
+export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
   return [
     props.align && textAlign[props.align],
     props.tabularNumbers && tabularNumbers,

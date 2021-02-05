@@ -21,12 +21,27 @@ Specifies text alignment. On mobile, the value `justify` is only supported on iO
   componentName="Text"
   propertyName="align"
   required={false}
-  defaultValue="left"
-  mobileOptions={['center', 'left', 'right', 'start', 'end', 'justify']}
-  webOptions={['center', 'left', 'right', 'start', 'end', 'justify']}
+  defaultValue="start"
+  mobileOptions={['center', 'end', 'start', 'justify']}
+  webOptions={['center', 'start', 'end', 'justify']}
 />
 
 <ComponentDetails componentName="Text" templateName="align" />
+
+### animated <Badge variant="mobile" />
+
+If value is true then style prop can take animated values
+
+<ApiDetails
+  componentName="Text"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Text" templateName="animated" />
 
 ### as <Badge variant="web" />
 
@@ -80,6 +95,41 @@ Text color. Accepts a valid PaletteForeground alias.
 
 <ComponentDetails componentName="Text" templateName="color" />
 
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'TextStyle',
+    'TextStyle[]',
+    'WithAnimatedObject<TextStyle>',
+    'WithAnimatedArray<TextStyle>',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Text" templateName="dangerouslySetStyle" />
+
+### deprecatedLineHeight <Badge variant="mobile" /> <Badge variant="deprecated" order={2} />
+
+Override line-height. This is deprecated since overriding this prevents line height from being scale aware.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="deprecatedLineHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'none']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Text" templateName="deprecatedLineHeight" />
+
 ### display <Badge variant="web" />
 
 Set CSS display attribute.
@@ -95,9 +145,24 @@ Set CSS display attribute.
 
 <ComponentDetails componentName="Text" templateName="display" />
 
+### ellipsize <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="Text"
+  propertyName="ellipsize"
+  required={false}
+  defaultValue=""
+  mobileOptions={['head', 'middle', 'tail', 'clip']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Text" templateName="ellipsize" />
+
 ### noWrap
 
-Text will not wrap if true. Text wraps by default.
+Set text to be in a single line.
+
+**[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)**
 
 <ApiDetails
   componentName="Text"
@@ -110,7 +175,7 @@ Text will not wrap if true. Text wraps by default.
 
 <ComponentDetails componentName="Text" templateName="noWrap" />
 
-### overflow
+### overflow <Badge variant="web" />
 
 Set overflow behavior.
 
@@ -121,7 +186,7 @@ Set overflow behavior.
   propertyName="overflow"
   required={false}
   defaultValue=""
-  mobileOptions={['clip', 'truncate']}
+  mobileOptions={[]}
   webOptions={['truncate', 'clip']}
 />
 
@@ -160,6 +225,97 @@ Use character for number zero with a slash through it to differentiate it from t
 />
 
 <ComponentDetails componentName="Text" templateName="slashedZero" />
+
+### spacing
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+/>
+
+<ComponentDetails componentName="Text" templateName="spacing" />
+
+### spacingBottom
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+/>
+
+<ComponentDetails componentName="Text" templateName="spacingBottom" />
+
+### spacingEnd
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+/>
+
+<ComponentDetails componentName="Text" templateName="spacingEnd" />
+
+### spacingHorizontal
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+/>
+
+<ComponentDetails componentName="Text" templateName="spacingHorizontal" />
+
+### spacingStart
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+/>
+
+<ComponentDetails componentName="Text" templateName="spacingStart" />
+
+### spacingTop
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+/>
+
+<ComponentDetails componentName="Text" templateName="spacingTop" />
+
+### spacingVertical
+
+<ApiDetails
+  componentName="Text"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+/>
+
+<ComponentDetails componentName="Text" templateName="spacingVertical" />
 
 ### tabularNumbers
 

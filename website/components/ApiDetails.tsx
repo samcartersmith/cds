@@ -22,7 +22,6 @@ const tableStyles = css`
   th,
   td {
     width: 100%;
-    white-space: nowrap;
   }
 
   td {
@@ -31,6 +30,7 @@ const tableStyles = css`
 `;
 
 type ApiDetailsProps = {
+  componentName: string;
   propertyName: string;
   required: boolean;
   mobileOptions: string[];
@@ -38,7 +38,10 @@ type ApiDetailsProps = {
   defaultValue?: string;
 };
 
+const offsetSpacingProps = ['all', 'top', 'bottom', 'start', 'end', 'horizontal', 'vertical'];
+
 export const ApiDetails = ({
+  componentName,
   mobileOptions,
   webOptions,
   propertyName,
@@ -55,7 +58,10 @@ export const ApiDetails = ({
         return <code>{`${options[0]} | ${options[1]}`}</code>;
       }
 
-      if (propertyName.includes('spacing')) {
+      if (
+        propertyName.includes('spacing') ||
+        (componentName === 'Offset' && offsetSpacingProps.includes(propertyName))
+      ) {
         return <code>{'0 - 10'}</code>;
       }
 
@@ -69,7 +75,7 @@ export const ApiDetails = ({
         </ul>
       );
     },
-    [propertyName]
+    [componentName, propertyName]
   );
 
   const formattedWebOptions = formatOptions(webOptions);

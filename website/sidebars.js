@@ -26,6 +26,7 @@ module.exports = {
         'components/theme-provider',
         'components/text',
         'components/box',
+        'components/offset',
         'components/icon',
         'components/button',
       ],

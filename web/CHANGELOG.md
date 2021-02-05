@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - breaking: Removed left/right from text alignment @miles-johnson [#12241](https://github.cbhq.net/mono/repo/pull/12241)
 - internal: Switched to common package @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
+- feat: Update Text component to include spacing [#12355](https://github.cbhq.net/mono/repo/pull/12355)
 
 ## 0.0.2 (February 1st, 2021 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { PaletteBackground } from '@cds/theme';
 
-import { FixedValue, PercentageValue, SpacingScale } from '../types';
+import { FixedValue, PercentageValue, SpacingStyles } from '../types';
 
 export type DimensionValue = 'auto' | FixedValue | PercentageValue;
 
@@ -31,16 +31,6 @@ export interface FlexStyles {
   flexShrink?: number;
   flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
   justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
-}
-
-export interface SpacingStyles {
-  spacing?: SpacingScale;
-  spacingBottom?: SpacingScale;
-  spacingEnd?: SpacingScale;
-  spacingHorizontal?: SpacingScale;
-  spacingStart?: SpacingScale;
-  spacingTop?: SpacingScale;
-  spacingVertical?: SpacingScale;
 }
 
 export interface PositionStyles {
