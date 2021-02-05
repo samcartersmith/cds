@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 - breaking: Renamed to common @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
+- feat: Add UseSpacingStylesProps type by @hannah-jin [#12156](https://github.cbhq.net/mono/repo/pull/12156)
 - change: Update spacing types by @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 
 ## 0.0.4 (February 1st, 2021 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)

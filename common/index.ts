@@ -1,3 +1,4 @@
+export * from './hooks/UseSpacingStylesProps';
 export * from './Box/BoxBaseProps';
 export * from './Text/TextBaseProps';
 export * from './Text/Typography';

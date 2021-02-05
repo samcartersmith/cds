@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add Offset component to expand the component beyond its parent @hannah-jin [#12156](https://github.cbhq.net/mono/repo/pull/12156)
 - internal: Switched to common package @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
 - change: Update Box component spacing prop behavior @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 

@@ -1,74 +1,67 @@
 import { useMemo } from 'react';
 
-import { SpacingScale, SpacingStyles } from '@cds/common';
+import { SpacingScale, UseSpacingStylesProps } from '@cds/common';
 import { useScale } from '@cds/theme';
 import { scales } from '@cds/theme/native';
 import { I18nManager, ViewStyle } from 'react-native';
 
 export const useSpacingStyles = ({
-  spacing,
-  spacingBottom,
-  spacingEnd,
-  spacingHorizontal,
-  spacingStart,
-  spacingTop,
-  spacingVertical,
-}: SpacingStyles): ViewStyle => {
+  all,
+  bottom,
+  top,
+  start,
+  end,
+  vertical,
+  horizontal,
+  isInverted = false,
+}: UseSpacingStylesProps): ViewStyle => {
   const scale = useScale();
 
   return useMemo(() => {
     const styles: ViewStyle = {};
 
-    const setSpacing = (
-      prop: keyof SpacingStyles | 'spacingRight' | 'spacingLeft',
-      value: SpacingScale
-    ) => {
+    const setSpacing = (prop: string, value: SpacingScale) => {
       const spacingValue = value === 0 ? 0 : scales[scale].spacing[value];
-      styles[prop.replace('spacing', 'padding') as 'padding'] = spacingValue * 1;
+      if (isInverted) {
+        styles[prop.replace('spacing', 'margin') as 'margin'] = spacingValue * -1;
+      } else {
+        styles[prop.replace('spacing', 'padding') as 'padding'] = spacingValue;
+      }
     };
 
-    if (spacing !== undefined) {
-      setSpacing('spacingTop', spacing);
-      setSpacing('spacingRight', spacing);
-      setSpacing('spacingBottom', spacing);
-      setSpacing('spacingLeft', spacing);
+    if (all !== undefined) {
+      setSpacing('spacingTop', all);
+      setSpacing('spacingRight', all);
+      setSpacing('spacingBottom', all);
+      setSpacing('spacingLeft', all);
     }
 
-    if (spacingTop !== undefined) {
-      setSpacing('spacingTop', spacingTop);
+    if (top !== undefined) {
+      setSpacing('spacingTop', top);
     }
 
-    if (spacingBottom !== undefined) {
-      setSpacing('spacingBottom', spacingBottom);
+    if (bottom !== undefined) {
+      setSpacing('spacingBottom', bottom);
     }
 
-    if (spacingStart !== undefined) {
-      setSpacing(I18nManager.isRTL ? 'spacingRight' : 'spacingLeft', spacingStart);
+    if (start !== undefined) {
+      setSpacing(I18nManager.isRTL ? 'spacingRight' : 'spacingLeft', start);
     }
 
-    if (spacingEnd !== undefined) {
-      setSpacing(I18nManager.isRTL ? 'spacingLeft' : 'spacingRight', spacingEnd);
+    if (end !== undefined) {
+      setSpacing(I18nManager.isRTL ? 'spacingLeft' : 'spacingRight', end);
     }
 
-    if (spacingVertical !== undefined) {
-      setSpacing('spacingTop', spacingVertical);
-      setSpacing('spacingBottom', spacingVertical);
+    if (vertical !== undefined) {
+      setSpacing('spacingTop', vertical);
+      setSpacing('spacingBottom', vertical);
     }
 
-    if (spacingHorizontal !== undefined) {
-      setSpacing('spacingLeft', spacingHorizontal);
-      setSpacing('spacingRight', spacingHorizontal);
+    if (horizontal !== undefined) {
+      setSpacing('spacingLeft', horizontal);
+      setSpacing('spacingRight', horizontal);
     }
 
     return styles;
-  }, [
-    spacing,
-    spacingBottom,
-    spacingEnd,
-    spacingHorizontal,
-    spacingStart,
-    spacingTop,
-    spacingVertical,
-    scale,
-  ]);
+  }, [all, bottom, end, horizontal, start, top, vertical, scale, isInverted]);
 };

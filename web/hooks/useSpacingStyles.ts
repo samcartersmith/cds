@@ -1,24 +1,11 @@
 import { useMemo } from 'react';
 
-import { SpacingScale } from '@cds/common';
+import { UseSpacingStylesProps } from '@cds/common';
 import { cx } from 'linaria';
 
 import * as marginStyles from '../styles/margin';
 import * as paddingStyles from '../styles/padding';
 import { isRtl } from '../utils/isRtl';
-
-type Props = Partial<
-  Readonly<{
-    all: SpacingScale;
-    bottom: SpacingScale;
-    end: SpacingScale;
-    horizontal: SpacingScale;
-    start: SpacingScale;
-    top: SpacingScale;
-    vertical: SpacingScale;
-    isInverted: boolean;
-  }>
->;
 
 export const useSpacingStyles = ({
   all,
@@ -29,7 +16,7 @@ export const useSpacingStyles = ({
   top,
   vertical,
   isInverted = false,
-}: Props): string =>
+}: UseSpacingStylesProps): string =>
   useMemo(() => {
     const spacingClasses = [];
     const styles = isInverted ? marginStyles : paddingStyles;

@@ -77,13 +77,13 @@ const InternalBox = ({
   const palette = usePalette();
   const elevationStyles = useElevationStyles(elevation);
   const spacingStyles = useSpacingStyles({
-    spacing,
-    spacingBottom,
-    spacingEnd,
-    spacingHorizontal,
-    spacingStart,
-    spacingTop,
-    spacingVertical,
+    all: spacing,
+    bottom: spacingBottom,
+    end: spacingEnd,
+    horizontal: spacingHorizontal,
+    start: spacingStart,
+    top: spacingTop,
+    vertical: spacingVertical,
   });
   const flexStyles = useMemo(
     () => ({
