@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   title: 'Coinbase Design System',
   tagline: '',
-  url: 'https://design-system.cbhq.net/',
+  url: 'https://design-system.cbhq.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -11,6 +11,9 @@ module.exports = {
   organizationName: 'mono',
   projectName: 'repo',
   themeConfig: {
+    gtag: {
+      trackingID: 'G-369GEFT8FG',
+    },
     navbar: {
       title: 'Coinbase Design System',
       logo: {
