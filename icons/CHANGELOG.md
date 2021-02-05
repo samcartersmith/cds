@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.4 (February 5th, 2021 2:30pm PST) [#12399](https://github.cbhq.net/mono/repo/pull/12399)
+
+- fix: ensure styles.css is copied when running babel so it appears in the lib/ folder
+
 ## 0.0.3 (January 19th, 2021 12:15pm) [#11421](https://github.cbhq.net/mono/repo/pull/11421)
 
 - feat(icons): Add new icons from figma: 'circleCheckmark', 'doubeChevronRight', 'doubleChevronRight', 'expand', 'expandAddress', 'more', 'reCenter', 'sortDown', 'sortUp' by @iulia-soimaru (##9685)

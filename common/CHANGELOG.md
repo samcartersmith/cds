@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.5 (February 5th, 2021 2:30pm PST) [#12399](https://github.cbhq.net/mono/repo/pull/12399)
+
 - breaking: Renamed to common @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
 - breaking: Removed left/right from text alignment @miles-johnson [#12241](https://github.cbhq.net/mono/repo/pull/12241)
 - feat: Add UseSpacingStylesProps type by @hannah-jin [#12156](https://github.cbhq.net/mono/repo/pull/12156)
