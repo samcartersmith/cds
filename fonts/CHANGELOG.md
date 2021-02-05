@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- new: Add `ttf` fonts for React Native @miles-johnson [#12241](https://github.cbhq.net/mono/repo/pull/12241)
+
 ## 0.0.3 (January 19th, 2021 12:15pm) [#11421](https://github.cbhq.net/mono/repo/pull/11421)
 
 - feat: Add Graphik and Inter fonts + css (#11226)

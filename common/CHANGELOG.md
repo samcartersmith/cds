@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 - breaking: Renamed to common @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
+- breaking: Removed left/right from text alignment @miles-johnson [#12241](https://github.cbhq.net/mono/repo/pull/12241)
 - feat: Add UseSpacingStylesProps type by @hannah-jin [#12156](https://github.cbhq.net/mono/repo/pull/12156)
 - change: Update spacing types by @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 

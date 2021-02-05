@@ -4,7 +4,7 @@ import type { TextBaseProps, Typography } from '@cds/common';
 import { usePalette, useScale } from '@cds/theme';
 import { scales } from '@cds/theme/native';
 import { pascalCase } from '@cds/utils';
-import { I18nManager, Text, TextProps as RNTextProps, StyleSheet } from 'react-native';
+import { I18nManager, Text, TextProps as RNTextProps, StyleSheet, TextStyle } from 'react-native';
 
 export type { Typography };
 
@@ -34,7 +34,7 @@ export interface TextProps
 const createText = (name: Typography) => {
   const TextComponent: React.FC<TextProps> = ({
     color = 'foreground',
-    align = 'left',
+    align = 'start',
     tabularNumbers = false,
     // TODO: replace with glyph
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -80,7 +80,7 @@ const createText = (name: Typography) => {
         numberOfLines={noWrap ? 1 : numberOfLines}
         // TODO (hannah): Add iOS support for selectable. https://awesomeopensource.com/project/Astrocoders/react-native-selectable-text
         selectable={selectable !== 'none'}
-        style={style}
+        style={style as TextStyle}
       />
     );
   };

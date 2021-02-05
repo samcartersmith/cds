@@ -122,3 +122,21 @@ serve.website:
 .PHONY: deploy.website
 deploy.website:
 	bazel run website/cloud:deploy
+
+.PHONY: setup.mobile
+setup.mobile:
+	cd ../../..; npx jetifier
+	cd mobile-playground/ios; RN_PROJECT=cds pod install
+	cd mobile-playground; RN_PROJECT=cds npx react-native link
+
+.PHONY: start.mobile
+start.mobile:
+	cd mobile-playground; RN_PROJECT=cds npx react-native start --config ./metro.config.js --reset-cache
+
+.PHONY: mobile.android
+mobile.android:
+	cd mobile-playground; RN_PROJECT=cds npx react-native run-android --no-jetifier
+
+.PHONY: mobile.ios
+mobile.ios:
+	cd mobile-playground; RN_PROJECT=cds npx react-native run-ios

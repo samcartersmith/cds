@@ -7,12 +7,6 @@ export const fallbackStack =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
 
 const textAlign: CSSMap<TextBaseProps['align']> = {
-  left: css`
-    text-align: left;
-  `,
-  right: css`
-    text-align: right;
-  `,
   start: css`
     text-align: start;
   `,

@@ -8,9 +8,9 @@ export type TextBaseProps = Partial<
     /**
      * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to left on Android.
      * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) | [React Native docs](https://reactnative.dev/docs/text-style-props#textalign)
-     * @default left
+     * @default start
      */
-    align: 'left' | 'right' | 'start' | 'end' | 'center' | 'justify';
+    align: 'start' | 'end' | 'center' | 'justify';
     /**
      * Text color. Accepts a valid PaletteForeground alias.
      * @default foreground
