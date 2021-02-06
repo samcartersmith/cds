@@ -11,10 +11,11 @@ module.exports = {
       label: 'Foundation',
       collapsed: true,
       items: [
+        'foundation/overview',
         'foundation/color',
         'foundation/scale',
         'foundation/typography',
-        'foundation/icons',
+        'foundation/iconography',
         'foundation/illustration',
       ],
     },
@@ -47,12 +48,7 @@ module.exports = {
           label: 'Github',
           href: 'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system',
         },
-        {
-          type: 'link',
-          label: 'Office hours',
-          href:
-            'https://docs.google.com/forms/d/e/1FAIpQLSeH1aUTyegkrycxq3PaufQzD8I6OOarlJfeni2z-MOLFxY4-A/viewform',
-        },
+        'resources/office-hours',
         'resources/roadmap',
         'resources/contributing',
         'resources/release',

@@ -3,6 +3,7 @@ import { KebabCase, CamelCase, PascalCase } from 'type-fest';
 
 export const camelCase = <T extends string>(str: T): CamelCase<T> => camelize(str) as CamelCase<T>;
 export const pascalCase = <T extends string>(str: T) => pascalize(str) as PascalCase<typeof str>;
+export const wordCase = <T extends string>(str: T) => decamelize(str, { separator: ' ' });
 
 export const kebabCase = <T extends string>(str: T) =>
   decamelize(str, { separator: '-' }) as KebabCase<typeof str>;

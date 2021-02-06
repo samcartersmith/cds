@@ -1,7 +1,5 @@
 import type { ReactChild, ReactFragment } from 'react';
 
-import { PaletteForeground } from '@cds/theme';
-
 import { SpacingStyles } from '../types';
 
 export interface TextBaseProps extends SpacingStyles {
@@ -12,11 +10,6 @@ export interface TextBaseProps extends SpacingStyles {
    * @default start
    */
   align?: 'start' | 'end' | 'center' | 'justify';
-  /**
-   * Text color. Accepts a valid PaletteForeground alias.
-   * @default foreground
-   */
-  color?: PaletteForeground;
   /**
    * Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) | [React Native Docs](https://reactnative.dev/docs/text-style-props#fontvariant)

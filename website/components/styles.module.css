@@ -24,3 +24,20 @@
 .hue:hover {
   opacity: 1;
 }
+
+.paletteTile {
+  padding: 12px 16px;
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+}
+
+.twoColumns {
+  background-color: var(--background);
+  padding: 16px;
+  display: grid;
+  column-gap: 20px;
+  row-gap: 16px;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content min-content;
+  padding-right: 50px;
+}

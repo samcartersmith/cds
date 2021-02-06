@@ -1,4 +1,5 @@
 import type { TextBaseProps } from '@cds/common';
+import { PaletteForeground } from '@cds/theme';
 
 export interface TextProps extends TextBaseProps {
   /**
@@ -6,8 +7,13 @@ export interface TextProps extends TextBaseProps {
    */
   readonly display?: 'block' | 'initial' | 'inline';
   /**
+   * Text color. Accepts a valid PaletteForeground alias.
+   * @default foreground
+   */
+  readonly color?: PaletteForeground | 'currentColor';
+  /**
    * Set overflow behavior.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space) | [React Native Docs](https://reactnative.dev/docs/text#ellipsizemode)
+   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
    */
   readonly overflow?: 'truncate' | 'clip';
 }

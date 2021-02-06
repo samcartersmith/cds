@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import type { Typography } from '@cds/common';
 import { pascalCase } from '@cds/utils';
-import { cx } from 'linaria';
+import { cx, css } from 'linaria';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as foregroundStyles from '../styles/foregroundColor';
@@ -13,11 +13,16 @@ import * as textStyles from './textStyles';
 
 export type { TextProps, Typography };
 
+const currentColor = css`
+  color: currentColor;
+`;
+
 const createText = <E extends HTMLTextTags>(name: Typography) => {
   const TextComponent = <T extends E>({
     as,
     color = 'foreground',
     align = 'start',
+    display,
     tabularNumbers,
     slashedZero,
     selectable,
@@ -39,9 +44,10 @@ const createText = <E extends HTMLTextTags>(name: Typography) => {
       ...props,
       className: cx(
         textStyles[name],
-        foregroundStyles[color],
+        color === 'currentColor' ? currentColor : foregroundStyles[color],
         ...getTypographyStyles({
           align,
+          display,
           tabularNumbers,
           slashedZero,
           selectable,

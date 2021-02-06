@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import type { TextBaseProps, Typography } from '@cds/common';
-import { usePalette, useScale } from '@cds/theme';
+import { PaletteForeground, usePalette, useScale } from '@cds/theme';
 import { scales } from '@cds/theme/native';
 import { pascalCase } from '@cds/utils';
 import {
@@ -31,6 +31,15 @@ export interface TextProps
   extends TextBaseProps,
     OmitStyle<RNTextProps, 'selectable'>,
     DangerouslySetStyle<TextStyle> {
+  /**
+   * Text color. Accepts a valid PaletteForeground alias.
+   * @default foreground
+   */
+  color?: PaletteForeground;
+  /**
+   * Choose ellipsize mode.
+   * @link [React Native docs](https://reactnative.dev/docs/text#ellipsizemode)
+   */
   ellipsize?: RNTextProps['ellipsizeMode'];
   /**
    * Override line-height. This is deprecated since overriding this prevents line height from being scale aware.

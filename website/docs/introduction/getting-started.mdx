@@ -3,30 +3,65 @@ id: getting-started
 title: Getting started
 ---
 
-CDS is an end-to-end design and development system for applying consistent visual styles
-across react projects and products at Coinbase.
+## Using CDS library in Figma
 
-Components within CDS are powered by a ThemeProvider with a configurable scale, spectrum and palette. We have 7 total scales ranging from Extra Small (XS) to Extra-Extra-Extra Large (XXXL). A product can offer all scales to users, but we only recommend designing and developing products with two scales in mind Normal (Large) and Dense (Extra Small). Spectrum is an extensive color library with 8 color sets that has both light and dark mode versions. Palettes aim to align common color usages across interfaces. All of the colors used in our palettes come from spectrum colors.
+- [CDS Dense 🌞](https://www.figma.com/file/PFrMlidBLdYwQRtIzTvMtV/CDS-Dense-%F0%9F%8C%9E?node-id=172%3A0)
+- [CDS Dense 🌙](https://www.figma.com/file/PFrMlidBLdYwQRtIzTvMtV/CDS-Dense-%F0%9F%8C%9E)
+- [CDS Normal 🌞](https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E)
+- [CDS Normal 🌙](https://www.figma.com/file/YjFmec7quTC4bN0xvYnKsx/CDS-Normal-%F0%9F%8C%99)
 
-## Motivation and goals
+## Using CDS inside the [`mono/repo`](https://github.cbhq.net/mono/repo)
 
-- **Pursue the universal workflow.** We believe that employees at Coinbase should spend the bulk of their time sweating the user, business, and problem, and all the nuances within those. All the other things shouldn’t get in the way of that.
+### For web projects
 
-- **Push the limits of execution and quality.** We face many challenges at Coinbase, but one constant threat is competition. We need to ensure that products that are heading to market are being executed at the highest quality and speed
+1. Set up a project level `.babelrc.js` and include `linaria/babel` at the end of the presets list. CDS relies on [linaria](https://github.com/callstack/linaria) for styling on the web.
 
-- **Remove barriers for others.** To achieve Coinbase’s mission, we need to build products for everyone no matter your culture or abilities. Often to ensure our products can be used by others it can be nearly impossible to scope out and prioritize, but in system’s we’re uniquely positioned to take on those challenges.
+```js
+module.exports = {
+  presets: ['linaria/babel'],
+  plugins: ['@babel/plugin-proposal-class-properties'],
+};
+```
 
-- **Commit to consistency.** No matter where you navigate in our products it should feel cared for and well made. The way we believe we can do that is by scaling a system across all screens, so that when we make holistic changes we build it in a system level, so it can scale across products, interfaces, and platforms.
+2. In the bazel rule for building your application, make sure to include `"//eng/shared/design-system:web_source"` as part of the `data` argument.
 
-- **Become everyone’s favorite partner.** As we continue to take ownership of many aspects of interfaces. It’s important that we take action to ensure we’re actively building and maintaining that trust and responsibility.
+## Using CDS outside the [`mono/repo`](https://github.cbhq.net/mono/repo)
 
-- **Performance is top priority.** Regardless of what platform and target is chosen, performance
-  overhead should be almost non-existent. Aim for zero or low runtime overhead.
+1. Add `@cb:registry=https://registry-npm.cbhq.net` to your `.npmrc`.
+2. Install the CDS packages you need
 
-- **Developer experience must be enjoyable.** Ideally, all CDS APIs and systems are easy to
-  use, easy to learn, and ultimately enjoyable to integrate.
+```bash
+yarn add @cds/theme # must have
+yarn add @cds/web # if using web components
+yarn add @cds/mobile # if using mobile components
+yarn add @cds/icons # if using CDS icons
+```
 
-- **User preference matters.** Does the user prefer dark color schemes? Low contrast colors? Reduced
-  motion? The CDS will take all this into account, throughout all aspects of the library.
+## Building with CDS
 
-## More details coming soon!
+1. Add `ThemeProvider` to the root of your React application. Choose a scale for your application from the seven scales supported by CDS.
+
+```tsx
+import { ThemeProvider } from '@cds/theme'
+
+export const App = () => {
+  <ThemeProvider scale="large">
+    <ErrorBoundary>
+      <AppRoutes />
+    </ErrorBoundary>
+  <ThemeProvider>
+}
+```
+
+If you have components that are created outside of the app's main DOM tree, such as `Modal`s that use `createPortal`, you will need to add `ThemeProvider` to the root of the portal element as well.
+
+2. Import components from `@cds/web` or `@cds/mobile`.
+3. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.
+
+   - example 1. Use `Headline` typography for the text.
+
+     <img src="/img/figma-typography-inspect.png" width="400px" />
+
+   - example 2. Use `postive` palette color for the background. 🌙 indicates that the palette is for dark mode. In most cases, light and dark mode can have the same styling.
+
+     <img src="/img/figma-palette-inspect.png" width="600px" />

@@ -21,7 +21,6 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-# TODO remove and replace with :source
 filegroup(
     name = "web_source",
     srcs = [":build_source"] + glob(

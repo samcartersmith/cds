@@ -21,6 +21,18 @@ const textAlign: CSSMap<TextProps['align']> = {
   `,
 };
 
+const display: CSSMap<TextProps['display']> = {
+  block: css`
+    display: block;
+  `,
+  initial: css`
+    display: initial;
+  `,
+  inline: css`
+    display: inline;
+  `,
+};
+
 const userSelect: CSSMap<TextProps['selectable']> = {
   none: css`
     user-select: none;
@@ -75,6 +87,7 @@ const noWrap = css`
 export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
   return [
     props.align && textAlign[props.align],
+    props.display && display[props.display],
     props.tabularNumbers && tabularNumbers,
     props.slashedZero && slashedZero,
     props.selectable && userSelect[props.selectable],
