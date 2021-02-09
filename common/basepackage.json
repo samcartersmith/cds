@@ -2,13 +2,7 @@
   "name": "@cds/common",
   "version": "0.0.6",
   "description": "Coinbase Design System - Common",
-  "keywords": [
-    "cds",
-    "design system",
-    "core",
-    "common",
-    "types"
-  ],
+  "keywords": ["cds", "design system", "core", "common", "types"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
@@ -16,6 +10,6 @@
   },
   "authors": "Coinbase",
   "main": "lib/index.js",
-  "module": "lib/index.js",
+  "module": "esm/index.js",
   "typings": "index.ts"
 }

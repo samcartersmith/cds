@@ -14,6 +14,32 @@ STATIC_PACKAGES = [
     "fonts",
 ]
 
+BABEL_ARGS = [
+    "--config-file ./$(execpath //eng/shared/design-system:babel.config.js)",
+    "--out-dir $(@D)",
+    "--extensions .ts,.tsx",
+    "--copy-files",
+]
+
+BABEL_DEPS = [
+    "//eng/shared/design-system/codegen:babel-plugins/linariaCssExtractPlugin.js",
+    "//eng/shared/design-system/codegen:babel-plugins/linariaPreset.js",
+    "//eng/shared/design-system:.browserslistrc",
+    "//eng/shared/design-system:babel.config.js",
+    "//eng/shared/design-system:linaria.config.js",
+    "//:tsconfig.json",
+    "@npm//@babel/preset-env",
+    "@npm//@babel/preset-react",
+    "@npm//@babel/preset-typescript",
+    "@npm//babel-plugin-module-resolver",
+    "@npm//babel-plugin-transform-async-to-promises",
+    "@npm//chalk",
+    "@npm//linaria",
+    "@npm//source-map",
+    "@npm//stylis",
+    "@npm//yargs",
+]
+
 def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependencies):
     package_source_path = "eng/shared/design-system/%s" % name
 
@@ -29,31 +55,15 @@ def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependenci
     # Compile source files with Babel
     babel(
         name = "lib",
-        args = [
-            package_source_path,
-            "--config-file ./$(execpath //eng/shared/design-system:babel.config.js)",
-            "--out-dir $(@D)",
-            "--extensions .ts,.tsx",
-            "--copy-files",
-        ],
-        data = [
-            "//eng/shared/design-system/codegen:babel-plugins/linariaCssExtractPlugin.js",
-            "//eng/shared/design-system/codegen:babel-plugins/linariaPreset.js",
-            "//eng/shared/design-system:.browserslistrc",
-            "//eng/shared/design-system:babel.config.js",
-            "//eng/shared/design-system:linaria.config.js",
-            "//:tsconfig.json",
-            "@npm//@babel/preset-env",
-            "@npm//@babel/preset-react",
-            "@npm//@babel/preset-typescript",
-            "@npm//babel-plugin-module-resolver",
-            "@npm//babel-plugin-transform-async-to-promises",
-            "@npm//chalk",
-            "@npm//linaria",
-            "@npm//source-map",
-            "@npm//stylis",
-            "@npm//yargs",
-        ] + srcs,
+        args = [package_source_path] + BABEL_ARGS,
+        data = BABEL_DEPS + srcs,
+        output_dir = True,
+    )
+
+    babel(
+        name = "esm",
+        args = [package_source_path] + BABEL_ARGS,
+        data = BABEL_DEPS + srcs,
         output_dir = True,
     )
 
@@ -66,6 +76,7 @@ def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependenci
         ],
         deps = [
             ":lib",
+            ":esm",
             ":package_json",
         ] + srcs,
         visibility = ["//visibility:public"],

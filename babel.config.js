@@ -3,18 +3,26 @@
 // to convert module aliases, and we also need to support
 // Linaria CSS extraction.
 
+// Output dir is either esm or lib
+const isESM = process.argv.some(arg => arg.endsWith('/esm'));
+
 module.exports = api => {
   api.cache(true);
 
   return {
-    plugins: [['babel-plugin-transform-async-to-promises', { inlineHelpers: true, target: 'es6' }]],
+    plugins: [
+      [
+        'babel-plugin-transform-async-to-promises',
+        { inlineHelpers: true, target: isESM ? 'es6' : 'es5' },
+      ],
+    ],
     presets: [
       [
         '@babel/preset-env',
         {
           bugfixes: true,
           loose: true,
-          modules: false,
+          modules: isESM ? false : 'commonjs',
           shippedProposals: true,
         },
       ],

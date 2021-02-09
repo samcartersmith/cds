@@ -10,6 +10,6 @@
   },
   "authors": "Coinbase",
   "main": "lib/index.js",
-  "module": "lib/index.js",
+  "module": "esm/index.js",
   "typings": "index.ts"
 }
