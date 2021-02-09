@@ -27,6 +27,10 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+DEPENDENCIES = [
+    "@npm//type-fest",
+]
+
 PEER_DEPENDENCIES = [
     "@npm//react",
 ]
@@ -34,9 +38,9 @@ PEER_DEPENDENCIES = [
 cds_package(
     name = "common",
     srcs = [":runtime_source"],
-    dependencies = [],
+    dependencies = DEPENDENCIES,
     monorepo_dependencies = [
-        "//eng/shared/design-system/theme:package_json",
+        "//eng/shared/design-system/utils:package_json",
     ],
     peer_dependencies = PEER_DEPENDENCIES,
 )

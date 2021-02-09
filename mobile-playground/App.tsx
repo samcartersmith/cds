@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 
 import 'react-native-gesture-handler';
-import { ThemeProvider } from '@cds/theme';
-import { usePalette } from '@cds/theme/native';
+import { ThemeProvider, usePalette } from '@cds/mobile';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';

@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-import type { TextBaseProps, Typography } from '@cds/common';
-import { PaletteForeground, usePalette, useScale } from '@cds/theme';
-import { scales } from '@cds/theme/native';
+import { TextBaseProps, Typography, PaletteForeground, useScale } from '@cds/common';
 import { pascalCase } from '@cds/utils';
 import {
   Animated,
@@ -13,7 +11,9 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import * as scales from '../styles/scale';
 import { OmitStyle, DangerouslySetStyle } from '../types';
 
 export type { Typography };

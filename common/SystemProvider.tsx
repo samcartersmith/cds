@@ -6,9 +6,8 @@ import { ScaleProvider } from './scale/ScaleProvider';
 import { Scale } from './scale/types';
 import { SpectrumProvider } from './spectrum/SpectrumProvider';
 import { Spectrum } from './spectrum/types';
-import { ThemeManager } from './ThemeManager';
 
-type ThemeProviderProps = {
+export type SystemProviderProps = {
   /**
    * Determines which sizes to pull for typography, spacing, icons and layout and is based on an applications information density.
    */
@@ -23,18 +22,16 @@ type ThemeProviderProps = {
   palette?: PaletteConfig;
 };
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = React.memo(
+export const SystemProvider: React.FC<SystemProviderProps> = React.memo(
   ({ scale, spectrum, palette, children }) => {
     return (
       <ScaleProvider value={scale}>
         <SpectrumProvider value={spectrum}>
-          <PaletteConfigProvider value={palette}>
-            <ThemeManager>{children}</ThemeManager>
-          </PaletteConfigProvider>
+          <PaletteConfigProvider value={palette}>{children}</PaletteConfigProvider>
         </SpectrumProvider>
       </ScaleProvider>
     );
   }
 );
 
-ThemeProvider.displayName = 'ThemeProvider';
+SystemProvider.displayName = 'SystemProvider';

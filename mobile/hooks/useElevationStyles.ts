@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 
 import { ElevationLevels } from '@cds/common';
-import { usePalette } from '@cds/theme/native';
 import { Platform, ViewStyle } from 'react-native';
+
+import { usePalette } from '../hooks/usePalette';
 
 export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | undefined => {
   const palette = usePalette();

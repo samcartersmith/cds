@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import type { GetStory } from '@cds/storybook/decorators/types';
-import { ThemeProvider } from '@cds/theme';
+import { ThemeProvider } from '@cds/web';
 import { css } from 'linaria';
 
 export const StoryContainer = (getStory: GetStory) => (

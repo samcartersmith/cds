@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add theme related providers and associated hooks + types @katherinemartinez [#12452](https://github.cbhq.net/mono/repo/pull/12452)
+
 ## 0.0.5 (February 5th, 2021 2:30pm PST) [#12399](https://github.cbhq.net/mono/repo/pull/12399)
 
 - breaking: Renamed to common @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)

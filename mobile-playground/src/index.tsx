@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { TextHeadline } from '@cds/mobile';
-import { usePalette } from '@cds/theme/native';
+import { TextHeadline, usePalette } from '@cds/mobile';
 import { StackScreenProps } from '@react-navigation/stack';
 import { View, FlatList, TouchableHighlight } from 'react-native';
 

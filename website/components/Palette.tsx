@@ -1,8 +1,15 @@
 import React from 'react';
 
-import { defaultPalette, palette, PaletteAlias, Spectrum, ThemeProvider } from '@cds/theme';
 import { wordCase, capitalize } from '@cds/utils';
-import { TextHeadline, TextLabel1 } from '@cds/web';
+import {
+  defaultPalette,
+  palette,
+  PaletteAlias,
+  Spectrum,
+  ThemeProvider,
+  TextHeadline,
+  TextLabel1,
+} from '@cds/web';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 

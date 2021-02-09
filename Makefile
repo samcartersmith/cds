@@ -82,7 +82,6 @@ lint:
 	bazel run :eslint_common
 	bazel run :eslint_icons
 	bazel run :eslint_mobile
-	bazel run :eslint_theme
 	bazel run :eslint_utils
 	bazel run :eslint_web
 	bazel run :stylelint

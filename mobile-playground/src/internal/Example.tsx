@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { TextTitle3 } from '@cds/mobile';
-import { usePalette } from '@cds/theme/native';
+import { TextTitle3, usePalette } from '@cds/mobile';
 import { View } from 'react-native';
 
 interface ExampleProps {

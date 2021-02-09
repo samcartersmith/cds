@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { ThemeProvider } from '@cds/theme';
-import { TextCaption } from '@cds/web';
+import { ThemeProvider, TextCaption } from '@cds/web';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 

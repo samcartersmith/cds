@@ -21,18 +21,17 @@ import { TextDisplay1 } from '@cds/web';
 Make sure `@coinbase:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
 
 ```
-yarn add @cds/web @cds/theme
+yarn add @cds/web
 ```
 
 You can start using CDS-web like so. CDS only supports ES modules currently. If your project doesn't, please reach out to the CDS team about it in #ask-cds.
 
 ```tsx
-import { ThemeProvider } from '@cds/theme';
-import { TextDisplay1 } from '@cds/web';
+import { ThemeProvider, TextDisplay1 } from '@cds/web';
 
 const App = () => {
-    <ThemeProvider scale="large">
-        <TextDisplay1 as="h1">DeFi</TextDisplay1>
-    </ThemeProvider>
-}
+  <ThemeProvider scale="large">
+    <TextDisplay1 as="h1">DeFi</TextDisplay1>
+  </ThemeProvider>;
+};
 ```

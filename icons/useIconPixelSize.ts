@@ -1,4 +1,4 @@
-import { useScale, Scale } from '@cds/theme';
+import { useScale, Scale } from '@cds/common';
 
 import type { IconSize, IconPixels } from './types';
 

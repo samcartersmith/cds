@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 
 import { BoxBaseProps, ElevationLevels } from '@cds/common';
-import { usePalette } from '@cds/theme/native';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
+import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { OmitStyle, DangerouslySetStyle } from '../types';
 

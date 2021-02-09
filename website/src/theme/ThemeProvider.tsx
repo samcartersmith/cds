@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ThemeProvider as CdsThemeProvider } from '@cds/theme';
+import { ThemeProvider as CdsThemeProvider } from '@cds/web';
 import useTheme from '@theme/hooks/useTheme';
 import ThemeContext from '@theme/ThemeContext';
 

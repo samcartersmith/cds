@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePalette } from '@cds/theme/native';
+import { usePalette } from '@cds/mobile';
 import { ScrollView } from 'react-native';
 
 interface ScreenProps {

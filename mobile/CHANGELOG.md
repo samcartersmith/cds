@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add ThemeProvider and wildcard export cds/common package @katherinemartinez [#12452](https://github.cbhq.net/mono/repo/pull/12452)
+
 ## 0.0.6 (February 5th, 2021 2:30pm PST) [#12399](https://github.cbhq.net/mono/repo/pull/12399)
 
 - breaking: Removed left/right from text alignment @miles-johnson [#12241](https://github.cbhq.net/mono/repo/pull/12241)

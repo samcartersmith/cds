@@ -38,7 +38,6 @@ cds_package(
     dependencies = [],
     monorepo_dependencies = [
         "//eng/shared/design-system/common:package_json",
-        "//eng/shared/design-system/theme:package_json",
         "//eng/shared/design-system/utils:package_json",
     ],
     peer_dependencies = PEER_DEPENDENCIES,

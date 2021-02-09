@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { SpacingScale, UseSpacingStylesProps } from '@cds/common';
-import { useScale } from '@cds/theme';
-import { scales } from '@cds/theme/native';
+import { SpacingScale, UseSpacingStylesProps, useScale } from '@cds/common';
 import { I18nManager, ViewStyle } from 'react-native';
+
+import * as scales from '../styles/scale';
 
 export const useSpacingStyles = ({
   all,

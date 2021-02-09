@@ -24,7 +24,7 @@ async function loadTemplates(): Promise<
         data: Type.css,
       },
       {
-        dest: 'theme/styles/scale.ts',
+        dest: 'web/styles/scale.ts',
         data: mapValues(scaleConfig, (_, scale) => {
           return {
             ...Type.scaleCss[scale],
@@ -33,7 +33,7 @@ async function loadTemplates(): Promise<
         }),
       },
       {
-        dest: 'theme/styles/spectrum.ts',
+        dest: 'web/styles/spectrum.ts',
         data: Spectrum.css,
       },
       {
@@ -57,7 +57,7 @@ async function loadTemplates(): Promise<
     ],
     'objectMap.ejs': [
       {
-        dest: 'theme/styles/scale.native.ts',
+        dest: 'mobile/styles/scale.ts',
         data: mapValues(scaleConfig, (_, scale) => {
           return {
             typography: Type.mobile[scale],
@@ -66,11 +66,11 @@ async function loadTemplates(): Promise<
         }),
       },
       {
-        dest: 'theme/styles/spectrum.native.ts',
+        dest: 'mobile/styles/spectrum.ts',
         data: Spectrum.native,
       },
       {
-        dest: 'theme/palette/constants.ts',
+        dest: 'common/palette/constants.ts',
         data: {
           defaultPalette: Palette.defaultPalette,
           paletteForegrounds: Palette.paletteForegrounds,
@@ -78,7 +78,7 @@ async function loadTemplates(): Promise<
         },
       },
       {
-        dest: 'theme/palette/palette.ts',
+        dest: 'web/styles/palette.ts',
         data: { palette: Palette.cssVariables },
       },
       {

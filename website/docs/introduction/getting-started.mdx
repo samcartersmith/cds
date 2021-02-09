@@ -31,7 +31,6 @@ module.exports = {
 2. Install the CDS packages you need
 
 ```bash
-yarn add @cds/theme # must have
 yarn add @cds/web # if using web components
 yarn add @cds/mobile # if using mobile components
 yarn add @cds/icons # if using CDS icons
@@ -42,7 +41,7 @@ yarn add @cds/icons # if using CDS icons
 1. Add `ThemeProvider` to the root of your React application. Choose a scale for your application from the seven scales supported by CDS.
 
 ```tsx
-import { ThemeProvider } from '@cds/theme'
+import { ThemeProvider } from '@cds/web'
 
 export const App = () => {
   <ThemeProvider scale="large">

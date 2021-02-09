@@ -6,7 +6,6 @@ PACKAGES = [
     "common",
     "icons",
     "mobile",
-    "theme",
     "utils",
     "web",
 ]

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { ThemeProvider } from '@cds/theme';
 import * as CdsWeb from '@cds/web';
 
 // Add react-live imports you need here
@@ -9,7 +8,6 @@ const ReactLiveScope = {
   ...React,
   ...CdsWeb,
   Text: CdsWeb.TextBody,
-  ThemeProvider,
 };
 
 export default ReactLiveScope;

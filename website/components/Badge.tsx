@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ThemeProvider } from '@cds/theme';
+import { ThemeProvider } from '@cds/web';
 import { styled } from 'linaria/react';
 
 type BadgeVariant = keyof typeof badgePalettes;
@@ -24,7 +24,7 @@ type Props = {
   order?: number;
 };
 
-// TODO: Fix babel config to work with importing palette from cds/theme package and interpolating below
+// TODO: Fix babel config to work with importing palette from cds/web package and interpolating below
 const BadgeContainer = styled.div<Props>`
   position: relative;
   text-transform: capitalize;

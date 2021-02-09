@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { PaletteBackground } from '@cds/theme';
-
+import { PaletteBackground } from '../palette/types';
 import { FixedValue, PercentageValue, SpacingStyles } from '../types';
 
 export type DimensionValue = 'auto' | FixedValue | PercentageValue;
