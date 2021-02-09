@@ -6,12 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- breaking: Removed left/right from text alignment @miles-johnson [#12241](https://github.cbhq.net/mono/repo/pull/12241)
-- internal: Switched to common package @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
-- feat: Update `Text` component to include spacing @katherinemartinez [#12355](https://github.cbhq.net/mono/repo/pull/12355)
-- feat: Add `ThemeProvider` and wildcard export cds/common package @katherinemartinez [#12452](https://github.cbhq.net/mono/repo/pull/12452)
+## 0.0.3 (2/8/2021, 6:21 PM PST) [#12504](https://github.cbhq.net/mono/repo/pull/12504)
 
-## 0.0.2 (February 1st, 2021 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)
+#### 💥 Breaking
+
+- Removed left/right from text alignment @miles-johnson [#12241](https://github.cbhq.net/mono/repo/pull/12241)
+
+#### 🚀 Updates
+
+- Update `Text` component to include spacing @katherinemartinez [#12355](https://github.cbhq.net/mono/repo/pull/12355)
+- Add `ThemeProvider` and wildcard export cds/common package @katherinemartinez [#12452](https://github.cbhq.net/mono/repo/pull/12452)
+
+#### 📘 Misc
+
+- Switched to common package @miles-johnson [#12128](https://github.cbhq.net/mono/repo/pull/12128)
+
+## 0.0.2 (2/1/2021, 8:15am PST) [#12013](https://github.cbhq.net/mono/repo/pull/12013)
 
 #### 💥 Breaking
 

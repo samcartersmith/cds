@@ -133,7 +133,16 @@ function formatLogItems(items: LogItem[], version: string): string[] {
     groups[item.bump || 'other'].push(`- ${line}`);
   });
 
-  const block: string[] = [`## ${version} (${new Date().toUTCString()}) [#123](todo)`];
+  const block: string[] = [
+    `## ${version} (${new Date().toLocaleString('en-US', {
+      timeZone: 'America/Los_Angeles',
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    })} PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)`,
+  ];
 
   Object.values(groups).forEach(group => {
     if (group.length > 2) {
