@@ -1,13 +1,21 @@
 {
   "name": "@cds/fonts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Coinbase Design System - Fonts",
-  "keywords": ["cds", "design system", "fonts"],
+  "keywords": [
+    "cds",
+    "design system",
+    "fonts"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
     "directory": "eng/shared/design-system/fonts"
   },
   "authors": "Coinbase",
-  "files": ["*.css", "*.woff2"]
+  "files": [
+    "*.css",
+    "*.woff2",
+    "*.otf"
+  ]
 }

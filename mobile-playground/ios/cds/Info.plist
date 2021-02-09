@@ -55,12 +55,10 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Inter-Medium.ttf</string>
-		<string>Inter-Regular.ttf</string>
-		<string>Inter-SemiBold.ttf</string>
-		<string>Graphik-Medium.ttf</string>
-		<string>Graphik-Regular.ttf</string>
-		<string>Graphik-SemiBold.ttf</string>
+		<string>Inter-Regular.otf</string>
+		<string>Inter-SemiBold.otf</string>
+		<string>Graphik-Medium.otf</string>
+		<string>Graphik-Regular.otf</string>
 		<string>CoinbaseIcons.ttf</string>
 	</array>
 </dict>

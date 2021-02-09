@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.5 (2/9/2021, 07:14 AM PST) [#12521](https://github.cbhq.net/mono/repo/pull/12521)
+
+#### 🐞 Fixes
+
+- Remove unused font weights and update native to be included when published + swap for .otf version @katherinemartinez [#12521](https://github.cbhq.net/mono/repo/pull/12521)
+
 ## 0.0.4 (2/5/2021 2:30pm PST) [#12399](https://github.cbhq.net/mono/repo/pull/12399)
 
 #### 🚀 Updates
