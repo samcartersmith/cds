@@ -139,3 +139,7 @@ mobile.android:
 .PHONY: mobile.ios
 mobile.ios:
 	cd mobile-playground; RN_PROJECT=cds npx react-native run-ios
+
+.PHONY: release
+release:
+	cd ../../..; npx ts-node eng/shared/design-system/codegen/scripts/prepareRelease.ts --project ./tsconfig.json
