@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat: Add CommonJS build alongside ESM @miles-johnson [#12570](https://github.cbhq.net/mono/repo/pull/12570)
+## 0.0.7 (2/9/2021, 03:30 PM PST) [#12583](https://github.cbhq.net/mono/repo/pull/12583)
+
+#### 🚀 Updates
+
+- Add CommonJS build alongside ESM @miles-johnson [#12570](https://github.cbhq.net/mono/repo/pull/12570)
 
 ## 0.0.6 (2/8/2021, 6:21 PM PST) [#12504](https://github.cbhq.net/mono/repo/pull/12504)
 
