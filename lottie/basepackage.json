@@ -1,18 +1,17 @@
 {
-  "name": "@cds/common",
-  "version": "0.0.8",
-  "description": "Coinbase Design System - Common",
+  "name": "@cds/lottie",
+  "version": "0.0.1",
+  "description": "Coinbase Design System - Lottie",
   "keywords": [
     "cds",
     "design system",
-    "core",
-    "common",
-    "types"
+    "lottie",
+    "animations"
   ],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
-    "directory": "eng/shared/design-system/common"
+    "directory": "eng/shared/design-system/lottie"
   },
   "authors": "Coinbase",
   "main": "lib/index.js",

@@ -7,6 +7,8 @@ filegroup(
         [
             "**/*.ts",
             "**/*.tsx",
+            "**/*.js",
+            "**/*.json",
         ],
         exclude = [
             "**/*.test.*",
@@ -18,24 +20,35 @@ filegroup(
 # All files to lint and test
 filegroup(
     name = "source",
-    srcs = [":runtime_source"] + glob(
+    srcs = glob(
         [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.js",
             "**/*.test.*",
             "**/*.mdx",
+        ],
+        exclude = [
+            "**/*.json",
         ],
     ),
     visibility = ["//visibility:public"],
 )
 
-DEPENDENCIES = []
+DEPENDENCIES = [
+    "@npm//react",
+]
 
 PEER_DEPENDENCIES = []
 
 cds_package(
-    name = "_template",
+    name = "lottie",
     srcs = [":runtime_source"],
     dependencies = DEPENDENCIES,
-    monorepo_dependencies = [],
+    monorepo_dependencies = [
+        "//eng/shared/design-system/common:package_json",
+        "//eng/shared/design-system/utils:package_json",
+    ],
     peer_dependencies = PEER_DEPENDENCIES,
 )
 

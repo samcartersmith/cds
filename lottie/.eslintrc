@@ -1,0 +1,13 @@
+{
+  "rules": {
+    // Dont import from itself
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": ["@cds/lottie"],
+        "patterns": ["@cds/lottie/*"]
+      }
+    ],
+    "import/extensions": ["error", "never", {"json": "always"}]
+  }
+}

@@ -5,6 +5,7 @@ load("//tools:def.bzl", "node_package_gen")
 PACKAGES = [
     "common",
     "icons",
+    "lottie",
     "mobile",
     "utils",
     "web",

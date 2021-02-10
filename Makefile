@@ -2,15 +2,16 @@ define HELP_TEXT
 Help:
 -----
   $$ make build.common              -- Build the `common` package.
-  $$ make build.fonts              	-- Build the `fonts` package.
-  $$ make build.icons              	-- Build the `icons` package.
-  $$ make build.mobile             	-- Build the `mobile` package.
-  $$ make build.theme              	-- Build the `theme` package.
-  $$ make build.utils              	-- Build the `utils` package.
-  $$ make build.web              	-- Build the `web` package.
-  $$ make test                     	-- Run web and mobile unit tests.
-  $$ make test.mobile              	-- Run mobile unit tests.
-  $$ make test.web                 	-- Run web unit tests.
+  $$ make build.fonts               -- Build the `fonts` package.
+  $$ make build.icons               -- Build the `icons` package.
+  $$ make build.lottie              -- Build the `lottie` package.
+  $$ make build.mobile              -- Build the `mobile` package.
+  $$ make build.theme               -- Build the `theme` package.
+  $$ make build.utils               -- Build the `utils` package.
+  $$ make build.web                 -- Build the `web` package.
+  $$ make test                      -- Run web and mobile unit tests.
+  $$ make test.mobile               -- Run mobile unit tests.
+  $$ make test.web                  -- Run web unit tests.
   $$ make codegen			-- Generate code in design system.
   $$ make lint				-- Run eslint on all sources.
   $$ make new.package name=<name>	-- Scaffold a new package with the defined name.
@@ -40,6 +41,10 @@ build.fonts:
 .PHONY: build.icons
 build.icons:
 	bazel build icons:package
+
+.PHONY: build.lottie
+build.lottie:
+	bazel build lottie:package
 
 .PHONY: build.mobile
 build.mobile:
@@ -81,6 +86,7 @@ lint:
 	bazel run :eslint_codemod
 	bazel run :eslint_common
 	bazel run :eslint_icons
+	bazel run :eslint_lottie
 	bazel run :eslint_mobile
 	bazel run :eslint_utils
 	bazel run :eslint_web

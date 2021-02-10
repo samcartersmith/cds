@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.8 (2/10/2021, 10:30 AM PST) [#12628](https://github.cbhq.net/mono/repo/pull/12628)
+
+#### 🐞 Fixes
+
+- Add Palette type which is the return type of usePalette @katherinemartinez [#12628](https://github.cbhq.net/mono/repo/pull/12628)
+
 ## 0.0.7 (2/9/2021, 03:30 PM PST) [#12583](https://github.cbhq.net/mono/repo/pull/12583)
 
 #### 🚀 Updates

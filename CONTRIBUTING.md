@@ -24,7 +24,7 @@ Don't forget to add an index.ts to that component's example directory with expor
 
 ## Create A New Package
 
-1. Run `make new.package --name=<package>`.
+1. Run `make new.package name=<package>`.
 2. Edit [cds_package.bzl](./cds_package.bzl) `PACKAGES` to include the new package.
 3. Check out `<package>/basepackage.json` and `<package>/BUILD.bazel` and make necessary updates.
 4. Update `<package>/CHANGELOG.md`.
