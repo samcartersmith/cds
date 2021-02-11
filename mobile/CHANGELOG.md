@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add HStack and VStack components [#12758](https://github.cbhq.net/mono/repo/pull/12758)
+
 ## 0.0.8 (2/9/2021, 03:30 PM PST) [#12583](https://github.cbhq.net/mono/repo/pull/12583)
 
 #### 🚀 Updates

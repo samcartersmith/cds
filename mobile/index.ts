@@ -1,6 +1,8 @@
 export * from '@cds/common';
 export { SystemProvider as ThemeProvider } from '@cds/common';
 export * from './Box/Box';
+export * from './Box/VStack';
+export * from './Box/HStack';
 export * from './Offset/Offset';
 export * from './Text/Text';
 export * from './hooks/usePalette';
