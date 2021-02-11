@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- fix: Move react from deps to peer deps @katherinemartinez [#12762](https://github.cbhq.net/mono/repo/pull/12762)
+
 ## 0.0.1 (2/10/2021, 10:30 AM PST) [#12628](https://github.cbhq.net/mono/repo/pull/12628)
 
 #### 🚀 Updates

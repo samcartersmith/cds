@@ -35,11 +35,11 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-DEPENDENCIES = [
+DEPENDENCIES = []
+
+PEER_DEPENDENCIES = [
     "@npm//react",
 ]
-
-PEER_DEPENDENCIES = []
 
 cds_package(
     name = "lottie",
