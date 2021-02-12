@@ -2,19 +2,6 @@ load("@npm//@babel/cli:index.bzl", "babel")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("//tools:def.bzl", "node_package_gen")
 
-PACKAGES = [
-    "common",
-    "icons",
-    "lottie",
-    "mobile",
-    "utils",
-    "web",
-]
-
-STATIC_PACKAGES = [
-    "fonts",
-]
-
 BABEL_ARGS = [
     "--config-file ./$(execpath //eng/shared/design-system:babel.config.js)",
     "--out-dir $(@D)",

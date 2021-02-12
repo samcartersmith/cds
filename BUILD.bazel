@@ -3,7 +3,7 @@ load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "stylelint_tes
 load("@npm//serve:index.bzl", "serve")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
-load("//eng/shared/design-system:cds_package.bzl", "PACKAGES", "STATIC_PACKAGES")
+load(":config.bzl", "DEPENDENCIES", "PACKAGES", "STATIC_PACKAGES")
 
 exports_files([
     ".babelrc.js",
@@ -15,7 +15,7 @@ exports_files([
 filegroup(
     name = "build_source",
     srcs = [
-        "//eng/shared/design-system/%s:build_source" % p
+        "//eng/shared/design-system/%s:runtime_source" % p
         for p in (PACKAGES + STATIC_PACKAGES)
     ],
     visibility = ["//visibility:public"],
@@ -133,12 +133,10 @@ TEST_DEPS = [
     "@npm//babel-jest",
     "@npm//babel-plugin-module-resolver",
     "@npm//c8",  # Used for bazel coverage in CI
-    "@npm//humps",
     "@npm//jest",
-    "@npm//linaria",
     "@npm//react",
     "@npm//text-encoding",
-]
+] + DEPENDENCIES
 
 jest_test(
     name = "unit_tests_web",
@@ -153,7 +151,6 @@ jest_test(
         "@npm//@testing-library/jest-dom",
         "@npm//@testing-library/react-hooks",
         "@npm//@testing-library/react",
-        "@npm//type-fest",
     ],
 )
 
@@ -199,7 +196,7 @@ ts_node(
         "@npm//tsconfig-paths",
         "@npm//webfont",
         "@npm//yargs",
-    ],
+    ] + DEPENDENCIES,
 )
 
 ts_node(
@@ -229,7 +226,6 @@ ts_node(
         "@npm//chalk",
     ],
 )
-# *** codegen end ***
 
 # *****************
 # *** storybook ***
@@ -271,7 +267,6 @@ build_storybook(
         "@npm//@storybook/react",
         "@npm//@storybook/theming",
         "@npm//@types/babel__template",
-        "@npm//@types/humps",
         "@npm//@types/react",
         "@npm//@types/react-dom",
         "@npm//@types/webpack-env",
@@ -281,14 +276,12 @@ build_storybook(
         "@npm//destyle.css",
         "@npm//dotenv-webpack",
         "@npm//html-webpack-plugin",
-        "@npm//humps",
-        "@npm//linaria",
         "@npm//react",
         "@npm//react-dom",
         "@npm//storybook-addon-designs",
         "@npm//tsconfig-paths-webpack-plugin",
         "@npm//typescript",
-    ],
+    ] + DEPENDENCIES,
     output_dir = True,
     visibility = ["//visibility:public"],
 )
@@ -301,12 +294,12 @@ serve(
     ],
     data = [":storybook"],
 )
-# *** codegen storybook ***
 
 # *************************
 # ***      Percy        ***
 # *** visual diff tests ***
 # *************************
+
 build_storybook(
     name = "storybook_build_for_percy",
     args = [
@@ -345,7 +338,6 @@ build_storybook(
         "@npm//@storybook/react",
         "@npm//@storybook/theming",
         "@npm//@types/babel__template",
-        "@npm//@types/humps",
         "@npm//@types/react",
         "@npm//@types/react-dom",
         "@npm//@types/webpack-env",
@@ -355,14 +347,12 @@ build_storybook(
         "@npm//destyle.css",
         "@npm//dotenv-webpack",
         "@npm//html-webpack-plugin",
-        "@npm//humps",
-        "@npm//linaria",
         "@npm//react",
         "@npm//react-dom",
         "@npm//storybook-addon-designs",
         "@npm//tsconfig-paths-webpack-plugin",
         "@npm//typescript",
-    ],
+    ] + DEPENDENCIES,
     output_dir = True,
     visibility = ["//visibility:public"],
 )
@@ -375,4 +365,3 @@ percy_storybook(
     ],
     data = ["//eng/shared/design-system:storybook_build_for_percy"],
 )
-# *** end visual diff tests ***

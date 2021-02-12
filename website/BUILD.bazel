@@ -1,4 +1,5 @@
 load("@npm//@docusaurus/core:index.bzl", "docusaurus")
+load("//eng/shared/design-system:config.bzl", "DEPENDENCIES")
 
 filegroup(
     name = "source",
@@ -33,7 +34,6 @@ DATA = [
     "@npm//react-dom",
     "@npm//@docusaurus/core",
     "@npm//@docusaurus/preset-classic",
-    "@npm//linaria",
     "@npm//@mdx-js/react",
     "@npm//@docusaurus/theme-live-codeblock",
     # dev dependencies
@@ -50,7 +50,7 @@ DATA = [
     "@npm//@types/react",
     "@npm//@types/react-dom",
     "@npm//@types/react-router-dom",
-]
+] + DEPENDENCIES
 
 docusaurus(
     name = "build",

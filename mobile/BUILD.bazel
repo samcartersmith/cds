@@ -1,4 +1,5 @@
 load("//eng/shared/design-system:cds_package.bzl", "cds_package")
+load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
 
 # Files to publish to NPM
 filegroup(
@@ -27,25 +28,13 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-PEER_DEPENDENCIES = [
-    "@npm//react",
-    "@npm//react-native",
-]
-
 cds_package(
     name = "mobile",
     srcs = [":runtime_source"],
-    dependencies = [],
+    dependencies = DEPENDENCIES,
     monorepo_dependencies = [
         "//eng/shared/design-system/common:package_json",
         "//eng/shared/design-system/utils:package_json",
     ],
     peer_dependencies = PEER_DEPENDENCIES,
-)
-
-# Useful in Build of monorepo consumers
-filegroup(
-    name = "build_source",
-    srcs = [":runtime_source"] + PEER_DEPENDENCIES,
-    visibility = ["//visibility:public"],
 )

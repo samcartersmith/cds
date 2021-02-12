@@ -1,6 +1,6 @@
 load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_file_asset")
 load("//eng/shared/design-system:cds_deployable.bzl", "cds_deployable")
-load("//eng/shared/design-system:cds_package.bzl", "PACKAGES", "STATIC_PACKAGES")
+load("//eng/shared/design-system:config.bzl", "PACKAGES", "STATIC_PACKAGES")
 
 project_settings(
     caf = False,

@@ -1,4 +1,5 @@
 load("//eng/shared/design-system:cds_package.bzl", "cds_package")
+load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
 
 # Files to publish to NPM
 filegroup(
@@ -27,21 +28,10 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-DEPENDENCIES = []
-
-PEER_DEPENDENCIES = []
-
 cds_package(
     name = "_template",
     srcs = [":runtime_source"],
     dependencies = DEPENDENCIES,
     monorepo_dependencies = [],
     peer_dependencies = PEER_DEPENDENCIES,
-)
-
-# Useful in Build of monorepo consumers
-filegroup(
-    name = "build_source",
-    srcs = [":runtime_source"] + DEPENDENCIES + PEER_DEPENDENCIES,
-    visibility = ["//visibility:public"],
 )
