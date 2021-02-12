@@ -1,5 +1,6 @@
 DEPENDENCIES = [
     "@npm//linaria",
+    "@npm//react-aria",
 ]
 
 PEER_DEPENDENCIES = [

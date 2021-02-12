@@ -6,6 +6,7 @@ import { View, FlatList, TouchableHighlight } from 'react-native';
 
 const components = [
   { key: 'Box' },
+  { key: 'Button' },
   { key: 'Text', label: 'Text (all)' },
   { key: 'TextBody' },
   { key: 'TextCaption' },

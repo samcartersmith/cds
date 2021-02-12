@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import { Box, BoxProps } from './Box';
 
-const DEFAULT_CLASS = 'cds-box cds-background';
+const DEFAULT_CLASS = 'cds-box';
 
 function expectClassName<K extends keyof BoxProps>(
   prop: K,

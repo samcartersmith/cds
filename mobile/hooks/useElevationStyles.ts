@@ -3,34 +3,23 @@ import { useMemo } from 'react';
 import { ElevationLevels } from '@cds/common';
 import { Platform, ViewStyle } from 'react-native';
 
-import { usePalette } from '../hooks/usePalette';
-
 export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | undefined => {
-  const palette = usePalette();
-
   return useMemo(() => {
     if (elevation === undefined) {
       return undefined;
     }
-
-    // TODO
-    const borderWidth = 1;
 
     // Must avoid background color for shadows!
     // https://stackoverflow.com/a/59409707
     const styles = Platform.select({
       ios: {
         1: {
-          borderWidth,
-          borderColor: palette.divider,
           shadowColor: '#000',
           shadowOffset: { width: 0, height: 8 },
           shadowOpacity: 0.02,
           shadowRadius: 12,
         },
         2: {
-          borderWidth,
-          borderColor: palette.divider,
           shadowColor: '#000',
           shadowOffset: { width: 0, height: 8 },
           shadowOpacity: 0.12,
@@ -44,5 +33,5 @@ export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | und
     });
 
     return styles?.[elevation];
-  }, [palette.divider, elevation]);
+  }, [elevation]);
 };

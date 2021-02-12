@@ -3,12 +3,12 @@ import { typographyConfig } from './configs/typographyConfig';
 import { Spectrum } from './Spectrum/Spectrum';
 
 const templates = {
-  'theme/scale/types.ts': {
+  'common/scale/types.ts': {
     types: {
       Scale: scales,
     },
   },
-  'theme/spectrum/types.ts': {
+  'common/spectrum/types.ts': {
     types: {
       Spectrum: Spectrum.modes,
       SpectrumHue: Spectrum.hueNames,

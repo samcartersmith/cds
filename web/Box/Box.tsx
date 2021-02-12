@@ -40,7 +40,7 @@ export interface BoxProps<As extends BoxElement = 'div'> extends BoxBaseProps {
 export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
   const {
     as: Tag = 'div',
-    background = 'background',
+    background,
     bordered,
     children,
     overflow,
@@ -84,7 +84,7 @@ export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
     <Tag
       className={cx(
         styles.box,
-        backgroundColorStyles[background],
+        background && backgroundColorStyles[background === true ? 'background' : background],
         alignContent && styles.alignContent[alignContent],
         alignItems && styles.alignItems[alignItems],
         alignSelf && styles.alignSelf[alignSelf],

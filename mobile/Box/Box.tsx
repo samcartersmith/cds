@@ -22,7 +22,7 @@ export interface BoxProps
 
 const InternalBox = ({
   animated,
-  background = 'background',
+  background,
   bordered,
   children,
   dangerouslySetStyle,
@@ -45,7 +45,7 @@ const InternalBox = ({
   maxWidth,
   minHeight,
   minWidth,
-  width,
+  width = '100%',
   // Position
   bottom,
   left,
@@ -114,17 +114,19 @@ const InternalBox = ({
     [bottom, left, position, right, top, zIndex]
   );
   const boxStyles = useMemo(() => {
-    const style: ViewStyle = {
-      backgroundColor: palette[background],
-    };
+    const style: ViewStyle = {};
+
+    if (background) {
+      style.backgroundColor = palette[background === true ? 'background' : background];
+    }
 
     if (bordered) {
-      style.borderWidth = 1; // TODO
+      style.borderWidth = 1;
       style.borderColor = palette.stroke;
     }
 
     if (rounded) {
-      style.borderRadius = 10;
+      style.borderRadius = 8;
     }
 
     return style;

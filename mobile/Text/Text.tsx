@@ -124,8 +124,12 @@ const createText = (name: Typography) => {
         spacingStyles,
         scales[scale].typography[name],
         textStyles,
-        { color: palette[color], textAlign, textTransform: transform, lineHeight },
-
+        {
+          color: palette[color],
+          textAlign,
+          textTransform: transform,
+          lineHeight,
+        },
         tabularNumbers && styles.tabularNumbers,
         underline && styles.underline,
         dangerouslySetStyle as TextStyle,

@@ -72,7 +72,7 @@ export const border = css`
 `;
 
 export const borderRadius = css`
-  border-radius: 4px;
+  border-radius: 8px;
 `;
 
 export const flexDirection: CSSMap<FlexStyles['flexDirection']> = {

@@ -88,6 +88,7 @@ Set the background color of the box.
   required={false}
   defaultValue=""
   mobileOptions={[
+    'true',
     'background',
     'backgroundAlternate',
     'backgroundOverlay',
@@ -97,6 +98,7 @@ Set the background color of the box.
     'secondary',
   ]}
   webOptions={[
+    'true',
     'background',
     'backgroundAlternate',
     'backgroundOverlay',
@@ -136,6 +138,41 @@ Add a border around the box.
 />
 
 <ComponentDetails componentName="Box" templateName="bottom" />
+
+### children
+
+Content to render within the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'null',
+    'string',
+    'number',
+    'false',
+    'true',
+    '{}',
+    'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
+    'ReactNodeArray',
+    'ReactPortal',
+  ]}
+  webOptions={[
+    'null',
+    'string',
+    'number',
+    'false',
+    'true',
+    '{}',
+    'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
+    'ReactNodeArray',
+    'ReactPortal',
+  ]}
+/>
+
+<ComponentDetails componentName="Box" templateName="children" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 

@@ -3,4 +3,242 @@ id: button
 title: Button
 ---
 
-🚧 Coming soon!
+import { ApiDetails } from '@cds/website/components/ApiDetails';
+import { Badge } from '@cds/website/components/Badge';
+import { ComponentDetails } from '@cds/website/components/ComponentDetails';
+
+<ComponentDetails componentName="Button" templateName="intro" />
+
+## Props
+
+### block
+
+Change to block and expand to 100% of parent width.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="block"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Button" templateName="block" />
+
+### children
+
+Children to render within the button.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'string',
+    'number',
+    'false',
+    'true',
+    '{}',
+    'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
+    'ReactNodeArray',
+    'ReactPortal',
+  ]}
+  webOptions={[
+    'string',
+    'number',
+    'false',
+    'true',
+    '{}',
+    'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
+    'ReactNodeArray',
+    'ReactPortal',
+  ]}
+/>
+
+<ComponentDetails componentName="Button" templateName="children" />
+
+### compact
+
+Reduce the inner spacing.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Button" templateName="compact" />
+
+### disabled
+
+Mark the button as disabled.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Button" templateName="disabled" />
+
+### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="feedback"
+  required={false}
+  defaultValue="none"
+  mobileOptions={['light', 'none', 'normal', 'heavy']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Button" templateName="feedback" />
+
+### loading
+
+Mark the button as loading and display a spinner.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="loading"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Button" templateName="loading" />
+
+### name
+
+Uniquely identify the button within a form.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="name"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Button" templateName="name" />
+
+### onPress
+
+Handler that is called when the press is released over the target.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="Button" templateName="onPress" />
+
+### onPressChange <Badge variant="web" />
+
+Handler that is called when the press state changes.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="onPressChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(isPressed: boolean) => void']}
+/>
+
+<ComponentDetails componentName="Button" templateName="onPressChange" />
+
+### onPressEnd <Badge variant="web" />
+
+Handler that is called when a press interaction ends, either
+over the target or when the pointer leaves the target.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="onPressEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="Button" templateName="onPressEnd" />
+
+### onPressStart <Badge variant="web" />
+
+Handler that is called when a press interaction starts.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="onPressStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="Button" templateName="onPressStart" />
+
+### onPressUp <Badge variant="web" />
+
+Handler that is called when a press is released over the target, regardless of
+whether it started on the target or not.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="onPressUp"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="Button" templateName="onPressUp" />
+
+### testID <Badge variant="mobile" />
+
+@internal Testing purposes.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Button" templateName="testID" />
+
+### variant
+
+Toggle design and visual variants.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="variant"
+  required={false}
+  defaultValue="primary"
+  mobileOptions={['primary', 'negative', 'positive', 'secondary']}
+  webOptions={['primary', 'negative', 'positive', 'secondary']}
+/>
+
+<ComponentDetails componentName="Button" templateName="variant" />
+
+<ComponentDetails componentName="Button" templateName="outro" />

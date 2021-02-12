@@ -24,7 +24,7 @@ const Example = ({ children, title }: ExampleProps) => {
       {title && <TextTitle3>{title}</TextTitle3>}
 
       {items.map((item, index) => (
-        <View key={index} style={{ paddingTop: 12 }}>
+        <View key={index} style={{ paddingTop: 12, alignItems: 'flex-start' }}>
           {item}
         </View>
       ))}

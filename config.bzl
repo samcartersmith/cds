@@ -5,6 +5,7 @@ DEPENDENCIES = [
     "@npm//linaria",
     "@npm//humps",
     "@npm//type-fest",
+    "@npm//react-aria",
 ]
 
 PACKAGES = [

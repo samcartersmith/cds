@@ -1,6 +1,7 @@
 load("@npm//@babel/cli:index.bzl", "babel")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("//tools:def.bzl", "node_package_gen")
+load(":config.bzl", "DEPENDENCIES")
 
 BABEL_ARGS = [
     "--config-file ./$(execpath //eng/shared/design-system:babel.config.js)",
@@ -21,11 +22,10 @@ BABEL_DEPS = [
     "@npm//@babel/preset-typescript",
     "@npm//babel-plugin-module-resolver",
     "@npm//chalk",
-    "@npm//linaria",
     "@npm//source-map",
     "@npm//stylis",
     "@npm//yargs",
-]
+] + DEPENDENCIES
 
 def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependencies):
     package_source_path = "eng/shared/design-system/%s" % name

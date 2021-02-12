@@ -4,10 +4,10 @@ import 'react-native-gesture-handler';
 import { ThemeProvider, usePalette } from '@cds/mobile';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import List from './src';
 import BoxScreen from './src/Box';
+import ButtonScreen from './src/Button';
 import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
 import TextCaptionScreen from './src/TextCaption';
@@ -55,6 +55,7 @@ const App = () => {
             options={{ title: 'Coinbase Design System' }}
           />
           <Stack.Screen name="Box" component={BoxScreen} />
+          <Stack.Screen name="Button" component={ButtonScreen} />
           <Stack.Screen name="Text" component={TextScreen} options={{ title: 'Text (all)' }} />
           <Stack.Screen name="TextBody" component={TextBodyScreen} />
           <Stack.Screen name="TextCaption" component={TextCaptionScreen} />

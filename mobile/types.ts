@@ -21,3 +21,5 @@ export interface DangerouslySetStyle<T, IsAnimated extends boolean = boolean> {
    */
   dangerouslySetStyle?: IsAnimated extends true ? Animated.WithAnimatedValue<T | T[]> : T | T[];
 }
+
+export type HapticFeedbackType = 'light' | 'normal' | 'heavy' | 'none';

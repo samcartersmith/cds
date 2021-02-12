@@ -4,4 +4,4 @@ import { Box, BoxProps } from './Box';
 
 export const VStack: React.FC<BoxProps> = props => <Box {...props} flexDirection="column" />;
 
-export { BoxProps as VStackProps };
+export type { BoxProps as VStackProps };

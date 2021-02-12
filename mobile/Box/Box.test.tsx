@@ -17,7 +17,7 @@ describe('Box', () => {
     expect(result.UNSAFE_queryAllByType(View)).toHaveLength(1);
   });
 
-  it('renders background by default', async () => {
+  it('renders no background by default', async () => {
     const { getByText } = render(
       <Box>
         <Text>Child</Text>
@@ -26,9 +26,7 @@ describe('Box', () => {
 
     await waitFor(() => getByText('Child'));
 
-    expect(getByText('Child').parent).toHaveStyle({
-      backgroundColor: 'rgba(255,255,255,1)',
-    });
+    expect(getByText('Child').parent).not.toHaveProperty('backgroundColor');
   });
 
   it('renders alternate background', async () => {
@@ -70,9 +68,8 @@ describe('Box', () => {
     await waitFor(() => getByText('Child'));
 
     expect(getByText('Child').parent).toHaveStyle({
-      backgroundColor: 'rgba(255,255,255,1)',
       borderColor: 'rgba(91,97,110,0.66)',
-      borderRadius: 10,
+      borderRadius: 8,
       borderWidth: 1,
     });
   });
@@ -87,8 +84,6 @@ describe('Box', () => {
     await waitFor(() => getByText('Child'));
 
     expect(getByText('Child').parent).toHaveStyle({
-      borderWidth: 1,
-      borderColor: 'rgba(91,97,110,0.33)',
       shadowColor: '#000',
       shadowOpacity: 0.02,
       shadowRadius: 12,
@@ -105,8 +100,6 @@ describe('Box', () => {
     await waitFor(() => getByText('Child'));
 
     expect(getByText('Child').parent).toHaveStyle({
-      borderWidth: 1,
-      borderColor: 'rgba(91,97,110,0.33)',
       shadowColor: '#000',
       shadowOpacity: 0.12,
       shadowRadius: 24,

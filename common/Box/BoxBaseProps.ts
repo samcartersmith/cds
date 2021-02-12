@@ -43,9 +43,10 @@ export interface PositionStyles {
 
 export interface BoxBaseProps extends DimensionStyles, FlexStyles, SpacingStyles, PositionStyles {
   /** Set the background color of the box. */
-  background?: Exclude<PaletteBackground, 'divider' | 'stroke'>;
+  background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
   /** Add a border around the box. */
   bordered?: boolean;
+  /** Content to render within the box. */
   children?: React.ReactNode;
   /** Round the corners of the box. */
   rounded?: boolean;

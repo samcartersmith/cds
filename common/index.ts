@@ -1,5 +1,6 @@
 export * from './hooks/UseSpacingStylesProps';
 export * from './Box/BoxBaseProps';
+export * from './Button/ButtonBaseProps';
 export * from './Text/TextBaseProps';
 export * from './Text/Typography';
 export * from './types';
