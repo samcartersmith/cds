@@ -41,7 +41,6 @@ DATA = [
     "@npm//url-loader",
     "@npm//@babel/preset-typescript",
     "@npm//babel-plugin-module-resolver",
-    "@npm//babel-plugin-transform-async-to-promises",
     "@npm//@docusaurus/module-type-aliases",
     "@npm//tsconfig-paths-webpack-plugin",
     # types

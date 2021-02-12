@@ -20,7 +20,6 @@ BABEL_DEPS = [
     "@npm//@babel/preset-react",
     "@npm//@babel/preset-typescript",
     "@npm//babel-plugin-module-resolver",
-    "@npm//babel-plugin-transform-async-to-promises",
     "@npm//chalk",
     "@npm//linaria",
     "@npm//source-map",

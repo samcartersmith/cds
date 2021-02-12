@@ -10,12 +10,6 @@ module.exports = api => {
   api.cache(true);
 
   return {
-    plugins: [
-      [
-        'babel-plugin-transform-async-to-promises',
-        { inlineHelpers: true, target: isESM ? 'es6' : 'es5' },
-      ],
-    ],
     presets: [
       [
         '@babel/preset-env',
