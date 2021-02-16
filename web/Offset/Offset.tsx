@@ -1,12 +1,10 @@
 import * as React from 'react';
 
-import { UseSpacingStylesProps } from '@cds/common';
+import { OffsetBaseProps } from '@cds/common';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 
-export type OffsetProps = Omit<UseSpacingStylesProps, 'isInverted'>;
-
-export const Offset: React.FC<OffsetProps> = ({
+export const Offset: React.FC<OffsetBaseProps> = ({
   all,
   top,
   bottom,

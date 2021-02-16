@@ -1,7 +1,7 @@
 import * as React from 'react';
 
+import { Spectrum } from '../types';
 import { SpectrumContext } from './context';
-import { Spectrum } from './types';
 import { useSpectrum } from './useSpectrum';
 
 type SpectrumProviderProps = {

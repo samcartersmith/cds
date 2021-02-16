@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { emptyObject } from '@cds/utils';
 
+import { PaletteConfig } from '../types';
 import { defaultPalette } from './constants';
 import { PaletteConfigContext } from './context';
-import { PaletteConfig } from './types';
 import { usePaletteConfig } from './usePaletteConfig';
 
 export type PaletteConfigProviderProps = {

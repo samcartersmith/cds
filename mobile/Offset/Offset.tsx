@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import { UseSpacingStylesProps } from '@cds/common';
+import { OffsetBaseProps } from '@cds/common';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { OmitStyle, DangerouslySetStyle } from '../types';
 
 export interface OffsetProps
-  extends UseSpacingStylesProps,
-    OmitStyle<ViewProps, 'isInverted'>,
+  extends OffsetBaseProps,
+    OmitStyle<ViewProps>,
     DangerouslySetStyle<ViewStyle> {}
 
 export const Offset: React.FC<OffsetProps> = ({

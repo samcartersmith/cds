@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add arrayToObject @katherinemartinez [#12937](https://github.cbhq.net/mono/repo/pull/12937)
+
 ## 0.0.6 (2/10/2021, 10:30 AM PST) [#12628](https://github.cbhq.net/mono/repo/pull/12628)
 
 #### 🚀 Updates

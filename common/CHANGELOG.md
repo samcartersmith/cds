@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- types: Move types to folder @katherinemartinez [#12937](https://github.cbhq.net/mono/repo/pull/12937)
+
 ## 0.0.8 (2/10/2021, 10:30 AM PST) [#12628](https://github.cbhq.net/mono/repo/pull/12628)
 
 #### 🐞 Fixes

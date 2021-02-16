@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { PaletteBackground } from '../palette/types';
-import { FixedValue, PercentageValue, SpacingStyles } from '../types';
+import { PaletteBackground } from './Palette';
+import { SpacingProps } from './SpacingProps';
 
+export type FixedValue = number | string; // px
+export type PercentageValue = string;
 export type DimensionValue = 'auto' | FixedValue | PercentageValue;
 
 export interface DimensionStyles {
@@ -15,9 +17,7 @@ export interface DimensionStyles {
 }
 
 export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
-
 export type FlexAlignCommon = FlexAxisValue | 'stretch';
-
 export type FlexSpaceCommon = 'space-between' | 'space-around';
 
 export interface FlexStyles {
@@ -41,7 +41,7 @@ export interface PositionStyles {
   zIndex?: number;
 }
 
-export interface BoxBaseProps extends DimensionStyles, FlexStyles, SpacingStyles, PositionStyles {
+export interface BoxBaseProps extends DimensionStyles, FlexStyles, SpacingProps, PositionStyles {
   /** Set the background color of the box. */
   background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
   /** Add a border around the box. */

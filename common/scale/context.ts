@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Scale } from './types';
+import { Scale } from '../types';
 
 export const DEFAULT_SCALE = 'large' as const;
 

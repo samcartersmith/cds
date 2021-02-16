@@ -1,8 +1,8 @@
 import type { ReactChild, ReactFragment } from 'react';
 
-import { SpacingStyles } from '../types';
+import { SpacingProps } from './SpacingProps';
 
-export interface TextBaseProps extends SpacingStyles {
+export interface TextBaseProps extends SpacingProps {
   children?: ReactChild | ReactFragment;
   /**
    * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to left on Android.

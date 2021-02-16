@@ -1,6 +1,6 @@
 import * as React from 'react';
 
+import { InternalPaletteConfig } from '../types';
 import { defaultPalette } from './constants';
-import { InternalPaletteConfig } from './types';
 
 export const PaletteConfigContext = React.createContext<InternalPaletteConfig>(defaultPalette);

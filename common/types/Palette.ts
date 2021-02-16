@@ -1,7 +1,7 @@
-import { ReadonlyDeep } from 'type-fest';
+import type { ReadonlyDeep } from 'type-fest';
 
-import { SpectrumAlias, SpectrumAliasWithOpacity } from '../spectrum/types';
-import { defaultPalette, paletteBackgrounds, paletteForegrounds } from './constants';
+import { defaultPalette, paletteBackgrounds, paletteForegrounds } from '../palette/constants';
+import type { SpectrumAlias, SpectrumAliasWithOpacity } from './Spectrum';
 
 export type PaletteAlias = keyof typeof defaultPalette;
 export type PaletteValue = SpectrumAlias | SpectrumAliasWithOpacity;

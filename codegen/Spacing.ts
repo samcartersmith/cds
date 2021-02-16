@@ -1,35 +1,29 @@
-import { SpacingScale, spacingScale } from '@cds/common';
-import { mapValues } from '@cds/utils';
+import { mapValues, arrayToObject } from '@cds/utils';
 
-import { spacingConfig } from './configs/spacingConfig';
+import { spacingConfig, spacingScaleWithoutZero, spacingDirections } from './configs/spacingConfig';
 
-const escape = (input: number) => String(input).replace('.', '\\\\.');
-
-const directions = ['all', 'top', 'bottom', 'left', 'right'] as const;
-type SpacingDirection = typeof directions[number];
+const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.') as `${T}`;
 
 export const Spacing = {
-  css: (attribute: 'padding' | 'margin'): Record<SpacingDirection, Record<SpacingScale, string>> =>
-    directions.reduce((map, suffix) => {
-      map[suffix] = spacingScale.reduce((cssMap, spacing) => {
-        const fullAttribute = `${attribute}${suffix === 'all' ? '' : `-${suffix}`}`;
-        const value =
-          attribute === 'padding'
-            ? `var(--spacing-${escape(spacing)})`
-            : `calc(-1 * var(--spacing-${escape(spacing)}))`;
-        cssMap[spacing] = `css\`
-          ${fullAttribute}: ${value}
-        \``;
-        return cssMap;
-      }, {} as Record<SpacingScale, string>);
-      return map;
-    }, {} as Record<SpacingDirection, Record<SpacingScale, string>>),
+  css: (attribute: 'padding' | 'margin') => {
+    return mapValues(arrayToObject(spacingDirections), direction => {
+      return mapValues(arrayToObject(spacingScaleWithoutZero), spacing => {
+        const fullAttribute = `${attribute}${direction === 'all' ? '' : `-${direction}`}` as const;
+        const escapedPadding = `var(--spacing-${escape(spacing)})` as const;
+        const escapedMargin = `calc(-1 * var(--spacing-${escape(spacing)}))` as const;
+        const value = attribute === 'padding' ? escapedPadding : escapedMargin;
+        return `css\`
+            ${fullAttribute}: ${value}
+          \``;
+      });
+    });
+  },
   scaleCss: mapValues(spacingConfig, scaleFunc =>
     Object.fromEntries(
-      spacingScale.map(size => [`--spacing-${escape(size)}`, `${scaleFunc(size)}px`])
+      spacingScaleWithoutZero.map(size => [`--spacing-${escape(size)}`, `${scaleFunc(size)}px`])
     )
   ),
   mobile: mapValues(spacingConfig, scaleFunc =>
-    Object.fromEntries(spacingScale.map(size => [size, scaleFunc(size)]))
+    Object.fromEntries(spacingScaleWithoutZero.map(size => [size, scaleFunc(size)]))
   ),
 };

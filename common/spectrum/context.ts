@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Spectrum } from './types';
+import { Spectrum } from '../types';
 
 export const DEFAULT_SPECTRUM = 'light';
 

@@ -1,4 +1,4 @@
-import { mapValues, toCssVarFn } from '@cds/utils';
+import { arrayToObject, mapValues, toCssVarFn } from '@cds/utils';
 
 export const defaultPalette = {
   foreground: 'gray100',
@@ -42,14 +42,6 @@ export const paletteBackgrounds = [
   'positive',
   'negative',
 ] as const;
-
-const arrayToObject = <T extends string>(arr: T[] | Readonly<T[]>) =>
-  [...arr].reduce((prev, next) => {
-    return {
-      ...prev,
-      [`${next}`]: next,
-    };
-  }, {} as { [key in T]: key });
 
 const foregroundMap = arrayToObject(paletteForegrounds);
 const backgroundMap = arrayToObject(paletteBackgrounds);

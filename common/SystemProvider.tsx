@@ -1,11 +1,9 @@
 import * as React from 'react';
 
 import { PaletteConfigProvider } from './palette/PaletteConfigProvider';
-import { PaletteConfig } from './palette/types';
 import { ScaleProvider } from './scale/ScaleProvider';
-import { Scale } from './scale/types';
 import { SpectrumProvider } from './spectrum/SpectrumProvider';
-import { Spectrum } from './spectrum/types';
+import { PaletteConfig, Scale, Spectrum } from './types';
 
 export type SystemProviderProps = {
   /**

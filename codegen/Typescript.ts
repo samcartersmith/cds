@@ -1,14 +1,15 @@
 import { scales } from './configs/scaleConfig';
+import { spacingScaleWithZero } from './configs/spacingConfig';
 import { typographyConfig } from './configs/typographyConfig';
 import { Spectrum } from './Spectrum/Spectrum';
 
 const templates = {
-  'common/scale/types.ts': {
+  'common/types/Scale.ts': {
     types: {
       Scale: scales,
     },
   },
-  'common/spectrum/types.ts': {
+  'common/types/Spectrum.ts': {
     types: {
       Spectrum: Spectrum.modes,
       SpectrumHue: Spectrum.hueNames,
@@ -17,9 +18,14 @@ const templates = {
       SpectrumAliasWithOpacity: '[SpectrumAlias, number]',
     },
   },
-  'common/Text/Typography.ts': {
+  'common/types/Typography.ts': {
     types: {
       Typography: Object.keys(typographyConfig),
+    },
+  },
+  'common/types/SpacingScale.ts': {
+    types: {
+      SpacingScale: spacingScaleWithZero,
     },
   },
 };

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
+import { Scale } from '../types';
 import { ScaleContext } from './context';
-import { Scale } from './types';
 import { useScale } from './useScale';
 
 type ScaleProviderProps = {
