@@ -1,7 +1,7 @@
 import { PropItem } from 'react-docgen-typescript';
 
 type CustomDocgenTag = keyof typeof regexes;
-export type PropOptions = string[] | number[];
+export type PropOptions = string[];
 export type PropStatus = 'isMobileOnly' | 'isWebOnly' | 'isShared';
 export interface CustomPropItem extends PropItem {
   badges?: string[];
@@ -24,10 +24,13 @@ const removeQuotes = (content: string) => {
 
 const formatOptions = (options: string[]) => {
   if (options && options.includes('0')) {
-    return options.map(item => Number(item)).sort((first, second) => first - second);
+    return options
+      .map(item => Number(item))
+      .sort((first, second) => first - second)
+      .map(item => `${item}`);
   }
 
-  return options;
+  return options.sort();
 };
 
 export const normalizeOptions = (type: PropItem['type']) => {
@@ -36,7 +39,7 @@ export const normalizeOptions = (type: PropItem['type']) => {
       ? type.value
           .filter(({ value }: { value: unknown }) => value !== 'undefined')
           .map(({ value }: { value: unknown }) =>
-            typeof value === 'string' ? removeQuotes(value) : value
+            typeof value === 'string' ? removeQuotes(value) : `${value}`
           )
       : []
   );

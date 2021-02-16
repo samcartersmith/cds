@@ -22,8 +22,8 @@ Specifies text alignment. On mobile, the value `justify` is only supported on iO
   propertyName="align"
   required={false}
   defaultValue="start"
-  mobileOptions={['center', 'end', 'start', 'justify']}
-  webOptions={['center', 'start', 'end', 'justify']}
+  mobileOptions={['center', 'end', 'justify', 'start']}
+  webOptions={['center', 'end', 'justify', 'start']}
 />
 
 <ComponentDetails componentName="Text" templateName="align" />
@@ -70,27 +70,27 @@ Text color. Accepts a valid PaletteForeground alias.
   mobileOptions={[
     'foreground',
     'foregroundMuted',
-    'primary',
-    'primaryForeground',
     'negative',
     'negativeForeground',
     'positive',
     'positiveForeground',
+    'primary',
+    'primaryForeground',
     'secondary',
     'secondaryForeground',
   ]}
   webOptions={[
+    'currentColor',
     'foreground',
     'foregroundMuted',
-    'primary',
-    'primaryForeground',
     'negative',
     'negativeForeground',
     'positive',
     'positiveForeground',
+    'primary',
+    'primaryForeground',
     'secondary',
     'secondaryForeground',
-    'currentColor',
   ]}
 />
 
@@ -108,8 +108,8 @@ This is a migration escape hatch. It is not intended to be used normally.
   mobileOptions={[
     'TextStyle',
     'TextStyle[]',
-    'WithAnimatedObject<TextStyle>',
     'WithAnimatedArray<TextStyle>',
+    'WithAnimatedObject<TextStyle>',
   ]}
   webOptions={[]}
 />
@@ -125,7 +125,7 @@ Override line-height. This is deprecated since overriding this prevents line hei
   propertyName="deprecatedLineHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'none']}
+  mobileOptions={['none', 'number']}
   webOptions={[]}
 />
 
@@ -141,7 +141,7 @@ Set CSS display attribute.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['block', 'inline', 'initial']}
+  webOptions={['block', 'initial', 'inline']}
 />
 
 <ComponentDetails componentName="Text" templateName="display" />
@@ -157,7 +157,7 @@ Choose ellipsize mode.
   propertyName="ellipsize"
   required={false}
   defaultValue=""
-  mobileOptions={['head', 'middle', 'tail', 'clip']}
+  mobileOptions={['clip', 'head', 'middle', 'tail']}
   webOptions={[]}
 />
 
@@ -192,7 +192,7 @@ Set overflow behavior.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['truncate', 'clip']}
+  webOptions={['clip', 'truncate']}
 />
 
 <ComponentDetails componentName="Text" templateName="overflow" />
@@ -208,8 +208,8 @@ Set select behavior. On mobile, selectable is binary, none will be not selectabl
   propertyName="selectable"
   required={false}
   defaultValue="text"
-  mobileOptions={['none', 'text', 'all']}
-  webOptions={['none', 'text', 'all']}
+  mobileOptions={['all', 'none', 'text']}
+  webOptions={['all', 'none', 'text']}
 />
 
 <ComponentDetails componentName="Text" templateName="selectable" />
@@ -238,8 +238,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="spacing" />
@@ -251,8 +251,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="spacingBottom" />
@@ -264,8 +264,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="spacingEnd" />
@@ -277,8 +277,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="spacingHorizontal" />
@@ -290,8 +290,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="spacingStart" />
@@ -303,8 +303,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="spacingTop" />
@@ -316,8 +316,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="spacingVertical" />
@@ -350,8 +350,8 @@ Transform text to all uppercase, all lowercase, or capitalized.
   propertyName="transform"
   required={false}
   defaultValue=""
-  mobileOptions={['uppercase', 'lowercase', 'capitalize']}
-  webOptions={['uppercase', 'lowercase', 'capitalize']}
+  mobileOptions={['capitalize', 'lowercase', 'uppercase']}
+  webOptions={['capitalize', 'lowercase', 'uppercase']}
 />
 
 <ComponentDetails componentName="Text" templateName="transform" />

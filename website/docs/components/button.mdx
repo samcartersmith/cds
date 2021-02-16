@@ -36,24 +36,24 @@ Children to render within the button.
   required={true}
   defaultValue=""
   mobileOptions={[
-    'string',
-    'number',
-    'false',
-    'true',
-    '{}',
     'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
     'ReactNodeArray',
     'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
   webOptions={[
-    'string',
-    'number',
-    'false',
-    'true',
-    '{}',
     'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
     'ReactNodeArray',
     'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
 />
 
@@ -98,7 +98,7 @@ Haptic feedback to trigger when being pressed.
   propertyName="feedback"
   required={false}
   defaultValue="none"
-  mobileOptions={['light', 'none', 'normal', 'heavy']}
+  mobileOptions={['heavy', 'light', 'none', 'normal']}
   webOptions={[]}
 />
 
@@ -235,8 +235,8 @@ Toggle design and visual variants.
   propertyName="variant"
   required={false}
   defaultValue="primary"
-  mobileOptions={['primary', 'negative', 'positive', 'secondary']}
-  webOptions={['primary', 'negative', 'positive', 'secondary']}
+  mobileOptions={['negative', 'positive', 'primary', 'secondary']}
+  webOptions={['negative', 'positive', 'primary', 'secondary']}
 />
 
 <ComponentDetails componentName="Button" templateName="variant" />

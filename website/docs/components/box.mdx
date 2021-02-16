@@ -18,8 +18,8 @@ import { ComponentDetails } from '@cds/website/components/ComponentDetails';
   propertyName="alignContent"
   required={false}
   defaultValue=""
-  mobileOptions={['flex-start', 'flex-end', 'center', 'stretch', 'space-between', 'space-around']}
-  webOptions={['flex-start', 'flex-end', 'center', 'stretch', 'space-between', 'space-around']}
+  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
 />
 
 <ComponentDetails componentName="Box" templateName="alignContent" />
@@ -31,8 +31,8 @@ import { ComponentDetails } from '@cds/website/components/ComponentDetails';
   propertyName="alignItems"
   required={false}
   defaultValue=""
-  mobileOptions={['flex-start', 'flex-end', 'center', 'stretch', 'baseline']}
-  webOptions={['flex-start', 'flex-end', 'center', 'stretch', 'baseline']}
+  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
 <ComponentDetails componentName="Box" templateName="alignItems" />
@@ -44,8 +44,8 @@ import { ComponentDetails } from '@cds/website/components/ComponentDetails';
   propertyName="alignSelf"
   required={false}
   defaultValue=""
-  mobileOptions={['flex-start', 'flex-end', 'center', 'stretch', 'baseline', 'auto']}
-  webOptions={['auto', 'flex-start', 'flex-end', 'center', 'stretch', 'baseline']}
+  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
 <ComponentDetails componentName="Box" templateName="alignSelf" />
@@ -88,24 +88,24 @@ Set the background color of the box.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'true',
     'background',
     'backgroundAlternate',
     'backgroundOverlay',
-    'primary',
     'negative',
     'positive',
+    'primary',
     'secondary',
+    'true',
   ]}
   webOptions={[
-    'true',
     'background',
     'backgroundAlternate',
     'backgroundOverlay',
-    'primary',
     'negative',
     'positive',
+    'primary',
     'secondary',
+    'true',
   ]}
 />
 
@@ -133,8 +133,8 @@ Add a border around the box.
   propertyName="bottom"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="bottom" />
@@ -149,26 +149,26 @@ Content to render within the box.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'null',
-    'string',
-    'number',
-    'false',
-    'true',
-    '{}',
     'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
     'ReactNodeArray',
     'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
   webOptions={[
-    'null',
-    'string',
-    'number',
-    'false',
-    'true',
-    '{}',
     'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
     'ReactNodeArray',
     'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
 />
 
@@ -186,8 +186,8 @@ This is a migration escape hatch. It is not intended to be used normally.
   mobileOptions={[
     'ViewStyle',
     'ViewStyle[]',
-    'WithAnimatedObject<ViewStyle>',
     'WithAnimatedArray<ViewStyle>',
+    'WithAnimatedObject<ViewStyle>',
   ]}
   webOptions={[]}
 />
@@ -203,7 +203,7 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={['2', '1']}
+  mobileOptions={['1', '2']}
   webOptions={[]}
 />
 
@@ -216,8 +216,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="flexBasis"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="flexBasis" />
@@ -229,8 +229,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="flexDirection"
   required={false}
   defaultValue=""
-  mobileOptions={['row', 'column', 'row-reverse', 'column-reverse']}
-  webOptions={['row', 'column', 'row-reverse', 'column-reverse']}
+  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
 />
 
 <ComponentDetails componentName="Box" templateName="flexDirection" />
@@ -268,8 +268,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="flexWrap"
   required={false}
   defaultValue=""
-  mobileOptions={['wrap', 'nowrap', 'wrap-reverse']}
-  webOptions={['wrap', 'nowrap', 'wrap-reverse']}
+  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
+  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
 />
 
 <ComponentDetails componentName="Box" templateName="flexWrap" />
@@ -281,8 +281,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="height"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="height" />
@@ -295,14 +295,14 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   required={false}
   defaultValue=""
   mobileOptions={[
-    'flex-start',
-    'flex-end',
     'center',
-    'space-between',
+    'flex-end',
+    'flex-start',
     'space-around',
+    'space-between',
     'space-evenly',
   ]}
-  webOptions={['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly']}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
 />
 
 <ComponentDetails componentName="Box" templateName="justifyContent" />
@@ -314,8 +314,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="left"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="left" />
@@ -327,8 +327,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="maxHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="maxHeight" />
@@ -340,8 +340,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="maxWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="maxWidth" />
@@ -353,8 +353,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="minHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="minHeight" />
@@ -366,8 +366,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="minWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="minWidth" />
@@ -379,8 +379,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="overflow"
   required={false}
   defaultValue=""
-  mobileOptions={['visible', 'gradient']}
-  webOptions={['visible', 'hidden', 'scroll']}
+  mobileOptions={['gradient', 'visible']}
+  webOptions={['hidden', 'scroll', 'visible']}
 />
 
 <ComponentDetails componentName="Box" templateName="overflow" />
@@ -405,8 +405,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="right"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="right" />
@@ -446,8 +446,8 @@ Round the corners of the box.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Box" templateName="spacing" />
@@ -459,8 +459,8 @@ Round the corners of the box.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Box" templateName="spacingBottom" />
@@ -472,8 +472,8 @@ Round the corners of the box.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Box" templateName="spacingEnd" />
@@ -485,8 +485,8 @@ Round the corners of the box.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Box" templateName="spacingHorizontal" />
@@ -498,8 +498,8 @@ Round the corners of the box.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Box" templateName="spacingStart" />
@@ -511,8 +511,8 @@ Round the corners of the box.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Box" templateName="spacingTop" />
@@ -524,8 +524,8 @@ Round the corners of the box.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-  webOptions={[0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Box" templateName="spacingVertical" />
@@ -537,8 +537,8 @@ Round the corners of the box.
   propertyName="top"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="top" />
@@ -550,8 +550,8 @@ Round the corners of the box.
   propertyName="width"
   required={false}
   defaultValue=""
-  mobileOptions={['string', 'number']}
-  webOptions={['string', 'number']}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Box" templateName="width" />
