@@ -5,7 +5,7 @@ load("//eng/shared/design-system:config.bzl", "PACKAGES", "STATIC_PACKAGES")
 project_settings(
     caf = False,
     send_dev_notifications = False,
-    slack_channels = ["#design-systems-team"],
+    slack_channels = ["#cds-builds"],
 )
 
 [cds_deployable(name = package) for package in (PACKAGES + STATIC_PACKAGES)]
