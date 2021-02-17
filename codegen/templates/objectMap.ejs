@@ -1,5 +1,6 @@
-
-<%_ Object.entries(data).map(([name, value]) => { _%>
-  export const <%- name %> =  <%- JSON.stringify(value) %> as const;
+<% const prependedText = config.disableAsConst ? ';' : 'as const;' %>
+<% const items = config.sort ? Object.entries(data).sort(([prevKey], [nextKey]) => prevKey.localeCompare(nextKey)) : Object.entries(data) %>
+<%_ items.map(([name, value]) => { _%>
+  export const <%- name %> =  <%- JSON.stringify(value) %> <%- prependedText %>
   
 <%_ }) _%> 

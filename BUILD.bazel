@@ -197,13 +197,17 @@ ts_node(
         "@npm//tsconfig-paths",
         "@npm//webfont",
         "@npm//yargs",
+        "@npm//lodash",
+        "@npm//svgo",
+        "@npm//svgson",
+        "@npm//element-to-path",
     ] + DEPENDENCIES,
 )
 
 ts_node(
     name = "sync_icons",
     args = [
-        "eng/shared/design-system/codegen/scaffold/syncSvgsFromFigma.ts",
+        "eng/shared/design-system/codegen/icons/syncSvgsFromFigma.ts",
         "--project $(execpath //:tsconfig.json)",
     ],
     data = [

@@ -66,11 +66,7 @@ export const docgen = ([
   },
   {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/icon.mdx`,
-    data: getDocgenForPackage({
-      componentName: 'IconHeavy',
-      displayName: 'Icon',
-      packageName: 'icons',
-    }),
+    data: getDocgenForPackage({ componentName: 'Icon' }),
   },
 ].filter(item => item.data !== undefined) as unknown) as {
   dest: string;

@@ -1,10 +1,14 @@
 export * from '@cds/common';
 export { SystemProvider as ThemeProvider } from '@cds/common';
 export * from './Box/Box';
-export * from './Box/VStack';
 export * from './Box/HStack';
+export * from './Box/VStack';
+export * from './Box/Offset';
 export * from './Button/Button';
-export * from './Offset/Offset';
+export * from './Icon/Icon';
+export * from './Icon/FiatIcon';
+export * from './Icon/iconGlyphMap';
+export * from './Button/Button';
 export * from './Pressable/PressableHighlight';
 export * from './Pressable/PressableOpacity';
 export * from './Text/Text';

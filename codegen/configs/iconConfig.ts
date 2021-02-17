@@ -10,7 +10,7 @@ export const iconConfig = {
   xSmall: scaleMap1,
   small: scaleMap1,
   medium: scaleMap1,
-  large: scaleMap1,
+  large: scaleMap2,
   xLarge: scaleMap2,
   xxLarge: scaleMap2,
   xxxLarge: scaleMap2,

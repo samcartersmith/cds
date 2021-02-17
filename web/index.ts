@@ -8,12 +8,13 @@ export * as typographyStyles from './styles/typography';
 
 export * from '@cds/common';
 export * from './Box/Box';
-export * from './Box/VStack';
 export * from './Box/HStack';
+export * from './Box/VStack';
+export * from './Box/Offset';
 export * from './Button/Button';
+export * from './Icon/Icon';
 export * from './Interactable/Interactable';
 export * from './Text/Text';
-export * from './Offset/Offset';
 export * from './types';
 export * from './ThemeProvider/ThemeProvider';
 

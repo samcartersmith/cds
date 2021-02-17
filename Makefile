@@ -78,7 +78,6 @@ test.web:
 .PHONY: codegen
 codegen:
 	bazel run :codegen
-	bazel run :eslint_fix_icons
 
 .PHONY: lint
 lint:
@@ -99,6 +98,7 @@ new.package:
 .PHONY: sync.icons
 sync.icons:
 	bazel run :sync_icons
+	npx svgo codegen/icons/svg/*.svg --config=codegen/icons/.svgo.yml
 
 .PHONY: start.story
 start.story:
@@ -138,13 +138,17 @@ setup.mobile:
 start.mobile:
 	cd mobile-playground; RN_PROJECT=cds npx react-native start --config ./metro.config.js --reset-cache
 
-.PHONY: mobile.android
-mobile.android:
+.PHONY: build.android
+build.android:
 	cd mobile-playground; RN_PROJECT=cds npx react-native run-android --no-jetifier
 
-.PHONY: mobile.ios
-mobile.ios:
+.PHONY: build.ios
+build.ios:
 	cd mobile-playground; RN_PROJECT=cds npx react-native run-ios
+
+.PHONY: clean.ios
+clean.ios:
+	rm -rf ~/Library/Developer/Xcode/DerivedData && rm -rf mobile-playground/ios/Pods && rm -rf mobile-playground/ios/build && rm -rf mobile-playground/ios/app.xc*
 
 .PHONY: release
 release:

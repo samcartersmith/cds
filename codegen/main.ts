@@ -1,7 +1,7 @@
-import { mapValues } from '@cds/utils';
+import { AnyObject, mapValues } from '@cds/utils';
 
 import { scaleConfig } from './configs/scaleConfig';
-import { Icon } from './Icon';
+import { Icon } from './icons/Icon';
 import { Palette } from './Palette';
 import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
@@ -13,9 +13,10 @@ import { docgen } from './website/docgen';
 import { updateTextStylesTable } from './website/updateTextStylesTable';
 
 async function loadTemplates(): Promise<
-  Record<string, { dest: string; data: Record<string, unknown> }[]>
+  Record<string, { dest: string; data: Record<string, unknown>; config?: AnyObject }[]>
 > {
   const iconData = await Icon.data();
+  const webIconData = await Icon.web();
 
   return {
     'css.ejs': [
@@ -82,21 +83,32 @@ async function loadTemplates(): Promise<
         data: { palette: Palette.cssVariables },
       },
       {
-        dest: 'icons/native/glyphs.ts',
-        data: { glyphMap: iconData.glyphMap },
+        dest: 'mobile/Icon/iconGlyphMap.ts',
+        data: { iconGlyphMap: iconData.glyphMap },
       },
+      {
+        dest: 'website/docs/components/examples/Icon/data.ts',
+        data: { iconNames: webIconData.names, iconSizes: webIconData.iconSizes },
+      },
+      ...webIconData.svgPaths,
     ],
     'docgen.ejs': docgen,
     'typescript.ejs': [
       ...TypeScript,
       {
-        dest: 'icons/types.ts',
+        dest: 'common/types/IconSize.ts',
         data: {
           types: {
             IconSize: iconData.sizes,
-            IconKind: iconData.kinds,
+            IconPixelSize: iconData.pixels,
+          },
+        },
+      },
+      {
+        dest: 'common/types/IconName.ts',
+        data: {
+          types: {
             IconName: iconData.names,
-            IconPixels: iconData.pixels,
           },
         },
       },
@@ -105,25 +117,30 @@ async function loadTemplates(): Promise<
 }
 
 (async function () {
-  const templateInputs: { template: string; dest: string; data: Record<string, unknown> }[] = [];
+  const templateInputs: {
+    template: string;
+    dest: string;
+    data: Record<string, unknown>;
+    config?: AnyObject;
+  }[] = [];
 
   try {
     Palette.validate();
 
     await updateTextStylesTable();
 
-    Object.entries(await loadTemplates()).forEach(([template, configs]) => {
-      configs.map(({ dest, data }) => {
+    Object.entries(await loadTemplates()).forEach(([template, items]) => {
+      items.map(({ dest, data, config = {} }) => {
         templateInputs.push({
           template,
           dest,
           data,
+          config,
         });
       });
     });
 
     await Promise.all(templateInputs.map(generateFromTemplate));
-    await Icon.svgs();
   } catch (err) {
     logError(err);
   }

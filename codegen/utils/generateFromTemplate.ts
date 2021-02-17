@@ -1,3 +1,4 @@
+import { AnyObject } from '@cds/utils';
 import { writePrettyFile } from '@tools/writePrettyFile';
 import * as ejs from 'ejs';
 import * as fs from 'fs';
@@ -39,14 +40,16 @@ export const generateFromTemplate = async ({
   template,
   data,
   dest,
+  config = {},
 }: {
   template: string;
   dest: string;
   data: unknown;
+  config?: AnyObject;
 }) => {
   try {
     const templatePath = path.join(__dirname, '../templates', template);
-    const code = await ejs.renderFile(templatePath, { data, format: formatTemplateType });
+    const code = await ejs.renderFile(templatePath, { data, format: formatTemplateType, config });
     const outFile = await getSourcePath(dest);
     const dirForFile = path.dirname(outFile);
     const ext = path.extname(outFile);
