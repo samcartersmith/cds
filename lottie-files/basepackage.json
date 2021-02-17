@@ -1,20 +1,23 @@
 {
-  "name": "@cds/lottie",
+  "name": "@cds/lottie-files",
   "version": "0.0.1",
-  "description": "Coinbase Design System - Lottie",
+  "description": "Coinbase Design System - Lottie Files",
   "keywords": [
     "cds",
     "design system",
-    "lottie",
+    "lottie files",
     "animations"
   ],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
-    "directory": "eng/shared/design-system/lottie"
+    "directory": "eng/shared/design-system/lottie-files"
   },
   "authors": "Coinbase",
   "main": "lib/index.js",
   "module": "esm/index.js",
-  "typings": "index.ts"
+  "typings": "index.ts",
+  "files": [
+    "*.json"
+  ]
 }

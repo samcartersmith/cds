@@ -1,4 +1,5 @@
-import { LottieWithMarkerNames } from '../../types';
+import { LottieSource } from '@cds/common';
+
 /* eslint-disable import/extensions */
 import splashJson from './splash.json';
 /* 
@@ -7,7 +8,8 @@ import splashJson from './splash.json';
   Instead, we have to manually assert the marker/layer names if using the useLottieMarkers
   utitlity hook
 */
-export const splash = splashJson as LottieWithMarkerNames<
+
+export type SplashLottie = LottieSource<
   | 'logoStart'
   | 'circleStart'
   | 'logoEnd'
@@ -16,3 +18,5 @@ export const splash = splashJson as LottieWithMarkerNames<
   | 'circleOpacityEnd'
   | 'end'
 >;
+
+export const splash = splashJson as SplashLottie;

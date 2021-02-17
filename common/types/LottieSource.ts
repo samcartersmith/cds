@@ -1,8 +1,9 @@
-import { PaletteAlias } from '@cds/common';
 import { AnyObject } from '@cds/utils';
 
+import { LottieMarker } from './LottieMarker';
+
 // Serialized animation as generated from After Effects
-export interface LottieAnimationObject {
+export interface LottieSource<Marker extends string = string> {
   // Metadata for Lottie file
   meta: AnyObject;
   // Lottie After Effects plugin version
@@ -33,30 +34,5 @@ export interface LottieAnimationObject {
     } & AnyObject
   >;
   // Useful to play animations from/to certain frames.
-  markers: LottieMarker[];
+  markers: LottieMarker<Marker>[];
 }
-
-interface LottieMarker<T extends string = string> {
-  // Animation frame of marker
-  tm: number;
-  // Marker name
-  cm: T;
-  // Duration of marker
-  dr: number;
-}
-
-export interface LottieWithMarkerNames<T extends string> extends LottieAnimationObject {
-  markers: Array<
-    LottieMarker & {
-      cm: T;
-    }
-  >;
-}
-
-export type LottieMarkersMap<T extends LottieAnimationObject> = {
-  [key in T['markers'][number]['cm']]: number;
-};
-
-export type LottieRemoteAsset = { uri: string };
-export type LottieSource = LottieAnimationObject;
-export type LottieColorFilter = Array<{ keypath: PaletteAlias; color: string }>;

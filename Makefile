@@ -4,7 +4,7 @@ Help:
   $$ make build.common              -- Build the `common` package.
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.icons               -- Build the `icons` package.
-  $$ make build.lottie              -- Build the `lottie` package.
+  $$ make build.lottie              -- Build the `lottie-files` package.
   $$ make build.mobile              -- Build the `mobile` package.
   $$ make build.theme               -- Build the `theme` package.
   $$ make build.utils               -- Build the `utils` package.
@@ -44,7 +44,7 @@ build.icons:
 
 .PHONY: build.lottie
 build.lottie:
-	bazel build lottie:package
+	bazel build lottie-files:package
 
 .PHONY: build.mobile
 build.mobile:

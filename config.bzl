@@ -11,7 +11,7 @@ DEPENDENCIES = [
 PACKAGES = [
     "common",
     "icons",
-    "lottie",
+    "lottie-files",
     "mobile",
     "utils",
     "web",

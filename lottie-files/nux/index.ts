@@ -1,4 +1,5 @@
-import { LottieWithMarkerNames } from '../../types';
+import { LottieSource } from '@cds/common';
+
 /* eslint-disable import/extensions */
 import nuxJson from './nux.json';
 
@@ -8,4 +9,5 @@ import nuxJson from './nux.json';
   Instead, we have to manually assert the marker/layer names if using the useLottieMarkers
   utitlity hook
 */
-export const nux = nuxJson as LottieWithMarkerNames<'loopStart' | 'loopEnd'>;
+export type NuxLottie = LottieSource<'loopStart' | 'loopEnd'>;
+export const nux = nuxJson as NuxLottie;

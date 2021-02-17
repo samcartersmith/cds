@@ -1,4 +1,5 @@
-import { LottieWithMarkerNames } from '../../types';
+import { LottieSource } from '@cds/common';
+
 /* eslint-disable import/extensions */
 import tradeStatusJson from './tradeStatus.json';
 /* 
@@ -7,7 +8,8 @@ import tradeStatusJson from './tradeStatus.json';
   Instead, we have to manually assert the marker/layer names if using the useLottieMarkers
   utitlity hook
 */
-export const tradeStatus = tradeStatusJson as LottieWithMarkerNames<
+
+export type TradeStatusLottie = LottieSource<
   | 'loadingStart'
   | 'loadingEnd'
   | 'successStart'
@@ -19,3 +21,5 @@ export const tradeStatus = tradeStatusJson as LottieWithMarkerNames<
   | 'pendingStart'
   | 'pendingEnd'
 >;
+
+export const tradeStatus = tradeStatusJson as TradeStatusLottie;

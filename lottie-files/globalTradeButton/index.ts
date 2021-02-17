@@ -1,4 +1,5 @@
-import { LottieWithMarkerNames } from '../../types';
+import { LottieSource } from '@cds/common';
+
 /* eslint-disable import/extensions */
 import globalTradeButtonJson from './globalTradeButton.json';
 
@@ -8,6 +9,6 @@ import globalTradeButtonJson from './globalTradeButton.json';
   Instead, we have to manually assert the marker/layer names if using the useLottieMarkers
   utitlity hook
 */
-export const globalTradeButton = globalTradeButtonJson as LottieWithMarkerNames<
+export const globalTradeButton = globalTradeButtonJson as LottieSource<
   'onPressInStart' | 'onPressInEnd' | 'onPressOutStart' | 'onPressOutEnd'
 >;
