@@ -38,4 +38,11 @@ describe('Button', () => {
 
     expect(spy).toHaveBeenCalled();
   });
+
+  it('doesnt pass `onPress` to button element', () => {
+    const spy = jest.fn();
+    const { container } = render(<Button onPress={spy}>Child</Button>);
+
+    expect(container.querySelector('button')).not.toHaveAttribute('onPress');
+  });
 });

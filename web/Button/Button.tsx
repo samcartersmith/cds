@@ -25,7 +25,14 @@ export const Button = ({
   compact,
   disabled,
   loading,
+  type,
   variant = 'primary',
+  // Aria
+  onPress,
+  onPressStart,
+  onPressEnd,
+  onPressChange,
+  onPressUp,
   ...restProps
 }: ButtonProps) => {
   const ref = useRef<HTMLButtonElement>(null);
@@ -35,9 +42,15 @@ export const Button = ({
   });
   const { buttonProps, isPressed } = useButton(
     {
+      children,
       isDisabled: disabled || loading,
-      ...(restProps as AriaButtonProps),
-    },
+      onPress,
+      onPressStart,
+      onPressEnd,
+      onPressChange,
+      onPressUp,
+      type,
+    } as AriaButtonProps,
     ref
   );
   const borderRadius = buttonStyles[compact ? 'radiusCompact' : 'radius'];
