@@ -125,6 +125,7 @@ TEST_SRCS = [
 ]
 
 TEST_DEPS = [
+    "@npm//axe-core",
     "@npm//@babel/core",
     "@npm//@babel/plugin-proposal-class-properties",
     "@npm//@babel/preset-env",
@@ -135,13 +136,16 @@ TEST_DEPS = [
     "@npm//babel-plugin-module-resolver",
     "@npm//c8",  # Used for bazel coverage in CI
     "@npm//jest",
+    "@npm//jest-axe",
     "@npm//react",
     "@npm//text-encoding",
 ] + DEPENDENCIES
 
 jest_test(
     name = "unit_tests_web",
-    srcs = TEST_SRCS,
+    srcs = TEST_SRCS + [
+        "//eng/shared/utils:jest/renderA11y.ts",
+    ],
     jest_config = "jest.config.js",
     test_srcs = [
         "//eng/shared/design-system/icons:source",

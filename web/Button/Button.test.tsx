@@ -1,10 +1,15 @@
 import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
+import { renderA11y } from '@utils/jest/renderA11y';
 
 import { Button } from './Button';
 
 describe('Button', () => {
+  it('passes accessibility', async () => {
+    expect(await renderA11y(<Button>Child</Button>)).toHaveNoViolations();
+  });
+
   it('renders a button with a type', () => {
     const { container } = render(<Button>Child</Button>);
     const button = container.querySelector('button');

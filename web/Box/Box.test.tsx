@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
+import { renderA11y } from '@utils/jest/renderA11y';
 
 import { Box, BoxProps } from './Box';
 
@@ -25,6 +26,16 @@ function expectClassName<K extends keyof BoxProps>(
 }
 
 describe('Box', () => {
+  it('passes accessibility', async () => {
+    expect(
+      await renderA11y(
+        <Box spacing={2} background="background">
+          Child
+        </Box>
+      )
+    ).toHaveNoViolations();
+  });
+
   (['article', 'aside', 'div', 'footer', 'header', 'main', 'section'] as const).forEach(tag => {
     it(`can render as a "${tag}" element using the \`as\` prop`, () => {
       const { container } = render(<Box as={tag}>Child</Box>);
