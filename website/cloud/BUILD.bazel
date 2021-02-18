@@ -2,7 +2,7 @@ load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_fi
 
 project_settings(
     caf = False,
-    slack_channels = ["#design-systems-team"],
+    slack_channels = ["#cds-builds"],
 )
 
 pkg_zip(
