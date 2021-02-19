@@ -134,7 +134,6 @@ TEST_DEPS = [
     "@npm//@react-types/button",
     "@npm//babel-jest",
     "@npm//babel-plugin-module-resolver",
-    "@npm//c8",  # Used for bazel coverage in CI
     "@npm//jest",
     "@npm//jest-axe",
     "@npm//react",
