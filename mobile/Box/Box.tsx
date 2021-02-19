@@ -129,6 +129,9 @@ export const Box = React.memo(
 
       if (background) {
         style.backgroundColor = palette[background === true ? 'background' : background];
+      } else if (elevation) {
+        // Shadows will not render without a background color
+        style.backgroundColor = palette.background;
       }
 
       if (bordered) {
@@ -141,7 +144,7 @@ export const Box = React.memo(
       }
 
       return style;
-    }, [background, bordered, rounded, palette]);
+    }, [background, bordered, rounded, palette, elevation]);
     const style = useMemo(
       () =>
         [

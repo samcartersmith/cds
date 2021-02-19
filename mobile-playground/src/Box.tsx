@@ -57,7 +57,7 @@ const BoxScreen = () => {
           <TextBody>Level 1</TextBody>
         </Box>
 
-        <Box spacing={1} elevation={2}>
+        <Box spacing={1} elevation={2} rounded>
           <TextBody>Level 2</TextBody>
         </Box>
       </Example>

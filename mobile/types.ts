@@ -19,7 +19,9 @@ export interface DangerouslySetStyle<T, IsAnimated extends boolean = boolean> {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetStyle?: IsAnimated extends true ? Animated.WithAnimatedValue<T | T[]> : T | T[];
+  dangerouslySetStyle?: IsAnimated extends true
+    ? Animated.WithAnimatedValue<StyleProp<T>>
+    : StyleProp<T>;
 }
 
 export type HapticFeedbackType = 'light' | 'normal' | 'heavy' | 'none';
