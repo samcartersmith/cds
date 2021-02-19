@@ -6,8 +6,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- types: Move types to folder @katherinemartinez [#12937](https://github.cbhq.net/mono/repo/pull/12937)
-- feat: Add `Pin` component types [#13116](https://github.cbhq.net/mono/repo/pull/13116)
+## 0.1.0 (2/19/2021, 02:33 PM PST) [#13278](https://github.cbhq.net/mono/repo/pull/13278)
+
+#### 💥 Breaking
+
+- Rename PaletteConfig to PartialPaletteConfig @hannah-jin [#13179](https://github.cbhq.net/mono/repo/pull/13179)
+
+#### 🚀 Updates
+
+- Add `Pin` component types [#13116](https://github.cbhq.net/mono/repo/pull/13116)
+
+#### 🐞 Fixes
+
+- Move types to folder @katherinemartinez [#12937](https://github.cbhq.net/mono/repo/pull/12937)
 
 ## 0.0.8 (2/10/2021, 10:30 AM PST) [#12628](https://github.cbhq.net/mono/repo/pull/12628)
 
