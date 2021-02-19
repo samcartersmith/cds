@@ -105,6 +105,38 @@ const BoxScreen = () => {
           </Box>
         </Box>
       </Example>
+
+      <Example title="Pinning">
+        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
+          <Box pin="top" background="backgroundOverlay">
+            <TextBody>Top from left to right</TextBody>
+          </Box>
+        </Box>
+
+        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
+          <Box pin="right" background="backgroundOverlay">
+            <TextBody>Right from top to bottom</TextBody>
+          </Box>
+        </Box>
+
+        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
+          <Box pin="bottom" background="backgroundOverlay">
+            <TextBody>Bottom from left to right</TextBody>
+          </Box>
+        </Box>
+
+        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
+          <Box pin="left" background="backgroundOverlay">
+            <TextBody>Left from top to bottom</TextBody>
+          </Box>
+        </Box>
+
+        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
+          <Box pin="all" background="backgroundOverlay">
+            <TextBody>To all corners</TextBody>
+          </Box>
+        </Box>
+      </Example>
     </Screen>
   );
 };

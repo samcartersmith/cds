@@ -11,29 +11,23 @@ export interface OffsetProps
     OmitStyle<ViewProps>,
     DangerouslySetStyle<ViewStyle> {}
 
-export const Offset: React.FC<OffsetProps> = ({
-  animated,
-  all,
-  top,
-  bottom,
-  start,
-  end,
-  horizontal,
-  vertical,
-  ...viewProps
-}) => {
-  const spacingStyles = useSpacingStyles({
-    all: all,
-    bottom: bottom,
-    end: end,
-    horizontal: horizontal,
-    start: start,
-    top: top,
-    vertical: vertical,
-    isInverted: true,
-  });
+export const Offset = React.memo(
+  ({ animated, all, top, bottom, start, end, horizontal, vertical, ...viewProps }: OffsetProps) => {
+    const spacingStyles = useSpacingStyles({
+      all: all,
+      bottom: bottom,
+      end: end,
+      horizontal: horizontal,
+      start: start,
+      top: top,
+      vertical: vertical,
+      isInverted: true,
+    });
 
-  const ViewComponent = animated ? Animated.View : View;
+    const ViewComponent = animated ? Animated.View : View;
 
-  return <ViewComponent style={spacingStyles} {...viewProps} />;
-};
+    return <ViewComponent style={spacingStyles} {...viewProps} />;
+  }
+);
+
+Offset.displayName = 'Offset';

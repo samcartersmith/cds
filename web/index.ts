@@ -15,8 +15,11 @@ export * from './Button/Button';
 export * from './Icon/Icon';
 export * from './Interactable/Interactable';
 export * from './Text/Text';
-export * from './types';
 export * from './ThemeProvider/ThemeProvider';
+export * from './hooks/usePalette';
+export * from './hooks/usePinStyles';
+export * from './hooks/useSpacingStyles';
+export * from './types';
 
 // Linaria interpolation crashes when the palette is re-exported from palette/palette.ts,
 // so let's duplicate this here temporarily until we can figure out a better API.

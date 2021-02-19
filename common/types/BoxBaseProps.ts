@@ -32,6 +32,8 @@ export interface FlexStyles {
   justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
 }
 
+export type PinningDirection = 'top' | 'bottom' | 'left' | 'right' | 'all';
+
 export interface PositionStyles {
   bottom?: DimensionValue;
   left?: DimensionValue;
@@ -48,6 +50,8 @@ export interface BoxBaseProps extends DimensionStyles, FlexStyles, SpacingProps,
   bordered?: boolean;
   /** Content to render within the box. */
   children?: React.ReactNode;
+  /** Direction in which to absolutely pin the box. */
+  pin?: PinningDirection;
   /** Round the corners of the box. */
   rounded?: boolean;
 }

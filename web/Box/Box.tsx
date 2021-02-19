@@ -3,6 +3,7 @@ import React from 'react';
 import type { BoxBaseProps } from '@cds/common';
 import { cx } from 'linaria';
 
+import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
 import {
@@ -70,6 +71,7 @@ export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
     right,
     top,
     zIndex,
+    pin,
     // Spacing
     spacing,
     spacingTop,
@@ -103,7 +105,8 @@ export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
           end: spacingEnd,
           vertical: spacingVertical,
           horizontal: spacingHorizontal,
-        })
+        }),
+        usePinStyles(pin)
       )}
       role={role}
       style={{

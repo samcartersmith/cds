@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { render, waitFor } from '@testing-library/react-native';
-import { Text, View } from 'react-native';
+import { Animated, Text, View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { Box } from './Box';
 
-// TODO test animated, spacing, overflow
 describe('Box', () => {
   it('renders a view', () => {
     const result = render(
@@ -15,6 +15,16 @@ describe('Box', () => {
     );
 
     expect(result.UNSAFE_queryAllByType(View)).toHaveLength(1);
+  });
+
+  it('renders an animated view', () => {
+    const result = render(
+      <Box animated>
+        <Text>Child</Text>
+      </Box>
+    );
+
+    expect(result.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
   });
 
   it('renders no background by default', async () => {
@@ -186,6 +196,187 @@ describe('Box', () => {
       flexShrink: 3,
       flexWrap: 'nowrap',
       justifyContent: 'space-evenly',
+    });
+  });
+
+  it('renders an overflow gradient', async () => {
+    const result = render(
+      <Box overflow="gradient">
+        <Text>Child</Text>
+      </Box>
+    );
+
+    await waitFor(() => result.getByText('Child'));
+
+    expect(result.UNSAFE_queryAllByType(LinearGradient)).toHaveLength(1);
+  });
+
+  describe('spacing', () => {
+    it('renders all', async () => {
+      const { getByText } = render(
+        <Box spacing={1}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        paddingTop: 8,
+        paddingBottom: 8,
+        paddingLeft: 8,
+        paddingRight: 8,
+      });
+    });
+
+    it('renders horizontal', async () => {
+      const { getByText } = render(
+        <Box spacingHorizontal={1}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        paddingLeft: 8,
+        paddingRight: 8,
+      });
+    });
+
+    it('renders vertical', async () => {
+      const { getByText } = render(
+        <Box spacingVertical={1}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        paddingTop: 8,
+        paddingBottom: 8,
+      });
+    });
+
+    it('renders start/end', async () => {
+      const { getByText } = render(
+        <Box spacingStart={1} spacingEnd={2}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        paddingLeft: 8,
+        paddingRight: 16,
+      });
+    });
+
+    it('renders individual', async () => {
+      const { getByText } = render(
+        <Box spacingTop={1} spacingBottom={2} spacingStart={3} spacingEnd={4}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        paddingTop: 8,
+        paddingBottom: 16,
+        paddingLeft: 24,
+        paddingRight: 32,
+      });
+    });
+  });
+
+  describe('pin', () => {
+    it('renders "top" pin', async () => {
+      const { getByText } = render(
+        <Box pin="top">
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+      });
+    });
+
+    it('renders "bottom" pin', async () => {
+      const { getByText } = render(
+        <Box pin="bottom">
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+      });
+    });
+
+    it('renders "right" pin', async () => {
+      const { getByText } = render(
+        <Box pin="right">
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        right: 0,
+      });
+    });
+
+    it('renders "left" pin', async () => {
+      const { getByText } = render(
+        <Box pin="left">
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+      });
+    });
+
+    it('renders "all" pin', async () => {
+      const { getByText } = render(
+        <Box pin="all">
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+      });
     });
   });
 });

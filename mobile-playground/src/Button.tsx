@@ -13,7 +13,7 @@ function onPress(event: GestureResponderEvent) {
 const ButtonScreen = () => {
   return (
     <Screen>
-      <Example>
+      <Example inline>
         <Button onPress={onPress}>Button</Button>
         <Button compact onPress={onPress}>
           Compact button
@@ -27,12 +27,12 @@ const ButtonScreen = () => {
         </Button>
       </Example>
 
-      <Example title="States">
+      <Example title="States" inline>
         <Button loading>Loading</Button>
         <Button disabled>Disabled</Button>
       </Example>
 
-      <Example title="Variants">
+      <Example title="Variants" inline>
         <Button variant="primary">Primary</Button>
         <Button compact variant="primary">
           Compact primary

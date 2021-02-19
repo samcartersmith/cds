@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { TextTitle3, usePalette } from '@cds/mobile';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 
 interface ExampleProps {
   children: React.ReactNode;
+  inline?: boolean;
   title?: string;
 }
 
-const Example = ({ children, title }: ExampleProps) => {
+const Example = ({ children, inline, title }: ExampleProps) => {
   const palette = usePalette();
   const items = React.Children.toArray(children);
+  const childStyles = useMemo(() => {
+    const style: ViewStyle = { paddingTop: 12 };
+
+    if (inline) {
+      style.alignItems = 'flex-start';
+    }
+
+    return style;
+  }, [inline]);
 
   return (
     <View
@@ -24,7 +34,7 @@ const Example = ({ children, title }: ExampleProps) => {
       {title && <TextTitle3>{title}</TextTitle3>}
 
       {items.map((item, index) => (
-        <View key={index} style={{ paddingTop: 12, alignItems: 'flex-start' }}>
+        <View key={index} style={childStyles}>
           {item}
         </View>
       ))}

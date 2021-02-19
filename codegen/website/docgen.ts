@@ -61,6 +61,10 @@ export const docgen = ([
     data: getDocgenForPackage({ componentName: 'Offset' }),
   },
   {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/pin.mdx`,
+    data: getDocgenForPackage({ componentName: 'Pin' }),
+  },
+  {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/theme-provider.mdx`,
     data: getDocgenForPackage({ componentName: 'ThemeProvider', packageName: 'theme' }),
   },

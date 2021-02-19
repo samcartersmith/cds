@@ -186,6 +186,56 @@ export const Lipsum = () => (
   </Story>
 </Canvas>
 
+# Pinning
+
+<Canvas isColumn withToolbar>
+  <Story name="Top pin" decorators={[withStoryLabel('Top')]} args={{ pin: 'top' }}>
+    {args => (
+      <Box width="100%" height={250} background="backgroundAlternate" position="relative">
+        <Box {...args} background="backgroundOverlay">
+          Top from left to right
+        </Box>
+      </Box>
+    )}
+  </Story>
+  <Story name="Right pin" decorators={[withStoryLabel('Right')]} args={{ pin: 'right' }}>
+    {args => (
+      <Box width="100%" height={250} background="backgroundAlternate" position="relative">
+        <Box {...args} background="backgroundOverlay">
+          Right from top to bottom
+        </Box>
+      </Box>
+    )}
+  </Story>
+  <Story name="Bottom pin" decorators={[withStoryLabel('Bottom')]} args={{ pin: 'bottom' }}>
+    {args => (
+      <Box width="100%" height={250} background="backgroundAlternate" position="relative">
+        <Box {...args} background="backgroundOverlay">
+          Bottom from left to right
+        </Box>
+      </Box>
+    )}
+  </Story>
+  <Story name="Left pin" decorators={[withStoryLabel('Left')]} args={{ pin: 'left' }}>
+    {args => (
+      <Box width="100%" height={250} background="backgroundAlternate" position="relative">
+        <Box {...args} background="backgroundOverlay">
+          Left from top to bottom
+        </Box>
+      </Box>
+    )}
+  </Story>
+  <Story name="All pin" decorators={[withStoryLabel('All')]} args={{ pin: 'all' }}>
+    {args => (
+      <Box width="100%" height={250} background="backgroundAlternate" position="relative">
+        <Box {...args} background="backgroundOverlay">
+          To all corners
+        </Box>
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
 ## API
 
 <ArgsTable />

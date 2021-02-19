@@ -80,7 +80,7 @@ export class PropertyDocgen {
     for (const regex of Object.values(regexes)) {
       contentCopy = contentCopy.replace(regex, '');
     }
-    return contentCopy;
+    return contentCopy.replace(/\n/g, ' ');
   }
 
   get danger() {

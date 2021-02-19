@@ -69,11 +69,11 @@ test:
 
 .PHONY: test.mobile
 test.mobile:
-	bazel test :unit_tests_mobile
+	bazel test :unit_tests_mobile --test_output=streamed
 
 .PHONY: test.web
 test.web:
-	bazel test :unit_tests_web
+	bazel test :unit_tests_web --test_output=streamed
 
 .PHONY: codegen
 codegen:
@@ -85,7 +85,7 @@ lint:
 	bazel run :eslint_codemod
 	bazel run :eslint_common
 	bazel run :eslint_icons
-	bazel run :eslint_lottie
+	bazel run :eslint_lottie-files
 	bazel run :eslint_mobile
 	bazel run :eslint_utils
 	bazel run :eslint_web

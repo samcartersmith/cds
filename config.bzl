@@ -6,6 +6,7 @@ DEPENDENCIES = [
     "@npm//humps",
     "@npm//type-fest",
     "@npm//react-aria",
+    "@npm//react-native-linear-gradient",
 ]
 
 PACKAGES = [

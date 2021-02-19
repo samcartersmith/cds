@@ -6,7 +6,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat: Add HStack and VStack components [#12758](https://github.cbhq.net/mono/repo/pull/12758)
+- feat: Add `HStack` and `VStack` components [#12758](https://github.cbhq.net/mono/repo/pull/12758)
+- feat: Add `pin` prop to `Box` component [#13116](https://github.cbhq.net/mono/repo/pull/13116)
+- feat: Add overflow gradient support to `Box` [#13116](https://github.cbhq.net/mono/repo/pull/13116)
 
 ## 0.0.8 (2/9/2021, 03:30 PM PST) [#12583](https://github.cbhq.net/mono/repo/pull/12583)
 

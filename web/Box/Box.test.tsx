@@ -218,4 +218,36 @@ describe('Box', () => {
   describe('overflow', () => {
     expectClassName('overflow', ['hidden', 'scroll', 'visible']);
   });
+
+  describe('pin', () => {
+    it('renders "top" pin', async () => {
+      const { container } = render(<Box pin="top">Child</Box>);
+
+      expect(container.firstChild).toHaveClass('cds-top');
+    });
+
+    it('renders "bottom" pin', async () => {
+      const { container } = render(<Box pin="bottom">Child</Box>);
+
+      expect(container.firstChild).toHaveClass('cds-bottom');
+    });
+
+    it('renders "right" pin', async () => {
+      const { container } = render(<Box pin="right">Child</Box>);
+
+      expect(container.firstChild).toHaveClass('cds-right');
+    });
+
+    it('renders "left" pin', async () => {
+      const { container } = render(<Box pin="left">Child</Box>);
+
+      expect(container.firstChild).toHaveClass('cds-left');
+    });
+
+    it('renders "all" pin', async () => {
+      const { container } = render(<Box pin="all">Child</Box>);
+
+      expect(container.firstChild).toHaveClass('cds-all');
+    });
+  });
 });

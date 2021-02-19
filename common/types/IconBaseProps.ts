@@ -4,7 +4,7 @@ import type { SpacingProps } from './SpacingProps';
 
 export interface IconBaseProps extends SpacingProps {
   /**
-   * Size for a given icon
+   * Size for a given icon.
    */
   size: IconSize;
   /**
