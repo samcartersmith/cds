@@ -2,13 +2,13 @@ import * as React from 'react';
 
 import { emptyObject } from '@cds/utils';
 
-import { PaletteConfig } from '../types';
+import { PartialPaletteConfig } from '../types';
 import { defaultPalette } from './constants';
 import { PaletteConfigContext } from './context';
 import { usePaletteConfig } from './usePaletteConfig';
 
 export type PaletteConfigProviderProps = {
-  value?: PaletteConfig;
+  value?: PartialPaletteConfig;
 };
 
 export const PaletteConfigProvider: React.FC<PaletteConfigProviderProps> = React.memo(

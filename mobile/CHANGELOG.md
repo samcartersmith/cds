@@ -6,10 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat: Add `HStack` and `VStack` components [#12758](https://github.cbhq.net/mono/repo/pull/12758)
-- feat: Add `pin` prop to `Box` component [#13116](https://github.cbhq.net/mono/repo/pull/13116)
-- feat: Add overflow gradient support to `Box` [#13116](https://github.cbhq.net/mono/repo/pull/13116)
-- fix(Button): Fix elevation styles not rendering [#13261](https://github.cbhq.net/mono/repo/pull/13261)
+## 0.1.0 (2/19/2021, 01:24 PM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
+
+#### 💥 Breaking
+
+- Rename PaletteConfig to PartialPaletteConfig and add tests to convertPalette @hannah-jin [#13179](https://github.cbhq.net/mono/repo/pull/13179)
+
+#### 🚀 Updates
+
+- Add `HStack` and `VStack` components @miles-johnson [#12758](https://github.cbhq.net/mono/repo/pull/12758)
+- Add `pin` prop to `Box` component @miles-johnson [#13116](https://github.cbhq.net/mono/repo/pull/13116)
+- Add overflow gradient support to `Box` @miles-johnson [#13116](https://github.cbhq.net/mono/repo/pull/13116)
+
+#### 🐞 Fixes
+
+- **[Button]** Fix elevation styles not rendering @miles-johnson [#13261](https://github.cbhq.net/mono/repo/pull/13261)
 
 ## 0.0.8 (2/9/2021, 03:30 PM PST) [#12583](https://github.cbhq.net/mono/repo/pull/12583)
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { PaletteConfigProvider } from './palette/PaletteConfigProvider';
 import { ScaleProvider } from './scale/ScaleProvider';
 import { SpectrumProvider } from './spectrum/SpectrumProvider';
-import { PaletteConfig, Scale, Spectrum } from './types';
+import { PartialPaletteConfig, Scale, Spectrum } from './types';
 
 export type SystemProviderProps = {
   /**
@@ -17,7 +17,7 @@ export type SystemProviderProps = {
   /**
    * Takes a configurable palette. If a partial palette is provided it will be merged with the closest parent ThemeProvider if present, if not it will be fallback to merging with the default CDS palette.
    */
-  palette?: PaletteConfig;
+  palette?: PartialPaletteConfig;
 };
 
 export const SystemProvider: React.FC<SystemProviderProps> = React.memo(

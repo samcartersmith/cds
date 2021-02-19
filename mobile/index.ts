@@ -20,5 +20,5 @@ export * from './hooks/usePressAnimation';
 export * from './hooks/useSpacingStyles';
 export * as scales from './styles/scale';
 export * from './types';
-export * from './utils/convertPalette';
+export { convertPalette } from './utils/convertPalette';
 export * from './utils/haptics';
