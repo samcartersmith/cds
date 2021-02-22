@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 
 import { IconSize, paletteForegrounds, PaletteForeground } from '@cbhq/cds-common';
-import { Box, Offset, Button, Icon, ThemeProvider } from '@cbhq/cds-web';
+import { Box, Offset, Button, ThemeProvider, Icon } from '@cbhq/cds-web';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 

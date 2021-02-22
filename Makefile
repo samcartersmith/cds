@@ -3,7 +3,6 @@ Help:
 -----
   $$ make build.common              -- Build the `common` package.
   $$ make build.fonts               -- Build the `fonts` package.
-  $$ make build.icons               -- Build the `icons` package.
   $$ make build.lottie              -- Build the `lottie-files` package.
   $$ make build.mobile              -- Build the `mobile` package.
   $$ make build.theme               -- Build the `theme` package.
@@ -12,17 +11,17 @@ Help:
   $$ make test                      -- Run web and mobile unit tests.
   $$ make test.mobile               -- Run mobile unit tests.
   $$ make test.web                  -- Run web unit tests.
-  $$ make codegen			-- Generate code in design system.
-  $$ make lint				-- Run eslint on all sources.
-  $$ make new.package name=<name>	-- Scaffold a new package with the defined name.
-  $$ make sync.icons			-- Synchronize icons with figma.
-  $$ make start.story			-- Start storybook local dev server.
-  $$ make start.website			-- Start docusaurus website.
-  $$ make build.story			-- Build storybook.
-  $$ make build.website			-- Build docusaurus website.
-  $$ make serve.story			-- Serve storybook build locally.
-  $$ make serve.website			-- Serve docusaurus website build locally.
-  $$ make deploy.website			-- Deploy docusaurus website to cds.cbhq.net.
+  $$ make codegen                   -- Generate code in design system.
+  $$ make lint                      -- Run eslint on all sources.
+  $$ make new.package name=<name>   -- Scaffold a new package with the defined name.
+  $$ make start.story               -- Start storybook local dev server.
+  $$ make start.website             -- Start docusaurus website.
+  $$ make build.story               -- Build storybook.
+  $$ make build.website             -- Build docusaurus website.
+  $$ make serve.story               -- Serve storybook build locally.
+  $$ make serve.website             -- Serve docusaurus website build locally.
+  $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
+  $$ make prepare.icons             -- Prepare icons
 endef
 export HELP_TEXT
 
@@ -37,10 +36,6 @@ build.common:
 .PHONY: build.fonts
 build.fonts:
 	bazel build fonts:package
-
-.PHONY: build.icons
-build.icons:
-	bazel build icons:package
 
 .PHONY: build.lottie
 build.lottie:
@@ -84,7 +79,6 @@ lint:
 	bazel run :eslint_codegen
 	bazel run :eslint_codemod
 	bazel run :eslint_common
-	bazel run :eslint_icons
 	bazel run :eslint_lottie-files
 	bazel run :eslint_mobile
 	bazel run :eslint_utils
@@ -95,10 +89,14 @@ lint:
 new.package:
 	bazel run :new_package -- --root=$(PWD) --name=$(name)
 
-.PHONY: sync.icons
-sync.icons:
+.PHONY: prepare.icons
+prepare.icons:
 	bazel run :sync_icons
 	npx svgo codegen/icons/svg/*.svg --config=codegen/icons/.svgo.yml
+	bazel run :build_icons
+	make setup.mobile
+	make build.ios
+	make build.android
 
 .PHONY: start.story
 start.story:

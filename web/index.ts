@@ -12,7 +12,7 @@ export * from './Box/HStack';
 export * from './Box/VStack';
 export * from './Box/Offset';
 export * from './Button/Button';
-export * from './Icon/Icon';
+export * from './icons/Icon';
 export * from './Interactable/Interactable';
 export * from './Text/Text';
 export * from './ThemeProvider/ThemeProvider';

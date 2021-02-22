@@ -178,6 +178,28 @@ jest_test(
 # *** codegen ***
 # ***************
 
+CODEGEN_DATA = [
+    ":build_source",
+    "//:.prettierrc",
+    "//:tsconfig.json",
+    "//eng/shared/design-system/codegen:runtime_source",
+    "//tools/js:writePrettyFile.ts",
+    "@npm//@types/react",
+    "@npm//@types/react-native",
+    "@npm//axios",
+    "@npm//chalk",
+    "@npm//ejs",
+    "@npm//react-docgen-typescript",
+    "@npm//tsconfig-paths",
+    "@npm//webfont",
+    "@npm//yargs",
+    "@npm//lodash",
+    "@npm//ora",
+    "@npm//svgo",
+    "@npm//svgson",
+    "@npm//element-to-path",
+] + DEPENDENCIES
+
 ts_node(
     name = "codegen",
     args = [
@@ -186,40 +208,29 @@ ts_node(
         "eng/shared/design-system/codegen/main.ts",
         "--prettierConfig $(execpath //:.prettierrc)",
     ],
-    data = [
-        ":build_source",
-        "//:.prettierrc",
-        "//:tsconfig.json",
-        "//eng/shared/design-system/codegen:runtime_source",
-        "//tools/js:writePrettyFile.ts",
-        "@npm//@types/react",
-        "@npm//@types/react-native",
-        "@npm//chalk",
-        "@npm//ejs",
-        "@npm//react-docgen-typescript",
-        "@npm//tsconfig-paths",
-        "@npm//webfont",
-        "@npm//yargs",
-        "@npm//lodash",
-        "@npm//svgo",
-        "@npm//svgson",
-        "@npm//element-to-path",
-    ] + DEPENDENCIES,
+    data = CODEGEN_DATA,
 )
 
 ts_node(
     name = "sync_icons",
     args = [
+        "-r tsconfig-paths/register",
+        "--files",
         "eng/shared/design-system/codegen/icons/syncSvgsFromFigma.ts",
-        "--project $(execpath //:tsconfig.json)",
+        "--prettierConfig $(execpath //:.prettierrc)",
     ],
-    data = [
-        "//:tsconfig.json",
-        "//eng/shared/design-system/codegen:runtime_source",
-        "@npm//axios",
-        "@npm//chalk",
-        "@npm//ora",
+    data = CODEGEN_DATA,
+)
+
+ts_node(
+    name = "build_icons",
+    args = [
+        "-r tsconfig-paths/register",
+        "--files",
+        "eng/shared/design-system/codegen/icons/build.ts",
+        "--prettierConfig $(execpath //:.prettierrc)",
     ],
+    data = CODEGEN_DATA,
 )
 
 ts_node(

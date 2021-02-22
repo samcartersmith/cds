@@ -15,7 +15,7 @@ const templates = {
       SpectrumHue: Spectrum.hueNames,
       SpectrumHueStep: Spectrum.hueSteps,
       SpectrumAlias: '`${SpectrumHue}${SpectrumHueStep}`',
-      SpectrumAliasWithOpacity: '[SpectrumAlias, number]',
+      SpectrumAliasWithOpacity: 'readonly [SpectrumAlias, number]',
     },
   },
   'common/types/Typography.ts': {

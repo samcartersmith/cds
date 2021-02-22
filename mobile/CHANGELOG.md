@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ## 0.1.1 (2/19/2021, 03:27 PM PST) [#](https://github.cbhq.net/mono/repo/pull/)
 
-- Bump @cds/common version to latest
+- Bump @cbhq/cds-common version to latest
 
 ## 0.1.0 (2/19/2021, 01:24 PM PST) [#13179](https://github.cbhq.net/mono/repo/pull/13179)
 

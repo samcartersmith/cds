@@ -184,10 +184,15 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<false | ViewStyle | RegisteredStyle<ViewStyle> | null | undefined>',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
     'ViewStyle',
-    'ViewStyle[]',
-    'WithAnimatedArray<ViewStyle>',
+    'WithAnimatedArray<false | ViewStyle | RegisteredStyle<ViewStyle> | RecursiveArray<false | ViewStyle | RegisteredStyle<ViewStyle> | null | undefined> | readonly (false | ... 3 more ... | undefined)[] | null | undefined>',
     'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
   ]}
   webOptions={[]}
 />
@@ -384,6 +389,21 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
 />
 
 <ComponentDetails componentName="Box" templateName="overflow" />
+
+### pin
+
+Direction in which to absolutely pin the box.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="pin"
+  required={false}
+  defaultValue=""
+  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
+  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+/>
+
+<ComponentDetails componentName="Box" templateName="pin" />
 
 ### position
 

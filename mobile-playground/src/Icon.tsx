@@ -2,12 +2,12 @@ import React from 'react';
 
 import {
   Box,
-  Icon,
-  FiatIcon,
-  iconGlyphMap,
   TextBody,
   TextHeadline,
   HStack,
+  Icon,
+  FiatIcon,
+  iconGlyphMap,
 } from '@cbhq/cds-mobile';
 import { entries } from '@cbhq/cds-utils';
 
@@ -26,9 +26,9 @@ const IconScreen = () => {
             <FiatIcon currencyCode="GBP" />
             <FiatIcon currencyCode="JPY" />
           </HStack>
-          {entries(iconGlyphMap[32]).map(([name]) => (
+          {entries(iconGlyphMap).map(([name]) => (
             <Box key={name} width={200}>
-              <TextBody>{name}</TextBody>
+              <TextBody>{name[32]}</TextBody>
               <Icon size="l" name={name} />
             </Box>
           ))}

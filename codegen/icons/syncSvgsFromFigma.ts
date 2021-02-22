@@ -1,3 +1,4 @@
+import { camelCase, entries } from '@cbhq/cds-utils';
 import axios from 'axios';
 import * as chalk from 'chalk';
 import * as fs from 'fs';
@@ -7,7 +8,11 @@ import { promisify } from 'util';
 
 import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
+import { generateFromTemplate } from '../utils/generateFromTemplate';
 import { getSourcePath } from '../utils/getSourcePath';
+import { createIconSet } from './createIconSet';
+import { createUnicodeMap } from './createUnicodeMap';
+import { fillMissingIcons } from './fillMissingIcons';
 
 const CDS_UTILITY_ACCT_PERSONAL_ACCESS_TOKEN = '152081-24342ed1-00c8-449d-a736-eeec18ef9348';
 const ICONS_FILE_ID = 'ZPu9gtLB5KTkzazHcf9Sfi';
@@ -35,7 +40,8 @@ const normalizeIconName = (imageName: string): IconName | void => {
   };
 };
 
-const sync = async () => {
+(async function () {
+  const { nameSet, sizeMap } = createIconSet();
   const spinner = ora(
     `Synchronizing ${chalk.bold.blueBright('CDS Icons')} with figma file ${chalk.bold(
       'ZPu9gtLB5KTkzazHcf9Sfi'
@@ -82,22 +88,45 @@ const sync = async () => {
     const requests = Object.values(images).map(url => axios.get(url));
     const responses = await Promise.all(requests);
     spinner.text = 'Write svg icons to files.';
-
     const OUT_DIR = await getSourcePath('codegen/icons/svg');
     if (fs.existsSync(OUT_DIR)) {
       fs.rmdirSync(OUT_DIR, { recursive: true });
     }
     fs.mkdirSync(OUT_DIR);
 
-    const writePromises: (Promise<unknown> | undefined)[] = responses.map((res, index) => {
+    const writePromises: (Promise<unknown> | undefined)[] = [];
+
+    responses.forEach((res, index) => {
       const id = iconIds[index];
       if (!res.data) {
         delete iconComponents[id];
         return;
       }
-      const { name, size, style } = iconsInfo[id];
-      return writeFile(path.join(OUT_DIR, `${[name, size, style].join('-')}.svg`), res.data);
+      const { name, size, style = '' } = iconsInfo[id];
+      const camelCaseName = camelCase(`${name} ${style}`);
+      nameSet.add(camelCaseName);
+      sizeMap[size][camelCaseName] = res.data;
     });
+
+    fillMissingIcons(nameSet, sizeMap);
+
+    const { unicodeMap, lastUnicode } = createUnicodeMap(nameSet);
+    entries(unicodeMap).forEach(([name, sizes]) => {
+      for (const size in sizes) {
+        const unicode = sizes[size] as string;
+        const fileName = `${unicode}-${name}-${size}.svg`;
+        writePromises.push(writeFile(path.join(OUT_DIR, fileName), sizeMap[size][name] as string));
+      }
+    });
+
+    writePromises.push(
+      generateFromTemplate({
+        template: 'objectMap.ejs',
+        data: { manifest: { lastUnicode, unicodeMap } },
+        config: { disableAsConst: true },
+        dest: 'codegen/icons/manifest.ts',
+      })
+    );
 
     writePromises.push(
       writeFile(
@@ -113,10 +142,10 @@ const sync = async () => {
         Object.keys(iconComponents).length
       } icons to ${OUT_DIR}.`
     );
+
+    return { lastUnicode, unicodeMap };
   } catch (error) {
     spinner.fail(`${chalk.redBright('failed')}`);
     console.error(error);
   }
-};
-
-sync();
+})();

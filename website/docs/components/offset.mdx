@@ -62,10 +62,15 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<false | ViewStyle | RegisteredStyle<ViewStyle> | null | undefined>',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
     'ViewStyle',
-    'ViewStyle[]',
-    'WithAnimatedArray<ViewStyle>',
+    'WithAnimatedArray<false | ViewStyle | RegisteredStyle<ViewStyle> | RecursiveArray<false | ViewStyle | RegisteredStyle<ViewStyle> | null | undefined> | readonly (false | ... 3 more ... | undefined)[] | null | undefined>',
     'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
   ]}
   webOptions={[]}
 />
