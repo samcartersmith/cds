@@ -1,4 +1,4 @@
-import { mapKeys, mapValues, toCssVar } from '@cds/utils';
+import { mapKeys, mapValues, toCssVar } from '@cbhq/cds-utils';
 
 import * as spectrumModes from '../configs/spectrum';
 import { createSpectrum } from './createSpectrum';

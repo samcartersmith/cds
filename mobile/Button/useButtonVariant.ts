@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { ButtonVariant } from '@cds/common';
+import { ButtonVariant } from '@cbhq/cds-common';
 
 import { usePalette } from '../hooks/usePalette';
 

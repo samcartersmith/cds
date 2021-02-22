@@ -4,8 +4,8 @@
     "no-restricted-imports": [
       "error",
       {
-        "paths": ["@cds/common"],
-        "patterns": ["@cds/common/*"]
+        "paths": ["@cbhq/cds-common"],
+        "patterns": ["@cbhq/cds-common/*"]
       }
     ]
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from '@cds/mobile';
+import { Button } from '@cbhq/cds-mobile';
 import { GestureResponderEvent } from 'react-native';
 
 import Example from './internal/Example';

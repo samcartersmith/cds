@@ -1,7 +1,15 @@
 import React from 'react';
 
-import { Box, Icon, FiatIcon, iconGlyphMap, TextBody, TextHeadline, HStack } from '@cds/mobile';
-import { entries } from '@cds/utils';
+import {
+  Box,
+  Icon,
+  FiatIcon,
+  iconGlyphMap,
+  TextBody,
+  TextHeadline,
+  HStack,
+} from '@cbhq/cds-mobile';
+import { entries } from '@cbhq/cds-utils';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';

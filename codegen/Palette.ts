@@ -1,4 +1,4 @@
-import { arrayToObject, mapValues, toCssVarFn } from '@cds/utils';
+import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils';
 
 export const defaultPalette = {
   foreground: 'gray100',

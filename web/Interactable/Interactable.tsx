@@ -1,6 +1,11 @@
 import React, { useMemo, useState } from 'react';
 
-import { PaletteBackground, PaletteValue, SpectrumHueStep, usePaletteConfig } from '@cds/common';
+import {
+  PaletteBackground,
+  PaletteValue,
+  SpectrumHueStep,
+  usePaletteConfig,
+} from '@cbhq/cds-common';
 import { cx, css } from 'linaria';
 
 import { palette } from '../styles/palette';

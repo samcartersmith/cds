@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-`@cds/icons` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+`@cbhq/cds-icons` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
@@ -28,4 +28,4 @@ All notable changes to this project will be documented in this file.
 - Add insto chart study and draw icons by @hannah-jin [#7259](https://github.cbhq.net/mono/repo/pull/7259)
 - Generate CDS Icons from figma by @hannah-jin [#7152](https://github.cbhq.net/mono/repo/pull/7152)
 - Improve icon story and pass through props in Icon components by @hannah-jin [#8280](https://github.cbhq.net/mono/repo/pull/8280)
-- Replace `useScale` to pull from `@cds/theme` package @katherinemartinez [#10685](https://github.cbhq.net/mono/repo/pull/10685)
+- Replace `useScale` to pull from `@cbhq/cds-theme` package @katherinemartinez [#10685](https://github.cbhq.net/mono/repo/pull/10685)

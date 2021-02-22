@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import type { Typography } from '@cds/common';
-import { pascalCase } from '@cds/utils';
+import type { Typography } from '@cbhq/cds-common';
+import { pascalCase } from '@cbhq/cds-utils';
 import { cx, css } from 'linaria';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';

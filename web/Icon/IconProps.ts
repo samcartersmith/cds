@@ -1,4 +1,4 @@
-import type { PaletteForeground, IconBaseProps } from '@cds/common';
+import type { PaletteForeground, IconBaseProps } from '@cbhq/cds-common';
 
 export interface IconProps extends IconBaseProps {
   color?: PaletteForeground;

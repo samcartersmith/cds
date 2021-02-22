@@ -1,4 +1,4 @@
-import { PaletteAlias } from '@cds/common';
+import { PaletteAlias } from '@cbhq/cds-common';
 
 type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 

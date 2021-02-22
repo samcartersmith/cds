@@ -1,4 +1,4 @@
-import { PinningDirection } from '@cds/common';
+import { PinningDirection } from '@cbhq/cds-common';
 
 import * as styles from '../styles/pin';
 

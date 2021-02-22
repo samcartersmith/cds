@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, TextProps } from '@cds/mobile';
+import { Box, TextProps } from '@cbhq/cds-mobile';
 
 import Example from './Example';
 import Screen from './Screen';

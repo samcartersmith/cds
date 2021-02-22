@@ -1,23 +1,20 @@
 {
-  "name": "@cds/lottie-files",
+  "name": "@cbhq/cds-lottie-files",
   "version": "0.0.1",
   "description": "Coinbase Design System - Lottie Files",
-  "keywords": [
-    "cds",
-    "design system",
-    "lottie files",
-    "animations"
-  ],
+  "keywords": ["cds", "design system", "lottie files", "animations"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
     "directory": "eng/shared/design-system/lottie-files"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry-npm.cbhq.net"
+  },
   "authors": "Coinbase",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "typings": "index.ts",
-  "files": [
-    "*.json"
-  ]
+  "files": ["*.json"]
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { pascalCase } from '@cds/utils';
+import { pascalCase } from '@cbhq/cds-utils';
 
 import type { IconProps } from './props';
 import { useIconPixelSize } from './useIconPixelSize';

@@ -1,16 +1,16 @@
 {
-  "name": "@cds/utils",
+  "name": "@cbhq/cds-utils",
   "version": "0.0.6",
   "description": "Coinbase Design System - Utils",
-  "keywords": [
-    "design system",
-    "utils",
-    "helpers"
-  ],
+  "keywords": ["design system", "utils", "helpers"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
     "directory": "eng/shared/design-system/utils"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry-npm.cbhq.net"
   },
   "authors": {
     "coinbase": "coinbase"

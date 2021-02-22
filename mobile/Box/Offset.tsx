@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { OffsetBaseProps } from '@cds/common';
+import { OffsetBaseProps } from '@cbhq/cds-common';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';

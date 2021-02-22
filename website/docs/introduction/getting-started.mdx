@@ -31,9 +31,9 @@ module.exports = {
 2. Install the CDS packages you need
 
 ```bash
-yarn add @cds/web # if using web components
-yarn add @cds/mobile # if using mobile components
-yarn add @cds/icons # if using CDS icons
+yarn add @cbhq/cds-web # if using web components
+yarn add @cbhq/cds-mobile # if using mobile components
+yarn add @cbhq/cds-icons # if using CDS icons
 ```
 
 ## Building with CDS
@@ -41,7 +41,7 @@ yarn add @cds/icons # if using CDS icons
 1. Add `ThemeProvider` to the root of your React application. Choose a scale for your application from the seven scales supported by CDS.
 
 ```tsx
-import { ThemeProvider } from '@cds/web'
+import { ThemeProvider } from '@cbhq/cds-web'
 
 export const App = () => {
   <ThemeProvider scale="large">
@@ -54,7 +54,7 @@ export const App = () => {
 
 If you have components that are created outside of the app's main DOM tree, such as `Modal`s that use `createPortal`, you will need to add `ThemeProvider` to the root of the portal element as well.
 
-2. Import components from `@cds/web` or `@cds/mobile`.
+2. Import components from `@cbhq/cds-web` or `@cbhq/cds-mobile`.
 3. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.
 
    - example 1. Use `Headline` typography for the text.

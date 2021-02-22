@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { fallbackStack } from '@cb/design-system-web/styles/shared';
-import { GetStory } from '@cds/storybook/decorators/types';
+import { GetStory } from '@cbhq/cds-storybook/decorators/types';
 import { css } from 'linaria';
 
 type StoryNameLabelProps = {

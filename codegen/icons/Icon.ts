@@ -1,4 +1,4 @@
-import { mapKeys, mapValues } from '@cds/utils';
+import { mapKeys, mapValues } from '@cbhq/cds-utils';
 // @ts-expect-error No types for this package
 import * as toPath from 'element-to-path';
 // eslint-disable-next-line import/no-extraneous-dependencies

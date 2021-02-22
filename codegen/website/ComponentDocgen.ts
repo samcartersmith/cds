@@ -1,4 +1,4 @@
-import { kebabCase } from '@cds/utils';
+import { kebabCase } from '@cbhq/cds-utils';
 import { ComponentDoc, PropItem } from 'react-docgen-typescript';
 
 import { PropOptions, PropertyDocgen, normalizeOptions } from './PropertyDocgen';

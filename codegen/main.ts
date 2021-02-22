@@ -1,4 +1,4 @@
-import { AnyObject, mapValues } from '@cds/utils';
+import { AnyObject, mapValues } from '@cbhq/cds-utils';
 
 import { scaleConfig } from './configs/scaleConfig';
 import { Icon } from './icons/Icon';

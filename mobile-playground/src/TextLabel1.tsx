@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextLabel1 } from '@cds/mobile';
+import { TextLabel1 } from '@cbhq/cds-mobile';
 
 import TextExamplesScreen from './internal/TextExamples';
 

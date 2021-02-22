@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { PinningDirection } from '@cds/common';
+import { PinningDirection } from '@cbhq/cds-common';
 import { StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 

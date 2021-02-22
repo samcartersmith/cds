@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OffsetBaseProps } from '@cds/common';
+import type { OffsetBaseProps } from '@cbhq/cds-common';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 

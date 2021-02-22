@@ -1,9 +1,9 @@
 import React from 'react';
 
-import * as templatesMap from '@cds/website/docs/components/examples';
+import * as templatesMap from '@cbhq/cds-website/docs/components/examples';
 
-/* 
-  See CDS contributing.md for details on adding content to API documentation 
+/*
+  See CDS contributing.md for details on adding content to API documentation
 */
 
 type ExamplesMap = typeof templatesMap;

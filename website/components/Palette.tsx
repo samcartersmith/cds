@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { wordCase, capitalize } from '@cds/utils';
+import { wordCase, capitalize } from '@cbhq/cds-utils';
 import {
   defaultPalette,
   palette,
@@ -9,7 +9,7 @@ import {
   ThemeProvider,
   TextHeadline,
   TextLabel1,
-} from '@cds/web';
+} from '@cbhq/cds-web';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 

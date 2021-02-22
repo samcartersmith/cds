@@ -1,5 +1,5 @@
-export * from '@cds/common';
-export { SystemProvider as ThemeProvider } from '@cds/common';
+export * from '@cbhq/cds-common';
+export { SystemProvider as ThemeProvider } from '@cbhq/cds-common';
 export * from './Box/Box';
 export * from './Box/HStack';
 export * from './Box/OverflowGradient';

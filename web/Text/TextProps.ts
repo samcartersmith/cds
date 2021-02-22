@@ -1,4 +1,4 @@
-import { TextBaseProps, PaletteForeground } from '@cds/common';
+import { TextBaseProps, PaletteForeground } from '@cbhq/cds-common';
 
 export interface TextProps extends TextBaseProps {
   /**

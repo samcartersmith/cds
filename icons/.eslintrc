@@ -4,8 +4,8 @@
     "no-restricted-imports": [
       "error",
       {
-        "paths": ["@cds/icons"],
-        "patterns": ["@cds/icons/*"]
+        "paths": ["@cbhq/cds-icons"],
+        "patterns": ["@cbhq/cds-icons/*"]
       }
     ]
   }

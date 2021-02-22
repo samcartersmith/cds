@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { ButtonBaseProps } from '@cds/common';
+import { ButtonBaseProps } from '@cbhq/cds-common';
 import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';

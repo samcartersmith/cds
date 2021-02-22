@@ -11,7 +11,7 @@ const root = argv.root as string;
 if (!name) {
   throw new Error('New package name must be provided.');
 } else if (name.startsWith('@')) {
-  throw new Error('Package name must not start with @cds scope.');
+  throw new Error('Package name must not start with @cbhq scope.');
 } else if (!name.match(/[-a-z0-9]+/)) {
   throw new Error('Package name must be in kebab-case.');
 }

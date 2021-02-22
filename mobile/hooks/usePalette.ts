@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useSpectrum, UsePaletteFn, usePaletteConfig } from '@cds/common';
+import { useSpectrum, UsePaletteFn, usePaletteConfig } from '@cbhq/cds-common';
 
 import { convertPalette } from '../utils/convertPalette';
 

@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-`@cds/common `adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+`@cbhq/cds-common `adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
@@ -62,4 +62,4 @@ All notable changes to this project will be documented in this file.
 
 #### 🚀 Updates
 
-- Init `@cds/core` by @miles-johnson [#11333](https://github.cbhq.net/mono/repo/pull/11333)
+- Init `@cbhq/cds-core` by @miles-johnson [#11333](https://github.cbhq.net/mono/repo/pull/11333)

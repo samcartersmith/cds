@@ -1,4 +1,4 @@
-import { SpectrumHueStep } from '@cds/common';
+import { SpectrumHueStep } from '@cbhq/cds-common';
 
 export const opacityHovered: Record<SpectrumHueStep, number> = {
   0: 0.7,

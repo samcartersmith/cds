@@ -1,4 +1,4 @@
-import { mapValues, arrayToObject } from '@cds/utils';
+import { mapValues, arrayToObject } from '@cbhq/cds-utils';
 
 import { spacingConfig, spacingScaleWithoutZero, spacingDirections } from './configs/spacingConfig';
 

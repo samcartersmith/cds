@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import 'react-native-gesture-handler';
-import { ThemeProvider, usePalette } from '@cds/mobile';
+import { ThemeProvider, usePalette } from '@cbhq/cds-mobile';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 

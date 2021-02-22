@@ -4,10 +4,10 @@
 
 ## Get Started
 
-Install package with `yarn add @cds/lottie-files`
+Install package with `yarn add @cbhq/cds-lottie-files`
 
-- `import { tradeStatus } from '@cds/lottie-files/tradeStatus'` for mobile to prevent bundling all assets on build
-- `import { tradeStatus } from '@cds/lottie-files'` for web if your project supports treeshaking
+- `import { tradeStatus } from '@cbhq/cds-lottie-files/tradeStatus'` for mobile to prevent bundling all assets on build
+- `import { tradeStatus } from '@cbhq/cds-lottie-files'` for web if your project supports treeshaking
 
 ### Inside mono/repo
 
@@ -15,8 +15,8 @@ Install package with `yarn add @cds/lottie-files`
 
 ### 🚧 Outside mono/repo (WIP)
 
-Make sure `@cds:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
+Make sure `@cbhq:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
 
 ```
-yarn add @cds/lottie
+yarn add @cbhq/cds-lottie
 ```

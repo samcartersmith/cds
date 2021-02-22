@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextHeadline } from '@cds/mobile';
+import { TextHeadline } from '@cbhq/cds-mobile';
 
 import TextExamplesScreen from './internal/TextExamples';
 

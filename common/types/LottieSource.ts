@@ -1,4 +1,4 @@
-import { AnyObject } from '@cds/utils';
+import { AnyObject } from '@cbhq/cds-utils';
 
 import { LottieMarker } from './LottieMarker';
 

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { PaletteForeground, useIconSize } from '@cds/common';
+import { PaletteForeground, useIconSize } from '@cbhq/cds-common';
 import { Animated, Text, TextStyle } from 'react-native';
 
 import { Box } from '../Box/Box';

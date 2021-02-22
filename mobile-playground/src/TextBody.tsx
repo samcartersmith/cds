@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextBody } from '@cds/mobile';
+import { TextBody } from '@cbhq/cds-mobile';
 
 import TextExamplesScreen from './internal/TextExamples';
 

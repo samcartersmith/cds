@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useScale, useSpectrum, SystemProvider, SystemProviderProps } from '@cds/common';
+import { useScale, useSpectrum, SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
 import { usePaletteToCssVars } from '../hooks/usePaletteToCssVars';

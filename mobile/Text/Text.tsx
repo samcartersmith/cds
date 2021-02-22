@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { TextBaseProps, Typography, PaletteForeground, useScale } from '@cds/common';
-import { pascalCase } from '@cds/utils';
+import { TextBaseProps, Typography, PaletteForeground, useScale } from '@cbhq/cds-common';
+import { pascalCase } from '@cbhq/cds-utils';
 import {
   Animated,
   I18nManager,

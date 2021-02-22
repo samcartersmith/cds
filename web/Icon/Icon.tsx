@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import type { FC } from 'react';
 
-import { useIconSize } from '@cds/common';
+import { useIconSize } from '@cbhq/cds-common';
 
 import { Box } from '../Box/Box';
 import { usePalette } from '../hooks/usePalette';

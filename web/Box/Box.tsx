@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { BoxBaseProps } from '@cds/common';
+import type { BoxBaseProps } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
 import { usePinStyles } from '../hooks/usePinStyles';

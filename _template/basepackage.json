@@ -1,5 +1,5 @@
 {
-  "name": "@cds/<package>",
+  "name": "@cbhq/cds-<package>",
   "version": "0.0.1",
   "description": "Coinbase Design System - <description>",
   "keywords": ["cds", "design system", "<keywords>"],
@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
     "directory": "eng/shared/design-system/<package>"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry-npm.cbhq.net"
   },
   "authors": "Coinbase",
   "main": "lib/index.js",

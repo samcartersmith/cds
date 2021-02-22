@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { emptyObject } from '@cds/utils';
+import { emptyObject } from '@cbhq/cds-utils';
 
 import { PartialPaletteConfig } from '../types';
 import { defaultPalette } from './constants';

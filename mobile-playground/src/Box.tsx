@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, TextBody } from '@cds/mobile';
+import { Box, TextBody } from '@cbhq/cds-mobile';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';

@@ -4,8 +4,8 @@
     "no-restricted-imports": [
       "error",
       {
-        "paths": ["@cds/mobile"],
-        "patterns": ["@cds/mobile/*"]
+        "paths": ["@cbhq/cds-mobile"],
+        "patterns": ["@cbhq/cds-mobile/*"]
       }
     ]
   }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { usePaletteConfig } from '@cds/common';
-import { mapValues, mapKeys, toCssVar, toCssVarFn } from '@cds/utils';
+import { usePaletteConfig } from '@cbhq/cds-common';
+import { mapValues, mapKeys, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 
 export const usePaletteToCssVars = () => {
   const paletteConfig = usePaletteConfig();

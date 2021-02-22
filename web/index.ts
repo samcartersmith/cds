@@ -6,7 +6,7 @@ export * as backgroundStyles from './styles/backgroundColor';
 export * as foregroundStyles from './styles/foregroundColor';
 export * as typographyStyles from './styles/typography';
 
-export * from '@cds/common';
+export * from '@cbhq/cds-common';
 export * from './Box/Box';
 export * from './Box/HStack';
 export * from './Box/VStack';

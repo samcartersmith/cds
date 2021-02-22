@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { ButtonBaseProps } from '@cds/common';
+import { ButtonBaseProps } from '@cbhq/cds-common';
 import { AriaButtonProps } from '@react-types/button';
 import { cx } from 'linaria';
 import { useButton } from 'react-aria';

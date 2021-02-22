@@ -1,20 +1,17 @@
 {
-  "name": "@cds/web",
+  "name": "@cbhq/cds-web",
   "version": "0.0.4",
   "description": "Coinbase Design System - Web",
-  "keywords": [
-    "design system",
-    "component library",
-    "react",
-    "typescript"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
+  "keywords": ["design system", "component library", "react", "typescript"],
+  "sideEffects": ["*.css"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
     "directory": "eng/shared/design-system/web"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry-npm.cbhq.net"
   },
   "authors": {
     "coinbase": "coinbase"

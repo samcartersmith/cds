@@ -1,4 +1,4 @@
-import { emptyObject } from '@cds/utils';
+import { emptyObject } from '@cbhq/cds-utils';
 import { generate } from '@k-vyn/coloralgorithm';
 
 import * as modes from '../configs/spectrum';

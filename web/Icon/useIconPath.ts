@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import type { IconName, IconPixelSize } from '@cds/common';
+import type { IconName, IconPixelSize } from '@cbhq/cds-common';
 
 import * as paths from './paths';
 

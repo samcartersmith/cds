@@ -1,4 +1,4 @@
-import { kebabCase, mapKeys, mapValues, pascalCase, toCssVar, toCssVarFn } from '@cds/utils';
+import { kebabCase, mapKeys, mapValues, pascalCase, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 import {
   typographyConfig,
   TypographyConfig,

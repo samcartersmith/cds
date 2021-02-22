@@ -12,7 +12,7 @@ import * as styles from './textStyles';
 export type { TextProps };
 
 if (process.env.NODE_ENV !== 'production') {
-  console.warn('@cb/design-system-web components are deprecated. Please migrate to @cds/web.');
+  console.warn('@cb/design-system-web components are deprecated. Please migrate to @cbhq/cds-web.');
 }
 
 const noLineWrap = css`

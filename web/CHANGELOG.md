@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-`@cds/web` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+`@cbhq/cds-web` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 

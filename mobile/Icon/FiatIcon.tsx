@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import { IconName, IconSize } from '@cds/common';
+import { IconName, IconSize } from '@cbhq/cds-common';
 
 import { Icon } from './Icon';
 

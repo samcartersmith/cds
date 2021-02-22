@@ -4,10 +4,10 @@
     "no-restricted-imports": [
       "error",
       {
-        "paths": ["@cds/lottie-files"],
-        "patterns": ["@cds/lottie-files/*"]
+        "paths": ["@cbhq/cds-lottie-files"],
+        "patterns": ["@cbhq/cds-lottie-files/*"]
       }
     ],
-    "import/extensions": ["error", "never", {"json": "always"}]
+    "import/extensions": ["error", "never", { "json": "always" }]
   }
 }

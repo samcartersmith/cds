@@ -1,4 +1,4 @@
-import { AnyObject } from '@cds/utils';
+import { AnyObject } from '@cbhq/cds-utils';
 import { writePrettyFile } from '@tools/writePrettyFile';
 import * as ejs from 'ejs';
 import * as fs from 'fs';

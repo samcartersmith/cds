@@ -25,9 +25,9 @@ export interface LottieBaseProps<T extends LottieSource = LottieSource> {
    */
   resizeMode?: 'cover' | 'contain' | 'center';
   /**
-   * The source of animation. Should be pulled from @cds/lottie-files.
-   * For mobile, import the animation from the animations folder instead of from index so that unused animations are not included during build, `import { tradeStatus } from @cds/lottie-files/tradeStatus`.
-   * For web, you can import the animation from index since this webpack can handle treeshaking, `import { tradeStatus } from @cds/lottie-files`
+   * The source of animation. Should be pulled from @cbhq/cds-lottie-files.
+   * For mobile, import the animation from the animations folder instead of from index so that unused animations are not included during build, `import { tradeStatus } from @cbhq/cds-lottie-files/tradeStatus`.
+   * For web, you can import the animation from index since this webpack can handle treeshaking, `import { tradeStatus } from @cbhq/cds-lottie-files`
    */
   source: T;
 }

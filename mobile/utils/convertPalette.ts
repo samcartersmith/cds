@@ -1,5 +1,5 @@
-import { defaultPalette, PaletteValue, PartialPaletteConfig, Spectrum } from '@cds/common';
-import { mapValues } from '@cds/utils';
+import { defaultPalette, PaletteValue, PartialPaletteConfig, Spectrum } from '@cbhq/cds-common';
+import { mapValues } from '@cbhq/cds-utils';
 
 import * as spectrumColors from '../styles/spectrum';
 

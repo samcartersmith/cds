@@ -1,1 +1,1 @@
-import '@cds/fonts/fonts.css';
+import '@cbhq/cds-fonts/fonts.css';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextLegal } from '@cds/mobile';
+import { TextLegal } from '@cbhq/cds-mobile';
 
 import TextExamplesScreen from './internal/TextExamples';
 
