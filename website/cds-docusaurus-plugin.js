@@ -1,7 +1,7 @@
 const path = require('path');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-
-const MONOREPO_ROOT_DIR = path.resolve(__dirname, '../../../../');
+const {
+  addRootModeUpwardToBabelLoaders,
+} = require('../../../shared/utils/webpack/addRootModeUpwardToBabelLoaders');
 
 module.exports = () => {
   return {
@@ -9,12 +9,10 @@ module.exports = () => {
     configureWebpack(config) {
       const isProduction = config.mode === 'production';
       const tsModuleRule = config.module.rules.find(rule => Boolean('.tsx'.match(rule.test)));
-      const tsconfigPath = path.join(MONOREPO_ROOT_DIR, 'tsconfig.json');
+
+      addRootModeUpwardToBabelLoaders(config);
 
       return {
-        resolve: {
-          plugins: [new TsconfigPathsPlugin({ configFile: tsconfigPath })],
-        },
         module: {
           rules: [
             {

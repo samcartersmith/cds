@@ -29,6 +29,7 @@ DATA = [
     "//:tsconfig.json",
     "//:babel.config.js",
     "//eng/shared/design-system:build_source",
+    "//eng/shared/utils:webpack/addRootModeUpwardToBabelLoaders.js",
     # dependencies
     "@npm//react",
     "@npm//react-dom",
@@ -42,7 +43,6 @@ DATA = [
     "@npm//@babel/preset-typescript",
     "@npm//babel-plugin-module-resolver",
     "@npm//@docusaurus/module-type-aliases",
-    "@npm//tsconfig-paths-webpack-plugin",
     # types
     "@npm//@tsconfig/docusaurus",
     "@npm//@types/react-helmet",

@@ -244,6 +244,7 @@ STORYBOOK_DEPS = [
     "//:babel.config.js",
     "//:package.json",
     "//:tsconfig.json",
+    "//eng/shared/utils:webpack/addRootModeUpwardToBabelLoaders.js",
     "@npm//@babel/core",
     "@npm//@babel/parser",
     "@npm//@babel/preset-env",
@@ -272,7 +273,6 @@ STORYBOOK_DEPS = [
     "@npm//react",
     "@npm//react-dom",
     "@npm//storybook-addon-designs",
-    "@npm//tsconfig-paths-webpack-plugin",
     "@npm//typescript",
 ] + DEPENDENCIES
 

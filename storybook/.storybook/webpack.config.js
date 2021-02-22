@@ -2,16 +2,19 @@ const path = require('path');
 
 const Dotenv = require('dotenv-webpack');
 const HtmlPlugin = require('html-webpack-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const MONOREPO_ROOT_DIR = path.resolve(__dirname, '../../../../../');
 const envFile = `.env${process.env.NODE_ENV === 'development' ? '.local' : ''}`;
+
+const {
+  addRootModeUpwardToBabelLoaders,
+} = require('../../../utils/webpack/addRootModeUpwardToBabelLoaders');
 
 /**
  * Customize and extending storybook default webpack config.
  * Storybook's default webpack config has typescript support starting v6.
  */
-module.exports = ({ config, tsconfig, environmentFile }) => {
+module.exports = ({ config, environmentFile }) => {
   const isProduction = config.mode === 'production';
 
   config.stats = isProduction ? 'errors-only' : 'verbose';
@@ -28,6 +31,8 @@ module.exports = ({ config, tsconfig, environmentFile }) => {
     }),
   ];
 
+  addRootModeUpwardToBabelLoaders(config);
+
   // Add linaria/loader to storybook default webpack config module rules for .tsx files
   const tsModuleRule = config.module.rules.find(rule => Boolean('.tsx'.match(rule.test)));
   if (!tsModuleRule) {
@@ -43,11 +48,6 @@ module.exports = ({ config, tsconfig, environmentFile }) => {
   });
 
   config.resolve.modules = [path.resolve(MONOREPO_ROOT_DIR), 'node_modules'];
-  const tsconfigPath = tsconfig || path.join(MONOREPO_ROOT_DIR, 'tsconfig.json');
-  config.resolve.plugins = [
-    ...config.resolve.plugins,
-    new TsconfigPathsPlugin({ configFile: tsconfigPath }),
-  ];
 
   return config;
 };
