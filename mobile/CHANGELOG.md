@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.2 (2/23/2021, 09:30 AM PST) [#13402](https://github.cbhq.net/mono/repo/pull/13402)
+
+#### 🐞 Updates
+
+- Add Icon component and icon font @katherinemartinez [#13324](https://github.cbhq.net/mono/repo/pull/13324)
+
 ## 0.1.1 (2/19/2021, 03:27 PM PST) [#](https://github.cbhq.net/mono/repo/pull/)
 
 - Bump @cbhq/cds-common version to latest
