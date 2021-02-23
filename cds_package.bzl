@@ -1,7 +1,7 @@
 load("@npm//@babel/cli:index.bzl", "babel")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
 load("//tools:def.bzl", "node_package_gen")
-load(":config.bzl", "DEPENDENCIES")
+load(":config.bzl", "uniq")
 
 BABEL_ARGS = [
     "--config-file ./$(execpath //eng/shared/design-system:babel.config.js)",
@@ -25,10 +25,12 @@ BABEL_DEPS = [
     "@npm//source-map",
     "@npm//stylis",
     "@npm//yargs",
-] + DEPENDENCIES
+    "@npm//linaria",
+]
 
 def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependencies):
     package_source_path = "eng/shared/design-system/%s" % name
+    babel_data = uniq(BABEL_DEPS + srcs + dependencies + peer_dependencies)
 
     # Generate a package.json
     node_package_gen(
@@ -43,14 +45,14 @@ def cds_package(name, srcs, dependencies, peer_dependencies, monorepo_dependenci
     babel(
         name = "lib",
         args = [package_source_path] + BABEL_ARGS,
-        data = BABEL_DEPS + srcs,
+        data = babel_data,
         output_dir = True,
     )
 
     babel(
         name = "esm",
         args = [package_source_path] + BABEL_ARGS,
-        data = BABEL_DEPS + srcs,
+        data = babel_data,
         output_dir = True,
     )
 

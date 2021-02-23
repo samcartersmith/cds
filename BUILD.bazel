@@ -3,7 +3,7 @@ load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "stylelint_tes
 load("@npm//serve:index.bzl", "serve")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
-load(":config.bzl", "DEPENDENCIES", "PACKAGES", "STATIC_PACKAGES")
+load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
 
 exports_files([
     ".babelrc.js",
@@ -138,7 +138,8 @@ TEST_DEPS = [
     "@npm//jest-axe",
     "@npm//react",
     "@npm//text-encoding",
-] + DEPENDENCIES
+    "@npm//linaria",
+]
 
 jest_test(
     name = "unit_tests_web",
@@ -151,11 +152,11 @@ jest_test(
         "//eng/shared/design-system/utils:source",
         "//eng/shared/design-system/web:source",
     ],
-    deps = TEST_DEPS + [
+    deps = append_cds_web_deps(TEST_DEPS + [
         "@npm//@testing-library/jest-dom",
         "@npm//@testing-library/react-hooks",
         "@npm//@testing-library/react",
-    ],
+    ]),
 )
 
 jest_test(
@@ -165,20 +166,20 @@ jest_test(
     test_srcs = [
         "//eng/shared/design-system/mobile:source",
     ],
-    deps = TEST_DEPS + [
+    deps = append_cds_mobile_deps(TEST_DEPS + [
         "@npm//@babel/preset-flow",
         "@npm//@testing-library/jest-native",
         "@npm//@testing-library/react-hooks",
         "@npm//@testing-library/react-native",
         "@npm//react-native",
-    ],
+    ]),
 )
 
 # ***************
 # *** codegen ***
 # ***************
 
-CODEGEN_DATA = [
+CODEGEN_DATA = append_cds_web_deps([
     ":build_source",
     "//:.prettierrc",
     "//:tsconfig.json",
@@ -198,7 +199,7 @@ CODEGEN_DATA = [
     "@npm//svgo",
     "@npm//svgson",
     "@npm//element-to-path",
-] + DEPENDENCIES
+])
 
 ts_node(
     name = "codegen",
@@ -250,7 +251,7 @@ ts_node(
 # *** storybook ***
 # *****************
 
-STORYBOOK_DEPS = [
+STORYBOOK_DEPS = append_cds_web_deps([
     ".babelrc.js",
     "//:babel.config.js",
     "//:package.json",
@@ -285,7 +286,7 @@ STORYBOOK_DEPS = [
     "@npm//react-dom",
     "@npm//storybook-addon-designs",
     "@npm//typescript",
-] + DEPENDENCIES
+])
 
 build_storybook(
     name = "storybook",
