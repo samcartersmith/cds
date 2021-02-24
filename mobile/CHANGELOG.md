@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.4 (2/23/2021, 04:49 PM PST) [#13468](https://github.cbhq.net/mono/repo/pull/13468)
+
+#### 🐞 Fixes
+
+- Disable fontScaling in Icon component @katherinemartinez [#13468](https://github.cbhq.net/mono/repo/pull/13468)
+
 ## 0.1.3 (2/23/2021, 03:06 PM PST) [#13454](https://github.cbhq.net/mono/repo/pull/13454)
 
 #### 🚀 Updates

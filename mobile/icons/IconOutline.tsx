@@ -27,5 +27,9 @@ export const IconOutline = ({ animated, size, color }: IconOutlineProps) => {
   );
 
   const TextComponent = animated ? Animated.Text : Text;
-  return <TextComponent style={textStyles}>{iconGlyphMap['outline'][size]}</TextComponent>;
+  return (
+    <TextComponent allowFontScaling={false} style={textStyles}>
+      {iconGlyphMap['outline'][size]}
+    </TextComponent>
+  );
 };

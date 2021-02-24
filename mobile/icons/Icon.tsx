@@ -64,7 +64,9 @@ export const Icon = ({
     return (
       <Box dangerouslySetStyle={boxStyles}>
         <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
-          <TextComponent style={fontStyles}>{iconGlyphMap[name][iconSize]}</TextComponent>
+          <TextComponent allowFontScaling={false} style={fontStyles}>
+            {iconGlyphMap[name][iconSize]}
+          </TextComponent>
           {bordered && <IconOutline animated size={wrapperSize} color={iconColor} />}
         </Box>
       </Box>
