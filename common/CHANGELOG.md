@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.1 (2/23/2021, 04:37 PM PST) [#13466](https://github.cbhq.net/mono/repo/pull/13466)
+
+#### 🐞 Fixes
+
+- Update IconName @katherinemartinez [#13454](https://github.cbhq.net/mono/repo/pull/13454)
+
 ## 0.1.0 (2/19/2021, 02:33 PM PST) [#13278](https://github.cbhq.net/mono/repo/pull/13278)
 
 #### 💥 Breaking
