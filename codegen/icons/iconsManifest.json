@@ -344,6 +344,11 @@
     "name": "Icon/caretUp_24_heavy",
     "description": ""
   },
+  "4204:161": {
+    "key": "e5bfa03bfab604bc9b3cd9c508e7bfff8631085f",
+    "name": "Icon/caretForward_24",
+    "description": ""
+  },
   "2207:55": {
     "key": "48d85a81ab451b92a993fd202091d679e050e265",
     "name": "Icon/dot_24_heavy",
@@ -791,7 +796,7 @@
   },
   "2611:325": {
     "key": "701455b7226b58c7bcbd94ca2d2eb52c3e46bcb5",
-    "name": "Icon/newsFeed_12_heavy",
+    "name": "Icon/newsFeed_12",
     "description": ""
   },
   "1792:162": {
@@ -1539,16 +1544,6 @@
     "name": "Icon/externalLink_16_light",
     "description": ""
   },
-  "1292:211": {
-    "key": "7dad5aacf1e0aae495c43264c63c9e1a53f9a839",
-    "name": "Icon/gauge_12_light",
-    "description": ""
-  },
-  "1292:167": {
-    "key": "18f1465caa15e3aba667e174a6f57135e3e3bfb1",
-    "name": "Icon/gauge_16_light",
-    "description": ""
-  },
   "1292:110": {
     "key": "07e98498c379fc60a8a21b10a4760fa8c0398666",
     "name": "Icon/clock_12_light",
@@ -1589,6 +1584,11 @@
     "name": "Icon/caretUp_12_heavy",
     "description": ""
   },
+  "4204:163": {
+    "key": "5b548858770df9755eeb31e4397739ac44329673",
+    "name": "Icon/caretForward_12_heavy",
+    "description": ""
+  },
   "1697:10608": {
     "key": "88e13eedc690907d89ed29571338832f30654374",
     "name": "Icon/dot_12_heavy",
@@ -1607,6 +1607,11 @@
   "1697:10593": {
     "key": "1a1f1a4d9f3d48e0def8e62638b3c040c2f90992",
     "name": "Icon/caretUp_16_heavy",
+    "description": ""
+  },
+  "4204:162": {
+    "key": "2b647ba05036adf62ef34f4f6275e86f4c37e187",
+    "name": "Icon/caretForward_16_heavy",
     "description": ""
   },
   "2207:54": {
@@ -1766,17 +1771,17 @@
   },
   "3122:146": {
     "key": "209688242c205dedba3419165891033838fb2cc1",
-    "name": "Icon/expand_24_light",
+    "name": "Icon/expandAll_24",
     "description": ""
   },
   "3122:145": {
     "key": "9dccde25a4a5a2d7760b5a51a366c7d4d601d769",
-    "name": "Icon/expand_16_light",
+    "name": "Icon/expandAll_16",
     "description": ""
   },
   "3122:150": {
     "key": "960411e313e4a77ad33dfec56aa99e36da55995d",
-    "name": "Icon/expand_12_light",
+    "name": "Icon/expandAll_12",
     "description": ""
   },
   "3122:144": {
@@ -1844,9 +1849,94 @@
     "name": "Icon/info_16_heavy",
     "description": ""
   },
+  "4194:171": {
+    "key": "2de225795fe4b3444fd297f0a3b0cbb85745557c",
+    "name": "Icon/newsFeed_16",
+    "description": ""
+  },
   "4068:2": {
     "key": "3eb4afe5129fe0ebbc2b1f1ee52a2d5d5089aa5a",
     "name": "Icon/outline_32",
+    "description": ""
+  },
+  "4194:172": {
+    "key": "5d8a50aa2b4ddf2cd293f29d8ca0c443167c8cb0",
+    "name": "Icon/newsFeed_24",
+    "description": ""
+  },
+  "4194:232": {
+    "key": "4cd6279d4e95c485690e5117a04244ebefd31036",
+    "name": "Icon/hamburger_24",
+    "description": ""
+  },
+  "4194:233": {
+    "key": "580278918e6156cf7c86a2a93343068ae95146c2",
+    "name": "Icon/hamburger_16",
+    "description": ""
+  },
+  "4194:234": {
+    "key": "6b869403f3044a7e8b239c5df3d62ba2980a4962",
+    "name": "Icon/hamburger_12",
+    "description": ""
+  },
+  "4209:40": {
+    "key": "27ccb5671b2446e3e3725ef3e2cff6732146dc75",
+    "name": "Icon/closeCaption_24",
+    "description": ""
+  },
+  "4209:45": {
+    "key": "cb14ca0e305482c63964cb22ee1a270e9aad8746",
+    "name": "Icon/closeCaption_16",
+    "description": ""
+  },
+  "4209:50": {
+    "key": "bbda429e20f1f5eed9c2df957a73199c3b096cc2",
+    "name": "Icon/closeCaption_12",
+    "description": ""
+  },
+  "4209:106": {
+    "key": "83f65a4301f721b84222be53fb45a900fbbb671f",
+    "name": "Icon/gauge_24",
+    "description": ""
+  },
+  "4209:110": {
+    "key": "aa6ffdb5306773622f28f120233f51d3d941fe21",
+    "name": "Icon/gauge_16",
+    "description": ""
+  },
+  "4209:117": {
+    "key": "4e1d02a8d0efcabc6110a1edd1f033f35074a256",
+    "name": "Icon/gauge_12",
+    "description": ""
+  },
+  "4209:360": {
+    "key": "2afd44c4ba3ddb76c919703eee4f317fc67fd226",
+    "name": "Icon/expand_24",
+    "description": ""
+  },
+  "4209:361": {
+    "key": "895ada2ca3e95ae22a91c571aca747c5541054f5",
+    "name": "Icon/expand_16",
+    "description": ""
+  },
+  "4209:362": {
+    "key": "66c091409474b1a55d7cffca558672a643495ae0",
+    "name": "Icon/expand_12",
+    "description": ""
+  },
+  "4209:363": {
+    "key": "46a31277a1cd3fbd7145722226c30764710cda7c",
+    "name": "Icon/collaspe_24",
+    "description": ""
+  },
+  "4209:364": {
+    "key": "38cd949b8ba949252d474c820ea8ef485d589777",
+    "name": "Icon/collaspe_16",
+    "description": ""
+  },
+  "4209:365": {
+    "key": "7b2829428ac079fc4d531cac9d0231579b9fb515",
+    "name": "Icon/collaspe_12",
     "description": ""
   }
 }

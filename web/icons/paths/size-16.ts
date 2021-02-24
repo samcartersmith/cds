@@ -83,6 +83,16 @@ export const caretDownLight = {
   viewBox: '0 0 16 16',
 };
 
+export const caretForward = {
+  paths: ['M18.185 11.185l-9.9-9.9-2.47 2.48 7.42 7.42-7.42 7.42 2.47 2.48 9.9-9.9z'],
+  viewBox: '0 0 24 24',
+};
+
+export const caretForwardHeavy = {
+  paths: ['M3.76 3.26L8 7.5l-4.24 4.24 2.12 2.12 6.36-6.36-6.36-6.36-2.12 2.12z'],
+  viewBox: '0 0 16 16',
+};
+
 export const caretLeftHeavy = {
   paths: ['M11.74 12.24L7.5 8l4.24-4.24-2.12-2.12L3.26 8l6.36 6.36 2.12-2.12z'],
   viewBox: '0 0 16 16',
@@ -214,6 +224,14 @@ export const clockLight = {
   viewBox: '0 0 16 16',
 };
 
+export const closeCaption = {
+  paths: [
+    'M2.87 8.03v-.06c0-1.54 1.09-2.56 2.55-2.56 1.3 0 2.21.6 2.33 1.93H6.27c-.05-.51-.33-.79-.84-.79-.64 0-1.05.5-1.05 1.42v.06c0 .9.38 1.42 1.07 1.42.5 0 .86-.27.93-.82h1.43c-.1 1.3-1.04 1.97-2.33 1.97-1.75-.02-2.61-1.04-2.61-2.57zm5.31-.06v.06c0 1.53.87 2.55 2.61 2.57 1.29 0 2.23-.67 2.33-1.97h-1.43c-.07.55-.43.82-.93.82-.69 0-1.07-.52-1.07-1.42v-.06c0-.92.41-1.42 1.05-1.42.5 0 .79.28.84.79h1.48c-.12-1.33-1.03-1.93-2.33-1.93-1.46 0-2.55 1.02-2.55 2.56z',
+    'M16 1H0v14h16V1zm-2 2v10H2V3h12z',
+  ],
+  viewBox: '0 0 16 16',
+};
+
 export const closeHeavy = {
   paths: [
     'M15.63 2.13L13.87.37 8 6.23 2.13.37.37 2.13 6.23 8 .37 13.87l1.76 1.76L8 9.77l5.87 5.86 1.76-1.76L9.77 8l5.86-5.87z',
@@ -224,6 +242,13 @@ export const closeHeavy = {
 export const closeLight = {
   paths: [
     'M16 1.42L14.58 0 8 6.58 1.42 0 0 1.42 6.58 8 0 14.58 1.42 16 8 9.42 14.58 16 16 14.58 9.42 8 16 1.42z',
+  ],
+  viewBox: '0 0 16 16',
+};
+
+export const collaspe = {
+  paths: [
+    'M10 5.007L15.053 0 16 .947l-5.06 5h3.727V7.28h-6v-6H10v3.727zm-4 5.986L.947 16 0 15.053l5.06-5H1.333V8.72h6v6H6v-3.727z',
   ],
   viewBox: '0 0 16 16',
 };
@@ -270,12 +295,19 @@ export const exclamationMarkHeavy = {
   viewBox: '0 0 16 16',
 };
 
+export const expand = {
+  paths: [
+    'M14.667 2.273L9.613 7.28l-.946-.947 5.06-5H10V0h6v6h-1.333V2.273zM1.333 13.727L6.387 8.72l.946.947-5.06 5H6V16H0v-6h1.333v3.727z',
+  ],
+  viewBox: '0 0 16 16',
+};
+
 export const expandAddressLight = {
   paths: ['M14 2H8V0h8v8h-2V2zM2 14h6v2H0V8h2v6z'],
   viewBox: '0 0 16 16',
 };
 
-export const expandLight = {
+export const expandAll = {
   paths: [
     'M6 0v1.5H2.56l3.9 3.9L5.4 6.46l-3.9-3.9V6H0V0h6zm4 1.5V0h6v6h-1.5V2.56l-3.9 3.9L9.54 5.4l3.9-3.9H10zm4.5 11.94l-3.9-3.9-1.06 1.06 3.9 3.9H10V16h6v-6h-1.5v3.44zm-13 0l3.9-3.9 1.06 1.06-3.9 3.9H6V16H0v-6h1.5v3.44z',
   ],
@@ -300,7 +332,7 @@ export const externalLinkLight = {
 
 export const forwardHeavy = { paths: ['M8 2l8 6-8 6V9.75H0v-3.5h8V2z'], viewBox: '0 0 16 16' };
 
-export const gaugeLight = {
+export const gauge = {
   paths: [
     'M8 1C3.58 1 0 4.58 0 9c0 2.19.88 4.17 2.3 5.61l1.42-1.42A5.97 5.97 0 012 9c0-3.31 2.69-6 6-6s6 2.69 6 6c0 1.63-.66 3.11-1.72 4.2l1.42 1.42A8.005 8.005 0 0016 9c0-4.42-3.58-8-8-8z',
     'M9.67 9c0-.92-.75-1.67-1.67-1.67-.92 0-1.67.75-1.67 1.67 0 .92.75 1.67 1.67 1.67.08 0 .15-.01.23-.02l2.4 2.4 1.41-1.41-2.4-2.4c.01-.09.03-.16.03-.24z',
@@ -340,6 +372,11 @@ export const globeHeavy = {
   paths: [
     'M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm5.91 7h-1.94c-.1-1.57-.42-3-.91-4.15 1.48.88 2.55 2.38 2.85 4.15zM8 14c-.45 0-1.72-1.77-1.95-5h3.9c-.23 3.23-1.5 5-1.95 5zM6.05 7C6.28 3.77 7.55 2 8 2c.45 0 1.72 1.77 1.95 5h-3.9zM4.94 2.85C4.46 4 4.13 5.43 4.03 7H2.09c.3-1.77 1.37-3.27 2.85-4.15zM2.09 9h1.94c.1 1.57.42 3 .91 4.15A5.998 5.998 0 012.09 9zm8.97 4.15c.48-1.15.81-2.58.91-4.15h1.94a5.998 5.998 0 01-2.85 4.15z',
   ],
+  viewBox: '0 0 16 16',
+};
+
+export const hamburger = {
+  paths: ['M16 1H0v2h16V1zm0 6H0v2h16V7zm0 6H0v2h16v-2z'],
   viewBox: '0 0 16 16',
 };
 
@@ -424,10 +461,7 @@ export const moreHeavy = {
   viewBox: '0 0 16 16',
 };
 
-export const newsFeedHeavy = {
-  paths: ['M0 0h6.857v5.143H0V0zm8.572 0H12v12H8.572V0zM6.857 6.857H0V12h6.857V6.857z'],
-  viewBox: '0 0 12 12',
-};
+export const newsFeed = { paths: ['M0 0h9v7H0zm11 0h5v16h-5zM0 9h9v7H0z'], viewBox: '0 0 16 16' };
 
 export const notVisibleHeavy = {
   paths: [

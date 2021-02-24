@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.3 (2/23/2021, 03:06 PM PST) [#13454](https://github.cbhq.net/mono/repo/pull/13454)
+
+#### 🚀 Updates
+
+- Ensure spacing and styles is applied to outer Icon and add ttf files in publish @katherinemartinez [#13454](https://github.cbhq.net/mono/repo/pull/13454)
+
 ## 0.1.2 (2/23/2021, 09:30 AM PST) [#13402](https://github.cbhq.net/mono/repo/pull/13402)
 
 #### 🐞 Updates

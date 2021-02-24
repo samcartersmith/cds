@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { PaletteForeground, useIconSize } from '@cbhq/cds-common';
-import { Animated, Text, TextStyle } from 'react-native';
+import { Animated, Text } from 'react-native';
 
 import { Box } from '../Box/Box';
 import { usePalette } from '../hooks/usePalette';
@@ -55,16 +55,18 @@ export const Icon = ({
     [finalColor, iconSize]
   );
 
-  const style = useMemo(
-    () => [fontStyles, space, dangerouslySetStyle as TextStyle].filter(Boolean),
-    [dangerouslySetStyle, fontStyles, space]
-  );
+  const boxStyles = useMemo(() => [space, dangerouslySetStyle].filter(Boolean), [
+    dangerouslySetStyle,
+    space,
+  ]);
 
   if (name in iconGlyphMap && iconSize in iconGlyphMap[name]) {
     return (
-      <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
-        <TextComponent style={style}>{iconGlyphMap[name][iconSize]}</TextComponent>
-        {bordered && <IconOutline animated size={wrapperSize} color={iconColor} />}
+      <Box dangerouslySetStyle={boxStyles}>
+        <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
+          <TextComponent style={fontStyles}>{iconGlyphMap[name][iconSize]}</TextComponent>
+          {bordered && <IconOutline animated size={wrapperSize} color={iconColor} />}
+        </Box>
       </Box>
     );
   }

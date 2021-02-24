@@ -1,14 +1,17 @@
 load("//eng/shared/design-system:cds_package.bzl", "cds_package")
 load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
 
+SOURCE = [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.ttf",
+]
+
 # Files to publish to NPM
 filegroup(
     name = "runtime_source",
     srcs = glob(
-        [
-            "**/*.ts",
-            "**/*.tsx",
-        ],
+        SOURCE,
         exclude = [
             "**/*.test.*",
         ],
@@ -19,10 +22,13 @@ filegroup(
 # All files to lint and test
 filegroup(
     name = "source",
-    srcs = [":runtime_source"] + glob(
-        [
+    srcs = glob(
+        SOURCE + [
             "**/*.test.*",
             "**/*.mdx",
+        ],
+        exclude = [
+            "**/*.ttf",
         ],
     ),
     visibility = ["//visibility:public"],

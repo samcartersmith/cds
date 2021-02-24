@@ -94,9 +94,6 @@ prepare.icons:
 	bazel run :sync_icons
 	npx svgo codegen/icons/svg/*.svg --config=codegen/icons/.svgo.yml
 	bazel run :build_icons
-	make setup.mobile
-	make build.ios
-	make build.android
 
 .PHONY: start.story
 start.story:

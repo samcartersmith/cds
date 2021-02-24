@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58044,
+  lastUnicode: 58074,
   unicodeMap: {
     cashUSDHeavy: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBPHeavy: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -166,7 +166,7 @@ export const manifest = {
     },
     questionMarkHeavy: { '8': 'uE1CC', '12': 'uE1CD', '16': 'uE1CE', '24': 'uE1CF', '32': 'uE1D0' },
     giftBoxHeavy: { '8': 'uE1D1', '12': 'uE1D2', '16': 'uE1D3', '24': 'uE1D4', '32': 'uE1D5' },
-    newsFeedHeavy: { '8': 'uE1D6', '12': 'uE1D7', '16': 'uE1D8', '24': 'uE1D9', '32': 'uE1DA' },
+    newsFeed: { '8': 'uE1D6', '12': 'uE1D7', '16': 'uE1D8', '24': 'uE1D9', '32': 'uE1DA' },
     caretRightHeavy: { '8': 'uE1DB', '12': 'uE1DC', '16': 'uE1DD', '24': 'uE1DE', '32': 'uE1DF' },
     marketCapHeavy: { '8': 'uE1E0', '12': 'uE1E1', '16': 'uE1E2', '24': 'uE1E3', '32': 'uE1E4' },
     checkboxCheckedLight: {
@@ -223,7 +223,7 @@ export const manifest = {
     },
     externalLinkHeavy: { '8': 'uE253', '12': 'uE254', '16': 'uE255', '24': 'uE256', '32': 'uE257' },
     externalLinkLight: { '8': 'uE258', '12': 'uE259', '16': 'uE25A', '24': 'uE25B', '32': 'uE25C' },
-    gaugeLight: { '8': 'uE25D', '12': 'uE25E', '16': 'uE25F', '24': 'uE260', '32': 'uE261' },
+    gauge: { '8': 'uE25D', '12': 'uE25E', '16': 'uE25F', '24': 'uE260', '32': 'uE261' },
     clockLight: { '8': 'uE262', '12': 'uE263', '16': 'uE264', '24': 'uE265', '32': 'uE266' },
     marketCapLight: { '8': 'uE267', '12': 'uE268', '16': 'uE269', '24': 'uE26A', '32': 'uE26B' },
     tradingVertLineLight: {
@@ -278,7 +278,7 @@ export const manifest = {
       '32': 'uE298',
     },
     reCenterLight: { '8': 'uE299', '12': 'uE29A', '16': 'uE29B', '24': 'uE29C', '32': 'uE29D' },
-    expandLight: { '8': 'uE29E', '12': 'uE29F', '16': 'uE2A0', '24': 'uE2A1', '32': 'uE2A2' },
+    expandAll: { '8': 'uE29E', '12': 'uE29F', '16': 'uE2A0', '24': 'uE2A1', '32': 'uE2A2' },
     expandAddressLight: {
       '8': 'uE2A3',
       '12': 'uE2A4',
@@ -296,5 +296,11 @@ export const manifest = {
     trashCanHeavy: { '8': 'uE2AD', '12': 'uE2AE', '16': 'uE2AF', '24': 'uE2B0', '32': 'uE2B1' },
     errorHeavy: { '8': 'uE2B2', '12': 'uE2B3', '16': 'uE2B4', '24': 'uE2B5', '32': 'uE2B6' },
     outline: { '8': 'uE2B7', '12': 'uE2B8', '16': 'uE2B9', '24': 'uE2BA', '32': 'uE2BB' },
+    caretForward: { '8': 'uE2BC', '12': 'uE2BD', '16': 'uE2BE', '24': 'uE2BF', '32': 'uE2C0' },
+    caretForwardHeavy: { '8': 'uE2C1', '12': 'uE2C2', '16': 'uE2C3', '24': 'uE2C4', '32': 'uE2C5' },
+    hamburger: { '8': 'uE2C6', '12': 'uE2C7', '16': 'uE2C8', '24': 'uE2C9', '32': 'uE2CA' },
+    closeCaption: { '8': 'uE2CB', '12': 'uE2CC', '16': 'uE2CD', '24': 'uE2CE', '32': 'uE2CF' },
+    expand: { '8': 'uE2D0', '12': 'uE2D1', '16': 'uE2D2', '24': 'uE2D3', '32': 'uE2D4' },
+    collaspe: { '8': 'uE2D5', '12': 'uE2D6', '16': 'uE2D7', '24': 'uE2D8', '32': 'uE2D9' },
   },
 };

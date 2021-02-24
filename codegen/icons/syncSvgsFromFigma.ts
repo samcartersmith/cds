@@ -10,6 +10,7 @@ import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 import { generateFromTemplate } from '../utils/generateFromTemplate';
 import { getSourcePath } from '../utils/getSourcePath';
+import { logError } from '../utils/logError';
 import { createIconSet } from './createIconSet';
 import { createUnicodeMap } from './createUnicodeMap';
 import { fillMissingIcons } from './fillMissingIcons';
@@ -115,7 +116,13 @@ const normalizeIconName = (imageName: string): IconName | void => {
       for (const size in sizes) {
         const unicode = sizes[size] as string;
         const fileName = `${unicode}-${name}-${size}.svg`;
-        writePromises.push(writeFile(path.join(OUT_DIR, fileName), sizeMap[size][name] as string));
+        if (sizeMap[size][name]) {
+          writePromises.push(
+            writeFile(path.join(OUT_DIR, fileName), sizeMap[size][name] as string)
+          );
+        } else {
+          throw new Error(`Please update manifest to remove or rename ${name}`);
+        }
       }
     });
 
@@ -146,6 +153,6 @@ const normalizeIconName = (imageName: string): IconName | void => {
     return { lastUnicode, unicodeMap };
   } catch (error) {
     spinner.fail(`${chalk.redBright('failed')}`);
-    console.error(error);
+    logError(error);
   }
 })();

@@ -1,14 +1,6 @@
 import React from 'react';
 
-import {
-  Box,
-  TextBody,
-  TextHeadline,
-  HStack,
-  Icon,
-  FiatIcon,
-  iconGlyphMap,
-} from '@cbhq/cds-mobile';
+import { Box, TextHeadline, HStack, Icon, FiatIcon, iconGlyphMap } from '@cbhq/cds-mobile';
 import { entries } from '@cbhq/cds-utils';
 
 import Example from './internal/Example';
@@ -26,12 +18,11 @@ const IconScreen = () => {
             <FiatIcon currencyCode="GBP" />
             <FiatIcon currencyCode="JPY" />
           </HStack>
-          {entries(iconGlyphMap).map(([name]) => (
-            <Box key={name} width={200}>
-              <TextBody>{name[32]}</TextBody>
-              <Icon size="l" name={name} />
-            </Box>
-          ))}
+          <HStack flexWrap="wrap">
+            {entries(iconGlyphMap).map(([name]) => (
+              <Icon bordered spacingEnd={1} spacingBottom={1} key={name} size="l" name={name} />
+            ))}
+          </HStack>
         </Box>
       </Example>
     </Screen>
