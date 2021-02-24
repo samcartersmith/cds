@@ -136,3 +136,130 @@ make serve.website
 ```console
 make deploy.website
 ```
+
+## Guide for Setting up CDS React Native development environment
+
+This section helps you install and build the CDS React Native app to test components on mobile.
+
+> Note: Run these commands in eng/shared/design-system folder. Also, make sure your fork is up to date with master
+
+### Installing dependencies
+
+You will need the following:
+
+- **Cocoapods**
+- **XCode**
+- **XCode CLI**
+- **Android Studio**
+- **Java 8 and the Android SDK**
+- **Watchman**
+
+### Cocoapods
+
+[Cocoapods](https://cocoapods.org/) is a Ruby-based dependency manager for Swift and Objective-C projects. After installing an up-to-date version of Ruby and ensuring that it's being targeted (`ruby -v`), run the following to install bundler:
+
+```shell
+gem install cocoapods
+```
+
+### XCode
+
+[XCode](https://developer.apple.com/xcode/) is an IDE for developing macOS and iOS applications and is necessary for working with React Native. Install it through the [App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12).
+
+#### Xcode Command-line Tools
+
+You'll also need a [family of command-line tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) that will allow you to leverage some of XCode's functionality from the terminal. Install them by running:
+
+```shell
+xcode-select --install
+```
+
+### Android Studio
+
+[Android Studio](https://developer.android.com/studio/intro) is an IDE for developing Android applications and is necessary for working with React Native. Download the application from [the Android developer site](https://developer.android.com/studio/install#mac) and follow the install instructions.
+
+#### Java 8 and the Android SDK
+
+[OpenJDK](https://adoptopenjdk.net/index.html) is an open-source implementation of the Java platform and is necessary to develop React Native apps with Android. To install, run the following:
+
+```shell
+# Install Java 8
+brew tap AdoptOpenJDK/openjdk
+brew install --cask adoptopenjdk8
+
+# Note: if you have other versions installed, you'll need to set the default Java on your computer to Java 8
+# You can do this by setting JAVA_HOME in your relevant (.zshenv|.zshrc|.bashrc)
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+
+# Install the Android SDK
+brew install --cask android-sdk
+```
+
+Be sure to follow any post-install instructions that Homebrew provides. If you want to revisit these instructions, run `brew info --cask android-sdk`.
+
+You can verify that OpenJDK has been installed by running `sdkmanager --version`.
+
+Configure the `ANDROID_HOME` environment variable. Add the following lines to your `$HOME/.zshrc` or `$HOME/.bash_profile` config file.
+
+```shell
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+Type `source $HOME/.bash_profile` or `source $HOME/.zshrc` to load the config into your current shell. You can verify by running `adb` command.
+
+### Watchman
+
+[Watchman](https://facebook.github.io/watchman/) is a service used by Metro to trigger rebuilds whenever a relevant file changes. To install it, run:
+
+```shell
+brew install watchman
+```
+
+Be sure to follow any post-install instructions that Homebrew provides. If you want to revisit these instructions, run `brew info watchman`.
+
+### Known issues
+
+> Failed to install the following Android SDK packages as some licences have not been accepted.
+
+- Open Android Studio
+- Tools > SDK Manager
+- Select the `Android 10.0 (Q)` image, press the Apply button and then follow the instructions. The installer should prompt to accept the license
+
+If the issue persist select the second tab (SDK Tools) and install the missing packages from there.
+
+If you see:
+
+```
+xcrun: error: SDK "iphoneos" cannot be located
+xcrun: error: SDK "iphoneos" cannot be located
+xcrun: error: unable to lookup item 'Path' in SDK 'iphoneos'
+```
+
+when running `xcrun -k --sdk iphoneos --show-sdk-path` or when trying to install dependencies, try running `sudo xcode-select --switch /Applications/Xcode.app` (from [this github issue](https://github.com/facebook/react-native/issues/18408#issuecomment-386696744))
+
+> Watchman Permission denied
+
+- Run `yarn start:{app/onboarding/designSystem}` (after `yarn setup:{...}`)
+- See the following error:
+
+```
+Failed to open {$HOME}/Library/LaunchAgents/com.github.facebook.watchman.plist for write: Permission denied
+```
+
+Try running `sudo chown -R $(whoami):staff ~/Library/LaunchAgents` (from [this github issue](https://github.com/facebook/react-native/issues/9116))
+
+### Installation Steps and Build Steps
+
+_Run the following steps in the terminal in this order_
+
+1. `make setup.mobile` (Note: this only need to be ran the 1st time)
+2. `make start.mobile`
+3. While `make start.mobile` is running in the terminal/shell, run `make build.ios/make build.android` (depends on what mobile OS you want to test) in another terminal
+
+### Troubleshooting Guide
+
+- **Emulator failed to load** Try manually launching the Emulator from terminal. Be sure the emulator also exists in Android Studio's AVD manager.
