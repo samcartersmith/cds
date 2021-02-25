@@ -90,6 +90,9 @@ module.exports = {
       },
     ],
   ],
-  plugins: [path.resolve(__dirname, './cds-docusaurus-plugin.js')],
+  plugins: [
+    path.resolve(__dirname, './cds-docusaurus-babel-plugin.js'),
+    path.resolve(__dirname, './cds-docusaurus-ts-linaria-plugin.js'),
+  ],
   clientModules: [require.resolve('./global.ts')],
 };

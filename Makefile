@@ -101,7 +101,7 @@ start.story:
 
 .PHONY: start.website
 start.website:
-	npx docusaurus start website
+	yarn docusaurus start eng/shared/design-system/website
 
 .PHONY: build.story
 build.story:

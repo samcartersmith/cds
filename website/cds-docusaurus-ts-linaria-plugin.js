@@ -1,16 +1,11 @@
 const path = require('path');
-const {
-  addRootModeUpwardToBabelLoaders,
-} = require('../../../shared/utils/webpack/addRootModeUpwardToBabelLoaders');
 
 module.exports = () => {
   return {
-    name: 'cds-docusaurus-plugin',
+    name: 'cds-docusaurus-ts-linaria-plugin',
     configureWebpack(config) {
       const isProduction = config.mode === 'production';
       const tsModuleRule = config.module.rules.find(rule => Boolean('.tsx'.match(rule.test)));
-
-      addRootModeUpwardToBabelLoaders(config);
 
       return {
         module: {
@@ -28,10 +23,6 @@ module.exports = () => {
                   },
                 },
               ],
-            },
-            {
-              test: /\.(woff|woff2|eot|ttf|otf)$/,
-              use: ['file-loader'],
             },
           ],
         },

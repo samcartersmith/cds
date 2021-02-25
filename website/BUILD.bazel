@@ -16,7 +16,8 @@ filegroup(
             "static/**/*.jpg",
             # local configs
             "babel.config.js",
-            "cds-docusaurus-plugin.js",
+            "cds-docusaurus-babel-plugin.js",
+            "cds-docusaurus-ts-linaria-plugin.js",
             "docusaurus.config.js",
             "sidebars.js",
         ],
@@ -49,6 +50,7 @@ DATA = append_cds_web_deps([
     "@npm//@types/react",
     "@npm//@types/react-dom",
     "@npm//@types/react-router-dom",
+    "@npm//babel-loader",
 ])
 
 docusaurus(
