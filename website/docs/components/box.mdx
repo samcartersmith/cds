@@ -149,7 +149,7 @@ Content to render within the box.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
     'ReactNodeArray',
     'ReactPortal',
     'false',
@@ -160,7 +160,7 @@ Content to render within the box.
     '{}',
   ]}
   webOptions={[
-    'ReactElement<any, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<any, any, any>)>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
     'ReactNodeArray',
     'ReactPortal',
     'false',
@@ -185,11 +185,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   defaultValue=""
   mobileOptions={[
     'AnimatedInterpolation',
-    'RecursiveArray<false | ViewStyle | RegisteredStyle<ViewStyle> | null | undefined>',
+    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
     'RegisteredStyle<ViewStyle>',
     'Value',
     'ViewStyle',
-    'WithAnimatedArray<false | ViewStyle | RegisteredStyle<ViewStyle> | RecursiveArray<false | ViewStyle | RegisteredStyle<ViewStyle> | null | undefined> | readonly (false | ... 3 more ... | undefined)[] | null | undefined>',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
     'WithAnimatedObject<ViewStyle>',
     'false',
     'null',
