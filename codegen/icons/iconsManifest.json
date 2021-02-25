@@ -329,6 +329,11 @@
     "name": "Icon/trxSend_24_heavy",
     "description": ""
   },
+  "4234:232": {
+    "key": "49338834561d1819c77ebc77c24e44c4df640155",
+    "name": "Icon/caretRight_24",
+    "description": ""
+  },
   "2207:15": {
     "key": "f176f736f7fd03117b1a97e89b481c4377951293",
     "name": "Icon/caretLeft_24_heavy",
@@ -342,11 +347,6 @@
   "2207:19": {
     "key": "218eab826e637e0232c833567c2e8d3ec4440545",
     "name": "Icon/caretUp_24_heavy",
-    "description": ""
-  },
-  "4204:161": {
-    "key": "e5bfa03bfab604bc9b3cd9c508e7bfff8631085f",
-    "name": "Icon/caretForward_24",
     "description": ""
   },
   "2207:55": {
@@ -411,7 +411,7 @@
   },
   "1292:238": {
     "key": "adf1749d0b8add921bd43706d616b194b3a31974",
-    "name": "Icon/calendar_12_heavy",
+    "name": "Icon/calendar_12",
     "description": ""
   },
   "1292:235": {
@@ -691,17 +691,17 @@
   },
   "1292:123": {
     "key": "2a5093ab1280bceb39f6ffda82882cd9e11bbc8f",
-    "name": "Icon/pencil_12_heavy",
+    "name": "Icon/pencil_12",
     "description": ""
   },
   "1292:120": {
     "key": "aea6db5806cddcd83a3cc1aed9252ece85e6a6dc",
-    "name": "Icon/blockchain_12_heavy",
+    "name": "Icon/blockchain_12",
     "description": ""
   },
   "1292:108": {
     "key": "bc9175d807e5d22fa3fe3d3174b7e51d77b0126d",
-    "name": "Icon/gavel_12_heavy",
+    "name": "Icon/gavel_12",
     "description": ""
   },
   "1292:105": {
@@ -781,7 +781,7 @@
   },
   "1292:79": {
     "key": "94b098fc0a084c3d81e3a28bbd77717bfbdd4461",
-    "name": "Icon/questionMark_12_heavy",
+    "name": "Icon/questionMark_12",
     "description": ""
   },
   "2273:15": {
@@ -791,7 +791,7 @@
   },
   "2611:35": {
     "key": "0cfb3a60d6319cd7942b52779c0e7c065deb0b40",
-    "name": "Icon/giftBox_12_heavy",
+    "name": "Icon/giftBox_12",
     "description": ""
   },
   "2611:325": {
@@ -806,7 +806,7 @@
   },
   "1292:82": {
     "key": "b3e6ca0b2f44b66ef3e06e1caf519074f52535c4",
-    "name": "Icon/caretRight_12_heavy",
+    "name": "Icon/caretRight_12",
     "description": ""
   },
   "1292:68": {
@@ -816,7 +816,7 @@
   },
   "1577:157": {
     "key": "e6d6ab9db270961cefb85f1a94b8f98d978e50e0",
-    "name": "Icon/marketCap_12_heavy",
+    "name": "Icon/marketCap_12",
     "description": ""
   },
   "1292:195": {
@@ -1164,6 +1164,16 @@
     "name": "Icon/portrait_16_heavy",
     "description": ""
   },
+  "4232:107": {
+    "key": "8c848843e224b554ad576c46cb66b38e4f660505",
+    "name": "Icon/calendar_16",
+    "description": ""
+  },
+  "4232:106": {
+    "key": "5c30403709a0d03f54522dbc0b9ed12dae86e28b",
+    "name": "Icon/calendar_24",
+    "description": ""
+  },
   "1292:88": {
     "key": "808d7e6fb13a766d847fcdf0b792f40c0b2300fa",
     "name": "Icon/gear_16_heavy",
@@ -1261,7 +1271,7 @@
   },
   "1292:37": {
     "key": "4780567f05913b476615494cd359894fe9afe7b9",
-    "name": "Icon/caretRight_16_heavy",
+    "name": "Icon/caretRight_16",
     "description": ""
   },
   "1792:161": {
@@ -1536,12 +1546,12 @@
   },
   "1292:188": {
     "key": "2d02c1c2f16b84fb69fc8ae774cb114a11a27433",
-    "name": "Icon/externalLink_12_heavy",
+    "name": "Icon/externalLink_12",
     "description": ""
   },
   "1292:168": {
     "key": "424afef43943ab41829e7196e9b8e03a50cee667",
-    "name": "Icon/externalLink_16_light",
+    "name": "Icon/externalLink_16",
     "description": ""
   },
   "1292:110": {
@@ -1566,7 +1576,7 @@
   },
   "1577:155": {
     "key": "c18a4328827b0842d721331a5f5cc6bc972cd15a",
-    "name": "Icon/marketCap_16_heavy",
+    "name": "Icon/marketCap_16",
     "description": ""
   },
   "1697:10596": {
@@ -1582,11 +1592,6 @@
   "1697:10595": {
     "key": "a72b45907cd1c61259c7513c9b438dae6a6548fa",
     "name": "Icon/caretUp_12_heavy",
-    "description": ""
-  },
-  "4204:163": {
-    "key": "5b548858770df9755eeb31e4397739ac44329673",
-    "name": "Icon/caretForward_12_heavy",
     "description": ""
   },
   "1697:10608": {
@@ -1607,11 +1612,6 @@
   "1697:10593": {
     "key": "1a1f1a4d9f3d48e0def8e62638b3c040c2f90992",
     "name": "Icon/caretUp_16_heavy",
-    "description": ""
-  },
-  "4204:162": {
-    "key": "2b647ba05036adf62ef34f4f6275e86f4c37e187",
-    "name": "Icon/caretForward_16_heavy",
     "description": ""
   },
   "2207:54": {
@@ -1937,6 +1937,156 @@
   "4209:365": {
     "key": "7b2829428ac079fc4d531cac9d0231579b9fb515",
     "name": "Icon/collaspe_12",
+    "description": ""
+  },
+  "4233:166": {
+    "key": "012cf59024e86cb24c7db72afbccc478e5acfd2a",
+    "name": "Icon/pencil_16",
+    "description": ""
+  },
+  "4233:167": {
+    "key": "57e5589052ba21e06bfa86e6d9c829870315f11b",
+    "name": "Icon/pencil_24",
+    "description": ""
+  },
+  "4233:233": {
+    "key": "05d0ce277aa7e6b20a67f469e6d54490366c07ef",
+    "name": "Icon/blockchain_16",
+    "description": ""
+  },
+  "4233:232": {
+    "key": "72ff98e7416b79ce820fe556dc84fc22a1f76cdd",
+    "name": "Icon/blockchain_24",
+    "description": ""
+  },
+  "4233:255": {
+    "key": "9091f64c9392707ef94bffc32a36e7adfa773bc2",
+    "name": "Icon/gavel_16",
+    "description": ""
+  },
+  "4233:256": {
+    "key": "c60421186976d41c0d9458181626ded17b6b773c",
+    "name": "Icon/gavel_24",
+    "description": ""
+  },
+  "4234:205": {
+    "key": "7f049b47e49e0ee058c73d8abc5521136b0de916",
+    "name": "Icon/questionMark_16",
+    "description": "graph"
+  },
+  "4234:204": {
+    "key": "b90df27123e24adcbb06c6b70470dc6a5ad53377",
+    "name": "Icon/questionMark_24",
+    "description": ""
+  },
+  "4234:228": {
+    "key": "62963aa1fce4bcb7b680734f97a86b6ddd43aafe",
+    "name": "Icon/giftBox_24",
+    "description": ""
+  },
+  "4234:229": {
+    "key": "7dacbd4e97b6d3ada296240a00222391ca18a5d2",
+    "name": "Icon/giftBox_16",
+    "description": ""
+  },
+  "4234:251": {
+    "key": "5a6f8c2e8cf1c246671dd986f6c061b561fd62f6",
+    "name": "Icon/marketCap_24",
+    "description": ""
+  },
+  "4234:303": {
+    "key": "98eec596fee58a453c24557cacc0c48e56885981",
+    "name": "Icon/externalLink_24",
+    "description": ""
+  },
+  "4234:433": {
+    "key": "4ca09494429f11565fa289a395c7e55768aa8992",
+    "name": "Icon/tradingRemove_16_light",
+    "description": ""
+  },
+  "4234:432": {
+    "key": "1a2acff1c8e55f7e608706d798eb0a7e9ba8e5b8",
+    "name": "Icon/tradingRemove_24_light",
+    "description": ""
+  },
+  "4251:56": {
+    "key": "3b44424187a24993f44301753a9897f4ad3debcb",
+    "name": "Icon/pencil_24_light",
+    "description": ""
+  },
+  "4251:57": {
+    "key": "84d2f041dbe3ebd4188fbf8a3b7b93db79ebe6a3",
+    "name": "Icon/pencil_16_light",
+    "description": ""
+  },
+  "4251:98": {
+    "key": "cdcc2099ebaa51975c1c659a1f6297cf1a450a6f",
+    "name": "Icon/visible_24_light",
+    "description": ""
+  },
+  "4251:99": {
+    "key": "a7f94a39a8062f5302f88155db59bf806d8decaa",
+    "name": "Icon/visible_16_light",
+    "description": ""
+  },
+  "4251:207": {
+    "key": "952e52d1b1759b78c0d2e79da8aa41e16139ba01",
+    "name": "Icon/notVisible_16_light",
+    "description": ""
+  },
+  "4251:206": {
+    "key": "29f5044e0a01eb0cf7082d2aa8521fab50080f1a",
+    "name": "Icon/notVisible_24_light",
+    "description": ""
+  },
+  "4251:231": {
+    "key": "b7c1b0c3bd99e12a750d57559c3e8ea0c80beb89",
+    "name": "Icon/giftBox_24_light",
+    "description": ""
+  },
+  "4251:232": {
+    "key": "aa2ffbc2dbdfc5cdac2d401df3a87c493a727e79",
+    "name": "Icon/giftBox_16_light",
+    "description": ""
+  },
+  "4251:259": {
+    "key": "43b2647fc2de010b6d38c6808e8f85271a5b9083",
+    "name": "Icon/tradingChartLine_24_light",
+    "description": ""
+  },
+  "4251:260": {
+    "key": "0b40c961e878b72be8e710fa97c35f990443f217",
+    "name": "Icon/tradingChartLine_16_light",
+    "description": ""
+  },
+  "4260:8": {
+    "key": "b4a9a4fad26c8d7317fd21c3a8f4bb4b2ef1791d",
+    "name": "Icon/marketCap_24_light",
+    "description": ""
+  },
+  "4260:31": {
+    "key": "88f0ce955337db693dfc911661437d3407cde026",
+    "name": "Icon/clock_24_light",
+    "description": ""
+  },
+  "4260:105": {
+    "key": "58cdf684b5391c0e366e1308f1d874dcc93632a7",
+    "name": "Icon/pay_12",
+    "description": ""
+  },
+  "4260:104": {
+    "key": "ea4b262fc70a8048442455b05577cf367c95497c",
+    "name": "Icon/pay_16",
+    "description": ""
+  },
+  "4260:103": {
+    "key": "7903a914324fb1ff81ff15d160ced2fb38c5502a",
+    "name": "Icon/pay_24",
+    "description": ""
+  },
+  "4260:153": {
+    "key": "169582be812820223e6476724fd8ea02f44a0142",
+    "name": "Icon/chartPieCircle_24_heavy",
     "description": ""
   }
 }

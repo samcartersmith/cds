@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.2 (2/25/2021, 11:42 AM PST) [#13638](https://github.cbhq.net/mono/repo/pull/13638)
+
+#### 🚀 Updates
+
+- Update IconName types @katherinemartinez [#13638](https://github.cbhq.net/mono/repo/pull/13638)
+
 ## 0.1.1 (2/23/2021, 04:37 PM PST) [#13466](https://github.cbhq.net/mono/repo/pull/13466)
 
 #### 🐞 Fixes

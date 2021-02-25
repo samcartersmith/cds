@@ -44,16 +44,15 @@ export const bellHeavy = {
   viewBox: '0 0 12 12',
 };
 
-export const blockchainHeavy = {
+export const blockchain = {
   paths: [
-    'M4 0H0v4h4V0zm8 0H8v4h4V0zM7 .75H5v1.5h2V.75zm0 9H5v1.5h2v-1.5zM11.25 5h-1.5v2h1.5V5zm-9 0H.75v2h1.5V5zM4 8H0v4h4V8z',
-    'M12 8v4H8V8h4z',
+    'M4 0H0v4h4V0zm8 0H8v4h4V0zM7 .75H5v1.5h2V.75zm0 9H5v1.5h2v-1.5zM11.25 5h-1.5v2h1.5V5zm-9 0H.75v2h1.5V5zM4 8H0v4h4V8zm8 0v4H8V8h4z',
     'M12 8H8v4h4V8z',
   ],
   viewBox: '0 0 12 12',
 };
 
-export const calendarHeavy = {
+export const calendar = {
   paths: [
     'M11.5 1V0h-1v1h-1V0h-1v1h-1V0h-1v1h-1V0h-1v1h-1V0h-1v1h-1V0h-1v1H0v11h12V1h-.5zM10 10H2V4h8v6z',
   ],
@@ -75,16 +74,6 @@ export const caretDownLight = {
   viewBox: '0 0 12 12',
 };
 
-export const caretForward = {
-  paths: ['M18.185 11.185l-9.9-9.9-2.47 2.48 7.42 7.42-7.42 7.42 2.47 2.48 9.9-9.9z'],
-  viewBox: '0 0 24 24',
-};
-
-export const caretForwardHeavy = {
-  paths: ['M9.36 5.5L4.41.55 2.64 2.32 5.82 5.5 2.64 8.68l1.77 1.77L9.36 5.5z'],
-  viewBox: '0 0 12 12',
-};
-
 export const caretLeftHeavy = {
   paths: ['M2.14 6l4.95 4.95 1.77-1.77L5.68 6l3.18-3.18-1.77-1.77L2.14 6z'],
   viewBox: '0 0 12 12',
@@ -95,7 +84,7 @@ export const caretLeftLight = {
   viewBox: '0 0 12 12',
 };
 
-export const caretRightHeavy = {
+export const caretRight = {
   paths: ['M9.86 6L4.91 1.05 3.14 2.82 6.32 6 3.14 9.18l1.77 1.77L9.86 6z'],
   viewBox: '0 0 12 12',
 };
@@ -304,20 +293,12 @@ export const expandAll = {
   viewBox: '0 0 12 12',
 };
 
-export const externalLinkHeavy = {
+export const externalLink = {
   paths: [
     'M8 10.5H1.5V4h3.67l1.5-1.5H0V12h9.5V5.33L8 6.83v3.67z',
     'M7 0v1.5h2.44L3.97 6.97l1.06 1.06 5.47-5.47V5H12V0H7z',
   ],
   viewBox: '0 0 12 12',
-};
-
-export const externalLinkLight = {
-  paths: [
-    'M10.5 9.04V14H2V5.5h4.96l2-2H0V16h12.5V7.04l-2 2z',
-    'M9 0v2h3.59L5.11 9.47l1.42 1.42L14 3.41V7h2V0H9z',
-  ],
-  viewBox: '0 0 16 16',
 };
 
 export const forwardHeavy = { paths: ['M6 2l6 4-6 4V7H0V5h6V2z'], viewBox: '0 0 12 12' };
@@ -330,7 +311,7 @@ export const gauge = {
   viewBox: '0 0 12 12',
 };
 
-export const gavelHeavy = {
+export const gavel = {
   paths: [
     'M9 0v.5H3V0H1.5v4.5H3V4h2.19l-.56 6.51C4.56 11.31 5.19 12 6 12s1.44-.69 1.37-1.49L6.81 4H9v.5h1.5V0H9z',
   ],
@@ -344,7 +325,7 @@ export const gearHeavy = {
   viewBox: '0 0 12 12',
 };
 
-export const giftBoxHeavy = {
+export const giftBox = {
   paths: [
     'M8.5 3c.83 0 1.5-.67 1.5-1.5S9.33 0 8.5 0C6.64 0 6 3 6 3s-.64-3-2.5-3C2.67 0 2 .67 2 1.5S2.67 3 3.5 3H0v9h12V3H8.5zM2 10V5h3v5H2zm8 0H7V5h3v5z',
   ],
@@ -428,7 +409,7 @@ export const lockHeavy = {
   viewBox: '0 0 12 12',
 };
 
-export const marketCapHeavy = {
+export const marketCap = {
   paths: [
     'M0 1v10h12V1H0zm3.96 4.77L1.5 7.88V5.9l2.54-2.18L7 6.69l3.47-3.47.03.03v2.06L7 8.81 3.96 5.77z',
   ],
@@ -484,6 +465,14 @@ export const paperAirplaneHeavy = {
 
 export const pauseHeavy = { paths: ['M3 1.5h2v9H3v-9zm4 0h2v9H7v-9z'], viewBox: '0 0 12 12' };
 
+export const pay = {
+  paths: [
+    'M8 6a4 4 0 11-8 0 4 4 0 018 0z',
+    'M8.727 10a4.243 4.243 0 000-8v2.26a2.24 2.24 0 010 3.48V10z',
+  ],
+  viewBox: '0 0 12 12',
+};
+
 export const paypalHeavy = {
   paths: [
     'M4.9 2.49c.1-.05.2-.07.31-.07h2.92c.36 0 .7.02 1 .07l.074.015c.068.015.13.028.196.035l.125.03.125.03c.04.01.08.02.12.04.017.012.038.02.06.029a.615.615 0 01.05.021c.06-.8-.16-1.36-.55-1.78C8.76.28 7.77 0 6.48 0H3.01c-.26 0-.49.19-.53.45L.93 10.3c-.03.19.12.37.32.37H3.3l1.21-7.65c.03-.23.18-.43.39-.53zm4.71.62a1.263 1.263 0 00-.05-.015l-.05-.015a6.58 6.58 0 00-.22-.06.993.993 0 01-.099-.018A6.526 6.526 0 008.13 2.91H5.42c-.07 0-.14.02-.2.05-.14.06-.24.19-.26.35l-.49 3.11a.88.88 0 01.17-.02h1.09c.58 0 1.1-.07 1.56-.2 1.16-.33 1.94-1.09 2.33-2.29.08-.25.14-.49.19-.72-.06-.03-.13-.06-.2-.08zm.68.29c.12.08.24.17.33.28.39.45.51 1.08.41 1.82l-.015.1-.015.1c-.43 2.21-1.9 2.97-3.78 2.97h-.29c-.23 0-.42.16-.46.39l-.41 2.55c-.03.22-.23.39-.46.39H3.92c-.15 0-.3-.14-.27-.31.03-.21.68-4.32.68-4.32.05-.26.27-.45.53-.45h.84c3.38 0 4.29-2.06 4.59-3.52z',
@@ -491,7 +480,7 @@ export const paypalHeavy = {
   viewBox: '0 0 12 12',
 };
 
-export const pencilHeavy = {
+export const pencil = {
   paths: [
     'M9 1.883L2.279 8.604 4.4 10.727l6.721-6.722L9 1.883zm2.827 1.421l.88-.88a.996.996 0 000-1.41l-.7-.721a.996.996 0 00-1.41 0l-.891.89 2.12 2.121zM1.761 9.508l-.76 2.501 2.501-.76-1.741-1.741z',
   ],
@@ -545,7 +534,7 @@ export const qrCodeHeavy = {
   viewBox: '0 0 12 12',
 };
 
-export const questionMarkHeavy = {
+export const questionMark = {
   paths: [
     'M6 0C2.69 0 0 2.69 0 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-.18 9.38c-.46 0-.83-.34-.83-.78s.37-.78.83-.78c.45 0 .82.34.82.78a.81.81 0 01-.82.78zm1.55-3.72c-.43.41-.89.78-.94 1.26v.22H5.22v-.27c0-.7.47-1.14.89-1.56.33-.31.61-.6.61-.96 0-.41-.22-.67-.69-.67-.5 0-.83.36-.89.93H3.89c.05-1.25.95-1.99 2.22-1.99 1.32 0 2 .67 2 1.62 0 .63-.35 1.04-.74 1.42z',
   ],

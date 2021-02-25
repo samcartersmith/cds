@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.0 (2/25/2021, 11:45 AM PST) [#13638](https://github.cbhq.net/mono/repo/pull/13638)
+
+#### 💥 Breaking
+
+- Update some icon names to drop Heavy and add pay icon @katherinemartinez [#13638](https://github.cbhq.net/mono/repo/pull/13638)
+
 ## 0.1.4 (2/23/2021, 04:49 PM PST) [#13468](https://github.cbhq.net/mono/repo/pull/13468)
 
 #### 🐞 Fixes
