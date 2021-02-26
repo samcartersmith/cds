@@ -45,6 +45,10 @@ const getDocgenForPackage = ({
 
 export const docgen = ([
   {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/lottie.mdx`,
+    data: getDocgenForPackage({ componentName: 'Lottie' }),
+  },
+  {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/text.mdx`,
     data: getDocgenForPackage({ componentName: 'TextDisplay1', displayName: 'Text' }),
   },

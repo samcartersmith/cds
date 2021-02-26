@@ -12,6 +12,16 @@ PACKAGES = [
     "web",
 ]
 
+ESLINT_DIRS = [
+    "codegen",
+    "codemod",
+    "common",
+    "icons",
+    "mobile",
+    "utils",
+    "web",
+]
+
 STATIC_PACKAGES = [
     "fonts",
 ]

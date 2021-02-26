@@ -28,8 +28,6 @@ filegroup(
             "**/*.js",
             "**/*.test.*",
             "**/*.mdx",
-        ],
-        exclude = [
             "**/*.json",
         ],
     ),

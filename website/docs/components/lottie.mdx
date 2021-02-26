@@ -3,4 +3,721 @@ id: lottie
 title: Lottie
 ---
 
-🚧 Coming soon!
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+
+<ComponentDetails componentName="Lottie" templateName="intro" />
+
+## Props
+
+### alignContent
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="alignContent"
+  required={false}
+  defaultValue=""
+  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="alignContent" />
+
+### alignItems
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="alignItems"
+  required={false}
+  defaultValue=""
+  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="alignItems" />
+
+### alignSelf
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="alignSelf"
+  required={false}
+  defaultValue=""
+  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="alignSelf" />
+
+### as <Badge variant="web" />
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['div']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="as" />
+
+### aspectRatio <Badge variant="mobile" />
+
+Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="aspectRatio"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="aspectRatio" />
+
+### autoplay
+
+A boolean flag indicating whether or not the animation should start automatically when mounted. This only affects the imperative API.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="autoplay"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="autoplay" />
+
+### background
+
+Set the background color of the box.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="background"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'secondary',
+    'true',
+  ]}
+  webOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'secondary',
+    'true',
+  ]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="background" />
+
+### bordered
+
+Add a border around the box.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="bordered"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="bordered" />
+
+### bottom
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="bottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="bottom" />
+
+### children
+
+Content to render within the box.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="children" />
+
+### colorFilters <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="colorFilters"
+  required={false}
+  defaultValue=""
+  mobileOptions={['{ keypath: string; color: string; }[]']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="colorFilters" />
+
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="dangerouslySetClassName" />
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'ViewStyle',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="dangerouslySetStyle" />
+
+### elevation <Badge variant="mobile" />
+
+Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="elevation"
+  required={false}
+  defaultValue=""
+  mobileOptions={['1', '2']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="elevation" />
+
+### flexBasis
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="flexBasis"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="flexBasis" />
+
+### flexDirection
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="flexDirection"
+  required={false}
+  defaultValue=""
+  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="flexDirection" />
+
+### flexGrow
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="flexGrow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="flexGrow" />
+
+### flexShrink
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="flexShrink"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="flexShrink" />
+
+### flexWrap
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="flexWrap"
+  required={false}
+  defaultValue=""
+  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
+  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="flexWrap" />
+
+### handlers <Badge variant="web" />
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="handlers"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['LottieEventHandlersMap']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="handlers" />
+
+### height
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="height"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="height" />
+
+### justifyContent
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="justifyContent"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly',
+  ]}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="justifyContent" />
+
+### left
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="left"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="left" />
+
+### loop
+
+A boolean flag indicating whether or not the animation should loop.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="loop"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="loop" />
+
+### maxHeight
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="maxHeight" />
+
+### maxWidth
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="maxWidth" />
+
+### minHeight
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="minHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="minHeight" />
+
+### minWidth
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="minWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="minWidth" />
+
+### onAnimationFinish
+
+A callback function which will be called when animation is finished. Note that on mobile, this callback will be called only when `loop` is set to false.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="onAnimationFinish"
+  required={false}
+  defaultValue=""
+  mobileOptions={['() => void']}
+  webOptions={['() => void']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="onAnimationFinish" />
+
+### overflow
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="overflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['gradient', 'visible']}
+  webOptions={['hidden', 'scroll', 'visible']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="overflow" />
+
+### pin
+
+Direction in which to absolutely pin the box.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="pin"
+  required={false}
+  defaultValue=""
+  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
+  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="pin" />
+
+### position
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="position"
+  required={false}
+  defaultValue=""
+  mobileOptions={['absolute', 'relative']}
+  webOptions={['absolute', 'relative']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="position" />
+
+### progress <Badge variant="mobile" />
+
+A number between 0 and 1, or an `Animated` number between 0 and 1. This number represents the normalized progress of the animation. If you update this prop, the animation will correspondingly update to the frame at that progress value. This prop is not required if you are using the imperative API.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="progress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['AnimatedInterpolation', 'Value', 'number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="progress" />
+
+### resizeMode
+
+Determines how to resize the animated view when the frame doesnt match the raw image dimensions. Refer to React Native docs [here](https://facebook.github.io/react-native/docs/image.html#resizemode)
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="resizeMode"
+  required={false}
+  defaultValue="cover"
+  mobileOptions={['center', 'contain', 'cover']}
+  webOptions={['center', 'contain', 'cover']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="resizeMode" />
+
+### right
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="right"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="right" />
+
+### role <Badge variant="web" />
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="role"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="role" />
+
+### rounded
+
+Round the corners of the box.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="rounded"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="rounded" />
+
+### source
+
+The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobile, import the animation from the animations folder instead of from index so that unused animations are not included during build, `import { tradeStatus } from @cbhq/cds-lottie-files/tradeStatus`. For web, you can import the animation from index since this webpack can handle treeshaking, `import { tradeStatus } from @cbhq/cds-lottie-files`
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="source"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="source" />
+
+### spacing
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="spacing" />
+
+### spacingBottom
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="spacingBottom" />
+
+### spacingEnd
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="spacingEnd" />
+
+### spacingHorizontal
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="spacingHorizontal" />
+
+### spacingStart
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="spacingStart" />
+
+### spacingTop
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="spacingTop" />
+
+### spacingVertical
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="spacingVertical" />
+
+### top
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="top"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="top" />
+
+### width
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="width"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="width" />
+
+### zIndex
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="zIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="zIndex" />
+
+<ComponentDetails componentName="Lottie" templateName="outro" />

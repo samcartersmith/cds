@@ -9,6 +9,7 @@ import List from './src';
 import BoxScreen from './src/Box';
 import ButtonScreen from './src/Button';
 import IconScreen from './src/Icon';
+import LottieScreen from './src/Lottie';
 import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
 import TextCaptionScreen from './src/TextCaption';
@@ -58,6 +59,7 @@ const App = () => {
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
+          <Stack.Screen name="Lottie" component={LottieScreen} />
           <Stack.Screen name="Text" component={TextScreen} options={{ title: 'Text (all)' }} />
           <Stack.Screen name="TextBody" component={TextBodyScreen} />
           <Stack.Screen name="TextCaption" component={TextCaptionScreen} />

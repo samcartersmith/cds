@@ -3,7 +3,7 @@ load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "stylelint_tes
 load("@npm//serve:index.bzl", "serve")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
-load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
+load(":config.bzl", "ESLINT_DIRS", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
 
 exports_files([
     ".babelrc.js",
@@ -41,12 +41,6 @@ filegroup(
 # ***************
 # *** linting ***
 # ***************
-
-ESLINT_DIRS = PACKAGES + [
-    "codegen",
-    "codemod",
-]
-
 [
     eslint_test(
         name = "eslint_%s" % directory,
@@ -110,6 +104,7 @@ filegroup(
         ".babelrc.js",
         "jest.config.js",
         "jest.config.native.js",
+        "jestSetup.native.ts",
         "jestSetup.ts",
         "linaria.config.js",
     ],
@@ -151,6 +146,7 @@ jest_test(
         "//eng/shared/design-system/icons:source",
         "//eng/shared/design-system/utils:source",
         "//eng/shared/design-system/web:source",
+        "//eng/shared/design-system/common:source",
     ],
     deps = append_cds_web_deps(TEST_DEPS + [
         "@npm//@testing-library/jest-dom",

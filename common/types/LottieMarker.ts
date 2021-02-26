@@ -1,4 +1,4 @@
-export interface LottieMarker<T extends string = string> {
+export interface LottieMarker<T extends string> {
   // Animation frame of marker
   tm: number;
   // Marker name

@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add Lottie component @katherinemartinez [#13040](https://github.cbhq.net/mono/repo/pull/13040)
+
 ## 0.2.0 (2/25/2021, 11:45 AM PST) [#13638](https://github.cbhq.net/mono/repo/pull/13638)
 
 #### 💥 Breaking

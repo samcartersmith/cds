@@ -1,7 +1,7 @@
 import { mapValues } from '@cbhq/cds-utils';
 
 import { scaleConfig } from './configs/scaleConfig';
-import { Palette } from './Palette';
+import { Palette, defaultPalette } from './Palette';
 import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
@@ -12,6 +12,12 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
 
 (async function () {
   const templates = {
+    'lottieStyles.ejs': [
+      {
+        dest: 'web/Lottie/lottieStyles.ts',
+        data: defaultPalette,
+      },
+    ],
     'css.ejs': [
       {
         dest: 'web/Text/textStyles.ts',

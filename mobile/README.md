@@ -11,5 +11,5 @@ You will need to run `npx react-native link` to link the assets for android and 
 ### Outside mono/repo
 
 - Install package with `yarn add @cbhq/cds-mobile`
-- Make sure `@cds:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
+- Make sure `@cbhq:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
 - Update `react-native.config.js` to include icon font in assets, i.e. `assets: ['./node_modules/@cbhq/cds-mobile/icons/font']`.

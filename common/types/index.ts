@@ -5,7 +5,7 @@ export * from './ForwardedRef';
 export * from './IconBaseProps';
 export * from './IconName';
 export * from './IconSize';
-export * from './LottieBasePlayerInstance';
+export * from './LottiePlayer';
 export * from './LottieBaseProps';
 export * from './LottieMarker';
 export * from './LottieMarkersAsMap';

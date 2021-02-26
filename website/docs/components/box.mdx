@@ -73,10 +73,25 @@ If value is true then style prop can take animated values
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['As']}
+  webOptions={['article', 'aside', 'div', 'footer', 'header', 'main', 'section']}
 />
 
 <ComponentDetails componentName="Box" templateName="as" />
+
+### aspectRatio <Badge variant="mobile" />
+
+Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="aspectRatio"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Box" templateName="aspectRatio" />
 
 ### background
 
@@ -173,6 +188,21 @@ Content to render within the box.
 />
 
 <ComponentDetails componentName="Box" templateName="children" />
+
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Box" templateName="dangerouslySetClassName" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -439,7 +469,7 @@ Direction in which to absolutely pin the box.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['InferBoxRole<As>']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Box" templateName="role" />

@@ -1,0 +1,23 @@
+import { useMemo } from 'react';
+
+import { mapValues } from '@cbhq/cds-utils';
+
+import { LottieListener } from './types';
+
+const emptyArray: LottieListener[] = [];
+
+export type LottieEventHandlersMap = {
+  [key in LottieListener['name']]?: LottieListener['handler'];
+};
+
+export const useLottieHandlers = (handlers?: LottieEventHandlersMap) => {
+  return useMemo(() => {
+    if (handlers) {
+      const objectMap = mapValues(handlers, (val, key) => ({ name: key, handler: val }));
+      return Object.values(objectMap).filter(
+        (listener): listener is LottieListener => !!listener && !!listener.handler
+      );
+    }
+    return emptyArray;
+  }, [handlers]);
+};

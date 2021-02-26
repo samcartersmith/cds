@@ -13,10 +13,10 @@ module.exports = {
       items: [
         'foundation/overview',
         'foundation/color',
-        'foundation/scale',
-        'foundation/typography',
         'foundation/iconography',
         'foundation/illustration',
+        'foundation/scale',
+        'foundation/typography',
       ],
     },
     {
@@ -24,12 +24,13 @@ module.exports = {
       label: 'Components',
       collapsed: true,
       items: [
-        'components/theme-provider',
-        'components/text',
         'components/box',
-        'components/offset',
-        'components/icon',
         'components/button',
+        'components/icon',
+        'components/lottie',
+        'components/offset',
+        'components/text',
+        'components/theme-provider',
       ],
     },
     {

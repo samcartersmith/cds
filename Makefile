@@ -79,7 +79,6 @@ lint:
 	bazel run :eslint_codegen
 	bazel run :eslint_codemod
 	bazel run :eslint_common
-	bazel run :eslint_lottie-files
 	bazel run :eslint_mobile
 	bazel run :eslint_utils
 	bazel run :eslint_web

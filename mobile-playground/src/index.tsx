@@ -8,6 +8,7 @@ const components = [
   { key: 'Box' },
   { key: 'Button' },
   { key: 'Icon' },
+  { key: 'Lottie' },
   { key: 'Text', label: 'Text (all)' },
   { key: 'TextBody' },
   { key: 'TextCaption' },

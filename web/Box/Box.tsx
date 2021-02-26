@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-import type { BoxBaseProps } from '@cbhq/cds-common';
+import type { BoxBaseProps, ForwardedRef } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
 import { usePinStyles } from '../hooks/usePinStyles';
@@ -36,97 +36,108 @@ export interface BoxProps<As extends BoxElement = 'div'> extends BoxBaseProps {
   as?: As;
   role?: InferBoxRole<As>;
   overflow?: 'visible' | 'hidden' | 'scroll';
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  dangerouslySetClassName?: string;
 }
 
-export const Box = <As extends BoxElement = 'div'>(props: BoxProps<As>) => {
-  const {
-    as: Tag = 'div',
-    background,
-    bordered,
-    children,
-    overflow,
-    role,
-    rounded,
-    // Flex
-    alignContent,
-    alignItems,
-    alignSelf,
-    flexBasis,
-    flexDirection,
-    flexGrow,
-    flexShrink,
-    flexWrap,
-    justifyContent,
-    // Dimension
-    height,
-    maxHeight,
-    maxWidth,
-    minHeight,
-    minWidth,
-    width,
-    // Position
-    bottom,
-    left,
-    position,
-    right,
-    top,
-    zIndex,
-    pin,
-    // Spacing
-    spacing,
-    spacingTop,
-    spacingBottom,
-    spacingStart,
-    spacingEnd,
-    spacingVertical,
-    spacingHorizontal,
-  } = props;
+export const Box = forwardRef(
+  <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => {
+    const {
+      as = 'div',
+      background,
+      bordered,
+      children,
+      overflow,
+      role,
+      rounded,
+      // Flex
+      alignContent,
+      alignItems,
+      alignSelf,
+      flexBasis,
+      flexDirection,
+      flexGrow,
+      flexShrink,
+      flexWrap,
+      justifyContent,
+      // Dimension
+      height,
+      maxHeight,
+      maxWidth,
+      minHeight,
+      minWidth,
+      width,
+      // Position
+      bottom,
+      left,
+      position,
+      right,
+      top,
+      zIndex,
+      pin,
+      // Spacing
+      spacing,
+      spacingTop,
+      spacingBottom,
+      spacingStart,
+      spacingEnd,
+      spacingVertical,
+      spacingHorizontal,
+      dangerouslySetClassName,
+    } = props;
 
-  return (
-    <Tag
-      className={cx(
-        styles.box,
-        background && backgroundColorStyles[background === true ? 'background' : background],
-        alignContent && styles.alignContent[alignContent],
-        alignItems && styles.alignItems[alignItems],
-        alignSelf && styles.alignSelf[alignSelf],
-        flexDirection && styles.flexDirection[flexDirection],
-        flexWrap && styles.flexWrap[flexWrap],
-        justifyContent && styles.justifyContent[justifyContent],
-        overflow && styles.overflow[overflow],
-        position && styles.position[position],
-        bordered && styles.border,
-        rounded && styles.borderRadius,
-        useSpacingStyles({
-          all: spacing,
-          top: spacingTop,
-          bottom: spacingBottom,
-          start: spacingStart,
-          end: spacingEnd,
-          vertical: spacingVertical,
-          horizontal: spacingHorizontal,
-        }),
-        usePinStyles(pin)
-      )}
-      role={role}
-      style={{
-        flexBasis,
-        flexGrow,
-        flexShrink,
-        height,
-        maxHeight,
-        maxWidth,
-        minHeight,
-        minWidth,
-        width,
-        bottom,
-        left,
-        right,
-        top,
-        zIndex,
-      }}
-    >
-      {children}
-    </Tag>
-  );
-};
+    return React.createElement(
+      as,
+      {
+        ref: forwardedRef,
+        className: cx(
+          styles.box,
+          background && backgroundColorStyles[background === true ? 'background' : background],
+          alignContent && styles.alignContent[alignContent],
+          alignItems && styles.alignItems[alignItems],
+          alignSelf && styles.alignSelf[alignSelf],
+          flexDirection && styles.flexDirection[flexDirection],
+          flexWrap && styles.flexWrap[flexWrap],
+          justifyContent && styles.justifyContent[justifyContent],
+          overflow && styles.overflow[overflow],
+          position && styles.position[position],
+          bordered && styles.border,
+          rounded && styles.borderRadius,
+          useSpacingStyles({
+            all: spacing,
+            top: spacingTop,
+            bottom: spacingBottom,
+            start: spacingStart,
+            end: spacingEnd,
+            vertical: spacingVertical,
+            horizontal: spacingHorizontal,
+          }),
+          usePinStyles(pin),
+          dangerouslySetClassName
+        ),
+        role,
+        style: {
+          flexBasis,
+          flexGrow,
+          flexShrink,
+          height,
+          maxHeight,
+          maxWidth,
+          minHeight,
+          minWidth,
+          width,
+          bottom,
+          left,
+          right,
+          top,
+          zIndex,
+        },
+      },
+      children
+    );
+  }
+);
+
+Box.displayName = 'Box';
