@@ -3,9 +3,6 @@ import { css } from 'linaria';
 import { TextProps } from '../Text/TextProps';
 import { CSSMap } from '../types';
 
-export const fallbackStack =
-  "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
-
 const textAlign: CSSMap<TextProps['align']> = {
   start: css`
     text-align: start;

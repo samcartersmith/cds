@@ -1,5 +1,3 @@
-import { fallbackStack } from '@cb/design-system-web/styles/shared';
-
 export const fontWeights = {
   Regular: 400,
   Medium: 500,
@@ -10,6 +8,9 @@ export const xHeight = {
   Graphik: 0.53,
   Inter: 0.55,
 };
+
+export const fallbackStack =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
 
 export const cssFontFamilies = {
   Graphik: `'Graphik', 'Inter', ${fallbackStack}`,

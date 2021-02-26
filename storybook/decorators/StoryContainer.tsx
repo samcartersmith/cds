@@ -1,8 +1,9 @@
 import * as React from 'react';
 
-import type { GetStory } from '@cbhq/cds-storybook/decorators/types';
 import { ThemeProvider } from '@cbhq/cds-web';
 import { css } from 'linaria';
+
+import type { GetStory } from './types';
 
 export const StoryContainer = (getStory: GetStory) => (
   <ThemeProvider scale="large">

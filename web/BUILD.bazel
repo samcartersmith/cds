@@ -4,7 +4,7 @@ load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
 # Files to publish to NPM
 filegroup(
     name = "runtime_source",
-    srcs = glob(
+    srcs = ["globalStyles.js"] + glob(
         [
             "**/*.ts",
             "**/*.tsx",

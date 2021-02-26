@@ -27,6 +27,7 @@ yarn add @cbhq/cds-web
 You can start using CDS-web like so. CDS only supports ES modules currently. If your project doesn't, please reach out to the CDS team about it in #ask-cds.
 
 ```tsx
+import '@cbhq/cds-web/globalStyles'
 import { ThemeProvider, TextDisplay1 } from '@cbhq/cds-web';
 
 const App = () => {

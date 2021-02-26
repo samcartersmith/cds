@@ -9,7 +9,9 @@
     "typescript"
   ],
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "globalStyles.js",
+    "lib/styles/global.js"
   ],
   "repository": {
     "type": "git",

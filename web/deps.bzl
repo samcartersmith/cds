@@ -1,4 +1,5 @@
 DEPENDENCIES = [
+    "@npm//destyle.css",
     "@npm//linaria",
     "@npm//lottie-web",
     "@npm//react-aria",

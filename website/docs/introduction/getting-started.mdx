@@ -27,7 +27,7 @@ module.exports = {
 
 ## Using CDS outside the [`mono/repo`](https://github.cbhq.net/mono/repo)
 
-1. Add `@cb:registry=https://registry-npm.cbhq.net` to your `.npmrc`.
+1. Add `@cbhq:registry=https://registry-npm.cbhq.net` to your `.npmrc`.
 2. Install the CDS packages you need
 
 ```bash
@@ -38,7 +38,13 @@ yarn add @cbhq/cds-icons # if using CDS icons
 
 ## Building with CDS
 
-1. Add `ThemeProvider` to the root of your React application. Choose a scale for your application from the seven scales supported by CDS.
+1. Import `globalStyles`. This includes the font face declarations,
+
+```tsx
+import '@cbhq/cds-web/globalStyles';
+```
+
+2. Add `ThemeProvider` to the root of your React application. Choose a scale for your application from the seven scales supported by CDS.
 
 ```tsx
 import { ThemeProvider } from '@cbhq/cds-web'
@@ -54,8 +60,8 @@ export const App = () => {
 
 If you have components that are created outside of the app's main DOM tree, such as `Modal`s that use `createPortal`, you will need to add `ThemeProvider` to the root of the portal element as well.
 
-2. Import components from `@cbhq/cds-web` or `@cbhq/cds-mobile`.
-3. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.
+3. Import components from `@cbhq/cds-web` or `@cbhq/cds-mobile`.
+4. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.
 
    - example 1. Use `Headline` typography for the text.
 

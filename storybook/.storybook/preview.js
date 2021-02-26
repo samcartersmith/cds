@@ -1,8 +1,6 @@
 import { StoryContainer } from '../decorators/StoryContainer';
 import { css } from 'linaria';
-import '@cb/design-system-web/styles/globalStyles';
-// CSS reset
-import 'destyle.css';
+import '@cbhq/cds-web/globalStyles';
 
 export const decorators = [StoryContainer];
 

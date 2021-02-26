@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { fallbackStack } from '@cb/design-system-web/styles/shared';
-import { GetStory } from '@cbhq/cds-storybook/decorators/types';
 import { css } from 'linaria';
+
+import { GetStory } from './types';
 
 type StoryNameLabelProps = {
   name: string;
@@ -25,7 +25,7 @@ export const StoryNameLabel: React.FC<StoryNameLabelProps> = ({ name, children }
           border-radius: 4px;
           padding: 4px 8px;
 
-          font-family: ${fallbackStack};
+          font-family: 'Nunito Sans', -apple-system, sans-serif;
           font-size: 16px;
           font-weight: 500;
 
