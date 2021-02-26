@@ -8,6 +8,7 @@ export * from './Button/Button';
 export * from './Button/Button';
 export * from './Pressable/PressableHighlight';
 export * from './Pressable/PressableOpacity';
+export * from './Box/Spacer';
 export * from './Text/Text';
 export * from './hooks/useElevationStyles';
 export * from './hooks/useOffsetStyles';

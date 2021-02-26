@@ -1,5 +1,5 @@
+import { LottieSource } from '../types';
 import { getLottieFrameToMs, getLottieMarkers } from './lottieUtils';
-import { LottieSource } from './types';
 
 describe('lottieUtils', () => {
   it('getLottieFrameToMs - frame / frameRate and multiply by 1000 to convert to milliseconds', () => {

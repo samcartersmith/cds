@@ -1,4 +1,4 @@
-import { LottieMarkersAsMap, LottieSource } from './types';
+import { LottieMarkersAsMap, LottieSource } from '../types';
 
 // frame / frameRate and multiply by 1000 to convert to milliseconds
 export function getLottieFrameToMs(frame: number, fr: number) {

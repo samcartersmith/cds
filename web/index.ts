@@ -13,6 +13,7 @@ export * from './Box/VStack';
 export * from './Button/Button';
 export * from './icons/Icon';
 export * from './Interactable/Interactable';
+export * from './Box/Spacer';
 export * from './Text/Text';
 export * from './ThemeProvider/ThemeProvider';
 export * from './hooks/useOffsetStyles';

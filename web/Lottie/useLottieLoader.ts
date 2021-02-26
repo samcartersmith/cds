@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useRef, useState, useMemo, MutableRefObject } from 'react';
+import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 
 import { LottieSource } from '@cbhq/cds-common';
-import { AnyObject } from '@cbhq/cds-utils';
-import lottie, { AnimationItem, AnimationConfigWithData } from 'lottie-web';
+import { isBrowser, AnyObject } from '@cbhq/cds-utils';
+import lottie, { AnimationConfigWithData } from 'lottie-web';
 
-import { LottieProps } from './types';
-
-export type LottieAnimationRef = MutableRefObject<AnimationItem | undefined>;
+import { LottieProps, LottieAnimationRef } from './types';
 
 export const useLottieLoader = <Marker extends string, Source extends LottieSource<Marker>>({
   source,
@@ -23,14 +21,13 @@ export const useLottieLoader = <Marker extends string, Source extends LottieSour
 
   const preserveAspectRatio = useMemo(() => {
     switch (resizeMode) {
-      case 'cover':
-        return sourceWidth > sourceHeight ? 'xMaxYMin meet' : 'xMinYMax meet';
-      case 'center':
-        return 'xMidYMid slice';
       case 'contain':
         return 'xMidYMid meet';
+      case 'cover':
+      default:
+        return 'xMidYMid slice';
     }
-  }, [resizeMode, sourceHeight, sourceWidth]);
+  }, [resizeMode]);
 
   const loadAnimation = useCallback(
     (forcedConfigs: AnyObject = {}) => {
@@ -69,7 +66,10 @@ export const useLottieLoader = <Marker extends string, Source extends LottieSour
    * Reinitialize when animation data changedes
    */
   useEffect(() => {
-    loadAnimation();
+    // Don't load lottie if SSR
+    if (isBrowser()) {
+      loadAnimation();
+    }
   }, [loadAnimation]);
 
   // Update the autoplay state

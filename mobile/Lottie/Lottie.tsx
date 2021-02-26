@@ -17,7 +17,7 @@ const LottieContent = memo(
         colorFilters,
         loop = false,
         progress,
-        resizeMode = 'cover',
+        resizeMode = 'contain',
         source,
         ...boxProps
       }: LottieProps,

@@ -1,3 +1,5 @@
+export * from './lottie/lottieUtils';
+export * from './lottie/useStatusAnimationPoller';
 export * from './palette/constants';
 export * from './palette/usePaletteConfig';
 export * from './scale/useScale';
@@ -5,4 +7,4 @@ export * from './spectrum/useSpectrum';
 export * from './SystemProvider';
 export * from './types';
 export * from './useIconSize';
-export * from './lottieUtils';
+export * from './utils/join';

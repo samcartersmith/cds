@@ -7,6 +7,7 @@ import {
   LottiePlayer,
   ForwardedRef,
 } from '@cbhq/cds-common';
+import { noop } from '@cbhq/cds-utils';
 
 import { Box } from '../Box/Box';
 import { lottieStyles } from './lottieStyles';
@@ -14,8 +15,6 @@ import { LottieProps } from './types';
 import { useLottieHandlers } from './useLottieHandlers';
 import { useLottieListeners } from './useLottieListeners';
 import { useLottieLoader } from './useLottieLoader';
-
-const noop = () => {};
 
 export const Lottie = memo(
   forwardRef(
@@ -26,7 +25,7 @@ export const Lottie = memo(
         autoplay = false,
         onAnimationFinish,
         handlers,
-        resizeMode = 'cover',
+        resizeMode = 'contain',
         ...otherProps
       }: LottieProps<Marker, Source>,
       forwardedRef: ForwardedRef<LottiePlayer<Source>>

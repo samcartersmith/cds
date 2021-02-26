@@ -22,13 +22,5 @@ export const NuxBanner = () => {
     []
   );
 
-  return (
-    <Lottie
-      ref={lottie}
-      source={nux}
-      width={500}
-      height={500}
-      onAnimationFinish={onAnimationFinish}
-    />
-  );
+  return <Lottie ref={lottie} source={nux} height={500} onAnimationFinish={onAnimationFinish} />;
 };

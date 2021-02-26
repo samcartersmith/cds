@@ -23,20 +23,22 @@ const parse = (fileName: string) => {
   }).parse(path.resolve(CDS_DIR, fileName));
 };
 
-const getDocgen = (packageName: string, componentName: string) =>
-  parse(`${packageName}/index.ts`).find(item => item.displayName === componentName);
+const getDocgen = (pathName: string, componentName: string) =>
+  parse(pathName).find(item => item.displayName === componentName);
 
 const getDocgenForPackage = ({
   componentName,
   displayName,
   packageName,
+  childPath = '/index.ts',
 }: {
   componentName: string;
   displayName?: string;
   packageName?: PackageName;
+  childPath?: string;
 }) => {
-  const webDocgen = getDocgen(packageName ?? 'web', componentName);
-  const mobileDocgen = getDocgen(packageName ?? 'mobile', componentName);
+  const webDocgen = getDocgen(`${packageName ?? 'web'}${childPath}`, componentName);
+  const mobileDocgen = getDocgen(`${packageName ?? 'mobile'}${childPath}`, componentName);
 
   if (webDocgen && mobileDocgen) {
     return new ComponentDocgen(webDocgen, mobileDocgen, displayName ?? componentName);
@@ -46,7 +48,7 @@ const getDocgenForPackage = ({
 export const docgen = ([
   {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/lottie.mdx`,
-    data: getDocgenForPackage({ componentName: 'Lottie' }),
+    data: getDocgenForPackage({ componentName: 'Lottie', childPath: '/Lottie/Lottie.tsx' }),
   },
   {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/text.mdx`,

@@ -11,19 +11,6 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 ## Props
 
-### alignContent
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="alignContent"
-  required={false}
-  defaultValue=""
-  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
-  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="alignContent" />
-
 ### alignItems
 
 <ApiDetails
@@ -50,33 +37,20 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 <ComponentDetails componentName="Lottie" templateName="alignSelf" />
 
-### as <Badge variant="web" />
+### animated <Badge variant="mobile" />
+
+If value is true then style prop can take animated values
 
 <ApiDetails
   componentName="Lottie"
-  propertyName="as"
+  propertyName="animated"
   required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['div']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="as" />
-
-### aspectRatio <Badge variant="mobile" />
-
-Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="aspectRatio"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number']}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="aspectRatio" />
+<ComponentDetails componentName="Lottie" templateName="animated" />
 
 ### autoplay
 
@@ -191,6 +165,8 @@ Content to render within the box.
 
 ### colorFilters <Badge variant="mobile" />
 
+An array of layers you want to override its color filter.
+
 <ApiDetails
   componentName="Lottie"
   propertyName="colorFilters"
@@ -201,21 +177,6 @@ Content to render within the box.
 />
 
 <ComponentDetails componentName="Lottie" templateName="colorFilters" />
-
-### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
-
-This is a migration escape hatch. It is not intended to be used normally.
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="dangerouslySetClassName"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="dangerouslySetClassName" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -242,21 +203,6 @@ This is a migration escape hatch. It is not intended to be used normally.
 
 <ComponentDetails componentName="Lottie" templateName="dangerouslySetStyle" />
 
-### elevation <Badge variant="mobile" />
-
-Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="elevation"
-  required={false}
-  defaultValue=""
-  mobileOptions={['1', '2']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="elevation" />
-
 ### flexBasis
 
 <ApiDetails
@@ -269,19 +215,6 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
 />
 
 <ComponentDetails componentName="Lottie" templateName="flexBasis" />
-
-### flexDirection
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="flexDirection"
-  required={false}
-  defaultValue=""
-  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
-  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="flexDirection" />
 
 ### flexGrow
 
@@ -309,19 +242,6 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
 
 <ComponentDetails componentName="Lottie" templateName="flexShrink" />
 
-### flexWrap
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="flexWrap"
-  required={false}
-  defaultValue=""
-  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
-  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="flexWrap" />
-
 ### handlers <Badge variant="web" />
 
 <ApiDetails
@@ -347,26 +267,6 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
 />
 
 <ComponentDetails componentName="Lottie" templateName="height" />
-
-### justifyContent
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="justifyContent"
-  required={false}
-  defaultValue=""
-  mobileOptions={[
-    'center',
-    'flex-end',
-    'flex-start',
-    'space-around',
-    'space-between',
-    'space-evenly',
-  ]}
-  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="justifyContent" />
 
 ### left
 
@@ -448,6 +348,97 @@ A boolean flag indicating whether or not the animation should loop.
 
 <ComponentDetails componentName="Lottie" templateName="minWidth" />
 
+### offset
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="offset"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="offset" />
+
+### offsetBottom
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="offsetBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="offsetBottom" />
+
+### offsetEnd
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="offsetEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="offsetEnd" />
+
+### offsetHorizontal
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="offsetHorizontal" />
+
+### offsetStart
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="offsetStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="offsetStart" />
+
+### offsetTop
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="offsetTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="offsetTop" />
+
+### offsetVertical
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="offsetVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="offsetVertical" />
+
 ### onAnimationFinish
 
 A callback function which will be called when animation is finished. Note that on mobile, this callback will be called only when `loop` is set to false.
@@ -462,19 +453,6 @@ A callback function which will be called when animation is finished. Note that o
 />
 
 <ComponentDetails componentName="Lottie" templateName="onAnimationFinish" />
-
-### overflow
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="overflow"
-  required={false}
-  defaultValue=""
-  mobileOptions={['gradient', 'visible']}
-  webOptions={['hidden', 'scroll', 'visible']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="overflow" />
 
 ### pin
 
@@ -527,7 +505,7 @@ Determines how to resize the animated view when the frame doesnt match the raw i
   componentName="Lottie"
   propertyName="resizeMode"
   required={false}
-  defaultValue="cover"
+  defaultValue="contain"
   mobileOptions={['center', 'contain', 'cover']}
   webOptions={['center', 'contain', 'cover']}
 />
@@ -546,19 +524,6 @@ Determines how to resize the animated view when the frame doesnt match the raw i
 />
 
 <ComponentDetails componentName="Lottie" templateName="right" />
-
-### role <Badge variant="web" />
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="role"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="role" />
 
 ### rounded
 

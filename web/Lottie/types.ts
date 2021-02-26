@@ -1,7 +1,8 @@
-import { NoopFn, LottieSource, LottieBaseProps } from '@cbhq/cds-common';
-import { AnimationEventName } from 'lottie-web';
+import { MutableRefObject } from 'react';
 
-import { BoxProps } from '../Box/Box';
+import { NoopFn, LottieSource, LottieBaseProps } from '@cbhq/cds-common';
+import { AnimationEventName, AnimationItem } from 'lottie-web';
+
 import { LottieEventHandlersMap } from './useLottieHandlers';
 
 export type LottieListener = {
@@ -10,7 +11,8 @@ export type LottieListener = {
 };
 
 export interface LottieProps<T extends string, Source extends LottieSource<T>>
-  extends BoxProps,
-    LottieBaseProps<Source> {
+  extends LottieBaseProps<Source> {
   handlers?: LottieEventHandlersMap;
 }
+
+export type LottieAnimationRef = MutableRefObject<AnimationItem | undefined>;

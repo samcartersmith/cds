@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add Spacer component @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
+- feat: Add LottieStatusAnimation component @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
+
 ## 0.2.0 (2/25/2021, 05:22 PM PST) [#13493](https://github.cbhq.net/mono/repo/pull/13493)
 
 #### 💥 Breaking

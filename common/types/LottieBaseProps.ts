@@ -1,6 +1,10 @@
+import { BoxBaseProps } from './BoxBaseProps';
 import { LottieSource } from './LottieSource';
 
-export interface LottieBaseProps<T extends LottieSource = LottieSource> {
+type OmittedBoxProps = 'alignContent' | 'justifyContent' | 'flexWrap' | 'flexDirection';
+
+export interface LottieBaseProps<T extends LottieSource = LottieSource>
+  extends Omit<BoxBaseProps, OmittedBoxProps> {
   /**
    * A boolean flag indicating whether or not the animation should start automatically when
    * mounted. This only affects the imperative API.
@@ -21,7 +25,7 @@ export interface LottieBaseProps<T extends LottieSource = LottieSource> {
    * Determines how to resize the animated view when the frame doesn't match the raw image
    * dimensions.
    * Refer to React Native docs [here](https://facebook.github.io/react-native/docs/image.html#resizemode)
-   * @default cover
+   * @default contain
    */
   resizeMode?: 'cover' | 'contain' | 'center';
   /**

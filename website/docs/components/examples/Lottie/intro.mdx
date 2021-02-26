@@ -1,3 +1,29 @@
 import { NuxBanner } from './NuxBanner';
 
 <NuxBanner />
+
+```jsx live
+function Example() {
+  const statuses = ['loading', 'success', 'failure', 'pending', 'cardSuccess'];
+  const [status, setStatus] = useState('loading');
+  const buttons = useMemo(() => {
+    // join is a util for adding a separator element
+    // between an array of React components
+    return join(
+      statuses.map(item => (
+        <Button key={item} onPress={() => setStatus(item)}>
+          {item}
+        </Button>
+      )),
+      <Spacer />
+    );
+  }, []);
+
+  return (
+    <VStack alignSelf="center">
+      <LottieStatusAnimation key={status} height={350} status={status} />
+      <HStack>{buttons}</HStack>
+    </VStack>
+  );
+}
+```
