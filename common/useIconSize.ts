@@ -20,7 +20,7 @@ const mapping: Record<Scale, IconScaleMap> = {
   xxxLarge: scaleMap2,
 };
 
-export const useIconSize = (size: IconSize, bordered: boolean) => {
+export const useIconSize = (size: IconSize, bordered?: boolean) => {
   const scale = useScale();
   const wrapperSize = mapping[scale][size];
   const iconSize = useMemo(() => {

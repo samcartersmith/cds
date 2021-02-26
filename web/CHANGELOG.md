@@ -6,9 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- breaking: Removed `Offset` component @miles-johnson [#13677](https://github.cbhq.net/mono/repo/pull/13677)
-- feat: Add offset props to `Box` component @miles-johnson [#13677](https://github.cbhq.net/mono/repo/pull/13677)
-- feat: Add Lottie component @katherinemartinez [#13040](https://github.cbhq.net/mono/repo/pull/13040)
+## 0.2.0 (2/25/2021, 05:22 PM PST) [#13493](https://github.cbhq.net/mono/repo/pull/13493)
+
+#### 💥 Breaking
+
+- Removed `Offset` component @miles-johnson [#13677](https://github.cbhq.net/mono/repo/pull/13677)
+
+#### 🚀 Updates
+
+- Make second argument for useIconSize optional @katherinemartinez [#13493](https://github.cbhq.net/mono/repo/pull/13493)
+- Add offset props to `Box` component @miles-johnson [#13677](https://github.cbhq.net/mono/repo/pull/13677)
+- Add Lottie component @katherinemartinez [#13040](https://github.cbhq.net/mono/repo/pull/13040)
 
 ## 0.1.0 (2/25/2021, 11:42 AM PST) [#13638](https://github.cbhq.net/mono/repo/pull/13638)
 
