@@ -61,10 +61,6 @@ export const docgen = ([
     data: getDocgenForPackage({ componentName: 'Button' }),
   },
   {
-    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/offset.mdx`,
-    data: getDocgenForPackage({ componentName: 'Offset' }),
-  },
-  {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/pin.mdx`,
     data: getDocgenForPackage({ componentName: 'Pin' }),
   },

@@ -96,6 +96,32 @@ const BoxScreen = () => {
         </Box>
       </Example>
 
+      <Example title="Offset">
+        <Box spacing={5} background="backgroundAlternate">
+          <Box offset={3} background>
+            <TextBody>All sides</TextBody>
+          </Box>
+        </Box>
+
+        <Box spacing={5} background="backgroundAlternate">
+          <Box offsetTop={1} offsetEnd={2} offsetBottom={3} offsetStart={4} background>
+            <TextBody>Custom sides</TextBody>
+          </Box>
+        </Box>
+
+        <Box spacing={5} background="backgroundAlternate">
+          <Box offsetVertical={3} background>
+            <TextBody>Vertical only</TextBody>
+          </Box>
+        </Box>
+
+        <Box spacing={5} background="backgroundAlternate">
+          <Box offsetHorizontal={3} background>
+            <TextBody>Horizontal only</TextBody>
+          </Box>
+        </Box>
+      </Example>
+
       <Example title="Positioning">
         <Box spacing={1} height={100} background="backgroundAlternate">
           <TextBody>Relative parent</TextBody>

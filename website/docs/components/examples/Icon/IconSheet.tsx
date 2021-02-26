@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 
 import { IconSize, paletteForegrounds, PaletteForeground } from '@cbhq/cds-common';
-import { Box, Offset, Button, ThemeProvider, Icon } from '@cbhq/cds-web';
+import { Box, Button, ThemeProvider, Icon } from '@cbhq/cds-web';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 
@@ -34,24 +34,21 @@ const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
 
   return (
     <ThemeProvider>
-      <Offset start={3}>
-        <Box flexWrap="wrap">
-          {paletteForegrounds.map(item => (
-            <Box key={item} spacingStart={3} spacingBottom={2}>
-              <Button onPress={onPress(item)} variant={color === item ? 'primary' : 'secondary'}>
-                {item}
-              </Button>
-            </Box>
-          ))}
-        </Box>
-      </Offset>
-      <Offset start={3}>
-        <Box flexWrap="wrap" background={background} spacingBottom={3}>
-          {iconNames.map(item => (
-            <Icon title={item} spacing={3} color={color} key={item} name={item} size={size} />
-          ))}
-        </Box>
-      </Offset>
+      <Box flexWrap="wrap" offsetStart={3}>
+        {paletteForegrounds.map(item => (
+          <Box key={item} spacingStart={3} spacingBottom={2}>
+            <Button onPress={onPress(item)} variant={color === item ? 'primary' : 'secondary'}>
+              {item}
+            </Button>
+          </Box>
+        ))}
+      </Box>
+
+      <Box flexWrap="wrap" background={background} spacingBottom={3} offsetStart={3}>
+        {iconNames.map(item => (
+          <Icon title={item} spacing={3} color={color} key={item} name={item} size={size} />
+        ))}
+      </Box>
     </ThemeProvider>
   );
 };

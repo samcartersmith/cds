@@ -28,7 +28,6 @@ module.exports = {
         'components/button',
         'components/icon',
         'components/lottie',
-        'components/offset',
         'components/text',
         'components/theme-provider',
       ],

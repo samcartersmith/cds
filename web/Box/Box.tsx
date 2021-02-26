@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 import type { BoxBaseProps, ForwardedRef } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
+import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
@@ -85,6 +86,14 @@ export const Box = forwardRef(
       spacingEnd,
       spacingVertical,
       spacingHorizontal,
+      // Offset
+      offset,
+      offsetBottom,
+      offsetEnd,
+      offsetHorizontal,
+      offsetStart,
+      offsetTop,
+      offsetVertical,
       dangerouslySetClassName,
     } = props;
 
@@ -106,13 +115,22 @@ export const Box = forwardRef(
           bordered && styles.border,
           rounded && styles.borderRadius,
           useSpacingStyles({
-            all: spacing,
-            top: spacingTop,
-            bottom: spacingBottom,
-            start: spacingStart,
-            end: spacingEnd,
-            vertical: spacingVertical,
-            horizontal: spacingHorizontal,
+            spacing,
+            spacingBottom,
+            spacingEnd,
+            spacingHorizontal,
+            spacingStart,
+            spacingTop,
+            spacingVertical,
+          }),
+          useOffsetStyles({
+            offset,
+            offsetBottom,
+            offsetEnd,
+            offsetHorizontal,
+            offsetStart,
+            offsetTop,
+            offsetVertical,
           }),
           usePinStyles(pin),
           dangerouslySetClassName

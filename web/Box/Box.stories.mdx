@@ -166,6 +166,86 @@ export const Lipsum = () => (
   </Story>
 </Canvas>
 
+# Spacing
+
+<Canvas withToolbar withSource={SourceState.OPEN}>
+  <Story name="Spacing" decorators={[withStoryLabel('All')]} args={{}}>
+    {() => (
+      <Box spacing={3} background="backgroundAlternate">
+        All sides
+      </Box>
+    )}
+  </Story>
+  <Story name="Custom spacing" decorators={[withStoryLabel('Custom')]} args={{}}>
+    {() => (
+      <Box
+        spacingTop={1}
+        spacingEnd={2}
+        spacingBottom={3}
+        spacingStart={4}
+        background="backgroundAlternate"
+      >
+        Custom sides
+      </Box>
+    )}
+  </Story>
+  <Story name="Vertical spacing" decorators={[withStoryLabel('Vertical')]} args={{}}>
+    {() => (
+      <Box spacingVertical={3} background="backgroundAlternate">
+        Vertical only
+      </Box>
+    )}
+  </Story>
+  <Story name="Horizontal spacing" decorators={[withStoryLabel('Horizontal')]} args={{}}>
+    {() => (
+      <Box spacingHorizontal={3} background="backgroundAlternate">
+        Horizontal only
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
+# Offset
+
+<Canvas withToolbar withSource={SourceState.OPEN}>
+  <Story name="Offset" decorators={[withStoryLabel('All')]} args={{}}>
+    {() => (
+      <Box spacing={5} background="backgroundAlternate">
+        <Box offset={3} background>
+          All sides
+        </Box>
+      </Box>
+    )}
+  </Story>
+  <Story name="Custom offset" decorators={[withStoryLabel('Custom')]} args={{}}>
+    {() => (
+      <Box spacing={5} background="backgroundAlternate">
+        <Box offsetTop={1} offsetEnd={2} offsetBottom={3} offsetStart={4} background>
+          Custom sides
+        </Box>
+      </Box>
+    )}
+  </Story>
+  <Story name="Vertical offset" decorators={[withStoryLabel('Vertical')]} args={{}}>
+    {() => (
+      <Box spacing={5} background="backgroundAlternate">
+        <Box offsetVertical={3} background>
+          Vertical only
+        </Box>
+      </Box>
+    )}
+  </Story>
+  <Story name="Horizontal offset" decorators={[withStoryLabel('Horizontal')]} args={{}}>
+    {() => (
+      <Box spacing={5} background="backgroundAlternate">
+        <Box offsetHorizontal={3} background>
+          Horizontal only
+        </Box>
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
 # Positioning
 
 <Canvas withToolbar withSource={SourceState.OPEN}>

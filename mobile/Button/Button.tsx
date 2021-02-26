@@ -37,8 +37,8 @@ export const Button = React.memo(
     const [pressIn, pressOut, pressScale] = usePressAnimation();
     const { underlay, foregroundColor, ...variantStyles } = useButtonVariant(variant, compact);
     const spacingStyles = useSpacingStyles({
-      horizontal: compact ? 2 : 3,
-      vertical: compact ? 0.5 : 1,
+      spacingHorizontal: compact ? 2 : 3,
+      spacingVertical: compact ? 0.5 : 1,
     });
     const textStyles = useMemo(() => ({ color: foregroundColor }), [foregroundColor]);
 

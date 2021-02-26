@@ -4,13 +4,13 @@ import { BoxBaseProps, ElevationLevels } from '@cbhq/cds-common';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
+import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePalette } from '../hooks/usePalette';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { OmitStyle, DangerouslySetStyle } from '../types';
 import { OverflowGradient } from './OverflowGradient';
 
-// TODO onPress?
 export interface BoxProps
   extends BoxBaseProps,
     OmitStyle<ViewProps>,
@@ -81,18 +81,35 @@ export const Box = React.memo(
     spacingStart,
     spacingTop,
     spacingVertical,
+    // Offset
+    offset,
+    offsetBottom,
+    offsetEnd,
+    offsetHorizontal,
+    offsetStart,
+    offsetTop,
+    offsetVertical,
     ...props
   }: BoxProps) => {
     const palette = usePalette();
     const elevationStyles = useElevationStyles(elevation);
     const spacingStyles = useSpacingStyles({
-      all: spacing,
-      bottom: spacingBottom,
-      end: spacingEnd,
-      horizontal: spacingHorizontal,
-      start: spacingStart,
-      top: spacingTop,
-      vertical: spacingVertical,
+      spacing,
+      spacingBottom,
+      spacingEnd,
+      spacingHorizontal,
+      spacingStart,
+      spacingTop,
+      spacingVertical,
+    });
+    const offsetStyles = useOffsetStyles({
+      offset,
+      offsetBottom,
+      offsetEnd,
+      offsetHorizontal,
+      offsetStart,
+      offsetTop,
+      offsetVertical,
     });
     const pinStyles = usePinStyles(pin);
     const flexStyles = useMemo(
@@ -160,6 +177,7 @@ export const Box = React.memo(
         [
           elevationStyles,
           spacingStyles,
+          offsetStyles,
           flexStyles,
           dimensionStyles,
           positionStyles,
@@ -170,6 +188,7 @@ export const Box = React.memo(
       [
         elevationStyles,
         spacingStyles,
+        offsetStyles,
         flexStyles,
         dimensionStyles,
         positionStyles,

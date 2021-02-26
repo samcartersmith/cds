@@ -30,13 +30,13 @@ export const Icon = ({
   spacingHorizontal,
 }: IconProps) => {
   const space = useSpacingStyles({
-    all: spacing,
-    top: spacingTop,
-    bottom: spacingBottom,
-    start: spacingStart,
-    end: spacingEnd,
-    vertical: spacingVertical,
-    horizontal: spacingHorizontal,
+    spacing,
+    spacingTop,
+    spacingBottom,
+    spacingStart,
+    spacingEnd,
+    spacingVertical,
+    spacingHorizontal,
   });
   const TextComponent = animated ? Animated.Text : Text;
   const { wrapperSize, iconSize } = useIconSize(size, bordered);

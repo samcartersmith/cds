@@ -1,63 +1,23 @@
-import { useMemo } from 'react';
+import { SpacingProps } from '@cbhq/cds-common';
 
-import { UseSpacingStylesProps } from '@cbhq/cds-common';
-import { cx } from 'linaria';
-
-import * as marginStyles from '../styles/margin';
-import * as paddingStyles from '../styles/padding';
-import { isRtl } from '../utils/isRtl';
+import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
 
 export const useSpacingStyles = ({
-  all,
-  bottom,
-  end,
-  horizontal,
-  start,
-  top,
-  vertical,
-  isInverted = false,
-}: UseSpacingStylesProps): string =>
-  useMemo(() => {
-    const spacingClasses = [];
-    const styles = isInverted ? marginStyles : paddingStyles;
-
-    if (all) {
-      spacingClasses.push(styles.all[all]);
-    }
-
-    if (top) {
-      spacingClasses.push(styles.top[top]);
-    }
-
-    if (bottom) {
-      spacingClasses.push(styles.bottom[bottom]);
-    }
-
-    if (start) {
-      if (isRtl()) {
-        spacingClasses.push(styles.right[start]);
-      } else {
-        spacingClasses.push(styles.left[start]);
-      }
-    }
-
-    if (end) {
-      if (isRtl()) {
-        spacingClasses.push(styles.left[end]);
-      } else {
-        spacingClasses.push(styles.right[end]);
-      }
-    }
-
-    if (vertical) {
-      spacingClasses.push(styles.top[vertical]);
-      spacingClasses.push(styles.bottom[vertical]);
-    }
-
-    if (horizontal) {
-      spacingClasses.push(styles.left[horizontal]);
-      spacingClasses.push(styles.right[horizontal]);
-    }
-
-    return cx(...spacingClasses);
-  }, [all, top, bottom, start, end, vertical, horizontal, isInverted]);
+  spacing,
+  spacingBottom,
+  spacingEnd,
+  spacingHorizontal,
+  spacingStart,
+  spacingTop,
+  spacingVertical,
+}: SpacingProps): string => {
+  return useInternalSpacingStyles({
+    all: spacing,
+    bottom: spacingBottom,
+    end: spacingEnd,
+    horizontal: spacingHorizontal,
+    start: spacingStart,
+    top: spacingTop,
+    vertical: spacingVertical,
+  });
+};

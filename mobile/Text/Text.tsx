@@ -103,13 +103,13 @@ const createText = (name: Typography) => {
     }, [deprecatedLineHeight, textStyles?.lineHeight]);
 
     const spacingStyles = useSpacingStyles({
-      all: spacing,
-      bottom: spacingBottom,
-      end: spacingEnd,
-      horizontal: spacingHorizontal,
-      start: spacingStart,
-      top: spacingTop,
-      vertical: spacingVertical,
+      spacing,
+      spacingBottom,
+      spacingEnd,
+      spacingHorizontal,
+      spacingStart,
+      spacingTop,
+      spacingVertical,
     });
 
     // TODO: Maybe update to align web and mobile APIs

@@ -57,13 +57,13 @@ const createText = <E extends HTMLTextTags>(name: Typography) => {
           transform,
         }),
         useSpacingStyles({
-          all: spacing,
-          top: spacingTop,
-          bottom: spacingBottom,
-          start: spacingStart,
-          end: spacingEnd,
-          vertical: spacingVertical,
-          horizontal: spacingHorizontal,
+          spacing,
+          spacingTop,
+          spacingBottom,
+          spacingStart,
+          spacingEnd,
+          spacingVertical,
+          spacingHorizontal,
         })
       ),
     });

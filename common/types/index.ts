@@ -10,7 +10,6 @@ export * from './LottieBaseProps';
 export * from './LottieMarker';
 export * from './LottieMarkersAsMap';
 export * from './LottieSource';
-export * from './OffsetBaseProps';
 export * from './Palette';
 export * from './Scale';
 export * from './SpacingProps';
@@ -18,5 +17,5 @@ export * from './SpacingScale';
 export * from './Spectrum';
 export * from './TextBaseProps';
 export * from './Typography';
-export * from './UseSpacingStylesProps';
+
 export type NoopFn = () => void;

@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add offset prop types @miles-johnson [#13677](https://github.cbhq.net/mono/repo/pull/13677)
 - feat: Update Lottie types @katherinemartinez [#13040](https://github.cbhq.net/mono/repo/pull/13040)
 
 ## 0.1.2 (2/25/2021, 11:42 AM PST) [#13638](https://github.cbhq.net/mono/repo/pull/13638)

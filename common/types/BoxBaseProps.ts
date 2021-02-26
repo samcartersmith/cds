@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { PaletteBackground } from './Palette';
-import { SpacingProps } from './SpacingProps';
+import { OffsetProps, SpacingProps } from './SpacingProps';
 
 export type FixedValue = number | string; // px
 export type PercentageValue = string;
@@ -43,7 +43,12 @@ export interface PositionStyles {
   zIndex?: number;
 }
 
-export interface BoxBaseProps extends DimensionStyles, FlexStyles, SpacingProps, PositionStyles {
+export interface BoxBaseProps
+  extends DimensionStyles,
+    FlexStyles,
+    OffsetProps,
+    SpacingProps,
+    PositionStyles {
   /** Set the background color of the box. */
   background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
   /** Add a border around the box. */

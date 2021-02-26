@@ -292,6 +292,87 @@ describe('Box', () => {
     });
   });
 
+  describe('offset', () => {
+    it('renders all', async () => {
+      const { getByText } = render(
+        <Box offset={1}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        marginTop: -8,
+        marginBottom: -8,
+        marginLeft: -8,
+        marginRight: -8,
+      });
+    });
+
+    it('renders horizontal', async () => {
+      const { getByText } = render(
+        <Box offsetHorizontal={1}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        marginLeft: -8,
+        marginRight: -8,
+      });
+    });
+
+    it('renders vertical', async () => {
+      const { getByText } = render(
+        <Box offsetVertical={1}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        marginTop: -8,
+        marginBottom: -8,
+      });
+    });
+
+    it('renders start/end', async () => {
+      const { getByText } = render(
+        <Box offsetStart={1} offsetEnd={2}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        marginLeft: -8,
+        marginRight: -16,
+      });
+    });
+
+    it('renders individual', async () => {
+      const { getByText } = render(
+        <Box offsetTop={1} offsetBottom={2} offsetStart={3} offsetEnd={4}>
+          <Text>Child</Text>
+        </Box>
+      );
+
+      await waitFor(() => getByText('Child'));
+
+      expect(getByText('Child').parent).toHaveStyle({
+        marginTop: -8,
+        marginBottom: -16,
+        marginLeft: -24,
+        marginRight: -32,
+      });
+    });
+  });
+
   describe('pin', () => {
     it('renders "top" pin', async () => {
       const { getByText } = render(

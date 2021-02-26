@@ -37,8 +37,8 @@ export const Button = ({
 }: ButtonProps) => {
   const ref = useRef<HTMLButtonElement>(null);
   const spacingClass = useSpacingStyles({
-    horizontal: compact ? 2 : 3,
-    vertical: compact ? 0.5 : 1,
+    spacingHorizontal: compact ? 2 : 3,
+    spacingVertical: compact ? 0.5 : 1,
   });
   const { buttonProps, isPressed } = useButton(
     {
