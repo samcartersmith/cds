@@ -1,4 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
+import throttle from 'lodash/throttle';
+import { css, cx } from 'linaria';
 
 import { IconSize, paletteForegrounds, PaletteForeground } from '@cbhq/cds-common';
 import { Box, Button, ThemeProvider, Icon } from '@cbhq/cds-web';
@@ -11,8 +13,23 @@ type IconSheetForSizeProps = {
   size: IconSize;
 };
 
+const elevation = css`
+  line-height: 4em;
+  text-align: center;
+  margin: 2em 4em;
+  border: 1px solid grey;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+`;
+
+const searchBox = css`
+  width: 100%;
+  height: 30px;
+`;
+
 const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
   const [color, setColor] = useState<PaletteForeground>('primary');
+  const [query, setQuery] = useState('');
   const onPress = useCallback((item: PaletteForeground) => {
     return () => setColor(item);
   }, []);
@@ -32,6 +49,10 @@ const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
     }
   }, [color]);
 
+  const searchOnChange = throttle((e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  }, 1000);
+
   return (
     <ThemeProvider>
       <Box flexWrap="wrap" offsetStart={3}>
@@ -44,10 +65,30 @@ const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
         ))}
       </Box>
 
+      <Box flexWrap="wrap" offsetStart={3}>
+        <input
+          className={cx(elevation, searchBox)}
+          onChange={searchOnChange}
+          type="text"
+          id="search-icon"
+          placeholder="Search Icon Here"
+          name="search-icon"
+        />
+      </Box>
+
       <Box flexWrap="wrap" background={background} spacingBottom={3} offsetStart={3}>
-        {iconNames.map(item => (
-          <Icon title={item} spacing={3} color={color} key={item} name={item} size={size} />
-        ))}
+        {iconNames
+          .filter(name => name.includes(query))
+          .map(filteredName => (
+            <Icon
+              title={filteredName}
+              spacing={3}
+              color={color}
+              key={filteredName}
+              name={filteredName}
+              size={size}
+            />
+          ))}
       </Box>
     </ThemeProvider>
   );
