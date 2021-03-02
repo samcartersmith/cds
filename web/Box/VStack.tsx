@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-import { Box, BoxProps } from './Box';
+import { ForwardedRef } from '@cbhq/cds-common';
 
-export const VStack: React.FC<BoxProps> = props => <Box {...props} flexDirection="column" />;
+import { Box, BoxProps, BoxElement } from './Box';
 
+export const VStack = forwardRef(
+  <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => (
+    <Box {...props} ref={forwardedRef} flexDirection="column" />
+  )
+);
+
+VStack.displayName = 'VStack';
 export type { BoxProps as VStackProps };

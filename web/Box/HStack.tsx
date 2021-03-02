@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-import { Box, BoxProps } from './Box';
+import { ForwardedRef } from '@cbhq/cds-common';
 
-export const HStack: React.FC<BoxProps> = props => <Box {...props} flexDirection="row" />;
+import { Box, BoxProps, BoxElement } from './Box';
+
+export const HStack = forwardRef(
+  <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => (
+    <Box {...props} ref={forwardedRef} flexDirection="row" />
+  )
+);
+
+HStack.displayName = 'HStack';
 
 export type { BoxProps as HStackProps };

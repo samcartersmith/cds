@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add useFlexStyles and useBorderStyles @katherinemartinez [#13892](https://github.cbhq.net/mono/repo/pull/13892)
+
 ## 0.3.1 (3/2/2021, 11:33 AM PST) [#13944](https://github.cbhq.net/mono/repo/pull/13944)
 
 #### 🚀 Updates

@@ -31,16 +31,26 @@ export interface PositionStyles {
   zIndex?: number;
 }
 
+export interface BorderedStyles {
+  /** Add a border around the box. */
+  bordered?: boolean;
+  borderedTop?: boolean;
+  borderedBottom?: boolean;
+  borderedStart?: boolean;
+  borderedEnd?: boolean;
+  borderedHorizontal?: boolean;
+  borderedVertical?: boolean;
+}
+
 export interface BoxBaseProps
   extends DimensionStyles,
     FlexStyles,
     OffsetProps,
     SpacingProps,
-    PositionStyles {
+    PositionStyles,
+    BorderedStyles {
   /** Set the background color of the box. */
   background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
-  /** Add a border around the box. */
-  bordered?: boolean;
   /** Content to render within the box. */
   children?: React.ReactNode;
   /** Direction in which to absolutely pin the box. */

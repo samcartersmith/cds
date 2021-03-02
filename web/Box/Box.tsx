@@ -3,6 +3,8 @@ import React, { forwardRef } from 'react';
 import type { BoxBaseProps, ForwardedRef } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
+import { useBorderStyles } from '../hooks/useBorderStyles';
+import { useFlexStyles } from '../hooks/useFlexStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -49,6 +51,12 @@ export const Box = forwardRef(
       as = 'div',
       background,
       bordered,
+      borderedTop,
+      borderedBottom,
+      borderedStart,
+      borderedEnd,
+      borderedHorizontal,
+      borderedVertical,
       children,
       overflow,
       role,
@@ -102,18 +110,27 @@ export const Box = forwardRef(
       {
         ref: forwardedRef,
         className: cx(
-          styles.box,
+          useFlexStyles({
+            alignContent,
+            alignItems,
+            alignSelf,
+            flexDirection,
+            flexWrap,
+            justifyContent,
+          }),
           background && backgroundColorStyles[background === true ? 'background' : background],
-          alignContent && styles.alignContent[alignContent],
-          alignItems && styles.alignItems[alignItems],
-          alignSelf && styles.alignSelf[alignSelf],
-          flexDirection && styles.flexDirection[flexDirection],
-          flexWrap && styles.flexWrap[flexWrap],
-          justifyContent && styles.justifyContent[justifyContent],
           overflow && styles.overflow[overflow],
           position && styles.position[position],
-          bordered && styles.border,
           rounded && styles.borderRadius,
+          useBorderStyles({
+            bordered,
+            borderedTop,
+            borderedBottom,
+            borderedStart,
+            borderedEnd,
+            borderedHorizontal,
+            borderedVertical,
+          }),
           useSpacingStyles({
             spacing,
             spacingBottom,

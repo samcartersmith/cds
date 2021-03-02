@@ -5,7 +5,7 @@ import { renderA11y } from '@utils/jest/renderA11y';
 
 import { Box, BoxProps } from './Box';
 
-const DEFAULT_CLASS = 'cds-box';
+const DEFAULT_CLASS = 'cds-flex';
 
 function expectClassName<K extends keyof BoxProps>(
   prop: K,
@@ -55,19 +55,15 @@ describe('Box', () => {
   });
 
   describe('background', () => {
-    expectClassName(
+    expectClassName('background', [
       'background',
-      [
-        'background',
-        'backgroundAlternate',
-        'backgroundOverlay',
-        'primary',
-        'secondary',
-        'positive',
-        'negative',
-      ],
-      'cds-box'
-    );
+      'backgroundAlternate',
+      'backgroundOverlay',
+      'primary',
+      'secondary',
+      'positive',
+      'negative',
+    ]);
   });
 
   describe('border', () => {
@@ -78,7 +74,7 @@ describe('Box', () => {
 
       rerender(<Box bordered>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} cds-border`);
+      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} cds-bordered`);
     });
 
     it(`will set border radius class name for \`rounded\` prop`, () => {

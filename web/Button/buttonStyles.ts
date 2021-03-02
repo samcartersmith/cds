@@ -15,6 +15,7 @@ export const button = css`
     border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, transform 100ms;
   min-width: 100px;
   border: none;
+  background-color: transparent;
 
   // Removes weird bonus padding in Firefox
   &::-moz-focus-inner {
