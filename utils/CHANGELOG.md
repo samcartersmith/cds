@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat: Add isSSR, isBrowser, and noop functions @katherinemartinez [#todo](https://github.cbhq.net/mono/repo/pull/todo)
+## 0.0.8 (3/2/2021, 07:04 AM PST) [#13912](https://github.cbhq.net/mono/repo/pull/13912)
+
+#### 🚀 Updates
+
+- Add isSSR, isBrowser, and noop functions @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 
 ## 0.0.7 (2/23/2021, 09:30 AM PST) [#13402](https://github.cbhq.net/mono/repo/pull/13402)
 
