@@ -61,7 +61,7 @@ export const primaryCompact = css`
 
   &::before {
     background-color: ${palette.background};
-    border-color: ${palette.stroke};
+    border-color: ${palette.lineHeavy};
   }
 `;
 
@@ -70,7 +70,7 @@ export const secondary = css`
 
   &::before {
     background-color: ${palette.background};
-    border-color: ${palette.stroke};
+    border-color: ${palette.lineHeavy};
   }
 `;
 
@@ -88,6 +88,6 @@ export const negative = css`
 
   &::before {
     background-color: ${palette.background};
-    border-color: ${palette.stroke};
+    border-color: ${palette.lineHeavy};
   }
 `;

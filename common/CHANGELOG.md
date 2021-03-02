@@ -6,10 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- breaking: Rename palette alias divider to line and stroke to lineHeavy @katherinemartinez [#13797](https://github.cbhq.net/mono/repo/pull/13797)
 - feat: Add `accessibilityLabel` prop to buttons. @miles-johnson [#13838](https://github.cbhq.net/mono/repo/pull/13838)
 - feat: Add join util for adding a separator element between react components except last item @katherine.martinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 - feat: Add useStatusAnimationPoller for LottieStatusAnimation on mobile & web @katherine.martinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 - types: Pull out DimensionStyles to separate type file @katherine.martinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
+- breaking: Rename palette alias divider to line and stroke to lineHeavy @katherinemartinez [#todo](https://github.cbhq.net/mono/repo/pull/todo)
 
 ## 0.1.3 (2/25/2021, 05:22 PM PST) [#13493](https://github.cbhq.net/mono/repo/pull/13493)
 

@@ -21,7 +21,7 @@ export const useButtonVariant = (variant: ButtonVariant, compact = false): Butto
         return compact
           ? {
               backgroundColor: palette.background,
-              borderColor: palette.stroke,
+              borderColor: palette.lineHeavy,
               foregroundColor: palette.primary,
               underlay: palette.foreground,
             }
@@ -34,7 +34,7 @@ export const useButtonVariant = (variant: ButtonVariant, compact = false): Butto
       case 'secondary':
         return {
           backgroundColor: palette.secondary,
-          borderColor: palette.stroke,
+          borderColor: palette.lineHeavy,
           foregroundColor: palette.secondaryForeground,
           underlay: palette.foreground,
         };
@@ -48,7 +48,7 @@ export const useButtonVariant = (variant: ButtonVariant, compact = false): Butto
       case 'negative':
         return {
           backgroundColor: palette.background,
-          borderColor: palette.stroke,
+          borderColor: palette.lineHeavy,
           foregroundColor: palette.negative,
           underlay: palette.foreground,
         };

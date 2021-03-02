@@ -17,7 +17,7 @@ export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | und
       ios: {
         1: {
           borderWidth: 1,
-          borderColor: palette.divider,
+          borderColor: palette.line,
           shadowColor: '#000',
           shadowOffset: { width: 0, height: 8 },
           shadowOpacity: 0.02,
@@ -25,7 +25,7 @@ export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | und
         },
         2: {
           borderWidth: 1,
-          borderColor: palette.divider,
+          borderColor: palette.line,
           shadowColor: '#000',
           shadowOffset: { width: 0, height: 8 },
           shadowOpacity: 0.12,
@@ -39,5 +39,5 @@ export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | und
     });
 
     return styles?.[elevation];
-  }, [elevation, palette.divider]);
+  }, [elevation, palette.line]);
 };

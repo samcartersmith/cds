@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 - Fix Remove graident artifact from Nux animation @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
+- breaking: Rename palette alias divider to line and stroke to lineHeavy @katherinemartinez [#13797](https://github.cbhq.net/mono/repo/pull/13797)
 
 ## 0.0.2 (2/24/2021, 05:44 AM PST) [#13494](https://github.cbhq.net/mono/repo/pull/13494)
 

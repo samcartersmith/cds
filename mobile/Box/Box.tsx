@@ -163,7 +163,7 @@ export const Box = React.memo(
 
       if (bordered) {
         style.borderWidth = 1;
-        style.borderColor = palette.stroke;
+        style.borderColor = palette.lineHeavy;
       }
 
       if (rounded) {

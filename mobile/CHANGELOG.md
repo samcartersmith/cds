@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - feat: Add `accessibilityLabel` prop to buttons. @miles-johnson [#13838](https://github.cbhq.net/mono/repo/pull/13838)
 - feat: Add Spacer component @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 - feat: Add LottieStatusAnimation component @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
+- breaking: Rename palette alias divider to line and stroke to lineHeavy @katherinemartinez [#13797](https://github.cbhq.net/mono/repo/pull/13797)
 
 ## 0.3.0 (2/25/2021, 05:22 PM PST) [#13493](https://github.cbhq.net/mono/repo/pull/13493)
 

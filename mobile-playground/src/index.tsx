@@ -31,7 +31,7 @@ const Index = ({ navigation }: StackScreenProps<{}>) => {
     () => ({
       padding: 16,
       borderBottomWidth: 1,
-      borderBottomColor: palette.stroke,
+      borderBottomColor: palette.lineHeavy,
     }),
     [palette]
   );

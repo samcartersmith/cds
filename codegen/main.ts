@@ -75,6 +75,7 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
           defaultPalette: Palette.defaultPalette,
           paletteForegrounds: Palette.paletteForegrounds,
           paletteBackgrounds: Palette.paletteBackgrounds,
+          paletteBorders: Palette.paletteBorders,
         },
       },
       {

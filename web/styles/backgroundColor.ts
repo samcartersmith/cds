@@ -16,14 +16,6 @@ export const backgroundOverlay = css`
   background-color: var(--background-overlay);
 `;
 
-export const divider = css`
-  background-color: var(--divider);
-`;
-
-export const stroke = css`
-  background-color: var(--stroke);
-`;
-
 export const primary = css`
   background-color: var(--primary);
 `;

@@ -26,7 +26,7 @@ const Example = ({ children, inline, title }: ExampleProps) => {
     <View
       style={{
         borderBottomWidth: 1,
-        borderBottomColor: palette.stroke,
+        borderBottomColor: palette.lineHeavy,
         padding: 16,
         paddingBottom: 24,
       }}

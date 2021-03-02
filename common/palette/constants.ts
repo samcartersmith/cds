@@ -8,9 +8,9 @@ export const defaultPalette = {
   foregroundMuted: 'gray60',
   background: 'gray0',
   backgroundAlternate: 'gray5',
-  backgroundOverlay: ['blue90', 0.33],
-  divider: ['gray60', 0.33],
-  stroke: ['gray60', 0.66],
+  backgroundOverlay: ['gray80', 0.33],
+  line: ['gray60', 0.2],
+  lineHeavy: ['gray60', 0.66],
   primary: 'blue60',
   primaryForeground: 'gray0',
   negative: 'red60',
@@ -38,10 +38,10 @@ export const paletteBackgrounds = [
   'background',
   'backgroundAlternate',
   'backgroundOverlay',
-  'divider',
-  'stroke',
   'primary',
   'secondary',
   'positive',
   'negative',
 ] as const;
+
+export const paletteBorders = ['line', 'lineHeavy'] as const;

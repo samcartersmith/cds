@@ -52,21 +52,21 @@ export const lottieStyles = css`
     }
   }
 
-  .palette_divider {
+  .palette_line {
     &_stroke {
-      stroke: ${palette.divider};
+      stroke: ${palette.line};
     }
     &_fill {
-      fill: ${palette.divider};
+      fill: ${palette.line};
     }
   }
 
-  .palette_stroke {
+  .palette_lineHeavy {
     &_stroke {
-      stroke: ${palette.stroke};
+      stroke: ${palette.lineHeavy};
     }
     &_fill {
-      fill: ${palette.stroke};
+      fill: ${palette.lineHeavy};
     }
   }
 

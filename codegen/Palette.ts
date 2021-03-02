@@ -5,9 +5,9 @@ export const defaultPalette = {
   foregroundMuted: 'gray60',
   background: 'gray0',
   backgroundAlternate: 'gray5',
-  backgroundOverlay: ['blue90', 0.33],
-  divider: ['gray60', 0.33],
-  stroke: ['gray60', 0.66],
+  backgroundOverlay: ['gray80', 0.33],
+  line: ['gray60', 0.2],
+  lineHeavy: ['gray60', 0.66],
   primary: 'blue60',
   primaryForeground: 'gray0',
   negative: 'red60',
@@ -35,16 +35,17 @@ export const paletteBackgrounds = [
   'background',
   'backgroundAlternate',
   'backgroundOverlay',
-  'divider',
-  'stroke',
   'primary',
   'secondary',
   'positive',
   'negative',
 ] as const;
 
+export const paletteBorders = ['line', 'lineHeavy'];
+
 const foregroundMap = arrayToObject(paletteForegrounds);
 const backgroundMap = arrayToObject(paletteBackgrounds);
+const borderMap = arrayToObject([...paletteBackgrounds, ...paletteBorders]);
 
 const cssVariables = mapValues(defaultPalette, (_, key) => toCssVarFn(key));
 
@@ -54,7 +55,7 @@ const cssBackgroundColor = mapValues(backgroundMap, (_, key) => {
   };
 });
 
-const cssBorderColor = mapValues(backgroundMap, (_, key) => {
+const cssBorderColor = mapValues(borderMap, (_, key) => {
   return {
     'border-color': toCssVarFn(key),
   };
@@ -66,6 +67,8 @@ const cssColor = mapValues(foregroundMap, (_, key) => {
   };
 });
 
+const paletteAliases = [...paletteForegrounds, ...paletteBackgrounds, ...paletteBorders];
+
 export const Palette = {
   cssBackgroundColor,
   cssBorderColor,
@@ -74,14 +77,13 @@ export const Palette = {
   defaultPalette,
   paletteForegrounds,
   paletteBackgrounds,
+  paletteBorders,
   validate: () => {
     const aliases = Object.keys(defaultPalette);
     aliases.forEach(item => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      if (!paletteBackgrounds.includes(item) && !paletteForegrounds.includes(item)) {
+      if (!paletteAliases.includes(item)) {
         throw new Error(
-          `The palette alias, ${item}, was added but neither paletteForegrounds or paletteBackgrounds was updated to include it.`
+          `The palette alias, ${item}, was added but neither paletteForegrounds, paletteBackgrounds or paletteBorders was updated to include it.`
         );
       }
     });
