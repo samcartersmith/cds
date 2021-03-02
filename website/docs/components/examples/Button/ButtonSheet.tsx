@@ -9,11 +9,11 @@ export const ButtonSheet = () => {
   const buttons = useMemo(() => {
     return join(
       variants.map(item => (
-        <Button key={item} variant={item}>
+        <Button block key={item} variant={item}>
           {item}
         </Button>
       )),
-      <Spacer />
+      <Spacer spacingEnd={3} />
     );
   }, []);
 
