@@ -1,4 +1,5 @@
 import { DimensionValue } from './DimensionStyles';
+import { NoopFn } from './Helpers';
 
 export type LottieStatusAnimationType =
   | 'loading'
@@ -9,7 +10,7 @@ export type LottieStatusAnimationType =
 
 interface BaseStatusAnimationProps {
   status?: LottieStatusAnimationType;
-  onFinish?: VoidFunction;
+  onFinish?: NoopFn;
 }
 
 interface StatusAnimationWithWidth extends BaseStatusAnimationProps {

@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 
 import { LottieSource } from '@cbhq/cds-common';
-import { isBrowser, AnyObject } from '@cbhq/cds-utils';
+import { AnyObject } from '@cbhq/cds-utils';
 import lottie, { AnimationConfigWithData } from 'lottie-web';
 
+import { isBrowser } from '../utils/browser';
 import { LottieProps, LottieAnimationRef } from './types';
 
 export const useLottieLoader = <Marker extends string, Source extends LottieSource<Marker>>({

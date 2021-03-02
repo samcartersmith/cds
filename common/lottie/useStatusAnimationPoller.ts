@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
+import { NoopFn } from '../types/Helpers';
 import { LottiePlayer } from '../types/LottiePlayer';
 import { LottieSource } from '../types/LottieSource';
 import { LottieStatusAnimationType } from '../types/LottieStatusAnimationProps';
@@ -21,7 +22,7 @@ type TradeStatusLottie = LottieSource<
 type UseStatusAnimationPollerParams = {
   status?: LottieStatusAnimationType;
   playMarkers?: LottiePlayer<TradeStatusLottie>['playMarkers'];
-  onFinish?: VoidFunction;
+  onFinish?: NoopFn;
 };
 
 export const useStatusAnimationPoller = ({

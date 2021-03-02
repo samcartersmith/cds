@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.1 (3/2/2021, 11:27 AM PST) [#13944](https://github.cbhq.net/mono/repo/pull/13944)
+
+#### 🐞 Fixes
+
+- Move NoopFn to types/Helpers.ts @katherinemartinez [#13944](https://github.cbhq.net/mono/repo/pull/13944)
+
 ## 0.2.0 (3/2/2021, 07:04 AM PST) [#13912](https://github.cbhq.net/mono/repo/pull/13912)
 
 #### 💥 Breaking

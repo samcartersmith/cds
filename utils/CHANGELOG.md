@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.0.9 (3/2/2021, 11:27 AM PST) [#13944](https://github.cbhq.net/mono/repo/pull/13944)
+
+#### 🐞 Fixes
+
+- Move isSSR, isBrowser, and noop functions to web package @katherinemartinez [#13944](https://github.cbhq.net/mono/repo/pull/13944)
+
 ## 0.0.8 (3/2/2021, 07:04 AM PST) [#13912](https://github.cbhq.net/mono/repo/pull/13912)
 
 #### 🚀 Updates

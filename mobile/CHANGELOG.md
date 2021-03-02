@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.4.1 (3/2/2021, 11:36 AM PST) [#13912](https://github.cbhq.net/mono/repo/pull/13912)
+
+#### 🐞 Fixes
+
+- Trigger bump to pull in latest common and utils @katherinemartinez [#13912](https://github.cbhq.net/mono/repo/pull/13912)
+
 ## 0.4.0 (3/2/2021, 07:04 AM PST) [#13912](https://github.cbhq.net/mono/repo/pull/13912)
 
 #### 💥 Breaking
