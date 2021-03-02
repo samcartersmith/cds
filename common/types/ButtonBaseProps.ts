@@ -3,6 +3,8 @@ import React from 'react';
 export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative';
 
 export interface ButtonBaseProps {
+  /** Full length accessibility label when the child text is not descriptive enough. */
+  accessibilityLabel?: string;
   /** Change to block and expand to 100% of parent width. */
   block?: boolean;
   /** Children to render within the button. */

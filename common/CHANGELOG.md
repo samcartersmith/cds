@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Add `accessibilityLabel` prop to buttons. @miles-johnson [#13838](https://github.cbhq.net/mono/repo/pull/13838)
 - feat: Add join util for adding a separator element between react components except last item @katherine.martinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 - feat: Add useStatusAnimationPoller for LottieStatusAnimation on mobile & web @katherine.martinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 - types: Pull out DimensionStyles to separate type file @katherine.martinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)

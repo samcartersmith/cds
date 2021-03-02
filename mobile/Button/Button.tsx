@@ -24,6 +24,7 @@ export interface ButtonProps extends ButtonBaseProps {
 
 export const Button = React.memo(
   ({
+    accessibilityLabel,
     block,
     children,
     compact,
@@ -53,6 +54,7 @@ export const Button = React.memo(
         ]}
       >
         <PressableHighlight
+          accessibilityHint={accessibilityLabel}
           activeOpacity={0.92}
           disabled={disabled || loading}
           feedback={feedback}

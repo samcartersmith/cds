@@ -74,13 +74,11 @@ export type SectionAccessibilityRole =
 
 // EVENTS
 
-export type PointerType = 'mouse' | 'pen' | 'touch' | 'keyboard' | 'virtual';
-
 export interface PressEvent<T = HTMLElement> {
   /** The type of press event being fired. */
   type: 'pressstart' | 'pressend' | 'pressup' | 'press';
   /** The pointer type that triggered the press event. */
-  pointerType: PointerType;
+  pointerType: 'mouse' | 'pen' | 'touch' | 'keyboard' | 'virtual';
   /** The target element of the press event. */
   target: T;
   /** Whether the shift keyboard modifier was held during the press event. */
@@ -91,21 +89,5 @@ export interface PressEvent<T = HTMLElement> {
   metaKey: boolean;
 }
 
-export interface PressEvents<T> {
-  /** Handler that is called when the press is released over the target. */
-  onPress?: (e: PressEvent<T>) => void;
-  /** Handler that is called when a press interaction starts. */
-  onPressStart?: (e: PressEvent<T>) => void;
-  /**
-   * Handler that is called when a press interaction ends, either
-   * over the target or when the pointer leaves the target.
-   */
-  onPressEnd?: (e: PressEvent<T>) => void;
-  /** Handler that is called when the press state changes. */
-  onPressChange?: (isPressed: boolean) => void;
-  /**
-   * Handler that is called when a press is released over the target, regardless of
-   * whether it started on the target or not.
-   */
-  onPressUp?: (e: PressEvent<T>) => void;
-}
+export type OnPress<T> = (event: PressEvent<T>) => void;
+export type OnHover = (isHovering: boolean) => void;

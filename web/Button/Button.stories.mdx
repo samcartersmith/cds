@@ -11,14 +11,7 @@ import { Button } from './Button';
   <Story name="Default" decorators={[withStoryLabel('Default')]} args={{}}>
     {args => (
       <div>
-        <Button
-          {...args}
-          onPress={console.log}
-          onPressStart={console.log}
-          onPressEnd={console.log}
-          onPressChange={console.log}
-          onPressUp={console.log}
-        >
+        <Button {...args} onPress={console.log}>
           Button
         </Button>
       </div>

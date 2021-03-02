@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- breaking: Replaced `Interactable` component with a `useInteractable` hook. @miles-johnson [#13838](https://github.cbhq.net/mono/repo/pull/13838)
+- feat: Add `accessibilityLabel` prop to buttons. @miles-johnson [#13838](https://github.cbhq.net/mono/repo/pull/13838)
 - feat: Add Spacer component @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 - feat: Add LottieStatusAnimation component @katherinemartinez [#13719](https://github.cbhq.net/mono/repo/pull/13719)
 

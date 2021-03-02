@@ -1,88 +1,80 @@
-import React, { useRef } from 'react';
+import React, { useMemo, forwardRef } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
-import { AriaButtonProps } from '@react-types/button';
 import { cx } from 'linaria';
-import { useButton } from 'react-aria';
 
+import { useInteractable, InteractableProps } from '../hooks/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { Interactable } from '../Interactable/Interactable';
 import { TextHeadline } from '../Text/Text';
-import { PressEvents } from '../types';
 import * as buttonStyles from './buttonStyles';
 
 export interface ButtonProps
   extends ButtonBaseProps,
-    PressEvents<HTMLButtonElement>,
+    InteractableProps<HTMLButtonElement>,
     Omit<
       React.ButtonHTMLAttributes<HTMLButtonElement>,
       'children' | 'className' | 'onClick' | 'onClickCapture' | 'style'
     > {}
 
-export const Button = ({
-  block,
-  children,
-  compact,
-  disabled,
-  loading,
-  type,
-  variant = 'primary',
-  // Aria
-  onPress,
-  onPressStart,
-  onPressEnd,
-  onPressChange,
-  onPressUp,
-  ...restProps
-}: ButtonProps) => {
-  const ref = useRef<HTMLButtonElement>(null);
-  const spacingClass = useSpacingStyles({
-    spacingHorizontal: compact ? 2 : 3,
-    spacingVertical: compact ? 0.5 : 1,
-  });
-  const { buttonProps, isPressed } = useButton(
+export const Button = forwardRef(
+  (
     {
+      accessibilityLabel,
+      block,
       children,
-      isDisabled: disabled || loading,
+      compact,
+      disabled = false,
+      loading = false,
+      onHover,
       onPress,
-      onPressStart,
-      onPressEnd,
-      onPressChange,
-      onPressUp,
       type,
-    } as AriaButtonProps,
-    ref
-  );
-  const borderRadius = buttonStyles[compact ? 'radiusCompact' : 'radius'];
+      variant = 'primary',
+      ...restProps
+    }: ButtonProps,
+    ref: React.Ref<HTMLButtonElement>
+  ) => {
+    const spacingClass = useSpacingStyles({
+      spacingHorizontal: compact ? 2 : 3,
+      spacingVertical: compact ? 0.5 : 1,
+    });
+    const backgroundColor = useMemo(
+      () => (variant === 'negative' || (variant === 'primary' && compact) ? 'background' : variant),
+      [compact, variant]
+    );
+    const { className, isPressed, props, style } = useInteractable<HTMLButtonElement>({
+      ...restProps,
+      backgroundColor,
+      buttonType: type,
+      elementType: 'button',
+      isDisabled: disabled || loading,
+      onHover,
+      onPress,
+      ref,
+      scaleOnPress: true,
+    });
 
-  return (
-    <Interactable
-      scaleOnPress
-      block={block}
-      disabled={disabled || loading}
-      overlayColor={variant}
-      pressedOverride={isPressed}
-      underlayClassName={borderRadius}
-    >
+    return (
       <button
         {...restProps}
-        {...buttonProps}
+        {...props}
+        aria-label={accessibilityLabel}
         aria-pressed={isPressed}
         className={cx(
+          className,
           buttonStyles.button,
           buttonStyles[variant],
-          borderRadius,
           compact && buttonStyles.buttonCompact,
           compact && variant === 'primary' && buttonStyles.primaryCompact,
           block && buttonStyles.buttonBlock,
           spacingClass
         )}
+        style={style}
         ref={ref}
       >
         <TextHeadline as="span" color="currentColor">
           {children}
         </TextHeadline>
       </button>
-    </Interactable>
-  );
-};
+    );
+  }
+);

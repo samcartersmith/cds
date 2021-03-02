@@ -14,7 +14,6 @@ export const button = css`
   transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
     border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, transform 100ms;
   min-width: 100px;
-  border: 1px solid transparent;
 
   // Removes weird bonus padding in Firefox
   &::-moz-focus-inner {
@@ -22,10 +21,22 @@ export const button = css`
     padding: 0;
     margin: 0;
   }
+
+  // Add the border to the interactable
+  &::before,
+  &::after {
+    border: 1px solid transparent;
+    border-radius: 8px;
+  }
 `;
 
 export const buttonCompact = css`
   min-width: auto;
+
+  &::before,
+  &::after {
+    border-radius: 4px;
+  }
 `;
 
 export const buttonBlock = css`
@@ -35,40 +46,47 @@ export const buttonBlock = css`
   white-space: normal;
 `;
 
-export const radius = css`
-  border-radius: 8px;
-`;
-
-export const radiusCompact = css`
-  border-radius: 4px;
-`;
-
 export const primary = css`
-  background-color: ${palette.primary};
-  border-color: ${palette.primary};
   color: ${palette.primaryForeground};
+
+  &::before {
+    background-color: ${palette.primary};
+    border-color: ${palette.primary};
+  }
 `;
 
 export const primaryCompact = css`
-  background-color: ${palette.background};
-  border-color: ${palette.stroke};
   color: ${palette.primary};
+
+  &::before {
+    background-color: ${palette.background};
+    border-color: ${palette.stroke};
+  }
 `;
 
 export const secondary = css`
-  background-color: ${palette.secondary};
-  border-color: ${palette.stroke};
   color: ${palette.secondaryForeground};
+
+  &::before {
+    background-color: ${palette.background};
+    border-color: ${palette.stroke};
+  }
 `;
 
 export const positive = css`
-  background-color: ${palette.positive};
-  border-color: ${palette.positive};
   color: ${palette.positiveForeground};
+
+  &::before {
+    background-color: ${palette.positive};
+    border-color: ${palette.positive};
+  }
 `;
 
 export const negative = css`
-  background-color: ${palette.background};
-  border-color: ${palette.stroke};
   color: ${palette.negative};
+
+  &::before {
+    background-color: ${palette.background};
+    border-color: ${palette.stroke};
+  }
 `;
