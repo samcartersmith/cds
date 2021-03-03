@@ -3,12 +3,12 @@ import React, { forwardRef } from 'react';
 import type { BoxBaseProps, ForwardedRef } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
-import { useBorderStyles } from '../hooks/useBorderStyles';
-import { useFlexStyles } from '../hooks/useFlexStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
+import { getBorderStyles } from '../styles/borderStyles';
+import { getFlexStyles } from '../styles/flexStyles';
 import {
   ArticleAccessibilityRole,
   AsideAccessibilityRole,
@@ -110,7 +110,7 @@ export const Box = forwardRef(
       {
         ref: forwardedRef,
         className: cx(
-          useFlexStyles({
+          getFlexStyles({
             alignContent,
             alignItems,
             alignSelf,
@@ -122,7 +122,7 @@ export const Box = forwardRef(
           overflow && styles.overflow[overflow],
           position && styles.position[position],
           rounded && styles.borderRadius,
-          useBorderStyles({
+          getBorderStyles({
             bordered,
             borderedTop,
             borderedBottom,

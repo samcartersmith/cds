@@ -1,5 +1,5 @@
 import { FlexStyles } from '@cbhq/cds-common';
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 
 import { CSSMap } from '../types';
 
@@ -113,4 +113,16 @@ export const justifyContent: CSSMap<FlexStyles['justifyContent']> = {
   'space-evenly': css`
     justify-content: space-evenly;
   `,
+};
+
+export const getFlexStyles = (props: FlexStyles) => {
+  return cx(
+    flex,
+    props.alignContent && alignContent[props.alignContent],
+    props.alignItems && alignItems[props.alignItems],
+    props.alignSelf && alignSelf[props.alignSelf],
+    props.flexDirection && flexDirection[props.flexDirection],
+    props.flexWrap && flexWrap[props.flexWrap],
+    props.justifyContent && justifyContent[props.justifyContent]
+  );
 };

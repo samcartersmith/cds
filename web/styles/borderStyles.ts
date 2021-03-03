@@ -1,4 +1,5 @@
-import { css } from 'linaria';
+import { BorderedStyles } from '@cbhq/cds-common';
+import { css, cx } from 'linaria';
 
 import { palette } from './palette';
 
@@ -24,3 +25,15 @@ export const borderedBottom = css`
 
 export const borderedHorizontal = [borderedStart, borderedEnd].join(' ');
 export const borderedVertical = [borderedTop, borderedBottom].join(' ');
+
+export const getBorderStyles = (props: BorderedStyles) => {
+  return cx(
+    props.bordered && bordered,
+    props.borderedTop && borderedTop,
+    props.borderedBottom && borderedBottom,
+    props.borderedStart && borderedStart,
+    props.borderedEnd && borderedEnd,
+    props.borderedHorizontal && borderedHorizontal,
+    props.borderedVertical && borderedVertical
+  );
+};

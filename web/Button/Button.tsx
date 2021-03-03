@@ -1,21 +1,13 @@
 import React, { useMemo, forwardRef } from 'react';
 
-import { ButtonBaseProps } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 import { mergeProps } from 'react-aria';
 
-import { useInteractable, InteractableProps } from '../hooks/useInteractable';
+import { useInteractable } from '../hooks/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { TextHeadline } from '../Text/Text';
+import { ButtonProps } from './ButtonProps';
 import * as buttonStyles from './buttonStyles';
-
-export interface ButtonProps
-  extends ButtonBaseProps,
-    InteractableProps<HTMLButtonElement>,
-    Omit<
-      React.ButtonHTMLAttributes<HTMLButtonElement>,
-      'children' | 'className' | 'onClick' | 'onClickCapture' | 'style'
-    > {}
 
 export const Button = forwardRef(
   (

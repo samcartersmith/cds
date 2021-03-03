@@ -62,7 +62,7 @@ export const primaryCompact = css`
 
   &::before {
     background-color: ${palette.background};
-    border-color: ${palette.lineHeavy};
+    border-color: ${palette.line};
   }
 `;
 
@@ -71,7 +71,7 @@ export const secondary = css`
 
   &::before {
     background-color: ${palette.background};
-    border-color: ${palette.lineHeavy};
+    border-color: ${palette.line};
   }
 `;
 
@@ -89,6 +89,38 @@ export const negative = css`
 
   &::before {
     background-color: ${palette.background};
-    border-color: ${palette.lineHeavy};
+    border-color: ${palette.line};
   }
 `;
+
+export const iconButton = {
+  base: css`
+    width: 40px;
+    height: 40px;
+    min-width: unset;
+    border: none;
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      border: 1px solid transparent;
+      border-radius: 50%;
+    }
+  `,
+  secondary: css`
+    &:before,
+    &:after {
+      border-color: ${palette.line};
+    }
+
+    &:before {
+      background-color: ${palette.background};
+    }
+  `,
+  primary: css`
+    &:before {
+      background-color: ${palette.primary};
+      border-color: ${palette.primary};
+    }
+  `,
+};

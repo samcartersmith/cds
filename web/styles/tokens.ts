@@ -33,3 +33,4 @@ export const opacityPressed: Record<SpectrumHueStep, number> = {
 };
 
 export const opacityDisabled = 0.38;
+export const gutter = 3;

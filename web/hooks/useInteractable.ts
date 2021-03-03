@@ -46,9 +46,9 @@ export interface UseInteractableOptions<T> extends InteractableProps<T> {
   /** Type of element being rendered. */
   elementType: 'a' | 'button';
   /** Is the element currently disabled. */
-  isDisabled: boolean;
+  isDisabled?: boolean;
   /** Reference to underlying element. */
-  ref: React.Ref<T>;
+  ref?: React.Ref<T>;
   /** Scale down the element when being pressed. */
   scaleOnPress?: boolean;
 }

@@ -56,6 +56,15 @@ module.exports = {
             },
           ],
         },
+        {
+          title: 'Prototypes',
+          items: [
+            {
+              label: 'Navigation',
+              href: 'navigation',
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },
