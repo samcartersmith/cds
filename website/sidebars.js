@@ -4,7 +4,24 @@ module.exports = {
       type: 'category',
       label: 'Introduction',
       collapsed: false,
-      items: ['introduction/overview', 'introduction/principles', 'introduction/getting-started'],
+      items: [
+        'introduction/overview',
+        'introduction/principles',
+        'introduction/getting-started',
+        {
+          type: 'category',
+          label: 'Designers Guide',
+          collapsed: true,
+          items: [
+            'introduction/designers-guide/intro',
+            'introduction/designers-guide/usage',
+            'introduction/designers-guide/customization',
+            'introduction/designers-guide/handoff',
+            'introduction/designers-guide/going-beyond-cds',
+            'introduction/designers-guide/support',
+          ],
+        },
+      ],
     },
     {
       type: 'category',
