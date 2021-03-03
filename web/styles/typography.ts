@@ -66,7 +66,7 @@ const transform: CSSMap<TextProps['transform']> = {
 };
 
 const tabularNumbers = css`
-  font-variant-numeric: tnum;
+  font-variant-numeric: tabular-nums;
 `;
 
 const slashedZero = css`

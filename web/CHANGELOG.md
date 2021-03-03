@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- fix: Tabular number CSS property is wrong @hannah-jin [#14003](https://github.cbhq.net/mono/repo/pull/14003)
 - feat: Add `Tooltip` component @miles-johnson [#13958](https://github.cbhq.net/mono/repo/pull/13958)
 - feat: Add useFlexStyles and useBorderStyles @katherinemartinez [#13892](https://github.cbhq.net/mono/repo/pull/13892)
 
