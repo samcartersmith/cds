@@ -2,6 +2,7 @@ import React, { useMemo, forwardRef } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { cx } from 'linaria';
+import { mergeProps } from 'react-aria';
 
 import { useInteractable, InteractableProps } from '../hooks/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -41,7 +42,7 @@ export const Button = forwardRef(
       () => (variant === 'negative' || (variant === 'primary' && compact) ? 'background' : variant),
       [compact, variant]
     );
-    const { className, isPressed, props, style } = useInteractable<HTMLButtonElement>({
+    const { className, props, style } = useInteractable<HTMLButtonElement>({
       ...restProps,
       backgroundColor,
       buttonType: type,
@@ -55,10 +56,8 @@ export const Button = forwardRef(
 
     return (
       <button
-        {...restProps}
-        {...props}
+        {...mergeProps(props, restProps)}
         aria-label={accessibilityLabel}
-        aria-pressed={isPressed}
         className={cx(
           className,
           buttonStyles.button,
