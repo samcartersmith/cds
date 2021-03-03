@@ -8,6 +8,7 @@ module.exports = {
         'introduction/overview',
         'introduction/principles',
         'introduction/getting-started',
+        'introduction/support',
         {
           type: 'category',
           label: 'Designers Guide',
@@ -18,7 +19,6 @@ module.exports = {
             'introduction/designers-guide/customization',
             'introduction/designers-guide/handoff',
             'introduction/designers-guide/going-beyond-cds',
-            'introduction/designers-guide/support',
           ],
         },
       ],
@@ -65,7 +65,7 @@ module.exports = {
           label: 'Github',
           href: 'https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system',
         },
-        'resources/office-hours',
+
         'resources/roadmap',
         'resources/contributing',
         'resources/release',

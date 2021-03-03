@@ -3,7 +3,12 @@ id: handoff
 title: Handoff
 ---
 
-As you get the final details into your design work, use this guide to prepare your mocks for hand-off. There are four key areas to make for a smooth handoff process: CDS Adherence, Adaptability, Inclusivity, and States.
+As you get the final details into your design work, use this guide to prepare your mocks for hand-off. There are four key areas to make for a smooth handoff process:
+
+- [CDS Adherence](#cds-adherence)
+- [Adaptability](#adaptability)
+- [Accessibility](#accessibility)
+- [States](#states)
 
 ## CDS Adherence
 
@@ -25,22 +30,22 @@ Lastly for guidance, please go through your components and ensure they are linke
 
 Any detached instance will require your engineer to make a judgment or ask a question to what your intention was. This can cause delays, and it may also cause later issues should another dieting reuse your design, so please take a moment to double check your components are pointing to a CDS Library.
 
-## Non-adherence
+### Non-adherence
 
 For anything, your engineer should not follow CDS guidance please obtain the proper approvals and you've documented this for your engineer. If this is a new design for your engineer, you'll be responsible for extra hand off materials to provide sufficient materials to properly implement this.
 
-### Adaptability
+## Adaptability
 
-Your design work will need to adapt across device sizes, languages, and CDS scales, so please make sure you've provided proper thinking as to what expands, shrinks, and how you want your design to work across those areas.
+Your design work will need to adapt across device sizes, languages, and [CDS scales](../../foundation/scale), so please make sure you've provided proper thinking as to what expands, shrinks, and how you want your design to work across those areas.
 
 Not doing so will likely require extra effort from your engineering team, and they may or not may seek your help, so it's worth clarifying with your engineering team they have everything they need, and you've provided sufficient resources for them to implement how components should shift across the interfaces as various situations happen.
 
-### Accessibility
+## Accessibility
 
 Coinbase requires all interfaces to be compliant with [WCAG 2.1 (AA)](https://www.w3.org/TR/WCAG21/). You are responsible for making your design comply with those guidelines. All CDS components comply with WCAG 2.1 by default, but it is possible for it to become not compliant with improper usage.
 
 The **only** exception for this is disabled states.
 
-### States
+## States
 
 Audit your design for any components that may need go through various states (loading, active, focus, disabled...). Your engineering team will need to implement those, so please provide specifications if needed.
