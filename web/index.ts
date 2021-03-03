@@ -31,7 +31,7 @@ export const palette = {
   backgroundAlternate: 'var(--background-alternate)',
   backgroundOverlay: 'var(--background-overlay)',
   line: 'var(--line)',
-  lineHeavy: 'var(--lineHeavy)',
+  lineHeavy: 'var(--line-heavy)',
   primary: 'var(--primary)',
   primaryForeground: 'var(--primary-foreground)',
   negative: 'var(--negative)',
