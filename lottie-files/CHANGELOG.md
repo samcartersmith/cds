@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.2 (3/4/2021, 09:34 AM PST) [#14155](https://github.cbhq.net/mono/repo/pull/14155)
+
+#### 🚀 Updates
+
+- update cardRewards start/end markers @katherinemartinez [#14155](https://github.cbhq.net/mono/repo/pull/14155)
+
 ## 0.1.1 (3/4/2021, 07:31 AM PST) [#14145](https://github.cbhq.net/mono/repo/pull/14145)
 
 #### 🚀 Updates
