@@ -137,6 +137,21 @@ make serve.website
 make deploy.website
 ```
 
+## How to auto generate component docs
+
+Once you have built the component for **_both web and mobile_**. You can auto generate the documentation associated with it by following these steps:
+
+1. Update docs for `codegen/website/docgen.ts`. Add the following line to docgen. Replace `<component-name>` with name of your component.
+
+```
+{
+  dest: `${WEBSITE_COMPONENT_DOCS_DIR}/<component-name>.mdx`,
+  data: getDocgenForPackage({ componentName: <component-name> }),
+}
+```
+
+2. Run `make codegen` in the root of eng/shared/design-system
+
 ## Guide for Setting up CDS React Native development environment
 
 This section helps you install and build the CDS React Native app to test components on mobile.
