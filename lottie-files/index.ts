@@ -1,4 +1,5 @@
 export * from './activityIndicator';
+export * from './cardRewards';
 export * from './chartFallbackNegative';
 export * from './chartFallbackPositive';
 export * from './earnComplete';

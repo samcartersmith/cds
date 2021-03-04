@@ -6,9 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- fix: Tabular number CSS property is wrong @hannah-jin [#14003](https://github.cbhq.net/mono/repo/pull/14003)
-- feat: Add `Tooltip` component @miles-johnson [#13958](https://github.cbhq.net/mono/repo/pull/13958)
-- feat: Add useFlexStyles and useBorderStyles @katherinemartinez [#13892](https://github.cbhq.net/mono/repo/pull/13892)
+## 0.3.2 (3/4/2021, 07:31 AM PST) [#14145](https://github.cbhq.net/mono/repo/pull/14145)
+
+#### 🚀 Updates
+
+- Add `Navigation`, `Sidebar`, `Navbar`, `Logo` & `IconButton` components @katherinemartinez [#13998](https://github.cbhq.net/mono/repo/pull/13998)
+- Add `Tooltip` component @miles-johnson [#13958](https://github.cbhq.net/mono/repo/pull/13958)
+- Add useFlexStyles and useBorderStyles @katherinemartinez [#13892](https://github.cbhq.net/mono/repo/pull/13892)
+
+#### 🐞 Fixes
+
+- Tabular number CSS property is wrong @hannah-jin [#14003](https://github.cbhq.net/mono/repo/pull/14003)
 
 ## 0.3.1 (3/2/2021, 11:33 AM PST) [#13944](https://github.cbhq.net/mono/repo/pull/13944)
 

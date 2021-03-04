@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.1 (3/4/2021, 07:31 AM PST) [#14145](https://github.cbhq.net/mono/repo/pull/14145)
+
+#### 🚀 Updates
+
+- Add cardRewards lottie @katherinemartinez [#14145](https://github.cbhq.net/mono/repo/pull/14145)
+
 ## 0.1.0 (3/2/2021, 07:04 AM PST) [#13912](https://github.cbhq.net/mono/repo/pull/13912)
 
 #### 💥 Breaking

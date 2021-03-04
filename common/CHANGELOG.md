@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- types: Update BoxBaseProps to include BorderStyles. @katherinemartinez [#13892](https://github.cbhq.net/mono/repo/pull/13892)
+## 0.2.2 (3/4/2021, 07:31 AM PST) [#14145](https://github.cbhq.net/mono/repo/pull/14145)
+
+#### 🐞 Fixes
+
+- Update BoxBaseProps to include BorderStyles. @katherinemartinez [#13892](https://github.cbhq.net/mono/repo/pull/13892)
 
 ## 0.2.1 (3/2/2021, 11:27 AM PST) [#13944](https://github.cbhq.net/mono/repo/pull/13944)
 
