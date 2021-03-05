@@ -8,11 +8,14 @@ export class Codemod {
 
   cs: JSCodeshift;
 
+  fileInfo: FileInfo;
+
   source: Collection<any>;
 
   constructor(fileInfo: FileInfo, api: API) {
     this.api = api;
     this.cs = api.jscodeshift;
+    this.fileInfo = fileInfo;
     this.source = this.cs(fileInfo.source);
   }
 

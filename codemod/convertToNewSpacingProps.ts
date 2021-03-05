@@ -28,6 +28,17 @@ if (!importPath && !componentName) {
 
 const constVarMap: Record<string, ObjectExpression | ArrayExpression> = {};
 
+// RN is base 4 but CDS is base 8
+// function halveSpacing(value: number): number {
+//   let amount = Math.abs(value) / 2;
+
+//   if (amount % 1 !== 0 && amount !== 0.5) {
+//     amount = amount <= 3 ? Math.ceil(amount) : Math.floor(amount);
+//   }
+
+//   return amount;
+// }
+
 function isValidSpacingValue(value: Node, allowIdentifier = false): boolean {
   switch (value.type) {
     // spacing={gap}
@@ -66,8 +77,15 @@ function createProp(mod: Codemod, value: Node | null, name: string): JSXAttribut
     id = `spacing${id.charAt(0).toUpperCase()}${id.slice(1)}`;
   }
 
+  let number = value as NumericLiteral | UnaryExpression;
+
+  if (number.type === 'UnaryExpression' && number.operator === '-') {
+    id = id.replace('spacing', 'offset');
+    number = number.argument as NumericLiteral;
+  }
+
   return mod.createNode(cs =>
-    cs.jsxAttribute(cs.jsxIdentifier(id), cs.jsxExpressionContainer(value as NumericLiteral))
+    cs.jsxAttribute(cs.jsxIdentifier(id), cs.jsxExpressionContainer(number))
   );
 }
 
@@ -115,6 +133,45 @@ function convertObjectToProps(mod: Codemod, object: ObjectExpression): JSXAttrib
   });
 
   return props;
+}
+
+function convertNumericValue(
+  node:
+    | NumericLiteral
+    | UnaryExpression
+    | ConditionalExpression
+    | TSAsExpression
+    | ObjectExpression
+    | ArrayExpression
+) {
+  if (!node) return;
+
+  switch (node.type) {
+    case 'NumericLiteral':
+      return;
+    case 'UnaryExpression':
+      convertNumericValue(node.argument as NumericLiteral);
+      break;
+    case 'ConditionalExpression':
+      convertNumericValue(node.consequent as NumericLiteral);
+      convertNumericValue(node.alternate as NumericLiteral);
+      break;
+    case 'TSAsExpression':
+      convertNumericValue(node.expression as NumericLiteral);
+      break;
+    case 'ObjectExpression':
+      node.properties.forEach(prop => {
+        if (prop.type === 'ObjectProperty') {
+          convertNumericValue(prop.value as NumericLiteral);
+        }
+      });
+      break;
+    case 'ArrayExpression':
+      node.elements.forEach(el => {
+        convertNumericValue(el as NumericLiteral);
+      });
+      break;
+  }
 }
 
 export default function convertToNewSpacingProps(
@@ -217,15 +274,21 @@ export default function convertToNewSpacingProps(
             // const gap = [1, 2];
             // spacing={gap}
             if (expr && expr.type === 'ArrayExpression') {
+              convertNumericValue(expr);
               newProps.push(...convertArrayToProps(mod, expr));
 
               // const gap = {top: 1, right: 2};
               // spacing={gap}
             } else if (expr && expr.type === 'ObjectExpression') {
+              convertNumericValue(expr);
               newProps.push(...convertObjectToProps(mod, expr));
 
               // spacing={spacing}
-            } else if (id !== 'spacing') {
+            } else if (id === 'spacing') {
+              convertNumericValue(expr);
+
+              // Unknown?
+            } else {
               throw new Error('Identifier');
             }
 
@@ -243,6 +306,10 @@ export default function convertToNewSpacingProps(
         console.error(
           `Invalid spacing prop value type "${error.message}" found in "${fileInfo.path}".`
         );
+
+        if (error.message.includes('Cannot read property')) {
+          console.log(error);
+        }
       }
     });
 
