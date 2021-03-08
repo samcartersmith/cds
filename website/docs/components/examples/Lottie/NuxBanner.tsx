@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 
 import { LottiePlayer } from '@cbhq/cds-common';
 import { nux, NuxLottie } from '@cbhq/cds-lottie-files';
-import { Lottie } from '@cbhq/cds-web/Lottie';
+import { Lottie } from '@cbhq/cds-web/animation/Lottie';
 
 type LottieRef = LottiePlayer<NuxLottie>;
 

@@ -3,9 +3,9 @@ import React, { useMemo } from 'react';
 import { PaletteForeground, useIconSize } from '@cbhq/cds-common';
 import { Animated, Text } from 'react-native';
 
-import { Box } from '../Box/Box';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { Box } from '../layout/Box';
 import { iconGlyphMap } from './iconGlyphMap';
 import { IconOutline } from './IconOutline';
 import { IconProps } from './IconProps';

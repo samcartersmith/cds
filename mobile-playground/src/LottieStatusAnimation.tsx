@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 
 import { LottieStatusAnimationType, join } from '@cbhq/cds-common';
 import { Button, HStack, Spacer } from '@cbhq/cds-mobile';
-import { LottieStatusAnimation } from '@cbhq/cds-mobile/Lottie/LottieStatusAnimation';
+import { LottieStatusAnimation } from '@cbhq/cds-mobile/animation/LottieStatusAnimation';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';

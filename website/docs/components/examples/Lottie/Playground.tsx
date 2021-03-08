@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as animations from '@cbhq/cds-lottie-files';
 import { ThemeProvider, Box } from '@cbhq/cds-web';
-import { Lottie } from '@cbhq/cds-web/Lottie';
+import { Lottie } from '@cbhq/cds-web/animation/Lottie';
 
 export const Playground = () => {
   return (

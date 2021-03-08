@@ -3,11 +3,11 @@ import React, { memo } from 'react';
 import { join } from '@cbhq/cds-common';
 import { emptyArray } from '@cbhq/cds-utils';
 
-import { Box } from '../Box/Box';
-import { HStack } from '../Box/HStack';
-import { Spacer } from '../Box/Spacer';
+import { Box } from '../layout/Box';
+import { HStack } from '../layout/HStack';
+import { Spacer } from '../layout/Spacer';
 import { gutter } from '../styles/tokens';
-import { TextTitle3, TextLabel2 } from '../Text/Text';
+import { TextTitle3, TextLabel2 } from '../typography/Text';
 
 const toArray = React.Children.toArray;
 

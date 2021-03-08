@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { VStack } from '../Box/VStack';
+import { VStack } from '../layout/VStack';
 
 type SidebarProps = {
   logo: React.ReactNode;

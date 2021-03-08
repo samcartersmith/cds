@@ -1,7 +1,7 @@
 import { css } from 'linaria';
 
-import { TextProps } from '../Text/TextProps';
 import { CSSMap } from '../types';
+import { TextProps } from '../typography/TextProps';
 
 const textAlign: CSSMap<TextProps['align']> = {
   start: css`

@@ -3,8 +3,8 @@ import type { FC } from 'react';
 
 import { useIconSize } from '@cbhq/cds-common';
 
-import { Box } from '../Box/Box';
 import { usePalette } from '../hooks/usePalette';
+import { Box } from '../layout/Box';
 import type { IconProps } from './IconProps';
 import { iconStyles } from './iconStyles';
 import { useIconPath } from './useIconPath';

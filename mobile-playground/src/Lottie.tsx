@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as animations from '@cbhq/cds-lottie-files';
 import { ThemeProvider, Box, TextBody } from '@cbhq/cds-mobile';
-import { Lottie } from '@cbhq/cds-mobile/Lottie';
+import { Lottie } from '@cbhq/cds-mobile/animation/Lottie';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';

@@ -7,7 +7,7 @@ import { useInteractable, InteractableProps } from '../hooks/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../styles/flexStyles';
-import { TextHeadline } from '../Text/Text';
+import { TextHeadline } from '../typography/Text';
 import { sidebarItemStyles } from './navigationStyles';
 
 interface SidebarItemProps<T extends unknown = unknown>
