@@ -22,6 +22,7 @@ Help:
   $$ make serve.website             -- Serve docusaurus website build locally.
   $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
   $$ make prepare.icons             -- Prepare icons
+  $$ make lint.fix             		-- Auto fixes lints issues 
 endef
 export HELP_TEXT
 
@@ -83,6 +84,15 @@ lint:
 	bazel run :eslint_utils
 	bazel run :eslint_web
 	bazel run :stylelint
+
+.PHONY: lint.fix
+lint.fix:
+	bazel run :eslint_fix_codegen
+	bazel run :eslint_fix_codemod
+	bazel run :eslint_fix_common
+	bazel run :eslint_fix_mobile
+	bazel run :eslint_fix_utils
+	bazel run :eslint_fix_web
 
 .PHONY: new.package
 new.package:
