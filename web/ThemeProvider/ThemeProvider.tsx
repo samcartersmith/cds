@@ -19,8 +19,12 @@ const ThemeManager: React.FC = ({ children }) => {
   const scale = useScale();
   const spectrum = useSpectrum();
   const palette = usePaletteToCssVars();
+
   return (
-    <div className={cx(scaleCss[scale], spectrumCss[spectrum])} style={palette}>
+    <div
+      className={cx(scaleCss[scale], spectrumCss[spectrum])}
+      style={palette as React.CSSProperties}
+    >
       {children}
     </div>
   );

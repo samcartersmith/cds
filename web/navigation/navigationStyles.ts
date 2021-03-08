@@ -11,7 +11,7 @@ export const app = css`
 `;
 
 // TODO: add responsive styles
-export const sidebar = css``;
+export const sidebar = '';
 
 export const content = css`
   overflow-y: scroll;

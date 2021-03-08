@@ -16,7 +16,6 @@
   "authors": {
     "coinbase": "coinbase"
   },
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "typings": "index.ts"
+  "main": "index.js",
+  "typings": "index.d.ts"
 }

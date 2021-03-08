@@ -16,7 +16,4 @@ filegroup(
 cds_package_static(
     name = "fonts",
     srcs = [":runtime_source"],
-    dependencies = [],
-    monorepo_dependencies = [],
-    peer_dependencies = [],
 )

@@ -1,5 +1,5 @@
 load("//eng/shared/design-system:cds_package.bzl", "cds_package")
-load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
+load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES", "TYPE_DEPENDENCIES")
 
 filegroup(
     name = "base_source",
@@ -22,7 +22,6 @@ filegroup(
     name = "runtime_source",
     srcs = [
         ":base_source",
-        "native.js",
         "styles.css",
     ] + glob(
         [
@@ -56,10 +55,11 @@ filegroup(
 cds_package(
     name = "icons",
     srcs = [":runtime_source"],
-    dependencies = DEPENDENCIES,
-    monorepo_dependencies = [
-        "//eng/shared/design-system/common:package_json",
-        "//eng/shared/design-system/utils:package_json",
+    cds_dependencies = [
+        "common",
+        "utils",
     ],
+    dependencies = DEPENDENCIES,
     peer_dependencies = PEER_DEPENDENCIES,
+    type_dependencies = TYPE_DEPENDENCIES,
 )

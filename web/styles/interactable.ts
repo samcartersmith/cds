@@ -11,7 +11,7 @@ export const interactable = css`
   text-decoration: none;
   z-index: 0;
   transition: transform 100ms;
-  // Prevents layout shift - https://web.dev/cls/#animations-and-transitions
+  /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
   transform: scale(1);
 
   &:before,

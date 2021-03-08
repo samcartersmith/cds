@@ -2,17 +2,8 @@
   "name": "@cbhq/cds-web",
   "version": "0.3.2",
   "description": "Coinbase Design System - Web",
-  "keywords": [
-    "design system",
-    "component library",
-    "react",
-    "typescript"
-  ],
-  "sideEffects": [
-    "*.css",
-    "globalStyles.js",
-    "lib/styles/global.js"
-  ],
+  "keywords": ["design system", "component library", "react", "typescript"],
+  "sideEffects": ["*.css", "globalStyles.js", "styles/global.js"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
@@ -25,7 +16,6 @@
   "authors": {
     "coinbase": "coinbase"
   },
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "typings": "index.ts"
+  "main": "index.js",
+  "typings": "index.d.ts"
 }

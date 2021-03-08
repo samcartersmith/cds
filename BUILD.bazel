@@ -7,8 +7,7 @@ load(":config.bzl", "ESLINT_DIRS", "PACKAGES", "STATIC_PACKAGES", "append_cds_mo
 
 exports_files([
     ".babelrc.js",
-    ".browserslistrc",
-    "babel.config.js",
+    ".stylelintrc.js",
     "linaria.config.js",
 ])
 
@@ -60,8 +59,6 @@ filegroup(
 filegroup(
     name = "style_source",
     srcs = [
-        ".babelrc.js",
-        ".browserslistrc",
         ".stylelintrc.js",
         "//eng/shared/design-system/web:runtime_source",
         "//:babel.config.js",
@@ -101,7 +98,6 @@ filegroup(
 filegroup(
     name = "tests_configuration",
     srcs = [
-        ".babelrc.js",
         "jest.config.js",
         "jest.config.native.js",
         "jestSetup.native.ts",
@@ -248,7 +244,6 @@ ts_node(
 # *****************
 
 STORYBOOK_DEPS = append_cds_web_deps([
-    ".babelrc.js",
     "//:babel.config.js",
     "//:package.json",
     "//:tsconfig.json",
@@ -278,6 +273,7 @@ STORYBOOK_DEPS = append_cds_web_deps([
     "@npm//destyle.css",
     "@npm//dotenv-webpack",
     "@npm//html-webpack-plugin",
+    "@npm//linaria",
     "@npm//react",
     "@npm//react-dom",
     "@npm//storybook-addon-designs",

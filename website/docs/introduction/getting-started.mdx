@@ -14,16 +14,7 @@ title: Getting started
 
 ### For web projects
 
-1. Set up a project level `.babelrc.js` and include `linaria/babel` at the end of the presets list. CDS relies on [linaria](https://github.com/callstack/linaria) for styling on the web.
-
-```js
-module.exports = {
-  presets: ['linaria/babel'],
-  plugins: ['@babel/plugin-proposal-class-properties'],
-};
-```
-
-2. In the bazel rule for building your application, make sure to include `"//eng/shared/design-system:web_source"` as part of the `data` argument.
+1. In the bazel rule for building your application, make sure to include `"//eng/shared/design-system:web_source"` as part of the `data` argument.
 
 ## Using CDS outside the [`mono/repo`](https://github.cbhq.net/mono/repo)
 

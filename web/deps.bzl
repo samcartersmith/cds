@@ -13,6 +13,12 @@ PEER_DEPENDENCIES = [
     "@npm//react-dom",
 ]
 
-BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + [
+TYPE_DEPENDENCIES = [
+    "@npm//@types/node",
+    "@npm//@types/react",
+    "@npm//@types/react-dom",
+]
+
+BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + TYPE_DEPENDENCIES + [
     "@npm//jest-canvas-mock",
 ]

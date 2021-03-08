@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { PaletteAlias } from '@cbhq/cds-common';
+
 //  web only
 export type DynamicElement<
   T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
@@ -22,6 +24,15 @@ export interface StyledInheritedProps {
 }
 
 export type CSSMap<T extends string | undefined> = Record<NonNullable<T>, string>;
+
+export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
+
+declare module 'csstype' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface Properties extends PaletteCssVariable {
+    '--interactable-opacity'?: number;
+  }
+}
 
 // ACCESSIBILITY
 

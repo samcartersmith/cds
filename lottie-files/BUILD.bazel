@@ -13,6 +13,8 @@ filegroup(
         ],
         exclude = [
             "**/*.test.*",
+            "basepackage.json",
+            "tsconfig.build.json",
         ],
     ),
     visibility = ["//visibility:public"],
@@ -25,21 +27,20 @@ filegroup(
         [
             "**/*.ts",
             "**/*.tsx",
-            "**/*.js",
-            "**/*.test.*",
-            "**/*.mdx",
             "**/*.json",
+            "**/*.mdx",
         ],
     ),
     visibility = ["//visibility:public"],
 )
 
+# Package building and publishing
 cds_package(
     name = "lottie-files",
     srcs = [":runtime_source"],
-    dependencies = DEPENDENCIES,
-    monorepo_dependencies = [
-        "//eng/shared/design-system/common:package_json",
+    cds_dependencies = [
+        "common",
     ],
+    dependencies = DEPENDENCIES,
     peer_dependencies = PEER_DEPENDENCIES,
 )

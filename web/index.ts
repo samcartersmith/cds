@@ -1,7 +1,3 @@
-// Consumers outside of monorepo need this reference import for ThemeProvider style tag to use custom CSS variables
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="css.d.ts" />
-
 export * as backgroundStyles from './styles/backgroundColor';
 export * as foregroundStyles from './styles/foregroundColor';
 export * as typographyStyles from './styles/typography';

@@ -2,12 +2,7 @@
   "name": "@cbhq/cds-mobile",
   "version": "0.4.1",
   "description": "Coinbase Design System - Mobile Native",
-  "keywords": [
-    "cds",
-    "design system",
-    "mobile",
-    "native"
-  ],
+  "keywords": ["cds", "design system", "mobile", "native"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
@@ -18,7 +13,6 @@
     "registry": "https://registry-npm.cbhq.net"
   },
   "authors": "Coinbase",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "typings": "index.ts"
+  "main": "index.js",
+  "typings": "index.d.ts"
 }

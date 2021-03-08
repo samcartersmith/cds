@@ -9,7 +9,11 @@ import { Tooltip } from './Tooltip';
 # Tooltip
 
 <Canvas withToolbar>
-  <Story name="Top placement (default)" decorators={[withStoryLabel('Top')]} args={{}}>
+  <Story
+    name="Top placement (default)"
+    decorators={[withStoryLabel('Top')]}
+    args={{ placement: 'top' }}
+  >
     {args => <StoryExample {...args} />}
   </Story>
   <Story
@@ -33,7 +37,11 @@ import { Tooltip } from './Tooltip';
   >
     {args => <StoryExample {...args} />}
   </Story>
-  <Story name="Disabled" decorators={[withStoryLabel('Disabled')]} args={{ disabled: true }}>
+  <Story
+    name="Disabled"
+    decorators={[withStoryLabel('Disabled')]}
+    args={{ disabled: true, placement: 'top' }}
+  >
     {args => <StoryExample {...args} />}
   </Story>
 </Canvas>

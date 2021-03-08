@@ -1,0 +1,23 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": false,
+    "paths": {
+      "@cbhq/cds-common": [
+        "../../../../bazel-out/host/bin/eng/shared/design-system/common/package_types/index.d.ts",
+        "../../../../bazel-out/darwin-fastbuild/bin/eng/shared/design-system/common/package_types/index.d.ts",
+        "../../../../bazel-out/k8-fastbuild/bin/eng/shared/design-system/common/package_types/index.d.ts",
+      ],
+      "@cbhq/cds-utils": [
+        "../../../../bazel-out/host/bin/eng/shared/design-system/utils/package_types/index.d.ts",
+        "../../../../bazel-out/darwin-fastbuild/bin/eng/shared/design-system/utils/package_types/index.d.ts",
+        "../../../../bazel-out/k8-fastbuild/bin/eng/shared/design-system/utils/package_types/index.d.ts",
+      ]
+    }
+  },
+  "include": ["**/*"],
+  "exclude": ["**/*.test.*"]
+}

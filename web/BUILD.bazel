@@ -1,10 +1,10 @@
 load("//eng/shared/design-system:cds_package.bzl", "cds_package")
-load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
+load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES", "TYPE_DEPENDENCIES")
 
 # Files to publish to NPM
 filegroup(
     name = "runtime_source",
-    srcs = ["globalStyles.js"] + glob(
+    srcs = glob(
         [
             "**/*.ts",
             "**/*.tsx",
@@ -43,10 +43,13 @@ filegroup(
 cds_package(
     name = "web",
     srcs = [":runtime_source"],
-    dependencies = DEPENDENCIES,
-    monorepo_dependencies = [
-        "//eng/shared/design-system/common:package_json",
-        "//eng/shared/design-system/fonts:package_json",
+    cds_dependencies = [
+        "common",
+        "fonts",
+        "lottie-files",
+        "utils",
     ],
+    dependencies = DEPENDENCIES,
     peer_dependencies = PEER_DEPENDENCIES,
+    type_dependencies = TYPE_DEPENDENCIES,
 )

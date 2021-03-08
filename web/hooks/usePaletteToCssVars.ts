@@ -16,6 +16,6 @@ export const usePaletteToCssVars = () => {
       }
     });
 
-    return mapKeys(transformedValues, (_, key) => toCssVar(key));
+    return mapKeys(transformedValues, (_, key) => toCssVar(String(key)));
   }, [paletteConfig]);
 };

@@ -5,7 +5,7 @@ import { renderA11y } from '@utils/jest/renderA11y';
 
 import { Box, BoxProps } from './Box';
 
-const DEFAULT_CLASS = 'cds-flex';
+const DEFAULT_CLASS = 'flex';
 
 function expectClassName<K extends keyof BoxProps>(
   prop: K,
@@ -20,7 +20,7 @@ function expectClassName<K extends keyof BoxProps>(
 
       rerender(<Box {...{ [prop]: value }}>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${classPrefix} cds-${value}`.trim());
+      expect(container.firstChild).toHaveAttribute('class', `${classPrefix} ${value}`.trim());
     });
   });
 }
@@ -74,7 +74,7 @@ describe('Box', () => {
 
       rerender(<Box bordered>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} cds-bordered`);
+      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} bordered`);
     });
 
     it(`will set border radius class name for \`rounded\` prop`, () => {
@@ -84,7 +84,7 @@ describe('Box', () => {
 
       rerender(<Box rounded>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} cds-borderRadius`);
+      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} borderRadius`);
     });
   });
 
@@ -219,31 +219,31 @@ describe('Box', () => {
     it('renders "top" pin', async () => {
       const { container } = render(<Box pin="top">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('cds-top');
+      expect(container.firstChild).toHaveClass('top');
     });
 
     it('renders "bottom" pin', async () => {
       const { container } = render(<Box pin="bottom">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('cds-bottom');
+      expect(container.firstChild).toHaveClass('bottom');
     });
 
     it('renders "right" pin', async () => {
       const { container } = render(<Box pin="right">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('cds-right');
+      expect(container.firstChild).toHaveClass('right');
     });
 
     it('renders "left" pin', async () => {
       const { container } = render(<Box pin="left">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('cds-left');
+      expect(container.firstChild).toHaveClass('left');
     });
 
     it('renders "all" pin', async () => {
       const { container } = render(<Box pin="all">Child</Box>);
 
-      expect(container.firstChild).toHaveClass('cds-all');
+      expect(container.firstChild).toHaveClass('all');
     });
   });
 });

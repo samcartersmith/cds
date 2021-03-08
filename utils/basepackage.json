@@ -2,11 +2,7 @@
   "name": "@cbhq/cds-utils",
   "version": "0.0.9",
   "description": "Coinbase Design System - Utils",
-  "keywords": [
-    "design system",
-    "utils",
-    "helpers"
-  ],
+  "keywords": ["design system", "utils", "helpers"],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
@@ -19,7 +15,6 @@
   "authors": {
     "coinbase": "coinbase"
   },
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "typings": "index.ts"
+  "main": "index.js",
+  "typings": "index.d.ts"
 }
