@@ -1,9 +1,15 @@
 {
   "name": "@cbhq/cds-icons",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Coinbase Design System - Icons",
-  "keywords": ["design system", "icons", "icon fonts"],
-  "sideEffects": ["*.css"],
+  "keywords": [
+    "design system",
+    "icons",
+    "icon fonts"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",

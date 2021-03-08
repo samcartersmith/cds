@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.0 (3/8/2021, 11:49 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
+
+#### 💥 Breaking
+
+- Update NPM package to be deep importable (no lib/esm folders) @miles-johnson [#14059](https://github.cbhq.net/mono/repo/pull/14059)
+
 ## 0.1.2 (3/4/2021, 09:34 AM PST) [#14155](https://github.cbhq.net/mono/repo/pull/14155)
 
 #### 🚀 Updates

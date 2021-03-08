@@ -1,8 +1,12 @@
 {
   "name": "@cbhq/cds-fonts",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Coinbase Design System - Fonts",
-  "keywords": ["cds", "design system", "fonts"],
+  "keywords": [
+    "cds",
+    "design system",
+    "fonts"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
@@ -13,5 +17,9 @@
     "registry": "https://registry-npm.cbhq.net"
   },
   "authors": "Coinbase",
-  "files": ["*.css", "*.woff2", "*.otf"]
+  "files": [
+    "*.css",
+    "*.woff2",
+    "*.otf"
+  ]
 }
