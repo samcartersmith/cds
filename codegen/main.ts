@@ -14,13 +14,13 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
   const templates = {
     'lottieStyles.ejs': [
       {
-        dest: 'web/Lottie/lottieStyles.ts',
+        dest: 'web/animation/lottieStyles.ts',
         data: defaultPalette,
       },
     ],
     'css.ejs': [
       {
-        dest: 'web/Text/textStyles.ts',
+        dest: 'web/typography/textStyles.ts',
         data: Type.css,
       },
       {
@@ -43,6 +43,10 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
       {
         dest: 'web/styles/backgroundColor.ts',
         data: Palette.cssBackgroundColor,
+      },
+      {
+        dest: 'web/styles/borderColor.ts',
+        data: Palette.cssBorderColor,
       },
     ],
     'cssMap.ejs': [
@@ -70,6 +74,10 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         data: Spectrum.native,
       },
       {
+        dest: 'web/styles/palette.ts',
+        data: { palette: Palette.cssVariables },
+      },
+      {
         dest: 'common/palette/constants.ts',
         data: {
           defaultPalette: Palette.defaultPalette,
@@ -77,10 +85,6 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
           paletteBackgrounds: Palette.paletteBackgrounds,
           paletteBorders: Palette.paletteBorders,
         },
-      },
-      {
-        dest: 'web/styles/palette.ts',
-        data: { palette: Palette.cssVariables },
       },
     ],
     'docgen.ejs': docgen,
