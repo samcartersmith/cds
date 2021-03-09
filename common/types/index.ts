@@ -1,5 +1,6 @@
 export * from './BoxBaseProps';
 export * from './ButtonBaseProps';
+export * from './IconButtonBaseProps';
 export * from './DimensionStyles';
 export * from './ElevationLevels';
 export * from './ForwardedRef';

@@ -20,6 +20,7 @@ export interface PressableHighlightProps extends Omit<PressableProps, 'style'>, 
   feedback?: HapticFeedbackType;
   loading?: boolean;
   underlayColor?: string | false;
+  borderRadius?: number;
 }
 
 export const PressableHighlight = ({
@@ -32,6 +33,7 @@ export const PressableHighlight = ({
   onPressIn,
   onPressOut,
   underlayColor,
+  borderRadius = 0,
   ...props
 }: PressableHighlightProps) => {
   const palette = usePalette();
@@ -75,7 +77,7 @@ export const PressableHighlight = ({
           <View
             style={[
               StyleSheet.absoluteFillObject,
-              { backgroundColor: underlayColor || palette.foreground },
+              { borderRadius: borderRadius, backgroundColor: underlayColor || palette.foreground },
             ]}
           />
         ) : null}

@@ -1,0 +1,96 @@
+import React from 'react';
+
+import { IconButtonBaseProps } from '@cbhq/cds-common';
+import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
+
+import { PressableHighlight } from '../buttons/PressableHighlight';
+import { usePressAnimation } from '../hooks/usePressAnimation';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { Icon } from '../icons/Icon';
+import { HapticFeedbackType } from '../types';
+import { useIconButtonVariant } from './useIconButtonVariant';
+
+export interface IconButtonProps extends IconButtonBaseProps {
+  feedback?: HapticFeedbackType;
+  onPress?: (event: GestureResponderEvent) => void;
+  onLongPress?: (event: GestureResponderEvent) => void;
+  testID?: string;
+}
+
+// TODO: Does not support offset prop. Need to fix
+export const IconButton: React.FC<IconButtonProps> = React.memo(
+  ({
+    accessibilityLabel,
+    accessibilityHint,
+    feedback = 'none',
+    testID,
+    name,
+    variant = 'secondary',
+    spacing,
+    spacingTop,
+    spacingBottom,
+    spacingStart,
+    spacingEnd,
+    spacingVertical,
+    spacingHorizontal,
+    onPress,
+    onLongPress,
+    disabled = false,
+    ...props
+  }) => {
+    const [pressIn, pressOut, scale] = usePressAnimation();
+    const { foregroundColor, ...variantStyles } = useIconButtonVariant(variant);
+    const spacingStyles = useSpacingStyles({
+      spacing,
+      spacingTop,
+      spacingBottom,
+      spacingStart,
+      spacingEnd,
+      spacingVertical,
+      spacingHorizontal,
+    });
+
+    return (
+      <View {...props} style={spacingStyles} testID={testID}>
+        <PressableHighlight
+          accessibilityHint={accessibilityHint}
+          accessibilityLabel={accessibilityLabel}
+          activeOpacity={0.92}
+          onPress={onPress}
+          onPressIn={pressIn}
+          onPressOut={pressOut}
+          onLongPress={onLongPress}
+          disabled={disabled}
+          feedback={feedback}
+          borderRadius={50}
+        >
+          <Animated.View
+            style={[
+              styles.iconButton,
+              disabled ? styles.disabled : undefined,
+              variantStyles,
+              { transform: [{ scale }] },
+            ]}
+          >
+            <Icon name={name} size="s" color={foregroundColor} />
+          </Animated.View>
+        </PressableHighlight>
+      </View>
+    );
+  }
+);
+
+const styles = StyleSheet.create({
+  iconButton: {
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    height: 40,
+    width: 40,
+    borderRadius: 50,
+    borderWidth: 1,
+  },
+  disabled: {
+    opacity: 0.38,
+  },
+});

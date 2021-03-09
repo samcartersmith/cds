@@ -1,0 +1,48 @@
+import React from 'react';
+
+import { render, fireEvent } from '@testing-library/react';
+import { renderA11y } from '@utils/jest/renderA11y';
+
+import { IconButton } from './IconButton';
+
+describe('IconButton', () => {
+  const name = 'arrowsHorizontalHeavy';
+  it('passes accessibility', async () => {
+    expect(
+      await renderA11y(<IconButton name={name} accessibilityLabel={name} />)
+    ).toHaveNoViolations();
+  });
+
+  it('renders an IconButton', () => {
+    const { container } = render(<IconButton name={name} accessibilityLabel={name} />);
+    const button = container.querySelector('button');
+
+    expect(button).toBeDefined();
+  });
+
+  it('can mark as disabled', () => {
+    const { container } = render(<IconButton disabled name={name} accessibilityLabel={name} />);
+
+    expect(container.querySelector('button')).toHaveAttribute('disabled');
+  });
+
+  it('fires `onPress` when clicked', () => {
+    const spy = jest.fn();
+    const { container } = render(
+      <IconButton onPress={spy} name={name} accessibilityLabel={name} />
+    );
+
+    fireEvent.click(container.querySelector('button') as HTMLButtonElement);
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('doesnt pass `onPress` to button element', () => {
+    const spy = jest.fn();
+    const { container } = render(
+      <IconButton onPress={spy} name={name} accessibilityLabel={name} />
+    );
+
+    expect(container.querySelector('button')).not.toHaveAttribute('onPress');
+  });
+});

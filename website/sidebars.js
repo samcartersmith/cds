@@ -43,6 +43,7 @@ module.exports = {
       items: [
         'components/box',
         'components/button',
+        'components/icon-button',
         'components/icon',
         'components/lottie',
         'components/text',

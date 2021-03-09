@@ -1,29 +1,24 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 
-import { PaletteBackground, SpacingProps, OffsetProps, IconName } from '@cbhq/cds-common';
+import { IconButtonBaseProps, IconButtonVariant, PaletteBackground } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
+import { ButtonProps } from '../buttons/ButtonProps';
+import * as buttonStyles from '../buttons/buttonStyles';
 import { useInteractable } from '../hooks/useInteractable';
-import { useOffsetStyles } from '../hooks/useOffsetStyles';
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';
+import { Box } from '../layout/Box';
 import { getBorderStyles } from '../styles/borderStyles';
 import { getFlexStyles } from '../styles/flexStyles';
-import { ButtonProps } from './ButtonProps';
-import * as buttonStyles from './buttonStyles';
 
-export type IconButtonVariant = 'primary' | 'secondary';
 const variantMap: Record<IconButtonVariant, PaletteBackground> = {
   primary: 'primary',
   secondary: 'background',
 };
 
 export interface IconButtonProps<T extends unknown = unknown>
-  extends Omit<ButtonProps, 'variant' | 'children'>,
-    SpacingProps,
-    OffsetProps {
-  name: IconName;
-  variant?: IconButtonVariant;
+  extends IconButtonBaseProps,
+    Omit<ButtonProps, 'variant' | 'name' | 'children' | 'loading' | 'accessibilityLabel'> {
   renderContainer?: (props: T) => JSX.Element;
 }
 
@@ -33,6 +28,7 @@ export const IconButton = forwardRef(
       name,
       renderContainer,
       variant = 'secondary',
+      accessibilityLabel = name,
       spacing,
       spacingTop,
       spacingBottom,
@@ -50,7 +46,6 @@ export const IconButton = forwardRef(
       onHover,
       onPress,
       disabled = false,
-      loading = false,
     }: IconButtonProps,
     ref: React.Ref<HTMLButtonElement>
   ) => {
@@ -60,36 +55,21 @@ export const IconButton = forwardRef(
     });
 
     const borderStyles = getBorderStyles({ bordered: true });
-    const spacingStyles = useSpacingStyles({
-      spacing,
-      spacingTop,
-      spacingBottom,
-      spacingStart,
-      spacingEnd,
-      spacingVertical,
-      spacingHorizontal,
-    });
-
-    const offsetStyles = useOffsetStyles({
-      offset,
-      offsetBottom,
-      offsetEnd,
-      offsetHorizontal,
-      offsetStart,
-      offsetTop,
-      offsetVertical,
-    });
 
     const { props, className, style } = useInteractable({
       elementType: 'button',
       buttonType: 'button',
       backgroundColor: variantMap[variant],
       scaleOnPress: true,
-      isDisabled: disabled || loading,
+      isDisabled: disabled,
       onHover,
       onPress,
       ref,
     });
+
+    const iconColor = useMemo(() => (variant === 'primary' ? 'primaryForeground' : 'foreground'), [
+      variant,
+    ]);
 
     const enhancedProps = {
       ...props,
@@ -99,20 +79,37 @@ export const IconButton = forwardRef(
       },
       className: cx(
         flexStyles,
-        spacingStyles,
-        offsetStyles,
         borderStyles,
         buttonStyles.iconButton.base,
         buttonStyles.iconButton[variant],
         className
       ),
-      children: <Icon name={name} size="s" dangerouslySetColor="currentColor" />,
+      children: <Icon name={name} size="s" color={iconColor} />,
     };
 
-    if (renderContainer) {
-      return renderContainer(enhancedProps);
-    } else {
-      return <button ref={ref} {...enhancedProps} />;
-    }
+    return (
+      <Box
+        offset={offset}
+        offsetBottom={offsetBottom}
+        offsetEnd={offsetEnd}
+        offsetHorizontal={offsetHorizontal}
+        offsetStart={offsetStart}
+        offsetTop={offsetTop}
+        offsetVertical={offsetVertical}
+        spacing={spacing}
+        spacingTop={spacingTop}
+        spacingBottom={spacingBottom}
+        spacingStart={spacingStart}
+        spacingEnd={spacingEnd}
+        spacingVertical={spacingVertical}
+        spacingHorizontal={spacingHorizontal}
+      >
+        {renderContainer ? (
+          renderContainer(enhancedProps)
+        ) : (
+          <button ref={ref} aria-label={accessibilityLabel} {...enhancedProps} />
+        )}
+      </Box>
+    );
   }
 );

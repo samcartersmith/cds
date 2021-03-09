@@ -11,6 +11,21 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 ## Props
 
+### accessibilityLabel
+
+Full length accessibility label when the child text is not descriptive enough.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Button" templateName="accessibilityLabel" />
+
 ### block
 
 Change to block and expand to 100% of parent width.
@@ -82,7 +97,7 @@ Mark the button as disabled.
   componentName="Button"
   propertyName="disabled"
   required={false}
-  defaultValue=""
+  defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
@@ -112,7 +127,7 @@ Mark the button as loading and display a spinner.
   componentName="Button"
   propertyName="loading"
   required={false}
-  defaultValue=""
+  defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
@@ -134,9 +149,24 @@ Uniquely identify the button within a form.
 
 <ComponentDetails componentName="Button" templateName="name" />
 
+### onHover <Badge variant="web" />
+
+Callback fired when the element is being hovered.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="onHover"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['OnHover']}
+/>
+
+<ComponentDetails componentName="Button" templateName="onHover" />
+
 ### onPress
 
-Handler that is called when the press is released over the target.
+Callback fired after the element is pressed.
 
 <ApiDetails
   componentName="Button"
@@ -144,70 +174,10 @@ Handler that is called when the press is released over the target.
   required={false}
   defaultValue=""
   mobileOptions={['(event: GestureResponderEvent) => void']}
-  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
+  webOptions={['OnPress<HTMLButtonElement>']}
 />
 
 <ComponentDetails componentName="Button" templateName="onPress" />
-
-### onPressChange <Badge variant="web" />
-
-Handler that is called when the press state changes.
-
-<ApiDetails
-  componentName="Button"
-  propertyName="onPressChange"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(isPressed: boolean) => void']}
-/>
-
-<ComponentDetails componentName="Button" templateName="onPressChange" />
-
-### onPressEnd <Badge variant="web" />
-
-Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.
-
-<ApiDetails
-  componentName="Button"
-  propertyName="onPressEnd"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
-/>
-
-<ComponentDetails componentName="Button" templateName="onPressEnd" />
-
-### onPressStart <Badge variant="web" />
-
-Handler that is called when a press interaction starts.
-
-<ApiDetails
-  componentName="Button"
-  propertyName="onPressStart"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
-/>
-
-<ComponentDetails componentName="Button" templateName="onPressStart" />
-
-### onPressUp <Badge variant="web" />
-
-Handler that is called when a press is released over the target, regardless of whether it started on the target or not.
-
-<ApiDetails
-  componentName="Button"
-  propertyName="onPressUp"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(e: PressEvent<HTMLButtonElement>) => void']}
-/>
-
-<ComponentDetails componentName="Button" templateName="onPressUp" />
 
 ### testID <Badge variant="mobile" />
 

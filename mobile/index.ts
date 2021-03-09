@@ -6,6 +6,7 @@ export * from './layout/OverflowGradient';
 export * from './layout/Spacer';
 export * from './layout/VStack';
 export * from './buttons/Button';
+export * from './iconButtons/IconButton';
 export * from './buttons/PressableHighlight';
 export * from './buttons/PressableOpacity';
 export * from './typography/Text';

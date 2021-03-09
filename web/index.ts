@@ -8,7 +8,7 @@ export * from './layout/HStack';
 export * from './layout/Spacer';
 export * from './layout/VStack';
 export * from './buttons/Button';
-export * from './buttons/IconButton';
+export * from './iconButtons/IconButton';
 export * from './icons/Icon';
 export * from './icons/Logo';
 export * from './navigation/Navigation';
