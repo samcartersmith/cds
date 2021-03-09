@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 
 import { join } from '@cbhq/cds-common';
-import { Button, VStack, HStack, Spacer } from '@cbhq/cds-web';
+import { VStack, HStack, Spacer } from '@cbhq/cds-web/layout';
+import { Button } from '@cbhq/cds-web/buttons/Button';
 
 const variants = ['primary', 'secondary', 'positive', 'negative'] as const;
 

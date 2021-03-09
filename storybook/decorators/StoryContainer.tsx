@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ThemeProvider } from '@cbhq/cds-web';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { css } from 'linaria';
 
 import type { GetStory } from './types';

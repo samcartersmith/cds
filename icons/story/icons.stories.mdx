@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Icon } from '@cbhq/cds-web';
+import { Icon } from '@cbhq/cds-web/icons/Icon';
 import * as paths from '@cbhq/cds-web/icons/paths';
 import { Meta, Canvas, Story, ArgsTable, Source } from '@storybook/addon-docs/blocks';
 import throttle from 'lodash/throttle';
@@ -22,11 +22,12 @@ On web, the icons are rendered as inline svgs, allowing you to pass valid svg ht
 
 <Source
   code={`
-  import { Icon } from '@cbhq/cds-web'
-import { ThemeProvider } from '@cbhq/cds-web'\n
+import { Icon } from '@cbhq/cds-web/icons/Icon'\n
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider'\n
 <ThemeProvider scale="large">
   <Icon name="allTimeHighHeavy" size="m" color="primary" />
-</ThemeProvider>`}
+</ThemeProvider>
+`}
 />
 
 ## Icon library

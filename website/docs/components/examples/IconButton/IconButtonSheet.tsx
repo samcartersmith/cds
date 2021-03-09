@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { IconButton, VStack, Box } from '@cbhq/cds-web';
+import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
+import { VStack, Box } from '@cbhq/cds-web/layout';
 
 const variants = ['primary', 'secondary'] as const;
 

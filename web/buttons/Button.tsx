@@ -5,7 +5,7 @@ import { mergeProps } from 'react-aria';
 
 import { useInteractable } from '../hooks/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { TextHeadline } from '../typography/Text';
+import { TextHeadline } from '../typography/TextHeadline';
 import { ButtonProps } from './ButtonProps';
 import * as buttonStyles from './buttonStyles';
 

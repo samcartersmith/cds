@@ -17,7 +17,7 @@ import {
   disabledState,
   scaledDownState,
 } from '../styles/interactable';
-import { opacityHovered, opacityPressed } from '../styles/tokens';
+import { opacityHovered, opacityPressed } from '../tokens';
 import { OnHover, OnPress } from '../types';
 
 function extractOpacityFromSpectrum(

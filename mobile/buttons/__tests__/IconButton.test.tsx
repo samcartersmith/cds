@@ -5,7 +5,7 @@ import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { Animated, Pressable } from 'react-native';
 
-import { IconButton } from './IconButton';
+import { IconButton } from '../IconButton';
 
 const name = 'allTimeHighHeavy';
 describe('IconButton', () => {

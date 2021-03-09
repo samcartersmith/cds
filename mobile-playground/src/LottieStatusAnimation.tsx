@@ -1,8 +1,10 @@
 import React, { useState, useMemo } from 'react';
 
 import { LottieStatusAnimationType, join } from '@cbhq/cds-common';
-import { Button, HStack, Spacer } from '@cbhq/cds-mobile';
 import { LottieStatusAnimation } from '@cbhq/cds-mobile/animation/LottieStatusAnimation';
+import { Button } from '@cbhq/cds-mobile/buttons/Button';
+import { HStack } from '@cbhq/cds-mobile/layout/HStack';
+import { Spacer } from '@cbhq/cds-mobile/layout/Spacer';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextCaption } from '@cbhq/cds-mobile';
+import { TextCaption } from '@cbhq/cds-mobile/typography/TextCaption';
 
 import TextExamplesScreen from './internal/TextExamples';
 

@@ -1,5 +1,5 @@
 import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
-import { Meta, Canvas, Story, ArgsTable, SourceState } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import { Box } from './Box';
 
@@ -18,7 +18,7 @@ export const Lipsum = () => (
 
 # Box
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story
     name="Default"
     decorators={[withStoryLabel('Default')]}
@@ -34,7 +34,7 @@ export const Lipsum = () => (
 
 # Flex
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story name="Flex controls" decorators={[withStoryLabel('Flex controls')]} args={{}}>
     {() => (
       <Box
@@ -59,7 +59,7 @@ export const Lipsum = () => (
 
 # Backgrounds
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story
     name="Alternate background"
     decorators={[withStoryLabel('Alternate background')]}
@@ -130,7 +130,7 @@ export const Lipsum = () => (
 
 # Borders
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story
     name="Bordered"
     decorators={[withStoryLabel('Bordered')]}
@@ -168,7 +168,7 @@ export const Lipsum = () => (
 
 # Spacing
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story name="Spacing" decorators={[withStoryLabel('All')]} args={{}}>
     {() => (
       <Box spacing={3} background="backgroundAlternate">
@@ -207,7 +207,7 @@ export const Lipsum = () => (
 
 # Offset
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story name="Offset" decorators={[withStoryLabel('All')]} args={{}}>
     {() => (
       <Box spacing={5} background="backgroundAlternate">
@@ -248,7 +248,7 @@ export const Lipsum = () => (
 
 # Positioning
 
-<Canvas withToolbar withSource={SourceState.OPEN}>
+<Canvas withToolbar>
   <Story name="Positioned" decorators={[withStoryLabel('Positioned')]} args={{}}>
     {() => (
       <Box

@@ -1,11 +1,14 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import throttle from 'lodash/throttle';
-import { css, cx } from 'linaria';
 
 import { IconSize, paletteForegrounds, PaletteForeground } from '@cbhq/cds-common';
-import { Box, Button, ThemeProvider, Icon } from '@cbhq/cds-web';
+import { Button } from '@cbhq/cds-web/buttons/Button';
+import { Icon } from '@cbhq/cds-web/icons/Icon';
+import { Box } from '@cbhq/cds-web/layout/Box';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
+import { css, cx } from 'linaria';
+import throttle from 'lodash/throttle';
 
 import { iconNames, iconSizes } from './data';
 

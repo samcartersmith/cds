@@ -48,7 +48,7 @@ export interface TextProps
   deprecatedLineHeight?: number | 'none';
 }
 
-const createText = (name: Typography) => {
+export const createText = (name: Typography) => {
   const TextComponent: React.FC<TextProps> = ({
     color = 'foreground',
     align = 'start',
@@ -166,15 +166,3 @@ const createText = (name: Typography) => {
   TextComponent.displayName = pascalCase(name);
   return TextComponent;
 };
-
-export const TextDisplay1 = createText('display1');
-export const TextDisplay2 = createText('display2');
-export const TextTitle1 = createText('title1');
-export const TextTitle2 = createText('title2');
-export const TextTitle3 = createText('title3');
-export const TextHeadline = createText('headline');
-export const TextBody = createText('body');
-export const TextLabel1 = createText('label1');
-export const TextLabel2 = createText('label2');
-export const TextCaption = createText('caption');
-export const TextLegal = createText('legal');

@@ -7,7 +7,7 @@ import { usePopper } from 'react-popper';
 import { useTooltipTriggerState } from 'react-stately';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { TextBody } from '../typography/Text';
+import { TextBody } from '../typography/TextBody';
 import * as tooltipStyles from './tooltipStyles';
 
 export interface TooltipProps {

@@ -1,6 +1,6 @@
 import { css } from 'linaria';
 
-import { palette } from '../styles/palette';
+import { palette } from '../tokens';
 
 export const app = css`
   height: 100vh;

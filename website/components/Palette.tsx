@@ -1,15 +1,10 @@
 import React from 'react';
 
+import { defaultPalette, PaletteAlias, Spectrum } from '@cbhq/cds-common';
 import { wordCase, capitalize } from '@cbhq/cds-utils';
-import {
-  defaultPalette,
-  palette,
-  PaletteAlias,
-  Spectrum,
-  ThemeProvider,
-  TextHeadline,
-  TextLabel1,
-} from '@cbhq/cds-web';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+import { palette } from '@cbhq/cds-web/tokens';
+import { TextHeadline, TextLabel1 } from '@cbhq/cds-web/typography';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 

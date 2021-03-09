@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Box, IconButton } from '@cbhq/cds-mobile';
+import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
+import { Box } from '@cbhq/cds-mobile/layout/Box';
+import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { GestureResponderEvent } from 'react-native';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';
-import { TextBody } from '@cbhq/cds-mobile';
 
 function onPress(event: GestureResponderEvent) {
   console.log('Pressed', event.type || 'GestureResponderEvent');

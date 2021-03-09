@@ -6,8 +6,8 @@ import { emptyArray } from '@cbhq/cds-utils';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Spacer } from '../layout/Spacer';
-import { gutter } from '../styles/tokens';
-import { TextTitle3, TextLabel2 } from '../typography/Text';
+import { gutter } from '../tokens';
+import { TextTitle3, TextLabel2 } from '../typography';
 
 const toArray = React.Children.toArray;
 

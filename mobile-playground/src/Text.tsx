@@ -12,7 +12,7 @@ import {
   TextTitle1,
   TextTitle2,
   TextTitle3,
-} from '@cbhq/cds-mobile';
+} from '@cbhq/cds-mobile/typography';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';

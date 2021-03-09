@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePalette } from '@cbhq/cds-mobile';
+import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { ScrollView } from 'react-native';
 
 interface ScreenProps {

@@ -6,7 +6,7 @@ import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native'
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HapticFeedbackType } from '../types';
-import { TextHeadline } from '../typography/Text';
+import { TextHeadline } from '../typography/TextHeadline';
 import { PressableHighlight } from './PressableHighlight';
 import { useButtonVariant } from './useButtonVariant';
 

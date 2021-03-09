@@ -1,7 +1,6 @@
 import { css } from 'linaria';
 
-import { palette } from '../styles/palette';
-import { opacityDisabled } from './tokens';
+import { palette, opacityDisabled } from '../tokens';
 
 export const interactable = css`
   position: relative;

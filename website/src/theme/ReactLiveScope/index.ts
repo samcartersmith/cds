@@ -1,21 +1,31 @@
 import React from 'react';
 
 import * as lottieFiles from '@cbhq/cds-lottie-files';
-import * as CdsWeb from '@cbhq/cds-web';
-import { Lottie } from '@cbhq/cds-web/animation/Lottie';
-import { LottieStatusAnimation } from '@cbhq/cds-web/animation/LottieStatusAnimation';
+import * as CDSAnimation from '@cbhq/cds-web/animation';
+import * as CDSButtons from '@cbhq/cds-web/buttons';
+import * as CDSIcons from '@cbhq/cds-web/icons';
+import * as CDSLayout from '@cbhq/cds-web/layout';
+import * as CDSNavigation from '@cbhq/cds-web/navigation';
+import * as CDSOverlays from '@cbhq/cds-web/overlays';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+import * as CDSTypography from '@cbhq/cds-web/typography';
 import { useStatusButtons } from '@cbhq/cds-website/docs/components/examples/Lottie/useStatusButtons';
 
 // Add react-live imports you need here
 const ReactLiveScope = {
   React,
-  ...React,
-  ...CdsWeb,
-  Text: CdsWeb.TextBody,
+  ThemeProvider,
+  Text: CDSTypography.TextBody,
   lottieFiles,
-  Lottie,
-  LottieStatusAnimation,
   useStatusButtons,
+  ...React,
+  ...CDSAnimation,
+  ...CDSButtons,
+  ...CDSIcons,
+  ...CDSLayout,
+  ...CDSNavigation,
+  ...CDSOverlays,
+  ...CDSTypography,
 };
 
 export default ReactLiveScope;

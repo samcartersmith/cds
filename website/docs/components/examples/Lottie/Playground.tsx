@@ -1,8 +1,9 @@
 import React from 'react';
 
 import * as animations from '@cbhq/cds-lottie-files';
-import { ThemeProvider, Box } from '@cbhq/cds-web';
 import { Lottie } from '@cbhq/cds-web/animation/Lottie';
+import { Box } from '@cbhq/cds-web/layout/Box';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 
 export const Playground = () => {
   return (

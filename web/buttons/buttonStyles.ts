@@ -1,6 +1,6 @@
 import { css } from 'linaria';
 
-import { palette } from '../styles/palette';
+import { palette } from '../tokens';
 
 export const button = css`
   display: inline-flex;

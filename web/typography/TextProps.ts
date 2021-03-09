@@ -18,6 +18,7 @@ export interface TextProps extends TextBaseProps {
 }
 
 export type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4';
+
 export type HTMLNonHeadingTextTags =
   | 'p'
   | 'span'
@@ -34,4 +35,5 @@ export type HTMLNonHeadingTextTags =
   | 'ins'
   | 'sup'
   | 'sub';
+
 export type HTMLTextTags = HTMLHeadingTags | HTMLNonHeadingTextTags;

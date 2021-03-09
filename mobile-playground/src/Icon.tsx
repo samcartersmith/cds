@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { Box, TextHeadline, HStack, Icon, FiatIcon, iconGlyphMap } from '@cbhq/cds-mobile';
+import { FiatIcon } from '@cbhq/cds-mobile/icons/FiatIcon';
+import { Icon } from '@cbhq/cds-mobile/icons/Icon';
+import { iconGlyphMap } from '@cbhq/cds-mobile/icons/iconGlyphMap';
+import { Box } from '@cbhq/cds-mobile/layout/Box';
+import { HStack } from '@cbhq/cds-mobile/layout/HStack';
+import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { entries } from '@cbhq/cds-utils';
 
 import Example from './internal/Example';

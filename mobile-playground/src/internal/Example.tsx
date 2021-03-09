@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
-import { TextTitle3, usePalette } from '@cbhq/cds-mobile';
+import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
+import { TextTitle3 } from '@cbhq/cds-mobile/typography/TextTitle3';
 import { View, ViewStyle } from 'react-native';
 
 interface ExampleProps {

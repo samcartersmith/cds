@@ -1,8 +1,10 @@
 import React from 'react';
 
 import * as animations from '@cbhq/cds-lottie-files';
-import { ThemeProvider, Box, TextBody } from '@cbhq/cds-mobile';
 import { Lottie } from '@cbhq/cds-mobile/animation/Lottie';
+import { Box } from '@cbhq/cds-mobile/layout/Box';
+import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
+import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';

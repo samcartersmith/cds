@@ -1,17 +1,10 @@
 /* eslint-disable react/jsx-key */
 import React, { useMemo } from 'react';
 
-import {
-  Logo,
-  ThemeProvider,
-  Navigation,
-  Navbar,
-  Sidebar,
-  SidebarItem,
-  Button,
-  IconButton as CDSIconButton,
-  IconButtonProps,
-} from '@cbhq/cds-web';
+import { Button, IconButton as CDSIconButton, IconButtonProps } from '@cbhq/cds-web/buttons';
+import { Logo } from '@cbhq/cds-web/icons/Logo';
+import { Navigation, Navbar, Sidebar, SidebarItem } from '@cbhq/cds-web/navigation';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import Head from '@docusaurus/Head';
 import { Link } from 'react-router-dom';
 
