@@ -3,4 +3,10 @@
  * Generated from scripts/codegen/main.ts
  */
 
-export const borderRadius = { compact: 4, standard: 8, pill: 18, round: '50%' } as const;
+export const borderRadius = {
+  compact: 4,
+  standard: 8,
+  tooltip: 12,
+  pill: 18,
+  round: '50%',
+} as const;

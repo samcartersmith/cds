@@ -1,6 +1,6 @@
 import { ButtonBaseProps } from '@cbhq/cds-common';
 
-import { InteractableProps } from '../hooks/useInteractable';
+import { InteractableProps } from './useInteractable';
 
 export interface ButtonProps
   extends ButtonBaseProps,

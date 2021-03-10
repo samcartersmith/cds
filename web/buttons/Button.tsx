@@ -1,13 +1,15 @@
-import React, { useMemo, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 
+import { useButtonVariant } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 import { mergeProps } from 'react-aria';
 
-import { useInteractable } from '../hooks/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import * as foregroundColors from '../styles/foregroundColor';
 import { TextHeadline } from '../typography/TextHeadline';
 import { ButtonProps } from './ButtonProps';
 import * as buttonStyles from './buttonStyles';
+import { useInteractable } from './useInteractable';
 
 export const Button = forwardRef(
   (
@@ -30,13 +32,12 @@ export const Button = forwardRef(
       spacingHorizontal: compact ? 2 : 3,
       spacingVertical: compact ? 0.5 : 1,
     });
-    const backgroundColor = useMemo(
-      () => (variant === 'negative' || (variant === 'primary' && compact) ? 'background' : variant),
-      [compact, variant]
-    );
+    const { color, ...variantAliases } = useButtonVariant(variant, compact);
+
     const { className, props, style } = useInteractable<HTMLButtonElement>({
       ...restProps,
-      backgroundColor,
+      ...variantAliases,
+      borderRadius: compact ? 'compact' : 'standard',
       buttonType: type,
       elementType: 'button',
       isDisabled: disabled || loading,
@@ -52,20 +53,21 @@ export const Button = forwardRef(
         aria-label={accessibilityLabel}
         className={cx(
           className,
+          foregroundColors[color],
           buttonStyles.button,
-          buttonStyles[variant],
           compact && buttonStyles.buttonCompact,
-          compact && variant === 'primary' && buttonStyles.primaryCompact,
           block && buttonStyles.buttonBlock,
           spacingClass
         )}
         style={style}
         ref={ref}
       >
-        <TextHeadline as="span" color="currentColor">
+        <TextHeadline as="span" color={color}>
           {children}
         </TextHeadline>
       </button>
     );
   }
 );
+
+export { ButtonProps };

@@ -1,6 +1,8 @@
+// import { tapTarget } from '@cbhq/cds-common/tokens/sizing';
 import { css } from 'linaria';
 
-import { palette } from '../tokens';
+// TODO: Common deep imports
+const tapTarget = 40;
 
 export const button = css`
   display: inline-flex;
@@ -11,35 +13,11 @@ export const button = css`
   font-weight: 600;
   margin: 0;
   position: relative;
-  /* stylelint-disable plugin/no-low-performance-animation-properties */
-  transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
-    border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, transform 100ms;
   min-width: 100px;
-  border: none;
-  background-color: transparent;
-
-  /* Removes weird bonus padding in Firefox */
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
-
-  /* Add the border to the interactable */
-  &::before,
-  &::after {
-    border: 1px solid transparent;
-    border-radius: 8px;
-  }
 `;
 
 export const buttonCompact = css`
   min-width: auto;
-
-  &::before,
-  &::after {
-    border-radius: 4px;
-  }
 `;
 
 export const buttonBlock = css`
@@ -49,79 +27,10 @@ export const buttonBlock = css`
   white-space: normal;
 `;
 
-export const primary = css`
-  color: ${palette.primaryForeground};
-
-  &::before {
-    background-color: ${palette.primary};
-    border-color: ${palette.primary};
-  }
-`;
-
-export const primaryCompact = css`
-  color: ${palette.primary};
-
-  &::before {
-    background-color: ${palette.background};
-    border-color: ${palette.line};
-  }
-`;
-
-export const secondary = css`
-  color: ${palette.secondaryForeground};
-
-  &::before {
-    background-color: ${palette.background};
-    border-color: ${palette.line};
-  }
-`;
-
-export const positive = css`
-  color: ${palette.positiveForeground};
-
-  &::before {
-    background-color: ${palette.positive};
-    border-color: ${palette.positive};
-  }
-`;
-
-export const negative = css`
-  color: ${palette.negative};
-
-  &::before {
-    background-color: ${palette.background};
-    border-color: ${palette.line};
-  }
-`;
-
 export const iconButton = {
   base: css`
-    width: 40px;
-    height: 40px;
+    width: ${tapTarget}px;
+    height: ${tapTarget}px;
     min-width: unset;
-    border: none;
-    background-color: transparent;
-
-    &:before,
-    &:after {
-      border: 1px solid transparent;
-      border-radius: 50%;
-    }
-  `,
-  secondary: css`
-    &:before,
-    &:after {
-      border-color: ${palette.line};
-    }
-
-    &:before {
-      background-color: ${palette.background};
-    }
-  `,
-  primary: css`
-    &:before {
-      background-color: ${palette.primary};
-      border-color: ${palette.primary};
-    }
   `,
 };

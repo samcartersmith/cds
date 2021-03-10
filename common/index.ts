@@ -1,5 +1,6 @@
 export * from './lottie/lottieUtils';
 export * from './lottie/useStatusAnimationPoller';
+export * from './hooks/useButtonVariant';
 export * from './palette/constants';
 export * from './palette/usePaletteConfig';
 export * from './scale/useScale';

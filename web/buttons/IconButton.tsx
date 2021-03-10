@@ -1,20 +1,14 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef } from 'react';
 
-import { IconButtonBaseProps, IconButtonVariant, PaletteBackground } from '@cbhq/cds-common';
+import { IconButtonBaseProps, useButtonVariant } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
 import { ButtonProps } from '../buttons/ButtonProps';
 import * as buttonStyles from '../buttons/buttonStyles';
-import { useInteractable } from '../hooks/useInteractable';
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
-import { getBorderStyles } from '../styles/borderStyles';
 import { getFlexStyles } from '../styles/flexStyles';
-
-const variantMap: Record<IconButtonVariant, PaletteBackground> = {
-  primary: 'primary',
-  secondary: 'background',
-};
+import { useInteractable } from './useInteractable';
 
 export interface IconButtonProps<T extends unknown = unknown>
   extends IconButtonBaseProps,
@@ -54,12 +48,13 @@ export const IconButton = forwardRef(
       justifyContent: 'center',
     });
 
-    const borderStyles = getBorderStyles({ bordered: true });
+    const { color, ...variantAliases } = useButtonVariant(variant);
 
     const { props, className, style } = useInteractable({
+      ...variantAliases,
+      borderRadius: 'round',
       elementType: 'button',
       buttonType: 'button',
-      backgroundColor: variantMap[variant],
       scaleOnPress: true,
       isDisabled: disabled,
       onHover,
@@ -67,24 +62,14 @@ export const IconButton = forwardRef(
       ref,
     });
 
-    const iconColor = useMemo(() => (variant === 'primary' ? 'primaryForeground' : 'foreground'), [
-      variant,
-    ]);
-
     const enhancedProps = {
       ...props,
       style: {
         ...style,
         color: 'unset',
       },
-      className: cx(
-        flexStyles,
-        borderStyles,
-        buttonStyles.iconButton.base,
-        buttonStyles.iconButton[variant],
-        className
-      ),
-      children: <Icon name={name} size="s" color={iconColor} />,
+      className: cx(flexStyles, buttonStyles.iconButton.base, className),
+      children: <Icon name={name} size="s" color={color} />,
     };
 
     return (

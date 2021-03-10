@@ -12,6 +12,10 @@ export const standard = css`
   border-radius: 8px;
 `;
 
+export const tooltip = css`
+  border-radius: 12px;
+`;
+
 export const pill = css`
   border-radius: 18px;
 `;
