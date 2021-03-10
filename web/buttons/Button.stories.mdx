@@ -8,7 +8,7 @@ import { Button } from './Button';
 # Button
 
 <Canvas isColumn withToolbar>
-  <Story name="Default" decorators={[withStoryLabel('Default')]} args={{}}>
+  <Story name="Normal" decorators={[withStoryLabel('Normal')]} args={{}}>
     {args => (
       <div>
         <Button {...args} onPress={console.log}>
@@ -17,7 +17,11 @@ import { Button } from './Button';
       </div>
     )}
   </Story>
-  <Story name="Compact" decorators={[withStoryLabel('Compact')]} args={{ compact: true }}>
+  <Story
+    name="Normal compact"
+    decorators={[withStoryLabel('Normal compact')]}
+    args={{ compact: true }}
+  >
     {args => (
       <div>
         <Button {...args}>Button</Button>

@@ -23,22 +23,34 @@ export interface FlexStyles {
 export type PinningDirection = 'top' | 'bottom' | 'left' | 'right' | 'all';
 
 export interface PositionStyles {
+  /** Position the box to the bottom edge. */
   bottom?: DimensionValue;
+  /** Position the box to the left edge. */
   left?: DimensionValue;
+  /** How to position the box within its parent. */
   position?: 'absolute' | 'relative';
+  /** Position the box to the right edge. */
   right?: DimensionValue;
+  /** Position the box to the top edge. */
   top?: DimensionValue;
+  /** Adjust the z-index positioning layer. */
   zIndex?: number;
 }
 
 export interface BorderedStyles {
   /** Add a border around the box. */
   bordered?: boolean;
+  /** Add a border to the top side of the box. */
   borderedTop?: boolean;
+  /** Add a border to the bottom side of the box. */
   borderedBottom?: boolean;
+  /** Add a border to the leading side of the box. */
   borderedStart?: boolean;
+  /** Add a border to the trailing side of the box. */
   borderedEnd?: boolean;
+  /** Add a border to the leading and trailing sides of the box. */
   borderedHorizontal?: boolean;
+  /** Add a border to the top and bottom sides of the box. */
   borderedVertical?: boolean;
 }
 

@@ -28,6 +28,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
     noWrap,
     overflow,
     transform,
+    dangerouslySetClassName,
     // Spacing
     spacing,
     spacingTop,
@@ -62,7 +63,8 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
           spacingEnd,
           spacingVertical,
           spacingHorizontal,
-        })
+        }),
+        dangerouslySetClassName
       ),
     });
 

@@ -11,9 +11,16 @@ import { HapticFeedbackType } from '../types';
 import { useIconButtonVariant } from './useIconButtonVariant';
 
 export interface IconButtonProps extends IconButtonBaseProps {
+  /**
+   * Haptic feedback to trigger when being pressed.
+   * @default none
+   */
   feedback?: HapticFeedbackType;
+  /** Event fired when the button is pressed. */
   onPress?: (event: GestureResponderEvent) => void;
+  /** Event fired when the button is held for a long period and pressed. */
   onLongPress?: (event: GestureResponderEvent) => void;
+  /** @internal Testing purposes. */
   testID?: string;
 }
 
