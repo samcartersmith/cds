@@ -1,25 +1,9 @@
-import { SpectrumHueStep } from '@cbhq/cds-common';
-
-export const palette = {
-  foreground: 'var(--foreground)',
-  foregroundMuted: 'var(--foreground-muted)',
-  background: 'var(--background)',
-  backgroundAlternate: 'var(--background-alternate)',
-  backgroundOverlay: 'var(--background-overlay)',
-  line: 'var(--line)',
-  lineHeavy: 'var(--line-heavy)',
-  primary: 'var(--primary)',
-  primaryForeground: 'var(--primary-foreground)',
-  negative: 'var(--negative)',
-  negativeForeground: 'var(--negative-foreground)',
-  positive: 'var(--positive)',
-  positiveForeground: 'var(--positive-foreground)',
-  secondary: 'var(--secondary)',
-  secondaryForeground: 'var(--secondary-foreground)',
-} as const;
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
 
 export const spacing = {
-  '0.5': 'var(--spacing-0\\.5)',
   '1': 'var(--spacing-1)',
   '2': 'var(--spacing-2)',
   '3': 'var(--spacing-3)',
@@ -30,39 +14,24 @@ export const spacing = {
   '8': 'var(--spacing-8)',
   '9': 'var(--spacing-9)',
   '10': 'var(--spacing-10)',
+  '0.5': 'var(--spacing-0\\\\.5)',
 } as const;
 
-export const opacityHovered: Record<SpectrumHueStep, number> = {
-  0: 0.7,
-  5: 0.7,
-  10: 0.75,
-  15: 0.75,
-  20: 0.8,
-  30: 0.85,
-  40: 0.9,
-  50: 0.9,
-  60: 0.9,
-  70: 0.9,
-  80: 0.9,
-  90: 0.9,
-  100: 0.85,
-};
-
-export const opacityPressed: Record<SpectrumHueStep, number> = {
-  0: 0.98,
-  5: 0.98,
-  10: 0.97,
-  15: 0.97,
-  20: 0.96,
-  30: 0.95,
-  40: 0.94,
-  50: 0.93,
-  60: 0.92,
-  70: 0.91,
-  80: 0.9,
-  90: 0.89,
-  100: 0.88,
-};
-
-export const opacityDisabled = 0.38;
-export const gutter = 3;
+export const palette = {
+  foreground: 'var(--foreground)',
+  foregroundMuted: 'var(--foreground-muted)',
+  background: 'var(--background)',
+  backgroundAlternate: 'var(--background-alternate)',
+  backgroundOverlay: 'var(--background-overlay)',
+  line: 'var(--line)',
+  lineHeavy: 'var(--line-heavy)',
+  primary: 'var(--primary)',
+  primaryWash: 'var(--primary-wash)',
+  primaryForeground: 'var(--primary-foreground)',
+  negative: 'var(--negative)',
+  negativeForeground: 'var(--negative-foreground)',
+  positive: 'var(--positive)',
+  positiveForeground: 'var(--positive-foreground)',
+  secondary: 'var(--secondary)',
+  secondaryForeground: 'var(--secondary-foreground)',
+} as const;

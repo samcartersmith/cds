@@ -4,38 +4,30 @@
  */
 import { css } from 'linaria';
 
-export const background = css`
-  border-color: var(--background);
-`;
-
-export const backgroundAlternate = css`
-  border-color: var(--background-alternate);
-`;
-
-export const backgroundOverlay = css`
-  border-color: var(--background-overlay);
-`;
-
 export const primary = css`
-  border-color: var(--primary);
+  border: 1px solid var(--primary);
+`;
+
+export const primaryWash = css`
+  border: 1px solid var(--primary-wash);
 `;
 
 export const secondary = css`
-  border-color: var(--secondary);
+  border: 1px solid var(--secondary);
 `;
 
 export const positive = css`
-  border-color: var(--positive);
+  border: 1px solid var(--positive);
 `;
 
 export const negative = css`
-  border-color: var(--negative);
+  border: 1px solid var(--negative);
 `;
 
 export const line = css`
-  border-color: var(--line);
+  border: 1px solid var(--line);
 `;
 
 export const lineHeavy = css`
-  border-color: var(--line-heavy);
+  border: 1px solid var(--line-heavy);
 `;

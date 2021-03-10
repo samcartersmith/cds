@@ -9,6 +9,7 @@ export const defaultPalette = {
   line: ['gray60', 0.2],
   lineHeavy: ['gray60', 0.66],
   primary: 'blue60',
+  primaryWash: 'blue0',
   primaryForeground: 'gray0',
   negative: 'red60',
   negativeForeground: 'gray0',
@@ -36,16 +37,25 @@ export const paletteBackgrounds = [
   'backgroundAlternate',
   'backgroundOverlay',
   'primary',
+  'primaryWash',
   'secondary',
   'positive',
   'negative',
 ] as const;
 
-export const paletteBorders = ['line', 'lineHeavy'];
+export const paletteBorders = [
+  'primary',
+  'primaryWash',
+  'secondary',
+  'positive',
+  'negative',
+  'line',
+  'lineHeavy',
+];
 
 const foregroundMap = arrayToObject(paletteForegrounds);
 const backgroundMap = arrayToObject(paletteBackgrounds);
-const borderMap = arrayToObject([...paletteBackgrounds, ...paletteBorders]);
+const borderMap = arrayToObject(paletteBorders);
 
 const cssVariables = mapValues(defaultPalette, (_, key) => toCssVarFn(key));
 
@@ -57,7 +67,7 @@ const cssBackgroundColor = mapValues(backgroundMap, (_, key) => {
 
 const cssBorderColor = mapValues(borderMap, (_, key) => {
   return {
-    'border-color': toCssVarFn(key),
+    border: `1px solid ${toCssVarFn(key)}`,
   };
 });
 

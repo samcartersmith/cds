@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat: Have tokens.ts codegenerated. Add new useInteractable hook to buttons @katherinemartinez [#14548](https://github.cbhq.net/mono/repo/pull/14548)
+
 ## 0.4.0 (3/8/2021, 11:49 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
 
 #### 💥 Breaking

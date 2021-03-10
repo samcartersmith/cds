@@ -1,7 +1,9 @@
 import { useMemo } from 'react';
 
 import {
+  BorderRadius,
   PaletteBackground,
+  PaletteBorder,
   PaletteValue,
   SpectrumHueStep,
   usePaletteConfig,
@@ -12,16 +14,12 @@ import { AriaButtonProps } from '@react-types/button';
 import { cx } from 'linaria';
 import { useButton, useHover } from 'react-aria';
 
-import {
-  interactable,
-  pressedState,
-  hoveredState,
-  disabledState,
-  scaledDownState,
-} from '../styles/interactable';
+import * as borderColors from '../styles/borderColor';
+import * as borderRadii from '../styles/borderRadius';
 import { OnHover, OnPress } from '../types';
+import { interactable, disabledState, scaledDownState } from './interactableStyles';
 
-function extractOpacityFromSpectrum(
+function extractHueStep(
   value: Readonly<PaletteValue>,
   alphas: Record<SpectrumHueStep, number>
 ): number {
@@ -42,6 +40,10 @@ export interface InteractableProps<T> {
 export interface UseInteractableOptions<T> extends InteractableProps<T> {
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteBackground;
+  /** Border color of the element being interacted with. */
+  borderColor: PaletteBorder;
+  /** Border radius of the element being interacted with. */
+  borderRadius: BorderRadius;
   /** When a `button`, the type of button. */
   buttonType?: string;
   /** Type of element being rendered. */
@@ -56,6 +58,8 @@ export interface UseInteractableOptions<T> extends InteractableProps<T> {
 
 export function useInteractable<T>({
   backgroundColor,
+  borderColor,
+  borderRadius,
   buttonType,
   elementType,
   isDisabled,
@@ -96,28 +100,34 @@ export function useInteractable<T>({
     [buttonProps, hoverProps]
   );
 
-  const { opacityStyle, stateClass } = useMemo(() => {
-    let opacity = 1;
-    let stateClass = '';
-
-    if (isDisabled) {
-      stateClass = disabledState;
-    } else if (isPressed) {
-      opacity = extractOpacityFromSpectrum(spectrumAlias, opacityPressed);
-      stateClass = pressedState;
-    } else if (isHovered) {
-      opacity = extractOpacityFromSpectrum(spectrumAlias, opacityHovered);
-      stateClass = hoveredState;
+  const backgroundOpacity = useMemo(() => {
+    if (isPressed) {
+      return extractHueStep(spectrumAlias, opacityPressed);
     }
+    if (isHovered) {
+      return extractHueStep(spectrumAlias, opacityHovered);
+    }
+    return 1;
+  }, [isHovered, isPressed, spectrumAlias]);
 
-    return { opacityStyle: { '--interactable-opacity': opacity }, stateClass };
-  }, [isDisabled, isHovered, isPressed, spectrumAlias]);
+  const underlayColor = backgroundOpacity > 60 ? 'background' : 'foreground';
 
   return {
-    className: cx(interactable, stateClass, isPressed && scaleOnPress && scaledDownState),
+    className: cx(
+      borderColors[borderColor],
+      borderRadii[borderRadius],
+      interactable,
+      isPressed && scaleOnPress && scaledDownState,
+      isDisabled && disabledState
+    ),
     isHovered,
     isPressed,
     props,
-    style: opacityStyle,
+    style: {
+      '--interactable-underlay': `var(--${underlayColor})` as const,
+      '--interactable-background': isDisabled
+        ? `var(--${backgroundColor})`
+        : `rgba(var(--${spectrumAlias}), ${backgroundOpacity})`,
+    },
   };
 }

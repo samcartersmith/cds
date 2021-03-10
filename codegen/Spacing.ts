@@ -1,8 +1,12 @@
-import { mapValues, arrayToObject } from '@cbhq/cds-utils';
+import { mapValues, arrayToObject, toCssVarFn } from '@cbhq/cds-utils';
 
 import { spacingConfig, spacingScaleWithoutZero, spacingDirections } from './configs/spacingConfig';
 
 const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.') as `${T}`;
+
+const cssVariables = mapValues(arrayToObject(spacingScaleWithoutZero), (_, key) =>
+  toCssVarFn(`spacing-${escape(key)}`)
+);
 
 export const Spacing = {
   css: (attribute: 'padding' | 'margin') => {
@@ -26,4 +30,5 @@ export const Spacing = {
   mobile: mapValues(spacingConfig, scaleFunc =>
     Object.fromEntries(spacingScaleWithoutZero.map(size => [size, scaleFunc(size)]))
   ),
+  cssVariables,
 };

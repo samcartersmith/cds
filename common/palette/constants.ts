@@ -12,6 +12,7 @@ export const defaultPalette = {
   line: ['gray60', 0.2],
   lineHeavy: ['gray60', 0.66],
   primary: 'blue60',
+  primaryWash: 'blue0',
   primaryForeground: 'gray0',
   negative: 'red60',
   negativeForeground: 'gray0',
@@ -39,9 +40,18 @@ export const paletteBackgrounds = [
   'backgroundAlternate',
   'backgroundOverlay',
   'primary',
+  'primaryWash',
   'secondary',
   'positive',
   'negative',
 ] as const;
 
-export const paletteBorders = ['line', 'lineHeavy'] as const;
+export const paletteBorders = [
+  'primary',
+  'primaryWash',
+  'secondary',
+  'positive',
+  'negative',
+  'line',
+  'lineHeavy',
+] as const;

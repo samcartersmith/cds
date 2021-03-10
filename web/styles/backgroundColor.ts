@@ -20,6 +20,10 @@ export const primary = css`
   background-color: var(--primary);
 `;
 
+export const primaryWash = css`
+  background-color: var(--primary-wash);
+`;
+
 export const secondary = css`
   background-color: var(--secondary);
 `;

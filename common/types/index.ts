@@ -1,3 +1,4 @@
+export * from './BorderRadius';
 export * from './BoxBaseProps';
 export * from './ButtonBaseProps';
 export * from './IconButtonBaseProps';

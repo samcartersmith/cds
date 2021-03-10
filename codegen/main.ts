@@ -1,5 +1,6 @@
 import { mapValues } from '@cbhq/cds-utils';
 
+import { borderRadiusConfig, borderRadiusCss } from './configs/borderRadiusConfig';
 import { scaleConfig } from './configs/scaleConfig';
 import { Palette, defaultPalette } from './Palette';
 import { Spacing } from './Spacing';
@@ -48,6 +49,10 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         dest: 'web/styles/borderColor.ts',
         data: Palette.cssBorderColor,
       },
+      {
+        dest: 'web/styles/borderRadius.ts',
+        data: borderRadiusCss,
+      },
     ],
     'cssMap.ejs': [
       {
@@ -74,8 +79,12 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         data: Spectrum.native,
       },
       {
-        dest: 'web/styles/palette.ts',
-        data: { palette: Palette.cssVariables },
+        dest: 'common/tokens/borderRadius.ts',
+        data: { borderRadius: borderRadiusConfig },
+      },
+      {
+        dest: 'web/tokens.ts',
+        data: { spacing: Spacing.cssVariables, palette: Palette.cssVariables },
       },
       {
         dest: 'common/palette/constants.ts',

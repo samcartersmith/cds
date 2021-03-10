@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { PaletteAlias } from '@cbhq/cds-common';
+import { CssVariableFn } from '@cbhq/cds-utils';
 
 //  web only
 export type DynamicElement<
@@ -30,7 +31,10 @@ export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 declare module 'csstype' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface Properties extends PaletteCssVariable {
+    // TODO: remove when we migrate to new useInteractable in buttons folder
     '--interactable-opacity'?: number;
+    '--interactable-background'?: string;
+    '--interactable-underlay'?: CssVariableFn<PaletteAlias>;
   }
 }
 

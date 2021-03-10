@@ -79,6 +79,15 @@ export const lottieStyles = css`
     }
   }
 
+  .palette_primaryWash {
+    &_stroke {
+      stroke: ${palette.primaryWash};
+    }
+    &_fill {
+      fill: ${palette.primaryWash};
+    }
+  }
+
   .palette_primaryForeground {
     &_stroke {
       stroke: ${palette.primaryForeground};
