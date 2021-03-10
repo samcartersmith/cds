@@ -4,8 +4,9 @@ import { spacingConfig, spacingScaleWithoutZero, spacingDirections } from './con
 
 const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.') as `${T}`;
 
+// JSON.stringify in objectMap double escapes escaped strings so have to escape with only 2 backslashes
 const cssVariables = mapValues(arrayToObject(spacingScaleWithoutZero), (_, key) =>
-  toCssVarFn(`spacing-${escape(key)}`)
+  toCssVarFn(`spacing-${key}`).replace('.', '\\.')
 );
 
 export const Spacing = {

@@ -14,7 +14,7 @@ export const spacing = {
   '8': 'var(--spacing-8)',
   '9': 'var(--spacing-9)',
   '10': 'var(--spacing-10)',
-  '0.5': 'var(--spacing-0\\\\.5)',
+  '0.5': 'var(--spacing-0\\.5)',
 } as const;
 
 export const palette = {
