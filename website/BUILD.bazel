@@ -28,6 +28,7 @@ filegroup(
 DATA = append_cds_web_deps([
     ":source",
     # configs
+    "//:.browserslistrc",
     "//:tsconfig.json",
     "//:babel.config.js",
     "//eng/shared/design-system:build_source",
