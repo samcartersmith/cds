@@ -25,6 +25,10 @@ export class ComponentDocgen {
   }
 
   get id() {
+    if (this.componentName === 'HStack' || this.componentName === 'VStack') {
+      return this.componentName.toLowerCase();
+    }
+
     return kebabCase(this.componentName);
   }
 

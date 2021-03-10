@@ -3,16 +3,15 @@ import React, { forwardRef } from 'react';
 import { IconButtonBaseProps, useButtonVariant } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
-import { ButtonProps } from '../buttons/ButtonProps';
 import * as buttonStyles from '../buttons/buttonStyles';
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
 import { getFlexStyles } from '../styles/flexStyles';
-import { useInteractable } from './useInteractable';
+import { InteractableProps, useInteractable } from './useInteractable';
 
 export interface IconButtonProps<T extends unknown = unknown>
   extends IconButtonBaseProps,
-    Omit<ButtonProps, 'variant' | 'name' | 'children' | 'loading' | 'accessibilityLabel'> {
+    InteractableProps<HTMLButtonElement> {
   renderContainer?: (props: T) => JSX.Element;
 }
 
@@ -40,6 +39,7 @@ export const IconButton = forwardRef(
       onHover,
       onPress,
       disabled = false,
+      testID,
     }: IconButtonProps,
     ref: React.Ref<HTMLButtonElement>
   ) => {
@@ -92,7 +92,12 @@ export const IconButton = forwardRef(
         {renderContainer ? (
           renderContainer(enhancedProps)
         ) : (
-          <button ref={ref} aria-label={accessibilityLabel} {...enhancedProps} />
+          <button
+            ref={ref}
+            aria-label={accessibilityLabel}
+            data-test-id={testID}
+            {...enhancedProps}
+          />
         )}
       </Box>
     );

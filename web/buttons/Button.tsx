@@ -22,6 +22,7 @@ export const Button = forwardRef(
       loading = false,
       onHover,
       onPress,
+      testID,
       type,
       variant = 'primary',
       ...restProps
@@ -51,6 +52,7 @@ export const Button = forwardRef(
       <button
         {...mergeProps(props, restProps)}
         aria-label={accessibilityLabel}
+        data-test-id={testID}
         className={cx(
           className,
           foregroundColors[color],

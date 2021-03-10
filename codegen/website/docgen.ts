@@ -3,8 +3,6 @@ import { PropItem, withCustomConfig } from 'react-docgen-typescript';
 
 import { ComponentDocgen } from './ComponentDocgen';
 
-type PackageName = 'theme' | 'icons';
-
 const TSCONFIG_PATH = path.resolve(__dirname, '../../../../../', 'tsconfig.json');
 const CDS_DIR = path.resolve(__dirname, '../..');
 const WEBSITE_COMPONENT_DOCS_DIR = 'website/docs/components';
@@ -34,51 +32,90 @@ const getDocgenForPackage = ({
 }: {
   componentName: string;
   displayName?: string;
-  packageName?: PackageName;
-  childPath?: string;
+  packageName?: string;
+  childPath: string;
 }) => {
-  const webDocgen = getDocgen(`${packageName ?? 'web'}${childPath}`, componentName);
-  const mobileDocgen = getDocgen(`${packageName ?? 'mobile'}${childPath}`, componentName);
+  const webDocgen = getDocgen(path.join(packageName ?? 'web', childPath), componentName);
+  const mobileDocgen = getDocgen(path.join(packageName ?? 'mobile', childPath), componentName);
 
   if (webDocgen && mobileDocgen) {
     return new ComponentDocgen(webDocgen, mobileDocgen, displayName ?? componentName);
   }
 };
 
-export const docgen = ([
-  {
-    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/lottie.mdx`,
-    data: getDocgenForPackage({ componentName: 'Lottie', childPath: '/Lottie/Lottie.tsx' }),
-  },
-  {
-    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/text.mdx`,
-    data: getDocgenForPackage({ componentName: 'TextDisplay1', displayName: 'Text' }),
-  },
+const prepareDocgens = (
+  data: {
+    dest: string;
+    data: ComponentDocgen | undefined;
+  }[]
+) => {
+  return (data.filter(item => item.data !== undefined) as unknown) as {
+    dest: string;
+    data: Record<string, unknown>;
+  }[];
+};
+
+export const docs = prepareDocgens([
   {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/box.mdx`,
-    data: getDocgenForPackage({ componentName: 'Box' }),
+    data: getDocgenForPackage({ componentName: 'Box', childPath: 'layout/Box.tsx' }),
   },
   {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/button.mdx`,
-    data: getDocgenForPackage({ componentName: 'Button' }),
-  },
-  {
-    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/icon-button.mdx`,
-    data: getDocgenForPackage({ componentName: 'IconButton' }),
-  },
-  {
-    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/pin.mdx`,
-    data: getDocgenForPackage({ componentName: 'Pin' }),
-  },
-  {
-    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/theme-provider.mdx`,
-    data: getDocgenForPackage({ componentName: 'ThemeProvider', packageName: 'theme' }),
+    data: getDocgenForPackage({ componentName: 'Button', childPath: 'buttons/Button.tsx' }),
   },
   {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/icon.mdx`,
-    data: getDocgenForPackage({ componentName: 'Icon' }),
+    data: getDocgenForPackage({ componentName: 'Icon', childPath: 'icons/Icon.tsx' }),
   },
-].filter(item => item.data !== undefined) as unknown) as {
-  dest: string;
-  data: Record<string, unknown>;
-}[];
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/icon-button.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'IconButton',
+      childPath: 'buttons/IconButton.tsx',
+    }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/lottie.mdx`,
+    data: getDocgenForPackage({ componentName: 'Lottie', childPath: 'animation/Lottie.tsx' }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/text.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'TextDisplay1',
+      childPath: 'typography/TextDisplay1.ts',
+      displayName: 'Text',
+    }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/theme-provider.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'ThemeProvider',
+      childPath: 'system/ThemeProvider.tsx',
+    }),
+  },
+]);
+
+export const docsSimple = prepareDocgens([
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/hstack.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'HStack',
+      childPath: 'layout/HStack.tsx',
+    }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/spacer.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'Spacer',
+      childPath: 'layout/Spacer.tsx',
+    }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/vstack.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'VStack',
+      childPath: 'layout/VStack.tsx',
+    }),
+  },
+]);

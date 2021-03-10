@@ -1,0 +1,19 @@
+Buttons must have a visual label (passed as a child), and can use variants to denote intent and importance.
+
+```jsx live
+<div>
+  <Button onPress={console.log}>Save</Button>
+  <Button onPress={console.log} variant="secondary">
+    Cancel
+  </Button>
+</div>
+```
+
+Furthermore, buttons communicate actions that users can take. They are typically placed throughout your UI, in CTA (call-to-action) based locations like:
+
+- Navigation
+- Dialogs
+- Modals
+- Forms
+- Cards
+- Toolbars

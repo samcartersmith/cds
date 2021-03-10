@@ -20,15 +20,12 @@ export interface IconButtonProps extends IconButtonBaseProps {
   onPress?: (event: GestureResponderEvent) => void;
   /** Event fired when the button is held for a long period and pressed. */
   onLongPress?: (event: GestureResponderEvent) => void;
-  /** @internal Testing purposes. */
-  testID?: string;
 }
 
 // TODO: Does not support offset prop. Need to fix
 export const IconButton: React.FC<IconButtonProps> = React.memo(
   ({
     accessibilityLabel,
-    accessibilityHint,
     feedback = 'none',
     testID,
     name,
@@ -60,7 +57,7 @@ export const IconButton: React.FC<IconButtonProps> = React.memo(
     return (
       <View {...props} style={spacingStyles} testID={testID}>
         <PressableHighlight
-          accessibilityHint={accessibilityHint}
+          accessibilityHint={accessibilityLabel}
           accessibilityLabel={accessibilityLabel}
           activeOpacity={0.92}
           onPress={onPress}

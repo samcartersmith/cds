@@ -18,7 +18,7 @@ export const Icon = memo(
         bordered = false,
         name,
         title,
-        titleId,
+        labeledBy,
         ...props
       },
       ref
@@ -36,13 +36,13 @@ export const Icon = memo(
               className={iconStyles}
               xmlns="http://www.w3.org/2000/svg"
               role={role}
-              aria-labelledby={titleId}
+              aria-labelledby={labeledBy}
               viewBox={viewBox}
               width={iconSize}
               height={iconSize}
               preserveAspectRatio="none"
             >
-              {title ? <title id={titleId}>{title}</title> : null}
+              {title ? <title id={labeledBy}>{title}</title> : null}
               {paths.map((item, index) => (
                 <path key={`${name}-path-${index}`} d={item} fill={finalColor} />
               ))}

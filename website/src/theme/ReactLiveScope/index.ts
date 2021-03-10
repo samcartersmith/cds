@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { join } from '@cbhq/cds-common';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
@@ -18,6 +19,7 @@ const ReactLiveScope = {
   Text: CDSTypography.TextBody,
   lottieFiles,
   useStatusButtons,
+  join,
   ...React,
   ...CDSAnimation,
   ...CDSButtons,

@@ -11,7 +11,6 @@ export const interactable = css`
   user-select: none;
   text-decoration: none;
   margin: 0;
-  transition: transform 100ms;
   /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
   transform: scale(1);
   opacity: var(--interactable-opacity);

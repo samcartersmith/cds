@@ -11,7 +11,7 @@ module.exports = {
         'introduction/support',
         {
           type: 'category',
-          label: 'Designers Guide',
+          label: 'Designers guide',
           collapsed: true,
           items: [
             'introduction/designers-guide/intro',
@@ -43,11 +43,14 @@ module.exports = {
       items: [
         'components/box',
         'components/button',
+        'components/hstack',
         'components/icon-button',
         'components/icon',
         'components/lottie',
+        'components/spacer',
         'components/text',
         'components/theme-provider',
+        'components/vstack',
       ],
     },
     {

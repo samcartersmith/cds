@@ -9,50 +9,64 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 <ComponentDetails componentName="Box" templateName="intro" />
 
+## Usage
+
+<ComponentDetails componentName="Box" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Box" templateName="a11y" />
+
 ## Props
 
 ### alignContent
+
+Set the distribution of space between and around content items along the cross-axis.
 
 <ApiDetails
   componentName="Box"
   propertyName="alignContent"
   required={false}
-  defaultValue=""
+  defaultValue="flex-start"
   mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
   webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
 />
 
-<ComponentDetails componentName="Box" templateName="alignContent" />
+<ComponentDetails componentName="Box" templateName="alignContentProp" />
 
 ### alignItems
+
+Set the alignment of all direct children on the cross-axis.
 
 <ApiDetails
   componentName="Box"
   propertyName="alignItems"
   required={false}
-  defaultValue=""
+  defaultValue="stretch"
   mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
   webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
-<ComponentDetails componentName="Box" templateName="alignItems" />
+<ComponentDetails componentName="Box" templateName="alignItemsProp" />
 
 ### alignSelf
+
+Override the parents defined item alignment for this element alone.
 
 <ApiDetails
   componentName="Box"
   propertyName="alignSelf"
   required={false}
-  defaultValue=""
+  defaultValue="auto"
   mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
   webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
-<ComponentDetails componentName="Box" templateName="alignSelf" />
+<ComponentDetails componentName="Box" templateName="alignSelfProp" />
 
 ### animated <Badge variant="mobile" />
 
-If value is true then style prop can take animated values
+If value is `true` then style prop can take animated values.
 
 <ApiDetails
   componentName="Box"
@@ -63,9 +77,11 @@ If value is true then style prop can take animated values
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Box" templateName="animated" />
+<ComponentDetails componentName="Box" templateName="animatedProp" />
 
 ### as <Badge variant="web" />
+
+The semantic element to render the box as. Is necessary for accessibility support and assistive technologies.
 
 <ApiDetails
   componentName="Box"
@@ -76,7 +92,7 @@ If value is true then style prop can take animated values
   webOptions={['article', 'aside', 'div', 'footer', 'header', 'main', 'section']}
 />
 
-<ComponentDetails componentName="Box" templateName="as" />
+<ComponentDetails componentName="Box" templateName="asProp" />
 
 ### aspectRatio <Badge variant="mobile" />
 
@@ -91,11 +107,11 @@ Aspect ratio controls the size of the undefined dimension of a node. Aspect rati
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Box" templateName="aspectRatio" />
+<ComponentDetails componentName="Box" templateName="aspectRatioProp" />
 
 ### background
 
-Set the background color of the box.
+Set the background color of the box. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
 
 <ApiDetails
   componentName="Box"
@@ -109,6 +125,7 @@ Set the background color of the box.
     'negative',
     'positive',
     'primary',
+    'primaryWash',
     'secondary',
     'true',
   ]}
@@ -119,16 +136,17 @@ Set the background color of the box.
     'negative',
     'positive',
     'primary',
+    'primaryWash',
     'secondary',
     'true',
   ]}
 />
 
-<ComponentDetails componentName="Box" templateName="background" />
+<ComponentDetails componentName="Box" templateName="backgroundProp" />
 
 ### bordered
 
-Add a border around the box.
+Add a border around all sides of the box.
 
 <ApiDetails
   componentName="Box"
@@ -139,9 +157,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="bordered" />
+<ComponentDetails componentName="Box" templateName="borderedProp" />
 
 ### borderedBottom
+
+Add a border to the bottom side of the box.
 
 <ApiDetails
   componentName="Box"
@@ -152,9 +172,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="borderedBottom" />
+<ComponentDetails componentName="Box" templateName="borderedBottomProp" />
 
 ### borderedEnd
+
+Add a border to the trailing side of the box.
 
 <ApiDetails
   componentName="Box"
@@ -165,9 +187,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="borderedEnd" />
+<ComponentDetails componentName="Box" templateName="borderedEndProp" />
 
 ### borderedHorizontal
+
+Add a border to the leading and trailing sides of the box.
 
 <ApiDetails
   componentName="Box"
@@ -178,9 +202,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="borderedHorizontal" />
+<ComponentDetails componentName="Box" templateName="borderedHorizontalProp" />
 
 ### borderedStart
+
+Add a border to the leading side of the box.
 
 <ApiDetails
   componentName="Box"
@@ -191,9 +217,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="borderedStart" />
+<ComponentDetails componentName="Box" templateName="borderedStartProp" />
 
 ### borderedTop
+
+Add a border to the top side of the box.
 
 <ApiDetails
   componentName="Box"
@@ -204,9 +232,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="borderedTop" />
+<ComponentDetails componentName="Box" templateName="borderedTopProp" />
 
 ### borderedVertical
+
+Add a border to the top and bottom sides of the box.
 
 <ApiDetails
   componentName="Box"
@@ -217,9 +247,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="borderedVertical" />
+<ComponentDetails componentName="Box" templateName="borderedVerticalProp" />
 
 ### bottom
+
+Position the box to the bottom edge.
 
 <ApiDetails
   componentName="Box"
@@ -230,7 +262,7 @@ Add a border around the box.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="bottom" />
+<ComponentDetails componentName="Box" templateName="bottomProp" />
 
 ### children
 
@@ -265,7 +297,7 @@ Content to render within the box.
   ]}
 />
 
-<ComponentDetails componentName="Box" templateName="children" />
+<ComponentDetails componentName="Box" templateName="childrenProp" />
 
 ### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
 
@@ -280,7 +312,7 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="Box" templateName="dangerouslySetClassName" />
+<ComponentDetails componentName="Box" templateName="dangerouslySetClassNameProp" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -305,7 +337,7 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Box" templateName="dangerouslySetStyle" />
+<ComponentDetails componentName="Box" templateName="dangerouslySetStyleProp" />
 
 ### elevation <Badge variant="mobile" />
 
@@ -320,9 +352,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Box" templateName="elevation" />
+<ComponentDetails componentName="Box" templateName="elevationProp" />
 
 ### flexBasis
+
+Sets the initial main flex size.
 
 <ApiDetails
   componentName="Box"
@@ -333,9 +367,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="flexBasis" />
+<ComponentDetails componentName="Box" templateName="flexBasisProp" />
 
 ### flexDirection
+
+Order children on the main-axis in this direction.
 
 <ApiDetails
   componentName="Box"
@@ -346,9 +382,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
 />
 
-<ComponentDetails componentName="Box" templateName="flexDirection" />
+<ComponentDetails componentName="Box" templateName="flexDirectionProp" />
 
 ### flexGrow
+
+Set the grow factor of this flex item.
 
 <ApiDetails
   componentName="Box"
@@ -359,9 +397,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Box" templateName="flexGrow" />
+<ComponentDetails componentName="Box" templateName="flexGrowProp" />
 
 ### flexShrink
+
+Set the shrink factor of this flex item.
 
 <ApiDetails
   componentName="Box"
@@ -372,22 +412,26 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Box" templateName="flexShrink" />
+<ComponentDetails componentName="Box" templateName="flexShrinkProp" />
 
 ### flexWrap
+
+How should children wrap when overflowing.
 
 <ApiDetails
   componentName="Box"
   propertyName="flexWrap"
   required={false}
-  defaultValue=""
+  defaultValue="nowrap"
   mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
   webOptions={['nowrap', 'wrap', 'wrap-reverse']}
 />
 
-<ComponentDetails componentName="Box" templateName="flexWrap" />
+<ComponentDetails componentName="Box" templateName="flexWrapProp" />
 
 ### height
+
+Set a fixed height.
 
 <ApiDetails
   componentName="Box"
@@ -398,15 +442,17 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="height" />
+<ComponentDetails componentName="Box" templateName="heightProp" />
 
 ### justifyContent
+
+Set the distribution of space between and around content items along the main-axis.
 
 <ApiDetails
   componentName="Box"
   propertyName="justifyContent"
   required={false}
-  defaultValue=""
+  defaultValue="flex-start"
   mobileOptions={[
     'center',
     'flex-end',
@@ -418,9 +464,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
 />
 
-<ComponentDetails componentName="Box" templateName="justifyContent" />
+<ComponentDetails componentName="Box" templateName="justifyContentProp" />
 
 ### left
+
+Position the box to the left edge.
 
 <ApiDetails
   componentName="Box"
@@ -431,9 +479,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="left" />
+<ComponentDetails componentName="Box" templateName="leftProp" />
 
 ### maxHeight
+
+Set a maximum height.
 
 <ApiDetails
   componentName="Box"
@@ -444,9 +494,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="maxHeight" />
+<ComponentDetails componentName="Box" templateName="maxHeightProp" />
 
 ### maxWidth
+
+Set a maximum width.
 
 <ApiDetails
   componentName="Box"
@@ -457,9 +509,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="maxWidth" />
+<ComponentDetails componentName="Box" templateName="maxWidthProp" />
 
 ### minHeight
+
+Set a minimum height.
 
 <ApiDetails
   componentName="Box"
@@ -470,9 +524,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="minHeight" />
+<ComponentDetails componentName="Box" templateName="minHeightProp" />
 
 ### minWidth
+
+Set a minimum width.
 
 <ApiDetails
   componentName="Box"
@@ -483,9 +539,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="minWidth" />
+<ComponentDetails componentName="Box" templateName="minWidthProp" />
 
 ### offset
+
+Apply negative outer spacing on all sides.
 
 <ApiDetails
   componentName="Box"
@@ -496,9 +554,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="offset" />
+<ComponentDetails componentName="Box" templateName="offsetProp" />
 
 ### offsetBottom
+
+Apply negative outer spacing on the bottom side.
 
 <ApiDetails
   componentName="Box"
@@ -509,9 +569,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="offsetBottom" />
+<ComponentDetails componentName="Box" templateName="offsetBottomProp" />
 
 ### offsetEnd
+
+Apply negative outer spacing on the trailing side.
 
 <ApiDetails
   componentName="Box"
@@ -522,9 +584,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="offsetEnd" />
+<ComponentDetails componentName="Box" templateName="offsetEndProp" />
 
 ### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
 
 <ApiDetails
   componentName="Box"
@@ -535,9 +599,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="offsetHorizontal" />
+<ComponentDetails componentName="Box" templateName="offsetHorizontalProp" />
 
 ### offsetStart
+
+Apply negative outer spacing on the leading side.
 
 <ApiDetails
   componentName="Box"
@@ -548,9 +614,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="offsetStart" />
+<ComponentDetails componentName="Box" templateName="offsetStartProp" />
 
 ### offsetTop
+
+Apply negative outer spacing on the top side.
 
 <ApiDetails
   componentName="Box"
@@ -561,9 +629,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="offsetTop" />
+<ComponentDetails componentName="Box" templateName="offsetTopProp" />
 
 ### offsetVertical
+
+Apply negative outer spacing on the top and bottom sides.
 
 <ApiDetails
   componentName="Box"
@@ -574,9 +644,11 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="offsetVertical" />
+<ComponentDetails componentName="Box" templateName="offsetVerticalProp" />
 
 ### overflow
+
+Control how the content should overflow.
 
 <ApiDetails
   componentName="Box"
@@ -587,7 +659,7 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={['hidden', 'scroll', 'visible']}
 />
 
-<ComponentDetails componentName="Box" templateName="overflow" />
+<ComponentDetails componentName="Box" templateName="overflowProp" />
 
 ### pin
 
@@ -602,9 +674,11 @@ Direction in which to absolutely pin the box.
   webOptions={['all', 'bottom', 'left', 'right', 'top']}
 />
 
-<ComponentDetails componentName="Box" templateName="pin" />
+<ComponentDetails componentName="Box" templateName="pinProp" />
 
 ### position
+
+How to position the box within its parent.
 
 <ApiDetails
   componentName="Box"
@@ -615,9 +689,11 @@ Direction in which to absolutely pin the box.
   webOptions={['absolute', 'relative']}
 />
 
-<ComponentDetails componentName="Box" templateName="position" />
+<ComponentDetails componentName="Box" templateName="positionProp" />
 
 ### right
+
+Position the box to the right edge.
 
 <ApiDetails
   componentName="Box"
@@ -628,9 +704,11 @@ Direction in which to absolutely pin the box.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="right" />
+<ComponentDetails componentName="Box" templateName="rightProp" />
 
 ### role <Badge variant="web" />
+
+Semantic role whole using a non-semantic element.
 
 <ApiDetails
   componentName="Box"
@@ -641,7 +719,7 @@ Direction in which to absolutely pin the box.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="Box" templateName="role" />
+<ComponentDetails componentName="Box" templateName="roleProp" />
 
 ### rounded
 
@@ -656,9 +734,11 @@ Round the corners of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Box" templateName="rounded" />
+<ComponentDetails componentName="Box" templateName="roundedProp" />
 
 ### spacing
+
+Apply inner spacing on all sides.
 
 <ApiDetails
   componentName="Box"
@@ -669,9 +749,11 @@ Round the corners of the box.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="spacing" />
+<ComponentDetails componentName="Box" templateName="spacingProp" />
 
 ### spacingBottom
+
+Apply inner spacing on the bottom side.
 
 <ApiDetails
   componentName="Box"
@@ -682,9 +764,11 @@ Round the corners of the box.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="spacingBottom" />
+<ComponentDetails componentName="Box" templateName="spacingBottomProp" />
 
 ### spacingEnd
+
+Apply inner spacing on the trailing side.
 
 <ApiDetails
   componentName="Box"
@@ -695,9 +779,11 @@ Round the corners of the box.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="spacingEnd" />
+<ComponentDetails componentName="Box" templateName="spacingEndProp" />
 
 ### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
 
 <ApiDetails
   componentName="Box"
@@ -708,9 +794,11 @@ Round the corners of the box.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="spacingHorizontal" />
+<ComponentDetails componentName="Box" templateName="spacingHorizontalProp" />
 
 ### spacingStart
+
+Apply inner spacing on the leading side.
 
 <ApiDetails
   componentName="Box"
@@ -721,9 +809,11 @@ Round the corners of the box.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="spacingStart" />
+<ComponentDetails componentName="Box" templateName="spacingStartProp" />
 
 ### spacingTop
+
+Apply inner spacing on the top side.
 
 <ApiDetails
   componentName="Box"
@@ -734,9 +824,11 @@ Round the corners of the box.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="spacingTop" />
+<ComponentDetails componentName="Box" templateName="spacingTopProp" />
 
 ### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
 
 <ApiDetails
   componentName="Box"
@@ -747,9 +839,11 @@ Round the corners of the box.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Box" templateName="spacingVertical" />
+<ComponentDetails componentName="Box" templateName="spacingVerticalProp" />
 
 ### top
+
+Position the box to the top edge.
 
 <ApiDetails
   componentName="Box"
@@ -760,9 +854,11 @@ Round the corners of the box.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="top" />
+<ComponentDetails componentName="Box" templateName="topProp" />
 
 ### width
+
+Set a fixed width.
 
 <ApiDetails
   componentName="Box"
@@ -773,9 +869,11 @@ Round the corners of the box.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Box" templateName="width" />
+<ComponentDetails componentName="Box" templateName="widthProp" />
 
 ### zIndex
+
+Adjust the z-index positioning layer.
 
 <ApiDetails
   componentName="Box"
@@ -786,6 +884,6 @@ Round the corners of the box.
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Box" templateName="zIndex" />
+<ComponentDetails componentName="Box" templateName="zIndexProp" />
 
 <ComponentDetails componentName="Box" templateName="outro" />

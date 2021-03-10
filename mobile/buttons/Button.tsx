@@ -18,8 +18,6 @@ export interface ButtonProps extends ButtonBaseProps {
   feedback?: HapticFeedbackType;
   /** Event fired when the button is pressed. */
   onPress?: (event: GestureResponderEvent) => void;
-  /** @internal Testing purposes. */
-  testID?: string;
 }
 
 export const Button = React.memo(

@@ -9,7 +9,7 @@ export interface ButtonBaseProps {
   block?: boolean;
   /** Children to render within the button. */
   children: NonNullable<React.ReactNode>;
-  /** Reduce the inner spacing. */
+  /** Reduce the inner padding within the button itself. */
   compact?: boolean;
   /** Mark the button as disabled. */
   disabled?: boolean;
@@ -17,6 +17,11 @@ export interface ButtonBaseProps {
   loading?: boolean;
   /** Uniquely identify the button within a form. */
   name?: string;
+  /**
+   * Testing purposes.
+   * @internal
+   **/
+  testID?: string;
   /**
    * Toggle design and visual variants.
    * @default primary

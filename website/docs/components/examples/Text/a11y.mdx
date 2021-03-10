@@ -1,0 +1,15 @@
+All text components require an `as` prop that points to a semantic typography-based HTML element. This requires each callsite to be aware of any accessibility needs and to use the correct semantic element.
+
+```jsx
+<TextDisplay1 as="h1">Display</TextDisplay1>
+
+// If we want large text but no hierarchical meaning
+<TextDisplay1 as="p">Display</TextDisplay1>
+```
+
+For your convenience, we suggest the following elements and scenario pairs. However, this isn't a strict rule, as any text can use any element (as shown above).
+
+- `h1`-`h4` for hierarchical sections and headings.
+- `p` for blocks of text.
+- `time`, `abbr`, `sup`, etc, for granular semantics.
+- `span` when no semantics are required (within buttons for example).

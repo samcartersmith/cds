@@ -2,6 +2,6 @@ import React from 'react';
 
 import { Box, BoxProps } from './Box';
 
-export const HStack: React.FC<BoxProps> = props => <Box {...props} flexDirection="row" />;
+export type HStackProps = Omit<BoxProps, 'flexDirection'>;
 
-export type { BoxProps as HStackProps };
+export const HStack: React.FC<HStackProps> = props => <Box {...props} flexDirection="row" />;

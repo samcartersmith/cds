@@ -19,8 +19,8 @@ type IconSheetForSizeProps = {
 const elevation = css`
   line-height: 4em;
   text-align: center;
-  margin: 2em 4em;
   border: 1px solid grey;
+  border-radius: 4px;
   background: white;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
 `;
@@ -52,23 +52,27 @@ const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
     }
   }, [color]);
 
-  const searchOnChange = throttle((e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
+  const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
   }, 1000);
 
   return (
     <ThemeProvider>
-      <Box flexWrap="wrap" offsetStart={3}>
+      <Box flexWrap="wrap">
         {paletteForegrounds.map(item => (
-          <Box key={item} spacingStart={3} spacingBottom={2}>
-            <Button onPress={onPress(item)} variant={color === item ? 'primary' : 'secondary'}>
+          <Box key={item} spacingEnd={1} spacingBottom={1}>
+            <Button
+              compact
+              onPress={onPress(item)}
+              variant={color === item ? 'primary' : 'secondary'}
+            >
               {item}
             </Button>
           </Box>
         ))}
       </Box>
 
-      <Box flexWrap="wrap" offsetStart={3}>
+      <Box flexWrap="wrap" spacingVertical={2}>
         <input
           className={cx(elevation, searchBox)}
           onChange={searchOnChange}
@@ -79,7 +83,7 @@ const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
         />
       </Box>
 
-      <Box flexWrap="wrap" background={background} spacingBottom={3} offsetStart={3}>
+      <Box flexWrap="wrap" background={background} spacingTop={1} spacingBottom={3}>
         {iconNames
           .filter(name => name.includes(query))
           .map(filteredName => (

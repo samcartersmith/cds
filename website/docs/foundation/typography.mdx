@@ -69,7 +69,7 @@ Label and caption styles are when you need to add hierarchy in your content. The
 
 ## Styling
 
-### Italics & Bold emphasis
+### Italics & bold emphasis
 
 Italics and bold emphasis should generally be avoided at all times for a few reasons:
 
@@ -81,23 +81,23 @@ Italics and bold emphasis should generally be avoided at all times for a few rea
 
 ### Alignment
 
-We generally left align all text and only center text when absolutely necessary.
+We generally left align all text and only center text when absolutely necessary. We use `start` and `end` terminology to normalize between LTR and RTL languages.
 
 ```jsx live
 <ThemeProvider scale="xLarge">
-  <TextHeadline as="p" align="left">
+  <TextHeadline as="p" align="start">
     Left aligned
   </TextHeadline>
   <TextHeadline as="p" align="center">
     Center aligned
   </TextHeadline>
-  <TextHeadline as="p" align="right">
+  <TextHeadline as="p" align="end">
     Right aligned
   </TextHeadline>
 </ThemeProvider>
 ```
 
-### Wrapping & Truncation
+### Wrapping & truncation
 
 At Coinbase, we often have to display interfaces with text strings. We also support multiple languages, so even if a text string can display in English does not guarantee it to be displayed in other languages.
 
@@ -115,7 +115,7 @@ Displaying numbers to users is a critical part of interfaces at Coinbase. With t
 
 ```jsx live
 <ThemeProvider scale="xLarge">
-  <TextDisplay1 as="p" tnum>
+  <TextDisplay1 as="p" tabularNumbers>
     $16,210.33
   </TextDisplay1>
 </ThemeProvider>

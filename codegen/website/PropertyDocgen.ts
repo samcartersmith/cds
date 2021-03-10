@@ -11,6 +11,7 @@ export interface CustomPropItem extends PropItem {
 }
 
 const regexes = {
+  internal: /@internal([^\\\n]*)/,
   danger: /@danger([^\\\n]*)/,
   link: /@link([^\\\n]*)/,
   deprecated: /@deprecated([^\\\n]*)/,
@@ -83,6 +84,10 @@ export class PropertyDocgen {
     return contentCopy.replace(/\n/g, ' ');
   }
 
+  get internal() {
+    return this.extractDocgen('internal') ?? '';
+  }
+
   get danger() {
     return this.extractDocgen('danger') ?? '';
   }
@@ -93,15 +98,18 @@ export class PropertyDocgen {
 
   get badges() {
     const badgesCopy = [];
+
     if (this.status === 'isMobileOnly') {
       badgesCopy.push(`<Badge variant="mobile" />`);
     }
     if (this.status === 'isWebOnly') {
       badgesCopy.push(`<Badge variant="web" />`);
     }
-
     if (this.danger) {
       badgesCopy.push(`<Badge variant="danger" order={${badgesCopy.length + 1}} />`);
+    }
+    if (this.internal) {
+      badgesCopy.push(`<Badge variant="internal" order={${badgesCopy.length + 1}} />`);
     }
     if (this.docgen.description.includes('deprecated')) {
       badgesCopy.push(`<Badge variant="deprecated" order={${badgesCopy.length + 1}} />`);

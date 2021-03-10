@@ -12,7 +12,7 @@ export type OmitStyle<Props extends ComponentProps, ExtraProps extends string = 
 
 export interface DangerouslySetStyle<T, IsAnimated extends boolean = boolean> {
   /**
-   * If value is true then style prop can take animated values
+   * If value is `true` then style prop can take animated values.
    * @default false
    */
   animated?: IsAnimated;

@@ -32,7 +32,7 @@ export interface TextProps
     OmitStyle<RNTextProps, 'selectable'>,
     DangerouslySetStyle<TextStyle> {
   /**
-   * Text color. Accepts a valid PaletteForeground alias.
+   * Text color. Accepts a valid `PaletteForeground` alias.
    * @default foreground
    */
   color?: PaletteForeground;

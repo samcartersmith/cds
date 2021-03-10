@@ -9,6 +9,14 @@ import { ComponentDetails } from "@cbhq/cds-website/components/ComponentDetails"
 
 <ComponentDetails componentName="<%- data.componentName %>" templateName="intro" />
 
+## Usage
+
+<ComponentDetails componentName="<%- data.componentName %>" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="<%- data.componentName %>" templateName="a11y" />
+
 ## Props
 
 <%_ data.props.map(({ heading, name, description, link, defaultValue, required, danger, mobileOptions, webOptions }) => { _%>
@@ -31,7 +39,7 @@ import { ComponentDetails } from "@cbhq/cds-website/components/ComponentDetails"
   webOptions={<%- JSON.stringify(webOptions) %>}
 />
 
-<ComponentDetails componentName="<%- data.componentName %>" templateName="<%- name %>" />
+<ComponentDetails componentName="<%- data.componentName %>" templateName="<%- name %>Prop" />
 
 <% }) %>
 

@@ -1,6 +1,7 @@
 import type { PaletteForeground, IconBaseProps } from '@cbhq/cds-common';
 
 export interface IconProps extends IconBaseProps {
+  /** Color of the icon when used as a foreground. */
   color?: PaletteForeground;
   /**
    * Give the icon a description. It will show up in a tooltip after hovering over the icon for 3s.
@@ -10,7 +11,7 @@ export interface IconProps extends IconBaseProps {
   /**
    * If the icon is labelled by an independent element, then provide that element's id. This is
    * used to set the aria-labelledby value on the icon svg. If the `title` prop is also provided,
-   * then `titleId` will be used to set the id on the `<title>` element.
+   * then `labeledBy` will be used to set the id on the `<title>` element.
    */
-  titleId?: string;
+  labeledBy?: string;
 }

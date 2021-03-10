@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 
 const tableStyles = css`
   display: table;
@@ -27,6 +27,19 @@ const tableStyles = css`
   td {
     vertical-align: top;
   }
+
+  &.single-platform {
+    ul {
+      display: flex;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    li {
+      margin: 0;
+      margin-right: 8px;
+    }
+  }
 `;
 
 type ApiDetailsProps = {
@@ -50,6 +63,18 @@ export const ApiDetails = ({
 }: ApiDetailsProps) => {
   const formatOptions = React.useCallback(
     (options: string[]) => {
+      if (propertyName.includes('spacing') || propertyName.includes('offset')) {
+        return <code>{'0 - 10'}</code>;
+      } else if (propertyName === 'palette') {
+        return <code>{'PartialPaletteConfig'}</code>;
+      } else if (propertyName === 'dangerouslySetStyle') {
+        const styleType = componentName === 'Text' ? 'TextStyles' : 'ViewStyles';
+
+        return (
+          <code>{`StyleProp<${styleType}> | Animated.WithAnimatedValue<StyleProp<${styleType}>>`}</code>
+        );
+      }
+
       if (options.length === 2 && options.includes('true')) {
         return <code>boolean</code>;
       }
@@ -59,10 +84,11 @@ export const ApiDetails = ({
       }
 
       if (
-        propertyName.includes('spacing') ||
-        (componentName === 'Offset' && offsetSpacingProps.includes(propertyName))
+        options.length >= 1 &&
+        options.includes('ReactElement<any, string | JSXElementConstructor<any>>') &&
+        options.includes('ReactNodeArray')
       ) {
-        return <code>{'0 - 10'}</code>;
+        return <code>{'ReactNode'}</code>;
       }
 
       return (
@@ -83,16 +109,19 @@ export const ApiDetails = ({
   const stringifiedWebOptions = JSON.stringify(webOptions.sort());
   const stringifiedMobileOptions = JSON.stringify(mobileOptions.sort());
   const optionsAreEqual = stringifiedWebOptions === stringifiedMobileOptions;
+  const isSinglePlatform =
+    (webOptions.length > 0 && mobileOptions.length === 0) ||
+    (webOptions.length === 0 && mobileOptions.length > 0);
 
   return (
-    <table className={tableStyles}>
+    <table className={cx(tableStyles, (optionsAreEqual || isSinglePlatform) && 'single-platform')}>
       <thead>
         <tr>
           {optionsAreEqual && <th>Options</th>}
           {!optionsAreEqual && webOptions.length > 0 && <th>Web options</th>}
           {!optionsAreEqual && mobileOptions.length > 0 && <th>Mobile options</th>}
           {required && <th>Required</th>}
-          {defaultValue && <th>Default</th>}
+          {!!defaultValue && <th>Default</th>}
         </tr>
       </thead>
       <tbody>
@@ -101,7 +130,7 @@ export const ApiDetails = ({
           {!optionsAreEqual && webOptions.length > 0 && <td>{formattedWebOptions}</td>}
           {!optionsAreEqual && mobileOptions.length > 0 && <td>{formattedMobileOptions}</td>}
           {required && <td>{`${required}`}</td>}
-          {defaultValue && <td>{`${defaultValue}`}</td>}
+          {!!defaultValue && <td>{`${defaultValue}`}</td>}
         </tr>
       </tbody>
     </table>

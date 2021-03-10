@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+import { palette } from '@cbhq/cds-web/tokens';
 import { styled } from 'linaria/react';
 
 type BadgeVariant = keyof typeof badgePalettes;
@@ -12,11 +13,14 @@ const badgePalettes = {
   cds: 'blue50',
   product: 'pink40',
   deprecated: 'red60',
+  internal: 'gray40',
 } as const;
 
 const textOverrides = {
   cds: 'CDS owned',
   product: 'Product owned',
+  mobile: 'Mobile only',
+  web: 'Web only',
 } as Record<BadgeVariant, string>;
 
 type Props = {
@@ -24,7 +28,6 @@ type Props = {
   order?: number;
 };
 
-// TODO: Fix babel config to work with importing palette from cds/web package and interpolating below
 const BadgeContainer = styled.div<Props>`
   position: relative;
   text-transform: capitalize;
@@ -35,10 +38,10 @@ const BadgeContainer = styled.div<Props>`
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--primary-foreground);
+  color: ${palette.primaryForeground};
   padding: ${({ order = 1 }) => (order === 1 ? '2px 12px' : '2px 12px 2px 18px')};
   border-radius: 0 2px 2px 0;
-  background: var(--primary);
+  background: ${palette.primary};
 
   &:before {
     content: '';
@@ -47,7 +50,7 @@ const BadgeContainer = styled.div<Props>`
     left: -12px;
     border: 12px solid transparent;
     border-left-width: 0;
-    border-right-color: var(--primary);
+    border-right-color: ${palette.primary};
   }
   &:after {
     content: '';
@@ -57,7 +60,7 @@ const BadgeContainer = styled.div<Props>`
     width: 4px;
     height: 4px;
     border-radius: 2px;
-    background: var(--primary-foreground);
+    background: ${palette.primaryForeground};
   }
 `;
 

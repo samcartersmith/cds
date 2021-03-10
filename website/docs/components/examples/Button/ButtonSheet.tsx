@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 
 import { join } from '@cbhq/cds-common';
-import { VStack, HStack, Spacer } from '@cbhq/cds-web/layout';
 import { Button } from '@cbhq/cds-web/buttons/Button';
+import { VStack, HStack, Spacer } from '@cbhq/cds-web/layout';
 
 const variants = ['primary', 'secondary', 'positive', 'negative'] as const;
 
@@ -11,7 +11,7 @@ export const ButtonSheet = () => {
     return join(
       variants.map(item => (
         <Button block key={item} variant={item}>
-          {item}
+          {item.charAt(0).toUpperCase() + item.slice(1)}
         </Button>
       )),
       <Spacer spacingEnd={3} />

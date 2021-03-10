@@ -1,6 +1,10 @@
+export * as Box from './Box';
 export * as Button from './Button';
-export * as IconButton from './IconButton';
+export * as HStack from './HStack';
 export * as Icon from './Icon';
+export * as IconButton from './IconButton';
 export * as Lottie from './Lottie';
-export * as ThemeProvider from './ThemeProvider';
+export * as Spacer from './Spacer';
 export * as Text from './Text';
+export * as ThemeProvider from './ThemeProvider';
+export * as VStack from './VStack';

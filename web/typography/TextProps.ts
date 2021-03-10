@@ -6,7 +6,7 @@ export interface TextProps extends TextBaseProps {
    */
   readonly display?: 'block' | 'initial' | 'inline';
   /**
-   * Text color. Accepts a valid PaletteForeground alias.
+   * Foreground text color. Accepts a valid `PaletteForeground` alias.
    * @default foreground
    */
   readonly color?: PaletteForeground | 'currentColor';

@@ -9,11 +9,19 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 <ComponentDetails componentName="Text" templateName="intro" />
 
+## Usage
+
+<ComponentDetails componentName="Text" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Text" templateName="a11y" />
+
 ## Props
 
 ### align
 
-Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to left on Android.
+Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
 
 **[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) | [React Native docs](https://reactnative.dev/docs/text-style-props#textalign)**
 
@@ -26,11 +34,11 @@ Specifies text alignment. On mobile, the value `justify` is only supported on iO
   webOptions={['center', 'end', 'justify', 'start']}
 />
 
-<ComponentDetails componentName="Text" templateName="align" />
+<ComponentDetails componentName="Text" templateName="alignProp" />
 
 ### animated <Badge variant="mobile" />
 
-If value is true then style prop can take animated values
+If value is `true` then style prop can take animated values.
 
 <ApiDetails
   componentName="Text"
@@ -41,11 +49,11 @@ If value is true then style prop can take animated values
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Text" templateName="animated" />
+<ComponentDetails componentName="Text" templateName="animatedProp" />
 
 ### as <Badge variant="web" />
 
-Choose a semantic html element or a React component to be rendered. All native html attribute for that element will be available through the styled component.
+A semantic HTML element or a React component to be rendered. All native HTML attributes for that element will be available through the styled component.
 
 <ApiDetails
   componentName="Text"
@@ -56,11 +64,11 @@ Choose a semantic html element or a React component to be rendered. All native h
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Text" templateName="as" />
+<ComponentDetails componentName="Text" templateName="asProp" />
 
 ### color
 
-Text color. Accepts a valid PaletteForeground alias.
+Foreground text color. Accepts a valid `PaletteForeground` alias.
 
 <ApiDetails
   componentName="Text"
@@ -94,7 +102,22 @@ Text color. Accepts a valid PaletteForeground alias.
   ]}
 />
 
-<ComponentDetails componentName="Text" templateName="color" />
+<ComponentDetails componentName="Text" templateName="colorProp" />
+
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Text"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Text" templateName="dangerouslySetClassNameProp" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -107,11 +130,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   defaultValue=""
   mobileOptions={[
     'AnimatedInterpolation',
-    'RecursiveArray<Falsy | TextStyle | RegisteredStyle<TextStyle>>',
+    'RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>>',
     'RegisteredStyle<TextStyle>',
     'TextStyle',
     'Value',
-    'WithAnimatedArray<Falsy | TextStyle | RegisteredStyle<TextStyle> | RecursiveArray<Falsy | TextStyle | RegisteredStyle<TextStyle>> | readonly (Falsy | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
     'WithAnimatedObject<TextStyle>',
     'false',
     'null',
@@ -119,7 +142,7 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Text" templateName="dangerouslySetStyle" />
+<ComponentDetails componentName="Text" templateName="dangerouslySetStyleProp" />
 
 ### deprecatedLineHeight <Badge variant="mobile" /> <Badge variant="deprecated" order={2} />
 
@@ -134,7 +157,7 @@ Override line-height. This is deprecated since overriding this prevents line hei
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Text" templateName="deprecatedLineHeight" />
+<ComponentDetails componentName="Text" templateName="deprecatedLineHeightProp" />
 
 ### display <Badge variant="web" />
 
@@ -149,7 +172,7 @@ Set CSS display attribute.
   webOptions={['block', 'initial', 'inline']}
 />
 
-<ComponentDetails componentName="Text" templateName="display" />
+<ComponentDetails componentName="Text" templateName="displayProp" />
 
 ### ellipsize <Badge variant="mobile" />
 
@@ -166,7 +189,7 @@ Choose ellipsize mode.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Text" templateName="ellipsize" />
+<ComponentDetails componentName="Text" templateName="ellipsizeProp" />
 
 ### noWrap
 
@@ -183,7 +206,7 @@ Set text to be in a single line.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Text" templateName="noWrap" />
+<ComponentDetails componentName="Text" templateName="noWrapProp" />
 
 ### overflow <Badge variant="web" />
 
@@ -200,7 +223,7 @@ Set overflow behavior.
   webOptions={['clip', 'truncate']}
 />
 
-<ComponentDetails componentName="Text" templateName="overflow" />
+<ComponentDetails componentName="Text" templateName="overflowProp" />
 
 ### selectable
 
@@ -217,7 +240,7 @@ Set select behavior. On mobile, selectable is binary, none will be not selectabl
   webOptions={['all', 'none', 'text']}
 />
 
-<ComponentDetails componentName="Text" templateName="selectable" />
+<ComponentDetails componentName="Text" templateName="selectableProp" />
 
 ### slashedZero
 
@@ -234,9 +257,11 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Text" templateName="slashedZero" />
+<ComponentDetails componentName="Text" templateName="slashedZeroProp" />
 
 ### spacing
+
+Apply inner spacing on all sides.
 
 <ApiDetails
   componentName="Text"
@@ -247,9 +272,11 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Text" templateName="spacing" />
+<ComponentDetails componentName="Text" templateName="spacingProp" />
 
 ### spacingBottom
+
+Apply inner spacing on the bottom side.
 
 <ApiDetails
   componentName="Text"
@@ -260,9 +287,11 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Text" templateName="spacingBottom" />
+<ComponentDetails componentName="Text" templateName="spacingBottomProp" />
 
 ### spacingEnd
+
+Apply inner spacing on the trailing side.
 
 <ApiDetails
   componentName="Text"
@@ -273,9 +302,11 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Text" templateName="spacingEnd" />
+<ComponentDetails componentName="Text" templateName="spacingEndProp" />
 
 ### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
 
 <ApiDetails
   componentName="Text"
@@ -286,9 +317,11 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Text" templateName="spacingHorizontal" />
+<ComponentDetails componentName="Text" templateName="spacingHorizontalProp" />
 
 ### spacingStart
+
+Apply inner spacing on the leading side.
 
 <ApiDetails
   componentName="Text"
@@ -299,9 +332,11 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Text" templateName="spacingStart" />
+<ComponentDetails componentName="Text" templateName="spacingStartProp" />
 
 ### spacingTop
+
+Apply inner spacing on the top side.
 
 <ApiDetails
   componentName="Text"
@@ -312,9 +347,11 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Text" templateName="spacingTop" />
+<ComponentDetails componentName="Text" templateName="spacingTopProp" />
 
 ### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
 
 <ApiDetails
   componentName="Text"
@@ -325,7 +362,7 @@ Use character for number zero with a slash through it to differentiate it from t
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Text" templateName="spacingVertical" />
+<ComponentDetails componentName="Text" templateName="spacingVerticalProp" />
 
 ### tabularNumbers
 
@@ -342,7 +379,7 @@ Activates the set of figures where numbers are all of the same size, allowing th
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Text" templateName="tabularNumbers" />
+<ComponentDetails componentName="Text" templateName="tabularNumbersProp" />
 
 ### transform
 
@@ -359,11 +396,11 @@ Transform text to all uppercase, all lowercase, or capitalized.
   webOptions={['capitalize', 'lowercase', 'uppercase']}
 />
 
-<ComponentDetails componentName="Text" templateName="transform" />
+<ComponentDetails componentName="Text" templateName="transformProp" />
 
 ### underline
 
-Set text decoration.
+Set text decoration to underline.
 
 **[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)**
 
@@ -376,6 +413,6 @@ Set text decoration.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Text" templateName="underline" />
+<ComponentDetails componentName="Text" templateName="underlineProp" />
 
 <ComponentDetails componentName="Text" templateName="outro" />

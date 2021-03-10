@@ -9,22 +9,15 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 <ComponentDetails componentName="IconButton" templateName="intro" />
 
+## Usage
+
+<ComponentDetails componentName="IconButton" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="IconButton" templateName="a11y" />
+
 ## Props
-
-### accessibilityHint
-
-An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.
-
-<ApiDetails
-  componentName="IconButton"
-  propertyName="accessibilityHint"
-  required={false}
-  defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="IconButton" templateName="accessibilityHint" />
 
 ### accessibilityLabel
 
@@ -39,11 +32,11 @@ Full length accessibility label when the child text is not descriptive enough.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="accessibilityLabel" />
+<ComponentDetails componentName="IconButton" templateName="accessibilityLabelProp" />
 
 ### badge
 
-Number to show on top right corner of button
+Number to show on top right corner of button.
 
 <ApiDetails
   componentName="IconButton"
@@ -54,7 +47,7 @@ Number to show on top right corner of button
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="badge" />
+<ComponentDetails componentName="IconButton" templateName="badgeProp" />
 
 ### block
 
@@ -69,11 +62,11 @@ Change to block and expand to 100% of parent width.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="block" />
+<ComponentDetails componentName="IconButton" templateName="blockProp" />
 
 ### compact
 
-Reduce the inner spacing.
+Reduce the inner padding within the button itself.
 
 <ApiDetails
   componentName="IconButton"
@@ -84,7 +77,7 @@ Reduce the inner spacing.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="compact" />
+<ComponentDetails componentName="IconButton" templateName="compactProp" />
 
 ### disabled
 
@@ -99,24 +92,26 @@ Mark the button as disabled.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="disabled" />
+<ComponentDetails componentName="IconButton" templateName="disabledProp" />
 
 ### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
 
 <ApiDetails
   componentName="IconButton"
   propertyName="feedback"
   required={false}
-  defaultValue=""
+  defaultValue="none"
   mobileOptions={['heavy', 'light', 'none', 'normal']}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="IconButton" templateName="feedback" />
+<ComponentDetails componentName="IconButton" templateName="feedbackProp" />
 
 ### name
 
-Name of Icon.
+Name of the icon, as defined in Figma.
 
 <ApiDetails
   componentName="IconButton"
@@ -417,9 +412,11 @@ Name of Icon.
   ]}
 />
 
-<ComponentDetails componentName="IconButton" templateName="name" />
+<ComponentDetails componentName="IconButton" templateName="nameProp" />
 
 ### offset
+
+Apply negative outer spacing on all sides.
 
 <ApiDetails
   componentName="IconButton"
@@ -430,9 +427,11 @@ Name of Icon.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="offset" />
+<ComponentDetails componentName="IconButton" templateName="offsetProp" />
 
 ### offsetBottom
+
+Apply negative outer spacing on the bottom side.
 
 <ApiDetails
   componentName="IconButton"
@@ -443,9 +442,11 @@ Name of Icon.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="offsetBottom" />
+<ComponentDetails componentName="IconButton" templateName="offsetBottomProp" />
 
 ### offsetEnd
+
+Apply negative outer spacing on the trailing side.
 
 <ApiDetails
   componentName="IconButton"
@@ -456,9 +457,11 @@ Name of Icon.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="offsetEnd" />
+<ComponentDetails componentName="IconButton" templateName="offsetEndProp" />
 
 ### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
 
 <ApiDetails
   componentName="IconButton"
@@ -469,9 +472,11 @@ Name of Icon.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="offsetHorizontal" />
+<ComponentDetails componentName="IconButton" templateName="offsetHorizontalProp" />
 
 ### offsetStart
+
+Apply negative outer spacing on the leading side.
 
 <ApiDetails
   componentName="IconButton"
@@ -482,9 +487,11 @@ Name of Icon.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="offsetStart" />
+<ComponentDetails componentName="IconButton" templateName="offsetStartProp" />
 
 ### offsetTop
+
+Apply negative outer spacing on the top side.
 
 <ApiDetails
   componentName="IconButton"
@@ -495,9 +502,11 @@ Name of Icon.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="offsetTop" />
+<ComponentDetails componentName="IconButton" templateName="offsetTopProp" />
 
 ### offsetVertical
+
+Apply negative outer spacing on the top and bottom sides.
 
 <ApiDetails
   componentName="IconButton"
@@ -508,7 +517,7 @@ Name of Icon.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="offsetVertical" />
+<ComponentDetails componentName="IconButton" templateName="offsetVerticalProp" />
 
 ### onHover <Badge variant="web" />
 
@@ -523,9 +532,11 @@ Callback fired when the element is being hovered.
   webOptions={['OnHover']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="onHover" />
+<ComponentDetails componentName="IconButton" templateName="onHoverProp" />
 
 ### onLongPress <Badge variant="mobile" />
+
+Event fired when the button is held for a long period and pressed.
 
 <ApiDetails
   componentName="IconButton"
@@ -536,7 +547,7 @@ Callback fired when the element is being hovered.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="IconButton" templateName="onLongPress" />
+<ComponentDetails componentName="IconButton" templateName="onLongPressProp" />
 
 ### onPress
 
@@ -551,7 +562,7 @@ Callback fired after the element is pressed.
   webOptions={['OnPress<HTMLButtonElement>']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="onPress" />
+<ComponentDetails componentName="IconButton" templateName="onPressProp" />
 
 ### renderContainer <Badge variant="web" />
 
@@ -564,9 +575,11 @@ Callback fired after the element is pressed.
   webOptions={['(props: unknown) => Element']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="renderContainer" />
+<ComponentDetails componentName="IconButton" templateName="renderContainerProp" />
 
 ### spacing
+
+Apply inner spacing on all sides.
 
 <ApiDetails
   componentName="IconButton"
@@ -577,9 +590,11 @@ Callback fired after the element is pressed.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="spacing" />
+<ComponentDetails componentName="IconButton" templateName="spacingProp" />
 
 ### spacingBottom
+
+Apply inner spacing on the bottom side.
 
 <ApiDetails
   componentName="IconButton"
@@ -590,9 +605,11 @@ Callback fired after the element is pressed.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="spacingBottom" />
+<ComponentDetails componentName="IconButton" templateName="spacingBottomProp" />
 
 ### spacingEnd
+
+Apply inner spacing on the trailing side.
 
 <ApiDetails
   componentName="IconButton"
@@ -603,9 +620,11 @@ Callback fired after the element is pressed.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="spacingEnd" />
+<ComponentDetails componentName="IconButton" templateName="spacingEndProp" />
 
 ### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
 
 <ApiDetails
   componentName="IconButton"
@@ -616,9 +635,11 @@ Callback fired after the element is pressed.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="spacingHorizontal" />
+<ComponentDetails componentName="IconButton" templateName="spacingHorizontalProp" />
 
 ### spacingStart
+
+Apply inner spacing on the leading side.
 
 <ApiDetails
   componentName="IconButton"
@@ -629,9 +650,11 @@ Callback fired after the element is pressed.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="spacingStart" />
+<ComponentDetails componentName="IconButton" templateName="spacingStartProp" />
 
 ### spacingTop
+
+Apply inner spacing on the top side.
 
 <ApiDetails
   componentName="IconButton"
@@ -642,9 +665,11 @@ Callback fired after the element is pressed.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="spacingTop" />
+<ComponentDetails componentName="IconButton" templateName="spacingTopProp" />
 
 ### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
 
 <ApiDetails
   componentName="IconButton"
@@ -655,9 +680,11 @@ Callback fired after the element is pressed.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="spacingVertical" />
+<ComponentDetails componentName="IconButton" templateName="spacingVerticalProp" />
 
-### testID <Badge variant="mobile" />
+### testID <Badge variant="internal" order={1} />
+
+Testing purposes.
 
 <ApiDetails
   componentName="IconButton"
@@ -665,10 +692,10 @@ Callback fired after the element is pressed.
   required={false}
   defaultValue=""
   mobileOptions={['string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="testID" />
+<ComponentDetails componentName="IconButton" templateName="testIDProp" />
 
 ### variant
 
@@ -683,6 +710,6 @@ Toggle design and visual variants.
   webOptions={['primary', 'secondary']}
 />
 
-<ComponentDetails componentName="IconButton" templateName="variant" />
+<ComponentDetails componentName="IconButton" templateName="variantProp" />
 
 <ComponentDetails componentName="IconButton" templateName="outro" />

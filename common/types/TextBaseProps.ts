@@ -5,7 +5,7 @@ import { SpacingProps } from './SpacingProps';
 export interface TextBaseProps extends SpacingProps {
   children?: ReactChild | ReactFragment;
   /**
-   * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to left on Android.
+   * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) | [React Native docs](https://reactnative.dev/docs/text-style-props#textalign)
    * @default start
    */
@@ -29,7 +29,7 @@ export interface TextBaseProps extends SpacingProps {
    */
   selectable?: 'none' | 'text' | 'all';
   /**
-   * Set text decoration.
+   * Set text decoration to underline.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)
    * @default false
    */

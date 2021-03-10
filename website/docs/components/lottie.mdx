@@ -9,37 +9,45 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 <ComponentDetails componentName="Lottie" templateName="intro" />
 
+## Usage
+
+<ComponentDetails componentName="Lottie" templateName="usage" />
+
 ## Props
 
 ### alignItems
+
+Set the alignment of all direct children on the cross-axis.
 
 <ApiDetails
   componentName="Lottie"
   propertyName="alignItems"
   required={false}
-  defaultValue=""
+  defaultValue="stretch"
   mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
   webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="alignItems" />
+<ComponentDetails componentName="Lottie" templateName="alignItemsProp" />
 
 ### alignSelf
+
+Override the parents defined item alignment for this element alone.
 
 <ApiDetails
   componentName="Lottie"
   propertyName="alignSelf"
   required={false}
-  defaultValue=""
+  defaultValue="auto"
   mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
   webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="alignSelf" />
+<ComponentDetails componentName="Lottie" templateName="alignSelfProp" />
 
 ### animated <Badge variant="mobile" />
 
-If value is true then style prop can take animated values
+If value is `true` then style prop can take animated values.
 
 <ApiDetails
   componentName="Lottie"
@@ -50,7 +58,7 @@ If value is true then style prop can take animated values
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="animated" />
+<ComponentDetails componentName="Lottie" templateName="animatedProp" />
 
 ### autoplay
 
@@ -65,11 +73,11 @@ A boolean flag indicating whether or not the animation should start automaticall
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="autoplay" />
+<ComponentDetails componentName="Lottie" templateName="autoplayProp" />
 
 ### background
 
-Set the background color of the box.
+Set the background color of the box. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
 
 <ApiDetails
   componentName="Lottie"
@@ -83,6 +91,7 @@ Set the background color of the box.
     'negative',
     'positive',
     'primary',
+    'primaryWash',
     'secondary',
     'true',
   ]}
@@ -93,16 +102,17 @@ Set the background color of the box.
     'negative',
     'positive',
     'primary',
+    'primaryWash',
     'secondary',
     'true',
   ]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="background" />
+<ComponentDetails componentName="Lottie" templateName="backgroundProp" />
 
 ### bordered
 
-Add a border around the box.
+Add a border around all sides of the box.
 
 <ApiDetails
   componentName="Lottie"
@@ -113,9 +123,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="bordered" />
+<ComponentDetails componentName="Lottie" templateName="borderedProp" />
 
 ### borderedBottom
+
+Add a border to the bottom side of the box.
 
 <ApiDetails
   componentName="Lottie"
@@ -126,9 +138,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="borderedBottom" />
+<ComponentDetails componentName="Lottie" templateName="borderedBottomProp" />
 
 ### borderedEnd
+
+Add a border to the trailing side of the box.
 
 <ApiDetails
   componentName="Lottie"
@@ -139,9 +153,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="borderedEnd" />
+<ComponentDetails componentName="Lottie" templateName="borderedEndProp" />
 
 ### borderedHorizontal
+
+Add a border to the leading and trailing sides of the box.
 
 <ApiDetails
   componentName="Lottie"
@@ -152,9 +168,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="borderedHorizontal" />
+<ComponentDetails componentName="Lottie" templateName="borderedHorizontalProp" />
 
 ### borderedStart
+
+Add a border to the leading side of the box.
 
 <ApiDetails
   componentName="Lottie"
@@ -165,9 +183,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="borderedStart" />
+<ComponentDetails componentName="Lottie" templateName="borderedStartProp" />
 
 ### borderedTop
+
+Add a border to the top side of the box.
 
 <ApiDetails
   componentName="Lottie"
@@ -178,9 +198,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="borderedTop" />
+<ComponentDetails componentName="Lottie" templateName="borderedTopProp" />
 
 ### borderedVertical
+
+Add a border to the top and bottom sides of the box.
 
 <ApiDetails
   componentName="Lottie"
@@ -191,9 +213,11 @@ Add a border around the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="borderedVertical" />
+<ComponentDetails componentName="Lottie" templateName="borderedVerticalProp" />
 
 ### bottom
+
+Position the box to the bottom edge.
 
 <ApiDetails
   componentName="Lottie"
@@ -204,7 +228,7 @@ Add a border around the box.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="bottom" />
+<ComponentDetails componentName="Lottie" templateName="bottomProp" />
 
 ### children
 
@@ -239,7 +263,7 @@ Content to render within the box.
   ]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="children" />
+<ComponentDetails componentName="Lottie" templateName="childrenProp" />
 
 ### colorFilters <Badge variant="mobile" />
 
@@ -254,7 +278,7 @@ An array of layers you want to override its color filter.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="colorFilters" />
+<ComponentDetails componentName="Lottie" templateName="colorFiltersProp" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -279,9 +303,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="dangerouslySetStyle" />
+<ComponentDetails componentName="Lottie" templateName="dangerouslySetStyleProp" />
 
 ### flexBasis
+
+Sets the initial main flex size.
 
 <ApiDetails
   componentName="Lottie"
@@ -292,9 +318,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="flexBasis" />
+<ComponentDetails componentName="Lottie" templateName="flexBasisProp" />
 
 ### flexGrow
+
+Set the grow factor of this flex item.
 
 <ApiDetails
   componentName="Lottie"
@@ -305,9 +333,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="flexGrow" />
+<ComponentDetails componentName="Lottie" templateName="flexGrowProp" />
 
 ### flexShrink
+
+Set the shrink factor of this flex item.
 
 <ApiDetails
   componentName="Lottie"
@@ -318,7 +348,7 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="flexShrink" />
+<ComponentDetails componentName="Lottie" templateName="flexShrinkProp" />
 
 ### handlers <Badge variant="web" />
 
@@ -331,9 +361,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['LottieEventHandlersMap']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="handlers" />
+<ComponentDetails componentName="Lottie" templateName="handlersProp" />
 
 ### height
+
+Set a fixed height.
 
 <ApiDetails
   componentName="Lottie"
@@ -344,9 +376,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="height" />
+<ComponentDetails componentName="Lottie" templateName="heightProp" />
 
 ### left
+
+Position the box to the left edge.
 
 <ApiDetails
   componentName="Lottie"
@@ -357,7 +391,7 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="left" />
+<ComponentDetails componentName="Lottie" templateName="leftProp" />
 
 ### loop
 
@@ -372,9 +406,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="loop" />
+<ComponentDetails componentName="Lottie" templateName="loopProp" />
 
 ### maxHeight
+
+Set a maximum height.
 
 <ApiDetails
   componentName="Lottie"
@@ -385,9 +421,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="maxHeight" />
+<ComponentDetails componentName="Lottie" templateName="maxHeightProp" />
 
 ### maxWidth
+
+Set a maximum width.
 
 <ApiDetails
   componentName="Lottie"
@@ -398,9 +436,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="maxWidth" />
+<ComponentDetails componentName="Lottie" templateName="maxWidthProp" />
 
 ### minHeight
+
+Set a minimum height.
 
 <ApiDetails
   componentName="Lottie"
@@ -411,9 +451,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="minHeight" />
+<ComponentDetails componentName="Lottie" templateName="minHeightProp" />
 
 ### minWidth
+
+Set a minimum width.
 
 <ApiDetails
   componentName="Lottie"
@@ -424,9 +466,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="minWidth" />
+<ComponentDetails componentName="Lottie" templateName="minWidthProp" />
 
 ### offset
+
+Apply negative outer spacing on all sides.
 
 <ApiDetails
   componentName="Lottie"
@@ -437,9 +481,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="offset" />
+<ComponentDetails componentName="Lottie" templateName="offsetProp" />
 
 ### offsetBottom
+
+Apply negative outer spacing on the bottom side.
 
 <ApiDetails
   componentName="Lottie"
@@ -450,9 +496,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="offsetBottom" />
+<ComponentDetails componentName="Lottie" templateName="offsetBottomProp" />
 
 ### offsetEnd
+
+Apply negative outer spacing on the trailing side.
 
 <ApiDetails
   componentName="Lottie"
@@ -463,9 +511,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="offsetEnd" />
+<ComponentDetails componentName="Lottie" templateName="offsetEndProp" />
 
 ### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
 
 <ApiDetails
   componentName="Lottie"
@@ -476,9 +526,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="offsetHorizontal" />
+<ComponentDetails componentName="Lottie" templateName="offsetHorizontalProp" />
 
 ### offsetStart
+
+Apply negative outer spacing on the leading side.
 
 <ApiDetails
   componentName="Lottie"
@@ -489,9 +541,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="offsetStart" />
+<ComponentDetails componentName="Lottie" templateName="offsetStartProp" />
 
 ### offsetTop
+
+Apply negative outer spacing on the top side.
 
 <ApiDetails
   componentName="Lottie"
@@ -502,9 +556,11 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="offsetTop" />
+<ComponentDetails componentName="Lottie" templateName="offsetTopProp" />
 
 ### offsetVertical
+
+Apply negative outer spacing on the top and bottom sides.
 
 <ApiDetails
   componentName="Lottie"
@@ -515,7 +571,7 @@ A boolean flag indicating whether or not the animation should loop.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="offsetVertical" />
+<ComponentDetails componentName="Lottie" templateName="offsetVerticalProp" />
 
 ### onAnimationFinish
 
@@ -530,7 +586,7 @@ A callback function which will be called when animation is finished. Note that o
   webOptions={['() => void']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="onAnimationFinish" />
+<ComponentDetails componentName="Lottie" templateName="onAnimationFinishProp" />
 
 ### pin
 
@@ -545,9 +601,11 @@ Direction in which to absolutely pin the box.
   webOptions={['all', 'bottom', 'left', 'right', 'top']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="pin" />
+<ComponentDetails componentName="Lottie" templateName="pinProp" />
 
 ### position
+
+How to position the box within its parent.
 
 <ApiDetails
   componentName="Lottie"
@@ -558,7 +616,7 @@ Direction in which to absolutely pin the box.
   webOptions={['absolute', 'relative']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="position" />
+<ComponentDetails componentName="Lottie" templateName="positionProp" />
 
 ### progress <Badge variant="mobile" />
 
@@ -573,7 +631,7 @@ A number between 0 and 1, or an `Animated` number between 0 and 1. This number r
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="progress" />
+<ComponentDetails componentName="Lottie" templateName="progressProp" />
 
 ### resizeMode
 
@@ -588,9 +646,11 @@ Determines how to resize the animated view when the frame doesnt match the raw i
   webOptions={['center', 'contain', 'cover']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="resizeMode" />
+<ComponentDetails componentName="Lottie" templateName="resizeModeProp" />
 
 ### right
+
+Position the box to the right edge.
 
 <ApiDetails
   componentName="Lottie"
@@ -601,7 +661,7 @@ Determines how to resize the animated view when the frame doesnt match the raw i
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="right" />
+<ComponentDetails componentName="Lottie" templateName="rightProp" />
 
 ### rounded
 
@@ -616,7 +676,7 @@ Round the corners of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="rounded" />
+<ComponentDetails componentName="Lottie" templateName="roundedProp" />
 
 ### source
 
@@ -631,9 +691,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="source" />
+<ComponentDetails componentName="Lottie" templateName="sourceProp" />
 
 ### spacing
+
+Apply inner spacing on all sides.
 
 <ApiDetails
   componentName="Lottie"
@@ -644,9 +706,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="spacing" />
+<ComponentDetails componentName="Lottie" templateName="spacingProp" />
 
 ### spacingBottom
+
+Apply inner spacing on the bottom side.
 
 <ApiDetails
   componentName="Lottie"
@@ -657,9 +721,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="spacingBottom" />
+<ComponentDetails componentName="Lottie" templateName="spacingBottomProp" />
 
 ### spacingEnd
+
+Apply inner spacing on the trailing side.
 
 <ApiDetails
   componentName="Lottie"
@@ -670,9 +736,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="spacingEnd" />
+<ComponentDetails componentName="Lottie" templateName="spacingEndProp" />
 
 ### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
 
 <ApiDetails
   componentName="Lottie"
@@ -683,9 +751,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="spacingHorizontal" />
+<ComponentDetails componentName="Lottie" templateName="spacingHorizontalProp" />
 
 ### spacingStart
+
+Apply inner spacing on the leading side.
 
 <ApiDetails
   componentName="Lottie"
@@ -696,9 +766,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="spacingStart" />
+<ComponentDetails componentName="Lottie" templateName="spacingStartProp" />
 
 ### spacingTop
+
+Apply inner spacing on the top side.
 
 <ApiDetails
   componentName="Lottie"
@@ -709,9 +781,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="spacingTop" />
+<ComponentDetails componentName="Lottie" templateName="spacingTopProp" />
 
 ### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
 
 <ApiDetails
   componentName="Lottie"
@@ -722,9 +796,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="spacingVertical" />
+<ComponentDetails componentName="Lottie" templateName="spacingVerticalProp" />
 
 ### top
+
+Position the box to the top edge.
 
 <ApiDetails
   componentName="Lottie"
@@ -735,9 +811,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="top" />
+<ComponentDetails componentName="Lottie" templateName="topProp" />
 
 ### width
+
+Set a fixed width.
 
 <ApiDetails
   componentName="Lottie"
@@ -748,9 +826,11 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="width" />
+<ComponentDetails componentName="Lottie" templateName="widthProp" />
 
 ### zIndex
+
+Adjust the z-index positioning layer.
 
 <ApiDetails
   componentName="Lottie"
@@ -761,6 +841,6 @@ The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobil
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Lottie" templateName="zIndex" />
+<ComponentDetails componentName="Lottie" templateName="zIndexProp" />
 
 <ComponentDetails componentName="Lottie" templateName="outro" />

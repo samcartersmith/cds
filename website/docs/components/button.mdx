@@ -9,6 +9,14 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 <ComponentDetails componentName="Button" templateName="intro" />
 
+## Usage
+
+<ComponentDetails componentName="Button" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Button" templateName="a11y" />
+
 ## Props
 
 ### accessibilityLabel
@@ -24,7 +32,7 @@ Full length accessibility label when the child text is not descriptive enough.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="Button" templateName="accessibilityLabel" />
+<ComponentDetails componentName="Button" templateName="accessibilityLabelProp" />
 
 ### block
 
@@ -39,7 +47,7 @@ Change to block and expand to 100% of parent width.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Button" templateName="block" />
+<ComponentDetails componentName="Button" templateName="blockProp" />
 
 ### children
 
@@ -72,11 +80,11 @@ Children to render within the button.
   ]}
 />
 
-<ComponentDetails componentName="Button" templateName="children" />
+<ComponentDetails componentName="Button" templateName="childrenProp" />
 
 ### compact
 
-Reduce the inner spacing.
+Reduce the inner padding within the button itself.
 
 <ApiDetails
   componentName="Button"
@@ -87,7 +95,7 @@ Reduce the inner spacing.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Button" templateName="compact" />
+<ComponentDetails componentName="Button" templateName="compactProp" />
 
 ### disabled
 
@@ -102,7 +110,7 @@ Mark the button as disabled.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Button" templateName="disabled" />
+<ComponentDetails componentName="Button" templateName="disabledProp" />
 
 ### feedback <Badge variant="mobile" />
 
@@ -117,7 +125,7 @@ Haptic feedback to trigger when being pressed.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Button" templateName="feedback" />
+<ComponentDetails componentName="Button" templateName="feedbackProp" />
 
 ### loading
 
@@ -132,7 +140,7 @@ Mark the button as loading and display a spinner.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Button" templateName="loading" />
+<ComponentDetails componentName="Button" templateName="loadingProp" />
 
 ### name
 
@@ -147,7 +155,7 @@ Uniquely identify the button within a form.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="Button" templateName="name" />
+<ComponentDetails componentName="Button" templateName="nameProp" />
 
 ### onHover <Badge variant="web" />
 
@@ -162,7 +170,7 @@ Callback fired when the element is being hovered.
   webOptions={['OnHover']}
 />
 
-<ComponentDetails componentName="Button" templateName="onHover" />
+<ComponentDetails componentName="Button" templateName="onHoverProp" />
 
 ### onPress
 
@@ -177,11 +185,11 @@ Callback fired after the element is pressed.
   webOptions={['OnPress<HTMLButtonElement>']}
 />
 
-<ComponentDetails componentName="Button" templateName="onPress" />
+<ComponentDetails componentName="Button" templateName="onPressProp" />
 
-### testID <Badge variant="mobile" />
+### testID
 
-@internal Testing purposes.
+Testing purposes.
 
 <ApiDetails
   componentName="Button"
@@ -189,10 +197,10 @@ Callback fired after the element is pressed.
   required={false}
   defaultValue=""
   mobileOptions={['string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
-<ComponentDetails componentName="Button" templateName="testID" />
+<ComponentDetails componentName="Button" templateName="testIDProp" />
 
 ### variant
 
@@ -207,6 +215,6 @@ Toggle design and visual variants.
   webOptions={['negative', 'positive', 'primary', 'secondary']}
 />
 
-<ComponentDetails componentName="Button" templateName="variant" />
+<ComponentDetails componentName="Button" templateName="variantProp" />
 
 <ComponentDetails componentName="Button" templateName="outro" />

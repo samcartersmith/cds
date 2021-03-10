@@ -9,14 +9,38 @@ export type FlexAlignCommon = FlexAxisValue | 'stretch';
 export type FlexSpaceCommon = 'space-between' | 'space-around';
 
 export interface FlexStyles {
+  /**
+   * Set the distribution of space between and around content items along the cross-axis.
+   * @default flex-start
+   */
   alignContent?: FlexAlignCommon | FlexSpaceCommon;
+  /**
+   * Set the alignment of all direct children on the cross-axis.
+   * @default stretch
+   */
   alignItems?: FlexAlignCommon | 'baseline';
+  /**
+   * Override the parent's defined item alignment for this element alone.
+   * @default auto
+   */
   alignSelf?: FlexAlignCommon | 'auto' | 'baseline';
+  /** Sets the initial main flex size. */
   flexBasis?: number | string;
+  /** Order children on the main-axis in this direction. */
   flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+  /** Set the grow factor of this flex item. */
   flexGrow?: number;
+  /** Set the shrink factor of this flex item. */
   flexShrink?: number;
+  /**
+   * How should children wrap when overflowing.
+   * @default nowrap
+   **/
   flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  /**
+   * Set the distribution of space between and around content items along the main-axis.
+   * @default flex-start
+   **/
   justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
 }
 
@@ -38,7 +62,7 @@ export interface PositionStyles {
 }
 
 export interface BorderedStyles {
-  /** Add a border around the box. */
+  /** Add a border around all sides of the box. */
   bordered?: boolean;
   /** Add a border to the top side of the box. */
   borderedTop?: boolean;
@@ -61,7 +85,10 @@ export interface BoxBaseProps
     SpacingProps,
     PositionStyles,
     BorderedStyles {
-  /** Set the background color of the box. */
+  /**
+   * Set the background color of the box. Passing `true` will enable the default background,
+   * otherwise a custom palette alias can be passed.
+   **/
   background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
   /** Content to render within the box. */
   children?: React.ReactNode;

@@ -8,7 +8,7 @@ import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
 import { buildTemplates } from './utils/buildTemplates';
-import { docgen } from './website/docgen';
+import { docs, docsSimple } from './website/docgen';
 import { updateTextStylesTable } from './website/updateTextStylesTable';
 
 (async function () {
@@ -96,7 +96,8 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         },
       },
     ],
-    'docgen.ejs': docgen,
+    'docgen.ejs': docs,
+    'docgenSimple.ejs': docsSimple,
     'typescript.ejs': TypeScript,
   };
 
