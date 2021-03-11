@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = () => {
   return {
     name: 'cds-docusaurus-ts-linaria-plugin',

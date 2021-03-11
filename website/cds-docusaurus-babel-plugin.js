@@ -1,5 +1,3 @@
-const path = require('path');
-
 const {
   addRootModeUpwardToBabelLoaders,
 } = require('../../../shared/utils/webpack/addRootModeUpwardToBabelLoaders');
