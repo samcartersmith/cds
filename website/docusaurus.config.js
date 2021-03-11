@@ -60,8 +60,8 @@ module.exports = {
           title: 'Prototypes',
           items: [
             {
-              label: 'Navigation',
-              href: 'navigation',
+              label: 'Navigation (Without tabs)',
+              href: 'navigation-without-tabs',
             },
           ],
         },

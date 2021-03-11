@@ -39,7 +39,7 @@ export const Logo = memo(({ name = 'symbol', variant = 'primary' }: LogoProps) =
       position="relative"
       width={wrapperSize}
       height={wrapperSize}
-      spacing={3}
+      spacing={1}
       background={variant}
       alignItems="center"
       justifyContent="center"

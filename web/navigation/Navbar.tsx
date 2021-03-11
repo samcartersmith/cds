@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-import { join } from '@cbhq/cds-common';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { join } from '@cbhq/cds-common/utils/join';
 import { emptyArray } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';
@@ -28,7 +28,7 @@ export const Navbar = memo(
     trailing = emptyArray,
   }: NavbarProps) => {
     return (
-      <HStack alignItems="center" justifyContent="space-between" spacing={gutter}>
+      <HStack alignItems="flex-start" justifyContent="space-between" spacing={gutter}>
         <HStack alignItems="baseline">
           {leading.length > 0 && (
             <Box spacingEnd={3} alignItems="center" justifyContent="space-between">

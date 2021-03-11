@@ -106,3 +106,6 @@ export interface PressEvent<T = HTMLElement> {
 
 export type OnPress<T> = (event: PressEvent<T>) => void;
 export type OnHover = (isHovering: boolean) => void;
+
+// REACT
+export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;

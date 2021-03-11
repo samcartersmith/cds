@@ -1,8 +1,11 @@
 import { css } from 'linaria';
 
-// Override docusaurus default hover styles
-export const navigationStyles = css`
+export const appContent = css`
+  height: 150vh;
   a:hover {
     text-decoration: none;
+  }
+  img {
+    width: 100%;
   }
 `;

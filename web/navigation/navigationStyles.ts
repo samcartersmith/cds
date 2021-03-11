@@ -1,33 +1,68 @@
-import { css } from 'linaria';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { css, cx } from 'linaria';
 
+import { devices } from '../layout/responsive';
+import * as spacingStyles from '../styles/padding';
 import { palette } from '../tokens';
+import { sidebarWidth } from './navigationTokens';
 
-export const app = css`
+export const rootStyles = css`
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-columns: 237px 3fr;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: ${sidebarWidth.expanded}px auto;
+
+  @media (${devices.tablet}) {
+    grid-template-columns: ${sidebarWidth.condensed}px auto;
+  }
 `;
 
-// TODO: add responsive styles
-export const sidebar = '';
+export const stickyPositionStyles = css`
+  position: sticky;
+  z-index: ${zIndex.navbar};
+`;
 
-export const content = css`
+export const navbarAndTitleSectionStyles = css`
+  position: relative;
   overflow-y: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
+
+export const navbarStyles = cx(
+  css`
+    top: 0;
+    width: 100%;
+    background-color: ${palette.background};
+    display: flex;
+    align-items: flex-start;
+    justify-content: 'space-between';
+  `,
+  stickyPositionStyles,
+  spacingStyles.left[gutter],
+  spacingStyles.right[gutter],
+  spacingStyles.top[gutter],
+  spacingStyles.bottom[gutter]
+);
+
+export const displayTitleStyles = cx(
+  spacingStyles.top[4],
+  spacingStyles.left[4],
+  spacingStyles.right[4]
+);
+
+export const appContentStyles = cx(spacingStyles.left[4], spacingStyles.right[4]);
 
 export const sidebarItemStyles = css`
-  border: none;
-  background-color: transparent;
+  white-space: nowrap;
+`;
 
-  &::before,
-  &::after {
-    border: 1px solid ${palette.background};
-    border-radius: 8px;
-  }
-
-  &::before {
-    background-color: ${palette.background};
+export const hideForCondensedStyles = css`
+  @media (${devices.tablet}) {
+    visibility: hidden;
   }
 `;

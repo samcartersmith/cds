@@ -1,71 +1,99 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { IconName } from '@cbhq/cds-common';
+import { emptyObject } from '@cbhq/cds-utils';
 import { cx } from 'linaria';
+import { mergeProps } from 'react-aria';
 
-import { useInteractable, InteractableProps } from '../hooks/useInteractable';
+import { useInteractable, InteractableProps } from '../buttons/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';
+import { Box } from '../layout/Box';
+import { useTooltip } from '../overlays/useTooltip';
 import { getFlexStyles } from '../styles/flexStyles';
 import { TextHeadline } from '../typography/TextHeadline';
-import { sidebarItemStyles } from './navigationStyles';
+import { hideForCondensedStyles, sidebarItemStyles } from './navigationStyles';
+import { iconContainerSize } from './navigationTokens';
+import { useSidebarLayout } from './SidebarLayoutProvider';
 
-interface SidebarItemProps<T extends unknown = unknown>
-  extends InteractableProps<HTMLAnchorElement> {
+export interface SidebarItemProps extends InteractableProps<HTMLAnchorElement> {
   active?: boolean;
   icon?: IconName;
-  label?: string;
-  renderContainer?: (props: T) => JSX.Element;
+  label: string;
+  renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
 }
 
-export const SidebarItem = ({
-  renderContainer,
-  active,
-  icon,
-  label,
-  onHover,
-  onPress,
-}: SidebarItemProps) => {
-  const color = active ? 'primary' : 'foreground';
-  // TODO: Replace with context
-  const layout = 'expanded';
-  const flexStyles = getFlexStyles({
-    flexDirection: 'row',
-    alignItems: 'center',
-  });
-  const spacingStyles = useSpacingStyles({
-    spacingHorizontal: 3,
-    spacingVertical: 2,
-  });
+export const SidebarItem = memo(
+  ({ renderContainer, active, icon, label, onHover, onPress }: SidebarItemProps) => {
+    const sidebarLayout = useSidebarLayout();
+    const isExpanded = sidebarLayout === 'expanded';
 
-  const { props, className, style } = useInteractable({
-    backgroundColor: 'secondary',
-    elementType: 'a',
-    onHover,
-    onPress,
-  });
+    const { tooltipProps, tooltipRef, tooltip } = useTooltip({
+      content: label,
+      placement: 'right',
+    });
 
-  const sidebarContent = (
-    <>
-      {icon ? <Icon name={icon} size="m" color={color} /> : null}
-      {layout === 'expanded' && (
-        <TextHeadline as="p" color={color} spacingStart={3}>
-          {label}
-        </TextHeadline>
-      )}
-    </>
-  );
+    const color = active ? 'primary' : 'foreground';
+    const flexStyles = getFlexStyles({
+      flexDirection: 'row',
+      alignItems: 'center',
+    });
+    const spacingStyles = useSpacingStyles({
+      spacing: 1,
+    });
 
-  const enhancedProps = {
-    ...props,
-    style,
-    className: cx(flexStyles, spacingStyles, sidebarItemStyles, className),
-    children: sidebarContent,
-  } as const;
+    const { props, className, style } = useInteractable({
+      backgroundColor: 'secondary',
+      borderColor: 'secondary',
+      borderRadius: 'standard',
+      elementType: 'a',
+      scaleOnPress: true,
+      onHover,
+      onPress,
+    });
 
-  if (renderContainer) {
-    return renderContainer(enhancedProps);
-  } else {
-    return React.createElement('a', enhancedProps);
+    const sidebarContent = (
+      <>
+        {icon && (
+          <Box
+            width={iconContainerSize}
+            height={iconContainerSize}
+            alignItems="center"
+            justifyContent="center"
+            flexShrink={0}
+          >
+            <Icon name={icon} size="s" color={color} />
+          </Box>
+        )}
+        <div className={hideForCondensedStyles}>
+          <TextHeadline as="p" color={color} spacingStart={1}>
+            {label}
+          </TextHeadline>
+        </div>
+      </>
+    );
+
+    const enhancedProps = mergeProps(
+      {
+        ...props,
+        style,
+        className: cx(flexStyles, spacingStyles, sidebarItemStyles, className),
+        children: sidebarContent,
+      },
+      isExpanded ? emptyObject : { ref: tooltipRef, ...tooltipProps }
+    );
+
+    const content = renderContainer
+      ? renderContainer(enhancedProps)
+      : React.createElement('a', enhancedProps);
+
+    return (
+      <>
+        {content}
+        {tooltip}
+      </>
+    );
   }
-};
+);
+
+SidebarItem.displayName = 'SidebarItem';
