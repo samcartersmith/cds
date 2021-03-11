@@ -227,7 +227,7 @@ export const closeLight = {
   viewBox: '0 0 24 24',
 };
 
-export const collaspe = {
+export const collapse = {
   paths: [
     'M15 7.51L22.58 0 24 1.42l-7.59 7.5H22v2h-9v-9h2v5.59zm-6 8.98L1.42 24 0 22.58l7.59-7.5H2v-2h9v9H9v-5.59z',
   ],

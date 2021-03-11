@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58079,
+  lastUnicode: 58084,
   unicodeMap: {
     cashUSDHeavy: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBPHeavy: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -54,13 +54,6 @@ export const manifest = {
       '32': 'uE090',
     },
     sortDownHeavy: { '8': 'uE091', '12': 'uE092', '16': 'uE093', '24': 'uE094', '32': 'uE095' },
-    doubeChevronRightHeavy: {
-      '8': 'uE096',
-      '12': 'uE097',
-      '16': 'uE098',
-      '24': 'uE099',
-      '32': 'uE09A',
-    },
     indentityCardHeavy: {
       '8': 'uE09B',
       '12': 'uE09C',
@@ -298,7 +291,7 @@ export const manifest = {
     hamburger: { '8': 'uE2C6', '12': 'uE2C7', '16': 'uE2C8', '24': 'uE2C9', '32': 'uE2CA' },
     closeCaption: { '8': 'uE2CB', '12': 'uE2CC', '16': 'uE2CD', '24': 'uE2CE', '32': 'uE2CF' },
     expand: { '8': 'uE2D0', '12': 'uE2D1', '16': 'uE2D2', '24': 'uE2D3', '32': 'uE2D4' },
-    collaspe: { '8': 'uE2D5', '12': 'uE2D6', '16': 'uE2D7', '24': 'uE2D8', '32': 'uE2D9' },
+    collapse: { '8': 'uE2D5', '12': 'uE2D6', '16': 'uE2D7', '24': 'uE2D8', '32': 'uE2D9' },
     pay: { '8': 'uE2DA', '12': 'uE2DB', '16': 'uE2DC', '24': 'uE2DD', '32': 'uE2DE' },
   },
 };

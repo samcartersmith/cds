@@ -41,7 +41,7 @@ export const iconNames = [
   'closeCaption',
   'closeHeavy',
   'closeLight',
-  'collaspe',
+  'collapse',
   'copyLight',
   'documentHeavy',
   'dotHeavy',

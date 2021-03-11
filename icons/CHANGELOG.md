@@ -35,3 +35,4 @@ All notable changes to this project will be documented in this file.
 - Generate CDS Icons from figma by @hannah-jin [#7152](https://github.cbhq.net/mono/repo/pull/7152)
 - Improve icon story and pass through props in Icon components by @hannah-jin [#8280](https://github.cbhq.net/mono/repo/pull/8280)
 - Replace `useScale` to pull from `@cbhq/cds-theme` package @katherinemartinez [#10685](https://github.cbhq.net/mono/repo/pull/10685)
+- Replace `collaspe` with `collapse` icon. Removed duplicated and mispelled `doubeChevronRight` icon @jennifer-liu

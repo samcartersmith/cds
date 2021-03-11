@@ -41,7 +41,7 @@ export type IconName =
   | 'closeCaption'
   | 'closeHeavy'
   | 'closeLight'
-  | 'collaspe'
+  | 'collapse'
   | 'copyLight'
   | 'documentHeavy'
   | 'dotHeavy'
