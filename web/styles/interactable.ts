@@ -1,10 +1,7 @@
-// import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { css } from 'linaria';
 
 import { palette } from '../tokens';
-
-// TODO: Fix when we can do deep imports in common
-const opacityDisabled = 0.38;
 
 export const interactable = css`
   position: relative;

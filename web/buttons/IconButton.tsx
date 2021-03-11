@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 
-import { IconButtonBaseProps, useButtonVariant } from '@cbhq/cds-common';
+import { IconButtonBaseProps } from '@cbhq/cds-common';
+import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { cx } from 'linaria';
 
 import * as buttonStyles from '../buttons/buttonStyles';

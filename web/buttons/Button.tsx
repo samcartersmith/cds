@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import { useButtonVariant } from '@cbhq/cds-common';
+import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { cx } from 'linaria';
 import { mergeProps } from 'react-aria';
 

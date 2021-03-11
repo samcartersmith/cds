@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
+import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
+import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
@@ -53,7 +55,7 @@ export const Button = React.memo(
       >
         <PressableHighlight
           accessibilityHint={accessibilityLabel}
-          activeOpacity={0.92}
+          activeOpacity={opacityPressed[0]}
           disabled={disabled || loading}
           feedback={feedback}
           onPress={onPress}
@@ -86,11 +88,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     height: 56,
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: borderRadius.standard,
     borderStyle: 'solid',
   },
   buttonCompact: {
-    borderRadius: 4,
+    borderRadius: borderRadius.compact,
     width: 'auto',
     height: 36,
   },
@@ -103,15 +105,14 @@ const styles = StyleSheet.create({
     maxWidth: '100%',
   },
   disabled: {
-    // TODO use shared tokens
-    opacity: 0.38,
+    opacity: opacityDisabled,
   },
   pressable: {
-    borderRadius: 8,
+    borderRadius: borderRadius.standard,
     overflow: 'hidden',
   },
   pressableCompact: {
-    borderRadius: 4,
+    borderRadius: borderRadius.compact,
     overflow: 'hidden',
   },
 });

@@ -42,7 +42,11 @@ filegroup(
 
 cds_package(
     name = "web",
-    srcs = [":runtime_source"],
+    srcs = [
+        ":runtime_source",
+        # Required for CSS token interpolation
+        "//eng/shared/design-system/common:runtime_source",
+    ],
     cds_dependencies = [
         "common",
         "fonts",

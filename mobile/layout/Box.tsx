@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { BoxBaseProps, ElevationLevels } from '@cbhq/cds-common';
+import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
@@ -167,7 +168,7 @@ export const Box = React.memo(
       }
 
       if (rounded) {
-        style.borderRadius = 8;
+        style.borderRadius = borderRadius.standard;
       }
 
       return style;

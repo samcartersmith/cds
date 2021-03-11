@@ -7,9 +7,8 @@ import {
   PaletteValue,
   SpectrumHueStep,
   usePaletteConfig,
-  opacityHovered,
-  opacityPressed,
 } from '@cbhq/cds-common';
+import { opacityHovered, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { AriaButtonProps } from '@react-types/button';
 import { cx } from 'linaria';
 import { useButton, useHover } from 'react-aria';

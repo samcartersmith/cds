@@ -1,12 +1,11 @@
-// import { borderRadius } from '@cbhq/cds-common';
+import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { css } from 'linaria';
 
 import { palette } from '../tokens';
 
-// TODO: Common deep imports
 export const container = css`
   background-color: ${palette.foreground};
-  border-radius: 12px;
+  border-radius: ${borderRadius.tooltip};
   z-index: 1000;
   min-height: 24px;
   align-items: center;

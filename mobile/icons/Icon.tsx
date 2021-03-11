@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
-import { PaletteForeground, useIconSize } from '@cbhq/cds-common';
+import { PaletteForeground } from '@cbhq/cds-common';
+import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import { Animated, Text } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';

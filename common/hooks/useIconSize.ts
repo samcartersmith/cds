@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { useScale } from './scale/useScale';
-import type { IconSize, IconPixelSize, Scale } from './types';
+import { useScale } from '../scale/useScale';
+import type { IconSize, IconPixelSize, Scale } from '../types';
 
 type IconScaleMap = Record<IconSize, IconPixelSize>;
 

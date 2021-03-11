@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { useIconSize } from '@cbhq/cds-common';
+import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import { css } from 'linaria';
 
 import { usePalette } from '../hooks/usePalette';

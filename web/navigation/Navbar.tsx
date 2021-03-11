@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
-import { join, gutter } from '@cbhq/cds-common';
+import { join } from '@cbhq/cds-common';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { emptyArray } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';

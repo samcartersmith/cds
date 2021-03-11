@@ -6,13 +6,12 @@ const linariaConfig = require('../../linaria.config');
 const linariaCssExtractPlugin = require('./linariaCssExtractPlugin');
 
 module.exports = (babel, options, cwd) => {
-  const preset = linariaPreset(babel, { ...options, ...linariaConfig }, cwd);
-
   // If we're not building a package, we can skip the extraction plugin
   if (!babel.env('package')) {
-    return preset;
+    return {};
   }
 
+  const preset = linariaPreset(babel, { ...options, ...linariaConfig }, cwd);
   const linariaPlugin = [
     linariaCssExtractPlugin,
     {

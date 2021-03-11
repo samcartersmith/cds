@@ -1,8 +1,5 @@
-// import { tapTarget } from '@cbhq/cds-common/tokens/sizing';
+import { tapTarget } from '@cbhq/cds-common/tokens/sizing';
 import { css } from 'linaria';
-
-// TODO: Common deep imports
-const tapTarget = 40;
 
 export const button = css`
   display: inline-flex;

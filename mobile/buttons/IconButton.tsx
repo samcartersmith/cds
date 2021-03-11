@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { IconButtonBaseProps } from '@cbhq/cds-common';
+import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
 
 import { PressableHighlight } from '../buttons/PressableHighlight';
@@ -59,7 +60,7 @@ export const IconButton: React.FC<IconButtonProps> = React.memo(
         <PressableHighlight
           accessibilityHint={accessibilityLabel}
           accessibilityLabel={accessibilityLabel}
-          activeOpacity={0.92}
+          activeOpacity={opacityPressed[0]}
           onPress={onPress}
           onPressIn={pressIn}
           onPressOut={pressOut}
@@ -95,6 +96,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   disabled: {
-    opacity: 0.38,
+    opacity: opacityDisabled,
   },
 });

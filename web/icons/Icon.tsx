@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 
-import { useIconSize } from '@cbhq/cds-common';
+import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 
 import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
