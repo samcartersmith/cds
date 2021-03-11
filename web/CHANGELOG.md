@@ -6,8 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat: Add useDimensions hook @katherinemartinez [#14587](https://github.cbhq.net/mono/repo/pull/14587)
-- feat: Have tokens.ts codegenerated. Add new useInteractable hook to buttons @katherinemartinez [#14548](https://github.cbhq.net/mono/repo/pull/14548)
+## 0.4.1 (3/11/2021, 09:50 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
+
+#### 🚀 Updates
+
+- Add useDimensions hook @katherinemartinez [#14587](https://github.cbhq.net/mono/repo/pull/14587)
+- Have tokens.ts codegenerated. Add new useInteractable hook to buttons @katherinemartinez [#14548](https://github.cbhq.net/mono/repo/pull/14548)
+
+#### 🐞 Fixes
+
+- Improve browser build targets @miles-johnson
 
 ## 0.4.0 (3/8/2021, 11:49 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
 

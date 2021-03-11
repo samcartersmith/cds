@@ -32,6 +32,7 @@ DATA = append_cds_web_deps([
     "//:tsconfig.json",
     "//:babel.config.js",
     "//eng/shared/design-system:build_source",
+    "//eng/shared/design-system:linaria.config.js",
     "//eng/shared/utils:webpack/addRootModeUpwardToBabelLoaders.js",
     # dependencies
     "@npm//react",

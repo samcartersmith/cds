@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.1 (3/11/2021, 09:50 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
+
+#### 🐞 Fixes
+
+- Improve browser build targets @miles-johnson
+
 ## 0.5.0 (3/8/2021, 11:49 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
 
 #### 💥 Breaking

@@ -6,7 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat: Add useButtonVariant hook, borderRadius and interactable opacity tokens @katherinemartinez [#14548](https://github.cbhq.net/mono/repo/pull/14548)
+## 0.3.1 (3/11/2021, 09:50 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
+
+#### 🚀 Updates
+
+- Add useButtonVariant hook, borderRadius and interactable opacity tokens @katherinemartinez [#14548](https://github.cbhq.net/mono/repo/pull/14548)
+
+#### 🐞 Fixes
+
+- Improve browser build targets @miles-johnson
 
 ## 0.3.0 (3/8/2021, 11:49 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
 
