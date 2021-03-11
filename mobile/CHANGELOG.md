@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- feat(Button): Update compact primary to have a solid blue background @miles-johnson [#14721](https://github.cbhq.net/mono/repo/pull/14721)
+
 ## 0.5.1 (3/11/2021, 09:50 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
 
 #### 🐞 Fixes

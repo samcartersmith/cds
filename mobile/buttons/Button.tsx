@@ -1,16 +1,17 @@
 import React, { useMemo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
+import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
 
+import { usePalette } from '../hooks/usePalette';
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HapticFeedbackType } from '../types';
 import { TextHeadline } from '../typography/TextHeadline';
 import { PressableHighlight } from './PressableHighlight';
-import { useButtonVariant } from './useButtonVariant';
 
 export interface ButtonProps extends ButtonBaseProps {
   /**
@@ -35,13 +36,18 @@ export const Button = React.memo(
     testID,
     variant = 'primary',
   }: ButtonProps) => {
+    const palette = usePalette();
     const [pressIn, pressOut, pressScale] = usePressAnimation();
-    const { underlay, foregroundColor, ...variantStyles } = useButtonVariant(variant, compact);
+    const { underlay, color, backgroundColor, borderColor } = useButtonVariant(variant);
     const spacingStyles = useSpacingStyles({
       spacingHorizontal: compact ? 2 : 3,
       spacingVertical: compact ? 0.5 : 1,
     });
-    const textStyles = useMemo(() => ({ color: foregroundColor }), [foregroundColor]);
+    const textStyles = useMemo(() => ({ color: palette[color] }), [palette, color]);
+    const viewStyles = useMemo(
+      () => ({ backgroundColor: palette[backgroundColor], borderColor: palette[borderColor] }),
+      [palette, backgroundColor, borderColor]
+    );
 
     return (
       <Animated.View
@@ -67,7 +73,7 @@ export const Button = React.memo(
           <View
             style={[
               styles.button,
-              variantStyles,
+              viewStyles,
               spacingStyles,
               compact && styles.buttonCompact,
               (disabled || loading) && styles.disabled,

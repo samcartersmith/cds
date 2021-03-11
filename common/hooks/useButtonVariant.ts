@@ -1,53 +1,47 @@
 import { useMemo } from 'react';
 
-import { ButtonVariant, PaletteBackground, PaletteForeground, PaletteBorder } from '../types';
+import {
+  ButtonVariant,
+  PaletteBackground,
+  PaletteForeground,
+  PaletteBorder,
+  PaletteAlias,
+} from '../types';
 
 export type ButtonVariantStyles = {
   backgroundColor: PaletteBackground;
   borderColor: PaletteBorder;
   color: PaletteForeground;
+  underlay: PaletteAlias;
 };
 
-const variants: Record<ButtonVariant | 'primaryCompact', ButtonVariantStyles> = {
+const variants: Record<ButtonVariant, ButtonVariantStyles> = {
   primary: {
     color: 'primaryForeground',
     backgroundColor: 'primary',
     borderColor: 'primary',
-  },
-  primaryCompact: {
-    color: 'primary',
-    backgroundColor: 'background',
-    borderColor: 'line',
+    underlay: 'foreground',
   },
   secondary: {
     color: 'secondaryForeground',
     backgroundColor: 'secondary',
     borderColor: 'line',
+    underlay: 'foreground',
   },
   positive: {
     color: 'positiveForeground',
     backgroundColor: 'positive',
     borderColor: 'positive',
+    underlay: 'foreground',
   },
   negative: {
     color: 'negative',
     backgroundColor: 'background',
     borderColor: 'line',
+    underlay: 'foreground',
   },
 };
 
-export const useButtonVariant = (variant: ButtonVariant, compact = false): ButtonVariantStyles => {
-  return useMemo(() => {
-    switch (variant) {
-      default:
-      case 'primary':
-        return compact ? variants.primaryCompact : variants.primary;
-      case 'secondary':
-        return variants.secondary;
-      case 'positive':
-        return variants.positive;
-      case 'negative':
-        return variants.negative;
-    }
-  }, [variant, compact]);
+export const useButtonVariant = (variant: ButtonVariant): ButtonVariantStyles => {
+  return useMemo(() => variants[variant], [variant]);
 };

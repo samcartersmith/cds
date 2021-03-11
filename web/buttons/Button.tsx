@@ -33,7 +33,7 @@ export const Button = forwardRef(
       spacingHorizontal: compact ? 2 : 3,
       spacingVertical: compact ? 0.5 : 1,
     });
-    const { color, ...variantAliases } = useButtonVariant(variant, compact);
+    const { color, ...variantAliases } = useButtonVariant(variant);
 
     const { className, props, style } = useInteractable<HTMLButtonElement>({
       ...restProps,
