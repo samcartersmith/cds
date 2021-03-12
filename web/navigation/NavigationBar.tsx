@@ -22,7 +22,7 @@ export const NavigationBar = memo(
         <VStack>
           <HStack alignItems="baseline">
             {controls}
-            <HStack alignItems="baseline">{!hideTitles && titles}</HStack>
+            {!hideTitles && titles}
           </HStack>
         </VStack>
         <Spacer />

@@ -11,6 +11,7 @@ export const button = css`
   margin: 0;
   position: relative;
   min-width: 100px;
+  white-space: nowrap;
 `;
 
 export const buttonCompact = css`

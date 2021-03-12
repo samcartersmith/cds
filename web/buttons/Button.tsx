@@ -31,7 +31,7 @@ export const Button = forwardRef(
   ) => {
     const spacingClass = useSpacingStyles({
       spacingHorizontal: compact ? 2 : 3,
-      spacingVertical: compact ? 0.5 : 1,
+      spacingVertical: compact ? 1 : 2,
     });
     const { color, ...variantAliases } = useButtonVariant(variant);
 
