@@ -219,6 +219,21 @@ Add a border to the top and bottom sides of the box.
 
 <ComponentDetails componentName="Lottie" templateName="borderedVerticalProp" />
 
+### borderRadius
+
+Round the corners of the box.
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+  webOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="borderRadiusProp" />
+
 ### bottom
 
 Position the box to the bottom edge.
@@ -667,21 +682,6 @@ Position the box to the right edge.
 
 <ComponentDetails componentName="Lottie" templateName="rightProp" />
 
-### rounded
-
-Round the corners of the box.
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="rounded"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="roundedProp" />
-
 ### source
 
 The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobile, import the animation from the animations folder instead of from index so that unused animations are not included during build, `import { tradeStatus } from @cbhq/cds-lottie-files/tradeStatus`. For web, you can import the animation from index since this webpack can handle treeshaking, `import { tradeStatus } from @cbhq/cds-lottie-files`
@@ -834,15 +834,15 @@ Set a fixed width.
 
 ### zIndex
 
-Sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
+Adjust the z-index positioning layer.
 
 <ApiDetails
   componentName="Lottie"
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={['navigation']}
-  webOptions={['navigation']}
+  mobileOptions={['number']}
+  webOptions={['number']}
 />
 
 <ComponentDetails componentName="Lottie" templateName="zIndexProp" />

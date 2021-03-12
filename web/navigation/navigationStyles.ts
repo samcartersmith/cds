@@ -33,3 +33,10 @@ export const hideForCondensedStyles = css`
     visibility: hidden;
   }
 `;
+
+export const showForCondensed = css`
+  visibility: hidden;
+  @media (${devices.tablet}) {
+    visibility: visible;
+  }
+`;

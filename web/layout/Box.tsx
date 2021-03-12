@@ -7,6 +7,7 @@ import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
+import * as borderRadii from '../styles/borderRadius';
 import { getBorderStyles } from '../styles/borderStyles';
 import { getFlexStyles } from '../styles/flexStyles';
 import {
@@ -63,6 +64,7 @@ export const Box = forwardRef(
     const {
       as = 'div',
       background,
+      borderRadius,
       bordered,
       borderedTop,
       borderedBottom,
@@ -134,7 +136,8 @@ export const Box = forwardRef(
           background && backgroundColorStyles[background === true ? 'background' : background],
           overflow && styles.overflow[overflow],
           position && styles.position[position],
-          rounded && styles.borderRadius,
+          borderRadius && borderRadii[borderRadius],
+          rounded && borderRadii.standard,
           getBorderStyles({
             bordered,
             borderedTop,

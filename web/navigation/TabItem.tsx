@@ -21,6 +21,7 @@ export const TabItem = memo(
       backgroundColor: colorAlias,
       borderColor: colorAlias,
       borderRadius: 'pill',
+      scaleOnPress: true,
       onHover,
       onPress,
       ref,

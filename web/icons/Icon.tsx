@@ -19,6 +19,7 @@ export const Icon = memo(
         name,
         title,
         labeledBy,
+        badge,
         ...props
       },
       ref
@@ -47,6 +48,12 @@ export const Icon = memo(
                 <path key={`${name}-path-${index}`} d={item} fill={finalColor} />
               ))}
             </svg>
+            {badge &&
+              React.cloneElement(badge, {
+                position: 'absolute',
+                top: '-45%',
+                right: '-50%',
+              })}
           </div>
         </Box>
       );

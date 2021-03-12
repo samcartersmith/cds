@@ -15,6 +15,7 @@ export type { IconProps };
 
 export const Icon = ({
   animated = false,
+  badge,
   bordered = false,
   color = 'primary' as PaletteForeground,
   size,
@@ -69,6 +70,12 @@ export const Icon = ({
             {iconGlyphMap[name][iconSize]}
           </TextComponent>
           {bordered && <IconOutline animated size={wrapperSize} color={iconColor} />}
+          {badge &&
+            React.cloneElement(badge, {
+              position: 'absolute',
+              top: '-45%',
+              right: '-50%',
+            })}
         </Box>
       </Box>
     );

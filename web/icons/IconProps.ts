@@ -1,5 +1,7 @@
 import type { PaletteForeground, IconBaseProps } from '@cbhq/cds-common';
 
+import { BadgeProps } from './Badge';
+
 export interface IconProps extends IconBaseProps {
   /** Color of the icon when used as a foreground. */
   color?: PaletteForeground;
@@ -14,4 +16,8 @@ export interface IconProps extends IconBaseProps {
    * then `labeledBy` will be used to set the id on the `<title>` element.
    */
   labeledBy?: string;
+  /**
+   * Add a badge to the top right of an icon
+   */
+  badge?: React.ReactElement<BadgeProps>;
 }

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { BoxBaseProps, ElevationLevels } from '@cbhq/cds-common';
-import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
+import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/borderRadius';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
@@ -43,6 +43,7 @@ export const Box = React.memo(
   ({
     animated,
     background,
+    borderRadius,
     bordered,
     children,
     dangerouslySetStyle,
@@ -167,12 +168,16 @@ export const Box = React.memo(
         style.borderColor = palette.lineHeavy;
       }
 
+      if (borderRadius) {
+        style.borderRadius = borderRadii[borderRadius];
+      }
+
       if (rounded) {
-        style.borderRadius = borderRadius.standard;
+        style.borderRadius = borderRadii.standard;
       }
 
       return style;
-    }, [background, bordered, rounded, palette, elevation]);
+    }, [background, elevation, bordered, borderRadius, rounded, palette]);
     const style = useMemo(
       () =>
         [

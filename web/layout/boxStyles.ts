@@ -3,10 +3,6 @@ import { css } from 'linaria';
 
 import { CSSMap } from '../types';
 
-export const borderRadius = css`
-  border-radius: 8px;
-`;
-
 export const overflow: CSSMap<string> = {
   hidden: css`
     overflow: hidden;

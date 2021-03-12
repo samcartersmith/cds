@@ -59,7 +59,11 @@ const NavigationContent: React.FC<NavigationProps> = memo(
       },
     });
 
-    const navBarTabs = tabs && <Box spacingTop={2}>{tabs}</Box>;
+    const navBarTabs = tabs && (
+      <Box offsetHorizontal={1} spacingTop={2}>
+        {tabs}
+      </Box>
+    );
 
     return (
       <div className={rootStyles}>

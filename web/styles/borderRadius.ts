@@ -12,6 +12,10 @@ export const standard = css`
   border-radius: 8px;
 `;
 
+export const badge = css`
+  border-radius: 9px;
+`;
+
 export const tooltip = css`
   border-radius: 12px;
 `;
@@ -21,5 +25,5 @@ export const pill = css`
 `;
 
 export const round = css`
-  border-radius: 50%;
+  border-radius: 100px;
 `;

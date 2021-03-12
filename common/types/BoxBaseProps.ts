@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { PaletteBackground } from './Palette';
 import { OffsetProps, SpacingProps } from './SpacingProps';
@@ -94,6 +95,8 @@ export interface BoxBaseProps
   children?: React.ReactNode;
   /** Direction in which to absolutely pin the box. */
   pin?: PinningDirection;
-  /** Round the corners of the box. */
+  /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
+  borderRadius?: BorderRadius;
+  /** Round the corners of the box with `standard` borderRadius size. */
   rounded?: boolean;
 }

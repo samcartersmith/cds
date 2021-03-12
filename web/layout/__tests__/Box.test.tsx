@@ -84,7 +84,17 @@ describe('Box', () => {
 
       rerender(<Box rounded>Child</Box>);
 
-      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} borderRadius`);
+      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
+    });
+
+    it(`will set border radius class name for \`borderRadius\` prop`, () => {
+      const { container, rerender } = render(<Box>Child</Box>);
+
+      expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
+
+      rerender(<Box borderRadius="badge">Child</Box>);
+
+      expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} badge`);
     });
   });
 

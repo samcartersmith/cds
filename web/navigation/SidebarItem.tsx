@@ -7,12 +7,13 @@ import { mergeProps } from 'react-aria';
 
 import { useInteractable, InteractableProps } from '../buttons/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { Badge } from '../icons/Badge';
 import { Icon } from '../icons/Icon';
-import { Box } from '../layout/Box';
+import { Box, HStack } from '../layout';
 import { useTooltip } from '../overlays/useTooltip';
 import { getFlexStyles } from '../styles/flexStyles';
 import { TextHeadline } from '../typography/TextHeadline';
-import { hideForCondensedStyles, sidebarItemStyles } from './navigationStyles';
+import { hideForCondensedStyles, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
 import { useSidebarLayout } from './SidebarLayoutProvider';
 
@@ -20,11 +21,12 @@ export interface SidebarItemProps extends InteractableProps<HTMLAnchorElement> {
   active?: boolean;
   icon?: IconName;
   label: string;
+  badge?: number | string;
   renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
 }
 
 export const SidebarItem = memo(
-  ({ renderContainer, active, icon, label, onHover, onPress }: SidebarItemProps) => {
+  ({ renderContainer, active, icon, label, badge, onHover, onPress }: SidebarItemProps) => {
     const sidebarLayout = useSidebarLayout();
     const isExpanded = sidebarLayout === 'expanded';
 
@@ -62,14 +64,27 @@ export const SidebarItem = memo(
             justifyContent="center"
             flexShrink={0}
           >
-            <Icon name={icon} size="s" color={color} />
+            <Icon
+              name={icon}
+              size="s"
+              color={color}
+              badge={
+                <Badge dangerouslySetClassName={showForCondensed} value={badge} variant="dot" />
+              }
+            />
           </Box>
         )}
-        <div className={hideForCondensedStyles}>
+        <HStack
+          dangerouslySetClassName={hideForCondensedStyles}
+          flexGrow={1}
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <TextHeadline as="p" color={color} spacingStart={1}>
             {label}
           </TextHeadline>
-        </div>
+          {badge && <Badge value={badge} />}
+        </HStack>
       </>
     );
 

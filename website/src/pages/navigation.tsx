@@ -92,6 +92,7 @@ export const NavigationExample: React.FC = () => {
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="chartPieCircleHeavy"
           label="Portfolio"
+          badge={3}
         />
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
@@ -108,6 +109,7 @@ export const NavigationExample: React.FC = () => {
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="gauge"
           label="For you"
+          badge={12}
         />
       </Sidebar>
     );
