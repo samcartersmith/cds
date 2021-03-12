@@ -1,35 +1,59 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import * as glob from 'fast-glob';
+import { exec } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as semver from 'semver';
 
 const DS_DIR = path.join(process.cwd(), 'eng/shared/design-system');
-const LOG_PREFIX = /^- (\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
+const LOG_PREFIX = /^(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
+const AUTHORS: Record<string, string> = {
+  'Miles Johnson': '@miles-johnson',
+  'Katherine Martinez': '@katherinemartinez',
+  'Hannah Jin': '@hannah-jin',
+  'Jennifer Liu': '@jennifer-liu',
+};
 
 type VersionBump = 'major' | 'minor' | 'patch';
-type LogType = 'breaking' | 'internal' | 'feat' | 'fix' | 'chore' | 'docs' | 'change' | 'types';
+type LogType =
+  | 'breaking'
+  | 'internal'
+  | 'feat'
+  | 'fix'
+  | 'chore'
+  | 'docs'
+  | 'change'
+  | 'types'
+  | 'release';
 
-interface LogItem {
+interface LogChange {
   bump: VersionBump | null;
   message: string;
   scope: string;
   type: LogType;
 }
 
-function determineNextVersion(items: LogItem[], currentVersion: string): string | null {
+interface Log {
+  sha: string;
+  date: Date;
+  author: string;
+  jira: string[];
+  pr: string;
+  change: LogChange;
+}
+
+function determineNextVersion(logs: Log[], currentVersion: string): string | null {
   const isAlpha = currentVersion.startsWith('0.');
   let major = 0;
   let minor = 0;
   let patch = 0;
 
-  items.forEach(item => {
-    if (item.bump === 'major') {
+  logs.forEach(({ change }) => {
+    if (change.bump === 'major') {
       major += 1;
-    } else if (item.bump === 'minor') {
+    } else if (change.bump === 'minor') {
       minor += 1;
-    } else if (item.bump === 'patch') {
+    } else if (change.bump === 'patch') {
       patch += 1;
     }
   });
@@ -45,7 +69,7 @@ function determineNextVersion(items: LogItem[], currentVersion: string): string 
   return null;
 }
 
-function determineVersionBump(type: LogType): LogItem['bump'] {
+function determineVersionBump(type: LogType): LogChange['bump'] {
   switch (type) {
     case 'breaking':
       return 'major';
@@ -56,20 +80,57 @@ function determineVersionBump(type: LogType): LogItem['bump'] {
     case 'chore':
     case 'types':
       return 'patch';
+    case 'release':
     case 'internal':
     case 'docs':
       return null;
   }
 }
 
-function parseLogItem(line: string): LogItem {
-  const match = line.match(LOG_PREFIX);
+function parseCommitTokens(item: string) {
+  const jira: string[] = [];
+  let message = item;
+  let pr = '';
 
-  if (!match) {
-    throw new Error(`Invalid log item "${line}".`);
+  // Extract JIRA issues
+  let jiraMatch;
+
+  while ((jiraMatch = message.match(/\[([A-Z]+-\d+)\]/))) {
+    message = message.replace(jiraMatch[0], '').trim();
+    jira.push(jiraMatch[1]);
   }
 
-  const [prefix, type, scope] = match;
+  // Extract PR number
+  const prMatch = message.match(/\(#(\d+)\)$/);
+
+  if (prMatch) {
+    message = message.replace(prMatch[0], '').trim();
+    pr = prMatch[1];
+  }
+
+  // Remove all tokens in brackets
+  let tokenMatch;
+
+  while ((tokenMatch = message.match(/\[\w+\]/))) {
+    message = message.replace(tokenMatch[0], '').trim();
+  }
+
+  return {
+    jira,
+    pr,
+    message: message.trim(),
+  };
+}
+
+function parseLogChange(line: string): LogChange {
+  const match = line.match(LOG_PREFIX);
+  let prefix = '';
+  let type = 'chore';
+  let scope = '';
+
+  if (match) {
+    [prefix, type, scope = ''] = match;
+  }
 
   return {
     bump: determineVersionBump(type as LogType),
@@ -79,43 +140,7 @@ function parseLogItem(line: string): LogItem {
   };
 }
 
-function extractUnreleasedLogs(contents: string[]) {
-  const items: LogItem[] = [];
-  let inUnreleased = false;
-  let index = -1;
-  let startIndex = 0;
-  let endIndex = 0;
-
-  for (const line of contents) {
-    index += 1;
-
-    if (line === '## [Unreleased]') {
-      inUnreleased = true;
-      continue;
-    } else if (line.startsWith('#') && inUnreleased) {
-      inUnreleased = false;
-      break;
-    }
-
-    if (inUnreleased) {
-      if (line) {
-        items.push(parseLogItem(line.trim()));
-      } else if (!startIndex) {
-        startIndex = index + 1;
-      } else if (!endIndex) {
-        endIndex = index - 1;
-      }
-    }
-  }
-
-  return {
-    items,
-    startIndex,
-    endIndex,
-  };
-}
-
-function formatLogItems(items: LogItem[], version: string): string[] {
+function formatLogs(logs: Log[], version: string): string {
   const groups: Record<VersionBump | 'other', string[]> = {
     major: ['#### 💥 Breaking', ''],
     minor: ['#### 🚀 Updates', ''],
@@ -123,14 +148,28 @@ function formatLogItems(items: LogItem[], version: string): string[] {
     other: ['#### 📘 Misc', ''],
   };
 
-  items.forEach(item => {
-    let line = item.message;
+  logs.forEach(log => {
+    let line = log.change.message;
 
-    if (item.scope) {
-      line = `**[${item.scope}]** ${line}`;
+    if (log.change.scope) {
+      line = `**[${log.change.scope}]** ${line}`;
     }
 
-    groups[item.bump || 'other'].push(`- ${line}`);
+    if (log.author && AUTHORS[log.author]) {
+      line += ` ${AUTHORS[log.author]}`;
+    }
+
+    if (log.pr) {
+      line += ` [#${log.pr}](https://github.cbhq.net/mono/repo/pull/${log.pr})`;
+    }
+
+    if (log.jira) {
+      log.jira.forEach(issue => {
+        line += `, [${issue}](https://jira.coinbase-corp.com/browse/${issue})`;
+      });
+    }
+
+    groups[log.change.bump || 'other'].push(`- ${line}`);
   });
 
   const block: string[] = [
@@ -141,7 +180,7 @@ function formatLogItems(items: LogItem[], version: string): string[] {
       day: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
-    })} PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)`,
+    })} PST)`,
   ];
 
   Object.values(groups).forEach(group => {
@@ -150,54 +189,106 @@ function formatLogItems(items: LogItem[], version: string): string[] {
     }
   });
 
-  return block;
+  return block.join('\n');
 }
 
-async function updateChangelogAndDetermineNextVersion(
-  logPath: string,
-  currentVersion: string
+async function updateChangelog(
+  pkgPath: string,
+  logs: Log[],
+  nextVersion: string
 ): Promise<string | null> {
-  const contents = (await fs.promises.readFile(logPath, 'utf8')).split('\n');
-  const { items, startIndex } = extractUnreleasedLogs(contents);
-  const nextVersion = determineNextVersion(items, currentVersion);
+  const logPath = path.join(pkgPath, 'CHANGELOG.md');
+  let contents = await fs.promises.readFile(logPath, 'utf8');
 
-  // No changes, so abort
-  if (items.length === 0 || nextVersion === null) {
-    return null;
-  }
+  contents = contents.replace('[Unreleased]', `[Unreleased]\n\n${formatLogs(logs, nextVersion)}`);
 
-  // Insert new section
-  contents.splice(startIndex, items.length, ...formatLogItems(items, nextVersion));
-
-  await fs.promises.writeFile(logPath, contents.join('\n'));
+  await fs.promises.writeFile(logPath, contents);
 
   return nextVersion;
 }
 
-async function prepareRelease() {
-  const changelogPaths = await glob('*/CHANGELOG.md', {
-    absolute: true,
-    cwd: DS_DIR,
-    ignore: ['_template'],
-  });
+async function extractGitLogs(pkgPath: string, releaseSha: string): Promise<Log[]> {
+  return new Promise((resolve, reject) => {
+    exec(
+      `git --no-pager log -n 100 --pretty=format:'%h||%at||%an||%s' .`,
+      { cwd: pkgPath },
+      (error, stdout) => {
+        if (error) {
+          reject(error);
+          return;
+        }
 
-  await Promise.all(
-    changelogPaths.map(async changelogPath => {
-      const pkgPath = path.join(path.dirname(changelogPath), 'basepackage.json');
-      const pkg = JSON.parse(await fs.promises.readFile(pkgPath, 'utf8'));
+        const logs: Log[] = [];
+        const lines = String(stdout).split('\n');
 
-      const currentVersion = pkg.version;
-      const nextVersion = await updateChangelogAndDetermineNextVersion(
-        changelogPath,
-        currentVersion
-      );
+        for (let i = 0; i < lines.length; i += 1) {
+          const [sha, date, author, commit] = lines[i].split('||');
 
-      if (nextVersion !== null) {
-        pkg.version = nextVersion;
+          // We've caught up to the last released sha, so abort
+          if (sha === releaseSha) {
+            break;
+          }
 
-        await fs.promises.writeFile(pkgPath, JSON.stringify(pkg, null, 2));
+          const { jira, pr, message } = parseCommitTokens(commit);
+          const change = parseLogChange(message);
+
+          // Dont include releases in the changelog
+          if (change.type === 'release') {
+            continue;
+          }
+
+          logs.push({
+            author,
+            change,
+            date: new Date(Number(date) * 1000),
+            jira,
+            pr,
+            sha,
+          });
+        }
+
+        resolve(logs);
       }
-    })
+    );
+  });
+}
+
+async function releasePackage(pkgName: string) {
+  const pkgPath = path.join(DS_DIR, pkgName);
+  const pkgJsonPath = path.join(pkgPath, 'basepackage.json');
+  const pkg = JSON.parse(await fs.promises.readFile(pkgJsonPath, 'utf8'));
+
+  const logs = await extractGitLogs(pkgPath, pkg.releaseSha);
+
+  if (logs.length === 0) {
+    console.log(`[${pkgName}] No new commits since last release SHA ${pkg.releaseSha}`);
+    return;
+  }
+
+  const nextVersion = determineNextVersion(logs, pkg.version);
+
+  if (nextVersion === null) {
+    console.log(`[${pkgName}] Nothing to release`);
+    return;
+  }
+
+  await updateChangelog(pkgPath, logs, nextVersion);
+
+  pkg.version = nextVersion;
+  pkg.releaseSha = logs[0].sha;
+
+  await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkg, null, 2));
+
+  console.info(`[${pkgName}] Versions and changelog updated, ready for release!`);
+}
+
+async function prepareRelease() {
+  await Promise.all(
+    ['common', 'fonts', 'lottie-files', 'mobile', 'utils', 'web'].map(pkg =>
+      releasePackage(pkg).catch(error => {
+        console.error(`[${pkg}] FAIL: ${error}`);
+      })
+    )
   );
 }
 

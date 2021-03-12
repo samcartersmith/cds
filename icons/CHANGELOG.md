@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## 0.1.0 (3/8/2021, 11:49 AM PST) [#todo](https://github.cbhq.net/mono/repo/pull/todo)
+## 0.1.0 (3/8/2021, 11:49 AM PST)
 
 #### 💥 Breaking
 
