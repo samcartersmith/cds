@@ -16,11 +16,6 @@ module.exports = () => {
               test: /\.mdx?$/,
               use: [{ loader: 'babel-loader', options: { rootMode: 'upward' } }],
             },
-
-            {
-              test: /\.(woff|woff2|eot|ttf|otf)$/,
-              use: ['file-loader'],
-            },
           ],
         },
       };
