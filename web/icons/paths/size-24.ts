@@ -246,14 +246,9 @@ export const documentHeavy = {
 
 export const dotHeavy = { paths: ['M12 20a8 8 0 100-16 8 8 0 000 16z'], viewBox: '0 0 24 24' };
 
-export const doubeChevronRightHeavy = {
+export const doubleChevronRightHeavy = {
   paths: ['M8 12L0 2h6l8 10-8 10H0l8-10zm10 0L10 2h6l8 10-8 10h-6l8-10z'],
   viewBox: '0 0 24 24',
-};
-
-export const doubleChevronRightHeavy = {
-  paths: ['M4 6L0 1h3l4 5-4 5H0l4-5zm5 0L5 1h3l4 5-4 5H5l4-5z'],
-  viewBox: '0 0 12 12',
 };
 
 export const emailHeavy = {

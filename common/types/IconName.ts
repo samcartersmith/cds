@@ -45,7 +45,6 @@ export type IconName =
   | 'copyLight'
   | 'documentHeavy'
   | 'dotHeavy'
-  | 'doubeChevronRightHeavy'
   | 'doubleChevronRightHeavy'
   | 'emailHeavy'
   | 'errorHeavy'

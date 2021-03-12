@@ -45,7 +45,6 @@ export const iconNames = [
   'copyLight',
   'documentHeavy',
   'dotHeavy',
-  'doubeChevronRightHeavy',
   'doubleChevronRightHeavy',
   'emailHeavy',
   'errorHeavy',

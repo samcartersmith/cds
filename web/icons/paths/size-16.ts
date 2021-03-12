@@ -257,11 +257,6 @@ export const dotHeavy = {
   viewBox: '0 0 16 16',
 };
 
-export const doubeChevronRightHeavy = {
-  paths: ['M8 12L0 2h6l8 10-8 10H0l8-10zm10 0L10 2h6l8 10-8 10h-6l8-10z'],
-  viewBox: '0 0 24 24',
-};
-
 export const doubleChevronRightHeavy = {
   paths: ['M5.33 8L0 1h4l5.33 7L4 15H0l5.33-7zM12 8L6.67 1h4L16 8l-5.33 7h-4L12 8z'],
   viewBox: '0 0 16 16',
