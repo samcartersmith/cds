@@ -1,3 +1,1 @@
-export const zIndex = {
-  navbar: 2,
-};
+export const zIndex = { navigation: 2 } as const;

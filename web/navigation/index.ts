@@ -8,3 +8,5 @@ export * from './NavigationDisplayTitle';
 export * from './NavigationBarTitles';
 export * from './Sidebar';
 export * from './SidebarItem';
+export * from './Tabs';
+export * from './TabItem';

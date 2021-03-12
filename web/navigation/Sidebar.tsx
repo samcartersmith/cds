@@ -1,5 +1,7 @@
 import React, { memo } from 'react';
 
+import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { VStack } from '../layout/VStack';
@@ -13,19 +15,22 @@ export type SidebarProps = {
 
 export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children }) => {
   return (
-    <VStack
-      borderedEnd
-      height="100%"
-      width="100%"
-      spacingHorizontal={2}
-      spacingBottom={2}
-      spacingTop={gutter}
-    >
-      <VStack spacingTop={0.5} spacingStart={1} spacingBottom={3}>
-        {logo}
+    <ScaleProvider value={DEFAULT_SCALE}>
+      <VStack
+        background
+        borderedEnd
+        height="100%"
+        width="100%"
+        spacingHorizontal={2}
+        spacingBottom={2}
+        spacingTop={gutter}
+      >
+        <VStack spacingTop={0.5} spacingStart={1} spacingBottom={3}>
+          {logo}
+        </VStack>
+        {children}
       </VStack>
-      {children}
-    </VStack>
+    </ScaleProvider>
   );
 });
 

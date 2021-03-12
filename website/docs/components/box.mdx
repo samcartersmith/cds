@@ -686,7 +686,7 @@ How to position the box within its parent.
   required={false}
   defaultValue=""
   mobileOptions={['absolute', 'relative']}
-  webOptions={['absolute', 'relative']}
+  webOptions={['absolute', 'relative', 'sticky']}
 />
 
 <ComponentDetails componentName="Box" templateName="positionProp" />
@@ -873,15 +873,15 @@ Set a fixed width.
 
 ### zIndex
 
-Adjust the z-index positioning layer.
+Sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
 
 <ApiDetails
   componentName="Box"
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={['navigation']}
+  webOptions={['navigation']}
 />
 
 <ComponentDetails componentName="Box" templateName="zIndexProp" />

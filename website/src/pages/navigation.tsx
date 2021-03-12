@@ -1,8 +1,11 @@
-/* eslint-disable react/jsx-key */
 import React, { useMemo } from 'react';
 
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Button, IconButton as CDSIconButton, IconButtonProps } from '@cbhq/cds-web/buttons';
+import { VStack } from '@cbhq/cds-web/layout';
 import {
+  TabItem,
+  Tabs,
   Logo,
   Navigation,
   NavigationBar,
@@ -11,19 +14,15 @@ import {
   NavigationBarControls,
   NavigationBarTitles,
   NavigationDisplayTitle,
-  NavigationProps,
   Sidebar,
   SidebarItem,
 } from '@cbhq/cds-web/navigation';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
 import Head from '@docusaurus/Head';
 import { Link } from 'react-router-dom';
 
-type NavigationExampleProps = {
-  defaultRoute?: string;
-  tabs?: NavigationProps['tabs'];
-};
-
+const defaultRoute = '/navigation';
 const IconButton = ({
   name,
   to = '/',
@@ -31,14 +30,24 @@ const IconButton = ({
   return <CDSIconButton name={name} renderContainer={props => <Link {...props} to={to} />} />;
 };
 
-export const NavigationExample: React.FC<NavigationExampleProps> = ({
-  children,
-  defaultRoute = '/',
-  tabs,
-}) => {
+export const NavigationExample: React.FC = () => {
+  const { isToggled: showDarkMode, toggle: toggleDarkMode } = useToggler(false);
+  const { isToggled: showTabs, toggle: toggleTabs } = useToggler(false);
+  const { isToggled: showDisplayTitle, toggle: toggleDisplayTitle } = useToggler(false);
   const title = 'Bitcoin';
   const subtitle = 'BTC';
   const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
+
+  const tabs = useMemo(
+    () => (
+      <Tabs>
+        <TabItem label="Overview" />
+        <TabItem label="Wallet" />
+        <TabItem label="Vault" />
+      </Tabs>
+    ),
+    []
+  );
 
   const navbar = useMemo(() => {
     return (
@@ -51,18 +60,24 @@ export const NavigationExample: React.FC<NavigationExampleProps> = ({
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
         ctas={
           <NavigationBarCtas>
-            <Button variant="primary">{'Buy & Sell'}</Button>
-            <Button variant="secondary">{'Send & Recieve'}</Button>
+            <Button compact variant="primary">
+              {'Buy & Sell'}
+            </Button>
+            <Button compact variant="secondary">
+              {'Send & Recieve'}
+            </Button>
           </NavigationBarCtas>
         }
         actions={
           <NavigationBarActions>
-            <IconButton name="bellHeavy" />
+            <CDSIconButton onPress={toggleDisplayTitle} name="expand" />
+            <CDSIconButton onPress={toggleTabs} name="listHeavy" />
+            <CDSIconButton onPress={toggleDarkMode} name="apiHeavy" />
           </NavigationBarActions>
         }
       />
     );
-  }, []);
+  }, [toggleDarkMode, toggleDisplayTitle, toggleTabs]);
 
   const sidebar = useMemo(() => {
     return (
@@ -96,7 +111,24 @@ export const NavigationExample: React.FC<NavigationExampleProps> = ({
         />
       </Sidebar>
     );
-  }, [defaultRoute]);
+  }, []);
+
+  const loremBlock = useMemo(() => {
+    return (
+      <VStack>
+        <TextTitle1 as="h1" spacingBottom={2}>
+          Lorem ipsum
+        </TextTitle1>
+        <TextBody as="p" spacingBottom={3}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
+          libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
+          imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+          Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.{' '}
+        </TextBody>
+      </VStack>
+    );
+  }, []);
 
   return (
     <>
@@ -104,11 +136,21 @@ export const NavigationExample: React.FC<NavigationExampleProps> = ({
         <link rel="preload" as="style" href="reset.css" />
         <link rel="stylesheet" href="reset.css" />
       </Head>
-      <ThemeProvider>
-        <Navigation sidebar={sidebar} navbar={navbar} displayTitle={displayTitle} tabs={tabs}>
-          {children}
+      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
+        <Navigation
+          key={`${showDarkMode} ${showTabs} ${showDisplayTitle}`}
+          sidebar={sidebar}
+          navbar={navbar}
+          displayTitle={showDisplayTitle && displayTitle}
+          tabs={showTabs && tabs}
+        >
+          {loremBlock}
+          {loremBlock}
+          {loremBlock}
         </Navigation>
       </ThemeProvider>
     </>
   );
 };
+
+export default NavigationExample;

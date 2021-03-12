@@ -15,6 +15,8 @@ export const sidebarWidth = {
   condensed: 80,
 };
 
+export const appContentSpacing = 4;
+
 export const subtitleColor = 'foregroundMuted';
 
 export const iconContainerSize = 32;

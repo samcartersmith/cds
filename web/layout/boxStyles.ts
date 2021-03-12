@@ -19,11 +19,14 @@ export const overflow: CSSMap<string> = {
   `,
 };
 
-export const position: CSSMap<PositionStyles['position']> = {
+export const position: CSSMap<PositionStyles['position'] | 'sticky'> = {
   absolute: css`
     position: absolute;
   `,
   relative: css`
     position: relative;
+  `,
+  sticky: css`
+    position: sticky;
   `,
 };

@@ -13,6 +13,10 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 <ComponentDetails componentName="Lottie" templateName="usage" />
 
+## Accessibility
+
+<ComponentDetails componentName="Lottie" templateName="a11y" />
+
 ## Props
 
 ### alignItems
@@ -830,15 +834,15 @@ Set a fixed width.
 
 ### zIndex
 
-Adjust the z-index positioning layer.
+Sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
 
 <ApiDetails
   componentName="Lottie"
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={['navigation']}
+  webOptions={['navigation']}
 />
 
 <ComponentDetails componentName="Lottie" templateName="zIndexProp" />

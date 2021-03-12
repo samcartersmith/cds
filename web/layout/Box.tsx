@@ -33,15 +33,25 @@ export type InferBoxRole<As> = As extends 'article'
   ? SectionAccessibilityRole
   : never;
 
-export type BoxElement = 'article' | 'aside' | 'div' | 'footer' | 'header' | 'main' | 'section';
+export type BoxElement =
+  | 'article'
+  | 'aside'
+  | 'div'
+  | 'footer'
+  | 'header'
+  | 'main'
+  | 'section'
+  | 'nav';
 
-export interface BoxProps<As extends BoxElement = 'div'> extends BoxBaseProps {
+export interface BoxProps<As extends BoxElement = 'div'> extends Omit<BoxBaseProps, 'position'> {
   /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
   as?: As;
   /** Semantic role whole using a non-semantic element. */
   role?: InferBoxRole<As>;
   /** Control how the content should overflow. */
   overflow?: 'visible' | 'hidden' | 'scroll';
+  /** How to position the box within its parent. */
+  position?: BoxBaseProps['position'] | 'sticky';
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
