@@ -6,14 +6,14 @@ def cds_deployable(name):
     # Publish to development
     node_package_deployable(
         name = "publish_%s_dev" % name,
-        pkg = deploy_label,
+        tar = deploy_label,
         target = "development",
     )
 
     # Publish to corporate
     node_package_deployable(
         name = "publish_%s" % name,
-        pkg = deploy_label,
+        tar = deploy_label,
         target = "corporate",
         continuous_deployment = True,
     )

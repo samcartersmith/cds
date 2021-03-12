@@ -6,8 +6,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat: Add zIndex to tokens @katherinemartinez [#36535](https://github.cbhq.net/mono/repo/pull/36535)
-- feat(Button): Update compact primary to have a solid blue background @miles-johnson [#14721](https://github.cbhq.net/mono/repo/pull/14721)
+## 0.3.2 (3/12/2021, 11:07 AM PST)
+
+#### 🚀 Updates
+
+- Add Badge component to CDS web and mobile @katherinemartinez [#14825](https://github.cbhq.net/mono/repo/pull/14825), [CDS-250](https://jira.coinbase-corp.com/browse/CDS-250)
+- Add Tabs for web navigation @katherinemartinez [#14792](https://github.cbhq.net/mono/repo/pull/14792), [CDS-321](https://jira.coinbase-corp.com/browse/CDS-321)
+- Add zIndex to tokens @katherinemartinez [#36535](https://github.cbhq.net/mono/repo/pull/36535)
+- Update CDS compact primary button to be solid @miles-johnson [#14721](https://github.cbhq.net/mono/repo/pull/14721)
+- Update Navigation props @katherinemartinez [#14664](https://github.cbhq.net/mono/repo/pull/14664)
+- **[Button]** Update compact primary to have a solid blue background @miles-johnson [#14721](https://github.cbhq.net/mono/repo/pull/14721)
+
+#### 🐞 Fixes
+
+- Update doubeChevron mispelling in icons @katherinemartinez [#14815](https://github.cbhq.net/mono/repo/pull/14815)
+- Update manifest and changelog. @jennifer-liu [#14114](https://github.cbhq.net/mono/repo/pull/14114)
+
+#### 📘 Misc
+
+- Infer changelog entries from git commit messages. @miles-johnson [#14772](https://github.cbhq.net/mono/repo/pull/14772)
 
 ## 0.3.1 (3/11/2021, 09:50 AM PST)
 

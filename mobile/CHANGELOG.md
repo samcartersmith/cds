@@ -6,7 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- feat(Button): Update compact primary to have a solid blue background @miles-johnson [#14721](https://github.cbhq.net/mono/repo/pull/14721)
+## 0.5.2 (3/12/2021, 11:07 AM PST)
+
+#### 🚀 Updates
+
+- Add Badge component to CDS web and mobile @katherinemartinez [#14825](https://github.cbhq.net/mono/repo/pull/14825), [CDS-250](https://jira.coinbase-corp.com/browse/CDS-250)
+- Update CDS compact primary button to be solid @miles-johnson [#14721](https://github.cbhq.net/mono/repo/pull/14721)
+- **[Button]** Update compact primary to have a solid blue background @miles-johnson [#14721](https://github.cbhq.net/mono/repo/pull/14721)
+
+#### 🐞 Fixes
+
+- Update doubeChevron mispelling in icons @katherinemartinez [#14815](https://github.cbhq.net/mono/repo/pull/14815)
+- Update manifest and changelog. @jennifer-liu [#14114](https://github.cbhq.net/mono/repo/pull/14114)
+
+#### 📘 Misc
+
+- Infer changelog entries from git commit messages. @miles-johnson [#14772](https://github.cbhq.net/mono/repo/pull/14772)
 
 ## 0.5.1 (3/11/2021, 09:50 AM PST)
 

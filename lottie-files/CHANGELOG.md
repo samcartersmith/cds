@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.2 (3/12/2021, 11:07 AM PST)
+
+#### 📘 Misc
+
+- Infer changelog entries from git commit messages. @miles-johnson [#14772](https://github.cbhq.net/mono/repo/pull/14772)
+
 ## 0.2.1 (3/11/2021, 09:50 AM PST)
 
 #### 🐞 Fixes
