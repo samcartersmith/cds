@@ -1,4 +1,3 @@
-export * from './Logo';
 export * from './Navigation';
 export * from './NavigationBar';
 export * from './NavigationBarActions';

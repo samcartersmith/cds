@@ -2,11 +2,11 @@ import React, { useMemo } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Button, IconButton as CDSIconButton, IconButtonProps } from '@cbhq/cds-web/buttons';
+import { LogoMark } from '@cbhq/cds-web/icons/LogoMark';
 import { VStack } from '@cbhq/cds-web/layout';
 import {
   TabItem,
   Tabs,
-  Logo,
   Navigation,
   NavigationBar,
   NavigationBarActions,
@@ -84,7 +84,7 @@ export const NavigationExample: React.FC = () => {
       <Sidebar
         logo={
           <Link to={defaultRoute}>
-            <Logo />
+            <LogoMark />
           </Link>
         }
       >
