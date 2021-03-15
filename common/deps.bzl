@@ -1,4 +1,5 @@
 DEPENDENCIES = [
+    "@npm//@types/react-is",
     "@npm//type-fest",
 ]
 

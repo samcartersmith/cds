@@ -6,6 +6,7 @@ export * from './NavigationBarControls';
 export * from './NavigationDisplayTitle';
 export * from './NavigationBarTitles';
 export * from './Sidebar';
+export * from './SidebarSection';
 export * from './SidebarItem';
 export * from './Tabs';
 export * from './TabItem';

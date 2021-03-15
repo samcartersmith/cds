@@ -16,6 +16,7 @@ import {
   NavigationDisplayTitle,
   Sidebar,
   SidebarItem,
+  SidebarSection,
 } from '@cbhq/cds-web/navigation';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
@@ -34,6 +35,7 @@ export const NavigationExample: React.FC = () => {
   const { isToggled: showDarkMode, toggle: toggleDarkMode } = useToggler(false);
   const { isToggled: showTabs, toggle: toggleTabs } = useToggler(false);
   const { isToggled: showDisplayTitle, toggle: toggleDisplayTitle } = useToggler(false);
+  const { isToggled: showSidebarSections, toggle: toggleSidebarSections } = useToggler(false);
   const title = 'Bitcoin';
   const subtitle = 'BTC';
   const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
@@ -70,6 +72,7 @@ export const NavigationExample: React.FC = () => {
         }
         actions={
           <NavigationBarActions>
+            <CDSIconButton onPress={toggleSidebarSections} name="gearHeavy" />
             <CDSIconButton onPress={toggleDisplayTitle} name="expand" />
             <CDSIconButton onPress={toggleTabs} name="listHeavy" />
             <CDSIconButton onPress={toggleDarkMode} name="apiHeavy" />
@@ -77,28 +80,33 @@ export const NavigationExample: React.FC = () => {
         }
       />
     );
-  }, [toggleDarkMode, toggleDisplayTitle, toggleTabs]);
+  }, [toggleDarkMode, toggleDisplayTitle, toggleSidebarSections, toggleTabs]);
 
   const sidebar = useMemo(() => {
-    return (
-      <Sidebar
-        logo={
-          <Link to={defaultRoute}>
-            <LogoMark />
-          </Link>
-        }
-      >
+    const logo = (
+      <Link to={defaultRoute}>
+        <LogoMark />
+      </Link>
+    );
+
+    const sidebarList = (
+      <>
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="chartPieCircleHeavy"
-          label="Portfolio"
+          label="Overview"
+          active
+        />
+        <SidebarItem
+          renderContainer={props => <Link {...props} to={defaultRoute} />}
+          icon="apiHeavy"
+          label="Principles"
           badge={3}
         />
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="arrowsHorizontalHeavy"
-          label="Trade"
-          active
+          label="Getting started"
         />
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
@@ -108,12 +116,42 @@ export const NavigationExample: React.FC = () => {
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="gauge"
-          label="For you"
+          label="Support"
           badge={12}
         />
-      </Sidebar>
+      </>
     );
-  }, []);
+
+    const sidebarSections = (
+      <>
+        <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
+        <SidebarSection title="Foundation">
+          <SidebarItem
+            renderContainer={props => <Link {...props} to={defaultRoute} />}
+            icon="bankHeavy"
+            label="Overview"
+          />
+          <SidebarItem
+            renderContainer={props => <Link {...props} to={defaultRoute} />}
+            icon="calendar"
+            label="Color"
+          />
+          <SidebarItem
+            renderContainer={props => <Link {...props} to={defaultRoute} />}
+            icon="documentHeavy"
+            label="Typography"
+          />
+          <SidebarItem
+            renderContainer={props => <Link {...props} to={defaultRoute} />}
+            icon="emailHeavy"
+            label="Illustration"
+          />
+        </SidebarSection>
+      </>
+    );
+
+    return <Sidebar logo={logo}>{showSidebarSections ? sidebarSections : sidebarList}</Sidebar>;
+  }, [showSidebarSections]);
 
   const loremBlock = useMemo(() => {
     return (
@@ -140,7 +178,7 @@ export const NavigationExample: React.FC = () => {
       </Head>
       <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
         <Navigation
-          key={`${showDarkMode} ${showTabs} ${showDisplayTitle}`}
+          key={`${showDarkMode} ${showTabs} ${showDisplayTitle} ${showSidebarSections}`}
           sidebar={sidebar}
           navbar={navbar}
           displayTitle={showDisplayTitle && displayTitle}

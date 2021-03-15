@@ -9,6 +9,10 @@ export const rootStyles = css`
   overflow: hidden;
   display: grid;
   grid-template-columns: ${sidebarWidth.expanded}px auto;
+  li {
+    list-style: none;
+    display: block;
+  }
 
   @media (${devices.tablet}) {
     grid-template-columns: ${sidebarWidth.condensed}px auto;
@@ -30,15 +34,37 @@ export const sidebarItemStyles = css`
   margin-bottom: 3px;
 `;
 
-export const hideForCondensedStyles = css`
+const visuallyHidden = `
+  visibility: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+`;
+
+const unsetVisuallyHidden = `
+  visibility: visible;
+  clip: unset;
+  clip-path: unset;
+  height: unset;
+  overflow: unset;
+  position: unset;
+  white-space: unset;
+  width: unset;
+`;
+
+export const hideForCondensed = css`
   @media (${devices.tablet}) {
-    visibility: hidden;
+    ${visuallyHidden};
   }
 `;
 
 export const showForCondensed = css`
-  visibility: hidden;
+  ${visuallyHidden};
   @media (${devices.tablet}) {
-    visibility: visible;
+    ${unsetVisuallyHidden};
   }
 `;

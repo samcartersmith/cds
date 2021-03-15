@@ -1,17 +1,14 @@
 import React from 'react';
 
-import { PaletteBorder, PinningDirection, OffsetProps } from '@cbhq/cds-common';
+import { PaletteBorder } from '@cbhq/cds-common';
 import { css, cx } from 'linaria';
 import { useSeparator } from 'react-aria';
 
-import { useOffsetStyles } from '../hooks/useOffsetStyles';
-import { usePinStyles } from '../hooks/usePinStyles';
 import { palette } from '../tokens';
+import { Box, BoxProps } from './Box';
 
-export interface DividerProps extends OffsetProps {
+export interface DividerProps extends BoxProps {
   color?: Extract<PaletteBorder, 'line' | 'lineHeavy'>;
-  pin?: PinningDirection;
-  width?: number | string;
 }
 
 const styles = {
@@ -27,15 +24,11 @@ const styles = {
   `,
 };
 
-export const Divider = ({ color = 'line', pin, width, ...offsetProps }: DividerProps) => {
+export const Divider = ({ color = 'line', ...boxProps }: DividerProps) => {
   const { separatorProps } = useSeparator({ elementType: 'div' });
-  const pinStyles = usePinStyles(pin);
-  const offsetStyles = useOffsetStyles(offsetProps);
-  const style = { width };
-
-  return React.createElement('div', {
-    ...separatorProps,
-    className: cx(styles.shared, styles[color], pinStyles, offsetStyles),
-    style,
-  });
+  return (
+    <Box {...boxProps}>
+      <div {...separatorProps} className={cx(styles.shared, styles[color])} />
+    </Box>
+  );
 };

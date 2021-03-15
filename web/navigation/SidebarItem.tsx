@@ -13,7 +13,7 @@ import { Box, HStack } from '../layout';
 import { useTooltip } from '../overlays/useTooltip';
 import { getFlexStyles } from '../styles/flexStyles';
 import { TextHeadline } from '../typography/TextHeadline';
-import { hideForCondensedStyles, showForCondensed, sidebarItemStyles } from './navigationStyles';
+import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
 import { useSidebarLayout } from './SidebarLayoutProvider';
 
@@ -49,7 +49,6 @@ export const SidebarItem = memo(
       borderColor: 'secondary',
       borderRadius: 'standard',
       elementType: 'a',
-      scaleOnPress: true,
       onHover,
       onPress,
     });
@@ -75,7 +74,7 @@ export const SidebarItem = memo(
           </Box>
         )}
         <HStack
-          dangerouslySetClassName={hideForCondensedStyles}
+          dangerouslySetClassName={hideForCondensed}
           flexGrow={1}
           justifyContent="space-between"
           alignItems="center"
@@ -94,6 +93,8 @@ export const SidebarItem = memo(
         style,
         className: cx(flexStyles, spacingStyles, sidebarItemStyles, className),
         children: sidebarContent,
+        // https://www.aditus.io/aria/aria-current/
+        ...(active ? ({ 'aria-current': 'page' } as const) : emptyObject),
       },
       isExpanded ? emptyObject : { ref: tooltipRef, ...tooltipProps }
     );
@@ -103,10 +104,10 @@ export const SidebarItem = memo(
       : React.createElement('a', enhancedProps);
 
     return (
-      <>
+      <li>
         {content}
         {tooltip}
-      </>
+      </li>
     );
   }
 );

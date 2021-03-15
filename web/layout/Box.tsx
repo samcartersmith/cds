@@ -42,7 +42,9 @@ export type BoxElement =
   | 'header'
   | 'main'
   | 'section'
-  | 'nav';
+  | 'nav'
+  | 'ul'
+  | 'li';
 
 export interface BoxProps<As extends BoxElement = 'div'> extends Omit<BoxBaseProps, 'position'> {
   /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
@@ -135,7 +137,6 @@ export const Box = forwardRef(
           }),
           background && backgroundColorStyles[background === true ? 'background' : background],
           overflow && styles.overflow[overflow],
-          position && styles.position[position],
           borderRadius && borderRadii[borderRadius],
           rounded && borderRadii.standard,
           getBorderStyles({
@@ -179,6 +180,7 @@ export const Box = forwardRef(
           minHeight,
           minWidth,
           width,
+          position,
           bottom,
           left,
           right,

@@ -137,22 +137,20 @@ describe('Box', () => {
   });
 
   describe('position', () => {
-    expectClassName('position', ['absolute', 'relative']);
-
     it('will set styles based on related props', () => {
       const { container, rerender } = render(<Box>Child</Box>);
 
       expect(container.firstChild).not.toHaveAttribute('style');
 
       rerender(
-        <Box top="25%" right="30px" bottom="8rem" left="1000%" zIndex={200}>
+        <Box position="absolute" top="25%" right="30px" bottom="8rem" left="1000%" zIndex={200}>
           Child
         </Box>
       );
 
       expect(container.firstChild).toHaveAttribute(
         'style',
-        'bottom: 8rem; left: 1000%; right: 30px; top: 25%; z-index: 200;'
+        'position: absolute; bottom: 8rem; left: 1000%; right: 30px; top: 25%; z-index: 200;'
       );
     });
   });

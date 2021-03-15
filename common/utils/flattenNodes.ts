@@ -1,0 +1,36 @@
+/* 
+  Similar to React's built-in Children.toArray method, this utility takes children and returns them as an array for
+  introspection or filtering. Different from Children.toArray, it will flatten arrays and React.Fragments into a
+  regular, one-dimensional array while ensuring element and fragment keys are preserved, unique, and stable between renders.
+*/
+
+import { ReactNode, ReactChild, Children, isValidElement, cloneElement } from 'react';
+
+import { isFragment } from 'react-is';
+
+export default function flattenNodes(
+  children: ReactNode,
+  depth = 0,
+  keys: (string | number)[] = []
+): ReactChild[] {
+  return Children.toArray(children).reduce((acc: ReactChild[], node, nodeIndex) => {
+    if (isFragment(node)) {
+      return [
+        ...acc,
+        ...flattenNodes(node.props.children, depth + 1, keys.concat(node.key || nodeIndex)),
+      ];
+    } else {
+      if (isValidElement(node)) {
+        return [
+          ...acc,
+          cloneElement(node, {
+            key: keys.concat(String(node.key)).join('.'),
+          }),
+        ];
+      } else if (typeof node === 'string' || typeof node === 'number') {
+        return [...acc, node];
+      }
+    }
+    return acc;
+  }, []);
+}

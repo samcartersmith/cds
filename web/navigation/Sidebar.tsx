@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
 
+import { TrackIndexProvider } from '@cbhq/cds-common/context/TrackIndexProvider';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { LogoMarkProps } from '../icons/LogoMark';
 import { VStack } from '../layout/VStack';
-import { SidebarItemProps } from './SidebarItem';
 
 export type SidebarProps = {
   logo: React.ReactElement<LogoMarkProps>;
-  children: React.ReactElement<SidebarItemProps>[];
+  children: React.ReactNode;
 };
 
 export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children }) => {
@@ -28,7 +28,9 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children }) => {
         <VStack spacingTop={0.5} spacingStart={1} spacingBottom={3}>
           {logo}
         </VStack>
-        {children}
+        <ul>
+          <TrackIndexProvider>{children}</TrackIndexProvider>
+        </ul>
       </VStack>
     </ScaleProvider>
   );
