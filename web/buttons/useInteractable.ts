@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 
 import {
   BorderRadius,
@@ -8,11 +8,13 @@ import {
   SpectrumHueStep,
   usePaletteConfig,
 } from '@cbhq/cds-common';
+import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { AriaButtonProps } from '@react-types/button';
 import { cx } from 'linaria';
 import { useButton, useHover } from 'react-aria';
 
+import { useFocusStyles } from '../hooks/useFocusStyles';
 import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
 import { OnHover, OnPress } from '../types';
@@ -55,7 +57,7 @@ export interface UseInteractableOptions<T> extends InteractableProps<T> {
   scaleOnPress?: boolean;
 }
 
-export function useInteractable<T>({
+export function useInteractable<T extends HTMLElement>({
   backgroundColor,
   borderColor,
   borderRadius,
@@ -74,8 +76,11 @@ export function useInteractable<T>({
   props: React.HTMLAttributes<T>;
   style: React.CSSProperties;
 } {
+  const internalRef = useRef<T>();
+  const mergedRef = useMergeRefs(internalRef, ref);
   const paletteConfig = usePaletteConfig();
   const spectrumAlias = paletteConfig[backgroundColor];
+  const focusStyles = useFocusStyles();
 
   const { buttonProps, isPressed } = useButton(
     {
@@ -86,7 +91,7 @@ export function useInteractable<T>({
       type: buttonType,
     } as AriaButtonProps,
     // @ts-expect-error Allow null type
-    ref
+    mergedRef
   );
 
   const { hoverProps, isHovered } = useHover({ isDisabled, onHoverChange: onHover });
@@ -116,6 +121,7 @@ export function useInteractable<T>({
       borderColors[borderColor],
       borderRadii[borderRadius],
       interactable,
+      focusStyles,
       isPressed && scaleOnPress && scaledDownState,
       isDisabled && disabledState
     ),

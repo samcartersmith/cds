@@ -2,7 +2,6 @@ import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { css } from 'linaria';
 
 export const interactable = css`
-  position: relative;
   appearance: none;
   cursor: pointer;
   user-select: none;

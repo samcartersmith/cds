@@ -26,6 +26,8 @@ export const scrollContent = css`
 
 export const sidebarItemStyles = css`
   white-space: nowrap;
+  /* To ensure focus style is not cut off when tabbing */
+  margin-bottom: 3px;
 `;
 
 export const hideForCondensedStyles = css`
