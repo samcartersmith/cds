@@ -75,3 +75,37 @@ A deprecation notice consists of:
 - Accessibility support integrated.
 - Unit tests written with adequate code coverage.
 - Linting and other tests pass.
+
+## Icon-release procedure
+
+If there are any changes to CDS's Icon inventory, these releases will be released on a Wednesday.
+
+Below describes the procedures for how designers and engineers will have to collaborate to update the Icons.
+
+Steps required for all types of changes to icons:
+
+1. Send a heads up to #design-system-team
+
+Steps for **Adding** icons:
+
+2. Eng opens PR
+3. Run make prepare.icons
+4. Update changelog
+5. bump common (the IconName typescript changes), web and mobile packages
+6. Eng updates thread that PR has been merged
+7. Run plugin
+
+Steps for **editing** icons:
+
+2. 🚨 Included a mapping of oldName -> newName 🚨 (i.e closeHeavy -> close)
+3. Eng opens PR
+4. Update name in eng/shared/design-system/codegen/icons/manifest.ts
+5. Run make prepare.icons
+6. Update changelog
+7. bump common (the IconName typescript changes), web and mobile packages
+8. Eng updates thread that PR has been merged
+9. Run plugin
+
+Steps for **deleting** icons:
+
+2. We should not be doing this, but if we do, follow steps in Edit
