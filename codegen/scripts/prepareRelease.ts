@@ -6,12 +6,13 @@ import * as path from 'path';
 import * as semver from 'semver';
 
 const DS_DIR = path.join(process.cwd(), 'eng/shared/design-system');
-const LOG_PREFIX = /^(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
+const LOG_PREFIX = /^(- )?(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
 const AUTHORS: Record<string, string> = {
   'Miles Johnson': '@miles-johnson',
   'Katherine Martinez': '@katherinemartinez',
   'Hannah Jin': '@hannah-jin',
   'Jennifer Liu': '@jennifer-liu',
+  'Travis Ueki': '@travis-ueki',
 };
 
 type VersionBump = 'major' | 'minor' | 'patch';

@@ -28,17 +28,6 @@ if (!importPath && !componentName) {
 
 const constVarMap: Record<string, ObjectExpression | ArrayExpression> = {};
 
-// RN is base 4 but CDS is base 8
-// function halveSpacing(value: number): number {
-//   let amount = Math.abs(value) / 2;
-
-//   if (amount % 1 !== 0 && amount !== 0.5) {
-//     amount = amount <= 3 ? Math.ceil(amount) : Math.floor(amount);
-//   }
-
-//   return amount;
-// }
-
 function isValidSpacingValue(value: Node, allowIdentifier = false): boolean {
   switch (value.type) {
     // spacing={gap}
