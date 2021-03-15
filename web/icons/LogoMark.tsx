@@ -18,7 +18,7 @@ export const LogoMark = memo(({ size }: LogoMarkProps) => {
       height={height}
       className={iconStyles}
     >
-      <title>Coinabse logo</title>
+      <title>Coinbase logo</title>
       {circle && (
         <circle
           cx={circle.radius}

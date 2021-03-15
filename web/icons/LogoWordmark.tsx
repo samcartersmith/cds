@@ -15,7 +15,7 @@ const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
       viewBox={viewBox}
       className={iconStyles}
     >
-      <title>Coinabse logo</title>
+      <title>Coinbase logo</title>
       {paths.map((item, i) => (
         <path key={`logo-wordmark-${i}`} d={item} />
       ))}
