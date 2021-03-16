@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.4.3 (3/16/2021, 09:56 AM PST)
+
+#### 🚀 Updates
+
+- Scroll animation for DisplayTitle or DisplayTitle + Tabs variants @katherinemartinez [#14988](https://github.cbhq.net/mono/repo/pull/14988), [CDS-360](https://jira.coinbase-corp.com/browse/CDS-360)
+- Add SidebarSection for CDS web navigation @katherinemartinez [#14897](https://github.cbhq.net/mono/repo/pull/14897), [CDS-332](https://jira.coinbase-corp.com/browse/CDS-332)
+- Add focus logic and styling to useInteractable @katherinemartinez [#14895](https://github.cbhq.net/mono/repo/pull/14895), [CDS-365](https://jira.coinbase-corp.com/browse/CDS-365)
+- add LogoMark and LogoWordmark for web and mobile @katherinemartinez [#14892](https://github.cbhq.net/mono/repo/pull/14892), [CDS-327](https://jira.coinbase-corp.com/browse/CDS-327)
+
+#### 🐞 Fixes
+
+- Remove release sha. @miles-johnson
+- Spelling in logo title @katherinemartinez [#14935](https://github.cbhq.net/mono/repo/pull/14935)
+- fix - vertical padding and nowrap for button @katherinemartinez [#14856](https://github.cbhq.net/mono/repo/pull/14856)
+
 ## 0.4.2 (3/12/2021, 11:07 AM PST)
 
 #### 🚀 Updates

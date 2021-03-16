@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.3.3 (3/16/2021, 09:56 AM PST)
+
+#### 🚀 Updates
+
+- Add SidebarSection for CDS web navigation @katherinemartinez [#14897](https://github.cbhq.net/mono/repo/pull/14897), [CDS-332](https://jira.coinbase-corp.com/browse/CDS-332)
+- Add focus logic and styling to useInteractable @katherinemartinez [#14895](https://github.cbhq.net/mono/repo/pull/14895), [CDS-365](https://jira.coinbase-corp.com/browse/CDS-365)
+- add LogoMark and LogoWordmark for web and mobile @katherinemartinez [#14892](https://github.cbhq.net/mono/repo/pull/14892), [CDS-327](https://jira.coinbase-corp.com/browse/CDS-327)
+
+#### 🐞 Fixes
+
+- Remove release sha. @miles-johnson
+
 ## 0.3.2 (3/12/2021, 11:07 AM PST)
 
 #### 🚀 Updates

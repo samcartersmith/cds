@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.3 (3/16/2021, 09:56 AM PST)
+
+#### 🚀 Updates
+
+- add LogoMark and LogoWordmark for web and mobile @katherinemartinez [#14892](https://github.cbhq.net/mono/repo/pull/14892), [CDS-327](https://jira.coinbase-corp.com/browse/CDS-327)
+
+#### 🐞 Fixes
+
+- Remove release sha. @miles-johnson
+- add all lottie exports to animation index @katherinemartinez [#14969](https://github.cbhq.net/mono/repo/pull/14969)
+
 ## 0.5.2 (3/12/2021, 11:07 AM PST)
 
 #### 🚀 Updates

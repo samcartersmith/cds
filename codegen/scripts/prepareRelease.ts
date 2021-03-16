@@ -6,7 +6,7 @@ import * as path from 'path';
 import * as semver from 'semver';
 
 const DS_DIR = path.join(process.cwd(), 'eng/shared/design-system');
-const LOG_PREFIX = /^(- )?(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
+const LOG_PREFIX = /^(?:- )?(\w+)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u;
 const AUTHORS: Record<string, string> = {
   'Miles Johnson': '@miles-johnson',
   'Katherine Martinez': '@katherinemartinez',
@@ -208,7 +208,7 @@ async function updateChangelog(
   return nextVersion;
 }
 
-async function extractGitLogs(pkgPath: string, releaseSha: string): Promise<Log[]> {
+async function extractGitLogs(pkgPath: string): Promise<Log[]> {
   return new Promise((resolve, reject) => {
     exec(
       `git --no-pager log -n 100 --pretty=format:'%h||%at||%an||%s' .`,
@@ -224,18 +224,12 @@ async function extractGitLogs(pkgPath: string, releaseSha: string): Promise<Log[
 
         for (let i = 0; i < lines.length; i += 1) {
           const [sha, date, author, commit] = lines[i].split('||');
-
-          // We've caught up to the last released sha, so abort
-          if (sha === releaseSha) {
-            break;
-          }
-
           const { jira, pr, message } = parseCommitTokens(commit);
           const change = parseLogChange(message);
 
-          // Dont include releases in the changelog
+          // We've caught up to the last released sha, so abort
           if (change.type === 'release') {
-            continue;
+            break;
           }
 
           logs.push({
@@ -259,10 +253,10 @@ async function releasePackage(pkgName: string) {
   const pkgJsonPath = path.join(pkgPath, 'basepackage.json');
   const pkg = JSON.parse(await fs.promises.readFile(pkgJsonPath, 'utf8'));
 
-  const logs = await extractGitLogs(pkgPath, pkg.releaseSha);
+  const logs = await extractGitLogs(pkgPath);
 
   if (logs.length === 0) {
-    console.log(`[${pkgName}] No new commits since last release SHA ${pkg.releaseSha}`);
+    console.log(`[${pkgName}] No new commits since last release`);
     return;
   }
 
@@ -276,7 +270,6 @@ async function releasePackage(pkgName: string) {
   await updateChangelog(pkgPath, logs, nextVersion);
 
   pkg.version = nextVersion;
-  pkg.releaseSha = logs[0].sha;
 
   await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkg, null, 2));
 

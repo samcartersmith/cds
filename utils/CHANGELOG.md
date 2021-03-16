@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.3 (3/16/2021, 09:56 AM PST)
+
+#### 🐞 Fixes
+
+- Remove release sha. @miles-johnson
+
 ## 0.1.2 (3/12/2021, 11:07 AM PST)
 
 #### 📘 Misc
