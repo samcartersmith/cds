@@ -1,6 +1,7 @@
 DEPENDENCIES = [
     "@npm//@popperjs/core",
     "@npm//destyle.css",
+    "@npm//framer-motion",
     "@npm//linaria",
     "@npm//lottie-web",
     "@npm//react-aria",

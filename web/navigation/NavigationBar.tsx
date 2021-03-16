@@ -1,5 +1,7 @@
 import React, { memo } from 'react';
 
+import { MotionValue, m as motion } from 'framer-motion';
+
 import { HStack } from '../layout/HStack';
 import { Spacer } from '../layout/Spacer';
 import { VStack } from '../layout/VStack';
@@ -12,17 +14,17 @@ export interface NavigationBarProps {
   titles?: React.ReactElement<NavigationBarTitlesProps>;
   ctas?: React.ReactElement<NavigationBarCtasProps>;
   actions?: React.ReactElement;
-  hideTitles?: boolean;
+  animatedOpacity?: MotionValue;
 }
 
 export const NavigationBar = memo(
-  ({ controls, titles, ctas, actions, hideTitles }: NavigationBarProps) => {
+  ({ controls, titles, ctas, actions, animatedOpacity }: NavigationBarProps) => {
     return (
       <HStack width="100%" alignItems="flex-start" justifyContent="space-between">
         <VStack>
           <HStack alignItems="baseline">
             {controls}
-            {!hideTitles && titles}
+            <motion.div style={{ opacity: animatedOpacity }}>{titles}</motion.div>
           </HStack>
         </VStack>
         <Spacer />

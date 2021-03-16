@@ -4,9 +4,12 @@ import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { MotionConfig, useElementScroll, m as motion } from 'framer-motion';
 
 import { useDimensions } from '../hooks/useDimensions';
+import { useInterpolate } from '../hooks/useInterpolate';
 import { Box, Divider, VStack } from '../layout';
+import { bottom as pinBottom } from '../styles/pin';
 import { SidebarLayout, defaultLayout } from './context';
 import { NavigationBarProps } from './NavigationBar';
 import { NavigationDisplayTitleProps } from './NavigationDisplayTitle';
@@ -27,9 +30,11 @@ export type NavigationProps = {
 export const Navigation: React.FC<NavigationProps> = memo(
   ({ sidebarLayout = defaultLayout, ...props }) => {
     return (
-      <SidebarLayoutProvider variant={sidebarLayout}>
-        <NavigationContent {...props} />
-      </SidebarLayoutProvider>
+      <MotionConfig>
+        <SidebarLayoutProvider variant={sidebarLayout}>
+          <NavigationContent {...props} />
+        </SidebarLayoutProvider>
+      </MotionConfig>
     );
   }
 );
@@ -39,8 +44,21 @@ const NavigationContent: React.FC<NavigationProps> = memo(
     const setSidebarLayout = useSetSidebarLayout();
     const scrollRef = useRef<HTMLElement>(null);
     const { observe: tabsRef, height: tabsHeight } = useDimensions();
+    const { observe: displayTitleRef, height: displayTitleHeight } = useDimensions();
     const { ref: navbarRef, height: navbarHeight } = useDimensions();
+    const { scrollY } = useElementScroll(scrollRef);
+
+    const navbarTitlesOpacity = useInterpolate(scrollY, {
+      inputRange: [navbarHeight, navbarHeight + tabsHeight + displayTitleHeight],
+      outputRange: [0, 1],
+    });
+    const dividerOpacity = useInterpolate(scrollY, {
+      inputRange: [0, navbarHeight + tabsHeight],
+      outputRange: [0, 1],
+    });
+
     const showTabsAndTitle = Boolean(tabs && displayTitle);
+    const shouldAnimatedHeader = displayTitle || showTabsAndTitle;
 
     const { ref: sidebarRef } = useDimensions({
       breakpoints: { mobile: 0, desktop: sidebarWidth.expanded },
@@ -59,11 +77,21 @@ const NavigationContent: React.FC<NavigationProps> = memo(
       },
     });
 
-    const navBarTabs = tabs && (
+    const animatedDivider = (
+      <motion.div className={pinBottom} style={{ opacity: dividerOpacity }}>
+        <Divider />
+      </motion.div>
+    );
+    const navbarClone = React.cloneElement(navbar, {
+      animatedOpacity: shouldAnimatedHeader ? navbarTitlesOpacity : undefined,
+    });
+    const navBarTabs = tabs && !displayTitle && (
       <Box offsetHorizontal={1} spacingTop={2}>
         {tabs}
       </Box>
     );
+    const navbarStaticDivider = !tabs && !displayTitle && <Divider pin="bottom" />;
+    const navbarAnimatedDivider = !tabs && displayTitle && animatedDivider;
 
     return (
       <div className={rootStyles}>
@@ -80,20 +108,19 @@ const NavigationContent: React.FC<NavigationProps> = memo(
               spacing={gutter}
               background
             >
-              {React.cloneElement(navbar, { hideTitles: showTabsAndTitle })}
-              {/* Tabs - if NavigationDisplayTitle is not present */}
-              {!showTabsAndTitle && navBarTabs}
-              {/* Divider - if NavigationDisplayTitle + Tabs is not present */}
-              {!showTabsAndTitle && <Divider pin="bottom" />}
+              {navbarClone}
+              {navBarTabs}
+              {navbarStaticDivider}
+              {navbarAnimatedDivider}
             </VStack>
           </ScaleProvider>
-          {/* NavigationDisplayTitle */}
           {displayTitle && (
             <Box
+              ref={displayTitleRef}
               as="header"
               background
               spacingHorizontal={appContentSpacing}
-              spacingTop={appContentSpacing}
+              spacingTop={shouldAnimatedHeader ? 0 : appContentSpacing}
             >
               {displayTitle}
             </Box>
@@ -111,6 +138,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
               background
             >
               {tabs}
+              {animatedDivider}
             </VStack>
           )}
           <VStack
