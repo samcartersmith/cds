@@ -1,4 +1,4 @@
-import React, { memo, useRef } from 'react';
+import React, { memo, useMemo, useRef } from 'react';
 
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
@@ -90,7 +90,13 @@ const NavigationContent: React.FC<NavigationProps> = memo(
         {tabs}
       </Box>
     );
-    const navbarStaticDivider = !tabs && !displayTitle && <Divider pin="bottom" />;
+
+    const navbarStaticDivider = useMemo(() => {
+      if (!displayTitle) {
+        return <Divider pin="bottom" />;
+      }
+    }, [displayTitle]);
+
     const navbarAnimatedDivider = !tabs && displayTitle && animatedDivider;
 
     return (
@@ -110,8 +116,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
             >
               {navbarClone}
               {navBarTabs}
-              {navbarStaticDivider}
-              {navbarAnimatedDivider}
+              {navbarStaticDivider ?? navbarAnimatedDivider}
             </VStack>
           </ScaleProvider>
           {displayTitle && (
