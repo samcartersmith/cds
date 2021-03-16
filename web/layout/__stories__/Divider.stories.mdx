@@ -1,0 +1,52 @@
+import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { Divider } from '../Divider';
+
+<Meta title="Core Components/Divider" component={Divider} />
+
+# Divider
+
+<Canvas withToolbar>
+  <Story
+    name="Horizontal direction"
+    decorators={[withStoryLabel('Horizontal')]}
+    args={{ direction: 'horizontal' }}
+  >
+    {args => <Divider {...args} />}
+  </Story>
+  <Story
+    name="Vertical direction"
+    decorators={[withStoryLabel('Vertical')]}
+    args={{ direction: 'vertical' }}
+  >
+    {args => (
+      <div style={{ height: 100 }}>
+        <Divider {...args} />
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+# Colors
+
+<Canvas withToolbar>
+  <Story name="Light color" decorators={[withStoryLabel('Light')]} args={{ color: 'line' }}>
+    {args => <Divider {...args} />}
+  </Story>
+  <Story
+    name="Heavy color"
+    decorators={[withStoryLabel('Heavy')]}
+    args={{ direction: 'vertical', color: 'lineHeavy' }}
+  >
+    {args => (
+      <div style={{ height: 100 }}>
+        <Divider {...args} />
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

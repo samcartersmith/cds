@@ -1,15 +1,13 @@
 import React from 'react';
 
-import { PaletteBorder } from '@cbhq/cds-common';
+import { DividerBaseProps } from '@cbhq/cds-common';
 import { css, cx } from 'linaria';
 import { useSeparator } from 'react-aria';
 
 import { palette } from '../tokens';
 import { Box, BoxProps } from './Box';
 
-export interface DividerProps extends BoxProps {
-  color?: Extract<PaletteBorder, 'line' | 'lineHeavy'>;
-}
+export interface DividerProps extends DividerBaseProps, BoxProps {}
 
 const styles = {
   line: css`
@@ -18,17 +16,30 @@ const styles = {
   lineHeavy: css`
     background-color: ${palette.lineHeavy};
   `,
-  shared: css`
+  horizontal: css`
     width: 100%;
     height: 1px;
   `,
+  vertical: css`
+    height: 100%;
+    width: 1px;
+  `,
 };
 
-export const Divider = ({ color = 'line', ...boxProps }: DividerProps) => {
+export const Divider = ({
+  color = 'line',
+  direction = 'horizontal',
+  ...boxProps
+}: DividerProps) => {
   const { separatorProps } = useSeparator({ elementType: 'div' });
+
   return (
-    <Box {...boxProps}>
-      <div {...separatorProps} className={cx(styles.shared, styles[color])} />
+    <Box
+      height={direction === 'vertical' ? '100%' : undefined}
+      width={direction === 'horizontal' ? '100%' : undefined}
+      {...boxProps}
+    >
+      <div {...separatorProps} className={cx(styles[direction], styles[color])} />
     </Box>
   );
 };

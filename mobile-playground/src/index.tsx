@@ -8,8 +8,9 @@ import { View, FlatList, TouchableHighlight } from 'react-native';
 const components = [
   { key: 'Box' },
   { key: 'Button' },
-  { key: 'IconButton' },
+  { key: 'Divider' },
   { key: 'Icon' },
+  { key: 'IconButton' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
   { key: 'Text', label: 'Text (all)' },

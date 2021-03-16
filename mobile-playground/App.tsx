@@ -9,8 +9,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import List from './src';
 import BoxScreen from './src/Box';
 import ButtonScreen from './src/Button';
-import IconButtonScreen from './src/IconButton';
+import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
+import IconButtonScreen from './src/IconButton';
 import LottieScreen from './src/Lottie';
 import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
@@ -60,6 +61,7 @@ const App = () => {
           />
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
+          <Stack.Screen name="Divider" component={DividerScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />
