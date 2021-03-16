@@ -16,10 +16,5 @@
     "access": "public",
     "registry": "https://registry-npm.cbhq.net"
   },
-  "authors": "Coinbase",
-  "files": [
-    "*.css",
-    "*.woff2",
-    "*.otf"
-  ]
+  "authors": "Coinbase"
 }
