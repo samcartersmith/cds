@@ -32,6 +32,7 @@ module.exports = {
         'foundation/color',
         'foundation/iconography',
         'foundation/illustration',
+        'foundation/motion',
         'foundation/scale',
         'foundation/typography',
       ],
