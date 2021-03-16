@@ -47,6 +47,16 @@ export const useInternalSpacingStyles = ({
       setSpacing('spacingLeft', all);
     }
 
+    if (vertical !== undefined) {
+      setSpacing('spacingTop', vertical);
+      setSpacing('spacingBottom', vertical);
+    }
+
+    if (horizontal !== undefined) {
+      setSpacing('spacingLeft', horizontal);
+      setSpacing('spacingRight', horizontal);
+    }
+
     if (top !== undefined) {
       setSpacing('spacingTop', top);
     }
@@ -61,16 +71,6 @@ export const useInternalSpacingStyles = ({
 
     if (end !== undefined) {
       setSpacing(I18nManager.isRTL ? 'spacingLeft' : 'spacingRight', end);
-    }
-
-    if (vertical !== undefined) {
-      setSpacing('spacingTop', vertical);
-      setSpacing('spacingBottom', vertical);
-    }
-
-    if (horizontal !== undefined) {
-      setSpacing('spacingLeft', horizontal);
-      setSpacing('spacingRight', horizontal);
     }
 
     return styles;

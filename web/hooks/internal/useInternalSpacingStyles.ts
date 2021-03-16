@@ -36,6 +36,16 @@ export const useInternalSpacingStyles = ({
       spacingClasses.push(styles.all[all]);
     }
 
+    if (vertical) {
+      spacingClasses.push(styles.top[vertical]);
+      spacingClasses.push(styles.bottom[vertical]);
+    }
+
+    if (horizontal) {
+      spacingClasses.push(styles.left[horizontal]);
+      spacingClasses.push(styles.right[horizontal]);
+    }
+
     if (top) {
       spacingClasses.push(styles.top[top]);
     }
@@ -58,16 +68,6 @@ export const useInternalSpacingStyles = ({
       } else {
         spacingClasses.push(styles.right[end]);
       }
-    }
-
-    if (vertical) {
-      spacingClasses.push(styles.top[vertical]);
-      spacingClasses.push(styles.bottom[vertical]);
-    }
-
-    if (horizontal) {
-      spacingClasses.push(styles.left[horizontal]);
-      spacingClasses.push(styles.right[horizontal]);
     }
 
     return cx(...spacingClasses);
