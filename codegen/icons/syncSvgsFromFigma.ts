@@ -1,9 +1,9 @@
 import { camelCase, entries } from '@cbhq/cds-utils';
 import axios from 'axios';
-import * as chalk from 'chalk';
-import * as fs from 'fs';
-import * as ora from 'ora';
-import * as path from 'path';
+import chalk from 'chalk';
+import fs from 'fs';
+import ora from 'ora';
+import path from 'path';
 import { promisify } from 'util';
 
 import { ComponentMetadata } from '../figma/api';

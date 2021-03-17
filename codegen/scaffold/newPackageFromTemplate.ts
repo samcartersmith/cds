@@ -1,8 +1,8 @@
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import * as glob from 'fast-glob';
+import glob from 'fast-glob';
 import { existsSync, promises as fs } from 'fs';
-import * as path from 'path';
+import path from 'path';
 import { argv } from 'yargs';
 
 const name = argv.name as string;

@@ -1,10 +1,10 @@
 import { mapValues, mapKeys } from '@cbhq/cds-utils';
 // @ts-expect-error No types for this package
-import * as toPath from 'element-to-path';
+import toPath from 'element-to-path';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import * as glob from 'fast-glob';
-import * as fs from 'fs';
-import * as path from 'path';
+import glob from 'fast-glob';
+import fs from 'fs';
+import path from 'path';
 import { parse } from 'svgson';
 
 import { iconSizes } from '../configs/iconConfig';
