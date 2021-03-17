@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58084,
+  lastUnicode: 58094,
   unicodeMap: {
     cashUSDHeavy: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBPHeavy: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -293,5 +293,7 @@ export const manifest = {
     expand: { '8': 'uE2D0', '12': 'uE2D1', '16': 'uE2D2', '24': 'uE2D3', '32': 'uE2D4' },
     collapse: { '8': 'uE2D5', '12': 'uE2D6', '16': 'uE2D7', '24': 'uE2D8', '32': 'uE2D9' },
     pay: { '8': 'uE2DA', '12': 'uE2DB', '16': 'uE2DC', '24': 'uE2DD', '32': 'uE2DE' },
+    unheartHeavy: { '8': 'uE2E4', '12': 'uE2E5', '16': 'uE2E6', '24': 'uE2E7', '32': 'uE2E8' },
+    shareHeavy: { '8': 'uE2E9', '12': 'uE2EA', '16': 'uE2EB', '24': 'uE2EC', '32': 'uE2ED' },
   },
 };
