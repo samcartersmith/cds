@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.4 (3/17/2021, 10:10 AM PST)
+
+#### 🐞 Fixes
+
+- Fix missing native fonts. @miles-johnson [#15090](https://github.cbhq.net/mono/repo/pull/15090)
+
 ## 0.1.3 (3/16/2021, 09:56 AM PST)
 
 #### 🐞 Fixes
