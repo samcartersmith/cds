@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.3.4 (3/18/2021, 08:52 AM PST)
+
+#### 🐞 Fixes
+
+- Added unheartHeavy and shareHeavy icons. @jennifer-liu [#15209](https://github.cbhq.net/mono/repo/pull/15209)
+
+#### 📘 Misc
+
+- Add `Divider` component. @miles-johnson [#15086](https://github.cbhq.net/mono/repo/pull/15086)
+
 ## 0.3.3 (3/16/2021, 09:56 AM PST)
 
 #### 🚀 Updates

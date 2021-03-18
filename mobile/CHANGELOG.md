@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.4 (3/18/2021, 08:52 AM PST)
+
+#### 🐞 Fixes
+
+- internal - add e2e mocks for lottie in react native @katherinemartinez [#15291](https://github.cbhq.net/mono/repo/pull/15291)
+- Added unheartHeavy and shareHeavy icons. @jennifer-liu [#15209](https://github.cbhq.net/mono/repo/pull/15209)
+
+#### 📘 Misc
+
+- Add `Divider` component. @miles-johnson [#15086](https://github.cbhq.net/mono/repo/pull/15086)
+
 ## 0.5.3 (3/16/2021, 09:56 AM PST)
 
 #### 🚀 Updates
