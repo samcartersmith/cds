@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { memo } from 'react';
 
 import { useScale, useSpectrum, SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 import { cx } from 'linaria';
@@ -7,7 +7,7 @@ import { usePaletteToCssVars } from '../hooks/usePaletteToCssVars';
 import * as scaleCss from '../styles/scale';
 import * as spectrumCss from '../styles/spectrum';
 
-export const ThemeProvider: React.FC<SystemProviderProps> = React.memo(({ children, ...props }) => {
+export const ThemeProvider: React.FC<SystemProviderProps> = memo(({ children, ...props }) => {
   return (
     <SystemProvider {...props}>
       <ThemeManager>{children}</ThemeManager>

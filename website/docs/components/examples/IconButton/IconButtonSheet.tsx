@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
 import { HStack, Box } from '@cbhq/cds-web/layout';
 

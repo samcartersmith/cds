@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Button } from '@cbhq/cds-mobile/buttons/Button';
 import { GestureResponderEvent } from 'react-native';
 

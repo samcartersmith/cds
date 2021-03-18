@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, memo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
@@ -23,7 +23,7 @@ export interface ButtonProps extends ButtonBaseProps {
   onPress?: (event: GestureResponderEvent) => void;
 }
 
-export const Button = React.memo(
+export const Button = memo(
   ({
     accessibilityLabel,
     block,

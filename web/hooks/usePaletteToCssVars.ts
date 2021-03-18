@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useMemo } from 'react';
 
 import { usePaletteConfig } from '@cbhq/cds-common';
 import { mapValues, mapKeys, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 
 export const usePaletteToCssVars = () => {
   const paletteConfig = usePaletteConfig();
-  return React.useMemo(() => {
+  return useMemo(() => {
     const transformedValues = mapValues(paletteConfig, spectrumAlias => {
       const [alias, opacity] = typeof spectrumAlias === 'string' ? [spectrumAlias] : spectrumAlias;
       const cssVariable = toCssVarFn(alias);

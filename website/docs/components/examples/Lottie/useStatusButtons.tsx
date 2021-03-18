@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { join, LottieStatusAnimationType } from '@cbhq/cds-common';
 import { Spacer } from '@cbhq/cds-web/layout/Spacer';

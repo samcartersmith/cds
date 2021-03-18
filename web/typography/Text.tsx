@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createElement } from 'react';
 
 import type { Typography } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';
@@ -39,7 +39,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
     spacingHorizontal,
     ...props
   }: DynamicElement<T, TextProps>) =>
-    React.createElement(as, {
+    createElement(as, {
       ...props,
       className: cx(
         textStyles[name],

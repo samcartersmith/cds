@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, memo } from 'react';
 
 import { BoxBaseProps, ElevationLevels } from '@cbhq/cds-common';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/borderRadius';
@@ -39,7 +39,7 @@ export interface BoxProps
   aspectRatio?: number;
 }
 
-export const Box = React.memo(
+export const Box = memo(
   ({
     animated,
     background,

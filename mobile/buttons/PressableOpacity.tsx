@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { PressableProps, ViewStyle } from 'react-native';
 
 import { HapticFeedbackType } from '../types';

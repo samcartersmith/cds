@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, waitFor } from '@testing-library/react-native';
 import { Animated, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';

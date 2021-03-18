@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { renderA11y } from '@utils/jest/renderA11y';
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 const Root: React.FC = ({ children }) => {

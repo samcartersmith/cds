@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { memo, useMemo, lazy, Suspense } from 'react';
 
 import { pascalCase } from '@cbhq/cds-utils';
 
 import type { IconProps } from './props';
 import { useIconPixelSize } from './useIconPixelSize';
 
-export const IconLight: React.FC<IconProps> = React.memo(function IconLight({
+export const IconLight: React.FC<IconProps> = memo(function IconLight({
   size,
   kind,
   fill,
@@ -14,13 +14,13 @@ export const IconLight: React.FC<IconProps> = React.memo(function IconLight({
   const px = useIconPixelSize(size);
   const iconName = `Icon${pascalCase(kind)}${px}Light`;
 
-  const LazyIcon = React.useMemo(() => {
-    return React.lazy(() => import(`./components/${iconName}`));
+  const LazyIcon = useMemo(() => {
+    return lazy(() => import(`./components/${iconName}`));
   }, [iconName]);
 
   return (
-    <React.Suspense fallback={<div style={{ width: px, height: px }} />}>
+    <Suspense fallback={<div style={{ width: px, height: px }} />}>
       <LazyIcon fill={fill} {...props} />
-    </React.Suspense>
+    </Suspense>
   );
 });

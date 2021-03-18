@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';

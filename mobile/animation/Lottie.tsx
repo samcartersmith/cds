@@ -1,4 +1,4 @@
-import React, { memo, useMemo, forwardRef } from 'react';
+import { memo, useMemo, forwardRef } from 'react';
 
 import { ForwardedRef } from '@cbhq/cds-common';
 import LottieView from 'lottie-react-native';

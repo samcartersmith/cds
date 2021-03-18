@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef, createElement } from 'react';
 
 import type { BoxBaseProps, ForwardedRef } from '@cbhq/cds-common';
 import { cx } from 'linaria';
@@ -122,7 +122,7 @@ export const Box = forwardRef(
       dangerouslySetClassName,
     } = props;
 
-    return React.createElement(
+    return createElement(
       as,
       {
         ref: forwardedRef,

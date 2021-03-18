@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, cloneElement } from 'react';
 
 import { PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
@@ -71,7 +71,7 @@ export const Icon = ({
           </TextComponent>
           {bordered && <IconOutline animated size={wrapperSize} color={iconColor} />}
           {badge &&
-            React.cloneElement(badge, {
+            cloneElement(badge, {
               position: 'absolute',
               top: '-45%',
               right: '-50%',

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo, createElement } from 'react';
 
 import { IconName } from '@cbhq/cds-common';
 import { emptyObject } from '@cbhq/cds-utils';
@@ -101,7 +101,7 @@ export const SidebarItem = memo(
 
     const content = renderContainer
       ? renderContainer(enhancedProps)
-      : React.createElement('a', enhancedProps);
+      : createElement('a', enhancedProps);
 
     return (
       <li>

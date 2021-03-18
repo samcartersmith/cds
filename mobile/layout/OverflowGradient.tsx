@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, memo } from 'react';
 
 import { PinningDirection } from '@cbhq/cds-common';
 import { StyleSheet } from 'react-native';
@@ -14,7 +14,7 @@ export interface OverflowGradientProps {
 const start = { x: 0, y: 0 } as const;
 const end = { x: 1, y: 0 } as const;
 
-export const OverflowGradient = React.memo(({ pin = 'right' }: OverflowGradientProps) => {
+export const OverflowGradient = memo(({ pin = 'right' }: OverflowGradientProps) => {
   const palette = usePalette();
   const pinStyles = usePinStyles(pin);
   const gradientColors = useMemo(

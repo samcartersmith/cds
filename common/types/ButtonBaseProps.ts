@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative';
 
 export interface ButtonBaseProps {

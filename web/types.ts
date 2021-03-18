@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { PaletteAlias } from '@cbhq/cds-common';
 import { CssVariableFn } from '@cbhq/cds-utils';
 
@@ -28,9 +26,9 @@ export type CSSMap<T extends string | undefined> = Record<NonNullable<T>, string
 
 export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 
-declare module 'csstype' {
+declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface Properties extends PaletteCssVariable {
+  interface CSSProperties extends PaletteCssVariable {
     // TODO: remove when we migrate to new useInteractable in buttons folder
     '--interactable-opacity'?: number;
     '--interactable-background'?: string;

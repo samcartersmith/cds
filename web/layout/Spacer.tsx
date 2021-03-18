@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Box, BoxProps } from './Box';
 
 export const Spacer: React.FC<BoxProps> = props => (

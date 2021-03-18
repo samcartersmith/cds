@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useMemo } from 'react';
 
 import { TextBaseProps, Typography, PaletteForeground, useScale } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';
@@ -79,7 +79,7 @@ export const createText = (name: Typography) => {
     const scale = useScale();
     const palette = usePalette();
 
-    const textAlign = React.useMemo(() => {
+    const textAlign = useMemo(() => {
       if (align === 'start') {
         return I18nManager.isRTL ? 'right' : 'left';
       }
@@ -92,7 +92,7 @@ export const createText = (name: Typography) => {
     const textStyles = scales[scale].typography[name];
 
     // TODO: Update React Native to not override this and remove deprecatedLineHeight
-    const lineHeight = React.useMemo(() => {
+    const lineHeight = useMemo(() => {
       if (deprecatedLineHeight === undefined) {
         return textStyles?.lineHeight;
       } else if (deprecatedLineHeight === 'none') {
@@ -119,7 +119,7 @@ export const createText = (name: Typography) => {
       ellipsizeMode: ellipsize,
     };
 
-    const style = React.useMemo(
+    const style = useMemo(
       () => [
         spacingStyles,
         scales[scale].typography[name],

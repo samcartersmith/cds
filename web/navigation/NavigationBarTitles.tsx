@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 import { HStack } from '../layout/HStack';
 import { TextTitle3, TextLabel2 } from '../typography';

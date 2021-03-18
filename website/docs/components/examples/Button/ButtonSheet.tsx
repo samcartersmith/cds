@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { join } from '@cbhq/cds-common';
 import { Button } from '@cbhq/cds-web/buttons/Button';

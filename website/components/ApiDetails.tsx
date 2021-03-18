@@ -1,4 +1,4 @@
-import React from 'react';
+import { useCallback } from 'react';
 
 import { css, cx } from 'linaria';
 
@@ -61,7 +61,7 @@ export const ApiDetails = ({
   defaultValue,
   required,
 }: ApiDetailsProps) => {
-  const formatOptions = React.useCallback(
+  const formatOptions = useCallback(
     (options: string[]) => {
       if (propertyName.includes('spacing') || propertyName.includes('offset')) {
         return <code>{'0 - 10'}</code>;

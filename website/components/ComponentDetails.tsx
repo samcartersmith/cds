@@ -1,5 +1,3 @@
-import React from 'react';
-
 import * as templatesMap from '@cbhq/cds-website/docs/components/examples';
 
 /*

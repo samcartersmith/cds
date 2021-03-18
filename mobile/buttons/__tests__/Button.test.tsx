@@ -1,7 +1,5 @@
 /* eslint-disable react-native/no-raw-text */
 
-import React from 'react';
-
 import { render, fireEvent } from '@testing-library/react-native';
 import { Animated, Pressable } from 'react-native';
 

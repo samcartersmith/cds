@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { DividerBaseProps } from '@cbhq/cds-common';
 import { css, cx } from 'linaria';
 import { useSeparator } from 'react-aria';

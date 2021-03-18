@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import 'react-native-gesture-handler';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';

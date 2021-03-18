@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState, memo } from 'react';
+import { useCallback, useRef, useState, memo } from 'react';
 
 import {
   useStatusAnimationPoller,

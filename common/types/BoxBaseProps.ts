@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { PaletteBackground } from './Palette';

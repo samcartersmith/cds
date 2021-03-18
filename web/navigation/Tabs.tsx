@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo } from 'react';
+import { memo, useEffect, useMemo, Children, cloneElement } from 'react';
 
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 
@@ -14,7 +14,7 @@ export type TabsProps = {
 
 export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children }: TabsProps) => {
   const { activeIndex: _activeIndex, setActiveIndex: _setActiveIndex } = useIndexCounter({
-    length: React.Children.count(children),
+    length: Children.count(children),
   });
 
   const updateHandler = setActiveIndex ?? _setActiveIndex;
@@ -25,8 +25,8 @@ export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children 
 
   const tabChildren = useMemo(
     () =>
-      React.Children.map(children, (child, idx) => {
-        return React.cloneElement(child, {
+      Children.map(children, (child, idx) => {
+        return cloneElement(child, {
           active: idx === _activeIndex,
           onPress: () => {
             updateHandler(idx);

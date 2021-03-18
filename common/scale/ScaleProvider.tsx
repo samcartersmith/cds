@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { memo } from 'react';
 
 import { Scale } from '../types';
 import { ScaleContext } from './context';
@@ -8,7 +8,7 @@ type ScaleProviderProps = {
   value?: Scale;
 };
 
-export const ScaleProvider: React.FC<ScaleProviderProps> = React.memo(({ value, children }) => {
+export const ScaleProvider: React.FC<ScaleProviderProps> = memo(({ value, children }) => {
   const scale = useScale();
   return <ScaleContext.Provider value={value ?? scale}>{children}</ScaleContext.Provider>;
 });

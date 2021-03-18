@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo, Children } from 'react';
 
 import { join } from '@cbhq/cds-common/utils/join';
 
@@ -13,7 +13,7 @@ export const NavigationBarActions: React.FC = memo(({ children }) => {
       alignItems="center"
       justifyContent="space-between"
     >
-      {join(React.Children.toArray(children), <Spacer spacingEnd={navbarSpacing.withinGroups} />)}
+      {join(Children.toArray(children), <Spacer spacingEnd={navbarSpacing.withinGroups} />)}
     </Box>
   ) : null;
 });

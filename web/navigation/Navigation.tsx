@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useRef } from 'react';
+import { memo, useMemo, useRef, cloneElement } from 'react';
 
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
@@ -82,7 +82,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
         <Divider />
       </motion.div>
     );
-    const navbarClone = React.cloneElement(navbar, {
+    const navbarClone = cloneElement(navbar, {
       animatedOpacity: shouldAnimatedHeader ? navbarTitlesOpacity : undefined,
     });
     const navBarTabs = tabs && !displayTitle && (

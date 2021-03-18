@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { defaultPalette, PaletteAlias, Spectrum } from '@cbhq/cds-common';
 import { wordCase, capitalize } from '@cbhq/cds-utils';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';

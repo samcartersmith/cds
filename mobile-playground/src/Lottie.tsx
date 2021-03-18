@@ -1,5 +1,3 @@
-import React from 'react';
-
 import * as animations from '@cbhq/cds-lottie-files';
 import { Lottie } from '@cbhq/cds-mobile/animation/Lottie';
 import { Box } from '@cbhq/cds-mobile/layout/Box';

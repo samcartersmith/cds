@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 
 import { Placement } from '@popperjs/core';
 import { cx } from 'linaria';

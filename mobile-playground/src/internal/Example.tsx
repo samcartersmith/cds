@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, Children } from 'react';
 
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { TextTitle3 } from '@cbhq/cds-mobile/typography/TextTitle3';
@@ -12,7 +12,7 @@ interface ExampleProps {
 
 const Example = ({ children, inline, title }: ExampleProps) => {
   const palette = usePalette();
-  const items = React.Children.toArray(children);
+  const items = Children.toArray(children);
   const childStyles = useMemo(() => {
     const style: ViewStyle = { paddingTop: 12 };
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Divider } from '@cbhq/cds-mobile/layout/Divider';
 
 import Example from './internal/Example';

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { LottiePlayer } from '@cbhq/cds-common';
 import { nux, NuxLottie } from '@cbhq/cds-lottie-files';

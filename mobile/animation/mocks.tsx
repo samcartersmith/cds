@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { NoopFn } from '@cbhq/cds-common';
 import { noop } from '@cbhq/cds-utils';
 import { Animated } from 'react-native';

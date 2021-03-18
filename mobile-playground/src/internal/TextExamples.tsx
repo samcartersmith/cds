@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { TextProps } from '@cbhq/cds-mobile/typography/Text';
 

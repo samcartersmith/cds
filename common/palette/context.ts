@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
 import { PaletteConfig } from '../types';
 import { defaultPalette } from './constants';
 
-export const PaletteConfigContext = React.createContext<PaletteConfig>(defaultPalette);
+export const PaletteConfigContext = createContext<PaletteConfig>(defaultPalette);

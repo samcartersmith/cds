@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useTooltip, UseTooltipParams } from './useTooltip';
 
 interface TooltipProps extends UseTooltipParams {

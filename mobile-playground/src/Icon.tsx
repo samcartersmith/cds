@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { FiatIcon } from '@cbhq/cds-mobile/icons/FiatIcon';
 import { Icon } from '@cbhq/cds-mobile/icons/Icon';
 import { iconGlyphMap } from '@cbhq/cds-mobile/icons/iconGlyphMap';

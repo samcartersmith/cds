@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { memo, useMemo } from 'react';
 
 import { emptyObject } from '@cbhq/cds-utils';
 
@@ -11,10 +11,10 @@ export type PaletteConfigProviderProps = {
   value?: PartialPaletteConfig;
 };
 
-export const PaletteConfigProvider: React.FC<PaletteConfigProviderProps> = React.memo(
+export const PaletteConfigProvider: React.FC<PaletteConfigProviderProps> = memo(
   ({ value = emptyObject, children }) => {
     const palette = usePaletteConfig();
-    const memoizedPaletteConfig = React.useMemo(
+    const memoizedPaletteConfig = useMemo(
       () => ({
         // Fallback to defaultPalette in case root context has partial palette config
         ...defaultPalette,

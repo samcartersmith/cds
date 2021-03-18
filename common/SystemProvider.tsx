@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { memo } from 'react';
 
 import { PaletteConfigProvider } from './palette/PaletteConfigProvider';
 import { ScaleProvider } from './scale/ScaleProvider';
@@ -28,7 +28,7 @@ export type SystemProviderProps = {
   palette?: PartialPaletteConfig;
 };
 
-export const SystemProvider: React.FC<SystemProviderProps> = React.memo(
+export const SystemProvider: React.FC<SystemProviderProps> = memo(
   ({ scale, spectrum, palette, children }) => {
     return (
       <ScaleProvider value={scale}>

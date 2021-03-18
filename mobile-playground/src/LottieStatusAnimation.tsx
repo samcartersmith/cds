@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 
 import { LottieStatusAnimationType, join } from '@cbhq/cds-common';
 import { LottieStatusAnimation } from '@cbhq/cds-mobile/animation/LottieStatusAnimation';

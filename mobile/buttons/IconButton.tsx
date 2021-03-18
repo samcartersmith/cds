@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 import { IconButtonBaseProps } from '@cbhq/cds-common';
 import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
@@ -24,7 +24,7 @@ export interface IconButtonProps extends IconButtonBaseProps {
 }
 
 // TODO: Does not support offset prop. Need to fix
-export const IconButton: React.FC<IconButtonProps> = React.memo(
+export const IconButton: React.FC<IconButtonProps> = memo(
   ({
     accessibilityLabel,
     feedback = 'none',

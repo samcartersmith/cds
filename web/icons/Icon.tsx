@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import { forwardRef, memo, cloneElement } from 'react';
 
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 
@@ -49,7 +49,7 @@ export const Icon = memo(
               ))}
             </svg>
             {badge &&
-              React.cloneElement(badge, {
+              cloneElement(badge, {
                 position: 'absolute',
                 top: '-45%',
                 right: '-50%',

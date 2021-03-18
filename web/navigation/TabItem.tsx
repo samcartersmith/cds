@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import { forwardRef, memo } from 'react';
 
 import { InteractableProps, useInteractable } from '../buttons/useInteractable';
 import { TextLabel1 } from '../typography/TextLabel1';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ThemeProvider as CdsThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import useTheme from '@theme/hooks/useTheme';
 import ThemeContext from '@theme/ThemeContext';

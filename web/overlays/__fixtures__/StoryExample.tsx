@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Placement } from '@popperjs/core';
 
 import { Button } from '../../buttons/Button';

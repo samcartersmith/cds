@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { palette } from '@cbhq/cds-web/tokens';
 import { styled } from 'linaria/react';

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Button, IconButton as CDSIconButton, IconButtonProps } from '@cbhq/cds-web/buttons';

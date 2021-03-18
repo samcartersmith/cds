@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { IconSize, paletteForegrounds, PaletteForeground } from '@cbhq/cds-common';
 import { Button } from '@cbhq/cds-web/buttons/Button';
