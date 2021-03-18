@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 import { NoopFn } from '@cbhq/cds-common';
 import { noop } from '@cbhq/cds-utils';
 import { Animated } from 'react-native';
@@ -12,9 +14,15 @@ export const LottieMock = ({
   progress: _4,
   resizeMode: _5 = 'contain',
   source,
+  onAnimationFinish,
   ...boxProps
 }: LottieProps) => {
   const aspectRatio = source.w / source.h;
+
+  useEffect(() => {
+    onAnimationFinish?.();
+  }, [onAnimationFinish]);
+
   return <Box aspectRatio={aspectRatio} {...boxProps} />;
 };
 
