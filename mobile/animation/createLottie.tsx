@@ -8,9 +8,10 @@ import {
   NoopFn,
 } from '@cbhq/cds-common';
 import LottieView from 'lottie-react-native';
-import { Animated, Easing } from 'react-native';
+import { Animated } from 'react-native';
 
 import { Lottie } from './Lottie';
+import { lottieProgressConfig } from './lottieProgresConfig';
 import { LottieProps } from './LottieProps';
 
 type ProgressListenerCallback = (frame: number) => void;
@@ -36,12 +37,6 @@ export interface LottiePlayerMobile<Source extends LottieSource = LottieSource>
 }
 
 const noop = () => {};
-
-export const lottieProgressConfig = {
-  toValue: 1,
-  easing: Easing.linear,
-  useNativeDriver: true,
-};
 
 export const createLottie = <Source extends LottieSource>(
   source: Source,
