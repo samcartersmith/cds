@@ -1,6 +1,7 @@
 import { useMemo, memo } from 'react';
 
 import { PinningDirection } from '@cbhq/cds-common';
+import { overrideAlpha } from '@cbhq/cds-utils';
 import { StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -19,7 +20,8 @@ export const OverflowGradient = memo(({ pin = 'right' }: OverflowGradientProps) 
   const pinStyles = usePinStyles(pin);
   const gradientColors = useMemo(
     () => [
-      '#ffffff00', // oneoff color bc android can't gradient from 'transparent'
+      /* Override background to be transparent bc android can't gradient from 'transparent' string */
+      overrideAlpha(palette.background, 0),
       palette.background,
     ],
     [palette.background]

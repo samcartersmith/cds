@@ -11,3 +11,7 @@ export const rgba2hex = (rgba: string) => {
       ).toString(16)}`.slice(-2)}${`0${parseInt(rgbaMatch[3], 10).toString(16)}`.slice(-2)}`
     : '';
 };
+
+export const overrideAlpha = (rgbaString: string, newOpacity: number) => {
+  return rgbaString.replace(/,[^,]+$/, `,${newOpacity})`);
+};
