@@ -13,17 +13,15 @@ export const LottieMock = ({
   loop: _3 = false,
   progress: _4,
   resizeMode: _5 = 'contain',
-  source,
+  source: _6,
   onAnimationFinish,
   ...boxProps
 }: LottieProps) => {
-  const aspectRatio = source.w / source.h;
-
   useEffect(() => {
     onAnimationFinish?.();
   }, [onAnimationFinish]);
 
-  return <Box aspectRatio={aspectRatio} {...boxProps} />;
+  return <Box {...boxProps} />;
 };
 
 export const createLottieMock = {
