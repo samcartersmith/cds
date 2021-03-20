@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { useScale, useSpectrum, SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 import { cx } from 'linaria';

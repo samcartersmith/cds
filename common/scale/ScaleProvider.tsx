@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { Scale } from '../types';
 import { ScaleContext } from './context';

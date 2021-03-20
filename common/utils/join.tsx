@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 /**
  * Util for adding a separator element between react components excluding the last item

@@ -1,4 +1,4 @@
-import { memo, useMemo, lazy, Suspense } from 'react';
+import React, { memo, useMemo, lazy, Suspense } from 'react';
 
 import { pascalCase } from '@cbhq/cds-utils';
 

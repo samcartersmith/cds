@@ -1,4 +1,4 @@
-import { useContext, useState, memo } from 'react';
+import React, { useContext, useState, memo } from 'react';
 
 import { SidebarLayoutContext, SetSidebarLayoutContext, SidebarLayout } from './context';
 

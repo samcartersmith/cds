@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-unused-styles */
 
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { DividerBaseProps } from '@cbhq/cds-common';
 import { StyleSheet, View } from 'react-native';

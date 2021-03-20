@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { TrackIndexProvider } from '@cbhq/cds-common/context/TrackIndexProvider';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';

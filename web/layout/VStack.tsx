@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 
 import { ForwardedRef } from '@cbhq/cds-common';
 

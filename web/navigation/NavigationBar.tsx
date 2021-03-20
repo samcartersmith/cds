@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { MotionValue, m as motion } from 'framer-motion';
 

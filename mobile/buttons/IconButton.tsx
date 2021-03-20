@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { IconButtonBaseProps } from '@cbhq/cds-common';
 import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';

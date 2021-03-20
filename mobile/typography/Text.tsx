@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { TextBaseProps, Typography, PaletteForeground, useScale } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';

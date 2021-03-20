@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Box, BoxProps } from './Box';
 
 export type HStackProps = Omit<BoxProps, 'flexDirection'>;

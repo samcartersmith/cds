@@ -1,4 +1,4 @@
-import { memo, useImperativeHandle, useCallback, forwardRef } from 'react';
+import React, { memo, useImperativeHandle, useCallback, forwardRef } from 'react';
 
 import {
   getLottieMarkers,

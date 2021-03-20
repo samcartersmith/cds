@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { IconPixelSize } from '@cbhq/cds-common';
 import { StyleSheet, TextStyle, Animated, Text } from 'react-native';

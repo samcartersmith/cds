@@ -1,4 +1,4 @@
-import { useMemo, memo } from 'react';
+import React, { useMemo, memo } from 'react';
 
 import { BoxBaseProps, ElevationLevels } from '@cbhq/cds-common';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/borderRadius';

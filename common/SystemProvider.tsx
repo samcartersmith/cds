@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { PaletteConfigProvider } from './palette/PaletteConfigProvider';
 import { ScaleProvider } from './scale/ScaleProvider';

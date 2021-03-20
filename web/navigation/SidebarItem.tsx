@@ -1,4 +1,4 @@
-import { memo, createElement } from 'react';
+import React, { memo, createElement } from 'react';
 
 import { IconName } from '@cbhq/cds-common';
 import { emptyObject } from '@cbhq/cds-utils';

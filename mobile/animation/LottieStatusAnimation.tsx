@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useStatusAnimationPoller, LottieStatusAnimationProps } from '@cbhq/cds-common';
 import { tradeStatus } from '@cbhq/cds-lottie-files/tradeStatus';
 

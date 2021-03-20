@@ -1,4 +1,4 @@
-import { memo, useMemo, useRef, cloneElement } from 'react';
+import React, { memo, useMemo, useRef, cloneElement } from 'react';
 
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';

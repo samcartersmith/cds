@@ -1,4 +1,4 @@
-import { createRef, MutableRefObject } from 'react';
+import React, { createRef, MutableRefObject } from 'react';
 
 import {
   getLottieDuration,

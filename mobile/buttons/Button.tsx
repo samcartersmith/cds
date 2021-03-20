@@ -1,4 +1,4 @@
-import { useMemo, memo } from 'react';
+import React, { useMemo, memo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';

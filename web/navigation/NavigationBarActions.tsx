@@ -1,4 +1,4 @@
-import { memo, Children } from 'react';
+import React, { memo, Children } from 'react';
 
 import { join } from '@cbhq/cds-common/utils/join';
 

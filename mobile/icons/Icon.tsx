@@ -1,4 +1,4 @@
-import { useMemo, cloneElement } from 'react';
+import React, { useMemo, cloneElement } from 'react';
 
 import { PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';

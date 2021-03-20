@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { useLogoMark, LogoMarkParams } from '@cbhq/cds-common/hooks/useLogo';
 import Svg, { Circle, Path } from 'react-native-svg';

@@ -1,4 +1,4 @@
-import { forwardRef, memo, cloneElement } from 'react';
+import React, { forwardRef, memo, cloneElement } from 'react';
 
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 

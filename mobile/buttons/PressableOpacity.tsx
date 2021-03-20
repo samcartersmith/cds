@@ -1,4 +1,4 @@
-import { PressableProps, ViewStyle } from 'react-native';
+import React, { PressableProps, ViewStyle } from 'react-native';
 
 import { HapticFeedbackType } from '../types';
 import { PressableHighlight } from './PressableHighlight';

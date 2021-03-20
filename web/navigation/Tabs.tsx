@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, Children, cloneElement } from 'react';
+import React, { memo, useEffect, useMemo, Children, cloneElement } from 'react';
 
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 
