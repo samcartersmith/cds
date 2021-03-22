@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.4 (3/20/2021, 03:59 PM PST)
+
+#### 🐞 Fixes
+
+- OverflowGradient start value to pull from background palette @katherinemartinez [#15424](https://github.cbhq.net/mono/repo/pull/15424)
+
 ## 0.1.3 (3/16/2021, 09:56 AM PST)
 
 #### 🐞 Fixes

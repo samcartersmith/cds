@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.4 (3/20/2021, 03:59 PM PST)
+
+#### 🐞 Fixes
+
+- WatchlistStar lottie file to not contain AE comps @katherinemartinez [#15435](https://github.cbhq.net/mono/repo/pull/15435)
+
 ## 0.2.3 (3/16/2021, 09:56 AM PST)
 
 #### 🐞 Fixes

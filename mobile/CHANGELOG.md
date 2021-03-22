@@ -6,6 +6,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.5 (3/20/2021, 03:59 PM PST)
+
+#### 🐞 Fixes
+
+- Bring back React imports for CDS. @miles-johnson [#15478](https://github.cbhq.net/mono/repo/pull/15478)
+- OverflowGradient start value to pull from background palette @katherinemartinez [#15424](https://github.cbhq.net/mono/repo/pull/15424)
+- Migrate to new React v17 JSX imports @miles-johnson [#15248](https://github.cbhq.net/mono/repo/pull/15248), [MONOFE-51](https://jira.coinbase-corp.com/browse/MONOFE-51)
+
+#### 📘 Misc
+
+- fix Lottie mocks @katherinemartinez [#15374](https://github.cbhq.net/mono/repo/pull/15374)
+- add onAnimationFinish to Lottie mock @katherinemartinez [#15357](https://github.cbhq.net/mono/repo/pull/15357)
+
 ## 0.5.4 (3/18/2021, 08:52 AM PST)
 
 #### 🐞 Fixes
