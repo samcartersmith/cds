@@ -12,6 +12,7 @@ module.exports = {
         },
       },
     },
+    '@storybook/addon-actions',
     '@storybook/addon-controls',
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
