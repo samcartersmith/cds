@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.6 (3/22/2021, 03:54 PM PST)
+
+#### 🐞 Fixes
+
+- ensure color is rgba string for RN @katherinemartinez [#15570](https://github.cbhq.net/mono/repo/pull/15570)
+
 ## 0.5.5 (3/20/2021, 03:59 PM PST)
 
 #### 🐞 Fixes
