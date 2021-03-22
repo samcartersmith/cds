@@ -4,7 +4,7 @@ import { getColorFromSpectrumAlias } from '../convertPalette';
 describe('getColorFromSpectrumAlias', () => {
   it('gets the correct rgb value for spectrum alias in light mode', () => {
     expect(getColorFromSpectrumAlias('gray100', 'light')).toEqual(
-      `rgb(${light.gray100.join(',')})`
+      `rgba(${light.gray100.join(',')},1)`
     );
   });
 
@@ -15,7 +15,9 @@ describe('getColorFromSpectrumAlias', () => {
   });
 
   it('gets the correct rgb value for spectrum alias in dark mode', () => {
-    expect(getColorFromSpectrumAlias('gray100', 'dark')).toEqual(`rgb(${dark.gray100.join(',')})`);
+    expect(getColorFromSpectrumAlias('gray100', 'dark')).toEqual(
+      `rgba(${dark.gray100.join(',')},1)`
+    );
   });
 
   it('gets the correct rgb value for spectrum alias with opacity in dark mode', () => {
