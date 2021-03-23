@@ -25,6 +25,10 @@ export const interactable = css`
     padding: 0;
     margin: 0;
   }
+
+  > * {
+    opacity: var(--interactable-opacity, 1);
+  }
 `;
 
 export const scaledDownState = css`

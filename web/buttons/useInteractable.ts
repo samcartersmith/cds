@@ -129,6 +129,7 @@ export function useInteractable<T extends HTMLElement>({
     isPressed,
     props,
     style: {
+      '--interactable-opacity': backgroundOpacity,
       '--interactable-underlay': `var(--${underlayColor})` as const,
       '--interactable-background': isDisabled
         ? `var(--${backgroundColor})`
