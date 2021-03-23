@@ -1,15 +1,9 @@
 import { useMemo, useRef } from 'react';
 
-import {
-  BorderRadius,
-  PaletteBackground,
-  PaletteBorder,
-  PaletteValue,
-  SpectrumHueStep,
-  usePaletteConfig,
-} from '@cbhq/cds-common';
+import { BorderRadius, PaletteBackground, PaletteBorder, usePaletteConfig } from '@cbhq/cds-common';
 import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { extractHueStep } from '@cbhq/cds-common/utils/extractHueStep';
 import { AriaButtonProps } from '@react-types/button';
 import { cx } from 'linaria';
 import { useButton, useHover } from 'react-aria';
@@ -19,17 +13,6 @@ import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
 import { OnHover, OnPress } from '../types';
 import { interactable, disabledState, scaledDownState } from './interactableStyles';
-
-function extractHueStep(
-  value: Readonly<PaletteValue>,
-  alphas: Record<SpectrumHueStep, number>
-): number {
-  const [alias] = typeof value === 'string' ? [value] : value;
-  const [, , step] = alias.match(/([a-z]+)(\d+)/) || [];
-  const num = Number(step) as SpectrumHueStep;
-
-  return alphas[num] || alphas[60];
-}
 
 export interface InteractableProps<T> {
   /** Callback fired when the element is being hovered. */
@@ -80,6 +63,7 @@ export function useInteractable<T extends HTMLElement>({
   const mergedRef = useMergeRefs(internalRef, ref);
   const paletteConfig = usePaletteConfig();
   const spectrumAlias = paletteConfig[backgroundColor];
+  const spectrumStep = useMemo(() => extractHueStep(spectrumAlias) ?? 60, [spectrumAlias]);
   const focusStyles = useFocusStyles();
 
   const { buttonProps, isPressed } = useButton(
@@ -106,15 +90,15 @@ export function useInteractable<T extends HTMLElement>({
 
   const backgroundOpacity = useMemo(() => {
     if (isPressed) {
-      return extractHueStep(spectrumAlias, opacityPressed);
+      return opacityPressed[spectrumStep];
     }
     if (isHovered) {
-      return extractHueStep(spectrumAlias, opacityHovered);
+      return opacityHovered[spectrumStep];
     }
     return 1;
-  }, [isHovered, isPressed, spectrumAlias]);
+  }, [isHovered, isPressed, spectrumStep]);
 
-  const underlayColor = backgroundOpacity > 60 ? 'background' : 'foreground';
+  const underlayColor = spectrumStep > 60 ? 'background' : 'foreground';
 
   return {
     className: cx(

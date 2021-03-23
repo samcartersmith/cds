@@ -1,14 +1,12 @@
-import React, { PressableProps, ViewStyle } from 'react-native';
+import React from 'react';
 
-import { HapticFeedbackType } from '../types';
-import { PressableHighlight } from './PressableHighlight';
+import { PressableHighlight, PressableHighlightProps } from './PressableHighlight';
 
-export interface PressableOpacityProps extends Omit<PressableProps, 'style'> {
-  activeOpacity?: number;
-  dangerouslySetStyle?: ViewStyle;
-  feedback?: HapticFeedbackType;
-}
+export type PressableOpacityProps = Omit<
+  PressableHighlightProps,
+  'backgroundColor' | 'hideUnderlay'
+>;
 
 export const PressableOpacity = (props: PressableOpacityProps) => {
-  return <PressableHighlight {...props} underlayColor={false} />;
+  return <PressableHighlight {...props} backgroundColor="background" hideUnderlay />;
 };

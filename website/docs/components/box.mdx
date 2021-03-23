@@ -89,7 +89,7 @@ The semantic element to render the box as. Is necessary for accessibility suppor
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['article', 'aside', 'div', 'footer', 'header', 'main', 'nav', 'section']}
+  webOptions={['article', 'aside', 'div', 'footer', 'header', 'li', 'main', 'nav', 'section', 'ul']}
 />
 
 <ComponentDetails componentName="Box" templateName="asProp" />
@@ -251,7 +251,7 @@ Add a border to the top and bottom sides of the box.
 
 ### borderRadius
 
-Round the corners of the box.
+Leverage one of the borderRadius styles we offer to round the corners of the box.
 
 <ApiDetails
   componentName="Box"
@@ -735,6 +735,21 @@ Semantic role whole using a non-semantic element.
 />
 
 <ComponentDetails componentName="Box" templateName="roleProp" />
+
+### rounded
+
+Round the corners of the box with `standard` borderRadius size.
+
+<ApiDetails
+  componentName="Box"
+  propertyName="rounded"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Box" templateName="roundedProp" />
 
 ### spacing
 

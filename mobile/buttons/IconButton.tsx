@@ -1,15 +1,16 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import { IconButtonBaseProps } from '@cbhq/cds-common';
-import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
 
 import { PressableHighlight } from '../buttons/PressableHighlight';
+import { usePalette } from '../hooks/usePalette';
 import { usePressAnimation } from '../hooks/usePressAnimation';
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';
 import { HapticFeedbackType } from '../types';
-import { useIconButtonVariant } from './useIconButtonVariant';
 
 export interface IconButtonProps extends IconButtonBaseProps {
   /**
@@ -23,44 +24,31 @@ export interface IconButtonProps extends IconButtonBaseProps {
   onLongPress?: (event: GestureResponderEvent) => void;
 }
 
-// TODO: Does not support offset prop. Need to fix
-export const IconButton: React.FC<IconButtonProps> = memo(
+export const IconButton = memo(
   ({
     accessibilityLabel,
-    feedback = 'none',
-    testID,
-    name,
-    variant = 'secondary',
-    spacing,
-    spacingTop,
-    spacingBottom,
-    spacingStart,
-    spacingEnd,
-    spacingVertical,
-    spacingHorizontal,
-    onPress,
-    onLongPress,
     disabled = false,
-    ...props
-  }) => {
+    feedback = 'none',
+    name,
+    onLongPress,
+    onPress,
+    testID,
+    variant = 'secondary',
+  }: IconButtonProps) => {
+    const palette = usePalette();
     const [pressIn, pressOut, scale] = usePressAnimation();
-    const { foregroundColor, ...variantStyles } = useIconButtonVariant(variant);
-    const spacingStyles = useSpacingStyles({
-      spacing,
-      spacingTop,
-      spacingBottom,
-      spacingStart,
-      spacingEnd,
-      spacingVertical,
-      spacingHorizontal,
-    });
+    const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+    const viewStyles = useMemo(
+      () => ({ backgroundColor: palette[backgroundColor], borderColor: palette[borderColor] }),
+      [palette, backgroundColor, borderColor]
+    );
 
     return (
-      <View {...props} style={spacingStyles} testID={testID}>
+      <Animated.View style={{ transform: [{ scale }] }}>
         <PressableHighlight
           accessibilityHint={accessibilityLabel}
           accessibilityLabel={accessibilityLabel}
-          activeOpacity={opacityPressed[0]}
+          backgroundColor={backgroundColor}
           onPress={onPress}
           onPressIn={pressIn}
           onPressOut={pressOut}
@@ -68,19 +56,13 @@ export const IconButton: React.FC<IconButtonProps> = memo(
           disabled={disabled}
           feedback={feedback}
           borderRadius={50}
+          testID={testID}
         >
-          <Animated.View
-            style={[
-              styles.iconButton,
-              disabled ? styles.disabled : undefined,
-              variantStyles,
-              { transform: [{ scale }] },
-            ]}
-          >
-            <Icon name={name} size="s" color={foregroundColor} />
-          </Animated.View>
+          <View style={[styles.iconButton, disabled && styles.disabled, viewStyles]}>
+            <Icon name={name} size="s" color={color} />
+          </View>
         </PressableHighlight>
-      </View>
+      </Animated.View>
     );
   }
 );
@@ -95,7 +77,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     borderRadius: 50,
-    borderWidth: 1,
+    borderWidth: borderWidth.button,
   },
   disabled: {
     opacity: opacityDisabled,

@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
+import { PaletteBackground, usePaletteConfig } from '@cbhq/cds-common';
+import { opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { extractHueStep } from '@cbhq/cds-common/utils/extractHueStep';
 import {
   AccessibilityProps,
   GestureResponderEvent,
@@ -15,51 +18,71 @@ import { HapticFeedbackType } from '../types';
 import { Haptics } from '../utils/haptics';
 
 export interface PressableHighlightProps extends Omit<PressableProps, 'style'>, AccessibilityProps {
-  activeOpacity?: number;
+  /** Background color of the overlay (element being interacted with). */
+  backgroundColor: PaletteBackground;
+  borderRadius?: number;
   dangerouslySetStyle?: ViewStyle;
   feedback?: HapticFeedbackType;
+  hideUnderlay?: boolean;
   loading?: boolean;
-  underlayColor?: string | false;
-  borderRadius?: number;
 }
 
 export const PressableHighlight = ({
-  activeOpacity = 0.98,
+  backgroundColor,
+  borderRadius = 0,
   children,
   disabled,
   feedback = 'none',
+  hideUnderlay,
   loading,
   onPress,
   onPressIn,
   onPressOut,
-  underlayColor,
-  borderRadius = 0,
   ...props
 }: PressableHighlightProps) => {
-  const palette = usePalette();
   const [isPressed, setIsPressed] = useState(false);
+  const palette = usePalette();
+  const paletteConfig = usePaletteConfig();
+  const spectrumAlias = paletteConfig[backgroundColor];
+  const spectrumStep = useMemo(() => extractHueStep(spectrumAlias) ?? 60, [spectrumAlias]);
 
-  const handlePress = (event: GestureResponderEvent) => {
-    if (feedback === 'light') {
-      Haptics.lightImpact();
-    } else if (feedback === 'normal') {
-      Haptics.normalImpact();
-    } else if (feedback === 'heavy') {
-      Haptics.heavyImpact();
-    }
+  const backgroundOpacity = useMemo(() => (isPressed ? opacityPressed[spectrumStep] : 1), [
+    isPressed,
+    spectrumStep,
+  ]);
 
-    onPress?.(event);
-  };
+  const underlayColor = spectrumStep > 60 ? 'background' : 'foreground';
 
-  const handlePressIn = (event: GestureResponderEvent) => {
-    setIsPressed(true);
-    onPressIn?.(event);
-  };
+  const handlePress = useCallback(
+    (event: GestureResponderEvent) => {
+      if (feedback === 'light') {
+        Haptics.lightImpact();
+      } else if (feedback === 'normal') {
+        Haptics.normalImpact();
+      } else if (feedback === 'heavy') {
+        Haptics.heavyImpact();
+      }
 
-  const handlePressOut = (event: GestureResponderEvent) => {
-    setIsPressed(false);
-    onPressOut?.(event);
-  };
+      onPress?.(event);
+    },
+    [feedback, onPress]
+  );
+
+  const handlePressIn = useCallback(
+    (event: GestureResponderEvent) => {
+      setIsPressed(true);
+      onPressIn?.(event);
+    },
+    [onPressIn]
+  );
+
+  const handlePressOut = useCallback(
+    (event: GestureResponderEvent) => {
+      setIsPressed(false);
+      onPressOut?.(event);
+    },
+    [onPressOut]
+  );
 
   return (
     <Pressable
@@ -73,16 +96,16 @@ export const PressableHighlight = ({
       {...props}
     >
       <View>
-        {underlayColor !== false && isPressed && !disabled ? (
+        {isPressed && !disabled && !hideUnderlay ? (
           <View
             style={[
               StyleSheet.absoluteFillObject,
-              { borderRadius: borderRadius, backgroundColor: underlayColor || palette.foreground },
+              { borderRadius, backgroundColor: palette[underlayColor] },
             ]}
           />
         ) : null}
         <View
-          style={isPressed ? { opacity: activeOpacity } : undefined}
+          style={isPressed ? { opacity: backgroundOpacity } : undefined}
           renderToHardwareTextureAndroid={isPressed}
         >
           {children}

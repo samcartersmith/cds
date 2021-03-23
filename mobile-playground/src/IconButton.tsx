@@ -20,70 +20,6 @@ const variants = [
     title: <TextBody>Secondary</TextBody>,
   },
 ];
-const spacings = [
-  {
-    component: (
-      <IconButton spacing={3} variant="primary" accessibilityLabel={iconName} name={iconName} />
-    ),
-    title: 'All',
-  },
-  {
-    component: (
-      <IconButton spacingTop={3} variant="primary" accessibilityLabel={iconName} name={iconName} />
-    ),
-    title: 'Top',
-  },
-  {
-    component: (
-      <IconButton
-        spacingBottom={3}
-        variant="primary"
-        accessibilityLabel={iconName}
-        name={iconName}
-      />
-    ),
-    title: 'Bottom',
-  },
-  {
-    component: (
-      <IconButton
-        spacingStart={3}
-        variant="primary"
-        accessibilityLabel={iconName}
-        name={iconName}
-      />
-    ),
-    title: 'Start',
-  },
-  {
-    component: (
-      <IconButton spacingEnd={3} variant="primary" accessibilityLabel={iconName} name={iconName} />
-    ),
-    title: 'End',
-  },
-  {
-    component: (
-      <IconButton
-        spacingVertical={3}
-        variant="primary"
-        accessibilityLabel={iconName}
-        name={iconName}
-      />
-    ),
-    title: 'Vertical',
-  },
-  {
-    component: (
-      <IconButton
-        spacingHorizontal={3}
-        variant="primary"
-        accessibilityLabel={iconName}
-        name={iconName}
-      />
-    ),
-    title: 'Horizontal',
-  },
-];
 
 const IconButtonScreen = () => {
   return (
@@ -111,23 +47,6 @@ const IconButtonScreen = () => {
             >
               {variant.component}
               {variant.title}
-            </Box>
-          );
-        })}
-      </Example>
-
-      <Example title="Spacing" inline>
-        {spacings.map((spacing, index) => {
-          return (
-            <Box
-              key={index}
-              flexDirection="row"
-              alignItems="center"
-              justifyContent="space-between"
-              width={350}
-            >
-              <Box background="backgroundAlternate">{spacing.component}</Box>
-              <TextBody>{spacing.title}</TextBody>
             </Box>
           );
         })}

@@ -6,7 +6,6 @@ import { cx } from 'linaria';
 
 import * as buttonStyles from '../buttons/buttonStyles';
 import { Icon } from '../icons/Icon';
-import { Box } from '../layout/Box';
 import { getFlexStyles } from '../styles/flex';
 import { InteractableProps, useInteractable } from './useInteractable';
 
@@ -23,20 +22,6 @@ export const IconButton = forwardRef(
       renderContainer,
       variant = 'secondary',
       accessibilityLabel = name,
-      spacing,
-      spacingTop,
-      spacingBottom,
-      spacingStart,
-      spacingEnd,
-      spacingVertical,
-      spacingHorizontal,
-      offset,
-      offsetBottom,
-      offsetEnd,
-      offsetHorizontal,
-      offsetStart,
-      offsetTop,
-      offsetVertical,
       onHover,
       onPress,
       disabled = false,
@@ -73,34 +58,10 @@ export const IconButton = forwardRef(
       children: <Icon name={name} size="s" color={color} />,
     };
 
-    return (
-      <Box
-        offset={offset}
-        offsetBottom={offsetBottom}
-        offsetEnd={offsetEnd}
-        offsetHorizontal={offsetHorizontal}
-        offsetStart={offsetStart}
-        offsetTop={offsetTop}
-        offsetVertical={offsetVertical}
-        spacing={spacing}
-        spacingTop={spacingTop}
-        spacingBottom={spacingBottom}
-        spacingStart={spacingStart}
-        spacingEnd={spacingEnd}
-        spacingVertical={spacingVertical}
-        spacingHorizontal={spacingHorizontal}
-      >
-        {renderContainer ? (
-          renderContainer(enhancedProps)
-        ) : (
-          <button
-            ref={ref}
-            aria-label={accessibilityLabel}
-            data-test-id={testID}
-            {...enhancedProps}
-          />
-        )}
-      </Box>
+    return renderContainer ? (
+      renderContainer(enhancedProps)
+    ) : (
+      <button ref={ref} aria-label={accessibilityLabel} data-test-id={testID} {...enhancedProps} />
     );
   }
 );

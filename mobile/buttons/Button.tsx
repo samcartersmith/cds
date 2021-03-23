@@ -3,7 +3,7 @@ import React, { useMemo, memo } from 'react';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
-import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
@@ -38,7 +38,7 @@ export const Button = memo(
   }: ButtonProps) => {
     const palette = usePalette();
     const [pressIn, pressOut, pressScale] = usePressAnimation();
-    const { underlay, color, backgroundColor, borderColor } = useButtonVariant(variant);
+    const { color, backgroundColor, borderColor } = useButtonVariant(variant);
     const spacingStyles = useSpacingStyles({
       spacingHorizontal: compact ? 2 : 3,
       spacingVertical: compact ? 0.5 : 1,
@@ -61,14 +61,13 @@ export const Button = memo(
       >
         <PressableHighlight
           accessibilityHint={accessibilityLabel}
-          activeOpacity={opacityPressed[0]}
+          backgroundColor={backgroundColor}
           disabled={disabled || loading}
           feedback={feedback}
           onPress={onPress}
           onPressIn={pressIn}
           onPressOut={pressOut}
           testID={testID}
-          underlayColor={underlay}
         >
           <View
             style={[

@@ -1,7 +1,6 @@
 import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
-import { Box } from '../layout/Box';
 import { IconButton } from './IconButton';
 
 <Meta title="Core Components/IconButton" component={IconButton} />
@@ -46,118 +45,6 @@ import { IconButton } from './IconButton';
       <div>
         <IconButton {...args} />
       </div>
-    )}
-  </Story>
-</Canvas>
-
-## Spacing Props
-
-<Canvas>
-  <Story name="Spacing" decorators={[withStoryLabel('All')]}>
-    {() => (
-      <Box background="backgroundAlternate">
-        <IconButton
-          spacing={3}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
-    )}
-  </Story>
-  <Story name="Custom spacing" decorators={[withStoryLabel('Custom')]}>
-    {() => (
-      <Box background="backgroundAlternate">
-        <IconButton
-          spacingTop={1}
-          spacingEnd={2}
-          spacingBottom={3}
-          spacingStart={4}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
-    )}
-  </Story>
-  <Story name="Vertical spacing" decorators={[withStoryLabel('Vertical')]}>
-    {() => (
-      <Box background="backgroundAlternate">
-        <IconButton
-          spacingVertical={3}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
-    )}
-  </Story>
-  <Story name="Horizontal spacing" decorators={[withStoryLabel('Horizontal')]}>
-    {() => (
-      <Box background="backgroundAlternate">
-        <IconButton
-          spacingHorizontal={3}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
-    )}
-  </Story>
-</Canvas>
-
-## Offset Props
-
-<Canvas>
-  <Story name="Offset" decorators={[withStoryLabel('All')]}>
-    {() => (
-      <Box spacing={5} background="backgroundAlternate">
-        <IconButton
-          offset={3}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
-    )}
-  </Story>
-  <Story name="Custom offset" decorators={[withStoryLabel('Custom')]}>
-    {() => (
-      <Box spacing={5} background="backgroundAlternate">
-        <IconButton
-          offsetTop={3}
-          offsetEnd={3}
-          offsetBottom={3}
-          offsetStart={3}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
-    )}
-  </Story>
-  <Story name="Vertical offset" decorators={[withStoryLabel('Vertical')]}>
-    {() => (
-      <Box spacing={5} background="backgroundAlternate">
-        <IconButton
-          offsetVertical={3}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
-    )}
-  </Story>
-  <Story name="Horizontal offset" decorators={[withStoryLabel('Horizontal')]}>
-    {() => (
-      <Box spacing={5} background="backgroundAlternate">
-        <IconButton
-          offsetHorizontal={3}
-          name="arrowsHorizontalHeavy"
-          variant="primary"
-          accessibilityLabel="arrowsHorizontalHeavy"
-        />
-      </Box>
     )}
   </Story>
 </Canvas>
