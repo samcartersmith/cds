@@ -85,6 +85,8 @@ export const IconButton: React.FC<IconButtonProps> = memo(
   }
 );
 
+IconButton.displayName = 'IconButton';
+
 const styles = StyleSheet.create({
   iconButton: {
     alignItems: 'center',
