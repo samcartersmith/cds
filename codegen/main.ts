@@ -1,7 +1,8 @@
 import { mapValues } from '@cbhq/cds-utils';
 
-import { borderRadiusConfig, borderRadiusCss } from './configs/borderRadiusConfig';
+import { borderRadiusConfig, borderRadiusCss, borderWidthConfig } from './configs/borderConfig';
 import { scaleConfig } from './configs/scaleConfig';
+import { Control } from './Control';
 import { Palette, defaultPalette } from './Palette';
 import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
@@ -30,6 +31,7 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
           return {
             ...Type.scaleCss[scale],
             ...Spacing.scaleCss[scale],
+            ...Control.scaleCss[scale],
           };
         }),
       },
@@ -71,6 +73,7 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
           return {
             typography: Type.mobile[scale],
             spacing: Spacing.mobile[scale],
+            control: Control.mobile[scale],
           };
         }),
       },
@@ -79,12 +82,16 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         data: Spectrum.native,
       },
       {
-        dest: 'common/tokens/borderRadius.ts',
-        data: { borderRadius: borderRadiusConfig },
+        dest: 'common/tokens/border.ts',
+        data: { borderRadius: borderRadiusConfig, borderWidth: borderWidthConfig },
       },
       {
         dest: 'web/tokens.ts',
-        data: { spacing: Spacing.cssVariables, palette: Palette.cssVariables },
+        data: {
+          spacing: Spacing.cssVariables,
+          palette: Palette.cssVariables,
+          control: Control.cssVariables,
+        },
       },
       {
         dest: 'common/palette/constants.ts',

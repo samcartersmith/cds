@@ -2,7 +2,7 @@ import React, { useMemo, memo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
+import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
 
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     height: 56,
-    borderWidth: 1,
+    borderWidth: borderWidth.button,
     borderRadius: borderRadius.standard,
     borderStyle: 'solid',
   },

@@ -45,6 +45,7 @@ export const xSmall = {
     '10': 44,
     '0.5': 4,
   },
+  control: { checkboxSize: 16, radioSize: 16 },
 } as const;
 
 export const small = {
@@ -89,6 +90,7 @@ export const small = {
     '10': 44,
     '0.5': 4,
   },
+  control: { checkboxSize: 16, radioSize: 16 },
 } as const;
 
 export const medium = {
@@ -133,6 +135,7 @@ export const medium = {
     '10': 44,
     '0.5': 4,
   },
+  control: { checkboxSize: 16, radioSize: 16 },
 } as const;
 
 export const large = {
@@ -167,6 +170,7 @@ export const large = {
     '10': 80,
     '0.5': 4,
   },
+  control: { checkboxSize: 20, radioSize: 20 },
 } as const;
 
 export const xLarge = {
@@ -196,6 +200,7 @@ export const xLarge = {
     '10': 80,
     '0.5': 4,
   },
+  control: { checkboxSize: 20, radioSize: 20 },
 } as const;
 
 export const xxLarge = {
@@ -225,6 +230,7 @@ export const xxLarge = {
     '10': 80,
     '0.5': 4,
   },
+  control: { checkboxSize: 20, radioSize: 20 },
 } as const;
 
 export const xxxLarge = {
@@ -254,4 +260,5 @@ export const xxxLarge = {
     '10': 80,
     '0.5': 4,
   },
+  control: { checkboxSize: 20, radioSize: 20 },
 } as const;

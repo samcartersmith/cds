@@ -11,7 +11,7 @@ import { Badge } from '../icons/Badge';
 import { Icon } from '../icons/Icon';
 import { Box, HStack } from '../layout';
 import { useTooltip } from '../overlays/useTooltip';
-import { getFlexStyles } from '../styles/flexStyles';
+import { getFlexStyles } from '../styles/flex';
 import { TextHeadline } from '../typography/TextHeadline';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';

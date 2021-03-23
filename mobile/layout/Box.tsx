@@ -1,7 +1,7 @@
 import React, { useMemo, memo } from 'react';
 
 import { BoxBaseProps, ElevationLevels } from '@cbhq/cds-common';
-import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/borderRadius';
+import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';

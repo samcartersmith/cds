@@ -63,6 +63,8 @@ export const xSmall = css`
   --spacing-8: 36px;
   --spacing-9: 40px;
   --spacing-10: 44px;
+  --checkbox-size: 16px;
+  --radio-size: 16px;
 `;
 
 export const small = css`
@@ -124,6 +126,8 @@ export const small = css`
   --spacing-8: 36px;
   --spacing-9: 40px;
   --spacing-10: 44px;
+  --checkbox-size: 16px;
+  --radio-size: 16px;
 `;
 
 export const medium = css`
@@ -185,6 +189,8 @@ export const medium = css`
   --spacing-8: 36px;
   --spacing-9: 40px;
   --spacing-10: 44px;
+  --checkbox-size: 16px;
+  --radio-size: 16px;
 `;
 
 export const large = css`
@@ -244,6 +250,8 @@ export const large = css`
   --spacing-8: 64px;
   --spacing-9: 72px;
   --spacing-10: 80px;
+  --checkbox-size: 20px;
+  --radio-size: 20px;
 `;
 
 export const xLarge = css`
@@ -302,6 +310,8 @@ export const xLarge = css`
   --spacing-8: 64px;
   --spacing-9: 72px;
   --spacing-10: 80px;
+  --checkbox-size: 20px;
+  --radio-size: 20px;
 `;
 
 export const xxLarge = css`
@@ -360,6 +370,8 @@ export const xxLarge = css`
   --spacing-8: 64px;
   --spacing-9: 72px;
   --spacing-10: 80px;
+  --checkbox-size: 20px;
+  --radio-size: 20px;
 `;
 
 export const xxxLarge = css`
@@ -418,4 +430,6 @@ export const xxxLarge = css`
   --spacing-8: 64px;
   --spacing-9: 72px;
   --spacing-10: 80px;
+  --checkbox-size: 20px;
+  --radio-size: 20px;
 `;

@@ -14,7 +14,7 @@ export const opacityHovered: Record<SpectrumHueStep, number> = {
   80: 0.9,
   90: 0.89,
   100: 0.88,
-};
+} as const;
 
 export const opacityPressed: Record<SpectrumHueStep, number> = {
   0: 0.92,
@@ -30,6 +30,6 @@ export const opacityPressed: Record<SpectrumHueStep, number> = {
   80: 0.84,
   90: 0.83,
   100: 0.82,
-};
+} as const;
 
 export const opacityDisabled = 0.38;

@@ -14,3 +14,10 @@ export const borderRadiusCss = mapValues(borderRadiusConfig, val => {
     'border-radius': typeof val === 'string' ? val : `${val}px`,
   };
 });
+
+export const borderWidthConfig = {
+  button: 1,
+  checkbox: 2,
+  radio: 2,
+  focusRing: 2,
+};

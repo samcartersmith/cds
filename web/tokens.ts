@@ -35,3 +35,8 @@ export const palette = {
   secondary: 'var(--secondary)',
   secondaryForeground: 'var(--secondary-foreground)',
 } as const;
+
+export const control = {
+  checkboxSize: 'var(--checkbox-size)',
+  radioSize: 'var(--radio-size)',
+} as const;

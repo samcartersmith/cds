@@ -7,7 +7,7 @@ import { cx } from 'linaria';
 import * as buttonStyles from '../buttons/buttonStyles';
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
-import { getFlexStyles } from '../styles/flexStyles';
+import { getFlexStyles } from '../styles/flex';
 import { InteractableProps, useInteractable } from './useInteractable';
 
 export interface IconButtonProps<T extends unknown = unknown>

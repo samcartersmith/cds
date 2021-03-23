@@ -1,24 +1,24 @@
 import { forwardRef, createElement } from 'react';
 
 import type { BoxBaseProps, ForwardedRef } from '@cbhq/cds-common';
-import { cx } from 'linaria';
+import { css, cx } from 'linaria';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
+import { getBorderStyles } from '../styles/border';
 import * as borderRadii from '../styles/borderRadius';
-import { getBorderStyles } from '../styles/borderStyles';
-import { getFlexStyles } from '../styles/flexStyles';
+import { getFlexStyles } from '../styles/flex';
 import {
   ArticleAccessibilityRole,
   AsideAccessibilityRole,
+  CSSMap,
   DivAccessibilityRole,
   HeaderFooterAccessibilityRole,
   MainAccessibilityRole,
   SectionAccessibilityRole,
 } from '../types';
-import * as styles from './boxStyles';
 
 export type InferBoxRole<As> = As extends 'article'
   ? ArticleAccessibilityRole
@@ -45,6 +45,18 @@ export type BoxElement =
   | 'nav'
   | 'ul'
   | 'li';
+
+const overflowStyles: CSSMap<BoxProps['overflow']> = {
+  hidden: css`
+    overflow: hidden;
+  `,
+  scroll: css`
+    overflow: scroll;
+  `,
+  visible: css`
+    overflow: visible;
+  `,
+};
 
 export interface BoxProps<As extends BoxElement = 'div'> extends Omit<BoxBaseProps, 'position'> {
   /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
@@ -136,7 +148,7 @@ export const Box = forwardRef(
             justifyContent,
           }),
           background && backgroundColorStyles[background === true ? 'background' : background],
-          overflow && styles.overflow[overflow],
+          overflow && overflowStyles[overflow],
           borderRadius && borderRadii[borderRadius],
           rounded && borderRadii.standard,
           getBorderStyles({

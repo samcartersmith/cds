@@ -1,4 +1,4 @@
-import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { css } from 'linaria';
 
 import { palette } from '../tokens';
