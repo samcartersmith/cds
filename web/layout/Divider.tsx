@@ -34,11 +34,7 @@ export const Divider = ({
   const { separatorProps } = useSeparator({ elementType: 'div' });
 
   return (
-    <Box
-      height={direction === 'vertical' ? '100%' : undefined}
-      width={direction === 'horizontal' ? '100%' : undefined}
-      {...boxProps}
-    >
+    <Box alignSelf="stretch" width={direction === 'horizontal' ? '100%' : undefined} {...boxProps}>
       <div {...separatorProps} className={cx(styles[direction], styles[color])} />
     </Box>
   );

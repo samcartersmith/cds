@@ -27,11 +27,7 @@ export const Divider = ({
   );
 
   return (
-    <Box
-      height={direction === 'vertical' ? '100%' : undefined}
-      width={direction === 'horizontal' ? '100%' : undefined}
-      {...boxProps}
-    >
+    <Box alignSelf="stretch" width={direction === 'horizontal' ? '100%' : undefined} {...boxProps}>
       <View style={style} />
     </Box>
   );
