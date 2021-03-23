@@ -32,10 +32,10 @@ const IconButton = ({
 };
 
 export const NavigationExample: React.FC = () => {
-  const { isToggled: showDarkMode, toggle: toggleDarkMode } = useToggler(false);
-  const { isToggled: showTabs, toggle: toggleTabs } = useToggler(false);
-  const { isToggled: showDisplayTitle, toggle: toggleDisplayTitle } = useToggler(false);
-  const { isToggled: showSidebarSections, toggle: toggleSidebarSections } = useToggler(false);
+  const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
+  const [showTabs, { toggle: toggleTabs }] = useToggler(false);
+  const [showDisplayTitle, { toggle: toggleDisplayTitle }] = useToggler(false);
+  const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
   const title = 'Bitcoin';
   const subtitle = 'BTC';
   const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;

@@ -1,7 +1,8 @@
-// TODO: Handle for SSR
-export const isRtl = (element?: HTMLElement | undefined) => {
-  if (element) {
-    return element.dir === 'rtl';
+import { isBrowser } from './browser';
+
+export const isRtl = (element?: HTMLElement) => {
+  if (!isBrowser()) {
+    return;
   }
-  return false;
+  return (element ?? document.documentElement).dir === 'rtl';
 };

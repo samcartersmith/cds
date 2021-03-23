@@ -15,6 +15,7 @@ export const Icon = memo(
         size,
         color = 'primary',
         dangerouslySetColor,
+        // TODO: border not implemented.
         bordered = false,
         name,
         title,

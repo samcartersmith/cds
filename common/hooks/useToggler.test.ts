@@ -7,12 +7,12 @@ describe('useToggler', () => {
     const { result } = renderHook(() => {
       return useToggler(false);
     });
-    expect(result.current.isToggled).toBe(false);
-    act(() => result.current.toggleOn());
-    expect(result.current.isToggled).toEqual(true);
-    act(() => result.current.toggleOff());
-    expect(result.current.isToggled).toEqual(false);
-    act(() => result.current.toggle());
-    expect(result.current.isToggled).toEqual(true);
+    expect(result.current[0]).toBe(false);
+    act(() => result.current[1].toggleOn());
+    expect(result.current[0]).toEqual(true);
+    act(() => result.current[1].toggleOff());
+    expect(result.current[0]).toEqual(false);
+    act(() => result.current[1].toggle());
+    expect(result.current[0]).toEqual(true);
   });
 });
