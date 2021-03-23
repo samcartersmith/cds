@@ -3,116 +3,82 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import { Button } from './Button';
 
-<Meta title="Core Components/Button" component={Button} argTypes={{}} />
+<Meta title="Core Components/Button" component={Button} />
 
 # Button
 
 <Canvas isColumn withToolbar>
-  <Story name="Normal" decorators={[withStoryLabel('Normal')]} args={{}}>
-    {args => (
-      <div>
-        <Button {...args} onPress={console.log}>
-          Button
-        </Button>
-      </div>
-    )}
+  <Story name="Normal" decorators={[withStoryLabel('Normal')]}>
+    <div>
+      <Button onPress={console.log}>Button</Button>
+    </div>
   </Story>
-  <Story
-    name="Normal compact"
-    decorators={[withStoryLabel('Normal compact')]}
-    args={{ compact: true }}
-  >
-    {args => (
-      <div>
-        <Button {...args}>Button</Button>
-      </div>
-    )}
+  <Story name="Normal compact" decorators={[withStoryLabel('Normal compact')]}>
+    <div>
+      <Button compact>Button</Button>
+    </div>
   </Story>
-  <Story name="Block" decorators={[withStoryLabel('Block')]} args={{ block: true }}>
-    {args => (
-      <div>
-        <Button {...args}>Full-width button</Button>
-      </div>
-    )}
+  <Story name="Block" decorators={[withStoryLabel('Block')]}>
+    <div>
+      <Button block>Full-width button</Button>
+    </div>
   </Story>
-  <Story
-    name="Block compact"
-    decorators={[withStoryLabel('Block compact')]}
-    args={{ block: true, compact: true }}
-  >
-    {args => (
-      <div>
-        <Button {...args}>Full-width button</Button>
-      </div>
-    )}
+  <Story name="Block compact" decorators={[withStoryLabel('Block compact')]}>
+    <div>
+      <Button block compact>
+        Full-width button
+      </Button>
+    </div>
   </Story>
 </Canvas>
 
 # States
 
 <Canvas withToolbar>
-  <Story name="Loading" decorators={[withStoryLabel('Loading')]} args={{ loading: true }}>
-    {args => (
-      <div>
-        <Button {...args}>Button</Button>
-      </div>
-    )}
+  <Story name="Loading" decorators={[withStoryLabel('Loading')]}>
+    <div>
+      <Button loading>Button</Button>
+    </div>
   </Story>
-  <Story name="Disabled" decorators={[withStoryLabel('Disabled')]} args={{ disabled: true }}>
-    {args => (
-      <div>
-        <Button {...args}>Button</Button>
-      </div>
-    )}
+  <Story name="Disabled" decorators={[withStoryLabel('Disabled')]}>
+    <Button disabled>Button</Button>
   </Story>
 </Canvas>
 
 # Variants
 
 <Canvas withToolbar>
-  <Story name="Primary" decorators={[withStoryLabel('Primary')]} args={{ variant: 'primary' }}>
-    {args => (
-      <div>
-        <Button {...args}>Button</Button>{' '}
-        <Button {...args} compact>
-          Button
-        </Button>
-      </div>
-    )}
+  <Story name="Primary" decorators={[withStoryLabel('Primary')]}>
+    <div>
+      <Button variant="primary">Button</Button>{' '}
+      <Button variant="primary" compact>
+        Button
+      </Button>
+    </div>
   </Story>
-  <Story
-    name="Secondary"
-    decorators={[withStoryLabel('Secondary')]}
-    args={{ variant: 'secondary' }}
-  >
-    {args => (
-      <div>
-        <Button {...args}>Button</Button>{' '}
-        <Button {...args} compact>
-          Button
-        </Button>
-      </div>
-    )}
+  <Story name="Secondary" decorators={[withStoryLabel('Secondary')]}>
+    <div>
+      <Button variant="secondary">Button</Button>{' '}
+      <Button variant="secondary" compact>
+        Button
+      </Button>
+    </div>
   </Story>
-  <Story name="Positive" decorators={[withStoryLabel('Positive')]} args={{ variant: 'positive' }}>
-    {args => (
-      <div>
-        <Button {...args}>Button</Button>{' '}
-        <Button {...args} compact>
-          Button
-        </Button>
-      </div>
-    )}
+  <Story name="Positive" decorators={[withStoryLabel('Positive')]}>
+    <div>
+      <Button variant="positive">Button</Button>{' '}
+      <Button variant="positive" compact>
+        Button
+      </Button>
+    </div>
   </Story>
-  <Story name="Negative" decorators={[withStoryLabel('Negative')]} args={{ variant: 'negative' }}>
-    {args => (
-      <div>
-        <Button {...args}>Button</Button>{' '}
-        <Button {...args} compact>
-          Button
-        </Button>
-      </div>
-    )}
+  <Story name="Negative" decorators={[withStoryLabel('Negative')]}>
+    <div>
+      <Button variant="negative">Button</Button>{' '}
+      <Button variant="negative" compact>
+        Button
+      </Button>
+    </div>
   </Story>
 </Canvas>
 
