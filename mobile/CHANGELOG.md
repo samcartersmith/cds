@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.6.1 (3/24/2021, 01:32 PM PST)
+
+#### 🐞 Fixes
+
+- **[Divider]** Fix divider scaling (again). @miles-johnson [#15801](https://github.cbhq.net/mono/repo/pull/15801)
+
 ## 0.6.0 (3/23/2021, 06:11 PM PST)
 
 #### 💥 Breaking
