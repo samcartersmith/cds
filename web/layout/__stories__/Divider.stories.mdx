@@ -1,7 +1,9 @@
 import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { Box } from '../Box';
 import { Divider } from '../Divider';
+import { HStack } from '../HStack';
 
 <Meta title="Core Components/Divider" component={Divider} />
 
@@ -40,9 +42,11 @@ import { Divider } from '../Divider';
     args={{ direction: 'vertical', color: 'lineHeavy' }}
   >
     {args => (
-      <div style={{ height: 100, display: 'flex' }}>
+      <HStack>
+        <Box height={100} width={100} background="backgroundAlternate" />
         <Divider {...args} />
-      </div>
+        <Box height={100} width={100} background="backgroundAlternate" />
+      </HStack>
     )}
   </Story>
 </Canvas>

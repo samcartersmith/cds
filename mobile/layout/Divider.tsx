@@ -27,7 +27,7 @@ export const Divider = ({
   );
 
   return (
-    <Box alignSelf="stretch" width={direction === 'horizontal' ? '100%' : undefined} {...boxProps}>
+    <Box alignSelf="stretch" alignItems="stretch" {...boxProps}>
       <View style={style} />
     </Box>
   );
@@ -36,10 +36,10 @@ export const Divider = ({
 const styles = StyleSheet.create({
   horizontal: {
     height: 1,
-    width: '100%',
+    flexGrow: 1,
   },
   vertical: {
     width: 1,
-    height: '100%',
+    flexGrow: 1,
   },
 });

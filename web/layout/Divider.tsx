@@ -17,11 +17,11 @@ const styles = {
     background-color: ${palette.lineHeavy};
   `,
   horizontal: css`
-    width: 100%;
+    flex-grow: 1;
     height: 1px;
   `,
   vertical: css`
-    height: 100%;
+    flex-grow: 1;
     width: 1px;
   `,
 };
@@ -34,7 +34,7 @@ export const Divider = ({
   const { separatorProps } = useSeparator({ elementType: 'div' });
 
   return (
-    <Box alignSelf="stretch" width={direction === 'horizontal' ? '100%' : undefined} {...boxProps}>
+    <Box alignSelf="stretch" alignItems="stretch" {...boxProps}>
       <div {...separatorProps} className={cx(styles[direction], styles[color])} />
     </Box>
   );

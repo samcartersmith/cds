@@ -1,5 +1,4 @@
-import { Divider } from '@cbhq/cds-mobile/layout/Divider';
-import { View } from 'react-native';
+import { Box, Divider, HStack } from '@cbhq/cds-mobile/layout';
 
 import Example from './internal/Example';
 import Screen from './internal/Screen';
@@ -12,9 +11,11 @@ const DividerScreen = () => {
       </Example>
 
       <Example title="Vertical & heavy">
-        <View style={{ height: 100 }}>
+        <HStack>
+          <Box height={100} width={100} background="backgroundAlternate" />
           <Divider color="lineHeavy" direction="vertical" />
-        </View>
+          <Box height={100} width={100} background="backgroundAlternate" />
+        </HStack>
       </Example>
     </Screen>
   );
