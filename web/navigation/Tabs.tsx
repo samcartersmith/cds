@@ -2,7 +2,7 @@ import React, { memo, useEffect, useMemo, Children, cloneElement } from 'react';
 
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 
-import { SetState } from '../types';
+import { PressEvent, SetState } from '../types';
 import { TabItemBaseProps, TabItemProps } from './TabItem';
 
 export type TabsProps = {
@@ -28,9 +28,10 @@ export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children 
       Children.map(children, (child, idx) => {
         return cloneElement(child, {
           active: idx === _activeIndex,
-          onPress: () => {
+          onPress: (evt: PressEvent<HTMLButtonElement>) => {
             updateHandler(idx);
             onChange?.({ label: child.props.label, value: child.props?.value });
+            child.props?.onPress?.(evt);
           },
         });
       }),
