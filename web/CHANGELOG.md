@@ -6,6 +6,27 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.0 (3/23/2021, 06:11 PM PST)
+
+#### 💥 Breaking
+
+- Update button states for mobile. Remove spacing/offset. @miles-johnson [#15731](https://github.cbhq.net/mono/repo/pull/15731)
+
+#### 🚀 Updates
+
+- add focus-visible for keyboard only focus styling @hannah-jin [#15611](https://github.cbhq.net/mono/repo/pull/15611)
+
+#### 🐞 Fixes
+
+- Fix Storybook unknown prop error on Button events @jennifer-liu [#15673](https://github.cbhq.net/mono/repo/pull/15673)
+- **[Divider]** Fix vertical divider taking up full height @miles-johnson [#15640](https://github.cbhq.net/mono/repo/pull/15640)
+- Add opacity styles to interactable content on web @katherinemartinez [#15638](https://github.cbhq.net/mono/repo/pull/15638)
+
+#### 📘 Misc
+
+- Update util functions and hooks @hannah-jin [#15571](https://github.cbhq.net/mono/repo/pull/15571)
+- update codegen styles and web styles @hannah-jin [#15564](https://github.cbhq.net/mono/repo/pull/15564)
+
 ## 0.4.5 (3/20/2021, 03:59 PM PST)
 
 #### 🐞 Fixes

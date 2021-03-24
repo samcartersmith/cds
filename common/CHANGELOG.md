@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.4.0 (3/23/2021, 06:11 PM PST)
+
+#### 💥 Breaking
+
+- Update button states for mobile. Remove spacing/offset. @miles-johnson [#15731](https://github.cbhq.net/mono/repo/pull/15731)
+
+#### 📘 Misc
+
+- Update util functions and hooks @hannah-jin [#15571](https://github.cbhq.net/mono/repo/pull/15571)
+- update codegen styles and web styles @hannah-jin [#15564](https://github.cbhq.net/mono/repo/pull/15564)
+
 ## 0.3.5 (3/20/2021, 03:59 PM PST)
 
 #### 🐞 Fixes
