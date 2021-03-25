@@ -33,32 +33,20 @@ Don't forget to add an index.ts to that component's example directory with expor
 
 To use CDS packages outside of mono/repo, NPM packages are available through the Coinbase's internal NPM registry. Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules at `lib/`. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
 
-## Publishing
-
-1. Bump version in `basepackage.json`. _(Automated script coming)_
-2. Update `CHANGELOG.md` with the new version and date.
-3. Create a PR to make sure the changes look good.
-4. Once the PR is merged, run the following to publish a new package to npm.
-
-```bash
-assume-role development eng-ops
-bazel run //eng/shared/design-system/<package>:publish
-```
-
-### Publishing to the development NPM registry
+### Publishing to the NPM registry
 
 <!-- TODO: write script to move create package.json from scripts/package.json -->
 
-To publish to the [development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/-/web/detail/@cb/cds-web):
+To publish to the [development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/)
 
-1. Add `@cb:registry=https://registry-npm-dev.cbhq.net` to [.npmrc](../../../../.npmrc)
-
-2. Run
+1. Run
 
 ```bash
-assume-role development eng-ops
-bazel run //eng/shared/design-system/<package>:publish_dev
+ash_login
+ash deploy -p eng/shared/design-system/cloud
 ```
+
+2. Enter the number for the commit/package you want to deploy for prod or development registry
 
 ## Storybook
 
