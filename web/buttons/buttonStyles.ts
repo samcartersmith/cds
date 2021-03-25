@@ -25,10 +25,8 @@ export const buttonBlock = css`
   white-space: normal;
 `;
 
-export const iconButton = {
-  base: css`
-    width: ${tapTarget}px;
-    height: ${tapTarget}px;
-    min-width: unset;
-  `,
-};
+export const iconButton = css`
+  width: ${tapTarget}px;
+  height: ${tapTarget}px;
+  min-width: unset;
+`;

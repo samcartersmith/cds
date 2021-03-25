@@ -1,11 +1,11 @@
 import { css } from 'linaria';
-import { useFocusVisible } from 'react-aria';
 
 import { palette } from '../tokens';
 
-export const focusStyles = css`
+export const focusVisible = css`
   position: relative;
-  &:focus {
+  &:focus-visible,
+  &.focus-visible {
     &:before {
       content: '';
       position: absolute;
@@ -18,9 +18,3 @@ export const focusStyles = css`
     }
   }
 `;
-
-export const useFocusStyles = (isTextInput: boolean | undefined = false) => {
-  const { isFocusVisible } = useFocusVisible({ isTextInput });
-
-  return isFocusVisible && focusStyles;
-};

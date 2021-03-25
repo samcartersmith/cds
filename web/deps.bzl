@@ -5,9 +5,8 @@ DEPENDENCIES = [
     "@npm//focus-visible",
     "@npm//linaria",
     "@npm//lottie-web",
-    "@npm//react-aria",
     "@npm//react-popper",
-    "@npm//react-stately",
+    "@npm//reakit",
 ]
 
 PEER_DEPENDENCIES = [

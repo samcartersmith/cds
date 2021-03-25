@@ -1,16 +1,13 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useState } from 'react';
 
 import { BorderRadius, PaletteBackground, PaletteBorder, usePaletteConfig } from '@cbhq/cds-common';
-import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { extractHueStep } from '@cbhq/cds-common/utils/extractHueStep';
-import { AriaButtonProps } from '@react-types/button';
 import { cx } from 'linaria';
-import { useButton, useHover } from 'react-aria';
 
-import { useFocusStyles } from '../hooks/useFocusStyles';
 import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
+import { focusVisible } from '../styles/focus';
 import { OnHover, OnPress } from '../types';
 import { interactable, disabledState, scaledDownState } from './interactableStyles';
 
@@ -28,14 +25,8 @@ export interface UseInteractableOptions<T> extends InteractableProps<T> {
   borderColor: PaletteBorder;
   /** Border radius of the element being interacted with. */
   borderRadius: BorderRadius;
-  /** When a `button`, the type of button. */
-  buttonType?: string;
-  /** Type of element being rendered. */
-  elementType: 'a' | 'button';
   /** Is the element currently disabled. */
   isDisabled?: boolean;
-  /** Reference to underlying element. */
-  ref?: React.Ref<T>;
   /** Scale down the element when being pressed. */
   scaleOnPress?: boolean;
 }
@@ -44,14 +35,10 @@ export function useInteractable<T extends HTMLElement>({
   backgroundColor,
   borderColor,
   borderRadius,
-  buttonType,
-  elementType,
   isDisabled,
   onHover,
   onPress,
-  ref,
   scaleOnPress,
-  ...restProps
 }: UseInteractableOptions<T>): {
   className: string;
   isHovered: boolean;
@@ -59,26 +46,40 @@ export function useInteractable<T extends HTMLElement>({
   props: React.HTMLAttributes<T>;
   style: React.CSSProperties;
 } {
-  const internalRef = useRef<T>();
-  const mergedRef = useMergeRefs(internalRef, ref);
   const paletteConfig = usePaletteConfig();
   const spectrumAlias = paletteConfig[backgroundColor];
   const spectrumStep = useMemo(() => extractHueStep(spectrumAlias) ?? 60, [spectrumAlias]);
-  const focusStyles = useFocusStyles();
+  const [isPressed, setPressed] = useState(false);
+  const [isHovered, setHovered] = useState(false);
 
-  const { buttonProps, isPressed } = useButton(
-    {
-      ...restProps,
-      elementType,
-      isDisabled,
-      onPress,
-      type: buttonType,
-    } as AriaButtonProps,
-    // @ts-expect-error Allow null type
-    mergedRef
+  const buttonProps = useMemo(
+    () => ({
+      onClick(event: React.MouseEvent<T>) {
+        onPress?.(event);
+      },
+      onMouseDown() {
+        setPressed(true);
+      },
+      onMouseUp() {
+        setPressed(false);
+      },
+    }),
+    [onPress]
   );
 
-  const { hoverProps, isHovered } = useHover({ isDisabled, onHoverChange: onHover });
+  const hoverProps = useMemo(
+    () => ({
+      onMouseEnter() {
+        setHovered(true);
+        onHover?.(true);
+      },
+      onMouseLeave() {
+        setHovered(false);
+        onHover?.(false);
+      },
+    }),
+    [onHover]
+  );
 
   const props = useMemo(
     () => ({
@@ -105,7 +106,7 @@ export function useInteractable<T extends HTMLElement>({
       borderColors[borderColor],
       borderRadii[borderRadius],
       interactable,
-      focusStyles,
+      focusVisible,
       isPressed && scaleOnPress && scaledDownState,
       isDisabled && disabledState
     ),

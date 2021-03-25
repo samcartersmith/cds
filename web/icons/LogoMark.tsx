@@ -8,6 +8,7 @@ export type LogoMarkProps = LogoMarkParams;
 
 export const LogoMark = memo(({ size }: LogoMarkProps) => {
   const { viewBox, width, height, path, color, circle } = useLogoMark({ size });
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

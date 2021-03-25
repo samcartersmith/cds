@@ -13,11 +13,11 @@ export const StoryExample = ({
   return (
     <Tooltip
       content="This is the content in the tooltip!"
-      placement={placement}
       disabled={disabled}
+      placement={placement}
     >
-      {(props, ref) => (
-        <Button {...props} ref={ref}>
+      {props => (
+        <Button {...props} disabled={disabled}>
           Button
         </Button>
       )}

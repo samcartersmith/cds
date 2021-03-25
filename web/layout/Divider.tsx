@@ -2,12 +2,12 @@ import React from 'react';
 
 import { DividerBaseProps } from '@cbhq/cds-common';
 import { css, cx } from 'linaria';
-import { useSeparator } from 'react-aria';
+import { Separator } from 'reakit/Separator';
 
 import { palette } from '../tokens';
 import { Box, BoxProps } from './Box';
 
-export interface DividerProps extends DividerBaseProps, BoxProps {}
+export interface DividerProps extends DividerBaseProps, Omit<BoxProps, 'as' | 'role'> {}
 
 const styles = {
   line: css`
@@ -31,11 +31,13 @@ export const Divider = ({
   direction = 'horizontal',
   ...boxProps
 }: DividerProps) => {
-  const { separatorProps } = useSeparator({ elementType: 'div' });
-
   return (
     <Box alignSelf="stretch" alignItems="stretch" {...boxProps}>
-      <div {...separatorProps} className={cx(styles[direction], styles[color])} />
+      <Separator
+        as="div"
+        orientation={direction}
+        className={cx(styles[direction], styles[color])}
+      />
     </Box>
   );
 };

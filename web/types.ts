@@ -87,22 +87,7 @@ export type SectionAccessibilityRole =
 
 // EVENTS
 
-export interface PressEvent<T = HTMLElement> {
-  /** The type of press event being fired. */
-  type: 'pressstart' | 'pressend' | 'pressup' | 'press';
-  /** The pointer type that triggered the press event. */
-  pointerType: 'mouse' | 'pen' | 'touch' | 'keyboard' | 'virtual';
-  /** The target element of the press event. */
-  target: T;
-  /** Whether the shift keyboard modifier was held during the press event. */
-  shiftKey: boolean;
-  /** Whether the ctrl keyboard modifier was held during the press event. */
-  ctrlKey: boolean;
-  /** Whether the meta keyboard modifier was held during the press event. */
-  metaKey: boolean;
-}
-
-export type OnPress<T> = (event: PressEvent<T>) => void;
+export type OnPress<T> = React.MouseEventHandler<T>;
 export type OnHover = (isHovering: boolean) => void;
 
 // REACT

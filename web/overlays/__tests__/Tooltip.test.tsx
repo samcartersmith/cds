@@ -31,21 +31,15 @@ describe('Tooltip', () => {
     const { container, getByRole } = render(<StoryExample />);
     const button = container.querySelector('button') as HTMLButtonElement;
 
-    expect(button).not.toHaveAttribute('aria-describedby');
-    expect(getByRole('tooltip', { hidden: true })).toHaveAttribute('aria-hidden', 'true');
+    let tooltip = getByRole('tooltip', { hidden: true });
+
+    expect(button).toHaveAttribute('aria-describedby', tooltip.id);
+    expect(tooltip).toHaveAttribute('hidden');
 
     fireEvent.mouseEnter(button);
 
-    const tooltip = await waitFor(() => getByRole('tooltip'));
+    tooltip = await waitFor(() => getByRole('tooltip'));
 
-    expect(tooltip).toHaveAttribute('aria-hidden', 'false');
-    expect(button).toHaveAttribute('aria-describedby', tooltip.id);
-  });
-
-  it('passes disabled state through', () => {
-    const { container, getByRole } = render(<StoryExample disabled />);
-
-    expect(container.querySelector('button')).toHaveAttribute('disabled');
-    expect(getByRole('tooltip', { hidden: true })).toHaveAttribute('aria-disabled', 'true');
+    expect(tooltip).not.toHaveAttribute('hidden');
   });
 });

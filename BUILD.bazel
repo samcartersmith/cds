@@ -122,7 +122,6 @@ TEST_DEPS = [
     "@npm//@babel/preset-env",
     "@npm//@babel/preset-react",
     "@npm//@babel/preset-typescript",
-    "@npm//@react-types/button",
     "@npm//babel-jest",
     "@npm//babel-plugin-module-resolver",
     "@npm//jest",

@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import React, { memo } from 'react';
 
 import { InteractableProps, useInteractable } from '../buttons/useInteractable';
 import { TextLabel1 } from '../typography/TextLabel1';
@@ -12,29 +12,24 @@ export interface TabItemProps extends TabItemBaseProps, InteractableProps<HTMLBu
   active?: boolean;
 }
 
-export const TabItem = memo(
-  forwardRef<HTMLButtonElement, TabItemProps>(({ label, active, onPress, onHover }, ref) => {
-    const colorAlias = active ? 'primaryWash' : 'secondary';
-    const { props, className, style } = useInteractable({
-      elementType: 'button',
-      buttonType: 'button',
-      backgroundColor: colorAlias,
-      borderColor: colorAlias,
-      borderRadius: 'pill',
-      scaleOnPress: true,
-      onHover,
-      onPress,
-      ref,
-    });
+export const TabItem = memo(({ label, active, onPress, onHover }: TabItemProps) => {
+  const colorAlias = active ? 'primaryWash' : 'secondary';
+  const { props, className, style } = useInteractable({
+    backgroundColor: colorAlias,
+    borderColor: colorAlias,
+    borderRadius: 'pill',
+    scaleOnPress: true,
+    onHover,
+    onPress,
+  });
 
-    return (
-      <button role="tab" {...props} className={className} style={style}>
-        <TextLabel1 spacing={1} as="p" color={active ? 'primary' : 'foreground'}>
-          {label}
-        </TextLabel1>
-      </button>
-    );
-  })
-);
+  return (
+    <button role="tab" {...props} className={className} style={style}>
+      <TextLabel1 spacing={1} as="p" color={active ? 'primary' : 'foreground'}>
+        {label}
+      </TextLabel1>
+    </button>
+  );
+});
 
 TabItem.displayName = 'TabItem';

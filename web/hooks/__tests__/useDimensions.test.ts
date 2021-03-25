@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { useDimensions, Options, observerErr, borderBoxWarn } from './useDimensions';
+import { useDimensions, Options, observerErr, borderBoxWarn } from '../useDimensions';
 
 describe('useDimensions', () => {
   const target = { current: document.createElement('div') };
@@ -25,7 +25,7 @@ describe('useDimensions', () => {
     disconnect,
   }));
 
-  /* 
+  /*
     When using the delete operator in strictNullChecks, the operand must now be any, unknown, never, or be optional
     (in that it contains undefined in the type). Otherwise, use of the delete operator is an error.
   */

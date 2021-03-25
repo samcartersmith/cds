@@ -1,15 +1,21 @@
 import React, { forwardRef } from 'react';
 
+import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { mergeProps } from '@cbhq/cds-common/utils/mergeProps';
 import { cx } from 'linaria';
-import { mergeProps } from 'react-aria';
+import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit/Button';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as foregroundColors from '../styles/foregroundColor';
 import { TextHeadline } from '../typography/TextHeadline';
-import { ButtonProps } from './ButtonProps';
 import * as buttonStyles from './buttonStyles';
-import { useInteractable } from './useInteractable';
+import { InteractableProps, useInteractable } from './useInteractable';
+
+export interface ButtonProps
+  extends ButtonBaseProps,
+    InteractableProps<HTMLButtonElement>,
+    Omit<ReakitButtonProps, 'children' | 'className' | 'onClick' | 'onClickCapture' | 'style'> {}
 
 export const Button = forwardRef(
   (
@@ -23,33 +29,29 @@ export const Button = forwardRef(
       onHover,
       onPress,
       testID,
-      type,
+      type = 'button',
       variant = 'primary',
       ...restProps
     }: ButtonProps,
     ref: React.Ref<HTMLButtonElement>
   ) => {
+    const isDisabled = disabled || loading;
     const spacingClass = useSpacingStyles({
       spacingHorizontal: compact ? 2 : 3,
       spacingVertical: compact ? 1 : 2,
     });
     const { color, ...variantAliases } = useButtonVariant(variant);
-
     const { className, props, style } = useInteractable<HTMLButtonElement>({
-      ...restProps,
       ...variantAliases,
       borderRadius: compact ? 'compact' : 'standard',
-      buttonType: type,
-      elementType: 'button',
-      isDisabled: disabled || loading,
+      isDisabled,
       onHover,
       onPress,
-      ref,
       scaleOnPress: true,
     });
 
     return (
-      <button
+      <ReakitButton
         {...mergeProps(props, restProps)}
         aria-label={accessibilityLabel}
         data-test-id={testID}
@@ -61,15 +63,15 @@ export const Button = forwardRef(
           block && buttonStyles.buttonBlock,
           spacingClass
         )}
-        style={style}
+        disabled={isDisabled}
         ref={ref}
+        style={style}
+        type={type}
       >
         <TextHeadline as="span" color={color}>
           {children}
         </TextHeadline>
-      </button>
+      </ReakitButton>
     );
   }
 );
-
-export { ButtonProps };
