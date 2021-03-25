@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-import { Box, BoxProps } from './Box';
+import { SpacerBaseProps } from '@cbhq/cds-common/types/SpacerBaseProps';
+import { getSpacerStyle } from '@cbhq/cds-common/utils/getSpacerStyle';
+import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
-export const Spacer: React.FC<BoxProps> = props => (
-  <Box flexGrow={1} flexShrink={1} flexBasis="auto" {...props} />
-);
+import { useSpacingScale } from '../hooks/useSpacing';
+import type { DangerouslySetStyle, OmitStyle } from '../types';
 
-export type { BoxProps as SpacerProps };
+export type SpacerProps = SpacerBaseProps & OmitStyle<ViewProps> & DangerouslySetStyle<ViewStyle>;
+
+/**
+ * Spacer component is for adding spacing gap between two dom nodes. If no horizontal or vertical
+ * spacing size is provided, Spacer will stretch to fill up available space left in the parent container.
+ */
+export const Spacer = memo(function Spacer({
+  flexGrow,
+  flexShrink,
+  flexBasis,
+  horizontal,
+  vertical,
+  maxHorizontal,
+  maxVertical,
+  minHorizontal,
+  minVertical,
+  animated,
+  ...viewProps
+}: SpacerProps) {
+  const spacing = useSpacingScale();
+  const Component = animated ? Animated.View : View;
+
+  return (
+    <Component
+      {...viewProps}
+      accessibilityRole="none"
+      style={getSpacerStyle({
+        flexGrow,
+        flexShrink,
+        flexBasis,
+        horizontal,
+        vertical,
+        maxHorizontal,
+        maxVertical,
+        minHorizontal,
+        minVertical,
+        spacingScaleValues: spacing,
+      })}
+    />
+  );
+});

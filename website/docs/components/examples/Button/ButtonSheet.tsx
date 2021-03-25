@@ -14,7 +14,7 @@ export const ButtonSheet = () => {
           {item.charAt(0).toUpperCase() + item.slice(1)}
         </Button>
       )),
-      <Spacer spacingEnd={3} />
+      <Spacer horizontal={3} />
     );
   }, []);
 

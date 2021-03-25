@@ -1,0 +1,29 @@
+import { SpacerBaseProps } from '../types/SpacerBaseProps';
+import { SpacingScale } from '../types/SpacingScale';
+
+export const getSpacerStyle = ({
+  flexGrow,
+  flexShrink,
+  flexBasis,
+  horizontal,
+  vertical,
+  maxHorizontal,
+  maxVertical,
+  minHorizontal,
+  minVertical,
+  spacingScaleValues,
+}: SpacerBaseProps & { spacingScaleValues: Record<Exclude<SpacingScale, 0>, string | number> }) => {
+  const isFixedSize = horizontal !== undefined || vertical !== undefined;
+
+  return {
+    flexGrow: isFixedSize ? flexGrow : flexGrow ?? 1,
+    flexShrink: isFixedSize ? flexShrink : flexShrink ?? 1,
+    flexBasis: isFixedSize ? flexBasis : flexBasis ?? 1,
+    width: horizontal && spacingScaleValues[horizontal],
+    height: vertical && spacingScaleValues[vertical],
+    maxWidth: maxHorizontal && spacingScaleValues[maxHorizontal],
+    maxHeight: maxVertical && spacingScaleValues[maxVertical],
+    minWidth: minHorizontal && spacingScaleValues[minHorizontal],
+    minHeight: minVertical && spacingScaleValues[minVertical],
+  };
+};

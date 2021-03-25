@@ -13,6 +13,7 @@ import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import LottieScreen from './src/Lottie';
+import SpacerScreen from './src/Spacer';
 import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
 import TextCaptionScreen from './src/TextCaption';
@@ -62,6 +63,7 @@ const App = () => {
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
           <Stack.Screen name="Divider" component={DividerScreen} />
+          <Stack.Screen name="Spacer" component={SpacerScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />

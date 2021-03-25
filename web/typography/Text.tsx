@@ -38,7 +38,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
     spacingVertical,
     spacingHorizontal,
     ...props
-  }: DynamicElement<T, TextProps>) =>
+  }: DynamicElement<TextProps, T, true /* as prop is required */>) =>
     createElement(as, {
       ...props,
       className: cx(

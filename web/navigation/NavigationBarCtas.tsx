@@ -16,7 +16,7 @@ export type NavigationBarCtasProps = {
 export const NavigationBarCtas = memo(({ children }: NavigationBarCtasProps) => {
   return children ? (
     <Box alignItems="center" justifyContent="space-between">
-      {join(Children.toArray(children), <Spacer spacingEnd={navbarSpacing.withinGroups} />)}
+      {join(Children.toArray(children), <Spacer horizontal={navbarSpacing.withinGroups} />)}
     </Box>
   ) : null;
 });

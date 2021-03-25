@@ -3,17 +3,27 @@ import { CssVariableFn } from '@cbhq/cds-utils';
 
 //  web only
 export type DynamicElement<
+  CustomProps extends unknown,
   T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
-  CustomProps extends unknown
-> = CustomProps & {
-  /**
-   * A semantic HTML element or a React component to be rendered. All native HTML attributes for that element will be available through the styled component.
-   */
-  readonly as: T;
-} & Omit<
+  AsPropRequired extends boolean = false
+> = CustomProps &
+  Omit<
     React.ComponentProps<T>,
     'className' | 'style' | 'dangerouslySetInnerHTML' | keyof CustomProps
-  >;
+  > &
+  (AsPropRequired extends true
+    ? {
+        /**
+         * A semantic HTML element or a React component to be rendered. All native HTML attributes for that element will be available through the styled component.
+         */
+        readonly as: T;
+      }
+    : {
+        /**
+         * A semantic HTML element or a React component to be rendered. All native HTML attributes for that element will be available through the styled component.
+         */
+        readonly as?: T;
+      });
 
 // LINARIA
 

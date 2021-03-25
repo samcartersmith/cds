@@ -9,6 +9,7 @@ const components = [
   { key: 'Box' },
   { key: 'Button' },
   { key: 'Divider' },
+  { key: 'Spacer' },
   { key: 'Icon' },
   { key: 'IconButton' },
   { key: 'Lottie' },
