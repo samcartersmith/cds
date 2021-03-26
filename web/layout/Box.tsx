@@ -68,8 +68,7 @@ export interface BoxProps<As extends BoxElement = 'div'> extends Omit<BoxBasePro
   /** How to position the box within its parent. */
   position?: BoxBaseProps['position'] | 'sticky';
   /**
-   * This is a migration escape hatch. It is not intended to be used normally.
-   * @danger
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetClassName?: string;
 }

@@ -5,7 +5,6 @@ load("//eng/shared/design-system/web:deps.bzl", package_web_deps = "BUILD_DEPEND
 
 PACKAGES = [
     "common",
-    "icons",
     "lottie-files",
     "mobile",
     "utils",
@@ -16,7 +15,6 @@ ESLINT_DIRS = [
     "codegen",
     "codemod",
     "common",
-    "icons",
     "mobile",
     "utils",
     "web",

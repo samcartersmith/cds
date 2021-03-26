@@ -138,7 +138,6 @@ jest_test(
     ],
     jest_config = "jest.config.js",
     test_srcs = [
-        "//eng/shared/design-system/icons:source",
         "//eng/shared/design-system/utils:source",
         "//eng/shared/design-system/web:source",
         "//eng/shared/design-system/common:source",
@@ -291,7 +290,6 @@ build_storybook(
     data = glob(["storybook/.storybook/**/*"]) + [
         # story source
         ":web_source",
-        "//eng/shared/design-system/icons:story_source",
         "//eng/shared/design-system/web:story_source",
     ] + STORYBOOK_DEPS,
     output_dir = True,
@@ -324,9 +322,6 @@ build_storybook(
     data = glob(["storybook/.storybook/**/*"]) + [
         # story source
         ":web_source",
-        # Currently the icons library is too large and it breaks the Percy upload for our visual tests
-        # Once the size problem is fixed we can remove this completly and only use :storybook
-        #  "//eng/shared/design-system/icons:story_source",
         "//eng/shared/design-system/web:story_source",
     ] + STORYBOOK_DEPS,
     output_dir = True,

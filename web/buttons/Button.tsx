@@ -14,7 +14,18 @@ import { InteractableProps, useInteractable } from './useInteractable';
 export interface ButtonProps
   extends ButtonBaseProps,
     InteractableProps<HTMLButtonElement>,
-    Omit<ReakitButtonProps, 'children' | 'className' | 'onClick' | 'onClickCapture' | 'style'> {}
+    Omit<
+      ReakitButtonProps,
+      | 'children'
+      | 'className'
+      | 'onClick'
+      | 'onClickCapture'
+      | 'style'
+      | 'unstable_clickOnEnter'
+      | 'unstable_clickOnSpace'
+      | 'unstable_system'
+      | 'wrapElement'
+    > {}
 
 export const Button = forwardRef(
   (

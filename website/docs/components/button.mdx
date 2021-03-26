@@ -105,7 +105,7 @@ Mark the button as disabled.
   componentName="Button"
   propertyName="disabled"
   required={false}
-  defaultValue="false"
+  defaultValue=""
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
@@ -127,6 +127,21 @@ Haptic feedback to trigger when being pressed.
 
 <ComponentDetails componentName="Button" templateName="feedbackProp" />
 
+### focusable <Badge variant="web" />
+
+When an element is `disabled`, it may still be `focusable`. It works similarly to `readOnly` on form elements. In this case, only `aria-disabled` will be set.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="focusable"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Button" templateName="focusableProp" />
+
 ### loading
 
 Mark the button as loading and display a spinner.
@@ -135,7 +150,7 @@ Mark the button as loading and display a spinner.
   componentName="Button"
   propertyName="loading"
   required={false}
-  defaultValue="false"
+  defaultValue=""
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
@@ -156,21 +171,6 @@ Uniquely identify the button within a form.
 />
 
 <ComponentDetails componentName="Button" templateName="nameProp" />
-
-### onHover <Badge variant="web" />
-
-Callback fired when the element is being hovered.
-
-<ApiDetails
-  componentName="Button"
-  propertyName="onHover"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['OnHover']}
-/>
-
-<ComponentDetails componentName="Button" templateName="onHoverProp" />
 
 ### onPress
 
