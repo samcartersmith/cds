@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.0 (3/26/2021, 10:40 AM PST)
+
+#### 💥 Breaking
+
+- CDS Web Icon Migration @jennifer-liu [#15381](https://github.cbhq.net/mono/repo/pull/15381), [CDS-235](https://jira.coinbase-corp.com/browse/CDS-235), [CDS-323](https://jira.coinbase-corp.com/browse/CDS-323)
+
+#### 📘 Misc
+
+- update Spacer implementation and API @hannah-jin [#15857](https://github.cbhq.net/mono/repo/pull/15857), [CDS-308](https://jira.coinbase-corp.com/browse/CDS-308)
+- Migrate to `reakit` from `react-aria` @miles-johnson [#15545](https://github.cbhq.net/mono/repo/pull/15545)
+
 ## 0.4.0 (3/23/2021, 06:11 PM PST)
 
 #### 💥 Breaking

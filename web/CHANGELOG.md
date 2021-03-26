@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.6.0 (3/26/2021, 10:40 AM PST)
+
+#### 💥 Breaking
+
+- CDS Web Icon Migration @jennifer-liu [#15381](https://github.cbhq.net/mono/repo/pull/15381), [CDS-235](https://jira.coinbase-corp.com/browse/CDS-235), [CDS-323](https://jira.coinbase-corp.com/browse/CDS-323)
+
+#### 🐞 Fixes
+
+- Fix type error. @miles-johnson [#15921](https://github.cbhq.net/mono/repo/pull/15921)
+- add onPress to Tab component @katherinemartinez [#15838](https://github.cbhq.net/mono/repo/pull/15838)
+
+#### 📘 Misc
+
+- update Spacer implementation and API @hannah-jin [#15857](https://github.cbhq.net/mono/repo/pull/15857), [CDS-308](https://jira.coinbase-corp.com/browse/CDS-308)
+- Migrate to `reakit` from `react-aria` @miles-johnson [#15545](https://github.cbhq.net/mono/repo/pull/15545)
+
 ## 0.5.1 (3/24/2021, 01:32 PM PST)
 
 #### 🐞 Fixes
