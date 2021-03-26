@@ -11,7 +11,7 @@ import { IconButton } from '../IconButton';
   <Story
     name="Default"
     decorators={[withStoryLabel('Default')]}
-    args={{ name: 'arrowsHorizontalHeavy' }}
+    args={{ name: 'arrowsHorizontal' }}
   >
     {args => <IconButton {...args} onPress={console.log} />}
   </Story>
@@ -25,9 +25,9 @@ import { IconButton } from '../IconButton';
     decorators={[withStoryLabel('Disabled')]}
     args={{
       disabled: true,
-      name: 'arrowsHorizontalHeavy',
+      name: 'arrowsHorizontal',
       variant: 'primary',
-      accessibilityLabel: 'arrowsHorizontalHeavy',
+      accessibilityLabel: 'arrowsHorizontal',
     }}
   >
     {args => <IconButton {...args} />}
@@ -37,8 +37,8 @@ import { IconButton } from '../IconButton';
     decorators={[withStoryLabel('Secondary disabled')]}
     args={{
       disabled: true,
-      name: 'arrowsHorizontalHeavy',
-      accessibilityLabel: 'arrowsHorizontalHeavy',
+      name: 'arrowsHorizontal',
+      accessibilityLabel: 'arrowsHorizontal',
     }}
   >
     {args => (
@@ -57,8 +57,8 @@ import { IconButton } from '../IconButton';
     decorators={[withStoryLabel('Secondary')]}
     args={{
       variant: 'secondary',
-      name: 'arrowsHorizontalHeavy',
-      accessibilityLabel: 'arrowsHorizontalHeavy',
+      name: 'arrowsHorizontal',
+      accessibilityLabel: 'arrowsHorizontal',
     }}
   >
     {args => (
@@ -72,8 +72,8 @@ import { IconButton } from '../IconButton';
     decorators={[withStoryLabel('Primary')]}
     args={{
       variant: 'primary',
-      name: 'arrowsHorizontalHeavy',
-      accessibilityLabel: 'arrowsHorizontalHeavy',
+      name: 'arrowsHorizontal',
+      accessibilityLabel: 'arrowsHorizontal',
     }}
   >
     {args => (

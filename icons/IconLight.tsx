@@ -5,6 +5,10 @@ import { pascalCase } from '@cbhq/cds-utils';
 import type { IconProps } from './props';
 import { useIconPixelSize } from './useIconPixelSize';
 
+/**
+ * IconLight is deprecated, please use Icon
+ * @deprecated
+ */
 export const IconLight: React.FC<IconProps> = memo(function IconLight({
   size,
   kind,

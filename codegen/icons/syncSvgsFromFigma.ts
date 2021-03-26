@@ -25,19 +25,19 @@ const writeFile = promisify(fs.writeFile);
 type IconName = {
   size: string;
   name: string;
-  style: string;
+  state: string;
 };
 
 const normalizeIconName = (imageName: string): IconName | void => {
-  const [type, specificName] = imageName.split('/');
+  const [type, specificName, state] = imageName.split('/');
   if (type !== 'Icon') {
     return;
   }
-  const [name, size, style] = specificName.split('_');
+  const [name, size] = specificName.split('_');
   return {
     size,
     name,
-    style,
+    state,
   };
 };
 
@@ -103,8 +103,8 @@ const normalizeIconName = (imageName: string): IconName | void => {
         delete iconComponents[id];
         return;
       }
-      const { name, size, style = '' } = iconsInfo[id];
-      const camelCaseName = camelCase(`${name} ${style}`);
+      const { name, size, state = '' } = iconsInfo[id];
+      const camelCaseName = camelCase(`${name} ${state}`);
       nameSet.add(camelCaseName);
       sizeMap[size][camelCaseName] = res.data;
     });

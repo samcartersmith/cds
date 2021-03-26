@@ -9,7 +9,7 @@ import Screen from './internal/Screen';
 function onPress(event: GestureResponderEvent) {
   console.log('Pressed', event.type || 'GestureResponderEvent');
 }
-const iconName = 'arrowsHorizontalHeavy';
+const iconName = 'arrowsHorizontal';
 const variants = [
   {
     component: <IconButton variant="primary" accessibilityLabel={iconName} name={iconName} />,

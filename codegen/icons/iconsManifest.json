@@ -1,1873 +1,1708 @@
 {
   "1292:161": {
     "key": "8f7ffc39b2182b14b40ac6df4c7abff210c72024",
-    "name": "Icon/cashUSD_24_heavy",
-    "description": ""
+    "name": "Icon/cashUSD_24",
+    "description": "cash, money, USD, currency, international, united states, dollar, 🇺🇸, 💰, 💵, 💸,  💲, 🪙"
   },
   "1292:184": {
     "key": "b0f4981a9530ed1ffb70ec6d4983c9a4b1d84ec4",
-    "name": "Icon/cashGBP_24_heavy",
-    "description": ""
+    "name": "Icon/cashGBP_24",
+    "description": "cash, british, pound, sterling, united kingdom, currency, international, 💷, 🇬🇧, 💰, 💸, 🪙"
   },
   "1292:192": {
     "key": "b966016ecb7325f74ec14c0fd16fac3313395d52",
-    "name": "Icon/cashEUR_24_heavy",
-    "description": ""
+    "name": "Icon/cashEUR_24",
+    "description": "cash, euro, money, currency, international, france, germany, spain, italy, greece, portugal, luxembourg, austria, finland, ireland, belgium, netherlands,  🇫🇷, 🇮🇪, 🇧🇪, 🇳🇱, 🇩🇪, 🇪🇸, 🇮🇹, 🇬🇷, 🇵🇹, 🇱🇺, 🇦🇹, 🇫🇮, 💶, 💰, 💸, 💵 "
   },
   "1292:160": {
     "key": "c4ccb581a26c673e9cb48d9074d8d8069fd143a1",
-    "name": "Icon/cashJPY_24_heavy",
-    "description": ""
+    "name": "Icon/cashJPY_24",
+    "description": "cash, yen, money, currency, international, japan, 🇯🇵"
   },
   "1292:159": {
     "key": "2e0107b2369380acae5346fa80cb36165a5e0a01",
-    "name": "Icon/phone_24_heavy",
-    "description": ""
+    "name": "Icon/phone_24",
+    "description": "phone, mobile, cellphone, 📲, 📱, 🤳"
   },
   "3348:110": {
     "key": "b996bdb6fb232738e7de97fa12fbd0dc37bd208d",
-    "name": "Icon/checkmark_24_heavy",
-    "description": ""
+    "name": "Icon/checkmark_24",
+    "description": "checkmark, check, tick, confirmation, accept, confirm, success, positive, ✅, ✔️"
   },
   "2211:19": {
     "key": "688bee3dae090900e1a7542c5192cfae46c477b0",
-    "name": "Icon/lock_24_heavy",
-    "description": ""
+    "name": "Icon/lock_24",
+    "description": "lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝"
   },
   "1292:212": {
     "key": "c37986c2a50c41ff2c63171e34b41e81f09a1591",
-    "name": "Icon/trxDeposit_24_heavy",
-    "description": ""
+    "name": "Icon/deposit_24",
+    "description": "deposit, arrow down, ⬇️"
   },
   "1292:186": {
     "key": "05cb1d0925569c96cb0f17d6aa20014167374507",
-    "name": "Icon/backspace_24_heavy",
-    "description": ""
+    "name": "Icon/arrowLeft_24",
+    "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
   },
   "1577:196": {
     "key": "7f562ecb12056807d26cbe4d2e69476e423169ab",
-    "name": "Icon/forward_24_heavy",
-    "description": ""
+    "name": "Icon/arrowRight_24",
+    "description": "arrow right, forward, ahead, ➡️, ⏭, ⏩, 🔜, ➡"
   },
   "1292:166": {
     "key": "a564396eb5fbe2479130cb89c4884025bca13b72",
-    "name": "Icon/step1_24_heavy",
-    "description": ""
+    "name": "Icon/step1_24",
+    "description": "step one, 1, sequence, numbers, order, instructions"
   },
   "1292:208": {
     "key": "86a134de6162e2bfea898babff09ab0ef1849253",
-    "name": "Icon/step2_24_heavy",
-    "description": ""
+    "name": "Icon/step2_24",
+    "description": "step two, 2, sequence, numbers, order, instructions"
   },
   "1292:196": {
     "key": "bd26469873f9d84115f347f5bccc5e680ef555fc",
-    "name": "Icon/step3_24_heavy",
-    "description": ""
+    "name": "Icon/step3_24",
+    "description": "step three, 3, sequence, numbers, order, instructions"
   },
   "1292:150": {
     "key": "11c02591e65d4243d94577ca52ccf7feec51a675",
-    "name": "Icon/step4_24_heavy",
-    "description": ""
+    "name": "Icon/step4_24",
+    "description": "step four, 4, sequence, numbers, order, instructions"
   },
   "1292:149": {
     "key": "c8e8f665b1a0785ff6fde18e670a4998ce8e5368",
-    "name": "Icon/step5_24_heavy",
-    "description": ""
+    "name": "Icon/step5_24",
+    "description": "step five, 5, sequence, numbers, order, instructions"
   },
   "1292:148": {
     "key": "53b4784da69643583c38eb24f26eeac92cc1adad",
-    "name": "Icon/step6_24_heavy",
-    "description": ""
+    "name": "Icon/step6_24",
+    "description": "step six, 6, sequence, numbers, order, instructions"
   },
   "1292:147": {
     "key": "9be1f13b27684c77443ce098487d454b90630ec2",
-    "name": "Icon/step7_24_heavy",
-    "description": ""
+    "name": "Icon/step7_24",
+    "description": "step seven, 7, sequence, numbers, order, instructions"
   },
   "1292:146": {
     "key": "6a20e42602a092f36ce3ed0608f037abc5e1bdaa",
-    "name": "Icon/step8_24_heavy",
-    "description": ""
+    "name": "Icon/step8_24",
+    "description": "step eight, 8, sequence, numbers, order, instructions"
   },
   "1292:145": {
     "key": "d4907c6082ebaf2e654815f466902ef764e2df6e",
-    "name": "Icon/step9_24_heavy",
-    "description": ""
+    "name": "Icon/step9_24",
+    "description": "step nine, 9, sequence, numbers, order, instructions"
   },
   "1292:194": {
     "key": "b3d3f2d4551bfb7a137ae16c0aca667b7a794002",
-    "name": "Icon/step0_24_heavy",
-    "description": ""
+    "name": "Icon/step0_24",
+    "description": "step zero, 0, sequence, numbers, order, instructions"
   },
   "1292:142": {
     "key": "e72c10c4ad79848ca364a06e3b5e3c3aec5edd27",
-    "name": "Icon/trxWithdraw_24_heavy",
-    "description": ""
+    "name": "Icon/withdraw_24",
+    "description": "withdraw, arrow up, extract, draw out, take, ⬆️, 🔝"
   },
   "2210:36": {
     "key": "8631c708722659c8ecbae340f6a5dabc0a3ff0ad",
-    "name": "Icon/exclamationMark_24_heavy",
-    "description": ""
+    "name": "Icon/exclamationMark_24",
+    "description": "exclamation mark, warning, alert, help, crucial, indication, emphasis, !,  ❗️"
   },
   "2210:84": {
     "key": "98ad89b1bea7218801a106b2eb6fecad082c2dad",
-    "name": "Icon/statusDot_24_heavy",
-    "description": ""
+    "name": "Icon/statusDot_24",
+    "description": "pending, waiting, meatballs"
   },
   "3120:149": {
     "key": "d572bca4be539a783bb5ae2da9a6249a62197408",
-    "name": "Icon/more_24_heavy",
-    "description": ""
+    "name": "Icon/more_24",
+    "description": "more, kebab, mochi, additional, added, extra, filter"
   },
   "3121:69": {
     "key": "f05c8fc6634b3f19f362de33e7852ec6091b3123",
-    "name": "Icon/sortUp_24_heavy",
-    "description": ""
+    "name": "Icon/sortUp_24",
+    "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3512:123": {
     "key": "bdabeaa01b56211eb536615ba5516d5ebc1fba09",
-    "name": "Icon/sortUpCenter_24_heavy",
-    "description": ""
+    "name": "Icon/sortUpCenter_24",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   },
   "3595:131": {
     "key": "c2746f3b93a9f48260030e395ef09ac20ba7c221",
-    "name": "Icon/smartContract_24_heavy",
-    "description": ""
+    "name": "Icon/smartContract_24",
+    "description": "smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑"
   },
   "3725:24": {
     "key": "9d3a299e9858adff0941cb9c9d1afd7daa043d8a",
-    "name": "Icon/email_24_heavy",
-    "description": ""
+    "name": "Icon/email_24",
+    "description": "envelope, letter, email, message, 💌, ✉️, 📨, 📩, 📧"
   },
   "3512:122": {
     "key": "60358e1fcc490ce5f086d1097985bab52021d608",
-    "name": "Icon/sortDownCenter_24_heavy",
-    "description": ""
+    "name": "Icon/sortDownCenter_24",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   },
   "3121:67": {
     "key": "f49d435b52bc5897948e2ee6a5b3c91e0ff44227",
-    "name": "Icon/sortDown_24_heavy",
-    "description": ""
+    "name": "Icon/sortDown_24",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   },
   "3168:114": {
     "key": "1fde88ddf69f3ff936c113d7bde8081bdf65ade6",
-    "name": "Icon/doubleChevronRight_24_heavy",
-    "description": "SEN, Transfer, Chevron, Right, L"
+    "name": "Icon/doubleChevronRight_24",
+    "description": "transfer, chevron, right, double"
   },
   "1292:140": {
     "key": "e3acf1e121408e9c8b51e0a61212d9bb00a55eab",
-    "name": "Icon/indentityCard_24_heavy",
-    "description": ""
+    "name": "Icon/indentityCard_24",
+    "description": "identity card, profile, personal, ID, card, 🆔"
   },
   "1292:139": {
     "key": "ba6c30067d4862233e47385dbbe1aa224aecde17",
-    "name": "Icon/wallet_24_heavy",
-    "description": ""
+    "name": "Icon/wallet_24",
+    "description": "wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸"
   },
   "3348:155": {
     "key": "140ce8e318297b77645ee9dffa2a479a5f69c702",
-    "name": "Icon/visible_24_heavy",
-    "description": ""
+    "name": "Icon/visible_24/inactive",
+    "description": "visible, eye, transparency, watching, 👀, 👁, active"
   },
   "3348:154": {
     "key": "7bea79a01f20d2b7879b15ddda13acbe2ed2b9c6",
-    "name": "Icon/notVisible_24_heavy",
-    "description": ""
+    "name": "Icon/visible_24/inactive",
+    "description": "closed, eye, unwatch, not visible, 👀, 👁, inactive"
   },
   "1292:134": {
     "key": "3e6e448a1f6c170667f3b2417967cd288b25c4ce",
-    "name": "Icon/paypal_24_heavy",
-    "description": ""
+    "name": "Icon/paypal_24",
+    "description": "paypal, payment, brand, 💳, 🏦"
   },
   "1292:222": {
     "key": "a4cf9abfbf3a17389c4d4c37c1a7cf20cd92f227",
-    "name": "Icon/sofort_24_heavy",
-    "description": ""
+    "name": "Icon/sofort_24",
+    "description": "sofort, payment, brand, 💳, 🏦"
   },
   "1292:133": {
     "key": "b3948c5dc9bae6f8ec6bd2e5f18456c8cca8d5be",
-    "name": "Icon/ideal_24_heavy",
-    "description": ""
+    "name": "Icon/ideal_24",
+    "description": "ideal, payment, brand, 💳, 🏦"
   },
   "1292:122": {
     "key": "628055b0e6bb6482648618abba6132cecaea495e",
-    "name": "Icon/bank_24_heavy",
-    "description": ""
+    "name": "Icon/bank_24",
+    "description": "bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷"
   },
   "1292:17": {
     "key": "c1879fdcdac254fcc9d94017d7bf35161ed1eaf1",
-    "name": "Icon/card_24_heavy",
-    "description": ""
+    "name": "Icon/card_24",
+    "description": "card, pay, credit, debit, money, 💳, 🏦, 🏧"
   },
   "1792:117": {
     "key": "b2b6e643ead1717a7822725bf9e45b6871aafdd0",
-    "name": "Icon/bell_24_heavy",
-    "description": ""
+    "name": "Icon/bell_24",
+    "description": "notification, update, news, new, bell, 🔔, 🛎"
   },
   "2207:16": {
     "key": "a67194ac45553263503e40ad6dadca84feb8e2a2",
-    "name": "Icon/close_24_heavy",
-    "description": ""
+    "name": "Icon/close_24",
+    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   },
   "2207:20": {
     "key": "d69b2211ab5bb257ca0ac8d3f2458bd3106c0db8",
-    "name": "Icon/qrCode_24_heavy",
-    "description": ""
+    "name": "Icon/qrCode_24",
+    "description": "qr code, scan, matrix, barcode, label, readable, information"
   },
   "2207:18": {
     "key": "7c80f43f16afc195224146b76f261e07c1d3545c",
-    "name": "Icon/search_24_heavy",
-    "description": ""
+    "name": "Icon/search_24",
+    "description": "search, magnifying glass, look, explore, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️"
   },
   "2207:21": {
     "key": "845de1d8dfb34fe6d42533558175a805aac4d8e3",
-    "name": "Icon/paperAirplane_24_heavy",
-    "description": ""
+    "name": "Icon/paperAirplane_24",
+    "description": "paper airplane, send, plane, ✈️, 🛩"
   },
   "2207:17": {
     "key": "4b8b309546db0e139fa9d60732729f56ef14c28b",
-    "name": "Icon/star_24_heavy",
-    "description": ""
+    "name": "Icon/star_24/active",
+    "description": "star, favorite, ⭐️, 🌟, 💫, 🤩, active"
+  },
+  "4652:26": {
+    "key": "0d734472ceac9ca1d65c8f1cd30d2b349a6ae131",
+    "name": "Icon/star_24/inactive",
+    "description": "unstar, unfavorite, ⭐️, 🌟, 💫, 🤩, \ninactive"
   },
   "2207:188": {
     "key": "29b27b06c7ad48a7b23879abb34563e58ddccdca",
-    "name": "Icon/home_24_heavy",
-    "description": ""
+    "name": "Icon/home_24",
+    "description": "home, hub, central, building, homepage,  🏡, 🏠"
   },
   "2207:233": {
     "key": "ae65dfeb62f01200299b1c4cb7df185ffe2e6a92",
-    "name": "Icon/chartBar_24_heavy",
-    "description": ""
+    "name": "Icon/chartBar_24",
+    "description": "chart bar, data, visualization, numbers, graph, 📊, 📉, 📈"
   },
   "2209:316": {
     "key": "961164e5e56c7c374c8f839af552678198b58fc0",
-    "name": "Icon/profile_24_heavy",
-    "description": ""
+    "name": "Icon/profile_24",
+    "description": "profile, person, individual, human"
   },
   "2209:328": {
     "key": "fb6b25b9458382fe8e5a7d7543a8b77ab1c62240",
-    "name": "Icon/gear_24_heavy",
-    "description": ""
+    "name": "Icon/gear_24",
+    "description": "gear, settings, cog, machine, tool, ⚙️"
   },
   "2209:342": {
     "key": "2653d76645678f63ea4b37a31d3bea3db6038bae",
-    "name": "Icon/list_24_heavy",
-    "description": ""
+    "name": "Icon/list_24",
+    "description": "list, bullet point, items, actions, tasks, document, •, 📄"
   },
   "2209:366": {
     "key": "9624c19e2346e4b8812d4cd73c5e8d5727acaf59",
-    "name": "Icon/chartVolume_24_heavy",
-    "description": ""
+    "name": "Icon/chartVolume_24",
+    "description": "chart volume, chart bar, data, visualization, numbers, graph, 📊, 📉, 📈"
   },
   "1292:16": {
     "key": "3354ef2e08e115cc030605e51f9b9aa7cdfc96e5",
-    "name": "Icon/arrowsHorizontal_24_heavy",
-    "description": ""
+    "name": "Icon/arrowsHorizontal_24",
+    "description": "arrows, side by side, left, right,  opposite, ↔️"
   },
   "2293:11417": {
     "key": "5f0f5ec67a4cb26a913d9581c42687a120c7c8c3",
-    "name": "Icon/initiator_24_heavy",
-    "description": ""
+    "name": "Icon/initiator_24",
+    "description": "initiator, forward, arrows"
   },
   "1292:14": {
     "key": "491f28c4bc5f8930e6a3819d90d9eb44df670634",
-    "name": "Icon/globe_24_heavy",
-    "description": ""
+    "name": "Icon/globe_24",
+    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
   },
   "2207:35": {
     "key": "8311ac1ff97218314854a54ddb613df1b330b64a",
-    "name": "Icon/circulatingSupply_24_heavy",
-    "description": ""
+    "name": "Icon/circulatingSupply_24",
+    "description": "circulating supply, remainder,  availability, coins, amount"
   },
   "1292:4": {
     "key": "e8ad29689f0a2e2b4af83c0c5e20a84128ee64c9",
-    "name": "Icon/allTimeHigh_24_heavy",
-    "description": ""
+    "name": "Icon/allTimeHigh_24",
+    "description": "all time high, up, record, highest, 🔺, ⤴️, ⬆️"
   },
   "2209:386": {
     "key": "f7c7e26713ed4bc69d7c36a86991aa577b0ac867",
-    "name": "Icon/pulse_24_heavy",
-    "description": ""
+    "name": "Icon/pulse_24",
+    "description": "pulse, activity, trading, spark, line, ⚡️, ❇️, 📈, 📉"
   },
   "2207:208": {
     "key": "d5b51bb3e0df1c5fb50f9099c9dba48da93b736a",
-    "name": "Icon/chartPie_24_heavy",
-    "description": ""
+    "name": "Icon/chartPie_24",
+    "description": "chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧"
   },
   "1292:3": {
     "key": "b39c13a001e035f73c20d0c5066e1ae110b4ebc6",
-    "name": "Icon/popularity_24_heavy",
-    "description": ""
+    "name": "Icon/sparkle_24",
+    "description": "popularity, top, sparkle, ✨, ❇️"
   },
   "1292:97": {
     "key": "0c8147cc8a100b44ecc3ccef79c911e7fe5d3a1f",
-    "name": "Icon/recurring_24_heavy",
-    "description": ""
+    "name": "Icon/recurring_24",
+    "description": "recurring, history, clock, time, back, time, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️"
   },
   "1634:170": {
     "key": "5489acb8a7c4153c8456946dad34da7f0761d013",
-    "name": "Icon/trxConvert_24_heavy",
-    "description": ""
+    "name": "Icon/convert_24",
+    "description": "convert, change, turn, transform, turn, 🔄"
   },
   "1292:101": {
     "key": "f6a8419ae0a537036da4c82708bdca4b5413edca",
-    "name": "Icon/trxBuy_24_heavy",
-    "description": ""
+    "name": "Icon/add_24",
+    "description": "add, buy, plus, purchase, ➕"
   },
   "1292:131": {
     "key": "57803c2db9d1a852539f945e96b6848cafeb363a",
-    "name": "Icon/trxSell_24_heavy",
-    "description": ""
+    "name": "Icon/minus_24",
+    "description": "minus, subtract, sell, ➖"
   },
   "1292:92": {
     "key": "f169ab6411fa4e2157a5cd05aaf33a7bb5cc89d4",
-    "name": "Icon/trxReceive_24_heavy",
-    "description": ""
+    "name": "Icon/arrowDown_24",
+    "description": "arrow up, receive, downwards, decrease, ⬇️, ⬇"
   },
   "1292:64": {
     "key": "561b918b2a411980226aebb5eadbdd4cb72a1438",
-    "name": "Icon/trxSend_24_heavy",
-    "description": ""
+    "name": "Icon/arrowUp_24",
+    "description": "arrow up, send, upwards, increase, ⬆️, "
   },
   "4234:232": {
     "key": "49338834561d1819c77ebc77c24e44c4df640155",
     "name": "Icon/caretRight_24",
-    "description": ""
+    "description": "caret, chevron, right"
   },
   "2207:15": {
     "key": "f176f736f7fd03117b1a97e89b481c4377951293",
-    "name": "Icon/caretLeft_24_heavy",
-    "description": ""
+    "name": "Icon/caretLeft_24",
+    "description": "caret, chevron, left"
   },
   "2207:14": {
     "key": "648f2421ce11847479c38442ce3aa822b9e113d1",
-    "name": "Icon/caretDown_24_heavy",
-    "description": ""
+    "name": "Icon/caretDown_24",
+    "description": "caret, chevron, down"
   },
   "2207:19": {
     "key": "218eab826e637e0232c833567c2e8d3ec4440545",
-    "name": "Icon/caretUp_24_heavy",
-    "description": ""
+    "name": "Icon/caretUp_24",
+    "description": "caret, chevron, up"
   },
   "2207:55": {
     "key": "48d85a81ab451b92a993fd202091d679e050e265",
-    "name": "Icon/dot_24_heavy",
-    "description": ""
+    "name": "Icon/dot_24",
+    "description": "dot, spot, bullet point, point, mark, round, 🔴, ⚫️, 🔵, ⚪️"
   },
   "4032:52": {
     "key": "08935b50c05724d6cf25765b3e4ceeb9f5113ac0",
-    "name": "Icon/info_24_heavy",
-    "description": ""
+    "name": "Icon/info_24",
+    "description": "information, info, resource, help, guide, details, facts, ℹ️"
   },
   "1292:103": {
     "key": "041fab31a4e27526d0173de09a798538f2746035",
-    "name": "Icon/arrowsVertical_24_heavy",
-    "description": ""
+    "name": "Icon/arrowsVertical_24",
+    "description": "arrows, vertical, up, down, opposite, ↕️"
   },
   "1292:247": {
     "key": "0606885f37944e22f9e95ab00c1c478765582e12",
-    "name": "Icon/wireTransfer_24_heavy",
-    "description": ""
+    "name": "Icon/wireTransfer_24",
+    "description": "wire transfer, send, bank, credit, electronic"
   },
   "1292:200": {
     "key": "65904dcd8753875410968e9325dce01b77d72f2f",
-    "name": "Icon/cashUSD_12_heavy",
-    "description": ""
+    "name": "Icon/cashUSD_12",
+    "description": "cash, money, USD, currency, international, united states, dollar, 🇺🇸, 💰, 💵, 💸,  💲, 🪙"
   },
   "1292:228": {
     "key": "04a759a95b219e680daccc1db97b8cf8b8e24896",
-    "name": "Icon/cashGBP_12_heavy",
-    "description": ""
+    "name": "Icon/cashGBP_12",
+    "description": "cash, british, pound, sterling, united kingdom, currency, international, 💷, 🇬🇧, 💰, 💸, 🪙"
   },
   "1292:236": {
     "key": "b44b708aee75a56a9b1a04c2b6f2e7d9fd25dfb4",
-    "name": "Icon/cashEUR_12_heavy",
-    "description": ""
+    "name": "Icon/cashEUR_12",
+    "description": "cash, euro, money, currency, international, france, germany, spain, italy, greece, portugal, luxembourg, austria, finland, ireland, belgium, netherlands,  🇫🇷, 🇮🇪, 🇧🇪, 🇳🇱, 🇩🇪, 🇪🇸, 🇮🇹, 🇬🇷, 🇵🇹, 🇱🇺, 🇦🇹, 🇫🇮, 💶, 💰, 💸, 💵 "
   },
   "1292:246": {
     "key": "827dce2caf870e64a23fd5ef96a0bd623df4c302",
-    "name": "Icon/cashJPY_12_heavy",
-    "description": ""
+    "name": "Icon/cashJPY_12",
+    "description": "cash, yen, money, currency, international, japan, 🇯🇵"
   },
   "1292:216": {
     "key": "4038f93dd04f447e3366ac1c5427c3f65cf28926",
-    "name": "Icon/phone_12_heavy",
-    "description": ""
+    "name": "Icon/phone_12",
+    "description": "phone, mobile, cellphone, 📲, 📱, 🤳"
   },
   "1292:241": {
     "key": "d39ef5819a7a59ea307c747af481e81e3261e9f3",
-    "name": "Icon/checkmark_12_heavy",
-    "description": ""
+    "name": "Icon/checkmark_12",
+    "description": "checkmark, check, tick, confirmation, accept, confirm, success, positive, ✅, ✔️"
   },
   "1292:226": {
     "key": "310ef2cf01ff8089428b8238089137fcd469a629",
-    "name": "Icon/exclamationMark_12_heavy",
-    "description": ""
+    "name": "Icon/exclamationMark_12",
+    "description": "exclamation mark, warning, alert, help, crucial, indication, emphasis, !,  ❗️"
   },
   "1292:239": {
     "key": "5a7f65fda0422dbac4ed06223412c2f6c7bb3d0f",
-    "name": "Icon/trxDeposit_12_heavy",
-    "description": ""
+    "name": "Icon/deposit_12",
+    "description": "deposit, arrow down, ⬇️"
   },
   "1292:238": {
     "key": "adf1749d0b8add921bd43706d616b194b3a31974",
     "name": "Icon/calendar_12",
-    "description": ""
+    "description": "calendar, date, year, month, week, schedule, 📆, 📅, 🗓"
   },
   "1292:235": {
     "key": "ae94d73a8ccc39aefee57aaa05cfe2afc75a3e3c",
-    "name": "Icon/document_12_heavy",
-    "description": ""
+    "name": "Icon/document_12",
+    "description": "document, paper, documentation, report, contract, record, form, 📄, 📃, 📜, 📑"
   },
   "3707:34": {
     "key": "3e6dd0555f035eef015eeca4f95a7ded3cb89c2c",
-    "name": "Icon/shield_12_heavy",
-    "description": ""
+    "name": "Icon/shield_12",
+    "description": "shield, protection, guard, defense, cover, safety, security"
   },
   "1577:45": {
     "key": "3ed13a189e8a18b2f432caea3acc58f7a145f240",
-    "name": "Icon/heart_12_heavy",
-    "description": ""
+    "name": "Icon/heart_12/active",
+    "description": "heart, love, support, active, ❤️, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻"
   },
   "4465:189": {
     "key": "a870fc37d8781d532c8bc733d4b8a9eb89dac2bc",
-    "name": "Icon/unheart_12_heavy",
-    "description": ""
+    "name": "Icon/heart_12/inactive",
+    "description": "unheart, empty, unfavorite, inactive, 💔"
   },
   "2213:79": {
     "key": "4edb5880642541096ee0a88c21ed01016f211566",
-    "name": "Icon/play_12_heavy",
-    "description": ""
+    "name": "Icon/play_12",
+    "description": "play, continue, progress, video, music, sound, ▶️, ⏯, 🔜, 🎶, 🎼, 🎥, 🎞, 📀, 🎦, 📼"
   },
   "2213:78": {
     "key": "2f9ff2af4411ebb90ee1222d95eadbdd47b84680",
-    "name": "Icon/pause_12_heavy",
-    "description": ""
+    "name": "Icon/pause_12",
+    "description": "pause, on hold, progress, video, music, sound, ⏸, ⏯, 🎶, 🎼, 🎥, 🎞, 📀, 🎦, 📼"
   },
   "2223:59": {
     "key": "3b2ad663a0d7ee420120d8b0615b900fb32d8df2",
-    "name": "Icon/api_12_heavy",
-    "description": ""
+    "name": "Icon/api_12",
+    "description": "api, functions, procedures, applications, features, data, service"
   },
   "2430:177": {
     "key": "fd1d100118b4267462afcec10a6a947c397810c7",
-    "name": "Icon/soundOn_12_heavy",
-    "description": ""
+    "name": "Icon/soundOn_12",
+    "description": "sound, on, volume, increase, loud, music, songs, amplification, 🔈, 🔊, 🔉, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "2232:11362": {
     "key": "19e685a02e84809419b883f25770c5f996f02785",
-    "name": "Icon/stake_12_heavy",
-    "description": ""
+    "name": "Icon/stake_12",
+    "description": "stake, crypto, deposit, collateral, verify"
   },
   "2430:173": {
     "key": "b038ef8fa9f2bfbf2af3fb7b2503d7b80a5c51f1",
-    "name": "Icon/soundOff_12_heavy",
-    "description": ""
+    "name": "Icon/soundOff_12",
+    "description": "mute, sound, off, volume, decrease, soft, quiet, silence, music, songs, 🔇, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "2309:77": {
     "key": "c3bbc338d2a65e2b6f86b2b33fd885abbe3cf24b",
-    "name": "Icon/safe_12_heavy",
-    "description": ""
+    "name": "Icon/safe_12",
+    "description": "safe, storage, protection, safety, crypt, security"
   },
   "2430:172": {
     "key": "9855d9f50263446ad7714b9d8a7033bc81a81331",
-    "name": "Icon/speaker_12_heavy",
-    "description": ""
+    "name": "Icon/speaker_12",
+    "description": "speaker, sound, volume, music, songs, amplification, 🔈, 🔊, 🔉, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "1292:234": {
     "key": "3fa8448eddb16cbbd82eff7ec2716bc10a228a8c",
-    "name": "Icon/backspace_12_heavy",
-    "description": ""
+    "name": "Icon/arrowLeft_12",
+    "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
   },
   "1577:198": {
     "key": "341593f86050029585d9fd75e9bd9b0706224ebd",
-    "name": "Icon/forward_12_heavy",
-    "description": ""
+    "name": "Icon/arrowRight_12",
+    "description": "arrow right, forward, ahead, ➡️, ⏭, ⏩, 🔜, ➡"
   },
   "1292:158": {
     "key": "f98dd66d9f9eb556869d1d70f82691bd8ac94ed3",
-    "name": "Icon/step1_12_heavy",
-    "description": ""
+    "name": "Icon/step1_12",
+    "description": "step one, 1, sequence, numbers, order, instructions"
   },
   "1292:249": {
     "key": "974edb99f35148739c2549b594d1e12dde104fc6",
-    "name": "Icon/step2_12_heavy",
-    "description": ""
+    "name": "Icon/step2_12",
+    "description": "step two, 2, sequence, numbers, order, instructions"
   },
   "1292:230": {
     "key": "f0f610b98aecbed6ed90c750f0dbda1a07b1e750",
-    "name": "Icon/step3_12_heavy",
-    "description": ""
+    "name": "Icon/step3_12",
+    "description": "step three, 3, sequence, numbers, order, instructions"
   },
   "1292:225": {
     "key": "6ed67a6762767c57b22f231977416dc20d4deb58",
-    "name": "Icon/step4_12_heavy",
-    "description": ""
+    "name": "Icon/step4_12",
+    "description": "step four, 4, sequence, numbers, order, instructions"
   },
   "1292:240": {
     "key": "d94701fe5e23c2f09bd56af5710c8b581ac3b9f2",
-    "name": "Icon/step5_12_heavy",
-    "description": ""
+    "name": "Icon/step5_12",
+    "description": "step five, 5, sequence, numbers, order, instructions"
   },
   "1292:244": {
     "key": "5bdfc6b650581f864e288aaa37978d3654443061",
-    "name": "Icon/step6_12_heavy",
-    "description": ""
+    "name": "Icon/step6_12",
+    "description": "step six, 6, sequence, numbers, order, instructions"
   },
   "1292:221": {
     "key": "ed7bb7ab499869f01b78c354e59898f6b159fa52",
-    "name": "Icon/step7_12_heavy",
-    "description": ""
+    "name": "Icon/step7_12",
+    "description": "step seven, 7, sequence, numbers, order, instructions"
   },
   "1292:237": {
     "key": "1d23a092ddcef7576d8ef100f28eab52f7a0d7cf",
-    "name": "Icon/step8_12_heavy",
-    "description": ""
+    "name": "Icon/step8_12",
+    "description": "step eight, 8, sequence, numbers, order, instructions"
   },
   "1292:224": {
     "key": "fab4e00e5cb344363a7c7938c94d1947fece18ed",
-    "name": "Icon/step9_12_heavy",
-    "description": ""
+    "name": "Icon/step9_12",
+    "description": "step nine, 9, sequence, numbers, order, instructions"
   },
   "1292:219": {
     "key": "ab24540d6e0fceb663e85bf994f3a3d2e29d82f8",
-    "name": "Icon/step0_12_heavy",
-    "description": ""
+    "name": "Icon/step0_12",
+    "description": "step zero, 0, sequence, numbers, order, instructions"
   },
   "1292:218": {
     "key": "3ce0bb527dcb9406c15764eabdc4528e3c67cb86",
-    "name": "Icon/statusDot_12_heavy",
-    "description": ""
+    "name": "Icon/statusDot_12",
+    "description": "pending, waiting, meatballs"
   },
   "3120:148": {
     "key": "f0389c1cdbb093ed2a8c227bbe9e53d4bfbaa077",
-    "name": "Icon/more_12_heavy",
-    "description": ""
+    "name": "Icon/more_12",
+    "description": "more, kebab, mochi, additional, added, extra, filter"
   },
   "3121:66": {
     "key": "e4f363e0466c021b7eed8067a3a35b127b5487ff",
-    "name": "Icon/sortUp_12_heavy",
-    "description": ""
+    "name": "Icon/sortUp_12",
+    "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3512:121": {
     "key": "acf63961cc248ce833dc2636bc0141fad21cb745",
-    "name": "Icon/sortUpCenter_12_heavy",
-    "description": ""
+    "name": "Icon/sortUpCenter_12",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   },
   "3595:130": {
     "key": "ae2573e0debc8379aa2f2393b52540933ab18d83",
-    "name": "Icon/smartContract_12_heavy",
-    "description": ""
+    "name": "Icon/smartContract_12",
+    "description": "smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑"
   },
   "3725:70": {
     "key": "3218cc24e082d66bede28b9aed48f9f46a2b711a",
-    "name": "Icon/email_12_heavy",
-    "description": ""
+    "name": "Icon/email_12",
+    "description": "envelope, letter, email, message, 💌, ✉️, 📨, 📩, 📧"
   },
   "3512:119": {
     "key": "104574d7a748ddec035023c70e266ee48fd873c3",
-    "name": "Icon/sortDownCenter_12_heavy",
-    "description": ""
+    "name": "Icon/sortDownCenter_12",
+    "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3121:68": {
     "key": "92a8e1562f9e8959571adb551bcce86ea9026a2c",
-    "name": "Icon/sortDown_12_heavy",
-    "description": ""
+    "name": "Icon/sortDown_12",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   },
   "3168:113": {
     "key": "018513be6abe0c5b31e3a511709d3a952e938a8f",
-    "name": "Icon/doubleChevronRight_12_heavy",
-    "description": "SEN, Transfer, Chevron, Right, S"
+    "name": "Icon/doubleChevronRight_12",
+    "description": "transfer, chevron, right, double"
   },
   "1292:176": {
     "key": "f1f78590fc09887b71e12808a22ef443338cab76",
-    "name": "Icon/trxWithdraw_12_heavy",
-    "description": ""
+    "name": "Icon/withdraw_12",
+    "description": "withdraw, arrow up, extract, draw out, take, ⬆️, 🔝"
   },
   "1292:213": {
     "key": "77b6b3bd92f203e6276210f7875398191fa9d149",
-    "name": "Icon/lock_12_heavy",
-    "description": ""
+    "name": "Icon/lock_12",
+    "description": "lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝"
   },
   "2212:14": {
     "key": "2ebe5c31490e413e8eed0d7eae280b64ffa05088",
-    "name": "Icon/identityCard_12_heavy",
-    "description": ""
+    "name": "Icon/identityCard_12",
+    "description": "identity card, profile, personal, ID, card, 🆔"
   },
   "1292:197": {
     "key": "907133c4dd7a5809c4c4d06a2f0d0415a468415c",
-    "name": "Icon/wallet_12_heavy",
-    "description": ""
+    "name": "Icon/wallet_12",
+    "description": "wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸"
   },
   "1292:204": {
     "key": "a031b60998b42e8c63e17edba451061dd34ad01e",
-    "name": "Icon/visible_12_heavy",
-    "description": ""
+    "name": "Icon/visible_12/active",
+    "description": "visible, eye, transparency, watching, 👀, 👁, active"
   },
   "1292:203": {
     "key": "b45911f89daae24f7fdf668c61f27932044cb48e",
-    "name": "Icon/notVisible_12_heavy",
-    "description": ""
+    "name": "Icon/visible_12/inactive",
+    "description": "closed, eye, unwatch, not visible, 👀, 👁, inactive"
   },
   "1292:201": {
     "key": "7b7a184aaaf1432dd4e04338cd91157aabc2973c",
-    "name": "Icon/paypal_12_heavy",
-    "description": ""
+    "name": "Icon/paypal_12",
+    "description": "paypal, payment, brand, 💳, 🏦"
   },
   "1292:193": {
     "key": "8f3e08bc9d191307e9fc8c17102022734449d774",
-    "name": "Icon/sofort_12_heavy",
-    "description": ""
+    "name": "Icon/sofort_12",
+    "description": "sofort, payment, brand, 💳, 🏦"
   },
   "1292:191": {
     "key": "a57277e26cd37f6db55b687391b1c7bc74bedb78",
-    "name": "Icon/ideal_12_heavy",
-    "description": ""
+    "name": "Icon/ideal_12",
+    "description": "ideal, payment, brand, 💳, 🏦"
   },
   "1292:109": {
     "key": "b3f59a406cfc5bc65158db8cba4a266810a57142",
-    "name": "Icon/close_12_heavy",
-    "description": ""
+    "name": "Icon/close_12",
+    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   },
   "1292:129": {
     "key": "bf999848ff83c9730d8a4089064209c0d2e22f94",
-    "name": "Icon/bell_12_heavy",
-    "description": ""
+    "name": "Icon/bell_12",
+    "description": "notification, update, news, new, bell, 🔔, 🛎"
   },
   "1292:126": {
     "key": "4fb4733ed15e2714be7839adaf73f4ce5843e409",
-    "name": "Icon/qrCode_12_heavy",
-    "description": ""
+    "name": "Icon/qrCode_12",
+    "description": "qr code, scan, matrix, barcode, label, readable, information"
   },
   "1292:49": {
     "key": "8473bfabf5ffa59d2643c60764d2425c7d393725",
-    "name": "Icon/search_12_heavy",
-    "description": ""
+    "name": "Icon/search_12",
+    "description": "search, magnifying glass, look, explore, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️"
   },
   "1292:130": {
     "key": "566f037c6a9f1b11068ccee5d562bf2706cadb6a",
-    "name": "Icon/paperAirplane_12_heavy",
-    "description": ""
+    "name": "Icon/paperAirplane_12",
+    "description": "paper airplane, send, plane, ✈️, 🛩"
   },
   "1292:45": {
     "key": "0a6c43bb91aa06663f052a202822fef22fd54fed",
-    "name": "Icon/star_12_heavy",
-    "description": ""
+    "name": "Icon/star_12/active",
+    "description": "star, favorite, ⭐️, 🌟, 💫, 🤩, active"
+  },
+  "4652:28": {
+    "key": "21be3654b30cf2e1429f238a8541689d7bf1147d",
+    "name": "Icon/star_12/inactive",
+    "description": "unstar, unfavorite, ⭐️, 🌟, 💫, 🤩, \ninactive"
   },
   "1292:40": {
     "key": "85b3a2094765302167050ac7384bf862c9719052",
-    "name": "Icon/home_12_heavy",
-    "description": ""
+    "name": "Icon/home_12",
+    "description": "home, hub, central, building, homepage,  🏡, 🏠"
   },
   "1292:85": {
     "key": "4315fee122781290590c0dbc215e11925f9be445",
-    "name": "Icon/chartBar_12_heavy",
-    "description": ""
+    "name": "Icon/chartBar_12",
+    "description": "chart bar, data, visualization, numbers, graph, 📊, 📉, 📈"
   },
   "1292:132": {
     "key": "df8dc6ca98f5e0877b0136a6237da08dc748705e",
-    "name": "Icon/portrait_12_heavy",
-    "description": ""
+    "name": "Icon/profile_12",
+    "description": "profile, person, individual, human"
   },
   "1292:125": {
     "key": "8ddba3cca47a95f6fee4867edb9f801c35ca31d6",
-    "name": "Icon/gear_12_heavy",
-    "description": ""
+    "name": "Icon/gear_12",
+    "description": "gear, settings, cog, machine, tool, ⚙️"
   },
   "1292:121": {
     "key": "d89965a82439d62309dad180789191200bbd3188",
-    "name": "Icon/bank_12_heavy",
-    "description": ""
+    "name": "Icon/bank_12",
+    "description": "bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷"
   },
   "1292:117": {
     "key": "61685834150a21d5988acb150ddeb24a9bda6c4d",
-    "name": "Icon/card_12_heavy",
-    "description": ""
+    "name": "Icon/card_12",
+    "description": "card, pay, credit, debit, money, 💳, 🏦, 🏧"
   },
   "1292:116": {
     "key": "aab97c9b4a043a498cdef4f90e646df1dd0b515e",
-    "name": "Icon/arrowsHorizontal_12_heavy",
-    "description": ""
+    "name": "Icon/arrowsHorizontal_12",
+    "description": "arrows, side by side, left, right,  opposite, ↔️"
   },
   "1292:57": {
     "key": "5f764e80efa5bd10aae9b16109f11c75c99fdbb9",
-    "name": "Icon/globe_12_heavy",
-    "description": ""
+    "name": "Icon/globe_12",
+    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
   },
   "1292:123": {
     "key": "2a5093ab1280bceb39f6ffda82882cd9e11bbc8f",
     "name": "Icon/pencil_12",
-    "description": ""
+    "description": "pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️"
   },
   "1292:120": {
     "key": "aea6db5806cddcd83a3cc1aed9252ece85e6a6dc",
     "name": "Icon/blockchain_12",
-    "description": ""
+    "description": "blockchain, peer to peer, network"
   },
   "1292:108": {
     "key": "bc9175d807e5d22fa3fe3d3174b7e51d77b0126d",
     "name": "Icon/gavel_12",
-    "description": ""
+    "description": "gavel, hammer, mallet, attention, 🧑‍⚖️, 👨‍⚖️, 👩‍⚖️"
   },
   "1292:105": {
     "key": "722754c84ac18562c9684bde757c16667c6130b0",
-    "name": "Icon/initiator_12_heavy",
-    "description": ""
+    "name": "Icon/initiator_12",
+    "description": "initiator, forward, arrows"
   },
   "1292:99": {
     "key": "9c5cd086ab933c750750af60db713a9973d6537c",
-    "name": "Icon/circulatingSupply_12_heavy",
-    "description": ""
+    "name": "Icon/circulatingSupply_12",
+    "description": "circulating supply, remainder,  availability, coins, amount"
   },
   "1292:81": {
     "key": "9c92c983e4356b8ff10cc35e5e31d5d366431e12",
-    "name": "Icon/list_12_heavy",
-    "description": ""
+    "name": "Icon/list_12",
+    "description": "list, bullet point, items, actions, tasks, document, •, 📄"
   },
   "1292:118": {
     "key": "7d1447807ba3d28e7bb91d3641c7a79ce5d6758a",
-    "name": "Icon/chartVolume_12_heavy",
-    "description": ""
+    "name": "Icon/chartVolume_12",
+    "description": "chart volume, chart bar, data, visualization, numbers, graph, 📊, 📉, 📈"
   },
   "1292:78": {
     "key": "e825b6e112b13350c56a5365ab6905e5cd961be9",
-    "name": "Icon/chartPie_12_heavy",
-    "description": ""
+    "name": "Icon/chartPie_12",
+    "description": "chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧"
   },
   "2611:359": {
     "key": "39037a1287f0eb248ff2b2583260fa9993c31ac5",
-    "name": "Icon/chartPieCircle_12_heavy",
-    "description": ""
+    "name": "Icon/chartPieCircle_12",
+    "description": "chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧"
   },
   "1292:96": {
     "key": "2c160bb5bf1dc21b7b557ca7311c746f6b59451c",
-    "name": "Icon/allTimeHigh_12_heavy",
-    "description": ""
+    "name": "Icon/allTimeHigh_12",
+    "description": "all time high, up, record, highest, 🔺, ⤴️, ⬆️"
   },
   "1292:76": {
     "key": "20783e85d0da177cbda06be0f256481ad392d22c",
-    "name": "Icon/pulse_12_heavy",
-    "description": ""
+    "name": "Icon/pulse_12",
+    "description": "pulse, activity, trading, spark, line, ⚡️, ❇️, 📈, 📉"
   },
   "1292:102": {
     "key": "5e83f98aec4422bab6deeaebfbab00c11f9e2f1f",
-    "name": "Icon/popularity_12_heavy",
+    "name": "Icon/sparkle_12",
     "description": ""
   },
   "1292:98": {
     "key": "b3e172d8c5efb804e98076c984942de505e55d66",
-    "name": "Icon/recurring_12_heavy",
-    "description": ""
+    "name": "Icon/recurring_12",
+    "description": "recurring, history, clock, time, back, time, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️"
   },
   "1292:95": {
     "key": "fa3ddafb28a730513e6a336eb05308e66447c37b",
-    "name": "Icon/trxConvert_12_heavy",
-    "description": ""
+    "name": "Icon/convert_12",
+    "description": "convert, change, turn, transform, turn, 🔄"
   },
   "1292:74": {
     "key": "47fb4790c80e076334b6a6841f4a2165f2d055a1",
-    "name": "Icon/trxBuy_12_heavy",
-    "description": ""
+    "name": "Icon/add_12",
+    "description": "add, buy, plus, purchase, ➕"
   },
   "1292:91": {
     "key": "4197f62a58d096b24c2320dcd4acb60c308806ea",
-    "name": "Icon/trxSell_12_heavy",
-    "description": ""
+    "name": "Icon/minus_12",
+    "description": "minus, subtract, sell, ➖"
   },
   "1292:89": {
     "key": "9a98f85a0875c039be3c719b5ab5e6f47dbd1530",
-    "name": "Icon/trxReceive_12_heavy",
-    "description": ""
+    "name": "Icon/arrowDown_12",
+    "description": "arrow up, receive, downwards, decrease, ⬇️, ⬇"
   },
   "1292:52": {
     "key": "435de9d676d5b752d85a1b3f67ff21bd8a3d9ca7",
-    "name": "Icon/trxSend_12_heavy",
-    "description": ""
+    "name": "Icon/arrowUp_12",
+    "description": "arrow up, send, upwards, increase, ⬆️"
   },
   "1292:79": {
     "key": "94b098fc0a084c3d81e3a28bbd77717bfbdd4461",
     "name": "Icon/questionMark_12",
-    "description": ""
+    "description": "question, examine, curious, unknown, ❓, 🙋‍♀️, 🙋‍♂️"
   },
   "2273:15": {
     "key": "1327fd455c3faf22974a154aec5615dd7610e934",
-    "name": "Icon/info_12_heavy",
-    "description": ""
+    "name": "Icon/info_12",
+    "description": "information, info, resource, help, guide, details, facts, ℹ️"
   },
   "2611:35": {
     "key": "0cfb3a60d6319cd7942b52779c0e7c065deb0b40",
     "name": "Icon/giftBox_12",
-    "description": ""
+    "description": "gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳"
   },
   "2611:325": {
     "key": "701455b7226b58c7bcbd94ca2d2eb52c3e46bcb5",
     "name": "Icon/newsFeed_12",
-    "description": ""
+    "description": "newsfeed, news, articles, layout, 📰,  🗞"
   },
   "1792:162": {
     "key": "71382f5a24ed46d6390bc62edd9ccabc965f09e7",
-    "name": "Icon/wireTransfer_12_heavy",
-    "description": ""
+    "name": "Icon/wireTransfer_12",
+    "description": "wire transfer, send, bank, credit, electronic"
   },
   "1292:82": {
     "key": "b3e6ca0b2f44b66ef3e06e1caf519074f52535c4",
     "name": "Icon/caretRight_12",
-    "description": ""
+    "description": "caret, chevron, right"
   },
   "1292:68": {
     "key": "1859f9b2723a0938a135716d41ec067e2a01a5a6",
-    "name": "Icon/arrowsVertical_12_heavy",
-    "description": ""
+    "name": "Icon/arrowsVertical_12",
+    "description": "arrows, vertical, up, down, opposite, ↕️"
   },
   "1577:157": {
     "key": "e6d6ab9db270961cefb85f1a94b8f98d978e50e0",
     "name": "Icon/marketCap_12",
-    "description": ""
+    "description": "market cap, capitalization, stock market, shares, share price, traded, 📈, 📉"
   },
   "1292:195": {
     "key": "cd503041216ce2b170de22ca97726affd3057173",
-    "name": "Icon/cashUSD_16_heavy",
-    "description": ""
+    "name": "Icon/cashUSD_16",
+    "description": "cash, money, USD, currency, international, united states, dollar, 🇺🇸, 💰, 💵, 💸,  💲, 🪙"
   },
   "1292:189": {
     "key": "e3a71dc8b3761dd657b62f8707265798c7d961b4",
-    "name": "Icon/cashGBP_16_heavy",
-    "description": ""
+    "name": "Icon/cashGBP_16",
+    "description": "cash, british, pound, sterling, united kingdom, currency, international, 💷, 🇬🇧, 💰, 💸, 🪙"
   },
   "1292:214": {
     "key": "4537d6567e1b2329092ff1abcc5237430cbbbfcd",
-    "name": "Icon/cashEUR_16_heavy",
-    "description": ""
+    "name": "Icon/cashEUR_16",
+    "description": "cash, euro, money, currency, international, france, germany, spain, italy, greece, portugal, luxembourg, austria, finland, ireland, belgium, netherlands,  🇫🇷, 🇮🇪, 🇧🇪, 🇳🇱, 🇩🇪, 🇪🇸, 🇮🇹, 🇬🇷, 🇵🇹, 🇱🇺, 🇦🇹, 🇫🇮, 💶, 💰, 💸, 💵 "
   },
   "1292:206": {
     "key": "a170db3de192e1ec74f085d1758e8e3a8859c76e",
-    "name": "Icon/cashJPY_16_heavy",
-    "description": ""
+    "name": "Icon/cashJPY_16",
+    "description": "cash, yen, money, currency, international, japan, 🇯🇵"
   },
   "2202:0": {
     "key": "cbec1f6f7dc7433999720e0900754aee8f235a8e",
-    "name": "Icon/phone_16_heavy",
-    "description": ""
+    "name": "Icon/phone_16",
+    "description": "phone, mobile, cellphone, 📲, 📱, 🤳"
   },
   "3348:109": {
     "key": "d5fbb6452232ae823feb97f756c90893373d184c",
-    "name": "Icon/checkmark_16_heavy",
-    "description": ""
+    "name": "Icon/checkmark_16",
+    "description": "checkmark, check, tick, confirmation, accept, confirm, success, positive, ✅, ✔️"
   },
   "1292:181": {
     "key": "59cfaa83f6a224856e0f180b194bb258633c0631",
-    "name": "Icon/trxDeposit_16_heavy",
-    "description": ""
+    "name": "Icon/deposit_16",
+    "description": "deposit, arrow down, ⬇️"
   },
   "1792:119": {
     "key": "007e7c1bec1624d4fe7a2bc0454e4ef8dce43458",
-    "name": "Icon/document_24_heavy",
-    "description": ""
+    "name": "Icon/document_24",
+    "description": "document, paper, documentation, report, contract, record, form, 📄, 📃, 📜, 📑"
   },
   "3707:28": {
     "key": "4132d1d1c8b5485b0a2dbabe28b878c9a20241e2",
-    "name": "Icon/shield_24_heavy",
-    "description": ""
+    "name": "Icon/shield_24",
+    "description": "shield, protection, guard, defense, cover, safety, security"
   },
   "2210:108": {
     "key": "18fe4a309ed16aff71f0a1edf50a37c99642ddfa",
-    "name": "Icon/heart_24_heavy",
-    "description": ""
+    "name": "Icon/heart_24/active",
+    "description": "heart, love, support, active, ❤️, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻"
   },
   "4465:187": {
     "key": "cc4522300743791920e0606fda279f4bbfe591a1",
-    "name": "Icon/unheart_24_heavy",
-    "description": ""
+    "name": "Icon/heart_24/inactive",
+    "description": "unheart, empty, unfavorite, inactive, 💔"
   },
   "2213:75": {
     "key": "019c85d240339e1ee340cf52b2d5737803fedea6",
-    "name": "Icon/play_24_heavy",
-    "description": ""
+    "name": "Icon/play_24",
+    "description": "play, continue, progress, video, music, sound, ▶️, ⏯, 🔜, 🎶, 🎼, 🎥, 🎞, 📀, 🎦, 📼"
   },
   "2213:74": {
     "key": "097f3bb420b6f62498b635d0437001e7e6c32859",
-    "name": "Icon/pause_24_heavy",
-    "description": ""
+    "name": "Icon/pause_24",
+    "description": "pause, on hold, progress, video, music, sound, ⏸, ⏯, 🎶, 🎼, 🎥, 🎞, 📀, 🎦, 📼"
   },
   "2223:58": {
     "key": "eb735625bb55004f4a970f68d35a440cd85b505f",
-    "name": "Icon/api_24_heavy",
-    "description": ""
+    "name": "Icon/api_24",
+    "description": "api, functions, procedures, applications, features, data, service"
   },
   "2430:175": {
     "key": "a1fb9d1093ada6aae12001bed74d4ad4ae2073c6",
-    "name": "Icon/soundOn_24_heavy",
-    "description": ""
+    "name": "Icon/soundOn_24",
+    "description": "sound, on, volume, increase, loud, music, songs, amplification, 🔈, 🔊, 🔉, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "2232:11361": {
     "key": "7d2893ffceb283898e21d1a350a64791d02a445e",
-    "name": "Icon/stake_24_heavy",
-    "description": ""
+    "name": "Icon/stake_24",
+    "description": "stake, crypto, deposit, collateral, verify"
   },
   "2430:174": {
     "key": "108ab53ffc3b7f35abda7abf143667c9d675d256",
-    "name": "Icon/soundOff_24_heavy",
-    "description": ""
+    "name": "Icon/soundOff_24",
+    "description": "mute, sound, off, volume, decrease, soft, quiet, silence, music, songs, 🔇, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "2309:76": {
     "key": "e311a51930be3b099c5fc5eab73c17629409b4da",
-    "name": "Icon/safe_24_heavy",
-    "description": ""
+    "name": "Icon/safe_24",
+    "description": "safe, storage, protection, safety, crypt, security"
   },
   "2430:170": {
     "key": "18c0a2bd68a5a07a022d5c44b66dacd78feb781d",
-    "name": "Icon/speaker_24_heavy",
-    "description": ""
+    "name": "Icon/speaker_24",
+    "description": "speaker, sound, volume, music, songs, amplification, 🔈, 🔊, 🔉, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "1792:118": {
     "key": "e028dba943f96d9ac2def7d892e2032c75b11dea",
-    "name": "Icon/document_16_heavy",
-    "description": ""
+    "name": "Icon/document_16",
+    "description": "document, paper, documentation, report, contract, record, form, 📄, 📃, 📜, 📑"
   },
   "3707:31": {
     "key": "8b0792bc70dd34d2e8f1bb5790149cbdf1ab3a44",
-    "name": "Icon/shield_16_heavy",
-    "description": ""
+    "name": "Icon/shield_16",
+    "description": "shield, protection, guard, defense, cover, safety, security"
   },
   "2210:107": {
     "key": "383489eef197aca62e2225c5c6d152c4eb0eff83",
-    "name": "Icon/heart_16_heavy",
-    "description": ""
+    "name": "Icon/heart_16/active",
+    "description": "heart, love, support, active, ❤️, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻"
   },
   "4465:188": {
     "key": "1463ebdde81f1d6c792ea896f0c54e8de29cf77e",
-    "name": "Icon/unheart_16_heavy",
-    "description": ""
+    "name": "Icon/heart_16/inactive",
+    "description": "unheart, empty, unfavorite, inactive, 💔"
   },
   "2213:77": {
     "key": "633af850b04d249b14ea6ccfcf84ae84940a0481",
-    "name": "Icon/play_16_heavy",
-    "description": ""
+    "name": "Icon/play_16",
+    "description": "play, continue, progress, video, music, sound, ▶️, ⏯, 🔜, 🎶, 🎼, 🎥, 🎞, 📀, 🎦, 📼"
   },
   "2213:76": {
     "key": "f6d52e511d0b38ff70e1730a2a697dfd0cd84930",
-    "name": "Icon/pause_16_heavy",
-    "description": ""
+    "name": "Icon/pause_16",
+    "description": "pause, on hold, progress, video, music, sound, ⏸, ⏯, 🎶, 🎼, 🎥, 🎞, 📀, 🎦, 📼"
   },
   "2223:57": {
     "key": "2dda82efd1a2d0f1385b9d9785c2c110a643c4a7",
-    "name": "Icon/api_16_heavy",
-    "description": ""
+    "name": "Icon/api_16",
+    "description": "api, functions, procedures, applications, features, data, service"
   },
   "2430:171": {
     "key": "a29bbeb67b25b1481325ada154a08388af5f42f8",
-    "name": "Icon/soundOn_16_heavy",
-    "description": ""
+    "name": "Icon/soundOn_16",
+    "description": "sound, on, volume, increase, loud, music, songs, amplification, 🔈, 🔊, 🔉, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "2232:11360": {
     "key": "4fbfb172639f12e17bde2a637fafc44e5d600c02",
-    "name": "Icon/stake_16_heavy",
-    "description": ""
+    "name": "Icon/stake_16",
+    "description": "stake, crypto, deposit, collateral, verify"
   },
   "2430:169": {
     "key": "e746581305da7e59bea6589f509aca268be5be9f",
-    "name": "Icon/soundOff_16_heavy",
-    "description": ""
+    "name": "Icon/soundOff_16",
+    "description": "mute, sound, off, volume, decrease, soft, quiet, silence, music, songs, 🔇, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "2309:75": {
     "key": "ce5e5a495609f61000596d187e576410192be484",
-    "name": "Icon/safe_16_heavy",
-    "description": ""
+    "name": "Icon/safe_16",
+    "description": "safe, storage, protection, safety, crypt, security"
   },
   "2430:176": {
     "key": "240d2531bcb6f1abe600af078936f08d0f508eb0",
-    "name": "Icon/speaker_16_heavy",
-    "description": ""
+    "name": "Icon/speaker_16",
+    "description": "speaker, sound, volume, music, songs, amplification, 🔈, 🔊, 🔉, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥"
   },
   "1292:202": {
     "key": "e1f1c338a3e7777a6ec0a7775dfc32c2bda5ca7b",
-    "name": "Icon/backspace_16_heavy",
-    "description": ""
+    "name": "Icon/arrowLeft_16",
+    "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
   },
   "1577:197": {
     "key": "b85e5efcc1082bf830eaeea335652b7f0b0e2f4e",
-    "name": "Icon/forward_16_heavy",
-    "description": ""
+    "name": "Icon/arrowRight_16",
+    "description": "arrow right, forward, ahead, ➡️, ⏭, ⏩, 🔜, ➡"
   },
   "1292:180": {
     "key": "5fda1a021ea1490a53afded8d7e9953c73ae68b8",
-    "name": "Icon/step1_16_heavy",
-    "description": ""
+    "name": "Icon/step1_16",
+    "description": "step one, 1, sequence, numbers, order, instructions"
   },
   "1292:178": {
     "key": "a59aded07b34d901ca24f3f6bda6a79983488a7f",
-    "name": "Icon/step2_16_heavy",
-    "description": ""
+    "name": "Icon/step2_16",
+    "description": "step two, 2, sequence, numbers, order, instructions"
   },
   "1292:245": {
     "key": "4f492f3bb15b9263b5fb5658cc0b1219750a25a8",
-    "name": "Icon/step3_16_heavy",
-    "description": ""
+    "name": "Icon/step3_16",
+    "description": "step three, 3, sequence, numbers, order, instructions"
   },
   "1292:209": {
     "key": "64d1203526b25def2c94d7563270a1ced82d2ee7",
-    "name": "Icon/step4_16_heavy",
-    "description": ""
+    "name": "Icon/step4_16",
+    "description": "step four, 4, sequence, numbers, order, instructions"
   },
   "1292:248": {
     "key": "539aba61e45878b70ae87b38e2e8ad82f1b90c07",
-    "name": "Icon/step5_16_heavy",
-    "description": ""
+    "name": "Icon/step5_16",
+    "description": "step five, 5, sequence, numbers, order, instructions"
   },
   "1292:177": {
     "key": "01d35598a6978d25730ce81e44a2c4ed5f9d3b00",
-    "name": "Icon/step6_16_heavy",
-    "description": ""
+    "name": "Icon/step6_16",
+    "description": "step six, 6, sequence, numbers, order, instructions"
   },
   "1292:233": {
     "key": "7db003230b058a663cb7ebb28bab3efb6fee840e",
-    "name": "Icon/step7_16_heavy",
-    "description": ""
+    "name": "Icon/step7_16",
+    "description": "step seven, 7, sequence, numbers, order, instructions"
   },
   "1292:182": {
     "key": "cac54c1c92e0a766837c1402d96e795fa200ed58",
-    "name": "Icon/step8_16_heavy",
-    "description": ""
+    "name": "Icon/step8_16",
+    "description": "step eight, 8, sequence, numbers, order, instructions"
   },
   "1292:175": {
     "key": "7b460b66d6b4dff2be41e76645354b263c8f41ed",
-    "name": "Icon/step9_16_heavy",
-    "description": ""
+    "name": "Icon/step9_16",
+    "description": "step nine, 9, sequence, numbers, order, instructions"
   },
   "1292:173": {
     "key": "e430257107fdd36bebe19551b2aea87519df0cfe",
-    "name": "Icon/step0_16_heavy",
-    "description": ""
+    "name": "Icon/step0_16",
+    "description": "step zero, 0, sequence, numbers, order, instructions"
   },
   "1292:172": {
     "key": "0d2cf8fc07eabf7ce6020a294c79f150a18b5f34",
-    "name": "Icon/trxWithdraw_16_heavy",
-    "description": ""
+    "name": "Icon/withdraw_16",
+    "description": "withdraw, arrow up, extract, draw out, take, ⬆️, 🔝"
   },
   "2210:35": {
     "key": "7c8447798a818bea43459bdee46c5ef68295abf5",
-    "name": "Icon/exclamationMark_16_heavy",
-    "description": ""
+    "name": "Icon/exclamationMark_16",
+    "description": "exclamation mark, warning, alert, help, crucial, indication, emphasis, !,  ❗️"
   },
   "2210:83": {
     "key": "a528bf79e45234fe265140aedde2887a465ded28",
-    "name": "Icon/statusDot_16_heavy",
-    "description": ""
+    "name": "Icon/statusDot_16",
+    "description": "pending, waiting, meatballs"
   },
   "3120:147": {
     "key": "89ad4802df76fe1e8d49747986fb3797f195f7c5",
-    "name": "Icon/more_16_heavy",
-    "description": ""
+    "name": "Icon/more_16",
+    "description": "more, kebab, mochi, additional, added, extra, filter"
   },
   "3121:65": {
     "key": "5556c3b3600ab720e095d9252bea5fd324aea4fe",
-    "name": "Icon/sortUp_16_heavy",
-    "description": ""
+    "name": "Icon/sortUp_16",
+    "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3512:120": {
     "key": "373feaeed8ef062e7792bd339381bbf0d654d498",
-    "name": "Icon/sortUpCenter_16_heavy",
-    "description": ""
+    "name": "Icon/sortUpCenter_16",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   },
   "3595:129": {
     "key": "56cfd1a047228774794a3dae4aa7b0a37af13078",
-    "name": "Icon/smartContract_16_heavy",
-    "description": ""
+    "name": "Icon/smartContract_16",
+    "description": "smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑"
   },
   "3725:27": {
     "key": "dd29a2af28a3636afe225922b25f2957112945ff",
-    "name": "Icon/email_16_heavy",
-    "description": ""
+    "name": "Icon/email_16",
+    "description": "envelope, letter, email, message, 💌, ✉️, 📨, 📩, 📧"
   },
   "3512:118": {
     "key": "8f3ac40af8bf038cfab046ce8b847b3bdcec4c2b",
-    "name": "Icon/sortDownCenter_16_heavy",
-    "description": ""
+    "name": "Icon/sortDownCenter_16",
+    "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3121:64": {
     "key": "23813d9a5c4215079010b642324f4f9e942b3d96",
-    "name": "Icon/sortDown_16_heavy",
-    "description": ""
+    "name": "Icon/sortDown_16",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   },
   "3168:112": {
     "key": "3fdd9e20330c87e151ca9348b3ef7b82f662741d",
-    "name": "Icon/doubleChevronRight_16_heavy",
-    "description": "SEN, Transfer, Chevron, Right, M"
+    "name": "Icon/doubleChevronRight_16",
+    "description": "transfer, chevron, right, double"
   },
   "1292:242": {
     "key": "84cf7d1035df66fd8d888b844cec7c249e0fb727",
-    "name": "Icon/lock_16_heavy",
-    "description": ""
+    "name": "Icon/lock_16",
+    "description": "lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝"
   },
   "2212:13": {
     "key": "9eea8836b03823cf695fe658325af4ca66dfd3e4",
-    "name": "Icon/identityCard_16_heavy",
-    "description": ""
+    "name": "Icon/identityCard_16",
+    "description": "identity card, profile, personal, ID, card, 🆔"
   },
   "1292:198": {
     "key": "76792071bdfc76e5d3709e2442360d74cc886952",
-    "name": "Icon/wallet_16_heavy",
-    "description": ""
+    "name": "Icon/wallet_16",
+    "description": "wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸"
   },
   "1292:190": {
     "key": "68b52c46dd7d85dfc8097f5ef03ae34c97198ec7",
-    "name": "Icon/visible_16_heavy",
-    "description": ""
+    "name": "Icon/visible_16/active",
+    "description": "visible, eye, transparency, watching, 👀, 👁, active"
   },
   "1292:164": {
     "key": "e84fe7be21b0eeb6c8cecc8d60167f018ee1fd87",
-    "name": "Icon/notVisible_16_heavy",
-    "description": ""
+    "name": "Icon/visible_16/inactive",
+    "description": "closed, eye, unwatch, not visible, 👀, 👁, inactive"
   },
   "1292:163": {
     "key": "d9513bf9c05f9611d23529a5322940fbfa56c5c8",
-    "name": "Icon/paypal_16_heavy",
-    "description": ""
+    "name": "Icon/paypal_16",
+    "description": "paypal, payment, brand, 💳, 🏦"
   },
   "1292:156": {
     "key": "6f2c7477d77a0153c7e01a2eb3e9d8ce51e1783f",
-    "name": "Icon/sofort_16_heavy",
-    "description": ""
+    "name": "Icon/sofort_16",
+    "description": "sofort, payment, brand, 💳, 🏦"
   },
   "1292:171": {
     "key": "521642bf9ca6cf37700500d3277adfeed9f81048",
-    "name": "Icon/ideal_16_heavy",
-    "description": ""
+    "name": "Icon/ideal_16",
+    "description": "ideal, payment, brand, 💳, 🏦"
   },
   "1292:87": {
     "key": "d445b3849b7b51a85b982b484c2ba3bdb8e3d3b9",
-    "name": "Icon/close_16_heavy",
-    "description": ""
+    "name": "Icon/close_16",
+    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   },
   "1292:77": {
     "key": "0945716c9343130c06315d8ee3569c13b4884687",
-    "name": "Icon/bell_16_heavy",
-    "description": ""
+    "name": "Icon/bell_16",
+    "description": "notification, update, news, new, bell, 🔔, 🛎"
   },
   "1292:75": {
     "key": "673b3b97c6097d33cd657a094985293fd8974564",
-    "name": "Icon/qrCode_16_heavy",
-    "description": ""
+    "name": "Icon/qrCode_16",
+    "description": "qr code, scan, matrix, barcode, label, readable, information"
   },
   "1292:72": {
     "key": "f31e8735b93daac81292348ab9d99868d3bcfe47",
-    "name": "Icon/search_16_heavy",
-    "description": ""
+    "name": "Icon/search_16",
+    "description": "search, magnifying glass, look, explore, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️"
   },
   "1292:69": {
     "key": "67b0955e6128bec9a678af6370eb37258665bfad",
-    "name": "Icon/paperAirplane_16_heavy",
-    "description": ""
+    "name": "Icon/paperAirplane_16",
+    "description": "paper airplane, send, plane, ✈️, 🛩"
   },
   "1292:66": {
     "key": "974d3ebd6837a76fc66e3a18e70a01ba24bd611f",
-    "name": "Icon/star_16_heavy",
-    "description": ""
+    "name": "Icon/star_16/active",
+    "description": "star, favorite, ⭐️, 🌟, 💫, 🤩, active"
+  },
+  "4652:27": {
+    "key": "62b04c5e4365915d4e561eb45b6606923d5febb5",
+    "name": "Icon/star_16/inactive",
+    "description": "unstar, unfavorite, ⭐️, 🌟, 💫, 🤩, \ninactive"
   },
   "1292:65": {
     "key": "dc1b6c1ddeb467eeed34f11b8b6dbe30d943415a",
-    "name": "Icon/home_16_heavy",
-    "description": ""
+    "name": "Icon/home_16",
+    "description": "home, hub, central, building, homepage,  🏡, 🏠"
   },
   "1292:80": {
     "key": "62a70f179aa9f2a64c8e875a61f056167d80a2ff",
-    "name": "Icon/chartBar_16_heavy",
-    "description": "graph"
+    "name": "Icon/chartBar_16",
+    "description": "chart bar, data, visualization, numbers, graph, 📊, 📉, 📈"
   },
   "1292:67": {
     "key": "8df8fefe6f421c8104d64f203e61249f864a9f25",
-    "name": "Icon/portrait_16_heavy",
-    "description": ""
+    "name": "Icon/profile_16",
+    "description": "profile, person, individual, human"
   },
   "4232:107": {
     "key": "8c848843e224b554ad576c46cb66b38e4f660505",
     "name": "Icon/calendar_16",
-    "description": ""
+    "description": "calendar, date, year, month, week, schedule, 📆, 📅, 🗓"
   },
   "4232:106": {
     "key": "5c30403709a0d03f54522dbc0b9ed12dae86e28b",
     "name": "Icon/calendar_24",
-    "description": ""
+    "description": "calendar, date, year, month, week, schedule, 📆, 📅, 🗓"
   },
   "1292:88": {
     "key": "808d7e6fb13a766d847fcdf0b792f40c0b2300fa",
-    "name": "Icon/gear_16_heavy",
-    "description": "settings"
+    "name": "Icon/gear_16",
+    "description": "gear, settings, cog, machine, tool, ⚙️"
   },
   "1292:58": {
     "key": "33d8f5a34fea1b4ee63dee7a24c6f8cf5ac32933",
-    "name": "Icon/bank_16_heavy",
-    "description": ""
+    "name": "Icon/bank_16",
+    "description": "bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷"
   },
   "1292:127": {
     "key": "9248985497ae13935bfff581db9f73fee83f994b",
-    "name": "Icon/card_16_heavy",
-    "description": ""
+    "name": "Icon/card_16",
+    "description": "card, pay, credit, debit, money, 💳, 🏦, 🏧"
   },
   "1292:56": {
     "key": "4682fe4a7c1c0a6d3d988f75a794df15095f90c0",
-    "name": "Icon/arrowsHorizontal_16_heavy",
-    "description": ""
+    "name": "Icon/arrowsHorizontal_16",
+    "description": "arrows, side by side, left, right,  opposite, ↔️"
   },
   "2285:11350": {
     "key": "5e4e21a130e43a175c12b7c1570ac377097098e1",
-    "name": "Icon/initiator_16_heavy",
-    "description": ""
+    "name": "Icon/initiator_16",
+    "description": "initiator, forward, arrows"
   },
   "1292:35": {
     "key": "61bd75a2b31706b099aa43bee00aa4d1cfb2de34",
-    "name": "Icon/circulatingSupply_16_heavy",
-    "description": ""
+    "name": "Icon/circulatingSupply_16",
+    "description": "circulating supply, remainder,  availability, coins, amount"
   },
   "1792:35": {
     "key": "d721102f9a5d8ec20543f913788b37efafb5fa34",
-    "name": "Icon/globe_16_heavy",
-    "description": ""
+    "name": "Icon/globe_16",
+    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
   },
   "1292:90": {
     "key": "1bd26cdd699a31b7bc56344a82551a21e5aca0f1",
-    "name": "Icon/list_16_heavy",
-    "description": "bullet"
+    "name": "Icon/list_16",
+    "description": "list, bullet point, items, actions, tasks, document, •, 📄"
   },
   "1292:32": {
     "key": "d8fe9211663d3b9f3e3f5da1f3ed0384ee6e1290",
-    "name": "Icon/chartVolume_16_heavy",
-    "description": "graph, "
+    "name": "Icon/chartVolume_16",
+    "description": "chart volume, chart bar, data, visualization, numbers, graph, 📊, 📉, 📈"
   },
   "1292:39": {
     "key": "4d5a39f8aedbf501ae07b966b7c917f01a322fec",
-    "name": "Icon/chartPie_16_heavy",
-    "description": "graph"
+    "name": "Icon/chartPie_16",
+    "description": "chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧"
   },
   "1292:107": {
     "key": "de43f476e000435f77c7b677a810fc3aac55ec07",
-    "name": "Icon/allTimeHigh_16_heavy",
-    "description": ""
+    "name": "Icon/allTimeHigh_16",
+    "description": "all time high, up, record, highest, 🔺, ⤴️, ⬆️"
   },
   "1292:30": {
     "key": "e81d769d5fd9742921cf3bd5dafdbea537e33fa7",
-    "name": "Icon/pulse_16_heavy",
-    "description": ""
+    "name": "Icon/pulse_16",
+    "description": "pulse, activity, trading, spark, line, ⚡️, ❇️, 📈, 📉"
   },
   "1292:48": {
     "key": "c7c62cef5032b96c2426beb23e4cd35496d6631e",
-    "name": "Icon/popularity_16_heavy",
+    "name": "Icon/sparkle_16",
     "description": ""
   },
   "1292:29": {
     "key": "9bd6d95150a24ea5024cfd3bb29940b354f79a23",
-    "name": "Icon/recurring_16_heavy",
-    "description": ""
+    "name": "Icon/recurring_16",
+    "description": "recurring, history, clock, time, back, time, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️"
   },
   "1634:182": {
     "key": "13747353747a3d9ad6b7c32a08b6753aa51aad76",
-    "name": "Icon/trxConvert_16_heavy",
-    "description": ""
+    "name": "Icon/convert_16",
+    "description": "convert, change, turn, transform, turn, 🔄"
   },
   "1292:43": {
     "key": "dbd73f1cba8d36a4941fdb6c14eb51859a064bb9",
-    "name": "Icon/trxBuy_16_heavy",
-    "description": ""
+    "name": "Icon/add_16",
+    "description": "add, buy, plus, purchase, ➕"
   },
   "1292:28": {
     "key": "6f504b3609bd40a4d76c71f5fe96dc918e0bc8a4",
-    "name": "Icon/trxSell_16_heavy",
-    "description": ""
+    "name": "Icon/minus_16",
+    "description": "minus, subtract, sell, ➖"
   },
   "1292:27": {
     "key": "3046c88efd1362561f8926ec60a52872930fc96b",
-    "name": "Icon/trxReceive_16_heavy",
-    "description": ""
+    "name": "Icon/arrowDown_16",
+    "description": "arrow up, receive, downwards, decrease, ⬇️, ⬇"
   },
   "1292:33": {
     "key": "b04ed512d55857bd1de366dd1dafa6d9be44014a",
-    "name": "Icon/trxSend_16_heavy",
-    "description": ""
+    "name": "Icon/arrowUp_16",
+    "description": "arrow up, send, upwards, increase, ⬆️"
   },
   "1292:37": {
     "key": "4780567f05913b476615494cd359894fe9afe7b9",
     "name": "Icon/caretRight_16",
-    "description": ""
+    "description": "caret, chevron, right"
   },
   "1792:161": {
     "key": "01d3d3d99174bdf37ae68dc45c15aadd829ca926",
-    "name": "Icon/wireTransfer_16_heavy",
-    "description": ""
+    "name": "Icon/wireTransfer_16",
+    "description": "wire transfer, send, bank, credit, electronic"
   },
   "1292:26": {
     "key": "ae140d5e5286f443e923035e1454a7885e98de41",
-    "name": "Icon/arrowsVertical_16_heavy",
-    "description": ""
+    "name": "Icon/arrowsVertical_16",
+    "description": "arrows, vertical, up, down, opposite, ↕️"
   },
   "1292:243": {
     "key": "a92372846892966fe09cbad2c007a63057d723f3",
-    "name": "Icon/checkboxChecked_12_light",
-    "description": ""
+    "name": "Icon/checkboxChecked_12",
+    "description": "checkmark, check, tick, confirmation, accept, select, confirm, ✅, ✔️"
   },
   "1292:223": {
     "key": "d0d5b6583033cdeb26799e5fc07ec78c5aaa378e",
-    "name": "Icon/checkboxChecked_16_light",
-    "description": ""
+    "name": "Icon/checkboxChecked_16",
+    "description": "checkmark, check, tick, confirmation, accept, select, confirm, ✅, ✔️"
   },
   "1292:250": {
     "key": "f03aee1fb759143101c80cbec5cbd2efa3e2a3ca",
-    "name": "Icon/checkboxEmpty_12_light",
-    "description": ""
+    "name": "Icon/checkboxEmpty_12",
+    "description": "uncheck, empty, unknown, unselected, ☑️"
   },
   "1292:217": {
     "key": "dfafc9eafe8c46ec5bbdaea7f60c22c991e99e55",
-    "name": "Icon/checkboxEmpty_16_light",
-    "description": ""
+    "name": "Icon/checkboxEmpty_16",
+    "description": "uncheck, empty, unknown, unselected, ☑️"
   },
   "1436:40": {
     "key": "cf71bb390b46f6f480bf41a421c748c809378299",
-    "name": "Icon/copy_24_light",
-    "description": ""
+    "name": "Icon/copy_24",
+    "description": "copy, mimic, duplicate, identical, another"
   },
   "3162:113": {
     "key": "12795de576ccd09df350050b92eb57e0c3c77ae5",
-    "name": "Icon/trxReward_24_light",
-    "description": ""
+    "name": "Icon/percentage_24",
+    "description": "percentage, interest, reward, rate, ratio, pct, measurement, %"
   },
   "2515:949": {
     "key": "3edde38df1eb3addc565139d89018b800e451d45",
-    "name": "Icon/checkbox_24_light",
-    "description": ""
+    "name": "Icon/checkbox_24",
+    "description": "checkmark, check, tick, confirmation, accept, select, confirm, ✅, ✔️"
   },
   "2515:948": {
     "key": "3ad07a46af49404352dff5237307d919f30ebff3",
-    "name": "Icon/checkboxEmpty_24_light",
-    "description": ""
+    "name": "Icon/checkboxEmpty_24",
+    "description": "uncheck, empty, unknown, unselected, ☑️"
   },
   "1436:42": {
     "key": "c318e03dea47b32c82d15d84e055ece47598f6fa",
-    "name": "Icon/copy_12_light",
-    "description": ""
+    "name": "Icon/copy_12",
+    "description": "copy, mimic, duplicate, identical, another"
   },
   "1436:41": {
     "key": "f132409013192b6b2de3bb9038853eb79585fc24",
-    "name": "Icon/copy_16_light",
-    "description": ""
+    "name": "Icon/copy_16",
+    "description": "copy, mimic, duplicate, identical, another"
   },
   "3162:112": {
     "key": "d020bf08200a23be87e8079120012936bfeb573b",
-    "name": "Icon/trxReward_16_light",
-    "description": ""
+    "name": "Icon/percentage_16",
+    "description": "percentage, interest, reward, rate, ratio, pct, measurement, %"
   },
   "1292:93": {
     "key": "182f6b31b1db11fc51237fbdd13f2e7b88be5261",
-    "name": "Icon/trxReward_12_light",
-    "description": ""
-  },
-  "1847:11363": {
-    "key": "0d763c351484ef2e38a093d1b9da698921fc2381",
-    "name": "Icon/caretRight_24_light",
-    "description": ""
-  },
-  "1847:11361": {
-    "key": "abb997f8bca6cf54e40c581cf214b325a92a341e",
-    "name": "Icon/caretRight_16_light",
-    "description": ""
-  },
-  "1847:11355": {
-    "key": "71bc6262e8a23b6a7f8a22ffc5a816528b845dc1",
-    "name": "Icon/caretRight_12_light",
-    "description": ""
-  },
-  "1847:11360": {
-    "key": "d6efdd8b5595c1b1f68a8a37abfb86db5af3231e",
-    "name": "Icon/caretLeft_24_light",
-    "description": ""
-  },
-  "1847:11356": {
-    "key": "75cfe453649e84e419c9d8cc3a58fa33219b3477",
-    "name": "Icon/caretLeft_16_light",
-    "description": ""
-  },
-  "1847:11353": {
-    "key": "10ffad4328a9102d466dd3a494acd5e931ee3002",
-    "name": "Icon/caretLeft_12_light",
-    "description": ""
-  },
-  "1847:11362": {
-    "key": "1f5e82a0460ce7d839a3638a8f00a1ad6bea3e9f",
-    "name": "Icon/caretUp_24_light",
-    "description": ""
-  },
-  "1847:11358": {
-    "key": "430bedd37a77bff8e0fa56ba55bf4e218ea8f122",
-    "name": "Icon/caretUp_16_light",
-    "description": ""
-  },
-  "1847:11354": {
-    "key": "288242bae7afae721e48ba96c62db0b11bf0009a",
-    "name": "Icon/caretUp_12_light",
-    "description": ""
-  },
-  "1847:11359": {
-    "key": "688951fe9497c30f15f5e6a7ce626a83749a110c",
-    "name": "Icon/caretDown_24_light",
-    "description": ""
-  },
-  "1847:11357": {
-    "key": "8b7d494d54eedc873d708e4ee5129c32ff95f65d",
-    "name": "Icon/caretDown_16_light",
-    "description": ""
-  },
-  "1847:11352": {
-    "key": "3768be19789aae4b71cda03afc733468fc1fbda1",
-    "name": "Icon/caretDown_12_light",
-    "description": ""
-  },
-  "1847:11366": {
-    "key": "ddfd5e1391acc62e0e9b2beca97ea75b444aba18",
-    "name": "Icon/backspace_24_light",
-    "description": ""
-  },
-  "1847:11364": {
-    "key": "cfc431f75557642cbba090772a5800ad32101c4d",
-    "name": "Icon/backspace_16_light",
-    "description": ""
-  },
-  "1847:11365": {
-    "key": "f4f717f6fa6233ba9ddac6cf75815b54a4f65910",
-    "name": "Icon/backspace_12_light",
-    "description": ""
-  },
-  "2375:12042": {
-    "key": "1844e2ede5b35ff4bf9294332796202216c6c215",
-    "name": "Icon/trashCan_24_light",
-    "description": ""
-  },
-  "3120:104": {
-    "key": "452d7e73797bc6f5b44b2e0c604bc0c02b314404",
-    "name": "Icon/plus_24_light",
-    "description": ""
-  },
-  "2375:12040": {
-    "key": "b833b8db7ef690b77a62b79d2f76128c25e688af",
-    "name": "Icon/trashCan_16_light",
-    "description": ""
-  },
-  "3120:102": {
-    "key": "384ab81d41c18f715aef659b4b87290eaad108c4",
-    "name": "Icon/plus_16_light",
-    "description": ""
-  },
-  "2375:12038": {
-    "key": "a11653006017cfcab0ee7a560747f4f0aeceeb8d",
-    "name": "Icon/trashCan_12_light",
-    "description": ""
-  },
-  "1847:11385": {
-    "key": "03f82f46c09ede1f4de134d23df2e9b7ff39edd6",
-    "name": "Icon/close_24_light",
-    "description": ""
-  },
-  "1847:11384": {
-    "key": "9965ee16f14ca35c53f34c1dcdd6fcc56f742e16",
-    "name": "Icon/close_16_light",
-    "description": ""
-  },
-  "1847:11383": {
-    "key": "6d4242021f1c07e521153e44dc16d1c4d7c8d75e",
-    "name": "Icon/close_12_light",
-    "description": ""
+    "name": "Icon/percentage_12",
+    "description": "percentage, interest, reward, rate, ratio, pct, measurement, %"
   },
   "2694:1276": {
     "key": "c0f42c8b508dc63225e12e70c71274ec53ebb788",
-    "name": "Icon/tradingRemove_12_light",
-    "description": ""
+    "name": "Icon/circleCross_12",
+    "description": "circle, cross, x, check, decline, remove, rejection, removal, delete, unsuccessful, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   },
   "2375:12041": {
     "key": "084701c9b541ba77517a2655c0d8593ca9a7d813",
-    "name": "Icon/undo_24_light",
-    "description": ""
-  },
-  "3120:103": {
-    "key": "4da8924fbe7aba6bd9169b4f59b24f063b6fb840",
-    "name": "Icon/minus_24_light",
-    "description": ""
+    "name": "Icon/undo_24",
+    "description": "undo, mistake, arrow, reverse"
   },
   "2375:12039": {
     "key": "f39a2aada9e01b862344c7dec4627f13b7d8f030",
-    "name": "Icon/undo_16_light",
-    "description": ""
-  },
-  "3120:101": {
-    "key": "1f19481dc11c5db7253e7e931a4d83e356bf82f2",
-    "name": "Icon/minus_16_light",
-    "description": ""
+    "name": "Icon/undo_16",
+    "description": "undo, mistake, arrow, reverse"
   },
   "2375:12037": {
     "key": "13bf6d9de576deaaca8ddbfa78227b28381f3c37",
-    "name": "Icon/undo_12_light",
-    "description": ""
-  },
-  "2375:12180": {
-    "key": "636ba9b4117cee6ea82863acb66cdc0b487d7033",
-    "name": "Icon/pencil_12_light",
-    "description": ""
-  },
-  "2375:12179": {
-    "key": "43bfd191c8b2c06f0595ae3302aba0c8cbde167a",
-    "name": "Icon/visible_12_light",
-    "description": ""
-  },
-  "2375:12177": {
-    "key": "68f06cbd3140ca0fdccf05ca5e2bba2fd6f9d6af",
-    "name": "Icon/plus_12_light",
-    "description": ""
-  },
-  "2375:12178": {
-    "key": "3557f3e64839f15362b0235b6548f5a8e193e2ae",
-    "name": "Icon/plus_8_light",
-    "description": ""
-  },
-  "2694:1259": {
-    "key": "e893c482968e42169073bc3d6eb05b6e53cfd713",
-    "name": "Icon/close_8_light",
-    "description": ""
-  },
-  "2375:12176": {
-    "key": "e3129388f53ecdd69fa64ecdba2520562cbb9340",
-    "name": "Icon/notVisible_12_light",
-    "description": ""
-  },
-  "2611:34": {
-    "key": "f7e5036f143cf1c1f152eed1a4cf53b93a88a900",
-    "name": "Icon/giftBox_12_light",
-    "description": ""
+    "name": "Icon/undo_12",
+    "description": "undo, mistake, arrow, reverse"
   },
   "2375:12175": {
     "key": "3a347e3732c5bb15f4b32394a0afad96eb2aabf9",
-    "name": "Icon/tradingChartLine_12_light",
-    "description": ""
-  },
-  "2375:12174": {
-    "key": "22af26b38cf5759130146e2da44f9fed927541c3",
-    "name": "Icon/minus_12_light",
-    "description": ""
-  },
-  "2375:12173": {
-    "key": "ac2ca46442b1116248d69c81dbc74a7843f8b07c",
-    "name": "Icon/minus_8_light",
-    "description": ""
+    "name": "Icon/chartLine_12",
+    "description": "chart, line, trading, activity, trading, spark, line, 📈, 📉"
   },
   "2375:12172": {
     "key": "d844fb6f07600ba5d86ff53e3f483b15dc34a1d5",
-    "name": "Icon/tradingChartCandles_12_light",
-    "description": ""
+    "name": "Icon/chartCandles_12",
+    "description": "chart, trading, candles, graph, numbers, data, visualization, 📈, 📉, 📊"
   },
   "1292:188": {
     "key": "2d02c1c2f16b84fb69fc8ae774cb114a11a27433",
     "name": "Icon/externalLink_12",
-    "description": ""
+    "description": "external link, link out, tab, hyperlink, link"
   },
   "1292:168": {
     "key": "424afef43943ab41829e7196e9b8e03a50cee667",
     "name": "Icon/externalLink_16",
-    "description": ""
+    "description": "external link, link out, tab, hyperlink, link"
   },
   "1292:110": {
     "key": "07e98498c379fc60a8a21b10a4760fa8c0398666",
-    "name": "Icon/clock_12_light",
-    "description": ""
+    "name": "Icon/clock_12",
+    "description": "clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️"
   },
   "1292:63": {
     "key": "0a34f1754dc679a31fd2ab33e62dd18d290e8191",
-    "name": "Icon/clock_16_light",
-    "description": ""
-  },
-  "1292:111": {
-    "key": "7f47b5b0a8224143c0c09759151ef81aaa7c5279",
-    "name": "Icon/marketCap_12_light",
-    "description": ""
-  },
-  "1292:34": {
-    "key": "20492fc0a411697d742e413b16217ed4c6deacb0",
-    "name": "Icon/marketCap_16_light",
-    "description": ""
+    "name": "Icon/clock_16",
+    "description": "clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️"
   },
   "1577:155": {
     "key": "c18a4328827b0842d721331a5f5cc6bc972cd15a",
     "name": "Icon/marketCap_16",
-    "description": ""
+    "description": "market cap, capitalization, stock market, shares, share price, traded, 📈, 📉"
   },
   "1697:10596": {
     "key": "066c6145c6a3b3bdeb0dba40ca805a549d6c11e0",
-    "name": "Icon/caretDown_12_heavy",
-    "description": ""
+    "name": "Icon/caretDown_12",
+    "description": "caret, chevron, down"
   },
   "1766:10687": {
     "key": "45188540887e14822c22a1a73ffa457d87b2deae",
-    "name": "Icon/caretLeft_12_heavy",
-    "description": ""
+    "name": "Icon/caretLeft_12",
+    "description": "caret, chevron, left"
   },
   "1697:10595": {
     "key": "a72b45907cd1c61259c7513c9b438dae6a6548fa",
-    "name": "Icon/caretUp_12_heavy",
-    "description": ""
+    "name": "Icon/caretUp_12",
+    "description": "caret, chevron, up"
   },
   "1697:10608": {
     "key": "88e13eedc690907d89ed29571338832f30654374",
-    "name": "Icon/dot_12_heavy",
-    "description": ""
+    "name": "Icon/dot_12",
+    "description": "dot, spot, bullet point, point, mark, round, 🔴, ⚫️, 🔵, ⚪️"
   },
   "1697:10594": {
     "key": "c2117f788770e2436f6c10f7760ab7b87baad7ad",
-    "name": "Icon/caretDown_16_heavy",
-    "description": ""
+    "name": "Icon/caretDown_16",
+    "description": "caret, chevron, down"
   },
   "1766:10686": {
     "key": "02c913e630ec3f56a25facc2dd2ac71573811459",
-    "name": "Icon/caretLeft_16_heavy",
-    "description": ""
+    "name": "Icon/caretLeft_16",
+    "description": "caret, chevron, left"
   },
   "1697:10593": {
     "key": "1a1f1a4d9f3d48e0def8e62638b3c040c2f90992",
-    "name": "Icon/caretUp_16_heavy",
-    "description": ""
+    "name": "Icon/caretUp_16",
+    "description": "caret, chevron, up"
   },
   "2207:54": {
     "key": "925f36d4488a9ca00744bb770dfea61f07e26f54",
-    "name": "Icon/dot_16_heavy",
-    "description": ""
+    "name": "Icon/dot_16",
+    "description": "dot, spot, bullet point, point, mark, round, 🔴, ⚫️, 🔵, ⚪️"
   },
   "2375:11982": {
     "key": "581cdf5c62e75782a5c63ce53db932db14409d77",
-    "name": "Icon/tradingVertLine_24_light",
-    "description": ""
+    "name": "Icon/verticalLine_24",
+    "description": "vertical, line, trading"
   },
   "2375:11980": {
     "key": "23af6ab7a254f38b6f50bf8b1f4ba51a2e16a4f8",
-    "name": "Icon/tradingVertLine_16_light",
-    "description": ""
+    "name": "Icon/verticalLine_16",
+    "description": "vertical, line, trading"
   },
   "2375:11969": {
     "key": "14da033438f1f3ed8d66a17f59478b96dfc44911",
-    "name": "Icon/tradingVertLine_12_light",
-    "description": ""
+    "name": "Icon/verticalLine_12",
+    "description": "vertical, line, trading"
   },
   "2375:11975": {
     "key": "864357986c06dfeb89e54a1323c0bdc337b9cbd1",
-    "name": "Icon/tradingAnnotation_24_light",
-    "description": ""
+    "name": "Icon/annotation_24",
+    "description": "annotation, note,  comment, gloss, footnote, commentary, 📝"
   },
   "2375:11977": {
     "key": "88147b4f8fcf28a931e27069bfd0f0c0b11af88b",
-    "name": "Icon/tradingAnnotation_16_light",
-    "description": ""
+    "name": "Icon/annotation_16",
+    "description": "annotation, note,  comment, gloss, footnote, commentary, 📝"
   },
   "2375:11973": {
     "key": "03e6073ea045b010d29e967c2c5e4b9ee50d515a",
-    "name": "Icon/tradingAnnotation_12_light",
-    "description": ""
+    "name": "Icon/annotation_12",
+    "description": "annotation, note,  comment, gloss, footnote, commentary, 📝"
   },
   "2375:11981": {
     "key": "d94575058588f64ca928b299d9da66b8b4205a80",
-    "name": "Icon/tradingFib_24_light",
-    "description": ""
+    "name": "Icon/fib_24",
+    "description": "fibonacci, fib, trading, peak, trough, chart, 📈, 📉, 📊"
   },
   "2375:11971": {
     "key": "4fda5f449f198244ab973f91f6117efdd803fd9a",
-    "name": "Icon/tradingFib_16_light",
-    "description": ""
+    "name": "Icon/fib_16",
+    "description": "fibonacci, fib, trading, peak, trough, chart, 📈, 📉, 📊"
   },
   "2375:11979": {
     "key": "642e5c122ed7cee8525ca35f76b9b57986403237",
-    "name": "Icon/tradingFib_12_light",
-    "description": ""
+    "name": "Icon/fib_12",
+    "description": "fibonacci, fib, trading, peak, trough, chart, 📈, 📉, 📊"
   },
   "2375:11970": {
     "key": "4c90101591497528af6bdf0283e21bd2958a5261",
-    "name": "Icon/tradingHorizLine_24_light",
-    "description": ""
+    "name": "Icon/horizontalLine_24",
+    "description": "horizontal, line, trading"
   },
   "2375:11964": {
     "key": "d4fdbe5a1e07d8422336494a5329b151e42ff7b0",
-    "name": "Icon/tradingHorizLine_16_light",
-    "description": ""
+    "name": "Icon/horizontalLine_16",
+    "description": "horizontal, line, trading"
   },
   "2375:11967": {
     "key": "b2c97d3e74b54fdb46aab11673fb89aa2cc48ad0",
-    "name": "Icon/tradingHorizLine_12_light",
-    "description": ""
+    "name": "Icon/horizontalLine_12",
+    "description": "horizontal, line, trading"
   },
   "2375:11978": {
     "key": "dbae821f0855da9c08f31c6a8496141b93e4bf9f",
-    "name": "Icon/tradingAverage_24_light",
-    "description": ""
+    "name": "Icon/average_24",
+    "description": "average, trading, math, graph, mean, median, midpoint, center, norm, standard"
   },
   "2375:11963": {
     "key": "7d12ad11db9d2b155edf7949365e2105e2e45535",
-    "name": "Icon/tradingAverage_16_light",
-    "description": ""
+    "name": "Icon/average_16",
+    "description": "average, trading, math, graph, mean, median, midpoint, center, norm, standard"
   },
   "2375:11962": {
     "key": "d33eae8424d98a29f1fbed358fa2b836a3c8e590",
-    "name": "Icon/tradingAverage_12_light",
-    "description": ""
+    "name": "Icon/average_12",
+    "description": "average, trading, math, graph, mean, median, midpoint, center, norm, standard"
   },
   "2375:11961": {
     "key": "c1b5c57cab641b40260b6148d2a0c27843a79980",
-    "name": "Icon/tradingCross_24_light",
-    "description": ""
+    "name": "Icon/crossTrade_24",
+    "description": "cross, trade, trading, buy, sell, offset, exchange, 📈, 📉, 📊"
   },
   "2375:11960": {
     "key": "984e18b00b8d71098c9993baebc3047e38b4771e",
-    "name": "Icon/tradingCross_16_light",
-    "description": ""
+    "name": "Icon/crossTrade_16",
+    "description": "cross, trade, trading, buy, sell, offset, exchange, 📈, 📉, 📊"
   },
   "2375:11959": {
     "key": "148f97229d63b660c10fdc9421fab2152eed56c7",
-    "name": "Icon/tradingCross_12_light",
-    "description": ""
+    "name": "Icon/crossTrade_12",
+    "description": "cross, trade, trading, buy, sell, offset, exchange, 📈, 📉, 📊"
   },
   "2375:11974": {
     "key": "39abf77141ddcaf0d467275718dca3246596ff7e",
-    "name": "Icon/tradingUpArrow_24_light",
-    "description": ""
+    "name": "Icon/diagonalRightArrow_24",
+    "description": "diagonal, right arrow, trading, ↗️"
   },
   "2375:11976": {
     "key": "a224efc86e188db185ac480f29e450b53a55cc25",
-    "name": "Icon/tradingUpArrow_16_light",
-    "description": ""
+    "name": "Icon/diagonalRightArrow_16",
+    "description": "diagonal, right arrow, trading, ↗️"
   },
   "2375:11972": {
     "key": "b939487731cd3fa41121f4e541a3d10a2df5022a",
-    "name": "Icon/tradingUpArrow_12_light",
-    "description": ""
+    "name": "Icon/diagonalRightArrow_12",
+    "description": "diagonal, right arrow, trading, ↗️"
   },
   "2375:11968": {
     "key": "7e7b92a950bc42394b9bfd5d3c634937fe58cf78",
-    "name": "Icon/tradingContinuous_24_light",
-    "description": ""
+    "name": "Icon/continuous_24",
+    "description": "continuous, trading, transactions, orders"
   },
   "2375:11965": {
     "key": "a34e0c5c9fdb807d80850e17bd20246b6342f7da",
-    "name": "Icon/tradingContinuous_16_light",
-    "description": ""
+    "name": "Icon/continuous_16",
+    "description": "continuous, trading, transactions, orders"
   },
   "2375:11966": {
     "key": "a4f164567af689b75ab0109db475d704db7a779d",
-    "name": "Icon/tradingContinuous_12_light",
-    "description": ""
+    "name": "Icon/continuous_12",
+    "description": "continuous, trading, transactions, orders"
   },
   "2375:11958": {
     "key": "e75824532c4db5eab5e5cf6f619db7a8f86d3c0b",
-    "name": "Icon/tradingRectangle_24_light",
-    "description": ""
+    "name": "Icon/rectangle_24",
+    "description": "rectangle, shape, trading, draw, ⬛️, 🟩, 🟥, 🟪, 🟨, 🟦, 🟧, 🟫"
   },
   "2375:11957": {
     "key": "c1027aeded4c22d5907da94fe45ffe8a153ef9da",
-    "name": "Icon/tradingRectangle_16_light",
-    "description": ""
+    "name": "Icon/rectangle_16",
+    "description": "rectangle, shape, trading, draw, ⬛️, 🟩, 🟥, 🟪, 🟨, 🟦, 🟧, 🟫"
   },
   "2375:11956": {
     "key": "7c92772811fb2fd6df7b3a96ea1d4feb09b9c4b2",
-    "name": "Icon/tradingRectangle_12_light",
-    "description": ""
+    "name": "Icon/rectangle_12",
+    "description": "rectangle, shape, trading, draw, ⬛️, 🟩, 🟥, 🟪, 🟨, 🟦, 🟧, 🟫"
   },
   "3122:151": {
     "key": "0d2fcf30fdbfce0ec038ce528d8ae1f9a4e112d5",
-    "name": "Icon/reCenter_24_light",
-    "description": ""
+    "name": "Icon/reCenter_24",
+    "description": "recenter, arrow, center, middle, core"
   },
   "3122:149": {
     "key": "112bc44601d1bce911ef523d5fe7a79f8b0a37d3",
-    "name": "Icon/reCenter_16_light",
-    "description": ""
+    "name": "Icon/reCenter_16",
+    "description": "recenter, arrow, center, middle, core"
   },
   "3122:148": {
     "key": "7b154a61408002c27c524794f1a0b8f7822e68a8",
-    "name": "Icon/reCenter_12_light",
-    "description": ""
+    "name": "Icon/reCenter_12",
+    "description": "recenter, arrow, center, middle, core"
   },
   "3122:146": {
     "key": "209688242c205dedba3419165891033838fb2cc1",
     "name": "Icon/expandAll_24",
-    "description": ""
+    "description": "expand all, full, arrow, outwards"
   },
   "3122:145": {
     "key": "9dccde25a4a5a2d7760b5a51a366c7d4d601d769",
     "name": "Icon/expandAll_16",
-    "description": ""
+    "description": "expand all, full, arrow, outwards"
   },
   "3122:150": {
     "key": "960411e313e4a77ad33dfec56aa99e36da55995d",
     "name": "Icon/expandAll_12",
-    "description": ""
+    "description": "expand all, full, arrow, outwards"
   },
   "3122:144": {
     "key": "42e93658e88d7d790a56a23628fce03c506997e7",
-    "name": "Icon/expandAddress_24_light",
-    "description": ""
+    "name": "Icon/expandAddress_24",
+    "description": "expand address, arrows, chevron, caret"
   },
   "3126:39": {
     "key": "d950e08396463af707bda4f7d51636c4487b0cd2",
-    "name": "Icon/circleCheckmark_24_light",
-    "description": ""
+    "name": "Icon/circleCheckmark_24",
+    "description": "circle, checkmark, check, tick, confirmation, success, positive, ✅, ✔️"
   },
   "3122:147": {
     "key": "aa8ea384dfcb2b53f4e941d0a9748cbf0d36f5be",
-    "name": "Icon/expandAddress_16_light",
-    "description": ""
+    "name": "Icon/expandAddress_16",
+    "description": "expand address, arrows, chevron, caret"
   },
   "3126:38": {
     "key": "665bb6461c53d03860698dd4077ed481401dd3d1",
-    "name": "Icon/circleCheckmark_16_light",
-    "description": ""
+    "name": "Icon/circleCheckmark_16",
+    "description": "circle, checkmark, check, tick, confirmation, success, positive, ✅, ✔️"
   },
   "3122:143": {
     "key": "23ead685722ed55be367e1973a0813d61599cf7f",
-    "name": "Icon/expandAddress_12_light",
-    "description": ""
+    "name": "Icon/expandAddress_12",
+    "description": "expand address, arrows, chevron, caret"
   },
   "3126:37": {
     "key": "91c5b739674525f6da71def54b91f1499aecf9f4",
-    "name": "Icon/circleCheckmark_12_light",
-    "description": ""
+    "name": "Icon/circleCheckmark_12",
+    "description": "circle, checkmark, check, tick, confirmation, success, positive, ✅, ✔️"
   },
   "2375:11955": {
     "key": "451a7b03feeb2468838d1b8e544a1de058677170",
-    "name": "Icon/trashCan_24_heavy",
-    "description": ""
+    "name": "Icon/trashCan_24",
+    "description": "trash, rubbish, remove, junk, waste, delete, 🗑, 🚮"
   },
   "1292:100": {
     "key": "7f5c73f09fcb282437a0faf165f783b5ed877cbc",
-    "name": "Icon/trashCan_12_heavy",
-    "description": ""
+    "name": "Icon/trashCan_12",
+    "description": "trash, rubbish, remove, junk, waste, delete, 🗑, 🚮"
   },
   "2375:11954": {
     "key": "9f3b2fadc498381d94b84a4354dc8e41dfb9e7ac",
-    "name": "Icon/trashCan_16_heavy",
-    "description": ""
+    "name": "Icon/trashCan_16",
+    "description": "trash, rubbish, remove, junk, waste, delete, 🗑, 🚮"
   },
   "4032:54": {
     "key": "ae7bb7b30326556090be77d3849da05869314133",
-    "name": "Icon/error_24_heavy",
-    "description": ""
+    "name": "Icon/error_24",
+    "description": "error, alert, message, crucial, 🚨, ❗️"
   },
   "4032:55": {
     "key": "b093cccc85ab6445032808d9152fc0afbb80c0f6",
-    "name": "Icon/error_16_heavy",
-    "description": ""
+    "name": "Icon/error_16",
+    "description": "error, alert, message, crucial, 🚨, ❗️"
   },
   "4032:56": {
     "key": "24e0ba9a6363b59f28752d24934008051c8a7b10",
-    "name": "Icon/error_12_heavy",
-    "description": ""
+    "name": "Icon/error_12",
+    "description": "error, alert, message, crucial, 🚨, ❗️"
   },
   "4032:53": {
     "key": "7734a4a9855fff356194cd9998d1046d3c859d5c",
-    "name": "Icon/info_16_heavy",
-    "description": ""
+    "name": "Icon/info_16",
+    "description": "information, info, resource, help, guide, details, facts, ℹ️"
   },
   "4194:171": {
     "key": "2de225795fe4b3444fd297f0a3b0cbb85745557c",
     "name": "Icon/newsFeed_16",
-    "description": ""
+    "description": "newsfeed, news, articles, layout, 📰,  🗞"
   },
   "4068:2": {
     "key": "3eb4afe5129fe0ebbc2b1f1ee52a2d5d5089aa5a",
@@ -1877,246 +1712,231 @@
   "4194:172": {
     "key": "5d8a50aa2b4ddf2cd293f29d8ca0c443167c8cb0",
     "name": "Icon/newsFeed_24",
-    "description": ""
+    "description": "newsfeed, news, articles, layout, 📰,  🗞"
   },
   "4194:232": {
     "key": "4cd6279d4e95c485690e5117a04244ebefd31036",
     "name": "Icon/hamburger_24",
-    "description": ""
+    "description": "hamburger, menu, navigation, 🍔, 🥪"
   },
   "4194:233": {
     "key": "580278918e6156cf7c86a2a93343068ae95146c2",
     "name": "Icon/hamburger_16",
-    "description": ""
+    "description": "hamburger, menu, navigation, 🍔, 🥪"
   },
   "4194:234": {
     "key": "6b869403f3044a7e8b239c5df3d62ba2980a4962",
     "name": "Icon/hamburger_12",
-    "description": ""
+    "description": "hamburger, menu, navigation, 🍔, 🥪"
   },
   "4209:40": {
     "key": "27ccb5671b2446e3e3725ef3e2cff6732146dc75",
     "name": "Icon/closeCaption_24",
-    "description": ""
+    "description": "close caption, cc, subtitles, information, text, helper"
   },
   "4209:45": {
     "key": "cb14ca0e305482c63964cb22ee1a270e9aad8746",
     "name": "Icon/closeCaption_16",
-    "description": ""
+    "description": "close caption, cc, subtitles, information, text, helper"
   },
   "4209:50": {
     "key": "bbda429e20f1f5eed9c2df957a73199c3b096cc2",
     "name": "Icon/closeCaption_12",
-    "description": ""
+    "description": "close caption, cc, subtitles, information, text, helper"
   },
   "4209:106": {
     "key": "83f65a4301f721b84222be53fb45a900fbbb671f",
     "name": "Icon/gauge_24",
-    "description": ""
+    "description": "gauge, measure, size, scope, calculate, machine"
   },
   "4209:110": {
     "key": "aa6ffdb5306773622f28f120233f51d3d941fe21",
     "name": "Icon/gauge_16",
-    "description": ""
+    "description": "gauge, measure, size, scope, calculate, machine"
   },
   "4209:117": {
     "key": "4e1d02a8d0efcabc6110a1edd1f033f35074a256",
     "name": "Icon/gauge_12",
-    "description": ""
+    "description": "gauge, measure, size, scope, calculate, machine"
   },
   "4209:360": {
     "key": "2afd44c4ba3ddb76c919703eee4f317fc67fd226",
     "name": "Icon/expand_24",
-    "description": ""
+    "description": "expand all, full, arrow, outwards"
   },
   "4209:361": {
     "key": "895ada2ca3e95ae22a91c571aca747c5541054f5",
     "name": "Icon/expand_16",
-    "description": ""
+    "description": "expand all, full, arrow, outwards"
   },
   "4209:362": {
     "key": "66c091409474b1a55d7cffca558672a643495ae0",
     "name": "Icon/expand_12",
-    "description": ""
+    "description": "expand all, full, arrow, outwards"
   },
   "4209:363": {
     "key": "46a31277a1cd3fbd7145722226c30764710cda7c",
     "name": "Icon/collapse_24",
-    "description": ""
+    "description": "collapse, shrink, arrow, lessen"
   },
   "4209:364": {
     "key": "38cd949b8ba949252d474c820ea8ef485d589777",
     "name": "Icon/collapse_16",
-    "description": ""
+    "description": "collapse, shrink, arrow, lessen"
   },
   "4209:365": {
     "key": "7b2829428ac079fc4d531cac9d0231579b9fb515",
     "name": "Icon/collapse_12",
-    "description": ""
+    "description": "collapse, shrink, arrow, lessen"
   },
   "4233:166": {
     "key": "012cf59024e86cb24c7db72afbccc478e5acfd2a",
     "name": "Icon/pencil_16",
-    "description": ""
+    "description": "pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️"
   },
   "4233:167": {
     "key": "57e5589052ba21e06bfa86e6d9c829870315f11b",
     "name": "Icon/pencil_24",
-    "description": ""
+    "description": "pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️"
   },
   "4233:233": {
     "key": "05d0ce277aa7e6b20a67f469e6d54490366c07ef",
     "name": "Icon/blockchain_16",
-    "description": ""
+    "description": "blockchain, peer to peer, network"
   },
   "4233:232": {
     "key": "72ff98e7416b79ce820fe556dc84fc22a1f76cdd",
     "name": "Icon/blockchain_24",
-    "description": ""
+    "description": "blockchain, peer to peer, network"
   },
   "4233:255": {
     "key": "9091f64c9392707ef94bffc32a36e7adfa773bc2",
     "name": "Icon/gavel_16",
-    "description": ""
+    "description": "gavel, hammer, mallet, attention, 🧑‍⚖️, 👨‍⚖️, 👩‍⚖️"
   },
   "4233:256": {
     "key": "c60421186976d41c0d9458181626ded17b6b773c",
     "name": "Icon/gavel_24",
-    "description": ""
+    "description": "gavel, hammer, mallet, attention, 🧑‍⚖️, 👨‍⚖️, 👩‍⚖️"
   },
   "4234:205": {
     "key": "7f049b47e49e0ee058c73d8abc5521136b0de916",
     "name": "Icon/questionMark_16",
-    "description": "graph"
+    "description": "question, examine, curious, unknown, ❓, 🙋‍♀️, 🙋‍♂️"
   },
   "4234:204": {
     "key": "b90df27123e24adcbb06c6b70470dc6a5ad53377",
     "name": "Icon/questionMark_24",
-    "description": ""
+    "description": "question, examine, curious, unknown, ❓, 🙋‍♀️, 🙋‍♂️"
   },
   "4234:228": {
     "key": "62963aa1fce4bcb7b680734f97a86b6ddd43aafe",
     "name": "Icon/giftBox_24",
-    "description": ""
+    "description": "gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳"
   },
   "4234:229": {
     "key": "7dacbd4e97b6d3ada296240a00222391ca18a5d2",
     "name": "Icon/giftBox_16",
-    "description": ""
+    "description": "gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳"
   },
   "4234:251": {
     "key": "5a6f8c2e8cf1c246671dd986f6c061b561fd62f6",
     "name": "Icon/marketCap_24",
-    "description": ""
+    "description": "market cap, capitalization, stock market, shares, share price, traded, 📈, 📉"
   },
   "4234:303": {
     "key": "98eec596fee58a453c24557cacc0c48e56885981",
     "name": "Icon/externalLink_24",
-    "description": ""
+    "description": "external link, link out, tab, hyperlink, link"
   },
   "4234:433": {
     "key": "4ca09494429f11565fa289a395c7e55768aa8992",
-    "name": "Icon/tradingRemove_16_light",
-    "description": ""
+    "name": "Icon/circleCross_16",
+    "description": "circle, cross, x, check, decline, remove, rejection, removal, delete, unsuccessful, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   },
   "4234:432": {
     "key": "1a2acff1c8e55f7e608706d798eb0a7e9ba8e5b8",
-    "name": "Icon/tradingRemove_24_light",
-    "description": ""
-  },
-  "4251:56": {
-    "key": "3b44424187a24993f44301753a9897f4ad3debcb",
-    "name": "Icon/pencil_24_light",
-    "description": ""
-  },
-  "4251:57": {
-    "key": "84d2f041dbe3ebd4188fbf8a3b7b93db79ebe6a3",
-    "name": "Icon/pencil_16_light",
-    "description": ""
-  },
-  "4251:98": {
-    "key": "cdcc2099ebaa51975c1c659a1f6297cf1a450a6f",
-    "name": "Icon/visible_24_light",
-    "description": ""
-  },
-  "4251:99": {
-    "key": "a7f94a39a8062f5302f88155db59bf806d8decaa",
-    "name": "Icon/visible_16_light",
-    "description": ""
-  },
-  "4251:207": {
-    "key": "952e52d1b1759b78c0d2e79da8aa41e16139ba01",
-    "name": "Icon/notVisible_16_light",
-    "description": ""
-  },
-  "4251:206": {
-    "key": "29f5044e0a01eb0cf7082d2aa8521fab50080f1a",
-    "name": "Icon/notVisible_24_light",
-    "description": ""
-  },
-  "4251:231": {
-    "key": "b7c1b0c3bd99e12a750d57559c3e8ea0c80beb89",
-    "name": "Icon/giftBox_24_light",
-    "description": ""
-  },
-  "4251:232": {
-    "key": "aa2ffbc2dbdfc5cdac2d401df3a87c493a727e79",
-    "name": "Icon/giftBox_16_light",
-    "description": ""
+    "name": "Icon/circleCross_24",
+    "description": "circle, cross, x, check, decline, remove, rejection, removal, delete, unsuccessful, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   },
   "4251:259": {
     "key": "43b2647fc2de010b6d38c6808e8f85271a5b9083",
-    "name": "Icon/tradingChartLine_24_light",
-    "description": ""
+    "name": "Icon/chartLine_24",
+    "description": "chart, line, trading, activity, trading, spark, line, 📈, 📉"
   },
   "4251:260": {
     "key": "0b40c961e878b72be8e710fa97c35f990443f217",
-    "name": "Icon/tradingChartLine_16_light",
-    "description": ""
+    "name": "Icon/chartLine_16",
+    "description": "chart, line, trading, activity, trading, spark, line, 📈, 📉"
   },
-  "4260:8": {
-    "key": "b4a9a4fad26c8d7317fd21c3a8f4bb4b2ef1791d",
-    "name": "Icon/marketCap_24_light",
-    "description": ""
+  "4608:0": {
+    "key": "c311a55234eaa72677240cda8acf7de13c07dfde",
+    "name": "Icon/chartCandles_24",
+    "description": "chart, trading, candles, graph, numbers, data, visualization, 📈, 📉, 📊"
+  },
+  "4608:1": {
+    "key": "b0d511a33ed480efd61040f1b04a32d0c89f88c9",
+    "name": "Icon/chartCandles_16",
+    "description": "chart, trading, candles, graph, numbers, data, visualization, 📈, 📉, 📊"
   },
   "4260:31": {
     "key": "88f0ce955337db693dfc911661437d3407cde026",
-    "name": "Icon/clock_24_light",
-    "description": ""
+    "name": "Icon/clock_24",
+    "description": "clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️"
   },
   "4260:105": {
     "key": "58cdf684b5391c0e366e1308f1d874dcc93632a7",
     "name": "Icon/pay_12",
-    "description": ""
+    "description": "pay, crypto, finance, assets, coin, payment"
   },
   "4260:104": {
     "key": "ea4b262fc70a8048442455b05577cf367c95497c",
     "name": "Icon/pay_16",
-    "description": ""
+    "description": "pay, crypto, finance, assets, coin, payment"
   },
   "4260:103": {
     "key": "7903a914324fb1ff81ff15d160ced2fb38c5502a",
     "name": "Icon/pay_24",
-    "description": ""
+    "description": "pay, crypto, finance, assets, coin, payment"
   },
   "4260:153": {
     "key": "169582be812820223e6476724fd8ea02f44a0142",
-    "name": "Icon/chartPieCircle_24_heavy",
+    "name": "Icon/chartPieCircle_24",
+    "description": "chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧"
+  },
+  "4580:11": {
+    "key": "2e719838cbf57c1c8c5d1ad382afa92e45322e11",
+    "name": "Icon/chartPieCircle_16",
     "description": ""
   },
   "4482:55": {
     "key": "46b4f4373e1dcfdcfecd85d7b70f6b4ea00128ee",
-    "name": "Icon/share_16_heavy",
-    "description": ""
+    "name": "Icon/share_16",
+    "description": "share, send, connect"
   },
   "4482:54": {
     "key": "faa5f16d3cf875d1854bfb37c0e113a7e1e61a86",
-    "name": "Icon/share_24_heavy",
-    "description": ""
+    "name": "Icon/share_24",
+    "description": "share, send, connect"
   },
   "4482:58": {
     "key": "533856697dd68f4aa751447a8cedc11bb3d5acec",
-    "name": "Icon/share_12_heavy",
+    "name": "Icon/share_12",
+    "description": "share, send, connect"
+  },
+  "4580:3": {
+    "key": "234afcf5077656b48a42b6bfb758c4d08427127d",
+    "name": "Icon/filter_8",
+    "description": "filter, organize, sort, type, classification, kind, category, group"
+  },
+  "4580:1": {
+    "key": "6fb6a38590f4e48886e74ad0ae798ece0caf0a49",
+    "name": "Icon/filter_24",
+    "description": "filter, organize, sort, type, classification, kind, category, group"
+  },
+  "4580:13": {
+    "key": "84b215b589ab26374f222279af886a6f6adeef44",
+    "name": "Icon/filter_16",
     "description": ""
   }
 }

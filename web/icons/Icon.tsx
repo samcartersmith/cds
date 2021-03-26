@@ -28,7 +28,8 @@ export const Icon = memo(
       const role = title ? 'img' : 'presentation';
       const { iconSize, wrapperSize } = useIconSize(size, bordered);
       const { paths, viewBox } = useIconPath(iconSize, name);
-      const paletteColor = usePalette()[color];
+      const palette = usePalette();
+      const paletteColor = color === 'currentColor' ? color : palette[color];
       const finalColor = dangerouslySetColor ?? paletteColor;
 
       return (

@@ -6,7 +6,7 @@ import { Animated, Pressable } from 'react-native';
 
 import { IconButton } from '../IconButton';
 
-const name = 'allTimeHighHeavy';
+const name = 'allTimeHigh';
 
 describe('IconButton', () => {
   it('renders an animated view', () => {
@@ -25,7 +25,7 @@ describe('IconButton', () => {
     const spy = jest.fn();
     const result = render(<IconButton onPress={spy} name={name} accessibilityLabel={name} />);
 
-    fireEvent.press(result.getByLabelText('allTimeHighHeavy'));
+    fireEvent.press(result.getByLabelText(name));
 
     expect(spy).toHaveBeenCalled();
   });

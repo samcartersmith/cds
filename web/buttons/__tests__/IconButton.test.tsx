@@ -4,7 +4,7 @@ import { renderA11y } from '@utils/jest/renderA11y';
 import { IconButton } from '../IconButton';
 
 describe('IconButton', () => {
-  const name = 'arrowsHorizontalHeavy';
+  const name = 'arrowsHorizontal';
   it('passes accessibility', async () => {
     expect(
       await renderA11y(<IconButton name={name} accessibilityLabel={name} />)

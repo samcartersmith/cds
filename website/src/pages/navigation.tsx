@@ -56,7 +56,7 @@ export const NavigationExample: React.FC = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="backspaceLight" />
+            <IconButton name="arrowLeft" />
           </NavigationBarControls>
         }
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
@@ -72,10 +72,10 @@ export const NavigationExample: React.FC = () => {
         }
         actions={
           <NavigationBarActions>
-            <CDSIconButton onPress={toggleSidebarSections} name="gearHeavy" />
+            <CDSIconButton onPress={toggleSidebarSections} name="gear" />
             <CDSIconButton onPress={toggleDisplayTitle} name="expand" />
-            <CDSIconButton onPress={toggleTabs} name="listHeavy" />
-            <CDSIconButton onPress={toggleDarkMode} name="apiHeavy" />
+            <CDSIconButton onPress={toggleTabs} name="list" />
+            <CDSIconButton onPress={toggleDarkMode} name="api" />
           </NavigationBarActions>
         }
       />
@@ -93,19 +93,19 @@ export const NavigationExample: React.FC = () => {
       <>
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="chartPieCircleHeavy"
+          icon="chartPieCircle"
           label="Overview"
           active
         />
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="apiHeavy"
+          icon="api"
           label="Principles"
           badge={3}
         />
         <SidebarItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="arrowsHorizontalHeavy"
+          icon="arrowsHorizontal"
           label="Getting started"
         />
         <SidebarItem
@@ -128,7 +128,7 @@ export const NavigationExample: React.FC = () => {
         <SidebarSection title="Foundation">
           <SidebarItem
             renderContainer={props => <Link {...props} to={defaultRoute} />}
-            icon="bankHeavy"
+            icon="bank"
             label="Overview"
           />
           <SidebarItem
@@ -138,12 +138,12 @@ export const NavigationExample: React.FC = () => {
           />
           <SidebarItem
             renderContainer={props => <Link {...props} to={defaultRoute} />}
-            icon="documentHeavy"
+            icon="document"
             label="Typography"
           />
           <SidebarItem
             renderContainer={props => <Link {...props} to={defaultRoute} />}
-            icon="emailHeavy"
+            icon="email"
             label="Illustration"
           />
         </SidebarSection>

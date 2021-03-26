@@ -1,0 +1,63 @@
+#!/bin/bash
+files=(
+    eng/assethub/frontend/shared/src/components/Collapse/Collapse.tsx
+    eng/assethub/frontend/shared/src/components/Inputs/FileUpload/FileUpload.tsx
+    eng/assethub/frontend/shared/src/components/Inputs/Select/Select.tsx
+    eng/assethub/frontend/www/src/components/Question/impl/PersonQuestion.tsx
+    eng/assethub/frontend/www/src/pages/AssetPage.tsx
+    eng/prime/component-library/web/Dialog/Dialog.tsx
+    eng/prime/component-library/web/DualIcon/DualIcon.stories.mdx
+    eng/prime/component-library/web/DualIcon/DualIcon.tsx
+    eng/prime/component-library/web/IconButton/IconButton.tsx
+    eng/prime/component-library/web/IconButton/IconButtonProps.ts
+    eng/prime/component-library/web/Toast/Toast.tsx
+    eng/prime/frontend/src/modals/activityResultFlow/ActivityActionErrorStep.tsx
+    eng/prime/frontend/src/modals/addressBookFlow/SelectAddressStep.tsx
+    eng/prime/frontend/src/modals/expandAddressFlow/ExpandAddressStep.tsx
+    eng/prime/frontend/src/modals/portfoliosFlow/SelectPortfolioStep.tsx
+    eng/prime/frontend/src/modals/selectWalletFlow/SelectWalletStep.tsx
+    eng/prime/frontend/src/modals/stakingFlow/SelectValidatorStep.tsx
+    eng/prime/frontend/src/modals/transferFlow/CryptoDepositStep.tsx
+    eng/prime/frontend/src/modals/transferFlow/components/DisplayWallet.tsx
+    eng/prime/frontend/src/modals/transferFlow/components/HotWalletAddress.tsx
+    eng/prime/frontend/src/modals/transferFlow/components/Table.tsx
+    eng/prime/frontend/src/modals/transferFlow/components/TransferMethodItem.tsx
+    eng/prime/frontend/src/pages/layout/header/PendingApprovalFlyout.tsx
+    eng/prime/frontend/src/pages/layout/header/PendingApprovalNotifications.tsx
+    eng/prime/frontend/src/pages/layout/header/orgSwitcher/OrgSwitcherSidebar.tsx
+    eng/prime/frontend/src/pages/layout/header/orgSwitcher/UserHierarchyLists.tsx
+    eng/prime/frontend/src/pages/layout/header/orgSwitcher/UserHierarchySearchResults.tsx
+    eng/prime/frontend/src/pages/settings/banking/LinkedAccountsTable.tsx
+    eng/prime/frontend/src/pages/trade/charts/ChartError.tsx
+    eng/prime/frontend/src/pages/trade/charts/ChartsHeaderToolbar.tsx
+    eng/prime/frontend/src/pages/trade/charts/candles/ChartIQCandlesChart.tsx
+    eng/prime/frontend/src/pages/trade/charts/candles/ChartIQDrawingToolbar.tsx
+    eng/prime/frontend/src/pages/trade/charts/candles/ChartTags.tsx
+    eng/prime/frontend/src/pages/trade/charts/depth/ChartIQDepthChart.tsx
+    eng/prime/frontend/src/pages/trade/charts/depth/DepthZoomControls.tsx
+    eng/prime/frontend/src/pages/trade/ladder/LadderFooter/LadderFooter.tsx
+    eng/prime/frontend/src/pages/trade/orderForm/OrderConfirmationOverlay.tsx
+    eng/prime/frontend/src/pages/asset/WalletsTable.tsx
+    eng/prime/frontend/src/pages/asset/overview/TradableBalanceTable.tsx
+    eng/prime/frontend/src/pages/layout/header/orgSwitcher/OrgSwitcherHeader.tsx
+    eng/prime/frontend/src/pages/settings/ApiKeyDetailHeader.tsx
+    eng/prime/frontend/src/pages/settings/addressBook/AddressBookTable.tsx
+    eng/prime/frontend/src/pages/settings/apis/pendingKeysTable/PendingKeysTable.tsx
+    eng/prime/frontend/src/pages/settings/permissions/Permissions.tsx
+    eng/prime/legacyCustody/visualComponents/Breadcrumbs/Breadcrumbs.tsx
+    eng/prime/legacyCustody/visualComponents/Select/RawSelect.tsx
+    eng/prime/legacyCustody/visualComponents/Table/PaginationButtons.tsx
+    eng/prime/legacyCustody/components/Portfolio/Header.tsx
+    eng/prime/admin-ui/src/routes/InvestmentVehicles/InvestmentVehicleBanking/InvestmentVehicleManageLinkedAccountsDialog.tsx
+    eng/prime/mobile/src/screens/consensus/ActivityDetails.tsx
+    eng/commerce/frontend/src/components/Navigation/Navigation.tsx
+    eng/commerce/frontend/src/components/Navigation/ProfileButton.tsx
+    eng/shared/design-system/website/src/pages/navigation.tsx
+)
+
+for u in "${files[@]}"
+do
+    echo "Renaming file: $u"
+    # Prints log to iconMigration.txt for monitoring purposes 
+    npx jscodeshift --extensions=js,jsx,ts,tsx --parser=tsx --transform=eng/shared/design-system/codemod/iconNameMigration.ts $u 2>&1 | tee eng/shared/design-system/codemod/iconMigration.txt
+done

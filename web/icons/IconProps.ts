@@ -4,7 +4,7 @@ import { BadgeProps } from './Badge';
 
 export interface IconProps extends IconBaseProps {
   /** Color of the icon when used as a foreground. */
-  color?: PaletteForeground;
+  color?: PaletteForeground | 'currentColor';
   /**
    * Give the icon a description. It will show up in a tooltip after hovering over the icon for 3s.
    * This is a default browser feature and very helpful to users to understand what the icon does.

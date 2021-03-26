@@ -7,10 +7,10 @@ import { Icon } from './Icon';
 type CurrencyIcon = Record<string, IconName>;
 
 const currencyIcon: CurrencyIcon = {
-  USD: 'cashUSDHeavy',
-  JPY: 'cashJPYHeavy',
-  EUR: 'cashEURHeavy',
-  GBP: 'cashGBPHeavy',
+  USD: 'cashUSD',
+  JPY: 'cashJPY',
+  EUR: 'cashEUR',
+  GBP: 'cashGBP',
 };
 
 interface FiatIconProps {

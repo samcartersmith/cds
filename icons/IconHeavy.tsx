@@ -5,6 +5,10 @@ import { pascalCase } from '@cbhq/cds-utils';
 import type { IconProps } from './props';
 import { useIconPixelSize } from './useIconPixelSize';
 
+/**
+ * IconHeavy is deprecated, please use Icon
+ * @deprecated
+ */
 export const IconHeavy: React.FC<IconProps> = memo(function IconHeavy({
   size,
   kind,
