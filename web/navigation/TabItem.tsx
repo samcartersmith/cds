@@ -12,19 +12,16 @@ export interface TabItemProps extends TabItemBaseProps, InteractableProps<HTMLBu
   active?: boolean;
 }
 
-export const TabItem = memo(({ label, active, onPress, onHover }: TabItemProps) => {
+export const TabItem = memo(({ label, active, onPress }: TabItemProps) => {
   const colorAlias = active ? 'primaryWash' : 'secondary';
-  const { props, className, style } = useInteractable({
+  const { className, style } = useInteractable({
     backgroundColor: colorAlias,
     borderColor: colorAlias,
     borderRadius: 'pill',
-    scaleOnPress: true,
-    onHover,
-    onPress,
   });
 
   return (
-    <button role="tab" {...props} className={className} style={style}>
+    <button role="tab" type="button" className={className} style={style} onClick={onPress}>
       <TextLabel1 spacing={1} as="p" color={active ? 'primary' : 'foreground'}>
         {label}
       </TextLabel1>

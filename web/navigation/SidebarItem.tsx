@@ -26,7 +26,7 @@ export interface SidebarItemProps extends InteractableProps<HTMLAnchorElement> {
 }
 
 export const SidebarItem = memo(
-  ({ renderContainer, active, icon, label, badge, onHover, onPress }: SidebarItemProps) => {
+  ({ renderContainer, active, icon, label, badge, onPress }: SidebarItemProps) => {
     const sidebarLayout = useSidebarLayout();
     const isExpanded = sidebarLayout === 'expanded';
     const color = active ? 'primary' : 'foreground';
@@ -38,12 +38,10 @@ export const SidebarItem = memo(
       spacing: 1,
     });
 
-    const { props, className, style } = useInteractable({
+    const { className, style } = useInteractable({
       backgroundColor: 'secondary',
       borderColor: 'secondary',
       borderRadius: 'standard',
-      onHover,
-      onPress,
     });
 
     const sidebarContent = (
@@ -87,10 +85,10 @@ export const SidebarItem = memo(
             const enhancedProps: React.HTMLAttributes<HTMLAnchorElement> = mergeProps(
               tooltipProps,
               {
-                ...props,
                 style,
                 className: cx(flexStyles, spacingStyles, sidebarItemStyles, className),
                 children: sidebarContent,
+                onClick: onPress,
                 // https://www.aditus.io/aria/aria-current/
                 ...(active ? ({ 'aria-current': 'page' } as const) : emptyObject),
               }

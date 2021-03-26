@@ -2,7 +2,6 @@ import React, { forwardRef } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { mergeProps } from '@cbhq/cds-common/utils/mergeProps';
 import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit/Button';
 
@@ -24,14 +23,13 @@ export const Button = forwardRef(
       block,
       children,
       compact,
-      disabled = false,
-      loading = false,
-      onHover,
+      disabled,
+      loading,
       onPress,
       testID,
       type = 'button',
       variant = 'primary',
-      ...restProps
+      ...props
     }: ButtonProps,
     ref: React.Ref<HTMLButtonElement>
   ) => {
@@ -40,19 +38,17 @@ export const Button = forwardRef(
       spacingHorizontal: compact ? 2 : 3,
       spacingVertical: compact ? 1 : 2,
     });
-    const { color, ...variantAliases } = useButtonVariant(variant);
-    const { className, props, style } = useInteractable<HTMLButtonElement>({
-      ...variantAliases,
+    const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+    const { className, style } = useInteractable({
+      backgroundColor,
+      borderColor,
       borderRadius: compact ? 'compact' : 'standard',
-      isDisabled,
-      onHover,
-      onPress,
-      scaleOnPress: true,
+      disabled: isDisabled,
     });
 
     return (
       <ReakitButton
-        {...mergeProps(props, restProps)}
+        {...props}
         aria-label={accessibilityLabel}
         data-test-id={testID}
         className={cx(
@@ -67,6 +63,7 @@ export const Button = forwardRef(
         ref={ref}
         style={style}
         type={type}
+        onClick={onPress}
       >
         <TextHeadline as="span" color={color}>
           {children}

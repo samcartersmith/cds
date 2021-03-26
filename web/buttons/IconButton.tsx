@@ -20,7 +20,6 @@ export const IconButton = forwardRef(
       accessibilityLabel,
       disabled = false,
       name,
-      onHover,
       onPress,
       renderContainer,
       testID,
@@ -32,20 +31,15 @@ export const IconButton = forwardRef(
       alignItems: 'center',
       justifyContent: 'center',
     });
-
-    const { color, ...variantAliases } = useButtonVariant(variant);
-
-    const { props, className, style } = useInteractable({
-      ...variantAliases,
+    const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+    const { className, style } = useInteractable({
+      backgroundColor,
+      borderColor,
       borderRadius: 'round',
-      scaleOnPress: true,
-      isDisabled: disabled,
-      onHover,
-      onPress,
+      disabled,
     });
 
     const enhancedProps = {
-      ...props,
       'aria-label': accessibilityLabel,
       'data-test-id': testID,
       style: {
@@ -56,6 +50,7 @@ export const IconButton = forwardRef(
       children: <Icon name={name} size="s" color={color} />,
       disabled,
       ref,
+      onClick: onPress,
     };
 
     return renderContainer ? (

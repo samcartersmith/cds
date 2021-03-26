@@ -39,9 +39,9 @@ export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface CSSProperties extends PaletteCssVariable {
-    // TODO: remove when we migrate to new useInteractable in buttons folder
-    '--interactable-opacity'?: number;
-    '--interactable-background'?: string;
+    '--interactable-opacity-hovered'?: number;
+    '--interactable-opacity-pressed'?: number;
+    '--interactable-overlay'?: string; // Spectrum alias: blue40
     '--interactable-underlay'?: CssVariableFn<PaletteAlias>;
   }
 }
