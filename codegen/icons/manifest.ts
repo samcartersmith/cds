@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58109,
+  lastUnicode: 58114,
   unicodeMap: {
     cashUSD: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBP: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -150,5 +150,6 @@ export const manifest = {
       '32': 'uE2F7',
     },
     filter: { '8': 'uE2F8', '12': 'uE2F9', '16': 'uE2FA', '24': 'uE2FB', '32': 'uE2FC' },
+    backArrow: { '8': 'uE2FD', '12': 'uE2FE', '16': 'uE2FF', '24': 'uE300', '32': 'uE301' },
   },
 };

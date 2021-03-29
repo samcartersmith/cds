@@ -15,6 +15,7 @@ export type IconName =
   | 'arrowsVertical'
   | 'arrowUp'
   | 'average'
+  | 'backArrow'
   | 'bank'
   | 'bell'
   | 'blockchain'

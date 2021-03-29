@@ -1531,17 +1531,17 @@
   },
   "2375:11978": {
     "key": "dbae821f0855da9c08f31c6a8496141b93e4bf9f",
-    "name": "Icon/average_24",
+    "name": "Icon/continuous_24",
     "description": "average, trading, math, graph, mean, median, midpoint, center, norm, standard"
   },
   "2375:11963": {
     "key": "7d12ad11db9d2b155edf7949365e2105e2e45535",
-    "name": "Icon/average_16",
+    "name": "Icon/continuous_16",
     "description": "average, trading, math, graph, mean, median, midpoint, center, norm, standard"
   },
   "2375:11962": {
     "key": "d33eae8424d98a29f1fbed358fa2b836a3c8e590",
-    "name": "Icon/average_12",
+    "name": "Icon/continuous_12",
     "description": "average, trading, math, graph, mean, median, midpoint, center, norm, standard"
   },
   "2375:11961": {
@@ -1576,17 +1576,17 @@
   },
   "2375:11968": {
     "key": "7e7b92a950bc42394b9bfd5d3c634937fe58cf78",
-    "name": "Icon/continuous_24",
+    "name": "Icon/average_24",
     "description": "continuous, trading, transactions, orders"
   },
   "2375:11965": {
     "key": "a34e0c5c9fdb807d80850e17bd20246b6342f7da",
-    "name": "Icon/continuous_16",
+    "name": "Icon/average_16",
     "description": "continuous, trading, transactions, orders"
   },
   "2375:11966": {
     "key": "a4f164567af689b75ab0109db475d704db7a779d",
-    "name": "Icon/continuous_12",
+    "name": "Icon/average_12",
     "description": "continuous, trading, transactions, orders"
   },
   "2375:11958": {
@@ -1938,5 +1938,20 @@
     "key": "84b215b589ab26374f222279af886a6f6adeef44",
     "name": "Icon/filter_16",
     "description": ""
+  },
+  "4746:176": {
+    "key": "e046e6d1924502e5a96e021e333d3b3689192fbd",
+    "name": "Icon/backArrow_24",
+    "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
+  },
+  "4746:180": {
+    "key": "6d9e5086fd0f843ed4496052829d4a396119de72",
+    "name": "Icon/backArrow_12",
+    "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
+  },
+  "4746:177": {
+    "key": "edc95375ce82eb2022ba2cf5979f095a7ffdb61c",
+    "name": "Icon/backArrow_16",
+    "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
   }
 }

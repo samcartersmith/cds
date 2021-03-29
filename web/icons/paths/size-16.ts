@@ -51,10 +51,10 @@ export const arrowsVertical = {
 
 export const arrowUp = { paths: ['M8 0L2 8h4.25v8h3.5V8H14L8 0z'], viewBox: '0 0 16 16' };
 
-export const average = {
-  paths: [
-    'M4.12 12.57L.25 8.71l1.42-1.42L3.8 9.43l4-6 4.05 4.05 2.31-3.08 1.6 1.2-3.69 4.92-3.95-3.95-4 6z',
-  ],
+export const average = { paths: ['M2 3H0v10h2V9h12v4h2V3h-2v4H2V3z'], viewBox: '0 0 16 16' };
+
+export const backArrow = {
+  paths: ['M16 7H3.83l3.28-3.28L5.7 2.31 0 8l5.7 5.69 1.41-1.41L3.83 9H16V7z'],
   viewBox: '0 0 16 16',
 };
 
@@ -251,7 +251,12 @@ export const collapse = {
   viewBox: '0 0 16 16',
 };
 
-export const continuous = { paths: ['M2 3H0v10h2V9h12v4h2V3h-2v4H2V3z'], viewBox: '0 0 16 16' };
+export const continuous = {
+  paths: [
+    'M4.12 12.57L.25 8.71l1.42-1.42L3.8 9.43l4-6 4.05 4.05 2.31-3.08 1.6 1.2-3.69 4.92-3.95-3.95-4 6z',
+  ],
+  viewBox: '0 0 16 16',
+};
 
 export const convert = {
   paths: [
@@ -656,7 +661,7 @@ export const starActive = {
 
 export const starInactive = {
   paths: [
-    'M9.89 6.2L8 .39 6.11 6.2H0l4.94 3.6-1.88 5.81L8 12.02l4.94 3.59-1.88-5.81L16 6.2H9.89zm.584 1.8H8.583L8 6.209 7.417 8h-1.89l1.527 1.113-.58 1.79L8 9.795l1.525 1.108-.58-1.79L10.475 8z',
+    'M9.89 6.2L8 .39 6.11 6.2H0l4.94 3.6-1.88 5.81L8 12.02l4.94 3.59-1.88-5.81L16 6.2H9.89zm.584 1.8L8.946 9.113l.58 1.79L8 9.795l-1.525 1.108.58-1.79L5.525 8h1.891L8 6.209 8.583 8h1.89z',
   ],
   viewBox: '0 0 16 16',
 };

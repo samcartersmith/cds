@@ -15,6 +15,7 @@ export const iconNames = [
   'arrowsVertical',
   'arrowUp',
   'average',
+  'backArrow',
   'bank',
   'bell',
   'blockchain',
