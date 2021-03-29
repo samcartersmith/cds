@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.1 (3/29/2021, 04:03 PM PST)
+
+#### 🐞 Fixes
+
+- outline icons @katherinemartinez [#16206](https://github.cbhq.net/mono/repo/pull/16206)
+
 ## 0.5.0 (3/26/2021, 10:40 AM PST)
 
 #### 💥 Breaking

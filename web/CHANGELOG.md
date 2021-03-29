@@ -6,6 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.0 (3/29/2021, 04:03 PM PST)
+
+#### 💥 Breaking
+
+- Delete old icons package. @miles-johnson [#16048](https://github.cbhq.net/mono/repo/pull/16048)
+
+#### 🚀 Updates
+
+- Move to CSS only for interactable hover/pressed states. @miles-johnson [#15932](https://github.cbhq.net/mono/repo/pull/15932)
+
+#### 🐞 Fixes
+
+- outline icons @katherinemartinez [#16206](https://github.cbhq.net/mono/repo/pull/16206)
+
 ## 0.6.0 (3/26/2021, 10:40 AM PST)
 
 #### 💥 Breaking
