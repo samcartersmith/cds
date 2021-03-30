@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { TextBaseProps, Typography, PaletteForeground, useScale } from '@cbhq/cds-common';
+import { TextBaseProps, Typography, PaletteForeground } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';
 import {
   Animated,
@@ -13,8 +13,8 @@ import {
 
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import * as scales from '../styles/scale';
 import { OmitStyle, DangerouslySetStyle } from '../types';
+import { useTypographyStyles } from './useTypographyStyles';
 
 export type { Typography };
 
@@ -76,7 +76,6 @@ export const createText = (name: Typography) => {
     // RN Text props
     ...props
   }) => {
-    const scale = useScale();
     const palette = usePalette();
 
     const textAlign = useMemo(() => {
@@ -89,7 +88,7 @@ export const createText = (name: Typography) => {
       return align;
     }, [align]);
 
-    const textStyles = scales[scale].typography[name];
+    const textStyles = useTypographyStyles(name);
 
     // TODO: Update React Native to not override this and remove deprecatedLineHeight
     const lineHeight = useMemo(() => {
@@ -119,15 +118,22 @@ export const createText = (name: Typography) => {
       ellipsizeMode: ellipsize,
     };
 
+    // Only allow text transform if not already bundled in text styles for a given scale
+    const textTransform = useMemo(() => {
+      if ('textTransform' in textStyles) return;
+      if (transform) {
+        return { textTransform: transform };
+      }
+    }, [textStyles, transform]);
+
     const style = useMemo(
       () => [
         spacingStyles,
-        scales[scale].typography[name],
         textStyles,
+        textTransform,
         {
           color: palette[color],
           textAlign,
-          textTransform: transform,
           lineHeight,
         },
         tabularNumbers && styles.tabularNumbers,
@@ -136,13 +142,12 @@ export const createText = (name: Typography) => {
       ],
       [
         spacingStyles,
-        scale,
         textStyles,
-        lineHeight,
+        textTransform,
         palette,
         color,
         textAlign,
-        transform,
+        lineHeight,
         tabularNumbers,
         underline,
         dangerouslySetStyle,

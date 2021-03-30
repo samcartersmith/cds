@@ -1,9 +1,9 @@
-import type { ReactChild, ReactFragment } from 'react';
+import type { ReactNode } from 'react';
 
 import { SpacingProps } from './SpacingProps';
 
 export interface TextBaseProps extends SpacingProps {
-  children?: ReactChild | ReactFragment;
+  children?: ReactNode;
   /**
    * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) | [React Native docs](https://reactnative.dev/docs/text-style-props#textalign)
