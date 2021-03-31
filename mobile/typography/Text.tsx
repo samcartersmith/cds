@@ -135,6 +135,7 @@ export const createText = (name: Typography) => {
           color: palette[color],
           textAlign,
           lineHeight,
+          overflow: ellipsize ? ('hidden' as const) : ('visible' as const),
         },
         tabularNumbers && styles.tabularNumbers,
         underline && styles.underline,
@@ -151,6 +152,7 @@ export const createText = (name: Typography) => {
         tabularNumbers,
         underline,
         dangerouslySetStyle,
+        ellipsize,
       ]
     );
 
