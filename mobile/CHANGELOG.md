@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.2 (3/31/2021, 10:30 AM PST)
+
+#### 🐞 Fixes
+
+- uppercase text styles in cds mobile @katherinemartinez [#16192](https://github.cbhq.net/mono/repo/pull/16192)
+
+#### 📘 Misc
+
+- default to light caret icons and remove misspelled "indentity". @jennifer-liu [#16421](https://github.cbhq.net/mono/repo/pull/16421)
+
 ## 0.7.1 (3/29/2021, 04:03 PM PST)
 
 #### 🐞 Fixes
