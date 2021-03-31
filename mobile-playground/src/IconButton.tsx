@@ -30,8 +30,13 @@ const IconButtonScreen = () => {
 
       <Example title="States" inline>
         <Box flexDirection="row" alignItems="center" justifyContent="space-between" width={350}>
+          <IconButton accessibilityLabel={iconName} disabled name={iconName} variant="primary" />
+          <TextBody>Disabled primary</TextBody>
+        </Box>
+
+        <Box flexDirection="row" alignItems="center" justifyContent="space-between" width={350}>
           <IconButton accessibilityLabel={iconName} disabled name={iconName} />
-          <TextBody>Disabled</TextBody>
+          <TextBody>Disabled secondary</TextBody>
         </Box>
       </Example>
 

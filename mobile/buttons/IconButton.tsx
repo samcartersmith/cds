@@ -4,31 +4,20 @@ import { IconButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
-import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet, View } from 'react-native';
 
-import { PressableHighlight } from '../buttons/PressableHighlight';
+import { PressableHighlight, InteractableProps } from '../buttons/PressableHighlight';
 import { usePalette } from '../hooks/usePalette';
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { Icon } from '../icons/Icon';
-import { HapticFeedbackType } from '../types';
 
-export interface IconButtonProps extends IconButtonBaseProps {
-  /**
-   * Haptic feedback to trigger when being pressed.
-   * @default none
-   */
-  feedback?: HapticFeedbackType;
-  /** Event fired when the button is pressed. */
-  onPress?: (event: GestureResponderEvent) => void;
-  /** Event fired when the button is held for a long period and pressed. */
-  onLongPress?: (event: GestureResponderEvent) => void;
-}
+export interface IconButtonProps extends IconButtonBaseProps, InteractableProps {}
 
 export const IconButton = memo(
   ({
     accessibilityLabel,
-    disabled = false,
-    feedback = 'none',
+    disabled,
+    feedback,
     name,
     onLongPress,
     onPress,
@@ -38,13 +27,31 @@ export const IconButton = memo(
     const palette = usePalette();
     const [pressIn, pressOut, scale] = usePressAnimation();
     const { color, backgroundColor, borderColor } = useButtonVariant(variant);
-    const viewStyles = useMemo(
-      () => ({ backgroundColor: palette[backgroundColor], borderColor: palette[borderColor] }),
+
+    const containerStyles = useMemo(
+      () => ({
+        borderColor: palette[borderColor],
+        backgroundColor: palette[backgroundColor],
+      }),
+      [backgroundColor, borderColor, palette]
+    );
+    const buttonStyles = useMemo(
+      () => [
+        styles.iconButton,
+        { backgroundColor: palette[backgroundColor], borderColor: palette[borderColor] },
+      ],
       [palette, backgroundColor, borderColor]
     );
 
     return (
-      <Animated.View style={{ transform: [{ scale }] }}>
+      <Animated.View
+        style={[
+          containerStyles,
+          styles.pressable,
+          disabled && styles.disabled,
+          { transform: [{ scale }] },
+        ]}
+      >
         <PressableHighlight
           accessibilityHint={accessibilityLabel}
           accessibilityLabel={accessibilityLabel}
@@ -55,10 +62,9 @@ export const IconButton = memo(
           onLongPress={onLongPress}
           disabled={disabled}
           feedback={feedback}
-          borderRadius={50}
           testID={testID}
         >
-          <View style={[styles.iconButton, disabled && styles.disabled, viewStyles]}>
+          <View style={buttonStyles}>
             <Icon name={name} size="s" color={color} />
           </View>
         </PressableHighlight>
@@ -76,10 +82,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 40,
     width: 40,
-    borderRadius: 50,
-    borderWidth: borderWidth.button,
   },
   disabled: {
     opacity: opacityDisabled,
+  },
+  pressable: {
+    overflow: 'hidden',
+    borderRadius: 20,
+    borderWidth: borderWidth.button,
+    borderStyle: 'solid',
   },
 });

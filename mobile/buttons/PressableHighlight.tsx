@@ -17,10 +17,21 @@ import { usePalette } from '../hooks/usePalette';
 import { HapticFeedbackType } from '../types';
 import { Haptics } from '../utils/haptics';
 
+export interface InteractableProps {
+  /**
+   * Haptic feedback to trigger when being pressed.
+   * @default none
+   */
+  feedback?: HapticFeedbackType;
+  /** Event fired when the button is pressed. */
+  onPress?: (event: GestureResponderEvent) => void;
+  /** Event fired when the button is held for a long period and pressed. */
+  onLongPress?: (event: GestureResponderEvent) => void;
+}
+
 export interface PressableHighlightProps extends Omit<PressableProps, 'style'>, AccessibilityProps {
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteBackground;
-  borderRadius?: number;
   dangerouslySetStyle?: ViewStyle;
   feedback?: HapticFeedbackType;
   hideUnderlay?: boolean;
@@ -29,7 +40,6 @@ export interface PressableHighlightProps extends Omit<PressableProps, 'style'>, 
 
 export const PressableHighlight = ({
   backgroundColor,
-  borderRadius = 0,
   children,
   disabled,
   feedback = 'none',
@@ -52,6 +62,14 @@ export const PressableHighlight = ({
   ]);
 
   const underlayColor = spectrumStep > 60 ? 'background' : 'foreground';
+  const underlayStyles = useMemo(
+    () =>
+      ({
+        backgroundColor: palette[underlayColor],
+        ...StyleSheet.absoluteFillObject,
+      } as const),
+    [palette, underlayColor]
+  );
 
   const handlePress = useCallback(
     (event: GestureResponderEvent) => {
@@ -95,21 +113,13 @@ export const PressableHighlight = ({
       onPressOut={handlePressOut}
       {...props}
     >
-      <View>
-        {isPressed && !disabled && !hideUnderlay ? (
-          <View
-            style={[
-              StyleSheet.absoluteFillObject,
-              { borderRadius, backgroundColor: palette[underlayColor] },
-            ]}
-          />
-        ) : null}
-        <View
-          style={isPressed ? { opacity: backgroundOpacity } : undefined}
-          renderToHardwareTextureAndroid={isPressed}
-        >
-          {children}
-        </View>
+      {isPressed && !disabled && !hideUnderlay && <View style={underlayStyles} />}
+
+      <View
+        style={isPressed ? { opacity: backgroundOpacity } : undefined}
+        renderToHardwareTextureAndroid={isPressed}
+      >
+        {children}
       </View>
     </Pressable>
   );

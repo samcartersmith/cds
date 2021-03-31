@@ -1,27 +1,18 @@
-import React, { useMemo, memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
-import { Animated, GestureResponderEvent, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet, View } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { HapticFeedbackType } from '../types';
 import { TextHeadline } from '../typography/TextHeadline';
-import { PressableHighlight } from './PressableHighlight';
+import { PressableHighlight, InteractableProps } from './PressableHighlight';
 
-export interface ButtonProps extends ButtonBaseProps {
-  /**
-   * Haptic feedback to trigger when being pressed.
-   * @default none
-   */
-  feedback?: HapticFeedbackType;
-  /** Event fired when the button is pressed. */
-  onPress?: (event: GestureResponderEvent) => void;
-}
+export interface ButtonProps extends ButtonBaseProps, InteractableProps {}
 
 export const Button = memo(
   ({
@@ -33,27 +24,46 @@ export const Button = memo(
     feedback,
     loading,
     onPress,
+    onLongPress,
     testID,
     variant = 'primary',
   }: ButtonProps) => {
     const palette = usePalette();
     const [pressIn, pressOut, pressScale] = usePressAnimation();
     const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+    const isDisabled = disabled || loading;
+
     const spacingStyles = useSpacingStyles({
       spacingHorizontal: compact ? 2 : 3,
       spacingVertical: compact ? 0.5 : 1,
     });
-    const textStyles = useMemo(() => ({ color: palette[color] }), [palette, color]);
-    const viewStyles = useMemo(
-      () => ({ backgroundColor: palette[backgroundColor], borderColor: palette[borderColor] }),
-      [palette, backgroundColor, borderColor]
+    const containerStyles = useMemo(
+      () => [
+        {
+          borderColor: palette[borderColor],
+          backgroundColor: palette[backgroundColor],
+        },
+      ],
+      [backgroundColor, borderColor, palette]
+    );
+    const buttonStyles = useMemo(
+      () => [
+        styles.button,
+        { backgroundColor: palette[backgroundColor] },
+        spacingStyles,
+        compact && styles.buttonCompact,
+      ],
+      [backgroundColor, compact, palette, spacingStyles]
     );
 
     return (
       <Animated.View
         style={[
+          containerStyles,
+          styles.pressable,
+          compact && styles.pressableCompact,
           block ? styles.block : styles.inline,
-          compact ? styles.pressableCompact : styles.pressable,
+          isDisabled && styles.disabled,
           {
             transform: [{ scale: pressScale }],
           },
@@ -62,23 +72,16 @@ export const Button = memo(
         <PressableHighlight
           accessibilityHint={accessibilityLabel}
           backgroundColor={backgroundColor}
-          disabled={disabled || loading}
-          feedback={feedback}
+          disabled={isDisabled}
+          feedback={feedback || (compact ? 'light' : 'normal')}
           onPress={onPress}
           onPressIn={pressIn}
           onPressOut={pressOut}
+          onLongPress={onLongPress}
           testID={testID}
         >
-          <View
-            style={[
-              styles.button,
-              viewStyles,
-              spacingStyles,
-              compact && styles.buttonCompact,
-              (disabled || loading) && styles.disabled,
-            ]}
-          >
-            <TextHeadline dangerouslySetStyle={textStyles}>{children}</TextHeadline>
+          <View style={buttonStyles}>
+            <TextHeadline color={color}>{children}</TextHeadline>
           </View>
         </PressableHighlight>
       </Animated.View>
@@ -94,13 +97,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     height: 56,
-    borderWidth: borderWidth.button,
-    borderRadius: borderRadius.standard,
-    borderStyle: 'solid',
   },
   buttonCompact: {
-    borderRadius: borderRadius.compact,
-    width: 'auto',
     height: 36,
   },
   inline: {
@@ -111,15 +109,18 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: '100%',
   },
+  // eslint-disable-next-line react-native/no-color-literals
   disabled: {
     opacity: opacityDisabled,
+    borderColor: 'transparent',
   },
   pressable: {
-    borderRadius: borderRadius.standard,
     overflow: 'hidden',
+    borderWidth: borderWidth.button,
+    borderRadius: borderRadius.standard,
+    borderStyle: 'solid',
   },
   pressableCompact: {
     borderRadius: borderRadius.compact,
-    overflow: 'hidden',
   },
 });
