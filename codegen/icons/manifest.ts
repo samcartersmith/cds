@@ -36,7 +36,6 @@ export const manifest = {
     email: { '8': 'uE087', '12': 'uE088', '16': 'uE089', '24': 'uE08A', '32': 'uE08B' },
     sortDownCenter: { '8': 'uE08C', '12': 'uE08D', '16': 'uE08E', '24': 'uE08F', '32': 'uE090' },
     sortDown: { '8': 'uE091', '12': 'uE092', '16': 'uE093', '24': 'uE094', '32': 'uE095' },
-    indentityCard: { '8': 'uE09B', '12': 'uE09C', '16': 'uE09D', '24': 'uE09E', '32': 'uE09F' },
     wallet: { '8': 'uE0A0', '12': 'uE0A1', '16': 'uE0A2', '24': 'uE0A3', '32': 'uE0A4' },
     visibleActive: { '8': 'uE0A5', '12': 'uE0A6', '16': 'uE0A7', '24': 'uE0A8', '32': 'uE0A9' },
     visibleInactive: { '8': 'uE0AA', '12': 'uE0AB', '16': 'uE0AC', '24': 'uE0AD', '32': 'uE0AE' },

@@ -76,7 +76,6 @@ export const iconNames = [
   'horizontalLine',
   'ideal',
   'identityCard',
-  'indentityCard',
   'info',
   'initiator',
   'list',

@@ -88,22 +88,22 @@ export const card = {
 };
 
 export const caretDown = {
-  paths: ['M6 9.86l4.95-4.95-1.77-1.77L6 6.32 2.82 3.14 1.05 4.91 6 9.86z'],
+  paths: ['M9.54 3.67L6 7.21 2.46 3.67 1.4 4.73 6 9.33l4.6-4.6-1.06-1.06z'],
   viewBox: '0 0 12 12',
 };
 
 export const caretLeft = {
-  paths: ['M2.14 6l4.95 4.95 1.77-1.77L5.68 6l3.18-3.18-1.77-1.77L2.14 6z'],
+  paths: ['M8.33 2.46L4.79 6l3.54 3.54-1.06 1.06L2.67 6l4.6-4.6 1.06 1.06z'],
   viewBox: '0 0 12 12',
 };
 
 export const caretRight = {
-  paths: ['M9.86 6L4.91 1.05 3.14 2.82 6.32 6 3.14 9.18l1.77 1.77L9.86 6z'],
+  paths: ['M3.67 2.46L7.21 6 3.67 9.54l1.06 1.06L9.33 6l-4.6-4.6-1.06 1.06z'],
   viewBox: '0 0 12 12',
 };
 
 export const caretUp = {
-  paths: ['M6 2.14L1.05 7.09l1.77 1.77L6 5.68l3.18 3.18 1.77-1.77L6 2.14z'],
+  paths: ['M2.46 8.33L6 4.79l3.54 3.54 1.06-1.06L6 2.67l-4.6 4.6 1.06 1.06z'],
   viewBox: '0 0 12 12',
 };
 
@@ -225,7 +225,7 @@ export const clock = {
 
 export const close = {
   paths: [
-    'M11.71 1.71L10.29.29 6 4.59 1.71.29.29 1.71 4.59 6l-4.3 4.29 1.42 1.42L6 7.41l4.29 4.3 1.42-1.42L7.41 6l4.3-4.29z',
+    'M12 1.06L10.94 0 6 4.94 1.06 0 0 1.06 4.94 6 0 10.94 1.06 12 6 7.06 10.94 12 12 10.94 7.06 6 12 1.06z',
   ],
   viewBox: '0 0 12 12',
 };
@@ -418,14 +418,6 @@ export const ideal = {
 export const identityCard = {
   paths: ['M0 2v8h12V2H0zm7 3.25h3.5v1.5H7v-1.5zM1.5 3.5h4v5h-4v-5z'],
   viewBox: '0 0 12 12',
-};
-
-export const indentityCard = {
-  paths: [
-    'M0 4v16h24V4H0zm21.5 4.75v2h-7v-2h7zm-7 4.5h7v2h-7v-2zM2.5 6.5H12v11H2.5v-11z',
-    'M7 11.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm0 1c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z',
-  ],
-  viewBox: '0 0 24 24',
 };
 
 export const info = {

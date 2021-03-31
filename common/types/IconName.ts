@@ -76,7 +76,6 @@ export type IconName =
   | 'horizontalLine'
   | 'ideal'
   | 'identityCard'
-  | 'indentityCard'
   | 'info'
   | 'initiator'
   | 'list'

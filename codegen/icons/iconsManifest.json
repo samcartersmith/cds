@@ -156,7 +156,7 @@
   },
   "1292:140": {
     "key": "e3acf1e121408e9c8b51e0a61212d9bb00a55eab",
-    "name": "Icon/indentityCard_24",
+    "name": "Icon/identityCard_24",
     "description": "identity card, profile, personal, ID, card, 🆔"
   },
   "1292:139": {
@@ -203,11 +203,6 @@
     "key": "b2b6e643ead1717a7822725bf9e45b6871aafdd0",
     "name": "Icon/bell_24",
     "description": "notification, update, news, new, bell, 🔔, 🛎"
-  },
-  "2207:16": {
-    "key": "a67194ac45553263503e40ad6dadca84feb8e2a2",
-    "name": "Icon/close_24",
-    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   },
   "2207:20": {
     "key": "d69b2211ab5bb257ca0ac8d3f2458bd3106c0db8",
@@ -333,26 +328,6 @@
     "key": "561b918b2a411980226aebb5eadbdd4cb72a1438",
     "name": "Icon/arrowUp_24",
     "description": "arrow up, send, upwards, increase, ⬆️, "
-  },
-  "4234:232": {
-    "key": "49338834561d1819c77ebc77c24e44c4df640155",
-    "name": "Icon/caretRight_24",
-    "description": "caret, chevron, right"
-  },
-  "2207:15": {
-    "key": "f176f736f7fd03117b1a97e89b481c4377951293",
-    "name": "Icon/caretLeft_24",
-    "description": "caret, chevron, left"
-  },
-  "2207:14": {
-    "key": "648f2421ce11847479c38442ce3aa822b9e113d1",
-    "name": "Icon/caretDown_24",
-    "description": "caret, chevron, down"
-  },
-  "2207:19": {
-    "key": "218eab826e637e0232c833567c2e8d3ec4440545",
-    "name": "Icon/caretUp_24",
-    "description": "caret, chevron, up"
   },
   "2207:55": {
     "key": "48d85a81ab451b92a993fd202091d679e050e265",
@@ -629,11 +604,6 @@
     "name": "Icon/ideal_12",
     "description": "ideal, payment, brand, 💳, 🏦"
   },
-  "1292:109": {
-    "key": "b3f59a406cfc5bc65158db8cba4a266810a57142",
-    "name": "Icon/close_12",
-    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
-  },
   "1292:129": {
     "key": "bf999848ff83c9730d8a4089064209c0d2e22f94",
     "name": "Icon/bell_12",
@@ -818,11 +788,6 @@
     "key": "71382f5a24ed46d6390bc62edd9ccabc965f09e7",
     "name": "Icon/wireTransfer_12",
     "description": "wire transfer, send, bank, credit, electronic"
-  },
-  "1292:82": {
-    "key": "b3e6ca0b2f44b66ef3e06e1caf519074f52535c4",
-    "name": "Icon/caretRight_12",
-    "description": "caret, chevron, right"
   },
   "1292:68": {
     "key": "1859f9b2723a0938a135716d41ec067e2a01a5a6",
@@ -1144,11 +1109,6 @@
     "name": "Icon/ideal_16",
     "description": "ideal, payment, brand, 💳, 🏦"
   },
-  "1292:87": {
-    "key": "d445b3849b7b51a85b982b484c2ba3bdb8e3d3b9",
-    "name": "Icon/close_16",
-    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
-  },
   "1292:77": {
     "key": "0945716c9343130c06315d8ee3569c13b4884687",
     "name": "Icon/bell_16",
@@ -1299,11 +1259,6 @@
     "name": "Icon/arrowUp_16",
     "description": "arrow up, send, upwards, increase, ⬆️"
   },
-  "1292:37": {
-    "key": "4780567f05913b476615494cd359894fe9afe7b9",
-    "name": "Icon/caretRight_16",
-    "description": "caret, chevron, right"
-  },
   "1792:161": {
     "key": "01d3d3d99174bdf37ae68dc45c15aadd829ca926",
     "name": "Icon/wireTransfer_16",
@@ -1429,40 +1384,10 @@
     "name": "Icon/marketCap_16",
     "description": "market cap, capitalization, stock market, shares, share price, traded, 📈, 📉"
   },
-  "1697:10596": {
-    "key": "066c6145c6a3b3bdeb0dba40ca805a549d6c11e0",
-    "name": "Icon/caretDown_12",
-    "description": "caret, chevron, down"
-  },
-  "1766:10687": {
-    "key": "45188540887e14822c22a1a73ffa457d87b2deae",
-    "name": "Icon/caretLeft_12",
-    "description": "caret, chevron, left"
-  },
-  "1697:10595": {
-    "key": "a72b45907cd1c61259c7513c9b438dae6a6548fa",
-    "name": "Icon/caretUp_12",
-    "description": "caret, chevron, up"
-  },
   "1697:10608": {
     "key": "88e13eedc690907d89ed29571338832f30654374",
     "name": "Icon/dot_12",
     "description": "dot, spot, bullet point, point, mark, round, 🔴, ⚫️, 🔵, ⚪️"
-  },
-  "1697:10594": {
-    "key": "c2117f788770e2436f6c10f7760ab7b87baad7ad",
-    "name": "Icon/caretDown_16",
-    "description": "caret, chevron, down"
-  },
-  "1766:10686": {
-    "key": "02c913e630ec3f56a25facc2dd2ac71573811459",
-    "name": "Icon/caretLeft_16",
-    "description": "caret, chevron, left"
-  },
-  "1697:10593": {
-    "key": "1a1f1a4d9f3d48e0def8e62638b3c040c2f90992",
-    "name": "Icon/caretUp_16",
-    "description": "caret, chevron, up"
   },
   "2207:54": {
     "key": "925f36d4488a9ca00744bb770dfea61f07e26f54",
@@ -1953,5 +1878,80 @@
     "key": "edc95375ce82eb2022ba2cf5979f095a7ffdb61c",
     "name": "Icon/backArrow_16",
     "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
+  },
+  "4793:178": {
+    "key": "ba06713d2b01e8c9260239acbb7dacae88dad647",
+    "name": "Icon/caretRight_24",
+    "description": "caret, chevron, right"
+  },
+  "4793:179": {
+    "key": "0802d9cfd471a75f8dddb6fe0db0c34bdfc799d3",
+    "name": "Icon/caretRight_16",
+    "description": "caret, chevron, right"
+  },
+  "4793:180": {
+    "key": "6f4358aec3e853f4125ee5edd4a785ab533eaba2",
+    "name": "Icon/caretRight_12",
+    "description": "caret, chevron, right"
+  },
+  "4793:181": {
+    "key": "f9330502438f3d0dd71c63444ccf3f4a53fe9da1",
+    "name": "Icon/caretLeft_24",
+    "description": "caret, chevron, left"
+  },
+  "4793:182": {
+    "key": "d810997714a87435fad8ecdfa036847595c6bf03",
+    "name": "Icon/caretLeft_16",
+    "description": "caret, chevron, left"
+  },
+  "4793:183": {
+    "key": "741abcd86892b62afdafabd5d16326102857cb55",
+    "name": "Icon/caretLeft_12",
+    "description": "caret, chevron, left"
+  },
+  "4793:184": {
+    "key": "0d4c60b31331fc8c6da38f592349e8880d8d8c73",
+    "name": "Icon/caretUp_24",
+    "description": "caret, chevron, up"
+  },
+  "4793:185": {
+    "key": "f81ed9ea48261a1d6108f319e4c81ec98bee0c42",
+    "name": "Icon/caretUp_16",
+    "description": "caret, chevron, up"
+  },
+  "4793:186": {
+    "key": "829468467a2b81659046a46fc25d62279291ec31",
+    "name": "Icon/caretUp_12",
+    "description": "caret, chevron, up"
+  },
+  "4793:187": {
+    "key": "a02f04657e982a2e2d28192674d814929f69a622",
+    "name": "Icon/caretDown_24",
+    "description": "caret, chevron, down"
+  },
+  "4793:188": {
+    "key": "451a09b974a440b18457945d9da0a4d36019041d",
+    "name": "Icon/caretDown_16",
+    "description": "caret, chevron, down"
+  },
+  "4793:189": {
+    "key": "1a7550e2aa6fc08e9f47dad65fd13d100dad2a74",
+    "name": "Icon/caretDown_12",
+    "description": "caret, chevron, down"
+  },
+  "4793:190": {
+    "key": "53c110db95aeaeb0be5dddd8a130faf781d7a06c",
+    "name": "Icon/close_24",
+    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
+  },
+  "4793:191": {
+    "key": "1cc84d8206188df0a297dc2ffc0241a191999e2a",
+    "name": "Icon/close_16",
+    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
+  },
+  "4793:192": {
+    "key": "6265009c3f30ce3b04fbb2a110be7ed3ed90ae8d",
+    "name": "Icon/close_12",
+    "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
   }
 }
