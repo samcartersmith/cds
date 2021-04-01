@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.3 (3/31/2021, 05:12 PM PST)
+
+#### 🐞 Fixes
+
+- Rework button border styles. @miles-johnson [#16308](https://github.cbhq.net/mono/repo/pull/16308)
+- text overflow in mobile @katherinemartinez [#16449](https://github.cbhq.net/mono/repo/pull/16449)
+
 ## 0.7.2 (3/31/2021, 10:30 AM PST)
 
 #### 🐞 Fixes
