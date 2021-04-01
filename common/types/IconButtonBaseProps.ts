@@ -4,13 +4,11 @@ import { IconName } from './IconName';
 export type IconButtonVariant = 'primary' | 'secondary';
 
 export interface IconButtonBaseProps
-  extends Omit<ButtonBaseProps, 'variant' | 'name' | 'children' | 'loading'> {
+  extends Pick<ButtonBaseProps, 'accessibilityLabel' | 'disabled' | 'testID'> {
   /** Name of the icon, as defined in Figma. */
   name: IconName;
   /** Number to show on top right corner of button. */
   badge?: number;
-  /** @internal Testing purposes. */
-  testID?: string;
   /**
    * Toggle design and visual variants.
    * @default primary
