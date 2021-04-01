@@ -25,6 +25,7 @@ export type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4';
 
 export type HTMLNonHeadingTextTags =
   | 'p'
+  | 'strong'
   | 'span'
   | 'label'
   | 'time'
