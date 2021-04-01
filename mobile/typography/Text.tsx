@@ -2,17 +2,11 @@ import React, { useMemo } from 'react';
 
 import { TextBaseProps, Typography, PaletteForeground } from '@cbhq/cds-common';
 import { pascalCase } from '@cbhq/cds-utils';
-import {
-  Animated,
-  I18nManager,
-  Text,
-  TextStyle,
-  TextProps as RNTextProps,
-  StyleSheet,
-} from 'react-native';
+import { Animated, Text, TextStyle, TextProps as RNTextProps, StyleSheet } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { useTextAlign } from '../hooks/useTextAlign';
 import { OmitStyle, DangerouslySetStyle } from '../types';
 import { useTypographyStyles } from './useTypographyStyles';
 
@@ -26,6 +20,8 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
+
+export const numberStyles = styles.tabularNumbers;
 
 export interface TextProps
   extends TextBaseProps,
@@ -78,15 +74,7 @@ export const createText = (name: Typography) => {
   }) => {
     const palette = usePalette();
 
-    const textAlign = useMemo(() => {
-      if (align === 'start') {
-        return I18nManager.isRTL ? 'right' : 'left';
-      }
-      if (align === 'end') {
-        return I18nManager.isRTL ? 'left' : 'right';
-      }
-      return align;
-    }, [align]);
+    const textAlign = useTextAlign(align);
 
     const textStyles = useTypographyStyles(name);
 

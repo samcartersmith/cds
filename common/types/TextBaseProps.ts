@@ -2,14 +2,17 @@ import type { ReactNode } from 'react';
 
 import { SpacingProps } from './SpacingProps';
 
-export interface TextBaseProps extends SpacingProps {
-  children?: ReactNode;
+export interface TextAlignProps {
   /**
    * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align) | [React Native docs](https://reactnative.dev/docs/text-style-props#textalign)
    * @default start
    */
   align?: 'start' | 'end' | 'center' | 'justify';
+}
+
+export interface TextBaseProps extends SpacingProps, TextAlignProps {
+  children?: ReactNode;
   /**
    * Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) | [React Native Docs](https://reactnative.dev/docs/text-style-props#fontvariant)
