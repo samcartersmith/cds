@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { TextBaseProps, Typography, PaletteForeground } from '@cbhq/cds-common';
+import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
 import { Animated, Text, TextStyle, TextProps as RNTextProps, StyleSheet } from 'react-native';
 
@@ -46,6 +47,7 @@ export interface TextProps
 
 export const createText = (name: Typography) => {
   const TextComponent: React.FC<TextProps> = ({
+    children,
     color = 'foreground',
     align = 'start',
     tabularNumbers = false,
@@ -69,6 +71,7 @@ export const createText = (name: Typography) => {
     spacingEnd,
     spacingVertical,
     spacingHorizontal,
+
     // RN Text props
     ...props
   }) => {
@@ -134,15 +137,19 @@ export const createText = (name: Typography) => {
         textStyles,
         textTransform,
         palette,
-        color,
         textAlign,
         lineHeight,
+        color,
         tabularNumbers,
         underline,
         dangerouslySetStyle,
         ellipsize,
       ]
     );
+
+    if (isChildrenFalsy(children)) {
+      return null;
+    }
 
     const TextComponent = animated ? Animated.Text : Text;
 
@@ -154,10 +161,12 @@ export const createText = (name: Typography) => {
         // TODO (hannah): Add iOS support for selectable. https://awesomeopensource.com/project/Astrocoders/react-native-selectable-text
         selectable={selectable !== 'none'}
         style={style as TextStyle}
-      />
+      >
+        {children}
+      </TextComponent>
     );
   };
 
-  TextComponent.displayName = pascalCase(name);
+  TextComponent.displayName = `Text${pascalCase(name)}`;
   return TextComponent;
 };

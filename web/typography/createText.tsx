@@ -1,23 +1,26 @@
 import { createElement } from 'react';
 
 import type { Typography } from '@cbhq/cds-common';
+import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
 import { cx, css } from 'linaria';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as foregroundStyles from '../styles/foregroundColor';
+import { disabledState } from '../styles/interactable';
 import { getTypographyStyles } from '../styles/typography';
 import type { DynamicElement } from '../types';
-import { HTMLTextTags, TextProps } from './TextProps';
+import type { HTMLTextTags, TextProps } from './TextProps';
 import * as textStyles from './textStyles';
 
 const currentColor = css`
   color: currentColor;
 `;
 
-export const createText = <E extends HTMLTextTags>(name: Typography) => {
-  const TextComponent = <T extends E>({
+export const createText = <T extends HTMLTextTags>(name: Typography) => {
+  const TextComponent = ({
     as,
+    children,
     color = 'foreground',
     align = 'start',
     display,
@@ -37,13 +40,31 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
     spacingEnd,
     spacingVertical,
     spacingHorizontal,
+    // interactable ex. label
+    disabled,
     ...props
-  }: DynamicElement<TextProps, T, true /* as prop is required */>) =>
-    createElement(as, {
+  }: DynamicElement<TextProps, T, true /* as prop is required */>) => {
+    const spacingStyles = useSpacingStyles({
+      spacing,
+      spacingTop,
+      spacingBottom,
+      spacingStart,
+      spacingEnd,
+      spacingVertical,
+      spacingHorizontal,
+    });
+
+    if (isChildrenFalsy(children)) {
+      return null;
+    }
+
+    return createElement(as, {
       ...props,
+      children,
       className: cx(
         textStyles[name],
         color === 'currentColor' ? currentColor : foregroundStyles[color],
+        disabled && disabledState,
         ...getTypographyStyles({
           align,
           display,
@@ -55,19 +76,12 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
           overflow,
           transform,
         }),
-        useSpacingStyles({
-          spacing,
-          spacingTop,
-          spacingBottom,
-          spacingStart,
-          spacingEnd,
-          spacingVertical,
-          spacingHorizontal,
-        }),
+        spacingStyles,
         dangerouslySetClassName
       ),
     });
+  };
 
-  TextComponent.displayName = pascalCase(name);
+  TextComponent.displayName = `Text${pascalCase(name)}`;
   return TextComponent;
 };

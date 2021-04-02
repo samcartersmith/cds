@@ -72,6 +72,7 @@ A semantic HTML element or a React component to be rendered. All native HTML att
     'ins',
     'kbd',
     'label',
+    'li',
     'output',
     'p',
     'pre',
@@ -178,6 +179,21 @@ Override line-height. This is deprecated since overriding this prevents line hei
 />
 
 <ComponentDetails componentName="Text" templateName="deprecatedLineHeightProp" />
+
+### disabled
+
+Add disabled opacity style to text
+
+<ApiDetails
+  componentName="Text"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Text" templateName="disabledProp" />
 
 ### display <Badge variant="web" />
 

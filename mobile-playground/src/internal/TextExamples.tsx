@@ -1,5 +1,6 @@
 import { Box } from '@cbhq/cds-mobile/layout/Box';
-import { TextProps } from '@cbhq/cds-mobile/typography/Text';
+import { TextLabel1 } from '@cbhq/cds-mobile/typography';
+import { TextProps } from '@cbhq/cds-mobile/typography/createText';
 
 import Example from './Example';
 import Screen from './Screen';

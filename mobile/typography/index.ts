@@ -9,5 +9,5 @@ export * from './TextLegal';
 export * from './TextTitle1';
 export * from './TextTitle2';
 export * from './TextTitle3';
-export { TextProps, numberStyles } from './Text';
+export { TextProps, numberStyles } from './createText';
 export * from './useTypographyStyles';

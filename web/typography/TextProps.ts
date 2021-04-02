@@ -1,4 +1,4 @@
-import { TextBaseProps, PaletteForeground } from '@cbhq/cds-common';
+import type { TextBaseProps, PaletteForeground } from '@cbhq/cds-common';
 
 export interface TextProps extends TextBaseProps {
   /**
@@ -39,6 +39,7 @@ export type HTMLNonHeadingTextTags =
   | 'del'
   | 'ins'
   | 'sup'
-  | 'sub';
+  | 'sub'
+  | 'li';
 
 export type HTMLTextTags = HTMLHeadingTags | HTMLNonHeadingTextTags;

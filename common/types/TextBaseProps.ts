@@ -48,4 +48,8 @@ export interface TextBaseProps extends SpacingProps, TextAlignProps {
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) | [React Native Docs](https://reactnative.dev/docs/text-style-props#texttransform)
    */
   transform?: 'uppercase' | 'lowercase' | 'capitalize';
+  /**
+   * Add disabled opacity style to text
+   */
+  disabled?: boolean;
 }

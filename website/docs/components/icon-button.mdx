@@ -94,21 +94,6 @@ Mark the button as disabled.
 
 <ComponentDetails componentName="IconButton" templateName="disabledProp" />
 
-### feedback <Badge variant="mobile" />
-
-Haptic feedback to trigger when being pressed.
-
-<ApiDetails
-  componentName="IconButton"
-  propertyName="feedback"
-  required={false}
-  defaultValue="none"
-  mobileOptions={['heavy', 'light', 'none', 'normal']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="IconButton" templateName="feedbackProp" />
-
 ### name
 
 Name of the icon, as defined in Figma.
@@ -130,6 +115,7 @@ Name of the icon, as defined in Figma.
     'arrowsHorizontal',
     'arrowsVertical',
     'average',
+    'backArrow',
     'bank',
     'bell',
     'blockchain',
@@ -190,7 +176,6 @@ Name of the icon, as defined in Figma.
     'horizontalLine',
     'ideal',
     'identityCard',
-    'indentityCard',
     'info',
     'initiator',
     'list',
@@ -264,6 +249,7 @@ Name of the icon, as defined in Figma.
     'arrowsHorizontal',
     'arrowsVertical',
     'average',
+    'backArrow',
     'bank',
     'bell',
     'blockchain',
@@ -324,7 +310,6 @@ Name of the icon, as defined in Figma.
     'horizontalLine',
     'ideal',
     'identityCard',
-    'indentityCard',
     'info',
     'initiator',
     'list',
@@ -390,22 +375,7 @@ Name of the icon, as defined in Figma.
 
 <ComponentDetails componentName="IconButton" templateName="nameProp" />
 
-### onLongPress <Badge variant="mobile" />
-
-Event fired when the button is held for a long period and pressed.
-
-<ApiDetails
-  componentName="IconButton"
-  propertyName="onLongPress"
-  required={false}
-  defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="IconButton" templateName="onLongPressProp" />
-
-### onPress
+### onPress <Badge variant="web" />
 
 Callback fired after the element is pressed.
 
@@ -414,7 +384,7 @@ Callback fired after the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
+  mobileOptions={[]}
   webOptions={['OnPress<HTMLButtonElement>']}
 />
 
