@@ -1,5 +1,6 @@
 export * as Box from './Box';
 export * as Button from './Button';
+export * as LinkButton from './LinkButton';
 export * as HStack from './HStack';
 export * as Icon from './Icon';
 export * as IconButton from './IconButton';

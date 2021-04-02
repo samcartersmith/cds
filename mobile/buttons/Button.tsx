@@ -6,9 +6,9 @@ import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { Animated, StyleSheet, View } from 'react-native';
 
+import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
 import { usePressAnimation } from '../hooks/usePressAnimation';
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { TextHeadline } from '../typography/TextHeadline';
 import { PressableHighlight, InteractableProps } from './PressableHighlight';
 
@@ -33,10 +33,7 @@ export const Button = memo(
     const { color, backgroundColor, borderColor } = useButtonVariant(variant);
     const isDisabled = disabled || loading;
 
-    const spacingStyles = useSpacingStyles({
-      spacingHorizontal: compact ? 2 : 3,
-      spacingVertical: compact ? 0.5 : 1,
-    });
+    const spacingStyles = useButtonSpacing(compact);
     const containerStyles = useMemo(
       () => [
         {
@@ -91,7 +88,7 @@ export const Button = memo(
 
 Button.displayName = 'Button';
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',

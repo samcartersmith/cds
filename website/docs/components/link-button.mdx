@@ -1,0 +1,205 @@
+---
+id: link-button
+title: LinkButton
+---
+
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+
+<ComponentDetails componentName="LinkButton" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="LinkButton" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="LinkButton" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel
+
+Full length accessibility label when the child text is not descriptive enough.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="accessibilityLabelProp" />
+
+### block
+
+Change to block and expand to 100% of parent width.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="block"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="blockProp" />
+
+### children
+
+Children to render within the button.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="childrenProp" />
+
+### compact
+
+Reduce the inner padding within the button itself.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="compactProp" />
+
+### disabled
+
+Mark the button as disabled.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="disabled"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="disabledProp" />
+
+### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="feedback"
+  required={false}
+  defaultValue="none"
+  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="feedbackProp" />
+
+### name
+
+Uniquely identify the button within a form.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="name"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="nameProp" />
+
+### onHover <Badge variant="web" />
+
+Callback fired when the element is being hovered.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="onHover"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['OnHover']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="onHoverProp" />
+
+### onPress
+
+Callback fired after the element is pressed.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={['OnPress<HTMLButtonElement>']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="onPressProp" />
+
+### testID
+
+Testing purposes.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="testIDProp" />
+
+### variant
+
+Toggle design and visual variants.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="variant"
+  required={false}
+  defaultValue="primary"
+  mobileOptions={['negative', 'primary', 'secondary']}
+  webOptions={['negative', 'primary', 'secondary']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="variantProp" />
+
+<ComponentDetails componentName="LinkButton" templateName="outro" />

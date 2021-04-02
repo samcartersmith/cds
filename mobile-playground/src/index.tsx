@@ -12,6 +12,7 @@ const components = [
   { key: 'Spacer' },
   { key: 'Icon' },
   { key: 'IconButton' },
+  { key: 'LinkButton' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
   { key: 'Text', label: 'Text (all)' },

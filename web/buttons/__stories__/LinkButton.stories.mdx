@@ -1,0 +1,99 @@
+import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { LinkButton } from '../LinkButton';
+
+<Meta title="Core Components/Button/LinkButton" component={LinkButton} argTypes={{}} />
+
+# LinkButton
+
+## Primary
+
+<Canvas isColumn withToolbar>
+  <Story name="Primary Default" decorators={[withStoryLabel('Primary Default')]}>
+    <div>
+      <LinkButton onPress={console.log}>Default</LinkButton>
+    </div>
+  </Story>
+  <Story name="Primary Block" decorators={[withStoryLabel('Primary Block')]}>
+    <div>
+      <LinkButton block>Block</LinkButton>
+    </div>
+  </Story>
+  <Story name="Primary Compact" decorators={[withStoryLabel('Primary Compact')]}>
+    <div>
+      <LinkButton compact>Compact</LinkButton>
+    </div>
+  </Story>
+  <Story name="Primary Disabled" decorators={[withStoryLabel('Primary Disabled')]}>
+    <div>
+      <LinkButton disabled>Disabled</LinkButton>
+    </div>
+  </Story>
+</Canvas>
+
+## Secondary
+
+<Canvas isColumn withToolbar>
+  <Story name="Secondary Default" decorators={[withStoryLabel('Secondary Default')]}>
+    <div>
+      <LinkButton variant="secondary">Default</LinkButton>
+    </div>
+  </Story>
+  <Story name="Secondary Block" decorators={[withStoryLabel('Secondary Block')]}>
+    <div>
+      <LinkButton variant="secondary" block>
+        Block
+      </LinkButton>
+    </div>
+  </Story>
+  <Story name="Secondary Compact" decorators={[withStoryLabel('Secondary Compact')]}>
+    <div>
+      <LinkButton compact variant="secondary">
+        Compact
+      </LinkButton>
+    </div>
+  </Story>
+  <Story name="Secondary Disabled" decorators={[withStoryLabel('Secondary Disabled')]}>
+    <div>
+      <LinkButton disabled variant="secondary">
+        Disabled
+      </LinkButton>
+    </div>
+  </Story>
+</Canvas>
+
+## Negative
+
+<Canvas isColumn withToolbar>
+  <Story name="Negative Default" decorators={[withStoryLabel('Negative Default')]}>
+    <div>
+      <LinkButton variant="negative">Default</LinkButton>
+    </div>
+  </Story>
+  <Story name="Negative Block" decorators={[withStoryLabel('Negative Block')]}>
+    <div>
+      <LinkButton block variant="negative">
+        Block
+      </LinkButton>
+    </div>
+  </Story>
+  <Story name="Negative Compact" decorators={[withStoryLabel('Negative Compact')]}>
+    <div>
+      <LinkButton compact variant="negative">
+        Compact
+      </LinkButton>
+    </div>
+  </Story>
+  <Story name="Negative Disabled" decorators={[withStoryLabel('Negative Disabled')]}>
+    <div>
+      <LinkButton disabled variant="negative">
+        Disabled
+      </LinkButton>
+    </div>
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

@@ -44,6 +44,7 @@ module.exports = {
       items: [
         'components/box',
         'components/button',
+        'components/link-button',
         'components/hstack',
         'components/icon-button',
         'components/icon',

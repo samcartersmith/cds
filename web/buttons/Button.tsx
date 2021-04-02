@@ -5,7 +5,7 @@ import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit/Button';
 
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import * as foregroundColors from '../styles/foregroundColor';
 import { TextHeadline } from '../typography/TextHeadline';
 import * as buttonStyles from './buttonStyles';
@@ -45,10 +45,7 @@ export const Button = forwardRef(
     ref: React.Ref<HTMLButtonElement>
   ) => {
     const isDisabled = disabled || loading;
-    const spacingClass = useSpacingStyles({
-      spacingHorizontal: compact ? 2 : 3,
-      spacingVertical: compact ? 1 : 2,
-    });
+    const spacingClass = useButtonSpacing(compact);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant);
     const { className, style } = useInteractable({
       backgroundColor,
