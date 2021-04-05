@@ -6,6 +6,7 @@ import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit/Button';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
+import { MaterialSpinner } from '../loaders/MaterialSpinner';
 import * as foregroundColors from '../styles/foregroundColor';
 import { TextHeadline } from '../typography/TextHeadline';
 import * as buttonStyles from './buttonStyles';
@@ -73,9 +74,13 @@ export const Button = forwardRef(
         type={type}
         onClick={onPress}
       >
-        <TextHeadline as="span" color={color}>
-          {children}
-        </TextHeadline>
+        {loading ? (
+          <MaterialSpinner size={24} color={color} />
+        ) : (
+          <TextHeadline as="span" color={color}>
+            {children}
+          </TextHeadline>
+        )}
       </ReakitButton>
     );
   }

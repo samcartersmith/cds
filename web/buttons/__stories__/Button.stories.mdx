@@ -40,8 +40,17 @@ import { Button } from '../Button';
       <Button loading>Button</Button>
     </div>
   </Story>
+  <Story name="Loading Compact" decorators={[withStoryLabel('Loading Compact')]}>
+    <div>
+      <Button loading compact>
+        Button
+      </Button>
+    </div>
+  </Story>
   <Story name="Disabled" decorators={[withStoryLabel('Disabled')]}>
-    <Button disabled>Button</Button>
+    <div>
+      <Button disabled>Button</Button>
+    </div>
   </Story>
 </Canvas>
 

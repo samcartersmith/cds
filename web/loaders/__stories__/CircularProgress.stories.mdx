@@ -1,0 +1,48 @@
+import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { CircularProgress } from '../CircularProgress';
+
+<Meta title="Core Components/Loaders/CircularProgress" component={CircularProgress} />
+
+# Circular Progress
+
+<Canvas withToolbar>
+  <Story
+    name="Determinate"
+    decorators={[withStoryLabel('Determinate')]}
+    args={{
+      progress: 80,
+      indeterminate: false,
+      strokeWidth: 4,
+      radius: 30,
+    }}
+    argTypes={{
+      progress: {
+        control: { type: 'range', min: 0, max: 100, step: 5 },
+      },
+    }}
+  >
+    {args => {
+      return <CircularProgress {...args} />;
+    }}
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story
+    name="Indeterminate"
+    decorators={[withStoryLabel('Indeterminate')]}
+    args={{
+      progress: 0,
+      strokeWidth: 4,
+      radius: 30,
+    }}
+  >
+    {args => <CircularProgress {...args} />}
+  </Story>
+</Canvas>
+
+### Circular Progress API
+
+<ArgsTable of={CircularProgress} />

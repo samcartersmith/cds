@@ -4,7 +4,7 @@ import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet, View, ActivityIndicator } from 'react-native';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
@@ -78,7 +78,11 @@ export const Button = memo(
           testID={testID}
         >
           <View style={buttonStyles}>
-            <TextHeadline color={color}>{children}</TextHeadline>
+            {loading ? (
+              <ActivityIndicator size="small" color={palette[color]} />
+            ) : (
+              <TextHeadline color={color}>{children}</TextHeadline>
+            )}
           </View>
         </PressableHighlight>
       </Animated.View>
