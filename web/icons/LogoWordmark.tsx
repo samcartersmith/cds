@@ -4,8 +4,8 @@ import { useLogoWordmark, LogoWordmarkParams } from '@cbhq/cds-common/hooks/useL
 
 import { iconStyles } from '../icons/iconStyles';
 
-const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
-  const { viewBox, paths } = useLogoWordmark({ foreground });
+export const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
+  const { viewBox, path, color } = useLogoWordmark({ foreground });
 
   return (
     <svg
@@ -16,9 +16,7 @@ const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
       className={iconStyles}
     >
       <title>Coinbase logo</title>
-      {paths.map((item, i) => (
-        <path key={`logo-wordmark-${i}`} d={item} />
-      ))}
+      <path d={path} fill={color} />
     </svg>
   );
 });

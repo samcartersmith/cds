@@ -48,6 +48,7 @@ module.exports = {
         'components/hstack',
         'components/icon-button',
         'components/icon',
+        'components/logo',
         'components/lottie',
         'components/spacer',
         'components/text',

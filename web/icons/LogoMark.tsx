@@ -7,7 +7,7 @@ import { iconStyles } from '../icons/iconStyles';
 export type LogoMarkProps = LogoMarkParams;
 
 export const LogoMark = memo(({ size }: LogoMarkProps) => {
-  const { viewBox, width, height, path, color, circle } = useLogoMark({ size });
+  const { viewBox, width, height, path, color } = useLogoMark({ size });
 
   return (
     <svg
@@ -20,14 +20,6 @@ export const LogoMark = memo(({ size }: LogoMarkProps) => {
       className={iconStyles}
     >
       <title>Coinbase logo</title>
-      {circle && (
-        <circle
-          cx={circle.radius}
-          cy={circle.radius}
-          r={circle.radius}
-          fill={circle.backgroundColor}
-        />
-      )}
       <path d={path} fill={color} />
     </svg>
   );
