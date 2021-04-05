@@ -6,6 +6,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.5.3 (4/5/2021, 03:16 PM PST)
+
+#### 🚀 Updates
+
+- Add disabled style and falsy check to Text @hannah-jin [#16194](https://github.cbhq.net/mono/repo/pull/16194)
+- Add LinkButton component @jennifer-liu [#15629](https://github.cbhq.net/mono/repo/pull/15629), [CDS-276](https://jira.coinbase-corp.com/browse/CDS-276)
+- useTextAlign and numberStyles @katherinemartinez [#16538](https://github.cbhq.net/mono/repo/pull/16538)
+
+#### 🐞 Fixes
+
+- update logo assets @katherinemartinez [#16598](https://github.cbhq.net/mono/repo/pull/16598)
+- Fix IconButton types. @miles-johnson [#16614](https://github.cbhq.net/mono/repo/pull/16614)
+- uppercase text styles in cds mobile @katherinemartinez [#16192](https://github.cbhq.net/mono/repo/pull/16192)
+
+#### 📘 Misc
+
+- default to light caret icons and remove misspelled indentity bump versions. @jennifer-liu [#16432](https://github.cbhq.net/mono/repo/pull/16432)
+- default to light caret icons and remove misspelled "indentity". @jennifer-liu [#16421](https://github.cbhq.net/mono/repo/pull/16421)
+
 ## 0.5.2 (3/31/2021, 10:30 AM PST)
 
 #### 🐞 Fixes

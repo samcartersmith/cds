@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.1 (4/5/2021, 03:16 PM PST)
+
+#### 🚀 Updates
+
+- Add disabled style and falsy check to Text @hannah-jin [#16194](https://github.cbhq.net/mono/repo/pull/16194)
+- Add LinkButton component @jennifer-liu [#15629](https://github.cbhq.net/mono/repo/pull/15629), [CDS-276](https://jira.coinbase-corp.com/browse/CDS-276)
+- Allow <strong> for Text @hannah-jin [#16569](https://github.cbhq.net/mono/repo/pull/16569)
+
+#### 🐞 Fixes
+
+- update logo assets @katherinemartinez [#16598](https://github.cbhq.net/mono/repo/pull/16598)
+
+#### 📘 Misc
+
+- default to light caret icons and remove misspelled "indentity". @jennifer-liu [#16421](https://github.cbhq.net/mono/repo/pull/16421)
+
 ## 0.7.0 (3/29/2021, 04:03 PM PST)
 
 #### 💥 Breaking

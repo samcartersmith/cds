@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.4 (4/5/2021, 03:16 PM PST)
+
+#### 🚀 Updates
+
+- Add disabled style and falsy check to Text @hannah-jin [#16194](https://github.cbhq.net/mono/repo/pull/16194)
+- Add LinkButton component @jennifer-liu [#15629](https://github.cbhq.net/mono/repo/pull/15629), [CDS-276](https://jira.coinbase-corp.com/browse/CDS-276)
+- useTextAlign and numberStyles @katherinemartinez [#16538](https://github.cbhq.net/mono/repo/pull/16538)
+
+#### 🐞 Fixes
+
+- update logo assets @katherinemartinez [#16598](https://github.cbhq.net/mono/repo/pull/16598)
+
 ## 0.7.3 (3/31/2021, 05:12 PM PST)
 
 #### 🐞 Fixes
