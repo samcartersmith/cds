@@ -29,20 +29,6 @@ import { CircularProgress } from '../CircularProgress';
   </Story>
 </Canvas>
 
-<Canvas withToolbar>
-  <Story
-    name="Indeterminate"
-    decorators={[withStoryLabel('Indeterminate')]}
-    args={{
-      progress: 0,
-      strokeWidth: 4,
-      radius: 30,
-    }}
-  >
-    {args => <CircularProgress {...args} />}
-  </Story>
-</Canvas>
-
 ### Circular Progress API
 
 <ArgsTable of={CircularProgress} />
