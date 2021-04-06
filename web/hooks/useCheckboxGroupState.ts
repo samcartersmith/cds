@@ -1,13 +1,12 @@
 import { useCallback } from 'react';
 
-import { useGroupToggler, GroupToggleStateProps } from '@cbhq/cds-common/hooks/useGroupToggler';
+import { useGroupToggler, GroupToggleState } from '@cbhq/cds-common/hooks/useGroupToggler';
 
 export type CheckboxGroupStateProps<T extends string | number> = {
-  getSelectedState: GroupToggleStateProps<T>['getSelectedState'];
   select: React.ChangeEventHandler<HTMLInputElement>;
   unselect: React.ChangeEventHandler<HTMLInputElement>;
   toggle: React.ChangeEventHandler<HTMLInputElement>;
-  groupValue: GroupToggleStateProps<T>['groupValue'];
+  isAllSelected: GroupToggleState<T>['isAllSelected'];
 };
 
 /**
@@ -17,11 +16,10 @@ export type CheckboxGroupStateProps<T extends string | number> = {
  * @returns [
  *  state,
     {
-      getSelectedState,
       select,
       unselect,
       toggle,
-      groupValue,
+      isAllSelected,
     }
   ]
  */
@@ -31,7 +29,7 @@ export const useCheckboxGroupState = <T extends string | number>(
 ): [Set<T>, CheckboxGroupStateProps<T>] => {
   const [
     state,
-    { select: _select, unselect: _unselect, toggle: _toggle, getSelectedState, groupValue },
+    { select: _select, unselect: _unselect, toggle: _toggle, isAllSelected },
   ] = useGroupToggler(values, initialState);
 
   const select = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
@@ -58,11 +56,10 @@ export const useCheckboxGroupState = <T extends string | number>(
   return [
     state,
     {
-      getSelectedState,
       select,
       unselect,
       toggle,
-      groupValue,
+      isAllSelected,
     },
   ];
 };

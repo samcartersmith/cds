@@ -4,7 +4,7 @@ import { SpacerBaseProps } from '@cbhq/cds-common/types/SpacerBaseProps';
 import { getSpacerStyle } from '@cbhq/cds-common/utils/getSpacerStyle';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
-import { useSpacingScale } from '../hooks/useSpacing';
+import { useSpacingScale } from '../hooks/useSpacingScale';
 import type { DangerouslySetStyle, OmitStyle } from '../types';
 
 export type SpacerProps = SpacerBaseProps & OmitStyle<ViewProps> & DangerouslySetStyle<ViewStyle>;

@@ -98,7 +98,3 @@ export type SectionAccessibilityRole =
 // EVENTS
 
 export type OnPress<T> = React.MouseEventHandler<T>;
-export type OnHover = (isHovering: boolean) => void;
-
-// REACT
-export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;

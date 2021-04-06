@@ -24,3 +24,6 @@ export * from './SpacingScale';
 export * from './Spectrum';
 export * from './TextBaseProps';
 export * from './Typography';
+
+// React
+export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;

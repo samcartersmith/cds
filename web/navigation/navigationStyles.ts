@@ -23,6 +23,7 @@ export const scrollContent = css`
   position: relative;
   overflow-y: scroll;
   scrollbar-width: none;
+  /* stylelint-disable-next-line a11y/no-display-none */
   &::-webkit-scrollbar {
     display: none;
   }

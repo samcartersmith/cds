@@ -1,13 +1,17 @@
-import { useMemo } from 'react';
-
-import { BorderRadius, PaletteBackground, PaletteBorder, usePaletteConfig } from '@cbhq/cds-common';
-import { opacityHovered, opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
-import { extractHueStep } from '@cbhq/cds-common/utils/extractHueStep';
+import {
+  BorderRadius,
+  PaletteBackground,
+  PaletteBorder,
+  SpectrumAlias,
+  usePaletteConfig,
+} from '@cbhq/cds-common';
+import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import { cx } from 'linaria';
 
 import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
 import { focusVisible } from '../styles/focus';
+import { palette } from '../tokens';
 import { OnPress } from '../types';
 import { interactable, disabledState, scaledDownState } from './interactableStyles';
 
@@ -40,24 +44,23 @@ export function useInteractable({
   style: React.CSSProperties;
 } {
   const paletteConfig = usePaletteConfig();
-  const spectrumAlias = paletteConfig[backgroundColor];
-  const spectrumStep = useMemo(() => extractHueStep(spectrumAlias) ?? 60, [spectrumAlias]);
-  const underlayColor = spectrumStep > 60 ? 'background' : 'foreground';
+  const spectrumAlias = paletteConfig[backgroundColor] as SpectrumAlias;
+  const { underlayColor, pressedOpacity, hoverOpacity } = useInteractableTokens(backgroundColor);
 
   return {
     className: cx(
       borderColors[borderColor],
       borderRadii[borderRadius],
       interactable,
-      focusVisible,
+      !disabled && focusVisible,
       !noScaleOnPress && scaledDownState,
       disabled && disabledState
     ),
     style: {
-      '--interactable-opacity-hovered': opacityHovered[spectrumStep],
-      '--interactable-opacity-pressed': opacityPressed[spectrumStep],
-      '--interactable-overlay': `var(--${spectrumAlias})`,
-      '--interactable-underlay': `var(--${underlayColor})` as const,
+      '--interactable-opacity-hovered': hoverOpacity,
+      '--interactable-opacity-pressed': pressedOpacity,
+      '--interactable-overlay': `var(--${spectrumAlias})` as const,
+      '--interactable-underlay': palette[underlayColor],
     },
   };
 }

@@ -120,6 +120,7 @@ export const createText = (name: Typography) => {
     const style = useMemo(
       () => [
         spacingStyles,
+        textAlign,
         textStyles,
         textTransform,
         textAlign,

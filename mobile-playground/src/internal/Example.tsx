@@ -12,7 +12,6 @@ interface ExampleProps {
 
 const Example = ({ children, inline, title }: ExampleProps) => {
   const palette = usePalette();
-  const items = Children.toArray(children);
   const childStyles = useMemo(() => {
     const style: ViewStyle = { paddingTop: 12 };
 
@@ -34,11 +33,13 @@ const Example = ({ children, inline, title }: ExampleProps) => {
     >
       {title && <TextTitle3>{title}</TextTitle3>}
 
-      {items.map((item, index) => (
-        <View key={index} style={childStyles}>
-          {item}
-        </View>
-      ))}
+      {typeof children === 'function'
+        ? children()
+        : Children.map(children, (item, index) => (
+            <View key={index} style={childStyles}>
+              {item}
+            </View>
+          ))}
     </View>
   );
 };

@@ -9,11 +9,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import List from './src';
 import BoxScreen from './src/Box';
 import ButtonScreen from './src/Button';
-import LinkButtonScreen from './src/LinkButton';
+import CheckboxScreen from './src/Checkbox';
 import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
+import LinkButtonScreen from './src/LinkButton';
 import LottieScreen from './src/Lottie';
+import RadioGroupScreen from './src/RadioGroup';
 import SpacerScreen from './src/Spacer';
 import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
@@ -63,10 +65,12 @@ const App = () => {
           />
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
+          <Stack.Screen name="LinkButton" component={LinkButtonScreen} />
+          <Stack.Screen name="Checkbox" component={CheckboxScreen} />
+          <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
           <Stack.Screen name="Divider" component={DividerScreen} />
           <Stack.Screen name="Spacer" component={SpacerScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
-          <Stack.Screen name="LinkButton" component={LinkButtonScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />
           <Stack.Screen name="Text" component={TextScreen} options={{ title: 'Text (all)' }} />

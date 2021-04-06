@@ -1,12 +1,11 @@
 // internal to CDS, each platform customizes on top of this hook.
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-export type GroupToggleStateProps<T extends string | number> = {
-  getSelectedState: (value: T) => boolean;
+export type GroupToggleState<T extends string | number> = {
   select: (value?: T) => void;
   unselect: (value?: T) => void;
   toggle: (value?: T) => void;
-  groupValue: boolean | 'mixed';
+  isAllSelected: boolean | 'mixed';
 };
 
 /**
@@ -14,13 +13,12 @@ export type GroupToggleStateProps<T extends string | number> = {
  * @param values - An array of all possible options. Make sure the array doesn't change if it's the same values so that the handlers will also stay the same.
  * @param initialState - Initial checked option values.
  * @returns [
- *  state,
+ *  selectedValues,
     {
-      getSelectedState,
       select,
       unselect,
       toggle,
-      groupValue,
+      isAllSelected,
     }
   ]
  */
@@ -28,7 +26,7 @@ export type GroupToggleStateProps<T extends string | number> = {
 export const useGroupToggler = <T extends string | number>(
   values: T[],
   initialState?: T[]
-): [Set<T>, GroupToggleStateProps<T>] => {
+): [Set<T>, GroupToggleState<T>] => {
   // The function inside useState will still run on every render.
   // This makes sure that we are not creating new Sets on every render
   // and just throwing it away immediately.
@@ -42,8 +40,6 @@ export const useGroupToggler = <T extends string | number>(
       lastMixedStateRef.current = state;
     }
   }, [state, values.length, lastMixedStateRef]);
-
-  const getSelectedState = useCallback((value: T) => state.has(value), [state]);
 
   const select = useCallback<(value?: T) => void>(
     value => {
@@ -115,7 +111,7 @@ export const useGroupToggler = <T extends string | number>(
     [setState, values]
   );
 
-  const groupValue = useMemo(() => {
+  const isAllSelected = useMemo(() => {
     if (state.size === 0) {
       return false;
     }
@@ -128,11 +124,10 @@ export const useGroupToggler = <T extends string | number>(
   return [
     state,
     {
-      getSelectedState,
       select,
       unselect,
       toggle,
-      groupValue,
+      isAllSelected,
     },
   ];
 };

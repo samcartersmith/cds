@@ -1,8 +1,8 @@
 import React, { memo, useEffect, useMemo, Children, cloneElement } from 'react';
 
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
+import { SetState } from '@cbhq/cds-common/types';
 
-import { SetState } from '../types';
 import { TabItemBaseProps, TabItemProps } from './TabItem';
 
 export type TabsProps = {

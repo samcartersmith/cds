@@ -1,8 +1,7 @@
 import { createContext } from 'react';
 
+import { SetState } from '@cbhq/cds-common/types';
 import { noop } from '@cbhq/cds-utils';
-
-import { SetState } from '../types';
 
 export const defaultLayout = 'expanded';
 export type SidebarLayout = 'expanded' | 'condensed';

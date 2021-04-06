@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
 import { join, LottieStatusAnimationType } from '@cbhq/cds-common';
-import { Spacer } from '@cbhq/cds-web/layout/Spacer';
 import { Button } from '@cbhq/cds-web/buttons/Button';
+import { Spacer } from '@cbhq/cds-web/layout/Spacer';
 
 const statuses = [
   'loading',
