@@ -105,7 +105,7 @@ Mark the button as disabled.
   componentName="LinkButton"
   propertyName="disabled"
   required={false}
-  defaultValue="false"
+  defaultValue=""
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
@@ -127,6 +127,21 @@ Haptic feedback to trigger when being pressed.
 
 <ComponentDetails componentName="LinkButton" templateName="feedbackProp" />
 
+### focusable <Badge variant="web" />
+
+When an element is `disabled`, it may still be `focusable`. It works similarly to `readOnly` on form elements. In this case, only `aria-disabled` will be set.
+
+<ApiDetails
+  componentName="LinkButton"
+  propertyName="focusable"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="LinkButton" templateName="focusableProp" />
+
 ### name
 
 Uniquely identify the button within a form.
@@ -142,20 +157,20 @@ Uniquely identify the button within a form.
 
 <ComponentDetails componentName="LinkButton" templateName="nameProp" />
 
-### onHover <Badge variant="web" />
+### onLongPress <Badge variant="mobile" />
 
-Callback fired when the element is being hovered.
+Event fired when the button is held for a long period and pressed.
 
 <ApiDetails
   componentName="LinkButton"
-  propertyName="onHover"
+  propertyName="onLongPress"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={['OnHover']}
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={[]}
 />
 
-<ComponentDetails componentName="LinkButton" templateName="onHoverProp" />
+<ComponentDetails componentName="LinkButton" templateName="onLongPressProp" />
 
 ### onPress
 

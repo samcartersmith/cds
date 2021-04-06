@@ -49,36 +49,6 @@ Number to show on top right corner of button.
 
 <ComponentDetails componentName="IconButton" templateName="badgeProp" />
 
-### block
-
-Change to block and expand to 100% of parent width.
-
-<ApiDetails
-  componentName="IconButton"
-  propertyName="block"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="IconButton" templateName="blockProp" />
-
-### compact
-
-Reduce the inner padding within the button itself.
-
-<ApiDetails
-  componentName="IconButton"
-  propertyName="compact"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="IconButton" templateName="compactProp" />
-
 ### disabled
 
 Mark the button as disabled.
@@ -93,6 +63,21 @@ Mark the button as disabled.
 />
 
 <ComponentDetails componentName="IconButton" templateName="disabledProp" />
+
+### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
+
+<ApiDetails
+  componentName="IconButton"
+  propertyName="feedback"
+  required={false}
+  defaultValue="none"
+  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="IconButton" templateName="feedbackProp" />
 
 ### name
 
@@ -375,7 +360,22 @@ Name of the icon, as defined in Figma.
 
 <ComponentDetails componentName="IconButton" templateName="nameProp" />
 
-### onPress <Badge variant="web" />
+### onLongPress <Badge variant="mobile" />
+
+Event fired when the button is held for a long period and pressed.
+
+<ApiDetails
+  componentName="IconButton"
+  propertyName="onLongPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="IconButton" templateName="onLongPressProp" />
+
+### onPress
 
 Callback fired after the element is pressed.
 
@@ -384,7 +384,7 @@ Callback fired after the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['(event: GestureResponderEvent) => void']}
   webOptions={['OnPress<HTMLButtonElement>']}
 />
 
@@ -403,7 +403,7 @@ Callback fired after the element is pressed.
 
 <ComponentDetails componentName="IconButton" templateName="renderContainerProp" />
 
-### testID <Badge variant="internal" order={1} />
+### testID
 
 Testing purposes.
 

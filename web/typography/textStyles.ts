@@ -72,6 +72,7 @@ export const label1 = css`
   line-height: var(--label1-line-height);
   letter-spacing: var(--label1-letter-spacing);
   font-weight: var(--label1-font-weight);
+  text-transform: var(--label1-text-transform);
   font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 `;
@@ -81,6 +82,7 @@ export const label2 = css`
   line-height: var(--label2-line-height);
   letter-spacing: var(--label2-letter-spacing);
   font-weight: var(--label2-font-weight);
+  text-transform: var(--label2-text-transform);
   font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 `;
