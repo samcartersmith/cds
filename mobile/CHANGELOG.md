@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.5 (4/5/2021, 07:08 PM PST)
+
+#### 🚀 Updates
+
+- CDS Loader @jennifer-liu [#13964](https://github.cbhq.net/mono/repo/pull/13964), [CDS-273](https://jira.coinbase-corp.com/browse/CDS-273)
+
+#### 🐞 Fixes
+
+- useTextAlign return value for cds-mobile @katherinemartinez [#16750](https://github.cbhq.net/mono/repo/pull/16750)
+
 ## 0.7.4 (4/5/2021, 03:16 PM PST)
 
 #### 🚀 Updates
