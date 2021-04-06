@@ -22,13 +22,14 @@ title: Getting started
 2. Install the CDS packages you need
 
 ```bash
+yarn add @cbhq/cds-fonts
 yarn add @cbhq/cds-web # if using web components
 yarn add @cbhq/cds-mobile # if using mobile components
 ```
 
 ## Building with CDS
 
-1. Import `globalStyles`. This includes the font face declarations,
+1. Import `globalStyles` at the root of your application. This includes font face declarations, style resets, and polyfills.
 
 ```tsx
 import '@cbhq/cds-web/globalStyles';
@@ -48,7 +49,7 @@ export const App = () => {
 }
 ```
 
-If you have components that are created outside of the app's main DOM tree, such as `Modal`s that use `createPortal`, you will need to add `ThemeProvider` to the root of the portal element as well.
+> If you have components that are created outside of the app's main DOM tree, such as `Modal`s that use `createPortal`, you will need to add `ThemeProvider` to the root of the portal element as well.
 
 3. Import components from `@cbhq/cds-web` or `@cbhq/cds-mobile`.
 4. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.

@@ -58,6 +58,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Guides',
+      collapsed: false,
+      items: ['guides/adoption'],
+    },
+    {
+      type: 'category',
       label: 'Resources',
       collapsed: false,
       items: [
