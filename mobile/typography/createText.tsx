@@ -122,9 +122,9 @@ export const createText = (name: Typography) => {
         spacingStyles,
         textStyles,
         textTransform,
+        textAlign,
         {
           color: palette[color],
-          textAlign,
           lineHeight,
           overflow: ellipsize ? ('hidden' as const) : ('visible' as const),
         },

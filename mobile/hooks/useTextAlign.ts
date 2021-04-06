@@ -3,14 +3,16 @@ import { useMemo } from 'react';
 import { TextAlignProps } from '@cbhq/cds-common';
 import { I18nManager } from 'react-native';
 
-export const useTextAlign = (align?: TextAlignProps['align']) => {
+export type TextAlign = TextAlignProps['align'];
+
+export const useTextAlign = (align?: TextAlign) => {
   return useMemo(() => {
     if (align === 'start') {
-      return { textAlign: I18nManager.isRTL ? 'right' : 'left' };
+      return { textAlign: I18nManager.isRTL ? 'right' : 'left' } as const;
     }
     if (align === 'end') {
-      return { textAlign: I18nManager.isRTL ? 'left' : 'right' };
+      return { textAlign: I18nManager.isRTL ? 'left' : 'right' } as const;
     }
-    return align;
+    return { textAlign: align as Exclude<TextAlign, 'start' | 'end'> };
   }, [align]);
 };
