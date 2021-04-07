@@ -1,4 +1,4 @@
-export interface RadioGroupBaseProps<T extends string | number> {
+export interface RadioGroupBaseProps<T extends string> {
   /**
    * Multiple choice options for the radio group. The object key represents
    * the radio input value and the object value represents the radio option label.

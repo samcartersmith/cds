@@ -69,6 +69,17 @@ export const docs = prepareDocgens([
     data: getDocgenForPackage({ componentName: 'LinkButton', childPath: 'buttons/LinkButton.tsx' }),
   },
   {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/checkbox.mdx`,
+    data: getDocgenForPackage({ componentName: 'Checkbox', childPath: 'controls/Checkbox.tsx' }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/radio-group.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'RadioGroup',
+      childPath: 'controls/RadioGroup.tsx',
+    }),
+  },
+  {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/icon.mdx`,
     data: getDocgenForPackage({ componentName: 'Icon', childPath: 'icons/Icon.tsx' }),
   },

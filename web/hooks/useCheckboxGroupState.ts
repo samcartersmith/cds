@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useGroupToggler, GroupToggleState } from '@cbhq/cds-common/hooks/useGroupToggler';
 
-export type CheckboxGroupStateProps<T extends string | number> = {
+export type CheckboxGroupStateProps<T extends string> = {
   select: React.ChangeEventHandler<HTMLInputElement>;
   unselect: React.ChangeEventHandler<HTMLInputElement>;
   toggle: React.ChangeEventHandler<HTMLInputElement>;
@@ -23,7 +23,7 @@ export type CheckboxGroupStateProps<T extends string | number> = {
     }
   ]
  */
-export const useCheckboxGroupState = <T extends string | number>(
+export const useCheckboxGroupState = <T extends string>(
   values: T[],
   initialState?: T[]
 ): [Set<T>, CheckboxGroupStateProps<T>] => {

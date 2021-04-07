@@ -3,6 +3,10 @@ import { css } from 'linaria';
 import { CSSMap } from '../types';
 import { TextProps } from '../typography/TextProps';
 
+const transition = css`
+  transition: color 150ms ease-out, opacity 150ms ease-out;
+`;
+
 const textAlign: CSSMap<TextProps['align']> = {
   start: css`
     text-align: start;
@@ -83,6 +87,7 @@ const noWrap = css`
 
 export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
   return [
+    transition,
     props.align && textAlign[props.align],
     props.display && display[props.display],
     props.tabularNumbers && tabularNumbers,

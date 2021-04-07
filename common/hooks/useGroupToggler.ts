@@ -1,7 +1,7 @@
 // internal to CDS, each platform customizes on top of this hook.
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-export type GroupToggleState<T extends string | number> = {
+export type GroupToggleState<T extends string> = {
   select: (value?: T) => void;
   unselect: (value?: T) => void;
   toggle: (value?: T) => void;
@@ -23,7 +23,7 @@ export type GroupToggleState<T extends string | number> = {
   ]
  */
 
-export const useGroupToggler = <T extends string | number>(
+export const useGroupToggler = <T extends string>(
   values: T[],
   initialState?: T[]
 ): [Set<T>, GroupToggleState<T>] => {

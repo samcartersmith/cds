@@ -1,19 +1,23 @@
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { css } from 'linaria';
 
 import { palette } from '../tokens';
 
-export const focusVisible = css`
+const FOCUS_RING_PADDING = 4;
+
+export const focusRing = css`
   position: relative;
   &:focus-visible,
   &.focus-visible {
     &:before {
       content: '';
       position: absolute;
-      top: -4px;
-      left: -4px;
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      border: 2px solid ${palette.primary};
+      /* TODO: make border width work with other components */
+      top: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
+      left: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
+      right: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
+      bottom: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
+      border: ${borderWidth.focusRing}px solid ${palette.primary};
       border-radius: inherit;
     }
   }

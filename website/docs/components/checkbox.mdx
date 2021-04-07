@@ -1,0 +1,115 @@
+---
+id: checkbox
+title: Checkbox
+---
+
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+
+<ComponentDetails componentName="Checkbox" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Checkbox" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Checkbox" templateName="a11y" />
+
+## Props
+
+### children
+
+Label for the checkbox option.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="childrenProp" />
+
+### indeterminate
+
+A mixed state of checked and unchecked group of checkboxes.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="indeterminate"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="indeterminateProp" />
+
+### onChange
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(value?: T | undefined) => void']}
+  webOptions={['ChangeEventHandler<HTMLInputElement>']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="onChangeProp" />
+
+### testID <Badge variant="mobile" />
+
+Used to locate this view in end-to-end tests.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="testIDProp" />
+
+### value
+
+Value of the option.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="value"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="valueProp" />
+
+<ComponentDetails componentName="Checkbox" templateName="outro" />

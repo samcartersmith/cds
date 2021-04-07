@@ -45,6 +45,8 @@ module.exports = {
         'components/box',
         'components/button',
         'components/link-button',
+        'components/checkbox',
+        'components/radio-group',
         'components/hstack',
         'components/icon-button',
         'components/icon',

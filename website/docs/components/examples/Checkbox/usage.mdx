@@ -1,0 +1,56 @@
+Checkbox UI and state management are separated so that you can swap in any form or state code you like. CDS provides 2 hooks that pair nicely with Checkbox and CheckboxGroup for your convenience.
+
+### Single Checkbox
+
+```jsx live
+function CheckboxDemo() {
+  const [isChecked, { toggle }] = useToggler();
+  return (
+    <Checkbox value="hyped" onChange={toggle} checked={isChecked}>
+      Are you hyped about CDS?
+    </Checkbox>
+  );
+}
+```
+
+### CheckboxGroup
+
+```jsx live
+function CheckboxGroupDemo() {
+  // static values should live outside the component in product code.
+  const options = {
+    'fish-taco': 'Fish tacos',
+    puttanesca: 'Spaghetti alla puttanesca',
+    'hamachi-salad': 'Hamachi salad',
+  };
+  const optionValues = Object.keys(options);
+
+  // example component using CheckboxGroup
+  const [selectedValues, { toggle, isAllSelected }] = useCheckboxGroupState(optionValues);
+  return (
+    <>
+      <TextHeadline as="h1" id="order-dinner-label">
+        Order Dinner
+      </TextHeadline>
+      <CheckboxGroup
+        aria-labelledby="order-dinner-label"
+        name="checkbox-group"
+        groupCheckbox={
+          <Checkbox aria-controls="dinner-fish-taco dinner-puttanesca dinner-hamachi-salad">
+            {isAllSelected === true ? 'Unselect' : 'Select All'}
+          </Checkbox>
+        }
+        selectedValues={selectedValues}
+        isAllSelected={isAllSelected}
+        onChange={toggle}
+      >
+        {Object.entries(options).map(([value, label]) => (
+          <Checkbox key={value} value={value}>
+            {label}
+          </Checkbox>
+        ))}
+      </CheckboxGroup>
+    </>
+  );
+}
+```

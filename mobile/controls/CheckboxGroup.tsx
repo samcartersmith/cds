@@ -8,7 +8,7 @@ import { CheckboxProps } from './Checkbox';
 
 export type CheckboxGroupProps<T extends string> = Omit<ViewProps, 'style' | 'children'> &
   CheckboxGroupBaseProps<T> & {
-    /** Handle change events when user click on the checkboxes */
+    /** Handle change events when user tap on the checkboxes */
     onChange?: (value?: T) => void;
   };
 

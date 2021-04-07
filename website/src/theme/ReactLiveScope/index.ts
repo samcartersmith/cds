@@ -1,9 +1,11 @@
 import React from 'react';
 
-import { join } from '@cbhq/cds-common';
+import { join, useToggler } from '@cbhq/cds-common';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
+import * as CDSControls from '@cbhq/cds-web/controls';
+import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSLayout from '@cbhq/cds-web/layout';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
@@ -15,14 +17,17 @@ import { useStatusButtons } from '@cbhq/cds-website/docs/components/examples/Lot
 // Add react-live imports you need here
 const ReactLiveScope = {
   React,
+  ...React,
   ThemeProvider,
   Text: CDSTypography.TextBody,
   lottieFiles,
+  useCheckboxGroupState,
   useStatusButtons,
+  useToggler,
   join,
-  ...React,
   ...CDSAnimation,
   ...CDSButtons,
+  ...CDSControls,
   ...CDSIcons,
   ...CDSLayout,
   ...CDSNavigation,

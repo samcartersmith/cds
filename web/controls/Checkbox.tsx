@@ -1,0 +1,86 @@
+import React, { forwardRef, InputHTMLAttributes, memo } from 'react';
+
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { CheckboxBaseProps } from '@cbhq/cds-common/types/CheckboxBaseProps';
+import { css, cx } from 'linaria';
+
+import { Icon } from '../icons/Icon';
+import { control, palette } from '../tokens';
+import { FilteredHTMLAttributes } from '../types';
+import { Control } from './Control';
+
+export interface CheckboxProps<T extends string>
+  extends FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'>,
+    CheckboxBaseProps<T> {
+  onChange?: InputHTMLAttributes<HTMLInputElement>['onChange'];
+}
+
+const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
+  { children, ...props }: CheckboxProps<T>,
+  ref: React.ForwardedRef<HTMLInputElement>
+) {
+  const { indeterminate, checked } = props;
+  return (
+    <Control type="checkbox" label={children} ref={ref} {...props}>
+      <div
+        role="presentation"
+        className={cx(checkbox, focusRing)}
+        data-filled={checked || indeterminate}
+      >
+        {/* TODO (hannah): add scale animation like react native */}
+        {indeterminate ? (
+          <Icon name="minus" size="s" color="primaryForeground" />
+        ) : (
+          checked && <Icon name="checkmark" size="s" color="primaryForeground" />
+        )}
+      </div>
+    </Control>
+  );
+}) as <T extends string>(
+  props: CheckboxProps<T> & React.RefAttributes<HTMLInputElement>
+) => React.ReactElement;
+
+export const Checkbox = memo(CheckboxWithRef) as typeof CheckboxWithRef &
+  React.MemoExoticComponent<typeof CheckboxWithRef>;
+
+const FOCUS_PADDING = 4 + borderWidth.checkbox;
+
+const checkbox = css`
+  width: ${control.checkboxSize};
+  height: ${control.checkboxSize};
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${palette.background};
+  border: ${borderWidth.checkbox}px solid ${palette.lineHeavy};
+  transition: border-color 150ms ease-out;
+  &[data-filled='true'] {
+    background-color: ${palette.primary};
+    border-color: ${palette.primary};
+  }
+`;
+
+const focusRing = css`
+  position: relative;
+  &::after {
+    content: '';
+    border: 2px solid ${palette.primary};
+    border-radius: 4px;
+    position: absolute;
+    left: -${FOCUS_PADDING}px;
+    top: -${FOCUS_PADDING}px;
+    right: -${FOCUS_PADDING}px;
+    bottom: -${FOCUS_PADDING}px;
+
+    opacity: 0;
+    transition: opacity 100ms ease-out;
+  }
+
+  /* for control inputs */
+  .focus-visible + &::after {
+    opacity: 1;
+  }
+`;

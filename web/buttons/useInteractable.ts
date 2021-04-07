@@ -10,7 +10,7 @@ import { cx } from 'linaria';
 
 import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
-import { focusVisible } from '../styles/focus';
+import { focusRing } from '../styles/focus';
 import { palette } from '../tokens';
 import { OnPress } from '../types';
 import { interactable, disabledState, scaledDownState } from './interactableStyles';
@@ -52,7 +52,7 @@ export function useInteractable({
       borderColors[borderColor],
       borderRadii[borderRadius],
       interactable,
-      !disabled && focusVisible,
+      !disabled && focusRing,
       !noScaleOnPress && scaledDownState,
       disabled && disabledState
     ),

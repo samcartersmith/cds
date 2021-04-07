@@ -1,0 +1,150 @@
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { useCheckboxGroupState } from '../hooks/useCheckboxGroupState';
+import { ThemeProvider } from '../system/ThemeProvider';
+import { TextHeadline } from '../typography/TextHeadline';
+import { Checkbox } from './Checkbox';
+import { CheckboxGroup } from './CheckboxGroup';
+
+<Meta title="Core Components/Checkbox" component={Checkbox} />
+
+# Checkbox
+
+<Canvas isColumn withToolbar>
+  <Story name="Normal">
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <Checkbox name="normal-checkbox" checked={checked} onChange={toggle}>
+          Normal
+        </Checkbox>
+      );
+    }}
+  </Story>
+  <Story name="Dense">
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <ThemeProvider scale="xSmall">
+          <Checkbox name="dense-checkbox" checked={checked} onChange={toggle}>
+            Dense
+          </Checkbox>
+        </ThemeProvider>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas withToolbar>
+  <Story name="Disabled unselected">
+    <Checkbox disabled>Disabled unselected</Checkbox>
+  </Story>
+  <Story name="Disabled selected">
+    <Checkbox checked disabled>
+      Disabled selected
+    </Checkbox>
+  </Story>
+  <Story name="Disabled mixed">
+    <Checkbox indeterminate disabled>
+      Disabled mixed
+    </Checkbox>
+  </Story>
+</Canvas>
+
+# Checkbox Group
+
+export const options = {
+  'fish-taco': 'Fish tacos',
+  puttanesca: 'Spaghetti alla puttanesca',
+  'hamachi-salad': 'Hamachi salad',
+};
+
+export const optionValues = Object.keys(options);
+
+<Canvas isColumn withToolbar>
+  <Story name="Group">
+    {() => {
+      const [selectedValues, { toggle, isAllSelected }] = useCheckboxGroupState(optionValues);
+      return (
+        <>
+          <TextHeadline as="h1" id="order-dinner-label">
+            Order Dinner
+          </TextHeadline>
+          <CheckboxGroup
+            aria-labelledby="order-dinner-label"
+            name="checkbox-group"
+            groupCheckbox={
+              <Checkbox aria-controls="dinner-fish-taco dinner-puttanesca dinner-hamachi-salad">
+                {isAllSelected === true ? 'Unselect' : 'Select All'}
+              </Checkbox>
+            }
+            selectedValues={selectedValues}
+            isAllSelected={isAllSelected}
+            onChange={toggle}
+          >
+            {Object.entries(options).map(([value, label]) => (
+              <Checkbox key={value} value={value}>
+                {label}
+              </Checkbox>
+            ))}
+          </CheckboxGroup>
+        </>
+      );
+    }}
+  </Story>
+  <Story name="Group No Select All Checkbox">
+    {() => {
+      const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
+      return (
+        <>
+          <TextHeadline as="h1" id="order-dinner-label-no-select-all">
+            Checkbox Group No Select All Checkbox
+          </TextHeadline>
+          <CheckboxGroup
+            aria-labelledby="order-dinner-label-no-select-all"
+            name="checkbox-group-no-select-all"
+            selectedValues={selectedValues}
+            onChange={toggle}
+          >
+            {Object.entries(options).map(([value, label]) => (
+              <Checkbox key={value} value={value}>
+                {label}
+              </Checkbox>
+            ))}
+          </CheckboxGroup>
+        </>
+      );
+    }}
+  </Story>
+  <Story name="Custom styles checkbox group styles">
+    {() => {
+      const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
+      return (
+        <>
+          <TextHeadline as="h1" id="custom-styles-checkbox-group">
+            Custom checkbox group
+          </TextHeadline>
+          <CheckboxGroup
+            aria-labelledby="custom-styles-checkbox-group"
+            name="checkbox-group-custom-styles"
+          >
+            {Object.entries(options).map(([value, label]) => (
+              <div key={value} style={{ padding: '6px 8px' }}>
+                <Checkbox value={value} checked={selectedValues.has(value)} onChange={toggle}>
+                  {label}
+                </Checkbox>
+              </div>
+            ))}
+          </CheckboxGroup>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

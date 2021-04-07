@@ -1,7 +1,13 @@
-import { PaletteAlias } from '@cbhq/cds-common';
+import { PaletteAlias, SpectrumAlias } from '@cbhq/cds-common';
+import { opacityHovered } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { CssVariableFn } from '@cbhq/cds-utils';
 
 //  web only
+export type FilteredHTMLAttributes<T, P extends keyof T = never> = Omit<
+  T,
+  'children' | 'className' | 'style' | 'dangerouslySetInnerHTML' | P
+>;
+
 export type DynamicElement<
   CustomProps extends unknown,
   T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
@@ -39,9 +45,9 @@ export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface CSSProperties extends PaletteCssVariable {
-    '--interactable-opacity-hovered'?: number;
-    '--interactable-opacity-pressed'?: number;
-    '--interactable-overlay'?: string; // Spectrum alias: blue40
+    '--interactable-opacity-hovered'?: typeof opacityHovered[keyof typeof opacityHovered];
+    '--interactable-opacity-pressed'?: typeof opacityHovered[keyof typeof opacityHovered];
+    '--interactable-overlay'?: CssVariableFn<SpectrumAlias>;
     '--interactable-underlay'?: CssVariableFn<PaletteAlias>;
   }
 }
