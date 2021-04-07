@@ -2,12 +2,15 @@ import React, { memo } from 'react';
 
 import { MotionValue, m as motion } from 'framer-motion';
 
+import { IconButton } from '../buttons/IconButton';
 import { HStack } from '../layout/HStack';
 import { Spacer } from '../layout/Spacer';
 import { VStack } from '../layout/VStack';
+import { useNavigation } from './context';
 import { NavigationBarControlsProps } from './NavigationBarControls';
 import { NavigationBarCtasProps } from './NavigationBarCtas';
 import { NavigationBarTitlesProps } from './NavigationBarTitles';
+import { showForMobile } from './navigationStyles';
 
 export interface NavigationBarProps {
   controls?: React.ReactElement<NavigationBarControlsProps>;
@@ -19,6 +22,7 @@ export interface NavigationBarProps {
 
 export const NavigationBar = memo(
   ({ controls, titles, ctas, actions, animatedOpacity }: NavigationBarProps) => {
+    const { isMobileMenuVisible, toggleMobileMenuVisibility } = useNavigation();
     return (
       <HStack width="100%" alignItems="flex-start" justifyContent="space-between">
         <VStack>
@@ -30,6 +34,11 @@ export const NavigationBar = memo(
         <Spacer />
         {ctas}
         {actions}
+        <IconButton
+          name={isMobileMenuVisible ? 'close' : 'hamburger'}
+          onPress={toggleMobileMenuVisibility}
+          dangerouslySetClassName={showForMobile}
+        />
       </HStack>
     );
   }

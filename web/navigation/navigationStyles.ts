@@ -5,28 +5,36 @@ import { sidebarWidth } from './navigationTokens';
 
 export const rootStyles = css`
   height: 100vh;
-  width: 100vw;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: ${sidebarWidth.expanded}px auto;
   li {
     list-style: none;
     display: block;
   }
+`;
 
+export const gridForSidebar = css`
+  display: grid;
+  grid-template-columns: ${sidebarWidth.expanded}px auto;
   @media (${devices.tablet}) {
     grid-template-columns: ${sidebarWidth.condensed}px auto;
+  }
+
+  @media (${devices.phone}) {
+    grid-template-columns: 0px auto;
   }
 `;
 
 export const scrollContent = css`
   position: relative;
-  overflow-y: scroll;
   scrollbar-width: none;
   /* stylelint-disable-next-line a11y/no-display-none */
   &::-webkit-scrollbar {
     display: none;
   }
+`;
+
+export const disableScroll = css`
+  overflow-y: hidden;
 `;
 
 export const sidebarItemStyles = css`
@@ -66,6 +74,19 @@ export const hideForCondensed = css`
 export const showForCondensed = css`
   ${visuallyHidden};
   @media (${devices.tablet}) {
+    ${unsetVisuallyHidden};
+  }
+`;
+
+export const hideForMobile = css`
+  @media (${devices.phone}) {
+    ${visuallyHidden};
+  }
+`;
+
+export const showForMobile = css`
+  ${visuallyHidden};
+  @media (${devices.phone}) {
     ${unsetVisuallyHidden};
   }
 `;

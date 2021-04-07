@@ -15,7 +15,7 @@ import {
   NavigationBarTitles,
   NavigationDisplayTitle,
   Sidebar,
-  SidebarItem,
+  NavigationListItem,
   SidebarSection,
 } from '@cbhq/cds-web/navigation';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
@@ -91,29 +91,29 @@ export const NavigationExample: React.FC = () => {
 
     const sidebarList = (
       <>
-        <SidebarItem
+        <NavigationListItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="chartPieCircle"
           label="Overview"
           active
         />
-        <SidebarItem
+        <NavigationListItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="api"
           label="Principles"
           badge={3}
         />
-        <SidebarItem
+        <NavigationListItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="arrowsHorizontal"
           label="Getting started"
         />
-        <SidebarItem
+        <NavigationListItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="pay"
           label="Pay"
         />
-        <SidebarItem
+        <NavigationListItem
           renderContainer={props => <Link {...props} to={defaultRoute} />}
           icon="gauge"
           label="Support"
@@ -126,22 +126,22 @@ export const NavigationExample: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <SidebarItem
+          <NavigationListItem
             renderContainer={props => <Link {...props} to={defaultRoute} />}
             icon="bank"
             label="Overview"
           />
-          <SidebarItem
+          <NavigationListItem
             renderContainer={props => <Link {...props} to={defaultRoute} />}
             icon="calendar"
             label="Color"
           />
-          <SidebarItem
+          <NavigationListItem
             renderContainer={props => <Link {...props} to={defaultRoute} />}
             icon="document"
             label="Typography"
           />
-          <SidebarItem
+          <NavigationListItem
             renderContainer={props => <Link {...props} to={defaultRoute} />}
             icon="email"
             label="Illustration"

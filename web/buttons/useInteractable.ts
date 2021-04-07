@@ -4,6 +4,7 @@ import {
   PaletteBorder,
   SpectrumAlias,
   usePaletteConfig,
+  NoopFn,
 } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import { cx } from 'linaria';
@@ -17,7 +18,7 @@ import { interactable, disabledState, scaledDownState } from './interactableStyl
 
 export interface InteractableProps<T> {
   /** Callback fired after the element is pressed.  */
-  onPress?: OnPress<T>;
+  onPress?: OnPress<T> | NoopFn;
 }
 
 export interface UseInteractableOptions {

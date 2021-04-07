@@ -4,9 +4,14 @@
   regular, one-dimensional array while ensuring element and fragment keys are preserved, unique, and stable between renders.
 */
 
-import { ReactNode, ReactChild, Children, isValidElement, cloneElement } from 'react';
+import { ReactNode, ReactElement, ReactChild, Children, isValidElement, cloneElement } from 'react';
 
 import { isFragment } from 'react-is';
+
+// typeguard to check for props in a ReactChild
+export function hasProps(child: ReactChild): child is ReactElement {
+  return (child as ReactElement).props !== undefined;
+}
 
 export default function flattenNodes(
   children: ReactNode,

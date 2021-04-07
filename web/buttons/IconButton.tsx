@@ -7,11 +7,13 @@ import { Button as ReakitButton } from 'reakit/Button';
 
 import * as buttonStyles from '../buttons/buttonStyles';
 import { Icon } from '../icons/Icon';
+import { Box } from '../layout/Box';
 import { getFlexStyles } from '../styles/flex';
 import { InteractableProps, useInteractable } from './useInteractable';
 
 export interface IconButtonProps extends IconButtonBaseProps, InteractableProps<HTMLButtonElement> {
   renderContainer?: (props: React.HTMLAttributes<HTMLElement>) => JSX.Element;
+  dangerouslySetClassName?: string;
 }
 
 export const IconButton = forwardRef(
@@ -24,6 +26,7 @@ export const IconButton = forwardRef(
       renderContainer,
       testID,
       variant = 'secondary',
+      dangerouslySetClassName,
     }: IconButtonProps,
     ref: React.Ref<HTMLButtonElement>
   ) => {
@@ -53,10 +56,14 @@ export const IconButton = forwardRef(
       onClick: onPress,
     };
 
-    return renderContainer ? (
-      renderContainer(enhancedProps)
-    ) : (
-      <ReakitButton type="button" {...enhancedProps} />
+    return (
+      <Box dangerouslySetClassName={dangerouslySetClassName}>
+        {renderContainer ? (
+          renderContainer(enhancedProps)
+        ) : (
+          <ReakitButton type="button" {...enhancedProps} />
+        )}
+      </Box>
     );
   }
 );

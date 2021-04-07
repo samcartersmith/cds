@@ -1,22 +1,23 @@
-import React, { memo, useMemo, useRef, cloneElement } from 'react';
+import React, { memo, useMemo, useRef, cloneElement, useState } from 'react';
 
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { MotionConfig, useElementScroll, m as motion } from 'framer-motion';
+import { cx } from 'linaria';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { useInterpolate } from '../hooks/useInterpolate';
 import { Box, Divider, VStack } from '../layout';
 import { bottom as pinBottom } from '../styles/pin';
-import { SidebarLayout, defaultLayout } from './context';
+import { NavigationProvider, SidebarLayout, defaultLayout, useNavigation } from './context';
+import { MobileMenu } from './MobileMenu';
 import { NavigationBarProps } from './NavigationBar';
 import { NavigationDisplayTitleProps } from './NavigationDisplayTitle';
-import { rootStyles, scrollContent } from './navigationStyles';
+import { rootStyles, gridForSidebar, scrollContent } from './navigationStyles';
 import { sidebarWidth, appContentSpacing } from './navigationTokens';
 import { SidebarProps } from './Sidebar';
-import { SidebarLayoutProvider, useSetSidebarLayout } from './SidebarLayoutProvider';
 import { TabsProps } from './Tabs';
 
 export type NavigationProps = {
@@ -31,9 +32,9 @@ export const Navigation: React.FC<NavigationProps> = memo(
   ({ sidebarLayout = defaultLayout, ...props }) => {
     return (
       <MotionConfig>
-        <SidebarLayoutProvider variant={sidebarLayout}>
+        <NavigationProvider variant={sidebarLayout}>
           <NavigationContent {...props} />
-        </SidebarLayoutProvider>
+        </NavigationProvider>
       </MotionConfig>
     );
   }
@@ -41,7 +42,9 @@ export const Navigation: React.FC<NavigationProps> = memo(
 
 const NavigationContent: React.FC<NavigationProps> = memo(
   ({ sidebar, navbar, displayTitle, tabs, children }) => {
-    const setSidebarLayout = useSetSidebarLayout();
+    const { isMobileMenuVisible, toggleMobileMenuHidden, setSidebarLayout } = useNavigation();
+    const [showDisplayTitle, setShowDisplayTitle] = useState(!!displayTitle);
+
     const scrollRef = useRef<HTMLElement>(null);
     const { observe: tabsRef, height: tabsHeight } = useDimensions();
     const { observe: displayTitleRef, height: displayTitleHeight } = useDimensions();
@@ -69,9 +72,18 @@ const NavigationContent: React.FC<NavigationProps> = memo(
         switch (currentBreakpoint) {
           case 'desktop':
             setSidebarLayout('expanded');
+            toggleMobileMenuHidden();
+            setShowDisplayTitle(true);
+            break;
+          case 'tablet':
+            setSidebarLayout('condensed');
+            toggleMobileMenuHidden();
+            setShowDisplayTitle(true);
             break;
           case 'mobile':
-            setSidebarLayout('condensed');
+            setSidebarLayout('hidden');
+            // Hide Big displayTitle in mobile
+            setShowDisplayTitle(false);
             break;
         }
       },
@@ -100,9 +112,11 @@ const NavigationContent: React.FC<NavigationProps> = memo(
     const navbarAnimatedDivider = !tabs && displayTitle && animatedDivider;
 
     return (
-      <div className={rootStyles}>
-        <aside ref={sidebarRef}>{sidebar}</aside>
-        <section className={scrollContent} ref={scrollRef}>
+      // Remove grid if there is no sidebar to prevent an awkward blank column
+      <div className={cx(rootStyles, !!sidebar && gridForSidebar)}>
+        {/* Hide the sidebar if there is none */}
+        {sidebar && <aside ref={sidebarRef}>{sidebar}</aside>}
+        <section className={cx(scrollContent)} ref={scrollRef}>
           {/* Ensure NavigationBar content is not scale aware */}
           <ScaleProvider value={DEFAULT_SCALE}>
             <VStack
@@ -119,7 +133,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
               {navbarStaticDivider ?? navbarAnimatedDivider}
             </VStack>
           </ScaleProvider>
-          {displayTitle && (
+          {displayTitle && showDisplayTitle && (
             <Box
               ref={displayTitleRef}
               as="header"
@@ -152,7 +166,11 @@ const NavigationContent: React.FC<NavigationProps> = memo(
             spacingHorizontal={appContentSpacing}
             minHeight="100vh"
           >
-            {children}
+            {isMobileMenuVisible ? (
+              <MobileMenu sidebar={sidebar?.props.children} navbar={navbar} />
+            ) : (
+              children
+            )}
           </VStack>
         </section>
       </div>

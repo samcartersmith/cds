@@ -1,4 +1,4 @@
-import React, { memo, createElement } from 'react';
+import React, { memo, createElement, useCallback } from 'react';
 
 import { IconName } from '@cbhq/cds-common';
 import { mergeProps } from '@cbhq/cds-common/utils/mergeProps';
@@ -13,11 +13,12 @@ import { Box, HStack } from '../layout';
 import { Tooltip } from '../overlays/Tooltip';
 import { getFlexStyles } from '../styles/flex';
 import { TextHeadline } from '../typography/TextHeadline';
+import { useNavigation } from './context';
+import { useMobileMenuChildrenContext } from './MobileMenu';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
-import { useSidebarLayout } from './SidebarLayoutProvider';
 
-export interface SidebarItemProps extends InteractableProps<HTMLAnchorElement> {
+export interface NavigationListItemProps extends InteractableProps<HTMLAnchorElement> {
   active?: boolean;
   icon?: IconName;
   label: string;
@@ -25,10 +26,22 @@ export interface SidebarItemProps extends InteractableProps<HTMLAnchorElement> {
   renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
 }
 
-export const SidebarItem = memo(
-  ({ renderContainer, active, icon, label, badge, onPress }: SidebarItemProps) => {
-    const sidebarLayout = useSidebarLayout();
+export const NavigationListItem = memo(
+  ({ renderContainer, active, icon, label, badge, onPress }: NavigationListItemProps) => {
+    const { isMobileMenuVisible, sidebarLayout } = useNavigation();
+    const isChildOfMobileMenu = useMobileMenuChildrenContext();
     const isExpanded = sidebarLayout === 'expanded';
+
+    const getResponsiveStyles = useCallback(
+      (className: string) => {
+        if (isMobileMenuVisible && isChildOfMobileMenu) {
+          return undefined;
+        }
+        return className;
+      },
+      [isMobileMenuVisible, isChildOfMobileMenu]
+    );
+
     const color = active ? 'primary' : 'foreground';
     const flexStyles = getFlexStyles({
       flexDirection: 'row',
@@ -59,13 +72,17 @@ export const SidebarItem = memo(
               size="s"
               color={color}
               badge={
-                <Badge dangerouslySetClassName={showForCondensed} value={badge} variant="dot" />
+                <Badge
+                  dangerouslySetClassName={getResponsiveStyles(showForCondensed)}
+                  value={badge}
+                  variant="dot"
+                />
               }
             />
           </Box>
         )}
         <HStack
-          dangerouslySetClassName={hideForCondensed}
+          dangerouslySetClassName={getResponsiveStyles(hideForCondensed)}
           flexGrow={1}
           justifyContent="space-between"
           alignItems="center"
@@ -104,4 +121,4 @@ export const SidebarItem = memo(
   }
 );
 
-SidebarItem.displayName = 'SidebarItem';
+NavigationListItem.displayName = 'NavigationListItem';

@@ -7,6 +7,7 @@ import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { LogoMarkProps } from '../icons/LogoMark';
 import { VStack } from '../layout/VStack';
+import { hideForMobile } from './navigationStyles';
 
 export type SidebarProps = {
   logo: React.ReactElement<LogoMarkProps>;
@@ -24,6 +25,7 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children }) => {
         spacingHorizontal={2}
         spacingBottom={2}
         spacingTop={gutter}
+        dangerouslySetClassName={hideForMobile}
       >
         <VStack spacingTop={0.5} spacingStart={1} spacingBottom={3}>
           {logo}

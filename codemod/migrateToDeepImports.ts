@@ -108,7 +108,7 @@ export default function migrateToDeepImports(
           case 'Navbar':
           case 'Navigation':
           case 'Sidebar':
-          case 'SidebarItem':
+          case 'NavigationListItem':
             navigation.add(name);
             break;
 
