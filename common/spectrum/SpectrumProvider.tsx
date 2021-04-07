@@ -5,7 +5,7 @@ import { SpectrumContext } from './context';
 import { useSpectrum } from './useSpectrum';
 
 type SpectrumProviderProps = {
-  value?: Spectrum;
+  value?: Spectrum | null;
 };
 
 export const SpectrumProvider: React.FC<SpectrumProviderProps> = memo(({ value, children }) => {

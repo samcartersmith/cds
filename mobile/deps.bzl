@@ -6,6 +6,7 @@ PEER_DEPENDENCIES = [
     "@npm//lottie-ios",
     "@npm//lottie-react-native",
     "@npm//react-native-linear-gradient",
+    "@npm//react-native-navigation-bar-color",
     "@npm//react-native-svg",
     "@npm//react-native",
     "@npm//react",

@@ -19,7 +19,7 @@ export type SystemProviderProps = {
    * is used as the default color in Text components.
    * @default light
    */
-  spectrum?: Spectrum;
+  spectrum?: Spectrum | null;
   /**
    * Takes a configurable palette. If a partial palette is provided it will be merged with the
    * closest parent `ThemeProvider` if present, if not it will be fallback to merging with the
