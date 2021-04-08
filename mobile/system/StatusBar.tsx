@@ -34,7 +34,8 @@ export const useStatusBarUpdater = ({
 }: StatusBarProps | undefined = emptyObject) => {
   const barStyle = useStatusBarStyle({ palette, spectrum });
   return useCallback(() => {
-    RNStatusBar.setBarStyle(barStyle);
+    // Second argument is to ensure StatusBar style animates in
+    RNStatusBar.setBarStyle(barStyle, true);
     if (Platform.OS === 'android') {
       RNStatusBar.setBackgroundColor('transparent');
       RNStatusBar.setTranslucent(true);

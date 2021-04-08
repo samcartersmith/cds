@@ -55,7 +55,7 @@ describe('useStatusBarUpdater', () => {
       wrapper: ThemeProvider,
     });
     result.current();
-    expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content');
+    expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content', true);
   });
 
   it('does not call setBackgroundColor or setTranslucent on iOS', () => {
@@ -63,7 +63,7 @@ describe('useStatusBarUpdater', () => {
       wrapper: ThemeProvider,
     });
     result.current();
-    expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content');
+    expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content', true);
     expect(RNStatusBar.setBackgroundColor).not.toHaveBeenCalled();
     expect(RNStatusBar.setTranslucent).not.toHaveBeenCalled();
   });
@@ -77,7 +77,7 @@ describe('useStatusBarUpdater', () => {
       wrapper: ThemeProvider,
     });
     result.current();
-    expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content');
+    expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content', true);
     expect(RNStatusBar.setBackgroundColor).toHaveBeenCalled();
     expect(RNStatusBar.setTranslucent).toHaveBeenCalled();
   });
