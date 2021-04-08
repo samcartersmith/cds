@@ -6,6 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.7 (4/8/2021, 01:01 PM PST)
+
+#### 🐞 Fixes
+
+- **[PressableHighlight]** Pass style props. @miles-johnson [#17060](https://github.cbhq.net/mono/repo/pull/17060)
+- Ensure status bar animates and fix AndroidNavigationBar color parsing @katherinemartinez [#17052](https://github.cbhq.net/mono/repo/pull/17052)
+- Inter-SemiBold type naming for Android @hannah-jin [#17038](https://github.cbhq.net/mono/repo/pull/17038)
+- Remove duplicate textAlignStyle in cds-mobile Text @katherinemartinez [#17033](https://github.cbhq.net/mono/repo/pull/17033)
+
 ## 0.7.6 (4/7/2021, 07:52 PM PST)
 
 #### 🚀 Updates

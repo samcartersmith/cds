@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.5 (4/8/2021, 01:01 PM PST)
+
+#### 🐞 Fixes
+
+- Inter-SemiBold type naming for Android @hannah-jin [#17038](https://github.cbhq.net/mono/repo/pull/17038)
+
 ## 0.1.4 (3/17/2021, 10:10 AM PST)
 
 #### 🐞 Fixes

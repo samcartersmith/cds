@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.5 (4/8/2021, 01:01 PM PST)
+
+#### 🚀 Updates
+
+- Update splash animation to new branding @katherinemartinez [#16999](https://github.cbhq.net/mono/repo/pull/16999)
+
 ## 0.2.4 (3/20/2021, 03:59 PM PST)
 
 #### 🐞 Fixes
