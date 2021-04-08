@@ -49,6 +49,19 @@ Number to show on top right corner of button.
 
 <ComponentDetails componentName="IconButton" templateName="badgeProp" />
 
+### dangerouslySetClassName <Badge variant="web" />
+
+<ApiDetails
+  componentName="IconButton"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="IconButton" templateName="dangerouslySetClassNameProp" />
+
 ### disabled
 
 Mark the button as disabled.
@@ -385,7 +398,7 @@ Callback fired after the element is pressed.
   required={false}
   defaultValue=""
   mobileOptions={['(event: GestureResponderEvent) => void']}
-  webOptions={['OnPress<HTMLButtonElement>']}
+  webOptions={['NoopFn', 'OnPress<HTMLButtonElement>']}
 />
 
 <ComponentDetails componentName="IconButton" templateName="onPressProp" />

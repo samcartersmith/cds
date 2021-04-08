@@ -71,8 +71,8 @@ export const label1 = css`
   font-size: var(--label1-font-size);
   line-height: var(--label1-line-height);
   letter-spacing: var(--label1-letter-spacing);
-  font-weight: var(--label1-font-weight);
   text-transform: var(--label1-text-transform);
+  font-weight: var(--label1-font-weight);
   font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 `;
@@ -81,8 +81,8 @@ export const label2 = css`
   font-size: var(--label2-font-size);
   line-height: var(--label2-line-height);
   letter-spacing: var(--label2-letter-spacing);
-  font-weight: var(--label2-font-weight);
   text-transform: var(--label2-text-transform);
+  font-weight: var(--label2-font-weight);
   font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 `;
@@ -91,8 +91,8 @@ export const caption = css`
   font-size: var(--caption-font-size);
   line-height: var(--caption-line-height);
   letter-spacing: var(--caption-letter-spacing);
-  font-weight: var(--caption-font-weight);
   text-transform: var(--caption-text-transform);
+  font-weight: var(--caption-font-weight);
   font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 `;

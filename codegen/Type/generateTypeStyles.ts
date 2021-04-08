@@ -50,16 +50,10 @@ const calculateVariantStyle = (
   const minUpperCaseLineHeight = round(minUpperCaseFontSize + leading);
   const minUpperCaseLetterSpacing = calculateLetterSpacing(minUpperCaseFontSize, mobile);
 
-  const sharedProps = {
-    fontWeight: fontWeights[fontWeight],
-    fontFamily: `${fontFamily}-${fontWeight}` as const,
-  };
-
   const lowercase = {
     fontSize: defaultFontSize,
     lineHeight: defaultLineHeight,
     letterSpacing: defaultLetterSpacing,
-    ...sharedProps,
   };
 
   const allCaps = {
@@ -71,7 +65,6 @@ const calculateVariantStyle = (
     fontSize: mobile ? minLowerCaseFontSize : `${minLowerCaseFontSize}px`,
     lineHeight: mobile ? minLowercaseLineHeight : `${minLowercaseLineHeight}px`,
     letterSpacing: minLowercaseLetterSpacing,
-    ...sharedProps,
   };
 
   const adjustedUppercase = {
@@ -79,7 +72,6 @@ const calculateVariantStyle = (
     lineHeight: mobile ? minUpperCaseLineHeight : `${minUpperCaseLineHeight}px`,
     textTransform: 'uppercase',
     letterSpacing: minUpperCaseLetterSpacing,
-    ...sharedProps,
   };
 
   const lowercasePasses = rawFontSize >= minLowerCaseFontSize;
@@ -99,10 +91,10 @@ const calculateVariantStyle = (
   if (mobile) {
     // mobile will not be using letter spacing and font weight is baked into the font family name.
     delete styles.letterSpacing;
-    delete styles.fontWeight;
+    styles.fontFamily = `${fontFamily}-${fontWeight}` as const;
   } else {
     // web doesn't need font-family in scale styles.
-    delete styles.fontFamily;
+    styles.fontWeight = fontWeights[fontWeight];
   }
 
   return styles;
