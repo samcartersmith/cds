@@ -4,7 +4,6 @@ import { PaletteBackground, usePaletteConfig } from '@cbhq/cds-common';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { extractHueStep } from '@cbhq/cds-common/utils/extractHueStep';
 import {
-  AccessibilityProps,
   GestureResponderEvent,
   Pressable,
   PressableProps,
@@ -29,18 +28,29 @@ export interface InteractableProps {
   onLongPress?: (event: GestureResponderEvent) => void;
 }
 
-export interface PressableHighlightProps extends Omit<PressableProps, 'style'>, AccessibilityProps {
+export interface PressableHighlightProps
+  extends Omit<PressableProps, 'onPress' | 'onLongPress' | 'style'>,
+    InteractableProps {
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteBackground;
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
   dangerouslySetStyle?: ViewStyle;
-  feedback?: HapticFeedbackType;
+  /**
+   * @internal Hide the underlay color from appearing.
+   */
   hideUnderlay?: boolean;
+  /**
+   * Is the element currently loading? Will mark as busy for accessibility.
+   */
   loading?: boolean;
 }
 
 export const PressableHighlight = ({
   backgroundColor,
   children,
+  dangerouslySetStyle,
   disabled,
   feedback = 'none',
   hideUnderlay,
@@ -111,6 +121,7 @@ export const PressableHighlight = ({
       onPress={handlePress}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
+      style={dangerouslySetStyle}
       {...props}
     >
       {isPressed && !disabled && !hideUnderlay && <View style={underlayStyles} />}
