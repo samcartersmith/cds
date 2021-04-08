@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.3 (4/7/2021, 07:52 PM PST)
+
+#### 🚀 Updates
+
+- navigation for mobile web @travis-ueki [#16662](https://github.cbhq.net/mono/repo/pull/16662), [CDS-333](https://jira.coinbase-corp.com/browse/CDS-333)
+- Web Checkbox, CheckboxGroup, and RadioGroup components @hannah-jin [#16628](https://github.cbhq.net/mono/repo/pull/16628), [CDS-308](https://jira.coinbase-corp.com/browse/CDS-308)
+- Mobile Checkbox, CheckboxGroup, RadioGroup @hannah-jin [#16219](https://github.cbhq.net/mono/repo/pull/16219), [CDS-308](https://jira.coinbase-corp.com/browse/CDS-308)
+
+#### 🐞 Fixes
+
+- default uppercase text transformation for label1 and label2 in dense scales @hannah-jin [#16820](https://github.cbhq.net/mono/repo/pull/16820)
+
 ## 0.7.2 (4/5/2021, 07:08 PM PST)
 
 #### 🚀 Updates

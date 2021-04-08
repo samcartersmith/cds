@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.6 (4/7/2021, 07:52 PM PST)
+
+#### 🚀 Updates
+
+- Web Checkbox, CheckboxGroup, and RadioGroup components @hannah-jin [#16628](https://github.cbhq.net/mono/repo/pull/16628), [CDS-308](https://jira.coinbase-corp.com/browse/CDS-308)
+- Add StatusBar and AndroidNavigationBar to cds-mobile @katherinemartinez [#16898](https://github.cbhq.net/mono/repo/pull/16898), [CDS-377](https://jira.coinbase-corp.com/browse/CDS-377)
+- Mobile Checkbox, CheckboxGroup, RadioGroup @hannah-jin [#16219](https://github.cbhq.net/mono/repo/pull/16219), [CDS-308](https://jira.coinbase-corp.com/browse/CDS-308)
+
 ## 0.7.5 (4/5/2021, 07:08 PM PST)
 
 #### 🚀 Updates

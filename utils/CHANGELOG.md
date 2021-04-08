@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.5 (4/7/2021, 07:52 PM PST)
+
+#### 🚀 Updates
+
+- Add StatusBar and AndroidNavigationBar to cds-mobile @katherinemartinez [#16898](https://github.cbhq.net/mono/repo/pull/16898), [CDS-377](https://jira.coinbase-corp.com/browse/CDS-377)
+
+#### 📘 Misc
+
+- update codegen styles and web styles @hannah-jin [#15564](https://github.cbhq.net/mono/repo/pull/15564)
+
 ## 0.1.4 (3/20/2021, 03:59 PM PST)
 
 #### 🐞 Fixes
