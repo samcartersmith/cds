@@ -123,7 +123,6 @@ export const createText = (name: Typography) => {
         textAlign,
         textStyles,
         textTransform,
-        textAlign,
         {
           color: palette[color],
           lineHeight,
