@@ -56,6 +56,10 @@ When multiple props change on a component, or styles/visuals are completely rede
 | **1.x.x** | `<Box {...oldProps} />` `<UnstableBox {...newProps} />` |
 | **2.0.0** |                 `<Box {...newProps} />`                 |
 
+### Visual updates
+
+When any CDS code change causes a change in the rendered UI. This can be caused by but not limited to CSS style updates, codegen style updates, any CDS token updates, default style prop value updates, and responsive design media query changes. Usually, the visual change should show up in the percy screenshot tests.
+
 ## Deprecations
 
 When a feature is being removed or refactored, a deprecation notice will be applied to the feature in a minor/patch version before the actual change occurs in a major version (following the scenarios above).
