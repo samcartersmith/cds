@@ -1,8 +1,8 @@
-import { StoryContainer } from '../decorators/StoryContainer';
+import { LightStoryContainer } from '../decorators/StoryContainer';
 import { css } from 'linaria';
 import '@cbhq/cds-web/globalStyles';
 
-export const decorators = [StoryContainer];
+export const decorators = [LightStoryContainer];
 
 export const parameters = {
   layout: 'fullscreen',

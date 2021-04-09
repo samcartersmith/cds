@@ -5,7 +5,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Box, Spacer } from '../layout';
 import { visuallyHidden } from '../styles/visuallyHidden';
-import { Interactable } from '../system/Interactable';
+import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { TextProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
@@ -16,6 +16,8 @@ export interface ControlProps<T extends string>
   label?: TextProps['children'];
   value?: T;
   children: React.ReactChild;
+  backgroundColor?: InteractableProps['backgroundColor'];
+  borderRadius?: InteractableProps['borderRadius'];
   // checkbox only
   indeterminate?: boolean;
 }
@@ -32,6 +34,8 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     children,
     label,
     'aria-labelledby': ariaLabelledby,
+    backgroundColor,
+    borderRadius,
     ...htmlProps
   }: ControlProps<T>,
 
@@ -72,9 +76,9 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const iconNode = (
     <Interactable
       as="span"
-      backgroundColor={checked ? 'primary' : 'background'}
+      backgroundColor={backgroundColor ?? (checked ? 'primary' : 'background')}
       disabled={disabled || readOnly}
-      borderRadius={type === 'radio' ? 'round' : undefined}
+      borderRadius={borderRadius}
     >
       <>
         <input className={visuallyHidden} {...inputProps} />

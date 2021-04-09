@@ -10,6 +10,7 @@ const components = [
   { key: 'Button' },
   { key: 'Checkbox' },
   { key: 'RadioGroup' },
+  { key: 'Switch' },
   { key: 'Divider' },
   { key: 'Spacer' },
   { key: 'Icon' },

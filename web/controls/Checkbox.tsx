@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes, memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { CheckboxBaseProps } from '@cbhq/cds-common/types/CheckboxBaseProps';
@@ -10,9 +10,10 @@ import { FilteredHTMLAttributes } from '../types';
 import { Control } from './Control';
 
 export interface CheckboxProps<T extends string>
-  extends FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'>,
+  extends FilteredHTMLAttributes<React.InputHTMLAttributes<HTMLInputElement>, 'value'>,
     CheckboxBaseProps<T> {
-  onChange?: InputHTMLAttributes<HTMLInputElement>['onChange'];
+  /** Handle change event when user clicks on the checkbox. */
+  onChange?: React.InputHTMLAttributes<HTMLInputElement>['onChange'];
 }
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(

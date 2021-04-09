@@ -39,4 +39,7 @@ export const palette = {
 export const control = {
   checkboxSize: 'var(--checkbox-size)',
   radioSize: 'var(--radio-size)',
+  switchWidth: 'var(--switch-width)',
+  switchHeight: 'var(--switch-height)',
+  switchThumbSize: 'var(--switch-thumb-size)',
 } as const;

@@ -32,12 +32,10 @@ export const InteractionOpacity: React.FC<InteractionOpacityProps> = React.memo(
     const style = useMemo(
       () => [
         [
-          StyleSheet.absoluteFillObject,
+          styles.underlayPosition,
           {
             backgroundColor: palette[underlayColor],
-            // Avoid weird darker corners
-            borderRadius:
-              borderRadius === undefined ? undefined : borderRadiusTokens[borderRadius] + 1,
+            borderRadius: borderRadius && borderRadiusTokens[borderRadius],
           },
           pressScale && { transform: [{ scale: pressScale }] },
         ],
@@ -55,3 +53,14 @@ export const InteractionOpacity: React.FC<InteractionOpacityProps> = React.memo(
     );
   }
 );
+
+const styles = StyleSheet.create({
+  // inset underlay by 1 to avoid weird border showing.
+  underlayPosition: {
+    position: 'absolute',
+    top: 1,
+    bottom: 1,
+    left: 1,
+    right: 1,
+  },
+});

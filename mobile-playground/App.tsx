@@ -17,6 +17,7 @@ import LinkButtonScreen from './src/LinkButton';
 import LottieScreen from './src/Lottie';
 import RadioGroupScreen from './src/RadioGroup';
 import SpacerScreen from './src/Spacer';
+import SwitchScreen from './src/Switch';
 import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
 import TextCaptionScreen from './src/TextCaption';
@@ -68,6 +69,7 @@ const App = () => {
           <Stack.Screen name="LinkButton" component={LinkButtonScreen} />
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
           <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
+          <Stack.Screen name="Switch" component={SwitchScreen} />
           <Stack.Screen name="Divider" component={DividerScreen} />
           <Stack.Screen name="Spacer" component={SpacerScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />

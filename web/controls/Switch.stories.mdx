@@ -1,0 +1,84 @@
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { DarkStoryContainer } from '@cbhq/cds-storybook/decorators/StoryContainer';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { ThemeProvider } from '../system/ThemeProvider';
+import { Switch } from './Switch';
+
+<Meta title="Core Components/Switch" component={Switch} />
+
+# Switch
+
+<Canvas isColumn withToolbar>
+  <Story name="Normal">
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <Switch checked={checked} onChange={toggle}>
+          Normal
+        </Switch>
+      );
+    }}
+  </Story>
+  <Story name="Dense">
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <ThemeProvider scale="xSmall">
+          <Switch checked={checked} onChange={toggle}>
+            Dense
+          </Switch>
+        </ThemeProvider>
+      );
+    }}
+  </Story>
+  <Story name="Dark normal" decorators={[DarkStoryContainer]}>
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <ThemeProvider scale="xSmall" spectrum="dark">
+          <Switch checked={checked} onChange={toggle}>
+            Normal
+          </Switch>
+        </ThemeProvider>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas withToolbar>
+  <Story name="Disabled unselected">
+    <Switch disabled>Disabled unselected</Switch>
+  </Story>
+  <Story name="Disabled selected">
+    <Switch checked disabled>
+      Disabled selected
+    </Switch>
+  </Story>
+  <Story name="Disabled mixed">
+    <Switch indeterminate disabled>
+      Disabled mixed
+    </Switch>
+  </Story>
+  <Story name="Dark normal selected" decorators={[DarkStoryContainer]}>
+    <ThemeProvider scale="xSmall" spectrum="dark">
+      <Switch checked>Selected</Switch>
+    </ThemeProvider>
+  </Story>
+  <Story name="Dark normal disabled unselected" decorators={[DarkStoryContainer]}>
+    <ThemeProvider scale="xSmall" spectrum="dark">
+      <Switch>Disabled unselected</Switch>
+    </ThemeProvider>
+  </Story>
+  <Story name="Dark normal disabled selected" decorators={[DarkStoryContainer]}>
+    <ThemeProvider scale="xSmall" spectrum="dark">
+      <Switch>Disabled selected</Switch>
+    </ThemeProvider>
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

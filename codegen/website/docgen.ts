@@ -80,6 +80,13 @@ export const docs = prepareDocgens([
     }),
   },
   {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/switch.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'Switch',
+      childPath: 'controls/Switch.tsx',
+    }),
+  },
+  {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/icon.mdx`,
     data: getDocgenForPackage({ componentName: 'Icon', childPath: 'icons/Icon.tsx' }),
   },

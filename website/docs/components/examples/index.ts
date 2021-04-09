@@ -10,4 +10,5 @@ export * as Lottie from './Lottie';
 export * as Spacer from './Spacer';
 export * as Text from './Text';
 export * as ThemeProvider from './ThemeProvider';
+export * as Switch from './Switch';
 export * as VStack from './VStack';

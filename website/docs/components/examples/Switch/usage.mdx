@@ -1,0 +1,24 @@
+```jsx live
+function SwitchDemo() {
+  // doc site theme control
+  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
+  // from @cbhq/cds-common/hooks/useToggler
+  const [isChecked, { toggle }] = useToggler(isDarkTheme);
+
+  const handleChange = useCallback(
+    event => {
+      event.target.checked ? setDarkTheme() : setLightTheme();
+      toggle();
+    },
+    [setLightTheme, setDarkTheme]
+  );
+
+  return (
+    <ThemeProvider spectrum={isChecked ? 'dark' : 'light'}>
+      <Switch value="hyped" onChange={handleChange} checked={isChecked}>
+        Dark Mode
+      </Switch>
+    </ThemeProvider>
+  );
+}
+```

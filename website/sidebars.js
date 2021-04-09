@@ -54,7 +54,7 @@ module.exports = {
           type: 'category',
           label: 'Controls',
           collapsed: false,
-          items: ['components/checkbox', 'components/radio-group'],
+          items: ['components/checkbox', 'components/radio-group', 'components/switch'],
         },
         {
           type: 'category',

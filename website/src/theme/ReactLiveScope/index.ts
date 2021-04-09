@@ -13,11 +13,14 @@ import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import { useStatusButtons } from '@cbhq/cds-website/docs/components/examples/Lottie/useStatusButtons';
-
+import useThemeContext from '@theme/hooks/useThemeContext';
 // Add react-live imports you need here
 const ReactLiveScope = {
   React,
   ...React,
+  // docusaurus
+  useThemeContext,
+  // CDS
   ThemeProvider,
   Text: CDSTypography.TextBody,
   lottieFiles,

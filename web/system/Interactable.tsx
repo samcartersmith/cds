@@ -2,10 +2,10 @@ import { createElement, forwardRef } from 'react';
 
 import { BorderRadius, PaletteBackground } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
-import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { cx, css } from 'linaria';
 
+import * as borderRadii from '../styles/borderRadius';
 import { palette } from '../tokens';
 import { DynamicElement } from '../types';
 
@@ -64,10 +64,10 @@ const disabledState = css`
 
 const underlay = css`
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
   z-index: 0;
   overflow: hidden;
 `;
@@ -113,11 +113,9 @@ export const Interactable = forwardRef(function Interactable<T extends React.Ele
         {!isDisabled && (
           <span
             role="presentation"
-            className={underlay}
+            className={cx(underlay, borderRadii[borderRadius])}
             style={{
               backgroundColor: palette[underlayColor],
-              borderRadius:
-                borderRadius === undefined ? undefined : borderRadiusTokens[borderRadius] + 1,
             }}
           />
         )}

@@ -65,6 +65,9 @@ export const xSmall = css`
   --spacing-10: 44px;
   --checkbox-size: 16px;
   --radio-size: 16px;
+  --switch-width: 42px;
+  --switch-height: 24px;
+  --switch-thumb-size: 22px;
 `;
 
 export const small = css`
@@ -128,6 +131,9 @@ export const small = css`
   --spacing-10: 44px;
   --checkbox-size: 16px;
   --radio-size: 16px;
+  --switch-width: 42px;
+  --switch-height: 24px;
+  --switch-thumb-size: 22px;
 `;
 
 export const medium = css`
@@ -191,6 +197,9 @@ export const medium = css`
   --spacing-10: 44px;
   --checkbox-size: 16px;
   --radio-size: 16px;
+  --switch-width: 42px;
+  --switch-height: 24px;
+  --switch-thumb-size: 22px;
 `;
 
 export const large = css`
@@ -252,6 +261,9 @@ export const large = css`
   --spacing-10: 80px;
   --checkbox-size: 20px;
   --radio-size: 20px;
+  --switch-width: 52px;
+  --switch-height: 32px;
+  --switch-thumb-size: 30px;
 `;
 
 export const xLarge = css`
@@ -312,6 +324,9 @@ export const xLarge = css`
   --spacing-10: 80px;
   --checkbox-size: 20px;
   --radio-size: 20px;
+  --switch-width: 52px;
+  --switch-height: 32px;
+  --switch-thumb-size: 30px;
 `;
 
 export const xxLarge = css`
@@ -372,6 +387,9 @@ export const xxLarge = css`
   --spacing-10: 80px;
   --checkbox-size: 20px;
   --radio-size: 20px;
+  --switch-width: 52px;
+  --switch-height: 32px;
+  --switch-thumb-size: 30px;
 `;
 
 export const xxxLarge = css`
@@ -432,4 +450,7 @@ export const xxxLarge = css`
   --spacing-10: 80px;
   --checkbox-size: 20px;
   --radio-size: 20px;
+  --switch-width: 52px;
+  --switch-height: 32px;
+  --switch-thumb-size: 30px;
 `;

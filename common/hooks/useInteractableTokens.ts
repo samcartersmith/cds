@@ -25,7 +25,7 @@ export const useInteractableTokens = (
   if (hueStep === '') return emptyObject;
 
   return {
-    underlayColor: hueStep > 50 ? 'background' : 'foreground',
+    underlayColor: hueStep > 60 ? 'background' : 'foreground',
     pressedOpacity: opacityPressed[hueStep],
     hoverOpacity: opacityHovered[hueStep],
   };

@@ -1,7 +1,7 @@
-import { iconGlyphMap } from '@cbhq/cds-mobile/icons/iconGlyphMap';
 import { fireEvent, render } from '@testing-library/react-native';
 import { Pressable } from 'react-native';
 
+import { iconGlyphMap } from '../../icons/iconGlyphMap';
 import { Checkbox } from '../Checkbox';
 
 describe('Checkbox', () => {
