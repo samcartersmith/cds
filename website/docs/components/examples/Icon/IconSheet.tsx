@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { IconSize, paletteForegrounds, PaletteForeground } from '@cbhq/cds-common';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { Icon } from '@cbhq/cds-web/icons/Icon';
+import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import TabItem from '@theme/TabItem';
@@ -87,14 +88,19 @@ const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
         {iconNames
           .filter(name => name.includes(query))
           .map(filteredName => (
-            <Icon
-              title={filteredName}
-              spacing={3}
-              color={color}
-              key={filteredName}
-              name={filteredName}
-              size={size}
-            />
+            <div>
+              <Icon
+                title={filteredName}
+                spacing={7}
+                color={color}
+                key={filteredName}
+                name={filteredName}
+                size={size}
+              />
+              <TextLabel1 align="center" as="p">
+                {filteredName}
+              </TextLabel1>
+            </div>
           ))}
       </Box>
     </ThemeProvider>
