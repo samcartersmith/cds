@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.8.0 (4/12/2021, 12:52 PM PST)
+
+#### 💥 Breaking
+
+- Improve mobile pressable/interactable @miles-johnson [#17104](https://github.cbhq.net/mono/repo/pull/17104)
+
+#### 🚀 Updates
+
+- Implement Switch Component @hannah-jin [#15647](https://github.cbhq.net/mono/repo/pull/15647), [CDS-308](https://jira.coinbase-corp.com/browse/CDS-308)
+
 ## 0.7.7 (4/8/2021, 01:01 PM PST)
 
 #### 🐞 Fixes
