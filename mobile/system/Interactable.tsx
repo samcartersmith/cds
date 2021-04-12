@@ -1,72 +1,77 @@
-import { memo } from 'react';
+import React, { useMemo, memo } from 'react';
 
-import { BorderRadius } from '@cbhq/cds-common';
-import type { PaletteBackground } from '@cbhq/cds-common/types/Palette';
+import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import {
-  Animated,
-  AccessibilityProps,
-  GestureResponderEvent,
-  Pressable,
-  PressableProps,
-} from 'react-native';
+  borderRadius as borderRadiusTokens,
+  borderWidth as borderWidthTokens,
+} from '@cbhq/cds-common/tokens/border';
+import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
+import { emptyArray } from '@cbhq/cds-utils';
+import { Animated, Falsy, StyleSheet, View, ViewStyle } from 'react-native';
 
-import { HapticFeedbackType } from '../types';
-import { Haptics } from '../utils/haptics';
-import { InteractionOpacity } from './InteractionOpacity';
+import { usePalette } from '../hooks/usePalette';
 
-export interface InteractableProps extends PressableProps, AccessibilityProps {
-  backgroundColor: PaletteBackground;
-  feedback?: HapticFeedbackType;
-  disabled?: boolean;
-  loading?: boolean;
-  borderRadius?: BorderRadius;
-  pressScale?: Animated.Value;
+export interface InteractableProps extends InteractableBaseProps {
+  children: NonNullable<React.ReactNode>;
+  /** Hide the underlay on press. */
+  hideUnderlay?: boolean;
+  /** Apply animated styles to the outer container. */
+  style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
 }
 
-export const Interactable: React.FC<InteractableProps> = memo(function Interactable({
+export const Interactable = memo(function Interactable({
+  backgroundColor,
+  borderColor,
+  borderRadius,
+  borderWidth,
   children,
   disabled,
-  feedback = 'none',
-  loading,
-  onPress,
-  backgroundColor,
-  borderRadius,
-  pressScale,
-  style,
-  ...props
-}) {
-  const handlePress = (event: GestureResponderEvent) => {
-    if (feedback === 'light') {
-      Haptics.lightImpact();
-    } else if (feedback === 'normal') {
-      Haptics.normalImpact();
-    } else if (feedback === 'heavy') {
-      Haptics.heavyImpact();
-    }
+  hideUnderlay,
+  pressed,
+  style = emptyArray,
+}: InteractableProps) {
+  const palette = usePalette();
+  const { disabledOpacity, underlayColor, pressedOpacity } = useInteractableTokens(backgroundColor);
 
-    onPress?.(event);
-  };
+  const containerStyles = useMemo(
+    () => [
+      styles.interactable,
+      { backgroundColor: palette[backgroundColor] },
+      borderColor && { borderColor: palette[borderColor] },
+      borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
+      borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
+      disabled && { opacity: disabledOpacity },
+    ],
+    [palette, backgroundColor, borderColor, borderRadius, borderWidth, disabled, disabledOpacity]
+  );
+
+  const underlayStyles = useMemo(
+    () => [
+      StyleSheet.absoluteFillObject,
+      {
+        backgroundColor: palette[underlayColor],
+      },
+    ],
+    [underlayColor, palette]
+  );
 
   return (
-    <Pressable
-      accessibilityState={{ busy: loading, disabled: !!disabled }}
-      disabled={disabled}
-      onPress={handlePress}
-      style={style}
-      {...props}
-    >
-      {({ pressed }) => (
-        <InteractionOpacity
-          pressed={pressed}
-          backgroundColor={backgroundColor}
-          disabled={disabled}
-          loading={loading}
-          borderRadius={borderRadius}
-          pressScale={pressScale}
-        >
-          {children}
-        </InteractionOpacity>
-      )}
-    </Pressable>
+    <Animated.View style={[...containerStyles, ...style]}>
+      {pressed && !disabled && !hideUnderlay && <View style={underlayStyles} />}
+
+      <View
+        style={{ backgroundColor: palette[backgroundColor], opacity: pressed ? pressedOpacity : 1 }}
+        renderToHardwareTextureAndroid
+      >
+        {children}
+      </View>
+    </Animated.View>
   );
+});
+
+const styles = StyleSheet.create({
+  interactable: {
+    overflow: 'hidden',
+    borderStyle: 'solid',
+  },
 });

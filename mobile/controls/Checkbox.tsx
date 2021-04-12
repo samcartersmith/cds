@@ -1,15 +1,13 @@
 import React, { forwardRef, memo } from 'react';
 
 import { useScale } from '@cbhq/cds-common';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import type { CheckboxBaseProps } from '@cbhq/cds-common/types/CheckboxBaseProps';
 import { Animated, StyleSheet, View } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
 import { Icon } from '../icons/Icon';
-import { interactableStyles } from '../styles/interactable';
 import * as scaleStyles from '../styles/scale';
-import { InteractionOpacity } from '../system/InteractionOpacity';
+import { Interactable } from '../system/Interactable';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
 export interface CheckboxProps<T extends string>
@@ -29,34 +27,32 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
   const { checkboxSize } = scaleStyles[cdsScale].control;
 
   return (
-    <InteractionOpacity pressed={pressed} backgroundColor={backgroundColor} disabled={disabled}>
-      <Animated.View
-        style={[
-          styles.box,
-          disabled && interactableStyles.disabled,
-          {
-            borderColor: animatedBoxValue.interpolate({
-              inputRange: [0, 1],
-              outputRange: [palette.lineHeavy, palette.primary],
-            }),
-            backgroundColor: animatedBoxValue.interpolate({
-              inputRange: [0, 1],
-              outputRange: [palette.background, palette.primary],
-            }),
-            width: checkboxSize,
-            height: checkboxSize,
-          },
-        ]}
-      >
-        <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
-          {indeterminate ? (
-            <Icon size="s" name="minus" color="primaryForeground" />
-          ) : (
-            <Icon size="s" name="checkmark" color="primaryForeground" />
-          )}
-        </Animated.View>
+    <Interactable
+      pressed={pressed}
+      backgroundColor={backgroundColor}
+      borderColor="lineHeavy"
+      borderWidth="checkbox"
+      disabled={disabled}
+      style={[
+        styles.box,
+        {
+          borderColor: animatedBoxValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [palette.lineHeavy, palette.primary],
+          }),
+          backgroundColor: animatedBoxValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [palette.background, palette.primary],
+          }),
+          width: checkboxSize,
+          height: checkboxSize,
+        },
+      ]}
+    >
+      <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
+        <Icon size="s" name={indeterminate ? 'minus' : 'checkmark'} color="primaryForeground" />
       </Animated.View>
-    </InteractionOpacity>
+    </Interactable>
   );
 };
 
@@ -78,8 +74,6 @@ export const Checkbox = memo(CheckboxWithRef) as typeof CheckboxWithRef &
 
 const styles = StyleSheet.create({
   box: {
-    borderStyle: 'solid',
-    borderWidth: borderWidth.checkbox,
     alignItems: 'center',
     justifyContent: 'center',
   },

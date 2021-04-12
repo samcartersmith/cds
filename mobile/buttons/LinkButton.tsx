@@ -4,15 +4,12 @@ import {
   useLinkButtonVariant,
   LinkButtonVariant,
 } from '@cbhq/cds-common/hooks/useLinkButtonVariant';
-import { Animated, View } from 'react-native';
+import { View } from 'react-native';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
-import { usePalette } from '../hooks/usePalette';
-import { usePressAnimation } from '../hooks/usePressAnimation';
+import { Pressable } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
-import { ButtonProps } from './Button';
-import { baseStyles } from './buttonStyle';
-import { PressableHighlight } from './PressableHighlight';
+import { ButtonProps, styles } from './Button';
 
 export interface LinkButtonProps extends Omit<ButtonProps, 'variant' | 'loading'> {
   /**
@@ -22,62 +19,38 @@ export interface LinkButtonProps extends Omit<ButtonProps, 'variant' | 'loading'
   variant?: LinkButtonVariant;
 }
 
-export const LinkButton = memo(
-  ({
-    accessibilityLabel,
-    block,
-    children,
-    compact,
-    disabled,
-    feedback,
-    onPress,
-    testID,
-    variant = 'primary',
-  }: LinkButtonProps) => {
-    const palette = usePalette();
-    const [pressIn, pressOut, pressScale] = usePressAnimation();
-    const spacingStyles = useButtonSpacing(compact);
-    const { color, backgroundColor, borderColor } = useLinkButtonVariant(variant);
-    const viewStyles = useMemo(
-      () => ({ backgroundColor: palette[backgroundColor], borderColor: palette[borderColor] }),
-      [palette, backgroundColor, borderColor]
-    );
+export const LinkButton = memo(function LinkButton({
+  block,
+  children,
+  compact,
+  feedback = 'light',
+  variant = 'primary',
+  ...props
+}: LinkButtonProps) {
+  const { color, backgroundColor, borderColor } = useLinkButtonVariant(variant);
+  const spacingStyles = useButtonSpacing(compact);
+  const buttonStyles = useMemo(
+    () => [
+      styles.button,
+      compact && styles.buttonCompact,
+      block ? styles.block : styles.inline,
+      spacingStyles,
+    ],
+    [block, compact, spacingStyles]
+  );
 
-    return (
-      <Animated.View
-        style={[
-          block ? baseStyles.block : baseStyles.inline,
-          compact ? baseStyles.pressableCompact : baseStyles.pressable,
-          {
-            transform: [{ scale: pressScale }],
-          },
-        ]}
-      >
-        <PressableHighlight
-          accessibilityHint={accessibilityLabel}
-          disabled={disabled}
-          feedback={feedback}
-          onPress={onPress}
-          onPressIn={pressIn}
-          onPressOut={pressOut}
-          testID={testID}
-          backgroundColor={backgroundColor}
-        >
-          <View
-            style={[
-              baseStyles.button,
-              spacingStyles,
-              compact && baseStyles.buttonCompact,
-              disabled && baseStyles.disabled,
-              viewStyles,
-            ]}
-          >
-            <TextHeadline color={color}>{children}</TextHeadline>
-          </View>
-        </PressableHighlight>
-      </Animated.View>
-    );
-  }
-);
-
-LinkButton.displayName = 'LinkButton';
+  return (
+    <Pressable
+      backgroundColor={backgroundColor}
+      borderColor={borderColor}
+      borderRadius={compact ? 'compact' : 'standard'}
+      borderWidth="button"
+      feedback={feedback}
+      {...props}
+    >
+      <View style={buttonStyles}>
+        <TextHeadline color={color}>{children}</TextHeadline>
+      </View>
+    </Pressable>
+  );
+});

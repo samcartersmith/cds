@@ -1,5 +1,6 @@
 export * from './BadgeBaseProps';
 export * from './BorderRadius';
+export * from './BorderWidth';
 export * from './BoxBaseProps';
 export * from './ButtonBaseProps';
 export * from './IconButtonBaseProps';

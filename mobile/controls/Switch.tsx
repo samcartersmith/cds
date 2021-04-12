@@ -6,9 +6,8 @@ import { Animated, StyleSheet, View } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { usePalette } from '../hooks/usePalette';
-import { interactableStyles } from '../styles/interactable';
 import * as scaleStyles from '../styles/scale';
-import { InteractionOpacity } from '../system/InteractionOpacity';
+import { Interactable } from '../system/Interactable';
 import type { TextProps } from '../typography/createText';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
@@ -31,7 +30,6 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
 
   const trackStyle = useMemo(
     () => [
-      disabled && interactableStyles.disabled,
       {
         backgroundColor: animatedBoxValue.interpolate({
           inputRange: [0, 1],
@@ -42,14 +40,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
         height: switchHeight,
       },
     ],
-    [
-      disabled,
-      animatedBoxValue,
-      palette.backgroundAlternate,
-      palette.primary,
-      switchWidth,
-      switchHeight,
-    ]
+    [animatedBoxValue, palette.backgroundAlternate, palette.primary, switchWidth, switchHeight]
   );
 
   const thumbStyle = useMemo(
@@ -84,7 +75,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
   );
 
   return (
-    <InteractionOpacity
+    <Interactable
       pressed={pressed}
       backgroundColor={backgroundColor}
       disabled={disabled}
@@ -93,7 +84,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
       <Animated.View style={trackStyle}>
         <Animated.View style={thumbStyle} />
       </Animated.View>
-    </InteractionOpacity>
+    </Interactable>
   );
 };
 

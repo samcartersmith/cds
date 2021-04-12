@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useCallback, useEffect, useRef } from 'react';
 
+import { PaletteBackground } from '@cbhq/cds-common';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { isDevelopment } from '@cbhq/cds-utils';
 import {
@@ -13,7 +14,6 @@ import {
 } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
-import { InteractionOpacityProps } from '../system/InteractionOpacity';
 import { TextProps } from '../typography/createText';
 import { TextBody } from '../typography/TextBody';
 import { Haptics } from '../utils/haptics';
@@ -21,7 +21,7 @@ import { Haptics } from '../utils/haptics';
 export type ControlIconProps = {
   pressed: boolean;
   disabled?: boolean;
-  backgroundColor: InteractionOpacityProps['backgroundColor'];
+  backgroundColor: PaletteBackground;
   animatedBoxValue: Animated.Value;
   animatedScaleValue: Animated.Value;
   indeterminate?: boolean;

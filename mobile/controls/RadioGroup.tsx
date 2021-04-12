@@ -1,16 +1,14 @@
 import React, { forwardRef, memo } from 'react';
 
 import { useScale } from '@cbhq/cds-common';
-import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
 import { Icon } from '../icons/Icon';
-import { interactableStyles } from '../styles/interactable';
 import * as scaleStyles from '../styles/scale';
-import { InteractionOpacity } from '../system/InteractionOpacity';
+import { Interactable } from '../system/Interactable';
 import type { TextProps } from '../typography/createText';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
@@ -30,32 +28,30 @@ const RadioIcon: React.FC<ControlIconProps> = ({
   const { radioSize } = scaleStyles[cdsScale].control;
 
   return (
-    <InteractionOpacity
+    <Interactable
       pressed={pressed}
-      backgroundColor={backgroundColor}
+      backgroundColor="background"
+      borderColor="lineHeavy"
       borderRadius="round"
+      borderWidth="radio"
       disabled={disabled}
+      style={[
+        styles.circle,
+        {
+          borderColor: animatedBoxValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [palette.lineHeavy, palette.primary],
+          }),
+          backgroundColor,
+          width: radioSize,
+          height: radioSize,
+        },
+      ]}
     >
-      <Animated.View
-        style={[
-          styles.circle,
-          disabled && interactableStyles.disabled,
-          {
-            borderColor: animatedBoxValue.interpolate({
-              inputRange: [0, 1],
-              outputRange: [palette.lineHeavy, palette.primary],
-            }),
-            backgroundColor: palette.background,
-            width: radioSize,
-            height: radioSize,
-          },
-        ]}
-      >
-        <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
-          <Icon name="dot" size="s" color="primary" />
-        </Animated.View>
+      <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
+        <Icon name="dot" size="s" color="primary" />
       </Animated.View>
-    </InteractionOpacity>
+    </Interactable>
   );
 };
 
@@ -107,9 +103,6 @@ export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &
 
 const styles = StyleSheet.create({
   circle: {
-    borderStyle: 'solid',
-    borderRadius: borderRadius.round,
-    borderWidth: borderWidth.radio,
     alignItems: 'center',
     justifyContent: 'center',
   },
