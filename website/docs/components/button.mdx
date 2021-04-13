@@ -172,7 +172,7 @@ Uniquely identify the button within a form.
 
 <ComponentDetails componentName="Button" templateName="nameProp" />
 
-### onPress <Badge variant="web" />
+### onPress
 
 Callback fired after the element is pressed.
 
@@ -181,7 +181,7 @@ Callback fired after the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
   webOptions={['NoopFn', 'OnPress<HTMLButtonElement>']}
 />
 

@@ -5,8 +5,8 @@ export type PropOptions = string[];
 export type PropStatus = 'isMobileOnly' | 'isWebOnly' | 'isShared';
 export interface CustomPropItem extends PropItem {
   badges?: string[];
-  webOptions: PropOptions;
-  mobileOptions: PropOptions;
+  webOptions?: PropOptions;
+  mobileOptions?: PropOptions;
   status: PropStatus;
 }
 
@@ -54,8 +54,8 @@ export class PropertyDocgen {
 
   constructor({ webOptions, mobileOptions, status, ...item }: CustomPropItem) {
     this.docgen = item;
-    this.webOptions = webOptions;
-    this.mobileOptions = mobileOptions;
+    this.webOptions = webOptions ?? [];
+    this.mobileOptions = mobileOptions ?? [];
     this.status = status;
   }
 

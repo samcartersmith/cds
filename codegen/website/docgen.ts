@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { PropItem, withCustomConfig } from 'react-docgen-typescript';
+import { withCustomConfig } from 'react-docgen-typescript';
 
 import { ComponentDocgen } from './ComponentDocgen';
 
@@ -13,11 +13,6 @@ const parse = (fileName: string) => {
     shouldExtractValuesFromUnion: true,
     shouldExtractLiteralValuesFromEnum: true,
     shouldRemoveUndefinedFromOptional: true,
-    // Props need to be filtered since react-docgen shows all the props including
-    // inherited native props or React built-in props.
-    propFilter: (prop: PropItem) => {
-      return !prop.parent?.fileName.includes('node_modules');
-    },
   }).parse(path.resolve(CDS_DIR, fileName));
 };
 
@@ -35,11 +30,13 @@ const getDocgenForPackage = ({
   packageName?: string;
   childPath: string;
 }) => {
-  const webDocgen = getDocgen(path.join(packageName ?? 'web', childPath), componentName);
-  const mobileDocgen = getDocgen(path.join(packageName ?? 'mobile', childPath), componentName);
-
-  if (webDocgen && mobileDocgen) {
-    return new ComponentDocgen(webDocgen, mobileDocgen, displayName ?? componentName);
+  const web = getDocgen(path.join(packageName ?? 'web', childPath), componentName);
+  const mobile = getDocgen(path.join(packageName ?? 'mobile', childPath), componentName);
+  if (web || mobile) {
+    return new ComponentDocgen(displayName ?? componentName, {
+      web,
+      mobile,
+    });
   }
 };
 

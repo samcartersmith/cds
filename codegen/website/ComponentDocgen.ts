@@ -1,4 +1,4 @@
-import { kebabCase } from '@cbhq/cds-utils';
+import { kebabCase, pascalCase } from '@cbhq/cds-utils';
 import { ComponentDoc, PropItem } from 'react-docgen-typescript';
 
 import { PropOptions, PropertyDocgen, normalizeOptions } from './PropertyDocgen';
@@ -7,15 +7,32 @@ interface PropItemWithOptions extends PropItem {
   options: PropOptions;
 }
 
-export class ComponentDocgen {
-  webDocgen: ComponentDoc;
-  mobileDocgen: ComponentDoc;
-  componentName: string;
+interface Docgen {
+  web?: ComponentDoc;
+  mobile?: ComponentDoc;
+}
 
-  constructor(web: ComponentDoc, mobile: ComponentDoc, componentName: string) {
-    this.webDocgen = web;
-    this.mobileDocgen = mobile;
+type Platform = keyof Docgen;
+
+const isExtendedFromLib = (prop: PropItem) => {
+  return prop.parent?.fileName.includes('node_modules');
+};
+
+export class ComponentDocgen {
+  componentName: string;
+  docgen: Docgen;
+  web: PropItemWithOptions[] | undefined;
+  mobile: PropItemWithOptions[] | undefined;
+
+  constructor(componentName: string, docgen: Docgen) {
+    const { web, mobile } = docgen;
+    if (!web && !mobile) {
+      throw new Error(`No API docs was generated for ${componentName}.`);
+    }
     this.componentName = componentName;
+    this.docgen = docgen;
+    this.web = web && this.convertObjectToArray(web.props);
+    this.mobile = mobile && this.convertObjectToArray(mobile.props);
   }
 
   convertObjectToArray(props: ComponentDoc['props']) {
@@ -32,40 +49,24 @@ export class ComponentDocgen {
     return kebabCase(this.componentName);
   }
 
-  get webProps() {
-    return this.convertObjectToArray(this.webDocgen.props).map(({ options, ...item }) => ({
-      ...item,
-      webOptions: options,
-      mobileOptions: [],
-    }));
+  findProp(props: PropItemWithOptions[] | undefined, name: string) {
+    return props && props.find(prop => prop.name === name);
   }
-
-  get mobileProps() {
-    return this.convertObjectToArray(this.mobileDocgen.props).map(({ options, ...item }) => ({
-      ...item,
-      mobileOptions: options,
-      webOptions: [],
-    }));
-  }
-
-  findMobileProp = (name: string) => {
-    return this.mobileProps.find(mobileItem => mobileItem.name === name);
-  };
-
-  findWebProp = (name: string) => {
-    return this.webProps.find(mobileItem => mobileItem.name === name);
-  };
 
   get sharedProps() {
     const sharedCopy = [];
-    for (const webVersion of this.webProps) {
-      const mobileVersion = this.findMobileProp(webVersion.name);
-      if (mobileVersion) {
+    if (this.web === undefined || this.mobile === undefined) {
+      return;
+    }
+    for (const webVersion of this.web) {
+      const mobileVersion = this.findProp(this.mobile, webVersion.name);
+      // Do not include the prop if it is extended from library type on both platforms.
+      if (mobileVersion && !(isExtendedFromLib(webVersion) && isExtendedFromLib(mobileVersion))) {
         sharedCopy.push({
           ...mobileVersion,
           ...webVersion,
-          mobileOptions: mobileVersion.mobileOptions,
-          webOptions: webVersion.webOptions,
+          mobileOptions: mobileVersion.options ?? [],
+          webOptions: webVersion.options ?? [],
           status: 'isShared' as const,
         });
       }
@@ -73,36 +74,43 @@ export class ComponentDocgen {
     return sharedCopy;
   }
 
-  get mobileOnlyProps() {
-    const mobileOnly = [];
-    for (const mobileVersion of this.mobileProps) {
-      const webVersion = this.findWebProp(mobileVersion.name);
-      if (!webVersion) {
-        mobileOnly.push({
-          ...mobileVersion,
-          status: 'isMobileOnly' as const,
+  getPlatformSpecificProps(
+    platform: Platform,
+    otherPlatformProps: PropItemWithOptions[] | undefined
+  ) {
+    const platformProps = this[platform];
+    if (platformProps === undefined) {
+      return;
+    }
+    const platformSpecificProps = [];
+    for (const prop of platformProps) {
+      const otherVersion = this.findProp(otherPlatformProps, prop.name);
+      // Do not include props extended from libraries as platform specific props.
+      if (!otherVersion && !isExtendedFromLib(prop)) {
+        platformSpecificProps.push({
+          ...prop,
+          status: `is${pascalCase(platform)}Only` as const,
+          [`${platform}Options`]: prop.options,
         });
       }
     }
-    return mobileOnly;
+    return platformSpecificProps;
+  }
+
+  get mobileOnlyProps() {
+    return this.getPlatformSpecificProps('mobile', this.web);
   }
 
   get webOnlyProps() {
-    const webOnly = [];
-    for (const webVersion of this.webProps) {
-      const mobileVersion = this.findMobileProp(webVersion.name);
-      if (!mobileVersion) {
-        webOnly.push({
-          ...webVersion,
-          status: 'isWebOnly' as const,
-        });
-      }
-    }
-    return webOnly;
+    return this.getPlatformSpecificProps('web', this.mobile);
   }
 
   get props() {
-    return [...this.webOnlyProps, ...this.mobileOnlyProps, ...this.sharedProps]
+    return [
+      ...(this.webOnlyProps || []),
+      ...(this.mobileOnlyProps || []),
+      ...(this.sharedProps || []),
+    ]
       .reduce((prev, prop) => {
         return [...prev, new PropertyDocgen(prop)];
       }, [] as PropertyDocgen[])
