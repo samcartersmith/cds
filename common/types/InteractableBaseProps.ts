@@ -4,7 +4,7 @@ import { PaletteBackground, PaletteBorder } from './Palette';
 
 export interface InteractableBaseProps {
   /** Background color of the overlay (element being interacted with). */
-  backgroundColor: PaletteBackground;
+  backgroundColor: PaletteBackground | 'transparent';
   /** Border color of the element being interacted with. */
   borderColor?: PaletteBorder;
   /** Border radius of the element being interacted with. */

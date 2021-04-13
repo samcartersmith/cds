@@ -15,6 +15,7 @@ import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import LinkButtonScreen from './src/LinkButton';
 import LottieScreen from './src/Lottie';
+import PressableScreen from './src/Pressable';
 import RadioGroupScreen from './src/RadioGroup';
 import SpacerScreen from './src/Spacer';
 import SwitchScreen from './src/Switch';
@@ -75,6 +76,7 @@ const App = () => {
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />
+          <Stack.Screen name="Pressable" component={PressableScreen} />
           <Stack.Screen name="Text" component={TextScreen} options={{ title: 'Text (all)' }} />
           <Stack.Screen name="TextBody" component={TextBodyScreen} />
           <Stack.Screen name="TextCaption" component={TextCaptionScreen} />

@@ -1,5 +1,6 @@
 import React, { useMemo, memo } from 'react';
 
+import { PaletteBackground } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import {
   borderRadius as borderRadiusTokens,
@@ -13,8 +14,6 @@ import { usePalette } from '../hooks/usePalette';
 
 export interface InteractableProps extends InteractableBaseProps {
   children: NonNullable<React.ReactNode>;
-  /** Hide the underlay on press. */
-  hideUnderlay?: boolean;
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
 }
@@ -26,23 +25,31 @@ export const Interactable = memo(function Interactable({
   borderWidth,
   children,
   disabled,
-  hideUnderlay,
   pressed,
   style = emptyArray,
 }: InteractableProps) {
   const palette = usePalette();
+  const hideBackgrounds = backgroundColor === 'transparent';
   const { disabledOpacity, underlayColor, pressedOpacity } = useInteractableTokens(backgroundColor);
+
+  const backgroundStyles = useMemo(
+    () => ({
+      backgroundColor: hideBackgrounds
+        ? 'transparent'
+        : palette[backgroundColor as PaletteBackground],
+    }),
+    [backgroundColor, hideBackgrounds, palette]
+  );
 
   const containerStyles = useMemo(
     () => [
       styles.interactable,
-      { backgroundColor: palette[backgroundColor] },
       borderColor && { borderColor: palette[borderColor] },
       borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
       borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
       disabled && { opacity: disabledOpacity },
     ],
-    [palette, backgroundColor, borderColor, borderRadius, borderWidth, disabled, disabledOpacity]
+    [palette, borderColor, borderRadius, borderWidth, disabled, disabledOpacity]
   );
 
   const underlayStyles = useMemo(
@@ -56,11 +63,16 @@ export const Interactable = memo(function Interactable({
   );
 
   return (
-    <Animated.View style={[...containerStyles, ...style]}>
-      {pressed && !disabled && !hideUnderlay && <View style={underlayStyles} />}
+    <Animated.View style={[backgroundStyles, ...containerStyles, ...style]}>
+      {pressed && !disabled && !hideBackgrounds && <View style={underlayStyles} />}
 
       <View
-        style={{ backgroundColor: palette[backgroundColor], opacity: pressed ? pressedOpacity : 1 }}
+        style={[
+          backgroundStyles,
+          {
+            opacity: pressed ? pressedOpacity : 1,
+          },
+        ]}
         renderToHardwareTextureAndroid
       >
         {children}

@@ -1,29 +1,24 @@
 import { useMemo } from 'react';
 
-import { emptyObject } from '@cbhq/cds-utils';
-
 import { usePaletteConfig } from '../palette/usePaletteConfig';
 import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactableOpacity';
 import { PaletteAlias, PaletteBackground } from '../types';
 import { extractHueStep } from '../utils/extractHueStep';
 
 export const useInteractableTokens = (
-  overlayColor?: PaletteBackground
-):
-  | {
-      disabledOpacity: number;
-      underlayColor: PaletteAlias;
-      pressedOpacity: typeof opacityPressed[keyof typeof opacityPressed];
-      hoverOpacity: typeof opacityHovered[keyof typeof opacityPressed];
-    }
-  | Record<string, never> => {
+  overlayColor?: PaletteBackground | 'transparent'
+): {
+  disabledOpacity: number;
+  underlayColor: PaletteAlias;
+  pressedOpacity: typeof opacityPressed[keyof typeof opacityPressed];
+  hoverOpacity: typeof opacityHovered[keyof typeof opacityPressed];
+} => {
   const palette = usePaletteConfig();
-  const overlayColorAlias = overlayColor ? palette[overlayColor] : '';
-  const hueStep = useMemo(() => overlayColorAlias && extractHueStep(overlayColorAlias), [
+  const overlayColorAlias =
+    overlayColor && overlayColor !== 'transparent' ? palette[overlayColor] : '';
+  const hueStep = useMemo(() => (overlayColorAlias ? extractHueStep(overlayColorAlias) : 60), [
     overlayColorAlias,
   ]);
-
-  if (hueStep === '') return emptyObject;
 
   return {
     disabledOpacity: opacityDisabled,

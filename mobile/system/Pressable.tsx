@@ -37,7 +37,6 @@ export const Pressable = memo(function Pressable({
   children,
   disabled,
   feedback = 'none',
-  hideUnderlay,
   loading,
   onPress,
   noScaleOnPress,
@@ -84,7 +83,6 @@ export const Pressable = memo(function Pressable({
           borderRadius={borderRadius}
           borderWidth={borderWidth}
           disabled={disabled || loading}
-          hideUnderlay={hideUnderlay}
           pressed={pressed}
           style={[...style, !noScaleOnPress && { transform: [{ scale: pressScale }] }]}
         >

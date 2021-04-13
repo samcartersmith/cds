@@ -18,6 +18,7 @@ const components = [
   { key: 'LinkButton' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
+  { key: 'Pressable' },
   { key: 'Text', label: 'Text (all)' },
   { key: 'TextBody' },
   { key: 'TextCaption' },
