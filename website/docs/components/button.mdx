@@ -172,22 +172,7 @@ Uniquely identify the button within a form.
 
 <ComponentDetails componentName="Button" templateName="nameProp" />
 
-### onLongPress <Badge variant="mobile" />
-
-Event fired when the button is held for a long period and pressed.
-
-<ApiDetails
-  componentName="Button"
-  propertyName="onLongPress"
-  required={false}
-  defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="Button" templateName="onLongPressProp" />
-
-### onPress
+### onPress <Badge variant="web" />
 
 Callback fired after the element is pressed.
 
@@ -196,7 +181,7 @@ Callback fired after the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
+  mobileOptions={[]}
   webOptions={['NoopFn', 'OnPress<HTMLButtonElement>']}
 />
 

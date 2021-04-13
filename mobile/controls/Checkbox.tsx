@@ -1,7 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 
-import { useScale } from '@cbhq/cds-common';
-import type { CheckboxBaseProps } from '@cbhq/cds-common/types/CheckboxBaseProps';
+import { ControlBaseProps, useScale } from '@cbhq/cds-common';
 import { Animated, StyleSheet, View } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
@@ -10,9 +9,7 @@ import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
-export interface CheckboxProps<T extends string>
-  extends CheckboxBaseProps<T>,
-    Omit<ControlProps<T>, 'label' | 'children'> {}
+export interface CheckboxProps<T extends string> extends ControlBaseProps<T>, ControlProps<T> {}
 
 const CheckboxIcon: React.FC<ControlIconProps> = ({
   pressed,
@@ -20,7 +17,6 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
   backgroundColor,
   animatedBoxValue,
   animatedScaleValue,
-  indeterminate,
 }) => {
   const palette = usePalette();
   const cdsScale = useScale();
@@ -50,7 +46,7 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
       ]}
     >
       <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
-        <Icon size="s" name={indeterminate ? 'minus' : 'checkmark'} color="primaryForeground" />
+        <Icon size="s" name="checkmark" color="primaryForeground" />
       </Animated.View>
     </Interactable>
   );
@@ -61,7 +57,14 @@ const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
   ref: React.ForwardedRef<View>
 ) {
   return (
-    <Control<T> {...props} accessible accessibilityRole="checkbox" label={children} ref={ref}>
+    <Control<T>
+      {...props}
+      accessible
+      accessibilityRole="checkbox"
+      label={children}
+      ref={ref}
+      hitSlop={5}
+    >
       {CheckboxIcon}
     </Control>
   );

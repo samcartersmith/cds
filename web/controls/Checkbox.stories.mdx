@@ -47,9 +47,12 @@ import { CheckboxGroup } from './CheckboxGroup';
       Disabled selected
     </Checkbox>
   </Story>
-  <Story name="Disabled mixed">
-    <Checkbox indeterminate disabled>
-      Disabled mixed
+  <Story name="Read-only unselected">
+    <Checkbox readOnly>Read-only unselected</Checkbox>
+  </Story>
+  <Story name="Read-only selected">
+    <Checkbox checked readOnly>
+      Read-only selected
     </Checkbox>
   </Story>
 </Canvas>
@@ -67,45 +70,15 @@ export const optionValues = Object.keys(options);
 <Canvas isColumn withToolbar>
   <Story name="Group">
     {() => {
-      const [selectedValues, { toggle, isAllSelected }] = useCheckboxGroupState(optionValues);
-      return (
-        <>
-          <TextHeadline as="h1" id="order-dinner-label">
-            Order Dinner
-          </TextHeadline>
-          <CheckboxGroup
-            aria-labelledby="order-dinner-label"
-            name="checkbox-group"
-            groupCheckbox={
-              <Checkbox aria-controls="dinner-fish-taco dinner-puttanesca dinner-hamachi-salad">
-                {isAllSelected === true ? 'Unselect' : 'Select All'}
-              </Checkbox>
-            }
-            selectedValues={selectedValues}
-            isAllSelected={isAllSelected}
-            onChange={toggle}
-          >
-            {Object.entries(options).map(([value, label]) => (
-              <Checkbox key={value} value={value}>
-                {label}
-              </Checkbox>
-            ))}
-          </CheckboxGroup>
-        </>
-      );
-    }}
-  </Story>
-  <Story name="Group No Select All Checkbox">
-    {() => {
       const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
       return (
         <>
           <TextHeadline as="h1" id="order-dinner-label-no-select-all">
-            Checkbox Group No Select All Checkbox
+            Checkbox Group Default
           </TextHeadline>
           <CheckboxGroup
             aria-labelledby="order-dinner-label-no-select-all"
-            name="checkbox-group-no-select-all"
+            name="checkbox-group-default"
             selectedValues={selectedValues}
             onChange={toggle}
           >
@@ -119,7 +92,7 @@ export const optionValues = Object.keys(options);
       );
     }}
   </Story>
-  <Story name="Custom styles checkbox group styles">
+  <Story name="Custom styles checkbox group">
     {() => {
       const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
       return (

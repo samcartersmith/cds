@@ -24,7 +24,6 @@ const CheckboxScreen = () => {
 
       <Example title="States" inline>
         <Checkbox checked>Selected</Checkbox>
-        <Checkbox indeterminate>Mixed</Checkbox>
         <Checkbox disabled>Disabled</Checkbox>
         <Checkbox readOnly>Read Only</Checkbox>
         <Checkbox accessibilityLabel="checkbox with no label" />
@@ -40,9 +39,9 @@ const CheckboxScreen = () => {
 
           const optionValues = (Object.keys(options) as unknown) as (keyof typeof options)[];
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const [selectedValues, { toggle, isAllSelected }] = useCheckboxGroupState<
-            keyof typeof options
-          >(optionValues);
+          const [selectedValues, { toggle }] = useCheckboxGroupState<keyof typeof options>(
+            optionValues
+          );
 
           return (
             <>
@@ -50,11 +49,7 @@ const CheckboxScreen = () => {
               <CheckboxGroup<keyof typeof options>
                 accessibilityLabel="Order Dinner"
                 selectedValues={selectedValues}
-                groupCheckbox={
-                  <Checkbox>{isAllSelected === true ? 'Unselect' : 'Select All'}</Checkbox>
-                }
                 onChange={toggle}
-                isAllSelected={isAllSelected}
               >
                 {Object.entries(options).map(([value, label]) => (
                   <Checkbox key={value} value={value}>

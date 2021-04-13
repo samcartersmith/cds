@@ -19,7 +19,9 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 ## Props
 
-### checked <Badge variant="mobile" />
+### checked
+
+Set the control to selected/on.
 
 <ApiDetails
   componentName="Switch"
@@ -27,21 +29,31 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
   required={false}
   defaultValue=""
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Switch" templateName="checkedProp" />
 
-### children <Badge variant="web" />
+### children
 
-Label for the switch.
+Label for the control option.
 
 <ApiDetails
   componentName="Switch"
   propertyName="children"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
   webOptions={[
     'ReactElement<any, string | JSXElementConstructor<any>>',
     'ReactNodeArray',
@@ -57,7 +69,9 @@ Label for the switch.
 
 <ComponentDetails componentName="Switch" templateName="childrenProp" />
 
-### disabled <Badge variant="mobile" />
+### disabled
+
+Disable user interaction.
 
 <ApiDetails
   componentName="Switch"
@@ -65,40 +79,27 @@ Label for the switch.
   required={false}
   defaultValue=""
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Switch" templateName="disabledProp" />
 
-### indeterminate <Badge variant="mobile" />
-
-<ApiDetails
-  componentName="Switch"
-  propertyName="indeterminate"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="Switch" templateName="indeterminateProp" />
-
-### onChange
-
-Handle change event when user clicks on the switch.
+### onChange <Badge variant="mobile" />
 
 <ApiDetails
   componentName="Switch"
   propertyName="onChange"
   required={false}
   defaultValue=""
-  mobileOptions={['(value?: T | undefined) => void']}
-  webOptions={['ChangeEventHandler<HTMLInputElement>']}
+  mobileOptions={['(value?: string | undefined) => void']}
+  webOptions={[]}
 />
 
 <ComponentDetails componentName="Switch" templateName="onChangeProp" />
 
-### readOnly <Badge variant="mobile" />
+### readOnly
+
+Set the control to ready-only. Similar effect as disabled.
 
 <ApiDetails
   componentName="Switch"
@@ -106,14 +107,14 @@ Handle change event when user clicks on the switch.
   required={false}
   defaultValue=""
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Switch" templateName="readOnlyProp" />
 
-### testID <Badge variant="mobile" />
+### testID
 
-Used to locate this view in end-to-end tests.
+Used to locate this element in end-to-end tests.
 
 <ApiDetails
   componentName="Switch"
@@ -121,22 +122,9 @@ Used to locate this view in end-to-end tests.
   required={false}
   defaultValue=""
   mobileOptions={['string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Switch" templateName="testIDProp" />
-
-### value <Badge variant="mobile" />
-
-<ApiDetails
-  componentName="Switch"
-  propertyName="value"
-  required={false}
-  defaultValue=""
-  mobileOptions={['string']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="Switch" templateName="valueProp" />
 
 <ComponentDetails componentName="Switch" templateName="outro" />

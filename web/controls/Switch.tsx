@@ -1,22 +1,16 @@
 import React, { forwardRef, memo } from 'react';
 
-import { TextBaseProps, useSpectrum } from '@cbhq/cds-common';
+import { useSpectrum } from '@cbhq/cds-common';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
+import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { css, cx } from 'linaria';
 
 import { round } from '../styles/borderRadius';
 import { level1 } from '../styles/elevation';
 import { control, palette } from '../tokens';
-import { FilteredHTMLAttributes } from '../types';
-import { Control } from './Control';
+import { Control, ControlProps } from './Control';
 
-export interface SwitchProps
-  extends FilteredHTMLAttributes<React.InputHTMLAttributes<HTMLInputElement>, 'value'> {
-  /** Label for the switch. */
-  children?: TextBaseProps['children'];
-  /** Handle change event when user clicks on the switch. */
-  onChange?: React.InputHTMLAttributes<HTMLInputElement>['onChange'];
-}
+export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;
 
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
   { children, ...props },
@@ -26,6 +20,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
   const spectrum = useSpectrum();
   return (
     <Control
+      role="switch"
       type="checkbox"
       label={children}
       ref={ref}
@@ -33,11 +28,12 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
       borderRadius="pill"
       {...props}
     >
-      <div role="presentation" className={cx(track, focusRing)} data-filled={checked}>
+      <div className={cx(track, focusRing)} data-filled={checked}>
         <div
           className={cx(
             thumb,
             round,
+            // TODO (hannah): Once elevation design is ready, revisit this.
             level1,
             // NOTE (hannah): Switch thumb is a special case where it should always be white.
             spectrum === 'light' ? primaryForegroundThumb : foregroundThumb

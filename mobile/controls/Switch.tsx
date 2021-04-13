@@ -2,18 +2,16 @@ import React, { forwardRef, memo, useMemo } from 'react';
 
 import { useScale, useSpectrum } from '@cbhq/cds-common';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { Animated, StyleSheet, View } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { usePalette } from '../hooks/usePalette';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
-import type { TextProps } from '../typography/createText';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
-export interface SwitchProps<T extends string> extends Omit<ControlProps<T>, 'label' | 'children'> {
-  children?: TextProps['children'];
-}
+export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps<string>, 'value'>;
 
 const SwitchIcon: React.FC<ControlIconProps> = ({
   pressed,
@@ -88,8 +86,8 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
   );
 };
 
-const SwitchWithRef = forwardRef(function SwitchWithRef<T extends string>(
-  { children, ...props }: SwitchProps<T>,
+const SwitchWithRef = forwardRef(function SwitchWithRef(
+  { children, ...props }: SwitchProps,
   ref: React.ForwardedRef<View>
 ) {
   return (
@@ -98,7 +96,7 @@ const SwitchWithRef = forwardRef(function SwitchWithRef<T extends string>(
     </Control>
   );
   // Make forwardRef result function stay generic function type
-}) as <T extends string>(props: SwitchProps<T> & React.RefAttributes<View>) => React.ReactElement;
+}) as (props: SwitchProps & React.RefAttributes<View>) => React.ReactElement;
 
 // Make memoized function stay generic function type
 export const Switch = memo(SwitchWithRef) as typeof SwitchWithRef &

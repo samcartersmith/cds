@@ -19,9 +19,24 @@ import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails'
 
 ## Props
 
+### checked
+
+Set the control to selected/on.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="checked"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="checkedProp" />
+
 ### children
 
-Label for the checkbox option.
+Label for the control option.
 
 <ApiDetails
   componentName="Checkbox"
@@ -54,24 +69,22 @@ Label for the checkbox option.
 
 <ComponentDetails componentName="Checkbox" templateName="childrenProp" />
 
-### indeterminate
+### disabled
 
-A mixed state of checked and unchecked group of checkboxes.
+Disable user interaction.
 
 <ApiDetails
   componentName="Checkbox"
-  propertyName="indeterminate"
+  propertyName="disabled"
   required={false}
   defaultValue=""
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Checkbox" templateName="indeterminateProp" />
+<ComponentDetails componentName="Checkbox" templateName="disabledProp" />
 
-### onChange
-
-Handle change event when user clicks on the checkbox.
+### onChange <Badge variant="mobile" />
 
 <ApiDetails
   componentName="Checkbox"
@@ -79,14 +92,29 @@ Handle change event when user clicks on the checkbox.
   required={false}
   defaultValue=""
   mobileOptions={['(value?: T | undefined) => void']}
-  webOptions={['ChangeEventHandler<HTMLInputElement>']}
+  webOptions={[]}
 />
 
 <ComponentDetails componentName="Checkbox" templateName="onChangeProp" />
 
-### testID <Badge variant="mobile" />
+### readOnly
 
-Used to locate this view in end-to-end tests.
+Set the control to ready-only. Similar effect as disabled.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="readOnly"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="readOnlyProp" />
+
+### testID
+
+Used to locate this element in end-to-end tests.
 
 <ApiDetails
   componentName="Checkbox"
@@ -94,14 +122,14 @@ Used to locate this view in end-to-end tests.
   required={false}
   defaultValue=""
   mobileOptions={['string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Checkbox" templateName="testIDProp" />
 
 ### value
 
-Value of the option.
+Value of the option. Useful for multiple choice.
 
 <ApiDetails
   componentName="Checkbox"

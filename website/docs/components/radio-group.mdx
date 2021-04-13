@@ -86,6 +86,8 @@ Set a label summary for the group of radios.
 
 ### onChange
 
+Handle change event when pressing on a radio option.
+
 <ApiDetails
   componentName="RadioGroup"
   propertyName="onChange"
@@ -126,5 +128,20 @@ Currently selected value.
 />
 
 <ComponentDetails componentName="RadioGroup" templateName="selectedValueProp" />
+
+### testID
+
+Used to locate this element in end-to-end tests.
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="testIDProp" />
 
 <ComponentDetails componentName="RadioGroup" templateName="outro" />

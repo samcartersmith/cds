@@ -19,13 +19,6 @@ describe('Checkbox', () => {
     expect(icon).toBeTruthy();
   });
 
-  it('renders a dash icon when mixed', () => {
-    const result = render(<Checkbox indeterminate>Mixed</Checkbox>);
-
-    const icon = result.getByText(iconGlyphMap.minus['16']);
-    expect(icon).toBeTruthy();
-  });
-
   it('attaches testID', () => {
     const TEST_ID = 'checkbox-testid-test';
     const result = render(<Checkbox testID={TEST_ID}>Checkbox</Checkbox>);

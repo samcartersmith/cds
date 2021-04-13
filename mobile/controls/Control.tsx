@@ -2,6 +2,7 @@ import React, { forwardRef, memo, useCallback, useEffect, useRef } from 'react';
 
 import { PaletteBackground } from '@cbhq/cds-common';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 import {
   AccessibilityActionEvent,
@@ -24,22 +25,19 @@ export type ControlIconProps = {
   backgroundColor: PaletteBackground;
   animatedBoxValue: Animated.Value;
   animatedScaleValue: Animated.Value;
-  indeterminate?: boolean;
 };
 
 export interface ControlProps<T extends string>
-  extends Omit<PressableProps, 'disabled' | 'children' | 'style'> {
-  checked?: boolean;
-  disabled?: boolean;
-  readOnly?: boolean;
-  indeterminate?: boolean;
-  /** Label associated with the multiple choice option control. */
-  label?: TextProps['children'];
-  testID?: string;
+  extends Omit<PressableProps, 'disabled' | 'children' | 'style'>,
+    ControlBaseProps<T> {
   onChange?: (value?: T) => void;
-  value?: T;
+}
+
+interface ControlInternalProps<T extends string> extends ControlProps<T> {
   /** Control icon to show. */
   children: React.ComponentType<ControlIconProps>;
+  /** Label associated with the multiple choice option control. */
+  label?: TextProps['children'];
 }
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
@@ -49,7 +47,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     checked,
     disabled = false,
     readOnly = false,
-    indeterminate,
     onChange,
     hitSlop = 4,
     value,
@@ -58,7 +55,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     accessibilityHint,
     children: ControlIcon,
     ...props
-  }: ControlProps<T>,
+  }: ControlInternalProps<T>,
   ref: React.ForwardedRef<View>
 ) {
   if (isDevelopment() && !label && !accessibilityLabel) {
@@ -72,23 +69,22 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   // TODO: create a custom hook to initialize animated values so that they are not called on every render
   const animatedBoxValue = useRef(new Animated.Value(0)).current;
   const animatedScaleValue = useRef(new Animated.Value(0.1)).current; /* android needs 0.1 */
-  const filled = checked || indeterminate;
   const pressDisabled = disabled || readOnly;
 
   useEffect(() => {
     Animated.parallel([
       Animated.timing(animatedBoxValue, {
-        toValue: filled ? 1 : 0,
+        toValue: checked ? 1 : 0,
         duration: 150,
         useNativeDriver: false,
       }),
       Animated.spring(animatedScaleValue, {
-        toValue: filled ? 1 : 0,
+        toValue: checked ? 1 : 0,
         friction: 8,
         useNativeDriver: true,
       }),
     ]).start();
-  }, [filled, animatedBoxValue, animatedScaleValue]);
+  }, [checked, animatedBoxValue, animatedScaleValue]);
 
   const handlePress = useCallback(() => {
     Haptics.lightImpact();
@@ -97,11 +93,10 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   }, [onChange, value]);
 
   const controlIconProps = {
-    backgroundColor: filled ? ('primary' as const) : ('background' as const),
+    backgroundColor: checked ? ('primary' as const) : ('background' as const),
     disabled: pressDisabled,
     animatedBoxValue,
     animatedScaleValue,
-    indeterminate,
   };
 
   return (
@@ -112,7 +107,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       accessible
       accessibilityState={{
         disabled: pressDisabled,
-        checked: indeterminate ? ('mixed' as const) : checked,
+        checked: checked,
       }}
       accessibilityRole={accessibilityRole}
       accessibilityLabel={accessibilityLabel}
@@ -160,7 +155,9 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     </Pressable>
   );
   // Make forwardRef result function stay generic function type
-}) as <T extends string>(props: ControlProps<T> & React.RefAttributes<View>) => React.ReactElement;
+}) as <T extends string>(
+  props: ControlInternalProps<T> & React.RefAttributes<View>
+) => React.ReactElement;
 
 // Make memoized function stay generic function type
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &

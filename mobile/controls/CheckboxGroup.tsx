@@ -18,8 +18,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     children,
     label,
     accessibilityLabel,
-    groupCheckbox,
-    isAllSelected,
     onChange,
     selectedValues,
     ...restProps
@@ -29,15 +27,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   if (isDevelopment() && !label && !accessibilityLabel) {
     console.warn('Please specify an accessibility label for the checkbox group.');
   }
-
-  const groupCheckboxNode =
-    isValidElement(groupCheckbox) &&
-    cloneElement(groupCheckbox, {
-      checked: isAllSelected !== undefined && isAllSelected !== 'mixed' ? isAllSelected : undefined,
-      onChange,
-      testID: groupCheckbox.props.testID || 'checkbox-group-master-checkbox',
-      indeterminate: isAllSelected === 'mixed',
-    });
 
   const optionCheckboxes = Children.map(children, (child, index) => {
     if (!isValidElement<CheckboxProps<T>>(child)) {
@@ -61,7 +50,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   return (
     <View ref={ref} accessible accessibilityRole="combobox" {...restProps}>
       {label}
-      {groupCheckboxNode}
       {optionCheckboxes}
     </View>
   );

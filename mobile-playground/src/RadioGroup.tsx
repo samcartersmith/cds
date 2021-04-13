@@ -24,7 +24,6 @@ const CheckboxScreen = () => {
 
       <Example title="States" inline>
         <Radio checked>Selected</Radio>
-        <Radio indeterminate>Mixed</Radio>
         <Radio disabled>Disabled</Radio>
         <Radio readOnly>Read Only</Radio>
         <Radio accessibilityLabel="radio with no label" />

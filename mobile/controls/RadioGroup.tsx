@@ -1,7 +1,8 @@
 import React, { forwardRef, memo } from 'react';
 
 import { useScale } from '@cbhq/cds-common';
-import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
+import type { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
+import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 
@@ -9,12 +10,9 @@ import { usePalette } from '../hooks/usePalette';
 import { Icon } from '../icons/Icon';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
-import type { TextProps } from '../typography/createText';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
-export interface RadioProps<T extends string> extends Omit<ControlProps<T>, 'label' | 'children'> {
-  children?: TextProps['children'];
-}
+export interface RadioProps<T extends string> extends ControlBaseProps<T>, ControlProps<T> {}
 
 const RadioIcon: React.FC<ControlIconProps> = ({
   pressed,
@@ -60,7 +58,7 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
   ref: React.ForwardedRef<View>
 ) {
   return (
-    <Control<T> {...props} accessibilityRole="radio" label={children} ref={ref}>
+    <Control<T> {...props} accessibilityRole="radio" label={children} ref={ref} hitSlop={5}>
       {RadioIcon}
     </Control>
   );
@@ -74,8 +72,10 @@ export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
 export interface RadioGroupProps<T extends string>
   extends AccessibilityProps,
     RadioGroupBaseProps<T> {
-  /** Handle change event when clicking on a radio input. */
+  /** Handle change event when pressing on a radio option. */
   onChange?: RadioProps<T>['onChange'];
+  /** Used to locate this element in end-to-end tests. */
+  testID?: string;
 }
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(

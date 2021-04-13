@@ -11,22 +11,24 @@ import { TextProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
 import { isRtl } from '../utils/isRtl';
 
-export interface ControlProps<T extends string>
-  extends FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>> {
-  label?: TextProps['children'];
+export interface ControlProps
+  extends FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'> {
+  /** Used to locate this element in end-to-end tests. */
+  testID?: string;
+}
+
+interface ControlInternalProps<T extends string> extends ControlProps {
   value?: T;
+  label?: TextProps['children'];
   children: React.ReactChild;
   backgroundColor?: InteractableProps['backgroundColor'];
   borderRadius?: InteractableProps['borderRadius'];
-  // checkbox only
-  indeterminate?: boolean;
 }
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {
     type,
     checked = false,
-    indeterminate,
     disabled = false,
     readOnly = false,
     required = false,
@@ -36,14 +38,14 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     'aria-labelledby': ariaLabelledby,
     backgroundColor,
     borderRadius,
+    testID,
     ...htmlProps
-  }: ControlProps<T>,
-
+  }: ControlInternalProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>
 ) {
   if (isDevelopment() && !children && !ariaLabelledby) {
     console.warn(
-      `Please provide an aria label for the checkbox ${value} either through the children or aria-labelledby prop.`
+      `Please provide an aria label for the control component ${value} either through the children or aria-labelledby prop.`
     );
   }
   const internalInputRef = useRef<HTMLInputElement>();
@@ -57,20 +59,13 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     readOnly,
     required,
     value,
-    'aria-checked': indeterminate ? ('mixed' as const) : checked,
+    'aria-checked': checked,
     'aria-disabled': disabled,
     'aria-readonly': readOnly,
     'aria-required': required,
+    'data-test-id': testID,
     ...htmlProps,
   };
-
-  React.useEffect(() => {
-    // indeterminate is a property, but it can only be set via javascript
-    // https://css-tricks.com/indeterminate-checkboxes/
-    if (internalInputRef && internalInputRef.current && indeterminate !== undefined) {
-      internalInputRef.current.indeterminate = indeterminate;
-    }
-  }, [indeterminate]);
 
   // TODO: use spacing layout component to add gap in between
   const iconNode = (
@@ -90,7 +85,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   return label ? (
     <TextBody
       as="label"
-      color={(checked || indeterminate) && !disabled ? 'foreground' : 'foregroundMuted'}
+      color={checked && !disabled ? 'foreground' : 'foregroundMuted'}
       disabled={disabled}
     >
       <Box alignItems="center" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
@@ -104,7 +99,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     iconNode
   );
 }) as <T extends string>(
-  props: ControlProps<T> & React.RefAttributes<HTMLInputElement>
+  props: ControlInternalProps<T> & React.RefAttributes<HTMLInputElement>
 ) => React.ReactElement;
 
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &

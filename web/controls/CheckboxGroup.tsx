@@ -16,6 +16,7 @@ import { Checkbox, CheckboxProps } from './Checkbox';
 export interface CheckboxGroupProps<T extends string>
   extends FilteredHTMLAttributes<FieldsetHTMLAttributes<HTMLFieldSetElement>, 'onChange'>,
     CheckboxGroupBaseProps<T> {
+  /** Handle change event when pressing on a checkbox option. */
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -25,8 +26,6 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     children,
     label,
     'aria-labelledby': ariaLabelledby,
-    groupCheckbox,
-    isAllSelected,
     selectedValues,
     onChange,
     name,
@@ -57,25 +56,11 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     });
   });
 
-  const groupCheckboxNode =
-    groupCheckbox &&
-    groupCheckbox.type === Checkbox &&
-    cloneElement(groupCheckbox, {
-      checked:
-        isAllSelected !== undefined && isAllSelected !== 'mixed'
-          ? isAllSelected
-          : groupCheckbox.props.checked,
-      indeterminate: isAllSelected === 'mixed' || groupCheckbox.props.indeterminate,
-      onChange,
-      'aria-controls': checkboxIds.join(' '),
-    });
-
   // TODO (hannah): Update default styles once Caroline has the design ready. (Add default distance between
   // checkboxes.)
   return (
     <fieldset ref={ref} {...restProps}>
       {label}
-      {groupCheckboxNode}
       {optionCheckboxes}
     </fieldset>
   );

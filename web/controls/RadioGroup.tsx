@@ -1,18 +1,16 @@
 import React, { forwardRef, memo, useCallback } from 'react';
 
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
+import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 import { css, cx } from 'linaria';
 
 import { Icon } from '../icons/Icon';
 import { control, palette } from '../tokens';
 import { FilteredHTMLAttributes } from '../types';
-import type { TextProps } from '../typography/TextProps';
 import { Control, ControlProps } from './Control';
 
-export type RadioProps<T extends string> = Omit<ControlProps<T>, 'children' | 'label'> & {
-  children: TextProps['children'];
-};
+export interface RadioProps<T extends string> extends ControlBaseProps<T>, ControlProps {}
 
 const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   { children, ...props }: RadioProps<T>,
@@ -49,7 +47,10 @@ export interface RadioGroupProps<T extends string>
   name: string;
   /** id of the element that labels the radio group */
   'aria-labelledby'?: string;
+  /** Handle change event when pressing on a radio option. */
   onChange?: (value: T) => void;
+  /** Used to locate this element in end-to-end tests. */
+  testID?: string;
 }
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(

@@ -36,7 +36,7 @@ import { Switch } from './Switch';
     {() => {
       const [checked, { toggle }] = useToggler();
       return (
-        <ThemeProvider scale="xSmall" spectrum="dark">
+        <ThemeProvider spectrum="dark">
           <Switch checked={checked} onChange={toggle}>
             Normal
           </Switch>
@@ -49,32 +49,32 @@ import { Switch } from './Switch';
 ## States
 
 <Canvas withToolbar>
-  <Story name="Disabled unselected">
-    <Switch disabled>Disabled unselected</Switch>
+  <Story name="On">
+    <Switch checked>On</Switch>
   </Story>
-  <Story name="Disabled selected">
+  <Story name="Disabled off">
+    <Switch disabled>Disabled off</Switch>
+  </Story>
+  <Story name="Disabled on">
     <Switch checked disabled>
-      Disabled selected
+      Disabled on
     </Switch>
   </Story>
-  <Story name="Disabled mixed">
-    <Switch indeterminate disabled>
-      Disabled mixed
-    </Switch>
-  </Story>
-  <Story name="Dark normal selected" decorators={[DarkStoryContainer]}>
-    <ThemeProvider scale="xSmall" spectrum="dark">
-      <Switch checked>Selected</Switch>
+  <Story name="Dark normal on" decorators={[DarkStoryContainer]}>
+    <ThemeProvider spectrum="dark">
+      <Switch checked>On</Switch>
     </ThemeProvider>
   </Story>
-  <Story name="Dark normal disabled unselected" decorators={[DarkStoryContainer]}>
-    <ThemeProvider scale="xSmall" spectrum="dark">
-      <Switch>Disabled unselected</Switch>
+  <Story name="Dark normal disabled off" decorators={[DarkStoryContainer]}>
+    <ThemeProvider spectrum="dark">
+      <Switch>Disabled off</Switch>
     </ThemeProvider>
   </Story>
-  <Story name="Dark normal disabled selected" decorators={[DarkStoryContainer]}>
-    <ThemeProvider scale="xSmall" spectrum="dark">
-      <Switch>Disabled selected</Switch>
+  <Story name="Dark normal disabled on" decorators={[DarkStoryContainer]}>
+    <ThemeProvider spectrum="dark">
+      <Switch checked disabled>
+        Disabled on
+      </Switch>
     </ThemeProvider>
   </Story>
 </Canvas>

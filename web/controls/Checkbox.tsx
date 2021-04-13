@@ -1,39 +1,24 @@
 import React, { forwardRef, memo } from 'react';
 
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { CheckboxBaseProps } from '@cbhq/cds-common/types/CheckboxBaseProps';
+import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { css, cx } from 'linaria';
 
 import { Icon } from '../icons/Icon';
 import { control, palette } from '../tokens';
-import { FilteredHTMLAttributes } from '../types';
-import { Control } from './Control';
+import { Control, ControlProps } from './Control';
 
-export interface CheckboxProps<T extends string>
-  extends FilteredHTMLAttributes<React.InputHTMLAttributes<HTMLInputElement>, 'value'>,
-    CheckboxBaseProps<T> {
-  /** Handle change event when user clicks on the checkbox. */
-  onChange?: React.InputHTMLAttributes<HTMLInputElement>['onChange'];
-}
+export interface CheckboxProps<T extends string> extends ControlBaseProps<T>, ControlProps {}
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   { children, ...props }: CheckboxProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>
 ) {
-  const { indeterminate, checked } = props;
+  const { checked } = props;
   return (
-    <Control type="checkbox" label={children} ref={ref} {...props}>
-      <div
-        role="presentation"
-        className={cx(checkbox, focusRing)}
-        data-filled={checked || indeterminate}
-      >
-        {/* TODO (hannah): add scale animation like react native */}
-        {indeterminate ? (
-          <Icon name="minus" size="s" color="primaryForeground" />
-        ) : (
-          checked && <Icon name="checkmark" size="s" color="primaryForeground" />
-        )}
+    <Control role="switch" type="checkbox" label={children} ref={ref} {...props}>
+      <div role="presentation" className={cx(checkbox, focusRing)} data-filled={checked}>
+        {checked && <Icon name="checkmark" size="s" color="primaryForeground" />}
       </div>
     </Control>
   );
@@ -58,6 +43,7 @@ const checkbox = css`
   background-color: ${palette.background};
   border: ${borderWidth.checkbox}px solid ${palette.lineHeavy};
   transition: border-color 150ms ease-out;
+
   &[data-filled='true'] {
     background-color: ${palette.primary};
     border-color: ${palette.primary};
