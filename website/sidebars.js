@@ -29,12 +29,14 @@ module.exports = {
       collapsed: true,
       items: [
         'foundation/overview',
+        'foundation/a11y',
+        'foundation/scale',
         'foundation/color',
+        'foundation/layout',
+        'foundation/typography',
         'foundation/iconography',
         'foundation/illustration',
         'foundation/motion',
-        'foundation/scale',
-        'foundation/typography',
       ],
     },
     {
