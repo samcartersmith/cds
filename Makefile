@@ -22,7 +22,7 @@ Help:
   $$ make serve.website             -- Serve docusaurus website build locally.
   $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
   $$ make prepare.icons             -- Prepare icons
-  $$ make lint.fix             		-- Auto fixes lints issues 
+  $$ make lint.fix					-- Auto fixes lints issues 
   $$ make release					-- Automatically update CHANGELOG based on PR titles 
 endef
 export HELP_TEXT

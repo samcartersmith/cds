@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.9.0 (4/13/2021, 11:30 AM PST)
+
+#### 💥 Breaking
+
+- clean up control API, remove indeterminate @hannah-jin [#17252](https://github.cbhq.net/mono/repo/pull/17252)
+
+#### 🚀 Updates
+
+- **[Pressable]** Add transparent background support [#17376](https://github.cbhq.net/mono/repo/pull/17376)
+
+
 ## 0.8.0 (4/12/2021, 12:52 PM PST)
 
 #### 💥 Breaking
