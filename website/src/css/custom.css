@@ -7,6 +7,11 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-avatar-photo-size-md: 80px;
+  --ifm-background-color: rgb(255, 255, 255); /* CDS light mode background */
+}
+
+:root[data-theme='dark'] {
+  --ifm-background-color: rgb(10, 11, 13); /* CDS dark mode background */
 }
 
 /* CDS components expect destyle CSS reset to be present. */
