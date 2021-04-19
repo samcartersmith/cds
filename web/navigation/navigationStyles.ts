@@ -25,6 +25,7 @@ export const gridForSidebar = css`
 `;
 
 export const scrollContent = css`
+  overflow: scroll;
   position: relative;
   scrollbar-width: none;
   /* stylelint-disable-next-line a11y/no-display-none */
