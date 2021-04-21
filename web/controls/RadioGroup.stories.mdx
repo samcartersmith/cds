@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { Box } from '../layout/Box';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { TextHeadline } from '../typography/TextHeadline';
 import { Radio, RadioGroup } from './RadioGroup';
@@ -46,6 +47,11 @@ import { Radio, RadioGroup } from './RadioGroup';
     <Radio checked disabled>
       Disabled selected
     </Radio>
+  </Story>
+  <Story name="Multi-line label">
+    <Box width="250px">
+      <Radio>This radio has a multi-line label. The radio and label should align at the top.</Radio>
+    </Box>
   </Story>
 </Canvas>
 

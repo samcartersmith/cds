@@ -67,7 +67,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     ...htmlProps,
   };
 
-  // TODO: use spacing layout component to add gap in between
   const iconNode = (
     <Interactable
       as="span"
@@ -88,8 +87,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       color={checked && !disabled ? 'foreground' : 'foregroundMuted'}
       disabled={disabled}
     >
-      <Box alignItems="center" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
-        {iconNode}
+      <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
+        {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
+        <Box role="presentation" aria-hidden height="var(--body-line-height)" alignItems="center">
+          {iconNode}
+        </Box>
         <Spacer horizontal={1} />
         {label}
       </Box>

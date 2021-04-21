@@ -4,7 +4,7 @@ import 'react-native-gesture-handler';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
 
 import List from './src';
 import BoxScreen from './src/Box';
@@ -31,6 +31,7 @@ import TextLegalScreen from './src/TextLegal';
 import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
+import { ScreenStackHeaderBackButtonImage } from 'react-native-screens';
 
 const Stack = createStackNavigator();
 

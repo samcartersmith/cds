@@ -2,6 +2,7 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { DarkStoryContainer } from '@cbhq/cds-storybook/decorators/StoryContainer';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { Box } from '../layout/Box';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { Switch } from './Switch';
 
@@ -76,6 +77,13 @@ import { Switch } from './Switch';
         Disabled on
       </Switch>
     </ThemeProvider>
+  </Story>
+  <Story name="Multi-line label">
+    <Box width="250px">
+      <Switch>
+        This switch has a multi-line label. The switch and label should align at the top.
+      </Switch>
+    </Box>
   </Story>
 </Canvas>
 

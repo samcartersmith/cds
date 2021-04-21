@@ -16,8 +16,9 @@ export const getSpacerStyle = ({
   const isFixedSize = horizontal !== undefined || vertical !== undefined;
 
   return {
-    flexGrow: isFixedSize ? flexGrow : flexGrow ?? 1,
-    flexShrink: isFixedSize ? flexShrink : flexShrink ?? 1,
+    // fixed size spacer by default should not grow or shrink.
+    flexGrow: isFixedSize ? flexGrow ?? 0 : flexGrow ?? 1,
+    flexShrink: isFixedSize ? flexShrink ?? 0 : flexShrink ?? 1,
     flexBasis: isFixedSize ? flexBasis : flexBasis ?? 1,
     width: horizontal && spacingScaleValues[horizontal],
     height: vertical && spacingScaleValues[vertical],

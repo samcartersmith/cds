@@ -2,6 +2,7 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import { useCheckboxGroupState } from '../hooks/useCheckboxGroupState';
+import { Box } from '../layout/Box';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { TextHeadline } from '../typography/TextHeadline';
 import { Checkbox } from './Checkbox';
@@ -54,6 +55,13 @@ import { CheckboxGroup } from './CheckboxGroup';
     <Checkbox checked readOnly>
       Read-only selected
     </Checkbox>
+  </Story>
+  <Story name="Multi-line label">
+    <Box width="250px">
+      <Checkbox>
+        This checkbox has a multi-line label. The checkbox and label should align at the top.
+      </Checkbox>
+    </Box>
   </Story>
 </Canvas>
 

@@ -27,6 +27,9 @@ const CheckboxScreen = () => {
         <Checkbox disabled>Disabled</Checkbox>
         <Checkbox readOnly>Read Only</Checkbox>
         <Checkbox accessibilityLabel="checkbox with no label" />
+        <Checkbox>
+          This checkbox has a multi-line label. The checkbox and label should align at the top.
+        </Checkbox>
       </Example>
 
       <Example title="Checkbox Group" inline>

@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useCallback, useEffect, useRef } from 'react';
+import React, { forwardRef, memo, useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { PaletteBackground } from '@cbhq/cds-common';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
@@ -12,11 +12,14 @@ import {
   Pressable,
   PressableProps,
   View,
+  ViewStyle,
 } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
+import { Spacer } from '../layout/Spacer';
 import { TextProps } from '../typography/createText';
 import { TextBody } from '../typography/TextBody';
+import { useTypographyStyles } from '../typography/useTypographyStyles';
 import { Haptics } from '../utils/haptics';
 
 export type ControlIconProps = {
@@ -65,6 +68,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   }
 
   const palette = usePalette();
+  const labelStyles = useTypographyStyles('body');
 
   // TODO: create a custom hook to initialize animated values so that they are not called on every render
   const animatedBoxValue = useRef(new Animated.Value(0)).current;
@@ -99,6 +103,14 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     animatedScaleValue,
   };
 
+  const iconWrapperStyles: ViewStyle = useMemo(
+    () => ({
+      height: labelStyles.lineHeight,
+      justifyContent: 'center',
+    }),
+    [labelStyles.lineHeight]
+  );
+
   return (
     <Pressable
       ref={ref}
@@ -123,7 +135,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       )}
       style={{
         flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
-        alignItems: 'center',
+        alignItems: 'flex-start',
       }}
       hitSlop={hitSlop}
       onPress={handlePress}
@@ -131,24 +143,31 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     >
       {({ pressed }) => (
         <>
-          <ControlIcon {...controlIconProps} pressed={pressed} />
-          {label && (
-            <TextBody
-              testID={`${testID}Label`}
-              animated
-              dangerouslySetStyle={{
-                color: animatedBoxValue.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [palette.foregroundMuted, palette.foreground],
-                }),
-                // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
-                opacity: pressed ? opacityPressed[100] : 1,
-              }}
-              spacingStart={1}
-              color={checked ? 'foreground' : 'foregroundMuted'}
-            >
-              {label}
-            </TextBody>
+          {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
+          {label ? (
+            <>
+              <View style={iconWrapperStyles}>
+                <ControlIcon {...controlIconProps} pressed={pressed} />
+              </View>
+              <Spacer horizontal={1} />
+              <TextBody
+                testID={`${testID}Label`}
+                animated
+                dangerouslySetStyle={{
+                  color: animatedBoxValue.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [palette.foregroundMuted, palette.foreground],
+                  }),
+                  // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
+                  opacity: pressed ? opacityPressed[100] : 1,
+                }}
+                color={checked ? 'foreground' : 'foregroundMuted'}
+              >
+                {label}
+              </TextBody>
+            </>
+          ) : (
+            <ControlIcon {...controlIconProps} pressed={pressed} />
           )}
         </>
       )}

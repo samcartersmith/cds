@@ -41,6 +41,9 @@ const SwitchScreen = () => {
         <Switch disabled>Off Disabled</Switch>
         <Switch readOnly>Off Read Only</Switch>
         <Switch accessibilityLabel="switch with no label" />
+        <Switch>
+          This switch has a multi-line label. The switch and label should align at the top.
+        </Switch>
       </Example>
 
       <Example title="Dark Mode" inline>

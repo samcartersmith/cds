@@ -7,7 +7,7 @@ import { TextHeadline } from '@cbhq/cds-mobile/typography';
 import Example from './internal/Example';
 import Screen from './internal/Screen';
 
-const CheckboxScreen = () => {
+const RadioGroupScreen = () => {
   return (
     <Screen>
       <Example title="Default" inline>
@@ -27,6 +27,9 @@ const CheckboxScreen = () => {
         <Radio disabled>Disabled</Radio>
         <Radio readOnly>Read Only</Radio>
         <Radio accessibilityLabel="radio with no label" />
+        <Radio>
+          This radio has a multi-line label. The radio and label should align at the top.
+        </Radio>
       </Example>
 
       <Example title="Radio Group" inline>
@@ -73,4 +76,4 @@ const CheckboxScreen = () => {
   );
 };
 
-export default CheckboxScreen;
+export default RadioGroupScreen;
