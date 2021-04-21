@@ -1,6 +1,6 @@
 import React, { memo, createElement, useCallback } from 'react';
 
-import { IconName } from '@cbhq/cds-common';
+import { BadgeValue, IconName } from '@cbhq/cds-common';
 import { mergeProps } from '@cbhq/cds-common/utils/mergeProps';
 import { emptyObject } from '@cbhq/cds-utils';
 import { cx } from 'linaria';
@@ -22,7 +22,7 @@ export interface NavigationListItemProps extends InteractableProps<HTMLAnchorEle
   active?: boolean;
   icon?: IconName;
   label: string;
-  badge?: number | string;
+  badge?: BadgeValue;
   renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
 }
 

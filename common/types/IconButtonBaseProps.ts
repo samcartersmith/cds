@@ -7,8 +7,6 @@ export interface IconButtonBaseProps
   extends Pick<ButtonBaseProps, 'accessibilityLabel' | 'disabled' | 'testID'> {
   /** Name of the icon, as defined in Figma. */
   name: IconName;
-  /** Number to show on top right corner of button. */
-  badge?: number;
   /**
    * Toggle design and visual variants.
    * @default primary
