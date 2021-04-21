@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.1.6 (4/21/2021, 08:32 AM PST)
+
+#### 🐞 Fixes
+
+- Initial tech debt pass [#17863](https://github.cbhq.net/mono/repo/pull/17863)
+
 ## 0.1.5 (4/7/2021, 07:52 PM PST)
 
 #### 🚀 Updates

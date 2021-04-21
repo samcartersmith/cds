@@ -6,6 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.7.6 (4/21/2021, 08:32 AM PST)
+
+#### 🚀 Updates
+
+- useThemeProviderStyles to apply theme styles to custom element [#17941](https://github.cbhq.net/mono/repo/pull/17941)
+
+#### 🐞 Fixes
+
+- navigationStyles degredation @travis-ueki [#17773](https://github.cbhq.net/mono/repo/pull/17773)
+
+#### 📘 Misc
+
+- clean up control API, remove indeterminate @hannah-jin [#17252](https://github.cbhq.net/mono/repo/pull/17252)
+
 ## 0.7.5 (4/12/2021, 12:52 PM PST)
 
 #### 🚀 Updates
