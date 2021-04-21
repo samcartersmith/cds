@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.9.1 (4/21/2021, 02:23 PM PST)
+
+#### 🐞 Fixes
+
+- Multi line label controls alignment @hannah-jin [#18012](https://github.cbhq.net/mono/repo/pull/18012)
+
 ## 0.9.0 (4/13/2021, 11:30 AM PST)
 
 #### 💥 Breaking

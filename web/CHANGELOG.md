@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.8.0 (4/21/2021, 02:23 PM PST)
+
+#### 💥 Breaking
+
+- **[IconButton]** Remove badge prop. [#18034](https://github.cbhq.net/mono/repo/pull/18034)
+
+#### 🐞 Fixes
+
+- Multi line label controls alignment @hannah-jin [#18012](https://github.cbhq.net/mono/repo/pull/18012)
+
 ## 0.7.6 (4/21/2021, 08:32 AM PST)
 
 #### 🚀 Updates
