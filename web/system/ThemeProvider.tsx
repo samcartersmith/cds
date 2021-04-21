@@ -1,11 +1,8 @@
 import React, { memo } from 'react';
 
-import { useScale, useSpectrum, SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
-import { cx } from 'linaria';
+import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 
-import { usePaletteToCssVars } from '../hooks/usePaletteToCssVars';
-import * as scaleCss from '../styles/scale';
-import * as spectrumCss from '../styles/spectrum';
+import { useThemeProviderStyles } from './useThemeProviderStyles';
 
 export const ThemeProvider: React.FC<SystemProviderProps> = memo(({ children, ...props }) => {
   return (
@@ -16,18 +13,8 @@ export const ThemeProvider: React.FC<SystemProviderProps> = memo(({ children, ..
 });
 
 const ThemeManager: React.FC = ({ children }) => {
-  const scale = useScale();
-  const spectrum = useSpectrum();
-  const palette = usePaletteToCssVars();
-
-  return (
-    <div
-      className={cx(scaleCss[scale], spectrumCss[spectrum])}
-      style={palette as React.CSSProperties}
-    >
-      {children}
-    </div>
-  );
+  const props = useThemeProviderStyles();
+  return <div {...props}>{children}</div>;
 };
 
 ThemeProvider.displayName = 'ThemeProvider';
