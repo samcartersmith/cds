@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.8.1 (4/22/2021, 04:26 PM PST)
+
+#### 🐞 Fixes
+
+- missing React import for Interactable @katherinemartinez [#18209](https://github.cbhq.net/mono/repo/pull/18209)
+
 ## 0.8.0 (4/21/2021, 02:23 PM PST)
 
 #### 💥 Breaking
