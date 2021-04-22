@@ -16,6 +16,18 @@ const AUTHORS: Record<string, string> = {
 };
 
 type VersionBump = 'major' | 'minor' | 'patch';
+/**
+ * If no jira ticket exists, replace with 'trivial'
+ * [{jira ticket}] {LogType}: {message}
+ * ex: [trivial] docs: added new feature docs
+ *
+ * LogTypes:
+ * breaking - major
+ * feat, change - minor
+ * fix, chore, types - patch
+ * release, internal, docs - noop
+ *
+ */
 type LogType =
   | 'breaking'
   | 'internal'

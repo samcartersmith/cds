@@ -48,6 +48,21 @@ ash deploy -p eng/shared/design-system/cloud
 
 2. Enter the number for the commit/package you want to deploy for prod or development registry
 
+## Commit Message Conventions
+
+To ensure the changelog is correctly generated and packages are correctly versioned and released, you must format your _squash_ commit message the following way:
+
+If no jira ticket exists, replace it with 'trivial'
+[{jira ticket}] {LogType}: {message}
+ex: [trivial] docs: added new feature docs
+
+- breaking - major version bump
+- feat, change - minor version bump
+- fix, chore, types - patch version bump
+- release, internal, docs - noop
+
+[prepareRelease.ts](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/codegen/scripts/prepareRelease.ts#L19)
+
 ## Storybook
 
 ### Run Storybook Local Dev Server
