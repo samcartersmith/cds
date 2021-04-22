@@ -1,4 +1,4 @@
-import { createElement, forwardRef } from 'react';
+import React, { createElement, forwardRef } from 'react';
 
 import { BorderRadius, PaletteBackground } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
