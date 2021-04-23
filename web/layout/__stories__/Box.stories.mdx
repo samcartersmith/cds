@@ -1,17 +1,18 @@
 import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { TextBody } from '../../typography';
 import { Box } from '../Box';
 
 export const Lipsum = () => (
-  <div>
+  <TextBody as="p">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie tellus quis sem
     suscipit molestie. In tincidunt hendrerit lectus fermentum euismod. Fusce interdum mollis
     sodales. Aenean ac nibh eu velit condimentum laoreet quis in enim. Sed ut massa at purus auctor
     convallis. Donec imperdiet posuere felis non luctus. Duis molestie at leo ac commodo. Fusce
     facilisis lacus ac urna tempus, a dictum nibh ornare. In facilisis ipsum tempus velit consequat
     lobortis.
-  </div>
+  </TextBody>
 );
 
 <Meta title="Core Components/Box" component={Box} />
@@ -172,7 +173,7 @@ export const Lipsum = () => (
   <Story name="Spacing" decorators={[withStoryLabel('All')]} args={{}}>
     {() => (
       <Box spacing={3} background="backgroundAlternate">
-        All sides
+        <TextBody as="p">All sides</TextBody>
       </Box>
     )}
   </Story>
@@ -185,21 +186,21 @@ export const Lipsum = () => (
         spacingStart={4}
         background="backgroundAlternate"
       >
-        Custom sides
+        <TextBody as="p">Custom sides</TextBody>
       </Box>
     )}
   </Story>
   <Story name="Vertical spacing" decorators={[withStoryLabel('Vertical')]} args={{}}>
     {() => (
       <Box spacingVertical={3} background="backgroundAlternate">
-        Vertical only
+        <TextBody as="p">Vertical only</TextBody>
       </Box>
     )}
   </Story>
   <Story name="Horizontal spacing" decorators={[withStoryLabel('Horizontal')]} args={{}}>
     {() => (
       <Box spacingHorizontal={3} background="backgroundAlternate">
-        Horizontal only
+        <TextBody as="p">Horizontal only</TextBody>
       </Box>
     )}
   </Story>
@@ -212,7 +213,7 @@ export const Lipsum = () => (
     {() => (
       <Box spacing={5} background="backgroundAlternate">
         <Box offset={3} background>
-          All sides
+          <TextBody as="p">All sides</TextBody>
         </Box>
       </Box>
     )}
@@ -221,7 +222,7 @@ export const Lipsum = () => (
     {() => (
       <Box spacing={5} background="backgroundAlternate">
         <Box offsetTop={1} offsetEnd={2} offsetBottom={3} offsetStart={4} background>
-          Custom sides
+          <TextBody as="p">Custom sides</TextBody>
         </Box>
       </Box>
     )}
@@ -230,7 +231,7 @@ export const Lipsum = () => (
     {() => (
       <Box spacing={5} background="backgroundAlternate">
         <Box offsetVertical={3} background>
-          Vertical only
+          <TextBody as="p">Vertical only</TextBody>
         </Box>
       </Box>
     )}
@@ -239,7 +240,7 @@ export const Lipsum = () => (
     {() => (
       <Box spacing={5} background="backgroundAlternate">
         <Box offsetHorizontal={3} background>
-          Horizontal only
+          <TextBody as="p">Horizontal only</TextBody>
         </Box>
       </Box>
     )}
@@ -273,7 +274,7 @@ export const Lipsum = () => (
     {args => (
       <Box width="100%" height={250} background="backgroundAlternate" position="relative">
         <Box {...args} background="backgroundOverlay">
-          Top from left to right
+          <TextBody as="p">Top from left to right</TextBody>
         </Box>
       </Box>
     )}
@@ -282,7 +283,7 @@ export const Lipsum = () => (
     {args => (
       <Box width="100%" height={250} background="backgroundAlternate" position="relative">
         <Box {...args} background="backgroundOverlay">
-          Right from top to bottom
+          <TextBody as="p"> Right from top to bottom</TextBody>
         </Box>
       </Box>
     )}
@@ -291,7 +292,7 @@ export const Lipsum = () => (
     {args => (
       <Box width="100%" height={250} background="backgroundAlternate" position="relative">
         <Box {...args} background="backgroundOverlay">
-          Bottom from left to right
+          <TextBody as="p">Bottom from left to right</TextBody>
         </Box>
       </Box>
     )}
@@ -300,7 +301,7 @@ export const Lipsum = () => (
     {args => (
       <Box width="100%" height={250} background="backgroundAlternate" position="relative">
         <Box {...args} background="backgroundOverlay">
-          Left from top to bottom
+          <TextBody as="p">Left from top to bottom</TextBody>
         </Box>
       </Box>
     )}
@@ -309,7 +310,7 @@ export const Lipsum = () => (
     {args => (
       <Box width="100%" height={250} background="backgroundAlternate" position="relative">
         <Box {...args} background="backgroundOverlay">
-          To all corners
+          <TextBody as="p">To all corners</TextBody>
         </Box>
       </Box>
     )}
