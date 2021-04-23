@@ -10,6 +10,7 @@ import {
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { HapticFeedbackType } from '../types';
+import { debounce } from '../utils/debounce';
 import { Haptics } from '../utils/haptics';
 import { Interactable, InteractableProps } from './Interactable';
 
@@ -26,6 +27,11 @@ export interface PressableProps
   feedback?: HapticFeedbackType;
   /** Is the element currenty loading. */
   loading?: boolean;
+  /** React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior
+   * such as double navigations where we push a screen onto the stack 2 times.
+   * Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental "double-tap".
+   */
+  disableDebounce?: boolean;
 }
 
 export interface PressableInternalProps extends PressableProps, Omit<InteractableProps, 'pressed'> {
@@ -45,6 +51,7 @@ export const Pressable = memo(function Pressable({
   borderColor,
   borderRadius,
   borderWidth,
+  disableDebounce,
   style = emptyArray,
   ...props
 }: PressableInternalProps) {
@@ -60,9 +67,15 @@ export const Pressable = memo(function Pressable({
         Haptics.heavyImpact();
       }
 
-      onPress?.(event);
+      if (onPress) {
+        if (disableDebounce) {
+          onPress(event);
+        } else {
+          debounce(onPress)(event);
+        }
+      }
     },
-    [feedback, onPress]
+    [feedback, onPress, disableDebounce]
   );
 
   return (

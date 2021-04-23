@@ -3,7 +3,10 @@
 import { render, fireEvent } from '@testing-library/react-native';
 import { Animated, Pressable } from 'react-native';
 
+import { debounce } from '../../utils/debounce';
 import { LinkButton } from '../LinkButton';
+
+jest.mock('../../utils/debounce');
 
 describe('LinkButton', () => {
   it('renders an animated view', () => {
@@ -26,6 +29,7 @@ describe('LinkButton', () => {
 
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
+    (debounce as jest.Mock).mockImplementation(() => spy);
     const result = render(<LinkButton onPress={spy}>Child</LinkButton>);
 
     fireEvent.press(result.getByText('Child'));
