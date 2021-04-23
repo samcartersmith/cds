@@ -31,3 +31,7 @@ export const line = css`
 export const lineHeavy = css`
   border: 1px solid var(--line-heavy);
 `;
+
+export const transparent = css`
+  border: 1px solid transparent;
+`;

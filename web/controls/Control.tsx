@@ -17,12 +17,14 @@ export interface ControlProps
   testID?: string;
 }
 
-interface ControlInternalProps<T extends string> extends ControlProps {
+interface ControlInternalProps<T extends string>
+  extends ControlProps,
+    Partial<
+      Pick<InteractableProps, 'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth'>
+    > {
   value?: T;
   label?: TextProps['children'];
   children: React.ReactChild;
-  backgroundColor?: InteractableProps['backgroundColor'];
-  borderRadius?: InteractableProps['borderRadius'];
 }
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
@@ -37,7 +39,9 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     label,
     'aria-labelledby': ariaLabelledby,
     backgroundColor,
+    borderColor,
     borderRadius,
+    borderWidth,
     testID,
     ...htmlProps
   }: ControlInternalProps<T>,
@@ -71,8 +75,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     <Interactable
       as="span"
       backgroundColor={backgroundColor ?? (checked ? 'primary' : 'background')}
-      disabled={disabled || readOnly}
+      borderColor={borderColor}
       borderRadius={borderRadius}
+      borderWidth={borderWidth}
+      disabled={disabled || readOnly}
+      wrapWithLayeredElements
     >
       <>
         <input className={visuallyHidden} {...inputProps} />

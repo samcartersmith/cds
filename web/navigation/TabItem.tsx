@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { InteractableProps, useInteractable } from '../buttons/useInteractable';
+import { Pressable, PressableProps } from '../system/Pressable';
 import { TextLabel1 } from '../typography/TextLabel1';
 
 export interface TabItemBaseProps {
@@ -8,25 +8,27 @@ export interface TabItemBaseProps {
   value?: string | number;
 }
 
-export interface TabItemProps extends TabItemBaseProps, InteractableProps<HTMLButtonElement> {
+export interface TabItemProps extends TabItemBaseProps, PressableProps {
   active?: boolean;
 }
 
-export const TabItem = memo(({ label, active, onPress }: TabItemProps) => {
+export const TabItem = memo(function TabItem({ label, active, value: _, ...props }: TabItemProps) {
   const colorAlias = active ? 'primaryWash' : 'secondary';
-  const { className, style } = useInteractable({
-    backgroundColor: colorAlias,
-    borderColor: colorAlias,
-    borderRadius: 'pill',
-  });
 
   return (
-    <button role="tab" type="button" className={className} style={style} onClick={onPress}>
+    <Pressable
+      as="button"
+      backgroundColor={colorAlias}
+      borderColor={colorAlias}
+      borderRadius="pill"
+      borderWidth="button"
+      role="tab"
+      type="button"
+      {...props}
+    >
       <TextLabel1 spacing={1} as="p" color={active ? 'primary' : 'foreground'}>
         {label}
       </TextLabel1>
-    </button>
+    </Pressable>
   );
 });
-
-TabItem.displayName = 'TabItem';

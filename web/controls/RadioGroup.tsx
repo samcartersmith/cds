@@ -18,7 +18,14 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
 ) {
   const { checked = false } = props;
   return (
-    <Control type="radio" label={children} ref={ref} borderRadius="round" {...props}>
+    <Control
+      type="radio"
+      label={children}
+      ref={ref}
+      backgroundColor="background"
+      borderRadius="round"
+      {...props}
+    >
       <div role="presentation" className={cx(radio, focusRing)} data-filled={checked}>
         {checked && <Icon name="dot" size="s" color="primary" />}
       </div>

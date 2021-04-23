@@ -1,139 +1,102 @@
-import React, { createElement, forwardRef } from 'react';
+import React, { createElement, useMemo, forwardRef } from 'react';
 
-import { BorderRadius, PaletteBackground } from '@cbhq/cds-common';
+import { usePaletteConfig } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
-import { cx, css } from 'linaria';
+import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
+import { cx } from 'linaria';
 
+import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
+import * as borderWidths from '../styles/borderWidth';
+import { focusRing } from '../styles/focus';
+import {
+  interactable,
+  interactableBackground,
+  interactableTransparent,
+  disabledState,
+  overlay,
+  underlay,
+} from '../styles/interactable';
 import { palette } from '../tokens';
-import { DynamicElement } from '../types';
 
-const parent = css`
-  position: relative;
-  display: inline-flex;
-  width: fit-content;
-  height: fit-content;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  align-content: stretch;
-  transition: transform 150ms;
-  transform: scale(1);
+export type InteractableInheritedProps = Omit<
+  React.AllHTMLAttributes<Element>,
+  'as' | 'className' | 'css' | 'style'
+>;
 
-  &:active[data-should-scale-on-press='true'] {
-    transform: scale(0.98);
-  }
-`;
+export interface InteractableProps extends InteractableBaseProps, InteractableInheritedProps {
+  children: NonNullable<React.ReactNode>;
+  /** Element or component to render the container as. */
+  as: React.ElementType;
+  /** Apply class names to the outer container. */
+  className?: string;
+  /** Wrap the content with overlay and underlay elements. */
+  wrapWithLayeredElements?: boolean;
+}
 
-const parentBlock = css`
-  display: flex;
-  width: 100%;
-
-  &:active[data-should-scale-on-press='true'] {
-    transform: scale(0.99);
-  }
-`;
-
-const overlay = css`
-  position: relative;
-  width: 100%;
-  z-index: 1;
-  transition: opacity 150ms ease-out;
-
-  &:hover {
-    opacity: var(--interactable-opacity-hovered);
-  }
-  &:active {
-    opacity: var(--interactable-opacity-pressed);
-  }
-
-  label:hover & {
-    opacity: var(--interactable-opacity-hovered);
-  }
-  label:active & {
-    opacity: var(--interactable-opacity-pressed);
-  }
-`;
-
-const disabledState = css`
-  opacity: ${opacityDisabled};
-  cursor: default;
-  pointer-events: none;
-  touch-action: none;
-`;
-
-const underlay = css`
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  right: 1px;
-  bottom: 1px;
-  z-index: 0;
-  overflow: hidden;
-`;
-
-export type InteractableProps = {
-  /** Should this element expand to full width? */
-  block?: boolean;
-  /** Render children to interact with. */
-  children: React.ReactElement;
-  /** Mark the element disabled and make transparent. */
-  disabled?: boolean;
-  /** Set border radius on underlay */
-  borderRadius?: BorderRadius;
-  /** Color of the overlay (child being rendered) background. */
-  backgroundColor: PaletteBackground;
-  /** Scale down the element when being pressed. */
-  shouldScaleOnPress?: boolean;
-};
-
-export const Interactable = forwardRef(function Interactable<T extends React.ElementType>(
+export const Interactable = forwardRef(function Interactable(
   {
-    as,
-    block = false,
-    children,
-    disabled = false,
-    loading = false,
-    borderRadius,
+    as: Container,
     backgroundColor,
-    shouldScaleOnPress,
+    borderColor,
+    borderRadius,
+    borderWidth,
+    children,
+    className: customClassName,
+    disabled,
+    pressed,
+    wrapWithLayeredElements,
     ...props
-  }: Omit<DynamicElement<InteractableProps, T>, 'as'> & { as: T },
-  ref: React.ForwardedRef<HTMLElement>
+  }: InteractableProps,
+  ref: React.Ref<Element>
 ) {
-  const { underlayColor, pressedOpacity, hoverOpacity } = useInteractableTokens(backgroundColor);
-  const isDisabled = disabled || loading;
+  const paletteConfig = usePaletteConfig();
+  const spectrumAlias = backgroundColor === 'transparent' ? '' : paletteConfig[backgroundColor];
+  const { underlayColor, hoverOpacity, pressedOpacity } = useInteractableTokens(backgroundColor);
+  const className = cx(
+    interactable,
+    !wrapWithLayeredElements && interactableBackground,
+    !spectrumAlias && interactableTransparent,
+    borderColor && borderColors[borderColor],
+    borderRadius && borderRadii[borderRadius],
+    borderWidth && borderWidths[borderWidth],
+    disabled ? disabledState : focusRing,
+    customClassName
+  );
+  const style = useMemo(
+    () =>
+      ({
+        '--interactable-opacity-hovered': hoverOpacity,
+        '--interactable-opacity-pressed': pressedOpacity,
+        '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : '',
+        '--interactable-underlay': palette[underlayColor],
+      } as React.CSSProperties),
+    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor]
+  );
 
-  return createElement(as, {
-    ref,
-    className: cx(parent, block && parentBlock, disabled && disabledState),
-    'data-should-scale-on-press': shouldScaleOnPress,
-    children: (
+  const content =
+    disabled || !wrapWithLayeredElements ? (
+      children
+    ) : (
       <>
-        {!isDisabled && (
-          <span
-            role="presentation"
-            className={cx(underlay, borderRadii[borderRadius])}
-            style={{
-              backgroundColor: palette[underlayColor],
-            }}
-          />
-        )}
-        {isDisabled ? (
-          children
-        ) : (
-          <span
-            className={overlay}
-            style={{
-              '--interactable-opacity-pressed': pressedOpacity,
-              '--interactable-opacity-hovered': hoverOpacity,
-            }}
-          >
-            {children}
-          </span>
-        )}
+        <span
+          className={cx(underlay, borderRadius && borderRadii[borderRadius])}
+          role="presentation"
+        />
+        <span className={overlay}>{children}</span>
       </>
-    ),
-    ...props,
-  });
+    );
+
+  return createElement(
+    Container,
+    {
+      'aria-pressed': pressed,
+      ...props,
+      className,
+      disabled,
+      style,
+      ref,
+    },
+    content
+  );
 });

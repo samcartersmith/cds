@@ -70,6 +70,7 @@ const cssBorderColor = mapValues(borderMap, (_, key) => {
     border: `1px solid ${toCssVarFn(key)}`,
   };
 });
+cssBorderColor.transparent = { border: '1px solid transparent' };
 
 const cssColor = mapValues(foregroundMap, (_, key) => {
   return {

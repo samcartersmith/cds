@@ -1,6 +1,11 @@
 import { mapValues } from '@cbhq/cds-utils';
 
-import { borderRadiusConfig, borderRadiusCss, borderWidthConfig } from './configs/borderConfig';
+import {
+  borderRadiusConfig,
+  borderRadiusCss,
+  borderWidthConfig,
+  borderWidthCss,
+} from './configs/borderConfig';
 import { scaleConfig } from './configs/scaleConfig';
 import { Control } from './Control';
 import { Palette, defaultPalette } from './Palette';
@@ -54,6 +59,10 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
       {
         dest: 'web/styles/borderRadius.ts',
         data: borderRadiusCss,
+      },
+      {
+        dest: 'web/styles/borderWidth.ts',
+        data: borderWidthCss,
       },
     ],
     'cssMap.ejs': [

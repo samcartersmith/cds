@@ -9,9 +9,9 @@ import * as buttonStyles from '../buttons/buttonStyles';
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
 import { getFlexStyles } from '../styles/flex';
-import { InteractableProps, useInteractable } from './useInteractable';
+import { Pressable, PressableProps } from '../system/Pressable';
 
-export interface IconButtonProps extends IconButtonBaseProps, InteractableProps<HTMLButtonElement> {
+export interface IconButtonProps extends IconButtonBaseProps, PressableProps {
   renderContainer?: (props: React.HTMLAttributes<HTMLElement>) => JSX.Element;
   dangerouslySetClassName?: string;
 }
@@ -35,21 +35,11 @@ export const IconButton = forwardRef(
       justifyContent: 'center',
     });
     const { color, backgroundColor, borderColor } = useButtonVariant(variant);
-    const { className, style } = useInteractable({
-      backgroundColor,
-      borderColor,
-      borderRadius: 'round',
-      disabled,
-    });
 
     const enhancedProps = {
       'aria-label': accessibilityLabel,
       'data-test-id': testID,
-      style: {
-        ...style,
-        color: 'unset',
-      },
-      className: cx(flexStyles, buttonStyles.iconButton, className),
+      className: cx(flexStyles, buttonStyles.iconButton),
       children: <Icon name={name} size="s" color={color} />,
       disabled,
       ref,
@@ -61,7 +51,14 @@ export const IconButton = forwardRef(
         {renderContainer ? (
           renderContainer(enhancedProps)
         ) : (
-          <ReakitButton type="button" {...enhancedProps} />
+          <Pressable
+            {...enhancedProps}
+            as={ReakitButton}
+            backgroundColor={backgroundColor}
+            borderColor={borderColor}
+            borderRadius="round"
+            borderWidth="button"
+          />
         )}
       </Box>
     );

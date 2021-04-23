@@ -10,9 +10,9 @@ import { Button as ReakitButton } from 'reakit/Button';
 import { ButtonProps } from '../buttons';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import * as foregroundColors from '../styles/foregroundColor';
+import { Pressable } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 import * as buttonStyles from './buttonStyles';
-import { useInteractable } from './useInteractable';
 
 export interface LinkButtonProps extends Omit<ButtonProps, 'variant' | 'loading'> {
   /**
@@ -40,23 +40,19 @@ export const LinkButton = memo(
       ref: React.Ref<HTMLButtonElement>
     ) => {
       const spacingClass = useButtonSpacing(compact);
-
       const { color, backgroundColor, borderColor } = useLinkButtonVariant(variant);
 
-      const { className, style } = useInteractable({
-        backgroundColor,
-        borderColor,
-        borderRadius: compact ? 'compact' : 'standard',
-        disabled,
-      });
-
       return (
-        <ReakitButton
-          {...props}
+        <Pressable
           aria-label={accessibilityLabel}
           data-test-id={testID}
+          {...props}
+          as={ReakitButton}
+          backgroundColor={backgroundColor}
+          borderColor={borderColor}
+          borderRadius={compact ? 'compact' : 'standard'}
+          borderWidth="button"
           className={cx(
-            className,
             foregroundColors[variant],
             buttonStyles.button,
             compact && buttonStyles.buttonCompact,
@@ -64,15 +60,14 @@ export const LinkButton = memo(
             spacingClass
           )}
           disabled={disabled}
-          ref={ref}
-          style={style}
+          onPress={onPress}
           type={type}
-          onClick={onPress}
+          ref={ref}
         >
           <TextHeadline as="span" color={color}>
             {children}
           </TextHeadline>
-        </ReakitButton>
+        </Pressable>
       );
     }
   )

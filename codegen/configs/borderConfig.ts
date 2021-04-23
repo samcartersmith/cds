@@ -21,3 +21,9 @@ export const borderWidthConfig = {
   radio: 2,
   focusRing: 2,
 };
+
+export const borderWidthCss = mapValues(borderWidthConfig, val => {
+  return {
+    'border-width': `${val}px`,
+  };
+});

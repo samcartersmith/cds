@@ -1,24 +1,24 @@
-import React, { memo, createElement, useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 
 import { BadgeValue, IconName } from '@cbhq/cds-common';
 import { mergeProps } from '@cbhq/cds-common/utils/mergeProps';
 import { emptyObject } from '@cbhq/cds-utils';
 import { cx } from 'linaria';
 
-import { useInteractable, InteractableProps } from '../buttons/useInteractable';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Badge } from '../icons/Badge';
 import { Icon } from '../icons/Icon';
 import { Box, HStack } from '../layout';
 import { Tooltip } from '../overlays/Tooltip';
 import { getFlexStyles } from '../styles/flex';
+import { Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 import { useNavigation } from './context';
 import { useMobileMenuChildrenContext } from './MobileMenu';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
 
-export interface NavigationListItemProps extends InteractableProps<HTMLAnchorElement> {
+export interface NavigationListItemProps extends PressableProps {
   active?: boolean;
   icon?: IconName;
   label: string;
@@ -49,12 +49,6 @@ export const NavigationListItem = memo(
     });
     const spacingStyles = useSpacingStyles({
       spacing: 1,
-    });
-
-    const { className, style } = useInteractable({
-      backgroundColor: 'secondary',
-      borderColor: 'secondary',
-      borderRadius: 'standard',
     });
 
     const sidebarContent = (
@@ -102,18 +96,24 @@ export const NavigationListItem = memo(
             const enhancedProps: React.HTMLAttributes<HTMLAnchorElement> = mergeProps(
               tooltipProps,
               {
-                style,
-                className: cx(flexStyles, spacingStyles, sidebarItemStyles, className),
-                children: sidebarContent,
-                onClick: onPress,
+                className: cx(flexStyles, spacingStyles, sidebarItemStyles),
+                onPress,
                 // https://www.aditus.io/aria/aria-current/
                 ...(active ? ({ 'aria-current': 'page' } as const) : emptyObject),
               }
             );
 
-            return renderContainer
-              ? renderContainer(enhancedProps)
-              : createElement('a', enhancedProps);
+            return (
+              <Pressable
+                {...enhancedProps}
+                as={renderContainer || 'a'}
+                backgroundColor="secondary"
+                borderColor="secondary"
+                borderRadius="standard"
+              >
+                {sidebarContent}
+              </Pressable>
+            );
           }}
         </Tooltip>
       </li>

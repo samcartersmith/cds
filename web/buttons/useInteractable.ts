@@ -34,6 +34,10 @@ export interface UseInteractableOptions {
   noScaleOnPress?: boolean;
 }
 
+console.warn(
+  `useInteractable() is deprecated. Please use the Interactable or Pressable components instead.`
+);
+
 export function useInteractable({
   backgroundColor,
   borderColor,

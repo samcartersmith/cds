@@ -8,13 +8,13 @@ import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { MaterialSpinner } from '../loaders/MaterialSpinner';
 import * as foregroundColors from '../styles/foregroundColor';
+import { Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 import * as buttonStyles from './buttonStyles';
-import { InteractableProps, useInteractable } from './useInteractable';
 
 export interface ButtonProps
   extends ButtonBaseProps,
-    InteractableProps<HTMLButtonElement>,
+    PressableProps,
     Omit<
       ReakitButtonProps,
       | 'children'
@@ -28,60 +28,55 @@ export interface ButtonProps
       | 'wrapElement'
     > {}
 
-export const Button = forwardRef(
-  (
-    {
-      accessibilityLabel,
-      block,
-      children,
-      compact,
-      disabled,
-      loading,
-      onPress,
-      testID,
-      type = 'button',
-      variant = 'primary',
-      ...props
-    }: ButtonProps,
-    ref: React.Ref<HTMLButtonElement>
-  ) => {
-    const isDisabled = disabled || loading;
-    const spacingClass = useButtonSpacing(compact);
-    const { color, backgroundColor, borderColor } = useButtonVariant(variant);
-    const { className, style } = useInteractable({
-      backgroundColor,
-      borderColor,
-      borderRadius: compact ? 'compact' : 'standard',
-      disabled: isDisabled,
-    });
+export const Button = forwardRef(function Button(
+  {
+    accessibilityLabel,
+    block,
+    children,
+    compact,
+    disabled,
+    loading,
+    onPress,
+    testID,
+    type = 'button',
+    variant = 'primary',
+    ...props
+  }: ButtonProps,
+  ref: React.Ref<HTMLButtonElement>
+) {
+  const spacingClass = useButtonSpacing(compact);
+  const { color, backgroundColor, borderColor } = useButtonVariant(variant);
 
-    return (
-      <ReakitButton
-        {...props}
-        aria-label={accessibilityLabel}
-        data-test-id={testID}
-        className={cx(
-          className,
-          foregroundColors[color],
-          buttonStyles.button,
-          compact && buttonStyles.buttonCompact,
-          block && buttonStyles.buttonBlock,
-          spacingClass
-        )}
-        disabled={isDisabled}
-        ref={ref}
-        style={style}
-        type={type}
-        onClick={onPress}
-      >
-        {loading ? (
-          <MaterialSpinner size={24} color={color} />
-        ) : (
-          <TextHeadline as="span" color={color}>
-            {children}
-          </TextHeadline>
-        )}
-      </ReakitButton>
-    );
-  }
-);
+  return (
+    <Pressable
+      aria-label={accessibilityLabel}
+      data-test-id={testID}
+      {...props}
+      as={ReakitButton}
+      backgroundColor={backgroundColor}
+      borderColor={borderColor}
+      borderRadius={compact ? 'compact' : 'standard'}
+      borderWidth="button"
+      className={cx(
+        foregroundColors[color],
+        buttonStyles.button,
+        compact && buttonStyles.buttonCompact,
+        block && buttonStyles.buttonBlock,
+        spacingClass
+      )}
+      loading={loading}
+      disabled={disabled}
+      onPress={onPress}
+      type={type}
+      ref={ref}
+    >
+      {loading ? (
+        <MaterialSpinner size={24} color={color} />
+      ) : (
+        <TextHeadline as="span" color={color}>
+          {children}
+        </TextHeadline>
+      )}
+    </Pressable>
+  );
+});
