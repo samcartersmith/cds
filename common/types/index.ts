@@ -16,8 +16,6 @@ export * from './IconName';
 export * from './IconSize';
 export * from './LottieBaseProps';
 export * from './LottiePlayer';
-export * from './LottieMarker';
-export * from './LottieMarkersAsMap';
 export * from './LottieSource';
 export * from './LottieStatusAnimationProps';
 export * from './Palette';

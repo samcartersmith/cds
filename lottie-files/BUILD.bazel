@@ -38,9 +38,7 @@ filegroup(
 cds_package(
     name = "lottie-files",
     srcs = [":runtime_source"],
-    cds_dependencies = [
-        "common",
-    ],
+    cds_dependencies = [],
     dependencies = DEPENDENCIES,
     peer_dependencies = PEER_DEPENDENCIES,
 )

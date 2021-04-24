@@ -1,2 +1,11 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
+import { LottieSource } from '../LottieSource';
 /* eslint-disable import/extensions */
-export { default as chartFallbackPositive } from './chartFallbackPositive.json';
+import chartFallbackPositiveJson from './chartFallbackPositive.json';
+
+export type ChartFallbackPositiveLottie = LottieSource;
+
+export const chartFallbackPositive = chartFallbackPositiveJson as ChartFallbackPositiveLottie;

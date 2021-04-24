@@ -8,6 +8,7 @@ import {
 } from './configs/borderConfig';
 import { scaleConfig } from './configs/scaleConfig';
 import { Control } from './Control';
+import { lottieFiles } from './Lottie';
 import { Palette, defaultPalette } from './Palette';
 import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
@@ -25,6 +26,17 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         data: defaultPalette,
       },
     ],
+    'lottieSource.ejs': [
+      {
+        dest: 'lottie-files/LottieSource.ts',
+        data: {},
+      },
+      {
+        dest: 'common/types/LottieSource.ts',
+        data: {},
+      },
+    ],
+    'lottieFiles.ejs': lottieFiles,
     'css.ejs': [
       {
         dest: 'web/typography/textStyles.ts',
