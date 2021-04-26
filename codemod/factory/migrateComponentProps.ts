@@ -1,4 +1,18 @@
-import { FileInfo, API, Options, JSCodeshift } from 'jscodeshift';
+import {
+  FileInfo,
+  API,
+  Options,
+  JSCodeshift,
+  Literal,
+  JSXText,
+  BigIntLiteral,
+  BooleanLiteral,
+  NumericLiteral,
+  NullLiteral,
+  StringLiteral,
+  RegExpLiteral,
+  JSXExpressionContainer,
+} from 'jscodeshift';
 
 import { Codemod } from '../Codemod';
 
@@ -36,12 +50,54 @@ function fromValueToAST(cs: JSCodeshift, value: PropValue) {
   return null;
 }
 
+function matchesASTValue(
+  node:
+    | Literal
+    | BigIntLiteral
+    | BooleanLiteral
+    | NumericLiteral
+    | NullLiteral
+    | StringLiteral
+    | RegExpLiteral
+    | JSXText
+    | JSXExpressionContainer
+    | null,
+  value: PropValue
+): boolean {
+  // Node is missing
+  if (node === null) {
+    return false;
+  }
+
+  switch (node.type) {
+    case 'Literal':
+    case 'BooleanLiteral':
+    case 'NullLiteral':
+    case 'NumericLiteral':
+    case 'RegExpLiteral':
+    case 'StringLiteral':
+    case 'JSXText':
+      return node.value === value;
+    case 'BigIntLiteral':
+      return String(node.value) === String(value);
+    case 'JSXExpressionContainer':
+      return matchesASTValue(node.expression as Literal, value);
+    default:
+      return false;
+  }
+}
+
 function migrateComponentButtons(
   mod: Codemod,
   importPath: string | RegExp,
-  migrateMap: ComponentPropMap
+  migrateMap: ComponentPropMap,
+  namesToFind: string[] = []
 ): string | null | undefined | void {
-  const compName = mod.getComponentNameFromImportPath(importPath);
+  if (namesToFind.length === 0 && typeof importPath === 'string') {
+    namesToFind.push(importPath.slice(importPath.lastIndexOf('/') + 1));
+  }
+
+  const compName = mod.getComponentNameFromImportPath(importPath, namesToFind);
   const elements = mod.findJsxElementsByName(compName);
 
   if (elements.length === 0) {
@@ -78,7 +134,7 @@ function migrateComponentButtons(
       }
 
       if (config.values && attr.value) {
-        const valueConfig = config.values.find(cfg => cfg.from === attr.value);
+        const valueConfig = config.values.find(cfg => matchesASTValue(attr.value, cfg.from));
 
         if (valueConfig) {
           if (valueConfig.remove) {
@@ -86,8 +142,6 @@ function migrateComponentButtons(
           } else {
             attr.value = fromValueToAST(mod.cs, valueConfig.to);
           }
-        } else {
-          console.warn();
         }
       }
     });
