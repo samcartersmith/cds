@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.8.1 (4/26/2021, 02:28 PM PST)
+
+#### 🚀 Updates
+
+- Add Link Component @jennifer-liu [#16713](https://github.cbhq.net/mono/repo/pull/16713), [CDS-390](https://jira.coinbase-corp.com/browse/CDS-390)
+- **[LinkButton]** Update to have a transparent background until interacted with @miles-johnson [#18316](https://github.cbhq.net/mono/repo/pull/18316)
+- Codegen LottieSource and lottie-files [#18201](https://github.cbhq.net/mono/repo/pull/18201), [CDS-246](https://jira.coinbase-corp.com/browse/CDS-246)
+
 ## 0.8.0 (4/21/2021, 02:23 PM PST)
 
 #### 💥 Breaking

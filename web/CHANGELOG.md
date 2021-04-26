@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.8.2 (4/26/2021, 02:28 PM PST)
+
+#### 🚀 Updates
+
+- Add Link Component @jennifer-liu [#16713](https://github.cbhq.net/mono/repo/pull/16713), [CDS-390](https://jira.coinbase-corp.com/browse/CDS-390)
+- **[LinkButton]** Update to have a transparent background until interacted with @miles-johnson [#18316](https://github.cbhq.net/mono/repo/pull/18316)
+- Add Interactable/Pressable components to web @miles-johnson [#17805](https://github.cbhq.net/mono/repo/pull/17805)
+
+#### 🐞 Fixes
+
+- Make Switch occupy the correct height in layout @hannah-jin [#18271](https://github.cbhq.net/mono/repo/pull/18271)
+
+#### 📘 Misc
+
+- Use TextBody in storybook Lorem Ipsum @katherinemartinez [#18300](https://github.cbhq.net/mono/repo/pull/18300)
+
 ## 0.8.1 (4/22/2021, 04:26 PM PST)
 
 #### 🐞 Fixes

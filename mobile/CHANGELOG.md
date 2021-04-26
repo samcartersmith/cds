@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.0 (4/26/2021, 02:28 PM PST)
+
+#### 💥 Breaking
+
+- Add debounce to Pressable on mobile @katherinemartinez [#17708](https://github.cbhq.net/mono/repo/pull/17708), [CDS-460](https://jira.coinbase-corp.com/browse/CDS-460)
+
+#### 🚀 Updates
+
+- Add Link Component @jennifer-liu [#16713](https://github.cbhq.net/mono/repo/pull/16713), [CDS-390](https://jira.coinbase-corp.com/browse/CDS-390)
+- **[LinkButton]** Update to have a transparent background until interacted with @miles-johnson [#18316](https://github.cbhq.net/mono/repo/pull/18316)
+
+#### 🐞 Fixes
+
+- Make Switch occupy the correct height in layout @hannah-jin [#18271](https://github.cbhq.net/mono/repo/pull/18271)
+- Make text elements not expand beyond the parent width @hannah-jin [#18369](https://github.cbhq.net/mono/repo/pull/18369)
+
 ## 0.9.1 (4/21/2021, 02:23 PM PST)
 
 #### 🐞 Fixes

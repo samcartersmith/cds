@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.6 (4/26/2021, 02:28 PM PST)
+
+#### 🚀 Updates
+
+- Codegen LottieSource and lottie-files [#18201](https://github.cbhq.net/mono/repo/pull/18201), [CDS-246](https://jira.coinbase-corp.com/browse/CDS-246)
+
 ## 0.2.5 (4/8/2021, 01:01 PM PST)
 
 #### 🚀 Updates
