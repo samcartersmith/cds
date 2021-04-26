@@ -28,7 +28,9 @@ const CheckboxScreen = () => {
         <Checkbox readOnly>Read Only</Checkbox>
         <Checkbox accessibilityLabel="checkbox with no label" />
         <Checkbox>
-          This checkbox has a multi-line label. The checkbox and label should align at the top.
+          This checkbox has a multi-line label. The checkbox and label should align at the top. The
+          label is super duper long and it keeps going on forever. This checkbox has a multi-line
+          label.
         </Checkbox>
       </Example>
 

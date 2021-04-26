@@ -141,36 +141,36 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       onPress={handlePress}
       {...props}
     >
-      {({ pressed }) => (
-        <>
-          {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
-          {label ? (
-            <>
-              <View style={iconWrapperStyles}>
-                <ControlIcon {...controlIconProps} pressed={pressed} />
-              </View>
-              <Spacer horizontal={1} />
-              <TextBody
-                testID={`${testID}Label`}
-                animated
-                dangerouslySetStyle={{
-                  color: animatedBoxValue.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [palette.foregroundMuted, palette.foreground],
-                  }),
-                  // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
-                  opacity: pressed ? opacityPressed[100] : 1,
-                }}
-                color={checked ? 'foreground' : 'foregroundMuted'}
-              >
-                {label}
-              </TextBody>
-            </>
-          ) : (
-            <ControlIcon {...controlIconProps} pressed={pressed} />
-          )}
-        </>
-      )}
+      {({ pressed }) =>
+        // If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text.
+        label ? (
+          <>
+            <View style={iconWrapperStyles}>
+              <ControlIcon {...controlIconProps} pressed={pressed} />
+            </View>
+            <Spacer horizontal={1} />
+            <TextBody
+              testID={`${testID}Label`}
+              animated
+              dangerouslySetStyle={{
+                color: animatedBoxValue.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [palette.foregroundMuted, palette.foreground],
+                }),
+                // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
+                opacity: pressed ? opacityPressed[100] : 1,
+                // Prevent text element from expanding beyond available width.
+                flexShrink: 1,
+              }}
+              color={checked ? 'foreground' : 'foregroundMuted'}
+            >
+              {label}
+            </TextBody>
+          </>
+        ) : (
+          <ControlIcon {...controlIconProps} pressed={pressed} />
+        )
+      }
     </Pressable>
   );
   // Make forwardRef result function stay generic function type

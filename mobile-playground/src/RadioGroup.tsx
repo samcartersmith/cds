@@ -28,7 +28,8 @@ const RadioGroupScreen = () => {
         <Radio readOnly>Read Only</Radio>
         <Radio accessibilityLabel="radio with no label" />
         <Radio>
-          This radio has a multi-line label. The radio and label should align at the top.
+          This radio has a multi-line label. The radio and label should align at the top. The label
+          is super duper long and it keeps going on forever. This radio has a multi-line label.
         </Radio>
       </Example>
 

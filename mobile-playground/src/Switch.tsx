@@ -42,7 +42,9 @@ const SwitchScreen = () => {
         <Switch readOnly>Off Read Only</Switch>
         <Switch accessibilityLabel="switch with no label" />
         <Switch>
-          This switch has a multi-line label. The switch and label should align at the top.
+          This switch has a multi-line label. The switch and label should align at the top. The
+          label is super duper long and it keeps going on forever. This switch has a multi-line
+          label.
         </Switch>
       </Example>
 
