@@ -1,6 +1,8 @@
 import { useMemo, Children } from 'react';
 
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
+import { Box, Divider } from '@cbhq/cds-mobile/layout';
+import { ThemeProvider } from '@cbhq/cds-mobile/system';
 import { TextTitle3 } from '@cbhq/cds-mobile/typography/TextTitle3';
 import { View, ViewStyle } from 'react-native';
 
@@ -8,9 +10,10 @@ interface ExampleProps {
   children: React.ReactNode;
   inline?: boolean;
   title?: string;
+  darkMode?: boolean;
 }
 
-const Example = ({ children, inline, title }: ExampleProps) => {
+const Example = ({ children, inline, title, darkMode }: ExampleProps) => {
   const palette = usePalette();
   const childStyles = useMemo(() => {
     const style: ViewStyle = { paddingTop: 12 };
@@ -22,26 +25,24 @@ const Example = ({ children, inline, title }: ExampleProps) => {
     return style;
   }, [inline]);
 
-  return (
-    <View
-      style={{
-        borderBottomWidth: 1,
-        borderBottomColor: palette.lineHeavy,
-        padding: 16,
-        paddingBottom: 24,
-      }}
-    >
-      {title && <TextTitle3>{title}</TextTitle3>}
+  const content = (
+    <>
+      <Box spacing={2} spacingBottom={3} background>
+        {title && <TextTitle3>{title}</TextTitle3>}
 
-      {typeof children === 'function'
-        ? children()
-        : Children.map(children, (item, index) => (
-            <View key={index} style={childStyles}>
-              {item}
-            </View>
-          ))}
-    </View>
+        {typeof children === 'function'
+          ? children()
+          : Children.map(children, (item, index) => (
+              <View key={index} style={childStyles}>
+                {item}
+              </View>
+            ))}
+      </Box>
+      <Divider />
+    </>
   );
+
+  return darkMode ? <ThemeProvider spectrum="dark">{content}</ThemeProvider> : content;
 };
 
 export default Example;

@@ -29,7 +29,7 @@ describe('Checkbox', () => {
   it('has accessibility role checkbox', async () => {
     const result = render(<Checkbox>Checkbox</Checkbox>);
 
-    expect(result.queryAllByA11yRole('checkbox')).toHaveLength(1);
+    expect(result.queryAllByA11yRole('switch')).toHaveLength(1);
   });
 
   it('has accessibility state checked when checked', async () => {

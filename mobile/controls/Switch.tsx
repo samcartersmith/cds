@@ -3,15 +3,21 @@ import React, { forwardRef, memo, useMemo } from 'react';
 import { useScale, useSpectrum } from '@cbhq/cds-common';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, PressableProps, StyleSheet, View } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { usePalette } from '../hooks/usePalette';
+import { Box } from '../layout/Box';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
-import { Control, ControlIconProps, ControlProps } from './Control';
+import { Control, ControlIconProps } from './Control';
 
-export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps<string>, 'value'>;
+export interface SwitchProps
+  extends Omit<ControlBaseProps<string>, 'value'>,
+    Omit<PressableProps, 'disabled' | 'children' | 'style'> {
+  /** Triggered when switch is toggled. */
+  onChange?: () => void;
+}
 
 const SwitchIcon: React.FC<ControlIconProps> = ({
   pressed,
@@ -90,17 +96,25 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
   { children, ...props }: SwitchProps,
   ref: React.ForwardedRef<View>
 ) {
-  return (
-    <Control {...props} accessible accessibilityRole="checkbox" label={children} ref={ref}>
+  const cdsScale = useScale();
+  const { switchHeight } = scaleStyles[cdsScale].control;
+
+  const switchNode = (
+    <Control {...props} accessible accessibilityRole="switch" label={children} ref={ref}>
       {SwitchIcon}
     </Control>
   );
-  // Make forwardRef result function stay generic function type
-}) as (props: SwitchProps & React.RefAttributes<View>) => React.ReactElement;
 
-// Make memoized function stay generic function type
-export const Switch = memo(SwitchWithRef) as typeof SwitchWithRef &
-  React.MemoExoticComponent<typeof SwitchWithRef>;
+  return children ? (
+    <Box flexDirection="row" minHeight={switchHeight} alignItems="center">
+      {switchNode}
+    </Box>
+  ) : (
+    switchNode
+  );
+});
+
+export const Switch = memo(SwitchWithRef);
 
 const styles = StyleSheet.create({
   thumb: {

@@ -48,24 +48,17 @@ const SwitchScreen = () => {
         </Switch>
       </Example>
 
-      <Example title="Dark Mode" inline>
-        {() => {
-          const [isChecked, { toggle }] = useToggler();
-          return (
-            <ThemeProvider spectrum={isChecked ? 'dark' : 'light'}>
-              <Switch checked={isChecked} onChange={toggle} accessibilityLabel="turn on dark mode">
-                Dark Mode
-              </Switch>
-            </ThemeProvider>
-          );
-        }}
-
+      <Example title="Dark Mode" inline darkMode>
+        <Switch checked>On</Switch>
         <Switch checked readOnly>
           On Readonly
         </Switch>
         <Switch disabled>Off Disabled</Switch>
         <Switch readOnly>Off Read Only</Switch>
         <Switch accessibilityLabel="switch with no label" />
+        <Switch>
+          This switch has a multi-line label. The switch and label should align at the top.
+        </Switch>
       </Example>
     </Screen>
   );

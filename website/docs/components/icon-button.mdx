@@ -34,21 +34,6 @@ Full length accessibility label when the child text is not descriptive enough.
 
 <ComponentDetails componentName="IconButton" templateName="accessibilityLabelProp" />
 
-### badge
-
-Number to show on top right corner of button.
-
-<ApiDetails
-  componentName="IconButton"
-  propertyName="badge"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
-/>
-
-<ComponentDetails componentName="IconButton" templateName="badgeProp" />
-
 ### dangerouslySetClassName <Badge variant="web" />
 
 <ApiDetails
@@ -76,6 +61,21 @@ Mark the button as disabled.
 />
 
 <ComponentDetails componentName="IconButton" templateName="disabledProp" />
+
+### disableDebounce <Badge variant="mobile" />
+
+React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior such as double navigations where we push a screen onto the stack 2 times. Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental double-tap.
+
+<ApiDetails
+  componentName="IconButton"
+  propertyName="disableDebounce"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="IconButton" templateName="disableDebounceProp" />
 
 ### feedback <Badge variant="mobile" />
 

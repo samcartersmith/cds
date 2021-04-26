@@ -51,39 +51,61 @@ import { Switch } from '../Switch';
 
 <Canvas withToolbar>
   <Story name="On">
-    <Switch checked>On</Switch>
+    {args => (
+      <Switch {...args} checked>
+        On
+      </Switch>
+    )}
   </Story>
   <Story name="Disabled off">
-    <Switch disabled>Disabled off</Switch>
+    {args => (
+      <Switch {...args} disabled>
+        Disabled off
+      </Switch>
+    )}
   </Story>
   <Story name="Disabled on">
-    <Switch checked disabled>
-      Disabled on
-    </Switch>
-  </Story>
-  <Story name="Dark normal on" decorators={[DarkStoryContainer]}>
-    <ThemeProvider spectrum="dark">
-      <Switch checked>On</Switch>
-    </ThemeProvider>
-  </Story>
-  <Story name="Dark normal disabled off" decorators={[DarkStoryContainer]}>
-    <ThemeProvider spectrum="dark">
-      <Switch>Disabled off</Switch>
-    </ThemeProvider>
-  </Story>
-  <Story name="Dark normal disabled on" decorators={[DarkStoryContainer]}>
-    <ThemeProvider spectrum="dark">
-      <Switch checked disabled>
+    {args => (
+      <Switch {...args} checked disabled>
         Disabled on
       </Switch>
-    </ThemeProvider>
+    )}
+  </Story>
+  <Story name="Dark normal on" decorators={[DarkStoryContainer]}>
+    {args => (
+      <ThemeProvider spectrum="dark">
+        <Switch {...args} checked>
+          On
+        </Switch>
+      </ThemeProvider>
+    )}
+  </Story>
+  <Story name="Dark normal disabled off" decorators={[DarkStoryContainer]}>
+    {args => (
+      <ThemeProvider spectrum="dark">
+        <Switch {...args} disabled>
+          Disabled off
+        </Switch>
+      </ThemeProvider>
+    )}
+  </Story>
+  <Story name="Dark normal disabled on" decorators={[DarkStoryContainer]}>
+    {args => (
+      <ThemeProvider spectrum="dark">
+        <Switch {...args} checked disabled>
+          Disabled on
+        </Switch>
+      </ThemeProvider>
+    )}
   </Story>
   <Story name="Multi-line label">
-    <Box width="250px">
-      <Switch>
-        This switch has a multi-line label. The switch and label should align at the top.
-      </Switch>
-    </Box>
+    {args => (
+      <Box width="250px">
+        <Switch {...args}>
+          This switch has a multi-line label. The switch and label should align at the top.
+        </Switch>
+      </Box>
+    )}
   </Story>
 </Canvas>
 

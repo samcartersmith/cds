@@ -5,6 +5,7 @@ import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { css, cx } from 'linaria';
 
+import { Box } from '../layout/Box';
 import { round } from '../styles/borderRadius';
 import { level1 } from '../styles/elevation';
 import { control, palette } from '../tokens';
@@ -13,12 +14,12 @@ import { Control, ControlProps } from './Control';
 export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;
 
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
-  { children, ...props },
+  { children, checked, ...props },
   ref
 ) {
-  const { checked } = props;
   const spectrum = useSpectrum();
-  return (
+
+  const switchNode = (
     <Control
       role="switch"
       type="checkbox"
@@ -26,6 +27,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
       ref={ref}
       backgroundColor={checked ? 'primary' : 'backgroundAlternate'}
       borderRadius="pill"
+      checked={checked}
       {...props}
     >
       <div className={cx(track, focusRing)} data-filled={checked}>
@@ -41,6 +43,19 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
         />
       </div>
     </Control>
+  );
+
+  return children ? (
+    <Box
+      minHeight={control.switchHeight}
+      width="fit-content"
+      alignItems="center"
+      role="presentation"
+    >
+      {switchNode}
+    </Box>
+  ) : (
+    switchNode
   );
 });
 

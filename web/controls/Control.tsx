@@ -2,6 +2,7 @@ import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
 
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
+import { css } from 'linaria';
 
 import { Box, Spacer } from '../layout';
 import { visuallyHidden } from '../styles/visuallyHidden';
@@ -89,22 +90,25 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   );
 
   return label ? (
-    <TextBody
-      as="label"
-      color={checked && !disabled ? 'foreground' : 'foregroundMuted'}
-      disabled={disabled}
-    >
+    // eslint-disable-next-line jsx-a11y/label-has-associated-control
+    <label className={pointer}>
       <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
         {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
         <Box role="presentation" aria-hidden height="var(--body-line-height)" alignItems="center">
           {iconNode}
         </Box>
         <Spacer horizontal={1} />
-        {label}
+        <TextBody
+          as="span"
+          color={checked ? 'foreground' : 'foregroundMuted'}
+          disabled={disabled || readOnly}
+        >
+          {label}
+        </TextBody>
       </Box>
-    </TextBody>
+    </label>
   ) : (
-    // If no label (children) is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labellby prop.
+    // If no label (children) is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
     iconNode
   );
 }) as <T extends string>(
@@ -113,3 +117,10 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &
   React.MemoExoticComponent<typeof ControlWithRef>;
+
+const pointer = css`
+  &:not(:disabled),
+  &:not(:read-only) {
+    cursor: pointer;
+  }
+`;

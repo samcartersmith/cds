@@ -33,6 +33,7 @@ export type ControlIconProps = {
 export interface ControlProps<T extends string>
   extends Omit<PressableProps, 'disabled' | 'children' | 'style'>,
     ControlBaseProps<T> {
+  /** Toggle control selected state. */
   onChange?: (value?: T) => void;
 }
 
