@@ -53,6 +53,7 @@ export const Pressable = memo(function Pressable({
   borderWidth,
   disableDebounce,
   style = emptyArray,
+  transparentWhileInactive,
   ...props
 }: PressableInternalProps) {
   const [pressIn, pressOut, pressScale] = usePressAnimation();
@@ -98,6 +99,7 @@ export const Pressable = memo(function Pressable({
           disabled={disabled || loading}
           pressed={pressed}
           style={[...style, !noScaleOnPress && { transform: [{ scale: pressScale }] }]}
+          transparentWhileInactive={transparentWhileInactive}
         >
           {children}
         </Interactable>

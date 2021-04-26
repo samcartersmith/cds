@@ -40,16 +40,17 @@ export const LinkButton = memo(
       ref: React.Ref<HTMLButtonElement>
     ) => {
       const spacingClass = useButtonSpacing(compact);
-      const { color, backgroundColor, borderColor } = useLinkButtonVariant(variant);
+      const { color, backgroundColor } = useLinkButtonVariant(variant);
 
       return (
         <Pressable
           aria-label={accessibilityLabel}
           data-test-id={testID}
           {...props}
+          transparentWhileInactive
           as={ReakitButton}
           backgroundColor={backgroundColor}
-          borderColor={borderColor}
+          borderColor="transparent"
           borderRadius={compact ? 'compact' : 'standard'}
           borderWidth="button"
           className={cx(

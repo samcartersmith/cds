@@ -13,6 +13,7 @@ import {
   interactable,
   interactableBackground,
   interactableTransparent,
+  interactableTransparentActive,
   disabledState,
   overlay,
   underlay,
@@ -45,6 +46,7 @@ export const Interactable = forwardRef(function Interactable(
     className: customClassName,
     disabled,
     pressed,
+    transparentWhileInactive,
     wrapWithLayeredElements,
     ...props
   }: InteractableProps,
@@ -52,11 +54,12 @@ export const Interactable = forwardRef(function Interactable(
 ) {
   const paletteConfig = usePaletteConfig();
   const spectrumAlias = backgroundColor === 'transparent' ? '' : paletteConfig[backgroundColor];
+  const isControls = wrapWithLayeredElements || !spectrumAlias;
   const { underlayColor, hoverOpacity, pressedOpacity } = useInteractableTokens(backgroundColor);
   const className = cx(
     interactable,
-    !wrapWithLayeredElements && interactableBackground,
-    !spectrumAlias && interactableTransparent,
+    !isControls && !transparentWhileInactive ? interactableBackground : interactableTransparent,
+    transparentWhileInactive && interactableTransparentActive,
     borderColor && borderColors[borderColor],
     borderRadius && borderRadii[borderRadius],
     borderWidth && borderWidths[borderWidth],

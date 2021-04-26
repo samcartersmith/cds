@@ -1,4 +1,5 @@
 import { LinkButton } from '@cbhq/cds-mobile/buttons/LinkButton';
+import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { GestureResponderEvent } from 'react-native';
 
 import Example from './internal/Example';
@@ -16,13 +17,20 @@ const LinkButtonScreen = () => {
         <LinkButton compact onPress={onPress}>
           Compact link
         </LinkButton>
+      </Example>
 
-        <LinkButton block onPress={onPress}>
-          Full-width link
-        </LinkButton>
-        <LinkButton compact block onPress={onPress}>
-          Compact full-width link
-        </LinkButton>
+      <Example>
+        <Box spacing={2} background="backgroundAlternate">
+          <LinkButton block onPress={onPress}>
+            Full-width link
+          </LinkButton>
+        </Box>
+
+        <Box spacing={2} background="backgroundOverlay">
+          <LinkButton compact block onPress={onPress}>
+            Compact full-width link
+          </LinkButton>
+        </Box>
       </Example>
 
       <Example title="States" inline>

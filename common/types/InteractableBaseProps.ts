@@ -6,7 +6,7 @@ export interface InteractableBaseProps {
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteBackground | 'transparent';
   /** Border color of the element being interacted with. */
-  borderColor?: PaletteBorder;
+  borderColor?: PaletteBorder | 'transparent';
   /** Border radius of the element being interacted with. */
   borderRadius?: BorderRadius;
   /** Width of the border. */
@@ -15,4 +15,6 @@ export interface InteractableBaseProps {
   disabled?: boolean;
   /** Is the element being pressed. */
   pressed?: boolean;
+  /** Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc). */
+  transparentWhileInactive?: boolean;
 }

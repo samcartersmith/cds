@@ -27,7 +27,7 @@ export const LinkButton = memo(function LinkButton({
   variant = 'primary',
   ...props
 }: LinkButtonProps) {
-  const { color, backgroundColor, borderColor } = useLinkButtonVariant(variant);
+  const { color, backgroundColor } = useLinkButtonVariant(variant);
   const spacingStyles = useButtonSpacing(compact);
   const buttonStyles = useMemo(
     () => [
@@ -41,9 +41,10 @@ export const LinkButton = memo(function LinkButton({
 
   return (
     <Pressable
+      transparentWhileInactive
       backgroundColor={backgroundColor}
-      borderColor={borderColor}
-      borderRadius={compact ? 'compact' : 'standard'}
+      borderColor="transparent"
+      borderRadius="standard"
       borderWidth="button"
       feedback={feedback}
       {...props}

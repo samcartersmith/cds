@@ -8,10 +8,6 @@ export const interactable = css`
   text-decoration: none;
   margin: 0;
 
-  /* stylelint-disable plugin/no-low-performance-animation-properties */
-  transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
-    background-image 150ms ease-in-out, transform 100ms;
-
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
     border: 0;
@@ -19,17 +15,18 @@ export const interactable = css`
     margin: 0;
   }
 
-  &:active,
-  label:active & {
-    --interactable-opacity: var(--interactable-opacity-pressed);
-  }
-
   &:hover,
   label:hover & {
     --interactable-opacity: var(--interactable-opacity-hovered);
   }
+
+  &:active,
+  label:active & {
+    --interactable-opacity: var(--interactable-opacity-pressed);
+  }
 `;
 
+// Background used on solid elements, like buttons.
 export const interactableBackground = css`
   background-image: linear-gradient(
     to right,
@@ -44,10 +41,26 @@ export const interactableBackground = css`
   }
 `;
 
+// Hide background on non-solid elements, like controls.
+// Also used as an initial state for link buttons.
 export const interactableTransparent = css`
   background-image: none;
   background-color: transparent;
   border-color: transparent;
+`;
+
+// For link buttons, we need to go from a transparent
+// background to a solid when interacted with.
+export const interactableTransparentActive = css`
+  &:active,
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      rgba(var(--interactable-overlay), var(--interactable-opacity, 1)),
+      rgba(var(--interactable-overlay), var(--interactable-opacity, 1))
+    );
+    background-color: var(--interactable-underlay);
+  }
 `;
 
 export const scaledDownState = css`
