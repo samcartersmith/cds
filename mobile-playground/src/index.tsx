@@ -16,6 +16,7 @@ const components = [
   { key: 'Icon' },
   { key: 'IconButton' },
   { key: 'LinkButton' },
+  { key: 'Link' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
   { key: 'Pressable' },

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { ButtonVariant, PaletteBackground, PaletteForeground, PaletteBorder } from '../types';
+import { PaletteBackground, PaletteForeground, PaletteBorder, ButtonVariant } from '../types';
 
 export type ButtonVariantStyles = {
   backgroundColor: PaletteBackground;

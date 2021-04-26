@@ -14,6 +14,7 @@ import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import LinkButtonScreen from './src/LinkButton';
+import LinkScreen from './src/Link';
 import LottieScreen from './src/Lottie';
 import PressableScreen from './src/Pressable';
 import RadioGroupScreen from './src/RadioGroup';
@@ -68,13 +69,14 @@ const App = () => {
           />
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
-          <Stack.Screen name="LinkButton" component={LinkButtonScreen} />
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
           <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
           <Stack.Screen name="Switch" component={SwitchScreen} />
           <Stack.Screen name="Divider" component={DividerScreen} />
           <Stack.Screen name="Spacer" component={SpacerScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
+          <Stack.Screen name="LinkButton" component={LinkButtonScreen} />
+          <Stack.Screen name="Link" component={LinkScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />
           <Stack.Screen name="Pressable" component={PressableScreen} />

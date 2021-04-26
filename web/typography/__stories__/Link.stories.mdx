@@ -1,0 +1,92 @@
+import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
+
+import { Link } from '../Link';
+
+<Meta title="Core Components/Link" component={Link} argTypes={{}} />
+
+# Link
+
+## Color
+
+<Canvas isColumn withToolbar>
+  <Story name="Default" decorators={[withStoryLabel('Default')]}>
+    <div>
+      <Link to="https://www.google.com/">Default</Link>
+    </div>
+  </Story>
+  <Story name="Negative Color" decorators={[withStoryLabel('Negative Color')]}>
+    <div>
+      <Link to="https://www.google.com/" color="negative">
+        Negative
+      </Link>
+    </div>
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas isColumn withToolbar>
+  <Story
+    name="Open window in existing tab"
+    decorators={[withStoryLabel('Opens window in new tab')]}
+  >
+    <div>
+      <Link to="https://www.google.com/" openInNewWindow={true}>
+        Default
+      </Link>
+    </div>
+  </Story>
+  <Story name="Sets rel to noreferrer" decorators={[withStoryLabel('Sets rel to noreferrer')]}>
+    <div>
+      <Link to="https://www.google.com/" rel="noreferrer">
+        Default
+      </Link>
+    </div>
+  </Story>
+  <Story name="Sets rel to noopener" decorators={[withStoryLabel('Sets rel to noopener')]}>
+    <div>
+      <Link to="https://www.google.com/" rel="noopener">
+        Default
+      </Link>
+    </div>
+  </Story>
+  <Story name="onClick" decorators={[withStoryLabel('onClick test')]}>
+    <div>
+      <Link onPress={console.log} rel="noopener">
+        Link onClick
+      </Link>
+    </div>
+  </Story>
+  <Story name="renderContainer" decorators={[withStoryLabel('renderContainer test')]}>
+    <div>
+      <Router>
+        <Link
+          color="primary"
+          onPress={console.log}
+          renderContainer={props => <RRLink {...props} to={'/invoices'} />}
+        >
+          Test renderContainer
+        </Link>
+      </Router>
+    </div>
+  </Story>
+  <Story name="renderContainer_color" decorators={[withStoryLabel('renderContainer test color')]}>
+    <div>
+      <Router>
+        <Link
+          color="negative"
+          onPress={console.log}
+          renderContainer={props => <RRLink {...props} to={'/invoices'} />}
+        >
+          Test renderContainer
+        </Link>
+      </Router>
+    </div>
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

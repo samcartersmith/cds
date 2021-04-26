@@ -331,6 +331,8 @@ PODS:
     - React-Core
   - RNGestureHandler (1.9.0):
     - React-Core
+  - RNInAppBrowser (3.5.1):
+    - React-Core
   - RNPDF (0.11.0):
     - React
   - RNReanimated (1.13.1):
@@ -403,6 +405,7 @@ DEPENDENCIES:
   - "RNCPushNotificationIOS (from `../../../../../node_modules/@react-native-community/push-notification-ios`)"
   - "RNDateTimePicker (from `../../../../../node_modules/@react-native-community/datetimepicker`)"
   - RNGestureHandler (from `../../../../../node_modules/react-native-gesture-handler`)
+  - RNInAppBrowser (from `../../../../../node_modules/react-native-inappbrowser-reborn`)
   - RNPDF (from `../../../../../node_modules/react-native-view-pdf`)
   - RNReanimated (from `../../../../../node_modules/react-native-reanimated`)
   - RNScreens (from `../../../../../node_modules/react-native-screens`)
@@ -502,6 +505,8 @@ EXTERNAL SOURCES:
     :path: "../../../../../node_modules/@react-native-community/datetimepicker"
   RNGestureHandler:
     :path: "../../../../../node_modules/react-native-gesture-handler"
+  RNInAppBrowser:
+    :path: "../../../../../node_modules/react-native-inappbrowser-reborn"
   RNPDF:
     :path: "../../../../../node_modules/react-native-view-pdf"
   RNReanimated:
@@ -564,6 +569,7 @@ SPEC CHECKSUMS:
   RNCPushNotificationIOS: edeeea93b7210d2f918fc0e46e1a2a189b5fdacc
   RNDateTimePicker: 3d1931e387248cb8f1d1d33740d4a1a82dfe622a
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
+  RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
   RNPDF: b575ff11a65121f346b2851e3da736e7c51c18ab
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNScreens: 2ad555d4d9fa10b91bb765ca07fe9b29d59573f0

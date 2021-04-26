@@ -10,7 +10,7 @@ describe('LinkButton', () => {
     expect(await renderA11y(<LinkButton>Child</LinkButton>)).toHaveNoViolations();
   });
 
-  it('should render with anchor element', async () => {
+  it('should render with button element', async () => {
     const { container } = render(<LinkButton>Child</LinkButton>);
     expect(container.querySelector('button')).toBeTruthy();
   });

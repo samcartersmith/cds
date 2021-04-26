@@ -1,5 +1,6 @@
 DEPENDENCIES = [
     "@npm//lodash",
+    "@npm//url-parse",
 ]
 
 PEER_DEPENDENCIES = [
@@ -10,12 +11,14 @@ PEER_DEPENDENCIES = [
     "@npm//react-native-svg",
     "@npm//react-native",
     "@npm//react",
+    "@npm//react-native-inappbrowser-reborn",
 ]
 
 TYPE_DEPENDENCIES = [
     "@npm//@types/lodash",
     "@npm//@types/react",
     "@npm//@types/react-native",
+    "@npm//@types/url-parse",
 ]
 
 BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + TYPE_DEPENDENCIES

@@ -274,6 +274,7 @@ STORYBOOK_DEPS = append_cds_web_deps([
     "@npm//linaria",
     "@npm//react",
     "@npm//react-dom",
+    "@npm//react-router-dom",
     "@npm//storybook-addon-designs",
     "@npm//typescript",
 ])
