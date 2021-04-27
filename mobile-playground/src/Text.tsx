@@ -13,11 +13,11 @@ import {
 } from '@cbhq/cds-mobile/typography';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const TextScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example>
         <TextDisplay1>Display1</TextDisplay1>
         <TextDisplay2>Display1</TextDisplay2>
@@ -31,7 +31,7 @@ const TextScreen = () => {
         <TextCaption>Caption</TextCaption>
         <TextLegal>Legal</TextLegal>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

@@ -3,7 +3,7 @@ import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { GestureResponderEvent } from 'react-native';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 function onPress(event: GestureResponderEvent) {
   console.log('Pressed', event.type || 'GestureResponderEvent');
@@ -11,7 +11,7 @@ function onPress(event: GestureResponderEvent) {
 
 const LinkButtonScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example inline>
         <LinkButton onPress={onPress}>Link</LinkButton>
         <LinkButton compact onPress={onPress}>
@@ -53,7 +53,7 @@ const LinkButtonScreen = () => {
           Compact negative
         </LinkButton>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

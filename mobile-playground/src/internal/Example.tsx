@@ -2,7 +2,6 @@ import { useMemo, Children } from 'react';
 
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { Box, Divider } from '@cbhq/cds-mobile/layout';
-import { ThemeProvider } from '@cbhq/cds-mobile/system';
 import { TextTitle3 } from '@cbhq/cds-mobile/typography/TextTitle3';
 import { View, ViewStyle } from 'react-native';
 
@@ -10,10 +9,9 @@ interface ExampleProps {
   children: React.ReactNode;
   inline?: boolean;
   title?: string;
-  darkMode?: boolean;
 }
 
-const Example = ({ children, inline, title, darkMode }: ExampleProps) => {
+const Example = ({ children, inline, title }: ExampleProps) => {
   const palette = usePalette();
   const childStyles = useMemo(() => {
     const style: ViewStyle = { paddingTop: 12 };
@@ -42,7 +40,7 @@ const Example = ({ children, inline, title, darkMode }: ExampleProps) => {
     </>
   );
 
-  return darkMode ? <ThemeProvider spectrum="dark">{content}</ThemeProvider> : content;
+  return content;
 };
 
 export default Example;

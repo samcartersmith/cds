@@ -4,11 +4,11 @@ import { PressableOpacity } from '@cbhq/cds-mobile/system/PressableOpacity';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const PressableScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example title="Pressable">
         <Box spacing={1}>
           <Pressable backgroundColor="background">
@@ -47,7 +47,7 @@ const PressableScreen = () => {
           </PressableOpacity>
         </Box>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

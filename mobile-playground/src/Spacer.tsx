@@ -2,11 +2,11 @@ import { Box, Spacer, HStack, VStack } from '@cbhq/cds-mobile/layout';
 import { TextBody } from '@cbhq/cds-mobile/typography';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const SpacerScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example title="Vertical space">
         <Box
           height={100}
@@ -86,7 +86,7 @@ const SpacerScreen = () => {
           </Box>
         </HStack>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

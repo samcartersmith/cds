@@ -5,11 +5,11 @@ import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const LottieScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example>
         <ThemeProvider>
           <Box spacing={1}>
@@ -22,7 +22,7 @@ const LottieScreen = () => {
           </Box>
         </ThemeProvider>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

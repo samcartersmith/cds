@@ -2,7 +2,7 @@ import { Button } from '@cbhq/cds-mobile/buttons/Button';
 import { GestureResponderEvent } from 'react-native';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 function onPress(event: GestureResponderEvent) {
   console.log('Pressed', event.type || 'GestureResponderEvent');
@@ -10,7 +10,7 @@ function onPress(event: GestureResponderEvent) {
 
 const ButtonScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example inline>
         <Button onPress={onPress}>Button</Button>
         <Button compact onPress={onPress}>
@@ -63,7 +63,7 @@ const ButtonScreen = () => {
           Compact negative
         </Button>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

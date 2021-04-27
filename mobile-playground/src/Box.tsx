@@ -2,11 +2,11 @@ import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const BoxScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example title="Backgrounds">
         <Box spacing={1}>
           <TextBody>Default background</TextBody>
@@ -162,7 +162,7 @@ const BoxScreen = () => {
           </Box>
         </Box>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

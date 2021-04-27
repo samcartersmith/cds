@@ -1,11 +1,11 @@
 import { Box, Divider, HStack } from '@cbhq/cds-mobile/layout';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const DividerScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example title="Horizontal & light">
         <Divider color="line" direction="horizontal" />
       </Example>
@@ -17,7 +17,7 @@ const DividerScreen = () => {
           <Box height={100} width={100} background="backgroundAlternate" />
         </HStack>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

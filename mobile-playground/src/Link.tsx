@@ -5,11 +5,11 @@ import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const LinkScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example inline>
         <TextHeadline>Goes to coinbase.com</TextHeadline>
         <Link to="https://www.coinbase.com/">Go to Coinbase</Link>
@@ -67,7 +67,7 @@ const LinkScreen = () => {
         <TextHeadline>mailto Link</TextHeadline>
         <Link to="mailto:someone@coinbase.com">Send email to Someone</Link>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 export default LinkScreen;

@@ -7,11 +7,11 @@ import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { entries } from '@cbhq/cds-utils';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const IconScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example>
         <Box spacing={1}>
           <TextHeadline>FiatIcon</TextHeadline>
@@ -28,7 +28,7 @@ const IconScreen = () => {
           </HStack>
         </Box>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

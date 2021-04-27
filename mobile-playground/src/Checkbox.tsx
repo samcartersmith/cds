@@ -5,11 +5,11 @@ import { useCheckboxGroupState } from '@cbhq/cds-mobile/hooks/useCheckboxGroupSt
 import { TextHeadline } from '@cbhq/cds-mobile/typography';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const CheckboxScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example title="Default" inline>
         {() => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -66,7 +66,7 @@ const CheckboxScreen = () => {
           );
         }}
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

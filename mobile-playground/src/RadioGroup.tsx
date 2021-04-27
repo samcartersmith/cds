@@ -5,11 +5,11 @@ import { Radio, RadioGroup } from '@cbhq/cds-mobile/controls/RadioGroup';
 import { TextHeadline } from '@cbhq/cds-mobile/typography';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const RadioGroupScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example title="Default" inline>
         {() => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -73,7 +73,7 @@ const RadioGroupScreen = () => {
           );
         }}
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

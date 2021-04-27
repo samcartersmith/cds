@@ -7,7 +7,7 @@ import { HStack } from '@cbhq/cds-mobile/layout/HStack';
 import { Spacer } from '@cbhq/cds-mobile/layout/Spacer';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 const statuses = [
   'loading',
@@ -31,12 +31,12 @@ export const LottieStatusAnimationScreen = () => {
   }, []);
 
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example>
         <LottieStatusAnimation key={status} height={250} status={status} />
         <HStack>{buttons}</HStack>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

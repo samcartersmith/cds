@@ -4,7 +4,7 @@ import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { GestureResponderEvent } from 'react-native';
 
 import Example from './internal/Example';
-import Screen from './internal/Screen';
+import ExamplesScreen from './internal/ExamplesScreen';
 
 function onPress(event: GestureResponderEvent) {
   console.log('Pressed', event.type || 'GestureResponderEvent');
@@ -23,7 +23,7 @@ const variants = [
 
 const IconButtonScreen = () => {
   return (
-    <Screen>
+    <ExamplesScreen>
       <Example title="Default" inline>
         <IconButton onPress={onPress} accessibilityLabel={iconName} name={iconName} />
       </Example>
@@ -56,7 +56,7 @@ const IconButtonScreen = () => {
           );
         })}
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 
