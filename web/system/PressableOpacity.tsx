@@ -4,7 +4,7 @@ import { Pressable, PressableInternalProps } from './Pressable';
 
 export type PressableOpacityProps = Omit<
   PressableInternalProps,
-  'backgroundColor' | 'borderColor' | 'transparentWhileInactive'
+  'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'transparentWhileInactive'
 >;
 
 export const PressableOpacity = ({ children, ...props }: PressableOpacityProps) => {

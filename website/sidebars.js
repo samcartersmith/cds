@@ -45,7 +45,6 @@ module.exports = {
       collapsed: true,
       items: [
         'components/lottie',
-        'components/theme-provider',
         {
           type: 'category',
           label: 'Buttons',
@@ -75,6 +74,17 @@ module.exports = {
           label: 'Icons',
           collapsed: false,
           items: ['components/icon', 'components/logo'],
+        },
+        {
+          type: 'category',
+          label: 'System',
+          collapsed: false,
+          items: [
+            'components/interactable',
+            'components/pressable',
+            'components/pressable-opacity',
+            'components/theme-provider',
+          ],
         },
       ],
     },

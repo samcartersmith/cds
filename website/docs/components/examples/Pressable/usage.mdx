@@ -1,0 +1,16 @@
+Pressables support an `onPress` prop for handling click/press interactions. When being pressed, the element will scale down to mimic a real-world button press. If this functionality is not desired, pass the `noScaleOnPress` prop.
+
+```jsx live
+<Pressable
+  onPress={console.log}
+  as="button"
+  backgroundColor="backgroundAlternate"
+  borderColor="lineHeavy"
+  borderWidth="button"
+  borderRadius="compact"
+>
+  <Box as="span" spacing={1}>
+    Click me...
+  </Box>
+</Pressable>
+```

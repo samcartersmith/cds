@@ -92,7 +92,7 @@ Haptic feedback to trigger when being pressed.
 
 <ComponentDetails componentName="IconButton" templateName="feedbackProp" />
 
-### loading <Badge variant="mobile" />
+### loading
 
 Is the element currenty loading.
 
@@ -102,7 +102,7 @@ Is the element currenty loading.
   required={false}
   defaultValue=""
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="IconButton" templateName="loadingProp" />
@@ -390,7 +390,7 @@ Name of the icon, as defined in Figma.
 
 ### onPress
 
-Callback fired after the element is pressed.
+Callback fired when the element is pressed.
 
 <ApiDetails
   componentName="IconButton"
@@ -398,7 +398,7 @@ Callback fired after the element is pressed.
   required={false}
   defaultValue=""
   mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
-  webOptions={['NoopFn', 'OnPress<HTMLButtonElement>']}
+  webOptions={['MouseEventHandler<Element>']}
 />
 
 <ComponentDetails componentName="IconButton" templateName="onPressProp" />

@@ -174,7 +174,7 @@ Uniquely identify the button within a form.
 
 ### onPress
 
-Callback fired after the element is pressed.
+Callback fired when the element is pressed.
 
 <ApiDetails
   componentName="LinkButton"
@@ -182,7 +182,7 @@ Callback fired after the element is pressed.
   required={false}
   defaultValue=""
   mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
-  webOptions={['NoopFn', 'OnPress<HTMLButtonElement>']}
+  webOptions={['MouseEventHandler<Element>']}
 />
 
 <ComponentDetails componentName="LinkButton" templateName="onPressProp" />

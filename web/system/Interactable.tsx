@@ -17,6 +17,7 @@ import {
   disabledState,
   overlay,
   underlay,
+  transparentChildren,
 } from '../styles/interactable';
 import { palette } from '../tokens';
 
@@ -28,10 +29,19 @@ export type InteractableInheritedProps = Omit<
 export interface InteractableProps extends InteractableBaseProps, InteractableInheritedProps {
   children: NonNullable<React.ReactNode>;
   /** Element or component to render the container as. */
-  as: React.ElementType;
+  as:
+    | 'a'
+    | 'button'
+    | 'input'
+    | 'label'
+    | 'select'
+    | 'span'
+    | 'textarea'
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    | React.ComponentType<any>;
   /** Apply class names to the outer container. */
   className?: string;
-  /** Wrap the content with overlay and underlay elements. */
+  /** Inject and wrap the content with overlay and underlay elements. */
   wrapWithLayeredElements?: boolean;
 }
 
@@ -60,6 +70,7 @@ export const Interactable = forwardRef(function Interactable(
     interactable,
     !isControls && !transparentWhileInactive ? interactableBackground : interactableTransparent,
     transparentWhileInactive && interactableTransparentActive,
+    !wrapWithLayeredElements && transparentChildren,
     borderColor && borderColors[borderColor],
     borderRadius && borderRadii[borderRadius],
     borderWidth && borderWidths[borderWidth],

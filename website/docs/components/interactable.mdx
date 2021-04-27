@@ -1,0 +1,237 @@
+---
+id: interactable
+title: Interactable
+---
+
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+
+<ComponentDetails componentName="Interactable" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Interactable" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Interactable" templateName="a11y" />
+
+## Props
+
+### as <Badge variant="web" />
+
+Element or component to render the container as.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="as"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ComponentClass<any, any>',
+    'FunctionComponent<any>',
+    'a',
+    'button',
+    'input',
+    'label',
+    'select',
+    'span',
+    'textarea',
+  ]}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="asProp" />
+
+### backgroundColor
+
+Background color of the overlay (element being interacted with).
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="backgroundColor"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="backgroundColorProp" />
+
+### borderColor
+
+Border color of the element being interacted with.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="borderColorProp" />
+
+### borderRadius
+
+Border radius of the element being interacted with.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+  webOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="borderRadiusProp" />
+
+### borderWidth
+
+Width of the border.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="borderWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['button', 'checkbox', 'focusRing', 'radio']}
+  webOptions={['button', 'checkbox', 'focusRing', 'radio']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="borderWidthProp" />
+
+### className <Badge variant="web" />
+
+Apply class names to the outer container.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="className"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="classNameProp" />
+
+### disabled
+
+Is the element currently disabled.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="disabledProp" />
+
+### pressed
+
+Is the element being pressed. Primarily a mobile feature, but can be used on the web.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="pressed"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="pressedProp" />
+
+### style <Badge variant="mobile" />
+
+Apply animated styles to the outer container.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="style"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    '(false | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | null | undefined)[]',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="styleProp" />
+
+### transparentWhileInactive
+
+Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc).
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="transparentWhileInactive"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="transparentWhileInactiveProp" />
+
+### wrapWithLayeredElements <Badge variant="web" />
+
+Inject and wrap the content with overlay and underlay elements.
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="wrapWithLayeredElements"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="wrapWithLayeredElementsProp" />
+
+<ComponentDetails componentName="Interactable" templateName="outro" />

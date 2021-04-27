@@ -113,6 +113,27 @@ export const docs = prepareDocgens([
       childPath: 'system/ThemeProvider.tsx',
     }),
   },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/interactable.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'Interactable',
+      childPath: 'system/Interactable.tsx',
+    }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/pressable.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'Pressable',
+      childPath: 'system/Pressable.tsx',
+    }),
+  },
+  {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/pressable-opacity.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'PressableOpacity',
+      childPath: 'system/PressableOpacity.tsx',
+    }),
+  },
 ]);
 
 export const docsSimple = prepareDocgens([

@@ -1,0 +1,9 @@
+Since background and border styles are no longer necessary, you can simply omit all those props.
+
+```jsx live
+<PressableOpacity onPress={console.log} as="button">
+  <Box as="span" spacing={1} background="positive" rounded>
+    Click me...
+  </Box>
+</PressableOpacity>
+```

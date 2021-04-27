@@ -34,11 +34,6 @@ export const interactableBackground = css`
     rgba(var(--interactable-overlay), var(--interactable-opacity, 1))
   );
   background-color: var(--interactable-underlay);
-
-  /* Apply opacity to children as well */
-  & > * {
-    opacity: var(--interactable-opacity, 1);
-  }
 `;
 
 // Hide background on non-solid elements, like controls.
@@ -98,4 +93,11 @@ export const underlay = css`
   overflow: hidden;
   background-color: var(--interactable-underlay);
   display: block;
+`;
+
+export const transparentChildren = css`
+  /* Apply opacity to children as well */
+  & > * {
+    opacity: var(--interactable-opacity, 1);
+  }
 `;

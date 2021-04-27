@@ -27,15 +27,17 @@ export interface PressableProps
   feedback?: HapticFeedbackType;
   /** Is the element currenty loading. */
   loading?: boolean;
-  /** React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior
-   * such as double navigations where we push a screen onto the stack 2 times.
-   * Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental "double-tap".
+  /**
+   * React Native is historically trash at debouncing touch events. This can cause a lot of
+   * unwanted behavior such as double navigations where we push a screen onto the stack 2 times.
+   * Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and
+   * the accidental "double-tap".
    */
   disableDebounce?: boolean;
 }
 
 export interface PressableInternalProps extends PressableProps, Omit<InteractableProps, 'pressed'> {
-  /** Dont scale on press. */
+  /** Dont scale element on press. */
   noScaleOnPress?: boolean;
 }
 

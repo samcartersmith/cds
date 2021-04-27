@@ -13,7 +13,7 @@ export interface InteractableBaseProps {
   borderWidth?: BorderWidth;
   /** Is the element currently disabled. */
   disabled?: boolean;
-  /** Is the element being pressed. */
+  /** Is the element being pressed. Primarily a mobile feature, but can be used on the web. */
   pressed?: boolean;
   /** Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc). */
   transparentWhileInactive?: boolean;

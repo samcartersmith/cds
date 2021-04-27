@@ -8,14 +8,14 @@ import { Interactable, InteractableProps } from './Interactable';
 export interface PressableProps extends React.AriaAttributes {
   /** Is the element currenty loading. */
   loading?: boolean;
-  /** Handler fired when the element is pressed. */
+  /** Callback fired when the element is pressed. */
   onPress?: React.MouseEventHandler;
 }
 
 export interface PressableInternalProps
   extends PressableProps,
     Omit<InteractableProps, 'onClick' | 'onClickCapture' | 'pressed'> {
-  /** Dont scale on press. */
+  /** Dont scale element on press. */
   noScaleOnPress?: boolean;
 }
 

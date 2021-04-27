@@ -1,0 +1,297 @@
+---
+id: pressable
+title: Pressable
+---
+
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+
+<ComponentDetails componentName="Pressable" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Pressable" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Pressable" templateName="a11y" />
+
+## Props
+
+### as <Badge variant="web" />
+
+Element or component to render the container as.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="as"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ComponentClass<any, any>',
+    'FunctionComponent<any>',
+    'a',
+    'button',
+    'input',
+    'label',
+    'select',
+    'span',
+    'textarea',
+  ]}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="asProp" />
+
+### backgroundColor
+
+Background color of the overlay (element being interacted with).
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="backgroundColor"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="backgroundColorProp" />
+
+### borderColor
+
+Border color of the element being interacted with.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+  webOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'transparent',
+  ]}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="borderColorProp" />
+
+### borderRadius
+
+Border radius of the element being interacted with.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+  webOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="borderRadiusProp" />
+
+### borderWidth
+
+Width of the border.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="borderWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['button', 'checkbox', 'focusRing', 'radio']}
+  webOptions={['button', 'checkbox', 'focusRing', 'radio']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="borderWidthProp" />
+
+### className <Badge variant="web" />
+
+Apply class names to the outer container.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="className"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="classNameProp" />
+
+### disabled
+
+Is the element currently disabled.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="disabledProp" />
+
+### disableDebounce <Badge variant="mobile" />
+
+React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior such as double navigations where we push a screen onto the stack 2 times. Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental double-tap.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="disableDebounce"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="disableDebounceProp" />
+
+### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="feedback"
+  required={false}
+  defaultValue="none"
+  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="feedbackProp" />
+
+### loading
+
+Is the element currenty loading.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="loading"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="loadingProp" />
+
+### noScaleOnPress
+
+Dont scale element on press.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="noScaleOnPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="noScaleOnPressProp" />
+
+### onPress
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="onPressProp" />
+
+### style <Badge variant="mobile" />
+
+Apply animated styles to the outer container.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="style"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    '(false | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | null | undefined)[]',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="styleProp" />
+
+### transparentWhileInactive
+
+Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc).
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="transparentWhileInactive"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="transparentWhileInactiveProp" />
+
+### wrapWithLayeredElements <Badge variant="web" />
+
+Inject and wrap the content with overlay and underlay elements.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="wrapWithLayeredElements"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="wrapWithLayeredElementsProp" />
+
+<ComponentDetails componentName="Pressable" templateName="outro" />
