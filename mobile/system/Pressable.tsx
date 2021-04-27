@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 
 import { emptyArray } from '@cbhq/cds-utils';
 import {
@@ -59,6 +59,7 @@ export const Pressable = memo(function Pressable({
   ...props
 }: PressableInternalProps) {
   const [pressIn, pressOut, pressScale] = usePressAnimation();
+  const [pressed, setPressed] = useState(false);
 
   const handlePress = useCallback(
     (event: GestureResponderEvent) => {
@@ -81,31 +82,45 @@ export const Pressable = memo(function Pressable({
     [feedback, onPress, disableDebounce]
   );
 
+  const handlePressIn = useCallback(
+    (event: GestureResponderEvent) => {
+      setPressed(true);
+      pressIn(event);
+    },
+    [pressIn]
+  );
+
+  const handlePressOut = useCallback(
+    (event: GestureResponderEvent) => {
+      setPressed(false);
+      pressOut(event);
+    },
+    [pressOut]
+  );
+
   return (
-    <BasePressable
-      accessibilityComponentType="button"
-      accessibilityTraits="button"
-      accessibilityState={{ busy: loading, disabled: !!disabled }}
+    <Interactable
+      backgroundColor={backgroundColor}
+      borderColor={borderColor}
+      borderRadius={borderRadius}
+      borderWidth={borderWidth}
       disabled={disabled || loading}
-      onPress={handlePress}
-      onPressIn={pressIn}
-      onPressOut={pressOut}
-      {...props}
+      pressed={pressed}
+      style={[...style, !noScaleOnPress && { transform: [{ scale: pressScale }] }]}
+      transparentWhileInactive={transparentWhileInactive}
     >
-      {({ pressed }) => (
-        <Interactable
-          backgroundColor={backgroundColor}
-          borderColor={borderColor}
-          borderRadius={borderRadius}
-          borderWidth={borderWidth}
-          disabled={disabled || loading}
-          pressed={pressed}
-          style={[...style, !noScaleOnPress && { transform: [{ scale: pressScale }] }]}
-          transparentWhileInactive={transparentWhileInactive}
-        >
-          {children}
-        </Interactable>
-      )}
-    </BasePressable>
+      <BasePressable
+        accessibilityComponentType="button"
+        accessibilityTraits="button"
+        accessibilityState={{ busy: loading, disabled: !!disabled }}
+        disabled={disabled || loading}
+        onPress={handlePress}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        {...props}
+      >
+        {children}
+      </BasePressable>
+    </Interactable>
   );
 });

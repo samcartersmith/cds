@@ -23,14 +23,10 @@ export const Button = memo(function Button({
   const palette = usePalette();
   const { color, backgroundColor, borderColor } = useButtonVariant(variant);
   const spacingStyles = useButtonSpacing(compact);
+  const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
   const buttonStyles = useMemo(
-    () => [
-      styles.button,
-      compact && styles.buttonCompact,
-      block ? styles.block : styles.inline,
-      spacingStyles,
-    ],
-    [block, compact, spacingStyles]
+    () => [styles.button, compact && styles.buttonCompact, spacingStyles],
+    [compact, spacingStyles]
   );
 
   return (
@@ -41,6 +37,7 @@ export const Button = memo(function Button({
       borderWidth="button"
       feedback={feedback || (compact ? 'light' : 'normal')}
       loading={loading}
+      style={pressableStyles}
       {...props}
     >
       <View style={buttonStyles}>
@@ -56,6 +53,7 @@ export const Button = memo(function Button({
 
 export const styles = StyleSheet.create({
   button: {
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',

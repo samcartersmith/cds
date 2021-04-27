@@ -29,14 +29,10 @@ export const LinkButton = memo(function LinkButton({
 }: LinkButtonProps) {
   const { color, backgroundColor } = useLinkButtonVariant(variant);
   const spacingStyles = useButtonSpacing(compact);
+  const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
   const buttonStyles = useMemo(
-    () => [
-      styles.button,
-      compact && styles.buttonCompact,
-      block ? styles.block : styles.inline,
-      spacingStyles,
-    ],
-    [block, compact, spacingStyles]
+    () => [styles.button, compact && styles.buttonCompact, spacingStyles],
+    [compact, spacingStyles]
   );
 
   return (
@@ -47,6 +43,7 @@ export const LinkButton = memo(function LinkButton({
       borderRadius="standard"
       borderWidth="button"
       feedback={feedback}
+      style={pressableStyles}
       {...props}
     >
       <View style={buttonStyles}>
