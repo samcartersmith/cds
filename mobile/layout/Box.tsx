@@ -165,7 +165,7 @@ export const Box = memo(
 
       if (bordered) {
         style.borderWidth = 1;
-        style.borderColor = palette.lineHeavy;
+        style.borderColor = palette.line;
       }
 
       if (borderRadius) {

@@ -77,7 +77,7 @@ describe('Box', () => {
     await waitFor(() => getByText('Child'));
 
     expect(getByText('Child').parent).toHaveStyle({
-      borderColor: 'rgba(91,97,110,0.66)',
+      borderColor: 'rgba(91,97,110,0.2)',
       borderRadius: 8,
       borderWidth: 1,
     });
