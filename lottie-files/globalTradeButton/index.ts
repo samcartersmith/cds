@@ -7,7 +7,7 @@ import { LottieSource } from '../LottieSource';
 import globalTradeButtonJson from './globalTradeButton.json';
 
 export type GlobalTradeButtonLottie = LottieSource<
-  'onPressInStart' | 'OnPressInEnd' | 'onPressOutStart' | 'OnPressOutEnd'
+  'onPressInStart' | 'onPressInEnd' | 'onPressOutStart' | 'onPressOutEnd'
 >;
 
 export const globalTradeButton = globalTradeButtonJson as GlobalTradeButtonLottie;
