@@ -19,6 +19,10 @@ export const defaultPalette = {
   secondaryForeground: 'gray100',
 } as const;
 
+const switchPalette = {
+  backgroundAlternate: 'gray20',
+} as const;
+
 export const paletteForegrounds = [
   'foreground',
   'foregroundMuted',
@@ -86,6 +90,7 @@ export const Palette = {
   cssColor,
   cssVariables,
   defaultPalette,
+  switchPalette,
   paletteForegrounds,
   paletteBackgrounds,
   paletteBorders,

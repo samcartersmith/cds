@@ -118,6 +118,7 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         dest: 'common/palette/constants.ts',
         data: {
           defaultPalette: Palette.defaultPalette,
+          switchPalette: Palette.switchPalette,
           paletteForegrounds: Palette.paletteForegrounds,
           paletteBackgrounds: Palette.paletteBackgrounds,
           paletteBorders: Palette.paletteBorders,
