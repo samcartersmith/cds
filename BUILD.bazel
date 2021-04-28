@@ -268,7 +268,6 @@ STORYBOOK_DEPS = append_cds_web_deps([
     "@npm//@types/webpack-env",
     "@npm//babel-loader",
     "@npm//babel-plugin-module-resolver",
-    "@npm//destyle.css",
     "@npm//dotenv-webpack",
     "@npm//html-webpack-plugin",
     "@npm//linaria",

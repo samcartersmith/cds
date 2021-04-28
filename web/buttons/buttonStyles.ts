@@ -12,6 +12,10 @@ export const button = css`
   position: relative;
   min-width: 100px;
   white-space: nowrap;
+  appearance: none;
+  outline: 0;
+  overflow: visible;
+  text-transform: none;
 `;
 
 export const buttonCompact = css`

@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 
+import { buttonResets } from '../styles/resetStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { TextLabel1 } from '../typography/TextLabel1';
 
@@ -24,6 +25,7 @@ export const TabItem = memo(function TabItem({ label, active, value: _, ...props
       borderWidth="button"
       role="tab"
       type="button"
+      className={buttonResets}
       {...props}
     >
       <TextLabel1 spacing={1} as="p" color={active ? 'primary' : 'foreground'}>

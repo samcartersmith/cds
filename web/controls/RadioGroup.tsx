@@ -94,6 +94,7 @@ const FOCUS_PADDING = 4 + borderWidth.checkbox;
 
 const radio = css`
   width: ${control.radioSize};
+  appearance: radio;
   height: ${control.radioSize};
   flex-shrink: 0;
 

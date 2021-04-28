@@ -10,6 +10,7 @@ import React, {
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import { checkboxReset } from '../styles/resetStyles';
 import { FilteredHTMLAttributes } from '../types';
 import { Checkbox, CheckboxProps } from './Checkbox';
 
@@ -59,7 +60,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   // TODO (hannah): Update default styles once Caroline has the design ready. (Add default distance between
   // checkboxes.)
   return (
-    <fieldset ref={ref} {...restProps}>
+    <fieldset ref={ref} className={checkboxReset} {...restProps}>
       {label}
       {optionCheckboxes}
     </fieldset>

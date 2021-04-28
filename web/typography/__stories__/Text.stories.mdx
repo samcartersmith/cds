@@ -18,7 +18,7 @@ import * as Type from '../index';
   <Story
     name="Normal"
     decorators={[withStoryLabel('Normal (Large)')]}
-    args={{ as: 'p', display: 'block' }}
+    args={{ as: 'b', display: 'block' }}
   >
     {args => (
       <>
@@ -182,6 +182,38 @@ export const MediumContainer = props => (
   </Story>
   <Story name="Capitalize" args={{ as: 'p', transform: 'capitalize' }}>
     {args => <Type.TextBody {...args}>{args.children || 'capitalize'}</Type.TextBody>}
+  </Story>
+</Canvas>
+
+## Sup
+
+<Canvas>
+  <Story name="Sup" args={{ as: 'sup' }}>
+    <Type.TextBody as="sup">sup</Type.TextBody>
+  </Story>
+</Canvas>
+
+## Sub
+
+<Canvas>
+  <Story name="Sub" args={{ as: 'sub' }}>
+    <Type.TextBody as="sub">sub</Type.TextBody>
+  </Story>
+</Canvas>
+
+## Strong
+
+<Canvas>
+  <Story name="Strong" args={{ as: 'strong' }}>
+    <Type.TextBody as="strong">strong</Type.TextBody>
+  </Story>
+</Canvas>
+
+## Bold
+
+<Canvas>
+  <Story name="Bold" args={{ as: 'b' }}>
+    <Type.TextBody as="b">b</Type.TextBody>
   </Story>
 </Canvas>
 
