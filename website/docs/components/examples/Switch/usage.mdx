@@ -15,7 +15,7 @@ function SwitchDemo() {
 
   return (
     <ThemeProvider spectrum={isChecked ? 'dark' : 'light'}>
-      <Switch value="hyped" onChange={handleChange} checked={isChecked}>
+      <Switch onChange={handleChange} checked={isChecked}>
         Dark Mode
       </Switch>
     </ThemeProvider>

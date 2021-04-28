@@ -22,6 +22,10 @@ export const defaultPalette = {
   secondaryForeground: 'gray100',
 } as const;
 
+export const switchPalette = {
+  backgroundAlternate: 'gray20',
+} as const;
+
 export const paletteForegrounds = [
   'foreground',
   'foregroundMuted',

@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 
-import { useScale, useSpectrum } from '@cbhq/cds-common';
+import { useScale, useSpectrum, switchPalette } from '@cbhq/cds-common';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { Animated, PressableProps, StyleSheet, View } from 'react-native';
@@ -10,6 +10,7 @@ import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
+import { ThemeProvider } from '../system/ThemeProvider';
 import { Control, ControlIconProps } from './Control';
 
 export interface SwitchProps
@@ -105,12 +106,16 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
     </Control>
   );
 
-  return children ? (
-    <Box flexDirection="row" minHeight={switchHeight} alignItems="center">
-      {switchNode}
-    </Box>
-  ) : (
-    switchNode
+  return (
+    <ThemeProvider palette={switchPalette}>
+      {children ? (
+        <Box flexDirection="row" minHeight={switchHeight} alignItems="center">
+          {switchNode}
+        </Box>
+      ) : (
+        switchNode
+      )}
+    </ThemeProvider>
   );
 });
 

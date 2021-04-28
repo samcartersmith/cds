@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 
-import { useSpectrum } from '@cbhq/cds-common';
+import { switchPalette, useSpectrum } from '@cbhq/cds-common';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { css, cx } from 'linaria';
@@ -8,6 +8,7 @@ import { css, cx } from 'linaria';
 import { Box } from '../layout/Box';
 import { round } from '../styles/borderRadius';
 import { level1 } from '../styles/elevation';
+import { ThemeProvider } from '../system/ThemeProvider';
 import { control, palette } from '../tokens';
 import { Control, ControlProps } from './Control';
 
@@ -45,17 +46,21 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
     </Control>
   );
 
-  return children ? (
-    <Box
-      minHeight={control.switchHeight}
-      width="fit-content"
-      alignItems="center"
-      role="presentation"
-    >
-      {switchNode}
-    </Box>
-  ) : (
-    switchNode
+  return (
+    <ThemeProvider palette={switchPalette}>
+      {children ? (
+        <Box
+          minHeight={control.switchHeight}
+          width="fit-content"
+          alignItems="center"
+          role="presentation"
+        >
+          {switchNode}
+        </Box>
+      ) : (
+        switchNode
+      )}
+    </ThemeProvider>
   );
 });
 
