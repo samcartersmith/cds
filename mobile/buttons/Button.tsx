@@ -6,6 +6,8 @@ import { StyleSheet, ActivityIndicator, View } from 'react-native';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 
@@ -15,8 +17,10 @@ export const Button = memo(function Button({
   block,
   children,
   compact,
+  endIcon,
   feedback,
   loading,
+  startIcon,
   variant = 'primary',
   ...props
 }: ButtonProps) {
@@ -28,6 +32,8 @@ export const Button = memo(function Button({
     () => [styles.button, compact && styles.buttonCompact, spacingStyles],
     [compact, spacingStyles]
   );
+  const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
+  const endIconStyles = useSpacingStyles({ spacingStart: 1 });
 
   return (
     <Pressable
@@ -44,7 +50,23 @@ export const Button = memo(function Button({
         {loading ? (
           <ActivityIndicator size="small" color={palette[color]} />
         ) : (
-          <TextHeadline color={color}>{children}</TextHeadline>
+          <>
+            {startIcon && (
+              <View style={startIconStyles}>
+                <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
+              </View>
+            )}
+
+            <TextHeadline color={color} selectable="none" noWrap>
+              {children}
+            </TextHeadline>
+
+            {endIcon && (
+              <View style={endIconStyles}>
+                <Icon name={endIcon} size={compact ? 'xs' : 's'} color={color} />
+              </View>
+            )}
+          </>
         )}
       </View>
     </Pressable>
@@ -53,7 +75,8 @@ export const Button = memo(function Button({
 
 export const styles = StyleSheet.create({
   button: {
-    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',

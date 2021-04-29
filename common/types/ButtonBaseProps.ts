@@ -1,3 +1,4 @@
+import { IconName } from './IconName';
 import { ElementChildren } from './React';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative';
@@ -13,10 +14,14 @@ export interface ButtonBaseProps {
   compact?: boolean;
   /** Mark the button as disabled. */
   disabled?: boolean;
+  /** Icon to render at the end of the button. */
+  endIcon?: IconName;
   /** Mark the button as loading and display a spinner. */
   loading?: boolean;
   /** Uniquely identify the button within a form. */
   name?: string;
+  /** Icon to render at the start of the button. */
+  startIcon?: IconName;
   /**
    * Testing purposes.
    * @internal

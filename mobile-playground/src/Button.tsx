@@ -63,6 +63,34 @@ const ButtonScreen = () => {
           Compact negative
         </Button>
       </Example>
+
+      <Example title="Icons" inline>
+        <Button startIcon="arrowLeft">With start icon</Button>
+        <Button compact startIcon="arrowLeft">
+          With start icon
+        </Button>
+
+        <Button endIcon="arrowRight" variant="secondary">
+          With end icon
+        </Button>
+        <Button compact endIcon="arrowRight" variant="secondary">
+          With end icon
+        </Button>
+
+        <Button startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+          With both icons
+        </Button>
+        <Button compact startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+          With both icons
+        </Button>
+
+        <Button disabled endIcon="sparkle" variant="negative">
+          When disabled
+        </Button>
+        <Button compact disabled startIcon="identityCard" variant="negative">
+          When disabled
+        </Button>
+      </Example>
     </ExamplesScreen>
   );
 };

@@ -53,6 +53,27 @@ const LinkButtonScreen = () => {
           Compact negative
         </LinkButton>
       </Example>
+
+      <Example title="Icons" inline>
+        <LinkButton startIcon="arrowLeft">With start icon</LinkButton>
+        <LinkButton compact startIcon="arrowLeft">
+          With start icon
+        </LinkButton>
+
+        <LinkButton endIcon="arrowRight" variant="secondary">
+          With end icon
+        </LinkButton>
+        <LinkButton compact endIcon="arrowRight" variant="secondary">
+          With end icon
+        </LinkButton>
+
+        <LinkButton startIcon="wireTransfer" endIcon="questionMark" variant="negative">
+          With both icons
+        </LinkButton>
+        <LinkButton compact startIcon="wireTransfer" endIcon="questionMark" variant="negative">
+          With both icons
+        </LinkButton>
+      </Example>
     </ExamplesScreen>
   );
 };

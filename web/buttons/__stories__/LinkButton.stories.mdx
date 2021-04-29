@@ -95,6 +95,39 @@ import { LinkButton } from '../LinkButton';
   </Story>
 </Canvas>
 
+# Icons
+
+<Canvas withToolbar>
+  <Story name="Start icon" decorators={[withStoryLabel('Start icon')]}>
+    <div>
+      <LinkButton startIcon="arrowLeft">With start icon</LinkButton>{' '}
+      <LinkButton compact startIcon="arrowLeft">
+        With start icon
+      </LinkButton>
+    </div>
+  </Story>
+  <Story name="End icon" decorators={[withStoryLabel('End icon')]}>
+    <div>
+      <LinkButton endIcon="arrowRight" variant="secondary">
+        With end icon
+      </LinkButton>{' '}
+      <LinkButton compact endIcon="arrowRight" variant="secondary">
+        With end icon
+      </LinkButton>
+    </div>
+  </Story>
+  <Story name="Both icons" decorators={[withStoryLabel('End icons')]}>
+    <div>
+      <LinkButton startIcon="wireTransfer" endIcon="questionMark" variant="negative">
+        With both icons
+      </LinkButton>{' '}
+      <LinkButton compact startIcon="wireTransfer" endIcon="questionMark" variant="negative">
+        With both icons
+      </LinkButton>
+    </div>
+  </Story>
+</Canvas>
+
 ## API
 
 <ArgsTable />

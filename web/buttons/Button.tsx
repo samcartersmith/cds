@@ -6,6 +6,7 @@ import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit/Button';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
+import { Icon } from '../icons/Icon';
 import { MaterialSpinner } from '../loaders/MaterialSpinner';
 import * as foregroundColors from '../styles/foregroundColor';
 import { Pressable, PressableProps } from '../system/Pressable';
@@ -35,8 +36,10 @@ export const Button = forwardRef(function Button(
     children,
     compact,
     disabled,
+    endIcon,
     loading,
     onPress,
+    startIcon,
     testID,
     type = 'button',
     variant = 'primary',
@@ -73,9 +76,23 @@ export const Button = forwardRef(function Button(
       {loading ? (
         <MaterialSpinner size={24} color={color} />
       ) : (
-        <TextHeadline as="span" color={color}>
-          {children}
-        </TextHeadline>
+        <>
+          {startIcon && (
+            <span className={buttonStyles.startIcon}>
+              <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
+            </span>
+          )}
+
+          <TextHeadline as="span" color={color} noWrap>
+            {children}
+          </TextHeadline>
+
+          {endIcon && (
+            <span className={buttonStyles.endIcon}>
+              <Icon name={endIcon} size={compact ? 'xs' : 's'} color={color} />
+            </span>
+          )}
+        </>
       )}
     </Pressable>
   );

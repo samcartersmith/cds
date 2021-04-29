@@ -1,6 +1,8 @@
 import { tapTarget } from '@cbhq/cds-common/tokens/sizing';
 import { css } from 'linaria';
 
+import { spacing } from '../tokens';
+
 export const button = css`
   display: inline-flex;
   text-align: center;
@@ -33,4 +35,14 @@ export const iconButton = css`
   width: ${tapTarget}px;
   height: ${tapTarget}px;
   min-width: unset;
+`;
+
+export const startIcon = css`
+  display: inline-block;
+  margin-right: ${spacing[1]};
+`;
+
+export const endIcon = css`
+  display: inline-block;
+  margin-left: ${spacing[1]};
 `;

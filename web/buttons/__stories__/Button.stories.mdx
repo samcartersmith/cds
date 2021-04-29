@@ -40,7 +40,7 @@ import { Button } from '../Button';
       <Button loading>Button</Button>
     </div>
   </Story>
-  <Story name="Loading Compact" decorators={[withStoryLabel('Loading Compact')]}>
+  <Story name="Loading compact" decorators={[withStoryLabel('Loading compact')]}>
     <div>
       <Button loading compact>
         Button
@@ -86,6 +86,49 @@ import { Button } from '../Button';
       <Button variant="negative">Button</Button>{' '}
       <Button variant="negative" compact>
         Button
+      </Button>
+    </div>
+  </Story>
+</Canvas>
+
+# Icons
+
+<Canvas withToolbar>
+  <Story name="Start icon" decorators={[withStoryLabel('Start icon')]}>
+    <div>
+      <Button startIcon="arrowLeft">With start icon</Button>{' '}
+      <Button compact startIcon="arrowLeft">
+        With start icon
+      </Button>
+    </div>
+  </Story>
+  <Story name="End icon" decorators={[withStoryLabel('End icon')]}>
+    <div>
+      <Button endIcon="arrowRight" variant="secondary">
+        With end icon
+      </Button>{' '}
+      <Button compact endIcon="arrowRight" variant="secondary">
+        With end icon
+      </Button>
+    </div>
+  </Story>
+  <Story name="Both icons" decorators={[withStoryLabel('End icons')]}>
+    <div>
+      <Button startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+        With both icons
+      </Button>{' '}
+      <Button compact startIcon="wireTransfer" endIcon="questionMark" variant="positive">
+        With both icons
+      </Button>
+    </div>
+  </Story>
+  <Story name="Disabled icons" decorators={[withStoryLabel('Disabled icons')]}>
+    <div>
+      <Button disabled endIcon="sparkle" variant="negative">
+        When disabled
+      </Button>{' '}
+      <Button compact disabled startIcon="identityCard" variant="negative">
+        When disabled
       </Button>
     </div>
   </Story>

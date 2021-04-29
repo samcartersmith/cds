@@ -7,6 +7,8 @@ import {
 import { View } from 'react-native';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { Icon } from '../icons/Icon';
 import { Pressable } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 import { ButtonProps, styles } from './Button';
@@ -23,7 +25,9 @@ export const LinkButton = memo(function LinkButton({
   block,
   children,
   compact,
+  endIcon,
   feedback = 'light',
+  startIcon,
   variant = 'primary',
   ...props
 }: LinkButtonProps) {
@@ -34,6 +38,8 @@ export const LinkButton = memo(function LinkButton({
     () => [styles.button, compact && styles.buttonCompact, spacingStyles],
     [compact, spacingStyles]
   );
+  const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
+  const endIconStyles = useSpacingStyles({ spacingStart: 1 });
 
   return (
     <Pressable
@@ -47,7 +53,21 @@ export const LinkButton = memo(function LinkButton({
       {...props}
     >
       <View style={buttonStyles}>
-        <TextHeadline color={color}>{children}</TextHeadline>
+        {startIcon && (
+          <View style={startIconStyles}>
+            <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
+          </View>
+        )}
+
+        <TextHeadline color={color} selectable="none" noWrap>
+          {children}
+        </TextHeadline>
+
+        {endIcon && (
+          <View style={endIconStyles}>
+            <Icon name={endIcon} size={compact ? 'xs' : 's'} color={color} />
+          </View>
+        )}
       </View>
     </Pressable>
   );
