@@ -10,9 +10,10 @@ interface PropItemWithOptions extends PropItem {
 interface Docgen {
   web?: ComponentDoc;
   mobile?: ComponentDoc;
+  childPath: string;
 }
 
-type Platform = keyof Docgen;
+type Platform = 'web' | 'mobile';
 
 const isExtendedFromLib = (prop: PropItem) => {
   return prop.parent?.fileName.includes('node_modules');
@@ -47,6 +48,30 @@ export class ComponentDocgen {
     }
 
     return kebabCase(this.componentName);
+  }
+
+  get importPath() {
+    let endPath = this.docgen.childPath.replace(/\.(ts|tsx)$/, '');
+
+    if (endPath.endsWith('TextDisplay1')) {
+      endPath = 'typography/Text*';
+    }
+
+    if (this.web && !this.mobile) {
+      return `@cbhq/cds-web/${endPath}`;
+    }
+
+    if (this.mobile && !this.web) {
+      return `@cbhq/cds-mobile/${endPath}`;
+    }
+
+    return `@cbhq/cds-(web|mobile)/${endPath}`;
+  }
+
+  get sourceUrl() {
+    return `https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/${
+      !this.web ? 'mobile' : 'web'
+    }/${this.docgen.childPath}`;
   }
 
   findProp(props: PropItemWithOptions[] | undefined, name: string) {

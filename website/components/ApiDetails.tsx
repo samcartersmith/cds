@@ -65,9 +65,13 @@ export const ApiDetails = ({
     (options: string[]) => {
       if (propertyName.includes('spacing') || propertyName.includes('offset')) {
         return <code>{'0 - 10'}</code>;
-      } else if (propertyName === 'palette') {
+      }
+
+      if (propertyName === 'palette') {
         return <code>{'PartialPaletteConfig'}</code>;
-      } else if (propertyName === 'dangerouslySetStyle') {
+      }
+
+      if (propertyName === 'dangerouslySetStyle') {
         const styleType = componentName === 'Text' ? 'TextStyles' : 'ViewStyles';
 
         return (
@@ -89,6 +93,10 @@ export const ApiDetails = ({
         options.includes('ReactNodeArray')
       ) {
         return <code>{'ReactNode'}</code>;
+      }
+
+      if (options.length >= 10 && options.includes('allTimeHigh')) {
+        return <code>{'IconName'}</code>;
       }
 
       return (

@@ -36,6 +36,7 @@ const getDocgenForPackage = ({
     return new ComponentDocgen(displayName ?? componentName, {
       web,
       mobile,
+      childPath,
     });
   }
 };
