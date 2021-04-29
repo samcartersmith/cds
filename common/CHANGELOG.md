@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.8.2 (4/28/2021, 04:42 PM PST)
+
+#### 🐞 Fixes
+
+- Add switchPalette to codegen @katherinemartinez [#18743](https://github.cbhq.net/mono/repo/pull/18743)
+- Fix background color of switch component @katherinemartinez [#18589](https://github.cbhq.net/mono/repo/pull/18589), [CDS-452](https://jira.coinbase-corp.com/browse/CDS-452)
+
+#### 📘 Misc
+
+- Add interactable and pressable docs. @miles-johnson [#18442](https://github.cbhq.net/mono/repo/pull/18442)
+
 ## 0.8.1 (4/26/2021, 02:28 PM PST)
 
 #### 🚀 Updates

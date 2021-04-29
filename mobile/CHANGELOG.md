@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.1 (4/28/2021, 04:42 PM PST)
+
+#### 🐞 Fixes
+
+- Change Box border to line. @miles-johnson [#18669](https://github.cbhq.net/mono/repo/pull/18669)
+- Fix background color of switch component @katherinemartinez [#18589](https://github.cbhq.net/mono/repo/pull/18589), [CDS-452](https://jira.coinbase-corp.com/browse/CDS-452)
+- Fix container styles. @miles-johnson [#18548](https://github.cbhq.net/mono/repo/pull/18548)
+
+#### 📘 Misc
+
+- Add interactable and pressable docs. @miles-johnson [#18442](https://github.cbhq.net/mono/repo/pull/18442)
+
 ## 0.10.0 (4/26/2021, 02:28 PM PST)
 
 #### 💥 Breaking

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.7 (4/28/2021, 04:42 PM PST)
+
+#### 🐞 Fixes
+
+- lottie markers for globalTradeButton to camelCase @katherinemartinez [#18746](https://github.cbhq.net/mono/repo/pull/18746)
+
 ## 0.2.6 (4/26/2021, 02:28 PM PST)
 
 #### 🚀 Updates
