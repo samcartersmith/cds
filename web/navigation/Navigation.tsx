@@ -124,6 +124,8 @@ const NavigationContent: React.FC<NavigationProps> = memo(
               ref={navbarRef}
               position="sticky"
               top={0}
+              left={0}
+              right={0}
               zIndex={zIndex.navigation}
               spacing={gutter}
               background
