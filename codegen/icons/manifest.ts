@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58114,
+  lastUnicode: 58139,
   unicodeMap: {
     cashUSD: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBP: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -150,5 +150,10 @@ export const manifest = {
     },
     filter: { '8': 'uE2F8', '12': 'uE2F9', '16': 'uE2FA', '24': 'uE2FB', '32': 'uE2FC' },
     backArrow: { '8': 'uE2FD', '12': 'uE2FE', '16': 'uE2FF', '24': 'uE300', '32': 'uE301' },
+    giftCard: { '8': 'uE302', '12': 'uE303', '16': 'uE304', '24': 'uE305', '32': 'uE306' },
+    avatar: { '8': 'uE307', '12': 'uE308', '16': 'uE309', '24': 'uE30A', '32': 'uE30B' },
+    regulated: { '8': 'uE30C', '12': 'uE30D', '16': 'uE30E', '24': 'uE30F', '32': 'uE310' },
+    protection: { '8': 'uE311', '12': 'uE312', '16': 'uE313', '24': 'uE314', '32': 'uE315' },
+    lightningBolt: { '8': 'uE316', '12': 'uE317', '16': 'uE318', '24': 'uE319', '32': 'uE31A' },
   },
 };

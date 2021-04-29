@@ -7,18 +7,21 @@ export const fillMissingIcons = (nameSet: Set<string>, sizeMap: SizeMap) => {
   // sibling and cycling upwards
   iconPixelSizes.forEach((size, sizeIndex) => {
     nameSet.forEach(name => {
+      // We have the size for this icon
       if (sizeMap[size][name]) {
         return;
       }
 
+      let direction = 'forward';
       let nextIndex = sizeIndex + 1;
+
       let nextSize = iconPixelSizes[nextIndex];
 
       while (!nextSize || !sizeMap[nextSize] || !sizeMap[nextSize][name]) {
-        nextIndex += 1;
+        nextIndex = direction === 'forward' ? (nextIndex += 1) : (nextIndex -= 1);
 
         if (nextIndex >= iconPixelSizes.length) {
-          nextIndex = 0;
+          direction = 'backward';
         }
 
         nextSize = iconPixelSizes[nextIndex];

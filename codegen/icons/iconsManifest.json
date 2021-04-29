@@ -1851,8 +1851,28 @@
   },
   "4580:3": {
     "key": "234afcf5077656b48a42b6bfb758c4d08427127d",
-    "name": "Icon/filter_8",
+    "name": "Icon/filter_12",
     "description": "filter, organize, sort, type, classification, kind, category, group"
+  },
+  "5256:129": {
+    "key": "bfa019b0f755a91436b428fdba305fd23f676215",
+    "name": "Icon/giftCard_12",
+    "description": "giftcard, card, gift, present, sharing, celebration, donate, 🎁, 🎉, 🎊, 🥳"
+  },
+  "5256:126": {
+    "key": "e9f3ca76957e60137d666e9bd2cb5ac4395feeef",
+    "name": "Icon/avatar_12",
+    "description": "avatar, profile, person, individual, human"
+  },
+  "5256:121": {
+    "key": "6c9f132650662e4f2f3537688f60dd547e3a0dda",
+    "name": "Icon/regulated_12",
+    "description": "regulated, magnifying glass, confirmation, 🔎, 🔍, ✅"
+  },
+  "5256:120": {
+    "key": "57d6c83b49016949ef1db53d68273666c4a3b292",
+    "name": "Icon/protection_12",
+    "description": "shield, protection, guard, defense, cover, safety, security"
   },
   "4580:1": {
     "key": "6fb6a38590f4e48886e74ad0ae798ece0caf0a49",
@@ -1863,6 +1883,26 @@
     "key": "84b215b589ab26374f222279af886a6f6adeef44",
     "name": "Icon/filter_16",
     "description": ""
+  },
+  "5256:128": {
+    "key": "36cde001187533129bd08621603954908c242457",
+    "name": "Icon/giftCard_16",
+    "description": "giftcard, card, gift, present, sharing, celebration, donate, 🎁, 🎉, 🎊, 🥳"
+  },
+  "5256:125": {
+    "key": "f6d1a1d3c207142379e4652e06867d56595285b2",
+    "name": "Icon/avatar_16",
+    "description": "avatar, profile, person, individual, human"
+  },
+  "5256:122": {
+    "key": "81bd3688b2cb8292f1bf63840623fc2a2063d043",
+    "name": "Icon/regulated_16",
+    "description": "regulated, magnifying glass, confirmation, 🔎, 🔍, ✅"
+  },
+  "5256:119": {
+    "key": "db15a60bfb16ab3a764569c61a61292374b8470e",
+    "name": "Icon/protection_16",
+    "description": "shield, protection, guard, defense, cover, safety, security"
   },
   "4746:176": {
     "key": "e046e6d1924502e5a96e021e333d3b3689192fbd",
@@ -1953,5 +1993,40 @@
     "key": "6265009c3f30ce3b04fbb2a110be7ed3ed90ae8d",
     "name": "Icon/close_12",
     "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎"
+  },
+  "4957:215": {
+    "key": "eaf9cc5551f1c69a3b382027981e654764e44dcd",
+    "name": "Icon/lightningBolt_24",
+    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
+  },
+  "4957:217": {
+    "key": "0ee9563800e23aa4e7c473b17207f0e7398d5aaf",
+    "name": "Icon/lightningBolt_12",
+    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
+  },
+  "4957:216": {
+    "key": "f07935b6b2e59fcf36ed00e80863418944903103",
+    "name": "Icon/lightningBolt_16",
+    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
+  },
+  "5256:127": {
+    "key": "375d4420fe41d7d021b2972552941b96a2e0e868",
+    "name": "Icon/giftCard_24",
+    "description": "giftcard, card, gift, present, sharing, celebration, donate, 🎁, 🎉, 🎊, 🥳"
+  },
+  "5256:124": {
+    "key": "1bd6669b783955ba2853ab9dfee2e099b7006650",
+    "name": "Icon/avatar_24",
+    "description": "avatar, profile, person, individual, human"
+  },
+  "5256:118": {
+    "key": "c7ebac5398d48b6b78e43098f8fc5902cc58a3ce",
+    "name": "Icon/protection_24",
+    "description": "shield, protection, guard, defense, cover, safety, security"
+  },
+  "5275:7": {
+    "key": "0ac848b857bd46abfe7afed65ebcc01fae0cc701",
+    "name": "Icon/regulated_24",
+    "description": ""
   }
 }

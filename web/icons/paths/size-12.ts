@@ -45,6 +45,13 @@ export const arrowsVertical = {
 
 export const arrowUp = { paths: ['M4.75 6v6h2.5V6H10L6 0 2 6h2.75z'], viewBox: '0 0 12 12' };
 
+export const avatar = {
+  paths: [
+    'M6 12A6 6 0 106 0a6 6 0 000 12zM4.125 3.875a1.875 1.875 0 113.75 0 1.875 1.875 0 01-3.75 0zm-.99 3.1c.215-.575.76-.96 1.37-.97.02.015.68.495 1.495.495.815 0 1.475-.48 1.495-.495a1.5 1.5 0 011.37.97l.466 1.24A3.996 3.996 0 016 10a3.996 3.996 0 01-3.33-1.784l.465-1.241z',
+  ],
+  viewBox: '0 0 12 12',
+};
+
 export const average = {
   paths: ['M1.5 2.25H0v7.5h1.5v-3h9v3H12v-7.5h-1.5v3h-9v-3z'],
   viewBox: '0 0 12 12',
@@ -344,11 +351,8 @@ export const fib = {
 };
 
 export const filter = {
-  paths: [
-    'M0 1h16v2H0V1zm0 5h16v2H0V6zm0 5h16v2H0v-2z',
-    'M3 0h2v4H3V0zm8 5h2v4h-2V5zm-8 5h2v4H3v-4z',
-  ],
-  viewBox: '0 0 16 16',
+  paths: ['M0 2.5h12v2H0v-2zm0 5h12v2H0v-2z', 'M3 1.5h2v4H3v-4zm4 5h2v4H7v-4z'],
+  viewBox: '0 0 12 12',
 };
 
 export const gauge = {
@@ -376,6 +380,13 @@ export const gear = {
 export const giftBox = {
   paths: [
     'M8.5 3c.83 0 1.5-.67 1.5-1.5S9.33 0 8.5 0C6.64 0 6 3 6 3s-.64-3-2.5-3C2.67 0 2 .67 2 1.5S2.67 3 3.5 3H0v9h12V3H8.5zM2 10V5h3v5H2zm8 0H7V5h3v5z',
+  ],
+  viewBox: '0 0 12 12',
+};
+
+export const giftCard = {
+  paths: [
+    'M3.5 3C2.67 3 2 2.33 2 1.5S2.67 0 3.5 0C5.36 0 6 3 6 3s.64-3 2.5-3c.83 0 1.5.67 1.5 1.5S9.33 3 8.5 3H12v2H0V3h3.5zM0 7v5h12V7H0z',
   ],
   viewBox: '0 0 12 12',
 };
@@ -436,6 +447,8 @@ export const initiator = {
   ],
   viewBox: '0 0 12 12',
 };
+
+export const lightningBolt = { paths: ['M7 5V0L2 7h3.5v5L10 5H7z'], viewBox: '0 0 12 12' };
 
 export const list = {
   paths: [
@@ -526,6 +539,13 @@ export const profile = {
   viewBox: '0 0 12 12',
 };
 
+export const protection = {
+  paths: [
+    'M1 6V2l5-2 5 2v4c-.465 4.852-5 6-5 6s-4.535-1.148-5-6zm5 4.417l.13-.053a6.256 6.256 0 001.296-.745C8.338 8.936 9.275 7.83 9.492 6H6V1.616l-3.5 1.4v2.909L2.508 6H6v4.417z',
+  ],
+  viewBox: '0 0 12 12',
+};
+
 export const pulse = {
   paths: ['M4.63 11.74L1.92 7H0V5h3.08l1.29 2.26 3-7L10.08 5H12v2H8.92L7.63 4.74l-3 7z'],
   viewBox: '0 0 12 12',
@@ -558,6 +578,13 @@ export const recurring = {
   paths: [
     'M5.25 3v3.31L7.24 8.3 8.3 7.24 6.75 5.69V3h-1.5z',
     'M6 .25C3.65.25 1.57 1.65.68 3.82l1.39.57c.65-1.6 2.2-2.64 3.93-2.64A4.26 4.26 0 0110.25 6 4.26 4.26 0 016 10.25c-1.65 0-3.13-.98-3.82-2.43L4 6H0v4l1.07-1.07c1.02 1.7 2.88 2.82 4.93 2.82 3.17 0 5.75-2.58 5.75-5.75S9.17.25 6 .25z',
+  ],
+  viewBox: '0 0 12 12',
+};
+
+export const regulated = {
+  paths: [
+    'M9.897 4.934c0 1.098-.36 2.111-.967 2.931L12 10.927 10.923 12 7.848 8.933a4.936 4.936 0 01-2.9.935A4.941 4.941 0 010 4.934 4.941 4.941 0 014.948 0a4.941 4.941 0 014.949 4.934zm-2.133-1.23l-.947-1.036-2.319 2.469-1.225-1.34-.948 1.031 2.169 2.373 3.27-3.497z',
   ],
   viewBox: '0 0 12 12',
 };
