@@ -16,3 +16,7 @@ export const buttonResets = css`
   border-style: none;
   padding: 0;
 `;
+
+export const linkResets = css`
+  text-decoration: none;
+`;

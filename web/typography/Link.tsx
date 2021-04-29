@@ -1,9 +1,10 @@
 import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
 
 import { LinkBaseProps } from '@cbhq/cds-common/types/LinkBaseProps';
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 import { Button as ReakitButton } from 'reakit/Button';
 
+import { linkResets } from '../styles/resetStyles';
 import { OnPress } from '../types';
 import { TextHeadline } from './TextHeadline';
 
@@ -42,7 +43,7 @@ export const Link = memo(function Link({
   const enhancedProps = {
     'aria-label': accessibilityLabel,
     'data-testid': testID,
-    className: cursorPointer,
+    className: cx(cursorPointer, linkResets),
     children: (
       <TextHeadline as="span" color={color}>
         {children}
