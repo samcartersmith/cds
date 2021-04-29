@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useSpectrum } from '../spectrum/useSpectrum';
+import { useSpectrumConditional } from './useSpectrumConditional';
 
 const blue = '#0052FF';
 const black = '#0A0B0D';
@@ -34,14 +34,7 @@ const wordmarkData = {
 };
 
 export const useLogoWordmark = ({ foreground }: LogoWordmarkParams) => {
-  const spectrum = useSpectrum();
-  const color = useMemo(() => {
-    if (foreground) {
-      return spectrum === 'light' ? black : white;
-    }
-    return spectrum === 'light' ? blue : white;
-  }, [foreground, spectrum]);
-
+  const color = useSpectrumConditional({ light: foreground ? black : blue, dark: white });
   return useMemo(() => {
     return {
       ...wordmarkData,
@@ -51,9 +44,8 @@ export const useLogoWordmark = ({ foreground }: LogoWordmarkParams) => {
 };
 
 export const useLogoMark = ({ size = 32 }: LogoMarkParams) => {
-  const spectrum = useSpectrum();
   const { viewBox, path } = logoMarkData[size];
-  const color = spectrum === 'light' ? blue : white;
+  const color = useSpectrumConditional({ light: blue, dark: white });
   return useMemo(() => {
     return {
       color,

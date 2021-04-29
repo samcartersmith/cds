@@ -1,6 +1,7 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 
-import { useScale, useSpectrum, switchPalette } from '@cbhq/cds-common';
+import { useScale, switchPalette } from '@cbhq/cds-common';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { Animated, PressableProps, StyleSheet, View } from 'react-native';
@@ -29,7 +30,11 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
 }) => {
   const palette = usePalette();
   const cdsScale = useScale();
-  const spectrum = useSpectrum();
+  // Switch thumb is a special case where it should always be white.
+  const thumbColor = useSpectrumConditional({
+    light: palette.primaryForeground,
+    dark: palette.foreground,
+  });
   const { switchWidth, switchHeight, switchThumbSize } = scaleStyles[cdsScale].control;
   const elevationStyle = useElevationStyles(1);
 
@@ -54,8 +59,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
       {
         width: switchThumbSize,
         height: switchThumbSize,
-        // NOTE (hannah): Switch thumb is a special case where it should always be white.
-        backgroundColor: spectrum === 'light' ? palette.primaryForeground : palette.foreground,
+        backgroundColor: thumbColor,
         borderRadius: borderRadius.round,
         transform: [
           {
@@ -68,15 +72,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
       },
       elevationStyle,
     ],
-    [
-      animatedScaleValue,
-      spectrum,
-      palette.primaryForeground,
-      palette.foreground,
-      switchWidth,
-      switchThumbSize,
-      elevationStyle,
-    ]
+    [switchThumbSize, thumbColor, animatedScaleValue, switchWidth, elevationStyle]
   );
 
   return (

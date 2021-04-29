@@ -1,6 +1,7 @@
 import React, { forwardRef, memo } from 'react';
 
-import { switchPalette, useSpectrum } from '@cbhq/cds-common';
+import { switchPalette } from '@cbhq/cds-common';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { css, cx } from 'linaria';
@@ -18,7 +19,11 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
   { children, checked, ...props },
   ref
 ) {
-  const spectrum = useSpectrum();
+  // Switch thumb is a special case where it should always be white.
+  const thumbColor = useSpectrumConditional({
+    light: primaryForegroundThumb,
+    dark: foregroundThumb,
+  });
 
   const switchNode = (
     <Control
@@ -38,8 +43,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
             round,
             // TODO (hannah): Once elevation design is ready, revisit this.
             level1,
-            // NOTE (hannah): Switch thumb is a special case where it should always be white.
-            spectrum === 'light' ? primaryForegroundThumb : foregroundThumb
+            thumbColor
           )}
         />
       </div>
