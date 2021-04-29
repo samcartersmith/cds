@@ -44,6 +44,7 @@ export type BoxElement =
   | 'section'
   | 'nav'
   | 'ul'
+  | 'ol'
   | 'li';
 
 const overflowStyles: CSSMap<BoxProps['overflow']> = {
@@ -58,7 +59,9 @@ const overflowStyles: CSSMap<BoxProps['overflow']> = {
   `,
 };
 
-export interface BoxProps<As extends BoxElement = 'div'> extends Omit<BoxBaseProps, 'position'> {
+export interface BoxProps<As extends BoxElement = 'div'>
+  extends Omit<BoxBaseProps, 'position'>,
+    React.AriaAttributes {
   /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
   as?: As;
   /** Semantic role whole using a non-semantic element. */
@@ -132,11 +135,14 @@ export const Box = forwardRef(
       offsetTop,
       offsetVertical,
       dangerouslySetClassName,
+      // A11y
+      ...restProps
     } = props;
 
     return createElement(
       as,
       {
+        ...restProps,
         ref: forwardedRef,
         className: cx(
           getFlexStyles({

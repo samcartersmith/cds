@@ -1,3 +1,5 @@
+import { ElementChildren } from './React';
+
 export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative';
 
 export interface ButtonBaseProps {
@@ -25,4 +27,15 @@ export interface ButtonBaseProps {
    * @default primary
    */
   variant?: ButtonVariant;
+}
+
+export interface ButtonGroupBaseProps {
+  /** Accessibility label describing the group of buttons. */
+  accessibilityLabel: string;
+  /** Expand buttons to fill available space within the group. */
+  block?: boolean;
+  /** Buttons to render as a group. */
+  children: ElementChildren<ButtonBaseProps>;
+  /** Stack buttons vertically instead of horizontally. */
+  vertical?: boolean;
 }

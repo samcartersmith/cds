@@ -2,6 +2,7 @@ import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { PaletteBackground } from './Palette';
 import { OffsetProps, SpacingProps } from './SpacingProps';
+import { SpacingScale } from './SpacingScale';
 
 export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
 export type FlexAlignCommon = FlexAxisValue | 'stretch';
@@ -97,4 +98,9 @@ export interface BoxBaseProps
   borderRadius?: BorderRadius;
   /** Round the corners of the box with `standard` borderRadius size. */
   rounded?: boolean;
+}
+
+export interface StackBaseProps {
+  /** Gap to insert between siblings. */
+  gap?: SpacingScale;
 }

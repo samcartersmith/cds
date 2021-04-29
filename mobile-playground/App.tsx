@@ -4,17 +4,18 @@ import 'react-native-gesture-handler';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import List from './src';
 import BoxScreen from './src/Box';
 import ButtonScreen from './src/Button';
+import ButtonGroupScreen from './src/ButtonGroup';
 import CheckboxScreen from './src/Checkbox';
 import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
-import LinkButtonScreen from './src/LinkButton';
 import LinkScreen from './src/Link';
+import LinkButtonScreen from './src/LinkButton';
 import LottieScreen from './src/Lottie';
 import PressableScreen from './src/Pressable';
 import RadioGroupScreen from './src/RadioGroup';
@@ -32,7 +33,6 @@ import TextLegalScreen from './src/TextLegal';
 import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
-import { ScreenStackHeaderBackButtonImage } from 'react-native-screens';
 
 const Stack = createStackNavigator();
 
@@ -69,6 +69,7 @@ const App = () => {
           />
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
+          <Stack.Screen name="ButtonGroup" component={ButtonGroupScreen} />
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
           <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
           <Stack.Screen name="Switch" component={SwitchScreen} />

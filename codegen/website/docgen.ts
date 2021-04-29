@@ -62,6 +62,13 @@ export const docs = prepareDocgens([
     data: getDocgenForPackage({ componentName: 'Button', childPath: 'buttons/Button.tsx' }),
   },
   {
+    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/button-group.mdx`,
+    data: getDocgenForPackage({
+      componentName: 'ButtonGroup',
+      childPath: 'buttons/ButtonGroup.tsx',
+    }),
+  },
+  {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/link-button.mdx`,
     data: getDocgenForPackage({ componentName: 'LinkButton', childPath: 'buttons/LinkButton.tsx' }),
   },

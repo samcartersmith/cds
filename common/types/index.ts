@@ -20,6 +20,7 @@ export * from './LottieSource';
 export * from './LottieStatusAnimationProps';
 export * from './Palette';
 export * from './RadioGroupBaseProps';
+export * from './React';
 export * from './Scale';
 export * from './SpacingProps';
 export * from './SpacingScale';

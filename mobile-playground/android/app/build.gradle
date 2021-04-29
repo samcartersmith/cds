@@ -137,6 +137,7 @@ android {
         manifestPlaceholders = [
             appAuthRedirectScheme: 'coinbase.com'
         ]
+        missingDimensionStrategy 'react-native-camera', 'general'
     }
     splits {
         abi {
