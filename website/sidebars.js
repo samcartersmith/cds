@@ -49,12 +49,7 @@ module.exports = {
           type: 'category',
           label: 'Buttons',
           collapsed: false,
-          items: [
-            'components/button',
-            'components/link-button',
-            'components/icon-button',
-            'components/button-group',
-          ],
+          items: ['components/button', 'components/icon-button', 'components/button-group'],
         },
         {
           type: 'category',

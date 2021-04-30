@@ -70,10 +70,6 @@ export const docs = prepareDocgens([
     }),
   },
   {
-    dest: `${WEBSITE_COMPONENT_DOCS_DIR}/link-button.mdx`,
-    data: getDocgenForPackage({ componentName: 'LinkButton', childPath: 'buttons/LinkButton.tsx' }),
-  },
-  {
     dest: `${WEBSITE_COMPONENT_DOCS_DIR}/checkbox.mdx`,
     data: getDocgenForPackage({ componentName: 'Checkbox', childPath: 'controls/Checkbox.tsx' }),
   },

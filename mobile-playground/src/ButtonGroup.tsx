@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, IconButton, LinkButton } from '@cbhq/cds-mobile/buttons';
+import { Button, ButtonGroup, IconButton } from '@cbhq/cds-mobile/buttons';
 import { GestureResponderEvent } from 'react-native';
 
 import Example from './internal/Example';
@@ -41,9 +41,15 @@ const ButtonGroupScreen = () => {
         </ButtonGroup>
 
         <ButtonGroup accessibilityLabel="Group">
-          <LinkButton onPress={onPress}>Button</LinkButton>
-          <LinkButton onPress={onPress}>Button</LinkButton>
-          <LinkButton onPress={onPress}>Button</LinkButton>
+          <Button transparent onPress={onPress}>
+            Button
+          </Button>
+          <Button transparent onPress={onPress}>
+            Button
+          </Button>
+          <Button transparent onPress={onPress}>
+            Button
+          </Button>
         </ButtonGroup>
 
         <ButtonGroup accessibilityLabel="Group">
@@ -83,9 +89,15 @@ const ButtonGroupScreen = () => {
         </ButtonGroup>
 
         <ButtonGroup block accessibilityLabel="Group">
-          <LinkButton onPress={onPress}>Button</LinkButton>
-          <LinkButton onPress={onPress}>Button</LinkButton>
-          <LinkButton onPress={onPress}>Button</LinkButton>
+          <Button transparent onPress={onPress}>
+            Button
+          </Button>
+          <Button transparent onPress={onPress}>
+            Button
+          </Button>
+          <Button transparent onPress={onPress}>
+            Button
+          </Button>
         </ButtonGroup>
       </Example>
 

@@ -1,9 +1,9 @@
-The group is rather easy to use, just render a list of buttons. However, there is a hard requirement that direct children _must_ be a `Button`, `LinkButton`, or `IconButton` component. Do _not_ provide your own markup.
+The group is rather easy to use, just render a list of buttons. However, there is a hard requirement that direct children _must_ be a `Button` or `IconButton` component. Do _not_ provide your own markup.
 
 ```jsx live
 <ButtonGroup accessibilityLabel="Group">
   <Button>Save</Button>
-  <LinkButton>Cancel</LinkButton>
+  <Button transparent>Cancel</Button>
 </ButtonGroup>
 ```
 
@@ -12,7 +12,7 @@ If you would like the buttons to expand and fill all available space, pass a `bl
 ```jsx live
 <ButtonGroup block accessibilityLabel="Group">
   <Button>Save</Button>
-  <LinkButton>Cancel</LinkButton>
+  <Button variant="secondary">Cancel</Button>
 </ButtonGroup>
 ```
 

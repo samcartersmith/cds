@@ -12,13 +12,15 @@ export interface IconButtonProps extends IconButtonBaseProps, PressableProps {}
 export const IconButton = memo(function IconButton({
   feedback = 'light',
   name,
+  transparent,
   variant = 'secondary',
   ...props
 }: IconButtonProps) {
-  const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+  const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
 
   return (
     <Pressable
+      transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
       borderColor={borderColor}
       borderRadius="round"

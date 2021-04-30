@@ -15,7 +15,6 @@ import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import LinkScreen from './src/Link';
-import LinkButtonScreen from './src/LinkButton';
 import LottieScreen from './src/Lottie';
 import PressableScreen from './src/Pressable';
 import RadioGroupScreen from './src/RadioGroup';
@@ -76,7 +75,6 @@ const App = () => {
           <Stack.Screen name="Divider" component={DividerScreen} />
           <Stack.Screen name="Spacer" component={SpacerScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
-          <Stack.Screen name="LinkButton" component={LinkButtonScreen} />
           <Stack.Screen name="Link" component={LinkScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />

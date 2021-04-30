@@ -16,8 +16,20 @@ const variants = [
     title: <TextBody>Primary</TextBody>,
   },
   {
+    component: (
+      <IconButton transparent variant="primary" accessibilityLabel={iconName} name={iconName} />
+    ),
+    title: <TextBody>Primary transparent</TextBody>,
+  },
+  {
     component: <IconButton variant="secondary" accessibilityLabel={iconName} name={iconName} />,
     title: <TextBody>Secondary</TextBody>,
+  },
+  {
+    component: (
+      <IconButton transparent variant="secondary" accessibilityLabel={iconName} name={iconName} />
+    ),
+    title: <TextBody>Secondary transparent</TextBody>,
   },
 ];
 

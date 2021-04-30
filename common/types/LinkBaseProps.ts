@@ -1,13 +1,9 @@
 import { PaletteForeground } from '../types';
 
 export interface LinkBaseProps {
-  /**
-   * URL that this link goes to when pressed
-   */
+  /** URL that this link goes to when pressed. */
   to?: string;
-  /**
-   * Color of text
-   */
+  /** Color of the foreground text. */
   color?: PaletteForeground;
   /** Full length accessibility label when the child text is not descriptive enough. */
   accessibilityLabel?: string;

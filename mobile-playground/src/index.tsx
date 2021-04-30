@@ -16,7 +16,6 @@ const components = [
   { key: 'Spacer' },
   { key: 'Icon' },
   { key: 'IconButton' },
-  { key: 'LinkButton' },
   { key: 'Link' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },

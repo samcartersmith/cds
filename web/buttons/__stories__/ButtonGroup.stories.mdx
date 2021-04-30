@@ -1,7 +1,7 @@
 import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
-import { ButtonGroup, Button, IconButton, LinkButton } from '..';
+import { ButtonGroup, Button, IconButton } from '..';
 
 <Meta title="Core Components/Buttons/ButtonGroup" component={ButtonGroup} />
 
@@ -39,9 +39,15 @@ import { ButtonGroup, Button, IconButton, LinkButton } from '..';
       </ButtonGroup>
       <br />
       <ButtonGroup accessibilityLabel="Group">
-        <LinkButton onPress={console.log}>Button</LinkButton>
-        <LinkButton onPress={console.log}>Button</LinkButton>
-        <LinkButton onPress={console.log}>Button</LinkButton>
+        <Button transparent onPress={console.log}>
+          Button
+        </Button>
+        <Button transparent onPress={console.log}>
+          Button
+        </Button>
+        <Button transparent onPress={console.log}>
+          Button
+        </Button>
       </ButtonGroup>
       <br />
       <ButtonGroup accessibilityLabel="Group">
@@ -87,9 +93,15 @@ import { ButtonGroup, Button, IconButton, LinkButton } from '..';
       </ButtonGroup>
       <br />
       <ButtonGroup block accessibilityLabel="Group">
-        <LinkButton onPress={console.log}>Button</LinkButton>
-        <LinkButton onPress={console.log}>Button</LinkButton>
-        <LinkButton onPress={console.log}>Button</LinkButton>
+        <Button transparent onPress={console.log}>
+          Button
+        </Button>
+        <Button transparent onPress={console.log}>
+          Button
+        </Button>
+        <Button transparent onPress={console.log}>
+          Button
+        </Button>
       </ButtonGroup>
     </div>
   </Story>

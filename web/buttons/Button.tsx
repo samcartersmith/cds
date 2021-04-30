@@ -41,6 +41,7 @@ export const Button = forwardRef(function Button(
     onPress,
     startIcon,
     testID,
+    transparent,
     type = 'button',
     variant = 'primary',
     ...props
@@ -48,7 +49,7 @@ export const Button = forwardRef(function Button(
   ref: React.Ref<HTMLButtonElement>
 ) {
   const spacingClass = useButtonSpacing(compact);
-  const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+  const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
 
   return (
     <Pressable
@@ -56,6 +57,7 @@ export const Button = forwardRef(function Button(
       data-test-id={testID}
       {...props}
       as={ReakitButton}
+      transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
       borderColor={borderColor}
       borderRadius={compact ? 'compact' : 'standard'}

@@ -13,7 +13,7 @@ import { IconButton } from '../IconButton';
     decorators={[withStoryLabel('Default')]}
     args={{ name: 'arrowsHorizontal' }}
   >
-    {args => <IconButton {...args} onPress={console.log} />}
+    {args => <IconButton {...args} />}
   </Story>
 </Canvas>
 
@@ -53,21 +53,6 @@ import { IconButton } from '../IconButton';
 
 <Canvas withToolbar>
   <Story
-    name="Secondary"
-    decorators={[withStoryLabel('Secondary')]}
-    args={{
-      variant: 'secondary',
-      name: 'arrowsHorizontal',
-      accessibilityLabel: 'arrowsHorizontal',
-    }}
-  >
-    {args => (
-      <div>
-        <IconButton {...args} />
-      </div>
-    )}
-  </Story>
-  <Story
     name="Primary"
     decorators={[withStoryLabel('Primary')]}
     args={{
@@ -79,6 +64,25 @@ import { IconButton } from '../IconButton';
     {args => (
       <div>
         <IconButton {...args} />
+        <br />
+        <IconButton {...args} transparent />
+      </div>
+    )}
+  </Story>
+  <Story
+    name="Secondary"
+    decorators={[withStoryLabel('Secondary')]}
+    args={{
+      variant: 'secondary',
+      name: 'arrowsHorizontal',
+      accessibilityLabel: 'arrowsHorizontal',
+    }}
+  >
+    {args => (
+      <div>
+        <IconButton {...args} />
+        <br />
+        <IconButton {...args} transparent />
       </div>
     )}
   </Story>

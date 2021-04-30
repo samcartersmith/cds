@@ -4,7 +4,7 @@ import { PaletteBackground, PaletteForeground, PaletteBorder, ButtonVariant } fr
 
 export type ButtonVariantStyles = {
   backgroundColor: PaletteBackground;
-  borderColor: PaletteBorder;
+  borderColor: PaletteBorder | 'transparent';
   color: PaletteForeground;
 };
 
@@ -31,6 +31,35 @@ const variants: Record<ButtonVariant, ButtonVariantStyles> = {
   },
 };
 
-export const useButtonVariant = (variant: ButtonVariant): ButtonVariantStyles => {
-  return useMemo(() => variants[variant], [variant]);
+const transparentVariants: Record<ButtonVariant, ButtonVariantStyles> = {
+  primary: {
+    color: 'primary',
+    backgroundColor: 'background',
+    borderColor: 'transparent',
+  },
+  secondary: {
+    color: 'secondaryForeground',
+    backgroundColor: 'background',
+    borderColor: 'transparent',
+  },
+  positive: {
+    color: 'positive',
+    backgroundColor: 'background',
+    borderColor: 'transparent',
+  },
+  negative: {
+    color: 'negative',
+    backgroundColor: 'background',
+    borderColor: 'transparent',
+  },
+};
+
+export const useButtonVariant = (
+  variant: ButtonVariant,
+  transparent?: boolean
+): ButtonVariantStyles => {
+  return useMemo(() => (transparent ? transparentVariants : variants)[variant], [
+    variant,
+    transparent,
+  ]);
 };

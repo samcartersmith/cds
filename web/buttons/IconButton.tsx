@@ -25,6 +25,7 @@ export const IconButton = forwardRef(
       onPress,
       renderContainer,
       testID,
+      transparent,
       variant = 'secondary',
       dangerouslySetClassName,
     }: IconButtonProps,
@@ -34,7 +35,7 @@ export const IconButton = forwardRef(
       alignItems: 'center',
       justifyContent: 'center',
     });
-    const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+    const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
 
     const enhancedProps = {
       'aria-label': accessibilityLabel,
@@ -54,6 +55,7 @@ export const IconButton = forwardRef(
           <Pressable
             {...enhancedProps}
             as={ReakitButton}
+            transparentWhileInactive={transparent}
             backgroundColor={backgroundColor}
             borderColor={borderColor}
             borderRadius="round"

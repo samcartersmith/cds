@@ -1,7 +1,6 @@
 export * as Box from './Box';
 export * as Button from './Button';
 export * as ButtonGroup from './ButtonGroup';
-export * as LinkButton from './LinkButton';
 export * as Checkbox from './Checkbox';
 export * as RadioGroup from './RadioGroup';
 export * as HStack from './HStack';

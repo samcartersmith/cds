@@ -4,7 +4,7 @@ import { IconName } from './IconName';
 export type IconButtonVariant = 'primary' | 'secondary';
 
 export interface IconButtonBaseProps
-  extends Pick<ButtonBaseProps, 'accessibilityLabel' | 'disabled' | 'testID'> {
+  extends Pick<ButtonBaseProps, 'accessibilityLabel' | 'disabled' | 'testID' | 'transparent'> {
   /** Name of the icon, as defined in Figma. */
   name: IconName;
   /**

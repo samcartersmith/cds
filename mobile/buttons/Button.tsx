@@ -21,11 +21,12 @@ export const Button = memo(function Button({
   feedback,
   loading,
   startIcon,
+  transparent,
   variant = 'primary',
   ...props
 }: ButtonProps) {
   const palette = usePalette();
-  const { color, backgroundColor, borderColor } = useButtonVariant(variant);
+  const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
   const spacingStyles = useButtonSpacing(compact);
   const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
   const buttonStyles = useMemo(
@@ -37,6 +38,7 @@ export const Button = memo(function Button({
 
   return (
     <Pressable
+      transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
       borderColor={borderColor}
       borderRadius={compact ? 'compact' : 'standard'}

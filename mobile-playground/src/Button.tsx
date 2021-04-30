@@ -32,6 +32,9 @@ const ButtonScreen = () => {
 
       <Example title="Variants" inline>
         <Button variant="primary">Primary</Button>
+        <Button transparent variant="primary">
+          Primary
+        </Button>
         <Button compact variant="primary">
           Compact primary
         </Button>
@@ -40,6 +43,9 @@ const ButtonScreen = () => {
         </Button>
 
         <Button variant="secondary">Secondary</Button>
+        <Button transparent variant="secondary">
+          Secondary
+        </Button>
         <Button compact variant="secondary">
           Compact secondary
         </Button>
@@ -48,6 +54,9 @@ const ButtonScreen = () => {
         </Button>
 
         <Button variant="positive">Positive</Button>
+        <Button transparent variant="positive">
+          Positive
+        </Button>
         <Button compact variant="positive">
           Compact positive
         </Button>
@@ -56,6 +65,9 @@ const ButtonScreen = () => {
         </Button>
 
         <Button variant="negative">Negative</Button>
+        <Button transparent variant="negative">
+          Negative
+        </Button>
         <Button compact variant="negative">
           Compact negative
         </Button>

@@ -27,6 +27,8 @@ export interface ButtonBaseProps {
    * @internal
    **/
   testID?: string;
+  /** Mark the background and border as transparent until interacted with. */
+  transparent?: boolean;
   /**
    * Toggle design and visual variants.
    * @default primary
