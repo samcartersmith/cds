@@ -1,4 +1,4 @@
-import { useCallback, memo } from 'react';
+import React, { useCallback, memo } from 'react';
 
 import { LinkBaseProps } from '@cbhq/cds-common/types/LinkBaseProps';
 import { GestureResponderEvent } from 'react-native';
