@@ -92,6 +92,13 @@ export const calendar = {
   viewBox: '0 0 16 16',
 };
 
+export const camera = {
+  paths: [
+    'M5.333 2h5.334l.889 2H16v10H0V4h4.444l.89-2zM10 8.75a2 2 0 11-4 0 2 2 0 014 0zm1.5 0a3.5 3.5 0 10-7 0 3.5 3.5 0 007 0z',
+  ],
+  viewBox: '0 0 16 16',
+};
+
 export const card = {
   paths: ['M0 2.5v11h16v-11H0zm14 2V6H2V4.5h12zm-12 7v-3h12v3H2z'],
   viewBox: '0 0 16 16',

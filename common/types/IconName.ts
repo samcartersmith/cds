@@ -21,6 +21,7 @@ export type IconName =
   | 'bell'
   | 'blockchain'
   | 'calendar'
+  | 'camera'
   | 'card'
   | 'caretDown'
   | 'caretLeft'

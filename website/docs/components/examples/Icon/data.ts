@@ -21,6 +21,7 @@ export const iconNames = [
   'bell',
   'blockchain',
   'calendar',
+  'camera',
   'card',
   'caretDown',
   'caretLeft',

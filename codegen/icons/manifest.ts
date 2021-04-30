@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58139,
+  lastUnicode: 58144,
   unicodeMap: {
     cashUSD: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBP: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -155,5 +155,6 @@ export const manifest = {
     regulated: { '8': 'uE30C', '12': 'uE30D', '16': 'uE30E', '24': 'uE30F', '32': 'uE310' },
     protection: { '8': 'uE311', '12': 'uE312', '16': 'uE313', '24': 'uE314', '32': 'uE315' },
     lightningBolt: { '8': 'uE316', '12': 'uE317', '16': 'uE318', '24': 'uE319', '32': 'uE31A' },
+    camera: { '8': 'uE31B', '12': 'uE31C', '16': 'uE31D', '24': 'uE31E', '32': 'uE31F' },
   },
 };
