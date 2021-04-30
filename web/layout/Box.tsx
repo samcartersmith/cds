@@ -40,6 +40,7 @@ export type BoxElement =
   | 'div'
   | 'footer'
   | 'header'
+  | 'label'
   | 'main'
   | 'section'
   | 'nav'

@@ -32,6 +32,7 @@ export interface InteractableProps extends InteractableBaseProps, InteractableIn
   as:
     | 'a'
     | 'button'
+    | 'div'
     | 'input'
     | 'label'
     | 'select'

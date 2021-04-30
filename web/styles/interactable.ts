@@ -7,6 +7,8 @@ export const interactable = css`
   user-select: none;
   text-decoration: none;
   margin: 0;
+  height: fit-content;
+  width: fit-content;
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
@@ -76,7 +78,7 @@ export const disabledState = css`
 
 export const overlay = css`
   position: relative;
-  width: 100%;
+  width: fit-content;
   z-index: 1;
   transition: opacity 150ms ease-out;
   opacity: var(--interactable-opacity, 1);

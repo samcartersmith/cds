@@ -13,6 +13,22 @@ function CheckboxDemo() {
 }
 ```
 
+If you don’t want to use the default label or layout style, you can just not provide `children` to the `Checkbox` component. However, you should think about wrapping the custom label and `Checkbox` in a `<label>` if it makes sense to increase the tap target of the component and allow users to toggle by pressing on the label as well.
+
+```jsx live
+function CheckboxWithCustomLabelDemo() {
+  const [isChecked, { toggle }] = useToggler();
+  return (
+    <Box as="label" justifyContent="space-between" maxWidth="300px">
+      <TextHeadline as="span" color="primary">
+        I want special treatment.
+      </TextHeadline>
+      <Checkbox value="hyped" onChange={toggle} checked={isChecked} />
+    </Box>
+  );
+}
+```
+
 ### CheckboxGroup
 
 ```jsx live
@@ -35,11 +51,6 @@ function CheckboxGroupDemo() {
       <CheckboxGroup
         aria-labelledby="order-dinner-label"
         name="checkbox-group"
-        groupCheckbox={
-          <Checkbox aria-controls="dinner-fish-taco dinner-puttanesca dinner-hamachi-salad">
-            {isAllSelected === true ? 'Unselect' : 'Select All'}
-          </Checkbox>
-        }
         selectedValues={selectedValues}
         isAllSelected={isAllSelected}
         onChange={toggle}

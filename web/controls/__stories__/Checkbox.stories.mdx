@@ -1,4 +1,6 @@
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { DarkStoryContainer } from '@cbhq/cds-storybook/decorators/StoryContainer';
+import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import { useCheckboxGroupState } from '../../hooks/useCheckboxGroupState';
@@ -33,6 +35,24 @@ import { CheckboxGroup } from '../CheckboxGroup';
           </Checkbox>
         </ThemeProvider>
       );
+    }}
+  </Story>
+  <Story name="Dark normal" decorators={[DarkStoryContainer]}>
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return (
+        <ThemeProvider spectrum="dark">
+          <Checkbox checked={checked} onChange={toggle}>
+            Normal
+          </Checkbox>
+        </ThemeProvider>
+      );
+    }}
+  </Story>
+  <Story name="No label" decorators={[withStoryLabel('No label')]}>
+    {() => {
+      const [checked, { toggle }] = useToggler();
+      return <Checkbox checked={checked} onChange={toggle} />;
     }}
   </Story>
 </Canvas>

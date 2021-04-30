@@ -2,10 +2,9 @@ import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
 
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 
 import { Box, Spacer } from '../layout';
-import { visuallyHidden } from '../styles/visuallyHidden';
 import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { TextProps } from '../typography';
@@ -74,7 +73,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
   const iconNode = (
     <Interactable
-      as="span"
+      as="div"
       backgroundColor={backgroundColor ?? (checked ? 'primary' : 'background')}
       borderColor={borderColor}
       borderRadius={borderRadius}
@@ -83,7 +82,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       wrapWithLayeredElements
     >
       <>
-        <input className={visuallyHidden} {...inputProps} />
+        <input className={cx(controlInput, pointer)} {...inputProps} />
         {children}
       </>
     </Interactable>
@@ -123,4 +122,12 @@ const pointer = css`
   &:not(:read-only) {
     cursor: pointer;
   }
+`;
+
+const controlInput = css`
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 `;
