@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.8.3 (4/30/2021, 09:40 AM PST)
+
+#### 🚀 Updates
+
+- Add start/end icon support to buttons. @miles-johnson [#18597](https://github.cbhq.net/mono/repo/pull/18597)
+
 ## 0.8.2 (4/28/2021, 04:42 PM PST)
 
 #### 🐞 Fixes

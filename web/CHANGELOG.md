@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.9.1 (4/30/2021, 09:40 AM PST)
+
+#### 🚀 Updates
+
+- Add start/end icon support to buttons. @miles-johnson [#18597](https://github.cbhq.net/mono/repo/pull/18597)
+
+#### 🐞 Fixes
+
+- web control with no label doesn't handle change @hannah-jin [#18879](https://github.cbhq.net/mono/repo/pull/18879)
+- Asset Hub - Fix table scroll [#18815](https://github.cbhq.net/mono/repo/pull/18815)
+- Add link decoration reset @travis-ueki [#18835](https://github.cbhq.net/mono/repo/pull/18835)
+
 ## 0.9.0 (4/28/2021, 04:42 PM PST)
 
 #### 💥 Breaking

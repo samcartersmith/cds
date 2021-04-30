@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.2 (4/30/2021, 09:40 AM PST)
+
+#### 🚀 Updates
+
+- Add start/end icon support to buttons. @miles-johnson [#18597](https://github.cbhq.net/mono/repo/pull/18597)
+
+#### 🐞 Fixes
+
+- move control testID to icon @hannah-jin [#18887](https://github.cbhq.net/mono/repo/pull/18887)
+- Added React import statement. @jennifer-liu [#18910](https://github.cbhq.net/mono/repo/pull/18910)
+
 ## 0.10.1 (4/28/2021, 04:42 PM PST)
 
 #### 🐞 Fixes
