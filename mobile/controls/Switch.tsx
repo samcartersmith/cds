@@ -27,6 +27,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
   backgroundColor,
   animatedBoxValue,
   animatedScaleValue,
+  testID,
 }) => {
   const palette = usePalette();
   const cdsScale = useScale();
@@ -82,7 +83,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
       disabled={disabled}
       borderRadius="pill"
     >
-      <Animated.View style={trackStyle}>
+      <Animated.View testID={testID} style={trackStyle}>
         <Animated.View style={thumbStyle} />
       </Animated.View>
     </Interactable>

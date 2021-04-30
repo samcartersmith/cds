@@ -28,6 +28,7 @@ export type ControlIconProps = {
   backgroundColor: PaletteBackground;
   animatedBoxValue: Animated.Value;
   animatedScaleValue: Animated.Value;
+  testID?: string;
 };
 
 export interface ControlProps<T extends string>
@@ -102,6 +103,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     disabled: pressDisabled,
     animatedBoxValue,
     animatedScaleValue,
+    testID,
   };
 
   const iconWrapperStyles: ViewStyle = useMemo(
@@ -116,7 +118,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     <Pressable
       ref={ref}
       disabled={pressDisabled}
-      testID={testID}
       accessible
       accessibilityState={{
         disabled: pressDisabled,

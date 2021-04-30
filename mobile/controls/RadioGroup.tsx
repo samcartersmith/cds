@@ -20,6 +20,7 @@ const RadioIcon: React.FC<ControlIconProps> = ({
   backgroundColor,
   animatedBoxValue,
   animatedScaleValue,
+  testID,
 }) => {
   const palette = usePalette();
   const cdsScale = useScale();
@@ -46,7 +47,7 @@ const RadioIcon: React.FC<ControlIconProps> = ({
         },
       ]}
     >
-      <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
+      <Animated.View testID={testID} style={{ transform: [{ scale: animatedScaleValue }] }}>
         <Icon name="dot" size="s" color="primary" />
       </Animated.View>
     </Interactable>
