@@ -78,12 +78,13 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
 
   return (
     <Interactable
+      testID={testID}
       pressed={pressed}
       backgroundColor={backgroundColor}
       disabled={disabled}
       borderRadius="pill"
     >
-      <Animated.View testID={testID} style={trackStyle}>
+      <Animated.View style={trackStyle}>
         <Animated.View style={thumbStyle} />
       </Animated.View>
     </Interactable>

@@ -25,6 +25,7 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
 
   return (
     <Interactable
+      testID={testID}
       pressed={pressed}
       backgroundColor={backgroundColor}
       borderColor="lineHeavy"
@@ -46,7 +47,7 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
         },
       ]}
     >
-      <Animated.View testID={testID} style={{ transform: [{ scale: animatedScaleValue }] }}>
+      <Animated.View style={{ transform: [{ scale: animatedScaleValue }] }}>
         <Icon size="s" name="checkmark" color="primaryForeground" />
       </Animated.View>
     </Interactable>

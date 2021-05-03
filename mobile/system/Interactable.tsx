@@ -13,6 +13,7 @@ import { usePalette } from '../hooks/usePalette';
 
 export interface InteractableProps extends InteractableBaseProps {
   children: NonNullable<React.ReactNode>;
+  testID?: string;
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
 }
@@ -27,6 +28,7 @@ export const Interactable = memo(function Interactable({
   pressed,
   style = emptyArray,
   transparentWhileInactive,
+  testID,
 }: InteractableProps) {
   const palette = usePalette();
   const bgColor = transparentWhileInactive && !pressed ? 'transparent' : backgroundColor;
@@ -72,7 +74,7 @@ export const Interactable = memo(function Interactable({
   );
 
   return (
-    <Animated.View style={interactableStyles}>
+    <Animated.View style={interactableStyles} testID={testID}>
       {pressed && !disabled && bgColor !== 'transparent' && <View style={underlayStyles} />}
 
       <View
