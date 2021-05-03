@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.4 (5/3/2021, 04:31 PM PST)
+
+#### 🐞 Fixes
+
+- move controls testid to the outer animated.view @hannah-jin [#19124](https://github.cbhq.net/mono/repo/pull/19124)
+
 ## 0.10.3 (4/30/2021, 01:37 PM PST)
 
 #### 🐞 Fixes
