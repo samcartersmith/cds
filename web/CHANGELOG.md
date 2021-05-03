@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.9.2 (4/30/2021, 01:37 PM PST)
+
+#### 🚀 Updates
+
+- Expose paletteValueToCssVar util for cds web @katherinemartinez [#18878](https://github.cbhq.net/mono/repo/pull/18878)
+
+#### 🐞 Fixes
+
+- Revert " feat: Expose paletteValueToCssVar util for cds web (#18878)" @katherinemartinez [#18959](https://github.cbhq.net/mono/repo/pull/18959)
+- add camera icon. @jennifer-liu [#18954](https://github.cbhq.net/mono/repo/pull/18954)
+
 ## 0.9.1 (4/30/2021, 09:40 AM PST)
 
 #### 🚀 Updates

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.3 (4/30/2021, 01:37 PM PST)
+
+#### 🐞 Fixes
+
+- add camera icon. @jennifer-liu [#18954](https://github.cbhq.net/mono/repo/pull/18954)
+
 ## 0.10.2 (4/30/2021, 09:40 AM PST)
 
 #### 🚀 Updates
