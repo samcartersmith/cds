@@ -12,6 +12,7 @@ import { focusRing } from '../styles/focus';
 import {
   interactable,
   interactableBackground,
+  interactableControls,
   interactableTransparent,
   interactableTransparentActive,
   disabledState,
@@ -70,6 +71,7 @@ export const Interactable = forwardRef(function Interactable(
   const className = cx(
     interactable,
     !isControls && !transparentWhileInactive ? interactableBackground : interactableTransparent,
+    isControls && interactableControls,
     transparentWhileInactive && interactableTransparentActive,
     !wrapWithLayeredElements && transparentChildren,
     borderColor && borderColors[borderColor],

@@ -7,8 +7,6 @@ export const interactable = css`
   user-select: none;
   text-decoration: none;
   margin: 0;
-  height: fit-content;
-  width: fit-content;
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
@@ -36,6 +34,11 @@ export const interactableBackground = css`
     rgba(var(--interactable-overlay), var(--interactable-opacity, 1))
   );
   background-color: var(--interactable-underlay);
+`;
+
+export const interactableControls = css`
+  height: fit-content;
+  width: fit-content;
 `;
 
 // Hide background on non-solid elements, like controls.

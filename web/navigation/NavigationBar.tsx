@@ -26,7 +26,7 @@ export const NavigationBar = memo(
     return (
       <HStack width="100%" alignItems="flex-start" justifyContent="space-between">
         <VStack>
-          <HStack alignItems="baseline">
+          <HStack alignItems="center">
             {controls}
             <motion.div style={{ opacity: animatedOpacity }}>{titles}</motion.div>
           </HStack>
@@ -34,11 +34,12 @@ export const NavigationBar = memo(
         <Spacer />
         {ctas}
         {actions}
-        <IconButton
-          name={isMobileMenuVisible ? 'close' : 'hamburger'}
-          onPress={toggleMobileMenuVisibility}
-          dangerouslySetClassName={showForMobile}
-        />
+        <span className={showForMobile}>
+          <IconButton
+            name={isMobileMenuVisible ? 'close' : 'hamburger'}
+            onPress={toggleMobileMenuVisibility}
+          />
+        </span>
       </HStack>
     );
   }

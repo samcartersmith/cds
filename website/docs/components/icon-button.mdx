@@ -36,18 +36,21 @@ Full length accessibility label when the child text is not descriptive enough.
 
 <ComponentDetails componentName="IconButton" templateName="accessibilityLabelProp" />
 
-### dangerouslySetClassName <Badge variant="web" />
+### as <Badge variant="web" />
 
 <ApiDetails
   componentName="IconButton"
-  propertyName="dangerouslySetClassName"
+  propertyName="as"
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={[
+    'ComponentClass<HTMLAttributes<HTMLElement>, any>',
+    'FunctionComponent<HTMLAttributes<HTMLElement>>',
+  ]}
 />
 
-<ComponentDetails componentName="IconButton" templateName="dangerouslySetClassNameProp" />
+<ComponentDetails componentName="IconButton" templateName="asProp" />
 
 ### disabled
 
@@ -136,6 +139,7 @@ Name of the icon, as defined in Figma.
     'bell',
     'blockchain',
     'calendar',
+    'camera',
     'card',
     'caretDown',
     'caretLeft',
@@ -275,6 +279,7 @@ Name of the icon, as defined in Figma.
     'bell',
     'blockchain',
     'calendar',
+    'camera',
     'card',
     'caretDown',
     'caretLeft',
@@ -414,19 +419,6 @@ Callback fired when the element is pressed.
 />
 
 <ComponentDetails componentName="IconButton" templateName="onPressProp" />
-
-### renderContainer <Badge variant="web" />
-
-<ApiDetails
-  componentName="IconButton"
-  propertyName="renderContainer"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(props: HTMLAttributes<HTMLElement>) => Element']}
-/>
-
-<ComponentDetails componentName="IconButton" templateName="renderContainerProp" />
 
 ### testID
 

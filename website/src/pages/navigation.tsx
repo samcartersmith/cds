@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { Button, IconButton as CDSIconButton, IconButtonProps } from '@cbhq/cds-web/buttons';
+import { Button, IconButton } from '@cbhq/cds-web/buttons';
 import { LogoMark } from '@cbhq/cds-web/icons/LogoMark';
 import { VStack } from '@cbhq/cds-web/layout';
 import {
@@ -24,12 +24,6 @@ import Head from '@docusaurus/Head';
 import { Link } from 'react-router-dom';
 
 const defaultRoute = '/navigation';
-const IconButton = ({
-  name,
-  to = '/',
-}: Omit<IconButtonProps, 'renderContainer'> & { to?: string }) => {
-  return <CDSIconButton name={name} renderContainer={props => <Link {...props} to={to} />} />;
-};
 
 export const NavigationExample: React.FC = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
@@ -56,7 +50,7 @@ export const NavigationExample: React.FC = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="arrowLeft" />
+            <IconButton as={props => <Link {...props} to="/" />} name="arrowLeft" />
           </NavigationBarControls>
         }
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
@@ -72,10 +66,10 @@ export const NavigationExample: React.FC = () => {
         }
         actions={
           <NavigationBarActions>
-            <CDSIconButton onPress={toggleSidebarSections} name="gear" />
-            <CDSIconButton onPress={toggleDisplayTitle} name="expand" />
-            <CDSIconButton onPress={toggleTabs} name="list" />
-            <CDSIconButton onPress={toggleDarkMode} name="api" />
+            <IconButton onPress={toggleSidebarSections} name="gear" />
+            <IconButton onPress={toggleDisplayTitle} name="expand" />
+            <IconButton onPress={toggleTabs} name="list" />
+            <IconButton onPress={toggleDarkMode} name="api" />
           </NavigationBarActions>
         }
       />
