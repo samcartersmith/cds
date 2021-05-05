@@ -1,0 +1,92 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/buttons/ButtonGroup](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/buttons/ButtonGroup.tsx)
+
+<ComponentDetails componentName="ButtonGroup" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="ButtonGroup" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="ButtonGroup" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel
+
+Accessibility label describing the group of buttons.
+
+<ApiDetails
+  componentName="ButtonGroup"
+  propertyName="accessibilityLabel"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ButtonGroup" templateName="prop-accessibilityLabel" />
+
+### block
+
+Expand buttons to fill available space within the group.
+
+<ApiDetails
+  componentName="ButtonGroup"
+  propertyName="block"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ButtonGroup" templateName="prop-block" />
+
+### children
+
+Buttons to render as a group.
+
+<ApiDetails
+  componentName="ButtonGroup"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'OptionalElement<ButtonBaseProps>[]',
+    'ReactElement<ButtonBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
+  ]}
+  webOptions={[
+    'OptionalElement<ButtonBaseProps>[]',
+    'ReactElement<ButtonBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
+  ]}
+/>
+
+<ComponentDetails componentName="ButtonGroup" templateName="prop-children" />
+
+### vertical
+
+Stack buttons vertically instead of horizontally.
+
+<ApiDetails
+  componentName="ButtonGroup"
+  propertyName="vertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ButtonGroup" templateName="prop-vertical" />
+
+<ComponentDetails componentName="ButtonGroup" templateName="outro" />

@@ -15,8 +15,6 @@ import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
 import { buildTemplates } from './utils/buildTemplates';
-import { docs, docsSimple } from './website/docgen';
-import { updateTextStylesTable } from './website/updateTextStylesTable';
 
 (async function () {
   const templates = {
@@ -125,13 +123,10 @@ import { updateTextStylesTable } from './website/updateTextStylesTable';
         },
       },
     ],
-    'docgen.ejs': docs,
-    'docgenSimple.ejs': docsSimple,
     'typescript.ejs': TypeScript,
   };
 
   Palette.validate();
-  await updateTextStylesTable();
 
   await buildTemplates(templates);
 })();

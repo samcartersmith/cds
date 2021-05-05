@@ -21,6 +21,7 @@ filegroup(
             "cds-docusaurus-ts-linaria-plugin.js",
             "docusaurus.config.js",
             "sidebars.js",
+            "data/sidebarConfig.js",
         ],
     ),
 )

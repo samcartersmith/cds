@@ -1,3 +1,5 @@
+const sidebarConfig = require('./data/sidebarConfig');
+
 module.exports = {
   docs: [
     {
@@ -43,50 +45,7 @@ module.exports = {
       type: 'category',
       label: 'Components',
       collapsed: true,
-      items: [
-        'components/lottie',
-        {
-          type: 'category',
-          label: 'Buttons',
-          collapsed: false,
-          items: ['components/button', 'components/icon-button', 'components/button-group'],
-        },
-        {
-          type: 'category',
-          label: 'Controls',
-          collapsed: false,
-          items: ['components/checkbox', 'components/radio-group', 'components/switch'],
-        },
-        {
-          type: 'category',
-          label: 'Layout',
-          collapsed: false,
-          items: ['components/box', 'components/hstack', 'components/vstack', 'components/spacer'],
-        },
-        {
-          type: 'category',
-          label: 'Typography',
-          collapsed: false,
-          items: ['components/text'],
-        },
-        {
-          type: 'category',
-          label: 'Icons',
-          collapsed: false,
-          items: ['components/icon', 'components/logo'],
-        },
-        {
-          type: 'category',
-          label: 'System',
-          collapsed: false,
-          items: [
-            'components/interactable',
-            'components/pressable',
-            'components/pressable-opacity',
-            'components/theme-provider',
-          ],
-        },
-      ],
+      items: sidebarConfig.components,
     },
     {
       type: 'category',

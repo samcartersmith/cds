@@ -1,0 +1,145 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/controls/Checkbox](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/Checkbox.tsx)
+
+<ComponentDetails componentName="Checkbox" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Checkbox" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Checkbox" templateName="a11y" />
+
+## Props
+
+### checked
+
+Set the control to selected/on.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="checked"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="prop-checked" />
+
+### children
+
+Label for the control option.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="prop-children" />
+
+### disabled
+
+Disable user interaction.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="prop-disabled" />
+
+### onChange
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(value?: T | undefined) => void']}
+  webOptions={['ChangeEventHandler<HTMLInputElement>']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="prop-onChange" />
+
+### readOnly
+
+Set the control to ready-only. Similar effect as disabled.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="readOnly"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="prop-readOnly" />
+
+### testID
+
+Used to locate this element in end-to-end tests.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="prop-testID" />
+
+### value
+
+Value of the option. Useful for multiple choice.
+
+<ApiDetails
+  componentName="Checkbox"
+  propertyName="value"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Checkbox" templateName="prop-value" />
+
+<ComponentDetails componentName="Checkbox" templateName="outro" />

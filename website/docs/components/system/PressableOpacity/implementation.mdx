@@ -1,0 +1,185 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/system/PressableOpacity](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/system/PressableOpacity.tsx)
+
+<ComponentDetails componentName="PressableOpacity" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="PressableOpacity" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="PressableOpacity" templateName="a11y" />
+
+## Props
+
+### as <Badge variant="web" />
+
+Element or component to render the container as.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="as"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ComponentClass<any, any>',
+    'FunctionComponent<any>',
+    'a',
+    'button',
+    'div',
+    'input',
+    'label',
+    'select',
+    'span',
+    'textarea',
+  ]}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-as" />
+
+### className <Badge variant="web" />
+
+Apply class names to the outer container.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="className"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-className" />
+
+### disabled
+
+Is the element currently disabled.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-disabled" />
+
+### disableDebounce <Badge variant="mobile" />
+
+React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior such as double navigations where we push a screen onto the stack 2 times. Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental double-tap.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="disableDebounce"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-disableDebounce" />
+
+### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="feedback"
+  required={false}
+  defaultValue="none"
+  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-feedback" />
+
+### loading
+
+Is the element currenty loading.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="loading"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-loading" />
+
+### noScaleOnPress
+
+Dont scale element on press.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="noScaleOnPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-noScaleOnPress" />
+
+### onPress
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-onPress" />
+
+### style <Badge variant="mobile" />
+
+Apply animated styles to the outer container.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="style"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    '(false | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | null | undefined)[]',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-style" />
+
+### wrapWithLayeredElements <Badge variant="web" />
+
+Inject and wrap the content with overlay and underlay elements.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="wrapWithLayeredElements"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-wrapWithLayeredElements" />
+
+<ComponentDetails componentName="PressableOpacity" templateName="outro" />

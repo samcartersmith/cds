@@ -1,9 +1,7 @@
 import { AnyObject } from '@cbhq/cds-utils';
 
-import { generateFromTemplate } from './generateFromTemplate';
+import { generateFromTemplate, TemplateMap } from './generateFromTemplate';
 import { logError } from './logError';
-
-export type TemplateMap = Record<string, { dest: string; data: unknown; config?: AnyObject }[]>;
 
 export const buildTemplates = async (templates: TemplateMap) => {
   const templateInputs: {

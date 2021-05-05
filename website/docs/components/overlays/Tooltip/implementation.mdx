@@ -1,0 +1,92 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/overlays/Tooltip](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/overlays/Tooltip.tsx)
+
+<ComponentDetails componentName="Tooltip" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Tooltip" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Tooltip" templateName="a11y" />
+
+## Props
+
+### content <Badge variant="web" />
+
+Content to render within the toolip.
+
+<ApiDetails
+  componentName="Tooltip"
+  propertyName="content"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Tooltip" templateName="prop-content" />
+
+### disabled <Badge variant="web" />
+
+Disable tooltip from displaying.
+
+<ApiDetails
+  componentName="Tooltip"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Tooltip" templateName="prop-disabled" />
+
+### placement <Badge variant="web" />
+
+The direction and alignment of the positioned tooltip.
+
+<ApiDetails
+  componentName="Tooltip"
+  propertyName="placement"
+  required={false}
+  defaultValue="top"
+  mobileOptions={[]}
+  webOptions={[
+    'auto',
+    'auto-end',
+    'auto-start',
+    'bottom',
+    'bottom-end',
+    'bottom-start',
+    'left',
+    'left-end',
+    'left-start',
+    'right',
+    'right-end',
+    'right-start',
+    'top',
+    'top-end',
+    'top-start',
+  ]}
+/>
+
+<ComponentDetails componentName="Tooltip" templateName="prop-placement" />
+
+<ComponentDetails componentName="Tooltip" templateName="outro" />

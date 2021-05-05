@@ -1,4 +1,3 @@
-import { AnyObject } from '@cbhq/cds-utils';
 import { writePrettyFile } from '@tools/writePrettyFile';
 import * as ejs from 'ejs';
 import * as fs from 'fs';
@@ -11,10 +10,29 @@ import { getSourcePath } from './getSourcePath';
 
 const prettierConfig = argv.prettierConfig as string;
 
+export interface TemplateConfig<T extends unknown = unknown> {
+  dest: string;
+  data: T;
+  config?: {
+    commonJS?: boolean;
+    disableAsConst?: boolean;
+    disableStringify?: boolean;
+    imports?: string[];
+    sort?: boolean;
+  };
+}
+
+export type TemplateMap = Record<string, TemplateConfig[]>;
+interface GenerateFromTemplateParams extends TemplateConfig {
+  template: string;
+}
+
 const getParser = (ext: string): prettier.BuiltInParserName => {
   switch (ext) {
     case '.mdx':
       return 'mdx';
+    case '.js':
+      return 'babel';
     default:
       return 'typescript';
   }
@@ -41,12 +59,7 @@ export const generateFromTemplate = async ({
   data,
   dest,
   config = {},
-}: {
-  template: string;
-  dest: string;
-  data: unknown;
-  config?: AnyObject;
-}) => {
+}: GenerateFromTemplateParams) => {
   try {
     const templatePath = path.join(__dirname, '../templates', template);
     const code = await ejs.renderFile(templatePath, { data, format: formatTemplateType, config });

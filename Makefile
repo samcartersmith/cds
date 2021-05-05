@@ -11,6 +11,7 @@ Help:
   $$ make test                      -- Run web and mobile unit tests.
   $$ make test.mobile               -- Run mobile unit tests.
   $$ make test.web                  -- Run web unit tests.
+  $$ make docgen                    -- Generate docs for CDS website.
   $$ make codegen                   -- Generate code in design system.
   $$ make lint                      -- Run eslint on all sources.
   $$ make new.package name=<name>   -- Scaffold a new package with the defined name.
@@ -72,9 +73,14 @@ test.mobile:
 test.web:
 	bazel test :unit_tests_web --test_output=streamed
 
+.PHONY: docgen
+docgen:
+	bazel run :docgen
+
 .PHONY: codegen
 codegen:
 	bazel run :codegen
+	bazel run :docgen
 
 .PHONY: lint
 lint:

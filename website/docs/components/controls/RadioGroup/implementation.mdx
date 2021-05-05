@@ -1,0 +1,147 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/controls/RadioGroup](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/RadioGroup.tsx)
+
+<ComponentDetails componentName="RadioGroup" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="RadioGroup" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="RadioGroup" templateName="a11y" />
+
+## Props
+
+### aria-labelledby <Badge variant="web" />
+
+id of the element that labels the radio group
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="aria-labelledby"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="prop-aria-labelledby" />
+
+### label
+
+Set a label summary for the group of radios.
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="label"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="prop-label" />
+
+### name <Badge variant="web" />
+
+- Field name of the multiple choice radio group.
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="prop-name" />
+
+### onChange
+
+Handle change event when pressing on a radio option.
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(value?: T | undefined) => void']}
+  webOptions={['(value: T) => void']}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="prop-onChange" />
+
+### options
+
+Multiple choice options for the radio group. The object key represents the radio input value and the object value represents the radio option label.
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="options"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="prop-options" />
+
+### selectedValue
+
+Currently selected value.
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="selectedValue"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="prop-selectedValue" />
+
+### testID
+
+Used to locate this element in end-to-end tests.
+
+<ApiDetails
+  componentName="RadioGroup"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="RadioGroup" templateName="prop-testID" />
+
+<ComponentDetails componentName="RadioGroup" templateName="outro" />

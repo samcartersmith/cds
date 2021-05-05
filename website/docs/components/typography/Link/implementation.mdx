@@ -1,0 +1,130 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-mobile/typography/Link](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/mobile/typography/Link.tsx)
+
+<ComponentDetails componentName="Link" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Link" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Link" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel <Badge variant="mobile" />
+
+Full length accessibility label when the child text is not descriptive enough.
+
+<ApiDetails
+  componentName="Link"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-accessibilityLabel" />
+
+### children <Badge variant="mobile" />
+
+Children to render within the link.
+
+<ApiDetails
+  componentName="Link"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-children" />
+
+### color <Badge variant="mobile" />
+
+Color of the foreground text.
+
+<ApiDetails
+  componentName="Link"
+  propertyName="color"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-color" />
+
+### onPress <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="Link"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-onPress" />
+
+### testID <Badge variant="mobile" />
+
+Testing purposes.
+
+<ApiDetails
+  componentName="Link"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-testID" />
+
+### to <Badge variant="mobile" />
+
+URL that this link goes to when pressed.
+
+<ApiDetails
+  componentName="Link"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-to" />
+
+<ComponentDetails componentName="Link" templateName="outro" />

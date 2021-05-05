@@ -1,0 +1,109 @@
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+## Spacing
+
+Spacing refers to the gap between UI elements.
+
+<img src="/img/spacing-overview.svg" width="100%" />
+
+CDS has two sets of spacing increments each with 11 values. The Dense spacing set aligns to a 4pt baseline grid and maps to `xSmall`, `small`, and `medium` theme scales. The Normal spacing set utilizes an 8pt baseline grid and is associated with `large`, `xLarge`, `xxLarge`, and `xxxLarge` theme scales. When applying scaling, you only need to think about the spacing scales from 0.5-10. The actual dps of the white space will be determined based on the scale your application is displaying in.
+
+<img src="/img/button-spacing.svg" width="100%" />
+
+<img src="/img/cell-spacing.svg" width="100%" />
+
+### Props
+
+- `spacing` - all four directions
+- `spacingHorizontal` - left and right spacing
+- `spacingVertical` - top and bottom spacing
+- `spacingTop` - top spacing
+- `spacingBottom` - bottom spacing
+- `spacingStart` - In left to right languages, this is left spacing. In right to left languages, this is right spacing.
+- `spacingEnd` - The opposite of `spacingStart`. In left to right languages, this is right spacing. In right to left languages, this is left spacing.
+
+### Precedence
+
+If multiple spacing props are specified, properties with higher specificity will take precedence.
+
+<img src="/img/spacing-prop-precedence.svg" style={{ marginBottom: '24px' }} />
+
+### Examples
+
+Two-direction spacing prop has higher precendence over four-direction spacing prop.
+
+<div style={{ display: 'flex', alignItems: 'flex-start'}}>
+
+```jsx
+<Box spacing={2} spacingHorizontal={3} />;
+/* equivalent to */
+<Box spacingVertical={2} spacingHorizontal={3} />;
+```
+
+<img src="/img/spacing-examples/spacing-example-1.svg" style={{ marginLeft: '24px' }} />
+
+</div>
+
+One-direction spacing prop has higher precendence over two-direction spacing prop.
+
+<div style={{ display: 'flex', alignItems: 'flex-start'}}>
+
+```jsx
+<Box spacingHorizontal={3} spacingStart={2}>
+/* equivalent to */
+<Box spacingEnd={3} spacingStart={2}>
+```
+
+<img src="/img/spacing-examples/spacing-example-2.svg" style={{ marginLeft: '24px' }} />
+
+</div>
+
+<div style={{ display: 'flex', alignItems: 'flex-start'}}>
+
+```jsx
+<Box spacingVertical={3} spacingTop={2}>
+/* equivalent to */
+<Box spacingBottom={3} spacingTop={2}>
+```
+
+<img src="/img/spacing-examples/spacing-example-3.svg" style={{ marginLeft: '24px' }} />
+
+</div>
+
+One-direction spacing prop has higher precendence over four-direction spacing prop.
+
+<div style={{ display: 'flex', alignItems: 'flex-start'}}>
+
+```jsx
+<Box spacing={3} spacingTop={2}>
+```
+
+<img src="/img/spacing-examples/spacing-example-4.svg" style={{ marginLeft: '24px' }} />
+
+</div>
+
+One-direction, two-direction, four-direction props all present.
+
+<div style={{ display: 'flex', alignItems: 'flex-start'}}>
+
+```jsx
+<Box spacing={3} spacingVertical={2} spacingTop={1}>
+{/* equivalent to */}
+<Box spacingHorizontal={3} spacingBottom={2} spacingTop={1}>
+```
+
+<img src="/img/spacing-examples/spacing-example-5.svg" style={{ marginLeft: '24px' }} />
+
+</div>
+
+In general, we recommend choosing the spacing props that create the least number of overrides for better readability. In the examples shown above, the equivalent versions are more clear.
+
+<!-- TODO (visual): add layout spacing examples, texts, list, side by side components -->
+
+## FAQ
+
+**Can I use spacing increments outside of what is provided by CDS?**
+
+CDS components like Box and layout components will only support spacing increments known to CDS. If your design calls for a larger spacing increment, please reach out to the CDS team about your use case and get the value incorporated if makes sense.

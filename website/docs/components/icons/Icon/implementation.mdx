@@ -1,0 +1,588 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/icons/Icon](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/icons/Icon.tsx)
+
+<ComponentDetails componentName="Icon" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Icon" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Icon" templateName="a11y" />
+
+## Props
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-animated" />
+
+### badge
+
+Add a badge to the top right of an icon
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="badge"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-badge" />
+
+### bordered
+
+A boolean flag indicating whether or not a border should be shown around an icon. This border will match color prop. Border is only allowed for sizes m and above.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="bordered"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-bordered" />
+
+### color
+
+Color of the icon when used as a foreground.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="color"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+  webOptions={[
+    'currentColor',
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-color" />
+
+### dangerouslySetColor <Badge variant="danger" order={1} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="dangerouslySetColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-dangerouslySetColor" />
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>>',
+    'RegisteredStyle<TextStyle>',
+    'TextStyle',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-dangerouslySetStyle" />
+
+### labeledBy <Badge variant="web" />
+
+If the icon is labelled by an independent element, then provide that elements id. This is used to set the aria-labelledby value on the icon svg. If the `title` prop is also provided, then `labeledBy` will be used to set the id on the `<title>` element.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="labeledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-labeledBy" />
+
+### name
+
+Name of the icon, as defined in Figma.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'add',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashUSD',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clock',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'deposit',
+    'diagonalRightArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'email',
+    'error',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'outline',
+    'paperAirplane',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'safe',
+    'search',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'trashCan',
+    'undo',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'wireTransfer',
+    'withdraw',
+  ]}
+  webOptions={[
+    'add',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashUSD',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clock',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'deposit',
+    'diagonalRightArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'email',
+    'error',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'outline',
+    'paperAirplane',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'safe',
+    'search',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'trashCan',
+    'undo',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'wireTransfer',
+    'withdraw',
+  ]}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-name" />
+
+### size
+
+Size for a given icon.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="size"
+  required={true}
+  defaultValue=""
+  mobileOptions={['l', 'm', 's', 'xs']}
+  webOptions={['l', 'm', 's', 'xs']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-size" />
+
+### spacing
+
+Apply inner spacing on all sides.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="spacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-spacing" />
+
+### spacingBottom
+
+Apply inner spacing on the bottom side.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="spacingBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-spacingBottom" />
+
+### spacingEnd
+
+Apply inner spacing on the trailing side.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="spacingEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-spacingEnd" />
+
+### spacingHorizontal
+
+Apply inner spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="spacingHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-spacingHorizontal" />
+
+### spacingStart
+
+Apply inner spacing on the leading side.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="spacingStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-spacingStart" />
+
+### spacingTop
+
+Apply inner spacing on the top side.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="spacingTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-spacingTop" />
+
+### spacingVertical
+
+Apply inner spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="spacingVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-spacingVertical" />
+
+### title <Badge variant="web" />
+
+Give the icon a description. It will show up in a tooltip after hovering over the icon for 3s. This is a default browser feature and very helpful to users to understand what the icon does.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-title" />
+
+<ComponentDetails componentName="Icon" templateName="outro" />

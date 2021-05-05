@@ -1,0 +1,48 @@
+import { ApiDetails } from "@cbhq/cds-website/components/ApiDetails";
+import { Badge } from "@cbhq/cds-website/components/Badge";
+import { ComponentDetails } from "@cbhq/cds-website/components/ComponentDetails";
+import { RightSidebar } from "@cbhq/cds-website/src/theme/RightSidebar";
+
+<RightSidebar toc={toc} />
+
+<% if (data.importPath && data.sourceUrl){ %>
+> [<%- data.importPath %>](<%- data.sourceUrl %>)
+<% } %>
+
+<ComponentDetails componentName="<%- data.displayName %>" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="<%- data.displayName %>" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="<%- data.displayName %>" templateName="a11y" />
+
+## Props
+
+<%_ data.props.map(({ heading, name, description, link, defaultValue, required, danger, mobileOptions, webOptions }) => { _%>
+### <%- heading %>
+
+
+<%- description %>
+<%- danger %>
+<% if (link){ %>
+**<%- link %>**
+<% } %>
+
+
+<ApiDetails
+  componentName="<%- data.displayName %>"
+  propertyName="<%- name %>"
+  required={<%- required %>}
+  defaultValue="<%- defaultValue %>"
+  mobileOptions={<%- JSON.stringify(mobileOptions) %>}
+  webOptions={<%- JSON.stringify(webOptions) %>}
+/>
+
+<ComponentDetails componentName="<%- data.displayName %>" templateName="prop-<%- name %>" />
+
+<% }) %>
+
+<ComponentDetails componentName="<%- data.displayName %>" templateName="outro" />

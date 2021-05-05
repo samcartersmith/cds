@@ -1,4 +1,6 @@
-import * as templatesMap from '@cbhq/cds-website/docs/components/examples';
+import { Suspense } from 'react';
+
+import * as templatesMap from '@cbhq/cds-website/data/templatesMap';
 
 /*
   See CDS contributing.md for details on adding content to API documentation
@@ -11,7 +13,13 @@ type ExampleProps<T extends ComponentName> = {
   templateName: keyof ExamplesMap[T];
 };
 
-export const ComponentDetails = <T extends ComponentName>({
+export const ComponentDetails = <T extends ComponentName>(props: ExampleProps<T>) => (
+  <Suspense fallback={null}>
+    <ComponentDetailsInner {...props} />
+  </Suspense>
+);
+
+export const ComponentDetailsInner = <T extends ComponentName>({
   componentName,
   templateName,
 }: ExampleProps<T>) => {

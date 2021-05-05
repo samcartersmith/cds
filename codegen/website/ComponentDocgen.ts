@@ -1,16 +1,16 @@
-import { kebabCase, pascalCase } from '@cbhq/cds-utils';
+import { pascalCase } from '@cbhq/cds-utils';
 import { ComponentDoc, PropItem } from 'react-docgen-typescript';
 
 import { PropOptions, PropertyDocgen, normalizeOptions } from './PropertyDocgen';
+import { ComponentDocgenParams } from './types';
 
 interface PropItemWithOptions extends PropItem {
   options: PropOptions;
 }
 
-interface Docgen {
+interface Docgen extends ComponentDocgenParams {
   web?: ComponentDoc;
   mobile?: ComponentDoc;
-  childPath: string;
 }
 
 type Platform = 'web' | 'mobile';
@@ -20,18 +20,20 @@ const isExtendedFromLib = (prop: PropItem) => {
 };
 
 export class ComponentDocgen {
-  componentName: string;
+  slug: string;
+  displayName: string;
   docgen: Docgen;
   web: PropItemWithOptions[] | undefined;
   mobile: PropItemWithOptions[] | undefined;
 
-  constructor(componentName: string, docgen: Docgen) {
-    const { web, mobile } = docgen;
+  constructor(params: Docgen) {
+    const { web, mobile, displayName, slug } = params;
     if (!web && !mobile) {
-      throw new Error(`No API docs was generated for ${componentName}.`);
+      throw new Error(`No API docs was generated for ${displayName}.`);
     }
-    this.componentName = componentName;
-    this.docgen = docgen;
+    this.slug = slug;
+    this.displayName = displayName;
+    this.docgen = params;
     this.web = web && this.convertObjectToArray(web.props);
     this.mobile = mobile && this.convertObjectToArray(mobile.props);
   }
@@ -42,18 +44,9 @@ export class ComponentDocgen {
     }, [] as PropItemWithOptions[]);
   }
 
-  get id() {
-    if (this.componentName === 'HStack' || this.componentName === 'VStack') {
-      return this.componentName.toLowerCase();
-    }
-
-    return kebabCase(this.componentName);
-  }
-
   get importPath() {
-    let endPath = this.docgen.childPath.replace(/\.(ts|tsx)$/, '');
-
-    if (endPath.endsWith('TextDisplay1')) {
+    let endPath = this.docgen.importPath.replace(/\.(ts|tsx)$/, '');
+    if (this.docgen.displayName === 'Text') {
       endPath = 'typography/Text*';
     }
 
@@ -71,7 +64,7 @@ export class ComponentDocgen {
   get sourceUrl() {
     return `https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/${
       !this.web ? 'mobile' : 'web'
-    }/${this.docgen.childPath}`;
+    }/${this.docgen.importPath}`;
   }
 
   findProp(props: PropItemWithOptions[] | undefined, name: string) {

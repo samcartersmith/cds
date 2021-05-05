@@ -12,7 +12,7 @@ import { createPaths } from './createPaths';
         data: { iconGlyphMap: iconData.glyphMap },
       },
       {
-        dest: 'website/docs/components/examples/Icon/data.ts',
+        dest: 'website/docs/data/iconData.ts',
         data: { iconNames: webIconData.names, iconSizes: webIconData.iconSizes },
       },
       ...webIconData.svgPaths,

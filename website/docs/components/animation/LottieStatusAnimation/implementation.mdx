@@ -1,0 +1,78 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/animation/LottieStatusAnimation](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/animation/LottieStatusAnimation.tsx)
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="a11y" />
+
+## Props
+
+### height
+
+We use aspect ratio to calculate the unset dimension based on the set dimension and a given aspect ratio. Only width or height is allowed, but not both.
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="height"
+  required={true}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="prop-height" />
+
+### onFinish
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="onFinish"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="prop-onFinish" />
+
+### status
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="status"
+  required={false}
+  defaultValue=""
+  mobileOptions={['cardSuccess', 'failure', 'loading', 'pending', 'success']}
+  webOptions={['cardSuccess', 'failure', 'loading', 'pending', 'success']}
+/>
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="prop-status" />
+
+### width
+
+We use aspect ratio to calculate the unset dimension based on the set dimension and a given aspect ratio. Only width or height is allowed, but not both.
+
+<ApiDetails
+  componentName="LottieStatusAnimation"
+  propertyName="width"
+  required={true}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="prop-width" />
+
+<ComponentDetails componentName="LottieStatusAnimation" templateName="outro" />
