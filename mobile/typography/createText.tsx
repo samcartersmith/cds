@@ -58,8 +58,7 @@ export const createText = (name: Typography) => {
     // TODO: replace with glyph
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     slashedZero,
-    // RN doesn't differentiate select behavior between text and all. Default to text to match web default. It behaves as true.
-    selectable = 'text',
+    selectable = 'none',
     underline,
     noWrap,
     transform,
@@ -158,7 +157,6 @@ export const createText = (name: Typography) => {
         numberOfLines={numberOfLines}
         {...ellipsizeProps}
         {...props}
-        // TODO (hannah): Add iOS support for selectable. https://awesomeopensource.com/project/Astrocoders/react-native-selectable-text
         selectable={selectable !== 'none'}
         style={style as TextStyle}
       >
