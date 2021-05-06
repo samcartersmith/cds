@@ -12,8 +12,12 @@ import { createPaths } from './createPaths';
         data: { iconGlyphMap: iconData.glyphMap },
       },
       {
-        dest: 'website/docs/data/iconData.ts',
-        data: { iconNames: webIconData.names, iconSizes: webIconData.iconSizes },
+        dest: 'website/data/iconData.ts',
+        data: { iconNames: iconData.names, iconSizes: iconData.sizes },
+      },
+      {
+        dest: 'web/icons/__stories__/iconData.ts',
+        data: { iconNames: iconData.names, iconSizes: iconData.sizes },
       },
       ...webIconData.svgPaths,
     ],
@@ -31,7 +35,7 @@ import { createPaths } from './createPaths';
         dest: 'common/types/IconName.ts',
         data: {
           types: {
-            IconName: webIconData.names,
+            IconName: iconData.names,
           },
         },
       },

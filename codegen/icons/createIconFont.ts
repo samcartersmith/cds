@@ -72,7 +72,7 @@ export const createIconFont = async () => {
 
   return {
     glyphMap,
-    names: Array.from(nameSet),
+    names: Array.from(nameSet.values()).sort((prev, next) => prev.localeCompare(next)),
     pixels: iconPixelSizes,
     sizes: iconSizes,
   };
