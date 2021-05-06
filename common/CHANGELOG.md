@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.9.0 (5/6/2021, 02:13 PM PST)
+
+#### 💥 Breaking
+
+- Selectable text on CDS mobile to false @katherinemartinez [#19513](https://github.cbhq.net/mono/repo/pull/19513)
+
 ## 0.8.4 (4/30/2021, 01:37 PM PST)
 
 #### 🐞 Fixes

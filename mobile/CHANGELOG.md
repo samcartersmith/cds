@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.11.0 (5/6/2021, 02:13 PM PST)
+
+#### 💥 Breaking
+
+- Selectable text on CDS mobile to false @katherinemartinez [#19513](https://github.cbhq.net/mono/repo/pull/19513)
+
+#### 📘 Misc
+
+- Automate docgen + add design/implementation tabs @katherinemartinez [#19036](https://github.cbhq.net/mono/repo/pull/19036), [CDS-482](https://jira.coinbase-corp.com/browse/CDS-482)
+
 ## 0.10.4 (5/3/2021, 04:31 PM PST)
 
 #### 🐞 Fixes
