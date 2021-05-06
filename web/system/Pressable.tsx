@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 import { cx } from 'linaria';
 
 import { scaledDownState } from '../styles/interactable';
+import { buttonResets } from '../styles/resetStyles';
 import { Interactable, InteractableProps } from './Interactable';
 
 export interface PressableProps extends React.AriaAttributes {
@@ -37,7 +38,7 @@ export const Pressable = forwardRef(function Pressable(
       aria-disabled={disabled || loading}
       onClick={onPress}
       {...props}
-      className={cx(!noScaleOnPress && scaledDownState, className)}
+      className={cx(buttonResets, !noScaleOnPress && scaledDownState, className)}
       disabled={disabled || loading}
       ref={ref}
     >
