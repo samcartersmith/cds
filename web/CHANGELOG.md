@@ -6,6 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.0 (5/6/2021, 06:47 AM PST)
+
+#### 💥 Breaking
+
+- Cleanup `IconButton` implementation. @miles-johnson [#19100](https://github.cbhq.net/mono/repo/pull/19100)
+
+#### 🚀 Updates
+
+- paletteValueToCssVar for Retail web migration @katherinemartinez [#19042](https://github.cbhq.net/mono/repo/pull/19042), [CDS-497](https://jira.coinbase-corp.com/browse/CDS-497)
+
+#### 📘 Misc
+
+- Automate docgen + add design/implementation tabs @katherinemartinez [#19036](https://github.cbhq.net/mono/repo/pull/19036), [CDS-482](https://jira.coinbase-corp.com/browse/CDS-482)
+
 ## 0.9.2 (4/30/2021, 01:37 PM PST)
 
 #### 🚀 Updates
