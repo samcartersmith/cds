@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.1 (5/6/2021, 08:02 PM PST)
+
+#### 🐞 Fixes
+
+- Reset pressable buttons. @miles-johnson [#19489](https://github.cbhq.net/mono/repo/pull/19489)
+
+#### 📘 Misc
+
+- Add percy snapshots for Icon component @katherinemartinez [#19494](https://github.cbhq.net/mono/repo/pull/19494), [CDS-517](https://jira.coinbase-corp.com/browse/CDS-517)
+
 ## 0.10.0 (5/6/2021, 06:47 AM PST)
 
 #### 💥 Breaking
