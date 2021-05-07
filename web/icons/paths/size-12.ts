@@ -639,11 +639,11 @@ export const sofort = {
 
 export const sortDown = { paths: ['M10 7l-4 5-4-5h8z'], viewBox: '0 0 12 12' };
 
-export const sortDownCenter = { paths: ['M2 9l4-5 4 5H2z'], viewBox: '0 0 12 12' };
+export const sortDownCenter = { paths: ['M2 4.5l4 5 4-5H2z'], viewBox: '0 0 12 12' };
 
 export const sortUp = { paths: ['M2 5l4-5 4 5H2z'], viewBox: '0 0 12 12' };
 
-export const sortUpCenter = { paths: ['M2 4.5l4 5 4-5H2z'], viewBox: '0 0 12 12' };
+export const sortUpCenter = { paths: ['M2 9l4-5 4 5H2z'], viewBox: '0 0 12 12' };
 
 export const soundOff = {
   paths: [

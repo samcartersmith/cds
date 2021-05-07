@@ -124,11 +124,6 @@
     "name": "Icon/sortUp_24",
     "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
-  "3512:123": {
-    "key": "bdabeaa01b56211eb536615ba5516d5ebc1fba09",
-    "name": "Icon/sortUpCenter_24",
-    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
-  },
   "3595:131": {
     "key": "c2746f3b93a9f48260030e395ef09ac20ba7c221",
     "name": "Icon/smartContract_24",
@@ -141,8 +136,8 @@
   },
   "3512:122": {
     "key": "60358e1fcc490ce5f086d1097985bab52021d608",
-    "name": "Icon/sortDownCenter_24",
-    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
+    "name": "Icon/sortUpCenter_24",
+    "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3121:67": {
     "key": "f49d435b52bc5897948e2ee6a5b3c91e0ff44227",
@@ -529,11 +524,6 @@
     "name": "Icon/sortUp_12",
     "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
-  "3512:121": {
-    "key": "acf63961cc248ce833dc2636bc0141fad21cb745",
-    "name": "Icon/sortUpCenter_12",
-    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
-  },
   "3595:130": {
     "key": "ae2573e0debc8379aa2f2393b52540933ab18d83",
     "name": "Icon/smartContract_12",
@@ -546,7 +536,7 @@
   },
   "3512:119": {
     "key": "104574d7a748ddec035023c70e266ee48fd873c3",
-    "name": "Icon/sortDownCenter_12",
+    "name": "Icon/sortUpCenter_12",
     "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3121:68": {
@@ -1039,11 +1029,6 @@
     "name": "Icon/sortUp_16",
     "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
-  "3512:120": {
-    "key": "373feaeed8ef062e7792bd339381bbf0d654d498",
-    "name": "Icon/sortUpCenter_16",
-    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
-  },
   "3595:129": {
     "key": "56cfd1a047228774794a3dae4aa7b0a37af13078",
     "name": "Icon/smartContract_16",
@@ -1056,7 +1041,7 @@
   },
   "3512:118": {
     "key": "8f3ac40af8bf038cfab046ce8b847b3bdcec4c2b",
-    "name": "Icon/sortDownCenter_16",
+    "name": "Icon/sortUpCenter_16",
     "description": "filter, sort, table, up, ⬆️, 🔝, 🔼"
   },
   "3121:64": {
@@ -2043,5 +2028,20 @@
     "key": "0ac848b857bd46abfe7afed65ebcc01fae0cc701",
     "name": "Icon/regulated_24",
     "description": ""
+  },
+  "3512:123": {
+    "key": "bdabeaa01b56211eb536615ba5516d5ebc1fba09",
+    "name": "Icon/sortDownCenter_24",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
+  },
+  "3512:121": {
+    "key": "acf63961cc248ce833dc2636bc0141fad21cb745",
+    "name": "Icon/sortDownCenter_12",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
+  },
+  "3512:120": {
+    "key": "373feaeed8ef062e7792bd339381bbf0d654d498",
+    "name": "Icon/sortDownCenter_16",
+    "description": "filter, sort, table, down, ⬇️, ⏬, 🔽"
   }
 }
