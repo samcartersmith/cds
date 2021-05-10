@@ -35,19 +35,19 @@ To use CDS packages outside of mono/repo, NPM packages are available through the
 
 ### Publishing to the NPM registry
 
-<!-- TODO: write script to move create package.json from scripts/package.json -->
-
-To publish to the [development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/)
+Continuous deploy is turned on for CDS package publishing. If you need to trigger a manual deploy, do the following
 
 1. Run
 
 ```bash
-ash_login
+ash_login (for dev)
+assume-role development eng-ops  (for production)
 ash deploy -p eng/shared/design-system/cloud
 ```
 
 2. Enter the number for the commit/package you want to deploy for prod or development registry
 
+3. Check that the package is published at[development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
 ## Commit Message Conventions
 
 To ensure the changelog is correctly generated and packages are correctly versioned and released, you must format your _squash_ commit message the following way:
@@ -131,13 +131,21 @@ make build.website
 ### Serve
 
 ```console
+ash_login
 make serve.website
 ```
 
 ### Deploy
 
 ```console
+ash_login
 make deploy.website
+```
+
+### Deploy Dev
+
+```console
+make deploy.website-dev
 ```
 
 ## How to auto generate component docs

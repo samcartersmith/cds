@@ -27,3 +27,18 @@ syn_deployable(
     continuous_deployment = True,
     target = "development",  # environment to deploy to
 )
+
+syn_deployable(
+    name = "deploy_dev",
+    assets = [
+        syn_file_asset(
+            name = "dev_bundled_source_asset",
+            src = ":bundled_source_zip",
+            bucket = "coinbase-design-system-website-development",
+            is_zip = True,
+        ),
+    ],
+    config_name = "feature",  # config_name (i.e. Codeflow's config_name)
+    continuous_deployment = True,
+    target = "development",  # environment to deploy to
+)
