@@ -1,7 +1,6 @@
 import React, { memo, useCallback } from 'react';
 
 import { BadgeValue, IconName } from '@cbhq/cds-common';
-import { mergeProps } from '@cbhq/cds-common/utils/mergeProps';
 import { emptyObject } from '@cbhq/cds-utils';
 import { cx } from 'linaria';
 
@@ -18,16 +17,28 @@ import { useMobileMenuChildrenContext } from './MobileMenu';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
 
+export interface NavigationListItemLinkProps
+  extends React.AriaAttributes,
+    React.RefAttributes<HTMLAnchorElement>,
+    Pick<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      'children' | 'className' | 'onBlur' | 'onFocus' | 'onMouseEnter' | 'onMouseLeave' | 'tabIndex'
+    > {
+  onPress?: React.MouseEventHandler;
+  to: string | { pathname?: string }; // Required for router Link's
+}
+
 export interface NavigationListItemProps extends PressableProps {
   active?: boolean;
   icon?: IconName;
   label: string;
+  to?: string;
   badge?: BadgeValue;
-  renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
+  as?: React.ComponentType<NavigationListItemLinkProps>;
 }
 
 export const NavigationListItem = memo(
-  ({ renderContainer, active, icon, label, badge, onPress }: NavigationListItemProps) => {
+  ({ as, active, icon, label, badge, to = '/', onPress }: NavigationListItemProps) => {
     const { isMobileMenuVisible, sidebarLayout } = useNavigation();
     const isChildOfMobileMenu = useMobileMenuChildrenContext();
     const isExpanded = sidebarLayout === 'expanded';
@@ -93,20 +104,19 @@ export const NavigationListItem = memo(
       <li>
         <Tooltip content={label} disabled={isExpanded} placement="right">
           {tooltipProps => {
-            const enhancedProps: React.HTMLAttributes<HTMLAnchorElement> = mergeProps(
-              tooltipProps,
-              {
-                className: cx(flexStyles, spacingStyles, sidebarItemStyles),
-                onPress,
-                // https://www.aditus.io/aria/aria-current/
-                ...(active ? ({ 'aria-current': 'page' } as const) : emptyObject),
-              }
-            );
+            const enhancedProps: NavigationListItemLinkProps = {
+              ...tooltipProps,
+              className: cx(flexStyles, spacingStyles, sidebarItemStyles),
+              onPress,
+              to,
+              // https://www.aditus.io/aria/aria-current/
+              ...(active ? ({ 'aria-current': 'page' } as const) : emptyObject),
+            };
 
             return (
               <Pressable
                 {...enhancedProps}
-                as={renderContainer || 'a'}
+                as={as || 'a'}
                 backgroundColor="secondary"
                 borderColor="secondary"
                 borderRadius="standard"

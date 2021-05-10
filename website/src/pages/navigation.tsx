@@ -85,34 +85,11 @@ export const NavigationExample: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem
-          renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="chartPieCircle"
-          label="Overview"
-          active
-        />
-        <NavigationListItem
-          renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="api"
-          label="Principles"
-          badge={3}
-        />
-        <NavigationListItem
-          renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="arrowsHorizontal"
-          label="Getting started"
-        />
-        <NavigationListItem
-          renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="pay"
-          label="Pay"
-        />
-        <NavigationListItem
-          renderContainer={props => <Link {...props} to={defaultRoute} />}
-          icon="gauge"
-          label="Support"
-          badge={12}
-        />
+        <NavigationListItem to="/" as={Link} icon="chartPieCircle" label="Overview" active />
+        <NavigationListItem to="/foo" as={Link} icon="api" label="Principles" badge={3} />
+        <NavigationListItem to="/bar" as={Link} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem to="/baz" as={Link} icon="pay" label="Pay" />
+        <NavigationListItem to="/qux" as={Link} icon="gauge" label="Support" badge={12} />
       </>
     );
 
@@ -120,26 +97,10 @@ export const NavigationExample: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem
-            renderContainer={props => <Link {...props} to={defaultRoute} />}
-            icon="bank"
-            label="Overview"
-          />
-          <NavigationListItem
-            renderContainer={props => <Link {...props} to={defaultRoute} />}
-            icon="calendar"
-            label="Color"
-          />
-          <NavigationListItem
-            renderContainer={props => <Link {...props} to={defaultRoute} />}
-            icon="document"
-            label="Typography"
-          />
-          <NavigationListItem
-            renderContainer={props => <Link {...props} to={defaultRoute} />}
-            icon="email"
-            label="Illustration"
-          />
+          <NavigationListItem as={Link} icon="bank" label="Overview" />
+          <NavigationListItem as={Link} icon="calendar" label="Color" />
+          <NavigationListItem as={Link} icon="document" label="Typography" />
+          <NavigationListItem as={Link} icon="email" label="Illustration" />
         </SidebarSection>
       </>
     );

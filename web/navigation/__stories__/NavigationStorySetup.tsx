@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
-import { useMemo, useState } from 'react';
+import { forwardRef, useMemo, useState } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
@@ -24,6 +24,7 @@ import {
   NavigationDisplayTitle,
   Sidebar,
   NavigationListItem,
+  NavigationListItemLinkProps,
   SidebarSection,
 } from '../index';
 
@@ -36,9 +37,16 @@ export const StoryMap = {
 
 // Avoids react-router errors. Just mock the link as its super lightweight.
 // If we need a more robust mock we can look into something like storybook-react-router.
-const MockLink = (props: any) => {
-  return <a {...props} href="#"></a>;
-};
+const MockLink = forwardRef<HTMLAnchorElement, NavigationListItemLinkProps>(function MockLink(
+  { children, to, ...props },
+  ref
+) {
+  return (
+    <a {...props} href={String(to)} ref={ref}>
+      {children}
+    </a>
+  );
+});
 
 export const DefaultTabs = () => (
   <Tabs>
@@ -89,34 +97,11 @@ export const NoTabsNoTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="chartPieCircle"
-          label="Overview"
-          active
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="api"
-          label="Principles"
-          badge={3}
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="arrowsHorizontal"
-          label="Getting started"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="pay"
-          label="Pay"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="gauge"
-          label="Support"
-          badge={12}
-        />
+        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
+        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
       </>
     );
 
@@ -124,26 +109,10 @@ export const NoTabsNoTitle: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="bank"
-            label="Overview"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="calendar"
-            label="Color"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Typography"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Illustration"
-          />
+          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
+          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
+          <NavigationListItem as={MockLink} icon="document" label="Typography" />
+          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -239,34 +208,11 @@ export const TabsNoTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="chartPieCircle"
-          label="Overview"
-          active
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="api"
-          label="Principles"
-          badge={3}
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="arrowsHorizontal"
-          label="Getting started"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="pay"
-          label="Pay"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="gauge"
-          label="Support"
-          badge={12}
-        />
+        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
+        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
       </>
     );
 
@@ -274,26 +220,10 @@ export const TabsNoTitle: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="bank"
-            label="Overview"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="calendar"
-            label="Color"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Typography"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="email"
-            label="Illustration"
-          />
+          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
+          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
+          <NavigationListItem as={MockLink} icon="document" label="Typography" />
+          <NavigationListItem as={MockLink} icon="email" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -387,34 +317,11 @@ export const TitleNoTabs: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="chartPieCircle"
-          label="Overview"
-          active
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="api"
-          label="Principles"
-          badge={3}
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="arrowsHorizontal"
-          label="Getting started"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="pay"
-          label="Pay"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="gauge"
-          label="Support"
-          badge={12}
-        />
+        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
+        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
       </>
     );
 
@@ -422,26 +329,10 @@ export const TitleNoTabs: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="bank"
-            label="Overview"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="calendar"
-            label="Color"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Typography"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Illustration"
-          />
+          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
+          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
+          <NavigationListItem as={MockLink} icon="document" label="Typography" />
+          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -548,34 +439,11 @@ export const TabsAndDisplayTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="chartPieCircle"
-          label="Overview"
-          active
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="api"
-          label="Principles"
-          badge={3}
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="arrowsHorizontal"
-          label="Getting started"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="pay"
-          label="Pay"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="gauge"
-          label="Support"
-          badge={12}
-        />
+        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
+        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
       </>
     );
 
@@ -583,26 +451,10 @@ export const TabsAndDisplayTitle: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="bank"
-            label="Overview"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="calendar"
-            label="Color"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Typography"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Illustration"
-          />
+          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
+          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
+          <NavigationListItem as={MockLink} icon="document" label="Typography" />
+          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -799,34 +651,11 @@ export const SidebarWithSections: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="chartPieCircle"
-          label="Overview"
-          active
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="api"
-          label="Principles"
-          badge={3}
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="arrowsHorizontal"
-          label="Getting started"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="pay"
-          label="Pay"
-        />
-        <NavigationListItem
-          renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-          icon="gauge"
-          label="Support"
-          badge={12}
-        />
+        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
+        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
       </>
     );
 
@@ -834,26 +663,10 @@ export const SidebarWithSections: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="bank"
-            label="Overview"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="calendar"
-            label="Color"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Typography"
-          />
-          <NavigationListItem
-            renderContainer={props => <MockLink {...props} to={defaultRoute} />}
-            icon="document"
-            label="Illustration"
-          />
+          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
+          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
+          <NavigationListItem as={MockLink} icon="document" label="Typography" />
+          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
         </SidebarSection>
       </>
     );
