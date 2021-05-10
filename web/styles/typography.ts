@@ -53,6 +53,7 @@ const overflow: CSSMap<TextProps['overflow']> = {
     white-space: nowrap;
   `,
   clip: css`
+    overflow-wrap: break-word;
     text-overflow: clip;
   `,
 };

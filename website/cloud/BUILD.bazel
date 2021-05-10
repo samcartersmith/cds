@@ -39,6 +39,5 @@ syn_deployable(
         ),
     ],
     config_name = "feature",  # config_name (i.e. Codeflow's config_name)
-    continuous_deployment = True,
     target = "development",  # environment to deploy to
 )

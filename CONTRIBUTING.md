@@ -131,7 +131,6 @@ make build.website
 ### Serve
 
 ```console
-ash_login
 make serve.website
 ```
 
@@ -145,6 +144,7 @@ make deploy.website
 ### Deploy Dev
 
 ```console
+ash_login
 make deploy.website-dev
 ```
 
