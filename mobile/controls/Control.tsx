@@ -121,7 +121,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       accessible
       accessibilityState={{
         disabled: pressDisabled,
-        checked: checked,
+        checked,
       }}
       accessibilityRole={accessibilityRole}
       accessibilityLabel={accessibilityLabel}

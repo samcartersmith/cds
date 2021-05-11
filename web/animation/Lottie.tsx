@@ -71,7 +71,7 @@ export const Lottie = memo(
           },
           pause: animationRef.current?.pause ?? noop,
           resume: play,
-          reset: reset,
+          reset,
         }),
         [source, play, animationRef, reset]
       );

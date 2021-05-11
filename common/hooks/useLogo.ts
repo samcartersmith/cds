@@ -38,7 +38,7 @@ export const useLogoWordmark = ({ foreground }: LogoWordmarkParams) => {
   return useMemo(() => {
     return {
       ...wordmarkData,
-      color: color,
+      color,
     };
   }, [color]);
 };
