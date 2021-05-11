@@ -5,6 +5,7 @@ import * as path from 'path';
 import webfont from 'webfont';
 
 import { iconPixelSizes, iconSizes } from '../configs/iconConfig';
+import { buildTemplates } from '../utils/buildTemplates';
 import { getSourcePath } from '../utils/getSourcePath';
 import { createIconSet } from './createIconSet';
 import { manifest } from './manifest';
@@ -25,20 +26,38 @@ interface GlyphData {
 
 export const createIconFont = async () => {
   const SVGS_DIR = await getSourcePath('codegen/icons/svg');
-  const FONTS_DIR = await getSourcePath('mobile/icons/font');
+  const MOBILE_FONTS_DIR = await getSourcePath('mobile/icons/font');
+  const WEB_FONTS_DIR = await getSourcePath('web/icons/font');
 
   const font = await webfont({
     centerHorizontally: true,
     files: path.join(SVGS_DIR, '*.svg'),
     fontHeight: 4096,
     fontName: 'CoinbaseIcons',
-    formats: ['ttf'],
+    formats: ['ttf', 'woff2'],
     normalize: true,
     startUnicode: 0xe000, // uE000
     prependUnicode: true,
   });
 
-  await fs.promises.writeFile(path.join(FONTS_DIR, 'CoinbaseIcons.ttf'), font.ttf);
+  const hash = Date.now();
+  const webFontName = `CoinbaseIcons-${hash}.woff2`;
+
+  await buildTemplates({
+    'fontFace.ejs': [
+      {
+        data: { fileName: webFontName },
+        dest: 'web/styles/iconFont.ts',
+      },
+    ],
+  });
+  // Delete old web icon font
+  fs.rmdirSync(WEB_FONTS_DIR, { recursive: true });
+  // Create web font directory so writeFile doesn't fail
+  fs.mkdirSync(WEB_FONTS_DIR, { recursive: true });
+  await fs.promises.writeFile(path.join(MOBILE_FONTS_DIR, 'CoinbaseIcons.ttf'), font.ttf);
+  await fs.promises.writeFile(path.join(WEB_FONTS_DIR, webFontName), font.woff2);
+
   const { nameSet, sizeMap } = createIconSet();
 
   (font.glyphsData as GlyphData[]).forEach(({ metadata }) => {

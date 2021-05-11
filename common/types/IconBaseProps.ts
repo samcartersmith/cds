@@ -14,6 +14,11 @@ export interface IconBaseProps extends SpacingProps {
    */
   bordered?: boolean;
   /**
+   * Testing purposes.
+   * @internal
+   **/
+  testID?: string;
+  /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetColor?: string;

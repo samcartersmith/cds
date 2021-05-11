@@ -9,7 +9,7 @@ import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { Box, BoxProps } from '../layout/Box';
-import { getColorFromSpectrumAlias } from '../utils/convertPalette';
+import { paletteValueToRgbaString } from '../utils/palette';
 
 export interface FallbackProps extends Omit<BoxProps, 'borderRadius' | 'height' | 'width'> {
   height: number;
@@ -73,13 +73,13 @@ export const Fallback = memo(function Fallback({
     return () => shimmerAnimation.current?.stop();
   }, [shimmerPosition]);
 
-  // Design agreed that getColorFromSpectrumAlias was better than adding these values to palette.
-  // Please do not look at this and think you should use getColorFromSpectrumAlias 🙏
+  // Design agreed that paletteValueTo was better than adding these values to palette.
+  // Please do not look at this and think you should use paletteValueTo 🙏
   const colorShimmer = useMemo(
     () => [
-      getColorFromSpectrumAlias(['gray60', 0.05], spectrum),
-      getColorFromSpectrumAlias(['gray60', 0], spectrum),
-      getColorFromSpectrumAlias(['gray60', 0.1], spectrum),
+      paletteValueToRgbaString(['gray60', 0.05], spectrum),
+      paletteValueToRgbaString(['gray60', 0], spectrum),
+      paletteValueToRgbaString(['gray60', 0.1], spectrum),
     ],
     [spectrum]
   );

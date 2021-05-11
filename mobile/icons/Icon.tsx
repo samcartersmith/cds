@@ -20,6 +20,7 @@ export const Icon = ({
   color = 'primary' as PaletteForeground,
   size,
   name,
+  testID,
   dangerouslySetColor,
   dangerouslySetStyle,
   // Spacing
@@ -64,7 +65,7 @@ export const Icon = ({
 
   if (name in iconGlyphMap && iconSize in iconGlyphMap[name]) {
     return (
-      <Box dangerouslySetStyle={boxStyles}>
+      <Box dangerouslySetStyle={boxStyles} testID={testID}>
         <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
           <TextComponent allowFontScaling={false} style={fontStyles}>
             {iconGlyphMap[name][iconSize]}

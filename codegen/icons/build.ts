@@ -1,14 +1,19 @@
 import { buildTemplates } from '../utils/buildTemplates';
 import { createIconFont } from './createIconFont';
-import { createPaths } from './createPaths';
 
 (async function () {
   const iconData = await createIconFont();
-  const webIconData = await createPaths();
   const templates = {
     'objectMap.ejs': [
+      // We ship web and mobile iconGlyphMap's separately to guarantee
+      // the font and glyphmap are always in sync. Once all consumers are in
+      // the monorepo we could move this to common
       {
         dest: 'mobile/icons/iconGlyphMap.ts',
+        data: { iconGlyphMap: iconData.glyphMap },
+      },
+      {
+        dest: 'web/icons/iconGlyphMap.ts',
         data: { iconGlyphMap: iconData.glyphMap },
       },
       {
@@ -19,7 +24,6 @@ import { createPaths } from './createPaths';
         dest: 'web/icons/__stories__/iconData.ts',
         data: { iconNames: iconData.names, iconSizes: iconData.sizes },
       },
-      ...webIconData.svgPaths,
     ],
     'typescript.ejs': [
       {

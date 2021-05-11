@@ -1,5 +1,6 @@
 import { css } from 'linaria';
 import '@cbhq/cds-fonts/fonts.css';
+import './iconFont';
 
 // focus visible polyfill
 import 'focus-visible';

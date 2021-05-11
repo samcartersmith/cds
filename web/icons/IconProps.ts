@@ -12,7 +12,7 @@ export interface IconProps extends IconBaseProps {
   title?: string;
   /**
    * If the icon is labelled by an independent element, then provide that element's id. This is
-   * used to set the aria-labelledby value on the icon svg. If the `title` prop is also provided,
+   * used to set the aria-labelledby value on the icon. If the `title` prop is also provided,
    * then `labeledBy` will be used to set the id on the `<title>` element.
    */
   labeledBy?: string;
