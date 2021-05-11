@@ -1,17 +1,17 @@
 import { ComponentProps } from 'react';
 
 import { defaultPalette } from '@cbhq/cds-common';
+import { rgba2hex } from '@cbhq/cds-common/utils/color';
 import { activityIndicator } from '@cbhq/cds-lottie-files/activityIndicator';
-import { rgba2hex } from '@cbhq/cds-utils';
 import { renderHook } from '@testing-library/react-hooks';
 import LottieView from 'lottie-react-native';
 
-import { convertPalette } from '../../utils/convertPalette';
+import { paletteConfigToRgbaStrings } from '../../utils/palette';
 import { useLottieColorFilters } from '../useLottieColorFilters';
 
 type LottieComponent = typeof LottieView;
 type ColorFiltersProp = ComponentProps<LottieComponent>['colorFilters'];
-const mockPalette = convertPalette(defaultPalette, 'light');
+const mockPalette = paletteConfigToRgbaStrings(defaultPalette, 'light');
 
 const getPaletteAliases = (colorFilters: ColorFiltersProp = []) => {
   return colorFilters.map(item => item.keypath);

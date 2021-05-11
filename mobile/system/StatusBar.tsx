@@ -1,10 +1,11 @@
 import React, { memo, useCallback, useMemo } from 'react';
 
-import { emptyObject, getColorLuminosity } from '@cbhq/cds-utils';
+import { getColorLuminosity } from '@cbhq/cds-common/utils/color';
+import { emptyObject } from '@cbhq/cds-utils';
 import { Platform, StatusBar as RNStatusBar, StatusBarStyle } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
-import { convertPalette } from '../utils/convertPalette';
+import { paletteConfigToRgbaStrings } from '../utils/palette';
 import { ThemeProviderProps } from './ThemeProvider';
 
 export type StatusBarProps = Omit<ThemeProviderProps, 'scale'> & {
@@ -20,7 +21,7 @@ export const useStatusBarStyle = ({
 }: StatusBarProps | undefined = emptyObject) => {
   const contextPalette = usePalette();
   return useMemo(() => {
-    const paletteOverride = palette && convertPalette(palette, spectrum ?? 'light');
+    const paletteOverride = palette && paletteConfigToRgbaStrings(palette, spectrum ?? 'light');
     const backgroundColor = paletteOverride?.background ?? contextPalette.background;
     const luminosity = getColorLuminosity(backgroundColor);
     return luminosity === 'light' ? 'dark-content' : 'light-content';

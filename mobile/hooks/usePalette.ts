@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 
 import { useSpectrum, UsePaletteFn, usePaletteConfig } from '@cbhq/cds-common';
 
-import { convertPalette } from '../utils/convertPalette';
+import { paletteConfigToRgbaStrings } from '../utils/palette';
 
 export const usePalette: UsePaletteFn = () => {
   const palette = usePaletteConfig();
   const spectrumMode = useSpectrum();
 
-  return useMemo(() => convertPalette(palette, spectrumMode), [palette, spectrumMode]);
+  return useMemo(() => paletteConfigToRgbaStrings(palette, spectrumMode), [palette, spectrumMode]);
 };

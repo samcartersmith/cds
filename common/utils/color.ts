@@ -1,7 +1,35 @@
-// Convert rgba string to 8 digit hex color. Opacity is ignored
-// https://jsfiddle.net/Mottie/xcqpF/1/light/
-export const rgba2hex = (rgba: string) => {
-  const rgbaMatch = rgba.match(
+import type { PaletteValue, SpectrumAliasWithOpacity, SpectrumHueStep } from '../types';
+
+const SPECTRUM_ALIAS_REGEX = /[a-z]+(\d+)/;
+
+/**
+ * Takes a paletteValue and extracts the hue step for the associated spectrum color.
+ * @param paletteValue - 'blue60' | ['blue60', 0.4]
+ * @returns number - 60
+ */
+export const extractHueStep = (paletteValue: PaletteValue): SpectrumHueStep => {
+  const [alias] = paletteValueToTuple(paletteValue);
+  const [, step] = alias.match(SPECTRUM_ALIAS_REGEX) || [];
+  return Number(step) as SpectrumHueStep;
+};
+
+/**
+ * Normalize palette value to be a spectrum alias & opacity tuple
+ * @param paletteValue - 'blue60' | ['blue60', 0.4]
+ * @returns spectrum alias & opacity tuple - ['blue60', 1] | ['blue60', 0.4]
+ */
+export const paletteValueToTuple = (paletteValue: PaletteValue): SpectrumAliasWithOpacity => {
+  return typeof paletteValue === 'string' ? [paletteValue, 1] : paletteValue;
+};
+
+/**
+ * Convert rgba string to 8 digit hex color. Opacity is ignored
+ * @param rgbaString - `rgba(255, 255, 255, 1)`
+ * @returns hex - `#ffffff`
+ * @example https://jsfiddle.net/Mottie/xcqpF/1/light/
+ */
+export const rgba2hex = (rgbaString: string) => {
+  const rgbaMatch = rgbaString.match(
     /^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i
   );
   return rgbaMatch && rgbaMatch.length === 4
@@ -12,6 +40,12 @@ export const rgba2hex = (rgba: string) => {
     : '';
 };
 
+/**
+ * Modify the alpha value of an rgba string
+ * @param rgbaString - `rgba(255, 255, 255, 1)`
+ * @param newOpacity - 0.5
+ * @returns rgbaString - `rgba(255, 255, 255, 0.5)`
+ */
 export const overrideAlpha = (rgbaString: string, newOpacity: number) => {
   return rgbaString.replace(/,[^,]+$/, `,${newOpacity})`);
 };
@@ -34,6 +68,12 @@ export const getColorLuminosity = (color: string) => {
 
 /**
  * These are not exported and only used internally for getColorLuminosity
+ */
+
+/**
+ * Convert a hex value to an rgb array
+ * @param hex - `#ffffff`
+ * @returns rgbArray - `[255, 255, 255, 1]`
  */
 const hex2RgbArray = (hex: string) => {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")

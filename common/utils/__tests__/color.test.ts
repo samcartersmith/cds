@@ -1,4 +1,10 @@
-import { rgba2hex, overrideAlpha, getColorLuminosity } from '../color';
+import {
+  rgba2hex,
+  overrideAlpha,
+  getColorLuminosity,
+  extractHueStep,
+  paletteValueToTuple,
+} from '../color';
 
 describe('color', () => {
   it('rgba2hex', () => {
@@ -21,5 +27,15 @@ describe('color', () => {
     expect(getColorLuminosity('#ffffff')).toEqual('light');
     expect(getColorLuminosity('rgb(255,255,255)')).toEqual('light');
     expect(getColorLuminosity('rgba(255,255,255,1)')).toEqual('light');
+  });
+
+  it('extractHueStep', () => {
+    expect(extractHueStep('blue30')).toEqual(30);
+    expect(extractHueStep(['blue60', 0.9])).toEqual(60);
+  });
+
+  it('paletteValueToTuple', () => {
+    expect(paletteValueToTuple('blue30')).toEqual(['blue30', 1]);
+    expect(paletteValueToTuple(['blue60', 0.9])).toEqual(['blue60', 0.9]);
   });
 });

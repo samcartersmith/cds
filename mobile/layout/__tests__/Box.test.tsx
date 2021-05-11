@@ -2,7 +2,7 @@ import { render, waitFor } from '@testing-library/react-native';
 import { Animated, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { getColorFromSpectrumAlias } from '../../utils/convertPalette';
+import { paletteValueToRgbaString } from '../../utils/palette';
 import { Box } from '../Box';
 
 describe('Box', () => {
@@ -93,7 +93,7 @@ describe('Box', () => {
     await waitFor(() => getByText('Child'));
 
     expect(getByText('Child').parent).toHaveStyle({
-      shadowColor: getColorFromSpectrumAlias('gray40', 'light'),
+      shadowColor: paletteValueToRgbaString('gray40', 'light'),
       shadowOpacity: 0.02,
       shadowRadius: 12,
     });
@@ -109,7 +109,7 @@ describe('Box', () => {
     await waitFor(() => getByText('Child'));
 
     expect(getByText('Child').parent).toHaveStyle({
-      shadowColor: getColorFromSpectrumAlias('gray40', 'light'),
+      shadowColor: paletteValueToRgbaString('gray40', 'light'),
       shadowOpacity: 0.12,
       shadowRadius: 24,
     });

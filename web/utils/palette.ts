@@ -1,6 +1,12 @@
 import { defaultPalette, PaletteValue, PartialPaletteConfig } from '@cbhq/cds-common';
 import { mapValues, mapKeys, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 
+/**
+ * `Please don't use this unless you absolutely have to. This is meant as last resort.`
+ * Takes a palette value and returns the rgb or rgba string with interpolated css variables.
+ * @param paletteValue - 'gray0'
+ * @returns rgb or rgba string - rgb(var(--gray0))
+ */
 export const paletteValueToCssVar = (paletteValue: PaletteValue) => {
   const [alias, opacity] = typeof paletteValue === 'string' ? [paletteValue] : paletteValue;
   const cssVariable = toCssVarFn(alias);
@@ -11,8 +17,22 @@ export const paletteValueToCssVar = (paletteValue: PaletteValue) => {
   }
 };
 
+/**
+ * `Please don't use this unless you absolutely have to. This is meant as last resort.`
+ * Takes a palette config and returns an object to access computed color values based on config.
+ * @param paletteConfig  - { background: 'gray0' }
+ * @returns { background: 'rgb(var(--gray0))' }
+ */
 export const paletteConfigToCssVars = (paletteConfig: PartialPaletteConfig) => {
   const config = { ...defaultPalette, ...paletteConfig };
-  const transformedValues = mapValues(config, paletteValue => paletteValueToCssVar(paletteValue));
-  return mapKeys(transformedValues, (_, key) => toCssVar(key));
+  return mapValues(config, paletteValue => paletteValueToCssVar(paletteValue));
+};
+
+/**
+ * Takes a palette config and returns an object to attach as inline style to assign css variables.
+ * @param paletteConfig - { background: 'gray0' }
+ * @returns { '--background': 'rgb(var(--gray0))' }
+ */
+export const setPaletteConfigToCssVars = (paletteConfig: PartialPaletteConfig) => {
+  return mapKeys(paletteConfigToCssVars(paletteConfig), (_, key) => toCssVar(key));
 };

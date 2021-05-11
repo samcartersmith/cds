@@ -1,9 +1,9 @@
-import { defaultPalette as palette, Spectrum } from '@cbhq/cds-common';
+import { defaultPalette as paletteConfig, Spectrum } from '@cbhq/cds-common';
 import { Alert, Linking, Platform } from 'react-native';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 
-import { paletteToHex } from './convertPalette';
 import { CustomTabsHelper } from './customTabsHelper';
+import { paletteValueToHex } from './palette';
 
 interface Options {
   spectrum: Spectrum;
@@ -20,16 +20,16 @@ export const openWebBrowser = async (url: string, options: Options) => {
   const browserConfig = Platform.select({
     android: {
       showTitle: true,
-      toolbarColor: paletteToHex(palette.positiveForeground, options.spectrum),
-      secondaryToolbarColor: paletteToHex(palette.lineHeavy, options.spectrum),
+      toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, options.spectrum),
+      secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, options.spectrum),
       enableUrlBarHiding: true,
       enableDefaultShare: true,
       forceCloseOnRedirection: false,
     },
     ios: {
       dismissButtonStyle: 'close',
-      preferredBarTintColor: paletteToHex(palette.positiveForeground, options.spectrum),
-      preferredControlTintColor: paletteToHex(palette.primary, options.spectrum),
+      preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, options.spectrum),
+      preferredControlTintColor: paletteValueToHex(paletteConfig.primary, options.spectrum),
       readerMode: true,
       animated: true,
       modalPresentationStyle: 'fullScreen',

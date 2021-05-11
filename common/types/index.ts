@@ -4,6 +4,7 @@ export * from './BorderWidth';
 export * from './BoxBaseProps';
 export * from './ButtonBaseProps';
 export * from './CheckboxGroupBaseProps';
+export * from './Color';
 export * from './ControlBaseProps';
 export * from './IconButtonBaseProps';
 export * from './DimensionStyles';

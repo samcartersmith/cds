@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { usePaletteConfig } from '@cbhq/cds-common';
 
-import { paletteConfigToCssVars } from '../utils/palette';
+import { setPaletteConfigToCssVars } from '../utils/palette';
 
 export const usePaletteToCssVars = () => {
   const paletteConfig = usePaletteConfig();
-  return useMemo(() => paletteConfigToCssVars(paletteConfig), [paletteConfig]);
+  return useMemo(() => setPaletteConfigToCssVars(paletteConfig), [paletteConfig]);
 };

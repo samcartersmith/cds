@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 
 import { LottieSource } from '@cbhq/cds-common';
-import { rgba2hex, mapKeys } from '@cbhq/cds-utils';
+import { rgba2hex } from '@cbhq/cds-common/utils/color';
+import { mapKeys } from '@cbhq/cds-utils';
 
 import { usePalette } from '../hooks/usePalette';
 import { LottieProps } from './LottieProps';

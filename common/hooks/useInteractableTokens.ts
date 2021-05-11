@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { usePaletteConfig } from '../palette/usePaletteConfig';
 import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactableOpacity';
 import { PaletteAlias, PaletteBackground } from '../types';
-import { extractHueStep } from '../utils/extractHueStep';
+import { extractHueStep } from '../utils/color';
 
 export const useInteractableTokens = (
   overlayColor?: PaletteBackground | 'transparent'
