@@ -26,10 +26,5 @@ export const global = css`
       -webkit-text-size-adjust: 100%; /* 2 */
       -webkit-tap-highlight-color: transparent; /* 3*/
     }
-    ul,
-    ol {
-      margin: 0;
-      padding: 0;
-    }
   }
 `;
