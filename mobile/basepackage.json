@@ -1,8 +1,13 @@
 {
   "name": "@cbhq/cds-mobile",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Coinbase Design System - Mobile Native",
-  "keywords": ["cds", "design system", "mobile", "native"],
+  "keywords": [
+    "cds",
+    "design system",
+    "mobile",
+    "native"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",

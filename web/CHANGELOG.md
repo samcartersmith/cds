@@ -6,6 +6,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.2 (5/11/2021, 10:48 AM PST)
+
+#### 🐞 Fixes
+
+- Make Text extend the props of its generic as element @hannah-jin [#19689](https://github.cbhq.net/mono/repo/pull/19689)
+- make overflow clip wrap break-word @hannah-jin [#19674](https://github.cbhq.net/mono/repo/pull/19674)
+- Fix navigation tooltips. Add `to` prop. @miles-johnson [#19547](https://github.cbhq.net/mono/repo/pull/19547)
+- fix sortDownCenter and sortUpCenter mixup. @jennifer-liu [#19553](https://github.cbhq.net/mono/repo/pull/19553)
+
+#### 📘 Misc
+
+- Enable ESLint rules from standards meetings @miles-johnson [#19667](https://github.cbhq.net/mono/repo/pull/19667)
+
 ## 0.10.1 (5/6/2021, 08:02 PM PST)
 
 #### 🐞 Fixes

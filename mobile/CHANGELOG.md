@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.11.1 (5/11/2021, 10:48 AM PST)
+
+#### 🐞 Fixes
+
+- fix sortDownCenter and sortUpCenter mixup. @jennifer-liu [#19553](https://github.cbhq.net/mono/repo/pull/19553)
+
+#### 📘 Misc
+
+- Enable ESLint rules from standards meetings @miles-johnson [#19667](https://github.cbhq.net/mono/repo/pull/19667)
+
 ## 0.11.0 (5/6/2021, 02:13 PM PST)
 
 #### 💥 Breaking
