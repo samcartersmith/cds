@@ -23,6 +23,7 @@ export * from './Palette';
 export * from './RadioGroupBaseProps';
 export * from './React';
 export * from './Scale';
+export * from './Shape';
 export * from './SpacingProps';
 export * from './SpacingScale';
 export * from './Spectrum';

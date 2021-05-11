@@ -11,10 +11,14 @@ import BoxScreen from './src/Box';
 import ButtonScreen from './src/Button';
 import ButtonGroupScreen from './src/ButtonGroup';
 import CheckboxScreen from './src/Checkbox';
+import ContentCellScreen from './src/ContentCell';
+import ContentCellFallbackScreen from './src/ContentCellFallback';
 import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import LinkScreen from './src/Link';
+import ListCellScreen from './src/ListCell';
+import ListCellFallbackScreen from './src/ListCellFallback';
 import LottieScreen from './src/Lottie';
 import PressableScreen from './src/Pressable';
 import RadioGroupScreen from './src/RadioGroup';
@@ -70,12 +74,16 @@ const App = () => {
           <Stack.Screen name="Button" component={ButtonScreen} />
           <Stack.Screen name="ButtonGroup" component={ButtonGroupScreen} />
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
+          <Stack.Screen name="ContentCell" component={ContentCellScreen} />
+          <Stack.Screen name="ContentCellFallback" component={ContentCellFallbackScreen} />
           <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
           <Stack.Screen name="Switch" component={SwitchScreen} />
           <Stack.Screen name="Divider" component={DividerScreen} />
           <Stack.Screen name="Spacer" component={SpacerScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
           <Stack.Screen name="Link" component={LinkScreen} />
+          <Stack.Screen name="ListCell" component={ListCellScreen} />
+          <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />
           <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />
           <Stack.Screen name="Pressable" component={PressableScreen} />

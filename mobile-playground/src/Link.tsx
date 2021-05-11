@@ -1,8 +1,8 @@
+import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { Link } from '@cbhq/cds-mobile/typography/Link';
+import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { TextLabel1 } from '@cbhq/cds-mobile/typography/TextLabel1';
-import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
-import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';

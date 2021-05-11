@@ -7,6 +7,7 @@ const templates = {
   'common/types/Scale.ts': {
     types: {
       Scale: scales,
+      ScaleDensity: ['dense', 'normal'],
     },
   },
   'common/types/Spectrum.ts': {
