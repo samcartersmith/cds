@@ -165,7 +165,8 @@ const NavigationContent: React.FC<NavigationProps> = memo(
           <VStack
             background
             spacingTop={gutter}
-            spacingHorizontal={appContentSpacing}
+            spacingHorizontal={isMobileMenuVisible ? 0 : appContentSpacing}
+            alignItems="center"
             minHeight="100vh"
           >
             {isMobileMenuVisible ? (

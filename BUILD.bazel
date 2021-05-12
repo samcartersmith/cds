@@ -348,7 +348,7 @@ percy_storybook(
     name = "storybook_percy",
     args = [
         "-b eng/shared/design-system/storybook_build_for_percy",
-        "--widths=320",
+        "--widths=320,768,1170",
     ],
     data = ["//eng/shared/design-system:storybook_build_for_percy"],
 )
