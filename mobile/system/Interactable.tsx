@@ -1,5 +1,6 @@
 import React, { useMemo, memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import {
   borderRadius as borderRadiusTokens,
@@ -11,9 +12,8 @@ import { Animated, Falsy, Platform, StyleSheet, View, ViewStyle } from 'react-na
 
 import { usePalette } from '../hooks/usePalette';
 
-export interface InteractableProps extends InteractableBaseProps {
+export interface InteractableProps extends InteractableBaseProps, SharedProps {
   children: NonNullable<React.ReactNode>;
-  testID?: string;
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
 }

@@ -31,6 +31,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
     underline,
     noWrap,
     overflow,
+    testID,
     transform,
     dangerouslySetClassName,
     // Spacing
@@ -61,6 +62,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
 
     return createElement(as, {
       ...props,
+      'data-testid': testID,
       children,
       className: cx(
         typographyResets,

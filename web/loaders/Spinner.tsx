@@ -1,11 +1,12 @@
 import React, { useMemo, memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { PaletteForeground } from '@cbhq/cds-common/types/Palette';
 
 import { usePalette } from '../hooks/usePalette';
 import * as styles from './styles';
 
-export interface SpinnerProps {
+export interface SpinnerProps extends SharedProps {
   /**
    * The pixel size of the spinner. Restricting spinner
    * to have a n:n aspect ratio (square basically)
@@ -15,11 +16,6 @@ export interface SpinnerProps {
    * Color of spinner
    */
   color: PaletteForeground;
-  /**
-   * Testing purposes.
-   * @internal
-   **/
-  testID?: string;
 }
 
 export const Spinner = memo(function Spinner({ size, color, testID }: SpinnerProps) {
@@ -44,7 +40,7 @@ export const Spinner = memo(function Spinner({ size, color, testID }: SpinnerPro
       aria-live="polite"
       style={spinnerStyle}
       className={styles.spinner.base}
-    ></div>
+    />
   );
 });
 

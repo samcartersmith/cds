@@ -7,6 +7,7 @@ import React, {
   FieldsetHTMLAttributes,
 } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
@@ -16,7 +17,8 @@ import { Checkbox, CheckboxProps } from './Checkbox';
 
 export interface CheckboxGroupProps<T extends string>
   extends FilteredHTMLAttributes<FieldsetHTMLAttributes<HTMLFieldSetElement>, 'onChange'>,
-    CheckboxGroupBaseProps<T> {
+    CheckboxGroupBaseProps<T>,
+    SharedProps {
   /** Handle change event when pressing on a checkbox option. */
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
@@ -30,6 +32,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     selectedValues,
     onChange,
     name,
+    testID,
     ...restProps
   }: CheckboxGroupProps<T>,
   ref: React.ForwardedRef<HTMLFieldSetElement>
@@ -54,13 +57,14 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
       checked: (typeof value !== 'undefined' && selectedValues.has(value)) ?? child.props.checked,
       onChange,
       id,
+      testID: testID ? `${testID}-${id}` : undefined,
     });
   });
 
   // TODO (hannah): Update default styles once Caroline has the design ready. (Add default distance between
   // checkboxes.)
   return (
-    <fieldset ref={ref} className={checkboxReset} {...restProps}>
+    <fieldset ref={ref} className={checkboxReset} data-testid={testID} {...restProps}>
       {label}
       {optionCheckboxes}
     </fieldset>

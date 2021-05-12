@@ -1,10 +1,10 @@
-import type { PaletteForeground, IconBaseProps } from '@cbhq/cds-common';
+import type { PaletteForeground, IconBaseProps, SharedProps } from '@cbhq/cds-common';
 import type { TextStyle } from 'react-native';
 
 import type { DangerouslySetStyle } from '../types';
 import { BadgeProps } from './Badge';
 
-export interface IconProps extends IconBaseProps, DangerouslySetStyle<TextStyle> {
+export interface IconProps extends IconBaseProps, SharedProps, DangerouslySetStyle<TextStyle> {
   /**
    * Add a badge to the top right of an icon
    */

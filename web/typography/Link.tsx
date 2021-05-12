@@ -1,5 +1,6 @@
 import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps } from '@cbhq/cds-common/types/LinkBaseProps';
 import { css, cx } from 'linaria';
 import { Button as ReakitButton } from 'reakit/Button';
@@ -14,6 +15,7 @@ const cursorPointer = css`
 
 export interface LinkProps
   extends LinkBaseProps,
+    SharedProps,
     Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'color'> {
   /**
    * If true, it opens the link in a new window.

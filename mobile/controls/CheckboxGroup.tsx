@@ -1,5 +1,6 @@
 import React, { Children, cloneElement, forwardRef, isValidElement, memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 import { View, ViewProps } from 'react-native';
@@ -7,7 +8,8 @@ import { View, ViewProps } from 'react-native';
 import { CheckboxProps } from './Checkbox';
 
 export type CheckboxGroupProps<T extends string> = Omit<ViewProps, 'style' | 'children'> &
-  CheckboxGroupBaseProps<T> & {
+  CheckboxGroupBaseProps<T> &
+  SharedProps & {
     /** Handle change events when user tap on the checkboxes */
     onChange?: (value?: T) => void;
   };
@@ -20,6 +22,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     accessibilityLabel,
     onChange,
     selectedValues,
+    testID,
     ...restProps
   }: CheckboxGroupProps<T>,
   ref: React.ForwardedRef<View>
@@ -37,18 +40,17 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     if (isDevelopment() && typeof value === 'undefined') {
       console.error('Checkboxes inside CheckboxGroup should have values.');
     }
-    const testID = child.props.testID || `checkbox-group-${child.props.value || index}`;
     return cloneElement(child, {
       checked: (typeof value !== 'undefined' && selectedValues.has(value)) ?? child.props.checked,
       onChange,
-      testID,
+      testID: testID ? `${testID}-${child.props.value || index}` : undefined,
     });
   });
 
   // TODO (hannah): Update default styles once Caroline has the design ready. (Add default distance between
   // checkboxes.)
   return (
-    <View ref={ref} accessible accessibilityRole="combobox" {...restProps}>
+    <View ref={ref} accessible accessibilityRole="combobox" testID={testID} {...restProps}>
       {label}
       {optionCheckboxes}
     </View>

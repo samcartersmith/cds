@@ -11,6 +11,4 @@ export interface ControlBaseProps<T extends string> {
   readOnly?: boolean;
   /** Value of the option. Useful for multiple choice. */
   value?: T;
-  /** Used to locate this element in end-to-end tests. */
-  testID?: string;
 }

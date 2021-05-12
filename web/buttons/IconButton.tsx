@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import { IconButtonBaseProps } from '@cbhq/cds-common';
+import { IconButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { cx } from 'linaria';
 import { Button as ReakitButton } from 'reakit/Button';
@@ -10,7 +10,7 @@ import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../styles/flex';
 import { Pressable, PressableProps } from '../system/Pressable';
 
-export interface IconButtonProps extends IconButtonBaseProps, PressableProps {
+export interface IconButtonProps extends IconButtonBaseProps, PressableProps, SharedProps {
   as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
 }
 
@@ -37,7 +37,7 @@ export const IconButton = forwardRef(
     return (
       <Pressable
         aria-label={accessibilityLabel}
-        data-testid={testID}
+        testID={testID}
         as={as || ReakitButton}
         transparentWhileInactive={transparent}
         backgroundColor={backgroundColor}

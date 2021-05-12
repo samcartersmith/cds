@@ -1,16 +1,19 @@
 import React, { Children, cloneElement, memo } from 'react';
 
-import { ButtonGroupBaseProps } from '@cbhq/cds-common';
+import { ButtonGroupBaseProps, SharedProps } from '@cbhq/cds-common';
 import { View, StyleSheet } from 'react-native';
 
 import { HStack, VStack } from '../layout';
+
+export interface ButtonGroupProps extends ButtonGroupBaseProps, SharedProps {}
 
 export const ButtonGroup = memo(function ButtonGroup({
   accessibilityLabel,
   block,
   children,
+  testID,
   vertical,
-}: ButtonGroupBaseProps) {
+}: ButtonGroupProps) {
   const Stack = vertical ? VStack : HStack;
 
   return (
@@ -20,6 +23,7 @@ export const ButtonGroup = memo(function ButtonGroup({
       alignItems="stretch"
       flexWrap="nowrap"
       gap={2}
+      testID={testID}
     >
       {Children.map(children, child =>
         child ? (

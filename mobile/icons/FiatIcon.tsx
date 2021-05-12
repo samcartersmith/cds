@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import { IconName, IconSize } from '@cbhq/cds-common';
+import { IconName, IconSize, SharedProps } from '@cbhq/cds-common';
 
 import { Icon } from './Icon';
 
@@ -13,7 +13,7 @@ const currencyIcon: CurrencyIcon = {
   GBP: 'cashGBP',
 };
 
-interface FiatIconProps {
+interface FiatIconProps extends SharedProps {
   currencyCode: string;
   size?: Exclude<IconSize, 'xs'>;
 }
@@ -21,6 +21,7 @@ interface FiatIconProps {
 export const FiatIcon: FunctionComponent<FiatIconProps> = ({
   currencyCode,
   size = 'l',
+  testID,
 }: FiatIconProps) => {
   const iconName = currencyIcon[currencyCode];
 
@@ -28,5 +29,5 @@ export const FiatIcon: FunctionComponent<FiatIconProps> = ({
     return null;
   }
 
-  return <Icon size={size} name={iconName} bordered={size === 'l'} />;
+  return <Icon size={size} name={iconName} bordered={size === 'l'} testID={testID} />;
 };

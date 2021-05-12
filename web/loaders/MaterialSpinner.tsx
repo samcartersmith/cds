@@ -1,20 +1,16 @@
 import React, { memo, useMemo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { PaletteForeground } from '@cbhq/cds-common/types/Palette';
 
 import { usePalette } from '../hooks/usePalette';
 import * as styles from './styles';
 
-export interface MaterialSpinnerProp {
+export interface MaterialSpinnerProp extends SharedProps {
   /** Size of the spinner */
   size: number;
   /** Color of the spinner */
   color: PaletteForeground;
-  /**
-   * Testing purposes.
-   * @internal
-   **/
-  testID?: string;
 }
 
 export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerProp) => {

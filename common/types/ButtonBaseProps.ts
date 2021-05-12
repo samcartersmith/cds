@@ -22,11 +22,6 @@ export interface ButtonBaseProps {
   name?: string;
   /** Icon to render at the start of the button. */
   startIcon?: IconName;
-  /**
-   * Testing purposes.
-   * @internal
-   **/
-  testID?: string;
   /** Mark the background and border as transparent until interacted with. */
   transparent?: boolean;
   /**

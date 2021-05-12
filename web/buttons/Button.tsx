@@ -40,7 +40,6 @@ export const Button = forwardRef(function Button(
     loading,
     onPress,
     startIcon,
-    testID,
     transparent,
     type = 'button',
     variant = 'primary',
@@ -54,7 +53,6 @@ export const Button = forwardRef(function Button(
   return (
     <Pressable
       aria-label={accessibilityLabel}
-      data-test-id={testID}
       {...props}
       as={ReakitButton}
       transparentWhileInactive={transparent}

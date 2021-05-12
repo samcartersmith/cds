@@ -1,6 +1,6 @@
 import React, { useMemo, memo } from 'react';
 
-import { PinningDirection } from '@cbhq/cds-common';
+import { PinningDirection, SharedProps } from '@cbhq/cds-common';
 import { overrideAlpha } from '@cbhq/cds-common/utils/color';
 import { StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -8,14 +8,14 @@ import LinearGradient from 'react-native-linear-gradient';
 import { usePalette } from '../hooks/usePalette';
 import { usePinStyles } from '../hooks/usePinStyles';
 
-export interface OverflowGradientProps {
+export interface OverflowGradientProps extends SharedProps {
   pin?: PinningDirection;
 }
 
 const start = { x: 0, y: 0 } as const;
 const end = { x: 1, y: 0 } as const;
 
-export const OverflowGradient = memo(({ pin = 'right' }: OverflowGradientProps) => {
+export const OverflowGradient = memo(({ pin = 'right', testID }: OverflowGradientProps) => {
   const palette = usePalette();
   const pinStyles = usePinStyles(pin);
   const gradientColors = useMemo(
@@ -34,6 +34,7 @@ export const OverflowGradient = memo(({ pin = 'right' }: OverflowGradientProps) 
       colors={gradientColors}
       start={start}
       end={end}
+      testID={testID}
     />
   );
 });

@@ -1,5 +1,6 @@
 import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
 import { css, cx } from 'linaria';
@@ -12,10 +13,8 @@ import { TextBody } from '../typography/TextBody';
 import { isRtl } from '../utils/isRtl';
 
 export interface ControlProps
-  extends FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'> {
-  /** Used to locate this element in end-to-end tests. */
-  testID?: string;
-}
+  extends FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'>,
+    SharedProps {}
 
 interface ControlInternalProps<T extends string>
   extends ControlProps,
@@ -67,7 +66,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     'aria-disabled': disabled,
     'aria-readonly': readOnly,
     'aria-required': required,
-    'data-test-id': testID,
+    'data-testid': testID,
     ...htmlProps,
   };
 
@@ -79,6 +78,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       borderRadius={borderRadius}
       borderWidth={borderWidth}
       disabled={disabled || readOnly}
+      testID={testID ? `${testID}-parent` : undefined}
       wrapWithLayeredElements
     >
       <>

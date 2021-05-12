@@ -1,5 +1,7 @@
 import React, { memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
+
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable } from '../system/Pressable';
@@ -7,7 +9,7 @@ import { CellAccessoryProps } from './CellAccessory';
 import { CellMedia, CellMediaProps } from './CellMedia';
 import { MediaFallback } from './MediaFallback';
 
-export interface CellCommonProps {
+export interface CellCommonProps extends SharedProps {
   /* Media (icon, asset, image, etc) to display at the start of the cell. */
   media?: React.ReactElement<CellMediaProps>;
   /** Is the cell disabled? Will apply opacity and disable interaction. */
@@ -16,8 +18,6 @@ export interface CellCommonProps {
   selected?: boolean;
   /** Callback fired when the cell is pressed. */
   onPress?: () => void;
-  /** @internal Testing purposes. */
-  testID?: string;
 }
 
 export interface CellProps extends CellCommonProps {

@@ -1,6 +1,6 @@
 import { forwardRef, createElement } from 'react';
 
-import type { BoxBaseProps, ForwardedRef } from '@cbhq/cds-common';
+import type { BoxBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import { css, cx } from 'linaria';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
@@ -62,6 +62,7 @@ const overflowStyles: CSSMap<BoxProps['overflow']> = {
 
 export interface BoxProps<As extends BoxElement = 'div'>
   extends Omit<BoxBaseProps, 'position'>,
+    SharedProps,
     React.AriaAttributes {
   /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
   as?: As;
@@ -94,6 +95,7 @@ export const Box = forwardRef(
       overflow,
       role,
       rounded,
+      testID,
       // Flex
       alignContent,
       alignItems,
@@ -144,6 +146,7 @@ export const Box = forwardRef(
       as,
       {
         ...restProps,
+        'data-testid': testID,
         ref: forwardedRef,
         className: cx(
           getFlexStyles({

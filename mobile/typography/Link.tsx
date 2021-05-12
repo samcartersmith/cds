@@ -1,5 +1,6 @@
 import React, { useCallback, memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps } from '@cbhq/cds-common/types/LinkBaseProps';
 import { GestureResponderEvent } from 'react-native';
 
@@ -7,7 +8,7 @@ import { useOpenExternalUrl } from '../hooks/useOpenExternalUrl';
 import { PressableOpacity } from '../system/PressableOpacity';
 import { TextHeadline } from './TextHeadline';
 
-export interface LinkProps extends LinkBaseProps {
+export interface LinkProps extends LinkBaseProps, SharedProps {
   onPress?: (event: GestureResponderEvent) => void;
 }
 
@@ -24,12 +25,11 @@ export const Link = memo(
     );
 
     return (
-      <PressableOpacity feedback="light" onPress={openUrlOnPress}>
+      <PressableOpacity feedback="light" onPress={openUrlOnPress} testID={testID}>
         <TextHeadline
           color={color}
           accessibilityHint={accessibilityLabel}
           accessibilityLabel={accessibilityLabel}
-          testID={testID}
         >
           {children}
         </TextHeadline>

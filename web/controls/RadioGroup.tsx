@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useCallback } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
@@ -49,25 +50,24 @@ export const useHandleRadioSelect = function <T extends string>(onChange?: (valu
 
 export interface RadioGroupProps<T extends string>
   extends FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange'>,
-    RadioGroupBaseProps<T> {
+    RadioGroupBaseProps<T>,
+    SharedProps {
   /** * Field name of the multiple choice radio group. */
   name: string;
   /** id of the element that labels the radio group */
   'aria-labelledby'?: string;
   /** Handle change event when pressing on a radio option. */
   onChange?: (value: T) => void;
-  /** Used to locate this element in end-to-end tests. */
-  testID?: string;
 }
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
-  { label, selectedValue, onChange, options, name, ...restProps }: RadioGroupProps<T>,
+  { label, selectedValue, onChange, options, name, testID, ...restProps }: RadioGroupProps<T>,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
   const handleSelect = useHandleRadioSelect<T>(onChange);
 
   return (
-    <div role="radiogroup" ref={ref} {...restProps}>
+    <div role="radiogroup" ref={ref} data-testid={testID} {...restProps}>
       {label}
       {Object.entries<string>(options).map(([value, optionLabel]) => (
         <Radio
@@ -77,6 +77,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
           name={name}
           checked={selectedValue === value}
           onChange={handleSelect}
+          testID={testID ? `${testID}-${value}` : undefined}
         >
           {optionLabel}
         </Radio>

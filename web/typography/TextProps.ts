@@ -1,6 +1,6 @@
-import type { TextBaseProps, PaletteForeground } from '@cbhq/cds-common';
+import type { TextBaseProps, PaletteForeground, SharedProps } from '@cbhq/cds-common';
 
-export interface TextProps extends TextBaseProps {
+export interface TextProps extends TextBaseProps, SharedProps {
   /**
    * Set CSS display attribute.
    */

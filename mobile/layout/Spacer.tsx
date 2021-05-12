@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { SpacerBaseProps } from '@cbhq/cds-common/types/SpacerBaseProps';
 import { getSpacerStyle } from '@cbhq/cds-common/utils/getSpacerStyle';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
@@ -7,7 +8,10 @@ import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 import { useSpacingScale } from '../hooks/useSpacingScale';
 import type { DangerouslySetStyle, OmitStyle } from '../types';
 
-export type SpacerProps = SpacerBaseProps & OmitStyle<ViewProps> & DangerouslySetStyle<ViewStyle>;
+export type SpacerProps = SpacerBaseProps &
+  SharedProps &
+  OmitStyle<ViewProps> &
+  DangerouslySetStyle<ViewStyle>;
 
 /**
  * Spacer component is for adding spacing gap between two dom nodes. If no horizontal or vertical

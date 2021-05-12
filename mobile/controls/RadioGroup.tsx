@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 
-import { useScale } from '@cbhq/cds-common';
+import { SharedProps, useScale } from '@cbhq/cds-common';
 import type { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
@@ -73,22 +73,27 @@ export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
 
 export interface RadioGroupProps<T extends string>
   extends AccessibilityProps,
-    RadioGroupBaseProps<T> {
+    RadioGroupBaseProps<T>,
+    SharedProps {
   /** Handle change event when pressing on a radio option. */
   onChange?: RadioProps<T>['onChange'];
-  /** Used to locate this element in end-to-end tests. */
-  testID?: string;
 }
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
-  { label, selectedValue, onChange, options, ...restProps }: RadioGroupProps<T>,
+  { label, selectedValue, onChange, options, testID, ...restProps }: RadioGroupProps<T>,
   ref: React.ForwardedRef<View>
 ) {
   return (
-    <View accessibilityRole="radiogroup" ref={ref} {...restProps}>
+    <View accessibilityRole="radiogroup" ref={ref} testID={testID} {...restProps}>
       {label}
       {entries<RadioGroupProps<T>['options']>(options).map(([value, optionLabel]) => (
-        <Radio<T> key={value} value={value} checked={selectedValue === value} onChange={onChange}>
+        <Radio<T>
+          key={value}
+          value={value}
+          checked={selectedValue === value}
+          onChange={onChange}
+          testID={testID ? `${testID}-${value}` : undefined}
+        >
           {optionLabel}
         </Radio>
       ))}

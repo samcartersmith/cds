@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { IconName } from '@cbhq/cds-common';
+import { IconName, SharedProps } from '@cbhq/cds-common';
 import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
 import { ImageSourcePropType } from 'react-native';
 
@@ -9,19 +9,20 @@ import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
 export type CellMediaSource = string | ImageSourcePropType;
+
 export type CellMediaType = 'asset' | 'photo' | 'image' | 'icon';
 
-export type CellMediaProps =
-  | {
-      type: 'icon';
-      name: IconName;
-      testID?: string;
-    }
-  | {
-      type: 'asset' | 'photo' | 'image';
-      source: CellMediaSource;
-      testID?: string;
-    };
+export interface CellMediaIconProps extends SharedProps {
+  type: 'icon';
+  name: IconName;
+}
+
+export interface CellMediaOtherProps extends SharedProps {
+  type: 'asset' | 'photo' | 'image';
+  source: CellMediaSource;
+}
+
+export type CellMediaProps = CellMediaIconProps | CellMediaOtherProps;
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   let size = mediaSize;

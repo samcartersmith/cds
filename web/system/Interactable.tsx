@@ -1,6 +1,6 @@
 import React, { createElement, useMemo, forwardRef } from 'react';
 
-import { usePaletteConfig } from '@cbhq/cds-common';
+import { SharedProps, usePaletteConfig } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { cx } from 'linaria';
@@ -27,7 +27,10 @@ export type InteractableInheritedProps = Omit<
   'as' | 'className' | 'css' | 'style'
 >;
 
-export interface InteractableProps extends InteractableBaseProps, InteractableInheritedProps {
+export interface InteractableProps
+  extends InteractableBaseProps,
+    InteractableInheritedProps,
+    SharedProps {
   children: NonNullable<React.ReactNode>;
   /** Element or component to render the container as. */
   as:
@@ -58,6 +61,7 @@ export const Interactable = forwardRef(function Interactable(
     className: customClassName,
     disabled,
     pressed,
+    testID,
     transparentWhileInactive,
     wrapWithLayeredElements,
     ...props
@@ -108,6 +112,7 @@ export const Interactable = forwardRef(function Interactable(
     Container,
     {
       'aria-pressed': pressed,
+      'data-testid': testID,
       ...props,
       className,
       disabled,

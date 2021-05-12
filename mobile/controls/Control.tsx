@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useCallback, useEffect, useMemo, useRef } from 'react';
 
-import { PaletteBackground } from '@cbhq/cds-common';
+import { PaletteBackground, SharedProps } from '@cbhq/cds-common';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactableOpacity';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
@@ -22,14 +22,13 @@ import { TextBody } from '../typography/TextBody';
 import { useTypographyStyles } from '../typography/useTypographyStyles';
 import { Haptics } from '../utils/haptics';
 
-export type ControlIconProps = {
+export interface ControlIconProps extends SharedProps {
   pressed: boolean;
   disabled?: boolean;
   backgroundColor: PaletteBackground;
   animatedBoxValue: Animated.Value;
   animatedScaleValue: Animated.Value;
-  testID?: string;
-};
+}
 
 export interface ControlProps<T extends string>
   extends Omit<PressableProps, 'disabled' | 'children' | 'style'>,

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { TextBaseProps, Typography, PaletteForeground } from '@cbhq/cds-common';
+import { TextBaseProps, Typography, PaletteForeground, SharedProps } from '@cbhq/cds-common';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
 import { Animated, Text, TextStyle, TextProps as RNTextProps, StyleSheet } from 'react-native';
@@ -26,6 +26,7 @@ export const numberStyles = styles.tabularNumbers;
 
 export interface TextProps
   extends TextBaseProps,
+    SharedProps,
     OmitStyle<RNTextProps, 'selectable'>,
     DangerouslySetStyle<TextStyle> {
   /**

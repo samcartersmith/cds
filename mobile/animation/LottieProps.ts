@@ -1,9 +1,9 @@
-import { LottieBaseProps } from '@cbhq/cds-common';
+import { LottieBaseProps, SharedProps } from '@cbhq/cds-common';
 import { Animated, ViewStyle } from 'react-native';
 
 import { DangerouslySetStyle } from '../types';
 
-export interface LottieProps extends LottieBaseProps, DangerouslySetStyle<ViewStyle> {
+export interface LottieProps extends LottieBaseProps, SharedProps, DangerouslySetStyle<ViewStyle> {
   /**
    * A number between 0 and 1, or an `Animated` number between 0 and 1. This number
    * represents the normalized progress of the animation. If you update this prop, the

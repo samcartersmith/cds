@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { SpacerBaseProps } from '@cbhq/cds-common/types/SpacerBaseProps';
 import { getSpacerStyle } from '@cbhq/cds-common/utils/getSpacerStyle';
 
 import { spacing } from '../tokens';
 import { DynamicElement } from '../types';
 
-export type SpacerProps = DynamicElement<SpacerBaseProps, 'span' | 'div' | 'li'>;
+export type SpacerProps = DynamicElement<SpacerBaseProps, 'span' | 'div' | 'li'> & SharedProps;
 
 /**
  * Spacer component is for adding spacing gap between two dom nodes. If no horizontal or vertical
@@ -23,11 +24,13 @@ export const Spacer = memo(function Spacer({
   maxVertical,
   minHorizontal,
   minVertical,
+  testID,
 }: SpacerProps) {
   return (
     <Component
       role="presentation"
       aria-hidden="true"
+      data-testid={testID}
       style={getSpacerStyle({
         flexGrow,
         flexShrink,
