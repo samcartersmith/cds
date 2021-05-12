@@ -8,6 +8,10 @@ export const button = css`
   border-width: 1px;
 `;
 
+export const card = css`
+  border-width: 1px;
+`;
+
 export const checkbox = css`
   border-width: 2px;
 `;

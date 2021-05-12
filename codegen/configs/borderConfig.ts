@@ -17,6 +17,7 @@ export const borderRadiusCss = mapValues(borderRadiusConfig, val => {
 
 export const borderWidthConfig = {
   button: 1,
+  card: 1,
   checkbox: 2,
   radio: 2,
   focusRing: 2,

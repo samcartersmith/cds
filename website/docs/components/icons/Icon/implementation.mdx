@@ -144,7 +144,7 @@ This is a migration escape hatch. It is not intended to be used normally.
 
 ### labeledBy <Badge variant="web" />
 
-If the icon is labelled by an independent element, then provide that elements id. This is used to set the aria-labelledby value on the icon svg. If the `title` prop is also provided, then `labeledBy` will be used to set the id on the `<title>` element.
+If the icon is labelled by an independent element, then provide that elements id. This is used to set the aria-labelledby value on the icon. If the `title` prop is also provided, then `labeledBy` will be used to set the id on the `<title>` element.
 
 <ApiDetails
   componentName="Icon"
@@ -569,6 +569,21 @@ Apply inner spacing on the top and bottom sides.
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacingVertical" />
+
+### testID
+
+Testing purposes.
+
+<ApiDetails
+  componentName="Icon"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Icon" templateName="prop-testID" />
 
 ### title <Badge variant="web" />
 

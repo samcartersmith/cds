@@ -10,6 +10,7 @@ import List from './src';
 import BoxScreen from './src/Box';
 import ButtonScreen from './src/Button';
 import ButtonGroupScreen from './src/ButtonGroup';
+import CardScreen from './src/Card';
 import CheckboxScreen from './src/Checkbox';
 import ContentCellScreen from './src/ContentCell';
 import ContentCellFallbackScreen from './src/ContentCellFallback';
@@ -73,6 +74,7 @@ const App = () => {
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
           <Stack.Screen name="ButtonGroup" component={ButtonGroupScreen} />
+          <Stack.Screen name="Card" component={CardScreen} />
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
           <Stack.Screen name="ContentCell" component={ContentCellScreen} />
           <Stack.Screen name="ContentCellFallback" component={ContentCellFallbackScreen} />

@@ -9,6 +9,7 @@ const components = [
   { key: 'Box' },
   { key: 'Button' },
   { key: 'ButtonGroup' },
+  { key: 'Card' },
   { key: 'Checkbox' },
   { key: 'ContentCell' },
   { key: 'ContentCellFallback' },
