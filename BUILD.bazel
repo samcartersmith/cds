@@ -1,5 +1,5 @@
 load("@npm//ts-node:index.bzl", "ts_node")
-load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "stylelint_test")
+load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "release_packages", "stylelint_test")
 load("@npm//serve:index.bzl", "serve")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
@@ -246,6 +246,11 @@ ts_node(
         "//eng/shared/design-system/codegen:runtime_source",
         "@npm//chalk",
     ],
+)
+
+release_packages(
+    name = "release",
+    packages_glob = "eng/shared/design-system/*/basepackage.json",
 )
 
 # *****************
