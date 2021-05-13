@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.0 (5/12/2021, 04:45 PM PST)
+
+#### 💥 Breaking
+
+- Move color utils to common and unify web/mobile. [#19738](https://github.cbhq.net/mono/repo/pull/19738), [CDS-529](https://jira.coinbase-corp.com/browse/CDS-529)
+
 ## 0.1.6 (4/21/2021, 08:32 AM PST)
 
 #### 🐞 Fixes

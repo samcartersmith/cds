@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.0 (5/12/2021, 04:45 PM PST)
+
+#### 💥 Breaking
+
+- Move web Icon component to icon font. [#19481](https://github.cbhq.net/mono/repo/pull/19481), [CDS-514](https://jira.coinbase-corp.com/browse/CDS-514)
+- Move color utils to common and unify web/mobile. [#19738](https://github.cbhq.net/mono/repo/pull/19738), [CDS-529](https://jira.coinbase-corp.com/browse/CDS-529)
+
+#### 🚀 Updates
+
+- ElevationProvider and blendColors util. [#19936](https://github.cbhq.net/mono/repo/pull/19936), [CDS-533](https://jira.coinbase-corp.com/browse/CDS-533)
+- Add Card component to CDS mobile. [#19940](https://github.cbhq.net/mono/repo/pull/19940), [CDS-79](https://jira.coinbase-corp.com/browse/CDS-79)
+- Make `testID` a shared prop amongst all components. [#19796](https://github.cbhq.net/mono/repo/pull/19796)
+- Add mobile Cell components. [#17208](https://github.cbhq.net/mono/repo/pull/17208)
+- Enable ESLint rules from standards meetings. [#19667](https://github.cbhq.net/mono/repo/pull/19667)
+
 ## 0.9.0 (5/6/2021, 02:13 PM PST)
 
 #### 💥 Breaking

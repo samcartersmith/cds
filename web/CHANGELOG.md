@@ -6,6 +6,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.11.0 (5/12/2021, 04:45 PM PST)
+
+#### 💥 Breaking
+
+- Move web Icon component to icon font. [#19481](https://github.cbhq.net/mono/repo/pull/19481), [CDS-514](https://jira.coinbase-corp.com/browse/CDS-514)
+- Move color utils to common and unify web/mobile. [#19738](https://github.cbhq.net/mono/repo/pull/19738), [CDS-529](https://jira.coinbase-corp.com/browse/CDS-529)
+
+#### 🚀 Updates
+
+- Add Card component to CDS mobile. [#19940](https://github.cbhq.net/mono/repo/pull/19940), [CDS-79](https://jira.coinbase-corp.com/browse/CDS-79)
+- Make `testID` a shared prop amongst all components. [#19796](https://github.cbhq.net/mono/repo/pull/19796)
+
+#### 🐞 Fixes
+
+- Web mobile navigation list size. [#19400](https://github.cbhq.net/mono/repo/pull/19400), [CDS-469](https://jira.coinbase-corp.com/browse/CDS-469)
+- Remove global list resets. [#19786](https://github.cbhq.net/mono/repo/pull/19786)
+
 ## 0.10.2 (5/11/2021, 10:48 AM PST)
 
 #### 🐞 Fixes
