@@ -35,14 +35,6 @@ import { createIconFont } from './createIconFont';
           },
         },
       },
-      {
-        dest: 'common/types/IconName.ts',
-        data: {
-          types: {
-            IconName: iconData.names,
-          },
-        },
-      },
     ],
   };
 

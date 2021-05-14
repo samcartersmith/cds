@@ -26,3 +26,14 @@ export function mapValues<
     return prev;
   }, {} as { [key in keyof T]: ReturnType<K> });
 }
+
+export const renameKeys = <T>(obj: { [key: string]: T }, newKeys: { [oldKey: string]: string }) => {
+  const objClone = Object.assign({}, obj);
+
+  const transformedObj = Object.keys(objClone).reduce((res, key) => {
+    const newKey = newKeys[key] || key;
+    res[newKey] = objClone[key];
+    return res;
+  }, {} as { [key: string]: T });
+  return transformedObj;
+};

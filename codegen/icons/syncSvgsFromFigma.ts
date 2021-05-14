@@ -1,4 +1,4 @@
-import { camelCase, entries } from '@cbhq/cds-utils';
+import { camelCase, entries, renameKeys } from '@cbhq/cds-utils';
 import axios from 'axios';
 import chalk from 'chalk';
 import fs from 'fs';
@@ -10,7 +10,6 @@ import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 import { generateFromTemplate } from '../utils/generateFromTemplate';
 import { getSourcePath } from '../utils/getSourcePath';
-import { logError } from '../utils/logError';
 import { createIconSet } from './createIconSet';
 import { createUnicodeMap } from './createUnicodeMap';
 import { fillMissingIcons } from './fillMissingIcons';
@@ -28,17 +27,45 @@ type IconName = {
   state: string;
 };
 
+const categorizedIconNames: {
+  [category: string]: Set<string>;
+} = {
+  Icon: new Set(),
+  NavigationIcon: new Set(),
+  NavigationIconInternal: new Set(),
+};
+
 const normalizeIconName = (imageName: string): IconName | void => {
   const [type, specificName, state] = imageName.split('/');
-  if (type !== 'Icon') {
+  if (type !== 'Icon' && type !== 'NavigationIcon') {
     return;
   }
+
   const [name, size] = specificName.split('_');
+  const stateStr = state === undefined ? '' : state.charAt(0).toUpperCase() + state.slice(1);
+  if (type === 'NavigationIcon') {
+    categorizedIconNames[`${type}Internal`].add(`${name}${stateStr}`);
+    categorizedIconNames[`${type}`].add(`${name}`);
+  } else {
+    categorizedIconNames[type].add(`${name}${stateStr}`);
+  }
+
   return {
     size,
     name,
     state,
   };
+};
+
+const createCategorizedNameType = (): {
+  [category: string]: string[];
+} => {
+  const toCategoryArrMap = Object.entries(categorizedIconNames).reduce((res, nameInfo) => {
+    const [type, nameSet] = nameInfo;
+    res[type] = Array.from(nameSet.values());
+    return res;
+  }, {} as { [type: string]: string[] });
+  return toCategoryArrMap;
 };
 
 (async function () {
@@ -75,6 +102,8 @@ const normalizeIconName = (imageName: string): IconName | void => {
         iconComponents[id] = component;
       }
     }
+    createCategorizedNameType();
+
     const iconIds = Object.keys(iconsInfo);
     spinner.text = `GET image urls for ${iconIds.length} icons in the figma node.`;
     const {
@@ -126,6 +155,40 @@ const normalizeIconName = (imageName: string): IconName | void => {
       }
     });
 
+    const toCategoryArrMap = createCategorizedNameType();
+
+    const newTypeNamesMap = Object.keys(toCategoryArrMap).reduce((newArrMap, oldKey) => {
+      newArrMap[oldKey] = `${oldKey}Name`;
+      return newArrMap;
+    }, {} as { [key: string]: string });
+
+    writePromises.push(
+      generateFromTemplate({
+        template: 'typescript.ejs',
+        dest: 'common/types/IconName.ts',
+        data: {
+          types: renameKeys(toCategoryArrMap, newTypeNamesMap),
+        },
+      })
+    );
+
+    // Constant and Type mapping need to have different key names.
+    // For Type we name it like so, Type + Names. (i.e Icon -> IconName, NavigationIcon -> NavigationIconName)
+    // On the other hand, Constants are capitalized and separated by underscore. (i.e Icon -> ICON_NAMES, NavigationIcon -> NAVIGATIONICON_NAMES)
+    // The newConstantNamesMap and newTypeNamesMap transform the initial mapping to have this key, value form.
+    const newConstantNamesMap = Object.keys(toCategoryArrMap).reduce((newArrMap, oldKey) => {
+      newArrMap[oldKey] = `${oldKey.toUpperCase()}_NAMES`;
+      return newArrMap;
+    }, {} as { [key: string]: string });
+
+    writePromises.push(
+      generateFromTemplate({
+        template: 'objectMap.ejs',
+        dest: 'common/constants/IconNameEnum.ts',
+        data: renameKeys(toCategoryArrMap, newConstantNamesMap),
+      })
+    );
+
     writePromises.push(
       generateFromTemplate({
         template: 'objectMap.ejs',
@@ -153,6 +216,6 @@ const normalizeIconName = (imageName: string): IconName | void => {
     return { lastUnicode, unicodeMap };
   } catch (error) {
     spinner.fail(`${chalk.redBright('failed')}`);
-    logError(error);
+    console.error(error.message);
   }
 })();
