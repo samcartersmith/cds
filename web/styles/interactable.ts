@@ -81,7 +81,6 @@ export const disabledState = css`
 
 export const overlay = css`
   position: relative;
-  width: fit-content;
   z-index: 1;
   transition: opacity 150ms ease-out;
   opacity: var(--interactable-opacity, 1);
