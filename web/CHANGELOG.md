@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.12.0 (5/14/2021, 09:45 AM PST)
+
+#### 💥 Breaking
+
+- Remove fill-content from overlay in interactable for web. [#20139](https://github.cbhq.net/mono/repo/pull/20139)
+
 ## 0.11.1 (5/13/2021, 06:16 PM PST)
 
 #### 🐞 Fixes
