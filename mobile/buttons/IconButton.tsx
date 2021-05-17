@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 
 import { IconButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { StyleSheet, View } from 'react-native';
 
 import { Icon } from '../icons/Icon';
@@ -17,6 +18,7 @@ export const IconButton = memo(function IconButton({
   ...props
 }: IconButtonProps) {
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
+  const height = useInteractableHeight(true);
 
   return (
     <Pressable
@@ -28,7 +30,7 @@ export const IconButton = memo(function IconButton({
       feedback={feedback}
       {...props}
     >
-      <View style={styles.iconButton}>
+      <View style={[styles.iconButton, { height, width: height }]}>
         <Icon name={name} size="s" color={color} />
       </View>
     </Pressable>
@@ -40,7 +42,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: 40,
-    width: 40,
   },
 });

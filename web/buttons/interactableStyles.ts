@@ -1,4 +1,4 @@
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { css } from 'linaria';
 
 export const interactable = css`

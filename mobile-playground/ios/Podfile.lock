@@ -345,7 +345,7 @@ PODS:
     - React-Core
   - RNPDF (0.11.0):
     - React
-  - RNPermissions (2.2.2):
+  - RNPermissions (3.0.0):
     - React-Core
   - RNReanimated (1.13.1):
     - React
@@ -594,7 +594,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
   RNPDF: b575ff11a65121f346b2851e3da736e7c51c18ab
-  RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
+  RNPermissions: 99dd8d4a30ff13509b949ca63cd1f69edc461775
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNScreens: 2ad555d4d9fa10b91bb765ca07fe9b29d59573f0
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e

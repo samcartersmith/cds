@@ -1,4 +1,3 @@
-import { tapTarget } from '@cbhq/cds-common/tokens/sizing';
 import { css } from 'linaria';
 
 import { spacing } from '../tokens';
@@ -18,6 +17,7 @@ export const button = css`
   outline: 0;
   overflow: visible;
   text-transform: none;
+  height: var(--interactable-height);
 `;
 
 export const buttonCompact = css`
@@ -32,8 +32,8 @@ export const buttonBlock = css`
 `;
 
 export const iconButton = css`
-  width: ${tapTarget}px;
-  height: ${tapTarget}px;
+  width: var(--interactable-height);
+  height: var(--interactable-height);
   min-width: unset;
 `;
 

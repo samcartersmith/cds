@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { useScaleDensity } from '@cbhq/cds-common';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
 
 import { VStack } from '../layout/VStack';
@@ -40,7 +40,7 @@ export const ListCell = memo(function ListCell({
     );
   }
 
-  const scaleDensity = useScaleDensity();
+  const minHeight = useScaleConditional(listHeight);
   const accessoryType = selected ? 'selected' : accessory;
 
   return (
@@ -52,7 +52,7 @@ export const ListCell = memo(function ListCell({
       disabled={disabled}
       maxContentWidth="70%"
       maxDetailWidth="50%"
-      minHeight={listHeight[scaleDensity]}
+      minHeight={minHeight}
       selected={selected}
       onPress={onPress}
     >

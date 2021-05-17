@@ -1,7 +1,8 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit/Button';
 
@@ -48,7 +49,9 @@ export const Button = forwardRef(function Button(
   ref: React.Ref<HTMLButtonElement>
 ) {
   const spacingClass = useButtonSpacing(compact);
+  const height = useInteractableHeight(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
+  const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
 
   return (
     <Pressable
@@ -70,6 +73,7 @@ export const Button = forwardRef(function Button(
       loading={loading}
       disabled={disabled}
       onPress={onPress}
+      style={style}
       type={type}
       ref={ref}
     >

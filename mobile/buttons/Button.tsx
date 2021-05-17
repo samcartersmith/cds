@@ -2,6 +2,7 @@ import React, { memo, useMemo } from 'react';
 
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { StyleSheet, ActivityIndicator, View } from 'react-native';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
@@ -26,13 +27,14 @@ export const Button = memo(function Button({
   ...props
 }: ButtonProps) {
   const palette = usePalette();
+  const height = useInteractableHeight(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
   const spacingStyles = useButtonSpacing(compact);
   const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
-  const buttonStyles = useMemo(
-    () => [styles.button, compact && styles.buttonCompact, spacingStyles],
-    [compact, spacingStyles]
-  );
+  const buttonStyles = useMemo(() => [styles.button, { height }, spacingStyles], [
+    height,
+    spacingStyles,
+  ]);
   const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
   const endIconStyles = useSpacingStyles({ spacingStart: 1 });
 
@@ -82,10 +84,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    height: 56,
-  },
-  buttonCompact: {
-    height: 36,
   },
   inline: {
     width: 'auto',

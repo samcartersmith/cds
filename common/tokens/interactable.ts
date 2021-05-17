@@ -1,4 +1,15 @@
 import { SpectrumHueStep } from '../types';
+import { ScaleDensity } from '../types/Scale';
+
+export const defaultHeight: Record<ScaleDensity, number> = {
+  dense: 44,
+  normal: 56,
+};
+
+export const compactHeight: Record<ScaleDensity, number> = {
+  dense: 36,
+  normal: 40,
+};
 
 export const opacityHovered: Record<SpectrumHueStep, number> = {
   0: 0.98,

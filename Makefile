@@ -141,7 +141,7 @@ deploy.website:
 	bazel run website/cloud:deploy
 
 .PHONY: deploy.website-dev
-deploy.website:
+deploy.website-dev:
 	bazel run website/cloud:deploy_dev
 
 .PHONY: setup.mobile

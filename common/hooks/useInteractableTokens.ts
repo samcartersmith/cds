@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { usePaletteConfig } from '../palette/usePaletteConfig';
-import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactableOpacity';
+import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactable';
 import { PaletteAlias, PaletteBackground } from '../types';
 import { extractHueStep } from '../utils/color';
 

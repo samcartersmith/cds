@@ -1,7 +1,8 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 
 import { IconButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { cx } from 'linaria';
 import { Button as ReakitButton } from 'reakit/Button';
 
@@ -32,7 +33,9 @@ export const IconButton = forwardRef(
       alignItems: 'center',
       justifyContent: 'center',
     });
+    const height = useInteractableHeight(true);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
+    const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
 
     return (
       <Pressable
@@ -47,6 +50,7 @@ export const IconButton = forwardRef(
         className={cx(flexStyles, buttonStyles.iconButton)}
         disabled={disabled}
         onPress={onPress}
+        style={style}
         ref={ref}
       >
         <Icon name={name} size="s" color={color} />

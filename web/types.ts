@@ -1,5 +1,5 @@
 import { PaletteAlias, SpectrumAlias } from '@cbhq/cds-common';
-import { opacityHovered } from '@cbhq/cds-common/tokens/interactableOpacity';
+import { opacityHovered } from '@cbhq/cds-common/tokens/interactable';
 import { CssVariableFn } from '@cbhq/cds-utils';
 
 //  web only
@@ -45,6 +45,7 @@ export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface CSSProperties extends PaletteCssVariable {
+    '--interactable-height'?: string;
     '--interactable-opacity-hovered'?: typeof opacityHovered[keyof typeof opacityHovered];
     '--interactable-opacity-pressed'?: typeof opacityHovered[keyof typeof opacityHovered];
     '--interactable-overlay'?: CssVariableFn<SpectrumAlias>;

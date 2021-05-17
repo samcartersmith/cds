@@ -24,7 +24,7 @@ import { palette } from '../tokens';
 
 export type InteractableInheritedProps = Omit<
   React.AllHTMLAttributes<Element>,
-  'as' | 'className' | 'css' | 'style'
+  'as' | 'className' | 'css'
 >;
 
 export interface InteractableProps
@@ -61,6 +61,7 @@ export const Interactable = forwardRef(function Interactable(
     className: customClassName,
     disabled,
     pressed,
+    style: customStyle,
     testID,
     transparentWhileInactive,
     wrapWithLayeredElements,
@@ -87,12 +88,13 @@ export const Interactable = forwardRef(function Interactable(
   const style = useMemo(
     () =>
       ({
+        ...customStyle,
         '--interactable-opacity-hovered': hoverOpacity,
         '--interactable-opacity-pressed': pressedOpacity,
         '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : '',
         '--interactable-underlay': palette[underlayColor],
       } as React.CSSProperties),
-    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor]
+    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor, customStyle]
   );
 
   const content =
