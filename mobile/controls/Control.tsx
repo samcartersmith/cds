@@ -19,7 +19,7 @@ import { usePalette } from '../hooks/usePalette';
 import { Spacer } from '../layout/Spacer';
 import { TextProps } from '../typography/createText';
 import { TextBody } from '../typography/TextBody';
-import { useTypographyStyles } from '../typography/useTypographyStyles';
+import { useLineHeight } from '../typography/useLineHeight';
 import { Haptics } from '../utils/haptics';
 
 export interface ControlIconProps extends SharedProps {
@@ -69,7 +69,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   }
 
   const palette = usePalette();
-  const labelStyles = useTypographyStyles('body');
+  const bodyLineHeight = useLineHeight('body');
 
   // TODO: create a custom hook to initialize animated values so that they are not called on every render
   const animatedBoxValue = useRef(new Animated.Value(0)).current;
@@ -107,10 +107,10 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
   const iconWrapperStyles: ViewStyle = useMemo(
     () => ({
-      height: labelStyles.lineHeight,
+      height: bodyLineHeight,
       justifyContent: 'center',
     }),
-    [labelStyles.lineHeight]
+    [bodyLineHeight]
   );
 
   return (

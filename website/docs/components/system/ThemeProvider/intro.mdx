@@ -2,4 +2,4 @@ Utilizes React context to provide our CDS theme specific parameters. Internally 
 
 If the `div` added by ThemeProvider is not desired, you can optionally use the `useThemeProviderStyles` and attach the returned `className` and `style` prop to the element of your choice.
 
-To use `useThemeProviderStyles` with palette, scale or spectrum overrides, you will need to add the `SystemProvider` as a parent to `useThemeProviderStyles` hook. `SystemProvider` will update the context values and not add a div to the DOM.
+To use `useThemeProviderStyles` with palette, scale or spectrum overrides, you will need to add the `ContextOnlyThemeProvider` as a parent to `useThemeProviderStyles` hook. `ContextOnlyThemeProvider` will update the context values and not add a div to the DOM.

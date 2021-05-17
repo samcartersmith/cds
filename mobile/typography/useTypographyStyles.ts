@@ -1,8 +1,10 @@
-import { Typography, useScale } from '@cbhq/cds-common';
+import { useMemo } from 'react';
 
-import * as scales from '../styles/scale';
+import { Typography } from '@cbhq/cds-common';
+
+import { useTypographyStylesMap } from './useTypographyStylesMap';
 
 export const useTypographyStyles = (name: Typography) => {
-  const scale = useScale();
-  return scales[scale].typography[name];
+  const typographyStyles = useTypographyStylesMap();
+  return useMemo(() => typographyStyles[name], [typographyStyles, name]);
 };

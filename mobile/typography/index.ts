@@ -12,3 +12,6 @@ export * from './TextTitle3';
 export * from './Link';
 export { TextProps, numberStyles } from './createText';
 export * from './useTypographyStyles';
+export * from './useTypographyStylesMap';
+export * from './useLineHeight';
+export * from './useLineHeightMap';

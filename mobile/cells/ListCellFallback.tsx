@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import { Fallback } from '../layout/Fallback';
-import { useTypographyStyles } from '../typography';
+import { useLineHeightMap } from '../typography/useLineHeightMap';
 import { CellMediaType } from './CellMedia';
 import { ListCell } from './ListCell';
 import { MediaFallback } from './MediaFallback';
@@ -26,11 +26,7 @@ export const ListCellFallback = memo(function ListCellFallback({
   subdetail,
   media,
 }: ListCellFallbackProps) {
-  const lineHeight = {
-    headline: useTypographyStyles('headline').lineHeight,
-    body: useTypographyStyles('body').lineHeight,
-  };
-
+  const lineHeight = useLineHeightMap();
   return (
     <ListCell
       description={
