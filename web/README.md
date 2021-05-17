@@ -18,7 +18,7 @@ import { TextDisplay1 } from '@cbhq/cds-web/typography/Text';
 
 ### 🚧 Outside mono/repo (WIP)
 
-Make sure `@coinbase:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
+Make sure `@cbhq:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
 
 ```
 yarn add @cbhq/cds-web

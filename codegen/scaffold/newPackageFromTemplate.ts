@@ -6,6 +6,7 @@ import path from 'path';
 import { argv } from 'yargs';
 
 const name = argv.name as string;
+const description = argv.description as string;
 const root = argv.root as string;
 
 if (!name) {
@@ -14,13 +15,15 @@ if (!name) {
   throw new Error('Package name must not start with @cbhq scope.');
 } else if (!name.match(/[-a-z0-9]+/)) {
   throw new Error('Package name must be in kebab-case.');
+} else if (!description) {
+  throw new Error('Package must have a description');
 }
 
-const TEMPLATE_ROOT = path.join(root, '_template');
+const TEMPLATE_ROOT = path.join(root, 'codegen/templates/newPackage');
 const PACKAGE_ROOT = path.join(root, name);
 
 async function newPackage() {
-  const files = await glob('**/*', { cwd: TEMPLATE_ROOT, onlyFiles: true });
+  const files = await glob('**/*', { cwd: TEMPLATE_ROOT, onlyFiles: true, dot: true });
 
   if (existsSync(PACKAGE_ROOT)) {
     throw new Error(`Package ${name} already exists!`);
@@ -35,7 +38,8 @@ async function newPackage() {
       // Read file and replace tokens
       let source = await fs.readFile(path.join(TEMPLATE_ROOT, file), 'utf8');
 
-      source = source.replace(/(<package>|_template)/g, name);
+      source = source.replace(/(<package>)/g, name);
+      source = source.replace(/(<description>)/g, description);
 
       // Write file and create directories
       const targetPath = path.join(PACKAGE_ROOT, file);

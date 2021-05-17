@@ -104,7 +104,7 @@ lint.fix:
 
 .PHONY: new.package
 new.package:
-	bazel run :new_package -- --root=$(PWD) --name=$(name)
+	bazel run :new_package -- --root=$(PWD) --name=$(name) --description=${description}
 
 .PHONY: prepare.icons
 prepare.icons:
