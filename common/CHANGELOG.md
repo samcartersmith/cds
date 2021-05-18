@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.2 (5/17/2021, 05:38 PM PST)
+
+#### 🚀 Updates
+
+- Add dense height support to buttons. [#20264](https://github.cbhq.net/mono/repo/pull/20264), [CDS-504](https://jira.coinbase-corp.com/browse/CDS-504)
+- NavigationIcon component release. [#20144](https://github.cbhq.net/mono/repo/pull/20144)
+
+#### 🐞 Fixes
+
+- NavigationIcon Component for Mobile. [#20053](https://github.cbhq.net/mono/repo/pull/20053), [CDS-249](https://jira.coinbase-corp.com/browse/CDS-249)
+
 ## 0.10.1 (5/13/2021, 06:16 PM PST)
 
 #### 🐞 Fixes

@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.2 (5/17/2021, 05:38 PM PST)
+
+#### 🚀 Updates
+
+- NavigationIcon component release. [#20144](https://github.cbhq.net/mono/repo/pull/20144)
+
+#### 🐞 Fixes
+
+- NavigationIcon Component for Mobile. [#20053](https://github.cbhq.net/mono/repo/pull/20053), [CDS-249](https://jira.coinbase-corp.com/browse/CDS-249)
+
 ## 0.2.1 (5/13/2021, 06:16 PM PST)
 
 #### 🐞 Fixes

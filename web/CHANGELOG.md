@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.12.1 (5/17/2021, 05:38 PM PST)
+
+#### 🚀 Updates
+
+- Add dense height support to buttons. [#20264](https://github.cbhq.net/mono/repo/pull/20264), [CDS-504](https://jira.coinbase-corp.com/browse/CDS-504)
+
+#### 🐞 Fixes
+
+- PressableOpacity container width fluid and control styles. [#20386](https://github.cbhq.net/mono/repo/pull/20386)
+
+#### 📘 Misc
+
+- Add template files for newPackage scaffold. [#20292](https://github.cbhq.net/mono/repo/pull/20292)
+- Remove destyle as dep of cds web. [#20204](https://github.cbhq.net/mono/repo/pull/20204)
+
 ## 0.12.0 (5/14/2021, 09:45 AM PST)
 
 #### 💥 Breaking
