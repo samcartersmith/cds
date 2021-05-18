@@ -1,100 +1,76 @@
 import React, { useMemo, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
-import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
+import { ElevationProvider } from '@cbhq/cds-common/context/ElevationProvider';
 import {
   borderRadius as borderRadiusTokens,
   borderWidth as borderWidthTokens,
 } from '@cbhq/cds-common/tokens/border';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';
-import { Animated, Falsy, Platform, StyleSheet, View, ViewStyle } from 'react-native';
+import { Animated, Falsy, View, ViewStyle } from 'react-native';
 
+import { useElevationStyles } from '../hooks/useElevationStyles';
+import { useInteractableTokens } from '../hooks/useInteractableTokens';
 import { usePalette } from '../hooks/usePalette';
 
 export interface InteractableProps extends InteractableBaseProps, SharedProps {
-  children: NonNullable<React.ReactNode>;
+  children?: React.ReactNode;
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
 }
 
-export const Interactable = memo(function Interactable({
+export const Interactable = memo(function Interactable({ children, ...props }: InteractableProps) {
+  return (
+    <ElevationProvider elevation={props?.elevation}>
+      <InteractableContent {...props}>{children}</InteractableContent>
+    </ElevationProvider>
+  );
+});
+
+export const InteractableContent = memo(function InteractableContent({
   backgroundColor,
   borderColor,
   borderRadius,
   borderWidth,
   children,
   disabled,
+  elevation,
   pressed,
   style = emptyArray,
   transparentWhileInactive,
   testID,
 }: InteractableProps) {
   const palette = usePalette();
-  const bgColor = transparentWhileInactive && !pressed ? 'transparent' : backgroundColor;
   const bdColor = transparentWhileInactive && !pressed ? 'transparent' : borderColor;
-  const { disabledOpacity, underlayColor, pressedOpacity } = useInteractableTokens(bgColor);
+  const bgColor = transparentWhileInactive && !pressed ? 'transparent' : backgroundColor;
+  const overlayColor = bgColor === 'transparent' ? undefined : bgColor;
 
-  const containerStyles = useMemo(
-    () => [
-      styles.interactable,
-      bdColor && {
-        borderColor: bdColor === 'transparent' ? 'transparent' : palette[bdColor],
-      },
-      borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
-      borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
-      disabled && { opacity: disabledOpacity },
-    ],
-    [palette, bdColor, borderRadius, borderWidth, disabled, disabledOpacity]
-  );
+  const { backgroundColor: bg, contentOpacity } = useInteractableTokens({
+    overlayColor,
+    disabled,
+    pressed,
+  });
 
-  const overlayStyles = useMemo(
-    () => ({
-      backgroundColor: bgColor === 'transparent' ? 'transparent' : palette[bgColor],
-    }),
-    [bgColor, palette]
-  );
-
-  const underlayStyles = useMemo(
-    () => ({
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: palette[underlayColor],
-    }),
-    [underlayColor, palette]
-  );
-
-  // We need to conditionally apply the background color here because...
-  // - On Android the background is _required_ otherwise the overlay doesnt expand
-  //    the entire box on all sides, revealing a faint 1px white inset border.
-  // - On iOS the background should be _avoided_ since it adds a 1px border
-  //    on press that conflicts with the existing styles.
-  const interactableStyles = useMemo(
-    () => [...containerStyles, Platform.OS === 'android' ? overlayStyles : undefined, ...style],
-    [containerStyles, overlayStyles, style]
+  const elevationStyles = useElevationStyles(elevation);
+  const wrapperStyles = useMemo(
+    () =>
+      [
+        ...style,
+        bdColor && {
+          borderColor: bdColor === 'transparent' ? 'transparent' : palette[bdColor],
+        },
+        borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
+        borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
+        { backgroundColor: bg, borderStyle: 'solid' } as const,
+        elevationStyles,
+      ].filter(Boolean),
+    [bdColor, bg, borderRadius, borderWidth, elevationStyles, palette, style]
   );
 
   return (
-    <Animated.View style={interactableStyles} testID={testID}>
-      {pressed && !disabled && bgColor !== 'transparent' && <View style={underlayStyles} />}
-
-      <View
-        style={[
-          overlayStyles,
-          {
-            opacity: pressed ? pressedOpacity : 1,
-          },
-        ]}
-        renderToHardwareTextureAndroid
-      >
-        {children}
-      </View>
+    <Animated.View style={wrapperStyles} testID={testID}>
+      <View style={{ opacity: contentOpacity }}>{children}</View>
     </Animated.View>
   );
-});
-
-const styles = StyleSheet.create({
-  interactable: {
-    overflow: 'hidden',
-    borderStyle: 'solid',
-  },
 });

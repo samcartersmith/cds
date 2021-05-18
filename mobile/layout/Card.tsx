@@ -8,9 +8,6 @@ export interface CardProps extends VStackProps {
   onPress?: PressableProps['onPress'];
 }
 
-/**
- * DO NOT USE THIS COMPONENT YET THIS IS STILL A WIP
- */
 export const Card: React.FC<CardProps> = memo(
   ({
     children,
@@ -44,8 +41,7 @@ export const Card: React.FC<CardProps> = memo(
         borderColor={bg === 'background' ? 'line' : 'transparent'}
         borderRadius="standard"
         borderWidth="card"
-        // TODO: Add elevation prop to Pressable
-        // elevation={elevation}
+        elevation={elevation}
         onPress={onPress}
       >
         {content}

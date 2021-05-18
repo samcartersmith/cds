@@ -3,7 +3,6 @@ import React, { forwardRef, memo } from 'react';
 import { ControlBaseProps, useScale } from '@cbhq/cds-common';
 import { Animated, StyleSheet, View } from 'react-native';
 
-import { usePalette } from '../hooks/usePalette';
 import { Icon } from '../icons/Icon';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
@@ -13,13 +12,11 @@ export interface CheckboxProps<T extends string> extends ControlBaseProps<T>, Co
 
 const CheckboxIcon: React.FC<ControlIconProps> = ({
   pressed,
+  checked,
   disabled,
-  backgroundColor,
-  animatedBoxValue,
   animatedScaleValue,
   testID,
 }) => {
-  const palette = usePalette();
   const cdsScale = useScale();
   const { checkboxSize } = scaleStyles[cdsScale].control;
 
@@ -27,21 +24,13 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
     <Interactable
       testID={testID}
       pressed={pressed}
-      backgroundColor={backgroundColor}
-      borderColor="lineHeavy"
+      backgroundColor={checked ? 'primary' : 'background'}
+      borderColor={checked ? 'primary' : 'lineHeavy'}
       borderWidth="checkbox"
       disabled={disabled}
       style={[
         styles.box,
         {
-          borderColor: animatedBoxValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [palette.lineHeavy, palette.primary],
-          }),
-          backgroundColor: animatedBoxValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [palette.background, palette.primary],
-          }),
           width: checkboxSize,
           height: checkboxSize,
         },

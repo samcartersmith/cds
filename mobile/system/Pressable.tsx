@@ -36,9 +36,16 @@ export interface PressableProps
   disableDebounce?: boolean;
 }
 
-export interface PressableInternalProps extends PressableProps, Omit<InteractableProps, 'pressed'> {
+export interface PressableInternalProps
+  extends PressableProps,
+    Omit<InteractableProps, 'pressed' | 'style'> {
   /** Dont scale element on press. */
   noScaleOnPress?: boolean;
+  /**
+   * Pressable will always be the outermost component so that we can handle overflow within a child without impacting hitSlop.
+   * Pass any styles that impact layout to this prop (i.e width, flex-direction, etc).
+   */
+  style?: BasePressableProps['style'];
 }
 
 export const Pressable = memo(function Pressable({
@@ -54,6 +61,7 @@ export const Pressable = memo(function Pressable({
   borderRadius,
   borderWidth,
   disableDebounce,
+  elevation,
   style = emptyArray,
   transparentWhileInactive,
   ...props
@@ -99,28 +107,30 @@ export const Pressable = memo(function Pressable({
   );
 
   return (
-    <Interactable
-      backgroundColor={backgroundColor}
-      borderColor={borderColor}
-      borderRadius={borderRadius}
-      borderWidth={borderWidth}
+    <BasePressable
+      accessibilityComponentType="button"
+      accessibilityTraits="button"
+      accessibilityState={{ busy: loading, disabled: !!disabled }}
       disabled={disabled || loading}
-      pressed={pressed}
-      style={[...style, !noScaleOnPress && { transform: [{ scale: pressScale }] }]}
-      transparentWhileInactive={transparentWhileInactive}
+      onPress={handlePress}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
+      style={style}
+      {...props}
     >
-      <BasePressable
-        accessibilityComponentType="button"
-        accessibilityTraits="button"
-        accessibilityState={{ busy: loading, disabled: !!disabled }}
+      <Interactable
+        backgroundColor={backgroundColor}
+        borderColor={borderColor}
+        borderRadius={borderRadius}
+        borderWidth={borderWidth}
         disabled={disabled || loading}
-        onPress={handlePress}
-        onPressIn={handlePressIn}
-        onPressOut={handlePressOut}
-        {...props}
+        elevation={elevation}
+        pressed={pressed}
+        style={!noScaleOnPress ? [{ transform: [{ scale: pressScale }] }] : undefined}
+        transparentWhileInactive={transparentWhileInactive}
       >
         {children}
-      </BasePressable>
-    </Interactable>
+      </Interactable>
+    </BasePressable>
   );
 });

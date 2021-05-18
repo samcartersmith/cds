@@ -1,45 +1,34 @@
 import { useMemo } from 'react';
 
-import { ElevationLevels, useSpectrum } from '@cbhq/cds-common';
-import { Platform, ViewStyle } from 'react-native';
-
-import { paletteValueToRgbaString } from '../utils/palette';
-import { usePalette } from './usePalette';
+import { ElevationLevels } from '@cbhq/cds-common';
+import { ViewStyle } from 'react-native';
 
 export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | undefined => {
-  const palette = usePalette();
-  const spectrum = useSpectrum();
-
   return useMemo(() => {
     if (!elevation) {
       return undefined;
     }
 
-    const styles = Platform.select({
-      ios: {
-        1: {
-          borderWidth: 1,
-          borderColor: palette.line,
-          shadowColor: paletteValueToRgbaString('gray40', spectrum),
-          shadowOffset: { width: 0, height: 8 },
-          shadowOpacity: 0.02,
-          shadowRadius: 12,
-        },
-        2: {
-          borderWidth: 1,
-          borderColor: palette.line,
-          shadowColor: paletteValueToRgbaString('gray40', spectrum),
-          shadowOffset: { width: 0, height: 8 },
-          shadowOpacity: 0.12,
-          shadowRadius: 24,
-        },
-      },
-      android: {
-        1: { elevation: 2 },
-        2: { elevation: 8 },
-      },
-    });
+    const sharedStyles = {
+      shadowColor: '#000000',
+      shadowOffset: { width: 0, height: 8 },
+    } as const;
 
-    return styles?.[elevation];
-  }, [elevation, spectrum, palette.line]);
+    const levels = {
+      1: {
+        shadowOpacity: 0.02,
+        shadowRadius: 12,
+        elevation: 2,
+        ...sharedStyles,
+      },
+      2: {
+        shadowOpacity: 0.12,
+        shadowRadius: 24,
+        elevation: 8,
+        ...sharedStyles,
+      },
+    };
+
+    return levels?.[elevation];
+  }, [elevation]);
 };

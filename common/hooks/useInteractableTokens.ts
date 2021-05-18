@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 
 import { usePaletteConfig } from '../palette/usePaletteConfig';
 import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactable';
-import { PaletteAlias, PaletteBackground } from '../types';
+import { PaletteAlias } from '../types';
 import { extractHueStep } from '../utils/color';
 
 export const useInteractableTokens = (
-  overlayColor?: PaletteBackground | 'transparent'
+  overlayColor?: PaletteAlias | 'transparent'
 ): {
   disabledOpacity: number;
   underlayColor: PaletteAlias;

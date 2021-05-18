@@ -24,9 +24,9 @@ import { Haptics } from '../utils/haptics';
 
 export interface ControlIconProps extends SharedProps {
   pressed: boolean;
+  checked?: boolean;
   disabled?: boolean;
   backgroundColor: PaletteBackground;
-  animatedBoxValue: Animated.Value;
   animatedScaleValue: Animated.Value;
 }
 
@@ -98,9 +98,9 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   }, [onChange, value]);
 
   const controlIconProps = {
+    checked,
     backgroundColor: checked ? ('primary' as const) : ('background' as const),
     disabled: pressDisabled,
-    animatedBoxValue,
     animatedScaleValue,
     testID,
   };

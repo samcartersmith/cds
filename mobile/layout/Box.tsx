@@ -1,6 +1,7 @@
 import React, { useMemo, memo } from 'react';
 
 import { BoxBaseProps, ElevationLevels, SharedProps } from '@cbhq/cds-common';
+import { ElevationProvider } from '@cbhq/cds-common/context/ElevationProvider';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
@@ -40,7 +41,13 @@ export interface BoxProps
   aspectRatio?: number;
 }
 
-export const Box = memo(
+export const Box: React.FC<BoxProps> = memo(({ children, ...props }) => (
+  <ElevationProvider elevation={props?.elevation}>
+    <BoxInner {...props}>{children}</BoxInner>
+  </ElevationProvider>
+));
+
+export const BoxInner = memo(
   ({
     animated,
     background,

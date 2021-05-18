@@ -1,10 +1,11 @@
 import { BorderRadius } from './BorderRadius';
 import { BorderWidth } from './BorderWidth';
-import { PaletteBackground, PaletteBorder } from './Palette';
+import { ElevationLevels } from './ElevationLevels';
+import { PaletteAlias, PaletteBorder } from './Palette';
 
 export interface InteractableBaseProps {
   /** Background color of the overlay (element being interacted with). */
-  backgroundColor: PaletteBackground | 'transparent';
+  backgroundColor: PaletteAlias | 'transparent';
   /** Border color of the element being interacted with. */
   borderColor?: PaletteBorder | 'transparent';
   /** Border radius of the element being interacted with. */
@@ -13,6 +14,8 @@ export interface InteractableBaseProps {
   borderWidth?: BorderWidth;
   /** Is the element currently disabled. */
   disabled?: boolean;
+  /** Is the element elevated. */
+  elevation?: ElevationLevels;
   /** Is the element being pressed. Primarily a mobile feature, but can be used on the web. */
   pressed?: boolean;
   /** Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc). */

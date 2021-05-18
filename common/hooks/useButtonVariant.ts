@@ -12,7 +12,7 @@ const variants: Record<ButtonVariant, ButtonVariantStyles> = {
   primary: {
     color: 'primaryForeground',
     backgroundColor: 'primary',
-    borderColor: 'primary',
+    borderColor: 'transparent',
   },
   secondary: {
     color: 'secondaryForeground',
@@ -22,7 +22,7 @@ const variants: Record<ButtonVariant, ButtonVariantStyles> = {
   positive: {
     color: 'positiveForeground',
     backgroundColor: 'positive',
-    borderColor: 'positive',
+    borderColor: 'transparent',
   },
   negative: {
     color: 'negative',

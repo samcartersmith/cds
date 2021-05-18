@@ -6,7 +6,6 @@ import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseP
 import { entries } from '@cbhq/cds-utils';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 
-import { usePalette } from '../hooks/usePalette';
 import { Icon } from '../icons/Icon';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
@@ -17,12 +16,10 @@ export interface RadioProps<T extends string> extends ControlBaseProps<T>, Contr
 const RadioIcon: React.FC<ControlIconProps> = ({
   pressed,
   disabled,
-  backgroundColor,
-  animatedBoxValue,
+  checked,
   animatedScaleValue,
   testID,
 }) => {
-  const palette = usePalette();
   const cdsScale = useScale();
   const { radioSize } = scaleStyles[cdsScale].control;
 
@@ -31,18 +28,13 @@ const RadioIcon: React.FC<ControlIconProps> = ({
       testID={testID}
       pressed={pressed}
       backgroundColor="background"
-      borderColor="lineHeavy"
+      borderColor={checked ? 'primary' : 'lineHeavy'}
       borderRadius="round"
       borderWidth="radio"
       disabled={disabled}
       style={[
         styles.circle,
         {
-          borderColor: animatedBoxValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [palette.lineHeavy, palette.primary],
-          }),
-          backgroundColor,
           width: radioSize,
           height: radioSize,
         },
