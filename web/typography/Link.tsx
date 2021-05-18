@@ -1,18 +1,44 @@
 import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
-import { LinkBaseProps } from '@cbhq/cds-common/types/LinkBaseProps';
+import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 import { css, cx } from 'linaria';
 import { Button as ReakitButton } from 'reakit/Button';
 
 import { linkResets } from '../styles/resetStyles';
 import { OnPress } from '../types';
+import type { DynamicElement } from '../types';
+import { TextBody } from './TextBody';
+import { TextCaption } from './TextCaption';
 import { TextHeadline } from './TextHeadline';
+import { TextLabel1 } from './TextLabel1';
+import { TextLabel2 } from './TextLabel2';
+import { TextLegal } from './TextLegal';
+import { TextProps, HTMLNonHeadingTextTags } from './TextProps';
+import { TextTitle1 } from './TextTitle1';
+import { TextTitle2 } from './TextTitle2';
+import { TextTitle3 } from './TextTitle3';
 
 const cursorPointer = css`
   cursor: pointer;
 `;
 
+const TYPOGRAPHY_MAP: Record<
+  LinkTypography,
+  React.ComponentType<
+    DynamicElement<TextProps, HTMLNonHeadingTextTags, true /* as prop is required */>
+  >
+> = {
+  body: TextBody,
+  caption: TextCaption,
+  headline: TextHeadline,
+  label1: TextLabel1,
+  label2: TextLabel2,
+  title1: TextTitle1,
+  title2: TextTitle2,
+  title3: TextTitle3,
+  legal: TextLegal,
+};
 export interface LinkProps
   extends LinkBaseProps,
     SharedProps,
@@ -37,25 +63,28 @@ export const Link = memo(function Link({
   testID,
   color = 'primary',
   rel,
-  onPress,
   renderContainer,
+  variant = 'headline',
+  onPress,
   ...props
 }: LinkProps) {
   const linkRef = useRef(null);
+  const TextComponent = TYPOGRAPHY_MAP[variant];
+
   const enhancedProps = {
     'aria-label': accessibilityLabel,
     'data-testid': testID,
     className: cx(cursorPointer, linkResets),
-    children: (
-      <TextHeadline as="span" color={color}>
-        {children}
-      </TextHeadline>
-    ),
     onClick: onPress,
     ref: linkRef,
     href: to,
     rel: to && openInNewWindow && rel === undefined ? 'noopener noreferrer' : rel,
     target: openInNewWindow ? '_blank' : '',
+    children: (
+      <TextComponent as="span" color={color}>
+        {children}
+      </TextComponent>
+    ),
     ...props,
   };
 

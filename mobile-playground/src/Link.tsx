@@ -1,36 +1,67 @@
-import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { Link } from '@cbhq/cds-mobile/typography/Link';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { TextLabel1 } from '@cbhq/cds-mobile/typography/TextLabel1';
+import { capitalize } from '@cbhq/cds-utils';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 
+import { LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
+
+const typographies = [
+  'title1',
+  'title2',
+  'title3',
+  'headline',
+  'body',
+  'label1',
+  'label2',
+  'caption',
+  'legal',
+];
+
+const links = typographies.map(typography => (
+  <Example inline key={typography}>
+    <TextHeadline>Link with Text style {typography}</TextHeadline>
+    <Link variant={typography as LinkTypography} to="https://www.coinbase.com/">
+      {capitalize(typography)}
+    </Link>
+  </Example>
+));
+
 const LinkScreen = () => {
   return (
     <ExamplesScreen>
+      {links}
       <Example inline>
         <TextHeadline>Goes to coinbase.com</TextHeadline>
-        <Link to="https://www.coinbase.com/">Go to Coinbase</Link>
+        <Link variant="title1" to="https://www.coinbase.com/">
+          Go to Coinbase
+        </Link>
+      </Example>
+      <Example inline>
+        <TextHeadline>Link Typography defaults to headline</TextHeadline>
+        <Link to="https://www.coinbase.com/">Go to Coinbase (Headline)</Link>
       </Example>
       <Example inline>
         <TextHeadline>Testing color</TextHeadline>
-        <Link to="https://www.coinbase.com/" color="negative">
+        <Link variant="title1" to="https://www.coinbase.com/" color="negative">
           Go to Coinbase
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>Testing onPress</TextHeadline>
-        <Link onPress={() => console.log('Testing on press')} color="negative">
+        <Link variant="title1" onPress={() => console.log('Testing on press')} color="negative">
           Go to Coinbase
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>Wrap in TextBody</TextHeadline>
-        <TextBody>
-          Go here:
+        <TextBody align="center">
+          Go here:{' '}
           <Link
+            variant="body"
             to="https://www.coinbase.com/"
             onPress={() => console.log('Testing on press')}
             color="negative"
@@ -40,19 +71,15 @@ const LinkScreen = () => {
         </TextBody>
       </Example>
       <Example inline>
-        <TextHeadline>Used at the same time</TextHeadline>
+        <TextHeadline>onPress and to used together</TextHeadline>
         <Link
+          variant="title1"
           onPress={() => console.log('Testing on press')}
           to="https://www.coinbase.com/"
           color="negative"
         >
           Go to Coinbase
         </Link>
-      </Example>
-      <Example inline>
-        <ThemeProvider spectrum="dark">
-          <Link to="https://www.coinbase.com/">Testing Dark Mode</Link>
-        </ThemeProvider>
       </Example>
       <Example>
         <TextLabel1>
@@ -61,11 +88,15 @@ const LinkScreen = () => {
       </Example>
       <Example inline>
         <TextHeadline>tel Link</TextHeadline>
-        <Link to="tel:111-111-1111">Call Someone</Link>
+        <Link variant="title2" to="tel:111-111-1111">
+          Call Someone
+        </Link>
       </Example>
       <Example inline>
         <TextHeadline>mailto Link</TextHeadline>
-        <Link to="mailto:someone@coinbase.com">Send email to Someone</Link>
+        <Link variant="title2" to="mailto:someone@coinbase.com">
+          Send email to Someone
+        </Link>
       </Example>
     </ExamplesScreen>
   );

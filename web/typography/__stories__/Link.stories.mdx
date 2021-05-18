@@ -2,6 +2,7 @@ import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
+import * as Type from '../index';
 import { Link } from '../Link';
 
 <Meta title="Core Components/Link" component={Link} argTypes={{}} />
@@ -11,16 +12,31 @@ import { Link } from '../Link';
 ## Color
 
 <Canvas isColumn withToolbar>
-  <Story name="Default" decorators={[withStoryLabel('Default')]}>
+  <Story name="Default" decorators={[withStoryLabel('Default (Headline)')]}>
     <div>
       <Link to="https://www.google.com/">Default</Link>
     </div>
   </Story>
-  <Story name="Negative Color" decorators={[withStoryLabel('Negative Color')]}>
+  <Story name="Negative Color" decorators={[withStoryLabel('Negative Color (Headline)')]}>
     <div>
-      <Link to="https://www.google.com/" color="negative">
+      <Link variant="headline" to="https://www.google.com/" color="negative">
         Negative
       </Link>
+    </div>
+  </Story>
+</Canvas>
+
+## Nested with other Components
+
+<Canvas isColumn withToolbar>
+  <Story name="wrapped in textbody" decorators={[withStoryLabel('Wrapped in TextBody')]}>
+    <div>
+      <Type.TextBody as="span">
+        Go here:{' '}
+        <Link variant="body" to="https://www.coinbase.com">
+          Hello
+        </Link>
+      </Type.TextBody>
     </div>
   </Story>
 </Canvas>
@@ -30,39 +46,43 @@ import { Link } from '../Link';
 <Canvas isColumn withToolbar>
   <Story
     name="Open window in existing tab"
-    decorators={[withStoryLabel('Opens window in new tab')]}
+    decorators={[withStoryLabel('Opens window in new tab (title1)')]}
   >
     <div>
-      <Link to="https://www.google.com/" openInNewWindow={true}>
+      <Link variant="title1" to="https://www.google.com/" openInNewWindow={true}>
         Default
       </Link>
     </div>
   </Story>
-  <Story name="Sets rel to noreferrer" decorators={[withStoryLabel('Sets rel to noreferrer')]}>
+  <Story
+    name="Sets rel to noreferrer"
+    decorators={[withStoryLabel('Sets rel to noreferrer (title2)')]}
+  >
     <div>
-      <Link to="https://www.google.com/" rel="noreferrer">
+      <Link variant="title2" to="https://www.google.com/" rel="noreferrer">
         Default
       </Link>
     </div>
   </Story>
-  <Story name="Sets rel to noopener" decorators={[withStoryLabel('Sets rel to noopener')]}>
+  <Story name="Sets rel to noopener" decorators={[withStoryLabel('Sets rel to noopener (title3)')]}>
     <div>
-      <Link to="https://www.google.com/" rel="noopener">
+      <Link variant="title3" to="https://www.google.com/" rel="noopener">
         Default
       </Link>
     </div>
   </Story>
-  <Story name="onClick" decorators={[withStoryLabel('onClick test')]}>
+  <Story name="onClick" decorators={[withStoryLabel('onClick test (headline)')]}>
     <div>
-      <Link onPress={console.log} rel="noopener">
+      <Link variant="headline" onPress={console.log} rel="noopener">
         Link onClick
       </Link>
     </div>
   </Story>
-  <Story name="renderContainer" decorators={[withStoryLabel('renderContainer test')]}>
+  <Story name="renderContainer" decorators={[withStoryLabel('renderContainer test (body)')]}>
     <div>
       <Router>
         <Link
+          variant="body"
           color="primary"
           onPress={console.log}
           renderContainer={props => <RRLink {...props} to={'/invoices'} />}
@@ -72,10 +92,14 @@ import { Link } from '../Link';
       </Router>
     </div>
   </Story>
-  <Story name="renderContainer_color" decorators={[withStoryLabel('renderContainer test color')]}>
+  <Story
+    name="renderContainer_color"
+    decorators={[withStoryLabel('renderContainer test color (label1)')]}
+  >
     <div>
       <Router>
         <Link
+          variant="label1"
           color="negative"
           onPress={console.log}
           renderContainer={props => <RRLink {...props} to={'/invoices'} />}
