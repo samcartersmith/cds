@@ -1,12 +1,13 @@
 import React, { forwardRef } from 'react';
 
+import { SharedProps } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
 import { scaledDownState } from '../styles/interactable';
 import { buttonResets } from '../styles/resetStyles';
 import { Interactable, InteractableProps } from './Interactable';
 
-export interface PressableProps extends React.AriaAttributes {
+export interface PressableProps extends React.AriaAttributes, SharedProps {
   /** Is the element currenty loading. */
   loading?: boolean;
   /** Callback fired when the element is pressed. */

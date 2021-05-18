@@ -37,15 +37,13 @@ export const interactableBackground = css`
 `;
 
 // Hide background on non-solid elements, like controls.
-// Also used as an initial state for link buttons.
 export const interactableTransparent = css`
   background-image: none;
   background-color: transparent;
   border-color: transparent;
 `;
 
-// For link buttons, we need to go from a transparent
-// background to a solid when interacted with.
+// Go from a transparent background to a solid when interacted with.
 export const interactableTransparentActive = css`
   &:active,
   &:hover {
@@ -94,8 +92,8 @@ export const underlay = css`
   display: block;
 `;
 
+// Apply opacity to children as well
 export const transparentChildren = css`
-  /* Apply opacity to children as well */
   & > * {
     opacity: var(--interactable-opacity, 1);
   }

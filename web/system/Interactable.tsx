@@ -71,10 +71,23 @@ export const Interactable = forwardRef(function Interactable(
   const paletteConfig = usePaletteConfig();
   const spectrumAlias = backgroundColor === 'transparent' ? '' : paletteConfig[backgroundColor];
   const { underlayColor, hoverOpacity, pressedOpacity } = useInteractableTokens(backgroundColor);
+
+  const backgroundStyles = useMemo(() => {
+    // Transparent by default, opaque when interacted with
+    if (transparentWhileInactive) {
+      return [interactableTransparent, interactableTransparentActive];
+    }
+    // Always transparent
+    if (!spectrumAlias) {
+      return [interactableTransparent];
+    }
+    // Opaque and handles interactive states
+    return [interactableBackground];
+  }, [transparentWhileInactive, spectrumAlias]);
+
   const className = cx(
     interactable,
-    !transparentWhileInactive ? interactableBackground : interactableTransparent,
-    transparentWhileInactive && interactableTransparentActive,
+    ...backgroundStyles,
     !wrapWithLayeredElements && transparentChildren,
     borderColor && borderColors[borderColor],
     borderRadius && borderRadii[borderRadius],
@@ -88,7 +101,7 @@ export const Interactable = forwardRef(function Interactable(
         ...customStyle,
         '--interactable-opacity-hovered': hoverOpacity,
         '--interactable-opacity-pressed': pressedOpacity,
-        '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : '',
+        '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : undefined,
         '--interactable-underlay': palette[underlayColor],
       } as React.CSSProperties),
     [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor, customStyle]
