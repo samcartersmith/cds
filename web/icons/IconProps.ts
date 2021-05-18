@@ -1,8 +1,8 @@
-import type { PaletteForeground, IconBaseProps, SharedProps } from '@cbhq/cds-common';
+import type { PaletteForeground, IconBaseProps } from '@cbhq/cds-common';
 
 import { BadgeProps } from './Badge';
 
-export interface IconProps extends IconBaseProps, SharedProps {
+export interface IconProps extends IconBaseProps {
   /** Color of the icon when used as a foreground. */
   color?: PaletteForeground | 'currentColor';
   /**

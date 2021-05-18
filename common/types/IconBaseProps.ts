@@ -1,8 +1,9 @@
 import type { IconName, NavigationIconInternalName } from './IconName';
 import type { IconSize } from './IconSize';
+import type { SharedProps } from './SharedProps';
 import type { SpacingProps } from './SpacingProps';
 
-export interface IconBaseProps extends SpacingProps {
+export interface IconBaseProps extends SpacingProps, SharedProps {
   /** Size for a given icon. */
   size: IconSize;
   /** Name of the icon, as defined in Figma. */

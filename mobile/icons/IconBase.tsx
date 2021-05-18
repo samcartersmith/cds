@@ -1,6 +1,6 @@
 import React, { useMemo, cloneElement } from 'react';
 
-import { PaletteForeground, IconBaseProps, SharedProps } from '@cbhq/cds-common';
+import { IconBaseProps, PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import { Animated, Text } from 'react-native';
 import type { TextStyle } from 'react-native';
@@ -13,10 +13,7 @@ import { BadgeProps } from './Badge';
 import { iconGlyphMap } from './iconGlyphMap';
 import { IconOutline } from './IconOutline';
 
-export interface IconBaseMobileProps
-  extends IconBaseProps,
-    SharedProps,
-    DangerouslySetStyle<TextStyle> {
+export interface IconBaseMobileProps extends IconBaseProps, DangerouslySetStyle<TextStyle> {
   /**
    * Add a badge to the top right of an icon
    */

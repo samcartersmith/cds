@@ -1,18 +1,11 @@
 import React, { FunctionComponent } from 'react';
 
-import {
-  NavigationIconName,
-  IconSize,
-  SharedProps,
-  NavigationIconInternalName,
-  IconBaseProps,
-} from '@cbhq/cds-common';
+import { NavigationIconName, IconSize, NavigationIconInternalName } from '@cbhq/cds-common';
 
-import { IconBase } from './IconBase';
+import { IconBase, IconBaseMobileProps } from './IconBase';
 
 interface NavigationIconProps
-  extends Omit<IconBaseProps, 'name' | 'size' | 'bordered' | 'dangerouslySetColor'>,
-    SharedProps {
+  extends Omit<IconBaseMobileProps, 'name' | 'size' | 'bordered' | 'dangerouslySetColor'> {
   /** Navigation icon names */
   name: NavigationIconName;
   /**

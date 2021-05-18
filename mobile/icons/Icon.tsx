@@ -1,21 +1,14 @@
 import React from 'react';
 
-import { PaletteForeground } from '@cbhq/cds-common';
+import { IconName } from '@cbhq/cds-common/types';
 
-import { IconBase } from './IconBase';
-import { IconProps } from './IconProps';
+import { IconBase, IconBaseMobileProps } from './IconBase';
 
-export type { IconProps };
+export interface IconProps extends IconBaseMobileProps {
+  /** Icon names */
+  name: IconName;
+}
 
-export const Icon = ({
-  badge,
-  bordered = false,
-  color = 'primary' as PaletteForeground,
-  size,
-  name,
-  ...props
-}: IconProps) => {
-  return (
-    <IconBase name={name} color={color} size={size} bordered={bordered} badge={badge} {...props} />
-  );
+export const Icon = (props: IconProps) => {
+  return <IconBase {...props} />;
 };

@@ -1,11 +1,12 @@
+import { ICON_NAMES, NAVIGATIONICON_NAMES } from '@cbhq/cds-common/constants/IconNameEnum';
 import { FiatIcon } from '@cbhq/cds-mobile/icons/FiatIcon';
 import { Icon } from '@cbhq/cds-mobile/icons/Icon';
 import { IconBase } from '@cbhq/cds-mobile/icons/IconBase';
 import { NavigationIcon } from '@cbhq/cds-mobile/icons/NavigationIcon';
+import { TextIcon } from '@cbhq/cds-mobile/icons/TextIcon';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { HStack } from '@cbhq/cds-mobile/layout/HStack';
-import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
-import { ICON_NAMES, NAVIGATIONICON_NAMES } from '@cbhq/cds-common/constants/IconNameEnum';
+import { TextBody, TextHeadline } from '@cbhq/cds-mobile/typography';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
@@ -18,19 +19,32 @@ const IconScreen = () => {
           <TextHeadline>NavigationIcon (Active)</TextHeadline>
           <HStack flexWrap="wrap">
             {NAVIGATIONICON_NAMES.map(name => (
-              <Box spacing={1}>
-                <NavigationIcon key={name} active={true} name={name} />
+              <Box spacing={1} key={name}>
+                <NavigationIcon active={true} name={name} />
               </Box>
             ))}
           </HStack>
           <TextHeadline>NavigationIcon (InActive)</TextHeadline>
           <HStack flexWrap="wrap">
             {NAVIGATIONICON_NAMES.map(name => (
-              <Box spacing={1}>
-                <NavigationIcon key={name} active={false} name={name} />
+              <Box spacing={1} key={name}>
+                <NavigationIcon active={false} name={name} />
               </Box>
             ))}
           </HStack>
+        </Box>
+        <Box spacing={1}>
+          <TextHeadline>Nested Icon</TextHeadline>
+          <TextBody align="end">
+            <TextIcon name="dot" size="xs" />
+            <TextBody>This is some text</TextBody>
+          </TextBody>
+          <TextBody align="end">
+            <TextIcon name="dot" size="xs" />
+            <TextBody>
+              This is soooooooooooooome reallllllllllllllllly loooooooonnngggggg text
+            </TextBody>
+          </TextBody>
         </Box>
         <Box spacing={1}>
           <TextHeadline>IconBase</TextHeadline>
