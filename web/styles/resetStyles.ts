@@ -20,3 +20,7 @@ export const buttonResets = css`
 export const linkResets = css`
   text-decoration: none;
 `;
+
+export const inputRadioResets = css`
+  margin: 0;
+`;

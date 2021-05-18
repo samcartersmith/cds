@@ -36,11 +36,6 @@ export const interactableBackground = css`
   background-color: var(--interactable-underlay);
 `;
 
-export const interactableControls = css`
-  height: fit-content;
-  width: fit-content;
-`;
-
 // Hide background on non-solid elements, like controls.
 // Also used as an initial state for link buttons.
 export const interactableTransparent = css`

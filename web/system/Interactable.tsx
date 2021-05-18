@@ -12,7 +12,6 @@ import { focusRing } from '../styles/focus';
 import {
   interactable,
   interactableBackground,
-  interactableControls,
   interactableTransparent,
   interactableTransparentActive,
   disabledState,
@@ -71,12 +70,10 @@ export const Interactable = forwardRef(function Interactable(
 ) {
   const paletteConfig = usePaletteConfig();
   const spectrumAlias = backgroundColor === 'transparent' ? '' : paletteConfig[backgroundColor];
-  const isControls = wrapWithLayeredElements || !spectrumAlias;
   const { underlayColor, hoverOpacity, pressedOpacity } = useInteractableTokens(backgroundColor);
   const className = cx(
     interactable,
-    !isControls && !transparentWhileInactive ? interactableBackground : interactableTransparent,
-    isControls && interactableControls,
+    !transparentWhileInactive ? interactableBackground : interactableTransparent,
     transparentWhileInactive && interactableTransparentActive,
     !wrapWithLayeredElements && transparentChildren,
     borderColor && borderColors[borderColor],

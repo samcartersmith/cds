@@ -6,6 +6,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { css, cx } from 'linaria';
 
 import { Box, Spacer } from '../layout';
+import { inputRadioResets } from '../styles/resetStyles';
 import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { TextProps } from '../typography';
@@ -79,10 +80,12 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       borderWidth={borderWidth}
       disabled={disabled || readOnly}
       testID={testID ? `${testID}-parent` : undefined}
+      transparentWhileInactive
       wrapWithLayeredElements
+      className={interactableContainer}
     >
       <>
-        <input className={cx(controlInput, pointer)} {...inputProps} />
+        <input className={cx(inputRadioResets, controlInput, pointer)} {...inputProps} />
         {children}
       </>
     </Interactable>
@@ -130,4 +133,9 @@ const controlInput = css`
   width: 100%;
   height: 100%;
   z-index: 1;
+`;
+
+const interactableContainer = css`
+  height: fit-content;
+  width: fit-content;
 `;
