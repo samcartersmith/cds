@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.10.3 (5/18/2021, 01:02 PM PST)
+
+#### 🚀 Updates
+
+- TextIcon for Nested Text on CDS mobile. [#20493](https://github.cbhq.net/mono/repo/pull/20493), [CDS-559](https://jira.coinbase-corp.com/browse/CDS-559)
+
+#### 🐞 Fixes
+
+- Add variant prop for Link component and Fix nested TextBody issue. [#19083](https://github.cbhq.net/mono/repo/pull/19083)
+
 ## 0.10.2 (5/17/2021, 05:38 PM PST)
 
 #### 🚀 Updates
