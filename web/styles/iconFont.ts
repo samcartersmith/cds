@@ -10,6 +10,6 @@ export const iconFont = css`
     font-style: normal;
     font-weight: 400;
     font-display: block;
-    src: url('../icons/font/CoinbaseIcons-1620940769229.woff2') format('woff2');
+    src: url('../icons/font/CoinbaseIcons-1621302816791.woff2') format('woff2');
   }
 `;
