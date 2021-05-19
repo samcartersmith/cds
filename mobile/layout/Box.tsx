@@ -3,6 +3,7 @@ import React, { useMemo, memo } from 'react';
 import { BoxBaseProps, ElevationLevels, SharedProps } from '@cbhq/cds-common';
 import { ElevationProvider } from '@cbhq/cds-common/context/ElevationProvider';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
+import { emptyObject } from '@cbhq/cds-utils';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
@@ -41,18 +42,24 @@ export interface BoxProps
   aspectRatio?: number;
 }
 
-export const Box: React.FC<BoxProps> = memo(({ children, ...props }) => (
-  <ElevationProvider elevation={props?.elevation}>
-    <BoxInner {...props}>{children}</BoxInner>
-  </ElevationProvider>
-));
+type InternalBoxProps = Omit<BoxProps, 'bordered'>;
+
+export const Box: React.FC<BoxProps> = memo(({ children, ...props }) => {
+  const dangerouslySetStyle = useDangerouslySetStyle(props);
+  return (
+    <ElevationProvider elevation={props?.elevation}>
+      <BoxInner {...props} dangerouslySetStyle={dangerouslySetStyle}>
+        {children}
+      </BoxInner>
+    </ElevationProvider>
+  );
+});
 
 export const BoxInner = memo(
   ({
     animated,
     background,
     borderRadius,
-    bordered,
     children,
     dangerouslySetStyle,
     elevation,
@@ -100,7 +107,7 @@ export const BoxInner = memo(
     offsetTop,
     offsetVertical,
     ...props
-  }: BoxProps) => {
+  }: InternalBoxProps) => {
     const palette = usePalette();
     const elevationStyles = useElevationStyles(elevation);
     const spacingStyles = useSpacingStyles({
@@ -171,11 +178,6 @@ export const BoxInner = memo(
         style.backgroundColor = palette.background;
       }
 
-      if (bordered) {
-        style.borderWidth = 1;
-        style.borderColor = palette.line;
-      }
-
       if (borderRadius) {
         style.borderRadius = borderRadii[borderRadius];
       }
@@ -185,7 +187,7 @@ export const BoxInner = memo(
       }
 
       return style;
-    }, [background, elevation, bordered, borderRadius, rounded, palette]);
+    }, [background, elevation, borderRadius, rounded, palette]);
     const style = useMemo(
       () =>
         [
@@ -222,5 +224,22 @@ export const BoxInner = memo(
     );
   }
 );
+
+/**
+ * useDangerouslySetStyle guarantees that the border color of Box is not impacted by ElevationProvider palette overrides
+ */
+const useDangerouslySetStyle = ({ dangerouslySetStyle = emptyObject, bordered }: BoxProps) => {
+  const palette = usePalette();
+
+  return useMemo(() => {
+    return [
+      dangerouslySetStyle,
+      bordered && {
+        borderWidth: 1,
+        borderColor: palette.line,
+      },
+    ];
+  }, [bordered, dangerouslySetStyle, palette]);
+};
 
 Box.displayName = 'Box';

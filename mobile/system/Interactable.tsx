@@ -21,16 +21,18 @@ export interface InteractableProps extends InteractableBaseProps, SharedProps {
 }
 
 export const Interactable = memo(function Interactable({ children, ...props }: InteractableProps) {
+  const styles = useStyles(props);
   return (
     <ElevationProvider elevation={props?.elevation}>
-      <InteractableContent {...props}>{children}</InteractableContent>
+      <InteractableContent {...props} style={styles}>
+        {children}
+      </InteractableContent>
     </ElevationProvider>
   );
 });
 
 export const InteractableContent = memo(function InteractableContent({
   backgroundColor,
-  borderColor,
   borderRadius,
   borderWidth,
   children,
@@ -41,8 +43,6 @@ export const InteractableContent = memo(function InteractableContent({
   transparentWhileInactive,
   testID,
 }: InteractableProps) {
-  const palette = usePalette();
-  const bdColor = transparentWhileInactive && !pressed ? 'transparent' : borderColor;
   const bgColor = transparentWhileInactive && !pressed ? 'transparent' : backgroundColor;
   const overlayColor = bgColor === 'transparent' ? undefined : bgColor;
 
@@ -57,15 +57,12 @@ export const InteractableContent = memo(function InteractableContent({
     () =>
       [
         ...style,
-        bdColor && {
-          borderColor: bdColor === 'transparent' ? 'transparent' : palette[bdColor],
-        },
         borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
         borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
         { backgroundColor: bg, borderStyle: 'solid' } as const,
         elevationStyles,
       ].filter(Boolean),
-    [bdColor, bg, borderRadius, borderWidth, elevationStyles, palette, style]
+    [bg, borderRadius, borderWidth, elevationStyles, style]
   );
 
   return (
@@ -74,3 +71,23 @@ export const InteractableContent = memo(function InteractableContent({
     </Animated.View>
   );
 });
+
+/**
+ * useStyles guarantees that the border color of Interactable is not impacted by ElevationProvider palette overrides
+ */
+const useStyles = ({
+  style = emptyArray,
+  borderColor,
+  pressed,
+  transparentWhileInactive,
+}: InteractableProps) => {
+  const palette = usePalette();
+  const bdColor = transparentWhileInactive && !pressed ? 'transparent' : borderColor;
+
+  return useMemo(() => {
+    const _bdColor: ViewStyle | undefined = bdColor && {
+      borderColor: bdColor === 'transparent' ? 'transparent' : palette[bdColor],
+    };
+    return [...style, _bdColor];
+  }, [bdColor, palette, style]);
+};

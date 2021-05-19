@@ -1,3 +1,4 @@
+import { Button } from '@cbhq/cds-mobile/buttons/Button';
 import { Card } from '@cbhq/cds-mobile/layout/Card';
 import { TextBody, TextLabel1, TextTitle2 } from '@cbhq/cds-mobile/typography';
 
@@ -18,12 +19,14 @@ const CardScreen = () => {
         <TextTitle2>Clickable Cards</TextTitle2>
         <Card {...sharedPressProps} elevation={1}>
           <TextLabel1 spacingBottom={1}>Elevation 1</TextLabel1>
-          <TextBody>{loremIpsum}</TextBody>
+          <TextBody spacingBottom={3}>{loremIpsum}</TextBody>
+          <Button variant="secondary">Secondary button</Button>
         </Card>
 
         <Card {...sharedPressProps} elevation={2}>
           <TextLabel1 spacingBottom={1}>Elevation 2</TextLabel1>
-          <TextBody>{loremIpsum}</TextBody>
+          <TextBody spacingBottom={3}>{loremIpsum}</TextBody>
+          <Button variant="secondary">Secondary button</Button>
         </Card>
 
         <TextTitle2>Clickable colored Cards</TextTitle2>

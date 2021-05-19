@@ -15,12 +15,15 @@ export const elevationPalettes: ElevationPalette = {
     light: emptyObject,
     dark: {
       background: 'gray5',
+      secondary: ['gray5', 0],
     },
   },
   2: {
     light: emptyObject,
     dark: {
       background: 'gray15',
+      secondary: ['gray15', 0],
+      line: ['gray60', 0.66],
     },
   },
 };

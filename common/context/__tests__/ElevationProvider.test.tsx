@@ -49,5 +49,9 @@ describe('ElevationProvider', () => {
       ),
     });
     expect(result.current.background).toBe('gray15');
+    // secondary should be transparent
+    expect(result.current.secondary).toEqual(['gray15', 0]);
+    // line should be brighter
+    expect(result.current.line).toEqual(defaultPalette.lineHeavy);
   });
 });
