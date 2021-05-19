@@ -25,6 +25,7 @@ const components = [
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
   { key: 'Pressable' },
+  { key: 'PressableOpacity' },
   { key: 'Text', label: 'Text (all)' },
   { key: 'TextBody' },
   { key: 'TextCaption' },

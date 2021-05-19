@@ -17,7 +17,7 @@ export type UseInteractableTokensParams = {
   disabled?: boolean;
 };
 
-const fallbackPaletteValue: PaletteValue = ['gray0', 0];
+const fallbackPaletteValue: PaletteValue = ['gray100', 0];
 
 export const useInteractableTokens = ({ overlayColor, ...states }: UseInteractableTokensParams) => {
   const palette = usePalette();
@@ -29,9 +29,12 @@ export const useInteractableTokens = ({ overlayColor, ...states }: UseInteractab
   const interactableState = useInteractableState(states); // enum string - 'pressed', 'disabled' or undefined
   const contentOpacity = useContentOpacity(overlayOpacities, interactableState); // Opacity for children of Interactable component. Usually match overlay opacity, except if disabled.
   const blendedColors = useBlendedColors(overlayOpacities, overlayHueStep, overlaySpectrumAlias); // object map of pressed and disabled background colors
-  const backgroundColor = interactableState
-    ? blendedColors[interactableState]
-    : originalOverlayColor;
+  const backgroundColor = useMemo(() => {
+    if (originalOverlayColor === 'transparent') {
+      return 'transparent';
+    }
+    return interactableState ? blendedColors[interactableState] : originalOverlayColor;
+  }, [blendedColors, interactableState, originalOverlayColor]);
 
   return useMemo(() => {
     return {
