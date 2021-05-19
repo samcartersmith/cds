@@ -20,6 +20,7 @@ export const borderWidthConfig = {
   card: 1,
   checkbox: 2,
   radio: 2,
+  sparkline: 2,
   focusRing: 2,
 };
 

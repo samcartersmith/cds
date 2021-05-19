@@ -20,6 +20,10 @@ export const radio = css`
   border-width: 2px;
 `;
 
+export const sparkline = css`
+  border-width: 2px;
+`;
+
 export const focusRing = css`
   border-width: 2px;
 `;

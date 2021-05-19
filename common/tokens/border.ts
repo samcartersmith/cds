@@ -12,4 +12,11 @@ export const borderRadius = {
   round: 100,
 } as const;
 
-export const borderWidth = { button: 1, card: 1, checkbox: 2, radio: 2, focusRing: 2 } as const;
+export const borderWidth = {
+  button: 1,
+  card: 1,
+  checkbox: 2,
+  radio: 2,
+  sparkline: 2,
+  focusRing: 2,
+} as const;

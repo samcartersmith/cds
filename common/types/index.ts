@@ -3,6 +3,7 @@ export * from './BorderRadius';
 export * from './BorderWidth';
 export * from './BoxBaseProps';
 export * from './ButtonBaseProps';
+export * from './Chart';
 export * from './CheckboxGroupBaseProps';
 export * from './Color';
 export * from './ControlBaseProps';
