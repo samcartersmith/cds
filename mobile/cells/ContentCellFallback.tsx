@@ -1,23 +1,13 @@
 import React, { memo } from 'react';
 
+import { ContentCellFallbackProps } from '@cbhq/cds-common';
+
 import { Fallback } from '../layout';
 import { useLineHeightMap } from '../typography/useLineHeightMap';
-import { CellMediaType } from './CellMedia';
 import { ContentCell } from './ContentCell';
 import { MediaFallback } from './MediaFallback';
 
-export interface ContentCellFallbackProps {
-  /** Display description shimmer. */
-  description?: boolean;
-  /** Display media shimmer with a shape according to type. */
-  media?: CellMediaType;
-  /** Display meta shimmer. */
-  meta?: boolean;
-  /** Display subtitle shimmer. */
-  subtitle?: boolean;
-  /** Display title shimmer. */
-  title?: boolean;
-}
+export type { ContentCellFallbackProps };
 
 export const ContentCellFallback = memo(function ContentCellFallback({
   title,

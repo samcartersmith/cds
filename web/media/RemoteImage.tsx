@@ -2,13 +2,18 @@ import React, { memo, useMemo } from 'react';
 
 import { AspectRatio, FixedValue, Shape } from '@cbhq/cds-common';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
-import { Image, ImageProps, ImageResizeMode } from 'react-native';
+import { cx, css } from 'linaria';
 
-interface BaseRemoteImageProps extends Omit<ImageProps, 'style' | 'width' | 'height'> {
+interface BaseRemoteImageProps
+  extends Omit<
+    React.ImgHTMLAttributes<HTMLImageElement>,
+    'className' | 'style' | 'height' | 'width' | 'source'
+  > {
   aspectRatio?: AspectRatio;
   height?: FixedValue;
   shape?: Shape;
   width?: FixedValue;
+  source: string;
 }
 
 interface RemoteImagePropsWithWidth extends BaseRemoteImageProps {
@@ -24,7 +29,6 @@ interface RemoteImagePropsWithHeight extends BaseRemoteImageProps {
 interface RemoteImagePropsWidthAndHeight extends BaseRemoteImageProps {
   width: FixedValue;
   height: FixedValue;
-  resizeMode: ImageResizeMode;
 }
 
 export type RemoteImageProps =
@@ -37,6 +41,7 @@ export const RemoteImage = memo(function RemoteImage({
   height,
   aspectRatio,
   shape = 'square',
+  source,
   ...props
 }: RemoteImageProps) {
   const borderRadius = useMemo(() => {
@@ -59,13 +64,30 @@ export const RemoteImage = memo(function RemoteImage({
   const styles = useMemo(
     () =>
       ({
-        width,
-        height,
-        aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
         borderRadius,
+        '--image-aspect-ratio': aspectRatio ? aspectRatio.join(' / ') : undefined,
       } as const),
-    [aspectRatio, borderRadius, height, width]
+    [aspectRatio, borderRadius]
   );
 
-  return <Image accessibilityIgnoresInvertColors {...props} style={styles} />;
+  return (
+    <img
+      alt=""
+      {...props}
+      src={source}
+      width={width}
+      height={height}
+      className={cx(image, aspectRatio && imageRatio)}
+      style={styles}
+    />
+  );
 });
+
+const image = css`
+  display: block;
+  object-fit: cover;
+`;
+
+const imageRatio = css`
+  aspect-ratio: var(--image-aspect-ratio);
+`;

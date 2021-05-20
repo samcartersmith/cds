@@ -1,23 +1,13 @@
 import React, { memo } from 'react';
 
+import { ListCellFallbackProps } from '@cbhq/cds-common';
+
 import { Fallback } from '../layout/Fallback';
 import { useLineHeightMap } from '../typography/useLineHeightMap';
-import { CellMediaType } from './CellMedia';
 import { ListCell } from './ListCell';
 import { MediaFallback } from './MediaFallback';
 
-export interface ListCellFallbackProps {
-  /** Display description shimmer. */
-  description?: boolean;
-  /** Display detail shimmer. */
-  detail?: boolean;
-  /** Display media shimmer with a shape according to type. */
-  media?: CellMediaType;
-  /** Display subdetail shimmer. */
-  subdetail?: boolean;
-  /** Display title shimmer. */
-  title?: boolean;
-}
+export type { ListCellFallbackProps };
 
 export const ListCellFallback = memo(function ListCellFallback({
   title,
@@ -27,6 +17,7 @@ export const ListCellFallback = memo(function ListCellFallback({
   media,
 }: ListCellFallbackProps) {
   const lineHeight = useLineHeightMap();
+
   return (
     <ListCell
       description={

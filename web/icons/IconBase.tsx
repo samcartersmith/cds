@@ -62,6 +62,7 @@ export const IconBase = memo(
               style={{ color: finalColor, fontSize: iconSize }}
               role={role}
               aria-labelledby={labeledBy}
+              data-icon-name={name}
             >
               {iconGlyphMap[name][iconSize]}
             </span>

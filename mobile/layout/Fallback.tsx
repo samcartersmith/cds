@@ -2,20 +2,18 @@
 
 import React, { memo, useEffect, useMemo, useRef } from 'react';
 
-import { Shape } from '@cbhq/cds-common';
+import { FallbackBaseProps } from '@cbhq/cds-common';
+import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { Box, BoxProps } from '../layout/Box';
 import { paletteValueToRgbaString } from '../utils/palette';
 
-export interface FallbackProps extends Omit<BoxProps, 'borderRadius' | 'height' | 'width'> {
-  height: number;
-  shape?: Shape;
-  width: number;
-}
+export interface FallbackProps
+  extends FallbackBaseProps,
+    Omit<BoxProps, 'borderRadius' | 'height' | 'width'> {}
 
 export const Fallback = memo(function Fallback({
   height,
@@ -23,20 +21,7 @@ export const Fallback = memo(function Fallback({
   width: baseWidth,
   ...props
 }: FallbackProps) {
-  const width = useMemo(() => {
-    // When rectangle, lets randomize the width a bit so things are
-    // a little less... uniform. Variety is nice.
-    if (shape === 'rectangle') {
-      const quarter = Math.round(baseWidth / 4);
-      const min = Math.max(baseWidth - quarter, 1);
-      const max = baseWidth + quarter;
-
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    // All other shapes need a fixed aspect ratio
-    return baseWidth;
-  }, [baseWidth, shape]);
+  const { width, borderRadius } = useFallbackShape(shape, baseWidth);
 
   const spectrum = useSpectrum();
   const shimmerPosition = useRef(new Animated.Value(-1)).current;
@@ -84,14 +69,6 @@ export const Fallback = memo(function Fallback({
     [spectrum]
   );
 
-  const borderRadius = useMemo(() => {
-    if (shape === 'circle' && Number.isInteger(width)) {
-      return Number(width) / 2;
-    }
-
-    return shape === 'squircle' ? borderRadii.standard : 0;
-  }, [shape, width]);
-
   const containerStyle: ViewStyle = useMemo(
     () => ({
       width,
@@ -108,7 +85,7 @@ export const Fallback = memo(function Fallback({
   ]);
 
   return (
-    <Box {...props}>
+    <Box width={width} {...props}>
       <View style={containerStyle}>
         <Animated.View
           style={[

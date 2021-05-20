@@ -49,17 +49,9 @@ export const ListCell = memo(function ListCell({
       onPress={onPress}
     >
       <VStack justifyContent="center">
-        {title && (
-          <TextHeadline numberOfLines={description ? 1 : 2} ellipsize="tail">
-            {title}
-          </TextHeadline>
-        )}
+        {title && <TextHeadline as="div">{title}</TextHeadline>}
 
-        {description && (
-          <TextBody numberOfLines={title ? 1 : 2} ellipsize="tail">
-            {description}
-          </TextBody>
-        )}
+        {description && <TextBody as="div">{description}</TextBody>}
       </VStack>
     </Cell>
   );

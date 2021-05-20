@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 
 import { CellAccessoryProps } from '@cbhq/cds-common';
-import { I18nManager } from 'react-native';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
+import { isRtl } from '../utils/isRtl';
 
 export type { CellAccessoryProps };
 
@@ -16,13 +16,7 @@ export const CellAccessory = memo(function CellAccessory({ type, ...props }: Cel
   }
 
   if (type === 'arrow') {
-    icon = (
-      <Icon
-        name={I18nManager.isRTL ? 'caretLeft' : 'caretRight'}
-        size="s"
-        color="foregroundMuted"
-      />
-    );
+    icon = <Icon name={isRtl() ? 'caretLeft' : 'caretRight'} size="s" color="foregroundMuted" />;
   }
 
   if (type === 'selected') {

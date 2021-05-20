@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
-import { CellProps } from '@cbhq/cds-common';
+import { CellProps as CellBaseProps } from '@cbhq/cds-common';
+import { css } from 'linaria';
 
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
@@ -8,10 +9,13 @@ import { Pressable } from '../system/Pressable';
 import { CellMedia } from './CellMedia';
 import { MediaFallback } from './MediaFallback';
 
-export type { CellProps };
+export interface CellProps extends CellBaseProps {
+  as?: 'div' | 'li';
+}
 
 export const Cell = memo(function Cell({
   accessory,
+  as: Tag = 'div',
   alignItems = 'center',
   children,
   detail,
@@ -41,7 +45,6 @@ export const Cell = memo(function Cell({
       alignItems={alignItems}
       minHeight={minHeight}
       spacing={2}
-      renderToHardwareTextureAndroid={disabled}
       testID={testID}
     >
       {media && (
@@ -85,9 +88,11 @@ export const Cell = memo(function Cell({
   if (onPress) {
     return (
       <Pressable
+        as="button"
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
+        className={cell}
         disabled={disabled}
         onPress={onPress}
       >
@@ -96,5 +101,10 @@ export const Cell = memo(function Cell({
     );
   }
 
-  return content;
+  return <Tag>{content}</Tag>;
 });
+
+const cell = css`
+  display: block;
+  width: 100%;
+`;

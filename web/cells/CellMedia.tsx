@@ -19,29 +19,18 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     content = <Icon size={iconSize} name={props.name} color="foreground" />;
   }
 
-  if (props.type === 'asset' || props.type === 'avatar') {
-    content = (
-      <RemoteImage
-        accessibilityHint={props.title}
-        accessibilityLabel={props.title}
-        source={{ uri: props.source }}
-        resizeMode="cover"
-        shape="circle"
-        width={size}
-        height={size}
-      />
-    );
-  }
+  if (props.type === 'asset' || props.type === 'avatar' || props.type === 'image') {
+    const isImage = props.type === 'image';
 
-  if (props.type === 'image') {
-    size = imageSize;
+    if (isImage) {
+      size = imageSize;
+    }
+
     content = (
       <RemoteImage
-        accessibilityHint={props.title}
-        accessibilityLabel={props.title}
-        source={{ uri: props.source }}
-        resizeMode="cover"
-        shape="squircle"
+        alt={props.title}
+        source={props.source}
+        shape={isImage ? 'squircle' : 'circle'}
         width={size}
         height={size}
       />

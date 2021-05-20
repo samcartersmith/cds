@@ -40,6 +40,7 @@ export type HTMLNonHeadingTextTags =
   | 'ins'
   | 'sup'
   | 'sub'
-  | 'li';
+  | 'li'
+  | 'div';
 
 export type HTMLTextTags = HTMLHeadingTags | HTMLNonHeadingTextTags;

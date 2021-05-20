@@ -54,6 +54,7 @@ def cds_package(name, srcs, dependencies, peer_dependencies, type_dependencies =
             ],
             exclude = [
                 "**/*.test.*",
+                "**/*.stories.*",
                 "**/__fixtures__/*",
                 "**/__mocks__/*",
                 "**/__tests__/*",
