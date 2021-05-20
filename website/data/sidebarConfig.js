@@ -38,7 +38,11 @@ module.exports = {
       type: 'category',
       label: 'Icons',
       collapsed: true,
-      items: ['components/icons/Icon/icon', 'components/icons/logo'],
+      items: [
+        'components/icons/Icon/icon',
+        'components/icons/NavigationIcon/navigation-icon',
+        'components/icons/logo',
+      ],
     },
     {
       type: 'category',

@@ -13,6 +13,7 @@ export const components = [
   'ButtonGroup',
   'IconButton',
   'Icon',
+  'NavigationIcon',
   'Box',
   'Divider',
   'HStack',

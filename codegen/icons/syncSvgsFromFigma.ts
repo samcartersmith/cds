@@ -1,4 +1,4 @@
-import { camelCase, entries, renameKeys } from '@cbhq/cds-utils';
+import { camelCase, pascalCase, entries, renameKeys, capitalize } from '@cbhq/cds-utils';
 import axios from 'axios';
 import chalk from 'chalk';
 import fs from 'fs';
@@ -8,6 +8,7 @@ import { promisify } from 'util';
 
 import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
+import { buildTemplates } from '../utils/buildTemplates';
 import { generateFromTemplate } from '../utils/generateFromTemplate';
 import { getSourcePath } from '../utils/getSourcePath';
 import { createIconSet } from './createIconSet';
@@ -42,7 +43,7 @@ const normalizeIconName = (imageName: string): IconName | void => {
   }
 
   const [name, size] = specificName.split('_');
-  const stateStr = state === undefined ? '' : state.charAt(0).toUpperCase() + state.slice(1);
+  const stateStr = state === undefined ? '' : capitalize(state);
   if (type === 'NavigationIcon') {
     categorizedIconNames[`${type}Internal`].add(`${name}${stateStr}`);
     categorizedIconNames[`${type}`].add(`${name}`);
@@ -157,37 +158,56 @@ const createCategorizedNameType = (): {
 
     const toCategoryArrMap = createCategorizedNameType();
 
-    const newTypeNamesMap = Object.keys(toCategoryArrMap).reduce((newArrMap, oldKey) => {
-      newArrMap[oldKey] = `${oldKey}Name`;
-      return newArrMap;
-    }, {} as { [key: string]: string });
+    const newTypeNamesMap = (type: 'pascalCase' | 'camelCase') => {
+      return Object.keys(toCategoryArrMap).reduce((newArrMap, oldKey) => {
+        if (type === 'camelCase') {
+          newArrMap[oldKey] = camelCase(`${oldKey} name`);
+        }
+
+        if (type === 'pascalCase') {
+          newArrMap[oldKey] = pascalCase(`${oldKey} name`);
+        }
+
+        return newArrMap;
+      }, {} as { [key: string]: string });
+    };
 
     writePromises.push(
       generateFromTemplate({
         template: 'typescript.ejs',
         dest: 'common/types/IconName.ts',
         data: {
-          types: renameKeys(toCategoryArrMap, newTypeNamesMap),
+          types: renameKeys(toCategoryArrMap, newTypeNamesMap('pascalCase')),
         },
       })
     );
 
-    // Constant and Type mapping need to have different key names.
-    // For Type we name it like so, Type + Names. (i.e Icon -> IconName, NavigationIcon -> NavigationIconName)
-    // On the other hand, Constants are capitalized and separated by underscore. (i.e Icon -> ICON_NAMES, NavigationIcon -> NAVIGATIONICON_NAMES)
-    // The newConstantNamesMap and newTypeNamesMap transform the initial mapping to have this key, value form.
-    const newConstantNamesMap = Object.keys(toCategoryArrMap).reduce((newArrMap, oldKey) => {
-      newArrMap[oldKey] = `${oldKey.toUpperCase()}_NAMES`;
-      return newArrMap;
-    }, {} as { [key: string]: string });
+    delete toCategoryArrMap['NavigationIconInternal'];
 
-    writePromises.push(
-      generateFromTemplate({
-        template: 'objectMap.ejs',
-        dest: 'common/constants/IconNameEnum.ts',
-        data: renameKeys(toCategoryArrMap, newConstantNamesMap),
-      })
-    );
+    const iconData = {
+      iconSizes: ['xs', 's', 'm', 'l'],
+      navigationIconSizes: ['s', 'm', 'l'],
+      ...renameKeys(toCategoryArrMap, newTypeNamesMap('camelCase')),
+    };
+
+    const templates = {
+      'objectMap.ejs': [
+        {
+          dest: 'website/data/iconData.ts',
+          data: iconData,
+        },
+        {
+          dest: 'web/icons/__stories__/iconData.ts',
+          data: iconData,
+        },
+        {
+          dest: 'mobile-playground/src/data/iconData.ts',
+          data: iconData,
+        },
+      ],
+    };
+
+    writePromises.push(buildTemplates(templates));
 
     writePromises.push(
       generateFromTemplate({

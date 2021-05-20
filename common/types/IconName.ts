@@ -137,6 +137,7 @@ export type IconName =
   | 'camera'
   | 'orderHistory'
   | 'backArrow'
+  | 'forwardArrow'
   | 'caretRight'
   | 'caretLeft'
   | 'caretUp'

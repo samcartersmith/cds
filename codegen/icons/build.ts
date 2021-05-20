@@ -16,14 +16,6 @@ import { createIconFont } from './createIconFont';
         dest: 'web/icons/iconGlyphMap.ts',
         data: { iconGlyphMap: iconData.glyphMap },
       },
-      {
-        dest: 'website/data/iconData.ts',
-        data: { iconNames: iconData.names, iconSizes: iconData.sizes },
-      },
-      {
-        dest: 'web/icons/__stories__/iconData.ts',
-        data: { iconNames: iconData.names, iconSizes: iconData.sizes },
-      },
     ],
     'typescript.ejs': [
       {

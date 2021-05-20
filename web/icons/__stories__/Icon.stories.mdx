@@ -4,7 +4,7 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { HStack } from '../../layout';
 import { TextLabel1 } from '../../typography';
 import { Icon } from '../Icon';
-import { iconNames } from './iconData';
+import { iconName } from './iconData';
 
 <Meta title="Core Components/Icon" component={Icon} />
 
@@ -13,7 +13,7 @@ import { iconNames } from './iconData';
 <Canvas isColumn withToolbar>
   <Story name="sizes" decorators={[withStoryLabel('sizes')]}>
     <HStack flexWrap="wrap">
-      {iconNames.map(name => (
+      {iconName.map(name => (
         <div key={name}>
           <Icon name={name} title={name} spacing={7} color="foreground" size="xs" />
           <TextLabel1 align="center" as="p">
@@ -21,7 +21,7 @@ import { iconNames } from './iconData';
           </TextLabel1>
         </div>
       ))}
-      {iconNames.map(name => (
+      {iconName.map(name => (
         <div key={name}>
           <Icon name={name} title={name} spacing={7} color="foreground" size="s" />
           <TextLabel1 align="center" as="p">
@@ -29,7 +29,7 @@ import { iconNames } from './iconData';
           </TextLabel1>
         </div>
       ))}
-      {iconNames.map(name => (
+      {iconName.map(name => (
         <div key={name}>
           <Icon name={name} title={name} spacing={7} color="foreground" size="m" />
           <TextLabel1 align="center" as="p">
@@ -37,7 +37,7 @@ import { iconNames } from './iconData';
           </TextLabel1>
         </div>
       ))}
-      {iconNames.map(name => (
+      {iconName.map(name => (
         <div key={name}>
           <Icon name={name} title={name} spacing={7} color="foreground" size="l" />
           <TextLabel1 align="center" as="p">

@@ -1,4 +1,3 @@
-import { ICON_NAMES, NAVIGATIONICON_NAMES } from '@cbhq/cds-common/constants/IconNameEnum';
 import { FiatIcon } from '@cbhq/cds-mobile/icons/FiatIcon';
 import { Icon } from '@cbhq/cds-mobile/icons/Icon';
 import { IconBase } from '@cbhq/cds-mobile/icons/IconBase';
@@ -10,6 +9,7 @@ import { TextBody, TextHeadline } from '@cbhq/cds-mobile/typography';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
+import { iconName, navigationIconName } from './data/iconData';
 
 const IconScreen = () => {
   return (
@@ -18,7 +18,7 @@ const IconScreen = () => {
         <Box spacing={1}>
           <TextHeadline>NavigationIcon (Active)</TextHeadline>
           <HStack flexWrap="wrap">
-            {NAVIGATIONICON_NAMES.map(name => (
+            {navigationIconName.map(name => (
               <Box spacing={1} key={name}>
                 <NavigationIcon active={true} name={name} />
               </Box>
@@ -26,7 +26,7 @@ const IconScreen = () => {
           </HStack>
           <TextHeadline>NavigationIcon (InActive)</TextHeadline>
           <HStack flexWrap="wrap">
-            {NAVIGATIONICON_NAMES.map(name => (
+            {navigationIconName.map(name => (
               <Box spacing={1} key={name}>
                 <NavigationIcon active={false} name={name} />
               </Box>
@@ -62,7 +62,7 @@ const IconScreen = () => {
         <Box>
           <TextHeadline>Regular Icons</TextHeadline>
           <HStack flexWrap="wrap">
-            {ICON_NAMES.map(name => (
+            {iconName.map(name => (
               <Icon bordered spacingEnd={1} spacingBottom={1} key={name} size="l" name={name} />
             ))}
           </HStack>

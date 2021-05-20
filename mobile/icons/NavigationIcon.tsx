@@ -1,11 +1,14 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, memo } from 'react';
 
 import { NavigationIconName, IconSize, NavigationIconInternalName } from '@cbhq/cds-common';
 
 import { IconBase, IconBaseMobileProps } from './IconBase';
 
 interface NavigationIconProps
-  extends Omit<IconBaseMobileProps, 'name' | 'size' | 'bordered' | 'dangerouslySetColor'> {
+  extends Omit<
+    IconBaseMobileProps,
+    'name' | 'size' | 'bordered' | 'dangerouslySetColor' | 'color' | 'dangerouslySetStyle'
+  > {
   /** Navigation icon names */
   name: NavigationIconName;
   /**
@@ -20,12 +23,12 @@ interface NavigationIconProps
   active: boolean;
 }
 
-export const NavigationIcon: FunctionComponent<NavigationIconProps> = ({
+export const NavigationIcon: FunctionComponent<NavigationIconProps> = memo(function NavigationIcon({
   name,
-  size = 'l',
+  size = 'm',
   active = false,
   ...props
-}: NavigationIconProps) => {
+}: NavigationIconProps) {
   const navigationIconName = (active
     ? `${name}Active`
     : `${name}Inactive`) as NavigationIconInternalName;
@@ -37,4 +40,4 @@ export const NavigationIcon: FunctionComponent<NavigationIconProps> = ({
       {...props}
     />
   );
-};
+});

@@ -283,6 +283,33 @@ export const Icon = {
   ),
 };
 
+export const NavigationIcon = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/NavigationIcon/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/NavigationIcon/intro.mdx'
+      )
+  ),
+  'navigation-icon': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/NavigationIcon/navigation-icon.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/NavigationIcon/usage.mdx'
+      )
+  ),
+};
+
 export const Box = {
   a11y: React.lazy(
     () =>

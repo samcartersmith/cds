@@ -1929,15 +1929,30 @@
     "name": "Icon/backArrow_24",
     "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
   },
+  "6211:16": {
+    "key": "abd6dbf57aef6d5dbfd1f95e3619aefbcece6f79",
+    "name": "Icon/forwardArrow_24",
+    "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡"
+  },
   "4746:180": {
     "key": "6d9e5086fd0f843ed4496052829d4a396119de72",
     "name": "Icon/backArrow_12",
     "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
   },
+  "6211:18": {
+    "key": "9eb8d1ab249a611ecb4244ca62ed0b6bcc8c3388",
+    "name": "Icon/forwardArrow_12",
+    "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡"
+  },
   "4746:177": {
     "key": "edc95375ce82eb2022ba2cf5979f095a7ffdb61c",
     "name": "Icon/backArrow_16",
     "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅"
+  },
+  "6211:17": {
+    "key": "188dc5ee5d4ecaa092fffad113ca1acfd27489f4",
+    "name": "Icon/forwardArrow_16",
+    "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡"
   },
   "4793:178": {
     "key": "ba06713d2b01e8c9260239acbb7dacae88dad647",

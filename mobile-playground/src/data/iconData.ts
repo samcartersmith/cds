@@ -3,7 +3,11 @@
  * Generated from scripts/codegen/main.ts
  */
 
-export const ICON_NAMES = [
+export const iconSizes = ['xs', 's', 'm', 'l'] as const;
+
+export const navigationIconSizes = ['s', 'm', 'l'] as const;
+
+export const iconName = [
   'cashUSD',
   'cashGBP',
   'cashEUR',
@@ -137,6 +141,7 @@ export const ICON_NAMES = [
   'camera',
   'orderHistory',
   'backArrow',
+  'forwardArrow',
   'caretRight',
   'caretLeft',
   'caretUp',
@@ -146,7 +151,7 @@ export const ICON_NAMES = [
   'sortDownCenter',
 ] as const;
 
-export const NAVIGATIONICON_NAMES = [
+export const navigationIconName = [
   'candleSticks',
   'trading',
   'bell',
@@ -162,37 +167,4 @@ export const NAVIGATIONICON_NAMES = [
   'addPeople',
   'defi',
   'gab',
-] as const;
-
-export const NAVIGATIONICONINTERNAL_NAMES = [
-  'candleSticksInactive',
-  'tradingInactive',
-  'bellInactive',
-  'tradingActive',
-  'bellActive',
-  'payInactive',
-  'pieChartInactive',
-  'pieChartActive',
-  'candleSticksActive',
-  'payActive',
-  'newsfeedInactive',
-  'newsfeedActive',
-  'dashboardInactive',
-  'dashboardActive',
-  'tagInactive',
-  'tagActive',
-  'invoiceInactive',
-  'invoiceActive',
-  'giftBoxActive',
-  'seeMoreInactive',
-  'seeMoreActive',
-  'giftBoxInactive',
-  'cashInactive',
-  'addPeopleInactive',
-  'defiInactive',
-  'defiActive',
-  'gabInactive',
-  'gabActive',
-  'addPeopleActive',
-  'cashActive',
 ] as const;

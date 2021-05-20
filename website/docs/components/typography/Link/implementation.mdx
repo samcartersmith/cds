@@ -86,6 +86,8 @@ Color of the foreground text.
 
 ### onPress <Badge variant="mobile" />
 
+Callback to fire when pressed
+
 <ApiDetails
   componentName="Link"
   propertyName="onPress"
@@ -126,5 +128,30 @@ URL that this link goes to when pressed.
 />
 
 <ComponentDetails componentName="Link" templateName="prop-to" />
+
+### variant <Badge variant="mobile" />
+
+Specify inner text type
+
+<ApiDetails
+  componentName="Link"
+  propertyName="variant"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'body',
+    'caption',
+    'headline',
+    'label1',
+    'label2',
+    'legal',
+    'title1',
+    'title2',
+    'title3',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-variant" />
 
 <ComponentDetails componentName="Link" templateName="outro" />
