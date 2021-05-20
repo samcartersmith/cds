@@ -6,6 +6,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.13.0 (5/20/2021, 02:42 PM PST)
+
+#### 💥 Breaking
+
+- Mobile pressable to respect hitSlop and elevation overflow. [#20023](https://github.cbhq.net/mono/repo/pull/20023), [CDS-519](https://jira.coinbase-corp.com/browse/CDS-519)
+
+#### 🚀 Updates
+
+- Add block prop to pressables. [#20685](https://github.cbhq.net/mono/repo/pull/20685)
+- Add cell components for web. [#20627](https://github.cbhq.net/mono/repo/pull/20627)
+- Add Navigation Icon for Web. [#20465](https://github.cbhq.net/mono/repo/pull/20465), [CDS-249](https://jira.coinbase-corp.com/browse/CDS-249)
+- Color overrides for elevated layers in dark mode. [#20601](https://github.cbhq.net/mono/repo/pull/20601), [CDS-560](https://jira.coinbase-corp.com/browse/CDS-560)
+
+#### 🐞 Fixes
+
+- Transparent background for pressableOpacity. [#20556](https://github.cbhq.net/mono/repo/pull/20556)
+
 ## 0.12.3 (5/18/2021, 01:02 PM PST)
 
 #### 🚀 Updates

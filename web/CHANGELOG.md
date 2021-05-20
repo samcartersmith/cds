@@ -6,6 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.12.3 (5/20/2021, 02:42 PM PST)
+
+#### 🚀 Updates
+
+- Add block prop to pressables. [#20685](https://github.cbhq.net/mono/repo/pull/20685)
+- Add cell components for web. [#20627](https://github.cbhq.net/mono/repo/pull/20627)
+- Add Navigation Icon for Web. [#20465](https://github.cbhq.net/mono/repo/pull/20465), [CDS-249](https://jira.coinbase-corp.com/browse/CDS-249)
+- Add chart utilities to cds-common. [#20312](https://github.cbhq.net/mono/repo/pull/20312), [CDS-550](https://jira.coinbase-corp.com/browse/CDS-550)
+
 ## 0.12.2 (5/18/2021, 01:02 PM PST)
 
 #### 🚀 Updates
