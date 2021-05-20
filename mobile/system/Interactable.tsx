@@ -33,6 +33,7 @@ export const Interactable = memo(function Interactable({ children, ...props }: I
 
 export const InteractableContent = memo(function InteractableContent({
   backgroundColor,
+  block,
   borderRadius,
   borderWidth,
   children,
@@ -56,13 +57,14 @@ export const InteractableContent = memo(function InteractableContent({
   const wrapperStyles = useMemo(
     () =>
       [
+        block && { width: '100%' },
         ...style,
         borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
         borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
         { backgroundColor: bg, borderStyle: 'solid' } as const,
         elevationStyles,
       ].filter(Boolean),
-    [bg, borderRadius, borderWidth, elevationStyles, style]
+    [block, bg, borderRadius, borderWidth, elevationStyles, style]
   );
 
   return (

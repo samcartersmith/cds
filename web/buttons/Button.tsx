@@ -60,6 +60,7 @@ export const Button = forwardRef(function Button(
       as={ReakitButton}
       transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
+      block={block}
       borderColor={borderColor}
       borderRadius={compact ? 'compact' : 'standard'}
       borderWidth="button"

@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 
 import { CellProps as CellBaseProps } from '@cbhq/cds-common';
-import { css } from 'linaria';
 
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
@@ -92,7 +91,7 @@ export const Cell = memo(function Cell({
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
-        className={cell}
+        block
         disabled={disabled}
         onPress={onPress}
       >
@@ -103,8 +102,3 @@ export const Cell = memo(function Cell({
 
   return <Tag>{content}</Tag>;
 });
-
-const cell = css`
-  display: block;
-  width: 100%;
-`;

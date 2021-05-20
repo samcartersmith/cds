@@ -88,6 +88,7 @@ export const Cell = memo(function Cell({
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
+        block
         disabled={disabled}
         onPress={onPress}
       >

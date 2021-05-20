@@ -18,6 +18,7 @@ import {
   overlay,
   underlay,
   transparentChildren,
+  fullWidth,
 } from '../styles/interactable';
 import { palette } from '../tokens';
 
@@ -53,6 +54,7 @@ export const Interactable = forwardRef(function Interactable(
   {
     as: Container,
     backgroundColor,
+    block,
     borderColor,
     borderRadius,
     borderWidth,
@@ -93,6 +95,7 @@ export const Interactable = forwardRef(function Interactable(
     borderRadius && borderRadii[borderRadius],
     borderWidth && borderWidths[borderWidth],
     disabled ? disabledState : focusRing,
+    block && fullWidth,
     customClassName
   );
   const style = useMemo(

@@ -29,18 +29,7 @@ Element or component to render the container as.
   required={true}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={[
-    'ComponentClass<any, any>',
-    'FunctionComponent<any>',
-    'a',
-    'button',
-    'div',
-    'input',
-    'label',
-    'select',
-    'span',
-    'textarea',
-  ]}
+  webOptions={['ComponentClass<any, any>', 'FunctionComponent<any>', 'a', 'button']}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-as" />
@@ -58,27 +47,58 @@ Background color of the overlay (element being interacted with).
     'background',
     'backgroundAlternate',
     'backgroundOverlay',
+    'foreground',
+    'foregroundMuted',
+    'line',
+    'lineHeavy',
     'negative',
+    'negativeForeground',
     'positive',
+    'positiveForeground',
     'primary',
+    'primaryForeground',
     'primaryWash',
     'secondary',
+    'secondaryForeground',
     'transparent',
   ]}
   webOptions={[
     'background',
     'backgroundAlternate',
     'backgroundOverlay',
+    'foreground',
+    'foregroundMuted',
+    'line',
+    'lineHeavy',
     'negative',
+    'negativeForeground',
     'positive',
+    'positiveForeground',
     'primary',
+    'primaryForeground',
     'primaryWash',
     'secondary',
+    'secondaryForeground',
     'transparent',
   ]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-backgroundColor" />
+
+### block
+
+Set element to block and expand to 100% width.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="block"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="prop-block" />
 
 ### borderColor
 
@@ -188,6 +208,21 @@ React Native is historically trash at debouncing touch events. This can cause a 
 
 <ComponentDetails componentName="Pressable" templateName="prop-disableDebounce" />
 
+### elevation
+
+Is the element elevated.
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="elevation"
+  required={false}
+  defaultValue=""
+  mobileOptions={['1', '2']}
+  webOptions={['1', '2']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="prop-elevation" />
+
 ### feedback <Badge variant="mobile" />
 
 Haptic feedback to trigger when being pressed.
@@ -256,7 +291,12 @@ Callback fired when the element is pressed.
   required={false}
   defaultValue=""
   mobileOptions={[
-    '(false | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | null | undefined)[]',
+    '(state: Readonly<{ pressed: boolean; }>) => StyleProp<ViewStyle>',
+    'RecursiveArray<Falsy | ViewStyle | RegisteredStyle<ViewStyle>>',
+    'RegisteredStyle<ViewStyle>',
+    'ViewStyle',
+    'false',
+    'null',
   ]}
   webOptions={['CSSProperties']}
 />

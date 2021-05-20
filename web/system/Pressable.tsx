@@ -16,7 +16,13 @@ export interface PressableProps extends React.AriaAttributes, SharedProps {
 
 export interface PressableInternalProps
   extends PressableProps,
-    Omit<InteractableProps, 'onClick' | 'onClickCapture' | 'pressed'> {
+    Omit<InteractableProps, 'as' | 'onClick' | 'onClickCapture' | 'pressed'> {
+  /** Element or component to render the container as. */
+  as:
+    | 'a'
+    | 'button'
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    | React.ComponentType<any>;
   /** Dont scale element on press. */
   noScaleOnPress?: boolean;
 }

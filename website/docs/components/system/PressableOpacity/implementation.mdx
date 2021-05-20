@@ -29,21 +29,25 @@ Element or component to render the container as.
   required={true}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={[
-    'ComponentClass<any, any>',
-    'FunctionComponent<any>',
-    'a',
-    'button',
-    'div',
-    'input',
-    'label',
-    'select',
-    'span',
-    'textarea',
-  ]}
+  webOptions={['ComponentClass<any, any>', 'FunctionComponent<any>', 'a', 'button']}
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-as" />
+
+### block
+
+Set element to block and expand to 100% width.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="block"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-block" />
 
 ### className <Badge variant="web" />
 
@@ -89,6 +93,21 @@ React Native is historically trash at debouncing touch events. This can cause a 
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-disableDebounce" />
+
+### elevation
+
+Is the element elevated.
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="elevation"
+  required={false}
+  defaultValue=""
+  mobileOptions={['1', '2']}
+  webOptions={['1', '2']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-elevation" />
 
 ### feedback <Badge variant="mobile" />
 
@@ -158,7 +177,12 @@ Callback fired when the element is pressed.
   required={false}
   defaultValue=""
   mobileOptions={[
-    '(false | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | null | undefined)[]',
+    '(state: Readonly<{ pressed: boolean; }>) => StyleProp<ViewStyle>',
+    'RecursiveArray<Falsy | ViewStyle | RegisteredStyle<ViewStyle>>',
+    'RegisteredStyle<ViewStyle>',
+    'ViewStyle',
+    'false',
+    'null',
   ]}
   webOptions={['CSSProperties']}
 />

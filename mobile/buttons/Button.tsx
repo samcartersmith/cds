@@ -42,6 +42,7 @@ export const Button = memo(function Button({
     <Pressable
       transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
+      block={block}
       borderColor={borderColor}
       borderRadius={compact ? 'compact' : 'standard'}
       borderWidth="button"

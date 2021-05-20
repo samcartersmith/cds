@@ -6,6 +6,8 @@ import { PaletteAlias, PaletteBorder } from './Palette';
 export interface InteractableBaseProps {
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteAlias | 'transparent';
+  /** Set element to block and expand to 100% width. */
+  block?: boolean;
   /** Border color of the element being interacted with. */
   borderColor?: PaletteBorder | 'transparent';
   /** Border radius of the element being interacted with. */

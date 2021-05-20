@@ -98,3 +98,8 @@ export const transparentChildren = css`
     opacity: var(--interactable-opacity, 1);
   }
 `;
+
+export const fullWidth = css`
+  display: block;
+  width: 100%;
+`;
