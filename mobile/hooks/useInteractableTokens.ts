@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 
+import { blendColors } from '@cbhq/cds-common/color/blendColors';
+import { paletteValueToHueStep } from '@cbhq/cds-common/palette/paletteValueToHueStep';
+import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
 import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactable';
 import { PaletteAlias, PaletteValue, SpectrumAlias, SpectrumHueStep } from '@cbhq/cds-common/types';
-import { extractHueStep, paletteValueToTuple, blendColors } from '@cbhq/cds-common/utils/color';
 
 import { usePalette } from '../hooks/usePalette';
 import { paletteValueToRgbaArray } from '../utils/palette';
@@ -53,7 +55,7 @@ const useOverlayPaletteValue = (overlayColor: PaletteAlias | undefined) => {
 };
 
 const useOverlayHueStep = (paletteValue: PaletteValue) => {
-  return useMemo(() => extractHueStep(paletteValue), [paletteValue]);
+  return useMemo(() => paletteValueToHueStep(paletteValue), [paletteValue]);
 };
 
 const useInteractableState = ({ disabled, pressed }: UseInteractableTokensParams) => {

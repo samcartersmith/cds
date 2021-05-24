@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo } from 'react';
 
-import { getColorLuminosity } from '@cbhq/cds-common/utils/color';
+import { isLightOrDarkColor } from '@cbhq/cds-common/color/isLightOrDarkColor';
 import { emptyObject } from '@cbhq/cds-utils';
 import { Platform, StatusBar as RNStatusBar, StatusBarStyle } from 'react-native';
 
@@ -23,7 +23,7 @@ export const useStatusBarStyle = ({
   return useMemo(() => {
     const paletteOverride = palette && paletteConfigToRgbaStrings(palette, spectrum ?? 'light');
     const backgroundColor = paletteOverride?.background ?? contextPalette.background;
-    const luminosity = getColorLuminosity(backgroundColor);
+    const luminosity = isLightOrDarkColor(backgroundColor);
     return luminosity === 'light' ? 'dark-content' : 'light-content';
   }, [contextPalette.background, palette, spectrum]);
 };

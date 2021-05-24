@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { LottieSource } from '@cbhq/cds-common';
-import { rgba2hex } from '@cbhq/cds-common/utils/color';
+import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
 import { mapKeys } from '@cbhq/cds-utils';
 
 import { usePalette } from '../hooks/usePalette';
@@ -30,7 +30,7 @@ export function useLottieColorFilters(
           filters.push({
             keypath,
             // Lottie cannot process rgba values so we convert to 8 digit hex
-            color: rgba2hex(paletteSnakeCased[keypath]),
+            color: colorToHex(paletteSnakeCased[keypath]),
           });
         }
       }

@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 
 import { defaultPalette } from '@cbhq/cds-common';
-import { rgba2hex } from '@cbhq/cds-common/utils/color';
+import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
 import { activityIndicator } from '@cbhq/cds-lottie-files/activityIndicator';
 import { renderHook } from '@testing-library/react-hooks';
 import LottieView from 'lottie-react-native';
@@ -29,7 +29,9 @@ describe('useLottieColorFilters', () => {
   });
 
   it('ensures the color values are mapped to hex version of palette colors', () => {
-    expect(getPaletteColors(result).includes(rgba2hex(mockPalette.foregroundMuted))).toEqual(true);
+    expect(getPaletteColors(result).includes(colorToHex(mockPalette.foregroundMuted))).toEqual(
+      true
+    );
   });
 
   it('ensures the palette aliases are mapped to palette names', () => {

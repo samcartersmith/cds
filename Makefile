@@ -22,10 +22,11 @@ Help:
   $$ make serve.story               -- Serve storybook build locally.
   $$ make serve.website             -- Serve docusaurus website build locally.
   $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
-  $$ make deploy.website-dev		-- Deploy docusaurus website to cds-dev.cbhq.net.
+  $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
   $$ make prepare.icons             -- Prepare icons
-  $$ make lint.fix					-- Auto fixes lints issues
-  $$ make release					-- Automatically update CHANGELOG based on PR titles
+  $$ make lint.fix                  -- Auto fixes lints issues
+  $$ make release                   -- Automatically update CHANGELOG based on PR titles
+  $$ make typecheck                 -- Run global typecheck
 endef
 export HELP_TEXT
 
@@ -169,3 +170,7 @@ clean.ios:
 .PHONY: release
 release:
 	bazel run :release
+
+.PHONY: typecheck
+typecheck:
+	bazel run //:typecheck

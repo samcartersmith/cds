@@ -6,7 +6,8 @@ import {
   PartialPaletteConfig,
   Spectrum,
 } from '@cbhq/cds-common';
-import { paletteValueToTuple, rgba2hex } from '@cbhq/cds-common/utils/color';
+import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
+import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
 import { mapValues } from '@cbhq/cds-utils';
 
 import * as spectrumColors from '../styles/spectrum';
@@ -47,7 +48,7 @@ export const paletteValueToRgbaString: PaletteValueToRgbaString = (paletteValue,
  * @returns hex value based on color and spectrum
  */
 export const paletteValueToHex = (color: PaletteValue, spectrum: Spectrum) =>
-  rgba2hex(paletteValueToRgbaString(color, spectrum));
+  colorToHex(paletteValueToRgbaString(color, spectrum));
 
 /**
  * Given a color that is a PaletteValue and the spectrum, output a hex value of this color

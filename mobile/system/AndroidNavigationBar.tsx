@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useCallback, memo, useLayoutEffect, useRef } from 'react';
 
-import { rgba2hex } from '@cbhq/cds-common/utils/color';
+import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
 import { emptyObject } from '@cbhq/cds-utils';
 import { Platform } from 'react-native';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
@@ -28,7 +28,7 @@ export const useAndroidNavigationBarUpdater = ({
     if (Platform.OS === 'android' && Platform.Version > 25) {
       return changeNavigationBarColor(
         // All palette values are in rgba and color has to be converted to hex.
-        rgba2hex(background),
+        colorToHex(background),
         // dark-content means light background
         statusBarStyle === 'dark-content',
         true

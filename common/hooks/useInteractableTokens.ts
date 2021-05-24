@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
+import { paletteValueToHueStep } from '../palette/paletteValueToHueStep';
 import { usePaletteConfig } from '../palette/usePaletteConfig';
 import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactable';
 import { PaletteAlias } from '../types';
-import { extractHueStep } from '../utils/color';
 
 export const useInteractableTokens = (
   overlayColor?: PaletteAlias | 'transparent'
@@ -16,9 +16,10 @@ export const useInteractableTokens = (
   const palette = usePaletteConfig();
   const overlayColorAlias =
     overlayColor && overlayColor !== 'transparent' ? palette[overlayColor] : '';
-  const hueStep = useMemo(() => (overlayColorAlias ? extractHueStep(overlayColorAlias) : 60), [
-    overlayColorAlias,
-  ]);
+  const hueStep = useMemo(
+    () => (overlayColorAlias ? paletteValueToHueStep(overlayColorAlias) : 60),
+    [overlayColorAlias]
+  );
 
   return {
     disabledOpacity: opacityDisabled,
