@@ -81,6 +81,23 @@ const LinkScreen = () => {
           Go to Coinbase
         </Link>
       </Example>
+      <Example inline>
+        <TextHeadline>forceOpenOutsideApp is set to false by default</TextHeadline>
+        <Link variant="title1" to="https://www.coinbase.com/" color="negative">
+          Go to Coinbase within App
+        </Link>
+      </Example>
+      <Example inline>
+        <TextHeadline>test forceOpenOutsideApp</TextHeadline>
+        <Link
+          variant="title1"
+          forceOpenOutsideApp={true}
+          to="https://www.coinbase.com/"
+          color="negative"
+        >
+          Go to Coinbase outside of App
+        </Link>
+      </Example>
       <Example>
         <TextLabel1>
           The following examples do not work on IOS Simulator. Only work on devices

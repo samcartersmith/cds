@@ -30,6 +30,11 @@ const TYPOGRAPHY_MAP: Record<LinkTypography, React.ComponentType<TextProps>> = {
 export interface LinkProps extends LinkBaseProps, SharedProps {
   /** Callback to fire when pressed */
   onPress?: (event: GestureResponderEvent) => void;
+  /**
+   * Toggles whether the link should be opened outside or within app
+   * @default false
+   * */
+  forceOpenOutsideApp?: boolean;
 }
 
 export const Link = memo(
@@ -41,8 +46,9 @@ export const Link = memo(
     testID,
     onPress,
     variant = 'headline',
+    forceOpenOutsideApp = false,
   }: LinkProps) => {
-    const openUrl = useOpenExternalUrl();
+    const openUrl = useOpenExternalUrl(forceOpenOutsideApp);
 
     const openUrlOnPress = useCallback(
       (event: GestureResponderEvent) => {

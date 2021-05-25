@@ -6,7 +6,7 @@ import { Alert, Linking } from 'react-native';
 import { openWebBrowser } from '../utils/openWebBrowser';
 import { parseUrl } from '../utils/urlUtil';
 
-export const useOpenExternalUrl = () => {
+export const useOpenExternalUrl = (forceOpenOutsideApp = false) => {
   const spectrum = useSpectrum();
   return useCallback(
     async (url: string) => {
@@ -19,7 +19,7 @@ export const useOpenExternalUrl = () => {
           openWebBrowser(url, {
             spectrum,
             preventRedirectionIntoApp: false,
-            forceOpenOutsideApp: false,
+            forceOpenOutsideApp,
           });
           break;
         default:
@@ -38,6 +38,6 @@ export const useOpenExternalUrl = () => {
           break;
       }
     },
-    [spectrum]
+    [spectrum, forceOpenOutsideApp]
   );
 };
