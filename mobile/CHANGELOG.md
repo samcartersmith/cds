@@ -6,6 +6,36 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.0 (5/25/2021, 12:50 PM PST)
+
+#### 💥 Breaking
+
+- Add color folder to common and move color utils. [#21028](https://github.cbhq.net/mono/repo/pull/21028), [CDS-570](https://jira.coinbase-corp.com/browse/CDS-570)
+
+#### 🚀 Updates
+
+- Sparkline and SparklineGradient components for mobile. [#21081](https://github.cbhq.net/mono/repo/pull/21081), [CDS-577](https://jira.coinbase-corp.com/browse/CDS-577)
+
+#### 🐞 Fixes
+
+- Added more test cases for Link Mobile. [#20988](https://github.cbhq.net/mono/repo/pull/20988), [CDS-569](https://jira.coinbase-corp.com/browse/CDS-569)
+- Elevation and border styles in mobile. [#21174](https://github.cbhq.net/mono/repo/pull/21174), [CDS-574](https://jira.coinbase-corp.com/browse/CDS-574)
+
+## 0.14.0 (5/25/2021, 12:44 PM PST)
+
+#### 💥 Breaking
+
+- Add color folder to common and move color utils. [#21028](https://github.cbhq.net/mono/repo/pull/21028), [CDS-570](https://jira.coinbase-corp.com/browse/CDS-570)
+
+#### 🚀 Updates
+
+- Sparkline and SparklineGradient components for mobile. [#21081](https://github.cbhq.net/mono/repo/pull/21081), [CDS-577](https://jira.coinbase-corp.com/browse/CDS-577)
+
+#### 🐞 Fixes
+
+- Added more test cases for Link Mobile. [#20988](https://github.cbhq.net/mono/repo/pull/20988), [CDS-569](https://jira.coinbase-corp.com/browse/CDS-569)
+- Elevation and border styles in mobile. [#21174](https://github.cbhq.net/mono/repo/pull/21174), [CDS-574](https://jira.coinbase-corp.com/browse/CDS-574)
+
 ## 0.13.0 (5/20/2021, 02:42 PM PST)
 
 #### 💥 Breaking
