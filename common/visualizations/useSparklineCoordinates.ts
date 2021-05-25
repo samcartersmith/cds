@@ -4,19 +4,18 @@ import { bisector, extent } from 'd3-array';
 import { scaleLinear, scaleTime } from 'd3-scale';
 import { line } from 'd3-shape';
 
-import { borderWidth } from '../tokens/border';
 import { ChartData, ChartDataPoint } from '../types';
+import { getSparklineRange } from './getSparklineRange';
 
-export type UseChartCoordinatesParams = {
+export type UseSparklineCoordinatesParams = {
   data: ChartData;
   width: number;
   height: number;
 };
 
-export const useChartCoordinates = ({ data, width, height }: UseChartCoordinatesParams) => {
+export const useSparklineCoordinates = ({ data, width, height }: UseSparklineCoordinatesParams) => {
   return useMemo(() => {
-    const xRange = [borderWidth.sparkline, width - borderWidth.sparkline];
-    const yRange = [height - borderWidth.sparkline, borderWidth.sparkline];
+    const { xRange, yRange } = getSparklineRange({ height, width });
     const xDomain = extent(data, item => item.date) as [Date, Date];
     const xFunction = scaleTime() // the x-axis is date
       .domain(xDomain)

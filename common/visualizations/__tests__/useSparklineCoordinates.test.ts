@@ -1,13 +1,13 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useChartCoordinates, UseChartCoordinatesParams } from '../useChartCoordinates';
+import { useSparklineCoordinates, UseSparklineCoordinatesParams } from '../useSparklineCoordinates';
 
 const sharedProps = {
   width: 440,
   height: 320,
 };
 
-const mockData1: UseChartCoordinatesParams = {
+const mockData1: UseSparklineCoordinatesParams = {
   ...sharedProps,
   data: [
     {
@@ -21,7 +21,7 @@ const mockData1: UseChartCoordinatesParams = {
   ],
 };
 
-const mockData2: UseChartCoordinatesParams = {
+const mockData2: UseSparklineCoordinatesParams = {
   ...sharedProps,
   data: [
     {
@@ -35,10 +35,10 @@ const mockData2: UseChartCoordinatesParams = {
   ],
 };
 
-describe('useChartCoordinates', () => {
+describe('useSparklineCoordinates', () => {
   it('returns the correct path', () => {
-    const { result, rerender } = renderHook((props: UseChartCoordinatesParams = mockData1) => {
-      return useChartCoordinates(props);
+    const { result, rerender } = renderHook((props: UseSparklineCoordinatesParams = mockData1) => {
+      return useSparklineCoordinates(props);
     });
     const path1 = result.current.path;
     rerender(mockData2);
@@ -60,7 +60,7 @@ describe('useChartCoordinates', () => {
       date: new Date(2020, 1, 2),
     };
     const { result } = renderHook(() =>
-      useChartCoordinates({
+      useSparklineCoordinates({
         width: 100,
         height: 100,
         data: [marker1, marker2],

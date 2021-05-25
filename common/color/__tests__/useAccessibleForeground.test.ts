@@ -21,7 +21,7 @@ describe('useAccessibleForeground', () => {
       useAccessibleForeground('#ffffff', '#fff000', 'graphic', transformFn)
     );
 
-    expect(result.current).toEqual('yellow60');
+    expect(result.current).toEqual('yellow50');
   });
 
   it('returns gray100 for non accessible gray colors', () => {

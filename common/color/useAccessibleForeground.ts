@@ -30,7 +30,7 @@ export const useAccessibleForeground = (
     if (isAccessibleColor(background, foreground, usage)) {
       return foreground;
     } else {
-      const spectrumAlias = colorToSpectrumAlias(foreground);
+      const spectrumAlias = colorToSpectrumAlias(foreground, usage);
       return transformFn(spectrumAlias);
     }
   }, [background, foreground, transformFn, usage]);

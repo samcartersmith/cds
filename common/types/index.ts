@@ -30,6 +30,7 @@ export * from './Shape';
 export * from './SharedProps';
 export * from './SpacingProps';
 export * from './SpacingScale';
+export * from './SparklineBaseProps';
 export * from './Spectrum';
 export * from './TextBaseProps';
 export * from './Typography';

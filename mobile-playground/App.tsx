@@ -25,6 +25,8 @@ import PressableScreen from './src/Pressable';
 import PressableOpacityScreen from './src/PressableOpacity';
 import RadioGroupScreen from './src/RadioGroup';
 import SpacerScreen from './src/Spacer';
+import SparklineScreen from './src/Sparkline';
+import SparklineGradientScreen from './src/SparklineGradient';
 import SwitchScreen from './src/Switch';
 import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
@@ -79,18 +81,20 @@ const App = () => {
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
           <Stack.Screen name="ContentCell" component={ContentCellScreen} />
           <Stack.Screen name="ContentCellFallback" component={ContentCellFallbackScreen} />
-          <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
-          <Stack.Screen name="Switch" component={SwitchScreen} />
           <Stack.Screen name="Divider" component={DividerScreen} />
-          <Stack.Screen name="Spacer" component={SpacerScreen} />
+          <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
           <Stack.Screen name="Link" component={LinkScreen} />
           <Stack.Screen name="ListCell" component={ListCellScreen} />
           <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />
-          <Stack.Screen name="Icon" component={IconScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />
           <Stack.Screen name="Pressable" component={PressableScreen} />
           <Stack.Screen name="PressableOpacity" component={PressableOpacityScreen} />
+          <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
+          <Stack.Screen name="Spacer" component={SpacerScreen} />
+          <Stack.Screen name="Sparkline" component={SparklineScreen} />
+          <Stack.Screen name="SparklineGradient" component={SparklineGradientScreen} />
+          <Stack.Screen name="Switch" component={SwitchScreen} />
           <Stack.Screen name="Text" component={TextScreen} options={{ title: 'Text (all)' }} />
           <Stack.Screen name="TextBody" component={TextBodyScreen} />
           <Stack.Screen name="TextCaption" component={TextCaptionScreen} />
