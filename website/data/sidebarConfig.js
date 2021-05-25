@@ -16,22 +16,34 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Controls',
-      collapsed: true,
-      items: [
-        'components/controls/Checkbox/checkbox',
-        'components/controls/RadioGroup/radio-group',
-        'components/controls/Switch/switch',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Buttons',
       collapsed: true,
       items: [
         'components/buttons/Button/button',
         'components/buttons/ButtonGroup/button-group',
         'components/buttons/IconButton/icon-button',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Cells',
+      collapsed: true,
+      items: [
+        'components/cells/CellMedia/cell-media',
+        'components/cells/ContentCell/content-cell',
+        'components/cells/ContentCellFallback/content-cell-fallback',
+        'components/cells/ListCell/list-cell',
+        'components/cells/ListCellFallback/list-cell-fallback',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Controls',
+      collapsed: true,
+      items: [
+        'components/controls/Checkbox/checkbox',
+        'components/controls/RadioGroup/radio-group',
+        'components/controls/Switch/switch',
       ],
     },
     {
@@ -51,6 +63,7 @@ module.exports = {
       items: [
         'components/layout/Box/box',
         'components/layout/Divider/divider',
+        'components/layout/Fallback/fallback',
         'components/layout/HStack/hstack',
         'components/layout/Spacer/spacer',
         'components/layout/VStack/vstack',

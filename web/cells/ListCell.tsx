@@ -6,7 +6,7 @@ import { listHeight } from '@cbhq/cds-common/tokens/cell';
 
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
-import { Cell } from './Cell';
+import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 
@@ -25,7 +25,7 @@ export const ListCell = memo(function ListCell({
   variant,
   onPress,
   ...props
-}: ListCellProps) {
+}: ListCellProps & CellSharedProps) {
   if (process.env.NODE_ENV !== 'production' && onPress && action) {
     console.error(
       'ListCell: Cannot use `onPress` and `action` together. Unable to nest pressables.'

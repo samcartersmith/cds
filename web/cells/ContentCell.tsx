@@ -4,7 +4,7 @@ import { ContentCellProps } from '@cbhq/cds-common';
 
 import { Box, HStack, VStack } from '../layout';
 import { TextHeadline, TextBody, TextLabel2 } from '../typography';
-import { Cell } from './Cell';
+import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
 export type { ContentCellProps };
@@ -20,7 +20,7 @@ export const ContentCell = memo(function ContentCell({
   subtitle,
   onPress,
   ...props
-}: ContentCellProps) {
+}: ContentCellProps & CellSharedProps) {
   if (process.env.NODE_ENV !== 'production' && meta && !title && !subtitle) {
     console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
   }

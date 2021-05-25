@@ -1,0 +1,373 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/cells/CellMedia](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/cells/CellMedia.tsx)
+
+<ComponentDetails componentName="CellMedia" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="CellMedia" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="CellMedia" templateName="a11y" />
+
+## Props
+
+### name
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'add',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashUSD',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clock',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'deposit',
+    'diagonalRightArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'drag',
+    'email',
+    'error',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'safe',
+    'search',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'trashCan',
+    'undo',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'wireTransfer',
+    'withdraw',
+  ]}
+  webOptions={[
+    'add',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashUSD',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clock',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'deposit',
+    'diagonalRightArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'drag',
+    'email',
+    'error',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'safe',
+    'search',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'trashCan',
+    'undo',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'wireTransfer',
+    'withdraw',
+  ]}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-name" />
+
+### source
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="source"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-source" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests.
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-testID" />
+
+### title
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="title"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-title" />
+
+### type
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="type"
+  required={true}
+  defaultValue=""
+  mobileOptions={['asset', 'avatar', 'icon', 'image']}
+  webOptions={['asset', 'avatar', 'icon', 'image']}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-type" />
+
+<ComponentDetails componentName="CellMedia" templateName="outro" />

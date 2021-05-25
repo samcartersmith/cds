@@ -4,6 +4,7 @@ import { join, useToggler } from '@cbhq/cds-common';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
+import * as CDSCells from '@cbhq/cds-web/cells';
 import * as CDSControls from '@cbhq/cds-web/controls';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import * as CDSIcons from '@cbhq/cds-web/icons';
@@ -32,6 +33,7 @@ const ReactLiveScope = {
   join,
   ...CDSAnimation,
   ...CDSButtons,
+  ...CDSCells,
   ...CDSControls,
   ...CDSIcons,
   ...CDSLayout,

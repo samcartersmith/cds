@@ -1,0 +1,18 @@
+Every fallback requires an explicit width and height representing the shape of the element.
+
+```jsx live
+<VStack gap={1}>
+  <Fallback width={150} height={45} />
+  <Fallback width={65} height={45} percentage />
+</VStack>
+```
+
+The shape of the fallback can further be customized with the `shape` prop.
+
+```jsx live
+<HStack gap={1}>
+  <Fallback width={50} height={50} shape="square" />
+  <Fallback width={50} height={50} shape="squircle" />
+  <Fallback width={50} height={50} shape="circle" />
+</HStack>
+```

@@ -8,9 +8,12 @@ import { Pressable } from '../system/Pressable';
 import { CellMedia } from './CellMedia';
 import { MediaFallback } from './MediaFallback';
 
-export interface CellProps extends CellBaseProps {
+export interface CellSharedProps {
+  /** The type of outer wrapping element. */
   as?: 'div' | 'li';
 }
+
+export interface CellProps extends CellBaseProps, CellSharedProps {}
 
 export const Cell = memo(function Cell({
   accessory,

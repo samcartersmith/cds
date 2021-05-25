@@ -12,8 +12,9 @@ export const DOCS_DIR = 'website/docs/components';
  */
 export const CDS_SUB_DIRS = [
   'animation',
-  'controls',
   'buttons',
+  'cells',
+  'controls',
   'icons',
   'layout',
   // 'loaders', TODO: Remove MaterialLoader and CircularProgress. Update Spinner to only take allowed size prop.

@@ -23,13 +23,14 @@ export const ContentCellFallback = memo(function ContentCellFallback({
         {meta && (
           <div style={{ float: 'right', width: '30%' }}>
             <Box justifyContent="flex-end" flexShrink={0}>
-              <Fallback height={16} width={50} percentage />
+              <Fallback height={18} width={50} percentage />
             </Box>
           </div>
         )}
 
-        {(title || subtitle) && <Fallback height={16} width={45} percentage />}
-        {description && <Fallback height={22} width={65} spacingTop={0.5} percentage />}
+        {title && <Fallback height={18} width={45} percentage />}
+        {subtitle && <Fallback height={16} width={35} spacingTop={0.5} percentage />}
+        {description && <Fallback height={24} width={65} spacingTop={0.5} percentage />}
       </div>
     </Cell>
   );

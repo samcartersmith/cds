@@ -1,0 +1,290 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/cells/ListCell](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/cells/ListCell.tsx)
+
+<ComponentDetails componentName="ListCell" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="ListCell" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="ListCell" templateName="a11y" />
+
+## Props
+
+### accessory
+
+Accessory to display at the end of the cell.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="accessory"
+  required={false}
+  defaultValue=""
+  mobileOptions={['arrow', 'more', 'selected']}
+  webOptions={['arrow', 'more', 'selected']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-accessory" />
+
+### action
+
+Interactive action, like a CTA or form element. Cannot be used alongside `onPress`.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="action"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-action" />
+
+### description
+
+Description of content. Max 1-2 lines, otherwise will truncate.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="description"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-description" />
+
+### detail
+
+Label and or extra detail.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="detail"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-detail" />
+
+### disabled
+
+Is the cell disabled? Will apply opacity and disable interaction.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-disabled" />
+
+### media
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="media"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<CellMediaProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<CellMediaProps, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-media" />
+
+### onPress
+
+Callback fired when the cell is pressed.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['() => void']}
+  webOptions={['() => void']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-onPress" />
+
+### selected
+
+Is the cell selected? Will apply a background and selected accessory.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="selected"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-selected" />
+
+### subdetail
+
+Subdetail providing more information.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="subdetail"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-subdetail" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-testID" />
+
+### title
+
+Title of content. Max 1-2 lines, otherwise will truncate.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-title" />
+
+### variant
+
+Variant color to apply to the subdetail text.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="variant"
+  required={false}
+  defaultValue=""
+  mobileOptions={['foregroundMuted', 'negative', 'positive']}
+  webOptions={['foregroundMuted', 'negative', 'positive']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-variant" />
+
+<ComponentDetails componentName="ListCell" templateName="outro" />

@@ -1,0 +1,250 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/cells/ContentCell](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/cells/ContentCell.tsx)
+
+<ComponentDetails componentName="ContentCell" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="ContentCell" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="ContentCell" templateName="a11y" />
+
+## Props
+
+### accessory
+
+Accessory to display at the end of the cell.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="accessory"
+  required={false}
+  defaultValue=""
+  mobileOptions={['arrow', 'more', 'selected']}
+  webOptions={['arrow', 'more', 'selected']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-accessory" />
+
+### description
+
+Description of content. Content will wrap accordingly.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="description"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-description" />
+
+### disabled
+
+Is the cell disabled? Will apply opacity and disable interaction.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-disabled" />
+
+### media
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="media"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<CellMediaProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<CellMediaProps, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-media" />
+
+### meta
+
+Meta information to display at the end of the title.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="meta"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-meta" />
+
+### onPress
+
+Callback fired when the cell is pressed.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['() => void']}
+  webOptions={['() => void']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-onPress" />
+
+### selected
+
+Is the cell selected? Will apply a background and selected accessory.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="selected"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-selected" />
+
+### subtitle
+
+Subtitle of content. Max 1 line, otherwise will truncate.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="subtitle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-subtitle" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-testID" />
+
+### title
+
+Title of content. Max 1 line, otherwise will truncate.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-title" />
+
+<ComponentDetails componentName="ContentCell" templateName="outro" />

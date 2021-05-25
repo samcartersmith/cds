@@ -52,99 +52,6 @@ export const LottieStatusAnimation = {
   ),
 };
 
-export const Checkbox = {
-  a11y: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/a11y.mdx'
-      )
-  ),
-  checkbox: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/checkbox.mdx'
-      )
-  ),
-  implementation: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/implementation.mdx'
-      )
-  ),
-  intro: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/intro.mdx'
-      )
-  ),
-  usage: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/usage.mdx'
-      )
-  ),
-};
-
-export const RadioGroup = {
-  a11y: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/a11y.mdx'
-      )
-  ),
-  implementation: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/implementation.mdx'
-      )
-  ),
-  intro: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/intro.mdx'
-      )
-  ),
-  'radio-group': React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/radio-group.mdx'
-      )
-  ),
-  usage: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/usage.mdx'
-      )
-  ),
-};
-
-export const Switch = {
-  implementation: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/implementation.mdx'
-      )
-  ),
-  intro: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/intro.mdx'
-      )
-  ),
-  switch: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/switch.mdx'
-      )
-  ),
-  usage: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/usage.mdx'
-      )
-  ),
-};
-
 export const Button = {
   a11y: React.lazy(
     () =>
@@ -240,6 +147,264 @@ export const IconButton = {
     () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/IconButton/usage.mdx'
+      )
+  ),
+};
+
+export const CellMedia = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/CellMedia/a11y.mdx'
+      )
+  ),
+  'cell-media': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/CellMedia/cell-media.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/CellMedia/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/CellMedia/intro.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/CellMedia/usage.mdx'
+      )
+  ),
+};
+
+export const ContentCell = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCell/a11y.mdx'
+      )
+  ),
+  'content-cell': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCell/content-cell.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCell/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCell/intro.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCell/usage.mdx'
+      )
+  ),
+};
+
+export const ContentCellFallback = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCellFallback/a11y.mdx'
+      )
+  ),
+  'content-cell-fallback': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCellFallback/content-cell-fallback.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCellFallback/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCellFallback/intro.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ContentCellFallback/usage.mdx'
+      )
+  ),
+};
+
+export const ListCell = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCell/a11y.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCell/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCell/intro.mdx'
+      )
+  ),
+  'list-cell': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCell/list-cell.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCell/usage.mdx'
+      )
+  ),
+};
+
+export const ListCellFallback = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCellFallback/a11y.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCellFallback/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCellFallback/intro.mdx'
+      )
+  ),
+  'list-cell-fallback': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCellFallback/list-cell-fallback.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/ListCellFallback/usage.mdx'
+      )
+  ),
+};
+
+export const Checkbox = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/a11y.mdx'
+      )
+  ),
+  checkbox: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/checkbox.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/intro.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Checkbox/usage.mdx'
+      )
+  ),
+};
+
+export const RadioGroup = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/a11y.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/intro.mdx'
+      )
+  ),
+  'radio-group': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/radio-group.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/usage.mdx'
+      )
+  ),
+};
+
+export const Switch = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/intro.mdx'
+      )
+  ),
+  switch: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/switch.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Switch/usage.mdx'
       )
   ),
 };
@@ -366,6 +531,33 @@ export const Divider = {
     () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Divider/usage.mdx'
+      )
+  ),
+};
+
+export const Fallback = {
+  fallback: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Fallback/fallback.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Fallback/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Fallback/intro.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Fallback/usage.mdx'
       )
   ),
 };
