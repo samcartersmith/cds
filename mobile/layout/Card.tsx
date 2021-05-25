@@ -25,7 +25,6 @@ export const Card: React.FC<CardProps> = memo(
       <VStack
         borderRadius="standard"
         background={onPress ? undefined : bg}
-        bordered={onPress ? false : true}
         elevation={onPress ? undefined : elevation}
         width={width}
         height={height}
@@ -38,7 +37,6 @@ export const Card: React.FC<CardProps> = memo(
     return onPress ? (
       <Pressable
         backgroundColor={bg}
-        borderColor={bg === 'background' ? 'line' : 'transparent'}
         borderRadius="standard"
         borderWidth="card"
         elevation={elevation}

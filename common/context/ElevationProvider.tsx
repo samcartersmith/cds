@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import { emptyObject } from '@cbhq/cds-utils';
 
@@ -10,19 +10,23 @@ export type ElevationProviderProps = { elevation?: ElevationLevels };
 type ElevationPalette = Record<ElevationLevels, Record<Spectrum, PartialPaletteConfig>>;
 type ElevationPaletteOverrideProps = { elevation: ElevationLevels };
 
+const sharedOverrides = {
+  // Render secondary background as transparent so pressable cards with secondary buttons
+  // appear as a single surface on press.
+  secondary: ['gray0', 0],
+} as const;
+
 export const elevationPalettes: ElevationPalette = {
   1: {
     light: emptyObject,
     dark: {
       background: 'gray5',
-      secondary: ['gray5', 0],
     },
   },
   2: {
     light: emptyObject,
     dark: {
-      background: 'gray15',
-      secondary: ['gray15', 0],
+      background: 'gray10',
       line: ['gray60', 0.66],
     },
   },
@@ -31,7 +35,8 @@ export const elevationPalettes: ElevationPalette = {
 const ElevationPaletteOverride: React.FC<ElevationPaletteOverrideProps> = memo(
   ({ elevation, children }) => {
     const palette = useSpectrumConditional(elevationPalettes[elevation]);
-    return <PaletteConfigProvider value={palette}>{children}</PaletteConfigProvider>;
+    const paletteOverride = useMemo(() => ({ ...sharedOverrides, ...palette }), [palette]);
+    return <PaletteConfigProvider value={paletteOverride}>{children}</PaletteConfigProvider>;
   }
 );
 

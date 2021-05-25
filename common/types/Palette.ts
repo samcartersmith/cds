@@ -18,3 +18,4 @@ export type PartialPaletteConfig = Partial<PaletteConfig>;
 export type Palette = Record<PaletteAlias, string>;
 // Web returns CSS variables and RN returns actual rgb values
 export type UsePaletteFn = () => Palette;
+export type PaletteOrTransparentColor = PaletteAlias | 'transparent';

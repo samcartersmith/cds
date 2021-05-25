@@ -48,9 +48,9 @@ describe('ElevationProvider', () => {
         </SystemProvider>
       ),
     });
-    expect(result.current.background).toBe('gray15');
+    expect(result.current.background).toBe('gray10');
     // secondary should be transparent
-    expect(result.current.secondary).toEqual(['gray15', 0]);
+    expect(result.current.secondary).toEqual(['gray0', 0]);
     // line should be brighter
     expect(result.current.line).toEqual(defaultPalette.lineHeavy);
   });

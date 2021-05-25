@@ -2,17 +2,13 @@ import React, { useMemo, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
 import { ElevationProvider } from '@cbhq/cds-common/context/ElevationProvider';
-import {
-  borderRadius as borderRadiusTokens,
-  borderWidth as borderWidthTokens,
-} from '@cbhq/cds-common/tokens/border';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';
 import { Animated, Falsy, View, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
+import { useInteractableBorderStyles } from '../hooks/useInteractableBorderStyles';
 import { useInteractableTokens } from '../hooks/useInteractableTokens';
-import { usePalette } from '../hooks/usePalette';
 
 export interface InteractableProps extends InteractableBaseProps, SharedProps {
   children?: React.ReactNode;
@@ -20,11 +16,16 @@ export interface InteractableProps extends InteractableBaseProps, SharedProps {
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
 }
 
-export const Interactable = memo(function Interactable({ children, ...props }: InteractableProps) {
-  const styles = useStyles(props);
+export const Interactable = memo(function Interactable({
+  children,
+  style = emptyArray,
+  ...props
+}: InteractableProps) {
+  const borderStyles = useInteractableBorderStyles(props);
+  const styles = useMemo(() => [...style, ...borderStyles], [borderStyles, style]);
   return (
     <ElevationProvider elevation={props?.elevation}>
-      <InteractableContent {...props} style={styles}>
+      <InteractableContent style={styles} {...props}>
         {children}
       </InteractableContent>
     </ElevationProvider>
@@ -34,8 +35,6 @@ export const Interactable = memo(function Interactable({ children, ...props }: I
 export const InteractableContent = memo(function InteractableContent({
   backgroundColor,
   block,
-  borderRadius,
-  borderWidth,
   children,
   disabled,
   elevation,
@@ -59,12 +58,10 @@ export const InteractableContent = memo(function InteractableContent({
       [
         block && { width: '100%' },
         ...style,
-        borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
-        borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
-        { backgroundColor: bg, borderStyle: 'solid' } as const,
+        { backgroundColor: bg } as const,
         elevationStyles,
       ].filter(Boolean),
-    [block, bg, borderRadius, borderWidth, elevationStyles, style]
+    [block, bg, elevationStyles, style]
   );
 
   return (
@@ -73,23 +70,3 @@ export const InteractableContent = memo(function InteractableContent({
     </Animated.View>
   );
 });
-
-/**
- * useStyles guarantees that the border color of Interactable is not impacted by ElevationProvider palette overrides
- */
-const useStyles = ({
-  style = emptyArray,
-  borderColor,
-  pressed,
-  transparentWhileInactive,
-}: InteractableProps) => {
-  const palette = usePalette();
-  const bdColor = transparentWhileInactive && !pressed ? 'transparent' : borderColor;
-
-  return useMemo(() => {
-    const _bdColor: ViewStyle | undefined = bdColor && {
-      borderColor: bdColor === 'transparent' ? 'transparent' : palette[bdColor],
-    };
-    return [...style, _bdColor];
-  }, [bdColor, palette, style]);
-};

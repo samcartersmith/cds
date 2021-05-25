@@ -6,6 +6,7 @@ import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { emptyObject } from '@cbhq/cds-utils';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
+import { useElevationBorderColor } from '../hooks/useElevationBorderColor';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePalette } from '../hooks/usePalette';
@@ -228,8 +229,13 @@ export const BoxInner = memo(
 /**
  * useDangerouslySetStyle guarantees that the border color of Box is not impacted by ElevationProvider palette overrides
  */
-const useDangerouslySetStyle = ({ dangerouslySetStyle = emptyObject, bordered }: BoxProps) => {
+const useDangerouslySetStyle = ({
+  dangerouslySetStyle = emptyObject,
+  elevation,
+  bordered,
+}: BoxProps) => {
   const palette = usePalette();
+  const elevationBorderColor = useElevationBorderColor();
 
   return useMemo(() => {
     return [
@@ -238,8 +244,12 @@ const useDangerouslySetStyle = ({ dangerouslySetStyle = emptyObject, bordered }:
         borderWidth: 1,
         borderColor: palette.line,
       },
+      elevation && {
+        borderWidth: 1,
+        borderColor: elevationBorderColor,
+      },
     ];
-  }, [bordered, dangerouslySetStyle, palette]);
+  }, [bordered, dangerouslySetStyle, elevation, elevationBorderColor, palette.line]);
 };
 
 Box.displayName = 'Box';
