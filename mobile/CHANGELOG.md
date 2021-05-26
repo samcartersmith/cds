@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.1 (5/26/2021, 06:34 AM PST)
+
+#### 🐞 Fixes
+
+- Cds-mobile elevation style for android take 2. [#21331](https://github.cbhq.net/mono/repo/pull/21331)
+
 ## 0.15.0 (5/25/2021, 12:50 PM PST)
 
 #### 💥 Breaking
