@@ -2,11 +2,15 @@ import React, { useMemo, memo } from 'react';
 
 import { BoxBaseProps, ElevationLevels, SharedProps } from '@cbhq/cds-common';
 import { ElevationProvider } from '@cbhq/cds-common/context/ElevationProvider';
-import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
+import {
+  borderRadius as borderRadii,
+  borderWidth as borderWidthTokens,
+} from '@cbhq/cds-common/tokens/border';
 import { emptyObject } from '@cbhq/cds-utils';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useElevationBorderColor } from '../hooks/useElevationBorderColor';
+import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePalette } from '../hooks/usePalette';
@@ -236,6 +240,7 @@ const useDangerouslySetStyle = ({
 }: BoxProps) => {
   const palette = usePalette();
   const elevationBorderColor = useElevationBorderColor();
+  const elevationBorderWidth = useElevationBorderWidth();
 
   return useMemo(() => {
     return [
@@ -245,11 +250,18 @@ const useDangerouslySetStyle = ({
         borderColor: palette.line,
       },
       elevation && {
-        borderWidth: 1,
+        borderWidth: elevationBorderWidth ? borderWidthTokens[elevationBorderWidth] : undefined,
         borderColor: elevationBorderColor,
       },
     ];
-  }, [bordered, dangerouslySetStyle, elevation, elevationBorderColor, palette.line]);
+  }, [
+    bordered,
+    dangerouslySetStyle,
+    elevation,
+    elevationBorderColor,
+    elevationBorderWidth,
+    palette.line,
+  ]);
 };
 
 Box.displayName = 'Box';

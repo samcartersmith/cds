@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 
+import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { VStack, VStackProps } from './VStack';
 
@@ -20,6 +21,7 @@ export const Card: React.FC<CardProps> = memo(
     const width = props?.width ?? sizes[size].width;
     const height = props?.height ?? sizes[size].height;
     const bg = background === true ? 'background' : background;
+    const elevationBorderWidth = useElevationBorderWidth();
 
     const content = (
       <VStack
@@ -38,7 +40,7 @@ export const Card: React.FC<CardProps> = memo(
       <Pressable
         backgroundColor={bg}
         borderRadius="standard"
-        borderWidth="card"
+        borderWidth={elevation ? elevationBorderWidth : 'card'}
         elevation={elevation}
         onPress={onPress}
       >
