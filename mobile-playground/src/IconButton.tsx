@@ -31,6 +31,23 @@ const variants = [
     ),
     title: <TextBody>Secondary transparent</TextBody>,
   },
+  {
+    component: (
+      <IconButton variant="foregroundMuted" accessibilityLabel={iconName} name={iconName} />
+    ),
+    title: <TextBody>ForegroundMuted</TextBody>,
+  },
+  {
+    component: (
+      <IconButton
+        transparent
+        variant="foregroundMuted"
+        accessibilityLabel={iconName}
+        name={iconName}
+      />
+    ),
+    title: <TextBody>ForegroundMuted transparent</TextBody>,
+  },
 ];
 
 const IconButtonScreen = () => {

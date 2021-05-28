@@ -1,19 +1,71 @@
+import { memo } from 'react';
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
-import { HStack, Box } from '@cbhq/cds-web/layout';
+import { capitalize } from '@cbhq/cds-utils';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { Box } from '@cbhq/cds-web/layout/Box';
 
-const variants = ['primary', 'secondary'] as const;
+const transparentOptions = [
+  {
+    variant: 'primary',
+    iconName: 'annotation',
+  },
+  {
+    variant: 'secondary',
+    iconName: 'lock',
+  },
+  {
+    variant: 'foregroundMuted',
+    iconName: 'info',
+  },
+] as const;
 
-export const IconButtonSheet = () => {
+const defaultOptions = [
+  {
+    variant: 'primary',
+    iconName: 'annotation',
+  },
+  {
+    variant: 'secondary',
+    iconName: 'lock',
+  },
+  {
+    variant: 'foregroundMuted',
+    iconName: 'info',
+  },
+] as const;
+
+export const IconButtonSheet = memo(() => {
   return (
-    <HStack alignSelf="center">
-      {variants.map((variant, index) => (
-        <Box flexDirection="row" key={index} width={140}>
-          <IconButton variant={variant} accessibilityLabel="allTimeHigh" name="allTimeHigh" />
-          <p style={{ paddingTop: 5, paddingLeft: 10 }}>
-            {variant.charAt(0).toUpperCase() + variant.slice(1)}
-          </p>
-        </Box>
-      ))}
-    </HStack>
+    <VStack>
+      <HStack alignSelf="flex-start">
+        {defaultOptions.map((option, index) => (
+          <Box flexDirection="row" key={index} spacingEnd={10}>
+            <IconButton
+              variant={option.variant}
+              transparent={false}
+              accessibilityLabel={option.iconName}
+              name={option.iconName}
+            />
+            <p style={{ paddingTop: 5, paddingLeft: 10 }}>{`${capitalize(option.variant)}`}</p>
+          </Box>
+        ))}
+      </HStack>
+      <HStack alignSelf="flex-start" spacingVertical={3}>
+        {transparentOptions.map((option, index) => (
+          <Box flexDirection="row" key={index} spacingEnd={2}>
+            <IconButton
+              variant={option.variant}
+              transparent={true}
+              accessibilityLabel={option.iconName}
+              name={option.iconName}
+            />
+            <p style={{ paddingTop: 5, paddingLeft: 10 }}>
+              {`${capitalize(option.variant)} Transparent`}
+            </p>
+          </Box>
+        ))}
+      </HStack>
+    </VStack>
   );
-};
+});

@@ -1,7 +1,7 @@
 import { IconName } from './IconName';
 import { ElementChildren } from './React';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative';
+export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative' | 'foregroundMuted';
 
 export interface ButtonBaseProps {
   /** Full length accessibility label when the child text is not descriptive enough. */
@@ -28,7 +28,7 @@ export interface ButtonBaseProps {
    * Toggle design and visual variants.
    * @default primary
    */
-  variant?: ButtonVariant;
+  variant?: Exclude<ButtonVariant, 'foregroundMuted'>;
 }
 
 export interface ButtonGroupBaseProps {
