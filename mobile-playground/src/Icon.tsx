@@ -28,7 +28,7 @@ const IconScreen = () => {
           <HStack flexWrap="wrap">
             {navigationIconName.map(name => (
               <Box spacing={1} key={name}>
-                <NavigationIcon active={false} name={name} />
+                <NavigationIcon name={name} />
               </Box>
             ))}
           </HStack>

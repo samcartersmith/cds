@@ -20,7 +20,7 @@ interface NavigationIconProps
    * Toggles the active and inactive state of the navigation icon
    * @default false
    **/
-  active: boolean;
+  active?: boolean;
 }
 
 export const NavigationIcon: FunctionComponent<NavigationIconProps> = memo(function NavigationIcon({

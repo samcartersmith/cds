@@ -23,7 +23,7 @@ interface NavigationIconProps extends Omit<IconBaseWebProps, 'color'>, SpacingPr
    * Toggles the active and inactive state of the navigation icon
    * @default false
    **/
-  active: boolean;
+  active?: boolean;
 }
 
 export const NavigationIcon = memo(
