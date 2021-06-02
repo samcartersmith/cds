@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.2 (6/2/2021, 02:11 PM PST)
+
+#### 🚀 Updates
+
+- BorderRadius styles for card with pin prop. [#21916](https://github.cbhq.net/mono/repo/pull/21916), [CDS-591](https://jira.coinbase-corp.com/browse/CDS-591)
+- Overlay and OverlayProvider for mobile. [#21994](https://github.cbhq.net/mono/repo/pull/21994), [CDS-576](https://jira.coinbase-corp.com/browse/CDS-576)
+- **[ListCell]** Add multiline prop and improve edge spacing. [#21942](https://github.cbhq.net/mono/repo/pull/21942)
+
+#### 🐞 Fixes
+
+- Made active an optional prop. [#21664](https://github.cbhq.net/mono/repo/pull/21664)
+
 ## 0.15.1 (5/26/2021, 06:34 AM PST)
 
 #### 🐞 Fixes

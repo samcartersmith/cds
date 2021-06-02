@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.12.4 (6/2/2021, 02:11 PM PST)
+
+#### 🚀 Updates
+
+- **[ListCell]** Add multiline prop and improve edge spacing. [#21942](https://github.cbhq.net/mono/repo/pull/21942)
+
+#### 🐞 Fixes
+
+- Fix content resize issue in button. [#21420](https://github.cbhq.net/mono/repo/pull/21420)
+- Use deep imports in web cell components. [#21967](https://github.cbhq.net/mono/repo/pull/21967)
+- Made active an optional prop. [#21664](https://github.cbhq.net/mono/repo/pull/21664)
+
+#### 📘 Misc
+
+- Add cells documentation. [#20845](https://github.cbhq.net/mono/repo/pull/20845)
+
 ## 0.12.3 (5/20/2021, 02:42 PM PST)
 
 #### 🚀 Updates
