@@ -22,6 +22,8 @@ export interface DangerouslySetStyle<T, IsAnimated extends boolean = boolean> {
   dangerouslySetStyle?: IsAnimated extends true
     ? Animated.WithAnimatedValue<StyleProp<T>>
     : StyleProp<T>;
+  /** Opacity of element */
+  opacity?: IsAnimated extends true ? Animated.WithAnimatedValue<StyleProp<T>> : number;
 }
 
 export type HapticFeedbackType = 'light' | 'normal' | 'heavy' | 'none';

@@ -69,6 +69,7 @@ export const BoxInner = memo(
     dangerouslySetStyle,
     elevation,
     overflow = 'visible',
+    opacity,
     rounded,
     // Flex
     alignContent,
@@ -191,8 +192,12 @@ export const BoxInner = memo(
         style.borderRadius = borderRadii.standard;
       }
 
+      if (opacity) {
+        style.opacity = opacity as number;
+      }
+
       return style;
-    }, [background, elevation, borderRadius, rounded, palette]);
+    }, [background, elevation, borderRadius, rounded, opacity, palette]);
     const style = useMemo(
       () =>
         [
@@ -244,7 +249,6 @@ const useDangerouslySetStyle = ({
 
   return useMemo(() => {
     return [
-      dangerouslySetStyle,
       bordered && {
         borderWidth: 1,
         borderColor: palette.line,
@@ -253,6 +257,7 @@ const useDangerouslySetStyle = ({
         borderWidth: elevationBorderWidth ? borderWidthTokens[elevationBorderWidth] : undefined,
         borderColor: elevationBorderColor,
       },
+      dangerouslySetStyle,
     ];
   }, [
     bordered,

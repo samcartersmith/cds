@@ -21,6 +21,7 @@ const components = [
   { key: 'ListCellFallback' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
+  { key: 'Overlay' },
   { key: 'Pressable' },
   { key: 'PressableOpacity' },
   { key: 'RadioGroup' },

@@ -21,6 +21,7 @@ import LinkScreen from './src/Link';
 import ListCellScreen from './src/ListCell';
 import ListCellFallbackScreen from './src/ListCellFallback';
 import LottieScreen from './src/Lottie';
+import OverlayScreen from './src/Overlay';
 import PressableScreen from './src/Pressable';
 import PressableOpacityScreen from './src/PressableOpacity';
 import RadioGroupScreen from './src/RadioGroup';
@@ -88,6 +89,7 @@ const App = () => {
           <Stack.Screen name="ListCell" component={ListCellScreen} />
           <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />
           <Stack.Screen name="Lottie" component={LottieScreen} />
+          <Stack.Screen name="Overlay" component={OverlayScreen} />
           <Stack.Screen name="Pressable" component={PressableScreen} />
           <Stack.Screen name="PressableOpacity" component={PressableOpacityScreen} />
           <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
