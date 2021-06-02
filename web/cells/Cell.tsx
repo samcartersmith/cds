@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { CellProps as CellBaseProps } from '@cbhq/cds-common';
+import type { CellProps as CellBaseProps } from '@cbhq/cds-common/types';
 
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';

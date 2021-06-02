@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { CellDetailProps } from '@cbhq/cds-common';
+import type { CellDetailProps } from '@cbhq/cds-common/types';
 
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';

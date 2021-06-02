@@ -4,7 +4,7 @@ import { CellMediaType } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { mediaSize, imageSize } from '@cbhq/cds-common/tokens/cell';
 
-import { Fallback } from '../layout';
+import { Fallback } from '../layout/Fallback';
 
 export interface MediaFallbackProps {
   type: CellMediaType;

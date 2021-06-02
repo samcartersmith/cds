@@ -1,9 +1,13 @@
 import React, { memo } from 'react';
 
-import { ContentCellProps } from '@cbhq/cds-common';
+import type { ContentCellProps } from '@cbhq/cds-common/types';
 
-import { Box, HStack, VStack } from '../layout';
-import { TextHeadline, TextBody, TextLabel2 } from '../typography';
+import { Box } from '../layout/Box';
+import { HStack } from '../layout/HStack';
+import { VStack } from '../layout/VStack';
+import { TextBody } from '../typography/TextBody';
+import { TextHeadline } from '../typography/TextHeadline';
+import { TextLabel2 } from '../typography/TextLabel2';
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
