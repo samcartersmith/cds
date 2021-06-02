@@ -49,7 +49,6 @@ DATA = append_cds_web_deps([
     "@npm//babel-plugin-module-resolver",
     "@npm//@docusaurus/module-type-aliases",
     # types
-    "@npm//@tsconfig/docusaurus",
     "@npm//@types/react-helmet",
     "@npm//@types/react",
     "@npm//@types/react-dom",
