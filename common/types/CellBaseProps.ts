@@ -14,7 +14,7 @@ export interface CellCommonProps extends SharedProps {
   onPress?: () => void;
 }
 
-export interface CellProps extends CellCommonProps {
+export interface CellProps extends CellCommonProps, SpacingProps {
   accessory?: React.ReactElement<CellAccessoryProps>;
   alignItems?: 'center' | 'flex-start';
   children: React.ReactNode;
@@ -90,9 +90,11 @@ export interface ListCellProps extends CellCommonProps, CellDetailProps {
   accessory?: CellAccessoryType;
   /** Interactive action, like a CTA or form element. Cannot be used alongside `onPress`. */
   action?: NonNullable<React.ReactNode>;
-  /** Description of content. Max 1-2 lines, otherwise will truncate. */
+  /** Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate. */
   description?: NonNullable<React.ReactNode>;
-  /** Title of content. Max 1-2 lines, otherwise will truncate. */
+  /** Allow the description to span multiple lines. This *will* break fixed height requirements, so should not be used in a `FlatList`. */
+  multiline?: boolean;
+  /** Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate. */
   title?: NonNullable<React.ReactNode>;
 }
 

@@ -1,18 +1,17 @@
 import { useMemo, Children } from 'react';
 
-import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
+import { SpacingProps } from '@cbhq/cds-common';
 import { Box, Divider } from '@cbhq/cds-mobile/layout';
 import { TextTitle3 } from '@cbhq/cds-mobile/typography/TextTitle3';
 import { View, ViewStyle } from 'react-native';
 
-interface ExampleProps {
+interface ExampleProps extends SpacingProps {
   children: React.ReactNode;
   inline?: boolean;
   title?: string;
 }
 
-const Example = ({ children, inline, title }: ExampleProps) => {
-  const palette = usePalette();
+const Example = ({ children, inline, title, ...props }: ExampleProps) => {
   const childStyles = useMemo(() => {
     const style: ViewStyle = { paddingTop: 12 };
 
@@ -25,7 +24,7 @@ const Example = ({ children, inline, title }: ExampleProps) => {
 
   const content = (
     <>
-      <Box spacing={2} spacingBottom={3} background>
+      <Box spacing={2} spacingBottom={3} background {...props}>
         {title && <TextTitle3>{title}</TextTitle3>}
 
         {typeof children === 'function'

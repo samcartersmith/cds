@@ -1,6 +1,7 @@
 import { Button, IconButton } from '@cbhq/cds-mobile/buttons';
 import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Checkbox } from '@cbhq/cds-mobile/controls/Checkbox';
+import { Box } from '@cbhq/cds-mobile/layout';
 import { createStories } from '@cbhq/cds-storybook/stories/ListCell';
 
 import Example from './internal/Example';
@@ -40,6 +41,12 @@ const ListCellScreen = () => {
 
       <Example title="With actions">
         <WithActions />
+      </Example>
+
+      <Example title="Example screen" spacingHorizontal={3}>
+        <Box offsetHorizontal={3}>
+          <PressableContent />
+        </Box>
       </Example>
     </ExamplesScreen>
   );

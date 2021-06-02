@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 
 import { CellProps } from '@cbhq/cds-common';
 
+import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable } from '../system/Pressable';
@@ -25,6 +26,7 @@ export const Cell = memo(function Cell({
   onPress,
   selected,
   testID,
+  ...props
 }: CellProps) {
   if (
     process.env.NODE_ENV !== 'production' &&
@@ -35,14 +37,19 @@ export const Cell = memo(function Cell({
     console.error('Cell media must be a `CellMedia` component.');
   }
 
-  const content = (
+  const offsetStyle = useOffsetStyles({ offsetHorizontal: 2 });
+
+  let content = (
     <HStack
       background={selected ? 'backgroundAlternate' : undefined}
+      borderRadius="standard"
       alignItems={alignItems}
       minHeight={minHeight}
       spacing={2}
       renderToHardwareTextureAndroid={disabled}
       testID={testID}
+      dangerouslySetStyle={onPress ? undefined : offsetStyle}
+      {...props}
     >
       {media && (
         <Box flexGrow={0} flexShrink={0} spacingEnd={2}>
@@ -83,19 +90,25 @@ export const Cell = memo(function Cell({
   );
 
   if (onPress) {
-    return (
+    content = (
       <Pressable
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
+        borderRadius="standard"
         block
         disabled={disabled}
         onPress={onPress}
+        style={offsetStyle}
       >
         {content}
       </Pressable>
     );
   }
 
-  return content;
+  return (
+    <Box spacingVertical={0.5} spacingHorizontal={3}>
+      {content}
+    </Box>
+  );
 });

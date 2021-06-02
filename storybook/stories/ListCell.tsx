@@ -101,12 +101,22 @@ export function createStories(
   );
 
   const LongContent = () => (
-    <ListCell
-      title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
-      description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
-      detail="Detail also has a very long string"
-      subdetail="Neutral also does too"
-    />
+    <>
+      <ListCell
+        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
+        description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
+        detail="Detail also has a very long string"
+        subdetail="Neutral also does too"
+      />
+      <ListCell
+        multiline
+        selected
+        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
+        description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
+        detail="Detail also has a very long string"
+        subdetail="Neutral also does too"
+      />
+    </>
   );
 
   const WithAccessory = () => (

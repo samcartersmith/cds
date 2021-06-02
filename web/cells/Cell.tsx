@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 
 import type { CellProps as CellBaseProps } from '@cbhq/cds-common/types';
 
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable } from '../system/Pressable';
@@ -31,6 +32,7 @@ export const Cell = memo(function Cell({
   onPress,
   selected,
   testID,
+  ...props
 }: CellProps) {
   if (
     process.env.NODE_ENV !== 'production' &&
@@ -41,13 +43,17 @@ export const Cell = memo(function Cell({
     console.error('Cell media must be a `CellMedia` component.');
   }
 
-  const content = (
+  const spacingClass = useSpacingStyles({ spacingVertical: 0.5, spacingHorizontal: 1 });
+
+  let content = (
     <HStack
       background={selected ? 'backgroundAlternate' : undefined}
+      borderRadius="standard"
       alignItems={alignItems}
       minHeight={minHeight}
       spacing={2}
       testID={testID}
+      {...props}
     >
       {media && (
         <Box flexGrow={0} flexShrink={0} spacingEnd={2}>
@@ -88,12 +94,13 @@ export const Cell = memo(function Cell({
   );
 
   if (onPress) {
-    return (
+    content = (
       <Pressable
         as="button"
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
+        borderRadius="standard"
         block
         disabled={disabled}
         onPress={onPress}
@@ -103,5 +110,5 @@ export const Cell = memo(function Cell({
     );
   }
 
-  return <Tag>{content}</Tag>;
+  return <Tag className={spacingClass}>{content}</Tag>;
 });

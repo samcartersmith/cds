@@ -20,6 +20,7 @@ export const ListCell = memo(function ListCell({
   detail,
   disabled,
   media,
+  multiline,
   selected,
   subdetail,
   variant,
@@ -56,7 +57,7 @@ export const ListCell = memo(function ListCell({
         )}
 
         {description && (
-          <TextBody numberOfLines={title ? 1 : 2} ellipsize="tail">
+          <TextBody numberOfLines={multiline ? undefined : title ? 1 : 2} ellipsize="tail">
             {description}
           </TextBody>
         )}

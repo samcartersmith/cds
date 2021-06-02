@@ -1,8 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
+
+import { useToggler } from '@cbhq/cds-common';
+import { Switch } from '@cbhq/cds-mobile/controls/Switch';
 import { Divider, Spacer, VStack } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
-import { Switch } from '@cbhq/cds-mobile/controls/Switch';
-import { useToggler } from '@cbhq/cds-common';
+
 import Screen from './Screen';
 
 const ExamplesScreen: React.FC = ({ children }) => {
