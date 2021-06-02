@@ -78,26 +78,26 @@ export const Button = forwardRef(function Button(
       type={type}
       ref={ref}
     >
-      {loading ? (
-        <MaterialSpinner size={24} color={color} />
-      ) : (
-        <>
-          {startIcon && (
-            <span className={buttonStyles.startIcon}>
-              <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
-            </span>
-          )}
+      {startIcon && (
+        <span className={buttonStyles.startIcon}>
+          <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
+        </span>
+      )}
+      <span className={buttonStyles.positionRelative}>
+        {loading && (
+          <span className={cx(buttonStyles.centerLoader)}>
+            <MaterialSpinner size={buttonStyles.LOADERSIZE} color={color} />
+          </span>
+        )}
+        <TextHeadline as="span" color={color} noWrap>
+          <span className={cx(loading && buttonStyles.visibilityHidden)}>{children}</span>
+        </TextHeadline>
+      </span>
 
-          <TextHeadline as="span" color={color} noWrap>
-            {children}
-          </TextHeadline>
-
-          {endIcon && (
-            <span className={buttonStyles.endIcon}>
-              <Icon name={endIcon} size={compact ? 'xs' : 's'} color={color} />
-            </span>
-          )}
-        </>
+      {endIcon && (
+        <span className={buttonStyles.endIcon}>
+          <Icon name={endIcon} size={compact ? 'xs' : 's'} color={color} />
+        </span>
       )}
     </Pressable>
   );

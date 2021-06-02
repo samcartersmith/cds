@@ -2,6 +2,7 @@ import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import { Button } from '../Button';
+import { ToggleLoading } from './ToggleLoading';
 
 <Meta title="Core Components/Buttons/Button" component={Button} />
 
@@ -50,6 +51,16 @@ import { Button } from '../Button';
   <Story name="Disabled" decorators={[withStoryLabel('Disabled')]}>
     <div>
       <Button disabled>Button</Button>
+    </div>
+  </Story>
+  <Story name="Toggle Loader" decorators={[withStoryLabel('Toggle Loader')]}>
+    <div>
+      <ToggleLoading />
+    </div>
+  </Story>
+  <Story name="Toggle Loader compact" decorators={[withStoryLabel('Toggle Loader Compact')]}>
+    <div>
+      <ToggleLoading compact />
     </div>
   </Story>
 </Canvas>

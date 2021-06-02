@@ -2,6 +2,8 @@ import { css } from 'linaria';
 
 import { spacing } from '../tokens';
 
+export const LOADERSIZE = 24;
+
 export const button = css`
   display: inline-flex;
   text-align: center;
@@ -45,4 +47,22 @@ export const startIcon = css`
 export const endIcon = css`
   display: inline-block;
   margin-left: ${spacing[1]};
+`;
+
+// Need to add height here to contain the icon size or
+// it will render 30px height making it look off center
+export const centerLoader = css`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: ${LOADERSIZE}px;
+`;
+
+export const visibilityHidden = css`
+  visibility: hidden;
+`;
+
+export const positionRelative = css`
+  position: relative;
 `;
