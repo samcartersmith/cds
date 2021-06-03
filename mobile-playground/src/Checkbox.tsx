@@ -42,11 +42,10 @@ const CheckboxScreen = () => {
             'hamachi-salad': 'Hamachi salad',
           };
 
-          const optionValues = (Object.keys(options) as unknown) as (keyof typeof options)[];
+          const optionValues = Object.keys(options) as unknown as (keyof typeof options)[];
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const [selectedValues, { toggle }] = useCheckboxGroupState<keyof typeof options>(
-            optionValues
-          );
+          const [selectedValues, { toggle }] =
+            useCheckboxGroupState<keyof typeof options>(optionValues);
 
           return (
             <>

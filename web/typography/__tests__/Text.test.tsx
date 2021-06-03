@@ -42,24 +42,26 @@ describe('Text', () => {
   );
 
   textTestRunner(TextComponent =>
-    ([
-      'p',
-      'span',
-      'label',
-      'time',
-      'output',
-      'code',
-      'pre',
-      's',
-      'abbr',
-      'q',
-      'kbd',
-      'del',
-      'ins',
-      'sup',
-      'sub',
-      'li',
-    ] as const).forEach(tag => {
+    (
+      [
+        'p',
+        'span',
+        'label',
+        'time',
+        'output',
+        'code',
+        'pre',
+        's',
+        'abbr',
+        'q',
+        'kbd',
+        'del',
+        'ins',
+        'sup',
+        'sub',
+        'li',
+      ] as const
+    ).forEach(tag => {
       it(`${TextComponent.displayName} can render as a "${tag}" element using the \`as\` prop`, () => {
         const { container } = render(<TextComponent as={tag}>Child</TextComponent>);
 

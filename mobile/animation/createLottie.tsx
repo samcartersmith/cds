@@ -44,7 +44,8 @@ export const createLottie = <Source extends LottieSource>(
 ): LottiePlayerMobile<Source> => {
   const lottieRef = createRef<LottieView>();
   const progress = progressOverride ?? new Animated.Value(0);
-  const progressAnim = createRef<Animated.CompositeAnimation>() as MutableRefObject<Animated.CompositeAnimation>;
+  const progressAnim =
+    createRef<Animated.CompositeAnimation>() as MutableRefObject<Animated.CompositeAnimation>;
   const duration = getLottieDuration(source);
   const markers = getLottieMarkers(source);
 

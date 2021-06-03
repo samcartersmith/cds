@@ -29,10 +29,10 @@ export const Card: React.FC<CardProps> = memo(
     const elevationBorderWidth = useElevationBorderWidth();
     const pinStyles = usePinStyles(pin);
     const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 'standard');
-    const contentStyles = useMemo(() => [borderRadiusOverrides, dangerouslySetStyle], [
-      borderRadiusOverrides,
-      dangerouslySetStyle,
-    ]);
+    const contentStyles = useMemo(
+      () => [borderRadiusOverrides, dangerouslySetStyle],
+      [borderRadiusOverrides, dangerouslySetStyle]
+    );
 
     const content = (
       <VStack

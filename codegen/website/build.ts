@@ -48,40 +48,38 @@ export const parseTypescript = (filepath: string) => {
 const getDocgenForPlatform = (platform: Platform) =>
   mapValues(CDS_SUB_DIRS_MAP, subDir => parseTypescript(`${platform}/${subDir}/index.ts`));
 
-const lookupDocgen = (docgenData: DocgenData, subDir: SubDir) => (
-  prev: ComponentDocgenResponse[],
-  next: ComponentDocgenParams
-) => {
-  const findData = (data: ComponentDoc[], name: string) =>
-    data.find(item => item.displayName === name);
-  const web = findData(docgenData.web[subDir], next.componentName);
-  const mobile = findData(docgenData.mobile[subDir], next.componentName);
-  if (web || mobile) {
-    const data = new ComponentDocgen({
-      web,
-      mobile,
-      ...next,
-    });
-    return [...prev, { ...next, data }];
-  }
-  return prev;
-};
+const lookupDocgen =
+  (docgenData: DocgenData, subDir: SubDir) =>
+  (prev: ComponentDocgenResponse[], next: ComponentDocgenParams) => {
+    const findData = (data: ComponentDoc[], name: string) =>
+      data.find(item => item.displayName === name);
+    const web = findData(docgenData.web[subDir], next.componentName);
+    const mobile = findData(docgenData.mobile[subDir], next.componentName);
+    if (web || mobile) {
+      const data = new ComponentDocgen({
+        web,
+        mobile,
+        ...next,
+      });
+      return [...prev, { ...next, data }];
+    }
+    return prev;
+  };
 
-const prepareDocgen = (docgenData: DocgenData) => (
-  prev: ComponentDocgenResponse[],
-  { subDir, files }: GetSubDirFilesResponse
-) => {
-  const transformArray = (filePath: string) => ({
-    subDir,
-    filePath,
-    importPath: `${subDir}/${getFileName(filePath)}`,
-    componentName: getComponentName(filePath),
-    displayName: getDisplayName(filePath),
-    id: getKebabName(filePath),
-    slug: `/components/${getKebabName(filePath)}`,
-  });
-  return [...prev, ...files.map(transformArray).reduce(lookupDocgen(docgenData, subDir), [])];
-};
+const prepareDocgen =
+  (docgenData: DocgenData) =>
+  (prev: ComponentDocgenResponse[], { subDir, files }: GetSubDirFilesResponse) => {
+    const transformArray = (filePath: string) => ({
+      subDir,
+      filePath,
+      importPath: `${subDir}/${getFileName(filePath)}`,
+      componentName: getComponentName(filePath),
+      displayName: getDisplayName(filePath),
+      id: getKebabName(filePath),
+      slug: `/components/${getKebabName(filePath)}`,
+    });
+    return [...prev, ...files.map(transformArray).reduce(lookupDocgen(docgenData, subDir), [])];
+  };
 
 const prepareSidebarConfig = (docgenData: ComponentDocgenResponse[]) => {
   const tuple = Object.entries(groupBy(docgenData, 'subDir'));
@@ -105,16 +103,14 @@ const prepareSidebarConfig = (docgenData: ComponentDocgenResponse[]) => {
   return tuple.reduce(flatten, []);
 };
 
-const prepareTemplate = (template?: string) => ({
-  subDir,
-  displayName,
-  data,
-}: ComponentDocgenResponse) => {
-  const kebabCaseName = getKebabName(displayName);
-  const fileName = template ? template : kebabCaseName;
-  const dest = `${DOCS_DIR}/${subDir}/${displayName}/${fileName}.mdx`;
-  return { dest, data };
-};
+const prepareTemplate =
+  (template?: string) =>
+  ({ subDir, displayName, data }: ComponentDocgenResponse) => {
+    const kebabCaseName = getKebabName(displayName);
+    const fileName = template ? template : kebabCaseName;
+    const dest = `${DOCS_DIR}/${subDir}/${displayName}/${fileName}.mdx`;
+    return { dest, data };
+  };
 
 const getTemplates = async ({ subDir, displayName }: ComponentDocgenResponse) => {
   const subDirPath = await getSourcePath(`${DOCS_DIR}/${subDir}/${displayName}`);

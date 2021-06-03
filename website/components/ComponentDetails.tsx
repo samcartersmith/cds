@@ -24,7 +24,7 @@ export const ComponentDetailsInner = <T extends ComponentName>({
   templateName,
 }: ExampleProps<T>) => {
   if (componentName in templatesMap && templateName in templatesMap[componentName]) {
-    const Example = (templatesMap[componentName][templateName] as unknown) as React.FC;
+    const Example = templatesMap[componentName][templateName] as unknown as React.FC;
     return <Example />;
   }
   return null;

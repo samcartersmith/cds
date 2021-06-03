@@ -7,14 +7,8 @@ import { createStories } from '@cbhq/cds-storybook/stories/ListCell';
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 
-const {
-  Content,
-  PressableContent,
-  LongContent,
-  WithAccessory,
-  WithMedia,
-  WithActions,
-} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox);
+const { Content, PressableContent, LongContent, WithAccessory, WithMedia, WithActions } =
+  createStories(ListCell, CellMedia, Button, IconButton, Checkbox);
 
 const ListCellScreen = () => {
   return (

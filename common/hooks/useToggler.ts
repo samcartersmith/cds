@@ -1,8 +1,6 @@
 import { useCallback, useState } from 'react';
 
-export function useToggler(
-  initial = false
-): [
+export function useToggler(initial = false): [
   boolean,
   {
     toggleOn: () => void;

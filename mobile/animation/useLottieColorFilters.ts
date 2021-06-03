@@ -17,9 +17,10 @@ export function useLottieColorFilters(
 ) {
   const palette = usePalette();
   // Layer names in AE will use palette_<PaletteAlias> format to avoid overriding layers not intended for overrides
-  const paletteSnakeCased = useMemo(() => mapKeys(palette, (_, key) => `palette_${key}` as const), [
-    palette,
-  ]);
+  const paletteSnakeCased = useMemo(
+    () => mapKeys(palette, (_, key) => `palette_${key}` as const),
+    [palette]
+  );
 
   const themeColorFilters = useMemo(() => {
     const filters: LottieProps['colorFilters'] = [];

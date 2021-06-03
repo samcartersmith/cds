@@ -68,8 +68,8 @@ export const useButtonVariant = (
   variant: ButtonVariant,
   transparent?: boolean
 ): ButtonVariantStyles => {
-  return useMemo(() => (transparent ? transparentVariants : variants)[variant], [
-    variant,
-    transparent,
-  ]);
+  return useMemo(
+    () => (transparent ? transparentVariants : variants)[variant],
+    [variant, transparent]
+  );
 };

@@ -67,10 +67,10 @@ export const IconBase = ({
     [finalColor, iconSize]
   );
 
-  const boxStyles = useMemo(() => [space, dangerouslySetStyle].filter(Boolean), [
-    dangerouslySetStyle,
-    space,
-  ]);
+  const boxStyles = useMemo(
+    () => [space, dangerouslySetStyle].filter(Boolean),
+    [dangerouslySetStyle, space]
+  );
 
   if (name in iconGlyphMap && iconSize in iconGlyphMap[name]) {
     return (

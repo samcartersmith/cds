@@ -28,9 +28,9 @@ interface NavigationIconProps extends Omit<IconBaseWebProps, 'color'>, SpacingPr
 
 export const NavigationIcon = memo(
   ({ name, size = 'm', active = false, ...props }: NavigationIconProps) => {
-    const navigationIconName = (active
-      ? `${name}Active`
-      : `${name}Inactive`) as NavigationIconInternalName;
+    const navigationIconName = (
+      active ? `${name}Active` : `${name}Inactive`
+    ) as NavigationIconInternalName;
     return (
       <IconBase
         size={size}

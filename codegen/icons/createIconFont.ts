@@ -68,7 +68,7 @@ export const createIconFont = async () => {
     nameSet.add(name);
     sizeMap[size][name] = metadata.unicode.join('');
     if (name in manifest.unicodeMap && size in manifest.unicodeMap[name]) {
-      const unicodeMap = (manifest.unicodeMap as unknown) as Record<
+      const unicodeMap = manifest.unicodeMap as unknown as Record<
         typeof name,
         Record<typeof size, string>
       >;

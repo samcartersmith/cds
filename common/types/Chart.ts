@@ -12,9 +12,7 @@ export type ChartScrubParams<T> = {
   period: T;
 };
 export type ChartXFunction = ScaleTime<number, number>;
-export type ChartGetMarker = (
-  xPos: number
-) =>
+export type ChartGetMarker = (xPos: number) =>
   | {
       value: number;
       date: Date;

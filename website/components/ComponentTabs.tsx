@@ -15,9 +15,9 @@ export const ComponentTabs = <T extends ComponentNames>({ name }: { name: T }) =
     (templateName: TemplateName) => {
       if (name in templatesMap) {
         if (templateName in templatesMap[name]) {
-          const Content = (templatesMap[name][
+          const Content = templatesMap[name][
             templateName as keyof ComponentsMap[T]
-          ] as unknown) as React.FC;
+          ] as unknown as React.FC;
           return (
             <div className="markdown">
               <Content />

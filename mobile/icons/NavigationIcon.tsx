@@ -29,9 +29,9 @@ export const NavigationIcon: FunctionComponent<NavigationIconProps> = memo(funct
   active = false,
   ...props
 }: NavigationIconProps) {
-  const navigationIconName = (active
-    ? `${name}Active`
-    : `${name}Inactive`) as NavigationIconInternalName;
+  const navigationIconName = (
+    active ? `${name}Active` : `${name}Inactive`
+  ) as NavigationIconInternalName;
   return (
     <IconBase
       color={active ? 'primary' : 'foreground'}

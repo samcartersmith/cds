@@ -51,8 +51,7 @@ module.exports = {
           items: [
             {
               label: 'Figma',
-              href:
-                'https://www.figma.com/files/657352101224507447/team/832671005685976359/Coinbase-Design-System',
+              href: 'https://www.figma.com/files/657352101224507447/team/832671005685976359/Coinbase-Design-System',
             },
           ],
         },

@@ -80,9 +80,10 @@ export const Fallback = memo(function Fallback({
     [colorShimmer, height, borderRadius, width]
   );
 
-  const outputRange = useMemo(() => (Number.isInteger(width) ? [-width, width] : [-400, 400]), [
-    width,
-  ]);
+  const outputRange = useMemo(
+    () => (Number.isInteger(width) ? [-width, width] : [-400, 400]),
+    [width]
+  );
 
   return (
     <Box width={width} {...props}>
