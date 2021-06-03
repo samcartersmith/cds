@@ -44,7 +44,7 @@ export const ListCell = memo(function ListCell({
       detail={action || <CellDetail detail={detail} subdetail={subdetail} variant={variant} />}
       media={media}
       disabled={disabled}
-      maxContentWidth="70%"
+      maxContentWidth={action ? undefined : '70%'}
       maxDetailWidth="50%"
       minHeight={minHeight}
       selected={selected}
