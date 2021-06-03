@@ -11,12 +11,11 @@ import { RemoteImage } from '../media/RemoteImage';
 export type { CellMediaProps };
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
-  const iconSize = useScaleConditional({ dense: 's' as const, normal: 'm' as const });
   let size = useScaleConditional(mediaSize);
   let content = null;
 
   if (props.type === 'icon') {
-    content = <Icon size={iconSize} name={props.name} color="foreground" />;
+    content = <Icon size="s" name={props.name} color="foreground" />;
   }
 
   if (props.type === 'asset' || props.type === 'avatar') {
