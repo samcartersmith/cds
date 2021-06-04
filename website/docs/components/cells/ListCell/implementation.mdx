@@ -67,9 +67,24 @@ Interactive action, like a CTA or form element. Cannot be used alongside `onPres
 
 <ComponentDetails componentName="ListCell" templateName="prop-action" />
 
+### as <Badge variant="web" />
+
+The type of outer wrapping element.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['div', 'li']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-as" />
+
 ### description
 
-Description of content. Max 1-2 lines, otherwise will truncate.
+Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate.
 
 <ApiDetails
   componentName="ListCell"
@@ -161,6 +176,21 @@ Is the cell disabled? Will apply opacity and disable interaction.
 
 <ComponentDetails componentName="ListCell" templateName="prop-media" />
 
+### multiline
+
+Allow the description to span multiple lines. This _will_ break fixed height requirements, so should not be used in a `FlatList`.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="multiline"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-multiline" />
+
 ### onPress
 
 Callback fired when the cell is pressed.
@@ -241,7 +271,7 @@ Used to locate this element in unit and end-to-end tests.
 
 ### title
 
-Title of content. Max 1-2 lines, otherwise will truncate.
+Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate.
 
 <ApiDetails
   componentName="ListCell"

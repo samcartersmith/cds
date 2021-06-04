@@ -34,7 +34,7 @@ export const filesToIgnore = ['CheckboxGroup', 'createText', 'LogoMark', 'LogoWo
 /**
  * Components you only want to use `intro.mdx` and `usage.mdx` templates for. Excludes design/implementation tabs, api table, etc.
  */
-export const simpleDocs = ['VStack', 'HStack', 'Spacer', 'Divider', 'Badge'];
+export const simpleDocs = ['Spacer', 'Divider', 'Badge'];
 
 /**
  * Use the displayNameMap for any components that you want to rename when displayed on website.

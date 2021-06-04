@@ -26,7 +26,7 @@ Toggles the active and inactive state of the navigation icon
 <ApiDetails
   componentName="NavigationIcon"
   propertyName="active"
-  required={true}
+  required={false}
   defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
@@ -125,6 +125,30 @@ Name of navigation icon, as defined by Figma
 />
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-name" />
+
+### opacity <Badge variant="mobile" />
+
+Opacity of element
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<TextStyle>',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="NavigationIcon" templateName="prop-opacity" />
 
 ### size
 

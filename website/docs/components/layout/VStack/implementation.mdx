@@ -5,17 +5,17 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-(web|mobile)/layout/Fallback](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/layout/Fallback.tsx)
+> [@cbhq/cds-(web|mobile)/layout/VStack](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/layout/VStack.tsx)
 
-<ComponentDetails componentName="Fallback" templateName="intro" />
+<ComponentDetails componentName="VStack" templateName="intro" />
 
 ## Usage
 
-<ComponentDetails componentName="Fallback" templateName="usage" />
+<ComponentDetails componentName="VStack" templateName="usage" />
 
 ## Accessibility
 
-<ComponentDetails componentName="Fallback" templateName="a11y" />
+<ComponentDetails componentName="VStack" templateName="a11y" />
 
 ## Props
 
@@ -24,7 +24,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 Set the distribution of space between and around content items along the cross-axis.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="alignContent"
   required={false}
   defaultValue="flex-start"
@@ -32,14 +32,14 @@ Set the distribution of space between and around content items along the cross-a
   webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-alignContent" />
+<ComponentDetails componentName="VStack" templateName="prop-alignContent" />
 
 ### alignItems
 
 Set the alignment of all direct children on the cross-axis.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="alignItems"
   required={false}
   defaultValue="stretch"
@@ -47,14 +47,14 @@ Set the alignment of all direct children on the cross-axis.
   webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-alignItems" />
+<ComponentDetails componentName="VStack" templateName="prop-alignItems" />
 
 ### alignSelf
 
 Override the parents defined item alignment for this element alone.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="alignSelf"
   required={false}
   defaultValue="auto"
@@ -62,14 +62,14 @@ Override the parents defined item alignment for this element alone.
   webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-alignSelf" />
+<ComponentDetails componentName="VStack" templateName="prop-alignSelf" />
 
 ### animated <Badge variant="mobile" />
 
 If value is `true` then style prop can take animated values.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="animated"
   required={false}
   defaultValue="false"
@@ -77,29 +77,42 @@ If value is `true` then style prop can take animated values.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-animated" />
+<ComponentDetails componentName="VStack" templateName="prop-animated" />
 
 ### as <Badge variant="web" />
 
 The semantic element to render the box as. Is necessary for accessibility support and assistive technologies.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="as"
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['div']}
+  webOptions={[
+    'article',
+    'aside',
+    'div',
+    'footer',
+    'header',
+    'label',
+    'li',
+    'main',
+    'nav',
+    'ol',
+    'section',
+    'ul',
+  ]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-as" />
+<ComponentDetails componentName="VStack" templateName="prop-as" />
 
 ### aspectRatio <Badge variant="mobile" />
 
 Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="aspectRatio"
   required={false}
   defaultValue=""
@@ -107,14 +120,14 @@ Aspect ratio controls the size of the undefined dimension of a node. Aspect rati
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-aspectRatio" />
+<ComponentDetails componentName="VStack" templateName="prop-aspectRatio" />
 
 ### background
 
 Set the background color of the box. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="background"
   required={false}
   defaultValue=""
@@ -142,14 +155,14 @@ Set the background color of the box. Passing `true` will enable the default back
   ]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-background" />
+<ComponentDetails componentName="VStack" templateName="prop-background" />
 
 ### bordered
 
 Add a border around all sides of the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="bordered"
   required={false}
   defaultValue=""
@@ -157,14 +170,14 @@ Add a border around all sides of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-bordered" />
+<ComponentDetails componentName="VStack" templateName="prop-bordered" />
 
 ### borderedBottom
 
 Add a border to the bottom side of the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="borderedBottom"
   required={false}
   defaultValue=""
@@ -172,14 +185,14 @@ Add a border to the bottom side of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-borderedBottom" />
+<ComponentDetails componentName="VStack" templateName="prop-borderedBottom" />
 
 ### borderedEnd
 
 Add a border to the trailing side of the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="borderedEnd"
   required={false}
   defaultValue=""
@@ -187,14 +200,14 @@ Add a border to the trailing side of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-borderedEnd" />
+<ComponentDetails componentName="VStack" templateName="prop-borderedEnd" />
 
 ### borderedHorizontal
 
 Add a border to the leading and trailing sides of the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="borderedHorizontal"
   required={false}
   defaultValue=""
@@ -202,14 +215,14 @@ Add a border to the leading and trailing sides of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-borderedHorizontal" />
+<ComponentDetails componentName="VStack" templateName="prop-borderedHorizontal" />
 
 ### borderedStart
 
 Add a border to the leading side of the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="borderedStart"
   required={false}
   defaultValue=""
@@ -217,14 +230,14 @@ Add a border to the leading side of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-borderedStart" />
+<ComponentDetails componentName="VStack" templateName="prop-borderedStart" />
 
 ### borderedTop
 
 Add a border to the top side of the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="borderedTop"
   required={false}
   defaultValue=""
@@ -232,14 +245,14 @@ Add a border to the top side of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-borderedTop" />
+<ComponentDetails componentName="VStack" templateName="prop-borderedTop" />
 
 ### borderedVertical
 
 Add a border to the top and bottom sides of the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="borderedVertical"
   required={false}
   defaultValue=""
@@ -247,14 +260,29 @@ Add a border to the top and bottom sides of the box.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-borderedVertical" />
+<ComponentDetails componentName="VStack" templateName="prop-borderedVertical" />
+
+### borderRadius
+
+Leverage one of the borderRadius styles we offer to round the corners of the box.
+
+<ApiDetails
+  componentName="VStack"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+  webOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
+/>
+
+<ComponentDetails componentName="VStack" templateName="prop-borderRadius" />
 
 ### bottom
 
 Position the box to the bottom edge.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="bottom"
   required={false}
   defaultValue=""
@@ -262,14 +290,14 @@ Position the box to the bottom edge.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-bottom" />
+<ComponentDetails componentName="VStack" templateName="prop-bottom" />
 
 ### children
 
 Content to render within the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="children"
   required={false}
   defaultValue=""
@@ -297,14 +325,14 @@ Content to render within the box.
   ]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-children" />
+<ComponentDetails componentName="VStack" templateName="prop-children" />
 
 ### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
 
 This is a migration escape hatch. It is not intended to be used normally.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="dangerouslySetClassName"
   required={false}
   defaultValue=""
@@ -312,14 +340,14 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-dangerouslySetClassName" />
+<ComponentDetails componentName="VStack" templateName="prop-dangerouslySetClassName" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
 This is a migration escape hatch. It is not intended to be used normally.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="dangerouslySetStyle"
   required={false}
   defaultValue=""
@@ -337,14 +365,14 @@ This is a migration escape hatch. It is not intended to be used normally.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-dangerouslySetStyle" />
+<ComponentDetails componentName="VStack" templateName="prop-dangerouslySetStyle" />
 
 ### elevation <Badge variant="mobile" />
 
 Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="elevation"
   required={false}
   defaultValue=""
@@ -352,14 +380,14 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-elevation" />
+<ComponentDetails componentName="VStack" templateName="prop-elevation" />
 
 ### flexBasis
 
 Sets the initial main flex size.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="flexBasis"
   required={false}
   defaultValue=""
@@ -367,29 +395,14 @@ Sets the initial main flex size.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-flexBasis" />
-
-### flexDirection
-
-Order children on the main-axis in this direction.
-
-<ApiDetails
-  componentName="Fallback"
-  propertyName="flexDirection"
-  required={false}
-  defaultValue=""
-  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
-  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
-/>
-
-<ComponentDetails componentName="Fallback" templateName="prop-flexDirection" />
+<ComponentDetails componentName="VStack" templateName="prop-flexBasis" />
 
 ### flexGrow
 
 Set the grow factor of this flex item.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="flexGrow"
   required={false}
   defaultValue=""
@@ -397,14 +410,14 @@ Set the grow factor of this flex item.
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-flexGrow" />
+<ComponentDetails componentName="VStack" templateName="prop-flexGrow" />
 
 ### flexShrink
 
 Set the shrink factor of this flex item.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="flexShrink"
   required={false}
   defaultValue=""
@@ -412,14 +425,14 @@ Set the shrink factor of this flex item.
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-flexShrink" />
+<ComponentDetails componentName="VStack" templateName="prop-flexShrink" />
 
 ### flexWrap
 
 How should children wrap when overflowing.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="flexWrap"
   required={false}
   defaultValue="nowrap"
@@ -427,27 +440,44 @@ How should children wrap when overflowing.
   webOptions={['nowrap', 'wrap', 'wrap-reverse']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-flexWrap" />
+<ComponentDetails componentName="VStack" templateName="prop-flexWrap" />
+
+### gap
+
+Gap to insert between siblings.
+
+<ApiDetails
+  componentName="VStack"
+  propertyName="gap"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="VStack" templateName="prop-gap" />
 
 ### height
 
+Set a fixed height.
+
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="height"
-  required={true}
+  required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-height" />
+<ComponentDetails componentName="VStack" templateName="prop-height" />
 
 ### justifyContent
 
 Set the distribution of space between and around content items along the main-axis.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="justifyContent"
   required={false}
   defaultValue="flex-start"
@@ -462,14 +492,14 @@ Set the distribution of space between and around content items along the main-ax
   webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-justifyContent" />
+<ComponentDetails componentName="VStack" templateName="prop-justifyContent" />
 
 ### left
 
 Position the box to the left edge.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="left"
   required={false}
   defaultValue=""
@@ -477,14 +507,14 @@ Position the box to the left edge.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-left" />
+<ComponentDetails componentName="VStack" templateName="prop-left" />
 
 ### maxHeight
 
 Set a maximum height.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="maxHeight"
   required={false}
   defaultValue=""
@@ -492,14 +522,14 @@ Set a maximum height.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-maxHeight" />
+<ComponentDetails componentName="VStack" templateName="prop-maxHeight" />
 
 ### maxWidth
 
 Set a maximum width.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="maxWidth"
   required={false}
   defaultValue=""
@@ -507,14 +537,14 @@ Set a maximum width.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-maxWidth" />
+<ComponentDetails componentName="VStack" templateName="prop-maxWidth" />
 
 ### minHeight
 
 Set a minimum height.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="minHeight"
   required={false}
   defaultValue=""
@@ -522,14 +552,14 @@ Set a minimum height.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-minHeight" />
+<ComponentDetails componentName="VStack" templateName="prop-minHeight" />
 
 ### minWidth
 
 Set a minimum width.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="minWidth"
   required={false}
   defaultValue=""
@@ -537,14 +567,14 @@ Set a minimum width.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-minWidth" />
+<ComponentDetails componentName="VStack" templateName="prop-minWidth" />
 
 ### offset
 
 Apply negative outer spacing on all sides.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="offset"
   required={false}
   defaultValue=""
@@ -552,14 +582,14 @@ Apply negative outer spacing on all sides.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-offset" />
+<ComponentDetails componentName="VStack" templateName="prop-offset" />
 
 ### offsetBottom
 
 Apply negative outer spacing on the bottom side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="offsetBottom"
   required={false}
   defaultValue=""
@@ -567,14 +597,14 @@ Apply negative outer spacing on the bottom side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-offsetBottom" />
+<ComponentDetails componentName="VStack" templateName="prop-offsetBottom" />
 
 ### offsetEnd
 
 Apply negative outer spacing on the trailing side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="offsetEnd"
   required={false}
   defaultValue=""
@@ -582,14 +612,14 @@ Apply negative outer spacing on the trailing side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-offsetEnd" />
+<ComponentDetails componentName="VStack" templateName="prop-offsetEnd" />
 
 ### offsetHorizontal
 
 Apply negative outer spacing on the leading and trailing sides.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="offsetHorizontal"
   required={false}
   defaultValue=""
@@ -597,14 +627,14 @@ Apply negative outer spacing on the leading and trailing sides.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-offsetHorizontal" />
+<ComponentDetails componentName="VStack" templateName="prop-offsetHorizontal" />
 
 ### offsetStart
 
 Apply negative outer spacing on the leading side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="offsetStart"
   required={false}
   defaultValue=""
@@ -612,14 +642,14 @@ Apply negative outer spacing on the leading side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-offsetStart" />
+<ComponentDetails componentName="VStack" templateName="prop-offsetStart" />
 
 ### offsetTop
 
 Apply negative outer spacing on the top side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="offsetTop"
   required={false}
   defaultValue=""
@@ -627,14 +657,14 @@ Apply negative outer spacing on the top side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-offsetTop" />
+<ComponentDetails componentName="VStack" templateName="prop-offsetTop" />
 
 ### offsetVertical
 
 Apply negative outer spacing on the top and bottom sides.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="offsetVertical"
   required={false}
   defaultValue=""
@@ -642,14 +672,14 @@ Apply negative outer spacing on the top and bottom sides.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-offsetVertical" />
+<ComponentDetails componentName="VStack" templateName="prop-offsetVertical" />
 
 ### opacity <Badge variant="mobile" />
 
 Opacity of element
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="opacity"
   required={false}
   defaultValue=""
@@ -666,14 +696,14 @@ Opacity of element
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-opacity" />
+<ComponentDetails componentName="VStack" templateName="prop-opacity" />
 
 ### overflow
 
 Control how the content should overflow.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="overflow"
   required={false}
   defaultValue=""
@@ -681,29 +711,14 @@ Control how the content should overflow.
   webOptions={['hidden', 'scroll', 'visible']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-overflow" />
-
-### percentage <Badge variant="web" />
-
-Convert width to a percentage.
-
-<ApiDetails
-  componentName="Fallback"
-  propertyName="percentage"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Fallback" templateName="prop-percentage" />
+<ComponentDetails componentName="VStack" templateName="prop-overflow" />
 
 ### pin
 
 Direction in which to absolutely pin the box.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="pin"
   required={false}
   defaultValue=""
@@ -711,14 +726,14 @@ Direction in which to absolutely pin the box.
   webOptions={['all', 'bottom', 'left', 'right', 'top']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-pin" />
+<ComponentDetails componentName="VStack" templateName="prop-pin" />
 
 ### position
 
 How to position the box within its parent.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="position"
   required={false}
   defaultValue=""
@@ -726,14 +741,14 @@ How to position the box within its parent.
   webOptions={['absolute', 'relative', 'sticky']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-position" />
+<ComponentDetails componentName="VStack" templateName="prop-position" />
 
 ### right
 
 Position the box to the right edge.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="right"
   required={false}
   defaultValue=""
@@ -741,14 +756,14 @@ Position the box to the right edge.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-right" />
+<ComponentDetails componentName="VStack" templateName="prop-right" />
 
 ### role <Badge variant="web" />
 
 Semantic role whole using a non-semantic element.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="role"
   required={false}
   defaultValue=""
@@ -756,14 +771,14 @@ Semantic role whole using a non-semantic element.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-role" />
+<ComponentDetails componentName="VStack" templateName="prop-role" />
 
 ### rounded
 
 Round the corners of the box with `standard` borderRadius size.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="rounded"
   required={false}
   defaultValue=""
@@ -771,27 +786,14 @@ Round the corners of the box with `standard` borderRadius size.
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-rounded" />
-
-### shape
-
-<ApiDetails
-  componentName="Fallback"
-  propertyName="shape"
-  required={false}
-  defaultValue=""
-  mobileOptions={['circle', 'rectangle', 'square', 'squircle']}
-  webOptions={['circle', 'rectangle', 'square', 'squircle']}
-/>
-
-<ComponentDetails componentName="Fallback" templateName="prop-shape" />
+<ComponentDetails componentName="VStack" templateName="prop-rounded" />
 
 ### spacing
 
 Apply inner spacing on all sides.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="spacing"
   required={false}
   defaultValue=""
@@ -799,14 +801,14 @@ Apply inner spacing on all sides.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-spacing" />
+<ComponentDetails componentName="VStack" templateName="prop-spacing" />
 
 ### spacingBottom
 
 Apply inner spacing on the bottom side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
@@ -814,14 +816,14 @@ Apply inner spacing on the bottom side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-spacingBottom" />
+<ComponentDetails componentName="VStack" templateName="prop-spacingBottom" />
 
 ### spacingEnd
 
 Apply inner spacing on the trailing side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
@@ -829,14 +831,14 @@ Apply inner spacing on the trailing side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-spacingEnd" />
+<ComponentDetails componentName="VStack" templateName="prop-spacingEnd" />
 
 ### spacingHorizontal
 
 Apply inner spacing on the leading and trailing sides.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
@@ -844,14 +846,14 @@ Apply inner spacing on the leading and trailing sides.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-spacingHorizontal" />
+<ComponentDetails componentName="VStack" templateName="prop-spacingHorizontal" />
 
 ### spacingStart
 
 Apply inner spacing on the leading side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="spacingStart"
   required={false}
   defaultValue=""
@@ -859,14 +861,14 @@ Apply inner spacing on the leading side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-spacingStart" />
+<ComponentDetails componentName="VStack" templateName="prop-spacingStart" />
 
 ### spacingTop
 
 Apply inner spacing on the top side.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="spacingTop"
   required={false}
   defaultValue=""
@@ -874,14 +876,14 @@ Apply inner spacing on the top side.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-spacingTop" />
+<ComponentDetails componentName="VStack" templateName="prop-spacingTop" />
 
 ### spacingVertical
 
 Apply inner spacing on the top and bottom sides.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
@@ -889,14 +891,14 @@ Apply inner spacing on the top and bottom sides.
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-spacingVertical" />
+<ComponentDetails componentName="VStack" templateName="prop-spacingVertical" />
 
 ### testID
 
 Used to locate this element in unit and end-to-end tests.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="testID"
   required={false}
   defaultValue=""
@@ -904,14 +906,14 @@ Used to locate this element in unit and end-to-end tests.
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-testID" />
+<ComponentDetails componentName="VStack" templateName="prop-testID" />
 
 ### top
 
 Position the box to the top edge.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="top"
   required={false}
   defaultValue=""
@@ -919,27 +921,29 @@ Position the box to the top edge.
   webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-top" />
+<ComponentDetails componentName="VStack" templateName="prop-top" />
 
 ### width
 
+Set a fixed width.
+
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="width"
-  required={true}
+  required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-width" />
+<ComponentDetails componentName="VStack" templateName="prop-width" />
 
 ### zIndex
 
 Adjust the z-index positioning layer.
 
 <ApiDetails
-  componentName="Fallback"
+  componentName="VStack"
   propertyName="zIndex"
   required={false}
   defaultValue=""
@@ -947,6 +951,6 @@ Adjust the z-index positioning layer.
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="Fallback" templateName="prop-zIndex" />
+<ComponentDetails componentName="VStack" templateName="prop-zIndex" />
 
-<ComponentDetails componentName="Fallback" templateName="outro" />
+<ComponentDetails componentName="VStack" templateName="outro" />

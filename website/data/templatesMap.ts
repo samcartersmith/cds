@@ -563,10 +563,22 @@ export const Fallback = {
 };
 
 export const HStack = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/HStack/a11y.mdx'
+      )
+  ),
   hstack: React.lazy(
     () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/HStack/hstack.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/HStack/implementation.mdx'
       )
   ),
   intro: React.lazy(
@@ -605,6 +617,18 @@ export const Spacer = {
 };
 
 export const VStack = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/VStack/a11y.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/VStack/implementation.mdx'
+      )
+  ),
   intro: React.lazy(
     () =>
       import(

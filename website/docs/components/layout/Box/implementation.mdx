@@ -350,7 +350,7 @@ This is a migration escape hatch. It is not intended to be used normally.
   componentName="Box"
   propertyName="dangerouslySetStyle"
   required={false}
-  defaultValue=""
+  defaultValue="{}"
   mobileOptions={[
     'AnimatedInterpolation',
     'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
@@ -673,6 +673,30 @@ Apply negative outer spacing on the top and bottom sides.
 />
 
 <ComponentDetails componentName="Box" templateName="prop-offsetVertical" />
+
+### opacity <Badge variant="mobile" />
+
+Opacity of element
+
+<ApiDetails
+  componentName="Box"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Box" templateName="prop-opacity" />
 
 ### overflow
 

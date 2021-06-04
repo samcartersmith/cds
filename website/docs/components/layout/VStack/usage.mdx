@@ -13,3 +13,19 @@ The `VStack` works exactly like `Box` but with children being automatically rend
   </Box>
 </VStack>
 ```
+
+Can provide a `gap` prop to inject spacing between each child.
+
+```jsx live
+<VStack gap={1}>
+  <Box spacing={1} background>
+    First
+  </Box>
+  <Box spacing={1} background="backgroundAlternate">
+    Second
+  </Box>
+  <Box spacing={1} background="backgroundOverlay">
+    Third
+  </Box>
+</VStack>
+```
