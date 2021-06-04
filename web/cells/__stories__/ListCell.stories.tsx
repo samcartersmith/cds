@@ -10,5 +10,12 @@ export default {
   component: ListCell,
 };
 
-export const { Content, PressableContent, LongContent, WithAccessory, WithMedia, WithActions } =
-  createStories(ListCell, CellMedia, Button, IconButton, Checkbox);
+export const {
+  Content,
+  PressableContent,
+  LongContent,
+  WithAccessory,
+  WithMedia,
+  WithActions,
+  WithIntermediary,
+} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox);

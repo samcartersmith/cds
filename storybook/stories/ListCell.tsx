@@ -215,6 +215,16 @@ export function createStories(
     </>
   );
 
+  const WithIntermediary = () => (
+    <ListCell
+      title="Title"
+      description="Description"
+      detail="Detail"
+      subdetail="Neutral"
+      intermediary={<CellMedia type="icon" name="chartLine" />}
+    />
+  );
+
   return {
     Content,
     PressableContent,
@@ -222,5 +232,6 @@ export function createStories(
     WithAccessory,
     WithMedia,
     WithActions,
+    WithIntermediary,
   };
 }

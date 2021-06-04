@@ -59,11 +59,7 @@ export const ContentCell = memo(function ContentCell({
           </HStack>
         )}
 
-        {!!description && (
-          <TextBody color="foregroundMuted" spacingTop={0.5}>
-            {description}
-          </TextBody>
-        )}
+        {!!description && <TextBody color="foregroundMuted">{description}</TextBody>}
       </VStack>
     </Cell>
   );

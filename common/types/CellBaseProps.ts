@@ -19,6 +19,7 @@ export interface CellProps extends CellCommonProps, SpacingProps {
   alignItems?: 'center' | 'flex-start';
   children: React.ReactNode;
   detail?: React.ReactNode;
+  intermediary?: React.ReactNode;
   maxContentWidth?: number | string;
   maxDetailWidth?: number | string;
   minContentWidth?: number | string;
@@ -97,6 +98,8 @@ export interface ListCellProps extends CellCommonProps, CellDetailProps {
   action?: NonNullable<React.ReactNode>;
   /** Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate. */
   description?: NonNullable<React.ReactNode>;
+  /** For internal use only. */
+  intermediary?: React.ReactNode;
   /** Allow the description to span multiple lines. This *will* break fixed height requirements, so should not be used in a `FlatList`. */
   multiline?: boolean;
   /** Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate. */

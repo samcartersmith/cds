@@ -17,6 +17,7 @@ export const Cell = memo(function Cell({
   children,
   detail,
   disabled,
+  intermediary,
   media,
   maxContentWidth,
   maxDetailWidth,
@@ -66,6 +67,12 @@ export const Cell = memo(function Cell({
       >
         {children}
       </Box>
+
+      {!!intermediary && (
+        <Box flexGrow={0} flexShrink={1} justifyContent="center" spacingStart={2}>
+          {intermediary}
+        </Box>
+      )}
 
       {!!detail && (
         <Box

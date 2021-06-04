@@ -70,7 +70,7 @@ export const ContentCell = memo(function ContentCell({
         )}
 
         {description && (
-          <TextBody as="div" color="foregroundMuted" spacingTop={0.5}>
+          <TextBody as="div" color="foregroundMuted">
             {description}
           </TextBody>
         )}
