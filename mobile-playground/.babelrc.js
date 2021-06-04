@@ -5,6 +5,7 @@ module.exports = api => {
 
   return {
     ...config,
-    presets: [...config.presets, 'module:metro-react-native-babel-preset'],
+    plugins: [...config.plugins, ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }]],
+    presets: ['module:metro-react-native-babel-preset', ...config.presets],
   };
 };
