@@ -59,6 +59,31 @@ export function createStories(
 
       <ListCell title="Title" subdetail="Neutral" onPress={() => {}} />
 
+      <ListCell title="Title" description="Multi-line description" onPress={() => {}} multiline />
+
+      <ListCell
+        title="Title"
+        description="Multi-line description"
+        onPress={() => {}}
+        multiline
+        selected
+      />
+
+      <ListCell
+        title="Title"
+        description="Multi-line description goes here with really long text"
+        onPress={() => {}}
+        multiline
+      />
+
+      <ListCell
+        title="Title"
+        description="Multi-line description goes here with really long text"
+        onPress={() => {}}
+        multiline
+        selected
+      />
+
       <ListCell title="Title" description="Description" detail="Detail" onPress={() => {}} />
 
       <ListCell

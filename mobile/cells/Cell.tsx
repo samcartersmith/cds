@@ -60,7 +60,7 @@ export const Cell = memo(function Cell({
 
       <Box
         flexGrow={1}
-        flexShrink={1}
+        flexShrink={0}
         justifyContent="flex-start"
         minWidth={minContentWidth}
         maxWidth={maxContentWidth}
