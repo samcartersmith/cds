@@ -33,13 +33,18 @@ export interface CellAccessoryProps extends SpacingProps {
   type: CellAccessoryType;
 }
 
+export type CellDetailVariant = Extract<
+  PaletteForeground,
+  'foregroundMuted' | 'negative' | 'positive'
+>;
+
 export interface CellDetailProps {
   /** Label and or extra detail. */
   detail?: NonNullable<React.ReactNode>;
   /** Subdetail providing more information. */
   subdetail?: NonNullable<React.ReactNode>;
   /** Variant color to apply to the subdetail text. */
-  variant?: Extract<PaletteForeground, 'foregroundMuted' | 'negative' | 'positive'>;
+  variant?: CellDetailVariant;
 }
 
 export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon';

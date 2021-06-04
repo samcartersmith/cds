@@ -51,7 +51,7 @@ export const Cell = memo(function Cell({
       dangerouslySetStyle={onPress ? undefined : offsetStyle}
       {...props}
     >
-      {media && (
+      {!!media && (
         <Box flexGrow={0} flexShrink={0} spacingEnd={2}>
           {media}
         </Box>
@@ -67,7 +67,7 @@ export const Cell = memo(function Cell({
         {children}
       </Box>
 
-      {detail && (
+      {!!detail && (
         <Box
           flexGrow={1}
           flexShrink={1}
@@ -81,7 +81,7 @@ export const Cell = memo(function Cell({
         </Box>
       )}
 
-      {accessory && (
+      {!!accessory && (
         <Box flexGrow={0} flexShrink={0} spacingStart={2}>
           {accessory}
         </Box>

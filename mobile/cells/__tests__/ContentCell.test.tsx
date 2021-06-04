@@ -89,4 +89,10 @@ describe('ContentCell', () => {
 
     expect(result.queryByTestId('accessory')).not.toBeNull();
   });
+
+  it('renders empty strings without crashing', () => {
+    const result = render(<ContentCell title="" subtitle="" description="" meta="" />);
+
+    expect(result).not.toBeNull();
+  });
 });

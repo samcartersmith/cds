@@ -18,13 +18,13 @@ export const CellDetail = memo(function CellDetail({
 
   return (
     <VStack alignContent="flex-end" alignItems="flex-end" justifyContent="center">
-      {detail && (
+      {!!detail && (
         <TextBody align="end" numberOfLines={1}>
           {detail}
         </TextBody>
       )}
 
-      {subdetail && (
+      {!!subdetail && (
         <TextBody align="end" numberOfLines={1} color={variant}>
           {subdetail}
         </TextBody>

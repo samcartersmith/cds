@@ -88,10 +88,17 @@ describe('ListCell', () => {
 
     expect(result.queryByTestId('accessory')).not.toBeNull();
   });
+
   it('renders an action', () => {
     const button = <Button testID="button">Test</Button>;
     const result = render(<ListCell action={button} />);
 
     expect(result.queryByTestId('button')).not.toBeNull();
+  });
+
+  it('renders empty strings without crashing', () => {
+    const result = render(<ListCell title="" description="" detail="" subdetail="" action="" />);
+
+    expect(result).not.toBeNull();
   });
 });
