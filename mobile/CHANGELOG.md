@@ -6,6 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.3 (6/4/2021, 01:45 PM PST)
+
+#### 🚀 Updates
+
+- **[ListCell]** Add intermediary support for sparklines. [#22324](https://github.cbhq.net/mono/repo/pull/22324)
+
+#### 🐞 Fixes
+
+- **[ListCell,ContentCell]** Fix empty strings crashing cells on mobile. [#22302](https://github.cbhq.net/mono/repo/pull/22302)
+- Export overlayPalettes and cardSizes. [#22380](https://github.cbhq.net/mono/repo/pull/22380)
+- Remove max width when action exists. [#22285](https://github.cbhq.net/mono/repo/pull/22285)
+- Upgrade to Prettier v2.3. [#22232](https://github.cbhq.net/mono/repo/pull/22232)
+- Fix cell icon sizing. [#22175](https://github.cbhq.net/mono/repo/pull/22175)
+
 ## 0.15.2 (6/2/2021, 02:11 PM PST)
 
 #### 🚀 Updates
