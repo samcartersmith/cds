@@ -2,17 +2,17 @@ import React, { memo } from 'react';
 
 import { useSpectrumConditional } from '../hooks/useSpectrumConditional';
 import { SystemProvider, SystemProviderProps } from '../SystemProvider';
-import { PartialPaletteConfig } from '../types';
+import { PartialPaletteConfig, Spectrum } from '../types';
 
-const darkPalette: PartialPaletteConfig = {
-  backgroundOverlay: ['gray0', 0.5],
+export const overlayPalettes: Record<Spectrum, PartialPaletteConfig> = {
+  light: {},
+  dark: {
+    backgroundOverlay: ['gray0', 0.5],
+  },
 };
 
 export const OverlayProvider: React.FC<SystemProviderProps> = memo(props => {
-  const palette = useSpectrumConditional({
-    light: undefined,
-    dark: darkPalette,
-  });
+  const palette = useSpectrumConditional(overlayPalettes);
   return <SystemProvider palette={palette} {...props} />;
 });
 

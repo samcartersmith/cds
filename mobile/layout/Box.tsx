@@ -258,7 +258,7 @@ const useDangerouslySetStyle = ({
         borderColor: elevationBorderColor,
       },
       dangerouslySetStyle,
-    ];
+    ].filter(Boolean);
   }, [
     bordered,
     dangerouslySetStyle,

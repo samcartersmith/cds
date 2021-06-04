@@ -6,12 +6,12 @@ import { convertMotionConfig } from '../../animation/convertMotionConfig';
 
 const animateInConfig = convertMotionConfig({
   curve: 'enterFunctional',
-  duration: 'moderate3',
+  duration: 'moderate1',
   toValue: 1,
 });
 const animateOutConfig = convertMotionConfig({
   curve: 'exitFunctional',
-  duration: 'moderate3',
+  duration: 'moderate1',
   toValue: 0,
 });
 

@@ -23,8 +23,8 @@ export const Card: React.FC<CardProps> = memo(
     dangerouslySetStyle,
     ...props
   }: CardProps) => {
-    const width = props?.width ?? sizes[size].width;
-    const height = props?.height ?? sizes[size].height;
+    const width = props?.width ?? cardSizes[size].width;
+    const height = props?.height ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
     const elevationBorderWidth = useElevationBorderWidth();
     const pinStyles = usePinStyles(pin);
@@ -68,7 +68,7 @@ export const Card: React.FC<CardProps> = memo(
 
 Card.displayName = 'Card';
 
-const sizes = {
+export const cardSizes = {
   small: {
     width: 136,
     height: 144,
