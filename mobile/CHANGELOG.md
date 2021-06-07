@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.4 (6/4/2021, 04:23 PM PST)
+
+#### 🐞 Fixes
+
+- Multi line descriptions on mobile list cells. [#22461](https://github.cbhq.net/mono/repo/pull/22461)
+
 ## 0.15.3 (6/4/2021, 01:45 PM PST)
 
 #### 🚀 Updates
