@@ -20,10 +20,6 @@ export interface CellProps extends CellCommonProps, SpacingProps {
   children: React.ReactNode;
   detail?: React.ReactNode;
   intermediary?: React.ReactNode;
-  maxContentWidth?: number | string;
-  maxDetailWidth?: number | string;
-  minContentWidth?: number | string;
-  minDetailWidth?: number | string;
   minHeight?: number;
 }
 

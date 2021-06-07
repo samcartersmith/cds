@@ -57,12 +57,14 @@ export const Pressable = memo(function Pressable({
   noScaleOnPress,
   // Interactable
   backgroundColor,
+  block,
   borderColor,
   borderRadius,
   borderWidth,
   disableDebounce,
   elevation,
   style = emptyArray,
+  contentStyle,
   transparentWhileInactive,
   ...props
 }: PressableInternalProps) {
@@ -120,6 +122,7 @@ export const Pressable = memo(function Pressable({
     >
       <Interactable
         backgroundColor={backgroundColor}
+        block={block}
         borderColor={borderColor}
         borderRadius={borderRadius}
         borderWidth={borderWidth}
@@ -127,6 +130,7 @@ export const Pressable = memo(function Pressable({
         elevation={elevation}
         pressed={pressed}
         style={!noScaleOnPress ? [{ transform: [{ scale: pressScale }] }] : undefined}
+        contentStyle={contentStyle}
         transparentWhileInactive={transparentWhileInactive}
       >
         {children}

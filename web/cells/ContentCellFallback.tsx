@@ -19,7 +19,7 @@ export const ContentCellFallback = memo(function ContentCellFallback({
   // We cant use ContentCell here as we need to account for percentage based widths.
   // Flexbox collides with percentages also, so we need to wrap in normal divs.
   return (
-    <Cell media={media && <MediaFallback type={media} />} maxContentWidth="100%">
+    <Cell media={media && <MediaFallback type={media} />}>
       <div style={{ width: '100%' }}>
         {meta && (
           <div style={{ float: 'right', width: '30%' }}>

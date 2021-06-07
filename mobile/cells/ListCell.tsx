@@ -40,11 +40,14 @@ export const ListCell = memo(function ListCell({
     <Cell
       {...props}
       accessory={accessoryType && <CellAccessory type={accessoryType} />}
-      detail={action || <CellDetail detail={detail} subdetail={subdetail} variant={variant} />}
+      detail={
+        action ||
+        ((detail || subdetail) && (
+          <CellDetail detail={detail} subdetail={subdetail} variant={variant} />
+        ))
+      }
       media={media}
       disabled={disabled}
-      maxContentWidth={action ? undefined : '70%'}
-      maxDetailWidth="50%"
       minHeight={minHeight}
       selected={selected}
       onPress={onPress}
@@ -57,7 +60,10 @@ export const ListCell = memo(function ListCell({
         )}
 
         {!!description && (
-          <TextBody numberOfLines={multiline ? undefined : title ? 1 : 2} ellipsize="tail">
+          <TextBody
+            numberOfLines={multiline ? undefined : title ? 1 : 2}
+            ellipsize={multiline ? undefined : 'tail'}
+          >
             {description}
           </TextBody>
         )}

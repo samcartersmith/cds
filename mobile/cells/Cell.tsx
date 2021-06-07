@@ -19,10 +19,6 @@ export const Cell = memo(function Cell({
   disabled,
   intermediary,
   media,
-  maxContentWidth,
-  maxDetailWidth,
-  minContentWidth,
-  minDetailWidth,
   minHeight,
   onPress,
   selected,
@@ -45,51 +41,40 @@ export const Cell = memo(function Cell({
       background={selected ? 'backgroundAlternate' : undefined}
       borderRadius="standard"
       alignItems={alignItems}
-      minHeight={minHeight}
-      spacing={2}
+      flexGrow={1}
+      gap={2}
+      spacingHorizontal={2}
+      spacingVertical={1}
+      width="100%"
       renderToHardwareTextureAndroid={disabled}
       testID={testID}
       dangerouslySetStyle={onPress ? undefined : offsetStyle}
       {...props}
     >
       {!!media && (
-        <Box flexGrow={0} flexShrink={0} spacingEnd={2}>
+        <Box flexGrow={0} flexShrink={0}>
           {media}
         </Box>
       )}
 
-      <Box
-        flexGrow={1}
-        flexShrink={0}
-        justifyContent="flex-start"
-        minWidth={minContentWidth}
-        maxWidth={maxContentWidth}
-      >
+      <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
         {children}
       </Box>
 
       {!!intermediary && (
-        <Box flexGrow={0} flexShrink={1} justifyContent="center" spacingStart={2}>
+        <Box flexGrow={0} flexShrink={1} justifyContent="center">
           {intermediary}
         </Box>
       )}
 
       {!!detail && (
-        <Box
-          flexGrow={1}
-          flexShrink={1}
-          alignItems="flex-end"
-          justifyContent="flex-end"
-          spacingStart={2}
-          minWidth={minDetailWidth}
-          maxWidth={maxDetailWidth}
-        >
+        <Box flexGrow={1} flexShrink={1} alignItems="flex-end" justifyContent="flex-end">
           {detail}
         </Box>
       )}
 
       {!!accessory && (
-        <Box flexGrow={0} flexShrink={0} spacingStart={2}>
+        <Box flexGrow={0} flexShrink={0}>
           {accessory}
         </Box>
       )}
@@ -106,7 +91,8 @@ export const Cell = memo(function Cell({
         block
         disabled={disabled}
         onPress={onPress}
-        style={offsetStyle}
+        style={[offsetStyle, pressStyles]}
+        contentStyle={pressStyles}
       >
         {content}
       </Pressable>
@@ -114,8 +100,23 @@ export const Cell = memo(function Cell({
   }
 
   return (
-    <Box spacingVertical={0.5} spacingHorizontal={3}>
+    <Box
+      alignItems="stretch"
+      flexDirection="row"
+      width="100%"
+      minHeight={minHeight}
+      spacingVertical={0.5}
+      spacingHorizontal={3}
+    >
       {content}
     </Box>
   );
 });
+
+// Since Pressable and Interactable wraps with another `View`,
+// we need to apply flex styles to those wrappers!
+const pressStyles = {
+  alignItems: 'stretch',
+  flexGrow: 1,
+  flexDirection: 'row',
+} as const;

@@ -38,8 +38,6 @@ const SparklineExample: React.FC<SparklineExampleProps> = ({ imageUrl, name, sym
   const path = useSparklinePath({ ...dimensions, data: prices });
   return (
     <Cell
-      maxContentWidth="70%"
-      maxDetailWidth="50%"
       detail={
         <HStack alignItems="center">
           <Sparkline {...dimensions} path={path} color={color} />

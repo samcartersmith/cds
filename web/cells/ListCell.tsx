@@ -21,7 +21,6 @@ export const ListCell = memo(function ListCell({
   detail,
   disabled,
   media,
-  multiline,
   selected,
   subdetail,
   variant,
@@ -41,27 +40,22 @@ export const ListCell = memo(function ListCell({
     <Cell
       {...props}
       accessory={accessoryType && <CellAccessory type={accessoryType} />}
-      detail={action || <CellDetail detail={detail} subdetail={subdetail} variant={variant} />}
+      detail={
+        action ||
+        ((detail || subdetail) && (
+          <CellDetail detail={detail} subdetail={subdetail} variant={variant} />
+        ))
+      }
       media={media}
       disabled={disabled}
-      maxContentWidth={action ? undefined : '70%'}
-      maxDetailWidth="50%"
       minHeight={minHeight}
       selected={selected}
       onPress={onPress}
     >
-      <VStack justifyContent="center" maxWidth="100%">
-        {title && (
-          <TextHeadline as="div" overflow="truncate">
-            {title}
-          </TextHeadline>
-        )}
+      <VStack>
+        {title && <TextHeadline as="div">{title}</TextHeadline>}
 
-        {description && (
-          <TextBody as="div" overflow={multiline ? undefined : 'truncate'}>
-            {description}
-          </TextBody>
-        )}
+        {description && <TextBody as="div">{description}</TextBody>}
       </VStack>
     </Cell>
   );

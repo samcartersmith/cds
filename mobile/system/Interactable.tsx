@@ -14,6 +14,8 @@ export interface InteractableProps extends InteractableBaseProps, SharedProps {
   children?: React.ReactNode;
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
+  /** Apply animated styles to the inner container. */
+  contentStyle?: Falsy | ViewStyle;
 }
 
 export const Interactable = memo(function Interactable({
@@ -40,6 +42,7 @@ export const InteractableContent = memo(function InteractableContent({
   elevation,
   pressed,
   style = emptyArray,
+  contentStyle,
   transparentWhileInactive,
   testID,
 }: InteractableProps) {
@@ -56,7 +59,7 @@ export const InteractableContent = memo(function InteractableContent({
   const wrapperStyles = useMemo(
     () =>
       [
-        block && { width: '100%' },
+        block && { flexGrow: 1 },
         ...style,
         { backgroundColor: bg } as const,
         elevationStyles,
@@ -66,7 +69,7 @@ export const InteractableContent = memo(function InteractableContent({
 
   return (
     <Animated.View style={wrapperStyles} testID={testID}>
-      <View style={{ opacity: contentOpacity }}>{children}</View>
+      <View style={[contentStyle, { opacity: contentOpacity }]}>{children}</View>
     </Animated.View>
   );
 });

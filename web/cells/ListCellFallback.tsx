@@ -37,8 +37,6 @@ export const ListCellFallback = memo(function ListCellFallback({
         )
       }
       media={media && <MediaFallback type={media} />}
-      maxContentWidth="70%"
-      maxDetailWidth="30%"
     >
       <div style={{ width: '100%' }}>
         {title && <Fallback height={22} width={65} percentage />}

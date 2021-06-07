@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 
 import type { CellProps as CellBaseProps } from '@cbhq/cds-common/types';
+import { css } from 'linaria';
 
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable } from '../system/Pressable';
@@ -18,17 +18,13 @@ export interface CellProps extends CellBaseProps, CellSharedProps {}
 
 export const Cell = memo(function Cell({
   accessory,
-  as: Tag = 'div',
+  as = 'div',
   alignItems = 'center',
   children,
   detail,
   disabled,
   intermediary,
   media,
-  maxContentWidth,
-  maxDetailWidth,
-  minContentWidth,
-  minDetailWidth,
   minHeight,
   onPress,
   selected,
@@ -44,56 +40,42 @@ export const Cell = memo(function Cell({
     console.error('Cell media must be a `CellMedia` component.');
   }
 
-  const spacingClass = useSpacingStyles({ spacingVertical: 0.5, spacingHorizontal: 1 });
-
   let content = (
     <HStack
+      flexGrow={1}
       background={selected ? 'backgroundAlternate' : undefined}
       borderRadius="standard"
       alignItems={alignItems}
-      minHeight={minHeight}
-      spacing={2}
+      gap={2}
+      spacingHorizontal={2}
+      spacingVertical={1}
       testID={testID}
       {...props}
     >
       {media && (
-        <Box flexGrow={0} flexShrink={0} spacingEnd={2}>
+        <Box flexGrow={0} flexShrink={0}>
           {media}
         </Box>
       )}
 
-      <Box
-        flexGrow={1}
-        flexShrink={1}
-        justifyContent="flex-start"
-        minWidth={minContentWidth}
-        maxWidth={maxContentWidth}
-      >
+      <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
         {children}
       </Box>
 
       {intermediary && (
-        <Box flexGrow={0} flexShrink={1} justifyContent="center" spacingStart={2}>
+        <Box flexGrow={0} flexShrink={1} justifyContent="center">
           {intermediary}
         </Box>
       )}
 
       {detail && (
-        <Box
-          flexGrow={1}
-          flexShrink={1}
-          alignItems="flex-end"
-          justifyContent="flex-end"
-          spacingStart={2}
-          minWidth={minDetailWidth}
-          maxWidth={maxDetailWidth}
-        >
+        <Box flexGrow={1} flexShrink={1} alignItems="flex-end" justifyContent="flex-end">
           {detail}
         </Box>
       )}
 
       {accessory && (
-        <Box flexGrow={0} flexShrink={0} spacingStart={2}>
+        <Box flexGrow={0} flexShrink={0}>
           {accessory}
         </Box>
       )}
@@ -108,14 +90,31 @@ export const Cell = memo(function Cell({
         transparentWhileInactive
         backgroundColor="background"
         borderRadius="standard"
-        block
         disabled={disabled}
         onPress={onPress}
+        className={pressClassName}
       >
         {content}
       </Pressable>
     );
   }
 
-  return <Tag className={spacingClass}>{content}</Tag>;
+  return (
+    <Box
+      as={as}
+      alignItems="stretch"
+      width="100%"
+      minHeight={minHeight}
+      spacingVertical={0.5}
+      spacingHorizontal={1}
+    >
+      {content}
+    </Box>
+  );
 });
+
+const pressClassName = css`
+  align-items: stretch;
+  flex-grow: 1;
+  display: flex;
+`;

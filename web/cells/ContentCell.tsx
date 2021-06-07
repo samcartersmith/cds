@@ -38,14 +38,13 @@ export const ContentCell = memo(function ContentCell({
       alignItems="flex-start"
       media={media}
       disabled={disabled}
-      maxContentWidth="100%"
       selected={selected}
       onPress={onPress}
     >
       <VStack width="100%">
         {(title || subtitle) && (
           <HStack alignItems="flex-start" justifyContent="space-between">
-            <VStack maxWidth={meta ? '80%' : undefined}>
+            <VStack flexShrink={1}>
               {title && <TextHeadline as="div">{title}</TextHeadline>}
 
               {subtitle && (
@@ -60,7 +59,7 @@ export const ContentCell = memo(function ContentCell({
             </VStack>
 
             {meta && (
-              <Box justifyContent="flex-end" flexGrow={0} flexShrink={1} spacingTop={0.5}>
+              <Box justifyContent="flex-end" spacingTop={0.5} spacingStart={1}>
                 <TextLabel2 as="span" color="foregroundMuted">
                   {meta}
                 </TextLabel2>

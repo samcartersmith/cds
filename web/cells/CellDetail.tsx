@@ -12,10 +12,6 @@ export const CellDetail = memo(function CellDetail({
   subdetail,
   variant = 'foregroundMuted',
 }: CellDetailProps) {
-  if (!detail && !subdetail) {
-    return null;
-  }
-
   return (
     <VStack alignContent="flex-end" alignItems="flex-end" justifyContent="center">
       {detail && (

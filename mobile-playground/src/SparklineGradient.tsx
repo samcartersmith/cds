@@ -50,11 +50,7 @@ const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
   const path = useSparklinePath({ ...dimensions, data: prices });
   return (
     <VStack>
-      <Cell
-        maxContentWidth="70%"
-        maxDetailWidth="50%"
-        media={<CellMedia type="image" source={imageUrl} title="Title" />}
-      >
+      <Cell media={<CellMedia type="image" source={imageUrl} title="Title" />}>
         <VStack justifyContent="center">
           <TextHeadline numberOfLines={1} ellipsize="tail">
             {name}

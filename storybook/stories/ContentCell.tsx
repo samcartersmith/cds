@@ -72,6 +72,7 @@ export function createStories(
         subtitle="Subtitle is short lol"
         description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
         media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
+        accessory="more"
       />
 
       <ContentCell
