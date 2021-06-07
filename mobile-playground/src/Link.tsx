@@ -19,7 +19,7 @@ const typographies = [
   'label2',
   'caption',
   'legal',
-];
+] as const;
 
 const links = typographies.map(typography => (
   <Example inline key={typography}>

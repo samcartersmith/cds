@@ -30,7 +30,7 @@ export const openWebBrowser = async (url: string, options: Options) => {
       dismissButtonStyle: 'close',
       preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, options.spectrum),
       preferredControlTintColor: paletteValueToHex(paletteConfig.primary, options.spectrum),
-      readerMode: true,
+      readerMode: false,
       animated: true,
       modalPresentationStyle: 'fullScreen',
       modalTransitionStyle: 'crossDissolve',
