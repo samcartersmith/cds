@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.5 (6/8/2021, 11:45 AM PST)
+
+#### 🐞 Fixes
+
+- Set readerMode to false for openWebBrowser. [#22561](https://github.cbhq.net/mono/repo/pull/22561)
+- Tighten cell spacing. [#22554](https://github.cbhq.net/mono/repo/pull/22554)
+
 ## 0.15.4 (6/4/2021, 04:23 PM PST)
 
 #### 🐞 Fixes

@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.12.6 (6/8/2021, 11:45 AM PST)
+
+#### 🚀 Updates
+
+- Add new `ButtonOrLink` system component. [#22637](https://github.cbhq.net/mono/repo/pull/22637)
+
+#### 🐞 Fixes
+
+- Tighten cell spacing. [#22554](https://github.cbhq.net/mono/repo/pull/22554)
+
 ## 0.12.5 (6/4/2021, 01:45 PM PST)
 
 #### 🚀 Updates

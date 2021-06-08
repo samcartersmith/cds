@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.13.3 (6/8/2021, 11:45 AM PST)
+
+#### 🐞 Fixes
+
+- Tighten cell spacing. [#22554](https://github.cbhq.net/mono/repo/pull/22554)
+
 ## 0.13.2 (6/4/2021, 01:45 PM PST)
 
 #### 🚀 Updates
