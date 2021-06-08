@@ -105,7 +105,7 @@ export const Cell = memo(function Cell({
       alignItems="stretch"
       width="100%"
       minHeight={minHeight}
-      spacingVertical={0.5}
+      spacingVertical={1}
       spacingHorizontal={1}
     >
       {content}

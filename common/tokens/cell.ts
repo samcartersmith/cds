@@ -9,5 +9,5 @@ export const imageSize = 40;
 
 export const listHeight: Record<ScaleDensity, number> = {
   dense: 64,
-  normal: 72,
+  normal: 80,
 };
