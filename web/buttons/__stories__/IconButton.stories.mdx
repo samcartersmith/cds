@@ -13,7 +13,12 @@ import { IconButton } from '../IconButton';
     decorators={[withStoryLabel('Default')]}
     args={{ name: 'arrowsHorizontal' }}
   >
-    {args => <IconButton {...args} />}
+    {args => (
+      <>
+        <IconButton {...args} />
+        <IconButton {...args} to="/" />
+      </>
+    )}
   </Story>
 </Canvas>
 

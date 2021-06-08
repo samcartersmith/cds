@@ -16,6 +16,14 @@ describe('Button', () => {
     expect(button).toHaveAttribute('type', 'button');
   });
 
+  it('renders a link with a href', () => {
+    const { container } = render(<Button to="/">Child</Button>);
+    const button = container.querySelector('a');
+
+    expect(button).toBeDefined();
+    expect(button).toHaveAttribute('href', '/');
+  });
+
   it('can mark as disabled', () => {
     const { container } = render(<Button disabled>Child</Button>);
 

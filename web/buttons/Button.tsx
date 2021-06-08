@@ -4,7 +4,7 @@ import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { cx } from 'linaria';
-import { ButtonProps as ReakitButtonProps, Button as ReakitButton } from 'reakit/Button';
+import { ButtonProps as ReakitButtonProps } from 'reakit/Button';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { Icon } from '../icons/Icon';
@@ -28,7 +28,10 @@ export interface ButtonProps
       | 'unstable_clickOnSpace'
       | 'unstable_system'
       | 'wrapElement'
-    > {}
+    > {
+  /** URL that this button links to when pressed. */
+  to?: string;
+}
 
 export const Button = forwardRef(function Button(
   {
@@ -41,6 +44,7 @@ export const Button = forwardRef(function Button(
     loading,
     onPress,
     startIcon,
+    to,
     transparent,
     type = 'button',
     variant = 'primary',
@@ -57,7 +61,6 @@ export const Button = forwardRef(function Button(
     <Pressable
       aria-label={accessibilityLabel}
       {...props}
-      as={ReakitButton}
       transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
       block={block}
@@ -77,12 +80,14 @@ export const Button = forwardRef(function Button(
       style={style}
       type={type}
       ref={ref}
+      href={to}
     >
       {startIcon && (
         <span className={buttonStyles.startIcon}>
           <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
         </span>
       )}
+
       <span className={buttonStyles.positionRelative}>
         {loading && (
           <span className={cx(buttonStyles.centerLoader)}>

@@ -5,6 +5,7 @@ import { cx } from 'linaria';
 
 import { scaledDownState } from '../styles/interactable';
 import { buttonResets } from '../styles/resetStyles';
+import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
 
 export interface PressableProps extends React.AriaAttributes, SharedProps {
@@ -18,7 +19,7 @@ export interface PressableInternalProps
   extends PressableProps,
     Omit<InteractableProps, 'as' | 'onClick' | 'onClickCapture' | 'pressed'> {
   /** Element or component to render the container as. */
-  as:
+  as?:
     | 'a'
     | 'button'
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,6 +30,7 @@ export interface PressableInternalProps
 
 export const Pressable = forwardRef(function Pressable(
   {
+    as,
     children,
     className,
     disabled,
@@ -43,6 +45,7 @@ export const Pressable = forwardRef(function Pressable(
     <Interactable
       aria-busy={loading}
       aria-disabled={disabled || loading}
+      as={as || ButtonOrLink}
       onClick={onPress}
       {...props}
       className={cx(buttonResets, !noScaleOnPress && scaledDownState, className)}

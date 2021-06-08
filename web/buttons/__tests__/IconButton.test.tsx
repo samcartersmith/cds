@@ -5,17 +5,27 @@ import { IconButton } from '../IconButton';
 
 describe('IconButton', () => {
   const name = 'arrowsHorizontal';
+
   it('passes accessibility', async () => {
     expect(
       await renderA11y(<IconButton name={name} accessibilityLabel={name} />)
     ).toHaveNoViolations();
   });
 
-  it('renders an IconButton', () => {
+  it('renders a button', () => {
     const { container } = render(<IconButton name={name} accessibilityLabel={name} />);
     const button = container.querySelector('button');
 
     expect(button).toBeDefined();
+    expect(button).toHaveAttribute('type', 'button');
+  });
+
+  it('renders a link', () => {
+    const { container } = render(<IconButton name={name} accessibilityLabel={name} to="/" />);
+    const button = container.querySelector('a');
+
+    expect(button).toBeDefined();
+    expect(button).toHaveAttribute('href', '/');
   });
 
   it('can mark as disabled', () => {

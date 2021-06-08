@@ -3,9 +3,9 @@ import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
 import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 import { css, cx } from 'linaria';
-import { Button as ReakitButton } from 'reakit/Button';
 
 import { linkResets } from '../styles/resetStyles';
+import { ButtonOrLink } from '../system/ButtonOrLink';
 import { OnPress } from '../types';
 import type { DynamicElement } from '../types';
 import { TextBody } from './TextBody';
@@ -19,8 +19,12 @@ import { TextTitle1 } from './TextTitle1';
 import { TextTitle2 } from './TextTitle2';
 import { TextTitle3 } from './TextTitle3';
 
-const cursorPointer = css`
+const link = css`
   cursor: pointer;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
 `;
 
 const TYPOGRAPHY_MAP: Record<
@@ -74,12 +78,12 @@ export const Link = memo(function Link({
   const enhancedProps = {
     'aria-label': accessibilityLabel,
     'data-testid': testID,
-    className: cx(cursorPointer, linkResets),
+    className: cx(link, linkResets),
     onClick: onPress,
     ref: linkRef,
     href: to,
-    rel: to && openInNewWindow && rel === undefined ? 'noopener noreferrer' : rel,
-    target: openInNewWindow ? '_blank' : '',
+    rel,
+    target: openInNewWindow ? '_blank' : undefined,
     children: (
       <TextComponent as="span" color={color}>
         {children}
@@ -88,9 +92,5 @@ export const Link = memo(function Link({
     ...props,
   };
 
-  return renderContainer ? (
-    renderContainer(enhancedProps)
-  ) : (
-    <ReakitButton as="a" {...enhancedProps} />
-  );
+  return renderContainer ? renderContainer(enhancedProps) : <ButtonOrLink {...enhancedProps} />;
 });

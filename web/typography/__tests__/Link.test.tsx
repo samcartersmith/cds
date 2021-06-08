@@ -35,6 +35,17 @@ describe('Link', () => {
       </Link>
     );
     expect(container.querySelector('a')).toBeTruthy();
+    expect(container.querySelector('button')).toBeFalsy();
+  });
+
+  it('should render with button element if no href', async () => {
+    const { container } = render(
+      <Link variant="body" onPress={() => {}}>
+        Child
+      </Link>
+    );
+    expect(container.querySelector('a')).toBeFalsy();
+    expect(container.querySelector('button')).toBeTruthy();
   });
 
   it('can set openInNewWindow to true', async () => {
@@ -52,7 +63,18 @@ describe('Link', () => {
         Child
       </Link>
     );
-    expect(getByTestId(testID)).toHaveAttribute('target', '');
+    expect(getByTestId(testID)).not.toHaveAttribute('target');
+  });
+
+  it('doesnt set target or rel if a button', async () => {
+    const { getByTestId } = render(
+      <Link variant="body" openInNewWindow={true} testID={testID}>
+        Child
+      </Link>
+    );
+    expect(getByTestId(testID)).not.toHaveAttribute('target');
+    expect(getByTestId(testID)).not.toHaveAttribute('rel');
+    expect(getByTestId(testID)).not.toHaveAttribute('href');
   });
 
   it('defaults to noopener noreferrer when openInNewWindow', async () => {
