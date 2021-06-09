@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.6 (6/9/2021, 12:45 PM PST)
+
+#### 🐞 Fixes
+
+- Update SVGO config file to use JS instead of YAML. Icon Cleanup work. [#22664](https://github.cbhq.net/mono/repo/pull/22664)
+- Increase list cell height. [#22775](https://github.cbhq.net/mono/repo/pull/22775)
+
 ## 0.15.5 (6/8/2021, 11:45 AM PST)
 
 #### 🐞 Fixes
