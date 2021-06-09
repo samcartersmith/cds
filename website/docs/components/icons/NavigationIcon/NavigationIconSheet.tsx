@@ -7,7 +7,7 @@ import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import { navigationIconName, navigationIconSizes } from '@cbhq/cds-website/data/iconData';
+import { navigationIconNames, navigationIconSizes } from '@cbhq/cds-website/data/iconData';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import { cx } from 'linaria';
@@ -54,7 +54,7 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
       </Box>
 
       <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
-        {navigationIconName
+        {navigationIconNames
           .filter(name => name.includes(query))
           .map(filteredName => (
             <VStack spacing={3} alignItems="center" key={filteredName}>

@@ -112,7 +112,7 @@
   "2210:84": {
     "key": "98ad89b1bea7218801a106b2eb6fecad082c2dad",
     "name": "Icon/statusDot_24",
-    "description": "pending, waiting, meatballs"
+    "description": "pending, waiting, meatballs, 🍝"
   },
   "3120:149": {
     "key": "d572bca4be539a783bb5ae2da9a6249a62197408",
@@ -512,7 +512,7 @@
   "1292:218": {
     "key": "3ce0bb527dcb9406c15764eabdc4528e3c67cb86",
     "name": "Icon/statusDot_12",
-    "description": "pending, waiting, meatballs"
+    "description": "pending, waiting, meatballs, 🍝"
   },
   "3120:148": {
     "key": "f0389c1cdbb093ed2a8c227bbe9e53d4bfbaa077",
@@ -1017,7 +1017,7 @@
   "2210:83": {
     "key": "a528bf79e45234fe265140aedde2887a465ded28",
     "name": "Icon/statusDot_16",
-    "description": "pending, waiting, meatballs"
+    "description": "pending, waiting, meatballs, 🍝"
   },
   "3120:147": {
     "key": "89ad4802df76fe1e8d49747986fb3797f195f7c5",
@@ -1934,6 +1934,16 @@
     "name": "Icon/forwardArrow_24",
     "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡"
   },
+  "6432:147": {
+    "key": "80e94676f71e142c3724ab6bf131a48b5d520abb",
+    "name": "Icon/warning_24",
+    "description": "warning, caution, message, notification, notice, hint, ⚠️"
+  },
+  "6432:1318": {
+    "key": "1a78f8bfb923f2caf68d2ba37b3d256e3e8663d2",
+    "name": "Icon/chatBubble_24",
+    "description": "chat bubble, speech, communication, social, interaction, message, 💬"
+  },
   "4746:180": {
     "key": "6d9e5086fd0f843ed4496052829d4a396119de72",
     "name": "Icon/backArrow_12",
@@ -1944,6 +1954,16 @@
     "name": "Icon/forwardArrow_12",
     "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡"
   },
+  "6432:149": {
+    "key": "f3c0db181ecf80a9766dba239e629a8a4800fd82",
+    "name": "Icon/warning_12",
+    "description": "warning, caution, message, notification, notice, hint, ⚠️"
+  },
+  "6432:1320": {
+    "key": "22e5087b789b74abbbe26927fe72995b23bf82e1",
+    "name": "Icon/chatBubble_12",
+    "description": "chat bubble, speech, communication, social, interaction, message, 💬"
+  },
   "4746:177": {
     "key": "edc95375ce82eb2022ba2cf5979f095a7ffdb61c",
     "name": "Icon/backArrow_16",
@@ -1953,6 +1973,16 @@
     "key": "188dc5ee5d4ecaa092fffad113ca1acfd27489f4",
     "name": "Icon/forwardArrow_16",
     "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡"
+  },
+  "6432:148": {
+    "key": "655a8ccf870066d861a271400514081924b5fed3",
+    "name": "Icon/warning_16",
+    "description": "warning, caution, message, notification, notice, hint, ⚠️"
+  },
+  "6432:1319": {
+    "key": "10f5064196fafe52adfa37b6fc5905bc068c6d3b",
+    "name": "Icon/chatBubble_16",
+    "description": "chat bubble, speech, communication, social, interaction, message, 💬"
   },
   "4793:178": {
     "key": "ba06713d2b01e8c9260239acbb7dacae88dad647",
@@ -2032,17 +2062,17 @@
   "4957:215": {
     "key": "eaf9cc5551f1c69a3b382027981e654764e44dcd",
     "name": "Icon/lightningBolt_24",
-    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
+    "description": "lightning bolt, thunder, fast, speed, ⚡️, ⛈, 🌩"
   },
   "4957:217": {
     "key": "0ee9563800e23aa4e7c473b17207f0e7398d5aaf",
     "name": "Icon/lightningBolt_12",
-    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
+    "description": "lightning bolt, thunder, fast, speed, ⚡️, ⛈, 🌩"
   },
   "4957:216": {
     "key": "f07935b6b2e59fcf36ed00e80863418944903103",
     "name": "Icon/lightningBolt_16",
-    "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏"
+    "description": "lightning bolt, thunder, fast, speed, ⚡️, ⛈, 🌩"
   },
   "5304:450": {
     "key": "3eae8e1b6bbc396abcc9a8b675d23fc023c68b9f",
@@ -2517,7 +2547,7 @@
   "5275:7": {
     "key": "0ac848b857bd46abfe7afed65ebcc01fae0cc701",
     "name": "Icon/regulated_24",
-    "description": ""
+    "description": "regulated. ensured, secure, 🔎, 🔍, ✅"
   },
   "5304:499": {
     "key": "95550fd5338841d5021c9e5fea05235bef83ebd1",

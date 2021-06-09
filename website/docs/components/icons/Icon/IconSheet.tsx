@@ -6,7 +6,7 @@ import { Icon } from '@cbhq/cds-web/icons/Icon';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import { iconName, iconSizes } from '@cbhq/cds-website/data/iconData';
+import { iconNames, iconSizes } from '@cbhq/cds-website/data/iconData';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import { cx } from 'linaria';
@@ -71,7 +71,7 @@ const IconSheetForSize = ({ size = 'l' }: IconSheetForSizeProps) => {
       </Box>
 
       <Box flexWrap="wrap" background={background} spacingTop={1} spacingBottom={3}>
-        {iconName
+        {iconNames
           .filter(name => name.includes(query))
           .map(filteredName => (
             <div>

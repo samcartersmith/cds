@@ -138,6 +138,8 @@ export type IconName =
   | 'orderHistory'
   | 'backArrow'
   | 'forwardArrow'
+  | 'warning'
+  | 'chatBubble'
   | 'caretRight'
   | 'caretLeft'
   | 'caretUp'

@@ -7,7 +7,7 @@ export const iconSizes = ['xs', 's', 'm', 'l'] as const;
 
 export const navigationIconSizes = ['s', 'm', 'l'] as const;
 
-export const iconName = [
+export const iconNames = [
   'cashUSD',
   'cashGBP',
   'cashEUR',
@@ -142,6 +142,8 @@ export const iconName = [
   'orderHistory',
   'backArrow',
   'forwardArrow',
+  'warning',
+  'chatBubble',
   'caretRight',
   'caretLeft',
   'caretUp',
@@ -151,7 +153,7 @@ export const iconName = [
   'sortDownCenter',
 ] as const;
 
-export const navigationIconName = [
+export const navigationIconNames = [
   'candleSticks',
   'trading',
   'bell',

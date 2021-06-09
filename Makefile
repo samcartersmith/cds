@@ -110,7 +110,7 @@ new.package:
 .PHONY: prepare.icons
 prepare.icons:
 	bazel run :sync_icons
-	npx svgo codegen/icons/svg/*.svg --config=codegen/icons/.svgo.yml
+	npx svgo codegen/icons/svg/*.svg --config=codegen/icons/svgo.config.js
 	bazel run :build_icons
 
 .PHONY: start.story

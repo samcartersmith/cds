@@ -5,7 +5,7 @@ import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { TextLabel1 } from '../../typography';
 import { NavigationIcon } from '../NavigationIcon';
-import { navigationIconName } from './iconData';
+import { navigationIconNames } from './iconData';
 
 <Meta title="Core Components/Icon/NavigationIcon" component={NavigationIcon} />
 
@@ -20,7 +20,7 @@ import { navigationIconName } from './iconData';
         </TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon name={name} title={name} size="xs" spacing={7} />
             <TextLabel1 align="center" as="p">
@@ -35,7 +35,7 @@ import { navigationIconName } from './iconData';
         <TextLabel1 as="p">Size: XS (Active)</TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon name={name} active title={name} size="xs" spacing={7} />
             <TextLabel1 align="center" as="p">
@@ -50,7 +50,7 @@ import { navigationIconName } from './iconData';
         <TextLabel1 as="p">Size: S (Inactive)</TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon name={name} title={name} size="s" spacing={7} />
             <TextLabel1 align="center" as="p">
@@ -65,7 +65,7 @@ import { navigationIconName } from './iconData';
         <TextLabel1 as="p">Size: S (Active)</TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon active name={name} title={name} size="s" spacing={7} />
             <TextLabel1 align="center" as="p">
@@ -80,7 +80,7 @@ import { navigationIconName } from './iconData';
         <TextLabel1 as="p">Size: M (Inactive) </TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon name={name} title={name} size="m" spacing={7} />
             <TextLabel1 align="center" as="p">
@@ -95,7 +95,7 @@ import { navigationIconName } from './iconData';
         <TextLabel1 as="p">Size: M (Active) </TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon name={name} active title={name} size="m" spacing={7} />
             <TextLabel1 align="center" as="p">
@@ -110,7 +110,7 @@ import { navigationIconName } from './iconData';
         <TextLabel1 as="p">Size: L (Inactive)</TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon name={name} title={name} size="l" spacing={7} />
             <TextLabel1 align="center" as="p">
@@ -125,7 +125,7 @@ import { navigationIconName } from './iconData';
         <TextLabel1 as="p">Size: L (Active)</TextLabel1>
       </Box>
       <HStack flexWrap="wrap">
-        {navigationIconName.map(name => (
+        {navigationIconNames.map(name => (
           <div key={name}>
             <NavigationIcon
               name={name}

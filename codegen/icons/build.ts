@@ -1,5 +1,5 @@
 import { buildTemplates } from '../utils/buildTemplates';
-import { createIconFont } from './createIconFont';
+import { createIconFont, removeSVGs } from './createIconFont';
 
 (async function () {
   const iconData = await createIconFont();
@@ -31,4 +31,5 @@ import { createIconFont } from './createIconFont';
   };
 
   await buildTemplates(templates);
+  await removeSVGs();
 })();

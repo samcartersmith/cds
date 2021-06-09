@@ -161,7 +161,7 @@ const createCategorizedNameType = (): {
     const newTypeNamesMap = (type: 'pascalCase' | 'camelCase') => {
       return Object.keys(toCategoryArrMap).reduce((newArrMap, oldKey) => {
         if (type === 'camelCase') {
-          newArrMap[oldKey] = camelCase(`${oldKey} name`);
+          newArrMap[oldKey] = camelCase(`${oldKey} Names`);
         }
 
         if (type === 'pascalCase') {
