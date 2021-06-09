@@ -41,6 +41,7 @@ import TextLegalScreen from './src/TextLegal';
 import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
+import IllustrationScreen from './src/Illustration';
 
 const Stack = createStackNavigator();
 
@@ -75,6 +76,7 @@ const App = () => {
             component={List}
             options={{ title: 'Coinbase Design System' }}
           />
+          <Stack.Screen name="Illustration" component={IllustrationScreen} />
           <Stack.Screen name="Box" component={BoxScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
           <Stack.Screen name="ButtonGroup" component={ButtonGroupScreen} />

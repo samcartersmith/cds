@@ -16,6 +16,7 @@ const components = [
   { key: 'Divider' },
   { key: 'Icon' },
   { key: 'IconButton' },
+  { key: 'Illustration' },
   { key: 'Link' },
   { key: 'ListCell' },
   { key: 'ListCellFallback' },

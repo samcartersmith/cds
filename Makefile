@@ -24,6 +24,7 @@ Help:
   $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
   $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
   $$ make prepare.icons             -- Prepare icons
+  $$ make prepare.illustrations     -- Prepare illustrations
   $$ make lint.fix                  -- Auto fixes lints issues
   $$ make release                   -- Automatically update CHANGELOG based on PR titles
   $$ make typecheck                 -- Run global typecheck
@@ -112,6 +113,10 @@ prepare.icons:
 	bazel run :sync_icons
 	npx svgo codegen/icons/svg/*.svg --config=codegen/icons/svgo.config.js
 	bazel run :build_icons
+
+.PHONY: prepare.illustrations
+prepare.illustrations:
+	bazel run :build_illustrations
 
 .PHONY: start.story
 start.story:

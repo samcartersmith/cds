@@ -1,0 +1,11 @@
+<%_ Object.entries(data).map(([name, values]) => { _%>
+  export const <%- name %> = {
+    <%_ Object.entries(values).map(([key, value]) => { _%>
+      <%- key %>: {
+        <%_ Object.entries(value).map(([spectrum, path]) => { _%>
+            <%- spectrum %>:  <%- path === null ? 'null' : path %>,
+        <%_ }) _%>
+      }, 
+    <%_ }) _%>
+  } 
+<%_ }) _%> 
