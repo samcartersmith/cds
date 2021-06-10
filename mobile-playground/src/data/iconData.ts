@@ -151,6 +151,8 @@ export const iconNames = [
   'close',
   'lightningBolt',
   'sortDownCenter',
+  'followInactive',
+  'followActive',
 ] as const;
 
 export const navigationIconNames = [

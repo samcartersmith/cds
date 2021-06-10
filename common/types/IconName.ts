@@ -146,7 +146,9 @@ export type IconName =
   | 'caretDown'
   | 'close'
   | 'lightningBolt'
-  | 'sortDownCenter';
+  | 'sortDownCenter'
+  | 'followInactive'
+  | 'followActive';
 
 export type NavigationIconName =
   | 'candleSticks'
