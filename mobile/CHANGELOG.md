@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.7 (6/10/2021, 12:25 PM PST)
+
+#### 🚀 Updates
+
+- **[Cell]** Add `detailWidth` and `reduceHorizontalSpacing` props. [#23020](https://github.cbhq.net/mono/repo/pull/23020)
+- Add overflow hidden option to Box. [#22523](https://github.cbhq.net/mono/repo/pull/22523)
+- Illustration Component for Mobile. [#19813](https://github.cbhq.net/mono/repo/pull/19813), [CDS-552](https://jira.coinbase-corp.com/browse/CDS-552)
+
+#### 🐞 Fixes
+
+- Fix docusaurus and add new icon. [#22956](https://github.cbhq.net/mono/repo/pull/22956)
+
 ## 0.15.6 (6/9/2021, 12:45 PM PST)
 
 #### 🐞 Fixes

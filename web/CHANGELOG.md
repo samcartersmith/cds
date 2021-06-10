@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.12.8 (6/10/2021, 12:25 PM PST)
+
+#### 🚀 Updates
+
+- **[Cell]** Add `detailWidth` and `reduceHorizontalSpacing` props. [#23020](https://github.cbhq.net/mono/repo/pull/23020)
+
+#### 🐞 Fixes
+
+- **[ButtonOrLink]** Ensure ref is passed properly. [#23011](https://github.cbhq.net/mono/repo/pull/23011)
+- Fix docusaurus and add new icon. [#22956](https://github.cbhq.net/mono/repo/pull/22956)
+
 ## 0.12.7 (6/9/2021, 12:45 PM PST)
 
 #### 🐞 Fixes
