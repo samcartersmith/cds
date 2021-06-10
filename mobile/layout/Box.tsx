@@ -34,7 +34,7 @@ export interface BoxProps
    * using a linear gradient.
    * @default visible
    */
-  overflow?: 'visible' | 'gradient';
+  overflow?: 'visible' | 'gradient' | 'hidden';
   /**
    * Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS.
    *
@@ -196,8 +196,12 @@ export const BoxInner = memo(
         style.opacity = opacity as number;
       }
 
+      if (overflow !== 'gradient') {
+        style.overflow = overflow;
+      }
+
       return style;
-    }, [background, elevation, borderRadius, rounded, opacity, palette]);
+    }, [background, elevation, borderRadius, rounded, opacity, overflow, palette]);
     const style = useMemo(
       () =>
         [
