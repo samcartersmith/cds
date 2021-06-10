@@ -16,11 +16,13 @@ export const Cell = memo(function Cell({
   alignItems = 'center',
   children,
   detail,
+  detailWidth,
   disabled,
   intermediary,
   media,
   minHeight,
   onPress,
+  reduceHorizontalSpacing,
   selected,
   testID,
   ...props
@@ -43,7 +45,7 @@ export const Cell = memo(function Cell({
       alignItems={alignItems}
       flexGrow={1}
       gap={2}
-      spacingHorizontal={2}
+      spacingHorizontal={reduceHorizontalSpacing ? 1 : 2}
       spacingVertical={1}
       width="100%"
       renderToHardwareTextureAndroid={disabled}
@@ -68,7 +70,13 @@ export const Cell = memo(function Cell({
       )}
 
       {!!detail && (
-        <Box flexGrow={1} flexShrink={1} alignItems="flex-end" justifyContent="flex-end">
+        <Box
+          flexGrow={1}
+          flexShrink={1}
+          alignItems="flex-end"
+          justifyContent="flex-end"
+          width={detailWidth}
+        >
           {detail}
         </Box>
       )}

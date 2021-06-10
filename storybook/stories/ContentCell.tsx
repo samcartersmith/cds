@@ -36,6 +36,7 @@ export function createStories(
         description="Description"
         subtitle="Subtitle"
         onPress={() => {}}
+        reduceHorizontalSpacing
       />
 
       <ContentCell description="Description" subtitle="Subtitle" onPress={() => {}} />
@@ -45,6 +46,7 @@ export function createStories(
         description="Description"
         meta="Meta"
         onPress={() => {}}
+        reduceHorizontalSpacing
         selected
       />
 

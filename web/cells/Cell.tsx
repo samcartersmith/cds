@@ -3,6 +3,7 @@ import React, { memo } from 'react';
 import type { CellProps as CellBaseProps } from '@cbhq/cds-common/types';
 import { css } from 'linaria';
 
+import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable } from '../system/Pressable';
@@ -22,11 +23,13 @@ export const Cell = memo(function Cell({
   alignItems = 'center',
   children,
   detail,
+  detailWidth,
   disabled,
   intermediary,
   media,
   minHeight,
   onPress,
+  reduceHorizontalSpacing,
   selected,
   testID,
   ...props
@@ -40,6 +43,8 @@ export const Cell = memo(function Cell({
     console.error('Cell media must be a `CellMedia` component.');
   }
 
+  const offsetClassName = useOffsetStyles({ offsetHorizontal: 2 });
+
   let content = (
     <HStack
       flexGrow={1}
@@ -47,9 +52,11 @@ export const Cell = memo(function Cell({
       borderRadius="standard"
       alignItems={alignItems}
       gap={2}
-      spacingHorizontal={2}
+      spacingHorizontal={reduceHorizontalSpacing ? 1 : 2}
       spacingVertical={1}
+      width="100%"
       testID={testID}
+      dangerouslySetClassName={onPress ? undefined : offsetClassName}
       {...props}
     >
       {media && (
@@ -69,7 +76,13 @@ export const Cell = memo(function Cell({
       )}
 
       {detail && (
-        <Box flexGrow={1} flexShrink={1} alignItems="flex-end" justifyContent="flex-end">
+        <Box
+          flexGrow={1}
+          flexShrink={1}
+          alignItems="flex-end"
+          justifyContent="flex-end"
+          width={detailWidth}
+        >
           {detail}
         </Box>
       )}
@@ -92,7 +105,7 @@ export const Cell = memo(function Cell({
         borderRadius="standard"
         disabled={disabled}
         onPress={onPress}
-        className={pressClassName}
+        className={`${pressClassName} ${offsetClassName}`}
       >
         {content}
       </Pressable>
@@ -106,7 +119,7 @@ export const Cell = memo(function Cell({
       width="100%"
       minHeight={minHeight}
       spacingVertical={1}
-      spacingHorizontal={1}
+      spacingHorizontal={3}
     >
       {content}
     </Box>

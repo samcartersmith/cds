@@ -6,8 +6,12 @@ import { SpacingProps } from './SpacingProps';
 export interface CellCommonProps extends SharedProps {
   /* Media (icon, asset, image, etc) to display at the start of the cell. */
   media?: React.ReactElement<CellMediaProps>;
+  /** Apply a fixed width to the detail (end). */
+  detailWidth?: number;
   /** Is the cell disabled? Will apply opacity and disable interaction. */
   disabled?: boolean;
+  /** Reduce horizontal spacing for tighter layout requirements. */
+  reduceHorizontalSpacing?: boolean;
   /** Is the cell selected? Will apply a background and selected accessory. */
   selected?: boolean;
   /** Callback fired when the cell is pressed. */

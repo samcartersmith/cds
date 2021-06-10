@@ -92,6 +92,7 @@ export function createStories(
         detail="Detail"
         subdetail="Neutral"
         onPress={() => {}}
+        reduceHorizontalSpacing
       />
 
       <ListCell
@@ -110,6 +111,7 @@ export function createStories(
         subdetail="Neutral"
         onPress={() => {}}
         disabled
+        reduceHorizontalSpacing
       />
 
       <ListCell
@@ -241,13 +243,43 @@ export function createStories(
   );
 
   const WithIntermediary = () => (
-    <ListCell
-      title="Title"
-      description="Description"
-      detail="Detail"
-      subdetail="Neutral"
-      intermediary={<CellMedia type="icon" name="chartLine" />}
-    />
+    <>
+      <ListCell
+        title="Title"
+        description="Description"
+        detail="$1,230"
+        detailWidth={65}
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+      />
+      <ListCell
+        title="Title"
+        description="Description"
+        detail="$44,130"
+        detailWidth={65}
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+      />
+      <ListCell
+        title="Title"
+        description="Description"
+        detail="$942,103"
+        detailWidth={65}
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+      />
+      <ListCell
+        title="Title"
+        description="Description"
+        detail="$530"
+        detailWidth={65}
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+      />
+      <ListCell
+        title="Title"
+        description="Description"
+        detail="$123K"
+        detailWidth={65}
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+      />
+    </>
   );
 
   return {

@@ -6,7 +6,6 @@ export const interactable = css`
   cursor: pointer;
   user-select: none;
   text-decoration: none;
-  margin: 0;
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
