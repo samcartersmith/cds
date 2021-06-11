@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.8 (6/11/2021, 09:44 AM PST)
+
+#### 🐞 Fixes
+
+- Add new Illustration Variant, Add images to node_module, Add first ever dark mode illustration. [#23100](https://github.cbhq.net/mono/repo/pull/23100)
+
 ## 0.15.7 (6/10/2021, 12:25 PM PST)
 
 #### 🚀 Updates
