@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.9 (6/11/2021, 02:37 PM PST)
+
+#### 🚀 Updates
+
+- Carousel component for CDS mobile. [#22517](https://github.cbhq.net/mono/repo/pull/22517), [CDS-611](https://jira.coinbase-corp.com/browse/CDS-611)
+
 ## 0.15.8 (6/11/2021, 09:44 AM PST)
 
 #### 🐞 Fixes
