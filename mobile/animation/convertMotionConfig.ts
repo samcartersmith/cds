@@ -11,10 +11,11 @@ export const mobileCurves = {
 };
 
 type MotionConfig = {
-  toValue: number;
+  toValue: number | { x: number; y: number };
   curve: MotionCurve;
   duration: MotionDuration;
   delay?: number;
+  useNativeDriver?: boolean;
 };
 
 export const convertMotionConfig = ({
@@ -22,12 +23,13 @@ export const convertMotionConfig = ({
   delay,
   curve,
   duration,
+  useNativeDriver = true,
 }: MotionConfig): Animated.TimingAnimationConfig => {
   return {
     toValue,
     easing: mobileCurves[curve],
     duration: durations[duration],
     delay,
-    useNativeDriver: true,
+    useNativeDriver,
   };
 };
