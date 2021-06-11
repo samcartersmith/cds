@@ -204,3 +204,15 @@ export const pictogramNames = [
   'commerceNoPayments',
   'commerceCheckout',
 ] as const;
+
+export const spotSquareNames = [
+  'moneyRewards',
+  'interestForYou',
+  'giftBoxCrypto',
+  'starToken',
+  'addMultipleCrypto',
+  'phoneNotifications',
+  'darkModeIntroduction',
+  'cardShipped',
+  'refreshMobileApp',
+] as const;

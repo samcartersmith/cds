@@ -201,3 +201,14 @@ export type IllustrationPictogramNames =
   | 'commerceInvoice'
   | 'commerceNoPayments'
   | 'commerceCheckout';
+
+export type IllustrationSpotSquareNames =
+  | 'moneyRewards'
+  | 'interestForYou'
+  | 'giftBoxCrypto'
+  | 'starToken'
+  | 'addMultipleCrypto'
+  | 'phoneNotifications'
+  | 'darkModeIntroduction'
+  | 'cardShipped'
+  | 'refreshMobileApp';

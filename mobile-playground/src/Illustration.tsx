@@ -1,12 +1,18 @@
 import { HeroSquareIllustration } from '@cbhq/cds-mobile/illustrations/HeroSquareIllustration';
 import { PictogramIllustration } from '@cbhq/cds-mobile/illustrations/PictogramIllustration';
 import { SpotRectangleIllustration } from '@cbhq/cds-mobile/illustrations/SpotRectangleIllustration';
-import { TextCaption } from '@cbhq/cds-mobile/typography/TextCaption';
+import { SpotSquareIllustration } from '@cbhq/cds-mobile/illustrations/SpotSquareIllustration';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
+import { TextCaption } from '@cbhq/cds-mobile/typography/TextCaption';
 
+import {
+  heroSquareNames,
+  spotRectangleNames,
+  pictogramNames,
+  spotSquareNames,
+} from './data/illustrationData';
 import Example from './internal/Example';
 import ExampleScreen from './internal/ExamplesScreen';
-import { heroSquareNames, spotRectangleNames, pictogramNames } from './data/illustrationData';
 
 const IllustrationScreen = () => {
   return (
@@ -32,6 +38,14 @@ const IllustrationScreen = () => {
           <Box key={`${name}_pictogram`}>
             <TextCaption>{name}</TextCaption>
             <PictogramIllustration name={name} />
+          </Box>
+        ))}
+      </Example>
+      <Example title="Spotsquare">
+        {spotSquareNames.map(name => (
+          <Box key={`${name}_spotsquare`}>
+            <TextCaption>{name}</TextCaption>
+            <SpotSquareIllustration name={name} />
           </Box>
         ))}
       </Example>

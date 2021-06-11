@@ -11,7 +11,10 @@ SOURCE = [
 filegroup(
     name = "runtime_source",
     srcs = glob(
-        SOURCE,
+        SOURCE + [
+            "**/*.png",
+            "**/*.svg",
+        ],
         exclude = [
             "**/*.test.*",
         ],

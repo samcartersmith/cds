@@ -32,12 +32,13 @@ const manifestData: {
 };
 
 const normalizeIllustration = (illustrationName: string): IllustrationProps | void => {
-  const [type, variant, name] = illustrationName.split('/');
+  const [type, spectrum, variant, name] = illustrationName.split('/');
 
   if (type !== 'Illustration') return;
 
   return {
     variant: camelCase(variant),
+    spectrum: spectrum.toLowerCase(),
     name,
   };
 };
@@ -76,12 +77,11 @@ const loadImagesLocally = async (
   // Defining the different scales we want to illustrations to have
   const SCALE_SIZES = exportFormat === 'png' ? [1, 2, 3] : [1];
 
-  const outDirFullPath = await getSourcePath(outDirPath);
-
-  // Create an Images directory from the given outDirPath
-  if (!fs.existsSync(`${outDirFullPath}/light`) && !fs.existsSync(`${outDirFullPath}/dark`)) {
-    fs.mkdirSync(`${outDirFullPath}/light`, { recursive: true });
-    fs.mkdirSync(`${outDirFullPath}/dark`, { recursive: true });
+  // Create light and dark image directory from the given outDirPath if it
+  // does not already exist
+  if (!fs.existsSync(`${outDirPath}/light`) && !fs.existsSync(`${outDirPath}/dark`)) {
+    fs.mkdirSync(`${outDirPath}/light`, { recursive: true });
+    fs.mkdirSync(`${outDirPath}/dark`, { recursive: true });
   }
 
   await Promise.all(
@@ -102,7 +102,7 @@ const loadImagesLocally = async (
 
         if (!nodeId || !manifestData) return;
 
-        return loadOneImage(imageURL, nodeId, outDirFullPath, spinner, scale, exportFormat);
+        return loadOneImage(imageURL, nodeId, outDirPath, spinner, scale, exportFormat);
       });
       return Promise.all(loadImagePromiseArr);
     })
@@ -113,13 +113,14 @@ const loadImagesLocally = async (
 const loadOneImage = (
   imageURL: string,
   nodeId: string,
-  outDirFullPath: string,
+  outDirPath: string,
   spinner: Ora,
   scale: number,
   exportFormat: fileFormats
 ): Promise<void> => {
-  const imageName = camelCase(manifestData[exportFormat][nodeId].name);
-  const imageOutFullPath = `${outDirFullPath}/light/${imageName}/`;
+  const imageMetadata = manifestData[exportFormat][nodeId];
+  const imageName = camelCase(imageMetadata.name);
+  const imageOutFullPath = `${outDirPath}/${imageMetadata.spectrum}/${imageName}/`;
 
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
@@ -222,12 +223,13 @@ const genManifest = async (destPath: string, components: IllustrationComponent) 
 
     const imgName = camelCase(props.name);
 
-    const isSvg = props.variant === 'pictogram' || svgWhitelist.includes(imgName);
+    const isSvg = svgWhitelist.includes(imgName);
 
     const nodeIdData = {
       variant: `Illustration${pascalCase(props.variant)}`,
       description: metadata.description,
       name: imgName,
+      spectrum: props.spectrum,
     };
 
     if (isSvg) {
@@ -280,6 +282,13 @@ const createConstants = (names: IllustrationNamesMap, outPaths: string[]) => {
   }
 };
 
+const getDarkImgPath = (name: string, fileFormat: fileFormats, outFullDirPath: string) => {
+  if (fs.existsSync(`${outFullDirPath}/images/dark/${name}/${name}.${fileFormat}`)) {
+    return `require("./images/dark/${name}/${name}.${fileFormat}")`;
+  }
+  return null;
+};
+
 const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPath: string) => {
   const spinner = ora(`Start creating relative path map`).start();
 
@@ -288,15 +297,17 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
     [] as string[]
   );
 
+  const outFullDirPath = await getSourcePath(outDirPath);
+
   const paths = reduce(
     allNames,
     (pathsDic, name) => {
       try {
-        const fileFormat =
-          names['pictogramNames'].includes(name) || svgWhitelist.includes(name) ? 'svg' : 'png';
+        const fileFormat = svgWhitelist.includes(name) ? 'svg' : 'png';
+
         pathsDic[`"${name}"`] = {
           light: `require("./images/light/${name}/${name}.${fileFormat}")`,
-          dark: null,
+          dark: getDarkImgPath(name, fileFormat, outFullDirPath),
           fileFormat: `"${fileFormat}"`,
         };
       } catch (err) {
@@ -331,9 +342,10 @@ const main = async () => {
 
     const { camelCaseNames } = getIllustrationNamesAndVariants(components);
     await genManifest('codegen/illustrations/illustration_manifest.ts', components);
+    const outDirPath = await getSourcePath('mobile/illustrations/images');
 
-    await loadImagesLocally(Object.keys(manifestData['png']), 'mobile/illustrations/images', 'png');
-    await loadImagesLocally(Object.keys(manifestData['svg']), 'mobile/illustrations/images', 'svg');
+    await loadImagesLocally(Object.keys(manifestData['png']), outDirPath, 'png');
+    await loadImagesLocally(Object.keys(manifestData['svg']), outDirPath, 'svg');
     console.log('All images loaded');
     createTypes(camelCaseNames);
     createConstants(camelCaseNames, ['mobile-playground/src/data/illustrationData.ts']);

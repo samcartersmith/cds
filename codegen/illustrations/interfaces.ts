@@ -4,11 +4,13 @@ export interface IllustrationSummary {
   variant: string;
   description: string;
   name: string;
+  spectrum: string;
 }
 
 export type IllustrationProps = {
   variant: string;
   name: string;
+  spectrum: string;
 };
 
 /** A skeletal structure of what Figma returns back as the component key value pair */
