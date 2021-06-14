@@ -28,7 +28,9 @@ export const Lottie = memo(
         resizeMode = 'contain',
         ...otherProps
       }: LottieProps<Marker, Source>,
-      forwardedRef: ForwardedRef<LottiePlayer<Source>>
+      // String wont work on literal unions, so use any here
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      forwardedRef: ForwardedRef<LottiePlayer<LottieSource<any>>>
     ) => {
       const { containerRef, animationRef } = useLottieLoader({
         source,

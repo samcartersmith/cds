@@ -22,7 +22,7 @@ export const LottieStatusAnimation = memo(
       onFinish,
     });
 
-    const handleRef = useCallback((el: LottiePlayerRef) => {
+    const handleRef = useCallback((el: LottiePlayerRef | null) => {
       if (el && !lottie.current) {
         lottie.current = el;
         forceUpdate(prev => prev + 1);
