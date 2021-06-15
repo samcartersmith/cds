@@ -1,16 +1,13 @@
 import React, { useMemo, memo } from 'react';
 
-import { BoxBaseProps, ElevationLevels, SharedProps } from '@cbhq/cds-common';
-import { ElevationProvider } from '@cbhq/cds-common/context/ElevationProvider';
+import { BoxBaseProps, SharedProps } from '@cbhq/cds-common';
 import {
-  borderRadius as borderRadii,
-  borderWidth as borderWidthTokens,
-} from '@cbhq/cds-common/tokens/border';
-import { emptyObject } from '@cbhq/cds-utils';
+  ElevationProvider,
+  ElevationChildrenProvider,
+} from '@cbhq/cds-common/context/ElevationProvider';
+import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
-import { useElevationBorderColor } from '../hooks/useElevationBorderColor';
-import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePalette } from '../hooks/usePalette';
@@ -24,11 +21,6 @@ export interface BoxProps
     SharedProps,
     OmitStyle<ViewProps>,
     DangerouslySetStyle<ViewStyle> {
-  /**
-   * Determines box shadow styles. Parent should have overflow set to visible
-   * to ensure styles are not clipped.
-   */
-  elevation?: ElevationLevels;
   /**
    * How to handle overflow content. When `gradient`, will fade the content out
    * using a linear gradient.
@@ -47,15 +39,10 @@ export interface BoxProps
   aspectRatio?: number;
 }
 
-type InternalBoxProps = Omit<BoxProps, 'bordered'>;
-
 export const Box: React.FC<BoxProps> = memo(({ children, ...props }) => {
-  const dangerouslySetStyle = useDangerouslySetStyle(props);
   return (
     <ElevationProvider elevation={props?.elevation}>
-      <BoxInner {...props} dangerouslySetStyle={dangerouslySetStyle}>
-        {children}
-      </BoxInner>
+      <BoxInner {...props}>{children}</BoxInner>
     </ElevationProvider>
   );
 });
@@ -64,6 +51,7 @@ export const BoxInner = memo(
   ({
     animated,
     background,
+    bordered,
     borderRadius,
     children,
     dangerouslySetStyle,
@@ -113,7 +101,7 @@ export const BoxInner = memo(
     offsetTop,
     offsetVertical,
     ...props
-  }: InternalBoxProps) => {
+  }: BoxProps) => {
     const palette = usePalette();
     const elevationStyles = useElevationStyles(elevation);
     const spacingStyles = useSpacingStyles({
@@ -188,6 +176,11 @@ export const BoxInner = memo(
         style.borderRadius = borderRadii[borderRadius];
       }
 
+      if (bordered) {
+        style.borderWidth = 1;
+        style.borderColor = palette.line;
+      }
+
       if (rounded) {
         style.borderRadius = borderRadii.standard;
       }
@@ -201,7 +194,7 @@ export const BoxInner = memo(
       }
 
       return style;
-    }, [background, elevation, borderRadius, rounded, opacity, overflow, palette]);
+    }, [background, elevation, bordered, borderRadius, rounded, opacity, overflow, palette]);
     const style = useMemo(
       () =>
         [
@@ -232,45 +225,11 @@ export const BoxInner = memo(
 
     return (
       <ViewComponent style={style} {...props}>
-        {children}
+        <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
         {overflow === 'gradient' && <OverflowGradient />}
       </ViewComponent>
     );
   }
 );
-
-/**
- * useDangerouslySetStyle guarantees that the border color of Box is not impacted by ElevationProvider palette overrides
- */
-const useDangerouslySetStyle = ({
-  dangerouslySetStyle = emptyObject,
-  elevation,
-  bordered,
-}: BoxProps) => {
-  const palette = usePalette();
-  const elevationBorderColor = useElevationBorderColor();
-  const elevationBorderWidth = useElevationBorderWidth();
-
-  return useMemo(() => {
-    return [
-      bordered && {
-        borderWidth: 1,
-        borderColor: palette.line,
-      },
-      elevation && {
-        borderWidth: elevationBorderWidth ? borderWidthTokens[elevationBorderWidth] : undefined,
-        borderColor: elevationBorderColor,
-      },
-      dangerouslySetStyle,
-    ].filter(Boolean);
-  }, [
-    bordered,
-    dangerouslySetStyle,
-    elevation,
-    elevationBorderColor,
-    elevationBorderWidth,
-    palette.line,
-  ]);
-};
 
 Box.displayName = 'Box';

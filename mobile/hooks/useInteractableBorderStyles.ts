@@ -10,6 +10,16 @@ import { InteractableProps } from '../system/Interactable';
 import { useElevationBorderColor } from './useElevationBorderColor';
 import { usePaletteOrTransparentColor } from './usePaletteOrTransparentColor';
 
+type InteractableBorderStyleProps = Pick<
+  InteractableProps,
+  | 'borderRadius'
+  | 'borderColor'
+  | 'borderWidth'
+  | 'elevation'
+  | 'pressed'
+  | 'transparentWhileInactive'
+>;
+
 /**
  * useInteractableBorderStyles guarantees that the border color of Interactable is not impacted by ElevationProvider palette overrides
  */
@@ -17,7 +27,7 @@ export const useInteractableBorderStyles = ({
   borderRadius,
   borderWidth,
   ...props
-}: InteractableProps): Animated.WithAnimatedValue<Falsy | ViewStyle>[] => {
+}: InteractableBorderStyleProps): Animated.WithAnimatedValue<Falsy | ViewStyle>[] => {
   const borderColor = useInteractableBorderColor(props);
 
   return useMemo(() => {
@@ -37,7 +47,7 @@ export const useInteractableBorderColor = ({
   elevation,
   pressed,
   transparentWhileInactive,
-}: InteractableProps) => {
+}: InteractableBorderStyleProps) => {
   const defaultBorderColor = usePaletteOrTransparentColor(borderColor);
   const elevationBorderColor = useElevationBorderColor(borderColor);
 

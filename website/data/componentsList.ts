@@ -20,6 +20,7 @@ export const components = [
   'Icon',
   'NavigationIcon',
   'Box',
+  'Card',
   'Divider',
   'Fallback',
   'HStack',

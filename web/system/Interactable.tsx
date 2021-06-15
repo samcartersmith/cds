@@ -1,10 +1,15 @@
 import React, { createElement, useMemo, forwardRef } from 'react';
 
 import { SharedProps, usePaletteConfig } from '@cbhq/cds-common';
+import {
+  ElevationProvider,
+  ElevationChildrenProvider,
+} from '@cbhq/cds-common/context/ElevationProvider';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { cx } from 'linaria';
 
+import { useElevationStyles } from '../hooks/useElevationStyles';
 import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';
 import * as borderWidths from '../styles/borderWidth';
@@ -51,6 +56,23 @@ export interface InteractableProps
 }
 
 export const Interactable = forwardRef(function Interactable(
+  { children, borderColor, className, ...props }: InteractableProps,
+  ref: React.Ref<Element>
+) {
+  return (
+    <ElevationProvider elevation={props?.elevation}>
+      <InteractableContent
+        ref={ref}
+        className={cx(className, borderColor && borderColors[borderColor])}
+        {...props}
+      >
+        {children}
+      </InteractableContent>
+    </ElevationProvider>
+  );
+});
+
+export const InteractableContent = forwardRef(function Interactable(
   {
     as: Container,
     backgroundColor,
@@ -61,6 +83,7 @@ export const Interactable = forwardRef(function Interactable(
     children,
     className: customClassName,
     disabled,
+    elevation,
     pressed,
     style: customStyle,
     testID,
@@ -71,6 +94,7 @@ export const Interactable = forwardRef(function Interactable(
   ref: React.Ref<Element>
 ) {
   const paletteConfig = usePaletteConfig();
+  const elevationStyles = useElevationStyles(elevation);
   const spectrumAlias = backgroundColor === 'transparent' ? '' : paletteConfig[backgroundColor];
   const { underlayColor, hoverOpacity, pressedOpacity } = useInteractableTokens(backgroundColor);
 
@@ -106,8 +130,9 @@ export const Interactable = forwardRef(function Interactable(
         '--interactable-opacity-pressed': pressedOpacity,
         '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : undefined,
         '--interactable-underlay': palette[underlayColor],
+        ...elevationStyles,
       } as React.CSSProperties),
-    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor, customStyle]
+    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor, customStyle, elevationStyles]
   );
 
   const content =
@@ -134,6 +159,6 @@ export const Interactable = forwardRef(function Interactable(
       style,
       ref,
     },
-    content
+    <ElevationChildrenProvider>{content}</ElevationChildrenProvider>
   );
 });

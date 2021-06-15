@@ -1,8 +1,14 @@
-import { forwardRef, createElement } from 'react';
+import React, { forwardRef, createElement } from 'react';
 
 import type { BoxBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
+import {
+  ElevationProvider,
+  ElevationChildrenProvider,
+} from '@cbhq/cds-common/context/ElevationProvider';
+import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { css, cx } from 'linaria';
 
+import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -79,6 +85,21 @@ export interface BoxProps<As extends BoxElement = 'div'>
 }
 
 export const Box = forwardRef(
+  <As extends BoxElement = 'div'>(
+    { children, ...props }: BoxProps<As>,
+    forwardedRef: ForwardedRef<HTMLElement>
+  ) => {
+    return (
+      <ElevationProvider elevation={props?.elevation}>
+        <BoxInner {...props} ref={forwardedRef}>
+          {children}
+        </BoxInner>
+      </ElevationProvider>
+    );
+  }
+);
+
+export const BoxInner = forwardRef(
   <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => {
     const {
       as = 'div',
@@ -91,6 +112,7 @@ export const Box = forwardRef(
       borderedEnd,
       borderedHorizontal,
       borderedVertical,
+      elevation,
       children,
       overflow,
       role,
@@ -142,6 +164,9 @@ export const Box = forwardRef(
       ...restProps
     } = props;
 
+    const borderRadiusStyles = usePinBorderRadiusStyles(pin, borderRadius);
+    const elevationStyles = useElevationStyles(elevation);
+
     return createElement(
       as,
       {
@@ -162,7 +187,7 @@ export const Box = forwardRef(
           borderRadius && borderRadii[borderRadius],
           rounded && borderRadii.standard,
           getBorderStyles({
-            bordered,
+            bordered: elevation ? true : bordered,
             borderedTop,
             borderedBottom,
             borderedStart,
@@ -208,11 +233,14 @@ export const Box = forwardRef(
           right,
           top,
           zIndex,
+          ...borderRadiusStyles,
+          ...elevationStyles,
         },
       },
-      children
+      <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
     );
   }
 );
 
 Box.displayName = 'Box';
+BoxInner.displayName = 'BoxInner';

@@ -1,5 +1,6 @@
 import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
+import { ElevationLevels } from './ElevationLevels';
 import { PaletteBackground } from './Palette';
 import { OffsetProps, SpacingProps } from './SpacingProps';
 import { SpacingScale } from './SpacingScale';
@@ -98,6 +99,8 @@ export interface BoxBaseProps
   borderRadius?: BorderRadius;
   /** Round the corners of the box with `standard` borderRadius size. */
   rounded?: boolean;
+  /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
+  elevation?: ElevationLevels;
 }
 
 export interface StackBaseProps {

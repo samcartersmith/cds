@@ -15,7 +15,7 @@ describe('ElevationProvider', () => {
         </SystemProvider>
       ),
     });
-    expect(result.current.background).toBe(defaultPalette.background);
+    expect(result.current.background).toEqual(defaultPalette.background);
   });
 
   it('does not override palette variables if spectrum is dark and no elevation is set', () => {
@@ -26,7 +26,7 @@ describe('ElevationProvider', () => {
         </SystemProvider>
       ),
     });
-    expect(result.current.background).toBe(defaultPalette.background);
+    expect(result.current.background).toEqual(defaultPalette.background);
   });
 
   it('overrides palette variables if spectrum is dark and elevation of 1 is set', () => {
@@ -37,7 +37,8 @@ describe('ElevationProvider', () => {
         </SystemProvider>
       ),
     });
-    expect(result.current.background).toBe('gray5');
+    expect(result.current.background).not.toEqual(defaultPalette.background);
+    expect(result.current.background).toEqual('gray5');
   });
 
   it('overrides palette variables if spectrum is dark and elevation of 2 is set', () => {
@@ -48,10 +49,7 @@ describe('ElevationProvider', () => {
         </SystemProvider>
       ),
     });
-    expect(result.current.background).toBe('gray10');
-    // secondary should be transparent
-    expect(result.current.secondary).toEqual(['gray0', 0]);
-    // line should be brighter
-    expect(result.current.line).toEqual(defaultPalette.lineHeavy);
+    expect(result.current.background).not.toEqual(defaultPalette.background);
+    expect(result.current.background).toEqual('gray10');
   });
 });

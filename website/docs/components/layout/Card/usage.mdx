@@ -1,0 +1,237 @@
+A specialized box that that is optionally Pressable. Styled with rounded corners and a border and defaults to an elevation of 1.
+
+## Clickable Cards
+
+```jsx live
+function Example() {
+  const onPressConsole = () => console.log('pressed');
+  const sharedProps = { spacing: 2 };
+  const sharedPressProps = { onPress: onPressConsole, ...sharedProps };
+
+  return (
+    <HStack gap={2}>
+      <Card {...sharedPressProps} elevation={1}>
+        <TextLabel1 as="p" spacingBottom={1}>
+          Elevation 1
+        </TextLabel1>
+        <TextBody as="p" spacingBottom={3}>
+          {loremIpsum}
+        </TextBody>
+      </Card>
+
+      <Card {...sharedPressProps} elevation={2}>
+        <TextLabel1 as="p" spacingBottom={1}>
+          Elevation 2
+        </TextLabel1>
+        <TextBody as="p" spacingBottom={3}>
+          {loremIpsum}
+        </TextBody>
+      </Card>
+    </HStack>
+  );
+}
+```
+
+## Clickable Colored Cards
+
+```jsx live
+function Example() {
+  const onPressConsole = () => console.log('pressed');
+  const sharedProps = { spacing: 2 };
+  const sharedPressProps = { onPress: onPressConsole, ...sharedProps };
+
+  return (
+    <HStack gap={2}>
+      <Card {...sharedPressProps} background="primary">
+        <TextLabel1 as="p" spacingBottom={1} color="primaryForeground">
+          Primary
+        </TextLabel1>
+        <TextBody as="p" color="primaryForeground">
+          {loremIpsum}
+        </TextBody>
+      </Card>
+
+      <Card {...sharedPressProps} background="positive">
+        <TextLabel1 as="p" spacingBottom={1} color="positiveForeground">
+          Positive
+        </TextLabel1>
+        <TextBody as="p" color="positiveForeground">
+          {loremIpsum}
+        </TextBody>
+      </Card>
+
+      <Card {...sharedPressProps} background="negative">
+        <TextLabel1 as="p" spacingBottom={1} color="negativeForeground">
+          Positive
+        </TextLabel1>
+        <TextBody as="p" color="negativeForeground">
+          {loremIpsum}
+        </TextBody>
+      </Card>
+    </HStack>
+  );
+}
+```
+
+## Non-Clickable Cards
+
+```jsx live
+function Example() {
+  const sharedProps = { spacing: 2 };
+
+  return (
+    <HStack gap={2}>
+      <Card {...sharedProps} elevation={1}>
+        <TextLabel1 as="p" spacingBottom={1}>
+          Elevation 1
+        </TextLabel1>
+        <TextBody as="p" spacingBottom={3}>
+          {loremIpsum}
+        </TextBody>
+        <Button variant="secondary">Secondary button</Button>
+      </Card>
+
+      <Card {...sharedProps} elevation={2}>
+        <TextLabel1 as="p" spacingBottom={1}>
+          Elevation 2
+        </TextLabel1>
+        <TextBody as="p" spacingBottom={3}>
+          {loremIpsum}
+        </TextBody>
+        <Button variant="secondary">Secondary button</Button>
+      </Card>
+    </HStack>
+  );
+}
+```
+
+## Non-Clickable Colored Cards
+
+```jsx live
+function Example() {
+  const sharedProps = { spacing: 2 };
+
+  return (
+    <HStack gap={2}>
+      <Card {...sharedProps} background="primary">
+        <TextLabel1 as="p" spacingBottom={1} color="primaryForeground">
+          Primary
+        </TextLabel1>
+        <TextBody as="p" color="primaryForeground">
+          {loremIpsum}
+        </TextBody>
+      </Card>
+
+      <Card {...sharedProps} background="positive">
+        <TextLabel1 as="p" spacingBottom={1} color="positiveForeground">
+          Positive
+        </TextLabel1>
+        <TextBody as="p" color="positiveForeground">
+          {loremIpsum}
+        </TextBody>
+      </Card>
+
+      <Card {...sharedProps} background="negative">
+        <TextLabel1 as="p" spacingBottom={1} color="negativeForeground">
+          Positive
+        </TextLabel1>
+        <TextBody as="p" color="negativeForeground">
+          {loremIpsum}
+        </TextBody>
+      </Card>
+    </HStack>
+  );
+}
+```
+
+## Pinned - top
+
+```jsx live
+function Example() {
+  const sharedProps = { spacing: 2 };
+  const pinnedSharedProps = { ...sharedProps, elevation: 2 };
+  const pinnedSharedWrapperProps = {
+    position: 'relative',
+    background: 'backgroundAlternate',
+    width: '100%',
+    height: 100,
+  };
+
+  return (
+    <Box {...pinnedSharedWrapperProps}>
+      <Card {...pinnedSharedProps} pin="top">
+        <TextLabel1 as="p">Top</TextLabel1>
+      </Card>
+    </Box>
+  );
+}
+```
+
+## Pinned - right
+
+```jsx live
+function Example() {
+  const sharedProps = { spacing: 2 };
+  const pinnedSharedProps = { ...sharedProps, elevation: 2 };
+  const pinnedSharedWrapperProps = {
+    position: 'relative',
+    background: 'backgroundAlternate',
+    width: '100%',
+    height: 100,
+  };
+
+  return (
+    <Box {...pinnedSharedWrapperProps}>
+      <Card {...pinnedSharedProps} pin="right">
+        <TextLabel1 as="p">Right</TextLabel1>
+      </Card>
+    </Box>
+  );
+}
+```
+
+## Pinned - bottom
+
+```jsx live
+function Example() {
+  const sharedProps = { spacing: 2 };
+  const pinnedSharedProps = { ...sharedProps, elevation: 2 };
+  const pinnedSharedWrapperProps = {
+    position: 'relative',
+    background: 'backgroundAlternate',
+    width: '100%',
+    height: 100,
+  };
+
+  return (
+    <Box {...pinnedSharedWrapperProps}>
+      <Card {...pinnedSharedProps} pin="bottom">
+        <TextLabel1 as="p">Bottom</TextLabel1>
+      </Card>
+    </Box>
+  );
+}
+```
+
+## Pinned - left
+
+```jsx live
+function Example() {
+  const sharedProps = { spacing: 2 };
+  const pinnedSharedProps = { ...sharedProps, elevation: 2 };
+  const pinnedSharedWrapperProps = {
+    position: 'relative',
+    background: 'backgroundAlternate',
+    width: '100%',
+    height: 100,
+  };
+
+  return (
+    <Box {...pinnedSharedWrapperProps}>
+      <Card {...pinnedSharedProps} pin="left">
+        <TextLabel1 as="p">Left</TextLabel1>
+      </Card>
+    </Box>
+  );
+}
+```

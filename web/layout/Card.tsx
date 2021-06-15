@@ -1,15 +1,13 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 
-import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common/types';
 
-import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { VStack, VStackProps } from './VStack';
 
-export interface CardProps extends VStackProps, CardBaseProps {
+export interface CardProps extends VStackProps<'div'>, CardBaseProps {
   onPress?: PressableProps['onPress'];
 }
 
@@ -21,19 +19,12 @@ export const Card: React.FC<CardProps> = memo(
     size = 'large',
     onPress,
     pin,
-    dangerouslySetStyle,
     ...props
   }: CardProps) => {
     const width = props?.width ?? cardSizes[size].width;
     const height = props?.height ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
-    const elevationBorderWidth = useElevationBorderWidth();
     const pinStyles = usePinStyles(pin);
-    const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 'standard');
-    const contentStyles = useMemo(
-      () => [borderRadiusOverrides, dangerouslySetStyle],
-      [borderRadiusOverrides, dangerouslySetStyle]
-    );
 
     const content = (
       <VStack
@@ -43,7 +34,7 @@ export const Card: React.FC<CardProps> = memo(
         elevation={onPress ? undefined : elevation}
         width={width}
         height={height}
-        dangerouslySetStyle={contentStyles}
+        overflow={onPress ? undefined : 'hidden'}
         {...props}
       >
         {children}
@@ -54,10 +45,11 @@ export const Card: React.FC<CardProps> = memo(
       <Pressable
         backgroundColor={bg}
         borderRadius="standard"
-        borderWidth={elevation ? elevationBorderWidth : 'card'}
+        borderColor="line"
+        borderWidth="card"
         elevation={elevation}
         onPress={onPress}
-        style={pinStyles}
+        className={pinStyles}
       >
         {content}
       </Pressable>

@@ -514,6 +514,27 @@ export const Box = {
   ),
 };
 
+export const Card = {
+  card: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Card/card.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Card/implementation.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Card/usage.mdx'
+      )
+  ),
+};
+
 export const Divider = {
   divider: React.lazy(
     () =>

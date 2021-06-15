@@ -62,6 +62,7 @@ module.exports = {
       collapsed: true,
       items: [
         'components/layout/Box/box',
+        'components/layout/Card/card',
         'components/layout/Divider/divider',
         'components/layout/Fallback/fallback',
         'components/layout/HStack/hstack',

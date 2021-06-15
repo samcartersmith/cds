@@ -1,7 +1,10 @@
 import React, { useMemo, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
-import { ElevationProvider } from '@cbhq/cds-common/context/ElevationProvider';
+import {
+  ElevationProvider,
+  ElevationChildrenProvider,
+} from '@cbhq/cds-common/context/ElevationProvider';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';
 import { Animated, Falsy, View, ViewStyle } from 'react-native';
@@ -18,24 +21,19 @@ export interface InteractableProps extends InteractableBaseProps, SharedProps {
   contentStyle?: Falsy | ViewStyle;
 }
 
-export const Interactable = memo(function Interactable({
-  children,
-  style = emptyArray,
-  ...props
-}: InteractableProps) {
-  const borderStyles = useInteractableBorderStyles(props);
-  const styles = useMemo(() => [...style, ...borderStyles], [borderStyles, style]);
+export const Interactable = memo(function Interactable({ children, ...props }: InteractableProps) {
   return (
     <ElevationProvider elevation={props?.elevation}>
-      <InteractableContent style={styles} {...props}>
-        {children}
-      </InteractableContent>
+      <InteractableContent {...props}>{children}</InteractableContent>
     </ElevationProvider>
   );
 });
 
 export const InteractableContent = memo(function InteractableContent({
   backgroundColor,
+  borderColor,
+  borderRadius,
+  borderWidth,
   block,
   children,
   disabled,
@@ -55,6 +53,15 @@ export const InteractableContent = memo(function InteractableContent({
     pressed,
   });
 
+  const borderStyles = useInteractableBorderStyles({
+    borderColor,
+    borderRadius,
+    borderWidth,
+    elevation,
+    pressed,
+    transparentWhileInactive,
+  });
+
   const elevationStyles = useElevationStyles(elevation);
   const wrapperStyles = useMemo(
     () =>
@@ -63,13 +70,16 @@ export const InteractableContent = memo(function InteractableContent({
         ...style,
         { backgroundColor: bg } as const,
         elevationStyles,
+        ...borderStyles,
       ].filter(Boolean),
-    [block, bg, elevationStyles, style]
+    [block, bg, borderStyles, elevationStyles, style]
   );
 
   return (
     <Animated.View style={wrapperStyles} testID={testID}>
-      <View style={[contentStyle, { opacity: contentOpacity }]}>{children}</View>
+      <View style={[contentStyle, { opacity: contentOpacity }]}>
+        <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+      </View>
     </Animated.View>
   );
 });
