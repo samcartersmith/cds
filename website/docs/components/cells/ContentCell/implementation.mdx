@@ -84,6 +84,21 @@ Description of content. Content will wrap accordingly.
 
 <ComponentDetails componentName="ContentCell" templateName="prop-description" />
 
+### detailWidth
+
+Apply a fixed width to the detail (end).
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="detailWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-detailWidth" />
+
 ### disabled
 
 Is the cell disabled? Will apply opacity and disable interaction.
@@ -161,6 +176,21 @@ Callback fired when the cell is pressed.
 />
 
 <ComponentDetails componentName="ContentCell" templateName="prop-onPress" />
+
+### reduceHorizontalSpacing
+
+Reduce horizontal spacing for tighter layout requirements.
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="reduceHorizontalSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-reduceHorizontalSpacing" />
 
 ### selected
 

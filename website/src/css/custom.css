@@ -13,3 +13,8 @@
 :root[data-theme='dark'] {
   --ifm-background-color: rgb(10, 11, 13); /* CDS dark mode background */
 }
+
+/** Fix mis alignment of HStacks with li items in live code editor */
+.markdown li + li {
+  margin-top: 0;
+}

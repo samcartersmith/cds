@@ -148,6 +148,21 @@ Label and or extra detail.
 
 <ComponentDetails componentName="ListCell" templateName="prop-detail" />
 
+### detailWidth
+
+Apply a fixed width to the detail (end).
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="detailWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-detailWidth" />
+
 ### disabled
 
 Is the cell disabled? Will apply opacity and disable interaction.
@@ -162,6 +177,41 @@ Is the cell disabled? Will apply opacity and disable interaction.
 />
 
 <ComponentDetails componentName="ListCell" templateName="prop-disabled" />
+
+### intermediary
+
+For internal use only.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="intermediary"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-intermediary" />
 
 ### media
 
@@ -205,6 +255,21 @@ Callback fired when the cell is pressed.
 />
 
 <ComponentDetails componentName="ListCell" templateName="prop-onPress" />
+
+### reduceHorizontalSpacing
+
+Reduce horizontal spacing for tighter layout requirements.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="reduceHorizontalSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-reduceHorizontalSpacing" />
 
 ### selected
 

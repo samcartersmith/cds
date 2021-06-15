@@ -29,19 +29,19 @@ yarn add @cbhq/cds-mobile # if using mobile components
 
 ## Building with CDS
 
-1. Import `globalStyles` at the root of your application. This includes font face declarations and focus-visible polyfill.
+1. Import `globalStyles` at the root of your application. This includes font face declarations and focus-visible polyfill. This should be included at the very top of your imports before any CDS components are imported.
 
 ```tsx
 import '@cbhq/cds-web/globalStyles';
 ```
 
-2. Add `ThemeProvider` to the root of your React application. Choose a scale for your application from the seven scales supported by CDS.
+2. Add `ThemeProvider` to the root of your React application.
 
 ```tsx
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 
 export const App = () => {
-  <ThemeProvider scale="large">
+  <ThemeProvider>
     <ErrorBoundary>
       <AppRoutes />
     </ErrorBoundary>
@@ -49,10 +49,12 @@ export const App = () => {
 }
 ```
 
+3. Ensure that your html has `<meta charset="UTF-8">` which is required for the icon font in CDS web.
+
 > If you have components that are created outside of the app's main DOM tree, such as `Modal`s that use `createPortal`, you will need to add `ThemeProvider` to the root of the portal element as well.
 
-3. Import components from `@cbhq/cds-web` or `@cbhq/cds-mobile`.
-4. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.
+4. Import components from `@cbhq/cds-web` or `@cbhq/cds-mobile`.
+5. To figure out what CDS primitive or component is being used in the design, you can inspect the target in Figma and look for component label, color palette name, or spacing size.
 
    - example 1. Use `Headline` typography for the text.
 

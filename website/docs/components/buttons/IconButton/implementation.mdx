@@ -153,6 +153,7 @@ Name of the icon, as defined in Figma.
     'chartPie',
     'chartPieCircle',
     'chartVolume',
+    'chatBubble',
     'checkbox',
     'checkboxChecked',
     'checkboxEmpty',
@@ -183,6 +184,8 @@ Name of the icon, as defined in Figma.
     'externalLink',
     'fib',
     'filter',
+    'followActive',
+    'followInactive',
     'forwardArrow',
     'gauge',
     'gavel',
@@ -259,6 +262,7 @@ Name of the icon, as defined in Figma.
     'visibleActive',
     'visibleInactive',
     'wallet',
+    'warning',
     'wireTransfer',
     'withdraw',
   ]}
@@ -296,6 +300,7 @@ Name of the icon, as defined in Figma.
     'chartPie',
     'chartPieCircle',
     'chartVolume',
+    'chatBubble',
     'checkbox',
     'checkboxChecked',
     'checkboxEmpty',
@@ -326,6 +331,8 @@ Name of the icon, as defined in Figma.
     'externalLink',
     'fib',
     'filter',
+    'followActive',
+    'followInactive',
     'forwardArrow',
     'gauge',
     'gavel',
@@ -402,6 +409,7 @@ Name of the icon, as defined in Figma.
     'visibleActive',
     'visibleInactive',
     'wallet',
+    'warning',
     'wireTransfer',
     'withdraw',
   ]}
@@ -438,6 +446,21 @@ Used to locate this element in unit and end-to-end tests.
 />
 
 <ComponentDetails componentName="IconButton" templateName="prop-testID" />
+
+### to <Badge variant="web" />
+
+URL that this button links to when pressed.
+
+<ApiDetails
+  componentName="IconButton"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="IconButton" templateName="prop-to" />
 
 ### transparent
 

@@ -1,16 +1,3 @@
-import { ThemeProvider as CdsThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
-import useTheme from '@theme/hooks/useTheme';
-import ThemeContext from '@theme/ThemeContext';
+import { RootThemeProvider } from '@cbhq/cds-website/components/RootThemeProvider';
 
-const ThemeProvider: React.FC = props => {
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useTheme();
-  return (
-    <CdsThemeProvider spectrum={isDarkTheme ? 'dark' : 'light'}>
-      <ThemeContext.Provider value={{ isDarkTheme, setLightTheme, setDarkTheme }}>
-        {props.children}
-      </ThemeContext.Provider>
-    </CdsThemeProvider>
-  );
-};
-
-export default ThemeProvider;
+export default RootThemeProvider;
