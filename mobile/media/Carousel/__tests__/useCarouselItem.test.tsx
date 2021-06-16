@@ -69,7 +69,7 @@ describe('useCarouselItem', () => {
       const { dismiss } = useCarouselItem();
       const handleDismiss = () => dismiss();
       return (
-        <Button testID={`DismissButton`} onPress={handleDismiss}>
+        <Button testID="DismissButton" onPress={handleDismiss}>
           Dismiss
         </Button>
       );
