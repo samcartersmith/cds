@@ -171,4 +171,8 @@ export const navigationIconNames = [
   'addPeople',
   'defi',
   'gab',
+  'home',
+  'wallet',
+  'settings',
+  'scanQrCode',
 ] as const;

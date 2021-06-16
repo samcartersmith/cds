@@ -165,7 +165,11 @@ export type NavigationIconName =
   | 'cash'
   | 'addPeople'
   | 'defi'
-  | 'gab';
+  | 'gab'
+  | 'home'
+  | 'wallet'
+  | 'settings'
+  | 'scanQrCode';
 
 export type NavigationIconInternalName =
   | 'candleSticksInactive'
@@ -195,6 +199,14 @@ export type NavigationIconInternalName =
   | 'defiInactive'
   | 'defiActive'
   | 'gabInactive'
+  | 'homeInactive'
   | 'gabActive'
+  | 'homeActive'
   | 'addPeopleActive'
-  | 'cashActive';
+  | 'cashActive'
+  | 'walletInactive'
+  | 'settingsInactive'
+  | 'settingsActive'
+  | 'walletActive'
+  | 'scanQrCodeActive'
+  | 'scanQrCodeInactive';

@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58329,
+  lastUnicode: 58369,
   unicodeMap: {
     cashUSD: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBP: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -205,5 +205,19 @@ export const manifest = {
     chatBubble: { '8': 'uE3CA', '12': 'uE3CB', '16': 'uE3CC', '24': 'uE3CD', '32': 'uE3CE' },
     followInactive: { '8': 'uE3CF', '12': 'uE3D0', '16': 'uE3D1', '24': 'uE3D2', '32': 'uE3D3' },
     followActive: { '8': 'uE3D4', '12': 'uE3D5', '16': 'uE3D6', '24': 'uE3D7', '32': 'uE3D8' },
+    homeInactive: { '8': 'uE3D9', '12': 'uE3DA', '16': 'uE3DB', '24': 'uE3DC', '32': 'uE3DD' },
+    homeActive: { '8': 'uE3DE', '12': 'uE3DF', '16': 'uE3E0', '24': 'uE3E1', '32': 'uE3E2' },
+    walletInactive: { '8': 'uE3E3', '12': 'uE3E4', '16': 'uE3E5', '24': 'uE3E6', '32': 'uE3E7' },
+    settingsInactive: { '8': 'uE3E8', '12': 'uE3E9', '16': 'uE3EA', '24': 'uE3EB', '32': 'uE3EC' },
+    settingsActive: { '8': 'uE3ED', '12': 'uE3EE', '16': 'uE3EF', '24': 'uE3F0', '32': 'uE3F1' },
+    walletActive: { '8': 'uE3F2', '12': 'uE3F3', '16': 'uE3F4', '24': 'uE3F5', '32': 'uE3F6' },
+    scanQrCodeActive: { '8': 'uE3F7', '12': 'uE3F8', '16': 'uE3F9', '24': 'uE3FA', '32': 'uE3FB' },
+    scanQrCodeInactive: {
+      '8': 'uE3FC',
+      '12': 'uE3FD',
+      '16': 'uE3FE',
+      '24': 'uE3FF',
+      '32': 'uE400',
+    },
   },
 };
