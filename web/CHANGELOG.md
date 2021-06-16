@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.13.0 (6/16/2021, 11:57 AM PST)
+
+#### 💥 Breaking
+
+- **[Box]** Rework border props. [#23543](https://github.cbhq.net/mono/repo/pull/23543)
+- CDS card for web. [#23418](https://github.cbhq.net/mono/repo/pull/23418), [CDS-627](https://jira.coinbase-corp.com/browse/CDS-627)
+
+#### 🐞 Fixes
+
+- Disable flex grow/shrink when providing an explicit width. [#23529](https://github.cbhq.net/mono/repo/pull/23529)
+- Upgrade to TypeScript 4.3. [#23029](https://github.cbhq.net/mono/repo/pull/23029)
+
 ## 0.12.8 (6/10/2021, 12:25 PM PST)
 
 #### 🚀 Updates

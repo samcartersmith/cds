@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.16.0 (6/16/2021, 11:57 AM PST)
+
+#### 💥 Breaking
+
+- **[Box]** Rework border props. [#23543](https://github.cbhq.net/mono/repo/pull/23543)
+- CDS card for web. [#23418](https://github.cbhq.net/mono/repo/pull/23418), [CDS-627](https://jira.coinbase-corp.com/browse/CDS-627)
+
+#### 🐞 Fixes
+
+- Disable flex grow/shrink when providing an explicit width. [#23529](https://github.cbhq.net/mono/repo/pull/23529)
+- Mobile Carousel dismiss indexes to ids. [#23578](https://github.cbhq.net/mono/repo/pull/23578)
+
 ## 0.15.9 (6/11/2021, 02:37 PM PST)
 
 #### 🚀 Updates
