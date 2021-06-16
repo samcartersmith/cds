@@ -10,15 +10,12 @@ describe('Carousel', () => {
   const onReadySpy = jest.fn();
 
   const MockCarousel = () => {
-    return (
-      <Carousel onReady={onReadySpy}>
-        {Array.from({ length: itemsLength }).map((_, index) => (
-          <Box key={index} height={itemSize} width={itemSize}>
-            <TextBody>CarouselItem</TextBody>
-          </Box>
-        ))}
-      </Carousel>
-    );
+    const items = Array.from({ length: itemsLength }).map((_, index) => (
+      <Box key={`item${index}`} height={itemSize} width={itemSize}>
+        <TextBody>CarouselItem</TextBody>
+      </Box>
+    ));
+    return <Carousel items={items} onReady={onReadySpy} />;
   };
 
   afterEach(cleanup);
@@ -35,12 +32,12 @@ describe('Carousel', () => {
     await waitFor(() =>
       Promise.all([
         ...Array.from({ length: itemsLength }).map((_, i) =>
-          fireEvent(getByTestId(`CarouselItemWrapper${i}`), 'onLayout', {
+          fireEvent(getByTestId(`CarouselItemWrapper-item${i}`), 'onLayout', {
             nativeEvent: { layout: { x: itemSize * i } },
           })
         ),
         ...Array.from({ length: itemsLength }).map((_, i) =>
-          fireEvent(getByTestId(`CarouselItemInner${i}`), 'onLayout', {
+          fireEvent(getByTestId(`CarouselItemInner-item${i}`), 'onLayout', {
             nativeEvent: { layout: { width: itemSize } },
           })
         ),
@@ -51,14 +48,14 @@ describe('Carousel', () => {
 
   it('does apply paddingRight if it is not the last item', () => {
     const { getByTestId } = render(<MockCarousel />);
-    expect(getByTestId(`CarouselItemInner0`)).toHaveStyle({
+    expect(getByTestId(`CarouselItemInner-item0`)).toHaveStyle({
       paddingRight: 24,
     });
   });
 
   it('does not apply paddingRight to the last item', () => {
     const { getByTestId } = render(<MockCarousel />);
-    expect(getByTestId(`CarouselItemInner${itemsLength - 1}`)).toHaveStyle({
+    expect(getByTestId(`CarouselItemInner-item${itemsLength - 1}`)).toHaveStyle({
       paddingRight: 0,
     });
   });

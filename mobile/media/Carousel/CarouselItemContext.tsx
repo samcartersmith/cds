@@ -1,19 +1,14 @@
 import { createContext } from 'react';
 
-import { NoopFn } from '@cbhq/cds-common';
-
-export interface CarouselItemContextValue {
-  index: number;
-  dismiss: NoopFn;
-}
+import type { CarouselItemContextValue } from './types';
 
 /**
- * Used internally within CarouselItem component to provide access to index and dismiss.
+ * Used internally within CarouselItem component to provide access to id and dismiss.
  * @example
  * ```
  * const MyCarouselItem = () => {
- * const { index, dismiss } = useCarouselItem()
- *  return <Card onPress={dismiss}><TextBody>{`Carousel item ${index}`}</TextBody></Card>
+ * const { id, dismiss } = useCarouselItem()
+ *  return <Card onPress={dismiss}><TextBody>{`Carousel item ${id}`}</TextBody></Card>
  * }
  *
  * const MyCarousel = () => {

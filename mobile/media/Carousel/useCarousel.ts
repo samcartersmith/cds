@@ -10,15 +10,18 @@ import { CarouselRef } from './types';
  * @example
  * ```
  * const carouselRef = useCarousel()
- * const handlePress = () => carouselRef.current.scrollToIndex(3);
+ * const handlePress = () => carouselRef.current.scrollToId('item1');
  * <Button onPress={handlePress}>Press me</Button>
  * <Carousel carouselRef={carouselRef} />
  * ```
  */
 export const useCarousel = () => {
-  // Includes fallback data to avoid having to do ref.current?.scrollToIndex.
+  // Includes fallback data to avoid having to do ref.current?.scrollToId.
   return useRef<CarouselRef>({
+    dismissedItems: new Set(),
     length: 0,
-    scrollToIndex: noop,
+    resetDismissedItems: noop,
+    scrollToId: noop,
+    scrollToEnd: noop,
   });
 };

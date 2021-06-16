@@ -12,22 +12,20 @@ describe('useCarouselItem', () => {
   afterEach(cleanup);
 
   const MockCarouselItem = () => {
-    const { index } = useCarouselItem();
+    const { id } = useCarouselItem();
     return (
       <Box height={200} width={200}>
-        <TextBody>{`Index ${index}`}</TextBody>
+        <TextBody>{id}</TextBody>
       </Box>
     );
   };
 
   const MockCarousel = () => {
-    return (
-      <Carousel>
-        {Array.from({ length: 4 }).map((_, i) => (
-          <MockCarouselItem key={`carousel-item-${i}`} />
-        ))}
-      </Carousel>
-    );
+    const items = Array.from({ length: 4 }).map((_, i) => (
+      <MockCarouselItem key={`carousel-item-${i}`} />
+    ));
+
+    return <Carousel items={items} />;
   };
 
   it('logs an error if used outside of CarouselItemContext', () => {
@@ -39,44 +37,45 @@ describe('useCarouselItem', () => {
     spy.mockRestore();
   });
 
-  it('returns an index value of -1 if used outside of CarouselItemContext', () => {
+  it('returns an id value of -1 if used outside of CarouselItemContext', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation();
     const { result } = renderHook(() => useCarouselItem());
-    expect(result.current.index).toEqual(-1);
+    expect(result.current.id).toEqual('-1');
     spy.mockRestore();
   });
 
-  it('returns an object with dismiss and index', () => {
+  it('returns an object with dismiss and id', () => {
     const dismissSpy = jest.fn();
     const Wrapper: React.FC = ({ children }) => (
-      <CarouselItemContext.Provider value={{ index: 1, dismiss: dismissSpy }}>
+      <CarouselItemContext.Provider value={{ id: 'item1', dismiss: dismissSpy }}>
         {children}
       </CarouselItemContext.Provider>
     );
     const { result } = renderHook(() => useCarouselItem(), { wrapper: Wrapper });
-    expect(result.current).toEqual({ index: 1, dismiss: dismissSpy });
+    expect(result.current).toEqual({ id: 'item1', dismiss: dismissSpy });
   });
 
-  it('returns the correct index', () => {
+  it('returns the correct id', () => {
     const { queryByText } = render(<MockCarousel />);
-    expect(queryByText('Index 0')).not.toBeNull();
-    expect(queryByText('Index 1')).not.toBeNull();
-    expect(queryByText('Index 2')).not.toBeNull();
-    expect(queryByText('Index 3')).not.toBeNull();
+    expect(queryByText('carousel-item-0')).not.toBeNull();
+    expect(queryByText('carousel-item-1')).not.toBeNull();
+    expect(queryByText('carousel-item-2')).not.toBeNull();
+    expect(queryByText('carousel-item-3')).not.toBeNull();
   });
 
   it('handles dismiss', () => {
     const dismissSpy = jest.fn();
     const ChildWithPressable = () => {
       const { dismiss } = useCarouselItem();
+      const handleDismiss = () => dismiss();
       return (
-        <Button testID={`DismissButton`} onPress={dismiss}>
+        <Button testID={`DismissButton`} onPress={handleDismiss}>
           Dismiss
         </Button>
       );
     };
     const result = render(
-      <CarouselItemContext.Provider value={{ index: 1, dismiss: dismissSpy }}>
+      <CarouselItemContext.Provider value={{ id: 'item1', dismiss: dismissSpy }}>
         <ChildWithPressable />
       </CarouselItemContext.Provider>
     );

@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
-import type { NoopFn } from '@cbhq/cds-common';
 import { Animated } from 'react-native';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
+import type { CarouselDismissItemParams, CarouselItemId } from './types';
 
 const opacityConfig = convertMotionConfig({
   toValue: 0,
@@ -21,23 +21,18 @@ const sizeConfig = convertMotionConfig({
   useNativeDriver: false,
 });
 
-export type DismissParams = {
-  index: number;
-  opacity: Animated.Value;
-  width: Animated.Value;
-  height: Animated.Value;
-  callbackFn?: NoopFn;
-};
-
 export const useDismissCarouselItem = (itemsLength: number) => {
   const isAnimating = useRef(false);
   /** Array of CarouselItem indexes that have been dismissed. */
-  const [dismissedItems, setDismissedItems] = useState<Set<number>>(() => new Set());
+  const [dismissedItems, setDismissedItems] = useState<Set<CarouselItemId>>(() => new Set());
   /** If there is only one CarouselItem left which has yet to be dismissed. This will have additional height animation */
   const isLastDismissableItem = dismissedItems.size === itemsLength - 1;
+  const resetDismissedItems = useCallback(() => {
+    setDismissedItems(new Set());
+  }, []);
 
   const dismiss = useCallback(
-    ({ height, index, opacity, width, callbackFn }: DismissParams) => {
+    ({ height, id, opacity, width, callbackFn }: CarouselDismissItemParams) => {
       if (isAnimating.current) return;
       isAnimating.current = true;
       const opacityMotion = Animated.timing(opacity, opacityConfig);
@@ -47,7 +42,7 @@ export const useDismissCarouselItem = (itemsLength: number) => {
         ({ finished }) => {
           if (finished) {
             isAnimating.current = false;
-            setDismissedItems(prev => new Set(prev).add(index));
+            setDismissedItems(prev => new Set(prev).add(id));
             callbackFn?.();
           }
         }
@@ -56,5 +51,8 @@ export const useDismissCarouselItem = (itemsLength: number) => {
     [isLastDismissableItem]
   );
 
-  return useMemo(() => ({ dismiss, dismissedItems }), [dismiss, dismissedItems]);
+  return useMemo(
+    () => ({ dismiss, dismissedItems, resetDismissedItems }),
+    [dismiss, dismissedItems, resetDismissedItems]
+  );
 };

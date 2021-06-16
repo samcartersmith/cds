@@ -19,7 +19,7 @@ describe('useScrollTo', () => {
 
   it('fires scrollTo on ScrollView', () => {
     const MockUsage = () => {
-      const [scrollRef, scrollTo] = useScrollTo();
+      const [scrollRef, { scrollTo }] = useScrollTo();
       const onPress = () => scrollTo({ x: 400 });
       return (
         <Box>
@@ -39,5 +39,25 @@ describe('useScrollTo', () => {
       y: 0,
       animated: true,
     });
+  });
+
+  it('fires scrollToEnd on ScrollView', () => {
+    const MockUsage = () => {
+      const [scrollRef, { scrollToEnd }] = useScrollTo();
+      const onPress = () => scrollToEnd();
+      return (
+        <Box>
+          <Button testID="Button" onPress={onPress}>
+            Scroll To
+          </Button>
+          <ScrollView ref={scrollRef} horizontal>
+            <Box width={900} />
+          </ScrollView>
+        </Box>
+      );
+    };
+    const result = render(<MockUsage />);
+    fireEvent.press(result.getByTestId('Button'));
+    expect(result.UNSAFE_getByType(ScrollView).instance.scrollToEnd).toHaveBeenCalled();
   });
 });

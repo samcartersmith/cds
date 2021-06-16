@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { cleanup, fireEvent, render } from '@testing-library/react-native';
 import { ScrollView } from 'react-native';
 
@@ -16,7 +18,16 @@ describe('useCarousel', () => {
   const MockCarousel = ({ length }: { length: number }) => {
     const carouselRef = useCarousel();
     const handleLogLength = () => console.log(`Carousel length: ${carouselRef.current.length}`);
-    const handleScrollTo = () => carouselRef.current.scrollToIndex(scrollToValue);
+    const handleScrollTo = () => carouselRef.current.scrollToId(scrollToValue);
+    const handleScrollToEnd = () => carouselRef.current.scrollToEnd();
+    const items = useMemo(
+      () =>
+        Array.from({ length }).map((_, i) => (
+          <Box key={`carousel-item-${i}`} height={200} width={200} />
+        )),
+      [length]
+    );
+
     return (
       <>
         <Button testID="LogLength" onPress={handleLogLength}>
@@ -25,11 +36,10 @@ describe('useCarousel', () => {
         <Button testID="ScrollTo" onPress={handleScrollTo}>
           Trigger ScrollTo
         </Button>
-        <Carousel carouselRef={carouselRef}>
-          {Array.from({ length }).map((_, i) => (
-            <Box key={`carousel-item-${i}`} height={200} width={200} />
-          ))}
-        </Carousel>
+        <Button testID="ScrollToEnd" onPress={handleScrollToEnd}>
+          Trigger ScrollToEnd
+        </Button>
+        <Carousel carouselRef={carouselRef} items={items} />
       </>
     );
   };
@@ -45,9 +55,15 @@ describe('useCarousel', () => {
     expect(spy).toHaveBeenCalledWith('Carousel length: 4');
   });
 
-  it('exposes scrollToIndex', async () => {
+  it('exposes scrollToId', async () => {
     const result = render(<MockCarousel length={3} />);
     fireEvent.press(result.getByTestId('ScrollTo'));
     expect(result.UNSAFE_getByType(ScrollView).instance.scrollTo).toHaveBeenCalled();
+  });
+
+  it('exposes scrollToEnd', async () => {
+    const result = render(<MockCarousel length={3} />);
+    fireEvent.press(result.getByTestId('ScrollToEnd'));
+    expect(result.UNSAFE_getByType(ScrollView).instance.scrollToEnd).toHaveBeenCalled();
   });
 });
