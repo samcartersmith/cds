@@ -71,8 +71,8 @@ export const Cell = memo(function Cell({
 
       {!!detail && (
         <Box
-          flexGrow={1}
-          flexShrink={1}
+          flexGrow={detailWidth ? undefined : 1}
+          flexShrink={detailWidth ? undefined : 1}
           alignItems="flex-end"
           justifyContent="flex-end"
           width={detailWidth}

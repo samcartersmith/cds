@@ -7,7 +7,7 @@ export interface CellCommonProps extends SharedProps {
   /* Media (icon, asset, image, etc) to display at the start of the cell. */
   media?: React.ReactElement<CellMediaProps>;
   /** Apply a fixed width to the detail (end). */
-  detailWidth?: number;
+  detailWidth?: number | string;
   /** Is the cell disabled? Will apply opacity and disable interaction. */
   disabled?: boolean;
   /** Reduce horizontal spacing for tighter layout requirements. */
