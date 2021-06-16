@@ -80,7 +80,7 @@ describe('Box', () => {
 
       expect(container.firstChild).toHaveAttribute('class', DEFAULT_CLASS);
 
-      rerender(<Box rounded>Child</Box>);
+      rerender(<Box borderRadius="standard">Child</Box>);
 
       expect(container.firstChild).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
     });

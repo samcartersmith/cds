@@ -68,7 +68,7 @@ describe('Box', () => {
 
   it('renders borders and radius', async () => {
     const { getByTestId } = render(
-      <Box testID="parent" bordered rounded>
+      <Box testID="parent" bordered borderRadius="standard">
         <Text>Child</Text>
       </Box>
     );

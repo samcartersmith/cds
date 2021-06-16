@@ -146,7 +146,7 @@ export const Lipsum = () => (
   <Story
     name="Bordered & rounded"
     decorators={[withStoryLabel('Bordered & rounded')]}
-    args={{ bordered: true, rounded: true, spacing: 2 }}
+    args={{ bordered: true, borderRadius: 'standard', spacing: 2 }}
   >
     {args => (
       <Box {...args}>
@@ -157,7 +157,7 @@ export const Lipsum = () => (
   <Story
     name="Rounded only"
     decorators={[withStoryLabel('Rounded only')]}
-    args={{ background: 'backgroundAlternate', rounded: true, spacing: 2 }}
+    args={{ background: 'backgroundAlternate', borderRadius: 'standard', spacing: 2 }}
   >
     {args => (
       <Box {...args}>

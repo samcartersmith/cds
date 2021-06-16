@@ -5,9 +5,9 @@ import {
   ElevationProvider,
   ElevationChildrenProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
-import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
+import { useBorderStyles } from '../hooks/useBorderStyles';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePalette } from '../hooks/usePalette';
@@ -51,14 +51,11 @@ export const BoxInner = memo(
   ({
     animated,
     background,
-    bordered,
-    borderRadius,
     children,
     dangerouslySetStyle,
     elevation,
     overflow = 'visible',
     opacity,
-    rounded,
     // Flex
     alignContent,
     alignItems = 'stretch',
@@ -69,6 +66,15 @@ export const BoxInner = memo(
     flexShrink,
     flexWrap = 'nowrap',
     justifyContent = 'flex-start',
+    // Border
+    bordered,
+    borderedTop,
+    borderedBottom,
+    borderedStart,
+    borderedEnd,
+    borderedHorizontal,
+    borderedVertical,
+    borderRadius,
     // Dimension
     height,
     maxHeight,
@@ -103,6 +109,17 @@ export const BoxInner = memo(
     ...props
   }: BoxProps) => {
     const palette = usePalette();
+    const borderStyles = useBorderStyles({
+      bordered,
+      borderedTop,
+      borderedBottom,
+      borderedStart,
+      borderedEnd,
+      borderedHorizontal,
+      borderedVertical,
+      borderRadius,
+      elevation,
+    });
     const elevationStyles = useElevationStyles(elevation);
     const spacingStyles = useSpacingStyles({
       spacing,
@@ -172,19 +189,6 @@ export const BoxInner = memo(
         style.backgroundColor = palette.background;
       }
 
-      if (borderRadius) {
-        style.borderRadius = borderRadii[borderRadius];
-      }
-
-      if (bordered) {
-        style.borderWidth = 1;
-        style.borderColor = palette.line;
-      }
-
-      if (rounded) {
-        style.borderRadius = borderRadii.standard;
-      }
-
       if (opacity) {
         style.opacity = opacity as number;
       }
@@ -194,10 +198,11 @@ export const BoxInner = memo(
       }
 
       return style;
-    }, [background, elevation, bordered, borderRadius, rounded, opacity, overflow, palette]);
+    }, [background, elevation, opacity, overflow, palette]);
     const style = useMemo(
       () =>
         [
+          borderStyles,
           elevationStyles,
           spacingStyles,
           offsetStyles,
@@ -209,6 +214,7 @@ export const BoxInner = memo(
           dangerouslySetStyle as ViewStyle,
         ].filter(Boolean),
       [
+        borderStyles,
         elevationStyles,
         spacingStyles,
         offsetStyles,

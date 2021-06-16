@@ -77,6 +77,8 @@ export interface BorderedStyles {
   borderedHorizontal?: boolean;
   /** Add a border to the top and bottom sides of the box. */
   borderedVertical?: boolean;
+  /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
+  borderRadius?: BorderRadius;
 }
 
 export interface BoxBaseProps
@@ -95,10 +97,6 @@ export interface BoxBaseProps
   children?: React.ReactNode;
   /** Direction in which to absolutely pin the box. */
   pin?: PinningDirection;
-  /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
-  borderRadius?: BorderRadius;
-  /** Round the corners of the box with `standard` borderRadius size. */
-  rounded?: boolean;
   /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
   elevation?: ElevationLevels;
 }
