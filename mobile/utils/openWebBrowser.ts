@@ -1,18 +1,20 @@
 import { defaultPalette as paletteConfig, Spectrum } from '@cbhq/cds-common';
-import { Alert, Linking, Platform } from 'react-native';
+import { Linking, Platform } from 'react-native';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 
 import { CustomTabsHelper } from './customTabsHelper';
 import { paletteValueToHex } from './palette';
 
-interface Options {
+export interface OpenWebBrowserOptions {
   spectrum: Spectrum;
   preventRedirectionIntoApp?: boolean;
   forceOpenOutsideApp?: boolean;
 }
 
-export const openWebBrowser = async (url: string, options: Options) => {
+export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions) => {
   const preventRedirectionIntoApp = options.preventRedirectionIntoApp || false;
+  const forceOpenOutsideApp = options.forceOpenOutsideApp || false;
+
   if (preventRedirectionIntoApp) {
     CustomTabsHelper.preventRedirectionIntoApp();
   }
@@ -40,13 +42,13 @@ export const openWebBrowser = async (url: string, options: Options) => {
   });
 
   try {
-    if (!options.forceOpenOutsideApp && (await InAppBrowser.isAvailable())) {
+    if (!forceOpenOutsideApp && (await InAppBrowser.isAvailable())) {
       await InAppBrowser.open(url, browserConfig);
     } else {
       await Linking.openURL(url);
     }
   } catch (err) {
     // TODO: Should output this to Bugsnag
-    Alert.alert(`An error occurred: ${err}`);
+    console.error(`An error occurred: ${err}`);
   }
 };

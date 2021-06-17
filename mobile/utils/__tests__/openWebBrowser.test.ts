@@ -1,5 +1,5 @@
 import { defaultPalette as paletteConfig } from '@cbhq/cds-common';
-import { Linking, Platform, Alert } from 'react-native';
+import { Linking, Platform } from 'react-native';
 import { InAppBrowser } from 'react-native-inappbrowser-reborn';
 
 import { CustomTabsHelper } from '../customTabsHelper';
@@ -19,7 +19,7 @@ describe('openWebBrowser', () => {
     const spyIsAvailable = jest.spyOn(InAppBrowser, 'isAvailable').mockImplementation(() => {
       return Promise.resolve(true);
     });
-    const spyInAppBrowserOpen = jest.spyOn(InAppBrowser, 'open');
+    const spyInAppBrowserOpen = jest.spyOn(InAppBrowser, 'open').mockImplementation();
     await openWebBrowser('www.google.com', {
       spectrum: 'dark',
       forceOpenOutsideApp: false,
@@ -28,7 +28,7 @@ describe('openWebBrowser', () => {
     expect(spyInAppBrowserOpen).toHaveBeenCalledTimes(1);
   });
   it('dark mode configuration is applied in browserConfig', async () => {
-    const selectPlatform = jest.spyOn(Platform, 'select');
+    const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
     await openWebBrowser('www.google.com', {
       spectrum: 'dark',
       forceOpenOutsideApp: false,
@@ -56,7 +56,7 @@ describe('openWebBrowser', () => {
     });
   });
   it('light mode configuration is applied in browserConfig', async () => {
-    const selectPlatform = jest.spyOn(Platform, 'select');
+    const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
     await openWebBrowser('www.google.com', {
       spectrum: 'light',
       forceOpenOutsideApp: false,
@@ -84,25 +84,14 @@ describe('openWebBrowser', () => {
     });
   });
   it('preventRedirectionIntoApp flag is configurable', async () => {
-    const spyPreventRedirection = jest.spyOn(CustomTabsHelper, 'preventRedirectionIntoApp');
+    const spyPreventRedirection = jest
+      .spyOn(CustomTabsHelper, 'preventRedirectionIntoApp')
+      .mockImplementation();
     await openWebBrowser('www.google.com', {
       spectrum: 'dark',
       preventRedirectionIntoApp: true,
       forceOpenOutsideApp: true,
     });
     expect(spyPreventRedirection).toHaveBeenCalledTimes(1);
-  });
-  it('mock an error', async () => {
-    const spyOpenURL = jest.spyOn(Linking, 'openURL').mockImplementation(() => {
-      return Promise.reject('App browser is not available');
-    });
-    const spyAlert = jest.spyOn(Alert, 'alert');
-
-    await openWebBrowser('www.google.com', {
-      spectrum: 'dark',
-      forceOpenOutsideApp: true,
-    });
-    expect(spyOpenURL).toHaveBeenCalled();
-    expect(spyAlert).toHaveBeenCalled();
   });
 });

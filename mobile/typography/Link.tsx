@@ -4,7 +4,7 @@ import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 import { GestureResponderEvent } from 'react-native';
 
-import { useOpenExternalUrl } from '../hooks/useOpenExternalUrl';
+import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
 import { TextProps } from './createText';
 import { TextBody } from './TextBody';
 import { TextCaption } from './TextCaption';
@@ -35,6 +35,12 @@ export interface LinkProps extends LinkBaseProps, SharedProps {
    * @default false
    * */
   forceOpenOutsideApp?: boolean;
+  /**
+   * Toggles whether we allow users to go back to app
+   * when they are in an external browser
+   * @default false
+   */
+  preventRedirectionIntoApp?: boolean;
 }
 
 export const Link = memo(
@@ -47,15 +53,21 @@ export const Link = memo(
     onPress,
     variant = 'headline',
     forceOpenOutsideApp = false,
+    preventRedirectionIntoApp = false,
   }: LinkProps) => {
-    const openUrl = useOpenExternalUrl(forceOpenOutsideApp);
+    const openUrl = useWebBrowserOpener();
 
     const openUrlOnPress = useCallback(
       (event: GestureResponderEvent) => {
         onPress?.(event);
-        if (to !== undefined) openUrl(to);
+        if (to !== undefined) {
+          openUrl(to, {
+            forceOpenOutsideApp,
+            preventRedirectionIntoApp,
+          });
+        }
       },
-      [openUrl, to, onPress]
+      [openUrl, to, onPress, forceOpenOutsideApp, preventRedirectionIntoApp]
     );
 
     const TextComponent = TYPOGRAPHY_MAP[variant];

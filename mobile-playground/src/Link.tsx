@@ -1,3 +1,4 @@
+import { LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 import { Link } from '@cbhq/cds-mobile/typography/Link';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
@@ -6,8 +7,6 @@ import { capitalize } from '@cbhq/cds-utils';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
-
-import { LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 
 const typographies = [
   'title1',
@@ -88,14 +87,31 @@ const LinkScreen = () => {
         </Link>
       </Example>
       <Example inline>
-        <TextHeadline>test forceOpenOutsideApp</TextHeadline>
+        <TextHeadline>Incorrectly formatted Link</TextHeadline>
+        <Link variant="title1" to="xxx" color="negative">
+          Console.error when incorrectly formatted link is passed in
+        </Link>
+      </Example>
+      <Example inline>
+        <TextHeadline>test forceOpenOutsideApp is set to true</TextHeadline>
         <Link
           variant="title1"
           forceOpenOutsideApp={true}
-          to="https://www.coinbase.com/"
+          to="https://www.google.com"
           color="negative"
         >
           Go to Coinbase outside of App
+        </Link>
+      </Example>
+      <Example inline>
+        <TextHeadline>test preventRedirectionIntoApp</TextHeadline>
+        <Link
+          variant="title1"
+          preventRedirectionIntoApp={true}
+          to="https://www.google.com"
+          color="negative"
+        >
+          Test PreventRedirectionIntoApp
         </Link>
       </Example>
       <Example>
