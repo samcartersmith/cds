@@ -160,6 +160,7 @@ export const createText = (name: Typography) => {
         {...props}
         selectable={selectable !== 'none'}
         style={style as TextStyle}
+        allowFontScaling={false}
       >
         {children}
       </TextComponent>

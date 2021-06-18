@@ -9,7 +9,9 @@ import type { CarouselItemContextValue } from './types';
 export const useCarouselItem = (): CarouselItemContextValue => {
   const context = useContext(CarouselItemContext);
   if (context === undefined) {
-    console.error('useCarouselItem: Cannot use `useCarouselItem` outside of Carousel component.');
+    if (process.env.NODE_ENV !== 'production') {
+      console.error('useCarouselItem: Cannot use `useCarouselItem` outside of Carousel component.');
+    }
     return { id: '-1', dismiss: noop };
   }
   return context;

@@ -1,0 +1,43 @@
+import { renderHook } from '@testing-library/react-hooks';
+import { AppStateStatus } from 'react-native';
+
+import { useAppState } from '../useAppState';
+
+describe('useAppState', () => {
+  const addListenerSpy = jest.fn();
+  const removeListenerSpy = jest.fn();
+
+  const mockCurrentAppState = (state: AppStateStatus) => {
+    jest.resetModules();
+    jest.doMock('react-native/Libraries/AppState/AppState', () => ({
+      currentState: state,
+      addEventListener: addListenerSpy,
+      removeEventListener: removeListenerSpy,
+    }));
+  };
+
+  it('returns AppState.currentState - active', () => {
+    mockCurrentAppState('active');
+    const { result } = renderHook(() => useAppState());
+    expect(result.current).toEqual('active');
+  });
+
+  it('returns AppState.currentState - inactive', () => {
+    mockCurrentAppState('inactive');
+    const { result } = renderHook(() => useAppState());
+    expect(result.current).toEqual('inactive');
+  });
+
+  it('adds an event listener for state changes', () => {
+    mockCurrentAppState('active');
+    renderHook(() => useAppState());
+    expect(addListenerSpy).toHaveBeenCalled();
+  });
+
+  it('removes event listener on unmount', () => {
+    mockCurrentAppState('inactive');
+    const { unmount } = renderHook(() => useAppState());
+    unmount();
+    expect(removeListenerSpy).toHaveBeenCalled();
+  });
+});
