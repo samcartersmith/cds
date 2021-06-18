@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.0 (6/17/2021, 05:25 PM PST)
+
+#### 💥 Breaking
+
+- Add a RootThemeProvider with device fontScale mapped to CDS scale. [#23725](https://github.cbhq.net/mono/repo/pull/23725), [CDS-448](https://jira.coinbase-corp.com/browse/CDS-448)
+
+#### 🐞 Fixes
+
+- Add new nav icon. [#23683](https://github.cbhq.net/mono/repo/pull/23683)
+
 ## 0.14.0 (6/16/2021, 11:57 AM PST)
 
 #### 💥 Breaking

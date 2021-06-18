@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.17.0 (6/17/2021, 05:25 PM PST)
+
+#### 💥 Breaking
+
+- Add a RootThemeProvider with device fontScale mapped to CDS scale. [#23725](https://github.cbhq.net/mono/repo/pull/23725), [CDS-448](https://jira.coinbase-corp.com/browse/CDS-448)
+- Update useOpenExternalUrl API. [#23642](https://github.cbhq.net/mono/repo/pull/23642)
+
+#### 🐞 Fixes
+
+- Add new nav icon. [#23683](https://github.cbhq.net/mono/repo/pull/23683)
+- Add node, react, and react-native ESLint configs. [#22869](https://github.cbhq.net/mono/repo/pull/22869)
+
 ## 0.16.0 (6/16/2021, 11:57 AM PST)
 
 #### 💥 Breaking

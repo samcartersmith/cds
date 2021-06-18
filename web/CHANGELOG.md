@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.13.1 (6/17/2021, 05:25 PM PST)
+
+#### 🐞 Fixes
+
+- Add new nav icon. [#23683](https://github.cbhq.net/mono/repo/pull/23683)
+
 ## 0.13.0 (6/16/2021, 11:57 AM PST)
 
 #### 💥 Breaking
