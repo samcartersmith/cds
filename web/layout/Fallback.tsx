@@ -35,7 +35,7 @@ export const Fallback = memo(function Fallback({
     <Box
       flexGrow={0}
       flexShrink={0}
-      width={percentage ? `${Math.min(width, 100)}%` : width}
+      width={percentage && typeof width === 'number' ? `${Math.min(width, 100)}%` : width}
       {...props}
     >
       <div className={fallback} style={style}>

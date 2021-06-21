@@ -3,11 +3,11 @@ import { useMemo } from 'react';
 import { borderRadius as borderRadii } from '../tokens/border';
 import { Shape } from '../types/Shape';
 
-export function useFallbackShape(shape: Shape, baseWidth: number) {
+export function useFallbackShape(shape: Shape, baseWidth: number | string) {
   const width = useMemo(() => {
     // When rectangle, lets randomize the width a bit so things are
     // a little less... uniform. Variety is nice.
-    if (shape === 'rectangle') {
+    if (shape === 'rectangle' && typeof baseWidth === 'number') {
       const quarter = Math.round(baseWidth / 4);
       const min = Math.max(baseWidth - quarter, 1);
       const max = baseWidth + quarter;

@@ -81,7 +81,7 @@ export const Fallback = memo(function Fallback({
   );
 
   const outputRange = useMemo(
-    () => (Number.isInteger(width) ? [-width, width] : [-400, 400]),
+    () => (typeof width === 'number' ? [-width, width] : [-400, 400]),
     [width]
   );
 
