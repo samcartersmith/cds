@@ -5,6 +5,7 @@ import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
 import { Animated, Text, TextStyle, TextProps as RNTextProps, StyleSheet } from 'react-native';
 
+import { fontScaleProps } from '../hooks/useDeviceScaleToCdsScale';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useTextAlign } from '../hooks/useTextAlign';
@@ -160,7 +161,7 @@ export const createText = (name: Typography) => {
         {...props}
         selectable={selectable !== 'none'}
         style={style as TextStyle}
-        allowFontScaling={false}
+        {...fontScaleProps}
       >
         {children}
       </TextComponent>

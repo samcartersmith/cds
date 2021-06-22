@@ -14,7 +14,9 @@ const mockDeviceScale = (fontScale: number) => {
 
 describe('useDeviceScaleToCdsScale', () => {
   it('returns correct CDS scale based on device font scale', () => {
-    for (const [cdsScale, deviceFontScale] of entries(deviceScaleMap)) {
+    for (const [cdsScale, deviceFontScale] of entries(deviceScaleMap).filter(([scale]) =>
+      ['large', 'xLarge', 'xxLarge', 'xxxLarge'].includes(scale)
+    )) {
       mockDeviceScale(deviceFontScale);
       const { result } = renderHook(() => useDeviceScaleToCdsScale());
       expect(result.current).toEqual(cdsScale);
@@ -24,19 +26,19 @@ describe('useDeviceScaleToCdsScale', () => {
   it('returns correct CDS scale if font scale is xSmall or below', () => {
     mockDeviceScale(deviceScaleMap.xSmall - 0.04);
     const { result } = renderHook(() => useDeviceScaleToCdsScale());
-    expect(result.current).toEqual('xSmall');
+    expect(result.current).toEqual('large');
   });
 
   it('returns correct CDS scale if font scale is small or below', () => {
     mockDeviceScale(deviceScaleMap.small - 0.04);
     const { result } = renderHook(() => useDeviceScaleToCdsScale());
-    expect(result.current).toEqual('small');
+    expect(result.current).toEqual('large');
   });
 
   it('returns correct CDS scale if font scale is medium or below', () => {
     mockDeviceScale(deviceScaleMap.medium - 0.04);
     const { result } = renderHook(() => useDeviceScaleToCdsScale());
-    expect(result.current).toEqual('medium');
+    expect(result.current).toEqual('large');
   });
 
   it('returns correct CDS scale if font scale is large or below', () => {

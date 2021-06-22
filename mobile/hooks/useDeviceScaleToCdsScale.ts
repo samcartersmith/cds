@@ -14,18 +14,23 @@ export const deviceScaleMap: Record<Scale, number> = {
   xxxLarge: 1.353,
 };
 
+/**
+ * For all Text and TextInputs we set allowFontScaling={true} and maxFontSizeMultiplier={1}.
+ * CDS handles everything above 1 and anything below 1 will use React Native's font scaling.
+ * This is temporary until we run a scale project to sort out how we want CDS scale to work with dense device scales.
+ */
+export const fontScaleProps = {
+  allowFontScaling: true,
+  maxFontSizeMultiplier: 1,
+} as const;
+
 /** Maps device font scale to CDS scale */
 export const useDeviceScaleToCdsScale = () => {
   const deviceScale = useDeviceFontScale();
 
   return useMemo(() => {
-    if (deviceScale <= deviceScaleMap.xSmall) {
-      return 'xSmall';
-    } else if (deviceScale <= deviceScaleMap.small) {
-      return 'small';
-    } else if (deviceScale <= deviceScaleMap.medium) {
-      return 'medium';
-    } else if (deviceScale <= deviceScaleMap.large) {
+    /** For xSmall through medium we return large until we can revist device to CDS scale logic. */
+    if (deviceScale <= deviceScaleMap.large) {
       return 'large';
     } else if (deviceScale <= deviceScaleMap.xLarge) {
       return 'xLarge';
