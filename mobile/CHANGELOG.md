@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.18.0 (6/22/2021, 11:48 AM PST)
+
+#### 💥 Breaking
+
+- Add allowFontScaling back but set maxFontSizeMultiplier to 1. [#24196](https://github.cbhq.net/mono/repo/pull/24196), [CDS-657](https://jira.coinbase-corp.com/browse/CDS-657)
+
+#### 🐞 Fixes
+
+- Made it so that OpenWebBrowserOptions is optional. [#24192](https://github.cbhq.net/mono/repo/pull/24192)
+- Supports strings. [#24130](https://github.cbhq.net/mono/repo/pull/24130)
+
 ## 0.17.0 (6/17/2021, 05:25 PM PST)
 
 #### 💥 Breaking

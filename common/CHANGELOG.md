@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.1 (6/22/2021, 11:48 AM PST)
+
+#### 🐞 Fixes
+
+- Supports strings. [#24130](https://github.cbhq.net/mono/repo/pull/24130)
+
 ## 0.15.0 (6/17/2021, 05:25 PM PST)
 
 #### 💥 Breaking
