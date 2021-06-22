@@ -9,7 +9,7 @@ import { parseUrl } from '../utils/urlUtil';
 export const useWebBrowserOpener = () => {
   const spectrum = useSpectrum();
   return useCallback(
-    async (url: string, options: Partial<OpenWebBrowserOptions>) => {
+    async (url: string, options?: Partial<OpenWebBrowserOptions>) => {
       const parsedUrl = parseUrl(url);
 
       switch (parsedUrl.protocol) {
@@ -17,9 +17,9 @@ export const useWebBrowserOpener = () => {
         case 'https':
           // Use custom handling for web URLs
           openWebBrowser(url, {
-            spectrum: options.spectrum ?? spectrum,
-            preventRedirectionIntoApp: options.preventRedirectionIntoApp || false,
-            forceOpenOutsideApp: options.forceOpenOutsideApp || false,
+            spectrum: options?.spectrum ?? spectrum,
+            preventRedirectionIntoApp: options?.preventRedirectionIntoApp || false,
+            forceOpenOutsideApp: options?.forceOpenOutsideApp || false,
           });
           break;
         default:

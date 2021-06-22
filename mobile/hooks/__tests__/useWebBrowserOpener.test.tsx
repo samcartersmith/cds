@@ -5,7 +5,22 @@ import { useWebBrowserOpener } from '../useWebBrowserOpener';
 
 const URL = 'https://www.coinbase.com';
 
+const DEFAULT_OPEN_WEB_BROWSER_OPTIONS = {
+  spectrum: 'light',
+  preventRedirectionIntoApp: false,
+  forceOpenOutsideApp: false,
+};
+
 describe('useWebBrowserOpener', () => {
+  it('optional openWebBrowser options work as expected', () => {
+    const { result } = renderHook(() => useWebBrowserOpener());
+    const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
+
+    result.current(URL);
+
+    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
+  });
+
   it('pass user specified options to openWebBrowser', () => {
     const { result } = renderHook(() => useWebBrowserOpener());
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
@@ -63,10 +78,6 @@ describe('useWebBrowserOpener', () => {
 
     result.current(URL, {});
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, {
-      spectrum: 'light',
-      preventRedirectionIntoApp: false,
-      forceOpenOutsideApp: false,
-    });
+    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
   });
 });
