@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import glob from 'fast-glob';
 import { existsSync, promises as fs } from 'fs';
 import path from 'path';

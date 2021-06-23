@@ -25,9 +25,8 @@ const distribute = ({ value, rangeA, rangeB, limit = false }: DistributeProps) =
 
   if (toLow < toHigh) {
     return result < toLow ? toLow : toHigh;
-  } else {
-    return result > toLow ? toLow : toHigh;
   }
+  return result > toLow ? toLow : toHigh;
 };
 
 export function calculateLetterSpacing(fontSize: number, unitless: boolean) {

@@ -3,7 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 
-export const illustration_manifest = {
+export const illustrationManifest = {
   svg: {
     '597:73': {
       variant: 'IllustrationHeroSquare',

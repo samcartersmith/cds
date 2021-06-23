@@ -1,6 +1,6 @@
 import type { ColorOptions, ColorProps, Color } from '@k-vyn/coloralgorithm/src/types';
 
-import { hueNames, hueSteps } from './Spectrum';
+import type { hueNames, hueSteps } from './Spectrum';
 
 export type ModeConfig = { properties: ColorProps; options: ColorOptions }[];
 export type HueName = typeof hueNames[number];

@@ -48,8 +48,11 @@ export const normalizeOptions = (type: PropItem['type']) => {
 
 export class PropertyDocgen {
   docgen: PropItem;
+
   webOptions: PropOptions;
+
   mobileOptions: PropOptions;
+
   status: PropStatus;
 
   constructor({ webOptions, mobileOptions, status, ...item }: CustomPropItem) {

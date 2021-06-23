@@ -20,7 +20,8 @@ import { errMsg, successMsg } from './utils';
 
 const ILLUSTRATION_FILE_ID = 'ay6SCdu5QMjKthzcoPtVOh';
 const NODE_ID = '527:531';
-type fileFormats = 'svg' | 'png';
+
+type FileFormat = 'svg' | 'png';
 
 const figmaClient = FigmaClient(CDS_PERSONAL_ACCESS_TOKEN);
 // Global Data
@@ -34,7 +35,7 @@ const manifestData: {
 const normalizeIllustration = (illustrationName: string): IllustrationProps | void => {
   const [type, spectrum, variant, name] = illustrationName.split('/');
 
-  if (type !== 'Illustration') return;
+  if (type !== 'Illustration') return undefined;
 
   return {
     variant: camelCase(variant),
@@ -62,52 +63,7 @@ const getComponents = async (): Promise<IllustrationComponent | null> => {
     return null;
   }
   spinner.stop();
-  return illustrationFileNode['components'];
-};
-
-const loadImagesLocally = async (
-  nodeIds: string[],
-  outDirPath: string,
-  exportFormat: fileFormats
-): Promise<void> => {
-  const spinner = ora(
-    `Getting image urls for ${nodeIds.length} illustrations from Figma\n`
-  ).start();
-
-  // Defining the different scales we want to illustrations to have
-  const SCALE_SIZES = exportFormat === 'png' ? [1, 2, 3] : [1];
-
-  // Create light and dark image directory from the given outDirPath if it
-  // does not already exist
-  if (!fs.existsSync(`${outDirPath}/light`) && !fs.existsSync(`${outDirPath}/dark`)) {
-    fs.mkdirSync(`${outDirPath}/light`, { recursive: true });
-    fs.mkdirSync(`${outDirPath}/dark`, { recursive: true });
-  }
-
-  await Promise.all(
-    SCALE_SIZES.map(async scale => {
-      const fileImageResponse = await figmaClient
-        .fileImages(ILLUSTRATION_FILE_ID, nodeIds, exportFormat, scale)
-        .catch(err => errMsg(spinner, err.message));
-      if (!fileImageResponse) return;
-
-      if (fileImageResponse.data.err) {
-        errMsg(spinner, fileImageResponse.data.err);
-        return;
-      }
-
-      // Start downloading images from Figma CDN
-      const loadImagePromiseArr = Object.entries(fileImageResponse.data.images).map(info => {
-        const [nodeId, imageURL] = info;
-
-        if (!nodeId || !manifestData) return;
-
-        return loadOneImage(imageURL, nodeId, outDirPath, spinner, scale, exportFormat);
-      });
-      return Promise.all(loadImagePromiseArr);
-    })
-  );
-  spinner.stop();
+  return illustrationFileNode.components;
 };
 
 const loadOneImage = (
@@ -116,7 +72,7 @@ const loadOneImage = (
   outDirPath: string,
   spinner: Ora,
   scale: number,
-  exportFormat: fileFormats
+  exportFormat: FileFormat
 ): Promise<void> => {
   const imageMetadata = manifestData[exportFormat][nodeId];
   const imageName = camelCase(imageMetadata.name);
@@ -155,8 +111,53 @@ const loadOneImage = (
     })
     .catch(err => {
       errMsg(spinner, err.message);
-      return;
     });
+};
+
+const loadImagesLocally = async (
+  nodeIds: string[],
+  outDirPath: string,
+  exportFormat: FileFormat
+): Promise<void> => {
+  const spinner = ora(
+    `Getting image urls for ${nodeIds.length} illustrations from Figma\n`
+  ).start();
+
+  // Defining the different scales we want to illustrations to have
+  const SCALE_SIZES = exportFormat === 'png' ? [1, 2, 3] : [1];
+
+  // Create light and dark image directory from the given outDirPath if it
+  // does not already exist
+  if (!fs.existsSync(`${outDirPath}/light`) && !fs.existsSync(`${outDirPath}/dark`)) {
+    fs.mkdirSync(`${outDirPath}/light`, { recursive: true });
+    fs.mkdirSync(`${outDirPath}/dark`, { recursive: true });
+  }
+
+  await Promise.all(
+    SCALE_SIZES.map(async scale => {
+      const fileImageResponse = await figmaClient
+        .fileImages(ILLUSTRATION_FILE_ID, nodeIds, exportFormat, scale)
+        .catch(err => errMsg(spinner, err.message));
+      if (!fileImageResponse) return undefined;
+
+      if (fileImageResponse.data.err) {
+        errMsg(spinner, fileImageResponse.data.err);
+        return undefined;
+      }
+
+      // Start downloading images from Figma CDN
+      const loadImagePromiseArr = Object.entries(fileImageResponse.data.images).map(info => {
+        const [nodeId, imageURL] = info;
+
+        if (!nodeId || !manifestData) return undefined;
+
+        return loadOneImage(imageURL, nodeId, outDirPath, spinner, scale, exportFormat);
+      });
+
+      return Promise.all(loadImagePromiseArr);
+    })
+  );
+  spinner.stop();
 };
 
 const getIllustrationNamesAndVariants = (
@@ -172,7 +173,7 @@ const getIllustrationNamesAndVariants = (
   const variants = new Set<string>();
 
   Object.entries(components).forEach(component => {
-    const [_, metadata] = component;
+    const [, metadata] = component;
     const props = normalizeIllustration(metadata.name);
     if (!props) return;
     const { name, variant } = props;
@@ -188,8 +189,8 @@ const getIllustrationNamesAndVariants = (
   });
 
   const toIllustrationNamesMap = (caseMethod: 'camelcase' | 'pascalcase') =>
-    Object.keys(illustrationNames).reduce((names, variant) => {
-      names[variant] = Array.from(illustrationNames[variant]).map(name => {
+    Object.keys(illustrationNames).reduce((acc, variant) => {
+      acc[variant] = Array.from(illustrationNames[variant]).map(name => {
         switch (caseMethod) {
           default:
             throw new Error(`usage: ${caseMethod} is invalid.`);
@@ -199,7 +200,7 @@ const getIllustrationNamesAndVariants = (
             return pascalCase(name);
         }
       });
-      return names;
+      return acc;
     }, {} as IllustrationNamesMap);
 
   // Prefix the variants with Illustration, and convert them to pascalCase
@@ -233,9 +234,9 @@ const genManifest = async (destPath: string, components: IllustrationComponent) 
     };
 
     if (isSvg) {
-      manifestData['svg'][nodeId] = nodeIdData;
+      manifestData.svg[nodeId] = nodeIdData;
     } else {
-      manifestData['png'][nodeId] = nodeIdData;
+      manifestData.png[nodeId] = nodeIdData;
     }
   });
 
@@ -248,9 +249,9 @@ const genManifest = async (destPath: string, components: IllustrationComponent) 
 };
 
 const createTypes = (names: IllustrationNamesMap) => {
-  const pascalCaseKeys = Object.keys(names).reduce((newKeyMap, oldKey) => {
-    newKeyMap[oldKey] = `Illustration${pascalCase(oldKey)}`;
-    return newKeyMap;
+  const pascalCaseKeys = Object.keys(names).reduce((acc, oldKey) => {
+    acc[oldKey] = `Illustration${pascalCase(oldKey)}`;
+    return acc;
   }, {} as { [key: string]: string });
 
   try {
@@ -270,10 +271,10 @@ const createTypes = (names: IllustrationNamesMap) => {
 
 const createConstants = (names: IllustrationNamesMap, outPaths: string[]) => {
   try {
-    outPaths.forEach(path =>
+    outPaths.forEach(dest =>
       generateFromTemplate({
         template: 'objectMap.ejs',
-        dest: path,
+        dest,
         data: names,
       })
     );
@@ -282,7 +283,7 @@ const createConstants = (names: IllustrationNamesMap, outPaths: string[]) => {
   }
 };
 
-const getDarkImgPath = (name: string, fileFormat: fileFormats, outFullDirPath: string) => {
+const getDarkImgPath = (name: string, fileFormat: FileFormat, outFullDirPath: string) => {
   if (fs.existsSync(`${outFullDirPath}/images/dark/${name}/${name}.${fileFormat}`)) {
     return `require("./images/dark/${name}/${name}.${fileFormat}")`;
   }
@@ -293,7 +294,7 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
   const spinner = ora(`Start creating relative path map`).start();
 
   const allNames = Object.keys(names).reduce(
-    (allNames, name) => allNames.concat(names[name]),
+    (acc, name) => acc.concat(names[name]),
     [] as string[]
   );
 
@@ -301,11 +302,11 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
 
   const paths = reduce(
     allNames,
-    (pathsDic, name) => {
+    (acc, name) => {
       try {
         const fileFormat = svgWhitelist.includes(name) ? 'svg' : 'png';
 
-        pathsDic[`"${name}"`] = {
+        acc[`"${name}"`] = {
           light: `require("./images/light/${name}/${name}.${fileFormat}")`,
           dark: getDarkImgPath(name, fileFormat, outFullDirPath),
           fileFormat: `"${fileFormat}"`,
@@ -313,7 +314,7 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
       } catch (err) {
         errMsg(spinner, err);
       }
-      return pathsDic;
+      return acc;
     },
     {} as {
       [key: string]: {
@@ -344,8 +345,8 @@ const main = async () => {
     await genManifest('codegen/illustrations/illustration_manifest.ts', components);
     const outDirPath = await getSourcePath('mobile/illustrations/images');
 
-    await loadImagesLocally(Object.keys(manifestData['png']), outDirPath, 'png');
-    await loadImagesLocally(Object.keys(manifestData['svg']), outDirPath, 'svg');
+    await loadImagesLocally(Object.keys(manifestData.png), outDirPath, 'png');
+    await loadImagesLocally(Object.keys(manifestData.svg), outDirPath, 'svg');
     console.log('All images loaded');
     createTypes(camelCaseNames);
     createConstants(camelCaseNames, ['mobile-playground/src/data/illustrationData.ts']);

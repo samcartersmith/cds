@@ -39,7 +39,7 @@ const categorizedIconNames: {
 const normalizeIconName = (imageName: string): IconName | void => {
   const [type, specificName, state] = imageName.split('/');
   if (type !== 'Icon' && type !== 'NavigationIcon') {
-    return;
+    return undefined;
   }
 
   const [name, size] = specificName.split('_');
@@ -69,7 +69,7 @@ const createCategorizedNameType = (): {
   return toCategoryArrMap;
 };
 
-(async function () {
+(async function syncIcons() {
   const { nameSet, sizeMap } = createIconSet();
   const spinner = ora(
     `Synchronizing ${chalk.bold.blueBright('CDS Icons')} with figma file ${chalk.bold(
@@ -95,14 +95,14 @@ const createCategorizedNameType = (): {
     // Filter out non icon components
     const iconsInfo: { [key: string]: IconName } = {};
     const iconComponents: { [key: string]: ComponentMetadata } = {};
-    for (const id in components) {
+    Object.keys(components).forEach(id => {
       const component = components[id];
       const info = normalizeIconName(component.name);
       if (info) {
         iconsInfo[id] = info;
         iconComponents[id] = component;
       }
-    }
+    });
     createCategorizedNameType();
 
     const iconIds = Object.keys(iconsInfo);
@@ -143,8 +143,8 @@ const createCategorizedNameType = (): {
 
     const { unicodeMap, lastUnicode } = createUnicodeMap(nameSet);
     entries(unicodeMap).forEach(([name, sizes]) => {
-      for (const size in sizes) {
-        const unicode = sizes[size] as string;
+      Object.keys(sizes).forEach(size => {
+        const unicode = sizes[Number(size)] as string;
         const fileName = `${unicode}-${name}-${size}.svg`;
         if (sizeMap[size][name]) {
           writePromises.push(
@@ -153,22 +153,22 @@ const createCategorizedNameType = (): {
         } else {
           throw new Error(`Please update manifest to remove or rename ${name}`);
         }
-      }
+      });
     });
 
     const toCategoryArrMap = createCategorizedNameType();
 
     const newTypeNamesMap = (type: 'pascalCase' | 'camelCase') => {
-      return Object.keys(toCategoryArrMap).reduce((newArrMap, oldKey) => {
+      return Object.keys(toCategoryArrMap).reduce((acc, oldKey) => {
         if (type === 'camelCase') {
-          newArrMap[oldKey] = camelCase(`${oldKey} Names`);
+          acc[oldKey] = camelCase(`${oldKey} Names`);
         }
 
         if (type === 'pascalCase') {
-          newArrMap[oldKey] = pascalCase(`${oldKey} name`);
+          acc[oldKey] = pascalCase(`${oldKey} name`);
         }
 
-        return newArrMap;
+        return acc;
       }, {} as { [key: string]: string });
     };
 
@@ -182,7 +182,7 @@ const createCategorizedNameType = (): {
       })
     );
 
-    delete toCategoryArrMap['NavigationIconInternal'];
+    delete toCategoryArrMap.NavigationIconInternal;
 
     const iconData = {
       iconSizes: ['xs', 's', 'm', 'l'],
@@ -232,8 +232,6 @@ const createCategorizedNameType = (): {
         Object.keys(iconComponents).length
       } icons to ${OUT_DIR}.`
     );
-
-    return { lastUnicode, unicodeMap };
   } catch (error) {
     spinner.fail(`${chalk.redBright('failed')}`);
     console.error(error.message);

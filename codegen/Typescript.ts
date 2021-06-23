@@ -15,6 +15,7 @@ const templates = {
       Spectrum: Spectrum.modes,
       SpectrumHue: Spectrum.hueNames,
       SpectrumHueStep: Spectrum.hueSteps,
+      // eslint-disable-next-line no-template-curly-in-string
       SpectrumAlias: '`${SpectrumHue}${SpectrumHueStep}`',
       SpectrumAliasWithOpacity: 'readonly [SpectrumAlias, number]',
     },

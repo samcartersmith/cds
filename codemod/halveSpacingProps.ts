@@ -51,6 +51,7 @@ function convertNumericValue(
       // Percentages, etc
       return;
     case 'NumericLiteral':
+      // eslint-disable-next-line no-param-reassign
       node.value = halveSpacing(node.value);
       return;
     case 'UnaryExpression':
@@ -67,9 +68,9 @@ function convertNumericValue(
     case 'Identifier':
       if (node.name === 'undefined' || node.name === 'gutter' || node.name === 'offsetGutter') {
         return;
-      } else {
-        throw new Error(`Unknown identifier "${node.name}".`);
       }
+      throw new Error(`Unknown identifier "${node.name}".`);
+
     default:
       throw new Error(`Unknown type "${(node as any).type}".`);
   }

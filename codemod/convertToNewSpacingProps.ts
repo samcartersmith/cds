@@ -82,6 +82,7 @@ function convertArrayToProps(mod: Codemod, array: ArrayExpression): JSXAttribute
   const props: JSXAttribute[] = [];
 
   switch (array.elements.length) {
+    default:
     case 1:
       props.push(createProp(mod, array.elements[0], 'spacing'));
       break;
@@ -160,6 +161,8 @@ function convertNumericValue(
         convertNumericValue(el as NumericLiteral);
       });
       break;
+    default:
+      break;
   }
 }
 
@@ -178,14 +181,14 @@ export default function convertToNewSpacingProps(
   }
 
   if (compNames.length === 0) {
-    return;
+    return undefined;
   }
 
   // Find all JSX elements with the found names
   const elements = mod.findJsxElementsByName(compNames);
 
   if (elements.length === 0) {
-    return;
+    return undefined;
   }
 
   // Find all constants that may be used as spacing references
@@ -225,7 +228,7 @@ export default function convertToNewSpacingProps(
 
     el.openingElement.attributes.forEach((attr, index) => {
       if (
-        attr.type == 'JSXSpreadAttribute' ||
+        attr.type === 'JSXSpreadAttribute' ||
         (attr.type === 'JSXAttribute' && attr.name.name !== 'spacing') ||
         !attr.value
       ) {

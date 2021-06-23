@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import {
   FileInfo,
   API,
@@ -40,10 +41,14 @@ function fromValueToAST(cs: JSCodeshift, value: PropValue) {
     case 'object': {
       if (value instanceof RegExp) {
         return cs.regExpLiteral(value.source, value.flags);
-      } else if (value === null) {
+      }
+      if (value === null) {
         return cs.nullLiteral();
       }
+      break;
     }
+    default:
+      return null;
   }
 
   // Remove the node

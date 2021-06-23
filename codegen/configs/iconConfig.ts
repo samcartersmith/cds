@@ -1,4 +1,3 @@
-/* eslint-disable id-length */
 const scaleMap1 = { l: 24, m: 16, s: 12, xs: 8 } as const;
 const scaleMap2 = { l: 32, m: 24, s: 16, xs: 12 } as const;
 

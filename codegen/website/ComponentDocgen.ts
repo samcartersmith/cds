@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { pascalCase } from '@cbhq/cds-utils';
 import { ComponentDoc, PropItem } from 'react-docgen-typescript';
 
@@ -21,9 +22,13 @@ const isExtendedFromLib = (prop: PropItem) => {
 
 export class ComponentDocgen {
   slug: string;
+
   displayName: string;
+
   docgen: Docgen;
+
   web: PropItemWithOptions[] | undefined;
+
   mobile: PropItemWithOptions[] | undefined;
 
   constructor(params: Docgen) {
@@ -74,7 +79,7 @@ export class ComponentDocgen {
   get sharedProps() {
     const sharedCopy = [];
     if (this.web === undefined || this.mobile === undefined) {
-      return;
+      return undefined;
     }
     for (const webVersion of this.web) {
       const mobileVersion = this.findProp(this.mobile, webVersion.name);
@@ -98,7 +103,7 @@ export class ComponentDocgen {
   ) {
     const platformProps = this[platform];
     if (platformProps === undefined) {
-      return;
+      return undefined;
     }
     const platformSpecificProps = [];
     for (const prop of platformProps) {

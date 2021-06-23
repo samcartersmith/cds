@@ -26,7 +26,7 @@ export const spectrumRgbArrayMap = mapValues(spectrumModes, (_, mode) =>
 
 export const Spectrum = {
   css: mapValues(spectrumRgbStringMap, (_, spectrum) =>
-    mapKeys(spectrumRgbStringMap[spectrum], (_, key) => toCssVar(key))
+    mapKeys(spectrumRgbStringMap[spectrum], (_2, key) => toCssVar(key))
   ),
   native: spectrumRgbArrayMap,
   hueSteps,

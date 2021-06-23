@@ -47,14 +47,14 @@ export default function addDefaultProps(
   }
 
   if (compNames.length === 0) {
-    return;
+    return undefined;
   }
 
   // Find all JSX elements with the found names
   const elements = mod.findJsxElementsByName(compNames);
 
   if (elements.length === 0) {
-    return;
+    return undefined;
   }
 
   const propsToAdd = JSON.parse(defaultProps as string);
@@ -70,7 +70,7 @@ export default function addDefaultProps(
     // Add default spacing props if no spacing props are applied
     if (!spacingProps) {
       // To check the source code string console.log(mod.toSource(options).slice(el.openingElement.start, el.openingElement.end));
-      Object.entries(propsToAdd).map(([name, value]) => {
+      Object.entries(propsToAdd).forEach(([name, value]) => {
         el.openingElement.attributes.unshift(
           mod.createNode(cs => cs.jsxAttribute(cs.jsxIdentifier(name), getPropType(cs, value)))
         );

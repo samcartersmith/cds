@@ -38,9 +38,9 @@ export const createSpectrum = <T extends ColorOutput>(mode: keyof typeof modes, 
   return hueSetForMode.reduce((prev, next) => {
     return {
       ...prev,
-      ...next.reduce((prev, { name, colors }) => {
+      ...next.reduce((prevInner, { name, colors }) => {
         return {
-          ...prev,
+          ...prevInner,
           ...createStepsForHue(name, colors),
         };
       }, emptyObject),

@@ -13,7 +13,7 @@ export const buildTemplates = async (templates: TemplateMap) => {
 
   try {
     Object.entries(templates).forEach(([template, items]) => {
-      items.map(({ dest, data, config = {} }) => {
+      items.forEach(({ dest, data, config = {} }) => {
         templateInputs.push({
           template,
           dest,

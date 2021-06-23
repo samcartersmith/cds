@@ -139,7 +139,7 @@ export default function migrateToDeepImports(
   });
 
   if (!originalImportPath) {
-    return;
+    return undefined;
   }
 
   // Separate to individual imports

@@ -16,7 +16,7 @@ import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
 import { buildTemplates } from './utils/buildTemplates';
 
-(async function () {
+(async function codegen() {
   const templates = {
     'lottieStyles.ejs': [
       {

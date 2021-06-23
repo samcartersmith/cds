@@ -1,7 +1,7 @@
 import { ComponentDoc } from 'react-docgen-typescript';
 
-import { ComponentDocgen } from './ComponentDocgen';
-import { CDS_SUB_DIRS } from './constants';
+import type { ComponentDocgen } from './ComponentDocgen';
+import type { CDS_SUB_DIRS } from './constants';
 
 export type Platform = 'web' | 'mobile';
 export type SubDir = typeof CDS_SUB_DIRS[number];

@@ -107,7 +107,7 @@ const prepareTemplate =
   (template?: string) =>
   ({ subDir, displayName, data }: ComponentDocgenResponse) => {
     const kebabCaseName = getKebabName(displayName);
-    const fileName = template ? template : kebabCaseName;
+    const fileName = template || kebabCaseName;
     const dest = `${DOCS_DIR}/${subDir}/${displayName}/${fileName}.mdx`;
     return { dest, data };
   };
@@ -131,7 +131,7 @@ const flattenTemplatesMap = (
   return { ...prev, [displayName]: data };
 };
 
-(async function () {
+(async function buildWebsite() {
   const subDirFiles = await Promise.all(CDS_SUB_DIRS.map(getSubDirFiles('web')));
   const docgenData = subDirFiles.reduce(
     prepareDocgen({

@@ -27,6 +27,7 @@ export const fillMissingIcons = (nameSet: Set<string>, sizeMap: SizeMap) => {
         nextSize = iconPixelSizes[nextIndex];
       }
 
+      // eslint-disable-next-line no-param-reassign
       sizeMap[size][name] = sizeMap[nextSize][name];
     });
 

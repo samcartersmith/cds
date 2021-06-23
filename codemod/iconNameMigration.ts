@@ -163,7 +163,7 @@ export default function replaceOldNameWithNewName(
     .concat(mod.findJsxElementsByName('IconButton'));
 
   if (elements.length === 0) {
-    return;
+    return undefined;
   }
 
   elements.forEach(el => {
@@ -175,7 +175,10 @@ export default function replaceOldNameWithNewName(
           if (attr.value.type === 'StringLiteral') {
             const oldName = attr.value.value;
             // If it does not exist in mapping, ignore
-            if (oldName in iconNameMap) attr.value.value = iconNameMap[oldName];
+            if (oldName in iconNameMap) {
+              // eslint-disable-next-line no-param-reassign
+              attr.value.value = iconNameMap[oldName];
+            }
           }
         }
       }

@@ -9,6 +9,25 @@ import {
   typographyScaleMapForMobile,
 } from './generateTypeStyles';
 
+const mdTable = ([header, ...rows]: string[][]) => {
+  const numCol = header.length;
+  header.unshift('', '');
+  header.push('');
+  const divider = Array(numCol).fill('---');
+  divider.unshift('');
+  divider.push('');
+  const tableBody = rows.map(row => {
+    row.unshift('');
+    row.push('');
+    return `${row.join(' | ')}`;
+  });
+
+  return `${header.join(' | ')}
+  ${divider.join(' | ')}
+  ${tableBody.join('\n')}
+  `;
+};
+
 export const Type = {
   mobile: typographyScaleMapForMobile,
   pascalCaseConfig: typographyPascalCaseConfig,
@@ -33,23 +52,4 @@ export const Type = {
       ...tableBody,
     ]);
   },
-};
-
-const mdTable = ([header, ...rows]: string[][]) => {
-  const numCol = header.length;
-  header.unshift('', '');
-  header.push('');
-  const divider = Array(numCol).fill('---');
-  divider.unshift('');
-  divider.push('');
-  const tableBody = rows.map(row => {
-    row.unshift('');
-    row.push('');
-    return `${row.join(' | ')}`;
-  });
-
-  return `${header.join(' | ')}
-  ${divider.join(' | ')}
-  ${tableBody.join('\n')}
-  `;
 };

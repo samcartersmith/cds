@@ -7,9 +7,9 @@ export type SizeMap = Record<string, SvgPathMap | GlyphMap>;
 
 export const createIconSet = () => {
   const nameSet = new Set<string>();
-  const sizeMap = iconPixelSizes.reduce((obj, size) => {
-    obj[size] = {};
-    return obj;
+  const sizeMap = iconPixelSizes.reduce((acc, size) => {
+    acc[size] = {};
+    return acc;
   }, {} as SizeMap);
 
   return { nameSet, sizeMap };

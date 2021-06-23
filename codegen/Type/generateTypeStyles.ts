@@ -6,7 +6,7 @@ import {
   fontWeights,
 } from 'eng/shared/design-system/codegen/configs/typographyConfig';
 
-import { DEFAULT_SCALE, scaleConfig } from '../configs/scaleConfig';
+import { scaleConfig } from '../configs/scaleConfig';
 import { calculateLetterSpacing, calculateMinFontSize, round } from './utils';
 
 type FontFamily = 'Graphik' | 'Inter';
@@ -115,10 +115,10 @@ export const typographyScaleMapForWeb = mapValues(scaleConfig, scaleNumber =>
 
 export const typographyScaleMapWithCssVariables = mapValues(scaleConfig, (_, scaleName) => {
   const textVariants = mapValues(typographyScaleMapForWeb[scaleName], (stylesObject, variantName) =>
-    mapKeys(stylesObject, (_, cssProperty) => toCssVar(`${variantName}-${cssProperty}` as const))
+    mapKeys(stylesObject, (_2, cssProperty) => toCssVar(`${variantName}-${cssProperty}` as const))
   );
 
-  return Object.entries(textVariants).reduce((prev, [_, next]) => {
+  return Object.entries(textVariants).reduce((prev, [, next]) => {
     return {
       ...prev,
       ...next,
@@ -129,12 +129,12 @@ export const typographyScaleMapWithCssVariables = mapValues(scaleConfig, (_, sca
 export const typographyCss = mapValues(
   // Smaller scales (< large) have uppercase text-transform for small font size typography styles.
   // We want to make sure the generated textStyles include those declarations.
-  typographyScaleMapForWeb['xSmall'],
+  typographyScaleMapForWeb.xSmall,
   (stylesObject, variantName) => ({
     ...mapValues(stylesObject, (_, cssProperty) =>
       toCssVarFn(`${variantName}-${cssProperty}` as const)
     ),
-    'font-family': cssFontFamilies[typographyConfig[variantName]['fontFamily']],
+    'font-family': cssFontFamilies[typographyConfig[variantName].fontFamily],
   })
 );
 

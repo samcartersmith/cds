@@ -62,6 +62,7 @@ export default function migrateRNDSImports(
     importPath = path;
 
     // Extract and remove specifiers
+    // eslint-disable-next-line no-param-reassign
     path.node.specifiers = path.node.specifiers.filter(spec => {
       if (spec.type !== 'ImportSpecifier') {
         return true;
@@ -77,7 +78,7 @@ export default function migrateRNDSImports(
   });
 
   if (!importPath) {
-    return;
+    return undefined;
   }
 
   addImport(mod, importPath, layoutImports);
