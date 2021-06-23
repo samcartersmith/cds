@@ -1,15 +1,21 @@
 import React, { memo } from 'react';
 
-import { CellProps } from '@cbhq/cds-common';
+import { CellBaseProps } from '@cbhq/cds-common';
+import { ViewProps } from 'react-native';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { Pressable } from '../system/Pressable';
+import { Pressable, LinkableProps } from '../system/Pressable';
 import { CellMedia } from './CellMedia';
 import { MediaFallback } from './MediaFallback';
 
-export type { CellProps };
+export interface CellSharedProps extends LinkableProps {
+  /** Measure the dimensions of the cell. */
+  onLayout?: ViewProps['onLayout'];
+}
+
+export interface CellProps extends CellBaseProps, CellSharedProps {}
 
 export const Cell = memo(function Cell({
   accessory,
@@ -21,6 +27,7 @@ export const Cell = memo(function Cell({
   intermediary,
   media,
   minHeight,
+  onLayout,
   onPress,
   reduceHorizontalSpacing,
   selected,
@@ -115,6 +122,7 @@ export const Cell = memo(function Cell({
       minHeight={minHeight}
       spacingVertical={1}
       spacingHorizontal={3}
+      onLayout={onLayout}
     >
       {content}
     </Box>

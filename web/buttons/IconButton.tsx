@@ -12,8 +12,6 @@ import { Pressable, PressableProps } from '../system/Pressable';
 
 export interface IconButtonProps extends IconButtonBaseProps, PressableProps, SharedProps {
   as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
-  /** URL that this button links to when pressed. */
-  to?: string;
 }
 
 export const IconButton = forwardRef(
@@ -54,7 +52,7 @@ export const IconButton = forwardRef(
         onPress={onPress}
         style={style}
         ref={ref}
-        href={to}
+        to={to}
       >
         <Icon name={name} size="s" color={color} />
       </Pressable>

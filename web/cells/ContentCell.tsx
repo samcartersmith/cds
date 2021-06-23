@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import type { ContentCellProps } from '@cbhq/cds-common/types';
+import type { ContentCellBaseProps } from '@cbhq/cds-common/types';
 
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
@@ -11,7 +11,7 @@ import { TextLabel2 } from '../typography/TextLabel2';
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
-export type { ContentCellProps };
+export interface ContentCellProps extends ContentCellBaseProps, CellSharedProps {}
 
 export const ContentCell = memo(function ContentCell({
   accessory,
@@ -22,9 +22,8 @@ export const ContentCell = memo(function ContentCell({
   meta,
   selected,
   subtitle,
-  onPress,
   ...props
-}: ContentCellProps & CellSharedProps) {
+}: ContentCellProps) {
   if (process.env.NODE_ENV !== 'production' && meta && !title && !subtitle) {
     console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
   }
@@ -39,7 +38,6 @@ export const ContentCell = memo(function ContentCell({
       media={media}
       disabled={disabled}
       selected={selected}
-      onPress={onPress}
     >
       <VStack width="100%">
         {(title || subtitle) && (

@@ -8,11 +8,16 @@ import { buttonResets } from '../styles/resetStyles';
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
 
-export interface PressableProps extends React.AriaAttributes, SharedProps {
-  /** Is the element currenty loading. */
-  loading?: boolean;
+export interface LinkableProps {
   /** Callback fired when the element is pressed. */
   onPress?: React.MouseEventHandler;
+  /** URL that this links to when pressed. */
+  to?: string;
+}
+
+export interface PressableProps extends React.AriaAttributes, SharedProps, LinkableProps {
+  /** Is the element currenty loading. */
+  loading?: boolean;
 }
 
 export interface PressableInternalProps

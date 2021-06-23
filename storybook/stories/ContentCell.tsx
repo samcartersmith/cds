@@ -1,9 +1,14 @@
-import { ContentCellProps, CellMediaProps } from '@cbhq/cds-common';
+import { ContentCellBaseProps, CellMediaProps } from '@cbhq/cds-common';
 
 import { mockAsset } from './constants';
 
 export function createStories(
-  ContentCell: React.ComponentType<ContentCellProps>,
+  ContentCell: React.ComponentType<
+    ContentCellBaseProps & {
+      onPress?: () => void;
+      to?: string;
+    }
+  >,
   CellMedia: React.ComponentType<CellMediaProps>
 ) {
   const Content = () => (
@@ -26,7 +31,7 @@ export function createStories(
 
   const PressableContent = () => (
     <>
-      <ContentCell title="Title" onPress={() => {}} />
+      <ContentCell title="Title" to="#" onPress={() => {}} />
 
       <ContentCell title="Title" subtitle="Subtitle" onPress={() => {}} />
 
@@ -36,6 +41,7 @@ export function createStories(
         description="Description"
         subtitle="Subtitle"
         onPress={() => {}}
+        to="#"
         reduceHorizontalSpacing
       />
 

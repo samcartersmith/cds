@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
 
-import { ListCellProps } from '@cbhq/cds-common';
+import { ListCellBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
 
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
-import { Cell } from './Cell';
+import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 
-export type { ListCellProps };
+export interface ListCellProps extends ListCellBaseProps, CellSharedProps {}
 
 export const ListCell = memo(function ListCell({
   accessory,

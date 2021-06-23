@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
 
-import { ContentCellProps } from '@cbhq/cds-common';
+import { ContentCellBaseProps } from '@cbhq/cds-common';
 
 import { Box, HStack, VStack } from '../layout';
 import { TextHeadline, TextBody, TextLabel2 } from '../typography';
-import { Cell } from './Cell';
+import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
-export type { ContentCellProps };
+export interface ContentCellProps extends ContentCellBaseProps, CellSharedProps {}
 
 export const ContentCell = memo(function ContentCell({
   accessory,
@@ -18,7 +18,6 @@ export const ContentCell = memo(function ContentCell({
   meta,
   selected,
   subtitle,
-  onPress,
   ...props
 }: ContentCellProps) {
   if (process.env.NODE_ENV !== 'production' && meta && !title && !subtitle) {
@@ -35,7 +34,6 @@ export const ContentCell = memo(function ContentCell({
       media={media}
       disabled={disabled}
       selected={selected}
-      onPress={onPress}
     >
       <VStack>
         {Boolean(title || subtitle) && (

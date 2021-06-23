@@ -32,7 +32,6 @@ export interface NavigationListItemProps extends PressableProps {
   active?: boolean;
   icon?: IconName;
   label: string;
-  to?: string;
   badge?: BadgeValue;
   as?: React.ComponentType<NavigationListItemLinkProps>;
 }
@@ -104,7 +103,7 @@ export const NavigationListItem = memo(
       <li>
         <Tooltip content={label} disabled={isMobileMenuVisible || isExpanded} placement="right">
           {tooltipProps => {
-            const enhancedProps: NavigationListItemLinkProps = {
+            const enhancedProps = {
               ...tooltipProps,
               className: cx(flexStyles, spacingStyles, sidebarItemStyles),
               onPress,

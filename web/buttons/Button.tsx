@@ -28,10 +28,7 @@ export interface ButtonProps
       | 'unstable_clickOnSpace'
       | 'unstable_system'
       | 'wrapElement'
-    > {
-  /** URL that this button links to when pressed. */
-  to?: string;
-}
+    > {}
 
 export const Button = forwardRef(function Button(
   {
@@ -80,7 +77,7 @@ export const Button = forwardRef(function Button(
       style={style}
       type={type}
       ref={ref}
-      href={to}
+      to={to}
     >
       {startIcon && (
         <span className={buttonStyles.startIcon}>

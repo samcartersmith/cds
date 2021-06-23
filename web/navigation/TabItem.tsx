@@ -18,7 +18,6 @@ export const TabItem = memo(function TabItem({ label, active, value: _, ...props
 
   return (
     <Pressable
-      as="button"
       backgroundColor={colorAlias}
       borderColor={colorAlias}
       borderRadius="pill"

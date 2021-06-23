@@ -14,11 +14,9 @@ export interface CellCommonProps extends SharedProps {
   reduceHorizontalSpacing?: boolean;
   /** Is the cell selected? Will apply a background and selected accessory. */
   selected?: boolean;
-  /** Callback fired when the cell is pressed. */
-  onPress?: () => void;
 }
 
-export interface CellProps extends CellCommonProps, SpacingProps {
+export interface CellBaseProps extends CellCommonProps, SpacingProps {
   accessory?: React.ReactElement<CellAccessoryProps>;
   alignItems?: 'center' | 'flex-start';
   children: React.ReactNode;
@@ -65,7 +63,7 @@ export interface CellMediaOtherProps extends SharedProps {
 
 export type CellMediaProps = CellMediaIconProps | CellMediaOtherProps;
 
-export interface ContentCellProps extends CellCommonProps {
+export interface ContentCellBaseProps extends CellCommonProps {
   /** Accessory to display at the end of the cell. */
   accessory?: CellAccessoryType;
   /** Description of content. Content will wrap accordingly. */
@@ -91,7 +89,7 @@ export interface ContentCellFallbackProps {
   title?: boolean;
 }
 
-export interface ListCellProps extends CellCommonProps, CellDetailProps {
+export interface ListCellBaseProps extends CellCommonProps, CellDetailProps {
   /** Accessory to display at the end of the cell. */
   accessory?: CellAccessoryType;
   /** Interactive action, like a CTA or form element. Cannot be used alongside `onPress`. */

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
-import type { ListCellProps } from '@cbhq/cds-common/types';
+import type { ListCellBaseProps } from '@cbhq/cds-common/types';
 
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
@@ -11,7 +11,7 @@ import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 
-export type { ListCellProps };
+export interface ListCellProps extends ListCellBaseProps, CellSharedProps {}
 
 export const ListCell = memo(function ListCell({
   accessory,
@@ -24,10 +24,9 @@ export const ListCell = memo(function ListCell({
   selected,
   subdetail,
   variant,
-  onPress,
   ...props
-}: ListCellProps & CellSharedProps) {
-  if (process.env.NODE_ENV !== 'production' && onPress && action) {
+}: ListCellProps) {
+  if (process.env.NODE_ENV !== 'production' && action && (props.to || props.onPress)) {
     console.error(
       'ListCell: Cannot use `onPress` and `action` together. Unable to nest pressables.'
     );
@@ -50,7 +49,6 @@ export const ListCell = memo(function ListCell({
       disabled={disabled}
       minHeight={minHeight}
       selected={selected}
-      onPress={onPress}
     >
       <VStack>
         {title && <TextHeadline as="div">{title}</TextHeadline>}

@@ -3,13 +3,18 @@ import {
   CellMediaProps,
   ControlBaseProps,
   IconButtonBaseProps,
-  ListCellProps,
+  ListCellBaseProps,
 } from '@cbhq/cds-common';
 
 import { mockAsset } from './constants';
 
 export function createStories(
-  ListCell: React.ComponentType<ListCellProps>,
+  ListCell: React.ComponentType<
+    ListCellBaseProps & {
+      onPress?: () => void;
+      to?: string;
+    }
+  >,
   CellMedia: React.ComponentType<CellMediaProps>,
   Button: React.ComponentType<ButtonBaseProps>,
   IconButton: React.ComponentType<IconButtonBaseProps>,

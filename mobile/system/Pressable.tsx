@@ -14,6 +14,8 @@ import { debounce } from '../utils/debounce';
 import { Haptics } from '../utils/haptics';
 import { Interactable, InteractableProps } from './Interactable';
 
+export type LinkableProps = Pick<BasePressableProps, 'onPress'>;
+
 export interface PressableProps
   extends Pick<
       BasePressableProps,

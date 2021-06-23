@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
 
-import type { CellProps as CellBaseProps } from '@cbhq/cds-common/types';
+import type { CellBaseProps } from '@cbhq/cds-common/types';
 import { css } from 'linaria';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { Pressable } from '../system/Pressable';
+import { Pressable, LinkableProps } from '../system/Pressable';
 import { CellMedia } from './CellMedia';
 import { MediaFallback } from './MediaFallback';
 
-export interface CellSharedProps {
+export interface CellSharedProps extends LinkableProps {
   /** The type of outer wrapping element. */
   as?: 'div' | 'li';
 }
@@ -32,6 +32,7 @@ export const Cell = memo(function Cell({
   reduceHorizontalSpacing,
   selected,
   testID,
+  to,
   ...props
 }: CellProps) {
   if (
@@ -44,6 +45,7 @@ export const Cell = memo(function Cell({
   }
 
   const offsetClassName = useOffsetStyles({ offsetHorizontal: 2 });
+  const linkable = Boolean(onPress || to);
 
   let content = (
     <HStack
@@ -56,7 +58,7 @@ export const Cell = memo(function Cell({
       spacingVertical={1}
       width="100%"
       testID={testID}
-      dangerouslySetClassName={onPress ? undefined : offsetClassName}
+      dangerouslySetClassName={linkable ? undefined : offsetClassName}
       {...props}
     >
       {media && (
@@ -95,16 +97,16 @@ export const Cell = memo(function Cell({
     </HStack>
   );
 
-  if (onPress) {
+  if (onPress || to) {
     content = (
       <Pressable
-        as="button"
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
         borderRadius="standard"
         disabled={disabled}
         onPress={onPress}
+        to={to}
         className={`${pressClassName} ${offsetClassName}`}
       >
         {content}

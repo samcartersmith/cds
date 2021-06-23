@@ -4,12 +4,10 @@ import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common/types';
 
 import { usePinStyles } from '../hooks/usePinStyles';
-import { Pressable, PressableProps } from '../system/Pressable';
+import { LinkableProps, Pressable } from '../system/Pressable';
 import { VStack, VStackProps } from './VStack';
 
-export interface CardProps extends VStackProps<'div'>, CardBaseProps {
-  onPress?: PressableProps['onPress'];
-}
+export interface CardProps extends VStackProps<'div'>, CardBaseProps, LinkableProps {}
 
 export const Card: React.FC<CardProps> = memo(
   ({
@@ -18,6 +16,7 @@ export const Card: React.FC<CardProps> = memo(
     elevation = 1,
     size = 'large',
     onPress,
+    to,
     pin,
     ...props
   }: CardProps) => {
@@ -25,23 +24,24 @@ export const Card: React.FC<CardProps> = memo(
     const height = props?.height ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
     const pinStyles = usePinStyles(pin);
+    const linkable = Boolean(onPress || to);
 
     const content = (
       <VStack
         borderRadius="standard"
-        background={onPress ? undefined : bg}
-        pin={onPress ? undefined : pin}
-        elevation={onPress ? undefined : elevation}
+        background={linkable ? undefined : bg}
+        pin={linkable ? undefined : pin}
+        elevation={linkable ? undefined : elevation}
         width={width}
         height={height}
-        overflow={onPress ? undefined : 'hidden'}
+        overflow={linkable ? undefined : 'hidden'}
         {...props}
       >
         {children}
       </VStack>
     );
 
-    return onPress ? (
+    return linkable ? (
       <Pressable
         backgroundColor={bg}
         borderRadius="standard"
@@ -50,6 +50,7 @@ export const Card: React.FC<CardProps> = memo(
         elevation={elevation}
         onPress={onPress}
         className={pinStyles}
+        to={to}
       >
         {content}
       </Pressable>
