@@ -46,7 +46,7 @@ export const Card: React.FC<CardProps> = memo(
         dangerouslySetStyle={contentStyles}
         {...props}
       >
-        {children}
+        <VStack overflow="hidden">{children}</VStack>
       </VStack>
     );
 

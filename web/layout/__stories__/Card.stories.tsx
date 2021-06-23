@@ -1,6 +1,7 @@
 import { createStories, CreateCardProps } from '@cbhq/cds-storybook/stories/Card';
 
 import { Button } from '../../buttons/Button';
+import { ListCell, CellMedia } from '../../cells';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Box } from '../Box';
 import { Card } from '../Card';
@@ -29,8 +30,10 @@ export const {
   Box,
   Button,
   Card,
-  VStack,
+  CellMedia,
+  ListCell,
   LoremIpsum,
+  VStack,
   ThemeProvider,
 } as CreateCardProps);
 
@@ -47,7 +50,9 @@ export const {
   Box,
   Button,
   Card,
-  VStack,
+  CellMedia,
+  ListCell,
   LoremIpsum,
+  VStack,
   ThemeProvider: DarkThemeProvider,
 } as CreateCardProps);

@@ -4,15 +4,17 @@ import {
   CardBaseProps,
   PaletteForeground,
   StackBaseProps,
+  ListCellBaseProps,
+  CellMediaProps,
 } from '@cbhq/cds-common';
+
+import { mockAsset } from './constants';
 
 const onPressConsole = () => console.log('pressed');
 
 const sharedWrapperProps = {
   position: 'relative',
-  background: 'backgroundAlternate',
   width: '100%',
-  spacing: 2,
 } as const;
 
 const sharedProps = { spacing: 2 } as const;
@@ -29,6 +31,13 @@ export type CreateCardProps = {
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
   LoremIpsum: React.ComponentType<{ title: string; color?: PaletteForeground; concise?: boolean }>;
   Button: React.ComponentType<ButtonBaseProps>;
+  ListCell: React.ComponentType<
+    ListCellBaseProps & {
+      onPress?: () => void;
+      to?: string;
+    }
+  >;
+  CellMedia: React.ComponentType<CellMediaProps>;
   ThemeProvider: React.ComponentType;
 };
 
@@ -37,9 +46,37 @@ export function createStories({
   Button,
   Card,
   VStack,
+  ListCell,
+  CellMedia,
   LoremIpsum,
   ThemeProvider,
 }: CreateCardProps) {
+  const ListCellCard = () => (
+    <ThemeProvider>
+      <VStack gap={2} {...sharedWrapperProps}>
+        <Card elevation={1}>
+          {Array.from({ length: 4 }).map((_, i) => {
+            return (
+              <ListCell
+                key={`card-cell-${i}`}
+                onPress={onPressConsole}
+                title="Title"
+                description="Description"
+                detail="$942,103"
+                subdetail="-2.34%"
+                variant="negative"
+                detailWidth={95}
+                intermediary={<CellMedia type="icon" name="chartLine" />}
+                media={<CellMedia type="image" source={mockAsset} title="Title" />}
+                reduceHorizontalSpacing
+              />
+            );
+          })}
+        </Card>
+      </VStack>
+    </ThemeProvider>
+  );
+
   const PressableCards = () => (
     <ThemeProvider>
       <VStack gap={2} {...sharedWrapperProps}>
@@ -108,7 +145,7 @@ export function createStories({
 
   const PinnedTopCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps}>
+      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="top">
           <LoremIpsum title="Top" concise />
         </Card>
@@ -118,7 +155,7 @@ export function createStories({
 
   const PinnedRightCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps}>
+      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="right">
           <LoremIpsum title="Right" concise />
         </Card>
@@ -128,7 +165,7 @@ export function createStories({
 
   const PinnedBottomCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps}>
+      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="bottom">
           <LoremIpsum title="Bottom" concise />
         </Card>
@@ -138,7 +175,7 @@ export function createStories({
 
   const PinnedLeftCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps}>
+      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="left">
           <LoremIpsum title="Left" concise />
         </Card>
@@ -147,6 +184,7 @@ export function createStories({
   );
 
   return {
+    ListCellCard,
     PressableCards,
     PressableColoredCards,
     NonClickableCards,

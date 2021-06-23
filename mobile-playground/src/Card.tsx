@@ -1,4 +1,5 @@
 import { Button } from '@cbhq/cds-mobile/buttons/Button';
+import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Box, VStack, Card } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
 import { createStories } from '@cbhq/cds-storybook/stories/Card';
@@ -8,6 +9,7 @@ import ExamplesScreen from './internal/ExamplesScreen';
 import { LoremIpsum } from './internal/LoremIpsum';
 
 const {
+  ListCellCard,
   PressableCards,
   PressableColoredCards,
   NonClickableCards,
@@ -21,6 +23,8 @@ const {
   Button,
   Card,
   VStack,
+  ListCell,
+  CellMedia,
   LoremIpsum,
   ThemeProvider,
 });
@@ -28,6 +32,9 @@ const {
 const CardScreen = () => {
   return (
     <ExamplesScreen>
+      <Example title="Card with ListCells">
+        <ListCellCard />
+      </Example>
       <Example title="Clickable Cards">
         <PressableCards />
       </Example>
