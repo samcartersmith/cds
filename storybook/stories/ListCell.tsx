@@ -151,6 +151,38 @@ export function createStories(
     </>
   );
 
+  const PriorityContent = () => (
+    <>
+      <ListCell
+        title="Asset with a really long name"
+        description="Some description of the asset"
+        detail="$334,239.03"
+        subdetail="+4.06%"
+        variant="positive"
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+        priority="start"
+      />
+      <ListCell
+        title="Asset with a really long name"
+        description="Some description of the asset"
+        detail="$334,239.03"
+        subdetail="+4.06%"
+        variant="positive"
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+        priority="middle"
+      />
+      <ListCell
+        title="Asset with a really long name"
+        description="Some description of the asset"
+        detail="$334,239.03"
+        subdetail="+4.06%"
+        variant="positive"
+        intermediary={<CellMedia type="icon" name="chartLine" />}
+        priority="end"
+      />
+    </>
+  );
+
   const WithAccessory = () => (
     <>
       <ListCell title="Title" accessory="arrow" />
@@ -253,35 +285,35 @@ export function createStories(
         title="Title"
         description="Description"
         detail="$1,230"
-        detailWidth={65}
+        detailWidth={100}
         intermediary={<CellMedia type="icon" name="chartLine" />}
       />
       <ListCell
         title="Title"
         description="Description"
         detail="$44,130"
-        detailWidth={65}
+        detailWidth={100}
         intermediary={<CellMedia type="icon" name="chartLine" />}
       />
       <ListCell
         title="Title"
         description="Description"
         detail="$942,103"
-        detailWidth={65}
+        detailWidth={100}
         intermediary={<CellMedia type="icon" name="chartLine" />}
       />
       <ListCell
         title="Title"
         description="Description"
         detail="$530"
-        detailWidth={65}
+        detailWidth={100}
         intermediary={<CellMedia type="icon" name="chartLine" />}
       />
       <ListCell
         title="Title"
         description="Description"
         detail="$123K"
-        detailWidth={65}
+        detailWidth={100}
         intermediary={<CellMedia type="icon" name="chartLine" />}
       />
     </>
@@ -291,6 +323,7 @@ export function createStories(
     Content,
     PressableContent,
     LongContent,
+    PriorityContent,
     WithAccessory,
     WithMedia,
     WithActions,

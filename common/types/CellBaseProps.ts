@@ -4,12 +4,12 @@ import { SharedProps } from './SharedProps';
 import { SpacingProps, OffsetProps } from './SpacingProps';
 
 export interface CellCommonProps extends SharedProps, Pick<OffsetProps, 'offsetHorizontal'> {
-  /* Media (icon, asset, image, etc) to display at the start of the cell. */
-  media?: React.ReactElement<CellMediaProps>;
   /** Apply a fixed width to the detail (end). */
   detailWidth?: number | string;
   /** Is the cell disabled? Will apply opacity and disable interaction. */
   disabled?: boolean;
+  /** Which piece of content has the highest priority in regards to text truncation, growing, and shrinking. */
+  priority?: 'start' | 'middle' | 'end';
   /** Reduce horizontal spacing for tighter layout requirements. */
   reduceHorizontalSpacing?: boolean;
   /** Is the cell selected? Will apply a background and selected accessory. */
@@ -22,6 +22,7 @@ export interface CellBaseProps extends CellCommonProps, SpacingProps {
   children: React.ReactNode;
   detail?: React.ReactNode;
   intermediary?: React.ReactNode;
+  media?: React.ReactNode;
   minHeight?: number;
 }
 
@@ -68,6 +69,8 @@ export interface ContentCellBaseProps extends CellCommonProps {
   accessory?: CellAccessoryType;
   /** Description of content. Content will wrap accordingly. */
   description?: React.ReactNode;
+  /* Media (icon, asset, image, etc) to display at the start of the cell. */
+  media?: React.ReactElement<CellMediaProps>;
   /** Meta information to display at the end of the title. */
   meta?: React.ReactNode;
   /** Subtitle of content. Max 1 line, otherwise will truncate. */
@@ -98,6 +101,8 @@ export interface ListCellBaseProps extends CellCommonProps, CellDetailProps {
   description?: NonNullable<React.ReactNode>;
   /** For internal use only. */
   intermediary?: React.ReactNode;
+  /* Media (icon, asset, image, etc) to display at the start of the cell. */
+  media?: React.ReactElement<CellMediaProps>;
   /** Allow the description to span multiple lines. This *will* break fixed height requirements, so should not be used in a `FlatList`. */
   multiline?: boolean;
   /** Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate. */

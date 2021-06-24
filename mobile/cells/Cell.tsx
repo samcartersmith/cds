@@ -7,8 +7,6 @@ import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable, LinkableProps } from '../system/Pressable';
-import { CellMedia } from './CellMedia';
-import { MediaFallback } from './MediaFallback';
 
 export interface CellSharedProps extends LinkableProps {
   /** Measure the dimensions of the cell. */
@@ -30,20 +28,12 @@ export const Cell = memo(function Cell({
   offsetHorizontal,
   onLayout,
   onPress,
+  priority,
   reduceHorizontalSpacing,
   selected,
   testID,
   ...props
 }: CellProps) {
-  if (
-    process.env.NODE_ENV !== 'production' &&
-    media &&
-    media.type !== CellMedia &&
-    media.type !== MediaFallback
-  ) {
-    console.error('Cell media must be a `CellMedia` component.');
-  }
-
   const offsetStyle = useOffsetStyles({ offsetHorizontal: 2 });
 
   let content = (
@@ -67,12 +57,12 @@ export const Cell = memo(function Cell({
         </Box>
       )}
 
-      <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
+      <Box flexGrow={1} flexShrink={priority === 'start' ? 0 : 1} justifyContent="flex-start">
         {children}
       </Box>
 
       {!!intermediary && (
-        <Box flexGrow={0} flexShrink={1} justifyContent="center">
+        <Box flexGrow={0} flexShrink={priority === 'middle' ? 0 : 1} justifyContent="center">
           {intermediary}
         </Box>
       )}
@@ -80,7 +70,7 @@ export const Cell = memo(function Cell({
       {!!detail && (
         <Box
           flexGrow={detailWidth ? undefined : 1}
-          flexShrink={detailWidth ? undefined : 1}
+          flexShrink={detailWidth ? undefined : priority === 'end' ? 0 : 1}
           alignItems="flex-end"
           justifyContent="flex-end"
           width={detailWidth}

@@ -7,8 +7,6 @@ import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable, LinkableProps } from '../system/Pressable';
-import { CellMedia } from './CellMedia';
-import { MediaFallback } from './MediaFallback';
 
 export interface CellSharedProps extends LinkableProps {
   /** The type of outer wrapping element. */
@@ -30,21 +28,13 @@ export const Cell = memo(function Cell({
   minHeight,
   offsetHorizontal,
   onPress,
+  priority,
   reduceHorizontalSpacing,
   selected,
   testID,
   to,
   ...props
 }: CellProps) {
-  if (
-    process.env.NODE_ENV !== 'production' &&
-    media &&
-    media.type !== CellMedia &&
-    media.type !== MediaFallback
-  ) {
-    console.error('Cell media must be a `CellMedia` component.');
-  }
-
   const offsetClassName = useOffsetStyles({ offsetHorizontal: 2 });
   const linkable = Boolean(onPress || to);
 
@@ -68,12 +58,22 @@ export const Cell = memo(function Cell({
         </Box>
       )}
 
-      <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
+      <Box
+        flexGrow={1}
+        flexShrink={priority === 'start' ? 0 : 1}
+        justifyContent="flex-start"
+        dangerouslySetClassName={truncateClassName}
+      >
         {children}
       </Box>
 
       {intermediary && (
-        <Box flexGrow={0} flexShrink={1} justifyContent="center">
+        <Box
+          flexGrow={0}
+          flexShrink={priority === 'middle' ? 0 : 1}
+          justifyContent="center"
+          dangerouslySetClassName={truncateClassName}
+        >
           {intermediary}
         </Box>
       )}
@@ -81,10 +81,12 @@ export const Cell = memo(function Cell({
       {detail && (
         <Box
           flexGrow={detailWidth ? undefined : 1}
-          flexShrink={detailWidth ? undefined : 1}
+          flexShrink={detailWidth ? undefined : priority === 'end' ? 0 : 1}
+          flexDirection="column"
           alignItems="flex-end"
           justifyContent="flex-end"
           width={detailWidth}
+          dangerouslySetClassName={truncateClassName}
         >
           {detail}
         </Box>
@@ -134,4 +136,20 @@ const pressClassName = css`
   align-items: stretch;
   flex-grow: 1;
   display: flex;
+`;
+
+// Display and min-width are necessary for truncation to work:
+// https://css-tricks.com/flexbox-truncated-text/
+export const truncateClassName = css`
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+`;
+
+export const overflowClassName = css`
+  overflow: auto;
+  text-overflow: unset;
+  white-space: normal;
 `;

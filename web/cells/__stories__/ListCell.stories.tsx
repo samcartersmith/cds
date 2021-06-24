@@ -14,6 +14,7 @@ export const {
   Content,
   PressableContent,
   LongContent,
+  PriorityContent,
   WithAccessory,
   WithMedia,
   WithActions,

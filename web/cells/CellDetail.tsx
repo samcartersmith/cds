@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 
 import type { CellDetailProps } from '@cbhq/cds-common/types';
 
-import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
 
 export type { CellDetailProps };
@@ -13,18 +12,18 @@ export const CellDetail = memo(function CellDetail({
   variant = 'foregroundMuted',
 }: CellDetailProps) {
   return (
-    <VStack alignContent="flex-end" alignItems="flex-end" justifyContent="center">
+    <>
       {detail && (
-        <TextBody as="div" align="end">
+        <TextBody as="div" align="end" overflow="truncate">
           {detail}
         </TextBody>
       )}
 
       {subdetail && (
-        <TextBody as="div" align="end" color={variant}>
+        <TextBody as="div" align="end" overflow="truncate" color={variant}>
           {subdetail}
         </TextBody>
       )}
-    </VStack>
+    </>
   );
 });

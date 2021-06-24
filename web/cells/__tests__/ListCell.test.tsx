@@ -14,14 +14,12 @@ describe('ListCell', () => {
     ).toHaveNoViolations();
   });
 
-  it('errors if multiple pressables are used', () => {
+  it('errors if non-cell media is passed', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation();
 
-    render(<ListCell onPress={() => {}} action={<Button>Test</Button>} />);
+    render(<ListCell media={<div />} />);
 
-    expect(spy).toHaveBeenCalledWith(
-      'ListCell: Cannot use `onPress` and `action` together. Unable to nest pressables.'
-    );
+    expect(spy).toHaveBeenCalledWith('ListCell: Media must be a `CellMedia` component.');
 
     spy.mockRestore();
   });

@@ -8,8 +8,10 @@ import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
 import { TextLabel2 } from '../typography/TextLabel2';
-import { Cell, CellSharedProps } from './Cell';
+import { Cell, CellSharedProps, truncateClassName, overflowClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';
+import { CellMedia } from './CellMedia';
+import { MediaFallback } from './MediaFallback';
 
 export interface ContentCellProps extends ContentCellBaseProps, CellSharedProps {}
 
@@ -24,8 +26,14 @@ export const ContentCell = memo(function ContentCell({
   subtitle,
   ...props
 }: ContentCellProps) {
-  if (process.env.NODE_ENV !== 'production' && meta && !title && !subtitle) {
-    console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
+  if (process.env.NODE_ENV !== 'production') {
+    if (meta && !title && !subtitle) {
+      console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
+    }
+
+    if (media && media.type !== CellMedia && media.type !== MediaFallback) {
+      console.error('ContentCell: Media must be a `CellMedia` component.');
+    }
   }
 
   const accessoryType = selected ? 'selected' : accessory;
@@ -39,39 +47,51 @@ export const ContentCell = memo(function ContentCell({
       disabled={disabled}
       selected={selected}
     >
-      <VStack width="100%">
-        {(title || subtitle) && (
-          <HStack alignItems="flex-start" justifyContent="space-between">
-            <VStack flexShrink={1}>
-              {title && <TextHeadline as="div">{title}</TextHeadline>}
-
-              {subtitle && (
-                <TextLabel2
-                  as="div"
-                  spacingTop={title ? 0.5 : 0}
-                  spacingBottom={description ? 0.5 : 0}
-                >
-                  {subtitle}
-                </TextLabel2>
-              )}
-            </VStack>
-
-            {meta && (
-              <Box justifyContent="flex-end" spacingTop={0.5} spacingStart={1}>
-                <TextLabel2 as="span" color="foregroundMuted">
-                  {meta}
-                </TextLabel2>
-              </Box>
+      {(title || subtitle) && (
+        <HStack alignItems="flex-start" justifyContent="space-between">
+          <VStack flexGrow={1} flexShrink={1} dangerouslySetClassName={truncateClassName}>
+            {title && (
+              <TextHeadline as="div" overflow="truncate">
+                {title}
+              </TextHeadline>
             )}
-          </HStack>
-        )}
 
-        {description && (
+            {subtitle && (
+              <TextLabel2
+                as="div"
+                spacingTop={title ? 0.5 : 0}
+                spacingBottom={description ? 0.5 : 0}
+                overflow="truncate"
+              >
+                {subtitle}
+              </TextLabel2>
+            )}
+          </VStack>
+
+          {meta && (
+            <Box
+              flexGrow={0}
+              flexShrink={0}
+              justifyContent="flex-end"
+              spacingTop={0.5}
+              spacingStart={2}
+              dangerouslySetClassName={truncateClassName}
+            >
+              <TextLabel2 as="span" color="foregroundMuted" overflow="truncate">
+                {meta}
+              </TextLabel2>
+            </Box>
+          )}
+        </HStack>
+      )}
+
+      {description && (
+        <div className={overflowClassName}>
           <TextBody as="div" color="foregroundMuted">
             {description}
           </TextBody>
-        )}
-      </VStack>
+        </div>
+      )}
     </Cell>
   );
 });

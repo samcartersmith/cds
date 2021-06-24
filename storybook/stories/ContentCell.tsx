@@ -85,7 +85,7 @@ export function createStories(
 
       <ContentCell
         title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
-        meta="Meta"
+        meta="Long meta title"
         media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
       />
     </>

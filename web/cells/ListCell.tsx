@@ -4,12 +4,15 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
 import type { ListCellBaseProps } from '@cbhq/cds-common/types';
 
+import { Box } from '../layout/Box';
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
-import { Cell, CellSharedProps } from './Cell';
+import { Cell, CellSharedProps, overflowClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
+import { CellMedia } from './CellMedia';
+import { MediaFallback } from './MediaFallback';
 
 export interface ListCellProps extends ListCellBaseProps, CellSharedProps {}
 
@@ -21,39 +24,54 @@ export const ListCell = memo(function ListCell({
   detail,
   disabled,
   media,
+  multiline,
   selected,
   subdetail,
   variant,
   ...props
 }: ListCellProps) {
-  if (process.env.NODE_ENV !== 'production' && action && (props.to || props.onPress)) {
-    console.error(
-      'ListCell: Cannot use `onPress` and `action` together. Unable to nest pressables.'
-    );
+  if (process.env.NODE_ENV !== 'production') {
+    if (media && media.type !== CellMedia && media.type !== MediaFallback) {
+      console.error('ListCell: Media must be a `CellMedia` component.');
+    }
   }
 
   const minHeight = useScaleConditional(listHeight);
   const accessoryType = selected ? 'selected' : accessory;
+  let end;
+
+  if (action) {
+    end = <Box justifyContent="flex-end">{action}</Box>;
+  } else if (detail || subdetail) {
+    end = <CellDetail detail={detail} subdetail={subdetail} variant={variant} />;
+  }
 
   return (
     <Cell
       {...props}
       accessory={accessoryType && <CellAccessory type={accessoryType} />}
-      detail={
-        action ||
-        ((detail || subdetail) && (
-          <CellDetail detail={detail} subdetail={subdetail} variant={variant} />
-        ))
-      }
+      detail={end}
       media={media}
       disabled={disabled}
       minHeight={minHeight}
       selected={selected}
     >
       <VStack>
-        {title && <TextHeadline as="div">{title}</TextHeadline>}
+        {title && (
+          <TextHeadline as="div" overflow="truncate">
+            {title}
+          </TextHeadline>
+        )}
 
-        {description && <TextBody as="div">{description}</TextBody>}
+        {description && (
+          <TextBody
+            as="div"
+            overflow={multiline ? undefined : 'truncate'}
+            dangerouslySetClassName={multiline ? overflowClassName : undefined}
+          >
+            {description}
+          </TextBody>
+        )}
       </VStack>
     </Cell>
   );

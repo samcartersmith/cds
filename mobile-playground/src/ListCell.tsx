@@ -11,6 +11,7 @@ const {
   Content,
   PressableContent,
   LongContent,
+  PriorityContent,
   WithAccessory,
   WithMedia,
   WithActions,
@@ -30,6 +31,10 @@ const ListCellScreen = () => {
 
       <Example title="Long content">
         <LongContent />
+      </Example>
+
+      <Example title="Priority content">
+        <PriorityContent />
       </Example>
 
       <Example title="With accessory">

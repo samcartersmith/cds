@@ -9,6 +9,8 @@ import { TextHeadline, TextBody } from '../typography';
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
+import { CellMedia } from './CellMedia';
+import { MediaFallback } from './MediaFallback';
 
 export interface ListCellProps extends ListCellBaseProps, CellSharedProps {}
 
@@ -18,6 +20,7 @@ export const ListCell = memo(function ListCell({
   title,
   description,
   detail,
+  detailWidth,
   disabled,
   media,
   multiline,
@@ -27,10 +30,10 @@ export const ListCell = memo(function ListCell({
   onPress,
   ...props
 }: ListCellProps) {
-  if (process.env.NODE_ENV !== 'production' && onPress && action) {
-    console.error(
-      'ListCell: Cannot use `onPress` and `action` together. Unable to nest pressables.'
-    );
+  if (process.env.NODE_ENV !== 'production') {
+    if (media && media.type !== CellMedia && media.type !== MediaFallback) {
+      console.error('ListCell: Media must be a `CellMedia` component.');
+    }
   }
 
   const minHeight = useScaleConditional(listHeight);
@@ -43,9 +46,15 @@ export const ListCell = memo(function ListCell({
       detail={
         action ||
         ((detail || subdetail) && (
-          <CellDetail detail={detail} subdetail={subdetail} variant={variant} />
+          <CellDetail
+            adjustsFontSizeToFit={!!detailWidth}
+            detail={detail}
+            subdetail={subdetail}
+            variant={variant}
+          />
         ))
       }
+      detailWidth={detailWidth}
       media={media}
       disabled={disabled}
       minHeight={minHeight}
