@@ -24,7 +24,7 @@ export function useLottieColorFilters(
 
   const themeColorFilters = useMemo(() => {
     const filters: LottieProps['colorFilters'] = [];
-    if ('layers' in source) {
+    if (source?.layers) {
       for (const layer of source.layers) {
         if (layer.nm in paletteSnakeCased) {
           const keypath = layer.nm as keyof typeof paletteSnakeCased;
