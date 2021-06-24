@@ -103,7 +103,6 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
           testID={`CarouselItemWrapper-${id}`}
           width={interpolatedWidth as unknown as number}
           height={interpolatedHeight as unknown as number}
-          overflow="hidden"
         >
           <Box
             flexShrink={0}

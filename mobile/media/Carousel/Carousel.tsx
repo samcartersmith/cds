@@ -12,7 +12,7 @@ import React, {
 
 import { SpacingScale } from '@cbhq/cds-common';
 import { emptyObject } from '@cbhq/cds-utils';
-import { Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
+import { Animated, Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 
 import { useScrollTo, ScrollToParams } from '../../hooks/useScrollTo';
 import { CarouselItem } from './CarouselItem';
@@ -41,8 +41,14 @@ export const Carousel = memo(
       /** The number of of CarouselItems */
       const childrenLength = Children.count(items);
       /** Dismiss a CarouselItem. */
-      const { dismiss, dismissedItems, resetDismissedItems } =
-        useDismissCarouselItem(childrenLength);
+      const {
+        dismiss,
+        dismissedItems,
+        resetDismissedItems,
+        onLayout,
+        onContentSizeChange,
+        onScroll,
+      } = useDismissCarouselItem(childrenLength, scrollTo);
       /** Array of x coordinates for snapping the wrapping ScrollView on gesture */
       const snapPoints = Object.values(layoutMap);
       /** This is fired in onLayout of CarouselItem. */
@@ -108,7 +114,7 @@ export const Carousel = memo(
       );
 
       return (
-        <ScrollView
+        <Animated.ScrollView
           {...otherProps}
           contentContainerStyle={styles.scrollViewContainer}
           decelerationRate="fast"
@@ -119,9 +125,12 @@ export const Carousel = memo(
           snapToOffsets={snapPoints}
           style={styles.carousel}
           testID="Carousel"
+          onLayout={onLayout}
+          onContentSizeChange={onContentSizeChange}
+          onScroll={onScroll}
         >
           {content}
-        </ScrollView>
+        </Animated.ScrollView>
       );
     }
   )
