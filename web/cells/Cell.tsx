@@ -28,6 +28,7 @@ export const Cell = memo(function Cell({
   intermediary,
   media,
   minHeight,
+  offsetHorizontal,
   onPress,
   reduceHorizontalSpacing,
   selected,
@@ -120,6 +121,7 @@ export const Cell = memo(function Cell({
       alignItems="stretch"
       width="100%"
       minHeight={minHeight}
+      offsetHorizontal={offsetHorizontal}
       spacingVertical={1}
       spacingHorizontal={3}
     >

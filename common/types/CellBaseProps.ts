@@ -1,9 +1,9 @@
 import { IconName } from './IconName';
 import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
-import { SpacingProps } from './SpacingProps';
+import { SpacingProps, OffsetProps } from './SpacingProps';
 
-export interface CellCommonProps extends SharedProps {
+export interface CellCommonProps extends SharedProps, Pick<OffsetProps, 'offsetHorizontal'> {
   /* Media (icon, asset, image, etc) to display at the start of the cell. */
   media?: React.ReactElement<CellMediaProps>;
   /** Apply a fixed width to the detail (end). */
