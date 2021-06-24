@@ -721,21 +721,6 @@ Position the box to the right edge.
 
 <ComponentDetails componentName="Lottie" templateName="prop-right" />
 
-### rounded
-
-Round the corners of the box with `standard` borderRadius size.
-
-<ApiDetails
-  componentName="Lottie"
-  propertyName="rounded"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Lottie" templateName="prop-rounded" />
-
 ### source
 
 The source of animation. Should be pulled from @cbhq/cds-lottie-files. For mobile, import the animation from the animations folder instead of from index so that unused animations are not included during build, `import { tradeStatus } from @cbhq/cds-lottie-files/tradeStatus`. For web, you can import the animation from index since this webpack can handle treeshaking, `import { tradeStatus } from @cbhq/cds-lottie-files`

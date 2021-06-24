@@ -114,6 +114,21 @@ Callback to fire when pressed
 
 <ComponentDetails componentName="Link" templateName="prop-onPress" />
 
+### preventRedirectionIntoApp <Badge variant="mobile" />
+
+Toggles whether we allow users to go back to app when they are in an external browser
+
+<ApiDetails
+  componentName="Link"
+  propertyName="preventRedirectionIntoApp"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-preventRedirectionIntoApp" />
+
 ### testID <Badge variant="mobile" />
 
 Used to locate this element in unit and end-to-end tests.

@@ -758,21 +758,6 @@ Semantic role whole using a non-semantic element.
 
 <ComponentDetails componentName="Fallback" templateName="prop-role" />
 
-### rounded
-
-Round the corners of the box with `standard` borderRadius size.
-
-<ApiDetails
-  componentName="Fallback"
-  propertyName="rounded"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Fallback" templateName="prop-rounded" />
-
 ### shape
 
 <ApiDetails
@@ -928,8 +913,8 @@ Position the box to the top edge.
   propertyName="width"
   required={true}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Fallback" templateName="prop-width" />

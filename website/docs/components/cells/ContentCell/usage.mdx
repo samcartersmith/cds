@@ -20,3 +20,63 @@ A cell row is divided into the following 3 columns:
   onPress={console.log}
 />
 ```
+
+### Vertical alignment
+
+Cells are designed with built-in padding on _all_ edges, and because of this, _must_ expand the full-width of their parent container. Any non-cell sibling content should vertically align their left-side content with the left-side content of the cell (title, description, media), not including the padding.
+
+#### Correct
+
+An example of this implemented **correctly** is demonstrated below. Notice that all text is vertically aligned. This is achieved with a start spacing of 3 on the title!
+
+```jsx live
+<>
+  <TextTitle3 as="p" spacingStart={3} spacingBottom={1}>
+    Section title
+  </TextTitle3>
+
+  <ContentCell
+    title="Something very cool here"
+    description="Lorem ipsum dolor sit a met. Lorem ipsum dolor sit a met."
+    onPress={console.log}
+    selected
+  />
+  <ContentCell
+    title="Something very cool here"
+    description="Lorem ipsum dolor sit a met. Lorem ipsum dolor sit a met."
+    onPress={console.log}
+  />
+  <ContentCell
+    title="Something very cool here"
+    description="Lorem ipsum dolor sit a met. Lorem ipsum dolor sit a met."
+    onPress={console.log}
+  />
+</>
+```
+
+#### Incorrect
+
+An example of this implemented **incorrectly** is demonstrated below. Notice how the title does not align vertically with the text in the cell.
+
+```jsx live
+<>
+  <TextTitle3 as="p">Section title</TextTitle3>
+
+  <ContentCell
+    title="Something very cool here"
+    description="Lorem ipsum dolor sit a met. Lorem ipsum dolor sit a met."
+    onPress={console.log}
+    selected
+  />
+  <ContentCell
+    title="Something very cool here"
+    description="Lorem ipsum dolor sit a met. Lorem ipsum dolor sit a met."
+    onPress={console.log}
+  />
+  <ContentCell
+    title="Something very cool here"
+    description="Lorem ipsum dolor sit a met. Lorem ipsum dolor sit a met."
+    onPress={console.log}
+  />
+</>
+```
