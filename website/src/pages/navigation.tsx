@@ -23,7 +23,7 @@ import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
 import Head from '@docusaurus/Head';
 import { Link } from 'react-router-dom';
 
-const defaultRoute = '/navigation';
+const defaultRoute = '/';
 
 export const NavigationExample: React.FC = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
@@ -85,11 +85,11 @@ export const NavigationExample: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem to="/" as={Link} icon="chartPieCircle" label="Overview" active />
-        <NavigationListItem to="/foo" as={Link} icon="api" label="Principles" badge={3} />
-        <NavigationListItem to="/bar" as={Link} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem to="/" as={Link} icon="pieChart" label="Overview" active />
+        <NavigationListItem to="/foo" as={Link} icon="gab" label="Principles" badge={3} />
+        <NavigationListItem to="/bar" as={Link} icon="home" label="Getting started" />
         <NavigationListItem to="/baz" as={Link} icon="pay" label="Pay" />
-        <NavigationListItem to="/qux" as={Link} icon="gauge" label="Support" badge={12} />
+        <NavigationListItem to="/qux" as={Link} icon="settings" label="Support" badge={12} />
       </>
     );
 
@@ -97,10 +97,10 @@ export const NavigationExample: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem as={Link} icon="bank" label="Overview" />
-          <NavigationListItem as={Link} icon="calendar" label="Color" />
-          <NavigationListItem as={Link} icon="document" label="Typography" />
-          <NavigationListItem as={Link} icon="email" label="Illustration" />
+          <NavigationListItem as={Link} icon="wallet" label="Overview" />
+          <NavigationListItem as={Link} icon="defi" label="Color" />
+          <NavigationListItem as={Link} icon="newsfeed" label="Typography" />
+          <NavigationListItem as={Link} icon="invoice" label="Illustration" />
         </SidebarSection>
       </>
     );

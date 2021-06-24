@@ -97,11 +97,11 @@ export const NoTabsNoTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
+        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
       </>
     );
 
@@ -109,10 +109,10 @@ export const NoTabsNoTitle: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
-          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
-          <NavigationListItem as={MockLink} icon="document" label="Typography" />
-          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
+          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
+          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -208,11 +208,11 @@ export const TabsNoTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
+        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
       </>
     );
 
@@ -220,10 +220,10 @@ export const TabsNoTitle: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
-          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
-          <NavigationListItem as={MockLink} icon="document" label="Typography" />
-          <NavigationListItem as={MockLink} icon="email" label="Illustration" />
+          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
+          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
+          <NavigationListItem as={MockLink} icon="bell" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -317,11 +317,11 @@ export const TitleNoTabs: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
+        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
       </>
     );
 
@@ -329,10 +329,10 @@ export const TitleNoTabs: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
-          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
-          <NavigationListItem as={MockLink} icon="document" label="Typography" />
-          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
+          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
+          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -439,11 +439,11 @@ export const TabsAndDisplayTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
+        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
       </>
     );
 
@@ -451,10 +451,10 @@ export const TabsAndDisplayTitle: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
-          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
-          <NavigationListItem as={MockLink} icon="document" label="Typography" />
-          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
+          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
+          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
         </SidebarSection>
       </>
     );
@@ -651,11 +651,11 @@ export const SidebarWithSections: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="chartPieCircle" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="api" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="arrowsHorizontal" label="Getting started" />
+        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
+        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="gauge" label="Support" badge={12} />
+        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
       </>
     );
 
@@ -663,10 +663,10 @@ export const SidebarWithSections: React.FC = () => {
       <>
         <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
         <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="bank" label="Overview" />
-          <NavigationListItem as={MockLink} icon="calendar" label="Color" />
-          <NavigationListItem as={MockLink} icon="document" label="Typography" />
-          <NavigationListItem as={MockLink} icon="document" label="Illustration" />
+          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
+          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
+          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
         </SidebarSection>
       </>
     );

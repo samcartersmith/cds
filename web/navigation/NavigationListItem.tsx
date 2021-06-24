@@ -1,12 +1,12 @@
 import React, { memo, useCallback } from 'react';
 
-import { BadgeValue, IconName } from '@cbhq/cds-common';
+import { BadgeValue, NavigationIconName } from '@cbhq/cds-common';
 import { emptyObject } from '@cbhq/cds-utils';
 import { cx } from 'linaria';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Badge } from '../icons/Badge';
-import { Icon } from '../icons/Icon';
+import { NavigationIcon } from '../icons/NavigationIcon';
 import { Box, HStack } from '../layout';
 import { Tooltip } from '../overlays/Tooltip';
 import { getFlexStyles } from '../styles/flex';
@@ -30,10 +30,11 @@ export interface NavigationListItemLinkProps
 
 export interface NavigationListItemProps extends PressableProps {
   active?: boolean;
-  icon?: IconName;
+  icon?: NavigationIconName;
   label: string;
   badge?: BadgeValue;
   as?: React.ComponentType<NavigationListItemLinkProps>;
+  to?: string;
 }
 
 export const NavigationListItem = memo(
@@ -71,10 +72,9 @@ export const NavigationListItem = memo(
             justifyContent="center"
             flexShrink={0}
           >
-            <Icon
+            <NavigationIcon
               name={icon}
               size="s"
-              color={color}
               badge={
                 <Badge
                   dangerouslySetClassName={getResponsiveStyles(showForCondensed)}
