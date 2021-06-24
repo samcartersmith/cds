@@ -25,6 +25,7 @@ Help:
   $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
   $$ make prepare.icons             -- Prepare icons
   $$ make prepare.illustrations     -- Prepare illustrations
+  $$ make prepare.adoption          -- Prepare adoption numbers
   $$ make lint.fix                  -- Auto fixes lints issues
   $$ make release                   -- Automatically update CHANGELOG based on PR titles
   $$ make typecheck                 -- Run global typecheck
@@ -117,6 +118,10 @@ prepare.icons:
 .PHONY: prepare.illustrations
 prepare.illustrations:
 	bazel run :build_illustrations
+
+.PHONY: prepare.adoption
+prepare.adoption:
+	bazel run :prepare_adoption -- --root=$(PWD) --projects=${projects}
 
 .PHONY: start.story
 start.story:

@@ -247,6 +247,17 @@ ts_node(
 )
 
 ts_node(
+    name = "prepare_adoption",
+    args = [
+        "-r tsconfig-paths/register",
+        "--files",
+        "eng/shared/design-system/codegen/adoption/build.ts",
+        "--prettierConfig $(execpath //:.prettierrc)",
+    ],
+    data = CODEGEN_DATA,
+)
+
+ts_node(
     name = "new_package",
     args = [
         "eng/shared/design-system/codegen/scaffold/newPackageFromTemplate.ts",

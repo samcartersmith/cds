@@ -48,6 +48,23 @@ ash deploy -p eng/shared/design-system/cloud
 2. Enter the number for the commit/package you want to deploy for prod or development registry
 
 3. Check that the package is published at[development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
+
+## Adoption Script
+
+Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
+
+1. Run:
+
+```bash
+  // multiple projects
+  make prepare.adoption projects=commerce,assethub,prime
+
+  // single project
+  make prepare.adoption projects=commerce
+```
+
+2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
+
 ## Commit Message Conventions
 
 To ensure the changelog is correctly generated and packages are correctly versioned and released, you must format your _squash_ commit message the following way:
