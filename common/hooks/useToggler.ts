@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useMemo } from 'react';
 
 export function useToggler(initial = false): [
   boolean,
@@ -22,12 +22,13 @@ export function useToggler(initial = false): [
     setIsToggled(prev => !prev);
   }, [setIsToggled]);
 
-  return [
-    isToggled,
-    {
+  const toggler = useMemo(() => {
+    return {
       toggleOn,
       toggleOff,
       toggle,
-    },
-  ];
+    };
+  }, [toggleOn, toggleOff, toggle]);
+
+  return [isToggled, toggler];
 }
