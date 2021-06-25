@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.14.0 (6/24/2021, 03:06 PM PST)
+
+#### 💥 Breaking
+
+- Replace Icon in NavigationListItem with NavigationIcon. [#24622](https://github.cbhq.net/mono/repo/pull/24622), [CDS-678](https://jira.coinbase-corp.com/browse/CDS-678)
+
+#### 🚀 Updates
+
+- **[Cell]** Remove restrictions, fix truncation, and support new `priority` prop. [#24497](https://github.cbhq.net/mono/repo/pull/24497)
+- Support `to` and `onPress` on all linkables. [#24172](https://github.cbhq.net/mono/repo/pull/24172)
+
+#### 🐞 Fixes
+
+- Support offsetHorizontal prop on cells. [#24441](https://github.cbhq.net/mono/repo/pull/24441)
+- Add overflow: hidden to Card children. [#24067](https://github.cbhq.net/mono/repo/pull/24067)
+
 ## 0.13.2 (6/22/2021, 11:48 AM PST)
 
 #### 🐞 Fixes

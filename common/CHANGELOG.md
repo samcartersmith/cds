@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.2 (6/24/2021, 03:06 PM PST)
+
+#### 🚀 Updates
+
+- **[Cell]** Remove restrictions, fix truncation, and support new `priority` prop. [#24497](https://github.cbhq.net/mono/repo/pull/24497)
+- Support `to` and `onPress` on all linkables. [#24172](https://github.cbhq.net/mono/repo/pull/24172)
+
+#### 🐞 Fixes
+
+- Add illustrationSizes token. [#24591](https://github.cbhq.net/mono/repo/pull/24591)
+- Support offsetHorizontal prop on cells. [#24441](https://github.cbhq.net/mono/repo/pull/24441)
+
 ## 0.15.1 (6/22/2021, 11:48 AM PST)
 
 #### 🐞 Fixes

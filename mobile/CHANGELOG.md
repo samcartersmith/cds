@@ -6,6 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.18.1 (6/24/2021, 03:06 PM PST)
+
+#### 🚀 Updates
+
+- **[Cell]** Remove restrictions, fix truncation, and support new `priority` prop. [#24497](https://github.cbhq.net/mono/repo/pull/24497)
+- Support `to` and `onPress` on all linkables. [#24172](https://github.cbhq.net/mono/repo/pull/24172)
+
+#### 🐞 Fixes
+
+- UA-1117: Fix issue with useLottieColorFilters source undefined issue. [#24383](https://github.cbhq.net/mono/repo/pull/24383)
+- Fixing carousel dismiss (of the last item) scrolling on Android. [#24335](https://github.cbhq.net/mono/repo/pull/24335)
+- Support offsetHorizontal prop on cells. [#24441](https://github.cbhq.net/mono/repo/pull/24441)
+- Add overflow: hidden to Card children. [#24067](https://github.cbhq.net/mono/repo/pull/24067)
+
 ## 0.18.0 (6/22/2021, 11:48 AM PST)
 
 #### 💥 Breaking
