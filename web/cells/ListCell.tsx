@@ -66,6 +66,7 @@ export const ListCell = memo(function ListCell({
         {description && (
           <TextBody
             as="div"
+            color="foregroundMuted"
             overflow={multiline ? undefined : 'truncate'}
             dangerouslySetClassName={multiline ? overflowClassName : undefined}
           >
