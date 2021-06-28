@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { cloneElement, memo } from 'react';
 
 import { CellBaseProps } from '@cbhq/cds-common';
 import { ViewProps } from 'react-native';
@@ -53,7 +53,7 @@ export const Cell = memo(function Cell({
     >
       {!!media && (
         <Box flexGrow={0} flexShrink={0}>
-          {media}
+          {cloneElement(media, { pressable: !!onPress })}
         </Box>
       )}
 

@@ -22,7 +22,7 @@ export interface CellBaseProps extends CellCommonProps, SpacingProps {
   children: React.ReactNode;
   detail?: React.ReactNode;
   intermediary?: React.ReactNode;
-  media?: React.ReactNode;
+  media?: React.ReactElement;
   minHeight?: number;
 }
 
@@ -54,12 +54,14 @@ export type CellMediaSource = string;
 export interface CellMediaIconProps extends SharedProps {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
+  pressable?: boolean;
 }
 
 export interface CellMediaOtherProps extends SharedProps {
   type: Exclude<CellMediaType, 'icon'>;
-  title: string;
+  title?: string;
   source: CellMediaSource;
+  pressable?: boolean;
 }
 
 export type CellMediaProps = CellMediaIconProps | CellMediaOtherProps;

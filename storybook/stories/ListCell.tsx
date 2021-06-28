@@ -223,29 +223,35 @@ export function createStories(
 
   const WithMedia = () => (
     <>
-      <ListCell title="Title" media={<CellMedia type="icon" name="email" />} />
+      <ListCell title="Icon" media={<CellMedia type="icon" name="email" />} />
 
       <ListCell
-        title="Title"
-        detail="Detail"
-        media={<CellMedia type="image" source={mockAsset} title="Title" />}
+        title="Icon (pressable)"
+        media={<CellMedia type="icon" name="email" />}
+        onPress={console.log}
       />
 
       <ListCell
-        title="Title"
+        title="Icon"
         description="Description"
         media={<CellMedia type="icon" name="phone" />}
       />
 
       <ListCell
-        title="Title"
+        title="Image"
+        detail="Detail"
+        media={<CellMedia type="image" source={mockAsset} title="Title" />}
+      />
+
+      <ListCell
+        title="Avatar"
         description="Description"
         detail="Detail"
         media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
       />
 
       <ListCell
-        title="Title"
+        title="Asset"
         description="Description"
         detail="Detail"
         subdetail="Neutral"
