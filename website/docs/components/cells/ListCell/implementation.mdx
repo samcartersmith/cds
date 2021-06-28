@@ -241,20 +241,65 @@ Allow the description to span multiple lines. This _will_ break fixed height req
 
 <ComponentDetails componentName="ListCell" templateName="prop-multiline" />
 
+### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-offsetHorizontal" />
+
+### onLayout <Badge variant="mobile" />
+
+Measure the dimensions of the cell.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="onLayout"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: LayoutChangeEvent) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-onLayout" />
+
 ### onPress
 
-Callback fired when the cell is pressed.
+Callback fired when the element is pressed.
 
 <ApiDetails
   componentName="ListCell"
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={['() => void']}
-  webOptions={['() => void']}
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  webOptions={['MouseEventHandler<Element>']}
 />
 
 <ComponentDetails componentName="ListCell" templateName="prop-onPress" />
+
+### priority
+
+Which piece of content has the highest priority in regards to text truncation, growing, and shrinking.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="priority"
+  required={false}
+  defaultValue=""
+  mobileOptions={['end', 'middle', 'start']}
+  webOptions={['end', 'middle', 'start']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-priority" />
 
 ### reduceHorizontalSpacing
 
@@ -366,6 +411,21 @@ Title of content. Max 1 line (with description) or 2 lines (without), otherwise 
 />
 
 <ComponentDetails componentName="ListCell" templateName="prop-title" />
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-to" />
 
 ### variant
 

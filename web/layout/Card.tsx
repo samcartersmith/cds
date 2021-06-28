@@ -5,9 +5,9 @@ import type { CardBaseProps } from '@cbhq/cds-common/types';
 
 import { usePinStyles } from '../hooks/usePinStyles';
 import { LinkableProps, Pressable } from '../system/Pressable';
-import { VStack, VStackProps } from './VStack';
+import { VStack } from './VStack';
 
-export interface CardProps extends VStackProps<'div'>, CardBaseProps, LinkableProps {}
+export interface CardProps extends CardBaseProps, LinkableProps {}
 
 export const Card: React.FC<CardProps> = memo(
   ({
@@ -19,7 +19,7 @@ export const Card: React.FC<CardProps> = memo(
     to,
     pin,
     ...props
-  }: CardProps) => {
+  }) => {
     const width = props?.width ?? cardSizes[size].width;
     const height = props?.height ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;

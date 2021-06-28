@@ -3,13 +3,15 @@ import React, { memo, useMemo } from 'react';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common/types';
+import { ViewStyle } from 'react-native';
 
 import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { VStack, VStackProps } from './VStack';
+import { DangerouslySetStyle } from '../types';
+import { VStack } from './VStack';
 
-export interface CardProps extends VStackProps, CardBaseProps {
+export interface CardProps extends CardBaseProps, DangerouslySetStyle<ViewStyle> {
   onPress?: PressableProps['onPress'];
 }
 
@@ -23,7 +25,7 @@ export const Card: React.FC<CardProps> = memo(
     pin,
     dangerouslySetStyle,
     ...props
-  }: CardProps) => {
+  }) => {
     const width = props?.width ?? cardSizes[size].width;
     const height = props?.height ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;

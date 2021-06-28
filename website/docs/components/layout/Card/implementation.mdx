@@ -19,51 +19,6 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### alignContent
-
-Set the distribution of space between and around content items along the cross-axis.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="alignContent"
-  required={false}
-  defaultValue="flex-start"
-  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
-  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-alignContent" />
-
-### alignItems
-
-Set the alignment of all direct children on the cross-axis.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="alignItems"
-  required={false}
-  defaultValue="stretch"
-  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-alignItems" />
-
-### alignSelf
-
-Override the parents defined item alignment for this element alone.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="alignSelf"
-  required={false}
-  defaultValue="auto"
-  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-alignSelf" />
-
 ### animated <Badge variant="mobile" />
 
 If value is `true` then style prop can take animated values.
@@ -79,39 +34,9 @@ If value is `true` then style prop can take animated values.
 
 <ComponentDetails componentName="Card" templateName="prop-animated" />
 
-### as <Badge variant="web" />
-
-The semantic element to render the box as. Is necessary for accessibility support and assistive technologies.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="as"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['div']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-as" />
-
-### aspectRatio <Badge variant="mobile" />
-
-Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="aspectRatio"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-aspectRatio" />
-
 ### background
 
-Set the background color of the box. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
+Set the background color of the Card. Passing `true` will enable the default background, otherwise a custom palette alias can be passed. \*
 
 <ApiDetails
   componentName="Card"
@@ -143,191 +68,6 @@ Set the background color of the box. Passing `true` will enable the default back
 />
 
 <ComponentDetails componentName="Card" templateName="prop-background" />
-
-### bordered
-
-Add a border around all sides of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="bordered"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-bordered" />
-
-### borderedBottom
-
-Add a border to the bottom side of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="borderedBottom"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-borderedBottom" />
-
-### borderedEnd
-
-Add a border to the trailing side of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="borderedEnd"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-borderedEnd" />
-
-### borderedHorizontal
-
-Add a border to the leading and trailing sides of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="borderedHorizontal"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-borderedHorizontal" />
-
-### borderedStart
-
-Add a border to the leading side of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="borderedStart"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-borderedStart" />
-
-### borderedTop
-
-Add a border to the top side of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="borderedTop"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-borderedTop" />
-
-### borderedVertical
-
-Add a border to the top and bottom sides of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="borderedVertical"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-borderedVertical" />
-
-### borderRadius
-
-Leverage one of the borderRadius styles we offer to round the corners of the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="borderRadius"
-  required={false}
-  defaultValue=""
-  mobileOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
-  webOptions={['badge', 'compact', 'pill', 'round', 'standard', 'tooltip']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-borderRadius" />
-
-### bottom
-
-Position the box to the bottom edge.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="bottom"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-bottom" />
-
-### children
-
-Content to render within the box.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="children"
-  required={false}
-  defaultValue=""
-  mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
-  ]}
-  webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
-  ]}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-children" />
-
-### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
-
-This is a migration escape hatch. It is not intended to be used normally.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="dangerouslySetClassName"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-dangerouslySetClassName" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -369,81 +109,6 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
 
 <ComponentDetails componentName="Card" templateName="prop-elevation" />
 
-### flexBasis
-
-Sets the initial main flex size.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="flexBasis"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-flexBasis" />
-
-### flexGrow
-
-Set the grow factor of this flex item.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="flexGrow"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-flexGrow" />
-
-### flexShrink
-
-Set the shrink factor of this flex item.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="flexShrink"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-flexShrink" />
-
-### flexWrap
-
-How should children wrap when overflowing.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="flexWrap"
-  required={false}
-  defaultValue="nowrap"
-  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
-  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-flexWrap" />
-
-### gap
-
-Gap to insert between siblings.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="gap"
-  required={false}
-  defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-gap" />
-
 ### height
 
 Set a fixed height.
@@ -458,43 +123,6 @@ Set a fixed height.
 />
 
 <ComponentDetails componentName="Card" templateName="prop-height" />
-
-### justifyContent
-
-Set the distribution of space between and around content items along the main-axis.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="justifyContent"
-  required={false}
-  defaultValue="flex-start"
-  mobileOptions={[
-    'center',
-    'flex-end',
-    'flex-start',
-    'space-around',
-    'space-between',
-    'space-evenly',
-  ]}
-  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-justifyContent" />
-
-### left
-
-Position the box to the left edge.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="left"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-left" />
 
 ### maxHeight
 
@@ -663,6 +291,8 @@ Apply negative outer spacing on the top and bottom sides.
 
 ### onPress
 
+Callback fired when the element is pressed.
+
 <ApiDetails
   componentName="Card"
   propertyName="onPress"
@@ -698,21 +328,6 @@ Opacity of element
 
 <ComponentDetails componentName="Card" templateName="prop-opacity" />
 
-### overflow
-
-Control how the content should overflow.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="overflow"
-  required={false}
-  defaultValue=""
-  mobileOptions={['gradient', 'hidden', 'visible']}
-  webOptions={['hidden', 'scroll', 'visible']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-overflow" />
-
 ### pin
 
 Direction in which to absolutely pin the box.
@@ -727,51 +342,6 @@ Direction in which to absolutely pin the box.
 />
 
 <ComponentDetails componentName="Card" templateName="prop-pin" />
-
-### position
-
-How to position the box within its parent.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="position"
-  required={false}
-  defaultValue=""
-  mobileOptions={['absolute', 'relative']}
-  webOptions={['absolute', 'relative', 'sticky']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-position" />
-
-### right
-
-Position the box to the right edge.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="right"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-right" />
-
-### role <Badge variant="web" />
-
-Semantic role whole using a non-semantic element.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="role"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-role" />
 
 ### size
 
@@ -908,20 +478,20 @@ Used to locate this element in unit and end-to-end tests.
 
 <ComponentDetails componentName="Card" templateName="prop-testID" />
 
-### top
+### to <Badge variant="web" />
 
-Position the box to the top edge.
+URL that this links to when pressed.
 
 <ApiDetails
   componentName="Card"
-  propertyName="top"
+  propertyName="to"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={[]}
+  webOptions={['string']}
 />
 
-<ComponentDetails componentName="Card" templateName="prop-top" />
+<ComponentDetails componentName="Card" templateName="prop-to" />
 
 ### width
 
@@ -937,20 +507,5 @@ Set a fixed width.
 />
 
 <ComponentDetails componentName="Card" templateName="prop-width" />
-
-### zIndex
-
-Adjust the z-index positioning layer.
-
-<ApiDetails
-  componentName="Card"
-  propertyName="zIndex"
-  required={false}
-  defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
-/>
-
-<ComponentDetails componentName="Card" templateName="prop-zIndex" />
 
 <ComponentDetails componentName="Card" templateName="outro" />
