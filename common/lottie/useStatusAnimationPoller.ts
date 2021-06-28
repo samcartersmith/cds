@@ -9,14 +9,22 @@ import { LottieStatusAnimationType } from '../types/LottieStatusAnimationProps';
 type TradeStatusLottie = LottieSource<
   | 'loadingStart'
   | 'loadingEnd'
-  | 'successStart'
-  | 'successEnd'
   | 'successCardStart'
   | 'successCardEnd'
+  | 'successStart'
+  | 'successEnd'
   | 'failureStart'
   | 'failureEnd'
   | 'pendingStart'
   | 'pendingEnd'
+  | 'pendingAltStart'
+  | 'pendingAltLoopStart'
+  | 'pendingAltLoopEnd'
+  | 'pendingAltEnd'
+  | 'successAltStart'
+  | 'successAltEnd'
+  | 'failureAltStart'
+  | 'failureAltEnd'
 >;
 
 type UseStatusAnimationPollerParams = {
@@ -41,15 +49,28 @@ export const useStatusAnimationPoller = ({
     }
   }, [playMarkers]);
 
+  const previousStatusRef = useRef<typeof status>();
+
   // onAnimationFinish will get triggered after our first useEffect
   // play completes and then after each play within onAnimationFinish completes.
   return useCallback(() => {
+    const previousStatus = previousStatusRef.current;
     if (status === 'loading') {
       playMarkers?.('loadingStart', 'loadingEnd');
+    } else if (status === 'pending') {
+      if (previousStatus === 'pending') {
+        playMarkers?.('pendingAltLoopStart', 'pendingAltLoopEnd');
+      } else {
+        playMarkers?.('pendingAltStart', 'pendingAltEnd');
+      }
     } else if (!isComplete.current) {
       switch (status) {
         case 'success': {
-          playMarkers?.('successStart', 'successEnd');
+          if (previousStatus === 'pending') {
+            playMarkers?.('successAltStart', 'successAltEnd');
+          } else {
+            playMarkers?.('successStart', 'successEnd');
+          }
           break;
         }
         case 'cardSuccess': {
@@ -57,17 +78,17 @@ export const useStatusAnimationPoller = ({
           break;
         }
         case 'failure': {
-          playMarkers?.('failureStart', 'failureEnd');
-          break;
-        }
-        case 'pending':
-        default: {
-          playMarkers?.('pendingStart', 'pendingEnd');
+          if (previousStatus === 'pending') {
+            playMarkers?.('failureAltStart', 'failureAltEnd');
+          } else {
+            playMarkers?.('failureStart', 'failureEnd');
+          }
           break;
         }
       }
       isComplete.current = true;
       onFinish?.();
     }
+    previousStatusRef.current = status;
   }, [onFinish, playMarkers, status]);
 };

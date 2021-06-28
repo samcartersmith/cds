@@ -24,6 +24,7 @@ import LinkScreen from './src/Link';
 import ListCellScreen from './src/ListCell';
 import ListCellFallbackScreen from './src/ListCellFallback';
 import LottieScreen from './src/Lottie';
+import LottieStatusAnimationScreen from './src/LottieStatusAnimation';
 import OverlayScreen from './src/Overlay';
 import PressableScreen from './src/Pressable';
 import PressableOpacityScreen from './src/PressableOpacity';
@@ -96,6 +97,7 @@ const AppContent = () => {
         <Stack.Screen name="ListCell" component={ListCellScreen} />
         <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />
         <Stack.Screen name="Lottie" component={LottieScreen} />
+        <Stack.Screen name="LottieStatusAnimation" component={LottieStatusAnimationScreen} />
         <Stack.Screen name="Overlay" component={OverlayScreen} />
         <Stack.Screen name="Pressable" component={PressableScreen} />
         <Stack.Screen name="PressableOpacity" component={PressableOpacityScreen} />

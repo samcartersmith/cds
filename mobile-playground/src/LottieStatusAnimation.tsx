@@ -30,11 +30,20 @@ export const LottieStatusAnimationScreen = () => {
     );
   }, []);
 
+  const [key, setKey] = useState(0);
+  const handleReset = () => {
+    setKey(key + 1);
+    setStatus('loading');
+  };
+
   return (
     <ExamplesScreen>
       <Example>
-        <LottieStatusAnimation key={status} height={250} status={status} />
-        <HStack>{buttons}</HStack>
+        <LottieStatusAnimation key={key} height={250} status={status} />
+        <HStack flexWrap="wrap">{buttons}</HStack>
+        <Button variant="secondary" onPress={handleReset}>
+          Reset animation
+        </Button>
       </Example>
     </ExamplesScreen>
   );

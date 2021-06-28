@@ -17,6 +17,14 @@ export type TradeStatusLottie = LottieSource<
   | 'failureEnd'
   | 'pendingStart'
   | 'pendingEnd'
+  | 'pendingAltStart'
+  | 'pendingAltLoopStart'
+  | 'pendingAltLoopEnd'
+  | 'pendingAltEnd'
+  | 'successAltStart'
+  | 'successAltEnd'
+  | 'failureAltStart'
+  | 'failureAltEnd'
 >;
 
 export const tradeStatus = tradeStatusJson as TradeStatusLottie;
