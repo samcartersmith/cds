@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.3 (6/28/2021, 09:21 AM PST)
+
+#### 🚀 Updates
+
+- Add new pending segment to LottieStatusAnimation. [#24717](https://github.cbhq.net/mono/repo/pull/24717), [CDS-453](https://jira.coinbase-corp.com/browse/CDS-453)
+
+#### 🐞 Fixes
+
+- Memoize `useToggler` to fix reference issues. [#24797](https://github.cbhq.net/mono/repo/pull/24797)
+
 ## 0.15.2 (6/24/2021, 03:06 PM PST)
 
 #### 🚀 Updates
