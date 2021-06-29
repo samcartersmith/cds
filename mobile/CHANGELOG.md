@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.18.3 (6/29/2021, 11:49 AM PST)
+
+#### 🐞 Fixes
+
+- Add await to openWebBrowser. [#25088](https://github.cbhq.net/mono/repo/pull/25088)
+
 ## 0.18.2 (6/29/2021, 10:11 AM PST)
 
 #### 🚀 Updates
