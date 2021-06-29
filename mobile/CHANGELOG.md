@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.18.2 (6/29/2021, 10:11 AM PST)
+
+#### 🚀 Updates
+
+- Add pictogram illustration support to cells. [#24965](https://github.cbhq.net/mono/repo/pull/24965)
+
+#### 🐞 Fixes
+
+- Make cell icon blue when pressable. [#24872](https://github.cbhq.net/mono/repo/pull/24872)
+- Allowed types to be more restrictive for Card. [#24902](https://github.cbhq.net/mono/repo/pull/24902)
+- **[ListCell]** Make description muted. [#24893](https://github.cbhq.net/mono/repo/pull/24893)
+
 ## 0.18.1 (6/24/2021, 03:06 PM PST)
 
 #### 🚀 Updates
