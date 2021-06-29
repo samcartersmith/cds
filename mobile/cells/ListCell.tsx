@@ -9,8 +9,6 @@ import { TextHeadline, TextBody } from '../typography';
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
-import { CellMedia } from './CellMedia';
-import { MediaFallback } from './MediaFallback';
 
 export interface ListCellProps extends ListCellBaseProps, CellSharedProps {}
 
@@ -30,12 +28,6 @@ export const ListCell = memo(function ListCell({
   onPress,
   ...props
 }: ListCellProps) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (media && media.type !== CellMedia && media.type !== MediaFallback) {
-      console.error('ListCell: Media must be a `CellMedia` component.');
-    }
-  }
-
   const minHeight = useScaleConditional(listHeight);
   const accessoryType = selected ? 'selected' : accessory;
 

@@ -6,7 +6,7 @@ import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
-import { RemoteImage } from '../media/RemoteImage';
+import { RemoteImage, getSource } from '../media/RemoteImage';
 
 export type { CellMediaProps };
 
@@ -27,7 +27,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
       <RemoteImage
         accessibilityHint={props.title}
         accessibilityLabel={props.title}
-        source={{ uri: props.source }}
+        source={getSource(props.source)}
         resizeMode="cover"
         shape="circle"
         width={size}
@@ -42,7 +42,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
       <RemoteImage
         accessibilityHint={props.title}
         accessibilityLabel={props.title}
-        source={{ uri: props.source }}
+        source={getSource(props.source)}
         resizeMode="cover"
         shape="squircle"
         width={size}

@@ -19,16 +19,6 @@ describe('ContentCell', () => {
     spy.mockRestore();
   });
 
-  it('errors if non-cell media is passed', () => {
-    const spy = jest.spyOn(console, 'error').mockImplementation();
-
-    render(<ContentCell media={<View />} />);
-
-    expect(spy).toHaveBeenCalledWith('ContentCell: Media must be a `CellMedia` component.');
-
-    spy.mockRestore();
-  });
-
   it('renders a title', () => {
     const result = render(
       <ContentCell

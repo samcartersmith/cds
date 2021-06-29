@@ -6,8 +6,6 @@ import { Box, HStack, VStack } from '../layout';
 import { TextHeadline, TextBody, TextLabel2 } from '../typography';
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
-import { CellMedia } from './CellMedia';
-import { MediaFallback } from './MediaFallback';
 
 export interface ContentCellProps extends ContentCellBaseProps, CellSharedProps {}
 
@@ -25,10 +23,6 @@ export const ContentCell = memo(function ContentCell({
   if (process.env.NODE_ENV !== 'production') {
     if (meta && !title && !subtitle) {
       console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
-    }
-
-    if (media && media.type !== CellMedia && media.type !== MediaFallback) {
-      console.error('ContentCell: Media must be a `CellMedia` component.');
     }
   }
 

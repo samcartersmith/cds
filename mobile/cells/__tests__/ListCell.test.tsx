@@ -8,16 +8,6 @@ import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
 describe('ListCell', () => {
-  it('errors if non-cell media is passed', () => {
-    const spy = jest.spyOn(console, 'error').mockImplementation();
-
-    render(<ListCell media={<View />} />);
-
-    expect(spy).toHaveBeenCalledWith('ListCell: Media must be a `CellMedia` component.');
-
-    spy.mockRestore();
-  });
-
   it('renders a title', () => {
     const result = render(
       <ListCell

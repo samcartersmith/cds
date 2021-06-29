@@ -2,7 +2,13 @@ import React, { memo, useMemo } from 'react';
 
 import { AspectRatio, FixedValue, Shape } from '@cbhq/cds-common';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
-import { Image, ImageProps, ImageResizeMode } from 'react-native';
+import {
+  Image,
+  ImageProps,
+  ImageResizeMode,
+  ImageSourcePropType,
+  ImageURISource,
+} from 'react-native';
 
 interface BaseRemoteImageProps extends Omit<ImageProps, 'style' | 'width' | 'height'> {
   aspectRatio?: AspectRatio;
@@ -31,6 +37,14 @@ export type RemoteImageProps =
   | RemoteImagePropsWithWidth
   | RemoteImagePropsWithHeight
   | RemoteImagePropsWidthAndHeight;
+
+export function getSource(source: string | number | ImageURISource): ImageSourcePropType {
+  if (typeof source === 'string') {
+    return { uri: source };
+  }
+
+  return source;
+}
 
 export const RemoteImage = memo(function RemoteImage({
   width,

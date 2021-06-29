@@ -41,16 +41,16 @@ export type CellDetailVariant = Extract<
 
 export interface CellDetailProps {
   /** Label and or extra detail. */
-  detail?: NonNullable<React.ReactNode>;
+  detail?: React.ReactNode;
   /** Subdetail providing more information. */
-  subdetail?: NonNullable<React.ReactNode>;
+  subdetail?: React.ReactNode;
   /** Variant color to apply to the subdetail text. */
   variant?: CellDetailVariant;
 }
 
 export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon' | 'pictogram';
 
-export type CellMediaSource = string;
+export type CellMediaSource = string | number;
 
 export interface CellMediaSharedProps extends SharedProps {
   pressable?: boolean;
@@ -84,7 +84,7 @@ export interface ContentCellBaseProps extends CellCommonProps {
   /** Description of content. Content will wrap accordingly. */
   description?: React.ReactNode;
   /* Media (icon, asset, image, etc) to display at the start of the cell. */
-  media?: React.ReactElement<CellMediaProps>;
+  media?: React.ReactElement;
   /** Meta information to display at the end of the title. */
   meta?: React.ReactNode;
   /** Subtitle of content. Max 1 line, otherwise will truncate. */
@@ -110,17 +110,17 @@ export interface ListCellBaseProps extends CellCommonProps, CellDetailProps {
   /** Accessory to display at the end of the cell. */
   accessory?: CellAccessoryType;
   /** Interactive action, like a CTA or form element. Cannot be used alongside `onPress`. */
-  action?: NonNullable<React.ReactNode>;
+  action?: React.ReactNode;
   /** Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate. */
-  description?: NonNullable<React.ReactNode>;
+  description?: React.ReactNode;
   /** For internal use only. */
   intermediary?: React.ReactNode;
   /* Media (icon, asset, image, etc) to display at the start of the cell. */
-  media?: React.ReactElement<CellMediaProps>;
+  media?: React.ReactElement;
   /** Allow the description to span multiple lines. This *will* break fixed height requirements, so should not be used in a `FlatList`. */
   multiline?: boolean;
   /** Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate. */
-  title?: NonNullable<React.ReactNode>;
+  title?: React.ReactNode;
 }
 
 export interface ListCellFallbackProps {

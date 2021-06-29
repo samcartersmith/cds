@@ -32,7 +32,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     content = (
       <RemoteImage
         alt={props.title}
-        source={props.source}
+        source={String(props.source)}
         shape={isImage ? 'squircle' : 'circle'}
         width={size}
         height={size}

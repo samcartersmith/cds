@@ -14,16 +14,6 @@ describe('ListCell', () => {
     ).toHaveNoViolations();
   });
 
-  it('errors if non-cell media is passed', () => {
-    const spy = jest.spyOn(console, 'error').mockImplementation();
-
-    render(<ListCell media={<div />} />);
-
-    expect(spy).toHaveBeenCalledWith('ListCell: Media must be a `CellMedia` component.');
-
-    spy.mockRestore();
-  });
-
   it('renders a title', () => {
     const result = render(<ListCell title={<div data-testid="title">Title</div>} />);
 
