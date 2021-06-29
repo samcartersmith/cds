@@ -16,7 +16,7 @@ export const useWebBrowserOpener = () => {
         case 'http':
         case 'https':
           // Use custom handling for web URLs
-          openWebBrowser(url, {
+          await openWebBrowser(url, {
             spectrum: options?.spectrum ?? spectrum,
             preventRedirectionIntoApp: options?.preventRedirectionIntoApp || false,
             forceOpenOutsideApp: options?.forceOpenOutsideApp || false,
