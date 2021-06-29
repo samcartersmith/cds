@@ -39,7 +39,7 @@ describe('CellMedia', () => {
     const image = result.getByAltText('Test');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
-    expect(image).toHaveAttribute('width', '40');
-    expect(image).toHaveAttribute('height', '40');
+    expect(image).toHaveAttribute('width', '48');
+    expect(image).toHaveAttribute('height', '48');
   });
 });

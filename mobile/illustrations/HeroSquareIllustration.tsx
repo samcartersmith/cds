@@ -8,9 +8,8 @@ interface HeroSquareIllustrationProps extends Omit<IllustrationProps, 'name'> {
   name: IllustrationHeroSquareNames;
 }
 
-export const HeroSquareIllustration = memo(function HeroSquareIllustration({
-  name,
-  testID,
-}: HeroSquareIllustrationProps) {
-  return <Illustration name={name} testID={testID} />;
+export const HeroSquareIllustration = memo(function HeroSquareIllustration(
+  props: HeroSquareIllustrationProps
+) {
+  return <Illustration {...props} />;
 });

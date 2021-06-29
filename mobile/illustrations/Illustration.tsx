@@ -19,6 +19,10 @@ export interface IllustrationProps extends SharedProps {
     | IllustrationSpotRectangleNames
     | IllustrationPictogramNames
     | IllustrationSpotSquareNames;
+  /** @internal Do not use! */
+  height?: number;
+  /** @internal Do not use! */
+  width?: number;
 }
 
 export const Illustration = memo(function Illustration({ name, ...props }: IllustrationProps) {
@@ -28,11 +32,22 @@ export const Illustration = memo(function Illustration({ name, ...props }: Illus
     useSpectrumConditional({ light: imageMetadata.light, dark: imageMetadata.dark }) ??
     imageMetadata.light;
 
-  if (imageMetadata.fileFormat === 'svg')
-    return <SvgCssUri uri={Image.resolveAssetSource(image).uri} {...props} />;
+  const style = useMemo(
+    () => ({
+      // Illustrations dont render if values are undefined
+      ...(props.width && { width: props.width }),
+      ...(props.height && { height: props.height }),
+    }),
+    [props.width, props.height]
+  );
+
+  if (imageMetadata.fileFormat === 'svg') {
+    return <SvgCssUri style={style} uri={Image.resolveAssetSource(image).uri} {...props} />;
+  }
 
   return (
     <Image
+      style={style}
       source={image ?? imageMetadata.light}
       resizeMode="contain"
       accessibilityIgnoresInvertColors

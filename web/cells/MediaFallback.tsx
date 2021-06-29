@@ -11,11 +11,12 @@ export interface MediaFallbackProps {
 }
 
 export const MediaFallback = memo(function MediaFallback({ type }: MediaFallbackProps) {
-  const size = useScaleConditional(mediaSize);
+  const mediaSizeScaled = useScaleConditional(mediaSize);
+  const imageSizeScaled = useScaleConditional(imageSize);
 
   if (type === 'image') {
-    return <Fallback height={imageSize} width={imageSize} shape="squircle" />;
+    return <Fallback height={imageSizeScaled} width={imageSizeScaled} shape="squircle" />;
   }
 
-  return <Fallback height={size} width={size} shape="circle" />;
+  return <Fallback height={mediaSizeScaled} width={mediaSizeScaled} shape="circle" />;
 });

@@ -5,6 +5,7 @@ import {
   IconButtonBaseProps,
   ListCellBaseProps,
 } from '@cbhq/cds-common';
+import { IllustrationPictogramNames } from '@cbhq/cds-common/types/Illustration';
 
 import { mockAsset } from './constants';
 
@@ -18,7 +19,8 @@ export function createStories(
   CellMedia: React.ComponentType<CellMediaProps>,
   Button: React.ComponentType<ButtonBaseProps>,
   IconButton: React.ComponentType<IconButtonBaseProps>,
-  Checkbox: React.ComponentType<ControlBaseProps<string> & { accessibilityLabel: string }>
+  Checkbox: React.ComponentType<ControlBaseProps<string> & { accessibilityLabel: string }>,
+  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>
 ) {
   const Content = () => {
     return (
@@ -238,12 +240,6 @@ export function createStories(
       />
 
       <ListCell
-        title="Image"
-        detail="Detail"
-        media={<CellMedia type="image" source={mockAsset} title="Title" />}
-      />
-
-      <ListCell
         title="Avatar"
         description="Description"
         detail="Detail"
@@ -256,6 +252,18 @@ export function createStories(
         detail="Detail"
         subdetail="Neutral"
         media={<CellMedia type="asset" source={mockAsset} title="Title" />}
+      />
+
+      <ListCell
+        title="Image"
+        detail="Detail"
+        media={<CellMedia type="image" source={mockAsset} title="Title" />}
+      />
+
+      <ListCell
+        title="Pictogram"
+        description="Description"
+        media={<CellMedia type="pictogram" illustration={<Pictogram name="shield" />} />}
       />
     </>
   );

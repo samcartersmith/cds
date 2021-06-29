@@ -1,5 +1,7 @@
 import { ContentCellBaseProps, CellMediaProps } from '@cbhq/cds-common';
 
+import { IllustrationPictogramNames } from '@cbhq/cds-common/types/Illustration';
+
 import { mockAsset } from './constants';
 
 export function createStories(
@@ -9,7 +11,8 @@ export function createStories(
       to?: string;
     }
   >,
-  CellMedia: React.ComponentType<CellMediaProps>
+  CellMedia: React.ComponentType<CellMediaProps>,
+  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>
 ) {
   const Content = () => (
     <>
@@ -117,34 +120,46 @@ export function createStories(
 
   const WithMedia = () => (
     <>
-      <ContentCell title="Title" media={<CellMedia type="icon" name="email" />} />
+      <ContentCell title="Icon" media={<CellMedia type="icon" name="email" />} />
 
       <ContentCell
-        title="Title"
-        subtitle="Subtitle"
-        meta="Meta"
-        media={<CellMedia type="image" source={mockAsset} title="Title" />}
+        title="Icon (pressable)"
+        media={<CellMedia type="icon" name="email" />}
+        onPress={console.log}
       />
 
       <ContentCell
-        title="Title"
+        title="Icon"
         description="Description"
         media={<CellMedia type="icon" name="phone" />}
       />
 
       <ContentCell
-        title="Title"
+        title="Avatar"
         description="Description"
         subtitle="Subtitle"
         media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
       />
 
       <ContentCell
-        title="Title"
+        title="Asset"
         description="Description"
         meta="Meta"
         subtitle="Subtitle"
         media={<CellMedia type="asset" source={mockAsset} title="Title" />}
+      />
+
+      <ContentCell
+        title="Image"
+        subtitle="Subtitle"
+        meta="Meta"
+        media={<CellMedia type="image" source={mockAsset} title="Title" />}
+      />
+
+      <ContentCell
+        title="Pictogram"
+        description="Description"
+        media={<CellMedia type="pictogram" illustration={<Pictogram name="shield" />} />}
       />
     </>
   );

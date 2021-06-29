@@ -8,9 +8,8 @@ interface PictogramIllustrationProps extends Omit<IllustrationProps, 'name'> {
   name: IllustrationPictogramNames;
 }
 
-export const PictogramIllustration = memo(function PictogramIllustration({
-  name,
-  testID,
-}: PictogramIllustrationProps) {
-  return <Illustration name={name} testID={testID} />;
+export const PictogramIllustration = memo(function PictogramIllustration(
+  props: PictogramIllustrationProps
+) {
+  return <Illustration {...props} />;
 });

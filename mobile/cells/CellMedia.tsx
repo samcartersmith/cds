@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { cloneElement, memo } from 'react';
 
 import { CellMediaProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
@@ -11,7 +11,9 @@ import { RemoteImage } from '../media/RemoteImage';
 export type { CellMediaProps };
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
-  let size = useScaleConditional(mediaSize);
+  const mediaSizeScaled = useScaleConditional(mediaSize);
+  const imageSizeScaled = useScaleConditional(imageSize);
+  let size = mediaSizeScaled;
   let content = null;
 
   if (props.type === 'icon') {
@@ -35,7 +37,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   }
 
   if (props.type === 'image') {
-    size = imageSize;
+    size = imageSizeScaled;
     content = (
       <RemoteImage
         accessibilityHint={props.title}
@@ -47,6 +49,14 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
         height={size}
       />
     );
+  }
+
+  if (props.type === 'pictogram') {
+    size = imageSizeScaled;
+    content = cloneElement(props.illustration, {
+      width: size,
+      height: size,
+    });
   }
 
   if (!content) {

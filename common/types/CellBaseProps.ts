@@ -1,4 +1,5 @@
 import { IconName } from './IconName';
+import { IllustrationPictogramNames } from './Illustration';
 import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
 import { SpacingProps, OffsetProps } from './SpacingProps';
@@ -47,24 +48,35 @@ export interface CellDetailProps {
   variant?: CellDetailVariant;
 }
 
-export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon';
+export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon' | 'pictogram';
 
 export type CellMediaSource = string;
 
-export interface CellMediaIconProps extends SharedProps {
+export interface CellMediaSharedProps extends SharedProps {
+  pressable?: boolean;
+}
+
+export interface CellMediaIconProps extends CellMediaSharedProps {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
-  pressable?: boolean;
 }
 
-export interface CellMediaOtherProps extends SharedProps {
-  type: Exclude<CellMediaType, 'icon'>;
+export interface CellMediaPictogramProps extends CellMediaSharedProps {
+  type: Extract<CellMediaType, 'pictogram'>;
+  illustration: React.ReactElement<{
+    name: IllustrationPictogramNames;
+    height?: number;
+    width?: number;
+  }>;
+}
+
+export interface CellMediaOtherProps extends CellMediaSharedProps {
+  type: Exclude<CellMediaType, 'icon' | 'pictogram'>;
   title?: string;
   source: CellMediaSource;
-  pressable?: boolean;
 }
 
-export type CellMediaProps = CellMediaIconProps | CellMediaOtherProps;
+export type CellMediaProps = CellMediaIconProps | CellMediaPictogramProps | CellMediaOtherProps;
 
 export interface ContentCellBaseProps extends CellCommonProps {
   /** Accessory to display at the end of the cell. */

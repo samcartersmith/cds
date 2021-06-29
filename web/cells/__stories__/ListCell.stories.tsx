@@ -2,6 +2,7 @@ import { createStories } from '@cbhq/cds-storybook/stories/ListCell';
 
 import { Button, IconButton } from '../../buttons';
 import { Checkbox } from '../../controls';
+import { Box } from '../../layout/Box';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
@@ -19,4 +20,6 @@ export const {
   WithMedia,
   WithActions,
   WithIntermediary,
-} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox);
+} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox, props => (
+  <Box {...props} background="backgroundAlternate" />
+));

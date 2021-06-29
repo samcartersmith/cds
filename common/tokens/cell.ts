@@ -5,7 +5,11 @@ export const mediaSize: Record<ScaleDensity, number> = {
   normal: 32,
 };
 
-export const imageSize = 40;
+// Height of the inner cell without padding
+export const imageSize: Record<ScaleDensity, number> = {
+  dense: 40,
+  normal: 48,
+};
 
 export const listHeight: Record<ScaleDensity, number> = {
   dense: 64,

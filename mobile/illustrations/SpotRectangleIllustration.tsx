@@ -8,9 +8,8 @@ interface SpotRectangleIllustrationProps extends Omit<IllustrationProps, 'name'>
   name: IllustrationSpotRectangleNames;
 }
 
-export const SpotRectangleIllustration = memo(function SpotRectangleIllustration({
-  name,
-  testID,
-}: SpotRectangleIllustrationProps) {
-  return <Illustration name={name} testID={testID} />;
+export const SpotRectangleIllustration = memo(function SpotRectangleIllustration(
+  props: SpotRectangleIllustrationProps
+) {
+  return <Illustration {...props} />;
 });
