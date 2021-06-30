@@ -36,12 +36,12 @@ export interface FlexStyles {
   /**
    * How should children wrap when overflowing.
    * @default nowrap
-   **/
+   */
   flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
   /**
    * Set the distribution of space between and around content items along the main-axis.
    * @default flex-start
-   **/
+   */
   justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
 }
 
@@ -91,7 +91,7 @@ export interface BoxBaseProps
   /**
    * Set the background color of the box. Passing `true` will enable the default background,
    * otherwise a custom palette alias can be passed.
-   **/
+   */
   background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
   /** Content to render within the box. */
   children?: React.ReactNode;

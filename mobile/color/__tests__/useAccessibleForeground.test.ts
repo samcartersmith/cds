@@ -4,6 +4,32 @@ import { renderHook } from '@testing-library/react-hooks';
 import { DarkModeProvider } from '../../system';
 import { useAccessibleForeground } from '../useAccessibleForeground';
 
+const checkAllUsages = (colorToCheck: string, mode?: Spectrum | undefined) => {
+  const modeParams =
+    mode === 'dark'
+      ? {
+          wrapper: DarkModeProvider,
+        }
+      : {};
+  const { result: normalText } = renderHook(
+    () => useAccessibleForeground(colorToCheck, 'normalText'),
+    modeParams
+  );
+  const { result: largeText } = renderHook(
+    () => useAccessibleForeground(colorToCheck, 'largeText'),
+    modeParams
+  );
+  const { result: graphic } = renderHook(
+    () => useAccessibleForeground(colorToCheck, 'graphic'),
+    modeParams
+  );
+  return {
+    normalText: normalText.current,
+    largeText: largeText.current,
+    graphic: graphic.current,
+  };
+};
+
 describe('useAccessibleForeground', () => {
   it('returns the color passed in if meets accessibility requirements', () => {
     const { normalText, largeText, graphic } = checkAllUsages('#000000');
@@ -40,29 +66,3 @@ describe('useAccessibleForeground', () => {
     expect(graphic).toEqual('#EC7030');
   });
 });
-
-const checkAllUsages = (colorToCheck: string, mode?: Spectrum | undefined) => {
-  const modeParams =
-    mode === 'dark'
-      ? {
-          wrapper: DarkModeProvider,
-        }
-      : {};
-  const { result: normalText } = renderHook(
-    () => useAccessibleForeground(colorToCheck, 'normalText'),
-    modeParams
-  );
-  const { result: largeText } = renderHook(
-    () => useAccessibleForeground(colorToCheck, 'largeText'),
-    modeParams
-  );
-  const { result: graphic } = renderHook(
-    () => useAccessibleForeground(colorToCheck, 'graphic'),
-    modeParams
-  );
-  return {
-    normalText: normalText.current,
-    largeText: largeText.current,
-    graphic: graphic.current,
-  };
-};

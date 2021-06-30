@@ -8,7 +8,7 @@ export const useLottieListeners = (
 ) => {
   useEffect(() => {
     if (!listeners.length) {
-      return;
+      return undefined;
     }
 
     const deregisterList = listeners.map(listener => {

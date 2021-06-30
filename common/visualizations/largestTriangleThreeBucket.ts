@@ -1,4 +1,4 @@
-/* eslint-disable id-length */
+/* eslint-disable no-plusplus */
 /**
  * Downsampling timeseries data using the "Largest-Triangle-Three-Buckets algorithm" (LTTB) as described in Sveinn Steinarsson's 2013 Master's thesis Downsampling Time Series for Visual Representation.
  *
@@ -45,8 +45,8 @@ export const largestTriangleThreeBucket = (data: number[], threshold: number) =>
       h += +data[a];
     }
 
-    g = g / k;
-    h = h / k;
+    g /= k;
+    h /= k;
     a = m((e + 0) * p) + 1;
     d = m((e + 1) * p) + 1;
     k = +c;
@@ -54,7 +54,7 @@ export const largestTriangleThreeBucket = (data: number[], threshold: number) =>
     c = -1;
     for (; a < d; a++) {
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      typeof data[a] != 'undefined' &&
+      typeof data[a] !== 'undefined' &&
         ((u = 0.5 * y((k - g) * (data[a] - x) - (k - a) * (h - x))),
         u > c && ((c = u), (v = data[a]), (w = a)));
     }

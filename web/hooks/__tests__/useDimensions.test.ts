@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { useDimensions, Options, observerErr, borderBoxWarn } from '../useDimensions';

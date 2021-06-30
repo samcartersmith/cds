@@ -28,6 +28,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   ref: React.ForwardedRef<View>
 ) {
   if (isDevelopment() && !label && !accessibilityLabel) {
+    // eslint-disable-next-line no-console
     console.warn('Please specify an accessibility label for the checkbox group.');
   }
 
@@ -38,6 +39,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
 
     const { value } = child.props;
     if (isDevelopment() && typeof value === 'undefined') {
+      // eslint-disable-next-line no-console
       console.error('Checkboxes inside CheckboxGroup should have values.');
     }
     return cloneElement(child, {

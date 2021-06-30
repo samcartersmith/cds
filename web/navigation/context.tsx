@@ -1,4 +1,4 @@
-import React, { createContext, memo, useContext, useState } from 'react';
+import React, { createContext, memo, useContext, useMemo, useState } from 'react';
 
 import { NoopFn, SetState } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
@@ -31,20 +31,18 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = memo(
       isMobileMenuVisible,
       { toggle: toggleMobileMenuVisibility, toggleOff: toggleMobileMenuHidden },
     ] = useToggler(false);
-
-    return (
-      <NavigationContext.Provider
-        value={{
-          isMobileMenuVisible,
-          toggleMobileMenuVisibility,
-          toggleMobileMenuHidden,
-          sidebarLayout,
-          setSidebarLayout,
-        }}
-      >
-        {children}
-      </NavigationContext.Provider>
+    const value = useMemo(
+      () => ({
+        isMobileMenuVisible,
+        toggleMobileMenuVisibility,
+        toggleMobileMenuHidden,
+        sidebarLayout,
+        setSidebarLayout,
+      }),
+      [isMobileMenuVisible, sidebarLayout, toggleMobileMenuHidden, toggleMobileMenuVisibility]
     );
+
+    return <NavigationContext.Provider value={value}>{children}</NavigationContext.Provider>;
   }
 );
 

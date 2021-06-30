@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { entries } from '@cbhq/cds-utils';
 import { renderHook } from '@testing-library/react-hooks';

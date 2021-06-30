@@ -11,6 +11,7 @@ describe('Carousel', () => {
 
   const MockCarousel = () => {
     const items = Array.from({ length: itemsLength }).map((_, index) => (
+      // eslint-disable-next-line react/no-array-index-key
       <Box key={`item${index}`} height={itemSize} width={itemSize}>
         <TextBody>CarouselItem</TextBody>
       </Box>

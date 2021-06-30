@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo, useCallback } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
@@ -39,14 +40,14 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
 export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
   React.MemoExoticComponent<typeof RadioWithRef>;
 
-export const useHandleRadioSelect = function <T extends string>(onChange?: (value: T) => void) {
+export function useHandleRadioSelect<T extends string>(onChange?: (value: T) => void) {
   return useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     event => {
       onChange?.(event.target.value as T);
     },
     [onChange]
   );
-};
+}
 
 export interface RadioGroupProps<T extends string>
   extends FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange'>,

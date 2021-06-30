@@ -13,21 +13,21 @@ export type TabsProps = {
 };
 
 export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children }: TabsProps) => {
-  const { activeIndex: _activeIndex, setActiveIndex: _setActiveIndex } = useIndexCounter({
+  const { activeIndex: currentIndex, setActiveIndex: setCurrentIndex } = useIndexCounter({
     length: Children.count(children),
   });
 
-  const updateHandler = setActiveIndex ?? _setActiveIndex;
+  const updateHandler = setActiveIndex ?? setCurrentIndex;
 
   useEffect(() => {
-    _setActiveIndex(activeIndex);
-  }, [activeIndex, _setActiveIndex]);
+    setCurrentIndex(activeIndex);
+  }, [activeIndex, setCurrentIndex]);
 
   const tabChildren = useMemo(
     () =>
       Children.map(children, (child, idx) => {
         return cloneElement(child, {
-          active: idx === _activeIndex,
+          active: idx === currentIndex,
           onPress: (evt: React.MouseEvent<HTMLButtonElement>) => {
             updateHandler(idx);
             onChange?.({ label: child.props.label, value: child.props?.value });
@@ -35,7 +35,7 @@ export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children 
           },
         });
       }),
-    [_activeIndex, children, onChange, updateHandler]
+    [currentIndex, children, onChange, updateHandler]
   );
 
   return <div role="tablist">{tabChildren}</div>;

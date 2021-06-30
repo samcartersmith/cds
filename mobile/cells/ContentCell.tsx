@@ -22,6 +22,7 @@ export const ContentCell = memo(function ContentCell({
 }: ContentCellProps) {
   if (process.env.NODE_ENV !== 'production') {
     if (meta && !title && !subtitle) {
+      // eslint-disable-next-line no-console
       console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
     }
   }
@@ -31,7 +32,9 @@ export const ContentCell = memo(function ContentCell({
   return (
     <Cell
       {...props}
-      accessory={accessoryType && <CellAccessory type={accessoryType} spacingTop={0.5} />}
+      accessory={
+        accessoryType ? <CellAccessory type={accessoryType} spacingTop={0.5} /> : undefined
+      }
       alignItems="flex-start"
       media={media}
       disabled={disabled}

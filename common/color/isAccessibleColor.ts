@@ -20,5 +20,7 @@ export const isAccessibleColor = (
       return ratio >= 4.5;
     case 'graphic':
       return ratio >= 3;
+    default:
+      return true;
   }
 };

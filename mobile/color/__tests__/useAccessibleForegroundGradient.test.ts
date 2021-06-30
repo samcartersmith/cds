@@ -4,6 +4,17 @@ import { renderHook } from '@testing-library/react-hooks';
 import { DarkModeProvider } from '../../system';
 import { useAccessibleForegroundGradient } from '../useAccessibleForegroundGradient';
 
+const mockUseAccessibleForegroundGradient = (colorToCheck: string, mode?: Spectrum | undefined) => {
+  const modeParams =
+    mode === 'dark'
+      ? {
+          wrapper: DarkModeProvider,
+        }
+      : {};
+  const { result } = renderHook(() => useAccessibleForegroundGradient(colorToCheck), modeParams);
+  return result.current;
+};
+
 describe('useAccessibleForegroundGradient', () => {
   it('returns the color passed in if meets accessibility requirements', () => {
     const output = mockUseAccessibleForegroundGradient('#000000');
@@ -33,14 +44,3 @@ describe('useAccessibleForegroundGradient', () => {
     expect(output).toEqual(['#EC7030', '#a54e22']);
   });
 });
-
-const mockUseAccessibleForegroundGradient = (colorToCheck: string, mode?: Spectrum | undefined) => {
-  const modeParams =
-    mode === 'dark'
-      ? {
-          wrapper: DarkModeProvider,
-        }
-      : {};
-  const { result } = renderHook(() => useAccessibleForegroundGradient(colorToCheck), modeParams);
-  return result.current;
-};

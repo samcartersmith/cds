@@ -5,10 +5,8 @@ import type { IconSize, IconPixelSize, Scale } from '../types';
 
 type IconScaleMap = Record<IconSize, IconPixelSize>;
 
-/* eslint-disable id-length */
 const scaleMap1: IconScaleMap = { l: 24, m: 16, s: 12, xs: 8 };
 const scaleMap2: IconScaleMap = { l: 32, m: 24, s: 16, xs: 12 };
-/* eslint-enable id-length */
 
 const mapping: Record<Scale, IconScaleMap> = {
   xSmall: scaleMap1,
@@ -29,6 +27,7 @@ export const useIconSize = (size: IconSize, bordered?: boolean) => {
         case 'l':
           return mapping[scale].s;
         case 'm':
+        default:
           return mapping[scale].xs;
       }
     }

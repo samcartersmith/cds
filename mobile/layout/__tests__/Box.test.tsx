@@ -53,7 +53,7 @@ describe('Box', () => {
 
   it('can dangerously override styles', async () => {
     const { getByTestId } = render(
-      // eslint-disable-next-line react-native/no-inline-styles, react-native/no-color-literals
+      // eslint-disable-next-line react-native/no-color-literals
       <Box testID="parent" dangerouslySetStyle={{ backgroundColor: '#000' }}>
         <Text>Child</Text>
       </Box>

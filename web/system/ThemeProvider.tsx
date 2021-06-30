@@ -4,6 +4,11 @@ import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 
 import { useThemeProviderStyles } from './useThemeProviderStyles';
 
+const ThemeManager: React.FC = ({ children }) => {
+  const props = useThemeProviderStyles();
+  return <div {...props}>{children}</div>;
+};
+
 export const ThemeProvider: React.FC<SystemProviderProps> = memo(({ children, ...props }) => {
   return (
     <SystemProvider {...props}>
@@ -11,10 +16,5 @@ export const ThemeProvider: React.FC<SystemProviderProps> = memo(({ children, ..
     </SystemProvider>
   );
 });
-
-const ThemeManager: React.FC = ({ children }) => {
-  const props = useThemeProviderStyles();
-  return <div {...props}>{children}</div>;
-};
 
 ThemeProvider.displayName = 'ThemeProvider';

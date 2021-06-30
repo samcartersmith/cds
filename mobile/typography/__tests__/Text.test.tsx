@@ -33,7 +33,7 @@ const Type = {
 };
 
 const textTestRunner = (testFn: (type: React.ComponentType<TextProps>) => void) => {
-  entries<typeof Type>(Type).map(async ([_, TextComponent]) => testFn(TextComponent));
+  entries<typeof Type>(Type).map(async ([, TextComponent]) => testFn(TextComponent));
 };
 
 describe('Text', () => {

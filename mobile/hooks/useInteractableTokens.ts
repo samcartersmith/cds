@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { useMemo } from 'react';
 
 import { blendColors } from '@cbhq/cds-common/color/blendColors';
@@ -8,7 +9,7 @@ import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactable';
 import { PaletteAlias, PaletteValue, SpectrumAlias, SpectrumHueStep } from '@cbhq/cds-common/types';
 
-import { usePalette } from '../hooks/usePalette';
+import { usePalette } from './usePalette';
 import { paletteValueToRgbaArray } from '../utils/palette';
 
 export type InteractableState = 'pressed' | 'disabled';
@@ -62,6 +63,7 @@ const useInteractableState = ({ disabled, pressed }: UseInteractableTokensParams
   return useMemo(() => {
     if (disabled) return 'disabled';
     if (pressed) return 'pressed';
+    return undefined;
   }, [disabled, pressed]);
 };
 
@@ -95,8 +97,8 @@ const useBlendedColors = (
   const underlayColors = useUnderlayColors(overlayHueStep > 60 ? 'background' : 'foreground');
   return useMemo(() => {
     return {
-      disabled: blendColors(underlayColors['disabled'], overlayColors['disabled']),
-      pressed: blendColors(underlayColors['pressed'], overlayColors['pressed']),
+      disabled: blendColors(underlayColors.disabled, overlayColors.disabled),
+      pressed: blendColors(underlayColors.pressed, overlayColors.pressed),
     };
   }, [overlayColors, underlayColors]);
 };

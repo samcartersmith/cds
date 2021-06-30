@@ -22,24 +22,25 @@ export const useWebBrowserOpener = () => {
             forceOpenOutsideApp: options?.forceOpenOutsideApp || false,
           });
           break;
-        default:
-          {
-            // Handle other schemes such as mailto, tel, and sms
-            try {
-              const canOpenUrl = await Linking.canOpenURL(url);
+        default: {
+          // Handle other schemes such as mailto, tel, and sms
+          try {
+            const canOpenUrl = await Linking.canOpenURL(url);
 
-              if (!canOpenUrl) {
-                // TODO: replace these with Bugsnag one day
-                console.error(`Cannot open URL ${url}`);
-                return;
-              }
-
-              await Linking.openURL(url);
-            } catch (err) {
-              console.error(err.message);
+            if (!canOpenUrl) {
+              // TODO: replace these with Bugsnag one day
+              // eslint-disable-next-line no-console
+              console.error(`Cannot open URL ${url}`);
+              return;
             }
+
+            await Linking.openURL(url);
+          } catch (err) {
+            // eslint-disable-next-line no-console
+            console.error(err.message);
           }
           break;
+        }
       }
     },
     [spectrum]

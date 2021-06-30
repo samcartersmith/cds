@@ -331,6 +331,7 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
     data: {
       IllustrationFilePathMap: paths,
     },
+    header: '/* eslint-disable */\n',
   });
   spinner.stop();
 };

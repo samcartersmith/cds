@@ -8,6 +8,28 @@ import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable, LinkableProps } from '../system/Pressable';
 
+const pressClassName = css`
+  align-items: stretch;
+  flex-grow: 1;
+  display: flex;
+`;
+
+// Display and min-width are necessary for truncation to work:
+// https://css-tricks.com/flexbox-truncated-text/
+export const truncateClassName = css`
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+`;
+
+export const overflowClassName = css`
+  overflow: auto;
+  text-overflow: unset;
+  white-space: normal;
+`;
+
 export interface CellSharedProps extends LinkableProps {
   /** The type of outer wrapping element. */
   as?: 'div' | 'li';
@@ -67,7 +89,7 @@ export const Cell = memo(function Cell({
         {children}
       </Box>
 
-      {intermediary && (
+      {!!intermediary && (
         <Box
           flexGrow={0}
           flexShrink={priority === 'middle' ? 0 : 1}
@@ -78,9 +100,10 @@ export const Cell = memo(function Cell({
         </Box>
       )}
 
-      {detail && (
+      {!!detail && (
         <Box
           flexGrow={detailWidth ? undefined : 1}
+          // eslint-disable-next-line no-nested-ternary
           flexShrink={detailWidth ? undefined : priority === 'end' ? 0 : 1}
           flexDirection="column"
           alignItems="flex-end"
@@ -92,7 +115,7 @@ export const Cell = memo(function Cell({
         </Box>
       )}
 
-      {accessory && (
+      {!!accessory && (
         <Box flexGrow={0} flexShrink={0}>
           {accessory}
         </Box>
@@ -131,25 +154,3 @@ export const Cell = memo(function Cell({
     </Box>
   );
 });
-
-const pressClassName = css`
-  align-items: stretch;
-  flex-grow: 1;
-  display: flex;
-`;
-
-// Display and min-width are necessary for truncation to work:
-// https://css-tricks.com/flexbox-truncated-text/
-export const truncateClassName = css`
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-`;
-
-export const overflowClassName = css`
-  overflow: auto;
-  text-overflow: unset;
-  white-space: normal;
-`;

@@ -17,12 +17,12 @@ interface NavigationIconProps extends Omit<IconBaseWebProps, 'color'>, SpacingPr
   /**
    * Size of navigation Icon
    * @default m
-   * */
+   */
   size?: Exclude<IconSize, 'xs'>;
   /**
    * Toggles the active and inactive state of the navigation icon
    * @default false
-   **/
+   */
   active?: boolean;
 }
 

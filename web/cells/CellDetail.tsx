@@ -13,13 +13,13 @@ export const CellDetail = memo(function CellDetail({
 }: CellDetailProps) {
   return (
     <>
-      {detail && (
+      {!!detail && (
         <TextBody as="div" align="end" overflow="truncate">
           {detail}
         </TextBody>
       )}
 
-      {subdetail && (
+      {!!subdetail && (
         <TextBody as="div" align="end" overflow="truncate" color={variant}>
           {subdetail}
         </TextBody>

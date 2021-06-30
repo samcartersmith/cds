@@ -34,6 +34,7 @@ export interface UseInteractableOptions {
   noScaleOnPress?: boolean;
 }
 
+// eslint-disable-next-line no-console
 console.warn(
   `useInteractable() is deprecated. Please use the Interactable or Pressable components instead.`
 );

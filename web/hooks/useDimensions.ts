@@ -128,6 +128,7 @@ export const useDimensions = <T extends HTMLElement>({
   useEffect(() => {
     if (!ref.current) return () => null;
     if ((!('ResizeObserver' in window) || !('ResizeObserverEntry' in window)) && !polyfill) {
+      // eslint-disable-next-line no-console
       console.error(observerErr);
       return () => null;
     }
@@ -141,6 +142,7 @@ export const useDimensions = <T extends HTMLElement>({
         if (borderBoxSize) {
           boxSize = borderBoxSize;
         } else if (!warnedRef.current) {
+          // eslint-disable-next-line no-console
           console.warn(borderBoxWarn);
           warnedRef.current = true;
         }

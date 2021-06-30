@@ -16,10 +16,12 @@ export const RootSpectrumProvider: React.FC<RootSpectrumProviderProps> = memo(
 
     /** Guarantee we only have a single RootScaleContext  */
     if (process.env.NODE_ENV !== 'production' && context) {
+      // eslint-disable-next-line no-console
       console.error(
         'Multiple RootSpectrumProviders were rendered and there should only be one. Ensure there is a single RootSpectrumProvider to resolve.'
       );
     }
+
     return (
       <RootSpectrumContext.Provider value={spectrum}>
         <RootSpectrumUpdaterContext.Provider value={setSpectrum}>

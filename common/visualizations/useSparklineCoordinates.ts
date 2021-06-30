@@ -37,7 +37,7 @@ export const useSparklineCoordinates = ({ data, width, height }: UseSparklineCoo
       const idx = bisect(data, date);
       const point = data[idx];
       if (!point) {
-        return;
+        return undefined;
       }
       return {
         x: xFunction(point.date),

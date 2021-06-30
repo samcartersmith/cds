@@ -73,7 +73,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
 
     /** Maps the height of this component (once available) to an Animated.Value. */
     const interpolatedHeight = useMemo(() => {
-      if (height === undefined) return;
+      if (height === undefined) return undefined;
       return animations.current.height.interpolate({
         inputRange: [0, 1],
         outputRange: [0, height],

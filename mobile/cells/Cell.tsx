@@ -70,6 +70,7 @@ export const Cell = memo(function Cell({
       {!!detail && (
         <Box
           flexGrow={detailWidth ? undefined : 1}
+          // eslint-disable-next-line no-nested-ternary
           flexShrink={detailWidth ? undefined : priority === 'end' ? 0 : 1}
           alignItems="flex-end"
           justifyContent="flex-end"

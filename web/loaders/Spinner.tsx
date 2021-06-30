@@ -36,7 +36,7 @@ export const Spinner = memo(function Spinner({ size, color, testID }: SpinnerPro
     <div
       data-testid={testID}
       role="status"
-      aria-busy={true}
+      aria-busy
       aria-live="polite"
       style={spinnerStyle}
       className={styles.spinner.base}

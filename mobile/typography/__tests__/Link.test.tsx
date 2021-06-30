@@ -77,7 +77,7 @@ describe('Link', () => {
 
   it('can set forceOpenOutsideApp to true', () => {
     const linkRenderer = TestRenderer.create(
-      <Link to={URL} forceOpenOutsideApp={true} testID={TEST_ID}>
+      <Link to={URL} forceOpenOutsideApp testID={TEST_ID}>
         Child
       </Link>
     );

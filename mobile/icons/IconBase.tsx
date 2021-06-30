@@ -80,7 +80,7 @@ export const IconBase = ({
             {iconGlyphMap[name][iconSize]}
           </TextComponent>
           {bordered && <IconOutline animated size={wrapperSize} color={iconColor} />}
-          {badge &&
+          {!!badge &&
             cloneElement(badge, {
               position: 'absolute',
               top: '-45%',

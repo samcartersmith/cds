@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
@@ -48,6 +49,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   ref: React.ForwardedRef<HTMLInputElement>
 ) {
   if (isDevelopment() && !children && !ariaLabelledby) {
+    // eslint-disable-next-line no-console
     console.warn(
       `Please provide an aria label for the control component ${value} either through the children or aria-labelledby prop.`
     );

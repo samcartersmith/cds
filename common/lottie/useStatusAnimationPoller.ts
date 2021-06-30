@@ -85,6 +85,8 @@ export const useStatusAnimationPoller = ({
           }
           break;
         }
+        default:
+          break;
       }
       isComplete.current = true;
       onFinish?.();

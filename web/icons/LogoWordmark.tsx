@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { useLogoWordmark, LogoWordmarkParams } from '@cbhq/cds-common/hooks/useLogo';
 
-import { iconStyles } from '../icons/iconStyles';
+import { iconStyles } from './iconStyles';
 
 export const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
   const { viewBox, path, color } = useLogoWordmark({ foreground });

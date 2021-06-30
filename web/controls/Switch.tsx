@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
 
 import { switchPalette } from '@cbhq/cds-common';

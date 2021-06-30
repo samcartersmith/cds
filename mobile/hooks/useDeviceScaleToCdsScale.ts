@@ -32,11 +32,14 @@ export const useDeviceScaleToCdsScale = () => {
     /** For xSmall through medium we return large until we can revist device to CDS scale logic. */
     if (deviceScale <= deviceScaleMap.large) {
       return 'large';
-    } else if (deviceScale <= deviceScaleMap.xLarge) {
+    }
+    if (deviceScale <= deviceScaleMap.xLarge) {
       return 'xLarge';
-    } else if (deviceScale <= deviceScaleMap.xxLarge) {
+    }
+    if (deviceScale <= deviceScaleMap.xxLarge) {
       return 'xxLarge';
-    } else if (deviceScale >= deviceScaleMap.xxxLarge) {
+    }
+    if (deviceScale >= deviceScaleMap.xxxLarge) {
       return 'xxxLarge';
     }
     return 'large';

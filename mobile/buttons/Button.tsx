@@ -56,7 +56,7 @@ export const Button = memo(function Button({
           <ActivityIndicator size="small" color={palette[color]} />
         ) : (
           <>
-            {startIcon && (
+            {!!startIcon && (
               <View style={startIconStyles}>
                 <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
               </View>
@@ -66,7 +66,7 @@ export const Button = memo(function Button({
               {children}
             </TextHeadline>
 
-            {endIcon && (
+            {!!endIcon && (
               <View style={endIconStyles}>
                 <Icon name={endIcon} size={compact ? 'xs' : 's'} color={color} />
               </View>

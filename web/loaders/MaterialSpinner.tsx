@@ -27,7 +27,7 @@ export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerPro
       className={styles.materialSpinner.spinner}
       style={svgContainerStyle}
       role="status"
-      aria-busy={true}
+      aria-busy
       aria-live="polite"
       xmlns="http://www.w3.org/2000/svg"
       data-testid={testID}
@@ -42,7 +42,7 @@ export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerPro
         cx="33"
         cy="33"
         r="30"
-      ></circle>
+      />
     </svg>
   );
 });

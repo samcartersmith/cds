@@ -1,4 +1,5 @@
-import { Spectrum, PaletteValue } from '.';
+import { PaletteValue } from './Palette';
+import { Spectrum } from './Spectrum';
 
 export type RgbArray = [number, number, number];
 export type RgbaArray = [number, number, number, number];

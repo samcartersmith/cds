@@ -28,18 +28,6 @@ export type NavigationProps = {
   sidebarLayout?: SidebarLayout;
 };
 
-export const Navigation: React.FC<NavigationProps> = memo(
-  ({ sidebarLayout = defaultLayout, ...props }) => {
-    return (
-      <MotionConfig>
-        <NavigationProvider variant={sidebarLayout}>
-          <NavigationContent {...props} />
-        </NavigationProvider>
-      </MotionConfig>
-    );
-  }
-);
-
 const NavigationContent: React.FC<NavigationProps> = memo(
   ({ sidebar, navbar, displayTitle, tabs, children }) => {
     const { isMobileMenuVisible, toggleMobileMenuHidden, setSidebarLayout } = useNavigation();
@@ -71,6 +59,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
         // Triggered when breakpoint is changed
         switch (currentBreakpoint) {
           case 'desktop':
+          default:
             setSidebarLayout('expanded');
             toggleMobileMenuHidden();
             setShowDisplayTitle(true);
@@ -90,6 +79,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
     });
 
     const animatedDivider = (
+      // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
       <motion.div className={pinBottom} style={{ opacity: dividerOpacity }}>
         <Divider />
       </motion.div>
@@ -107,6 +97,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
       if (!displayTitle) {
         return <Divider pin="bottom" />;
       }
+      return undefined;
     }, [displayTitle]);
 
     const navbarAnimatedDivider = !tabs && displayTitle && animatedDivider;
@@ -177,6 +168,18 @@ const NavigationContent: React.FC<NavigationProps> = memo(
           </VStack>
         </section>
       </div>
+    );
+  }
+);
+
+export const Navigation: React.FC<NavigationProps> = memo(
+  ({ sidebarLayout = defaultLayout, ...props }) => {
+    return (
+      <MotionConfig>
+        <NavigationProvider variant={sidebarLayout}>
+          <NavigationContent {...props} />
+        </NavigationProvider>
+      </MotionConfig>
     );
   }
 );

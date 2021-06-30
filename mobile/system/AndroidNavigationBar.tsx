@@ -34,6 +34,7 @@ export const useAndroidNavigationBarUpdater = ({
         true
       );
     }
+    return undefined;
   }, [background, statusBarStyle]);
 };
 

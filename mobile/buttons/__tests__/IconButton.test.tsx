@@ -1,5 +1,4 @@
 /* eslint-disable react-native-a11y/has-accessibility-hint */
-/* eslint-disable react-native/no-raw-text */
 
 import { render, fireEvent } from '@testing-library/react-native';
 import { Animated, Pressable } from 'react-native';

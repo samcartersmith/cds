@@ -17,7 +17,7 @@ describe('MaterialSpinner', () => {
     expect(getByTestId('material-spinner-svg')).toHaveAttribute('height', `${60}px`);
     expect(getByTestId('material-spinner-svg')).toHaveAttribute(
       'style',
-      `stroke: ${usePalette()['primary']};`
+      `stroke: ${usePalette().primary};`
     );
   });
 

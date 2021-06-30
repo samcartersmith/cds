@@ -1,8 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-
-import { forwardRef, useMemo, useState } from 'react';
+import React, { forwardRef, useCallback, useMemo, useState } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
@@ -71,10 +67,10 @@ export const NoTabsNoTitle: React.FC = () => {
         ctas={
           <NavigationBarCtas>
             <Button compact variant="primary">
-              {'Buy & Sell'}
+              Buy & Sell
             </Button>
             <Button compact variant="secondary">
-              {'Send & Recieve'}
+              Send & Recieve
             </Button>
           </NavigationBarCtas>
         }
@@ -181,10 +177,10 @@ export const TabsNoTitle: React.FC = () => {
         ctas={
           <NavigationBarCtas>
             <Button compact variant="primary">
-              {'Buy & Sell'}
+              Buy & Sell
             </Button>
             <Button compact variant="secondary">
-              {'Send & Recieve'}
+              Send & Recieve
             </Button>
           </NavigationBarCtas>
         }
@@ -273,6 +269,7 @@ export const TitleNoTabs: React.FC = () => {
   const title = 'Bitcoin';
   const subtitle = 'BTC';
   const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
+  const handlePress = useCallback(() => setShowDisplayTitle(prev => !prev), []);
 
   const navbar = useMemo(() => {
     return (
@@ -286,27 +283,23 @@ export const TitleNoTabs: React.FC = () => {
         ctas={
           <NavigationBarCtas>
             <Button compact variant="primary">
-              {'Buy & Sell'}
+              Buy & Sell
             </Button>
             <Button compact variant="secondary">
-              {'Send & Recieve'}
+              Send & Recieve
             </Button>
           </NavigationBarCtas>
         }
         actions={
           <NavigationBarActions>
             <NavigationIconButton onPress={toggleSidebarSections} name="gear" label="Settings" />
-            <NavigationIconButton
-              onPress={() => setShowDisplayTitle(!showDisplayTitle)}
-              name="expand"
-              label="Notifications"
-            />
+            <NavigationIconButton onPress={handlePress} name="expand" label="Notifications" />
             <NavigationIconButton onPress={toggleDarkMode} name="api" label="Last item" />
           </NavigationBarActions>
         }
       />
     );
-  }, [toggleDarkMode, showDisplayTitle, toggleSidebarSections]);
+  }, [toggleDarkMode, toggleSidebarSections, handlePress]);
 
   const sidebar = useMemo(() => {
     const logo = (
@@ -407,10 +400,10 @@ export const TabsAndDisplayTitle: React.FC = () => {
         ctas={
           <NavigationBarCtas>
             <Button compact variant="primary">
-              {'Buy & Sell'}
+              Buy & Sell
             </Button>
             <Button compact variant="secondary">
-              {'Send & Recieve'}
+              Send & Recieve
             </Button>
           </NavigationBarCtas>
         }
@@ -530,10 +523,10 @@ export const SidebarCollapsed: React.FC = () => {
         ctas={
           <NavigationBarCtas>
             <Button compact variant="primary">
-              {'Buy & Sell'}
+              Buy & Sell
             </Button>
             <Button compact variant="secondary">
-              {'Send & Recieve'}
+              Send & Recieve
             </Button>
           </NavigationBarCtas>
         }
@@ -619,10 +612,10 @@ export const SidebarWithSections: React.FC = () => {
         ctas={
           <NavigationBarCtas>
             <Button compact variant="primary">
-              {'Buy & Sell'}
+              Buy & Sell
             </Button>
             <Button compact variant="secondary">
-              {'Send & Recieve'}
+              Send & Recieve
             </Button>
           </NavigationBarCtas>
         }

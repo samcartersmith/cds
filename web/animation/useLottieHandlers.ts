@@ -2,13 +2,9 @@ import { useMemo } from 'react';
 
 import { mapValues } from '@cbhq/cds-utils';
 
-import { LottieListener } from './types';
+import { LottieListener, LottieEventHandlersMap } from './types';
 
 const emptyArray: LottieListener[] = [];
-
-export type LottieEventHandlersMap = {
-  [key in LottieListener['name']]?: LottieListener['handler'];
-};
 
 export const useLottieHandlers = (handlers?: LottieEventHandlersMap) => {
   return useMemo(() => {

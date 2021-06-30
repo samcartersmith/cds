@@ -8,7 +8,7 @@ import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Box, BoxProps } from '../layout/Box';
+import { Box, BoxProps } from './Box';
 import { paletteValueToRgbaString } from '../utils/palette';
 
 export interface FallbackProps

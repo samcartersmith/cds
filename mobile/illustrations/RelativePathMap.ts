@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts

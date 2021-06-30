@@ -49,13 +49,13 @@ export const ListCell = memo(function ListCell({
       selected={selected}
     >
       <VStack>
-        {title && (
+        {!!title && (
           <TextHeadline as="div" overflow="truncate">
             {title}
           </TextHeadline>
         )}
 
-        {description && (
+        {!!description && (
           <TextBody
             as="div"
             color="foregroundMuted"

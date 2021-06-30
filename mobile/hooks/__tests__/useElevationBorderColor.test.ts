@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import { AnyObject } from '@cbhq/cds-utils';
 import { renderHook } from '@testing-library/react-hooks';
 

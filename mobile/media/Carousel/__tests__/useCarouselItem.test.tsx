@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { cleanup, fireEvent, render } from '@testing-library/react-native';
+import { useCallback } from 'react';
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
@@ -22,6 +23,7 @@ describe('useCarouselItem', () => {
 
   const MockCarousel = () => {
     const items = Array.from({ length: 4 }).map((_, i) => (
+      // eslint-disable-next-line react/no-array-index-key
       <MockCarouselItem key={`carousel-item-${i}`} />
     ));
 
@@ -67,7 +69,7 @@ describe('useCarouselItem', () => {
     const dismissSpy = jest.fn();
     const ChildWithPressable = () => {
       const { dismiss } = useCarouselItem();
-      const handleDismiss = () => dismiss();
+      const handleDismiss = useCallback(() => dismiss(), [dismiss]);
       return (
         <Button testID="DismissButton" onPress={handleDismiss}>
           Dismiss

@@ -26,6 +26,7 @@ export const ContentCell = memo(function ContentCell({
 }: ContentCellProps) {
   if (process.env.NODE_ENV !== 'production') {
     if (meta && !title && !subtitle) {
+      // eslint-disable-next-line no-console
       console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
     }
   }
@@ -44,13 +45,13 @@ export const ContentCell = memo(function ContentCell({
       {(title || subtitle) && (
         <HStack alignItems="flex-start" justifyContent="space-between">
           <VStack flexGrow={1} flexShrink={1} dangerouslySetClassName={truncateClassName}>
-            {title && (
+            {!!title && (
               <TextHeadline as="div" overflow="truncate">
                 {title}
               </TextHeadline>
             )}
 
-            {subtitle && (
+            {!!subtitle && (
               <TextLabel2
                 as="div"
                 spacingTop={title ? 0.5 : 0}
@@ -62,7 +63,7 @@ export const ContentCell = memo(function ContentCell({
             )}
           </VStack>
 
-          {meta && (
+          {!!meta && (
             <Box
               flexGrow={0}
               flexShrink={0}
@@ -79,7 +80,7 @@ export const ContentCell = memo(function ContentCell({
         </HStack>
       )}
 
-      {description && (
+      {!!description && (
         <div className={overflowClassName}>
           <TextBody as="div" color="foregroundMuted">
             {description}

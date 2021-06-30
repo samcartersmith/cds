@@ -5,6 +5,7 @@ import { RootSpectrumContext, DEFAULT_SPECTRUM } from './context';
 export const useRootSpectrum = () => {
   const context = useContext(RootSpectrumContext);
   if (process.env.NODE_ENV !== 'production' && !context) {
+    // eslint-disable-next-line no-console
     console.error('Cannot use `useRootSpectrum` outside of RootSpectrumProvider');
   }
   return context ?? DEFAULT_SPECTRUM;

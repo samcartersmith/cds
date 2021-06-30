@@ -23,7 +23,7 @@ export const ContentCellFallback = memo(function ContentCellFallback({
       description={
         description && <Fallback height={lineHeight.body} width={110} spacingTop={0.5} />
       }
-      media={media && <MediaFallback type={media} />}
+      media={media ? <MediaFallback type={media} /> : undefined}
       meta={meta && <Fallback height={lineHeight.label2} width={50} />}
       title={(title || subtitle) && <Fallback height={lineHeight.label2} width={90} />}
     />

@@ -2,7 +2,7 @@ import { isBrowser } from './browser';
 
 export const isRtl = (element?: HTMLElement) => {
   if (!isBrowser()) {
-    return;
+    return false;
   }
   return (element ?? document.documentElement).dir === 'rtl';
 };

@@ -4,7 +4,40 @@ import { FallbackBaseProps } from '@cbhq/cds-common';
 import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
 import { css } from 'linaria';
 
-import { Box, BoxProps } from '../layout/Box';
+import { Box, BoxProps } from './Box';
+
+const fallback = css`
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  overflow: hidden;
+  background: rgb(var(--gray60), 0.05);
+  background-image: linear-gradient(
+    to right,
+    rgb(var(--gray60), 0.05) 0%,
+    rgb(var(--gray60), 0) 25%,
+    rgb(var(--gray60), 0.1) 50%,
+    rgb(var(--gray60), 0) 75%,
+    rgb(var(--gray60), 0.05) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 600px 100px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -600px 0;
+    }
+
+    100% {
+      background-position: 600px 0;
+    }
+  }
+`;
 
 export interface FallbackProps
   extends FallbackBaseProps,
@@ -44,36 +77,3 @@ export const Fallback = memo(function Fallback({
     </Box>
   );
 });
-
-const fallback = css`
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: shimmer;
-  animation-timing-function: linear;
-  overflow: hidden;
-  background: rgb(var(--gray60), 0.05);
-  background-image: linear-gradient(
-    to right,
-    rgb(var(--gray60), 0.05) 0%,
-    rgb(var(--gray60), 0) 25%,
-    rgb(var(--gray60), 0.1) 50%,
-    rgb(var(--gray60), 0) 75%,
-    rgb(var(--gray60), 0.05) 100%
-  );
-  background-repeat: no-repeat;
-  background-size: 600px 100px;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-
-  @keyframes shimmer {
-    0% {
-      background-position: -600px 0;
-    }
-
-    100% {
-      background-position: 600px 0;
-    }
-  }
-`;

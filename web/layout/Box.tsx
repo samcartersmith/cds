@@ -84,21 +84,6 @@ export interface BoxProps<As extends BoxElement = 'div'>
   dangerouslySetClassName?: string;
 }
 
-export const Box = forwardRef(
-  <As extends BoxElement = 'div'>(
-    { children, ...props }: BoxProps<As>,
-    forwardedRef: ForwardedRef<HTMLElement>
-  ) => {
-    return (
-      <ElevationProvider elevation={props?.elevation}>
-        <BoxInner {...props} ref={forwardedRef}>
-          {children}
-        </BoxInner>
-      </ElevationProvider>
-    );
-  }
-);
-
 export const BoxInner = forwardRef(
   <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => {
     const {
@@ -238,6 +223,21 @@ export const BoxInner = forwardRef(
         },
       },
       <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+    );
+  }
+);
+
+export const Box = forwardRef(
+  <As extends BoxElement = 'div'>(
+    { children, ...props }: BoxProps<As>,
+    forwardedRef: ForwardedRef<HTMLElement>
+  ) => {
+    return (
+      <ElevationProvider elevation={props?.elevation}>
+        <BoxInner {...props} ref={forwardedRef}>
+          {children}
+        </BoxInner>
+      </ElevationProvider>
     );
   }
 );

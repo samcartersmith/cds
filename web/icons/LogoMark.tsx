@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { useLogoMark, LogoMarkParams } from '@cbhq/cds-common/hooks/useLogo';
 
-import { iconStyles } from '../icons/iconStyles';
+import { iconStyles } from './iconStyles';
 
 export type LogoMarkProps = LogoMarkParams;
 

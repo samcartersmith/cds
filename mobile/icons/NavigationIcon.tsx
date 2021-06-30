@@ -14,12 +14,12 @@ interface NavigationIconProps
   /**
    * Size of navigation Icon
    * @default l
-   * */
+   */
   size?: Exclude<IconSize, 'xs'>;
   /**
    * Toggles the active and inactive state of the navigation icon
    * @default false
-   **/
+   */
   active?: boolean;
 }
 

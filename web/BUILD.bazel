@@ -25,7 +25,8 @@ filegroup(
     name = "source",
     srcs = glob(
         SOURCE + [
-            "**/*.stories.*",
+            "**/*.stories.ts",
+            "**/*.stories.tsx",
             "**/*.test.*",
         ],
         exclude = [

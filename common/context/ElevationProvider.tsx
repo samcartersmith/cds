@@ -27,7 +27,7 @@ export const ElevationProvider: React.FC<ElevationProviderProps> = memo(
         </ElevationContext.Provider>
       );
     }
-    return <React.Fragment>{children}</React.Fragment>;
+    return <>{children}</>;
   }
 );
 
@@ -38,14 +38,14 @@ export const ElevationChildrenProvider: React.FC = memo(({ children }) => {
   const spectrum = useSpectrum();
   if (elevation && spectrum === 'dark') {
     return (
-      <ElevationChildContext.Provider value={true}>
+      <ElevationChildContext.Provider value>
         <PaletteConfigProvider value={elevationChildrenPalette[elevation]}>
           {children}
         </PaletteConfigProvider>
       </ElevationChildContext.Provider>
     );
   }
-  return <React.Fragment>{children}</React.Fragment>;
+  return <>{children}</>;
 });
 
 export const useElevationChildOverrides = () => useContext(ElevationChildContext);

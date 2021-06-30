@@ -29,9 +29,8 @@ export const useAccessibleForeground = (
   return useMemo(() => {
     if (isAccessibleColor(background, foreground, usage)) {
       return foreground;
-    } else {
-      const spectrumAlias = colorToSpectrumAlias(foreground, usage);
-      return transformFn(spectrumAlias);
     }
+    const spectrumAlias = colorToSpectrumAlias(foreground, usage);
+    return transformFn(spectrumAlias);
   }, [background, foreground, transformFn, usage]);
 };

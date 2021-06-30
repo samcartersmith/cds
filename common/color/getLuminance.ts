@@ -6,15 +6,17 @@ import { color } from 'd3-color';
  */
 export const getLuminance = (value: string) => {
   const rgbObject = color(value)?.rgb();
+
   if (rgbObject) {
-    // eslint-disable-next-line id-length
     const { r, g, b } = rgbObject;
-    const red = isNaN(r) ? 0 : r;
-    const green = isNaN(g) ? 0 : g;
-    const blue = isNaN(b) ? 0 : b;
+    const red = Number.isNaN(r) ? 0 : r;
+    const green = Number.isNaN(g) ? 0 : g;
+    const blue = Number.isNaN(b) ? 0 : b;
     const [redLinear, greenLinear, blueLinear] = [red / 255, green / 255, blue / 255].map(item =>
       item <= 0.04045 ? item / 12.92 : ((item + 0.055) / 1.055) ** 2.4
     );
     return 0.2126 * redLinear + 0.7152 * greenLinear + 0.0722 * blueLinear;
   }
+
+  return undefined;
 };

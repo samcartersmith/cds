@@ -1,17 +1,16 @@
-import React from 'react';
-
 import { render } from '@testing-library/react';
 import { renderA11y } from '@utils/jest/renderA11y';
 
 import { Link } from '../Link';
 
+const handlePress = () => {};
 const testID = 'link-label';
 
 describe('Link', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <Link variant="body" to="">
+        <Link variant="body" to="/">
           Child
         </Link>
       )
@@ -40,7 +39,8 @@ describe('Link', () => {
 
   it('should render with button element if no href', async () => {
     const { container } = render(
-      <Link variant="body" onPress={() => {}}>
+      // eslint-disable-next-line jsx-a11y/anchor-is-valid
+      <Link variant="body" onPress={handlePress}>
         Child
       </Link>
     );
@@ -50,7 +50,7 @@ describe('Link', () => {
 
   it('can set openInNewWindow to true', async () => {
     const { getByTestId } = render(
-      <Link variant="body" to="/" openInNewWindow={true} testID={testID}>
+      <Link variant="body" to="/" openInNewWindow testID={testID}>
         Child
       </Link>
     );
@@ -68,7 +68,8 @@ describe('Link', () => {
 
   it('doesnt set target or rel if a button', async () => {
     const { getByTestId } = render(
-      <Link variant="body" openInNewWindow={true} testID={testID}>
+      // eslint-disable-next-line jsx-a11y/anchor-is-valid
+      <Link variant="body" openInNewWindow testID={testID}>
         Child
       </Link>
     );
@@ -79,7 +80,7 @@ describe('Link', () => {
 
   it('defaults to noopener noreferrer when openInNewWindow', async () => {
     const { getByTestId } = render(
-      <Link variant="body" to="https://www.coinbase.com/" openInNewWindow={true} testID={testID}>
+      <Link variant="body" to="https://www.coinbase.com/" openInNewWindow testID={testID}>
         Child
       </Link>
     );

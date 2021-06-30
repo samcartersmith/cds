@@ -18,7 +18,7 @@ export const useLottieLoader = <Marker extends string, Source extends LottieSour
 
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef: LottieAnimationRef = useRef();
-  const [_, setAnimationLoaded] = useState(false);
+  const [, setAnimationLoaded] = useState(false);
 
   const preserveAspectRatio = useMemo(() => {
     switch (resizeMode) {

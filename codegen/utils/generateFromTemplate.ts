@@ -20,6 +20,7 @@ export interface TemplateConfig<T extends unknown = unknown> {
     imports?: string[];
     sort?: boolean;
   };
+  header?: string;
 }
 
 export type TemplateMap = Record<string, TemplateConfig[]>;
@@ -59,6 +60,7 @@ export const generateFromTemplate = async ({
   data,
   dest,
   config = {},
+  header = '',
 }: GenerateFromTemplateParams) => {
   try {
     const templatePath = path.join(__dirname, '../templates', template);
@@ -72,7 +74,7 @@ export const generateFromTemplate = async ({
     await writePrettyFile({
       prettierConfig,
       outFile,
-      contents: getFileDocString(ext) + code,
+      contents: getFileDocString(ext) + header + code,
       logInfo: dest,
       parser: getParser(ext),
     });

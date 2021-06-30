@@ -13,7 +13,7 @@ import { getFlexStyles } from '../styles/flex';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 import { useNavigation } from './context';
-import { useMobileMenuChildrenContext } from './MobileMenu';
+import { useMobileMenuChildrenContext } from './MobileMenuChildrenContext';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
 
@@ -94,7 +94,7 @@ export const NavigationListItem = memo(
           <TextHeadline as="p" color={color} spacingStart={1}>
             {label}
           </TextHeadline>
-          {badge && <Badge value={badge} />}
+          {!!badge && <Badge value={badge} />}
         </HStack>
       </>
     );

@@ -5,7 +5,7 @@ import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { cx } from 'linaria';
 
-import * as buttonStyles from '../buttons/buttonStyles';
+import * as buttonStyles from './buttonStyles';
 import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../styles/flex';
 import { Pressable, PressableProps } from '../system/Pressable';

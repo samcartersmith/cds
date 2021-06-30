@@ -1,4 +1,4 @@
-import { PaletteForeground } from '../types';
+import { PaletteForeground } from './Palette';
 import { Typography } from './Typography';
 
 export type LinkTypography = Exclude<Typography, 'display1' | 'display2'>;

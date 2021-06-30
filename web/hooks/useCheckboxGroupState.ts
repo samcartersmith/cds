@@ -27,28 +27,28 @@ export const useCheckboxGroupState = <T extends string>(
   values: T[],
   initialState?: T[]
 ): [Set<T>, CheckboxGroupStateProps<T>] => {
-  const [state, { select: _select, unselect: _unselect, toggle: _toggle, isAllSelected }] =
+  const [state, { select: doSelect, unselect: doUnselect, toggle: doToggle, isAllSelected }] =
     useGroupToggler(values, initialState);
 
   const select = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     event => {
-      _select(event?.target.value as T);
+      doSelect(event?.target.value as T);
     },
-    [_select]
+    [doSelect]
   );
 
   const unselect = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     event => {
-      _unselect(event?.target.value as T);
+      doUnselect(event?.target.value as T);
     },
-    [_unselect]
+    [doUnselect]
   );
 
   const toggle = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     event => {
-      _toggle(event?.target.value as T);
+      doToggle(event?.target.value as T);
     },
-    [_toggle]
+    [doToggle]
   );
 
   return [

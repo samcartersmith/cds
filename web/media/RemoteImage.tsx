@@ -4,6 +4,15 @@ import { AspectRatio, FixedValue, Shape } from '@cbhq/cds-common';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { cx, css } from 'linaria';
 
+const image = css`
+  display: block;
+  object-fit: cover;
+`;
+
+const imageRatio = css`
+  aspect-ratio: var(--image-aspect-ratio);
+`;
+
 interface BaseRemoteImageProps
   extends Omit<
     React.ImgHTMLAttributes<HTMLImageElement>,
@@ -82,12 +91,3 @@ export const RemoteImage = memo(function RemoteImage({
     />
   );
 });
-
-const image = css`
-  display: block;
-  object-fit: cover;
-`;
-
-const imageRatio = css`
-  aspect-ratio: var(--image-aspect-ratio);
-`;

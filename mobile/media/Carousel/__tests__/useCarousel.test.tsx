@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { cleanup, fireEvent, render } from '@testing-library/react-native';
 import { ScrollView } from 'react-native';
@@ -17,12 +17,20 @@ describe('useCarousel', () => {
 
   const MockCarousel = ({ length }: { length: number }) => {
     const carouselRef = useCarousel();
-    const handleLogLength = () => console.log(`Carousel length: ${carouselRef.current.length}`);
-    const handleScrollTo = () => carouselRef.current.scrollToId(scrollToValue);
-    const handleScrollToEnd = () => carouselRef.current.scrollToEnd();
+    const handleLogLength = useCallback(
+      // eslint-disable-next-line no-console
+      () => console.log(`Carousel length: ${carouselRef.current.length}`),
+      [carouselRef]
+    );
+    const handleScrollTo = useCallback(
+      () => carouselRef.current.scrollToId(scrollToValue),
+      [carouselRef]
+    );
+    const handleScrollToEnd = useCallback(() => carouselRef.current.scrollToEnd(), [carouselRef]);
     const items = useMemo(
       () =>
         Array.from({ length }).map((_, i) => (
+          // eslint-disable-next-line react/no-array-index-key
           <Box key={`carousel-item-${i}`} height={200} width={200} />
         )),
       [length]

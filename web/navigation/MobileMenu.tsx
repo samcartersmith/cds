@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, memo, useContext } from 'react';
+import React, { useMemo, memo } from 'react';
 
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import flattenNodes, { hasProps } from '@cbhq/cds-common/utils/flattenNodes';
@@ -10,14 +10,12 @@ import { NavigationBarProps } from './NavigationBar';
 import { NavigationIconButton } from './NavigationIconButton';
 import { NavigationListItem } from './NavigationListItem';
 import { SidebarProps } from './Sidebar';
+import { MobileMenuChildrenContext } from './MobileMenuChildrenContext';
 
 export interface MobileMenuProps {
   sidebar?: SidebarProps['children'];
   navbar: React.ReactElement<NavigationBarProps>;
 }
-
-export const MobileMenuChildrenContext = createContext(false);
-export const useMobileMenuChildrenContext = () => useContext(MobileMenuChildrenContext);
 
 export const MobileMenu = memo(({ sidebar, navbar }: MobileMenuProps) => {
   const navbarCtas = useMemo(() => {
@@ -43,7 +41,7 @@ export const MobileMenu = memo(({ sidebar, navbar }: MobileMenuProps) => {
   }, [navbar]);
 
   return (
-    <MobileMenuChildrenContext.Provider value={true}>
+    <MobileMenuChildrenContext.Provider value>
       <VStack offsetHorizontal={gutter} width="100%">
         {sidebar}
         {/* Verify what this spacing should be */}

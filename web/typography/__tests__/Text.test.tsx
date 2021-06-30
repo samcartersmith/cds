@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { renderA11y } from '@utils/jest/renderA11y';
 
 import { DynamicElement } from '../../types';
-import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../../typography/TextProps';
+import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../TextProps';
 import * as Type from '../index';
 
 type TextComponent =
@@ -11,7 +11,7 @@ type TextComponent =
   | React.ComponentType<DynamicElement<Type.TextProps, HTMLNonHeadingTextTags, true>>;
 
 const textTestRunner = (testFn: (type: TextComponent) => void) => {
-  entries<typeof Type>(Type).map(async ([_, TextComponent]) => testFn(TextComponent));
+  entries<typeof Type>(Type).map(async ([, TextComponent]) => testFn(TextComponent));
 };
 
 function expectClassName<K extends keyof TextProps>(

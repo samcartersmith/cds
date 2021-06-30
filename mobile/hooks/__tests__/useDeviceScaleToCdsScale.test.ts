@@ -1,9 +1,7 @@
-/* eslint-disable react/display-name */
 import { entries } from '@cbhq/cds-utils';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { deviceScaleMap } from '../../hooks/useDeviceScaleToCdsScale';
-import { useDeviceScaleToCdsScale } from '../useDeviceScaleToCdsScale';
+import { deviceScaleMap, useDeviceScaleToCdsScale } from '../useDeviceScaleToCdsScale';
 
 const mockDeviceScale = (fontScale: number) => {
   jest.resetModules();

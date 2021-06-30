@@ -5,7 +5,7 @@ import { cx } from 'linaria';
 import { Tooltip as TooltipPopover, TooltipReference, useTooltipState } from 'reakit/Tooltip';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import * as tooltipStyles from '../overlays/tooltipStyles';
+import * as tooltipStyles from './tooltipStyles';
 import { TextLabel2 } from '../typography/TextLabel2';
 
 interface TooltipProps {

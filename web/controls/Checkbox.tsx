@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
 
 import { borderWidth } from '@cbhq/cds-common/tokens/border';

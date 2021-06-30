@@ -1,3 +1,4 @@
+import React from 'react';
 import { PaletteForeground } from '@cbhq/cds-common/types';
 
 import { TextLabel1, TextBody } from '../../typography';

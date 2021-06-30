@@ -34,10 +34,10 @@ export const ListCell = memo(function ListCell({
   return (
     <Cell
       {...props}
-      accessory={accessoryType && <CellAccessory type={accessoryType} />}
+      accessory={accessoryType ? <CellAccessory type={accessoryType} /> : undefined}
       detail={
         action ||
-        ((detail || subdetail) && (
+        (Boolean(detail || subdetail) && (
           <CellDetail
             adjustsFontSizeToFit={!!detailWidth}
             detail={detail}
@@ -63,6 +63,7 @@ export const ListCell = memo(function ListCell({
         {!!description && (
           <TextBody
             color="foregroundMuted"
+            // eslint-disable-next-line no-nested-ternary
             numberOfLines={multiline ? undefined : title ? 1 : 2}
             ellipsize={multiline ? undefined : 'tail'}
           >

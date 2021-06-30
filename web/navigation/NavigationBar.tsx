@@ -28,6 +28,7 @@ export const NavigationBar = memo(
         <VStack>
           <HStack alignItems="center">
             {controls}
+            {/* eslint-disable-next-line react-perf/jsx-no-new-object-as-prop */}
             <motion.div style={{ opacity: animatedOpacity }}>{titles}</motion.div>
           </HStack>
         </VStack>

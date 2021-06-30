@@ -12,9 +12,8 @@ export const paletteValueToCssVar = (paletteValue: PaletteValue) => {
   const cssVariable = toCssVarFn(alias);
   if (opacity) {
     return `rgba(${cssVariable},${opacity})` as const;
-  } else {
-    return `rgb(${cssVariable})` as const;
   }
+  return `rgb(${cssVariable})` as const;
 };
 
 /**

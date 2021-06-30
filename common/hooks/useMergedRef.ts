@@ -15,6 +15,7 @@ const setRef = <T>(ref: AnyRef<T>, value: RefElementOrNull<T>) => {
     // React types assume ref is readonly
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore https://github.com/facebook/react/issues/13029#issuecomment-410002316
+    // eslint-disable-next-line no-param-reassign
     ref.current = value;
   }
 };

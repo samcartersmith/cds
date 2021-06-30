@@ -13,7 +13,7 @@ type LottiePlayerRef = LottiePlayer<TradeStatusLottie>;
 
 export const LottieStatusAnimation = memo(
   ({ status = 'loading', onFinish, ...otherProps }: LottieStatusAnimationProps) => {
-    const [_, forceUpdate] = useState(0);
+    const [, forceUpdate] = useState(0);
     const lottie = useRef<LottiePlayerRef>();
 
     const handlePolling = useStatusAnimationPoller({

@@ -7,6 +7,20 @@ import { HStack, VStack } from '../layout';
 
 export interface ButtonGroupProps extends ButtonGroupBaseProps, SharedProps {}
 
+const list = css`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const item = css`
+  list-style: none;
+`;
+
+const fill = css`
+  flex: 1;
+`;
+
 export const ButtonGroup = memo(function ButtonGroup({
   accessibilityLabel,
   block,
@@ -37,17 +51,3 @@ export const ButtonGroup = memo(function ButtonGroup({
     </Stack>
   );
 });
-
-const list = css`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;
-
-const item = css`
-  list-style: none;
-`;
-
-const fill = css`
-  flex: 1;
-`;

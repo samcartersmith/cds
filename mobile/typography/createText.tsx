@@ -58,7 +58,6 @@ export const createText = (name: Typography) => {
     dangerouslySetStyle,
     deprecatedLineHeight,
     // TODO: replace with glyph
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     slashedZero,
     selectable = 'none',
     underline,
@@ -86,11 +85,11 @@ export const createText = (name: Typography) => {
     const lineHeight = useMemo(() => {
       if (deprecatedLineHeight === undefined) {
         return textStyles?.lineHeight;
-      } else if (deprecatedLineHeight === 'none') {
-        return undefined;
-      } else {
-        return deprecatedLineHeight;
       }
+      if (deprecatedLineHeight === 'none') {
+        return undefined;
+      }
+      return deprecatedLineHeight;
     }, [deprecatedLineHeight, textStyles?.lineHeight]);
 
     const spacingStyles = useSpacingStyles({
@@ -112,10 +111,10 @@ export const createText = (name: Typography) => {
 
     // Only allow text transform if not already bundled in text styles for a given scale
     const textTransform = useMemo(() => {
-      if ('textTransform' in textStyles) return;
-      if (transform) {
+      if (!('textTransform' in textStyles) && transform) {
         return { textTransform: transform };
       }
+      return undefined;
     }, [textStyles, transform]);
 
     const style = useMemo(
@@ -152,10 +151,10 @@ export const createText = (name: Typography) => {
       return null;
     }
 
-    const TextComponent = animated ? Animated.Text : Text;
+    const TextComp = animated ? Animated.Text : Text;
 
     return (
-      <TextComponent
+      <TextComp
         numberOfLines={numberOfLines}
         {...ellipsizeProps}
         {...props}
@@ -164,7 +163,7 @@ export const createText = (name: Typography) => {
         {...fontScaleProps}
       >
         {children}
-      </TextComponent>
+      </TextComp>
     );
   };
 

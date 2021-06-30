@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { cleanup, fireEvent, render } from '@testing-library/react-native';
+import { useCallback } from 'react';
 import { ScrollView } from 'react-native';
 
 import { Button } from '../../buttons';
@@ -20,7 +21,7 @@ describe('useScrollTo', () => {
   it('fires scrollTo on ScrollView', () => {
     const MockUsage = () => {
       const [scrollRef, { scrollTo }] = useScrollTo();
-      const onPress = () => scrollTo({ x: 400 });
+      const onPress = useCallback(() => scrollTo({ x: 400 }), [scrollTo]);
       return (
         <Box>
           <Button testID="Button" onPress={onPress}>
@@ -44,7 +45,7 @@ describe('useScrollTo', () => {
   it('fires scrollToEnd on ScrollView', () => {
     const MockUsage = () => {
       const [scrollRef, { scrollToEnd }] = useScrollTo();
-      const onPress = () => scrollToEnd();
+      const onPress = useCallback(() => scrollToEnd(), [scrollToEnd]);
       return (
         <Box>
           <Button testID="Button" onPress={onPress}>

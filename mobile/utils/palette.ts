@@ -14,6 +14,19 @@ import * as spectrumColors from '../styles/spectrum';
 
 /**
  * `Please don't use this unless you absolutely have to. This is meant as last resort.`
+ * Takes a palette value and returns the rgba string
+ * @param paletteValue - gray0
+ * @param spectrum  - light or dark
+ * @returns rgba string - rgba(255,255,255,1)
+ */
+export const paletteValueToRgbaString: PaletteValueToRgbaString = (paletteValue, spectrum) => {
+  const [alias, opacity] = paletteValueToTuple(paletteValue);
+  const spectrumValue = spectrumColors[spectrum][alias];
+  return `rgba(${[...spectrumValue, opacity].join(',')})`;
+};
+
+/**
+ * `Please don't use this unless you absolutely have to. This is meant as last resort.`
  * Takes a palette config and returns an object to access computed color values based on config.
  * @param paletteConfig  - { background: 'gray0' }
  * @param spectrum - light or dark
@@ -26,19 +39,6 @@ export const paletteConfigToRgbaStrings = (
   return mapValues({ ...defaultPalette, ...paletteConfig }, paletteValue =>
     paletteValueToRgbaString(paletteValue, spectrum)
   );
-};
-
-/**
- * `Please don't use this unless you absolutely have to. This is meant as last resort.`
- * Takes a palette value and returns the rgba string
- * @param paletteValue - gray0
- * @param spectrum  - light or dark
- * @returns rgba string - rgba(255,255,255,1)
- */
-export const paletteValueToRgbaString: PaletteValueToRgbaString = (paletteValue, spectrum) => {
-  const [alias, opacity] = paletteValueToTuple(paletteValue);
-  const spectrumValue = spectrumColors[spectrum][alias];
-  return `rgba(${[...spectrumValue, opacity].join(',')})`;
 };
 
 /**

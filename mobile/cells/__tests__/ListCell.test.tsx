@@ -1,5 +1,3 @@
-/* eslint-disable react-native/no-raw-text */
-
 import { render } from '@testing-library/react-native';
 import { View, Text } from 'react-native';
 

@@ -55,24 +55,7 @@ export interface InteractableProps
   wrapWithLayeredElements?: boolean;
 }
 
-export const Interactable = forwardRef(function Interactable(
-  { children, borderColor, className, ...props }: InteractableProps,
-  ref: React.Ref<Element>
-) {
-  return (
-    <ElevationProvider elevation={props?.elevation}>
-      <InteractableContent
-        ref={ref}
-        className={cx(className, borderColor && borderColors[borderColor])}
-        {...props}
-      >
-        {children}
-      </InteractableContent>
-    </ElevationProvider>
-  );
-});
-
-export const InteractableContent = forwardRef(function Interactable(
+export const InteractableContent = forwardRef(function InteractableContent(
   {
     as: Container,
     backgroundColor,
@@ -160,5 +143,22 @@ export const InteractableContent = forwardRef(function Interactable(
       ref,
     },
     <ElevationChildrenProvider>{content}</ElevationChildrenProvider>
+  );
+});
+
+export const Interactable = forwardRef(function Interactable(
+  { children, borderColor, className, ...props }: InteractableProps,
+  ref: React.Ref<Element>
+) {
+  return (
+    <ElevationProvider elevation={props?.elevation}>
+      <InteractableContent
+        ref={ref}
+        className={cx(className, borderColor && borderColors[borderColor])}
+        {...props}
+      >
+        {children}
+      </InteractableContent>
+    </ElevationProvider>
   );
 });

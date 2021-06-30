@@ -43,7 +43,6 @@ export type CSSMap<T extends string | undefined> = Record<NonNullable<T>, string
 export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 
 declare module 'react' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface CSSProperties extends PaletteCssVariable {
     '--interactable-height'?: string;
     '--interactable-opacity-hovered'?: typeof opacityHovered[keyof typeof opacityHovered];

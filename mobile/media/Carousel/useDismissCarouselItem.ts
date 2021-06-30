@@ -79,11 +79,9 @@ export const useDismissCarouselItem = (itemsLength: number, scrollTo: ScrollToFn
     []
   );
   const onContentSizeChange = useCallback((width: number) => setContentWidth(width), []);
-  const onScroll = useCallback(
-    (event: NativeSyntheticEvent<NativeScrollEvent>) =>
-      (contentOffset.current = event.nativeEvent.contentOffset.x),
-    []
-  );
+  const onScroll = useCallback((event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    contentOffset.current = event.nativeEvent.contentOffset.x;
+  }, []);
 
   return useMemo(
     () => ({
