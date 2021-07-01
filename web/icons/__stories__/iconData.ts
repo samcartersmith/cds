@@ -184,5 +184,4 @@ export const navigationIconNames = [
   'wallet',
   'settings',
   'scanQrCode',
-  'barChart',
 ] as const;

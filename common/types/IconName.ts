@@ -51,6 +51,12 @@ export type IconName =
   | 'home'
   | 'chartBar'
   | 'profile'
+  | 'ethereum'
+  | 'defi'
+  | 'currencies'
+  | 'nft'
+  | 'cash'
+  | 'flame'
   | 'gear'
   | 'list'
   | 'chartVolume'
@@ -129,6 +135,7 @@ export type IconName =
   | 'pay'
   | 'share'
   | 'drag'
+  | 'trophy'
   | 'filter'
   | 'giftCard'
   | 'avatar'
@@ -148,7 +155,9 @@ export type IconName =
   | 'lightningBolt'
   | 'sortDownCenter'
   | 'followInactive'
-  | 'followActive';
+  | 'followActive'
+  | 'pin'
+  | 'dex';
 
 export type NavigationIconName =
   | 'candleSticks'
@@ -169,7 +178,8 @@ export type NavigationIconName =
   | 'home'
   | 'wallet'
   | 'settings'
-  | 'scanQrCode';
+  | 'scanQrCode'
+  | 'barChart';
 
 export type NavigationIconInternalName =
   | 'candleSticksInactive'
@@ -209,4 +219,6 @@ export type NavigationIconInternalName =
   | 'settingsActive'
   | 'walletActive'
   | 'scanQrCodeActive'
-  | 'scanQrCodeInactive';
+  | 'scanQrCodeInactive'
+  | 'barChartInactive'
+  | 'barChartActive';
