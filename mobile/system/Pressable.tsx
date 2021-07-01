@@ -43,6 +43,10 @@ export interface PressableInternalProps
     Omit<InteractableProps, 'pressed' | 'style'> {
   /** Dont scale element on press. */
   noScaleOnPress?: boolean;
+  /** Callback fired before `onPress` when button is pressed. */
+  onPressIn?: (event: GestureResponderEvent) => void;
+  /** Callback fired before `onPress` when button is released. */
+  onPressOut?: (event: GestureResponderEvent) => void;
   /**
    * Pressable will always be the outermost component so that we can handle overflow within a child without impacting hitSlop.
    * Pass any styles that impact layout to this prop (i.e width, flex-direction, etc).
@@ -56,6 +60,8 @@ export const Pressable = memo(function Pressable({
   feedback = 'none',
   loading,
   onPress,
+  onPressIn,
+  onPressOut,
   noScaleOnPress,
   // Interactable
   backgroundColor,
@@ -98,16 +104,18 @@ export const Pressable = memo(function Pressable({
     (event: GestureResponderEvent) => {
       setPressed(true);
       pressIn(event);
+      onPressIn?.(event);
     },
-    [pressIn]
+    [pressIn, onPressIn]
   );
 
   const handlePressOut = useCallback(
     (event: GestureResponderEvent) => {
       setPressed(false);
       pressOut(event);
+      onPressOut?.(event);
     },
-    [pressOut]
+    [pressOut, onPressOut]
   );
 
   return (
