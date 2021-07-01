@@ -197,12 +197,8 @@ const createCategorizedNameType = (): {
           data: iconData,
         },
         {
-          dest: 'web/icons/__stories__/iconData.ts',
-          data: iconData,
-        },
-        {
-          dest: 'mobile-playground/src/data/iconData.ts',
-          data: iconData,
+          dest: 'storybook/stories/iconData.ts',
+          data: { unicodeMap },
         },
       ],
     };
