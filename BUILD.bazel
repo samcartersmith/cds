@@ -1,9 +1,9 @@
 load("@npm//ts-node:index.bzl", "ts_node")
-load("//tools:def.bzl", "eslint_fix", "eslint_test", "jest_test", "release_packages", "stylelint_test")
+load("//tools:def.bzl", "jest_test", "release_packages", "stylelint_test")
 load("@npm//serve:index.bzl", "serve")
 load("@npm//@storybook/react:index.bzl", "build_storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
-load(":config.bzl", "ESLINT_DIRS", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
+load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
 
 exports_files([
     ".babelrc.js",
@@ -40,21 +40,6 @@ filegroup(
 # ***************
 # *** linting ***
 # ***************
-[
-    eslint_test(
-        name = "eslint_%s" % directory,
-        sources = "//eng/shared/design-system/%s:source" % directory,
-    )
-    for directory in ESLINT_DIRS
-]
-
-[
-    eslint_fix(
-        name = "eslint_fix_%s" % directory,
-        sources = "//eng/shared/design-system/%s:source" % directory,
-    )
-    for directory in ESLINT_DIRS
-]
 
 filegroup(
     name = "style_source",

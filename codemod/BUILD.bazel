@@ -1,3 +1,5 @@
+load("//tools:def.bzl", "eslint_fix", "eslint_test")
+
 # All files to lint and test
 filegroup(
     name = "source",
@@ -8,4 +10,14 @@ filegroup(
         ],
     ),
     visibility = ["//visibility:public"],
+)
+
+eslint_test(
+    name = "lint",
+    sources = ":source",
+)
+
+eslint_fix(
+    name = "lint_fix",
+    sources = ":source",
 )

@@ -94,12 +94,7 @@ const LinkScreen = () => {
       </Example>
       <Example inline>
         <TextHeadline>test forceOpenOutsideApp is set to true</TextHeadline>
-        <Link
-          variant="title1"
-          forceOpenOutsideApp={true}
-          to="https://www.google.com"
-          color="negative"
-        >
+        <Link variant="title1" forceOpenOutsideApp to="https://www.google.com" color="negative">
           Go to Coinbase outside of App
         </Link>
       </Example>
@@ -107,7 +102,7 @@ const LinkScreen = () => {
         <TextHeadline>test preventRedirectionIntoApp</TextHeadline>
         <Link
           variant="title1"
-          preventRedirectionIntoApp={true}
+          preventRedirectionIntoApp
           to="https://www.google.com"
           color="negative"
         >

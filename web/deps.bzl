@@ -22,3 +22,8 @@ TYPE_DEPENDENCIES = [
 BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + TYPE_DEPENDENCIES + [
     "@npm//jest-canvas-mock",
 ]
+
+CDS_DEPENDENCIES = [
+    "//eng/shared/design-system/common:source",
+    "//eng/shared/design-system/utils:source",
+]

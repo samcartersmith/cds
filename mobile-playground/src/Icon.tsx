@@ -4,7 +4,7 @@ import { Icon } from '@cbhq/cds-mobile/icons/Icon';
 import { HStack, VStack } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
 
-import { TextBody, TextHeadline } from '@cbhq/cds-mobile/typography';
+import { TextBody } from '@cbhq/cds-mobile/typography';
 import { FiatIcon, TextIcon } from '@cbhq/cds-mobile/icons';
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';

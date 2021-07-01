@@ -3,7 +3,6 @@
  * Generated from scripts/codegen/main.ts
  */
 import { LottieSource } from '../LottieSource';
-/* eslint-disable import/extensions */
 import chartFallbackPositiveJson from './chartFallbackPositive.json';
 
 export type ChartFallbackPositiveLottie = LottieSource;

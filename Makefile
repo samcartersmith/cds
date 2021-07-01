@@ -14,6 +14,7 @@ Help:
   $$ make docgen                    -- Generate docs for CDS website.
   $$ make codegen                   -- Generate code in design system.
   $$ make lint                      -- Run eslint on all sources.
+  $$ make lint.fix                   -- Auto fixes lints issues
   $$ make new.package name=<name>   -- Scaffold a new package with the defined name.
   $$ make start.story               -- Start storybook local dev server.
   $$ make start.website             -- Start docusaurus website.
@@ -26,7 +27,6 @@ Help:
   $$ make prepare.icons             -- Prepare icons
   $$ make prepare.illustrations     -- Prepare illustrations
   $$ make prepare.adoption          -- Prepare adoption numbers
-  $$ make lint.fix                  -- Auto fixes lints issues
   $$ make release                   -- Automatically update CHANGELOG based on PR titles
   $$ make typecheck                 -- Run global typecheck
 endef
@@ -88,22 +88,24 @@ codegen:
 
 .PHONY: lint
 lint:
-	bazel run :eslint_codegen
-	bazel run :eslint_codemod
-	bazel run :eslint_common
-	bazel run :eslint_mobile
-	bazel run :eslint_utils
-	bazel run :eslint_web
+	bazel run codegen:lint
+	bazel run codemod:lint
+	bazel run common:lint
+	bazel run lottie-files:lint
+	bazel run mobile:lint
+	bazel run utils:lint
+	bazel run web:lint
 	bazel run :stylelint
 
 .PHONY: lint.fix
 lint.fix:
-	bazel run :eslint_fix_codegen
-	bazel run :eslint_fix_codemod
-	bazel run :eslint_fix_common
-	bazel run :eslint_fix_mobile
-	bazel run :eslint_fix_utils
-	bazel run :eslint_fix_web
+	bazel run codegen:lint_fix
+	bazel run codemod:lint_fix
+	bazel run common:lint_fix
+	bazel run lottie-files:lint_fix
+	bazel run mobile:lint_fix
+	bazel run utils:lint_fix
+	bazel run web:lint_fix
 
 .PHONY: new.package
 new.package:
