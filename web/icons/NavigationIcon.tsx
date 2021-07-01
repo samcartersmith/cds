@@ -11,7 +11,10 @@ import {
 import type { IconBaseWebProps } from './IconBase';
 import { IconBase } from './IconBase';
 
-interface NavigationIconProps extends Omit<IconBaseWebProps, 'color'>, SpacingProps, SharedProps {
+export interface NavigationIconProps
+  extends Omit<IconBaseWebProps, 'color'>,
+    SpacingProps,
+    SharedProps {
   /** Name of navigation icon, as defined by Figma */
   name: NavigationIconName;
   /**
