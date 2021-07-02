@@ -1,3 +1,4 @@
+import React from 'react';
 import { LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 import { Link } from '@cbhq/cds-mobile/typography/Link';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
@@ -29,7 +30,10 @@ const links = typographies.map(typography => (
   </Example>
 ));
 
-const LinkScreen = () => {
+// eslint-disable-next-line no-console
+const logPressed = () => console.log('Link is pressed');
+
+const LinkScreen = function LinkScreen() {
   return (
     <ExamplesScreen>
       {links}
@@ -51,7 +55,8 @@ const LinkScreen = () => {
       </Example>
       <Example inline>
         <TextHeadline>Testing onPress</TextHeadline>
-        <Link variant="title1" onPress={() => console.log('Testing on press')} color="negative">
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <Link variant="title1" onPress={logPressed} color="negative">
           Go to Coinbase
         </Link>
       </Example>
@@ -59,24 +64,14 @@ const LinkScreen = () => {
         <TextHeadline>Wrap in TextBody</TextHeadline>
         <TextBody align="center">
           Go here:{' '}
-          <Link
-            variant="body"
-            to="https://www.coinbase.com/"
-            onPress={() => console.log('Testing on press')}
-            color="negative"
-          >
+          <Link variant="body" to="https://www.coinbase.com/" onPress={logPressed} color="negative">
             Go to Coinbase
           </Link>
         </TextBody>
       </Example>
       <Example inline>
         <TextHeadline>onPress and to used together</TextHeadline>
-        <Link
-          variant="title1"
-          onPress={() => console.log('Testing on press')}
-          to="https://www.coinbase.com/"
-          color="negative"
-        >
+        <Link variant="title1" onPress={logPressed} to="https://www.coinbase.com/" color="negative">
           Go to Coinbase
         </Link>
       </Example>
@@ -96,6 +91,12 @@ const LinkScreen = () => {
         <TextHeadline>test forceOpenOutsideApp is set to true</TextHeadline>
         <Link variant="title1" forceOpenOutsideApp to="https://www.google.com" color="negative">
           Go to Coinbase outside of App
+        </Link>
+      </Example>
+      <Example inline>
+        <TextHeadline>test can set readerMode</TextHeadline>
+        <Link variant="title1" readerMode to="https://www.coinbase.com/" color="negative">
+          ReaderMode set
         </Link>
       </Example>
       <Example inline>

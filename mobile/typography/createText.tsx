@@ -48,7 +48,7 @@ export interface TextProps
 }
 
 export const createText = (name: Typography) => {
-  const TextComponent: React.FC<TextProps> = ({
+  const TextComponent: React.FC<TextProps> = function TextComponent({
     children,
     color = 'foreground',
     align = 'start',
@@ -74,7 +74,7 @@ export const createText = (name: Typography) => {
 
     // RN Text props
     ...props
-  }) => {
+  }) {
     const palette = usePalette();
 
     const textAlign = useTextAlign(align);

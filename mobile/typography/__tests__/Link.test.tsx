@@ -84,4 +84,14 @@ describe('Link', () => {
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.forceOpenOutsideApp).toEqual(true);
   });
+
+  it('can set readerMode to true', () => {
+    const linkRenderer = TestRenderer.create(
+      <Link to={URL} readerMode testID={TEST_ID}>
+        Child
+      </Link>
+    );
+    const linkInstance = linkRenderer.root;
+    expect(linkInstance.props.readerMode).toEqual(true);
+  });
 });

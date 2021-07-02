@@ -9,6 +9,7 @@ const DEFAULT_OPEN_WEB_BROWSER_OPTIONS = {
   spectrum: 'light',
   preventRedirectionIntoApp: false,
   forceOpenOutsideApp: false,
+  readerMode: false,
 };
 
 describe('useWebBrowserOpener', () => {
@@ -28,6 +29,7 @@ describe('useWebBrowserOpener', () => {
       spectrum: 'dark',
       preventRedirectionIntoApp: true,
       forceOpenOutsideApp: true,
+      readerMode: true,
     } as const;
 
     result.current(URL, options);
@@ -45,11 +47,7 @@ describe('useWebBrowserOpener', () => {
 
     result.current(URL, options);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, {
-      spectrum: 'light',
-      preventRedirectionIntoApp: false,
-      forceOpenOutsideApp: false,
-    });
+    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
   });
 
   it('test that preventRedirectionIntoApp is optional', () => {
@@ -61,11 +59,7 @@ describe('useWebBrowserOpener', () => {
 
     result.current(URL, options);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, {
-      spectrum: 'light',
-      preventRedirectionIntoApp: false,
-      forceOpenOutsideApp: false,
-    });
+    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
   });
 
   /**

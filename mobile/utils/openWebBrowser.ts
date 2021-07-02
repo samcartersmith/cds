@@ -9,6 +9,7 @@ export interface OpenWebBrowserOptions {
   spectrum: Spectrum;
   preventRedirectionIntoApp?: boolean;
   forceOpenOutsideApp?: boolean;
+  readerMode?: boolean;
 }
 
 export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions) => {
@@ -32,7 +33,7 @@ export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions
       dismissButtonStyle: 'close',
       preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, options.spectrum),
       preferredControlTintColor: paletteValueToHex(paletteConfig.primary, options.spectrum),
-      readerMode: false,
+      readerMode: options.readerMode || false,
       animated: true,
       modalPresentationStyle: 'fullScreen',
       modalTransitionStyle: 'crossDissolve',
@@ -51,5 +52,6 @@ export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions
     // TODO: Should output this to Bugsnag
     // eslint-disable-next-line no-console
     console.error(`An error occurred: ${err}`);
+    InAppBrowser.close();
   }
 };

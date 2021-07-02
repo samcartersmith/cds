@@ -20,6 +20,7 @@ export const useWebBrowserOpener = () => {
             spectrum: options?.spectrum ?? spectrum,
             preventRedirectionIntoApp: options?.preventRedirectionIntoApp || false,
             forceOpenOutsideApp: options?.forceOpenOutsideApp || false,
+            readerMode: options?.readerMode || false,
           });
           break;
         default: {

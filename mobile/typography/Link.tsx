@@ -41,6 +41,12 @@ export interface LinkProps extends LinkBaseProps, SharedProps {
    * @default false
    */
   preventRedirectionIntoApp?: boolean;
+  /**
+   * Toggles readerMode flag for web browser.
+   * Note: readerMode is only available on ios
+   * @default false
+   */
+  readerMode?: boolean;
 }
 
 export const Link = memo(
@@ -54,6 +60,7 @@ export const Link = memo(
     variant = 'headline',
     forceOpenOutsideApp = false,
     preventRedirectionIntoApp = false,
+    readerMode = false,
   }: LinkProps) => {
     const openUrl = useWebBrowserOpener();
 
@@ -64,10 +71,11 @@ export const Link = memo(
           openUrl(to, {
             forceOpenOutsideApp,
             preventRedirectionIntoApp,
+            readerMode,
           });
         }
       },
-      [openUrl, to, onPress, forceOpenOutsideApp, preventRedirectionIntoApp]
+      [openUrl, to, onPress, forceOpenOutsideApp, preventRedirectionIntoApp, readerMode]
     );
 
     const TextComponent = TYPOGRAPHY_MAP[variant];

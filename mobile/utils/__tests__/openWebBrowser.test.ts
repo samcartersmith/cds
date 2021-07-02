@@ -83,6 +83,35 @@ describe('openWebBrowser', () => {
       },
     });
   });
+  it('readerMode is configurable', async () => {
+    const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
+    await openWebBrowser('www.google.com', {
+      spectrum: 'light',
+      forceOpenOutsideApp: false,
+      readerMode: true,
+    });
+    expect(selectPlatform).toBeCalledWith({
+      android: {
+        showTitle: true,
+        toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, 'light'),
+        secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, 'light'),
+        enableUrlBarHiding: true,
+        enableDefaultShare: true,
+        forceCloseOnRedirection: false,
+      },
+      ios: {
+        dismissButtonStyle: 'close',
+        preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, 'light'),
+        preferredControlTintColor: paletteValueToHex(paletteConfig.primary, 'light'),
+        readerMode: true,
+        animated: true,
+        modalPresentationStyle: 'fullScreen',
+        modalTransitionStyle: 'crossDissolve',
+        modalEnabled: true,
+        enableBarCollapsing: false,
+      },
+    });
+  });
   it('preventRedirectionIntoApp flag is configurable', async () => {
     const spyPreventRedirection = jest
       .spyOn(CustomTabsHelper, 'preventRedirectionIntoApp')
