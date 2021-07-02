@@ -22,10 +22,10 @@ export const IconButton = forwardRef(
       disabled = false,
       name,
       onPress,
-      testID,
       to,
       transparent,
       variant = 'secondary',
+      ...props
     }: IconButtonProps,
     ref: React.Ref<HTMLButtonElement>
   ) => {
@@ -40,7 +40,7 @@ export const IconButton = forwardRef(
     return (
       <Pressable
         aria-label={accessibilityLabel}
-        testID={testID}
+        {...props}
         as={as}
         transparentWhileInactive={transparent}
         backgroundColor={backgroundColor}
