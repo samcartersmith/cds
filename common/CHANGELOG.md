@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.16.0 (7/2/2021, 10:29 AM PST)
+
+#### 💥 Breaking
+
+- Add new icons. [#25338](https://github.cbhq.net/mono/repo/pull/25338)
+
+#### 🐞 Fixes
+
+- Support data in `eslint_fix` and `eslint_test`. [#25346](https://github.cbhq.net/mono/repo/pull/25346)
+- **[CellMedia]** Resolve image paths correctly and remove restrictions. [#25096](https://github.cbhq.net/mono/repo/pull/25096)
+
+#### 📘 Misc
+
+- Apply new ESLint rules to CDS. [#25195](https://github.cbhq.net/mono/repo/pull/25195)
+
 ## 0.15.4 (6/29/2021, 10:11 AM PST)
 
 #### 🚀 Updates

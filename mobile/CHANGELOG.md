@@ -6,6 +6,26 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.19.0 (7/2/2021, 10:29 AM PST)
+
+#### 💥 Breaking
+
+- Add new icons. [#25338](https://github.cbhq.net/mono/repo/pull/25338)
+
+#### 🚀 Updates
+
+- **[Pressable]** Add onPressIn and onPressOut. [#25398](https://github.cbhq.net/mono/repo/pull/25398)
+
+#### 🐞 Fixes
+
+- Add readerMode as optional config and add close InAppBrowser when errored. [#25314](https://github.cbhq.net/mono/repo/pull/25314)
+- Support data in `eslint_fix` and `eslint_test`. [#25346](https://github.cbhq.net/mono/repo/pull/25346)
+- **[CellMedia]** Resolve image paths correctly and remove restrictions. [#25096](https://github.cbhq.net/mono/repo/pull/25096)
+
+#### 📘 Misc
+
+- Apply new ESLint rules to CDS. [#25195](https://github.cbhq.net/mono/repo/pull/25195)
+
 ## 0.18.3 (6/29/2021, 11:49 AM PST)
 
 #### 🐞 Fixes

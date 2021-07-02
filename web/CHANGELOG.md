@@ -6,6 +6,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.15.0 (7/2/2021, 10:29 AM PST)
+
+#### 💥 Breaking
+
+- Add new icons. [#25338](https://github.cbhq.net/mono/repo/pull/25338)
+
+#### 🐞 Fixes
+
+- Navigation tab spacing. [#25315](https://github.cbhq.net/mono/repo/pull/25315), [CDS-676](https://jira.coinbase-corp.com/browse/CDS-676)
+- **[IconButton]** Spread native props down. [#25561](https://github.cbhq.net/mono/repo/pull/25561)
+- Export Nav Prop. [#25482](https://github.cbhq.net/mono/repo/pull/25482)
+- Support data in `eslint_fix` and `eslint_test`. [#25346](https://github.cbhq.net/mono/repo/pull/25346)
+- Guarantee percy diffs are backwards compatible for Icon. [#25419](https://github.cbhq.net/mono/repo/pull/25419), [CDS-622](https://jira.coinbase-corp.com/browse/CDS-622)
+- **[CellMedia]** Resolve image paths correctly and remove restrictions. [#25096](https://github.cbhq.net/mono/repo/pull/25096)
+
+#### 📘 Misc
+
+- Apply new ESLint rules to CDS. [#25195](https://github.cbhq.net/mono/repo/pull/25195)
+
 ## 0.14.1 (6/29/2021, 10:11 AM PST)
 
 #### 🚀 Updates

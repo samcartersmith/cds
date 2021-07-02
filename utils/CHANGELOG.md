@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.3 (7/2/2021, 10:29 AM PST)
+
+#### 🐞 Fixes
+
+- Support data in `eslint_fix` and `eslint_test`. [#25346](https://github.cbhq.net/mono/repo/pull/25346)
+
+#### 📘 Misc
+
+- Apply new ESLint rules to CDS. [#25195](https://github.cbhq.net/mono/repo/pull/25195)
+
 ## 0.2.2 (5/17/2021, 05:38 PM PST)
 
 #### 🚀 Updates

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.9 (7/2/2021, 10:29 AM PST)
+
+#### 🐞 Fixes
+
+- Support data in `eslint_fix` and `eslint_test`. [#25346](https://github.cbhq.net/mono/repo/pull/25346)
+
 ## 0.2.8 (6/28/2021, 09:21 AM PST)
 
 #### 🚀 Updates
