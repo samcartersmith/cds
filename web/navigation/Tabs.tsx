@@ -4,6 +4,7 @@ import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 import { SetState } from '@cbhq/cds-common/types';
 
 import { TabItemBaseProps, TabItemProps } from './TabItem';
+import { HStack } from '../layout';
 
 export type TabsProps = {
   activeIndex?: number;
@@ -38,7 +39,11 @@ export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children 
     [currentIndex, children, onChange, updateHandler]
   );
 
-  return <div role="tablist">{tabChildren}</div>;
+  return (
+    <HStack role="tablist" gap={0.5}>
+      {tabChildren}
+    </HStack>
+  );
 });
 
 Tabs.displayName = 'Tabs';
