@@ -1,6 +1,7 @@
 load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_file_asset")
 load("//eng/shared/design-system:cds_deployable.bzl", "cds_deployable")
 load("//eng/shared/design-system:config.bzl", "PACKAGES", "STATIC_PACKAGES")
+load("@npm//ts-node:index.bzl", "ts_node")
 
 project_settings(
     caf = False,
@@ -55,4 +56,68 @@ syn_deployable(
     ],
     config_name = "storybook",  # config_name (i.e. Codeflow's config_name)
     target = "development",  # environment to deploy to
+)
+
+# WEB CSS
+
+ts_node(
+    name = "bundle_css",
+    args = [
+        "-T $(execpath //eng/shared/design-system/cloud:combineCssFiles.ts)",
+        "--outputDir $(@D)",
+        "--packageJsonPath $(location //eng/shared/design-system/web:package_json)",
+        "--fontsOutputDir $(location //eng/shared/design-system/fonts:package_copy)",
+        "--webOutputDir $(location //eng/shared/design-system/web:package_merged)",
+        "--project $(execpath //:tsconfig.json)",
+    ],
+    data = [
+        "//:tsconfig.json",
+        "//eng/shared/design-system/cloud:combineCssFiles.ts",
+        "//eng/shared/design-system/fonts:package_copy",
+        "//eng/shared/design-system/web:package_json",
+        "//eng/shared/design-system/web:package_merged",
+        "@npm//fast-glob",
+        "@npm//yargs",
+    ],
+    output_dir = True,
+    visibility = ["//visibility:public"],
+)
+
+pkg_zip(
+    name = "bundle_css_zip",
+    srcs = [
+        ":bundle_css",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+syn_deployable(
+    name = "upload_css",
+    assets = [
+        syn_file_asset(
+            name = "cds-css",
+            src = ":bundle_css_zip",
+            bucket = "cb-assets-prod",
+            is_zip = True,
+            key = "cds/",
+        ),
+    ],
+    config_name = "corporate",
+    continuous_deployment = True,
+    target = "corporate",
+)
+
+syn_deployable(
+    name = "upload_css_dev",
+    assets = [
+        syn_file_asset(
+            name = "cds-css-dev",
+            src = ":bundle_css_zip",
+            bucket = "cb-assets-dev",
+            is_zip = True,
+            key = "cds/",
+        ),
+    ],
+    config_name = "development",
+    target = "development",
 )
