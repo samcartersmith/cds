@@ -129,6 +129,21 @@ Toggles whether we allow users to go back to app when they are in an external br
 
 <ComponentDetails componentName="Link" templateName="prop-preventRedirectionIntoApp" />
 
+### readerMode <Badge variant="mobile" />
+
+Toggles readerMode flag for web browser. Note: readerMode is only available on ios
+
+<ApiDetails
+  componentName="Link"
+  propertyName="readerMode"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-readerMode" />
+
 ### testID <Badge variant="mobile" />
 
 Used to locate this element in unit and end-to-end tests.

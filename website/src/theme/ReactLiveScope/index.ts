@@ -14,6 +14,7 @@ import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import * as CDSTypography from '@cbhq/cds-web/typography';
+import { Link } from '@cbhq/cds-web/typography/Link';
 import { loremIpsum } from '@cbhq/cds-website/data/loremIpsum';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
@@ -43,6 +44,7 @@ const ReactLiveScope = {
   ...CDSOverlays,
   ...CDSSystem,
   ...CDSTypography,
+  Link,
   // Utils
   loremIpsum,
 };

@@ -1,0 +1,24 @@
+```jsx live
+<VStack alignItems="center">
+  {/* Basic use */}
+  <Link to="https://coinbase.com">Go to Coinbase Webpage</Link>
+
+  {/* Change text color */}
+  <Link to="https://coinbase.com" color="negative">
+    Go to Coinbase Webpage
+  </Link>
+
+  {/* Change font variant */}
+  <Link to="https://coinbase.com" variant="legal">
+    Go to Coinbase Webpage
+  </Link>
+
+  {/* Example use of onPress */}
+  <Link onPress={() => console.log('Log Coinbase')}>Go to Coinbase Webpage</Link>
+
+  {/* Use both onPress and to */}
+  <Link to="https://coinbase.com" onPress={() => console.log('Log Coinbase')}>
+    Go to Coinbase Webpage
+  </Link>
+</VStack>
+```

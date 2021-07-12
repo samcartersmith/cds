@@ -19,6 +19,19 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### illustration
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="illustration"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-illustration" />
+
 ### name
 
 <ApiDetails
@@ -50,6 +63,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'caretLeft',
     'caretRight',
     'caretUp',
+    'cash',
     'cashEUR',
     'cashGBP',
     'cashJPY',
@@ -76,7 +90,10 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'convert',
     'copy',
     'crossTrade',
+    'currencies',
+    'defi',
     'deposit',
+    'dex',
     'diagonalRightArrow',
     'document',
     'dot',
@@ -84,6 +101,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'drag',
     'email',
     'error',
+    'ethereum',
     'exclamationMark',
     'expand',
     'expandAddress',
@@ -91,6 +109,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'externalLink',
     'fib',
     'filter',
+    'flame',
     'followActive',
     'followInactive',
     'forwardArrow',
@@ -116,6 +135,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'minus',
     'more',
     'newsFeed',
+    'nft',
     'orderHistory',
     'outline',
     'paperAirplane',
@@ -125,6 +145,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'pencil',
     'percentage',
     'phone',
+    'pin',
     'play',
     'profile',
     'protection',
@@ -164,6 +185,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'step8',
     'step9',
     'trashCan',
+    'trophy',
     'undo',
     'verticalLine',
     'visibleActive',
@@ -197,6 +219,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'caretLeft',
     'caretRight',
     'caretUp',
+    'cash',
     'cashEUR',
     'cashGBP',
     'cashJPY',
@@ -223,7 +246,10 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'convert',
     'copy',
     'crossTrade',
+    'currencies',
+    'defi',
     'deposit',
+    'dex',
     'diagonalRightArrow',
     'document',
     'dot',
@@ -231,6 +257,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'drag',
     'email',
     'error',
+    'ethereum',
     'exclamationMark',
     'expand',
     'expandAddress',
@@ -238,6 +265,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'externalLink',
     'fib',
     'filter',
+    'flame',
     'followActive',
     'followInactive',
     'forwardArrow',
@@ -263,6 +291,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'minus',
     'more',
     'newsFeed',
+    'nft',
     'orderHistory',
     'outline',
     'paperAirplane',
@@ -272,6 +301,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'pencil',
     'percentage',
     'phone',
+    'pin',
     'play',
     'profile',
     'protection',
@@ -311,6 +341,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
     'step8',
     'step9',
     'trashCan',
+    'trophy',
     'undo',
     'verticalLine',
     'visibleActive',
@@ -324,6 +355,19 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
 <ComponentDetails componentName="CellMedia" templateName="prop-name" />
 
+### pressable
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="pressable"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-pressable" />
+
 ### source
 
 <ApiDetails
@@ -331,8 +375,8 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
   propertyName="source"
   required={true}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="CellMedia" templateName="prop-source" />
@@ -357,10 +401,10 @@ Used to locate this element in unit and end-to-end tests.
 <ApiDetails
   componentName="CellMedia"
   propertyName="title"
-  required={true}
+  required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="CellMedia" templateName="prop-title" />
@@ -372,8 +416,8 @@ Used to locate this element in unit and end-to-end tests.
   propertyName="type"
   required={true}
   defaultValue=""
-  mobileOptions={['asset', 'avatar', 'icon', 'image']}
-  webOptions={['asset', 'avatar', 'icon', 'image']}
+  mobileOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
+  webOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
 />
 
 <ComponentDetails componentName="CellMedia" templateName="prop-type" />

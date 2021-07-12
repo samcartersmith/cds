@@ -692,6 +692,12 @@ export const Tooltip = {
 };
 
 export const Link = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/a11y.mdx'
+      )
+  ),
   implementation: React.lazy(
     () =>
       import(
