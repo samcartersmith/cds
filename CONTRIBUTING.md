@@ -69,16 +69,22 @@ Currently we have a hardcoded map of projects whose key is a project name of com
 
 To ensure the changelog is correctly generated and packages are correctly versioned and released, you must format your _squash_ commit message the following way:
 
-If no jira ticket exists, replace it with 'trivial'
-[{jira ticket}] {LogType}: {message}
-ex: [trivial] docs: added new feature docs
+```
+# Without a jira ticket
+[trivial] {logType}: {message}
+
+# With one or many jira tickets
+[CDS-xxx] {logType}: {message}
+```
+
+With `logType` being one of the following:
 
 - breaking - major version bump
-- feat, change - minor version bump
-- fix, chore, types - patch version bump
-- release, internal, docs - noop
+- feat, change, new, update - minor version bump
+- fix, patch, chore, types - patch version bump
+- release, internal, docs, tests - no-op
 
-[prepareRelease.ts](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/codegen/scripts/prepareRelease.ts#L19)
+More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/master/tools/js/releasePackages.ts)
 
 ## Storybook
 
