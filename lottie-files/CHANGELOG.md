@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.10 (7/13/2021, 09:47 AM PST)
+
+#### 🐞 Fixes
+
+- Adjust marker timing for tradeStatus lottie. [#25775](https://github.cbhq.net/mono/repo/pull/25775), [CDS-453](https://jira.coinbase-corp.com/browse/CDS-453)
+
 ## 0.2.9 (7/2/2021, 10:29 AM PST)
 
 #### 🐞 Fixes
