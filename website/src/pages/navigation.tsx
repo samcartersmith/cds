@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
@@ -57,10 +57,10 @@ export const NavigationExample: React.FC = () => {
         ctas={
           <NavigationBarCtas>
             <Button compact variant="primary">
-              {'Buy & Sell'}
+              Buy & Sell
             </Button>
             <Button compact variant="secondary">
-              {'Send & Recieve'}
+              Send & Recieve
             </Button>
           </NavigationBarCtas>
         }
@@ -85,7 +85,7 @@ export const NavigationExample: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem to="/" as={Link} icon="pieChart" label="Overview" active />
+        <NavigationListItem to="/" as={Link} icon="chartPie" label="Overview" active />
         <NavigationListItem to="/foo" as={Link} icon="gab" label="Principles" badge={3} />
         <NavigationListItem to="/bar" as={Link} icon="home" label="Getting started" />
         <NavigationListItem to="/baz" as={Link} icon="pay" label="Pay" />

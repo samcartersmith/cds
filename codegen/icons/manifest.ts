@@ -157,7 +157,7 @@ export const manifest = {
     lightningBolt: { '8': 'uE316', '12': 'uE317', '16': 'uE318', '24': 'uE319', '32': 'uE31A' },
     camera: { '8': 'uE31B', '12': 'uE31C', '16': 'uE31D', '24': 'uE31E', '32': 'uE31F' },
     orderHistory: { '8': 'uE320', '12': 'uE321', '16': 'uE322', '24': 'uE323', '32': 'uE324' },
-    candleSticksInactive: {
+    chartCandlesInactive: {
       '8': 'uE325',
       '12': 'uE326',
       '16': 'uE327',
@@ -169,9 +169,9 @@ export const manifest = {
     tradingActive: { '8': 'uE334', '12': 'uE335', '16': 'uE336', '24': 'uE337', '32': 'uE338' },
     bellActive: { '8': 'uE339', '12': 'uE33A', '16': 'uE33B', '24': 'uE33C', '32': 'uE33D' },
     payInactive: { '8': 'uE33E', '12': 'uE33F', '16': 'uE340', '24': 'uE341', '32': 'uE342' },
-    pieChartInactive: { '8': 'uE343', '12': 'uE344', '16': 'uE345', '24': 'uE346', '32': 'uE347' },
-    pieChartActive: { '8': 'uE348', '12': 'uE349', '16': 'uE34A', '24': 'uE34B', '32': 'uE34C' },
-    candleSticksActive: {
+    chartPieInactive: { '8': 'uE343', '12': 'uE344', '16': 'uE345', '24': 'uE346', '32': 'uE347' },
+    chartPieActive: { '8': 'uE348', '12': 'uE349', '16': 'uE34A', '24': 'uE34B', '32': 'uE34C' },
+    chartCandlesActive: {
       '8': 'uE34D',
       '12': 'uE34E',
       '16': 'uE34F',
@@ -188,8 +188,8 @@ export const manifest = {
     invoiceInactive: { '8': 'uE375', '12': 'uE376', '16': 'uE377', '24': 'uE378', '32': 'uE379' },
     invoiceActive: { '8': 'uE37A', '12': 'uE37B', '16': 'uE37C', '24': 'uE37D', '32': 'uE37E' },
     giftBoxActive: { '8': 'uE37F', '12': 'uE380', '16': 'uE381', '24': 'uE382', '32': 'uE383' },
-    seeMoreInactive: { '8': 'uE384', '12': 'uE385', '16': 'uE386', '24': 'uE387', '32': 'uE388' },
-    seeMoreActive: { '8': 'uE389', '12': 'uE38A', '16': 'uE38B', '24': 'uE38C', '32': 'uE38D' },
+    caretUpInactive: { '8': 'uE384', '12': 'uE385', '16': 'uE386', '24': 'uE387', '32': 'uE388' },
+    caretUpActive: { '8': 'uE389', '12': 'uE38A', '16': 'uE38B', '24': 'uE38C', '32': 'uE38D' },
     giftBoxInactive: { '8': 'uE38E', '12': 'uE38F', '16': 'uE390', '24': 'uE391', '32': 'uE392' },
     cashInactive: { '8': 'uE393', '12': 'uE394', '16': 'uE395', '24': 'uE396', '32': 'uE397' },
     addPeopleInactive: { '8': 'uE398', '12': 'uE399', '16': 'uE39A', '24': 'uE39B', '32': 'uE39C' },
@@ -228,7 +228,7 @@ export const manifest = {
     trophy: { '8': 'uE420', '12': 'uE421', '16': 'uE422', '24': 'uE423', '32': 'uE424' },
     pin: { '8': 'uE425', '12': 'uE426', '16': 'uE427', '24': 'uE428', '32': 'uE429' },
     dex: { '8': 'uE42A', '12': 'uE42B', '16': 'uE42C', '24': 'uE42D', '32': 'uE42E' },
-    barChartInactive: { '8': 'uE42F', '12': 'uE430', '16': 'uE431', '24': 'uE432', '32': 'uE433' },
-    barChartActive: { '8': 'uE434', '12': 'uE435', '16': 'uE436', '24': 'uE437', '32': 'uE438' },
+    chartBarInactive: { '8': 'uE42F', '12': 'uE430', '16': 'uE431', '24': 'uE432', '32': 'uE433' },
+    chartBarActive: { '8': 'uE434', '12': 'uE435', '16': 'uE436', '24': 'uE437', '32': 'uE438' },
   },
 };

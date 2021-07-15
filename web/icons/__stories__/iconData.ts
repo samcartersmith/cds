@@ -165,17 +165,17 @@ export const iconNames = [
 ] as const;
 
 export const navigationIconNames = [
-  'candleSticks',
+  'chartCandles',
   'trading',
   'bell',
   'pay',
-  'pieChart',
+  'chartPie',
   'newsfeed',
   'dashboard',
   'tag',
   'invoice',
   'giftBox',
-  'seeMore',
+  'caretUp',
   'cash',
   'addPeople',
   'defi',

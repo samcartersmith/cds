@@ -93,7 +93,7 @@ export const NoTabsNoTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
         <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
         <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
@@ -204,7 +204,7 @@ export const TabsNoTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
         <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
         <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
@@ -310,7 +310,7 @@ export const TitleNoTabs: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
         <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
         <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
@@ -432,7 +432,7 @@ export const TabsAndDisplayTitle: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
         <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
         <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />
@@ -644,7 +644,7 @@ export const SidebarWithSections: React.FC = () => {
 
     const sidebarList = (
       <>
-        <NavigationListItem as={MockLink} icon="pieChart" label="Overview" active />
+        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
         <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
         <NavigationListItem as={MockLink} icon="home" label="Getting started" />
         <NavigationListItem as={MockLink} icon="pay" label="Pay" />

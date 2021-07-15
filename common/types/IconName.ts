@@ -160,17 +160,17 @@ export type IconName =
   | 'dex';
 
 export type NavigationIconName =
-  | 'candleSticks'
+  | 'chartCandles'
   | 'trading'
   | 'bell'
   | 'pay'
-  | 'pieChart'
+  | 'chartPie'
   | 'newsfeed'
   | 'dashboard'
   | 'tag'
   | 'invoice'
   | 'giftBox'
-  | 'seeMore'
+  | 'caretUp'
   | 'cash'
   | 'addPeople'
   | 'defi'
@@ -179,18 +179,18 @@ export type NavigationIconName =
   | 'wallet'
   | 'settings'
   | 'scanQrCode'
-  | 'barChart';
+  | 'chartBar';
 
 export type NavigationIconInternalName =
-  | 'candleSticksInactive'
+  | 'chartCandlesInactive'
   | 'tradingInactive'
   | 'bellInactive'
   | 'tradingActive'
   | 'bellActive'
   | 'payInactive'
-  | 'pieChartInactive'
-  | 'pieChartActive'
-  | 'candleSticksActive'
+  | 'chartPieInactive'
+  | 'chartPieActive'
+  | 'chartCandlesActive'
   | 'payActive'
   | 'newsfeedInactive'
   | 'newsfeedActive'
@@ -201,8 +201,8 @@ export type NavigationIconInternalName =
   | 'invoiceInactive'
   | 'invoiceActive'
   | 'giftBoxActive'
-  | 'seeMoreInactive'
-  | 'seeMoreActive'
+  | 'caretUpInactive'
+  | 'caretUpActive'
   | 'giftBoxInactive'
   | 'cashInactive'
   | 'addPeopleInactive'
@@ -220,5 +220,5 @@ export type NavigationIconInternalName =
   | 'walletActive'
   | 'scanQrCodeActive'
   | 'scanQrCodeInactive'
-  | 'barChartInactive'
-  | 'barChartActive';
+  | 'chartBarInactive'
+  | 'chartBarActive';
