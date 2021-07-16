@@ -1,8 +1,8 @@
 import { Button, IconButton } from '@cbhq/cds-mobile/buttons';
 import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Checkbox } from '@cbhq/cds-mobile/controls/Checkbox';
+import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
 import { Box } from '@cbhq/cds-mobile/layout';
-import { PictogramIllustration } from '@cbhq/cds-mobile/illustrations/PictogramIllustration';
 import { createStories } from '@cbhq/cds-storybook/stories/ListCell';
 
 import Example from './internal/Example';
@@ -17,7 +17,7 @@ const {
   WithMedia,
   WithActions,
   WithIntermediary,
-} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox, PictogramIllustration);
+} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox, Pictogram);
 
 const ListCellScreen = () => {
   return (

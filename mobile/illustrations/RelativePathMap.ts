@@ -1,1017 +1,1232 @@
-/* eslint-disable */
 /**
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
+/* eslint-disable */
 export const IllustrationFilePathMap = {
-  idBack: {
-    light: require('./images/light/idBack/idBack.png'),
+  accessToAdvancedCharts: {
+    light: require('./images/light/accessToAdvancedCharts-0.svg'),
     dark: null,
-    fileFormat: 'png',
+    fileFormat: 'svg',
   },
-  coinsInWallet: {
-    light: require('./images/light/coinsInWallet/coinsInWallet.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  bigBtc: {
-    light: require('./images/light/bigBtc/bigBtc.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  myNameIsSatoshi: {
-    light: require('./images/light/myNameIsSatoshi/myNameIsSatoshi.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  limitOrders: {
-    light: require('./images/light/limitOrders/limitOrders.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  payUpFront: {
-    light: require('./images/light/payUpFront/payUpFront.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  cardAndPhone: {
-    light: require('./images/light/cardAndPhone/cardAndPhone.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  automaticPayments: {
-    light: require('./images/light/automaticPayments/automaticPayments.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  earnProgress: {
-    light: require('./images/light/earnProgress/earnProgress.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  earnSuccess: {
-    light: require('./images/light/earnSuccess/earnSuccess.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  emailNotification: {
-    light: require('./images/light/emailNotification/emailNotification.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  idFront: {
-    light: require('./images/light/idFront/idFront.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  idAngles: {
-    light: require('./images/light/idAngles/idAngles.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  sendToUsername: {
-    light: require('./images/light/sendToUsername/sendToUsername.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  idVerificationSecure: {
-    light: require('./images/light/idVerificationSecure/idVerificationSecure.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  tradeImmediately: {
-    light: require('./images/light/tradeImmediately/tradeImmediately.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  rocket: {
-    light: require('./images/light/rocket/rocket.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  addPhoneNumber: {
-    light: require('./images/light/addPhoneNumber/addPhoneNumber.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  japanVerifyId: {
-    light: require('./images/light/japanVerifyId/japanVerifyId.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  documentCertified: {
-    light: require('./images/light/documentCertified/documentCertified.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  onTheList: {
-    light: require('./images/light/onTheList/onTheList.png'),
-    dark: null,
-    fileFormat: 'png',
+  accountUnderReview: {
+    light: require('./images/light/accountUnderReview-0.svg'),
+    dark: require('./images/dark/accountUnderReview-0.svg'),
+    fileFormat: 'svg',
   },
   addBankAccount: {
-    light: require('./images/light/addBankAccount/addBankAccount.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/addBankAccount-0.svg'),
+    dark: require('./images/dark/addBankAccount-0.svg'),
+    fileFormat: 'svg',
   },
   addCreditCard: {
-    light: require('./images/light/addCreditCard/addCreditCard.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/addCreditCard-0.svg'),
+    dark: require('./images/dark/addCreditCard-0.svg'),
+    fileFormat: 'svg',
   },
-  verifyIdDetails: {
-    light: require('./images/light/verifyIdDetails/verifyIdDetails.png'),
-    dark: null,
-    fileFormat: 'png',
+  addPhoneNumber: {
+    light: require('./images/light/addPhoneNumber-0.svg'),
+    dark: require('./images/dark/addPhoneNumber-0.svg'),
+    fileFormat: 'svg',
   },
-  idIssue: {
-    light: require('./images/light/idIssue/idIssue.png'),
-    dark: null,
-    fileFormat: 'png',
+  advancedTradingUi: {
+    light: require('./images/light/advancedTradingUi-0.svg'),
+    dark: require('./images/dark/advancedTradingUi-0.svg'),
+    fileFormat: 'svg',
   },
-  verifyInfo: {
-    light: require('./images/light/verifyInfo/verifyInfo.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  readyToTrade: {
-    light: require('./images/light/readyToTrade/readyToTrade.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  idCard: {
-    light: require('./images/light/idCard/idCard.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  phoneNumber: {
-    light: require('./images/light/phoneNumber/phoneNumber.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  securityShield: {
-    light: require('./images/light/securityShield/securityShield.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  verifyEmail: {
-    light: require('./images/light/verifyEmail/verifyEmail.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  freeBtc: {
-    light: require('./images/light/freeBtc/freeBtc.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  verifyBankTransactions: {
-    light: require('./images/light/verifyBankTransactions/verifyBankTransactions.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  transactionLimit: {
-    light: require('./images/light/transactionLimit/transactionLimit.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  processing: {
-    light: require('./images/light/processing/processing.svg'),
+  advancedtrading: {
+    light: require('./images/light/advancedtrading-0.svg'),
     dark: null,
     fileFormat: 'svg',
   },
-  whyNotBoth: {
-    light: require('./images/light/whyNotBoth/whyNotBoth.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  notificationsAndUpdates: {
-    light: require('./images/light/notificationsAndUpdates/notificationsAndUpdates.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  yourContacts: {
-    light: require('./images/light/yourContacts/yourContacts.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  success: {
-    light: require('./images/light/success/success.svg'),
+  appTrackingTransparency: {
+    light: require('./images/light/appTrackingTransparency-0.svg'),
     dark: null,
     fileFormat: 'svg',
   },
-  walletUi: {
-    light: require('./images/light/walletUi/walletUi.png'),
-    dark: null,
-    fileFormat: 'png',
+  automaticPayments: {
+    light: require('./images/light/automaticPayments-0.svg'),
+    dark: require('./images/dark/automaticPayments-0.svg'),
+    fileFormat: 'svg',
   },
-  invite: {
-    light: require('./images/light/invite/invite.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  recurringReward: {
-    light: require('./images/light/recurringReward/recurringReward.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  sendCryptoFaster: {
-    light: require('./images/light/sendCryptoFaster/sendCryptoFaster.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  insufficientBalance: {
-    light: require('./images/light/insufficientBalance/insufficientBalance.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  coinbaseCardIssue: {
-    light: require('./images/light/coinbaseCardIssue/coinbaseCardIssue.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  coinbaseCardLock: {
-    light: require('./images/light/coinbaseCardLock/coinbaseCardLock.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  commerceInvoices: {
-    light: require('./images/light/commerceInvoices/commerceInvoices.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  coinbaseCardSpendCrypto: {
-    light: require('./images/light/coinbaseCardSpendCrypto/coinbaseCardSpendCrypto.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  earnIdVerification: {
-    light: require('./images/light/earnIdVerification/earnIdVerification.png'),
-    dark: null,
-    fileFormat: 'png',
+  bigBtc: {
+    light: require('./images/light/bigBtc-0.svg'),
+    dark: require('./images/dark/bigBtc-0.svg'),
+    fileFormat: 'svg',
   },
   bigWarning: {
-    light: require('./images/light/bigWarning/bigWarning.svg'),
+    light: require('./images/light/bigWarning-0.svg'),
+    dark: require('./images/dark/bigWarning-0.svg'),
+    fileFormat: 'svg',
+  },
+  buyFirstCrypto: {
+    light: require('./images/light/buyFirstCrypto-0.svg'),
+    dark: require('./images/dark/buyFirstCrypto-0.svg'),
+    fileFormat: 'svg',
+  },
+  cardAndPhone: {
+    light: require('./images/light/cardAndPhone-0.svg'),
+    dark: require('./images/dark/cardAndPhone-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinbaseCard: {
+    light: require('./images/light/coinbaseCard-0.svg'),
+    dark: require('./images/dark/coinbaseCard-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinbaseCardIssue: {
+    light: require('./images/light/coinbaseCardIssue-0.svg'),
+    dark: require('./images/dark/coinbaseCardIssue-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinbaseCardLock: {
+    light: require('./images/light/coinbaseCardLock-0.svg'),
+    dark: require('./images/dark/coinbaseCardLock-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinbaseCardSpendCrypto: {
+    light: require('./images/light/coinbaseCardSpendCrypto-0.svg'),
+    dark: require('./images/dark/coinbaseCardSpendCrypto-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinbaseIsDown: {
+    light: require('./images/light/coinbaseIsDown-0.svg'),
+    dark: require('./images/dark/coinbaseIsDown-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinbaseIsDownMobile: {
+    light: require('./images/light/coinbaseIsDownMobile-0.svg'),
+    dark: require('./images/dark/coinbaseIsDownMobile-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinbaseWalletToTrade: {
+    light: require('./images/light/coinbaseWalletToTrade-0.svg'),
+    dark: require('./images/dark/coinbaseWalletToTrade-0.svg'),
+    fileFormat: 'svg',
+  },
+  coinsInWallet: {
+    light: require('./images/light/coinsInWallet-0.svg'),
+    dark: require('./images/dark/coinsInWallet-0.svg'),
+    fileFormat: 'svg',
+  },
+  commerceAccounting: {
+    light: require('./images/light/commerceAccounting-0.svg'),
+    dark: require('./images/dark/commerceAccounting-0.svg'),
+    fileFormat: 'svg',
+  },
+  commerceInvoices: {
+    light: require('./images/light/commerceInvoices-0.svg'),
+    dark: require('./images/dark/commerceInvoices-0.svg'),
+    fileFormat: 'svg',
+  },
+  contactsListWarning: {
+    light: require('./images/light/contactsListWarning-0.svg'),
+    dark: require('./images/dark/contactsListWarning-0.svg'),
+    fileFormat: 'svg',
+  },
+  docError: {
+    light: require('./images/light/docError-0.svg'),
+    dark: require('./images/dark/docError-0.svg'),
+    fileFormat: 'svg',
+  },
+  documentCertified: {
+    light: require('./images/light/documentCertified-0.svg'),
+    dark: require('./images/dark/documentCertified-0.svg'),
+    fileFormat: 'svg',
+  },
+  documentSuccess: {
+    light: require('./images/light/documentSuccess-0.svg'),
+    dark: require('./images/dark/documentSuccess-0.svg'),
+    fileFormat: 'svg',
+  },
+  downloadCoinbaseWallet: {
+    light: require('./images/light/downloadCoinbaseWallet-0.svg'),
+    dark: require('./images/dark/downloadCoinbaseWallet-0.svg'),
+    fileFormat: 'svg',
+  },
+  earnIdVerification: {
+    light: require('./images/light/earnIdVerification-0.svg'),
+    dark: require('./images/dark/earnIdVerification-0.svg'),
+    fileFormat: 'svg',
+  },
+  earnInterest: {
+    light: require('./images/light/earnInterest-0.svg'),
+    dark: require('./images/dark/earnInterest-0.svg'),
+    fileFormat: 'svg',
+  },
+  earnMore: {
+    light: require('./images/light/earnMore-0.svg'),
+    dark: require('./images/dark/earnMore-0.svg'),
+    fileFormat: 'svg',
+  },
+  earnProgress: {
+    light: require('./images/light/earnProgress-0.svg'),
+    dark: require('./images/dark/earnProgress-0.svg'),
+    fileFormat: 'svg',
+  },
+  earnSuccess: {
+    light: require('./images/light/earnSuccess-0.svg'),
+    dark: require('./images/dark/earnSuccess-0.svg'),
+    fileFormat: 'svg',
+  },
+  emailNotification: {
+    light: require('./images/light/emailNotification-0.svg'),
+    dark: require('./images/dark/emailNotification-0.svg'),
+    fileFormat: 'svg',
+  },
+  error400: {
+    light: require('./images/light/error400-0.svg'),
+    dark: require('./images/dark/error400-0.svg'),
+    fileFormat: 'svg',
+  },
+  errorApp500: {
+    light: require('./images/light/errorApp500-0.svg'),
+    dark: require('./images/dark/errorApp500-0.svg'),
+    fileFormat: 'svg',
+  },
+  errorRefresh: {
+    light: require('./images/light/errorRefresh-0.svg'),
+    dark: require('./images/dark/errorRefresh-0.svg'),
+    fileFormat: 'svg',
+  },
+  errorWeb400: {
+    light: require('./images/light/errorWeb400-0.svg'),
+    dark: require('./images/dark/errorWeb400-0.svg'),
+    fileFormat: 'svg',
+  },
+  errorWeb404: {
+    light: require('./images/light/errorWeb404-0.svg'),
+    dark: require('./images/dark/errorWeb404-0.svg'),
+    fileFormat: 'svg',
+  },
+  errorWeb500: {
+    light: require('./images/light/errorWeb500-0.svg'),
+    dark: require('./images/dark/errorWeb500-0.svg'),
+    fileFormat: 'svg',
+  },
+  focusLimitOrders: {
+    light: require('./images/light/focusLimitOrders-0.svg'),
     dark: null,
+    fileFormat: 'svg',
+  },
+  freeBtc: {
+    light: require('./images/light/freeBtc-0.svg'),
+    dark: require('./images/dark/freeBtc-0.svg'),
+    fileFormat: 'svg',
+  },
+  holdingCrypto: {
+    light: require('./images/light/holdingCrypto-0.svg'),
+    dark: require('./images/dark/holdingCrypto-0.svg'),
+    fileFormat: 'svg',
+  },
+  idAngles: {
+    light: require('./images/light/idAngles-0.svg'),
+    dark: require('./images/dark/idAngles-0.svg'),
+    fileFormat: 'svg',
+  },
+  idBack: {
+    light: require('./images/light/idBack-0.svg'),
+    dark: require('./images/dark/idBack-0.svg'),
+    fileFormat: 'svg',
+  },
+  idCard: {
+    light: require('./images/light/idCard-0.svg'),
+    dark: require('./images/dark/idCard-0.svg'),
+    fileFormat: 'svg',
+  },
+  idFront: {
+    light: require('./images/light/idFront-0.svg'),
+    dark: require('./images/dark/idFront-0.svg'),
+    fileFormat: 'svg',
+  },
+  idIssue: {
+    light: require('./images/light/idIssue-0.svg'),
+    dark: require('./images/dark/idIssue-0.svg'),
+    fileFormat: 'svg',
+  },
+  idVerificationSecure: {
+    light: require('./images/light/idVerificationSecure-0.svg'),
+    dark: require('./images/dark/idVerificationSecure-0.svg'),
+    fileFormat: 'svg',
+  },
+  insufficientBalance: {
+    light: require('./images/light/insufficientBalance-0.svg'),
+    dark: require('./images/dark/insufficientBalance-0.svg'),
+    fileFormat: 'svg',
+  },
+  invite: {
+    light: require('./images/light/invite-0.svg'),
+    dark: require('./images/dark/invite-0.svg'),
+    fileFormat: 'svg',
+  },
+  japanVerifyId: {
+    light: require('./images/light/japanVerifyId-0.svg'),
+    dark: require('./images/dark/japanVerifyId-0.svg'),
+    fileFormat: 'svg',
+  },
+  limitOrders: {
+    light: require('./images/light/limitOrders-0.svg'),
+    dark: require('./images/dark/limitOrders-0.svg'),
+    fileFormat: 'svg',
+  },
+  myNameIsSatoshi: {
+    light: require('./images/light/myNameIsSatoshi-0.svg'),
+    dark: require('./images/dark/myNameIsSatoshi-0.svg'),
+    fileFormat: 'svg',
+  },
+  notificationsAlt: {
+    light: require('./images/light/notificationsAlt-0.svg'),
+    dark: require('./images/dark/notificationsAlt-0.svg'),
+    fileFormat: 'svg',
+  },
+  notificationsAndUpdates: {
+    light: require('./images/light/notificationsAndUpdates-0.svg'),
+    dark: require('./images/dark/notificationsAndUpdates-0.svg'),
+    fileFormat: 'svg',
+  },
+  onTheList: {
+    light: require('./images/light/onTheList-0.svg'),
+    dark: require('./images/dark/onTheList-0.svg'),
+    fileFormat: 'svg',
+  },
+  openEmail: {
+    light: require('./images/light/openEmail-0.svg'),
+    dark: require('./images/dark/openEmail-0.svg'),
+    fileFormat: 'svg',
+  },
+  payUpFront: {
+    light: require('./images/light/payUpFront-0.svg'),
+    dark: require('./images/dark/payUpFront-0.svg'),
+    fileFormat: 'svg',
+  },
+  pending: {
+    light: require('./images/light/pending-0.svg'),
+    dark: require('./images/dark/pending-0.svg'),
+    fileFormat: 'svg',
+  },
+  phoneNumber: {
+    light: require('./images/light/phoneNumber-0.svg'),
+    dark: require('./images/dark/phoneNumber-0.svg'),
     fileFormat: 'svg',
   },
   polling: {
-    light: require('./images/light/polling/polling.svg'),
-    dark: null,
+    light: require('./images/light/polling-0.svg'),
+    dark: require('./images/dark/polling-0.svg'),
+    fileFormat: 'svg',
+  },
+  processing: {
+    light: require('./images/light/processing-0.svg'),
+    dark: require('./images/dark/processing-0.svg'),
+    fileFormat: 'svg',
+  },
+  readyToTrade: {
+    light: require('./images/light/readyToTrade-0.svg'),
+    dark: require('./images/dark/readyToTrade-0.svg'),
+    fileFormat: 'svg',
+  },
+  receivedCard: {
+    light: null,
+    dark: require('./images/dark/receivedCard-0.svg'),
+    fileFormat: 'svg',
+  },
+  recurringReward: {
+    light: require('./images/light/recurringReward-0.svg'),
+    dark: require('./images/dark/recurringReward-0.svg'),
+    fileFormat: 'svg',
+  },
+  remittances: {
+    light: require('./images/light/remittances-0.svg'),
+    dark: require('./images/dark/remittances-0.svg'),
+    fileFormat: 'svg',
+  },
+  rocket: {
+    light: require('./images/light/rocket-0.svg'),
+    dark: require('./images/dark/rocket-0.svg'),
+    fileFormat: 'svg',
+  },
+  routingAccount: {
+    light: require('./images/light/routingAccount-0.svg'),
+    dark: require('./images/dark/routingAccount-0.svg'),
+    fileFormat: 'svg',
+  },
+  securityShield: {
+    light: require('./images/light/securityShield-0.svg'),
+    dark: require('./images/dark/securityShield-0.svg'),
     fileFormat: 'svg',
   },
   selectCorrectCrypto: {
-    light: require('./images/light/selectCorrectCrypto/selectCorrectCrypto.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/selectCorrectCrypto-0.svg'),
+    dark: require('./images/dark/selectCorrectCrypto-0.svg'),
+    fileFormat: 'svg',
   },
-  coinbaseIsDown: {
-    light: require('./images/light/coinbaseIsDown/coinbaseIsDown.png'),
-    dark: null,
-    fileFormat: 'png',
+  sendCryptoFaster: {
+    light: require('./images/light/sendCryptoFaster-0.svg'),
+    dark: require('./images/dark/sendCryptoFaster-0.svg'),
+    fileFormat: 'svg',
   },
-  verifyCardTransactions: {
-    light: require('./images/light/verifyCardTransactions/verifyCardTransactions.png'),
-    dark: null,
-    fileFormat: 'png',
+  sendToUsername: {
+    light: require('./images/light/sendToUsername-0.svg'),
+    dark: require('./images/dark/sendToUsername-0.svg'),
+    fileFormat: 'svg',
   },
-  accountUnderReview: {
-    light: require('./images/light/accountUnderReview/accountUnderReview.png'),
+  success: {
+    light: require('./images/light/success-0.svg'),
+    dark: require('./images/dark/success-0.svg'),
+    fileFormat: 'svg',
+  },
+  switchAdvancedToSimpleTrading: {
+    light: require('./images/light/switchAdvancedToSimpleTrading-0.svg'),
     dark: null,
-    fileFormat: 'png',
+    fileFormat: 'svg',
+  },
+  tradeImmediately: {
+    light: require('./images/light/tradeImmediately-0.svg'),
+    dark: require('./images/dark/tradeImmediately-0.svg'),
+    fileFormat: 'svg',
+  },
+  transactionLimit: {
+    light: require('./images/light/transactionLimit-0.svg'),
+    dark: require('./images/dark/transactionLimit-0.svg'),
+    fileFormat: 'svg',
   },
   twoIdVerify: {
-    light: require('./images/light/twoIdVerify/twoIdVerify.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  buyFirstCrypto: {
-    light: require('./images/light/buyFirstCrypto/buyFirstCrypto.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  routingAccount: {
-    light: require('./images/light/routingAccount/routingAccount.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  earnMore: {
-    light: require('./images/light/earnMore/earnMore.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  holdingCrypto: {
-    light: require('./images/light/holdingCrypto/holdingCrypto.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  remittances: {
-    light: require('./images/light/remittances/remittances.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  documentSuccess: {
-    light: require('./images/light/documentSuccess/documentSuccess.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  docError: {
-    light: require('./images/light/docError/docError.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  errorWeb500: {
-    light: require('./images/light/errorWeb500/errorWeb500.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  errorWeb404: {
-    light: require('./images/light/errorWeb404/errorWeb404.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  errorWeb400: {
-    light: require('./images/light/errorWeb400/errorWeb400.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  advancedTradingUi: {
-    light: require('./images/light/advancedTradingUi/advancedTradingUi.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  openEmail: {
-    light: require('./images/light/openEmail/openEmail.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  commerceAccounting: {
-    light: require('./images/light/commerceAccounting/commerceAccounting.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  pending: {
-    light: require('./images/light/pending/pending.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  coinbaseIsDownMobile: {
-    light: require('./images/light/coinbaseIsDownMobile/coinbaseIsDownMobile.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  errorRefresh: {
-    light: require('./images/light/errorRefresh/errorRefresh.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  error400: {
-    light: require('./images/light/error400/error400.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  errorApp500: {
-    light: require('./images/light/errorApp500/errorApp500.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  currency: {
-    light: require('./images/light/currency/currency.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  creditCardExcitement: {
-    light: require('./images/light/creditCardExcitement/creditCardExcitement.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  diamond: {
-    light: require('./images/light/diamond/diamond.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  advancedTrading: {
-    light: require('./images/light/advancedTrading/advancedTrading.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  trade: {
-    light: require('./images/light/trade/trade.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  giftBoxRewards: {
-    light: require('./images/light/giftBoxRewards/giftBoxRewards.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  orders: {
-    light: require('./images/light/orders/orders.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  giftbox: {
-    light: require('./images/light/giftbox/giftbox.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  worldwide: {
-    light: require('./images/light/worldwide/worldwide.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  clock: {
-    light: require('./images/light/clock/clock.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  predictionMarkets: {
-    light: require('./images/light/predictionMarkets/predictionMarkets.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  waiting: {
-    light: require('./images/light/waiting/waiting.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  madeInUSA: {
-    light: require('./images/light/madeInUSA/madeInUSA.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  bitcoinPizza: {
-    light: require('./images/light/bitcoinPizza/bitcoinPizza.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  bitcoinWhitePaper: {
-    light: require('./images/light/bitcoinWhitePaper/bitcoinWhitePaper.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  pizza: {
-    light: require('./images/light/pizza/pizza.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  contactInfo: {
-    light: require('./images/light/contactInfo/contactInfo.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  addressBook: {
-    light: require('./images/light/addressBook/addressBook.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  startToday: {
-    light: require('./images/light/startToday/startToday.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  transistor: {
-    light: require('./images/light/transistor/transistor.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  noAnnualFee: {
-    light: require('./images/light/noAnnualFee/noAnnualFee.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  applyForHigherLimits: {
-    light: require('./images/light/applyForHigherLimits/applyForHigherLimits.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  noWiFi: {
-    light: require('./images/light/noWiFi/noWiFi.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  reviewAndAdd: {
-    light: require('./images/light/reviewAndAdd/reviewAndAdd.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  fast: {
-    light: require('./images/light/fast/fast.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  tryAgainLater: {
-    light: require('./images/light/tryAgainLater/tryAgainLater.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  typeScript: {
-    light: require('./images/light/typeScript/typeScript.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  multiPlatform: {
-    light: require('./images/light/multiPlatform/multiPlatform.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  takeQuiz: {
-    light: require('./images/light/takeQuiz/takeQuiz.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  chat: {
-    light: require('./images/light/chat/chat.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  email: {
-    light: require('./images/light/email/email.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  recurringPurchases: {
-    light: require('./images/light/recurringPurchases/recurringPurchases.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  delegate: {
-    light: require('./images/light/delegate/delegate.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  waitingForConsensus: {
-    light: require('./images/light/waitingForConsensus/waitingForConsensus.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  enableVoting: {
-    light: require('./images/light/enableVoting/enableVoting.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  formDownload: {
-    light: require('./images/light/formDownload/formDownload.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  settings: {
-    light: require('./images/light/settings/settings.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  priceTracking: {
-    light: require('./images/light/priceTracking/priceTracking.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  authenticatorProgress: {
-    light: require('./images/light/authenticatorProgress/authenticatorProgress.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  stateId: {
-    light: require('./images/light/stateId/stateId.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  safe: {
-    light: require('./images/light/safe/safe.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  smsAuthenticate: {
-    light: require('./images/light/smsAuthenticate/smsAuthenticate.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  googleAuthenticator: {
-    light: require('./images/light/googleAuthenticator/googleAuthenticator.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  authenticatorAlt: {
-    light: require('./images/light/authenticatorAlt/authenticatorAlt.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  authenticator: {
-    light: require('./images/light/authenticator/authenticator.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  idVerification: {
-    light: require('./images/light/idVerification/idVerification.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  key: {
-    light: require('./images/light/key/key.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  ubiKey: {
-    light: require('./images/light/ubiKey/ubiKey.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  authenticationApp: {
-    light: require('./images/light/authenticationApp/authenticationApp.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  shield: {
-    light: require('./images/light/shield/shield.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  lock: {
-    light: require('./images/light/lock/lock.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  security: {
-    light: require('./images/light/security/security.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  institutions: {
-    light: require('./images/light/institutions/institutions.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  moneySwift: {
-    light: require('./images/light/moneySwift/moneySwift.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  transferSend: {
-    light: require('./images/light/transferSend/transferSend.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  higherLimits: {
-    light: require('./images/light/higherLimits/higherLimits.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  increaseLimits: {
-    light: require('./images/light/increaseLimits/increaseLimits.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  fiat: {
-    light: require('./images/light/fiat/fiat.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  walletExchange: {
-    light: require('./images/light/walletExchange/walletExchange.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  addWallet: {
-    light: require('./images/light/addWallet/addWallet.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  walletDeposit: {
-    light: require('./images/light/walletDeposit/walletDeposit.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  wallet: {
-    light: require('./images/light/wallet/wallet.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  cryptoCard: {
-    light: require('./images/light/cryptoCard/cryptoCard.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  tokenBaskets: {
-    light: require('./images/light/tokenBaskets/tokenBaskets.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  addToWatchlist: {
-    light: require('./images/light/addToWatchlist/addToWatchlist.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  bundle: {
-    light: require('./images/light/bundle/bundle.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  trading: {
-    light: require('./images/light/trading/trading.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  multipleAssets: {
-    light: require('./images/light/multipleAssets/multipleAssets.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  moreThanBitcoin: {
-    light: require('./images/light/moreThanBitcoin/moreThanBitcoin.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  lowFees: {
-    light: require('./images/light/lowFees/lowFees.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  listingFees: {
-    light: require('./images/light/listingFees/listingFees.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  earnCoins: {
-    light: require('./images/light/earnCoins/earnCoins.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  partialCoins: {
-    light: require('./images/light/partialCoins/partialCoins.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  paypal: {
-    light: require('./images/light/paypal/paypal.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  moneyEarn: {
-    light: require('./images/light/moneyEarn/moneyEarn.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  creditCard: {
-    light: require('./images/light/creditCard/creditCard.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  addCard: {
-    light: require('./images/light/addCard/addCard.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  cardDeclined: {
-    light: require('./images/light/cardDeclined/cardDeclined.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  cardBlocked: {
-    light: require('./images/light/cardBlocked/cardBlocked.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  addPayment: {
-    light: require('./images/light/addPayment/addPayment.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  laptopCharts: {
-    light: require('./images/light/laptopCharts/laptopCharts.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  mobileCharts: {
-    light: require('./images/light/mobileCharts/mobileCharts.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  addPhone: {
-    light: require('./images/light/addPhone/addPhone.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  browser: {
-    light: require('./images/light/browser/browser.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  internet: {
-    light: require('./images/light/internet/internet.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  laptopVideo: {
-    light: require('./images/light/laptopVideo/laptopVideo.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  mobileNotifcation: {
-    light: require('./images/light/mobileNotifcation/mobileNotifcation.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  browserTransaction: {
-    light: require('./images/light/browserTransaction/browserTransaction.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  laptop: {
-    light: require('./images/light/laptop/laptop.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  successPhone: {
-    light: require('./images/light/successPhone/successPhone.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  phone: {
-    light: require('./images/light/phone/phone.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/twoIdVerify-0.svg'),
+    dark: require('./images/dark/twoIdVerify-0.svg'),
+    fileFormat: 'svg',
+  },
+  verifyBankTransactions: {
+    light: require('./images/light/verifyBankTransactions-0.svg'),
+    dark: require('./images/dark/verifyBankTransactions-0.svg'),
+    fileFormat: 'svg',
+  },
+  verifyCardTransactions: {
+    light: require('./images/light/verifyCardTransactions-0.svg'),
+    dark: require('./images/dark/verifyCardTransactions-0.svg'),
+    fileFormat: 'svg',
+  },
+  verifyEmail: {
+    light: require('./images/light/verifyEmail-0.svg'),
+    dark: require('./images/dark/verifyEmail-0.svg'),
+    fileFormat: 'svg',
+  },
+  verifyIdDetails: {
+    light: require('./images/light/verifyIdDetails-0.svg'),
+    dark: require('./images/dark/verifyIdDetails-0.svg'),
+    fileFormat: 'svg',
+  },
+  verifyInfo: {
+    light: require('./images/light/verifyInfo-0.svg'),
+    dark: require('./images/dark/verifyInfo-0.svg'),
+    fileFormat: 'svg',
+  },
+  walletNotifications: {
+    light: require('./images/light/walletNotifications-0.svg'),
+    dark: require('./images/dark/walletNotifications-0.svg'),
+    fileFormat: 'svg',
+  },
+  walletUi: {
+    light: require('./images/light/walletUi-0.svg'),
+    dark: require('./images/dark/walletUi-0.svg'),
+    fileFormat: 'svg',
+  },
+  whyNotBoth: {
+    light: require('./images/light/whyNotBoth-0.svg'),
+    dark: require('./images/dark/whyNotBoth-0.svg'),
+    fileFormat: 'svg',
+  },
+  yourContacts: {
+    light: require('./images/light/yourContacts-0.svg'),
+    dark: require('./images/dark/yourContacts-0.svg'),
+    fileFormat: 'svg',
   },
   '2fa': {
-    light: require('./images/light/2fa/2fa.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  calendar: {
-    light: require('./images/light/calendar/calendar.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  envelope: {
-    light: require('./images/light/envelope/envelope.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  pieChart: {
-    light: require('./images/light/pieChart/pieChart.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  warning: {
-    light: require('./images/light/warning/warning.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  strongInfo: {
-    light: require('./images/light/strongInfo/strongInfo.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  gem: {
-    light: require('./images/light/gem/gem.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  chart: {
-    light: require('./images/light/chart/chart.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  strongWarning: {
-    light: require('./images/light/strongWarning/strongWarning.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  barChart: {
-    light: require('./images/light/barChart/barChart.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  learn: {
-    light: require('./images/light/learn/learn.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  explore: {
-    light: require('./images/light/explore/explore.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  target: {
-    light: require('./images/light/target/target.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  easyToUse: {
-    light: require('./images/light/easyToUse/easyToUse.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  trusted: {
-    light: require('./images/light/trusted/trusted.png'),
-    dark: null,
-    fileFormat: 'png',
-  },
-  checkmark: {
-    light: require('./images/light/checkmark/checkmark.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/2fa-0.svg'),
+    dark: require('./images/dark/2fa-0.svg'),
+    fileFormat: 'svg',
   },
   add: {
-    light: require('./images/light/add/add.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/add-0.svg'),
+    dark: require('./images/dark/add-0.svg'),
+    fileFormat: 'svg',
   },
-  done: {
-    light: require('./images/light/done/done.png'),
-    dark: null,
-    fileFormat: 'png',
+  addCard: {
+    light: require('./images/light/addCard-0.svg'),
+    dark: require('./images/dark/addCard-0.svg'),
+    fileFormat: 'svg',
   },
-  settled: {
-    light: require('./images/light/settled/settled.png'),
-    dark: null,
-    fileFormat: 'png',
+  addPayment: {
+    light: require('./images/light/addPayment-0.svg'),
+    dark: require('./images/dark/addPayment-0.svg'),
+    fileFormat: 'svg',
   },
-  error: {
-    light: require('./images/light/error/error.png'),
-    dark: null,
-    fileFormat: 'png',
+  addPhone: {
+    light: require('./images/light/addPhone-0.svg'),
+    dark: require('./images/dark/addPhone-0.svg'),
+    fileFormat: 'svg',
   },
-  notifications: {
-    light: require('./images/light/notifications/notifications.png'),
-    dark: null,
-    fileFormat: 'png',
+  addToWatchlist: {
+    light: require('./images/light/addToWatchlist-0.svg'),
+    dark: require('./images/dark/addToWatchlist-0.svg'),
+    fileFormat: 'svg',
+  },
+  addWallet: {
+    light: require('./images/light/addWallet-0.svg'),
+    dark: require('./images/dark/addWallet-0.svg'),
+    fileFormat: 'svg',
+  },
+  addressBook: {
+    light: require('./images/light/addressBook-0.svg'),
+    dark: require('./images/dark/addressBook-0.svg'),
+    fileFormat: 'svg',
+  },
+  advancedTradingDesktop: {
+    light: require('./images/light/advancedTradingDesktop-0.svg'),
+    dark: require('./images/dark/advancedTradingDesktop-0.svg'),
+    fileFormat: 'svg',
   },
   alerts: {
-    light: require('./images/light/alerts/alerts.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/alerts-0.svg'),
+    dark: require('./images/dark/alerts-0.svg'),
+    fileFormat: 'svg',
   },
-  newUserChecklistCompleteAccount: {
-    light: require('./images/light/newUserChecklistCompleteAccount/newUserChecklistCompleteAccount.png'),
-    dark: null,
-    fileFormat: 'png',
+  applyForHigherLimits: {
+    light: require('./images/light/applyForHigherLimits-0.svg'),
+    dark: require('./images/dark/applyForHigherLimits-0.svg'),
+    fileFormat: 'svg',
   },
-  newUserChecklistBuyCrypto: {
-    light: require('./images/light/newUserChecklistBuyCrypto/newUserChecklistBuyCrypto.png'),
-    dark: null,
-    fileFormat: 'png',
+  authenticationApp: {
+    light: require('./images/light/authenticationApp-0.svg'),
+    dark: require('./images/dark/authenticationApp-0.svg'),
+    fileFormat: 'svg',
   },
-  newUserChecklistVerifyId: {
-    light: require('./images/light/newUserChecklistVerifyId/newUserChecklistVerifyId.png'),
-    dark: null,
-    fileFormat: 'png',
+  authenticator: {
+    light: require('./images/light/authenticator-0.svg'),
+    dark: require('./images/dark/authenticator-0.svg'),
+    fileFormat: 'svg',
   },
-  commerceInvoice: {
-    light: require('./images/light/commerceInvoice/commerceInvoice.png'),
-    dark: null,
-    fileFormat: 'png',
+  authenticatorAlt: {
+    light: require('./images/light/authenticatorAlt-0.svg'),
+    dark: require('./images/dark/authenticatorAlt-0.svg'),
+    fileFormat: 'svg',
   },
-  commerceNoPayments: {
-    light: require('./images/light/commerceNoPayments/commerceNoPayments.png'),
-    dark: null,
-    fileFormat: 'png',
+  authenticatorProgress: {
+    light: require('./images/light/authenticatorProgress-0.svg'),
+    dark: require('./images/dark/authenticatorProgress-0.svg'),
+    fileFormat: 'svg',
+  },
+  barChart: {
+    light: require('./images/light/barChart-0.svg'),
+    dark: require('./images/dark/barChart-0.svg'),
+    fileFormat: 'svg',
+  },
+  bitcoinPizza: {
+    light: require('./images/light/bitcoinPizza-0.svg'),
+    dark: require('./images/dark/bitcoinPizza-0.svg'),
+    fileFormat: 'svg',
+  },
+  bitcoinWhitePaper: {
+    light: require('./images/light/bitcoinWhitePaper-0.svg'),
+    dark: require('./images/dark/bitcoinWhitePaper-0.svg'),
+    fileFormat: 'svg',
+  },
+  browser: {
+    light: require('./images/light/browser-0.svg'),
+    dark: require('./images/dark/browser-0.svg'),
+    fileFormat: 'svg',
+  },
+  browserTransaction: {
+    light: require('./images/light/browserTransaction-0.svg'),
+    dark: require('./images/dark/browserTransaction-0.svg'),
+    fileFormat: 'svg',
+  },
+  bundle: {
+    light: require('./images/light/bundle-0.svg'),
+    dark: require('./images/dark/bundle-0.svg'),
+    fileFormat: 'svg',
+  },
+  bundleGray: {
+    light: require('./images/light/bundleGray-0.svg'),
+    dark: require('./images/dark/bundleGray-0.svg'),
+    fileFormat: 'svg',
+  },
+  calendar: {
+    light: require('./images/light/calendar-0.svg'),
+    dark: require('./images/dark/calendar-0.svg'),
+    fileFormat: 'svg',
+  },
+  cardBlocked: {
+    light: require('./images/light/cardBlocked-0.svg'),
+    dark: require('./images/dark/cardBlocked-0.svg'),
+    fileFormat: 'svg',
+  },
+  cardDeclined: {
+    light: require('./images/light/cardDeclined-0.svg'),
+    dark: require('./images/dark/cardDeclined-0.svg'),
+    fileFormat: 'svg',
+  },
+  chart: {
+    light: require('./images/light/chart-0.svg'),
+    dark: require('./images/dark/chart-0.svg'),
+    fileFormat: 'svg',
+  },
+  chat: {
+    light: require('./images/light/chat-0.svg'),
+    dark: require('./images/dark/chat-0.svg'),
+    fileFormat: 'svg',
+  },
+  checkmark: {
+    light: require('./images/light/checkmark-0.svg'),
+    dark: require('./images/dark/checkmark-0.svg'),
+    fileFormat: 'svg',
+  },
+  clock: {
+    light: require('./images/light/clock-0.svg'),
+    dark: require('./images/dark/clock-0.svg'),
+    fileFormat: 'svg',
   },
   commerceCheckout: {
-    light: require('./images/light/commerceCheckout/commerceCheckout.png'),
-    dark: null,
-    fileFormat: 'png',
+    light: require('./images/light/commerceCheckout-0.svg'),
+    dark: require('./images/dark/commerceCheckout-0.svg'),
+    fileFormat: 'svg',
   },
-  moneyRewards: {
-    light: require('./images/light/moneyRewards/moneyRewards.png'),
-    dark: null,
-    fileFormat: 'png',
+  commerceInvoice: {
+    light: require('./images/light/commerceInvoice-0.svg'),
+    dark: require('./images/dark/commerceInvoice-0.svg'),
+    fileFormat: 'svg',
   },
-  interestForYou: {
-    light: require('./images/light/interestForYou/interestForYou.png'),
-    dark: null,
-    fileFormat: 'png',
+  commerceNoPaymentsGray: {
+    light: require('./images/light/commerceNoPaymentsGray-0.svg'),
+    dark: require('./images/dark/commerceNoPaymentsGray-0.svg'),
+    fileFormat: 'svg',
   },
-  giftBoxCrypto: {
-    light: require('./images/light/giftBoxCrypto/giftBoxCrypto.png'),
-    dark: null,
-    fileFormat: 'png',
+  contactInfo: {
+    light: require('./images/light/contactInfo-0.svg'),
+    dark: require('./images/dark/contactInfo-0.svg'),
+    fileFormat: 'svg',
   },
-  starToken: {
-    light: require('./images/light/starToken/starToken.png'),
+  creditCard: {
+    light: require('./images/light/creditCard-0.svg'),
+    dark: require('./images/dark/creditCard-0.svg'),
+    fileFormat: 'svg',
+  },
+  cryptoCard: {
+    light: require('./images/light/cryptoCard-0.svg'),
+    dark: require('./images/dark/cryptoCard-0.svg'),
+    fileFormat: 'svg',
+  },
+  delegate: {
+    light: require('./images/light/delegate-0.svg'),
+    dark: require('./images/dark/delegate-0.svg'),
+    fileFormat: 'svg',
+  },
+  done: {
+    light: require('./images/light/done-0.svg'),
+    dark: require('./images/dark/done-0.svg'),
+    fileFormat: 'svg',
+  },
+  earnCoins: {
+    light: require('./images/light/earnCoins-0.svg'),
+    dark: require('./images/dark/earnCoins-0.svg'),
+    fileFormat: 'svg',
+  },
+  easyToUse: {
+    light: require('./images/light/easyToUse-0.svg'),
+    dark: require('./images/dark/easyToUse-0.svg'),
+    fileFormat: 'svg',
+  },
+  email: {
+    light: require('./images/light/email-0.svg'),
+    dark: require('./images/dark/email-0.svg'),
+    fileFormat: 'svg',
+  },
+  enableVoting: {
+    light: require('./images/light/enableVoting-0.svg'),
+    dark: require('./images/dark/enableVoting-0.svg'),
+    fileFormat: 'svg',
+  },
+  envelope: {
+    light: require('./images/light/envelope-0.svg'),
+    dark: require('./images/dark/envelope-0.svg'),
+    fileFormat: 'svg',
+  },
+  error: {
+    light: require('./images/light/error-0.svg'),
+    dark: require('./images/dark/error-0.svg'),
+    fileFormat: 'svg',
+  },
+  explore: {
+    light: require('./images/light/explore-0.svg'),
+    dark: require('./images/dark/explore-0.svg'),
+    fileFormat: 'svg',
+  },
+  exploreGray: {
+    light: require('./images/light/exploreGray-0.svg'),
+    dark: require('./images/dark/exploreGray-0.svg'),
+    fileFormat: 'svg',
+  },
+  fast: {
+    light: require('./images/light/fast-0.svg'),
+    dark: require('./images/dark/fast-0.svg'),
+    fileFormat: 'svg',
+  },
+  fiat: {
+    light: require('./images/light/fiat-0.svg'),
+    dark: require('./images/dark/fiat-0.svg'),
+    fileFormat: 'svg',
+  },
+  formDownload: {
+    light: require('./images/light/formDownload-0.svg'),
+    dark: require('./images/dark/formDownload-0.svg'),
+    fileFormat: 'svg',
+  },
+  gem: {
+    light: require('./images/light/gem-0.svg'),
+    dark: require('./images/dark/gem-0.svg'),
+    fileFormat: 'svg',
+  },
+  giftbox: {
+    light: require('./images/light/giftbox-0.svg'),
+    dark: require('./images/dark/giftbox-0.svg'),
+    fileFormat: 'svg',
+  },
+  googleAuthenticator: {
+    light: require('./images/light/googleAuthenticator-0.svg'),
+    dark: require('./images/dark/googleAuthenticator-0.svg'),
+    fileFormat: 'svg',
+  },
+  higherLimits: {
+    light: require('./images/light/higherLimits-0.svg'),
+    dark: require('./images/dark/higherLimits-0.svg'),
+    fileFormat: 'svg',
+  },
+  idVerification: {
+    light: require('./images/light/idVerification-0.svg'),
+    dark: require('./images/dark/idVerification-0.svg'),
+    fileFormat: 'svg',
+  },
+  increaseLimits: {
+    light: require('./images/light/increaseLimits-0.svg'),
+    dark: require('./images/dark/increaseLimits-0.svg'),
+    fileFormat: 'svg',
+  },
+  institutions: {
+    light: require('./images/light/institutions-0.svg'),
+    dark: require('./images/dark/institutions-0.svg'),
+    fileFormat: 'svg',
+  },
+  internet: {
+    light: require('./images/light/internet-0.svg'),
+    dark: require('./images/dark/internet-0.svg'),
+    fileFormat: 'svg',
+  },
+  key: {
+    light: require('./images/light/key-0.svg'),
+    dark: require('./images/dark/key-0.svg'),
+    fileFormat: 'svg',
+  },
+  laptop: {
+    light: require('./images/light/laptop-0.svg'),
+    dark: require('./images/dark/laptop-0.svg'),
+    fileFormat: 'svg',
+  },
+  laptopCharts: {
+    light: require('./images/light/laptopCharts-0.svg'),
+    dark: require('./images/dark/laptopCharts-0.svg'),
+    fileFormat: 'svg',
+  },
+  laptopVideo: {
+    light: require('./images/light/laptopVideo-0.svg'),
+    dark: require('./images/dark/laptopVideo-0.svg'),
+    fileFormat: 'svg',
+  },
+  learn: {
+    light: require('./images/light/learn-0.svg'),
+    dark: require('./images/dark/learn-0.svg'),
+    fileFormat: 'svg',
+  },
+  listingFees: {
+    light: require('./images/light/listingFees-0.svg'),
+    dark: require('./images/dark/listingFees-0.svg'),
+    fileFormat: 'svg',
+  },
+  lock: {
+    light: require('./images/light/lock-0.svg'),
+    dark: require('./images/dark/lock-0.svg'),
+    fileFormat: 'svg',
+  },
+  lowFees: {
+    light: require('./images/light/lowFees-0.svg'),
+    dark: require('./images/dark/lowFees-0.svg'),
+    fileFormat: 'svg',
+  },
+  madeInUsa: {
+    light: require('./images/light/madeInUsa-0.svg'),
+    dark: require('./images/dark/madeInUsa-0.svg'),
+    fileFormat: 'svg',
+  },
+  mobileCharts: {
+    light: require('./images/light/mobileCharts-0.svg'),
+    dark: require('./images/dark/mobileCharts-0.svg'),
+    fileFormat: 'svg',
+  },
+  mobileNotifcation: {
+    light: require('./images/light/mobileNotifcation-0.svg'),
+    dark: require('./images/dark/mobileNotifcation-0.svg'),
+    fileFormat: 'svg',
+  },
+  moneyEarn: {
+    light: require('./images/light/moneyEarn-0.svg'),
+    dark: require('./images/dark/moneyEarn-0.svg'),
+    fileFormat: 'svg',
+  },
+  moneySwift: {
+    light: require('./images/light/moneySwift-0.svg'),
+    dark: require('./images/dark/moneySwift-0.svg'),
+    fileFormat: 'svg',
+  },
+  moreThanBitcoin: {
+    light: require('./images/light/moreThanBitcoin-0.svg'),
+    dark: require('./images/dark/moreThanBitcoin-0.svg'),
+    fileFormat: 'svg',
+  },
+  multiPlatform: {
+    light: require('./images/light/multiPlatform-0.svg'),
+    dark: require('./images/dark/multiPlatform-0.svg'),
+    fileFormat: 'svg',
+  },
+  multipleAssets: {
+    light: require('./images/light/multipleAssets-0.svg'),
+    dark: require('./images/dark/multipleAssets-0.svg'),
+    fileFormat: 'svg',
+  },
+  newUserChecklistBuyCrypto: {
+    light: require('./images/light/newUserChecklistBuyCrypto-0.svg'),
+    dark: require('./images/dark/newUserChecklistBuyCrypto-0.svg'),
+    fileFormat: 'svg',
+  },
+  newUserChecklistCompleteAccount: {
+    light: require('./images/light/newUserChecklistCompleteAccount-0.svg'),
+    dark: require('./images/dark/newUserChecklistCompleteAccount-0.svg'),
+    fileFormat: 'svg',
+  },
+  newUserChecklistVerifyId: {
+    light: require('./images/light/newUserChecklistVerifyId-0.svg'),
+    dark: require('./images/dark/newUserChecklistVerifyId-0.svg'),
+    fileFormat: 'svg',
+  },
+  noAnnualFee: {
+    light: require('./images/light/noAnnualFee-0.svg'),
+    dark: require('./images/dark/noAnnualFee-0.svg'),
+    fileFormat: 'svg',
+  },
+  noNotificationsGray: {
+    light: require('./images/light/noNotificationsGray-0.svg'),
+    dark: require('./images/dark/noNotificationsGray-0.svg'),
+    fileFormat: 'svg',
+  },
+  noWiFi: {
+    light: require('./images/light/noWiFi-0.svg'),
+    dark: require('./images/dark/noWiFi-0.svg'),
+    fileFormat: 'svg',
+  },
+  notifications: {
+    light: require('./images/light/notifications-0.svg'),
+    dark: require('./images/dark/notifications-0.svg'),
+    fileFormat: 'svg',
+  },
+  orders: {
+    light: require('./images/light/orders-0.svg'),
+    dark: require('./images/dark/orders-0.svg'),
+    fileFormat: 'svg',
+  },
+  partialCoins: {
+    light: require('./images/light/partialCoins-0.svg'),
+    dark: require('./images/dark/partialCoins-0.svg'),
+    fileFormat: 'svg',
+  },
+  paypal: {
+    light: require('./images/light/paypal-0.svg'),
+    dark: require('./images/dark/paypal-0.svg'),
+    fileFormat: 'svg',
+  },
+  pendingApprovalGray: {
+    light: require('./images/light/pendingApprovalGray-0.svg'),
+    dark: require('./images/dark/pendingApprovalGray-0.svg'),
+    fileFormat: 'svg',
+  },
+  phone: {
+    light: require('./images/light/phone-0.svg'),
+    dark: require('./images/dark/phone-0.svg'),
+    fileFormat: 'svg',
+  },
+  pieChart: {
+    light: require('./images/light/pieChart-0.svg'),
+    dark: require('./images/dark/pieChart-0.svg'),
+    fileFormat: 'svg',
+  },
+  pizza: {
+    light: require('./images/light/pizza-0.svg'),
+    dark: require('./images/dark/pizza-0.svg'),
+    fileFormat: 'svg',
+  },
+  predictionMarkets: {
+    light: require('./images/light/predictionMarkets-0.svg'),
+    dark: require('./images/dark/predictionMarkets-0.svg'),
+    fileFormat: 'svg',
+  },
+  priceTracking: {
+    light: require('./images/light/priceTracking-0.svg'),
+    dark: require('./images/dark/priceTracking-0.svg'),
+    fileFormat: 'svg',
+  },
+  recurringPurchases: {
+    light: require('./images/light/recurringPurchases-0.svg'),
+    dark: require('./images/dark/recurringPurchases-0.svg'),
+    fileFormat: 'svg',
+  },
+  reviewAndAdd: {
+    light: require('./images/light/reviewAndAdd-0.svg'),
+    dark: require('./images/dark/reviewAndAdd-0.svg'),
+    fileFormat: 'svg',
+  },
+  safe: {
+    light: require('./images/light/safe-0.svg'),
+    dark: require('./images/dark/safe-0.svg'),
+    fileFormat: 'svg',
+  },
+  security: {
+    light: require('./images/light/security-0.svg'),
+    dark: require('./images/dark/security-0.svg'),
+    fileFormat: 'svg',
+  },
+  settings: {
+    light: require('./images/light/settings-0.svg'),
+    dark: require('./images/dark/settings-0.svg'),
+    fileFormat: 'svg',
+  },
+  settled: {
+    light: require('./images/light/settled-0.svg'),
+    dark: require('./images/dark/settled-0.svg'),
+    fileFormat: 'svg',
+  },
+  shield: {
+    light: require('./images/light/shield-0.svg'),
+    dark: require('./images/dark/shield-0.svg'),
+    fileFormat: 'svg',
+  },
+  smsAuthenticate: {
+    light: require('./images/light/smsAuthenticate-0.svg'),
+    dark: require('./images/dark/smsAuthenticate-0.svg'),
+    fileFormat: 'svg',
+  },
+  startToday: {
+    light: require('./images/light/startToday-0.svg'),
+    dark: require('./images/dark/startToday-0.svg'),
+    fileFormat: 'svg',
+  },
+  stateID: {
+    light: null,
+    dark: require('./images/dark/stateID-0.svg'),
+    fileFormat: 'svg',
+  },
+  stateId: {
+    light: require('./images/light/stateId-0.svg'),
     dark: null,
-    fileFormat: 'png',
+    fileFormat: 'svg',
+  },
+  strongInfo: {
+    light: require('./images/light/strongInfo-0.svg'),
+    dark: require('./images/dark/strongInfo-0.svg'),
+    fileFormat: 'svg',
+  },
+  strongWarning: {
+    light: require('./images/light/strongWarning-0.svg'),
+    dark: require('./images/dark/strongWarning-0.svg'),
+    fileFormat: 'svg',
+  },
+  successPhone: {
+    light: require('./images/light/successPhone-0.svg'),
+    dark: require('./images/dark/successPhone-0.svg'),
+    fileFormat: 'svg',
+  },
+  takeQuiz: {
+    light: require('./images/light/takeQuiz-0.svg'),
+    dark: require('./images/dark/takeQuiz-0.svg'),
+    fileFormat: 'svg',
+  },
+  target: {
+    light: require('./images/light/target-0.svg'),
+    dark: require('./images/dark/target-0.svg'),
+    fileFormat: 'svg',
+  },
+  tokenBaskets: {
+    light: require('./images/light/tokenBaskets-0.svg'),
+    dark: require('./images/dark/tokenBaskets-0.svg'),
+    fileFormat: 'svg',
+  },
+  trading: {
+    light: require('./images/light/trading-0.svg'),
+    dark: require('./images/dark/trading-0.svg'),
+    fileFormat: 'svg',
+  },
+  transferSend: {
+    light: require('./images/light/transferSend-0.svg'),
+    dark: require('./images/dark/transferSend-0.svg'),
+    fileFormat: 'svg',
+  },
+  transistor: {
+    light: require('./images/light/transistor-0.svg'),
+    dark: require('./images/dark/transistor-0.svg'),
+    fileFormat: 'svg',
+  },
+  trusted: {
+    light: require('./images/light/trusted-0.svg'),
+    dark: require('./images/dark/trusted-0.svg'),
+    fileFormat: 'svg',
+  },
+  tryAgainLater: {
+    light: require('./images/light/tryAgainLater-0.svg'),
+    dark: require('./images/dark/tryAgainLater-0.svg'),
+    fileFormat: 'svg',
+  },
+  typeScript: {
+    light: require('./images/light/typeScript-0.svg'),
+    dark: require('./images/dark/typeScript-0.svg'),
+    fileFormat: 'svg',
+  },
+  ubiKey: {
+    light: require('./images/light/ubiKey-0.svg'),
+    dark: require('./images/dark/ubiKey-0.svg'),
+    fileFormat: 'svg',
+  },
+  waiting: {
+    light: require('./images/light/waiting-0.svg'),
+    dark: require('./images/dark/waiting-0.svg'),
+    fileFormat: 'svg',
+  },
+  waitingForConsensus: {
+    light: require('./images/light/waitingForConsensus-0.svg'),
+    dark: require('./images/dark/waitingForConsensus-0.svg'),
+    fileFormat: 'svg',
+  },
+  wallet: {
+    light: require('./images/light/wallet-0.svg'),
+    dark: require('./images/dark/wallet-0.svg'),
+    fileFormat: 'svg',
+  },
+  walletDeposit: {
+    light: require('./images/light/walletDeposit-0.svg'),
+    dark: require('./images/dark/walletDeposit-0.svg'),
+    fileFormat: 'svg',
+  },
+  walletExchange: {
+    light: require('./images/light/walletExchange-0.svg'),
+    dark: require('./images/dark/walletExchange-0.svg'),
+    fileFormat: 'svg',
+  },
+  warning: {
+    light: require('./images/light/warning-0.svg'),
+    dark: require('./images/dark/warning-0.svg'),
+    fileFormat: 'svg',
+  },
+  worldwide: {
+    light: require('./images/light/worldwide-0.svg'),
+    dark: require('./images/dark/worldwide-0.svg'),
+    fileFormat: 'svg',
+  },
+  accessToAdvancedChartsAlt: {
+    light: require('./images/light/accessToAdvancedChartsAlt-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  cardWaitlist: {
+    light: require('./images/light/cardWaitlist-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  creditCardExcitement: {
+    light: require('./images/light/creditCardExcitement-0.svg'),
+    dark: require('./images/dark/creditCardExcitement-0.svg'),
+    fileFormat: 'svg',
+  },
+  currency: {
+    light: require('./images/light/currency-0.svg'),
+    dark: require('./images/dark/currency-0.svg'),
+    fileFormat: 'svg',
+  },
+  diamond: {
+    light: require('./images/light/diamond-0.svg'),
+    dark: require('./images/dark/diamond-0.svg'),
+    fileFormat: 'svg',
+  },
+  focusLimitOrdersAlt: {
+    light: require('./images/light/focusLimitOrdersAlt-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  giftBoxRewards: {
+    light: require('./images/light/giftBoxRewards-0.svg'),
+    dark: require('./images/dark/giftBoxRewards-0.svg'),
+    fileFormat: 'svg',
+  },
+  linkCoinbaseWallet: {
+    light: require('./images/light/linkCoinbaseWallet-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  ratDashboard: {
+    light: require('./images/light/ratDashboard-0.svg'),
+    dark: require('./images/dark/ratDashboard-0.svg'),
+    fileFormat: 'svg',
+  },
+  switchAdvancedToSimpleTradingAlt: {
+    light: require('./images/light/switchAdvancedToSimpleTradingAlt-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  trade: {
+    light: require('./images/light/trade-0.svg'),
+    dark: require('./images/dark/trade-0.svg'),
+    fileFormat: 'svg',
   },
   addMultipleCrypto: {
-    light: require('./images/light/addMultipleCrypto/addMultipleCrypto.png'),
+    light: require('./images/light/addMultipleCrypto-0.svg'),
     dark: null,
-    fileFormat: 'png',
+    fileFormat: 'svg',
   },
-  phoneNotifications: {
-    light: require('./images/light/phoneNotifications/phoneNotifications.png'),
-    dark: null,
-    fileFormat: 'png',
+  algoStaking: {
+    light: require('./images/light/algoStaking-0.svg'),
+    dark: require('./images/dark/algoStaking-0.svg'),
+    fileFormat: 'svg',
   },
-  darkModeIntroduction: {
-    light: require('./images/light/darkModeIntroduction/darkModeIntroduction.png'),
+  announcementAdvancedTrading: {
+    light: require('./images/light/announcementAdvancedTrading-0.svg'),
     dark: null,
-    fileFormat: 'png',
+    fileFormat: 'svg',
+  },
+  assetForward: {
+    light: require('./images/light/assetForward-0.svg'),
+    dark: require('./images/dark/assetForward-0.svg'),
+    fileFormat: 'svg',
+  },
+  assetRefresh: {
+    light: require('./images/light/assetRefresh-0.svg'),
+    dark: require('./images/dark/assetRefresh-0.svg'),
+    fileFormat: 'svg',
+  },
+  borrowLimitsAddressed: {
+    light: require('./images/light/borrowLimitsAddressed-0.svg'),
+    dark: require('./images/dark/borrowLimitsAddressed-0.svg'),
+    fileFormat: 'svg',
+  },
+  cardAnnoucement: {
+    light: require('./images/light/cardAnnoucement-0.svg'),
+    dark: require('./images/dark/cardAnnoucement-0.svg'),
+    fileFormat: 'svg',
   },
   cardShipped: {
-    light: require('./images/light/cardShipped/cardShipped.png'),
+    light: require('./images/light/cardShipped-0.svg'),
     dark: null,
-    fileFormat: 'png',
+    fileFormat: 'svg',
+  },
+  coinbaseCardSparkle: {
+    light: require('./images/light/coinbaseCardSparkle-0.svg'),
+    dark: require('./images/dark/coinbaseCardSparkle-0.svg'),
+    fileFormat: 'svg',
+  },
+  cosmosStaking: {
+    light: require('./images/light/cosmosStaking-0.svg'),
+    dark: require('./images/dark/cosmosStaking-0.svg'),
+    fileFormat: 'svg',
+  },
+  daiRewards: {
+    light: require('./images/light/daiRewards-0.svg'),
+    dark: require('./images/dark/daiRewards-0.svg'),
+    fileFormat: 'svg',
+  },
+  darkModeIntroduction: {
+    light: require('./images/light/darkModeIntroduction-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  ethereumStaking: {
+    light: require('./images/light/ethereumStaking-0.svg'),
+    dark: require('./images/dark/ethereumStaking-0.svg'),
+    fileFormat: 'svg',
+  },
+  giftBoxCrypto: {
+    light: require('./images/light/giftBoxCrypto-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  interestForYou: {
+    light: require('./images/light/interestForYou-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  moneyRewards: {
+    light: require('./images/light/moneyRewards-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  nuxEarnCrypto: {
+    light: require('./images/light/nuxEarnCrypto-0.svg'),
+    dark: require('./images/dark/nuxEarnCrypto-0.svg'),
+    fileFormat: 'svg',
+  },
+  nuxEarnYield: {
+    light: require('./images/light/nuxEarnYield-0.svg'),
+    dark: require('./images/dark/nuxEarnYield-0.svg'),
+    fileFormat: 'svg',
+  },
+  nuxPopularAssets: {
+    light: require('./images/light/nuxPopularAssets-0.svg'),
+    dark: require('./images/dark/nuxPopularAssets-0.svg'),
+    fileFormat: 'svg',
+  },
+  nuxRecurringBuys: {
+    light: require('./images/light/nuxRecurringBuys-0.svg'),
+    dark: require('./images/dark/nuxRecurringBuys-0.svg'),
+    fileFormat: 'svg',
+  },
+  phoneNotifications: {
+    light: require('./images/light/phoneNotifications-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
   },
   refreshMobileApp: {
-    light: require('./images/light/refreshMobileApp/refreshMobileApp.png'),
-    dark: require('./images/dark/refreshMobileApp/refreshMobileApp.png'),
-    fileFormat: 'png',
+    light: require('./images/light/refreshMobileApp-0.svg'),
+    dark: require('./images/dark/refreshMobileApp-0.svg'),
+    fileFormat: 'svg',
+  },
+  saveTheDate: {
+    light: require('./images/light/saveTheDate-0.svg'),
+    dark: require('./images/dark/saveTheDate-0.svg'),
+    fileFormat: 'svg',
+  },
+  sparkleToken: {
+    light: require('./images/light/sparkleToken-0.svg'),
+    dark: require('./images/dark/sparkleToken-0.svg'),
+    fileFormat: 'svg',
+  },
+  starToken: {
+    light: require('./images/light/starToken-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
+  tezosStakingRewards: {
+    light: require('./images/light/tezosStakingRewards-0.svg'),
+    dark: require('./images/dark/tezosStakingRewards-0.svg'),
+    fileFormat: 'svg',
+  },
+  transferringCrypto: {
+    light: require('./images/light/transferringCrypto-0.svg'),
+    dark: require('./images/dark/transferringCrypto-0.svg'),
+    fileFormat: 'svg',
+  },
+  yieldCenter: {
+    light: require('./images/light/yieldCenter-0.svg'),
+    dark: require('./images/dark/yieldCenter-0.svg'),
+    fileFormat: 'svg',
   },
 };

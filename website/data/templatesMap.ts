@@ -475,6 +475,114 @@ export const NavigationIcon = {
   ),
 };
 
+export const HeroSquare = {
+  'hero-square': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/HeroSquare/hero-square.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/HeroSquare/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/HeroSquare/intro.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/HeroSquare/usage.mdx'
+      )
+  ),
+};
+
+export const Pictogram = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/Pictogram/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/Pictogram/intro.mdx'
+      )
+  ),
+  pictogram: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/Pictogram/pictogram.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/Pictogram/usage.mdx'
+      )
+  ),
+};
+
+export const SpotRectangle = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotRectangle/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotRectangle/intro.mdx'
+      )
+  ),
+  'spot-rectangle': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotRectangle/spot-rectangle.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotRectangle/usage.mdx'
+      )
+  ),
+};
+
+export const SpotSquare = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotSquare/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotSquare/intro.mdx'
+      )
+  ),
+  'spot-square': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotSquare/spot-square.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/illustrations/SpotSquare/usage.mdx'
+      )
+  ),
+};
+
 export const Box = {
   a11y: React.lazy(
     () =>
@@ -708,12 +816,6 @@ export const Link = {
     () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/link.mdx'
-      )
-  ),
-  usage: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/usage.mdx'
       )
   ),
 };

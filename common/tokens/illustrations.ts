@@ -12,7 +12,7 @@ export const illustrationSizes = {
     height: 120,
   },
   pictogram: {
-    width: 64,
-    height: 64,
+    width: 48,
+    height: 48,
   },
 };

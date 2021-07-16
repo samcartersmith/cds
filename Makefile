@@ -114,7 +114,7 @@ new.package:
 .PHONY: prepare.icons
 prepare.icons:
 	bazel run :sync_icons
-	npx svgo codegen/icons/svg/*.svg --config=codegen/icons/svgo.config.js
+	npx svgo codegen/icons/svg/*.svg --config=codegen/configs/svgo.config.js
 	bazel run :build_icons
 
 .PHONY: prepare.illustrations

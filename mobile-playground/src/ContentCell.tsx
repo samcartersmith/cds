@@ -1,7 +1,7 @@
 import { ContentCell, CellMedia } from '@cbhq/cds-mobile/cells';
+import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
 import { Box } from '@cbhq/cds-mobile/layout';
 import { createStories } from '@cbhq/cds-storybook/stories/ContentCell';
-import { PictogramIllustration } from '@cbhq/cds-mobile/illustrations/PictogramIllustration';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
@@ -9,7 +9,7 @@ import ExamplesScreen from './internal/ExamplesScreen';
 const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = createStories(
   ContentCell,
   CellMedia,
-  PictogramIllustration
+  Pictogram
 );
 
 const ContentCellScreen = () => {

@@ -58,6 +58,17 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Illustrations',
+      collapsed: true,
+      items: [
+        'components/illustrations/HeroSquare/hero-square',
+        'components/illustrations/Pictogram/pictogram',
+        'components/illustrations/SpotRectangle/spot-rectangle',
+        'components/illustrations/SpotSquare/spot-square',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Layout',
       collapsed: true,
       items: [
