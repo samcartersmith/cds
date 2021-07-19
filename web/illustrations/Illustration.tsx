@@ -12,11 +12,17 @@ export const Illustration = memo(function Illustration({
   ...props
 }: IllustrationBaseProps) {
   const spectrum = useSpectrumConditional({ light: 'light', dark: 'dark' }) ?? 'light';
-  const versionNum = useMemo(() => versionNumManifest[`${name}-${spectrum}`], [spectrum, name]);
+  const imgPath = useMemo(() => {
+    const nameAndSpectrum = `${name}-${spectrum}`;
+    if (nameAndSpectrum in versionNumManifest) {
+      return `${spectrum}/${name}-${versionNumManifest[nameAndSpectrum]}`;
+    }
+    return `light/${name}-${versionNumManifest[`${name}-light`]}`;
+  }, [name, spectrum]);
 
   return (
     <img
-      src={`https://static-assets.coinbase.com/design-system/illustrations/${spectrum}/${name}-${versionNum}.svg`}
+      src={`https://static-assets.coinbase.com/design-system/illustrations/${imgPath}.svg`}
       alt={name}
       width={width}
       height={height}

@@ -2823,7 +2823,7 @@ export const manifestData = {
     '2094:30343': {
       variant: 'heroSquare',
       description: '',
-      name: 'advancedtrading',
+      name: 'advancedTrading',
       spectrum: 'light',
       versionNum: 0,
     },

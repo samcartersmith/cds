@@ -405,7 +405,7 @@ export const versionNumManifest: { [name: string]: number } = {
   'focusLimitOrders-light': 0,
   'switchAdvancedToSimpleTrading-light': 0,
   'walletNotifications-light': 0,
-  'advancedtrading-light': 0,
+  'advancedTrading-light': 0,
   'currency-light': 0,
   'cardWaitlist-light': 0,
   'creditCardExcitement-light': 0,

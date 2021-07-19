@@ -29,14 +29,14 @@ export const IllustrationFilePathMap = {
     dark: require('./images/dark/addPhoneNumber-0.svg'),
     fileFormat: 'svg',
   },
+  advancedTrading: {
+    light: require('./images/light/advancedTrading-0.svg'),
+    dark: null,
+    fileFormat: 'svg',
+  },
   advancedTradingUi: {
     light: require('./images/light/advancedTradingUi-0.svg'),
     dark: require('./images/dark/advancedTradingUi-0.svg'),
-    fileFormat: 'svg',
-  },
-  advancedtrading: {
-    light: require('./images/light/advancedtrading-0.svg'),
-    dark: null,
     fileFormat: 'svg',
   },
   appTrackingTransparency: {
