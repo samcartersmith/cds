@@ -41,6 +41,9 @@ export type HTMLNonHeadingTextTags =
   | 'sup'
   | 'sub'
   | 'li'
+  | 'dl'
+  | 'dt'
+  | 'dd'
   | 'div';
 
 export type HTMLTextTags = HTMLHeadingTags | HTMLNonHeadingTextTags;
