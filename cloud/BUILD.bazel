@@ -55,9 +55,9 @@ syn_deployable(
             key = "cds/",
         ),
     ],
-    config_name = "corporate",
+    config_name = "production",
     continuous_deployment = True,
-    target = "corporate",
+    target = "production",
 )
 
 syn_deployable(
