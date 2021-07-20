@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.4 (7/20/2021, 12:24 PM PST)
+
+#### 🐞 Fixes
+
+- Normalize JS testing/linting Bazel macros. [#26432](https://github.cbhq.net/mono/repo/pull/26432)
+
 ## 0.2.3 (7/2/2021, 10:29 AM PST)
 
 #### 🐞 Fixes

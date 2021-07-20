@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.17.0 (7/20/2021, 12:24 PM PST)
+
+#### 💥 Breaking
+
+- Renamed Nav Icons. [#26215](https://github.cbhq.net/mono/repo/pull/26215)
+
+#### 🚀 Updates
+
+- Use SVG for Illustration and Add Illustration for Web. [#24948](https://github.cbhq.net/mono/repo/pull/24948), [CDS-628](https://jira.coinbase-corp.com/browse/CDS-628)
+
+#### 🐞 Fixes
+
+- Normalize JS testing/linting Bazel macros. [#26432](https://github.cbhq.net/mono/repo/pull/26432)
+- Illustrations that do not have dark mode should default to light on web. [#26435](https://github.cbhq.net/mono/repo/pull/26435)
+
 ## 0.16.0 (7/2/2021, 10:29 AM PST)
 
 #### 💥 Breaking
