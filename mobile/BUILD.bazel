@@ -40,14 +40,14 @@ filegroup(
 
 eslint_test(
     name = "lint",
-    data = CDS_DEPENDENCIES,
-    sources = ":source",
+    srcs = CDS_DEPENDENCIES,
+    lint_srcs = [":source"],
 )
 
 eslint_fix(
     name = "lint_fix",
-    data = CDS_DEPENDENCIES,
-    sources = ":source",
+    srcs = CDS_DEPENDENCIES,
+    lint_srcs = [":source"],
 )
 
 cds_package(

@@ -41,16 +41,16 @@ filegroup(
 
 eslint_test(
     name = "lint",
-    data = [
+    srcs = [
         "//eng/shared/design-system/common:source",
     ],
-    sources = ":source",
+    lint_srcs = [":source"],
 )
 
 eslint_fix(
     name = "lint_fix",
-    data = [
+    srcs = [
         "//eng/shared/design-system/common:source",
     ],
-    sources = ":source",
+    lint_srcs = [":source"],
 )

@@ -31,12 +31,12 @@ filegroup(
 
 eslint_test(
     name = "lint",
-    sources = ":source",
+    lint_srcs = [":source"],
 )
 
 eslint_fix(
     name = "lint_fix",
-    sources = ":source",
+    lint_srcs = [":source"],
 )
 
 # Package building and publishing

@@ -61,7 +61,7 @@ filegroup(
 
 stylelint_test(
     name = "stylelint",
-    sources = ":style_source",
+    lint_srcs = [":style_source"],
 )
 
 # ***************

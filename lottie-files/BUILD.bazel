@@ -47,12 +47,12 @@ filegroup(
 
 eslint_test(
     name = "lint",
-    sources = ":source_without_json",
+    lint_srcs = [":source_without_json"],
 )
 
 eslint_fix(
     name = "lint_fix",
-    sources = ":source_without_json",
+    lint_srcs = [":source_without_json"],
 )
 
 # Package building and publishing
