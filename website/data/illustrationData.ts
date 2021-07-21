@@ -95,6 +95,7 @@ export const heroSquareNames = [
 
 export const pictogramNames = [
   '2fa',
+  'usaProduct',
   'add',
   'addCard',
   'addPayment',
@@ -158,7 +159,6 @@ export const pictogramNames = [
   'listingFees',
   'lock',
   'lowFees',
-  'madeInUsa',
   'mobileCharts',
   'mobileNotifcation',
   'moneyEarn',

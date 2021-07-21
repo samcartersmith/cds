@@ -58,7 +58,7 @@ export const manifestData = {
     '2072:8283': {
       variant: 'pictogram',
       description: '',
-      name: 'madeInUsa',
+      name: 'usaProduct',
       spectrum: 'dark',
       versionNum: 0,
     },
@@ -877,7 +877,7 @@ export const manifestData = {
     '2072:8463': {
       variant: 'pictogram',
       description: '',
-      name: 'madeInUsa',
+      name: 'usaProduct',
       spectrum: 'light',
       versionNum: 0,
     },
@@ -2825,7 +2825,7 @@ export const manifestData = {
       description: '',
       name: 'advancedTrading',
       spectrum: 'light',
-      versionNum: 0,
+      versionNum: 1,
     },
     '2094:30258': {
       variant: 'spotRectangle',

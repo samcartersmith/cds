@@ -96,6 +96,7 @@ export type IllustrationHeroSquareNames =
 
 export type IllustrationPictogramNames =
   | '2fa'
+  | 'usaProduct'
   | 'add'
   | 'addCard'
   | 'addPayment'
@@ -159,7 +160,6 @@ export type IllustrationPictogramNames =
   | 'listingFees'
   | 'lock'
   | 'lowFees'
-  | 'madeInUsa'
   | 'mobileCharts'
   | 'mobileNotifcation'
   | 'moneyEarn'

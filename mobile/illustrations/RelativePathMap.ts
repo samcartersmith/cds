@@ -30,7 +30,7 @@ export const IllustrationFilePathMap = {
     fileFormat: 'svg',
   },
   advancedTrading: {
-    light: require('./images/light/advancedTrading-0.svg'),
+    light: require('./images/light/advancedTrading-1.svg'),
     dark: null,
     fileFormat: 'svg',
   },
@@ -444,6 +444,11 @@ export const IllustrationFilePathMap = {
     dark: require('./images/dark/2fa-0.svg'),
     fileFormat: 'svg',
   },
+  usaProduct: {
+    light: require('./images/light/usaProduct-0.svg'),
+    dark: require('./images/dark/usaProduct-0.svg'),
+    fileFormat: 'svg',
+  },
   add: {
     light: require('./images/light/add-0.svg'),
     dark: require('./images/dark/add-0.svg'),
@@ -757,11 +762,6 @@ export const IllustrationFilePathMap = {
   lowFees: {
     light: require('./images/light/lowFees-0.svg'),
     dark: require('./images/dark/lowFees-0.svg'),
-    fileFormat: 'svg',
-  },
-  madeInUsa: {
-    light: require('./images/light/madeInUsa-0.svg'),
-    dark: require('./images/dark/madeInUsa-0.svg'),
     fileFormat: 'svg',
   },
   mobileCharts: {

@@ -16,8 +16,8 @@
 # run chmod u+x uploadToStaticAssets.sh (or path/to/script). This will give 
 # it access to the script. 
 
-# USAGE: ./uploadToStaticAssets -b <branch-name> -r <root-dir-name> -u <username> [optional flags: -c -o -d]
-# Example: ./uploadToStatic -b new-upload -r /path/to/monorepo -u billy-joe 
+# USAGE: ./uploadToStaticAssets.sh -b <branch-name> -r <root-dir-name> -u <username> [optional flags: -c -o -d]
+# Example: ./uploadToStatic.sh -b new-upload -r /path/to/monorepo -u billy-joe 
 # -c (CREATEDIRFLAG) = if true, will create a design-system/illustration directory in static-asset repo. default: false
 # -o (OPENPRFLAG) = if true, will openPR using hub pull-request command. default: false
 # -d (DELREPO) = if true, will remove static-assets repo. default: true

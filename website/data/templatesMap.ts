@@ -818,6 +818,12 @@ export const Link = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/link.mdx'
       )
   ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/usage.mdx'
+      )
+  ),
 };
 
 export const Text = {
