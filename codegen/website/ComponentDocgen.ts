@@ -99,7 +99,7 @@ export class ComponentDocgen {
 
   getPlatformSpecificProps(
     platform: Platform,
-    otherPlatformProps: PropItemWithOptions[] | undefined
+    otherPlatformProps: PropItemWithOptions[] | undefined,
   ) {
     const platformProps = this[platform];
     if (platformProps === undefined) {

@@ -49,7 +49,7 @@ const RadioIcon: React.FC<ControlIconProps> = ({
 
 const RadioWithRef = forwardRef(function Radio<T extends string>(
   { children, ...props }: RadioProps<T>,
-  ref: React.ForwardedRef<View>
+  ref: React.ForwardedRef<View>,
 ) {
   return (
     <Control<T> {...props} accessibilityRole="radio" label={children} ref={ref} hitSlop={5}>
@@ -73,7 +73,7 @@ export interface RadioGroupProps<T extends string>
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   { label, selectedValue, onChange, options, testID, ...restProps }: RadioGroupProps<T>,
-  ref: React.ForwardedRef<View>
+  ref: React.ForwardedRef<View>,
 ) {
   return (
     <View accessibilityRole="radiogroup" ref={ref} testID={testID} {...restProps}>
@@ -93,7 +93,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   );
   // Make forwardRef result function stay generic function type
 }) as <T extends string>(
-  props: RadioGroupProps<T> & React.RefAttributes<View>
+  props: RadioGroupProps<T> & React.RefAttributes<View>,
 ) => React.ReactElement;
 
 // Make memoized function stay generic function type

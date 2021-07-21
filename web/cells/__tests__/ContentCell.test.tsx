@@ -8,8 +8,8 @@ describe('ContentCell', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <ContentCell title="Title" subtitle="Subtitle" description="Description" meta="Meta" />
-      )
+        <ContentCell title="Title" subtitle="Subtitle" description="Description" meta="Meta" />,
+      ),
     ).toHaveNoViolations();
   });
 
@@ -19,7 +19,7 @@ describe('ContentCell', () => {
     render(<ContentCell meta="Meta" />);
 
     expect(spy).toHaveBeenCalledWith(
-      'ContentCell: Cannot use `meta` without a `title` or `subtitle`.'
+      'ContentCell: Cannot use `meta` without a `title` or `subtitle`.',
     );
 
     spy.mockRestore();
@@ -39,7 +39,7 @@ describe('ContentCell', () => {
 
   it('renders a description', () => {
     const result = render(
-      <ContentCell description={<div data-testid="description">Description</div>} />
+      <ContentCell description={<div data-testid="description">Description</div>} />,
     );
 
     expect(result.queryByTestId('description')).not.toBeNull();
@@ -53,7 +53,7 @@ describe('ContentCell', () => {
 
   it('renders media', () => {
     const result = render(
-      <ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />
+      <ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />,
     );
 
     expect(result.queryByTestId('media')).not.toBeNull();

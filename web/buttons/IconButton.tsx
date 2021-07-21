@@ -27,7 +27,7 @@ export const IconButton = forwardRef(
       variant = 'secondary',
       ...props
     }: IconButtonProps,
-    ref: React.Ref<HTMLButtonElement>
+    ref: React.Ref<HTMLButtonElement>,
   ) => {
     const flexStyles = getFlexStyles({
       alignItems: 'center',
@@ -57,5 +57,5 @@ export const IconButton = forwardRef(
         <Icon name={name} size="s" color={color} />
       </Pressable>
     );
-  }
+  },
 );

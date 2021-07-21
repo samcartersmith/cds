@@ -8,7 +8,7 @@ export function entries<T>(item: T) {
 
 export function mapKeys<
   T extends AnyObject,
-  K extends (value: T[keyof T], key: keyof T, obj: T) => StringKey<unknown>
+  K extends (value: T[keyof T], key: keyof T, obj: T) => StringKey<unknown>,
 >(obj: T, callbackFn: K) {
   return Object.keys(obj).reduce((acc, key: keyof T) => {
     const newKey = callbackFn(obj[key], key, obj) as ReturnType<typeof callbackFn>;
@@ -19,7 +19,7 @@ export function mapKeys<
 
 export function mapValues<
   T extends AnyObject,
-  K extends (value: T[keyof T], key: keyof T, i: number) => unknown
+  K extends (value: T[keyof T], key: keyof T, i: number) => unknown,
 >(obj: T, callbackFn: K) {
   return Object.keys(obj).reduce((acc, key: keyof T, i) => {
     acc[key] = callbackFn(obj[key], key, i) as ReturnType<typeof callbackFn>;

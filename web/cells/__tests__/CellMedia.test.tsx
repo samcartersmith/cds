@@ -6,7 +6,7 @@ import { CellMedia } from '../CellMedia';
 describe('CellMedia', () => {
   it('passes accessibility', async () => {
     expect(
-      await renderA11y(<CellMedia type="asset" source="some/image/path" title="Test" />)
+      await renderA11y(<CellMedia type="asset" source="some/image/path" title="Test" />),
     ).toHaveNoViolations();
   });
 

@@ -154,7 +154,7 @@ const iconNameMap: { [index: string]: string } = {
 export default function replaceOldNameWithNewName(
   fileInfo: FileInfo,
   api: API,
-  options: Options
+  options: Options,
 ): string | null | undefined | void {
   const mod = new Codemod(fileInfo, api);
 

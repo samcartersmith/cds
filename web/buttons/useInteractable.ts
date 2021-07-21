@@ -36,7 +36,7 @@ export interface UseInteractableOptions {
 
 // eslint-disable-next-line no-console
 console.warn(
-  `useInteractable() is deprecated. Please use the Interactable or Pressable components instead.`
+  `useInteractable() is deprecated. Please use the Interactable or Pressable components instead.`,
 );
 
 export function useInteractable({
@@ -60,7 +60,7 @@ export function useInteractable({
       interactable,
       !disabled && focusRing,
       !noScaleOnPress && scaledDownState,
-      disabled && disabledState
+      disabled && disabledState,
     ),
     style: {
       '--interactable-opacity-hovered': hoverOpacity,

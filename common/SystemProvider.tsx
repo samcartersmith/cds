@@ -37,7 +37,7 @@ export const SystemProvider: React.FC<SystemProviderProps> = memo(
         </SpectrumProvider>
       </ScaleProvider>
     );
-  }
+  },
 );
 
 SystemProvider.displayName = 'SystemProvider';

@@ -25,7 +25,7 @@ export type CheckboxGroupStateProps<T extends string> = {
  */
 export const useCheckboxGroupState = <T extends string>(
   values: T[],
-  initialState?: T[]
+  initialState?: T[],
 ): [Set<T>, CheckboxGroupStateProps<T>] => {
   const [state, { select: doSelect, unselect: doUnselect, toggle: doToggle, isAllSelected }] =
     useGroupToggler(values, initialState);
@@ -34,21 +34,21 @@ export const useCheckboxGroupState = <T extends string>(
     event => {
       doSelect(event?.target.value as T);
     },
-    [doSelect]
+    [doSelect],
   );
 
   const unselect = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     event => {
       doUnselect(event?.target.value as T);
     },
-    [doUnselect]
+    [doUnselect],
   );
 
   const toggle = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     event => {
       doToggle(event?.target.value as T);
     },
-    [doToggle]
+    [doToggle],
   );
 
   return [

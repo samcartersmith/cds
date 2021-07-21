@@ -8,7 +8,7 @@ const DEFAULT_CLASS = 'flex';
 function expectClassName<K extends keyof BoxProps>(
   prop: K,
   values: NonNullable<BoxProps[K]>[],
-  classPrefix = DEFAULT_CLASS
+  classPrefix = DEFAULT_CLASS,
 ) {
   values.forEach(value => {
     it(`will set "${value}" class name for \`${prop}\` prop`, () => {
@@ -29,8 +29,8 @@ describe('Box', () => {
       await renderA11y(
         <Box spacing={2} background="background">
           Child
-        </Box>
-      )
+        </Box>,
+      ),
     ).toHaveNoViolations();
   });
 
@@ -46,7 +46,7 @@ describe('Box', () => {
     const { queryByRole } = render(
       <Box as="main" role="main">
         Child
-      </Box>
+      </Box>,
     );
 
     expect(queryByRole('main')).not.toBeNull();
@@ -105,12 +105,12 @@ describe('Box', () => {
       rerender(
         <Box width="321px" maxWidth="789rem" minWidth="66%">
           Child
-        </Box>
+        </Box>,
       );
 
       expect(container.firstChild).toHaveAttribute(
         'style',
-        'max-width: 789rem; min-width: 66%; width: 321px;'
+        'max-width: 789rem; min-width: 66%; width: 321px;',
       );
     });
   });
@@ -124,12 +124,12 @@ describe('Box', () => {
       rerender(
         <Box height="321px" maxHeight="789rem" minHeight="66%">
           Child
-        </Box>
+        </Box>,
       );
 
       expect(container.firstChild).toHaveAttribute(
         'style',
-        'height: 321px; max-height: 789rem; min-height: 66%;'
+        'height: 321px; max-height: 789rem; min-height: 66%;',
       );
     });
   });
@@ -143,12 +143,12 @@ describe('Box', () => {
       rerender(
         <Box position="absolute" top="25%" right="30px" bottom="8rem" left="1000%" zIndex={200}>
           Child
-        </Box>
+        </Box>,
       );
 
       expect(container.firstChild).toHaveAttribute(
         'style',
-        'position: absolute; bottom: 8rem; left: 1000%; right: 30px; top: 25%; z-index: 200;'
+        'position: absolute; bottom: 8rem; left: 1000%; right: 30px; top: 25%; z-index: 200;',
       );
     });
   });
@@ -162,12 +162,12 @@ describe('Box', () => {
       rerender(
         <Box flexBasis="50%" flexGrow={2} flexShrink={3}>
           Child
-        </Box>
+        </Box>,
       );
 
       expect(container.firstChild).toHaveAttribute(
         'style',
-        'flex-basis: 50%; flex-grow: 2; flex-shrink: 3;'
+        'flex-basis: 50%; flex-grow: 2; flex-shrink: 3;',
       );
     });
 

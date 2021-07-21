@@ -29,7 +29,7 @@ export const Spinner = memo(function Spinner({ size, color, testID }: SpinnerPro
       borderBottomColor: palette[color],
       borderLeftColor: palette.backgroundAlternate,
     }),
-    [palette, size, color]
+    [palette, size, color],
   );
 
   return (

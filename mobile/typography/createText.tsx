@@ -144,7 +144,7 @@ export const createText = (name: Typography) => {
         underline,
         dangerouslySetStyle,
         ellipsize,
-      ]
+      ],
     );
 
     if (isChildrenFalsy(children)) {

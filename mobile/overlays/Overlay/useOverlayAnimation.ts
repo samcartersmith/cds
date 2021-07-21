@@ -18,7 +18,7 @@ const animateOutConfig = convertMotionConfig({
 export const useOverlayAnimation = (): [
   Animated.Value,
   Animated.CompositeAnimation,
-  Animated.CompositeAnimation
+  Animated.CompositeAnimation,
 ] => {
   const overlayAnim = useRef(new Animated.Value(0));
   return useMemo(() => {

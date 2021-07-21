@@ -43,7 +43,7 @@ export const NavigationBar = memo(
         </span>
       </HStack>
     );
-  }
+  },
 );
 
 NavigationBar.displayName = 'NavigationBar';

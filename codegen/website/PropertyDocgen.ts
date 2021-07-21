@@ -40,9 +40,9 @@ export const normalizeOptions = (type: PropItem['type']) => {
       ? type.value
           .filter(({ value }: { value: unknown }) => value !== 'undefined')
           .map(({ value }: { value: unknown }) =>
-            typeof value === 'string' ? removeQuotes(value) : `${value}`
+            typeof value === 'string' ? removeQuotes(value) : `${value}`,
           )
-      : []
+      : [],
   );
 };
 

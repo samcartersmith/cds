@@ -74,7 +74,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     wrapWithLayeredElements,
     ...props
   }: InteractableProps,
-  ref: React.Ref<Element>
+  ref: React.Ref<Element>,
 ) {
   const paletteConfig = usePaletteConfig();
   const elevationStyles = useElevationStyles(elevation);
@@ -103,7 +103,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     borderWidth && borderWidths[borderWidth],
     disabled ? disabledState : focusRing,
     block && fullWidth,
-    customClassName
+    customClassName,
   );
   const style = useMemo(
     () =>
@@ -115,7 +115,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
         '--interactable-underlay': palette[underlayColor],
         ...elevationStyles,
       } as React.CSSProperties),
-    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor, customStyle, elevationStyles]
+    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor, customStyle, elevationStyles],
   );
 
   const content =
@@ -142,13 +142,13 @@ export const InteractableContent = forwardRef(function InteractableContent(
       style,
       ref,
     },
-    <ElevationChildrenProvider>{content}</ElevationChildrenProvider>
+    <ElevationChildrenProvider>{content}</ElevationChildrenProvider>,
   );
 });
 
 export const Interactable = forwardRef(function Interactable(
   { children, borderColor, className, ...props }: InteractableProps,
-  ref: React.Ref<Element>
+  ref: React.Ref<Element>,
 ) {
   return (
     <ElevationProvider elevation={props?.elevation}>

@@ -19,7 +19,7 @@ describe('useRootSpectrumUpdater', () => {
         },
         {
           wrapper: RootSpectrumProvider,
-        }
+        },
       );
       expect(result.current).toBe(spectrum);
     }

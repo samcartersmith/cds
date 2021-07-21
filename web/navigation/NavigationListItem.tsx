@@ -50,7 +50,7 @@ export const NavigationListItem = memo(
         }
         return className;
       },
-      [isMobileMenuVisible, isChildOfMobileMenu]
+      [isMobileMenuVisible, isChildOfMobileMenu],
     );
 
     const color = active ? 'primary' : 'foreground';
@@ -127,7 +127,7 @@ export const NavigationListItem = memo(
         </Tooltip>
       </li>
     );
-  }
+  },
 );
 
 NavigationListItem.displayName = 'NavigationListItem';

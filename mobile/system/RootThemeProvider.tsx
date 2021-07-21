@@ -28,7 +28,7 @@ export const RootThemeProvider: React.FC<RootThemeProviderProps> = memo(
         </RootScaleProvider>
       </RootSpectrumProvider>
     );
-  }
+  },
 );
 
 RootThemeProvider.displayName = 'RootThemeProvider';

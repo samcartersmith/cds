@@ -35,7 +35,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     testID,
     ...restProps
   }: CheckboxGroupProps<T>,
-  ref: React.ForwardedRef<HTMLFieldSetElement>
+  ref: React.ForwardedRef<HTMLFieldSetElement>,
 ) {
   if (isDevelopment() && !label && !ariaLabelledby) {
     // eslint-disable-next-line no-console

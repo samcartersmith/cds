@@ -12,7 +12,7 @@ describe('Link', () => {
     const result = render(
       <Link variant="body" to="/">
         Child
-      </Link>
+      </Link>,
     );
 
     expect(result.queryByText('Child')).not.toBeNull();
@@ -22,7 +22,7 @@ describe('Link', () => {
     const result = render(
       <Link to="/" testID={TEST_ID}>
         Child
-      </Link>
+      </Link>,
     );
 
     expect(result.queryByTestId(TEST_ID)).toBeTruthy();
@@ -45,7 +45,7 @@ describe('Link', () => {
       const linkRenderer = TestRenderer.create(
         <Link to="/" variant={variant} testID={TEST_ID}>
           Child
-        </Link>
+        </Link>,
       );
       const linkInstance = linkRenderer.root;
       expect(linkInstance.props.variant).toEqual(variant);
@@ -57,7 +57,7 @@ describe('Link', () => {
     const result = render(
       <Link to="/" onPress={spy} testID={TEST_ID}>
         Child
-      </Link>
+      </Link>,
     );
 
     fireEvent.press(result.getByTestId(TEST_ID));
@@ -69,7 +69,7 @@ describe('Link', () => {
     const linkRenderer = TestRenderer.create(
       <Link to={URL} testID={TEST_ID}>
         Child
-      </Link>
+      </Link>,
     );
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.to).toEqual(URL);
@@ -79,7 +79,7 @@ describe('Link', () => {
     const linkRenderer = TestRenderer.create(
       <Link to={URL} forceOpenOutsideApp testID={TEST_ID}>
         Child
-      </Link>
+      </Link>,
     );
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.forceOpenOutsideApp).toEqual(true);
@@ -89,7 +89,7 @@ describe('Link', () => {
     const linkRenderer = TestRenderer.create(
       <Link to={URL} readerMode testID={TEST_ID}>
         Child
-      </Link>
+      </Link>,
     );
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.readerMode).toEqual(true);

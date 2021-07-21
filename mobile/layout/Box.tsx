@@ -162,11 +162,11 @@ export const BoxInner = memo(
         flexShrink,
         flexWrap,
         justifyContent,
-      ]
+      ],
     );
     const dimensionStyles = useMemo(
       () => ({ height, maxHeight, maxWidth, minHeight, minWidth, width }),
-      [height, maxHeight, maxWidth, minHeight, minWidth, width]
+      [height, maxHeight, maxWidth, minHeight, minWidth, width],
     );
     const positionStyles = useMemo(
       () => ({
@@ -177,7 +177,7 @@ export const BoxInner = memo(
         top,
         zIndex,
       }),
-      [bottom, left, position, right, top, zIndex]
+      [bottom, left, position, right, top, zIndex],
     );
     const boxStyles = useMemo(() => {
       const style: ViewStyle = {};
@@ -224,7 +224,7 @@ export const BoxInner = memo(
         pinStyles,
         boxStyles,
         dangerouslySetStyle,
-      ]
+      ],
     );
 
     const ViewComponent = animated ? Animated.View : View;
@@ -235,7 +235,7 @@ export const BoxInner = memo(
         {overflow === 'gradient' && <OverflowGradient />}
       </ViewComponent>
     );
-  }
+  },
 );
 
 Box.displayName = 'Box';

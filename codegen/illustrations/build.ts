@@ -68,7 +68,7 @@ const loadOneImage = (
   outDirPath: string,
   spinner: Ora,
   scale: number,
-  exportFormat: FileFormat
+  exportFormat: FileFormat,
 ): Promise<void> => {
   const imageMetadata = localManifestData[exportFormat][nodeId];
   const imageName = imageMetadata.name;
@@ -136,7 +136,7 @@ const loadOneImage = (
 
 const getComponents = async (): Promise<IllustrationComponent | null> => {
   const spinner = ora(
-    `Started downloading node ids from ${chalk.bold(ILLUSTRATION_FILE_ID)}`
+    `Started downloading node ids from ${chalk.bold(ILLUSTRATION_FILE_ID)}`,
   ).start();
 
   // If an error happened here, it should be caught in main
@@ -167,10 +167,10 @@ const createNewImgsDirIfDNE = (outDirPath: string) => {
 const loadImagesLocally = async (
   nodeIds: string[],
   outDirPath: string,
-  exportFormat: FileFormat
+  exportFormat: FileFormat,
 ): Promise<void> => {
   const spinner = ora(
-    `Getting image urls for ${nodeIds.length} illustrations from Figma\n`
+    `Getting image urls for ${nodeIds.length} illustrations from Figma\n`,
   ).start();
 
   // Defining the different scales we want to illustrations to have
@@ -200,7 +200,7 @@ const loadImagesLocally = async (
       });
 
       return Promise.all(loadImagePromiseArr);
-    })
+    }),
   );
   spinner.stop();
 };
@@ -213,7 +213,7 @@ const loadImagesLocally = async (
  */
 const getIllustrationNamesAndVariants = (
   components: IllustrationComponent,
-  blacklistOn = false
+  blacklistOn = false,
 ): {
   camelCaseNames: IllustrationNamesMap;
   pascalCaseNames: IllustrationNamesMap;
@@ -283,7 +283,7 @@ const getIllustrationNamesAndVariants = (
 const updateManifest = async (
   components: IllustrationComponent,
   restart = false,
-  blacklistOn = false
+  blacklistOn = false,
 ) => {
   Object.entries(components).forEach(component => {
     const [nodeId, metadata] = component;
@@ -394,7 +394,7 @@ const createVersionNumManifest = (destPath: string, fileFormat: FileFormat) => {
       res[`${metadata.name}-${metadata.spectrum}`] = metadata.versionNum;
       return res;
     },
-    {} as VersionNumManifestStruct
+    {} as VersionNumManifestStruct,
   );
 
   generateFromTemplate({
@@ -412,7 +412,7 @@ const createConstants = (names: IllustrationNamesMap, outPaths: string[]) => {
         template: 'objectMap.ejs',
         dest,
         data: names,
-      })
+      }),
     );
   } catch (err) {
     console.error(err);
@@ -433,7 +433,7 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
 
   const allNames = Object.keys(names).reduce(
     (acc, name) => acc.concat(names[name]),
-    [] as string[]
+    [] as string[],
   );
 
   const paths = reduce(
@@ -458,7 +458,7 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
         dark: string | null;
         fileFormat: string;
       };
-    }
+    },
   );
 
   generateFromTemplate({

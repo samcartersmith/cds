@@ -16,7 +16,7 @@ export function hasProps(child: ReactChild): child is ReactElement {
 export default function flattenNodes(
   children: ReactNode,
   depth = 0,
-  keys: (string | number)[] = []
+  keys: (string | number)[] = [],
 ): ReactChild[] {
   return Children.toArray(children).reduce((acc: ReactChild[], node, nodeIndex) => {
     if (isFragment(node)) {

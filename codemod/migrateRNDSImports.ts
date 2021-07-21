@@ -22,7 +22,7 @@ const LAYOUT_COMPONENTS = new Set([
 function addImport(
   mod: Codemod,
   originalImportPath: ASTPath<ImportDeclaration>,
-  names: Set<string>
+  names: Set<string>,
 ) {
   if (names.size === 0) {
     return;
@@ -40,14 +40,14 @@ function addImport(
   });
 
   originalImportPath.insertAfter(
-    mod.createNode(cs => cs.importDeclaration(specs, cs.stringLiteral(path)))
+    mod.createNode(cs => cs.importDeclaration(specs, cs.stringLiteral(path))),
   );
 }
 
 export default function migrateRNDSImports(
   fileInfo: FileInfo,
   api: API,
-  options: Options
+  options: Options,
 ): string | null | undefined | void {
   const mod = new Codemod(fileInfo, api);
 

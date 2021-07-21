@@ -32,7 +32,7 @@ const calculateVariantStyle = (
     xHeight,
   }: TypographyConfig,
   scaleConversion: number,
-  { mobile }: { mobile: boolean } = { mobile: false }
+  { mobile }: { mobile: boolean } = { mobile: false },
 ) => {
   // Proposed font size by scale
   const rawFontSize = baseFontSize + scaleConversion;
@@ -103,19 +103,19 @@ const calculateVariantStyle = (
 // Codegen data
 export const typographyScaleMapForMobile = mapValues(scaleConfig, scaleNumber =>
   mapValues(typographyConfig, config =>
-    calculateVariantStyle(config, scaleNumber, { mobile: true })
-  )
+    calculateVariantStyle(config, scaleNumber, { mobile: true }),
+  ),
 );
 
 export const typographyScaleMapForWeb = mapValues(scaleConfig, scaleNumber =>
   mapValues(typographyConfig, config =>
-    mapKeys(calculateVariantStyle(config, scaleNumber), (_, cssProperty) => kebabCase(cssProperty))
-  )
+    mapKeys(calculateVariantStyle(config, scaleNumber), (_, cssProperty) => kebabCase(cssProperty)),
+  ),
 );
 
 export const typographyScaleMapWithCssVariables = mapValues(scaleConfig, (_, scaleName) => {
   const textVariants = mapValues(typographyScaleMapForWeb[scaleName], (stylesObject, variantName) =>
-    mapKeys(stylesObject, (_2, cssProperty) => toCssVar(`${variantName}-${cssProperty}` as const))
+    mapKeys(stylesObject, (_2, cssProperty) => toCssVar(`${variantName}-${cssProperty}` as const)),
   );
 
   return Object.entries(textVariants).reduce((prev, [, next]) => {
@@ -132,12 +132,12 @@ export const typographyCss = mapValues(
   typographyScaleMapForWeb.xSmall,
   (stylesObject, variantName) => ({
     ...mapValues(stylesObject, (_, cssProperty) =>
-      toCssVarFn(`${variantName}-${cssProperty}` as const)
+      toCssVarFn(`${variantName}-${cssProperty}` as const),
     ),
     'font-family': cssFontFamilies[typographyConfig[variantName].fontFamily],
-  })
+  }),
 );
 
 export const typographyPascalCaseConfig = mapKeys(typographyConfig, (_, variantName) =>
-  pascalCase(variantName)
+  pascalCase(variantName),
 );

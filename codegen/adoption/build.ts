@@ -152,8 +152,8 @@ const CDSAdoption = async () => {
       if (!PROJECT_PATHS[projectName]) {
         throw new Error(
           `Invalid project, received: ${projectName}, expected one or more of: ${JSON.stringify(
-            Object.keys(PROJECT_PATHS)
-          )} in the following format: projects=project1,project2,project3`
+            Object.keys(PROJECT_PATHS),
+          )} in the following format: projects=project1,project2,project3`,
         );
       }
       const files = await glob([
@@ -165,7 +165,7 @@ const CDSAdoption = async () => {
       await Promise.all(
         files.map(async file => {
           instrument(file, await fs.readFile(file, 'utf8'));
-        })
+        }),
       );
 
       const validComponents = validateComponents(Components);
@@ -180,7 +180,7 @@ const CDSAdoption = async () => {
       }
 
       await fs.writeFile(`${dirPath}/results.csv`, csv);
-    })
+    }),
   );
   console.log(chalk.green('New Adoption Results!'));
 };

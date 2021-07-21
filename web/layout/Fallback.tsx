@@ -61,7 +61,7 @@ export const Fallback = memo(function Fallback({
       height,
       borderRadius,
     }),
-    [height, borderRadius, width, percentage]
+    [height, borderRadius, width, percentage],
   );
 
   return (

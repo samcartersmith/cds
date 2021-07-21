@@ -22,7 +22,7 @@ const componentName = process.env.COMPONENT_NAME;
 
 if (!importPath && !componentName) {
   throw new Error(
-    'Either IMPORT_PATH or COMPONENT_NAME is required for the component you would like to migrate.'
+    'Either IMPORT_PATH or COMPONENT_NAME is required for the component you would like to migrate.',
   );
 }
 
@@ -74,7 +74,7 @@ function createProp(mod: Codemod, value: Node | null, name: string): JSXAttribut
   }
 
   return mod.createNode(cs =>
-    cs.jsxAttribute(cs.jsxIdentifier(id), cs.jsxExpressionContainer(number))
+    cs.jsxAttribute(cs.jsxIdentifier(id), cs.jsxExpressionContainer(number)),
   );
 }
 
@@ -132,7 +132,7 @@ function convertNumericValue(
     | ConditionalExpression
     | TSAsExpression
     | ObjectExpression
-    | ArrayExpression
+    | ArrayExpression,
 ) {
   if (!node) return;
 
@@ -169,7 +169,7 @@ function convertNumericValue(
 export default function convertToNewSpacingProps(
   fileInfo: FileInfo,
   api: API,
-  options: Options
+  options: Options,
 ): string | null | undefined | void {
   const mod = new Codemod(fileInfo, api);
 
@@ -244,7 +244,7 @@ export default function convertToNewSpacingProps(
       oldIndex = index;
 
       const injectProp = (
-        node: NumericLiteral | ArrayExpression | ObjectExpression | Identifier
+        node: NumericLiteral | ArrayExpression | ObjectExpression | Identifier,
       ) => {
         switch (node.type) {
           case 'NumericLiteral':
@@ -296,7 +296,7 @@ export default function convertToNewSpacingProps(
         injectProp(attr.value.expression as ArrayExpression);
       } catch (error) {
         console.error(
-          `Invalid spacing prop value type "${error.message}" found in "${fileInfo.path}".`
+          `Invalid spacing prop value type "${error.message}" found in "${fileInfo.path}".`,
         );
 
         if (error.message.includes('Cannot read property')) {

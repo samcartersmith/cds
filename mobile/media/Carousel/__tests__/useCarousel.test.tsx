@@ -20,11 +20,11 @@ describe('useCarousel', () => {
     const handleLogLength = useCallback(
       // eslint-disable-next-line no-console
       () => console.log(`Carousel length: ${carouselRef.current.length}`),
-      [carouselRef]
+      [carouselRef],
     );
     const handleScrollTo = useCallback(
       () => carouselRef.current.scrollToId(scrollToValue),
-      [carouselRef]
+      [carouselRef],
     );
     const handleScrollToEnd = useCallback(() => carouselRef.current.scrollToEnd(), [carouselRef]);
     const items = useMemo(
@@ -33,7 +33,7 @@ describe('useCarousel', () => {
           // eslint-disable-next-line react/no-array-index-key
           <Box key={`carousel-item-${i}`} height={200} width={200} />
         )),
-      [length]
+      [length],
     );
 
     return (

@@ -11,7 +11,7 @@ describe('ContentCell', () => {
     render(<ContentCell meta="Meta" />);
 
     expect(spy).toHaveBeenCalledWith(
-      'ContentCell: Cannot use `meta` without a `title` or `subtitle`.'
+      'ContentCell: Cannot use `meta` without a `title` or `subtitle`.',
     );
 
     spy.mockRestore();
@@ -25,7 +25,7 @@ describe('ContentCell', () => {
             <Text>Title</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('title')).not.toBeNull();
@@ -39,7 +39,7 @@ describe('ContentCell', () => {
             <Text>Subtitle</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('subtitle')).not.toBeNull();
@@ -53,7 +53,7 @@ describe('ContentCell', () => {
             <Text>Description</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('description')).not.toBeNull();
@@ -68,7 +68,7 @@ describe('ContentCell', () => {
             <Text>Meta</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('meta')).not.toBeNull();
@@ -76,7 +76,7 @@ describe('ContentCell', () => {
 
   it('renders media', () => {
     const result = render(
-      <ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />
+      <ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />,
     );
 
     expect(result.queryByTestId('media')).not.toBeNull();

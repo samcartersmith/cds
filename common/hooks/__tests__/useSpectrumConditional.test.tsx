@@ -12,7 +12,7 @@ describe('useSpectrumConditional', () => {
           dark: 'value for dark spectrum',
         });
       },
-      { wrapper: SystemProvider }
+      { wrapper: SystemProvider },
     );
 
     expect(result.current).toBe('value for light spectrum');

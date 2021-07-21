@@ -46,12 +46,12 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     testID,
     ...htmlProps
   }: ControlInternalProps<T>,
-  ref: React.ForwardedRef<HTMLInputElement>
+  ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   if (isDevelopment() && !children && !ariaLabelledby) {
     // eslint-disable-next-line no-console
     console.warn(
-      `Please provide an aria label for the control component ${value} either through the children or aria-labelledby prop.`
+      `Please provide an aria label for the control component ${value} either through the children or aria-labelledby prop.`,
     );
   }
   const internalInputRef = useRef<HTMLInputElement>();
@@ -116,7 +116,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     iconNode
   );
 }) as <T extends string>(
-  props: ControlInternalProps<T> & React.RefAttributes<HTMLInputElement>
+  props: ControlInternalProps<T> & React.RefAttributes<HTMLInputElement>,
 ) => React.ReactElement;
 
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &

@@ -66,7 +66,7 @@ export const Fallback = memo(function Fallback({
       paletteValueToRgbaString(['gray60', 0], spectrum),
       paletteValueToRgbaString(['gray60', 0.1], spectrum),
     ],
-    [spectrum]
+    [spectrum],
   );
 
   const containerStyle: ViewStyle = useMemo(
@@ -77,12 +77,12 @@ export const Fallback = memo(function Fallback({
       backgroundColor: colorShimmer[0],
       borderRadius,
     }),
-    [colorShimmer, height, borderRadius, width]
+    [colorShimmer, height, borderRadius, width],
   );
 
   const outputRange = useMemo(
     () => (typeof width === 'number' ? [-width, width] : [-400, 400]),
-    [width]
+    [width],
   );
 
   return (

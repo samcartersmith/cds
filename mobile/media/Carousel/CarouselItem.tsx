@@ -37,7 +37,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
       (event: LayoutChangeEvent) => {
         updateLayoutMap({ [id]: event.nativeEvent.layout.x });
       },
-      [id, updateLayoutMap]
+      [id, updateLayoutMap],
     );
 
     const updateSizing = useCallback((event: LayoutChangeEvent) => {
@@ -62,7 +62,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
           onInnerLayoutCompleted.current = true;
         }
       },
-      [prevSpacingEnd, spacingEnd, updateSizing, width]
+      [prevSpacingEnd, spacingEnd, updateSizing, width],
     );
 
     /** Maps the width of this component (once available) to an Animated.Value. */
@@ -89,7 +89,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
           callbackFn,
         });
       },
-      [dismiss, id]
+      [dismiss, id],
     );
 
     const contextValue = useMemo(() => ({ dismiss: handleDismiss, id }), [handleDismiss, id]);
@@ -115,7 +115,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
         </Box>
       </CarouselItemContext.Provider>
     );
-  }
+  },
 );
 
 CarouselItem.displayName = 'CarouselItem';

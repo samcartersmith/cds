@@ -24,7 +24,7 @@ export const useAccessibleForeground = (
   /** Where the foreground color is being applied. */
   usage: A11yColorUsage,
   /** Function to transform a paletteValue (blue60 or [blue60, 1]) into a valid color value. */
-  transformFn: (value: SpectrumAlias) => string
+  transformFn: (value: SpectrumAlias) => string,
 ) => {
   return useMemo(() => {
     if (isAccessibleColor(background, foreground, usage)) {

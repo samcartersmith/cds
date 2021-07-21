@@ -25,7 +25,7 @@ export type GroupToggleState<T extends string> = {
 
 export const useGroupToggler = <T extends string>(
   values: T[],
-  initialState?: T[]
+  initialState?: T[],
 ): [Set<T>, GroupToggleState<T>] => {
   // The function inside useState will still run on every render.
   // This makes sure that we are not creating new Sets on every render
@@ -55,7 +55,7 @@ export const useGroupToggler = <T extends string>(
         return nextState;
       });
     },
-    [setState, values]
+    [setState, values],
   );
 
   const unselect = useCallback<(value?: T) => void>(
@@ -72,7 +72,7 @@ export const useGroupToggler = <T extends string>(
         return nextState;
       });
     },
-    [setState]
+    [setState],
   );
 
   const toggle = useCallback<(value?: T) => void>(
@@ -108,7 +108,7 @@ export const useGroupToggler = <T extends string>(
         return nextState;
       });
     },
-    [setState, values]
+    [setState, values],
   );
 
   const isAllSelected = useMemo(() => {

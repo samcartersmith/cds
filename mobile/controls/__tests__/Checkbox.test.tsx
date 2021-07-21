@@ -58,7 +58,7 @@ describe('Checkbox', () => {
     const result = render(
       <Checkbox disabled onChange={spy}>
         Checkbox
-      </Checkbox>
+      </Checkbox>,
     );
 
     fireEvent.press(result.getByText('Checkbox'));

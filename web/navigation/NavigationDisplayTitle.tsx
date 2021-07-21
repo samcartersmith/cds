@@ -24,7 +24,7 @@ export const NavigationDisplayTitle = memo(
         )}
       </Box>
     );
-  }
+  },
 );
 
 NavigationDisplayTitle.displayName = 'NavigationDisplayTitle';

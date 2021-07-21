@@ -26,7 +26,7 @@ export const useThemeProviderStyles = () => {
         className: cx(scaleCss[scale], spectrumCss[spectrum]),
         style: palette as React.CSSProperties,
       } as const),
-    [palette, scale, spectrum]
+    [palette, scale, spectrum],
   );
 };
 

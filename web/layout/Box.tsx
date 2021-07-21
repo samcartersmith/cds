@@ -199,7 +199,7 @@ export const BoxInner = forwardRef(
             offsetVertical,
           }),
           usePinStyles(pin),
-          dangerouslySetClassName
+          dangerouslySetClassName,
         ),
         role,
         style: {
@@ -222,15 +222,15 @@ export const BoxInner = forwardRef(
           ...elevationStyles,
         },
       },
-      <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+      <ElevationChildrenProvider>{children}</ElevationChildrenProvider>,
     );
-  }
+  },
 );
 
 export const Box = forwardRef(
   <As extends BoxElement = 'div'>(
     { children, ...props }: BoxProps<As>,
-    forwardedRef: ForwardedRef<HTMLElement>
+    forwardedRef: ForwardedRef<HTMLElement>,
   ) => {
     return (
       <ElevationProvider elevation={props?.elevation}>
@@ -239,7 +239,7 @@ export const Box = forwardRef(
         </BoxInner>
       </ElevationProvider>
     );
-  }
+  },
 );
 
 Box.displayName = 'Box';

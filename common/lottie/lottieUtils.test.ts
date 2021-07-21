@@ -19,7 +19,7 @@ describe('lottieUtils', () => {
             cm: 'marker1',
           },
         ],
-      } as LottieSource)
+      } as LottieSource),
     ).toEqual({
       marker1: 10,
     });

@@ -19,6 +19,6 @@ export function getLottieMarkers<T extends LottieSource>(source: T) {
       ...prev,
       [`${next.cm}`]: next.tm,
     }),
-    {} as LottieMarkersAsMap<T>
+    {} as LottieMarkersAsMap<T>,
   );
 }

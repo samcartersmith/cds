@@ -59,7 +59,7 @@ export const calculateMinFontSize = (
   options = {
     degree: 0.2,
     distanceInInches: 12,
-  }
+  },
 ) => {
   // degree in visual arch. (.2 is the minimum)
   // 12 inches is about normal for users

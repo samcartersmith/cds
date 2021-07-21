@@ -75,7 +75,7 @@ export const Link = memo(
           });
         }
       },
-      [openUrl, to, onPress, forceOpenOutsideApp, preventRedirectionIntoApp, readerMode]
+      [openUrl, to, onPress, forceOpenOutsideApp, preventRedirectionIntoApp, readerMode],
     );
 
     const TextComponent = TYPOGRAPHY_MAP[variant];
@@ -91,7 +91,7 @@ export const Link = memo(
         {children}
       </TextComponent>
     );
-  }
+  },
 );
 
 Link.displayName = 'Link';

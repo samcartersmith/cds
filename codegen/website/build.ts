@@ -85,7 +85,7 @@ const prepareSidebarConfig = (docgenData: ComponentDocgenResponse[]) => {
   const tuple = Object.entries(groupBy(docgenData, 'subDir'));
   const flatten = (
     prev: SidebarCategory[],
-    [subDir, files]: [string, ComponentDocgenResponse[]]
+    [subDir, files]: [string, ComponentDocgenResponse[]],
   ) => {
     const formatFiles = ({ filePath }: ComponentDocgenResponse) => {
       const displayName = getDisplayName(filePath);
@@ -120,7 +120,7 @@ const getTemplates = async ({ subDir, displayName }: ComponentDocgenResponse) =>
 
 const flattenTemplatesMap = (
   prev: AnyObject,
-  { displayName, subDir, files }: FlattenTemplatesMapResponse
+  { displayName, subDir, files }: FlattenTemplatesMapResponse,
 ) => {
   const flattenMap = (prevMap: AnyObject, nextFile: string) => {
     const nameWithoutExt = getDisplayName(nextFile);
@@ -138,7 +138,7 @@ const flattenTemplatesMap = (
       web: getDocgenForPlatform('web'),
       mobile: getDocgenForPlatform('mobile'),
     }),
-    []
+    [],
   );
 
   const components = docgenData.filter(excludeSimpleFiles);

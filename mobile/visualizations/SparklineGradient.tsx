@@ -40,7 +40,7 @@ export const SparklineGradient = memo(
         />
       </Svg>
     );
-  })
+  }),
 );
 
 SparklineGradient.displayName = 'SparklineGradient';

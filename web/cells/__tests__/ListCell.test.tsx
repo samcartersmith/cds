@@ -9,8 +9,8 @@ describe('ListCell', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <ListCell title="Title" description="Description" detail="Detail" subdetail="Subdetail" />
-      )
+        <ListCell title="Title" description="Description" detail="Detail" subdetail="Subdetail" />,
+      ),
     ).toHaveNoViolations();
   });
 
@@ -22,7 +22,7 @@ describe('ListCell', () => {
 
   it('renders a description', () => {
     const result = render(
-      <ListCell description={<div data-testid="description">Description</div>} />
+      <ListCell description={<div data-testid="description">Description</div>} />,
     );
 
     expect(result.queryByTestId('description')).not.toBeNull();
@@ -36,7 +36,7 @@ describe('ListCell', () => {
 
   it('renders a subdetail', () => {
     const result = render(
-      <ListCell title="Title" subdetail={<div data-testid="subdetail">Subdetail</div>} />
+      <ListCell title="Title" subdetail={<div data-testid="subdetail">Subdetail</div>} />,
     );
 
     expect(result.queryByTestId('subdetail')).not.toBeNull();

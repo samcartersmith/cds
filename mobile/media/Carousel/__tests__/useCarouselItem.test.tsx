@@ -34,7 +34,7 @@ describe('useCarouselItem', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation();
     renderHook(() => useCarouselItem());
     expect(spy).toHaveBeenCalledWith(
-      'useCarouselItem: Cannot use `useCarouselItem` outside of Carousel component.'
+      'useCarouselItem: Cannot use `useCarouselItem` outside of Carousel component.',
     );
     spy.mockRestore();
   });
@@ -79,7 +79,7 @@ describe('useCarouselItem', () => {
     const result = render(
       <CarouselItemContext.Provider value={{ id: 'item1', dismiss: dismissSpy }}>
         <ChildWithPressable />
-      </CarouselItemContext.Provider>
+      </CarouselItemContext.Provider>,
     );
     fireEvent.press(result.getByTestId('DismissButton'));
     expect(dismissSpy).toHaveBeenCalled();

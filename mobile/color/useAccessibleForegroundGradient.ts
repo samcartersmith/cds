@@ -12,7 +12,7 @@ import { useAccessibleForeground } from './useAccessibleForeground';
 
 export const useAccessibleForegroundGradient = (
   /** Any valid color (hex, rgb, rgba). */
-  color: string
+  color: string,
 ): [string, string] => {
   const spectrum = useSpectrum();
   const { background } = usePalette();

@@ -35,7 +35,7 @@ export const StoryMap = {
 // If we need a more robust mock we can look into something like storybook-react-router.
 const MockLink = forwardRef<HTMLAnchorElement, NavigationListItemLinkProps>(function MockLink(
   { children, to, ...props },
-  ref
+  ref,
 ) {
   return (
     <a {...props} href={String(to)} ref={ref}>
@@ -163,7 +163,7 @@ export const TabsNoTitle: React.FC = () => {
         <TabItem label="Vault" />
       </Tabs>
     ),
-    []
+    [],
   );
 
   const navbar = useMemo(() => {
@@ -385,7 +385,7 @@ export const TabsAndDisplayTitle: React.FC = () => {
         <TabItem label="Vault" />
       </Tabs>
     ),
-    []
+    [],
   );
 
   const navbar = useMemo(() => {
@@ -508,7 +508,7 @@ export const SidebarCollapsed: React.FC = () => {
         <TabItem label="Vault" />
       </Tabs>
     ),
-    []
+    [],
   );
 
   const navbar = useMemo(() => {
@@ -597,7 +597,7 @@ export const SidebarWithSections: React.FC = () => {
         <TabItem label="Vault" />
       </Tabs>
     ),
-    []
+    [],
   );
 
   const navbar = useMemo(() => {

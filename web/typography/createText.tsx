@@ -81,7 +81,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
           transform,
         }),
         spacingStyles,
-        dangerouslySetClassName
+        dangerouslySetClassName,
       ),
     });
   };

@@ -12,8 +12,8 @@ describe('Link', () => {
       await renderA11y(
         <Link variant="body" to="/">
           Child
-        </Link>
-      )
+        </Link>,
+      ),
     ).toHaveNoViolations();
   });
 
@@ -22,7 +22,7 @@ describe('Link', () => {
     const { container } = render(
       <Link variant="body" to="/" accessibilityLabel={accessibilityLabel}>
         Child
-      </Link>
+      </Link>,
     );
     expect(container.querySelector('a')).toHaveAttribute('aria-label', accessibilityLabel);
   });
@@ -31,7 +31,7 @@ describe('Link', () => {
     const { container } = render(
       <Link variant="body" to="/">
         Child
-      </Link>
+      </Link>,
     );
     expect(container.querySelector('a')).toBeTruthy();
     expect(container.querySelector('button')).toBeFalsy();
@@ -42,7 +42,7 @@ describe('Link', () => {
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
       <Link variant="body" onPress={handlePress}>
         Child
-      </Link>
+      </Link>,
     );
     expect(container.querySelector('a')).toBeFalsy();
     expect(container.querySelector('button')).toBeTruthy();
@@ -52,7 +52,7 @@ describe('Link', () => {
     const { getByTestId } = render(
       <Link variant="body" to="/" openInNewWindow testID={testID}>
         Child
-      </Link>
+      </Link>,
     );
     expect(getByTestId(testID)).toHaveAttribute('target', '_blank');
   });
@@ -61,7 +61,7 @@ describe('Link', () => {
     const { getByTestId } = render(
       <Link variant="body" to="/" openInNewWindow={false} testID={testID}>
         Child
-      </Link>
+      </Link>,
     );
     expect(getByTestId(testID)).not.toHaveAttribute('target');
   });
@@ -71,7 +71,7 @@ describe('Link', () => {
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
       <Link variant="body" openInNewWindow testID={testID}>
         Child
-      </Link>
+      </Link>,
     );
     expect(getByTestId(testID)).not.toHaveAttribute('target');
     expect(getByTestId(testID)).not.toHaveAttribute('rel');
@@ -82,7 +82,7 @@ describe('Link', () => {
     const { getByTestId } = render(
       <Link variant="body" to="https://www.coinbase.com/" openInNewWindow testID={testID}>
         Child
-      </Link>
+      </Link>,
     );
     expect(getByTestId(testID)).toHaveAttribute('rel', 'noopener noreferrer');
   });
@@ -91,7 +91,7 @@ describe('Link', () => {
     const { getByTestId } = render(
       <Link variant="body" to="https://www.coinbase.com/" rel="noopener" testID={testID}>
         Child
-      </Link>
+      </Link>,
     );
     expect(getByTestId(testID)).toHaveAttribute('rel', 'noopener');
   });
@@ -100,7 +100,7 @@ describe('Link', () => {
     const { getByTestId } = render(
       <Link variant="body" to="https://www.coinbase.com/" rel="noreferrer" testID={testID}>
         Child
-      </Link>
+      </Link>,
     );
     expect(getByTestId(testID)).toHaveAttribute('rel', 'noreferrer');
   });
@@ -110,7 +110,7 @@ describe('Link', () => {
     const { getByTestId } = render(
       <Link variant="body" to={url} testID={testID}>
         Child
-      </Link>
+      </Link>,
     );
     expect(getByTestId(testID)).toHaveAttribute('href', url);
   });

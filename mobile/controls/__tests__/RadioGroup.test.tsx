@@ -58,7 +58,7 @@ describe('Radio', () => {
     const result = render(
       <Radio disabled onChange={spy}>
         Radio
-      </Radio>
+      </Radio>,
     );
 
     fireEvent.press(result.getByText('Radio'));

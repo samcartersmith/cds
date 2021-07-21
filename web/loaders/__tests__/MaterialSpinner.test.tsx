@@ -11,19 +11,19 @@ describe('MaterialSpinner', () => {
 
   it('size and color are correctly set', async () => {
     const { getByTestId } = render(
-      <MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />
+      <MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />,
     );
 
     expect(getByTestId('material-spinner-svg')).toHaveAttribute('height', `${60}px`);
     expect(getByTestId('material-spinner-svg')).toHaveAttribute(
       'style',
-      `stroke: ${usePalette().primary};`
+      `stroke: ${usePalette().primary};`,
     );
   });
 
   it('should render with a svg element', () => {
     const { queryByTestId } = render(
-      <MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />
+      <MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />,
     );
     expect(queryByTestId('material-spinner-svg')).toBeTruthy();
   });

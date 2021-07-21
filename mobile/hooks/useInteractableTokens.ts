@@ -73,13 +73,13 @@ const useOverlayOpacities = (hueStep: SpectrumHueStep) => {
       disabled: opacityDisabled,
       pressed: opacityPressed[hueStep],
     }),
-    [hueStep]
+    [hueStep],
   );
 };
 
 const useContentOpacity = (
   overlayOpacities: OverlayOpacities,
-  interactableState?: InteractableState
+  interactableState?: InteractableState,
 ) => {
   return useMemo(() => {
     if (!interactableState) return 1;
@@ -91,7 +91,7 @@ const useContentOpacity = (
 const useBlendedColors = (
   overlayOpacities: OverlayOpacities,
   overlayHueStep: SpectrumHueStep,
-  overlaySpectrumAlias: SpectrumAlias
+  overlaySpectrumAlias: SpectrumAlias,
 ) => {
   const overlayColors = useOverlayColors(overlayOpacities, overlaySpectrumAlias);
   const underlayColors = useUnderlayColors(overlayHueStep > 60 ? 'background' : 'foreground');
@@ -105,7 +105,7 @@ const useBlendedColors = (
 
 const useOverlayColors = (
   overlayOpacities: OverlayOpacities,
-  overlaySpectrumAlias: SpectrumAlias
+  overlaySpectrumAlias: SpectrumAlias,
 ) => {
   const spectrum = useSpectrum();
   return useMemo(() => {

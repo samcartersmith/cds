@@ -50,7 +50,7 @@ async function newPackage() {
       await fs.writeFile(targetPath, source, 'utf8');
 
       console.log(`Copied ${file}`);
-    })
+    }),
   );
 
   console.log(chalk.green('New package created!'));

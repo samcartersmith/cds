@@ -44,7 +44,7 @@ export class Codemod {
 
   getComponentNameFromImportPath(
     importPath: string | RegExp,
-    namesToFind: string[] = []
+    namesToFind: string[] = [],
   ): string[] {
     const names: string[] = [];
 

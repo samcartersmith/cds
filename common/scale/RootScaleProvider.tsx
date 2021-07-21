@@ -17,7 +17,7 @@ export const RootScaleProvider: React.FC<RootScaleProviderProps> = memo(({ child
   if (process.env.NODE_ENV !== 'production' && context) {
     // eslint-disable-next-line no-console
     console.error(
-      'Multiple RootScaleProviders were rendered and there should only be one. Ensure there is a single RootScaleProvider to resolve.'
+      'Multiple RootScaleProviders were rendered and there should only be one. Ensure there is a single RootScaleProvider to resolve.',
     );
   }
 

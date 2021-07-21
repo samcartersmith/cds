@@ -25,7 +25,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     testID,
     ...restProps
   }: CheckboxGroupProps<T>,
-  ref: React.ForwardedRef<View>
+  ref: React.ForwardedRef<View>,
 ) {
   if (isDevelopment() && !label && !accessibilityLabel) {
     // eslint-disable-next-line no-console
@@ -59,7 +59,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   );
   // Make forwardRef result function stay generic function type
 }) as <T extends string>(
-  props: CheckboxGroupProps<T> & React.RefAttributes<View>
+  props: CheckboxGroupProps<T> & React.RefAttributes<View>,
 ) => React.ReactElement;
 
 // Make memoized function stay generic function type

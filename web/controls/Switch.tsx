@@ -18,7 +18,7 @@ export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>
 
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
   { children, checked, ...props },
-  ref
+  ref,
 ) {
   // Switch thumb is a special case where it should always be white.
   const thumbColor = useSpectrumConditional({
@@ -44,7 +44,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
             round,
             // TODO (hannah): Once elevation design is ready, revisit this.
             level1,
-            thumbColor
+            thumbColor,
           )}
         />
       </div>

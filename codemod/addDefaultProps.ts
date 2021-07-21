@@ -9,7 +9,7 @@ const propPrefix = process.env.PROP_PREFIX;
 
 if (!importPath && !componentName) {
   throw new Error(
-    'Either IMPORT_PATH or COMPONENT_NAME is required for the component you would like to migrate.'
+    'Either IMPORT_PATH or COMPONENT_NAME is required for the component you would like to migrate.',
   );
 }
 
@@ -35,7 +35,7 @@ const getPropType = (cs: core.JSCodeshift, value: unknown) => {
 export default function addDefaultProps(
   fileInfo: FileInfo,
   api: API,
-  options: Options
+  options: Options,
 ): string | null | undefined | void {
   const mod = new Codemod(fileInfo, api);
 
@@ -64,7 +64,7 @@ export default function addDefaultProps(
       attr =>
         attr.type === 'JSXAttribute' &&
         attr.name.type === 'JSXIdentifier' &&
-        attr.name.name.startsWith(propPrefix as string) // ex. 'spacing'
+        attr.name.name.startsWith(propPrefix as string), // ex. 'spacing'
     );
 
     // Add default spacing props if no spacing props are applied
@@ -72,7 +72,7 @@ export default function addDefaultProps(
       // To check the source code string console.log(mod.toSource(options).slice(el.openingElement.start, el.openingElement.end));
       Object.entries(propsToAdd).forEach(([name, value]) => {
         el.openingElement.attributes.unshift(
-          mod.createNode(cs => cs.jsxAttribute(cs.jsxIdentifier(name), getPropType(cs, value)))
+          mod.createNode(cs => cs.jsxAttribute(cs.jsxIdentifier(name), getPropType(cs, value))),
         );
       });
     }

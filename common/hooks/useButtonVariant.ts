@@ -66,10 +66,10 @@ const transparentVariants: Record<ButtonVariant, ButtonVariantStyles> = {
 
 export const useButtonVariant = (
   variant: ButtonVariant,
-  transparent?: boolean
+  transparent?: boolean,
 ): ButtonVariantStyles => {
   return useMemo(
     () => (transparent ? transparentVariants : variants)[variant],
-    [variant, transparent]
+    [variant, transparent],
   );
 };

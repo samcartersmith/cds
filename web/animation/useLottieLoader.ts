@@ -59,7 +59,7 @@ export const useLottieLoader = <Marker extends string, Source extends LottieSour
 
       setAnimationLoaded(!!animationRef.current);
     },
-    [autoplay, preserveAspectRatio, source, sourceHeight, sourceWidth]
+    [autoplay, preserveAspectRatio, source, sourceHeight, sourceWidth],
   );
 
   /**

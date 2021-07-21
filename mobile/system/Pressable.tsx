@@ -97,7 +97,7 @@ export const Pressable = memo(function Pressable({
         }
       }
     },
-    [feedback, onPress, disableDebounce]
+    [feedback, onPress, disableDebounce],
   );
 
   const handlePressIn = useCallback(
@@ -106,7 +106,7 @@ export const Pressable = memo(function Pressable({
       pressIn(event);
       onPressIn?.(event);
     },
-    [pressIn, onPressIn]
+    [pressIn, onPressIn],
   );
 
   const handlePressOut = useCallback(
@@ -115,7 +115,7 @@ export const Pressable = memo(function Pressable({
       pressOut(event);
       onPressOut?.(event);
     },
-    [pressOut, onPressOut]
+    [pressOut, onPressOut],
   );
 
   return (

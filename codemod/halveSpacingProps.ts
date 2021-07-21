@@ -42,7 +42,7 @@ function convertNumericValue(
     | ConditionalExpression
     | TSAsExpression
     | JSXExpressionContainer
-    | Identifier
+    | Identifier,
 ) {
   if (!node) return;
 
@@ -79,7 +79,7 @@ function convertNumericValue(
 export default function halveSpacingProps(
   fileInfo: FileInfo,
   api: API,
-  options: Options
+  options: Options,
 ): string | null | undefined | void {
   const mod = new Codemod(fileInfo, api);
 
@@ -108,7 +108,7 @@ export default function halveSpacingProps(
       console.error(
         `Failed to convert prop "${(node.name as JSXIdentifier).name}" for component "${
           (parentNode.name as JSXIdentifier).name
-        }" in "${mod.fileInfo.path}". ${error.message}`
+        }" in "${mod.fileInfo.path}". ${error.message}`,
       );
     }
   });

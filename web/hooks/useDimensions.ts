@@ -118,7 +118,7 @@ export const useDimensions = <T extends HTMLElement>({
         observerRef.current.observe(ref.current as HTMLElement);
       }
     },
-    [ref]
+    [ref],
   );
 
   const unobserve = useCallback(() => {

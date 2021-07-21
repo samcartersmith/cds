@@ -16,7 +16,7 @@ describe('Tooltip', () => {
 
           return waitFor(() => getByRole('tooltip'));
         },
-      })
+      }),
     ).toHaveNoViolations();
   });
 

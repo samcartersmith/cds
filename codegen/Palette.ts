@@ -99,7 +99,7 @@ export const Palette = {
     aliases.forEach(item => {
       if (!paletteAliases.includes(item)) {
         throw new Error(
-          `The palette alias, ${item}, was added but neither paletteForegrounds, paletteBackgrounds or paletteBorders was updated to include it.`
+          `The palette alias, ${item}, was added but neither paletteForegrounds, paletteBackgrounds or paletteBorders was updated to include it.`,
         );
       }
     });

@@ -27,7 +27,7 @@ describe('useRootScaleUpdater', () => {
         },
         {
           wrapper: RootScaleProvider,
-        }
+        },
       );
       expect(result.current).toBe(scale);
     }

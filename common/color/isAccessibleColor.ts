@@ -10,7 +10,7 @@ import { getContrastRatio } from './getContrastRatio';
 export const isAccessibleColor = (
   background: string,
   foreground: string,
-  usage: A11yColorUsage
+  usage: A11yColorUsage,
 ) => {
   const ratio = getContrastRatio(background, foreground);
   switch (usage) {

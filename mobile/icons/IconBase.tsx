@@ -64,12 +64,12 @@ export const IconBase = ({
       lineHeight: iconSize,
       color: finalColor,
     }),
-    [finalColor, iconSize]
+    [finalColor, iconSize],
   );
 
   const boxStyles = useMemo(
     () => [space, dangerouslySetStyle].filter(Boolean),
-    [dangerouslySetStyle, space]
+    [dangerouslySetStyle, space],
   );
 
   if (name in iconGlyphMap && iconSize in iconGlyphMap[name]) {

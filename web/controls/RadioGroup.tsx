@@ -16,7 +16,7 @@ export interface RadioProps<T extends string> extends ControlBaseProps<T>, Contr
 
 const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   { children, ...props }: RadioProps<T>,
-  ref: React.ForwardedRef<HTMLInputElement>
+  ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const { checked = false } = props;
   return (
@@ -34,7 +34,7 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
     </Control>
   );
 }) as <T extends string>(
-  props: RadioProps<T> & React.RefAttributes<HTMLInputElement>
+  props: RadioProps<T> & React.RefAttributes<HTMLInputElement>,
 ) => React.ReactElement;
 
 export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
@@ -45,7 +45,7 @@ export function useHandleRadioSelect<T extends string>(onChange?: (value: T) => 
     event => {
       onChange?.(event.target.value as T);
     },
-    [onChange]
+    [onChange],
   );
 }
 
@@ -63,7 +63,7 @@ export interface RadioGroupProps<T extends string>
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   { label, selectedValue, onChange, options, name, testID, ...restProps }: RadioGroupProps<T>,
-  ref: React.ForwardedRef<HTMLDivElement>
+  ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   const handleSelect = useHandleRadioSelect<T>(onChange);
 
@@ -86,7 +86,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     </div>
   );
 }) as <T extends string>(
-  props: RadioGroupProps<T> & React.RefAttributes<HTMLInputElement>
+  props: RadioGroupProps<T> & React.RefAttributes<HTMLInputElement>,
 ) => React.ReactElement;
 
 export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &

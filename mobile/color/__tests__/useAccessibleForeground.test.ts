@@ -13,15 +13,15 @@ const checkAllUsages = (colorToCheck: string, mode?: Spectrum | undefined) => {
       : {};
   const { result: normalText } = renderHook(
     () => useAccessibleForeground(colorToCheck, 'normalText'),
-    modeParams
+    modeParams,
   );
   const { result: largeText } = renderHook(
     () => useAccessibleForeground(colorToCheck, 'largeText'),
-    modeParams
+    modeParams,
   );
   const { result: graphic } = renderHook(
     () => useAccessibleForeground(colorToCheck, 'graphic'),
-    modeParams
+    modeParams,
   );
   return {
     normalText: normalText.current,

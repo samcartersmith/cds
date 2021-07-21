@@ -169,7 +169,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
         </section>
       </div>
     );
-  }
+  },
 );
 
 export const Navigation: React.FC<NavigationProps> = memo(
@@ -181,7 +181,7 @@ export const Navigation: React.FC<NavigationProps> = memo(
         </NavigationProvider>
       </MotionConfig>
     );
-  }
+  },
 );
 
 Navigation.displayName = 'Navigation';

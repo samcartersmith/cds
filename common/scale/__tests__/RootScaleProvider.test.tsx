@@ -45,7 +45,7 @@ describe('RootScaleProvider', () => {
             <ScaleProvider value="xSmall">{children}</ScaleProvider>
           </RootScaleProvider>
         ),
-      }
+      },
     );
     expect(result.current.rootScale).toBe('xxLarge');
     expect(result.current.scale).toBe('xSmall');
@@ -61,7 +61,7 @@ describe('RootScaleProvider', () => {
       ),
     });
     expect(spy).toHaveBeenCalledWith(
-      'Multiple RootScaleProviders were rendered and there should only be one. Ensure there is a single RootScaleProvider to resolve.'
+      'Multiple RootScaleProviders were rendered and there should only be one. Ensure there is a single RootScaleProvider to resolve.',
     );
     spy.mockRestore();
   });

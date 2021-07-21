@@ -36,7 +36,7 @@ export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children 
           },
         });
       }),
-    [currentIndex, children, onChange, updateHandler]
+    [currentIndex, children, onChange, updateHandler],
   );
 
   return (

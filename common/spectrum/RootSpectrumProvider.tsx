@@ -18,7 +18,7 @@ export const RootSpectrumProvider: React.FC<RootSpectrumProviderProps> = memo(
     if (process.env.NODE_ENV !== 'production' && context) {
       // eslint-disable-next-line no-console
       console.error(
-        'Multiple RootSpectrumProviders were rendered and there should only be one. Ensure there is a single RootSpectrumProvider to resolve.'
+        'Multiple RootSpectrumProviders were rendered and there should only be one. Ensure there is a single RootSpectrumProvider to resolve.',
       );
     }
 
@@ -29,7 +29,7 @@ export const RootSpectrumProvider: React.FC<RootSpectrumProviderProps> = memo(
         </RootSpectrumUpdaterContext.Provider>
       </RootSpectrumContext.Provider>
     );
-  }
+  },
 );
 
 RootSpectrumProvider.displayName = 'RootSpectrumProvider';

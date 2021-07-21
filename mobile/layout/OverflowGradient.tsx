@@ -24,7 +24,7 @@ export const OverflowGradient = memo(({ pin = 'right', testID }: OverflowGradien
       overrideAlpha(palette.background, 0),
       palette.background,
     ],
-    [palette.background]
+    [palette.background],
   );
 
   return (

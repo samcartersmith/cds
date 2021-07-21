@@ -21,7 +21,7 @@ const LottieContent = memo(
         source,
         ...boxProps
       }: LottieProps,
-      forwardedRef: LottieMobileRef
+      forwardedRef: LottieMobileRef,
     ) => {
       const aspectRatio = source.w / source.h;
       const lottieStyles = useMemo(
@@ -30,7 +30,7 @@ const LottieContent = memo(
           height: '100%',
           aspectRatio,
         }),
-        [aspectRatio]
+        [aspectRatio],
       );
 
       return (
@@ -49,15 +49,15 @@ const LottieContent = memo(
           />
         </Box>
       );
-    }
-  )
+    },
+  ),
 );
 
 export const Lottie = memo(
   forwardRef((props: LottieProps, forwardedRef: ForwardedRef<LottieView>) => {
     const colorFilters = useLottieColorFilters(props.source, props.colorFilters);
     return <LottieContent ref={forwardedRef} {...props} colorFilters={colorFilters} />;
-  })
+  }),
 );
 
 LottieContent.displayName = 'LottieContent';

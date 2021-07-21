@@ -9,7 +9,7 @@ describe('Box', () => {
     const result = render(
       <Box>
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     expect(result.UNSAFE_queryAllByType(View)).toHaveLength(1);
@@ -19,7 +19,7 @@ describe('Box', () => {
     const result = render(
       <Box animated>
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     expect(result.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
@@ -29,7 +29,7 @@ describe('Box', () => {
     const { getByTestId } = render(
       <Box testID="parent">
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -41,7 +41,7 @@ describe('Box', () => {
     const { getByTestId } = render(
       <Box testID="parent" background="backgroundAlternate">
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -56,7 +56,7 @@ describe('Box', () => {
       // eslint-disable-next-line react-native/no-color-literals
       <Box testID="parent" dangerouslySetStyle={{ backgroundColor: '#000' }}>
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -70,7 +70,7 @@ describe('Box', () => {
     const { getByTestId } = render(
       <Box testID="parent" bordered borderRadius="standard">
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -86,7 +86,7 @@ describe('Box', () => {
     const { getByTestId } = render(
       <Box testID="parent" elevation={1}>
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -102,7 +102,7 @@ describe('Box', () => {
     const { getByTestId } = render(
       <Box testID="parent" elevation={2}>
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -118,7 +118,7 @@ describe('Box', () => {
     const { getByTestId } = render(
       <Box testID="parent" width="321px" maxWidth={789} minWidth="66%">
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -134,7 +134,7 @@ describe('Box', () => {
     const { getByTestId } = render(
       <Box testID="parent" height="321px" maxHeight={789} minHeight="66%">
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -158,7 +158,7 @@ describe('Box', () => {
         zIndex={200}
       >
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -188,7 +188,7 @@ describe('Box', () => {
         justifyContent="space-evenly"
       >
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => getByTestId('parent'));
@@ -210,7 +210,7 @@ describe('Box', () => {
     const result = render(
       <Box testID="parent" overflow="gradient">
         <Text>Child</Text>
-      </Box>
+      </Box>,
     );
 
     await waitFor(() => result.getByTestId('parent'));
@@ -223,7 +223,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" spacing={1}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -240,7 +240,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" spacingHorizontal={1}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -255,7 +255,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" spacingVertical={1}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -270,7 +270,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" spacingStart={1} spacingEnd={2}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -285,7 +285,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" spacingTop={1} spacingBottom={2} spacingStart={3} spacingEnd={4}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -304,7 +304,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" offset={1}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -321,7 +321,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" offsetHorizontal={1}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -336,7 +336,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" offsetVertical={1}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -351,7 +351,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" offsetStart={1} offsetEnd={2}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -366,7 +366,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" offsetTop={1} offsetBottom={2} offsetStart={3} offsetEnd={4}>
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -385,7 +385,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" pin="top">
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -402,7 +402,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" pin="bottom">
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -419,7 +419,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" pin="right">
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -436,7 +436,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" pin="left">
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));
@@ -453,7 +453,7 @@ describe('Box', () => {
       const { getByTestId } = render(
         <Box testID="parent" pin="all">
           <Text>Child</Text>
-        </Box>
+        </Box>,
       );
 
       await waitFor(() => getByTestId('parent'));

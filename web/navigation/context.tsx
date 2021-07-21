@@ -39,11 +39,11 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = memo(
         sidebarLayout,
         setSidebarLayout,
       }),
-      [isMobileMenuVisible, sidebarLayout, toggleMobileMenuHidden, toggleMobileMenuVisibility]
+      [isMobileMenuVisible, sidebarLayout, toggleMobileMenuHidden, toggleMobileMenuVisibility],
     );
 
     return <NavigationContext.Provider value={value}>{children}</NavigationContext.Provider>;
-  }
+  },
 );
 
 export const useNavigation = () => {

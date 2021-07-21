@@ -18,17 +18,17 @@ function expectClassName<K extends keyof TextProps>(
   TextComponent: TextComponent,
   prop: K,
   values: NonNullable<TextProps[K]>[],
-  otherClasses?: string
+  otherClasses?: string,
 ) {
   values.forEach(value => {
     it(`${TextComponent.displayName} will set "${value}" class name for \`${prop}\` prop`, () => {
       const { container } = render(
         <TextComponent as="p" {...{ [prop]: value }}>
           Child
-        </TextComponent>
+        </TextComponent>,
       );
       expect(container.firstChild).toHaveClass(
-        otherClasses ? `${otherClasses} ${value}` : String(value)
+        otherClasses ? `${otherClasses} ${value}` : String(value),
       );
     });
   });
@@ -38,7 +38,7 @@ describe('Text', () => {
   textTestRunner(TextComponent =>
     it(`${TextComponent.displayName} passes accessibility`, async () => {
       expect(await renderA11y(<TextComponent as="span">Child</TextComponent>)).toHaveNoViolations();
-    })
+    }),
   );
 
   textTestRunner(TextComponent =>
@@ -67,7 +67,7 @@ describe('Text', () => {
 
         expect(container.querySelectorAll(tag)).toHaveLength(1);
       });
-    })
+    }),
   );
 
   it('can show tabular numbers', () => {
@@ -75,7 +75,7 @@ describe('Text', () => {
       const { container } = render(
         <TextComponent as="p" tabularNumbers>
           20.21
-        </TextComponent>
+        </TextComponent>,
       );
 
       expect(container.firstChild).toHaveClass('tabularNumbers');
@@ -87,7 +87,7 @@ describe('Text', () => {
       const { container } = render(
         <TextComponent as="p" slashedZero>
           YO2021Coinbase
-        </TextComponent>
+        </TextComponent>,
       );
 
       expect(container.firstChild).toHaveClass('slashedZero');
@@ -99,7 +99,7 @@ describe('Text', () => {
       const { container } = render(
         <TextComponent as="p" underline>
           Underline
-        </TextComponent>
+        </TextComponent>,
       );
 
       expect(container.firstChild).toHaveClass('underline');
@@ -111,7 +111,7 @@ describe('Text', () => {
       const { container } = render(
         <TextComponent as="p" noWrap>
           No Wrap
-        </TextComponent>
+        </TextComponent>,
       );
 
       expect(container.firstChild).toHaveClass('noWrap');

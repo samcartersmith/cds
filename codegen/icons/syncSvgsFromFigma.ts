@@ -73,8 +73,8 @@ const createCategorizedNameType = (): {
   const { nameSet, sizeMap } = createIconSet();
   const spinner = ora(
     `Synchronizing ${chalk.bold.blueBright('CDS Icons')} with figma file ${chalk.bold(
-      'ZPu9gtLB5KTkzazHcf9Sfi'
-    )}...`
+      'ZPu9gtLB5KTkzazHcf9Sfi',
+    )}...`,
   ).start();
   try {
     spinner.text = 'GET file node data from figma API.';
@@ -86,8 +86,8 @@ const createCategorizedNameType = (): {
     if (!iconsFileNode) {
       spinner.fail(
         `${chalk.redBright(
-          'error'
-        )} No icon components found at node id ${NODE_ID}. Please verify that the figma file or figma APIs haven't changed.`
+          'error',
+        )} No icon components found at node id ${NODE_ID}. Please verify that the figma file or figma APIs haven't changed.`,
       );
       return;
     }
@@ -148,7 +148,7 @@ const createCategorizedNameType = (): {
         const fileName = `${unicode}-${name}-${size}.svg`;
         if (sizeMap[size][name]) {
           writePromises.push(
-            writeFile(path.join(OUT_DIR, fileName), sizeMap[size][name] as string)
+            writeFile(path.join(OUT_DIR, fileName), sizeMap[size][name] as string),
           );
         } else {
           throw new Error(`Please update manifest to remove or rename ${name}`);
@@ -179,7 +179,7 @@ const createCategorizedNameType = (): {
         data: {
           types: renameKeys(toCategoryArrMap, newTypeNamesMap('pascalCase')),
         },
-      })
+      }),
     );
 
     delete toCategoryArrMap.NavigationIconInternal;
@@ -211,14 +211,14 @@ const createCategorizedNameType = (): {
         data: { manifest: { lastUnicode, unicodeMap } },
         config: { disableAsConst: true },
         dest: 'codegen/icons/manifest.ts',
-      })
+      }),
     );
 
     writePromises.push(
       writeFile(
         await getSourcePath('codegen/icons/iconsManifest.json'),
-        JSON.stringify(iconComponents, null, 2)
-      )
+        JSON.stringify(iconComponents, null, 2),
+      ),
     );
 
     await Promise.all(writePromises);
@@ -226,7 +226,7 @@ const createCategorizedNameType = (): {
     spinner.succeed(
       `${chalk.greenBright('success')} Downloaded CDS ${
         Object.keys(iconComponents).length
-      } icons to ${OUT_DIR}.`
+      } icons to ${OUT_DIR}.`,
     );
   } catch (error) {
     spinner.fail(`${chalk.redBright('failed')}`);

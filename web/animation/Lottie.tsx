@@ -30,7 +30,7 @@ export const Lottie = memo(
       }: LottieProps<Marker, Source>,
       // String wont work on literal unions, so use any here
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      forwardedRef: ForwardedRef<LottiePlayer<LottieSource<any>>>
+      forwardedRef: ForwardedRef<LottiePlayer<LottieSource<any>>>,
     ) => {
       const { containerRef, animationRef } = useLottieLoader({
         source,
@@ -46,10 +46,10 @@ export const Lottie = memo(
               startFrame ?? animationRef.current?.currentFrame,
               endFrame ?? animationRef.current?.totalFrames,
             ],
-            true
+            true,
           );
         },
-        [animationRef]
+        [animationRef],
       );
 
       const reset = useCallback(() => {
@@ -62,7 +62,7 @@ export const Lottie = memo(
           play,
           playMarkers: (
             startFrame: keyof LottieMarkersAsMap<Source>,
-            endFrame: keyof LottieMarkersAsMap<Source>
+            endFrame: keyof LottieMarkersAsMap<Source>,
           ) => {
             const markers = getLottieMarkers(source);
             if (markers) {
@@ -75,21 +75,21 @@ export const Lottie = memo(
           resume: play,
           reset,
         }),
-        [source, play, animationRef, reset]
+        [source, play, animationRef, reset],
       );
 
       const listeners = useLottieHandlers(
         onAnimationFinish
           ? { complete: onAnimationFinish, loopComplete: onAnimationFinish }
-          : handlers
+          : handlers,
       );
       useLottieListeners(animationRef, listeners);
 
       return (
         <Box as="div" ref={containerRef} dangerouslySetClassName={lottieStyles} {...otherProps} />
       );
-    }
-  )
+    },
+  ),
 );
 
 Lottie.displayName = 'Lottie';

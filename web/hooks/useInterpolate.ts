@@ -9,7 +9,7 @@ type UseInterpolateParams = {
 // Mimic the Animated.interpolate API for React Native
 export const useInterpolate = (
   value: MotionValue<number>,
-  { inputRange, outputRange, ...opts }: UseInterpolateParams
+  { inputRange, outputRange, ...opts }: UseInterpolateParams,
 ) => {
   return useTransform(value, inputRange, outputRange, opts);
 };

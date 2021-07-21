@@ -28,7 +28,7 @@ export const ButtonGroup = memo(function ButtonGroup({
       {Children.map(children, child =>
         child ? (
           <View style={block ? styles.button : undefined}>{cloneElement(child, { block })}</View>
-        ) : null
+        ) : null,
       )}
     </Stack>
   );

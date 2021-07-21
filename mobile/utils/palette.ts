@@ -34,10 +34,10 @@ export const paletteValueToRgbaString: PaletteValueToRgbaString = (paletteValue,
  */
 export const paletteConfigToRgbaStrings = (
   paletteConfig: PartialPaletteConfig,
-  spectrum: Spectrum
+  spectrum: Spectrum,
 ) => {
   return mapValues({ ...defaultPalette, ...paletteConfig }, paletteValue =>
-    paletteValueToRgbaString(paletteValue, spectrum)
+    paletteValueToRgbaString(paletteValue, spectrum),
   );
 };
 

@@ -44,7 +44,7 @@ export const Pressable = forwardRef(function Pressable(
     noScaleOnPress,
     ...props
   }: PressableInternalProps,
-  ref: React.Ref<Element>
+  ref: React.Ref<Element>,
 ) {
   return (
     <Interactable

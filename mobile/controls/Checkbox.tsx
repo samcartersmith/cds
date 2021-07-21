@@ -45,7 +45,7 @@ const CheckboxIcon: React.FC<ControlIconProps> = ({
 
 const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
   { children, ...props }: CheckboxProps<T>,
-  ref: React.ForwardedRef<View>
+  ref: React.ForwardedRef<View>,
 ) {
   return (
     <Control<T>

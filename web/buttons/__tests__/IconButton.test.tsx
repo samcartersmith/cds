@@ -8,7 +8,7 @@ describe('IconButton', () => {
 
   it('passes accessibility', async () => {
     expect(
-      await renderA11y(<IconButton name={name} accessibilityLabel={name} />)
+      await renderA11y(<IconButton name={name} accessibilityLabel={name} />),
     ).toHaveNoViolations();
   });
 
@@ -37,7 +37,7 @@ describe('IconButton', () => {
   it('fires `onPress` when clicked', () => {
     const spy = jest.fn();
     const { container } = render(
-      <IconButton onPress={spy} name={name} accessibilityLabel={name} />
+      <IconButton onPress={spy} name={name} accessibilityLabel={name} />,
     );
 
     fireEvent.click(container.querySelector('button') as HTMLButtonElement);
@@ -48,7 +48,7 @@ describe('IconButton', () => {
   it('doesnt pass `onPress` to button element', () => {
     const spy = jest.fn();
     const { container } = render(
-      <IconButton onPress={spy} name={name} accessibilityLabel={name} />
+      <IconButton onPress={spy} name={name} accessibilityLabel={name} />,
     );
 
     expect(container.querySelector('button')).not.toHaveAttribute('onPress');

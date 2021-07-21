@@ -8,7 +8,7 @@ function addImport(
   mod: Codemod,
   originalImportPath: ASTPath<ImportDeclaration>,
   bucket: string,
-  names: Set<string>
+  names: Set<string>,
 ) {
   if (names.size === 0) {
     return;
@@ -30,14 +30,14 @@ function addImport(
   });
 
   originalImportPath.insertAfter(
-    mod.createNode(cs => cs.importDeclaration(specs, cs.stringLiteral(path)))
+    mod.createNode(cs => cs.importDeclaration(specs, cs.stringLiteral(path))),
   );
 }
 
 export default function migrateToDeepImports(
   fileInfo: FileInfo,
   api: API,
-  options: Options
+  options: Options,
 ): string | null | undefined | void {
   const mod = new Codemod(fileInfo, api);
 

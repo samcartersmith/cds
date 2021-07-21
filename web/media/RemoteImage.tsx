@@ -76,7 +76,7 @@ export const RemoteImage = memo(function RemoteImage({
         borderRadius,
         '--image-aspect-ratio': aspectRatio ? aspectRatio.join(' / ') : undefined,
       } as const),
-    [aspectRatio, borderRadius]
+    [aspectRatio, borderRadius],
   );
 
   return (

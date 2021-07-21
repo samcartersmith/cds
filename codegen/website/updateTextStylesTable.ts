@@ -20,7 +20,7 @@ export const updateTextStylesTable = async () => {
     if (sectionStartIndex !== -1) {
       const updatedStylesTable = `${textStory.slice(
         0,
-        sectionStartIndex
+        sectionStartIndex,
       )}${tableStart}\n\n${typeStylesTable}\n${textStory.slice(sectionEndIndex, textStory.length)}`;
 
       writePrettyFile({
@@ -32,16 +32,16 @@ export const updateTextStylesTable = async () => {
       });
     } else {
       console.warn(
-        `${chalk.yellow('warn')} Could not find styles table section in typography.mdx to update.}`
+        `${chalk.yellow('warn')} Could not find styles table section in typography.mdx to update.}`,
       );
     }
   } else {
     console.warn(
       `${chalk.yellow(
-        'warn'
+        'warn',
       )} Doc typography.mdx has moved. Please update path in codegen script ${path.resolve(
-        __filename
-      )}.}`
+        __filename,
+      )}.}`,
     );
   }
 };

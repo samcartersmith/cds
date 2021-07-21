@@ -42,7 +42,7 @@ export const NavigationIcon = memo(
         {...props}
       />
     );
-  }
+  },
 );
 
 NavigationIcon.displayName = 'NavigationIcon';

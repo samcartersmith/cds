@@ -6,7 +6,7 @@ import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/inter
 import { PaletteAlias } from '../types';
 
 export const useInteractableTokens = (
-  overlayColor?: PaletteAlias | 'transparent'
+  overlayColor?: PaletteAlias | 'transparent',
 ): {
   disabledOpacity: number;
   underlayColor: PaletteAlias;
@@ -18,7 +18,7 @@ export const useInteractableTokens = (
     overlayColor && overlayColor !== 'transparent' ? palette[overlayColor] : '';
   const hueStep = useMemo(
     () => (overlayColorAlias ? paletteValueToHueStep(overlayColorAlias) : 60),
-    [overlayColorAlias]
+    [overlayColorAlias],
   );
 
   return {

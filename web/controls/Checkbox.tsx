@@ -13,7 +13,7 @@ export interface CheckboxProps<T extends string> extends ControlBaseProps<T>, Co
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   { children, ...props }: CheckboxProps<T>,
-  ref: React.ForwardedRef<HTMLInputElement>
+  ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const { checked } = props;
   return (
@@ -24,7 +24,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
     </Control>
   );
 }) as <T extends string>(
-  props: CheckboxProps<T> & React.RefAttributes<HTMLInputElement>
+  props: CheckboxProps<T> & React.RefAttributes<HTMLInputElement>,
 ) => React.ReactElement;
 
 export const Checkbox = memo(CheckboxWithRef) as typeof CheckboxWithRef &

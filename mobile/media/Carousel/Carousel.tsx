@@ -60,7 +60,7 @@ export const Carousel = memo(
         (id: CarouselItemId, params: ScrollToParams | undefined = emptyObject) => {
           scrollTo({ x: layoutMap[id], ...params });
         },
-        [layoutMap, scrollTo]
+        [layoutMap, scrollTo],
       );
       /** This object contains any internal data/methods of Carousel that we want to expose to consumers. */
       const publicData = useMemo(
@@ -71,7 +71,7 @@ export const Carousel = memo(
           scrollToId,
           scrollToEnd,
         }),
-        [childrenLength, dismissedItems, resetDismissedItems, scrollToId, scrollToEnd]
+        [childrenLength, dismissedItems, resetDismissedItems, scrollToId, scrollToEnd],
       );
       /** Guarantees that we have x coordinates for each CarouselItem before triggering onReady. */
       useEffect(() => {
@@ -110,7 +110,7 @@ export const Carousel = memo(
               </CarouselItem>
             );
           }),
-        [items, childrenLength, dismiss, dismissedItems, gap, updateLayoutMap]
+        [items, childrenLength, dismiss, dismissedItems, gap, updateLayoutMap],
       );
 
       return (
@@ -132,8 +132,8 @@ export const Carousel = memo(
           {content}
         </Animated.ScrollView>
       );
-    }
-  )
+    },
+  ),
 );
 
 const styles = StyleSheet.create({

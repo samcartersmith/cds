@@ -30,7 +30,7 @@ describe('useLottieColorFilters', () => {
 
   it('ensures the color values are mapped to hex version of palette colors', () => {
     expect(getPaletteColors(result).includes(colorToHex(mockPalette.foregroundMuted))).toEqual(
-      true
+      true,
     );
   });
 

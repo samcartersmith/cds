@@ -60,12 +60,12 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     children: ControlIcon,
     ...props
   }: ControlInternalProps<T>,
-  ref: React.ForwardedRef<View>
+  ref: React.ForwardedRef<View>,
 ) {
   if (isDevelopment() && !label && !accessibilityLabel) {
     // eslint-disable-next-line no-console
     console.warn(
-      `Please specify an accessibility label for the ${accessibilityRole} control with value ${value}.`
+      `Please specify an accessibility label for the ${accessibilityRole} control with value ${value}.`,
     );
   }
 
@@ -111,7 +111,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       height: bodyLineHeight,
       justifyContent: 'center',
     }),
-    [bodyLineHeight]
+    [bodyLineHeight],
   );
 
   return (
@@ -133,7 +133,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             handlePress();
           }
         },
-        [handlePress]
+        [handlePress],
       )}
       style={{
         flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
@@ -177,7 +177,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   );
   // Make forwardRef result function stay generic function type
 }) as <T extends string>(
-  props: ControlInternalProps<T> & React.RefAttributes<View>
+  props: ControlInternalProps<T> & React.RefAttributes<View>,
 ) => React.ReactElement;
 
 // Make memoized function stay generic function type

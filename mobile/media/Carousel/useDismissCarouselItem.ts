@@ -50,10 +50,10 @@ export const useDismissCarouselItem = (itemsLength: number, scrollTo: ScrollToFn
           isAnimating.current = false;
           setDismissedItems(prev => new Set(prev).add(id));
           callbackFn?.();
-        }
+        },
       );
     },
-    [isLastDismissableItem]
+    [isLastDismissableItem],
   );
 
   const contentOffset = useRef(0);
@@ -76,7 +76,7 @@ export const useDismissCarouselItem = (itemsLength: number, scrollTo: ScrollToFn
 
   const onLayout = useCallback(
     (event: LayoutChangeEvent) => setScrollViewSize(event.nativeEvent.layout.width),
-    []
+    [],
   );
   const onContentSizeChange = useCallback((width: number) => setContentWidth(width), []);
   const onScroll = useCallback((event: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -92,6 +92,6 @@ export const useDismissCarouselItem = (itemsLength: number, scrollTo: ScrollToFn
       onContentSizeChange,
       onScroll,
     }),
-    [dismiss, dismissedItems, resetDismissedItems, onLayout, onContentSizeChange, onScroll]
+    [dismiss, dismissedItems, resetDismissedItems, onLayout, onContentSizeChange, onScroll],
   );
 };

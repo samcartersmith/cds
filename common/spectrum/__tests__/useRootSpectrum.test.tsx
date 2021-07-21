@@ -27,7 +27,7 @@ describe('useRootSpectrum', () => {
     const { result } = renderHook(() => useRootSpectrum());
     expect(result.current).toBe('light');
     expect(spy).toHaveBeenCalledWith(
-      'Cannot use `useRootSpectrum` outside of RootSpectrumProvider'
+      'Cannot use `useRootSpectrum` outside of RootSpectrumProvider',
     );
     spy.mockRestore();
   });

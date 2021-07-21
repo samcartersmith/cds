@@ -47,7 +47,7 @@ describe('RootSpectrumProvider', () => {
             <SpectrumProvider value="light">{children}</SpectrumProvider>
           </RootSpectrumProvider>
         ),
-      }
+      },
     );
     expect(result.current.rootScale).toBe('dark');
     expect(result.current.scale).toBe('light');
@@ -63,7 +63,7 @@ describe('RootSpectrumProvider', () => {
       ),
     });
     expect(spy).toHaveBeenCalledWith(
-      'Multiple RootSpectrumProviders were rendered and there should only be one. Ensure there is a single RootSpectrumProvider to resolve.'
+      'Multiple RootSpectrumProviders were rendered and there should only be one. Ensure there is a single RootSpectrumProvider to resolve.',
     );
     spy.mockRestore();
   });

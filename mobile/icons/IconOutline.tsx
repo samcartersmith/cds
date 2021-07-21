@@ -23,7 +23,7 @@ export const IconOutline = ({ animated, size, color }: IconOutlineProps) => {
       textAlignVertical: 'center' as const,
       ...StyleSheet.absoluteFillObject,
     }),
-    [color, size]
+    [color, size],
   );
 
   const TextComponent = animated ? Animated.Text : Text;

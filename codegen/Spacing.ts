@@ -6,7 +6,7 @@ const escape = <T extends number>(input: T) => String(input).replace('.', '\\\\.
 
 // JSON.stringify in objectMap double escapes escaped strings so have to escape with only 2 backslashes
 const cssVariables = mapValues(arrayToObject(spacingScaleWithoutZero), (_, key) =>
-  toCssVarFn(`spacing-${key}`).replace('.', '\\.')
+  toCssVarFn(`spacing-${key}`).replace('.', '\\.'),
 );
 
 export const Spacing = {
@@ -25,11 +25,11 @@ export const Spacing = {
   },
   scaleCss: mapValues(spacingConfig, scaleFunc =>
     Object.fromEntries(
-      spacingScaleWithoutZero.map(size => [`--spacing-${escape(size)}`, `${scaleFunc(size)}px`])
-    )
+      spacingScaleWithoutZero.map(size => [`--spacing-${escape(size)}`, `${scaleFunc(size)}px`]),
+    ),
   ),
   mobile: mapValues(spacingConfig, scaleFunc =>
-    Object.fromEntries(spacingScaleWithoutZero.map(size => [size, scaleFunc(size)]))
+    Object.fromEntries(spacingScaleWithoutZero.map(size => [size, scaleFunc(size)])),
   ),
   cssVariables,
 };

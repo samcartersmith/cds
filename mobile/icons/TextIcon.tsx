@@ -31,7 +31,7 @@ export const TextIcon = ({
       fontSize: iconSize,
       color: iconColor,
     }),
-    [iconColor, iconSize]
+    [iconColor, iconSize],
   );
 
   if (name in iconGlyphMap && iconSize in iconGlyphMap[name]) {

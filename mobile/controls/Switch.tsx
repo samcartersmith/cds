@@ -42,7 +42,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
         height: switchHeight,
       },
     ],
-    [switchWidth, switchHeight]
+    [switchWidth, switchHeight],
   );
 
   const thumbStyle = useMemo(
@@ -62,7 +62,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
         elevationStyle,
       },
     ],
-    [animatedScaleValue, elevationStyle, switchThumbSize, switchWidth]
+    [animatedScaleValue, elevationStyle, switchThumbSize, switchWidth],
   );
 
   return (
@@ -89,7 +89,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
 
 const SwitchWithRef = forwardRef(function SwitchWithRef(
   { children, ...props }: SwitchProps,
-  ref: React.ForwardedRef<View>
+  ref: React.ForwardedRef<View>,
 ) {
   const cdsScale = useScale();
   const { switchHeight } = scaleStyles[cdsScale].control;

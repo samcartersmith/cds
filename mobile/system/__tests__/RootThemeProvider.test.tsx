@@ -15,7 +15,7 @@ const mockDeviceScale = (fontScale: number) => {
 describe('RootThemeProvider', () => {
   it('returns correct scale based on device font scale', () => {
     for (const [cdsScale, deviceFontScale] of entries(deviceScaleMap).filter(([scale]) =>
-      ['large', 'xLarge', 'xxLarge', 'xxxLarge'].includes(scale)
+      ['large', 'xLarge', 'xxLarge', 'xxxLarge'].includes(scale),
     )) {
       mockDeviceScale(deviceFontScale);
       const { result } = renderHook(() => useRootScale(), {

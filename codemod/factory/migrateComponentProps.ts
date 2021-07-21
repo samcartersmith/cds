@@ -67,7 +67,7 @@ function matchesASTValue(
     | JSXText
     | JSXExpressionContainer
     | null,
-  value: PropValue
+  value: PropValue,
 ): boolean {
   // Node is missing
   if (node === null) {
@@ -96,7 +96,7 @@ function migrateComponentButtons(
   mod: Codemod,
   importPath: string | RegExp,
   migrateMap: ComponentPropMap,
-  namesToFind: string[] = []
+  namesToFind: string[] = [],
 ): string | null | undefined | void {
   if (namesToFind.length === 0 && typeof importPath === 'string') {
     namesToFind.push(importPath.slice(importPath.lastIndexOf('/') + 1));
@@ -154,7 +154,7 @@ function migrateComponentButtons(
     // Remove prop after so that we dont mutate while looping
     if (removeIndexes.length > 0) {
       el.openingElement.attributes = el.openingElement.attributes.filter(
-        (attr, i) => !removeIndexes.includes(i)
+        (attr, i) => !removeIndexes.includes(i),
       );
     }
   });

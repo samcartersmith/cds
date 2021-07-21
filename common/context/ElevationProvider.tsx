@@ -28,7 +28,7 @@ export const ElevationProvider: React.FC<ElevationProviderProps> = memo(
       );
     }
     return <>{children}</>;
-  }
+  },
 );
 
 export const ElevationChildrenProvider: React.FC = memo(({ children }) => {

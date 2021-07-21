@@ -35,14 +35,14 @@ describe('Carousel', () => {
         ...Array.from({ length: itemsLength }).map((_, i) =>
           fireEvent(getByTestId(`CarouselItemWrapper-item${i}`), 'onLayout', {
             nativeEvent: { layout: { x: itemSize * i } },
-          })
+          }),
         ),
         ...Array.from({ length: itemsLength }).map((_, i) =>
           fireEvent(getByTestId(`CarouselItemInner-item${i}`), 'onLayout', {
             nativeEvent: { layout: { width: itemSize } },
-          })
+          }),
         ),
-      ])
+      ]),
     );
     expect(onReadySpy).toHaveBeenCalled();
   });

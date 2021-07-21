@@ -6,7 +6,7 @@ import { ThemeProvider } from '../ThemeProvider';
 
 jest.mock('react-native/Libraries/Components/StatusBar/StatusBar', () => ({
   ...jest.requireActual<Record<string, unknown>>(
-    'react-native/Libraries/Components/StatusBar/StatusBar'
+    'react-native/Libraries/Components/StatusBar/StatusBar',
   ),
   setBarStyle: jest.fn(),
   setBackgroundColor: jest.fn(),

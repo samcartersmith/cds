@@ -34,7 +34,7 @@ export const Card: React.FC<CardProps> = memo(
     const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 'standard');
     const contentStyles = useMemo(
       () => [borderRadiusOverrides, dangerouslySetStyle],
-      [borderRadiusOverrides, dangerouslySetStyle]
+      [borderRadiusOverrides, dangerouslySetStyle],
     );
 
     const content = (
@@ -66,7 +66,7 @@ export const Card: React.FC<CardProps> = memo(
     ) : (
       content
     );
-  }
+  },
 );
 
 Card.displayName = 'Card';

@@ -41,13 +41,13 @@ export const Type = {
     // concat type styles with corresponding type name
     Object.values(typographyScaleMapForWeb).forEach(typeStylesAtScale => {
       Object.values(typeStylesAtScale).forEach((style, index) =>
-        tableBody[index].push(`${style['font-size']} / ${style['line-height']}`)
+        tableBody[index].push(`${style['font-size']} / ${style['line-height']}`),
       );
     });
 
     return mdTable([
       Object.entries(scaleConfig).map(
-        ([scale, offset]) => `${scale} (${offset > 0 ? `+${offset}` : offset})`
+        ([scale, offset]) => `${scale} (${offset > 0 ? `+${offset}` : offset})`,
       ),
       ...tableBody,
     ]);

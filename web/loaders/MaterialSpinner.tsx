@@ -19,7 +19,7 @@ export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerPro
     () => ({
       stroke: palette[color],
     }),
-    [palette, color]
+    [palette, color],
   );
 
   return (

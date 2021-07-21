@@ -14,7 +14,7 @@ describe('ListCell', () => {
             <Text>Title</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('title')).not.toBeNull();
@@ -28,7 +28,7 @@ describe('ListCell', () => {
             <Text>Description</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('description')).not.toBeNull();
@@ -42,7 +42,7 @@ describe('ListCell', () => {
             <Text>Detail</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('detail')).not.toBeNull();
@@ -57,7 +57,7 @@ describe('ListCell', () => {
             <Text>Subdetail</Text>
           </View>
         }
-      />
+      />,
     );
 
     expect(result.queryByTestId('subdetail')).not.toBeNull();

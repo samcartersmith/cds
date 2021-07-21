@@ -47,7 +47,7 @@ export const Button = forwardRef(function Button(
     variant = 'primary',
     ...props
   }: ButtonProps,
-  ref: React.Ref<HTMLButtonElement>
+  ref: React.Ref<HTMLButtonElement>,
 ) {
   const spacingClass = useButtonSpacing(compact);
   const height = useInteractableHeight(compact);
@@ -69,7 +69,7 @@ export const Button = forwardRef(function Button(
         buttonStyles.button,
         compact && buttonStyles.buttonCompact,
         block && buttonStyles.buttonBlock,
-        spacingClass
+        spacingClass,
       )}
       loading={loading}
       disabled={disabled}

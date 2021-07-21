@@ -70,7 +70,7 @@ export const CircularProgress = memo(
         />
       </svg>
     );
-  }
+  },
 );
 
 CircularProgress.displayName = 'CircularProgress';

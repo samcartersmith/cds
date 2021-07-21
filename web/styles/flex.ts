@@ -123,6 +123,6 @@ export const getFlexStyles = (props: FlexStyles) => {
     props.alignSelf && alignSelf[props.alignSelf],
     props.flexDirection && flexDirection[props.flexDirection],
     props.flexWrap && flexWrap[props.flexWrap],
-    props.justifyContent && justifyContent[props.justifyContent]
+    props.justifyContent && justifyContent[props.justifyContent],
   );
 };

@@ -6,7 +6,7 @@ export function useToggler(initial = false): [
     toggleOn: () => void;
     toggleOff: () => void;
     toggle: () => void;
-  }
+  },
 ] {
   const [isToggled, setIsToggled] = useState(initial);
 

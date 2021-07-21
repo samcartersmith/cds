@@ -64,7 +64,7 @@ describe('useSparklineCoordinates', () => {
         width: 100,
         height: 100,
         data: [marker1, marker2],
-      })
+      }),
     );
     // borderWidth.sparkline of 2px is accounted for when plotting path
     expect(result.current.getMarker(0)).toEqual({ ...marker1, x: 2, y: 98 });

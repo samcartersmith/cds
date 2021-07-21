@@ -31,7 +31,7 @@ export const useAndroidNavigationBarUpdater = ({
         colorToHex(background),
         // dark-content means light background
         statusBarStyle === 'dark-content',
-        true
+        true,
       );
     }
     return undefined;

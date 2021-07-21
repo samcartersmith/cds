@@ -46,7 +46,7 @@ export const IconBase = memo(
         testID,
         ...props
       },
-      ref
+      ref,
     ) => {
       const role = title ? 'img' : 'presentation';
       const { iconSize, wrapperSize } = useIconSize(size, bordered);
@@ -80,8 +80,8 @@ export const IconBase = memo(
           </div>
         </Box>
       );
-    }
-  )
+    },
+  ),
 );
 
 IconBase.displayName = 'Icon';

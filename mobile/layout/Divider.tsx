@@ -23,7 +23,7 @@ export const Divider = ({
         backgroundColor: palette[color],
       },
     ],
-    [direction, palette, color]
+    [direction, palette, color],
   );
 
   return (

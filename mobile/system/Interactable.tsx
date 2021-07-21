@@ -72,7 +72,7 @@ export const InteractableContent = memo(function InteractableContent({
         elevationStyles,
         ...borderStyles,
       ].filter(Boolean),
-    [block, bg, borderStyles, elevationStyles, style]
+    [block, bg, borderStyles, elevationStyles, style],
   );
 
   return (

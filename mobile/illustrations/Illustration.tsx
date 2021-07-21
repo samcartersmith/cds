@@ -20,7 +20,7 @@ export const Illustration = memo(function Illustration({ name, ...props }: Illus
       ...(props.width && { width: props.width }),
       ...(props.height && { height: props.height }),
     }),
-    [props.width, props.height]
+    [props.width, props.height],
   );
 
   if (image === null) {

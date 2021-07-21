@@ -35,7 +35,7 @@ export const fillMissingIcons = (nameSet: Set<string>, sizeMap: SizeMap) => {
 
     if (mapSize !== nameSet.size) {
       console.error(
-        `Glyph map "${size}" missing icons. Expected ${nameSet.size}, found ${mapSize}.`
+        `Glyph map "${size}" missing icons. Expected ${nameSet.size}, found ${mapSize}.`,
       );
     }
   });

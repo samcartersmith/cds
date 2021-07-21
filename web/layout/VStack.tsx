@@ -12,12 +12,12 @@ export interface VStackProps<As extends BoxElement>
 export const VStack = forwardRef(
   <As extends BoxElement = 'div'>(
     { as, children, gap, ...props }: VStackProps<As>,
-    forwardedRef: ForwardedRef<HTMLElement>
+    forwardedRef: ForwardedRef<HTMLElement>,
   ) => {
     const content = gap
       ? join(
           Children.toArray(children),
-          <Spacer as={as === 'ul' || as === 'ol' ? 'li' : 'span'} vertical={gap} />
+          <Spacer as={as === 'ul' || as === 'ol' ? 'li' : 'span'} vertical={gap} />,
         )
       : children;
 
@@ -26,7 +26,7 @@ export const VStack = forwardRef(
         {content}
       </Box>
     );
-  }
+  },
 );
 
 VStack.displayName = 'VStack';

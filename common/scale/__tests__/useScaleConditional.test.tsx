@@ -12,7 +12,7 @@ describe('useScaleConditional', () => {
           normal: 'normal',
         });
       },
-      { wrapper: SystemProvider }
+      { wrapper: SystemProvider },
     );
 
     expect(result.current).toBe('normal');

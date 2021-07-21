@@ -40,7 +40,7 @@ const noop = () => {};
 
 export const createLottie = <Source extends LottieSource>(
   source: Source,
-  progressOverride?: Animated.Value
+  progressOverride?: Animated.Value,
 ): LottiePlayerMobile<Source> => {
   const lottieRef = createRef<LottieView>();
   const progress = progressOverride ?? new Animated.Value(0);
@@ -62,7 +62,7 @@ export const createLottie = <Source extends LottieSource>(
   };
 
   const setProgressTiming = (
-    { startFrame = 0, endFrame = 1 }: ProgressTimingConfig = { startFrame: 0, endFrame: 1 }
+    { startFrame = 0, endFrame = 1 }: ProgressTimingConfig = { startFrame: 0, endFrame: 1 },
   ) => {
     const diff = endFrame - startFrame;
     const newDuration = duration * diff;

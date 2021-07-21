@@ -11,7 +11,7 @@ export type FilteredHTMLAttributes<T, P extends keyof T = never> = Omit<
 export type DynamicElement<
   CustomProps extends unknown,
   T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
-  AsPropRequired extends boolean = false
+  AsPropRequired extends boolean = false,
 > = CustomProps &
   Omit<
     React.ComponentProps<T>,

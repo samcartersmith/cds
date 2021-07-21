@@ -4,7 +4,7 @@ import { LottieListener, LottieAnimationRef } from './types';
 
 export const useLottieListeners = (
   animationRef: LottieAnimationRef,
-  listeners: LottieListener[] = []
+  listeners: LottieListener[] = [],
 ) => {
   useEffect(() => {
     if (!listeners.length) {

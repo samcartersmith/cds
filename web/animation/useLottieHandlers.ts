@@ -11,7 +11,7 @@ export const useLottieHandlers = (handlers?: LottieEventHandlersMap) => {
     if (handlers) {
       const objectMap = mapValues(handlers, (val, key) => ({ name: key, handler: val }));
       return Object.values(objectMap).filter(
-        (listener): listener is LottieListener => !!listener && !!listener.handler
+        (listener): listener is LottieListener => !!listener && !!listener.handler,
       );
     }
     return emptyArray;

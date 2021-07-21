@@ -27,8 +27,8 @@ describe('CircularProgress', () => {
           strokeWidth={testVals.strokeWidth}
           radius={testVals.radius}
           progress={testVals.progress}
-        />
-      )
+        />,
+      ),
     ).toHaveNoViolations();
   });
 
@@ -39,7 +39,7 @@ describe('CircularProgress', () => {
         radius={testVals.radius}
         progress={testVals.progress}
         testID="circular-progress-svg"
-      />
+      />,
     );
 
     const circularProgressNode = await findByTestId('circular-progress-svg');
@@ -53,17 +53,17 @@ describe('CircularProgress', () => {
         radius={testVals.radius}
         progress={testVals.progress}
         testID="circular-progress-svg"
-      />
+      />,
     );
 
     await waitFor(() => getByTestId('circular-progress-svg'));
     expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
       'stroke-width',
-      testVals.strokeWidth.toString()
+      testVals.strokeWidth.toString(),
     );
     expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
       'r',
-      normalizeRadius(testVals.radius, testVals.strokeWidth)
+      normalizeRadius(testVals.radius, testVals.strokeWidth),
     );
   });
 
@@ -74,7 +74,7 @@ describe('CircularProgress', () => {
         radius={testVals.radius}
         progress={testVals.progress}
         testID="circular-progress-svg"
-      />
+      />,
     );
 
     await waitFor(() => getByTestId('circular-progress-svg'));
@@ -85,16 +85,16 @@ describe('CircularProgress', () => {
         radius={newTestVals.radius}
         progress={newTestVals.progress}
         testID="circular-progress-svg"
-      />
+      />,
     );
 
     expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
       'stroke-width',
-      newTestVals.strokeWidth.toString()
+      newTestVals.strokeWidth.toString(),
     );
     expect(getByTestId('circular-progress-svg').lastChild).toHaveAttribute(
       'r',
-      normalizeRadius(newTestVals.radius, newTestVals.strokeWidth)
+      normalizeRadius(newTestVals.radius, newTestVals.strokeWidth),
     );
   });
 });

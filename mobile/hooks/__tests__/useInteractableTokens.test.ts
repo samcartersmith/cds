@@ -20,7 +20,7 @@ describe('useInteractableTokens', () => {
 
   it('returns the disabled color from getBlendedColors when disabled', () => {
     const { result } = renderHook(() =>
-      useInteractableTokens({ ...defaultParams, disabled: true })
+      useInteractableTokens({ ...defaultParams, disabled: true }),
     );
 
     expect(result.current).toEqual({

@@ -78,7 +78,7 @@ export const RemoteImage = memo(function RemoteImage({
         aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
         borderRadius,
       } as const),
-    [aspectRatio, borderRadius, height, width]
+    [aspectRatio, borderRadius, height, width],
   );
 
   return <Image accessibilityIgnoresInvertColors {...props} style={styles} />;

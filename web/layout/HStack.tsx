@@ -12,12 +12,12 @@ export interface HStackProps<As extends BoxElement>
 export const HStack = forwardRef(
   <As extends BoxElement = 'div'>(
     { as, children, gap, ...props }: HStackProps<As>,
-    forwardedRef: ForwardedRef<HTMLElement>
+    forwardedRef: ForwardedRef<HTMLElement>,
   ) => {
     const content = gap
       ? join(
           Children.toArray(children),
-          <Spacer as={as === 'ul' || as === 'ol' ? 'li' : 'span'} horizontal={gap} />
+          <Spacer as={as === 'ul' || as === 'ol' ? 'li' : 'span'} horizontal={gap} />,
         )
       : children;
 
@@ -26,7 +26,7 @@ export const HStack = forwardRef(
         {content}
       </Box>
     );
-  }
+  },
 );
 
 HStack.displayName = 'HStack';

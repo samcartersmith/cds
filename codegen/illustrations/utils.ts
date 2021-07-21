@@ -30,7 +30,7 @@ export const binaryToBase64 = (binaryData: string): string => {
  */
 export const isMetadataEqual = (
   metadata1: IllustrationSummary,
-  metadata2: IllustrationSummary
+  metadata2: IllustrationSummary,
 ): boolean => {
   return (
     metadata1.name === metadata2.name &&

@@ -56,7 +56,7 @@ export const Card: React.FC<CardProps> = memo(
     ) : (
       content
     );
-  }
+  },
 );
 
 Card.displayName = 'Card';

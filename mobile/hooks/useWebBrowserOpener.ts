@@ -44,6 +44,6 @@ export const useWebBrowserOpener = () => {
         }
       }
     },
-    [spectrum]
+    [spectrum],
   );
 };

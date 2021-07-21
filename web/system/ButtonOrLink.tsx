@@ -27,7 +27,7 @@ export const ButtonOrLink = forwardRef<HTMLElement, Props>(
         ref={ref as React.ForwardedRef<HTMLButtonElement>}
       />
     );
-  }
+  },
 );
 
 ButtonOrLink.displayName = 'ButtonOrLink';

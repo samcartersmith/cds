@@ -56,7 +56,7 @@ export const FigmaClient = (personalAccessToken: string) => {
       fileId: string,
       nodeIds: string[],
       format: ExportFormat = 'svg',
-      scale = 1
+      scale = 1,
     ): AxiosPromise<Figma.FileImageResponse> => {
       validateScale(scale);
       return client.get(`images/${fileId}`, {

@@ -10,13 +10,13 @@ export const useAccessibleForeground = (
   /** Any valid color (hex, rgb, rgba). */
   color: string,
   /** Where the foreground color is being applied. */
-  usage: A11yColorUsage
+  usage: A11yColorUsage,
 ) => {
   const palette = usePalette();
   const spectrum = useSpectrum();
   const transformFn = useCallback(
     (value: PaletteValue) => paletteValueToRgbaString(value, spectrum),
-    [spectrum]
+    [spectrum],
   );
   return _useAccessibleForeground(palette.background, color, usage, transformFn);
 };

@@ -23,7 +23,7 @@ export const PaletteConfigProvider: React.FC<PaletteConfigProviderProps> = memo(
         // Custom palette overrides
         ...value,
       }),
-      [palette, value]
+      [palette, value],
     );
 
     return (
@@ -31,7 +31,7 @@ export const PaletteConfigProvider: React.FC<PaletteConfigProviderProps> = memo(
         {children}
       </PaletteConfigContext.Provider>
     );
-  }
+  },
 );
 
 PaletteConfigProvider.displayName = 'PaletteProvider';

@@ -33,7 +33,7 @@ export const Button = memo(function Button({
   const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
   const buttonStyles = useMemo(
     () => [styles.button, { height }, spacingStyles],
-    [height, spacingStyles]
+    [height, spacingStyles],
   );
   const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
   const endIconStyles = useSpacingStyles({ spacingStart: 1 });
