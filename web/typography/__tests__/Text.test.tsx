@@ -1,17 +1,42 @@
-import { entries } from '@cbhq/cds-utils';
 import { render } from '@testing-library/react';
 import { renderA11y } from '@utils/jest/renderA11y';
 
 import { DynamicElement } from '../../types';
 import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../TextProps';
-import * as Type from '../index';
+import {
+  TextDisplay1,
+  TextDisplay2,
+  TextTitle1,
+  TextTitle2,
+  TextTitle3,
+  TextHeadline,
+  TextBody,
+  TextLabel1,
+  TextLabel2,
+  TextCaption,
+  TextLegal,
+} from '../index';
+
+const textComponents = [
+  TextDisplay1,
+  TextDisplay2,
+  TextTitle1,
+  TextTitle2,
+  TextTitle3,
+  TextHeadline,
+  TextBody,
+  TextLabel1,
+  TextLabel2,
+  TextCaption,
+  TextLegal,
+] as const;
 
 type TextComponent =
-  | React.ComponentType<DynamicElement<Type.TextProps, HTMLTextTags, true>>
-  | React.ComponentType<DynamicElement<Type.TextProps, HTMLNonHeadingTextTags, true>>;
+  | React.ComponentType<DynamicElement<TextProps, HTMLTextTags, true>>
+  | React.ComponentType<DynamicElement<TextProps, HTMLNonHeadingTextTags, true>>;
 
 const textTestRunner = (testFn: (type: TextComponent) => void) => {
-  entries<typeof Type>(Type).map(async ([, TextComponent]) => testFn(TextComponent));
+  textComponents.map(async TextComponent => testFn(TextComponent));
 };
 
 function expectClassName<K extends keyof TextProps>(

@@ -5,7 +5,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-mobile/typography/Link](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/mobile/typography/Link.tsx)
+> [@cbhq/cds-(web|mobile)/typography/Link](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/typography/Link.tsx)
 
 <ComponentDetails componentName="Link" templateName="intro" />
 
@@ -19,7 +19,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### accessibilityLabel <Badge variant="mobile" />
+### accessibilityLabel
 
 Full length accessibility label when the child text is not descriptive enough.
 
@@ -29,12 +29,12 @@ Full length accessibility label when the child text is not descriptive enough.
   required={false}
   defaultValue=""
   mobileOptions={['string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Link" templateName="prop-accessibilityLabel" />
 
-### children <Badge variant="mobile" />
+### children
 
 Children to render within the link.
 
@@ -53,12 +53,21 @@ Children to render within the link.
     'true',
     '{}',
   ]}
-  webOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
 />
 
 <ComponentDetails componentName="Link" templateName="prop-children" />
 
-### color <Badge variant="mobile" />
+### color
 
 Color of the foreground text.
 
@@ -79,7 +88,18 @@ Color of the foreground text.
     'secondary',
     'secondaryForeground',
   ]}
-  webOptions={[]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
 />
 
 <ComponentDetails componentName="Link" templateName="prop-color" />
@@ -99,9 +119,9 @@ Toggles whether the link should be opened outside or within app
 
 <ComponentDetails componentName="Link" templateName="prop-forceOpenOutsideApp" />
 
-### onPress <Badge variant="mobile" />
+### onPress
 
-Callback to fire when pressed
+Callback fired when the element is clicked.
 
 <ApiDetails
   componentName="Link"
@@ -109,10 +129,25 @@ Callback to fire when pressed
   required={false}
   defaultValue=""
   mobileOptions={['(event: GestureResponderEvent) => void']}
-  webOptions={[]}
+  webOptions={['OnPress<HTMLAnchorElement>']}
 />
 
 <ComponentDetails componentName="Link" templateName="prop-onPress" />
+
+### openInNewWindow <Badge variant="web" />
+
+If true, it opens the link in a new window. If false, it replaces the current screen with the link
+
+<ApiDetails
+  componentName="Link"
+  propertyName="openInNewWindow"
+  required={false}
+  defaultValue="true"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-openInNewWindow" />
 
 ### preventRedirectionIntoApp <Badge variant="mobile" />
 
@@ -144,7 +179,22 @@ Toggles readerMode flag for web browser. Note: readerMode is only available on i
 
 <ComponentDetails componentName="Link" templateName="prop-readerMode" />
 
-### testID <Badge variant="mobile" />
+### renderContainer <Badge variant="web" />
+
+Callback for custom Link component
+
+<ApiDetails
+  componentName="Link"
+  propertyName="renderContainer"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(props: HTMLAttributes<HTMLAnchorElement>) => Element']}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-renderContainer" />
+
+### testID
 
 Used to locate this element in unit and end-to-end tests.
 
@@ -154,12 +204,12 @@ Used to locate this element in unit and end-to-end tests.
   required={false}
   defaultValue=""
   mobileOptions={['string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Link" templateName="prop-testID" />
 
-### to <Badge variant="mobile" />
+### to
 
 URL that this link goes to when pressed.
 
@@ -169,12 +219,12 @@ URL that this link goes to when pressed.
   required={false}
   defaultValue=""
   mobileOptions={['string']}
-  webOptions={[]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Link" templateName="prop-to" />
 
-### variant <Badge variant="mobile" />
+### variant
 
 Specify inner text type
 
@@ -194,7 +244,17 @@ Specify inner text type
     'title2',
     'title3',
   ]}
-  webOptions={[]}
+  webOptions={[
+    'body',
+    'caption',
+    'headline',
+    'label1',
+    'label2',
+    'legal',
+    'title1',
+    'title2',
+    'title3',
+  ]}
 />
 
 <ComponentDetails componentName="Link" templateName="prop-variant" />

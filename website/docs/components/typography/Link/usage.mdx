@@ -1,24 +1,59 @@
 ```jsx live
-<VStack alignItems="center">
-  {/* Basic use */}
-  <Link to="https://coinbase.com">Go to Coinbase Webpage</Link>
+<Link>Default is headline text</Link>
+```
 
-  {/* Change text color */}
-  <Link to="https://coinbase.com" color="negative">
-    Go to Coinbase Webpage
+```jsx live
+<VStack alignItems="flex-start" gap={3}>
+  {['body', 'caption', 'label1', 'label2', 'legal', 'title1', 'title2', 'title3'].map(variant => (
+    <Link variant={variant} to="https://www.google.com/" openInNewWindow>
+      {`${variant} link`}
+    </Link>
+  ))}
+</VStack>
+```
+
+```jsx live
+<Link to="https://www.google.com/" color="negative">
+  With color override
+</Link>
+```
+
+```jsx live
+<TextBody as="span">
+  {'Nest a link inside a body tag '}
+  <Link variant="body" to="https://www.google.com">
+    {'like this'}
   </Link>
+</TextBody>
+```
 
-  {/* Change font variant */}
-  <Link to="https://coinbase.com" variant="legal">
-    Go to Coinbase Webpage
+```jsx live
+<VStack alignItems="flex-start" gap={3}>
+  <Link variant="title1" to="https://www.google.com/" openInNewWindow>
+    Open window in existing tab
   </Link>
-
-  {/* Example use of onPress */}
-  <Link onPress={() => console.log('Log Coinbase')}>Go to Coinbase Webpage</Link>
-
-  {/* Use both onPress and to */}
-  <Link to="https://coinbase.com" onPress={() => console.log('Log Coinbase')}>
-    Go to Coinbase Webpage
+  <Link variant="title2" to="https://www.google.com/" rel="noreferrer">
+    Sets rel to noreferrer
+  </Link>
+  <Link variant="title3" to="https://www.google.com/" rel="noopener">
+    Sets rel to noopener
   </Link>
 </VStack>
+```
+
+```jsx live
+<Link variant="headline" onClick={() => console.log('pressed link')} rel="noopener">
+  Handles onClick
+</Link>
+```
+
+```jsx live
+<Link
+  variant="body"
+  color="primary"
+  onPress={console.log}
+  renderContainer={props => <ReactRouterLink {...props} to="/introduction/getting-started" />}
+>
+  Use React Router Link via renderContainer
+</Link>
 ```

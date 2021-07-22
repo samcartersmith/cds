@@ -15,9 +15,9 @@ import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import * as CDSTypography from '@cbhq/cds-web/typography';
-import { Link } from '@cbhq/cds-web/typography/Link';
 import { loremIpsum } from '@cbhq/cds-website/data/loremIpsum';
 import useThemeContext from '@theme/hooks/useThemeContext';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 import { useStatusButtons } from './useStatusButtons';
 
@@ -46,9 +46,9 @@ const ReactLiveScope = {
   ...CDSSystem,
   ...CDSTypography,
   ...CDSIllustrations,
-  Link,
   // Utils
   loremIpsum,
+  ReactRouterLink,
 };
 
 export default ReactLiveScope;
