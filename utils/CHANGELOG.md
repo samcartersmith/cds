@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.5 (7/21/2021, 04:37 PM PST)
+
+#### 🚀 Updates
+
+- Enable all `trailingCommas` for Prettier config. [#26673](https://github.cbhq.net/mono/repo/pull/26673)
+
 ## 0.2.4 (7/20/2021, 12:24 PM PST)
 
 #### 🐞 Fixes

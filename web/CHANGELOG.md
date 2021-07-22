@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.17.0 (7/21/2021, 04:37 PM PST)
+
+#### 💥 Breaking
+
+- Fix advancedTrading and madeInUsa bug, fix SpotSquare props, update Doc. [#26680](https://github.cbhq.net/mono/repo/pull/26680)
+
+#### 🚀 Updates
+
+- Enable all `trailingCommas` for Prettier config. [#26673](https://github.cbhq.net/mono/repo/pull/26673)
+
 ## 0.16.0 (7/20/2021, 12:24 PM PST)
 
 #### 💥 Breaking
