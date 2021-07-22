@@ -28,6 +28,8 @@ export interface IconBaseWebProps {
    * Add a badge to the top right of an icon
    */
   badge?: React.ReactElement<BadgeProps>;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: string;
 }
 
 export const IconBase = memo(

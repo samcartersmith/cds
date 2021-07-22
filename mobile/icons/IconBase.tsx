@@ -2,7 +2,7 @@ import React, { useMemo, cloneElement } from 'react';
 
 import { IconBaseProps, PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
-import { Animated, Text } from 'react-native';
+import { Animated, Text, ViewStyle } from 'react-native';
 import type { TextStyle } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
@@ -20,6 +20,8 @@ export interface IconBaseMobileProps extends IconBaseProps, DangerouslySetStyle<
   badge?: React.ReactElement<BadgeProps>;
   /** Color of the icon when used as a foreground. */
   color?: PaletteForeground;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: string | Animated.AnimatedInterpolation;
 }
 
 export const IconBase = ({
@@ -74,12 +76,12 @@ export const IconBase = ({
 
   if (name in iconGlyphMap && iconSize in iconGlyphMap[name]) {
     return (
-      <Box dangerouslySetStyle={boxStyles} testID={testID}>
+      <Box animated={animated} dangerouslySetStyle={boxStyles} testID={testID}>
         <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
-          <TextComponent allowFontScaling={false} style={fontStyles}>
+          <TextComponent allowFontScaling={false} style={fontStyles as ViewStyle}>
             {iconGlyphMap[name][iconSize]}
           </TextComponent>
-          {bordered && <IconOutline animated size={wrapperSize} color={iconColor} />}
+          {bordered && <IconOutline animated={animated} size={wrapperSize} color={iconColor} />}
           {!!badge &&
             cloneElement(badge, {
               position: 'absolute',
