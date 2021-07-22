@@ -1,0 +1,48 @@
+load("//tools/js:metro_bundle.bzl", "metro_bundle")
+load("//eng/shared/design-system:config.bzl", "append_cds_mobile_deps")
+
+filegroup(
+    name = "source",
+    srcs = [
+        "index.ts",
+        "App.tsx",
+        "app.json",
+    ] + glob(
+        [
+            "src/**/*.ts",
+            "src/**/*.tsx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+METRO_SRCS = [
+    "//eng/shared/design-system/common:runtime_source",
+    "//eng/shared/design-system/lottie-files:runtime_source",
+    "//eng/shared/design-system/mobile:runtime_source",
+    "//eng/shared/design-system/mobile-playground:source",
+    "//eng/shared/design-system/storybook:source",
+    "//eng/shared/design-system/utils:runtime_source",
+]
+
+METRO_DEPS = append_cds_mobile_deps([
+    "@npm//@react-navigation/native",
+    "@npm//@react-navigation/stack",
+    "@npm//react-native-gesture-handler",
+])
+
+metro_bundle(
+    name = "bundle_android",
+    srcs = METRO_SRCS,
+    platform = "android",
+    project = "cds",
+    deps = METRO_DEPS,
+)
+
+metro_bundle(
+    name = "bundle_ios",
+    srcs = METRO_SRCS,
+    platform = "ios",
+    project = "cds",
+    deps = METRO_DEPS,
+)

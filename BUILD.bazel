@@ -22,7 +22,10 @@ filegroup(
 
 filegroup(
     name = "web_source",
-    srcs = [":build_source"] + glob(
+    srcs = [
+        ":build_source",
+        "//eng/shared/design-system/storybook:source",
+    ] + glob(
         include = [
             "**/*.js",
             "**/*.ts",
@@ -310,8 +313,7 @@ build_storybook(
         "--quiet",
         "--no-dll",
     ],
-    data = glob(["storybook/.storybook/**/*"]) + [
-        # story source
+    data = [
         ":web_source",
         "//eng/shared/design-system/web:story_source",
     ] + STORYBOOK_DEPS,
@@ -342,10 +344,10 @@ build_storybook(
         "--quiet",
         "--no-dll",
     ],
-    data = glob(["storybook/.storybook/**/*"]) + [
-        # story source
+    data = [
         ":web_source",
         "//eng/shared/design-system/web:story_source",
+        "//eng/shared/design-system/storybook:source",
     ] + STORYBOOK_DEPS,
     output_dir = True,
     visibility = ["//visibility:public"],

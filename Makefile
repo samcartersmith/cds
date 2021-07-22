@@ -165,7 +165,7 @@ setup.mobile:
 
 .PHONY: start.mobile
 start.mobile:
-	cd mobile-playground; RN_PROJECT=cds npx react-native start --config ./metro.config.js --reset-cache
+	cd mobile-playground; RN_PROJECT=cds npx react-native start --config ../../../../metro.config.js --reset-cache
 
 .PHONY: build.android
 build.android:

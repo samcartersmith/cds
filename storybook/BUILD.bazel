@@ -1,0 +1,15 @@
+filegroup(
+    name = "source",
+    srcs = [
+        ".storybook/.env",
+        ".storybook/.env.local",
+        ".storybook/figma_oauth.html",
+    ] + glob(
+        [
+            "**/*.js",
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
