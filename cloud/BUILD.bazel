@@ -14,7 +14,7 @@ project_settings(
 # WEB CSS
 
 ts_node(
-    name = "bundle_css",
+    name = "web",
     args = [
         "-T $(execpath //eng/shared/design-system/cloud:combineCssFiles.ts)",
         "--outputDir $(@D)",
@@ -37,10 +37,8 @@ ts_node(
 )
 
 pkg_zip(
-    name = "bundle_css_zip",
-    srcs = [
-        ":bundle_css",
-    ],
+    name = "web_zip",
+    srcs = [":web"],
     visibility = ["//visibility:public"],
 )
 
@@ -49,7 +47,7 @@ syn_deployable(
     assets = [
         syn_file_asset(
             name = "cds-css",
-            src = ":bundle_css_zip",
+            src = ":web_zip",
             bucket = "cb-assets-prod",
             is_zip = True,
             key = "cds/",
@@ -65,7 +63,7 @@ syn_deployable(
     assets = [
         syn_file_asset(
             name = "cds-css-dev",
-            src = ":bundle_css_zip",
+            src = ":web_zip",
             bucket = "cb-assets-dev",
             is_zip = True,
             key = "cds/",
