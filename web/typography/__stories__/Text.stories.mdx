@@ -2,11 +2,37 @@ import { withStoryLabel } from '@cbhq/cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import { ThemeProvider } from '../../system/ThemeProvider';
-import * as Type from '../index';
+import {
+  TextDisplay1,
+  TextDisplay2,
+  TextTitle1,
+  TextTitle2,
+  TextTitle3,
+  TextHeadline,
+  TextBody,
+  TextLabel1,
+  TextLabel2,
+  TextCaption,
+  TextLegal,
+} from '../index';
+
+export const textComponents = [
+  TextDisplay1,
+  TextDisplay2,
+  TextTitle1,
+  TextTitle2,
+  TextTitle3,
+  TextHeadline,
+  TextBody,
+  TextLabel1,
+  TextLabel2,
+  TextCaption,
+  TextLegal,
+];
 
 <Meta
   title="Core Components/Text"
-  component={Type.TextDisplay1}
+  component={TextDisplay1}
   argTypes={{
     children: { control: 'text' },
   }}
@@ -22,11 +48,11 @@ import * as Type from '../index';
   >
     {args => (
       <>
-        {Object.entries(Type).map(([name, Component]) => {
-          const type = name.slice(4);
+        {textComponents.map(Component => {
+          const name = Component.displayName.slice(4);
           return (
             <Component key={name} {...args}>
-              {args.children || type}
+              {args.children || name}
             </Component>
           );
         })}
@@ -40,11 +66,11 @@ import * as Type from '../index';
   >
     {args => (
       <ThemeProvider scale="xSmall">
-        {Object.entries(Type).map(([name, Component]) => {
-          const type = name.slice(4);
+        {textComponents.map(Component => {
+          const name = Component.displayName.slice(4);
           return (
             <Component key={name} {...args}>
-              {args.children || type}
+              {args.children || name}
             </Component>
           );
         })}
@@ -61,7 +87,7 @@ import * as Type from '../index';
     decorators={[withStoryLabel('Slashed Zero')]}
     args={{ as: 'p', slashedZero: true }}
   >
-    {args => <Type.TextBody {...args}>{args.children || 'OZY28019'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'OZY28019'}</TextBody>}
   </Story>
   <Story
     name="Tabular numbers"
@@ -70,8 +96,8 @@ import * as Type from '../index';
   >
     {args => (
       <>
-        <Type.TextBody {...args}>{args.children || '91.23450'}</Type.TextBody>
-        <Type.TextBody {...args}>{args.children || '11.98762'}</Type.TextBody>
+        <TextBody {...args}>{args.children || '91.23450'}</TextBody>
+        <TextBody {...args}>{args.children || '11.98762'}</TextBody>
       </>
     )}
   </Story>
@@ -85,14 +111,14 @@ import * as Type from '../index';
     decorators={[withStoryLabel('None')]}
     args={{ as: 'p', selectable: 'none' }}
   >
-    {args => <Type.TextBody {...args}>{args.children || 'BTC'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'BTC'}</TextBody>}
   </Story>
   <Story
     name="Selectable text"
     decorators={[withStoryLabel('Text')]}
     args={{ as: 'p', selectable: 'text' }}
   >
-    {args => <Type.TextBody {...args}>{args.children || 'Balance: 1,820,29.56'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'Balance: 1,820,29.56'}</TextBody>}
   </Story>
   <Story
     name="Selectable all"
@@ -100,9 +126,7 @@ import * as Type from '../index';
     args={{ as: 'p', selectable: 'all', slashedZero: true }}
   >
     {args => (
-      <Type.TextBody {...args}>
-        {args.children || 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh'}
-      </Type.TextBody>
+      <TextBody {...args}>{args.children || 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh'}</TextBody>
     )}
   </Story>
 </Canvas>
@@ -115,10 +139,10 @@ import * as Type from '../index';
     decorators={[withStoryLabel('Underline')]}
     args={{ as: 'p', underline: true }}
   >
-    {args => <Type.TextBody {...args}>{args.children || 'Learn more'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'Learn more'}</TextBody>}
   </Story>
   <Story name="Strikethrough" decorators={[withStoryLabel('Text')]} args={{ as: 's' }}>
-    {args => <Type.TextBody {...args}>{args.children || 'Manual verification'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'Manual verification'}</TextBody>}
   </Story>
 </Canvas>
 
@@ -135,9 +159,9 @@ export const MediumContainer = props => (
   <Story name="No wrap" decorators={[withStoryLabel('No wrap')]} args={{ as: 'p', noWrap: true }}>
     {args => (
       <MediumContainer>
-        <Type.TextBody {...args}>
+        <TextBody {...args}>
           {args.children || 'As with any asset, the value of Digital Currencies can'}
-        </Type.TextBody>
+        </TextBody>
       </MediumContainer>
     )}
   </Story>
@@ -148,10 +172,10 @@ export const MediumContainer = props => (
   >
     {args => (
       <MediumContainer>
-        <Type.TextBody {...args}>
+        <TextBody {...args}>
           {args.children ||
             'As with any asset, the value of Digital Currencies can go up or down and there can be a substantial risk that you lose money buying, selling, holding, or investing in digital currencies. You should carefully consider whether trading or holding Digital Currencies is suitable for you in light of your financial condition. Coinbase is not registered with the U.S. Securities and Exchange Commission and does not offer securities services in the United States or to U.S. persons.'}
-        </Type.TextBody>
+        </TextBody>
       </MediumContainer>
     )}
   </Story>
@@ -162,10 +186,10 @@ export const MediumContainer = props => (
   >
     {args => (
       <MediumContainer>
-        <Type.TextBody {...args}>
+        <TextBody {...args}>
           {args.children ||
             'Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of Digital Currencies can go up or down and there can be a substantial risk that you lose money buying, selling, holding, or investing in digital currencies. You should carefully consider whether trading or holding Digital Currencies is suitable for you in light of your financial condition. Coinbase is not registered with the U.S. Securities and Exchange Commission and does not offer securities services in the United States or to U.S. persons.'}
-        </Type.TextBody>
+        </TextBody>
       </MediumContainer>
     )}
   </Story>
@@ -175,13 +199,13 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="Uppercase" args={{ as: 'p', transform: 'uppercase' }}>
-    {args => <Type.TextBody {...args}>{args.children || 'uppercase'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'uppercase'}</TextBody>}
   </Story>
   <Story name="Lowercase" args={{ as: 'p', transform: 'lowercase' }}>
-    {args => <Type.TextBody {...args}>{args.children || 'Lowercase'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'Lowercase'}</TextBody>}
   </Story>
   <Story name="Capitalize" args={{ as: 'p', transform: 'capitalize' }}>
-    {args => <Type.TextBody {...args}>{args.children || 'capitalize'}</Type.TextBody>}
+    {args => <TextBody {...args}>{args.children || 'capitalize'}</TextBody>}
   </Story>
 </Canvas>
 
@@ -189,7 +213,7 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="Sup" args={{ as: 'sup' }}>
-    <Type.TextBody as="sup">sup</Type.TextBody>
+    <TextBody as="sup">sup</TextBody>
   </Story>
 </Canvas>
 
@@ -197,7 +221,7 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="Sub" args={{ as: 'sub' }}>
-    <Type.TextBody as="sub">sub</Type.TextBody>
+    <TextBody as="sub">sub</TextBody>
   </Story>
 </Canvas>
 
@@ -205,7 +229,7 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="Strong" args={{ as: 'strong' }}>
-    <Type.TextBody as="strong">strong</Type.TextBody>
+    <TextBody as="strong">strong</TextBody>
   </Story>
 </Canvas>
 
@@ -213,7 +237,7 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="Bold" args={{ as: 'b' }}>
-    <Type.TextBody as="b">b</Type.TextBody>
+    <TextBody as="b">b</TextBody>
   </Story>
 </Canvas>
 
@@ -221,13 +245,13 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="Description dl" args={{ as: 'dl' }}>
-    <Type.TextBody as="dl">dl</Type.TextBody>
+    <TextBody as="dl">dl</TextBody>
   </Story>
   <Story name="Description dt" args={{ as: 'dt' }}>
-    <Type.TextBody as="dt">dt</Type.TextBody>
+    <TextBody as="dt">dt</TextBody>
   </Story>
   <Story name="Description dd" args={{ as: 'dd' }}>
-    <Type.TextBody as="dd">dd</Type.TextBody>
+    <TextBody as="dd">dd</TextBody>
   </Story>
 </Canvas>
 

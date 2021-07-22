@@ -110,6 +110,9 @@ import { buildTemplates } from './utils/buildTemplates';
           spacing: Spacing.cssVariables,
           palette: Palette.cssVariables,
           control: Control.cssVariables,
+          mediaQueries: {
+            supportsHover: '@media (any-hover: hover)',
+          },
         },
       },
       {

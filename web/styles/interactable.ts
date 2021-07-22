@@ -1,5 +1,6 @@
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { css } from 'linaria';
+import { mediaQueries } from '../tokens';
 
 export const interactable = css`
   appearance: none;
@@ -14,9 +15,11 @@ export const interactable = css`
     margin: 0;
   }
 
-  &:hover,
-  label:hover & {
-    --interactable-opacity: var(--interactable-opacity-hovered);
+  ${mediaQueries.supportsHover} {
+    &:hover,
+    label:hover & {
+      --interactable-opacity: var(--interactable-opacity-hovered);
+    }
   }
 
   &:active,
@@ -44,14 +47,24 @@ export const interactableTransparent = css`
 
 // Go from a transparent background to a solid when interacted with.
 export const interactableTransparentActive = css`
-  &:active,
-  &:hover {
+  &:active {
     background-image: linear-gradient(
       to right,
       rgba(var(--interactable-overlay), var(--interactable-opacity, 1)),
       rgba(var(--interactable-overlay), var(--interactable-opacity, 1))
     );
     background-color: var(--interactable-underlay);
+  }
+
+  ${mediaQueries.supportsHover} {
+    &:hover {
+      background-image: linear-gradient(
+        to right,
+        rgba(var(--interactable-overlay), var(--interactable-opacity, 1)),
+        rgba(var(--interactable-overlay), var(--interactable-opacity, 1))
+      );
+      background-color: var(--interactable-underlay);
+    }
   }
 `;
 

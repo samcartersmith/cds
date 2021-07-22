@@ -43,3 +43,5 @@ export const control = {
   switchHeight: 'var(--switch-height)',
   switchThumbSize: 'var(--switch-thumb-size)',
 } as const;
+
+export const mediaQueries = { supportsHover: '@media (any-hover: hover)' } as const;

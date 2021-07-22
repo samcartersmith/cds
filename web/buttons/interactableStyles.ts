@@ -1,5 +1,6 @@
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { css } from 'linaria';
+import { mediaQueries } from '../tokens';
 
 export const interactable = css`
   appearance: none;
@@ -31,8 +32,10 @@ export const interactable = css`
     opacity: var(--interactable-opacity, 1);
   }
 
-  &:hover {
-    --interactable-opacity: var(--interactable-opacity-hovered);
+  ${mediaQueries.supportsHover} {
+    &:hover {
+      --interactable-opacity: var(--interactable-opacity-hovered);
+    }
   }
 
   &:active {
