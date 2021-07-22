@@ -18,6 +18,7 @@ export const CDS_SUB_DIRS = [
   'icons',
   'illustrations',
   'layout',
+  'media',
   // 'loaders', TODO: Remove MaterialLoader and CircularProgress. Update Spinner to only take allowed size prop.
   // 'navigation', TODO: add usage details and hide internal props
   'overlays',

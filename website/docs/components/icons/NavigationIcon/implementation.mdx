@@ -64,6 +64,21 @@ Add a badge to the top right of an icon
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-badge" />
 
+### dangerouslySetColor <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="NavigationIcon"
+  propertyName="dangerouslySetColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="NavigationIcon" templateName="prop-dangerouslySetColor" />
+
 ### labeledBy <Badge variant="web" />
 
 If the icon is labelled by an independent element, then provide that elements id. This is used to set the aria-labelledby value on the icon. If the `title` prop is also provided, then `labeledBy` will be used to set the id on the `<title>` element.

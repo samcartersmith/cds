@@ -32,6 +32,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
         shape="circle"
         width={size}
         height={size}
+        shouldApplyDarkModeEnhacements
       />
     );
   }

@@ -41,4 +41,11 @@ export const assets = {
     imageUrl:
       'https://dynamic-assets.coinbase.com/e81509d2307f706f3a6f8999968874b50b628634abf5154fc91a7e5f7685d496a33acb4cde02265ed6f54b0a08fa54912208516e956bc5f0ffd1c9c2634099ae/asset_icons/3af4b33bde3012fd29dd1366b0ad737660f24acc91750ee30a034a0679256d0b.png',
   },
+  hbar: {
+    symbol: 'HBAR',
+    name: 'Hedera Hashgraph',
+    color: '#222222',
+    imageUrl:
+      'https://dynamic-assets.coinbase.com/ae4087fcfeef11ad77d8875405ba933b9d623bcc8c483f280d3a15f2782de980349076c4f7b4616cc350c3727010d736448194829c4409e2824f710ee8f9832d/asset_icons/32d85085a6a6193b483ea8a9a23d4bf1384269d44c724a0349f0e0bd757f7427.png',
+  },
 };

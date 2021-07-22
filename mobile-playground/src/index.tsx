@@ -27,6 +27,7 @@ const components = [
   { key: 'Pressable' },
   { key: 'PressableOpacity' },
   { key: 'RadioGroup' },
+  { key: 'RemoteImage' },
   { key: 'Spacer' },
   { key: 'Sparkline' },
   { key: 'SparklineGradient' },

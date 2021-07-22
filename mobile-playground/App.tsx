@@ -29,6 +29,7 @@ import OverlayScreen from './src/Overlay';
 import PressableScreen from './src/Pressable';
 import PressableOpacityScreen from './src/PressableOpacity';
 import RadioGroupScreen from './src/RadioGroup';
+import RemoteImageScreen from './src/RemoteImage';
 import SpacerScreen from './src/Spacer';
 import SparklineScreen from './src/Sparkline';
 import SparklineGradientScreen from './src/SparklineGradient';
@@ -102,6 +103,7 @@ const AppContent = () => {
         <Stack.Screen name="Pressable" component={PressableScreen} />
         <Stack.Screen name="PressableOpacity" component={PressableOpacityScreen} />
         <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
+        <Stack.Screen name="RemoteImage" component={RemoteImageScreen} />
         <Stack.Screen name="Spacer" component={SpacerScreen} />
         <Stack.Screen name="Sparkline" component={SparklineScreen} />
         <Stack.Screen name="SparklineGradient" component={SparklineGradientScreen} />

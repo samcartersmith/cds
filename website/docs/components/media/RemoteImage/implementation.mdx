@@ -1,0 +1,89 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-mobile/media/RemoteImage](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/mobile/media/RemoteImage.tsx)
+
+<ComponentDetails componentName="RemoteImage" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="RemoteImage" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="RemoteImage" templateName="a11y" />
+
+## Props
+
+### aspectRatio <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="aspectRatio"
+  required={false}
+  defaultValue=""
+  mobileOptions={['AspectRatio']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-aspectRatio" />
+
+### height <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="height"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-height" />
+
+### shape <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="shape"
+  required={false}
+  defaultValue=""
+  mobileOptions={['circle', 'rectangle', 'square', 'squircle']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-shape" />
+
+### shouldApplyDarkModeEnhacements <Badge variant="mobile" />
+
+Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="shouldApplyDarkModeEnhacements"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-shouldApplyDarkModeEnhacements" />
+
+### width <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="width"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-width" />
+
+<ComponentDetails componentName="RemoteImage" templateName="outro" />

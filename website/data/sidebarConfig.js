@@ -83,6 +83,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Media',
+      collapsed: true,
+      items: ['components/media/RemoteImage/remote-image'],
+    },
+    {
+      type: 'category',
       label: 'Overlays',
       collapsed: true,
       items: ['components/overlays/Tooltip/tooltip'],

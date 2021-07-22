@@ -30,6 +30,7 @@ export const components = [
   'HStack',
   'Spacer',
   'VStack',
+  'RemoteImage',
   'Tooltip',
   'Link',
   'Text',

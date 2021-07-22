@@ -778,6 +778,27 @@ export const VStack = {
   ),
 };
 
+export const RemoteImage = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/implementation.mdx'
+      )
+  ),
+  'remote-image': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/remote-image.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/usage.mdx'
+      )
+  ),
+};
+
 export const Tooltip = {
   implementation: React.lazy(
     () =>
