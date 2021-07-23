@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.21.1 (7/22/2021, 04:46 PM PST)
+
+#### 🚀 Updates
+
+- UseInvertedPaletteColor hook & shouldApplyDarkModeEnhacements to RemoteImage. [#26916](https://github.cbhq.net/mono/repo/pull/26916), [CRN-2135](https://jira.coinbase-corp.com/browse/CRN-2135)
+
 ## 0.21.0 (7/21/2021, 04:37 PM PST)
 
 #### 💥 Breaking

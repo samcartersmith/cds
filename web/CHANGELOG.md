@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.17.1 (7/22/2021, 04:46 PM PST)
+
+#### 🐞 Fixes
+
+- CDS Web Interactables to exclude hover styles on touch-only devices. [#27001](https://github.cbhq.net/mono/repo/pull/27001), [CDS-762](https://jira.coinbase-corp.com/browse/CDS-762)
+
+#### 📘 Misc
+
+- Update Link API docs and examples. [#26940](https://github.cbhq.net/mono/repo/pull/26940)
+
 ## 0.17.0 (7/21/2021, 04:37 PM PST)
 
 #### 💥 Breaking
