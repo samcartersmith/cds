@@ -24,6 +24,7 @@ export const CDS_SUB_DIRS = [
   'overlays',
   'typography',
   'system',
+  'visualizations',
 ] as const;
 
 export const CDS_SUB_DIRS_MAP = arrayToObject(CDS_SUB_DIRS);

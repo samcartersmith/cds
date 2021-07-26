@@ -1,0 +1,29 @@
+import React, { memo } from 'react';
+
+import { Divider, VStack } from '@cbhq/cds-web/layout';
+import { ThemeProvider } from '@cbhq/cds-web/system';
+
+import { useRootTheme } from './RootThemeProvider';
+import { ThemeToggles } from './ThemeToggles';
+
+export const ExampleWithThemeToggles: React.FC = memo(({ children }) => {
+  const { scale } = useRootTheme();
+  return (
+    /** Remove the gap that ReactLiveScope adds to the live editor */
+    <div style={{ margin: '-1rem' }}>
+      <ThemeProvider scale="large">
+        <VStack spacingVertical={2} spacingHorizontal={3} background>
+          <ThemeProvider scale="xSmall">
+            <VStack gap={3} spacingBottom={3}>
+              <ThemeToggles />
+              <Divider offsetHorizontal={5} />
+            </VStack>
+          </ThemeProvider>
+          <ThemeProvider scale={scale}>{children}</ThemeProvider>
+        </VStack>
+      </ThemeProvider>
+    </div>
+  );
+});
+
+ExampleWithThemeToggles.displayName = 'ExampleWithThemeToggles';

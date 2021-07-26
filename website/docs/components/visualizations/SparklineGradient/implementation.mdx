@@ -1,0 +1,97 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/visualizations/SparklineGradient](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/SparklineGradient.tsx)
+
+<ComponentDetails componentName="SparklineGradient" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="SparklineGradient" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="SparklineGradient" templateName="a11y" />
+
+## Props
+
+### color
+
+Color of the plotted Sparkline. Accepts any valid color value. Do not pass in a CDS alias such as foreground or a CSS Variable.
+
+<ApiDetails
+  componentName="SparklineGradient"
+  propertyName="color"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineGradient" templateName="prop-color" />
+
+### height
+
+Height of the Sparkline
+
+<ApiDetails
+  componentName="SparklineGradient"
+  propertyName="height"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineGradient" templateName="prop-height" />
+
+### path
+
+Svg path as string. CDS offers a `useSparklinePath` which is useful to generate this string. This is accessible via `import { useSparklinePath } from @cbhq/cds-common/visualizations/useSparklinePath;`. Alternatively, you can use product tailored tooling to generate the SVG path. This component only requires a valid path string is provided.
+
+<ApiDetails
+  componentName="SparklineGradient"
+  propertyName="path"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SparklineGradient" templateName="prop-path" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests.
+
+<ApiDetails
+  componentName="SparklineGradient"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SparklineGradient" templateName="prop-testID" />
+
+### width
+
+Width of the Sparkline
+
+<ApiDetails
+  componentName="SparklineGradient"
+  propertyName="width"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineGradient" templateName="prop-width" />
+
+<ComponentDetails componentName="SparklineGradient" templateName="outro" />

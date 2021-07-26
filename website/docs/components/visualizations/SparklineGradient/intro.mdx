@@ -1,0 +1,19 @@
+Expands upon the [Sparkline](./sparkline) component to provide a gradient stroke. However, for dark mode we disable the gradient effect. These are typically used at a larger size for portfolio charts or on detail Asset pages.
+
+```jsx live
+function Example() {
+  const normal = { width: 400, height: 200 };
+  const dense = { width: 200, height: 100 };
+  const dimensions = useScaleConditional({ normal, dense });
+  const path = useSparklinePath({ ...dimensions, data: prices });
+  return (
+    <ExampleWithThemeToggles>
+      <VStack gap={2}>
+        {assetColors.map(color => (
+          <SparklineGradient key={color} {...dimensions} path={path} color={color} />
+        ))}
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```

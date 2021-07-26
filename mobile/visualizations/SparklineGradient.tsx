@@ -9,18 +9,14 @@ import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroun
 
 export const SparklineGradient = memo(
   forwardRef<TextInput | null, SparklineBaseProps>(({ color, path, height, width }, ref) => {
-    const gradient = useAccessibleForegroundGradient(color);
+    const gradient = useAccessibleForegroundGradient({ color, usage: 'graphic' });
     const linearGradient = useMemo(() => {
       return (
         <Defs>
           <LinearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             {gradient.map((item, i) => (
-              <Stop
-                // eslint-disable-next-line react/no-array-index-key
-                key={`${i}_${item}`}
-                offset={`${(i * 100) / gradient.length - 1}%`}
-                stopColor={item}
-              />
+              // eslint-disable-next-line react/no-array-index-key
+              <Stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
             ))}
           </LinearGradient>
         </Defs>

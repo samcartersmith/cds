@@ -38,4 +38,6 @@ export const components = [
   'Pressable',
   'PressableOpacity',
   'ThemeProvider',
+  'Sparkline',
+  'SparklineGradient',
 ] as const;

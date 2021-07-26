@@ -1,6 +1,4 @@
-import { useMemo } from 'react';
-
-import { SpectrumAlias, A11yColorUsage } from '../types';
+import { PaletteValueToRgbaStringFn, A11yColorUsage } from '../types';
 import { colorToSpectrumAlias } from './colorToSpectrumAlias';
 import { isAccessibleColor } from './isAccessibleColor';
 
@@ -16,7 +14,7 @@ import { isAccessibleColor } from './isAccessibleColor';
  * 4. If gray color return `gray100`.
  * 5. If non gray color return closest CDS spectrum alias (i.e. `orange60`).
  */
-export const useAccessibleForeground = (
+export const getAccessibleForeground = (
   /* Valid color value (hex, rgb, rgba, etc) */
   background: string,
   /* Valid color value (hex, rgb, rgba, etc) */
@@ -24,13 +22,11 @@ export const useAccessibleForeground = (
   /** Where the foreground color is being applied. */
   usage: A11yColorUsage,
   /** Function to transform a paletteValue (blue60 or [blue60, 1]) into a valid color value. */
-  transformFn: (value: SpectrumAlias) => string,
+  transformFn: PaletteValueToRgbaStringFn,
 ) => {
-  return useMemo(() => {
-    if (isAccessibleColor(background, foreground, usage)) {
-      return foreground;
-    }
-    const spectrumAlias = colorToSpectrumAlias(foreground, usage);
-    return transformFn(spectrumAlias);
-  }, [background, foreground, transformFn, usage]);
+  if (isAccessibleColor(background, foreground, usage)) {
+    return foreground;
+  }
+  const spectrumAlias = colorToSpectrumAlias(foreground, usage);
+  return transformFn(spectrumAlias);
 };

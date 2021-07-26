@@ -6,7 +6,7 @@ import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumCondit
 import { elevation as elevationTokens } from '@cbhq/cds-common/tokens/elevation';
 import { emptyObject } from '@cbhq/cds-utils';
 
-import { usePaletteToCssVars } from './usePaletteToCssVars';
+import { usePaletteToCssVars } from '../color/usePaletteToCssVars';
 
 export const useElevationStyles = (elevation?: ElevationLevels) => {
   const paletteCssVars = usePaletteToCssVars();

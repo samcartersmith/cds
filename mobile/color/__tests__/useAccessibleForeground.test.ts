@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { DarkModeProvider } from '../../system';
 import { useAccessibleForeground } from '../useAccessibleForeground';
 
-const checkAllUsages = (colorToCheck: string, mode?: Spectrum | undefined) => {
+const checkAllUsages = (color: string, mode?: Spectrum | undefined) => {
   const modeParams =
     mode === 'dark'
       ? {
@@ -12,15 +12,15 @@ const checkAllUsages = (colorToCheck: string, mode?: Spectrum | undefined) => {
         }
       : {};
   const { result: normalText } = renderHook(
-    () => useAccessibleForeground(colorToCheck, 'normalText'),
+    () => useAccessibleForeground({ color, usage: 'normalText' }),
     modeParams,
   );
   const { result: largeText } = renderHook(
-    () => useAccessibleForeground(colorToCheck, 'largeText'),
+    () => useAccessibleForeground({ color, usage: 'largeText' }),
     modeParams,
   );
   const { result: graphic } = renderHook(
-    () => useAccessibleForeground(colorToCheck, 'graphic'),
+    () => useAccessibleForeground({ color, usage: 'graphic' }),
     modeParams,
   );
   return {

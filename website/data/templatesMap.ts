@@ -1041,3 +1041,45 @@ export const ThemeProvider = {
       )
   ),
 };
+
+export const Sparkline = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/Sparkline/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/Sparkline/intro.mdx'
+      )
+  ),
+  sparkline: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/Sparkline/sparkline.mdx'
+      )
+  ),
+};
+
+export const SparklineGradient = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineGradient/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineGradient/intro.mdx'
+      )
+  ),
+  'sparkline-gradient': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineGradient/sparkline-gradient.mdx'
+      )
+  ),
+};

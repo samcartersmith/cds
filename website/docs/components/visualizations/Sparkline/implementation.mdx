@@ -1,0 +1,97 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/visualizations/Sparkline](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/Sparkline.tsx)
+
+<ComponentDetails componentName="Sparkline" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Sparkline" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Sparkline" templateName="a11y" />
+
+## Props
+
+### color
+
+Color of the plotted Sparkline. Accepts any valid color value. Do not pass in a CDS alias such as foreground or a CSS Variable.
+
+<ApiDetails
+  componentName="Sparkline"
+  propertyName="color"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Sparkline" templateName="prop-color" />
+
+### height
+
+Height of the Sparkline
+
+<ApiDetails
+  componentName="Sparkline"
+  propertyName="height"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Sparkline" templateName="prop-height" />
+
+### path
+
+Svg path as string. CDS offers a `useSparklinePath` which is useful to generate this string. This is accessible via `import { useSparklinePath } from @cbhq/cds-common/visualizations/useSparklinePath;`. Alternatively, you can use product tailored tooling to generate the SVG path. This component only requires a valid path string is provided.
+
+<ApiDetails
+  componentName="Sparkline"
+  propertyName="path"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Sparkline" templateName="prop-path" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests.
+
+<ApiDetails
+  componentName="Sparkline"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Sparkline" templateName="prop-testID" />
+
+### width
+
+Width of the Sparkline
+
+<ApiDetails
+  componentName="Sparkline"
+  propertyName="width"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Sparkline" templateName="prop-width" />
+
+<ComponentDetails componentName="Sparkline" templateName="outro" />

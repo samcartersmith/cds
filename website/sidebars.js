@@ -49,6 +49,21 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Hooks',
+      collapsed: true,
+      items: [
+        'hooks/useAccessibleForeground',
+        'hooks/usePalette',
+        'hooks/usePaletteConfig',
+        'hooks/usePaletteValueToRgbaString',
+        'hooks/useScaleConditional',
+        'hooks/useSparklinePath',
+        'hooks/useSpectrum',
+        'hooks/useSpectrumConditional',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Guides',
       collapsed: false,
       items: ['guides/adoption'],

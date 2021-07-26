@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 
-import { useScale, useSpectrum, SystemProvider } from '@cbhq/cds-common';
+import { useScale, SystemProvider } from '@cbhq/cds-common';
 import { cx } from 'linaria';
 
-import { usePaletteToCssVars } from '../hooks/usePaletteToCssVars';
+import { usePaletteToCssVars } from '../color/usePaletteToCssVars';
+import { useSpectrumClassName } from '../color/useSpectrumClassName';
 import * as scaleCss from '../styles/scale';
-import * as spectrumCss from '../styles/spectrum';
 
 /**
  * Internally the `ThemeProvider` component includes a div element which is used to attach CSS variables that are needed for palette overrides.
@@ -18,15 +18,15 @@ import * as spectrumCss from '../styles/spectrum';
  */
 export const useThemeProviderStyles = () => {
   const scale = useScale();
-  const spectrum = useSpectrum();
   const palette = usePaletteToCssVars();
+  const spectrumClassName = useSpectrumClassName();
   return useMemo(
     () =>
       ({
-        className: cx(scaleCss[scale], spectrumCss[spectrum]),
+        className: cx(scaleCss[scale], spectrumClassName),
         style: palette as React.CSSProperties,
       } as const),
-    [palette, scale, spectrum],
+    [palette, scale, spectrumClassName],
   );
 };
 

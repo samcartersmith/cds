@@ -1,12 +1,21 @@
 import React from 'react';
 
 import { join, useToggler } from '@cbhq/cds-common';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
+import { useScale } from '@cbhq/cds-common/scale/useScale';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
+import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
 import * as CDSCells from '@cbhq/cds-web/cells';
+import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
+import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import * as CDSControls from '@cbhq/cds-web/controls';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
+import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSLayout from '@cbhq/cds-web/layout';
@@ -14,8 +23,15 @@ import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import * as CDSSystem from '@cbhq/cds-web/system';
+import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
+import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
+import { ColorTile } from '@cbhq/cds-website/components/ColorTile';
+import { ExampleWithThemeToggles } from '@cbhq/cds-website/components/ExampleWithThemeToggles';
+import { ThemeToggles } from '@cbhq/cds-website/components/ThemeToggles';
+import { assets, assetColors } from '@cbhq/cds-website/data/assets';
 import { loremIpsum } from '@cbhq/cds-website/data/loremIpsum';
+import { prices } from '@cbhq/cds-website/data/prices';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
@@ -28,12 +44,23 @@ const ReactLiveScope = {
   // Docusaurus
   useThemeContext,
   // CDS
-  Text: CDSTypography.TextBody,
+  join,
   lottieFiles,
+  palette,
+  useAccessibleForeground,
   useCheckboxGroupState,
+  usePalette,
+  usePaletteConfig,
+  usePaletteValueToRgbaString,
+  useScale,
+  useScaleConditional,
+  useSparklinePath,
+  useSpectrum,
+  useSpectrumConditional,
   useStatusButtons,
   useToggler,
-  join,
+  // CDS Components
+  Text: CDSTypography.TextBody,
   ...CDSAnimation,
   ...CDSButtons,
   ...CDSCells,
@@ -46,9 +73,17 @@ const ReactLiveScope = {
   ...CDSSystem,
   ...CDSTypography,
   ...CDSIllustrations,
+  ...CDSVisualizations,
   // Utils
   loremIpsum,
   ReactRouterLink,
+  assets,
+  assetColors,
+  prices,
+  // Example components
+  ColorTile,
+  ExampleWithThemeToggles,
+  ThemeToggles,
 };
 
 export default ReactLiveScope;

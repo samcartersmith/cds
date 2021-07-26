@@ -110,5 +110,14 @@ module.exports = {
         'components/system/ThemeProvider/theme-provider',
       ],
     },
+    {
+      type: 'category',
+      label: 'Visualizations',
+      collapsed: true,
+      items: [
+        'components/visualizations/Sparkline/sparkline',
+        'components/visualizations/SparklineGradient/sparkline-gradient',
+      ],
+    },
   ],
 };
