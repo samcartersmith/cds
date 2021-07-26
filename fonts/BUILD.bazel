@@ -8,6 +8,7 @@ filegroup(
             "**/*.woff2",
             "**/*.otf",
             "**/*.css",
+            "**/*.md",
         ],
     ),
     visibility = ["//visibility:public"],

@@ -202,6 +202,17 @@ ts_node(
 )
 
 ts_node(
+    name = "changelog",
+    args = [
+        "-r tsconfig-paths/register",
+        "--files",
+        "eng/shared/design-system/codegen/website/changelog.ts",
+        "--prettierConfig $(execpath //:.prettierrc)",
+    ],
+    data = CODEGEN_DATA,
+)
+
+ts_node(
     name = "sync_icons",
     args = [
         "-r tsconfig-paths/register",

@@ -11,6 +11,7 @@ filegroup(
             "**/*.tsx",
             "**/*.js",
             "**/*.json",
+            "**/*.md",
         ],
         exclude = [
             "**/*.test.*",

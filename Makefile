@@ -182,6 +182,8 @@ clean.ios:
 .PHONY: release
 release:
 	bazel run :release
+	bazel run :changelog
+	bazel run :docgen
 
 .PHONY: typecheck
 typecheck:

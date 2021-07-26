@@ -71,6 +71,19 @@ module.exports = {
 
         'resources/roadmap',
         'resources/contributing',
+        {
+          type: 'category',
+          label: 'Changelog',
+          collapsed: true,
+          items: [
+            { type: 'doc', id: 'changelog/common', label: '@cbhq/cds-common' },
+            { type: 'doc', id: 'changelog/fonts', label: '@cbhq/cds-fonts' },
+            { type: 'doc', id: 'changelog/lottie-files', label: '@cbhq/cds-lottie-files' },
+            { type: 'doc', id: 'changelog/mobile', label: '@cbhq/cds-mobile' },
+            { type: 'doc', id: 'changelog/utils', label: '@cbhq/cds-utils' },
+            { type: 'doc', id: 'changelog/web', label: '@cbhq/cds-web' },
+          ],
+        },
         'resources/release',
       ],
     },

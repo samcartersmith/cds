@@ -9,6 +9,7 @@ filegroup(
         [
             "**/*.ts",
             "**/*.tsx",
+            "**/*.md",
         ],
         exclude = [
             "**/*.test.*",
@@ -20,9 +21,10 @@ filegroup(
 # All files to lint and test
 filegroup(
     name = "source",
-    srcs = [":runtime_source"] + glob(
+    srcs = glob(
         [
-            "**/*.test.*",
+            "**/*.ts",
+            "**/*.tsx",
             "**/*.mdx",
         ],
     ),
