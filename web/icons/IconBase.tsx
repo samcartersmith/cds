@@ -57,9 +57,10 @@ export const IconBase = memo(
       const finalColor = dangerouslySetColor ?? paletteColor;
 
       return (
-        <Box ref={ref} position="relative" {...props}>
+        <Box position="relative" {...props}>
           <div data-testid={testID} style={{ width: wrapperSize, height: wrapperSize }}>
             <span
+              ref={ref}
               className={iconStyles}
               style={{ color: finalColor, fontSize: iconSize }}
               role={role}
