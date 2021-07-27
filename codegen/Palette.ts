@@ -96,7 +96,7 @@ export const Palette = {
   paletteBorders,
   validate: () => {
     const aliases = Object.keys(defaultPalette);
-    aliases.forEach(item => {
+    aliases.forEach((item) => {
       if (!paletteAliases.includes(item)) {
         throw new Error(
           `The palette alias, ${item}, was added but neither paletteForegrounds, paletteBackgrounds or paletteBorders was updated to include it.`,

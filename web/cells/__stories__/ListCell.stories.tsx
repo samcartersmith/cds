@@ -20,6 +20,6 @@ export const {
   WithMedia,
   WithActions,
   WithIntermediary,
-} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox, props => (
+} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox, (props) => (
   <Box {...props} background="backgroundAlternate" />
 ));

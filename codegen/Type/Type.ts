@@ -16,7 +16,7 @@ const mdTable = ([header, ...rows]: string[][]) => {
   const divider = Array(numCol).fill('---');
   divider.unshift('');
   divider.push('');
-  const tableBody = rows.map(row => {
+  const tableBody = rows.map((row) => {
     row.unshift('');
     row.push('');
     return `${row.join(' | ')}`;
@@ -35,11 +35,11 @@ export const Type = {
   scaleCss: typographyScaleMapWithCssVariables,
   generateScaleTable: () => {
     // include type names
-    const tableBody = Object.keys(typographyPascalCaseConfig).map(typeName => [
+    const tableBody = Object.keys(typographyPascalCaseConfig).map((typeName) => [
       `\`${pascalCase(typeName)}\``,
     ]);
     // concat type styles with corresponding type name
-    Object.values(typographyScaleMapForWeb).forEach(typeStylesAtScale => {
+    Object.values(typographyScaleMapForWeb).forEach((typeStylesAtScale) => {
       Object.values(typeStylesAtScale).forEach((style, index) =>
         tableBody[index].push(`${style['font-size']} / ${style['line-height']}`),
       );

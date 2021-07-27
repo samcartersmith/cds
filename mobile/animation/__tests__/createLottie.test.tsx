@@ -21,7 +21,7 @@ describe('useLottieCreator', () => {
   beforeEach(() => {
     result = renderHook(() => {
       return useMemo(() => {
-        return animations.map(tutorial => createLottie(tutorial));
+        return animations.map((tutorial) => createLottie(tutorial));
       }, []);
     }).result.current;
   });

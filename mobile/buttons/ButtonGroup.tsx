@@ -25,7 +25,7 @@ export const ButtonGroup = memo(function ButtonGroup({
       gap={2}
       testID={testID}
     >
-      {Children.map(children, child =>
+      {Children.map(children, (child) =>
         child ? (
           <View style={block ? styles.button : undefined}>{cloneElement(child, { block })}</View>
         ) : null,

@@ -29,11 +29,11 @@ const setRef = <T>(ref: AnyRef<T>, value: RefElementOrNull<T>) => {
  */
 export function useMergedRef<T>(...refs: Array<AnyRef<T> | undefined>): CallbackRef<T> | null {
   return useMemo(() => {
-    if (refs.every(ref => ref === null)) {
+    if (refs.every((ref) => ref === null)) {
       return null;
     }
-    return refValue => {
-      refs.forEach(ref => {
+    return (refValue) => {
+      refs.forEach((ref) => {
         if (ref) {
           setRef(ref, refValue);
         }

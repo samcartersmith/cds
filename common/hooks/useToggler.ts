@@ -19,7 +19,7 @@ export function useToggler(initial = false): [
   }, [setIsToggled]);
 
   const toggle = useCallback(() => {
-    setIsToggled(prev => !prev);
+    setIsToggled((prev) => !prev);
   }, [setIsToggled]);
 
   const toggler = useMemo(() => {

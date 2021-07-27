@@ -11,7 +11,7 @@ export const useLottieListeners = (
       return undefined;
     }
 
-    const deregisterList = listeners.map(listener => {
+    const deregisterList = listeners.map((listener) => {
       animationRef.current?.addEventListener(listener.name, listener.handler);
 
       // Return a function to deregister this listener
@@ -22,7 +22,7 @@ export const useLottieListeners = (
 
     // Deregister listeners on unmount
     return () => {
-      deregisterList.forEach(deregister => deregister());
+      deregisterList.forEach((deregister) => deregister());
     };
   }, [listeners, animationRef]);
 };

@@ -10,7 +10,7 @@ import {
 describe('useElevationChildOverrides', () => {
   it('returns false if child is not nested within an ElevationProvider', () => {
     const { result } = renderHook(() => useElevationChildOverrides(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider>
           <ElevationChildrenProvider {...props} />
         </SystemProvider>
@@ -21,7 +21,7 @@ describe('useElevationChildOverrides', () => {
 
   it('returns false if child is nested within an ElevationProvider but no elevation is set', () => {
     const { result } = renderHook(() => useElevationChildOverrides(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider>
           <ElevationProvider>
             <ElevationChildrenProvider {...props} />
@@ -34,7 +34,7 @@ describe('useElevationChildOverrides', () => {
 
   it('light mode - returns false if child is nested within an ElevationProvider and parent has an elevation of 1', () => {
     const { result } = renderHook(() => useElevationChildOverrides(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider spectrum="light">
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
@@ -47,7 +47,7 @@ describe('useElevationChildOverrides', () => {
 
   it('light mode - returns false if child is nested within an ElevationProvider and parent has an elevation of 2', () => {
     const { result } = renderHook(() => useElevationChildOverrides(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider spectrum="light">
           <ElevationProvider elevation={2}>
             <ElevationChildrenProvider {...props} />
@@ -60,7 +60,7 @@ describe('useElevationChildOverrides', () => {
 
   it('dark mode - returns true if child is nested within an ElevationProvider and parent has an elevation of 1', () => {
     const { result } = renderHook(() => useElevationChildOverrides(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
@@ -73,7 +73,7 @@ describe('useElevationChildOverrides', () => {
 
   it('dark mode - returns true if child is nested within an ElevationProvider and parent has an elevation of 2', () => {
     const { result } = renderHook(() => useElevationChildOverrides(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={2}>
             <ElevationChildrenProvider {...props} />

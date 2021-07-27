@@ -42,8 +42,8 @@ export const useGroupToggler = <T extends string>(
   }, [state, values.length, lastMixedStateRef]);
 
   const select = useCallback<(value?: T) => void>(
-    value => {
-      setState(prevState => {
+    (value) => {
+      setState((prevState) => {
         if (!value) {
           // select all
           return new Set(values);
@@ -59,8 +59,8 @@ export const useGroupToggler = <T extends string>(
   );
 
   const unselect = useCallback<(value?: T) => void>(
-    value => {
-      setState(prevState => {
+    (value) => {
+      setState((prevState) => {
         if (!value) {
           // unselect all
           return new Set();
@@ -76,8 +76,8 @@ export const useGroupToggler = <T extends string>(
   );
 
   const toggle = useCallback<(value?: T) => void>(
-    value => {
-      setState(prevState => {
+    (value) => {
+      setState((prevState) => {
         // group
         if (!value) {
           const isAllSelected = prevState.size === values.length;

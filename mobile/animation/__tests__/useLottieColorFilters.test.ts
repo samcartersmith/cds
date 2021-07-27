@@ -14,11 +14,11 @@ type ColorFiltersProp = ComponentProps<LottieComponent>['colorFilters'];
 const mockPalette = paletteConfigToRgbaStrings(defaultPalette, 'light');
 
 const getPaletteAliases = (colorFilters: ColorFiltersProp = []) => {
-  return colorFilters.map(item => item.keypath);
+  return colorFilters.map((item) => item.keypath);
 };
 
 const getPaletteColors = (colorFilters: ColorFiltersProp = []) => {
-  return colorFilters.map(item => item.color);
+  return colorFilters.map((item) => item.color);
 };
 
 describe('useLottieColorFilters', () => {

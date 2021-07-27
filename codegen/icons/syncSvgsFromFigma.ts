@@ -95,7 +95,7 @@ const createCategorizedNameType = (): {
     // Filter out non icon components
     const iconsInfo: { [key: string]: IconName } = {};
     const iconComponents: { [key: string]: ComponentMetadata } = {};
-    Object.keys(components).forEach(id => {
+    Object.keys(components).forEach((id) => {
       const component = components[id];
       const info = normalizeIconName(component.name);
       if (info) {
@@ -116,7 +116,7 @@ const createCategorizedNameType = (): {
       return;
     }
     spinner.text = 'Download svg images from urls in parallel.';
-    const requests = Object.values(images).map(url => axios.get(url));
+    const requests = Object.values(images).map((url) => axios.get(url));
     const responses = await Promise.all(requests);
     spinner.text = 'Write svg icons to files.';
     const OUT_DIR = await getSourcePath('codegen/icons/svg');
@@ -143,7 +143,7 @@ const createCategorizedNameType = (): {
 
     const { unicodeMap, lastUnicode } = createUnicodeMap(nameSet);
     entries(unicodeMap).forEach(([name, sizes]) => {
-      Object.keys(sizes).forEach(size => {
+      Object.keys(sizes).forEach((size) => {
         const unicode = sizes[Number(size)] as string;
         const fileName = `${unicode}-${name}-${size}.svg`;
         if (sizeMap[size][name]) {

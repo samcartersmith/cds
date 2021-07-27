@@ -27,7 +27,7 @@ export const useSparklinePath = ({ data, height, width }: UseSparklinePathParams
       line<number>()
         .curve(curveBasis)
         .x((_, i) => xFunction(i)!)
-        .y(y => yFunction(y)!)(downsampledData) ?? ''
+        .y((y) => yFunction(y)!)(downsampledData) ?? ''
     );
   }, [dataList, width, height]);
 };

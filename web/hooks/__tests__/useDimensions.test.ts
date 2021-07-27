@@ -17,7 +17,7 @@ describe('useDimensions', () => {
   let callback: (_event: Event[]) => void;
   const observe = jest.fn();
   const disconnect = jest.fn();
-  const mockResizeObserver = jest.fn(cb => ({
+  const mockResizeObserver = jest.fn((cb) => ({
     observe: () => {
       callback = cb;
       observe();
@@ -155,7 +155,7 @@ describe('useDimensions', () => {
   });
 
   it('should trigger onResize without breakpoints', () => {
-    const onResize = jest.fn(event => {
+    const onResize = jest.fn((event) => {
       event.unobserve();
       event.observe();
     });
@@ -175,7 +175,7 @@ describe('useDimensions', () => {
   });
 
   it('should trigger onResize with breakpoints', () => {
-    const onResize = jest.fn(event => {
+    const onResize = jest.fn((event) => {
       event.unobserve();
       event.observe();
     });

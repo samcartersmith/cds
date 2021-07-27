@@ -109,7 +109,7 @@ function migrateComponentButtons(
     return;
   }
 
-  elements.forEach(el => {
+  elements.forEach((el) => {
     const removeIndexes: number[] = [];
 
     el.openingElement.attributes.forEach((attr, i) => {
@@ -139,7 +139,7 @@ function migrateComponentButtons(
       }
 
       if (config.values && attr.value) {
-        const valueConfig = config.values.find(cfg => matchesASTValue(attr.value, cfg.from));
+        const valueConfig = config.values.find((cfg) => matchesASTValue(attr.value, cfg.from));
 
         if (valueConfig) {
           if (valueConfig.remove) {

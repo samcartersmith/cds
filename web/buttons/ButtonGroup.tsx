@@ -41,7 +41,7 @@ export const ButtonGroup = memo(function ButtonGroup({
       testID={testID}
       dangerouslySetClassName={list}
     >
-      {Children.map(children, child =>
+      {Children.map(children, (child) =>
         child ? (
           <li className={cx(item, block && fill)}>
             {cloneElement(child, { block: block || vertical })}

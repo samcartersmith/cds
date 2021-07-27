@@ -10,7 +10,7 @@ function expectClassName<K extends keyof BoxProps>(
   values: NonNullable<BoxProps[K]>[],
   classPrefix = DEFAULT_CLASS,
 ) {
-  values.forEach(value => {
+  values.forEach((value) => {
     it(`will set "${value}" class name for \`${prop}\` prop`, () => {
       const { container, rerender } = render(<Box>Child</Box>);
 
@@ -34,7 +34,7 @@ describe('Box', () => {
     ).toHaveNoViolations();
   });
 
-  (['article', 'aside', 'div', 'footer', 'header', 'main', 'section'] as const).forEach(tag => {
+  (['article', 'aside', 'div', 'footer', 'header', 'main', 'section'] as const).forEach((tag) => {
     it(`can render as a "${tag}" element using the \`as\` prop`, () => {
       const { container } = render(<Box as={tag}>Child</Box>);
 

@@ -42,7 +42,7 @@ export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
 
 export function useHandleRadioSelect<T extends string>(onChange?: (value: T) => void) {
   return useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    event => {
+    (event) => {
       onChange?.(event.target.value as T);
     },
     [onChange],

@@ -43,7 +43,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   }
 
   const checkboxIds: string[] = [];
-  const optionCheckboxes = Children.map(children, child => {
+  const optionCheckboxes = Children.map(children, (child) => {
     if (!isValidElement<CheckboxProps<T>>(child) || child.type !== Checkbox) {
       return child;
     }

@@ -41,7 +41,7 @@ describe('Link', () => {
       'legal',
     ] as const;
 
-    variants.forEach(variant => {
+    variants.forEach((variant) => {
       const linkRenderer = TestRenderer.create(
         <Link to="/" variant={variant} testID={TEST_ID}>
           Child

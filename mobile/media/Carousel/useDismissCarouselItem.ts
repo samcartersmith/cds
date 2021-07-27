@@ -48,7 +48,7 @@ export const useDismissCarouselItem = (itemsLength: number, scrollTo: ScrollToFn
       Animated.parallel([opacityMotion, isLastDismissableItem ? heightMotion : widthMotion]).start(
         () => {
           isAnimating.current = false;
-          setDismissedItems(prev => new Set(prev).add(id));
+          setDismissedItems((prev) => new Set(prev).add(id));
           callbackFn?.();
         },
       );

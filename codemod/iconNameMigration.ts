@@ -166,8 +166,8 @@ export default function replaceOldNameWithNewName(
     return undefined;
   }
 
-  elements.forEach(el => {
-    el.openingElement.attributes.forEach(attr => {
+  elements.forEach((el) => {
+    el.openingElement.attributes.forEach((attr) => {
       // Find the name prop
       if (attr.type === 'JSXAttribute' && attr.name.name === 'name') {
         // Change the value of this prop (name) to the new icon name

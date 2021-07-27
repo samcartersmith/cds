@@ -73,7 +73,7 @@ export class ComponentDocgen {
   }
 
   findProp(props: PropItemWithOptions[] | undefined, name: string) {
-    return props && props.find(prop => prop.name === name);
+    return props && props.find((prop) => prop.name === name);
   }
 
   get sharedProps() {

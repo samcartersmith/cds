@@ -53,7 +53,7 @@ export const Carousel = memo(
       const snapPoints = Object.values(layoutMap);
       /** This is fired in onLayout of CarouselItem. */
       const updateLayoutMap = useCallback((value: CarouselLayoutMap) => {
-        setLayoutMap(prev => ({ ...prev, ...value }));
+        setLayoutMap((prev) => ({ ...prev, ...value }));
       }, []);
       /** Imperatively handling scrolling Carousel to an item. LayoutMap has the index to x coordinate mapping. */
       const scrollToId = useCallback(

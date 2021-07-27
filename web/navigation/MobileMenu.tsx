@@ -20,8 +20,8 @@ export interface MobileMenuProps {
 export const MobileMenu = memo(({ sidebar, navbar }: MobileMenuProps) => {
   const navbarCtas = useMemo(() => {
     return flattenNodes(navbar?.props.ctas?.props.children)
-      .filter(child => child && typeof child === 'object' && child.type === Button)
-      .map(child => {
+      .filter((child) => child && typeof child === 'object' && child.type === Button)
+      .map((child) => {
         if (hasProps(child)) {
           return <NavigationListItem key={child.props.children} label={child.props.children} />;
         }
@@ -31,8 +31,8 @@ export const MobileMenu = memo(({ sidebar, navbar }: MobileMenuProps) => {
 
   const navbarActions = useMemo(() => {
     return flattenNodes(navbar?.props.actions?.props.children)
-      .filter(child => child && typeof child === 'object' && child.type === NavigationIconButton)
-      .map(child => {
+      .filter((child) => child && typeof child === 'object' && child.type === NavigationIconButton)
+      .map((child) => {
         if (hasProps(child)) {
           return <NavigationListItem key={child.props.label} label={child.props.label} />;
         }

@@ -17,7 +17,7 @@ export const StoryExample = ({
       disabled={disabled}
       placement={placement}
     >
-      {props => (
+      {(props) => (
         <Button {...props} disabled={disabled}>
           Button
         </Button>

@@ -25,12 +25,12 @@ function addImport(
     path = '@cbhq/cds-web/tokens';
   }
 
-  names.forEach(name => {
-    specs.push(mod.createNode(cs => cs.importSpecifier(cs.identifier(name))));
+  names.forEach((name) => {
+    specs.push(mod.createNode((cs) => cs.importSpecifier(cs.identifier(name))));
   });
 
   originalImportPath.insertAfter(
-    mod.createNode(cs => cs.importDeclaration(specs, cs.stringLiteral(path))),
+    mod.createNode((cs) => cs.importDeclaration(specs, cs.stringLiteral(path))),
   );
 }
 
@@ -55,7 +55,7 @@ export default function migrateToDeepImports(
   // Extract named imports
   let originalImportPath: ASTPath<ImportDeclaration> | undefined;
 
-  mod.findImports().forEach(path => {
+  mod.findImports().forEach((path) => {
     const { node } = path;
     const specsNotToRemove = new Set<string>();
 
@@ -65,7 +65,7 @@ export default function migrateToDeepImports(
 
     originalImportPath = path;
 
-    node.specifiers.forEach(spec => {
+    node.specifiers.forEach((spec) => {
       if (spec.type === 'ImportSpecifier') {
         const { name } = spec.imported;
 
@@ -129,7 +129,7 @@ export default function migrateToDeepImports(
     });
 
     // Filter out removed specifiers
-    node.specifiers = node.specifiers.filter(spec => {
+    node.specifiers = node.specifiers.filter((spec) => {
       if (spec.type === 'ImportSpecifier') {
         return specsNotToRemove.has(spec.imported.name);
       }

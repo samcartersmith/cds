@@ -36,7 +36,7 @@ export const paletteConfigToRgbaStrings = (
   paletteConfig: PartialPaletteConfig,
   spectrum: Spectrum,
 ) => {
-  return mapValues({ ...defaultPalette, ...paletteConfig }, paletteValue =>
+  return mapValues({ ...defaultPalette, ...paletteConfig }, (paletteValue) =>
     paletteValueToRgbaString(paletteValue, spectrum),
   );
 };

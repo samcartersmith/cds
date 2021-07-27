@@ -59,9 +59,9 @@ export default function addDefaultProps(
 
   const propsToAdd = JSON.parse(defaultProps as string);
 
-  elements.forEach(el => {
+  elements.forEach((el) => {
     const spacingProps = el.openingElement.attributes.find(
-      attr =>
+      (attr) =>
         attr.type === 'JSXAttribute' &&
         attr.name.type === 'JSXIdentifier' &&
         attr.name.name.startsWith(propPrefix as string), // ex. 'spacing'
@@ -72,7 +72,7 @@ export default function addDefaultProps(
       // To check the source code string console.log(mod.toSource(options).slice(el.openingElement.start, el.openingElement.end));
       Object.entries(propsToAdd).forEach(([name, value]) => {
         el.openingElement.attributes.unshift(
-          mod.createNode(cs => cs.jsxAttribute(cs.jsxIdentifier(name), getPropType(cs, value))),
+          mod.createNode((cs) => cs.jsxAttribute(cs.jsxIdentifier(name), getPropType(cs, value))),
         );
       });
     }

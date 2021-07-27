@@ -46,13 +46,13 @@ export const parseTypescript = (filepath: string) => {
 };
 
 const getDocgenForPlatform = (platform: Platform) =>
-  mapValues(CDS_SUB_DIRS_MAP, subDir => parseTypescript(`${platform}/${subDir}/index.ts`));
+  mapValues(CDS_SUB_DIRS_MAP, (subDir) => parseTypescript(`${platform}/${subDir}/index.ts`));
 
 const lookupDocgen =
   (docgenData: DocgenData, subDir: SubDir) =>
   (prev: ComponentDocgenResponse[], next: ComponentDocgenParams) => {
     const findData = (data: ComponentDoc[], name: string) =>
-      data.find(item => item.displayName === name);
+      data.find((item) => item.displayName === name);
     const web = findData(docgenData.web[subDir], next.componentName);
     const mobile = findData(docgenData.mobile[subDir], next.componentName);
     if (web || mobile) {
@@ -163,7 +163,7 @@ const flattenTemplatesMap = (
       // Currently copied and pasted into our Completed Components tab of Roadmap Google Sheet (go/cds-roadmap).
       {
         dest: 'website/data/componentsList.ts',
-        data: { components: docgenData.map(item => item.displayName) },
+        data: { components: docgenData.map((item) => item.displayName) },
       },
     ],
   });

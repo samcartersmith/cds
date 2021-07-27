@@ -36,7 +36,7 @@ type TextComponent =
   | React.ComponentType<DynamicElement<TextProps, HTMLNonHeadingTextTags, true>>;
 
 const textTestRunner = (testFn: (type: TextComponent) => void) => {
-  textComponents.map(async TextComponent => testFn(TextComponent));
+  textComponents.map(async (TextComponent) => testFn(TextComponent));
 };
 
 function expectClassName<K extends keyof TextProps>(
@@ -45,7 +45,7 @@ function expectClassName<K extends keyof TextProps>(
   values: NonNullable<TextProps[K]>[],
   otherClasses?: string,
 ) {
-  values.forEach(value => {
+  values.forEach((value) => {
     it(`${TextComponent.displayName} will set "${value}" class name for \`${prop}\` prop`, () => {
       const { container } = render(
         <TextComponent as="p" {...{ [prop]: value }}>
@@ -60,13 +60,13 @@ function expectClassName<K extends keyof TextProps>(
 }
 
 describe('Text', () => {
-  textTestRunner(TextComponent =>
+  textTestRunner((TextComponent) =>
     it(`${TextComponent.displayName} passes accessibility`, async () => {
       expect(await renderA11y(<TextComponent as="span">Child</TextComponent>)).toHaveNoViolations();
     }),
   );
 
-  textTestRunner(TextComponent =>
+  textTestRunner((TextComponent) =>
     (
       [
         'p',
@@ -86,7 +86,7 @@ describe('Text', () => {
         'sub',
         'li',
       ] as const
-    ).forEach(tag => {
+    ).forEach((tag) => {
       it(`${TextComponent.displayName} can render as a "${tag}" element using the \`as\` prop`, () => {
         const { container } = render(<TextComponent as={tag}>Child</TextComponent>);
 
@@ -96,7 +96,7 @@ describe('Text', () => {
   );
 
   it('can show tabular numbers', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       const { container } = render(
         <TextComponent as="p" tabularNumbers>
           20.21
@@ -108,7 +108,7 @@ describe('Text', () => {
   });
 
   it('can show slashed Zero', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       const { container } = render(
         <TextComponent as="p" slashedZero>
           YO2021Coinbase
@@ -120,7 +120,7 @@ describe('Text', () => {
   });
 
   it('can show underline', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       const { container } = render(
         <TextComponent as="p" underline>
           Underline
@@ -132,7 +132,7 @@ describe('Text', () => {
   });
 
   it('can be styled to not wrap', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       const { container } = render(
         <TextComponent as="p" noWrap>
           No Wrap
@@ -143,19 +143,19 @@ describe('Text', () => {
     });
   });
   describe('overflow', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       expectClassName(TextComponent, 'overflow', ['truncate', 'clip']);
     });
   });
 
   describe('selectable', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       expectClassName(TextComponent, 'selectable', ['none', 'text', 'all']);
     });
   });
 
   describe('transform', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       expectClassName(TextComponent, 'transform', ['uppercase', 'lowercase', 'capitalize']);
     });
   });

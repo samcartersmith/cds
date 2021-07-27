@@ -33,7 +33,7 @@ async function newPackage() {
   await fs.mkdir(PACKAGE_ROOT);
 
   await Promise.all(
-    files.map(async file => {
+    files.map(async (file) => {
       // Read file and replace tokens
       let source = await fs.readFile(path.join(TEMPLATE_ROOT, file), 'utf8');
 
@@ -56,6 +56,6 @@ async function newPackage() {
   console.log(chalk.green('New package created!'));
 }
 
-newPackage().catch(error => {
+newPackage().catch((error) => {
   console.error(chalk.red(error));
 });

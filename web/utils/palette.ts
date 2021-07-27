@@ -24,7 +24,7 @@ export const paletteValueToCssVar = (paletteValue: PaletteValue) => {
  */
 export const paletteConfigToCssVars = (paletteConfig: PartialPaletteConfig) => {
   const config = { ...defaultPalette, ...paletteConfig };
-  return mapValues(config, paletteValue => paletteValueToCssVar(paletteValue));
+  return mapValues(config, (paletteValue) => paletteValueToCssVar(paletteValue));
 };
 
 /**

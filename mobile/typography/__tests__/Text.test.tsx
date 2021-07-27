@@ -38,7 +38,7 @@ const textTestRunner = (testFn: (type: React.ComponentType<TextProps>) => void) 
 
 describe('Text', () => {
   it('renders text', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       const result = render(<TextComponent>Text</TextComponent>);
 
       expect(result.UNSAFE_queryAllByType(Text)).toHaveLength(1);
@@ -47,14 +47,14 @@ describe('Text', () => {
   });
 
   it('renders an Animated.Text when animated={true}', () => {
-    textTestRunner(TextComponent => {
+    textTestRunner((TextComponent) => {
       const result = render(<TextComponent animated>Text</TextComponent>);
 
       expect(result.UNSAFE_queryAllByType(Animated.Text)).toHaveLength(1);
     });
   });
 
-  textTestRunner(TextComponent => {
+  textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} can show tabular numbers`, async () => {
       const { getByText } = render(<TextComponent tabularNumbers>Text</TextComponent>);
 
@@ -66,7 +66,7 @@ describe('Text', () => {
     });
   });
 
-  textTestRunner(TextComponent => {
+  textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} can show underline`, async () => {
       const { getByText } = render(<TextComponent underline>Text</TextComponent>);
 
@@ -78,7 +78,7 @@ describe('Text', () => {
     });
   });
 
-  textTestRunner(TextComponent => {
+  textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} can be styled to not wrap`, async () => {
       const { getByText } = render(<TextComponent noWrap>Text</TextComponent>);
       await waitFor(() => getByText('Text'));

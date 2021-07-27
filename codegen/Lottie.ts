@@ -10,16 +10,16 @@ export const lottieFiles = (() => {
 
   const files = fs.readdirSync(LOTTIE_FILES_DIR, { withFileTypes: true });
   const lottieFileNames = files
-    .filter(ent => ent.isDirectory() && fs.existsSync(lottiePath(ent.name)))
-    .map(ent => ent.name);
+    .filter((ent) => ent.isDirectory() && fs.existsSync(lottiePath(ent.name)))
+    .map((ent) => ent.name);
 
-  return lottieFileNames.map(src => {
+  return lottieFileNames.map((src) => {
     const contents = fs.readFileSync(lottiePath(src), 'utf-8');
     const json = JSON.parse(contents) as LottieSource;
 
     const file = path.basename(src, 'json');
     const type = `${file.charAt(0).toUpperCase() + file.substring(1)}Lottie`;
-    const markers = json.markers.map(marker => marker.cm);
+    const markers = json.markers.map((marker) => marker.cm);
 
     return {
       dest: `lottie-files/${file}/index.ts`,

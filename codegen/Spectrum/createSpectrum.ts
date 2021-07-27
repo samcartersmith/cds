@@ -24,7 +24,7 @@ export const createSpectrum = <T extends ColorOutput>(mode: keyof typeof modes, 
     }, emptyObject as Record<HueStepName, string>);
   };
 
-  const hueSetForMode: HueSet = typedMode.map(item => {
+  const hueSetForMode: HueSet = typedMode.map((item) => {
     return generate(item.properties, item.options);
   });
 

@@ -9,7 +9,7 @@ export const createUnicodeMap = (nameSet: Set<string>) => {
   const unicodeMap = manifest.unicodeMap as UnicodeMap;
   let lastUnicodeCopy = manifest.lastUnicode;
 
-  nameSet.forEach(name => {
+  nameSet.forEach((name) => {
     if (!unicodeMap[name]) {
       unicodeMap[name] = arrayToObject(iconPixelSizes);
       for (const size of iconPixelSizes) {

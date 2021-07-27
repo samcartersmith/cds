@@ -26,9 +26,9 @@ const removeQuotes = (content: string) => {
 const formatOptions = (options: string[]) => {
   if (options && options.includes('0')) {
     return options
-      .map(item => Number(item))
+      .map((item) => Number(item))
       .sort((first, second) => first - second)
-      .map(item => `${item}`);
+      .map((item) => `${item}`);
   }
 
   return options.sort();

@@ -40,7 +40,7 @@ export const CircularProgress = memo(
         const timer = setInterval(() => {
           if (internalProgress >= 100) setDirection('backward');
           if (internalProgress <= 0) setDirection('forward');
-          setProgress(prog => (direction === 'forward' ? prog + 1 : prog - 1));
+          setProgress((prog) => (direction === 'forward' ? prog + 1 : prog - 1));
         }, 10);
 
         return () => {

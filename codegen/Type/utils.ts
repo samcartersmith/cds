@@ -37,7 +37,7 @@ export function calculateLetterSpacing(fontSize: number, unitless: boolean) {
     { minFontSize: 30, maxFontSize: 76, minTracking: 14, maxTracking: 1 },
   ] as const;
 
-  const { minFontSize, maxFontSize, minTracking, maxTracking } = trackingTable.find(track => {
+  const { minFontSize, maxFontSize, minTracking, maxTracking } = trackingTable.find((track) => {
     return fontSize >= track.minFontSize && fontSize <= track.maxFontSize;
   }) as unknown as {
     minFontSize: number;

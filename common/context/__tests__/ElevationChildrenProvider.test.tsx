@@ -9,7 +9,7 @@ describe('ElevationChildrenProvider', () => {
   /** Light mode */
   it('does not override palette variables if spectrum is light and parent has elevation of 1', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider>
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
@@ -23,7 +23,7 @@ describe('ElevationChildrenProvider', () => {
 
   it('does not override palette variables if spectrum is light and parent has elevation of 2', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider>
           <ElevationProvider elevation={2}>
             <ElevationChildrenProvider {...props} />
@@ -38,7 +38,7 @@ describe('ElevationChildrenProvider', () => {
   /** Dark mode */
   it('does not override palette variables if spectrum is dark and no elevation is set', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider spectrum="dark">
           <ElevationProvider>
             <ElevationChildrenProvider {...props} />
@@ -52,7 +52,7 @@ describe('ElevationChildrenProvider', () => {
 
   it('overrides palette variables if spectrum is dark and parent has elevation of 1', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
@@ -70,7 +70,7 @@ describe('ElevationChildrenProvider', () => {
 
   it('overrides palette variables if spectrum is dark and parent has elevation of 2', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: props => (
+      wrapper: (props) => (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={2}>
             <ElevationChildrenProvider {...props} />

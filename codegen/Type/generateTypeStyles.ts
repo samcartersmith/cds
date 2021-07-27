@@ -101,14 +101,14 @@ const calculateVariantStyle = (
 };
 
 // Codegen data
-export const typographyScaleMapForMobile = mapValues(scaleConfig, scaleNumber =>
-  mapValues(typographyConfig, config =>
+export const typographyScaleMapForMobile = mapValues(scaleConfig, (scaleNumber) =>
+  mapValues(typographyConfig, (config) =>
     calculateVariantStyle(config, scaleNumber, { mobile: true }),
   ),
 );
 
-export const typographyScaleMapForWeb = mapValues(scaleConfig, scaleNumber =>
-  mapValues(typographyConfig, config =>
+export const typographyScaleMapForWeb = mapValues(scaleConfig, (scaleNumber) =>
+  mapValues(typographyConfig, (config) =>
     mapKeys(calculateVariantStyle(config, scaleNumber), (_, cssProperty) => kebabCase(cssProperty)),
   ),
 );

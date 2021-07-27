@@ -28,7 +28,7 @@ export function useIndexCounter({
     if (isAtMin) {
       onMinDecrement();
     } else {
-      setActiveIndex(curr => {
+      setActiveIndex((curr) => {
         const newactiveIndex = curr - 1;
         onDecrement(newactiveIndex);
         return newactiveIndex;
@@ -40,7 +40,7 @@ export function useIndexCounter({
     if (isAtMax) {
       onMaxIncrement();
     } else {
-      setActiveIndex(curr => {
+      setActiveIndex((curr) => {
         const newactiveIndex = curr + 1;
         onIncrement(newactiveIndex);
         return newactiveIndex;

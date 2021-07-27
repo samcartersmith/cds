@@ -11,8 +11,8 @@ const cssVariables = mapValues(arrayToObject(spacingScaleWithoutZero), (_, key) 
 
 export const Spacing = {
   css: (attribute: 'padding' | 'margin') => {
-    return mapValues(arrayToObject(spacingDirections), direction => {
-      return mapValues(arrayToObject(spacingScaleWithoutZero), spacing => {
+    return mapValues(arrayToObject(spacingDirections), (direction) => {
+      return mapValues(arrayToObject(spacingScaleWithoutZero), (spacing) => {
         const fullAttribute = `${attribute}${direction === 'all' ? '' : `-${direction}`}` as const;
         const escapedPadding = `var(--spacing-${escape(spacing)})` as const;
         const escapedMargin = `calc(-1 * var(--spacing-${escape(spacing)}))` as const;
@@ -23,13 +23,13 @@ export const Spacing = {
       });
     });
   },
-  scaleCss: mapValues(spacingConfig, scaleFunc =>
+  scaleCss: mapValues(spacingConfig, (scaleFunc) =>
     Object.fromEntries(
-      spacingScaleWithoutZero.map(size => [`--spacing-${escape(size)}`, `${scaleFunc(size)}px`]),
+      spacingScaleWithoutZero.map((size) => [`--spacing-${escape(size)}`, `${scaleFunc(size)}px`]),
     ),
   ),
-  mobile: mapValues(spacingConfig, scaleFunc =>
-    Object.fromEntries(spacingScaleWithoutZero.map(size => [size, scaleFunc(size)])),
+  mobile: mapValues(spacingConfig, (scaleFunc) =>
+    Object.fromEntries(spacingScaleWithoutZero.map((size) => [size, scaleFunc(size)])),
   ),
   cssVariables,
 };

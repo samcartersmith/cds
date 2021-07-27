@@ -11,7 +11,7 @@ export const overlayPalettes: Record<Spectrum, PartialPaletteConfig> = {
   },
 };
 
-export const OverlayProvider: React.FC<SystemProviderProps> = memo(props => {
+export const OverlayProvider: React.FC<SystemProviderProps> = memo((props) => {
   const palette = useSpectrumConditional(overlayPalettes);
   return <SystemProvider palette={palette} {...props} />;
 });

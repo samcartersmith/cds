@@ -51,7 +51,7 @@ export class Codemod {
     this.findImports()
       .filter(({ node }) => !!String(node.source.value).match(importPath))
       .forEach(({ node }) => {
-        node.specifiers.forEach(spec => {
+        node.specifiers.forEach((spec) => {
           // Default
           if (
             spec.type === 'ImportDefaultSpecifier' &&

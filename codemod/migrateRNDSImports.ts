@@ -35,12 +35,12 @@ function addImport(
     path += `/${Array.from(names)[0]}`;
   }
 
-  names.forEach(name => {
-    specs.push(mod.createNode(cs => cs.importSpecifier(cs.identifier(name))));
+  names.forEach((name) => {
+    specs.push(mod.createNode((cs) => cs.importSpecifier(cs.identifier(name))));
   });
 
   originalImportPath.insertAfter(
-    mod.createNode(cs => cs.importDeclaration(specs, cs.stringLiteral(path))),
+    mod.createNode((cs) => cs.importDeclaration(specs, cs.stringLiteral(path))),
   );
 }
 
@@ -54,7 +54,7 @@ export default function migrateRNDSImports(
   const layoutImports = new Set<string>();
   let importPath: ASTPath<ImportDeclaration> | undefined;
 
-  mod.findImports().forEach(path => {
+  mod.findImports().forEach((path) => {
     if (path.node.source.value !== '@designSystem/primitives') {
       return;
     }
@@ -63,7 +63,7 @@ export default function migrateRNDSImports(
 
     // Extract and remove specifiers
     // eslint-disable-next-line no-param-reassign
-    path.node.specifiers = path.node.specifiers.filter(spec => {
+    path.node.specifiers = path.node.specifiers.filter((spec) => {
       if (spec.type !== 'ImportSpecifier') {
         return true;
       }

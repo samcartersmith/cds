@@ -90,7 +90,7 @@ export const createIconFont = async () => {
   });
 
   const glyphMap: Record<string, { [x: string]: string }> = {};
-  nameSet.forEach(name => {
+  nameSet.forEach((name) => {
     glyphMap[name] = arrayToObject(Object.keys(sizeMap));
     for (const size of iconPixelSizes) {
       glyphMap[name][size] = sizeMap[size][name] as string;

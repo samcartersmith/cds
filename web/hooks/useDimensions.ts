@@ -186,7 +186,7 @@ export const useDimensions = <T extends HTMLElement>({
       if (shouldUpdateRef.current && !shouldUpdateRef.current(next)) return;
 
       if (!shouldUpdateRef.current && breakpoints && updateOnBreakpointChange) {
-        setState(prev => (prev.currentBreakpoint !== next.currentBreakpoint ? next : prev));
+        setState((prev) => (prev.currentBreakpoint !== next.currentBreakpoint ? next : prev));
         return;
       }
 

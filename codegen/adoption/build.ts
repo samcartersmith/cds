@@ -68,7 +68,7 @@ const validateComponents = (map: ComponentMap) => {
       return acc;
     }
 
-    if (BLACKLIST.some(invalidStr => prev.includes(invalidStr))) {
+    if (BLACKLIST.some((invalidStr) => prev.includes(invalidStr))) {
       return acc;
     }
 
@@ -163,7 +163,7 @@ const CDSAdoption = async () => {
       ]);
 
       await Promise.all(
-        files.map(async file => {
+        files.map(async (file) => {
           instrument(file, await fs.readFile(file, 'utf8'));
         }),
       );
@@ -185,6 +185,6 @@ const CDSAdoption = async () => {
   console.log(chalk.green('New Adoption Results!'));
 };
 
-CDSAdoption().catch(error => {
+CDSAdoption().catch((error) => {
   console.error(chalk.red(error));
 });

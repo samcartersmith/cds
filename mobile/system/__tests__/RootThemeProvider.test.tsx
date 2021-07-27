@@ -19,7 +19,7 @@ describe('RootThemeProvider', () => {
     )) {
       mockDeviceScale(deviceFontScale);
       const { result } = renderHook(() => useRootScale(), {
-        wrapper: props => (
+        wrapper: (props) => (
           <RootThemeProvider>
             <View {...props} />
           </RootThemeProvider>

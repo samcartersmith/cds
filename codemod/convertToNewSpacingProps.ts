@@ -73,7 +73,7 @@ function createProp(mod: Codemod, value: Node | null, name: string): JSXAttribut
     number = number.argument as NumericLiteral;
   }
 
-  return mod.createNode(cs =>
+  return mod.createNode((cs) =>
     cs.jsxAttribute(cs.jsxIdentifier(id), cs.jsxExpressionContainer(number)),
   );
 }
@@ -112,7 +112,7 @@ function convertArrayToProps(mod: Codemod, array: ArrayExpression): JSXAttribute
 function convertObjectToProps(mod: Codemod, object: ObjectExpression): JSXAttribute[] {
   const props: JSXAttribute[] = [];
 
-  object.properties.forEach(property => {
+  object.properties.forEach((property) => {
     if (property.type !== 'ObjectProperty') {
       throw new Error(property.type);
     }
@@ -150,14 +150,14 @@ function convertNumericValue(
       convertNumericValue(node.expression as NumericLiteral);
       break;
     case 'ObjectExpression':
-      node.properties.forEach(prop => {
+      node.properties.forEach((prop) => {
         if (prop.type === 'ObjectProperty') {
           convertNumericValue(prop.value as NumericLiteral);
         }
       });
       break;
     case 'ArrayExpression':
-      node.elements.forEach(el => {
+      node.elements.forEach((el) => {
         convertNumericValue(el as NumericLiteral);
       });
       break;
@@ -195,12 +195,12 @@ export default function convertToNewSpacingProps(
   mod.source
     .find(mod.cs.Program)
     .nodes()[0]
-    .body.forEach(member => {
+    .body.forEach((member) => {
       if (member.type !== 'VariableDeclaration') {
         return;
       }
 
-      member.declarations.forEach(node => {
+      member.declarations.forEach((node) => {
         if (node.type !== 'VariableDeclarator') {
           return;
         }
@@ -222,7 +222,7 @@ export default function convertToNewSpacingProps(
     });
 
   // Convert spacing prop to new props
-  elements.forEach(el => {
+  elements.forEach((el) => {
     const newProps: JSXAttribute[] = [];
     let oldIndex = 0;
 

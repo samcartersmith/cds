@@ -93,7 +93,7 @@ const loadOneImage = (
         Accept: exportFormat === 'png' ? 'image/png' : 'image/svg+xml',
       },
     })
-    .then(async res => {
+    .then(async (res) => {
       if (res) {
         const fileNameFullPath = path.join(imageOutFullPath, fileName);
         const encoding = exportFormat === 'svg' ? 'utf8' : 'binary';
@@ -129,7 +129,7 @@ const loadOneImage = (
         }
       }
     })
-    .catch(err => {
+    .catch((err) => {
       errMsg(spinner, err.message);
     });
 };
@@ -179,10 +179,10 @@ const loadImagesLocally = async (
   createNewImgsDirIfDNE(outDirPath);
 
   await Promise.all(
-    SCALE_SIZES.map(async scale => {
+    SCALE_SIZES.map(async (scale) => {
       const fileImageResponse = await figmaClient
         .fileImages(ILLUSTRATION_FILE_ID, nodeIds, exportFormat, scale)
-        .catch(err => errMsg(spinner, err.message));
+        .catch((err) => errMsg(spinner, err.message));
       if (!fileImageResponse) return undefined;
 
       if (fileImageResponse.data.err) {
@@ -191,7 +191,7 @@ const loadImagesLocally = async (
       }
 
       // Start downloading images from Figma CDN
-      const loadImagePromiseArr = Object.entries(fileImageResponse.data.images).map(info => {
+      const loadImagePromiseArr = Object.entries(fileImageResponse.data.images).map((info) => {
         const [nodeId, imageURL] = info;
 
         if (!nodeId || !localManifestData) return undefined;
@@ -224,7 +224,7 @@ const getIllustrationNamesAndVariants = (
   } = {};
   const variants = new Set<string>();
 
-  Object.entries(components).forEach(component => {
+  Object.entries(components).forEach((component) => {
     const [, metadata] = component;
     const props = normalizeIllustration(metadata.name);
     if (!props) return;
@@ -245,10 +245,10 @@ const getIllustrationNamesAndVariants = (
 
   const toIllustrationNamesMap = (caseMethod: 'camelcase' | 'pascalcase') => {
     const names: IllustrationNamesMap = {};
-    Object.keys(illustrationNames).forEach(variant => {
+    Object.keys(illustrationNames).forEach((variant) => {
       names[variant] = Array.from(illustrationNames[variant])
         .sort()
-        .map(name => {
+        .map((name) => {
           switch (caseMethod) {
             default:
               throw new Error(`usage: ${caseMethod} is invalid.`);
@@ -285,7 +285,7 @@ const updateManifest = async (
   restart = false,
   blacklistOn = false,
 ) => {
-  Object.entries(components).forEach(component => {
+  Object.entries(components).forEach((component) => {
     const [nodeId, metadata] = component;
     const props = normalizeIllustration(metadata.name);
     if (!props) return;
@@ -339,7 +339,7 @@ const genStatistics = (destPath: string, names: IllustrationNamesMap) => {
     [numVariant: string]: number;
   } = {};
 
-  Object.keys(names).forEach(variant => {
+  Object.keys(names).forEach((variant) => {
     variantCountMap[variant.replace('Names', 'Count')] = names[variant].length;
   });
 
@@ -407,7 +407,7 @@ const createVersionNumManifest = (destPath: string, fileFormat: FileFormat) => {
 
 const createConstants = (names: IllustrationNamesMap, outPaths: string[]) => {
   try {
-    outPaths.forEach(dest =>
+    outPaths.forEach((dest) =>
       generateFromTemplate({
         template: 'objectMap.ejs',
         dest,

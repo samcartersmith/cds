@@ -6,7 +6,7 @@ export const fillMissingIcons = (nameSet: Set<string>, sizeMap: SizeMap) => {
   // than reference the glyph of the closest size, start with the largest
   // sibling and cycling upwards
   iconPixelSizes.forEach((size, sizeIndex) => {
-    nameSet.forEach(name => {
+    nameSet.forEach((name) => {
       // We have the size for this icon
       if (sizeMap[size][name]) {
         return;

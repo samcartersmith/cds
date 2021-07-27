@@ -12,5 +12,5 @@ export default {
 export const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = createStories(
   ContentCell,
   CellMedia,
-  props => <Box {...props} background="backgroundAlternate" />,
+  (props) => <Box {...props} background="backgroundAlternate" />,
 );

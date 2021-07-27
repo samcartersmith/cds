@@ -269,7 +269,7 @@ export const TitleNoTabs: React.FC = () => {
   const title = 'Bitcoin';
   const subtitle = 'BTC';
   const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
-  const handlePress = useCallback(() => setShowDisplayTitle(prev => !prev), []);
+  const handlePress = useCallback(() => setShowDisplayTitle((prev) => !prev), []);
 
   const navbar = useMemo(() => {
     return (

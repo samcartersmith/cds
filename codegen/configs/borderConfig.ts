@@ -9,7 +9,7 @@ export const borderRadiusConfig = {
   round: 100,
 };
 
-export const borderRadiusCss = mapValues(borderRadiusConfig, val => {
+export const borderRadiusCss = mapValues(borderRadiusConfig, (val) => {
   return {
     'border-radius': typeof val === 'string' ? val : `${val}px`,
   };
@@ -24,7 +24,7 @@ export const borderWidthConfig = {
   focusRing: 2,
 };
 
-export const borderWidthCss = mapValues(borderWidthConfig, val => {
+export const borderWidthCss = mapValues(borderWidthConfig, (val) => {
   return {
     'border-width': `${val}px`,
   };

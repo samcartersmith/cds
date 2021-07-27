@@ -102,7 +102,7 @@ export const NavigationListItem = memo(
     return (
       <li>
         <Tooltip content={label} disabled={isMobileMenuVisible || isExpanded} placement="right">
-          {tooltipProps => {
+          {(tooltipProps) => {
             const enhancedProps = {
               ...tooltipProps,
               className: cx(flexStyles, spacingStyles, sidebarItemStyles),

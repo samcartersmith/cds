@@ -4,10 +4,10 @@ import { DEFAULT_SCALE } from 'eng/shared/design-system/codegen/configs/scaleCon
 import { controlsConfig } from './configs/controlsConfig';
 
 export const Control = {
-  scaleCss: mapValues(controlsConfig, styles =>
+  scaleCss: mapValues(controlsConfig, (styles) =>
     mapValues(
       mapKeys(styles, (_, key) => toCssVar(key)),
-      value => `${value}px`,
+      (value) => `${value}px`,
     ),
   ),
   mobile: controlsConfig,

@@ -31,21 +31,21 @@ export const useCheckboxGroupState = <T extends string>(
     useGroupToggler(values, initialState);
 
   const select = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    event => {
+    (event) => {
       doSelect(event?.target.value as T);
     },
     [doSelect],
   );
 
   const unselect = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    event => {
+    (event) => {
       doUnselect(event?.target.value as T);
     },
     [doUnselect],
   );
 
   const toggle = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    event => {
+    (event) => {
       doToggle(event?.target.value as T);
     },
     [doToggle],
