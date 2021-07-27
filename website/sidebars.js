@@ -32,13 +32,14 @@ module.exports = {
       items: [
         'foundation/overview',
         'foundation/a11y',
-        'foundation/scale',
         'foundation/color',
-        'foundation/layout',
-        'foundation/typography',
+        'foundation/elevation',
         'foundation/iconography',
         'foundation/illustration',
+        'foundation/layout',
         'foundation/motion',
+        'foundation/scale',
+        'foundation/typography',
       ],
     },
     {
