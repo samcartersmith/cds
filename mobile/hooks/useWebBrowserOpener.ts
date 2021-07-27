@@ -18,9 +18,7 @@ export const useWebBrowserOpener = () => {
           // Use custom handling for web URLs
           await openWebBrowser(url, {
             spectrum: options?.spectrum ?? spectrum,
-            preventRedirectionIntoApp: options?.preventRedirectionIntoApp || false,
-            forceOpenOutsideApp: options?.forceOpenOutsideApp || false,
-            readerMode: options?.readerMode || false,
+            ...options,
           });
           break;
         default: {

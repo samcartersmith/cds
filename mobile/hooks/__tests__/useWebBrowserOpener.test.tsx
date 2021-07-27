@@ -7,9 +7,6 @@ const URL = 'https://www.coinbase.com';
 
 const DEFAULT_OPEN_WEB_BROWSER_OPTIONS = {
   spectrum: 'light',
-  preventRedirectionIntoApp: false,
-  forceOpenOutsideApp: false,
-  readerMode: false,
 };
 
 describe('useWebBrowserOpener', () => {
@@ -43,23 +40,15 @@ describe('useWebBrowserOpener', () => {
     const options = {
       preventRedirectionIntoApp: false,
       forceOpenOutsideApp: false,
+      readerMode: false,
     } as const;
 
     result.current(URL, options);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
-  });
-
-  it('test that preventRedirectionIntoApp is optional', () => {
-    const { result } = renderHook(() => useWebBrowserOpener());
-    const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
-    const options = {
-      forceOpenOutsideApp: false,
-    } as const;
-
-    result.current(URL, options);
-
-    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
+    expect(openWebBrowserSpy).toBeCalledWith(URL, {
+      ...DEFAULT_OPEN_WEB_BROWSER_OPTIONS,
+      ...options,
+    });
   });
 
   /**
@@ -70,8 +59,50 @@ describe('useWebBrowserOpener', () => {
     const { result } = renderHook(() => useWebBrowserOpener());
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
 
-    result.current(URL, {});
+    result.current(URL);
 
     expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
+  });
+  it('test all the InAppBrowser configuration, making sure that all of them can be used', () => {
+    const { result } = renderHook(() => useWebBrowserOpener());
+    const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
+    const options = {
+      // cds custom properties
+      preventRedirectionIntoApp: true,
+      forceOpenOutsideApp: true,
+      // iOS Properties
+      dismissButtonStyle: 'cancel',
+      readerMode: true,
+      animated: false,
+      modalPresentationStyle: 'fullScreen',
+      modalTransitionStyle: 'coverVertical',
+      modalEnabled: true,
+      enableBarCollapsing: false,
+      // Android Properties
+      showTitle: true,
+      navigationBarColor: 'black',
+      navigationBarDividerColor: 'white',
+      enableUrlBarHiding: true,
+      enableDefaultShare: true,
+      forceCloseOnRedirection: false,
+      // Specify full animation resource identifier(package:anim/name)
+      // or only resource name(in case of animation bundled with app).
+      animations: {
+        startEnter: 'slide_in_right',
+        startExit: 'slide_out_left',
+        endEnter: 'slide_in_left',
+        endExit: 'slide_out_right',
+      },
+      headers: {
+        'my-custom-header': 'my custom header value',
+      },
+    } as const;
+
+    result.current(URL, options);
+
+    expect(openWebBrowserSpy).toBeCalledWith(URL, {
+      ...DEFAULT_OPEN_WEB_BROWSER_OPTIONS,
+      ...options,
+    });
   });
 });

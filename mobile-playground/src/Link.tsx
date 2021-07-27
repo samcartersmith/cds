@@ -1,10 +1,12 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid  */
+import React, { useCallback } from 'react';
 import { LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 import { Link } from '@cbhq/cds-mobile/typography/Link';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { TextLabel1 } from '@cbhq/cds-mobile/typography/TextLabel1';
 import { capitalize } from '@cbhq/cds-utils';
+import { useWebBrowserOpener } from '@cbhq/cds-mobile/hooks/useWebBrowserOpener';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
@@ -32,14 +34,56 @@ const links = typographies.map(typography => (
 
 // eslint-disable-next-line no-console
 const logPressed = () => console.log('Link is pressed');
+const OPEN_WEB_BROWSER_OPTIONS = {
+  // cds custom properties
+  preventRedirectionIntoApp: true,
+  forceOpenOutsideApp: true,
+  // iOS Properties
+  dismissButtonStyle: 'cancel',
+  readerMode: true,
+  animated: false,
+  modalPresentationStyle: 'fullScreen',
+  modalTransitionStyle: 'coverVertical',
+  modalEnabled: true,
+  enableBarCollapsing: false,
+  // Android Properties
+  showTitle: true,
+  navigationBarColor: 'black',
+  navigationBarDividerColor: 'white',
+  enableUrlBarHiding: true,
+  enableDefaultShare: true,
+  forceCloseOnRedirection: false,
+  // Specify full animation resource identifier(package:anim/name)
+  // or only resource name(in case of animation bundled with app).
+  animations: {
+    startEnter: 'slide_in_right',
+    startExit: 'slide_out_left',
+    endEnter: 'slide_in_left',
+    endExit: 'slide_out_right',
+  },
+  headers: {
+    'my-custom-header': 'my custom header value',
+  },
+} as const;
 
 const LinkScreen = function LinkScreen() {
+  const openURL = useWebBrowserOpener();
+  const openURLOnPress = useCallback(
+    () => openURL('https://www.coinbase.com/', OPEN_WEB_BROWSER_OPTIONS),
+    [openURL]
+  );
+
   return (
     <ExamplesScreen>
       {links}
       <Example inline>
+        <Link variant="body" onPress={openURLOnPress}>
+          Test useWebBrowserOpener hook
+        </Link>
+      </Example>
+      <Example inline>
         <TextHeadline>Goes to coinbase.com</TextHeadline>
-        <Link variant="title1" to="https://www.coinbase.com/">
+        <Link variant="body" to="https://www.coinbase.com/">
           Go to Coinbase
         </Link>
       </Example>
@@ -55,7 +99,6 @@ const LinkScreen = function LinkScreen() {
       </Example>
       <Example inline>
         <TextHeadline>Testing onPress</TextHeadline>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <Link variant="title1" onPress={logPressed} color="negative">
           Go to Coinbase
         </Link>

@@ -41,6 +41,8 @@ describe('openWebBrowser', () => {
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
+        spectrum: 'dark',
+        forceOpenOutsideApp: false,
       },
       ios: {
         dismissButtonStyle: 'close',
@@ -52,63 +54,78 @@ describe('openWebBrowser', () => {
         modalTransitionStyle: 'crossDissolve',
         modalEnabled: true,
         enableBarCollapsing: false,
+        spectrum: 'dark',
+        forceOpenOutsideApp: false,
       },
     });
   });
   it('light mode configuration is applied in browserConfig', async () => {
     const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
+    const spectrum = 'light';
+
     await openWebBrowser('www.google.com', {
-      spectrum: 'light',
+      spectrum,
       forceOpenOutsideApp: false,
     });
     expect(selectPlatform).toBeCalledWith({
       android: {
         showTitle: true,
-        toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, 'light'),
-        secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, 'light'),
+        toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
+        secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, spectrum),
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
+        spectrum,
+        forceOpenOutsideApp: false,
       },
       ios: {
         dismissButtonStyle: 'close',
-        preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, 'light'),
-        preferredControlTintColor: paletteValueToHex(paletteConfig.primary, 'light'),
+        preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
+        preferredControlTintColor: paletteValueToHex(paletteConfig.primary, spectrum),
         readerMode: false,
         animated: true,
         modalPresentationStyle: 'fullScreen',
         modalTransitionStyle: 'crossDissolve',
         modalEnabled: true,
         enableBarCollapsing: false,
+        spectrum,
+        forceOpenOutsideApp: false,
       },
     });
   });
   it('readerMode is configurable', async () => {
     const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
+    const spectrum = 'light';
+
     await openWebBrowser('www.google.com', {
-      spectrum: 'light',
-      forceOpenOutsideApp: false,
+      spectrum,
       readerMode: true,
+      forceOpenOutsideApp: false,
     });
     expect(selectPlatform).toBeCalledWith({
       android: {
         showTitle: true,
-        toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, 'light'),
-        secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, 'light'),
+        toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
+        secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, spectrum),
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
+        readerMode: true,
+        spectrum,
+        forceOpenOutsideApp: false,
       },
       ios: {
         dismissButtonStyle: 'close',
-        preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, 'light'),
-        preferredControlTintColor: paletteValueToHex(paletteConfig.primary, 'light'),
+        preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
+        preferredControlTintColor: paletteValueToHex(paletteConfig.primary, spectrum),
         readerMode: true,
         animated: true,
         modalPresentationStyle: 'fullScreen',
         modalTransitionStyle: 'crossDissolve',
         modalEnabled: true,
         enableBarCollapsing: false,
+        spectrum,
+        forceOpenOutsideApp: false,
       },
     });
   });
@@ -122,5 +139,112 @@ describe('openWebBrowser', () => {
       forceOpenOutsideApp: true,
     });
     expect(spyPreventRedirection).toHaveBeenCalledTimes(1);
+  });
+  it('can add InAppBrowser configruations', async () => {
+    const selectPlatform = jest.spyOn(Platform, 'select').mockImplementation();
+    const spectrum = 'dark';
+
+    await openWebBrowser('www.google.com', {
+      // cds custom properties
+      spectrum,
+      preventRedirectionIntoApp: true,
+      forceOpenOutsideApp: true,
+      // iOS Properties
+      dismissButtonStyle: 'cancel',
+      readerMode: true,
+      animated: false,
+      modalPresentationStyle: 'fullScreen',
+      modalTransitionStyle: 'coverVertical',
+      modalEnabled: true,
+      enableBarCollapsing: false,
+      // Android Properties
+      showTitle: true,
+      navigationBarColor: 'black',
+      navigationBarDividerColor: 'white',
+      enableUrlBarHiding: true,
+      enableDefaultShare: true,
+      forceCloseOnRedirection: false,
+      // Specify full animation resource identifier(package:anim/name)
+      // or only resource name(in case of animation bundled with app).
+      animations: {
+        startEnter: 'slide_in_right',
+        startExit: 'slide_out_left',
+        endEnter: 'slide_in_left',
+        endExit: 'slide_out_right',
+      },
+      headers: {
+        'my-custom-header': 'my custom header value',
+      },
+    });
+    expect(selectPlatform).toBeCalledWith({
+      android: {
+        toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
+        secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, spectrum),
+        // cds custom properties
+        spectrum,
+        preventRedirectionIntoApp: true,
+        forceOpenOutsideApp: true,
+        // iOS Properties
+        dismissButtonStyle: 'cancel',
+        readerMode: true,
+        animated: false,
+        modalPresentationStyle: 'fullScreen',
+        modalTransitionStyle: 'coverVertical',
+        modalEnabled: true,
+        enableBarCollapsing: false,
+        // Android Properties
+        showTitle: true,
+        navigationBarColor: 'black',
+        navigationBarDividerColor: 'white',
+        enableUrlBarHiding: true,
+        enableDefaultShare: true,
+        forceCloseOnRedirection: false,
+        // Specify full animation resource identifier(package:anim/name)
+        // or only resource name(in case of animation bundled with app).
+        animations: {
+          startEnter: 'slide_in_right',
+          startExit: 'slide_out_left',
+          endEnter: 'slide_in_left',
+          endExit: 'slide_out_right',
+        },
+        headers: {
+          'my-custom-header': 'my custom header value',
+        },
+      },
+      ios: {
+        preferredBarTintColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
+        preferredControlTintColor: paletteValueToHex(paletteConfig.primary, spectrum),
+        // cds custom properties
+        spectrum,
+        preventRedirectionIntoApp: true,
+        forceOpenOutsideApp: true,
+        // iOS Properties
+        dismissButtonStyle: 'cancel',
+        readerMode: true,
+        animated: false,
+        modalPresentationStyle: 'fullScreen',
+        modalTransitionStyle: 'coverVertical',
+        modalEnabled: true,
+        enableBarCollapsing: false,
+        // Android Properties
+        showTitle: true,
+        navigationBarColor: 'black',
+        navigationBarDividerColor: 'white',
+        enableUrlBarHiding: true,
+        enableDefaultShare: true,
+        forceCloseOnRedirection: false,
+        // Specify full animation resource identifier(package:anim/name)
+        // or only resource name(in case of animation bundled with app).
+        animations: {
+          startEnter: 'slide_in_right',
+          startExit: 'slide_out_left',
+          endEnter: 'slide_in_left',
+          endExit: 'slide_out_right',
+        },
+        headers: {
+          'my-custom-header': 'my custom header value',
+        },
+      },
+    });
   });
 });
