@@ -9,6 +9,8 @@ import {
   ImageSourcePropType,
   ImageURISource,
 } from 'react-native';
+import { SvgCssUri } from 'react-native-svg';
+
 import { useInvertedPaletteColor } from '../color/useInvertedPaletteColor';
 import { usePalette } from '../hooks/usePalette';
 
@@ -44,10 +46,17 @@ export type RemoteImageProps =
 
 export function getSource(source: string | number | ImageURISource): ImageSourcePropType {
   if (typeof source === 'string') {
+    if (source.endsWith('.svg')) {
+      return { uri: source, headers: { format: 'svg' } };
+    }
     return { uri: source };
   }
 
   return source;
+}
+
+function isSvg(source: ImageSourcePropType): boolean {
+  return typeof source === 'object' && 'headers' in source && source.headers?.format === 'svg';
 }
 
 export const RemoteImage = memo(function RemoteImage({
@@ -56,6 +65,7 @@ export const RemoteImage = memo(function RemoteImage({
   aspectRatio,
   shape = 'square',
   shouldApplyDarkModeEnhacements,
+  source,
   ...props
 }: RemoteImageProps) {
   const borderRadius = useMemo(() => {
@@ -103,5 +113,9 @@ export const RemoteImage = memo(function RemoteImage({
     [aspectRatio, borderRadius, darkModeStyles, height, width],
   );
 
-  return <Image accessibilityIgnoresInvertColors {...props} style={styles} />;
+  if (isSvg(source)) {
+    return <SvgCssUri style={styles} uri={Image.resolveAssetSource(source).uri} {...props} />;
+  }
+
+  return <Image accessibilityIgnoresInvertColors source={source} {...props} style={styles} />;
 });
