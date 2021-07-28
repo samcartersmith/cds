@@ -165,15 +165,15 @@ setup.mobile:
 
 .PHONY: start.mobile
 start.mobile:
-	cd mobile-playground; RN_PROJECT=cds npx react-native start --config ../../../../metro.config.js --reset-cache
+	cd ../../..; RN_PROJECT=cds npx react-native start --reset-cache
 
 .PHONY: build.android
 build.android:
-	cd mobile-playground; RN_PROJECT=cds npx react-native run-android --no-jetifier
+	cd ../../..; RN_PROJECT=cds npx react-native run-android --no-jetifier
 
 .PHONY: build.ios
 build.ios:
-	cd mobile-playground; RN_PROJECT=cds npx react-native run-ios
+	cd ../../..; RN_PROJECT=cds npx react-native run-ios --project-path ./eng/shared/design-system/mobile-playground/ios
 
 .PHONY: clean.ios
 clean.ios:
