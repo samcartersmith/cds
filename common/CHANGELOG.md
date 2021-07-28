@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.19.0 (7/27/2021, 04:27 PM PST)
+
+#### 💥 Breaking
+
+- Unify useAccessibleForeground params + add Sparkline and SparklineGradient for CDS web. [#23621](https://github.cbhq.net/mono/repo/pull/23621), [CDS-636](https://jira.coinbase-corp.com/browse/CDS-636)
+
+#### 🚀 Updates
+
+- Always include `arrowParens` for Prettier config. [#26971](https://github.cbhq.net/mono/repo/pull/26971)
+
+#### 📘 Misc
+
+- Add CHANGELOG for packages to CDS website. [#27210](https://github.cbhq.net/mono/repo/pull/27210), [CDS-765](https://jira.coinbase-corp.com/browse/CDS-765)
+
 ## 0.18.0 (7/21/2021, 04:37 PM PST)
 
 #### 💥 Breaking
