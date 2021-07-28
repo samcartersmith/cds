@@ -44,6 +44,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
     spacingHorizontal,
     // interactable ex. label
     disabled,
+    dangerouslySetColor,
     ...props
   }: DynamicElement<TextProps, T, true /* as prop is required */>) => {
     const spacingStyles = useSpacingStyles({
@@ -64,6 +65,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography) => {
       ...props,
       'data-testid': testID,
       children,
+      style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
       className: cx(
         typographyResets,
         textStyles[name],

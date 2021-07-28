@@ -52,4 +52,6 @@ export interface TextBaseProps extends SpacingProps, TextAlignProps {
    * Add disabled opacity style to text
    */
   disabled?: boolean;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: string;
 }

@@ -11,12 +11,12 @@ function useAccessibleForeground(params: AccessibleForegroundParams): string;
 function useAccessibleForeground(params?: undefined): AccessibleForegroundFn;
 function useAccessibleForeground(params?: AccessibleForegroundParams) {
   const paletteConfig = usePaletteConfig();
-  const background = usePaletteValueToRgbaString(paletteConfig.background);
+  const backgroundFromPalette = usePaletteValueToRgbaString(paletteConfig.background);
   const transformFn = usePaletteValueToRgbaString();
   const convert = useCallback(
-    ({ color, usage }: AccessibleForegroundParams) =>
-      getAccessibleForeground(background, color, usage, transformFn),
-    [background, transformFn],
+    ({ background, color, usage }: AccessibleForegroundParams) =>
+      getAccessibleForeground(background ?? backgroundFromPalette, color, usage, transformFn),
+    [backgroundFromPalette, transformFn],
   );
 
   return useMemo(() => {

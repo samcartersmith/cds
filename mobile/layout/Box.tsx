@@ -52,6 +52,7 @@ export const BoxInner = memo(
     animated,
     background,
     children,
+    dangerouslySetBackground,
     dangerouslySetStyle,
     elevation,
     overflow = 'visible',
@@ -182,7 +183,9 @@ export const BoxInner = memo(
     const boxStyles = useMemo(() => {
       const style: ViewStyle = {};
 
-      if (background) {
+      if (dangerouslySetBackground) {
+        style.backgroundColor = dangerouslySetBackground;
+      } else if (background) {
         style.backgroundColor = palette[background === true ? 'background' : background];
       } else if (elevation) {
         // Shadows will not render without a background color
@@ -198,7 +201,7 @@ export const BoxInner = memo(
       }
 
       return style;
-    }, [background, elevation, opacity, overflow, palette]);
+    }, [background, dangerouslySetBackground, elevation, opacity, overflow, palette]);
     const style = useMemo(
       () =>
         [

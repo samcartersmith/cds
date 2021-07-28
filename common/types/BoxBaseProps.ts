@@ -99,6 +99,8 @@ export interface BoxBaseProps
   pin?: PinningDirection;
   /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
   elevation?: ElevationLevels;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetBackground?: string;
 }
 
 export interface StackBaseProps {

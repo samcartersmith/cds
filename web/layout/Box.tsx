@@ -8,6 +8,7 @@ import {
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { css, cx } from 'linaria';
 
+import { emptyObject } from '@cbhq/cds-utils';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
@@ -144,6 +145,7 @@ export const BoxInner = forwardRef(
       offsetStart,
       offsetTop,
       offsetVertical,
+      dangerouslySetBackground,
       dangerouslySetClassName,
       // A11y
       ...restProps
@@ -203,6 +205,9 @@ export const BoxInner = forwardRef(
         ),
         role,
         style: {
+          ...(dangerouslySetBackground
+            ? { backgroundColor: dangerouslySetBackground }
+            : emptyObject),
           flexBasis,
           flexGrow,
           flexShrink,

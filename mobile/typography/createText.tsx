@@ -71,7 +71,7 @@ export const createText = (name: Typography) => {
     spacingEnd,
     spacingVertical,
     spacingHorizontal,
-
+    dangerouslySetColor,
     // RN Text props
     ...props
   }) {
@@ -124,7 +124,7 @@ export const createText = (name: Typography) => {
         textStyles,
         textTransform,
         {
-          color: palette[color],
+          color: dangerouslySetColor ?? palette[color],
           lineHeight,
           overflow: ellipsize ? ('hidden' as const) : ('visible' as const),
         },
@@ -133,6 +133,7 @@ export const createText = (name: Typography) => {
         dangerouslySetStyle as TextStyle,
       ],
       [
+        dangerouslySetColor,
         spacingStyles,
         textStyles,
         textTransform,

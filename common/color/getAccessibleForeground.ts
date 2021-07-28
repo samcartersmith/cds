@@ -18,12 +18,15 @@ export const getAccessibleForeground = (
   /* Valid color value (hex, rgb, rgba, etc) */
   background: string,
   /* Valid color value (hex, rgb, rgba, etc) */
-  foreground: string,
+  foreground: string | 'auto',
   /** Where the foreground color is being applied. */
   usage: A11yColorUsage,
   /** Function to transform a paletteValue (blue60 or [blue60, 1]) into a valid color value. */
   transformFn: PaletteValueToRgbaStringFn,
 ) => {
+  if (foreground === 'auto') {
+    return isAccessibleColor(background, 'white', usage) ? 'rgb(255,255,255)' : 'rgb(0,0,0)';
+  }
   if (isAccessibleColor(background, foreground, usage)) {
     return foreground;
   }
