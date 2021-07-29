@@ -12,6 +12,7 @@ const pressClassName = css`
   align-items: stretch;
   flex-grow: 1;
   display: flex;
+  width: 100%;
 `;
 
 // Display and min-width are necessary for truncation to work:
