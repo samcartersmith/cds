@@ -11,7 +11,7 @@ export function createStories(
     }
   >,
   CellMedia: React.ComponentType<CellMediaProps>,
-  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>
+  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>,
 ) {
   const Content = () => (
     <>
