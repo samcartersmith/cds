@@ -14,7 +14,42 @@ title: Getting started
 
 ### For web projects
 
-1. In the bazel rule for building your application, make sure to include `"//eng/shared/design-system:web_source"` as part of the `data` argument.
+1. In your application's bazel file, include `"//eng/shared/design-system:web_source"` as part of your webpack srcs:
+
+```bazel
+webpack_srcs = [
+    :runtime_source",
+    "//eng/shared/design-system:web_source",
+]
+```
+
+2. In your application's bazel file, include the design system deps as part of your webpack npm deps:
+
+```bazel
+load("//eng/shared/design-system:config.bzl", "append_cds_web_deps")
+webpack_npm_dependencies = append_cds_web_deps([
+  ...
+])
+```
+
+3. In your application's webpack config, include the linaria loader:
+
+```js
+module.exports = () => {
+  const webpackConfig = {
+    ...
+    module: {
+      rules: [
+        {
+          loader: 'linaria/loader',
+          options: { displayName: !isProduction, babelOptions: { rootMode: 'upward' } },
+        },
+        ...
+      ]
+    }
+  }
+}
+```
 
 ## Using CDS outside the [`mono/repo`](https://github.cbhq.net/mono/repo)
 
