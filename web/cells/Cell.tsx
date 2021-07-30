@@ -1,4 +1,4 @@
-import React, { cloneElement, memo } from 'react';
+import React, { memo } from 'react';
 
 import type { CellBaseProps } from '@cbhq/cds-common/types';
 import { css } from 'linaria';
@@ -77,7 +77,7 @@ export const Cell = memo(function Cell({
     >
       {media && (
         <Box flexGrow={0} flexShrink={0}>
-          {cloneElement(media, { pressable: !!onPress })}
+          {media}
         </Box>
       )}
 

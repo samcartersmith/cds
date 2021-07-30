@@ -52,16 +52,12 @@ export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon' | 'pictogram';
 
 export type CellMediaSource = string | number;
 
-export interface CellMediaSharedProps extends SharedProps {
-  pressable?: boolean;
-}
-
-export interface CellMediaIconProps extends CellMediaSharedProps {
+export interface CellMediaIconProps extends SharedProps {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
 }
 
-export interface CellMediaPictogramProps extends CellMediaSharedProps {
+export interface CellMediaPictogramProps extends SharedProps {
   type: Extract<CellMediaType, 'pictogram'>;
   illustration: React.ReactElement<{
     name: IllustrationPictogramNames;
@@ -70,7 +66,7 @@ export interface CellMediaPictogramProps extends CellMediaSharedProps {
   }>;
 }
 
-export interface CellMediaOtherProps extends CellMediaSharedProps {
+export interface CellMediaOtherProps extends SharedProps {
   type: Exclude<CellMediaType, 'icon' | 'pictogram'>;
   title?: string;
   source: CellMediaSource;
