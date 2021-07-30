@@ -1,7 +1,7 @@
 export const fontWeights = {
   Regular: 400,
   Medium: 500,
-  SemiBold: 600,
+  'Semi-Bold': 600,
 } as const;
 
 export const xHeight = {
@@ -64,7 +64,7 @@ export const typographyConfig = {
     leading: 5,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: 'SemiBold' as const,
+    fontWeight: 'Semi-Bold' as const,
   },
   body: {
     tag: 'div' as const,
@@ -80,7 +80,7 @@ export const typographyConfig = {
     leading: 1,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: 'SemiBold' as const,
+    fontWeight: 'Semi-Bold' as const,
     allowAllCaps: true,
   },
   label2: {
@@ -99,7 +99,7 @@ export const typographyConfig = {
     leading: 1,
     fontFamily: 'Inter' as const,
     xHeight: xHeight.Inter,
-    fontWeight: 'SemiBold' as const,
+    fontWeight: 'Semi-Bold' as const,
     allowAllCaps: true,
     tnum: true,
   },
