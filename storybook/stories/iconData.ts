@@ -204,4 +204,7 @@ export const unicodeMap = {
   dex: { '8': 'uE42A', '12': 'uE42B', '16': 'uE42C', '24': 'uE42D', '32': 'uE42E' },
   chartBarInactive: { '8': 'uE42F', '12': 'uE430', '16': 'uE431', '24': 'uE432', '32': 'uE433' },
   chartBarActive: { '8': 'uE434', '12': 'uE435', '16': 'uE436', '24': 'uE437', '32': 'uE438' },
+  keyboard: { '8': 'uE439', '12': 'uE43A', '16': 'uE43B', '24': 'uE43C', '32': 'uE43D' },
+  clipboard: { '8': 'uE43E', '12': 'uE43F', '16': 'uE440', '24': 'uE441', '32': 'uE442' },
+  pyramid: { '8': 'uE443', '12': 'uE444', '16': 'uE445', '24': 'uE446', '32': 'uE447' },
 } as const;

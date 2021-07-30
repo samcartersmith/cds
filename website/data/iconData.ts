@@ -161,7 +161,10 @@ export const iconNames = [
   'followInactive',
   'followActive',
   'pin',
+  'keyboard',
+  'clipboard',
   'dex',
+  'pyramid',
 ] as const;
 
 export const navigationIconNames = [

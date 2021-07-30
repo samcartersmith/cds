@@ -157,7 +157,10 @@ export type IconName =
   | 'followInactive'
   | 'followActive'
   | 'pin'
-  | 'dex';
+  | 'keyboard'
+  | 'clipboard'
+  | 'dex'
+  | 'pyramid';
 
 export type NavigationIconName =
   | 'chartCandles'

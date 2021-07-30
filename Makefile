@@ -116,10 +116,12 @@ prepare.icons:
 	bazel run :sync_icons
 	npx svgo codegen/icons/svg/*.svg --config=codegen/configs/svgo.config.js
 	bazel run :build_icons
+	make docgen
 
 .PHONY: prepare.illustrations
 prepare.illustrations:
 	bazel run :build_illustrations
+	make docgen
 
 .PHONY: prepare.adoption
 prepare.adoption:
