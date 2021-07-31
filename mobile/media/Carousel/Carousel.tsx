@@ -10,7 +10,7 @@ import React, {
   useImperativeHandle,
 } from 'react';
 
-import { SpacingScale } from '@cbhq/cds-common';
+import { SpacingScale, SharedProps } from '@cbhq/cds-common';
 import { emptyObject } from '@cbhq/cds-utils';
 import { Animated, Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 
@@ -19,7 +19,7 @@ import { CarouselItem } from './CarouselItem';
 import type { CarouselLayoutMap, CarouselRef, CarouselOnReady, CarouselItemId } from './types';
 import { useDismissCarouselItem } from './useDismissCarouselItem';
 
-export interface CarouselProps extends Omit<ScrollViewProps, 'style'> {
+export interface CarouselProps extends Omit<ScrollViewProps, 'style'>, SharedProps {
   items: React.ReactElement[];
   /** Return value from useCarousel hook. Allows access to certain internal data/methods of Carousel. */
   carouselRef?: React.MutableRefObject<CarouselRef | undefined>;
@@ -31,7 +31,10 @@ export interface CarouselProps extends Omit<ScrollViewProps, 'style'> {
 
 export const Carousel = memo(
   forwardRef<ScrollView, CarouselProps>(
-    ({ carouselRef, items, gap = 3, onReady, ...otherProps }, forwardedRef) => {
+    (
+      { carouselRef, items, gap = 3, testID = 'Carousel', onReady, ...otherProps },
+      forwardedRef,
+    ) => {
       /** A key/value object of ids to x coordinates. i.e. { 0: 0, 1: 400, 2: 800 } */
       const [layoutMap, setLayoutMap] = useState<CarouselLayoutMap>({});
       /** ScrollRef for wrapping ScrollView */
@@ -124,7 +127,7 @@ export const Carousel = memo(
           showsHorizontalScrollIndicator={false}
           snapToOffsets={snapPoints}
           style={styles.carousel}
-          testID="Carousel"
+          testID={testID}
           onLayout={onLayout}
           onContentSizeChange={onContentSizeChange}
           onScroll={onScroll}
