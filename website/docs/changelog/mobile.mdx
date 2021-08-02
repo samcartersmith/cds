@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.23.0 (8/2/2021, 09:34 AM PST)
+
+#### 💥 Breaking
+
+- Rename Inter-SemiBold to Inter-Semi-Bold in CDS fonts. [#27818](https://github.cbhq.net/mono/repo/pull/27818)
+
+#### 🐞 Fixes
+
+- Add testID to Carousel component. [#27133](https://github.cbhq.net/mono/repo/pull/27133), [CDS-768](https://jira.coinbase-corp.com/browse/CDS-768)
+- **[CellMedia]** Update icon from primary to foreground. [#27895](https://github.cbhq.net/mono/repo/pull/27895)
+- Add clipboard, keyboard, Dex icons. [#27831](https://github.cbhq.net/mono/repo/pull/27831)
+- **[CellMedia]** Change image to contain instead of cover. [#27606](https://github.cbhq.net/mono/repo/pull/27606)
+
 ## 0.22.0 (7/27/2021, 04:27 PM PST)
 
 #### 💥 Breaking

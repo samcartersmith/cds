@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.0 (8/2/2021, 09:34 AM PST)
+
+#### 💥 Breaking
+
+- Rename Inter-SemiBold to Inter-Semi-Bold in CDS fonts. [#27818](https://github.cbhq.net/mono/repo/pull/27818)
+
+#### 🐞 Fixes
+
+- Edit postscript name for Inter mobile font. [#27984](https://github.cbhq.net/mono/repo/pull/27984)
+
+#### 📘 Misc
+
+- Fix font duplicates with different casing. [#27653](https://github.cbhq.net/mono/repo/pull/27653)
+- Add CHANGELOG for packages to CDS website. [#27210](https://github.cbhq.net/mono/repo/pull/27210), [CDS-765](https://jira.coinbase-corp.com/browse/CDS-765)
+
 ## 0.1.5 (4/8/2021, 01:01 PM PST)
 
 #### 🐞 Fixes

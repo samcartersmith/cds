@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.19.1 (8/2/2021, 09:34 AM PST)
+
+#### 🐞 Fixes
+
+- **[CellMedia]** Update icon from primary to foreground. [#27895](https://github.cbhq.net/mono/repo/pull/27895)
+- Add clipboard, keyboard, Dex icons. [#27831](https://github.cbhq.net/mono/repo/pull/27831)
+
 ## 0.19.0 (7/27/2021, 04:27 PM PST)
 
 #### 💥 Breaking
