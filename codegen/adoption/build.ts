@@ -138,6 +138,7 @@ const CDSAdoption = async () => {
     // relative to this files path
     commerce: path.resolve(root, '../../commerce/frontend/src'),
     assethub: path.resolve(root, '../../assethub/frontend/www/src'),
+    assethubAdmin: path.resolve(root, '../../assethub/frontend/admin/src'),
     prime: path.resolve(root, '../../prime/frontend/src'),
   };
 
