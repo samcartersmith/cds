@@ -7,7 +7,7 @@ import { Separator } from 'reakit/Separator';
 import { palette } from '../tokens';
 import { Box, BoxProps } from './Box';
 
-export interface DividerProps extends DividerBaseProps, Omit<BoxProps, 'as' | 'role'> {}
+export type DividerProps = DividerBaseProps & Omit<BoxProps, 'as' | 'role'>;
 
 const styles = {
   line: css`

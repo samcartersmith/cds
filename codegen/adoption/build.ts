@@ -27,29 +27,25 @@ const BLACKLIST = [
   'div',
 ];
 
-interface AdoptionObject {
+type AdoptionObject = {
   name: string;
   occurrences: number;
   import?: string;
-}
+};
 
-interface ImportObject {
+type ImportObject = {
   occurrences: number;
   path: string | undefined;
-}
+};
 
-interface ImportMap {
-  [key: string]: ImportObject;
-}
+type ImportMap = Record<string, ImportObject>;
 
-interface ComponentMap {
-  [key: string]: AdoptionObject;
-}
+type ComponentMap = Record<string, AdoptionObject>;
 
 let Imports: ImportMap = {};
 let Components: ComponentMap = {};
 
-const toCSV = (list: ComponentMap): Promise<string> => {
+const toCSV = async (list: ComponentMap): Promise<string> => {
   return parseAsync(Object.values(list));
 };
 
@@ -103,7 +99,7 @@ const visitImports = (node: ts.Node) => {
 
 const generatePath = (node: ts.Node, componentName: string) => {
   // todo: handle wrapped components here - linaria, MUI etc.
-  return Imports[componentName]?.path || 'local';
+  return Imports[componentName]?.path ?? 'local';
 };
 
 const visitComponents = (node: ts.Node) => {
@@ -134,7 +130,7 @@ const visitComponents = (node: ts.Node) => {
 
 const CDSAdoption = async () => {
   const PROJECTS = Array.isArray(projects) ? projects : projects.trim().split(',');
-  const PROJECT_PATHS: { [key: string]: string } = {
+  const PROJECT_PATHS: Record<string, string> = {
     // relative to this files path
     commerce: path.resolve(root, '../../commerce/frontend/src'),
     assethub: path.resolve(root, '../../assethub/frontend/www/src'),

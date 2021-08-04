@@ -14,30 +14,30 @@ import { SvgCssUri } from 'react-native-svg';
 import { useInvertedPaletteColor } from '../color/useInvertedPaletteColor';
 import { usePalette } from '../hooks/usePalette';
 
-interface BaseRemoteImageProps extends Omit<ImageProps, 'style' | 'width' | 'height'> {
+type BaseRemoteImageProps = {
   aspectRatio?: AspectRatio;
   height?: FixedValue;
   shape?: Shape;
   width?: FixedValue;
   /** Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.  */
   shouldApplyDarkModeEnhacements?: boolean;
-}
+} & Omit<ImageProps, 'style' | 'width' | 'height'>;
 
-interface RemoteImagePropsWithWidth extends BaseRemoteImageProps {
+type RemoteImagePropsWithWidth = {
   width: FixedValue;
   aspectRatio: AspectRatio;
-}
+} & BaseRemoteImageProps;
 
-interface RemoteImagePropsWithHeight extends BaseRemoteImageProps {
+type RemoteImagePropsWithHeight = {
   height: FixedValue;
   aspectRatio: AspectRatio;
-}
+} & BaseRemoteImageProps;
 
-interface RemoteImagePropsWidthAndHeight extends BaseRemoteImageProps {
+type RemoteImagePropsWidthAndHeight = {
   width: FixedValue;
   height: FixedValue;
   resizeMode: ImageResizeMode;
-}
+} & BaseRemoteImageProps;
 
 export type RemoteImageProps =
   | RemoteImagePropsWithWidth

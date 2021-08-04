@@ -7,8 +7,9 @@ type CdsPackage = typeof cdsPackages[number];
 const cdsPackages = ['common', 'fonts', 'lottie-files', 'mobile', 'utils', 'web'] as const;
 const changelogOutputDir = 'website/docs/changelog';
 
-(async function copyChangelogs() {
+async function copyChangelogs() {
   const spinner = ora(`Starting to copy CHANGELOG files`).start();
+
   async function handleCopy(name: CdsPackage) {
     const input = await getSourcePath(`${name}/CHANGELOG.md`);
     const output = await getSourcePath(`${changelogOutputDir}/${name}.mdx`);
@@ -16,7 +17,7 @@ const changelogOutputDir = 'website/docs/changelog';
       await fs.promises.copyFile(input, output);
       spinner.info(chalk.green(`Copied ${name} CHANGELOG`));
     } catch (err) {
-      spinner.fail(`${chalk.redBright('error')} ${err.message}`);
+      spinner.fail(`${chalk.redBright('error')} ${(err as Error).message}`);
     }
   }
 
@@ -27,4 +28,6 @@ const changelogOutputDir = 'website/docs/changelog';
     spinner.fail(chalk.red('Error copying CHANGELOG', err));
   }
   spinner.stop();
-})();
+}
+
+void copyChangelogs();

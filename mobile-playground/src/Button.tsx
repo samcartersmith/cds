@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from '@cbhq/cds-mobile/buttons/Button';
 import { GestureResponderEvent } from 'react-native';
 
@@ -5,6 +6,7 @@ import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 
 function onPress(event: GestureResponderEvent) {
+  // eslint-disable-next-line no-console
   console.log('Pressed', event.type || 'GestureResponderEvent');
 }
 

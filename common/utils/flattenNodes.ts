@@ -22,7 +22,11 @@ export default function flattenNodes(
     if (isFragment(node)) {
       return [
         ...acc,
-        ...flattenNodes(node.props.children, depth + 1, keys.concat(node.key || nodeIndex)),
+        ...flattenNodes(
+          node.props.children as ReactNode,
+          depth + 1,
+          keys.concat(node.key ?? nodeIndex),
+        ),
       ];
     }
 

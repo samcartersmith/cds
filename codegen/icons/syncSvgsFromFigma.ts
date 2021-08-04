@@ -28,15 +28,13 @@ type IconName = {
   state: string;
 };
 
-const categorizedIconNames: {
-  [category: string]: Set<string>;
-} = {
+const categorizedIconNames: Record<string, Set<string>> = {
   Icon: new Set(),
   NavigationIcon: new Set(),
   NavigationIconInternal: new Set(),
 };
 
-const normalizeIconName = (imageName: string): IconName | void => {
+const normalizeIconName = (imageName: string): IconName | undefined => {
   const [type, specificName, state] = imageName.split('/');
   if (type !== 'Icon' && type !== 'NavigationIcon') {
     return undefined;
@@ -58,18 +56,16 @@ const normalizeIconName = (imageName: string): IconName | void => {
   };
 };
 
-const createCategorizedNameType = (): {
-  [category: string]: string[];
-} => {
+const createCategorizedNameType = (): Record<string, string[]> => {
   const toCategoryArrMap = Object.entries(categorizedIconNames).reduce((res, nameInfo) => {
     const [type, nameSet] = nameInfo;
     res[type] = Array.from(nameSet.values());
     return res;
-  }, {} as { [type: string]: string[] });
+  }, {} as Record<string, string[]>);
   return toCategoryArrMap;
 };
 
-(async function syncIcons() {
+async function syncIcons() {
   const { nameSet, sizeMap } = createIconSet();
   const spinner = ora(
     `Synchronizing ${chalk.bold.blueBright('CDS Icons')} with figma file ${chalk.bold(
@@ -93,8 +89,8 @@ const createCategorizedNameType = (): {
     }
     const { components } = iconsFileNode;
     // Filter out non icon components
-    const iconsInfo: { [key: string]: IconName } = {};
-    const iconComponents: { [key: string]: ComponentMetadata } = {};
+    const iconsInfo: Record<string, IconName> = {};
+    const iconComponents: Record<string, ComponentMetadata> = {};
     Object.keys(components).forEach((id) => {
       const component = components[id];
       const info = normalizeIconName(component.name);
@@ -116,7 +112,7 @@ const createCategorizedNameType = (): {
       return;
     }
     spinner.text = 'Download svg images from urls in parallel.';
-    const requests = Object.values(images).map((url) => axios.get(url));
+    const requests = Object.values(images).map(async (url) => axios.get(url));
     const responses = await Promise.all(requests);
     spinner.text = 'Write svg icons to files.';
     const OUT_DIR = await getSourcePath('codegen/icons/svg');
@@ -136,6 +132,7 @@ const createCategorizedNameType = (): {
       const { name, size, state = '' } = iconsInfo[id];
       const camelCaseName = camelCase(`${name} ${state}`);
       nameSet.add(camelCaseName);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       sizeMap[size][camelCaseName] = res.data;
     });
 
@@ -169,7 +166,7 @@ const createCategorizedNameType = (): {
         }
 
         return acc;
-      }, {} as { [key: string]: string });
+      }, {} as Record<string, string>);
     };
 
     writePromises.push(
@@ -230,6 +227,8 @@ const createCategorizedNameType = (): {
     );
   } catch (error) {
     spinner.fail(`${chalk.redBright('failed')}`);
-    console.error(error.message);
+    console.error(error);
   }
-})();
+}
+
+void syncIcons();

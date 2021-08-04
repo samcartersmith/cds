@@ -1,3 +1,6 @@
+// Children are typed with any
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import React, { useMemo, memo } from 'react';
 
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
@@ -12,10 +15,10 @@ import { NavigationListItem } from './NavigationListItem';
 import { SidebarProps } from './Sidebar';
 import { MobileMenuChildrenContext } from './MobileMenuChildrenContext';
 
-export interface MobileMenuProps {
+export type MobileMenuProps = {
   sidebar?: SidebarProps['children'];
   navbar: React.ReactElement<NavigationBarProps>;
-}
+};
 
 export const MobileMenu = memo(({ sidebar, navbar }: MobileMenuProps) => {
   const navbarCtas = useMemo(() => {
@@ -30,7 +33,7 @@ export const MobileMenu = memo(({ sidebar, navbar }: MobileMenuProps) => {
   }, [navbar]);
 
   const navbarActions = useMemo(() => {
-    return flattenNodes(navbar?.props.actions?.props.children)
+    return flattenNodes(navbar?.props.actions?.props.children as React.ReactNode)
       .filter((child) => child && typeof child === 'object' && child.type === NavigationIconButton)
       .map((child) => {
         if (hasProps(child)) {

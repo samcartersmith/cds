@@ -67,10 +67,7 @@ const overflowStyles: CSSMap<BoxProps['overflow']> = {
   `,
 };
 
-export interface BoxProps<As extends BoxElement = 'div'>
-  extends Omit<BoxBaseProps, 'position'>,
-    SharedProps,
-    React.AriaAttributes {
+export type BoxProps<As extends BoxElement = 'div'> = {
   /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
   as?: As;
   /** Semantic role whole using a non-semantic element. */
@@ -83,7 +80,9 @@ export interface BoxProps<As extends BoxElement = 'div'>
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetClassName?: string;
-}
+} & Omit<BoxBaseProps, 'position'> &
+  SharedProps &
+  React.AriaAttributes;
 
 export const BoxInner = forwardRef(
   <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => {

@@ -1,3 +1,5 @@
+/* eslint-disable react-native-a11y/has-accessibility-hint */
+import React from 'react';
 import { Button, ButtonGroup, IconButton } from '@cbhq/cds-mobile/buttons';
 import { GestureResponderEvent } from 'react-native';
 
@@ -5,6 +7,7 @@ import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 
 function onPress(event: GestureResponderEvent) {
+  // eslint-disable-next-line no-console
   console.log('Pressed', event.type || 'GestureResponderEvent');
 }
 

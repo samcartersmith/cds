@@ -32,10 +32,7 @@ export type InteractableInheritedProps = Omit<
   'as' | 'className' | 'css'
 >;
 
-export interface InteractableProps
-  extends InteractableBaseProps,
-    InteractableInheritedProps,
-    SharedProps {
+export type InteractableProps = {
   children: NonNullable<React.ReactNode>;
   /** Element or component to render the container as. */
   as:
@@ -53,7 +50,9 @@ export interface InteractableProps
   className?: string;
   /** Inject and wrap the content with overlay and underlay elements. */
   wrapWithLayeredElements?: boolean;
-}
+} & InteractableBaseProps &
+  InteractableInheritedProps &
+  SharedProps;
 
 export const InteractableContent = forwardRef(function InteractableContent(
   {

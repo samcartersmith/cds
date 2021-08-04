@@ -11,7 +11,7 @@ import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
-export interface RadioProps<T extends string> extends ControlBaseProps<T>, ControlProps<T> {}
+export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
 
 const RadioIcon: React.FC<ControlIconProps> = ({
   pressed,
@@ -63,13 +63,12 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
 export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
   React.MemoExoticComponent<typeof RadioWithRef>;
 
-export interface RadioGroupProps<T extends string>
-  extends AccessibilityProps,
-    RadioGroupBaseProps<T>,
-    SharedProps {
+export type RadioGroupProps<T extends string> = {
   /** Handle change event when pressing on a radio option. */
   onChange?: RadioProps<T>['onChange'];
-}
+} & AccessibilityProps &
+  RadioGroupBaseProps<T> &
+  SharedProps;
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   { label, selectedValue, onChange, options, testID, ...restProps }: RadioGroupProps<T>,

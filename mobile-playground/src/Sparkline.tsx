@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import { Cell } from '@cbhq/cds-mobile/cells/Cell';
 import { CellMedia } from '@cbhq/cds-mobile/cells/CellMedia';
@@ -9,22 +10,6 @@ import { assets } from './data/assets';
 import { prices } from './data/prices';
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
-
-const PressableOpacityScreen = () => {
-  return (
-    <ExamplesScreen>
-      <Example title="Sparkline">
-        <VStack offsetHorizontal={2}>
-          <SparklineExample {...assets.btc} />
-          <SparklineExample {...assets.eth} />
-          <SparklineExample {...assets.xrp} />
-          <SparklineExample {...assets.dai} />
-          <SparklineExample {...assets.sushi} />
-        </VStack>
-      </Example>
-    </ExamplesScreen>
-  );
-};
 
 type SparklineExampleProps = {
   imageUrl: string;
@@ -67,6 +52,22 @@ const SparklineExample: React.FC<SparklineExampleProps> = ({ imageUrl, name, sym
         </TextBody>
       </VStack>
     </Cell>
+  );
+};
+
+const PressableOpacityScreen = () => {
+  return (
+    <ExamplesScreen>
+      <Example title="Sparkline">
+        <VStack offsetHorizontal={2}>
+          <SparklineExample {...assets.btc} />
+          <SparklineExample {...assets.eth} />
+          <SparklineExample {...assets.xrp} />
+          <SparklineExample {...assets.dai} />
+          <SparklineExample {...assets.sushi} />
+        </VStack>
+      </Example>
+    </ExamplesScreen>
   );
 };
 

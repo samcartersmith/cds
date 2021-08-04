@@ -1,6 +1,6 @@
 import type { TextBaseProps } from './TextBaseProps';
 
-export interface ControlBaseProps<T extends string> {
+export type ControlBaseProps<T extends string> = {
   /** Label for the control option. */
   children?: TextBaseProps['children'];
   /** Set the control to selected/on. */
@@ -11,4 +11,4 @@ export interface ControlBaseProps<T extends string> {
   readOnly?: boolean;
   /** Value of the option. Useful for multiple choice. */
   value?: T;
-}
+};

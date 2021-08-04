@@ -5,7 +5,7 @@ import { useBadge, BadgeBaseProps } from '@cbhq/cds-common/hooks/useBadge';
 import { Box, BoxProps } from '../layout';
 import { TextCaption } from '../typography';
 
-export interface BadgeProps extends BadgeBaseProps, BoxProps {}
+export type BadgeProps = BadgeBaseProps & BoxProps;
 
 export const Badge = ({ value, variant, ...boxProps }: BadgeProps) => {
   const { badgeVariant, badgeContent, badgeStyles } = useBadge(value, variant);

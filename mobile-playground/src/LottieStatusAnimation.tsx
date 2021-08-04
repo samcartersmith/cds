@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 
 import { LottieStatusAnimationType, join } from '@cbhq/cds-common';
 import { LottieStatusAnimation } from '@cbhq/cds-mobile/animation/LottieStatusAnimation';
@@ -17,24 +17,25 @@ const statuses = [
   'cardSuccess',
 ] as LottieStatusAnimationType[];
 
-export const LottieStatusAnimationScreen = () => {
+const LottieStatusAnimationScreen = () => {
   const [status, setStatus] = useState<LottieStatusAnimationType>('loading');
   const buttons = useMemo(() => {
     return join(
-      statuses.map(item => (
+      statuses.map((item) => (
+        // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
         <Button key={item} onPress={() => setStatus(item)}>
           {item}
         </Button>
       )),
-      <Spacer />
+      <Spacer />,
     );
   }, []);
 
   const [key, setKey] = useState(0);
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setKey(key + 1);
     setStatus('loading');
-  };
+  }, [key]);
 
   return (
     <ExamplesScreen>

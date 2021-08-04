@@ -10,7 +10,7 @@ import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 
-export interface ListCellProps extends ListCellBaseProps, CellSharedProps {}
+export type ListCellProps = ListCellBaseProps & CellSharedProps;
 
 export const ListCell = memo(function ListCell({
   accessory,
@@ -30,6 +30,8 @@ export const ListCell = memo(function ListCell({
 }: ListCellProps) {
   const minHeight = useScaleConditional(listHeight);
   const accessoryType = selected ? 'selected' : accessory;
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  const hasDetails = Boolean(detail || subdetail);
 
   return (
     <Cell
@@ -37,7 +39,7 @@ export const ListCell = memo(function ListCell({
       accessory={accessoryType ? <CellAccessory type={accessoryType} /> : undefined}
       detail={
         action ||
-        (Boolean(detail || subdetail) && (
+        (hasDetails && (
           <CellDetail
             adjustsFontSizeToFit={!!detailWidth}
             detail={detail}

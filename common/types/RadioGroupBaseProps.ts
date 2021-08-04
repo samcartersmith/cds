@@ -1,4 +1,4 @@
-export interface RadioGroupBaseProps<T extends string> {
+export type RadioGroupBaseProps<T extends string> = {
   /**
    * Multiple choice options for the radio group. The object key represents
    * the radio input value and the object value represents the radio option label.
@@ -8,4 +8,4 @@ export interface RadioGroupBaseProps<T extends string> {
   label?: React.ReactNode;
   /** Currently selected value. */
   selectedValue?: T;
-}
+};

@@ -39,18 +39,20 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+ESLINT_SRCS = [
+    "//eng/shared/design-system/common:source",
+    "//eng/shared/design-system/utils:source",
+    "//tools/js:writePrettyFile.ts",
+]
+
 eslint_test(
     name = "lint",
-    srcs = [
-        "//eng/shared/design-system/common:source",
-    ],
+    srcs = ESLINT_SRCS,
     lint_srcs = [":source"],
 )
 
 eslint_fix(
     name = "lint_fix",
-    srcs = [
-        "//eng/shared/design-system/common:source",
-    ],
+    srcs = ESLINT_SRCS,
     lint_srcs = [":source"],
 )

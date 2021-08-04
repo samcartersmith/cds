@@ -48,7 +48,7 @@ export default function migrateRNDSImports(
   fileInfo: FileInfo,
   api: API,
   options: Options,
-): string | null | undefined | void {
+): string | null | undefined {
   const mod = new Codemod(fileInfo, api);
 
   const layoutImports = new Set<string>();

@@ -5,7 +5,7 @@ import { I18nManager, ViewStyle } from 'react-native';
 
 import * as scales from '../../styles/scale';
 
-export interface UseInternalSpacingStylesProps {
+export type UseInternalSpacingStylesProps = {
   all?: SpacingScale;
   top?: SpacingScale;
   bottom?: SpacingScale;
@@ -14,7 +14,7 @@ export interface UseInternalSpacingStylesProps {
   horizontal?: SpacingScale;
   vertical?: SpacingScale;
   isInverted?: boolean;
-}
+};
 
 export const useInternalSpacingStyles = ({
   all,

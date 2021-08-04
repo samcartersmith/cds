@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import 'react-native-gesture-handler';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
@@ -49,14 +49,6 @@ import TextTitle3Screen from './src/TextTitle3';
 
 const Stack = createStackNavigator();
 
-const App = () => {
-  return (
-    <RootThemeProvider>
-      <AppContent />
-    </RootThemeProvider>
-  );
-};
-
 const AppContent = () => {
   const palette = usePalette();
   const headlineStyles = useTypographyStyles('headline');
@@ -75,7 +67,7 @@ const AppContent = () => {
         headerTitleStyle: headlineStyles,
         gestureDirection: 'horizontal',
       } as const),
-    [palette]
+    [headlineStyles, palette.primary, palette.primaryForeground],
   );
 
   return (
@@ -122,6 +114,14 @@ const AppContent = () => {
         <Stack.Screen name="TextTitle3" component={TextTitle3Screen} />
       </Stack.Navigator>
     </NavigationContainer>
+  );
+};
+
+const App = () => {
+  return (
+    <RootThemeProvider>
+      <AppContent />
+    </RootThemeProvider>
   );
 };
 

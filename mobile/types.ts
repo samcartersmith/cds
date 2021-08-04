@@ -1,16 +1,16 @@
 import { Animated, StyleProp } from 'react-native';
 
-interface ComponentProps {
+type ComponentProps = {
   // eslint-disable-next-line @typescript-eslint/ban-types
   style?: StyleProp<{}>;
-}
+};
 
 export type OmitStyle<Props extends ComponentProps, ExtraProps extends string = ''> = Omit<
   Props,
   'style' | ExtraProps
 >;
 
-export interface DangerouslySetStyle<T, IsAnimated extends boolean = boolean> {
+export type DangerouslySetStyle<T, IsAnimated extends boolean = boolean> = {
   /**
    * If value is `true` then style prop can take animated values.
    * @default false
@@ -24,6 +24,6 @@ export interface DangerouslySetStyle<T, IsAnimated extends boolean = boolean> {
     : StyleProp<T>;
   /** Opacity of element */
   opacity?: IsAnimated extends true ? Animated.WithAnimatedValue<StyleProp<T>> : number;
-}
+};
 
 export type HapticFeedbackType = 'light' | 'normal' | 'heavy' | 'none';

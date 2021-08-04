@@ -43,10 +43,7 @@ const TYPOGRAPHY_MAP: Record<
   title3: TextTitle3,
   legal: TextLegal,
 };
-export interface LinkProps
-  extends LinkBaseProps,
-    SharedProps,
-    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'color'> {
+export type LinkProps = {
   /**
    * If true, it opens the link in a new window.
    * If false, it replaces the current screen with the link
@@ -57,7 +54,9 @@ export interface LinkProps
   onPress?: OnPress<HTMLAnchorElement>;
   /** Callback for custom Link component */
   renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
-}
+} & LinkBaseProps &
+  SharedProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'color'>;
 
 export const Link = memo(function Link({
   accessibilityLabel,

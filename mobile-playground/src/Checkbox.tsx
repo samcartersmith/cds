@@ -1,3 +1,6 @@
+/* eslint-disable react-native-a11y/has-accessibility-hint */
+
+import React from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Checkbox } from '@cbhq/cds-mobile/controls/Checkbox';
 import { CheckboxGroup } from '@cbhq/cds-mobile/controls/CheckboxGroup';
@@ -43,8 +46,8 @@ const CheckboxScreen = () => {
           };
 
           const optionValues = Object.keys(options) as unknown as (keyof typeof options)[];
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           const [selectedValues, { toggle }] =
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             useCheckboxGroupState<keyof typeof options>(optionValues);
 
           return (

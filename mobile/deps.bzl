@@ -25,5 +25,6 @@ BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + TYPE_DEPENDENCIES
 
 CDS_DEPENDENCIES = [
     "//eng/shared/design-system/common:source",
+    "//eng/shared/design-system/lottie-files:source",
     "//eng/shared/design-system/utils:source",
 ]

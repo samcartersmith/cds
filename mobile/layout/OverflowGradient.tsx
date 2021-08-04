@@ -8,9 +8,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import { usePalette } from '../hooks/usePalette';
 import { usePinStyles } from '../hooks/usePinStyles';
 
-export interface OverflowGradientProps extends SharedProps {
+export type OverflowGradientProps = {
   pin?: PinningDirection;
-}
+} & SharedProps;
 
 const start = { x: 0, y: 0 } as const;
 const end = { x: 1, y: 0 } as const;

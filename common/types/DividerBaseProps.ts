@@ -1,6 +1,6 @@
 import { PaletteBorder } from './Palette';
 
-export interface DividerBaseProps {
+export type DividerBaseProps = {
   /**
    * Color of the divider line.
    * @default line
@@ -11,4 +11,4 @@ export interface DividerBaseProps {
    * @default horizontal
    */
   direction?: 'horizontal' | 'vertical';
-}
+};

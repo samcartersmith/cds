@@ -7,7 +7,7 @@ type HueStepTuple = [SpectrumHue, SpectrumHueStep];
 
 export const paletteValueToHueStepTuple = (paletteValue: PaletteValue): HueStepTuple => {
   const [alias] = paletteValueToTuple(paletteValue);
-  const [hue, step] = alias.match(HUE_STEP_REGEX) || [];
+  const [hue, step] = alias.match(HUE_STEP_REGEX) ?? [];
   if (hue && step) return [hue, Number(step)] as HueStepTuple;
   return ['gray', 100];
 };

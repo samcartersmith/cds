@@ -16,7 +16,7 @@ import { LottieProps } from './LottieProps';
 
 type ProgressListenerCallback = (frame: number) => void;
 type ProgressTimingConfig = { startFrame?: number; endFrame?: number };
-export interface LottieProgress {
+export type LottieProgress = {
   value: Animated.Value;
   timing: (config?: ProgressTimingConfig) => { start: (cb?: NoopFn) => void };
   play: (cb?: NoopFn) => void;
@@ -24,17 +24,16 @@ export interface LottieProgress {
   reset: NoopFn;
   addListener: (callback: ProgressListenerCallback) => void;
   removeListener: NoopFn;
-}
+};
 
-export interface LottiePlayerMobile<Source extends LottieSource = LottieSource>
-  extends LottiePlayer<Source> {
+export type LottiePlayerMobile<Source extends LottieSource = LottieSource> = {
   lottieRef: React.Ref<LottieView>;
   progress: LottieProgress;
   Lottie: {
     (props: Omit<LottieProps, 'source'>): JSX.Element;
     displayName: 'Lottie';
   };
-}
+} & LottiePlayer<Source>;
 
 const noop = () => {};
 

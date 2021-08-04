@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-raw-text */
 import { fireEvent, render } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
 

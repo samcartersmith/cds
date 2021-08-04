@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContentCellFallback } from '@cbhq/cds-mobile/cells';
 import { createStories } from '@cbhq/cds-storybook/stories/ContentCellFallback';
 

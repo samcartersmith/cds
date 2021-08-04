@@ -5,18 +5,18 @@ import type { CDS_SUB_DIRS } from './constants';
 
 export type Platform = 'web' | 'mobile';
 export type SubDir = typeof CDS_SUB_DIRS[number];
-export interface ComponentDocgenParams {
+export type ComponentDocgenParams = {
   filePath: string;
   importPath: string;
   componentName: string;
   displayName: string;
   subDir: SubDir;
   slug: string;
-}
+};
 
-export interface ComponentDocgenResponse extends ComponentDocgenParams {
+export type ComponentDocgenResponse = {
   data: ComponentDocgen;
-}
+} & ComponentDocgenParams;
 
 export type GetSubDirFilesResponse = { subDir: SubDir; files: string[] };
 

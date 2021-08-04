@@ -2,7 +2,7 @@ import React, { memo, useState, useEffect } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
 
-export interface CircularProgressProps extends SharedProps {
+export type CircularProgressProps = {
   /** Radius of circular progress */
   radius: number;
   /** Stroke width of circular progress */
@@ -19,7 +19,7 @@ export interface CircularProgressProps extends SharedProps {
    *  @default true
    */
   indeterminate?: boolean;
-}
+} & SharedProps;
 
 export const CircularProgress = memo(
   ({ radius, strokeWidth, progress, indeterminate = true, testID }: CircularProgressProps) => {

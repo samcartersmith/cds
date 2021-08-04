@@ -10,16 +10,16 @@ const DEFAULT_OPEN_WEB_BROWSER_OPTIONS = {
 };
 
 describe('useWebBrowserOpener', () => {
-  it('optional openWebBrowser options work as expected', () => {
+  it('optional openWebBrowser options work as expected', async () => {
     const { result } = renderHook(() => useWebBrowserOpener());
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
 
-    result.current(URL);
+    await result.current(URL);
 
     expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
   });
 
-  it('pass user specified options to openWebBrowser', () => {
+  it('pass user specified options to openWebBrowser', async () => {
     const { result } = renderHook(() => useWebBrowserOpener());
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
     const options = {
@@ -29,12 +29,12 @@ describe('useWebBrowserOpener', () => {
       readerMode: true,
     } as const;
 
-    result.current(URL, options);
+    await result.current(URL, options);
 
     expect(openWebBrowserSpy).toBeCalledWith(URL, options);
   });
 
-  it('test that spectrum is optional', () => {
+  it('test that spectrum is optional', async () => {
     const { result } = renderHook(() => useWebBrowserOpener());
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
     const options = {
@@ -43,7 +43,7 @@ describe('useWebBrowserOpener', () => {
       readerMode: false,
     } as const;
 
-    result.current(URL, options);
+    await result.current(URL, options);
 
     expect(openWebBrowserSpy).toBeCalledWith(URL, {
       ...DEFAULT_OPEN_WEB_BROWSER_OPTIONS,
@@ -55,15 +55,16 @@ describe('useWebBrowserOpener', () => {
    * If I do not pass any options to the hook, I should expect
    * the hook to use the default spectrum value.
    */
-  it('if user passes no options, they should use the default option values', () => {
+  it('if user passes no options, they should use the default option values', async () => {
     const { result } = renderHook(() => useWebBrowserOpener());
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
 
-    result.current(URL);
+    await result.current(URL);
 
     expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
   });
-  it('test all the InAppBrowser configuration, making sure that all of them can be used', () => {
+
+  it('test all the InAppBrowser configuration, making sure that all of them can be used', async () => {
     const { result } = renderHook(() => useWebBrowserOpener());
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
     const options = {
@@ -98,7 +99,7 @@ describe('useWebBrowserOpener', () => {
       },
     } as const;
 
-    result.current(URL, options);
+    await result.current(URL, options);
 
     expect(openWebBrowserSpy).toBeCalledWith(URL, {
       ...DEFAULT_OPEN_WEB_BROWSER_OPTIONS,

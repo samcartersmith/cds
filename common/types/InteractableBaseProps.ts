@@ -3,7 +3,7 @@ import { BorderWidth } from './BorderWidth';
 import { ElevationLevels } from './ElevationLevels';
 import { PaletteAlias, PaletteBorder } from './Palette';
 
-export interface InteractableBaseProps {
+export type InteractableBaseProps = {
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteAlias | 'transparent';
   /** Set element to block and expand to 100% width. */
@@ -22,4 +22,4 @@ export interface InteractableBaseProps {
   pressed?: boolean;
   /** Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc). */
   transparentWhileInactive?: boolean;
-}
+};

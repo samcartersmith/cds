@@ -5,26 +5,26 @@ export const observerErr =
 export const borderBoxWarn =
   "💡 react-cool-dimensions: the browser doesn't support border-box size, fallback to content-box size. Please see: https://github.com/wellyshen/react-cool-dimensions#border-box-size-measurement";
 
-interface State {
+type State = {
   currentBreakpoint: string;
   width: number;
   height: number;
   entry?: ResizeObserverEntry;
-}
-interface Event<T> extends State {
+};
+export type Event<T> = {
   entry: ResizeObserverEntry;
   observe: (element: T | null) => void;
   unobserve: () => void;
-}
-interface OnResize<T> {
+} & State;
+type OnResize<T> = {
   (event: Event<T>): void;
-}
-interface ShouldUpdate {
+};
+type ShouldUpdate = {
   (state: State): boolean;
-}
+};
 type Breakpoints = Record<string, number>;
 
-export interface Options<T> {
+export type Options<T> = {
   ref?: RefObject<T> | null;
   useBorderBoxSize?: boolean;
   breakpoints?: Breakpoints;
@@ -33,11 +33,11 @@ export interface Options<T> {
   onResize?: OnResize<T>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   polyfill?: any;
-}
-interface Return<T> extends Omit<Event<T>, 'entry'> {
+};
+type Return<T> = {
   ref: RefObject<T>;
   entry?: ResizeObserverEntry;
-}
+} & Omit<Event<T>, 'entry'>;
 
 const getCurrentBreakpoint = (bps: Breakpoints, width: number): string => {
   let curBp = '';
@@ -101,7 +101,7 @@ export const useDimensions = <T extends HTMLElement>({
   const warnedRef = useRef<boolean>(false);
   const refVar = useRef<T>(null);
   let ref = useRef<T | null>(refVar?.current);
-  ref = refOpt || ref;
+  ref = refOpt ?? ref;
 
   useEffect(() => {
     if (onResize) onResizeRef.current = onResize;
@@ -133,12 +133,14 @@ export const useDimensions = <T extends HTMLElement>({
       return () => null;
     }
 
-    // eslint-disable-next-line compat/compat, @typescript-eslint/no-explicit-any
-    observerRef.current = new (polyfill || window.ResizeObserver)(([entry]: any) => {
-      const { contentBoxSize, borderBoxSize, contentRect } = entry;
+    // eslint-disable-next-line compat/compat
+    const Observer = (polyfill || window.ResizeObserver) as typeof window.ResizeObserver;
 
+    observerRef.current = new Observer(([entry]) => {
+      const { contentBoxSize, borderBoxSize, contentRect } = entry;
       let boxSize = contentBoxSize;
-      if (useBorderBoxSize)
+
+      if (useBorderBoxSize) {
         if (borderBoxSize) {
           boxSize = borderBoxSize;
         } else if (!warnedRef.current) {
@@ -146,11 +148,16 @@ export const useDimensions = <T extends HTMLElement>({
           console.warn(borderBoxWarn);
           warnedRef.current = true;
         }
-      // @juggle/resize-observer polyfill has different data structure
-      boxSize = Array.isArray(boxSize) ? boxSize[0] : boxSize;
+      }
 
-      const width = boxSize ? boxSize.inlineSize : contentRect.width;
-      const height = boxSize ? boxSize.blockSize : contentRect.height;
+      // @juggle/resize-observer polyfill has different data structure
+      const entrySize = (Array.isArray(boxSize) ? boxSize[0] : boxSize) as {
+        inlineSize: number;
+        blockSize: number;
+      };
+
+      const width = entrySize ? entrySize.inlineSize : contentRect.width;
+      const height = entrySize ? entrySize.blockSize : contentRect.height;
 
       if (width === prevSizeRef.current.width && height === prevSizeRef.current.height) return;
 

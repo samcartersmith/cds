@@ -6,7 +6,7 @@ import { PaletteForeground } from '@cbhq/cds-common/types/Palette';
 import { usePalette } from '../hooks/usePalette';
 import * as styles from './styles';
 
-export interface SpinnerProps extends SharedProps {
+export type SpinnerProps = {
   /**
    * The pixel size of the spinner. Restricting spinner
    * to have a n:n aspect ratio (square basically)
@@ -16,7 +16,7 @@ export interface SpinnerProps extends SharedProps {
    * Color of spinner
    */
   color: PaletteForeground;
-}
+} & SharedProps;
 
 export const Spinner = memo(function Spinner({ size, color, testID }: SpinnerProps) {
   const palette = usePalette();

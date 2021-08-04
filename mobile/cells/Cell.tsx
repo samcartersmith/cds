@@ -8,12 +8,12 @@ import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Pressable, LinkableProps } from '../system/Pressable';
 
-export interface CellSharedProps extends LinkableProps {
+export type CellSharedProps = {
   /** Measure the dimensions of the cell. */
   onLayout?: ViewProps['onLayout'];
-}
+} & LinkableProps;
 
-export interface CellProps extends CellBaseProps, CellSharedProps {}
+export type CellProps = CellBaseProps & CellSharedProps;
 
 export const Cell = memo(function Cell({
   accessory,

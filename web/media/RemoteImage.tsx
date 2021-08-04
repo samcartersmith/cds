@@ -13,32 +13,31 @@ const imageRatio = css`
   aspect-ratio: var(--image-aspect-ratio);
 `;
 
-interface BaseRemoteImageProps
-  extends Omit<
-    React.ImgHTMLAttributes<HTMLImageElement>,
-    'className' | 'style' | 'height' | 'width' | 'source'
-  > {
+type BaseRemoteImageProps = {
   aspectRatio?: AspectRatio;
   height?: FixedValue;
   shape?: Shape;
   width?: FixedValue;
   source: string;
-}
+} & Omit<
+  React.ImgHTMLAttributes<HTMLImageElement>,
+  'className' | 'style' | 'height' | 'width' | 'source'
+>;
 
-interface RemoteImagePropsWithWidth extends BaseRemoteImageProps {
+type RemoteImagePropsWithWidth = {
   width: FixedValue;
   aspectRatio: AspectRatio;
-}
+} & BaseRemoteImageProps;
 
-interface RemoteImagePropsWithHeight extends BaseRemoteImageProps {
+type RemoteImagePropsWithHeight = {
   height: FixedValue;
   aspectRatio: AspectRatio;
-}
+} & BaseRemoteImageProps;
 
-interface RemoteImagePropsWidthAndHeight extends BaseRemoteImageProps {
+type RemoteImagePropsWidthAndHeight = {
   width: FixedValue;
   height: FixedValue;
-}
+} & BaseRemoteImageProps;
 
 export type RemoteImageProps =
   | RemoteImagePropsWithWidth

@@ -1,23 +1,32 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable no-console */
+
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { useDimensions, Options, observerErr, borderBoxWarn } from '../useDimensions';
+import {
+  useDimensions,
+  Options,
+  observerErr,
+  borderBoxWarn,
+  Event as ResizeEvent,
+} from '../useDimensions';
 
 describe('useDimensions', () => {
   const target = { current: document.createElement('div') };
   const renderHelper = ({ ref = target, ...rest }: Options<HTMLDivElement> = {}) =>
     renderHook(() => useDimensions({ ref, ...rest }));
 
-  interface Event {
+  type Event = {
     borderBoxSize?: { blockSize: number; inlineSize: number };
     contentBoxSize?: { blockSize: number; inlineSize: number };
     contentRect?: { width: number; height?: number };
-  }
+  };
 
   let callback: (_event: Event[]) => void;
   const observe = jest.fn();
   const disconnect = jest.fn();
-  const mockResizeObserver = jest.fn((cb) => ({
+  const mockResizeObserver = jest.fn((cb: () => void) => ({
     observe: () => {
       callback = cb;
       observe();
@@ -49,6 +58,7 @@ describe('useDimensions', () => {
   });
 
   beforeAll(() => {
+    // @ts-expect-error Shapes dont match
     global.ResizeObserver = mockResizeObserver;
     global.ResizeObserverEntry = jest.fn();
   });
@@ -155,9 +165,9 @@ describe('useDimensions', () => {
   });
 
   it('should trigger onResize without breakpoints', () => {
-    const onResize = jest.fn((event) => {
+    const onResize = jest.fn((event: ResizeEvent<HTMLDivElement>) => {
       event.unobserve();
-      event.observe();
+      event.observe(target.current);
     });
     renderHelper({ onResize });
     const contentRect = { width: 100, height: 100 };
@@ -175,9 +185,9 @@ describe('useDimensions', () => {
   });
 
   it('should trigger onResize with breakpoints', () => {
-    const onResize = jest.fn((event) => {
+    const onResize = jest.fn((event: ResizeEvent<HTMLDivElement>) => {
       event.unobserve();
-      event.observe();
+      event.observe(target.current);
     });
     renderHelper({ breakpoints: { T0: 0, T1: 100 }, onResize });
     const contentRect = { width: 50, height: 100 };
@@ -252,6 +262,7 @@ describe('useDimensions', () => {
     expect(console.error).toHaveBeenCalledTimes(1);
     expect(console.error).toHaveBeenCalledWith(observerErr);
 
+    // @ts-expect-error Shapes dont match
     global.ResizeObserver = mockResizeObserver;
     deleteResizeObserverEntry();
     renderHelper();

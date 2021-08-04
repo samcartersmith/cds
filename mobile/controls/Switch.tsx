@@ -12,12 +12,11 @@ import { Interactable } from '../system/Interactable';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { Control, ControlIconProps } from './Control';
 
-export interface SwitchProps
-  extends Omit<ControlBaseProps<string>, 'value'>,
-    Omit<PressableProps, 'disabled' | 'children' | 'style'> {
+export type SwitchProps = {
   /** Triggered when switch is toggled. */
   onChange?: () => void;
-}
+} & Omit<ControlBaseProps<string>, 'value'> &
+  Omit<PressableProps, 'disabled' | 'children' | 'style'>;
 
 const SwitchIcon: React.FC<ControlIconProps> = ({
   pressed,

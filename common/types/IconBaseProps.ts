@@ -3,7 +3,7 @@ import type { IconSize } from './IconSize';
 import type { SharedProps } from './SharedProps';
 import type { SpacingProps } from './SpacingProps';
 
-export interface IconBaseProps extends SpacingProps, SharedProps {
+export type IconBaseProps = {
   /** Size for a given icon. */
   size: IconSize;
   /** Name of the icon, as defined in Figma. */
@@ -14,4 +14,5 @@ export interface IconBaseProps extends SpacingProps, SharedProps {
    * @default false
    */
   bordered?: boolean;
-}
+} & SpacingProps &
+  SharedProps;

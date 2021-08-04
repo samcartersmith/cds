@@ -1,6 +1,6 @@
 import { LottieSource, LottieMarkersAsMap } from './LottieSource';
 
-export interface LottiePlayer<Source extends LottieSource> {
+export type LottiePlayer<Source extends LottieSource> = {
   play: (startFrame?: number, endFrame?: number) => void;
   playMarkers: (
     startFrame: keyof LottieMarkersAsMap<Source>,
@@ -9,4 +9,4 @@ export interface LottiePlayer<Source extends LottieSource> {
   pause: () => void;
   resume: () => void;
   reset: () => void;
-}
+};

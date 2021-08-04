@@ -3,7 +3,7 @@ import { AnyObject, StringKey } from './types';
 export const emptyObject = {};
 
 export function entries<T>(item: T) {
-  return Object.entries(item) as Array<[keyof T, T[keyof T]]>;
+  return Object.entries(item) as [keyof T, T[keyof T]][];
 }
 
 export function mapKeys<
@@ -27,13 +27,13 @@ export function mapValues<
   }, {} as { [key in keyof T]: ReturnType<K> });
 }
 
-export const renameKeys = <T>(obj: { [key: string]: T }, newKeys: { [oldKey: string]: string }) => {
+export const renameKeys = <T>(obj: Record<string, T>, newKeys: Record<string, string>) => {
   const objClone = { ...obj };
 
   const transformedObj = Object.keys(objClone).reduce((res, key) => {
     const newKey = newKeys[key] || key;
     res[newKey] = objClone[key];
     return res;
-  }, {} as { [key: string]: T });
+  }, {} as Record<string, T>);
   return transformedObj;
 };

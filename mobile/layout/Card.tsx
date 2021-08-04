@@ -11,9 +11,10 @@ import { Pressable, PressableProps } from '../system/Pressable';
 import { DangerouslySetStyle } from '../types';
 import { VStack } from './VStack';
 
-export interface CardProps extends CardBaseProps, DangerouslySetStyle<ViewStyle> {
+export type CardProps = {
   onPress?: PressableProps['onPress'];
-}
+} & CardBaseProps &
+  DangerouslySetStyle<ViewStyle>;
 
 export const Card: React.FC<CardProps> = memo(
   ({

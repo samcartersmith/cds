@@ -1,5 +1,6 @@
-import { useMemo } from 'react';
+/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 
+import React, { useMemo } from 'react';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { StackScreenProps } from '@react-navigation/stack';
@@ -55,7 +56,7 @@ const Index = ({ navigation }: StackScreenProps<{}>) => {
       borderBottomWidth: 1,
       borderBottomColor: palette.lineHeavy,
     }),
-    [palette]
+    [palette],
   );
 
   return (
@@ -66,11 +67,10 @@ const Index = ({ navigation }: StackScreenProps<{}>) => {
           <TouchableHighlight
             activeOpacity={1}
             underlayColor={palette.backgroundAlternate}
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            onPress={() => navigation.navigate(item.key as any)}
+            onPress={() => navigation.navigate({ key: item.key })}
           >
             <View style={styles}>
-              <TextHeadline>{item.label || item.key}</TextHeadline>
+              <TextHeadline>{item.label ?? item.key}</TextHeadline>
             </View>
           </TouchableHighlight>
         )}

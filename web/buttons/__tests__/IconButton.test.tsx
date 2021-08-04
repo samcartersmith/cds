@@ -40,7 +40,7 @@ describe('IconButton', () => {
       <IconButton onPress={spy} name={name} accessibilityLabel={name} />,
     );
 
-    fireEvent.click(container.querySelector('button') as HTMLButtonElement);
+    fireEvent.click(container.querySelector('button') as Element);
 
     expect(spy).toHaveBeenCalled();
   });

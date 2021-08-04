@@ -13,8 +13,7 @@ const setRef = <T>(ref: AnyRef<T>, value: RefElementOrNull<T>) => {
     ref(value);
   } else if (ref) {
     // React types assume ref is readonly
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore https://github.com/facebook/react/issues/13029#issuecomment-410002316
+    // @ts-expect-error https://github.com/facebook/react/issues/13029#issuecomment-410002316
     // eslint-disable-next-line no-param-reassign
     ref.current = value;
   }
@@ -27,7 +26,7 @@ const setRef = <T>(ref: AnyRef<T>, value: RefElementOrNull<T>) => {
  * Refs can be mutable refs or function refs.
  * @param refs
  */
-export function useMergedRef<T>(...refs: Array<AnyRef<T> | undefined>): CallbackRef<T> | null {
+export function useMergedRef<T>(...refs: (AnyRef<T> | undefined)[]): CallbackRef<T> | null {
   return useMemo(() => {
     if (refs.every((ref) => ref === null)) {
       return null;

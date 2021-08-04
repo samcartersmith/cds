@@ -3,7 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 
-export const versionNumManifest: { [name: string]: number } = {
+export const versionNumManifest: Record<string, number> = {
   'coinbaseCard-dark': 0,
   'orders-dark': 0,
   'giftbox-dark': 0,

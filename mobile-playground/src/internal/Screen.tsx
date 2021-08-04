@@ -1,9 +1,10 @@
+import React from 'react';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { ScrollView } from 'react-native';
 
-interface ScreenProps {
+type ScreenProps = {
   children: React.ReactNode;
-}
+};
 
 const Screen = ({ children }: ScreenProps) => {
   const palette = usePalette();

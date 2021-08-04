@@ -10,7 +10,7 @@ import { getSourcePath } from '../utils/getSourcePath';
 import { createIconSet } from './createIconSet';
 import { manifest } from './manifest';
 
-interface GlyphData {
+type GlyphData = {
   contents: string;
   srcPath: string;
   metadata: {
@@ -22,7 +22,7 @@ interface GlyphData {
     height: number;
     color: string;
   };
-}
+};
 
 /**
  * Remove svgs after IconFonts are created
@@ -37,7 +37,8 @@ export const createIconFont = async () => {
   const MOBILE_FONTS_DIR = await getSourcePath('mobile/icons/font');
   const WEB_FONTS_DIR = await getSourcePath('web/icons/font');
 
-  const font = await webfont({
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const font = (await webfont({
     centerHorizontally: true,
     files: path.join(SVGS_DIR, '*.svg'),
     fontHeight: 4096,
@@ -46,7 +47,11 @@ export const createIconFont = async () => {
     normalize: true,
     startUnicode: 0xe000, // uE000
     prependUnicode: true,
-  });
+  })) as {
+    ttf: string;
+    woff2: string;
+    glyphsData: GlyphData[];
+  };
 
   const hash = Date.now();
   const webFontName = `CoinbaseIcons-${hash}.woff2`;
@@ -68,7 +73,7 @@ export const createIconFont = async () => {
 
   const { nameSet, sizeMap } = createIconSet();
 
-  (font.glyphsData as GlyphData[]).forEach(({ metadata }) => {
+  font.glyphsData.forEach(({ metadata }) => {
     const [name, size] = metadata.name.split('-') as [
       keyof typeof manifest.unicodeMap,
       keyof typeof manifest.unicodeMap[keyof typeof manifest.unicodeMap],
@@ -89,7 +94,7 @@ export const createIconFont = async () => {
     }
   });
 
-  const glyphMap: Record<string, { [x: string]: string }> = {};
+  const glyphMap: Record<string, Record<string, string>> = {};
   nameSet.forEach((name) => {
     glyphMap[name] = arrayToObject(Object.keys(sizeMap));
     for (const size of iconPixelSizes) {

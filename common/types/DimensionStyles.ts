@@ -3,7 +3,7 @@ export type PercentageValue = string;
 export type DimensionValue = 'auto' | FixedValue | PercentageValue;
 export type ResizeMode = 'cover' | 'contain';
 
-export interface DimensionStyles {
+export type DimensionStyles = {
   /** Set a fixed height. */
   height?: DimensionValue;
   /** Set a maximum height. */
@@ -16,4 +16,4 @@ export interface DimensionStyles {
   minWidth?: DimensionValue;
   /** Set a fixed width. */
   width?: DimensionValue;
-}
+};

@@ -7,7 +7,7 @@ import * as marginStyles from '../../styles/margin';
 import * as paddingStyles from '../../styles/padding';
 import { isRtl } from '../../utils/isRtl';
 
-export interface UseInternalSpacingStylesProps {
+export type UseInternalSpacingStylesProps = {
   all?: SpacingScale;
   top?: SpacingScale;
   bottom?: SpacingScale;
@@ -16,7 +16,7 @@ export interface UseInternalSpacingStylesProps {
   horizontal?: SpacingScale;
   vertical?: SpacingScale;
   isInverted?: boolean;
-}
+};
 
 export const useInternalSpacingStyles = ({
   all,

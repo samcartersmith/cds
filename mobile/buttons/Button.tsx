@@ -12,7 +12,7 @@ import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 
-export interface ButtonProps extends ButtonBaseProps, PressableProps {}
+export type ButtonProps = ButtonBaseProps & PressableProps;
 
 export const Button = memo(function Button({
   block,
@@ -46,7 +46,7 @@ export const Button = memo(function Button({
       borderColor={borderColor}
       borderRadius={compact ? 'compact' : 'standard'}
       borderWidth="button"
-      feedback={feedback || (compact ? 'light' : 'normal')}
+      feedback={feedback ?? (compact ? 'light' : 'normal')}
       loading={loading}
       style={pressableStyles}
       {...props}

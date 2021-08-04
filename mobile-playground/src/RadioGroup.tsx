@@ -1,3 +1,5 @@
+/* eslint-disable react-native-a11y/has-accessibility-hint */
+
 import React, { useState } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';

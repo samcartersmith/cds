@@ -5,14 +5,14 @@ import { ComponentDoc, PropItem } from 'react-docgen-typescript';
 import { PropOptions, PropertyDocgen, normalizeOptions } from './PropertyDocgen';
 import { ComponentDocgenParams } from './types';
 
-interface PropItemWithOptions extends PropItem {
+type PropItemWithOptions = {
   options: PropOptions;
-}
+} & PropItem;
 
-interface Docgen extends ComponentDocgenParams {
+type Docgen = {
   web?: ComponentDoc;
   mobile?: ComponentDoc;
-}
+} & ComponentDocgenParams;
 
 type Platform = 'web' | 'mobile';
 
@@ -73,7 +73,7 @@ export class ComponentDocgen {
   }
 
   findProp(props: PropItemWithOptions[] | undefined, name: string) {
-    return props && props.find((prop) => prop.name === name);
+    return props?.find((prop) => prop.name === name);
   }
 
   get sharedProps() {
@@ -130,9 +130,9 @@ export class ComponentDocgen {
 
   get props() {
     return [
-      ...(this.webOnlyProps || []),
-      ...(this.mobileOnlyProps || []),
-      ...(this.sharedProps || []),
+      ...(this.webOnlyProps ?? []),
+      ...(this.mobileOnlyProps ?? []),
+      ...(this.sharedProps ?? []),
     ]
       .reduce((prev, prop) => {
         return [...prev, new PropertyDocgen(prop)];

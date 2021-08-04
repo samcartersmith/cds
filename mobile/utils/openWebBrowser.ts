@@ -45,7 +45,7 @@ type InAppBrowserAndroidOptions = {
     endEnter: string;
     endExit: string;
   };
-  headers?: { [key: string]: string };
+  headers?: Record<string, string>;
   hasBackButton?: boolean;
   browserPackage?: string;
   showInRecents?: boolean;
@@ -59,8 +59,8 @@ export type OpenWebBrowserOptions = {
   Omit<InAppBrowserAndroidOptions, 'toolbarColor' | 'secondaryToolbarColor'>;
 
 export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions) => {
-  const preventRedirectionIntoApp = options.preventRedirectionIntoApp || false;
-  const forceOpenOutsideApp = options.forceOpenOutsideApp || false;
+  const preventRedirectionIntoApp = options.preventRedirectionIntoApp ?? false;
+  const forceOpenOutsideApp = options.forceOpenOutsideApp ?? false;
 
   if (preventRedirectionIntoApp) {
     CustomTabsHelper.preventRedirectionIntoApp();

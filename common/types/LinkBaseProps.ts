@@ -3,7 +3,7 @@ import { Typography } from './Typography';
 
 export type LinkTypography = Exclude<Typography, 'display1' | 'display2'>;
 
-export interface LinkBaseProps {
+export type LinkBaseProps = {
   /** URL that this link goes to when pressed. */
   to?: string;
   /** Color of the foreground text. */
@@ -14,4 +14,4 @@ export interface LinkBaseProps {
   children: NonNullable<React.ReactNode>;
   /** Specify inner text type */
   variant?: LinkTypography;
-}
+};

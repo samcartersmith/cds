@@ -16,12 +16,7 @@ import { Interactable, InteractableProps } from './Interactable';
 
 export type LinkableProps = Pick<BasePressableProps, 'onPress'>;
 
-export interface PressableProps
-  extends Pick<
-      BasePressableProps,
-      'delayLongPress' | 'hitSlop' | 'onLongPress' | 'onPress' | 'pressRetentionOffset' | 'testID'
-    >,
-    AccessibilityProps {
+export type PressableProps = {
   /**
    * Haptic feedback to trigger when being pressed.
    * @default none
@@ -36,11 +31,13 @@ export interface PressableProps
    * the accidental "double-tap".
    */
   disableDebounce?: boolean;
-}
+} & Pick<
+  BasePressableProps,
+  'delayLongPress' | 'hitSlop' | 'onLongPress' | 'onPress' | 'pressRetentionOffset' | 'testID'
+> &
+  AccessibilityProps;
 
-export interface PressableInternalProps
-  extends PressableProps,
-    Omit<InteractableProps, 'pressed' | 'style'> {
+export type PressableInternalProps = {
   /** Dont scale element on press. */
   noScaleOnPress?: boolean;
   /** Callback fired before `onPress` when button is pressed. */
@@ -52,7 +49,8 @@ export interface PressableInternalProps
    * Pass any styles that impact layout to this prop (i.e width, flex-direction, etc).
    */
   style?: BasePressableProps['style'];
-}
+} & PressableProps &
+  Omit<InteractableProps, 'pressed' | 'style'>;
 
 export const Pressable = memo(function Pressable({
   children,
@@ -82,11 +80,11 @@ export const Pressable = memo(function Pressable({
   const handlePress = useCallback(
     (event: GestureResponderEvent) => {
       if (feedback === 'light') {
-        Haptics.lightImpact();
+        void Haptics.lightImpact();
       } else if (feedback === 'normal') {
-        Haptics.normalImpact();
+        void Haptics.normalImpact();
       } else if (feedback === 'heavy') {
-        Haptics.heavyImpact();
+        void Haptics.heavyImpact();
       }
 
       if (onPress) {
@@ -123,6 +121,7 @@ export const Pressable = memo(function Pressable({
       accessibilityComponentType="button"
       accessibilityTraits="button"
       accessibilityState={{ busy: loading, disabled: !!disabled }}
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       disabled={disabled || loading}
       onPress={handlePress}
       onPressIn={handlePressIn}
@@ -136,6 +135,7 @@ export const Pressable = memo(function Pressable({
         borderColor={borderColor}
         borderRadius={borderRadius}
         borderWidth={borderWidth}
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         disabled={disabled || loading}
         elevation={elevation}
         pressed={pressed}

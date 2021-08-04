@@ -1,6 +1,6 @@
 import type { TextBaseProps, PaletteForeground, SharedProps } from '@cbhq/cds-common';
 
-export interface TextProps extends TextBaseProps, SharedProps {
+export type TextProps = {
   /**
    * Set CSS display attribute.
    */
@@ -19,7 +19,8 @@ export interface TextProps extends TextBaseProps, SharedProps {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetClassName?: string;
-}
+} & TextBaseProps &
+  SharedProps;
 
 export type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4';
 

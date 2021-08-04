@@ -1,7 +1,7 @@
 import { buildTemplates } from '../utils/buildTemplates';
 import { createIconFont, removeSVGs } from './createIconFont';
 
-(async function buildIcons() {
+async function buildIcons() {
   const iconData = await createIconFont();
   const templates = {
     'objectMap.ejs': [
@@ -32,4 +32,6 @@ import { createIconFont, removeSVGs } from './createIconFont';
 
   await buildTemplates(templates);
   await removeSVGs();
-})();
+}
+
+void buildIcons();

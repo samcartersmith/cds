@@ -1,3 +1,6 @@
+/* eslint-disable react-native-a11y/has-accessibility-hint */
+
+import React from 'react';
 import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
@@ -7,8 +10,10 @@ import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 
 function onPress(event: GestureResponderEvent) {
+  // eslint-disable-next-line no-console
   console.log('Pressed', event.type || 'GestureResponderEvent');
 }
+
 const iconName = 'arrowsHorizontal';
 const variants = [
   {
@@ -73,6 +78,7 @@ const IconButtonScreen = () => {
         {variants.map((variant, index) => {
           return (
             <Box
+              // eslint-disable-next-line react/no-array-index-key
               key={index}
               flexDirection="row"
               alignItems="center"

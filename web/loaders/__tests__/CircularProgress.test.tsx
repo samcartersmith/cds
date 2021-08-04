@@ -3,13 +3,13 @@ import { renderA11y } from '@utils/jest/renderA11y';
 
 import { CircularProgress } from '../CircularProgress';
 
-const testVals: { [index: string]: number } = {
+const testVals: Record<string, number> = {
   strokeWidth: 4,
   radius: 30,
   progress: 30,
 };
 
-const newTestVals: { [index: string]: number } = {
+const newTestVals: Record<string, number> = {
   strokeWidth: 6,
   radius: 40,
   progress: 80,

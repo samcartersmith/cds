@@ -23,7 +23,7 @@ export const updateTextStylesTable = async () => {
         sectionStartIndex,
       )}${tableStart}\n\n${typeStylesTable}\n${textStory.slice(sectionEndIndex, textStory.length)}`;
 
-      writePrettyFile({
+      await writePrettyFile({
         prettierConfig: argv.prettierConfig as string,
         outFile: textStoryFile,
         contents: updatedStylesTable,

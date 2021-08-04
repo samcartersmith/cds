@@ -8,7 +8,7 @@ import { StyleSheet, View } from 'react-native';
 import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';
 
-export interface IconButtonProps extends IconButtonBaseProps, PressableProps {}
+export type IconButtonProps = IconButtonBaseProps & PressableProps;
 
 export const IconButton = memo(function IconButton({
   feedback = 'light',

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { usePreviousValue } from '../usePreviousValue';

@@ -11,9 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Box, BoxProps } from './Box';
 import { paletteValueToRgbaString } from '../utils/palette';
 
-export interface FallbackProps
-  extends FallbackBaseProps,
-    Omit<BoxProps, 'borderRadius' | 'height' | 'width'> {}
+export type FallbackProps = FallbackBaseProps & Omit<BoxProps, 'borderRadius' | 'height' | 'width'>;
 
 export const Fallback = memo(function Fallback({
   height,

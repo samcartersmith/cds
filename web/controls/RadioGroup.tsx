@@ -12,7 +12,7 @@ import { control, palette } from '../tokens';
 import { FilteredHTMLAttributes } from '../types';
 import { Control, ControlProps } from './Control';
 
-export interface RadioProps<T extends string> extends ControlBaseProps<T>, ControlProps {}
+export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps;
 
 const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   { children, ...props }: RadioProps<T>,
@@ -49,17 +49,16 @@ export function useHandleRadioSelect<T extends string>(onChange?: (value: T) => 
   );
 }
 
-export interface RadioGroupProps<T extends string>
-  extends FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange'>,
-    RadioGroupBaseProps<T>,
-    SharedProps {
+export type RadioGroupProps<T extends string> = {
   /** * Field name of the multiple choice radio group. */
   name: string;
   /** id of the element that labels the radio group */
   'aria-labelledby'?: string;
   /** Handle change event when pressing on a radio option. */
   onChange?: (value: T) => void;
-}
+} & FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
+  RadioGroupBaseProps<T> &
+  SharedProps;
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   { label, selectedValue, onChange, options, name, testID, ...restProps }: RadioGroupProps<T>,

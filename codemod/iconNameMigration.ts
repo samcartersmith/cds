@@ -9,7 +9,7 @@ import { Codemod } from './Codemod';
  * key = old icon names
  * value = new icon names
  */
-const iconNameMap: { [index: string]: string } = {
+const iconNameMap: Record<string, string> = {
   allTimeHighHeavy: 'allTimeHigh',
   apiHeavy: 'api',
   arrowsHorizontalHeavy: 'arrowsHorizontal',
@@ -155,7 +155,7 @@ export default function replaceOldNameWithNewName(
   fileInfo: FileInfo,
   api: API,
   options: Options,
-): string | null | undefined | void {
+): string | null | undefined {
   const mod = new Codemod(fileInfo, api);
 
   const elements = mod

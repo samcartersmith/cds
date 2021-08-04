@@ -1,6 +1,6 @@
 // Copied from https://github.com/jongold/figma-js/blob/63a69883f38bb24d38322b6af4221cc39902a9c7/src/figmaTypes.ts
 
-export interface Global {
+export type Global = {
   /** a string uniquely identifying this node within the document */
   readonly id: string;
   /** the name given to the node by the user in the tool. */
@@ -9,7 +9,7 @@ export interface Global {
   readonly visible?: boolean;
   /** the type of the node, refer to table below for details */
   readonly type: NodeType;
-}
+};
 
 /**
  * Styles can be one of the following types
@@ -119,42 +119,42 @@ export type Node =
 /** Node Properties */
 
 /** The root node */
-export interface Document extends Global {
+export type Document = {
   readonly type: 'DOCUMENT';
   /** An array of canvases attached to the document */
-  readonly children: ReadonlyArray<Node>;
-}
+  readonly children: readonly Node[];
+} & Global;
 
 /** Represents a single page */
-export interface Canvas extends Global {
+export type Canvas = {
   readonly type: 'CANVAS';
   /** An array of top level layers on the canvas */
-  readonly children: ReadonlyArray<Node>;
+  readonly children: readonly Node[];
   /** Background color of the canvas */
   readonly backgroundColor: Color;
   /** Node ID that corresponds to the start frame for prototypes */
   readonly prototypeStartNodeID: string | null;
   /** An array of export settings representing images to export from the canvas */
-  readonly exportSettings?: ReadonlyArray<ExportSetting>;
-}
+  readonly exportSettings?: readonly ExportSetting[];
+} & Global;
 
-export interface FrameBase extends Global {
+export type FrameBase = {
   /** An array of nodes that are direct children of this node */
-  readonly children: ReadonlyArray<Node>;
+  readonly children: readonly Node[];
   /** Background of the node. This is deprecated, as backgrounds for frames are now in the fills field. */
-  readonly background: ReadonlyArray<Paint>;
+  readonly background: readonly Paint[];
   /** Background color of the node. This is deprecated, as frames now support more than a solid color as a fills. Please use the fills field instead. */
   readonly backgroundColor: Color;
   /**
    * An array of fill paints applied to the node
    * @default []
    */
-  readonly fills: ReadonlyArray<Paint>;
+  readonly fills: readonly Paint[];
   /**
    * An array of stroke paints applied to the node
    * @default []
    */
-  readonly strokes: ReadonlyArray<Paint>;
+  readonly strokes: readonly Paint[];
   /** The weight of strokes on the node */
   readonly strokeWeight: number;
   /**
@@ -178,7 +178,7 @@ export interface FrameBase extends Global {
    * An array of export settings representing images to export from node
    * @default []
    */
-  readonly exportSettings?: ReadonlyArray<ExportSetting>;
+  readonly exportSettings?: readonly ExportSetting[];
   /**
    * How this node blends with nodes behind it in the scene
    * (see blend mode section for more details)
@@ -279,7 +279,7 @@ export interface FrameBase extends Global {
    * for more details). GROUP nodes do not have this attribute
    * @default []
    */
-  readonly layoutGrids?: ReadonlyArray<LayoutGrid>;
+  readonly layoutGrids?: readonly LayoutGrid[];
   /**
    * Defines the scrolling behavior of the frame, if there exist contents
    * outside of the frame boundaries. The frame can either scroll
@@ -297,30 +297,30 @@ export interface FrameBase extends Global {
    * (see effects sectionfor more details)
    * @default []
    */
-  readonly effects: ReadonlyArray<Effect>;
+  readonly effects: readonly Effect[];
   /**
    * Does this node mask sibling nodes in front of it?
    * @default false
    */
   readonly isMask?: boolean;
-}
+} & Global;
 
 /** A node of fixed size containing other nodes */
-export interface Frame extends FrameBase {
+export type Frame = {
   readonly type: 'FRAME';
-}
+} & FrameBase;
 
 /** A logical grouping of nodes */
-export interface Group extends FrameBase {
+export type Group = {
   readonly type: 'GROUP';
-}
+} & FrameBase;
 
-export interface VectorBase extends Global {
+export type VectorBase = {
   /**
    * An array of export settings representing images to export from node
    * @default []
    */
-  readonly exportSettings?: ReadonlyArray<ExportSetting>;
+  readonly exportSettings?: readonly ExportSetting[];
   /**
    * How this node blends with nodes behind it in the scene
    * (see blend mode section for more details)
@@ -379,7 +379,7 @@ export interface VectorBase extends Global {
    * (see effects sectionfor more details)
    * @default []
    */
-  readonly effects: ReadonlyArray<Effect>;
+  readonly effects: readonly Effect[];
   /**
    * Does this node mask sibling nodes in front of it?
    * @default false
@@ -389,19 +389,19 @@ export interface VectorBase extends Global {
    * An array of fill paints applied to the node
    * @default []
    */
-  readonly fills: ReadonlyArray<Paint>;
+  readonly fills: readonly Paint[];
 
   /**
    * Only specified if parameter geometry=paths is used. An array of paths
    * representing the object fill
    */
-  readonly fillGeometry?: ReadonlyArray<Path>;
+  readonly fillGeometry?: readonly Path[];
 
   /**
    * An array of stroke paints applied to the node
    * @default []
    */
-  readonly strokes: ReadonlyArray<Paint>;
+  readonly strokes: readonly Paint[];
 
   /** The weight of strokes on the node */
   readonly strokeWeight: number;
@@ -410,7 +410,7 @@ export interface VectorBase extends Global {
    * Only specified if parameter geometry=paths is used. An array of paths
    * representing the object stroke
    */
-  readonly strokeGeometry?: ReadonlyArray<Path>;
+  readonly strokeGeometry?: readonly Path[];
 
   /**
    * Where stroke is drawn relative to the vector outline as a string enum
@@ -424,15 +424,15 @@ export interface VectorBase extends Global {
    * Styles this node uses from the global `styles`
    */
   readonly styles?: StylesObject;
-}
+} & Global;
 
 /** A vector network, consisting of vertices and edges */
-export interface Vector extends VectorBase {
+export type Vector = {
   readonly type: 'VECTOR';
-}
+} & VectorBase;
 
 /** A group that has a boolean operation applied to it */
-export interface BooleanGroup extends VectorBase {
+export type BooleanGroup = {
   readonly type: 'BOOLEAN';
   /**
    * A string enum with value of "UNION", "INTERSECT", "SUBTRACT", or "EXCLUDE"
@@ -440,40 +440,40 @@ export interface BooleanGroup extends VectorBase {
    */
   readonly booleanOperation: 'UNION' | 'INTERSECT' | 'SUBTRACT' | 'EXCLUDE';
   /** An array of nodes that are being boolean operated on */
-  readonly children: ReadonlyArray<Node>;
-}
+  readonly children: readonly Node[];
+} & VectorBase;
 
 /** A regular star shape */
-export interface Star extends VectorBase {
+export type Star = {
   readonly type: 'STAR';
-}
+} & VectorBase;
 
 /** A straight line */
-export interface Line extends VectorBase {
+export type Line = {
   readonly type: 'LINE';
-}
+} & VectorBase;
 
 /** An ellipse */
-export interface Ellipse extends VectorBase {
+export type Ellipse = {
   readonly type: 'ELLIPSE';
-}
+} & VectorBase;
 
 /** A regular n-sided polygon */
-export interface RegularPolygon extends VectorBase {
+export type RegularPolygon = {
   readonly type: 'REGULAR_POLYGON';
-}
+} & VectorBase;
 
 /** A rectangle */
-export interface Rectangle extends VectorBase {
+export type Rectangle = {
   readonly type: 'RECTANGLE';
   /** Radius of each corner of the rectangle if a single radius is set for all corners */
   readonly cornerRadius?: number;
   /** Array of length 4 of the radius of each corner of the rectangle, starting in the top left and proceeding clockwise */
   readonly rectangleCornerRadii?: readonly [number, number, number, number];
-}
+} & VectorBase;
 
 /** A text box */
-export interface Text extends VectorBase {
+export type Text = {
   readonly type: TextType;
   /** Text contained within text box */
   readonly characters: string;
@@ -487,16 +487,16 @@ export interface Text extends VectorBase {
    * below and maps to the corresponding character in the characters
    * field. Elements with value 0 have the default type style
    */
-  readonly characterStyleOverrides: ReadonlyArray<number>;
+  readonly characterStyleOverrides: readonly number[];
   /** Map from ID to TypeStyle for looking up style overrides */
-  readonly styleOverrideTable: { readonly [index: number]: TypeStyle };
-}
+  readonly styleOverrideTable: Readonly<Record<number, TypeStyle>>;
+} & VectorBase;
 
 /** A rectangular region of the canvas that can be exported */
-export interface Slice extends Global {
+export type Slice = {
   readonly type: 'SLICE';
   /** An array of export settings representing images to export from this node */
-  readonly exportSettings: ReadonlyArray<ExportSetting>;
+  readonly exportSettings: readonly ExportSetting[];
   /** Bounding box of the node in absolute space coordinates */
   readonly absoluteBoundingBox: Rect;
   /**
@@ -514,30 +514,30 @@ export interface Slice extends Global {
    * Only present if geometry=paths is passed
    */
   readonly relativeTransform?: Transform;
-}
+} & Global;
 
 /** A node that can have instances created of it that share the same properties */
-export interface Component extends FrameBase {
+export type Component = {
   readonly type: 'COMPONENT';
-}
+} & FrameBase;
 
 /**
  * An instance of a component, changes to the component result in the same
  * changes applied to the instance
  */
-export interface Instance extends FrameBase {
+export type Instance = {
   readonly type: 'INSTANCE';
   /**
    * ID of component that this instance came from, refers to components
    * table (see endpoints section below)
    */
   readonly componentId: string;
-}
+} & FrameBase;
 
 // Types
 
 /** An RGBA color */
-export interface Color {
+export type Color = {
   /** Red channel value, between 0 and 1 */
   readonly r: number;
   /** Green channel value, between 0 and 1 */
@@ -546,20 +546,20 @@ export interface Color {
   readonly b: number;
   /** Alpha channel value, between 0 and 1 */
   readonly a: number;
-}
+};
 
 /** Format and size to export an asset at */
-export interface ExportSetting {
+export type ExportSetting = {
   /** File suffix to append to all filenames */
   readonly suffix: string;
   /** Image type, string enum */
   readonly format: 'JPG' | 'PNG' | 'SVG' | 'PDF';
   /** Constraint that determines sizing of exported asset */
   readonly constraint: Constraint;
-}
+};
 
 /** Sizing constraint for exports */
-export interface Constraint {
+export type Constraint = {
   /**
    * Type of constraint to apply; string enum with potential values below
    * "SCALE": Scale by value
@@ -569,10 +569,10 @@ export interface Constraint {
   readonly type: 'SCALE' | 'WIDTH' | 'HEIGHT';
   /** See type property for effect of this field */
   readonly value: number;
-}
+};
 
 /** A rectangle that expresses a bounding box in absolute coordinates */
-export interface Rect {
+export type Rect = {
   /** X coordinate of top left corner of the rectangle */
   readonly x: number;
   /** Y coordinate of top left corner of the rectangle */
@@ -581,10 +581,10 @@ export interface Rect {
   readonly width: number;
   /** Height of the rectangle */
   readonly height: number;
-}
+};
 
 /** Layout constraint relative to containing Frame */
-export interface LayoutConstraint {
+export type LayoutConstraint = {
   /**
    * Vertical constraint as an enum
    * "TOP": Node is laid out relative to top of the containing frame
@@ -603,10 +603,10 @@ export interface LayoutConstraint {
    * "SCALE": Node scales horizontally with containing frame
    */
   readonly horizontal: 'LEFT' | 'RIGHT' | 'CENTER' | 'LEFT_RIGHT' | 'SCALE';
-}
+};
 
 /** Guides to align and place objects within a frame */
-export interface LayoutGrid {
+export type LayoutGrid = {
   /**
    * Orientation of the grid as a string enum
    * "COLUMNS": Vertical grid
@@ -633,10 +633,10 @@ export interface LayoutGrid {
   readonly offset: number;
   /** Number of columns or rows */
   readonly count: number;
-}
+};
 
 /** A visual effect such as a shadow or blur */
-export interface Effect {
+export type Effect = {
   /** Type of effect as a string enum */
   readonly type: 'INNER_SHADOW' | 'DROP_SHADOW' | 'LAYER_BLUR' | 'BACKGROUND_BLUR';
   /** Is the effect active? */
@@ -648,10 +648,10 @@ export interface Effect {
   readonly color?: Color;
   readonly blendMode?: BlendMode;
   readonly offset?: Vector2;
-}
+};
 
 /** A solid color, gradient, or image texture that can be applied as fills or strokes */
-export interface Paint {
+export type Paint = {
   /** Type of paint as a string enum */
   readonly type: PaintType;
   /**
@@ -685,13 +685,13 @@ export interface Paint {
    * relevant for non-linear gradients).
    *
    */
-  readonly gradientHandlePositions?: ReadonlyArray<Vector2>;
+  readonly gradientHandlePositions?: readonly Vector2[];
   /**
    * Positions of key points along the gradient axis with the colors
    * anchored there. Colors along the gradient are interpolated smoothly
    * between neighboring gradient stops.
    */
-  readonly gradientStops?: ReadonlyArray<ColorStop>;
+  readonly gradientStops?: readonly ColorStop[];
 
   // for image paints
 
@@ -716,35 +716,35 @@ export interface Paint {
    * use the GET file images endpoint to retrieve the mapping from image references to image URLs
    */
   readonly gifRef?: string;
-}
+};
 
-export interface Path {
+export type Path = {
   /** A sequence of path commands in SVG notation */
   readonly path: string;
   /** Winding rule for the path */
   readonly windingRule: 'EVENODD' | 'NONZERO';
-}
+};
 
-export type Transform = ReadonlyArray<ReadonlyArray<number>>;
+export type Transform = readonly (readonly number[])[];
 
 /** A 2d vector */
-export interface Vector2 {
+export type Vector2 = {
   /** X coordinate of the vector */
   readonly x: number;
   /** Y coordinate of the vector */
   readonly y: number;
-}
+};
 
 /** A position color pair representing a gradient stop */
-export interface ColorStop {
+export type ColorStop = {
   /** Value between 0 and 1 representing position along gradient axis */
   readonly position: number;
   /** Color attached to corresponding position */
   readonly color: Color;
-}
+};
 
 /** Metadata for character formatting */
-export interface TypeStyle {
+export type TypeStyle = {
   /** Font family of text (standard name) */
   readonly fontFamily: string;
   /** PostScript font name */
@@ -766,7 +766,7 @@ export interface TypeStyle {
   /** Space between characters in px */
   readonly letterSpacing: number;
   /** Paints applied to characters */
-  readonly fills?: ReadonlyArray<Paint>;
+  readonly fills?: readonly Paint[];
   /** Line height in px */
   readonly lineHeightPx: number;
   /** Line height as a percentage of normal line height */
@@ -779,22 +779,22 @@ export interface TypeStyle {
   readonly textDecoration?: 'STRIKETHROUGH' | 'UNDERLINE';
   /** Line height as a percentage of the font size. Only returned when lineHeightPercent is not 100. */
   readonly lineHeightPercentFontSize?: number;
-}
+};
 
 /**
  * A description of a master component. Helps you identify which component
  * instances are attached to
  */
-export interface ComponentMetadata {
+export type ComponentMetadata = {
   /** The unique identifier of the element */
   readonly key: string;
   /** The name of the element */
   readonly name: string;
   /** The description of the element as entered in the editor */
   readonly description: string;
-}
+};
 
-export interface FrameInfo {
+export type FrameInfo = {
   /** Id of the frame node within the figma file */
   readonly node_id: string;
   /** The name of the frame */
@@ -805,9 +805,9 @@ export interface FrameInfo {
   readonly page_id: string;
   /** Name of the frame's residing page */
   readonly page_name: string;
-}
+};
 
-interface SharedElement extends ComponentMetadata {
+type SharedElement = {
   /** The unique identifier of the figma file which contains the element */
   readonly file_key: string;
   /** Id of the component node within the figma file */
@@ -820,30 +820,30 @@ interface SharedElement extends ComponentMetadata {
   readonly updated_at: string;
   /** The user who last updated the element */
   readonly user: User;
-}
+} & ComponentMetadata;
 
 /**
  * An arrangement of published UI elements that can be instantiated across figma files
  */
-export interface FullComponentMetadata extends SharedElement {
+export type FullComponentMetadata = {
   /** Data on component's containing frame, if component resides within a frame */
   readonly containing_frame: FrameInfo;
   /** Data on component's containing page, if component resides in a multi-page file */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   readonly containing_page: any; // broken link in the doc
-}
+} & SharedElement;
 
-export interface FullStyleMetadata extends SharedElement {
+export type FullStyleMetadata = {
   /** The type of style */
   readonly style_type: StyleType;
   /** A user specified order number by which the style can be sorted */
   readonly sort_position: string;
-}
+} & SharedElement;
 
 /**
  *  A description of styles used in a file.
  */
-export interface Style {
+export type Style = {
   /** The name of the stlye */
   readonly name: string;
   /** A description of the style */
@@ -852,12 +852,12 @@ export interface Style {
   readonly key: string;
   /** The type of style */
   readonly styleType: StyleType;
-}
+};
 
 // General API Types
 
 /** A comment or reply left by a user */
-export interface Comment {
+export type Comment = {
   /** Unique identifier for comment */
   readonly id: string;
   /** The file in which the comment lives */
@@ -881,38 +881,34 @@ export interface Comment {
    * comment in the UI
    */
   readonly order_id: number;
-}
+};
 
 /** A description of a user */
-export interface User {
+export type User = {
   /** Unique stable id of the user */
   readonly id: string;
   /** Name of the user */
   readonly handle: string;
   /** URL link to the user's profile image */
   readonly img_url: string;
-}
+};
 
 /** A relative offset within a frame */
-export interface FrameOffset {
+export type FrameOffset = {
   /** Unique id specifying the frame */
   readonly node_id: string;
   /** 2d vector offset within the frame */
   readonly node_offset: Vector2;
-}
+};
 
-export interface ProjectSummary {
+export type ProjectSummary = {
   readonly id: string;
   readonly name: string;
-}
+};
 
-export interface FileResponse {
-  readonly components: {
-    readonly [key: string]: ComponentMetadata;
-  };
-  readonly styles: {
-    readonly [key: string]: Style;
-  };
+export type FileResponse = {
+  readonly components: Readonly<Record<string, ComponentMetadata>>;
+  readonly styles: Readonly<Record<string, Style>>;
   readonly document: Document;
   readonly lastModified: string;
   readonly name: string;
@@ -920,29 +916,28 @@ export interface FileResponse {
   readonly schemaVersion: number;
   readonly thumbnailUrl: string;
   readonly version: string;
-}
+};
 
-export interface FileNodesResponse {
-  readonly nodes: {
-    readonly [key: string]: null | {
-      readonly document: Node;
-      readonly components: {
-        readonly [key: string]: ComponentMetadata;
-      };
-      readonly styles: {
-        readonly [key: string]: Style;
-      };
-      readonly schemaVersion: number;
-    };
-  };
+export type FileNodesResponse = {
+  readonly nodes: Readonly<
+    Record<
+      string,
+      null | {
+        readonly document: Node;
+        readonly components: Readonly<Record<string, ComponentMetadata>>;
+        readonly styles: Readonly<Record<string, Style>>;
+        readonly schemaVersion: number;
+      }
+    >
+  >;
   readonly lastModified: string;
   readonly name: string;
   readonly role: RoleType;
   readonly thumbnailUrl: string;
   readonly version: string;
-}
+};
 
-export interface VersionMetadata {
+export type VersionMetadata = {
   /** Unique identifier for version */
   readonly id: string;
   /** The UTC ISO 8601 time at which the version was created */
@@ -953,99 +948,95 @@ export interface VersionMetadata {
   readonly description: string;
   /** The user that created the version */
   readonly user: User;
-}
+};
 
-export interface FileVersionsResponse {
-  readonly versions: ReadonlyArray<VersionMetadata>;
-}
+export type FileVersionsResponse = {
+  readonly versions: readonly VersionMetadata[];
+};
 
-export interface FileImageResponse {
+export type FileImageResponse = {
   readonly err: string | null;
-  readonly images: {
-    readonly [nodeId: string]: string /* url */;
-  };
-}
+  readonly images: Readonly<Record<string, string>>;
+};
 
-export interface FileImageFillsResponse {
+export type FileImageFillsResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly images: {
-      readonly [key: string]: string;
-    };
+    readonly images: Readonly<Record<string, string>>;
   };
-}
+};
 
-export interface CommentsResponse {
-  readonly comments: ReadonlyArray<Comment>;
-}
+export type CommentsResponse = {
+  readonly comments: readonly Comment[];
+};
 
-export interface ComponentResponse {
+export type ComponentResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: FullComponentMetadata;
-}
+};
 
-export interface StyleResponse {
+export type StyleResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: FullStyleMetadata;
-}
+};
 
-export interface FileSummary {
+export type FileSummary = {
   readonly key: string;
   readonly name: string;
   readonly thumbnail_url: string;
   readonly last_modified: string;
-}
+};
 
-export interface TeamProjectsResponse {
+export type TeamProjectsResponse = {
   readonly name: string;
-  readonly projects: ReadonlyArray<ProjectSummary>;
-}
+  readonly projects: readonly ProjectSummary[];
+};
 
-export interface ProjectFilesResponse {
+export type ProjectFilesResponse = {
   readonly name: string;
-  readonly files: ReadonlyArray<FileSummary>;
-}
+  readonly files: readonly FileSummary[];
+};
 
-interface PaginationMeta {
+type PaginationMeta = {
   readonly cursor: {
     readonly before: number;
     readonly after: number;
   };
-}
+};
 
-export interface TeamComponentsResponse {
+export type TeamComponentsResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly components: ReadonlyArray<FullComponentMetadata>;
+    readonly components: readonly FullComponentMetadata[];
     readonly cursor: PaginationMeta;
   };
-}
+};
 
-export interface FileComponentsResponse {
+export type FileComponentsResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly components: ReadonlyArray<FullComponentMetadata>;
+    readonly components: readonly FullComponentMetadata[];
   };
-}
+};
 
-export interface TeamStylesResponse {
+export type TeamStylesResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly styles: ReadonlyArray<FullStyleMetadata>;
+    readonly styles: readonly FullStyleMetadata[];
     readonly cursor: PaginationMeta;
   };
-}
+};
 
-export interface FileStylesResponse {
+export type FileStylesResponse = {
   readonly error: boolean;
   readonly status: number;
   readonly meta: {
-    readonly styles: ReadonlyArray<FullStyleMetadata>;
+    readonly styles: readonly FullStyleMetadata[];
   };
-}
+};

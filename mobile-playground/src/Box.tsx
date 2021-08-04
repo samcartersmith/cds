@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 

@@ -13,7 +13,7 @@ import { BadgeProps } from './Badge';
 import { iconGlyphMap } from './iconGlyphMap';
 import { IconOutline } from './IconOutline';
 
-export interface IconBaseMobileProps extends IconBaseProps, DangerouslySetStyle<TextStyle> {
+export type IconBaseMobileProps = {
   /**
    * Add a badge to the top right of an icon
    */
@@ -22,7 +22,8 @@ export interface IconBaseMobileProps extends IconBaseProps, DangerouslySetStyle<
   color?: PaletteForeground;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetColor?: string | Animated.AnimatedInterpolation;
-}
+} & IconBaseProps &
+  DangerouslySetStyle<TextStyle>;
 
 export const IconBase = ({
   animated = false,

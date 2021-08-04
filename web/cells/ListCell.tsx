@@ -12,7 +12,7 @@ import { Cell, CellSharedProps, overflowClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 
-export interface ListCellProps extends ListCellBaseProps, CellSharedProps {}
+export type ListCellProps = ListCellBaseProps & CellSharedProps;
 
 export const ListCell = memo(function ListCell({
   accessory,

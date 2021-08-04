@@ -10,9 +10,8 @@ import { IllustrationFilePathMap } from './RelativePathMap';
 export const Illustration = memo(function Illustration({ name, ...props }: IllustrationBaseProps) {
   const imageMetadata = useMemo(() => IllustrationFilePathMap[name], [name]);
 
-  const image =
-    useSpectrumConditional({ light: imageMetadata.light, dark: imageMetadata.dark }) ??
-    imageMetadata.light;
+  const image = (useSpectrumConditional({ light: imageMetadata.light, dark: imageMetadata.dark }) ??
+    imageMetadata.light) as number;
 
   const style = useMemo(
     () => ({

@@ -6,9 +6,9 @@ import { mediaSize, imageSize } from '@cbhq/cds-common/tokens/cell';
 
 import { Fallback } from '../layout/Fallback';
 
-export interface MediaFallbackProps {
+export type MediaFallbackProps = {
   type: CellMediaType;
-}
+};
 
 export const MediaFallback = memo(function MediaFallback({ type }: MediaFallbackProps) {
   const mediaSizeScaled = useScaleConditional(mediaSize);

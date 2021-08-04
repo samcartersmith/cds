@@ -8,7 +8,7 @@ import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
 import { Control, ControlIconProps, ControlProps } from './Control';
 
-export interface CheckboxProps<T extends string> extends ControlBaseProps<T>, ControlProps<T> {}
+export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
 
 const CheckboxIcon: React.FC<ControlIconProps> = ({
   pressed,

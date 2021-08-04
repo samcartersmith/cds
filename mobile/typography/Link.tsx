@@ -27,7 +27,7 @@ const TYPOGRAPHY_MAP: Record<LinkTypography, React.ComponentType<TextProps>> = {
   title3: TextTitle3,
   legal: TextLegal,
 };
-export interface LinkProps extends LinkBaseProps, SharedProps {
+export type LinkProps = {
   /** Callback to fire when pressed */
   onPress?: (event: GestureResponderEvent) => void;
   /**
@@ -47,7 +47,8 @@ export interface LinkProps extends LinkBaseProps, SharedProps {
    * @default false
    */
   readerMode?: boolean;
-}
+} & LinkBaseProps &
+  SharedProps;
 
 export const Link = memo(
   ({
@@ -68,7 +69,7 @@ export const Link = memo(
       (event: GestureResponderEvent) => {
         onPress?.(event);
         if (to !== undefined) {
-          openUrl(to, {
+          void openUrl(to, {
             forceOpenOutsideApp,
             preventRedirectionIntoApp,
             readerMode,

@@ -11,10 +11,7 @@ import {
 import type { IconBaseWebProps } from './IconBase';
 import { IconBase } from './IconBase';
 
-export interface NavigationIconProps
-  extends Omit<IconBaseWebProps, 'color'>,
-    SpacingProps,
-    SharedProps {
+export type NavigationIconProps = {
   /** Name of navigation icon, as defined by Figma */
   name: NavigationIconName;
   /**
@@ -27,13 +24,16 @@ export interface NavigationIconProps
    * @default false
    */
   active?: boolean;
-}
+} & Omit<IconBaseWebProps, 'color'> &
+  SpacingProps &
+  SharedProps;
 
 export const NavigationIcon = memo(
   ({ name, size = 'm', active = false, ...props }: NavigationIconProps) => {
-    const navigationIconName = (
-      active ? `${name}Active` : `${name}Inactive`
-    ) as NavigationIconInternalName;
+    const navigationIconName: NavigationIconInternalName = active
+      ? `${name}Active`
+      : `${name}Inactive`;
+
     return (
       <IconBase
         size={size}

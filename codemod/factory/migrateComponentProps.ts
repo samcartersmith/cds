@@ -97,7 +97,7 @@ function migrateComponentButtons(
   importPath: string | RegExp,
   migrateMap: ComponentPropMap,
   namesToFind: string[] = [],
-): string | null | undefined | void {
+): string | null | undefined {
   if (namesToFind.length === 0 && typeof importPath === 'string') {
     namesToFind.push(importPath.slice(importPath.lastIndexOf('/') + 1));
   }

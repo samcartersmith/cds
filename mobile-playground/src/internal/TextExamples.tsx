@@ -1,5 +1,5 @@
+import React from 'react';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
-import { TextLabel1 } from '@cbhq/cds-mobile/typography';
 import { TextProps } from '@cbhq/cds-mobile/typography/createText';
 
 import Example from './Example';

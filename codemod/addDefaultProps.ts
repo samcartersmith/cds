@@ -36,7 +36,7 @@ export default function addDefaultProps(
   fileInfo: FileInfo,
   api: API,
   options: Options,
-): string | null | undefined | void {
+): string | null | undefined {
   const mod = new Codemod(fileInfo, api);
 
   // Find component names for the defined import path
@@ -57,7 +57,7 @@ export default function addDefaultProps(
     return undefined;
   }
 
-  const propsToAdd = JSON.parse(defaultProps as string);
+  const propsToAdd = JSON.parse(defaultProps as string) as Record<string, unknown>;
 
   elements.forEach((el) => {
     const spacingProps = el.openingElement.attributes.find(

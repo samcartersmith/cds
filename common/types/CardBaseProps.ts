@@ -5,7 +5,7 @@ import type { PaletteBackground } from './Palette';
 import type { SharedProps } from './SharedProps';
 import type { OffsetProps, SpacingProps } from './SpacingProps';
 
-export interface CardBaseProps extends DimensionStyles, OffsetProps, SharedProps, SpacingProps {
+export type CardBaseProps = {
   /** Set the background color of the Card. Passing `true` will enable the default background, otherwise a custom palette alias can be passed. */
   background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
   /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
@@ -14,4 +14,7 @@ export interface CardBaseProps extends DimensionStyles, OffsetProps, SharedProps
   pin?: PinningDirection;
   /** Size of the card. Small and medium have fixed widths and large grows with its children. */
   size?: 'small' | 'medium' | 'large';
-}
+} & DimensionStyles &
+  OffsetProps &
+  SharedProps &
+  SpacingProps;

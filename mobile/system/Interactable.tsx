@@ -13,13 +13,14 @@ import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useInteractableBorderStyles } from '../hooks/useInteractableBorderStyles';
 import { useInteractableTokens } from '../hooks/useInteractableTokens';
 
-export interface InteractableProps extends InteractableBaseProps, SharedProps {
+export type InteractableProps = {
   children?: React.ReactNode;
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
   /** Apply animated styles to the inner container. */
   contentStyle?: Falsy | ViewStyle;
-}
+} & InteractableBaseProps &
+  SharedProps;
 
 export const Interactable = memo(function Interactable({ children, ...props }: InteractableProps) {
   return (

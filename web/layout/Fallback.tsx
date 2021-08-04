@@ -39,12 +39,11 @@ const fallback = css`
   }
 `;
 
-export interface FallbackProps
-  extends FallbackBaseProps,
-    Omit<BoxProps, 'borderRadius' | 'height' | 'width'> {
+export type FallbackProps = {
   /** Convert width to a percentage. */
   percentage?: boolean;
-}
+} & FallbackBaseProps &
+  Omit<BoxProps, 'borderRadius' | 'height' | 'width'>;
 
 export const Fallback = memo(function Fallback({
   height,

@@ -41,12 +41,14 @@ eslint_test(
     name = "lint",
     srcs = CDS_DEPENDENCIES,
     lint_srcs = [":source"],
+    deps = TYPE_DEPENDENCIES,
 )
 
 eslint_fix(
     name = "lint_fix",
     srcs = CDS_DEPENDENCIES,
     lint_srcs = [":source"],
+    deps = TYPE_DEPENDENCIES,
 )
 
 # Files for storybook

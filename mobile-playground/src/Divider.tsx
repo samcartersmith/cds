@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box, Divider, HStack } from '@cbhq/cds-mobile/layout';
 
 import Example from './internal/Example';

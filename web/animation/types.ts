@@ -12,10 +12,9 @@ export type LottieListener = {
   handler: NoopFn;
 };
 
-export interface LottieProps<T extends string, Source extends LottieSource<T>>
-  extends LottieBaseProps<Source>,
-    SharedProps {
+export type LottieProps<T extends string, Source extends LottieSource<T>> = {
   handlers?: LottieEventHandlersMap;
-}
+} & LottieBaseProps<Source> &
+  SharedProps;
 
 export type LottieAnimationRef = MutableRefObject<AnimationItem | undefined>;

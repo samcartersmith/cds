@@ -16,12 +16,12 @@ import { palette } from '../tokens';
 import { OnPress } from '../types';
 import { interactable, disabledState, scaledDownState } from './interactableStyles';
 
-export interface InteractableProps<T> {
+export type InteractableProps<T> = {
   /** Callback fired after the element is pressed.  */
   onPress?: OnPress<T> | NoopFn;
-}
+};
 
-export interface UseInteractableOptions {
+export type UseInteractableOptions = {
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteBackground;
   /** Border color of the element being interacted with. */
@@ -32,7 +32,7 @@ export interface UseInteractableOptions {
   disabled?: boolean;
   /** Dont scale down the element when being pressed. */
   noScaleOnPress?: boolean;
-}
+};
 
 // eslint-disable-next-line no-console
 console.warn(

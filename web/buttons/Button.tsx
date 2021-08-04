@@ -14,21 +14,20 @@ import { Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 import * as buttonStyles from './buttonStyles';
 
-export interface ButtonProps
-  extends ButtonBaseProps,
-    PressableProps,
-    Omit<
-      ReakitButtonProps,
-      | 'children'
-      | 'className'
-      | 'onClick'
-      | 'onClickCapture'
-      | 'style'
-      | 'unstable_clickOnEnter'
-      | 'unstable_clickOnSpace'
-      | 'unstable_system'
-      | 'wrapElement'
-    > {}
+export type ButtonProps = ButtonBaseProps &
+  PressableProps &
+  Omit<
+    ReakitButtonProps,
+    | 'children'
+    | 'className'
+    | 'onClick'
+    | 'onClickCapture'
+    | 'style'
+    | 'unstable_clickOnEnter'
+    | 'unstable_clickOnSpace'
+    | 'unstable_system'
+    | 'wrapElement'
+  >;
 
 export const Button = forwardRef(function Button(
   {

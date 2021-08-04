@@ -9,7 +9,7 @@ export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
 export type FlexAlignCommon = FlexAxisValue | 'stretch';
 export type FlexSpaceCommon = 'space-between' | 'space-around';
 
-export interface FlexStyles {
+export type FlexStyles = {
   /**
    * Set the distribution of space between and around content items along the cross-axis.
    * @default flex-start
@@ -43,11 +43,11 @@ export interface FlexStyles {
    * @default flex-start
    */
   justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
-}
+};
 
 export type PinningDirection = 'top' | 'bottom' | 'left' | 'right' | 'all';
 
-export interface PositionStyles {
+export type PositionStyles = {
   /** Position the box to the bottom edge. */
   bottom?: DimensionValue;
   /** Position the box to the left edge. */
@@ -60,9 +60,9 @@ export interface PositionStyles {
   top?: DimensionValue;
   /** Adjust the z-index positioning layer. */
   zIndex?: number;
-}
+};
 
-export interface BorderedStyles {
+export type BorderedStyles = {
   /** Add a border around all sides of the box. */
   bordered?: boolean;
   /** Add a border to the top side of the box. */
@@ -79,15 +79,9 @@ export interface BorderedStyles {
   borderedVertical?: boolean;
   /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
   borderRadius?: BorderRadius;
-}
+};
 
-export interface BoxBaseProps
-  extends DimensionStyles,
-    FlexStyles,
-    OffsetProps,
-    SpacingProps,
-    PositionStyles,
-    BorderedStyles {
+export type BoxBaseProps = {
   /**
    * Set the background color of the box. Passing `true` will enable the default background,
    * otherwise a custom palette alias can be passed.
@@ -101,9 +95,14 @@ export interface BoxBaseProps
   elevation?: ElevationLevels;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetBackground?: string;
-}
+} & DimensionStyles &
+  FlexStyles &
+  OffsetProps &
+  SpacingProps &
+  PositionStyles &
+  BorderedStyles;
 
-export interface StackBaseProps {
+export type StackBaseProps = {
   /** Gap to insert between siblings. */
   gap?: SpacingScale;
-}
+};

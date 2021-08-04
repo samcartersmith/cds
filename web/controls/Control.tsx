@@ -14,19 +14,17 @@ import { TextProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
 import { isRtl } from '../utils/isRtl';
 
-export interface ControlProps
-  extends FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'>,
-    SharedProps {}
+export type ControlProps = FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'> &
+  SharedProps;
 
-interface ControlInternalProps<T extends string>
-  extends ControlProps,
-    Partial<
-      Pick<InteractableProps, 'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth'>
-    > {
+type ControlInternalProps<T extends string> = {
   value?: T;
   label?: TextProps['children'];
   children: React.ReactChild;
-}
+} & ControlProps &
+  Partial<
+    Pick<InteractableProps, 'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth'>
+  >;
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {

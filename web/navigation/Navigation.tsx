@@ -49,7 +49,7 @@ const NavigationContent: React.FC<NavigationProps> = memo(
     });
 
     const showTabsAndTitle = Boolean(tabs && displayTitle);
-    const shouldAnimatedHeader = displayTitle || showTabsAndTitle;
+    const shouldAnimatedHeader = displayTitle ?? showTabsAndTitle;
 
     const { ref: sidebarRef } = useDimensions({
       breakpoints: { mobile: 0, desktop: sidebarWidth.expanded },

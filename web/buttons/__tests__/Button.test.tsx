@@ -40,7 +40,7 @@ describe('Button', () => {
     const spy = jest.fn();
     const { container } = render(<Button onPress={spy}>Child</Button>);
 
-    fireEvent.click(container.querySelector('button') as HTMLButtonElement);
+    fireEvent.click(container.querySelector('button') as Element);
 
     expect(spy).toHaveBeenCalled();
   });

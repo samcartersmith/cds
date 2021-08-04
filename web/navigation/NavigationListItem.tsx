@@ -17,25 +17,24 @@ import { useMobileMenuChildrenContext } from './MobileMenuChildrenContext';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
 
-export interface NavigationListItemLinkProps
-  extends React.AriaAttributes,
-    React.RefAttributes<HTMLAnchorElement>,
-    Pick<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      'children' | 'className' | 'onBlur' | 'onFocus' | 'onMouseEnter' | 'onMouseLeave' | 'tabIndex'
-    > {
+export type NavigationListItemLinkProps = {
   onPress?: React.MouseEventHandler;
   to: string | { pathname?: string }; // Required for router Link's
-}
+} & React.AriaAttributes &
+  React.RefAttributes<HTMLAnchorElement> &
+  Pick<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    'children' | 'className' | 'onBlur' | 'onFocus' | 'onMouseEnter' | 'onMouseLeave' | 'tabIndex'
+  >;
 
-export interface NavigationListItemProps extends PressableProps {
+export type NavigationListItemProps = {
   active?: boolean;
   icon?: NavigationIconName;
   label: string;
   badge?: BadgeValue;
   as?: React.ComponentType<NavigationListItemLinkProps>;
   to?: string;
-}
+} & PressableProps;
 
 export const NavigationListItem = memo(
   ({ as, active, icon, label, badge, to = '/', onPress }: NavigationListItemProps) => {
@@ -115,7 +114,7 @@ export const NavigationListItem = memo(
             return (
               <Pressable
                 {...enhancedProps}
-                as={as || 'a'}
+                as={as ?? 'a'}
                 backgroundColor="secondary"
                 borderColor="secondary"
                 borderRadius="standard"

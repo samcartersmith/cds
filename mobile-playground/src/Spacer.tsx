@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box, Spacer, HStack, VStack } from '@cbhq/cds-mobile/layout';
 import { TextBody } from '@cbhq/cds-mobile/typography';
 

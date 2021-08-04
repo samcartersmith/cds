@@ -16,7 +16,7 @@ import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
 import { buildTemplates } from './utils/buildTemplates';
 
-(async function codegen() {
+async function codegen() {
   const templates = {
     'lottieStyles.ejs': [
       {
@@ -132,4 +132,6 @@ import { buildTemplates } from './utils/buildTemplates';
   Palette.validate();
 
   await buildTemplates(templates);
-})();
+}
+
+void codegen();

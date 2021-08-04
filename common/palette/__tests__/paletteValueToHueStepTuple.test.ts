@@ -8,11 +8,11 @@ describe('paletteValueToHueStepTuple', () => {
   });
 
   it('returns gray100 tuple if invalid value is passed in', () => {
-    // @ts-ignore
+    // @ts-expect-error
     expect(paletteValueToHueStepTuple('')).toEqual(['gray', 100]);
-    // @ts-ignore
+    // @ts-expect-error
     expect(paletteValueToHueStepTuple(undefined)).toEqual(['gray', 100]);
-    // @ts-ignore
+    // @ts-expect-error
     expect(paletteValueToHueStepTuple(['', undefined])).toEqual(['gray', 100]);
   });
 });

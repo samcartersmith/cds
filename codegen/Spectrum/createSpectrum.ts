@@ -24,9 +24,8 @@ export const createSpectrum = <T extends ColorOutput>(mode: keyof typeof modes, 
     }, emptyObject as Record<HueStepName, string>);
   };
 
-  const hueSetForMode: HueSet = typedMode.map((item) => {
-    return generate(item.properties, item.options);
-  });
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+  const hueSetForMode = typedMode.map((item) => generate(item.properties, item.options)) as HueSet;
 
   /*
     [ { inverted: false, colors: Color[], name: 'Blue' } ],

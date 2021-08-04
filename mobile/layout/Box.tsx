@@ -16,11 +16,7 @@ import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { OmitStyle, DangerouslySetStyle } from '../types';
 import { OverflowGradient } from './OverflowGradient';
 
-export interface BoxProps
-  extends BoxBaseProps,
-    SharedProps,
-    OmitStyle<ViewProps>,
-    DangerouslySetStyle<ViewStyle> {
+export type BoxProps = {
   /**
    * How to handle overflow content. When `gradient`, will fade the content out
    * using a linear gradient.
@@ -37,7 +33,10 @@ export interface BoxProps
    * Aspect ratio takes min/max dimensions into account.
    */
   aspectRatio?: number;
-}
+} & BoxBaseProps &
+  SharedProps &
+  OmitStyle<ViewProps> &
+  DangerouslySetStyle<ViewStyle>;
 
 export const Box: React.FC<BoxProps> = memo(({ children, ...props }) => {
   return (

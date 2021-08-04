@@ -5,9 +5,9 @@ import { CellDetailProps as CellDetailBaseProps } from '@cbhq/cds-common';
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
 
-export interface CellDetailProps extends CellDetailBaseProps {
+export type CellDetailProps = {
   adjustsFontSizeToFit?: boolean;
-}
+} & CellDetailBaseProps;
 
 export const CellDetail = memo(function CellDetail({
   adjustsFontSizeToFit,

@@ -29,13 +29,9 @@ type Spectrum = 'light' | 'dark';
 
 const figmaClient = FigmaClient(CDS_PERSONAL_ACCESS_TOKEN);
 
-const localManifestData: {
-  [fileFormat: string]: { [nodeId: string]: IllustrationSummary };
-} = manifestData;
+const localManifestData: Record<string, Record<string, IllustrationSummary>> = manifestData;
 let svgOptimizerConfig: OptimizeOptions;
-const nameToNodeIdMap: {
-  [name: string]: string;
-} = {};
+const nameToNodeIdMap: Record<string, string> = {};
 
 function normalizeIllustration(illustrationName: string): IllustrationProps | null {
   const [type, spectrum, variant, name] = illustrationName.split('/');
@@ -62,7 +58,7 @@ const fileHasChanged = (oldFileBase64: string, newFileBase64: string): boolean =
   return oldFileBase64 !== newFileBase64;
 };
 
-const loadOneImage = (
+const loadOneImage = async (
   imageURL: string,
   nodeId: string,
   outDirPath: string,
@@ -78,7 +74,7 @@ const loadOneImage = (
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
   } catch (err) {
-    errMsg(spinner, err.message);
+    errMsg(spinner, (err as Error).message);
   }
 
   const fileName =
@@ -109,10 +105,10 @@ const loadOneImage = (
         }
 
         if (exportFormat === 'svg') {
-          const optimizedSVG = optimize(res.data, svgOptimizerConfig);
+          const optimizedSVG = optimize(String(res.data), svgOptimizerConfig);
           fs.writeFileSync(fileNameFullPath, optimizedSVG.data, encoding);
         } else {
-          fs.writeFileSync(fileNameFullPath, Buffer.from(res.data, 'binary'), encoding);
+          fs.writeFileSync(fileNameFullPath, Buffer.from(String(res.data), 'binary'), encoding);
         }
 
         const newFileBase64 = binaryToBase64(readFileSync(fileNameFullPath, encoding));
@@ -130,7 +126,7 @@ const loadOneImage = (
       }
     })
     .catch((err) => {
-      errMsg(spinner, err.message);
+      errMsg(spinner, (err as Error).message);
     });
 };
 
@@ -182,7 +178,8 @@ const loadImagesLocally = async (
     SCALE_SIZES.map(async (scale) => {
       const fileImageResponse = await figmaClient
         .fileImages(ILLUSTRATION_FILE_ID, nodeIds, exportFormat, scale)
-        .catch((err) => errMsg(spinner, err.message));
+        .catch((err) => errMsg(spinner, (err as Error).message));
+
       if (!fileImageResponse) return undefined;
 
       if (fileImageResponse.data.err) {
@@ -219,9 +216,7 @@ const getIllustrationNamesAndVariants = (
   pascalCaseNames: IllustrationNamesMap;
   variants: string[];
 } => {
-  const illustrationNames: {
-    [variant: string]: Set<string>;
-  } = {};
+  const illustrationNames: Record<string, Set<string>> = {};
   const variants = new Set<string>();
 
   Object.entries(components).forEach((component) => {
@@ -327,7 +322,7 @@ const updateManifest = async (
  *
  * For every variant, there will be a corresponding count
  */
-const genStatistics = (destPath: string, names: IllustrationNamesMap) => {
+const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
   // A variable to keep track of the number of illustrations in each
   // variant. So it will be
   // {
@@ -335,9 +330,7 @@ const genStatistics = (destPath: string, names: IllustrationNamesMap) => {
   //   numHeroSquare: y,
   //   .....
   // }
-  const variantCountMap: {
-    [numVariant: string]: number;
-  } = {};
+  const variantCountMap: Record<string, number> = {};
 
   Object.keys(names).forEach((variant) => {
     variantCountMap[variant.replace('Names', 'Count')] = names[variant].length;
@@ -348,7 +341,8 @@ const genStatistics = (destPath: string, names: IllustrationNamesMap) => {
       Object.keys(localManifestData.png).length + Object.keys(localManifestData.svg).length,
     ...variantCountMap,
   };
-  generateFromTemplate({
+
+  await generateFromTemplate({
     template: 'objectMap.ejs',
     data: { illustrationMetadata },
     config: { disableAsConst: true },
@@ -356,8 +350,8 @@ const genStatistics = (destPath: string, names: IllustrationNamesMap) => {
   });
 };
 
-const createManifestFile = (destPath: string) => {
-  generateFromTemplate({
+const createManifestFile = async (destPath: string) => {
+  await generateFromTemplate({
     template: 'objectMap.ejs',
     data: { manifestData: localManifestData },
     config: { disableAsConst: true },
@@ -365,14 +359,14 @@ const createManifestFile = (destPath: string) => {
   });
 };
 
-const createTypes = (names: IllustrationNamesMap, variants: string[]) => {
+const createTypes = async (names: IllustrationNamesMap, variants: string[]) => {
   const pascalCaseKeys = Object.keys(names).reduce((acc, oldKey) => {
     acc[oldKey] = `Illustration${pascalCase(oldKey)}`;
     return acc;
-  }, {} as { [key: string]: string });
+  }, {} as Record<string, string>);
 
   try {
-    generateFromTemplate({
+    await generateFromTemplate({
       template: 'typescript.ejs',
       dest: 'common/types/Illustration.ts',
       data: {
@@ -383,11 +377,11 @@ const createTypes = (names: IllustrationNamesMap, variants: string[]) => {
       },
     });
   } catch (err) {
-    console.error(err.message);
+    console.error(err);
   }
 };
 
-const createVersionNumManifest = (destPath: string, fileFormat: FileFormat) => {
+const createVersionNumManifest = async (destPath: string, fileFormat: FileFormat) => {
   const versionNumManifest: VersionNumManifestStruct = reduce(
     localManifestData[fileFormat],
     (res, metadata) => {
@@ -397,7 +391,7 @@ const createVersionNumManifest = (destPath: string, fileFormat: FileFormat) => {
     {} as VersionNumManifestStruct,
   );
 
-  generateFromTemplate({
+  await generateFromTemplate({
     template: 'objectMap.ejs',
     data: { versionNumManifest },
     config: { disableAsConst: true },
@@ -405,14 +399,16 @@ const createVersionNumManifest = (destPath: string, fileFormat: FileFormat) => {
   });
 };
 
-const createConstants = (names: IllustrationNamesMap, outPaths: string[]) => {
+const createConstants = async (names: IllustrationNamesMap, outPaths: string[]) => {
   try {
-    outPaths.forEach((dest) =>
-      generateFromTemplate({
-        template: 'objectMap.ejs',
-        dest,
-        data: names,
-      }),
+    await Promise.all(
+      outPaths.map(async (dest) =>
+        generateFromTemplate({
+          template: 'objectMap.ejs',
+          dest,
+          data: names,
+        }),
+      ),
     );
   } catch (err) {
     console.error(err);
@@ -448,27 +444,33 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
           fileFormat: `"${fileFormat}"`,
         };
       } catch (err) {
-        errMsg(spinner, err);
+        errMsg(spinner, (err as Error).message);
       }
       return acc;
     },
-    {} as {
-      [key: string]: {
+    {} as Record<
+      string,
+      {
         light: string | null;
         dark: string | null;
         fileFormat: string;
-      };
-    },
+      }
+    >,
   );
 
-  generateFromTemplate({
+  await generateFromTemplate({
     template: 'objectMapUnevaled.ejs',
     dest: `${outDirPath}/RelativePathMap.ts`,
     data: {
       IllustrationFilePathMap: paths,
     },
+    types: {
+      IllustrationFilePathMap:
+        "Record<string, { light: unknown, dark: unknown, fileFormat: 'svg' | 'png' }>",
+    },
     header: '/* eslint-disable */\n',
   });
+
   spinner.stop();
 };
 
@@ -490,21 +492,22 @@ const main = async (deleteImgsDir = false) => {
     const { camelCaseNames, pascalCaseNames, variants } =
       getIllustrationNamesAndVariants(components);
     await updateManifest(components);
-    genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
-
+    await genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
     await loadImagesLocally(Object.keys(localManifestData.svg), outDirPath, 'svg');
+
     console.log('All images loaded');
-    createTypes(camelCaseNames, variants);
-    createConstants(camelCaseNames, [
+
+    await createTypes(camelCaseNames, variants);
+    await createConstants(camelCaseNames, [
       'mobile-playground/src/data/illustrationData.ts',
       'website/data/illustrationData.ts',
     ]);
-    createNameToRelativePathMap(camelCaseNames, 'mobile/illustrations');
-    createManifestFile('codegen/illustrations/illustration_manifest.ts');
-    createVersionNumManifest('web/illustrations/versionNumManifest.ts', 'svg');
+    await createNameToRelativePathMap(camelCaseNames, 'mobile/illustrations');
+    await createManifestFile('codegen/illustrations/illustration_manifest.ts');
+    await createVersionNumManifest('web/illustrations/versionNumManifest.ts', 'svg');
   } catch (err) {
     console.error(err);
   }
 };
 
-main();
+void main();

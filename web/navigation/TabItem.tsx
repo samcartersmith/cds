@@ -4,14 +4,15 @@ import { buttonResets } from '../styles/resetStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { TextLabel1 } from '../typography/TextLabel1';
 
-export interface TabItemBaseProps {
+export type TabItemBaseProps = {
   label: string;
   value?: string | number;
-}
+};
 
-export interface TabItemProps extends TabItemBaseProps, PressableProps {
+export type TabItemProps = {
   active?: boolean;
-}
+} & TabItemBaseProps &
+  PressableProps;
 
 export const TabItem = memo(function TabItem({ label, active, value: _, ...props }: TabItemProps) {
   const colorAlias = active ? 'primaryWash' : 'secondary';

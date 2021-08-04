@@ -15,13 +15,12 @@ import { checkboxReset } from '../styles/resetStyles';
 import { FilteredHTMLAttributes } from '../types';
 import { Checkbox, CheckboxProps } from './Checkbox';
 
-export interface CheckboxGroupProps<T extends string>
-  extends FilteredHTMLAttributes<FieldsetHTMLAttributes<HTMLFieldSetElement>, 'onChange'>,
-    CheckboxGroupBaseProps<T>,
-    SharedProps {
+export type CheckboxGroupProps<T extends string> = {
   /** Handle change event when pressing on a checkbox option. */
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-}
+} & FilteredHTMLAttributes<FieldsetHTMLAttributes<HTMLFieldSetElement>, 'onChange'> &
+  CheckboxGroupBaseProps<T> &
+  SharedProps;
 
 // Follows behavior describe in https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html
 const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends string>(
@@ -53,7 +52,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
       // eslint-disable-next-line no-console
       console.error('Checkboxes inside CheckboxGroup should have values.');
     }
-    const id = child.props.id || ['checkbox-group', name, value].join('-');
+    const id = child.props.id ?? ['checkbox-group', name, value].join('-');
     checkboxIds.push(id);
     return cloneElement(child, {
       checked: (typeof value !== 'undefined' && selectedValues.has(value)) ?? child.props.checked,

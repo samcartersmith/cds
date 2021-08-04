@@ -25,11 +25,7 @@ const styles = StyleSheet.create({
 
 export const numberStyles = styles.tabularNumbers;
 
-export interface TextProps
-  extends TextBaseProps,
-    SharedProps,
-    OmitStyle<RNTextProps, 'selectable'>,
-    DangerouslySetStyle<TextStyle> {
+export type TextProps = {
   /**
    * Text color. Accepts a valid `PaletteForeground` alias.
    * @default foreground
@@ -45,7 +41,10 @@ export interface TextProps
    * @deprecated
    */
   deprecatedLineHeight?: number | 'none';
-}
+} & TextBaseProps &
+  SharedProps &
+  OmitStyle<RNTextProps, 'selectable'> &
+  DangerouslySetStyle<TextStyle>;
 
 export const createText = (name: Typography) => {
   const TextComponent: React.FC<TextProps> = function TextComponent({
@@ -105,7 +104,7 @@ export const createText = (name: Typography) => {
     // TODO: Maybe update to align web and mobile APIs
     const numberOfLines = noWrap ? 1 : props.numberOfLines;
     const ellipsizeProps = ellipsize && {
-      numberOfLines: numberOfLines || 1,
+      numberOfLines: numberOfLines ?? 1,
       ellipsizeMode: ellipsize,
     };
 

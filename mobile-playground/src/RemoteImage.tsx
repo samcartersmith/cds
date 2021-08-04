@@ -76,7 +76,7 @@ const RemoteImageScreen = () => {
       </Example>
       <Example title="shouldApplyDarkModeEnhacements">
         <HStack gap={2}>
-          {images.map(item => (
+          {images.map((item) => (
             <RemoteImage
               key={item}
               source={getSource(item)}

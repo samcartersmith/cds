@@ -3,7 +3,7 @@ import { Animated, ViewStyle } from 'react-native';
 
 import { DangerouslySetStyle } from '../types';
 
-export interface LottieProps extends LottieBaseProps, SharedProps, DangerouslySetStyle<ViewStyle> {
+export type LottieProps = {
   /**
    * A number between 0 and 1, or an `Animated` number between 0 and 1. This number
    * represents the normalized progress of the animation. If you update this prop, the
@@ -14,5 +14,7 @@ export interface LottieProps extends LottieBaseProps, SharedProps, DangerouslySe
   /**
    * An array of layers you want to override its color filter.
    */
-  colorFilters?: Array<{ keypath: string; color: string }>;
-}
+  colorFilters?: { keypath: string; color: string }[];
+} & LottieBaseProps &
+  SharedProps &
+  DangerouslySetStyle<ViewStyle>;

@@ -13,6 +13,6 @@ export const useTextAlign = (align?: TextAlign) => {
     if (align === 'end') {
       return { textAlign: I18nManager.isRTL ? 'left' : 'right' } as const;
     }
-    return { textAlign: align as Exclude<TextAlign, 'start' | 'end'> };
+    return { textAlign: align };
   }, [align]);
 };

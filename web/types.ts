@@ -9,7 +9,7 @@ export type FilteredHTMLAttributes<T, P extends keyof T = never> = Omit<
 >;
 
 export type DynamicElement<
-  CustomProps extends unknown,
+  CustomProps,
   T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
   AsPropRequired extends boolean = false,
 > = CustomProps &
@@ -33,16 +33,18 @@ export type DynamicElement<
 
 // LINARIA
 
-export interface StyledInheritedProps {
+export type StyledInheritedProps = {
   className: string;
   style?: React.CSSProperties;
-}
+};
 
 export type CSSMap<T extends string | undefined> = Record<NonNullable<T>, string>;
 
 export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 
 declare module 'react' {
+  // Required for interface merging
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface CSSProperties extends PaletteCssVariable {
     '--interactable-height'?: string;
     '--interactable-opacity-hovered'?: typeof opacityHovered[keyof typeof opacityHovered];

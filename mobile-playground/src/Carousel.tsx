@@ -1,3 +1,5 @@
+/* eslint-disable react-perf/jsx-no-new-function-as-prop */
+
 import React, { memo, useCallback, useMemo, useRef } from 'react';
 
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
@@ -124,6 +126,7 @@ const DynamicItemsExample = () => {
 
   const items = useMemo(() => {
     return Array.from({ length: itemsLength }).map((_, index) => {
+      // eslint-disable-next-line react/no-array-index-key
       return <ExampleCarouselItem key={`add-item-example-${index}`} />;
     });
   }, [itemsLength]);

@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 import * as Figma from './api';
 
@@ -17,7 +17,7 @@ const validateScale = (scale: number): number => {
     throw new Error(`The scale ${scale} is out of range. Can only be between 0.01 and 4`);
   }
 
-  return scale as number;
+  return scale;
 };
 
 export const FigmaClient = (personalAccessToken: string) => {
@@ -30,14 +30,14 @@ export const FigmaClient = (personalAccessToken: string) => {
   return {
     client,
     /** Get a single figma file */
-    file: (fileId: string, nodeId: string): AxiosPromise<Figma.FileResponse> =>
+    file: async (fileId: string, nodeId: string): Promise<AxiosResponse<Figma.FileResponse>> =>
       client.get(`files/${fileId}`, {
         params: {
           ids: nodeId,
         },
       }),
     /** Get a single figma node */
-    node: (fileId: string, nodeId: string): AxiosPromise<Figma.FileNodesResponse> =>
+    node: async (fileId: string, nodeId: string): Promise<AxiosResponse<Figma.FileNodesResponse>> =>
       client.get(`files/${fileId}/nodes`, {
         params: {
           ids: nodeId,
@@ -52,12 +52,12 @@ export const FigmaClient = (personalAccessToken: string) => {
      * @param {scale} Number A number between 0.01 and 4, the image scaling factor
      * @see https://www.figma.com/developers/api#get-images-endpoint
      */
-    fileImages: (
+    fileImages: async (
       fileId: string,
       nodeIds: string[],
       format: ExportFormat = 'svg',
       scale = 1,
-    ): AxiosPromise<Figma.FileImageResponse> => {
+    ): Promise<AxiosResponse<Figma.FileImageResponse>> => {
       validateScale(scale);
       return client.get(`images/${fileId}`, {
         params: {

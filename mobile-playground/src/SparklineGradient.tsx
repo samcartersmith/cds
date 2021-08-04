@@ -1,3 +1,4 @@
+import React from 'react';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
@@ -13,21 +14,6 @@ import { assets } from './data/assets';
 import { prices } from './data/prices';
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
-
-const PressableOpacityScreen = () => {
-  return (
-    <ExamplesScreen>
-      <Example title="SparklineGradient">
-        <SparklineGradientExample {...assets.btc} />
-        <SparklineGradientExample {...assets.eth} />
-        <SparklineGradientExample {...assets.ltc} />
-        <SparklineGradientExample {...assets.xrp} />
-        <SparklineGradientExample {...assets.dai} />
-        <SparklineGradientExample {...assets.sushi} />
-      </Example>
-    </ExamplesScreen>
-  );
-};
 
 type SparklineGradientExampleProps = {
   imageUrl: string;
@@ -62,6 +48,21 @@ const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
       </Cell>
       <SparklineGradient {...dimensions} path={path} color={color} />
     </VStack>
+  );
+};
+
+const PressableOpacityScreen = () => {
+  return (
+    <ExamplesScreen>
+      <Example title="SparklineGradient">
+        <SparklineGradientExample {...assets.btc} />
+        <SparklineGradientExample {...assets.eth} />
+        <SparklineGradientExample {...assets.ltc} />
+        <SparklineGradientExample {...assets.xrp} />
+        <SparklineGradientExample {...assets.dai} />
+        <SparklineGradientExample {...assets.sushi} />
+      </Example>
+    </ExamplesScreen>
   );
 };
 

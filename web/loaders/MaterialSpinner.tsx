@@ -6,12 +6,12 @@ import { PaletteForeground } from '@cbhq/cds-common/types/Palette';
 import { usePalette } from '../hooks/usePalette';
 import * as styles from './styles';
 
-export interface MaterialSpinnerProp extends SharedProps {
+export type MaterialSpinnerProp = {
   /** Size of the spinner */
   size: number;
   /** Color of the spinner */
   color: PaletteForeground;
-}
+} & SharedProps;
 
 export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerProp) => {
   const palette = usePalette();

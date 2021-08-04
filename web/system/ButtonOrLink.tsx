@@ -11,7 +11,7 @@ export const ButtonOrLink = forwardRef<HTMLElement, Props>(
         <Button
           {...props}
           as="a"
-          href={to || href}
+          href={to ?? href}
           rel={!rel && target === '_blank' ? 'noopener noreferrer' : rel}
           target={target}
           ref={ref as React.ForwardedRef<HTMLAnchorElement>}

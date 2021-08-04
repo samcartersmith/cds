@@ -45,7 +45,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     return cloneElement(child, {
       checked: (typeof value !== 'undefined' && selectedValues.has(value)) ?? child.props.checked,
       onChange,
-      testID: testID ? `${testID}-${child.props.value || index}` : undefined,
+      testID: testID ? `${testID}-${child.props.value ?? index}` : undefined,
     });
   });
 

@@ -26,9 +26,9 @@ export const largestTriangleThreeBucket = (data: number[], threshold: number) =>
   let t = 0;
   const p = (f - 2) / (threshold - 2);
   let c = 0;
-  let v;
-  let u;
-  let w;
+  let v = 0;
+  let u = 0;
+  let w = 0;
 
   n[t++] = data[c];
 
@@ -60,7 +60,7 @@ export const largestTriangleThreeBucket = (data: number[], threshold: number) =>
     }
 
     n[t++] = v;
-    c = w as number;
+    c = w;
   }
 
   n[t++] = data[f - 1];

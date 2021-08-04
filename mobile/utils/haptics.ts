@@ -1,28 +1,31 @@
 import noop from 'lodash/noop';
 import { NativeModules } from 'react-native';
 
-const HapticsModule = NativeModules.Haptics || {
+const HapticsModule = (NativeModules.Haptics || {
   impactAsync: noop,
   notificationAsync: noop,
+}) as {
+  impactAsync: (type: string) => Promise<void>;
+  notificationAsync: (type: string) => Promise<void>;
 };
 
-const notification = (type: 'success' | 'warning' | 'error'): Promise<void> =>
+const notification = async (type: 'success' | 'warning' | 'error'): Promise<void> =>
   HapticsModule.notificationAsync(type);
 
-const successNotification = () => notification('success');
+const successNotification = async () => notification('success');
 
-const warningNotification = () => notification('warning');
+const warningNotification = async () => notification('warning');
 
-const errorNotification = () => notification('error');
+const errorNotification = async () => notification('error');
 
-const impact = (style: 'light' | 'medium' | 'heavy'): Promise<void> =>
+const impact = async (style: 'light' | 'medium' | 'heavy'): Promise<void> =>
   HapticsModule.impactAsync(style);
 
-const lightImpact = () => impact('light');
+const lightImpact = async () => impact('light');
 
-const normalImpact = () => impact('medium');
+const normalImpact = async () => impact('medium');
 
-const heavyImpact = () => impact('heavy');
+const heavyImpact = async () => impact('heavy');
 
 export const Haptics = {
   successNotification,

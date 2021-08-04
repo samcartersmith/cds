@@ -23,9 +23,9 @@ export type CarouselDismissItemParams = {
 };
 export type CarouselDismissItemInternal = (params: CarouselDismissItemParams) => void;
 export type CarouselDismissItem = (callbackFn?: NoopFn | undefined) => void;
-export interface CarouselItemContextValue {
+export type CarouselItemContextValue = {
   id: CarouselItemId;
   dismiss: CarouselDismissItem;
-}
+};
 
 export type CarouselUpdateLayoutMap = (value: CarouselLayoutMap) => void;

@@ -16,7 +16,7 @@ describe('openWebBrowser', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
   it('opens web browser within app', async () => {
-    const spyIsAvailable = jest.spyOn(InAppBrowser, 'isAvailable').mockImplementation(() => {
+    const spyIsAvailable = jest.spyOn(InAppBrowser, 'isAvailable').mockImplementation(async () => {
       return Promise.resolve(true);
     });
     const spyInAppBrowserOpen = jest.spyOn(InAppBrowser, 'open').mockImplementation();

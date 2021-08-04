@@ -13,10 +13,10 @@ const currencyIcon: CurrencyIcon = {
   GBP: 'cashGBP',
 };
 
-interface FiatIconProps extends SharedProps {
+type FiatIconProps = {
   currencyCode: string;
   size?: Exclude<IconSize, 'xs'>;
-}
+} & SharedProps;
 
 export const FiatIcon: FunctionComponent<FiatIconProps> = ({
   currencyCode,

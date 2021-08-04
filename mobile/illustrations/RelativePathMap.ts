@@ -3,7 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 /* eslint-disable */
-export const IllustrationFilePathMap = {
+export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unknown, fileFormat: 'svg' | 'png' }> = {
   accessToAdvancedCharts: {
     light: require('./images/light/accessToAdvancedCharts-0.svg'),
     dark: null,

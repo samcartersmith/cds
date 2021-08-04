@@ -5,7 +5,7 @@ import { css, cx } from 'linaria';
 
 import { HStack, VStack } from '../layout';
 
-export interface ButtonGroupProps extends ButtonGroupBaseProps, SharedProps {}
+export type ButtonGroupProps = ButtonGroupBaseProps & SharedProps;
 
 const list = css`
   list-style: none;
@@ -44,7 +44,10 @@ export const ButtonGroup = memo(function ButtonGroup({
       {Children.map(children, (child) =>
         child ? (
           <li className={cx(item, block && fill)}>
-            {cloneElement(child, { block: block || vertical })}
+            {cloneElement(child, {
+              // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+              block: block || vertical,
+            })}
           </li>
         ) : null,
       )}

@@ -4,7 +4,7 @@ import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
 import { SpacingProps, OffsetProps } from './SpacingProps';
 
-export interface CellCommonProps extends SharedProps, Pick<OffsetProps, 'offsetHorizontal'> {
+export type CellCommonProps = {
   /** Apply a fixed width to the detail (end). */
   detailWidth?: number | string;
   /** Is the cell disabled? Will apply opacity and disable interaction. */
@@ -15,9 +15,10 @@ export interface CellCommonProps extends SharedProps, Pick<OffsetProps, 'offsetH
   reduceHorizontalSpacing?: boolean;
   /** Is the cell selected? Will apply a background and selected accessory. */
   selected?: boolean;
-}
+} & SharedProps &
+  Pick<OffsetProps, 'offsetHorizontal'>;
 
-export interface CellBaseProps extends CellCommonProps, SpacingProps {
+export type CellBaseProps = {
   accessory?: React.ReactElement<CellAccessoryProps>;
   alignItems?: 'center' | 'flex-start';
   children: React.ReactNode;
@@ -25,56 +26,57 @@ export interface CellBaseProps extends CellCommonProps, SpacingProps {
   intermediary?: React.ReactNode;
   media?: React.ReactElement;
   minHeight?: number;
-}
+} & CellCommonProps &
+  SpacingProps;
 
 export type CellAccessoryType = 'arrow' | 'more' | 'selected';
 
-export interface CellAccessoryProps extends SpacingProps {
+export type CellAccessoryProps = {
   /** Type of accessory to display at the end. */
   type: CellAccessoryType;
-}
+} & SpacingProps;
 
 export type CellDetailVariant = Extract<
   PaletteForeground,
   'foregroundMuted' | 'negative' | 'positive'
 >;
 
-export interface CellDetailProps {
+export type CellDetailProps = {
   /** Label and or extra detail. */
   detail?: React.ReactNode;
   /** Subdetail providing more information. */
   subdetail?: React.ReactNode;
   /** Variant color to apply to the subdetail text. */
   variant?: CellDetailVariant;
-}
+};
 
 export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon' | 'pictogram';
 
 export type CellMediaSource = string | number;
 
-export interface CellMediaIconProps extends SharedProps {
+export type CellMediaIconProps = {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
-}
+} & SharedProps;
 
-export interface CellMediaPictogramProps extends SharedProps {
+export type CellMediaPictogramProps = {
   type: Extract<CellMediaType, 'pictogram'>;
   illustration: React.ReactElement<{
     name: IllustrationPictogramNames;
     height?: number;
     width?: number;
   }>;
-}
+} & SharedProps;
 
-export interface CellMediaOtherProps extends SharedProps {
+export type CellMediaOtherProps = {
   type: Exclude<CellMediaType, 'icon' | 'pictogram'>;
   title?: string;
   source: CellMediaSource;
-}
+} & SharedProps;
 
 export type CellMediaProps = CellMediaIconProps | CellMediaPictogramProps | CellMediaOtherProps;
 
-export interface ContentCellBaseProps extends CellCommonProps {
+export type ContentCellBaseProps = {
   /** Accessory to display at the end of the cell. */
   accessory?: CellAccessoryType;
   /** Description of content. Content will wrap accordingly. */
@@ -87,9 +89,9 @@ export interface ContentCellBaseProps extends CellCommonProps {
   subtitle?: React.ReactNode;
   /** Title of content. Max 1 line, otherwise will truncate. */
   title?: React.ReactNode;
-}
+} & CellCommonProps;
 
-export interface ContentCellFallbackProps {
+export type ContentCellFallbackProps = {
   /** Display description shimmer. */
   description?: boolean;
   /** Display media shimmer with a shape according to type. */
@@ -100,9 +102,9 @@ export interface ContentCellFallbackProps {
   subtitle?: boolean;
   /** Display title shimmer. */
   title?: boolean;
-}
+};
 
-export interface ListCellBaseProps extends CellCommonProps, CellDetailProps {
+export type ListCellBaseProps = {
   /** Accessory to display at the end of the cell. */
   accessory?: CellAccessoryType;
   /** Interactive action, like a CTA or form element. Cannot be used alongside `onPress`. */
@@ -117,9 +119,10 @@ export interface ListCellBaseProps extends CellCommonProps, CellDetailProps {
   multiline?: boolean;
   /** Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate. */
   title?: React.ReactNode;
-}
+} & CellCommonProps &
+  CellDetailProps;
 
-export interface ListCellFallbackProps {
+export type ListCellFallbackProps = {
   /** Display description shimmer. */
   description?: boolean;
   /** Display detail shimmer. */
@@ -130,4 +133,4 @@ export interface ListCellFallbackProps {
   subdetail?: boolean;
   /** Display title shimmer. */
   title?: boolean;
-}
+};

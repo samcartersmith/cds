@@ -11,7 +11,7 @@ import { TextLabel2 } from '../typography/TextLabel2';
 import { Cell, CellSharedProps, truncateClassName, overflowClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
-export interface ContentCellProps extends ContentCellBaseProps, CellSharedProps {}
+export type ContentCellProps = ContentCellBaseProps & CellSharedProps;
 
 export const ContentCell = memo(function ContentCell({
   accessory,

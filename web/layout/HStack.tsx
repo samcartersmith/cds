@@ -5,9 +5,8 @@ import { join, StackBaseProps, ForwardedRef } from '@cbhq/cds-common';
 import { Box, BoxProps, BoxElement } from './Box';
 import { Spacer } from './Spacer';
 
-export interface HStackProps<As extends BoxElement>
-  extends Omit<BoxProps<As>, 'flexDirection'>,
-    StackBaseProps {}
+export type HStackProps<As extends BoxElement> = Omit<BoxProps<As>, 'flexDirection'> &
+  StackBaseProps;
 
 export const HStack = forwardRef(
   <As extends BoxElement = 'div'>(

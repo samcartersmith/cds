@@ -9,7 +9,7 @@ import { Icon } from '../icons/Icon';
 import { control, palette } from '../tokens';
 import { Control, ControlProps } from './Control';
 
-export interface CheckboxProps<T extends string> extends ControlBaseProps<T>, ControlProps {}
+export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps;
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   { children, ...props }: CheckboxProps<T>,

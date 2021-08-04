@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContentCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
 import { Box } from '@cbhq/cds-mobile/layout';
@@ -9,7 +10,7 @@ import ExamplesScreen from './internal/ExamplesScreen';
 const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = createStories(
   ContentCell,
   CellMedia,
-  Pictogram
+  Pictogram,
 );
 
 const ContentCellScreen = () => {

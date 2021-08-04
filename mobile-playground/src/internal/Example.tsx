@@ -1,15 +1,15 @@
-import { useMemo, Children } from 'react';
+import React, { useMemo, Children } from 'react';
 
 import { SpacingProps } from '@cbhq/cds-common';
 import { Box, Divider } from '@cbhq/cds-mobile/layout';
 import { TextTitle3 } from '@cbhq/cds-mobile/typography/TextTitle3';
 import { View, ViewStyle } from 'react-native';
 
-interface ExampleProps extends SpacingProps {
+type ExampleProps = {
   children: React.ReactNode;
   inline?: boolean;
   title?: string;
-}
+} & SpacingProps;
 
 const Example = ({ children, inline, title, ...props }: ExampleProps) => {
   const childStyles = useMemo(() => {
@@ -25,11 +25,12 @@ const Example = ({ children, inline, title, ...props }: ExampleProps) => {
   const content = (
     <>
       <Box spacing={2} spacingBottom={3} background {...props}>
-        {title && <TextTitle3>{title}</TextTitle3>}
+        {!!title && <TextTitle3>{title}</TextTitle3>}
 
         {typeof children === 'function'
           ? children()
           : Children.map(children, (item, index) => (
+              // eslint-disable-next-line react/no-array-index-key
               <View key={index} style={childStyles}>
                 {item}
               </View>

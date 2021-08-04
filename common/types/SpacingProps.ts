@@ -1,6 +1,6 @@
 import type { SpacingScale } from './SpacingScale';
 
-export interface OffsetProps {
+export type OffsetProps = {
   /** Apply negative outer spacing on all sides. */
   offset?: SpacingScale;
   /** Apply negative outer spacing on the bottom side. */
@@ -15,9 +15,9 @@ export interface OffsetProps {
   offsetTop?: SpacingScale;
   /** Apply negative outer spacing on the top and bottom sides. */
   offsetVertical?: SpacingScale;
-}
+};
 
-export interface SpacingProps {
+export type SpacingProps = {
   /** Apply inner spacing on all sides. */
   spacing?: SpacingScale;
   /** Apply inner spacing on the bottom side. */
@@ -32,4 +32,4 @@ export interface SpacingProps {
   spacingTop?: SpacingScale;
   /** Apply inner spacing on the top and bottom sides. */
   spacingVertical?: SpacingScale;
-}
+};

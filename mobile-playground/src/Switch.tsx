@@ -1,3 +1,6 @@
+/* eslint-disable react-native-a11y/has-accessibility-hint */
+
+import React from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Switch } from '@cbhq/cds-mobile/controls/Switch';
 

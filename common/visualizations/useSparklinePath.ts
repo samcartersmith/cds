@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useMemo } from 'react';
 
 import { extent } from 'd3-array';
@@ -26,8 +25,8 @@ export const useSparklinePath = ({ data, height, width }: UseSparklinePathParams
     return (
       line<number>()
         .curve(curveBasis)
-        .x((_, i) => xFunction(i)!)
-        .y((y) => yFunction(y)!)(downsampledData) ?? ''
+        .x((_, i) => xFunction(i))
+        .y((y) => yFunction(y))(downsampledData) ?? ''
     );
   }, [dataList, width, height]);
 };

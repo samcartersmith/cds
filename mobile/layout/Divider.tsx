@@ -8,7 +8,7 @@ import { StyleSheet, View } from 'react-native';
 import { usePalette } from '../hooks/usePalette';
 import { Box, BoxProps } from './Box';
 
-export interface DividerProps extends DividerBaseProps, BoxProps {}
+export type DividerProps = DividerBaseProps & BoxProps;
 
 export const Divider = ({
   color = 'line',

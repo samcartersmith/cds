@@ -10,9 +10,10 @@ import { getSourcePath } from './getSourcePath';
 
 const prettierConfig = argv.prettierConfig as string;
 
-export interface TemplateConfig<T extends unknown = unknown> {
+export type TemplateConfig<T = unknown> = {
   dest: string;
   data: T;
+  types?: Record<string, string>;
   config?: {
     commonJS?: boolean;
     disableAsConst?: boolean;
@@ -21,12 +22,12 @@ export interface TemplateConfig<T extends unknown = unknown> {
     sort?: boolean;
   };
   header?: string;
-}
+};
 
 export type TemplateMap = Record<string, TemplateConfig[]>;
-interface GenerateFromTemplateParams extends TemplateConfig {
+type GenerateFromTemplateParams = {
   template: string;
-}
+} & TemplateConfig;
 
 const getParser = (ext: string): prettier.BuiltInParserName => {
   switch (ext) {
@@ -58,19 +59,26 @@ const getFileDocString = (ext: string) => {
 export const generateFromTemplate = async ({
   template,
   data,
+  types = {},
   dest,
   config = {},
   header = '',
 }: GenerateFromTemplateParams) => {
   try {
     const templatePath = path.join(__dirname, '../templates', template);
-    const code = await ejs.renderFile(templatePath, { data, format: formatTemplateType, config });
+    const code = await ejs.renderFile(templatePath, {
+      data,
+      format: formatTemplateType,
+      config,
+      types,
+    });
     const outFile = await getSourcePath(dest);
     const dirForFile = path.dirname(outFile);
     const ext = path.extname(outFile);
 
     // If directory doesn't already exist, create it.
     fs.mkdirSync(dirForFile, { recursive: true });
+
     await writePrettyFile({
       prettierConfig,
       outFile,

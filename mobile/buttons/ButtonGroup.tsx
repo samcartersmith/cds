@@ -5,7 +5,7 @@ import { View, StyleSheet } from 'react-native';
 
 import { HStack, VStack } from '../layout';
 
-export interface ButtonGroupProps extends ButtonGroupBaseProps, SharedProps {}
+export type ButtonGroupProps = ButtonGroupBaseProps & SharedProps;
 
 export const ButtonGroup = memo(function ButtonGroup({
   accessibilityLabel,

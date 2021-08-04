@@ -25,6 +25,6 @@ export const buildTemplates = async (templates: TemplateMap) => {
 
     await Promise.all(templateInputs.map(generateFromTemplate));
   } catch (err) {
-    logError(err);
+    logError((err as Error).message);
   }
 };

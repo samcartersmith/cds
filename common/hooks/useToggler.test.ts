@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useToggler } from './useToggler';

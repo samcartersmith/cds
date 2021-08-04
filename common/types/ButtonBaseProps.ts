@@ -3,7 +3,7 @@ import { ElementChildren } from './React';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative' | 'foregroundMuted';
 
-export interface ButtonBaseProps {
+export type ButtonBaseProps = {
   /** Full length accessibility label when the child text is not descriptive enough. */
   accessibilityLabel?: string;
   /** Change to block and expand to 100% of parent width. */
@@ -29,9 +29,9 @@ export interface ButtonBaseProps {
    * @default primary
    */
   variant?: Exclude<ButtonVariant, 'foregroundMuted'>;
-}
+};
 
-export interface ButtonGroupBaseProps {
+export type ButtonGroupBaseProps = {
   /** Accessibility label describing the group of buttons. */
   accessibilityLabel: string;
   /** Expand buttons to fill available space within the group. */
@@ -40,4 +40,4 @@ export interface ButtonGroupBaseProps {
   children: ElementChildren<ButtonBaseProps>;
   /** Stack buttons vertically instead of horizontally. */
   vertical?: boolean;
-}
+};

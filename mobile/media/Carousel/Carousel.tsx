@@ -19,7 +19,7 @@ import { CarouselItem } from './CarouselItem';
 import type { CarouselLayoutMap, CarouselRef, CarouselOnReady, CarouselItemId } from './types';
 import { useDismissCarouselItem } from './useDismissCarouselItem';
 
-export interface CarouselProps extends Omit<ScrollViewProps, 'style'>, SharedProps {
+export type CarouselProps = {
   items: React.ReactElement[];
   /** Return value from useCarousel hook. Allows access to certain internal data/methods of Carousel. */
   carouselRef?: React.MutableRefObject<CarouselRef | undefined>;
@@ -27,7 +27,8 @@ export interface CarouselProps extends Omit<ScrollViewProps, 'style'>, SharedPro
   gap?: SpacingScale;
   /** Callback that fires when the Carousel is ready to be interacted with. */
   onReady?: CarouselOnReady;
-}
+} & Omit<ScrollViewProps, 'style'> &
+  SharedProps;
 
 export const Carousel = memo(
   forwardRef<ScrollView, CarouselProps>(

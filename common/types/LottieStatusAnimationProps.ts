@@ -8,25 +8,25 @@ export type LottieStatusAnimationType =
   | 'failure'
   | 'pending';
 
-interface BaseStatusAnimationProps {
+type BaseStatusAnimationProps = {
   status?: LottieStatusAnimationType;
   onFinish?: NoopFn;
-}
+};
 
-interface StatusAnimationWithWidth extends BaseStatusAnimationProps {
+type StatusAnimationWithWidth = {
   /**
    * We use aspect ratio to calculate the unset dimension based on the set dimension and a given aspect ratio.
    * Only width or height is allowed, but not both.
    */
   width: DimensionValue;
-}
+} & BaseStatusAnimationProps;
 
-interface StatusAnimationWithHeight extends BaseStatusAnimationProps {
+type StatusAnimationWithHeight = {
   /**
    * We use aspect ratio to calculate the unset dimension based on the set dimension and a given aspect ratio.
    * Only width or height is allowed, but not both.
    */
   height: DimensionValue;
-}
+} & BaseStatusAnimationProps;
 
 export type LottieStatusAnimationProps = StatusAnimationWithWidth | StatusAnimationWithHeight;

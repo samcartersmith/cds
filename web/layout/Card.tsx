@@ -7,7 +7,7 @@ import { usePinStyles } from '../hooks/usePinStyles';
 import { LinkableProps, Pressable } from '../system/Pressable';
 import { VStack } from './VStack';
 
-export interface CardProps extends CardBaseProps, LinkableProps {}
+export type CardProps = CardBaseProps & LinkableProps;
 
 export const Card: React.FC<CardProps> = memo(
   ({
@@ -24,7 +24,7 @@ export const Card: React.FC<CardProps> = memo(
     const height = props?.height ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
     const pinStyles = usePinStyles(pin);
-    const linkable = Boolean(onPress || to);
+    const linkable = Boolean(onPress ?? to);
 
     const content = (
       <VStack

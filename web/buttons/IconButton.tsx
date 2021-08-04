@@ -10,9 +10,11 @@ import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../styles/flex';
 import { Pressable, PressableProps } from '../system/Pressable';
 
-export interface IconButtonProps extends IconButtonBaseProps, PressableProps, SharedProps {
+export type IconButtonProps = {
   as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
-}
+} & IconButtonBaseProps &
+  PressableProps &
+  SharedProps;
 
 export const IconButton = forwardRef(
   (

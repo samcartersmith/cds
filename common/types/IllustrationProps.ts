@@ -6,7 +6,7 @@ import {
 } from './Illustration';
 import { SharedProps } from './SharedProps';
 
-export interface IllustrationBaseProps extends SharedProps {
+export type IllustrationBaseProps = {
   name:
     | IllustrationHeroSquareNames
     | IllustrationSpotRectangleNames
@@ -16,20 +16,20 @@ export interface IllustrationBaseProps extends SharedProps {
   width?: number;
   /** @internal Do not use! */
   height?: number;
-}
+} & SharedProps;
 
-export interface HeroSquareProps extends SharedProps {
+export type HeroSquareProps = {
   name: IllustrationHeroSquareNames;
-}
+} & SharedProps;
 
-export interface SpotSquareProps extends SharedProps {
+export type SpotSquareProps = {
   name: IllustrationSpotSquareNames;
-}
+} & SharedProps;
 
-export interface PictogramProps extends SharedProps {
+export type PictogramProps = {
   name: IllustrationPictogramNames;
-}
+} & SharedProps;
 
-export interface SpotRectangleProps extends SharedProps {
+export type SpotRectangleProps = {
   name: IllustrationSpotRectangleNames;
-}
+} & SharedProps;

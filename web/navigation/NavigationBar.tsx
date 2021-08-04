@@ -12,13 +12,13 @@ import { NavigationBarCtasProps } from './NavigationBarCtas';
 import { NavigationBarTitlesProps } from './NavigationBarTitles';
 import { showForMobile } from './navigationStyles';
 
-export interface NavigationBarProps {
+export type NavigationBarProps = {
   controls?: React.ReactElement<NavigationBarControlsProps>;
   titles?: React.ReactElement<NavigationBarTitlesProps>;
   ctas?: React.ReactElement<NavigationBarCtasProps>;
   actions?: React.ReactElement;
   animatedOpacity?: MotionValue;
-}
+};
 
 export const NavigationBar = memo(
   ({ controls, titles, ctas, actions, animatedOpacity }: NavigationBarProps) => {

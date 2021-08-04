@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import { Button } from '@cbhq/cds-mobile/buttons/Button';
 import { HeroSquare } from '@cbhq/cds-mobile/illustrations/HeroSquare';
 import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
@@ -7,7 +8,7 @@ import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { TextCaption } from '@cbhq/cds-mobile/typography/TextCaption';
 import { capitalize } from '@cbhq/cds-utils';
 import { StackScreenProps, createStackNavigator } from '@react-navigation/stack';
-import React, { useCallback } from 'react';
+
 import { View } from 'react-native';
 
 import {
@@ -25,17 +26,18 @@ import {
 import Example from './internal/Example';
 import ExampleScreen from './internal/ExamplesScreen';
 
-const variantToNames: {
-  [variant: string]: [
+const variantToNames: Record<
+  string,
+  [
     readonly string[],
     React.ComponentType<{
       name: IllustrationHeroSquareNames &
         IllustrationPictogramNames &
         IllustrationSpotRectangleNames &
         IllustrationSpotSquareNames;
-    }>
-  ];
-} = {
+    }>,
+  ]
+> = {
   HeroSquare: [heroSquareNames, HeroSquare],
   SpotRectangle: [spotRectangleNames, SpotRectangle],
   Pictogram: [pictogramNames, Pictogram],
@@ -45,8 +47,7 @@ const variantToNames: {
 // eslint-disable-next-line @typescript-eslint/ban-types
 const NavScreen = function NavScreen({ navigation }: StackScreenProps<{}>) {
   const ScreenBtn = function ScreenBtn({ variant }: { variant: string }) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const navigateOnPress = useCallback(() => navigation.navigate(variant as any), [variant]);
+    const navigateOnPress = useCallback(() => navigation.navigate({ key: variant }), [variant]);
 
     return (
       <Box spacing={2}>
@@ -57,7 +58,7 @@ const NavScreen = function NavScreen({ navigation }: StackScreenProps<{}>) {
 
   return (
     <View>
-      {Object.keys(variantToNames).map(variant => {
+      {Object.keys(variantToNames).map((variant) => {
         return <ScreenBtn key={`${variant}Component`} variant={variant} />;
       })}
     </View>
@@ -70,7 +71,7 @@ const IllustrationList = function IllustrationList({ variant }: { variant: strin
   return (
     <ExampleScreen>
       <Example title={capitalize(variant)}>
-        {names.map(name => (
+        {names.map((name) => (
           <Box key={`${name}_${variant}`}>
             <TextCaption>{name}</TextCaption>
             <IllustrationComponent name={name as never} />

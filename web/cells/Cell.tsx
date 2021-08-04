@@ -31,12 +31,12 @@ export const overflowClassName = css`
   white-space: normal;
 `;
 
-export interface CellSharedProps extends LinkableProps {
+export type CellSharedProps = {
   /** The type of outer wrapping element. */
   as?: 'div' | 'li';
-}
+} & LinkableProps;
 
-export interface CellProps extends CellBaseProps, CellSharedProps {}
+export type CellProps = CellBaseProps & CellSharedProps;
 
 export const Cell = memo(function Cell({
   accessory,
@@ -59,7 +59,7 @@ export const Cell = memo(function Cell({
   ...props
 }: CellProps) {
   const offsetClassName = useOffsetStyles({ offsetHorizontal: 2 });
-  const linkable = Boolean(onPress || to);
+  const linkable = Boolean(onPress ?? to);
 
   let content = (
     <HStack

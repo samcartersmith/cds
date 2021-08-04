@@ -170,7 +170,7 @@ export default function convertToNewSpacingProps(
   fileInfo: FileInfo,
   api: API,
   options: Options,
-): string | null | undefined | void {
+): string | null | undefined {
   const mod = new Codemod(fileInfo, api);
 
   // Find component names for the defined import path
@@ -299,7 +299,7 @@ export default function convertToNewSpacingProps(
           `Invalid spacing prop value type "${error.message}" found in "${fileInfo.path}".`,
         );
 
-        if (error.message.includes('Cannot read property')) {
+        if ((error as Error).message.includes('Cannot read property')) {
           console.log(error);
         }
       }

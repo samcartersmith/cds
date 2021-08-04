@@ -4,11 +4,7 @@ import { NavigationIconName, IconSize, NavigationIconInternalName } from '@cbhq/
 
 import { IconBase, IconBaseMobileProps } from './IconBase';
 
-interface NavigationIconProps
-  extends Omit<
-    IconBaseMobileProps,
-    'name' | 'size' | 'bordered' | 'dangerouslySetColor' | 'color' | 'dangerouslySetStyle'
-  > {
+type NavigationIconProps = {
   /** Navigation icon names */
   name: NavigationIconName;
   /**
@@ -21,7 +17,10 @@ interface NavigationIconProps
    * @default false
    */
   active?: boolean;
-}
+} & Omit<
+  IconBaseMobileProps,
+  'name' | 'size' | 'bordered' | 'dangerouslySetColor' | 'color' | 'dangerouslySetStyle'
+>;
 
 export const NavigationIcon: FunctionComponent<NavigationIconProps> = memo(function NavigationIcon({
   name,
@@ -29,9 +28,10 @@ export const NavigationIcon: FunctionComponent<NavigationIconProps> = memo(funct
   active = false,
   ...props
 }: NavigationIconProps) {
-  const navigationIconName = (
-    active ? `${name}Active` : `${name}Inactive`
-  ) as NavigationIconInternalName;
+  const navigationIconName: NavigationIconInternalName = active
+    ? `${name}Active`
+    : `${name}Inactive`;
+
   return (
     <IconBase
       color={active ? 'primary' : 'foreground'}

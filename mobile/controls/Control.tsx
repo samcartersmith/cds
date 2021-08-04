@@ -22,27 +22,26 @@ import { TextBody } from '../typography/TextBody';
 import { useLineHeight } from '../typography/useLineHeight';
 import { Haptics } from '../utils/haptics';
 
-export interface ControlIconProps extends SharedProps {
+export type ControlIconProps = {
   pressed: boolean;
   checked?: boolean;
   disabled?: boolean;
   backgroundColor: PaletteBackground;
   animatedScaleValue: Animated.Value;
-}
+} & SharedProps;
 
-export interface ControlProps<T extends string>
-  extends Omit<PressableProps, 'disabled' | 'children' | 'style'>,
-    ControlBaseProps<T> {
+export type ControlProps<T extends string> = {
   /** Toggle control selected state. */
   onChange?: (value?: T) => void;
-}
+} & Omit<PressableProps, 'disabled' | 'children' | 'style'> &
+  ControlBaseProps<T>;
 
-interface ControlInternalProps<T extends string> extends ControlProps<T> {
+type ControlInternalProps<T extends string> = {
   /** Control icon to show. */
   children: React.ComponentType<ControlIconProps>;
   /** Label associated with the multiple choice option control. */
   label?: TextProps['children'];
-}
+} & ControlProps<T>;
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {
@@ -93,7 +92,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   }, [checked, animatedBoxValue, animatedScaleValue]);
 
   const handlePress = useCallback(() => {
-    Haptics.lightImpact();
+    void Haptics.lightImpact();
     onChange?.(value);
     Keyboard.dismiss();
   }, [onChange, value]);

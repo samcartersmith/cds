@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-raw-text */
 /* eslint-disable jsx-a11y/anchor-is-valid  */
+
 import React, { useCallback } from 'react';
-import { LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 import { Link } from '@cbhq/cds-mobile/typography/Link';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
@@ -23,10 +24,10 @@ const typographies = [
   'legal',
 ] as const;
 
-const links = typographies.map(typography => (
+const links = typographies.map((typography) => (
   <Example inline key={typography}>
     <TextHeadline>Link with Text style {typography}</TextHeadline>
-    <Link variant={typography as LinkTypography} to="https://www.coinbase.com/">
+    <Link variant={typography} to="https://www.coinbase.com/">
       {capitalize(typography)}
     </Link>
   </Example>
@@ -69,8 +70,8 @@ const OPEN_WEB_BROWSER_OPTIONS = {
 const LinkScreen = function LinkScreen() {
   const openURL = useWebBrowserOpener();
   const openURLOnPress = useCallback(
-    () => openURL('https://www.coinbase.com/', OPEN_WEB_BROWSER_OPTIONS),
-    [openURL]
+    async () => openURL('https://www.coinbase.com/', OPEN_WEB_BROWSER_OPTIONS),
+    [openURL],
   );
 
   return (

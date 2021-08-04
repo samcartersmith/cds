@@ -38,7 +38,7 @@ export default function migrateToDeepImports(
   fileInfo: FileInfo,
   api: API,
   options: Options,
-): string | null | undefined | void {
+): string | null | undefined {
   const mod = new Codemod(fileInfo, api);
 
   // Buckets

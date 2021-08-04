@@ -80,7 +80,7 @@ export default function halveSpacingProps(
   fileInfo: FileInfo,
   api: API,
   options: Options,
-): string | null | undefined | void {
+): string | null | undefined {
   const mod = new Codemod(fileInfo, api);
 
   mod.source.find(mod.cs.JSXAttribute).forEach(({ node, parentPath }) => {
@@ -103,10 +103,10 @@ export default function halveSpacingProps(
 
     // Halve all the values
     try {
-      convertNumericValue(node.value as any);
+      convertNumericValue(node.value as unknown as Identifier);
     } catch (error) {
       console.error(
-        `Failed to convert prop "${(node.name as JSXIdentifier).name}" for component "${
+        `Failed to convert prop "${node.name.name}" for component "${
           (parentNode.name as JSXIdentifier).name
         }" in "${mod.fileInfo.path}". ${error.message}`,
       );

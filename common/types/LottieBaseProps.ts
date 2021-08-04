@@ -3,8 +3,7 @@ import { LottieSource } from './LottieSource';
 
 type OmittedBoxProps = 'alignContent' | 'justifyContent' | 'flexWrap' | 'flexDirection';
 
-export interface LottieBaseProps<T extends LottieSource = LottieSource>
-  extends Omit<BoxBaseProps, OmittedBoxProps> {
+export type LottieBaseProps<T extends LottieSource = LottieSource> = {
   /**
    * A boolean flag indicating whether or not the animation should start automatically when
    * mounted. This only affects the imperative API.
@@ -34,4 +33,4 @@ export interface LottieBaseProps<T extends LottieSource = LottieSource>
    * For web, you can import the animation from index since this webpack can handle treeshaking, `import { tradeStatus } from @cbhq/cds-lottie-files`
    */
   source: T;
-}
+} & Omit<BoxBaseProps, OmittedBoxProps>;

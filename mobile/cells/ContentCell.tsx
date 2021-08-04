@@ -7,7 +7,7 @@ import { TextHeadline, TextBody, TextLabel2 } from '../typography';
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
-export interface ContentCellProps extends ContentCellBaseProps, CellSharedProps {}
+export type ContentCellProps = ContentCellBaseProps & CellSharedProps;
 
 export const ContentCell = memo(function ContentCell({
   accessory,
@@ -27,6 +27,8 @@ export const ContentCell = memo(function ContentCell({
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  const hasTitles = Boolean(title || subtitle);
   const accessoryType = selected ? 'selected' : accessory;
 
   return (
@@ -41,7 +43,7 @@ export const ContentCell = memo(function ContentCell({
       selected={selected}
     >
       <VStack>
-        {Boolean(title || subtitle) && (
+        {hasTitles && (
           <HStack alignItems="flex-start" justifyContent="space-between">
             <Box flexShrink={1}>
               {!!title && <TextHeadline>{title}</TextHeadline>}

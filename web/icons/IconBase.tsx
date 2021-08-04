@@ -10,7 +10,7 @@ import { BadgeProps } from './Badge';
 import { iconGlyphMap } from './iconGlyphMap';
 import { iconStyles } from './iconStyles';
 
-export interface IconBaseWebProps {
+export type IconBaseWebProps = {
   /** Color of the icon when used as a foreground. */
   color?: PaletteForeground | 'currentColor';
   /**
@@ -30,7 +30,7 @@ export interface IconBaseWebProps {
   badge?: React.ReactElement<BadgeProps>;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetColor?: string;
-}
+};
 
 export const IconBase = memo(
   forwardRef<HTMLDivElement, IconBaseWebProps & IconBaseProps>(
