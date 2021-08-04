@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.12 (8/4/2021, 12:37 PM PST)
+
+#### 🚀 Updates
+
+- Enable TypeScript ESLint rules. [#27666](https://github.cbhq.net/mono/repo/pull/27666)
+
+#### 📘 Misc
+
+- Add CHANGELOG for packages to CDS website. [#27210](https://github.cbhq.net/mono/repo/pull/27210), [CDS-765](https://jira.coinbase-corp.com/browse/CDS-765)
+
 ## 0.2.11 (7/20/2021, 12:24 PM PST)
 
 #### 🐞 Fixes

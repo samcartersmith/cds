@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.23.1 (8/4/2021, 12:37 PM PST)
+
+#### 🚀 Updates
+
+- Enable TypeScript ESLint rules. [#27666](https://github.cbhq.net/mono/repo/pull/27666)
+
 ## 0.23.0 (8/2/2021, 09:34 AM PST)
 
 #### 💥 Breaking
