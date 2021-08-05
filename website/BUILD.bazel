@@ -47,6 +47,7 @@ DATA = append_cds_web_deps([
     "@npm//url-loader",
     "@npm//@babel/preset-typescript",
     "@npm//babel-plugin-module-resolver",
+    "@npm//babel-plugin-relay",
     "@npm//@docusaurus/module-type-aliases",
     # types
     "@npm//@types/react-helmet",
