@@ -3,10 +3,9 @@ load("//tools/js:ts_package.bzl", "ts_package")
 load(":config.bzl", "uniq")
 
 BABEL_SRCS = [
-    "//eng/shared/design-system/codegen:babel-plugins/linariaCssExtractPlugin.js",
-    "//eng/shared/design-system/codegen:babel-plugins/linariaPreset.js",
     "//eng/shared/design-system:.babelrc.js",
     "//eng/shared/design-system:linaria.config.js",
+    "//eng/shared/utils:babel_source",
     "@npm//chalk",
     "@npm//source-map",
     "@npm//yargs",
