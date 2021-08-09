@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  stories: [path.resolve(__dirname, '../../**/*.stories.@(tsx|mdx)')],
+  core: {
+    builder: 'webpack5',
+  },
+  stories: [path.resolve(__dirname, '../../web/**/*.stories.@(tsx|mdx)')],
   addons: [
     '@storybook/addon-backgrounds',
     {

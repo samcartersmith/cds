@@ -1,7 +1,7 @@
+load("@bazel_skylib//lib:collections.bzl", "collections")
 load("@npm//ts-node:index.bzl", "ts_node")
 load("//tools:def.bzl", "jest_test", "release_packages", "stylelint_test")
-load("@npm//serve:index.bzl", "serve")
-load("@npm//@storybook/react:index.bzl", "build_storybook")
+load("@npm//@storybook/react:index.bzl", "build_storybook", "start_storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
 
@@ -279,11 +279,14 @@ release_packages(
 # *** storybook ***
 # *****************
 
-STORYBOOK_DEPS = append_cds_web_deps([
+STORYBOOK_DEPS = collections.uniq(append_cds_web_deps([
+    ":web_source",
     "//:babel.config.js",
     "//:package.json",
     "//:tsconfig.json",
-    "//eng/shared/utils:webpack/addRootModeUpwardToBabelLoaders.js",
+    "//eng/shared/design-system/fonts:runtime_source",
+    "//eng/shared/design-system/web:story_source",
+    "//eng/shared/utils:webpack_source",
     "@npm//@babel/core",
     "@npm//@babel/parser",
     "@npm//@babel/preset-env",
@@ -298,11 +301,12 @@ STORYBOOK_DEPS = append_cds_web_deps([
     "@npm//@storybook/addon-toolbars",
     "@npm//@storybook/addon-viewport",
     "@npm//@storybook/addons",
-    "@npm//@storybook/react",
+    "@npm//@storybook/builder-webpack5",
+    "@npm//@storybook/manager-webpack5",
     "@npm//@storybook/theming",
     "@npm//@types/babel__template",
-    "@npm//@types/react",
     "@npm//@types/react-dom",
+    "@npm//@types/react",
     "@npm//@types/webpack-env",
     "@npm//babel-loader",
     "@npm//babel-plugin-module-resolver",
@@ -310,12 +314,15 @@ STORYBOOK_DEPS = append_cds_web_deps([
     "@npm//dotenv-webpack",
     "@npm//html-webpack-plugin",
     "@npm//linaria",
-    "@npm//react",
+    "@npm//node-polyfill-webpack-plugin",
+    "@npm//react-docgen-typescript",
     "@npm//react-dom",
     "@npm//react-router-dom",
+    "@npm//react",
     "@npm//storybook-addon-designs",
+    "@npm//storybook-addon-performance",
     "@npm//typescript",
-])
+]))
 
 build_storybook(
     name = "storybook",
@@ -326,21 +333,19 @@ build_storybook(
         "--quiet",
         "--no-dll",
     ],
-    data = [
-        ":web_source",
-        "//eng/shared/design-system/web:story_source",
-    ] + STORYBOOK_DEPS,
+    data = STORYBOOK_DEPS,
     output_dir = True,
     visibility = ["//visibility:public"],
 )
 
-serve(
+start_storybook(
     name = "storybook_server",
     args = [
-        "eng/shared/design-system/storybook",
-        "-l 9000",
+        "-c eng/shared/design-system/storybook/.storybook",
+        "-s eng/shared/design-system/fonts",
+        "-p 9009",
     ],
-    data = [":storybook"],
+    data = STORYBOOK_DEPS,
 )
 
 # *************************
@@ -357,11 +362,7 @@ build_storybook(
         "--quiet",
         "--no-dll",
     ],
-    data = [
-        ":web_source",
-        "//eng/shared/design-system/web:story_source",
-        "//eng/shared/design-system/storybook:source",
-    ] + STORYBOOK_DEPS,
+    data = STORYBOOK_DEPS,
     output_dir = True,
     visibility = ["//visibility:public"],
 )

@@ -50,14 +50,7 @@ export const CircularProgress = memo(
       return undefined;
     }, [indeterminate, internalProgress, direction]);
     return (
-      <svg
-        height={radius * 2}
-        width={radius * 2}
-        role="status"
-        aria-busy
-        aria-live="polite"
-        data-testid={testID}
-      >
+      <svg height={radius * 2} width={radius * 2} data-testid={testID}>
         <circle
           stroke="blue"
           strokeDasharray={`${circumference} ${circumference}`}

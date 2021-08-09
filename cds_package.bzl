@@ -1,6 +1,6 @@
+load("@bazel_skylib//lib:collections.bzl", "collections")
 load("//tools:def.bzl", "node_package_gen")
 load("//tools/js:ts_package.bzl", "ts_package")
-load(":config.bzl", "uniq")
 
 BABEL_SRCS = [
     "//eng/shared/design-system:.babelrc.js",
@@ -66,7 +66,7 @@ def cds_package(name, srcs, dependencies, peer_dependencies, type_dependencies =
         data = srcs + BABEL_SRCS,
 
         # External project types and NPM types that must exist for typechecking
-        deps = uniq(
+        deps = collections.uniq(
             cds_external_types_labels +
             dependencies +
             peer_dependencies +

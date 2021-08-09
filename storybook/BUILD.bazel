@@ -1,7 +1,7 @@
 filegroup(
     name = "source",
     srcs = [
-        ".storybook/.env",
+        ".storybook/.env.prod",
         ".storybook/.env.local",
         ".storybook/figma_oauth.html",
     ] + glob(

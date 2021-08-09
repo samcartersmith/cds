@@ -26,9 +26,6 @@ export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerPro
     <svg
       className={styles.materialSpinner.spinner}
       style={svgContainerStyle}
-      role="status"
-      aria-busy
-      aria-live="polite"
       xmlns="http://www.w3.org/2000/svg"
       data-testid={testID}
       viewBox="0 0 66 66"

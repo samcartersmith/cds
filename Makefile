@@ -129,7 +129,7 @@ prepare.adoption:
 
 .PHONY: start.story
 start.story:
-	cd ../../../; npx start-storybook -p 9009 -c eng/shared/design-system/storybook/.storybook -s eng/shared/design-system/fonts
+	bazel run :storybook_server
 
 .PHONY: start.website
 start.website:
