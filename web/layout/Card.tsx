@@ -18,10 +18,12 @@ export const Card: React.FC<CardProps> = memo(
     onPress,
     to,
     pin,
+    width: widthProps,
+    height: heightProps,
     ...props
   }) => {
-    const width = props?.width ?? cardSizes[size].width;
-    const height = props?.height ?? cardSizes[size].height;
+    const width = widthProps ?? cardSizes[size].width;
+    const height = heightProps ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
     const pinStyles = usePinStyles(pin);
     const linkable = Boolean(onPress ?? to);
@@ -32,8 +34,8 @@ export const Card: React.FC<CardProps> = memo(
         background={linkable ? undefined : bg}
         pin={linkable ? undefined : pin}
         elevation={linkable ? undefined : elevation}
-        width={width}
-        height={height}
+        width={linkable ? undefined : width}
+        height={linkable ? undefined : height}
         {...props}
       >
         <VStack overflow="hidden">{children}</VStack>
@@ -50,6 +52,8 @@ export const Card: React.FC<CardProps> = memo(
         onPress={onPress}
         className={pinStyles}
         to={to}
+        width={width}
+        height={height}
       >
         {content}
       </Pressable>

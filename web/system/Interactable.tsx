@@ -71,6 +71,8 @@ export const InteractableContent = forwardRef(function InteractableContent(
     testID,
     transparentWhileInactive,
     wrapWithLayeredElements,
+    width,
+    height,
     ...props
   }: InteractableProps,
   ref: React.Ref<Element>,
@@ -112,9 +114,20 @@ export const InteractableContent = forwardRef(function InteractableContent(
         '--interactable-opacity-pressed': pressedOpacity,
         '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : undefined,
         '--interactable-underlay': palette[underlayColor],
+        width,
+        height,
         ...elevationStyles,
       } as React.CSSProperties),
-    [hoverOpacity, pressedOpacity, spectrumAlias, underlayColor, customStyle, elevationStyles],
+    [
+      hoverOpacity,
+      pressedOpacity,
+      spectrumAlias,
+      underlayColor,
+      customStyle,
+      elevationStyles,
+      width,
+      height,
+    ],
   );
 
   const content =

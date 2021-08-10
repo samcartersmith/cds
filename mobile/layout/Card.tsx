@@ -25,10 +25,12 @@ export const Card: React.FC<CardProps> = memo(
     onPress,
     pin,
     dangerouslySetStyle,
+    width: widthProps,
+    height: heightProps,
     ...props
   }) => {
-    const width = props?.width ?? cardSizes[size].width;
-    const height = props?.height ?? cardSizes[size].height;
+    const width = widthProps ?? cardSizes[size].width;
+    const height = heightProps ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
     const elevationBorderWidth = useElevationBorderWidth();
     const pinStyles = usePinStyles(pin);
@@ -44,8 +46,8 @@ export const Card: React.FC<CardProps> = memo(
         background={onPress ? undefined : bg}
         pin={onPress ? undefined : pin}
         elevation={onPress ? undefined : elevation}
-        width={width}
-        height={height}
+        width={onPress ? undefined : width}
+        height={onPress ? undefined : height}
         dangerouslySetStyle={contentStyles}
         {...props}
       >
@@ -60,7 +62,7 @@ export const Card: React.FC<CardProps> = memo(
         borderWidth={elevation ? elevationBorderWidth : 'card'}
         elevation={elevation}
         onPress={onPress}
-        style={pinStyles}
+        style={{ ...pinStyles, width, height }}
       >
         {content}
       </Pressable>

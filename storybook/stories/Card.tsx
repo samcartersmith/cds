@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   BoxBaseProps,
   ButtonBaseProps,
@@ -86,6 +87,14 @@ export function createStories({
 
         <Card {...sharedPressProps} elevation={2}>
           <LoremIpsum title="Elevation 2" />
+        </Card>
+
+        <Card {...sharedPressProps} elevation={2} width="50%">
+          <LoremIpsum title="Half width" />
+        </Card>
+
+        <Card {...sharedPressProps} elevation={2} size="medium">
+          <LoremIpsum title="Medium size" />
         </Card>
       </VStack>
     </ThemeProvider>
