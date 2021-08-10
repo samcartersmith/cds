@@ -1,30 +1,13 @@
 import React, { memo } from 'react';
 
-import {
-  NavigationIconInternalName,
-  NavigationIconName,
-  IconSize,
-  SharedProps,
-  SpacingProps,
-} from '@cbhq/cds-common';
+import { NavigationIconInternalName, SharedProps, SpacingProps } from '@cbhq/cds-common';
+import { NavigationBaseIconProps } from '@cbhq/cds-common/types/NavigationBaseIconProps';
 
 import type { IconBaseWebProps } from './IconBase';
 import { IconBase } from './IconBase';
 
-export type NavigationIconProps = {
-  /** Name of navigation icon, as defined by Figma */
-  name: NavigationIconName;
-  /**
-   * Size of navigation Icon
-   * @default m
-   */
-  size?: Exclude<IconSize, 'xs'>;
-  /**
-   * Toggles the active and inactive state of the navigation icon
-   * @default false
-   */
-  active?: boolean;
-} & Omit<IconBaseWebProps, 'color'> &
+export type NavigationIconProps = NavigationBaseIconProps &
+  Omit<IconBaseWebProps, 'color'> &
   SpacingProps &
   SharedProps;
 

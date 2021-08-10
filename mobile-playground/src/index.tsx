@@ -48,7 +48,7 @@ const components = [
 ];
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const Index = ({ navigation }: StackScreenProps<{}>) => {
+const Index = ({ navigation }: StackScreenProps<Record<string, {}>>) => {
   const palette = usePalette();
   const styles = useMemo(
     () => ({
@@ -67,7 +67,7 @@ const Index = ({ navigation }: StackScreenProps<{}>) => {
           <TouchableHighlight
             activeOpacity={1}
             underlayColor={palette.backgroundAlternate}
-            onPress={() => navigation.navigate({ key: item.key })}
+            onPress={() => navigation.navigate({ name: item.key, params: {} })}
           >
             <View style={styles}>
               <TextHeadline>{item.label ?? item.key}</TextHeadline>
