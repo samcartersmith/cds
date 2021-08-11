@@ -40,8 +40,8 @@ Continuous deploy is turned on for CDS package publishing. If you need to trigge
 1. Run
 
 ```bash
-ash_login (for dev)
-assume-role development eng-ops  (for production)
+assume-role development eng-ops (for development)
+ash_login (for production)
 ash deploy -p eng/shared/design-system/cloud
 ```
 
