@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.18.3 (8/10/2021, 11:59 AM PST)
+
+#### 🐞 Fixes
+
+- Card width when pressable. [#28920](https://github.cbhq.net/mono/repo/pull/28920), [CDS-813](https://jira.coinbase-corp.com/browse/CDS-813)
+- Move NavigationIconProp to common, and export it. [#28868](https://github.cbhq.net/mono/repo/pull/28868)
+- Upgrade to Webpack 5. [#28448](https://github.cbhq.net/mono/repo/pull/28448)
+
 ## 0.18.2 (8/4/2021, 12:37 PM PST)
 
 #### 🚀 Updates

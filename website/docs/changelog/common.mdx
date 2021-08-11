@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.19.3 (8/10/2021, 11:59 AM PST)
+
+#### 🐞 Fixes
+
+- Move NavigationIconProp to common, and export it. [#28868](https://github.cbhq.net/mono/repo/pull/28868)
+
 ## 0.19.2 (8/4/2021, 12:37 PM PST)
 
 #### 🚀 Updates
