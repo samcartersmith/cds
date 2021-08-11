@@ -1,7 +1,6 @@
-load("@bazel_skylib//lib:collections.bzl", "collections")
 load("@npm//ts-node:index.bzl", "ts_node")
 load("//tools:def.bzl", "jest_test", "release_packages", "stylelint_test")
-load("@npm//@storybook/react:index.bzl", "build_storybook", "start_storybook")
+load("//tools/js:storybook.bzl", "storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
 
@@ -276,76 +275,23 @@ release_packages(
 )
 
 # *****************
-# *** storybook ***
+# *** Storybook ***
 # *****************
 
-STORYBOOK_DEPS = collections.uniq(append_cds_web_deps([
-    ":web_source",
-    "//:babel.config.js",
-    "//:package.json",
-    "//:tsconfig.json",
-    "//eng/shared/design-system/fonts:runtime_source",
-    "//eng/shared/design-system/web:story_source",
-    "//eng/shared/utils:webpack_source",
-    "@npm//@babel/core",
-    "@npm//@babel/parser",
-    "@npm//@babel/preset-env",
-    "@npm//@babel/preset-react",
-    "@npm//@babel/preset-typescript",
-    "@npm//@storybook/addon-a11y",
-    "@npm//@storybook/addon-actions",
-    "@npm//@storybook/addon-backgrounds",
-    "@npm//@storybook/addon-controls",
-    "@npm//@storybook/addon-docs",
-    "@npm//@storybook/addon-links",
-    "@npm//@storybook/addon-toolbars",
-    "@npm//@storybook/addon-viewport",
-    "@npm//@storybook/addons",
-    "@npm//@storybook/builder-webpack5",
-    "@npm//@storybook/manager-webpack5",
-    "@npm//@storybook/theming",
-    "@npm//@types/babel__template",
-    "@npm//@types/react-dom",
-    "@npm//@types/react",
-    "@npm//@types/webpack-env",
-    "@npm//babel-loader",
-    "@npm//babel-plugin-module-resolver",
-    "@npm//babel-plugin-relay",
-    "@npm//dotenv-webpack",
-    "@npm//html-webpack-plugin",
-    "@npm//linaria",
-    "@npm//node-polyfill-webpack-plugin",
-    "@npm//react-docgen-typescript",
-    "@npm//react-dom",
-    "@npm//react-router-dom",
-    "@npm//react",
-    "@npm//storybook-addon-designs",
-    "@npm//storybook-addon-performance",
-    "@npm//typescript",
-]))
-
-build_storybook(
+storybook(
     name = "storybook",
-    args = [
-        "-c eng/shared/design-system/storybook/.storybook",
-        "-s eng/shared/design-system/fonts",
-        "-o $(@D)",
-        "--quiet",
-        "--no-dll",
+    srcs = [
+        ":web_source",
+        "//eng/shared/design-system/web:story_source",
     ],
-    data = STORYBOOK_DEPS,
-    output_dir = True,
-    visibility = ["//visibility:public"],
-)
-
-start_storybook(
-    name = "storybook_server",
-    args = [
-        "-c eng/shared/design-system/storybook/.storybook",
-        "-s eng/shared/design-system/fonts",
-        "-p 9009",
-    ],
-    data = STORYBOOK_DEPS,
+    static_files = ["eng/shared/design-system/fonts"],
+    storybook_config = "//eng/shared/design-system/storybook:.storybook",
+    deps = append_cds_web_deps([
+        "@npm//react-dom",
+        "@npm//react-router-dom",
+        "@npm//react",
+        "@npm//typescript",
+    ]),
 )
 
 # *************************
@@ -353,25 +299,11 @@ start_storybook(
 # *** visual diff tests ***
 # *************************
 
-build_storybook(
-    name = "storybook_build_for_percy",
-    args = [
-        "-c eng/shared/design-system/storybook/.storybook",
-        "-s eng/shared/design-system/fonts",
-        "-o $(@D)",
-        "--quiet",
-        "--no-dll",
-    ],
-    data = STORYBOOK_DEPS,
-    output_dir = True,
-    visibility = ["//visibility:public"],
-)
-
 percy_storybook(
     name = "storybook_percy",
     args = [
-        "-b eng/shared/design-system/storybook_build_for_percy",
+        "-b eng/shared/design-system/storybook_build",
         "--widths=320,768,1170",
     ],
-    data = ["//eng/shared/design-system:storybook_build_for_percy"],
+    data = ["//eng/shared/design-system:storybook_build"],
 )

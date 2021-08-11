@@ -20,7 +20,6 @@ Help:
   $$ make start.website             -- Start docusaurus website.
   $$ make build.story               -- Build storybook.
   $$ make build.website             -- Build docusaurus website.
-  $$ make serve.story               -- Serve storybook build locally.
   $$ make serve.website             -- Serve docusaurus website build locally.
   $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
   $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
@@ -129,7 +128,7 @@ prepare.adoption:
 
 .PHONY: start.story
 start.story:
-	bazel run :storybook_server
+	bazel run :storybook_serve
 
 .PHONY: start.website
 start.website:
@@ -137,15 +136,11 @@ start.website:
 
 .PHONY: build.story
 build.story:
-	bazel build :storybook
+	bazel build :storybook_build
 
 .PHONY: build.website
 build.website:
 	bazel build website:build
-
-.PHONY: serve.story
-serve.story:
-	bazel run :storybook_server
 
 .PHONY: serve.website
 serve.website:

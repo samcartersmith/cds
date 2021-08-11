@@ -1,14 +1,27 @@
+exports_files([
+    ".storybook",
+])
+
+filegroup(
+    name = "config_source",
+    srcs = glob(
+        [
+            ".storybook/*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
 filegroup(
     name = "source",
-    srcs = [
-        ".storybook/.env.prod",
-        ".storybook/.env.local",
-        ".storybook/figma_oauth.html",
-    ] + glob(
+    srcs = glob(
         [
             "**/*.js",
             "**/*.ts",
             "**/*.tsx",
+        ],
+        exclude = [
+            ".storybook/**/*",
         ],
     ),
     visibility = ["//visibility:public"],
