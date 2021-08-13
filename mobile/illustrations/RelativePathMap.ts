@@ -3,7 +3,10 @@
  * Generated from scripts/codegen/main.ts
  */
 /* eslint-disable */
-export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unknown, fileFormat: 'svg' | 'png' }> = {
+export const IllustrationFilePathMap: Record<
+  string,
+  { light: unknown; dark: unknown; fileFormat: 'svg' | 'png' }
+> = {
   accessToAdvancedCharts: {
     light: require('./images/light/accessToAdvancedCharts-0.svg'),
     dark: null,
@@ -21,7 +24,7 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   addCreditCard: {
     light: require('./images/light/addCreditCard-0.svg'),
-    dark: require('./images/dark/addCreditCard-0.svg'),
+    dark: require('./images/dark/addCreditCard-1.svg'),
     fileFormat: 'svg',
   },
   addPhoneNumber: {
@@ -40,7 +43,7 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   appTrackingTransparency: {
-    light: require('./images/light/appTrackingTransparency-0.svg'),
+    light: require('./images/light/appTrackingTransparency-1.svg'),
     dark: null,
     fileFormat: 'svg',
   },
@@ -50,8 +53,8 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   bigBtc: {
-    light: require('./images/light/bigBtc-0.svg'),
-    dark: require('./images/dark/bigBtc-0.svg'),
+    light: require('./images/light/bigBtc-1.svg'),
+    dark: require('./images/dark/bigBtc-1.svg'),
     fileFormat: 'svg',
   },
   bigWarning: {
@@ -61,12 +64,17 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   buyFirstCrypto: {
     light: require('./images/light/buyFirstCrypto-0.svg'),
-    dark: require('./images/dark/buyFirstCrypto-0.svg'),
+    dark: require('./images/dark/buyFirstCrypto-1.svg'),
     fileFormat: 'svg',
   },
   cardAndPhone: {
     light: require('./images/light/cardAndPhone-0.svg'),
     dark: require('./images/dark/cardAndPhone-0.svg'),
+    fileFormat: 'svg',
+  },
+  cashExcitement: {
+    light: require('./images/light/cashExcitement-0.svg'),
+    dark: require('./images/dark/cashExcitement-0.svg'),
     fileFormat: 'svg',
   },
   coinbaseCard: {
@@ -99,13 +107,18 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: require('./images/dark/coinbaseIsDownMobile-0.svg'),
     fileFormat: 'svg',
   },
+  coinbaseRedesigned: {
+    light: require('./images/light/coinbaseRedesigned-0.svg'),
+    dark: require('./images/dark/coinbaseRedesigned-0.svg'),
+    fileFormat: 'svg',
+  },
   coinbaseWalletToTrade: {
     light: require('./images/light/coinbaseWalletToTrade-0.svg'),
     dark: require('./images/dark/coinbaseWalletToTrade-0.svg'),
     fileFormat: 'svg',
   },
   coinsInWallet: {
-    light: require('./images/light/coinsInWallet-0.svg'),
+    light: require('./images/light/coinsInWallet-1.svg'),
     dark: require('./images/dark/coinsInWallet-0.svg'),
     fileFormat: 'svg',
   },
@@ -124,6 +137,31 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: require('./images/dark/contactsListWarning-0.svg'),
     fileFormat: 'svg',
   },
+  currencyPairs: {
+    light: require('./images/light/currencyPairs-0.svg'),
+    dark: require('./images/dark/currencyPairs-0.svg'),
+    fileFormat: 'svg',
+  },
+  defiEarn: {
+    light: require('./images/light/defiEarn-0.svg'),
+    dark: require('./images/dark/defiEarn-0.svg'),
+    fileFormat: 'svg',
+  },
+  defiEnrollBoost: {
+    light: require('./images/light/defiEnrollBoost-0.svg'),
+    dark: require('./images/dark/defiEnrollBoost-0.svg'),
+    fileFormat: 'svg',
+  },
+  defiHow: {
+    light: require('./images/light/defiHow-0.svg'),
+    dark: require('./images/dark/defiHow-0.svg'),
+    fileFormat: 'svg',
+  },
+  defiRisk: {
+    light: require('./images/light/defiRisk-0.svg'),
+    dark: require('./images/dark/defiRisk-0.svg'),
+    fileFormat: 'svg',
+  },
   docError: {
     light: require('./images/light/docError-0.svg'),
     dark: require('./images/dark/docError-0.svg'),
@@ -131,17 +169,17 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   documentCertified: {
     light: require('./images/light/documentCertified-0.svg'),
-    dark: require('./images/dark/documentCertified-0.svg'),
+    dark: require('./images/dark/documentCertified-1.svg'),
     fileFormat: 'svg',
   },
   documentSuccess: {
     light: require('./images/light/documentSuccess-0.svg'),
-    dark: require('./images/dark/documentSuccess-0.svg'),
+    dark: require('./images/dark/documentSuccess-1.svg'),
     fileFormat: 'svg',
   },
   downloadCoinbaseWallet: {
     light: require('./images/light/downloadCoinbaseWallet-0.svg'),
-    dark: require('./images/dark/downloadCoinbaseWallet-0.svg'),
+    dark: require('./images/dark/downloadCoinbaseWallet-1.svg'),
     fileFormat: 'svg',
   },
   earnIdVerification: {
@@ -161,12 +199,12 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   earnProgress: {
     light: require('./images/light/earnProgress-0.svg'),
-    dark: require('./images/dark/earnProgress-0.svg'),
+    dark: require('./images/dark/earnProgress-1.svg'),
     fileFormat: 'svg',
   },
   earnSuccess: {
     light: require('./images/light/earnSuccess-0.svg'),
-    dark: require('./images/dark/earnSuccess-0.svg'),
+    dark: require('./images/dark/earnSuccess-1.svg'),
     fileFormat: 'svg',
   },
   emailNotification: {
@@ -210,8 +248,18 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   freeBtc: {
-    light: require('./images/light/freeBtc-0.svg'),
-    dark: require('./images/dark/freeBtc-0.svg'),
+    light: require('./images/light/freeBtc-1.svg'),
+    dark: require('./images/dark/freeBtc-1.svg'),
+    fileFormat: 'svg',
+  },
+  givingToOthers: {
+    light: require('./images/light/givingToOthers-0.svg'),
+    dark: require('./images/dark/givingToOthers-0.svg'),
+    fileFormat: 'svg',
+  },
+  givingTogether: {
+    light: require('./images/light/givingTogether-0.svg'),
+    dark: require('./images/dark/givingTogether-0.svg'),
     fileFormat: 'svg',
   },
   holdingCrypto: {
@@ -271,7 +319,7 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   myNameIsSatoshi: {
     light: require('./images/light/myNameIsSatoshi-0.svg'),
-    dark: require('./images/dark/myNameIsSatoshi-0.svg'),
+    dark: require('./images/dark/myNameIsSatoshi-1.svg'),
     fileFormat: 'svg',
   },
   notificationsAlt: {
@@ -280,7 +328,7 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   notificationsAndUpdates: {
-    light: require('./images/light/notificationsAndUpdates-0.svg'),
+    light: require('./images/light/notificationsAndUpdates-1.svg'),
     dark: require('./images/dark/notificationsAndUpdates-0.svg'),
     fileFormat: 'svg',
   },
@@ -294,14 +342,19 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: require('./images/dark/openEmail-0.svg'),
     fileFormat: 'svg',
   },
+  orderBooks: {
+    light: require('./images/light/orderBooks-0.svg'),
+    dark: require('./images/dark/orderBooks-0.svg'),
+    fileFormat: 'svg',
+  },
   payUpFront: {
     light: require('./images/light/payUpFront-0.svg'),
-    dark: require('./images/dark/payUpFront-0.svg'),
+    dark: require('./images/dark/payUpFront-1.svg'),
     fileFormat: 'svg',
   },
   pending: {
-    light: require('./images/light/pending-0.svg'),
-    dark: require('./images/dark/pending-0.svg'),
+    light: require('./images/light/pending-1.svg'),
+    dark: require('./images/dark/pending-1.svg'),
     fileFormat: 'svg',
   },
   phoneNumber: {
@@ -355,8 +408,8 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   selectCorrectCrypto: {
-    light: require('./images/light/selectCorrectCrypto-0.svg'),
-    dark: require('./images/dark/selectCorrectCrypto-0.svg'),
+    light: require('./images/light/selectCorrectCrypto-1.svg'),
+    dark: require('./images/dark/selectCorrectCrypto-1.svg'),
     fileFormat: 'svg',
   },
   sendCryptoFaster: {
@@ -379,9 +432,14 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: null,
     fileFormat: 'svg',
   },
+  tradeHistory: {
+    light: require('./images/light/tradeHistory-0.svg'),
+    dark: require('./images/dark/tradeHistory-0.svg'),
+    fileFormat: 'svg',
+  },
   tradeImmediately: {
     light: require('./images/light/tradeImmediately-0.svg'),
-    dark: require('./images/dark/tradeImmediately-0.svg'),
+    dark: require('./images/dark/tradeImmediately-1.svg'),
     fileFormat: 'svg',
   },
   transactionLimit: {
@@ -411,12 +469,12 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   verifyIdDetails: {
     light: require('./images/light/verifyIdDetails-0.svg'),
-    dark: require('./images/dark/verifyIdDetails-0.svg'),
+    dark: require('./images/dark/verifyIdDetails-1.svg'),
     fileFormat: 'svg',
   },
   verifyInfo: {
-    light: require('./images/light/verifyInfo-0.svg'),
-    dark: require('./images/dark/verifyInfo-0.svg'),
+    light: require('./images/light/verifyInfo-1.svg'),
+    dark: require('./images/dark/verifyInfo-1.svg'),
     fileFormat: 'svg',
   },
   walletNotifications: {
@@ -617,6 +675,11 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   cryptoCard: {
     light: require('./images/light/cryptoCard-0.svg'),
     dark: require('./images/dark/cryptoCard-0.svg'),
+    fileFormat: 'svg',
+  },
+  defiEarnMoment: {
+    light: require('./images/light/defiEarnMoment-0.svg'),
+    dark: require('./images/dark/defiEarnMoment-0.svg'),
     fileFormat: 'svg',
   },
   delegate: {
@@ -1051,7 +1114,7 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   currency: {
     light: require('./images/light/currency-0.svg'),
-    dark: require('./images/dark/currency-0.svg'),
+    dark: require('./images/dark/currency-1.svg'),
     fileFormat: 'svg',
   },
   diamond: {
@@ -1066,17 +1129,27 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
   },
   giftBoxRewards: {
     light: require('./images/light/giftBoxRewards-0.svg'),
-    dark: require('./images/dark/giftBoxRewards-0.svg'),
+    dark: require('./images/dark/giftBoxRewards-1.svg'),
     fileFormat: 'svg',
   },
   linkCoinbaseWallet: {
-    light: require('./images/light/linkCoinbaseWallet-0.svg'),
+    light: require('./images/light/linkCoinbaseWallet-1.svg'),
     dark: null,
+    fileFormat: 'svg',
+  },
+  portfolioOverview: {
+    light: require('./images/light/portfolioOverview-0.svg'),
+    dark: require('./images/dark/portfolioOverview-0.svg'),
+    fileFormat: 'svg',
+  },
+  protectedNotes: {
+    light: require('./images/light/protectedNotes-0.svg'),
+    dark: require('./images/dark/protectedNotes-0.svg'),
     fileFormat: 'svg',
   },
   ratDashboard: {
     light: require('./images/light/ratDashboard-0.svg'),
-    dark: require('./images/dark/ratDashboard-0.svg'),
+    dark: require('./images/dark/ratDashboard-1.svg'),
     fileFormat: 'svg',
   },
   switchAdvancedToSimpleTradingAlt: {
@@ -1089,19 +1162,39 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: require('./images/dark/trade-0.svg'),
     fileFormat: 'svg',
   },
+  ach: {
+    light: require('./images/light/ach-0.svg'),
+    dark: require('./images/dark/ach-0.svg'),
+    fileFormat: 'svg',
+  },
   addMultipleCrypto: {
     light: require('./images/light/addMultipleCrypto-0.svg'),
-    dark: null,
+    dark: require('./images/dark/addMultipleCrypto-0.svg'),
+    fileFormat: 'svg',
+  },
+  addPasswordProtection: {
+    light: require('./images/light/addPasswordProtection-0.svg'),
+    dark: require('./images/dark/addPasswordProtection-0.svg'),
     fileFormat: 'svg',
   },
   algoStaking: {
-    light: require('./images/light/algoStaking-0.svg'),
+    light: require('./images/light/algoStaking-1.svg'),
     dark: require('./images/dark/algoStaking-0.svg'),
     fileFormat: 'svg',
   },
   announcementAdvancedTrading: {
     light: require('./images/light/announcementAdvancedTrading-0.svg'),
-    dark: null,
+    dark: require('./images/dark/announcementAdvancedTrading-0.svg'),
+    fileFormat: 'svg',
+  },
+  ant: {
+    light: require('./images/light/ant-0.svg'),
+    dark: require('./images/dark/ant-0.svg'),
+    fileFormat: 'svg',
+  },
+  asm: {
+    light: require('./images/light/asm-0.svg'),
+    dark: require('./images/dark/asm-0.svg'),
     fileFormat: 'svg',
   },
   assetForward: {
@@ -1120,18 +1213,23 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   cardAnnoucement: {
-    light: require('./images/light/cardAnnoucement-0.svg'),
-    dark: require('./images/dark/cardAnnoucement-0.svg'),
+    light: require('./images/light/cardAnnoucement-1.svg'),
+    dark: require('./images/dark/cardAnnoucement-1.svg'),
     fileFormat: 'svg',
   },
   cardShipped: {
-    light: require('./images/light/cardShipped-0.svg'),
-    dark: null,
+    light: require('./images/light/cardShipped-1.svg'),
+    dark: require('./images/dark/cardShipped-0.svg'),
+    fileFormat: 'svg',
+  },
+  clv: {
+    light: require('./images/light/clv-0.svg'),
+    dark: require('./images/dark/clv-0.svg'),
     fileFormat: 'svg',
   },
   coinbaseCardSparkle: {
-    light: require('./images/light/coinbaseCardSparkle-0.svg'),
-    dark: require('./images/dark/coinbaseCardSparkle-0.svg'),
+    light: require('./images/light/coinbaseCardSparkle-1.svg'),
+    dark: require('./images/dark/coinbaseCardSparkle-1.svg'),
     fileFormat: 'svg',
   },
   cosmosStaking: {
@@ -1140,8 +1238,8 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   daiRewards: {
-    light: require('./images/light/daiRewards-0.svg'),
-    dark: require('./images/dark/daiRewards-0.svg'),
+    light: require('./images/light/daiRewards-1.svg'),
+    dark: require('./images/dark/daiRewards-1.svg'),
     fileFormat: 'svg',
   },
   darkModeIntroduction: {
@@ -1149,9 +1247,24 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: null,
     fileFormat: 'svg',
   },
+  defiEarnAnnouncement: {
+    light: require('./images/light/defiEarnAnnouncement-0.svg'),
+    dark: require('./images/dark/defiEarnAnnouncement-0.svg'),
+    fileFormat: 'svg',
+  },
   ethereumStaking: {
     light: require('./images/light/ethereumStaking-0.svg'),
     dark: require('./images/dark/ethereumStaking-0.svg'),
+    fileFormat: 'svg',
+  },
+  farm: {
+    light: require('./images/light/farm-0.svg'),
+    dark: require('./images/dark/farm-0.svg'),
+    fileFormat: 'svg',
+  },
+  fet: {
+    light: require('./images/light/fet-0.svg'),
+    dark: require('./images/dark/fet-0.svg'),
     fileFormat: 'svg',
   },
   giftBoxCrypto: {
@@ -1159,24 +1272,39 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: null,
     fileFormat: 'svg',
   },
+  givingTogetherSmall: {
+    light: require('./images/light/givingTogetherSmall-0.svg'),
+    dark: require('./images/dark/givingTogetherSmall-0.svg'),
+    fileFormat: 'svg',
+  },
   interestForYou: {
     light: require('./images/light/interestForYou-0.svg'),
     dark: null,
     fileFormat: 'svg',
   },
+  iotx: {
+    light: require('./images/light/iotx-0.svg'),
+    dark: require('./images/dark/iotx-0.svg'),
+    fileFormat: 'svg',
+  },
+  mask: {
+    light: require('./images/light/mask-0.svg'),
+    dark: require('./images/dark/mask-0.svg'),
+    fileFormat: 'svg',
+  },
   moneyRewards: {
     light: require('./images/light/moneyRewards-0.svg'),
-    dark: null,
+    dark: require('./images/dark/moneyRewards-0.svg'),
     fileFormat: 'svg',
   },
   nuxEarnCrypto: {
-    light: require('./images/light/nuxEarnCrypto-0.svg'),
-    dark: require('./images/dark/nuxEarnCrypto-0.svg'),
+    light: require('./images/light/nuxEarnCrypto-1.svg'),
+    dark: require('./images/dark/nuxEarnCrypto-1.svg'),
     fileFormat: 'svg',
   },
   nuxEarnYield: {
-    light: require('./images/light/nuxEarnYield-0.svg'),
-    dark: require('./images/dark/nuxEarnYield-0.svg'),
+    light: require('./images/light/nuxEarnYield-1.svg'),
+    dark: require('./images/dark/nuxEarnYield-1.svg'),
     fileFormat: 'svg',
   },
   nuxPopularAssets: {
@@ -1185,18 +1313,53 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   nuxRecurringBuys: {
-    light: require('./images/light/nuxRecurringBuys-0.svg'),
-    dark: require('./images/dark/nuxRecurringBuys-0.svg'),
+    light: require('./images/light/nuxRecurringBuys-1.svg'),
+    dark: require('./images/dark/nuxRecurringBuys-1.svg'),
+    fileFormat: 'svg',
+  },
+  orn: {
+    light: require('./images/light/orn-0.svg'),
+    dark: require('./images/dark/orn-0.svg'),
+    fileFormat: 'svg',
+  },
+  pax: {
+    light: require('./images/light/pax-0.svg'),
+    dark: require('./images/dark/pax-0.svg'),
     fileFormat: 'svg',
   },
   phoneNotifications: {
     light: require('./images/light/phoneNotifications-0.svg'),
-    dark: null,
+    dark: require('./images/dark/phoneNotifications-0.svg'),
+    fileFormat: 'svg',
+  },
+  pla: {
+    light: require('./images/light/pla-0.svg'),
+    dark: require('./images/dark/pla-0.svg'),
+    fileFormat: 'svg',
+  },
+  poly: {
+    light: require('./images/light/poly-0.svg'),
+    dark: require('./images/dark/poly-0.svg'),
+    fileFormat: 'svg',
+  },
+  quick: {
+    light: require('./images/light/quick-0.svg'),
+    dark: require('./images/dark/quick-0.svg'),
+    fileFormat: 'svg',
+  },
+  rai: {
+    light: require('./images/light/rai-0.svg'),
+    dark: require('./images/dark/rai-0.svg'),
     fileFormat: 'svg',
   },
   refreshMobileApp: {
-    light: require('./images/light/refreshMobileApp-0.svg'),
+    light: require('./images/light/refreshMobileApp-1.svg'),
     dark: require('./images/dark/refreshMobileApp-0.svg'),
+    fileFormat: 'svg',
+  },
+  rly: {
+    light: require('./images/light/rly-0.svg'),
+    dark: require('./images/dark/rly-0.svg'),
     fileFormat: 'svg',
   },
   saveTheDate: {
@@ -1205,13 +1368,13 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     fileFormat: 'svg',
   },
   sparkleToken: {
-    light: require('./images/light/sparkleToken-0.svg'),
-    dark: require('./images/dark/sparkleToken-0.svg'),
+    light: require('./images/light/sparkleToken-1.svg'),
+    dark: require('./images/dark/sparkleToken-1.svg'),
     fileFormat: 'svg',
   },
   starToken: {
     light: require('./images/light/starToken-0.svg'),
-    dark: null,
+    dark: require('./images/dark/starToken-0.svg'),
     fileFormat: 'svg',
   },
   tezosStakingRewards: {
@@ -1224,9 +1387,24 @@ export const IllustrationFilePathMap: Record<string, { light: unknown, dark: unk
     dark: require('./images/dark/transferringCrypto-0.svg'),
     fileFormat: 'svg',
   },
+  tribe: {
+    light: require('./images/light/tribe-0.svg'),
+    dark: require('./images/dark/tribe-0.svg'),
+    fileFormat: 'svg',
+  },
+  ust: {
+    light: require('./images/light/ust-0.svg'),
+    dark: require('./images/dark/ust-0.svg'),
+    fileFormat: 'svg',
+  },
   yieldCenter: {
     light: require('./images/light/yieldCenter-0.svg'),
     dark: require('./images/dark/yieldCenter-0.svg'),
+    fileFormat: 'svg',
+  },
+  yieldCenterUSDC: {
+    light: require('./images/light/yieldCenterUSDC-0.svg'),
+    dark: require('./images/dark/yieldCenterUSDC-0.svg'),
     fileFormat: 'svg',
   },
 };

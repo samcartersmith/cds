@@ -1,3 +1,4 @@
+import { illustrationSizes } from '../tokens/illustrations';
 import {
   IllustrationHeroSquareNames,
   IllustrationSpotRectangleNames,
@@ -20,16 +21,20 @@ export type IllustrationBaseProps = {
 
 export type HeroSquareProps = {
   name: IllustrationHeroSquareNames;
+  dimension?: keyof typeof illustrationSizes.heroSquare;
 } & SharedProps;
 
 export type SpotSquareProps = {
   name: IllustrationSpotSquareNames;
+  dimension?: keyof typeof illustrationSizes.spotSquare;
 } & SharedProps;
 
 export type PictogramProps = {
   name: IllustrationPictogramNames;
+  dimension?: keyof typeof illustrationSizes.pictogram;
 } & SharedProps;
 
 export type SpotRectangleProps = {
   name: IllustrationSpotRectangleNames;
+  dimension?: keyof typeof illustrationSizes.spotRectangle;
 } & SharedProps;

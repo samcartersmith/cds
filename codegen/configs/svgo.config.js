@@ -1,6 +1,7 @@
 const { extendDefaultPlugins } = require('svgo');
 
 module.exports = {
+  multipass: true,
   plugins: extendDefaultPlugins([
     {
       name: 'cleanupListOfValues',
@@ -12,7 +13,7 @@ module.exports = {
     },
     {
       name: 'removeRasterImages',
-      active: true,
+      active: false,
     },
     {
       name: 'sortAttrs',
@@ -33,12 +34,6 @@ module.exports = {
     {
       name: 'removeStyleElement',
       active: true,
-    },
-    {
-      name: 'convertPathData',
-      params: {
-        floatPrecision: 3,
-      },
     },
     {
       name: 'cleanupNumericValues',

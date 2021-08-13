@@ -1,53 +1,38 @@
 import React, { useCallback } from 'react';
 import { Button } from '@cbhq/cds-mobile/buttons/Button';
-import { HeroSquare } from '@cbhq/cds-mobile/illustrations/HeroSquare';
-import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
-import { SpotRectangle } from '@cbhq/cds-mobile/illustrations/SpotRectangle';
-import { SpotSquare } from '@cbhq/cds-mobile/illustrations/SpotSquare';
+import { HeroSquare, Pictogram, SpotRectangle, SpotSquare } from '@cbhq/cds-mobile/illustrations';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
-import { TextCaption } from '@cbhq/cds-mobile/typography/TextCaption';
-import { capitalize } from '@cbhq/cds-utils';
+import { HStack } from '@cbhq/cds-mobile/layout/HStack';
+import { VStack } from '@cbhq/cds-mobile/layout/VStack';
+import { TextLabel1 } from '@cbhq/cds-mobile/typography/TextLabel1';
 import { StackScreenProps, createStackNavigator } from '@react-navigation/stack';
 
 import { View } from 'react-native';
+import { pascalCase } from '@cbhq/cds-utils';
+import { createStories } from '@cbhq/cds-storybook/stories/Illustration';
 
-import {
-  IllustrationHeroSquareNames,
-  IllustrationPictogramNames,
-  IllustrationSpotRectangleNames,
-  IllustrationSpotSquareNames,
-} from '@cbhq/cds-common/types/Illustration';
-import {
-  heroSquareNames,
-  spotRectangleNames,
-  pictogramNames,
-  spotSquareNames,
-} from './data/illustrationData';
+import { illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
 import Example from './internal/Example';
 import ExampleScreen from './internal/ExamplesScreen';
 
-const variantToNames: Record<
-  string,
-  [
-    readonly string[],
-    React.ComponentType<{
-      name: IllustrationHeroSquareNames &
-        IllustrationPictogramNames &
-        IllustrationSpotRectangleNames &
-        IllustrationSpotSquareNames;
-    }>,
-  ]
-> = {
-  HeroSquare: [heroSquareNames, HeroSquare],
-  SpotRectangle: [spotRectangleNames, SpotRectangle],
-  Pictogram: [pictogramNames, Pictogram],
-  SpotSquare: [spotSquareNames, SpotSquare],
-};
+const { ListPictograms, ListHeroSquares, ListSpotSquares, ListSpotRectangles } = createStories(
+  Pictogram,
+  SpotSquare,
+  SpotRectangle,
+  HeroSquare,
+  HStack,
+  VStack,
+  Box,
+  TextLabel1,
+);
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const NavScreen = function NavScreen({ navigation }: StackScreenProps<{}>) {
+const NavScreen = function NavScreen({ navigation }: StackScreenProps<Record<string, {}>>) {
   const ScreenBtn = function ScreenBtn({ variant }: { variant: string }) {
-    const navigateOnPress = useCallback(() => navigation.navigate({ key: variant }), [variant]);
+    const navigateOnPress = useCallback(
+      () => navigation.navigate({ name: variant, params: {} }),
+      [variant],
+    );
 
     return (
       <Box spacing={2}>
@@ -58,43 +43,45 @@ const NavScreen = function NavScreen({ navigation }: StackScreenProps<{}>) {
 
   return (
     <View>
-      {Object.keys(variantToNames).map((variant) => {
-        return <ScreenBtn key={`${variant}Component`} variant={variant} />;
+      {Object.keys(illustrationSizes).map((variant) => {
+        const variantPC = pascalCase(variant);
+        return <ScreenBtn key={`${variantPC}Component`} variant={variantPC} />;
       })}
     </View>
   );
 };
 
-const IllustrationList = function IllustrationList({ variant }: { variant: string }) {
-  const [names, IllustrationComponent] = variantToNames[variant];
+const HeroSquareScreen = () => (
+  <ExampleScreen>
+    <Example title="HeroSquare">
+      <ListHeroSquares />
+    </Example>
+  </ExampleScreen>
+);
 
-  return (
-    <ExampleScreen>
-      <Example title={capitalize(variant)}>
-        {names.map((name) => (
-          <Box key={`${name}_${variant}`}>
-            <TextCaption>{name}</TextCaption>
-            <IllustrationComponent name={name as never} />
-          </Box>
-        ))}
-      </Example>
-    </ExampleScreen>
-  );
-};
+const SpotRectangleScreen = () => (
+  <ExampleScreen>
+    <Example title="SpotRectangle">
+      <ListSpotRectangles />
+    </Example>
+  </ExampleScreen>
+);
 
-const HeroSquareScreen = function HeroSquareScreen() {
-  return <IllustrationList variant="HeroSquare" />;
-};
+const PictogramScreen = () => (
+  <ExampleScreen>
+    <Example title="Pictogram">
+      <ListPictograms />
+    </Example>
+  </ExampleScreen>
+);
 
-const SpotRectangleScreen = function SpotRectangleScreen() {
-  return <IllustrationList variant="SpotRectangle" />;
-};
-const PictogramScreen = function PictogramScreen() {
-  return <IllustrationList variant="Pictogram" />;
-};
-const SpotSquareScreen = function SpotSquareScreen() {
-  return <IllustrationList variant="SpotSquare" />;
-};
+const SpotSquareScreen = () => (
+  <ExampleScreen>
+    <Example title="SpotSquare">
+      <ListSpotSquares />
+    </Example>
+  </ExampleScreen>
+);
 
 const IllustrationScreen = function IllustrationScreen() {
   const IllustrationStack = createStackNavigator();

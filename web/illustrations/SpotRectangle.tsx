@@ -5,12 +5,11 @@ import { SpotRectangleProps } from '@cbhq/cds-common/types/IllustrationProps';
 
 import { Illustration } from './Illustration';
 
-export const SpotRectangle = memo(function SpotRectangle(props: SpotRectangleProps) {
-  return (
-    <Illustration
-      width={illustrationSizes.spotRectangle.width}
-      height={illustrationSizes.spotRectangle.height}
-      {...props}
-    />
-  );
+export const SpotRectangle = memo(function SpotRectangle({
+  dimension = '240x120',
+  ...props
+}: SpotRectangleProps) {
+  const { width, height } = illustrationSizes.spotRectangle[dimension];
+
+  return <Illustration width={width} height={height} {...props} />;
 });

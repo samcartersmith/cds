@@ -33,6 +33,9 @@ const localManifestData: Record<string, Record<string, IllustrationSummary>> = m
 let svgOptimizerConfig: OptimizeOptions;
 const nameToNodeIdMap: Record<string, string> = {};
 
+const newIllustrations: string[] = [];
+const modifiedIllustrations: string[] = [];
+
 function normalizeIllustration(illustrationName: string): IllustrationProps | null {
   const [type, spectrum, variant, name] = illustrationName.split('/');
 
@@ -68,8 +71,8 @@ const loadOneImage = async (
 ): Promise<void> => {
   const imageMetadata = localManifestData[exportFormat][nodeId];
   const imageName = imageMetadata.name;
-  const { versionNum } = imageMetadata;
-  const imageOutFullPath = `${outDirPath}/${imageMetadata.spectrum}/`;
+  const { versionNum, spectrum } = imageMetadata;
+  const imageOutFullPath = `${outDirPath}/${spectrum}/`;
 
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
@@ -90,39 +93,48 @@ const loadOneImage = async (
       },
     })
     .then(async (res) => {
-      if (res) {
-        const fileNameFullPath = path.join(imageOutFullPath, fileName);
-        const encoding = exportFormat === 'svg' ? 'utf8' : 'binary';
-        let oldFileBase64 = '';
+      if (!res) return;
 
-        // Tracks whether this image is new, or is modified
-        let fileStatus = 'new';
+      const fileNameFullPath = path.join(imageOutFullPath, fileName);
+      const nameAndSpectrum = `${imageName}-${spectrum}`;
+      const encoding = exportFormat === 'svg' ? 'utf8' : 'binary';
+      let oldFileBase64 = '';
 
-        if (existsSync(fileNameFullPath)) {
-          const binaryData = readFileSync(fileNameFullPath, encoding);
-          oldFileBase64 = binaryToBase64(binaryData);
-          fileStatus = 'modified';
+      // Tracks whether this image is new, or is modified
+      let fileStatus = 'new';
+
+      if (existsSync(fileNameFullPath)) {
+        const binaryData = readFileSync(fileNameFullPath, encoding);
+        oldFileBase64 = binaryToBase64(binaryData);
+        fileStatus = 'modified';
+        modifiedIllustrations.push(nameAndSpectrum);
+      }
+
+      if (fileStatus === 'modified') return;
+
+      if (exportFormat === 'svg') {
+        const optimizedSVG = optimize(String(res.data), svgOptimizerConfig);
+        fs.writeFileSync(fileNameFullPath, optimizedSVG.data, encoding);
+      } else {
+        fs.writeFileSync(fileNameFullPath, Buffer.from(String(res.data), 'binary'), encoding);
+      }
+
+      const newFileBase64 = binaryToBase64(readFileSync(fileNameFullPath, encoding));
+
+      if (fileHasChanged(oldFileBase64, newFileBase64)) {
+        // Since the file has changed, we need to rename file such that it has the new time
+        const newVersionNum = localManifestData[exportFormat][nodeId].versionNum + 1;
+        localManifestData[exportFormat][nodeId].versionNum = newVersionNum;
+        const newFileName = `${imageName}-${newVersionNum}.${exportFormat}`;
+        renameSync(fileNameFullPath, path.join(imageOutFullPath, newFileName));
+
+        if (fileStatus === 'new') {
+          newIllustrations.push(nameAndSpectrum);
         }
 
-        if (exportFormat === 'svg') {
-          const optimizedSVG = optimize(String(res.data), svgOptimizerConfig);
-          fs.writeFileSync(fileNameFullPath, optimizedSVG.data, encoding);
-        } else {
-          fs.writeFileSync(fileNameFullPath, Buffer.from(String(res.data), 'binary'), encoding);
-        }
-
-        const newFileBase64 = binaryToBase64(readFileSync(fileNameFullPath, encoding));
-
-        if (fileHasChanged(oldFileBase64, newFileBase64)) {
-          // Since the file has changed, we need to rename file such that it has the new time
-          const newVersionNum = localManifestData[exportFormat][nodeId].versionNum + 1;
-          localManifestData[exportFormat][nodeId].versionNum = newVersionNum;
-          const newFileName = `${imageName}-${newVersionNum}.${exportFormat}`;
-          renameSync(fileNameFullPath, path.join(imageOutFullPath, newFileName));
-          console.log(`Created ${newFileName} at ${imageOutFullPath}, File Status: ${fileStatus}`);
-        } else {
-          console.log(`File: ${fileName} has not changed`);
-        }
+        console.log(`Created ${newFileName} at ${imageOutFullPath}, File Status: ${fileStatus}`);
+      } else {
+        console.log(`File: ${fileName} has not changed`);
       }
     })
     .catch((err) => {
@@ -340,6 +352,8 @@ const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
     numIllustrations:
       Object.keys(localManifestData.png).length + Object.keys(localManifestData.svg).length,
     ...variantCountMap,
+    newIllustration: newIllustrations.sort(),
+    modifiedIllustrations: modifiedIllustrations.sort(),
   };
 
   await generateFromTemplate({
@@ -381,7 +395,10 @@ const createTypes = async (names: IllustrationNamesMap, variants: string[]) => {
   }
 };
 
-const createVersionNumManifest = async (destPath: string, fileFormat: FileFormat) => {
+const createVersionNumManifest = async (
+  destPath: string,
+  fileFormat: FileFormat,
+): Promise<VersionNumManifestStruct> => {
   const versionNumManifest: VersionNumManifestStruct = reduce(
     localManifestData[fileFormat],
     (res, metadata) => {
@@ -397,6 +414,28 @@ const createVersionNumManifest = async (destPath: string, fileFormat: FileFormat
     config: { disableAsConst: true },
     dest: destPath,
   });
+  return versionNumManifest;
+};
+
+// Super long name, but at least you know exactly what
+// this function does 🐒🐒🐒
+const outputImgBasedOnMostRecentlyUpdated = (
+  versionNumManifest: VersionNumManifestStruct,
+  outPaths: string[],
+) => {
+  try {
+    for (const dest of outPaths) {
+      generateFromTemplate({
+        template: 'objectMap.ejs',
+        dest,
+        data: {
+          sortedImg: Object.keys(versionNumManifest),
+        },
+      }).catch((err) => console.error(err));
+    }
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 const createConstants = async (names: IllustrationNamesMap, outPaths: string[]) => {
@@ -492,22 +531,28 @@ const main = async (deleteImgsDir = false) => {
     const { camelCaseNames, pascalCaseNames, variants } =
       getIllustrationNamesAndVariants(components);
     await updateManifest(components);
-    await genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
     await loadImagesLocally(Object.keys(localManifestData.svg), outDirPath, 'svg');
+    await genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
 
     console.log('All images loaded');
-
     await createTypes(camelCaseNames, variants);
     await createConstants(camelCaseNames, [
-      'mobile-playground/src/data/illustrationData.ts',
+      // 'mobile-playground/src/data/illustrationData.ts',
       'website/data/illustrationData.ts',
+      'storybook/data/illustrationData.ts',
     ]);
     await createNameToRelativePathMap(camelCaseNames, 'mobile/illustrations');
     await createManifestFile('codegen/illustrations/illustration_manifest.ts');
-    await createVersionNumManifest('web/illustrations/versionNumManifest.ts', 'svg');
+    const versionNumManifest = await createVersionNumManifest(
+      'web/illustrations/versionNumManifest.ts',
+      'svg',
+    );
+    outputImgBasedOnMostRecentlyUpdated(versionNumManifest, [
+      'storybook/data/sortIllustrationData.ts',
+    ]);
   } catch (err) {
     console.error(err);
   }
 };
 
-void main();
+main().catch((err) => console.error(err));

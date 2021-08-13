@@ -66,7 +66,7 @@ echo "Copying images to static-assets..."
 cp -rf "${ROOTDIRPATH}eng/shared/design-system/mobile/illustrations/images/" "${ROOTDIRPATH}eng/shared/design-system/codegen/illustrations/static-assets/assets/design-system/illustrations/"
 
 echo "Pushing changes to static-assets"
-git add -A &&  git ci -m "Update Illustration" && git push --set-upstream origin $BRANCHNAME 
+git add -A &&  git ci -m "Update Illustration" && git push --set-upstream origin "${USERNAME}/${BRANCHNAME}" 
 if [ ${OPENPRFLAG=false} == true ]
 then
 	echo "Creating PR..."

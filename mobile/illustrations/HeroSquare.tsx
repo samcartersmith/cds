@@ -5,12 +5,11 @@ import { HeroSquareProps } from '@cbhq/cds-common/types/IllustrationProps';
 
 import { Illustration } from './Illustration';
 
-export const HeroSquare = memo(function HeroSquareIllustration(props: HeroSquareProps) {
-  return (
-    <Illustration
-      width={illustrationSizes.heroSquare.width}
-      height={illustrationSizes.heroSquare.height}
-      {...props}
-    />
-  );
+export const HeroSquare = memo(function HeroSquareIllustration({
+  dimension = '240x240',
+  ...props
+}: HeroSquareProps) {
+  const { width, height } = illustrationSizes.heroSquare[dimension];
+
+  return <Illustration width={width} height={height} {...props} />;
 });

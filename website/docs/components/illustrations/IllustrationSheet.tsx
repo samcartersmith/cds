@@ -21,41 +21,23 @@ import {
 } from '@cbhq/cds-website/data/illustrationData';
 import { cx } from 'linaria';
 import throttle from 'lodash/throttle';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 import { elevation, searchBox } from '../icons/styles';
 
 const variantToNamesMap: {
-  [variant: string]: {
-    names: readonly (
-      | IllustrationHeroSquareNames
-      | IllustrationSpotRectangleNames
-      | IllustrationPictogramNames
-      | IllustrationSpotSquareNames
-    )[];
-    width: number;
-    height: number;
-  };
+  [keys: string]: readonly (
+    | IllustrationHeroSquareNames
+    | IllustrationSpotRectangleNames
+    | IllustrationPictogramNames
+    | IllustrationSpotSquareNames
+  )[];
 } = {
-  heroSquare: {
-    names: heroSquareNames,
-    width: illustrationSizes.heroSquare.width,
-    height: illustrationSizes.heroSquare.height,
-  },
-  spotRectangle: {
-    names: spotRectangleNames,
-    width: illustrationSizes.spotRectangle.width,
-    height: illustrationSizes.spotRectangle.height,
-  },
-  spotSquare: {
-    names: spotSquareNames,
-    width: illustrationSizes.spotSquare.width,
-    height: illustrationSizes.spotSquare.height,
-  },
-  pictogram: {
-    names: pictogramNames,
-    width: illustrationSizes.pictogram.width,
-    height: illustrationSizes.pictogram.height,
-  },
+  heroSquare: heroSquareNames,
+  spotRectangle: spotRectangleNames,
+  spotSquare: spotSquareNames,
+  pictogram: pictogramNames,
 };
 
 export const IllustrationSheet = function IllustrationSheet({
@@ -64,7 +46,9 @@ export const IllustrationSheet = function IllustrationSheet({
   variant: IllustrationVariant;
 }) {
   const [query, setQuery] = useState('');
-  const { names, width, height } = variantToNamesMap[variant];
+  const names = variantToNamesMap[variant];
+  const dimensions = illustrationSizes[variant];
+  const defaultVal = Object.keys(dimensions)[0];
 
   const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
@@ -81,18 +65,31 @@ export const IllustrationSheet = function IllustrationSheet({
         />
       </Box>
 
-      <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
-        {names
-          .filter(name => name.includes(query))
-          .map(filteredName => (
-            <VStack spacing={3} alignItems="center" key={filteredName}>
-              <Illustration name={filteredName} width={width} height={height} />
-              <TextLabel1 align="center" as="p" spacing={2}>
-                {filteredName}
-              </TextLabel1>
-            </VStack>
-          ))}
-      </Box>
+      <Tabs
+        defaultValue={defaultVal}
+        values={Object.keys(dimensions).map(dim => ({ label: dim, value: dim }))}
+      >
+        {Object.keys(dimensions).map(dim => {
+          const { width, height } = dimensions[dim as never];
+
+          return (
+            <TabItem key={dim} value={dim}>
+              <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
+                {names
+                  .filter(name => name.includes(query))
+                  .map(filteredName => (
+                    <VStack spacing={3} alignItems="center" key={filteredName}>
+                      <Illustration name={filteredName} width={width} height={height} />
+                      <TextLabel1 align="center" as="p" spacing={2}>
+                        {filteredName}
+                      </TextLabel1>
+                    </VStack>
+                  ))}
+              </Box>
+            </TabItem>
+          );
+        })}
+      </Tabs>
     </ThemeProvider>
   );
 };
