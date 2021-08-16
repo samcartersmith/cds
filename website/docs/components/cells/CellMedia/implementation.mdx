@@ -1,5 +1,4 @@
 import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
-import { Badge } from '@cbhq/cds-website/components/Badge';
 import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
 import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
@@ -411,6 +410,25 @@ Used to locate this element in unit and end-to-end tests.
   defaultValue=""
   mobileOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
   webOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
+/>
+
+### color
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="color"
+  required={false}
+  defaultValue="foreground"
+  mobileOptions={[
+    'foreground',
+    'foregroundMuted',
+    'primary'
+  ]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'primary',
+  ]}
 />
 
 <ComponentDetails componentName="CellMedia" templateName="prop-type" />

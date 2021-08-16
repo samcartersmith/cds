@@ -17,7 +17,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   let content = null;
 
   if (props.type === 'icon') {
-    content = <Icon size="s" name={props.name} color="foreground" />;
+    content = <Icon size="s" name={props.name} color={props.color ?? 'foreground'} />;
   }
 
   if (props.type === 'asset' || props.type === 'avatar' || props.type === 'image') {

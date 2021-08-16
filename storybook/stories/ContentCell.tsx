@@ -134,6 +134,12 @@ export function createStories(
       />
 
       <ContentCell
+        title="Icon (With Primary Color)"
+        description="Description"
+        media={<CellMedia type="icon" name="phone" color="primary" />}
+      />
+
+      <ContentCell
         title="Avatar"
         description="Description"
         subtitle="Subtitle"

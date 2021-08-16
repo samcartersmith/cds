@@ -57,6 +57,7 @@ export type CellMediaSource = string | number;
 export type CellMediaIconProps = {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
+  color?: Extract<PaletteForeground, 'primary' | 'foreground' | 'foregroundMuted'>;
 } & SharedProps;
 
 export type CellMediaPictogramProps = {
