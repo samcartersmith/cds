@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.19.4 (8/16/2021, 08:53 AM PST)
+
+#### 🚀 Updates
+
+- Add illustration scaling and storybook for illustration. [#28452](https://github.cbhq.net/mono/repo/pull/28452), [CDS-810](https://jira.coinbase-corp.com/browse/CDS-810)
+
+#### 🐞 Fixes
+
+- Release cds. [#29049](https://github.cbhq.net/mono/repo/pull/29049)
+- Move NavigationIconProp to common, and export it. [#28868](https://github.cbhq.net/mono/repo/pull/28868)
+
 ## 0.19.3 (8/10/2021, 11:59 AM PST)
 
 #### 🐞 Fixes

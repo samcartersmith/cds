@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.1 (8/16/2021, 08:53 AM PST)
+
+#### 🐞 Fixes
+
+- Add fonts web and mobile. [#29272](https://github.cbhq.net/mono/repo/pull/29272)
+
 ## 0.2.0 (8/2/2021, 09:34 AM PST)
 
 #### 💥 Breaking
