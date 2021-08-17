@@ -9,6 +9,11 @@ import {
   typographyScaleMapForMobile,
 } from './generateTypeStyles';
 
+import {
+  typographyScaleMapForMobile as typographyScaleMapForMobileBeta,
+  typographyScaleMapWithCssVariables as typographyScaleMapWithCssVariablesBeta,
+} from './generateTypeStylesBeta';
+
 const mdTable = ([header, ...rows]: string[][]) => {
   const numCol = header.length;
   header.unshift('', '');
@@ -30,9 +35,11 @@ const mdTable = ([header, ...rows]: string[][]) => {
 
 export const Type = {
   mobile: typographyScaleMapForMobile,
+  mobileBeta: typographyScaleMapForMobileBeta,
   pascalCaseConfig: typographyPascalCaseConfig,
   css: typographyCss,
   scaleCss: typographyScaleMapWithCssVariables,
+  scaleCssBeta: typographyScaleMapWithCssVariablesBeta,
   generateScaleTable: () => {
     // include type names
     const tableBody = Object.keys(typographyPascalCaseConfig).map((typeName) => [

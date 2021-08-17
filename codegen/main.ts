@@ -51,6 +51,16 @@ async function codegen() {
         }),
       },
       {
+        dest: 'web/styles/scaleBeta.ts',
+        data: mapValues(scaleConfig, (_, scale) => {
+          return {
+            ...Type.scaleCssBeta[scale],
+            ...Spacing.scaleCss[scale],
+            ...Control.scaleCss[scale],
+          };
+        }),
+      },
+      {
         dest: 'web/styles/spectrum.ts',
         data: Spectrum.css,
       },
@@ -91,6 +101,16 @@ async function codegen() {
         data: mapValues(scaleConfig, (_, scale) => {
           return {
             typography: Type.mobile[scale],
+            spacing: Spacing.mobile[scale],
+            control: Control.mobile[scale],
+          };
+        }),
+      },
+      {
+        dest: 'mobile/styles/scaleBeta.ts',
+        data: mapValues(scaleConfig, (_, scale) => {
+          return {
+            typography: Type.mobileBeta[scale],
             spacing: Spacing.mobile[scale],
             control: Control.mobile[scale],
           };
