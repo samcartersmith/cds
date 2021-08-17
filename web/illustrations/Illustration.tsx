@@ -9,6 +9,7 @@ export const Illustration = memo(function Illustration({
   name,
   width,
   height,
+  testID,
   ...props
 }: IllustrationBaseProps) {
   const spectrum = useSpectrumConditional({ light: 'light', dark: 'dark' }) ?? 'light';
@@ -26,6 +27,7 @@ export const Illustration = memo(function Illustration({
       alt={name}
       width={width}
       height={height}
+      data-testid={testID}
       {...props}
     />
   );

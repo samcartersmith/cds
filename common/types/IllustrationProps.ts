@@ -4,37 +4,40 @@ import {
   IllustrationSpotRectangleNames,
   IllustrationPictogramNames,
   IllustrationSpotSquareNames,
+  IllustrationVariant,
 } from './Illustration';
 import { SharedProps } from './SharedProps';
 
+type IllustrationNames =
+  | IllustrationHeroSquareNames
+  | IllustrationSpotRectangleNames
+  | IllustrationPictogramNames
+  | IllustrationSpotSquareNames;
+
 export type IllustrationBaseProps = {
-  name:
-    | IllustrationHeroSquareNames
-    | IllustrationSpotRectangleNames
-    | IllustrationPictogramNames
-    | IllustrationSpotSquareNames;
+  name: IllustrationNames;
   /** @internal Do not use! */
   width?: number;
   /** @internal Do not use! */
   height?: number;
 } & SharedProps;
 
-export type HeroSquareProps = {
-  name: IllustrationHeroSquareNames;
-  dimension?: keyof typeof illustrationSizes.heroSquare;
+export type Dimension<T extends IllustrationVariant> = keyof typeof illustrationSizes[T];
+
+export type IllustrationProps<
+  Name extends IllustrationNames,
+  Variant extends IllustrationVariant,
+> = {
+  /** Name of illustration as defined in Figma */
+  name: Name;
+  /** Size of illustration given that the size constraint is available in Figma */
+  dimension?: Dimension<Variant>;
 } & SharedProps;
 
-export type SpotSquareProps = {
-  name: IllustrationSpotSquareNames;
-  dimension?: keyof typeof illustrationSizes.spotSquare;
-} & SharedProps;
+export type HeroSquareProps = IllustrationProps<IllustrationHeroSquareNames, 'heroSquare'>;
 
-export type PictogramProps = {
-  name: IllustrationPictogramNames;
-  dimension?: keyof typeof illustrationSizes.pictogram;
-} & SharedProps;
+export type SpotSquareProps = IllustrationProps<IllustrationSpotSquareNames, 'spotSquare'>;
 
-export type SpotRectangleProps = {
-  name: IllustrationSpotRectangleNames;
-  dimension?: keyof typeof illustrationSizes.spotRectangle;
-} & SharedProps;
+export type PictogramProps = IllustrationProps<IllustrationPictogramNames, 'pictogram'>;
+
+export type SpotRectangleProps = IllustrationProps<IllustrationSpotRectangleNames, 'spotRectangle'>;

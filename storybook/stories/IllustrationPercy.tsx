@@ -28,7 +28,7 @@ export function createStories(
         justifyContent="flex-start"
         alignItems="center"
       >
-        {sortedImg.map(nameAndSpectrum => {
+        {sortedImg.map((nameAndSpectrum) => {
           const [name, spectrum] = nameAndSpectrum.split('-');
           return (
             <VStack gap={1} alignItems="center">

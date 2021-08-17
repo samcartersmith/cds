@@ -1,4 +1,5 @@
 import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
 import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
 import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
@@ -17,6 +18,19 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 <ComponentDetails componentName="CellMedia" templateName="a11y" />
 
 ## Props
+
+### color
+
+<ApiDetails
+  componentName="CellMedia"
+  propertyName="color"
+  required={false}
+  defaultValue=""
+  mobileOptions={['foreground', 'foregroundMuted', 'primary']}
+  webOptions={['foreground', 'foregroundMuted', 'primary']}
+/>
+
+<ComponentDetails componentName="CellMedia" templateName="prop-color" />
 
 ### illustration
 
@@ -375,7 +389,7 @@ import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
 
 ### testID
 
-Used to locate this element in unit and end-to-end tests.
+Used to locate this element in unit and end-to-end tests. This prop follows the precedent set by React Native Web which uses a testID prop to emit a data-testid attribute on the element
 
 <ApiDetails
   componentName="CellMedia"
@@ -410,25 +424,6 @@ Used to locate this element in unit and end-to-end tests.
   defaultValue=""
   mobileOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
   webOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
-/>
-
-### color
-
-<ApiDetails
-  componentName="CellMedia"
-  propertyName="color"
-  required={false}
-  defaultValue="foreground"
-  mobileOptions={[
-    'foreground',
-    'foregroundMuted',
-    'primary'
-  ]}
-  webOptions={[
-    'foreground',
-    'foregroundMuted',
-    'primary',
-  ]}
 />
 
 <ComponentDetails componentName="CellMedia" templateName="prop-type" />
