@@ -9,7 +9,10 @@ export const xHeight = {
   Inter: 0.55,
 };
 
-export const fallbackStack =
+export type FallbackStack =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
+
+export const fallbackStack: FallbackStack =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
 
 export const cssFontFamilies = {

@@ -2,8 +2,9 @@ import { kebabCase, mapKeys, mapValues, pascalCase, toCssVar, toCssVarFn } from 
 import {
   typographyConfig,
   TypographyConfig,
-  cssFontFamilies,
   fontWeights,
+  FallbackStack,
+  fallbackStack,
 } from 'eng/shared/design-system/codegen/configs/typographyConfig';
 
 import { scaleConfig } from '../configs/scaleConfig';
@@ -12,7 +13,7 @@ import { calculateLetterSpacing, calculateMinFontSize, round } from './utils';
 type FontFamily = 'Graphik' | 'Inter';
 
 type TypographyStyles = {
-  fontFamily?: `${FontFamily}-${keyof typeof fontWeights}`;
+  fontFamily?: `${FontFamily}-${keyof typeof fontWeights}` | `${FontFamily}, ${FallbackStack}`;
   // Mobile doesn't need font weight because the font family should include the weight
   fontWeight?: typeof fontWeights[keyof typeof fontWeights];
   fontSize: string | number;
@@ -95,6 +96,7 @@ const calculateVariantStyle = (
   } else {
     // web doesn't need font-family in scale styles.
     styles.fontWeight = fontWeights[fontWeight];
+    styles.fontFamily = `${fontFamily}, ${fallbackStack}` as const;
   }
 
   return styles;
@@ -134,7 +136,7 @@ export const typographyCss = mapValues(
     ...mapValues(stylesObject, (_, cssProperty) =>
       toCssVarFn(`${variantName}-${cssProperty}` as const),
     ),
-    'font-family': cssFontFamilies[typographyConfig[variantName].fontFamily],
+    'font-family': toCssVarFn(`${variantName}-font-family`),
   }),
 );
 

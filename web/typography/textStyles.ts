@@ -9,8 +9,7 @@ export const display1 = css`
   line-height: var(--display1-line-height);
   letter-spacing: var(--display1-letter-spacing);
   font-weight: var(--display1-font-weight);
-  font-family: 'Graphik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--display1-font-family);
 `;
 
 export const display2 = css`
@@ -18,8 +17,7 @@ export const display2 = css`
   line-height: var(--display2-line-height);
   letter-spacing: var(--display2-letter-spacing);
   font-weight: var(--display2-font-weight);
-  font-family: 'Graphik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--display2-font-family);
 `;
 
 export const title1 = css`
@@ -27,8 +25,7 @@ export const title1 = css`
   line-height: var(--title1-line-height);
   letter-spacing: var(--title1-letter-spacing);
   font-weight: var(--title1-font-weight);
-  font-family: 'Graphik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--title1-font-family);
 `;
 
 export const title2 = css`
@@ -36,8 +33,7 @@ export const title2 = css`
   line-height: var(--title2-line-height);
   letter-spacing: var(--title2-letter-spacing);
   font-weight: var(--title2-font-weight);
-  font-family: 'Graphik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--title2-font-family);
 `;
 
 export const title3 = css`
@@ -45,8 +41,7 @@ export const title3 = css`
   line-height: var(--title3-line-height);
   letter-spacing: var(--title3-letter-spacing);
   font-weight: var(--title3-font-weight);
-  font-family: 'Graphik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--title3-font-family);
 `;
 
 export const headline = css`
@@ -54,8 +49,7 @@ export const headline = css`
   line-height: var(--headline-line-height);
   letter-spacing: var(--headline-letter-spacing);
   font-weight: var(--headline-font-weight);
-  font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--headline-font-family);
 `;
 
 export const body = css`
@@ -63,8 +57,7 @@ export const body = css`
   line-height: var(--body-line-height);
   letter-spacing: var(--body-letter-spacing);
   font-weight: var(--body-font-weight);
-  font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--body-font-family);
 `;
 
 export const label1 = css`
@@ -73,8 +66,7 @@ export const label1 = css`
   letter-spacing: var(--label1-letter-spacing);
   text-transform: var(--label1-text-transform);
   font-weight: var(--label1-font-weight);
-  font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--label1-font-family);
 `;
 
 export const label2 = css`
@@ -83,8 +75,7 @@ export const label2 = css`
   letter-spacing: var(--label2-letter-spacing);
   text-transform: var(--label2-text-transform);
   font-weight: var(--label2-font-weight);
-  font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--label2-font-family);
 `;
 
 export const caption = css`
@@ -93,8 +84,7 @@ export const caption = css`
   letter-spacing: var(--caption-letter-spacing);
   text-transform: var(--caption-text-transform);
   font-weight: var(--caption-font-weight);
-  font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--caption-font-family);
 `;
 
 export const legal = css`
@@ -102,6 +92,5 @@ export const legal = css`
   line-height: var(--legal-line-height);
   letter-spacing: var(--legal-letter-spacing);
   font-weight: var(--legal-font-weight);
-  font-family: 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--legal-font-family);
 `;
