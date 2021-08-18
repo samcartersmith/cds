@@ -8,7 +8,7 @@ type RootSpectrumProviderProps = {
   value?: Spectrum | null;
 };
 
-/** The top most spectrum provider to be rendered in RootThemeProvider. Can be updated via useRootSpectrumUdpater.  */
+/** The top most spectrum provider to be rendered in DevicePreferencesProvider. Can be updated via useRootSpectrumUdpater.  */
 export const RootSpectrumProvider: React.FC<RootSpectrumProviderProps> = memo(
   ({ children, value }) => {
     const [spectrum, setSpectrum] = useState<Spectrum>(value ?? DEFAULT_SPECTRUM);

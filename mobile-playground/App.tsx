@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 
 import 'react-native-gesture-handler';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
-import { RootThemeProvider } from '@cbhq/cds-mobile/system/RootThemeProvider';
+import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
 import { useTypographyStyles } from '@cbhq/cds-mobile/typography';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -119,9 +119,9 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <RootThemeProvider>
+    <DevicePreferencesProvider>
       <AppContent />
-    </RootThemeProvider>
+    </DevicePreferencesProvider>
   );
 };
 

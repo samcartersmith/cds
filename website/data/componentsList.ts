@@ -34,6 +34,7 @@ export const components = [
   'Tooltip',
   'Link',
   'Text',
+  'DevicePreferencesProvider',
   'Interactable',
   'Pressable',
   'PressableOpacity',

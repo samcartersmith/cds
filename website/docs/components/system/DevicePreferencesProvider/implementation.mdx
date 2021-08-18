@@ -1,0 +1,52 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/system/DevicePreferencesProvider](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/system/DevicePreferencesProvider.tsx)
+
+<ComponentDetails componentName="DevicePreferencesProvider" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="DevicePreferencesProvider" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="DevicePreferencesProvider" templateName="a11y" />
+
+## Props
+
+### scale
+
+Only use if you are passing in a value from an in-app user preference since this will override device scale preference. You are also able to update the root scale imperatively via useRootScaleUpdater.
+
+<ApiDetails
+  componentName="DevicePreferencesProvider"
+  propertyName="scale"
+  required={false}
+  defaultValue=""
+  mobileOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+  webOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+/>
+
+<ComponentDetails componentName="DevicePreferencesProvider" templateName="prop-scale" />
+
+### spectrum
+
+Pass in value from React Natives useColorScheme or some user preference. You are also able to update the root spectrum imperatively via useRootSpectrumUpdater.
+
+<ApiDetails
+  componentName="DevicePreferencesProvider"
+  propertyName="spectrum"
+  required={false}
+  defaultValue=""
+  mobileOptions={['dark', 'light']}
+  webOptions={['dark', 'light']}
+/>
+
+<ComponentDetails componentName="DevicePreferencesProvider" templateName="prop-spectrum" />
+
+<ComponentDetails componentName="DevicePreferencesProvider" templateName="outro" />

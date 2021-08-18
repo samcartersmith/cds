@@ -59,6 +59,7 @@ module.exports = {
         'hooks/usePaletteValueToRgbaString',
         'hooks/useScaleConditional',
         'hooks/useSparklinePath',
+        'hooks/useDeviceSpectrum',
         'hooks/useSpectrum',
         'hooks/useSpectrumConditional',
       ],

@@ -8,7 +8,7 @@ type RootScaleProviderProps = {
   value?: Scale | null;
 };
 
-/** The top most scale provider to be rendered in RootThemeProvider. Can be updated via useRootScaleUpdater. */
+/** The top most scale provider to be rendered in DevicePreferencesProvider. Can be updated via useRootScaleUpdater. */
 export const RootScaleProvider: React.FC<RootScaleProviderProps> = memo(({ children, value }) => {
   const [scale, setScale] = useState<Scale>(value ?? DEFAULT_SCALE);
   const context = useContext(RootScaleContext);

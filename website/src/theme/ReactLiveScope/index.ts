@@ -36,6 +36,7 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 import { useStatusButtons } from './useStatusButtons';
+import {useDeviceSpectrum} from "@cbhq/cds-web/hooks/useDeviceSpectrum";
 
 // Add react-live imports you need here
 const ReactLiveScope = {
@@ -52,6 +53,7 @@ const ReactLiveScope = {
   usePalette,
   usePaletteConfig,
   usePaletteValueToRgbaString,
+  useDeviceSpectrum,
   useScale,
   useScaleConditional,
   useSparklinePath,

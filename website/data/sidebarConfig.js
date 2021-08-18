@@ -104,6 +104,7 @@ module.exports = {
       label: 'System',
       collapsed: true,
       items: [
+        'components/system/DevicePreferencesProvider/device-preferences-provider',
         'components/system/Interactable/interactable',
         'components/system/Pressable/pressable',
         'components/system/PressableOpacity/pressable-opacity',

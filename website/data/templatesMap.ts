@@ -886,6 +886,39 @@ export const Text = {
   ),
 };
 
+export const DevicePreferencesProvider = {
+  'device-preferences-provider': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/device-preferences-provider.mdx'
+      )
+  ),
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/implementation.mdx'
+      )
+  ),
+  intro: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/intro.mdx'
+        )
+  ),
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/a11y.mdx'
+        )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/usage.mdx'
+        )
+  ),
+};
+
 export const Interactable = {
   a11y: React.lazy(
     () =>

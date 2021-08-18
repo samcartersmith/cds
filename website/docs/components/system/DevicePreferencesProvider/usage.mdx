@@ -1,0 +1,23 @@
+### No overrides
+
+If the user is on the web it will look at the `(prefers-color-scheme: dark)` media query to determine the spectrum. The web does not pull the scale from the browser.
+
+If the user is on mobile then it will look at the device pixel ratio to determine the scale and the react native `useColorScheme()` hook to determine the spectrum.
+
+```jsx
+<DevicePreferencesProvider>
+  <App />
+</DevicePreferencesProvider>
+```
+
+### Overrides
+
+Overrides are useful when you want to inject an app preference that was saved to the device or local storage.
+```jsx
+const spectrum = localStorage?.getItem("theme") ?? undefined;
+const scale = localStorage?.getItem("scale") ?? undefined;
+
+<DevicePreferencesProvider scale={scale} spectrum={spectrum}>
+  <App />
+</DevicePreferencesProvider>
+```
