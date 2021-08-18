@@ -9,3 +9,4 @@ export * from './spectrum/useSpectrum';
 export * from './SystemProvider';
 export * from './types';
 export * from './utils/join';
+export * from './beta';

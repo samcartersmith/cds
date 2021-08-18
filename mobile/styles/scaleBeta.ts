@@ -10,8 +10,8 @@ export const xSmall = {
     title1: { fontSize: 25, lineHeight: 32, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 25, lineHeight: 32, fontFamily: 'CoinbaseDisplay-Regular' },
     title3: { fontSize: 17, lineHeight: 24, fontFamily: 'CoinbaseSans-Medium' },
-    headline: { fontSize: 14, fontFamily: 'CoinbaseSans-Medium' },
-    body: { fontSize: 14, fontFamily: 'CoinbaseSans-Regular' },
+    headline: { fontSize: 14, lineHeight: 20, fontFamily: 'CoinbaseSans-Medium' },
+    body: { fontSize: 14, lineHeight: 20, fontFamily: 'CoinbaseSans-Regular' },
     label1: {
       fontSize: 11,
       lineHeight: 12,
