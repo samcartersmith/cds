@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 
-import { DevicePreferencesProvider } from '@cbhq/cds-web/system';
+import {DevicePreferencesProvider, ThemeProvider} from '@cbhq/cds-web/system';
 import useTheme from '@theme/hooks/useTheme';
 import ThemeContext from '@theme/ThemeContext';
 import {getThemeStorage} from "@cbhq/cds-website/src/theme/ThemeStorage";
@@ -20,9 +20,11 @@ export const RootThemeProvider: React.FC = memo((props) => {
   const storedSpectrum: Spectrum = getThemeStorage() ?? undefined; // make sure null isn't used in the prop
   return (
     <DevicePreferencesProvider spectrum={storedSpectrum}>
-      <DocusaurusThemeProvider>
-        {props.children}
-      </DocusaurusThemeProvider>
+      <ThemeProvider>
+        <DocusaurusThemeProvider>
+          {props.children}
+        </DocusaurusThemeProvider>
+      </ThemeProvider>
     </DevicePreferencesProvider>
   );
 })
