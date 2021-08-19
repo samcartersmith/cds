@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.20.0 (8/19/2021, 09:59 AM PST)
+
+#### 💥 Breaking
+
+- RootThemeProvider for CDS web. [#29706](https://github.cbhq.net/mono/repo/pull/29706), [CDS-701](https://jira.coinbase-corp.com/browse/CDS-701)
+
+#### 🚀 Updates
+
+- Add BetaProvider to opt into new features in CDS. [#29300](https://github.cbhq.net/mono/repo/pull/29300)
+
+#### 🐞 Fixes
+
+- Added data-testid to all Illustrations. Cleaned up Illustration Props using Generics. [#29758](https://github.cbhq.net/mono/repo/pull/29758), [CDS-855](https://jira.coinbase-corp.com/browse/CDS-855)
+- Add icon color to CellMedia. [#29464](https://github.cbhq.net/mono/repo/pull/29464), [CDS-826](https://jira.coinbase-corp.com/browse/CDS-826)
+
 ## 0.19.4 (8/16/2021, 08:53 AM PST)
 
 #### 🚀 Updates

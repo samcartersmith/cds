@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.2 (8/19/2021, 09:59 AM PST)
+
+#### 🚀 Updates
+
+- Add beta css and scales. [#29303](https://github.cbhq.net/mono/repo/pull/29303)
+
 ## 0.2.1 (8/16/2021, 08:53 AM PST)
 
 #### 🐞 Fixes

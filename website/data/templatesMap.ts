@@ -887,6 +887,12 @@ export const Text = {
 };
 
 export const DevicePreferencesProvider = {
+  a11y: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/a11y.mdx'
+      )
+  ),
   'device-preferences-provider': React.lazy(
     () =>
       import(
@@ -903,19 +909,13 @@ export const DevicePreferencesProvider = {
     () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/intro.mdx'
-        )
-  ),
-  a11y: React.lazy(
-    () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/a11y.mdx'
-        )
+      )
   ),
   usage: React.lazy(
     () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/DevicePreferencesProvider/usage.mdx'
-        )
+      )
   ),
 };
 
