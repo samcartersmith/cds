@@ -4,7 +4,7 @@ import * as Figma from './api';
 
 export type ExportFormat = 'jpg' | 'png' | 'svg' | 'pdf';
 
-export const CDS_PERSONAL_ACCESS_TOKEN = '222741-d8a3b21a-4271-43ef-80d8-b7dea84175ee';
+export const CDS_PERSONAL_ACCESS_TOKEN = '224335-7b27ab1f-8dc5-4d2e-9c86-ac73e691e97a';
 
 /**
  * Make sure that scale is within the range 0.01-4, since those

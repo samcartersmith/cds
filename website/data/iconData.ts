@@ -149,6 +149,8 @@ export const iconNames = [
   'orderHistory',
   'backArrow',
   'forwardArrow',
+  'upArrow',
+  'downArrow',
   'warning',
   'chatBubble',
   'caretRight',
@@ -165,6 +167,12 @@ export const iconNames = [
   'clipboard',
   'dex',
   'pyramid',
+  'bookmarkInactive',
+  'bookmarkActive',
+  'report',
+  'airdrop',
+  'fork',
+  'unknown',
 ] as const;
 
 export const navigationIconNames = [
@@ -188,4 +196,5 @@ export const navigationIconNames = [
   'settings',
   'scanQrCode',
   'chartBar',
+  'earn',
 ] as const;

@@ -145,6 +145,8 @@ export type IconName =
   | 'orderHistory'
   | 'backArrow'
   | 'forwardArrow'
+  | 'upArrow'
+  | 'downArrow'
   | 'warning'
   | 'chatBubble'
   | 'caretRight'
@@ -160,7 +162,13 @@ export type IconName =
   | 'keyboard'
   | 'clipboard'
   | 'dex'
-  | 'pyramid';
+  | 'pyramid'
+  | 'bookmarkInactive'
+  | 'bookmarkActive'
+  | 'report'
+  | 'airdrop'
+  | 'fork'
+  | 'unknown';
 
 export type NavigationIconName =
   | 'chartCandles'
@@ -182,7 +190,8 @@ export type NavigationIconName =
   | 'wallet'
   | 'settings'
   | 'scanQrCode'
-  | 'chartBar';
+  | 'chartBar'
+  | 'earn';
 
 export type NavigationIconInternalName =
   | 'chartCandlesInactive'
@@ -224,4 +233,6 @@ export type NavigationIconInternalName =
   | 'scanQrCodeActive'
   | 'scanQrCodeInactive'
   | 'chartBarInactive'
-  | 'chartBarActive';
+  | 'chartBarActive'
+  | 'earnInactive'
+  | 'earnActive';

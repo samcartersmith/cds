@@ -2447,6 +2447,18 @@
     "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡",
     "documentationLinks": []
   },
+  "7053:91": {
+    "key": "cb97441c0273a2704f61bd64cc80990c19f6d695",
+    "name": "Icon/upArrow_24",
+    "description": "arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺",
+    "documentationLinks": []
+  },
+  "7053:96": {
+    "key": "956100ed41790e84ae1a81f7efb9cef3208a9145",
+    "name": "Icon/downArrow_24",
+    "description": "arrow, downwards, down, direction, 👇, ⬇️, 🔻",
+    "documentationLinks": []
+  },
   "6432:147": {
     "key": "80e94676f71e142c3724ab6bf131a48b5d520abb",
     "name": "Icon/warning_24",
@@ -2471,6 +2483,18 @@
     "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡",
     "documentationLinks": []
   },
+  "7053:93": {
+    "key": "a284e3c5a8192460501dad18253a170e306c788a",
+    "name": "Icon/upArrow_12",
+    "description": "arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺",
+    "documentationLinks": []
+  },
+  "7053:94": {
+    "key": "e72acaba82183f55c7951568d3211e524fe84b34",
+    "name": "Icon/downArrow_12",
+    "description": "arrow, downwards, down, direction, 👇, ⬇️, 🔻",
+    "documentationLinks": []
+  },
   "6432:149": {
     "key": "f3c0db181ecf80a9766dba239e629a8a4800fd82",
     "name": "Icon/warning_12",
@@ -2493,6 +2517,18 @@
     "key": "188dc5ee5d4ecaa092fffad113ca1acfd27489f4",
     "name": "Icon/forwardArrow_16",
     "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡",
+    "documentationLinks": []
+  },
+  "7053:92": {
+    "key": "06a08f9f151a05ace1fec102c48b670a853263f0",
+    "name": "Icon/upArrow_16",
+    "description": "arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺",
+    "documentationLinks": []
+  },
+  "7053:95": {
+    "key": "0bc0fc1a1f576b04bc1ca39b614dc7fd0f329944",
+    "name": "Icon/downArrow_16",
+    "description": "arrow, downwards, down, direction, 👇, ⬇️, 🔻",
     "documentationLinks": []
   },
   "6432:148": {
@@ -3513,6 +3549,150 @@
     "key": "0bd0cd049e8c4b8bf5e4b926595e53df8d013d86",
     "name": "Icon/pyramid_12",
     "description": "triangle, chart, levels, progress, important, pyramid, data, visualization, numbers, graph, 📊, 📉, 📈, 🔺",
+    "documentationLinks": []
+  },
+  "6980:65": {
+    "key": "58cff64aca67cab3373cde340c77acfcc76f552e",
+    "name": "Icon/bookmark_24/inactive",
+    "description": "unbookmark, unsave, 🔖, inactive",
+    "documentationLinks": []
+  },
+  "6980:66": {
+    "key": "780f5d3c291e740b1c21e5f99b7b157d964238f3",
+    "name": "Icon/bookmark_16/inactive",
+    "description": "unbookmark, unsave, 🔖, inactive",
+    "documentationLinks": []
+  },
+  "6980:68": {
+    "key": "12a1de903d2abd01441350b222444aedd9ab312e",
+    "name": "Icon/bookmark_12/inactive",
+    "description": "unbookmark, unsave, 🔖, inactive",
+    "documentationLinks": []
+  },
+  "6980:69": {
+    "key": "4086b8f18bb15bee3a7190658fd6e2397f58f2b5",
+    "name": "Icon/bookmark_24/active",
+    "description": "bookmark, save, 🔖, active",
+    "documentationLinks": []
+  },
+  "6980:70": {
+    "key": "2fb893605c922dd00456a881dbdf0375db9972b4",
+    "name": "Icon/bookmark_16/active",
+    "description": "bookmark, save, 🔖, active",
+    "documentationLinks": []
+  },
+  "6980:71": {
+    "key": "94498a4b4fd2e334ea19837fa98b9a8b2e21bd52",
+    "name": "Icon/bookmark_12/active",
+    "description": "bookmark, save, 🔖, active",
+    "documentationLinks": []
+  },
+  "6980:74": {
+    "key": "0f9d5c07da4c7e6e8c4d00f2c5690328f3fcbe3d",
+    "name": "Icon/report_24",
+    "description": "flag, report, 🏳",
+    "documentationLinks": []
+  },
+  "6980:73": {
+    "key": "f07a2908076b166dd32d64c915b1bbfee7b1da41",
+    "name": "Icon/report_16",
+    "description": "flag, report, 🏳",
+    "documentationLinks": []
+  },
+  "6980:72": {
+    "key": "f80675fa39c8cb71df8cbf776f521715c84368fa",
+    "name": "Icon/report_12",
+    "description": "flag, report, 🏳",
+    "documentationLinks": []
+  },
+  "6996:145": {
+    "key": "32ca8457bc2724901368a1cef6fe9bd92a1dea40",
+    "name": "NavigationIcon/earn_24/inactive",
+    "description": "navigation, speciality, earn, medal, star, rewards, 🥇, 🏆, ✨, ❇️",
+    "documentationLinks": []
+  },
+  "6996:148": {
+    "key": "2c8bb2088a2b63602e09b8d5d81bdf20b275abc3",
+    "name": "NavigationIcon/earn_24/active",
+    "description": "navigation, speciality, earn, medal, star, rewards, 🥇, 🏆, ✨, ❇️",
+    "documentationLinks": []
+  },
+  "6996:146": {
+    "key": "218f5702d8725fef451f079f1f70e699b1646216",
+    "name": "NavigationIcon/earn_16/inactive",
+    "description": "navigation, speciality, earn, medal, star, rewards, 🥇, 🏆, ✨, ❇️",
+    "documentationLinks": []
+  },
+  "6996:149": {
+    "key": "d234fec7c9afc048849d62b926d85cf75a8f7d82",
+    "name": "NavigationIcon/earn_16/active",
+    "description": "navigation, speciality, earn, medal, star, rewards, 🥇, 🏆, ✨, ❇️",
+    "documentationLinks": []
+  },
+  "7000:75": {
+    "key": "91e663289898b590f12a13d05ab7d1fa0464c77b",
+    "name": "NavigationIcon/earn_12/inactive",
+    "description": "navigation, speciality, earn, medal, star, rewards, 🥇, 🏆, ✨, ❇️",
+    "documentationLinks": []
+  },
+  "7000:76": {
+    "key": "120e74b1dfa4257e86a00c8b8100b8268923fc24",
+    "name": "NavigationIcon/earn_12/active",
+    "description": "navigation, speciality, earn, medal, star, rewards, 🥇, 🏆, ✨, ❇️",
+    "documentationLinks": []
+  },
+  "7045:74": {
+    "key": "f2e60ee5e960faf471225d74ec71cbccf3cdd6fc",
+    "name": "Icon/airdrop_24",
+    "description": "airdrop, 🪂, parachute, send",
+    "documentationLinks": []
+  },
+  "7045:75": {
+    "key": "a050813798f2183a57f8cb3f2e60f67d5fc426f4",
+    "name": "Icon/airdrop_16",
+    "description": "airdrop, 🪂, parachute, send",
+    "documentationLinks": []
+  },
+  "7045:76": {
+    "key": "e17eda663d1781a1365899dcca0ace356105f2f7",
+    "name": "Icon/airdrop_12",
+    "description": "airdrop, 🪂, parachute, send",
+    "documentationLinks": []
+  },
+  "7045:79": {
+    "key": "aed6c65476abde8f5af29185a526b822885779d6",
+    "name": "Icon/fork_24",
+    "description": "fork, 🍴, ⑂, ⑃, ⋔, ⫚",
+    "documentationLinks": []
+  },
+  "7045:78": {
+    "key": "f84d304231f9c16566bc1574c5cd5c29f8244c4d",
+    "name": "Icon/fork_16",
+    "description": "fork, 🍴, ⑂, ⑃, ⋔, ⫚",
+    "documentationLinks": []
+  },
+  "7045:77": {
+    "key": "404b0bc423f44f1042a0cf683b14f03fc022c5cb",
+    "name": "Icon/fork_12",
+    "description": "fork, 🍴, ⑂, ⑃, ⋔, ⫚",
+    "documentationLinks": []
+  },
+  "7045:80": {
+    "key": "69ef7d3dba0a09c013b5f138a286cf463ce08527",
+    "name": "Icon/unknown_24",
+    "description": "unknown, question, question mark, ?, mystery, ❓, ❔, ?, ⁇, ﹖, ︖",
+    "documentationLinks": []
+  },
+  "7045:81": {
+    "key": "2869744d36fb3b9be2271b44d0d57ecc6195046f",
+    "name": "Icon/unknown_16",
+    "description": "unknown, question, question mark, ?, mystery, ❓, ❔, ?, ⁇, ﹖, ︖",
+    "documentationLinks": []
+  },
+  "7045:82": {
+    "key": "759ff500e26ae06753a5023f0a70d3f44362ac59",
+    "name": "Icon/unknown_12",
+    "description": "unknown, question, question mark, ?, mystery, ❓, ❔, ?, ⁇, ﹖, ︖",
     "documentationLinks": []
   }
 }
