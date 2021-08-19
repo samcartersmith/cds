@@ -2,7 +2,7 @@ const path = require('path');
 
 const HtmlPlugin = require('html-webpack-plugin');
 
-const { modifyConfigForStorybook } = require('../../../utils/webpack/modifyConfigForStorybook');
+const { modifyConfigForStorybook } = require('@cbhq/webpack-utils');
 
 module.exports = ({ config, environmentFile }) => {
   return modifyConfigForStorybook({

@@ -34,7 +34,12 @@ DATA = append_cds_web_deps([
     "//:babel.config.js",
     "//eng/shared/design-system:build_source",
     "//eng/shared/design-system:linaria.config.js",
-    "//eng/shared/utils:webpack/addRootModeUpwardToBabelLoaders.js",
+    # webpack
+    "@npm//@cbhq/webpack-utils",
+    "@npm//@pmmmwh/react-refresh-webpack-plugin",
+    "@npm//dotenv-webpack",
+    "@npm//mini-css-extract-plugin",
+    "@npm//node-polyfill-webpack-plugin",
     # dependencies
     "@npm//react",
     "@npm//react-dom",

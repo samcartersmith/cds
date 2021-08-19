@@ -1,6 +1,4 @@
-const {
-  addRootModeUpwardToBabelLoaders,
-} = require('../../../shared/utils/webpack/addRootModeUpwardToBabelLoaders');
+const { addRootModeUpwardToBabelLoaders } = require('@cbhq/webpack-utils');
 
 module.exports = () => {
   return {
