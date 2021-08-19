@@ -475,6 +475,48 @@ export const NavigationIcon = {
   ),
 };
 
+export const SubBrandLogoMark = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/SubBrandLogoMark/implementation.mdx'
+      )
+  ),
+  'sub-brand-logo-mark': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/SubBrandLogoMark/sub-brand-logo-mark.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/SubBrandLogoMark/usage.mdx'
+      )
+  ),
+};
+
+export const SubBrandLogoWordmark = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/SubBrandLogoWordmark/implementation.mdx'
+      )
+  ),
+  'sub-brand-logo-wordmark': React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/SubBrandLogoWordmark/sub-brand-logo-wordmark.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/icons/SubBrandLogoWordmark/usage.mdx'
+      )
+  ),
+};
+
 export const HeroSquare = {
   'hero-square': React.lazy(
     () =>

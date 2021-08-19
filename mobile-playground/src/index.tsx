@@ -22,6 +22,7 @@ const components = [
   { key: 'Link' },
   { key: 'ListCell' },
   { key: 'ListCellFallback' },
+  { key: 'Logo' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
   { key: 'Overlay' },

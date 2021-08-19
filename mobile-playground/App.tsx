@@ -46,6 +46,7 @@ import TextLegalScreen from './src/TextLegal';
 import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
+import LogoScreen from './src/Logo';
 
 const Stack = createStackNavigator();
 
@@ -91,6 +92,7 @@ const AppContent = () => {
         <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />
         <Stack.Screen name="Lottie" component={LottieScreen} />
         <Stack.Screen name="LottieStatusAnimation" component={LottieStatusAnimationScreen} />
+        <Stack.Screen name="Logo" component={LogoScreen} />
         <Stack.Screen name="Overlay" component={OverlayScreen} />
         <Stack.Screen name="Pressable" component={PressableScreen} />
         <Stack.Screen name="PressableOpacity" component={PressableOpacityScreen} />

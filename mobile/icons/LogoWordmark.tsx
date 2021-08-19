@@ -4,11 +4,11 @@ import { useLogoWordmark, LogoWordmarkParams } from '@cbhq/cds-common/hooks/useL
 import Svg, { Path } from 'react-native-svg';
 
 export const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
-  const { viewBox, path } = useLogoWordmark({ foreground });
+  const { viewBox, path, color } = useLogoWordmark({ foreground });
 
   return (
     <Svg viewBox={viewBox}>
-      <Path d={path} />
+      <Path d={path} fill={color} />
     </Svg>
   );
 });

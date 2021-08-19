@@ -53,6 +53,8 @@ module.exports = {
       items: [
         'components/icons/Icon/icon',
         'components/icons/NavigationIcon/navigation-icon',
+        'components/icons/SubBrandLogoMark/sub-brand-logo-mark',
+        'components/icons/SubBrandLogoWordmark/sub-brand-logo-wordmark',
         'components/icons/logo',
       ],
     },

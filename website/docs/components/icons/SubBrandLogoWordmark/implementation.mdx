@@ -1,0 +1,48 @@
+import { ApiDetails } from '@cbhq/cds-website/components/ApiDetails';
+import { Badge } from '@cbhq/cds-website/components/Badge';
+import { ComponentDetails } from '@cbhq/cds-website/components/ComponentDetails';
+import { RightSidebar } from '@cbhq/cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/icons/SubBrandLogoWordmark](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/icons/SubBrandLogoWordmark.tsx)
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="a11y" />
+
+## Props
+
+### foreground
+
+<ApiDetails
+  componentName="SubBrandLogoWordmark"
+  propertyName="foreground"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="prop-foreground" />
+
+### type
+
+<ApiDetails
+  componentName="SubBrandLogoWordmark"
+  propertyName="type"
+  required={true}
+  defaultValue=""
+  mobileOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+  webOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+/>
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="prop-type" />
+
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="outro" />

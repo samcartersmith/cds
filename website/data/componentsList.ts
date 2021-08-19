@@ -19,6 +19,8 @@ export const components = [
   'Switch',
   'Icon',
   'NavigationIcon',
+  'SubBrandLogoMark',
+  'SubBrandLogoWordmark',
   'HeroSquare',
   'Pictogram',
   'SpotRectangle',

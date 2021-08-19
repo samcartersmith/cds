@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { useSpectrumConditional } from './useSpectrumConditional';
 
-const blue = '#0052FF';
-const black = '#0A0B0D';
-const white = '#FFFFFF';
+export const blue = '#0052FF';
+export const black = '#0A0B0D';
+export const white = '#FFFFFF';
 
 export type LogoMarkParams = {
   size?: 16 | 32;
