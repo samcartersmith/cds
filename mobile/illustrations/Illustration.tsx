@@ -7,11 +7,7 @@ import { SvgCssUri } from 'react-native-svg';
 
 import { IllustrationFilePathMap } from './RelativePathMap';
 
-export const Illustration = memo(function Illustration({
-  name,
-  testID,
-  ...props
-}: IllustrationBaseProps) {
+export const Illustration = memo(function Illustration({ name, ...props }: IllustrationBaseProps) {
   const imageMetadata = useMemo(() => IllustrationFilePathMap[name], [name]);
 
   const image = (useSpectrumConditional({ light: imageMetadata.light, dark: imageMetadata.dark }) ??
@@ -40,7 +36,6 @@ export const Illustration = memo(function Illustration({
       source={image ?? imageMetadata.light}
       resizeMode="contain"
       accessibilityIgnoresInvertColors
-      data-testid={testID}
       {...props}
     />
   );
