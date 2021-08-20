@@ -74,6 +74,7 @@ export const NavigationListItem = memo(
             <NavigationIcon
               name={icon}
               size="s"
+              active={active}
               badge={
                 <Badge
                   dangerouslySetClassName={getResponsiveStyles(showForCondensed)}
