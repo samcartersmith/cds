@@ -1,0 +1,18 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Two Factor Web
+sidebar_label: Two Factor Web
+---
+
+import { AdopterDetails } from '@cbhq/cds-website/components/AdoptionTracker/AdopterDetails';
+import { AdopterComponentsProvider } from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+import { AdopterProjectInfoProvider } from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+
+<AdopterProjectInfoProvider {...require('@site/static/data/adoption/two-factor-web/project.json')}>
+  <AdopterComponentsProvider
+    {...require('@site/static/data/adoption/two-factor-web/components.json')}
+  >
+    <AdopterDetails />
+  </AdopterComponentsProvider>
+</AdopterProjectInfoProvider>

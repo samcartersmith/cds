@@ -37,6 +37,11 @@ export HELP_TEXT
 help:
 	@echo "$$HELP_TEXT"
 
+
+.PHONY: clean
+clean:
+	bazel clean --expunge
+
 .PHONY: build.common
 build.common:
 	bazel build common:package
@@ -126,7 +131,11 @@ prepare.illustrations:
 
 .PHONY: prepare.adoption
 prepare.adoption:
-	bazel run :prepare_adoption -- --root=$(PWD) --projects=${projects}
+	bazel run :prepare_adoption -- NODE_OPTIONS='--trace-deprecation --abort-on-uncaught-exception --max-old-space-size=4096' --tempDir=${MONOREPO_PATH}/eng/shared/design-system/codegen/adoption/temp
+
+.PHONY: debug.adoption
+debug.adoption:
+	make prepare.adoption debug=1
 
 .PHONY: start.story
 start.story:

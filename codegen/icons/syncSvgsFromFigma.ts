@@ -4,12 +4,11 @@ import chalk from 'chalk';
 import fs from 'fs';
 import ora from 'ora';
 import path from 'path';
-import { promisify } from 'util';
 
 import { ComponentMetadata } from '../figma/api';
 import { FigmaClient } from '../figma/client';
 import { buildTemplates } from '../utils/buildTemplates';
-import { generateFromTemplate } from '../utils/generateFromTemplate';
+import { writeFile } from '../utils/writeFile';
 import { getSourcePath } from '../utils/getSourcePath';
 import { createIconSet } from './createIconSet';
 import { createUnicodeMap } from './createUnicodeMap';
@@ -20,7 +19,6 @@ const ICONS_FILE_ID = 'ZPu9gtLB5KTkzazHcf9Sfi';
 const NODE_ID = '1107:22364';
 
 const figmaClient = FigmaClient(CDS_UTILITY_ACCT_PERSONAL_ACCESS_TOKEN);
-const writeFile = promisify(fs.writeFile);
 
 type IconName = {
   size: string;
@@ -145,7 +143,7 @@ async function syncIcons() {
         const fileName = `${unicode}-${name}-${size}.svg`;
         if (sizeMap[size][name]) {
           writePromises.push(
-            writeFile(path.join(OUT_DIR, fileName), sizeMap[size][name] as string),
+            fs.promises.writeFile(path.join(OUT_DIR, fileName), sizeMap[size][name] as string),
           );
         } else {
           throw new Error(`Please update manifest to remove or rename ${name}`);
@@ -170,7 +168,7 @@ async function syncIcons() {
     };
 
     writePromises.push(
-      generateFromTemplate({
+      writeFile({
         template: 'typescript.ejs',
         dest: 'common/types/IconName.ts',
         data: {
@@ -203,7 +201,7 @@ async function syncIcons() {
     writePromises.push(buildTemplates(templates));
 
     writePromises.push(
-      generateFromTemplate({
+      writeFile({
         template: 'objectMap.ejs',
         data: { manifest: { lastUnicode, unicodeMap } },
         config: { disableAsConst: true },
@@ -212,7 +210,7 @@ async function syncIcons() {
     );
 
     writePromises.push(
-      writeFile(
+      fs.promises.writeFile(
         await getSourcePath('codegen/icons/iconsManifest.json'),
         JSON.stringify(iconComponents, null, 2),
       ),

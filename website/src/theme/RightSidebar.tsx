@@ -1,14 +1,14 @@
-import { createContext, memo, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, memo, useContext, useEffect, useMemo, useState } from 'react';
 
 import { SetState } from '@cbhq/cds-common/types';
 import { noop } from '@cbhq/cds-utils';
 
 // Copied from docusaurus types
-export interface TOCItem {
+export type TOCItem = {
   readonly value: string;
   readonly id: string;
   readonly children: TOCItem[];
-}
+};
 
 type RightSidebarItems = TOCItem[] | undefined;
 type RightSidebarContextValue = {

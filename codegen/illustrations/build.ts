@@ -9,7 +9,7 @@ import path from 'path';
 import { optimize, loadConfig, OptimizeOptions } from 'svgo';
 
 import { FigmaClient, CDS_PERSONAL_ACCESS_TOKEN } from '../figma/client';
-import { generateFromTemplate } from '../utils/generateFromTemplate';
+import { writeFile } from '../utils/writeFile';
 import {
   IllustrationSummary,
   IllustrationProps,
@@ -356,7 +356,7 @@ const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
     modifiedIllustrations: modifiedIllustrations.sort(),
   };
 
-  await generateFromTemplate({
+  await writeFile({
     template: 'objectMap.ejs',
     data: { illustrationMetadata },
     config: { disableAsConst: true },
@@ -365,7 +365,7 @@ const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
 };
 
 const createManifestFile = async (destPath: string) => {
-  await generateFromTemplate({
+  await writeFile({
     template: 'objectMap.ejs',
     data: { manifestData: localManifestData },
     config: { disableAsConst: true },
@@ -380,7 +380,7 @@ const createTypes = async (names: IllustrationNamesMap, variants: string[]) => {
   }, {} as Record<string, string>);
 
   try {
-    await generateFromTemplate({
+    await writeFile({
       template: 'typescript.ejs',
       dest: 'common/types/Illustration.ts',
       data: {
@@ -408,7 +408,7 @@ const createVersionNumManifest = async (
     {} as VersionNumManifestStruct,
   );
 
-  await generateFromTemplate({
+  await writeFile({
     template: 'objectMap.ejs',
     data: { versionNumManifest },
     config: { disableAsConst: true },
@@ -425,7 +425,7 @@ const outputImgBasedOnMostRecentlyUpdated = (
 ) => {
   try {
     for (const dest of outPaths) {
-      generateFromTemplate({
+      writeFile({
         template: 'objectMap.ejs',
         dest,
         data: {
@@ -442,7 +442,7 @@ const createConstants = async (names: IllustrationNamesMap, outPaths: string[]) 
   try {
     await Promise.all(
       outPaths.map(async (dest) =>
-        generateFromTemplate({
+        writeFile({
           template: 'objectMap.ejs',
           dest,
           data: names,
@@ -497,7 +497,7 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
     >,
   );
 
-  await generateFromTemplate({
+  await writeFile({
     template: 'objectMapUnevaled.ejs',
     dest: `${outDirPath}/RelativePathMap.ts`,
     data: {

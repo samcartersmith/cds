@@ -1,3 +1,4 @@
+import React from 'react';
 import OriginalTOC from '@theme-original/TOC';
 
 import { useRightSidebar, TOCItem } from './RightSidebar';

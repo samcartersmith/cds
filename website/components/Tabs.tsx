@@ -1,0 +1,35 @@
+import React, { useMemo, memo } from 'react';
+import DocTabItem from '@theme/TabItem';
+import DocTabs from '@theme/Tabs';
+
+export type TabsProps<T extends string = string> = {
+  id: string;
+  defaultTab: T;
+  values: {
+    label: string;
+    id: T;
+    content: React.ReactNode;
+  }[];
+};
+
+export const Tabs = memo(({ id, defaultTab, values }: TabsProps) => {
+  const children = useMemo(() => {
+    return values.map(item => (
+      <DocTabItem key={item.id} value={item.id}>
+        {item.content}
+      </DocTabItem>
+    ));
+  }, [values]);
+
+  return (
+    <DocTabs
+      groupId={id}
+      defaultValue={defaultTab}
+      values={useMemo(() => values.map(item => ({ label: item.label, value: item.id })), [values])}
+    >
+      {children}
+    </DocTabs>
+  );
+});
+
+Tabs.displayName = 'Tabs';

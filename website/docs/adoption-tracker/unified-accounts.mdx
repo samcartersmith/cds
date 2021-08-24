@@ -1,0 +1,20 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Unified Accounts
+sidebar_label: Unified Accounts
+---
+
+import { AdopterDetails } from '@cbhq/cds-website/components/AdoptionTracker/AdopterDetails';
+import { AdopterComponentsProvider } from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+import { AdopterProjectInfoProvider } from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+
+<AdopterProjectInfoProvider
+  {...require('@site/static/data/adoption/unified-accounts/project.json')}
+>
+  <AdopterComponentsProvider
+    {...require('@site/static/data/adoption/unified-accounts/components.json')}
+  >
+    <AdopterDetails />
+  </AdopterComponentsProvider>
+</AdopterProjectInfoProvider>

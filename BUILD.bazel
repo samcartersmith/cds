@@ -250,7 +250,7 @@ ts_node(
     args = [
         "-r tsconfig-paths/register",
         "--files",
-        "eng/shared/design-system/codegen/adoption/build.ts",
+        "eng/shared/design-system/codegen/adoption/prepare.ts",
         "--prettierConfig $(execpath //:.prettierrc)",
     ],
     data = CODEGEN_DATA,

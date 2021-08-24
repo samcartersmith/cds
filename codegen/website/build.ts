@@ -154,7 +154,7 @@ async function buildWebsite() {
     'website/implementation.ejs': implementationTemplate,
     'objectMap.ejs': [
       {
-        dest: 'website/data/sidebarConfig.js',
+        dest: 'website/data/sidebar/components.js',
         data: {
           components: prepareSidebarConfig(docgenData),
         },

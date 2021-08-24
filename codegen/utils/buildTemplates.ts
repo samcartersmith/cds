@@ -1,6 +1,6 @@
 import { AnyObject } from '@cbhq/cds-utils';
 
-import { generateFromTemplate, TemplateMap } from './generateFromTemplate';
+import { writeFile, TemplateMap } from './writeFile';
 import { logError } from './logError';
 
 export const buildTemplates = async (templates: TemplateMap) => {
@@ -23,7 +23,7 @@ export const buildTemplates = async (templates: TemplateMap) => {
       });
     });
 
-    await Promise.all(templateInputs.map(generateFromTemplate));
+    await Promise.all(templateInputs.map(writeFile));
   } catch (err) {
     logError((err as Error).message);
   }
