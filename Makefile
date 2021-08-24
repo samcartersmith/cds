@@ -18,6 +18,7 @@ Help:
   $$ make new.package name=<name>   -- Scaffold a new package with the defined name.
   $$ make start.story               -- Start storybook local dev server.
   $$ make start.website             -- Start docusaurus website.
+  $$ make start.mobile              -- Start react native packager.
   $$ make build.story               -- Build storybook.
   $$ make build.website             -- Build docusaurus website.
   $$ make serve.website             -- Serve docusaurus website build locally.
@@ -28,6 +29,7 @@ Help:
   $$ make prepare.adoption          -- Prepare adoption numbers
   $$ make release                   -- Automatically update CHANGELOG based on PR titles
   $$ make typecheck                 -- Run global typecheck
+  $$ make setup.mobile              -- Setup mobile dependencies
 endef
 export HELP_TEXT
 

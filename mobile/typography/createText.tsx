@@ -46,7 +46,7 @@ export type TextProps = {
   OmitStyle<RNTextProps, 'selectable'> &
   DangerouslySetStyle<TextStyle>;
 
-export const createText = (name: Typography) => {
+export const createText = (name: Typography, inherit?: boolean) => {
   const TextComponent: React.FC<TextProps> = function TextComponent({
     children,
     color = 'foreground',
@@ -120,7 +120,7 @@ export const createText = (name: Typography) => {
       () => [
         spacingStyles,
         textAlign,
-        textStyles,
+        !inherit && textStyles,
         textTransform,
         {
           color: dangerouslySetColor ?? palette[color],

@@ -114,4 +114,24 @@ describe('Link', () => {
     );
     expect(getByTestId(testID)).toHaveAttribute('href', url);
   });
+
+  it('inherits text styles', () => {
+    const url = 'https://www.coinbase.com/';
+    const { getByText } = render(
+      <Link variant="inherit" to={url} testID={testID}>
+        Child
+      </Link>,
+    );
+    expect(getByText('Child')).toHaveClass('inherit');
+  });
+
+  it('inherits by default', () => {
+    const url = 'https://www.coinbase.com/';
+    const { getByText } = render(
+      <Link to={url} testID={testID}>
+        Child
+      </Link>,
+    );
+    expect(getByText('Child')).toHaveClass('inherit');
+  });
 });

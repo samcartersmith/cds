@@ -28,6 +28,15 @@
 ```
 
 ```jsx live
+<TextTitle1 as="span">
+  {'Inherit text styles from parent text '}
+  <Link variant="inherit" to="https://www.google.com">
+    {'like this'}
+  </Link>
+</TextTitle1>
+```
+
+```jsx live
 <VStack alignItems="flex-start" gap={3}>
   <Link variant="title1" to="https://www.google.com/" openInNewWindow>
     Open window in existing tab

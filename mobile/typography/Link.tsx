@@ -15,6 +15,7 @@ import { TextLegal } from './TextLegal';
 import { TextTitle1 } from './TextTitle1';
 import { TextTitle2 } from './TextTitle2';
 import { TextTitle3 } from './TextTitle3';
+import { TextInherited } from './TextInherited';
 
 const TYPOGRAPHY_MAP: Record<LinkTypography, React.ComponentType<TextProps>> = {
   body: TextBody,
@@ -26,6 +27,7 @@ const TYPOGRAPHY_MAP: Record<LinkTypography, React.ComponentType<TextProps>> = {
   title2: TextTitle2,
   title3: TextTitle3,
   legal: TextLegal,
+  inherit: TextInherited,
 };
 export type LinkProps = {
   /** Callback to fire when pressed */
@@ -58,7 +60,7 @@ export const Link = memo(
     color = 'primary',
     testID,
     onPress,
-    variant = 'headline',
+    variant = 'inherit',
     forceOpenOutsideApp = false,
     preventRedirectionIntoApp = false,
     readerMode = false,

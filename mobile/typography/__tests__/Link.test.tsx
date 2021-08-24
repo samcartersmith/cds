@@ -93,4 +93,23 @@ describe('Link', () => {
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.readerMode).toEqual(true);
   });
+
+  it('removes text style when inherited', () => {
+    const { getByTestId } = render(
+      <Link variant="inherit" to={URL} testID={TEST_ID}>
+        Child
+      </Link>,
+    );
+    // specifically test text style, check line 124 in createText.tsx
+    expect(getByTestId(TEST_ID).props.style[2]).toBe(false);
+  });
+
+  it('inherits by default', () => {
+    const { getByTestId } = render(
+      <Link to={URL} testID={TEST_ID}>
+        Child
+      </Link>,
+    );
+    expect(getByTestId(TEST_ID).props.style[2]).toBe(false);
+  });
 });

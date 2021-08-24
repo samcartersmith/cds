@@ -18,6 +18,7 @@ import { TextProps, HTMLNonHeadingTextTags } from './TextProps';
 import { TextTitle1 } from './TextTitle1';
 import { TextTitle2 } from './TextTitle2';
 import { TextTitle3 } from './TextTitle3';
+import { TextInherited } from './TextInherited';
 
 const link = css`
   cursor: pointer;
@@ -42,6 +43,7 @@ const TYPOGRAPHY_MAP: Record<
   title2: TextTitle2,
   title3: TextTitle3,
   legal: TextLegal,
+  inherit: TextInherited,
 };
 export type LinkProps = {
   /**
@@ -64,11 +66,12 @@ export const Link = memo(function Link({
   to,
   openInNewWindow = false,
   testID,
-  color = 'primary',
   rel,
   renderContainer,
-  variant = 'headline',
+  variant = 'inherit',
   onPress,
+  // text props
+  color = 'primary',
   ...props
 }: LinkProps) {
   const linkRef = useRef(null);

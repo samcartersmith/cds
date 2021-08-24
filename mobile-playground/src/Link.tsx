@@ -6,6 +6,7 @@ import { Link } from '@cbhq/cds-mobile/typography/Link';
 import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
 import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 import { TextLabel1 } from '@cbhq/cds-mobile/typography/TextLabel1';
+import { TextTitle1 } from '@cbhq/cds-mobile/typography/TextTitle1';
 import { capitalize } from '@cbhq/cds-utils';
 import { useWebBrowserOpener } from '@cbhq/cds-mobile/hooks/useWebBrowserOpener';
 
@@ -112,6 +113,12 @@ const LinkScreen = function LinkScreen() {
             Go to Coinbase
           </Link>
         </TextBody>
+      </Example>
+      <Example inline>
+        <TextHeadline>Inherit parent text styles</TextHeadline>
+        <TextTitle1 align="center">
+          Go here: <Link to="https://www.coinbase.com/">Go to Coinbase</Link>
+        </TextTitle1>
       </Example>
       <Example inline>
         <TextHeadline>onPress and to used together</TextHeadline>

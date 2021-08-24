@@ -11,3 +11,4 @@ export * from './TextLabel2';
 export * from './TextCaption';
 export * from './TextLegal';
 export * from './TextProps';
+export * from './TextInherited';

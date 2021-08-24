@@ -12,12 +12,17 @@ import { Link } from '../Link';
 ## Color
 
 <Canvas isColumn withToolbar>
-  <Story name="Default" decorators={[withStoryLabel('Default (Headline)')]}>
+  <Story name="Default" decorators={[withStoryLabel('Default (Inherited)')]}>
     <div>
       <Link to="https://www.google.com/">Default</Link>
       <br />
       <Link onClick={() => {}}>As a button</Link>
     </div>
+  </Story>
+  <Story name="Variant Body" decorators={[withStoryLabel('Variant (Body)')]}>
+    <Link variant="body" to="https://www.google.com/">
+      Body
+    </Link>
   </Story>
   <Story name="Negative Color" decorators={[withStoryLabel('Negative Color (Headline)')]}>
     <div>
@@ -39,6 +44,16 @@ import { Link } from '../Link';
           Hello
         </Link>
       </Type.TextBody>
+    </div>
+  </Story>
+  <Story
+    name="inherit parent text styles"
+    decorators={[withStoryLabel('Inherit parent text styles')]}
+  >
+    <div>
+      <Type.TextTitle1 as="span">
+        Go here: <Link to="https://www.coinbase.com">Hello</Link>
+      </Type.TextTitle1>
     </div>
   </Story>
 </Canvas>

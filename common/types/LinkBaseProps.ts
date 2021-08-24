@@ -1,7 +1,7 @@
 import { PaletteForeground } from './Palette';
 import { Typography } from './Typography';
 
-export type LinkTypography = Exclude<Typography, 'display1' | 'display2'>;
+export type LinkTypography = Exclude<Typography, 'display1' | 'display2'> | 'inherit';
 
 export type LinkBaseProps = {
   /** URL that this link goes to when pressed. */
@@ -12,6 +12,9 @@ export type LinkBaseProps = {
   accessibilityLabel?: string;
   /** Children to render within the link. */
   children: NonNullable<React.ReactNode>;
-  /** Specify inner text type */
+  /**
+   * Specify typography of the text
+   * @default inherit
+   */
   variant?: LinkTypography;
 };

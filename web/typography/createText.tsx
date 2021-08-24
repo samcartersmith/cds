@@ -18,7 +18,7 @@ const currentColor = css`
   color: currentColor;
 `;
 
-export const createText = <E extends HTMLTextTags>(name: Typography) => {
+export const createText = <E extends HTMLTextTags>(name: Typography | 'inherit') => {
   const TextComponent = <T extends E>({
     as,
     children,
