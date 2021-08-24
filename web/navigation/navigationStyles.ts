@@ -20,7 +20,7 @@ export const gridForSidebar = css`
   }
 
   @media (${devices.phone}) {
-    grid-template-columns: 0px auto;
+    grid-template-columns: 0 auto;
   }
 `;
 
@@ -42,6 +42,14 @@ export const sidebarItemStyles = css`
   white-space: nowrap;
   /* To ensure focus style is not cut off when tabbing */
   margin-bottom: 3px;
+`;
+
+// ul padding reset and handle nested ul, will break if nested > 2 levels
+export const sidebarListReset = css`
+  padding-left: 0;
+  ul {
+    padding-left: 0;
+  }
 `;
 
 const visuallyHidden = `
