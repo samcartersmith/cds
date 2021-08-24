@@ -20,12 +20,11 @@ export const TabItem = memo(function TabItem({ label, active, value: _, ...props
   return (
     <Pressable
       backgroundColor={colorAlias}
-      borderColor={colorAlias}
       borderRadius="pill"
-      borderWidth="button"
       role="tab"
       type="button"
       className={buttonResets}
+      noScaleOnPress
       {...props}
     >
       <TextLabel1 spacing={1} as="p" color={active ? 'primary' : 'foreground'}>

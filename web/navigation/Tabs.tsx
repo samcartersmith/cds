@@ -40,7 +40,7 @@ export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children 
   );
 
   return (
-    <HStack role="tablist" gap={0.5}>
+    <HStack role="tablist" gap={2}>
       {tabChildren}
     </HStack>
   );
