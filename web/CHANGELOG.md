@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.19.1 (8/24/2021, 02:31 PM PST)
+
+#### 🚀 Updates
+
+- Link inherit text styles from parent. [#29611](https://github.cbhq.net/mono/repo/pull/29611), [CDS-793](https://jira.coinbase-corp.com/browse/CDS-793)
+- LogoSubBrand component. [#30128](https://github.cbhq.net/mono/repo/pull/30128), [CDS-728](https://jira.coinbase-corp.com/browse/CDS-728)
+
+#### 🐞 Fixes
+
+- Spacing and Interactable underlay in Web Tabs. [#30510](https://github.cbhq.net/mono/repo/pull/30510), [CDS-676](https://jira.coinbase-corp.com/browse/CDS-676)
+- Navigation Sidebar UL reset padding. [#30305](https://github.cbhq.net/mono/repo/pull/30305)
+- Asset Hub - Quick UI fixes. [#30250](https://github.cbhq.net/mono/repo/pull/30250)
+
 ## 0.19.0 (8/19/2021, 09:59 AM PST)
 
 #### 💥 Breaking

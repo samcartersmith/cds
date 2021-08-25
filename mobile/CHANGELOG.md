@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.1 (8/24/2021, 02:31 PM PST)
+
+#### 🚀 Updates
+
+- Link inherit text styles from parent. [#29611](https://github.cbhq.net/mono/repo/pull/29611), [CDS-793](https://jira.coinbase-corp.com/browse/CDS-793)
+- LogoSubBrand component. [#30128](https://github.cbhq.net/mono/repo/pull/30128), [CDS-728](https://jira.coinbase-corp.com/browse/CDS-728)
+
 ## 0.24.0 (8/19/2021, 09:59 AM PST)
 
 #### 💥 Breaking
