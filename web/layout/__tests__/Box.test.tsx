@@ -11,6 +11,7 @@ function expectClassName<K extends keyof BoxProps>(
   classPrefix = DEFAULT_CLASS,
 ) {
   values.forEach((value) => {
+    // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" class name for \`${prop}\` prop`, () => {
       const { container, rerender } = render(<Box>Child</Box>);
 

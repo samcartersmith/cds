@@ -2,7 +2,7 @@ import { largestTriangleThreeBucket } from '../largestTriangleThreeBucket';
 
 describe('largestTriangleThreeBucket', () => {
   it('enforces threshold', () => {
-    expect(largestTriangleThreeBucket([0, 1, 2, 3], 2).length).toBe(2);
+    expect(largestTriangleThreeBucket([0, 1, 2, 3], 2)).toHaveLength(2);
   });
 
   it('downsamples correctly', () => {

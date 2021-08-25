@@ -29,12 +29,10 @@ describe('useLottieColorFilters', () => {
   });
 
   it('ensures the color values are mapped to hex version of palette colors', () => {
-    expect(getPaletteColors(result).includes(colorToHex(mockPalette.foregroundMuted))).toEqual(
-      true,
-    );
+    expect(getPaletteColors(result)).toContain(colorToHex(mockPalette.foregroundMuted));
   });
 
   it('ensures the palette aliases are mapped to palette names', () => {
-    expect(getPaletteAliases(result).includes('palette_foregroundMuted')).toEqual(true);
+    expect(getPaletteAliases(result)).toContain('palette_foregroundMuted');
   });
 });

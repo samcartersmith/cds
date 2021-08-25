@@ -16,7 +16,7 @@ describe('useWebBrowserOpener', () => {
 
     await result.current(URL);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
+    expect(openWebBrowserSpy).toHaveBeenCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
   });
 
   it('pass user specified options to openWebBrowser', async () => {
@@ -31,7 +31,7 @@ describe('useWebBrowserOpener', () => {
 
     await result.current(URL, options);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, options);
+    expect(openWebBrowserSpy).toHaveBeenCalledWith(URL, options);
   });
 
   it('test that spectrum is optional', async () => {
@@ -45,7 +45,7 @@ describe('useWebBrowserOpener', () => {
 
     await result.current(URL, options);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, {
+    expect(openWebBrowserSpy).toHaveBeenCalledWith(URL, {
       ...DEFAULT_OPEN_WEB_BROWSER_OPTIONS,
       ...options,
     });
@@ -61,7 +61,7 @@ describe('useWebBrowserOpener', () => {
 
     await result.current(URL);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
+    expect(openWebBrowserSpy).toHaveBeenCalledWith(URL, DEFAULT_OPEN_WEB_BROWSER_OPTIONS);
   });
 
   it('test all the InAppBrowser configuration, making sure that all of them can be used', async () => {
@@ -101,7 +101,7 @@ describe('useWebBrowserOpener', () => {
 
     await result.current(URL, options);
 
-    expect(openWebBrowserSpy).toBeCalledWith(URL, {
+    expect(openWebBrowserSpy).toHaveBeenCalledWith(URL, {
       ...DEFAULT_OPEN_WEB_BROWSER_OPTIONS,
       ...options,
     });

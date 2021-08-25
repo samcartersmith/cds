@@ -46,6 +46,7 @@ function expectClassName<K extends keyof TextProps>(
   otherClasses?: string,
 ) {
   values.forEach((value) => {
+    // eslint-disable-next-line jest/require-top-level-describe
     it(`${TextComponent.displayName} will set "${value}" class name for \`${prop}\` prop`, () => {
       const { container } = render(
         <TextComponent as="p" {...{ [prop]: value }}>

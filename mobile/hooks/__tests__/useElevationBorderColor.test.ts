@@ -38,7 +38,7 @@ describe('useElevationBorderColor', () => {
     const { result } = renderHook(() => useElevationBorderColor('primary'), {
       wrapper: LightModeProvider,
     });
-    expect(result.current).toEqual(undefined);
+    expect(result.current).toBeUndefined();
   });
 
   it('light mode - Android - returns no border color if transparent', () => {
@@ -46,13 +46,13 @@ describe('useElevationBorderColor', () => {
     const { result } = renderHook(() => useElevationBorderColor('transparent'), {
       wrapper: LightModeProvider,
     });
-    expect(result.current).toEqual(undefined);
+    expect(result.current).toBeUndefined();
   });
 
   it('light mode - Android - returns no border color if undefined', () => {
     mockPlatform('android');
     const { result } = renderHook(() => useElevationBorderColor(), { wrapper: LightModeProvider });
-    expect(result.current).toEqual(undefined);
+    expect(result.current).toBeUndefined();
   });
 
   /** Dark mode on iOS */

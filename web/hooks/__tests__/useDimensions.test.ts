@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-floating-promises */
-/* eslint-disable no-console */
 
 import { renderHook, act } from '@testing-library/react-hooks';
 
@@ -34,6 +33,7 @@ describe('useDimensions', () => {
     unobserve: () => {},
     disconnect,
   }));
+  const mockResizeObserverEntry = jest.fn();
 
   /*
     When using the delete operator in strictNullChecks, the operand must now be any, unknown, never, or be optional
@@ -60,7 +60,7 @@ describe('useDimensions', () => {
   beforeAll(() => {
     // @ts-expect-error Shapes dont match
     global.ResizeObserver = mockResizeObserver;
-    global.ResizeObserverEntry = jest.fn();
+    global.ResizeObserverEntry = mockResizeObserverEntry;
   });
 
   it("should not start observe if the target isn't set", () => {
@@ -106,23 +106,23 @@ describe('useDimensions', () => {
   });
 
   it('should use border-box size', () => {
-    console.warn = jest.fn();
+    const warn = jest.spyOn(console, 'warn').mockImplementation();
     let { result } = renderHelper({ useBorderBoxSize: true });
     const contentBoxSize = { blockSize: 100, inlineSize: 100 };
     act(() => {
       triggerObserverCb({ contentBoxSize });
       triggerObserverCb({ contentBoxSize });
     });
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(console.warn).toHaveBeenCalledWith(borderBoxWarn);
+    expect(warn).toHaveBeenCalledTimes(1);
+    expect(warn).toHaveBeenCalledWith(borderBoxWarn);
     expect(result.current.width).toBe(contentBoxSize.blockSize);
     expect(result.current.height).toBe(contentBoxSize.inlineSize);
 
-    console.warn = jest.fn();
+    warn.mockReset();
     result = renderHelper({ useBorderBoxSize: true }).result;
     const borderBoxSize = { blockSize: 110, inlineSize: 110 };
     act(() => triggerObserverCb({ contentBoxSize, borderBoxSize }));
-    expect(console.warn).not.toHaveBeenCalledWith(borderBoxWarn);
+    expect(warn).not.toHaveBeenCalledWith(borderBoxWarn);
     expect(result.current.width).toBe(borderBoxSize.blockSize);
     expect(result.current.height).toBe(borderBoxSize.inlineSize);
   });
@@ -250,23 +250,23 @@ describe('useDimensions', () => {
   });
 
   it('should throw resize observer error', () => {
-    console.error = jest.fn();
+    const error = jest.spyOn(console, 'error').mockImplementation();
 
     renderHelper();
-    expect(console.error).not.toHaveBeenCalled();
+    expect(error).not.toHaveBeenCalled();
     deleteResizeObserver();
     renderHelper({ polyfill: mockResizeObserver });
-    expect(console.error).not.toHaveBeenCalled();
+    expect(error).not.toHaveBeenCalled();
 
     renderHelper();
-    expect(console.error).toHaveBeenCalledTimes(1);
-    expect(console.error).toHaveBeenCalledWith(observerErr);
+    expect(error).toHaveBeenCalledTimes(1);
+    expect(error).toHaveBeenCalledWith(observerErr);
 
     // @ts-expect-error Shapes dont match
     global.ResizeObserver = mockResizeObserver;
     deleteResizeObserverEntry();
     renderHelper();
-    expect(console.error).toHaveBeenCalledTimes(2);
+    expect(error).toHaveBeenCalledTimes(2);
   });
 
   it('should use polyfill', () => {

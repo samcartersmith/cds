@@ -33,7 +33,7 @@ describe('openWebBrowser', () => {
       spectrum: 'dark',
       forceOpenOutsideApp: false,
     });
-    expect(selectPlatform).toBeCalledWith({
+    expect(selectPlatform).toHaveBeenCalledWith({
       android: {
         showTitle: true,
         toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, 'dark'),
@@ -67,7 +67,7 @@ describe('openWebBrowser', () => {
       spectrum,
       forceOpenOutsideApp: false,
     });
-    expect(selectPlatform).toBeCalledWith({
+    expect(selectPlatform).toHaveBeenCalledWith({
       android: {
         showTitle: true,
         toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
@@ -102,7 +102,7 @@ describe('openWebBrowser', () => {
       readerMode: true,
       forceOpenOutsideApp: false,
     });
-    expect(selectPlatform).toBeCalledWith({
+    expect(selectPlatform).toHaveBeenCalledWith({
       android: {
         showTitle: true,
         toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
@@ -176,7 +176,7 @@ describe('openWebBrowser', () => {
         'my-custom-header': 'my custom header value',
       },
     });
-    expect(selectPlatform).toBeCalledWith({
+    expect(selectPlatform).toHaveBeenCalledWith({
       android: {
         toolbarColor: paletteValueToHex(paletteConfig.positiveForeground, spectrum),
         secondaryToolbarColor: paletteValueToHex(paletteConfig.lineHeavy, spectrum),

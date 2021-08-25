@@ -22,9 +22,9 @@ describe('getLuminance', () => {
   });
 
   it('returns undefined if color is invalid', () => {
-    expect(getLuminance('')).toEqual(undefined);
-    expect(getLuminance('#')).toEqual(undefined);
-    expect(getLuminance('rgb()')).toEqual(undefined);
-    expect(getLuminance('rgba()')).toEqual(undefined);
+    expect(getLuminance('')).toBeUndefined();
+    expect(getLuminance('#')).toBeUndefined();
+    expect(getLuminance('rgb()')).toBeUndefined();
+    expect(getLuminance('rgba()')).toBeUndefined();
   });
 });
