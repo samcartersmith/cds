@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.21.0 (8/26/2021, 02:47 PM PST)
+
+#### 💥 Breaking
+
+- Date: Aug 26, 2021 - Actions: 2 Updates, 30 New Illustrations. [#31094](https://github.cbhq.net/mono/repo/pull/31094)
+
+#### 🚀 Updates
+
+- Enable Jest rules. [#30635](https://github.cbhq.net/mono/repo/pull/30635)
+
 ## 0.20.1 (8/24/2021, 02:31 PM PST)
 
 #### 🚀 Updates
