@@ -20,6 +20,7 @@ import {
 import { errMsg, successMsg, binaryToBase64, isMetadataEqual } from './utils';
 import { manifestData } from './illustration_manifest';
 import { blacklist } from './blacklist';
+import { modified } from './modified';
 
 const ILLUSTRATION_FILE_ID = 'ay6SCdu5QMjKthzcoPtVOh';
 const NODE_ID = '527:531';
@@ -110,7 +111,7 @@ const loadOneImage = async (
         modifiedIllustrations.push(nameAndSpectrum);
       }
 
-      if (fileStatus === 'modified') return;
+      if (fileStatus === 'modified' && !modified.includes(nameAndSpectrum)) return;
 
       if (exportFormat === 'svg') {
         const optimizedSVG = optimize(String(res.data), svgOptimizerConfig);
