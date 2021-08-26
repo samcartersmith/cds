@@ -14,6 +14,7 @@ export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',
   '@cb/shared',
   '@designSystem',
+  '@cbhq/insto-ui-web',
   '@material-ui',
   'highcharts',
   'react-admin',
@@ -25,7 +26,17 @@ export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   'react-select',
 ];
 
-export const FALLBACK_PRESENTATIONAL_ELEMENTS = ['input', 'button', 'strong', 'svg'];
+export const FALLBACK_PRESENTATIONAL_ELEMENTS = [
+  'input',
+  'button',
+  'select',
+  'strong',
+  'svg',
+  'table',
+  'thead',
+  'tr',
+  'td',
+];
 
 export const FALLBACK_PRESENTATIONAL_ATTRIBUTES = ['className', 'style', 'dangerouslySet'];
 
@@ -185,6 +196,11 @@ export class ProjectParser {
         return result;
       }),
       dependencies: this.dependencies,
+      presentationalElements: this.presentationalElements,
+      presentationalLibraries: this.presentationalLibraries,
+      presentationalAttributes: this.presentationalAttributes,
+      cdsAliases: this.cdsAliases,
+      ignoreDirs: this.ignoreDirs,
     });
   }
 

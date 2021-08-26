@@ -1,27 +1,6 @@
 {
   "cds": [
     {
-      "name": "ButtonGroup",
-      "sourceFile": "@cbhq/cds-web/buttons/ButtonGroup",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/buttons/ButtonGroup",
-      "callSites": {
-        "@growth/cms-consensus-app/components/ActionBar.tsx": 1,
-        "@growth/cms-consensus-app/components/Approval2FA.tsx": 1
-      },
-      "propsWithCallSites": {
-        "accessibilityLabel": {
-          "@growth/cms-consensus-app/components/ActionBar.tsx": 1,
-          "@growth/cms-consensus-app/components/Approval2FA.tsx": 1
-        },
-        "block": {
-          "@growth/cms-consensus-app/components/ActionBar.tsx": 1,
-          "@growth/cms-consensus-app/components/Approval2FA.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
       "totalInstances": 2,
@@ -43,6 +22,27 @@
       }
     },
     {
+      "name": "ButtonGroup",
+      "sourceFile": "@cbhq/cds-web/buttons/ButtonGroup",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/buttons/ButtonGroup",
+      "callSites": {
+        "@growth/cms-consensus-app/components/ActionBar.tsx": 1,
+        "@growth/cms-consensus-app/components/Approval2FA.tsx": 1
+      },
+      "propsWithCallSites": {
+        "accessibilityLabel": {
+          "@growth/cms-consensus-app/components/ActionBar.tsx": 1,
+          "@growth/cms-consensus-app/components/Approval2FA.tsx": 1
+        },
+        "block": {
+          "@growth/cms-consensus-app/components/ActionBar.tsx": 1,
+          "@growth/cms-consensus-app/components/Approval2FA.tsx": 1
+        }
+      }
+    },
+    {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
       "totalInstances": 6,
@@ -50,16 +50,16 @@
       "cds": "@cbhq/cds-web/layout/VStack",
       "callSites": {
         "@growth/cms-consensus-app/components/AppLayout.tsx": 1,
-        "@growth/cms-consensus-app/components/ApprovalLog.tsx": 3,
         "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
+        "@growth/cms-consensus-app/components/ApprovalLog.tsx": 3,
         "@growth/cms-consensus-app/components/Message.tsx": 1
       },
       "propsWithCallSites": {
-        "spacingVertical": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 },
         "width": {
           "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
           "@growth/cms-consensus-app/components/Message.tsx": 1
-        }
+        },
+        "spacingVertical": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 }
       }
     },
     {
@@ -92,46 +92,18 @@
       }
     },
     {
-      "name": "TextBody",
-      "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/typography/TextBody",
-      "callSites": {
-        "@growth/cms-consensus-app/components/ApprovalLog.tsx": 2,
-        "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
-        "@growth/cms-consensus-app/components/Message.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "@growth/cms-consensus-app/components/ApprovalLog.tsx": 2,
-          "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
-          "@growth/cms-consensus-app/components/Message.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextCaption",
-      "sourceFile": "@cbhq/cds-web/typography/TextCaption",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextCaption",
-      "propsWithCallSites": { "as": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 } }
-    },
-    {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
       "totalInstances": 5,
       "totalCallSites": 4,
       "cds": "@cbhq/cds-web/layout/Box",
       "callSites": {
-        "@growth/cms-consensus-app/components/ApprovalLog.tsx": 2,
         "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
-        "@growth/cms-consensus-app/components/Loading.tsx": 1,
-        "@growth/cms-consensus-app/components/Message.tsx": 1
+        "@growth/cms-consensus-app/components/ApprovalLog.tsx": 2,
+        "@growth/cms-consensus-app/components/Message.tsx": 1,
+        "@growth/cms-consensus-app/components/Loading.tsx": 1
       },
       "propsWithCallSites": {
-        "spacingVertical": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 },
         "spacing": {
           "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
           "@growth/cms-consensus-app/components/Message.tsx": 1
@@ -148,8 +120,36 @@
         "background": {
           "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
           "@growth/cms-consensus-app/components/Message.tsx": 1
+        },
+        "spacingVertical": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextBody",
+      "sourceFile": "@cbhq/cds-web/typography/TextBody",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/typography/TextBody",
+      "callSites": {
+        "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
+        "@growth/cms-consensus-app/components/ApprovalLog.tsx": 2,
+        "@growth/cms-consensus-app/components/Message.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
+          "@growth/cms-consensus-app/components/ApprovalLog.tsx": 2,
+          "@growth/cms-consensus-app/components/Message.tsx": 1
         }
       }
+    },
+    {
+      "name": "TextCaption",
+      "sourceFile": "@cbhq/cds-web/typography/TextCaption",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextCaption",
+      "propsWithCallSites": { "as": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 } }
     },
     {
       "name": "TextTitle3",
@@ -173,8 +173,35 @@
       }
     }
   ],
-  "presentational": [],
+  "presentational": [
+    {
+      "name": "StrictMode",
+      "sourceFile": "react/StrictMode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "StrictMode"
+    },
+    {
+      "name": "LogEntry",
+      "sourceFile": "@growth/cms-consensus-app/components/ApprovalLog.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "LogEntry",
+      "propsWithCallSites": {
+        "event": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 },
+        "timestamp": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 },
+        "key": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 }
+      }
+    }
+  ],
   "other": [
+    {
+      "name": "ConsensusApp",
+      "sourceFile": "@growth/cms-consensus-app/ConsensusApp",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "sdk": { "@growth/cms-consensus-app/index.tsx": 1 } }
+    },
     {
       "name": "AppProviders",
       "sourceFile": "@growth/cms-consensus-app/components/AppProviders",
@@ -187,19 +214,6 @@
       "sourceFile": "@growth/cms-consensus-app/components/AppLayout",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "StrictMode",
-      "sourceFile": "react/StrictMode",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ConsensusApp",
-      "sourceFile": "@growth/cms-consensus-app/ConsensusApp",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "sdk": { "@growth/cms-consensus-app/index.tsx": 1 } }
     },
     {
       "name": "ActionButton",
@@ -262,17 +276,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "initialValue": { "@growth/cms-consensus-app/components/AppProviders.tsx": 1 }
-      }
-    },
-    {
-      "name": "LogEntry",
-      "sourceFile": "@growth/cms-consensus-app/components/ApprovalLog.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "event": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 },
-        "timestamp": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 },
-        "key": { "@growth/cms-consensus-app/components/ApprovalLog.tsx": 1 }
       }
     }
   ]

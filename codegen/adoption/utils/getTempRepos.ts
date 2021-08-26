@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import { argv } from 'yargs';
-import * as fs from 'fs';
+import fs from 'fs';
 import { uniq } from 'lodash';
 import { promisify } from 'util';
 import { adopters } from '../config';

@@ -1,0 +1,18 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Unified Login
+sidebar_label: Unified Login
+---
+
+import { AdopterDetails } from '@cbhq/cds-website/components/AdoptionTracker/AdopterDetails';
+import { AdopterComponentsProvider } from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+import { AdopterProjectInfoProvider } from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+
+<AdopterProjectInfoProvider {...require('@site/static/data/adoption/unified-login/project.json')}>
+  <AdopterComponentsProvider
+    {...require('@site/static/data/adoption/unified-login/components.json')}
+  >
+    <AdopterDetails />
+  </AdopterComponentsProvider>
+</AdopterProjectInfoProvider>
