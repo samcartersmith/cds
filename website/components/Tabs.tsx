@@ -26,6 +26,7 @@ export const Tabs = memo(({ id, defaultTab, values }: TabsProps) => {
       groupId={id}
       defaultValue={defaultTab}
       values={useMemo(() => values.map(item => ({ label: item.label, value: item.id })), [values])}
+      lazy
     >
       {children}
     </DocTabs>

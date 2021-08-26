@@ -6,6 +6,9 @@ import { useAdopterComponents } from './hooks/useAdopterComponents';
 import type { AdopterComponents, ComponentData } from './types';
 import { AdopterComponentDetails } from './AdopterComponentDetails';
 import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
+import List, {ListRowProps} from 'react-virtualized/dist/commonjs/List';
+import WindowScroller, {WindowScrollerChildProps} from 'react-virtualized/dist/commonjs/WindowScroller';
+import AutoSizer, {Size} from 'react-virtualized/dist/commonjs/AutoSizer';
 
 type AdopterListCellProps = ComponentData & {
   isActive: boolean;
@@ -41,31 +44,59 @@ export const AdopterComponentsList = memo(({ group }: { group: keyof AdopterComp
   const [activeComponent, setActiveComponent] = useState<ComponentData | undefined>(
     components.length > 0 ? components[0] : undefined,
   );
-  const listCells = useMemo(() => {
-    return components.map((item) => {
-      const { name, sourceFile } = item;
-      const id = `${name}-${sourceFile}`;
-      const activeId = activeComponent
-        ? `${activeComponent.name}-${activeComponent.sourceFile}`
-        : undefined;
-      const isActive = activeId === id;
-      return (
+
+  if (components.length === 0) {
+    return <AdopterComponentsEmptyState />;
+  }
+
+  const Row = ({ index, style }: ListRowProps) => {
+    const item = components[index];
+    const { name, sourceFile } = item;
+    const id = `${name}-${sourceFile}`;
+    const activeId = activeComponent
+      ? `${activeComponent.name}-${activeComponent.sourceFile}`
+      : undefined;
+    const isActive = activeId === id;
+
+    return (
+      <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
         <AdopterListCell
           key={`${name}-${sourceFile}`}
           isActive={isActive}
           setActiveComponent={setActiveComponent}
           {...item}
         />
-      );
-    });
-  }, [activeComponent, components]);
+      </div>
+    );
+  };
 
-  if (components.length === 0) {
-    return <AdopterComponentsEmptyState />;
-  }
   return (
     <HStack alignItems="flex-start" justifyContent="space-between">
-      <VStack flexGrow={1}>{listCells}</VStack>
+      <VStack flexGrow={1}>
+        <div style={{height: `${80*components.length}px`}}>
+          <WindowScroller>
+            {({ height, scrollTop }: WindowScrollerChildProps) => (
+              <AutoSizer>
+                {({ width }: Size) => (
+                  <List
+                    autoHeight
+                    className="List"
+                    height={height}
+                    rowCount={components.length}
+                    rowHeight={80}
+                    rowRenderer={Row}
+                    scrollTop={scrollTop}
+                    width={width}
+                  >
+                    {Row}
+                  </List>
+                )}
+              </AutoSizer>
+            )}
+          </WindowScroller>
+        </div>
+      </VStack>
+
       {activeComponent ? (
         <>
           <Divider direction="vertical" spacingHorizontal={4} />
