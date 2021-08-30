@@ -41,7 +41,10 @@ const calculateVariantStyle = (
 
   // check to see what minimum font sizes are for lowercase and upper case letters
   const minLowerCaseFontSize = Math.ceil(calculateMinFontSize(xHeight));
+  const minLowercaseLineHeight = round(minLowerCaseFontSize + leading);
+
   const minUpperCaseFontSize = Math.ceil(calculateMinFontSize(1));
+  const minUpperCaseLineHeight = round(minUpperCaseFontSize + leading);
 
   const lowercase = {
     fontSize: defaultFontSize,
@@ -55,10 +58,12 @@ const calculateVariantStyle = (
 
   const adjustedLowercase = {
     fontSize: mobile ? minLowerCaseFontSize : `${minLowerCaseFontSize}px`,
+    lineHeight: mobile ? minLowercaseLineHeight : `${minLowercaseLineHeight}px`,
   };
 
   const adjustedUppercase = {
     fontSize: mobile ? minUpperCaseFontSize : `${minUpperCaseFontSize}px`,
+    lineHeight: mobile ? minUpperCaseLineHeight : `${minUpperCaseLineHeight}px`,
     textTransform: 'uppercase',
   };
 
@@ -79,8 +84,6 @@ const calculateVariantStyle = (
   if (mobile) {
     styles.fontFamily = `${fontFamily}-${fontWeight}` as const;
   } else {
-    // lineheight is provided by font
-    delete styles.lineHeight;
     styles.fontWeight = fontWeights[fontWeight];
     styles.fontFamily = `${fontFamily}, ${fallbackStack}` as const;
   }

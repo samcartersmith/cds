@@ -83,7 +83,7 @@ export const typographyConfig = {
   label1: {
     tag: 'div' as const,
     baseFontSize: 14,
-    leading: 1,
+    leading: 3,
     xHeight: xHeight.sans,
     fontFamily: 'CoinbaseSans' as FontFamily,
     fontWeight: 'Medium' as const,
@@ -92,7 +92,7 @@ export const typographyConfig = {
   label2: {
     tag: 'div' as const,
     baseFontSize: 14,
-    leading: 1,
+    leading: 3,
     xHeight: xHeight.sans,
     fontFamily: 'CoinbaseSans' as FontFamily,
     fontWeight: 'Regular' as const,
@@ -102,7 +102,7 @@ export const typographyConfig = {
   caption: {
     tag: 'div' as const,
     baseFontSize: 13,
-    leading: 1,
+    leading: 2,
     xHeight: xHeight.text,
     fontFamily: 'CoinbaseText' as FontFamily,
     fontWeight: 'Medium' as const,
