@@ -18,7 +18,15 @@ const currentColor = css`
   color: currentColor;
 `;
 
-export const createText = <E extends HTMLTextTags>(name: Typography | 'inherit') => {
+const textInherit = css`
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+`;
+
+export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: boolean) => {
   const TextComponent = <T extends E>({
     as,
     children,
@@ -68,7 +76,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography | 'inherit')
       style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
       className: cx(
         typographyResets,
-        textStyles[name],
+        inherit ? textInherit : textStyles[name],
         color === 'currentColor' ? currentColor : foregroundStyles[color],
         disabled && disabledState,
         ...getTypographyStyles({

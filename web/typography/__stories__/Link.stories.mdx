@@ -36,24 +36,24 @@ import { Link } from '../Link';
 ## Nested with other Components
 
 <Canvas isColumn withToolbar>
-  <Story name="wrapped in textbody" decorators={[withStoryLabel('Wrapped in TextBody')]}>
-    <div>
-      <Type.TextBody as="span">
-        Go here:{' '}
-        <Link variant="body" to="https://www.coinbase.com">
-          Hello
-        </Link>
-      </Type.TextBody>
-    </div>
-  </Story>
   <Story
     name="inherit parent text styles"
     decorators={[withStoryLabel('Inherit parent text styles')]}
   >
     <div>
-      <Type.TextTitle1 as="span">
-        Go here: <Link to="https://www.coinbase.com">Hello</Link>
-      </Type.TextTitle1>
+      <Type.TextBody as="span">
+        Go here: <Link to="https://www.coinbase.com">Inherited</Link>
+      </Type.TextBody>
+    </div>
+  </Story>
+  <Story name="different text style" decorators={[withStoryLabel('Different text styles')]}>
+    <div>
+      <Type.TextBody as="span">
+        Go here:{' '}
+        <Link variant="title3" to="https://www.coinbase.com">
+          Title3
+        </Link>
+      </Type.TextBody>
     </div>
   </Story>
 </Canvas>

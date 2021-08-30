@@ -94,11 +94,3 @@ export const legal = css`
   font-weight: var(--legal-font-weight);
   font-family: var(--legal-font-family);
 `;
-
-export const inherit = css`
-  font-size: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  font-weight: inherit;
-  font-family: inherit;
-`;

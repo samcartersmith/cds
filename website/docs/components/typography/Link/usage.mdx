@@ -1,5 +1,7 @@
+Default Link text will inherit parent text styles.
+
 ```jsx live
-<Link>Default is headline text</Link>
+<Link>Default is inherited text</Link>
 ```
 
 ```jsx live
@@ -20,20 +22,18 @@
 
 ```jsx live
 <TextBody as="span">
-  {'Nest a link inside a body tag '}
-  <Link variant="body" to="https://www.google.com">
-    {'like this'}
-  </Link>
+  {'Inherit text styles from parent text '}
+  <Link to="https://www.google.com">{'like this'}</Link>
 </TextBody>
 ```
 
 ```jsx live
-<TextTitle1 as="span">
-  {'Inherit text styles from parent text '}
-  <Link variant="inherit" to="https://www.google.com">
+<TextBody as="span">
+  {'Different text styles from parent text '}
+  <Link variant="title3" to="https://www.google.com">
     {'like this'}
   </Link>
-</TextTitle1>
+</TextBody>
 ```
 
 ```jsx live

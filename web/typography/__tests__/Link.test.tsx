@@ -122,7 +122,7 @@ describe('Link', () => {
         Child
       </Link>,
     );
-    expect(getByText('Child')).toHaveClass('inherit');
+    expect(getByText('Child')).toHaveClass('textInherit');
   });
 
   it('inherits by default', () => {
@@ -132,6 +132,6 @@ describe('Link', () => {
         Child
       </Link>,
     );
-    expect(getByText('Child')).toHaveClass('inherit');
+    expect(getByText('Child')).toHaveClass('textInherit');
   });
 });
