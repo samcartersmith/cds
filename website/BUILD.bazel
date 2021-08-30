@@ -1,5 +1,5 @@
-load("@npm//@docusaurus/core:index.bzl", "docusaurus")
 load("//eng/shared/design-system:config.bzl", "append_cds_web_deps")
+load("//tools/js:def.bzl", "docusaurus")
 
 filegroup(
     name = "source",
@@ -21,59 +21,14 @@ filegroup(
     ),
 )
 
-DATA = append_cds_web_deps([
-    ":source",
-    # configs
-    "//:.browserslistrc",
-    "//:tsconfig.json",
-    "//:babel.config.js",
-    "//eng/shared/design-system:build_source",
-    "//eng/shared/design-system:linaria.config.js",
-    # webpack
-    "@npm//@cbhq/webpack-utils",
-    "@npm//@pmmmwh/react-refresh-webpack-plugin",
-    "@npm//dotenv-webpack",
-    "@npm//mini-css-extract-plugin",
-    "@npm//node-polyfill-webpack-plugin",
-    # dependencies
-    "@npm//react",
-    "@npm//react-dom",
-    "@npm//@docusaurus/core",
-    "@npm//@docusaurus/preset-classic",
-    "@npm//@mdx-js/react",
-    "@npm//@docusaurus/theme-live-codeblock",
-    "@npm//react-virtualized",
-    # dev dependencies
-    "@npm//typescript",
-    "@npm//url-loader",
-    "@npm//@babel/preset-typescript",
-    "@npm//babel-plugin-module-resolver",
-    "@npm//babel-plugin-relay",
-    "@npm//@docusaurus/module-type-aliases",
-    # types
-    "@npm//@types/react-helmet",
-    "@npm//@types/react",
-    "@npm//@types/react-dom",
-    "@npm//@types/react-router-dom",
-    "@npm//@types/react-virtualized",
-    "@npm//babel-loader",
-])
-
 docusaurus(
-    name = "build",
-    args = [
-        "build eng/shared/design-system/website",
-        "--out-dir $(@D)",
+    name = "docusaurus",
+    srcs = [
+        ":source",
+        "//eng/shared/design-system:build_source",
+        "//eng/shared/design-system:linaria.config.js",
     ],
-    data = DATA,
-    output_dir = True,
-    visibility = ["//visibility:public"],
-)
-
-docusaurus(
-    name = "serve",
-    args = [
-        "serve eng/shared/design-system/website",
-    ],
-    data = [":build"],
+    deps = append_cds_web_deps([
+        "@npm//react-virtualized",
+    ]),
 )

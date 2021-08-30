@@ -8,9 +8,9 @@ project_settings(
 pkg_zip(
     name = "bundled_source_zip",
     srcs = [
-        "//eng/shared/design-system/website:build",
+        "//eng/shared/design-system/website:docusaurus_build",
     ],
-    remap_paths = {"{gendir}/eng/shared/design-system/website/build": "."},
+    remap_paths = {"{gendir}/eng/shared/design-system/website/docusaurus_build": "."},
 )
 
 syn_deployable(

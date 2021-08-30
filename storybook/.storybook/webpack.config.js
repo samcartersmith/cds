@@ -2,20 +2,22 @@ const path = require('path');
 
 const HtmlPlugin = require('html-webpack-plugin');
 
-const { modifyConfigForStorybook } = require('@cbhq/webpack-utils');
+const { configureForStorybook } = require('@cbhq/webpack-utils');
 
-module.exports = ({ config, environmentFile }) => {
-  return modifyConfigForStorybook({
-    config,
-    environmentFile:
-      environmentFile ||
+module.exports = (storybook) => {
+  const config = configureForStorybook({
+    ...storybook,
+    environmentFile: storybook.environmentFile ||
       path.resolve(__dirname, `.env${process.env.NODE_ENV === 'development' ? '.local' : '.prod'}`),
-    plugins: [
-      new HtmlPlugin({
-        inject: false,
-        filename: 'addon-designs-oauth.html',
-        template: path.resolve(__dirname, './figma_oauth.html'),
-      }),
-    ],
   });
+
+  config.plugins.push(
+    new HtmlPlugin({
+      inject: false,
+      filename: 'addon-designs-oauth.html',
+      template: path.resolve(__dirname, './figma_oauth.html'),
+    }),
+  );
+
+  return config;
 };

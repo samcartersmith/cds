@@ -1,4 +1,4 @@
-const path = require('path');
+const { configureForDocusaurus } = require('@cbhq/webpack-utils');
 
 module.exports = {
   title: 'Coinbase Design System',
@@ -99,8 +99,10 @@ module.exports = {
     ],
   ],
   plugins: [
-    path.resolve(__dirname, './cds-docusaurus-babel-plugin.js'),
-    path.resolve(__dirname, './cds-docusaurus-ts-linaria-plugin.js'),
+    () => ({
+      name: 'cds-docusaurus-plugin',
+      configureWebpack: configureForDocusaurus,
+    }),
   ],
   clientModules: [require.resolve('./global.ts')],
 };

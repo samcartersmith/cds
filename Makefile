@@ -21,7 +21,6 @@ Help:
   $$ make start.mobile              -- Start react native packager.
   $$ make build.story               -- Build storybook.
   $$ make build.website             -- Build docusaurus website.
-  $$ make serve.website             -- Serve docusaurus website build locally.
   $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
   $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
   $$ make prepare.icons             -- Prepare icons
@@ -143,7 +142,7 @@ start.story:
 
 .PHONY: start.website
 start.website:
-	yarn docusaurus start eng/shared/design-system/website
+	bazel run website:docusaurus_serve
 
 .PHONY: build.story
 build.story:
@@ -151,11 +150,7 @@ build.story:
 
 .PHONY: build.website
 build.website:
-	bazel build website:build
-
-.PHONY: serve.website
-serve.website:
-	bazel run website:serve
+	bazel build website:docusaurus_build
 
 .PHONY: deploy.website
 deploy.website:
