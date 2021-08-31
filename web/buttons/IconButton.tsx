@@ -15,7 +15,7 @@ export type IconButtonProps = {
 } & IconButtonBaseProps &
   PressableProps &
   SharedProps &
-  Pick<React.HTMLAttributes<HTMLButtonElement>, 'id'>;
+  Omit<React.HTMLAttributes<HTMLButtonElement>, 'className' | 'style' | 'dangerouslySetInnerHTML'>;
 
 export const IconButton = forwardRef(
   (
