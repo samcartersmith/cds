@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.25.1 (8/30/2021, 05:14 PM PST)
+
+#### 🐞 Fixes
+
+- Re-add line height. [#31337](https://github.cbhq.net/mono/repo/pull/31337)
+
 ## 0.25.0 (8/26/2021, 02:47 PM PST)
 
 #### 💥 Breaking
