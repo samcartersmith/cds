@@ -1,10 +1,14 @@
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { entries } from '@cbhq/cds-utils';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { PlatformOSType, View } from 'react-native';
 
 import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
-import { Spectrum } from '@cbhq/cds-common';
+import { Spectrum, useScale, useSpectrum } from '@cbhq/cds-common';
+import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
+import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
+import { useRootSpectrumPreference } from '@cbhq/cds-common/spectrum/useRootSpectrumPreference';
+import { useRootScalePreference } from '@cbhq/cds-common/scale/useRootScalePreference';
 import { deviceScaleMap } from '../../hooks/useDeviceScaleToCdsScale';
 import { DevicePreferencesProvider } from '../DevicePreferencesProvider';
 
@@ -54,14 +58,34 @@ describe('DevicePreferencesProvider', () => {
       ['large', 'xLarge', 'xxLarge', 'xxxLarge'].includes(scale),
     )) {
       mockDeviceScale(deviceFontScale);
-      const { result } = renderHook(() => useRootScale(), {
-        wrapper: (props) => (
-          <DevicePreferencesProvider>
-            <View {...props} />
-          </DevicePreferencesProvider>
-        ),
-      });
-      expect(result.current).toEqual(cdsScale);
+
+      const { result } = renderHook(
+        () => {
+          return {
+            rootSpectrum: useRootSpectrum(),
+            rootSpectrumPreference: useRootSpectrumPreference(),
+            rootScale: useRootScale(),
+            rootScalePreference: useRootScalePreference(),
+            spectrum: useSpectrum(),
+            scale: useScale(),
+            rootScaleUpdater: useRootScalePreferenceUpdater(),
+            rootSpectrumUpdater: useRootSpectrumPreferenceUpdater(),
+          };
+        },
+        {
+          wrapper: (props) => (
+            <DevicePreferencesProvider>
+              <View {...props} />
+            </DevicePreferencesProvider>
+          ),
+        },
+      );
+      expect(result.current.rootSpectrumPreference).toEqual('system');
+      expect(result.current.rootSpectrum).toEqual('light');
+      expect(result.current.rootScalePreference).toEqual('system');
+      expect(result.current.rootScale).toEqual(cdsScale);
+      expect(result.current.spectrum).toEqual('light');
+      expect(result.current.scale).toEqual(cdsScale);
     }
   });
 
@@ -69,8 +93,14 @@ describe('DevicePreferencesProvider', () => {
     const { result } = renderHook(
       () => {
         return {
-          spectrum: useRootSpectrum(),
-          scale: useRootScale(),
+          rootSpectrum: useRootSpectrum(),
+          rootSpectrumPreference: useRootSpectrumPreference(),
+          rootScale: useRootScale(),
+          rootScalePreference: useRootScalePreference(),
+          spectrum: useSpectrum(),
+          scale: useScale(),
+          rootScaleUpdater: useRootScalePreferenceUpdater(),
+          rootSpectrumUpdater: useRootSpectrumPreferenceUpdater(),
         };
       },
       {
@@ -82,6 +112,10 @@ describe('DevicePreferencesProvider', () => {
       },
     );
 
+    expect(result.current.rootSpectrum).toEqual('dark');
+    expect(result.current.rootScale).toEqual('xSmall');
+    expect(result.current.rootSpectrumPreference).toEqual('dark');
+    expect(result.current.rootScalePreference).toEqual('xSmall');
     expect(result.current.spectrum).toEqual('dark');
     expect(result.current.scale).toEqual('xSmall');
   });
@@ -95,17 +129,133 @@ describe('DevicePreferencesProvider', () => {
         jest.resetAllMocks();
         mockPlatform(os);
         mockUseColorSchema(spectrum);
+        mockDeviceScale(deviceScaleMap.large);
 
-        const { result } = renderHook(() => useRootSpectrum(), {
-          wrapper: (props) => (
-            <DevicePreferencesProvider>
-              <div {...props} />
-            </DevicePreferencesProvider>
-          ),
-        });
+        const { result } = renderHook(
+          () => {
+            return {
+              rootSpectrum: useRootSpectrum(),
+              rootSpectrumPreference: useRootSpectrumPreference(),
+              rootScale: useRootScale(),
+              rootScalePreference: useRootScalePreference(),
+              spectrum: useSpectrum(),
+              scale: useScale(),
+              rootScaleUpdater: useRootScalePreferenceUpdater(),
+              rootSpectrumUpdater: useRootSpectrumPreferenceUpdater(),
+            };
+          },
+          {
+            wrapper: (props) => (
+              <DevicePreferencesProvider>
+                <div {...props} />
+              </DevicePreferencesProvider>
+            ),
+          },
+        );
 
-        expect(result.current).toEqual(spectrum);
+        expect(result.current.rootSpectrumPreference).toEqual('system');
+        expect(result.current.rootScalePreference).toEqual('system');
+        expect(result.current.rootSpectrum).toEqual(spectrum);
+        expect(result.current.rootScale).toEqual('large');
+        expect(result.current.spectrum).toEqual(spectrum);
+        expect(result.current.scale).toEqual('large');
       }
     }
+  });
+
+  test('system to scale and spectrum updates', () => {
+    mockPlatform('ios');
+    mockUseColorSchema('dark');
+    mockDeviceScale(deviceScaleMap.xxxLarge);
+
+    const { result } = renderHook(
+      () => {
+        return {
+          rootSpectrum: useRootSpectrum(),
+          rootSpectrumPreference: useRootSpectrumPreference(),
+          rootScale: useRootScale(),
+          rootScalePreference: useRootScalePreference(),
+          spectrum: useSpectrum(),
+          scale: useScale(),
+          rootScaleUpdater: useRootScalePreferenceUpdater(),
+          rootSpectrumUpdater: useRootSpectrumPreferenceUpdater(),
+        };
+      },
+      {
+        wrapper: (props) => (
+          <DevicePreferencesProvider>
+            <div {...props} />
+          </DevicePreferencesProvider>
+        ),
+      },
+    );
+
+    expect(result.current.rootSpectrumPreference).toEqual('system');
+    expect(result.current.rootScalePreference).toEqual('system');
+    expect(result.current.rootSpectrum).toEqual('dark');
+    expect(result.current.rootScale).toEqual('xxxLarge');
+    expect(result.current.spectrum).toEqual('dark');
+    expect(result.current.scale).toEqual('xxxLarge');
+
+    // update root scale and spectrum
+    void act(() => {
+      result.current.rootScaleUpdater('large');
+      result.current.rootSpectrumUpdater('light');
+    });
+
+    expect(result.current.rootSpectrumPreference).toEqual('light');
+    expect(result.current.rootScalePreference).toEqual('large');
+    expect(result.current.rootSpectrum).toEqual('light');
+    expect(result.current.rootScale).toEqual('large');
+    expect(result.current.spectrum).toEqual('light');
+    expect(result.current.scale).toEqual('large');
+  });
+
+  test('scale and spectrum to system updates', () => {
+    mockPlatform('ios');
+    mockUseColorSchema('dark');
+    mockDeviceScale(deviceScaleMap.xxxLarge);
+
+    const { result } = renderHook(
+      () => {
+        return {
+          rootSpectrum: useRootSpectrum(),
+          rootSpectrumPreference: useRootSpectrumPreference(),
+          rootScale: useRootScale(),
+          rootScalePreference: useRootScalePreference(),
+          spectrum: useSpectrum(),
+          scale: useScale(),
+          rootScaleUpdater: useRootScalePreferenceUpdater(),
+          rootSpectrumUpdater: useRootSpectrumPreferenceUpdater(),
+        };
+      },
+      {
+        wrapper: (props) => (
+          <DevicePreferencesProvider scale="medium" spectrum="light">
+            <div {...props} />
+          </DevicePreferencesProvider>
+        ),
+      },
+    );
+
+    expect(result.current.rootSpectrumPreference).toEqual('light');
+    expect(result.current.rootScalePreference).toEqual('medium');
+    expect(result.current.rootSpectrum).toEqual('light');
+    expect(result.current.rootScale).toEqual('medium');
+    expect(result.current.spectrum).toEqual('light');
+    expect(result.current.scale).toEqual('medium');
+
+    // update root scale and spectrum
+    void act(() => {
+      result.current.rootScaleUpdater('system');
+      result.current.rootSpectrumUpdater('system');
+    });
+
+    expect(result.current.rootSpectrumPreference).toEqual('system');
+    expect(result.current.rootScalePreference).toEqual('system');
+    expect(result.current.rootSpectrum).toEqual('dark');
+    expect(result.current.rootScale).toEqual('xxxLarge');
+    expect(result.current.spectrum).toEqual('dark');
+    expect(result.current.scale).toEqual('xxxLarge');
   });
 });

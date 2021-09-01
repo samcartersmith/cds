@@ -1,18 +1,14 @@
 import React, { memo } from 'react';
-import {
-  DevicePreferencesBaseProviderProps,
-  DevicePreferencesBaseProvider,
-} from '@cbhq/cds-common/system/DevicePreferencesBaseProvider';
-import { Spectrum } from '@cbhq/cds-common';
-import { RootSpectrumSyncManager } from './RootSpectrumSyncManager';
+import { DevicePreferencesBaseProviderProps } from '@cbhq/cds-common/system/DevicePreferencesBaseProvider';
+import { RootSpectrumProvider } from './RootSpectrumProvider';
+import { RootScaleProvider } from './RootScaleProvider';
 
 export const DevicePreferencesProvider: React.FC<DevicePreferencesBaseProviderProps> = memo(
-  ({ children, spectrum, ...props }) => {
+  ({ children, spectrum, scale }) => {
     return (
-      <DevicePreferencesBaseProvider spectrum={spectrum as Spectrum} {...props}>
-        {!spectrum && <RootSpectrumSyncManager />}
-        {children}
-      </DevicePreferencesBaseProvider>
+      <RootSpectrumProvider value={spectrum ?? 'system'}>
+        <RootScaleProvider value={scale ?? 'system'}>{children}</RootScaleProvider>
+      </RootSpectrumProvider>
     );
   },
 );

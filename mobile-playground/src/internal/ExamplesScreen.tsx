@@ -1,21 +1,38 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
-import { useScale, useToggler } from '@cbhq/cds-common';
 import { Switch } from '@cbhq/cds-mobile/controls/Switch';
 import { Divider, Spacer, VStack } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
 
+import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
+import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
+import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
+import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import Screen from './Screen';
 
 const ExamplesScreen: React.FC = ({ children }) => {
-  const scale = useScale();
-  const [isDarkEnabled, { toggle: toggleDark }] = useToggler();
-  const [isDenseEnabled, { toggle: toggleDense }] = useToggler();
+  const rootScale = useRootScale();
+  const rootSpectrum = useRootSpectrum();
+
+  const isDarkEnabled = rootSpectrum === 'dark';
+  const isDenseEnabled = rootScale === 'xSmall';
+
+  const rootSpectrumPreferenceUpdater = useRootSpectrumPreferenceUpdater();
+  const toggleDark = useCallback(() => {
+    const newSpectrum = rootSpectrum === 'light' ? 'dark' : 'light';
+    rootSpectrumPreferenceUpdater(newSpectrum);
+  }, [rootSpectrumPreferenceUpdater, rootSpectrum]);
+
+  const rootScalePreferenceUpdater = useRootScalePreferenceUpdater();
+  const toggleDense = useCallback(() => {
+    const newScale = rootScale === 'xSmall' ? 'large' : 'xSmall';
+    rootScalePreferenceUpdater(newScale);
+  }, [rootScalePreferenceUpdater, rootScale]);
 
   return (
     <ThemeProvider
-      spectrum={isDarkEnabled ? 'dark' : 'light'}
-      scale={isDenseEnabled ? 'xSmall' : scale}
+      spectrum={isDarkEnabled ? 'dark' : rootSpectrum}
+      scale={isDenseEnabled ? 'xSmall' : rootScale}
     >
       <Screen>
         <ThemeProvider scale="xSmall">

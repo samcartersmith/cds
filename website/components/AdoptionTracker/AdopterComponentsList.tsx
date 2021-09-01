@@ -59,9 +59,8 @@ export const AdopterComponentsList = memo(({ group }: { group: keyof AdopterComp
     const isActive = activeId === id;
 
     return (
-      <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
+      <div key={`${name}-${sourceFile}`} className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
         <AdopterListCell
-          key={`${name}-${sourceFile}`}
           isActive={isActive}
           setActiveComponent={setActiveComponent}
           {...item}

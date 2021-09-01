@@ -1,13 +1,14 @@
-import { scales } from './configs/scaleConfig';
+import { scales, RootScalePreference } from './configs/scaleConfig';
 import { spacingScaleWithZero } from './configs/spacingConfig';
 import { typographyConfig } from './configs/typographyConfig';
-import { Spectrum } from './Spectrum/Spectrum';
+import { Spectrum, RootSpectrumPreference } from './Spectrum/Spectrum';
 
 const templates = {
   'common/types/Scale.ts': {
     types: {
       Scale: scales,
       ScaleDensity: ['dense', 'normal'],
+      RootScalePreference,
     },
   },
   'common/types/Spectrum.ts': {
@@ -18,6 +19,7 @@ const templates = {
       // eslint-disable-next-line no-template-curly-in-string
       SpectrumAlias: '`${SpectrumHue}${SpectrumHueStep}`',
       SpectrumAliasWithOpacity: 'readonly [SpectrumAlias, number]',
+      RootSpectrumPreference,
     },
   },
   'common/types/Typography.ts': {

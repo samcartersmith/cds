@@ -16,7 +16,7 @@ const DocusaurusThemeProvider: React.FC = ({ children }) => {
 };
 
 export const RootThemeProvider: React.FC = memo(({ children }) => {
-  const storedSpectrum: Spectrum = getThemeStorage() ?? undefined; // make sure null isn't used in the prop
+  const storedSpectrum: Spectrum = getThemeStorage() ?? "system";
   return (
     <DevicePreferencesProvider spectrum={storedSpectrum}>
       <ThemeProvider>

@@ -14,8 +14,8 @@ If the user is on mobile then it will look at the device pixel ratio to determin
 
 Overrides are useful when you want to inject an app preference that was saved to the device or local storage.
 ```jsx
-const spectrum = localStorage?.getItem("theme") ?? undefined;
-const scale = localStorage?.getItem("scale") ?? undefined;
+const spectrum = localStorage?.getItem("theme") ?? 'system';
+const scale = localStorage?.getItem("scale") ?? 'system';
 
 <DevicePreferencesProvider scale={scale} spectrum={spectrum}>
   <App />

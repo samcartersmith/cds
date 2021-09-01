@@ -18,3 +18,4 @@ export const scaleConfig = {
 
 export type Scale = keyof typeof scaleConfig;
 export const scales = Object.keys(scaleConfig);
+export const RootScalePreference = scales.concat('system');

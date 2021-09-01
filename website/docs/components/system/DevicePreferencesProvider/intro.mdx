@@ -6,10 +6,14 @@ If a spectrum is not provided it will attempt to determine the default spectrum 
 
 The following hooks can be used in conjunction to the DevicePreferencesProvider:
 
-`useRootScale` - Gets the currently configured root scale
+`useRootScalePreference` - Gets the currently configured root scale preference
 
-`useRootScaleUpdater` - gets a function that can be used to update the root scale
+`useRootScale` - Gets the currently computed root scale based on preference and device type
 
-`useRootSpectrum` - Gets the currently configured root spectrum
+`useRootScalePreferenceUpdater` - gets a function that can be used to update the root scale preference
 
-`useRootSpectrumUpdater` - gets a function that can be used to update the root spectrum
+`useRootSpectrumPreference` - Gets the currently configured root spectrum preference
+
+`useRootSpectrum` - Gets the currently computed root spectrum based on preference and device type
+
+`useRootSpectrumPreferenceUpdater` - gets a function that can be used to update the root spectrum preference

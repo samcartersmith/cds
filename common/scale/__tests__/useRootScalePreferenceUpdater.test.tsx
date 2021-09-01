@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { RootScaleProvider } from '../RootScaleProvider';
-import { useRootScale } from '../useRootScale';
-import { useRootScaleUpdater } from '../useRootScaleUpdater';
+import { RootScalePreferenceProvider } from '../RootScalePreferenceProvider';
+import { useRootScalePreference } from '../useRootScalePreference';
+import { useRootScalePreferenceUpdater } from '../useRootScalePreferenceUpdater';
 
-describe('useRootScaleUpdater', () => {
+describe('useRootScalePreferenceUpdater', () => {
   it('updates with the correct value', () => {
     for (const scale of [
       'xSmall',
@@ -16,17 +16,18 @@ describe('useRootScaleUpdater', () => {
       'xLarge',
       'xxLarge',
       'xxxLarge',
+      'system',
     ] as const) {
       const { result } = renderHook(
         () => {
-          const updateScale = useRootScaleUpdater();
+          const updateScale = useRootScalePreferenceUpdater();
           useEffect(() => {
             updateScale(scale);
           }, [updateScale]);
-          return useRootScale();
+          return useRootScalePreference();
         },
         {
-          wrapper: RootScaleProvider,
+          wrapper: RootScalePreferenceProvider,
         },
       );
       expect(result.current).toBe(scale);

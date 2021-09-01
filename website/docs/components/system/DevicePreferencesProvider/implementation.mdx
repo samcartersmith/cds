@@ -28,23 +28,23 @@ Only use if you are passing in a value from a user preference since this will ov
   propertyName="scale"
   required={false}
   defaultValue=""
-  mobileOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
-  webOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+  mobileOptions={['large', 'medium', 'small', 'system', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+  webOptions={['large', 'medium', 'small', 'system', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
 />
 
 <ComponentDetails componentName="DevicePreferencesProvider" templateName="prop-scale" />
 
 ### spectrum
 
-Pass in value from React Natives useColorScheme or some other user preference. You are also able to update the root spectrum imperatively via useRootSpectrumUpdater.
+Pass in value from React Natives useColorScheme or some other user preference. You are also able to update the root spectrum imperatively via useRootSpectrumPreferenceUpdater.
 
 <ApiDetails
   componentName="DevicePreferencesProvider"
   propertyName="spectrum"
   required={false}
   defaultValue=""
-  mobileOptions={['dark', 'light']}
-  webOptions={['dark', 'light']}
+  mobileOptions={['dark', 'light', 'system']}
+  webOptions={['dark', 'light', 'system']}
 />
 
 <ComponentDetails componentName="DevicePreferencesProvider" templateName="prop-spectrum" />

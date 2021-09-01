@@ -24,6 +24,7 @@ export const spectrumRgbArrayMap = mapValues(spectrumModes, (_, mode) =>
   createSpectrum(mode, 'rgbArray'),
 );
 
+const modes = Object.keys(spectrumModes);
 export const Spectrum = {
   css: mapValues(spectrumRgbStringMap, (_, spectrum) =>
     mapKeys(spectrumRgbStringMap[spectrum], (_2, key) => toCssVar(key)),
@@ -31,5 +32,7 @@ export const Spectrum = {
   native: spectrumRgbArrayMap,
   hueSteps,
   hueNames,
-  modes: Object.keys(spectrumModes),
+  modes,
 };
+
+export const RootSpectrumPreference = modes.concat('system');
