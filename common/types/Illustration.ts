@@ -36,6 +36,7 @@ export type IllustrationHeroSquareNames =
   | 'commerceAccounting'
   | 'commerceInvoices'
   | 'contactsListWarning'
+  | 'cryptoAndMore'
   | 'cryptoApps'
   | 'cryptoAppsWallet'
   | 'currencyPairs'
@@ -249,6 +250,8 @@ export type IllustrationSpotRectangleNames =
   | 'portfolioOverview'
   | 'protectedNotes'
   | 'ratDashboard'
+  | 'referralsBonus'
+  | 'referralsBonusGray'
   | 'switchAdvancedToSimpleTradingAlt'
   | 'trade'
   | 'transferEth'
@@ -305,5 +308,6 @@ export type IllustrationSpotSquareNames =
   | 'tribe'
   | 'tru'
   | 'ust'
+  | 'walletApp'
   | 'yieldCenter'
   | 'yieldCenterUSDC';

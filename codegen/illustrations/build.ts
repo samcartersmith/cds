@@ -108,6 +108,14 @@ const loadOneImage = async (
         const binaryData = readFileSync(fileNameFullPath, encoding);
         oldFileBase64 = binaryToBase64(binaryData);
         fileStatus = 'modified';
+      }
+
+      // Due to some weird issues with keeping track of
+      // modified illustrations. We have to manually
+      // track which files are modified. We will have to
+      // specify modified files in modified.ts, and then
+      // it will get added to the modifiedIllustrations array
+      if (modified.includes(nameAndSpectrum)) {
         modifiedIllustrations.push(nameAndSpectrum);
       }
 
@@ -414,6 +422,9 @@ const createVersionNumManifest = async (
     data: { versionNumManifest },
     config: { disableAsConst: true },
     dest: destPath,
+    types: {
+      versionNumManifest: 'Record<string, number>',
+    },
   });
   return versionNumManifest;
 };
@@ -549,7 +560,7 @@ const main = async (deleteImgsDir = false) => {
       'svg',
     );
     outputImgBasedOnMostRecentlyUpdated(versionNumManifest, [
-      'storybook/data/sortIllustrationData.ts',
+      'storybook/data/sortedIllustrationData.ts',
     ]);
   } catch (err) {
     console.error(err);

@@ -578,4 +578,12 @@ export const sortedImg = [
   'walletReconnectSuccess-dark',
   'highFees-light',
   'highFees-dark',
+  'walletApp-light',
+  'walletApp-dark',
+  'referralsBonus-light',
+  'referralsBonus-dark',
+  'referralsBonusGray-light',
+  'referralsBonusGray-dark',
+  'cryptoAndMore-light',
+  'cryptoAndMore-dark',
 ] as const;

@@ -4,7 +4,7 @@
   module.exports = <%- JSON.stringify(data) %>
 <% }else{ %>
 <%_ items.map(([name, value]) => { _%>
-  export const <%- name %> =  <%- JSON.stringify(value) %> <%- prependedText %>
+  export const <%- name %><%- types[name] ? `: ${types[name]}` : `` %> =  <%- JSON.stringify(value) %> <%- prependedText %>
   
 <%_ }) _%> 
 <% } %>

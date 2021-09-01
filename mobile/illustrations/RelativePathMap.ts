@@ -157,6 +157,11 @@ export const IllustrationFilePathMap: Record<
     dark: require('./images/dark/contactsListWarning-0.svg'),
     fileFormat: 'svg',
   },
+  cryptoAndMore: {
+    light: require('./images/light/cryptoAndMore-0.svg'),
+    dark: require('./images/dark/cryptoAndMore-0.svg'),
+    fileFormat: 'svg',
+  },
   cryptoApps: {
     light: require('./images/light/cryptoApps-0.svg'),
     dark: require('./images/dark/cryptoApps-0.svg'),
@@ -193,8 +198,8 @@ export const IllustrationFilePathMap: Record<
     fileFormat: 'svg',
   },
   directDepositPhone: {
-    light: require('./images/light/directDepositPhone-0.svg'),
-    dark: require('./images/dark/directDepositPhone-0.svg'),
+    light: require('./images/light/directDepositPhone-1.svg'),
+    dark: require('./images/dark/directDepositPhone-1.svg'),
     fileFormat: 'svg',
   },
   docError: {
@@ -923,8 +928,8 @@ export const IllustrationFilePathMap: Record<
     fileFormat: 'svg',
   },
   noNotificationsGray: {
-    light: require('./images/light/noNotificationsGray-0.svg'),
-    dark: require('./images/dark/noNotificationsGray-0.svg'),
+    light: require('./images/light/noNotificationsGray-1.svg'),
+    dark: require('./images/dark/noNotificationsGray-1.svg'),
     fileFormat: 'svg',
   },
   noTransactions: {
@@ -1202,6 +1207,16 @@ export const IllustrationFilePathMap: Record<
     dark: require('./images/dark/ratDashboard-1.svg'),
     fileFormat: 'svg',
   },
+  referralsBonus: {
+    light: require('./images/light/referralsBonus-0.svg'),
+    dark: require('./images/dark/referralsBonus-0.svg'),
+    fileFormat: 'svg',
+  },
+  referralsBonusGray: {
+    light: require('./images/light/referralsBonusGray-0.svg'),
+    dark: require('./images/dark/referralsBonusGray-0.svg'),
+    fileFormat: 'svg',
+  },
   switchAdvancedToSimpleTradingAlt: {
     light: require('./images/light/switchAdvancedToSimpleTradingAlt-0.svg'),
     dark: null,
@@ -1470,6 +1485,11 @@ export const IllustrationFilePathMap: Record<
   ust: {
     light: require('./images/light/ust-0.svg'),
     dark: require('./images/dark/ust-0.svg'),
+    fileFormat: 'svg',
+  },
+  walletApp: {
+    light: require('./images/light/walletApp-0.svg'),
+    dark: require('./images/dark/walletApp-0.svg'),
     fileFormat: 'svg',
   },
   yieldCenter: {
