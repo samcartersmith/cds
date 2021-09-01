@@ -217,4 +217,6 @@ export const unicodeMap = {
   earnInactive: { '8': 'uE47A', '12': 'uE47B', '16': 'uE47C', '24': 'uE47D', '32': 'uE47E' },
   earnActive: { '8': 'uE47F', '12': 'uE480', '16': 'uE481', '24': 'uE482', '32': 'uE483' },
   fork: { '8': 'uE484', '12': 'uE485', '16': 'uE486', '24': 'uE487', '32': 'uE488' },
+  thumbsDown: { '8': 'uE489', '12': 'uE48A', '16': 'uE48B', '24': 'uE48C', '32': 'uE48D' },
+  thumbsUp: { '8': 'uE48E', '12': 'uE48F', '16': 'uE490', '24': 'uE491', '32': 'uE492' },
 } as const;

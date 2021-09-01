@@ -173,6 +173,8 @@ export const iconNames = [
   'airdrop',
   'fork',
   'unknown',
+  'thumbsDown',
+  'thumbsUp',
 ] as const;
 
 export const navigationIconNames = [

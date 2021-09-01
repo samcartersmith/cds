@@ -168,7 +168,9 @@ export type IconName =
   | 'report'
   | 'airdrop'
   | 'fork'
-  | 'unknown';
+  | 'unknown'
+  | 'thumbsDown'
+  | 'thumbsUp';
 
 export type NavigationIconName =
   | 'chartCandles'

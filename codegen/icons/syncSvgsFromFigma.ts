@@ -14,7 +14,7 @@ import { createIconSet } from './createIconSet';
 import { createUnicodeMap } from './createUnicodeMap';
 import { fillMissingIcons } from './fillMissingIcons';
 
-const CDS_UTILITY_ACCT_PERSONAL_ACCESS_TOKEN = '224335-7b27ab1f-8dc5-4d2e-9c86-ac73e691e97a';
+const CDS_UTILITY_ACCT_PERSONAL_ACCESS_TOKEN = '231423-67598884-1ffe-4c9d-8c42-f0f407d93f6e';
 const ICONS_FILE_ID = 'ZPu9gtLB5KTkzazHcf9Sfi';
 const NODE_ID = '1107:22364';
 
