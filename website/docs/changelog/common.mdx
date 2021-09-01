@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.21.1 (9/1/2021, 10:39 AM PST)
+
+#### 🚀 Updates
+
+- Sept 1st, 2021 Illustration Release. [#31434](https://github.cbhq.net/mono/repo/pull/31434)
+
+#### 🐞 Fixes
+
+- Added thumbsUp and thumbsDown illustration. [#31773](https://github.cbhq.net/mono/repo/pull/31773)
+
 ## 0.21.0 (8/26/2021, 02:47 PM PST)
 
 #### 💥 Breaking

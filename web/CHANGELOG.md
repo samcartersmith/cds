@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.20.2 (9/1/2021, 10:39 AM PST)
+
+#### 🚀 Updates
+
+- Sept 1st, 2021 Illustration Release. [#31434](https://github.cbhq.net/mono/repo/pull/31434)
+
+#### 🐞 Fixes
+
+- Added thumbsUp and thumbsDown illustration. [#31773](https://github.cbhq.net/mono/repo/pull/31773)
+- Adds typescript interface for native HTML props to CDS IconButton. [#31650](https://github.cbhq.net/mono/repo/pull/31650)
+
 ## 0.20.1 (8/30/2021, 05:14 PM PST)
 
 #### 🐞 Fixes
