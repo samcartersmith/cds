@@ -36,7 +36,7 @@
     },
     {
       "name": "div",
-      "sourceFile": "@trust_and_safety/components/HelloWorld/HelloWorld.tsx",
+      "sourceFile": "@trust_and_safety/components/HelloWorld/HelloWorld",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
@@ -51,7 +51,7 @@
     },
     {
       "name": "input",
-      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "input",
@@ -65,7 +65,7 @@
     },
     {
       "name": "button",
-      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "button",
@@ -73,7 +73,7 @@
     },
     {
       "name": "input",
-      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "input",
@@ -86,7 +86,7 @@
     },
     {
       "name": "button",
-      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "button",
@@ -96,19 +96,6 @@
     }
   ],
   "other": [
-    {
-      "name": "AuthProvider",
-      "sourceFile": "@trust_and_safety/data/context/AuthContext/AuthProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "IntlProvider",
-      "sourceFile": "react-intl/IntlProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "locale": { "@trust_and_safety/AppProviders.tsx": 1 } }
-    },
     {
       "name": "Router",
       "sourceFile": "react-router-dom/Router",
@@ -123,7 +110,7 @@
     },
     {
       "name": "BrowserRouter",
-      "sourceFile": "@trust_and_safety/App.tsx",
+      "sourceFile": "@trust_and_safety/App",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "history": { "@trust_and_safety/App.tsx": 1 } }
@@ -176,6 +163,19 @@
       "totalCallSites": 1
     },
     {
+      "name": "AuthProvider",
+      "sourceFile": "@trust_and_safety/data/context/AuthContext/AuthProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "IntlProvider",
+      "sourceFile": "react-intl/IntlProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "locale": { "@trust_and_safety/AppProviders.tsx": 1 } }
+    },
+    {
       "name": "App",
       "sourceFile": "@trust_and_safety/App",
       "totalInstances": 1,
@@ -184,45 +184,45 @@
     },
     {
       "name": "div",
-      "sourceFile": "@trust_and_safety/pages/Additional2FAPage/Additional2FAPage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "@trust_and_safety/pages/ConsentPage/ConsentPage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
       "name": "form",
-      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/EmailPage/EmailPage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onSubmit": { "@trust_and_safety/pages/EmailPage/EmailPage.tsx": 1 } }
     },
     {
       "name": "div",
-      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/ConsentPage/ConsentPage",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "@trust_and_safety/pages/Additional2FAPage/Additional2FAPage",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage",
       "totalInstances": 3,
       "totalCallSites": 1,
       "callSites": { "@trust_and_safety/pages/PasswordPage/PasswordPage.tsx": 3 }
     },
     {
       "name": "span",
-      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
       "name": "form",
-      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/PasswordPage/PasswordPage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -237,19 +237,19 @@
     },
     {
       "name": "div",
-      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/TwoFactorPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/TwoFactorPage",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
       "name": "div",
-      "sourceFile": "@trust_and_safety/pages/SecurityUpgradePage/SecurityUpgradePage.tsx",
+      "sourceFile": "@trust_and_safety/pages/SecurityUpgradePage/SecurityUpgradePage",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
       "name": "div",
-      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/screens/TOTP/TOTPScreen.tsx",
+      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/screens/TOTP/TOTPScreen",
       "totalInstances": 1,
       "totalCallSites": 1
     }

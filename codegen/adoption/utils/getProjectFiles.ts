@@ -1,8 +1,8 @@
 import glob from 'fast-glob';
 
-export async function getProjectFiles(dir: string, ignoreDirs: string[]) {
+export async function getProjectFiles(dir: string, ignoreDirs: string[], source?: string) {
   try {
-    const files = await glob(['**/*.(ts|tsx|js|jsx)'], {
+    const files = await glob([source ?? '**/*.(ts|tsx|js|jsx)'], {
       ignore: [
         '__tests__/*',
         '**/*-test.*',

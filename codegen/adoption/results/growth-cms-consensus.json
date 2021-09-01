@@ -1,27 +1,6 @@
 {
   "cds": [
     {
-      "name": "Button",
-      "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/buttons/Button",
-      "callSites": {
-        "@growth/cms-consensus-app/components/ActionButton.tsx": 1,
-        "@growth/cms-consensus-app/components/Message.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPress": {
-          "@growth/cms-consensus-app/components/ActionButton.tsx": 1,
-          "@growth/cms-consensus-app/components/Message.tsx": 1
-        },
-        "variant": {
-          "@growth/cms-consensus-app/components/ActionButton.tsx": 1,
-          "@growth/cms-consensus-app/components/Message.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ButtonGroup",
       "sourceFile": "@cbhq/cds-web/buttons/ButtonGroup",
       "totalInstances": 2,
@@ -39,6 +18,27 @@
         "block": {
           "@growth/cms-consensus-app/components/ActionBar.tsx": 1,
           "@growth/cms-consensus-app/components/Approval2FA.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-web/buttons/Button",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/buttons/Button",
+      "callSites": {
+        "@growth/cms-consensus-app/components/ActionButton.tsx": 1,
+        "@growth/cms-consensus-app/components/Message.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "@growth/cms-consensus-app/components/ActionButton.tsx": 1,
+          "@growth/cms-consensus-app/components/Message.tsx": 1
+        },
+        "variant": {
+          "@growth/cms-consensus-app/components/ActionButton.tsx": 1,
+          "@growth/cms-consensus-app/components/Message.tsx": 1
         }
       }
     },
@@ -100,8 +100,8 @@
       "callSites": {
         "@growth/cms-consensus-app/components/Approval2FA.tsx": 1,
         "@growth/cms-consensus-app/components/ApprovalLog.tsx": 2,
-        "@growth/cms-consensus-app/components/Message.tsx": 1,
-        "@growth/cms-consensus-app/components/Loading.tsx": 1
+        "@growth/cms-consensus-app/components/Loading.tsx": 1,
+        "@growth/cms-consensus-app/components/Message.tsx": 1
       },
       "propsWithCallSites": {
         "spacing": {
@@ -183,7 +183,7 @@
     },
     {
       "name": "LogEntry",
-      "sourceFile": "@growth/cms-consensus-app/components/ApprovalLog.tsx",
+      "sourceFile": "@growth/cms-consensus-app/components/ApprovalLog",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "LogEntry",

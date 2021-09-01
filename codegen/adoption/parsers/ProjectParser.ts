@@ -3,12 +3,13 @@ import path from 'path';
 import ora from 'ora';
 import chalk from 'chalk';
 import { argv } from 'yargs';
+import * as ts from 'typescript';
 import { getPackageJson } from '../utils/getPackageJson';
 import { getTypescriptConfig } from '../utils/getTypescriptConfig';
 import { getProjectFiles } from '../utils/getProjectFiles';
 import { getTypescriptAliases } from '../utils/getTypescriptAliases';
 import { FileParser } from './FileParser';
-import { fromId } from '../utils/id';
+import { fromId, toId } from '../utils/id';
 
 export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',
@@ -56,6 +57,7 @@ export type ProjectParserConfig = {
   presentationalAttributes?: string[];
   cdsAliases?: string[];
   ignoreDirs?: string[];
+  sourceGlob?: string;
 };
 
 type ComponentInstance = {
@@ -113,6 +115,9 @@ export class ProjectParser {
   /** Array of file globs to ignore when parsing files. */
   ignoreDirs: string[];
 
+  /** Optional override of the default source glob * */
+  sourceGlob: string | undefined;
+
   spinner!: ora.Ora;
 
   /** Absolute path of project. Pulled from tsAlias if project has tsconfig, otherwise falls back to root. */
@@ -145,6 +150,9 @@ export class ProjectParser {
   /** All JSX components in a project */
   jsxComponents: Map<string, { callSite: string; props: string[] }[]> = new Map();
 
+  /** Components that have a first child that is a presentational element * */
+  wrappedPresentationComponents: Map<string, string> = new Map(); // name of component to file path
+
   constructor({
     root,
     github,
@@ -156,12 +164,14 @@ export class ProjectParser {
     presentationalLibraries,
     cdsAliases = [],
     ignoreDirs = [],
+    sourceGlob,
   }: ProjectParserConfig) {
     const [org, repo] = github.split('/');
     this.github = github;
     this.githubUrl = `https://github.cbhq.net/${org}/${repo}/tree/master`;
     this.id = id;
     this.ignoreDirs = ignoreDirs;
+    this.sourceGlob = sourceGlob;
     this.label = label;
     this.tsAlias = tsAlias;
     this.cdsAliases = ['@cbhq/cds-', ...cdsAliases];
@@ -281,7 +291,15 @@ export class ProjectParser {
 
   isPresentationalElement(
     name: string | undefined = '',
+    sourceFile?: string,
   ): ['presentationalElement', string | false] {
+    if (sourceFile) {
+      const id = toId(name, sourceFile);
+      if (this.wrappedPresentationComponents.has(id)) {
+        return ['presentationalElement', name];
+      }
+    }
+
     const match = name.match(new RegExp(this.presentationalElements.join('|')));
     return ['presentationalElement', match ? name : false];
   }
@@ -297,14 +315,38 @@ export class ProjectParser {
     const presentationalProps: PresentationalProp[] = [];
     for (const instance of instances) {
       for (const prop of instance.props) {
-        const match = prop.match(new RegExp(this.presentationalAttributes.join('|')));
-        if (match) {
+        if (this.isPresentationalProp(prop)) {
           presentationalProps.push({ prop, callSite: instance.callSite });
         }
       }
     }
 
     return ['presentationalProps', presentationalProps.length > 0 ? presentationalProps : false];
+  }
+
+  isPresentationalProp(prop: string) {
+    return prop.match(new RegExp(this.presentationalAttributes.join('|')));
+  }
+
+  isPresentationalJsx(element: ts.JsxElement) {
+    const { openingElement } = element;
+    if ('escapedText' in openingElement.tagName) {
+      const tagName = openingElement.tagName.escapedText as string;
+      if (this.isPresentationalElement(tagName)) {
+        return true;
+      }
+
+      openingElement.attributes.properties.forEach((attribute) => {
+        if (ts.isJsxAttribute(attribute)) {
+          const propName = attribute.name.escapedText as string;
+          if (this.isPresentationalProp(propName)) {
+            return true;
+          }
+        }
+      });
+    }
+
+    return false;
   }
 
   isStyledComponent(id: string): ['styledComponent', string | false] {
@@ -327,7 +369,7 @@ export class ProjectParser {
     const [name, sourceFile] = fromId(id);
     return fromPairs([
       this.isCdsImport(sourceFile),
-      this.isPresentationalElement(name),
+      this.isPresentationalElement(name, sourceFile),
       this.isPresentationalLibrary(sourceFile),
       this.hasPresentationalProps(instances),
       this.isStyledComponent(id),
@@ -351,7 +393,7 @@ export class ProjectParser {
       // i.e. eng/shared/design-system
       this.relativePath = path.relative(this.root, this.absolutePath);
       // Uses fast-glob package return an array of file paths to parse.
-      this.filePaths = await getProjectFiles(this.absolutePath, this.ignoreDirs);
+      this.filePaths = await getProjectFiles(this.absolutePath, this.ignoreDirs, this.sourceGlob);
       // Parse the files
       this.files = await Promise.all(
         this.filePaths.map(async (filePath) => {

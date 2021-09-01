@@ -153,6 +153,30 @@ jest_test(
     ]),
 )
 
+jest_test(
+    name = "unit_tests_adoption",
+    srcs = TEST_SRCS + [
+        "//eng/shared/design-system/codegen/adoption:parsers/__tests__/project",
+    ],
+    jest_config = "jest.config.adoption.js",
+    test_srcs = [
+        "//eng/shared/design-system/codegen/adoption:source",
+    ],
+    deps = append_cds_mobile_deps(TEST_DEPS + [
+        "@npm//@babel/preset-flow",
+        "@npm//@testing-library/jest-native",
+        "@npm//@testing-library/react-hooks",
+        "@npm//@testing-library/react-native",
+        "@npm//@testing-library/jest-dom",
+        "@npm//react-native",
+        "@npm//jest-canvas-mock",
+        "@npm//ora",
+        "@npm//chalk",
+        "@npm//yargs",
+        "@npm//fast-glob",
+    ]),
+)
+
 # ***************
 # *** codegen ***
 # ***************
@@ -253,7 +277,9 @@ ts_node(
         "eng/shared/design-system/codegen/adoption/prepare.ts",
         "--prettierConfig $(execpath //:.prettierrc)",
     ],
-    data = CODEGEN_DATA,
+    data = CODEGEN_DATA + [
+        "//eng/shared/design-system/codegen/adoption:source",
+    ],
 )
 
 ts_node(

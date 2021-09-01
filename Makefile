@@ -82,6 +82,10 @@ test.mobile:
 test.web:
 	bazel test :unit_tests_web --test_output=streamed
 
+.PHONY: test.adoption
+test.adoption:
+	bazel test :unit_tests_adoption  --test_output=streamed
+
 .PHONY: docgen
 docgen:
 	bazel run :docgen
