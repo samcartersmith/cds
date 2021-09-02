@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.25.3 (9/2/2021, 10:17 AM PST)
+
+#### 🚀 Updates
+
+- Add RootSpectrumPreference and RootScalePreference types with "system". [#30931](https://github.cbhq.net/mono/repo/pull/30931), [CDS-877](https://jira.coinbase-corp.com/browse/CDS-877)
+
 ## 0.25.2 (9/1/2021, 10:39 AM PST)
 
 #### 🚀 Updates

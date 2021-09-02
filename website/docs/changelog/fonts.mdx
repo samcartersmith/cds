@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.3 (9/2/2021, 10:17 AM PST)
+
+#### 🐞 Fixes
+
+- Add new font version, contextual alternative characters. [#32081](https://github.cbhq.net/mono/repo/pull/32081)
+
 ## 0.2.2 (8/19/2021, 09:59 AM PST)
 
 #### 🚀 Updates
