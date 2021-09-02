@@ -7,7 +7,12 @@ export function useFallbackShape(shape: Shape, baseWidth: number | string) {
   const width = useMemo(() => {
     // When rectangle, lets randomize the width a bit so things are
     // a little less... uniform. Variety is nice.
-    if (shape === 'rectangle' && typeof baseWidth === 'number') {
+    if (
+      shape === 'rectangle' &&
+      typeof baseWidth === 'number' &&
+      process.env.NODE_ENV !== 'test' &&
+      !process.env.PERCY_TOKEN
+    ) {
       const quarter = Math.round(baseWidth / 4);
       const min = Math.max(baseWidth - quarter, 1);
       const max = baseWidth + quarter;
