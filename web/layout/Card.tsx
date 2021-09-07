@@ -36,9 +36,10 @@ export const Card: React.FC<CardProps> = memo(
         elevation={linkable ? undefined : elevation}
         width={linkable ? undefined : width}
         height={linkable ? undefined : height}
+        overflow="hidden"
         {...props}
       >
-        <VStack overflow="hidden">{children}</VStack>
+        <>{children}</>
       </VStack>
     );
 
