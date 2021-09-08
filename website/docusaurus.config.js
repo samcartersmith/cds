@@ -68,7 +68,6 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },
   },
-  themes: ['@docusaurus/theme-live-codeblock'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -99,6 +98,8 @@ module.exports = {
     ],
   ],
   plugins: [
+    '@docusaurus/theme-live-codeblock',
+    // Must run last!
     () => ({
       name: 'cds-docusaurus-plugin',
       configureWebpack: configureForDocusaurus,

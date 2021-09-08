@@ -1,5 +1,5 @@
 import React from 'react';
-import OriginalTOC from '@theme-original/TOC';
+import OriginalTOC, { TOCHeadings } from '@theme-original/TOC';
 
 import { useRightSidebar, TOCItem } from './RightSidebar';
 
@@ -8,5 +8,7 @@ const TOC = (props: { toc: TOCItem[] }) => {
   const propsOverride = items ? { ...props, toc: items } : props;
   return <OriginalTOC {...propsOverride} />;
 };
+
+export { TOCHeadings };
 
 export default TOC;

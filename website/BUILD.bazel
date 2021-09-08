@@ -17,6 +17,7 @@ filegroup(
             "static/**/*.png",
             "static/**/*.jpg",
             "static/**/*.css",
+            "static/**/*.json",
         ],
     ),
 )
