@@ -1,9 +1,8 @@
-import { countBy, fromPairs, partition, pickBy, map, flattenDeep, uniq, mapValues } from 'lodash';
+import { countBy, flattenDeep, fromPairs, map, mapValues, partition, pickBy, uniq } from 'lodash';
 import path from 'path';
 import ora from 'ora';
 import chalk from 'chalk';
 import { argv } from 'yargs';
-import * as ts from 'typescript';
 import { getPackageJson } from '../utils/getPackageJson';
 import { getTypescriptConfig } from '../utils/getTypescriptConfig';
 import { getProjectFiles } from '../utils/getProjectFiles';
@@ -81,6 +80,10 @@ type PresentationalDetails = ReturnType<
   | ProjectParser['isStyledComponent']
 >;
 
+function generateUnionRegex(strs: string[], boundaryMatch?: boolean) {
+  return new RegExp(strs.map((str) => (boundaryMatch ? `^${str}$` : str)).join('|'));
+}
+
 export class ProjectParser {
   /** The absolute path for the source files to parse. */
   root: string;
@@ -151,7 +154,11 @@ export class ProjectParser {
   jsxComponents: Map<string, { callSite: string; props: string[] }[]> = new Map();
 
   /** Components that have a first child that is a presentational element * */
-  wrappedPresentationComponents: Map<string, string> = new Map(); // name of component to file path
+  wrappedPresentationComponents: Map<string, { path: string; presEl: string }> = new Map(); // name of component to file path
+
+  aliasedCdsComponents: Map<string, { aliasPath: string; callSites: string[] }> = new Map(); // wrapped component name => cds import path, wrappedComponentPath, callSites of alias
+
+  cdsToAliasMapping: Map<string, Set<string>> = new Map(); // cds id from name and import to alias name
 
   constructor({
     root,
@@ -279,13 +286,12 @@ export class ProjectParser {
 
   isExternalLibrary(moduleName: string) {
     const names = Object.keys(this.dependencies);
-    const regexPattern = names.map((item) => `^${item}$`).join('|');
-    const match = moduleName.match(new RegExp(regexPattern));
+    const match = moduleName.match(generateUnionRegex(names, true));
     return match ? moduleName : false;
   }
 
   isCdsImport(moduleName: string): ['cds', string | false] {
-    const match = moduleName.match(new RegExp(this.cdsAliases.join('|')));
+    const match = moduleName.match(generateUnionRegex(this.cdsAliases));
     return ['cds', match ? moduleName : false];
   }
 
@@ -295,17 +301,43 @@ export class ProjectParser {
   ): ['presentationalElement', string | false] {
     if (sourceFile) {
       const id = toId(name, sourceFile);
+
+      // exact match
       if (this.wrappedPresentationComponents.has(id)) {
-        return ['presentationalElement', name];
+        return [
+          'presentationalElement',
+          this.wrappedPresentationComponents.get(id)?.presEl as string,
+        ];
+      }
+
+      // components can be exported from an index file, this catches that case
+      for (const [
+        key,
+        { path: pathName, presEl },
+      ] of this.wrappedPresentationComponents.entries()) {
+        const pathWithoutExtension = pathName.includes('.')
+          ? pathName.split('.').slice(0, -1).join('.')
+          : pathName;
+        const sourceFileWithoutExtension = sourceFile.includes('.')
+          ? sourceFile.split('.').slice(0, -1).join('.')
+          : sourceFile;
+        if (
+          (pathWithoutExtension.startsWith(sourceFileWithoutExtension) ||
+            sourceFileWithoutExtension.startsWith(pathWithoutExtension)) &&
+          fromId(key)[0] === name
+        ) {
+          return ['presentationalElement', presEl];
+        }
       }
     }
 
-    const match = name.match(new RegExp(this.presentationalElements.join('|')));
+    const match = name.match(generateUnionRegex(this.presentationalElements, true));
     return ['presentationalElement', match ? name : false];
   }
 
   isPresentationalLibrary(moduleName: string): ['presentationalLibrary', string | false] {
-    const match = moduleName.match(new RegExp(this.presentationalLibraries.join('|')));
+    const match = moduleName.match(generateUnionRegex(this.presentationalLibraries));
+
     return ['presentationalLibrary', match ? moduleName : false];
   }
 
@@ -325,33 +357,45 @@ export class ProjectParser {
   }
 
   isPresentationalProp(prop: string) {
-    return prop.match(new RegExp(this.presentationalAttributes.join('|')));
-  }
-
-  isPresentationalJsx(element: ts.JsxElement) {
-    const { openingElement } = element;
-    if ('escapedText' in openingElement.tagName) {
-      const tagName = openingElement.tagName.escapedText as string;
-      if (this.isPresentationalElement(tagName)) {
-        return true;
-      }
-
-      openingElement.attributes.properties.forEach((attribute) => {
-        if (ts.isJsxAttribute(attribute)) {
-          const propName = attribute.name.escapedText as string;
-          if (this.isPresentationalProp(propName)) {
-            return true;
-          }
-        }
-      });
-    }
-
-    return false;
+    return prop.match(generateUnionRegex(this.presentationalAttributes, true));
   }
 
   isStyledComponent(id: string): ['styledComponent', string | false] {
     const styled = this.styledComponents.get(id);
     return ['styledComponent', styled ?? false];
+  }
+
+  addWrappedPresentationalComponent(name: string, wrappedPath: string, presEl: string) {
+    this.wrappedPresentationComponents.set(name, {
+      path: wrappedPath,
+      presEl,
+    });
+  }
+
+  addAliasedCdsComponent(aliasName: string, aliasPath: string, cdsId: string) {
+    this.aliasedCdsComponents.set(aliasName, {
+      aliasPath,
+      callSites: [],
+    });
+
+    const set = this.cdsToAliasMapping.get(cdsId) ?? new Set<string>();
+    set.add(aliasName);
+
+    this.cdsToAliasMapping.set(cdsId, set);
+  }
+
+  addJsxComponent(jsxId: string, sourceFile: string, props: string[]) {
+    const [name] = fromId(jsxId);
+    const aliasedComponent = this.aliasedCdsComponents.get(name);
+    if (aliasedComponent) {
+      this.aliasedCdsComponents.set(name, {
+        ...aliasedComponent,
+        callSites: aliasedComponent.callSites.concat([sourceFile]),
+      });
+    }
+
+    const jsxComponentMatch = this.jsxComponents.get(jsxId) ?? [];
+    this.jsxComponents.set(jsxId, [...jsxComponentMatch, { callSite: sourceFile, props }]);
   }
 
   hasExtendedStyledComponents(
@@ -365,6 +409,22 @@ export class ProjectParser {
     return ['extendedStyledComponents', extended.length > 0 ? extended : false];
   }
 
+  hasAliasedCdsComponents(id: string) {
+    const cdsToAliasSet = this.cdsToAliasMapping.get(id);
+    if (cdsToAliasSet) {
+      const items = [];
+      for (const aliasId of Array.from(cdsToAliasSet)) {
+        const cdsAlias = this.aliasedCdsComponents.get(aliasId);
+        if (cdsAlias) {
+          items.push(cdsAlias);
+        }
+      }
+
+      return ['aliasedCdsComponents', items ?? false];
+    }
+    return ['aliasedCdsComponents', false];
+  }
+
   getPresentationalDetails(id: string, instances: ComponentInstance[]) {
     const [name, sourceFile] = fromId(id);
     return fromPairs([
@@ -374,6 +434,7 @@ export class ProjectParser {
       this.hasPresentationalProps(instances),
       this.isStyledComponent(id),
       this.hasExtendedStyledComponents(id),
+      this.hasAliasedCdsComponents(id),
     ]) as Record<PresentationalDetails[0], PresentationalDetails[1]>;
   }
 
@@ -397,9 +458,14 @@ export class ProjectParser {
       // Parse the files
       this.files = await Promise.all(
         this.filePaths.map(async (filePath) => {
-          return new FileParser(this, filePath).parse();
+          return new FileParser(this, filePath).init();
         }),
       );
+
+      // meta needs to be done before the jsx parsing because the jsx parsing augments what is stored in meta for the project
+      await Promise.all(this.files.map(async (file: FileParser) => file.parseMeta()));
+      await Promise.all(this.files.map(async (file: FileParser) => file.parseJsx()));
+
       this.spinner.stop();
       return this;
     } catch (err) {

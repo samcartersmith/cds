@@ -48,25 +48,29 @@ export class ImportStatementParser {
   }
 
   get importElements() {
-    let imports: string[] = [];
+    let imports: [string, string][] = [];
     const { name, namedBindings } = this.statement.importClause;
     if (namedBindings) {
       // Wildcard imports
       if (ts.isNamespaceImport(namedBindings)) {
-        imports = [`${namedBindings.name.escapedText as string}`];
+        const nameText = `${namedBindings.name.escapedText as string}`;
+        imports = [[nameText, nameText]];
         // Named imports
       } else if (ts.isNamedImports(namedBindings)) {
-        imports = namedBindings.elements.map((el) => {
+        namedBindings.elements.forEach((el) => {
           // If el has propertyName present than import has been aliased
           // i.e. import { TextBody as CDSText }
           // el.propertyName?.escapedText guarantees we return TextBody not CDSText
-          return (el.propertyName?.escapedText as string) ?? (el.name.escapedText as string);
+          imports.push([
+            (el.propertyName?.escapedText as string) ?? (el.name.escapedText as string),
+            el.name.escapedText as string,
+          ]);
         });
       }
     }
     // Default imports
     if (name && ts.isIdentifier(name)) {
-      imports.unshift(name.escapedText as string);
+      imports.unshift([name.escapedText as string, name.escapedText as string]);
     }
 
     return imports;

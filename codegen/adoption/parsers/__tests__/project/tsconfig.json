@@ -1,24 +1,15 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
     "strict": true,
-    "allowJs": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "jsx": "react-jsx",
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@test/frontend/*": ["src/*"]
+    },
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "module": "CommonJS",
-    "target": "ES6",
-    "baseUrl": ".",
-    "paths": {}
-  },
-  "include": []
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react"
+  }
 }

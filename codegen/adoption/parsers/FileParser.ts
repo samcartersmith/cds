@@ -15,13 +15,47 @@ function isExportedStatement(node: ts.Node) {
   );
 }
 
-// normalize id's to not use the file extension, we don't know the file extension of imports
-function getJsxId(name: string, sourceFile: string) {
-  const sourceFileWithoutExtension = sourceFile.includes('.')
-    ? sourceFile.split('.').slice(0, -1).join('.')
-    : sourceFile;
+function getFilenameFromPath(pathName: string) {
+  let fileName = path.parse(pathName).base;
+  if (fileName.includes('.')) {
+    fileName = fileName.split('.').slice(0, -1).join('.'); // cut off file the extension
+  }
 
-  return toId(name, sourceFileWithoutExtension);
+  return fileName;
+}
+
+function findNodeWithType(
+  startNode: ts.Node,
+  kind: ts.SyntaxKind,
+  requiredKindAlongPath?: ts.SyntaxKind,
+  kindToStopAt?: ts.SyntaxKind,
+) {
+  const stack: ts.Node[] = [];
+  stack.push(startNode);
+
+  const foundNode = null;
+  let foundRequiredAlongPath = !requiredKindAlongPath;
+  while (stack.length > 0) {
+    const node = stack.pop() as ts.Node;
+
+    if (kindToStopAt && node.kind === kindToStopAt) {
+      return null;
+    }
+
+    if (requiredKindAlongPath && node.kind === requiredKindAlongPath) {
+      foundRequiredAlongPath = true;
+    }
+
+    if (foundRequiredAlongPath && node.kind === kind) {
+      return node;
+    }
+
+    node.forEachChild((child) => {
+      stack.push(child);
+    });
+  }
+
+  return foundNode;
 }
 
 export class FileParser {
@@ -38,7 +72,21 @@ export class FileParser {
   private source!: ts.SourceFile;
 
   /** All imports declared in the source file. */
+  /** This is the name in the import to the path */
+  /*
+  /* import {a as a1} from 'abc' => the key is 'a1' and the path is 'abc'
+  /* import {a as a2} from 'abc2' => the key is 'a2' and the path is 'abc2'
+  /* we can look up the correct path when using <a1 /> and <a2 />
+   */
   private readonly imports = new Map<string, string>();
+
+  /*
+  /* The aliases above are local to this file.
+  /* When generating id's that can be used globally we need to use the real name
+  */
+  private readonly importAliasToRealNameMap = new Map<string, string>();
+
+  private wrappedPresentationStopPos: Set<number> = new Set<number>();
 
   constructor(project: ProjectParser, absolutePathForFile: string) {
     this.project = project;
@@ -56,12 +104,30 @@ export class FileParser {
       : this.relativePath;
   }
 
-  public async parse() {
+  public async init() {
     try {
       this.source = await createAstSourceFile(this.absolutePath);
       this.getImports();
+      return this;
+    } catch (err) {
+      this.project.spinner.fail(`FileParser failed ${err?.message}`);
+    }
+    return this;
+  }
+
+  public async parseMeta() {
+    try {
       this.parseWrappedPresentation();
       this.parseStyledNode(this.source);
+      return this;
+    } catch (err) {
+      this.project.spinner.fail(`FileParser failed ${err?.message}`);
+    }
+    return this;
+  }
+
+  public async parseJsx() {
+    try {
       this.parseJsxNode(this.source);
       return this;
     } catch (err) {
@@ -75,13 +141,16 @@ export class FileParser {
       .filter(ImportStatementParser.isValidImportStatement)
       .forEach((statement) => {
         new ImportStatementParser(this, statement).parse(({ importElements, moduleName }) => {
-          importElements.forEach((item) => {
+          importElements.forEach(([itemRealName, itemAlias]) => {
             // Normalize imports via index files to always use deep imports
-            if (this.project.isCdsImport(moduleName) && !moduleName.includes(item)) {
-              this.imports.set(item, path.join(moduleName, item));
+            if (this.project.isCdsImport(moduleName) && !moduleName.includes(itemRealName)) {
+              this.imports.set(itemAlias, path.join(moduleName, itemRealName));
             } else {
-              this.imports.set(item, moduleName);
+              this.imports.set(itemAlias, moduleName);
             }
+
+            // map the uniqu alias to a possible duplicate name
+            this.importAliasToRealNameMap.set(itemAlias, itemRealName);
           });
         });
       });
@@ -102,7 +171,7 @@ export class FileParser {
           // Get the name of JSX element i.e. The StyledButton from `const StyledButton = styled(Button)`
           const jsxName = node.parent.name.escapedText as string;
           // Generate unique name for this component using path from file this was instantiated in.
-          const jsxId = getJsxId(jsxName, this.path);
+          const jsxId = this.getJsxId(jsxName, this.path);
 
           // Get the styled element that this component was created with i.e. div in styled.div
           if (ts.isPropertyAccessExpression(node.tag)) {
@@ -114,7 +183,7 @@ export class FileParser {
           } else if (ts.isCallExpression(node.tag) && ts.isIdentifier(node.tag.arguments[0])) {
             const extendedJsxName = node.tag.arguments[0].escapedText as string;
             const importedFrom = this.imports.get(extendedJsxName) ?? this.path;
-            const extendedJsxId = getJsxId(extendedJsxName, importedFrom);
+            const extendedJsxId = this.getJsxId(extendedJsxName, importedFrom);
             // See if this JSX component has already been extended so we can add to that list.
             const extendedJsxMatch = this.project.extendedStyledComponents.get(extendedJsxId) ?? [];
             // Add or update extended JSX to our styled components list
@@ -127,11 +196,31 @@ export class FileParser {
   }
 
   private parseWrappedPresentation() {
-    /**
-     * This case:
-     * export const CustomSvg1 = ({ children }: { children: React.ReactNode }) => <svg>{children}</svg>;
-     */
     for (const statement of this.source.statements) {
+      /**
+       * This case where you export a variable that executes a function
+       * export const CustomSvg1 = ({ children }: { children: React.ReactNode }) => <svg>{children}</svg>;
+       *
+       * export const CustomSvg3 = React.memo(({ children }: { children: React.ReactNode }) => <svg>{children}</svg>);
+       *
+       * export const CustomSvg4 = React.memo(function CustomSvg4({children}) {
+       *
+       *   const a = 1;
+       *
+       *   return (
+       *     <svg>{children}</svg>
+       *   )
+       * });
+       *
+       * export const CustomSvg5 = React.memo(({children}) => {
+       *
+       *  const a = 1;
+       *
+       *  return (
+       *     <svg>{children}</svg>
+       *  )
+       * });
+       */
       if (ts.isVariableStatement(statement)) {
         if (isExportedStatement(statement)) {
           const { declarationList } = statement;
@@ -139,12 +228,35 @@ export class FileParser {
             for (const declaration of declarationList.declarations) {
               if (declaration) {
                 const varName = (declaration.name as ts.Identifier).escapedText as string;
-                // traverse initializer.body.expression.openingElement.tagName.escapedtext
-                const body = (declaration?.initializer as ts.ArrowFunction)?.body as ts.JsxElement;
-                if (body && body.kind === ts.SyntaxKind.JsxElement) {
-                  if (this.project.isPresentationalJsx(body)) {
-                    const jsxId = getJsxId(varName, this.path);
-                    this.project.wrappedPresentationComponents.set(jsxId, this.path);
+
+                const arrowFunction = findNodeWithType(
+                  declaration,
+                  ts.SyntaxKind.ArrowFunction,
+                  undefined,
+                  ts.SyntaxKind.Block,
+                );
+                if (arrowFunction) {
+                  const jsxElement = findNodeWithType(
+                    arrowFunction,
+                    ts.SyntaxKind.JsxElement,
+                  ) as ts.JsxElement;
+                  if (jsxElement) {
+                    this.handleFoundWrappedJsx(varName, jsxElement);
+                  }
+                }
+
+                const returnStatement = findNodeWithType(
+                  declaration,
+                  ts.SyntaxKind.ReturnStatement,
+                  ts.SyntaxKind.Block,
+                );
+                if (returnStatement) {
+                  const jsxElement = findNodeWithType(
+                    returnStatement,
+                    ts.SyntaxKind.JsxElement,
+                  ) as ts.JsxElement;
+                  if (jsxElement) {
+                    this.handleFoundWrappedJsx(varName, jsxElement);
                   }
                 }
               }
@@ -154,7 +266,8 @@ export class FileParser {
       }
 
       /**
-       * This case:
+       * This case where you export a function with a return statement:
+       *
        * export function CustomSvg2({ children }: { children: React.ReactNode }) {
        *  const a = 2;
        *
@@ -164,52 +277,133 @@ export class FileParser {
       if (ts.isFunctionDeclaration(statement)) {
         if (isExportedStatement(statement)) {
           const fnName = statement.name?.escapedText as string;
-          const body = statement.body as ts.Block;
 
-          const returnStatement = body?.statements.find(
-            (s) => s.kind === ts.SyntaxKind.ReturnStatement,
-          ) as ts.ReturnStatement;
-          if (returnStatement && returnStatement.expression?.kind === ts.SyntaxKind.JsxElement) {
-            if (this.project.isPresentationalJsx(returnStatement?.expression as ts.JsxElement)) {
-              const jsxId = getJsxId(fnName, this.path);
-              this.project.wrappedPresentationComponents.set(jsxId, this.path);
+          const returnStatement = findNodeWithType(
+            statement,
+            ts.SyntaxKind.ReturnStatement,
+            ts.SyntaxKind.Block,
+          );
+          if (returnStatement) {
+            const jsxElement = findNodeWithType(
+              returnStatement,
+              ts.SyntaxKind.JsxElement,
+            ) as ts.JsxElement;
+            if (jsxElement) {
+              this.handleFoundWrappedJsx(fnName, jsxElement);
             }
           }
         }
       }
 
       /**
-       * This case:
+       * This case is for default exports of an arrow function or regular function:
        * export default ({ children }: { children: React.ReactNode }) => <svg>{children}</svg>;
+       * export default function ({ children }: { children: React.ReactNode }) { return <svg>{children}</svg>);
        *
        * currently relies on the import to use the same name as the file
        */
       if (ts.isExportAssignment(statement)) {
-        const expression = statement.expression as ts.ArrowFunction;
-        if (expression && expression.body?.kind === ts.SyntaxKind.JsxElement) {
-          if (this.project.isPresentationalJsx(expression.body as ts.JsxElement)) {
-            let fileName = path.parse(this.path).base;
-            if (fileName.includes('.')) {
-              fileName = fileName.split('.').slice(0, -1).join('.'); // cut off file the extension
-            }
+        const fileName = getFilenameFromPath(this.path);
+        const arrowFunction = findNodeWithType(
+          statement,
+          ts.SyntaxKind.ArrowFunction,
+          undefined,
+          ts.SyntaxKind.Block,
+        );
+        if (arrowFunction) {
+          const jsxElement = findNodeWithType(
+            arrowFunction,
+            ts.SyntaxKind.JsxElement,
+          ) as ts.JsxElement;
+          if (jsxElement) {
+            this.handleFoundWrappedJsx(fileName, jsxElement);
+          }
+        }
 
-            const jsxId = getJsxId(fileName, this.path);
-            this.project.wrappedPresentationComponents.set(jsxId, this.path);
+        const returnStatement = findNodeWithType(
+          statement,
+          ts.SyntaxKind.ReturnStatement,
+          ts.SyntaxKind.Block,
+        );
+        if (returnStatement) {
+          const jsxElement = findNodeWithType(
+            returnStatement,
+            ts.SyntaxKind.JsxElement,
+          ) as ts.JsxElement;
+          if (jsxElement) {
+            this.handleFoundWrappedJsx(fileName, jsxElement);
+          }
+        }
+      }
+    }
+  }
+
+  private handleFoundWrappedJsx(exportId: string, jsxElement: ts.JsxElement) {
+    const { openingElement } = jsxElement;
+    let tagName = '';
+    if (openingElement && 'escapedText' in openingElement.tagName) {
+      tagName = openingElement.tagName.escapedText as string;
+    }
+
+    const [cdsPath, isWrappedCds] = this.isWrappedCdsJsx(jsxElement);
+    if (isWrappedCds) {
+      this.project.addAliasedCdsComponent(exportId, this.path, this.getJsxId(tagName, cdsPath));
+
+      return;
+    }
+
+    const [presEl, isPresEl] = this.isWrappedPresentationalJsx(jsxElement);
+    if (isPresEl) {
+      this.project.addWrappedPresentationalComponent(
+        this.getJsxId(exportId, this.path),
+        this.path,
+        presEl,
+      );
+      this.wrappedPresentationStopPos.add(jsxElement.pos);
+    }
+  }
+
+  private isWrappedPresentationalJsx(element: ts.JsxElement): [string, boolean] {
+    const { openingElement } = element;
+    if (openingElement && 'escapedText' in openingElement.tagName) {
+      const tagName = openingElement.tagName.escapedText as string;
+
+      const lib = this.imports.get(tagName);
+      if (lib && this.project.isPresentationalLibrary(lib)[1] !== false) {
+        return [lib, true];
+      }
+
+      if (this.project.isPresentationalElement(tagName)[1] !== false) {
+        return [tagName, true];
+      }
+
+      for (const attribute of openingElement.attributes.properties) {
+        if (ts.isJsxAttribute(attribute)) {
+          const propName = attribute.name.escapedText as string;
+          if (this.project.isPresentationalProp(propName)) {
+            return [tagName, true];
           }
         }
       }
     }
 
-    // TODO: Possibly handle default function export if this is a real use case
-    /** export default function({ children }: { children: React.ReactNode }) {
-      return (
-        <svg>{children}</svg>
-      );
-    }; 
-     * */
+    return ['', false];
   }
 
-  private parseJsxNode(node: ts.Node) {
+  private isWrappedCdsJsx(element: ts.JsxElement): [string, boolean] {
+    const { openingElement } = element;
+    if (openingElement && 'escapedText' in openingElement.tagName) {
+      const tagName = openingElement.tagName.escapedText as string;
+      const lib = this.imports.get(tagName) as string;
+      if (lib && this.project.isCdsImport(lib)[1] !== false) {
+        return [lib, true];
+      }
+    }
+
+    return ['', false];
+  }
+
+  private parseJsxNode(node: ts.Node, stop?: boolean) {
     const props: string[] = [];
     if (
       (ts.isJsxSelfClosingElement(node) || ts.isJsxOpeningElement(node)) &&
@@ -228,22 +422,33 @@ export class FileParser {
       // Get the sourceFile (where it was imported from) for the component. If it is not included in imports for the file, than we know it's local.
       const sourceFile = this.imports.get(jsxName) ?? this.path;
       // Generate a unique name for this component using JSX name + source file.
-      const jsxId = getJsxId(jsxName, sourceFile);
+      const jsxId = this.getJsxId(jsxName, sourceFile);
       // If component has already been added than let's update the callSites to include this file, otherwise add a new entry.
-      const jsxComponentMatch = this.project.jsxComponents.get(jsxId) ?? [];
-      this.project.jsxComponents.set(jsxId, [...jsxComponentMatch, { callSite: this.path, props }]);
+      this.project.addJsxComponent(jsxId, this.path, props);
     }
 
     if (ts.isJsxElement(node)) {
+      // don't parse the sub elements for a wrapped presentation
+      if (this.wrappedPresentationStopPos.has(node.pos)) {
+        return;
+      }
+
       const { openingElement } = node;
       if (
+        openingElement &&
         rootElementsToStopAt.has((openingElement.tagName as ts.Identifier).escapedText as string)
       ) {
-        this.parseJsxNode(openingElement);
+        this.parseJsxNode(openingElement, true);
         return;
       }
     }
 
-    node.forEachChild((childNode) => this.parseJsxNode(childNode));
+    if (stop !== true) {
+      node.forEachChild((childNode) => this.parseJsxNode(childNode));
+    }
+  }
+
+  private getJsxId(name: string, sourceFile: string) {
+    return toId(this.importAliasToRealNameMap.get(name) ?? name, sourceFile);
   }
 }

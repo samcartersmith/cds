@@ -1,5 +1,5 @@
 // test file to verify only root node is parsed
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 type CalendarIconProps = {
   width?: number;
