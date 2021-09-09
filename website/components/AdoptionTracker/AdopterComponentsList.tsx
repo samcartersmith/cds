@@ -1,14 +1,15 @@
-import React, { useState, memo, useMemo, useCallback } from 'react';
+import React, { useState, memo, useCallback } from 'react';
 import { HStack, VStack, Divider } from '@cbhq/cds-web/layout';
 import { ListCell } from '@cbhq/cds-web/cells';
 import { SetState } from '@cbhq/cds-common';
-import { useAdopterComponents } from './hooks/useAdopterComponents';
-import type { AdopterComponents, ComponentData } from './types';
+import List, { ListRowProps } from 'react-virtualized/dist/commonjs/List';
+import WindowScroller, {
+  WindowScrollerChildProps,
+} from 'react-virtualized/dist/commonjs/WindowScroller';
+import AutoSizer, { Size } from 'react-virtualized/dist/commonjs/AutoSizer';
+import type { ComponentData } from './types';
 import { AdopterComponentDetails } from './AdopterComponentDetails';
 import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
-import List, {ListRowProps} from 'react-virtualized/dist/commonjs/List';
-import WindowScroller, {WindowScrollerChildProps} from 'react-virtualized/dist/commonjs/WindowScroller';
-import AutoSizer, {Size} from 'react-virtualized/dist/commonjs/AutoSizer';
 
 type AdopterListCellProps = ComponentData & {
   isActive: boolean;
@@ -39,8 +40,7 @@ const AdopterListCell = memo((props: AdopterListCellProps) => {
   );
 });
 
-export const AdopterComponentsList = memo(({ group }: { group: keyof AdopterComponents }) => {
-  const { components } = useAdopterComponents()[group];
+export const AdopterComponentsList = memo(({ components }: { components: ComponentData[] }) => {
   const [activeComponent, setActiveComponent] = useState<ComponentData | undefined>(
     components.length > 0 ? components[0] : undefined,
   );
@@ -59,12 +59,12 @@ export const AdopterComponentsList = memo(({ group }: { group: keyof AdopterComp
     const isActive = activeId === id;
 
     return (
-      <div key={`${name}-${sourceFile}`} className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
-        <AdopterListCell
-          isActive={isActive}
-          setActiveComponent={setActiveComponent}
-          {...item}
-        />
+      <div
+        key={`${name}-${sourceFile}`}
+        className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}
+        style={style}
+      >
+        <AdopterListCell isActive={isActive} setActiveComponent={setActiveComponent} {...item} />
       </div>
     );
   };
@@ -72,7 +72,7 @@ export const AdopterComponentsList = memo(({ group }: { group: keyof AdopterComp
   return (
     <HStack alignItems="flex-start" justifyContent="space-between">
       <VStack flexGrow={1}>
-        <div style={{height: `${80*components.length}px`}}>
+        <div style={{ height: `${80 * components.length}px` }}>
           <WindowScroller>
             {({ height, scrollTop }: WindowScrollerChildProps) => (
               <AutoSizer>

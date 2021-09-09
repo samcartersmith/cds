@@ -5,30 +5,41 @@ import { TextTitle1 } from '@cbhq/cds-web/typography';
 import { IconButton } from '@cbhq/cds-web/buttons';
 import { StatsTextStack } from '@cbhq/cds-website/components/StatsTextStack';
 import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
+import { useAdopterComponents } from './hooks/useAdopterComponents';
 import { useAdoptionPercent } from './hooks/useAdoptionPercent';
 import { AdopterComponentsList } from './AdopterComponentsList';
+import { useOkrPlanningComponents } from './hooks/useOkrPlanningComponents';
 
 export const AdopterDetails = memo(() => {
   const { id, label } = useAdopterProjectInfo();
+  const { cds, presentational, other } = useAdopterComponents();
+  const okrPlanning = useOkrPlanningComponents();
   const values = useMemo(() => {
     return [
       {
         label: 'CDS',
         id: 'cds',
-        content: <AdopterComponentsList key="cds" group="cds" />,
+        content: <AdopterComponentsList key="cds" components={cds.components} />,
       },
       {
         label: 'Presentational',
         id: 'nonCds',
-        content: <AdopterComponentsList key="presentational" group="presentational" />,
+        content: (
+          <AdopterComponentsList key="presentational" components={presentational.components} />
+        ),
       },
       {
         label: 'Other',
         id: 'other',
-        content: <AdopterComponentsList key="other" group="other" />,
+        content: <AdopterComponentsList key="other" components={other.components} />,
+      },
+      {
+        label: 'OKR Planning',
+        id: 'okrPlanning',
+        content: <AdopterComponentsList key="other" components={okrPlanning} />,
       },
     ];
-  }, []);
+  }, [cds.components, okrPlanning, other.components, presentational.components]);
 
   return (
     <>

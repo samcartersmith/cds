@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo } from 'react';
-import { components } from '@cbhq/cds-website/data/componentsList';
 import { kebabCase } from '@cbhq/cds-utils';
 
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
@@ -7,26 +6,10 @@ import { Icon } from '@cbhq/cds-web/icons';
 import { VStack } from '@cbhq/cds-web/layout';
 import { BetaCell } from '@cbhq/cds-website/components/BetaCell';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { uniq } from 'lodash';
-
-// TODO: Add tags for custom component names
-// const tags = {
-//   Container: ['Box', 'HStack', 'VStack'],
-// };
+import { getCdsRecs } from './utils/getCdsRecs';
 
 export const useCdsRecommendations = (name: string) => {
-  return useMemo(() => {
-    const matches: string[] = [];
-    for (const cdsName of components) {
-      const camelCaseSplit = kebabCase(cdsName).split('-');
-      for (const splitName of kebabCase(name).split('-')) {
-        if ([cdsName, ...camelCaseSplit].includes(splitName)) {
-          matches.push(cdsName);
-        }
-      }
-    }
-    return uniq(matches);
-  }, [name]);
+  return useMemo(() => getCdsRecs(name), [name]);
 };
 
 export const AdopterCdsRecommendation = ({
