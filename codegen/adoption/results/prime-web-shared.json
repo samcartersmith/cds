@@ -239,48 +239,9 @@
       }
     },
     {
-      "name": "TextCaption",
-      "sourceFile": "@cbhq/cds-web/typography/TextCaption",
-      "totalInstances": 10,
-      "totalCallSites": 8,
-      "cds": "@cbhq/cds-web/typography/TextCaption",
-      "callSites": {
-        "@cbhq/insto-ui-web/FilterGrid/FilterGrid.tsx": 1,
-        "@cbhq/insto-ui-web/LadderOrderPill/LadderOrderPill.tsx": 2,
-        "@cbhq/insto-ui-web/Switch/Switch.tsx": 2,
-        "@cbhq/insto-ui-web/TimePicker/TimePicker.tsx": 1,
-        "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
-        "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
-        "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
-        "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "@cbhq/insto-ui-web/FilterGrid/FilterGrid.tsx": 1,
-          "@cbhq/insto-ui-web/LadderOrderPill/LadderOrderPill.tsx": 2,
-          "@cbhq/insto-ui-web/Switch/Switch.tsx": 2,
-          "@cbhq/insto-ui-web/TimePicker/TimePicker.tsx": 1,
-          "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
-          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
-          "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
-          "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
-        },
-        "color": {
-          "@cbhq/insto-ui-web/FilterGrid/FilterGrid.tsx": 1,
-          "@cbhq/insto-ui-web/LadderOrderPill/LadderOrderPill.tsx": 2,
-          "@cbhq/insto-ui-web/Switch/Switch.tsx": 2,
-          "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
-          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
-          "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
-          "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
-        },
-        "align": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 2 }
-      }
-    },
-    {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 8,
+      "totalInstances": 9,
       "totalCallSites": 8,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
@@ -289,7 +250,7 @@
         "@cbhq/insto-ui-web/PopoverIconButton/PopoverIconButton.tsx": 1,
         "@cbhq/insto-ui-web/Select/AnimatedArrow.tsx": 1,
         "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
-        "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
+        "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 2,
         "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
         "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
       },
@@ -300,7 +261,7 @@
           "@cbhq/insto-ui-web/PopoverIconButton/PopoverIconButton.tsx": 1,
           "@cbhq/insto-ui-web/Select/AnimatedArrow.tsx": 1,
           "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
-          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
+          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 2,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
           "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
         },
@@ -310,7 +271,7 @@
           "@cbhq/insto-ui-web/PopoverIconButton/PopoverIconButton.tsx": 1,
           "@cbhq/insto-ui-web/Select/AnimatedArrow.tsx": 1,
           "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
-          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
+          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 2,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
           "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
         },
@@ -320,17 +281,56 @@
           "@cbhq/insto-ui-web/PopoverIconButton/PopoverIconButton.tsx": 1,
           "@cbhq/insto-ui-web/Select/AnimatedArrow.tsx": 1,
           "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
-          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
+          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 2,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
           "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
         }
       }
     },
     {
+      "name": "TextCaption",
+      "sourceFile": "@cbhq/cds-web/typography/TextCaption",
+      "totalInstances": 9,
+      "totalCallSites": 8,
+      "cds": "@cbhq/cds-web/typography/TextCaption",
+      "callSites": {
+        "@cbhq/insto-ui-web/FilterGrid/FilterGrid.tsx": 1,
+        "@cbhq/insto-ui-web/LadderOrderPill/LadderOrderPill.tsx": 2,
+        "@cbhq/insto-ui-web/Switch/Switch.tsx": 1,
+        "@cbhq/insto-ui-web/TimePicker/TimePicker.tsx": 1,
+        "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
+        "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
+        "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
+        "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "@cbhq/insto-ui-web/FilterGrid/FilterGrid.tsx": 1,
+          "@cbhq/insto-ui-web/LadderOrderPill/LadderOrderPill.tsx": 2,
+          "@cbhq/insto-ui-web/Switch/Switch.tsx": 1,
+          "@cbhq/insto-ui-web/TimePicker/TimePicker.tsx": 1,
+          "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
+          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
+          "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
+          "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
+        },
+        "color": {
+          "@cbhq/insto-ui-web/FilterGrid/FilterGrid.tsx": 1,
+          "@cbhq/insto-ui-web/LadderOrderPill/LadderOrderPill.tsx": 2,
+          "@cbhq/insto-ui-web/Switch/Switch.tsx": 1,
+          "@cbhq/insto-ui-web/Toast/Toast.tsx": 1,
+          "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1,
+          "@cbhq/insto-ui-web/Table/VirtualTable/VirtualHeaderCell.tsx": 1,
+          "@cbhq/insto-ui-web/Table/components/TableHeaderCell.tsx": 1
+        },
+        "align": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 1 }
+      }
+    },
+    {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 11,
-      "totalCallSites": 8,
+      "totalInstances": 12,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         { "aliasPath": "@cbhq/insto-ui-web/InlineBanner/InlineBanner.tsx", "callSites": [] },
@@ -346,7 +346,8 @@
         "@cbhq/insto-ui-web/error/NoPortfoliosError.tsx": 1,
         "@cbhq/insto-ui-web/error/UserIpRestrictionsViolation.tsx": 1,
         "@cbhq/insto-ui-web/loading/LoadingSkeletonList.tsx": 2,
-        "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTable.tsx": 1
+        "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTable.tsx": 1,
+        "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1
       },
       "propsWithCallSites": {
         "spacingVertical": {
@@ -373,7 +374,8 @@
         "width": { "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTable.tsx": 1 },
         "height": { "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTable.tsx": 1 },
         "position": { "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTable.tsx": 1 },
-        "overflow": { "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTable.tsx": 1 }
+        "overflow": { "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTable.tsx": 1 },
+        "justifyContent": { "@cbhq/insto-ui-web/Table/AdvancedTable/HeaderCell.tsx": 1 }
       }
     },
     {
@@ -490,8 +492,8 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 14,
-      "totalCallSites": 11,
+      "totalInstances": 11,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
         "@cbhq/insto-ui-web/Menu/MenuContent.tsx": 1,
@@ -499,7 +501,6 @@
         "@cbhq/insto-ui-web/Select/Option.tsx": 1,
         "@cbhq/insto-ui-web/Select/Select.tsx": 1,
         "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-        "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
         "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1,
         "@cbhq/insto-ui-web/Table/example/cell-components/Equiv.tsx": 1,
         "@cbhq/insto-ui-web/Table/example/cell-components/Holdings.tsx": 1,
@@ -515,7 +516,6 @@
           "@cbhq/insto-ui-web/Select/Option.tsx": 1,
           "@cbhq/insto-ui-web/Select/Select.tsx": 1,
           "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-          "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1,
           "@cbhq/insto-ui-web/Table/example/cell-components/Equiv.tsx": 1,
           "@cbhq/insto-ui-web/Table/example/cell-components/Holdings.tsx": 1,
@@ -730,6 +730,28 @@
       }
     },
     {
+      "name": "CoinIcon",
+      "sourceFile": "@cbhq/insto-ui-web/icons/CoinIcon/CoinIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Icon",
+      "presentationalLibrary": "@cbhq/insto-ui-web/icons/CoinIcon/CoinIcon",
+      "propsWithCallSites": {
+        "currency": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 },
+        "size": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 },
+        "noMargin": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 }
+      }
+    },
+    {
+      "name": "Image",
+      "sourceFile": "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx",
+      "styledComponent": "div",
+      "propsWithCallSites": { "name": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 } }
+    },
+    {
       "name": "Columns",
       "sourceFile": "@cbhq/insto-ui-web/layout/Columns/Columns",
       "totalInstances": 2,
@@ -811,28 +833,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalLibrary": "@cbhq/insto-ui-web/FilterGrid/FilterGrid.tsx"
-    },
-    {
-      "name": "CoinIcon",
-      "sourceFile": "@cbhq/insto-ui-web/icons/CoinIcon/CoinIcon",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "Icon",
-      "presentationalLibrary": "@cbhq/insto-ui-web/icons/CoinIcon/CoinIcon",
-      "propsWithCallSites": {
-        "currency": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 },
-        "size": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 },
-        "noMargin": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 }
-      }
-    },
-    {
-      "name": "Image",
-      "sourceFile": "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx",
-      "styledComponent": "div",
-      "propsWithCallSites": { "name": { "@cbhq/insto-ui-web/DualIcon/ImageIconOrAvatar.tsx": 1 } }
     },
     {
       "name": "StepComponent",
@@ -1314,28 +1314,6 @@
       "presentationalLibrary": "@cbhq/insto-ui-web/Switch/Switch.tsx",
       "styledComponent": "div",
       "propsWithCallSites": { "knobPosition": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 1 } }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "@cbhq/insto-ui-web/Switch/Switch.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Switch/Switch.tsx",
-      "styledComponent": "div"
-    },
-    {
-      "name": "Switch",
-      "sourceFile": "@cbhq/insto-ui-web/Switch/Switch.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Switch/Switch.tsx",
-      "propsWithCallSites": {
-        "name": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 1 },
-        "checked": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 1 },
-        "disabled": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 1 },
-        "onClick": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 1 },
-        "subSwitches": { "@cbhq/insto-ui-web/Switch/Switch.tsx": 1 }
-      }
     },
     {
       "name": "div",
@@ -1821,36 +1799,6 @@
       }
     },
     {
-      "name": "ContainerMarkup",
-      "sourceFile": "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx",
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "width": { "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx": 1 },
-        "height": { "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx",
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx" },
-        { "prop": "style", "callSite": "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx" }
-      ],
-      "propsWithCallSites": {
-        "className": { "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx": 1 },
-        "style": { "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx": 1 },
-        "aria-busy": { "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx": 1 },
-        "aria-live": { "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx": 1 },
-        "role": { "@cbhq/insto-ui-web/loading/SkeletonLoader.tsx": 1 }
-      }
-    },
-    {
       "name": "a",
       "sourceFile": "@cbhq/insto-ui-web/safeLink/SafeLink.tsx",
       "totalInstances": 1,
@@ -1957,18 +1905,16 @@
     {
       "name": "Holdings",
       "sourceFile": "@cbhq/insto-ui-web/Table/example/cell-components/Holdings",
-      "totalInstances": 5,
-      "totalCallSites": 3,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "presentationalLibrary": "@cbhq/insto-ui-web/Table/example/cell-components/Holdings",
       "callSites": {
         "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-        "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
         "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1
       },
       "propsWithCallSites": {
         "hold": {
           "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-          "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1
         }
       }
@@ -1976,23 +1922,20 @@
     {
       "name": "ValueCurrency",
       "sourceFile": "@cbhq/insto-ui-web/Table/example/cell-components/ValueCurrency",
-      "totalInstances": 10,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 2,
       "presentationalLibrary": "@cbhq/insto-ui-web/Table/example/cell-components/ValueCurrency",
       "callSites": {
         "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 2,
-        "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 6,
         "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 2
       },
       "propsWithCallSites": {
         "currency": {
           "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 2,
-          "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 6,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 2
         },
         "value": {
           "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 2,
-          "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 6,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 2
         }
       }
@@ -2000,18 +1943,16 @@
     {
       "name": "Equiv",
       "sourceFile": "@cbhq/insto-ui-web/Table/example/cell-components/Equiv",
-      "totalInstances": 5,
-      "totalCallSites": 3,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "presentationalLibrary": "@cbhq/insto-ui-web/Table/example/cell-components/Equiv",
       "callSites": {
         "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-        "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
         "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1
       },
       "propsWithCallSites": {
         "equiv": {
           "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-          "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1
         }
       }
@@ -2019,18 +1960,16 @@
     {
       "name": "ProfitLoss",
       "sourceFile": "@cbhq/insto-ui-web/Table/example/cell-components/ProfitLoss",
-      "totalInstances": 5,
-      "totalCallSites": 3,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "presentationalLibrary": "@cbhq/insto-ui-web/Table/example/cell-components/ProfitLoss",
       "callSites": {
         "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-        "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
         "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1
       },
       "propsWithCallSites": {
         "pandl": {
           "@cbhq/insto-ui-web/Table/AdvancedTable/AdvancedTableExample.tsx": 1,
-          "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3,
           "@cbhq/insto-ui-web/Table/VirtualTable/VirtualTableExample.tsx": 1
         }
       }
@@ -2107,70 +2046,6 @@
       "totalCallSites": 1,
       "presentationalElement": "tr",
       "presentationalLibrary": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable.tsx"
-    },
-    {
-      "name": "ExampleContainer",
-      "sourceFile": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx",
-      "styledComponent": "div",
-      "callSites": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3 }
-    },
-    {
-      "name": "SimpleTable",
-      "sourceFile": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable",
-      "callSites": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3 }
-    },
-    {
-      "name": "HCell",
-      "sourceFile": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/HCell",
-      "totalInstances": 18,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/HCell",
-      "callSites": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 18 },
-      "propsWithCallSites": {
-        "width": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 12 },
-        "textAlign": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3 }
-      }
-    },
-    {
-      "name": "Row",
-      "sourceFile": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/Row",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/Row",
-      "callSites": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3 },
-      "propsWithCallSites": {
-        "key": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3 }
-      }
-    },
-    {
-      "name": "Cell",
-      "sourceFile": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/Cell",
-      "totalInstances": 18,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/Cell",
-      "callSites": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 18 },
-      "propsWithCallSites": {
-        "textAlign": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 3 }
-      }
-    },
-    {
-      "name": "EditableContent",
-      "sourceFile": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/EditableContent",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTable/EditableContent",
-      "propsWithCallSites": {
-        "value": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 1 },
-        "updateData": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 1 },
-        "rowIndex": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 1 },
-        "cellKey": { "@cbhq/insto-ui-web/Table/SimpleTable/SimpleTableExample.tsx": 1 }
-      }
     },
     {
       "name": "Cell",

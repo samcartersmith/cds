@@ -4,8 +4,9 @@ import { TextLabel1, TextLabel2, TextTitle3, TextHeadline } from '@cbhq/cds-web/
 import type { ComponentData } from './types';
 import { AdopterComponentProps } from './AdopterComponentProps';
 import { AdopterComponentCallSites } from './AdopterComponentCallSites';
-import { AdopterComponentsExtended } from './AdopterComponentsExtended';
+import { AdopterComponentsExtendedStyles } from './AdopterComponentsExtendedStyles';
 import { AdopterCdsRecommendation, useCdsRecommendations } from './AdopterCdsRecommendation';
+import {AdopterComponentsAliasedCds} from "@cbhq/cds-website/components/AdoptionTracker/AdopterComponentsAliasedCds";
 
 type DetailsObject = { title: string; details: Details };
 type Details = [string, string[]] | string | string[] | DetailsObject | DetailsObject[];
@@ -63,6 +64,7 @@ export const AdopterComponentDetails = memo(
     callSites,
     name,
     extendedStyledComponents,
+    aliasedCdsComponents,
     propsWithCallSites,
     sourceFile,
     styledComponent,
@@ -91,7 +93,10 @@ export const AdopterComponentDetails = memo(
         )}
         {propsWithCallSites && <AdopterComponentProps propsWithCallSites={propsWithCallSites} />}
         {extendedStyledComponents && (
-          <AdopterComponentsExtended extendedStyledComponents={extendedStyledComponents} />
+          <AdopterComponentsExtendedStyles extendedStyledComponents={extendedStyledComponents} />
+        )}
+        {aliasedCdsComponents && (
+          <AdopterComponentsAliasedCds aliasedCdsComponents={aliasedCdsComponents} />
         )}
         {callSites && <AdopterComponentCallSites callSites={callSites} />}
       </VStack>

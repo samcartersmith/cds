@@ -7,7 +7,7 @@ import { Icon } from '@cbhq/cds-web/icons';
 import type { ComponentData } from './types';
 import { useGetGitLink } from './hooks/useGetGitLink';
 
-export const AdopterComponentsExtended = memo(
+export const AdopterComponentsExtendedStyles = memo(
   ({
     extendedStyledComponents,
   }: {

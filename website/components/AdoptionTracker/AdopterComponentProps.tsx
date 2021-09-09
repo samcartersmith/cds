@@ -1,5 +1,5 @@
 import React, { useCallback, useState, memo } from 'react';
-import { VStack } from '@cbhq/cds-web/layout';
+import {Divider, VStack} from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
 import { orderBy, sumBy, toPairs } from 'lodash';
 import { BetaCell } from '@cbhq/cds-website/components/BetaCell';
@@ -39,23 +39,27 @@ export const AdopterComponentProps = memo(
     const selectedContent = useCallback(
       (callSites: [string, number][]) => {
         const sortedCallSites = orderBy(callSites, ([, callSiteCount]) => callSiteCount, ['desc']);
-        return sortedCallSites.map(([callSite, callSiteCount]) => {
-          return (
-            <BetaCell
-              priority="end"
-              offsetHorizontal={1}
-              onPress={handleOnPropCallSite(callSite)}
-              start={
-                <TextLabel2 as="p" overflow="truncate">
-                  {callSite}
-                </TextLabel2>
-              }
-              end={<TextLabel2 as="p" align="end">{`${callSiteCount}x`}</TextLabel2>}
-              endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
-            />
-          );
-        });
-      },
+        return (
+          <VStack>
+            {sortedCallSites.map(([callSite, callSiteCount]) => (
+              <BetaCell
+                priority="end"
+                offsetHorizontal={1}
+                onPress={handleOnPropCallSite(callSite)}
+                start={
+                  <TextLabel2 as="p" overflow="truncate">
+                    {callSite}
+                  </TextLabel2>
+                }
+                end={<TextLabel2 as="p" align="end">{`${callSiteCount}x`}</TextLabel2>}
+                endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
+              />
+            ))
+            }
+            <Divider spacingTop={2} spacingBottom={2} />
+          </VStack>
+      )
+    },
       [handleOnPropCallSite],
     );
 

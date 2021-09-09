@@ -7,7 +7,9 @@ import { Modal } from '@test/frontend/presentational/components';
 // @ts-ignore
 import { NavigationControl } from '@test/frontend/presentational/components/NavigationControl';
 import { styled } from 'linaria/react';
-import { TableCell } from '@material-ui/core';
+import { Table, TableCell } from '@material-ui/core';
+// @ts-ignore
+import { Accordion } from '@test/frontend/presentational/components/Accordion';
 import PresentationalTestDefaultExport, {
   TestPresentationAttribute,
 } from './PresentationalTestDefaultExport';
@@ -44,6 +46,16 @@ export const CustomSvg5 = React.memo(({ children }) => {
 
 const StyledCell = styled(TableCell)``;
 
+const StyledTable = styled(Table)`
+  border-color: red;
+  background-color: red;
+  border-radius: 12px;
+`;
+
+const StyledDiv = styled.div`
+  background-color: red;
+`;
+
 export const TestComponentSvg = () => (
   <div>
     <CustomSvg1>Test</CustomSvg1>
@@ -62,5 +74,12 @@ export const TestComponentSvg = () => (
     <NavigationControl />
     <TableCell />
     <StyledCell />
+    <StyledTable />
+    <Accordion>
+      <div>Test</div>
+    </Accordion>
+    <StyledDiv>
+      <div>abd</div>
+    </StyledDiv>
   </div>
 );

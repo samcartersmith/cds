@@ -115,10 +115,19 @@ export class FileParser {
     return this;
   }
 
-  public async parseMeta() {
+  public async parseStyle() {
+    try {
+      this.parseStyledNode(this.source);
+      return this;
+    } catch (err) {
+      this.project.spinner.fail(`FileParser failed ${err?.message}`);
+    }
+    return this;
+  }
+
+  public async parseWrapped() {
     try {
       this.parseWrappedPresentation();
-      this.parseStyledNode(this.source);
       return this;
     } catch (err) {
       this.project.spinner.fail(`FileParser failed ${err?.message}`);
@@ -185,9 +194,17 @@ export class FileParser {
             const importedFrom = this.imports.get(extendedJsxName) ?? this.path;
             const extendedJsxId = this.getJsxId(extendedJsxName, importedFrom);
             // See if this JSX component has already been extended so we can add to that list.
-            const extendedJsxMatch = this.project.extendedStyledComponents.get(extendedJsxId) ?? [];
             // Add or update extended JSX to our styled components list
-            this.project.extendedStyledComponents.set(extendedJsxId, [...extendedJsxMatch, jsxId]);
+            if (this.project.isCdsImport(importedFrom)[1] !== false) {
+              const extendedJsxMatch =
+                this.project.extendedStyledComponents.get(extendedJsxId) ?? [];
+              this.project.extendedStyledComponents.set(extendedJsxId, [
+                ...extendedJsxMatch,
+                jsxId,
+              ]);
+            } else {
+              this.project.styledComponents.set(jsxId, extendedJsxName);
+            }
           }
         }
       }
@@ -368,7 +385,7 @@ export class FileParser {
     if (openingElement && 'escapedText' in openingElement.tagName) {
       const tagName = openingElement.tagName.escapedText as string;
 
-      const lib = this.imports.get(tagName);
+      const lib = this.imports.get(tagName) as string;
       if (lib && this.project.isPresentationalLibrary(lib)[1] !== false) {
         return [lib, true];
       }
@@ -384,6 +401,10 @@ export class FileParser {
             return [tagName, true];
           }
         }
+      }
+
+      if (this.project.styledComponents.has(this.getJsxId(tagName, lib ?? this.path))) {
+        return [tagName, true];
       }
     }
 

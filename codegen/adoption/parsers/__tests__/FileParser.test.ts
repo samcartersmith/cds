@@ -55,6 +55,8 @@ describe('FileParser Tests', () => {
     await projectParser.parse();
 
     // console.log(JSON.stringify(JSON.parse(projectParser.components), null, 2));
+    // console.log(projectParser.extendedStyledComponents.entries());
+    // console.log(projectParser.styledComponents.entries());
     // console.log(projectParser.aliasedCdsComponents.entries());
     // console.log(projectParser.cdsToAliasMapping.entries());
 
@@ -82,7 +84,7 @@ describe('FileParser Tests', () => {
           aliasedCdsComponents: [
             {
               aliasPath: '@test/frontend/presentational/components/NavigationControl.tsx',
-              callSites: ['@test/frontend/presentational/view/PresentationalTestSvg.tsx'],
+              callSites: ['@test/frontend/presentational/view/PresentationalTest.tsx'],
             },
           ],
           callSites: {
@@ -108,35 +110,35 @@ describe('FileParser Tests', () => {
       presentational: [
         {
           name: 'CustomSvg1',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
           totalInstances: 1,
           totalCallSites: 1,
           presentationalElement: 'svg',
         },
         {
           name: 'CustomSvg2',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
           totalInstances: 1,
           totalCallSites: 1,
           presentationalElement: 'svg',
         },
         {
           name: 'CustomSvg3',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
           totalInstances: 1,
           totalCallSites: 1,
           presentationalElement: 'svg',
         },
         {
           name: 'CustomSvg4',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
           totalInstances: 1,
           totalCallSites: 1,
           presentationalElement: 'svg',
         },
         {
           name: 'CustomSvg5',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
           totalInstances: 1,
           totalCallSites: 1,
           presentationalElement: 'svg',
@@ -156,7 +158,7 @@ describe('FileParser Tests', () => {
           totalCallSites: 1,
           presentationalElement: 'div',
           callSites: {
-            '@test/frontend/presentational/view/PresentationalTestSvg.tsx': 3,
+            '@test/frontend/presentational/view/PresentationalTest.tsx': 3,
           },
         },
         {
@@ -167,7 +169,7 @@ describe('FileParser Tests', () => {
           presentationalElement: '@material-ui/core/Modal',
           propsWithCallSites: {
             open: {
-              '@test/frontend/presentational/view/PresentationalTestSvg.tsx': 1,
+              '@test/frontend/presentational/view/PresentationalTest.tsx': 1,
             },
           },
         },
@@ -177,12 +179,34 @@ describe('FileParser Tests', () => {
           totalInstances: 1,
           totalCallSites: 1,
           presentationalLibrary: '@material-ui/core/TableCell',
-          extendedStyledComponents: [
-            {
-              alias: 'StyledCell',
-              callSite: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
-            },
-          ],
+        },
+        {
+          name: 'StyledCell',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
+          totalInstances: 1,
+          totalCallSites: 1,
+          styledComponent: 'TableCell',
+        },
+        {
+          name: 'StyledTable',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
+          totalInstances: 1,
+          totalCallSites: 1,
+          styledComponent: 'Table',
+        },
+        {
+          name: 'Accordion',
+          sourceFile: '@test/frontend/presentational/components/Accordion',
+          totalInstances: 1,
+          totalCallSites: 1,
+          presentationalElement: 'StyledAccordion',
+        },
+        {
+          name: 'StyledDiv',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
+          totalInstances: 1,
+          totalCallSites: 1,
+          styledComponent: 'div',
         },
       ].sort(sortFn),
       other: [
@@ -208,34 +232,28 @@ describe('FileParser Tests', () => {
         },
         {
           name: 'div',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
-          totalInstances: 2,
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
+          totalInstances: 4,
           totalCallSites: 1,
           callSites: {
-            '@test/frontend/presentational/view/PresentationalTestSvg.tsx': 2,
+            '@test/frontend/presentational/view/PresentationalTest.tsx': 4,
           },
         },
         {
           name: 'CustomDiv',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
           totalInstances: 1,
           totalCallSites: 1,
         },
         {
           name: 'span',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
+          sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
           totalInstances: 1,
           totalCallSites: 1,
         },
         {
           name: 'NavigationControl',
           sourceFile: '@test/frontend/presentational/components/NavigationControl',
-          totalInstances: 1,
-          totalCallSites: 1,
-        },
-        {
-          name: 'StyledCell',
-          sourceFile: '@test/frontend/presentational/view/PresentationalTestSvg.tsx',
           totalInstances: 1,
           totalCallSites: 1,
         },

@@ -464,6 +464,25 @@
       }
     },
     {
+      "name": "BulletList",
+      "sourceFile": "@growth/email-templating-app/components/BulletList",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Introduction.tsx"
+        }
+      ],
+      "callSites": {
+        "@growth/email-templating-app/components/RichText.tsx": 1,
+        "@growth/email-templating-app/components/Newsletter/Introduction.tsx": 1
+      },
+      "propsWithCallSites": {
+        "style": { "@growth/email-templating-app/components/Newsletter/Introduction.tsx": 1 }
+      }
+    },
+    {
       "name": "strong",
       "sourceFile": "@growth/email-templating-app/components/RichText.tsx",
       "totalInstances": 1,
@@ -471,26 +490,16 @@
       "presentationalElement": "strong"
     },
     {
-      "name": "p",
+      "name": "div",
       "sourceFile": "@growth/email-templating-app/components/SectionTitle.tsx",
-      "totalInstances": 2,
+      "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "style", "callSite": "@growth/email-templating-app/components/SectionTitle.tsx" },
         { "prop": "style", "callSite": "@growth/email-templating-app/components/SectionTitle.tsx" }
       ],
-      "callSites": { "@growth/email-templating-app/components/SectionTitle.tsx": 2 },
       "propsWithCallSites": {
-        "style": { "@growth/email-templating-app/components/SectionTitle.tsx": 2 }
+        "style": { "@growth/email-templating-app/components/SectionTitle.tsx": 1 }
       }
-    },
-    {
-      "name": "strong",
-      "sourceFile": "@growth/email-templating-app/components/SectionTitle.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalElement": "strong",
-      "callSites": { "@growth/email-templating-app/components/SectionTitle.tsx": 2 }
     },
     {
       "name": "table",
@@ -526,6 +535,28 @@
       "propsWithCallSites": {
         "style": { "@growth/email-templating-app/components/SectionTitle.tsx": 2 }
       }
+    },
+    {
+      "name": "p",
+      "sourceFile": "@growth/email-templating-app/components/SectionTitle.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "style", "callSite": "@growth/email-templating-app/components/SectionTitle.tsx" },
+        { "prop": "style", "callSite": "@growth/email-templating-app/components/SectionTitle.tsx" }
+      ],
+      "callSites": { "@growth/email-templating-app/components/SectionTitle.tsx": 2 },
+      "propsWithCallSites": {
+        "style": { "@growth/email-templating-app/components/SectionTitle.tsx": 2 }
+      }
+    },
+    {
+      "name": "strong",
+      "sourceFile": "@growth/email-templating-app/components/SectionTitle.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "strong",
+      "callSites": { "@growth/email-templating-app/components/SectionTitle.tsx": 2 }
     },
     {
       "name": "table",
@@ -670,6 +701,35 @@
       "presentationalElement": "strong"
     },
     {
+      "name": "SectionTitle",
+      "sourceFile": "@growth/email-templating-app/components/SectionTitle",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Section.tsx"
+        }
+      ],
+      "callSites": {
+        "@growth/email-templating-app/components/Newsletter/NewListedAssets.tsx": 1,
+        "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
+        "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@growth/email-templating-app/components/Newsletter/NewListedAssets.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
+        },
+        "subtitle": {
+          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
+        },
+        "style": { "@growth/email-templating-app/components/Newsletter/Section.tsx": 1 }
+      }
+    },
+    {
       "name": "div",
       "sourceFile": "@growth/email-templating-app/components/Newsletter/NewsletterArticle.tsx",
       "totalInstances": 3,
@@ -809,6 +869,33 @@
         "value": { "@growth/email-templating-app/components/Newsletter/NewsletterList.tsx": 1 },
         "onChange": { "@growth/email-templating-app/components/Newsletter/NewsletterList.tsx": 1 }
       }
+    },
+    {
+      "name": "p",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Section.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Section.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Section.tsx"
+        }
+      ],
+      "callSites": { "@growth/email-templating-app/components/Newsletter/Section.tsx": 2 },
+      "propsWithCallSites": {
+        "style": { "@growth/email-templating-app/components/Newsletter/Section.tsx": 2 }
+      }
+    },
+    {
+      "name": "strong",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Section.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "strong"
     },
     {
       "name": "p",
@@ -992,7 +1079,8 @@
         },
         "additionalRenderOptions": {
           "@growth/email-templating-app/components/HeroImage.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/Introduction.tsx": 1
+          "@growth/email-templating-app/components/Newsletter/Introduction.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1
         }
       }
     },
@@ -1026,23 +1114,11 @@
       }
     },
     {
-      "name": "BulletList",
-      "sourceFile": "@growth/email-templating-app/components/BulletList",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "ListItem",
       "sourceFile": "@growth/email-templating-app/components/ListItem",
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": { "@growth/email-templating-app/components/RichText.tsx": 2 }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@growth/email-templating-app/components/SectionTitle.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "tbody",
@@ -1096,28 +1172,6 @@
         "@growth/email-templating-app/components/Newsletter/NewListedAssets.tsx": 1,
         "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
         "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-      }
-    },
-    {
-      "name": "SectionTitle",
-      "sourceFile": "@growth/email-templating-app/components/SectionTitle",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@growth/email-templating-app/components/Newsletter/NewListedAssets.tsx": 1,
-        "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
-        "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "@growth/email-templating-app/components/Newsletter/NewListedAssets.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-        },
-        "subtitle": {
-          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-        }
       }
     },
     {

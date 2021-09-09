@@ -34,6 +34,10 @@ export type ComponentData = {
     alias: string;
     callSite: string;
   }[];
+  aliasedCdsComponents?: {
+    aliasPath: string;
+    callSites: string[];
+  }[];
 };
 
 export type DetailsObject = { title: string; details: Details };

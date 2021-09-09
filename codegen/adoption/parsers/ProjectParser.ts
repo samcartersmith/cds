@@ -24,6 +24,7 @@ export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   'react-native-reanimated',
   'react-native-svg',
   'react-select',
+  '@assethub/shared/components',
 ];
 
 export const FALLBACK_PRESENTATIONAL_ELEMENTS = [
@@ -463,7 +464,8 @@ export class ProjectParser {
       );
 
       // meta needs to be done before the jsx parsing because the jsx parsing augments what is stored in meta for the project
-      await Promise.all(this.files.map(async (file: FileParser) => file.parseMeta()));
+      await Promise.all(this.files.map(async (file: FileParser) => file.parseStyle()));
+      await Promise.all(this.files.map(async (file: FileParser) => file.parseWrapped()));
       await Promise.all(this.files.map(async (file: FileParser) => file.parseJsx()));
 
       this.spinner.stop();
