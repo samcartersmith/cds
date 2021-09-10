@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.21.3 (9/10/2021, 11:06 AM PST)
+
+#### 🐞 Fixes
+
+- Type change, remove superfluous type. [#32336](https://github.cbhq.net/mono/repo/pull/32336)
+- Disable useFallbackShape randomization while testing. [#32093](https://github.cbhq.net/mono/repo/pull/32093)
+
+#### 📘 Misc
+
+- Create mock data for Table component dev. [#32267](https://github.cbhq.net/mono/repo/pull/32267), [CDS-1388](https://jira.coinbase-corp.com/browse/CDS-1388)
+
 ## 0.21.2 (9/2/2021, 10:17 AM PST)
 
 #### 🚀 Updates

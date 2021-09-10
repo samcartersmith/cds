@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.13 (9/10/2021, 11:06 AM PST)
+
+#### 🐞 Fixes
+
+- Fix tradeStatus animation for CDS Lottie file and update README. [#32837](https://github.cbhq.net/mono/repo/pull/32837)
+
 ## 0.2.12 (8/4/2021, 12:37 PM PST)
 
 #### 🚀 Updates

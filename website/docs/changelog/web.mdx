@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.20.4 (9/10/2021, 11:06 AM PST)
+
+#### 🐞 Fixes
+
+- Update Card component to remove inner wrapper. [#32322](https://github.cbhq.net/mono/repo/pull/32322)
+
 ## 0.20.3 (9/2/2021, 10:17 AM PST)
 
 #### 🚀 Updates
