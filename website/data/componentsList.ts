@@ -33,6 +33,7 @@ export const components = [
   'Spacer',
   'VStack',
   'RemoteImage',
+  'Spinner',
   'Tooltip',
   'Link',
   'Text',

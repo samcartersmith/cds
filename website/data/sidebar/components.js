@@ -91,6 +91,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Loaders',
+      collapsed: true,
+      items: ['components/loaders/Spinner/spinner'],
+    },
+    {
+      type: 'category',
       label: 'Overlays',
       collapsed: true,
       items: ['components/overlays/Tooltip/tooltip'],

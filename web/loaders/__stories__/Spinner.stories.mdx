@@ -10,8 +10,25 @@ import { Spinner } from '../Spinner';
 
 <Canvas withToolbar>
   <Story
-    name="Spinner"
-    decorators={[withStoryLabel('Spinner')]}
+    name="Spinner Default"
+    decorators={[withStoryLabel('Spinner Default')]}
+    args={{
+      size: 10,
+    }}
+    argTypes={{
+      color: {
+        control: {
+          type: 'select',
+          options: paletteForegrounds,
+        },
+      },
+    }}
+  >
+    {args => <Spinner {...args} />}
+  </Story>
+  <Story
+    name="Spinner Primary"
+    decorators={[withStoryLabel('Spinner Primary')]}
     args={{
       size: 10,
       color: 'primary',

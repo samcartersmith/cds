@@ -13,12 +13,17 @@ export type SpinnerProps = {
    */
   size: number;
   /**
-   * Color of spinner
+   * Color of spinner.
+   * @default foregroundMuted
    */
-  color: PaletteForeground;
+  color?: PaletteForeground;
 } & SharedProps;
 
-export const Spinner = memo(function Spinner({ size, color, testID }: SpinnerProps) {
+export const Spinner = memo(function Spinner({
+  size,
+  color = 'foregroundMuted',
+  testID,
+}: SpinnerProps) {
   const palette = usePalette();
 
   const spinnerStyle = useMemo(

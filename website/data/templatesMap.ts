@@ -841,6 +841,27 @@ export const RemoteImage = {
   ),
 };
 
+export const Spinner = {
+  implementation: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/implementation.mdx'
+      )
+  ),
+  spinner: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/spinner.mdx'
+      )
+  ),
+  usage: React.lazy(
+    () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/usage.mdx'
+      )
+  ),
+};
+
 export const Tooltip = {
   implementation: React.lazy(
     () =>
