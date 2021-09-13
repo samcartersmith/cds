@@ -15,6 +15,7 @@ def cds_package_static(name, srcs):
     # Prepare a package for release by only copying files to publish
     pkg_npm(
         name = "package_copy",
+        package_name = "@cbhq/cds-{}".format(name),
         srcs = [
             "CHANGELOG.md",
             "README.md",
