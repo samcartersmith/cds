@@ -1,4 +1,4 @@
-load("//tools:def.bzl", "eslint_fix", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test")
 
 exports_files([
     "babel-plugins/linariaCssExtractPlugin.js",
@@ -48,11 +48,5 @@ ESLINT_SRCS = [
 eslint_test(
     name = "lint",
     srcs = ESLINT_SRCS,
-    lint_srcs = [":source"],
-)
-
-eslint_fix(
-    name = "lint_fix",
-    srcs = ESLINT_SRCS,
-    lint_srcs = [":source"],
+    lints = [":source"],
 )

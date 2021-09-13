@@ -1,6 +1,6 @@
 load("//eng/shared/design-system:cds_package.bzl", "cds_package")
 load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
-load("//tools:def.bzl", "eslint_fix", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test")
 
 # Files to publish to NPM
 filegroup(
@@ -47,12 +47,7 @@ filegroup(
 
 eslint_test(
     name = "lint",
-    lint_srcs = [":source_without_json"],
-)
-
-eslint_fix(
-    name = "lint_fix",
-    lint_srcs = [":source_without_json"],
+    lints = [":source_without_json"],
 )
 
 # Package building and publishing

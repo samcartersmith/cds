@@ -1,6 +1,6 @@
 load("//eng/shared/design-system:cds_package.bzl", "cds_package")
 load(":deps.bzl", "CDS_DEPENDENCIES", "DEPENDENCIES", "PEER_DEPENDENCIES", "TYPE_DEPENDENCIES")
-load("//tools:def.bzl", "eslint_fix", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test")
 
 SOURCE = [
     "**/*.ts",
@@ -42,14 +42,7 @@ filegroup(
 eslint_test(
     name = "lint",
     srcs = CDS_DEPENDENCIES,
-    lint_srcs = [":source"],
-    deps = TYPE_DEPENDENCIES,
-)
-
-eslint_fix(
-    name = "lint_fix",
-    srcs = CDS_DEPENDENCIES,
-    lint_srcs = [":source"],
+    lints = [":source"],
     deps = TYPE_DEPENDENCIES,
 )
 

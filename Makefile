@@ -97,14 +97,14 @@ codegen:
 
 .PHONY: lint
 lint:
-	bazel run codegen:lint
-	bazel run codemod:lint
-	bazel run common:lint
-	bazel run lottie-files:lint
-	bazel run mobile:lint
-	bazel run utils:lint
-	bazel run web:lint
-	bazel run :stylelint
+	bazel test codegen:lint
+	bazel test codemod:lint
+	bazel test common:lint
+	bazel test lottie-files:lint
+	bazel test mobile:lint
+	bazel test utils:lint
+	bazel test web:lint
+	bazel test :stylelint
 
 .PHONY: lint.fix
 lint.fix:

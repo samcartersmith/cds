@@ -1,6 +1,6 @@
 load("//tools/js:metro_bundle.bzl", "metro_bundle")
 load("//eng/shared/design-system:config.bzl", "append_cds_mobile_deps")
-load("//tools:def.bzl", "eslint_fix", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test")
 
 filegroup(
     name = "source",
@@ -27,13 +27,7 @@ ESLINT_SRCS = [
 eslint_test(
     name = "lint",
     srcs = ESLINT_SRCS,
-    lint_srcs = [":source"],
-)
-
-eslint_fix(
-    name = "lint_fix",
-    srcs = ESLINT_SRCS,
-    lint_srcs = [":source"],
+    lints = [":source"],
 )
 
 METRO_SRCS = [
