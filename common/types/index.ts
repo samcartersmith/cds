@@ -19,6 +19,7 @@ export * from './Helpers';
 export * from './IconBaseProps';
 export * from './IconName';
 export * from './IconSize';
+export * from './InputBaseProps';
 export * from './Motion';
 export * from './LottieBaseProps';
 export * from './LottiePlayer';

@@ -20,6 +20,7 @@ import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import IllustrationScreen from './src/Illustration';
+import InputScreen from './src/Input';
 import LinkScreen from './src/Link';
 import ListCellScreen from './src/ListCell';
 import ListCellFallbackScreen from './src/ListCellFallback';
@@ -87,6 +88,7 @@ const AppContent = () => {
         <Stack.Screen name="Divider" component={DividerScreen} />
         <Stack.Screen name="Icon" component={IconScreen} />
         <Stack.Screen name="IconButton" component={IconButtonScreen} />
+        <Stack.Screen name="Input" component={InputScreen} />
         <Stack.Screen name="Link" component={LinkScreen} />
         <Stack.Screen name="ListCell" component={ListCellScreen} />
         <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />

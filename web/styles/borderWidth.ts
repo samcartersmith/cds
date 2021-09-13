@@ -27,3 +27,7 @@ export const sparkline = css`
 export const focusRing = css`
   border-width: 2px;
 `;
+
+export const input = css`
+  border-width: 1px;
+`;

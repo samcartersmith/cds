@@ -7,6 +7,7 @@ export const borderRadiusConfig = {
   tooltip: 12,
   pill: 18,
   round: 100,
+  input: 8,
 };
 
 export const borderRadiusCss = mapValues(borderRadiusConfig, (val) => {
@@ -22,6 +23,7 @@ export const borderWidthConfig = {
   radio: 2,
   sparkline: 2,
   focusRing: 2,
+  input: 1,
 };
 
 export const borderWidthCss = mapValues(borderWidthConfig, (val) => {

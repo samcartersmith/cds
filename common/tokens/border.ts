@@ -10,6 +10,7 @@ export const borderRadius = {
   tooltip: 12,
   pill: 18,
   round: 100,
+  input: 8,
 } as const;
 
 export const borderWidth = {
@@ -19,4 +20,5 @@ export const borderWidth = {
   radio: 2,
   sparkline: 2,
   focusRing: 2,
+  input: 1,
 } as const;

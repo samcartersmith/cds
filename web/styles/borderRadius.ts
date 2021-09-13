@@ -27,3 +27,7 @@ export const pill = css`
 export const round = css`
   border-radius: 100px;
 `;
+
+export const input = css`
+  border-radius: 8px;
+`;
