@@ -1,6 +1,6 @@
 load("@npm//ts-node:index.bzl", "ts_node")
-load("//tools:def.bzl", "jest_test", "release_packages", "stylelint_test")
-load("//tools/js:def.bzl", "storybook")
+load("//tools:def.bzl", "release_packages", "stylelint_test")
+load("//tools/js:def.bzl", "jest_test", "storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
 
@@ -85,72 +85,40 @@ filegroup(
 filegroup(
     name = "tests_configuration",
     srcs = [
-        "jest.config.js",
-        "jest.config.native.js",
-        "jestSetup.native.ts",
-        "jestSetup.ts",
         "linaria.config.js",
     ],
     visibility = ["//visibility:public"],
 )
 
 TEST_SRCS = [
-    "//:babel.config.js",
-    "//:package.json",
-    "//:tsconfig.json",
     "//eng/shared/design-system:source",
     "//eng/shared/design-system:tests_configuration",
 ]
 
 TEST_DEPS = [
-    "@npm//axe-core",
-    "@npm//@babel/core",
-    "@npm//@babel/plugin-proposal-class-properties",
-    "@npm//@babel/preset-env",
-    "@npm//@babel/preset-react",
-    "@npm//@babel/preset-typescript",
-    "@npm//babel-jest",
-    "@npm//babel-plugin-module-resolver",
-    "@npm//babel-plugin-relay",
-    "@npm//jest",
-    "@npm//jest-axe",
     "@npm//react",
-    "@npm//text-encoding",
     "@npm//linaria",
 ]
 
 jest_test(
     name = "unit_tests_web",
-    srcs = TEST_SRCS + [
-        "//eng/shared/utils:jest/renderA11y.ts",
-    ],
-    jest_config = "jest.config.js",
-    test_srcs = [
+    srcs = TEST_SRCS,
+    tests = [
+        "//eng/shared/design-system/common:source",
         "//eng/shared/design-system/utils:source",
         "//eng/shared/design-system/web:source",
-        "//eng/shared/design-system/common:source",
     ],
-    deps = append_cds_web_deps(TEST_DEPS + [
-        "@npm//@testing-library/jest-dom",
-        "@npm//@testing-library/react-hooks",
-        "@npm//@testing-library/react",
-    ]),
+    deps = append_cds_web_deps(TEST_DEPS),
 )
 
 jest_test(
     name = "unit_tests_mobile",
     srcs = TEST_SRCS,
-    jest_config = "jest.config.native.js",
-    test_srcs = [
+    mobile = True,
+    tests = [
         "//eng/shared/design-system/mobile:source",
     ],
-    deps = append_cds_mobile_deps(TEST_DEPS + [
-        "@npm//@babel/preset-flow",
-        "@npm//@testing-library/jest-native",
-        "@npm//@testing-library/react-hooks",
-        "@npm//@testing-library/react-native",
-        "@npm//react-native",
-    ]),
+    deps = append_cds_mobile_deps(TEST_DEPS),
 )
 
 jest_test(
@@ -159,17 +127,11 @@ jest_test(
         "//eng/shared/design-system/codegen/adoption:parsers/__tests__/project",
     ],
     jest_config = "jest.config.adoption.js",
-    test_srcs = [
+    tests = [
         "//eng/shared/design-system/codegen/adoption:source",
     ],
     deps = append_cds_mobile_deps(TEST_DEPS + [
-        "@npm//@babel/preset-flow",
-        "@npm//@testing-library/jest-native",
-        "@npm//@testing-library/react-hooks",
-        "@npm//@testing-library/react-native",
-        "@npm//@testing-library/jest-dom",
         "@npm//react-native",
-        "@npm//jest-canvas-mock",
         "@npm//ora",
         "@npm//chalk",
         "@npm//yargs",

@@ -19,9 +19,7 @@ TYPE_DEPENDENCIES = [
     "@npm//@types/react-dom",
 ]
 
-BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + TYPE_DEPENDENCIES + [
-    "@npm//jest-canvas-mock",
-]
+BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + TYPE_DEPENDENCIES
 
 CDS_DEPENDENCIES = [
     "//eng/shared/design-system/common:source",
