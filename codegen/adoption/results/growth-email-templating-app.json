@@ -891,13 +891,6 @@
       }
     },
     {
-      "name": "strong",
-      "sourceFile": "@growth/email-templating-app/components/Newsletter/Section.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "strong"
-    },
-    {
       "name": "p",
       "sourceFile": "@growth/email-templating-app/components/Newsletter/TriviaAnswer.tsx",
       "totalInstances": 1,

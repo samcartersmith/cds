@@ -14,7 +14,9 @@ export const AdopterProjectInfoContextFallback: AdopterProjectInfo = {
   dependencies: {},
 };
 
-export const AdopterProjectInfoContext = createContext(AdopterProjectInfoContextFallback);
+export const AdopterProjectInfoContext = createContext<AdopterProjectInfo>(
+  AdopterProjectInfoContextFallback,
+);
 
 export const AdopterProjectInfoProvider: React.FC<AdopterProjectInfo> = memo(
   ({ children, ...projectInfo }) => {

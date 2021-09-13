@@ -1,29 +1,33 @@
-import React, { useState, memo, useCallback } from 'react';
+import React, { useState, memo, useCallback, useEffect, useContext } from 'react';
 import { HStack, VStack, Divider } from '@cbhq/cds-web/layout';
 import { ListCell } from '@cbhq/cds-web/cells';
-import { SetState } from '@cbhq/cds-common';
 import List, { ListRowProps } from 'react-virtualized/dist/commonjs/List';
 import WindowScroller, {
   WindowScrollerChildProps,
 } from 'react-virtualized/dist/commonjs/WindowScroller';
 import AutoSizer, { Size } from 'react-virtualized/dist/commonjs/AutoSizer';
-import type { ComponentData } from './types';
+import {
+  AdopterTabContext,
+  AdopterTabContextType,
+} from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterTabProvider';
+import {
+  AdopterSearchContext,
+  AdopterSearchContextType,
+} from '@cbhq/cds-website/components/AdoptionTracker/search/AdopterSearchProvider';
+import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './types';
 import { AdopterComponentDetails } from './AdopterComponentDetails';
 import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
 
 type AdopterListCellProps = ComponentData & {
   isActive: boolean;
-  setActiveComponent: SetState<ComponentData | undefined>;
+  setActiveComponent: () => void;
 };
 
 const AdopterListCell = memo((props: AdopterListCellProps) => {
   const { isActive, setActiveComponent, ...componentInfo } = props;
   const { name, totalCallSites, totalInstances } = componentInfo;
 
-  const handleOnPress = useCallback(
-    () => setActiveComponent(componentInfo),
-    [componentInfo, setActiveComponent],
-  );
+  const handleOnPress = useCallback(() => setActiveComponent(), [setActiveComponent]);
 
   return (
     <>
@@ -40,68 +44,142 @@ const AdopterListCell = memo((props: AdopterListCellProps) => {
   );
 });
 
-export const AdopterComponentsList = memo(({ components }: { components: ComponentData[] }) => {
-  const [activeComponent, setActiveComponent] = useState<ComponentData | undefined>(
-    components.length > 0 ? components[0] : undefined,
-  );
+function getFilteredSearchResults(
+  searchResults: AdopterSearchResult[],
+  components: ComponentData[],
+  fieldAccessor: (component: ComponentData) => string[],
+) {
+  return searchResults.length === 0
+    ? components
+    : components.filter((component: ComponentData) => {
+        const fields = fieldAccessor(component);
+        for (const searchResult of searchResults) {
+          let { val } = searchResult;
 
-  if (components.length === 0) {
-    return <AdopterComponentsEmptyState />;
-  }
+          // free text search
+          let regex;
+          if (val.startsWith('"')) {
+            val = val.replaceAll('"', '');
+            regex = new RegExp(val, 'ig');
+          }
 
-  const Row = ({ index, style }: ListRowProps) => {
-    const item = components[index];
-    const { name, sourceFile } = item;
-    const id = `${name}-${sourceFile}`;
-    const activeId = activeComponent
-      ? `${activeComponent.name}-${activeComponent.sourceFile}`
-      : undefined;
-    const isActive = activeId === id;
+          for (const field of fields) {
+            if (regex) {
+              if (field.match(regex) !== null) {
+                return true;
+              }
+            } else if (val === field) {
+              return true;
+            }
+          }
+        }
+
+        return false;
+      });
+}
+
+export const AdopterComponentsList = memo(
+  ({ components, type }: { components: ComponentData[]; type: AdopterTabKey }) => {
+    const [activeComponentIndex, setActiveComponentIndex] = useState<number>(0);
+
+    const { results } = useContext(AdopterSearchContext) as AdopterSearchContextType;
+    const componentSearchResults: AdopterSearchResult[] = [];
+    const propSearchResults: AdopterSearchResult[] = [];
+    for (const result of results) {
+      const { type: resultType } = result;
+      if (resultType === 'component') {
+        componentSearchResults.push(result);
+      }
+      if (resultType === 'prop') {
+        propSearchResults.push(result);
+      }
+    }
+
+    const { setTabKey } = useContext(AdopterTabContext) as AdopterTabContextType;
+    useEffect(() => {
+      setTabKey(type);
+    }, [setTabKey, type]);
+
+    let filteredComponents = getFilteredSearchResults(
+      componentSearchResults,
+      components,
+      (component) => [component.name],
+    );
+    filteredComponents = getFilteredSearchResults(
+      propSearchResults,
+      filteredComponents,
+      (component) => {
+        return Object.keys(component.propsWithCallSites ?? {});
+      },
+    );
+
+    if (filteredComponents.length === 0) {
+      return <AdopterComponentsEmptyState />;
+    }
+
+    const activeComponent =
+      activeComponentIndex < filteredComponents.length
+        ? filteredComponents[activeComponentIndex]
+        : filteredComponents[0];
+
+    const Row = ({ index, style }: ListRowProps) => {
+      const item = filteredComponents[index];
+      const { name, sourceFile } = item;
+      const id = `${name}-${sourceFile}`;
+      const activeId = activeComponent
+        ? `${activeComponent.name}-${activeComponent.sourceFile}`
+        : undefined;
+      const isActive = activeId === id;
+
+      return (
+        <div
+          key={`${name}-${sourceFile}`}
+          className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}
+          style={style}
+        >
+          <AdopterListCell
+            isActive={isActive}
+            setActiveComponent={() => setActiveComponentIndex(index)}
+            {...item}
+          />
+        </div>
+      );
+    };
 
     return (
-      <div
-        key={`${name}-${sourceFile}`}
-        className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}
-        style={style}
-      >
-        <AdopterListCell isActive={isActive} setActiveComponent={setActiveComponent} {...item} />
-      </div>
+      <HStack alignItems="flex-start" justifyContent="space-between">
+        <VStack flexGrow={1}>
+          <div style={{ height: `${80 * filteredComponents.length}px` }}>
+            <WindowScroller>
+              {({ height, scrollTop }: WindowScrollerChildProps) => (
+                <AutoSizer>
+                  {({ width }: Size) => (
+                    <List
+                      autoHeight
+                      className="List"
+                      height={height}
+                      rowCount={filteredComponents.length}
+                      rowHeight={80}
+                      rowRenderer={Row}
+                      scrollTop={scrollTop}
+                      width={width}
+                    >
+                      {Row}
+                    </List>
+                  )}
+                </AutoSizer>
+              )}
+            </WindowScroller>
+          </div>
+        </VStack>
+
+        {activeComponent ? (
+          <>
+            <Divider direction="vertical" spacingHorizontal={4} />
+            <AdopterComponentDetails {...activeComponent} />
+          </>
+        ) : null}
+      </HStack>
     );
-  };
-
-  return (
-    <HStack alignItems="flex-start" justifyContent="space-between">
-      <VStack flexGrow={1}>
-        <div style={{ height: `${80 * components.length}px` }}>
-          <WindowScroller>
-            {({ height, scrollTop }: WindowScrollerChildProps) => (
-              <AutoSizer>
-                {({ width }: Size) => (
-                  <List
-                    autoHeight
-                    className="List"
-                    height={height}
-                    rowCount={components.length}
-                    rowHeight={80}
-                    rowRenderer={Row}
-                    scrollTop={scrollTop}
-                    width={width}
-                  >
-                    {Row}
-                  </List>
-                )}
-              </AutoSizer>
-            )}
-          </WindowScroller>
-        </div>
-      </VStack>
-
-      {activeComponent ? (
-        <>
-          <Divider direction="vertical" spacingHorizontal={4} />
-          <AdopterComponentDetails {...activeComponent} />
-        </>
-      ) : null}
-    </HStack>
-  );
-});
+  },
+);

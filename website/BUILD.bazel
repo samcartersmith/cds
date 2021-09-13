@@ -31,5 +31,6 @@ docusaurus(
     ],
     deps = append_cds_web_deps([
         "@npm//react-virtualized",
+        "@npm//antd",
     ]),
 )

@@ -58,9 +58,9 @@
         "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
         "@designSystem/navigation/header/Header.tsx": 2,
         "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1,
+        "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
         "@designSystem/navigation/progress/ProgressSummary/ProgressSummary.tsx": 1,
-        "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-        "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
+        "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
       },
       "propsWithCallSites": {
         "background": {
@@ -78,8 +78,8 @@
           "@designSystem/core/card/Card.tsx": 1,
           "@designSystem/interactables/controls/NumPad.tsx": 1,
           "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
+          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
         },
         "animated": {
           "@designSystem/core/card/Card.tsx": 1,
@@ -118,8 +118,8 @@
         "flexShrink": {
           "@designSystem/interactables/controls/NumPad.tsx": 1,
           "@designSystem/navigation/header/Header.tsx": 2,
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
+          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
         },
         "alignItems": {
           "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
@@ -153,8 +153,8 @@
       "cds": "@cbhq/cds-mobile/system/PressableOpacity",
       "callSites": {
         "@designSystem/core/card/Card.tsx": 1,
-        "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
         "@designSystem/core/cell/Cell.tsx": 1,
+        "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
         "@designSystem/navigation/header/Header.tsx": 1,
         "@designSystem/navigation/navbar/Navbar.tsx": 1,
         "@designSystem/navigation/tabs/TabBarButton.tsx": 1
@@ -162,8 +162,8 @@
       "propsWithCallSites": {
         "onPress": {
           "@designSystem/core/card/Card.tsx": 1,
-          "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
           "@designSystem/core/cell/Cell.tsx": 1,
+          "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
           "@designSystem/navigation/header/Header.tsx": 1,
           "@designSystem/navigation/navbar/Navbar.tsx": 1,
           "@designSystem/navigation/tabs/TabBarButton.tsx": 1
@@ -191,12 +191,12 @@
           "callSites": []
         },
         {
-          "aliasPath": "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx",
-          "callSites": []
-        },
-        {
           "aliasPath": "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx",
           "callSites": ["@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx"]
+        },
+        {
+          "aliasPath": "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx",
+          "callSites": []
         },
         {
           "aliasPath": "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
@@ -218,8 +218,8 @@
         "@designSystem/navigation/tabs/TabBar.tsx": 2,
         "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 2,
         "@designSystem/navigation/progress/ProgressBar/ProgressBar.tsx": 1,
-        "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
         "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
+        "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
         "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
       },
       "propsWithCallSites": {
@@ -305,8 +305,8 @@
           "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
         },
         "spacingVertical": {
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1
+          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
         },
         "flexBasis": {
           "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
@@ -560,17 +560,6 @@
       }
     },
     {
-      "name": "TextTitle2",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextTitle2",
-      "propsWithCallSites": {
-        "align": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
-        "spacing": { "@designSystem/interactables/controls/NumPad.tsx": 1 }
-      }
-    },
-    {
       "name": "Overlay",
       "sourceFile": "@cbhq/cds-mobile/overlays/Overlay",
       "totalInstances": 1,
@@ -579,6 +568,17 @@
       "propsWithCallSites": {
         "opacity": { "@designSystem/interactables/drawer/Drawer.tsx": 1 },
         "onTouchStart": { "@designSystem/interactables/drawer/Drawer.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextTitle2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle2",
+      "propsWithCallSites": {
+        "align": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
+        "spacing": { "@designSystem/interactables/controls/NumPad.tsx": 1 }
       }
     },
     {
@@ -727,6 +727,14 @@
         },
         "onScroll": { "@designSystem/navigation/tabs/TabBar.tsx": 1 }
       }
+    },
+    {
+      "name": "DeprecatedThemeProvider",
+      "sourceFile": "@designSystem/theme/DeprecatedThemeProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@designSystem/theme/DeprecatedThemeProvider",
+      "propsWithCallSites": { "variant": { "@designSystem/core/cell/Cell.tsx": 1 } }
     },
     {
       "name": "ChartPanGestureHandler",
@@ -920,14 +928,6 @@
       }
     },
     {
-      "name": "DeprecatedThemeProvider",
-      "sourceFile": "@designSystem/theme/DeprecatedThemeProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/theme/DeprecatedThemeProvider",
-      "propsWithCallSites": { "variant": { "@designSystem/core/cell/Cell.tsx": 1 } }
-    },
-    {
       "name": "Tray",
       "sourceFile": "@designSystem/interactables/drawer/Tray",
       "totalInstances": 1,
@@ -940,19 +940,11 @@
       }
     },
     {
-      "name": "NumPadItem",
-      "sourceFile": "@designSystem/interactables/controls/NumPad.tsx",
+      "name": "AnimatedBanner",
+      "sourceFile": "@designSystem/interactables/drawer/Drawer.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/interactables/controls/NumPad.tsx",
-      "propsWithCallSites": {
-        "key": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
-        "value": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
-        "onPress": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
-        "onLongPress": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
-        "separator": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
-        "disabled": { "@designSystem/interactables/controls/NumPad.tsx": 1 }
-      }
+      "presentationalLibrary": "@designSystem/interactables/drawer/Drawer.tsx"
     },
     {
       "name": "Pressable",
@@ -963,13 +955,13 @@
         { "prop": "style", "callSite": "@designSystem/interactables/controls/NumPad.tsx" }
       ],
       "callSites": {
-        "@designSystem/interactables/controls/NumPad.tsx": 1,
-        "@designSystem/interactables/drawer/useAnimatedBanner.tsx": 1
+        "@designSystem/interactables/drawer/useAnimatedBanner.tsx": 1,
+        "@designSystem/interactables/controls/NumPad.tsx": 1
       },
       "propsWithCallSites": {
         "onPress": {
-          "@designSystem/interactables/controls/NumPad.tsx": 1,
-          "@designSystem/interactables/drawer/useAnimatedBanner.tsx": 1
+          "@designSystem/interactables/drawer/useAnimatedBanner.tsx": 1,
+          "@designSystem/interactables/controls/NumPad.tsx": 1
         },
         "onLongPress": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
         "onPressIn": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
@@ -977,13 +969,6 @@
         "style": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
         "disabled": { "@designSystem/interactables/controls/NumPad.tsx": 1 }
       }
-    },
-    {
-      "name": "AnimatedBanner",
-      "sourceFile": "@designSystem/interactables/drawer/Drawer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/interactables/drawer/Drawer.tsx"
     },
     {
       "name": "HandleBar",
@@ -1002,6 +987,21 @@
       "propsWithCallSites": {
         "closeTray": { "@designSystem/interactables/drawer/useAnimatedBanner.tsx": 1 },
         "closeBanner": { "@designSystem/interactables/drawer/useAnimatedBanner.tsx": 1 }
+      }
+    },
+    {
+      "name": "NumPadItem",
+      "sourceFile": "@designSystem/interactables/controls/NumPad.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@designSystem/interactables/controls/NumPad.tsx",
+      "propsWithCallSites": {
+        "key": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
+        "value": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
+        "onPress": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
+        "onLongPress": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
+        "separator": { "@designSystem/interactables/controls/NumPad.tsx": 1 },
+        "disabled": { "@designSystem/interactables/controls/NumPad.tsx": 1 }
       }
     },
     {
@@ -1214,31 +1214,24 @@
       }
     },
     {
-      "name": "ProgressDotsContainer",
-      "sourceFile": "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx"
-    },
-    {
       "name": "ProgressDot",
       "sourceFile": "@designSystem/navigation/progress/ProgressDots/ProgressDot",
       "totalInstances": 2,
       "totalCallSites": 2,
       "presentationalLibrary": "@designSystem/navigation/progress/ProgressDots/ProgressDot",
       "callSites": {
-        "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
-        "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
+        "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
+        "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1
       },
       "propsWithCallSites": {
         "key": {
-          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
-          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
+          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
+          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1
         },
-        "isActive": { "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1 },
         "dangerouslySetStyle": {
           "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
-        }
+        },
+        "isActive": { "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1 }
       }
     },
     {
@@ -1266,6 +1259,13 @@
       "callSites": {
         "@designSystem/navigation/progress/ProgressCarousel/ProgressCarouselExample.tsx": 4
       }
+    },
+    {
+      "name": "ProgressDotsContainer",
+      "sourceFile": "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx"
     },
     {
       "name": "SolidProgressBarItem",

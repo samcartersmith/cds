@@ -40,5 +40,13 @@ export type ComponentData = {
   }[];
 };
 
+export type AdopterTabKey = 'cds' | 'presentational' | 'other' | 'okr';
+
+export type AdopterSearchResultType = 'component' | 'prop';
+export type AdopterSearchResult = {
+  type: AdopterSearchResultType;
+  val: string;
+};
+
 export type DetailsObject = { title: string; details: Details };
 export type Details = string | string[] | DetailsObject | DetailsObject[];

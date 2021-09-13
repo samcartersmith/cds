@@ -257,7 +257,7 @@
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
       "totalInstances": 229,
-      "totalCallSites": 124,
+      "totalCallSites": 125,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -275,11 +275,7 @@
           ]
         },
         {
-          "aliasPath": "@cbhq/prime-ui/components/metric/Metric.tsx",
-          "callSites": ["@cbhq/prime-ui/pages/trade/dataDiscovery/ProductStats.tsx"]
-        },
-        {
-          "aliasPath": "@cbhq/prime-ui/components/metric/Metric.tsx",
+          "aliasPath": "@cbhq/prime-ui/components/loading/FallbackMetric.tsx",
           "callSites": [
             "@cbhq/prime-ui/pages/trade/dataDiscovery/Balances.tsx",
             "@cbhq/prime-ui/pages/trade/dataDiscovery/Balances.tsx",
@@ -296,6 +292,10 @@
             "@cbhq/prime-ui/pages/analytics/header/marketData/MarketData.tsx",
             "@cbhq/prime-ui/pages/analytics/header/marketData/MarketData.tsx"
           ]
+        },
+        {
+          "aliasPath": "@cbhq/prime-ui/components/metric/Metric.tsx",
+          "callSites": ["@cbhq/prime-ui/pages/trade/dataDiscovery/ProductStats.tsx"]
         },
         {
           "aliasPath": "@cbhq/prime-ui/components/statusDot/StatusDot.tsx",
@@ -545,7 +545,8 @@
         "@cbhq/prime-ui/components/addressInfo/AddressInfo.tsx": 2,
         "@cbhq/prime-ui/components/badge/Badge.tsx": 1,
         "@cbhq/prime-ui/components/banner/Banner.tsx": 4,
-        "@cbhq/prime-ui/components/metric/Metric.tsx": 3,
+        "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
+        "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
         "@cbhq/prime-ui/components/stackWithSearchBar/StackWithSearchBar.tsx": 1,
         "@cbhq/prime-ui/components/statusDot/StatusDot.tsx": 1,
         "@cbhq/prime-ui/components/table/PaginationButtons.tsx": 2,
@@ -688,7 +689,7 @@
         },
         "spacingEnd": {
           "@cbhq/prime-ui/components/addressInfo/AddressInfo.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 1,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
           "@cbhq/prime-ui/modals/addTrustedAddressFlow/EditTrustedAddressStep.tsx": 1,
           "@cbhq/prime-ui/modals/billingPreferenceFlow/steps/BillingPreferenceWalletStep.tsx": 1,
           "@cbhq/prime-ui/pages/activity/detail/ActivityDetailAction.tsx": 1,
@@ -724,7 +725,7 @@
         },
         "alignItems": {
           "@cbhq/prime-ui/components/badge/Badge.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 1,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
           "@cbhq/prime-ui/components/table/PaginationButtons.tsx": 1,
           "@cbhq/prime-ui/modals/addTrustedAddressFlow/EditTrustedAddressStep.tsx": 1,
           "@cbhq/prime-ui/modals/addressBookFlow/SelectAddressStep.tsx": 1,
@@ -1096,7 +1097,7 @@
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
       "totalInstances": 249,
-      "totalCallSites": 125,
+      "totalCallSites": 126,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -1382,13 +1383,17 @@
         },
         {
           "aliasPath": "@cbhq/prime-ui/pages/asset/governance/list/wallets/GovernanceWalletsSection.tsx",
-          "callSites": ["@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx"]
+          "callSites": [
+            "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx",
+            "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx"
+          ]
         }
       ],
       "callSites": {
         "@cbhq/prime-ui/components/DualIconHeader/DualIconHeader.tsx": 1,
         "@cbhq/prime-ui/components/banner/Banner.tsx": 1,
-        "@cbhq/prime-ui/components/metric/Metric.tsx": 3,
+        "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
+        "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
         "@cbhq/prime-ui/components/stackWithSearchBar/StackWithSearchBar.tsx": 1,
         "@cbhq/prime-ui/components/tradeAdjustTooltipWrapper/TradeAdjustTooltipWrapper.tsx": 1,
         "@cbhq/prime-ui/modals/addBillingEmailFlow/AddBillingEmailInfoStep.tsx": 2,
@@ -1515,7 +1520,8 @@
       "propsWithCallSites": {
         "alignItems": {
           "@cbhq/prime-ui/components/DualIconHeader/DualIconHeader.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 3,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
+          "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
           "@cbhq/prime-ui/modals/addTrustedAddressFlow/EditTrustedAddressStep.tsx": 1,
           "@cbhq/prime-ui/modals/addTrustedAddressFlow/SelectAssetStep.tsx": 1,
           "@cbhq/prime-ui/modals/governanceFlow/DelegateVotingStep.tsx": 1,
@@ -1584,7 +1590,8 @@
         },
         "justifyContent": {
           "@cbhq/prime-ui/components/DualIconHeader/DualIconHeader.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 3,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
+          "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
           "@cbhq/prime-ui/modals/addTrustedAddressFlow/SelectAssetStep.tsx": 1,
           "@cbhq/prime-ui/modals/deactivateApiKeyFlow/ConfirmDeactivateApiKeyStep.tsx": 1,
           "@cbhq/prime-ui/modals/governanceSettingsFlow/EditGovernanceSettingStep.tsx": 1,
@@ -1633,7 +1640,7 @@
         },
         "gap": {
           "@cbhq/prime-ui/components/DualIconHeader/DualIconHeader.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 1,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
           "@cbhq/prime-ui/modals/governanceSettingsFlow/EditGovernanceSettingStep.tsx": 1,
           "@cbhq/prime-ui/modals/stakingFlow/ChangeStakeIntroStep.tsx": 1,
           "@cbhq/prime-ui/modals/stakingFlow/RestakingStep.tsx": 2,
@@ -1900,7 +1907,7 @@
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
       "totalInstances": 171,
-      "totalCallSites": 113,
+      "totalCallSites": 114,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -2151,7 +2158,8 @@
         "@cbhq/prime-ui/components/DualIconHeader/DualIconHeader.tsx": 1,
         "@cbhq/prime-ui/components/addressInfo/AddressInfo.tsx": 2,
         "@cbhq/prime-ui/components/denseToggle/denseToggle.tsx": 1,
-        "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
+        "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
+        "@cbhq/prime-ui/components/metric/Metric.tsx": 1,
         "@cbhq/prime-ui/components/navigationTabs/NavigationTabs.tsx": 1,
         "@cbhq/prime-ui/components/tradeAdjustTooltipWrapper/TradeAdjustTooltipWrapper.tsx": 1,
         "@cbhq/prime-ui/modals/activateApiKeyFlow/CopyApiKeyFieldsStep.tsx": 1,
@@ -2267,7 +2275,8 @@
           "@cbhq/prime-ui/components/DualIconHeader/DualIconHeader.tsx": 1,
           "@cbhq/prime-ui/components/addressInfo/AddressInfo.tsx": 2,
           "@cbhq/prime-ui/components/denseToggle/denseToggle.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1,
+          "@cbhq/prime-ui/components/metric/Metric.tsx": 1,
           "@cbhq/prime-ui/components/navigationTabs/NavigationTabs.tsx": 1,
           "@cbhq/prime-ui/modals/addressBookFlow/SelectAddressStep.tsx": 2,
           "@cbhq/prime-ui/modals/governanceFlow/DelegateVotingStep.tsx": 2,
@@ -4062,95 +4071,6 @@
       }
     },
     {
-      "name": "Fallback",
-      "sourceFile": "@cbhq/cds-web/layout/Fallback",
-      "totalInstances": 49,
-      "totalCallSites": 20,
-      "cds": "@cbhq/cds-web/layout/Fallback",
-      "callSites": {
-        "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
-        "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
-        "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 7,
-        "@cbhq/prime-ui/pages/portfolio/Portfolio.tsx": 1,
-        "@cbhq/prime-ui/pages/portfolio/PortfolioTable.tsx": 2,
-        "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 3,
-        "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
-        "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 2,
-        "@cbhq/prime-ui/pages/portfolio/header/HeaderSkeleton.tsx": 6,
-        "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 5,
-        "@cbhq/prime-ui/pages/settings/security/Security.tsx": 2,
-        "@cbhq/prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 4,
-        "@cbhq/prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
-        "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 3,
-        "@cbhq/prime-ui/pages/order/report/chart/OrderReportChart.tsx": 1,
-        "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 3,
-        "@cbhq/prime-ui/pages/order/report/orderDetails/OrderDetailsLayout.tsx": 2,
-        "@cbhq/prime-ui/pages/order/report/progressBar/OrderProgressBarLayout.tsx": 1,
-        "@cbhq/prime-ui/pages/order/report/statisticTable/StatisticTableLayout.tsx": 1,
-        "@cbhq/prime-ui/pages/settings/billing/automaticBilling/AutomaticBillingSection.tsx": 1
-      },
-      "propsWithCallSites": {
-        "height": {
-          "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
-          "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 7,
-          "@cbhq/prime-ui/pages/portfolio/Portfolio.tsx": 1,
-          "@cbhq/prime-ui/pages/portfolio/PortfolioTable.tsx": 2,
-          "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 3,
-          "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
-          "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 2,
-          "@cbhq/prime-ui/pages/portfolio/header/HeaderSkeleton.tsx": 6,
-          "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 5,
-          "@cbhq/prime-ui/pages/settings/security/Security.tsx": 2,
-          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 4,
-          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
-          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 3,
-          "@cbhq/prime-ui/pages/order/report/chart/OrderReportChart.tsx": 1,
-          "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 3,
-          "@cbhq/prime-ui/pages/order/report/orderDetails/OrderDetailsLayout.tsx": 2,
-          "@cbhq/prime-ui/pages/order/report/progressBar/OrderProgressBarLayout.tsx": 1,
-          "@cbhq/prime-ui/pages/order/report/statisticTable/StatisticTableLayout.tsx": 1,
-          "@cbhq/prime-ui/pages/settings/billing/automaticBilling/AutomaticBillingSection.tsx": 1
-        },
-        "width": {
-          "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
-          "@cbhq/prime-ui/components/metric/Metric.tsx": 2,
-          "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 7,
-          "@cbhq/prime-ui/pages/portfolio/Portfolio.tsx": 1,
-          "@cbhq/prime-ui/pages/portfolio/PortfolioTable.tsx": 2,
-          "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 3,
-          "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
-          "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 2,
-          "@cbhq/prime-ui/pages/portfolio/header/HeaderSkeleton.tsx": 6,
-          "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 5,
-          "@cbhq/prime-ui/pages/settings/security/Security.tsx": 2,
-          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 4,
-          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
-          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 3,
-          "@cbhq/prime-ui/pages/order/report/chart/OrderReportChart.tsx": 1,
-          "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 3,
-          "@cbhq/prime-ui/pages/order/report/orderDetails/OrderDetailsLayout.tsx": 2,
-          "@cbhq/prime-ui/pages/order/report/progressBar/OrderProgressBarLayout.tsx": 1,
-          "@cbhq/prime-ui/pages/order/report/statisticTable/StatisticTableLayout.tsx": 1,
-          "@cbhq/prime-ui/pages/settings/billing/automaticBilling/AutomaticBillingSection.tsx": 1
-        },
-        "percentage": {
-          "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
-          "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 1,
-          "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 1,
-          "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
-          "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 2,
-          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 1
-        },
-        "key": { "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 1 },
-        "shape": {
-          "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 1,
-          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 1,
-          "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
       "totalInstances": 116,
@@ -4304,6 +4224,95 @@
         },
         "readOnly": {
           "@cbhq/prime-ui/pages/settings/billing/automaticBilling/AutomaticBillingToggler.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "@cbhq/cds-web/layout/Fallback",
+      "totalInstances": 49,
+      "totalCallSites": 20,
+      "cds": "@cbhq/cds-web/layout/Fallback",
+      "callSites": {
+        "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
+        "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 2,
+        "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 7,
+        "@cbhq/prime-ui/pages/portfolio/Portfolio.tsx": 1,
+        "@cbhq/prime-ui/pages/portfolio/PortfolioTable.tsx": 2,
+        "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 3,
+        "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
+        "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 2,
+        "@cbhq/prime-ui/pages/portfolio/header/HeaderSkeleton.tsx": 6,
+        "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 5,
+        "@cbhq/prime-ui/pages/settings/security/Security.tsx": 2,
+        "@cbhq/prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 4,
+        "@cbhq/prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
+        "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 3,
+        "@cbhq/prime-ui/pages/order/report/chart/OrderReportChart.tsx": 1,
+        "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 3,
+        "@cbhq/prime-ui/pages/order/report/orderDetails/OrderDetailsLayout.tsx": 2,
+        "@cbhq/prime-ui/pages/order/report/progressBar/OrderProgressBarLayout.tsx": 1,
+        "@cbhq/prime-ui/pages/order/report/statisticTable/StatisticTableLayout.tsx": 1,
+        "@cbhq/prime-ui/pages/settings/billing/automaticBilling/AutomaticBillingSection.tsx": 1
+      },
+      "propsWithCallSites": {
+        "height": {
+          "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 2,
+          "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 7,
+          "@cbhq/prime-ui/pages/portfolio/Portfolio.tsx": 1,
+          "@cbhq/prime-ui/pages/portfolio/PortfolioTable.tsx": 2,
+          "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 3,
+          "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
+          "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 2,
+          "@cbhq/prime-ui/pages/portfolio/header/HeaderSkeleton.tsx": 6,
+          "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 5,
+          "@cbhq/prime-ui/pages/settings/security/Security.tsx": 2,
+          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 4,
+          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
+          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 3,
+          "@cbhq/prime-ui/pages/order/report/chart/OrderReportChart.tsx": 1,
+          "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 3,
+          "@cbhq/prime-ui/pages/order/report/orderDetails/OrderDetailsLayout.tsx": 2,
+          "@cbhq/prime-ui/pages/order/report/progressBar/OrderProgressBarLayout.tsx": 1,
+          "@cbhq/prime-ui/pages/order/report/statisticTable/StatisticTableLayout.tsx": 1,
+          "@cbhq/prime-ui/pages/settings/billing/automaticBilling/AutomaticBillingSection.tsx": 1
+        },
+        "width": {
+          "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
+          "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 2,
+          "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 7,
+          "@cbhq/prime-ui/pages/portfolio/Portfolio.tsx": 1,
+          "@cbhq/prime-ui/pages/portfolio/PortfolioTable.tsx": 2,
+          "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 3,
+          "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
+          "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 2,
+          "@cbhq/prime-ui/pages/portfolio/header/HeaderSkeleton.tsx": 6,
+          "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 5,
+          "@cbhq/prime-ui/pages/settings/security/Security.tsx": 2,
+          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 4,
+          "@cbhq/prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
+          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 3,
+          "@cbhq/prime-ui/pages/order/report/chart/OrderReportChart.tsx": 1,
+          "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 3,
+          "@cbhq/prime-ui/pages/order/report/orderDetails/OrderDetailsLayout.tsx": 2,
+          "@cbhq/prime-ui/pages/order/report/progressBar/OrderProgressBarLayout.tsx": 1,
+          "@cbhq/prime-ui/pages/order/report/statisticTable/StatisticTableLayout.tsx": 1,
+          "@cbhq/prime-ui/pages/settings/billing/automaticBilling/AutomaticBillingSection.tsx": 1
+        },
+        "percentage": {
+          "@cbhq/prime-ui/components/consensusCaption/ConsensusCaption.tsx": 1,
+          "@cbhq/prime-ui/pages/portfolio/AvailableCredit.tsx": 1,
+          "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 1,
+          "@cbhq/prime-ui/pages/activity/detail/ActivityKeyValuePanel.tsx": 1,
+          "@cbhq/prime-ui/pages/settings/billing/Billing.tsx": 2,
+          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 1
+        },
+        "key": { "@cbhq/prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 1 },
+        "shape": {
+          "@cbhq/prime-ui/pages/analytics/header/Header.tsx": 1,
+          "@cbhq/prime-ui/pages/asset/governance/detail/GovernanceDetailPage.tsx": 1,
+          "@cbhq/prime-ui/pages/order/report/header/ReportHeaderLayout.tsx": 1
         }
       }
     },
@@ -5765,6 +5774,16 @@
       }
     },
     {
+      "name": "CurrencyIconGroupLoadingSkeleton",
+      "sourceFile": "@cbhq/insto-ui-web/icons/currencyIcons/currencyIconGroup/CurrencyIconGroupLoadingSkeleton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cbhq/insto-ui-web/icons/currencyIcons/currencyIconGroup/CurrencyIconGroupLoadingSkeleton",
+      "propsWithCallSites": {
+        "size": { "@cbhq/prime-ui/components/loading/FallbackMetric.tsx": 1 }
+      }
+    },
+    {
       "name": "Tooltip",
       "sourceFile": "@cbhq/insto-ui-web/Tooltip/Tooltip",
       "totalInstances": 21,
@@ -5873,14 +5892,6 @@
         },
         "indent": { "@cbhq/prime-ui/modals/cancelAllOrdersFlow/MarketsRow.tsx": 1 }
       }
-    },
-    {
-      "name": "CurrencyIconGroupLoadingSkeleton",
-      "sourceFile": "@cbhq/insto-ui-web/icons/currencyIcons/currencyIconGroup/CurrencyIconGroupLoadingSkeleton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cbhq/insto-ui-web/icons/currencyIcons/currencyIconGroup/CurrencyIconGroupLoadingSkeleton",
-      "propsWithCallSites": { "size": { "@cbhq/prime-ui/components/metric/Metric.tsx": 1 } }
     },
     {
       "name": "NavLink",
@@ -6250,11 +6261,11 @@
       }
     },
     {
-      "name": "LoadingSkeletonList",
-      "sourceFile": "@cbhq/insto-ui-web/loading/LoadingSkeletonList",
+      "name": "FallbackList",
+      "sourceFile": "@cbhq/insto-ui-web/loading/FallbackList",
       "totalInstances": 3,
       "totalCallSites": 3,
-      "presentationalLibrary": "@cbhq/insto-ui-web/loading/LoadingSkeletonList",
+      "presentationalLibrary": "@cbhq/insto-ui-web/loading/FallbackList",
       "callSites": {
         "@cbhq/prime-ui/modals/addTrustedAddressFlow/SelectAssetStep.tsx": 1,
         "@cbhq/prime-ui/modals/billingPreferenceFlow/steps/BillingPreferenceAssetStep.tsx": 1,
@@ -6733,6 +6744,17 @@
       "presentationalElement": "div"
     },
     {
+      "name": "NoTransferMethodsPlaceholder",
+      "sourceFile": "@cbhq/prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "@cbhq/insto-ui-web/Dialog/DialogContent",
+      "propsWithCallSites": {
+        "currencySymbol": { "@cbhq/prime-ui/modals/transferFlow/SelectTransferMethodStep.tsx": 1 },
+        "portfolioId": { "@cbhq/prime-ui/modals/transferFlow/SelectTransferMethodStep.tsx": 1 }
+      }
+    },
+    {
       "name": "SenTransferIcon",
       "sourceFile": "@cbhq/insto-ui-web/icons/SenTransferIcon",
       "totalInstances": 1,
@@ -6896,11 +6918,11 @@
       }
     },
     {
-      "name": "LoadingSkeletonTable",
-      "sourceFile": "@cbhq/insto-ui-web/loading/LoadingSkeletonTable",
+      "name": "FallbackTable",
+      "sourceFile": "@cbhq/insto-ui-web/loading/FallbackTable",
       "totalInstances": 34,
       "totalCallSites": 24,
-      "presentationalLibrary": "@cbhq/insto-ui-web/loading/LoadingSkeletonTable",
+      "presentationalLibrary": "@cbhq/insto-ui-web/loading/FallbackTable",
       "callSites": {
         "@cbhq/prime-ui/pages/asset/WalletsTable.tsx": 1,
         "@cbhq/prime-ui/pages/invite/InviteListPage.tsx": 1,
@@ -8293,7 +8315,8 @@
         "rowsData": { "@cbhq/prime-ui/pages/trade/ladder/LadderChart.tsx": 1 },
         "productId": { "@cbhq/prime-ui/pages/trade/ladder/LadderChart.tsx": 1 },
         "onCancelOrders": { "@cbhq/prime-ui/pages/trade/ladder/LadderChart.tsx": 1 },
-        "triggerBatchOrderCancel": { "@cbhq/prime-ui/pages/trade/ladder/LadderChart.tsx": 1 }
+        "triggerBatchOrderCancel": { "@cbhq/prime-ui/pages/trade/ladder/LadderChart.tsx": 1 },
+        "onChartLoad": { "@cbhq/prime-ui/pages/trade/ladder/LadderChart.tsx": 1 }
       }
     },
     {
@@ -9831,7 +9854,8 @@
         "itemSize": { "@cbhq/prime-ui/pages/trade/ladder/LadderList/LadderList.tsx": 1 },
         "width": { "@cbhq/prime-ui/pages/trade/ladder/LadderList/LadderList.tsx": 1 },
         "itemData": { "@cbhq/prime-ui/pages/trade/ladder/LadderList/LadderList.tsx": 1 },
-        "initialScrollOffset": { "@cbhq/prime-ui/pages/trade/ladder/LadderList/LadderList.tsx": 1 }
+        "initialScrollOffset": { "@cbhq/prime-ui/pages/trade/ladder/LadderList/LadderList.tsx": 1 },
+        "onItemsRendered": { "@cbhq/prime-ui/pages/trade/ladder/LadderList/LadderList.tsx": 1 }
       }
     },
     {
@@ -10993,7 +11017,10 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "closeUnusedConnectionAfterMs": { "@cbhq/prime-ui/DataCacheProviders.tsx": 1 }
+        "fetch": { "@cbhq/prime-ui/DataCacheProviders.tsx": 1 },
+        "closeUnusedConnectionAfterMs": { "@cbhq/prime-ui/DataCacheProviders.tsx": 1 },
+        "enableFetchBasedStreaming": { "@cbhq/prime-ui/DataCacheProviders.tsx": 1 },
+        "checkAllowFetchBasedStreamingByUrl": { "@cbhq/prime-ui/DataCacheProviders.tsx": 1 }
       }
     },
     {
@@ -12673,7 +12700,8 @@
           "@cbhq/prime-ui/pages/settings/addressBook/AddressBookTable.tsx": 1,
           "@cbhq/prime-ui/pages/settings/billing/RecipientEmailTable.tsx": 1,
           "@cbhq/prime-ui/pages/settings/permissions/PermissionsTable.tsx": 1,
-          "@cbhq/prime-ui/pages/settings/teamMembers/TeamMembersTable.tsx": 1
+          "@cbhq/prime-ui/pages/settings/teamMembers/TeamMembersTable.tsx": 1,
+          "@cbhq/prime-ui/pages/asset/governance/list/wallets/GovernanceWalletsTable.tsx": 1
         },
         "withBorder": {
           "@cbhq/prime-ui/pages/asset/WalletsTable.tsx": 1,
@@ -15211,8 +15239,8 @@
       }
     },
     {
-      "name": "MetricSkeleton",
-      "sourceFile": "@cbhq/prime-ui/components/metric/Metric/MetricSkeleton",
+      "name": "FallbackMetric",
+      "sourceFile": "@cbhq/prime-ui/components/loading/FallbackMetric",
       "totalInstances": 14,
       "totalCallSites": 3,
       "callSites": {
@@ -16296,15 +16324,16 @@
     {
       "name": "GovernanceWalletsSection",
       "sourceFile": "@cbhq/prime-ui/pages/asset/governance/list/wallets/GovernanceWalletsSection",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
+      "callSites": { "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx": 2 },
       "propsWithCallSites": {
-        "portfolioId": { "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx": 1 },
+        "portfolioId": { "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx": 2 },
         "currencySymbol": {
-          "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx": 1
+          "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx": 2
         },
         "openGovernanceFlow": {
-          "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx": 1
+          "@cbhq/prime-ui/pages/asset/governance/list/GovernanceListPage.tsx": 2
         }
       }
     },

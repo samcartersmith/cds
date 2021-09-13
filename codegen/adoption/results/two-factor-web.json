@@ -34,8 +34,8 @@
           "callSites": [
             "@cbhq/two-factor-web/flows/steps/email/EmailNeedHelp.tsx",
             "@cbhq/two-factor-web/flows/steps/sms/SMSNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx"
+            "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx",
+            "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx"
           ]
         },
         {
@@ -663,27 +663,27 @@
       "callSites": {
         "@cbhq/two-factor-web/flows/steps/email/EmailNeedHelp.tsx": 1,
         "@cbhq/two-factor-web/flows/steps/sms/SMSNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1
+        "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1,
+        "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1
       },
       "propsWithCallSites": {
         "options": {
           "@cbhq/two-factor-web/flows/steps/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/steps/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1
         },
         "onToggleDrawer": {
           "@cbhq/two-factor-web/flows/steps/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/steps/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1
         },
         "testID": {
           "@cbhq/two-factor-web/flows/steps/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/steps/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/steps/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/steps/totp/TOTPNeedHelp.tsx": 1
         }
       }
     },
