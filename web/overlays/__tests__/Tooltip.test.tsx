@@ -1,5 +1,5 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import { renderA11y } from '@utils/jest/renderA11y';
+import { renderA11y } from '@cbhq/jest-utils';
 
 import { StoryExample } from '../__fixtures__/StoryExample';
 

@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
-import { renderA11y } from '@utils/jest/renderA11y';
+import { renderA11y } from '@cbhq/jest-utils';
 
 import { IconButton } from '../IconButton';
 

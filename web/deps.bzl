@@ -26,5 +26,4 @@ CDS_DEPENDENCIES = [
     "//eng/shared/design-system/lottie-files:source",
     "//eng/shared/design-system/storybook:source",
     "//eng/shared/design-system/utils:source",
-    "//eng/shared/utils:jest/renderA11y.ts",
 ]

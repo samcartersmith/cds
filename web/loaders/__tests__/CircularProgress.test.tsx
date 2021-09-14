@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import { renderA11y } from '@utils/jest/renderA11y';
+import { renderA11y } from '@cbhq/jest-utils';
 
 import { CircularProgress } from '../CircularProgress';
 
