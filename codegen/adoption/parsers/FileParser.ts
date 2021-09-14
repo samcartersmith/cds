@@ -30,8 +30,14 @@ function findNodeWithType(
   requiredKindAlongPath?: ts.SyntaxKind,
   kindToStopAt?: ts.SyntaxKind,
 ) {
+  if (!startNode) {
+    return null;
+  }
+
   const stack: ts.Node[] = [];
-  stack.push(startNode);
+  startNode.forEachChild((child) => {
+    stack.push(child);
+  });
 
   const foundNode = null;
   let foundRequiredAlongPath = !requiredKindAlongPath;
@@ -65,6 +71,10 @@ export class FileParser {
   /** Absolute path of the file being parsed */
   public readonly absolutePath: string;
 
+  public absolutePathForProject: string;
+
+  public projectTsAlias: string | undefined;
+
   /** Path of the file being parsed, relative to the project. */
   private readonly relativePath: string;
 
@@ -88,10 +98,17 @@ export class FileParser {
 
   private wrappedPresentationStopPos: Set<number> = new Set<number>();
 
-  constructor(project: ProjectParser, absolutePathForFile: string) {
+  constructor(
+    project: ProjectParser,
+    absolutePathForProject: string,
+    absolutePathForFile: string,
+    projectTsAlias?: string,
+  ) {
     this.project = project;
     this.absolutePath = absolutePathForFile;
-    this.relativePath = path.relative(project.absolutePath, absolutePathForFile);
+    this.relativePath = path.relative(absolutePathForProject, absolutePathForFile);
+    this.projectTsAlias = projectTsAlias;
+    this.absolutePathForProject = absolutePathForProject;
   }
 
   public get githubLink() {
@@ -99,9 +116,7 @@ export class FileParser {
   }
 
   public get path() {
-    return this.project.tsAlias
-      ? `${this.project.tsAlias}/${this.relativePath}`
-      : this.relativePath;
+    return this.projectTsAlias ? `${this.projectTsAlias}/${this.relativePath}` : this.relativePath;
   }
 
   public async init() {
@@ -369,7 +384,7 @@ export class FileParser {
       return;
     }
 
-    const [presEl, isPresEl] = this.isWrappedPresentationalJsx(jsxElement);
+    const [presEl, isPresEl] = this.isPresentationalJsx(jsxElement);
     if (isPresEl) {
       this.project.addWrappedPresentationalComponent(
         this.getJsxId(exportId, this.path),
@@ -380,7 +395,7 @@ export class FileParser {
     }
   }
 
-  private isWrappedPresentationalJsx(element: ts.JsxElement): [string, boolean] {
+  private isPresentationalJsx(element: ts.JsxElement): [string, boolean] {
     const { openingElement } = element;
     if (openingElement && 'escapedText' in openingElement.tagName) {
       const tagName = openingElement.tagName.escapedText as string;
@@ -417,6 +432,17 @@ export class FileParser {
       const tagName = openingElement.tagName.escapedText as string;
       const lib = this.imports.get(tagName) as string;
       if (lib && this.project.isCdsImport(lib)[1] !== false) {
+        let currElement: ts.JsxElement = element;
+        while (currElement) {
+          // if we find a presentational element we return false here
+          currElement = findNodeWithType(currElement, ts.SyntaxKind.JsxElement) as ts.JsxElement;
+
+          // we found a nested presentational element, return
+          if (currElement && this.isPresentationalJsx(currElement)[1]) {
+            return ['', false];
+          }
+        }
+
         return [lib, true];
       }
     }

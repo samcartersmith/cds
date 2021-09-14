@@ -17,6 +17,7 @@ import {
 import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './types';
 import { AdopterComponentDetails } from './AdopterComponentDetails';
 import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
+import {getResultsByType, isMatch} from "./search/SearchUtils";
 
 type AdopterListCellProps = ComponentData & {
   isActive: boolean;
@@ -54,23 +55,8 @@ function getFilteredSearchResults(
     : components.filter((component: ComponentData) => {
         const fields = fieldAccessor(component);
         for (const searchResult of searchResults) {
-          let { val } = searchResult;
-
-          // free text search
-          let regex;
-          if (val.startsWith('"')) {
-            val = val.replaceAll('"', '');
-            regex = new RegExp(val, 'ig');
-          }
-
-          for (const field of fields) {
-            if (regex) {
-              if (field.match(regex) !== null) {
-                return true;
-              }
-            } else if (val === field) {
-              return true;
-            }
+          if (isMatch(searchResult, fields)) {
+            return true;
           }
         }
 
@@ -83,17 +69,7 @@ export const AdopterComponentsList = memo(
     const [activeComponentIndex, setActiveComponentIndex] = useState<number>(0);
 
     const { results } = useContext(AdopterSearchContext) as AdopterSearchContextType;
-    const componentSearchResults: AdopterSearchResult[] = [];
-    const propSearchResults: AdopterSearchResult[] = [];
-    for (const result of results) {
-      const { type: resultType } = result;
-      if (resultType === 'component') {
-        componentSearchResults.push(result);
-      }
-      if (resultType === 'prop') {
-        propSearchResults.push(result);
-      }
-    }
+    const {props: propSearchResults, components: componentSearchResults} = getResultsByType(results);
 
     const { setTabKey } = useContext(AdopterTabContext) as AdopterTabContextType;
     useEffect(() => {

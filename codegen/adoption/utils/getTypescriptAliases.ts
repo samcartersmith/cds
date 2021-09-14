@@ -22,3 +22,21 @@ export function getTypescriptAliases(rootDir: string, tsconfig?: TypescriptConfi
   }
   return { absoluteAliases, relativeAliases };
 }
+
+export function getMatchingDirectory(
+  aliases: Record<string, string>,
+  pathStartingWithAlias: string,
+) {
+  if (aliases[pathStartingWithAlias]) {
+    return aliases[pathStartingWithAlias];
+  }
+
+  for (const alias of Object.keys(aliases)) {
+    if (pathStartingWithAlias.startsWith(alias)) {
+      const relativePath = pathStartingWithAlias.replace(`${alias}/`, '');
+      return path.join(aliases[alias], relativePath);
+    }
+  }
+
+  return null;
+}

@@ -2647,7 +2647,7 @@ html {
 .ant-select-item-option {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display: flex !important;
 }
 .ant-select-item-option-content {
     -webkit-box-flex: 1;

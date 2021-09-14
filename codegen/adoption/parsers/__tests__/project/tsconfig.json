@@ -3,9 +3,22 @@
     "target": "es5",
     "module": "commonjs",
     "strict": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@test/frontend/*": ["src/*"]
+      "@test/frontend/*": ["src/*"],
+      "@assethub/www/*": [
+        "eng/assethub/frontend/www/src/*",
+        "eng/assethub/frontend/www/generated/*"
+      ],
+      "@assethub/admin/*": [
+        "eng/assethub/frontend/admin/src/*",
+        "eng/assethub/frontend/admin/generated/*"
+      ],
+      "@assethub/shared/*": ["eng/assethub/frontend/shared/src/*"],
+      "@commerce/frontend/*": ["eng/commerce/frontend/src/*"],
+      "@cbhq/insto-ui-common/*": ["eng/prime/shared/components/common/*"],
+      "@cbhq/insto-ui-mobile/*": ["eng/prime/shared/components/mobile/*"],
+      "@cbhq/insto-ui-web/*": ["eng/prime/shared/components/web/*"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,

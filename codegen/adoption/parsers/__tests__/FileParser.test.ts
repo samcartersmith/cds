@@ -1,11 +1,11 @@
 // test svg's here
 
 import path from 'path';
-import { ProjectParser } from '../ProjectParser';
+import { ProjectParser, ProjectParserConfig } from '../ProjectParser';
 
 describe('FileParser Tests', () => {
   test('svg does not dig into the tree', async () => {
-    const config = {
+    const config: ProjectParserConfig = {
       root: path.join(__dirname, 'project'),
       github: 'frontend/coinbase-www',
       id: 'retail-web-shared',
@@ -42,12 +42,12 @@ describe('FileParser Tests', () => {
   });
 
   test('nested presentational component', async () => {
-    const config = {
+    const config: ProjectParserConfig = {
       root: path.join(__dirname, 'project'),
       github: 'frontend/coinbase-www',
       id: 'retail-web-shared',
       label: 'Retail Web Shared',
-      tsAlias: '@test/frontend',
+      projectTsAliases: ['@test/frontend'],
       sourceGlob: `**/presentational/**/*.(ts|tsx|js|jsx)`,
     };
 
@@ -75,6 +75,37 @@ describe('FileParser Tests', () => {
     components.cds.sort(sortFn);
     expect(components).toEqual({
       cds: [
+        {
+          name: 'Box',
+          sourceFile: '@cbhq/cds-web/layout/Box',
+          totalInstances: 1,
+          totalCallSites: 1,
+          cds: '@cbhq/cds-web/layout/Box',
+          propsWithCallSites: {
+            width: {
+              '@test/frontend/presentational/components/BoxWrapper.tsx': 1,
+            },
+            minWidth: {
+              '@test/frontend/presentational/components/BoxWrapper.tsx': 1,
+            },
+            height: {
+              '@test/frontend/presentational/components/BoxWrapper.tsx': 1,
+            },
+            borderRadius: {
+              '@test/frontend/presentational/components/BoxWrapper.tsx': 1,
+            },
+            bordered: {
+              '@test/frontend/presentational/components/BoxWrapper.tsx': 1,
+            },
+          },
+        },
+        {
+          name: 'VStack',
+          sourceFile: '@cbhq/cds-web/layout/VStack',
+          totalInstances: 1,
+          totalCallSites: 1,
+          cds: '@cbhq/cds-web/layout/VStack',
+        },
         {
           name: 'NavigationBarControls',
           sourceFile: '@cbhq/cds-web/navigation/NavigationBarControls',
@@ -208,28 +239,25 @@ describe('FileParser Tests', () => {
           totalCallSites: 1,
           styledComponent: 'div',
         },
-      ].sort(sortFn),
-      other: [
         {
-          name: 'Link',
-          sourceFile: 'react-router-dom/Link',
-          totalInstances: 2,
+          name: 'div',
+          sourceFile: '@test/frontend/presentational/components/BoxWrapper.tsx',
+          totalInstances: 1,
           totalCallSites: 1,
-          callSites: {
-            '@test/frontend/presentational/components/NavigationControl.tsx': 2,
-          },
+          presentationalProps: [
+            {
+              prop: 'className',
+              callSite: '@test/frontend/presentational/components/BoxWrapper.tsx',
+            },
+          ],
           propsWithCallSites: {
-            to: {
-              '@test/frontend/presentational/components/NavigationControl.tsx': 2,
+            className: {
+              '@test/frontend/presentational/components/BoxWrapper.tsx': 1,
             },
           },
         },
-        {
-          name: 'div',
-          sourceFile: '@test/frontend/presentational/components/NavigationControl.tsx',
-          totalInstances: 1,
-          totalCallSites: 1,
-        },
+      ].sort(sortFn),
+      other: [
         {
           name: 'div',
           sourceFile: '@test/frontend/presentational/view/PresentationalTest.tsx',
@@ -254,6 +282,41 @@ describe('FileParser Tests', () => {
         {
           name: 'NavigationControl',
           sourceFile: '@test/frontend/presentational/components/NavigationControl',
+          totalInstances: 1,
+          totalCallSites: 1,
+        },
+        {
+          name: 'BoxWrapper',
+          sourceFile: '@test/frontend/presentational/components/BoxWrapper',
+          totalInstances: 1,
+          totalCallSites: 1,
+        },
+        {
+          name: 'span',
+          sourceFile: '@test/frontend/presentational/components/BoxWrapper.tsx',
+          totalInstances: 2,
+          totalCallSites: 1,
+          callSites: {
+            '@test/frontend/presentational/components/BoxWrapper.tsx': 2,
+          },
+        },
+        {
+          name: 'Link',
+          sourceFile: 'react-router-dom/Link',
+          totalInstances: 2,
+          totalCallSites: 1,
+          callSites: {
+            '@test/frontend/presentational/components/NavigationControl.tsx': 2,
+          },
+          propsWithCallSites: {
+            to: {
+              '@test/frontend/presentational/components/NavigationControl.tsx': 2,
+            },
+          },
+        },
+        {
+          name: 'div',
+          sourceFile: '@test/frontend/presentational/components/NavigationControl.tsx',
           totalInstances: 1,
           totalCallSites: 1,
         },

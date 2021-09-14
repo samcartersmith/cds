@@ -6,7 +6,7 @@ import { argv } from 'yargs';
 import { getPackageJson } from '../utils/getPackageJson';
 import { getTypescriptConfig } from '../utils/getTypescriptConfig';
 import { getProjectFiles } from '../utils/getProjectFiles';
-import { getTypescriptAliases } from '../utils/getTypescriptAliases';
+import { getMatchingDirectory, getTypescriptAliases } from '../utils/getTypescriptAliases';
 import { FileParser } from './FileParser';
 import { fromId, toId } from '../utils/id';
 
@@ -14,7 +14,6 @@ export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',
   '@cb/shared',
   '@designSystem',
-  '@cbhq/insto-ui-web',
   '@material-ui',
   'highcharts',
   'react-admin',
@@ -24,7 +23,6 @@ export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   'react-native-reanimated',
   'react-native-svg',
   'react-select',
-  '@assethub/shared/components',
 ];
 
 export const FALLBACK_PRESENTATIONAL_ELEMENTS = [
@@ -51,7 +49,7 @@ export type ProjectParserConfig = {
   /** A label to use when displaying metrics on website. */
   label: string;
   /** The Typescript Alias for the project (optional). */
-  tsAlias?: string;
+  projectTsAliases?: string[];
   presentationalElements?: string[];
   presentationalLibraries?: string[];
   presentationalAttributes?: string[];
@@ -81,92 +79,95 @@ type PresentationalDetails = ReturnType<
   | ProjectParser['isStyledComponent']
 >;
 
+type ProjectFilePaths = {
+  filePaths: string[];
+  absolutePathForProject: string;
+  projectTsAlias?: string;
+};
+
 function generateUnionRegex(strs: string[], boundaryMatch?: boolean) {
   return new RegExp(strs.map((str) => (boundaryMatch ? `^${str}$` : str)).join('|'));
 }
 
 export class ProjectParser {
-  /** The absolute path for the source files to parse. */
-  root: string;
-
   /** The github org and repo for the project. */
-  github: string;
+  public github: string;
 
-  /** The github url for the project. This will be used to link to source files. */
-  githubUrl: string;
+  /** The absolute path for the source files to parse. */
+  public root: string;
 
-  /** A unique identifier for the project.  */
-  id: string;
-
-  /** A label to use when displaying metrics on website. */
-  label: string;
-
-  /** The Typescript Alias for the project (optional). */
-  tsAlias?: string;
-
-  /** Array of presentational attributes to whitelist when grouping presentational components. */
-  presentationalAttributes: string[];
-
-  /** Array of presentational elements or components to whitelist when grouping presentational components. */
-  presentationalElements: string[];
-
-  /** Array of presentational libraries to whitelist when grouping presentational components. */
-  presentationalLibraries: string[];
-
-  /** Array of Components that should be grouped with CDS components. */
-  cdsAliases: string[];
-
-  /** Array of file globs to ignore when parsing files. */
-  ignoreDirs: string[];
-
-  /** Optional override of the default source glob * */
-  sourceGlob: string | undefined;
-
-  spinner!: ora.Ora;
-
-  /** Absolute path of project. Pulled from tsAlias if project has tsconfig, otherwise falls back to root. */
-  absolutePath!: string;
-
-  /** Relative path of project. Relevant if in a monorepo with other projects. Used to generate links to source code.  */
-  relativePath!: string;
-
-  /** Dependencies object from package.json of project. Not being used currently, but useful if we want to track versioning of Coinbase packages or what external libraries teams are using. */
-  dependencies!: Record<string, string>;
-
-  /** Files to parse. */
-  filePaths!: string[];
-
-  /** Path aliases dictionary from tsconfig. Only present if tsAlias param is passed into ProjectParser. */
-  tsAliases!: Record<string, string>;
-
-  /** Path aliases dictionary from tsconfig. Only present if tsAlias param is passed into ProjectParser. */
-  tsAliasesRelative!: Record<string, string>;
-
-  /** Parsed files. The output of running FileParser on a file path. */
-  files: FileParser[] = [];
+  public spinner!: ora.Ora;
 
   /** All styled-components generated via tagged template literal in a project. Helps determine presentational components key is the id and value is the styled tag. */
-  styledComponents: Map<string, string> = new Map();
+  public styledComponents: Map<string, string> = new Map();
 
   /** All styled-components extended off some other component key is the id and value is an array of call sites. */
-  extendedStyledComponents: Map<string, string[]> = new Map();
+  public extendedStyledComponents: Map<string, string[]> = new Map();
+
+  /** Dependencies object from package.json of project. Not being used currently, but useful if we want to track versioning of Coinbase packages or what external libraries teams are using. */
+  public dependencies!: Record<string, string>;
+
+  /** A unique identifier for the project.  */
+  public id: string;
+
+  /** The github url for the project. This will be used to link to source files. */
+  private githubUrl: string;
+
+  /** A label to use when displaying metrics on website. */
+  private label: string;
+
+  /** The Typescript Alias(es) for the project (optional). */
+  private projectTsAliases?: string[];
+
+  /** Array of presentational attributes to whitelist when grouping presentational components. */
+  private presentationalAttributes: string[];
+
+  /** Array of presentational elements or components to whitelist when grouping presentational components. */
+  private presentationalElements: string[];
+
+  /** Array of presentational libraries to whitelist when grouping presentational components. */
+  private presentationalLibraries: string[];
+
+  /** Array of Components that should be grouped with CDS components. */
+  private cdsAliases: string[];
+
+  /** Array of file globs to ignore when parsing files. */
+  private ignoreDirs: string[];
+
+  /** Optional override of the default source glob * */
+  private sourceGlob: string | undefined;
+
+  /** Absolute path of project. Pulled from tsAlias if project has tsconfig, otherwise falls back to root. */
+  // private absolutePath!: string;
+
+  /** Relative path of project. Relevant if in a monorepo with other projects. Used to generate links to source code.  */
+  // private relativePath!: string;
+
+  /** Path aliases dictionary from tsconfig. Only present if tsAlias param is passed into ProjectParser. */
+  private tsAliases!: Record<string, string>;
+
+  /** Path aliases dictionary from tsconfig. Only present if tsAlias param is passed into ProjectParser. */
+  private tsAliasesRelative!: Record<string, string>;
+
+  /** Parsed files. The output of running FileParser on a file path. */
+  private files: FileParser[] = [];
 
   /** All JSX components in a project */
-  jsxComponents: Map<string, { callSite: string; props: string[] }[]> = new Map();
+  private jsxComponents: Map<string, { callSite: string; props: string[] }[]> = new Map();
 
   /** Components that have a first child that is a presentational element * */
-  wrappedPresentationComponents: Map<string, { path: string; presEl: string }> = new Map(); // name of component to file path
+  private wrappedPresentationComponents: Map<string, { path: string; presEl: string }> = new Map(); // name of component to file path
 
-  aliasedCdsComponents: Map<string, { aliasPath: string; callSites: string[] }> = new Map(); // wrapped component name => cds import path, wrappedComponentPath, callSites of alias
+  private aliasedCdsComponents: Map<string, { aliasPath: string; callSites: string[] }> = new Map(); // wrapped component name => cds import path, wrappedComponentPath, callSites of alias
 
-  cdsToAliasMapping: Map<string, Set<string>> = new Map(); // cds id from name and import to alias name
+  private cdsToAliasMapping: Map<string, Set<string>> = new Map(); // cds id from name and import to alias name
 
   constructor({
     root,
     github,
     id,
     label,
-    tsAlias,
+    projectTsAliases,
     presentationalAttributes,
     presentationalElements,
     presentationalLibraries,
@@ -181,7 +182,7 @@ export class ProjectParser {
     this.ignoreDirs = ignoreDirs;
     this.sourceGlob = sourceGlob;
     this.label = label;
-    this.tsAlias = tsAlias;
+    this.projectTsAliases = projectTsAliases;
     this.cdsAliases = ['@cbhq/cds-', ...cdsAliases];
     this.presentationalAttributes = presentationalAttributes ?? FALLBACK_PRESENTATIONAL_ATTRIBUTES;
     this.presentationalElements = presentationalElements ?? FALLBACK_PRESENTATIONAL_ELEMENTS;
@@ -196,8 +197,8 @@ export class ProjectParser {
       githubUrl: this.githubUrl,
       id: this.id,
       label: this.label,
-      totalParsedFiles: this.filePaths.length,
-      tsAlias: this.tsAlias,
+      totalParsedFiles: this.files.length,
+      projectTsAliases: this.projectTsAliases,
       baseUrl: path.relative(tempDir, path.resolve(this.root)),
       tsAliases: mapValues(this.tsAliasesRelative, (item) => {
         const normalizedPath = path.relative(tempDir, path.resolve(this.root, item));
@@ -450,18 +451,43 @@ export class ProjectParser {
       const { absoluteAliases, relativeAliases } = getTypescriptAliases(this.root, tsconfig);
       this.tsAliases = absoluteAliases;
       this.tsAliasesRelative = relativeAliases;
-      // i.e. user/home/repo/eng/shared/design-system
-      this.absolutePath = this.tsAlias ? this.tsAliases[this.tsAlias] : this.root;
-      // i.e. eng/shared/design-system
-      this.relativePath = path.relative(this.root, this.absolutePath);
-      // Uses fast-glob package return an array of file paths to parse.
-      this.filePaths = await getProjectFiles(this.absolutePath, this.ignoreDirs, this.sourceGlob);
+
+      // absolutePathForProject - i.e. user/home/repo/eng/shared/design-system
+      const projectFilePaths: ProjectFilePaths[] = [];
+      if (this.projectTsAliases && this.projectTsAliases.length > 0) {
+        for (const projectTsAlias of this.projectTsAliases) {
+          const absolutePathForProject = getMatchingDirectory(absoluteAliases, projectTsAlias);
+          if (absolutePathForProject) {
+            projectFilePaths.push({
+              // eslint-disable-next-line no-await-in-loop
+              filePaths: await getProjectFiles(
+                absolutePathForProject,
+                this.ignoreDirs,
+                this.sourceGlob,
+              ),
+              absolutePathForProject,
+              projectTsAlias,
+            });
+          }
+        }
+      } else {
+        projectFilePaths.push({
+          filePaths: await getProjectFiles(this.root, this.ignoreDirs, this.sourceGlob),
+          absolutePathForProject: this.root,
+        });
+      }
+
       // Parse the files
-      this.files = await Promise.all(
-        this.filePaths.map(async (filePath) => {
-          return new FileParser(this, filePath).init();
-        }),
-      );
+      const promises: Promise<FileParser>[] = [];
+      projectFilePaths.forEach(({ filePaths, absolutePathForProject, projectTsAlias }) => {
+        for (const filePath of filePaths) {
+          promises.push(
+            new FileParser(this, absolutePathForProject, filePath, projectTsAlias).init(),
+          );
+        }
+      });
+
+      this.files = await Promise.all(promises);
 
       // meta needs to be done before the jsx parsing because the jsx parsing augments what is stored in meta for the project
       await Promise.all(this.files.map(async (file: FileParser) => file.parseStyle()));

@@ -10,6 +10,8 @@ import { styled } from 'linaria/react';
 import { Table, TableCell } from '@material-ui/core';
 // @ts-ignore
 import { Accordion } from '@test/frontend/presentational/components/Accordion';
+// @ts-ignore
+import { BoxWrapper } from '@test/frontend/presentational/components/BoxWrapper';
 import PresentationalTestDefaultExport, {
   TestPresentationAttribute,
 } from './PresentationalTestDefaultExport';
@@ -81,5 +83,6 @@ export const TestComponentSvg = () => (
     <StyledDiv>
       <div>abd</div>
     </StyledDiv>
+    <BoxWrapper />
   </div>
 );

@@ -13,206 +13,6 @@
       }
     },
     {
-      "name": "VStack",
-      "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 19,
-      "totalCallSites": 13,
-      "cds": "@cbhq/cds-web/layout/VStack",
-      "callSites": {
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/portfolio/AssetBalance.tsx": 1,
-        "src/components/receive/Address.tsx": 1,
-        "src/components/send/SendStepper.tsx": 4,
-        "src/components/settings/SettingSelection.tsx": 1,
-        "src/components/settings/Settings.tsx": 2,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
-        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
-        "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2,
-        "src/components/send/steps/EntryStep/CurrencyInput.tsx": 1,
-        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-        "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "testID": { "src/components/assetDetail/AssetDetailBalance.tsx": 1 },
-        "spacingTop": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1
-        },
-        "spacingHorizontal": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
-          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
-        },
-        "width": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "key": { "src/components/send/SendStepper.tsx": 4 },
-        "height": { "src/components/settings/Settings.tsx": 1 },
-        "position": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
-        "bottom": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
-        "gap": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
-        "alignContent": {
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
-        },
-        "spacingBottom": { "src/components/send/steps/EntryStep/AmountInput.tsx": 1 },
-        "justifyContent": { "src/components/send/steps/EntryStep/AssetSelector.tsx": 1 },
-        "alignItems": { "src/components/send/steps/EntryStep/CurrencyInput.tsx": 1 },
-        "spacing": { "src/components/send/steps/EntryStep/EntryStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 16,
-      "totalCallSites": 9,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "callSites": {
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/portfolio/PortfolioMenu.tsx": 2,
-        "src/components/receive/Address.tsx": 2,
-        "src/components/receive/Receive.tsx": 2,
-        "src/components/receive/Username.tsx": 2,
-        "src/components/settings/Settings.tsx": 2,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
-        "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2
-      },
-      "propsWithCallSites": {
-        "spacingTop": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "spacingStart": { "src/components/portfolio/PortfolioMenu.tsx": 1 },
-        "spacingHorizontal": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/settings/Settings.tsx": 1
-        },
-        "bordered": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "borderRadius": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1
-        },
-        "justifyContent": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "width": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1
-        },
-        "background": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "spacing": {
-          "src/components/receive/Receive.tsx": 2,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
-        },
-        "as": { "src/components/receive/Username.tsx": 1 },
-        "height": {
-          "src/components/receive/Username.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "alignItems": {
-          "src/components/receive/Username.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "overflow": { "src/components/receive/Username.tsx": 1 },
-        "spacingVertical": {
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
-        },
-        "spacingBottom": {
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "flexDirection": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextTitle3",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/typography/TextTitle3",
-      "callSites": {
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/authorization/AuthorizationRequest.tsx": 1,
-        "src/components/error/ErrorBoundary.tsx": 1,
-        "src/components/error/GenericFullPageError.tsx": 1,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/authorization/AuthorizationRequest.tsx": 1,
-          "src/components/error/ErrorBoundary.tsx": 1,
-          "src/components/error/GenericFullPageError.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
-        },
-        "color": { "src/components/assetDetail/AssetDetailBalance.tsx": 1 },
-        "align": {
-          "src/components/authorization/AuthorizationRequest.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "HStack",
-      "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 7,
-      "totalCallSites": 6,
-      "cds": "@cbhq/cds-web/layout/HStack",
-      "callSites": {
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/portfolio/Portfolio.tsx": 1,
-        "src/components/portfolio/PortfolioMenu.tsx": 1,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-        "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2
-      },
-      "propsWithCallSites": {
-        "spacingVertical": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/portfolio/Portfolio.tsx": 1
-        },
-        "justifyContent": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/portfolio/Portfolio.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "alignItems": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/portfolio/Portfolio.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "width": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/portfolio/Portfolio.tsx": 1
-        },
-        "spacingHorizontal": { "src/components/portfolio/Portfolio.tsx": 1 },
-        "alignContent": { "src/components/portfolio/PortfolioMenu.tsx": 1 }
-      }
-    },
-    {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
       "totalInstances": 14,
@@ -222,10 +22,10 @@
         "src/components/authorization/AuthorizationError.tsx": 1,
         "src/components/authorization/AuthorizationRequest.tsx": 3,
         "src/components/connection/ConnectionRequest.tsx": 2,
-        "src/components/navigation/NavTitle.tsx": 1,
-        "src/components/navigation/Navigation.tsx": 2,
         "src/components/error/ErrorBoundary.tsx": 1,
         "src/components/error/GenericFullPageError.tsx": 1,
+        "src/components/navigation/NavTitle.tsx": 1,
+        "src/components/navigation/Navigation.tsx": 2,
         "src/components/settings/SettingSelection.tsx": 1,
         "src/components/settings/Settings.tsx": 1,
         "src/components/welcome/LinkWithIcon.tsx": 1
@@ -235,10 +35,10 @@
           "src/components/authorization/AuthorizationError.tsx": 1,
           "src/components/authorization/AuthorizationRequest.tsx": 3,
           "src/components/connection/ConnectionRequest.tsx": 2,
-          "src/components/navigation/NavTitle.tsx": 1,
-          "src/components/navigation/Navigation.tsx": 2,
           "src/components/error/ErrorBoundary.tsx": 1,
           "src/components/error/GenericFullPageError.tsx": 1,
+          "src/components/navigation/NavTitle.tsx": 1,
+          "src/components/navigation/Navigation.tsx": 2,
           "src/components/settings/SettingSelection.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
           "src/components/welcome/LinkWithIcon.tsx": 1
@@ -247,10 +47,10 @@
           "src/components/authorization/AuthorizationError.tsx": 1,
           "src/components/authorization/AuthorizationRequest.tsx": 3,
           "src/components/connection/ConnectionRequest.tsx": 2,
-          "src/components/navigation/NavTitle.tsx": 1,
-          "src/components/navigation/Navigation.tsx": 2,
           "src/components/error/ErrorBoundary.tsx": 1,
           "src/components/error/GenericFullPageError.tsx": 1,
+          "src/components/navigation/NavTitle.tsx": 1,
+          "src/components/navigation/Navigation.tsx": 2,
           "src/components/settings/SettingSelection.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
           "src/components/welcome/LinkWithIcon.tsx": 1
@@ -259,10 +59,10 @@
           "src/components/authorization/AuthorizationError.tsx": 1,
           "src/components/authorization/AuthorizationRequest.tsx": 3,
           "src/components/connection/ConnectionRequest.tsx": 2,
-          "src/components/navigation/NavTitle.tsx": 1,
-          "src/components/navigation/Navigation.tsx": 2,
           "src/components/error/ErrorBoundary.tsx": 1,
           "src/components/error/GenericFullPageError.tsx": 1,
+          "src/components/navigation/NavTitle.tsx": 1,
+          "src/components/navigation/Navigation.tsx": 2,
           "src/components/settings/Settings.tsx": 1,
           "src/components/welcome/LinkWithIcon.tsx": 1
         },
@@ -374,6 +174,34 @@
       }
     },
     {
+      "name": "TextTitle3",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/typography/TextTitle3",
+      "callSites": {
+        "src/components/authorization/AuthorizationRequest.tsx": 1,
+        "src/components/error/ErrorBoundary.tsx": 1,
+        "src/components/error/GenericFullPageError.tsx": 1,
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "src/components/authorization/AuthorizationRequest.tsx": 1,
+          "src/components/error/ErrorBoundary.tsx": 1,
+          "src/components/error/GenericFullPageError.tsx": 1,
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+        },
+        "align": {
+          "src/components/authorization/AuthorizationRequest.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+        },
+        "color": { "src/components/assetDetail/AssetDetailBalance.tsx": 1 }
+      }
+    },
+    {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
       "totalInstances": 10,
@@ -481,6 +309,178 @@
           "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
         },
         "noWrap": { "src/components/send/steps/EntryStep/AssetSelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-web/layout/VStack",
+      "totalInstances": 19,
+      "totalCallSites": 13,
+      "cds": "@cbhq/cds-web/layout/VStack",
+      "callSites": {
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/portfolio/AssetBalance.tsx": 1,
+        "src/components/send/SendStepper.tsx": 4,
+        "src/components/receive/Address.tsx": 1,
+        "src/components/settings/SettingSelection.tsx": 1,
+        "src/components/settings/Settings.tsx": 2,
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
+        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
+        "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2,
+        "src/components/send/steps/EntryStep/CurrencyInput.tsx": 1,
+        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+        "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": { "src/components/assetDetail/AssetDetailBalance.tsx": 1 },
+        "spacingTop": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1
+        },
+        "spacingHorizontal": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
+          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
+        },
+        "key": { "src/components/send/SendStepper.tsx": 4 },
+        "width": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "height": { "src/components/settings/Settings.tsx": 1 },
+        "position": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
+        "bottom": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
+        "gap": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
+        "alignContent": {
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
+        },
+        "spacingBottom": { "src/components/send/steps/EntryStep/AmountInput.tsx": 1 },
+        "justifyContent": { "src/components/send/steps/EntryStep/AssetSelector.tsx": 1 },
+        "alignItems": { "src/components/send/steps/EntryStep/CurrencyInput.tsx": 1 },
+        "spacing": { "src/components/send/steps/EntryStep/EntryStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 16,
+      "totalCallSites": 9,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "callSites": {
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/portfolio/PortfolioMenu.tsx": 2,
+        "src/components/receive/Address.tsx": 2,
+        "src/components/receive/Receive.tsx": 2,
+        "src/components/receive/Username.tsx": 2,
+        "src/components/settings/Settings.tsx": 2,
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
+        "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2
+      },
+      "propsWithCallSites": {
+        "spacingTop": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "spacingStart": { "src/components/portfolio/PortfolioMenu.tsx": 1 },
+        "spacingHorizontal": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/settings/Settings.tsx": 1
+        },
+        "bordered": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "borderRadius": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1
+        },
+        "justifyContent": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "width": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1
+        },
+        "background": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "spacing": {
+          "src/components/receive/Receive.tsx": 2,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+        },
+        "as": { "src/components/receive/Username.tsx": 1 },
+        "height": {
+          "src/components/receive/Username.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "alignItems": {
+          "src/components/receive/Username.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "overflow": { "src/components/receive/Username.tsx": 1 },
+        "spacingVertical": {
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+        },
+        "spacingBottom": {
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "flexDirection": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-web/layout/HStack",
+      "totalInstances": 7,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/layout/HStack",
+      "callSites": {
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/portfolio/Portfolio.tsx": 1,
+        "src/components/portfolio/PortfolioMenu.tsx": 1,
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+        "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2
+      },
+      "propsWithCallSites": {
+        "spacingVertical": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/portfolio/Portfolio.tsx": 1
+        },
+        "justifyContent": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/portfolio/Portfolio.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "alignItems": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/portfolio/Portfolio.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/send/steps/EntryStep/AmountInput.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "width": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/portfolio/Portfolio.tsx": 1
+        },
+        "spacingHorizontal": { "src/components/portfolio/Portfolio.tsx": 1 },
+        "alignContent": { "src/components/portfolio/PortfolioMenu.tsx": 1 }
       }
     },
     {
@@ -672,20 +672,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "div"
-    },
-    {
-      "name": "div",
-      "sourceFile": "src/components/assetDetail/AssetDetailContainer.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "src/components/assetDetail/AssetDetailContainer.tsx" }
-      ],
-      "callSites": { "src/components/assetDetail/AssetDetailContainer.tsx": 2 },
-      "propsWithCallSites": {
-        "data-testid": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
-        "className": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
-      }
     },
     {
       "name": "div",
@@ -913,75 +899,6 @@
       }
     },
     {
-      "name": "NavTitleContainer",
-      "sourceFile": "src/components/navigation/NavTitle.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "data-testid": { "src/components/navigation/NavTitle.tsx": 1 },
-        "shouldRaiseTitle": { "src/components/navigation/NavTitle.tsx": 1 }
-      }
-    },
-    {
-      "name": "IconContainer",
-      "sourceFile": "src/components/navigation/NavTitle.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "onClick": { "src/components/navigation/NavTitle.tsx": 1 } }
-    },
-    {
-      "name": "NavContainer",
-      "sourceFile": "src/components/navigation/Navigation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "nav",
-      "propsWithCallSites": { "data-testid": { "src/components/navigation/Navigation.tsx": 1 } }
-    },
-    {
-      "name": "TooltipItem",
-      "sourceFile": "src/components/navigation/Navigation.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": { "src/components/navigation/Navigation.tsx": 2 }
-    },
-    {
-      "name": "IconContainer",
-      "sourceFile": "src/components/navigation/Navigation.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "src/components/navigation/Navigation.tsx" },
-        { "prop": "className", "callSite": "src/components/navigation/Navigation.tsx" }
-      ],
-      "styledComponent": "div",
-      "callSites": { "src/components/navigation/Navigation.tsx": 2 },
-      "propsWithCallSites": { "className": { "src/components/navigation/Navigation.tsx": 2 } }
-    },
-    {
-      "name": "LoaderStyle",
-      "sourceFile": "src/components/loading/TextPlaceholder.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "src/components/loading/TextPlaceholder.tsx" }
-      ],
-      "styledComponent": "div",
-      "propsWithCallSites": { "className": { "src/components/loading/TextPlaceholder.tsx": 1 } }
-    },
-    {
-      "name": "div",
-      "sourceFile": "src/components/loading/TextPlaceholder.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "src/components/loading/TextPlaceholder.tsx" }
-      ],
-      "propsWithCallSites": { "className": { "src/components/loading/TextPlaceholder.tsx": 1 } }
-    },
-    {
       "name": "div",
       "sourceFile": "src/components/error/ErrorBoundary.tsx",
       "totalInstances": 1,
@@ -1035,6 +952,68 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/assetDetail/AssetDetailContainer.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/assetDetail/AssetDetailContainer.tsx" }
+      ],
+      "callSites": { "src/components/assetDetail/AssetDetailContainer.tsx": 2 },
+      "propsWithCallSites": {
+        "data-testid": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
+        "className": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "NavTitleContainer",
+      "sourceFile": "src/components/navigation/NavTitle.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "data-testid": { "src/components/navigation/NavTitle.tsx": 1 },
+        "shouldRaiseTitle": { "src/components/navigation/NavTitle.tsx": 1 }
+      }
+    },
+    {
+      "name": "IconContainer",
+      "sourceFile": "src/components/navigation/NavTitle.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "onClick": { "src/components/navigation/NavTitle.tsx": 1 } }
+    },
+    {
+      "name": "NavContainer",
+      "sourceFile": "src/components/navigation/Navigation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "nav",
+      "propsWithCallSites": { "data-testid": { "src/components/navigation/Navigation.tsx": 1 } }
+    },
+    {
+      "name": "TooltipItem",
+      "sourceFile": "src/components/navigation/Navigation.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "src/components/navigation/Navigation.tsx": 2 }
+    },
+    {
+      "name": "IconContainer",
+      "sourceFile": "src/components/navigation/Navigation.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/navigation/Navigation.tsx" },
+        { "prop": "className", "callSite": "src/components/navigation/Navigation.tsx" }
+      ],
+      "styledComponent": "div",
+      "callSites": { "src/components/navigation/Navigation.tsx": 2 },
+      "propsWithCallSites": { "className": { "src/components/navigation/Navigation.tsx": 2 } }
     },
     {
       "name": "TextPlaceholder",
@@ -1147,6 +1126,27 @@
         "data-testid": { "src/components/portfolio/PortfolioMenu.tsx": 1 },
         "className": { "src/components/portfolio/PortfolioMenu.tsx": 1 }
       }
+    },
+    {
+      "name": "LoaderStyle",
+      "sourceFile": "src/components/loading/TextPlaceholder.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/loading/TextPlaceholder.tsx" }
+      ],
+      "styledComponent": "div",
+      "propsWithCallSites": { "className": { "src/components/loading/TextPlaceholder.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/loading/TextPlaceholder.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/loading/TextPlaceholder.tsx" }
+      ],
+      "propsWithCallSites": { "className": { "src/components/loading/TextPlaceholder.tsx": 1 } }
     },
     {
       "name": "ClipboardCopyContainer",
@@ -1680,18 +1680,6 @@
       }
     },
     {
-      "name": "Container",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "data-testid": {
-          "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Item",
       "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
       "totalInstances": 1,
@@ -1706,6 +1694,18 @@
         },
         "visible": {
           "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "data-testid": {
+          "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 1
         }
       }
     },
@@ -1848,17 +1848,6 @@
   ],
   "other": [
     {
-      "name": "IntlProvider",
-      "sourceFile": "react-intl/IntlProvider",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": { "test/testUtils.tsx": 1, "src/home.tsx": 1, "src/index.tsx": 1 },
-      "propsWithCallSites": {
-        "locale": { "test/testUtils.tsx": 1, "src/home.tsx": 1, "src/index.tsx": 1 },
-        "messages": { "src/home.tsx": 1, "src/index.tsx": 1 }
-      }
-    },
-    {
       "name": "ConnectionRequest",
       "sourceFile": "src/components/connection/ConnectionRequest",
       "totalInstances": 1,
@@ -1899,6 +1888,17 @@
       }
     },
     {
+      "name": "IntlProvider",
+      "sourceFile": "react-intl/IntlProvider",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": { "src/home.tsx": 1, "src/index.tsx": 1, "test/testUtils.tsx": 1 },
+      "propsWithCallSites": {
+        "locale": { "src/home.tsx": 1, "src/index.tsx": 1, "test/testUtils.tsx": 1 },
+        "messages": { "src/home.tsx": 1, "src/index.tsx": 1 }
+      }
+    },
+    {
       "name": "WelcomeWrapper",
       "sourceFile": "src/home.tsx",
       "totalInstances": 1,
@@ -1916,100 +1916,6 @@
       "sourceFile": "src/index.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "AssetBalance",
-      "sourceFile": "src/components/portfolio/AssetBalance",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/portfolio/Portfolio.tsx": 1
-      },
-      "propsWithCallSites": {
-        "header": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/portfolio/Portfolio.tsx": 1
-        },
-        "balance": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/portfolio/Portfolio.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PortfolioMenu",
-      "sourceFile": "src/components/portfolio/PortfolioMenu",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/portfolio/Portfolio.tsx": 1
-      }
-    },
-    {
-      "name": "AssetDetailBalance",
-      "sourceFile": "src/components/assetDetail/AssetDetailBalance",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "fiatValueDisplay": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
-        "cryptoValueDisplay": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
-      }
-    },
-    {
-      "name": "NavTitle",
-      "sourceFile": "src/components/navigation/NavTitle",
-      "totalInstances": 8,
-      "totalCallSites": 8,
-      "callSites": {
-        "src/components/assetDetail/AssetDetailContainer.tsx": 1,
-        "src/components/error/GenericFullPageError.tsx": 1,
-        "src/components/receive/Receive.tsx": 1,
-        "src/components/settings/SettingPage.tsx": 1,
-        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
-        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-        "src/components/send/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
-        "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "src/components/assetDetail/AssetDetailContainer.tsx": 1,
-          "src/components/receive/Receive.tsx": 1,
-          "src/components/settings/SettingPage.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/send/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
-          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
-        },
-        "hasExternalSubtitle": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
-        "handleClick": {
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/send/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
-          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetPriceChart",
-      "sourceFile": "src/components/assetDetail/AssetPriceChart",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "assetId": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
-        "setIsChartVisible": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
-      }
-    },
-    {
-      "name": "AssetChart",
-      "sourceFile": "@external-libs/assetChart/AssetChart",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "assetPriceResource": { "src/components/assetDetail/AssetPriceChart.tsx": 1 },
-        "assetId": { "src/components/assetDetail/AssetPriceChart.tsx": 1 }
-      }
     },
     {
       "name": "AuthorizationError",
@@ -2124,6 +2030,100 @@
       "propsWithCallSites": { "disconnect": { "src/components/connection/LoggedInHome.tsx": 1 } }
     },
     {
+      "name": "NavTitle",
+      "sourceFile": "src/components/navigation/NavTitle",
+      "totalInstances": 8,
+      "totalCallSites": 8,
+      "callSites": {
+        "src/components/error/GenericFullPageError.tsx": 1,
+        "src/components/assetDetail/AssetDetailContainer.tsx": 1,
+        "src/components/receive/Receive.tsx": 1,
+        "src/components/settings/SettingPage.tsx": 1,
+        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
+        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+        "src/components/send/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
+        "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "src/components/assetDetail/AssetDetailContainer.tsx": 1,
+          "src/components/receive/Receive.tsx": 1,
+          "src/components/settings/SettingPage.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/send/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
+          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
+        },
+        "hasExternalSubtitle": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
+        "handleClick": {
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/send/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
+          "src/components/send/steps/SelectReceipient/SelectRecipientStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AssetBalance",
+      "sourceFile": "src/components/portfolio/AssetBalance",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/portfolio/Portfolio.tsx": 1
+      },
+      "propsWithCallSites": {
+        "header": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/portfolio/Portfolio.tsx": 1
+        },
+        "balance": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/portfolio/Portfolio.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PortfolioMenu",
+      "sourceFile": "src/components/portfolio/PortfolioMenu",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/portfolio/Portfolio.tsx": 1
+      }
+    },
+    {
+      "name": "AssetDetailBalance",
+      "sourceFile": "src/components/assetDetail/AssetDetailBalance",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "fiatValueDisplay": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
+        "cryptoValueDisplay": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "AssetPriceChart",
+      "sourceFile": "src/components/assetDetail/AssetPriceChart",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetId": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
+        "setIsChartVisible": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
+      }
+    },
+    {
+      "name": "AssetChart",
+      "sourceFile": "@external-libs/assetChart/AssetChart",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetPriceResource": { "src/components/assetDetail/AssetPriceChart.tsx": 1 },
+        "assetId": { "src/components/assetDetail/AssetPriceChart.tsx": 1 }
+      }
+    },
+    {
       "name": "Link",
       "sourceFile": "react-router-dom/Link",
       "totalInstances": 2,
@@ -2216,6 +2216,38 @@
       }
     },
     {
+      "name": "SendStepper",
+      "sourceFile": "src/components/send/SendStepper",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "wallet": { "src/components/send/Send.tsx": 1 } }
+    },
+    {
+      "name": "EntryStep",
+      "sourceFile": "src/components/send/steps/EntryStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "wallet": { "src/components/send/SendStepper.tsx": 1 } }
+    },
+    {
+      "name": "SelectAssetStep",
+      "sourceFile": "src/components/send/steps/SelectAssetStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SelectReceipient",
+      "sourceFile": "src/components/send/steps/SelectReceipient",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ConfirmationStep",
+      "sourceFile": "src/components/send/steps/ConfirmationStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "img",
       "sourceFile": "src/components/receive/Address.tsx",
       "totalInstances": 1,
@@ -2273,38 +2305,6 @@
         "src": { "src/components/receive/Username.tsx": 1 },
         "alt": { "src/components/receive/Username.tsx": 1 }
       }
-    },
-    {
-      "name": "SendStepper",
-      "sourceFile": "src/components/send/SendStepper",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "wallet": { "src/components/send/Send.tsx": 1 } }
-    },
-    {
-      "name": "EntryStep",
-      "sourceFile": "src/components/send/steps/EntryStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "wallet": { "src/components/send/SendStepper.tsx": 1 } }
-    },
-    {
-      "name": "SelectAssetStep",
-      "sourceFile": "src/components/send/steps/SelectAssetStep",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SelectReceipient",
-      "sourceFile": "src/components/send/steps/SelectReceipient",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ConfirmationStep",
-      "sourceFile": "src/components/send/steps/ConfirmationStep",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "SettingSelection",
@@ -2797,6 +2797,12 @@
       }
     },
     {
+      "name": "Container",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "div",
       "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
       "totalInstances": 1,
@@ -2831,12 +2837,6 @@
           "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 2
         }
       }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "HoverPoint",

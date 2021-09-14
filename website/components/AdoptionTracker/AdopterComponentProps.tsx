@@ -1,4 +1,4 @@
-import React, { useCallback, useState, memo } from 'react';
+import React, {useCallback, useState, memo, useContext} from 'react';
 import {Divider, VStack} from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
 import { orderBy, sumBy, toPairs } from 'lodash';
@@ -6,11 +6,16 @@ import { BetaCell } from '@cbhq/cds-website/components/BetaCell';
 import { Icon } from '@cbhq/cds-web/icons';
 import type { ComponentData } from './types';
 import { useGetGitLink } from './hooks/useGetGitLink';
+import {
+  AdopterSearchContext,
+  AdopterSearchContextType
+} from "./search/AdopterSearchProvider";
+import {getResultsByType, isMatch} from "./search/SearchUtils";
 
 export const AdopterComponentProps = memo(
   ({ propsWithCallSites }: { propsWithCallSites: ComponentData['propsWithCallSites'] }) => {
     const getGitLink = useGetGitLink();
-    const sortedProps = orderBy(
+    let sortedProps = orderBy(
       toPairs(propsWithCallSites),
       ([, callSites]) => {
         const callSitePairs = toPairs(callSites);
@@ -18,6 +23,20 @@ export const AdopterComponentProps = memo(
       },
       ['desc'],
     );
+
+    // filter props down to search terms
+    const { results: searchResults } = useContext(AdopterSearchContext) as AdopterSearchContextType;
+    const propsResults = getResultsByType(searchResults).props;
+    if (propsResults.length) {
+      sortedProps = sortedProps.filter(([prop, callSites]) => {
+        for (const propsResult of propsResults) {
+          if (isMatch(propsResult, [prop])) {
+            return true;
+          }
+        }
+        return false;
+      });
+    }
 
     const [activeProp, setActiveProp] = useState<string | undefined>();
     const handleOnPress = useCallback(

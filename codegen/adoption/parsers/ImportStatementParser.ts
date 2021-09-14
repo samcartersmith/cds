@@ -37,11 +37,11 @@ export class ImportStatementParser {
       const dirForFile = path.dirname(this.file.absolutePath);
       const absolutePathForFile = path.resolve(dirForFile, moduleName);
       const relativePathToProject = path.relative(
-        this.file.project.absolutePath,
+        this.file.absolutePathForProject,
         absolutePathForFile,
       );
-      return this.file.project.tsAlias
-        ? `${this.file.project.tsAlias}/${relativePathToProject}`
+      return this.file.projectTsAlias
+        ? `${this.file.projectTsAlias}/${relativePathToProject}`
         : relativePathToProject;
     }
     return moduleName ?? 'local';

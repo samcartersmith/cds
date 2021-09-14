@@ -184,12 +184,6 @@
     },
     {
       "name": "div",
-      "sourceFile": "@trust_and_safety/pages/Additional2FAPage/Additional2FAPage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
       "sourceFile": "@trust_and_safety/pages/ConsentPage/ConsentPage.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -206,6 +200,24 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onSubmit": { "@trust_and_safety/pages/EmailPage/EmailPage.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "@trust_and_safety/pages/Additional2FAPage/Additional2FAPage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TOTPScreen",
+      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/screens/TOTP/TOTPScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/TwoFactorPage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "div",
@@ -234,18 +246,6 @@
       "propsWithCallSites": {
         "onSubmit": { "@trust_and_safety/pages/PasswordPage/PasswordPage.tsx": 1 }
       }
-    },
-    {
-      "name": "TOTPScreen",
-      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/screens/TOTP/TOTPScreen",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "@trust_and_safety/pages/TwoFactorPage/TwoFactorPage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "div",
