@@ -20,7 +20,7 @@ Engineers should have their PR merged *no later than 10:30am PST on Wednesday*, 
 Add the name of illustration + spectrum separated by a dash (i.e noGrayNotifications-dark, noGrayNotifications-light) to the modified.ts list in [`eng/shared/design-system/codegen/illustrations/modified.ts`](https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/codegen/illustrations/modified.ts)
 
 **How to handle deleted Illustrations?** 
-Delete illustration from [`eng/shared/design-system/mobile/illustrations/images`](https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/mobile/illustrations/images). Make sure to delete the right spectrum. 
+Delete illustration from [`eng/shared/design-system/mobile/illustrations/images`](https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/mobile/illustrations/images). Make sure to delete the right spectrum or both spectrum. You must also delete the entries from `illustration_manifest.ts`.  
 
 Light illustrations directory - [`eng/shared/design-system/mobile/illustrations/images/light`](https://github.cbhq.net/mono/repo/tree/master/eng/shared/design-system/mobile/illustrations/images/light)
 

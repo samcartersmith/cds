@@ -8,4 +8,4 @@
  *
  * If an illustration is modified, add it to the list to catch it. Below is an example
  */
-export const modified: string[] = ['directDepositPhone-dark', 'directDepositPhone-light'];
+export const modified: string[] = [];

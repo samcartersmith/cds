@@ -4,20 +4,18 @@
  */
 
 export const illustrationMetadata = {
-  numIllustrations: 585,
+  numIllustrations: 555,
   heroSquareCount: 107,
-  pictogramCount: 121,
+  pictogramCount: 124,
   spotRectangleCount: 19,
-  spotSquareCount: 52,
+  spotSquareCount: 34,
   newIllustration: [
-    'cryptoAndMore-dark',
-    'cryptoAndMore-light',
-    'referralsBonus-dark',
-    'referralsBonus-light',
-    'referralsBonusGray-dark',
-    'referralsBonusGray-light',
-    'walletApp-dark',
-    'walletApp-light',
+    'graphsGray-dark',
+    'graphsGray-light',
+    'noVisability-dark',
+    'noVisability-light',
+    'walletWarning-dark',
+    'walletWarning-light',
   ],
-  modifiedIllustrations: ['directDepositPhone-dark', 'directDepositPhone-light'],
+  modifiedIllustrations: [],
 };
