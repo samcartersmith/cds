@@ -3,6 +3,7 @@ import { TextInputProps, View, ViewStyle } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
 import { InputLabelProps } from './InputLabel';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { Box } from '../layout/Box';
 
 export type CompactInputProps = {
   /** Label indicating what input is for. Needs to be an InputLabel component */
@@ -26,10 +27,13 @@ export const CompactInput = memo(function CompactInput({
     spacing: 1,
   });
 
+  const editableInputSpacing = useSpacingStyles({
+    spacingStart: 1,
+  });
+
   const containerStyle: ViewStyle = useMemo(() => {
     return {
       flexDirection: 'row',
-      justifyContent: 'space-between',
       width,
       ...containerPaddingStyle,
     };
@@ -37,8 +41,8 @@ export const CompactInput = memo(function CompactInput({
 
   return (
     <View style={containerStyle} testID={testID}>
-      <View style={{ flex: 1 }}>{inputLabel}</View>
-      <View style={{ flex: 1 }}>{editableInput}</View>
+      <Box alignSelf="center">{inputLabel}</Box>
+      <View style={{ flex: 1, ...editableInputSpacing }}>{editableInput}</View>
     </View>
   );
 });

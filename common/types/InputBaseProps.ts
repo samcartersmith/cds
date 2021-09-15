@@ -2,13 +2,21 @@ import { ReactNode } from 'react';
 import type { SharedProps } from './SharedProps';
 import { PaletteForeground } from './Palette';
 
+export type InputVariants = Extract<
+  PaletteForeground,
+  'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted'
+>;
+
 export type InputBaseProps = {
   children?: (p: InputBaseProps) => ReactNode;
   /**
-   * Determines the sentiment of the input
+   * Determines the sentiment of the input. Because
+   * we allow startContent and endContent to be custom ReactNode,
+   * the content placed inside these slots will not change colors according
+   * to the variant. You will have to add that yourself
    * @default foregroundMuted
    */
-  variant?: PaletteForeground;
+  variant?: InputVariants;
   /**
    * Width of input
    * @default 100%

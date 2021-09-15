@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 
 import { TextStyle as RNTextStyle } from 'react-native';
-import { TextLabel2 } from '../typography/TextLabel2';
+import { TextLabel1 } from '../typography/TextLabel1';
 import { DangerouslySetStyle } from '../types';
 
 export type InputLabelProps = {
@@ -27,7 +27,7 @@ export const InputLabel = memo(function InputLabel({
   testID,
 }: InputLabelProps) {
   return (
-    <TextLabel2
+    <TextLabel1
       testID={testID}
       accessibilityLabel={label}
       accessibilityHint={label}
@@ -35,6 +35,6 @@ export const InputLabel = memo(function InputLabel({
       color={labelColor}
     >
       {label}
-    </TextLabel2>
+    </TextLabel1>
   );
 });

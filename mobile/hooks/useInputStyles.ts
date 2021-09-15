@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { ViewStyle } from 'react-native';
-import { PaletteForeground } from '@cbhq/cds-common';
+import { InputVariants } from '@cbhq/cds-common';
 import { focusedStyle, unfocusedStyle } from '@cbhq/cds-common/tokens/input';
 import { DropdownPositions } from '@cbhq/cds-common/types/DropdownBaseProps';
 import { useTypographyStyles } from '../typography';
@@ -11,7 +11,7 @@ import { usePalette } from './usePalette';
  * what our text body offers, so we need to add custom
  * input text style to match our text body style.
  */
-export const useInputTextStyles = (textColor: PaletteForeground) => {
+export const useInputTextStyles = (textColor: InputVariants) => {
   const { fontFamily, fontSize, lineHeight } = useTypographyStyles('body');
   const palette = usePalette();
 
@@ -25,10 +25,6 @@ export const useInputTextStyles = (textColor: PaletteForeground) => {
       color: palette[textColor],
     };
   }, [palette, textColor, fontFamily, fontSize, lineHeight]);
-};
-
-export const useInputVariant = (focused: boolean, variant: PaletteForeground) => {
-  return focused && variant === 'foregroundMuted' ? 'primary' : variant;
 };
 
 /**

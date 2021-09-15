@@ -1,4 +1,5 @@
-import { PaletteForeground, SharedProps, useSpectrum } from '@cbhq/cds-common';
+import { useSpectrum } from '@cbhq/cds-common';
+import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 import React, { useState, memo } from 'react';
 import {
   TextInput as RNTextInput,
@@ -6,40 +7,18 @@ import {
   NativeSyntheticEvent,
   TextInputFocusEventData,
 } from 'react-native';
-import { TextBody } from '../typography';
+import { useInputLabelColor } from '@cbhq/cds-common/hooks/useInputLabelColor';
 
+import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+import { InputLabel } from './InputLabel';
 import { Input } from './Input';
 
 import { usePalette } from '../hooks/usePalette';
 import { CompactInput } from './CompactInput';
-import { useInputBorderStyle, useInputTextStyles, useInputVariant } from '../hooks/useInputStyles';
+import { MessageArea } from './MessageArea';
+import { useInputBorderStyle, useInputTextStyles } from '../hooks/useInputStyles';
 
-export type BetaCompactTextInputProps = {
-  /** A message indicating the purpose of this input */
-  label: string;
-  /**
-   * Additional information about input
-   */
-  description?: string;
-  /**
-   * Denotes the color of the label, and border.
-   * The startContent and endContent will not change colors according
-   * to the variant.
-   * @default foregroundMuted
-   */
-  variant?: PaletteForeground;
-  /**
-   * Width of text input
-   * @default 100%
-   */
-  width?: string | number;
-  /**
-   * Disable user interaction
-   * @default false
-   */
-  disabled?: boolean;
-} & RNTextInputProps &
-  SharedProps;
+export type BetaCompactTextInputProps = TextInputBaseProps & RNTextInputProps;
 
 export const BetaCompactTextInput = memo(
   ({
@@ -49,12 +28,14 @@ export const BetaCompactTextInput = memo(
     testID,
     width = '100%',
     disabled = false,
+    textAlignDescription,
     ...editableInputProps
   }: BetaCompactTextInputProps) => {
     const palette = usePalette();
     const [focused, setFocused] = useState(false);
     const inputTextStyle = useInputTextStyles('foreground');
     const variantWithFocus = useInputVariant(focused, variant);
+    const labelColorWithFocus = useInputLabelColor(focused, variant);
     const inputBorderStyle = useInputBorderStyle(focused);
     const spectrum = useSpectrum();
 
@@ -73,7 +54,7 @@ export const BetaCompactTextInput = memo(
     /** Compact Input Content */
     const compactInput = (
       <CompactInput
-        inputLabel={<TextBody color={variantWithFocus}>{label}</TextBody>}
+        inputLabel={<InputLabel label={label} labelColor={labelColorWithFocus} />}
         editableInput={
           <RNTextInput
             style={[
@@ -99,7 +80,11 @@ export const BetaCompactTextInput = memo(
         variant={variantWithFocus}
         borderStyle={inputBorderStyle}
         input={compactInput}
-        messageArea={!!description && <TextBody color={variantWithFocus}>{description}</TextBody>}
+        messageArea={
+          !!description && (
+            <MessageArea textAlign={textAlignDescription} color={variant} message={description} />
+          )
+        }
       />
     );
   },

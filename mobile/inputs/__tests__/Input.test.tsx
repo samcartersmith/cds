@@ -1,7 +1,6 @@
 import TestRenderer from 'react-test-renderer';
 
 import { TextInput as RNTextInput } from 'react-native';
-import { paletteForegrounds } from '@cbhq/cds-common/palette/constants';
 import { Input, InputProps } from '../Input';
 
 const TEST_ID = 'input';
@@ -37,5 +36,5 @@ describe('disabled', () => {
 });
 
 describe('variant', () => {
-  expectAttribute('variant', paletteForegrounds);
+  expectAttribute('variant', ['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']);
 });

@@ -144,6 +144,37 @@ export default function InputScreen() {
           placeholder="ex. Bitcoin"
         />
       </Example>
+      <Example inline title="TextInput Right Align Input Text">
+        <MockTextInput label="Search" placeholder="ex. Bitcoin" textAlignInput="right" />
+      </Example>
+      <Example inline title="TextInput Left Align Input Text">
+        <MockTextInput label="Search" placeholder="ex. Bitcoin" textAlignInput="left" />
+      </Example>
+      <Example inline title="TextInput Right Align Description">
+        <MockTextInput
+          label="Search"
+          placeholder="ex. Bitcoin"
+          textAlignDescription="right"
+          description="Great asset choice!"
+        />
+      </Example>
+      <Example inline title="TextInput Right Align Description and Input Text">
+        <MockTextInput
+          label="Search"
+          placeholder="ex. Bitcoin"
+          textAlignDescription="right"
+          textAlignInput="right"
+          description="Great asset choice!"
+        />
+      </Example>
+      <Example inline title="TextInput Left Align Description">
+        <MockTextInput
+          label="Search"
+          placeholder="ex. Bitcoin"
+          textAlignDescription="left"
+          description="Great asset choice!"
+        />
+      </Example>
       <Example inline title="TextInput endContent auto">
         <MockTextInput
           endContent={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
@@ -162,24 +193,6 @@ export default function InputScreen() {
           description="Search for assets here"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
-        />
-      </Example>
-      <Example inline title="TextInput Prefix">
-        <MockTextInput
-          label="One Time Password"
-          description="One Time Password for 2FA Authentication"
-          variant="foregroundMuted"
-          prefix="000"
-          placeholder="189-280-1111"
-        />
-      </Example>
-      <Example inline title="TextInput Suffix">
-        <MockTextInput
-          label="One Time Password"
-          description="One Time Password for 2FA Authentication"
-          variant="foregroundMuted"
-          suffix="010000000"
-          placeholder="189-280-1111"
         />
       </Example>
       <Example inline title="TextInput Disabled">
@@ -210,6 +223,14 @@ export default function InputScreen() {
           label="One Time Password"
           variant="positive"
           placeholder="189-280-1111"
+          description="Password is looking good!"
+        />
+      </Example>
+      <Example inline title="CompactTextInput Right Align Description">
+        <MockCompactTextInput
+          label="One Time Password"
+          placeholder="189-280-1111"
+          textAlignDescription="right"
           description="Password is looking good!"
         />
       </Example>
