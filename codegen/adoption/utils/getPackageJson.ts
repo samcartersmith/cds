@@ -11,9 +11,10 @@ export async function getPackageJson(rootDir: string, reverse?: boolean): Promis
     const fileContents = await fs.promises.readFile(packageJsonPath, 'utf8');
     return JSON.parse(fileContents) as PackageJson;
   } catch (err) {
-    if (err) {
+    if (err instanceof Error) {
       return getPackageJson(rootDir, true);
     }
+
+    throw err;
   }
-  return { dependencies: {} };
 }

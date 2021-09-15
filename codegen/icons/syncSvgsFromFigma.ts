@@ -224,8 +224,12 @@ async function syncIcons() {
       } icons to ${OUT_DIR}.`,
     );
   } catch (error) {
-    spinner.fail(`${chalk.redBright('failed')}`);
-    console.error(error);
+    if (error instanceof Error) {
+      spinner.fail(`${chalk.redBright('failed')}`);
+      console.error(error);
+    } else {
+      throw error;
+    }
   }
 }
 

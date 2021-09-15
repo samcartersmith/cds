@@ -295,12 +295,16 @@ export default function convertToNewSpacingProps(
       try {
         injectProp(attr.value.expression as ArrayExpression);
       } catch (error) {
-        console.error(
-          `Invalid spacing prop value type "${error.message}" found in "${fileInfo.path}".`,
-        );
+        if (error instanceof Error) {
+          console.error(
+            `Invalid spacing prop value type "${error.message}" found in "${fileInfo.path}".`,
+          );
 
-        if ((error as Error).message.includes('Cannot read property')) {
-          console.log(error);
+          if (error.message.includes('Cannot read property')) {
+            console.log(error);
+          }
+        } else {
+          throw error;
         }
       }
     });

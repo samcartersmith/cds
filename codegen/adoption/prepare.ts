@@ -61,8 +61,12 @@ async function prepare() {
     );
     cleanup();
   } catch (err) {
-    console.log(err?.message);
-    cleanup();
+    if (err instanceof Error) {
+      console.log(err?.message);
+      cleanup();
+    } else {
+      throw err;
+    }
   }
 }
 

@@ -26,7 +26,11 @@ export async function getTypescriptConfig(
     }
     return merge(config, configToMerge ?? {});
   } catch (err) {
-    console.error(err);
-    return { compilerOptions: { paths: {}, baseUrl: '.' } };
+    if (err instanceof Error) {
+      console.error(err);
+      return { compilerOptions: { paths: {}, baseUrl: '.' } };
+    }
+
+    throw err;
   }
 }

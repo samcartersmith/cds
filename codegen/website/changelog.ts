@@ -17,7 +17,11 @@ async function copyChangelogs() {
       await fs.promises.copyFile(input, output);
       spinner.info(chalk.green(`Copied ${name} CHANGELOG`));
     } catch (err) {
-      spinner.fail(`${chalk.redBright('error')} ${(err as Error).message}`);
+      if (err instanceof Error) {
+        spinner.fail(`${chalk.redBright('error')} ${err.message}`);
+      } else {
+        throw err;
+      }
     }
   }
 
@@ -25,7 +29,11 @@ async function copyChangelogs() {
     await Promise.all(cdsPackages.map(handleCopy));
     spinner.succeed(chalk.green('Finished copying CHANGELOG files'));
   } catch (err) {
-    spinner.fail(chalk.red('Error copying CHANGELOG', err));
+    if (err instanceof Error) {
+      spinner.fail(chalk.red('Error copying CHANGELOG', err));
+    } else {
+      throw err;
+    }
   }
   spinner.stop();
 }

@@ -125,7 +125,11 @@ export class FileParser {
       this.getImports();
       return this;
     } catch (err) {
-      this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      if (err instanceof Error) {
+        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      } else {
+        throw err;
+      }
     }
     return this;
   }
@@ -135,7 +139,11 @@ export class FileParser {
       this.parseStyledNode(this.source);
       return this;
     } catch (err) {
-      this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      if (err instanceof Error) {
+        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      } else {
+        throw err;
+      }
     }
     return this;
   }
@@ -145,7 +153,11 @@ export class FileParser {
       this.parseWrappedPresentation();
       return this;
     } catch (err) {
-      this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      if (err instanceof Error) {
+        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      } else {
+        throw err;
+      }
     }
     return this;
   }
@@ -155,7 +167,11 @@ export class FileParser {
       this.parseJsxNode(this.source);
       return this;
     } catch (err) {
-      this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      if (err instanceof Error) {
+        this.project.spinner.fail(`FileParser failed ${err?.message}`);
+      } else {
+        throw err;
+      }
     }
     return this;
   }

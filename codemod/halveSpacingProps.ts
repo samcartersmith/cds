@@ -105,11 +105,15 @@ export default function halveSpacingProps(
     try {
       convertNumericValue(node.value as unknown as Identifier);
     } catch (error) {
-      console.error(
-        `Failed to convert prop "${node.name.name}" for component "${
-          (parentNode.name as JSXIdentifier).name
-        }" in "${mod.fileInfo.path}". ${error.message}`,
-      );
+      if (error instanceof Error) {
+        console.error(
+          `Failed to convert prop "${node.name.name}" for component "${
+            (parentNode.name as JSXIdentifier).name
+          }" in "${mod.fileInfo.path}". ${error.message}`,
+        );
+      } else {
+        throw error;
+      }
     }
   });
 

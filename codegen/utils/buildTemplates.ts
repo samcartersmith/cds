@@ -25,6 +25,10 @@ export const buildTemplates = async (templates: TemplateMap) => {
 
     await Promise.all(templateInputs.map(writeFile));
   } catch (err) {
-    logError((err as Error).message);
+    if (err instanceof Error) {
+      logError(err.message);
+    } else {
+      throw err;
+    }
   }
 };

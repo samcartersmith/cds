@@ -497,8 +497,12 @@ export class ProjectParser {
       this.spinner.stop();
       return this;
     } catch (err) {
-      this.spinner.fail(`${chalk.redBright('ProjectParser.parse')} ${err?.message}`);
-      return this;
+      if (err instanceof Error) {
+        this.spinner.fail(`${chalk.redBright('ProjectParser.parse')} ${err?.message}`);
+        return this;
+      }
+
+      throw err;
     }
   }
 }

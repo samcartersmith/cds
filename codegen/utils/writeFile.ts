@@ -100,7 +100,11 @@ export const writeFile = async ({
       });
     }
   } catch (error) {
-    console.error(error);
-    throw new Error(`Couldn't generate ${dest}.`);
+    if (error instanceof Error) {
+      console.error(error);
+      throw new Error(`Couldn't generate ${dest}.`);
+    } else {
+      throw error;
+    }
   }
 };

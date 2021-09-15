@@ -35,8 +35,12 @@ export const useWebBrowserOpener = () => {
 
             await Linking.openURL(url);
           } catch (err) {
-            // eslint-disable-next-line no-console
-            console.error(err.message);
+            if (err instanceof Error) {
+              // eslint-disable-next-line no-console
+              console.error(err.message);
+            } else {
+              throw err;
+            }
           }
           break;
         }
