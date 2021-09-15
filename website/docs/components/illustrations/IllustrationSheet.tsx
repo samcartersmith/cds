@@ -7,7 +7,7 @@ import {
   IllustrationPictogramNames,
   IllustrationSpotSquareNames,
   IllustrationVariant,
-} from '@cbhq/cds-common/types/Illustration';
+} from '@cbhq/cds-common/types/IllustrationNames';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
@@ -26,14 +26,15 @@ import Tabs from '@theme/Tabs';
 
 import { elevation, searchBox } from '../icons/styles';
 
-const variantToNamesMap: {
-  [keys: string]: readonly (
+const variantToNamesMap: Record<
+  string,
+  readonly (
     | IllustrationHeroSquareNames
     | IllustrationSpotRectangleNames
     | IllustrationPictogramNames
     | IllustrationSpotSquareNames
-  )[];
-} = {
+  )[]
+> = {
   heroSquare: heroSquareNames,
   spotRectangle: spotRectangleNames,
   spotSquare: spotSquareNames,
@@ -67,17 +68,17 @@ export const IllustrationSheet = function IllustrationSheet({
 
       <Tabs
         defaultValue={defaultVal}
-        values={Object.keys(dimensions).map(dim => ({ label: dim, value: dim }))}
+        values={Object.keys(dimensions).map((dim) => ({ label: dim, value: dim }))}
       >
-        {Object.keys(dimensions).map(dim => {
+        {Object.keys(dimensions).map((dim) => {
           const { width, height } = dimensions[dim as never];
 
           return (
             <TabItem key={dim} value={dim}>
               <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
                 {names
-                  .filter(name => name.includes(query))
-                  .map(filteredName => (
+                  .filter((name) => name.includes(query))
+                  .map((filteredName) => (
                     <VStack spacing={3} alignItems="center" key={filteredName}>
                       <Illustration name={filteredName} width={width} height={height} />
                       <TextLabel1 align="center" as="p" spacing={2}>

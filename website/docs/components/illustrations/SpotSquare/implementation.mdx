@@ -27,7 +27,7 @@ Size of illustration given that the size constraint is available in Figma
   componentName="SpotSquare"
   propertyName="dimension"
   required={false}
-  defaultValue=""
+  defaultValue="pictogram - 48x48, heroSquare - 240x240, spotRectangle - 240x120, spotSquare 120x120"
   mobileOptions={['120x120']}
   webOptions={['120x120']}
 />
@@ -118,6 +118,21 @@ Name of illustration as defined in Figma
 />
 
 <ComponentDetails componentName="SpotSquare" templateName="prop-name" />
+
+### scaleMultiplier
+
+Multiply the width & height while maintaining aspect ratio
+
+<ApiDetails
+  componentName="SpotSquare"
+  propertyName="scaleMultiplier"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="SpotSquare" templateName="prop-scaleMultiplier" />
 
 ### testID
 

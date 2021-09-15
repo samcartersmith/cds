@@ -31,4 +31,4 @@ export const illustrationSizes = {
       height: 96,
     },
   },
-};
+} as const;

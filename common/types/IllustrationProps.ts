@@ -5,7 +5,7 @@ import {
   IllustrationPictogramNames,
   IllustrationSpotSquareNames,
   IllustrationVariant,
-} from './Illustration';
+} from './IllustrationNames';
 import { SharedProps } from './SharedProps';
 
 type IllustrationNames =
@@ -30,8 +30,13 @@ export type IllustrationProps<
 > = {
   /** Name of illustration as defined in Figma */
   name: Name;
-  /** Size of illustration given that the size constraint is available in Figma */
+  /**
+   * Size of illustration given that the size constraint is available in Figma
+   * @default pictogram - 48x48, heroSquare - 240x240, spotRectangle - 240x120, spotSquare 120x120
+   */
   dimension?: Dimension<Variant>;
+  /** Multiply the width & height while maintaining aspect ratio */
+  scaleMultiplier?: number;
 } & SharedProps;
 
 export type HeroSquareProps = IllustrationProps<IllustrationHeroSquareNames, 'heroSquare'>;

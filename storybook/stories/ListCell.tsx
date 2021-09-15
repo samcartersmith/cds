@@ -5,7 +5,7 @@ import {
   IconButtonBaseProps,
   ListCellBaseProps,
 } from '@cbhq/cds-common';
-import { IllustrationPictogramNames } from '@cbhq/cds-common/types/Illustration';
+import { IllustrationPictogramNames } from '@cbhq/cds-common/types/IllustrationNames';
 
 import { mockAsset } from './constants';
 

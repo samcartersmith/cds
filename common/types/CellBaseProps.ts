@@ -1,5 +1,5 @@
 import { IconName } from './IconName';
-import { IllustrationPictogramNames } from './Illustration';
+import { IllustrationPictogramNames } from './IllustrationNames';
 import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
 import { SpacingProps, OffsetProps } from './SpacingProps';

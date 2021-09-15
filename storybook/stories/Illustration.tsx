@@ -26,18 +26,19 @@ export function createStories(
 ) {
   const ListPictograms = () => (
     <>
-      {pictogramNames.map(name => {
+      {pictogramNames.map((name) => {
         return (
           <VStack key={`${name}_pictogram`}>
             <TextLabel1>{name}</TextLabel1>
             <HStack gap={1}>
-              {Object.keys(illustrationSizes.pictogram).map(dimension => (
+              {Object.keys(illustrationSizes.pictogram).map((dimension) => (
                 <Pictogram
                   key={`${name}_pictogram_${dimension}`}
                   name={name}
                   dimension={dimension as never}
                 />
               ))}
+              <Pictogram name={name} scaleMultiplier={1.5} />
             </HStack>
           </VStack>
         );
@@ -47,12 +48,12 @@ export function createStories(
 
   const ListHeroSquares = () => (
     <>
-      {heroSquareNames.map(name => {
+      {heroSquareNames.map((name) => {
         return (
           <VStack key={`${name}_heroSquare`}>
             <TextLabel1>{name}</TextLabel1>
             <HStack gap={1}>
-              {Object.keys(illustrationSizes.heroSquare).map(dimension => (
+              {Object.keys(illustrationSizes.heroSquare).map((dimension) => (
                 <HeroSquare
                   key={`${name}_heroSquare_${dimension}`}
                   name={name}
@@ -60,6 +61,7 @@ export function createStories(
                 />
               ))}
             </HStack>
+            <HeroSquare name={name} scaleMultiplier={1.5} />
           </VStack>
         );
       })}
@@ -68,12 +70,12 @@ export function createStories(
 
   const ListSpotSquares = () => (
     <>
-      {spotSquareNames.map(name => {
+      {spotSquareNames.map((name) => {
         return (
           <VStack key={`${name}_spotSquare`}>
             <TextLabel1>{name}</TextLabel1>
             <HStack gap={1}>
-              {Object.keys(illustrationSizes.spotSquare).map(dimension => (
+              {Object.keys(illustrationSizes.spotSquare).map((dimension) => (
                 <SpotSquare
                   key={`${name}_spotSquare_${dimension}`}
                   name={name}
@@ -81,6 +83,7 @@ export function createStories(
                 />
               ))}
             </HStack>
+            <SpotSquare name={name} scaleMultiplier={2} />
           </VStack>
         );
       })}
@@ -89,12 +92,12 @@ export function createStories(
 
   const ListSpotRectangles = () => (
     <>
-      {spotRectangleNames.map(name => {
+      {spotRectangleNames.map((name) => {
         return (
           <VStack key={`${name}_spotRectangle`}>
             <TextLabel1>{name}</TextLabel1>
             <HStack gap={1}>
-              {Object.keys(illustrationSizes.spotRectangle).map(dimension => (
+              {Object.keys(illustrationSizes.spotRectangle).map((dimension) => (
                 <SpotRectangle
                   key={`${name}_spotRectangle_${dimension}`}
                   name={name}
@@ -102,6 +105,7 @@ export function createStories(
                 />
               ))}
             </HStack>
+            <SpotRectangle name={name} scaleMultiplier={3} />
           </VStack>
         );
       })}

@@ -27,7 +27,7 @@ Size of illustration given that the size constraint is available in Figma
   componentName="Pictogram"
   propertyName="dimension"
   required={false}
-  defaultValue=""
+  defaultValue="pictogram - 48x48, heroSquare - 240x240, spotRectangle - 240x120, spotSquare 120x120"
   mobileOptions={['48x48', '64x64', '96x96']}
   webOptions={['48x48', '64x64', '96x96']}
 />
@@ -298,6 +298,21 @@ Name of illustration as defined in Figma
 />
 
 <ComponentDetails componentName="Pictogram" templateName="prop-name" />
+
+### scaleMultiplier
+
+Multiply the width & height while maintaining aspect ratio
+
+<ApiDetails
+  componentName="Pictogram"
+  propertyName="scaleMultiplier"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Pictogram" templateName="prop-scaleMultiplier" />
 
 ### testID
 
