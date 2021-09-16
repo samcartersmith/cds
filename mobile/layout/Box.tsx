@@ -1,6 +1,6 @@
-import React, { useMemo, memo } from 'react';
+import React, { useMemo, memo, useState, useEffect, Dispatch, SetStateAction } from 'react';
 
-import { BoxBaseProps, SharedProps } from '@cbhq/cds-common';
+import { BoxBaseProps, ElevationLevels, SharedProps } from '@cbhq/cds-common';
 import {
   ElevationProvider,
   ElevationChildrenProvider,
@@ -39,12 +39,34 @@ export type BoxProps = {
   DangerouslySetStyle<ViewStyle>;
 
 export const Box: React.FC<BoxProps> = memo(({ children, ...props }) => {
-  return (
-    <ElevationProvider elevation={props?.elevation}>
-      <BoxInner {...props}>{children}</BoxInner>
-    </ElevationProvider>
-  );
+  const boxInner = <BoxInner {...props}>{children}</BoxInner>;
+
+  if (props.elevation) {
+    return <ElevationProvider elevation={props?.elevation}>{boxInner}</ElevationProvider>;
+  }
+
+  return boxInner;
 });
+
+type ElevationStylesContainerProps = {
+  elevation: ElevationLevels;
+  setElevationStyles: Dispatch<SetStateAction<ViewStyle | undefined>>;
+};
+
+const ElevationStylesContainer = ({
+  elevation,
+  setElevationStyles,
+}: ElevationStylesContainerProps) => {
+  const elevationStyles = useElevationStyles(elevation);
+
+  useEffect(() => {
+    if (elevationStyles) {
+      setElevationStyles(elevationStyles);
+    }
+  }, [setElevationStyles, elevationStyles]);
+
+  return null;
+};
 
 export const BoxInner = memo(
   ({
@@ -108,6 +130,8 @@ export const BoxInner = memo(
     offsetVertical,
     ...props
   }: BoxProps) => {
+    const [elevationStyles, setElevationStyles] = useState<ViewStyle | undefined>(undefined);
+
     const palette = usePalette();
     const borderStyles = useBorderStyles({
       bordered,
@@ -120,7 +144,6 @@ export const BoxInner = memo(
       borderRadius,
       elevation,
     });
-    const elevationStyles = useElevationStyles(elevation);
     const spacingStyles = useSpacingStyles({
       spacing,
       spacingBottom,
@@ -231,9 +254,18 @@ export const BoxInner = memo(
 
     const ViewComponent = animated ? Animated.View : View;
 
+    const childNodes = elevation ? (
+      <>
+        <ElevationStylesContainer elevation={elevation} setElevationStyles={setElevationStyles} />
+        <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+      </>
+    ) : (
+      children
+    );
+
     return (
       <ViewComponent style={style} {...props}>
-        <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+        {childNodes}
         {overflow === 'gradient' && <OverflowGradient />}
       </ViewComponent>
     );

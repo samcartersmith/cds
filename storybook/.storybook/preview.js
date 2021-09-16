@@ -1,8 +1,9 @@
 import { LightStoryContainer } from '../decorators/StoryContainer';
 import { css } from 'linaria';
 import '@cbhq/cds-web/globalStyles';
+import { withPerformance } from 'storybook-addon-performance';
 
-export const decorators = [LightStoryContainer];
+export const decorators = [LightStoryContainer, withPerformance];
 
 export const parameters = {
   layout: 'fullscreen',

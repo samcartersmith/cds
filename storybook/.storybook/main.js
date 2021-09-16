@@ -22,6 +22,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-a11y',
     'storybook-addon-designs',
+    'storybook-addon-performance/register',
   ],
   typescript: {
     check: false,

@@ -1,4 +1,11 @@
-import React, { forwardRef, createElement } from 'react';
+import React, {
+  forwardRef,
+  createElement,
+  useState,
+  SetStateAction,
+  Dispatch,
+  useEffect,
+} from 'react';
 
 import type { BoxBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import {
@@ -9,6 +16,7 @@ import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRad
 import { css, cx } from 'linaria';
 
 import { emptyObject } from '@cbhq/cds-utils';
+import { ElevationLevels } from '@cbhq/cds-common';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
@@ -84,6 +92,26 @@ export type BoxProps<As extends BoxElement = 'div'> = {
   SharedProps &
   React.AriaAttributes;
 
+type ElevationStylesContainerProps = {
+  elevation: ElevationLevels;
+  setElevationStyles: Dispatch<SetStateAction<React.CSSProperties>>;
+};
+
+const ElevationStylesContainer = ({
+  elevation,
+  setElevationStyles,
+}: ElevationStylesContainerProps) => {
+  const elevationStyles = useElevationStyles(elevation);
+
+  useEffect(() => {
+    if (elevationStyles !== emptyObject) {
+      setElevationStyles(elevationStyles);
+    }
+  }, [setElevationStyles, elevationStyles]);
+
+  return null;
+};
+
 export const BoxInner = forwardRef(
   <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => {
     const {
@@ -151,7 +179,17 @@ export const BoxInner = forwardRef(
     } = props;
 
     const borderRadiusStyles = usePinBorderRadiusStyles(pin, borderRadius);
-    const elevationStyles = useElevationStyles(elevation);
+
+    const [elevationStyles, setElevationStyles] = useState(emptyObject);
+
+    const childNodes = elevation ? (
+      <>
+        <ElevationStylesContainer elevation={elevation} setElevationStyles={setElevationStyles} />
+        <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+      </>
+    ) : (
+      children
+    );
 
     return createElement(
       as,
@@ -226,7 +264,7 @@ export const BoxInner = forwardRef(
           ...elevationStyles,
         },
       },
-      <ElevationChildrenProvider>{children}</ElevationChildrenProvider>,
+      childNodes,
     );
   },
 );
@@ -236,13 +274,17 @@ export const Box = forwardRef(
     { children, ...props }: BoxProps<As>,
     forwardedRef: ForwardedRef<HTMLElement>,
   ) => {
-    return (
-      <ElevationProvider elevation={props?.elevation}>
-        <BoxInner {...props} ref={forwardedRef}>
-          {children}
-        </BoxInner>
-      </ElevationProvider>
+    const boxInner = (
+      <BoxInner {...props} ref={forwardedRef}>
+        {children}
+      </BoxInner>
     );
+
+    if (props.elevation) {
+      return <ElevationProvider elevation={props?.elevation}>{boxInner}</ElevationProvider>;
+    }
+
+    return boxInner;
   },
 );
 

@@ -15,7 +15,7 @@ export const Lipsum = () => (
   </TextBody>
 );
 
-<Meta title="Core Components/Box" component={Box} />
+<Meta title="Core Components/Box/Component" component={Box} />
 
 # Box
 
@@ -31,6 +31,31 @@ export const Lipsum = () => (
       </Box>
     )}
   </Story>
+</Canvas>
+
+# Elevation
+
+<Canvas withToolbar>
+    <Story
+        name="Elevation 1"
+        decorators={[withStoryLabel('Elevation 1')]}
+    >
+        {() => (
+            <Box elevation={1}>
+                <Lipsum />
+            </Box>
+        )}
+    </Story>
+    <Story
+        name="Elevation 2"
+        decorators={[withStoryLabel('Elevation 2')]}
+    >
+        {() => (
+            <Box elevation={2}>
+                <Lipsum />
+            </Box>
+        )}
+    </Story>
 </Canvas>
 
 # Flex
