@@ -33,6 +33,7 @@ module.exports = {
         'foundation/overview',
         'foundation/a11y',
         'foundation/color',
+        'foundation/content',
         'foundation/elevation',
         'foundation/iconography',
         'foundation/illustration',

@@ -451,9 +451,9 @@
         "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
         "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
         "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/VerificationPendingScene/VerificationPendingPresentation.tsx": 1,
         "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/VerificationPendingScene/VerificationPendingPresentation.tsx": 1
+        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
@@ -465,9 +465,9 @@
           "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/VerificationPendingScene/VerificationPendingPresentation.tsx": 1,
           "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationPendingScene/VerificationPendingPresentation.tsx": 1
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
         },
         "progressBar": {
           "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
@@ -570,8 +570,8 @@
         "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureInstructions.tsx": 1,
         "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
         "@uwo/experiences/idv/scenes/components/UploadInstructions.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
       },
       "propsWithCallSites": {
         "color": {
@@ -579,8 +579,8 @@
           "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureInstructions.tsx": 1,
           "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1,
           "@uwo/experiences/idv/scenes/components/UploadInstructions.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
         },
         "align": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
         "spacing": { "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1 },
@@ -1368,13 +1368,6 @@
       }
     },
     {
-      "name": "MobileUploadExplainerImage",
-      "sourceFile": "@uwo/assets/images/MobileUploadExplainerImage",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
       "name": "DriversLicense",
       "sourceFile": "@uwo/assets/icons/DriversLicense",
       "totalInstances": 2,
@@ -1404,6 +1397,13 @@
       "presentationalElement": "svg"
     },
     {
+      "name": "MobileUploadExplainerImage",
+      "sourceFile": "@uwo/assets/images/MobileUploadExplainerImage",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
       "name": "MobileCamera",
       "sourceFile": "@uwo/assets/icons/MobileCamera",
       "totalInstances": 1,
@@ -1420,13 +1420,6 @@
     {
       "name": "FileUpload",
       "sourceFile": "@uwo/assets/icons/FileUpload",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "VerifyIDExplainerImage",
-      "sourceFile": "@uwo/assets/images/VerifyIDExplainerImage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "svg"
@@ -1576,6 +1569,13 @@
       "styledComponent": "div"
     },
     {
+      "name": "VerifyIDExplainerImage",
+      "sourceFile": "@uwo/assets/images/VerifyIDExplainerImage",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
       "name": "ResetButton",
       "sourceFile": "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx",
       "totalInstances": 1,
@@ -1604,15 +1604,15 @@
       "styledComponent": "div"
     },
     {
-      "name": "CoinbaseApp",
-      "sourceFile": "@uwo/assets/images/CoinbaseApp",
+      "name": "VerificationFailed",
+      "sourceFile": "@uwo/assets/images/VerificationFailed",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "svg"
     },
     {
-      "name": "VerificationFailed",
-      "sourceFile": "@uwo/assets/images/VerificationFailed",
+      "name": "CoinbaseApp",
+      "sourceFile": "@uwo/assets/images/CoinbaseApp",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "svg"
@@ -1902,8 +1902,8 @@
         "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 4,
         "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation.tsx": 2,
         "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+        "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1
       },
       "propsWithCallSites": {
         "data-test-id": { "@uwo/businessApplicationScenes/SceneLayout.tsx": 1 },
@@ -1920,8 +1920,8 @@
           "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 4,
           "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation.tsx": 2,
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
+          "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1
         },
         "spacing": {
           "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
@@ -2462,13 +2462,13 @@
         "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
         "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
         "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
         "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
-        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
         "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+        "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
+        "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
       },
       "propsWithCallSites": {
         "isLoading": {
@@ -2478,8 +2478,8 @@
           "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
           "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
           "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         },
         "name": {
@@ -2490,11 +2490,11 @@
           "@uwo/experiences/edp/scenes/VerifyIdentityCheckpoint/VerifyIdentityCheckpointPresentation.tsx": 1,
           "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
           "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
         },
         "data-test-id": {
@@ -2506,8 +2506,8 @@
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
         },
         "type": {
           "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
@@ -2524,8 +2524,8 @@
           "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         },
         "spacing": {
@@ -2537,8 +2537,8 @@
           "@uwo/experiences/edp/scenes/VerifyIdentityExplainer/VerifyIdentityExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
         },
         "onClick": {
           "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
@@ -2552,8 +2552,8 @@
           "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1,
-          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1
+          "@uwo/experiences/verificationStatus/scenes/VerificationFailureScene/VerificationFailurePresentation.tsx": 1,
+          "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessPresentation.tsx": 1
         },
         "testID": {
           "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
@@ -3757,22 +3757,6 @@
       }
     },
     {
-      "name": "li",
-      "sourceFile": "@uwo/components/common/primitives/typography/Bullet.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "a",
-      "sourceFile": "@uwo/components/common/primitives/typography/Link.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "href": { "@uwo/components/common/primitives/typography/Link.tsx": 1 },
-        "target": { "@uwo/components/common/primitives/typography/Link.tsx": 1 }
-      }
-    },
-    {
       "name": "QuestionScene",
       "sourceFile": "@uwo/commonScenes/KYCQuestion/QuestionScene",
       "totalInstances": 6,
@@ -3838,6 +3822,22 @@
           "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryScene.tsx": 1
         },
         "answers": { "@uwo/experiences/customerDueDiligence/scenes/Industry/IndustryScene.tsx": 1 }
+      }
+    },
+    {
+      "name": "li",
+      "sourceFile": "@uwo/components/common/primitives/typography/Bullet.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "a",
+      "sourceFile": "@uwo/components/common/primitives/typography/Link.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "href": { "@uwo/components/common/primitives/typography/Link.tsx": 1 },
+        "target": { "@uwo/components/common/primitives/typography/Link.tsx": 1 }
       }
     },
     {
@@ -4228,6 +4228,18 @@
       }
     },
     {
+      "name": "SelectIDTypePresentation",
+      "sourceFile": "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "handleSelection": {
+          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1
+        },
+        "idTypes": { "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1 }
+      }
+    },
+    {
       "name": "VerifyIDExplainerScene",
       "sourceFile": "@uwo/experiences/idv/scenes/VerifyIDExplainerScene",
       "totalInstances": 1,
@@ -4248,18 +4260,6 @@
         "phone": {
           "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerScene.tsx": 1
         }
-      }
-    },
-    {
-      "name": "SelectIDTypePresentation",
-      "sourceFile": "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "handleSelection": {
-          "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1
-        },
-        "idTypes": { "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1 }
       }
     },
     {
@@ -4309,20 +4309,6 @@
       }
     },
     {
-      "name": "VerifyIDExplainerPresentation",
-      "sourceFile": "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isLoading": {
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerScene.tsx": 1
-        },
-        "handleClick": {
-          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerScene.tsx": 1
-        }
-      }
-    },
-    {
       "name": "form",
       "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
       "totalInstances": 1,
@@ -4349,6 +4335,20 @@
       }
     },
     {
+      "name": "VerifyIDExplainerPresentation",
+      "sourceFile": "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isLoading": {
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerScene.tsx": 1
+        },
+        "handleClick": {
+          "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerScene.tsx": 1
+        }
+      }
+    },
+    {
       "name": "SecureAccountCheckpointImage",
       "sourceFile": "@uwo/components/Images/SecureAccountCheckpointImage",
       "totalInstances": 1,
@@ -4362,23 +4362,6 @@
       "propsWithCallSites": {
         "onClick": {
           "@uwo/experiences/phone/scenes/SecureAccountCheckpoint/SecureAccountCheckpointScene.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SecureAccountExplainerImage",
-      "sourceFile": "@uwo/components/Images/SecureAccountExplainerImage",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SecureAccountExplainerPresentation",
-      "sourceFile": "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClick": {
-          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerScene.tsx": 1
         }
       }
     },
@@ -4440,8 +4423,25 @@
       }
     },
     {
-      "name": "div",
-      "sourceFile": "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessScene.tsx",
+      "name": "SecureAccountExplainerImage",
+      "sourceFile": "@uwo/components/Images/SecureAccountExplainerImage",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SecureAccountExplainerPresentation",
+      "sourceFile": "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClick": {
+          "@uwo/experiences/phone/scenes/SecureAccountExplainer/SecureAccountExplainerScene.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VerificationPendingPresentation",
+      "sourceFile": "@uwo/experiences/verificationStatus/scenes/VerificationPendingScene/VerificationPendingPresentation",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -4457,8 +4457,8 @@
       }
     },
     {
-      "name": "VerificationPendingPresentation",
-      "sourceFile": "@uwo/experiences/verificationStatus/scenes/VerificationPendingScene/VerificationPendingPresentation",
+      "name": "div",
+      "sourceFile": "@uwo/experiences/verificationStatus/scenes/SuccessScene/SuccessScene.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },

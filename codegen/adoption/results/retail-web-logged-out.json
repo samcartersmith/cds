@@ -694,7 +694,8 @@
           "pages/NewHome/components/FreeYourMoney.tsx": 1,
           "pages/NewHome/components/StartPortfolio.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
-          "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1
+          "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1,
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         },
         "id": { "pages/CoinbaseCardBack/components/CardBack.tsx": 3 },
         "position": { "pages/CoinbaseCardBack/components/CardBack.tsx": 4 },
@@ -970,8 +971,8 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 16,
-      "totalCallSites": 14,
+      "totalInstances": 17,
+      "totalCallSites": 15,
       "cds": "@cbhq/cds-web/typography/Link",
       "extendedStyledComponents": [
         { "alias": "HeroLink", "callSite": "components/Corporate/Hero.tsx" },
@@ -994,7 +995,8 @@
         "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
         "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1,
         "pages/Corporate/PressPage/components/MissionBanner.tsx": 1,
-        "pages/Corporate/PressPage/components/TitleAndLinks.tsx": 2
+        "pages/Corporate/PressPage/components/TitleAndLinks.tsx": 2,
+        "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
       },
       "propsWithCallSites": {
         "variant": { "components/cms/Incentives/SweepstakesRules.tsx": 1 },
@@ -1019,14 +1021,16 @@
           "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
           "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
           "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
-          "pages/Corporate/PressPage/components/TitleAndLinks.tsx": 1
+          "pages/Corporate/PressPage/components/TitleAndLinks.tsx": 1,
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         },
         "href": {
           "components/cms/InfoCard/AvatarCard.tsx": 1,
           "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
           "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
           "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1,
-          "pages/Corporate/PressPage/components/TitleAndLinks.tsx": 2
+          "pages/Corporate/PressPage/components/TitleAndLinks.tsx": 2,
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         },
         "title": { "components/cms/InfoCard/AvatarCard.tsx": 1 },
         "onPress": {
@@ -1800,8 +1804,8 @@
     {
       "name": "DatadogSyntheticTag",
       "sourceFile": "@cb/shared/DatadogSyntheticTag",
-      "totalInstances": 18,
-      "totalCallSites": 18,
+      "totalInstances": 19,
+      "totalCallSites": 19,
       "presentationalLibrary": "@cb/shared/DatadogSyntheticTag",
       "callSites": {
         "components/Corporate/Hero.tsx": 1,
@@ -1818,6 +1822,7 @@
         "pages/Home/components/HeroVariant.tsx": 1,
         "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
         "pages/LandingPage/components/Title.tsx": 1,
+        "pages/NewHome/components/FreeYourMoney.tsx": 1,
         "pages/Partners/components/Hero.tsx": 1,
         "pages/cms/ContentHub/ContentHub.tsx": 1,
         "pages/cms/Page/index.tsx": 1,
@@ -1839,6 +1844,7 @@
           "pages/Home/components/HeroVariant.tsx": 1,
           "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
           "pages/LandingPage/components/Title.tsx": 1,
+          "pages/NewHome/components/FreeYourMoney.tsx": 1,
           "pages/Partners/components/Hero.tsx": 1,
           "pages/cms/ContentHub/ContentHub.tsx": 1,
           "pages/cms/Page/index.tsx": 1,
@@ -5240,45 +5246,45 @@
       "callSites": {
         "components/cms/BasicHero/EmailInputHero.tsx": 1,
         "components/cms/BasicHero/SocialMediaHero.tsx": 1,
-        "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-        "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+        "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+        "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
       },
       "propsWithCallSites": {
         "content": {
           "components/cms/BasicHero/EmailInputHero.tsx": 1,
           "components/cms/BasicHero/SocialMediaHero.tsx": 1,
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "image": {
           "components/cms/BasicHero/EmailInputHero.tsx": 1,
           "components/cms/BasicHero/SocialMediaHero.tsx": 1,
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "tabletImage": {
           "components/cms/BasicHero/EmailInputHero.tsx": 1,
           "components/cms/BasicHero/SocialMediaHero.tsx": 1,
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "phoneImage": {
           "components/cms/BasicHero/EmailInputHero.tsx": 1,
           "components/cms/BasicHero/SocialMediaHero.tsx": 1,
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "type": {
           "components/cms/BasicHero/EmailInputHero.tsx": 1,
           "components/cms/BasicHero/SocialMediaHero.tsx": 1,
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "richTextRenderOptions": {
           "components/cms/BasicHero/EmailInputHero.tsx": 1,
           "components/cms/BasicHero/SocialMediaHero.tsx": 1,
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "layout": { "components/cms/BasicHero/SocialMediaHero.tsx": 1 }
       }
@@ -7667,11 +7673,12 @@
       "sourceFile": "pages/NewHome/components/EarnAndLearn.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "img",
+      "styledComponent": "NextGenImage",
       "propsWithCallSites": {
-        "src": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
-        "alt": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
-        "loading": { "pages/NewHome/components/EarnAndLearn.tsx": 1 }
+        "primaryImage": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
+        "fallbackImage": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
+        "altMessage": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
+        "pictureWidth": { "pages/NewHome/components/EarnAndLearn.tsx": 1 }
       }
     },
     {
@@ -7698,11 +7705,11 @@
       "sourceFile": "pages/NewHome/components/Features.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "img",
+      "styledComponent": "NextGenImage",
       "propsWithCallSites": {
-        "src": { "pages/NewHome/components/Features.tsx": 1 },
-        "alt": { "pages/NewHome/components/Features.tsx": 1 },
-        "loading": { "pages/NewHome/components/Features.tsx": 1 }
+        "primaryImage": { "pages/NewHome/components/Features.tsx": 1 },
+        "fallbackImage": { "pages/NewHome/components/Features.tsx": 1 },
+        "altMessage": { "pages/NewHome/components/Features.tsx": 1 }
       }
     },
     {
@@ -7731,13 +7738,14 @@
       "sourceFile": "pages/NewHome/components/StartPortfolio.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "img",
+      "styledComponent": "NextGenImage",
       "propsWithCallSites": {
         "isTablet": { "pages/NewHome/components/StartPortfolio.tsx": 1 },
         "isPhone": { "pages/NewHome/components/StartPortfolio.tsx": 1 },
-        "src": { "pages/NewHome/components/StartPortfolio.tsx": 1 },
-        "alt": { "pages/NewHome/components/StartPortfolio.tsx": 1 },
-        "loading": { "pages/NewHome/components/StartPortfolio.tsx": 1 }
+        "primaryImage": { "pages/NewHome/components/StartPortfolio.tsx": 1 },
+        "fallbackImage": { "pages/NewHome/components/StartPortfolio.tsx": 1 },
+        "altMessage": { "pages/NewHome/components/StartPortfolio.tsx": 1 },
+        "pictureWidth": { "pages/NewHome/components/StartPortfolio.tsx": 1 }
       }
     },
     {
@@ -9314,6 +9322,30 @@
     },
     {
       "name": "Container",
+      "sourceFile": "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": {
+        "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx": 3
+      }
+    },
+    {
+      "name": "LoadingContainer",
+      "sourceFile": "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Section",
+      "sourceFile": "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "section"
+    },
+    {
+      "name": "Container",
       "sourceFile": "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
@@ -9378,30 +9410,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": {
-        "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx": 3
-      }
-    },
-    {
-      "name": "LoadingContainer",
-      "sourceFile": "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Section",
-      "sourceFile": "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignFlow.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "section"
     },
     {
       "name": "UL",
@@ -9509,71 +9517,15 @@
       }
     },
     {
-      "name": "Container",
+      "name": "BannerBTCIncentivesContent",
       "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "Link",
+      "presentationalElement": "Container",
       "propsWithCallSites": {
-        "href": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 },
-        "onMouseEnter": {
+        "assetSymbol": {
           "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1
-        },
-        "onClick": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 },
-        "title": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 }
-      }
-    },
-    {
-      "name": "Content",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "Text",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Body"
-    },
-    {
-      "name": "ImageMobile",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "img",
-      "propsWithCallSites": {
-        "alt": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 },
-        "src": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 }
-      }
-    },
-    {
-      "name": "ButtonArea",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Flex"
-    },
-    {
-      "name": "ButtonWhite",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "type": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 }
-      }
-    },
-    {
-      "name": "ImageDesktop",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "img",
-      "propsWithCallSites": {
-        "alt": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 },
-        "src": { "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1 }
+        }
       }
     },
     {
@@ -9597,6 +9549,24 @@
         "linkedItems": {
           "pages/AssetPage/components/HighestMarketCapInternalLinks/HighestMarketCapInternalLinks.tsx": 1,
           "pages/AssetPage/components/RecentlyAddedInternalLinks/RecentlyAddedInternalLinks.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WalletDeeplinkMobile",
+      "sourceFile": "@cb/shared/WalletDeeplinkMobile",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/WalletDeeplinkMobile",
+      "propsWithCallSites": {
+        "assetName": {
+          "pages/AssetPage/components/MobileWalletDeeplink/MobileWalletDeeplink.tsx": 1
+        },
+        "assetSymbol": {
+          "pages/AssetPage/components/MobileWalletDeeplink/MobileWalletDeeplink.tsx": 1
+        },
+        "onPressCta": {
+          "pages/AssetPage/components/MobileWalletDeeplink/MobileWalletDeeplink.tsx": 1
         }
       }
     },
@@ -9647,24 +9617,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "WalletDeeplinkMobile",
-      "sourceFile": "@cb/shared/WalletDeeplinkMobile",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/WalletDeeplinkMobile",
-      "propsWithCallSites": {
-        "assetName": {
-          "pages/AssetPage/components/MobileWalletDeeplink/MobileWalletDeeplink.tsx": 1
-        },
-        "assetSymbol": {
-          "pages/AssetPage/components/MobileWalletDeeplink/MobileWalletDeeplink.tsx": 1
-        },
-        "onPressCta": {
-          "pages/AssetPage/components/MobileWalletDeeplink/MobileWalletDeeplink.tsx": 1
-        }
-      }
     },
     {
       "name": "Container",
@@ -11735,8 +11687,8 @@
       "totalCallSites": 6,
       "callSites": {
         "cosmos.decorator.tsx": 1,
-        "generateErrorPage/generateErrorPage.tsx": 1,
         "components/ApplicationProviders.tsx": 1,
+        "generateErrorPage/generateErrorPage.tsx": 1,
         "utils/testing.tsx": 1,
         "pages/International/utils/index.js": 1,
         "pages/Usdc/utils/index.js": 1
@@ -11744,8 +11696,8 @@
       "propsWithCallSites": {
         "locale": {
           "cosmos.decorator.tsx": 1,
-          "generateErrorPage/generateErrorPage.tsx": 1,
           "components/ApplicationProviders.tsx": 1,
+          "generateErrorPage/generateErrorPage.tsx": 1,
           "utils/testing.tsx": 1,
           "pages/International/utils/index.js": 1,
           "pages/Usdc/utils/index.js": 1
@@ -11801,12 +11753,6 @@
           "pages/cms/ContentHub/ContentHub.tsx": 1
         }
       }
-    },
-    {
-      "name": "GlobalPageFallback",
-      "sourceFile": "components/GlobalPageFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "CacheProvider",
@@ -11948,6 +11894,12 @@
     {
       "name": "IntlPage",
       "sourceFile": "components/pageWrapper.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "GlobalPageFallback",
+      "sourceFile": "components/GlobalPageFallback",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -12364,6 +12316,12 @@
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": { "components/Layout/Layout.tsx": 1, "pages/cms/ContentHub/ContentHub.tsx": 1 }
+    },
+    {
+      "name": "ServiceWorkerRegister",
+      "sourceFile": "components/ServiceWorkerRegister",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "TwoPaneSection",
@@ -16598,63 +16556,28 @@
       }
     },
     {
-      "name": "SweepsOptinBottomBanner",
-      "sourceFile": "components/cms/Incentives/Hero/SweepsOptinBottomBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "bottomBannerTitle": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1 },
-        "image": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1 }
-      }
-    },
-    {
-      "name": "OptInFlow",
-      "sourceFile": "components/cms/Incentives/OptInFlow",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-      "propsWithCallSites": {
-        "campaignName": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "userId": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "isOptedIn": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "setIsOptedIn": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "eventName": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "optInLoggingId": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "generalButtonLoggingId": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "ctaTitle": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "ctaLinkUrl": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
-        "direction": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1 }
-      }
-    },
-    {
       "name": "SweepsVerticalHero",
       "sourceFile": "components/cms/Incentives/Hero/SweepsVerticalHero",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-        "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+        "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+        "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
       },
       "propsWithCallSites": {
         "content": {
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "image": {
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         },
         "richTextRenderOptions": {
-          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1,
-          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1
+          "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero.tsx": 1,
+          "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1
         }
       }
-    },
-    {
-      "name": "VStack",
-      "sourceFile": "components/cms/styles/VStack",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "HeroWithSweepsFlow",
@@ -16693,6 +16616,41 @@
     {
       "name": "IncentivesCampaignEndedHero",
       "sourceFile": "components/cms/Incentives/IncentivesCampaignFlow/IncentivesCampaignEndedHero",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SweepsOptinBottomBanner",
+      "sourceFile": "components/cms/Incentives/Hero/SweepsOptinBottomBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "bottomBannerTitle": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1 },
+        "image": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "OptInFlow",
+      "sourceFile": "components/cms/Incentives/OptInFlow",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+      "propsWithCallSites": {
+        "campaignName": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "userId": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "isOptedIn": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "setIsOptedIn": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "eventName": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "optInLoggingId": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "generalButtonLoggingId": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "ctaTitle": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "ctaLinkUrl": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 3 },
+        "direction": { "components/cms/Incentives/Hero/HeroWithSweepsFlow.tsx": 1 }
+      }
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "components/cms/styles/VStack",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -16825,23 +16783,6 @@
         "key": { "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1 },
         "intlKey": { "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1 },
         "stat": { "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1 }
-      }
-    },
-    {
-      "name": "Title",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "BannerBTCIncentivesContent",
-      "sourceFile": "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "assetSymbol": {
-          "pages/AssetPage/components/BannerBTCIncentives/BannerBTCIncentives.tsx": 1
-        }
       }
     },
     {
