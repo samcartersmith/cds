@@ -9,13 +9,6 @@ export const illustrationMetadata = {
   pictogramCount: 124,
   spotRectangleCount: 19,
   spotSquareCount: 34,
-  newIllustration: [
-    'graphsGray-dark',
-    'graphsGray-light',
-    'noVisability-dark',
-    'noVisability-light',
-    'walletWarning-dark',
-    'walletWarning-light',
-  ],
+  newIllustration: ['noVisibility-dark', 'noVisibility-light'],
   modifiedIllustrations: [],
 };

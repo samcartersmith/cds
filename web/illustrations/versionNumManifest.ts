@@ -550,10 +550,10 @@ export const versionNumManifest: Record<string, number> = {
   'referralsBonusGray-dark': 0,
   'cryptoAndMore-light': 0,
   'cryptoAndMore-dark': 0,
-  'noVisability-light': 0,
+  'noVisibility-light': 0,
   'graphsGray-light': 0,
   'graphsGray-dark': 0,
-  'noVisability-dark': 0,
+  'noVisibility-dark': 0,
   'walletWarning-light': 0,
   'walletWarning-dark': 0,
 };

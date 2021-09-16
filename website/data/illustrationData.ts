@@ -194,7 +194,7 @@ export const pictogramNames = [
   'noAnnualFee',
   'noNotificationsGray',
   'noTransactions',
-  'noVisability',
+  'noVisibility',
   'noWiFi',
   'notifications',
   'orders',

@@ -195,7 +195,7 @@ export type IllustrationPictogramNames =
   | 'noAnnualFee'
   | 'noNotificationsGray'
   | 'noTransactions'
-  | 'noVisability'
+  | 'noVisibility'
   | 'noWiFi'
   | 'notifications'
   | 'orders'

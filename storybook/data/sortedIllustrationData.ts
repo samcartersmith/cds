@@ -550,10 +550,10 @@ export const sortedImg = [
   'referralsBonusGray-dark',
   'cryptoAndMore-light',
   'cryptoAndMore-dark',
-  'noVisability-light',
+  'noVisibility-light',
   'graphsGray-light',
   'graphsGray-dark',
-  'noVisability-dark',
+  'noVisibility-dark',
   'walletWarning-light',
   'walletWarning-dark',
 ] as const;

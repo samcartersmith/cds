@@ -3852,7 +3852,7 @@ export const manifestData = {
     '3499:611': {
       variant: 'pictogram',
       description: '',
-      name: 'noVisability',
+      name: 'noVisibility',
       spectrum: 'light',
       versionNum: 0,
     },
@@ -3873,7 +3873,7 @@ export const manifestData = {
     '3499:633': {
       variant: 'pictogram',
       description: '',
-      name: 'noVisability',
+      name: 'noVisibility',
       spectrum: 'dark',
       versionNum: 0,
     },

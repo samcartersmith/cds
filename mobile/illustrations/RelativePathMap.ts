@@ -942,9 +942,9 @@ export const IllustrationFilePathMap: Record<
     dark: require('./images/dark/noTransactions-0.svg'),
     fileFormat: 'svg',
   },
-  noVisability: {
-    light: require('./images/light/noVisability-0.svg'),
-    dark: require('./images/dark/noVisability-0.svg'),
+  noVisibility: {
+    light: require('./images/light/noVisibility-0.svg'),
+    dark: require('./images/dark/noVisibility-0.svg'),
     fileFormat: 'svg',
   },
   noWiFi: {
