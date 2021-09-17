@@ -1,6 +1,23 @@
-# Contribute to Coinbase Design System - Web
+# Contribute to Coinbase Design System
 
-## Code Generation
+If you are having issues with your environment please review the [monorepo README](https://github.cbhq.net/mono/repo/tree/master/#monorepo)
+
+Another thing you may want to do is run this command at the root of the mono/repo. Feel free to grab some ☕️ as there are a lot of dependencies.
+
+```bash
+yarn
+```
+
+### Table of Contents
+
+- [Web Development](#web-development)
+- [React Native Development](#react-native-development)
+- [The CDS Website Development](#cds-website-development)
+- [Miscellaneous](#miscellaneous)
+
+# Web development
+
+## Setup
 
 Please run codegen before running anything else to create necessary code including icons.
 
@@ -8,96 +25,24 @@ Please run codegen before running anything else to create necessary code includi
 make codegen
 ```
 
-## API Documentation
+## CDS-Web Development Workflow
 
-Web + Mobile documentation is viewed together on our website and we try minimze API deviation. However, there are times when the behavior slightly varies or there is a unique callout we want to make for a specific platform. To accomadate this we use JSDOC tags within API definitions to aid in documentation generation.
+The section outlines how components for web should be developed within CDS.
 
-- `@default`: Default value of a property
-- `@danger`: Property which is used as an escape hatch and is not recommended.
-- `@link`: Link to MDN React Native or other documentation which is relevant
-- `@experimental`: Experimental/unstable API's
-- `@deprecated`: Deprecated API's
+### Storybook
 
-If you want to add a custom example or more details for a component you can create a directory in website/docs/components/examples matching the component's name. In that component's directory you can add mdx files for intro.mdx (shown at the very top of page), outro.mdx (at the very bottom of page) or for individual properties. For example, in examples/ThemeProvider we have a spectrum.mdx file with a live code example.
-
-Don't forget to add an index.ts to that component's example directory with exports for any children mdx files. You will also need to add a wildcard export for the directory in website/docs/components/examples/index.ts.
-
-## Create A New Package
-
-1. Run `make new.package name=<package>`.
-2. Edit [cds_package.bzl](./cds_package.bzl) `PACKAGES` to include the new package.
-3. Check out `<package>/basepackage.json` and `<package>/BUILD.bazel` and make necessary updates.
-4. Update `<package>/CHANGELOG.md`.
-
-## Package
-
-To use CDS packages outside of mono/repo, NPM packages are available through the Coinbase's internal NPM registry. Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules at `lib/`. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
-
-### Publishing to the NPM registry
-
-Continuous deploy is turned on for CDS package publishing. If you need to trigger a manual deploy, do the following
-
-1. Run
-
-```bash
-assume-role development eng-ops (for development)
-ash_login (for production)
-ash deploy -p eng/shared/design-system/cloud
-```
-
-2. Enter the number for the commit/package you want to deploy for prod or development registry
-
-3. Check that the package is published at[development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
-
-## Adoption Script
-
-Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
-
-1. Run:
-
-```bash
-  // multiple projects
-  make prepare.adoption projects=commerce,assethub,prime
-
-  // single project
-  make prepare.adoption projects=commerce
-```
-
-2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
-
-## Commit Message Conventions
-
-To ensure the changelog is correctly generated and packages are correctly versioned and released, you must format your _squash_ commit message the following way:
-
-```
-# Without a jira ticket
-[trivial] {logType}: {message}
-
-# With one or many jira tickets
-[CDS-xxx] {logType}: {message}
-```
-
-With `logType` being one of the following:
-
-- breaking - major version bump
-- feat, change, new, update - minor version bump
-- fix, patch, chore, types - patch version bump
-- release, internal, docs, tests - no-op
-
-More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/master/tools/js/releasePackages.ts)
-
-## Storybook
-
-### Run Storybook Local Dev Server
-
-```bash
-make start.story
-```
+Storybook is the best place to add and iterate on new CDS components for web.
 
 ### Build Storybook
 
 ```bash
 make build.story
+```
+
+### Run Storybook Local Dev Server
+
+```bash
+make start.story
 ```
 
 ### Deploy Master Design System
@@ -133,60 +78,9 @@ pkg_zip(
 bazel run //eng/shared/design-system/web/cloud:storybook_feature
 ```
 
-## CDS Website
+# React Native Development
 
-Our website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
-
-### Local Development
-
-```console
-make start.website
-```
-
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```console
-make build.website
-```
-
-### Serve
-
-```console
-make serve.website
-```
-
-### Deploy
-
-```console
-ash_login
-make deploy.website
-```
-
-### Deploy Dev
-
-```console
-ash_login
-make deploy.website-dev
-```
-
-## How to auto generate component docs
-
-Once you have built the component for **_both web and mobile_**. You can auto generate the documentation associated with it by following these steps:
-
-1. Update docs for `codegen/website/docgen.ts`. Add the following line to docgen. Replace `<component-name>` with name of your component.
-
-```
-{
-  dest: `${WEBSITE_COMPONENT_DOCS_DIR}/<component-name>.mdx`,
-  data: getDocgenForPackage({ componentName: <component-name> }),
-}
-```
-
-2. Run `make codegen` in the root of eng/shared/design-system
-
-## Guide for Setting up CDS React Native development environment
+## Setup
 
 This section helps you install and build the CDS React Native app to test components on mobile.
 
@@ -301,7 +195,7 @@ Failed to open {$HOME}/Library/LaunchAgents/com.github.facebook.watchman.plist f
 
 Try running `sudo chown -R $(whoami):staff ~/Library/LaunchAgents` (from [this github issue](https://github.com/facebook/react-native/issues/9116))
 
-### Installation Steps and Build Steps
+## React Native CDS Development Workflow
 
 _Run the following steps in the terminal in this order_
 
@@ -312,3 +206,138 @@ _Run the following steps in the terminal in this order_
 ### Troubleshooting Guide
 
 - **Emulator failed to load** Try manually launching the Emulator from terminal. Be sure the emulator also exists in Android Studio's AVD manager.
+
+# CDS Website Development
+
+The CDS website (which can be accessed at go/cds or https://cds.cbhq.net) is built using using Docusaurus 2 and is where we document CDS principles, best practices, components, hooks and more. This website is very important because it gives the consumers of the design system a centralized location to identify the best way for their team to leverage the design system.
+
+As you implement CDS components it will be expected that you will contribute to this site's documentation to clearly communicate the associated principles to our consumers.
+
+### Local Development
+
+```console
+make start.website
+```
+
+This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```console
+make build.website
+```
+
+### Serve
+
+```console
+make serve.website
+```
+
+### Deploy
+
+```console
+ash_login
+make deploy.website
+```
+
+### Deploy Dev
+
+```console
+ash_login
+make deploy.website-dev
+```
+
+## How to auto generate component docs
+
+Once you have built the component for **_both web and mobile_**. You can auto generate the documentation associated with it by following these steps:
+
+1. Update docs for `codegen/website/docgen.ts`. Add the following line to docgen. Replace `<component-name>` with name of your component.
+
+```
+{
+  dest: `${WEBSITE_COMPONENT_DOCS_DIR}/<component-name>.mdx`,
+  data: getDocgenForPackage({ componentName: <component-name> }),
+}
+```
+
+2. Run `make codegen` in the root of eng/shared/design-system
+
+# Miscellaneous
+
+### API Documentation
+
+Web + Mobile documentation is viewed together on our website and we try minimze API deviation. However, there are times when the behavior slightly varies or there is a unique callout we want to make for a specific platform. To accomadate this we use JSDOC tags within API definitions to aid in documentation generation.
+
+- `@default`: Default value of a property
+- `@danger`: Property which is used as an escape hatch and is not recommended.
+- `@link`: Link to MDN React Native or other documentation which is relevant
+- `@experimental`: Experimental/unstable API's
+- `@deprecated`: Deprecated API's
+
+If you want to add a custom example or more details for a component you can create a directory in website/docs/components/examples matching the component's name. In that component's directory you can add mdx files for intro.mdx (shown at the very top of page), outro.mdx (at the very bottom of page) or for individual properties. For example, in examples/ThemeProvider we have a spectrum.mdx file with a live code example.
+
+Don't forget to add an index.ts to that component's example directory with exports for any children mdx files. You will also need to add a wildcard export for the directory in website/docs/components/examples/index.ts.
+
+### Create A New Package
+
+1. Run `make new.package name=<package>`.
+2. Edit [cds_package.bzl](./cds_package.bzl) `PACKAGES` to include the new package.
+3. Check out `<package>/basepackage.json` and `<package>/BUILD.bazel` and make necessary updates.
+4. Update `<package>/CHANGELOG.md`.
+
+### Package
+
+To use CDS packages outside of mono/repo, NPM packages are available through the Coinbase's internal NPM registry. Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules at `lib/`. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
+
+#### Publishing to the NPM registry
+
+Continuous deploy is turned on for CDS package publishing. If you need to trigger a manual deploy, do the following
+
+1. Run
+
+```bash
+assume-role development eng-ops (for development)
+ash_login (for production)
+ash deploy -p eng/shared/design-system/cloud
+```
+
+2. Enter the number for the commit/package you want to deploy for prod or development registry
+
+3. Check that the package is published at[development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
+
+### Adoption Script
+
+Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
+
+1. Run:
+
+```bash
+  // multiple projects
+  make prepare.adoption projects=commerce,assethub,prime
+
+  // single project
+  make prepare.adoption projects=commerce
+```
+
+2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
+
+### Commit Message Conventions
+
+To ensure the changelog is correctly generated and packages are correctly versioned and released, you must format your _squash_ commit message the following way:
+
+```
+# Without a jira ticket
+[trivial] {logType}: {message}
+
+# With one or many jira tickets
+[CDS-xxx] {logType}: {message}
+```
+
+With `logType` being one of the following:
+
+- breaking - major version bump
+- feat, change, new, update - minor version bump
+- fix, patch, chore, types - patch version bump
+- release, internal, docs, tests - no-op
+
+More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/master/tools/js/releasePackages.ts)
