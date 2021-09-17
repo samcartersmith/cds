@@ -8,6 +8,30 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.22.0 (9/16/2021, 05:19 PM PST)
+
+#### 💥 Breaking
+
+- Removed 36 spotSquare. Added 6 illustrations. [#33485](https://github.cbhq.net/mono/repo/pull/33485)
+
+#### 🚀 Updates
+
+- Make <Box/> component faster for most use cases. [#33759](https://github.cbhq.net/mono/repo/pull/33759)
+
+#### 🐞 Fixes
+
+- Fix mispelling in noVisibility illustration. [#33739](https://github.cbhq.net/mono/repo/pull/33739)
+- Pbpaste | tail -1. [#33688](https://github.cbhq.net/mono/repo/pull/33688)
+- Add new Jest utils package. [#33318](https://github.cbhq.net/mono/repo/pull/33318)
+- Add Jest presets and migrate to new `jest_test` Bazel macro. [#31173](https://github.cbhq.net/mono/repo/pull/31173)
+
+#### 📘 Misc
+
+- Added scaleMultiplier prop to illustration. [#32010](https://github.cbhq.net/mono/repo/pull/32010), [CDS-1367](https://jira.coinbase-corp.com/browse/CDS-1367)
+- Use new linting, so its faster. [#33221](https://github.cbhq.net/mono/repo/pull/33221)
+- Input, BetaTextInput, BetaCompactTextInput and Helper Components to build custom Input. [#32450](https://github.cbhq.net/mono/repo/pull/32450), [CDS-747](https://jira.coinbase-corp.com/browse/CDS-747)
+- Added spinner documentation. [#32124](https://github.cbhq.net/mono/repo/pull/32124), [CDS-549](https://jira.coinbase-corp.com/browse/CDS-549)
+
 ## 0.21.0 (9/15/2021, 12:21 PM PST)
 
 #### 💥 Breaking
