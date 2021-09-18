@@ -7,11 +7,11 @@ import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import { navigationIconNames, navigationIconSizes } from '@cbhq/cds-website/data/iconData';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import { cx } from 'linaria';
 import throttle from 'lodash/throttle';
+import { navigationIconNames, navigationIconSizes } from ':cds-website/data/iconData';
 
 import { elevation, searchBox } from '../styles';
 
@@ -32,7 +32,7 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
   return (
     <ThemeProvider>
       <Box flexWrap="wrap">
-        {STATES.map(item => (
+        {STATES.map((item) => (
           <Box key={item} spacingEnd={1} spacingBottom={1}>
             <Button
               compact
@@ -56,8 +56,8 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
 
       <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
         {navigationIconNames
-          .filter(name => name.includes(query))
-          .map(filteredName => (
+          .filter((name) => name.includes(query))
+          .map((filteredName) => (
             <VStack spacing={3} alignItems="center" key={filteredName}>
               <NavigationIcon
                 title={filteredName}
@@ -78,8 +78,11 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
 
 export const NavigationIconSheet = () => {
   return (
-    <Tabs defaultValue="m" values={navigationIconSizes.map(item => ({ label: item, value: item }))}>
-      {navigationIconSizes.map(item => (
+    <Tabs
+      defaultValue="m"
+      values={navigationIconSizes.map((item) => ({ label: item, value: item }))}
+    >
+      {navigationIconSizes.map((item) => (
         <TabItem key={item} value={item}>
           <IconSheetForSize size={item} />
         </TabItem>

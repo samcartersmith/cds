@@ -1,7 +1,9 @@
-import {AdopterSearchResult} from "@cbhq/cds-website/components/AdoptionTracker/types";
+import { AdopterSearchResult } from ':cds-website/components/AdoptionTracker/types';
 
-
-export function getResultsByType(results: AdopterSearchResult[]): {props: AdopterSearchResult[], components: AdopterSearchResult[]} {
+export function getResultsByType(results: AdopterSearchResult[]): {
+  props: AdopterSearchResult[];
+  components: AdopterSearchResult[];
+} {
   const componentSearchResults: AdopterSearchResult[] = [];
   const propSearchResults: AdopterSearchResult[] = [];
   for (const result of results) {
@@ -16,8 +18,8 @@ export function getResultsByType(results: AdopterSearchResult[]): {props: Adopte
 
   return {
     props: propSearchResults,
-    components: componentSearchResults
-  }
+    components: componentSearchResults,
+  };
 }
 
 export function isMatch(result: AdopterSearchResult, fields: string[]) {

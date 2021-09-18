@@ -6,26 +6,17 @@ import { argv } from 'yargs';
 // bazel-out/darwin-fastbuild/bin/eng/shared/design-system/web/cds.css
 const outputDir = path.normalize(argv.outputDir as string);
 
-// bazel-out/darwin-fastbuild/bin/eng/shared/design-system/web/package_merged
-const packageJsonPath = path.normalize(argv.packageJsonPath as string);
-
-// bazel-out/darwin-fastbuild/bin/eng/shared/design-system/fonts/package_copy
-const fontsOutputDir = path.normalize(argv.fontsOutputDir as string);
-
-// bazel-out/darwin-fastbuild/bin/eng/shared/design-system/web/package_merged
-const webOutputDir = path.normalize(argv.webOutputDir as string);
-
 async function readCss(files: string[]): Promise<string> {
-  const css = await Promise.all(files.map(file => fs.promises.readFile(file, 'utf8')));
+  const css = await Promise.all(files.map(async (file) => fs.promises.readFile(file, 'utf8')));
 
   return css.reduce((out, code) => out + code, '');
 }
 
 function mapCssPaths(files: string[], cssFiles: Set<string>) {
-  return files.map(fileName => {
+  return files.map((fileName) => {
     let newPath = '';
 
-    cssFiles.forEach(cssFile => {
+    cssFiles.forEach((cssFile) => {
       if (cssFile.endsWith(fileName)) {
         cssFiles.delete(cssFile);
         newPath = cssFile;
@@ -41,48 +32,55 @@ async function copyFontsToOut(dir: string) {
     await glob(`${dir}/**/*.woff2`, {
       absolute: true,
       onlyFiles: true,
-    })
+    }),
   );
 
   await Promise.all(
-    Array.from(fontFiles).map(async fontFile => {
+    Array.from(fontFiles).map(async (fontFile) => {
       await fs.promises.writeFile(
         path.join(outputDir, path.basename(fontFile)),
-        await fs.promises.readFile(fontFile)
+        await fs.promises.readFile(fontFile),
       );
-    })
+    }),
   );
 }
 
 async function writeCssToOut(css: string, cssNoFonts: string) {
-  const packageVersion = JSON.parse(await fs.promises.readFile(packageJsonPath, 'utf8')).version;
+  const packageVersion = (
+    JSON.parse(
+      await fs.promises.readFile(require.resolve('@cbhq/cds-web/package.json'), 'utf8'),
+    ) as { version: string }
+  ).version;
 
   await Promise.all([
     fs.promises.writeFile(
       path.join(outputDir, `version-${packageVersion}.css`),
       css.replace(/\n/g, ''),
-      'utf8'
+      'utf8',
     ),
     fs.promises.writeFile(
       path.join(outputDir, `version-${packageVersion}-no-fonts.css`),
       cssNoFonts.replace(/\n/g, ''),
-      'utf8'
+      'utf8',
     ),
   ]);
 }
 
 async function combine() {
+  const fontsOutputDir = path.dirname(require.resolve('@cbhq/cds-fonts'));
+  const webOutputDir = path.dirname(require.resolve('@cbhq/cds-web'));
+
   // Extract CSS from web package first
   const cssFiles = new Set(
     await glob(`${webOutputDir}/**/*.css`, {
       absolute: true,
       onlyFiles: true,
-    })
+    }),
   );
 
   // Extract critical CSS that *must* be at the top of the file
   const criticalCss = await readCss(
-    mapCssPaths(['global.css', 'resetStyles.css', 'scale.css', 'spectrum.css'], cssFiles)
+    mapCssPaths(['global.css', 'resetStyles.css', 'scale.css', 'spectrum.css'], cssFiles),
   );
 
   // Extract icon font CSS
@@ -105,4 +103,4 @@ async function combine() {
   ]);
 }
 
-combine();
+void combine();

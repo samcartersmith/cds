@@ -32,7 +32,7 @@ yarn add @cbhq/cds-lottie
 ### Testing locally in a project outside of monorepo
 
 - Run `make build.lottie`
-- The package will be built and output to `bazel-out/darwin-fastbuild/bin/eng/shared/design-system/lottie-files/package_merged`
+- The package will be built and output to `bazel-out/darwin-fastbuild/bin/eng/shared/design-system/lottie-files/package`
 - control + click on this folder in file editor of VSCode and select `Copy path`. This will copy the absolute path of this repo to your clipboard.
 - Go to the repo you would like to test this package in and add `@cbhq/cds-lottie-files` with the value as `file:` followed by the pasted path to the `resolutions` section.
 
@@ -41,7 +41,7 @@ If `resolutions` object does not already exist you will need to add one.
 The final key/value should look something like
 
 ```
-"@cbhq/cds-lottie-files": "file:/Users/katherinemartinez/src/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/lottie-files/package_merged"
+"@cbhq/cds-lottie-files": "file:/Users/katherinemartinez/src/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/lottie-files/package"
 ```
 
 For more details about module resolutions for package.json files can be found [here](https://classic.yarnpkg.com/en/docs/selective-version-resolutions/).

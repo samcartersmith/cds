@@ -3,6 +3,7 @@ load("//tools:def.bzl", "release_packages", "stylelint_test")
 load("//tools/js:def.bzl", "jest_test", "storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
+load("//eng/shared/design-system/web:deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
 
 exports_files([
     ".babelrc.js",
@@ -270,16 +271,15 @@ storybook(
     name = "storybook",
     srcs = [
         ":web_source",
+        "//eng/shared/design-system/fonts:runtime_source",
         "//eng/shared/design-system/web:story_source",
     ],
     static_files = ["eng/shared/design-system/fonts"],
     storybook_config = "//eng/shared/design-system/storybook:.storybook",
-    deps = append_cds_web_deps([
-        "@npm//react-dom",
+    deps = [
         "@npm//react-router-dom",
-        "@npm//react",
         "@npm//typescript",
-    ]),
+    ] + DEPS + PEER_DEPS + DEV_DEPS,
 )
 
 # *************************

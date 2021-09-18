@@ -1,4 +1,4 @@
-import { createStories } from '@cbhq/cds-storybook/stories/ListCellFallback';
+import { createStories } from ':cds-storybook/stories/ListCellFallback';
 
 import { ListCellFallback } from '../ListCellFallback';
 

@@ -4,7 +4,7 @@ import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Checkbox } from '@cbhq/cds-mobile/controls/Checkbox';
 import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
 import { Box } from '@cbhq/cds-mobile/layout';
-import { createStories } from '@cbhq/cds-storybook/stories/ListCell';
+import { createStories } from ':cds-storybook/stories/ListCell';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';

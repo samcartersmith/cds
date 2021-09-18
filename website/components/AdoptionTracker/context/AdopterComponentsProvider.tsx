@@ -1,10 +1,10 @@
 import React, { useMemo, memo, createContext } from 'react';
 
+import { orderBy, sumBy } from 'lodash';
 import type {
   ComponentData,
   AdopterComponents,
-} from '@cbhq/cds-website/components/AdoptionTracker/types';
-import { orderBy, sumBy } from 'lodash';
+} from ':cds-website/components/AdoptionTracker/types';
 
 const AdopterComponentsGroupFallback = {
   totalInstances: 0,

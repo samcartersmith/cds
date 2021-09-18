@@ -2,7 +2,7 @@ import React from 'react';
 import { ContentCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
 import { Box } from '@cbhq/cds-mobile/layout';
-import { createStories } from '@cbhq/cds-storybook/stories/ContentCell';
+import { createStories } from ':cds-storybook/stories/ContentCell';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';

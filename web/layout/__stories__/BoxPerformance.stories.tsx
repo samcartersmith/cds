@@ -1,5 +1,5 @@
-import { Box } from '@cbhq/cds-web/layout';
 import { withPerformance } from 'storybook-addon-performance';
+import { Box } from '../Box';
 
 export default {
   component: Box,

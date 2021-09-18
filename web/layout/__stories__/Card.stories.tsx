@@ -1,4 +1,4 @@
-import { createStories, CreateCardProps } from '@cbhq/cds-storybook/stories/Card';
+import { createStories, CreateCardProps } from ':cds-storybook/stories/Card';
 
 import { Button } from '../../buttons/Button';
 import { ListCell, CellMedia } from '../../cells';

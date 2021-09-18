@@ -1,6 +1,4 @@
-load("//eng/shared/design-system:cds_package.bzl", "cds_package")
-load(":deps.bzl", "DEPENDENCIES", "PEER_DEPENDENCIES")
-load("//tools/js:def.bzl", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test", "ts_package")
 
 # Files to publish to NPM
 filegroup(
@@ -51,10 +49,17 @@ eslint_test(
 )
 
 # Package building and publishing
-cds_package(
-    name = "lottie-files",
+ts_package(
+    name = "package",
+    package_name = "@cbhq/cds-lottie-files",
     srcs = [":runtime_source"],
-    cds_dependencies = [],
-    dependencies = DEPENDENCIES,
-    peer_dependencies = PEER_DEPENDENCIES,
+    dev_deps = [],
+    peer_deps = [],
+    relative_source_directory = ".",
+    static_files = {
+        ":CHANGELOG.md": "./CHANGELOG.md",
+        ":README.md": "./README.md",
+    },
+    typescript_config = ":tsconfig.build.json",
+    deps = [],
 )

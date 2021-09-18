@@ -1,7 +1,6 @@
-import { createStories } from '@cbhq/cds-storybook/stories/IllustrationPercy';
-import { ThemeProvider } from '@cbhq/cds-web/system';
+import { createStories } from ':cds-storybook/stories/IllustrationPercy';
 import { HStack, VStack, Box } from '../../layout';
-
+import { ThemeProvider } from '../../system';
 import { TextLabel1 } from '../../typography';
 import { Illustration } from '../Illustration';
 

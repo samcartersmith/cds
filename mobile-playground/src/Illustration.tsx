@@ -9,9 +9,9 @@ import { StackScreenProps, createStackNavigator } from '@react-navigation/stack'
 
 import { View } from 'react-native';
 import { pascalCase } from '@cbhq/cds-utils';
-import { createStories } from '@cbhq/cds-storybook/stories/Illustration';
-
 import { illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
+import { createStories } from ':cds-storybook/stories/Illustration';
+
 import Example from './internal/Example';
 import ExampleScreen from './internal/ExamplesScreen';
 

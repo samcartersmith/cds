@@ -1,11 +1,10 @@
-import {useRootSpectrum} from "@cbhq/cds-common/spectrum/useRootSpectrum";
-import {useRootSpectrumPreferenceUpdater} from "@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater";
-import {useCallback, useEffect, useMemo, useState} from "react";
-import {Spectrum} from "@cbhq/cds-common";
-import {updateThemeStorage} from "@cbhq/cds-website/src/theme/ThemeStorage";
+import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
+import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
+import { useCallback, useEffect, useMemo } from 'react';
+import { Spectrum } from '@cbhq/cds-common';
+import { updateThemeStorage } from ':cds-website/src/theme/ThemeStorage';
 
 const useTheme = () => {
-
   const spectrum = useRootSpectrum();
 
   const spectrumUpdate = useRootSpectrumPreferenceUpdater();
@@ -32,8 +31,7 @@ const useTheme = () => {
     isDarkTheme,
     setLightTheme,
     setDarkTheme,
-  }
-
-}
+  };
+};
 
 export default useTheme;

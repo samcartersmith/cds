@@ -12,38 +12,39 @@ import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import { navigationIconNames, iconNames, iconSizes } from '@cbhq/cds-website/data/iconData';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import { cx } from 'linaria';
 import throttle from 'lodash/throttle';
+import { navigationIconNames, iconNames, iconSizes } from ':cds-website/data/iconData';
 
 import { elevation, searchBox } from './styles';
 
 type Categories = 'product' | 'navigation';
 
-const categoryToData: {
-  [category: string]: {
+const categoryToData: Record<
+  string,
+  {
     names: readonly (IconName | NavigationIconName)[];
     sizes: readonly (IconSize | Exclude<IconSize, 'xs'>)[];
-  };
-} = {
+  }
+> = {
   product: {
     names: iconNames,
     sizes: iconSizes,
   },
   navigation: {
     names: navigationIconNames,
-    sizes: iconSizes.filter(size => !['xs'].includes(size)),
+    sizes: iconSizes.filter((size) => !['xs'].includes(size)),
   },
 };
 
-interface IconBaseContentProp<StateType> {
+type IconBaseContentProp<StateType> = {
   size: IconSize;
   defaultState: StateType;
   states: StateType[];
   category: Categories;
-}
+};
 
 const IconBaseContentSheet = <StateType extends string>({
   size,
@@ -116,11 +117,11 @@ const IconBaseContentSheet = <StateType extends string>({
 
       <Box flexWrap="wrap" background={background} spacingTop={1} spacingBottom={3}>
         {names
-          .filter(name => {
+          .filter((name) => {
             const re = new RegExp(query, 'gi');
             return (name.match(re)?.length ?? 0) > 0;
           })
-          .map(filteredName => {
+          .map((filteredName) => {
             const finalName =
               category === 'navigation'
                 ? (`${filteredName}${state}` as NavigationIconInternalName)
@@ -128,11 +129,7 @@ const IconBaseContentSheet = <StateType extends string>({
 
             return (
               <VStack spacing={3} alignItems="center" key={filteredName}>
-                <IconBase
-                  name={finalName}
-                  size={size as IconSize}
-                  color={color as PaletteForeground}
-                />
+                <IconBase name={finalName} size={size} color={color as PaletteForeground} />
                 <TextLabel1 align="center" as="p" spacing={2}>
                   {filteredName}
                 </TextLabel1>
@@ -148,8 +145,8 @@ export const IconBaseSheet = ({ category }: { category: Categories }) => {
   const { sizes } = categoryToData[category];
 
   return (
-    <Tabs defaultValue="m" values={sizes.map(item => ({ label: item, value: item }))}>
-      {sizes.map(item => (
+    <Tabs defaultValue="m" values={sizes.map((item) => ({ label: item, value: item }))}>
+      {sizes.map((item) => (
         <TabItem key={item} value={item}>
           <IconBaseContentSheet
             size={item}

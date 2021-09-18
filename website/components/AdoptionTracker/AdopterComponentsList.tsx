@@ -9,15 +9,15 @@ import AutoSizer, { Size } from 'react-virtualized/dist/commonjs/AutoSizer';
 import {
   AdopterTabContext,
   AdopterTabContextType,
-} from '@cbhq/cds-website/components/AdoptionTracker/context/AdopterTabProvider';
+} from ':cds-website/components/AdoptionTracker/context/AdopterTabProvider';
 import {
   AdopterSearchContext,
   AdopterSearchContextType,
-} from '@cbhq/cds-website/components/AdoptionTracker/search/AdopterSearchProvider';
+} from ':cds-website/components/AdoptionTracker/search/AdopterSearchProvider';
 import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './types';
 import { AdopterComponentDetails } from './AdopterComponentDetails';
 import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
-import {getResultsByType, isMatch} from "./search/SearchUtils";
+import { getResultsByType, isMatch } from './search/SearchUtils';
 
 type AdopterListCellProps = ComponentData & {
   isActive: boolean;
@@ -69,7 +69,8 @@ export const AdopterComponentsList = memo(
     const [activeComponentIndex, setActiveComponentIndex] = useState<number>(0);
 
     const { results } = useContext(AdopterSearchContext) as AdopterSearchContextType;
-    const {props: propSearchResults, components: componentSearchResults} = getResultsByType(results);
+    const { props: propSearchResults, components: componentSearchResults } =
+      getResultsByType(results);
 
     const { setTabKey } = useContext(AdopterTabContext) as AdopterTabContextType;
     useEffect(() => {

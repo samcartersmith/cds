@@ -1,7 +1,7 @@
 load("//tools:def.bzl", "node_package_deployable")
 
 def cds_deployable(name):
-    deploy_label = "//eng/shared/design-system/%s:package" % name
+    deploy_label = "//eng/shared/design-system/%s:package_tar" % name
 
     # Publish to development
     node_package_deployable(

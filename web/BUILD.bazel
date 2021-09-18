@@ -1,6 +1,5 @@
-load("//eng/shared/design-system:cds_package.bzl", "cds_package")
-load(":deps.bzl", "CDS_DEPENDENCIES", "DEPENDENCIES", "PEER_DEPENDENCIES", "TYPE_DEPENDENCIES")
-load("//tools/js:def.bzl", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test", "ts_package")
+load(":deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
 
 SOURCE = [
     "**/*.ts",
@@ -39,9 +38,9 @@ filegroup(
 
 eslint_test(
     name = "lint",
-    srcs = CDS_DEPENDENCIES,
+    srcs = ["//eng/shared/design-system/storybook:source"],
     lints = [":source"],
-    deps = TYPE_DEPENDENCIES,
+    deps = DEPS + PEER_DEPS + DEV_DEPS,
 )
 
 # Files for storybook
@@ -55,20 +54,22 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-cds_package(
-    name = "web",
+# Package building and publishing
+ts_package(
+    name = "package",
+    package_name = "@cbhq/cds-web",
     srcs = [
         ":runtime_source",
-        # Required for CSS token interpolation
-        "//eng/shared/design-system/common:runtime_source",
+        "//eng/shared/design-system:.babelrc.js",
+        "//eng/shared/design-system:linaria.config.js",
     ],
-    cds_dependencies = [
-        "common",
-        "fonts",
-        "lottie-files",
-        "utils",
-    ],
-    dependencies = DEPENDENCIES,
-    peer_dependencies = PEER_DEPENDENCIES,
-    type_dependencies = TYPE_DEPENDENCIES,
+    dev_deps = DEV_DEPS,
+    peer_deps = PEER_DEPS,
+    relative_source_directory = ".",
+    static_files = {
+        ":CHANGELOG.md": "./CHANGELOG.md",
+        ":README.md": "./README.md",
+    },
+    typescript_config = ":tsconfig.build.json",
+    deps = DEPS,
 )

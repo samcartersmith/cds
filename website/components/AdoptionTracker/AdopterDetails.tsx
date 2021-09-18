@@ -1,9 +1,9 @@
 import React, { memo, useContext, useMemo } from 'react';
-import { Tabs } from '@cbhq/cds-website/components/Tabs';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { TextTitle1 } from '@cbhq/cds-web/typography';
 import { IconButton } from '@cbhq/cds-web/buttons';
-import { StatsTextStack } from '@cbhq/cds-website/components/StatsTextStack';
+import { Tabs } from ':cds-website/components/Tabs';
+import { StatsTextStack } from ':cds-website/components/StatsTextStack';
 import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
 import { useAdopterComponents } from './hooks/useAdopterComponents';
 import { useAdoptionPercent } from './hooks/useAdoptionPercent';

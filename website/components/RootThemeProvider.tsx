@@ -3,8 +3,8 @@ import React, { memo, useMemo } from 'react';
 import { DevicePreferencesProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import useTheme from '@theme/hooks/useTheme';
 import ThemeContext from '@theme/ThemeContext';
-import { getThemeStorage } from '@cbhq/cds-website/src/theme/ThemeStorage';
 import { Spectrum } from '@cbhq/cds-common';
+import { getThemeStorage } from ':cds-website/src/theme/ThemeStorage';
 
 const DocusaurusThemeProvider: React.FC = ({ children }) => {
   const { isDarkTheme, setLightTheme, setDarkTheme } = useTheme();
@@ -16,7 +16,7 @@ const DocusaurusThemeProvider: React.FC = ({ children }) => {
 };
 
 export const RootThemeProvider: React.FC = memo(({ children }) => {
-  const storedSpectrum: Spectrum = getThemeStorage() ?? "system";
+  const storedSpectrum: Spectrum = getThemeStorage() ?? 'system';
   return (
     <DevicePreferencesProvider spectrum={storedSpectrum}>
       <ThemeProvider>

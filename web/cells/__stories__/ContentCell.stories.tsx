@@ -1,4 +1,4 @@
-import { createStories } from '@cbhq/cds-storybook/stories/ContentCell';
+import { createStories } from ':cds-storybook/stories/ContentCell';
 
 import { Box } from '../../layout/Box';
 import { CellMedia } from '../CellMedia';

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef } from 'react';
-import { createIconSheet, CreateIconSheetParams } from '@cbhq/cds-storybook/stories/IconSheet';
 import { Icon } from '@cbhq/cds-mobile/icons/Icon';
 import { HStack, VStack } from '@cbhq/cds-mobile/layout';
 import { PressableOpacity, ThemeProvider } from '@cbhq/cds-mobile/system';
@@ -10,6 +9,7 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { convertMotionConfig } from '@cbhq/cds-mobile/animation/convertMotionConfig';
 import { Animated } from 'react-native';
+import { createIconSheet, CreateIconSheetParams } from ':cds-storybook/stories/IconSheet';
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 

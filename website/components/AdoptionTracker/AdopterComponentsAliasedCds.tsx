@@ -1,18 +1,13 @@
-import React, {memo, useCallback, useState} from "react";
-import {ComponentData} from "@cbhq/cds-website/components/AdoptionTracker/types";
-import {TextHeadline, TextLabel2, TextLabel1} from "@cbhq/cds-web/typography";
-import {Divider, VStack} from "@cbhq/cds-web/layout";
-import {useGetGitLink} from "@cbhq/cds-website/components/AdoptionTracker/hooks/useGetGitLink";
-import {BetaCell} from "@cbhq/cds-website/components/BetaCell";
-import {Icon} from "@cbhq/cds-web/icons";
+import React, { memo, useCallback, useState } from 'react';
+import { TextHeadline, TextLabel2, TextLabel1 } from '@cbhq/cds-web/typography';
+import { Divider, VStack } from '@cbhq/cds-web/layout';
+import { Icon } from '@cbhq/cds-web/icons';
+import { ComponentData } from ':cds-website/components/AdoptionTracker/types';
+import { useGetGitLink } from ':cds-website/components/AdoptionTracker/hooks/useGetGitLink';
+import { BetaCell } from ':cds-website/components/BetaCell';
 
 export const AdopterComponentsAliasedCds = memo(
-  ({
-     aliasedCdsComponents,
-   }: {
-    aliasedCdsComponents: ComponentData['aliasedCdsComponents'];
-  }) => {
-
+  ({ aliasedCdsComponents }: { aliasedCdsComponents: ComponentData['aliasedCdsComponents'] }) => {
     const getGitLink = useGetGitLink();
 
     const [activeProp, setActiveProp] = useState<string | undefined>();
@@ -33,11 +28,8 @@ export const AdopterComponentsAliasedCds = memo(
     );
 
     const selectedContent = useCallback(
-      (
-        aliasPath: string,
-        callSites: string[],
-      ) => {
-        //TODO add source File with callsite header
+      (aliasPath: string, callSites: string[]) => {
+        // TODO add source File with callsite header
         return (
           <VStack>
             <TextLabel1 as="p" spacingTop={2}>
@@ -52,7 +44,11 @@ export const AdopterComponentsAliasedCds = memo(
                   {aliasPath}
                 </TextLabel2>
               }
-              end={<TextLabel2 as="p" align="end">1 file</TextLabel2>}
+              end={
+                <TextLabel2 as="p" align="end">
+                  1 file
+                </TextLabel2>
+              }
               endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
             />
 
@@ -60,40 +56,41 @@ export const AdopterComponentsAliasedCds = memo(
               Call Sites
             </TextLabel1>
             {callSites.map((callSite) => (
-                <BetaCell
-                  priority="end"
-                  offsetHorizontal={1}
-                  onPress={handleOnPropCallSite(callSite)}
-                  start={
-                    <TextLabel2 as="p" overflow="truncate">
-                      {callSite}
-                    </TextLabel2>
-                  }
-                  end={<TextLabel2 as="p" align="end">1 file</TextLabel2>}
-                  endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
-                />
-              ))
-            }
+              <BetaCell
+                priority="end"
+                offsetHorizontal={1}
+                onPress={handleOnPropCallSite(callSite)}
+                start={
+                  <TextLabel2 as="p" overflow="truncate">
+                    {callSite}
+                  </TextLabel2>
+                }
+                end={
+                  <TextLabel2 as="p" align="end">
+                    1 file
+                  </TextLabel2>
+                }
+                endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
+              />
+            ))}
 
             <Divider spacingTop={2} spacingBottom={2} />
           </VStack>
-        )
-
-
-
+        );
       },
       [handleOnPropCallSite],
     );
 
-    const sortedAliasedComponents = aliasedCdsComponents?.sort((c1, c2) => c2.callSites.length - c1.callSites.length);
+    const sortedAliasedComponents = aliasedCdsComponents?.sort(
+      (c1, c2) => c2.callSites.length - c1.callSites.length,
+    );
 
     return (
       <VStack>
         <TextHeadline as="h4" spacingBottom={1}>
           Aliased Components
         </TextHeadline>
-        {sortedAliasedComponents?.map(({aliasPath, callSites}) => {
-
+        {sortedAliasedComponents?.map(({ aliasPath, callSites }) => {
           const callSiteCount = callSites.length;
           const selected = activeProp === aliasPath;
           const instancesText = callSiteCount === 1 ? 'instance' : 'instances';
@@ -102,8 +99,14 @@ export const AdopterComponentsAliasedCds = memo(
               <BetaCell
                 priority="end"
                 offsetHorizontal={1}
-                start={<TextLabel2 as="p" overflow="truncate">{aliasPath}</TextLabel2>}
-                end={<TextLabel2 as="p" align="end">{`${callSiteCount} ${instancesText}`}</TextLabel2>}
+                start={
+                  <TextLabel2 as="p" overflow="truncate">
+                    {aliasPath}
+                  </TextLabel2>
+                }
+                end={
+                  <TextLabel2 as="p" align="end">{`${callSiteCount} ${instancesText}`}</TextLabel2>
+                }
                 endAccessory={
                   <Icon
                     size="s"
@@ -120,5 +123,5 @@ export const AdopterComponentsAliasedCds = memo(
         })}
       </VStack>
     );
-  }
+  },
 );

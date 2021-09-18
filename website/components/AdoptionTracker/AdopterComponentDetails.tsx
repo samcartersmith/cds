@@ -6,7 +6,7 @@ import { AdopterComponentProps } from './AdopterComponentProps';
 import { AdopterComponentCallSites } from './AdopterComponentCallSites';
 import { AdopterComponentsExtendedStyles } from './AdopterComponentsExtendedStyles';
 import { AdopterCdsRecommendation, useCdsRecommendations } from './AdopterCdsRecommendation';
-import {AdopterComponentsAliasedCds} from "@cbhq/cds-website/components/AdoptionTracker/AdopterComponentsAliasedCds";
+import { AdopterComponentsAliasedCds } from ':cds-website/components/AdoptionTracker/AdopterComponentsAliasedCds';
 
 type DetailsObject = { title: string; details: Details };
 type Details = [string, string[]] | string | string[] | DetailsObject | DetailsObject[];

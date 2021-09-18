@@ -1,6 +1,6 @@
 import { entries } from '@cbhq/cds-utils';
-import { components as cdsComponents } from '@cbhq/cds-website/data/componentsList';
 import { kebabCase, uniq } from 'lodash';
+import { components as cdsComponents } from ':cds-website/data/componentsList';
 
 const tags = {
   Container: ['HStack', 'VStack'],

@@ -1,6 +1,6 @@
 import React, { createContext, memo } from 'react';
 
-import type { AdopterProjectInfo } from '@cbhq/cds-website/components/AdoptionTracker/types';
+import type { AdopterProjectInfo } from ':cds-website/components/AdoptionTracker/types';
 
 export const AdopterProjectInfoContextFallback: AdopterProjectInfo = {
   baseUrl: '',

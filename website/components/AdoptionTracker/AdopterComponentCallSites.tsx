@@ -2,8 +2,8 @@ import React, { useCallback, memo } from 'react';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
 import { orderBy, toPairs } from 'lodash';
-import { BetaCell } from '@cbhq/cds-website/components/BetaCell';
 import { Icon } from '@cbhq/cds-web/icons';
+import { BetaCell } from ':cds-website/components/BetaCell';
 import type { ComponentData } from './types';
 import { useGetGitLink } from './hooks/useGetGitLink';
 

@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import * as templatesMap from '@cbhq/cds-website/data/templatesMap';
+import * as templatesMap from ':cds-website/data/templatesMap';
 
 /*
   See CDS contributing.md for details on adding content to API documentation

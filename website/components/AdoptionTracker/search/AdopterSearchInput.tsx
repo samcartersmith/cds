@@ -1,13 +1,13 @@
-import {
-  AdopterSearchResult,
-  AdopterSearchResultType,
-  ComponentData,
-} from '@cbhq/cds-website/components/AdoptionTracker/types';
 import { Select, Tag } from 'antd';
 import React, { memo, useContext, useState } from 'react';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 import { CustomTagProps } from 'rc-select/lib/interface/generator';
 import { Box } from '@cbhq/cds-web/layout';
+import {
+  AdopterSearchResult,
+  AdopterSearchResultType,
+  ComponentData,
+} from ':cds-website/components/AdoptionTracker/types';
 import { AdopterSearchContext, AdopterSearchContextType } from './AdopterSearchProvider';
 import './ant-styles.css';
 

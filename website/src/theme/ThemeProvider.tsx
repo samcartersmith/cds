@@ -1,3 +1,3 @@
-import { RootThemeProvider } from '@cbhq/cds-website/components/RootThemeProvider';
+import { RootThemeProvider } from ':cds-website/components/RootThemeProvider';
 
 export default RootThemeProvider;

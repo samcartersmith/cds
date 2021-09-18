@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
-  presets: [[path.join(__dirname, '../utils/babel/linariaPreset.js'), require('./linaria.config')]],
+  presets: [[require.resolve('@cbhq/babel-utils/linariaPreset'), require('./linaria.config')]],
 };

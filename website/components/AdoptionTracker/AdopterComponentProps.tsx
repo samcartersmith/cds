@@ -1,16 +1,13 @@
-import React, {useCallback, useState, memo, useContext} from 'react';
-import {Divider, VStack} from '@cbhq/cds-web/layout';
+import React, { useCallback, useState, memo, useContext } from 'react';
+import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
 import { orderBy, sumBy, toPairs } from 'lodash';
-import { BetaCell } from '@cbhq/cds-website/components/BetaCell';
 import { Icon } from '@cbhq/cds-web/icons';
+import { BetaCell } from ':cds-website/components/BetaCell';
 import type { ComponentData } from './types';
 import { useGetGitLink } from './hooks/useGetGitLink';
-import {
-  AdopterSearchContext,
-  AdopterSearchContextType
-} from "./search/AdopterSearchProvider";
-import {getResultsByType, isMatch} from "./search/SearchUtils";
+import { AdopterSearchContext, AdopterSearchContextType } from './search/AdopterSearchProvider';
+import { getResultsByType, isMatch } from './search/SearchUtils';
 
 export const AdopterComponentProps = memo(
   ({ propsWithCallSites }: { propsWithCallSites: ComponentData['propsWithCallSites'] }) => {
@@ -73,12 +70,11 @@ export const AdopterComponentProps = memo(
                 end={<TextLabel2 as="p" align="end">{`${callSiteCount}x`}</TextLabel2>}
                 endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
               />
-            ))
-            }
+            ))}
             <Divider spacingTop={2} spacingBottom={2} />
           </VStack>
-      )
-    },
+        );
+      },
       [handleOnPropCallSite],
     );
 

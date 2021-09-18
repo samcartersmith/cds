@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo, Suspense } from 'react';
 
-import * as templatesMap from '@cbhq/cds-website/data/templatesMap';
 import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
+import * as templatesMap from ':cds-website/data/templatesMap';
 
 type ComponentsMap = typeof templatesMap;
 type ComponentNames = keyof ComponentsMap;
@@ -27,7 +27,7 @@ export const ComponentTabs = <T extends ComponentNames>({ name }: { name: T }) =
       }
       return null;
     },
-    [name]
+    [name],
   );
 
   const designTemplate = useMemo(() => getTemplate('design'), [getTemplate]);

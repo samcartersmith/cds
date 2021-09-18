@@ -13,16 +13,16 @@ import { Box } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
+import { cx } from 'linaria';
+import throttle from 'lodash/throttle';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 import {
   heroSquareNames,
   spotRectangleNames,
   spotSquareNames,
   pictogramNames,
-} from '@cbhq/cds-website/data/illustrationData';
-import { cx } from 'linaria';
-import throttle from 'lodash/throttle';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
+} from ':cds-website/data/illustrationData';
 
 import { elevation, searchBox } from '../icons/styles';
 

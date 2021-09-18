@@ -1,29 +1,26 @@
-DEPENDENCIES = [
+DEPS = [
+    "@npm//@cbhq/cds-common",
+    "@npm//@cbhq/cds-fonts",
+    "@npm//@cbhq/cds-lottie-files",
+    "@npm//@cbhq/cds-utils",
     "@npm//@popperjs/core",
-    "@npm//framer-motion",
     "@npm//focus-visible",
+    "@npm//framer-motion",
     "@npm//linaria",
     "@npm//lottie-web",
     "@npm//react-popper",
     "@npm//reakit",
 ]
 
-PEER_DEPENDENCIES = [
-    "@npm//react",
+PEER_DEPS = [
     "@npm//react-dom",
+    "@npm//react",
 ]
 
-TYPE_DEPENDENCIES = [
+DEV_DEPS = [
+    "@npm//@cbhq/babel-utils",
     "@npm//@types/node",
-    "@npm//@types/react",
     "@npm//@types/react-dom",
-]
-
-BUILD_DEPENDENCIES = DEPENDENCIES + PEER_DEPENDENCIES + TYPE_DEPENDENCIES
-
-CDS_DEPENDENCIES = [
-    "//eng/shared/design-system/common:source",
-    "//eng/shared/design-system/lottie-files:source",
-    "//eng/shared/design-system/storybook:source",
-    "//eng/shared/design-system/utils:source",
+    "@npm//@types/react",
+    "@npm//type-fest",
 ]

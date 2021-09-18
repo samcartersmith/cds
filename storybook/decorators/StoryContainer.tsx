@@ -1,7 +1,8 @@
+import React from 'react';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
-import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
-import { palette } from '@cbhq/cds-web/tokens';
 import { css } from 'linaria';
+import { ThemeProvider } from '../../web/system/ThemeProvider';
+import { palette } from '../../web/tokens';
 
 import type { GetStory } from './types';
 

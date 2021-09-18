@@ -1,4 +1,4 @@
-import { createIconSheet, CreateIconSheetParams } from '@cbhq/cds-storybook/stories/IconSheet';
+import { createIconSheet, CreateIconSheetParams } from ':cds-storybook/stories/IconSheet';
 import { HStack } from '../../layout';
 import { Icon } from '../Icon';
 import { ThemeProvider } from '../../system/ThemeProvider';

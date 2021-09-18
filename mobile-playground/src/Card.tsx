@@ -3,7 +3,7 @@ import { Button } from '@cbhq/cds-mobile/buttons/Button';
 import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Box, VStack, Card } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
-import { createStories } from '@cbhq/cds-storybook/stories/Card';
+import { createStories } from ':cds-storybook/stories/Card';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';

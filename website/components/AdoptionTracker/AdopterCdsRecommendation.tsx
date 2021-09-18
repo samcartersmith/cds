@@ -4,8 +4,8 @@ import { kebabCase } from '@cbhq/cds-utils';
 import { TextHeadline, TextLabel2 } from '@cbhq/cds-web/typography';
 import { Icon } from '@cbhq/cds-web/icons';
 import { VStack } from '@cbhq/cds-web/layout';
-import { BetaCell } from '@cbhq/cds-website/components/BetaCell';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { BetaCell } from ':cds-website/components/BetaCell';
 import { getCdsRecs } from './utils/getCdsRecs';
 
 export const useCdsRecommendations = (name: string) => {

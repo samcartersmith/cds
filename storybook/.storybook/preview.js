@@ -1,7 +1,7 @@
-import { LightStoryContainer } from '../decorators/StoryContainer';
 import { css } from 'linaria';
-import '@cbhq/cds-web/globalStyles';
 import { withPerformance } from 'storybook-addon-performance';
+import { LightStoryContainer } from '../decorators/StoryContainer';
+import '../../web/globalStyles';
 
 export const decorators = [LightStoryContainer, withPerformance];
 

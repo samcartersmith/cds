@@ -18,7 +18,7 @@ describe('usePreviousValue', () => {
 
   it('returns the previous value when input changes', () => {
     const { result } = renderHook(() => useMockPreviousValue());
-    expect(result.current.previousValue).toBe(undefined);
+    expect(result.current.previousValue).toBeUndefined();
     expect(result.current.currentValue).toBe(false);
     act(() => result.current.toggleOn());
     expect(result.current.previousValue).toBe(false);

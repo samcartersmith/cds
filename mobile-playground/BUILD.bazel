@@ -31,12 +31,8 @@ eslint_test(
 )
 
 METRO_SRCS = [
-    "//eng/shared/design-system/common:runtime_source",
-    "//eng/shared/design-system/lottie-files:runtime_source",
-    "//eng/shared/design-system/mobile:runtime_source",
     "//eng/shared/design-system/mobile-playground:source",
     "//eng/shared/design-system/storybook:source",
-    "//eng/shared/design-system/utils:runtime_source",
 ]
 
 METRO_DEPS = append_cds_mobile_deps([

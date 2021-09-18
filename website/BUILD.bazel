@@ -1,4 +1,3 @@
-load("//eng/shared/design-system:config.bzl", "append_cds_web_deps")
 load("//tools/js:def.bzl", "docusaurus")
 
 filegroup(
@@ -26,11 +25,16 @@ docusaurus(
     name = "docusaurus",
     srcs = [
         ":source",
-        "//eng/shared/design-system:build_source",
         "//eng/shared/design-system:linaria.config.js",
     ],
-    deps = append_cds_web_deps([
-        "@npm//react-virtualized",
+    deps = [
+        "@npm//@cbhq/cds-common",
+        "@npm//@cbhq/cds-fonts",
+        "@npm//@cbhq/cds-lottie-files",
+        "@npm//@cbhq/cds-mobile",
+        "@npm//@cbhq/cds-utils",
+        "@npm//@cbhq/cds-web",
         "@npm//antd",
-    ]),
+        "@npm//react-virtualized",
+    ],
 )

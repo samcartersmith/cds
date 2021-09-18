@@ -1,4 +1,4 @@
-import { createStories } from '@cbhq/cds-storybook/stories/ListCell';
+import { createStories } from ':cds-storybook/stories/ListCell';
 
 import { Button, IconButton } from '../../buttons';
 import { Checkbox } from '../../controls';

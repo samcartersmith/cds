@@ -12,43 +12,16 @@ title: Getting started
 
 ## Using CDS inside the [`mono/repo`](https://github.cbhq.net/mono/repo)
 
-### For web projects
+### For web and mobile projects
 
-1. In your application's bazel file, include `"//eng/shared/design-system:web_source"` as part of your webpack srcs:
+In your application's bazel file, include `"@npm//@cbhq/cds-web"` or `"@npm//@cbhq/cds-mobile"` as part of your rules npms deps.
 
 ```bazel
-webpack_srcs = [
-    :runtime_source",
-    "//eng/shared/design-system:web_source",
+DEPS = [
+  "@npm//@cbhq/cds-fonts",
+  "@npm//@cbhq/cds-web",
+  "@npm//react",
 ]
-```
-
-2. In your application's bazel file, include the design system deps as part of your webpack npm deps:
-
-```bazel
-load("//eng/shared/design-system:config.bzl", "append_cds_web_deps")
-webpack_npm_dependencies = append_cds_web_deps([
-  ...
-])
-```
-
-3. In your application's webpack config, include the linaria loader:
-
-```js
-module.exports = () => {
-  const webpackConfig = {
-    ...
-    module: {
-      rules: [
-        {
-          loader: 'linaria/loader',
-          options: { displayName: !isProduction, babelOptions: { rootMode: 'upward' } },
-        },
-        ...
-      ]
-    }
-  }
-}
 ```
 
 ## Using CDS outside the [`mono/repo`](https://github.cbhq.net/mono/repo)

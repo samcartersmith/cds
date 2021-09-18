@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContentCellFallback } from '@cbhq/cds-mobile/cells';
-import { createStories } from '@cbhq/cds-storybook/stories/ContentCellFallback';
+import { createStories } from ':cds-storybook/stories/ContentCellFallback';
 
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';

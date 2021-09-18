@@ -26,16 +26,16 @@ import * as CDSSystem from '@cbhq/cds-web/system';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
-import { ColorTile } from '@cbhq/cds-website/components/ColorTile';
-import { ExampleWithThemeToggles } from '@cbhq/cds-website/components/ExampleWithThemeToggles';
-import { ThemeToggles } from '@cbhq/cds-website/components/ThemeToggles';
-import { assets, assetColors } from '@cbhq/cds-website/data/assets';
-import { loremIpsum } from '@cbhq/cds-website/data/loremIpsum';
-import { prices } from '@cbhq/cds-website/data/prices';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
-
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
+import { ColorTile } from ':cds-website/components/ColorTile';
+import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
+import { ThemeToggles } from ':cds-website/components/ThemeToggles';
+import { assets, assetColors } from ':cds-website/data/assets';
+import { loremIpsum } from ':cds-website/data/loremIpsum';
+import { prices } from ':cds-website/data/prices';
+
 import { useStatusButtons } from './useStatusButtons';
 
 // Add react-live imports you need here
