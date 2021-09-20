@@ -10,19 +10,20 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		288DB007BF624CDE8531D784 /* CoinbaseSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 275F26EFE837410C9F2DA04B /* CoinbaseSans-Medium.otf */; };
 		37E4E60DD7564F2DAC657550 /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF4968F20D5D4A5F8175C182 /* Inter-Regular.otf */; };
 		491A84CC9FBE4D07847E8E68 /* CoinbaseIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3910A7FA9E7048A9A71F4EE2 /* CoinbaseIcons.ttf */; };
+		5A418CEF26F01F20007AD38F /* SwiftDeps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A418CEE26F01F20007AD38F /* SwiftDeps.swift */; };
 		66EFDF560CBDE06421A68B9C /* libPods-cds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72259A04FA4C2DA8A6956C5 /* libPods-cds.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		BF7621E69C1E431C9FDEBA7E /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C8366562661D45C2BF84D8EC /* Graphik-Regular.otf */; };
-		E35038609EB64CF8AF37E57D /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1903814ECFBB444AAAA55758 /* Graphik-Medium.otf */; };
+		9A50C2264DA446CEB753E00C /* CoinbaseSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 512854AE302C4BB7ACF159D4 /* CoinbaseSans-Regular.otf */; };
 		ABC33ACE75A0411693284FE5 /* Inter-Semi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B7AD524ED524A26AE2A1891 /* Inter-Semi-Bold.otf */; };
+		BF7621E69C1E431C9FDEBA7E /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C8366562661D45C2BF84D8EC /* Graphik-Regular.otf */; };
+		C11FF04F64F94322840238BA /* CoinbaseText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C8B4F5EB361C4BA1A863155B /* CoinbaseText-Regular.otf */; };
 		D88D80AD863C4F0FB2612230 /* CoinbaseDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A05538406024698B0648E07 /* CoinbaseDisplay-Medium.otf */; };
 		DF3E308508E346C7A783FA4B /* CoinbaseDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A4FC161CFE54C59AC3446AB /* CoinbaseDisplay-Regular.otf */; };
-		288DB007BF624CDE8531D784 /* CoinbaseSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 275F26EFE837410C9F2DA04B /* CoinbaseSans-Medium.otf */; };
-		9A50C2264DA446CEB753E00C /* CoinbaseSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 512854AE302C4BB7ACF159D4 /* CoinbaseSans-Regular.otf */; };
 		DFEDD3948AA245E39653F84B /* CoinbaseText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FEE1EF04BD3C4422AE4F137A /* CoinbaseText-Medium.otf */; };
-		C11FF04F64F94322840238BA /* CoinbaseText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C8B4F5EB361C4BA1A863155B /* CoinbaseText-Regular.otf */; };
+		E35038609EB64CF8AF37E57D /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1903814ECFBB444AAAA55758 /* Graphik-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,20 +37,22 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cds/main.m; sourceTree = "<group>"; };
 		1903814ECFBB444AAAA55758 /* Graphik-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Graphik-Medium.otf"; path = "../../fonts/native/Graphik-Medium.otf"; sourceTree = "<group>"; };
 		1E13B6B8FDD3004346C4185F /* Pods-cds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cds.debug.xcconfig"; path = "Target Support Files/Pods-cds/Pods-cds.debug.xcconfig"; sourceTree = "<group>"; };
+		275F26EFE837410C9F2DA04B /* CoinbaseSans-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CoinbaseSans-Medium.otf"; path = "../../fonts/native/CoinbaseSans-Medium.otf"; sourceTree = "<group>"; };
 		3910A7FA9E7048A9A71F4EE2 /* CoinbaseIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = CoinbaseIcons.ttf; path = ../../mobile/icons/font/CoinbaseIcons.ttf; sourceTree = "<group>"; };
+		3A05538406024698B0648E07 /* CoinbaseDisplay-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CoinbaseDisplay-Medium.otf"; path = "../../fonts/native/CoinbaseDisplay-Medium.otf"; sourceTree = "<group>"; };
+		512854AE302C4BB7ACF159D4 /* CoinbaseSans-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CoinbaseSans-Regular.otf"; path = "../../fonts/native/CoinbaseSans-Regular.otf"; sourceTree = "<group>"; };
+		5A418CED26F01F20007AD38F /* cds-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cds-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A418CEE26F01F20007AD38F /* SwiftDeps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDeps.swift; sourceTree = "<group>"; };
+		5B7AD524ED524A26AE2A1891 /* Inter-Semi-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Semi-Bold.otf"; path = "../../fonts/native/Inter-Semi-Bold.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = cds/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A4FC161CFE54C59AC3446AB /* CoinbaseDisplay-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CoinbaseDisplay-Regular.otf"; path = "../../fonts/native/CoinbaseDisplay-Regular.otf"; sourceTree = "<group>"; };
 		A72259A04FA4C2DA8A6956C5 /* libPods-cds.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cds.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8366562661D45C2BF84D8EC /* Graphik-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Graphik-Regular.otf"; path = "../../fonts/native/Graphik-Regular.otf"; sourceTree = "<group>"; };
+		C8B4F5EB361C4BA1A863155B /* CoinbaseText-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CoinbaseText-Regular.otf"; path = "../../fonts/native/CoinbaseText-Regular.otf"; sourceTree = "<group>"; };
 		CF4968F20D5D4A5F8175C182 /* Inter-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.otf"; path = "../../fonts/native/Inter-Regular.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		5B7AD524ED524A26AE2A1891 /* Inter-Semi-Bold.otf */ = {isa = PBXFileReference; name = "Inter-Semi-Bold.otf"; path = "../../fonts/native/Inter-Semi-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3A05538406024698B0648E07 /* CoinbaseDisplay-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseDisplay-Medium.otf"; path = "../../fonts/native/CoinbaseDisplay-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8A4FC161CFE54C59AC3446AB /* CoinbaseDisplay-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseDisplay-Regular.otf"; path = "../../fonts/native/CoinbaseDisplay-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		275F26EFE837410C9F2DA04B /* CoinbaseSans-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseSans-Medium.otf"; path = "../../fonts/native/CoinbaseSans-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		512854AE302C4BB7ACF159D4 /* CoinbaseSans-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseSans-Regular.otf"; path = "../../fonts/native/CoinbaseSans-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FEE1EF04BD3C4422AE4F137A /* CoinbaseText-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseText-Medium.otf"; path = "../../fonts/native/CoinbaseText-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C8B4F5EB361C4BA1A863155B /* CoinbaseText-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseText-Regular.otf"; path = "../../fonts/native/CoinbaseText-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FEE1EF04BD3C4422AE4F137A /* CoinbaseText-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CoinbaseText-Medium.otf"; path = "../../fonts/native/CoinbaseText-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				5A418CEE26F01F20007AD38F /* SwiftDeps.swift */,
+				5A418CED26F01F20007AD38F /* cds-Bridging-Header.h */,
 			);
 			name = cds;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				0981FE8649C43CA68A45F2B3 /* [CP] Copy Pods Resources */,
+				5BA3B6E13BFCB10C297B10C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,7 +184,7 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -278,6 +284,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5BA3B6E13BFCB10C297B10C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cds/Pods-cds-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cds/Pods-cds-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +330,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				5A418CEF26F01F20007AD38F /* SwiftDeps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +354,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = cds;
+				SWIFT_OBJC_BRIDGING_HEADER = "cds-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -351,6 +377,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = cds;
+				SWIFT_OBJC_BRIDGING_HEADER = "cds-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -388,6 +415,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -448,6 +476,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

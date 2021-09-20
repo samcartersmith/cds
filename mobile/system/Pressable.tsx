@@ -118,8 +118,7 @@ export const Pressable = memo(function Pressable({
 
   return (
     <BasePressable
-      accessibilityComponentType="button"
-      accessibilityTraits="button"
+      accessibilityRole="button"
       accessibilityState={{ busy: loading, disabled: !!disabled }}
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       disabled={disabled || loading}

@@ -8,12 +8,12 @@ platform(:ios, '11.0')
 target 'cds' do
   use_native_modules!
 
-  use_react_native!({ path: "#{node_modules}/react-native" })
+  use_react_native!({ path: "#{node_modules}/react-native", hermes_enabled: false })
 
-  use_flipper!({ 'Flipper' => '0.62.0' })
+  use_flipper!
 
   post_install do |installer|
-    flipper_post_install(installer)
+    react_native_post_install(installer)
 
     # https://www.jessesquires.com/blog/2020/07/20/xcode-12-drops-support-for-ios-8-fix-for-cocoapods/
     installer.pods_project.targets.each do |target|

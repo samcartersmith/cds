@@ -6,8 +6,8 @@ import { useOverlayAnimation } from '../useOverlayAnimation';
 
 jest.useFakeTimers();
 
-jest.mock('react-native/Libraries/Animated/src/AnimatedImplementation', () => ({
-  ...jest.requireActual<AnyObject>('react-native/Libraries/Animated/src/AnimatedImplementation'),
+jest.mock('react-native/Libraries/Animated/AnimatedImplementation', () => ({
+  ...jest.requireActual<AnyObject>('react-native/Libraries/Animated/AnimatedImplementation'),
   timing: jest.fn((animatedValue: Animated.Value, config: { toValue: number }) => ({
     start: jest.fn(() => {
       return setTimeout(() => {
