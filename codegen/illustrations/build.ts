@@ -17,7 +17,13 @@ import {
   IllustrationNamesMap,
   VersionNumManifestStruct,
 } from './interfaces';
-import { errMsg, successMsg, binaryToBase64, isMetadataEqual } from './utils';
+import {
+  errMsg,
+  successMsg,
+  binaryToBase64,
+  isMetadataEqual,
+  fromVersionManifestKey,
+} from './utils';
 import { manifestData } from './illustration_manifest';
 import { blacklist } from './blacklist';
 import { modified } from './modified';
@@ -429,6 +435,25 @@ const createVersionNumManifest = async (
   return versionNumManifest;
 };
 
+const checkLightModeExistsForAllAssets = (versionNumManifest: VersionNumManifestStruct) => {
+  let errored = false;
+
+  for (const key of Object.keys(versionNumManifest)) {
+    const { name, spectrum } = fromVersionManifestKey(key);
+
+    if (spectrum === 'dark' && !(`${name}-light` in versionNumManifest)) {
+      console.error(`${name} only has dark mode version. Please add a light mode version`);
+      errored = true;
+    }
+  }
+
+  if (errored) {
+    throw Error(
+      'Some of these assets are missing light mode illustrations. Please add them to Figma',
+    );
+  }
+};
+
 // Super long name, but at least you know exactly what
 // this function does 🐒🐒🐒
 const outputImgBasedOnMostRecentlyUpdated = (
@@ -559,6 +584,8 @@ const main = async (deleteImgsDir = false) => {
       'web/illustrations/versionNumManifest.ts',
       'svg',
     );
+    checkLightModeExistsForAllAssets(versionNumManifest);
+
     outputImgBasedOnMostRecentlyUpdated(versionNumManifest, [
       'storybook/data/sortedIllustrationData.ts',
     ]);

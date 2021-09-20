@@ -39,3 +39,17 @@ export const isMetadataEqual = (
     metadata1.description === metadata2.description
   );
 };
+
+/**
+ * Given a correctly formatted versionManifestKey, it will return a map
+ * with name and spectrum that maps to the correct name and spectrum
+ * @param versionManifestKey - String must be in this format <name of illustration>-<spectrum>
+ * @returns
+ */
+export const fromVersionManifestKey = (versionManifestKey: string) => {
+  const [name, spectrum] = versionManifestKey.split('-');
+  return {
+    name,
+    spectrum,
+  };
+};
