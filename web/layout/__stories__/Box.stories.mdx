@@ -36,6 +36,13 @@ export const Lipsum = () => (
 # Elevation
 
 <Canvas withToolbar>
+  <Story name="Elevation 0" decorators={[withStoryLabel('Elevation 0')]}>
+    {() => (
+      <Box elevation={0}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
   <Story name="Elevation 1" decorators={[withStoryLabel('Elevation 1')]}>
     {() => (
       <Box elevation={1}>

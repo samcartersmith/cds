@@ -1,1 +1,1 @@
-export type ElevationLevels = 1 | 2;
+export type ElevationLevels = 0 | 1 | 2;

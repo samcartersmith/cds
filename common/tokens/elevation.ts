@@ -1,8 +1,8 @@
 import { defaultPalette } from '../palette/constants';
 import type { ElevationLevels, PartialPaletteConfig, SpectrumAlias } from '../types';
 
-type ElevationPalette = Record<ElevationLevels, { background: SpectrumAlias }>;
-type ElevationChildrenPalette = Record<ElevationLevels, PartialPaletteConfig>;
+type ElevationPalette = Record<Exclude<ElevationLevels, 0>, { background: SpectrumAlias }>;
+type ElevationChildrenPalette = Record<Exclude<ElevationLevels, 0>, PartialPaletteConfig>;
 
 type ElevationToken = {
   shadowColor: string;
@@ -39,7 +39,7 @@ const sharedStyles = {
   shadowOffset: { width: 0, height: 8 },
 };
 
-export const elevation: Record<ElevationLevels, ElevationToken> = {
+export const elevation: Record<Exclude<ElevationLevels, 0>, ElevationToken> = {
   1: {
     ...sharedStyles,
     shadowOpacity: 0.02,
