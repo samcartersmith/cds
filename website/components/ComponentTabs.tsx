@@ -9,6 +9,11 @@ type ComponentsMap = typeof templatesMap;
 type ComponentNames = keyof ComponentsMap;
 type TemplateName = 'design' | 'implementation';
 
+const tabs = [
+  { label: 'Design', value: 'design' },
+  { label: 'Implementation', value: 'implementation' },
+];
+
 export const ComponentTabs = <T extends ComponentNames>({ name }: { name: T }) => {
   const { tabGroupChoices } = useUserPreferencesContext();
   const getTemplate = useCallback(
@@ -36,14 +41,7 @@ export const ComponentTabs = <T extends ComponentNames>({ name }: { name: T }) =
   const content = useMemo(() => {
     if (!designTemplate) return implementationTemplate ?? null;
     return (
-      <Tabs
-        groupId="components"
-        defaultValue="implementation"
-        values={[
-          { label: 'Design', value: 'design' },
-          { label: 'Implementation', value: 'implementation' },
-        ]}
-      >
+      <Tabs groupId="components" defaultValue="implementation" values={tabs}>
         <TabItem value="design">
           <Suspense fallback={null}>
             {tabGroupChoices?.components === 'design' ? designTemplate : ''}

@@ -5,27 +5,27 @@ import { Spectrum } from '@cbhq/cds-common';
 import { updateThemeStorage } from ':cds-website/src/theme/ThemeStorage';
 
 const useTheme = () => {
-  const spectrum = useRootSpectrum();
+  const rootSpectrum = useRootSpectrum();
 
   const spectrumUpdate = useRootSpectrumPreferenceUpdater();
-  const isDarkTheme = useMemo(() => spectrum === 'dark', [spectrum]);
+  const isDarkTheme = useMemo(() => rootSpectrum === 'dark', [rootSpectrum]);
 
   const setLightTheme = useCallback(() => {
     const spectrum: Spectrum = 'light';
     spectrumUpdate(spectrum);
     updateThemeStorage(spectrum);
-  }, [spectrum]);
+  }, [spectrumUpdate]);
 
   const setDarkTheme = useCallback(() => {
     const spectrum: Spectrum = 'dark';
     spectrumUpdate(spectrum);
     updateThemeStorage(spectrum);
-  }, [spectrum]);
+  }, [spectrumUpdate]);
 
   // css hooks into this data attribute
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', spectrum);
-  }, [spectrum]);
+    document.documentElement.setAttribute('data-theme', rootSpectrum);
+  }, [rootSpectrum]);
 
   return {
     isDarkTheme,

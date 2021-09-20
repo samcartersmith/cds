@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+/* eslint-disable @typescript-eslint/naming-convention */
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -6,7 +8,6 @@
  */
 
 /* eslint-disable import/no-duplicates */
-/* eslint-disable spaced-comment */
 /// <reference types="@docusaurus/module-type-aliases" />
 /// <reference types="@docusaurus/plugin-content-blog" />
 /// <reference types="@docusaurus/plugin-content-pages" />
@@ -168,7 +169,7 @@ declare module '@theme/hooks/useScrollPosition' {
 
 declare module '@theme/hooks/useTabGroupChoice' {
   export type useTabGroupChoiceReturns = {
-    readonly tabGroupChoices: { readonly [groupId: string]: string };
+    readonly tabGroupChoices: Readonly<Record<string, string>>;
     readonly setTabGroupChoices: (groupId: string, newChoice: string) => void;
   };
 
@@ -207,7 +208,7 @@ declare module '@theme/hooks/useTOCHighlight' {
 
 declare module '@theme/hooks/useUserPreferencesContext' {
   export type UserPreferencesContextProps = {
-    tabGroupChoices: { readonly [groupId: string]: string };
+    tabGroupChoices: Readonly<Record<string, string>>;
     setTabGroupChoices: (groupId: string, newChoice: string) => void;
     isAnnouncementBarClosed: boolean;
     closeAnnouncementBar: () => void;

@@ -1,8 +1,9 @@
 import { styled } from 'linaria/react';
-import { palette, spacing } from '@cbhq/cds-web/tokens';
+import { palette } from '@cbhq/cds-web/tokens';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
-import { Box, Spacer, VStack, HStack } from '@cbhq/cds-web/layout';
+import { Box, VStack, HStack } from '@cbhq/cds-web/layout';
 import { Image, ImageProps } from './Image';
+
 type Props = {
   children: React.ReactNode;
 };
@@ -36,22 +37,6 @@ export const DoDont: React.FC<Props> = ({ children = [] }) => {
   );
 };
 
-export const DoExample: React.FC<DoExampleProps> = props => {
-  return (
-    <Example type="do" {...props}>
-      {props.children}
-    </Example>
-  );
-};
-
-export const DontExample: React.FC<DoExampleProps> = props => {
-  return (
-    <Example type="dont" {...props}>
-      {props.children}
-    </Example>
-  );
-};
-
 export const Example: React.FC<ExampleProps> = ({ img, children, type }) => {
   return (
     <VStack flexGrow={1} flexBasis={0} minWidth="200px" height="100%" spacingVertical={10} gap={1}>
@@ -64,5 +49,21 @@ export const Example: React.FC<ExampleProps> = ({ img, children, type }) => {
       </TextHeadline>
       <TextBody as="p">{children}</TextBody>
     </VStack>
+  );
+};
+
+export const DoExample: React.FC<DoExampleProps> = (props) => {
+  return (
+    <Example type="do" {...props}>
+      {props.children}
+    </Example>
+  );
+};
+
+export const DontExample: React.FC<DoExampleProps> = (props) => {
+  return (
+    <Example type="dont" {...props}>
+      {props.children}
+    </Example>
   );
 };

@@ -40,6 +40,7 @@ export const IconButtonSheet = memo(() => {
     <VStack>
       <HStack alignSelf="flex-start">
         {defaultOptions.map((option, index) => (
+          // eslint-disable-next-line react/no-array-index-key
           <Box flexDirection="row" key={index} spacingEnd={10}>
             <IconButton
               variant={option.variant}
@@ -53,10 +54,11 @@ export const IconButtonSheet = memo(() => {
       </HStack>
       <HStack alignSelf="flex-start" spacingVertical={3}>
         {transparentOptions.map((option, index) => (
+          // eslint-disable-next-line react/no-array-index-key
           <Box flexDirection="row" key={index} spacingEnd={2}>
             <IconButton
               variant={option.variant}
-              transparent={true}
+              transparent
               accessibilityLabel={option.iconName}
               name={option.iconName}
             />

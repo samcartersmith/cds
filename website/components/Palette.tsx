@@ -50,14 +50,13 @@ const Palette = ({ spectrum }: { spectrum: Spectrum }) => (
   </ThemeProvider>
 );
 
+const tabs = [
+  { label: 'Light', value: 'light' },
+  { label: 'Dark', value: 'dark' },
+];
+
 export const Palettes = () => (
-  <Tabs
-    defaultValue="light"
-    values={[
-      { label: 'Light', value: 'light' },
-      { label: 'Dark', value: 'dark' },
-    ]}
-  >
+  <Tabs defaultValue="light" values={tabs}>
     <TabItem value="light">
       <Palette spectrum="light" />
     </TabItem>

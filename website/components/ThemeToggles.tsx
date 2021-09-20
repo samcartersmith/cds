@@ -1,12 +1,12 @@
-import React, { memo } from 'react';
+import { memo, useCallback } from 'react';
 
 import { Switch } from '@cbhq/cds-web/controls';
 import { Spacer } from '@cbhq/cds-web/layout';
 
-import {useRootSpectrumPreferenceUpdater} from "@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater";
-import {useRootSpectrum} from "@cbhq/cds-common/spectrum/useRootSpectrum";
-import {useRootScale} from "@cbhq/cds-common/scale/useRootScale";
-import {useRootScalePreferenceUpdater} from "@cbhq/cds-common/scale/useRootScalePreferenceUpdater";
+import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
+import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
+import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
+import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 
 export const ThemeToggles = memo(() => {
   const spectrum = useRootSpectrum();
@@ -14,15 +14,15 @@ export const ThemeToggles = memo(() => {
   const spectrumUpdate = useRootSpectrumPreferenceUpdater();
   const scaleUpdate = useRootScalePreferenceUpdater();
 
-  const toggleSpectrum = () => {
+  const toggleSpectrum = useCallback(() => {
     const newSpectrum = spectrum === 'dark' ? 'light' : 'dark';
     spectrumUpdate(newSpectrum);
-  };
+  }, [spectrum, spectrumUpdate]);
 
-  const toggleScale = () => {
+  const toggleScale = useCallback(() => {
     const newScale = scale === 'large' ? 'medium' : 'large';
     scaleUpdate(newScale);
-  }
+  }, [scale, scaleUpdate]);
 
   return (
     <>

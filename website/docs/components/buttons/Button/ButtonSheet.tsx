@@ -9,12 +9,12 @@ const variants = ['primary', 'secondary', 'positive', 'negative'] as const;
 export const ButtonSheet = () => {
   const buttons = useMemo(() => {
     return join(
-      variants.map(item => (
+      variants.map((item) => (
         <Button block key={item} variant={item}>
           {item.charAt(0).toUpperCase() + item.slice(1)}
         </Button>
       )),
-      <Spacer horizontal={3} />
+      <Spacer horizontal={3} />,
     );
   }, []);
 

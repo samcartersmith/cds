@@ -21,8 +21,8 @@ type StateTypes = 'Active' | 'Inactive';
 const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => {
   const [state, setState] = useState<StateTypes>('Inactive');
   const [query, setQuery] = useState('');
-  const onPress = useCallback((state: StateTypes) => {
-    return () => setState(state);
+  const onPress = useCallback((pressState: StateTypes) => {
+    return () => setState(pressState);
   }, []);
 
   const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {

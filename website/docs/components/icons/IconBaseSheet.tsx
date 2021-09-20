@@ -54,8 +54,8 @@ const IconBaseContentSheet = <StateType extends string>({
 }: IconBaseContentProp<StateType>) => {
   const [state, setState] = useState<StateType>(defaultState);
   const [query, setQuery] = useState('');
-  const onPress = useCallback((state: StateType) => {
-    return () => setState(state);
+  const onPress = useCallback((pressState: StateType) => {
+    return () => setState(pressState);
   }, []);
 
   const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -94,6 +94,7 @@ const IconBaseContentSheet = <StateType extends string>({
     <ThemeProvider>
       <Box flexWrap="wrap">
         {states.map((item, idx) => (
+          // eslint-disable-next-line react/no-array-index-key
           <Box key={idx} spacingEnd={1} spacingBottom={1}>
             <Button
               compact
@@ -141,6 +142,7 @@ const IconBaseContentSheet = <StateType extends string>({
   );
 };
 
+const iconStates = ['Active', 'Inactive'];
 export const IconBaseSheet = ({ category }: { category: Categories }) => {
   const { sizes } = categoryToData[category];
 
@@ -153,7 +155,7 @@ export const IconBaseSheet = ({ category }: { category: Categories }) => {
             states={
               category === 'product'
                 ? (paletteForegrounds as unknown as PaletteForeground[])
-                : ['Active', 'Inactive']
+                : iconStates
             }
             defaultState={category === 'product' ? 'primary' : 'Active'}
             category={category}

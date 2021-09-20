@@ -65,6 +65,7 @@ const BadgeContainer = styled.div<Props>`
 export const Badge: React.FC<Props> = ({ variant, order = 1 }) => {
   return (
     <div style={{ display: 'inline-flex' }}>
+      {/* eslint-disable-next-line react-perf/jsx-no-new-object-as-prop */}
       <ThemeProvider palette={{ primary: badgePalettes[variant] }}>
         <BadgeContainer {...{ variant, order }}>{textOverrides[variant] ?? variant}</BadgeContainer>
       </ThemeProvider>

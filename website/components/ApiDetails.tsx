@@ -51,8 +51,6 @@ type ApiDetailsProps = {
   defaultValue?: string;
 };
 
-const offsetSpacingProps = ['all', 'top', 'bottom', 'start', 'end', 'horizontal', 'vertical'];
-
 export const ApiDetails = ({
   componentName,
   mobileOptions,
@@ -64,11 +62,11 @@ export const ApiDetails = ({
   const formatOptions = useCallback(
     (options: string[]) => {
       if (propertyName.includes('spacing') || propertyName.includes('offset')) {
-        return <code>{'0 - 10'}</code>;
+        return <code>0 - 10</code>;
       }
 
       if (propertyName === 'palette') {
-        return <code>{'PartialPaletteConfig'}</code>;
+        return <code>PartialPaletteConfig</code>;
       }
 
       if (propertyName === 'dangerouslySetStyle') {
@@ -92,16 +90,16 @@ export const ApiDetails = ({
         options.includes('ReactElement<any, string | JSXElementConstructor<any>>') &&
         options.includes('ReactNodeArray')
       ) {
-        return <code>{'ReactNode'}</code>;
+        return <code>ReactNode</code>;
       }
 
       if (options.length >= 10 && options.includes('allTimeHigh')) {
-        return <code>{'IconName'}</code>;
+        return <code>IconName</code>;
       }
 
       return (
         <ul>
-          {options.map(item => (
+          {options.map((item) => (
             <li key={`${propertyName}_${item}`}>
               <code>{item}</code>
             </li>
@@ -109,7 +107,7 @@ export const ApiDetails = ({
         </ul>
       );
     },
-    [componentName, propertyName]
+    [componentName, propertyName],
   );
 
   const formattedWebOptions = formatOptions(webOptions);

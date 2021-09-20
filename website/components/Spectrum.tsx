@@ -20,12 +20,17 @@ const hueNames = [
 ] as const;
 export const hueSteps = [0, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100] as const;
 
+const tabs = [
+  { label: 'Light', value: 'light' },
+  { label: 'Dark', value: 'dark' },
+];
+
 export const Spectrum = () => {
   const spectrumHues = useMemo(() => {
-    return hueNames.map(hue => {
+    return hueNames.map((hue) => {
       return (
         <div key={hue} className={styles.hueColumn}>
-          {hueSteps.map(step => {
+          {hueSteps.map((step) => {
             return (
               <div
                 key={`${hue}${step}`}
@@ -44,13 +49,7 @@ export const Spectrum = () => {
   }, []);
 
   return (
-    <Tabs
-      defaultValue="light"
-      values={[
-        { label: 'Light', value: 'light' },
-        { label: 'Dark', value: 'dark' },
-      ]}
-    >
+    <Tabs defaultValue="light" values={tabs}>
       <TabItem value="light">
         <ThemeProvider spectrum="light">
           <div className={styles.hueGrid}>{spectrumHues}</div>

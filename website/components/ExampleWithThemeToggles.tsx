@@ -3,8 +3,8 @@ import React, { memo } from 'react';
 import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 
-import { ThemeToggles } from './ThemeToggles';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
+import { ThemeToggles } from './ThemeToggles';
 
 export const ExampleWithThemeToggles: React.FC = memo(({ children }) => {
   const scale = useRootScale();

@@ -116,6 +116,7 @@ export const AdopterComponentsList = memo(
         >
           <AdopterListCell
             isActive={isActive}
+            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
             setActiveComponent={() => setActiveComponentIndex(index)}
             {...item}
           />

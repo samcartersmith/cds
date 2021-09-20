@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { PropsWithChildren, useMemo } from 'react';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
@@ -25,6 +25,10 @@ import { Link } from 'react-router-dom';
 
 const defaultRoute = '/';
 
+const iconButtonAsFn = (props: PropsWithChildren<React.HTMLAttributes<HTMLElement>>) => (
+  <Link {...props} to="/" />
+);
+
 export const NavigationExample: React.FC = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(false);
@@ -42,7 +46,7 @@ export const NavigationExample: React.FC = () => {
         <TabItem label="Vault" />
       </Tabs>
     ),
-    []
+    [],
   );
 
   const navbar = useMemo(() => {
@@ -50,7 +54,7 @@ export const NavigationExample: React.FC = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton as={props => <Link {...props} to="/" />} name="arrowLeft" />
+            <IconButton as={iconButtonAsFn} name="arrowLeft" />
           </NavigationBarControls>
         }
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}

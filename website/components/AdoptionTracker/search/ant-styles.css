@@ -1662,20 +1662,10 @@ html {
     -webkit-transition: height 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
     transition: height 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-affix {
     position: fixed;
     z-index: 10;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-alert {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1931,11 +1921,6 @@ html {
     right: auto;
     left: 16px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-anchor {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2039,11 +2024,6 @@ html {
 .ant-anchor-rtl .ant-anchor-link {
     padding: 7px 16px 7px 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-select-auto-complete {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2060,11 +2040,6 @@ html {
 .ant-select-auto-complete .ant-select-clear {
     right: 13px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-select-single .ant-select-selector {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2763,11 +2738,6 @@ html {
     padding-right: 0;
     padding-left: 21px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-empty {
     margin: 0 8px;
     font-size: 14px;
@@ -2839,11 +2809,6 @@ html {
 .ant-empty-rtl {
     direction: rtl;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-avatar {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2930,11 +2895,6 @@ html {
     -o-object-fit: cover;
     object-fit: cover;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-back-top {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2993,11 +2953,6 @@ html {
         right: 20px;
     }
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-badge {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -3335,11 +3290,6 @@ html {
         opacity: 0;
     }
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-breadcrumb {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -3409,11 +3359,6 @@ html {
     margin-right: 4px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-menu-item-danger.ant-menu-item {
     color: #ff4d4f;
 }
@@ -4308,11 +4253,6 @@ html {
     padding-right: 32px;
     padding-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-tooltip {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -4570,11 +4510,6 @@ html {
 .ant-tooltip-rtl .ant-tooltip-inner {
     text-align: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-dropdown-menu-item.ant-dropdown-menu-item-danger {
     color: #ff4d4f;
 }
@@ -4976,11 +4911,6 @@ html {
     margin-right: 4px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-btn {
     line-height: 1.5715;
     position: relative;
@@ -6892,11 +6822,6 @@ a.ant-btn-sm {
     margin-right: 8px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-picker-calendar {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -7073,11 +6998,6 @@ a.ant-btn-sm {
 .ant-picker-calendar-rtl.ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
     text-align: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-radio-group {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -7447,11 +7367,6 @@ span.ant-radio + * {
 .ant-radio-button-wrapper.ant-radio-button-wrapper-rtl.ant-radio-button-wrapper-disabled:first-child {
     border-right-color: #d9d9d9;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-picker-panel {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -7987,7 +7902,6 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
     background: transparent;
     cursor: not-allowed;
 }
-/* stylelint-disable-next-line */
 _:-ms-fullscreen .ant-picker-range-wrapper .ant-picker-month-panel .ant-picker-cell,
 :root .ant-picker-range-wrapper .ant-picker-month-panel .ant-picker-cell,
 _:-ms-fullscreen .ant-picker-range-wrapper .ant-picker-year-panel .ant-picker-cell,
@@ -8480,11 +8394,6 @@ textarea.ant-picker-input > input {
 .ant-picker-panel-rtl .ant-picker-time-panel {
     direction: ltr;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-tag {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -8737,11 +8646,6 @@ textarea.ant-picker-input > input {
     margin-right: 7px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-card {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -9055,11 +8959,6 @@ textarea.ant-picker-input > input {
 .ant-card-small > .ant-card-body {
     padding: 12px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-tabs-small > .ant-tabs-nav .ant-tabs-tab {
     padding: 8px 0;
     font-size: 14px;
@@ -9714,11 +9613,6 @@ textarea.ant-picker-input > input {
     width: 100%;
     outline: none;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -15604,11 +15498,6 @@ textarea.ant-picker-input > input {
 .ant-col.ant-col-rtl {
     float: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-carousel {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -15903,11 +15792,6 @@ textarea.ant-picker-input > input {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-cascader {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -16200,11 +16084,6 @@ textarea.ant-picker-input > input {
     right: auto;
     left: 12px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-input-affix-wrapper {
     position: relative;
     display: inline-block;
@@ -16999,11 +16878,6 @@ textarea.ant-input {
         height: auto;
     }
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 @-webkit-keyframes antCheckboxEffect {
     0% {
         -webkit-transform: scale(1);
@@ -17246,11 +17120,6 @@ textarea.ant-input {
 .ant-checkbox-group-rtl .ant-checkbox-group-item + .ant-checkbox-group-item {
     margin-left: 8px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-collapse {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -17422,11 +17291,6 @@ textarea.ant-input {
     padding-right: 12px;
     padding-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-comment {
     position: relative;
     background-color: inherit;
@@ -17547,16 +17411,6 @@ textarea.ant-input {
     margin-right: 44px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-descriptions-title {
     margin-bottom: 20px;
     color: rgba(0, 0, 0, 0.85);
@@ -17666,11 +17520,6 @@ textarea.ant-input {
 .ant-descriptions-rtl .ant-descriptions-item-label::after {
     margin: 0 2px 0 8px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-divider {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -17782,11 +17631,6 @@ textarea.ant-input {
 .ant-divider-rtl.ant-divider-horizontal.ant-divider-with-text-right::after {
     width: 95%;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-drawer {
     position: fixed;
     z-index: 1000;
@@ -17949,7 +17793,7 @@ textarea.ant-input {
 }
 .ant-drawer-header-no-title .ant-drawer-close {
     margin-right: var(--scroll-bar);
-    /* stylelint-disable-next-line function-calc-no-invalid */
+    
     padding-right: calc(20px - var(--scroll-bar));
 }
 .ant-drawer-header {
@@ -18036,11 +17880,6 @@ textarea.ant-input {
     right: auto;
     left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-form-item .ant-mentions,
 .ant-form-item textarea.ant-input {
     height: auto;
@@ -18980,16 +18819,6 @@ textarea.ant-input {
     margin-right: 0;
     margin-left: 16px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-input-number {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -19313,11 +19142,6 @@ textarea.ant-input-number {
     direction: ltr;
     text-align: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-layout {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -19449,11 +19273,6 @@ textarea.ant-input-number {
 .ant-layout-rtl {
     direction: rtl;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-list {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -19793,11 +19612,6 @@ textarea.ant-input-number {
         margin: auto auto 16px;
     }
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-spin {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -20029,11 +19843,6 @@ textarea.ant-input-number {
         transform: rotate(-405deg);
     }
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-pagination {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -20540,16 +20349,6 @@ textarea.ant-pagination-options-quick-jumper input {
     margin-right: 2px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-mentions {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -20822,11 +20621,6 @@ textarea.ant-mentions {
 .ant-mentions-rtl {
     direction: rtl;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-message {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -20921,11 +20715,6 @@ textarea.ant-mentions {
     margin-right: 0;
     margin-left: 8px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-modal {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -21183,11 +20972,6 @@ textarea.ant-mentions {
 .ant-modal-wrap-rtl.ant-modal-centered .ant-modal {
     text-align: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-notification {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -21457,11 +21241,6 @@ textarea.ant-mentions {
 .ant-notification-rtl .ant-notification-notice-btn {
     float: left;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-page-header {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -21625,11 +21404,6 @@ textarea.ant-mentions {
 .ant-page-header-rtl .ant-page-header-footer .ant-tabs-bar .ant-tabs-nav {
     float: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-popover {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -21850,11 +21624,6 @@ textarea.ant-mentions {
     margin-right: 8px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-progress {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -22070,11 +21839,6 @@ textarea.ant-mentions {
     margin-left: 0;
     text-align: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-rate {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -22168,11 +21932,6 @@ textarea.ant-mentions {
     right: 0;
     left: auto;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-result {
     padding: 48px 32px;
 }
@@ -22237,11 +21996,6 @@ textarea.ant-mentions {
 .ant-result-rtl .ant-result-extra > *:last-child {
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-skeleton {
     display: table;
     width: 100%;
@@ -22522,11 +22276,6 @@ textarea.ant-mentions {
         background-position: 100% 50%;
     }
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-slider {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -22746,11 +22495,6 @@ textarea.ant-mentions {
     margin-right: -4px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-space {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -22785,11 +22529,6 @@ textarea.ant-mentions {
 .ant-space-rtl {
     direction: rtl;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-statistic {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -22842,11 +22581,6 @@ textarea.ant-mentions {
     margin-right: 4px;
     margin-left: 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-steps {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -23642,11 +23376,6 @@ textarea.ant-mentions {
     right: -2px;
     left: auto;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-switch {
     margin: 0;
     padding: 0;
@@ -23809,11 +23538,6 @@ textarea.ant-mentions {
 .ant-switch-rtl.ant-switch-small.ant-switch-checked .ant-switch-handle {
     right: calc(100% - 12px - 2px);
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-table.ant-table-middle {
     font-size: 14px;
 }
@@ -24616,16 +24340,6 @@ tr.ant-table-expanded-row:hover > td {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-timeline {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -24862,11 +24576,6 @@ tr.ant-table-expanded-row:hover > td {
     right: calc(50% + 14px);
     text-align: right;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 @-webkit-keyframes antCheckboxEffect {
     0% {
         -webkit-transform: scale(1);
@@ -25209,11 +24918,6 @@ span.ant-transfer-list-search-action {
     right: 0;
     left: auto;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-tree-treenode-leaf-last .ant-tree-switcher-leaf-line::before {
     height: 14px !important;
 }
@@ -25673,11 +25377,6 @@ span.ant-transfer-list-search-action {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 @-webkit-keyframes antCheckboxEffect {
     0% {
         -webkit-transform: scale(1);
@@ -26182,11 +25881,6 @@ span.ant-transfer-list-search-action {
 .ant-tree-select-dropdown-rtl .ant-select-tree .ant-select-tree-checkbox {
     margin: 4px 0 0 8px;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-typography {
     color: rgba(0, 0, 0, 0.65);
 }
@@ -26459,11 +26153,6 @@ div.ant-typography-edit-content.ant-typography-rtl {
     margin: 0 20px 0 0;
     padding: 0 4px 0 0;
 }
-
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-upload {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;

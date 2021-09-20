@@ -19,7 +19,7 @@ export const NuxBanner = () => {
   // Essentially creating a loop after fully playing through the entire animation once.
   const onAnimationFinish = useCallback(
     () => lottie.current?.playMarkers('loopStart', 'loopEnd'),
-    []
+    [],
   );
 
   return <Lottie ref={lottie} source={nux} height={500} onAnimationFinish={onAnimationFinish} />;

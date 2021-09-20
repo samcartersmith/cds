@@ -13,12 +13,6 @@ type ExampleProps<T extends ComponentName> = {
   templateName: keyof ExamplesMap[T];
 };
 
-export const ComponentDetails = <T extends ComponentName>(props: ExampleProps<T>) => (
-  <Suspense fallback={null}>
-    <ComponentDetailsInner {...props} />
-  </Suspense>
-);
-
 export const ComponentDetailsInner = <T extends ComponentName>({
   componentName,
   templateName,
@@ -29,3 +23,9 @@ export const ComponentDetailsInner = <T extends ComponentName>({
   }
   return null;
 };
+
+export const ComponentDetails = <T extends ComponentName>(props: ExampleProps<T>) => (
+  <Suspense fallback={null}>
+    <ComponentDetailsInner {...props} />
+  </Suspense>
+);

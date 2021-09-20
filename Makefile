@@ -89,6 +89,7 @@ test.adoption:
 .PHONY: docgen
 docgen:
 	bazel run :docgen
+	bazel run website:lint_fix
 
 .PHONY: codegen
 codegen:
@@ -104,6 +105,7 @@ lint:
 	bazel test mobile:lint
 	bazel test utils:lint
 	bazel test web:lint
+	bazel test website:lint
 	bazel test :stylelint
 
 .PHONY: lint.fix
@@ -115,6 +117,7 @@ lint.fix:
 	bazel run mobile:lint_fix
 	bazel run utils:lint_fix
 	bazel run web:lint_fix
+	bazel run website:lint_fix
 
 .PHONY: new.package
 new.package:

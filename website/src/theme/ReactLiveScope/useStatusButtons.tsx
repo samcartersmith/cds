@@ -13,18 +13,19 @@ const statuses = [
 ] as LottieStatusAnimationType[];
 
 export const useStatusButtons = (
-  setStatus: React.Dispatch<React.SetStateAction<LottieStatusAnimationType>>
+  setStatus: React.Dispatch<React.SetStateAction<LottieStatusAnimationType>>,
 ) => {
   return useMemo(() => {
     // join is a util for adding a separator element
     // between an array of React components
     return join(
-      statuses.map(item => (
+      statuses.map((item) => (
+        // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
         <Button key={item} onPress={() => setStatus(item)}>
           {item}
         </Button>
       )),
-      <Spacer />
+      <Spacer />,
     );
   }, [setStatus]);
 };

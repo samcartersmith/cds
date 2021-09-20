@@ -1,32 +1,48 @@
-load("//tools/js:def.bzl", "docusaurus")
+load("//tools/js:def.bzl", "docusaurus", "eslint_test")
+
+srcs = [
+    "//eng/shared/design-system:build_source",
+    "//eng/shared/design-system:linaria.config.js",
+]
+
+exclude_glob = [
+    ".docusaurus/**",
+]
+
+filegroup(
+    name = "lintable_source",
+    srcs = glob(
+        [
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+        exclude = exclude_glob,
+    ),
+)
 
 filegroup(
     name = "source",
     srcs = glob(
         include = [
+            "**/*.css",
+            "**/*.ico",
+            "**/*.jpg",
+            "**/*.js",
+            "**/*.json",
             "**/*.md",
             "**/*.mdx",
-            "**/*.tsx",
+            "**/*.png",
+            "**/*.svg",
             "**/*.ts",
-            "**/*.js",
-            "**/*.css",
-            "**/*.json",
-            "static/**/*.svg",
-            "static/**/*.ico",
-            "static/**/*.png",
-            "static/**/*.jpg",
-            "static/**/*.css",
-            "static/**/*.json",
+            "**/*.tsx",
         ],
+        exclude = exclude_glob,
     ),
 )
 
 docusaurus(
     name = "docusaurus",
-    srcs = [
-        ":source",
-        "//eng/shared/design-system:linaria.config.js",
-    ],
+    srcs = [":source"] + srcs,
     deps = [
         "@npm//@cbhq/cds-common",
         "@npm//@cbhq/cds-fonts",
@@ -37,4 +53,11 @@ docusaurus(
         "@npm//antd",
         "@npm//react-virtualized",
     ],
+)
+
+eslint_test(
+    name = "lint",
+    srcs = srcs,
+    lints = [":lintable_source"],
+    local_eslint_config = ".eslintrc",
 )

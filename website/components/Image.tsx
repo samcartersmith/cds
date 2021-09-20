@@ -14,16 +14,18 @@ export type ImageProps = {
 };
 
 const Img = styled.img<ImageOptions>`
-  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '100%')};
-  max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : '100%')};
+  max-width: ${({ maxWidth }) => maxWidth ?? '100%'};
+  max-height: ${({ maxHeight }) => maxHeight ?? '100%'};
 `;
 
 export const Image: React.FC<ImageProps> = ({ light, dark, src, options }) => {
+  const spectrum = useSpectrumConditional({ light, dark });
+
   if (light && dark) {
-    return <Img {...options} src={useSpectrumConditional({ light: light, dark: dark })} />;
-  } else if (src) {
-    return <Img {...options} src={src} />;
-  } else {
-    return <Img {...options} />;
+    return <Img {...options} src={spectrum} />;
   }
+  if (src) {
+    return <Img {...options} src={src} />;
+  }
+  return <Img {...options} />;
 };

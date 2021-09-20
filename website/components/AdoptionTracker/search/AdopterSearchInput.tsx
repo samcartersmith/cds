@@ -34,22 +34,22 @@ function getSearchResultFromId(id: string): AdopterSearchResult {
   };
 }
 
+const onPreventMouseDown = (event: React.MouseEvent) => {
+  event.preventDefault();
+  event.stopPropagation();
+};
+
+const tagStyle = {
+  marginRight: 3,
+};
+
 function tagRender(props: CustomTagProps) {
   const { value, closable, onClose } = props;
-  const onPreventMouseDown = (event: React.MouseEvent) => {
-    event.preventDefault();
-    event.stopPropagation();
-  };
 
   const { type, val } = getSearchResultFromId(value as string);
 
   return (
-    <Tag
-      onMouseDown={onPreventMouseDown}
-      closable={closable}
-      onClose={onClose}
-      style={{ marginRight: 3 }}
-    >
+    <Tag onMouseDown={onPreventMouseDown} closable={closable} onClose={onClose} style={tagStyle}>
       <TextLabel2 as="span" spacingEnd={1}>
         {val}
       </TextLabel2>
@@ -150,6 +150,10 @@ function getOptions(components: ComponentData[], searchValue: string) {
   return groups;
 }
 
+const selectStyle: React.CSSProperties = {
+  width: '100%',
+};
+
 export const AdopterSearchInput = memo(({ components }: AdoptionTrackerSearchInputProps) => {
   const [searchValue, setSearchValue] = useState('');
   const { setResults } = useContext(AdopterSearchContext) as AdopterSearchContextType;
@@ -170,7 +174,7 @@ export const AdopterSearchInput = memo(({ components }: AdoptionTrackerSearchInp
       <Select
         mode="multiple"
         allowClear
-        style={{ width: '100%' }}
+        style={selectStyle}
         tagRender={tagRender}
         placeholder="Search"
         onChange={handleChange}

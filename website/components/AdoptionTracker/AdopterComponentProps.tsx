@@ -25,7 +25,7 @@ export const AdopterComponentProps = memo(
     const { results: searchResults } = useContext(AdopterSearchContext) as AdopterSearchContextType;
     const propsResults = getResultsByType(searchResults).props;
     if (propsResults.length) {
-      sortedProps = sortedProps.filter(([prop, callSites]) => {
+      sortedProps = sortedProps.filter(([prop]) => {
         for (const propsResult of propsResults) {
           if (isMatch(propsResult, [prop])) {
             return true;

@@ -1,6 +1,6 @@
-import {Spectrum} from "@cbhq/cds-common";
+import { Spectrum } from '@cbhq/cds-common';
 
-const themeStorageKey = "cds-website-theme";
+const themeStorageKey = 'cds-website-theme';
 export function updateThemeStorage(spectrum: Spectrum) {
   localStorage?.setItem(themeStorageKey, spectrum);
 }

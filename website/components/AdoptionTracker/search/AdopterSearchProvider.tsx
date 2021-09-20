@@ -1,4 +1,4 @@
-import React, { createContext, Dispatch, memo, SetStateAction, useState } from 'react';
+import React, { createContext, Dispatch, memo, SetStateAction, useMemo, useState } from 'react';
 import { AdopterSearchResult } from '../types';
 
 export type AdopterSearchContextType = {
@@ -10,6 +10,6 @@ export const AdopterSearchContext = createContext<AdopterSearchContextType | und
 
 export const AdopterSearchProvider: React.FC = memo(({ children }) => {
   const [results, setResults] = useState<AdopterSearchResult[]>([]);
-  const value = { results, setResults };
+  const value = useMemo(() => ({ results, setResults }), [results]);
   return <AdopterSearchContext.Provider value={value}>{children}</AdopterSearchContext.Provider>;
 });

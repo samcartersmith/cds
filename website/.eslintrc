@@ -1,5 +1,6 @@
 {
   "rules": {
-    "import/no-default-export": 0
+    "import/no-default-export": 0,
+    "react/react-in-jsx-scope": "off",
   }
 }
