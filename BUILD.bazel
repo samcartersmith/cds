@@ -2,7 +2,7 @@ load("@npm//ts-node:index.bzl", "ts_node")
 load("//tools:def.bzl", "release_packages", "stylelint_test")
 load("//tools/js:def.bzl", "jest_test", "storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
-load(":config.bzl", "PACKAGES", "STATIC_PACKAGES", "append_cds_mobile_deps", "append_cds_web_deps")
+load(":config.bzl", "PACKAGES", "STATIC_PACKAGES")
 load("//eng/shared/design-system/web:deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
 
 exports_files([
@@ -109,7 +109,9 @@ jest_test(
         "//eng/shared/design-system/utils:source",
         "//eng/shared/design-system/web:source",
     ],
-    deps = append_cds_web_deps(TEST_DEPS),
+    deps = TEST_DEPS + [
+        "@npm//@cbhq/cds-web",
+    ],
 )
 
 jest_test(
@@ -119,7 +121,9 @@ jest_test(
     tests = [
         "//eng/shared/design-system/mobile:source",
     ],
-    deps = append_cds_mobile_deps(TEST_DEPS),
+    deps = TEST_DEPS + [
+        "@npm//@cbhq/cds-mobile",
+    ],
 )
 
 jest_test(
@@ -131,25 +135,26 @@ jest_test(
     tests = [
         "//eng/shared/design-system/codegen/adoption:source",
     ],
-    deps = append_cds_mobile_deps(TEST_DEPS + [
+    deps = TEST_DEPS + [
         "@npm//react-native",
         "@npm//ora",
         "@npm//chalk",
         "@npm//yargs",
         "@npm//fast-glob",
-    ]),
+    ],
 )
 
 # ***************
 # *** codegen ***
 # ***************
 
-CODEGEN_DATA = append_cds_web_deps([
+CODEGEN_DATA = [
     ":build_source",
     "//:.prettierrc",
     "//:tsconfig.json",
     "//eng/shared/design-system/codegen:runtime_source",
     "//tools/js:writePrettyFile.ts",
+    "@npm//@cbhq/cds-web",
     "@npm//@types/react",
     "@npm//@types/react-native",
     "@npm//axios",
@@ -164,7 +169,7 @@ CODEGEN_DATA = append_cds_web_deps([
     "@npm//svgo",
     "@npm//svgson",
     "@npm//element-to-path",
-])
+]
 
 ts_node(
     name = "codegen",

@@ -1,5 +1,4 @@
 load("//tools/js:metro_bundle.bzl", "metro_bundle")
-load("//eng/shared/design-system:config.bzl", "append_cds_mobile_deps")
 load("//tools/js:def.bzl", "eslint_test")
 
 filegroup(
@@ -35,11 +34,12 @@ METRO_SRCS = [
     "//eng/shared/design-system/storybook:source",
 ]
 
-METRO_DEPS = append_cds_mobile_deps([
+METRO_DEPS = [
+    "@npm//@cbhq/cds-mobile",
     "@npm//@react-navigation/native",
     "@npm//@react-navigation/stack",
     "@npm//react-native-gesture-handler",
-])
+]
 
 metro_bundle(
     name = "bundle_android",
