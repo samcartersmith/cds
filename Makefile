@@ -169,6 +169,7 @@ deploy.website-dev:
 
 .PHONY: setup.mobile
 setup.mobile:
+	bazel run //eng/shared/design-system/mobile-playground:build_deps
 	cd ../../..; npx jetifier
 	cd mobile-playground/ios; RN_PROJECT=cds pod install
 	cd mobile-playground; RN_PROJECT=cds npx react-native link
@@ -191,7 +192,7 @@ clean.ios:
 
 .PHONY: release
 release:
-	bazel run :release | pbcopy 
+	bazel run :release | pbcopy
 	bazel run :changelog
 	bazel run :docgen
 	pbpaste | tail -1

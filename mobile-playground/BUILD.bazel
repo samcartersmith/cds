@@ -1,5 +1,16 @@
 load("//tools/js:metro_bundle.bzl", "metro_bundle")
 load("//tools/js:def.bzl", "eslint_test")
+load("//tools:def.bzl", "nodejs_binary")
+
+# This is a hack to build the @cbhq
+nodejs_binary(
+    name = "build_deps",
+    data = [
+        "@npm//@cbhq/cds-common",
+        "@npm//@cbhq/cds-mobile",
+    ],
+    entry_point = "deps.js",
+)
 
 filegroup(
     name = "source",
