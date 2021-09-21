@@ -1,6 +1,8 @@
 import { SharedProps } from './SharedProps';
 
 export type SparklineBaseProps = {
+  /** @danger Only use if you have a non CDS color powering the background color that a Sparkline will appear on top of. This is needed to validate the the `color` prop is an accessible color, otherwise it will pick an appropriate replacement. Accepts any valid color (hex, rgb, rgba). */
+  background?: string;
   /** Color of the plotted Sparkline. Accepts any valid color value. Do not pass in a CDS alias such as 'foreground' or a CSS Variable.  */
   color: string;
   /** Height of the Sparkline */

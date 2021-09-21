@@ -6,8 +6,8 @@ import Svg, { Path } from 'react-native-svg';
 
 import { useAccessibleForeground } from '../color/useAccessibleForeground';
 
-export const Sparkline = memo(({ color, height, path, width }: SparklineBaseProps) => {
-  const stroke = useAccessibleForeground({ color, usage: 'graphic' });
+export const Sparkline = memo(({ background, color, height, path, width }: SparklineBaseProps) => {
+  const stroke = useAccessibleForeground({ background, color, usage: 'graphic' });
   return (
     <Svg width={width} height={height}>
       <Path

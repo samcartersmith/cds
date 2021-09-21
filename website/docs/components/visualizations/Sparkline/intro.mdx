@@ -32,6 +32,8 @@ function Example() {
 }
 ```
 
+## Dynamic path colors
+
 ```jsx live
 function Example() {
   const normal = { width: 400, height: 200 };
@@ -43,6 +45,28 @@ function Example() {
       <VStack gap={2}>
         {assetColors.map(color => (
           <Sparkline key={color} {...dimensions} path={path} color={color} />
+        ))}
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+## Dynamic background colors
+
+```jsx live
+function Example() {
+  const normal = { width: 400, height: 200 };
+  const dense = { width: 200, height: 100 };
+  const dimensions = useScaleConditional({ normal, dense });
+  const path = useSparklinePath({ ...dimensions, data: prices });
+  return (
+    <ExampleWithThemeToggles>
+      <VStack gap={2}>
+        {assetColors.map(background => (
+          <VStack key={background} dangerouslySetBackground={background}>
+            <Sparkline {...dimensions} path={path} background={background} color="auto" />
+          </VStack>
         ))}
       </VStack>
     </ExampleWithThemeToggles>

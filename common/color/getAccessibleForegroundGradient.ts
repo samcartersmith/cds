@@ -28,10 +28,9 @@ export const getAccessibleForegroundGradient = ({
   let color1 = color;
   let color2 = color;
   // Disable gradients in dark mode
-  if (spectrum === 'dark') {
-    const darkModeColor = getAccessibleForeground(background, color, usage, transformFn);
-    color1 = darkModeColor;
-    color2 = darkModeColor;
+  if (spectrum === 'dark' || color === 'auto') {
+    color1 = getAccessibleForeground(background, color, usage, transformFn);
+    color2 = color1;
   } else if (isAccessibleColor(background, color, usage)) {
     color1 = color;
     color2 = darkenColor(color) ?? color;

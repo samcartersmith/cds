@@ -19,6 +19,21 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### background <Badge variant="danger" order={1} />
+
+Only use if you have a non CDS color powering the background color that a Sparkline will appear on top of. This is needed to validate the the `color` prop is an accessible color, otherwise it will pick an appropriate replacement. Accepts any valid color (hex, rgb, rgba).
+
+<ApiDetails
+  componentName="Sparkline"
+  propertyName="background"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Sparkline" templateName="prop-background" />
+
 ### color
 
 Color of the plotted Sparkline. Accepts any valid color value. Do not pass in a CDS alias such as foreground or a CSS Variable.

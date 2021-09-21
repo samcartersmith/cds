@@ -17,12 +17,18 @@ function useAccessibleForegroundGradient(params?: undefined): AccessibleForegrou
 function useAccessibleForegroundGradient(params?: AccessibleForegroundParams) {
   const spectrum = useSpectrum();
   const paletteConfig = usePaletteConfig();
-  const background = usePaletteValueToRgbaString(paletteConfig.background);
+  const backgroundFromPalette = usePaletteValueToRgbaString(paletteConfig.background);
   const transformFn = usePaletteValueToRgbaString();
   const convert = useCallback(
-    ({ color, usage }: AccessibleForegroundParams) =>
-      getAccessibleForegroundGradient({ background, color, spectrum, transformFn, usage }),
-    [background, spectrum, transformFn],
+    ({ background, color, usage }: AccessibleForegroundParams) =>
+      getAccessibleForegroundGradient({
+        background: background ?? backgroundFromPalette,
+        color,
+        spectrum,
+        transformFn,
+        usage,
+      }),
+    [backgroundFromPalette, spectrum, transformFn],
   );
   return useMemo(() => {
     if (params) {
