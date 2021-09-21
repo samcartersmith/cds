@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.23.1 (9/20/2021, 05:13 PM PST)
+
+#### 🚀 Updates
+
+- Support custom background in Sparkline. [#34285](https://github.cbhq.net/mono/repo/pull/34285), [CDS-806](https://jira.coinbase-corp.com/browse/CDS-806)
+
+#### 🐞 Fixes
+
+- Add Elevation level 0. [#34114](https://github.cbhq.net/mono/repo/pull/34114), [CDS-816](https://jira.coinbase-corp.com/browse/CDS-816)
+- Migrate CDS/2FA to new yarn link package structure. [#33903](https://github.cbhq.net/mono/repo/pull/33903), [MONOFE-76](https://jira.coinbase-corp.com/browse/MONOFE-76)
+
 ## 0.23.0 (9/16/2021, 05:19 PM PST)
 
 #### 💥 Breaking

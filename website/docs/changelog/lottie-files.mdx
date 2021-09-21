@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.14 (9/20/2021, 05:13 PM PST)
+
+#### 🐞 Fixes
+
+- Migrate CDS/2FA to new yarn link package structure. [#33903](https://github.cbhq.net/mono/repo/pull/33903), [MONOFE-76](https://jira.coinbase-corp.com/browse/MONOFE-76)
+
+#### 📘 Misc
+
+- Use new linting, so its faster. [#33221](https://github.cbhq.net/mono/repo/pull/33221)
+
 ## 0.2.13 (9/10/2021, 11:06 AM PST)
 
 #### 🐞 Fixes

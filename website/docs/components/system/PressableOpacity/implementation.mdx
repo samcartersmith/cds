@@ -222,7 +222,7 @@ Callback fired before `onPress` when button is released.
   required={false}
   defaultValue=""
   mobileOptions={[
-    '(state: Readonly<{ pressed: boolean; }>) => StyleProp<ViewStyle>',
+    '(state: PressableStateCallbackType) => StyleProp<ViewStyle>',
     'RecursiveArray<Falsy | ViewStyle | RegisteredStyle<ViewStyle>>',
     'RegisteredStyle<ViewStyle>',
     'ViewStyle',
