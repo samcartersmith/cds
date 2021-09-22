@@ -17,10 +17,15 @@ export const useElevationStyles = (elevation?: ElevationLevels): ViewStyle | und
       return undefined;
     }
 
-    const sharedStyles = {
-      borderWidth: elevationBorderWidth ? borderWidth[elevationBorderWidth] : undefined,
-      borderColor: elevationBorderColor,
-    } as const;
+    const sharedStyles: ViewStyle = {};
+
+    if (elevationBorderWidth) {
+      sharedStyles.borderWidth = borderWidth[elevationBorderWidth];
+    }
+
+    if (elevationBorderColor) {
+      sharedStyles.borderColor = elevationBorderColor;
+    }
 
     const levels = {
       1: {

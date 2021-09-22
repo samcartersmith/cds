@@ -10,7 +10,7 @@ export const useElevationBorderColor = (color: PaletteOrTransparentColor | undef
     ios: defaultBorderColor,
     // Hide border unless dark mode
     android: useSpectrumConditional({
-      light: undefined,
+      light: 'transparent',
       dark: defaultBorderColor,
     }),
   });
