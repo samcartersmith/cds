@@ -141,6 +141,7 @@ jest_test(
         "@npm//chalk",
         "@npm//yargs",
         "@npm//fast-glob",
+        "@npm//strip-json-comments",
     ],
 )
 
@@ -169,6 +170,7 @@ CODEGEN_DATA = [
     "@npm//svgo",
     "@npm//svgson",
     "@npm//element-to-path",
+    "@npm//strip-json-comments",
 ]
 
 ts_node(

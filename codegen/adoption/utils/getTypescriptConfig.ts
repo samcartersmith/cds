@@ -2,6 +2,7 @@ import * as ts from 'typescript';
 import path from 'path';
 import fs from 'fs';
 import { merge } from 'lodash';
+import stripJsonComments from 'strip-json-comments';
 
 export type TypescriptConfig = {
   extends?: string;
@@ -17,7 +18,7 @@ export async function getTypescriptConfig(
 ): Promise<TypescriptConfig> {
   try {
     const fileContents = await fs.promises.readFile(pathToConfig, 'utf8');
-    const config = JSON.parse(fileContents) as TypescriptConfig;
+    const config = JSON.parse(stripJsonComments(fileContents)) as TypescriptConfig;
     if (config?.extends) {
       return await getTypescriptConfig(
         path.resolve(path.dirname(pathToConfig), config.extends),
