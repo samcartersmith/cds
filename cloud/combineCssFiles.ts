@@ -103,4 +103,9 @@ async function combine() {
   ]);
 }
 
-void combine();
+void combine().catch((e) => {
+  // eslint-disable-next-line no-console
+  console.error(`Could not combine css files: ${e}`);
+
+  process.exit(1);
+});
