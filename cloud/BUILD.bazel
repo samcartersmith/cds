@@ -23,6 +23,8 @@ ts_node(
     data = [
         "//:tsconfig.json",
         "//eng/shared/design-system/cloud:combineCssFiles.ts",
+        "//eng/shared/design-system/fonts:package_tar",
+        "//eng/shared/design-system/web:package_tar",
         "@npm//@cbhq/cds-fonts",
         "@npm//@cbhq/cds-web",
         "@npm//fast-glob",
