@@ -80,7 +80,7 @@ async function combine() {
 
   // Extract critical CSS that *must* be at the top of the file
   const criticalCss = await readCss(
-    mapCssPaths(['global.css', 'resetStyles.css', 'scale.css', 'spectrum.css'], cssFiles),
+    mapCssPaths(['global.css', 'scale.css', 'spectrum.css'], cssFiles),
   );
 
   // Extract icon font CSS
