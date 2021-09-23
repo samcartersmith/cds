@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.27.2 (9/23/2021, 07:17 AM PST)
+
+#### 🐞 Fixes
+
+- Transparent border on Android fix. [#34771](https://github.cbhq.net/mono/repo/pull/34771)
+
 ## 0.27.1 (9/20/2021, 05:13 PM PST)
 
 #### 🚀 Updates

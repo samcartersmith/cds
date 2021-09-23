@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.22.2 (9/23/2021, 07:17 AM PST)
+
+#### 🐞 Fixes
+
+- Move resets to components. [#34815](https://github.cbhq.net/mono/repo/pull/34815)
+
 ## 0.22.1 (9/20/2021, 05:13 PM PST)
 
 #### 🚀 Updates
