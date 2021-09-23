@@ -26,7 +26,6 @@ const fallback = css`
   background-size: 600px 100px;
   display: inline-block;
   position: relative;
-  overflow: hidden;
 
   @keyframes shimmer {
     0% {
