@@ -1438,7 +1438,7 @@
     },
     {
       "name": "ScrollView",
-      "sourceFile": "react-native/ScrollView",
+      "sourceFile": "@prime-mobile/components/layout/ScrollView",
       "totalInstances": 5,
       "totalCallSites": 5,
       "presentationalProps": [
@@ -1538,14 +1538,6 @@
   ],
   "other": [
     {
-      "name": "RootStackNavigator",
-      "sourceFile": "@prime-mobile/navigators/RootStackNavigator",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@prime-mobile/App.tsx": 2 },
-      "propsWithCallSites": { "initialRouteName": { "@prime-mobile/App.tsx": 2 } }
-    },
-    {
       "name": "Providers",
       "sourceFile": "@prime-mobile/providers/Providers",
       "totalInstances": 2,
@@ -1553,10 +1545,12 @@
       "callSites": { "@prime-mobile/App.tsx": 2 }
     },
     {
-      "name": "LoginFlow",
-      "sourceFile": "@prime-mobile/App.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "name": "RootStackNavigator",
+      "sourceFile": "@prime-mobile/navigators/RootStackNavigator",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@prime-mobile/App.tsx": 2 },
+      "propsWithCallSites": { "initialRouteName": { "@prime-mobile/App.tsx": 2 } }
     },
     {
       "name": "Button",
@@ -1983,6 +1977,28 @@
       }
     },
     {
+      "name": "ScrollView",
+      "sourceFile": "react-native/ScrollView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showsVerticalScrollIndicator": { "@prime-mobile/components/layout/List.tsx": 1 },
+        "showsHorizontalScrollIndicator": { "@prime-mobile/components/layout/List.tsx": 1 }
+      }
+    },
+    {
+      "name": "FlatList",
+      "sourceFile": "react-native/FlatList",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showsVerticalScrollIndicator": { "@prime-mobile/components/layout/List.tsx": 1 },
+        "showsHorizontalScrollIndicator": { "@prime-mobile/components/layout/List.tsx": 1 },
+        "data": { "@prime-mobile/components/layout/List.tsx": 1 },
+        "renderItem": { "@prime-mobile/components/layout/List.tsx": 1 }
+      }
+    },
+    {
       "name": "Toast",
       "sourceFile": "@prime-mobile/components/toast/Toast",
       "totalInstances": 2,
@@ -2194,7 +2210,7 @@
     },
     {
       "name": "FlatList",
-      "sourceFile": "react-native/FlatList",
+      "sourceFile": "@prime-mobile/components/layout/FlatList",
       "totalInstances": 3,
       "totalCallSites": 3,
       "callSites": {

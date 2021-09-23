@@ -230,6 +230,12 @@
       }
     },
     {
+      "name": "div",
+      "sourceFile": "@trust_and_safety/pages/SecurityUpgradePage/SecurityUpgradePage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "TOTPScreen",
       "sourceFile": "@trust_and_safety/pages/TwoFactorPage/screens/TOTP/TOTPScreen",
       "totalInstances": 1,
@@ -238,12 +244,6 @@
     {
       "name": "div",
       "sourceFile": "@trust_and_safety/pages/TwoFactorPage/TwoFactorPage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "@trust_and_safety/pages/SecurityUpgradePage/SecurityUpgradePage.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
