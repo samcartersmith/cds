@@ -8,11 +8,14 @@ import { cx, css } from 'linaria';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as foregroundStyles from '../styles/foregroundColor';
 import { disabledState } from '../styles/interactable';
-import { typographyResets } from '../styles/resetStyles';
 import { getTypographyStyles } from '../styles/typography';
 import type { DynamicElement } from '../types';
 import type { HTMLTextTags, TextProps } from './TextProps';
 import * as textStyles from './textStyles';
+
+const typographyStyles = css`
+  margin: 0;
+`;
 
 const currentColor = css`
   color: currentColor;
@@ -75,7 +78,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: b
       children,
       style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
       className: cx(
-        typographyResets,
+        typographyStyles,
         inherit ? textInherit : textStyles[name],
         color === 'currentColor' ? currentColor : foregroundStyles[color],
         disabled && disabledState,

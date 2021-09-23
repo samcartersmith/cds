@@ -11,9 +11,16 @@ import { SharedProps } from '@cbhq/cds-common';
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { checkboxReset } from '../styles/resetStyles';
+import { css } from 'linaria';
 import { FilteredHTMLAttributes } from '../types';
 import { Checkbox, CheckboxProps } from './Checkbox';
+
+const checkboxStyles = css`
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  border-width: 0;
+`;
 
 export type CheckboxGroupProps<T extends string> = {
   /** Handle change event when pressing on a checkbox option. */
@@ -65,7 +72,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   // TODO (hannah): Update default styles once Caroline has the design ready. (Add default distance between
   // checkboxes.)
   return (
-    <fieldset ref={ref} className={checkboxReset} data-testid={testID} {...restProps}>
+    <fieldset ref={ref} className={checkboxStyles} data-testid={testID} {...restProps}>
       {label}
       {optionCheckboxes}
     </fieldset>

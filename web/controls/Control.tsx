@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
@@ -7,12 +6,32 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { css, cx } from 'linaria';
 
 import { Box, Spacer } from '../layout';
-import { inputRadioResets } from '../styles/resetStyles';
 import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { TextProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
 import { isRtl } from '../utils/isRtl';
+
+const pointer = css`
+  &:not(:disabled),
+  &:not(:read-only) {
+    cursor: pointer;
+  }
+`;
+
+const controlInput = css`
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+`;
+
+const interactableContainer = css`
+  height: fit-content;
+  width: fit-content;
+`;
 
 export type ControlProps = FilteredHTMLAttributes<InputHTMLAttributes<HTMLInputElement>, 'value'> &
   SharedProps;
@@ -85,7 +104,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       className={interactableContainer}
     >
       <>
-        <input className={cx(inputRadioResets, controlInput, pointer)} {...inputProps} />
+        <input className={cx(controlInput, pointer)} {...inputProps} />
         {children}
       </>
     </Interactable>
@@ -119,23 +138,3 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &
   React.MemoExoticComponent<typeof ControlWithRef>;
-
-const pointer = css`
-  &:not(:disabled),
-  &:not(:read-only) {
-    cursor: pointer;
-  }
-`;
-
-const controlInput = css`
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-`;
-
-const interactableContainer = css`
-  height: fit-content;
-  width: fit-content;
-`;

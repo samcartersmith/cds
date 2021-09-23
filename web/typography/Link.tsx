@@ -2,9 +2,8 @@ import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 
-import { linkResets } from '../styles/resetStyles';
 import { ButtonOrLink } from '../system/ButtonOrLink';
 import { OnPress } from '../types';
 import type { DynamicElement } from '../types';
@@ -21,6 +20,7 @@ import { TextTitle3 } from './TextTitle3';
 import { TextInherited } from './TextInherited';
 
 const link = css`
+  text-decoration: none;
   cursor: pointer;
   background: none;
   margin: 0;
@@ -80,7 +80,7 @@ export const Link = memo(function Link({
   const enhancedProps = {
     'aria-label': accessibilityLabel,
     'data-testid': testID,
-    className: cx(link, linkResets),
+    className: link,
     onClick: onPress,
     ref: linkRef,
     href: to,

@@ -5,9 +5,6 @@ import './iconFont';
 // focus visible polyfill
 import 'focus-visible';
 
-// we need resets to compile before everything else
-import './resetStyles';
-
 export const global = css`
   :global() {
     *,

@@ -1,12 +1,20 @@
 import React, { forwardRef } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
-import { cx } from 'linaria';
 
+import { cx, css } from 'linaria';
 import { scaledDownState } from '../styles/interactable';
-import { buttonResets } from '../styles/resetStyles';
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
+
+const pressableResetStyles: string = css`
+  border-style: none;
+  padding: 0;
+`;
+
+const pressablePaddingResetStyles = css`
+  padding: 0;
+`;
 
 export type LinkableProps = {
   /** Callback fired when the element is pressed. */
@@ -50,6 +58,16 @@ export const Pressable = forwardRef(function Pressable(
   // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const isDisabled = disabled || loading;
 
+  let resetStyles = ''; // empty string is falsy
+  const { borderColor } = props;
+  if (!className) {
+    if (!borderColor) {
+      resetStyles = pressableResetStyles;
+    } else {
+      resetStyles = pressablePaddingResetStyles;
+    }
+  }
+
   return (
     <Interactable
       aria-busy={loading}
@@ -57,7 +75,7 @@ export const Pressable = forwardRef(function Pressable(
       as={as ?? ButtonOrLink}
       onClick={onPress}
       {...props}
-      className={cx(buttonResets, !noScaleOnPress && scaledDownState, className)}
+      className={cx(!noScaleOnPress && scaledDownState, className, resetStyles)}
       disabled={isDisabled}
       ref={ref}
     >

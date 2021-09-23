@@ -5,7 +5,7 @@ import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { cx } from 'linaria';
 
-import * as buttonStyles from './buttonStyles';
+import { iconButton } from './buttonStyles';
 import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../styles/flex';
 import { Pressable, PressableProps } from '../system/Pressable';
@@ -50,7 +50,7 @@ export const IconButton = forwardRef(
         borderColor={borderColor}
         borderRadius="round"
         borderWidth="button"
-        className={cx(flexStyles, buttonStyles.iconButton)}
+        className={cx(flexStyles, iconButton)}
         disabled={disabled}
         onPress={onPress}
         style={style}

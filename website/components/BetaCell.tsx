@@ -6,6 +6,8 @@ import { useOffsetStyles } from '@cbhq/cds-web/hooks/useOffsetStyles';
 import { BoxBaseProps } from '@cbhq/cds-common';
 
 const pressClassName = css`
+  padding: 0;
+  border-style: none;
   align-items: stretch;
   flex-grow: 1;
   display: flex;

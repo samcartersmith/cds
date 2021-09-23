@@ -3,9 +3,14 @@ import React, { memo } from 'react';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common/types';
 
+import { css, cx } from 'linaria';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { LinkableProps, Pressable } from '../system/Pressable';
 import { VStack } from './VStack';
+
+const cardPressableStyles = css`
+  padding: 0;
+`;
 
 export type CardProps = CardBaseProps & LinkableProps;
 
@@ -51,7 +56,7 @@ export const Card: React.FC<CardProps> = memo(
         borderWidth="card"
         elevation={elevation}
         onPress={onPress}
-        className={pinStyles}
+        className={cx(cardPressableStyles, pinStyles)}
         to={to}
         width={width}
         height={height}

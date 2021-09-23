@@ -9,6 +9,8 @@ import { HStack } from '../layout/HStack';
 import { Pressable, LinkableProps } from '../system/Pressable';
 
 const pressClassName = css`
+  border-style: none;
+  padding: 0;
   align-items: stretch;
   flex-grow: 1;
   display: flex;
