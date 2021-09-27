@@ -176,7 +176,7 @@ setup.mobile:
 
 .PHONY: start.mobile
 start.mobile:
-	cd ../../..; RN_PROJECT=cds npx react-native start --reset-cache
+	cd ../../..; LIVE_PACKAGES="cds-\w+" RN_PROJECT=cds npx react-native start --reset-cache
 
 .PHONY: build.android
 build.android:

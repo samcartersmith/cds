@@ -43,6 +43,7 @@ filegroup(
 docusaurus(
     name = "docusaurus",
     srcs = [":source"] + srcs,
+    live_packages = "cds-\\w+",
     deps = [
         "@npm//@cbhq/cds-common",
         "@npm//@cbhq/cds-fonts",

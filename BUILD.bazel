@@ -281,6 +281,7 @@ storybook(
         "//eng/shared/design-system/fonts:runtime_source",
         "//eng/shared/design-system/web:story_source",
     ],
+    live_packages = "cds-\\w+",
     static_files = ["eng/shared/design-system/fonts"],
     storybook_config = "//eng/shared/design-system/storybook:.storybook",
     deps = [
