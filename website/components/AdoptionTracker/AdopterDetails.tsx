@@ -17,6 +17,7 @@ import {
 import { AdopterSearchInput } from './search/AdopterSearchInput';
 import { ComponentData } from './types';
 import { AdopterSearchProvider } from './search/AdopterSearchProvider';
+import { AdopterStatsBreakdown } from './AdopterStatsBreakdown';
 
 const AdopterTabs = memo(() => {
   const { id } = useAdopterProjectInfo();
@@ -82,18 +83,21 @@ export const AdopterDetails = memo(() => {
 
   return (
     <VStack>
-      <HStack alignItems="flex-start" justifyContent="space-between" spacingBottom={2}>
-        <HStack alignItems="center">
-          <IconButton transparent name="backArrow" to="/adoption/tracker/overview" />
-          <TextTitle1 as="h1" spacingStart={4}>
-            {label}
-          </TextTitle1>
+      <VStack>
+        <HStack alignItems="flex-start" justifyContent="space-between" spacingBottom={2}>
+          <HStack alignItems="center">
+            <IconButton transparent name="backArrow" to="/adoption/tracker/overview" />
+            <TextTitle1 as="h1" spacingStart={4}>
+              {label}
+            </TextTitle1>
+          </HStack>
+          <HStack width={240} gap={6}>
+            <StatsTextStack label="CDS" stat={useAdoptionPercent('cds')} />
+            <StatsTextStack label="Product" stat={useAdoptionPercent('presentational')} />
+          </HStack>
         </HStack>
-        <HStack gap={6}>
-          <StatsTextStack label="CDS" stat={useAdoptionPercent('cds')} />
-          <StatsTextStack label="Product" stat={useAdoptionPercent('presentational')} />
-        </HStack>
-      </HStack>
+        <AdopterStatsBreakdown />
+      </VStack>
       <AdopterTabProvider>
         <AdopterSearchProvider>
           <AdopterTabs />
