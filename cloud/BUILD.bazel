@@ -1,4 +1,5 @@
 load("//tools:def.bzl", "pkg_zip", "project_settings", "syn_deployable", "syn_file_asset")
+load("//tools/js:def.bzl", "TS_CONFIGS")
 load("//eng/shared/design-system:cds_deployable.bzl", "cds_deployable")
 load("//eng/shared/design-system:config.bzl", "PACKAGES", "STATIC_PACKAGES")
 load("@npm//ts-node:index.bzl", "ts_node")
@@ -21,7 +22,6 @@ ts_node(
         "--project $(execpath //:tsconfig.json)",
     ],
     data = [
-        "//:tsconfig.json",
         "//eng/shared/design-system/cloud:combineCssFiles.ts",
         "//eng/shared/design-system/fonts:package_tar",
         "//eng/shared/design-system/web:package_tar",
@@ -29,7 +29,7 @@ ts_node(
         "@npm//@cbhq/cds-web",
         "@npm//fast-glob",
         "@npm//yargs",
-    ],
+    ] + TS_CONFIGS,
     output_dir = True,
     visibility = ["//visibility:public"],
 )

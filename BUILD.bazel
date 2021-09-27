@@ -1,6 +1,6 @@
 load("@npm//ts-node:index.bzl", "ts_node")
 load("//tools:def.bzl", "release_packages", "stylelint_test")
-load("//tools/js:def.bzl", "jest_test", "storybook")
+load("//tools/js:def.bzl", "TS_CONFIGS", "jest_test", "storybook")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load(":config.bzl", "PACKAGES", "STATIC_PACKAGES")
 load("//eng/shared/design-system/web:deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
@@ -152,7 +152,6 @@ jest_test(
 CODEGEN_DATA = [
     ":build_source",
     "//:.prettierrc",
-    "//:tsconfig.json",
     "//eng/shared/design-system/codegen:runtime_source",
     "//tools/js:writePrettyFile.ts",
     "@npm//@cbhq/cds-web",
@@ -171,7 +170,7 @@ CODEGEN_DATA = [
     "@npm//svgson",
     "@npm//element-to-path",
     "@npm//strip-json-comments",
-]
+] + TS_CONFIGS
 
 ts_node(
     name = "codegen",
@@ -259,10 +258,9 @@ ts_node(
         "--project $(execpath //:tsconfig.json)",
     ],
     data = [
-        "//:tsconfig.json",
         "//eng/shared/design-system/codegen:runtime_source",
         "@npm//chalk",
-    ],
+    ] + TS_CONFIGS,
 )
 
 release_packages(
