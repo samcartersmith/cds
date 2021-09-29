@@ -115,3 +115,9 @@ export const fullWidth = css`
   display: block;
   width: 100%;
 `;
+
+// Fix a safari bug
+export const borderClip = css`
+  border: 1px solid transparent;
+  border-style: hidden;
+`;

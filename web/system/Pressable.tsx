@@ -8,7 +8,7 @@ import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
 
 const pressableResetStyles: string = css`
-  border-style: none;
+  border-style: hidden;
   padding: 0;
 `;
 

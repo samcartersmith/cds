@@ -24,6 +24,7 @@ import {
   underlay,
   transparentChildren,
   fullWidth,
+  borderClip,
 } from '../styles/interactable';
 import { palette } from '../tokens';
 
@@ -104,6 +105,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     borderWidth && borderWidths[borderWidth],
     disabled ? disabledState : focusRing,
     block && fullWidth,
+    borderClip,
     customClassName,
   );
   const style = useMemo(
