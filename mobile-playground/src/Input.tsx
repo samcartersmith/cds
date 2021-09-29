@@ -4,10 +4,6 @@ import { Icon } from '@cbhq/cds-mobile/icons';
 
 import { BetaTextInput, BetaTextInputProps } from '@cbhq/cds-mobile/inputs/BetaTextInput';
 import { Input } from '@cbhq/cds-mobile/inputs/Input';
-import {
-  BetaCompactTextInput,
-  BetaCompactTextInputProps,
-} from '@cbhq/cds-mobile/inputs/BetaCompactTextInput';
 
 import { TextBody } from '@cbhq/cds-mobile/typography';
 
@@ -22,10 +18,10 @@ const MockTextInput = ({ ...props }: BetaTextInputProps) => {
   return <BetaTextInput onChangeText={onChangeText} value={text} {...props} />;
 };
 
-const MockCompactTextInput = ({ ...props }: BetaCompactTextInputProps) => {
+const MockCompactTextInput = ({ ...props }: BetaTextInputProps) => {
   const [text, onChangeText] = useState('');
 
-  return <BetaCompactTextInput onChangeText={onChangeText} value={text} {...props} />;
+  return <BetaTextInput compact onChangeText={onChangeText} value={text} {...props} />;
 };
 
 const MockComplexInput = () => {
@@ -81,9 +77,91 @@ export default function InputScreen() {
               <TextBody>Label</TextBody>
             </Box>
           }
-          messageArea={
+          helperText={
             <Box background="backgroundOverlay" width="100%" height={30}>
-              <TextBody>MessageArea</TextBody>
+              <TextBody>helperText</TextBody>
+            </Box>
+          }
+          borderStyle={{
+            borderWidth: 1,
+          }}
+          variant="primary"
+        />
+      </Example>
+      <Example inline title="Input Prepend Only - Test for borderRadius">
+        {/*
+         * Ensure that every compartment does what its suppose to
+         */}
+        <Input
+          prepend={
+            <Box background="primary">
+              <TextBody>Prepend</TextBody>
+            </Box>
+          }
+          startContent={
+            <Box background="positive">
+              <TextBody>StartContent</TextBody>
+            </Box>
+          }
+          endContent={
+            <Box background="positive">
+              <TextBody>EndContent</TextBody>
+            </Box>
+          }
+          input={
+            <Box background="backgroundAlternate" flexGrow={2}>
+              <TextBody>Input</TextBody>
+            </Box>
+          }
+          label={
+            <Box background="backgroundAlternate" width="100%" height={30}>
+              <TextBody>Label</TextBody>
+            </Box>
+          }
+          helperText={
+            <Box background="backgroundOverlay" width="100%" height={30}>
+              <TextBody>helperText</TextBody>
+            </Box>
+          }
+          borderStyle={{
+            borderWidth: 1,
+          }}
+          variant="primary"
+        />
+      </Example>
+      <Example inline title="Input Append Only - Test for borderRadius">
+        {/*
+         * Ensure that every compartment does what its suppose to
+         */}
+        <Input
+          append={
+            <Box background="primary">
+              <TextBody>Append</TextBody>
+            </Box>
+          }
+          startContent={
+            <Box background="positive">
+              <TextBody>StartContent</TextBody>
+            </Box>
+          }
+          endContent={
+            <Box background="positive">
+              <TextBody>EndContent</TextBody>
+            </Box>
+          }
+          input={
+            <Box background="backgroundAlternate" flexGrow={2}>
+              <TextBody>Input</TextBody>
+            </Box>
+          }
+          label={
+            <Box background="backgroundAlternate" width="100%" height={30}>
+              <TextBody>Label</TextBody>
+            </Box>
+          }
+          helperText={
+            <Box background="backgroundOverlay" width="100%" height={30}>
+              <TextBody>helperText</TextBody>
             </Box>
           }
           borderStyle={{
@@ -95,7 +173,7 @@ export default function InputScreen() {
       <Example inline title="TextInput ForegroundMuted">
         <MockTextInput
           label="Username"
-          description="username must start with an @ symbol"
+          helperText="username must start with an @ symbol"
           variant="foregroundMuted"
           placeholder="john.doe@coinbase.com"
         />
@@ -103,7 +181,7 @@ export default function InputScreen() {
       <Example inline title="TextInput Positive">
         <MockTextInput
           label="Username"
-          description="username must start with an @ symbol"
+          helperText="username must start with an @ symbol"
           variant="positive"
           placeholder="john.doe@coinbase.com"
         />
@@ -111,7 +189,7 @@ export default function InputScreen() {
       <Example inline title="TextInput Negative">
         <MockTextInput
           label="Username"
-          description="username must start with an @ symbol"
+          helperText="username must start with an @ symbol"
           variant="negative"
           placeholder="john.doe@coinbase.com"
         />
@@ -120,7 +198,7 @@ export default function InputScreen() {
         <MockTextInput
           startContent={<IconButton variant="foregroundMuted" name="search" transparent />}
           label="Search"
-          description="Search for assets here"
+          helperText="Search for assets here"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
         />
@@ -129,7 +207,7 @@ export default function InputScreen() {
         <MockTextInput
           endContent={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
           label="Search"
-          description="Search for assets here"
+          helperText="Search for assets here"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
         />
@@ -139,40 +217,40 @@ export default function InputScreen() {
           endContent={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
           label="Search"
           width="50%"
-          description="Search for assets here"
+          helperText="Search for assets here"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
         />
       </Example>
-      <Example inline title="TextInput Right Align Input Text">
-        <MockTextInput label="Search" placeholder="ex. Bitcoin" textAlignInput="right" />
+      <Example inline title="TextInput Start Align Input Text">
+        <MockTextInput label="Search" placeholder="ex. Bitcoin" textAlignInput="start" />
       </Example>
-      <Example inline title="TextInput Left Align Input Text">
-        <MockTextInput label="Search" placeholder="ex. Bitcoin" textAlignInput="left" />
+      <Example inline title="TextInput End Align Input Text">
+        <MockTextInput label="Search" placeholder="ex. Bitcoin" textAlignInput="end" />
       </Example>
-      <Example inline title="TextInput Right Align Description">
+      <Example inline title="TextInput Start Align helperText">
         <MockTextInput
           label="Search"
           placeholder="ex. Bitcoin"
-          textAlignDescription="right"
-          description="Great asset choice!"
+          textAlignHelperText="start"
+          helperText="Great asset choice!"
         />
       </Example>
-      <Example inline title="TextInput Right Align Description and Input Text">
+      <Example inline title="TextInput Start Align helperText and Input Text">
         <MockTextInput
           label="Search"
           placeholder="ex. Bitcoin"
-          textAlignDescription="right"
-          textAlignInput="right"
-          description="Great asset choice!"
+          textAlignHelperText="start"
+          textAlignInput="start"
+          helperText="Great asset choice!"
         />
       </Example>
-      <Example inline title="TextInput Left Align Description">
+      <Example inline title="TextInput End Align helperText">
         <MockTextInput
           label="Search"
           placeholder="ex. Bitcoin"
-          textAlignDescription="left"
-          description="Great asset choice!"
+          textAlignHelperText="end"
+          helperText="Great asset choice!"
         />
       </Example>
       <Example inline title="TextInput endContent auto">
@@ -180,7 +258,7 @@ export default function InputScreen() {
           endContent={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
           label="Search"
           width="auto"
-          description="Search for new asset listing on Coinbase"
+          helperText="Search for new asset listing on Coinbase"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
         />
@@ -190,7 +268,7 @@ export default function InputScreen() {
           endContent={<TextBody color="foregroundMuted">Cancel</TextBody>}
           startContent={<IconButton name="search" transparent />}
           label="Search"
-          description="Search for assets here"
+          helperText="Search for assets here"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
         />
@@ -215,7 +293,7 @@ export default function InputScreen() {
           label="One Time Password"
           variant="negative"
           placeholder="189-280-1111"
-          description="Password is in an incorrect format"
+          helperText="Password is in an incorrect format"
         />
       </Example>
       <Example inline title="CompactTextInput Positive">
@@ -223,15 +301,15 @@ export default function InputScreen() {
           label="One Time Password"
           variant="positive"
           placeholder="189-280-1111"
-          description="Password is looking good!"
+          helperText="Password is looking good!"
         />
       </Example>
-      <Example inline title="CompactTextInput Right Align Description">
+      <Example inline title="CompactTextInput Start Align helperText">
         <MockCompactTextInput
           label="One Time Password"
           placeholder="189-280-1111"
-          textAlignDescription="right"
-          description="Password is looking good!"
+          textAlignHelperText="start"
+          helperText="Password is looking good!"
         />
       </Example>
       <Example inline title="CompactTextInput 50%">

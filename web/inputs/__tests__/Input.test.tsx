@@ -1,6 +1,5 @@
 import TestRenderer from 'react-test-renderer';
 
-import { TextInput as RNTextInput } from 'react-native';
 import { Input, InputProps } from '../Input';
 
 const TEST_ID = 'input';
@@ -8,7 +7,7 @@ const TEST_ID = 'input';
 function expectAttribute<
   K extends keyof Pick<InputProps, 'width' | 'disabled' | 'variant' | 'height'>,
 >(prop: K, values: readonly NonNullable<InputProps[K]>[]) {
-  const input = <RNTextInput value="15" />;
+  const input = <input type="text" id="name" name="name" required />;
 
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe

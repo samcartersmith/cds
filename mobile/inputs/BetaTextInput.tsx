@@ -1,48 +1,46 @@
-import { useSpectrum } from '@cbhq/cds-common';
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 import React, { useState, memo } from 'react';
 import {
-  TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
   NativeSyntheticEvent,
   TextInputFocusEventData,
 } from 'react-native';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { useInputLabelColor } from '@cbhq/cds-common/hooks/useInputLabelColor';
-import { DefaultInput } from './DefaultInput';
-import { MessageArea } from './MessageArea';
+import { NativeInput } from './NativeInput';
+import { HelperText } from './HelperText';
 
 import { Input } from './Input';
 
 import { Box } from '../layout/Box';
-import { usePalette } from '../hooks/usePalette';
 import { InputLabel } from './InputLabel';
-import { useInputBorderStyle, useInputTextStyles } from '../hooks/useInputStyles';
+import { useInputBorderStyle } from '../hooks/useInputStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { HStack } from '../layout/HStack';
+import { TextLabel1 } from '../typography/TextLabel1';
 
 export type BetaTextInputProps = TextInputBaseProps & RNTextInputProps;
 
 export const BetaTextInput = memo(
   ({
     label,
-    description = '',
+    helperText = '',
     variant = 'foregroundMuted',
     testID,
     startContent,
     endContent,
     width = '100%',
     disabled = false,
-    textAlignInput = 'left',
-    textAlignDescription = 'left',
+    textAlignInput = 'start',
+    textAlignHelperText = 'start',
+    compact,
+    suffix = '',
     ...editableInputProps
   }: BetaTextInputProps) => {
-    const palette = usePalette();
     const [focused, setFocused] = useState(false);
-    const inputTextStyle = useInputTextStyles('foreground');
     const variantWithFocus = useInputVariant(focused, variant);
-    const labelColorWithFocus = useInputLabelColor(focused, variant);
+    const labelColor = useInputLabelColor(variant);
     const inputBorderStyle = useInputBorderStyle(focused);
-    const spectrum = useSpectrum();
 
     const editableInputAddonProps = {
       ...editableInputProps,
@@ -56,16 +54,6 @@ export const BetaTextInput = memo(
       },
     };
 
-    const editableInput = (
-      <RNTextInput
-        style={[inputTextStyle, { flex: 2, textAlign: textAlignInput }]}
-        editable={!disabled}
-        placeholderTextColor={palette.foregroundMuted}
-        keyboardAppearance={spectrum}
-        {...editableInputAddonProps}
-      />
-    );
-
     /**
      * If startContent exist, the padding
      * between input area and icon should be 0.5 (4px).
@@ -76,14 +64,6 @@ export const BetaTextInput = memo(
       spacingStart: 0.5,
     });
 
-    /** Default Input Content */
-    const defaultInput = (
-      <DefaultInput
-        editableInput={editableInput}
-        containerSpacing={startContent ? startSpacing : {}}
-      />
-    );
-
     return (
       <Input
         testID={testID}
@@ -91,25 +71,36 @@ export const BetaTextInput = memo(
         disabled={disabled}
         variant={variantWithFocus}
         borderStyle={inputBorderStyle}
-        input={defaultInput}
-        messageArea={
-          !!description && (
-            <MessageArea color={variant} message={description} textAlign={textAlignDescription} />
+        input={
+          <NativeInput
+            containerSpacing={startContent ? startSpacing : {}}
+            align={textAlignInput}
+            disabled={disabled}
+            {...editableInputAddonProps}
+          />
+        }
+        helperText={
+          !!helperText && (
+            <HelperText color={variant} align={textAlignHelperText}>
+              {helperText}
+            </HelperText>
           )
         }
-        label={<InputLabel label={label} labelColor={labelColorWithFocus} />}
+        label={!compact && <InputLabel color={labelColor}>{label}</InputLabel>}
         startContent={
-          !!startContent && (
-            <Box justifyContent="center" spacingStart={1}>
-              {startContent}
+          (compact || !!startContent) && (
+            <Box justifyContent="center" alignItems="center" spacingStart={1}>
+              {compact && <InputLabel color={labelColor}>{label}</InputLabel>}
+              {!!startContent && <>{startContent}</>}
             </Box>
           )
         }
         endContent={
-          !!endContent && (
-            <Box justifyContent="center" spacingEnd={2}>
-              {endContent}
-            </Box>
+          (suffix !== '' || !!endContent) && (
+            <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2}>
+              {suffix !== '' && <TextLabel1 color="foregroundMuted">{suffix}</TextLabel1>}
+              {!!endContent && <>{endContent}</>}
+            </HStack>
           )
         }
       />

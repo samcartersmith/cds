@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { InputVariants } from '../types/InputBaseProps';
+import { InputVariant } from '../types/InputBaseProps';
 
-export const useInputVariant = (focused: boolean, variant: InputVariants) => {
+export const useInputVariant = (focused: boolean, variant: InputVariant) => {
   return useMemo(
-    () => (focused && variant === 'foregroundMuted' ? 'primary' : variant),
+    () => (focused && variant !== 'positive' && variant !== 'negative' ? 'primary' : variant),
     [focused, variant],
   );
 };

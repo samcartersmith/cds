@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { InputVariants } from '../types/InputBaseProps';
+import { InputVariant } from '../types/InputBaseProps';
 
-export const useInputLabelColor = (focused: boolean, variant: InputVariants) => {
+export const useInputLabelColor = (variant: InputVariant) => {
   return useMemo(() => {
     let labelColor = variant;
 
@@ -9,10 +9,6 @@ export const useInputLabelColor = (focused: boolean, variant: InputVariants) => 
       labelColor = 'foreground';
     }
 
-    if (focused && (variant === 'foregroundMuted' || variant === 'foreground')) {
-      labelColor = 'primary';
-    }
-
     return labelColor;
-  }, [focused, variant]);
+  }, [variant]);
 };

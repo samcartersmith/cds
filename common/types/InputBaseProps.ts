@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import type { SharedProps } from './SharedProps';
 import { PaletteForeground } from './Palette';
 
-export type InputVariants = Extract<
+export type InputVariant = Extract<
   PaletteForeground,
   'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted'
 >;
@@ -16,12 +16,12 @@ export type InputBaseProps = {
    * to the variant. You will have to add that yourself
    * @default foregroundMuted
    */
-  variant?: InputVariants;
+  variant?: InputVariant;
   /**
-   * Width of input
+   * Width of input. Can only adjust using percentage for now
    * @default 100%
    * */
-  width?: number | string | 'auto';
+  width?: string;
   /**
    * Height of input
    * @default auto
@@ -43,7 +43,7 @@ export type InputBaseProps = {
   /** Editable area of the Input */
   input: ReactNode;
   /** Text shown below input. Used for when label is not enough to indicate what this input does */
-  messageArea?: ReactNode;
+  helperText?: ReactNode;
   /** A message indicating the purpose of this input */
   label?: ReactNode;
 } & SharedProps;

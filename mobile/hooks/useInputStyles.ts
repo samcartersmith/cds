@@ -1,8 +1,6 @@
 import { useMemo } from 'react';
-import { ViewStyle } from 'react-native';
-import { InputVariants } from '@cbhq/cds-common';
+import { InputVariant } from '@cbhq/cds-common';
 import { focusedStyle, unfocusedStyle } from '@cbhq/cds-common/tokens/input';
-import { DropdownPositions } from '@cbhq/cds-common/types/DropdownBaseProps';
 import { useTypographyStyles } from '../typography';
 import { usePalette } from './usePalette';
 
@@ -11,7 +9,7 @@ import { usePalette } from './usePalette';
  * what our text body offers, so we need to add custom
  * input text style to match our text body style.
  */
-export const useInputTextStyles = (textColor: InputVariants) => {
+export const useInputTextStyles = (textColor: InputVariant) => {
   const { fontFamily, fontSize, lineHeight } = useTypographyStyles('body');
   const palette = usePalette();
 
@@ -33,37 +31,18 @@ export const useInputTextStyles = (textColor: InputVariants) => {
  * @param position
  * @returns
  */
-export const useInputBorderStyle = (focused: boolean, position?: DropdownPositions) => {
-  // If not marginOffset was passed in,
-  // these are the defaults
+export const useInputBorderStyle = (focused: boolean) => {
   return useMemo(() => {
-    let inputBorderRadius: ViewStyle = {};
-
-    if (position === 'prepend') {
-      inputBorderRadius = {
-        borderTopLeftRadius: 0,
-        borderBottomLeftRadius: 0,
-      };
-    }
-
-    if (position === 'append') {
-      inputBorderRadius = {
-        borderTopRightRadius: 0,
-        borderBottomRightRadius: 0,
-      };
-    }
-
     if (focused) {
       return {
         ...focusedStyle,
-        ...inputBorderRadius,
         marginTop: -1,
         marginLeft: -1,
         marginRight: -1,
-        marginBottom: 0,
+        marginBottom: -1,
       };
     }
 
     return unfocusedStyle;
-  }, [focused, position]);
+  }, [focused]);
 };
