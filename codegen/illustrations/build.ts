@@ -397,7 +397,7 @@ const createTypes = async (names: IllustrationNamesMap, variants: string[]) => {
   try {
     await writeFile({
       template: 'typescript.ejs',
-      dest: 'common/types/Illustration.ts',
+      dest: 'common/types/IllustrationNames.ts',
       data: {
         types: {
           IllustrationVariant: variants,

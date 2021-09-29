@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 
 import 'react-native-gesture-handler';
-import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
-import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
-import { useTypographyStyles } from '@cbhq/cds-mobile/typography';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { usePalette } from '../mobile/hooks/usePalette';
+import { DevicePreferencesProvider } from '../mobile/system/DevicePreferencesProvider';
+import { useTypographyStyles } from '../mobile/typography';
 
 import List from './src';
 import BoxScreen from './src/Box';
