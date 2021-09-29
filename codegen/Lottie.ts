@@ -4,13 +4,19 @@ import path from 'path';
 import { LottieSource } from '@cbhq/cds-common/types/LottieSource';
 
 const LOTTIE_FILES_DIR = path.resolve(__dirname, '..', 'lottie-files');
+const IGNORE_FILES = ['basepackage', 'package', 'index'];
 
 export const lottieFiles = (() => {
   const lottiePath = (file: string) => path.join(LOTTIE_FILES_DIR, file, `${file}.json`);
 
   const files = fs.readdirSync(LOTTIE_FILES_DIR, { withFileTypes: true });
   const lottieFileNames = files
-    .filter((ent) => ent.isDirectory() && fs.existsSync(lottiePath(ent.name)))
+    .filter(
+      (ent) =>
+        ent.isDirectory() &&
+        fs.existsSync(lottiePath(ent.name)) &&
+        !IGNORE_FILES.includes(ent.name),
+    )
     .map((ent) => ent.name);
 
   return lottieFileNames.map((src) => {

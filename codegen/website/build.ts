@@ -124,7 +124,7 @@ const flattenTemplatesMap = (
 ) => {
   const flattenMap = (prevMap: AnyObject, nextFile: string) => {
     const nameWithoutExt = getDisplayName(nextFile);
-    const lookupRequire = `React.lazy(() => import(/* webpackChunkName: "cds-component-template", webpackPrefetch: true */ "../docs/components/${subDir}/${displayName}/${nameWithoutExt}.mdx"))`;
+    const lookupRequire = `React.lazy(async () => import(/* webpackChunkName: "cds-component-template", webpackPrefetch: true */ "../docs/components/${subDir}/${displayName}/${nameWithoutExt}.mdx"))`;
     return Object.assign(prevMap, { [nameWithoutExt]: lookupRequire });
   };
   const data = files.reduce(flattenMap, {});
