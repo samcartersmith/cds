@@ -62,6 +62,10 @@ module.exports = {
               label: 'Navigation',
               href: 'navigation',
             },
+            {
+              label: 'Modal',
+              href: 'modal',
+            },
           ],
         },
       ],

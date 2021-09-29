@@ -7,7 +7,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import type { BoxBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
+import type { BoxBaseProps, ForwardedRef, SharedProps, Position } from '@cbhq/cds-common';
 import {
   ElevationProvider,
   ElevationChildrenProvider,
@@ -73,6 +73,9 @@ const overflowStyles: CSSMap<BoxProps['overflow']> = {
   visible: css`
     overflow: visible;
   `,
+  auto: css`
+    overflow: auto;
+  `,
 };
 
 export type BoxProps<As extends BoxElement = 'div'> = {
@@ -81,16 +84,17 @@ export type BoxProps<As extends BoxElement = 'div'> = {
   /** Semantic role whole using a non-semantic element. */
   role?: InferBoxRole<As>;
   /** Control how the content should overflow. */
-  overflow?: 'visible' | 'hidden' | 'scroll';
+  overflow?: 'visible' | 'hidden' | 'scroll' | 'auto';
   /** How to position the box within its parent. */
-  position?: BoxBaseProps['position'] | 'sticky';
+  position?: Position;
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetClassName?: string;
 } & Omit<BoxBaseProps, 'position'> &
   SharedProps &
-  React.AriaAttributes;
+  React.AriaAttributes &
+  React.DOMAttributes<Element>;
 
 type ElevationStylesContainerProps = {
   elevation: ElevationLevels;
@@ -237,7 +241,7 @@ export const BoxInner = forwardRef(
             offsetTop,
             offsetVertical,
           }),
-          usePinStyles(pin),
+          usePinStyles(pin, position),
           dangerouslySetClassName,
         ),
         role,

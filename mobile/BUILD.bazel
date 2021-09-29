@@ -24,6 +24,7 @@ PEER_DEPS = [
     "@npm//react-native",
     "@npm//react",
     "@npm//react-native-inappbrowser-reborn",
+    "@npm//react-native-safe-area-context",
 ]
 
 DEV_DEPS = [

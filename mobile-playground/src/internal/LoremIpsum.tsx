@@ -3,15 +3,16 @@ import { PaletteForeground } from '@cbhq/cds-common/types';
 import { TextLabel1, TextBody } from '@cbhq/cds-mobile/typography';
 
 export type LoremIpsumProps = {
-  title: string;
+  title?: string;
   color?: PaletteForeground;
   concise?: boolean;
+  repeat?: number;
 };
 
 export const loremIpsum =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo nulla. Nam eu blandit dui, a dignissim mi.';
 
-export const LoremIpsum = ({ title, color, concise }: LoremIpsumProps) => {
+export const LoremIpsum = ({ title, color, concise, repeat }: LoremIpsumProps) => {
   return (
     <>
       <TextLabel1 color={color} spacingBottom={1}>
@@ -19,7 +20,7 @@ export const LoremIpsum = ({ title, color, concise }: LoremIpsumProps) => {
       </TextLabel1>
       {concise ? null : (
         <TextBody color={color} spacingBottom={3}>
-          {loremIpsum}
+          {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
         </TextBody>
       )}
     </>

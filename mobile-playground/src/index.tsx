@@ -26,6 +26,7 @@ const components = [
   { key: 'Logo' },
   { key: 'Lottie' },
   { key: 'LottieStatusAnimation' },
+  { key: 'Modal' },
   { key: 'Overlay' },
   { key: 'Pressable' },
   { key: 'PressableOpacity' },

@@ -5,7 +5,9 @@ import { SystemProvider, SystemProviderProps } from '../SystemProvider';
 import { PartialPaletteConfig, Spectrum } from '../types';
 
 export const overlayPalettes: Record<Spectrum, PartialPaletteConfig> = {
-  light: {},
+  light: {
+    backgroundOverlay: ['gray80', 0.33],
+  },
   dark: {
     backgroundOverlay: ['gray0', 0.5],
   },

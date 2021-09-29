@@ -1,7 +1,13 @@
 import { PinningDirection } from '@cbhq/cds-common';
+import { Position } from '@cbhq/cds-common/types/Position';
+import { cx } from 'linaria';
 
-import * as styles from '../styles/pin';
+import * as pinStyles from '../styles/pin';
+import * as positionStyles from '../styles/position';
 
-export const usePinStyles = (pin?: PinningDirection) => {
-  return pin ? styles[pin] : undefined;
+export const usePinStyles = (pin?: PinningDirection, position?: Position) => {
+  const styles = pin ? pinStyles[pin] : undefined;
+  const positionStyle = position ? positionStyles[position] : undefined;
+
+  return cx(styles, positionStyle);
 };

@@ -5,6 +5,8 @@ Help:
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.lottie              -- Build the `lottie-files` package.
   $$ make build.mobile              -- Build the `mobile` package.
+  $$ make build.ios                 -- Build the playground ios app.
+  $$ make build.android             -- Build the playground android app.
   $$ make build.theme               -- Build the `theme` package.
   $$ make build.utils               -- Build the `utils` package.
   $$ make build.web                 -- Build the `web` package.
@@ -29,6 +31,7 @@ Help:
   $$ make release                   -- Automatically update CHANGELOG based on PR titles
   $$ make typecheck                 -- Run global typecheck
   $$ make setup.mobile              -- Setup mobile dependencies
+  $$ make clean.ios                 -- Clean ios build
 endef
 export HELP_TEXT
 
