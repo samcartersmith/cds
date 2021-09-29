@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.23.0 (9/29/2021, 02:03 PM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** 21 New Illustrations. stateID and stateId replaced with identityCard. [#34746](https://github.cbhq.net/mono/repo/pull/34746)
+
+#### 🚀 Updates
+
+- CDS Modal. [#32815](https://github.cbhq.net/mono/repo/pull/32815), [CDS-975](https://jira.coinbase-corp.com/browse/CDS-975)
+
+#### 🐞 Fixes
+
+- Remove dupe in fallback component. [#34977](https://github.cbhq.net/mono/repo/pull/34977)
+
+#### 📘 Misc
+
+- Pressable hover states expose a gross border in safari. [#35841](https://github.cbhq.net/mono/repo/pull/35841), [CDS-1490](https://jira.coinbase-corp.com/browse/CDS-1490)
+
 ## 0.22.2 (9/23/2021, 07:17 AM PST)
 
 #### 🐞 Fixes

@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.28.0 (9/29/2021, 02:03 PM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** 21 New Illustrations. stateID and stateId replaced with identityCard. [#34746](https://github.cbhq.net/mono/repo/pull/34746)
+
+#### 🚀 Updates
+
+- CDS Modal. [#32815](https://github.cbhq.net/mono/repo/pull/32815), [CDS-975](https://jira.coinbase-corp.com/browse/CDS-975)
+
+#### 🐞 Fixes
+
+- System theme sometimes stops tracking on Android. [#35647](https://github.cbhq.net/mono/repo/pull/35647), [CDS-1489](https://jira.coinbase-corp.com/browse/CDS-1489)
+
 ## 0.27.2 (9/23/2021, 07:17 AM PST)
 
 #### 🐞 Fixes

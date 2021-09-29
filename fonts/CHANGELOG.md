@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.5 (9/29/2021, 02:03 PM PST)
+
+#### 🐞 Fixes
+
+- Update fonts to fix tabular nums issue. [#35716](https://github.cbhq.net/mono/repo/pull/35716)
+
 ## 0.2.4 (9/20/2021, 05:13 PM PST)
 
 #### 🐞 Fixes

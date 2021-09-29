@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.0 (9/29/2021, 02:03 PM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** 21 New Illustrations. stateID and stateId replaced with identityCard. [#34746](https://github.cbhq.net/mono/repo/pull/34746)
+
+#### 🚀 Updates
+
+- CDS Modal. [#32815](https://github.cbhq.net/mono/repo/pull/32815), [CDS-975](https://jira.coinbase-corp.com/browse/CDS-975)
+
+#### 🐞 Fixes
+
+- Remove dupe in fallback component. [#34977](https://github.cbhq.net/mono/repo/pull/34977)
+
 ## 0.23.1 (9/20/2021, 05:13 PM PST)
 
 #### 🚀 Updates
