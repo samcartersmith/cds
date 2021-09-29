@@ -28,6 +28,14 @@
       }
     },
     {
+      "name": "BetaProvider",
+      "sourceFile": "@cbhq/cds-common/beta/BetaProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-common/beta/BetaProvider",
+      "propsWithCallSites": { "features": { "server/Document.tsx": 1 } }
+    },
+    {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
       "totalInstances": 31,
@@ -69,9 +77,9 @@
         "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
         "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1,
         "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
+        "pages/Corporate/MissionPage/components/Value.tsx": 1,
         "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
         "pages/Corporate/DevelopersPage/components/StoryCard.tsx": 1,
-        "pages/Corporate/MissionPage/components/Value.tsx": 1,
         "pages/Corporate/PressPage/components/BrandAssets.tsx": 1,
         "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
         "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1,
@@ -98,9 +106,9 @@
           "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
           "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1,
           "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
+          "pages/Corporate/MissionPage/components/Value.tsx": 1,
           "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
           "pages/Corporate/DevelopersPage/components/StoryCard.tsx": 1,
-          "pages/Corporate/MissionPage/components/Value.tsx": 1,
           "pages/Corporate/PressPage/components/BrandAssets.tsx": 1,
           "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
           "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1,
@@ -146,8 +154,8 @@
           "pages/NewHome/components/EarnAndLearn.tsx": 1,
           "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
           "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
-          "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
           "pages/Corporate/MissionPage/components/Value.tsx": 1,
+          "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
           "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         },
         "spacingEnd": {
@@ -336,9 +344,9 @@
         "pages/NewHome/components/EarnAndLearn.tsx": 1,
         "pages/cms/Products/ProductListItem.tsx": 1,
         "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
+        "pages/Corporate/MissionPage/components/Value.tsx": 1,
         "pages/Corporate/DevelopersPage/components/ExploreCloud.tsx": 1,
         "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
-        "pages/Corporate/MissionPage/components/Value.tsx": 1,
         "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
         "pages/cms/ContentHub/components/FeatureWithFeed.tsx": 2,
         "pages/cms/Legal/components/LegalRichText.tsx": 1
@@ -355,9 +363,9 @@
           "pages/NewHome/components/EarnAndLearn.tsx": 1,
           "pages/cms/Products/ProductListItem.tsx": 1,
           "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
+          "pages/Corporate/MissionPage/components/Value.tsx": 1,
           "pages/Corporate/DevelopersPage/components/ExploreCloud.tsx": 1,
           "pages/Corporate/DevelopersPage/components/Product.tsx": 1,
-          "pages/Corporate/MissionPage/components/Value.tsx": 1,
           "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
           "pages/cms/ContentHub/components/FeatureWithFeed.tsx": 2,
           "pages/cms/Legal/components/LegalRichText.tsx": 1
@@ -399,42 +407,240 @@
       }
     },
     {
-      "name": "TextLegal",
-      "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 7,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/typography/TextLegal",
+      "name": "Pressable",
+      "sourceFile": "@cbhq/cds-web/system/Pressable",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/system/Pressable",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/Pill/Pill.tsx",
+          "callSites": [
+            "pages/Home/components/HeroPill.tsx",
+            "pages/Home/components/HeroPill.tsx",
+            "pages/Corporate/DevelopersPage/components/Product.tsx"
+          ]
+        }
+      ],
       "callSites": {
-        "components/cms/DisclaimerText.tsx": 1,
-        "pages/Home/components/GermanDisclaimer.tsx": 1,
-        "pages/NewHome/components/Disclaimers.tsx": 3,
-        "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
-        "pages/cms/Legal/components/LegalRichText.tsx": 1
+        "components/Pill/Pill.tsx": 1,
+        "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 2,
+        "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
       },
       "propsWithCallSites": {
-        "as": {
-          "components/cms/DisclaimerText.tsx": 1,
-          "pages/Home/components/GermanDisclaimer.tsx": 1,
-          "pages/NewHome/components/Disclaimers.tsx": 3,
-          "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
-          "pages/cms/Legal/components/LegalRichText.tsx": 1
+        "backgroundColor": {
+          "components/Pill/Pill.tsx": 1,
+          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 2,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
         },
-        "color": {
-          "components/cms/DisclaimerText.tsx": 1,
-          "pages/Home/components/GermanDisclaimer.tsx": 1,
-          "pages/NewHome/components/Disclaimers.tsx": 3,
-          "components/cms/Landing/Hero/TwoUpHero.tsx": 1
+        "onPress": {
+          "components/Pill/Pill.tsx": 1,
+          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 2,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
         },
-        "spacingBottom": { "pages/cms/Legal/components/LegalRichText.tsx": 1 }
+        "borderRadius": {
+          "components/Pill/Pill.tsx": 1,
+          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
+        },
+        "as": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
+        "borderWidth": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
+        "borderColor": { "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1 },
+        "key": { "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1 }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 49,
+      "totalCallSites": 24,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "callSites": {
+        "components/Pill/Pill.tsx": 2,
+        "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
+        "pages/SharePortfolio/SharePortfolio.tsx": 1,
+        "pages/Signup/SignupExpNoPhoto.tsx": 1,
+        "pages/Signup/SignupExpPhoto.tsx": 1,
+        "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
+        "components/SignupForm/SignupFlow/PromoCodeLearnMoreModal.tsx": 1,
+        "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+        "pages/CoinbaseCardBack/components/CardBack.tsx": 6,
+        "pages/NewHome/components/EarnAndLearn.tsx": 3,
+        "pages/NewHome/components/Features.tsx": 3,
+        "pages/NewHome/components/FreeYourMoney.tsx": 5,
+        "pages/NewHome/components/SectionsWrapper.tsx": 1,
+        "pages/NewHome/components/StartPortfolio.tsx": 2,
+        "pages/NewHome/components/Tools.tsx": 4,
+        "components/cms/Incentives/Hero/SweepsVerticalHero.tsx": 1,
+        "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
+        "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
+        "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+        "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 4,
+        "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1,
+        "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 3,
+        "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 3,
+        "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingVertical": {
+          "components/Pill/Pill.tsx": 2,
+          "pages/NewHome/components/EarnAndLearn.tsx": 2,
+          "pages/NewHome/components/Features.tsx": 1,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "components/cms/Incentives/Hero/SweepsVerticalHero.tsx": 1,
+          "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
+        },
+        "spacingHorizontal": {
+          "components/Pill/Pill.tsx": 2,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "pages/NewHome/components/Features.tsx": 1,
+          "pages/NewHome/components/StartPortfolio.tsx": 2,
+          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 2
+        },
+        "justifyContent": {
+          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
+          "pages/Signup/SignupExpNoPhoto.tsx": 1,
+          "pages/Signup/SignupExpPhoto.tsx": 1,
+          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 2,
+          "pages/NewHome/components/Features.tsx": 2,
+          "pages/NewHome/components/FreeYourMoney.tsx": 2,
+          "pages/NewHome/components/SectionsWrapper.tsx": 1,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 2,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
+        },
+        "alignItems": {
+          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
+          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "pages/NewHome/components/Features.tsx": 3,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
+        },
+        "width": {
+          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
+          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 5,
+          "pages/NewHome/components/Features.tsx": 2,
+          "pages/NewHome/components/SectionsWrapper.tsx": 1,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "pages/NewHome/components/Tools.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 3
+        },
+        "background": {
+          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "pages/NewHome/components/FreeYourMoney.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
+        },
+        "height": {
+          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
+          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 4,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "pages/NewHome/components/Tools.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1
+        },
+        "flexDirection": {
+          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
+          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
+          "pages/NewHome/components/Features.tsx": 1,
+          "pages/NewHome/components/FreeYourMoney.tsx": 2,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "pages/NewHome/components/Tools.tsx": 1,
+          "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 3,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 2
+        },
+        "flexGrow": {
+          "pages/Signup/SignupExpNoPhoto.tsx": 1,
+          "pages/Signup/SignupExpPhoto.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1
+        },
+        "spacing": {
+          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
+        },
+        "spacingTop": {
+          "components/SignupForm/SignupFlow/PromoCodeLearnMoreModal.tsx": 1,
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
+          "pages/NewHome/components/FreeYourMoney.tsx": 1,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1,
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
+        },
+        "id": { "pages/CoinbaseCardBack/components/CardBack.tsx": 3 },
+        "position": {
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 4,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
+        },
+        "pin": { "pages/CoinbaseCardBack/components/CardBack.tsx": 1 },
+        "spacingBottom": {
+          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
+          "pages/NewHome/components/FreeYourMoney.tsx": 2,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
+        },
+        "key": { "pages/NewHome/components/Features.tsx": 1 },
+        "spacingStart": {
+          "pages/NewHome/components/Features.tsx": 1,
+          "pages/NewHome/components/FreeYourMoney.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
+        },
+        "minWidth": { "pages/NewHome/components/FreeYourMoney.tsx": 1 },
+        "spacingEnd": {
+          "pages/NewHome/components/FreeYourMoney.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
+        },
+        "zIndex": { "pages/NewHome/components/FreeYourMoney.tsx": 1 },
+        "maxWidth": {
+          "pages/NewHome/components/FreeYourMoney.tsx": 2,
+          "pages/NewHome/components/StartPortfolio.tsx": 2,
+          "pages/NewHome/components/Tools.tsx": 2,
+          "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
+        },
+        "alignSelf": {
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "components/cms/Incentives/Hero/SweepsVerticalHero.tsx": 1
+        },
+        "as": { "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1 },
+        "elevation": { "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1 },
+        "bordered": { "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1 },
+        "dangerouslySetClassName": { "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1 },
+        "bottom": {
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
+        }
       }
     },
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 9,
-      "totalCallSites": 8,
+      "totalInstances": 10,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
+        "components/Pill/Pill.tsx": 1,
         "components/cms/Icon.tsx": 1,
         "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
         "components/cms/Incentives/SweepstakesRules.tsx": 1,
@@ -446,6 +652,7 @@
       },
       "propsWithCallSites": {
         "name": {
+          "components/Pill/Pill.tsx": 1,
           "components/cms/Icon.tsx": 1,
           "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
           "components/cms/Incentives/SweepstakesRules.tsx": 1,
@@ -456,6 +663,7 @@
           "pages/cms/ContentHub/components/Bytes/UnsubscribeForm/UnsubscribeForm.tsx": 1
         },
         "size": {
+          "components/Pill/Pill.tsx": 1,
           "components/cms/Icon.tsx": 1,
           "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
           "components/cms/Incentives/SweepstakesRules.tsx": 1,
@@ -483,6 +691,36 @@
           "pages/cms/Products/ProductListItem.tsx": 1
         },
         "spacingEnd": { "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextLegal",
+      "sourceFile": "@cbhq/cds-web/typography/TextLegal",
+      "totalInstances": 7,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/typography/TextLegal",
+      "callSites": {
+        "components/cms/DisclaimerText.tsx": 1,
+        "pages/Home/components/GermanDisclaimer.tsx": 1,
+        "pages/NewHome/components/Disclaimers.tsx": 3,
+        "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
+        "pages/cms/Legal/components/LegalRichText.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/cms/DisclaimerText.tsx": 1,
+          "pages/Home/components/GermanDisclaimer.tsx": 1,
+          "pages/NewHome/components/Disclaimers.tsx": 3,
+          "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
+          "pages/cms/Legal/components/LegalRichText.tsx": 1
+        },
+        "color": {
+          "components/cms/DisclaimerText.tsx": 1,
+          "pages/Home/components/GermanDisclaimer.tsx": 1,
+          "pages/NewHome/components/Disclaimers.tsx": 3,
+          "components/cms/Landing/Hero/TwoUpHero.tsx": 1
+        },
+        "spacingBottom": { "pages/cms/Legal/components/LegalRichText.tsx": 1 }
       }
     },
     {
@@ -607,193 +845,17 @@
       }
     },
     {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 46,
-      "totalCallSites": 22,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "callSites": {
-        "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
-        "pages/Signup/SignupExpNoPhoto.tsx": 1,
-        "pages/Signup/SignupExpPhoto.tsx": 1,
-        "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-        "components/SignupForm/SignupFlow/PromoCodeLearnMoreModal.tsx": 1,
-        "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
-        "pages/CoinbaseCardBack/components/CardBack.tsx": 6,
-        "pages/NewHome/components/EarnAndLearn.tsx": 3,
-        "pages/NewHome/components/Features.tsx": 3,
-        "pages/NewHome/components/FreeYourMoney.tsx": 5,
-        "pages/NewHome/components/SectionsWrapper.tsx": 1,
-        "pages/NewHome/components/StartPortfolio.tsx": 2,
-        "pages/NewHome/components/Tools.tsx": 4,
-        "components/cms/Incentives/Hero/SweepsVerticalHero.tsx": 1,
-        "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
-        "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
-        "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
-        "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 4,
-        "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1,
-        "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 3,
-        "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 3,
-        "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "justifyContent": {
-          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
-          "pages/Signup/SignupExpNoPhoto.tsx": 1,
-          "pages/Signup/SignupExpPhoto.tsx": 1,
-          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
-          "pages/NewHome/components/EarnAndLearn.tsx": 2,
-          "pages/NewHome/components/Features.tsx": 2,
-          "pages/NewHome/components/FreeYourMoney.tsx": 2,
-          "pages/NewHome/components/SectionsWrapper.tsx": 1,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 2,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
-        },
-        "alignItems": {
-          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
-          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "pages/NewHome/components/Features.tsx": 3,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
-        },
-        "width": {
-          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
-          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 5,
-          "pages/NewHome/components/Features.tsx": 2,
-          "pages/NewHome/components/SectionsWrapper.tsx": 1,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "pages/NewHome/components/Tools.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 3
-        },
-        "background": {
-          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "pages/NewHome/components/FreeYourMoney.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
-        },
-        "height": {
-          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
-          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 4,
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "pages/NewHome/components/Tools.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1
-        },
-        "flexDirection": {
-          "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
-          "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
-          "pages/NewHome/components/Features.tsx": 1,
-          "pages/NewHome/components/FreeYourMoney.tsx": 2,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "pages/NewHome/components/Tools.tsx": 1,
-          "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 3,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 2
-        },
-        "flexGrow": {
-          "pages/Signup/SignupExpNoPhoto.tsx": 1,
-          "pages/Signup/SignupExpPhoto.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1
-        },
-        "spacing": {
-          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-        },
-        "spacingTop": {
-          "components/SignupForm/SignupFlow/PromoCodeLearnMoreModal.tsx": 1,
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
-          "pages/NewHome/components/FreeYourMoney.tsx": 1,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
-          "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1,
-          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
-        },
-        "id": { "pages/CoinbaseCardBack/components/CardBack.tsx": 3 },
-        "position": {
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 4,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-        },
-        "pin": { "pages/CoinbaseCardBack/components/CardBack.tsx": 1 },
-        "spacingBottom": {
-          "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
-          "pages/NewHome/components/FreeYourMoney.tsx": 2,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-        },
-        "spacingVertical": {
-          "pages/NewHome/components/EarnAndLearn.tsx": 2,
-          "pages/NewHome/components/Features.tsx": 1,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "components/cms/Incentives/Hero/SweepsVerticalHero.tsx": 1,
-          "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
-        },
-        "spacingHorizontal": {
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "pages/NewHome/components/Features.tsx": 1,
-          "pages/NewHome/components/StartPortfolio.tsx": 2,
-          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 2
-        },
-        "key": { "pages/NewHome/components/Features.tsx": 1 },
-        "spacingStart": {
-          "pages/NewHome/components/Features.tsx": 1,
-          "pages/NewHome/components/FreeYourMoney.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
-        },
-        "minWidth": { "pages/NewHome/components/FreeYourMoney.tsx": 1 },
-        "spacingEnd": {
-          "pages/NewHome/components/FreeYourMoney.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1
-        },
-        "zIndex": { "pages/NewHome/components/FreeYourMoney.tsx": 1 },
-        "maxWidth": {
-          "pages/NewHome/components/FreeYourMoney.tsx": 2,
-          "pages/NewHome/components/StartPortfolio.tsx": 2,
-          "pages/NewHome/components/Tools.tsx": 2,
-          "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
-        },
-        "alignSelf": {
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "components/cms/Incentives/Hero/SweepsVerticalHero.tsx": 1
-        },
-        "as": { "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1 },
-        "elevation": { "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1 },
-        "bordered": { "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1 },
-        "dangerouslySetClassName": { "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1 },
-        "bottom": {
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 7,
+      "totalInstances": 8,
       "totalCallSites": 3,
       "cds": "@cbhq/cds-web/layout/Spacer",
       "callSites": {
-        "pages/PriceTableWidget/PriceTableWidget.tsx": 5,
+        "pages/PriceTableWidget/PriceTableWidget.tsx": 6,
         "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
         "pages/NewHome/components/StartPortfolio.tsx": 1
       },
-      "propsWithCallSites": { "vertical": { "pages/PriceTableWidget/PriceTableWidget.tsx": 5 } }
+      "propsWithCallSites": { "vertical": { "pages/PriceTableWidget/PriceTableWidget.tsx": 6 } }
     },
     {
       "name": "TextLabel1",
@@ -824,97 +886,10 @@
       }
     },
     {
-      "name": "LogoMark",
-      "sourceFile": "@cbhq/cds-web/icons/LogoMark",
-      "totalInstances": 5,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/icons/LogoMark",
-      "callSites": {
-        "pages/Signup/SignupExpNoPhoto.tsx": 2,
-        "pages/Signup/SignupExpPhoto.tsx": 2,
-        "pages/NewHome/components/Features.tsx": 1
-      },
-      "propsWithCallSites": {
-        "size": {
-          "pages/Signup/SignupExpNoPhoto.tsx": 2,
-          "pages/Signup/SignupExpPhoto.tsx": 2,
-          "pages/NewHome/components/Features.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Pressable",
-      "sourceFile": "@cbhq/cds-web/system/Pressable",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/system/Pressable",
-      "callSites": {
-        "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 2,
-        "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
-      },
-      "propsWithCallSites": {
-        "backgroundColor": {
-          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 2,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
-        },
-        "onPress": {
-          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 2,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
-        },
-        "as": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
-        "borderWidth": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
-        "borderRadius": {
-          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
-        },
-        "borderColor": { "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1 },
-        "key": { "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextLabel2",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 7,
-      "totalCallSites": 6,
-      "cds": "@cbhq/cds-web/typography/TextLabel2",
-      "callSites": {
-        "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-        "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
-        "pages/cms/Products/ProductListItem.tsx": 1,
-        "components/cms/Landing/components/ResourcesFormModal.tsx": 2,
-        "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
-        "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-          "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
-          "pages/cms/Products/ProductListItem.tsx": 1,
-          "components/cms/Landing/components/ResourcesFormModal.tsx": 2,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-        },
-        "color": {
-          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-          "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
-          "pages/cms/Products/ProductListItem.tsx": 1,
-          "components/cms/Landing/components/ResourcesFormModal.tsx": 2,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-        },
-        "dangerouslySetClassName": { "pages/cms/Products/ProductListItem.tsx": 1 },
-        "spacingBottom": { "components/cms/Landing/components/ResourcesFormModal.tsx": 1 },
-        "spacingTop": {
-          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
-          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 13,
-      "totalCallSites": 13,
+      "totalInstances": 14,
+      "totalCallSites": 14,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
         {
@@ -923,6 +898,7 @@
         }
       ],
       "callSites": {
+        "pages/PriceTableWidget/PriceTableWidget.tsx": 1,
         "components/SignupForm/SignupFlow/PromoCodeLearnMoreModal.tsx": 1,
         "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
         "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
@@ -939,10 +915,16 @@
       },
       "propsWithCallSites": {
         "onPress": {
+          "pages/PriceTableWidget/PriceTableWidget.tsx": 1,
           "components/SignupForm/SignupFlow/PromoCodeLearnMoreModal.tsx": 1,
           "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
           "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
           "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
+        },
+        "testID": {
+          "pages/PriceTableWidget/PriceTableWidget.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
         },
         "block": {
           "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
@@ -984,8 +966,62 @@
         "accessibilityLabel": {
           "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
           "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LogoMark",
+      "sourceFile": "@cbhq/cds-web/icons/LogoMark",
+      "totalInstances": 5,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/icons/LogoMark",
+      "callSites": {
+        "pages/Signup/SignupExpNoPhoto.tsx": 2,
+        "pages/Signup/SignupExpPhoto.tsx": 2,
+        "pages/NewHome/components/Features.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": {
+          "pages/Signup/SignupExpNoPhoto.tsx": 2,
+          "pages/Signup/SignupExpPhoto.tsx": 2,
+          "pages/NewHome/components/Features.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
+      "totalInstances": 7,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/typography/TextLabel2",
+      "callSites": {
+        "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
+        "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
+        "pages/cms/Products/ProductListItem.tsx": 1,
+        "components/cms/Landing/components/ResourcesFormModal.tsx": 2,
+        "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
+        "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
+          "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
+          "pages/cms/Products/ProductListItem.tsx": 1,
+          "components/cms/Landing/components/ResourcesFormModal.tsx": 2,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
         },
-        "testID": {
+        "color": {
+          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
+          "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
+          "pages/cms/Products/ProductListItem.tsx": 1,
+          "components/cms/Landing/components/ResourcesFormModal.tsx": 2,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
+          "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
+        },
+        "dangerouslySetClassName": { "pages/cms/Products/ProductListItem.tsx": 1 },
+        "spacingBottom": { "components/cms/Landing/components/ResourcesFormModal.tsx": 1 },
+        "spacingTop": {
           "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
           "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1
         }
@@ -1259,13 +1295,14 @@
     {
       "name": "ErrorBoundary",
       "sourceFile": "@cb/shared/ErrorBoundary",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "presentationalLibrary": "@cb/shared/ErrorBoundary",
       "callSites": {
         "components/ApplicationProviders.tsx": 1,
         "components/pageWrapper.tsx": 1,
         "pages/Home/Home.tsx": 1,
+        "pages/SharePortfolio/SharePortfolio.tsx": 1,
         "pages/Home/components/EarnUpsellBanner.tsx": 1
       },
       "propsWithCallSites": {
@@ -1273,9 +1310,14 @@
           "components/ApplicationProviders.tsx": 1,
           "components/pageWrapper.tsx": 1,
           "pages/Home/Home.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
           "pages/Home/components/EarnUpsellBanner.tsx": 1
         },
-        "onCatch": { "pages/Home/Home.tsx": 1, "pages/Home/components/EarnUpsellBanner.tsx": 1 }
+        "onCatch": {
+          "pages/Home/Home.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
+          "pages/Home/components/EarnUpsellBanner.tsx": 1
+        }
       }
     },
     {
@@ -1818,8 +1860,8 @@
     {
       "name": "Spinner",
       "sourceFile": "@cb/shared/Spinner",
-      "totalInstances": 10,
-      "totalCallSites": 10,
+      "totalInstances": 13,
+      "totalCallSites": 12,
       "presentationalLibrary": "@cb/shared/Spinner",
       "callSites": {
         "components/Button/Button.tsx": 1,
@@ -1827,6 +1869,8 @@
         "pages/Join/Join.tsx": 1,
         "pages/Places/Country.tsx": 1,
         "pages/Places/Places.tsx": 1,
+        "pages/PriceWidget/CryptocurrencySelector.tsx": 2,
+        "pages/SharePortfolio/SharePortfolio.tsx": 1,
         "pages/SignInRedirect/SignInRedirect.tsx": 1,
         "pages/AssetPage/components/AssetPageLayout.tsx": 1,
         "pages/Browse/components/BrowsePageContent.tsx": 1,
@@ -1835,7 +1879,10 @@
       },
       "propsWithCallSites": {
         "inverted": { "components/Button/Button.tsx": 1 },
-        "size": { "components/Button/Button.tsx": 1 }
+        "size": {
+          "components/Button/Button.tsx": 1,
+          "pages/PriceWidget/CryptocurrencySelector.tsx": 2
+        }
       }
     },
     {
@@ -2230,8 +2277,8 @@
       "totalCallSites": 1,
       "styledComponent": "Button",
       "propsWithCallSites": {
-        "type": { "components/FooterCTA/FooterCTA.tsx": 1 },
         "size": { "components/FooterCTA/FooterCTA.tsx": 1 },
+        "type": { "components/FooterCTA/FooterCTA.tsx": 1 },
         "onClick": { "components/FooterCTA/FooterCTA.tsx": 1 }
       }
     },
@@ -2383,7 +2430,7 @@
       "propsWithCallSites": {
         "color": { "components/Layout/Layout.tsx": 1 },
         "className": { "components/Layout/Layout.tsx": 1 },
-        "data-element-handle": { "components/Layout/Layout.tsx": 1 }
+        "data-testid": { "components/Layout/Layout.tsx": 1 }
       }
     },
     {
@@ -2880,8 +2927,8 @@
     {
       "name": "MetaTags",
       "sourceFile": "@cb/shared/MetaTags",
-      "totalInstances": 30,
-      "totalCallSites": 30,
+      "totalInstances": 31,
+      "totalCallSites": 31,
       "presentationalLibrary": "@cb/shared/MetaTags",
       "callSites": {
         "components/cms/ComposeMetaTags.tsx": 1,
@@ -2900,11 +2947,12 @@
         "pages/Staking/Staking.tsx": 1,
         "pages/StarterKit/StarterKit.tsx": 1,
         "pages/Usdc/Usdc.tsx": 1,
+        "components/SignupForm/SignupFlow/index.tsx": 1,
         "pages/AssetPage/components/AssetPageLayout.tsx": 1,
         "pages/Browse/components/BrowseHeader.tsx": 1,
         "pages/BuyPages/components/BuyPageLayout.tsx": 1,
-        "pages/Corporate/DevelopersPage/index.tsx": 1,
         "pages/Corporate/MissionPage/index.tsx": 1,
+        "pages/Corporate/DevelopersPage/index.tsx": 1,
         "pages/Corporate/PressPage/index.tsx": 1,
         "pages/Home/components/MetaTags.tsx": 1,
         "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
@@ -2933,11 +2981,12 @@
           "pages/Staking/Staking.tsx": 1,
           "pages/StarterKit/StarterKit.tsx": 1,
           "pages/Usdc/Usdc.tsx": 1,
+          "components/SignupForm/SignupFlow/index.tsx": 1,
           "pages/AssetPage/components/AssetPageLayout.tsx": 1,
           "pages/Browse/components/BrowseHeader.tsx": 1,
           "pages/BuyPages/components/BuyPageLayout.tsx": 1,
-          "pages/Corporate/DevelopersPage/index.tsx": 1,
           "pages/Corporate/MissionPage/index.tsx": 1,
+          "pages/Corporate/DevelopersPage/index.tsx": 1,
           "pages/Corporate/PressPage/index.tsx": 1,
           "pages/Home/components/MetaTags.tsx": 1,
           "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
@@ -3010,11 +3059,12 @@
           "pages/Places/Country.tsx": 1,
           "pages/Places/Places.tsx": 1,
           "pages/Prices/Prices.tsx": 1,
+          "components/SignupForm/SignupFlow/index.tsx": 1,
           "pages/AssetPage/components/AssetPageLayout.tsx": 1,
           "pages/Browse/components/BrowseHeader.tsx": 1,
           "pages/BuyPages/components/BuyPageLayout.tsx": 1,
-          "pages/Corporate/DevelopersPage/index.tsx": 1,
           "pages/Corporate/MissionPage/index.tsx": 1,
+          "pages/Corporate/DevelopersPage/index.tsx": 1,
           "pages/Corporate/PressPage/index.tsx": 1,
           "pages/Home/components/MetaTags.tsx": 1,
           "pages/NewHome/components/MetaTags.tsx": 1,
@@ -3872,7 +3922,7 @@
           "pages/Home/components/EmailCTA.tsx": 1,
           "pages/AssetPage/components/TradeUpsell/components/SupportedTradeUpsell/SupportedTradeUpsell.tsx": 1
         },
-        "data-element-handle": { "components/SignupForm/SignupFlow/Fields.tsx": 1 },
+        "data-testid": { "components/SignupForm/SignupFlow/Fields.tsx": 1 },
         "type": {
           "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
           "pages/AssetPage/components/ArticlesCTA.tsx": 1,
@@ -4217,6 +4267,32 @@
       "styledComponent": "div"
     },
     {
+      "name": "SpinnerContainer",
+      "sourceFile": "pages/PriceWidget/CryptocurrencySelector.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "pages/PriceWidget/CryptocurrencySelector.tsx": 2 },
+      "propsWithCallSites": {
+        "key": { "pages/PriceWidget/CryptocurrencySelector.tsx": 2 },
+        "ref": { "pages/PriceWidget/CryptocurrencySelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "SelectListItem",
+      "sourceFile": "@cb/shared/SelectListItem",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/SelectListItem",
+      "callSites": { "pages/PriceWidget/CryptocurrencySelector.tsx": 2 },
+      "propsWithCallSites": {
+        "label": { "pages/PriceWidget/CryptocurrencySelector.tsx": 2 },
+        "value": { "pages/PriceWidget/CryptocurrencySelector.tsx": 2 },
+        "key": { "pages/PriceWidget/CryptocurrencySelector.tsx": 2 },
+        "onClick": { "pages/PriceWidget/CryptocurrencySelector.tsx": 2 }
+      }
+    },
+    {
       "name": "Content",
       "sourceFile": "pages/PriceWidget/PriceWidget.tsx",
       "totalInstances": 1,
@@ -4376,6 +4452,34 @@
       }
     },
     {
+      "name": "LayoutAlignCenter",
+      "sourceFile": "pages/SharePortfolio/SharePortfolioContent.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Layout"
+    },
+    {
+      "name": "Main",
+      "sourceFile": "pages/SharePortfolio/SharePortfolioContent.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "main",
+      "propsWithCallSites": { "id": { "pages/SharePortfolio/SharePortfolioContent.tsx": 1 } }
+    },
+    {
+      "name": "SharePortfolio",
+      "sourceFile": "@cb/shared/components/Earn/components/Community/SharePortfolio",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/components/Earn/components/Community/SharePortfolio",
+      "propsWithCallSites": {
+        "showTitle": { "pages/SharePortfolio/SharePortfolioContent.tsx": 1 },
+        "sharePortfolioRef": { "pages/SharePortfolio/SharePortfolioContent.tsx": 1 },
+        "onRowClick": { "pages/SharePortfolio/SharePortfolioContent.tsx": 1 },
+        "onBuyClick": { "pages/SharePortfolio/SharePortfolioContent.tsx": 1 }
+      }
+    },
+    {
       "name": "LoadingWrapper",
       "sourceFile": "pages/SignInRedirect/SignInRedirect.tsx",
       "totalInstances": 1,
@@ -4399,7 +4503,7 @@
       "sourceFile": "pages/Signup/Signup.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "h2"
+      "styledComponent": "h1"
     },
     {
       "name": "SignupFormContainer",
@@ -4986,9 +5090,11 @@
       "styledComponent": "Input",
       "callSites": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 },
       "propsWithCallSites": {
+        "fieldName": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 },
+        "label": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 },
+        "required": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 },
         "placeholder": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 },
-        "form": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 },
-        "fieldName": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 }
+        "form": { "components/SignupForm/SignupFlow/CompactFields.tsx": 3 }
       }
     },
     {
@@ -5004,6 +5110,13 @@
       }
     },
     {
+      "name": "FormInstructions",
+      "sourceFile": "components/SignupForm/SignupFlow/CompactFields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "p"
+    },
+    {
       "name": "Form",
       "sourceFile": "components/SignupForm/SignupFlow/CompactFields.tsx",
       "totalInstances": 1,
@@ -5013,13 +5126,6 @@
         "onSubmit": { "components/SignupForm/SignupFlow/CompactFields.tsx": 1 },
         "disabled": { "components/SignupForm/SignupFlow/CompactFields.tsx": 1 }
       }
-    },
-    {
-      "name": "FieldsContainer",
-      "sourceFile": "components/SignupForm/SignupFlow/CompactFields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "NameRow",
@@ -5094,7 +5200,7 @@
       "propsWithCallSites": {
         "disabled": { "components/SignupForm/SignupFlow/CompactFields.tsx": 1 },
         "size": { "components/SignupForm/SignupFlow/CompactFields.tsx": 1 },
-        "data-element-handle": { "components/SignupForm/SignupFlow/CompactFields.tsx": 1 }
+        "data-testid": { "components/SignupForm/SignupFlow/CompactFields.tsx": 1 }
       }
     },
     {
@@ -5111,6 +5217,21 @@
       }
     },
     {
+      "name": "StyledInput",
+      "sourceFile": "components/SignupForm/SignupFlow/Fields.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "styledComponent": "Input",
+      "callSites": { "components/SignupForm/SignupFlow/Fields.tsx": 3 },
+      "propsWithCallSites": {
+        "fieldName": { "components/SignupForm/SignupFlow/Fields.tsx": 3 },
+        "label": { "components/SignupForm/SignupFlow/Fields.tsx": 3 },
+        "required": { "components/SignupForm/SignupFlow/Fields.tsx": 3 },
+        "placeholder": { "components/SignupForm/SignupFlow/Fields.tsx": 3 },
+        "form": { "components/SignupForm/SignupFlow/Fields.tsx": 3 }
+      }
+    },
+    {
       "name": "div",
       "sourceFile": "components/SignupForm/SignupFlow/Fields.tsx",
       "totalInstances": 1,
@@ -5119,6 +5240,13 @@
         { "prop": "className", "callSite": "components/SignupForm/SignupFlow/Fields.tsx" }
       ],
       "propsWithCallSites": { "className": { "components/SignupForm/SignupFlow/Fields.tsx": 1 } }
+    },
+    {
+      "name": "FormInstructions",
+      "sourceFile": "components/SignupForm/SignupFlow/Fields.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "p"
     },
     {
       "name": "Form",
@@ -5181,7 +5309,26 @@
       }
     },
     {
-      "name": "Container",
+      "name": "Wrapper",
+      "sourceFile": "components/SignupForm/SignupFlow/Input.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Label",
+      "sourceFile": "components/SignupForm/SignupFlow/Input.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "label",
+      "propsWithCallSites": {
+        "id": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "htmlFor": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "required": { "components/SignupForm/SignupFlow/Input.tsx": 1 }
+      }
+    },
+    {
+      "name": "InputContainer",
       "sourceFile": "components/SignupForm/SignupFlow/Input.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -5201,19 +5348,44 @@
       "totalCallSites": 1,
       "styledComponent": "input",
       "propsWithCallSites": {
+        "id": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "name": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
         "disabled": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
         "hasError": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "aria-labelledby": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "aria-invalid": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "aria-describedby": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "aria-required": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "required": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
         "placeholder": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
         "value": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
-        "onChange": { "components/SignupForm/SignupFlow/Input.tsx": 1 }
+        "type": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "onChange": { "components/SignupForm/SignupFlow/Input.tsx": 1 },
+        "height": { "components/SignupForm/SignupFlow/Input.tsx": 1 }
       }
     },
     {
-      "name": "ErrorIcon",
+      "name": "ErrorWrapper",
       "sourceFile": "components/SignupForm/SignupFlow/Input.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "InputError"
+      "styledComponent": "Flex"
+    },
+    {
+      "name": "InputErrorIcon",
+      "sourceFile": "@cb/shared/InputErrorIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/InputErrorIcon",
+      "propsWithCallSites": { "field": { "components/SignupForm/SignupFlow/Input.tsx": 1 } }
+    },
+    {
+      "name": "ErrorText",
+      "sourceFile": "components/SignupForm/SignupFlow/Input.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span",
+      "propsWithCallSites": { "id": { "components/SignupForm/SignupFlow/Input.tsx": 1 } }
     },
     {
       "name": "SubtleContainer",
@@ -5226,64 +5398,48 @@
       }
     },
     {
-      "name": "SubtleLabel",
+      "name": "SubtleLabelButton",
       "sourceFile": "components/SignupForm/SignupFlow/PromoCodeInput.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "span"
     },
     {
-      "name": "Label",
+      "name": "LabelButton",
       "sourceFile": "components/SignupForm/SignupFlow/PromoCodeInput.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "onClick": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 }
-      }
+      "styledComponent": "div"
     },
     {
-      "name": "ShowLabel",
+      "name": "ShowLabelButton",
       "sourceFile": "components/SignupForm/SignupFlow/PromoCodeInput.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "Label",
-      "propsWithCallSites": {
-        "onClick": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 }
-      }
+      "styledComponent": "LabelButton"
     },
     {
       "name": "Input",
       "sourceFile": "@cb/shared/Input",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "presentationalLibrary": "@cb/shared/Input",
       "callSites": {
         "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
         "pages/Home/components/EmailCTA.tsx": 1,
-        "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1,
         "components/cms/Landing/components/InputComponent.tsx": 1
       },
       "propsWithCallSites": {
+        "id": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
         "placeholder": {
           "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-          "pages/Home/components/EmailCTA.tsx": 1,
-          "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1
+          "pages/Home/components/EmailCTA.tsx": 1
         },
-        "value": {
-          "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
-          "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1
-        },
+        "value": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
         "disabled": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
         "onChange": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
-        "showError": {
-          "pages/Home/components/EmailCTA.tsx": 1,
-          "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1
-        },
-        "type": {
-          "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1,
-          "components/cms/Landing/components/InputComponent.tsx": 1
-        }
+        "showError": { "pages/Home/components/EmailCTA.tsx": 1 },
+        "type": { "components/cms/Landing/components/InputComponent.tsx": 1 }
       }
     },
     {
@@ -5351,6 +5507,7 @@
       "totalCallSites": 1,
       "styledComponent": "StateSelect",
       "propsWithCallSites": {
+        "labelID": { "components/SignupForm/SignupFlow/StateField.tsx": 1 },
         "onChange": { "components/SignupForm/SignupFlow/StateField.tsx": 1 },
         "showUnsupported": { "components/SignupForm/SignupFlow/StateField.tsx": 1 }
       }
@@ -6334,7 +6491,10 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "article",
-      "propsWithCallSites": { "isMobile": { "pages/AssetPage/components/ArticlesCTA.tsx": 1 } }
+      "propsWithCallSites": {
+        "isMobile": { "pages/AssetPage/components/ArticlesCTA.tsx": 1 },
+        "isLast": { "pages/AssetPage/components/ArticlesCTA.tsx": 1 }
+      }
     },
     {
       "name": "Main",
@@ -6516,7 +6676,9 @@
       "propsWithCallSites": {
         "assetId": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
         "assetPriceResource": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
-        "color": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
+        "color": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
+        "assetSymbol": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
+        "defaultPeriod": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
       }
     },
     {
@@ -6567,9 +6729,21 @@
     {
       "name": "BottomCardArticles",
       "sourceFile": "pages/AssetPage/components/AssetPageLayout.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "BottomCard",
+      "callSites": { "pages/AssetPage/components/AssetPageLayout.tsx": 2 }
+    },
+    {
+      "name": "AssetCommunityFeed",
+      "sourceFile": "@cb/shared/components/Earn/AssetCommunityFeed",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "BottomCard"
+      "presentationalLibrary": "@cb/shared/components/Earn/AssetCommunityFeed",
+      "propsWithCallSites": {
+        "slug": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
+        "withLegacyTheme": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
+      }
     },
     {
       "name": "AssetArticles",
@@ -7124,6 +7298,13 @@
       }
     },
     {
+      "name": "ContentWrapper",
+      "sourceFile": "pages/Corporate/MissionPage/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "main"
+    },
+    {
       "name": "StorySection",
       "sourceFile": "pages/Corporate/DevelopersPage/DevelopersPage.tsx",
       "totalInstances": 1,
@@ -7146,31 +7327,10 @@
     },
     {
       "name": "ContentWrapper",
-      "sourceFile": "pages/Corporate/MissionPage/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "main"
-    },
-    {
-      "name": "ContentWrapper",
       "sourceFile": "pages/Corporate/PressPage/index.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "main"
-    },
-    {
-      "name": "svg",
-      "sourceFile": "pages/Home/assets/mobile-viewport.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "propsWithCallSites": {
-        "width": { "pages/Home/assets/mobile-viewport.tsx": 1 },
-        "height": { "pages/Home/assets/mobile-viewport.tsx": 1 },
-        "viewBox": { "pages/Home/assets/mobile-viewport.tsx": 1 },
-        "fill": { "pages/Home/assets/mobile-viewport.tsx": 1 },
-        "xmlns": { "pages/Home/assets/mobile-viewport.tsx": 1 }
-      }
     },
     {
       "name": "StyledButton",
@@ -7376,13 +7536,6 @@
       "styledComponent": "Section"
     },
     {
-      "name": "HeroSubtitle",
-      "sourceFile": "pages/Home/components/HeroVariant.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Header"
-    },
-    {
       "name": "PromoCodeTermsAndConditions",
       "sourceFile": "pages/Home/components/HeroVariant.tsx",
       "totalInstances": 1,
@@ -7567,6 +7720,20 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
+    },
+    {
+      "name": "svg",
+      "sourceFile": "pages/Home/assets/mobile-viewport.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "propsWithCallSites": {
+        "width": { "pages/Home/assets/mobile-viewport.tsx": 1 },
+        "height": { "pages/Home/assets/mobile-viewport.tsx": 1 },
+        "viewBox": { "pages/Home/assets/mobile-viewport.tsx": 1 },
+        "fill": { "pages/Home/assets/mobile-viewport.tsx": 1 },
+        "xmlns": { "pages/Home/assets/mobile-viewport.tsx": 1 }
+      }
     },
     {
       "name": "Container",
@@ -8959,7 +9126,7 @@
         "onMouseEnter": { "pages/Prices/AssetHighlights/AssetHighlight.tsx": 1 },
         "onClick": { "pages/Prices/AssetHighlights/AssetHighlight.tsx": 1 },
         "title": { "pages/Prices/AssetHighlights/AssetHighlight.tsx": 1 },
-        "data-element-handle": { "pages/Prices/AssetHighlights/AssetHighlight.tsx": 1 }
+        "data-testid": { "pages/Prices/AssetHighlights/AssetHighlight.tsx": 1 }
       }
     },
     {
@@ -9521,8 +9688,10 @@
       "presentationalLibrary": "@cb/shared/Circle",
       "callSites": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 2 },
       "propsWithCallSites": {
-        "width": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 2 },
-        "height": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 2 }
+        "aria-labelledby": {
+          "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 2
+        },
+        "aria-live": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 }
       }
     },
     {
@@ -10452,7 +10621,7 @@
         },
         "onClick": { "pages/Prices/AssetHighlights/AssetHighlightsExp/AssetHighlightExp.tsx": 1 },
         "title": { "pages/Prices/AssetHighlights/AssetHighlightsExp/AssetHighlightExp.tsx": 1 },
-        "data-element-handle": {
+        "data-testid": {
           "pages/Prices/AssetHighlights/AssetHighlightsExp/AssetHighlightExp.tsx": 1
         }
       }
@@ -11809,12 +11978,13 @@
     {
       "name": "Suspense",
       "sourceFile": "react/Suspense",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "callSites": {
         "client.tsx": 1,
         "server/Document.tsx": 1,
         "components/InitUserLeap/index.tsx": 1,
+        "pages/SharePortfolio/SharePortfolio.tsx": 1,
         "pages/cms/ContentHub/components/Article/SignupForm.tsx": 1
       },
       "propsWithCallSites": {
@@ -11822,6 +11992,7 @@
           "client.tsx": 1,
           "server/Document.tsx": 1,
           "components/InitUserLeap/index.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
           "pages/cms/ContentHub/components/Article/SignupForm.tsx": 1
         }
       }
@@ -11920,8 +12091,8 @@
       "totalCallSites": 6,
       "callSites": {
         "cosmos.decorator.tsx": 1,
-        "components/ApplicationProviders.tsx": 1,
         "generateErrorPage/generateErrorPage.tsx": 1,
+        "components/ApplicationProviders.tsx": 1,
         "utils/testing.tsx": 1,
         "pages/International/utils/index.js": 1,
         "pages/Usdc/utils/index.js": 1
@@ -11929,8 +12100,8 @@
       "propsWithCallSites": {
         "locale": {
           "cosmos.decorator.tsx": 1,
-          "components/ApplicationProviders.tsx": 1,
           "generateErrorPage/generateErrorPage.tsx": 1,
+          "components/ApplicationProviders.tsx": 1,
           "utils/testing.tsx": 1,
           "pages/International/utils/index.js": 1,
           "pages/Usdc/utils/index.js": 1
@@ -11986,6 +12157,12 @@
           "pages/cms/ContentHub/ContentHub.tsx": 1
         }
       }
+    },
+    {
+      "name": "GlobalPageFallback",
+      "sourceFile": "components/GlobalPageFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "CacheProvider",
@@ -12079,7 +12256,7 @@
       "sourceFile": "components/Footer.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "propsWithCallSites": { "data-element-handle": { "components/Footer.tsx": 1 } }
+      "propsWithCallSites": { "data-testid": { "components/Footer.tsx": 1 } }
     },
     {
       "name": "GlobalNav",
@@ -12117,22 +12294,24 @@
     {
       "name": "Error500",
       "sourceFile": "pages/ErrorPages/Error500",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": { "components/pageWrapper.tsx": 2, "pages/Home/Home.tsx": 1 },
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/pageWrapper.tsx": 2,
+        "pages/Home/Home.tsx": 1,
+        "pages/SharePortfolio/SharePortfolio.tsx": 1
+      },
       "propsWithCallSites": {
-        "noMetaTitle": { "components/pageWrapper.tsx": 2, "pages/Home/Home.tsx": 1 }
+        "noMetaTitle": {
+          "components/pageWrapper.tsx": 2,
+          "pages/Home/Home.tsx": 1,
+          "pages/SharePortfolio/SharePortfolio.tsx": 1
+        }
       }
     },
     {
       "name": "IntlPage",
       "sourceFile": "components/pageWrapper.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "GlobalPageFallback",
-      "sourceFile": "components/GlobalPageFallback",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -12679,8 +12858,8 @@
         "components/cms/LayoutColumnsEqualWidth.tsx": 1,
         "components/cms/LayoutGrid.tsx": 1,
         "components/cms/Section.tsx": 1,
-        "components/cms/BasicCTA/CardCTA.tsx": 1,
         "components/cms/Experiment/index.tsx": 1,
+        "components/cms/BasicCTA/CardCTA.tsx": 1,
         "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1,
         "components/cms/Landing/FeaturesSection.tsx": 1,
         "components/cms/Landing/TwoUpSplitSection.tsx": 1,
@@ -12718,8 +12897,8 @@
           "components/cms/LayoutColumnsEqualWidth.tsx": 1,
           "components/cms/LayoutGrid.tsx": 1,
           "components/cms/Section.tsx": 1,
-          "components/cms/BasicCTA/CardCTA.tsx": 1,
           "components/cms/Experiment/index.tsx": 1,
+          "components/cms/BasicCTA/CardCTA.tsx": 1,
           "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1,
           "components/cms/Landing/FeaturesSection.tsx": 1,
           "components/cms/Landing/TwoUpSplitSection.tsx": 1,
@@ -13227,8 +13406,8 @@
         "pages/AssetPage/components/AssetPageLayout.tsx": 1,
         "pages/Borrow/CreditLine/BorrowCreditLineWaitlist.tsx": 1,
         "pages/Borrow/Loan/BorrowLoanWaitlist.tsx": 1,
-        "pages/Corporate/DevelopersPage/index.tsx": 1,
         "pages/Corporate/MissionPage/index.tsx": 1,
+        "pages/Corporate/DevelopersPage/index.tsx": 1,
         "pages/Corporate/PressPage/index.tsx": 1,
         "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
         "pages/LandingPage/components/Page.tsx": 1,
@@ -13242,7 +13421,7 @@
         "pages/cms/components/ComposePageLayout.tsx": 1
       },
       "propsWithCallSites": {
-        "dataElementHandle": { "pages/Home/ControlHomepage.tsx": 1, "pages/NewHome/Home.tsx": 1 },
+        "testID": { "pages/Home/ControlHomepage.tsx": 1, "pages/NewHome/Home.tsx": 1 },
         "color": {
           "pages/Signup/Signup.tsx": 1,
           "pages/Signup/SignupExpPhoto.tsx": 1,
@@ -13258,8 +13437,8 @@
     {
       "name": "Header",
       "sourceFile": "components/Header",
-      "totalInstances": 26,
-      "totalCallSites": 26,
+      "totalInstances": 27,
+      "totalCallSites": 27,
       "callSites": {
         "pages/Affiliates/Affiliates.tsx": 1,
         "pages/Browse/Browse.tsx": 1,
@@ -13277,6 +13456,7 @@
         "pages/PriceTableWidget/PriceTableWidget.tsx": 1,
         "pages/PriceWidget/PriceWidget.tsx": 1,
         "pages/Prices/Prices.tsx": 1,
+        "pages/SharePortfolio/SharePortfolioContent.tsx": 1,
         "pages/Signup/Signup.tsx": 1,
         "pages/Staking/Staking.tsx": 1,
         "pages/Usdc/Usdc.tsx": 1,
@@ -13306,6 +13486,7 @@
           "pages/PriceTableWidget/PriceTableWidget.tsx": 1,
           "pages/PriceWidget/PriceWidget.tsx": 1,
           "pages/Prices/Prices.tsx": 1,
+          "pages/SharePortfolio/SharePortfolioContent.tsx": 1,
           "pages/Signup/Signup.tsx": 1,
           "pages/Staking/Staking.tsx": 1,
           "pages/Usdc/Usdc.tsx": 1,
@@ -13328,6 +13509,7 @@
           "pages/PriceTableWidget/PriceTableWidget.tsx": 1,
           "pages/PriceWidget/PriceWidget.tsx": 1,
           "pages/Prices/Prices.tsx": 1,
+          "pages/SharePortfolio/SharePortfolioContent.tsx": 1,
           "pages/Signup/Signup.tsx": 1,
           "pages/AssetPage/components/AssetPageLayout.tsx": 1,
           "pages/Borrow/CreditLine/BorrowCreditLineWaitlist.tsx": 1,
@@ -13346,6 +13528,7 @@
           "pages/PriceTableWidget/PriceTableWidget.tsx": 1,
           "pages/PriceWidget/PriceWidget.tsx": 1,
           "pages/Prices/Prices.tsx": 1,
+          "pages/SharePortfolio/SharePortfolioContent.tsx": 1,
           "pages/AssetPage/components/AssetPageLayout.tsx": 1,
           "pages/Borrow/CreditLine/BorrowCreditLineWaitlist.tsx": 1,
           "pages/Borrow/Loan/BorrowLoanWaitlist.tsx": 1
@@ -13388,8 +13571,8 @@
     {
       "name": "Footer",
       "sourceFile": "components/Footer",
-      "totalInstances": 30,
-      "totalCallSites": 30,
+      "totalInstances": 31,
+      "totalCallSites": 31,
       "callSites": {
         "pages/Affiliates/Affiliates.tsx": 1,
         "pages/Browse/Browse.tsx": 1,
@@ -13404,14 +13587,15 @@
         "pages/Places/Places.tsx": 1,
         "pages/Positions/Positions.tsx": 1,
         "pages/Prices/Prices.tsx": 1,
+        "pages/SharePortfolio/SharePortfolioContent.tsx": 1,
         "pages/Staking/Staking.tsx": 1,
         "pages/Usdc/Usdc.tsx": 1,
         "pages/AssetPage/components/AssetPageLayout.tsx": 1,
         "pages/Borrow/CreditLine/BorrowCreditLineWaitlist.tsx": 1,
         "pages/Borrow/Loan/BorrowLoanWaitlist.tsx": 1,
         "pages/BuyPages/components/BuyPageLayout.tsx": 1,
-        "pages/Corporate/DevelopersPage/index.tsx": 1,
         "pages/Corporate/MissionPage/index.tsx": 1,
+        "pages/Corporate/DevelopersPage/index.tsx": 1,
         "pages/Corporate/PressPage/index.tsx": 1,
         "pages/Partners/components/PartnersPageLayout.tsx": 1,
         "pages/cms/ContentHub/ContentHub.tsx": 1,
@@ -13427,12 +13611,13 @@
     {
       "name": "HeaderWrapper",
       "sourceFile": "components/HeaderWrapper",
-      "totalInstances": 6,
-      "totalCallSites": 6,
+      "totalInstances": 7,
+      "totalCallSites": 7,
       "callSites": {
         "pages/Browse/Browse.tsx": 1,
         "pages/Lend/LendWaitlist.tsx": 1,
         "pages/Prices/Prices.tsx": 1,
+        "pages/SharePortfolio/SharePortfolioContent.tsx": 1,
         "pages/AssetPage/components/AssetPageLayout.tsx": 1,
         "pages/Borrow/CreditLine/BorrowCreditLineWaitlist.tsx": 1,
         "pages/Borrow/Loan/BorrowLoanWaitlist.tsx": 1
@@ -14097,7 +14282,7 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "value": { "pages/PriceTableWidget/PriceTableWidget.tsx": 1 },
-        "key": { "pages/PriceTableWidget/PriceTableWidget.tsx": 1 }
+        "copyKey": { "pages/PriceTableWidget/PriceTableWidget.tsx": 1 }
       }
     },
     {
@@ -14143,6 +14328,29 @@
         "assetHighlights": { "pages/Prices/Prices.tsx": 1 },
         "currency": { "pages/Prices/Prices.tsx": 1 }
       }
+    },
+    {
+      "name": "Redirect",
+      "sourceFile": "react-router-dom/Redirect",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "pages/SharePortfolio/SharePortfolio.tsx": 1,
+        "pages/SharePortfolio/SharePortfolioContent.tsx": 1
+      },
+      "propsWithCallSites": {
+        "to": {
+          "pages/SharePortfolio/SharePortfolio.tsx": 1,
+          "pages/SharePortfolio/SharePortfolioContent.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SharePortfolioContent",
+      "sourceFile": "pages/SharePortfolio/SharePortfolioContent",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "portfolioUuid": { "pages/SharePortfolio/SharePortfolio.tsx": 1 } }
     },
     {
       "name": "SignupExpNoPhoto",
@@ -14431,24 +14639,11 @@
       "propsWithCallSites": { "key": { "components/SignupForm/SignupFlow/CompactFields.tsx": 1 } }
     },
     {
-      "name": "StyledInput",
-      "sourceFile": "components/SignupForm/SignupFlow/Fields.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "components/SignupForm/SignupFlow/Fields.tsx": 3 },
-      "propsWithCallSites": { "placeholder": { "components/SignupForm/SignupFlow/Fields.tsx": 3 } }
-    },
-    {
-      "name": "StyledPasswordFieldContainer",
-      "sourceFile": "components/SignupForm/SignupFlow/Fields.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "PasswordField",
       "sourceFile": "components/SignupForm/SignupFlow/PasswordField",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": { "form": { "components/SignupForm/SignupFlow/Fields.tsx": 1 } }
     },
     {
       "name": "PromoCodeInput",
@@ -14492,6 +14687,21 @@
       "sourceFile": "components/SignupForm/SignupFlow/PromoCodeInput.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "Label",
+      "sourceFile": "components/SignupForm/SignupFlow/Input/Label",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
+        "components/SignupForm/SignupFlow/StateField.tsx": 1
+      },
+      "propsWithCallSites": {
+        "htmlFor": { "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1 },
+        "id": { "components/SignupForm/SignupFlow/StateField.tsx": 1 },
+        "required": { "components/SignupForm/SignupFlow/StateField.tsx": 1 }
+      }
     },
     {
       "name": "ApplyButtonContainer",
@@ -14959,6 +15169,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "isLast": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
         "isMobile": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
         "onClickSignup": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
       }
@@ -15117,29 +15328,64 @@
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1,
-        "pages/Corporate/MissionPage/MissionPage.tsx": 1
+        "pages/Corporate/MissionPage/MissionPage.tsx": 1,
+        "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1
       },
       "propsWithCallSites": {
         "header": {
-          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1,
-          "pages/Corporate/MissionPage/MissionPage.tsx": 1
+          "pages/Corporate/MissionPage/MissionPage.tsx": 1,
+          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1
         },
         "description": {
-          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1,
-          "pages/Corporate/MissionPage/MissionPage.tsx": 1
+          "pages/Corporate/MissionPage/MissionPage.tsx": 1,
+          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1
         },
         "images": {
-          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1,
-          "pages/Corporate/MissionPage/MissionPage.tsx": 1
+          "pages/Corporate/MissionPage/MissionPage.tsx": 1,
+          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1
         },
         "imageDescription": {
-          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1,
-          "pages/Corporate/MissionPage/MissionPage.tsx": 1
+          "pages/Corporate/MissionPage/MissionPage.tsx": 1,
+          "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1
         },
-        "links": { "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1 },
-        "dataSyntheticId": { "pages/Corporate/MissionPage/MissionPage.tsx": 1 }
+        "dataSyntheticId": { "pages/Corporate/MissionPage/MissionPage.tsx": 1 },
+        "links": { "pages/Corporate/DevelopersPage/DevelopersPage.tsx": 1 }
       }
+    },
+    {
+      "name": "Section",
+      "sourceFile": "components/Corporate/Section",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "title": { "pages/Corporate/MissionPage/MissionPage.tsx": 1 } }
+    },
+    {
+      "name": "Values",
+      "sourceFile": "pages/Corporate/MissionPage/components/Values",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CorporateNavWrapper",
+      "sourceFile": "components/Corporate/CorporateNavWrapper",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "pages/Corporate/MissionPage/index.tsx": 1,
+        "pages/Corporate/PressPage/index.tsx": 1
+      },
+      "propsWithCallSites": {
+        "activePath": {
+          "pages/Corporate/MissionPage/index.tsx": 1,
+          "pages/Corporate/PressPage/index.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MissionPage",
+      "sourceFile": "pages/Corporate/MissionPage/MissionPage",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AcceptCrypto",
@@ -15222,41 +15468,6 @@
     {
       "name": "ReactComponent",
       "sourceFile": "pages/Corporate/DevelopersPage/assets/cash.svg/ReactComponent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Section",
-      "sourceFile": "components/Corporate/Section",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "title": { "pages/Corporate/MissionPage/MissionPage.tsx": 1 } }
-    },
-    {
-      "name": "Values",
-      "sourceFile": "pages/Corporate/MissionPage/components/Values",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "CorporateNavWrapper",
-      "sourceFile": "components/Corporate/CorporateNavWrapper",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "pages/Corporate/MissionPage/index.tsx": 1,
-        "pages/Corporate/PressPage/index.tsx": 1
-      },
-      "propsWithCallSites": {
-        "activePath": {
-          "pages/Corporate/MissionPage/index.tsx": 1,
-          "pages/Corporate/PressPage/index.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MissionPage",
-      "sourceFile": "pages/Corporate/MissionPage/MissionPage",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -15367,6 +15578,12 @@
     },
     {
       "name": "HeroTitle",
+      "sourceFile": "pages/Home/components/HeroVariant.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "HeroSubtitle",
       "sourceFile": "pages/Home/components/HeroVariant.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -16514,6 +16731,64 @@
       "propsWithCallSites": { "aria-hidden": { "pages/Usdc/components/Features.tsx": 1 } }
     },
     {
+      "name": "PageHeader",
+      "sourceFile": "components/Header/PageHeader",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "pages/cms/ContentHub/ContentHub.tsx": 1,
+        "pages/cms/PaidLandingPage/PaidLandingPage.tsx": 1,
+        "pages/cms/PaidLandingPageCompose/PaidLandingPageCompose.tsx": 1,
+        "pages/cms/PartnerLandingPage/PartnerLandingPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "type": {
+          "pages/cms/ContentHub/ContentHub.tsx": 1,
+          "pages/cms/PaidLandingPage/PaidLandingPage.tsx": 1,
+          "pages/cms/PaidLandingPageCompose/PaidLandingPageCompose.tsx": 1,
+          "pages/cms/PartnerLandingPage/PartnerLandingPage.tsx": 1
+        },
+        "detached": {
+          "pages/cms/ContentHub/ContentHub.tsx": 1,
+          "pages/cms/PaidLandingPage/PaidLandingPage.tsx": 1,
+          "pages/cms/PaidLandingPageCompose/PaidLandingPageCompose.tsx": 1,
+          "pages/cms/PartnerLandingPage/PartnerLandingPage.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Breadcrumbs",
+      "sourceFile": "components/Breadcrumbs",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "links": { "pages/cms/ContentHub/ContentHub.tsx": 1 } }
+    },
+    {
+      "name": "Subfooter",
+      "sourceFile": "pages/cms/ContentHub/components/Subfooter",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NotFound",
+      "sourceFile": "pages/ErrorPages/NotFound",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ContentHub",
+      "sourceFile": "pages/cms/ContentHub/ContentHub",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "metadata": { "pages/cms/ContentHub/index.tsx": 1 },
+        "template": { "pages/cms/ContentHub/index.tsx": 1 },
+        "loggedIn": { "pages/cms/ContentHub/index.tsx": 1 },
+        "forYouFeed": { "pages/cms/ContentHub/index.tsx": 1 },
+        "hideBreadcrumbAndFooter": { "pages/cms/ContentHub/index.tsx": 1 }
+      }
+    },
+    {
       "name": "ComposePageWrapper",
       "sourceFile": "pages/cms/components/ComposePageWrapper",
       "totalInstances": 6,
@@ -16584,64 +16859,6 @@
         "customWrapperStyle": { "pages/cms/Legal/index.tsx": 1 },
         "customContent": { "pages/cms/Legal/index.tsx": 1 },
         "signInUrl": { "pages/cms/Institutional/Exchange/index.tsx": 1 }
-      }
-    },
-    {
-      "name": "PageHeader",
-      "sourceFile": "components/Header/PageHeader",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "pages/cms/ContentHub/ContentHub.tsx": 1,
-        "pages/cms/PaidLandingPage/PaidLandingPage.tsx": 1,
-        "pages/cms/PaidLandingPageCompose/PaidLandingPageCompose.tsx": 1,
-        "pages/cms/PartnerLandingPage/PartnerLandingPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "type": {
-          "pages/cms/ContentHub/ContentHub.tsx": 1,
-          "pages/cms/PaidLandingPage/PaidLandingPage.tsx": 1,
-          "pages/cms/PaidLandingPageCompose/PaidLandingPageCompose.tsx": 1,
-          "pages/cms/PartnerLandingPage/PartnerLandingPage.tsx": 1
-        },
-        "detached": {
-          "pages/cms/ContentHub/ContentHub.tsx": 1,
-          "pages/cms/PaidLandingPage/PaidLandingPage.tsx": 1,
-          "pages/cms/PaidLandingPageCompose/PaidLandingPageCompose.tsx": 1,
-          "pages/cms/PartnerLandingPage/PartnerLandingPage.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Breadcrumbs",
-      "sourceFile": "components/Breadcrumbs",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "links": { "pages/cms/ContentHub/ContentHub.tsx": 1 } }
-    },
-    {
-      "name": "Subfooter",
-      "sourceFile": "pages/cms/ContentHub/components/Subfooter",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "NotFound",
-      "sourceFile": "pages/ErrorPages/NotFound",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ContentHub",
-      "sourceFile": "pages/cms/ContentHub/ContentHub",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "metadata": { "pages/cms/ContentHub/index.tsx": 1 },
-        "template": { "pages/cms/ContentHub/index.tsx": 1 },
-        "loggedIn": { "pages/cms/ContentHub/index.tsx": 1 },
-        "forYouFeed": { "pages/cms/ContentHub/index.tsx": 1 },
-        "hideBreadcrumbAndFooter": { "pages/cms/ContentHub/index.tsx": 1 }
       }
     },
     {
@@ -16773,6 +16990,35 @@
         "template": { "pages/cms/components/ComposePageWrapper.tsx": 1 },
         "path": { "pages/cms/components/ComposePageWrapper.tsx": 1 },
         "syntheticTagName": { "pages/cms/components/ComposePageWrapper.tsx": 1 }
+      }
+    },
+    {
+      "name": "Input",
+      "sourceFile": "components/SignupForm/SignupFlow/Input",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "fieldName": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "label": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "required": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "placeholder": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "form": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "value": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "type": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "height": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1 },
+        "inputContainerChild": {
+          "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "title",
+      "sourceFile": "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 2 },
+      "propsWithCallSites": {
+        "id": { "components/SignupForm/SignupFlow/PasswordField/PasswordField.tsx": 2 }
       }
     },
     {
@@ -17187,6 +17433,51 @@
       }
     },
     {
+      "name": "Wrapper",
+      "sourceFile": "pages/Corporate/MissionPage/components/styles/Wrapper",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "StyledIcon",
+      "sourceFile": "pages/Corporate/MissionPage/components/styles/StyledIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "src": { "pages/Corporate/MissionPage/components/Value.tsx": 1 },
+        "loading": { "pages/Corporate/MissionPage/components/Value.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextWrapper",
+      "sourceFile": "pages/Corporate/MissionPage/components/styles/TextWrapper",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "MissionPageGrid",
+      "sourceFile": "pages/Corporate/MissionPage/components/styles/MissionPageGrid",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "col": { "pages/Corporate/MissionPage/components/Values.tsx": 1 },
+        "rowGap": { "pages/Corporate/MissionPage/components/Values.tsx": 1 },
+        "breakpoints": { "pages/Corporate/MissionPage/components/Values.tsx": 1 }
+      }
+    },
+    {
+      "name": "Value",
+      "sourceFile": "pages/Corporate/MissionPage/components/Value",
+      "totalInstances": 9,
+      "totalCallSites": 1,
+      "callSites": { "pages/Corporate/MissionPage/components/Values.tsx": 9 },
+      "propsWithCallSites": {
+        "title": { "pages/Corporate/MissionPage/components/Values.tsx": 9 },
+        "iconUrl": { "pages/Corporate/MissionPage/components/Values.tsx": 9 },
+        "description": { "pages/Corporate/MissionPage/components/Values.tsx": 9 }
+      }
+    },
+    {
       "name": "StoryCard",
       "sourceFile": "pages/Corporate/DevelopersPage/components/StoryCard",
       "totalInstances": 3,
@@ -17289,51 +17580,6 @@
       "sourceFile": "pages/Corporate/DevelopersPage/assets/bold-chevron.svg/ReactComponent",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "Wrapper",
-      "sourceFile": "pages/Corporate/MissionPage/components/styles/Wrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "StyledIcon",
-      "sourceFile": "pages/Corporate/MissionPage/components/styles/StyledIcon",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": { "pages/Corporate/MissionPage/components/Value.tsx": 1 },
-        "loading": { "pages/Corporate/MissionPage/components/Value.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextWrapper",
-      "sourceFile": "pages/Corporate/MissionPage/components/styles/TextWrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "MissionPageGrid",
-      "sourceFile": "pages/Corporate/MissionPage/components/styles/MissionPageGrid",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "col": { "pages/Corporate/MissionPage/components/Values.tsx": 1 },
-        "rowGap": { "pages/Corporate/MissionPage/components/Values.tsx": 1 },
-        "breakpoints": { "pages/Corporate/MissionPage/components/Values.tsx": 1 }
-      }
-    },
-    {
-      "name": "Value",
-      "sourceFile": "pages/Corporate/MissionPage/components/Value",
-      "totalInstances": 9,
-      "totalCallSites": 1,
-      "callSites": { "pages/Corporate/MissionPage/components/Values.tsx": 9 },
-      "propsWithCallSites": {
-        "title": { "pages/Corporate/MissionPage/components/Values.tsx": 9 },
-        "iconUrl": { "pages/Corporate/MissionPage/components/Values.tsx": 9 },
-        "description": { "pages/Corporate/MissionPage/components/Values.tsx": 9 }
-      }
     },
     {
       "name": "BrandAssetsCategory",

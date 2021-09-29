@@ -160,39 +160,6 @@
       }
     },
     {
-      "name": "Container",
-      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "AccessoryContainer",
-      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CarrotRight",
-      "sourceFile": "@uwo/assets/icons/CarrotRight",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "callSites": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2 }
-    },
-    {
-      "name": "AddManuallyButton",
-      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "AccessibleButtonBase",
-      "propsWithCallSites": {
-        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "data-test-id": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
-      }
-    },
-    {
       "name": "Caption",
       "sourceFile": "@uwo/components/common/Caption",
       "totalInstances": 5,
@@ -276,6 +243,39 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "AccessoryContainer",
+      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CarrotRight",
+      "sourceFile": "@uwo/assets/icons/CarrotRight",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "callSites": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2 }
+    },
+    {
+      "name": "AddManuallyButton",
+      "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "AccessibleButtonBase",
+      "propsWithCallSites": {
+        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "data-test-id": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
+      }
     },
     {
       "name": "CollapsibleWrapper",
@@ -1618,6 +1618,31 @@
       "presentationalElement": "svg"
     },
     {
+      "name": "StyledProgressBarItem",
+      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "backgroundColor": {
+          "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1
+        },
+        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
+      }
+    },
+    {
+      "name": "AnimatedBarFillItem",
+      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "width": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
+        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
+        "fillColor": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
+      }
+    },
+    {
       "name": "CheckmarkWrapper",
       "sourceFile": "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx",
       "totalInstances": 2,
@@ -1647,31 +1672,6 @@
       "styledComponent": "div",
       "propsWithCallSites": {
         "active": { "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1 }
-      }
-    },
-    {
-      "name": "StyledProgressBarItem",
-      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "backgroundColor": {
-          "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1
-        },
-        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
-      }
-    },
-    {
-      "name": "AnimatedBarFillItem",
-      "sourceFile": "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "width": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
-        "height": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 },
-        "fillColor": { "@uwo/components/common/navigation/progress/ProgressBar/ProgressBar.tsx": 1 }
       }
     }
   ],
@@ -2284,8 +2284,8 @@
       "totalCallSites": 11,
       "callSites": {
         "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
         "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
         "@uwo/components/common/form/Address/Address.tsx": 3,
@@ -2337,8 +2337,8 @@
         },
         "name": {
           "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 4,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 4,
           "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
           "@uwo/components/common/form/Address/Address.tsx": 3,
@@ -2360,8 +2360,8 @@
         },
         "label": {
           "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 2,
           "@uwo/commonScenes/PersonalInfo/SsnField.tsx": 1,
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
@@ -2378,8 +2378,8 @@
         },
         "testID": {
           "@uwo/businessApplicationScenes/FormComponents/TextInputWrapper.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/AddressDetails/AddressDetailsFields.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         },
@@ -2442,84 +2442,6 @@
         "autocomplete": {
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         }
-      }
-    },
-    {
-      "name": "AddressSceneLayout",
-      "sourceFile": "@uwo/commonScenes/shared/components/AddressSceneLayout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "sceneTitle": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
-        },
-        "sceneBody": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
-        },
-        "addressCollapsibleTitle": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
-        },
-        "addressCollapsibleBody": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Label",
-      "sourceFile": "@uwo/components/common/Label",
-      "totalInstances": 6,
-      "totalCallSites": 5,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
-        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "@uwo/components/common/form/Date/DateFields.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "data-test-id": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
-      }
-    },
-    {
-      "name": "SettingCellContainer",
-      "sourceFile": "@uwo/components/common/core/SettingCellContainer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-      }
-    },
-    {
-      "name": "AddressAutocompleteItem",
-      "sourceFile": "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "key": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "name": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "predictionStructuredFormatting": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "data-test-id": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "accessory": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
       }
     },
     {
@@ -2649,12 +2571,90 @@
       }
     },
     {
+      "name": "AddressSceneLayout",
+      "sourceFile": "@uwo/commonScenes/shared/components/AddressSceneLayout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "sceneTitle": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "sceneBody": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "addressCollapsibleTitle": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        },
+        "addressCollapsibleBody": {
+          "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1
+        }
+      }
+    },
+    {
       "name": "AddressDetailsFields",
       "sourceFile": "@uwo/commonScenes/AddressDetails/AddressDetailsFields",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "label": { "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Label",
+      "sourceFile": "@uwo/components/common/Label",
+      "totalInstances": 6,
+      "totalCallSites": 5,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
+        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "@uwo/components/common/form/Date/DateFields.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "data-test-id": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
+      }
+    },
+    {
+      "name": "SettingCellContainer",
+      "sourceFile": "@uwo/components/common/core/SettingCellContainer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
+      }
+    },
+    {
+      "name": "AddressAutocompleteItem",
+      "sourceFile": "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "key": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "name": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "predictionStructuredFormatting": {
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "data-test-id": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "accessory": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
       }
     },
     {

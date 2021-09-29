@@ -2730,6 +2730,7 @@
           "@onboarding/screens/idvMarqeta/SelectIdTypeScreenMarqeta.tsx": 1,
           "@onboarding/screens/poa/SelectPOATypeScreen.tsx": 1
         },
+        "testID": { "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1 },
         "icon": {
           "@onboarding/screens/idv/SelectIdTypeScreen.tsx": 1,
           "@onboarding/screens/idvMarqeta/SelectIdTypeScreenMarqeta.tsx": 1,

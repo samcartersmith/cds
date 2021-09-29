@@ -34,8 +34,8 @@
           "callSites": [
             "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx",
             "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx"
+            "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx",
+            "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx"
           ]
         },
         {
@@ -635,33 +635,33 @@
       "callSites": {
         "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
       },
       "propsWithCallSites": {
         "BaseView": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         },
         "DrawerView": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         },
         "toggleButtonTestID": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
         }
       }
     },
@@ -673,33 +673,33 @@
       "callSites": {
         "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
         "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
       },
       "propsWithCallSites": {
         "options": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         },
         "onCloseDrawer": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         },
         "testID": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         }
       }
     },

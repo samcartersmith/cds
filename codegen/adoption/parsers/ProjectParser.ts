@@ -56,6 +56,7 @@ export type ProjectParserConfig = {
   cdsAliases?: string[];
   ignoreDirs?: string[];
   sourceGlob?: string;
+  tsconfigFileName?: string;
 };
 
 type ComponentInstance = {
@@ -112,6 +113,9 @@ export class ProjectParser {
 
   /** The github url for the project. This will be used to link to source files. */
   private githubUrl: string;
+
+  /** The name of the tsconfig file with the project aliases */
+  private tsconfigFileName: string;
 
   /** A label to use when displaying metrics on website. */
   private label: string;
@@ -174,6 +178,7 @@ export class ProjectParser {
     cdsAliases = [],
     ignoreDirs = [],
     sourceGlob,
+    tsconfigFileName,
   }: ProjectParserConfig) {
     const [org, repo] = github.split('/');
     this.github = github;
@@ -188,6 +193,7 @@ export class ProjectParser {
     this.presentationalElements = presentationalElements ?? FALLBACK_PRESENTATIONAL_ELEMENTS;
     this.presentationalLibraries = presentationalLibraries ?? FALLBACK_PRESENTATIONAL_LIBRARIES;
     this.root = root;
+    this.tsconfigFileName = tsconfigFileName ?? 'tsconfig.json';
   }
 
   get projectInfo() {
@@ -445,7 +451,7 @@ export class ProjectParser {
       this.spinner = ora(
         `Running CDS Adoption Tracker for ${chalk.bold.blueBright(this.id)}...`,
       ).start();
-      const tsconfig = await getTypescriptConfig(path.join(this.root, 'tsconfig.json'));
+      const tsconfig = await getTypescriptConfig(path.join(this.root, this.tsconfigFileName));
       this.dependencies = (await getPackageJson(this.root)).dependencies;
       this.root = path.resolve(this.root, tsconfig.compilerOptions.baseUrl);
       const { absoluteAliases, relativeAliases } = getTypescriptAliases(this.root, tsconfig);

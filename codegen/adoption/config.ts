@@ -10,59 +10,57 @@ const retailWebGit = 'frontend/coinbase-www';
 const walletGit = 'wallet/wallet-mobile';
 const unifiedAccountsGit = 'frontend/unified-identity-accounts';
 
+const monorepoConfig = {
+  root: path.join(tempDir, monorepoGit),
+  github: monorepoGit,
+  tsconfigFileName: 'tsconfig.options.json',
+};
+
 export const adopters: ProjectParserConfig[] = [
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'assethub-web',
     label: 'AssetHub Web',
     projectTsAliases: ['@assethub/www', '@assethub/shared/components'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'assethub-admin',
     label: 'AssetHub Admin',
     projectTsAliases: ['@assethub/admin', '@assethub/shared/components'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'growth-cms-consensus',
     label: 'Growth CMS Consensus App',
     projectTsAliases: ['@growth/cms-consensus-app'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'growth-email-templating-app',
     label: 'Growth Email Templating App',
     projectTsAliases: ['@growth/email-templating-app'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'commerce',
     label: 'Commerce',
     projectTsAliases: ['@commerce/frontend'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'prime-mobile',
     label: 'Prime Mobile',
     projectTsAliases: ['@prime-mobile'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'prime-web',
     label: 'Prime Web',
     projectTsAliases: ['@cbhq/prime-ui', '@cbhq/insto-ui-web'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'unified-login',
     label: 'Unified Login',
     projectTsAliases: ['@trust_and_safety'],
@@ -90,8 +88,7 @@ export const adopters: ProjectParserConfig[] = [
     cdsAliases: ['interactables/IconButton', '@components/interactables/Button'],
   },
   {
-    root: path.join(tempDir, monorepoGit),
-    github: monorepoGit,
+    ...monorepoConfig,
     id: 'two-factor-web',
     label: 'Two Factor Web',
     projectTsAliases: ['@cbhq/two-factor-web'],
