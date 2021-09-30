@@ -1,0 +1,43 @@
+---
+title: Component Composition
+---
+
+import {UnknownIcon} from '../../components/InlineIcons';
+
+## Component composition <UnknownIcon size="m" />
+
+When rendering a component composed of different parts we can use the following methodology:
+
+1. If a part of the component is generally free form then place it in the children.
+2. If a part of the component is more standardized then it can go in a strongly typed prop.
+
+**Example**
+
+This example uses a Table which generally has a standard header and footer. The body of a table generally contains free form markup in the table cells.
+
+```jsx
+const header = [
+  {
+    title: 'Name',
+  },
+  {
+    title: 'Age',
+    sortable: true,
+    defaultSort: 'ascending'
+  },
+  {
+    title: 'Address',
+  },
+];
+
+<Table header={header}>
+    <TableRow>...</TableRow>
+    <TableRow>...</TableRow>
+</Table>
+
+```
+
+## Code sharing between mobile and web <UnknownIcon size="m" />
+
+A description of how we share code between web and mobile should live here. We should discuss how to re-use code as much as possible.
+
