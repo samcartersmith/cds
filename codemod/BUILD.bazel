@@ -1,4 +1,4 @@
-load("//tools/js:def.bzl", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test", "type_check")
 
 # All files to lint and test
 filegroup(
@@ -15,4 +15,22 @@ filegroup(
 eslint_test(
     name = "lint",
     lints = [":source"],
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [":project_source"],
+    deps = [
+        "@npm//@types/jscodeshift",
+        "@npm//@types/node",
+    ],
 )

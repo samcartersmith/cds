@@ -22,5 +22,6 @@ DEV_DEPS = [
     "@npm//@types/node",
     "@npm//@types/react-dom",
     "@npm//@types/react",
+    "@npm//storybook-addon-performance",
     "@npm//type-fest",
 ]

@@ -1,5 +1,5 @@
 load("//tools/js:metro_bundle.bzl", "metro_bundle")
-load("//tools/js:def.bzl", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test", "type_check")
 load("//tools:def.bzl", "nodejs_binary")
 
 # This is a hack to build the @cbhq
@@ -26,17 +26,15 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-ESLINT_SRCS = [
-    "//eng/shared/design-system/common:source",
-    "//eng/shared/design-system/lottie-files:source",
-    "//eng/shared/design-system/mobile:source",
-    "//eng/shared/design-system/storybook:source",
-    "//eng/shared/design-system/utils:source",
-]
-
 eslint_test(
     name = "lint",
-    srcs = ESLINT_SRCS,
+    srcs = [
+        "//eng/shared/design-system/common:source",
+        "//eng/shared/design-system/lottie-files:source",
+        "//eng/shared/design-system/mobile:source",
+        "//eng/shared/design-system/storybook:source",
+        "//eng/shared/design-system/utils:source",
+    ],
     lints = [":source"],
 )
 
@@ -66,4 +64,30 @@ metro_bundle(
     platform = "ios",
     project = "cds",
     deps = METRO_DEPS,
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [
+        ":project_source",
+        "//eng/shared/design-system/common:project_source",
+        "//eng/shared/design-system/lottie-files:project_source",
+        "//eng/shared/design-system/mobile:project_source",
+        "//eng/shared/design-system/storybook:project_source",
+        "//eng/shared/design-system/utils:project_source",
+    ],
+    deps = [
+        "@npm//@cbhq/cds-mobile",
+        "@npm//@react-navigation/native",
+        "@npm//@react-navigation/stack",
+    ],
 )

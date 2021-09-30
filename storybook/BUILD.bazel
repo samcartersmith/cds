@@ -1,3 +1,5 @@
+load("//tools/js:def.bzl", "type_check")
+
 exports_files([
     ".storybook",
 ])
@@ -25,4 +27,30 @@ filegroup(
         ],
     ),
     visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "data/**/*.ts",
+        "stories/**/*.ts",
+        "stories/**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [
+        ":project_source",
+        "//eng/shared/design-system/common:project_source",
+        "//eng/shared/design-system/lottie-files:project_source",
+        "//eng/shared/design-system/mobile:project_source",
+        "//eng/shared/design-system/utils:project_source",
+    ],
+    deps = [
+        "@npm//@cbhq/cds-common",
+        "@npm//@types/react",
+        "@npm//@types/react-native",
+    ],
 )

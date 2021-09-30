@@ -202,4 +202,8 @@ release:
 
 .PHONY: typecheck
 typecheck:
-	bazel run //:typecheck
+	bazel test common:typecheck
+	bazel test mobile:typecheck
+	bazel test mobile-playground:typecheck
+	bazel test web:typecheck
+	bazel test website:typecheck

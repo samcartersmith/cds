@@ -1,4 +1,4 @@
-load("//tools/js:def.bzl", "eslint_test", "ts_package")
+load("//tools/js:def.bzl", "eslint_test", "ts_package", "type_check")
 load(":deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
 
 SOURCE = [
@@ -72,4 +72,50 @@ ts_package(
     },
     typescript_config = ":tsconfig.build.json",
     deps = DEPS,
+)
+
+filegroup(
+    name = "project_source",
+    srcs = [
+        "tsconfig.json",
+        ":runtime_source",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [
+        ":project_source",
+        "//eng/shared/design-system/common:project_source",
+        "//eng/shared/design-system/lottie-files:project_source",
+        "//eng/shared/design-system/utils:project_source",
+    ],
+    deps = DEPS + PEER_DEPS + DEV_DEPS,
+)
+
+# We need a separate check so that consumers dont inherit test and story files
+filegroup(
+    name = "project_source_tests",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck_tests",
+    srcs = [
+        ":project_source_tests",
+        "//eng/shared/design-system/common:project_source",
+        "//eng/shared/design-system/lottie-files:project_source",
+        "//eng/shared/design-system/storybook:project_source",
+        "//eng/shared/design-system/utils:project_source",
+        "//eng/shared/utils/jest:project_source",
+    ],
+    typescript_config = "tsconfig.tests.json",
+    deps = DEPS + PEER_DEPS + DEV_DEPS + [
+        "@npm//@cbhq/jest-utils",
+    ],
 )

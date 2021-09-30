@@ -1,4 +1,26 @@
-load("//tools/js:def.bzl", "eslint_test", "ts_package")
+load("//tools/js:def.bzl", "eslint_test", "ts_package", "type_check")
+
+NPM_DEPS = [
+    "@npm//@cbhq/cds-utils",
+    "@npm//@types/react-is",
+    "@npm//d3-array",
+    "@npm//d3-color",
+    "@npm//d3-scale",
+    "@npm//d3-shape",
+    "@npm//type-fest",
+]
+
+NPM_PEER_DEPS = [
+    "@npm//react",
+]
+
+NPM_DEV_DEPS = [
+    "@npm//@types/d3-array",
+    "@npm//@types/d3-color",
+    "@npm//@types/d3-scale",
+    "@npm//@types/d3-shape",
+    "@npm//@types/react",
+]
 
 # Files to publish to NPM
 filegroup(
@@ -38,29 +60,31 @@ ts_package(
     name = "package",
     package_name = "@cbhq/cds-common",
     srcs = [":runtime_source"],
-    dev_deps = [
-        "@npm//@types/d3-array",
-        "@npm//@types/d3-color",
-        "@npm//@types/d3-scale",
-        "@npm//@types/d3-shape",
-        "@npm//@types/react",
-    ],
-    peer_deps = [
-        "@npm//react",
-    ],
+    dev_deps = NPM_DEV_DEPS,
+    peer_deps = NPM_PEER_DEPS,
     relative_source_directory = ".",
     static_files = {
         ":CHANGELOG.md": "./CHANGELOG.md",
         ":README.md": "./README.md",
     },
     typescript_config = ":tsconfig.build.json",
-    deps = [
-        "@npm//@cbhq/cds-utils",
-        "@npm//@types/react-is",
-        "@npm//d3-array",
-        "@npm//d3-color",
-        "@npm//d3-scale",
-        "@npm//d3-shape",
-        "@npm//type-fest",
+    deps = NPM_DEPS,
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [
+        ":project_source",
+        "//eng/shared/design-system/utils:project_source",
     ],
+    deps = NPM_DEPS + NPM_PEER_DEPS + NPM_DEV_DEPS,
 )

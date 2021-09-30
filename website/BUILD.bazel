@@ -1,4 +1,4 @@
-load("//tools/js:def.bzl", "docusaurus", "eslint_test")
+load("//tools/js:def.bzl", "docusaurus", "eslint_test", "type_check")
 
 srcs = [
     "//eng/shared/design-system:build_source",
@@ -61,4 +61,40 @@ eslint_test(
     srcs = srcs,
     lints = [":lintable_source"],
     local_eslint_config = ".eslintrc",
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [
+        ":project_source",
+        "//eng/shared/design-system/common:project_source",
+        "//eng/shared/design-system/lottie-files:project_source",
+        "//eng/shared/design-system/storybook:project_source",
+        "//eng/shared/design-system/utils:project_source",
+        "//eng/shared/design-system/web:project_source",
+        "//eng/shared/utils/jest:project_source",
+    ],
+    deps = [
+        "@npm//@cbhq/cds-web",
+        "@npm//@docusaurus/core",
+        "@npm//@docusaurus/module-type-aliases",
+        "@npm//@docusaurus/preset-classic",
+        "@npm//@types/lodash",
+        "@npm//@types/react-router-dom",
+        "@npm//@types/react-virtualized",
+        "@npm//antd",
+        "@npm//lodash",
+        "@npm//rc-select",
+        "@npm//react-router-dom",
+        "@npm//react-virtualized",
+    ],
 )

@@ -1,4 +1,4 @@
-load("//tools/js:def.bzl", "eslint_test")
+load("//tools/js:def.bzl", "eslint_test", "type_check")
 
 exports_files([
     "babel-plugins/linariaCssExtractPlugin.js",
@@ -49,4 +49,50 @@ eslint_test(
     name = "lint",
     srcs = ESLINT_SRCS,
     lints = [":source"],
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [
+        ":project_source",
+        "//eng/shared/design-system/common:project_source",
+        "//eng/shared/design-system/utils:project_source",
+        "//tools/js:project_source",
+    ],
+    deps = [
+        "@npm//@cbhq/cds-common",
+        "@npm//@cbhq/cds-utils",
+        "@npm//@k-vyn/coloralgorithm",
+        "@npm//@types/ejs",
+        "@npm//@types/lodash",
+        "@npm//@types/node",
+        "@npm//@types/prettier",
+        "@npm//@types/svgo",
+        "@npm//@types/yargs",
+        "@npm//axios",
+        "@npm//chalk",
+        "@npm//ejs",
+        "@npm//fast-glob",
+        "@npm//lodash",
+        "@npm//ora",
+        "@npm//prettier",
+        "@npm//react-docgen-typescript",
+        "@npm//svgo",
+        "@npm//yargs",
+
+        # Tools deps
+        "@npm//@graphql-tools/merge",
+        "@npm//@types/jscodeshift",
+        "@npm//@types/semver",
+        "@npm//graphql",
+    ],
 )

@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
-import { TextInputProps } from 'react-native';
+import type { TextInputProps } from 'react-native';
 import { ButtonBaseProps, SystemProviderProps, useToggler } from '@cbhq/cds-common';
 import { ModalBaseProps, ModalFooterBaseProps } from '@cbhq/cds-common/types';
-import { LoremIpsumProps } from '@cbhq/cds-web/layout/__stories__/LoremIpsum';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { usePortal } from '@cbhq/cds-common/context/PortalContext';
 
@@ -10,7 +9,7 @@ export type CreateModalProps = {
   Modal: React.ComponentType<ModalBaseProps>;
   ModalBody: React.ComponentType;
   ModalFooter: React.ComponentType<ModalFooterBaseProps>;
-  LoremIpsum: React.ComponentType<LoremIpsumProps>;
+  LoremIpsum: React.ComponentType<Record<string, unknown>>;
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
   ThemeProvider: React.ComponentType<SystemProviderProps>;
   PortalProvider: React.ComponentType<SystemProviderProps>;

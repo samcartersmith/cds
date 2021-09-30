@@ -20,6 +20,19 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+# Make it super easy for consumers to just inherit everything
+filegroup(
+    name = "project_source",
+    srcs = [
+        "//eng/shared/design-system/%s:project_source" % p
+        for p in PACKAGES
+    ] + [
+        "//eng/shared/design-system/storybook:project_source",
+        "//eng/shared/utils/jest:project_source",
+    ],
+    visibility = ["//visibility:public"],
+)
+
 filegroup(
     name = "web_source",
     srcs = [

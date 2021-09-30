@@ -1,4 +1,4 @@
-load("//tools/js:def.bzl", "eslint_test", "ts_package")
+load("//tools/js:def.bzl", "eslint_test", "ts_package", "type_check")
 
 # Files to publish to NPM
 filegroup(
@@ -62,4 +62,19 @@ ts_package(
     },
     typescript_config = ":tsconfig.build.json",
     deps = [],
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.json",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [":project_source"],
 )

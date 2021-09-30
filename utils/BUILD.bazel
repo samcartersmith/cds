@@ -1,4 +1,14 @@
-load("//tools/js:def.bzl", "eslint_test", "ts_package")
+load("//tools/js:def.bzl", "eslint_test", "ts_package", "type_check")
+
+NPM_DEPS = [
+    "@npm//humps",
+    "@npm//type-fest",
+]
+
+NPM_DEV_DEPS = [
+    "@npm//@types/humps",
+    "@npm//@types/node",
+]
 
 # Files to publish to NPM
 filegroup(
@@ -38,10 +48,7 @@ ts_package(
     name = "package",
     package_name = "@cbhq/cds-utils",
     srcs = [":runtime_source"],
-    dev_deps = [
-        "@npm//@types/humps",
-        "@npm//@types/node",
-    ],
+    dev_deps = NPM_DEV_DEPS,
     peer_deps = [],
     relative_source_directory = ".",
     static_files = {
@@ -49,8 +56,20 @@ ts_package(
         ":README.md": "./README.md",
     },
     typescript_config = ":tsconfig.build.json",
-    deps = [
-        "@npm//humps",
-        "@npm//type-fest",
-    ],
+    deps = NPM_DEPS,
+)
+
+filegroup(
+    name = "project_source",
+    srcs = glob([
+        "**/*.ts",
+        "**/*.tsx",
+    ]) + ["tsconfig.json"],
+    visibility = ["//visibility:public"],
+)
+
+type_check(
+    name = "typecheck",
+    srcs = [":project_source"],
+    deps = NPM_DEPS + NPM_DEV_DEPS,
 )

@@ -1,14 +1,10 @@
 {
-  "extends": "../../../../tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "sourceMap": false,
-  },
+  "extends": "../../../../tsconfig.buildOptions.json",
   "include": [
     "**/*"
   ],
   "exclude": [
+    "**/*.stories.*",
     "**/*.test.*"
   ]
 }

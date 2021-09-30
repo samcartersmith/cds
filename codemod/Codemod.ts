@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { API, FileInfo, JSCodeshift, Options, JSXElement } from 'jscodeshift';
+import { API, FileInfo, JSCodeshift, Options, JSXElement, ImportDeclaration } from 'jscodeshift';
 import { Collection } from 'jscodeshift/src/Collection';
 
 export class Codemod {
@@ -23,7 +23,7 @@ export class Codemod {
     return cb(this.cs);
   }
 
-  findImports() {
+  findImports(): Collection<ImportDeclaration> {
     return this.source.find(this.cs.ImportDeclaration);
   }
 
