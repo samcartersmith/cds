@@ -18,3 +18,7 @@
 .markdown li + li {
   margin-top: 0;
 }
+
+a:hover {
+  text-decoration: unset;
+}

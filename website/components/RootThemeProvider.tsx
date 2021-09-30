@@ -4,7 +4,20 @@ import { DevicePreferencesProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import useTheme from '@theme/hooks/useTheme';
 import ThemeContext from '@theme/ThemeContext';
 import { Spectrum } from '@cbhq/cds-common';
+import { css } from 'linaria';
 import { getThemeStorage } from ':cds-website/src/theme/ThemeStorage';
+
+const overrides = css`
+  display: contents;
+  :global() {
+    :root {
+      --ifm-avatar-photo-size-md: 80px;
+      --ifm-background-color: var(--background);
+      --ifm-pre-background: var(--background);
+      --ifm-color-primary: var(--primary);
+    }
+  }
+`;
 
 const DocusaurusThemeProvider: React.FC = ({ children }) => {
   const { isDarkTheme, setLightTheme, setDarkTheme } = useTheme();
@@ -20,7 +33,9 @@ export const RootThemeProvider: React.FC = memo(({ children }) => {
   return (
     <DevicePreferencesProvider spectrum={storedSpectrum}>
       <ThemeProvider>
-        <DocusaurusThemeProvider>{children}</DocusaurusThemeProvider>
+        <DocusaurusThemeProvider>
+          <div className={overrides}>{children}</div>
+        </DocusaurusThemeProvider>
       </ThemeProvider>
     </DevicePreferencesProvider>
   );

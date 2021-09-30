@@ -24,7 +24,6 @@ import {
   underlay,
   transparentChildren,
   fullWidth,
-  borderClip,
 } from '../styles/interactable';
 import { palette } from '../tokens';
 
@@ -60,7 +59,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     as: Container,
     backgroundColor,
     block,
-    borderColor,
+    borderColor = 'transparent',
     borderRadius,
     borderWidth,
     children,
@@ -100,12 +99,11 @@ export const InteractableContent = forwardRef(function InteractableContent(
     interactable,
     ...backgroundStyles,
     !wrapWithLayeredElements && transparentChildren,
-    borderColor && borderColors[borderColor],
+    borderColors[borderColor],
     borderRadius && borderRadii[borderRadius],
     borderWidth && borderWidths[borderWidth],
     disabled ? disabledState : focusRing,
     block && fullWidth,
-    borderClip,
     customClassName,
   );
   const style = useMemo(
@@ -161,16 +159,12 @@ export const InteractableContent = forwardRef(function InteractableContent(
 });
 
 export const Interactable = forwardRef(function Interactable(
-  { children, borderColor, className, ...props }: InteractableProps,
+  { children, ...props }: InteractableProps,
   ref: React.Ref<Element>,
 ) {
   return (
     <ElevationProvider elevation={props?.elevation}>
-      <InteractableContent
-        ref={ref}
-        className={cx(className, borderColor && borderColors[borderColor])}
-        {...props}
-      >
+      <InteractableContent ref={ref} {...props}>
         {children}
       </InteractableContent>
     </ElevationProvider>
