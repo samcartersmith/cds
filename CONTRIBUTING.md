@@ -341,3 +341,17 @@ With `logType` being one of the following:
 - release, internal, docs, tests - no-op
 
 More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/master/tools/js/releasePackages.ts)
+
+### Testing on external projects
+
+- Build your project and any dependencies of that project. Generally at a minimum you will need `cds-common` and whatever you are testing e.g. `cds-mobile`. This would require running `make build.mobile` and `make build.common`
+- The output of the packages above will be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system`. Locate your package in the subdirectory `[package]/package`. For example 
+`cds-mobile` would be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system/mobile/package`
+- Copy the absolute path to your package
+- In the external project add a resolution to your package(s) Like this:
+```
+  "@cbhq/cds-mobile": "/Users/home/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/mobile/package",
+  "@cbhq/cds-common": "/Users/home/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/common/package"
+```
+- Run `yarn install` on the external project
+- If you update the package in the monorepo and want to sync it in the external project then you will have to run `yarn upgrade [dependency]`. For example `yarn upgrade @cbhq/cds-common`

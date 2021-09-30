@@ -11,12 +11,18 @@ export type UseSparklinePathParams = {
   data: number[] | string[];
   height: number;
   width: number;
+  yAxisScalingFactor?: number;
 };
 
-export const useSparklinePath = ({ data, height, width }: UseSparklinePathParams) => {
+export const useSparklinePath = ({
+  data,
+  height,
+  width,
+  yAxisScalingFactor = 1.0,
+}: UseSparklinePathParams) => {
   const dataList = useMemo(() => data.map(Number), [data]);
   return useMemo(() => {
-    const { xRange, yRange } = getSparklineRange({ height, width });
+    const { xRange, yRange } = getSparklineRange({ height, width, yAxisScalingFactor });
     const downsampledData = largestTriangleThreeBucket(dataList, width / 3) as [number];
     const xDomain = [0, downsampledData.length];
     const xFunction = scaleLinear().domain(xDomain).range(xRange);
@@ -28,5 +34,5 @@ export const useSparklinePath = ({ data, height, width }: UseSparklinePathParams
         .x((_, i) => xFunction(i))
         .y((y) => yFunction(y))(downsampledData) ?? ''
     );
-  }, [dataList, width, height]);
+  }, [height, width, yAxisScalingFactor, dataList]);
 };

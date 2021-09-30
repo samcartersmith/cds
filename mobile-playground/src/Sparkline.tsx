@@ -6,6 +6,10 @@ import { VStack, HStack } from '@cbhq/cds-mobile/layout';
 import { TextHeadline, TextBody } from '@cbhq/cds-mobile/typography';
 import { Sparkline } from '@cbhq/cds-mobile/visualizations/Sparkline';
 
+import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { Dimensions } from 'react-native';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { assets } from './data/assets';
 import { prices } from './data/prices';
 import Example from './internal/Example';
@@ -55,6 +59,41 @@ const SparklineExample: React.FC<SparklineExampleProps> = ({ imageUrl, name, sym
   );
 };
 
+type SparklineCompactExampleProps = {
+  yAxisScalingFactor: number;
+};
+
+const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = ({
+  yAxisScalingFactor,
+}) => {
+  const lowDevPrices = [];
+
+  for (let i = 0; i < 288; i += 1) {
+    lowDevPrices.push(0.995 + Math.random() * 0.01); // 0.995 => 1.005
+  }
+
+  const spacing = useSpacingScale();
+  const chartHorizontalGutter = spacing[gutter];
+  const width = Dimensions.get('screen').width - chartHorizontalGutter * 2;
+  const height = useScaleConditional({ dense: 160, normal: 320 });
+  const dimensions = { width, height };
+  const path = useSparklinePath({ ...dimensions, data: lowDevPrices, yAxisScalingFactor });
+
+  return (
+    <VStack>
+      <TextHeadline numberOfLines={1} ellipsize="tail">
+        Scale: {yAxisScalingFactor}
+      </TextHeadline>
+      <Sparkline
+        {...dimensions}
+        path={path}
+        color="#F7931A"
+        yAxisScalingFactor={yAxisScalingFactor}
+      />
+    </VStack>
+  );
+};
+
 const PressableOpacityScreen = () => {
   return (
     <ExamplesScreen>
@@ -66,6 +105,13 @@ const PressableOpacityScreen = () => {
           <SparklineExample {...assets.dai} />
           <SparklineExample {...assets.sushi} />
         </VStack>
+      </Example>
+      <Example title="SparklineWithScale">
+        <SparklineScalingExample yAxisScalingFactor={0.1} />
+        <SparklineScalingExample yAxisScalingFactor={0.3} />
+        <SparklineScalingExample yAxisScalingFactor={0.5} />
+        <SparklineScalingExample yAxisScalingFactor={0.7} />
+        <SparklineScalingExample yAxisScalingFactor={1} />
       </Example>
     </ExamplesScreen>
   );

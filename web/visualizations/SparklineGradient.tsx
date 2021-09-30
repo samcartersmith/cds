@@ -2,18 +2,19 @@ import React, { forwardRef, memo, useMemo } from 'react';
 
 import { SparklineBaseProps } from '@cbhq/cds-common/types';
 
+import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
 import { SparklinePath, SparklinePathRef } from './SparklinePath';
 
 export const SparklineGradient = memo(
   forwardRef<SparklinePathRef, SparklineBaseProps>(
-    ({ background, color, path, height, width }, forwardedRef) => {
+    ({ background, color, path, height, width, yAxisScalingFactor }, forwardedRef) => {
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const gradientId = background
         ? `sparkline-gradient-${background}-${color}`
         : `sparkline-gradient-${color}`;
       const cleanId = gradientId.replace('#', '');
-
+      const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const linearGradient = useMemo(() => {
         return (
           <defs>
@@ -30,7 +31,9 @@ export const SparklineGradient = memo(
       return (
         <svg width={width} height={height}>
           {linearGradient}
-          <SparklinePath ref={forwardedRef} path={path} stroke={`url(#${cleanId})`} />
+          <g {...translateProps}>
+            <SparklinePath ref={forwardedRef} path={path} stroke={`url(#${cleanId})`} />
+          </g>
         </svg>
       );
     },

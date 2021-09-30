@@ -51,6 +51,41 @@ const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
   );
 };
 
+type SparklineCompactExampleProps = {
+  yAxisScalingFactor: number;
+};
+
+const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = ({
+  yAxisScalingFactor,
+}) => {
+  const lowDevPrices = [];
+
+  for (let i = 0; i < 288; i += 1) {
+    lowDevPrices.push(0.995 + Math.random() * 0.01); // 0.995 => 1.005
+  }
+
+  const spacing = useSpacingScale();
+  const chartHorizontalGutter = spacing[gutter];
+  const width = Dimensions.get('screen').width - chartHorizontalGutter * 2;
+  const height = useScaleConditional({ dense: 160, normal: 320 });
+  const dimensions = { width, height };
+  const path = useSparklinePath({ ...dimensions, data: lowDevPrices, yAxisScalingFactor });
+
+  return (
+    <VStack>
+      <TextHeadline numberOfLines={1} ellipsize="tail">
+        Scale: {yAxisScalingFactor}
+      </TextHeadline>
+      <SparklineGradient
+        {...dimensions}
+        path={path}
+        color="#F7931A"
+        yAxisScalingFactor={yAxisScalingFactor}
+      />
+    </VStack>
+  );
+};
+
 const PressableOpacityScreen = () => {
   return (
     <ExamplesScreen>
@@ -61,6 +96,13 @@ const PressableOpacityScreen = () => {
         <SparklineGradientExample {...assets.xrp} />
         <SparklineGradientExample {...assets.dai} />
         <SparklineGradientExample {...assets.sushi} />
+      </Example>
+      <Example title="SparklineGradientWithScale">
+        <SparklineScalingExample yAxisScalingFactor={0.1} />
+        <SparklineScalingExample yAxisScalingFactor={0.3} />
+        <SparklineScalingExample yAxisScalingFactor={0.5} />
+        <SparklineScalingExample yAxisScalingFactor={0.7} />
+        <SparklineScalingExample yAxisScalingFactor={1} />
       </Example>
     </ExamplesScreen>
   );

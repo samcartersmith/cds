@@ -23,6 +23,7 @@ function Example() {
 ## Dynamic background colors
 
 ```jsx live
+import {ExampleWithThemeToggles} from "./ExampleWithThemeToggles";
 function Example() {
   const normal = { width: 400, height: 200 };
   const dense = { width: 200, height: 100 };
@@ -37,6 +38,25 @@ function Example() {
           </VStack>
         ))}
       </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+## y axis scaling
+```jsx live
+function Example() {
+  const yAxisScalingFactor = 0.2;
+  const normal = { width: 400, height: 200 };
+  const dense = { width: 200, height: 100 };
+  const dimensions = useScaleConditional({ normal, dense });
+  const path = useSparklinePath({ ...dimensions, data: prices, yAxisScalingFactor });
+  return (
+    <ExampleWithThemeToggles>
+        <VStack gap={2}>
+           <TextLabel1 as="p">Scale {yAxisScalingFactor}</TextLabel1>
+          <SparklineGradient {...dimensions} path={path} color="auto" yAxisScalingFactor={yAxisScalingFactor} />
+        </VStack>
     </ExampleWithThemeToggles>
   );
 }

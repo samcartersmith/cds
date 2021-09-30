@@ -5,11 +5,13 @@ import { SparklineBaseProps } from '@cbhq/cds-common/types';
 import { TextInput } from 'react-native';
 import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
 
+import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
 
 export const SparklineGradient = memo(
   forwardRef<TextInput | null, SparklineBaseProps>(
-    ({ background, color, path, height, width }, ref) => {
+    ({ background, color, path, height, width, yAxisScalingFactor }, ref) => {
+      const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const linearGradient = useMemo(() => {
         return (
@@ -34,6 +36,7 @@ export const SparklineGradient = memo(
             strokeLinecap="round"
             strokeWidth={borderWidth.sparkline}
             stroke="url(#gradient)"
+            {...translateProps}
           />
         </Svg>
       );

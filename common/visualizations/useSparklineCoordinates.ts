@@ -11,11 +11,17 @@ export type UseSparklineCoordinatesParams = {
   data: ChartData;
   width: number;
   height: number;
+  yAxisScalingFactor?: number;
 };
 
-export const useSparklineCoordinates = ({ data, width, height }: UseSparklineCoordinatesParams) => {
+export const useSparklineCoordinates = ({
+  data,
+  width,
+  height,
+  yAxisScalingFactor,
+}: UseSparklineCoordinatesParams) => {
   return useMemo(() => {
-    const { xRange, yRange } = getSparklineRange({ height, width });
+    const { xRange, yRange } = getSparklineRange({ height, width, yAxisScalingFactor });
     const xDomain = extent(data, (item) => item.date) as [Date, Date];
     const xFunction = scaleTime() // the x-axis is date
       .domain(xDomain)
@@ -52,5 +58,5 @@ export const useSparklineCoordinates = ({ data, width, height }: UseSparklineCoo
       path: createSparkline(data) ?? '',
       getMarker,
     };
-  }, [data, height, width]);
+  }, [data, height, width, yAxisScalingFactor]);
 };
