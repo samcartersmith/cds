@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.0 (9/29/2021, 09:13 PM PST)
+
+#### 💥 Breaking
+
+- Fix pressable border styles. [#36035](https://github.cbhq.net/mono/repo/pull/36035)
+
 ## 0.23.0 (9/29/2021, 02:03 PM PST)
 
 #### 💥 Breaking

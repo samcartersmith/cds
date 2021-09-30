@@ -198,6 +198,7 @@ release:
 	bazel run :release | pbcopy
 	bazel run :changelog
 	bazel run :docgen
+	bazel run website:lint_fix
 	pbpaste | tail -1
 
 .PHONY: typecheck
