@@ -66,16 +66,16 @@ export type IconName =
   | 'circulatingSupply'
   | 'allTimeHigh'
   | 'pulse'
-  | 'chartPie'
   | 'sparkle'
+  | 'chartPie'
   | 'recurring'
   | 'convert'
   | 'add'
   | 'minus'
   | 'arrowDown'
   | 'arrowUp'
-  | 'dot'
   | 'info'
+  | 'dot'
   | 'arrowsVertical'
   | 'wireTransfer'
   | 'calendar'
@@ -170,7 +170,14 @@ export type IconName =
   | 'fork'
   | 'unknown'
   | 'thumbsDown'
-  | 'thumbsUp';
+  | 'thumbsUp'
+  | 'paperclip'
+  | 'upload'
+  | 'noWifi'
+  | 'wifi'
+  | 'telephone'
+  | 'laptop'
+  | 'clockOutline';
 
 export type NavigationIconName =
   | 'chartCandles'
@@ -193,7 +200,10 @@ export type NavigationIconName =
   | 'settings'
   | 'scanQrCode'
   | 'chartBar'
-  | 'earn';
+  | 'earn'
+  | 'directDeposit'
+  | 'support'
+  | 'planet';
 
 export type NavigationIconInternalName =
   | 'chartCandlesInactive'
@@ -237,4 +247,10 @@ export type NavigationIconInternalName =
   | 'chartBarInactive'
   | 'chartBarActive'
   | 'earnInactive'
-  | 'earnActive';
+  | 'earnActive'
+  | 'directDepositInactive'
+  | 'directDepositActive'
+  | 'supportInactive'
+  | 'supportActive'
+  | 'planetInactive'
+  | 'planetActive';

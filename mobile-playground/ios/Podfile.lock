@@ -4,6 +4,7 @@ PODS:
     - React-Core
   - BVLinearGradient (2.5.6):
     - React
+  - Castle (2.1.2)
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.64.2)
@@ -260,6 +261,9 @@ PODS:
     - React-jsi (= 0.64.2)
     - React-perflogger (= 0.64.2)
   - React-jsinspector (0.64.2)
+  - react-native-castle (1.1.1):
+    - Castle (= 2.1.2)
+    - React-Core
   - react-native-safe-area-context (3.1.9):
     - React-Core
   - react-native-webview (11.0.2):
@@ -381,6 +385,7 @@ DEPENDENCIES:
   - React-jsi (from `../../../../../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../../../../../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../../../../../node_modules/react-native/ReactCommon/jsinspector`)
+  - "react-native-castle (from `../../../../../node_modules/@castleio/react-native-castle`)"
   - react-native-safe-area-context (from `../../../../../node_modules/react-native-safe-area-context`)
   - react-native-webview (from `../../../../../node_modules/react-native-webview`)
   - React-perflogger (from `../../../../../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -404,6 +409,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Castle
     - CocoaAsyncSocket
     - Flipper
     - Flipper-DoubleConversion
@@ -455,6 +461,8 @@ EXTERNAL SOURCES:
     :path: "../../../../../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../../../../../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-castle:
+    :path: "../../../../../node_modules/@castleio/react-native-castle"
   react-native-safe-area-context:
     :path: "../../../../../node_modules/react-native-safe-area-context"
   react-native-webview:
@@ -498,6 +506,7 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BugsnagReactNative: a96bc039e0e4ec317a8b331714393d836ca60557
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
+  Castle: 0a7dc60f390232720c56399242e9f7c5ecc02a39
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: e686045572151edef46010a6f819ade377dfeb4b
@@ -525,6 +534,7 @@ SPEC CHECKSUMS:
   React-jsi: 67747b9722f6dab2ffe15b011bcf6b3f2c3f1427
   React-jsiexecutor: 80c46bd381fd06e418e0d4f53672dc1d1945c4c3
   React-jsinspector: cc614ec18a9ca96fd275100c16d74d62ee11f0ae
+  react-native-castle: 5ef60feb14a832a2565be74de87b40bc6e3146e3
   react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
   react-native-webview: dfd7202ff115c44d3ea401c2f36122fb3ac79f07
   React-perflogger: 25373e382fed75ce768a443822f07098a15ab737
