@@ -39,15 +39,13 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
-ESLINT_SRCS = [
-    "//eng/shared/design-system/common:source",
-    "//eng/shared/design-system/utils:source",
-    "//tools/js:writePrettyFile.ts",
-]
-
 eslint_test(
     name = "lint",
-    srcs = ESLINT_SRCS,
+    srcs = [
+        "//eng/shared/design-system/common:source",
+        "//eng/shared/design-system/utils:source",
+        "//eng/shared/utils/monorepo:source",
+    ],
     lints = [":source"],
 )
 
@@ -66,11 +64,12 @@ type_check(
         ":project_source",
         "//eng/shared/design-system/common:project_source",
         "//eng/shared/design-system/utils:project_source",
-        "//tools/js:project_source",
+        "//eng/shared/utils/monorepo:project_source",
     ],
     deps = [
         "@npm//@cbhq/cds-common",
         "@npm//@cbhq/cds-utils",
+        "@npm//@cbhq/monorepo-utils",
         "@npm//@k-vyn/coloralgorithm",
         "@npm//@types/ejs",
         "@npm//@types/lodash",

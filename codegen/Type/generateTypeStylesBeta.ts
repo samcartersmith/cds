@@ -6,7 +6,7 @@ import {
   FallbackStack,
   fallbackStack,
   FontFamily,
-} from 'eng/shared/design-system/codegen/configs/typographyConfigBeta';
+} from '../configs/typographyConfigBeta';
 
 import { scaleConfig } from '../configs/scaleConfig';
 import { calculateMinFontSize, round } from './utils';

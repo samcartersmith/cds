@@ -1,5 +1,5 @@
 import { mapKeys, mapValues, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
-import { DEFAULT_SCALE } from 'eng/shared/design-system/codegen/configs/scaleConfig';
+import { DEFAULT_SCALE } from './configs/scaleConfig';
 
 import { controlsConfig } from './configs/controlsConfig';
 

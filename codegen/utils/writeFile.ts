@@ -1,4 +1,4 @@
-import { writePrettyFile } from '@tools/writePrettyFile';
+import { writePrettyFile } from '@cbhq/monorepo-utils';
 import * as ejs from 'ejs';
 import * as fs from 'fs';
 import * as path from 'path';

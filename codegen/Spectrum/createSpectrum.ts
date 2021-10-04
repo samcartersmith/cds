@@ -1,4 +1,5 @@
 import { emptyObject } from '@cbhq/cds-utils';
+// @ts-expect-error Not typed
 import { generate } from '@k-vyn/coloralgorithm';
 
 import * as modes from '../configs/spectrum';

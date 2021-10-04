@@ -5,7 +5,7 @@ import {
   fontWeights,
   FallbackStack,
   fallbackStack,
-} from 'eng/shared/design-system/codegen/configs/typographyConfig';
+} from '../configs/typographyConfig';
 
 import { scaleConfig } from '../configs/scaleConfig';
 import { calculateLetterSpacing, calculateMinFontSize, round } from './utils';

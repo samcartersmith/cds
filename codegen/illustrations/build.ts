@@ -1,12 +1,12 @@
 import { renameKeys, camelCase, pascalCase } from '@cbhq/cds-utils';
 import axios from 'axios';
 import chalk from 'chalk';
-import { getSourcePath } from 'eng/shared/design-system/codegen/utils/getSourcePath';
 import fs, { readFileSync, existsSync, renameSync } from 'fs';
 import { reduce } from 'lodash';
 import ora, { Ora } from 'ora';
 import path from 'path';
 import { optimize, loadConfig, OptimizeOptions } from 'svgo';
+import { getSourcePath } from '../utils/getSourcePath';
 
 import { FigmaClient, CDS_PERSONAL_ACCESS_TOKEN } from '../figma/client';
 import { writeFile } from '../utils/writeFile';

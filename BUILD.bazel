@@ -1,6 +1,5 @@
-load("@npm//ts-node:index.bzl", "ts_node")
 load("//tools:def.bzl", "release_packages", "stylelint_test")
-load("//tools/js:def.bzl", "TS_CONFIGS", "jest_test", "storybook")
+load("//tools/js:def.bzl", "TS_CONFIGS", "jest_test", "storybook", "ts_script")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load(":config.bzl", "PACKAGES", "STATIC_PACKAGES")
 load("//eng/shared/design-system/web:deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
@@ -162,12 +161,10 @@ jest_test(
 # *** codegen ***
 # ***************
 
-CODEGEN_DATA = [
-    ":build_source",
-    "//:.prettierrc",
-    "//eng/shared/design-system/codegen:runtime_source",
-    "//tools/js:writePrettyFile.ts",
+CODEGEN_DEPS = [
+    "@npm//@k-vyn/coloralgorithm",
     "@npm//@cbhq/cds-web",
+    "@npm//@cbhq/monorepo-utils",
     "@npm//@types/react",
     "@npm//@types/react-native",
     "@npm//axios",
@@ -183,97 +180,72 @@ CODEGEN_DATA = [
     "@npm//svgson",
     "@npm//element-to-path",
     "@npm//strip-json-comments",
+]
+
+CODEGEN_SRCS = [
+    ":build_source",
+    "//eng/shared/design-system/codegen:runtime_source",
+    "//eng/shared/design-system/lottie-files:runtime_source",
 ] + TS_CONFIGS
 
-ts_node(
+ts_script(
     name = "codegen",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "eng/shared/design-system/codegen/main.ts",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = CODEGEN_DATA,
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/main.ts",
+    deps = CODEGEN_DEPS,
 )
 
-ts_node(
+ts_script(
     name = "docgen",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "eng/shared/design-system/codegen/website/build.ts",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = CODEGEN_DATA,
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/website/build.ts",
+    deps = CODEGEN_DEPS,
 )
 
-ts_node(
+ts_script(
     name = "changelog",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "eng/shared/design-system/codegen/website/changelog.ts",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = CODEGEN_DATA,
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/website/changelog.ts",
+    deps = CODEGEN_DEPS,
 )
 
-ts_node(
+ts_script(
     name = "sync_icons",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "eng/shared/design-system/codegen/icons/syncSvgsFromFigma.ts",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = CODEGEN_DATA,
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/icons/syncSvgsFromFigma.ts",
+    deps = CODEGEN_DEPS,
 )
 
-ts_node(
+ts_script(
     name = "build_icons",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "eng/shared/design-system/codegen/icons/build.ts",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = CODEGEN_DATA,
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/icons/build.ts",
+    deps = CODEGEN_DEPS,
 )
 
-ts_node(
+ts_script(
     name = "build_illustrations",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "eng/shared/design-system/codegen/illustrations/build.ts",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = CODEGEN_DATA,
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/illustrations/build.ts",
+    deps = CODEGEN_DEPS,
 )
 
-ts_node(
+ts_script(
     name = "prepare_adoption",
-    args = [
-        "-r tsconfig-paths/register",
-        "--files",
-        "eng/shared/design-system/codegen/adoption/prepare.ts",
-        "--prettierConfig $(execpath //:.prettierrc)",
-    ],
-    data = CODEGEN_DATA + [
+    srcs = CODEGEN_SRCS + [
         "//eng/shared/design-system/codegen/adoption:source",
     ],
+    script = "eng/shared/design-system/codegen/adoption/prepare.ts",
+    deps = CODEGEN_DEPS,
 )
 
-ts_node(
+ts_script(
     name = "new_package",
-    args = [
-        "eng/shared/design-system/codegen/scaffold/newPackageFromTemplate.ts",
-        "--project $(execpath //:tsconfig.json)",
-    ],
-    data = [
+    srcs = [
         "//eng/shared/design-system/codegen:runtime_source",
-        "@npm//chalk",
-    ] + TS_CONFIGS,
+    ],
+    script = "eng/shared/design-system/codegen/scaffold/newPackageFromTemplate.ts",
+    deps = ["@npm//chalk"],
 )
 
 release_packages(
