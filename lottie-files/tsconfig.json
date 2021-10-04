@@ -8,5 +8,8 @@
     "**/*",
     "**/*.json"
   ],
+  "exclude": [
+    "dts/**/*"
+  ],
   "references": []
 }

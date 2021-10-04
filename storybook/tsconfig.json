@@ -9,6 +9,9 @@
     "data/**/*",
     "stories/**/*"
   ],
+  "exclude": [
+    "dts/**/*"
+  ],
   "references": [
     {
       "path": "../common"
