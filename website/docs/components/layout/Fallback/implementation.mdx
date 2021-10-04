@@ -659,9 +659,9 @@ Apply negative outer spacing on the top and bottom sides.
 
 <ComponentDetails componentName="Fallback" templateName="prop-offsetVertical" />
 
-### opacity <Badge variant="mobile" />
+### opacity
 
-Opacity of element
+Sets the opacity of the box
 
 <ApiDetails
   componentName="Fallback"
@@ -669,16 +669,14 @@ Opacity of element
   required={false}
   defaultValue=""
   mobileOptions={[
-    'AnimatedInterpolation',
-    'RegisteredStyle<ViewStyle>',
-    'Value',
-    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'WithAnimatedObject<ViewStyle>',
-    'false',
-    'null',
     'number',
+    'number & AnimatedInterpolation',
+    'number & Value',
+    'number & WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'number & WithAnimatedObject<ViewStyle>',
+    'number & { __registeredStyleBrand: ViewStyle; }',
   ]}
-  webOptions={[]}
+  webOptions={['number']}
 />
 
 <ComponentDetails componentName="Fallback" templateName="prop-opacity" />

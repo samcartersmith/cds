@@ -72,6 +72,16 @@ const BoxScreen = () => {
         </Box>
       </Example>
 
+      <Example title="Opacity">
+        <Box spacing={1} opacity={0.1} background="backgroundAlternate">
+          <TextBody>Custom Opacity</TextBody>
+        </Box>
+
+        <Box spacing={1} opacity={0.5} background="backgroundAlternate">
+          <TextBody>Custom Opacity</TextBody>
+        </Box>
+      </Example>
+
       <Example title="Spacing">
         <Box spacing={3} background="backgroundAlternate">
           <TextBody>All sides</TextBody>

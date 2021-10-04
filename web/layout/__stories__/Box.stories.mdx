@@ -59,6 +59,22 @@ export const Lipsum = () => (
   </Story>
 </Canvas>
 
+# Opacity 
+
+<Canvas withToolbar>
+  <Story
+    name="Opacity"
+    decorators={[withStoryLabel('Opacity')]}
+    args={{ opacity: 0.1 }}
+  >
+    {args => (
+      <Box {...args}>
+        <Lipsum />
+      </Box>
+    )}
+  </Story>
+</Canvas>
+
 # Flex
 
 <Canvas withToolbar>

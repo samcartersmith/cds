@@ -87,6 +87,8 @@ export type BoxProps<As extends BoxElement = 'div'> = {
   overflow?: 'visible' | 'hidden' | 'scroll' | 'auto';
   /** How to position the box within its parent. */
   position?: Position;
+  /** Sets the opacity of the box */
+  opacity?: number;
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
@@ -124,6 +126,7 @@ export const BoxInner = forwardRef(
       elevation,
       children,
       overflow,
+      opacity,
       role,
       testID,
       // Flex
@@ -264,6 +267,7 @@ export const BoxInner = forwardRef(
           right,
           top,
           zIndex,
+          opacity,
           ...borderRadiusStyles,
           ...elevationStyles,
         },

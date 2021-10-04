@@ -97,6 +97,14 @@ describe('Box', () => {
     });
   });
 
+  describe('opacity', () => {
+    it('will set styles based on related props', () => {
+      const { container } = render(<Box opacity={0.4}>Child</Box>);
+
+      expect(container.firstChild).toHaveAttribute('style', 'opacity: 0.4;');
+    });
+  });
+
   describe('width', () => {
     it('will set styles based on related props', () => {
       const { container, rerender } = render(<Box>Child</Box>);
