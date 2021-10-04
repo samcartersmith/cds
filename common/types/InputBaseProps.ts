@@ -18,10 +18,10 @@ export type InputBaseProps = {
    */
   variant?: InputVariant;
   /**
-   * Width of input. Can only adjust using percentage for now
-   * @default 100%
+   * Width of input. The number is converted to percentage.
+   * @default 100
    * */
-  width?: string;
+  width?: number;
   /**
    * Height of input
    * @default auto
@@ -33,17 +33,17 @@ export type InputBaseProps = {
    */
   disabled?: boolean;
   /** Prepends custom content to the start. Content is not part of input */
-  prepend?: ReactNode;
-  /** Adds content to the start of the inner input. Refer to diagram for location of startContent within input */
-  startContent?: ReactNode;
+  prependNode?: ReactNode;
+  /** Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component */
+  startNode?: ReactNode;
   /** Appends custom content to the end. Content is not part of input */
-  append?: ReactNode;
-  /** Adds content to the end of the inner input. Refer to diagram for location of startContent within input */
-  endContent?: ReactNode;
+  appendNode?: ReactNode;
+  /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
+  endNode?: ReactNode;
   /** Editable area of the Input */
-  input: ReactNode;
+  inputNode: ReactNode;
   /** Text shown below input. Used for when label is not enough to indicate what this input does */
-  helperText?: ReactNode;
+  helperTextNode?: ReactNode;
   /** A message indicating the purpose of this input */
-  label?: ReactNode;
+  labelNode?: ReactNode;
 } & SharedProps;

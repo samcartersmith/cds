@@ -1,7 +1,7 @@
 import { css } from 'linaria';
 import { useCallback } from 'react';
 import { NativeInput } from '../NativeInput';
-import { Input } from '../Input';
+import { InputStack } from '../../layout/InputStack';
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 
 /* eslint-disable no-console */
@@ -16,7 +16,7 @@ const borderStyle = css`
 `;
 
 export const NativeInputBasic = function NativeInputBasic() {
-  return <Input borderStyle={borderStyle} label="Label" input={<NativeInput />} />;
+  return <InputStack borderStyle={borderStyle} labelNode="Label" inputNode={<NativeInput />} />;
 };
 
 export const NativeInputCustomContainerSpacing = function NativeInputCustomContainerSpacing() {
@@ -26,10 +26,10 @@ export const NativeInputCustomContainerSpacing = function NativeInputCustomConta
   });
 
   return (
-    <Input
+    <InputStack
       borderStyle={borderStyle}
-      label="Label"
-      input={<NativeInput containerSpacing={defaultContainerSpacing} />}
+      labelNode="Label"
+      inputNode={<NativeInput containerSpacing={defaultContainerSpacing} />}
     />
   );
 };
@@ -40,10 +40,10 @@ export const NativeInputTextAlign = function NativeInputTextAlign() {
   return (
     <div>
       {textAlignments.map((align) => (
-        <Input
+        <InputStack
           borderStyle={borderStyle}
-          label="Label"
-          input={<NativeInput placeholder={`${align}-placeholder`} align={align} />}
+          labelNode="Label"
+          inputNode={<NativeInput placeholder={`${align}-placeholder`} align={align} />}
         />
       ))}
     </div>
@@ -68,10 +68,10 @@ export const NativeInputActions = function NativeInputOnFocus() {
   }, []);
 
   return (
-    <Input
+    <InputStack
       borderStyle={borderStyle}
-      label="Label"
-      input={
+      labelNode="Label"
+      inputNode={
         <NativeInput onKeyDown={onKeyDown} onPress={onPress} onFocus={onFocus} onBlur={onBlur} />
       }
     />

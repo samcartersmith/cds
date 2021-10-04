@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
-import { BetaTextInput } from '../BetaTextInput';
+import { BetaTextField } from '../BetaTextField';
 import { IconButton } from '../../buttons';
 import { HStack } from '../../layout';
 import { Link } from '../../typography';
@@ -9,8 +9,8 @@ import { Icon } from '../../icons';
 /* eslint-disable no-console */
 
 export default {
-  title: 'Core Components/Inputs/BetaTextInput',
-  component: BetaTextInput,
+  title: 'Core Components/Inputs/BetaTextField',
+  component: BetaTextField,
 };
 
 /**
@@ -26,41 +26,28 @@ export const Basic = function Basic() {
     console.log('Blurring');
   }, []);
 
-  return <BetaTextInput label="Label" onFocus={onFocus} onBlur={onBlur} />;
+  return <BetaTextField label="Label" onFocus={onFocus} onBlur={onBlur} />;
 };
 
 export const Placeholder = function Placeholder() {
-  return <BetaTextInput label="Label" placeholder="placeholder" />;
+  return <BetaTextField label="Label" placeholder="placeholder" />;
 };
 
 export const HelperText = function HelperText() {
-  const textAlignments = ['start', 'end'] as const;
-
-  return (
-    <>
-      {textAlignments.map((textAlign) => (
-        <BetaTextInput
-          label="Label"
-          placeholder="placeholder"
-          helperText="helperText"
-          textAlignHelperText={textAlign}
-        />
-      ))}
-    </>
-  );
+  return <BetaTextField label="Label" placeholder="placeholder" helperText="helperText" />;
 };
 
-export const AlignInput = function AlignInput() {
-  const textAlignments = ['start', 'end'] as const;
+export const Align = function Align() {
+  const alignments = ['start', 'end'] as const;
 
   return (
     <>
-      {textAlignments.map((textAlign) => (
-        <BetaTextInput
+      {alignments.map((align) => (
+        <BetaTextField
           label="Label"
           placeholder="placeholder"
           helperText="helperText"
-          textAlignInput={textAlign}
+          align={align}
         />
       ))}
     </>
@@ -73,7 +60,7 @@ export const Variants = function Variants() {
   return (
     <>
       {variants.map((variant) => (
-        <BetaTextInput
+        <BetaTextField
           label="Label"
           placeholder="placeholder"
           helperText="helperText"
@@ -85,14 +72,14 @@ export const Variants = function Variants() {
 };
 
 export const Width = function Width() {
-  const widths = ['100%', '30%', '75%', '10%'] as const;
+  const widths = [100, 30, 75, 10] as const;
 
   return (
     <>
       {widths.map((width) => (
-        <BetaTextInput
-          key={`input-width-${width}`}
-          label={`Width: ${width}`}
+        <BetaTextField
+          key={`input-width-${width}%`}
+          label={`Width: ${width}%`}
           placeholder="placeholder"
           helperText="helperText"
           width={width}
@@ -103,18 +90,18 @@ export const Width = function Width() {
 };
 
 export const Disabled = function Disabled() {
-  return <BetaTextInput label="Label" disabled />;
+  return <BetaTextField label="Label" disabled />;
 };
 
 export const StartContent = function StartContent() {
-  return <BetaTextInput label="Label" startContent={<IconButton name="add" transparent />} />;
+  return <BetaTextField label="Label" start={<IconButton name="add" transparent />} />;
 };
 
 export const EndContent = function EndContent() {
   return (
-    <BetaTextInput
+    <BetaTextField
       label="Label"
-      endContent={
+      end={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Link to="" variant="headline">
           Hello
@@ -125,13 +112,11 @@ export const EndContent = function EndContent() {
 };
 
 export const Suffix = function Suffix() {
-  return <BetaTextInput label="Label" suffix="USD" />;
+  return <BetaTextField label="Label" suffix="USD" />;
 };
 
 export const SuffixAndEndContent = function SuffixAndEndContent() {
-  return (
-    <BetaTextInput label="Label" suffix="USD" endContent={<IconButton name="add" transparent />} />
-  );
+  return <BetaTextField label="Label" suffix="USD" end={<IconButton name="add" transparent />} />;
 };
 
 /**
@@ -139,14 +124,14 @@ export const SuffixAndEndContent = function SuffixAndEndContent() {
  */
 
 export const CompactInput = function CompactInput() {
-  return <BetaTextInput label="Label" compact />;
+  return <BetaTextField label="Label" compact />;
 };
 
-export const CompactInputStartContent = function CompactInputStartContent() {
+export const CompactInputStart = function CompactInputStart() {
   return (
-    <BetaTextInput
+    <BetaTextField
       label="Label"
-      startContent={
+      start={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Link to="" variant="headline">
           Hello
@@ -157,11 +142,11 @@ export const CompactInputStartContent = function CompactInputStartContent() {
   );
 };
 
-export const CompactInputEndContent = function CompactInputEndContent() {
+export const CompactInputEnd = function CompactInputEnd() {
   return (
-    <BetaTextInput
+    <BetaTextField
       label="Label"
-      endContent={
+      end={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Link to="" variant="headline">
           Hello
@@ -173,11 +158,11 @@ export const CompactInputEndContent = function CompactInputEndContent() {
 };
 
 export const CompactInputSuffix = function CompactInputSuffix() {
-  return <BetaTextInput label="Label" suffix="USD" compact />;
+  return <BetaTextField label="Label" suffix="USD" compact />;
 };
 
 export const CompactHelperText = function CompactHelperText() {
-  return <BetaTextInput label="Label" suffix="USD" compact helperText="helperText" />;
+  return <BetaTextField label="Label" suffix="USD" compact helperText="helperText" />;
 };
 
 export const InputOnChange = function InputOnChange() {
@@ -189,7 +174,7 @@ export const InputOnChange = function InputOnChange() {
 
   return (
     <div>
-      <BetaTextInput onChange={onChange} helperText={inputText} label="Label" />
+      <BetaTextField onChange={onChange} helperText={inputText} label="Label" />
     </div>
   );
 };
@@ -200,7 +185,7 @@ export const InputOnChange = function InputOnChange() {
  * to prove that it can be done with our component.
  */
 
-export const CopyTextInput = function CopyTextInput() {
+export const CopyTextField = function CopyTextField() {
   const [copied, setCopied] = useState(false);
   const [variant, setVariant] = useState<InputVariant>('foregroundMuted');
 
@@ -221,9 +206,9 @@ export const CopyTextInput = function CopyTextInput() {
 
   return (
     <div>
-      <BetaTextInput
+      <BetaTextField
         /* eslint-disable jsx-a11y/anchor-is-valid */
-        endContent={
+        end={
           <HStack>
             <Link onPress={handleOnPress} color={variant}>
               {copied ? 'copied' : 'copy'}

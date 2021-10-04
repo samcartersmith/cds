@@ -21,6 +21,7 @@ import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import IllustrationScreen from './src/Illustration';
 import InputScreen from './src/Input';
+import InputStackScreen from './src/InputStack';
 import LinkScreen from './src/Link';
 import ListCellScreen from './src/ListCell';
 import ListCellFallbackScreen from './src/ListCellFallback';
@@ -90,6 +91,7 @@ const AppContent = () => {
         <Stack.Screen name="Icon" component={IconScreen} />
         <Stack.Screen name="IconButton" component={IconButtonScreen} />
         <Stack.Screen name="Input" component={InputScreen} />
+        <Stack.Screen name="InputStack" component={InputStackScreen} />
         <Stack.Screen name="Link" component={LinkScreen} />
         <Stack.Screen name="ListCell" component={ListCellScreen} />
         <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />

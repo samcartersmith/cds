@@ -2,13 +2,12 @@ import { css } from 'linaria';
 import { withPerformance } from 'storybook-addon-performance';
 import { createStories } from ':cds-storybook/stories/PerformanceBenchmark';
 
-import { Input } from '../Input';
-import { BetaTextInput } from '../BetaTextInput';
+import { BetaTextField } from '../BetaTextField';
 import { Link } from '../../typography/Link';
 
 export default {
-  title: 'Core Components/Inputs/TextInputPerformance',
-  component: Input,
+  title: 'Core Components/Inputs/TextFieldPerformance',
+  component: BetaTextField,
   decorators: [withPerformance],
 };
 
@@ -16,24 +15,24 @@ const borderStyle = css`
   border-width: 1px;
 `;
 
-export const CDSTextInput = () => {
+export const CDSTextField = () => {
   return (
-    <BetaTextInput
+    <BetaTextField
       label="Label"
-      startContent={
+      start={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Link to="" variant="headline">
           Hello
         </Link>
       }
-      endContent={
+      end={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Link to="" variant="headline">
           Hello
         </Link>
       }
       helperText="Helper Text"
-      textAlignInput="start"
+      align="start"
       compact
     />
   );
@@ -48,4 +47,4 @@ export const {
   HundredHTMLComponent,
   ThousandCDSComponents,
   ThousandHTMLComponent,
-} = createStories(CDSTextInput, HTMLInput);
+} = createStories(CDSTextField, HTMLInput);

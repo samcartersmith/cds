@@ -1,50 +1,50 @@
 import { css } from 'linaria';
-import { Box } from '../../layout/Box';
+import { Box } from '../Box';
 import { TextBody } from '../../typography/TextBody';
-import { Input } from '../Input';
+import { InputStack } from '../InputStack';
 
 export default {
-  title: 'Core Components/Inputs',
-  component: Input,
+  title: 'Core Components/InputStack',
+  component: InputStack,
 };
 
 const borderStyle = css`
   border-width: 1px;
 `;
 
-export const InputLayout = () => (
-  <Input
-    prepend={
+export const InputStackExamples = () => (
+  <InputStack
+    prependNode={
       <Box background="primary">
         <TextBody as="p">Prepend</TextBody>
       </Box>
     }
-    append={
+    appendNode={
       <Box background="primary">
         <TextBody as="p">Append</TextBody>
       </Box>
     }
-    startContent={
+    startNode={
       <Box background="positive" borderRadius="input">
         <TextBody as="p">StartContent</TextBody>
       </Box>
     }
-    endContent={
+    endNode={
       <Box background="positive" borderRadius="input">
         <TextBody as="p">EndContent</TextBody>
       </Box>
     }
-    input={
+    inputNode={
       <Box background="backgroundAlternate" flexGrow={2}>
         <TextBody as="p">Input</TextBody>
       </Box>
     }
-    label={
+    labelNode={
       <Box background="backgroundAlternate" width="100%" height={30}>
         <TextBody as="p">Label</TextBody>
       </Box>
     }
-    helperText={
+    helperTextNode={
       <Box background="backgroundOverlay" width="100%" height={30}>
         <TextBody as="p">HelperText</TextBody>
       </Box>
@@ -55,33 +55,33 @@ export const InputLayout = () => (
 );
 
 export const Append = () => (
-  <Input
-    append={
+  <InputStack
+    appendNode={
       <Box background="primary" borderRadius="input">
         <TextBody as="p">Append</TextBody>
       </Box>
     }
-    startContent={
+    startNode={
       <Box background="positive" borderRadius="input">
         <TextBody as="p">StartContent</TextBody>
       </Box>
     }
-    endContent={
+    endNode={
       <Box background="positive" borderRadius="input">
         <TextBody as="p">EndContent</TextBody>
       </Box>
     }
-    input={
+    inputNode={
       <Box background="backgroundAlternate" flexGrow={2}>
         <TextBody as="p">Input</TextBody>
       </Box>
     }
-    label={
+    labelNode={
       <Box background="backgroundAlternate" width="100%" height={30}>
         <TextBody as="p">Label</TextBody>
       </Box>
     }
-    helperText={
+    helperTextNode={
       <Box background="backgroundOverlay" width="100%" height={30}>
         <TextBody as="p">HelperText</TextBody>
       </Box>
@@ -92,33 +92,33 @@ export const Append = () => (
 );
 
 export const Prepend = () => (
-  <Input
-    prepend={
+  <InputStack
+    prependNode={
       <Box background="primary" borderRadius="input">
         <TextBody as="p">Append</TextBody>
       </Box>
     }
-    startContent={
+    startNode={
       <Box background="positive" borderRadius="input">
         <TextBody as="p">StartContent</TextBody>
       </Box>
     }
-    endContent={
+    endNode={
       <Box background="positive" borderRadius="input">
         <TextBody as="p">EndContent</TextBody>
       </Box>
     }
-    input={
+    inputNode={
       <Box background="backgroundAlternate" flexGrow={2}>
         <TextBody as="p">Input</TextBody>
       </Box>
     }
-    label={
+    labelNode={
       <Box background="backgroundAlternate" width="100%" height={30}>
         <TextBody as="p">Label</TextBody>
       </Box>
     }
-    helperText={
+    helperTextNode={
       <Box background="backgroundOverlay" width="100%" height={30}>
         <TextBody as="p">HelperText</TextBody>
       </Box>

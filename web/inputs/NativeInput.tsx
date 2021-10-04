@@ -55,7 +55,11 @@ export const NativeInput = memo(
       return (
         <input
           style={{ textAlign: align }}
-          className={cx(textStyles.body, defaultContainerSpacing, containerStyle)}
+          className={cx(
+            textStyles.body,
+            containerSpacing ?? defaultContainerSpacing,
+            containerStyle,
+          )}
           data-testid={testID}
           tabIndex={0}
           onClick={onPress}

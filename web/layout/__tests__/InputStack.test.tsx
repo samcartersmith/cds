@@ -1,20 +1,19 @@
 import TestRenderer from 'react-test-renderer';
 
-import { TextInput as RNTextInput } from 'react-native';
-import { Input, InputProps } from '../Input';
+import { InputStack, InputStackProps } from '../InputStack';
 
 const TEST_ID = 'input';
 
 function expectAttribute<
-  K extends keyof Pick<InputProps, 'width' | 'disabled' | 'variant' | 'height'>,
->(prop: K, values: readonly NonNullable<InputProps[K]>[]) {
-  const input = <RNTextInput value="15" />;
+  K extends keyof Pick<InputStackProps, 'width' | 'disabled' | 'variant' | 'height'>,
+>(prop: K, values: readonly NonNullable<InputStackProps[K]>[]) {
+  const input = <input type="text" id="name" name="name" required />;
 
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" for \`${prop}\` prop`, () => {
       const inputRenderer = TestRenderer.create(
-        <Input testID={TEST_ID} {...{ [prop]: value }} input={input} />,
+        <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />,
       );
 
       const inputInstance = inputRenderer.root;
@@ -24,7 +23,7 @@ function expectAttribute<
 }
 
 describe('width', () => {
-  expectAttribute('width', ['10%', '50%', '100%']);
+  expectAttribute('width', [10, 50, 100]);
 });
 
 describe('height', () => {

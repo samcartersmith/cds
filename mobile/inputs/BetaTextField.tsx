@@ -1,4 +1,4 @@
-import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
+import { TextFieldBaseProps } from '@cbhq/cds-common/types/TextFieldBaseProps';
 import React, { useState, memo } from 'react';
 import {
   TextInputProps as RNTextInputProps,
@@ -10,7 +10,7 @@ import { useInputLabelColor } from '@cbhq/cds-common/hooks/useInputLabelColor';
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
 
-import { Input } from './Input';
+import { InputStack } from '../layout/InputStack';
 
 import { Box } from '../layout/Box';
 import { InputLabel } from './InputLabel';
@@ -19,24 +19,23 @@ import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
 
-export type BetaTextInputProps = TextInputBaseProps & RNTextInputProps;
+export type BetaTextFieldProps = TextFieldBaseProps & RNTextInputProps;
 
-export const BetaTextInput = memo(
+export const BetaTextField = memo(
   ({
     label,
     helperText = '',
     variant = 'foregroundMuted',
     testID,
-    startContent,
-    endContent,
-    width = '100%',
+    start,
+    end,
+    width = 100,
     disabled = false,
-    textAlignInput = 'start',
-    textAlignHelperText = 'start',
+    align = 'start',
     compact,
     suffix = '',
     ...editableInputProps
-  }: BetaTextInputProps) => {
+  }: BetaTextFieldProps) => {
     const [focused, setFocused] = useState(false);
     const variantWithFocus = useInputVariant(focused, variant);
     const labelColor = useInputLabelColor(variant);
@@ -65,41 +64,41 @@ export const BetaTextInput = memo(
     });
 
     return (
-      <Input
+      <InputStack
         testID={testID}
         width={width}
         disabled={disabled}
         variant={variantWithFocus}
         borderStyle={inputBorderStyle}
-        input={
+        inputNode={
           <NativeInput
-            containerSpacing={startContent ? startSpacing : {}}
-            align={textAlignInput}
+            containerSpacing={start ? startSpacing : {}}
+            align={align}
             disabled={disabled}
             {...editableInputAddonProps}
           />
         }
-        helperText={
+        helperTextNode={
           !!helperText && (
-            <HelperText color={variant} align={textAlignHelperText}>
+            <HelperText color={variant} align={align}>
               {helperText}
             </HelperText>
           )
         }
-        label={!compact && <InputLabel color={labelColor}>{label}</InputLabel>}
-        startContent={
-          (compact || !!startContent) && (
+        labelNode={!compact && <InputLabel color={labelColor}>{label}</InputLabel>}
+        startNode={
+          (compact || !!start) && (
             <Box justifyContent="center" alignItems="center" spacingStart={1}>
               {compact && <InputLabel color={labelColor}>{label}</InputLabel>}
-              {!!startContent && <>{startContent}</>}
+              {!!start && <>{start}</>}
             </Box>
           )
         }
-        endContent={
-          (suffix !== '' || !!endContent) && (
+        endNode={
+          (suffix !== '' || !!end) && (
             <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2}>
               {suffix !== '' && <TextLabel1 color="foregroundMuted">{suffix}</TextLabel1>}
-              {!!endContent && <>{endContent}</>}
+              {!!end && <>{end}</>}
             </HStack>
           )
         }

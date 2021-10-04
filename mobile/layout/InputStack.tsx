@@ -7,41 +7,41 @@ import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { usePalette } from '../hooks/usePalette';
-import { HStack, VStack } from '../layout';
+import { HStack, VStack } from '.';
 import { DangerouslySetStyle } from '../types';
 
-export type InputProps = {
+export type InputStackProps = {
   /** Adds border styling to input  */
   borderStyle?: ViewStyle;
 } & InputBaseProps &
   DangerouslySetStyle<ViewStyle>;
 
-export const Input = memo(function Input({
+export const InputStack = memo(function InputStack({
   /** CDS custom props */
-  width = '100%',
-  prepend,
-  endContent,
-  append,
-  startContent,
+  width = 100,
+  prependNode,
+  endNode,
+  appendNode,
+  startNode,
   disabled = false,
-  input,
-  helperText,
+  inputNode,
+  helperTextNode,
   borderStyle,
   variant,
-  label,
+  labelNode,
   testID,
   ...props
-}: InputProps) {
+}: InputStackProps) {
   const palette = usePalette();
   const inputAreaStyle: ViewStyle = useMemo(() => {
     const inputBorderRadius: ViewStyle = {
-      ...(prepend
+      ...(prependNode
         ? {
             borderTopLeftRadius: 0,
             borderBottomLeftRadius: 0,
           }
         : {}),
-      ...(append
+      ...(appendNode
         ? {
             borderTopRightRadius: 0,
             borderBottomRightRadius: 0,
@@ -57,21 +57,21 @@ export const Input = memo(function Input({
       ...borderStyle,
       ...inputBorderRadius,
     };
-  }, [borderStyle, palette, variant, append, prepend]);
+  }, [borderStyle, palette, variant, appendNode, prependNode]);
 
   return (
-    <VStack testID={testID} width={width} gap={0.5} {...props}>
-      {!!label && <>{label}</>}
+    <VStack testID={testID} width={`${width}%`} gap={0.5} {...props}>
+      {!!labelNode && <>{labelNode}</>}
       <HStack opacity={disabled ? opacityDisabled : 1}>
-        {!!prepend && <>{prepend}</>}
+        {!!prependNode && <>{prependNode}</>}
         <View style={inputAreaStyle}>
-          {!!startContent && <>{startContent}</>}
-          {input}
-          {!!endContent && <>{endContent}</>}
+          {!!startNode && <>{startNode}</>}
+          {inputNode}
+          {!!endNode && <>{endNode}</>}
         </View>
-        {!!append && <>{append}</>}
+        {!!appendNode && <>{appendNode}</>}
       </HStack>
-      {!!helperText && <>{helperText}</>}
+      {!!helperTextNode && <>{helperTextNode}</>}
     </VStack>
   );
 });

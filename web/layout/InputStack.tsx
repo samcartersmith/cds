@@ -5,8 +5,9 @@ import { borderRadius } from '@cbhq/cds-common/tokens/border';
 
 import { css, cx } from 'linaria';
 import { usePalette } from '../hooks/usePalette';
-import { HStack, VStack } from '../layout';
-import { InputLabel } from './InputLabel';
+import { HStack } from './HStack';
+import { VStack } from './VStack';
+import { InputLabel } from '../inputs/InputLabel';
 
 const inputBaseAreaStyles = css`
   flex-direction: row;
@@ -15,35 +16,35 @@ const inputBaseAreaStyles = css`
   flex: 2;
 `;
 
-export type InputProps = {
+export type InputStackProps = {
   /** Adds border styling to input  */
   borderStyle?: string;
 } & InputBaseProps;
 
-export const Input = memo(function Input({
+export const InputStack = memo(function Input({
   /** CDS custom props */
-  width = '100%',
-  prepend,
-  endContent,
-  append,
-  startContent,
-  input,
-  helperText,
+  width = 100,
+  prependNode,
+  endNode,
+  appendNode,
+  startNode,
+  inputNode,
+  helperTextNode,
   borderStyle,
   variant = 'foregroundMuted',
-  label,
+  labelNode,
   testID,
   ...props
-}: InputProps) {
+}: InputStackProps) {
   const borderColor = usePalette()[variant];
   const inputBorderRadius = {
-    ...(prepend
+    ...(prependNode
       ? {
           borderTopLeftRadius: 0,
           borderBottomLeftRadius: 0,
         }
       : {}),
-    ...(append
+    ...(appendNode
       ? {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
@@ -52,21 +53,23 @@ export const Input = memo(function Input({
   };
 
   return (
-    <VStack testID={testID} width={width} gap={0.5} {...props}>
-      {!!label && <>{typeof label === 'string' ? <InputLabel>{label}</InputLabel> : label}</>}
+    <VStack testID={testID} width={`${width}%`} gap={0.5} {...props}>
+      {!!labelNode && (
+        <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
+      )}
       <HStack>
-        {!!prepend && <>{prepend}</>}
+        {!!prependNode && <>{prependNode}</>}
         <div
           style={{ borderColor, ...inputBorderRadius }}
           className={cx(inputBaseAreaStyles, borderStyle)}
         >
-          {!!startContent && <>{startContent}</>}
-          {input}
-          {!!endContent && <>{endContent}</>}
+          {!!startNode && <>{startNode}</>}
+          {inputNode}
+          {!!endNode && <>{endNode}</>}
         </div>
-        {!!append && <>{append}</>}
+        {!!appendNode && <>{appendNode}</>}
       </HStack>
-      {!!helperText && <>{helperText}</>}
+      {!!helperTextNode && <>{helperTextNode}</>}
     </VStack>
   );
 });
