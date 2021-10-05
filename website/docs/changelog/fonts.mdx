@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.6 (10/5/2021, 12:35 PM PST)
+
+#### 🐞 Fixes
+
+- Enable TS project refs for shared code. [#35462](https://github.cbhq.net/mono/repo/pull/35462), [MONOFE-82](https://jira.coinbase-corp.com/browse/MONOFE-82)
+
 ## 0.2.5 (9/29/2021, 02:03 PM PST)
 
 #### 🐞 Fixes

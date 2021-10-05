@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.15 (10/5/2021, 12:35 PM PST)
+
+#### 🐞 Fixes
+
+- Add excludes to all project refs. [#36404](https://github.cbhq.net/mono/repo/pull/36404)
+- Enable TS project refs for shared code. [#35462](https://github.cbhq.net/mono/repo/pull/35462), [MONOFE-82](https://jira.coinbase-corp.com/browse/MONOFE-82)
+
+#### 📘 Misc
+
+- Trade status animation jank. [#35685](https://github.cbhq.net/mono/repo/pull/35685), [CDS-1484](https://jira.coinbase-corp.com/browse/CDS-1484)
+
 ## 0.2.14 (9/20/2021, 05:13 PM PST)
 
 #### 🐞 Fixes

@@ -637,9 +637,9 @@ A callback function which will be called when animation is finished. Note that o
 
 <ComponentDetails componentName="Lottie" templateName="prop-onAnimationFinish" />
 
-### opacity
+### opacity <Badge variant="mobile" />
 
-Sets the opacity of the box
+Opacity of element
 
 <ApiDetails
   componentName="Lottie"
@@ -647,14 +647,16 @@ Sets the opacity of the box
   required={false}
   defaultValue=""
   mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
     'number',
-    'number & AnimatedInterpolation',
-    'number & Value',
-    'number & WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'number & WithAnimatedObject<ViewStyle>',
-    'number & { __registeredStyleBrand: ViewStyle; }',
   ]}
-  webOptions={['number']}
+  webOptions={[]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-opacity" />

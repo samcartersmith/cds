@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.28.1 (10/5/2021, 12:35 PM PST)
+
+#### 🚀 Updates
+
+- Refining TextField and InputStack API and structure. [#36412](https://github.cbhq.net/mono/repo/pull/36412), [CDS-1499](https://jira.coinbase-corp.com/browse/CDS-1499)
+- Published new icons. [#36316](https://github.cbhq.net/mono/repo/pull/36316)
+- Correct Visuals of Price Charts for Cryptocurrencies with low Volatility. [#35764](https://github.cbhq.net/mono/repo/pull/35764), [CDS-753](https://jira.coinbase-corp.com/browse/CDS-753)
+
+#### 🐞 Fixes
+
+- Add excludes to all project refs. [#36404](https://github.cbhq.net/mono/repo/pull/36404)
+- Enable TS project refs for shared code. [#35462](https://github.cbhq.net/mono/repo/pull/35462), [MONOFE-82](https://jira.coinbase-corp.com/browse/MONOFE-82)
+
 ## 0.28.0 (9/29/2021, 02:03 PM PST)
 
 #### 💥 Breaking

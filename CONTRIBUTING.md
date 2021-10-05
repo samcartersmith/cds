@@ -305,6 +305,14 @@ ash deploy -p eng/shared/design-system/cloud
 
 3. Check that the package is published at[development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
 
+### Creating a New Release
+
+When you're ready to cut a new release, run `make release` within the `eng/shared/design-system` directory.
+
+This script will automatically update the `CHANGELOG` with the latest version and add latest merged PR titles, links, and Jira tickets. It will also run the docgen script and lint the website files.
+
+Checkout the [Release Workflow](https://cds.cbhq.net/resources/release) for more information.
+
 ### Adoption Script
 
 Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
@@ -345,13 +353,15 @@ More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/
 ### Testing on external projects
 
 - Build your project and any dependencies of that project. Generally at a minimum you will need `cds-common` and whatever you are testing e.g. `cds-mobile`. This would require running `make build.mobile` and `make build.common`
-- The output of the packages above will be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system`. Locate your package in the subdirectory `[package]/package`. For example 
-`cds-mobile` would be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system/mobile/package`
+- The output of the packages above will be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system`. Locate your package in the subdirectory `[package]/package`. For example
+  `cds-mobile` would be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system/mobile/package`
 - Copy the absolute path to your package
 - In the external project add a resolution to your package(s) Like this:
+
 ```
   "@cbhq/cds-mobile": "/Users/home/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/mobile/package",
   "@cbhq/cds-common": "/Users/home/repo/bazel-out/darwin-fastbuild/bin/eng/shared/design-system/common/package"
 ```
+
 - Run `yarn install` on the external project
 - If you update the package in the monorepo and want to sync it in the external project then you will have to run `yarn upgrade [dependency]`. For example `yarn upgrade @cbhq/cds-common`

@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.1 (10/5/2021, 12:35 PM PST)
+
+#### 🚀 Updates
+
+- Add opacity to Box web. [#33863](https://github.cbhq.net/mono/repo/pull/33863)
+- Refining TextField and InputStack API and structure. [#36412](https://github.cbhq.net/mono/repo/pull/36412), [CDS-1499](https://jira.coinbase-corp.com/browse/CDS-1499)
+- Published new icons. [#36316](https://github.cbhq.net/mono/repo/pull/36316)
+- Correct Visuals of Price Charts for Cryptocurrencies with low Volatility. [#35764](https://github.cbhq.net/mono/repo/pull/35764), [CDS-753](https://jira.coinbase-corp.com/browse/CDS-753)
+
+#### 🐞 Fixes
+
+- Add excludes to all project refs. [#36404](https://github.cbhq.net/mono/repo/pull/36404)
+
 ## 0.24.0 (9/29/2021, 09:13 PM PST)
 
 #### 💥 Breaking
