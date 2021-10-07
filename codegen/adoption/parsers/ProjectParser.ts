@@ -9,6 +9,8 @@ import { getProjectFiles } from '../utils/getProjectFiles';
 import { getMatchingDirectory, getTypescriptAliases } from '../utils/getTypescriptAliases';
 import { FileParser } from './FileParser';
 import { fromId, toId } from '../utils/id';
+import { getStats } from '../utils/getStats';
+import type { AdoptionStats, PreviousAdoptionStats } from '../types';
 
 export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',
@@ -141,12 +143,6 @@ export class ProjectParser {
   /** Optional override of the default source glob * */
   private sourceGlob: string | undefined;
 
-  /** Absolute path of project. Pulled from tsAlias if project has tsconfig, otherwise falls back to root. */
-  // private absolutePath!: string;
-
-  /** Relative path of project. Relevant if in a monorepo with other projects. Used to generate links to source code.  */
-  // private relativePath!: string;
-
   /** Path aliases dictionary from tsconfig. Only present if tsAlias param is passed into ProjectParser. */
   private tsAliases!: Record<string, string>;
 
@@ -166,20 +162,25 @@ export class ProjectParser {
 
   private cdsToAliasMapping: Map<string, Set<string>> = new Map(); // cds id from name and import to alias name
 
-  constructor({
-    root,
-    github,
-    id,
-    label,
-    projectTsAliases,
-    presentationalAttributes,
-    presentationalElements,
-    presentationalLibraries,
-    cdsAliases = [],
-    ignoreDirs = [],
-    sourceGlob,
-    tsconfigFileName,
-  }: ProjectParserConfig) {
+  private previousStats: AdoptionStats[] = [];
+
+  constructor(
+    {
+      root,
+      github,
+      id,
+      label,
+      projectTsAliases,
+      presentationalAttributes,
+      presentationalElements,
+      presentationalLibraries,
+      cdsAliases = [],
+      ignoreDirs = [],
+      sourceGlob,
+      tsconfigFileName,
+    }: ProjectParserConfig,
+    previousStats?: PreviousAdoptionStats,
+  ) {
     const [org, repo] = github.split('/');
     this.github = github;
     this.githubUrl = `https://github.cbhq.net/${org}/${repo}/tree/master`;
@@ -194,6 +195,9 @@ export class ProjectParser {
     this.presentationalLibraries = presentationalLibraries ?? FALLBACK_PRESENTATIONAL_LIBRARIES;
     this.root = root;
     this.tsconfigFileName = tsconfigFileName ?? 'tsconfig.json';
+    if (previousStats) {
+      this.previousStats = [...previousStats.previous, previousStats.latest];
+    }
   }
 
   get projectInfo() {
@@ -284,12 +288,18 @@ export class ProjectParser {
         return item;
       });
     }
-
-    return JSON.stringify({
+    return {
       cds: finalFormat(cds),
       presentational: finalFormat(presentational),
       other: finalFormat(other),
-    });
+    };
+  }
+
+  get stats() {
+    return {
+      latest: getStats(this.components),
+      previous: this.previousStats,
+    };
   }
 
   isExternalLibrary(moduleName: string) {

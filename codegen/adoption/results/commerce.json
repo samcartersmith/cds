@@ -3,8 +3,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 109,
-      "totalCallSites": 53,
+      "totalInstances": 112,
+      "totalCallSites": 56,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -25,15 +25,15 @@
           "aliasPath": "@commerce/frontend/components/ListTable/ListTableSettingsItemHeader.tsx",
           "callSites": [
             "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/AccountInformation.tsx",
-            "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx",
             "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessInformation.tsx",
+            "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx",
             "@commerce/frontend/pages/Settings/NotificationSettings/NotificationPreferences/NotificationPreferences.tsx",
             "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx",
             "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx",
             "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx",
             "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx",
-            "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx",
-            "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx"
+            "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx",
+            "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx"
           ]
         },
         {
@@ -55,6 +55,10 @@
         {
           "aliasPath": "@commerce/frontend/components/Navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx",
           "callSites": ["@commerce/frontend/components/Navigation/Navigation.tsx"]
+        },
+        {
+          "aliasPath": "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx",
+          "callSites": ["@commerce/frontend/pages/Balances/Balances.tsx"]
         },
         {
           "aliasPath": "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx",
@@ -107,6 +111,7 @@
         "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 2,
         "@commerce/frontend/components/Navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 2,
         "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 2,
         "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 2,
         "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 4,
@@ -115,6 +120,8 @@
         "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1,
         "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
         "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 3,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation.tsx": 2,
         "@commerce/frontend/pages/Checkouts/EditCheckout/EditCheckoutForm/EditCheckoutForm.tsx": 1,
         "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
@@ -126,8 +133,8 @@
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
-        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
         "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 2,
+        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
         "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 3,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 4,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBodyRow.tsx": 1,
@@ -136,17 +143,17 @@
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 2,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivityIcon.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 4,
+        "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 3,
         "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
         "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
-        "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 3,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 3,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 2,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 2,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
+        "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 3,
-        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 3,
-        "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2
+        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 3
       },
       "propsWithCallSites": {
         "width": {
@@ -250,6 +257,7 @@
           "@commerce/frontend/pages/Error/ErrorPage.tsx": 2,
           "@commerce/frontend/components/Navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1,
@@ -260,8 +268,8 @@
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 3,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 2,
-          "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
+          "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 2,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivityIcon.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
@@ -283,6 +291,7 @@
         },
         "dangerouslySetClassName": {
           "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1,
@@ -352,6 +361,7 @@
         },
         "spacingVertical": {
           "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivities.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1
         },
@@ -388,8 +398,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 99,
-      "totalCallSites": 51,
+      "totalInstances": 101,
+      "totalCallSites": 53,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -405,15 +415,15 @@
             "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx",
             "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx",
             "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/AccountInformation.tsx",
-            "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx",
             "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessInformation.tsx",
+            "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx",
             "@commerce/frontend/pages/Settings/NotificationSettings/NotificationPreferences/NotificationPreferences.tsx",
             "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx",
             "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx",
             "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx",
             "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx",
-            "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx",
-            "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx"
+            "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx",
+            "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx"
           ]
         },
         {
@@ -427,6 +437,7 @@
           "aliasPath": "@commerce/frontend/components/SingleColumnLayout/SingleColumnLayout.tsx",
           "callSites": [
             "@commerce/frontend/pages/PointOfSale/PointOfSale.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx",
             "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx",
             "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceDetails.tsx",
             "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx",
@@ -443,6 +454,9 @@
           "callSites": [
             "@commerce/frontend/components/Amount/Amount.tsx",
             "@commerce/frontend/components/Table/Cells/CompoundCell.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
             "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx",
             "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx",
             "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx",
@@ -450,6 +464,10 @@
             "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx",
             "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx"
           ]
+        },
+        {
+          "aliasPath": "@commerce/frontend/pages/Balances/Balances.tsx",
+          "callSites": ["@commerce/frontend/AppRoutes.tsx"]
         },
         {
           "aliasPath": "@commerce/frontend/pages/Checkouts/Checkouts.tsx",
@@ -557,6 +575,7 @@
         "@commerce/frontend/components/NoSearchResults/NoSearchResults.tsx": 2,
         "@commerce/frontend/components/SingleColumnLayout/SingleColumnLayout.tsx": 1,
         "@commerce/frontend/components/StackedLabels/StackedLabels.tsx": 1,
+        "@commerce/frontend/pages/Balances/Balances.tsx": 1,
         "@commerce/frontend/pages/Checkouts/Checkouts.tsx": 1,
         "@commerce/frontend/pages/Invoices/Invoices.tsx": 1,
         "@commerce/frontend/pages/Payments/Payments.tsx": 1,
@@ -573,6 +592,7 @@
         "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 3,
         "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 2,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 2,
         "@commerce/frontend/pages/Checkouts/EditCheckout/EditCheckoutForm/EditCheckoutForm.tsx": 4,
         "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 2,
@@ -586,13 +606,13 @@
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
-        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 2,
+        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 2,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 3,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 5,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 3,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 2,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 2,
@@ -612,6 +632,7 @@
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 1,
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Checkouts/EditCheckout/EditCheckoutForm/EditCheckoutForm.tsx": 2,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
@@ -627,9 +648,9 @@
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 2,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
         },
         "spacingBottom": {
           "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 2,
@@ -647,6 +668,7 @@
         "width": {
           "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
           "@commerce/frontend/components/AccountingReports/ConfirmationView.tsx": 1,
+          "@commerce/frontend/pages/Balances/Balances.tsx": 1,
           "@commerce/frontend/pages/Checkouts/Checkouts.tsx": 1,
           "@commerce/frontend/pages/Invoices/Invoices.tsx": 1,
           "@commerce/frontend/pages/Payments/Payments.tsx": 1,
@@ -660,6 +682,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 2,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/EmbedCheckout/EmbedCheckout.tsx": 1,
           "@commerce/frontend/pages/Checkouts/EditCheckout/EditCheckoutForm/EditCheckoutForm.tsx": 3,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
@@ -688,6 +711,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 2,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Checkouts/EditCheckout/EditCheckoutForm/EditCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
@@ -701,6 +725,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1
         },
@@ -740,8 +765,8 @@
         "dangerouslySetClassName": {
           "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
           "@commerce/frontend/components/SingleColumnLayout/SingleColumnLayout.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
         },
         "spacingStart": {
           "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
@@ -880,8 +905,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 44,
-      "totalCallSites": 25,
+      "totalInstances": 49,
+      "totalCallSites": 27,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
@@ -898,6 +923,8 @@
         "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
         "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 3,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 4,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
@@ -926,6 +953,8 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 3,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 4,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
@@ -952,6 +981,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 2,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
@@ -971,6 +1001,7 @@
           "@commerce/frontend/pages/Error/ErrorPage.tsx": 1,
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 4,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1
         },
         "spacingBottom": {
@@ -982,6 +1013,8 @@
         },
         "spacingEnd": {
           "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 2,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBodyRow.tsx": 1,
@@ -1006,7 +1039,11 @@
         },
         "overflow": {
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 2,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1
+        },
+        "spacingStart": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1
         }
       }
     },
@@ -1037,23 +1074,23 @@
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 2,
         "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
-        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 3,
         "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
+        "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 3,
+        "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-        "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 2,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
+        "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
-        "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
         "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomainsItem/WhitelistedDomainsItem.tsx": 1
       },
       "propsWithCallSites": {
@@ -1085,19 +1122,19 @@
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 2,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
+          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
+          "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
-          "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
           "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomainsItem/WhitelistedDomainsItem.tsx": 1
         },
         "block": {
@@ -1124,21 +1161,21 @@
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 2,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
-          "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 3,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
+          "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 3,
+          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 2,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
+          "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
-          "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
           "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomainsItem/WhitelistedDomainsItem.tsx": 1
         },
         "variant": {
@@ -1149,10 +1186,10 @@
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomainsItem/WhitelistedDomainsItem.tsx": 1
@@ -1176,11 +1213,11 @@
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Invoices/NewInvoice/NewInvoiceForm/NewInvoiceForm.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
-          "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 3,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 3,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1
@@ -1231,6 +1268,8 @@
             "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx",
             "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx",
             "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
             "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx",
             "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx",
             "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx",
@@ -1316,13 +1355,25 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 55,
-      "totalCallSites": 38,
+      "totalInstances": 59,
+      "totalCallSites": 40,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
           "aliasPath": "@commerce/frontend/components/Footer/Footer.tsx",
           "callSites": ["@commerce/frontend/AppRoutes.tsx"]
+        },
+        {
+          "aliasPath": "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx",
+          "callSites": [
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx",
+            "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx"
+          ]
         },
         {
           "aliasPath": "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx",
@@ -1414,6 +1465,8 @@
         "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 3,
         "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
         "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
         "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
         "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 2,
@@ -1424,16 +1477,16 @@
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
-        "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+        "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBodyRow.tsx": 2,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 4,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBodyRow.tsx": 2,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1,
@@ -1444,6 +1497,8 @@
           "@commerce/frontend/components/Footer/Footer.tsx": 1,
           "@commerce/frontend/components/Form/CheckboxInput/CheckboxInput.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 2,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingInput.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
@@ -1477,14 +1532,16 @@
           "@commerce/frontend/components/Navigation/ProfileButton.tsx": 1,
           "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 2,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 2,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 2,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
-          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBodyRow.tsx": 2,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 2,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBodyRow.tsx": 2,
@@ -1501,6 +1558,8 @@
           "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 2,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 2,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
@@ -1547,6 +1606,7 @@
         },
         "spacing": {
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 2,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/PricingTypeItem.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/InvoicePreview.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBodyRow.tsx": 1,
@@ -1578,8 +1638,8 @@
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 2,
-          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1
         },
         "spacingEnd": {
@@ -1598,12 +1658,13 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 12,
-      "totalCallSites": 7,
+      "totalInstances": 13,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/typography/Link",
       "callSites": {
         "@commerce/frontend/components/Footer/Footer.tsx": 5,
         "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
@@ -1614,6 +1675,7 @@
         "variant": {
           "@commerce/frontend/components/Footer/Footer.tsx": 5,
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 2,
@@ -1622,8 +1684,12 @@
         "to": {
           "@commerce/frontend/components/Footer/Footer.tsx": 5,
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1
+        },
+        "openInNewWindow": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1
         },
         "href": {
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/WebhookSubscriptionItem.tsx": 1,
@@ -1658,7 +1724,8 @@
           "aliasPath": "@commerce/frontend/components/Status/Status.tsx",
           "callSites": [
             "@commerce/frontend/components/InvoiceStatus/InvoiceStatus.tsx",
-            "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx"
+            "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx",
+            "@commerce/frontend/components/WithdrawalStatus/WithdrawalStatus.tsx"
           ]
         }
       ],
@@ -1678,10 +1745,10 @@
         "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 4,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
@@ -1707,10 +1774,10 @@
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 4,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
@@ -1730,10 +1797,10 @@
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 2,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 4,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 3,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
@@ -1745,6 +1812,7 @@
         },
         "align": {
           "@commerce/frontend/components/StackedLabels/StackedLabels.tsx": 1,
+          "@commerce/frontend/components/Status/Status.tsx": 1,
           "@commerce/frontend/components/Navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 1
         },
@@ -1779,9 +1847,9 @@
         "role": {
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 2,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
@@ -1817,10 +1885,10 @@
         "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 2,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 2,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
@@ -1830,10 +1898,10 @@
         "vertical": {
           "@commerce/frontend/components/ListTable/ListTable.tsx": 1,
           "@commerce/frontend/pages/Error/ErrorPage.tsx": 3,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1
@@ -1848,10 +1916,10 @@
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 2,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1
         }
       }
@@ -1859,8 +1927,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 24,
-      "totalCallSites": 18,
+      "totalInstances": 25,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
         "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
@@ -1872,6 +1940,7 @@
         "@commerce/frontend/components/Table/Cells/ActionCell.tsx": 1,
         "@commerce/frontend/components/Table/Cells/ProductNameCell.tsx": 1,
         "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 3,
         "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
         "@commerce/frontend/pages/Checkouts/EditCheckout/EditCheckoutForm/EditCheckoutForm.tsx": 1,
@@ -1893,6 +1962,7 @@
           "@commerce/frontend/components/Table/Cells/ActionCell.tsx": 1,
           "@commerce/frontend/components/Table/Cells/ProductNameCell.tsx": 1,
           "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutPreview/CheckoutPreview.tsx": 3,
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/Checkouts/EditCheckout/EditCheckoutForm/EditCheckoutForm.tsx": 1,
@@ -2318,10 +2388,11 @@
     {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-web/layout/Divider",
-      "totalInstances": 24,
-      "totalCallSites": 6,
+      "totalInstances": 31,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-web/layout/Divider",
       "callSites": {
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 7,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentActivities/PaymentActivities.tsx": 1,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 9,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 4,
@@ -2388,23 +2459,17 @@
       "presentationalElement": "@material-ui/core/ThemeProvider"
     },
     {
-      "name": "StyledAvatar",
-      "sourceFile": "@commerce/frontend/components/Avatar/Avatar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "MUIAvatar"
-    },
-    {
       "name": "Modal",
       "sourceFile": "@commerce/frontend/components/Modal",
-      "totalInstances": 12,
-      "totalCallSites": 12,
+      "totalInstances": 13,
+      "totalCallSites": 13,
       "presentationalElement": "@material-ui/core/Modal",
       "callSites": {
         "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
         "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
         "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
@@ -2420,6 +2485,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
@@ -2434,6 +2500,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/VoidInvoiceModal/VoidInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
@@ -2445,6 +2512,7 @@
         },
         "title": {
           "@commerce/frontend/pages/Payments/ResolvePaymentModal/ResolvePaymentModal.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
@@ -2518,6 +2586,13 @@
           "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1
         }
       }
+    },
+    {
+      "name": "StyledAvatar",
+      "sourceFile": "@commerce/frontend/components/Avatar/Avatar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "MUIAvatar"
     },
     {
       "name": "StyledCheckbox",
@@ -2643,9 +2718,9 @@
         "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
         "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
@@ -2688,8 +2763,8 @@
           "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1
@@ -2700,9 +2775,9 @@
           "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1,
@@ -2712,9 +2787,9 @@
         "inputRef": {
           "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/RelativeField.tsx": 1
         },
@@ -2745,17 +2820,17 @@
           "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1
         },
         "variant": {
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
+          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
         },
         "disabled": {
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 1,
@@ -3004,6 +3079,112 @@
       "styledComponent": "TableCell"
     },
     {
+      "name": "HeaderCell",
+      "sourceFile": "@commerce/frontend/components/Table/Cells/HeaderCell",
+      "totalInstances": 18,
+      "totalCallSites": 4,
+      "presentationalElement": "StyledCell",
+      "callSites": {
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 3,
+        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 2,
+        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 7,
+        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 6
+      },
+      "propsWithCallSites": {
+        "text": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 3,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 2,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 7,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 6
+        },
+        "align": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 2,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Table",
+      "sourceFile": "@commerce/frontend/components/Table",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalElement": "StyledTable",
+      "callSites": {
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "columns": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "rows": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "headerComponent": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "pagination": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "onRowClick": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "noDataComponent": {
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EmptyTable",
+      "sourceFile": "@commerce/frontend/components/EmptyTable/EmptyTable",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalElement": "StyledTable",
+      "callSites": {
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "subText": {
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "image": {
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TwoColumnLayout",
       "sourceFile": "@commerce/frontend/components/TwoColumnLayout",
       "totalInstances": 4,
@@ -3052,30 +3233,6 @@
       }
     },
     {
-      "name": "HeaderCell",
-      "sourceFile": "@commerce/frontend/components/Table/Cells/HeaderCell",
-      "totalInstances": 15,
-      "totalCallSites": 3,
-      "presentationalElement": "StyledCell",
-      "callSites": {
-        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 2,
-        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 7,
-        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 6
-      },
-      "propsWithCallSites": {
-        "text": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 2,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 7,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 6
-        },
-        "align": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextCell",
       "sourceFile": "@commerce/frontend/components/Table/Cells/TextCell",
       "totalInstances": 2,
@@ -3091,77 +3248,6 @@
           "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1
         },
         "align": { "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1 }
-      }
-    },
-    {
-      "name": "Table",
-      "sourceFile": "@commerce/frontend/components/Table",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalElement": "StyledTable",
-      "callSites": {
-        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "columns": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "rows": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "pagination": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "onRowClick": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "headerComponent": {
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "noDataComponent": {
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EmptyTable",
-      "sourceFile": "@commerce/frontend/components/EmptyTable/EmptyTable",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalElement": "StyledTable",
-      "callSites": {
-        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "subText": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "image": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        }
       }
     },
     {
@@ -3359,6 +3445,21 @@
       }
     },
     {
+      "name": "button",
+      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "propsWithCallSites": {
+        "id": {
+          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+        },
+        "onClick": {
+          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ColorOption",
       "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx",
       "totalInstances": 1,
@@ -3399,21 +3500,6 @@
       "presentationalElement": "input",
       "propsWithCallSites": {
         "name": { "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1 }
-      }
-    },
-    {
-      "name": "button",
-      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "button",
-      "propsWithCallSites": {
-        "id": {
-          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
-        },
-        "onClick": {
-          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
-        }
       }
     },
     {
@@ -3655,13 +3741,13 @@
     {
       "name": "RouteWithNavAndFooter",
       "sourceFile": "@commerce/frontend/AppRoutes.tsx",
-      "totalInstances": 17,
+      "totalInstances": 18,
       "totalCallSites": 1,
-      "callSites": { "@commerce/frontend/AppRoutes.tsx": 17 },
+      "callSites": { "@commerce/frontend/AppRoutes.tsx": 18 },
       "propsWithCallSites": {
-        "path": { "@commerce/frontend/AppRoutes.tsx": 17 },
-        "element": { "@commerce/frontend/AppRoutes.tsx": 17 },
-        "title": { "@commerce/frontend/AppRoutes.tsx": 17 },
+        "path": { "@commerce/frontend/AppRoutes.tsx": 18 },
+        "element": { "@commerce/frontend/AppRoutes.tsx": 18 },
+        "title": { "@commerce/frontend/AppRoutes.tsx": 18 },
         "backUrl": { "@commerce/frontend/AppRoutes.tsx": 7 },
         "tabs": { "@commerce/frontend/AppRoutes.tsx": 4 }
       }
@@ -3676,6 +3762,12 @@
     },
     {
       "name": "Dashboard",
+      "sourceFile": "@commerce/frontend/AppRoutes.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Balances",
       "sourceFile": "@commerce/frontend/AppRoutes.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -3872,45 +3964,61 @@
     {
       "name": "StackedLabels",
       "sourceFile": "@commerce/frontend/components/StackedLabels/StackedLabels",
-      "totalInstances": 8,
-      "totalCallSites": 4,
+      "totalInstances": 11,
+      "totalCallSites": 5,
       "callSites": {
         "@commerce/frontend/components/Amount/Amount.tsx": 1,
         "@commerce/frontend/components/Table/Cells/CompoundCell.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 3
       },
       "propsWithCallSites": {
-        "align": { "@commerce/frontend/components/Amount/Amount.tsx": 1 },
+        "align": {
+          "@commerce/frontend/components/Amount/Amount.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3
+        },
         "tabularNumbers": { "@commerce/frontend/components/Amount/Amount.tsx": 1 },
         "primaryText": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 3
         },
         "secondaryText": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 3,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 3,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 3
         }
       }
     },
     {
+      "name": "Icon",
+      "sourceFile": "@commerce/frontend/components/CryptoIcon/CryptoIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "Status",
       "sourceFile": "@commerce/frontend/components/Status/Status",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "@commerce/frontend/components/InvoiceStatus/InvoiceStatus.tsx": 1,
-        "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx": 1
+        "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx": 1,
+        "@commerce/frontend/components/WithdrawalStatus/WithdrawalStatus.tsx": 1
       },
       "propsWithCallSites": {
         "message": {
           "@commerce/frontend/components/InvoiceStatus/InvoiceStatus.tsx": 1,
-          "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx": 1
+          "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx": 1,
+          "@commerce/frontend/components/WithdrawalStatus/WithdrawalStatus.tsx": 1
         },
         "color": {
           "@commerce/frontend/components/InvoiceStatus/InvoiceStatus.tsx": 1,
-          "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx": 1
-        }
+          "@commerce/frontend/components/PaymentStatus/PaymentStatus.tsx": 1,
+          "@commerce/frontend/components/WithdrawalStatus/WithdrawalStatus.tsx": 1
+        },
+        "align": { "@commerce/frontend/components/WithdrawalStatus/WithdrawalStatus.tsx": 1 }
       }
     },
     {
@@ -4068,6 +4176,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "WithdrawalsTable",
+      "sourceFile": "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ShareCheckoutModal",
       "sourceFile": "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal",
       "totalInstances": 1,
@@ -4126,10 +4240,11 @@
     {
       "name": "SingleColumnLayout",
       "sourceFile": "@commerce/frontend/components/SingleColumnLayout",
-      "totalInstances": 10,
-      "totalCallSites": 10,
+      "totalInstances": 11,
+      "totalCallSites": 11,
       "callSites": {
         "@commerce/frontend/pages/PointOfSale/PointOfSale.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceDetails.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
@@ -4158,9 +4273,9 @@
         "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
         "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -4174,9 +4289,9 @@
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -4189,9 +4304,9 @@
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -4212,9 +4327,9 @@
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -4290,8 +4405,8 @@
     {
       "name": "BasicCell",
       "sourceFile": "@commerce/frontend/components/Table/Cells/BasicCell",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 10,
+      "totalCallSites": 10,
       "callSites": {
         "@commerce/frontend/components/Table/Cells/ActionCell.tsx": 1,
         "@commerce/frontend/components/Table/Cells/AmountCell.tsx": 1,
@@ -4299,6 +4414,7 @@
         "@commerce/frontend/components/Table/Cells/InvoiceStatusCell.tsx": 1,
         "@commerce/frontend/components/Table/Cells/PaymentStatusCell.tsx": 1,
         "@commerce/frontend/components/Table/Cells/ProductNameCell.tsx": 1,
+        "@commerce/frontend/components/Table/Cells/WithdrawalStatusCell.tsx": 1,
         "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
         "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
         "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
@@ -4370,6 +4486,90 @@
       }
     },
     {
+      "name": "WithdrawalStatus",
+      "sourceFile": "@commerce/frontend/components/WithdrawalStatus/WithdrawalStatus",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@commerce/frontend/components/Table/Cells/WithdrawalStatusCell.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "status": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DateCell",
+      "sourceFile": "@commerce/frontend/components/Table/Cells/DateCell",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 2,
+        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "primaryText": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 2,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "secondaryText": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 2,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WithdrawalStatusCell",
+      "sourceFile": "@commerce/frontend/components/Table/Cells/WithdrawalStatusCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "status": { "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1 }
+      }
+    },
+    {
+      "name": "AmountCell",
+      "sourceFile": "@commerce/frontend/components/Table/Cells/AmountCell",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "primaryText": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
+          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        },
+        "secondaryText": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1,
+          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WithdrawalDetailsModal",
+      "sourceFile": "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isOpen": { "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1 },
+        "withdrawalId": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1
+        },
+        "onClose": { "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalsTable.tsx": 1 }
+      }
+    },
+    {
       "name": "CheckoutInformation",
       "sourceFile": "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformation",
       "totalInstances": 1,
@@ -4385,25 +4585,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "checkout": { "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutDetails.tsx": 1 }
-      }
-    },
-    {
-      "name": "AmountCell",
-      "sourceFile": "@commerce/frontend/components/Table/Cells/AmountCell",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "primaryText": {
-          "@commerce/frontend/pages/Checkouts/CheckoutsTable/CheckoutsTable.tsx": 1,
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 1,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "secondaryText": { "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1 }
       }
     },
     {
@@ -4446,12 +4627,13 @@
     {
       "name": "CopyButton",
       "sourceFile": "@commerce/frontend/components/CopyButton",
-      "totalInstances": 9,
-      "totalCallSites": 8,
+      "totalInstances": 11,
+      "totalCallSites": 9,
       "callSites": {
         "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
         "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
         "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 2,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
         "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1,
         "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
@@ -4463,6 +4645,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 2,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
@@ -4473,6 +4656,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 2,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1
@@ -4481,6 +4665,7 @@
           "@commerce/frontend/pages/Checkouts/ShareCheckoutModal/ShareCheckoutModal.tsx": 2,
           "@commerce/frontend/pages/Invoices/ShareInvoiceModal/ShareInvoiceModal.tsx": 1,
           "@commerce/frontend/pages/PointOfSale/PairingCodeDetails/PairingCodeDetails.tsx": 1,
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 2,
           "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformationBody/PaymentInformationBody.tsx": 1,
           "@commerce/frontend/pages/Checkouts/CheckoutDetails/CheckoutInformation/CheckoutInformationBody/CheckoutInformationBody.tsx": 1,
           "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1
@@ -4527,26 +4712,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "invoice": { "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceDetails.tsx": 1 }
-      }
-    },
-    {
-      "name": "DateCell",
-      "sourceFile": "@commerce/frontend/components/Table/Cells/DateCell",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": {
-        "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 2,
-        "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "primaryText": {
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 2,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        },
-        "secondaryText": {
-          "@commerce/frontend/pages/Invoices/InvoicesTable/InvoicesTable.tsx": 2,
-          "@commerce/frontend/pages/Payments/PaymentsTable/PaymentsTable.tsx": 1
-        }
       }
     },
     {
@@ -4769,6 +4934,31 @@
       "totalCallSites": 1
     },
     {
+      "name": "WithdrawalInformationBodyRow",
+      "sourceFile": "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalInformationBodyRow",
+      "totalInstances": 7,
+      "totalCallSites": 1,
+      "callSites": {
+        "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 7
+      },
+      "propsWithCallSites": {
+        "description": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 7
+        }
+      }
+    },
+    {
+      "name": "CryptoIcon",
+      "sourceFile": "@commerce/frontend/components/CryptoIcon/CryptoIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "currency": {
+          "@commerce/frontend/pages/Balances/WithdrawalsTable/WithdrawalDetailsModal/WithdrawalDetailsModal.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ListTable",
       "sourceFile": "@commerce/frontend/components/ListTable",
       "totalInstances": 13,
@@ -4778,14 +4968,14 @@
         "@commerce/frontend/pages/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformation.tsx": 1,
         "@commerce/frontend/pages/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/AccountInformation.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessInformation.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/NotificationPreferences/NotificationPreferences.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
-        "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-        "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1
+        "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+        "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1
       }
     },
     {
@@ -5119,57 +5309,45 @@
       "totalCallSites": 9,
       "callSites": {
         "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/AccountInformation.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessInformation.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/NotificationPreferences/NotificationPreferences.tsx": 1,
         "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
-        "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-        "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1
+        "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+        "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
           "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/AccountInformation.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessInformation.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/NotificationPreferences/NotificationPreferences.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
-          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1
+          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1
         },
         "description": {
           "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Branding.tsx": 1,
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 2,
-          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1
+          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1
         },
         "action": {
           "@commerce/frontend/pages/Settings/NotificationSettings/WebhookSubscriptions/WebhookSubscriptions.tsx": 1,
-          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1,
-          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1
+          "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1,
+          "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1
         }
       }
     },
     {
       "name": "Deposits",
       "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Logo",
-      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "BrandingColor",
-      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -5186,6 +5364,18 @@
       "totalCallSites": 1
     },
     {
+      "name": "Logo",
+      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "BrandingColor",
+      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ListTableSettingsItem",
       "sourceFile": "@commerce/frontend/components/ListTable/ListTableSettingsItem",
       "totalInstances": 12,
@@ -5196,10 +5386,10 @@
         "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
         "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
         "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
         "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-        "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+        "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+        "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
@@ -5208,10 +5398,10 @@
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
           "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1
         },
         "description": {
           "@commerce/frontend/pages/Settings/NotificationSettings/EmailLanguagePreference/EmailLanguagePreference.tsx": 1,
@@ -5219,10 +5409,10 @@
           "@commerce/frontend/pages/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 4,
           "@commerce/frontend/pages/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+          "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1
         }
       }
     },
@@ -5436,17 +5626,6 @@
       }
     },
     {
-      "name": "ApiKeyItem",
-      "sourceFile": "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "apiKey": { "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1 },
-        "key": { "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1 },
-        "onDelete": { "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1 }
-      }
-    },
-    {
       "name": "AddWhitelistDomainModal",
       "sourceFile": "@commerce/frontend/pages/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal",
       "totalInstances": 1,
@@ -5478,6 +5657,17 @@
         "onDelete": {
           "@commerce/frontend/pages/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomains.tsx": 1
         }
+      }
+    },
+    {
+      "name": "ApiKeyItem",
+      "sourceFile": "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeyItem",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "apiKey": { "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1 },
+        "key": { "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1 },
+        "onDelete": { "@commerce/frontend/pages/Settings/SecuritySettings/ApiKeys/ApiKeys.tsx": 1 }
       }
     },
     {
@@ -5532,20 +5722,6 @@
     },
     {
       "name": "form",
-      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": {
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
-        },
-        "name": {
-          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "form",
       "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -5583,6 +5759,20 @@
         },
         "hidden": {
           "@commerce/frontend/pages/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": {
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
+        },
+        "name": {
+          "@commerce/frontend/pages/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1
         }
       }
     },

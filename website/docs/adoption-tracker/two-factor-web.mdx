@@ -8,11 +8,16 @@ sidebar_label: Two Factor Web
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
 import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterProjectInfoProvider {...require('@site/static/data/adoption/two-factor-web/project.json')}>
-  <AdopterComponentsProvider
-    {...require('@site/static/data/adoption/two-factor-web/components.json')}
+<AdopterStatsProvider {...require('@site/static/data/adoption/two-factor-web/stats.json')}>
+  <AdopterProjectInfoProvider
+    {...require('@site/static/data/adoption/two-factor-web/project.json')}
   >
-    <AdopterDetails />
-  </AdopterComponentsProvider>
-</AdopterProjectInfoProvider>
+    <AdopterComponentsProvider
+      {...require('@site/static/data/adoption/two-factor-web/components.json')}
+    >
+      <AdopterDetails />
+    </AdopterComponentsProvider>
+  </AdopterProjectInfoProvider>
+</AdopterStatsProvider>

@@ -3,6 +3,8 @@
 import path from 'path';
 import { ProjectParser, ProjectParserConfig } from '../ProjectParser';
 
+type ComponentData = { name: string; sourceFile: string };
+
 describe('FileParser Tests', () => {
   test('svg does not dig into the tree', async () => {
     const config: ProjectParserConfig = {
@@ -16,7 +18,7 @@ describe('FileParser Tests', () => {
     const projectParser = new ProjectParser(config);
     await projectParser.parse();
 
-    expect(JSON.parse(projectParser.components)).toEqual({
+    expect(projectParser.components).toEqual({
       cds: [],
       presentational: [
         {
@@ -60,15 +62,13 @@ describe('FileParser Tests', () => {
     // console.log(projectParser.aliasedCdsComponents.entries());
     // console.log(projectParser.cdsToAliasMapping.entries());
 
-    const sortFn = (
-      a: { name: string; sourceFile: string },
-      b: { name: string; sourceFile: string },
-    ) => `${a.name}-${a.sourceFile}`.localeCompare(`${b.name}-${b.sourceFile}`);
+    const sortFn = (a: ComponentData, b: ComponentData) =>
+      `${a.name}-${a.sourceFile}`.localeCompare(`${b.name}-${b.sourceFile}`);
 
     // sort the components so it is deterministic
-    const components = JSON.parse(projectParser.components) as Record<
+    const components = projectParser.components as Record<
       'cds' | 'presentational' | 'other',
-      { name: string; sourceFile: string }[]
+      ComponentData[]
     >;
     components.presentational.sort(sortFn);
     components.other.sort(sortFn);

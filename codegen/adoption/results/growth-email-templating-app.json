@@ -452,6 +452,41 @@
       "propsWithCallSites": { "style": { "@growth/email-templating-app/components/Prices.tsx": 1 } }
     },
     {
+      "name": "CtaButton",
+      "sourceFile": "@growth/email-templating-app/components/CtaButton",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        }
+      ],
+      "callSites": {
+        "@growth/email-templating-app/components/Prices.tsx": 1,
+        "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
+        "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1,
+        "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
+      },
+      "propsWithCallSites": {
+        "text": {
+          "@growth/email-templating-app/components/Prices.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
+        },
+        "href": {
+          "@growth/email-templating-app/components/Prices.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1,
+          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
+        },
+        "style": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1 },
+        "autoWidth": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1 },
+        "innerStyle": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1 }
+      }
+    },
+    {
       "name": "p",
       "sourceFile": "@growth/email-templating-app/components/RichText.tsx",
       "totalInstances": 1,
@@ -891,6 +926,98 @@
       }
     },
     {
+      "name": "div",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "style": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1 }
+      }
+    },
+    {
+      "name": "table",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "table",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "style": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 1 }
+      }
+    },
+    {
+      "name": "tr",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "presentationalElement": "tr",
+      "callSites": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 3 }
+    },
+    {
+      "name": "td",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "presentationalElement": "td",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        }
+      ],
+      "callSites": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 3 },
+      "propsWithCallSites": {
+        "align": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 3 },
+        "style": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 3 }
+      }
+    },
+    {
+      "name": "p",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@growth/email-templating-app/components/Newsletter/Survey.tsx"
+        }
+      ],
+      "callSites": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 2 },
+      "propsWithCallSites": {
+        "style": { "@growth/email-templating-app/components/Newsletter/Survey.tsx": 2 }
+      }
+    },
+    {
+      "name": "strong",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "strong"
+    },
+    {
       "name": "p",
       "sourceFile": "@growth/email-templating-app/components/Newsletter/TriviaAnswer.tsx",
       "totalInstances": 1,
@@ -1084,29 +1211,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "CtaButton",
-      "sourceFile": "@growth/email-templating-app/components/CtaButton",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@growth/email-templating-app/components/Prices.tsx": 1,
-        "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
-        "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-      },
-      "propsWithCallSites": {
-        "text": {
-          "@growth/email-templating-app/components/Prices.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-        },
-        "href": {
-          "@growth/email-templating-app/components/Prices.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
-          "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ListItem",
       "sourceFile": "@growth/email-templating-app/components/ListItem",
       "totalInstances": 2,
@@ -1156,18 +1260,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "Divider",
-      "sourceFile": "@growth/email-templating-app/components/Divider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@growth/email-templating-app/components/Newsletter/Introduction.tsx": 1,
-        "@growth/email-templating-app/components/Newsletter/NewListedAssets.tsx": 1,
-        "@growth/email-templating-app/components/Newsletter/Section.tsx": 1,
-        "@growth/email-templating-app/components/Newsletter/TriviaQuestion.tsx": 1
-      }
-    },
-    {
       "name": "NewAsset",
       "sourceFile": "@growth/email-templating-app/components/NewAsset",
       "totalInstances": 1,
@@ -1195,19 +1287,26 @@
       "totalCallSites": 1
     },
     {
+      "name": "Divider",
+      "sourceFile": "@growth/email-templating-app/components/Divider",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "@growth/email-templating-app/components/Newsletter/NewsletterArticle.tsx": 4 }
+    },
+    {
       "name": "Section",
       "sourceFile": "@growth/email-templating-app/components/Newsletter/Section",
-      "totalInstances": 2,
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "callSites": {
-        "@growth/email-templating-app/components/Newsletter/NewsletterArticle.tsx": 2
-      },
       "propsWithCallSites": {
-        "key": { "@growth/email-templating-app/components/Newsletter/NewsletterArticle.tsx": 2 },
-        "includePromo": {
-          "@growth/email-templating-app/components/Newsletter/NewsletterArticle.tsx": 1
-        }
+        "key": { "@growth/email-templating-app/components/Newsletter/NewsletterArticle.tsx": 1 }
       }
+    },
+    {
+      "name": "Promo",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Promo",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "TriviaQuestion",
@@ -1235,6 +1334,12 @@
       "propsWithCallSites": {
         "trivia": { "@growth/email-templating-app/components/Newsletter/NewsletterArticle.tsx": 1 }
       }
+    },
+    {
+      "name": "Survey",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "SocialLogos",
@@ -1296,20 +1401,20 @@
       }
     },
     {
-      "name": "DesktopPromo",
+      "name": "PromoVariant",
       "sourceFile": "@growth/email-templating-app/components/Newsletter/Promo.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@growth/email-templating-app/components/Newsletter/Promo.tsx": 2 },
+      "propsWithCallSites": {
+        "linkHref": { "@growth/email-templating-app/components/Newsletter/Promo.tsx": 2 },
+        "desktopSrc": { "@growth/email-templating-app/components/Newsletter/Promo.tsx": 2 },
+        "mobileSrc": { "@growth/email-templating-app/components/Newsletter/Promo.tsx": 2 }
+      }
     },
     {
-      "name": "MobilePromo",
-      "sourceFile": "@growth/email-templating-app/components/Newsletter/Promo.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Promo",
-      "sourceFile": "@growth/email-templating-app/components/Newsletter/Promo",
+      "name": "tbody",
+      "sourceFile": "@growth/email-templating-app/components/Newsletter/Survey.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },

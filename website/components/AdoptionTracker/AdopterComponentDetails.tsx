@@ -72,17 +72,7 @@ export const AdopterComponentDetails = memo(
   }: ComponentData) => {
     const cdsRecommendations = useCdsRecommendations(name);
     return (
-      <VStack
-        width="55%"
-        maxHeight="90vh"
-        overflow="scroll"
-        position="sticky"
-        top={76}
-        left={0}
-        right={0}
-        gap={3}
-        spacingHorizontal={2}
-      >
+      <VStack gap={3}>
         <TextTitle3 as="h3">{name}</TextTitle3>
         {!cds && cdsRecommendations.length > 0 && (
           <AdopterCdsRecommendation componentName={name} recommendations={cdsRecommendations} />

@@ -8,13 +8,16 @@ sidebar_label: Retail Web Shared
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
 import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterProjectInfoProvider
-  {...require('@site/static/data/adoption/retail-web-shared/project.json')}
->
-  <AdopterComponentsProvider
-    {...require('@site/static/data/adoption/retail-web-shared/components.json')}
+<AdopterStatsProvider {...require('@site/static/data/adoption/retail-web-shared/stats.json')}>
+  <AdopterProjectInfoProvider
+    {...require('@site/static/data/adoption/retail-web-shared/project.json')}
   >
-    <AdopterDetails />
-  </AdopterComponentsProvider>
-</AdopterProjectInfoProvider>
+    <AdopterComponentsProvider
+      {...require('@site/static/data/adoption/retail-web-shared/components.json')}
+    >
+      <AdopterDetails />
+    </AdopterComponentsProvider>
+  </AdopterProjectInfoProvider>
+</AdopterStatsProvider>

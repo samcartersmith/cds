@@ -8,13 +8,16 @@ sidebar_label: Growth CMS Consensus App
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
 import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterProjectInfoProvider
-  {...require('@site/static/data/adoption/growth-cms-consensus/project.json')}
->
-  <AdopterComponentsProvider
-    {...require('@site/static/data/adoption/growth-cms-consensus/components.json')}
+<AdopterStatsProvider {...require('@site/static/data/adoption/growth-cms-consensus/stats.json')}>
+  <AdopterProjectInfoProvider
+    {...require('@site/static/data/adoption/growth-cms-consensus/project.json')}
   >
-    <AdopterDetails />
-  </AdopterComponentsProvider>
-</AdopterProjectInfoProvider>
+    <AdopterComponentsProvider
+      {...require('@site/static/data/adoption/growth-cms-consensus/components.json')}
+    >
+      <AdopterDetails />
+    </AdopterComponentsProvider>
+  </AdopterProjectInfoProvider>
+</AdopterStatsProvider>

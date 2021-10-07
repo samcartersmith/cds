@@ -91,6 +91,7 @@ export const AdopterComponentProps = memo(
           return (
             <>
               <BetaCell
+                key={prop}
                 priority="start"
                 offsetHorizontal={1}
                 start={<TextLabel2 as="p">{prop}</TextLabel2>}

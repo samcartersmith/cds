@@ -1,4 +1,5 @@
 import * as ts from 'typescript';
+import type { AdoptionStats } from './utils/getStats';
 
 export type ObjectString = Record<string, string>;
 export type TSAliasRecord = ObjectString;
@@ -65,3 +66,7 @@ export type FilterFn = (item: TsJsxNode) => boolean;
 export type Filters = Record<string, FilterFn>;
 export type EnhanceComponentCb = (item: TsJsxNode, match: string) => TsJsxNode;
 export type Enhancers = Record<string, EnhanceComponentCb>;
+
+export type PreviousAdoptionStats = { latest: AdoptionStats; previous: AdoptionStats[] };
+
+export type { AdoptionStats };

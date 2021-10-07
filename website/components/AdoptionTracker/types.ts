@@ -1,13 +1,31 @@
+import { adopters } from ':cds-website/data/adopters';
+
+export type Adopter = typeof adopters[number];
+
 export type AdopterProjectInfo = {
   github: string;
   githubUrl: string;
-  id: string;
+  id: Adopter;
   label: string;
   baseUrl: string;
   tsAlias?: keyof AdopterProjectInfo['tsAliases'];
   totalParsedFiles: number;
   tsAliases: Record<string, string>;
   dependencies: Record<string, string>;
+};
+
+export type AdopterStatsItem = {
+  date: string;
+  cdsPercent: number;
+  cds: number;
+  presentational: number;
+  totalCdsAndPresentational: number;
+  totalOther: number;
+};
+
+export type AdopterStats = {
+  latest: AdopterStatsItem;
+  previous: AdopterStatsItem[];
 };
 
 export type AdopterComponents = {

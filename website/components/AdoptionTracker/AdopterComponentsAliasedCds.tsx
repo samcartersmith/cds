@@ -97,6 +97,7 @@ export const AdopterComponentsAliasedCds = memo(
           return (
             <>
               <BetaCell
+                key={aliasPath}
                 priority="end"
                 offsetHorizontal={1}
                 start={

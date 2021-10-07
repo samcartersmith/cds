@@ -1,5 +1,4 @@
 import React, { useState, memo, useCallback, useEffect, useContext } from 'react';
-import { HStack, VStack, Divider } from '@cbhq/cds-web/layout';
 import { ListCell } from '@cbhq/cds-web/cells';
 import List, { ListRowProps } from 'react-virtualized/dist/commonjs/List';
 import WindowScroller, {
@@ -18,6 +17,7 @@ import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './types'
 import { AdopterComponentDetails } from './AdopterComponentDetails';
 import { AdopterComponentsEmptyState } from './AdopterComponentsEmptyState';
 import { getResultsByType, isMatch } from './search/SearchUtils';
+import { AdopterSplitScreenStack } from './AdopterSplitScreenStack';
 
 type AdopterListCellProps = ComponentData & {
   isActive: boolean;
@@ -124,40 +124,33 @@ export const AdopterComponentsList = memo(
       );
     };
 
-    return (
-      <HStack alignItems="flex-start" justifyContent="space-between">
-        <VStack flexGrow={1}>
-          <div style={{ height: `${80 * filteredComponents.length}px` }}>
-            <WindowScroller>
-              {({ height, scrollTop }: WindowScrollerChildProps) => (
-                <AutoSizer>
-                  {({ width }: Size) => (
-                    <List
-                      autoHeight
-                      className="List"
-                      height={height}
-                      rowCount={filteredComponents.length}
-                      rowHeight={80}
-                      rowRenderer={Row}
-                      scrollTop={scrollTop}
-                      width={width}
-                    >
-                      {Row}
-                    </List>
-                  )}
-                </AutoSizer>
+    const start = (
+      <div style={{ height: `${80 * filteredComponents.length}px` }}>
+        <WindowScroller>
+          {({ height, scrollTop }: WindowScrollerChildProps) => (
+            <AutoSizer>
+              {({ width }: Size) => (
+                <List
+                  autoHeight
+                  className="List"
+                  height={height}
+                  rowCount={filteredComponents.length}
+                  rowHeight={80}
+                  rowRenderer={Row}
+                  scrollTop={scrollTop}
+                  width={width}
+                >
+                  {Row}
+                </List>
               )}
-            </WindowScroller>
-          </div>
-        </VStack>
-
-        {activeComponent ? (
-          <>
-            <Divider direction="vertical" spacingHorizontal={4} />
-            <AdopterComponentDetails {...activeComponent} />
-          </>
-        ) : null}
-      </HStack>
+            </AutoSizer>
+          )}
+        </WindowScroller>
+      </div>
     );
+
+    const end = activeComponent ? <AdopterComponentDetails {...activeComponent} /> : null;
+
+    return <AdopterSplitScreenStack start={start} end={end} />;
   },
 );

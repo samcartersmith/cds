@@ -8,13 +8,16 @@ sidebar_label: Unified Accounts
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
 import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterProjectInfoProvider
-  {...require('@site/static/data/adoption/unified-accounts/project.json')}
->
-  <AdopterComponentsProvider
-    {...require('@site/static/data/adoption/unified-accounts/components.json')}
+<AdopterStatsProvider {...require('@site/static/data/adoption/unified-accounts/stats.json')}>
+  <AdopterProjectInfoProvider
+    {...require('@site/static/data/adoption/unified-accounts/project.json')}
   >
-    <AdopterDetails />
-  </AdopterComponentsProvider>
-</AdopterProjectInfoProvider>
+    <AdopterComponentsProvider
+      {...require('@site/static/data/adoption/unified-accounts/components.json')}
+    >
+      <AdopterDetails />
+    </AdopterComponentsProvider>
+  </AdopterProjectInfoProvider>
+</AdopterStatsProvider>
