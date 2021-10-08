@@ -5,7 +5,7 @@ import { convertMotionConfig, mobileCurves } from '../convertMotionConfig';
 describe('convertMotionConfig', () => {
   it('returns the correct Animated config based on CDS config', () => {
     expect(
-      convertMotionConfig({ toValue: 1, curve: 'enterExpressive', duration: 'fast1' }),
+      convertMotionConfig({ toValue: 1, easing: 'enterExpressive', duration: 'fast1' }),
     ).toEqual({
       delay: undefined,
       duration: durations.fast1,

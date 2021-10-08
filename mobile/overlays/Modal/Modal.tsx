@@ -1,7 +1,9 @@
-import React, { memo, forwardRef, useImperativeHandle } from 'react';
+import React, { memo, forwardRef, useImperativeHandle, useEffect, useCallback } from 'react';
 import { Modal as RNModal, ModalProps as RNModalProps, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common';
+import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types';
+
+import { useModalAnimation } from './useModalAnimation';
 
 import { VStack, Divider } from '../../layout';
 import { ModalHeader } from './ModalHeader';
@@ -15,6 +17,22 @@ export const Modal = memo(
       { children, visible, onClose, onBack, title, hideDividers, hideCloseIcon, footer, ...props },
       ref,
     ) => {
+      const [{ opacity, scale }, animateIn, animateOut] = useModalAnimation();
+
+      useEffect(() => {
+        if (visible) {
+          animateIn.start();
+        }
+      }, [visible, animateIn]);
+
+      const handleClose = useCallback(() => {
+        animateOut.start(({ finished }) => {
+          if (finished) {
+            onClose();
+          }
+        });
+      }, [onClose, animateOut]);
+
       useImperativeHandle(
         ref,
         () => ({
@@ -30,15 +48,21 @@ export const Modal = memo(
           transparent
           animationType="none"
           visible={visible}
-          onRequestClose={onClose}
+          onRequestClose={handleClose}
           {...props}
         >
-          <VStack pin="all" elevation={2}>
+          <VStack
+            animated
+            opacity={opacity}
+            dangerouslySetStyle={{ transform: [{ scale }] }}
+            pin="all"
+            elevation={2}
+          >
             <SafeAreaView style={styles.safeAreaContainer}>
               <ModalHeader
                 onBack={onBack}
                 title={title}
-                onClose={hideCloseIcon ? undefined : onClose}
+                onClose={hideCloseIcon ? undefined : handleClose}
               />
               {!hideDividers && <Divider />}
               {children}

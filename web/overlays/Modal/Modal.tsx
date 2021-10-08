@@ -1,30 +1,17 @@
 import React, { useCallback, useEffect, memo, forwardRef, useImperativeHandle } from 'react';
-import { css } from 'linaria';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { cx } from 'linaria';
 
 import { Box, VStack, Divider } from '../../layout';
 import { Overlay } from '../Overlay/Overlay';
 import { ModalHeader } from './ModalHeader';
+import {
+  modalDefaultClassName,
+  modalResponsiveClassName,
+  overlayResponsiveClassName,
+} from './modalStyles';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
-import { spacing } from '../../tokens';
-
-const contentClassName = css`
-  position: absolute;
-  top: ${spacing[10]};
-  width: 612px;
-  max-height: calc(100vh - ${spacing[10]}*2);
-  border-radius: ${borderRadius.standard}px;
-
-  @media only screen and (max-width: 660px) {
-    max-height: 100vh;
-    top: 0;
-    bottom: 0;
-    max-width: 612px;
-    width: inherit;
-    border-radius: 0;
-  }
-`;
+import { useModalAnimation } from './useModalAnimation';
 
 export type ModalProps = {
   /**
@@ -52,6 +39,14 @@ export const Modal: React.FC<ModalProps> = memo(
       ref,
     ) => {
       const blockScroll = useScrollBlocker();
+      const { modalRef, overlayRef, animateIn, animateOut } = useModalAnimation();
+
+      useEffect(() => {
+        if (visible) {
+          void animateIn();
+        }
+      }, [visible, animateIn]);
+
       // prevent body scroll when modal is open
       useEffect(() => {
         if (visible) {
@@ -65,15 +60,23 @@ export const Modal: React.FC<ModalProps> = memo(
         };
       }, [visible, blockScroll]);
 
+      const handleClose = useCallback(async () => {
+        // unmount after animations finished
+        const finished = await animateOut();
+        if (finished) {
+          onClose();
+        }
+      }, [animateOut, onClose]);
+
       // close modal on Escape key press for accessibility
       const handleKeyDown = useCallback(
         (event: KeyboardEvent) => {
           event.preventDefault();
           if (event.key === 'Escape') {
-            onClose();
+            void handleClose();
           }
         },
-        [onClose],
+        [handleClose],
       );
 
       useEffect(() => {
@@ -86,9 +89,9 @@ export const Modal: React.FC<ModalProps> = memo(
       useImperativeHandle(
         ref,
         () => ({
-          onClose,
+          onClose: handleClose,
         }),
-        [onClose],
+        [handleClose],
       );
 
       if (!visible) {
@@ -106,12 +109,21 @@ export const Modal: React.FC<ModalProps> = memo(
           aria-modal="true"
           {...props}
         >
-          <Overlay onPress={disableOverlayClick ? undefined : onClose} />
-          <VStack elevation={2} background="background" dangerouslySetClassName={contentClassName}>
+          <Overlay
+            onPress={disableOverlayClick ? undefined : handleClose}
+            dangerouslySetClassName={cx(overlayResponsiveClassName)}
+            ref={overlayRef}
+          />
+          <VStack
+            elevation={2}
+            background="background"
+            dangerouslySetClassName={cx(modalDefaultClassName, modalResponsiveClassName)}
+            ref={modalRef}
+          >
             <ModalHeader
               onBack={onBack}
               title={title}
-              onClose={hideCloseIcon ? undefined : onClose}
+              onClose={hideCloseIcon ? undefined : handleClose}
             />
             {!hideDividers && <Divider />}
             {children}

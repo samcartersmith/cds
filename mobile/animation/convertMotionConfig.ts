@@ -1,5 +1,5 @@
 import { curves, durations } from '@cbhq/cds-common/tokens/motion';
-import type { MotionCurve, MotionDuration } from '@cbhq/cds-common/types';
+import type { MotionSpec } from '@cbhq/cds-common/types';
 import { Animated, Easing } from 'react-native';
 
 export const mobileCurves = {
@@ -10,24 +10,16 @@ export const mobileCurves = {
   exitFunctional: Easing.bezier(...curves.exitFunctional),
 };
 
-type MotionConfig = {
-  toValue: number | { x: number; y: number };
-  curve: MotionCurve;
-  duration: MotionDuration;
-  delay?: number;
-  useNativeDriver?: boolean;
-};
-
 export const convertMotionConfig = ({
   toValue,
   delay,
-  curve,
+  easing,
   duration,
   useNativeDriver = true,
-}: MotionConfig): Animated.TimingAnimationConfig => {
+}: Omit<MotionSpec, 'property'>): Animated.TimingAnimationConfig => {
   return {
     toValue,
-    easing: mobileCurves[curve],
+    easing: mobileCurves[easing],
     duration: durations[duration],
     delay,
     useNativeDriver,

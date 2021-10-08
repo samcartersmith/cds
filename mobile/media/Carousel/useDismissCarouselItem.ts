@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-
 import {
   Animated,
   LayoutChangeEvent,
@@ -7,26 +6,16 @@ import {
   NativeSyntheticEvent,
   Platform,
 } from 'react-native';
+import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animation/carousel';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { ScrollToFn } from '../../hooks/useScrollTo';
 import type { CarouselDismissItemParams, CarouselItemId } from './types';
 
-const opacityConfig = convertMotionConfig({
-  toValue: 0,
-  duration: 'fast1',
-  curve: 'exitFunctional',
-  useNativeDriver: false,
-});
+const opacityConfig = convertMotionConfig(animateOpacityConfig);
 
 /** Height and Width config */
-const sizeConfig = convertMotionConfig({
-  toValue: 0,
-  delay: 50,
-  duration: 'slow1',
-  curve: 'global',
-  useNativeDriver: false,
-});
+const sizeConfig = convertMotionConfig(animateSizeConfig);
 
 export const useDismissCarouselItem = (itemsLength: number, scrollTo: ScrollToFn) => {
   const isAnimating = useRef(false);

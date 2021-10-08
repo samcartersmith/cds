@@ -1,37 +1,11 @@
 import React from 'react';
-import { css } from 'linaria';
 import { ModalFooterBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
 import { HStack } from '../../layout';
-import { spacing } from '../../tokens';
+import { modalFooterClassName } from './modalStyles';
 import { Button } from '../../buttons';
 
 export type ModalFooterProps = ModalFooterBaseProps;
-
-/** Button layout */
-const stacked = `
-  flex-direction: column-reverse;
-  /* Set height for vertical Spacer */
-  span:nth-child(2) {
-    height: ${spacing[2]};
-  }
-`;
-
-const block = `
-  button {
-    flex: 1;
-  }
-`;
-
-const containerClassName = css`
-  @media only screen and (max-width: 414px) {
-    ${stacked}
-  }
-
-  @media only screen and (max-width: 660px) {
-    ${block}
-  }
-`;
 
 export const ModalFooter: React.FC<ModalFooterProps> = ({
   children,
@@ -53,7 +27,7 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
       justifyContent="flex-end"
       width="100%"
       gap={2}
-      dangerouslySetClassName={containerClassName}
+      dangerouslySetClassName={modalFooterClassName}
       {...props}
     >
       {SecondaryAction}

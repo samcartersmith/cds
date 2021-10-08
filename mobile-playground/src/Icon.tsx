@@ -14,15 +14,15 @@ import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 
 const animateInConfig = convertMotionConfig({
-  curve: 'enterFunctional',
+  easing: 'enterFunctional',
   duration: 'moderate1',
   toValue: 1,
   useNativeDriver: false,
 });
 const animateOutConfig = convertMotionConfig({
-  curve: 'exitFunctional',
+  easing: 'exitFunctional',
   duration: 'moderate1',
-  toValue: 0,
+  toValue: 1,
   useNativeDriver: false,
 });
 

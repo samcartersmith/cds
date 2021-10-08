@@ -3,6 +3,7 @@ import React, { memo, useCallback, useMemo, useState, useRef } from 'react';
 import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import { Animated, LayoutChangeEvent } from 'react-native';
+import { carouselVisibleOpacity, carouselVisibleSize } from '@cbhq/cds-common/animation/carousel';
 
 import { Box } from '../../layout/Box';
 import { CarouselItemContext } from './CarouselItemContext';
@@ -23,9 +24,9 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
   ({ children, dismiss, id, spacingEnd, updateLayoutMap }) => {
     /** All animations go from to 1 to 0 when dismissed. Width and height are interpolated from those values. */
     const animations = useRef({
-      opacity: new Animated.Value(1),
-      height: new Animated.Value(1),
-      width: new Animated.Value(1),
+      opacity: new Animated.Value(carouselVisibleOpacity),
+      height: new Animated.Value(carouselVisibleSize),
+      width: new Animated.Value(carouselVisibleSize),
     });
     const [width, setWidth] = useState<number | undefined>();
     const [height, setHeight] = useState<number | undefined>();
