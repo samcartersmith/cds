@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 
 import { InputBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { css, cx } from 'linaria';
 import { usePalette } from '../hooks/usePalette';
@@ -28,6 +29,7 @@ export const InputStack = memo(function Input({
   endNode,
   appendNode,
   startNode,
+  disabled = false,
   inputNode,
   helperTextNode,
   borderStyle,
@@ -57,7 +59,7 @@ export const InputStack = memo(function Input({
       {!!labelNode && (
         <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
       )}
-      <HStack>
+      <HStack opacity={disabled ? opacityDisabled : 1}>
         {!!prependNode && <>{prependNode}</>}
         <div
           style={{ borderColor, ...inputBorderRadius }}

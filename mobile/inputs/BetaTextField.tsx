@@ -85,11 +85,21 @@ export const BetaTextField = memo(
             </HelperText>
           )
         }
-        labelNode={!compact && <InputLabel color={labelColor}>{label}</InputLabel>}
+        labelNode={
+          !compact && (
+            <InputLabel disabled={disabled} color={labelColor}>
+              {label}
+            </InputLabel>
+          )
+        }
         startNode={
           (compact || !!start) && (
             <Box justifyContent="center" alignItems="center" spacingStart={1}>
-              {compact && <InputLabel color={labelColor}>{label}</InputLabel>}
+              {compact && (
+                <InputLabel disabled={disabled} color={labelColor}>
+                  {label}
+                </InputLabel>
+              )}
               {!!start && <>{start}</>}
             </Box>
           )

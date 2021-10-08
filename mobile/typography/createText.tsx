@@ -4,6 +4,7 @@ import { TextBaseProps, Typography, PaletteForeground, SharedProps } from '@cbhq
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
 import { Animated, Text, TextStyle, TextProps as RNTextProps, StyleSheet } from 'react-native';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { fontScaleProps } from '../hooks/useDeviceScaleToCdsScale';
 import { usePalette } from '../hooks/usePalette';
@@ -20,6 +21,9 @@ const styles = StyleSheet.create({
   },
   underline: {
     textDecorationLine: 'underline',
+  },
+  disabled: {
+    opacity: opacityDisabled,
   },
 });
 
@@ -62,6 +66,7 @@ export const createText = (name: Typography, inherit?: boolean) => {
     underline,
     noWrap,
     transform,
+    disabled,
     // Spacing
     spacing,
     spacingTop,
@@ -129,9 +134,11 @@ export const createText = (name: Typography, inherit?: boolean) => {
         },
         tabularNumbers && styles.tabularNumbers,
         underline && styles.underline,
+        disabled && styles.disabled,
         dangerouslySetStyle as TextStyle,
       ],
       [
+        disabled,
         dangerouslySetColor,
         spacingStyles,
         textStyles,

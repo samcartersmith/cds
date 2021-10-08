@@ -120,6 +120,12 @@ const TextExamplesScreen = ({ component: Text }: { component: React.ComponentTyp
           <Text tabularNumbers>11.98762</Text>
         </Box>
       </Example>
+
+      <Example title="Disabled">
+        <Box>
+          <Text disabled>Hello</Text>
+        </Box>
+      </Example>
     </Screen>
   );
 };
