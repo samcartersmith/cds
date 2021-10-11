@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.2 (10/11/2021, 10:25 AM PST)
+
+#### 🚀 Updates
+
+- Modal motion. [#36038](https://github.cbhq.net/mono/repo/pull/36038), [CDS-1005](https://jira.coinbase-corp.com/browse/CDS-1005)
+
+#### 🐞 Fixes
+
+- **[Input]** Add disabled state to web input. [#37132](https://github.cbhq.net/mono/repo/pull/37132), [CDS-1498](https://jira.coinbase-corp.com/browse/CDS-1498)
+
 ## 0.24.1 (10/5/2021, 12:35 PM PST)
 
 #### 🚀 Updates

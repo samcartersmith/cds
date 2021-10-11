@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.2 (10/11/2021, 10:25 AM PST)
+
+#### 🚀 Updates
+
+- Modal motion. [#36038](https://github.cbhq.net/mono/repo/pull/36038), [CDS-1005](https://jira.coinbase-corp.com/browse/CDS-1005)
+
 ## 0.24.1 (10/5/2021, 12:35 PM PST)
 
 #### 🚀 Updates
