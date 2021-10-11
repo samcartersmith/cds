@@ -32,10 +32,10 @@
         {
           "aliasPath": "@cbhq/two-factor-web/components/NeedHelp.tsx",
           "callSites": [
-            "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx",
             "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx"
+            "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx",
+            "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx",
+            "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx"
           ]
         },
         {
@@ -622,35 +622,73 @@
       "totalInstances": 4,
       "totalCallSites": 4,
       "callSites": {
-        "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+        "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
       },
       "propsWithCallSites": {
         "BaseView": {
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
         },
         "DrawerView": {
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
         },
         "toggleButtonTestID": {
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
         },
         "twoFactorType": {
-          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NeedHelp",
+      "sourceFile": "@cbhq/two-factor-web/components/NeedHelp",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
+        "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
+        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+      },
+      "propsWithCallSites": {
+        "options": {
+          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+        },
+        "onCloseDrawer": {
+          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+        },
+        "twoFactorType": {
+          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
+        },
+        "testID": {
+          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
         }
       }
     },
@@ -688,44 +726,6 @@
         "testID": {
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "NeedHelp",
-      "sourceFile": "@cbhq/two-factor-web/components/NeedHelp",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
-      },
-      "propsWithCallSites": {
-        "options": {
-          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
-        },
-        "onCloseDrawer": {
-          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
-        },
-        "twoFactorType": {
-          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
-        },
-        "testID": {
-          "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
         }
       }
     },
