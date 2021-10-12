@@ -13,6 +13,8 @@ export type ModalHeaderProps = {
 } & ModalHeaderBaseProps;
 
 export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBack, onClose }) => {
+  if (!title && !onBack && !onClose) return null;
+
   return (
     <HStack spacingHorizontal={3} spacingVertical={2} alignItems="center">
       <Box flexGrow={1} flexBasis={0}>

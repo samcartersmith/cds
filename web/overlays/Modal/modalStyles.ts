@@ -27,18 +27,23 @@ export const modalDefaultClassName = css`
   ${modalAnimationStyles}
   position: absolute;
   top: ${spacing[10]};
-  width: 612px;
+  max-width: 612px;
   max-height: calc(100vh - ${spacing[10]}*2);
   border-radius: ${borderRadius.standard}px;
 `;
 
 export const modalResponsiveClassName = css`
   @media only screen and (${devices.tablet}) {
+    right: ${spacing[3]};
+    left: ${spacing[3]};
+  }
+
+  @media only screen and (${devices.phone}) {
     max-height: 100vh;
     top: 0;
     bottom: 0;
-    max-width: 612px;
-    width: inherit;
+    right: 0;
+    left: 0;
     border-radius: 0;
   }
 `;
@@ -49,7 +54,7 @@ const overlayAnimationStyles = {
 
 export const overlayResponsiveClassName = css`
   ${overlayAnimationStyles}
-  @media only screen and (${devices.tablet}) {
+  @media only screen and (${devices.phone}) {
     display: none;
   }
 `;

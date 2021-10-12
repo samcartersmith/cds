@@ -1,4 +1,11 @@
-import React, { useCallback, useEffect, memo, forwardRef, useImperativeHandle } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  memo,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { cx } from 'linaria';
 
@@ -12,6 +19,7 @@ import {
 } from './modalStyles';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { useModalAnimation } from './useModalAnimation';
+import { isSSR } from '../../utils/browser';
 
 export type ModalProps = {
   /**
@@ -40,6 +48,7 @@ export const Modal: React.FC<ModalProps> = memo(
     ) => {
       const blockScroll = useScrollBlocker();
       const { modalRef, overlayRef, animateIn, animateOut } = useModalAnimation();
+      const isFocused = useRef(false);
 
       useEffect(() => {
         if (visible) {
@@ -65,18 +74,67 @@ export const Modal: React.FC<ModalProps> = memo(
         const finished = await animateOut();
         if (finished) {
           onClose();
+          isFocused.current = false;
         }
       }, [animateOut, onClose]);
+
+      // trap focus in modal for accessibility
+      const handleTabKey = useCallback(
+        (event: KeyboardEvent) => {
+          if (!modalRef?.current || isSSR()) return;
+
+          const focusableModalElements = modalRef.current.querySelectorAll(
+            'a[href], button:not([disabled]), textarea, input, select',
+          );
+
+          if (focusableModalElements.length === 0) return;
+
+          const firstElement = focusableModalElements[0] as HTMLElement;
+          const lastElement = focusableModalElements[
+            focusableModalElements.length - 1
+          ] as HTMLElement;
+
+          // bring focus inside modal
+          if (
+            !isFocused.current &&
+            // check if focus is inside modal
+            !Array.from(focusableModalElements).includes(document.activeElement as HTMLElement)
+          ) {
+            firstElement.focus();
+            isFocused.current = true;
+            event.preventDefault();
+          }
+
+          // tab to change focus to next element
+          if (!event.shiftKey && document.activeElement === lastElement) {
+            firstElement.focus();
+            event.preventDefault();
+          }
+
+          // shift + tab to change to previous element
+          if (event.shiftKey && document.activeElement === firstElement) {
+            lastElement.focus();
+            event.preventDefault();
+          }
+        },
+        [modalRef],
+      );
 
       // close modal on Escape key press for accessibility
       const handleKeyDown = useCallback(
         (event: KeyboardEvent) => {
-          event.preventDefault();
           if (event.key === 'Escape') {
             void handleClose();
           }
+
+          if (event.key === 'Tab') {
+            handleTabKey(event);
+          }
+
+          // Swallow the event, in case someone is listening on the body.
+          event.stopPropagation();
         },
-        [handleClose],
+        [handleClose, handleTabKey],
       );
 
       useEffect(() => {

@@ -18,7 +18,11 @@ export const useModalAnimation = () => {
   const animateIn = useCallback(async (): Promise<{ finished: boolean } | undefined> => {
     return Animated.parallel([
       Animated.timing(modalRef, animateInOpacityConfig),
-      Animated.timing(modalRef, animateInScaleConfig),
+      Animated.timing(modalRef, {
+        ...animateInScaleConfig,
+        fromValue: `scale(${animateInScaleConfig.fromValue})`,
+        toValue: `scale(${animateInScaleConfig.toValue})`,
+      }),
       animateInOverlay(),
     ]).start();
   }, [modalRef, animateInOverlay]);
@@ -26,7 +30,11 @@ export const useModalAnimation = () => {
   const animateOut = useCallback(async (): Promise<{ finished: boolean } | undefined> => {
     return Animated.parallel([
       Animated.timing(modalRef, animateOutOpacityConfig),
-      Animated.timing(modalRef, animateOutScaleConfig),
+      Animated.timing(modalRef, {
+        ...animateOutScaleConfig,
+        fromValue: `scale(${animateOutScaleConfig.fromValue})`,
+        toValue: `scale(${animateOutScaleConfig.toValue})`,
+      }),
       animateOutOverlay(),
     ]).start();
   }, [modalRef, animateOutOverlay]);

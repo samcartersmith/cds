@@ -1,18 +1,18 @@
-import { MotionSpec } from '../types';
+import { MotionBaseSpec } from '../types';
 
 export const modalHiddenOpacity = 0;
 export const modalHiddenScale = 0.98;
 export const modalVisibleOpacity = 1;
 export const modalVisibleScale = 1;
 
-export const animateInOpacityConfig: MotionSpec = {
+export const animateInOpacityConfig: MotionBaseSpec = {
   property: 'opacity',
   easing: 'enterFunctional',
   duration: 'fast1',
   toValue: modalVisibleOpacity,
   fromValue: modalHiddenOpacity,
 };
-export const animateOutOpacityConfig: MotionSpec = {
+export const animateOutOpacityConfig: MotionBaseSpec = {
   property: 'opacity',
   easing: 'global',
   duration: 'fast1',
@@ -20,15 +20,15 @@ export const animateOutOpacityConfig: MotionSpec = {
   fromValue: modalVisibleOpacity,
 };
 
-export const animateInScaleConfig: MotionSpec = {
-  property: 'scale',
+export const animateInScaleConfig: MotionBaseSpec = {
+  property: 'transform',
   easing: 'enterFunctional',
   duration: 'moderate3',
   toValue: modalVisibleScale,
   fromValue: modalHiddenScale,
 };
-export const animateOutScaleConfig: MotionSpec = {
-  property: 'scale',
+export const animateOutScaleConfig: MotionBaseSpec = {
+  property: 'transform',
   easing: 'global',
   duration: 'fast1',
   toValue: modalHiddenScale,

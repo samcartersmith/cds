@@ -1,5 +1,5 @@
 import { curves, durations } from '@cbhq/cds-common/tokens/motion';
-import type { MotionSpec as DefaultMotionSpec } from '@cbhq/cds-common/types';
+import type { MotionBaseSpec as DefaultMotionSpec } from '@cbhq/cds-common/types';
 
 export const webCurves = {
   global: curves.global.join(),
@@ -9,14 +9,14 @@ export const webCurves = {
   exitFunctional: curves.exitFunctional.join(),
 };
 
-export type MotionSpec = {
+export type MotionBaseSpec = {
   toValue: number | string; // allow strings such as 'scale(0)' on web
   fromValue?: number | string;
 } & Omit<DefaultMotionSpec, 'toValue' | 'fromValue' | 'property'> &
   Pick<EffectTiming, 'fill'>;
 
 export type MotionConfigOutput = { easing: string; duration: number } & EffectTiming &
-  Pick<MotionSpec, 'toValue' | 'fromValue' | 'fill'>;
+  Pick<MotionBaseSpec, 'toValue' | 'fromValue' | 'fill'>;
 
 export const convertMotionConfig = ({
   toValue,
@@ -29,7 +29,7 @@ export const convertMotionConfig = ({
    * @link https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/fill
    */
   fill = 'forwards',
-}: MotionSpec): MotionConfigOutput => {
+}: MotionBaseSpec): MotionConfigOutput => {
   return {
     toValue,
     fromValue,

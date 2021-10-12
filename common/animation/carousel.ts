@@ -1,11 +1,11 @@
-import type { MotionSpec } from '../types';
+import type { MotionBaseSpec } from '../types';
 
 export const carouselVisibleOpacity = 1;
 export const carouselDismissOpacity = 0;
 export const carouselVisibleSize = 1;
 export const carouselDismissSize = 0;
 
-export const animateOpacityConfig: MotionSpec = {
+export const animateOpacityConfig: MotionBaseSpec = {
   property: 'opacity',
   easing: 'exitFunctional',
   duration: 'fast1',
@@ -14,7 +14,7 @@ export const animateOpacityConfig: MotionSpec = {
   useNativeDriver: false,
 };
 
-export const animateSizeConfig: MotionSpec = {
+export const animateSizeConfig: MotionBaseSpec = {
   property: 'size',
   easing: 'global',
   duration: 'slow1',

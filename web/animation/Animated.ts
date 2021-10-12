@@ -1,6 +1,11 @@
 import { RefObject } from 'react';
-import { MotionSpec } from '@cbhq/cds-common';
+import { MotionBaseSpec } from '@cbhq/cds-common';
 import { convertMotionConfig } from './convertMotionConfig';
+
+type MotionSpec = {
+  toValue: MotionBaseSpec['toValue'] | string; // allow string values like scale(0.5)
+  fromValue?: MotionBaseSpec['fromValue'] | string;
+} & Omit<MotionBaseSpec, 'toValue' | 'fromValue'>;
 
 type AnimationCompleteCallback = ({ finished }: { finished: boolean }) => void;
 

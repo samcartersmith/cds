@@ -1,7 +1,6 @@
 import { useRef, useCallback } from 'react';
 import { isSSR } from '../utils/browser';
 
-// credits to https://gist.github.com/reecelucas/2f510e6b8504008deaaa52732202d2da
 export const useScrollBlocker = () => {
   const scroll = useRef(false);
 
@@ -19,9 +18,7 @@ export const useScrollBlocker = () => {
       const bodyPaddingRight =
         parseInt(window.getComputedStyle(body).getPropertyValue('padding-right')) || 0;
 
-      html.style.position = 'relative';
       body.style.position = 'relative';
-      html.style.overflow = 'hidden';
       body.style.overflow = 'hidden';
       body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
 
@@ -30,8 +27,6 @@ export const useScrollBlocker = () => {
 
     // allow scroll
     if (!shouldBlock && scroll.current) {
-      html.style.position = '';
-      html.style.overflow = '';
       body.style.position = '';
       body.style.overflow = '';
       body.style.paddingRight = '';
