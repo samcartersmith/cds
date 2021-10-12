@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.28.4 (10/11/2021, 04:48 PM PST)
+
+#### 🐞 Fixes
+
+- Bump all versions.
+
 ## 0.28.2 (10/11/2021, 10:25 AM PST)
 
 #### 🚀 Updates
