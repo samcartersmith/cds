@@ -251,16 +251,15 @@ make deploy.website-dev
 
 Once you have built the component for **_both web and mobile_**. You can auto generate the documentation associated with it by following these steps:
 
-1. Update docs for `codegen/website/docgen.ts`. Add the following line to docgen. Replace `<component-name>` with name of your component.
-
-```
-{
-  dest: `${WEBSITE_COMPONENT_DOCS_DIR}/<component-name>.mdx`,
-  data: getDocgenForPackage({ componentName: <component-name> }),
-}
-```
+1. If you are not adding new directory, please go to step 2. If you are adding new directory you will need to add the name in `CDS_SUB_DIRS` in `eng/shared/design-system/codegen/website/constants.ts`
 
 2. Run `make codegen` in the root of eng/shared/design-system
+
+## Adding new imports to react-live
+
+For any usage examples, you can use all imports defined in `website/src/theme/ReactLiveScope/index.ts` directly without importing them in your jsx live.
+
+For adding new imports, simply import in the same file and add it to the `ReactLiveScope` object.
 
 # Miscellaneous
 

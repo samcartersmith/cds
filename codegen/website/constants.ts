@@ -32,7 +32,15 @@ export const CDS_SUB_DIRS_MAP = arrayToObject(CDS_SUB_DIRS);
 /**
  * Ignore auto generating the components in the list below
  */
-export const filesToIgnore = ['CheckboxGroup', 'createText', 'LogoMark', 'LogoWordmark', 'Badge'];
+export const filesToIgnore = [
+  'CheckboxGroup',
+  'createText',
+  'LogoMark',
+  'LogoWordmark',
+  'Badge',
+  'ModalHeader',
+  'Overlay',
+];
 
 /**
  * Components you only want to use `intro.mdx` and `usage.mdx` templates for. Excludes design/implementation tabs, api table, etc.

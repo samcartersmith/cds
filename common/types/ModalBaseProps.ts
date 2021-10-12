@@ -1,5 +1,5 @@
 import { MouseEventHandler, ReactNode, ReactElement } from 'react';
-import { PositionStyles, BoxBaseProps } from './BoxBaseProps';
+import { PositionStyles } from './BoxBaseProps';
 import { SharedProps } from './SharedProps';
 import { ButtonBaseProps } from './ButtonBaseProps';
 import { NoopFn } from './Helpers';
@@ -44,4 +44,4 @@ export type ModalFooterBaseProps = {
   PrimaryAction: NonNullable<ReactElement<ButtonBaseProps>>;
   /** Secondary action button */
   SecondaryAction?: ReactElement<ButtonBaseProps>;
-} & Omit<BoxBaseProps, 'children'>;
+};

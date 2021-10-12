@@ -7,12 +7,7 @@ import { Button } from '../../buttons';
 
 export type ModalFooterProps = ModalFooterBaseProps;
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({
-  children,
-  PrimaryAction,
-  SecondaryAction,
-  ...props
-}) => {
+export const ModalFooter: React.FC<ModalFooterProps> = ({ PrimaryAction, SecondaryAction }) => {
   if (PrimaryAction.type !== Button || (SecondaryAction && PrimaryAction.type !== Button)) {
     // eslint-disable-next-line no-console
     console.error('Modal footer actions need to be CDS Button component');
@@ -28,7 +23,6 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
       width="100%"
       gap={2}
       dangerouslySetClassName={modalFooterClassName}
-      {...props}
     >
       {SecondaryAction}
       {PrimaryAction}

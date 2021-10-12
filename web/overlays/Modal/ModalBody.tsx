@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Box, BoxProps } from '../../layout';
+import { Box } from '../../layout';
 
-export const ModalBody: React.FC<BoxProps> = ({ children, ...props }) => {
+export const ModalBody: React.FC = ({ children }) => {
   return (
-    <Box spacing={3} flexGrow={1} overflow="auto" {...props}>
+    <Box spacing={3} flexGrow={1} overflow="auto">
       {children}
     </Box>
   );

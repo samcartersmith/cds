@@ -1,0 +1,281 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/overlays/Modal](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/overlays/Modal.tsx)
+
+<ComponentDetails componentName="Modal" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Modal" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Modal" templateName="a11y" />
+
+## Props
+
+### children
+
+Component to render as the Modal content
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactNodeArray',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
+    'ReactElement<any, string | JSXElementConstructor<any>> & false',
+    'ReactElement<any, string | JSXElementConstructor<any>> & number',
+    'ReactElement<any, string | JSXElementConstructor<any>> & string',
+    'ReactElement<any, string | JSXElementConstructor<any>> & true',
+    'ReactNodeArray',
+    'ReactNodeArray & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray & ReactPortal',
+    'ReactNodeArray & false',
+    'ReactNodeArray & number',
+    'ReactNodeArray & string',
+    'ReactNodeArray & true',
+    'ReactPortal',
+    'ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal & ReactNodeArray',
+    'ReactPortal & false',
+    'ReactPortal & number',
+    'ReactPortal & string',
+    'ReactPortal & true',
+    'false',
+    'false & ReactElement<any, string | JSXElementConstructor<any>>',
+    'false & ReactNodeArray',
+    'false & ReactPortal',
+    'false & {}',
+    'number',
+    'number & ReactElement<any, string | JSXElementConstructor<any>>',
+    'number & ReactNodeArray',
+    'number & ReactPortal',
+    'number & {}',
+    'string',
+    'string & ReactElement<any, string | JSXElementConstructor<any>>',
+    'string & ReactNodeArray',
+    'string & ReactPortal',
+    'string & {}',
+    'true',
+    'true & ReactElement<any, string | JSXElementConstructor<any>>',
+    'true & ReactNodeArray',
+    'true & ReactPortal',
+    'true & {}',
+    '{}',
+    '{} & false',
+    '{} & number',
+    '{} & string',
+    '{} & true',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactNodeArray',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
+    'ReactElement<any, string | JSXElementConstructor<any>> & false',
+    'ReactElement<any, string | JSXElementConstructor<any>> & number',
+    'ReactElement<any, string | JSXElementConstructor<any>> & string',
+    'ReactElement<any, string | JSXElementConstructor<any>> & true',
+    'ReactNodeArray',
+    'ReactNodeArray & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray & ReactPortal',
+    'ReactNodeArray & false',
+    'ReactNodeArray & number',
+    'ReactNodeArray & string',
+    'ReactNodeArray & true',
+    'ReactPortal',
+    'ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal & ReactNodeArray',
+    'ReactPortal & false',
+    'ReactPortal & number',
+    'ReactPortal & string',
+    'ReactPortal & true',
+    'false',
+    'false & ReactElement<any, string | JSXElementConstructor<any>>',
+    'false & ReactNodeArray',
+    'false & ReactPortal',
+    'false & {}',
+    'number',
+    'number & ReactElement<any, string | JSXElementConstructor<any>>',
+    'number & ReactNodeArray',
+    'number & ReactPortal',
+    'number & {}',
+    'string',
+    'string & ReactElement<any, string | JSXElementConstructor<any>>',
+    'string & ReactNodeArray',
+    'string & ReactPortal',
+    'string & {}',
+    'true',
+    'true & ReactElement<any, string | JSXElementConstructor<any>>',
+    'true & ReactNodeArray',
+    'true & ReactPortal',
+    'true & {}',
+    '{}',
+    '{} & false',
+    '{} & number',
+    '{} & string',
+    '{} & true',
+  ]}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-children" />
+
+### disableOverlayClick <Badge variant="web" />
+
+Disable overlay click that closes the Modal
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="disableOverlayClick"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-disableOverlayClick" />
+
+### footer
+
+Component to render as the Modal footer
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="footer"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<ModalFooterBaseProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<ModalFooterBaseProps, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-footer" />
+
+### hideCloseIcon
+
+Hide the close icon on the top right
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="hideCloseIcon"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-hideCloseIcon" />
+
+### hideDividers
+
+Hide top and bottom dividers inside Modal body
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="hideDividers"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-hideDividers" />
+
+### onBack
+
+Handles back action
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="onBack"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-onBack" />
+
+### onClose
+
+Handles Modal close
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="onClose"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-onClose" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-testID" />
+
+### title
+
+Title of the Modal
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-title" />
+
+### visible
+
+Controls visibility of the Modal
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="visible"
+  required={true}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-visible" />
+
+### zIndex
+
+Adjust the z-index positioning layer.
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="zIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-zIndex" />
+
+<ComponentDetails componentName="Modal" templateName="outro" />

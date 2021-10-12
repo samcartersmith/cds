@@ -30,7 +30,7 @@ export const getSubDirFiles =
   (startPath: string | undefined = 'web', extension = '.tsx') =>
   async (subDir: SubDir) => {
     const subDirPath = await getSourcePath(`${startPath}/${subDir}`);
-    const files = await glob(`*${extension}`, { absolute: true, cwd: subDirPath });
+    const files = await glob(`**/*${extension}`, { absolute: true, cwd: subDirPath });
     return { subDir, files: files.filter(excludeIgnored) };
   };
 

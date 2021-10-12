@@ -99,7 +99,12 @@ module.exports = {
       type: 'category',
       label: 'Overlays',
       collapsed: true,
-      items: ['components/overlays/Tooltip/tooltip'],
+      items: [
+        'components/overlays/Tooltip/tooltip',
+        'components/overlays/Modal/modal',
+        'components/overlays/ModalBody/modal-body',
+        'components/overlays/ModalFooter/modal-footer',
+      ],
     },
     {
       type: 'category',

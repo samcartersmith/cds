@@ -883,6 +883,69 @@ export const Tooltip = {
   ),
 };
 
+export const Modal = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/a11y.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/intro.mdx'
+      ),
+  ),
+  modal: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/modal.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/usage.mdx'
+      ),
+  ),
+};
+
+export const ModalBody = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalBody/implementation.mdx'
+      ),
+  ),
+  'modal-body': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalBody/modal-body.mdx'
+      ),
+  ),
+};
+
+export const ModalFooter = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalFooter/implementation.mdx'
+      ),
+  ),
+  'modal-footer': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalFooter/modal-footer.mdx'
+      ),
+  ),
+};
+
 export const Link = {
   a11y: React.lazy(
     async () =>

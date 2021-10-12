@@ -6,6 +6,8 @@ import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
+import { usePortal } from '@cbhq/cds-common/context/PortalContext';
+
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
@@ -30,6 +32,8 @@ import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
+import { PortalProvider } from '@cbhq/cds-web/context/PortalProvider';
+
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
@@ -62,6 +66,7 @@ const ReactLiveScope = {
   useSpectrumConditional,
   useStatusButtons,
   useToggler,
+  usePortal,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAnimation,
@@ -78,6 +83,8 @@ const ReactLiveScope = {
   ...CDSIllustrations,
   ...CDSInputs,
   ...CDSVisualizations,
+  // context
+  PortalProvider,
   // Utils
   loremIpsum,
   ReactRouterLink,

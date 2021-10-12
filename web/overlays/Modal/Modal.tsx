@@ -42,7 +42,7 @@ export const Modal: React.FC<ModalProps> = memo(
         hideCloseIcon = false,
         disableOverlayClick = false,
         footer,
-        ...props
+        zIndex,
       },
       ref,
     ) => {
@@ -165,7 +165,7 @@ export const Modal: React.FC<ModalProps> = memo(
           justifyContent="center"
           role="dialog"
           aria-modal="true"
-          {...props}
+          zIndex={zIndex}
         >
           <Overlay
             onPress={disableOverlayClick ? undefined : handleClose}
