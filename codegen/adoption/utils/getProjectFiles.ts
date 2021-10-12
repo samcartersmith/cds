@@ -10,6 +10,7 @@ export async function getProjectFiles(dir: string, ignoreDirs: string[], source?
         '**/*.test.*',
         '**/*.spec.*',
         '**/*.d.ts',
+        '**/*.stories.*',
         ...ignoreDirs,
       ],
       onlyFiles: true,

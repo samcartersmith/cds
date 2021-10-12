@@ -13,88 +13,20 @@
       }
     },
     {
-      "name": "TextLabel2",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 28,
-      "totalCallSites": 15,
-      "cds": "@cbhq/cds-web/typography/TextLabel2",
-      "callSites": {
-        "src/components/NavTitle/NavTitle.tsx": 1,
-        "src/components/amountInput/CurrencyInput.tsx": 1,
-        "src/components/connection/ConnectionRequest.tsx": 1,
-        "src/components/entrySelector/EntrySelector.tsx": 4,
-        "src/components/receive/Address.tsx": 2,
-        "src/components/receive/Username.tsx": 1,
-        "src/components/transaction/txnHistoryListItem.tsx": 3,
-        "src/components/onboarding/shared/forms/TextInput.tsx": 3,
-        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
-        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-        "src/components/onboarding/steps/Success/Success.tsx": 2,
-        "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 2,
-        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
-        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/amountInput/CurrencyInput.tsx": 1,
-          "src/components/connection/ConnectionRequest.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 4,
-          "src/components/receive/Address.tsx": 2,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/transaction/txnHistoryListItem.tsx": 3,
-          "src/components/onboarding/shared/forms/TextInput.tsx": 3,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 2,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-        },
-        "color": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/amountInput/CurrencyInput.tsx": 1,
-          "src/components/connection/ConnectionRequest.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 3,
-          "src/components/receive/Address.tsx": 1,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/transaction/txnHistoryListItem.tsx": 3,
-          "src/components/onboarding/shared/forms/TextInput.tsx": 3,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-        },
-        "align": {
-          "src/components/amountInput/CurrencyInput.tsx": 1,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "spacingStart": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "overflow": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "testID": {
-          "src/components/onboarding/shared/forms/TextInput.tsx": 1,
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-        },
-        "spacingHorizontal": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 },
-        "dangerouslySetColor": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 },
-        "dangerouslySetClassName": {
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-        },
-        "spacingTop": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
-      }
-    },
-    {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 103,
-      "totalCallSites": 48,
+      "totalInstances": 114,
+      "totalCallSites": 54,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
+        {
+          "aliasPath": "src/components/amountInput/AmountInputFallback.tsx",
+          "callSites": ["src/components/trade/steps/EntryStep/EntryStepFallback.tsx"]
+        },
+        {
+          "aliasPath": "src/components/entrySelector/EntrySelectorLoadingFallback.tsx",
+          "callSites": ["src/components/trade/steps/EntryStep/EntryStepFallback.tsx"]
+        },
         {
           "aliasPath": "src/components/connection/ConnectionLost.tsx",
           "callSites": ["src/App.tsx"]
@@ -110,8 +42,8 @@
         {
           "aliasPath": "src/components/onboarding/shared/StepWrapper.tsx",
           "callSites": [
-            "src/components/onboarding/steps/Entry/Entry.tsx",
             "src/components/onboarding/steps/Backup/Backup.tsx",
+            "src/components/onboarding/steps/Entry/Entry.tsx",
             "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx",
             "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx",
             "src/components/onboarding/steps/Password/Password.tsx",
@@ -124,17 +56,29 @@
         {
           "aliasPath": "src/components/onboarding/shared/StepperIndicator.tsx",
           "callSites": ["src/components/onboarding/shared/StepWrapper.tsx"]
+        },
+        {
+          "aliasPath": "src/components/shared/ErrorState/ErrorState.tsx",
+          "callSites": ["src/components/trade/steps/EntryStep/EntryStep.tsx"]
+        },
+        {
+          "aliasPath": "src/components/trade/steps/EntryStep/EntryStepFallback.tsx",
+          "callSites": ["src/components/trade/Trade.tsx"]
         }
       ],
       "callSites": {
-        "src/components/NavTitle/NavTitle.tsx": 1,
         "src/components/amountInput/AmountInput.tsx": 1,
+        "src/components/amountInput/AmountInputFallback.tsx": 2,
         "src/components/amountInput/CurrencyInput.tsx": 1,
+        "src/components/NavTitle/NavTitle.tsx": 1,
+        "src/components/NavTitle/NavTitleFallback.tsx": 1,
         "src/components/assetDetail/AssetDetailBalance.tsx": 1,
         "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
+        "src/components/entrySelector/EntrySelector.tsx": 4,
+        "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+        "src/components/entrySelector/RowLoadingFallback.tsx": 2,
         "src/components/connection/ConnectionLost.tsx": 4,
         "src/components/connection/LoggedInHome.tsx": 1,
-        "src/components/entrySelector/EntrySelector.tsx": 4,
         "src/components/error/PageErrorFallback.tsx": 1,
         "src/components/navigation/RouteWithNavigation.tsx": 1,
         "src/components/onboarding/Onboarding.tsx": 1,
@@ -157,10 +101,11 @@
         "src/components/unLockScreen/UnLockScreen.tsx": 3,
         "src/components/onboarding/shared/StepWrapper.tsx": 1,
         "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+        "src/components/shared/ErrorState/ErrorState.tsx": 2,
         "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 2,
         "src/components/onboarding/shared/forms/TextInput.tsx": 1,
-        "src/components/onboarding/steps/Entry/Entry.tsx": 4,
         "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+        "src/components/onboarding/steps/Entry/Entry.tsx": 4,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 4,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
         "src/components/onboarding/steps/Password/Password.tsx": 2,
@@ -174,28 +119,47 @@
         "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 2,
         "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
         "src/components/send/steps/StatusStep/StatusStep.tsx": 1,
-        "src/components/trade/steps/EntryStep/EntryStep.tsx": 3
+        "src/components/trade/steps/EntryStep/EntryStep.tsx": 3,
+        "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 3
       },
       "propsWithCallSites": {
-        "position": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1
+        "width": {
+          "src/components/amountInput/AmountInputFallback.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 2,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 2,
+          "src/components/receive/Address.tsx": 1,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/onboarding/shared/forms/TextInput.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1
         },
-        "top": { "src/components/NavTitle/NavTitle.tsx": 1 },
         "alignItems": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
           "src/components/amountInput/CurrencyInput.tsx": 1,
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
           "src/components/error/PageErrorFallback.tsx": 1,
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 2,
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/onboarding/shared/forms/TextInput.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1
+        },
+        "position": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1
+        },
+        "top": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1
         },
         "testID": {
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
@@ -224,8 +188,51 @@
           "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
+        "bordered": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+          "src/components/onboarding/Onboarding.tsx": 1,
+          "src/components/unLockScreen/UnLockScreen.tsx": 1
+        },
+        "borderRadius": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+          "src/components/onboarding/Onboarding.tsx": 1
+        },
+        "justifyContent": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/connection/ConnectionLost.tsx": 4,
+          "src/components/error/PageErrorFallback.tsx": 1,
+          "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
+          "src/components/recovery/RecoveryPhrase.tsx": 1,
+          "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
+          "src/components/statusAnimation/StatusAnimation.tsx": 1,
+          "src/components/unLockScreen/UnLockScreen.tsx": 2,
+          "src/components/shared/ErrorState/ErrorState.tsx": 2,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
+          "src/components/onboarding/steps/Username/Username.tsx": 1,
+          "src/components/onboarding/steps/Verify/Verify.tsx": 2,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 2,
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
+        },
+        "overflow": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/settings/NetworkSelector.tsx": 1,
+          "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1
+        },
+        "spacingStart": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1
+        },
+        "maxWidth": { "src/components/entrySelector/EntrySelector.tsx": 1 },
         "height": {
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/connection/LoggedInHome.tsx": 1,
@@ -239,40 +246,28 @@
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/unLockScreen/UnLockScreen.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
         "spacing": {
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/recovery/RecoveryPhrase.tsx": 1,
           "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "justifyContent": {
-          "src/components/connection/ConnectionLost.tsx": 4,
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/error/PageErrorFallback.tsx": 1,
-          "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
-          "src/components/recovery/RecoveryPhrase.tsx": 1,
-          "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
-          "src/components/statusAnimation/StatusAnimation.tsx": 1,
-          "src/components/unLockScreen/UnLockScreen.tsx": 2,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
-          "src/components/onboarding/steps/Username/Username.tsx": 1,
-          "src/components/onboarding/steps/Verify/Verify.tsx": 2,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 2,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
         "spacingBottom": {
           "src/components/connection/ConnectionLost.tsx": 2,
           "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
           "src/components/settings/NetworkSelector.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/onboarding/shared/StepperIndicator.tsx": 1,
           "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
           "src/components/send/steps/StatusStep/StatusStep.tsx": 1
@@ -281,29 +276,6 @@
           "src/components/connection/LoggedInHome.tsx": 1,
           "src/components/transaction/txnDetail.tsx": 2
         },
-        "bordered": {
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/onboarding/Onboarding.tsx": 1,
-          "src/components/unLockScreen/UnLockScreen.tsx": 1
-        },
-        "borderRadius": {
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/onboarding/Onboarding.tsx": 1
-        },
-        "width": {
-          "src/components/entrySelector/EntrySelector.tsx": 2,
-          "src/components/receive/Address.tsx": 1,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/onboarding/shared/forms/TextInput.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1
-        },
-        "overflow": {
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/settings/NetworkSelector.tsx": 1,
-          "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1
-        },
-        "spacingStart": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "maxWidth": { "src/components/entrySelector/EntrySelector.tsx": 1 },
         "flexGrow": {
           "src/components/error/PageErrorFallback.tsx": 1,
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
@@ -337,9 +309,620 @@
         "alignContent": {
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
         "minHeight": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-web/layout/HStack",
+      "totalInstances": 37,
+      "totalCallSites": 24,
+      "cds": "@cbhq/cds-web/layout/HStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "src/components/NavTitle/NavTitleFallback.tsx",
+          "callSites": ["src/components/trade/steps/EntryStep/EntryStepFallback.tsx"]
+        },
+        {
+          "aliasPath": "src/components/entrySelector/RowLoadingFallback.tsx",
+          "callSites": [
+            "src/components/entrySelector/EntrySelectorLoadingFallback.tsx",
+            "src/components/entrySelector/EntrySelectorLoadingFallback.tsx"
+          ]
+        },
+        {
+          "aliasPath": "src/components/onboarding/shared/BlurText.tsx",
+          "callSites": [
+            "src/components/recovery/RecoveryPhrase.tsx",
+            "src/components/onboarding/steps/Backup/Backup.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "src/components/amountInput/AmountInput.tsx": 1,
+        "src/components/amountInput/AmountInputFallback.tsx": 1,
+        "src/components/amountInput/CurrencyInput.tsx": 1,
+        "src/components/NavTitle/NavTitle.tsx": 1,
+        "src/components/NavTitle/NavTitleFallback.tsx": 1,
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/entrySelector/EntrySelector.tsx": 3,
+        "src/components/entrySelector/Row.tsx": 1,
+        "src/components/entrySelector/RowLoadingFallback.tsx": 3,
+        "src/components/portfolio/PortfolioContainer.tsx": 1,
+        "src/components/portfolio/PortfolioMenu.tsx": 1,
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+        "src/components/transaction/txnAmountDisplay.tsx": 1,
+        "src/components/transaction/txnDetail.tsx": 3,
+        "src/components/transaction/txnHistoryListItem.tsx": 2,
+        "src/components/onboarding/shared/BlurText.tsx": 1,
+        "src/components/onboarding/shared/StepperIndicator.tsx": 2,
+        "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
+        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
+        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
+        "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
+        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 4,
+        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2
+      },
+      "propsWithCallSites": {
+        "justifyContent": {
+          "src/components/amountInput/AmountInput.tsx": 1,
+          "src/components/amountInput/AmountInputFallback.tsx": 1,
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 2,
+          "src/components/entrySelector/Row.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 2,
+          "src/components/portfolio/PortfolioContainer.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/transaction/txnAmountDisplay.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "alignItems": {
+          "src/components/amountInput/AmountInput.tsx": 1,
+          "src/components/amountInput/AmountInputFallback.tsx": 1,
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 3,
+          "src/components/entrySelector/Row.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 3,
+          "src/components/portfolio/PortfolioContainer.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 4,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "spacingTop": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/transaction/txnAmountDisplay.tsx": 1,
+          "src/components/onboarding/shared/BlurText.tsx": 1,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
+        },
+        "spacingBottom": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 1
+        },
+        "position": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1
+        },
+        "testID": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1
+        },
+        "width": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 2,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 2,
+          "src/components/portfolio/PortfolioContainer.tsx": 1,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1
+        },
+        "overflow": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1
+        },
+        "spacing": {
+          "src/components/entrySelector/Row.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
+          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
+        },
+        "spacingVertical": {
+          "src/components/entrySelector/Row.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/portfolio/PortfolioContainer.tsx": 1
+        },
+        "borderedTop": {
+          "src/components/entrySelector/Row.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
+        },
+        "height": {
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 2
+        },
+        "spacingHorizontal": {
+          "src/components/portfolio/PortfolioContainer.tsx": 1,
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1
+        },
+        "alignContent": { "src/components/portfolio/PortfolioMenu.tsx": 1 },
+        "borderRadius": {
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
+        },
+        "bordered": {
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
+        },
+        "gap": {
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "IconButton",
+      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
+      "totalInstances": 7,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/buttons/IconButton",
+      "callSites": {
+        "src/components/amountInput/AmountInput.tsx": 1,
+        "src/components/amountInput/AmountInputFallback.tsx": 1,
+        "src/components/portfolio/PortfolioMenu.tsx": 3,
+        "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "src/components/amountInput/AmountInput.tsx": 1,
+          "src/components/amountInput/AmountInputFallback.tsx": 1,
+          "src/components/portfolio/PortfolioMenu.tsx": 3,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+        },
+        "variant": {
+          "src/components/amountInput/AmountInput.tsx": 1,
+          "src/components/amountInput/AmountInputFallback.tsx": 1,
+          "src/components/portfolio/PortfolioMenu.tsx": 3,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+        },
+        "testID": {
+          "src/components/amountInput/AmountInput.tsx": 1,
+          "src/components/amountInput/AmountInputFallback.tsx": 1
+        },
+        "onPress": {
+          "src/components/amountInput/AmountInput.tsx": 1,
+          "src/components/portfolio/PortfolioMenu.tsx": 3,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+        },
+        "transparent": {
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+        },
+        "accessibilityLabel": {
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "@cbhq/cds-web/layout/Fallback",
+      "totalInstances": 7,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/layout/Fallback",
+      "callSites": {
+        "src/components/amountInput/AmountInputFallback.tsx": 2,
+        "src/components/NavTitle/NavTitleFallback.tsx": 2,
+        "src/components/entrySelector/EntrySelector.tsx": 1,
+        "src/components/entrySelector/RowLoadingFallback.tsx": 2
+      },
+      "propsWithCallSites": {
+        "width": {
+          "src/components/amountInput/AmountInputFallback.tsx": 2,
+          "src/components/NavTitle/NavTitleFallback.tsx": 2,
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 2
+        },
+        "height": {
+          "src/components/amountInput/AmountInputFallback.tsx": 2,
+          "src/components/NavTitle/NavTitleFallback.tsx": 2,
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 2
+        },
+        "percentage": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "flexGrow": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "shape": { "src/components/entrySelector/RowLoadingFallback.tsx": 1 }
+      }
+    },
+    {
+      "name": "Spacer",
+      "sourceFile": "@cbhq/cds-web/layout/Spacer",
+      "totalInstances": 13,
+      "totalCallSites": 11,
+      "cds": "@cbhq/cds-web/layout/Spacer",
+      "callSites": {
+        "src/components/amountInput/AmountInputFallback.tsx": 1,
+        "src/components/NavTitle/NavTitleFallback.tsx": 1,
+        "src/components/entrySelector/EntrySelector.tsx": 1,
+        "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+        "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
+        "src/components/settings/Settings.tsx": 1,
+        "src/components/shared/ErrorState/ErrorState.tsx": 2,
+        "src/components/onboarding/steps/Backup/Backup.tsx": 2,
+        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+        "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+        "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
+      },
+      "propsWithCallSites": {
+        "vertical": {
+          "src/components/amountInput/AmountInputFallback.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+          "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
+          "src/components/onboarding/steps/Backup/Backup.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
+      "totalInstances": 30,
+      "totalCallSites": 16,
+      "cds": "@cbhq/cds-web/typography/TextLabel2",
+      "callSites": {
+        "src/components/amountInput/CurrencyInput.tsx": 1,
+        "src/components/NavTitle/NavTitle.tsx": 1,
+        "src/components/entrySelector/EntrySelector.tsx": 4,
+        "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+        "src/components/connection/ConnectionRequest.tsx": 1,
+        "src/components/receive/Address.tsx": 2,
+        "src/components/receive/Username.tsx": 1,
+        "src/components/transaction/txnHistoryListItem.tsx": 3,
+        "src/components/onboarding/shared/forms/TextInput.tsx": 3,
+        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
+        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+        "src/components/onboarding/steps/Success/Success.tsx": 2,
+        "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 3,
+        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
+        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "src/components/amountInput/CurrencyInput.tsx": 1,
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 4,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/connection/ConnectionRequest.tsx": 1,
+          "src/components/receive/Address.tsx": 2,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/transaction/txnHistoryListItem.tsx": 3,
+          "src/components/onboarding/shared/forms/TextInput.tsx": 3,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 2,
+          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 3,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "color": {
+          "src/components/amountInput/CurrencyInput.tsx": 1,
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 3,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/connection/ConnectionRequest.tsx": 1,
+          "src/components/receive/Address.tsx": 1,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/transaction/txnHistoryListItem.tsx": 3,
+          "src/components/onboarding/shared/forms/TextInput.tsx": 3,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 2,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "align": {
+          "src/components/amountInput/CurrencyInput.tsx": 1,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "spacingStart": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "overflow": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "testID": {
+          "src/components/onboarding/shared/forms/TextInput.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "spacingHorizontal": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 2 },
+        "dangerouslySetColor": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 2 },
+        "dangerouslySetClassName": {
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+        },
+        "spacingTop": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "PressableOpacity",
+      "sourceFile": "@cbhq/cds-web/system/PressableOpacity",
+      "totalInstances": 7,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/system/PressableOpacity",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "src/components/amountInput/MaxButton.tsx",
+          "callSites": [
+            "src/components/amountInput/AmountInput.tsx",
+            "src/components/amountInput/AmountInputFallback.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "src/components/amountInput/MaxButton.tsx": 1,
+        "src/components/unLockScreen/UnLockScreen.tsx": 1,
+        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
+        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+        "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/unLockScreen/UnLockScreen.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "as": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "testID": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/unLockScreen/UnLockScreen.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
+        },
+        "width": { "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1 },
+        "noScaleOnPress": { "src/components/send/steps/EntryStep/AssetSelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 55,
+      "totalCallSites": 37,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "callSites": {
+        "src/components/amountInput/MaxButton.tsx": 1,
+        "src/components/NavTitle/NavTitle.tsx": 1,
+        "src/components/NavTitle/NavTitleFallback.tsx": 1,
+        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/entrySelector/EntrySelector.tsx": 1,
+        "src/components/connection/ConnectionLost.tsx": 1,
+        "src/components/onboarding/Onboarding.tsx": 1,
+        "src/components/portfolio/AssetIcon.tsx": 1,
+        "src/components/portfolio/PortfolioMenu.tsx": 3,
+        "src/components/receive/Address.tsx": 2,
+        "src/components/receive/Receive.tsx": 2,
+        "src/components/receive/Username.tsx": 2,
+        "src/components/recovery/RecoveryPhrase.tsx": 1,
+        "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
+        "src/components/settings/Settings.tsx": 2,
+        "src/components/shared/LogoHeader.tsx": 1,
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
+        "src/components/transaction/txnHistoryListItem.tsx": 1,
+        "src/components/unLockScreen/UnLockScreen.tsx": 2,
+        "src/components/onboarding/shared/BlurText.tsx": 1,
+        "src/components/onboarding/shared/StepWrapper.tsx": 1,
+        "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+        "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 2,
+        "src/components/shared/SharedAssetRowItem/AssetIcon.tsx": 1,
+        "src/components/shared/svgIcons/CoinbaseWalletIcon.tsx": 1,
+        "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+        "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 1,
+        "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1,
+        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 4,
+        "src/components/onboarding/steps/Success/Success.tsx": 2,
+        "src/components/onboarding/steps/Username/Username.tsx": 1,
+        "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 4,
+        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 2,
+        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2,
+        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "alignItems": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/onboarding/Onboarding.tsx": 1,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/unLockScreen/UnLockScreen.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 2,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "justifyContent": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/connection/ConnectionLost.tsx": 1,
+          "src/components/onboarding/Onboarding.tsx": 1,
+          "src/components/receive/Address.tsx": 1,
+          "src/components/unLockScreen/UnLockScreen.tsx": 1,
+          "src/components/onboarding/shared/BlurText.tsx": 1,
+          "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 2,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "height": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/onboarding/Onboarding.tsx": 1,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/unLockScreen/UnLockScreen.tsx": 1,
+          "src/components/onboarding/shared/StepWrapper.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "width": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/receive/Address.tsx": 1,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/onboarding/shared/StepWrapper.tsx": 1,
+          "src/components/shared/svgIcons/CoinbaseWalletIcon.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 2,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "borderRadius": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/receive/Address.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1
+        },
+        "bordered": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/receive/Address.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1
+        },
+        "position": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/onboarding/shared/BlurText.tsx": 1,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
+        },
+        "left": {
+          "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/onboarding/shared/StepperIndicator.tsx": 1
+        },
+        "spacingTop": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/connection/ConnectionLost.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 2,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
+        },
+        "spacingStart": {
+          "src/components/portfolio/PortfolioMenu.tsx": 2,
+          "src/components/transaction/txnHistoryListItem.tsx": 1,
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1
+        },
+        "spacingHorizontal": {
+          "src/components/receive/Address.tsx": 1,
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1
+        },
+        "background": { "src/components/receive/Address.tsx": 1 },
+        "spacing": {
+          "src/components/receive/Receive.tsx": 2,
+          "src/components/receive/Username.tsx": 1,
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1,
+          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 3,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "as": {
+          "src/components/receive/Username.tsx": 1,
+          "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1
+        },
+        "overflow": { "src/components/receive/Username.tsx": 1 },
+        "spacingBottom": {
+          "src/components/recovery/RecoveryPhrase.tsx": 1,
+          "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/shared/LogoHeader.tsx": 1,
+          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
+          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 1
+        },
+        "spacingVertical": {
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        },
+        "flexDirection": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
+        "bottom": {
+          "src/components/onboarding/shared/BlurText.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
+        },
+        "right": { "src/components/onboarding/shared/BlurText.tsx": 1 },
+        "top": { "src/components/onboarding/shared/StepperIndicator.tsx": 1 },
+        "spacingEnd": { "src/components/shared/SharedAssetRowItem/AssetIcon.tsx": 1 },
+        "dangerouslySetClassName": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
+      "totalInstances": 10,
+      "totalCallSites": 7,
+      "cds": "@cbhq/cds-web/typography/TextLabel1",
+      "callSites": {
+        "src/components/amountInput/MaxButton.tsx": 1,
+        "src/components/entrySelector/EntrySelector.tsx": 1,
+        "src/components/portfolio/AssetBalance.tsx": 1,
+        "src/components/receive/Receive.tsx": 2,
+        "src/components/onboarding/shared/BlurText.tsx": 1,
+        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
+        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "src/components/amountInput/MaxButton.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/portfolio/AssetBalance.tsx": 1,
+          "src/components/receive/Receive.tsx": 2,
+          "src/components/onboarding/shared/BlurText.tsx": 1,
+          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "color": {
+          "src/components/portfolio/AssetBalance.tsx": 1,
+          "src/components/receive/Receive.tsx": 2,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "spacingStart": { "src/components/onboarding/shared/BlurText.tsx": 1 },
+        "onClick": { "src/components/onboarding/shared/BlurText.tsx": 1 },
+        "spacingBottom": {
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "testID": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
       }
     },
     {
@@ -378,330 +961,40 @@
       }
     },
     {
-      "name": "HStack",
-      "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 32,
-      "totalCallSites": 21,
-      "cds": "@cbhq/cds-web/layout/HStack",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "src/components/onboarding/shared/BlurText.tsx",
-          "callSites": [
-            "src/components/recovery/RecoveryPhrase.tsx",
-            "src/components/onboarding/steps/Backup/Backup.tsx"
-          ]
-        }
-      ],
-      "callSites": {
-        "src/components/NavTitle/NavTitle.tsx": 1,
-        "src/components/amountInput/AmountInput.tsx": 1,
-        "src/components/amountInput/CurrencyInput.tsx": 1,
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/entrySelector/EntrySelector.tsx": 3,
-        "src/components/entrySelector/Row.tsx": 1,
-        "src/components/portfolio/PortfolioContainer.tsx": 1,
-        "src/components/portfolio/PortfolioMenu.tsx": 1,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-        "src/components/transaction/txnAmountDisplay.tsx": 1,
-        "src/components/transaction/txnDetail.tsx": 3,
-        "src/components/transaction/txnHistoryListItem.tsx": 2,
-        "src/components/onboarding/shared/BlurText.tsx": 1,
-        "src/components/onboarding/shared/StepperIndicator.tsx": 2,
-        "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
-        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
-        "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
-        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 4,
-        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2
-      },
-      "propsWithCallSites": {
-        "spacingTop": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
-          "src/components/onboarding/shared/BlurText.tsx": 1,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
-        },
-        "spacingBottom": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 1
-        },
-        "justifyContent": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 2,
-          "src/components/entrySelector/Row.tsx": 1,
-          "src/components/portfolio/PortfolioContainer.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 1,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "alignItems": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 3,
-          "src/components/entrySelector/Row.tsx": 1,
-          "src/components/portfolio/PortfolioContainer.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 4,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "position": { "src/components/NavTitle/NavTitle.tsx": 1 },
-        "testID": { "src/components/NavTitle/NavTitle.tsx": 1 },
-        "width": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 2,
-          "src/components/portfolio/PortfolioContainer.tsx": 1,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1
-        },
-        "overflow": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "spacing": {
-          "src/components/entrySelector/Row.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
-        },
-        "spacingVertical": {
-          "src/components/entrySelector/Row.tsx": 1,
-          "src/components/portfolio/PortfolioContainer.tsx": 1
-        },
-        "borderedTop": {
-          "src/components/entrySelector/Row.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
-        },
-        "spacingHorizontal": {
-          "src/components/portfolio/PortfolioContainer.tsx": 1,
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1
-        },
-        "alignContent": { "src/components/portfolio/PortfolioMenu.tsx": 1 },
-        "borderRadius": {
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
-        },
-        "bordered": {
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
-        },
-        "gap": {
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3
-        },
-        "height": { "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 2 }
-      }
-    },
-    {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 52,
-      "totalCallSites": 36,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "callSites": {
-        "src/components/NavTitle/NavTitle.tsx": 1,
-        "src/components/amountInput/AmountInput.tsx": 1,
-        "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/connection/ConnectionLost.tsx": 1,
-        "src/components/entrySelector/EntrySelector.tsx": 1,
-        "src/components/onboarding/Onboarding.tsx": 1,
-        "src/components/portfolio/AssetIcon.tsx": 1,
-        "src/components/portfolio/PortfolioMenu.tsx": 3,
-        "src/components/receive/Address.tsx": 2,
-        "src/components/receive/Receive.tsx": 2,
-        "src/components/receive/Username.tsx": 2,
-        "src/components/recovery/RecoveryPhrase.tsx": 1,
-        "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
-        "src/components/settings/Settings.tsx": 2,
-        "src/components/shared/LogoHeader.tsx": 1,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
-        "src/components/transaction/txnHistoryListItem.tsx": 1,
-        "src/components/unLockScreen/UnLockScreen.tsx": 2,
-        "src/components/onboarding/shared/BlurText.tsx": 1,
-        "src/components/onboarding/shared/StepWrapper.tsx": 1,
-        "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-        "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 2,
-        "src/components/shared/SharedAssetRowItem/AssetIcon.tsx": 1,
-        "src/components/shared/svgIcons/CoinbaseWalletIcon.tsx": 1,
-        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-        "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-        "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 1,
-        "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1,
-        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 4,
-        "src/components/onboarding/steps/Success/Success.tsx": 2,
-        "src/components/onboarding/steps/Username/Username.tsx": 1,
-        "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 2,
-        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 2,
-        "src/components/send/steps/EntryStep/AssetSelector.tsx": 2,
-        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "position": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/onboarding/shared/BlurText.tsx": 1,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
-        },
-        "left": {
-          "src/components/NavTitle/NavTitle.tsx": 1,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1
-        },
-        "alignItems": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/onboarding/Onboarding.tsx": 1,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/unLockScreen/UnLockScreen.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "justifyContent": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/connection/ConnectionLost.tsx": 1,
-          "src/components/onboarding/Onboarding.tsx": 1,
-          "src/components/receive/Address.tsx": 1,
-          "src/components/unLockScreen/UnLockScreen.tsx": 1,
-          "src/components/onboarding/shared/BlurText.tsx": 1,
-          "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "height": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/onboarding/Onboarding.tsx": 1,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/unLockScreen/UnLockScreen.tsx": 1,
-          "src/components/onboarding/shared/StepWrapper.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "width": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/receive/Address.tsx": 1,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/onboarding/shared/StepWrapper.tsx": 1,
-          "src/components/shared/svgIcons/CoinbaseWalletIcon.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "borderRadius": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/receive/Address.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1
-        },
-        "bordered": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/receive/Address.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1
-        },
-        "spacingTop": {
-          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-          "src/components/connection/ConnectionLost.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-        },
-        "spacingStart": {
-          "src/components/portfolio/PortfolioMenu.tsx": 2,
-          "src/components/transaction/txnHistoryListItem.tsx": 1,
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1
-        },
-        "spacingHorizontal": {
-          "src/components/receive/Address.tsx": 1,
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1
-        },
-        "background": { "src/components/receive/Address.tsx": 1 },
-        "spacing": {
-          "src/components/receive/Receive.tsx": 2,
-          "src/components/receive/Username.tsx": 1,
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1,
-          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-        },
-        "as": {
-          "src/components/receive/Username.tsx": 1,
-          "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1
-        },
-        "overflow": { "src/components/receive/Username.tsx": 1 },
-        "spacingBottom": {
-          "src/components/recovery/RecoveryPhrase.tsx": 1,
-          "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/shared/LogoHeader.tsx": 1,
-          "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
-          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-          "src/components/onboarding/steps/Success/Success.tsx": 1
-        },
-        "spacingVertical": {
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "flexDirection": { "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1 },
-        "bottom": {
-          "src/components/onboarding/shared/BlurText.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
-        },
-        "right": { "src/components/onboarding/shared/BlurText.tsx": 1 },
-        "top": { "src/components/onboarding/shared/StepperIndicator.tsx": 1 },
-        "spacingEnd": { "src/components/shared/SharedAssetRowItem/AssetIcon.tsx": 1 },
-        "dangerouslySetClassName": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 }
-      }
-    },
-    {
       "name": "Pressable",
       "sourceFile": "@cbhq/cds-web/system/Pressable",
-      "totalInstances": 4,
-      "totalCallSites": 3,
+      "totalInstances": 5,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/system/Pressable",
       "callSites": {
         "src/components/NavTitle/NavTitle.tsx": 1,
+        "src/components/NavTitle/NavTitleFallback.tsx": 1,
         "src/components/entrySelector/Row.tsx": 1,
         "src/components/receive/Receive.tsx": 2
       },
       "propsWithCallSites": {
         "as": {
           "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/receive/Receive.tsx": 2
         },
         "onPress": {
           "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/receive/Receive.tsx": 2
         },
         "backgroundColor": {
           "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/receive/Receive.tsx": 2
         },
-        "disabled": { "src/components/entrySelector/Row.tsx": 1 },
+        "disabled": {
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
+          "src/components/entrySelector/Row.tsx": 1
+        },
         "noScaleOnPress": { "src/components/entrySelector/Row.tsx": 1 },
         "borderRadius": {
           "src/components/entrySelector/Row.tsx": 1,
@@ -718,15 +1011,18 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 30,
-      "totalCallSites": 18,
+      "totalInstances": 33,
+      "totalCallSites": 21,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "src/components/NavTitle/NavTitle.tsx": 1,
+        "src/components/NavTitle/NavTitleFallback.tsx": 1,
         "src/components/authorization/AuthorizationError.tsx": 1,
         "src/components/authorization/AuthorizationRequest.tsx": 3,
-        "src/components/connection/ConnectionRequest.tsx": 2,
         "src/components/entrySelector/EntrySelector.tsx": 3,
+        "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+        "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+        "src/components/connection/ConnectionRequest.tsx": 2,
         "src/components/error/GenericFullPageError.tsx": 1,
         "src/components/error/PageErrorFallback.tsx": 1,
         "src/components/navigation/Navigation.tsx": 3,
@@ -744,10 +1040,13 @@
       "propsWithCallSites": {
         "name": {
           "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/authorization/AuthorizationError.tsx": 1,
           "src/components/authorization/AuthorizationRequest.tsx": 3,
-          "src/components/connection/ConnectionRequest.tsx": 2,
           "src/components/entrySelector/EntrySelector.tsx": 3,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/connection/ConnectionRequest.tsx": 2,
           "src/components/error/GenericFullPageError.tsx": 1,
           "src/components/error/PageErrorFallback.tsx": 1,
           "src/components/navigation/Navigation.tsx": 3,
@@ -764,10 +1063,13 @@
         },
         "size": {
           "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/authorization/AuthorizationError.tsx": 1,
           "src/components/authorization/AuthorizationRequest.tsx": 3,
-          "src/components/connection/ConnectionRequest.tsx": 2,
           "src/components/entrySelector/EntrySelector.tsx": 3,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/connection/ConnectionRequest.tsx": 2,
           "src/components/error/GenericFullPageError.tsx": 1,
           "src/components/error/PageErrorFallback.tsx": 1,
           "src/components/navigation/Navigation.tsx": 3,
@@ -784,10 +1086,13 @@
         },
         "color": {
           "src/components/NavTitle/NavTitle.tsx": 1,
+          "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/authorization/AuthorizationError.tsx": 1,
           "src/components/authorization/AuthorizationRequest.tsx": 3,
-          "src/components/connection/ConnectionRequest.tsx": 2,
           "src/components/entrySelector/EntrySelector.tsx": 3,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
+          "src/components/connection/ConnectionRequest.tsx": 2,
           "src/components/error/GenericFullPageError.tsx": 1,
           "src/components/error/PageErrorFallback.tsx": 1,
           "src/components/navigation/Navigation.tsx": 3,
@@ -801,138 +1106,27 @@
           "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1,
           "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
         },
-        "bordered": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "spacing": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "bordered": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1
+        },
+        "spacing": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1
+        },
         "spacingStart": {
           "src/components/entrySelector/EntrySelector.tsx": 2,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1,
           "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
         },
         "testID": { "src/components/settings/NetworkSelector.tsx": 1 }
       }
     },
     {
-      "name": "PressableOpacity",
-      "sourceFile": "@cbhq/cds-web/system/PressableOpacity",
-      "totalInstances": 7,
-      "totalCallSites": 6,
-      "cds": "@cbhq/cds-web/system/PressableOpacity",
-      "callSites": {
-        "src/components/amountInput/AmountInput.tsx": 1,
-        "src/components/unLockScreen/UnLockScreen.tsx": 1,
-        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
-        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-        "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPress": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/unLockScreen/UnLockScreen.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "as": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
-        },
-        "testID": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/unLockScreen/UnLockScreen.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
-        },
-        "width": { "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1 },
-        "noScaleOnPress": { "src/components/send/steps/EntryStep/AssetSelector.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextLabel1",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 10,
-      "totalCallSites": 7,
-      "cds": "@cbhq/cds-web/typography/TextLabel1",
-      "callSites": {
-        "src/components/amountInput/AmountInput.tsx": 1,
-        "src/components/entrySelector/EntrySelector.tsx": 1,
-        "src/components/portfolio/AssetBalance.tsx": 1,
-        "src/components/receive/Receive.tsx": 2,
-        "src/components/onboarding/shared/BlurText.tsx": 1,
-        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
-        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/portfolio/AssetBalance.tsx": 1,
-          "src/components/receive/Receive.tsx": 2,
-          "src/components/onboarding/shared/BlurText.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 3,
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-        },
-        "color": {
-          "src/components/portfolio/AssetBalance.tsx": 1,
-          "src/components/receive/Receive.tsx": 2,
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-        },
-        "spacingStart": { "src/components/onboarding/shared/BlurText.tsx": 1 },
-        "onClick": { "src/components/onboarding/shared/BlurText.tsx": 1 },
-        "spacingBottom": {
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
-        },
-        "testID": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "IconButton",
-      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 6,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/buttons/IconButton",
-      "callSites": {
-        "src/components/amountInput/AmountInput.tsx": 1,
-        "src/components/portfolio/PortfolioMenu.tsx": 3,
-        "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-        "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/portfolio/PortfolioMenu.tsx": 3,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-        },
-        "variant": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/portfolio/PortfolioMenu.tsx": 3,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-        },
-        "testID": { "src/components/amountInput/AmountInput.tsx": 1 },
-        "onPress": {
-          "src/components/amountInput/AmountInput.tsx": 1,
-          "src/components/portfolio/PortfolioMenu.tsx": 3,
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-        },
-        "transparent": {
-          "src/components/onboarding/shared/StepperIndicator.tsx": 1,
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-        },
-        "accessibilityLabel": {
-          "src/components/send/steps/ConfirmationStep/ConfirmationStep.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 10,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "src/components/assetDetail/AssetDetailBalance.tsx": 1,
@@ -943,7 +1137,8 @@
         "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
         "src/components/settings/NetworkSelector.tsx": 1,
         "src/components/shared/LogoHeader.tsx": 1,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+        "src/components/shared/ErrorState/ErrorState.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -955,7 +1150,8 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/settings/NetworkSelector.tsx": 1,
           "src/components/shared/LogoHeader.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1
         },
         "color": {
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
@@ -968,7 +1164,10 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
         },
-        "spacingTop": { "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1 },
+        "spacingTop": {
+          "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1
+        },
         "spacingBottom": {
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/shared/LogoHeader.tsx": 1
@@ -1025,15 +1224,16 @@
     {
       "name": "ButtonGroup",
       "sourceFile": "@cbhq/cds-web/buttons/ButtonGroup",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 6,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-web/buttons/ButtonGroup",
       "callSites": {
         "src/components/authorization/AuthorizationError.tsx": 1,
         "src/components/authorization/AuthorizationRequest.tsx": 1,
         "src/components/error/PageErrorFallback.tsx": 1,
         "src/components/settings/Settings.tsx": 1,
-        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+        "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+        "src/components/shared/ErrorState/ErrorState.tsx": 1
       },
       "propsWithCallSites": {
         "block": {
@@ -1041,27 +1241,30 @@
           "src/components/authorization/AuthorizationRequest.tsx": 1,
           "src/components/error/PageErrorFallback.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1
         },
         "accessibilityLabel": {
           "src/components/authorization/AuthorizationError.tsx": 1,
           "src/components/authorization/AuthorizationRequest.tsx": 1,
           "src/components/error/PageErrorFallback.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1
         },
         "vertical": {
           "src/components/authorization/AuthorizationRequest.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
-          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
+          "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1
         }
       }
     },
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 27,
-      "totalCallSites": 23,
+      "totalInstances": 30,
+      "totalCallSites": 25,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "src/components/authorization/AuthorizationError.tsx": 1,
@@ -1075,8 +1278,9 @@
         "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
         "src/components/transaction/txnDetail.tsx": 1,
         "src/components/unLockScreen/UnLockScreen.tsx": 1,
-        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+        "src/components/shared/ErrorState/ErrorState.tsx": 2,
         "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
         "src/components/onboarding/steps/Password/Password.tsx": 1,
@@ -1086,7 +1290,8 @@
         "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
         "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
         "src/components/send/steps/StatusStep/StatusStep.tsx": 2,
-        "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
+        "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+        "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
       },
       "propsWithCallSites": {
         "type": {
@@ -1105,6 +1310,7 @@
           "src/components/settings/Settings.tsx": 2,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
           "src/components/transaction/txnDetail.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1,
           "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1,
           "src/components/send/steps/StatusStep/StatusStep.tsx": 2
         },
@@ -1120,8 +1326,9 @@
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
           "src/components/transaction/txnDetail.tsx": 1,
           "src/components/unLockScreen/UnLockScreen.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
+          "src/components/shared/ErrorState/ErrorState.tsx": 2,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
           "src/components/onboarding/steps/Password/Password.tsx": 1,
@@ -1155,8 +1362,8 @@
           "src/components/recovery/RecoveryPhrase.tsx": 1,
           "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
           "src/components/unLockScreen/UnLockScreen.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
           "src/components/onboarding/steps/Password/Password.tsx": 1,
@@ -1165,13 +1372,14 @@
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/components/send/steps/StatusStep/StatusStep.tsx": 2,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
         "testID": {
           "src/components/recovery/RecoveryPhrase.tsx": 1,
           "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
@@ -1185,7 +1393,8 @@
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
         "compact": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 }
       }
@@ -1211,8 +1420,8 @@
         "src/components/transaction/txnDetail.tsx": 4,
         "src/components/transaction/txnHistoryListItem.tsx": 2,
         "src/components/onboarding/shared/BlurText.tsx": 1,
-        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
         "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+        "src/components/onboarding/steps/Entry/Entry.tsx": 1,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 2,
         "src/components/onboarding/steps/Password/Password.tsx": 1,
@@ -1238,8 +1447,8 @@
           "src/components/transaction/txnDetail.tsx": 4,
           "src/components/transaction/txnHistoryListItem.tsx": 2,
           "src/components/onboarding/shared/BlurText.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 2,
           "src/components/onboarding/steps/Password/Password.tsx": 1,
@@ -1272,8 +1481,8 @@
           "src/components/transaction/txnDetail.tsx": 4,
           "src/components/transaction/txnHistoryListItem.tsx": 2,
           "src/components/onboarding/shared/BlurText.tsx": 1,
-          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 2,
           "src/components/onboarding/steps/Password/Password.tsx": 1,
@@ -1289,6 +1498,55 @@
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1
         },
         "title": { "src/components/send/steps/EntryStep/AssetSelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextLegal",
+      "sourceFile": "@cbhq/cds-web/typography/TextLegal",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/typography/TextLegal",
+      "callSites": {
+        "src/components/entrySelector/EntrySelector.tsx": 1,
+        "src/components/settings/Settings.tsx": 1,
+        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/settings/Settings.tsx": 1,
+          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
+        },
+        "color": {
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/settings/Settings.tsx": 1
+        },
+        "spacingTop": { "src/components/entrySelector/EntrySelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "ContentCell",
+      "sourceFile": "@cbhq/cds-web/cells/ContentCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/cells/ContentCell",
+      "propsWithCallSites": {
+        "title": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "description": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "media": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "reduceHorizontalSpacing": { "src/components/entrySelector/EntrySelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "CellMedia",
+      "sourceFile": "@cbhq/cds-web/cells/CellMedia",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/cells/CellMedia",
+      "propsWithCallSites": {
+        "type": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "title": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "source": { "src/components/entrySelector/EntrySelector.tsx": 1 }
       }
     },
     {
@@ -1354,66 +1612,6 @@
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/onboarding/steps/Verify/Verify.tsx": 1
         }
-      }
-    },
-    {
-      "name": "Spacer",
-      "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 7,
-      "totalCallSites": 6,
-      "cds": "@cbhq/cds-web/layout/Spacer",
-      "callSites": {
-        "src/components/entrySelector/EntrySelector.tsx": 1,
-        "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
-        "src/components/settings/Settings.tsx": 1,
-        "src/components/onboarding/steps/Backup/Backup.tsx": 2,
-        "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-        "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "vertical": {
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
-          "src/components/onboarding/steps/Backup/Backup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Fallback",
-      "sourceFile": "@cbhq/cds-web/layout/Fallback",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/layout/Fallback",
-      "propsWithCallSites": {
-        "width": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "percentage": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "height": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "flexGrow": { "src/components/entrySelector/EntrySelector.tsx": 1 }
-      }
-    },
-    {
-      "name": "ContentCell",
-      "sourceFile": "@cbhq/cds-web/cells/ContentCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/cells/ContentCell",
-      "propsWithCallSites": {
-        "title": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "description": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "media": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "reduceHorizontalSpacing": { "src/components/entrySelector/EntrySelector.tsx": 1 }
-      }
-    },
-    {
-      "name": "CellMedia",
-      "sourceFile": "@cbhq/cds-web/cells/CellMedia",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/cells/CellMedia",
-      "propsWithCallSites": {
-        "type": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "title": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "source": { "src/components/entrySelector/EntrySelector.tsx": 1 }
       }
     },
     {
@@ -1497,24 +1695,6 @@
       }
     },
     {
-      "name": "TextLegal",
-      "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/typography/TextLegal",
-      "callSites": {
-        "src/components/settings/Settings.tsx": 1,
-        "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "src/components/settings/Settings.tsx": 1,
-          "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
-        },
-        "color": { "src/components/settings/Settings.tsx": 1 }
-      }
-    },
-    {
       "name": "LottieStatusAnimation",
       "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
       "totalInstances": 1,
@@ -1548,6 +1728,17 @@
         "color": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
         "align": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
         "spacingVertical": { "src/components/transaction/txnAmountDisplay.tsx": 1 }
+      }
+    },
+    {
+      "name": "Pictogram",
+      "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/Pictogram",
+      "propsWithCallSites": {
+        "name": { "src/components/shared/ErrorState/ErrorState.tsx": 1 },
+        "dimension": { "src/components/shared/ErrorState/ErrorState.tsx": 1 }
       }
     },
     {
@@ -1737,6 +1928,45 @@
       }
     },
     {
+      "name": "SwitcherWrapper",
+      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "onClick": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "role": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "aria-label": { "src/components/entrySelector/EntrySelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "Overflow",
+      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span",
+      "propsWithCallSites": { "color": { "src/components/entrySelector/EntrySelector.tsx": 1 } }
+    },
+    {
+      "name": "Image",
+      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "img",
+      "propsWithCallSites": {
+        "src": { "src/components/entrySelector/EntrySelector.tsx": 1 },
+        "alt": { "src/components/entrySelector/EntrySelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "RowStyle",
+      "sourceFile": "src/components/entrySelector/Row.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": { "hasError": { "src/components/entrySelector/Row.tsx": 1 } }
+    },
+    {
       "name": "div",
       "sourceFile": "src/components/connection/ConnectionRequest.tsx",
       "totalInstances": 11,
@@ -1825,45 +2055,6 @@
       "propsWithCallSites": {
         "className": { "src/components/connection/ConnectionRequest.tsx": 1 }
       }
-    },
-    {
-      "name": "SwitcherWrapper",
-      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "onClick": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "role": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "aria-label": { "src/components/entrySelector/EntrySelector.tsx": 1 }
-      }
-    },
-    {
-      "name": "Overflow",
-      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span",
-      "propsWithCallSites": { "color": { "src/components/entrySelector/EntrySelector.tsx": 1 } }
-    },
-    {
-      "name": "Image",
-      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "img",
-      "propsWithCallSites": {
-        "src": { "src/components/entrySelector/EntrySelector.tsx": 1 },
-        "alt": { "src/components/entrySelector/EntrySelector.tsx": 1 }
-      }
-    },
-    {
-      "name": "RowStyle",
-      "sourceFile": "src/components/entrySelector/Row.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": { "hasError": { "src/components/entrySelector/Row.tsx": 1 } }
     },
     {
       "name": "div",
@@ -2704,6 +2895,16 @@
       }
     },
     {
+      "name": "RedButton",
+      "sourceFile": "src/components/onboarding/steps/Verify/MnemonicRow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "button",
+      "propsWithCallSites": {
+        "onClick": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 }
+      }
+    },
+    {
       "name": "div",
       "sourceFile": "src/components/send/steps/EntryStep/AssetSelector.tsx",
       "totalInstances": 1,
@@ -2721,6 +2922,21 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "style": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
+      }
     },
     {
       "name": "Wrapper",
@@ -2744,21 +2960,6 @@
         "height": { "src/external-libs/assetChart/components/Chart/Chart.tsx": 1 },
         "onMouseEnter": { "src/external-libs/assetChart/components/Chart/Chart.tsx": 1 },
         "onMouseLeave": { "src/external-libs/assetChart/components/Chart/Chart.tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "style": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
       }
     },
     {
@@ -2880,6 +3081,18 @@
       }
     },
     {
+      "name": "Container",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "data-testid": {
+          "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Item",
       "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
       "totalInstances": 1,
@@ -2894,18 +3107,6 @@
         },
         "visible": {
           "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Container",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "data-testid": {
-          "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 1
         }
       }
     },
@@ -2973,27 +3174,6 @@
       }
     },
     {
-      "name": "HoverTooltipDiv",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "PriceText",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "DateText",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Caption"
-    },
-    {
       "name": "SelectorContainer",
       "sourceFile": "src/external-libs/assetChart/components/Chart/components/PeriodSelector/PeriodSelector.tsx",
       "totalInstances": 1,
@@ -3044,6 +3224,27 @@
           "src/external-libs/assetChart/components/Chart/components/PeriodSelector/PeriodSelector.tsx": 1
         }
       }
+    },
+    {
+      "name": "HoverTooltipDiv",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "PriceText",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
+      "name": "DateText",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Caption"
     }
   ],
   "other": [
@@ -3145,6 +3346,17 @@
       "sourceFile": "src/onboarding.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "MaxButton",
+      "sourceFile": "src/components/amountInput/MaxButton",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/amountInput/AmountInput.tsx": 1,
+        "src/components/amountInput/AmountInputFallback.tsx": 1
+      },
+      "propsWithCallSites": { "onPress": { "src/components/amountInput/AmountInput.tsx": 1 } }
     },
     {
       "name": "CurrencyInput",
@@ -3360,6 +3572,66 @@
       }
     },
     {
+      "name": "SelectorRow",
+      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+      "propsWithCallSites": {
+        "borderedTop": { "src/components/entrySelector/EntrySelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "NonTruncatedSelectorRow",
+      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Row",
+      "sourceFile": "src/components/entrySelector/Row",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+      "propsWithCallSites": {
+        "onPress": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+        "borderedTop": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+        "hasError": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+        "hasSecondaryText": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+        "dataElementHandle": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+        "disableSelection": { "src/components/entrySelector/EntrySelector.tsx": 2 },
+        "nonTruncated": { "src/components/entrySelector/EntrySelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "RowLoadingFallback",
+      "sourceFile": "src/components/entrySelector/RowLoadingFallback",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 2 },
+      "propsWithCallSites": {
+        "label": { "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 2 },
+        "borderedTop": { "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1 }
+      }
+    },
+    {
+      "name": "SwitcherWrapper",
+      "sourceFile": "src/components/entrySelector/EntrySelector/SwitcherWrapper",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClick": { "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1 },
+        "role": { "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1 }
+      }
+    },
+    {
+      "name": "RowContent",
+      "sourceFile": "src/components/entrySelector/Row.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "src/components/entrySelector/Row.tsx": 2 }
+    },
+    {
       "name": "img",
       "sourceFile": "src/components/connection/ConnectionLost.tsx",
       "totalInstances": 1,
@@ -3428,13 +3700,13 @@
     {
       "name": "RouteWithNavigation",
       "sourceFile": "@components/navigation/RouteWithNavigation",
-      "totalInstances": 12,
+      "totalInstances": 13,
       "totalCallSites": 1,
-      "callSites": { "src/components/connection/LoggedInHome.tsx": 12 },
+      "callSites": { "src/components/connection/LoggedInHome.tsx": 13 },
       "propsWithCallSites": {
-        "path": { "src/components/connection/LoggedInHome.tsx": 12 },
+        "path": { "src/components/connection/LoggedInHome.tsx": 13 },
         "exact": { "src/components/connection/LoggedInHome.tsx": 4 },
-        "component": { "src/components/connection/LoggedInHome.tsx": 11 },
+        "component": { "src/components/connection/LoggedInHome.tsx": 12 },
         "hideNavigation": { "src/components/connection/LoggedInHome.tsx": 2 }
       }
     },
@@ -3447,45 +3719,6 @@
         "disconnect": { "src/components/connection/LoggedInHome.tsx": 1 },
         "unlockApp": { "src/components/connection/LoggedInHome.tsx": 1 }
       }
-    },
-    {
-      "name": "SelectorRow",
-      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-      "propsWithCallSites": {
-        "borderedTop": { "src/components/entrySelector/EntrySelector.tsx": 1 }
-      }
-    },
-    {
-      "name": "NonTruncatedSelectorRow",
-      "sourceFile": "src/components/entrySelector/EntrySelector.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Row",
-      "sourceFile": "src/components/entrySelector/Row",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-      "propsWithCallSites": {
-        "onPress": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-        "borderedTop": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-        "hasError": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-        "hasSecondaryText": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-        "dataElementHandle": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-        "disableSelection": { "src/components/entrySelector/EntrySelector.tsx": 2 },
-        "nonTruncated": { "src/components/entrySelector/EntrySelector.tsx": 1 }
-      }
-    },
-    {
-      "name": "RowContent",
-      "sourceFile": "src/components/entrySelector/Row.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "src/components/entrySelector/Row.tsx": 2 }
     },
     {
       "name": "ErrorBoundary",
@@ -3752,12 +3985,8 @@
     {
       "name": "RenderForDev",
       "sourceFile": "src/util/RenderForDev",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/components/portfolio/PortfolioMenu.tsx": 2,
-        "src/components/send/Send.tsx": 1
-      }
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AssetDetailContainer",
@@ -4043,8 +4272,12 @@
     {
       "name": "Navigation",
       "sourceFile": "@components/navigation/Navigation",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/stepWithNavigation/StepWithNavigation.tsx": 1,
+        "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
+      }
     },
     {
       "name": "img",
@@ -4066,6 +4299,12 @@
     {
       "name": "TradeStepper",
       "sourceFile": "src/components/trade/TradeStepper",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EntryStepFallback",
+      "sourceFile": "src/components/trade/steps/EntryStep/EntryStepFallback",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -4511,6 +4750,64 @@
     },
     {
       "name": "StepWrapper",
+      "sourceFile": "@components/onboarding/shared/StepWrapper",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
+      },
+      "propsWithCallSites": {
+        "justifyContent": { "src/components/onboarding/steps/Backup/Backup.tsx": 1 },
+        "flexDirection": {
+          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BlurText",
+      "sourceFile": "@src/components/onboarding/shared/BlurText",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "text": { "src/components/onboarding/steps/Backup/Backup.tsx": 1 } }
+    },
+    {
+      "name": "Checkbox",
+      "sourceFile": "@src/components/onboarding/shared/Checkbox",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 1,
+        "src/components/onboarding/steps/Username/Username.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": { "src/components/onboarding/steps/Backup/Backup.tsx": 1 },
+        "label": {
+          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
+          "src/components/onboarding/steps/Username/Username.tsx": 1
+        },
+        "labelPosition": {
+          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
+          "src/components/onboarding/steps/Username/Username.tsx": 1
+        },
+        "isChecked": {
+          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
+          "src/components/onboarding/steps/Username/Username.tsx": 1
+        },
+        "onCheckToggle": {
+          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
+          "src/components/onboarding/steps/Username/Username.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StepWrapper",
       "sourceFile": "@src/components/onboarding/shared/StepWrapper",
       "totalInstances": 7,
       "totalCallSites": 7,
@@ -4568,64 +4865,6 @@
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1
       },
       "propsWithCallSites": { "width": { "src/components/onboarding/steps/Entry/Entry.tsx": 1 } }
-    },
-    {
-      "name": "StepWrapper",
-      "sourceFile": "@components/onboarding/shared/StepWrapper",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-        "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
-      },
-      "propsWithCallSites": {
-        "justifyContent": { "src/components/onboarding/steps/Backup/Backup.tsx": 1 },
-        "flexDirection": {
-          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BlurText",
-      "sourceFile": "@src/components/onboarding/shared/BlurText",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "text": { "src/components/onboarding/steps/Backup/Backup.tsx": 1 } }
-    },
-    {
-      "name": "Checkbox",
-      "sourceFile": "@src/components/onboarding/shared/Checkbox",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 1,
-        "src/components/onboarding/steps/Username/Username.tsx": 1
-      },
-      "propsWithCallSites": {
-        "testID": { "src/components/onboarding/steps/Backup/Backup.tsx": 1 },
-        "label": {
-          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
-          "src/components/onboarding/steps/Username/Username.tsx": 1
-        },
-        "labelPosition": {
-          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
-          "src/components/onboarding/steps/Username/Username.tsx": 1
-        },
-        "isChecked": {
-          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
-          "src/components/onboarding/steps/Username/Username.tsx": 1
-        },
-        "onCheckToggle": {
-          "src/components/onboarding/steps/Backup/Backup.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
-          "src/components/onboarding/steps/Username/Username.tsx": 1
-        }
-      }
     },
     {
       "name": "TextArea",
@@ -4691,7 +4930,7 @@
         "rowWords": { "src/components/onboarding/steps/Verify/Verify.tsx": 1 },
         "firstWord": { "src/components/onboarding/steps/Verify/Verify.tsx": 1 },
         "handlePress": { "src/components/onboarding/steps/Verify/Verify.tsx": 1 },
-        "hasError": { "src/components/onboarding/steps/Verify/Verify.tsx": 1 }
+        "errorWord": { "src/components/onboarding/steps/Verify/Verify.tsx": 1 }
       }
     },
     {
@@ -4725,8 +4964,7 @@
         "onInsufficentFund": {
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
           "src/components/trade/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "onChange": { "src/components/trade/steps/EntryStep/EntryStep.tsx": 1 }
+        }
       }
     },
     {
@@ -4875,6 +5113,12 @@
       }
     },
     {
+      "name": "ErrorState",
+      "sourceFile": "@components/shared/ErrorState",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "EntrySelector",
       "sourceFile": "@components/entrySelector/EntrySelector",
       "totalInstances": 1,
@@ -4882,8 +5126,62 @@
       "propsWithCallSites": {
         "onClickSwitcher": { "src/components/trade/steps/EntryStep/EntryStep.tsx": 1 },
         "isSwitchDisabled": { "src/components/trade/steps/EntryStep/EntryStep.tsx": 1 },
+        "error": { "src/components/trade/steps/EntryStep/EntryStep.tsx": 1 },
         "row1": { "src/components/trade/steps/EntryStep/EntryStep.tsx": 1 },
         "row2": { "src/components/trade/steps/EntryStep/EntryStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "NavTitleFallback",
+      "sourceFile": "@components/NavTitle/NavTitleFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AmountInputFallback",
+      "sourceFile": "@components/amountInput/AmountInputFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EntrySelectorLoadingFallback",
+      "sourceFile": "@components/entrySelector/EntrySelectorLoadingFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AssetRowItem",
+      "sourceFile": "@components/shared/AssetRowItem",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "onSelect": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "asset": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "SearchAssetBar",
+      "sourceFile": "@components/shared/SearchAssetBar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "query": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "onChange": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "List",
+      "sourceFile": "react-virtualized/List",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "rowCount": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "width": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "height": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "rowHeight": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "rowRenderer": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
+        "overscanRowCount": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
       }
     },
     {
@@ -4968,41 +5266,6 @@
       }
     },
     {
-      "name": "AssetRowItem",
-      "sourceFile": "@components/shared/AssetRowItem",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "onSelect": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "asset": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "SearchAssetBar",
-      "sourceFile": "@components/shared/SearchAssetBar",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "query": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "onChange": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
-      }
-    },
-    {
-      "name": "List",
-      "sourceFile": "react-virtualized/List",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "rowCount": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "width": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "height": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "rowHeight": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "rowRenderer": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 },
-        "overscanRowCount": { "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1 }
-      }
-    },
-    {
       "name": "FormattedPercentChange",
       "sourceFile": "src/external-libs/assetChart/components/PercentChange/PercentChange.tsx",
       "totalInstances": 1,
@@ -5074,12 +5337,6 @@
       }
     },
     {
-      "name": "Container",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "div",
       "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
       "totalInstances": 1,
@@ -5114,6 +5371,12 @@
           "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 2
         }
       }
+    },
+    {
+      "name": "Container",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "HoverPoint",

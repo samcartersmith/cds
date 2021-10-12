@@ -192,19 +192,19 @@
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 2,
         "@app/screens/CoinbaseCard/Support/CardSupportScreen.tsx": 1,
-        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
+        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/ActiveCard.tsx": 1,
         "@app/screens/CoinbaseCard/components/AppleGooglePayStatusScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
         "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/RecurringBuyUpsellCard.tsx": 1,
         "@app/screens/Defi/DAppDetail/DAppDetail.tsx": 3,
+        "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
+        "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 3,
         "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 3,
         "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
         "@app/screens/Defi/DAppTransaction/DAppTransactionStatus.tsx": 1,
-        "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
-        "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 3,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 2,
         "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 1,
@@ -311,9 +311,9 @@
         "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationSuccessScreen.tsx": 1,
         "@app/screens/Borrow/CreditLine/CreditLineHome/components/CreditLineHomeTray.tsx": 1,
         "@app/screens/Borrow/CreditLine/CreditLineHome/components/TransactionsSection.tsx": 1,
-        "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 2,
         "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 2,
         "@app/screens/CoinbaseCard/Transactions/components/list/TransactionStatus.tsx": 1,
+        "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 2,
         "@app/screens/FiatTransfer/Withdraw/WithdrawPaymentSelectorScreen/components/WithdrawPaymentMethodCellDetail.tsx": 2,
         "@app/screens/Home/components/Loyalty/components/CompletedLoyaltyProgressContent.tsx": 1,
         "@app/screens/Home/components/Loyalty/components/EarnedTitle.tsx": 1,
@@ -421,15 +421,15 @@
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Support/CardSupportScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/AppleGooglePayStatusScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
           "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
+          "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
           "@app/screens/Defi/DAppTransaction/DAppTransactionStatus.tsx": 1,
-          "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1,
           "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 1,
@@ -516,9 +516,9 @@
           "@app/screens/Sweepstakes/cms/Components/HeroContent.tsx": 1,
           "@app/screens/Borrow/CreditLine/CreditLineHome/components/CreditLineHomeTray.tsx": 1,
           "@app/screens/Borrow/CreditLine/CreditLineHome/components/TransactionsSection.tsx": 1,
-          "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 2,
           "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/components/list/TransactionStatus.tsx": 1,
+          "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 2,
           "@app/screens/FiatTransfer/Withdraw/WithdrawPaymentSelectorScreen/components/WithdrawPaymentMethodCellDetail.tsx": 1,
           "@app/screens/Home/components/Loyalty/components/CompletedLoyaltyProgressContent.tsx": 1,
           "@app/screens/Home/components/Loyalty/components/IncompleteLoyaltyProgressContent.tsx": 1,
@@ -799,8 +799,8 @@
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Support/CardSupportScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/AppleGooglePayStatusScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
           "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
@@ -862,8 +862,8 @@
           "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberInputScreen.tsx": 1,
           "@app/screens/SignIn/screens/DeviceConfirmationScreen/DeviceConfirmationScreen.tsx": 2,
           "@app/screens/Borrow/CreditLine/CreditLineHome/components/CreditLineHomeTray.tsx": 1,
-          "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 2,
           "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1,
+          "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 2,
           "@app/screens/Home/components/Loyalty/components/CompletedLoyaltyProgressContent.tsx": 1,
           "@app/screens/Home/components/Loyalty/components/EarnedTitle.tsx": 1,
           "@app/screens/Home/components/Loyalty/components/IncompleteLoyaltyProgressContent.tsx": 1,
@@ -1047,7 +1047,7 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
-      "totalInstances": 314,
+      "totalInstances": 316,
       "totalCallSites": 199,
       "cds": "@cbhq/cds-mobile/layout/HStack",
       "aliasedCdsComponents": [
@@ -1189,10 +1189,10 @@
         {
           "aliasPath": "@app/screens/Sweepstakes/cms/Components/Footer.tsx",
           "callSites": [
-            "@app/screens/Support/SupportScreen.tsx",
             "@app/screens/Sweepstakes/SweepstakesOptedInScreen.tsx",
             "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx",
-            "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx"
+            "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx",
+            "@app/screens/Support/SupportScreen.tsx"
           ]
         },
         {
@@ -1314,7 +1314,7 @@
         "@app/screens/Defi/DAppMarketplaceSearch.tsx": 1,
         "@app/screens/Defi/DAppOnboardingScreen.tsx": 1,
         "@app/screens/Defi/DAppReceiveScreen.tsx": 1,
-        "@app/screens/Defi/DAppWalletScreen.tsx": 2,
+        "@app/screens/Defi/DAppWalletScreen.tsx": 3,
         "@app/screens/Defi/ReadonlyRating.tsx": 1,
         "@app/screens/Invite/InviteCard.tsx": 1,
         "@app/screens/Loyalty/LoyaltyAdvancedTaskLayout.tsx": 2,
@@ -1329,7 +1329,7 @@
         "@app/screens/Remittances/RemittancePartnerCard.tsx": 1,
         "@app/screens/Remittances/RemittanceReceiptHeader.tsx": 1,
         "@app/screens/Remittances/RemittancesSenderWelcomeScreen.tsx": 1,
-        "@app/screens/Send/GiftRevealScreen.tsx": 1,
+        "@app/screens/Send/GiftRevealScreen.tsx": 2,
         "@app/screens/Send/GiftingInterstitialScreen.tsx": 1,
         "@app/screens/Send/SendConfirmScreen.tsx": 5,
         "@app/screens/Send/SendConfirmScreenV2.tsx": 3,
@@ -1387,9 +1387,9 @@
         "@app/screens/Defi/DAppDetail/DAppDetail.tsx": 2,
         "@app/screens/Defi/DAppDetail/DAppDetailScreen.tsx": 1,
         "@app/screens/Defi/DAppDetail/Ratings.tsx": 6,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionStatus.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 4,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionStatus.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
         "@app/screens/Defi/Transfer/TransferCell.tsx": 3,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentRateDetailsTray.tsx": 1,
@@ -1407,8 +1407,8 @@
         "@app/screens/Loyalty/components/LoyaltyCardExtendedWithTasks.tsx": 2,
         "@app/screens/Loyalty/components/LoyaltyModal.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
-        "@app/screens/Prices/components/PricesScreenSearchBar.tsx": 1,
         "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 3,
+        "@app/screens/Prices/components/PricesScreenSearchBar.tsx": 1,
         "@app/screens/Receive/components/AddressInlineWarning.tsx": 1,
         "@app/screens/Recurring/components/RecurringDeleteTransactionTray.tsx": 1,
         "@app/screens/Remittances/components/ExpiredNotificationCard.tsx": 1,
@@ -1576,8 +1576,8 @@
           "@app/screens/CoinbaseCard/components/RecurringBuyUpsellCard.tsx": 1,
           "@app/screens/Defi/DAppDetail/DAppDetail.tsx": 1,
           "@app/screens/Defi/DAppDetail/Ratings.tsx": 2,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionStatus.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 3,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionStatus.tsx": 1,
           "@app/screens/Defi/Transfer/TransferCell.tsx": 3,
           "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 1,
           "@app/screens/DirectDeposit/components/AccountDetails.tsx": 1,
@@ -1585,8 +1585,8 @@
           "@app/screens/ForYou/components/ForYouFeedCard.tsx": 1,
           "@app/screens/Invite/components/InviteCopyLink.tsx": 1,
           "@app/screens/Loyalty/components/LoyaltyCardExtendedWithTasks.tsx": 1,
-          "@app/screens/Prices/components/PricesScreenSearchBar.tsx": 1,
           "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
+          "@app/screens/Prices/components/PricesScreenSearchBar.tsx": 1,
           "@app/screens/Remittances/components/ExpiredNotificationCard.tsx": 1,
           "@app/screens/Remittances/components/NotificationCard.tsx": 1,
           "@app/screens/Remittances/components/RemittancesCard.tsx": 1,
@@ -1681,7 +1681,7 @@
           "@app/screens/Defi/DAppCard.tsx": 1,
           "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 1,
           "@app/screens/Remittances/RemittanceCardCells.tsx": 1,
-          "@app/screens/Send/GiftRevealScreen.tsx": 1,
+          "@app/screens/Send/GiftRevealScreen.tsx": 2,
           "@app/screens/Send/SendConfirmScreenV2.tsx": 3,
           "@app/screens/YieldCenter/DefiBoostPromotion.tsx": 1,
           "@app/screens/YieldCenter/HeaderSection.tsx": 1,
@@ -1810,7 +1810,6 @@
           "@app/screens/Home/components/Learn/LearnSection.tsx": 1,
           "@app/screens/Send/components/ContactsList/ContactsList.tsx": 1,
           "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedTradeTrayHeader.tsx": 1,
-          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Form/AvailableBalanceRow.tsx": 1,
           "@app/screens/Borrow/CreditLine/CreditLineHome/components/AvailableToBorrowFooter.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/components/details/DetailHeader.tsx": 1,
           "@app/screens/Home/components/Loyalty/components/CompletedLoyaltyProgressContent.tsx": 1,
@@ -1865,6 +1864,7 @@
         "spacingVertical": {
           "@app/components/PaymentMethod/DepositExplanationHStack.tsx": 1,
           "@app/components/Transfer/SelectedPaymentMethodCell.tsx": 1,
+          "@app/screens/Defi/DAppWalletScreen.tsx": 1,
           "@app/screens/Loyalty/LoyaltyAdvancedTaskLayout.tsx": 1,
           "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 1,
           "@app/screens/Onboarding/OnboardingIncentiveScreen.tsx": 1,
@@ -2054,7 +2054,7 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 746,
+      "totalInstances": 747,
       "totalCallSites": 417,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "aliasedCdsComponents": [
@@ -2137,6 +2137,7 @@
             "@app/screens/CoinbaseCard/Settings/components/LockCardInfoTray.tsx",
             "@app/screens/Defi/Send/components/RecipientFieldInput.tsx",
             "@app/screens/Send/components/RecipientFieldInput/RecipientFieldInput.tsx",
+            "@app/screens/AdvancedTrading/MarketDetails/BuySell/Form/AdvancedOrderFormFields.tsx",
             "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx"
           ]
         },
@@ -2297,21 +2298,21 @@
           ]
         },
         {
+          "aliasPath": "@app/components/AssetCategories/AssetCategoriesList/AssetCategoriesList.tsx",
+          "callSites": [
+            "@app/screens/AssetCategories/AssetCategoriesListScreen/AssetCategoriesListScreen.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@app/components/AssetCategories/AssetCategoriesList/AssetCategoriesList.tsx",
+          "callSites": [
+            "@app/screens/AssetCategories/AssetCategoriesListScreen/AssetCategoriesListScreen.tsx"
+          ]
+        },
+        {
           "aliasPath": "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx",
           "callSites": [
             "@app/screens/AssetCategories/AssetCategoryDetailsScreen/AssetCategoryDetailsScreen.tsx"
-          ]
-        },
-        {
-          "aliasPath": "@app/components/AssetCategories/AssetCategoriesList/AssetCategoriesList.tsx",
-          "callSites": [
-            "@app/screens/AssetCategories/AssetCategoriesListScreen/AssetCategoriesListScreen.tsx"
-          ]
-        },
-        {
-          "aliasPath": "@app/components/AssetCategories/AssetCategoriesList/AssetCategoriesList.tsx",
-          "callSites": [
-            "@app/screens/AssetCategories/AssetCategoriesListScreen/AssetCategoriesListScreen.tsx"
           ]
         },
         {
@@ -2754,8 +2755,8 @@
         "@app/screens/AppToApp/AppToAppScreen.tsx": 1,
         "@app/screens/AppTrackingTransparencyPrompt/AppTrackingTransparencyPrompt.tsx": 1,
         "@app/screens/Asset/AssetScreen.tsx": 5,
-        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 2,
         "@app/screens/AssetsTab/AssetsScreen.tsx": 2,
+        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 2,
         "@app/screens/BuyPresetAmounts/AssetSelectorPanel.tsx": 1,
         "@app/screens/BuyPresetAmounts/BuyPresetAmountsPanel.tsx": 1,
         "@app/screens/BuyPresetAmounts/BuyPresetAmountsScreen.tsx": 1,
@@ -2791,7 +2792,7 @@
         "@app/screens/Defi/DAppMarketplaceScreen.tsx": 1,
         "@app/screens/Defi/DAppMarketplaceSearch.tsx": 1,
         "@app/screens/Defi/DAppReceiveScreen.tsx": 3,
-        "@app/screens/Defi/DAppWalletScreen.tsx": 3,
+        "@app/screens/Defi/DAppWalletScreen.tsx": 4,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 3,
         "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1,
         "@app/screens/FiatTransfer/FiatTransferPreviewScreen.tsx": 1,
@@ -2834,9 +2835,9 @@
         "@app/screens/Send/SendSelectRecipientScreenV2.tsx": 1,
         "@app/screens/Settings/SettingsApplePayScreen.tsx": 1,
         "@app/screens/Settings/SettingsGooglePayScreen.tsx": 1,
-        "@app/screens/Support/SupportWebViewScreen.tsx": 1,
         "@app/screens/Sweepstakes/SweepstakesOptedInScreen.tsx": 1,
         "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx": 2,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1,
         "@app/screens/TradeTab/TradeScreen.tsx": 1,
         "@app/screens/TradeTabV2/TradeScreen.tsx": 2,
         "@app/screens/TransactionDetails/TransactionDetailsScreen.tsx": 1,
@@ -2848,8 +2849,8 @@
         "@app/components/AccountChecklist/AccountChecklistBanner/NuxAnimation.tsx": 1,
         "@app/components/AccountChecklist/AccountChecklistCard/AccountChecklistCard.tsx": 3,
         "@app/components/AccountChecklist/SecondaryActions/SecondaryActions.tsx": 2,
-        "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1,
         "@app/components/AssetCategories/AssetCategoriesList/AssetCategoriesList.tsx": 2,
+        "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1,
         "@app/components/AssetCategories/AssetCategoryEntrypointItem/AssetCategoryEntrypointItem.tsx": 4,
         "@app/components/AssetCategories/AssetCategoryMoreInfo/AssetCategoryMoreInfo.tsx": 3,
         "@app/components/AssetCategories/SortableAssets/SortableAssets.tsx": 1,
@@ -2933,11 +2934,11 @@
         "@app/screens/CoinbaseCard/SelectAsset/CardSpendableAssetScreen.tsx": 1,
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
-        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 3,
         "@app/screens/CoinbaseCard/Transactions/CardTransactionsList.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 2,
         "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 2,
+        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/ActiveCard.tsx": 2,
         "@app/screens/CoinbaseCard/components/BillingAddressFields.tsx": 2,
         "@app/screens/CoinbaseCard/components/CardDisclaimer.tsx": 1,
@@ -2948,21 +2949,21 @@
         "@app/screens/Defi/DAppDetail/DAppDetail.tsx": 4,
         "@app/screens/Defi/DAppDetail/Ratings.tsx": 5,
         "@app/screens/Defi/DAppDetail/SimilarDApps.tsx": 2,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 4,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 5,
         "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 2,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 4,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
         "@app/screens/Defi/Transfer/TransferCell.tsx": 4,
         "@app/screens/DefiBoost/components/DefiBoostLegalDisclosureCell.tsx": 1,
         "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 2,
         "@app/screens/DirectDeposit/AssetSelect/AssetOrCurrencyList.tsx": 1,
         "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 2,
-        "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
         "@app/screens/DirectDeposit/AutomaticSetup/AutomaticSetupScreen.tsx": 1,
+        "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
         "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 3,
         "@app/screens/DirectDeposit/ManualSetup/ManualSetup.tsx": 3,
         "@app/screens/DirectDeposit/Setup/SetupScreen.tsx": 2,
@@ -2999,9 +3000,9 @@
         "@app/screens/PolicyRestrictions/components/FailedRestriction.tsx": 2,
         "@app/screens/PolicyRestrictions/components/IdvRestriction.tsx": 2,
         "@app/screens/PolicyRestrictions/components/PendingRestriction.tsx": 2,
+        "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 2,
         "@app/screens/Prices/components/PricesList.tsx": 2,
         "@app/screens/Prices/components/PricesListScene.tsx": 1,
-        "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 2,
         "@app/screens/Receive/components/AddressWarning.tsx": 2,
         "@app/screens/Receive/components/CopyableFields.tsx": 1,
         "@app/screens/Recurring/components/RecurringDeleteTransactionTray.tsx": 1,
@@ -3222,11 +3223,11 @@
           "@app/screens/CoinbaseCard/Issuance/SpendUSDOrCryptoScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionsList.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/RecurringBuyUpsellCard.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Transfer/TransferCell.tsx": 2,
           "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 1,
           "@app/screens/ETH2/Staking/Eth2StakingWarningScreen.tsx": 1,
@@ -3339,8 +3340,8 @@
           "@app/screens/CoinbaseCard/KillSwitch/KillSwitchScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 2,
           "@app/screens/CoinbaseCard/components/RecurringBuyUpsellCard.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 3,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
           "@app/screens/Defi/Transfer/TransferCell.tsx": 1,
           "@app/screens/DirectDeposit/Setup/SetupScreen.tsx": 1,
           "@app/screens/ForYou/components/ForYouFeedCard.tsx": 1,
@@ -3518,9 +3519,9 @@
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
           "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/Defi/DAppDetail/Ratings.tsx": 3,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/Notifications/NotificationPrompt/NotificationsPromptScreen.tsx": 1,
           "@app/screens/Notifications/components/NotificationsEmptyState.tsx": 1,
@@ -3689,8 +3690,8 @@
           "@app/screens/AddPaymentMethod/AddPaymentMethodScreen.tsx": 1,
           "@app/screens/AppToApp/AppToAppScreen.tsx": 1,
           "@app/screens/Asset/AssetScreen.tsx": 2,
-          "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
           "@app/screens/AssetsTab/AssetsScreen.tsx": 2,
+          "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
           "@app/screens/BuyPresetAmounts/BuyPresetAmountsPanel.tsx": 1,
           "@app/screens/Debug/DebugDesignSystemScreen.tsx": 2,
           "@app/screens/DefiBoost/DefiBoostEnrollmentTermsScreen.tsx": 1,
@@ -3699,7 +3700,7 @@
           "@app/screens/Loyalty/LoyaltyIdvScreen.tsx": 1,
           "@app/screens/Portfolio/PortfolioScreen.tsx": 1,
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 2,
           "@app/components/AssetCategories/AssetCategoryMoreInfo/AssetCategoryMoreInfo.tsx": 2,
           "@app/components/Headers/components/IncentiveBannerButton.tsx": 1,
           "@app/screens/Account/components/AccountHeader.tsx": 1,
@@ -3716,9 +3717,9 @@
           "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/BillingAddressFields.tsx": 1,
           "@app/screens/CoinbaseCard/components/IssuanceFields.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 2,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 2,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 2,
           "@app/screens/ForYou/components/CategoryFeedScene.tsx": 1,
@@ -3821,7 +3822,7 @@
           "@app/screens/Debug/DebugDesignSystemScreen.tsx": 1,
           "@app/screens/Defi/DAppMarketplaceScreen.tsx": 1,
           "@app/screens/Defi/DAppReceiveScreen.tsx": 1,
-          "@app/screens/Defi/DAppWalletScreen.tsx": 1,
+          "@app/screens/Defi/DAppWalletScreen.tsx": 2,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
           "@app/screens/FiatTransfer/FiatTransferPreviewScreen.tsx": 1,
           "@app/screens/Loyalty/LoyaltyAdvancedTaskLayout.tsx": 1,
@@ -3873,10 +3874,10 @@
           "@app/screens/CoinbaseCard/Issuance/SpendUSDOrCryptoScreen.tsx": 1,
           "@app/screens/CoinbaseCard/MobileWallet/MobileWalletIntroScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 3,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionsList.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/Defi/DAppDetail/DAppDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
@@ -3887,9 +3888,9 @@
           "@app/screens/Loyalty/components/LoyaltyCardExtendedWithTasks.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 3,
           "@app/screens/PaymentMethods/Relink/RelinkBankAccountLandingScreen.tsx": 1,
+          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
           "@app/screens/Prices/components/PricesList.tsx": 2,
           "@app/screens/Prices/components/PricesListScene.tsx": 1,
-          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
           "@app/screens/Send/components/NotesCell.tsx": 1,
           "@app/screens/Trade/Sell/SellPreviewScreen.tsx": 1,
           "@app/screens/Trade/Sell/SellPreviewScreenDeprecated.tsx": 1,
@@ -4069,8 +4070,8 @@
           "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
           "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 1,
           "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 1,
-          "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
           "@app/screens/DirectDeposit/AutomaticSetup/AutomaticSetupScreen.tsx": 1,
+          "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
           "@app/screens/DirectDeposit/ManualSetup/ManualSetup.tsx": 1,
           "@app/screens/DirectDeposit/Setup/SetupScreen.tsx": 1,
           "@app/screens/DirectDeposit/Success/SuccessScreen.tsx": 1,
@@ -4134,9 +4135,9 @@
           "@app/screens/CoinbaseCard/Issuance/IssuanceAddressScreen.tsx": 3,
           "@app/screens/CoinbaseCard/Issuance/IssuanceFundCardScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 2,
           "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 2,
           "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 1,
           "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 3,
           "@app/screens/DirectDeposit/ManualSetup/ManualSetup.tsx": 1,
@@ -4625,9 +4626,9 @@
         "@app/screens/Loyalty/components/LoyaltyModal.tsx": 3,
         "@app/screens/Loyalty/components/LoyaltyTray.tsx": 1,
         "@app/screens/PaymentMethods/Zengin/ZenginEnterAccountNumberScreen.tsx": 2,
+        "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 3,
         "@app/screens/Prices/components/AnimatedSearchTitle.tsx": 1,
         "@app/screens/Prices/components/PricesTitle.tsx": 3,
-        "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 3,
         "@app/screens/Recurring/components/RecurringBuyTutorialCell.tsx": 1,
         "@app/screens/Remittances/components/RemittancesCard.tsx": 1,
         "@app/screens/Send/components/NotesCell.tsx": 1,
@@ -4769,8 +4770,8 @@
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/DirectDeposit/components/ListCell.tsx": 1,
-          "@app/screens/Prices/components/PricesTitle.tsx": 1,
           "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
+          "@app/screens/Prices/components/PricesTitle.tsx": 1,
           "@app/screens/AssetsTab/components/AssetsAnnouncement/AssetsAnnouncementCard.tsx": 1,
           "@app/screens/AssetsTab/components/Watchlist/AssetsWatchListSection.tsx": 1,
           "@app/screens/Home/components/Recommendations/RecommendationCard.tsx": 1,
@@ -4792,8 +4793,8 @@
           "@app/screens/Borrow/CollateralChange/CollateralChangeStatusScreen.tsx": 1,
           "@app/screens/Borrow/MakePayment/MakePaymentStatusScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
-          "@app/screens/Prices/components/AnimatedSearchTitle.tsx": 1,
-          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1
+          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
+          "@app/screens/Prices/components/AnimatedSearchTitle.tsx": 1
         },
         "spacingTop": {
           "@app/screens/Clawback/ClawbackViewAllScreen.tsx": 1,
@@ -4851,13 +4852,14 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 346,
+      "totalInstances": 347,
       "totalCallSites": 211,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "aliasedCdsComponents": [
         {
           "aliasPath": "@app/components/NotificationsBell.tsx",
           "callSites": [
+            "@app/components/NotificationsBell.tsx",
             "@app/components/NotificationsBell.tsx",
             "@app/components/TabRootScreen.tsx"
           ]
@@ -5004,14 +5006,14 @@
             "@app/screens/GlobalTrade/AssetSelector/hooks/useGetComponent.tsx"
           ]
         },
+        {
+          "aliasPath": "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx",
+          "callSites": ["@app/screens/Portfolio/PortfolioScreen.tsx"]
+        },
         { "aliasPath": "@app/screens/Prices/components/AnimatedSearchTitle.tsx", "callSites": [] },
         {
           "aliasPath": "@app/screens/Prices/components/PricesScreenSearchBar.tsx",
           "callSites": ["@app/screens/Prices/PricesScreen.tsx"]
-        },
-        {
-          "aliasPath": "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx",
-          "callSites": ["@app/screens/Portfolio/PortfolioScreen.tsx"]
         },
         {
           "aliasPath": "@app/screens/Remittances/components/ExpiredNotificationCard.tsx",
@@ -5069,10 +5071,10 @@
         {
           "aliasPath": "@app/screens/Sweepstakes/cms/Components/Footer.tsx",
           "callSites": [
-            "@app/screens/Support/SupportScreen.tsx",
             "@app/screens/Sweepstakes/SweepstakesOptedInScreen.tsx",
             "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx",
-            "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx"
+            "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx",
+            "@app/screens/Support/SupportScreen.tsx"
           ]
         },
         {
@@ -5197,10 +5199,10 @@
         "@app/screens/Remittances/RemittancePartnerCard.tsx": 3,
         "@app/screens/Remittances/RemittanceReceivedCryptoScreen.tsx": 4,
         "@app/screens/Remittances/RemittancesSenderWelcomeScreen.tsx": 3,
-        "@app/screens/Send/GiftRevealScreen.tsx": 7,
+        "@app/screens/Send/GiftRevealScreen.tsx": 8,
         "@app/screens/Send/GiftingInterstitialScreen.tsx": 1,
-        "@app/screens/Support/SupportScreen.tsx": 1,
         "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx": 2,
+        "@app/screens/Support/SupportScreen.tsx": 1,
         "@app/screens/TransactionDetails/TransactionDetailsScreen.tsx": 1,
         "@app/screens/YieldCenter/AllAssetsOwnedSection.tsx": 1,
         "@app/screens/YieldCenter/AssetAPYCard.tsx": 3,
@@ -5251,10 +5253,10 @@
         "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 5,
         "@app/screens/CoinbaseCard/components/RecurringBuyUpsellCard.tsx": 2,
         "@app/screens/Defi/DAppDetail/DAppDetail.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionCell.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 2,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionCell.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
         "@app/screens/Defi/Transfer/TransferCell.tsx": 1,
         "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 2,
         "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 2,
@@ -5272,12 +5274,12 @@
         "@app/screens/PolicyRestrictions/components/FailedRestriction.tsx": 1,
         "@app/screens/PolicyRestrictions/components/IdvRestriction.tsx": 1,
         "@app/screens/PolicyRestrictions/components/PendingRestriction.tsx": 1,
+        "@app/screens/Portfolio/components/ChartFallback.tsx": 2,
+        "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 2,
         "@app/screens/Prices/components/AnimatedSearchTitle.tsx": 1,
         "@app/screens/Prices/components/PricesHeader.tsx": 1,
         "@app/screens/Prices/components/PricesScreenSearchBar.tsx": 2,
         "@app/screens/Prices/components/PricesTitle.tsx": 1,
-        "@app/screens/Portfolio/components/ChartFallback.tsx": 2,
-        "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 2,
         "@app/screens/Recurring/components/RecurringSection.tsx": 1,
         "@app/screens/Remittances/components/ExpiredNotificationCard.tsx": 1,
         "@app/screens/Remittances/components/NotificationCard.tsx": 1,
@@ -5317,9 +5319,9 @@
         "@app/screens/Home/components/Learn/LearnSection.tsx": 1,
         "@app/screens/Home/components/Recommendations/RecommendationCard.tsx": 3,
         "@app/screens/Lend/LendWaitlist/components/LegalDisclosureCell.tsx": 1,
+        "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
         "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
         "@app/screens/Send/components/ContactsList/ContactsList.tsx": 1,
-        "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
         "@app/screens/Send/components/Gifting/AddACard.tsx": 1,
         "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 2,
         "@app/screens/Sweepstakes/cms/Components/Footer.tsx": 1,
@@ -5396,6 +5398,7 @@
           "@app/screens/Remittances/RemittanceCardCells.tsx": 1,
           "@app/screens/Remittances/RemittanceNetworkSelectionScreen.tsx": 1,
           "@app/screens/Remittances/RemittancesSenderWelcomeScreen.tsx": 2,
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
           "@app/screens/YieldCenter/AssetAPYCard.tsx": 1,
           "@app/screens/YieldCenter/UnearnedSection.tsx": 1,
           "@app/screens/AssetInfo/compoments/SentimentSurveyCard.tsx": 1,
@@ -5439,8 +5442,8 @@
           "@app/screens/Tutorial/components/TutorialFullscreenLoader.tsx": 1,
           "@app/screens/Home/components/Learn/LearnSection.tsx": 1,
           "@app/screens/Home/components/Recommendations/RecommendationCard.tsx": 1,
-          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
+          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/Send/components/Gifting/AddACard.tsx": 1,
           "@app/screens/TradeTab/components/SearchBar/AnimatedSearchBarIllusion.tsx": 1,
           "@app/screens/TradeTab/components/SearchBar/TradeSearchBar.tsx": 1,
@@ -5603,16 +5606,16 @@
           "@app/screens/Defi/DAppDetail/DAppDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
           "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 1,
+          "@app/screens/Portfolio/components/ChartFallback.tsx": 1,
           "@app/screens/Prices/components/AnimatedSearchTitle.tsx": 1,
           "@app/screens/Prices/components/PricesHeader.tsx": 1,
           "@app/screens/Prices/components/PricesTitle.tsx": 1,
-          "@app/screens/Portfolio/components/ChartFallback.tsx": 1,
           "@app/screens/Remittances/components/RemittancesCard.tsx": 2,
           "@app/screens/Trade/components/TradeInputHeader.tsx": 1,
           "@app/screens/Home/components/Learn/LearnSection.tsx": 1,
           "@app/screens/Home/components/Recommendations/RecommendationCard.tsx": 1,
-          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
+          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/TradeTab/components/SearchBar/AnimatedSearchBarIllusion.tsx": 2,
           "@app/screens/TradeTab/components/SearchBar/AnimatedSearchBarIllusionRightBorder.tsx": 1,
           "@app/screens/TradeTabV2/components/SearchBar/AnimatedSearchBarIllusion.tsx": 2,
@@ -5675,8 +5678,8 @@
           "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 3,
           "@app/screens/Trade/Buy/BuyPreviewScreen.tsx": 1,
           "@app/screens/Trade/Buy/BuyPreviewScreenDeprecated.tsx": 1,
-          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
+          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/Send/components/Gifting/AddACard.tsx": 1,
           "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1
         },
@@ -5689,16 +5692,17 @@
           "@app/components/ShareTray/PortfolioShareCard.tsx": 1,
           "@app/screens/Debug/DebugShareScreen.tsx": 1,
           "@app/screens/Defi/DAppMarketplaceSearch.tsx": 1,
-          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
           "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1,
           "@app/components/AssetCategories/AssetCategoryIcon/AssetCategoryIcon.tsx": 1,
           "@app/components/DappBrowser/ConfirmationDialog/ConfirmPayment.tsx": 1,
           "@app/components/ShareTray/components/ShareableContentContainer.tsx": 1,
           "@app/screens/AdvancedTrading/Orders/HistoricalOrdersTabContent.tsx": 1,
           "@app/screens/AdvancedTrading/Orders/OpenOrdersTabContent.tsx": 1,
+          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
           "@app/screens/Prices/components/PricesHeader.tsx": 1,
           "@app/screens/Prices/components/PricesTitle.tsx": 1,
-          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
           "@app/screens/Send/components/NotesCell.tsx": 1,
           "@app/screens/Trade/Buy/BuyPreviewScreen.tsx": 1,
           "@app/screens/Trade/Buy/BuyPreviewScreenDeprecated.tsx": 1,
@@ -5773,8 +5777,8 @@
           "@app/screens/Remittances/components/NotificationCard.tsx": 1,
           "@app/screens/Remittances/components/PendingCard.tsx": 1,
           "@app/screens/Remittances/components/TradeInputWithRemittance.tsx": 1,
-          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
+          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
           "@app/screens/ReferralHub/screens/InviteScreen/components/CopyYourLink/CopyYourLink.tsx": 1,
           "@app/screens/ReferralHub/screens/InviteScreen/components/Hero/HeroTermsTray.tsx": 1,
           "@app/screens/ReferralHub/screens/InviteScreen/components/MoreWaysToShare/components/Icons.tsx": 2
@@ -5931,7 +5935,7 @@
           "@app/screens/Remittances/RemittancePartnerCard.tsx": 1,
           "@app/screens/Remittances/RemittanceReceivedCryptoScreen.tsx": 1,
           "@app/screens/Remittances/RemittancesSenderWelcomeScreen.tsx": 1,
-          "@app/screens/Send/GiftRevealScreen.tsx": 1,
+          "@app/screens/Send/GiftRevealScreen.tsx": 2,
           "@app/components/ShareTray/components/ShareDisabled.tsx": 1,
           "@app/components/ShareTray/components/ShareableContentContainer.tsx": 1,
           "@app/screens/Borrow/Autopay/AutopayGetStartedScreen.tsx": 1,
@@ -5943,8 +5947,8 @@
           "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 1,
           "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 1,
-          "@app/screens/Prices/components/PricesScreenSearchBar.tsx": 1,
           "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
+          "@app/screens/Prices/components/PricesScreenSearchBar.tsx": 1,
           "@app/screens/Remittances/components/RemittanceLearnMoreContent.tsx": 2,
           "@app/screens/Remittances/components/RemittancesCard.tsx": 2,
           "@app/screens/Remittances/components/TradeInputWithRemittance.tsx": 1,
@@ -6093,7 +6097,10 @@
         },
         {
           "aliasPath": "@app/components/Transaction/TransactionSubscriptionFeeCell.tsx",
-          "callSites": ["@app/screens/Debug/DebugSubscriptionTradeUpsells.tsx"]
+          "callSites": [
+            "@app/screens/Debug/DebugSubscriptionTradeUpsells.tsx",
+            "@app/screens/Trade/components/TradePreviewContentDeprecated.tsx"
+          ]
         },
         {
           "aliasPath": "@app/screens/Asset/components/LegalDisclaimer.tsx",
@@ -6222,8 +6229,8 @@
         "@app/screens/Loyalty/components/LoyaltyEarnDescription.tsx": 2,
         "@app/screens/Loyalty/components/LoyaltyModal.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
-        "@app/screens/Prices/components/PricesList.tsx": 1,
         "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
+        "@app/screens/Prices/components/PricesList.tsx": 1,
         "@app/screens/Remittances/components/PressableListCell.tsx": 1,
         "@app/screens/Remittances/components/RemittanceLearnMoreContent.tsx": 5,
         "@app/screens/Remittances/components/RemittancesCard.tsx": 1,
@@ -6319,8 +6326,8 @@
           "@app/screens/Loyalty/components/LoyaltyEarnDescription.tsx": 2,
           "@app/screens/Loyalty/components/LoyaltyModal.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
-          "@app/screens/Prices/components/PricesList.tsx": 1,
           "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1,
+          "@app/screens/Prices/components/PricesList.tsx": 1,
           "@app/screens/Remittances/components/RemittanceLearnMoreContent.tsx": 4,
           "@app/screens/Remittances/components/TradeInputWithRemittance.tsx": 1,
           "@app/screens/Settings/Privacy/PrivacyScreen.tsx": 1,
@@ -7165,8 +7172,8 @@
     {
       "name": "Button",
       "sourceFile": "@components/interactables/Button",
-      "totalInstances": 539,
-      "totalCallSites": 308,
+      "totalInstances": 538,
+      "totalCallSites": 307,
       "cds": "@components/interactables/Button",
       "aliasedCdsComponents": [
         {
@@ -7392,7 +7399,6 @@
         "@app/screens/AdvancedTrading/ActionableNavigationTitle.tsx": 1,
         "@app/screens/AppToApp/AppToAppScreen.tsx": 2,
         "@app/screens/AppTrackingTransparencyPrompt/AppTrackingTransparencyPrompt.tsx": 1,
-        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
         "@app/screens/BusinessBankingRedirect/BusinessBankingRedirect.tsx": 2,
         "@app/screens/BuyPresetAmounts/BuyPresetAmountsPanel.tsx": 2,
         "@app/screens/Clawback/ClawbackFailureScreen.tsx": 2,
@@ -7530,18 +7536,18 @@
         "@app/screens/CoinbaseCard/SelectAsset/CardSpendableAssetScreen.tsx": 1,
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
-        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 2,
         "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 1,
+        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 2,
         "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
         "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
         "@app/screens/Debug/components/FeatureExperiments.tsx": 1,
         "@app/screens/Defi/DAppDetail/OpenBrowserButton.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 3,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 3,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
         "@app/screens/DefiBoost/components/DefiBoostEnrollmentButton.tsx": 1,
         "@app/screens/DirectDeposit/AssetSelect/AssetOrCurrencyList.tsx": 1,
@@ -7637,9 +7643,9 @@
         "@app/screens/CoinbaseCard/Support/RequestNewCard/RequestNewCardSuccessScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Support/components/Info.tsx": 1,
-        "@app/screens/CoinbaseCard/Waitlist/components/WaitlistButton.tsx": 1,
         "@app/screens/CoinbaseCard/Webviews/activate/CardActivateStatusScreen.tsx": 2,
         "@app/screens/CoinbaseCard/Webviews/pin/CardPinSuccessScreen.tsx": 1,
+        "@app/screens/CoinbaseCard/Waitlist/components/WaitlistButton.tsx": 1,
         "@app/screens/ETH2/Staking/components/Eth2StakingAcceptTermsButton.tsx": 1,
         "@app/screens/ETH2/Staking/components/Eth2TradingUnavailableButton.tsx": 1,
         "@app/screens/ETH2/Staking/components/StakeStatus.tsx": 2,
@@ -7862,7 +7868,6 @@
           "@app/screens/AdvancedTrading/ActionableNavigationTitle.tsx": 1,
           "@app/screens/AppToApp/AppToAppScreen.tsx": 2,
           "@app/screens/AppTrackingTransparencyPrompt/AppTrackingTransparencyPrompt.tsx": 1,
-          "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
           "@app/screens/BusinessBankingRedirect/BusinessBankingRedirect.tsx": 2,
           "@app/screens/BuyPresetAmounts/BuyPresetAmountsPanel.tsx": 2,
           "@app/screens/Clawback/ClawbackFailureScreen.tsx": 2,
@@ -7998,18 +8003,18 @@
           "@app/screens/CoinbaseCard/SelectAsset/CardSpendableAssetScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 2,
           "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 2,
           "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
           "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
           "@app/screens/Debug/components/FeatureExperiments.tsx": 1,
           "@app/screens/Defi/DAppDetail/OpenBrowserButton.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 3,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 3,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/DefiBoost/components/DefiBoostEnrollmentButton.tsx": 1,
           "@app/screens/DirectDeposit/AssetSelect/AssetOrCurrencyList.tsx": 1,
@@ -8423,8 +8428,8 @@
           "@app/screens/Borrow/MakePayment/components/PaymentPreviewButton.tsx": 1,
           "@app/screens/CoinbaseCard/Support/RequestNewCard/RequestNewCardAddressScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/Waitlist/components/WaitlistButton.tsx": 1,
           "@app/screens/CoinbaseCard/Webviews/activate/CardActivateStatusScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/Waitlist/components/WaitlistButton.tsx": 1,
           "@app/screens/ETH2/Staking/components/Eth2TradingUnavailableButton.tsx": 1,
           "@app/screens/Lend/LendWaitlist/components/LendWaitlistCTAButtons.tsx": 3,
           "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberInputScreen.tsx": 1,
@@ -9003,8 +9008,8 @@
         "@app/screens/CoinbaseCard/SelectAsset/CardSpendableAssetScreen.tsx": 1,
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Support/CardSupportScreen.tsx": 1,
-        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 2,
+        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/ActiveCard.tsx": 1,
         "@app/screens/CoinbaseCard/components/AppleGooglePayStatusScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
@@ -9355,8 +9360,8 @@
           "@app/screens/CoinbaseCard/KillSwitch/KillSwitchScreen.tsx": 1,
           "@app/screens/CoinbaseCard/MobileWallet/MobileWalletIntroScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
           "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 1,
@@ -9666,8 +9671,8 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-mobile/typography/Link",
-      "totalInstances": 82,
-      "totalCallSites": 60,
+      "totalInstances": 83,
+      "totalCallSites": 61,
       "cds": "@cbhq/cds-mobile/typography/Link",
       "aliasedCdsComponents": [
         { "aliasPath": "@app/utils/addLinkToText.tsx", "callSites": [] },
@@ -9713,6 +9718,7 @@
         "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
         "@app/screens/Debug/DebugAccessibilityProtectionScreen.tsx": 2,
         "@app/screens/Defi/DAppReceiveScreen.tsx": 1,
+        "@app/screens/Defi/DAppWalletScreen.tsx": 1,
         "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 2,
         "@app/screens/Invite/InviteLayout.tsx": 1,
         "@app/screens/Loyalty/LoyaltyQuizScreen.tsx": 2,
@@ -9772,6 +9778,7 @@
           "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
           "@app/screens/Debug/DebugAccessibilityProtectionScreen.tsx": 2,
           "@app/screens/Defi/DAppReceiveScreen.tsx": 1,
+          "@app/screens/Defi/DAppWalletScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 2,
           "@app/screens/Invite/InviteLayout.tsx": 1,
           "@app/screens/Loyalty/LoyaltyQuizScreen.tsx": 2,
@@ -9816,6 +9823,7 @@
           "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
           "@app/screens/Debug/DebugAccessibilityProtectionScreen.tsx": 2,
           "@app/screens/Defi/DAppReceiveScreen.tsx": 1,
+          "@app/screens/Defi/DAppWalletScreen.tsx": 1,
           "@app/screens/DefiBoost/DefiBoostEnrollmentScreen.tsx": 1,
           "@app/screens/Invite/InviteLayout.tsx": 1,
           "@app/screens/Remittances/RemittanceReceivedCryptoScreen.tsx": 1,
@@ -9964,9 +9972,9 @@
         "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/InactiveCard.tsx": 1,
         "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 2,
         "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
         "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 1,
         "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 1,
         "@app/screens/DirectDeposit/ManualSetup/ManualSetup.tsx": 1,
@@ -10293,9 +10301,9 @@
         "@app/components/DappBrowser/ConfirmationDialog/ConfirmPayment.tsx": 1,
         "@app/components/DappBrowser/ConfirmationDialog/SignMessage.tsx": 1,
         "@app/screens/AssetsTab/hooks/usePortfolioCellInfo.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 2,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
         "@app/screens/Defi/Transfer/TransferCell.tsx": 1,
         "@app/screens/DirectDeposit/AssetSelect/AssetOrCurrencyList.tsx": 1,
         "@app/screens/ETH2/components/Eth2InformationBullet.tsx": 2,
@@ -10307,8 +10315,8 @@
         "@app/screens/Recurring/components/RecurringTransactionCell.tsx": 1,
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsFooter.tsx": 1,
         "@app/screens/CoinbaseCard/Rewards/components/RewardsListTray.tsx": 1,
-        "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
-        "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1
+        "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
+        "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1
       },
       "propsWithCallSites": {
         "type": {
@@ -10320,9 +10328,9 @@
           "@app/components/DappBrowser/ConfirmationDialog/ConfirmPayment.tsx": 1,
           "@app/components/DappBrowser/ConfirmationDialog/SignMessage.tsx": 1,
           "@app/screens/AssetsTab/hooks/usePortfolioCellInfo.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 2,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Transfer/TransferCell.tsx": 1,
           "@app/screens/DirectDeposit/AssetSelect/AssetOrCurrencyList.tsx": 1,
           "@app/screens/ETH2/components/Eth2InformationBullet.tsx": 2,
@@ -10334,8 +10342,8 @@
           "@app/screens/Recurring/components/RecurringTransactionCell.tsx": 1,
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsFooter.tsx": 1,
           "@app/screens/CoinbaseCard/Rewards/components/RewardsListTray.tsx": 1,
-          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1,
-          "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1
+          "@app/screens/Send/components/Clipboard/Clipboard.tsx": 1,
+          "@app/screens/Send/components/ContactsList/ContactIcon.tsx": 1
         },
         "source": {
           "@app/components/MarketCell.tsx": 1,
@@ -10344,8 +10352,8 @@
           "@app/components/DappBrowser/ConfirmationDialog/ConfirmPayment.tsx": 1,
           "@app/components/DappBrowser/ConfirmationDialog/SignMessage.tsx": 1,
           "@app/screens/AssetsTab/hooks/usePortfolioCellInfo.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/DirectDeposit/AssetSelect/AssetOrCurrencyList.tsx": 1,
           "@app/screens/ETH2/components/Eth2InformationBullet.tsx": 1,
           "@app/screens/Notifications/components/NotificationsList.tsx": 1,
@@ -12212,64 +12220,6 @@
   ],
   "presentational": [
     {
-      "name": "CardStatusAlertTray",
-      "sourceFile": "@app/components/Trays/CardStatusAlertTray",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "@designSystem/interactables/drawer/Tray",
-      "propsWithCallSites": {
-        "isVisible": { "@app/contexts/CardStatusContext.tsx": 1 },
-        "onDismiss": { "@app/contexts/CardStatusContext.tsx": 1 },
-        "cardStatus": { "@app/contexts/CardStatusContext.tsx": 1 },
-        "primaryButtonVariant": { "@app/contexts/CardStatusContext.tsx": 1 },
-        "paymentMethod": { "@app/contexts/CardStatusContext.tsx": 1 }
-      }
-    },
-    {
-      "name": "CardStatusAlertTrayDeprecated",
-      "sourceFile": "@app/components/Trays/CardStatusAlertTrayDeprecated",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalElement": "@designSystem/interactables/drawer/Tray",
-      "callSites": {
-        "@app/contexts/CardStatusContextDeprecated.tsx": 1,
-        "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
-        "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isVisible": {
-          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
-          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
-          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
-        },
-        "onDismiss": {
-          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
-          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
-          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
-        },
-        "cardStatus": {
-          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
-          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
-          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
-        },
-        "primaryButtonVariant": {
-          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
-          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
-          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
-        },
-        "paymentMethod": {
-          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
-          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
-          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
-        },
-        "secondaryButtonVariant": {
-          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
-          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
-        },
-        "onRemove": { "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1 }
-      }
-    },
-    {
       "name": "CdsAnnouncementCard",
       "sourceFile": "@app/components/AnnouncementCard.tsx",
       "totalInstances": 1,
@@ -12479,9 +12429,9 @@
       ],
       "callSites": {
         "@app/components/AuthenticatedWebView.tsx": 1,
-        "@app/contexts/Defi/DefiProvider.tsx": 1,
         "@app/components/Atomic/Atomic.tsx": 1,
         "@app/components/DappBrowser/DappBrowser.tsx": 1,
+        "@app/contexts/Defi/DefiProvider.tsx": 1,
         "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
         "@app/screens/Support/SupportWebViewScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1,
@@ -12492,17 +12442,17 @@
       "propsWithCallSites": {
         "ref": {
           "@app/components/AuthenticatedWebView.tsx": 1,
-          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/components/DappBrowser/DappBrowser.tsx": 1,
+          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1,
           "@app/screens/SignIn/screens/BrowserAuthScreen/BrowserAuthScreen.tsx": 1
         },
         "source": {
           "@app/components/AuthenticatedWebView.tsx": 1,
-          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/components/Atomic/Atomic.tsx": 1,
           "@app/components/DappBrowser/DappBrowser.tsx": 1,
+          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
           "@app/screens/Support/SupportWebViewScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1,
@@ -12559,8 +12509,8 @@
         },
         "startInLoadingState": {
           "@app/components/AuthenticatedWebView.tsx": 1,
-          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/components/DappBrowser/DappBrowser.tsx": 1,
+          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
           "@app/screens/Support/SupportWebViewScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1,
@@ -12581,9 +12531,9 @@
         },
         "onMessage": {
           "@app/components/AuthenticatedWebView.tsx": 1,
-          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/components/Atomic/Atomic.tsx": 1,
           "@app/components/DappBrowser/DappBrowser.tsx": 1,
+          "@app/contexts/Defi/DefiProvider.tsx": 1,
           "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1,
           "@app/screens/CoinbaseCard/Webviews/components/CardWebView.tsx": 1,
           "@app/screens/SignIn/screens/BrowserAuthScreen/BrowserAuthScreen.tsx": 1
@@ -12622,8 +12572,6 @@
           "@app/components/DappBrowser/DappBrowser.tsx": 1,
           "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1
         },
-        "onLoadEnd": { "@app/contexts/Defi/DefiProvider.tsx": 1 },
-        "containerStyle": { "@app/contexts/Defi/DefiProvider.tsx": 1 },
         "allowsBackForwardNavigationGestures": {
           "@app/components/Atomic/Atomic.tsx": 1,
           "@app/screens/SignIn/screens/BrowserAuthScreen/BrowserAuthScreen.tsx": 1
@@ -12642,6 +12590,8 @@
           "@app/components/DappBrowser/DappBrowser.tsx": 1
         },
         "setSupportMultipleWindows": { "@app/components/DappBrowser/DappBrowser.tsx": 1 },
+        "onLoadEnd": { "@app/contexts/Defi/DefiProvider.tsx": 1 },
+        "containerStyle": { "@app/contexts/Defi/DefiProvider.tsx": 1 },
         "automaticallyAdjustContentInsets": {
           "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
           "@app/screens/Support/SupportWebViewScreen.tsx": 1
@@ -12694,8 +12644,8 @@
         "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 1,
         "@app/components/Images/NoNotifications/index.tsx": 1,
         "@app/components/ShareTray/components/ShareableContent.tsx": 1,
-        "@app/components/Icons/UserWarnings/RewardsNotice/index.tsx": 1,
         "@app/components/Icons/PaymentMethod/QuickDeposit/index.tsx": 1,
+        "@app/components/Icons/UserWarnings/RewardsNotice/index.tsx": 1,
         "@app/screens/ReferralHub/screens/InviteScreen/components/MoreWaysToShare/components/Icons.tsx": 4
       },
       "propsWithCallSites": {
@@ -12711,14 +12661,14 @@
           "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 1,
           "@app/components/Images/NoNotifications/index.tsx": 1,
           "@app/components/ShareTray/components/ShareableContent.tsx": 1,
-          "@app/components/Icons/UserWarnings/RewardsNotice/index.tsx": 1,
           "@app/components/Icons/PaymentMethod/QuickDeposit/index.tsx": 1,
+          "@app/components/Icons/UserWarnings/RewardsNotice/index.tsx": 1,
           "@app/screens/ReferralHub/screens/InviteScreen/components/MoreWaysToShare/components/Icons.tsx": 4
         },
         "resizeMode": {
           "@app/components/Images/NoNotifications/index.tsx": 1,
-          "@app/components/Icons/UserWarnings/RewardsNotice/index.tsx": 1,
-          "@app/components/Icons/PaymentMethod/QuickDeposit/index.tsx": 1
+          "@app/components/Icons/PaymentMethod/QuickDeposit/index.tsx": 1,
+          "@app/components/Icons/UserWarnings/RewardsNotice/index.tsx": 1
         }
       }
     },
@@ -12781,6 +12731,64 @@
         "transparent": { "@app/components/QRCodeScanner/QRCodeScanner.tsx": 1 },
         "bordered": { "@app/components/QRCodeScanner/QRCodeScanner.tsx": 1 },
         "title": { "@app/components/QRCodeScanner/QRCodeScanner.tsx": 1 }
+      }
+    },
+    {
+      "name": "CardStatusAlertTray",
+      "sourceFile": "@app/components/Trays/CardStatusAlertTray",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "@designSystem/interactables/drawer/Tray",
+      "propsWithCallSites": {
+        "isVisible": { "@app/contexts/CardStatusContext.tsx": 1 },
+        "onDismiss": { "@app/contexts/CardStatusContext.tsx": 1 },
+        "cardStatus": { "@app/contexts/CardStatusContext.tsx": 1 },
+        "primaryButtonVariant": { "@app/contexts/CardStatusContext.tsx": 1 },
+        "paymentMethod": { "@app/contexts/CardStatusContext.tsx": 1 }
+      }
+    },
+    {
+      "name": "CardStatusAlertTrayDeprecated",
+      "sourceFile": "@app/components/Trays/CardStatusAlertTrayDeprecated",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalElement": "@designSystem/interactables/drawer/Tray",
+      "callSites": {
+        "@app/contexts/CardStatusContextDeprecated.tsx": 1,
+        "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
+        "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isVisible": {
+          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
+          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
+          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
+        },
+        "onDismiss": {
+          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
+          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
+          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
+        },
+        "cardStatus": {
+          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
+          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
+          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
+        },
+        "primaryButtonVariant": {
+          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
+          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
+          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
+        },
+        "paymentMethod": {
+          "@app/contexts/CardStatusContextDeprecated.tsx": 1,
+          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
+          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
+        },
+        "secondaryButtonVariant": {
+          "@app/components/Transfer/PaymentMethodSelector.tsx": 1,
+          "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1
+        },
+        "onRemove": { "@app/screens/Settings/components/SettingsPaymentMethodList.tsx": 1 }
       }
     },
     {
@@ -14430,6 +14438,7 @@
           "@app/screens/AdvancedTrading/DepthChart/DepthChartHighlightCursors.tsx": 2,
           "@app/utils/performance/components/Monitor.tsx": 2
         },
+        "placeholder": { "@app/screens/Send/SendEnterNoteScreen.tsx": 1 },
         "autoFocus": { "@app/screens/Send/SendEnterNoteScreen.tsx": 1 },
         "textAlignVertical": { "@app/screens/Send/SendEnterNoteScreen.tsx": 1 },
         "onChangeText": { "@app/screens/Send/SendEnterNoteScreen.tsx": 1 },
@@ -14797,10 +14806,10 @@
         "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 8,
         "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 3,
         "@app/screens/CoinbaseCard/Home/components/CardBalanceUnavailable.tsx": 1,
+        "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 7,
         "@app/screens/CoinbaseCard/Transactions/components/details/DisputeDetails.tsx": 3,
-        "@app/screens/CoinbaseCard/Transactions/components/details/RefundDetails.tsx": 2,
-        "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
+        "@app/screens/CoinbaseCard/Transactions/components/details/RefundDetails.tsx": 2
       },
       "propsWithCallSites": {
         "alignItems": { "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 7 },
@@ -14813,20 +14822,20 @@
           "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 8,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 3,
           "@app/screens/CoinbaseCard/Home/components/CardBalanceUnavailable.tsx": 1,
+          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 7,
           "@app/screens/CoinbaseCard/Transactions/components/details/DisputeDetails.tsx": 3,
-          "@app/screens/CoinbaseCard/Transactions/components/details/RefundDetails.tsx": 2,
-          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
+          "@app/screens/CoinbaseCard/Transactions/components/details/RefundDetails.tsx": 2
         },
         "onPress": { "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 8 },
         "accessory": { "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 1 },
         "accessorySpacing": { "@app/screens/MenuDrawer/MenuDrawerScreen.tsx": 1 },
         "detail": {
           "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 3,
+          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 7,
           "@app/screens/CoinbaseCard/Transactions/components/details/DisputeDetails.tsx": 3,
-          "@app/screens/CoinbaseCard/Transactions/components/details/RefundDetails.tsx": 2,
-          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
+          "@app/screens/CoinbaseCard/Transactions/components/details/RefundDetails.tsx": 2
         },
         "spacingHorizontal": {
           "@app/screens/CoinbaseCard/Home/components/CardBalanceUnavailable.tsx": 1
@@ -14947,6 +14956,31 @@
           "@app/screens/Send/components/DestinationTagFieldInput.tsx": 1,
           "@app/screens/Trade/components/TradePreviewContent.tsx": 1,
           "@app/screens/Trade/components/TradePreviewContentDeprecated.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ArtistBioTray",
+      "sourceFile": "@app/screens/Send/components/Gifting/ArtistBioTray",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "@designSystem/interactables/drawer/Tray",
+      "callSites": {
+        "@app/screens/Send/GiftRevealScreen.tsx": 1,
+        "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isVisible": {
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
+          "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1
+        },
+        "onDismiss": {
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
+          "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1
+        },
+        "content": {
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
+          "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1
         }
       }
     },
@@ -15550,14 +15584,6 @@
       }
     },
     {
-      "name": "SubHead",
-      "sourceFile": "@designSystem/navigation/header/SubHead",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/navigation/header/SubHead",
-      "propsWithCallSites": { "color": { "@app/screens/Prices/components/PricesHeader.tsx": 1 } }
-    },
-    {
       "name": "Path",
       "sourceFile": "react-native-svg/Path",
       "totalInstances": 4,
@@ -15631,6 +15657,14 @@
         "end": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 },
         "locations": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 }
       }
+    },
+    {
+      "name": "SubHead",
+      "sourceFile": "@designSystem/navigation/header/SubHead",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@designSystem/navigation/header/SubHead",
+      "propsWithCallSites": { "color": { "@app/screens/Prices/components/PricesHeader.tsx": 1 } }
     },
     {
       "name": "MissingDestinationTagWarningTray",
@@ -15873,18 +15907,6 @@
       }
     },
     {
-      "name": "ArtistBioTray",
-      "sourceFile": "@app/screens/Send/components/Gifting/ArtistBioTray",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "@designSystem/interactables/drawer/Tray",
-      "propsWithCallSites": {
-        "isVisible": { "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1 },
-        "onDismiss": { "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1 },
-        "content": { "@app/screens/Send/components/Gifting/GiftingCarouselScreen.tsx": 1 }
-      }
-    },
-    {
       "name": "AdvancedTradeExpirationTray",
       "sourceFile": "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedTradeExpirationTray",
       "totalInstances": 1,
@@ -16014,102 +16036,6 @@
     }
   ],
   "other": [
-    {
-      "name": "IntlProvider",
-      "sourceFile": "react-intl/IntlProvider",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 },
-      "propsWithCallSites": {
-        "locale": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 },
-        "defaultLocale": {
-          "@app/contexts/AppIntlProvider.tsx": 1,
-          "@app/screens/Onboarding.tsx": 1
-        },
-        "messages": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 },
-        "onError": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 }
-      }
-    },
-    {
-      "name": "ErrorTray",
-      "sourceFile": "@app/components/Trays/ErrorTray",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "@app/contexts/ErrorContext.tsx": 1,
-        "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
-        "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
-        "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isVisible": {
-          "@app/contexts/ErrorContext.tsx": 1,
-          "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
-          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
-        },
-        "onDismiss": {
-          "@app/contexts/ErrorContext.tsx": 1,
-          "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
-          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
-        },
-        "error": {
-          "@app/contexts/ErrorContext.tsx": 1,
-          "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
-          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TemporaryPusherToGraphqlUpdaterProvider",
-      "sourceFile": "@app/contexts/GraphqlProvider/TemporaryPusherToGraphqlUpdater/TemporaryPusherToGraphqlUpdaterProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ExperimentsProvider",
-      "sourceFile": "@app/utils/experiments/ExperimentsProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PerformanceRelay",
-      "sourceFile": "@app/utils/performance/vitals/PerformanceRelay",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "GraphqlExperimentSetter",
-      "sourceFile": "@app/contexts/GraphqlProvider/GraphqlProvider/GraphqlExperimentSetter",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SignedInThemeProvider",
-      "sourceFile": "@app/contexts/SignedInThemeProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "OfflineCacheUpdater",
-      "sourceFile": "@app/lib/rest-hooks/OfflineCache/OfflineCacheUpdater",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "CdsBetaProvider",
-      "sourceFile": "@app/system/display/CdsBetaProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SignedInThemeProviderContent",
-      "sourceFile": "@app/contexts/SignedInThemeProvider.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
     {
       "name": "CollateralCell",
       "sourceFile": "@app/components/CollateralCell",
@@ -16730,10 +16656,10 @@
         "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
         "@app/screens/ForYou/components/CategoryFeedScene.tsx": 1,
         "@app/screens/Notifications/components/NotificationsList.tsx": 2,
+        "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1,
         "@app/screens/Prices/components/PricesHeader.tsx": 1,
         "@app/screens/Prices/components/PricesListScene.tsx": 1,
         "@app/screens/Prices/components/PricesTitle.tsx": 1,
-        "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1,
         "@app/screens/Recurring/components/RecurringTransactionList.tsx": 1,
         "@app/screens/Remittances/components/RemittancesCard.tsx": 1,
         "@app/screens/Settings/components/RewardsPreferences.tsx": 1,
@@ -16830,10 +16756,10 @@
           "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 1,
           "@app/screens/ForYou/components/CategoryFeedScene.tsx": 1,
           "@app/screens/Notifications/components/NotificationsList.tsx": 2,
+          "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1,
           "@app/screens/Prices/components/PricesHeader.tsx": 1,
           "@app/screens/Prices/components/PricesListScene.tsx": 1,
           "@app/screens/Prices/components/PricesTitle.tsx": 1,
-          "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1,
           "@app/screens/Recurring/components/RecurringTransactionList.tsx": 1,
           "@app/screens/Remittances/components/RemittancesCard.tsx": 1,
           "@app/screens/Settings/components/RewardsPreferences.tsx": 1,
@@ -17096,8 +17022,8 @@
         "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1,
         "@app/screens/CoinbaseCard/Webviews/components/CardWebView.tsx": 1,
         "@app/screens/FiatTransfer/Withdraw/WithdrawPaymentSelectorScreen/WithdrawPaymentSelectorScreen.tsx": 1,
-        "@app/screens/SignIn/screens/DeviceConfirmationCallbackScreen/DeviceConfirmationCallbackScreen.tsx": 1,
         "@app/screens/SignIn/screens/BrowserAuthScreen/BrowserAuthScreen.tsx": 1,
+        "@app/screens/SignIn/screens/DeviceConfirmationCallbackScreen/DeviceConfirmationCallbackScreen.tsx": 1,
         "@app/screens/Trade/Buy/components/Verify3dsScreen.tsx": 2
       },
       "propsWithCallSites": {
@@ -17134,8 +17060,8 @@
           "@app/screens/CoinbaseCard/Settings/components/CardBackDisplay.tsx": 1,
           "@app/screens/CoinbaseCard/Webviews/components/CardWebView.tsx": 1,
           "@app/screens/FiatTransfer/Withdraw/WithdrawPaymentSelectorScreen/WithdrawPaymentSelectorScreen.tsx": 1,
-          "@app/screens/SignIn/screens/DeviceConfirmationCallbackScreen/DeviceConfirmationCallbackScreen.tsx": 1,
           "@app/screens/SignIn/screens/BrowserAuthScreen/BrowserAuthScreen.tsx": 1,
+          "@app/screens/SignIn/screens/DeviceConfirmationCallbackScreen/DeviceConfirmationCallbackScreen.tsx": 1,
           "@app/screens/Trade/Buy/components/Verify3dsScreen.tsx": 2
         }
       }
@@ -17358,11 +17284,11 @@
         "@app/screens/Settings/SettingsApplePayScreen.tsx": 1,
         "@app/screens/Settings/SettingsGooglePayScreen.tsx": 1,
         "@app/screens/Settings/SettingsInviteScreen.tsx": 1,
+        "@app/screens/Sweepstakes/SweepstakesOptedInScreen.tsx": 1,
+        "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx": 1,
         "@app/screens/Support/SupportScreen.tsx": 1,
         "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
         "@app/screens/Support/SupportWebViewScreen.tsx": 1,
-        "@app/screens/Sweepstakes/SweepstakesOptedInScreen.tsx": 1,
-        "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx": 1,
         "@app/screens/Trade/TradeFinishedScreen.tsx": 1,
         "@app/screens/Trade/TradeFinishedScreenDeprecated.tsx": 1,
         "@app/screens/TradeTab/SeeAllAssetsScreen.tsx": 1,
@@ -17438,31 +17364,31 @@
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Settings/CoinbaseCardSettingsScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Support/CardSupportScreen.tsx": 1,
-        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CardTransactionsList.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 1,
         "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
+        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/AppleGooglePayStatusScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
         "@app/screens/Defi/DAppDetail/DAppDetailScreen.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
         "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 1,
         "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 1,
-        "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
         "@app/screens/DirectDeposit/AutomaticSetup/AutomaticSetupScreen.tsx": 1,
+        "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
         "@app/screens/DirectDeposit/DirectDepositRouter/DirectDepositRouterScreen.tsx": 1,
         "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 1,
-        "@app/screens/DirectDeposit/LegalDisclosure/LegalDisclosure.tsx": 1,
         "@app/screens/DirectDeposit/ManualSetup/ManualSetup.tsx": 1,
         "@app/screens/DirectDeposit/Setup/SetupScreen.tsx": 1,
+        "@app/screens/DirectDeposit/LegalDisclosure/LegalDisclosure.tsx": 1,
         "@app/screens/DirectDeposit/Success/SuccessScreen.tsx": 1,
         "@app/screens/ETH2/Staking/Eth2StakingInputScreen.tsx": 1,
         "@app/screens/ETH2/Staking/Eth2StakingPausedScreen.tsx": 1,
@@ -17558,8 +17484,8 @@
         "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberInputScreen.tsx": 1,
         "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberListScreen.tsx": 1,
         "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberVerifyScreen.tsx": 1,
-        "@app/screens/SignIn/screens/CredentialsScreen/CredentialsScreen.tsx": 1,
         "@app/screens/SignIn/screens/BrowserAuthScreen/BrowserAuthScreen.tsx": 1,
+        "@app/screens/SignIn/screens/CredentialsScreen/CredentialsScreen.tsx": 1,
         "@app/screens/Trade/Buy/components/Verify3dsScreen.tsx": 2,
         "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1,
         "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationSuccessScreen.tsx": 1
@@ -17818,20 +17744,20 @@
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Settings/CoinbaseCardSettingsScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Support/CardSupportScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionsList.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 1,
           "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/AppleGooglePayStatusScreen.tsx": 1,
           "@app/screens/Defi/DAppDetail/DAppDetailScreen.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/DirectDeposit/AutomaticSetup/AutomaticSetupScreen.tsx": 1,
           "@app/screens/DirectDeposit/DirectDepositRouter/DirectDepositRouterScreen.tsx": 1,
@@ -17928,8 +17854,8 @@
           "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberInputScreen.tsx": 1,
           "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberListScreen.tsx": 1,
           "@app/screens/Settings/PhoneNumbers/screens/PhoneNumberVerifyScreen.tsx": 1,
-          "@app/screens/SignIn/screens/CredentialsScreen/CredentialsScreen.tsx": 1,
           "@app/screens/SignIn/screens/BrowserAuthScreen/BrowserAuthScreen.tsx": 1,
+          "@app/screens/SignIn/screens/CredentialsScreen/CredentialsScreen.tsx": 1,
           "@app/screens/Trade/Buy/components/Verify3dsScreen.tsx": 2,
           "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1,
           "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationSuccessScreen.tsx": 1
@@ -18037,8 +17963,8 @@
           "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
           "@app/screens/Defi/DAppDetail/DAppDetailScreen.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
           "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 1,
           "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 1,
           "@app/screens/DirectDeposit/LegalDisclosure/LegalDisclosure.tsx": 1,
@@ -18187,9 +18113,9 @@
           "@app/screens/CoinbaseCard/SelectAsset/CardSpendableAssetScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
           "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
-          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/Transactions/CardTransactionsList.tsx": 1,
           "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
           "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
           "@app/screens/Defi/DAppDetail/DAppDetailScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
@@ -18554,13 +18480,14 @@
       }
     },
     {
-      "name": "RestHooksNotificationBell",
+      "name": "FallbackNotificationsBell",
       "sourceFile": "@app/components/NotificationsBell.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@app/components/NotificationsBell.tsx": 2 }
     },
     {
-      "name": "FallbackNotificationsBell",
+      "name": "RestHooksNotificationBell",
       "sourceFile": "@app/components/NotificationsBell.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -19057,7 +18984,7 @@
           "@app/screens/Home/HomeScreen.tsx": 1
         },
         "surfaceName": { "@app/components/TabRootScreen.tsx": 1 },
-        "viewerRef": {
+        "queryRef": {
           "@app/components/TabRootScreen.tsx": 1,
           "@app/screens/Home/HomeScreen.tsx": 1
         }
@@ -19105,6 +19032,116 @@
       }
     },
     {
+      "name": "IntlProvider",
+      "sourceFile": "react-intl/IntlProvider",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 },
+      "propsWithCallSites": {
+        "locale": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 },
+        "defaultLocale": {
+          "@app/contexts/AppIntlProvider.tsx": 1,
+          "@app/screens/Onboarding.tsx": 1
+        },
+        "messages": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 },
+        "onError": { "@app/contexts/AppIntlProvider.tsx": 1, "@app/screens/Onboarding.tsx": 1 }
+      }
+    },
+    {
+      "name": "ErrorTray",
+      "sourceFile": "@app/components/Trays/ErrorTray",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@app/contexts/ErrorContext.tsx": 1,
+        "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
+        "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
+        "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isVisible": {
+          "@app/contexts/ErrorContext.tsx": 1,
+          "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
+          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
+        },
+        "onDismiss": {
+          "@app/contexts/ErrorContext.tsx": 1,
+          "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
+          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
+        },
+        "error": {
+          "@app/contexts/ErrorContext.tsx": 1,
+          "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
+          "@app/screens/CoinbaseCard/Support/RequestUpdateBillingAddress/RequestUpdateBillingAddressScreen.tsx": 1,
+          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Confirmation/AdvancedOrderConfirmationScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TemporaryPusherToGraphqlUpdaterProvider",
+      "sourceFile": "@app/contexts/GraphqlProvider/TemporaryPusherToGraphqlUpdater/TemporaryPusherToGraphqlUpdaterProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ExperimentsProvider",
+      "sourceFile": "@app/utils/experiments/ExperimentsProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PerformanceRelay",
+      "sourceFile": "@app/utils/performance/vitals/PerformanceRelay",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "GraphqlExperimentSetter",
+      "sourceFile": "@app/contexts/GraphqlProvider/GraphqlProvider/GraphqlExperimentSetter",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SignedInThemeProvider",
+      "sourceFile": "@app/contexts/SignedInThemeProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "OfflineCacheUpdater",
+      "sourceFile": "@app/lib/rest-hooks/OfflineCache/OfflineCacheUpdater",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CdsBetaProvider",
+      "sourceFile": "@app/system/display/CdsBetaProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SignedInThemeProviderContent",
+      "sourceFile": "@app/contexts/SignedInThemeProvider.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DeferredRenderProvider",
+      "sourceFile": "@contexts/DeferredRenderContext/DeferredRenderContext/DeferredRenderProvider",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/support/MockDeferredRenderProvider.tsx": 1,
+        "@app/screens/Tutorial/TutorialScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "isMock": { "@app/support/MockDeferredRenderProvider.tsx": 1 },
+        "name": { "@app/screens/Tutorial/TutorialScreen.tsx": 1 }
+      }
+    },
+    {
       "name": "AccountChecklistBanner",
       "sourceFile": "@app/components/AccountChecklist/AccountChecklistBanner/AccountChecklistBanner",
       "totalInstances": 1,
@@ -19120,20 +19157,6 @@
         "viewerRef": { "@app/hooks/useNuxHeaderLogic.tsx": 1 },
         "spacingTop": { "@app/hooks/useNuxHeaderLogic.tsx": 1 },
         "showLottieHero": { "@app/hooks/useNuxHeaderLogic.tsx": 1 }
-      }
-    },
-    {
-      "name": "DeferredRenderProvider",
-      "sourceFile": "@contexts/DeferredRenderContext/DeferredRenderContext/DeferredRenderProvider",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/support/MockDeferredRenderProvider.tsx": 1,
-        "@app/screens/Tutorial/TutorialScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "isMock": { "@app/support/MockDeferredRenderProvider.tsx": 1 },
-        "name": { "@app/screens/Tutorial/TutorialScreen.tsx": 1 }
       }
     },
     {
@@ -19155,22 +19178,6 @@
         "@app/screens/Prices/components/PricesHeader.tsx": 1,
         "@app/screens/Home/components/WatchList/WatchList.tsx": 1
       }
-    },
-    {
-      "name": "GraphqlProvider",
-      "sourceFile": "@cbhq/data-layer/GraphqlProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "environment": { "@app/contexts/GraphqlProvider/GraphqlProvider.tsx": 1 },
-        "useFocusEffect": { "@app/contexts/GraphqlProvider/GraphqlProvider.tsx": 1 }
-      }
-    },
-    {
-      "name": "GraphqlFailedQueryRefresher",
-      "sourceFile": "@app/contexts/GraphqlProvider/GraphqlProvider.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "NativeAccessibilityProtection",
@@ -19838,8 +19845,8 @@
     {
       "name": "Spinner",
       "sourceFile": "@app/components/Spinner",
-      "totalInstances": 34,
-      "totalCallSites": 33,
+      "totalInstances": 35,
+      "totalCallSites": 34,
       "callSites": {
         "@app/components/DappBrowser/DappBrowserURLBar.tsx": 1,
         "@app/components/News/NewsSection.tsx": 1,
@@ -19873,6 +19880,7 @@
         "@app/screens/CoinbaseCard/Settings/components/LockCardInfoTray.tsx": 1,
         "@app/screens/Defi/Send/components/RecipientFieldInput.tsx": 1,
         "@app/screens/Send/components/RecipientFieldInput/RecipientFieldInput.tsx": 1,
+        "@app/screens/AdvancedTrading/MarketDetails/BuySell/Form/AdvancedOrderFormFields.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
       },
       "propsWithCallSites": {
@@ -20864,11 +20872,12 @@
     {
       "name": "TextInputIconButton",
       "sourceFile": "@components/interactables/TextInputIconButton",
-      "totalInstances": 12,
-      "totalCallSites": 12,
+      "totalInstances": 13,
+      "totalCallSites": 13,
       "callSites": {
         "@app/components/Search/SearchBar.tsx": 1,
         "@app/components/TwoFactor/TwoFactorForm.tsx": 1,
+        "@app/screens/Send/GiftRevealScreen.tsx": 1,
         "@app/screens/Send/SendConfirmScreen.tsx": 1,
         "@app/screens/Send/SendConfirmScreenV2.tsx": 1,
         "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
@@ -20890,6 +20899,7 @@
         "name": {
           "@app/components/Search/SearchBar.tsx": 1,
           "@app/components/TwoFactor/TwoFactorForm.tsx": 1,
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreenV2.tsx": 1,
           "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
@@ -20904,6 +20914,7 @@
         "onPress": {
           "@app/components/Search/SearchBar.tsx": 1,
           "@app/components/TwoFactor/TwoFactorForm.tsx": 1,
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreenV2.tsx": 1,
           "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
@@ -20917,6 +20928,7 @@
         },
         "size": {
           "@app/components/TwoFactor/TwoFactorForm.tsx": 1,
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreenV2.tsx": 1,
           "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
@@ -20927,6 +20939,7 @@
         },
         "color": {
           "@app/components/TwoFactor/TwoFactorForm.tsx": 1,
+          "@app/screens/Send/GiftRevealScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreen.tsx": 1,
           "@app/screens/Send/SendConfirmScreenV2.tsx": 1,
           "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
@@ -22324,16 +22337,18 @@
     {
       "name": "Suspense",
       "sourceFile": "react/Suspense",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "@app/components/Widget/LoadWidgetDataSandbox.tsx": 1,
-        "@app/screens/AdvancedTrading/MarketDetails/MarketDetailsScreen.tsx": 1
+        "@app/screens/AdvancedTrading/MarketDetails/MarketDetailsScreen.tsx": 1,
+        "@app/screens/AdvancedTrading/MarketDetails/BuySell/Form/AdvancedOrderFormFields.tsx": 1
       },
       "propsWithCallSites": {
         "fallback": {
           "@app/components/Widget/LoadWidgetDataSandbox.tsx": 1,
-          "@app/screens/AdvancedTrading/MarketDetails/MarketDetailsScreen.tsx": 1
+          "@app/screens/AdvancedTrading/MarketDetails/MarketDetailsScreen.tsx": 1,
+          "@app/screens/AdvancedTrading/MarketDetails/BuySell/Form/AdvancedOrderFormFields.tsx": 1
         }
       }
     },
@@ -22497,6 +22512,22 @@
     {
       "name": "NavigatorLoaderContent",
       "sourceFile": "@app/components/navigation/NavigatorLoader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "GraphqlProvider",
+      "sourceFile": "@cbhq/data-layer/GraphqlProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "environment": { "@app/contexts/GraphqlProvider/GraphqlProvider.tsx": 1 },
+        "useFocusEffect": { "@app/contexts/GraphqlProvider/GraphqlProvider.tsx": 1 }
+      }
+    },
+    {
+      "name": "GraphqlFailedQueryRefresher",
+      "sourceFile": "@app/contexts/GraphqlProvider/GraphqlProvider.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -22738,9 +22769,9 @@
         "@app/screens/AppToApp/AppToAppScreen.tsx": 1,
         "@app/screens/AppTrackingTransparencyPrompt/AppTrackingTransparencyPrompt.tsx": 1,
         "@app/screens/Asset/AssetScreen.tsx": 1,
-        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
         "@app/screens/AssetsTab/AssetHoldingsScreen.tsx": 1,
         "@app/screens/AssetsTab/AssetsScreen.tsx": 1,
+        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1,
         "@app/screens/Borrow/BorrowDeeplinkRouterScreen.tsx": 1,
         "@app/screens/BusinessBankingRedirect/BusinessBankingRedirect.tsx": 1,
         "@app/screens/Clawback/ClawbackFailureScreen.tsx": 1,
@@ -22796,8 +22827,8 @@
         "@app/screens/Onboarding/OnboardingSuccessScreen.tsx": 1,
         "@app/screens/Pay/PayScreen.tsx": 1,
         "@app/screens/PolicyRestrictions/PolicyRestrictionsScreen.tsx": 1,
-        "@app/screens/Prices/PricesScreen.tsx": 1,
         "@app/screens/Portfolio/PortfolioScreen.tsx": 1,
+        "@app/screens/Prices/PricesScreen.tsx": 1,
         "@app/screens/Receive/ReceiveScreen.tsx": 1,
         "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1,
         "@app/screens/Remittances/RemittanceCashOutReceipt.tsx": 1,
@@ -22823,10 +22854,10 @@
         "@app/screens/Settings/SettingsGooglePayScreen.tsx": 1,
         "@app/screens/Settings/SettingsInviteScreen.tsx": 1,
         "@app/screens/Settings/SettingsScreen.tsx": 1,
-        "@app/screens/Support/SupportScreen.tsx": 1,
-        "@app/screens/Support/SupportWebViewScreen.tsx": 1,
         "@app/screens/Sweepstakes/SweepstakesOptedInScreen.tsx": 1,
         "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx": 1,
+        "@app/screens/Support/SupportScreen.tsx": 1,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1,
         "@app/screens/Trade/TradeFinishedScreen.tsx": 1,
         "@app/screens/Trade/TradeFinishedScreenDeprecated.tsx": 1,
         "@app/screens/TradeTab/SeeAllAssetsScreen.tsx": 1,
@@ -22897,27 +22928,27 @@
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetDisclaimerScreen.tsx": 1,
         "@app/screens/CoinbaseCard/SelectAsset/SelectAssetScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Settings/CoinbaseCardSettingsScreen.tsx": 1,
-        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CardTransactionDetails.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CardTransactionsList.tsx": 1,
         "@app/screens/CoinbaseCard/Transactions/CoinbaseCardFiltersPage.tsx": 1,
         "@app/screens/CoinbaseCard/Waitlist/WaitlistScreen.tsx": 1,
+        "@app/screens/CoinbaseCard/TopUp/TopUpScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/AppleGooglePayStatusScreen.tsx": 1,
         "@app/screens/CoinbaseCard/components/NuxSelectRewardScreen.tsx": 1,
         "@app/screens/Defi/DAppDetail/DAppDetailScreen.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1,
         "@app/screens/DirectDeposit/AccountInformation/AccountInformationScreen.tsx": 1,
         "@app/screens/DirectDeposit/AssetSelect/AssetSelect.tsx": 1,
-        "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
         "@app/screens/DirectDeposit/AutomaticSetup/AutomaticSetupScreen.tsx": 1,
+        "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx": 1,
         "@app/screens/DirectDeposit/DirectDepositRouter/DirectDepositRouterScreen.tsx": 1,
         "@app/screens/DirectDeposit/Intro/IntroScreen.tsx": 1,
-        "@app/screens/DirectDeposit/LegalDisclosure/LegalDisclosure.tsx": 1,
         "@app/screens/DirectDeposit/ManualSetup/ManualSetup.tsx": 1,
         "@app/screens/DirectDeposit/Setup/SetupScreen.tsx": 1,
+        "@app/screens/DirectDeposit/LegalDisclosure/LegalDisclosure.tsx": 1,
         "@app/screens/DirectDeposit/Success/SuccessScreen.tsx": 1,
         "@app/screens/ETH2/Staking/Eth2StakingInputScreen.tsx": 1,
         "@app/screens/ETH2/Staking/Eth2StakingPausedScreen.tsx": 1,
@@ -23448,8 +23479,8 @@
         "@app/screens/Asset/AssetScreen.tsx": 1,
         "@app/screens/Loyalty/LoyaltySurfaceScreen.tsx": 2,
         "@app/screens/Notifications/NotificationsScreen.tsx": 1,
-        "@app/screens/Prices/PricesScreen.tsx": 1,
         "@app/screens/Portfolio/PortfolioScreen.tsx": 1,
+        "@app/screens/Prices/PricesScreen.tsx": 1,
         "@app/screens/Receive/ReceiveScreen.tsx": 1,
         "@app/screens/Send/SendInputScreen.tsx": 1,
         "@app/screens/Settings/SettingsScreen.tsx": 1,
@@ -23470,8 +23501,8 @@
           "@app/screens/Asset/AssetScreen.tsx": 1,
           "@app/screens/Loyalty/LoyaltySurfaceScreen.tsx": 2,
           "@app/screens/Notifications/NotificationsScreen.tsx": 1,
-          "@app/screens/Prices/PricesScreen.tsx": 1,
           "@app/screens/Portfolio/PortfolioScreen.tsx": 1,
+          "@app/screens/Prices/PricesScreen.tsx": 1,
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Send/SendInputScreen.tsx": 1,
           "@app/screens/Settings/SettingsScreen.tsx": 1,
@@ -23876,9 +23907,18 @@
     {
       "name": "AssetListingState",
       "sourceFile": "@app/screens/Asset/components/AssetListingState",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "viewerRef": { "@app/screens/Asset/AssetScreen.tsx": 1 } }
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Asset/AssetScreen.tsx": 1,
+        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "viewerRef": {
+          "@app/screens/Asset/AssetScreen.tsx": 1,
+          "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1
+        }
+      }
     },
     {
       "name": "AssetPromotionSection",
@@ -24131,47 +24171,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "ResourceRow",
-      "sourceFile": "@app/screens/AssetInfo/AssetInfoScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1 },
-        "resourceRef": { "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "RichText",
-      "sourceFile": "@app/components/RichText/RichText",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 2,
-        "@app/screens/Debug/DebugContentfulRichTextRenderer.tsx": 1,
-        "@app/screens/Asset/components/AssetLearnSection.tsx": 1
-      },
-      "propsWithCallSites": {
-        "contents": {
-          "@app/screens/AssetInfo/AssetInfoScreen.tsx": 2,
-          "@app/screens/Debug/DebugContentfulRichTextRenderer.tsx": 1,
-          "@app/screens/Asset/components/AssetLearnSection.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SentimentSurveyCard",
-      "sourceFile": "@app/screens/AssetInfo/compoments/SentimentSurveyCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "surveyParams": { "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1 } }
-    },
-    {
-      "name": "AssetInfoScreenContent",
-      "sourceFile": "@app/screens/AssetInfo/AssetInfoScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "PortfolioScreenContainer",
       "sourceFile": "@app/screens/Portfolio/PortfolioScreen/PortfolioScreenContainer",
       "totalInstances": 1,
@@ -24362,6 +24361,47 @@
     {
       "name": "AssetsScreenContainer",
       "sourceFile": "@app/screens/AssetsTab/AssetsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ResourceRow",
+      "sourceFile": "@app/screens/AssetInfo/AssetInfoScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1 },
+        "resourceRef": { "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "RichText",
+      "sourceFile": "@app/components/RichText/RichText",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "@app/screens/AssetInfo/AssetInfoScreen.tsx": 2,
+        "@app/screens/Debug/DebugContentfulRichTextRenderer.tsx": 1,
+        "@app/screens/Asset/components/AssetLearnSection.tsx": 1
+      },
+      "propsWithCallSites": {
+        "contents": {
+          "@app/screens/AssetInfo/AssetInfoScreen.tsx": 2,
+          "@app/screens/Debug/DebugContentfulRichTextRenderer.tsx": 1,
+          "@app/screens/Asset/components/AssetLearnSection.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SentimentSurveyCard",
+      "sourceFile": "@app/screens/AssetInfo/compoments/SentimentSurveyCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "surveyParams": { "@app/screens/AssetInfo/AssetInfoScreen.tsx": 1 } }
+    },
+    {
+      "name": "AssetInfoScreenContent",
+      "sourceFile": "@app/screens/AssetInfo/AssetInfoScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -25512,11 +25552,22 @@
     {
       "name": "TransactionSubscriptionFeeCell",
       "sourceFile": "@app/components/Transaction/TransactionSubscriptionFeeCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Debug/DebugSubscriptionTradeUpsells.tsx": 1,
+        "@app/screens/Trade/components/TradePreviewContentDeprecated.tsx": 1
+      },
       "propsWithCallSites": {
-        "title": { "@app/screens/Debug/DebugSubscriptionTradeUpsells.tsx": 1 },
-        "productName": { "@app/screens/Debug/DebugSubscriptionTradeUpsells.tsx": 1 }
+        "title": {
+          "@app/screens/Debug/DebugSubscriptionTradeUpsells.tsx": 1,
+          "@app/screens/Trade/components/TradePreviewContentDeprecated.tsx": 1
+        },
+        "productName": {
+          "@app/screens/Debug/DebugSubscriptionTradeUpsells.tsx": 1,
+          "@app/screens/Trade/components/TradePreviewContentDeprecated.tsx": 1
+        },
+        "key": { "@app/screens/Trade/components/TradePreviewContentDeprecated.tsx": 1 }
       }
     },
     {
@@ -25854,6 +25905,14 @@
           "@app/screens/PaymentMethods/Zengin/ZenginSelectBranchScreen.tsx": 1
         }
       }
+    },
+    {
+      "name": "DAppBalanceHeader",
+      "sourceFile": "@app/screens/Defi/DAppWalletScreen.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@app/screens/Defi/DAppWalletScreen.tsx": 2 },
+      "propsWithCallSites": { "formattedBalance": { "@app/screens/Defi/DAppWalletScreen.tsx": 2 } }
     },
     {
       "name": "DAppBalanceCell",
@@ -26835,34 +26894,34 @@
         "@app/screens/Home/HomeScreen.tsx": 1,
         "@app/screens/TradeTab/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
         "@app/screens/TradeTab/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1
+        "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
+        "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1
       },
       "propsWithCallSites": {
         "viewerRef": {
           "@app/screens/Home/HomeScreen.tsx": 1,
           "@app/screens/TradeTab/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
           "@app/screens/TradeTab/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1
+          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1
         },
         "hideSparkline": {
           "@app/screens/TradeTab/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
           "@app/screens/TradeTab/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1
+          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1
         },
         "hideCardParent": {
           "@app/screens/TradeTab/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
           "@app/screens/TradeTab/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1
+          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1
         },
         "emptyWatchList": {
           "@app/screens/TradeTab/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
           "@app/screens/TradeTab/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1
+          "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1
         },
         "length": {
           "@app/screens/TradeTab/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
@@ -28138,6 +28197,7 @@
           "@app/screens/Send/components/SendSelectRecipientForm.tsx": 1,
           "@app/screens/Send/components/SendSelectRecipientFormV2.tsx": 1
         },
+        "hideRecentsLink": { "@app/screens/Pay/PayScreen.tsx": 1 },
         "header": {
           "@app/screens/Pay/PayScreen.tsx": 1,
           "@app/screens/Send/components/SendSelectRecipientForm.tsx": 1,
@@ -28158,65 +28218,6 @@
     {
       "name": "PayScreenContent",
       "sourceFile": "@app/screens/Pay/PayScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PinCodeInput",
-      "sourceFile": "@app/screens/Pin/components/PinCodeInput",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/Pin/PinCreateScreen.tsx": 1,
-        "@app/screens/Pin/PinLockModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "label": {
-          "@app/screens/Pin/PinCreateScreen.tsx": 1,
-          "@app/screens/Pin/PinLockModal.tsx": 1
-        },
-        "value": {
-          "@app/screens/Pin/PinCreateScreen.tsx": 1,
-          "@app/screens/Pin/PinLockModal.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PinCreateContent",
-      "sourceFile": "@app/screens/Pin/PinCreateScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isConfirmStep": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
-        "setIsConfirmStep": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
-        "setConfirmPin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
-        "setPin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
-        "pin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
-        "confirmPin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
-        "createAttempts": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
-        "handleUpdate": { "@app/screens/Pin/PinCreateScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "PinLockModalContent",
-      "sourceFile": "@app/screens/Pin/PinLockModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "pinAttempts": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "isLocked": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "pinValue": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "setPinValue": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "pinUnlockCallback": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "pinCancelLock": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "handleUpdate": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "isBiometric": { "@app/screens/Pin/PinLockModal.tsx": 1 },
-        "isColdBoot": { "@app/screens/Pin/PinLockModal.tsx": 1 }
-      }
-    },
-    {
-      "name": "Wrapper",
-      "sourceFile": "@app/screens/Pin/PinLockModal.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -28283,74 +28284,63 @@
       "totalCallSites": 1
     },
     {
-      "name": "PricesListScene",
-      "sourceFile": "@app/screens/Prices/components/PricesListScene",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "name": "PinCodeInput",
+      "sourceFile": "@app/screens/Pin/components/PinCodeInput",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Pin/PinCreateScreen.tsx": 1,
+        "@app/screens/Pin/PinLockModal.tsx": 1
+      },
       "propsWithCallSites": {
-        "isFocused": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "onMomentumScrollBegin": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "onMomentumScrollEnd": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "onScrollEndDrag": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "routeKey": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "scrollY": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "setScrollableChild": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "trackRef": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "animatedStyles": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "searchQuery": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "isSearching": { "@app/screens/Prices/PricesScreen.tsx": 1 }
+        "label": {
+          "@app/screens/Pin/PinCreateScreen.tsx": 1,
+          "@app/screens/Pin/PinLockModal.tsx": 1
+        },
+        "value": {
+          "@app/screens/Pin/PinCreateScreen.tsx": 1,
+          "@app/screens/Pin/PinLockModal.tsx": 1
+        }
       }
     },
     {
-      "name": "PricesScreenSearchBar",
-      "sourceFile": "@app/screens/Prices/components/PricesScreenSearchBar",
+      "name": "PinCreateContent",
+      "sourceFile": "@app/screens/Pin/PinCreateScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "ref": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "scrollY": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "isSearching": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "searchQuery": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "onSearchCancel": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "onQueryChanged": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "onFocus": { "@app/screens/Prices/PricesScreen.tsx": 1 }
+        "isConfirmStep": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
+        "setIsConfirmStep": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
+        "setConfirmPin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
+        "setPin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
+        "pin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
+        "confirmPin": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
+        "createAttempts": { "@app/screens/Pin/PinCreateScreen.tsx": 1 },
+        "handleUpdate": { "@app/screens/Pin/PinCreateScreen.tsx": 1 }
       }
     },
     {
-      "name": "PricesTitle",
-      "sourceFile": "@app/screens/Prices/components/PricesTitle",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "marketHealthRef": { "@app/screens/Prices/PricesScreen.tsx": 1 } }
-    },
-    {
-      "name": "ScreenComponent",
-      "sourceFile": "@app/screens/Prices/PricesScreen.tsx",
+      "name": "PinLockModalContent",
+      "sourceFile": "@app/screens/Pin/PinLockModal.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "scrollable": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "noSpacing": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "scrollableChild": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "dangerouslySetScrollViewStyle": { "@app/screens/Prices/PricesScreen.tsx": 1 }
+        "pinAttempts": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "isLocked": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "pinValue": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "setPinValue": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "pinUnlockCallback": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "pinCancelLock": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "handleUpdate": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "isBiometric": { "@app/screens/Pin/PinLockModal.tsx": 1 },
+        "isColdBoot": { "@app/screens/Pin/PinLockModal.tsx": 1 }
       }
     },
     {
-      "name": "PricesHeader",
-      "sourceFile": "@app/screens/Prices/components/PricesHeader",
+      "name": "Wrapper",
+      "sourceFile": "@app/screens/Pin/PinLockModal.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSearchPressed": { "@app/screens/Prices/PricesScreen.tsx": 1 },
-        "marketHealthRef": { "@app/screens/Prices/PricesScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "PricesScreenContent",
-      "sourceFile": "@app/screens/Prices/PricesScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "restrictions": { "@app/screens/Prices/PricesScreen.tsx": 1 } }
+      "totalCallSites": 1
     },
     {
       "name": "PortfolioYieldCenterPromotionCard",
@@ -28496,6 +28486,76 @@
       "sourceFile": "@app/screens/Portfolio/PortfolioScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "PricesListScene",
+      "sourceFile": "@app/screens/Prices/components/PricesListScene",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isFocused": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "onMomentumScrollBegin": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "onMomentumScrollEnd": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "onScrollEndDrag": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "routeKey": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "scrollY": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "setScrollableChild": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "trackRef": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "animatedStyles": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "searchQuery": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "isSearching": { "@app/screens/Prices/PricesScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "PricesScreenSearchBar",
+      "sourceFile": "@app/screens/Prices/components/PricesScreenSearchBar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "ref": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "scrollY": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "isSearching": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "searchQuery": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "onSearchCancel": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "onQueryChanged": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "onFocus": { "@app/screens/Prices/PricesScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "PricesTitle",
+      "sourceFile": "@app/screens/Prices/components/PricesTitle",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "marketHealthRef": { "@app/screens/Prices/PricesScreen.tsx": 1 } }
+    },
+    {
+      "name": "ScreenComponent",
+      "sourceFile": "@app/screens/Prices/PricesScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "scrollable": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "noSpacing": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "scrollableChild": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "dangerouslySetScrollViewStyle": { "@app/screens/Prices/PricesScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "PricesHeader",
+      "sourceFile": "@app/screens/Prices/components/PricesHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSearchPressed": { "@app/screens/Prices/PricesScreen.tsx": 1 },
+        "marketHealthRef": { "@app/screens/Prices/PricesScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "PricesScreenContent",
+      "sourceFile": "@app/screens/Prices/PricesScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "restrictions": { "@app/screens/Prices/PricesScreen.tsx": 1 } }
     },
     {
       "name": "AddressInlineWarning",
@@ -28719,6 +28779,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "accountRef": { "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1 },
+        "handleDeleteRecurringPurchase": {
+          "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1
+        },
         "recurringTransactionRef": { "@app/screens/Recurring/RecurringPurchaseScreen.tsx": 1 }
       }
     },
@@ -28925,7 +28988,8 @@
         "message": { "@app/screens/Send/GiftRevealScreen.tsx": 1 },
         "translateYForArtistDetails": { "@app/screens/Send/GiftRevealScreen.tsx": 1 },
         "cardName": { "@app/screens/Send/GiftRevealScreen.tsx": 1 },
-        "cardArtist": { "@app/screens/Send/GiftRevealScreen.tsx": 1 }
+        "cardArtist": { "@app/screens/Send/GiftRevealScreen.tsx": 1 },
+        "handleInfoPress": { "@app/screens/Send/GiftRevealScreen.tsx": 1 }
       }
     },
     {
@@ -29586,12 +29650,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "Footer",
-      "sourceFile": "@app/screens/Support/components/Footer",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "HeroContent",
       "sourceFile": "@app/screens/Sweepstakes/cms/Components/HeroContent",
       "totalInstances": 2,
@@ -29681,6 +29739,12 @@
     {
       "name": "SweepstakesRewardInfoScreenContent",
       "sourceFile": "@app/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Footer",
+      "sourceFile": "@app/screens/Support/components/Footer",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -30720,34 +30784,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "AssetCategoryMoreInfo",
-      "sourceFile": "@app/components/AssetCategories/AssetCategoryMoreInfo/AssetCategoryMoreInfo",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "items": {
-          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
-        },
-        "isShowMoreExpanded": {
-          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
-        },
-        "onToggleShowMore": {
-          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SortableAssets",
-      "sourceFile": "@app/components/AssetCategories/SortableAssets/SortableAssets",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "assetCategoryData": {
-          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
-        }
-      }
-    },
-    {
       "name": "AssetCategoryIcon",
       "sourceFile": "@app/components/AssetCategories/AssetCategoryIcon/AssetCategoryIcon",
       "totalInstances": 5,
@@ -30773,6 +30809,34 @@
         },
         "iconSize": {
           "@app/screens/AssetCategories/AssetCategoryDetailsScreen/AssetCategoryDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AssetCategoryMoreInfo",
+      "sourceFile": "@app/components/AssetCategories/AssetCategoryMoreInfo/AssetCategoryMoreInfo",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "items": {
+          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
+        },
+        "isShowMoreExpanded": {
+          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
+        },
+        "onToggleShowMore": {
+          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SortableAssets",
+      "sourceFile": "@app/components/AssetCategories/SortableAssets/SortableAssets",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetCategoryData": {
+          "@app/components/AssetCategories/AssetCategoryDetails/AssetCategoryDetails.tsx": 1
         }
       }
     },
@@ -31783,6 +31847,9 @@
         "index": { "@app/screens/AdvancedTrading/MarketDetails/AdvancedOrderFormModal.tsx": 1 },
         "ref": { "@app/screens/AdvancedTrading/MarketDetails/AdvancedOrderFormModal.tsx": 1 },
         "snapPoints": {
+          "@app/screens/AdvancedTrading/MarketDetails/AdvancedOrderFormModal.tsx": 1
+        },
+        "backgroundComponent": {
           "@app/screens/AdvancedTrading/MarketDetails/AdvancedOrderFormModal.tsx": 1
         },
         "handleComponent": {
@@ -34968,85 +35035,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "TransactionCryptoHeader",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
-        "title": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
-        "fiatAmount": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
-        "cryptoAmount": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
-        "assetUrl": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "DAppTransactionStatus",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionStatus",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "transactionRef": {
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DAppTransactionDetails",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "transactionRef": {
-          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DAppTransactionDetailsContainer",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DAppTransactionCell",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionCell",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2 },
-      "propsWithCallSites": {
-        "key": { "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2 },
-        "transactionRef": { "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2 }
-      }
-    },
-    {
-      "name": "DAppTransactionListFallback",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DAppTransactionList",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DAppTransactionList",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionList",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "address": { "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "DAppTransactionsScreenContainer",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "AssetsList",
       "sourceFile": "@app/screens/Defi/Send/DAppWalletSendAssetSelectorScreen.tsx",
       "totalInstances": 1,
@@ -35128,6 +35116,85 @@
     {
       "name": "DAppWalletSendSelectRecipientContent",
       "sourceFile": "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TransactionCryptoHeader",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
+        "title": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
+        "fiatAmount": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
+        "cryptoAmount": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 },
+        "assetUrl": { "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "DAppTransactionStatus",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionStatus",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "transactionRef": {
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DAppTransactionDetails",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "transactionRef": {
+          "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DAppTransactionDetailsContainer",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DAppTransactionCell",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionCell",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2 },
+      "propsWithCallSites": {
+        "key": { "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2 },
+        "transactionRef": { "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx": 2 }
+      }
+    },
+    {
+      "name": "DAppTransactionListFallback",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DAppTransactionList",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DAppTransactionList",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionList",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "address": { "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx": 1 }
+      }
+    },
+    {
+      "name": "DAppTransactionsScreenContainer",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionsScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -35245,12 +35312,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "DirectDepositDisableContent",
-      "sourceFile": "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "Atomic",
       "sourceFile": "@app/components/Atomic/Atomic",
       "totalInstances": 1,
@@ -35264,6 +35325,12 @@
     {
       "name": "AutomaticSetupScreenContent",
       "sourceFile": "@app/screens/DirectDeposit/AutomaticSetup/AutomaticSetupScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DirectDepositDisableContent",
+      "sourceFile": "@app/screens/DirectDeposit/DirectDepositDisable/DirectDepositDisableScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -35297,12 +35364,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "LegalDisclosureContent",
-      "sourceFile": "@app/screens/DirectDeposit/LegalDisclosure/LegalDisclosure.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "ManualSetup",
       "sourceFile": "@app/screens/DirectDeposit/ManualSetup/ManualSetup.tsx",
       "totalInstances": 1,
@@ -35311,6 +35372,12 @@
     {
       "name": "Setup",
       "sourceFile": "@app/screens/DirectDeposit/Setup/SetupScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LegalDisclosureContent",
+      "sourceFile": "@app/screens/DirectDeposit/LegalDisclosure/LegalDisclosure.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -36597,6 +36664,73 @@
       }
     },
     {
+      "name": "Fallback",
+      "sourceFile": "@app/screens/Portfolio/components/ChartFallback.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "pin": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 },
+        "width": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 },
+        "height": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 }
+      }
+    },
+    {
+      "name": "PortfolioShareCard",
+      "sourceFile": "@app/components/ShareTray/PortfolioShareCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "cardSize": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "totalBalance": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "period": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "portfolio": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "firstName": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 }
+      }
+    },
+    {
+      "name": "PortfolioShareTray",
+      "sourceFile": "@app/screens/Portfolio/components/PortfolioShareTray.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "balance": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "isVisible": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "onDismiss": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "period": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "portfolio": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
+        "portfolioShareTrayRef": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 }
+      }
+    },
+    {
+      "name": "EarningYieldCardContents",
+      "sourceFile": "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onPress": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 },
+        "averageRate": {
+          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1
+        },
+        "maxYield": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 }
+      }
+    },
+    {
+      "name": "NoYieldCardContents",
+      "sourceFile": "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onPress": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 },
+        "maxYield": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 }
+      }
+    },
+    {
+      "name": "NoYield",
+      "sourceFile": "@components/Images/YieldCenter/NoYield",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "PricesHeaderFallback",
       "sourceFile": "@app/screens/Prices/components/PricesHeader.tsx",
       "totalInstances": 1,
@@ -36663,73 +36797,6 @@
     {
       "name": "PricesTitle",
       "sourceFile": "@app/screens/Prices/components/PricesTitle.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Fallback",
-      "sourceFile": "@app/screens/Portfolio/components/ChartFallback.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "pin": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 },
-        "width": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 },
-        "height": { "@app/screens/Portfolio/components/ChartFallback.tsx": 1 }
-      }
-    },
-    {
-      "name": "PortfolioShareCard",
-      "sourceFile": "@app/components/ShareTray/PortfolioShareCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "cardSize": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "totalBalance": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "period": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "portfolio": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "firstName": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 }
-      }
-    },
-    {
-      "name": "PortfolioShareTray",
-      "sourceFile": "@app/screens/Portfolio/components/PortfolioShareTray.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "balance": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "isVisible": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "onDismiss": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "period": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "portfolio": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 },
-        "portfolioShareTrayRef": { "@app/screens/Portfolio/components/PortfolioShareTray.tsx": 1 }
-      }
-    },
-    {
-      "name": "EarningYieldCardContents",
-      "sourceFile": "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onPress": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 },
-        "averageRate": {
-          "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1
-        },
-        "maxYield": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 }
-      }
-    },
-    {
-      "name": "NoYieldCardContents",
-      "sourceFile": "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onPress": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 },
-        "maxYield": { "@app/screens/Portfolio/components/PortfolioYieldCenterPromotionCard.tsx": 1 }
-      }
-    },
-    {
-      "name": "NoYield",
-      "sourceFile": "@components/Images/YieldCenter/NoYield",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -40783,8 +40850,8 @@
       "callSites": {
         "@app/screens/TradeTab/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
         "@app/screens/TradeTab/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1
+        "@app/screens/TradeTabV2/components/TabScenesContainers/WatchListAssetListContainer.tsx": 1,
+        "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/WatchlistSeeAllListContainer.tsx": 1
       }
     },
     {
@@ -40892,6 +40959,28 @@
       }
     },
     {
+      "name": "AssetList",
+      "sourceFile": "@app/screens/TradeTabV2/components/AssetList",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        "@app/screens/TradeTabV2/components/TabScenesContainers/AllAssetListContainer.tsx": 1,
+        "@app/screens/TradeTabV2/components/TabScenesContainers/GainersAssetListContainer.tsx": 1,
+        "@app/screens/TradeTabV2/components/TabScenesContainers/LosersAssetListContainer.tsx": 1,
+        "@app/screens/TradeTabV2/components/TabScenesContainers/NewOnCbAssetListContainer.tsx": 1,
+        "@app/screens/TradeTabV2/components/TabScenesContainers/TradableAssetListContainer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "assetList": {
+          "@app/screens/TradeTabV2/components/TabScenesContainers/AllAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/TabScenesContainers/GainersAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/TabScenesContainers/LosersAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/TabScenesContainers/NewOnCbAssetListContainer.tsx": 1,
+          "@app/screens/TradeTabV2/components/TabScenesContainers/TradableAssetListContainer.tsx": 1
+        }
+      }
+    },
+    {
       "name": "SeeAllAssetsList",
       "sourceFile": "@app/screens/TradeTabV2/components/SeeAllAssetsList",
       "totalInstances": 5,
@@ -40919,28 +41008,6 @@
         },
         "refresh": {
           "@app/screens/TradeTabV2/components/SeeAllAssetsContainers/AllSeeAllListContainer.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetList",
-      "sourceFile": "@app/screens/TradeTabV2/components/AssetList",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "@app/screens/TradeTabV2/components/TabScenesContainers/AllAssetListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/TabScenesContainers/GainersAssetListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/TabScenesContainers/LosersAssetListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/TabScenesContainers/NewOnCbAssetListContainer.tsx": 1,
-        "@app/screens/TradeTabV2/components/TabScenesContainers/TradableAssetListContainer.tsx": 1
-      },
-      "propsWithCallSites": {
-        "assetList": {
-          "@app/screens/TradeTabV2/components/TabScenesContainers/AllAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/GainersAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/LosersAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/NewOnCbAssetListContainer.tsx": 1,
-          "@app/screens/TradeTabV2/components/TabScenesContainers/TradableAssetListContainer.tsx": 1
         }
       }
     },
@@ -41322,6 +41389,28 @@
       "totalCallSites": 1
     },
     {
+      "name": "RewardsHeader",
+      "sourceFile": "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "rewardsSummary": {
+          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PaginationSpinner",
+      "sourceFile": "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "visible": {
+          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
+        }
+      }
+    },
+    {
       "name": "StatusDetail",
       "sourceFile": "@app/screens/CoinbaseCard/Transactions/components/list/TransactionStatus/StatusDetail",
       "totalInstances": 3,
@@ -41347,28 +41436,6 @@
       "propsWithCallSites": {
         "declineReason": {
           "@app/screens/CoinbaseCard/Transactions/components/details/ChargeDetails.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "RewardsHeader",
-      "sourceFile": "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "rewardsSummary": {
-          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PaginationSpinner",
-      "sourceFile": "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "visible": {
-          "@app/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx": 1
         }
       }
     },

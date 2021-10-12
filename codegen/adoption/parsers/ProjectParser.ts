@@ -10,7 +10,7 @@ import { getMatchingDirectory, getTypescriptAliases } from '../utils/getTypescri
 import { FileParser } from './FileParser';
 import { fromId, toId } from '../utils/id';
 import { getStats } from '../utils/getStats';
-import type { AdoptionStats, PreviousAdoptionStats } from '../types';
+import type { AdopterConfig, AdoptionStats, PreviousAdoptionStats } from '../types';
 
 export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   '@ant-design',
@@ -40,26 +40,6 @@ export const FALLBACK_PRESENTATIONAL_ELEMENTS = [
 ];
 
 export const FALLBACK_PRESENTATIONAL_ATTRIBUTES = ['className', 'style', 'dangerouslySet'];
-
-export type ProjectParserConfig = {
-  /** The absolute path for the source files to parse. */
-  root: string;
-  /** The github url for the projects repo. This will be used to link to source files. */
-  github: string;
-  /** A unique identifier for the project.  */
-  id: string;
-  /** A label to use when displaying metrics on website. */
-  label: string;
-  /** The Typescript Alias for the project (optional). */
-  projectTsAliases?: string[];
-  presentationalElements?: string[];
-  presentationalLibraries?: string[];
-  presentationalAttributes?: string[];
-  cdsAliases?: string[];
-  ignoreDirs?: string[];
-  sourceGlob?: string;
-  tsconfigFileName?: string;
-};
 
 type ComponentInstance = {
   callSite: string;
@@ -164,6 +144,8 @@ export class ProjectParser {
 
   private previousStats: AdoptionStats[] = [];
 
+  private pillar: string;
+
   constructor(
     {
       root,
@@ -178,10 +160,12 @@ export class ProjectParser {
       ignoreDirs = [],
       sourceGlob,
       tsconfigFileName,
-    }: ProjectParserConfig,
+      pillar = '',
+    }: AdopterConfig,
     previousStats?: PreviousAdoptionStats,
   ) {
     const [org, repo] = github.split('/');
+    this.pillar = pillar;
     this.github = github;
     this.githubUrl = `https://github.cbhq.net/${org}/${repo}/tree/master`;
     this.id = id;
@@ -203,6 +187,7 @@ export class ProjectParser {
   get projectInfo() {
     const { tempDir } = argv as Record<string, string>;
     return JSON.stringify({
+      pillar: this.pillar,
       github: this.github,
       githubUrl: this.githubUrl,
       id: this.id,

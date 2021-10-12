@@ -38,8 +38,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 33,
-      "totalCallSites": 27,
+      "totalInstances": 35,
+      "totalCallSites": 29,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "aliasedCdsComponents": [
         {
@@ -62,9 +62,10 @@
       "callSites": {
         "components/Corporate/Hero.tsx": 2,
         "components/Corporate/styles.tsx": 3,
+        "components/cms/InfoCard/AvatarCard.tsx": 2,
         "components/cms/Landing/CMSLandingResourcesSection.tsx": 1,
         "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
-        "components/cms/InfoCard/AvatarCard.tsx": 2,
+        "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
         "components/cms/TextWithIcon/DefaultLayout.tsx": 2,
         "components/cms/TextWithIcon/VerticalLayout.tsx": 1,
         "pages/BuyPages/components/DownloadApp.tsx": 1,
@@ -84,6 +85,7 @@
         "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
         "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1,
         "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+        "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
         "pages/cms/Home/components/TwoUpFeature.tsx": 1,
         "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1,
         "pages/cms/ContentHub/components/Bytes/UnsubscribeForm/UnsubscribeFormOptionList.tsx": 1
@@ -92,9 +94,10 @@
         "as": {
           "components/Corporate/Hero.tsx": 2,
           "components/Corporate/styles.tsx": 3,
+          "components/cms/InfoCard/AvatarCard.tsx": 2,
           "components/cms/Landing/CMSLandingResourcesSection.tsx": 1,
           "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
-          "components/cms/InfoCard/AvatarCard.tsx": 2,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "components/cms/TextWithIcon/DefaultLayout.tsx": 2,
           "components/cms/TextWithIcon/VerticalLayout.tsx": 1,
           "pages/BuyPages/components/DownloadApp.tsx": 1,
@@ -114,6 +117,7 @@
           "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
           "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
           "pages/cms/Home/components/TwoUpFeature.tsx": 1,
           "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1,
           "pages/cms/ContentHub/components/Bytes/UnsubscribeForm/UnsubscribeFormOptionList.tsx": 1
@@ -121,6 +125,7 @@
         "spacingVertical": { "components/Corporate/Hero.tsx": 1 },
         "spacingBottom": {
           "components/Corporate/styles.tsx": 2,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "components/cms/TextWithIcon/DefaultLayout.tsx": 1,
           "pages/BuyPages/components/DownloadApp.tsx": 1,
           "pages/BuyPages/components/Hero.tsx": 1,
@@ -135,21 +140,13 @@
         "color": {
           "components/Corporate/styles.tsx": 1,
           "components/cms/InfoCard/AvatarCard.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "pages/NewHome/components/EarnAndLearn.tsx": 1,
           "components/cms/SpecialWidget/ExploreCrypto/AssetTile.tsx": 1,
           "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx": 2,
           "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
           "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1
-        },
-        "spacingTop": {
-          "components/cms/Landing/CMSLandingResourcesSection.tsx": 1,
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
-          "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
-          "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx": 2,
-          "pages/Corporate/MissionPage/components/Value.tsx": 1,
-          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         },
         "align": {
           "components/cms/InfoCard/AvatarCard.tsx": 2,
@@ -161,13 +158,24 @@
           "pages/Corporate/PressPage/components/BrandAssets.tsx": 1,
           "pages/Corporate/PressPage/components/LegalAgreement.tsx": 1
         },
+        "spacingTop": {
+          "components/cms/Landing/CMSLandingResourcesSection.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
+          "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1,
+          "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx": 2,
+          "pages/Corporate/MissionPage/components/Value.tsx": 1,
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
+        },
+        "spacingHorizontal": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1
+        },
         "spacingEnd": {
           "pages/BuyPages/components/DownloadApp.tsx": 1,
           "pages/BuyPages/components/Hero.tsx": 1
-        },
-        "spacingHorizontal": {
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1
         },
         "spacingStart": {
           "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx": 1
@@ -325,8 +333,8 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 17,
-      "totalCallSites": 15,
+      "totalInstances": 18,
+      "totalCallSites": 16,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "aliasedCdsComponents": [
         {
@@ -340,6 +348,7 @@
         "pages/Signup/SignupExpNoPhoto.tsx": 1,
         "pages/Signup/SignupExpPhoto.tsx": 1,
         "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
+        "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
         "components/cms/TextWithIcon/DefaultLayout.tsx": 1,
         "pages/BuyPages/components/Hero.tsx": 1,
         "pages/NewHome/components/EarnAndLearn.tsx": 1,
@@ -358,6 +367,7 @@
           "pages/Signup/SignupExpNoPhoto.tsx": 1,
           "pages/Signup/SignupExpPhoto.tsx": 1,
           "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "components/cms/TextWithIcon/DefaultLayout.tsx": 1,
           "pages/BuyPages/components/Hero.tsx": 1,
           "pages/NewHome/components/EarnAndLearn.tsx": 1,
@@ -371,6 +381,7 @@
         },
         "color": {
           "components/cms/QuoteCard.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "pages/BuyPages/components/Hero.tsx": 1,
           "pages/NewHome/components/EarnAndLearn.tsx": 1,
           "pages/cms/Products/ProductListItem.tsx": 1
@@ -389,8 +400,12 @@
           "pages/Corporate/PressPage/components/BrandAssetsCategory.tsx": 1,
           "pages/cms/ContentHub/components/FeatureWithFeed.tsx": 2
         },
-        "spacingHorizontal": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
+        "spacingHorizontal": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1
+        },
         "spacingTop": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "pages/NewHome/components/EarnAndLearn.tsx": 1,
           "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
           "pages/Corporate/MissionPage/components/Value.tsx": 1
@@ -440,8 +455,8 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 17,
-      "totalCallSites": 15,
+      "totalInstances": 18,
+      "totalCallSites": 16,
       "cds": "@cbhq/cds-web/typography/Link",
       "extendedStyledComponents": [
         { "alias": "HeroLink", "callSite": "components/Corporate/Hero.tsx" }
@@ -450,6 +465,7 @@
         "components/LandingPages/Disclosure.tsx": 1,
         "components/cms/Incentives/SweepstakesRules.tsx": 1,
         "components/cms/InfoCard/AvatarCard.tsx": 1,
+        "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
         "pages/BuyPages/components/DownloadApp.tsx": 2,
         "pages/BuyPages/components/HowToBuyWithUs.tsx": 1,
         "pages/NewHome/components/Disclaimers.tsx": 1,
@@ -475,6 +491,7 @@
         "variant": { "components/cms/Incentives/SweepstakesRules.tsx": 1 },
         "to": {
           "components/cms/Incentives/SweepstakesRules.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "pages/BuyPages/components/DownloadApp.tsx": 2,
           "pages/BuyPages/components/HowToBuyWithUs.tsx": 1,
           "pages/NewHome/components/Disclaimers.tsx": 1,
@@ -559,8 +576,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 82,
-      "totalCallSites": 35,
+      "totalInstances": 88,
+      "totalCallSites": 37,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -580,6 +597,7 @@
         "components/SignupForm/SignupFlow/PromoCodeInput.tsx": 1,
         "components/SignupForm/SignupFlow/PromoCodeLearnMoreModal.tsx": 1,
         "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+        "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 2,
         "pages/AssetPage/components/AssetPageLayout.tsx": 1,
         "pages/CoinbaseCardBack/components/CardBack.tsx": 6,
         "pages/NewHome/components/EarnAndLearn.tsx": 3,
@@ -598,6 +616,7 @@
         "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
         "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 4,
         "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1,
+        "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 4,
         "pages/cms/Home/components/TwoUpFeature.tsx": 3,
         "pages/cms/Home/components/TwoUpFormHero.tsx": 6,
         "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 3,
@@ -610,6 +629,7 @@
         "spacingVertical": {
           "components/Pill/Pill.tsx": 2,
           "components/MultiSelect/components/SearchBar.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "pages/NewHome/components/EarnAndLearn.tsx": 2,
           "pages/NewHome/components/Features.tsx": 1,
           "pages/NewHome/components/StartPortfolio.tsx": 1,
@@ -639,6 +659,7 @@
           "pages/Signup/SignupExpNoPhoto.tsx": 1,
           "pages/Signup/SignupExpPhoto.tsx": 1,
           "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "pages/CoinbaseCardBack/components/CardBack.tsx": 1,
           "pages/NewHome/components/EarnAndLearn.tsx": 2,
           "pages/NewHome/components/Features.tsx": 2,
@@ -685,6 +706,7 @@
           "pages/AssetPage/components/TradeUpsell/TradeUpsell.tsx": 2,
           "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 3,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
           "pages/cms/Home/components/TwoUpFeature.tsx": 2,
           "pages/cms/Home/components/TwoUpFormHero.tsx": 2,
           "pages/AssetPage/components/TradeUpsell/components/SupportedTradeUpsell/SupportedTradeUpsell.tsx": 1,
@@ -704,11 +726,13 @@
           "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
           "pages/SharePortfolio/SharePortfolio.tsx": 1,
           "components/cms/Incentives/LoggedOutButtonSet.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
           "pages/CoinbaseCardBack/components/CardBack.tsx": 4,
           "pages/NewHome/components/EarnAndLearn.tsx": 1,
           "pages/NewHome/components/Tools.tsx": 1,
           "components/cms/SpecialWidget/ExploreCrypto/AssetTile.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1
+          "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1
         },
         "flexDirection": {
           "pages/CoinbaseCardBack/CoinbaseCardBack.tsx": 1,
@@ -723,6 +747,7 @@
           "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx": 3,
           "pages/AssetPage/components/TradeUpsell/TradeUpsell.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
           "pages/cms/Home/components/TwoUpFeature.tsx": 1,
           "pages/cms/Home/components/TwoUpFormHero.tsx": 2,
           "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 3,
@@ -826,6 +851,7 @@
           "components/cms/Landing/components/ResourcesFormModal.tsx": 1,
           "components/cms/SpecialWidget/ExploreCrypto/index.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 2,
           "pages/cms/Home/components/TwoUpFormHero.tsx": 3
         },
         "as": { "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1 },
@@ -921,8 +947,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 33,
-      "totalCallSites": 24,
+      "totalInstances": 35,
+      "totalCallSites": 26,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -932,6 +958,7 @@
       ],
       "callSites": {
         "components/cms/LayoutGrid.tsx": 1,
+        "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
         "components/cms/TextWithIcon/DefaultLayout.tsx": 2,
         "components/cms/TextWithIcon/VerticalLayout.tsx": 1,
         "pages/AssetPage/components/DownloadWalletModal.tsx": 1,
@@ -951,6 +978,7 @@
         "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 2,
         "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 2,
         "pages/cms/ContentHub/components/ColumnWithFeature.tsx": 1,
+        "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
         "pages/cms/Home/components/TwoUpFeature.tsx": 1,
         "pages/cms/Home/components/TwoUpFormHero.tsx": 2,
         "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1,
@@ -961,6 +989,49 @@
           "components/cms/LayoutGrid.tsx": 1,
           "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1,
           "components/cms/SpecialWidget/AboutStatistics/index.tsx": 1
+        },
+        "spacingVertical": { "components/cms/LayoutGrid.tsx": 1, "pages/cms/Places/Places.tsx": 1 },
+        "spacingHorizontal": {
+          "components/cms/LayoutGrid.tsx": 1,
+          "pages/NewHome/components/Disclaimers.tsx": 1,
+          "pages/cms/Places/Places.tsx": 1
+        },
+        "background": {
+          "components/cms/LayoutGrid.tsx": 1,
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "pages/cms/Places/Places.tsx": 1
+        },
+        "maxWidth": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "components/cms/TextWithIcon/VerticalLayout.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "pages/NewHome/components/Features.tsx": 1,
+          "pages/NewHome/components/FreeYourMoney.tsx": 1,
+          "pages/NewHome/components/SectionsWrapper.tsx": 1,
+          "pages/NewHome/components/StartPortfolio.tsx": 1,
+          "pages/cms/Home/components/TwoUpFeature.tsx": 1,
+          "pages/cms/Home/components/TwoUpFormHero.tsx": 1
+        },
+        "width": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "pages/NewHome/components/SectionsWrapper.tsx": 1,
+          "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1,
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
+        },
+        "bordered": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1
+        },
+        "elevation": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1,
+          "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1
+        },
+        "borderRadius": {
+          "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+          "pages/NewHome/components/EarnAndLearn.tsx": 1
         },
         "spacingStart": {
           "components/cms/TextWithIcon/DefaultLayout.tsx": 1,
@@ -976,47 +1047,18 @@
           "pages/cms/Home/components/TwoUpFormHero.tsx": 2,
           "pages/cms/ContentHub/components/Bytes/UnsubscribeForm/UnsubscribeForm.tsx": 1
         },
-        "maxWidth": {
-          "components/cms/TextWithIcon/VerticalLayout.tsx": 1,
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "pages/NewHome/components/Features.tsx": 1,
-          "pages/NewHome/components/FreeYourMoney.tsx": 1,
-          "pages/NewHome/components/SectionsWrapper.tsx": 1,
-          "pages/NewHome/components/StartPortfolio.tsx": 1,
-          "pages/cms/Home/components/TwoUpFeature.tsx": 1,
-          "pages/cms/Home/components/TwoUpFormHero.tsx": 1
-        },
         "height": {
           "pages/AssetPage/components/DownloadWalletModal.tsx": 1,
           "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1
         },
-        "spacingHorizontal": {
-          "pages/NewHome/components/Disclaimers.tsx": 1,
-          "pages/cms/Places/Places.tsx": 1
-        },
-        "width": {
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "pages/NewHome/components/SectionsWrapper.tsx": 1,
-          "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1,
-          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
-        },
         "key": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
-        "bordered": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
-        "elevation": {
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1
-        },
-        "borderRadius": { "pages/NewHome/components/EarnAndLearn.tsx": 1 },
-        "background": {
-          "pages/NewHome/components/EarnAndLearn.tsx": 1,
-          "pages/cms/Places/Places.tsx": 1
-        },
         "gap": {
           "pages/NewHome/components/Features.tsx": 1,
           "pages/NewHome/components/FreeYourMoney.tsx": 1,
           "pages/NewHome/components/Tools.tsx": 1,
           "components/cms/SpecialWidget/ExploreCrypto/index.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
           "pages/cms/Home/components/TwoUpFeature.tsx": 1,
           "pages/cms/Home/components/TwoUpFormHero.tsx": 1
         },
@@ -1027,6 +1069,7 @@
           "components/cms/SpecialWidget/AboutStatistics/Statistic.tsx": 1,
           "components/cms/SpecialWidget/ExploreCrypto/index.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
           "pages/cms/Home/components/TwoUpFeature.tsx": 1
         },
         "spacingEnd": {
@@ -1039,7 +1082,8 @@
           "components/cms/SpecialWidget/ExploreCrypto/AssetTile.tsx": 1,
           "components/cms/SpecialWidget/ExploreCrypto/index.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1,
-          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1
+          "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1
         },
         "spacingTop": {
           "pages/NewHome/components/StartPortfolio.tsx": 1,
@@ -1047,7 +1091,6 @@
           "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         },
         "dangerouslySetClassName": { "pages/cms/Places/Places.tsx": 1 },
-        "spacingVertical": { "pages/cms/Places/Places.tsx": 1 },
         "flexGrow": {
           "components/cms/SpecialWidget/ExploreCrypto/AssetTile.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/AssetTile.tsx": 1
@@ -1122,8 +1165,8 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 19,
-      "totalCallSites": 18,
+      "totalInstances": 20,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
         {
@@ -1145,6 +1188,7 @@
         "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx": 2,
         "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
         "pages/cms/Home/components/EmailCTA.tsx": 1,
+        "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
         "pages/cms/Home/components/TwoUpFeature.tsx": 1,
         "pages/AssetPage/components/AssetIncentiveBanner/components/AsideLayout.tsx": 1,
         "pages/AssetPage/components/AssetIncentiveBanner/components/SectionLayout.tsx": 1,
@@ -1173,6 +1217,7 @@
           "components/cms/SpecialWidget/ExploreCrypto/index.tsx": 1,
           "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
           "pages/cms/Home/components/TwoUpFeature.tsx": 1,
           "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1,
           "pages/cms/ContentHub/components/Bytes/UnsubscribeForm/UnsubscribeForm.tsx": 1
@@ -1200,6 +1245,7 @@
           "pages/NewHome/components/Tools.tsx": 1,
           "components/cms/SpecialWidget/ExploreCrypto/index.tsx": 1,
           "pages/NewHome/components/ExploreCrypto/ExploreCrypto.tsx": 1,
+          "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
           "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         },
         "type": {
@@ -1358,30 +1404,6 @@
       }
     },
     {
-      "name": "Divider",
-      "sourceFile": "@cbhq/cds-web/layout/Divider",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/layout/Divider",
-      "callSites": {
-        "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1,
-        "pages/NewHome/components/EarnAndLearn.tsx": 1,
-        "components/cms/Landing/Hero/SimpleHero.tsx": 1,
-        "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacingVertical": {
-          "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1,
-          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
-        },
-        "spacingHorizontal": { "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1 },
-        "spacingTop": { "components/cms/Landing/Hero/SimpleHero.tsx": 1 },
-        "direction": {
-          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
       "totalInstances": 7,
@@ -1409,6 +1431,31 @@
         "color": {
           "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 2,
           "pages/cms/ContentHub/components/Bytes/UnsubscribeForm/UnsubscribeForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-web/layout/Divider",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/layout/Divider",
+      "callSites": {
+        "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1,
+        "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
+        "pages/NewHome/components/EarnAndLearn.tsx": 1,
+        "components/cms/Landing/Hero/SimpleHero.tsx": 1,
+        "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingVertical": {
+          "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1,
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
+        },
+        "spacingHorizontal": { "components/cms/Landing/CMSLandingResourcesSectionList.tsx": 1 },
+        "spacingTop": { "components/cms/Landing/Hero/SimpleHero.tsx": 1 },
+        "direction": {
+          "pages/cms/ContentHub/components/Bytes/SubscribeForm/SubscribeFormPage.tsx": 1
         }
       }
     },
@@ -2237,8 +2284,8 @@
         "pages/AssetPage/components/AssetPageLayout.tsx": 1,
         "pages/BuyPages/components/Hero.tsx": 1,
         "pages/Home/components/HeroVariant.tsx": 1,
-        "pages/LandingPage/components/Title.tsx": 1,
         "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
+        "pages/LandingPage/components/Title.tsx": 1,
         "pages/NewHome/components/FreeYourMoney.tsx": 1,
         "pages/Partners/components/Hero.tsx": 1,
         "pages/cms/ContentHub/ContentHub.tsx": 1,
@@ -2260,8 +2307,8 @@
           "pages/AssetPage/components/AssetPageLayout.tsx": 1,
           "pages/BuyPages/components/Hero.tsx": 1,
           "pages/Home/components/HeroVariant.tsx": 1,
-          "pages/LandingPage/components/Title.tsx": 1,
           "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
+          "pages/LandingPage/components/Title.tsx": 1,
           "pages/NewHome/components/FreeYourMoney.tsx": 1,
           "pages/Partners/components/Hero.tsx": 1,
           "pages/cms/ContentHub/ContentHub.tsx": 1,
@@ -3153,13 +3200,14 @@
       "name": "MetaTags",
       "sourceFile": "@cb/shared/MetaTags",
       "totalInstances": 31,
-      "totalCallSites": 30,
+      "totalCallSites": 31,
       "presentationalLibrary": "@cb/shared/MetaTags",
       "callSites": {
         "components/cms/ComposeMetaTags.tsx": 1,
         "pages/Affiliates/Affiliates.tsx": 1,
         "pages/CoinbaseCard/CoinbaseCard.tsx": 1,
-        "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2,
+        "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 1,
+        "pages/CoinbaseNFT/CoinbaseNFTTermsPage.tsx": 1,
         "pages/ErrorPages/ErrorPage.tsx": 1,
         "pages/International/International.tsx": 1,
         "pages/Lend/LendWaitlist.tsx": 1,
@@ -3179,8 +3227,8 @@
         "pages/Corporate/MissionPage/index.tsx": 1,
         "pages/Corporate/PressPage/index.tsx": 1,
         "pages/Home/components/MetaTags.tsx": 1,
-        "pages/LandingPage/components/Page.tsx": 1,
         "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
+        "pages/LandingPage/components/Page.tsx": 1,
         "pages/NewHome/components/MetaTags.tsx": 1,
         "pages/Partners/components/PartnersPageLayout.tsx": 1,
         "pages/cms/ContentHub/ContentHub.tsx": 1,
@@ -3192,7 +3240,8 @@
           "components/cms/ComposeMetaTags.tsx": 1,
           "pages/Affiliates/Affiliates.tsx": 1,
           "pages/CoinbaseCard/CoinbaseCard.tsx": 1,
-          "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2,
+          "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 1,
+          "pages/CoinbaseNFT/CoinbaseNFTTermsPage.tsx": 1,
           "pages/ErrorPages/ErrorPage.tsx": 1,
           "pages/International/International.tsx": 1,
           "pages/Lend/LendWaitlist.tsx": 1,
@@ -3212,8 +3261,8 @@
           "pages/Corporate/MissionPage/index.tsx": 1,
           "pages/Corporate/PressPage/index.tsx": 1,
           "pages/Home/components/MetaTags.tsx": 1,
-          "pages/LandingPage/components/Page.tsx": 1,
           "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
+          "pages/LandingPage/components/Page.tsx": 1,
           "pages/NewHome/components/MetaTags.tsx": 1,
           "pages/Partners/components/PartnersPageLayout.tsx": 1,
           "pages/cms/ContentHub/ContentHub.tsx": 1,
@@ -3414,7 +3463,8 @@
         "col": { "components/cms/LayoutGrid.tsx": 1 },
         "colGap": { "components/cms/LayoutGrid.tsx": 1 },
         "rowGap": { "components/cms/LayoutGrid.tsx": 1 },
-        "breakpoints": { "components/cms/LayoutGrid.tsx": 1 }
+        "breakpoints": { "components/cms/LayoutGrid.tsx": 1 },
+        "hasCustomSpacings": { "components/cms/LayoutGrid.tsx": 1 }
       }
     },
     {
@@ -3750,48 +3800,15 @@
       "presentationalLibrary": "@cb/shared/CardWaitlistAvailabilityText"
     },
     {
-      "name": "form",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
+      "name": "JoinWaitlistRequestForm",
+      "sourceFile": "pages/CoinbaseNFT/components/JoinWaitlistForm/JoinWaitlistRequestForm",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "presentationalProps": [{ "prop": "style", "callSite": "pages/CoinbaseNFT/CoinbaseNFT.tsx" }],
+      "presentationalElement": "form",
       "propsWithCallSites": {
-        "onSubmit": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 },
-        "style": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 }
+        "referrerId": { "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 1 },
+        "onChange": { "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 1 }
       }
-    },
-    {
-      "name": "input",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalElement": "input",
-      "callSites": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2 },
-      "propsWithCallSites": {
-        "type": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2 },
-        "name": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 },
-        "placeholder": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 },
-        "value": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 },
-        "onChange": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2 },
-        "id": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 },
-        "checked": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 }
-      }
-    },
-    {
-      "name": "button",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "button",
-      "propsWithCallSites": { "disabled": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 } }
-    },
-    {
-      "name": "Main",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "main",
-      "callSites": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2 }
     },
     {
       "name": "Positioner",
@@ -5333,6 +5350,19 @@
       "callSites": { "components/Careers/Legal/Legal.tsx": 5 }
     },
     {
+      "name": "svg",
+      "sourceFile": "components/Modal/components/ModalHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "propsWithCallSites": {
+        "xmlns": { "components/Modal/components/ModalHeader.tsx": 1 },
+        "width": { "components/Modal/components/ModalHeader.tsx": 1 },
+        "height": { "components/Modal/components/ModalHeader.tsx": 1 },
+        "viewBox": { "components/Modal/components/ModalHeader.tsx": 1 }
+      }
+    },
+    {
       "name": "Search",
       "sourceFile": "@cb/shared/assets/icons/Search",
       "totalInstances": 1,
@@ -5380,19 +5410,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "li"
-    },
-    {
-      "name": "svg",
-      "sourceFile": "components/Modal/components/ModalHeader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg",
-      "propsWithCallSites": {
-        "xmlns": { "components/Modal/components/ModalHeader.tsx": 1 },
-        "width": { "components/Modal/components/ModalHeader.tsx": 1 },
-        "height": { "components/Modal/components/ModalHeader.tsx": 1 },
-        "viewBox": { "components/Modal/components/ModalHeader.tsx": 1 }
-      }
     },
     {
       "name": "StyledInput",
@@ -5995,220 +6012,6 @@
       }
     },
     {
-      "name": "Container",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "section"
-    },
-    {
-      "name": "ProductHeader",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "li"
-    },
-    {
-      "name": "ImageWrapper",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Image",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "img",
-      "propsWithCallSites": {
-        "src": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
-        "alt": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
-        "loading": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 }
-      }
-    },
-    {
-      "name": "TitleWrapper",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "DateWrapper",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "ButtonWrapper",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ul"
-    },
-    {
-      "name": "Header",
-      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "header"
-    },
-    {
-      "name": "Title",
-      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TextHeading3"
-    },
-    {
-      "name": "Subtitle",
-      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TextBodySmall"
-    },
-    {
-      "name": "GridContainer",
-      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StyledContainer",
-      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Container",
-      "propsWithCallSites": {
-        "as": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
-        "isReverse": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 }
-      }
-    },
-    {
-      "name": "ImageContainer",
-      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Column",
-      "propsWithCallSites": {
-        "imageTheme": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
-        "themeMode": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
-        "isFullSizeImage": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 }
-      }
-    },
-    {
-      "name": "Image",
-      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "img",
-      "propsWithCallSites": {
-        "src": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
-        "alt": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
-        "loading": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
-        "isFullSizeImage": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextContainer",
-      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Column"
-    },
-    {
-      "name": "Title",
-      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TextHeading3"
-    },
-    {
-      "name": "Subtitle",
-      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TextBodySmall"
-    },
-    {
-      "name": "ContentContainer",
-      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StyledContainer",
-      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Container",
-      "propsWithCallSites": {
-        "as": { "components/cms/Landing/VerticalImageSection.tsx": 1 },
-        "verticalImageSectionTheme": { "components/cms/Landing/VerticalImageSection.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextContainer",
-      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Title",
-      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TextHeading3"
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "TextBodySmall"
-    },
-    {
-      "name": "ImageContainer",
-      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "verticalImageSectionTheme": { "components/cms/Landing/VerticalImageSection.tsx": 1 }
-      }
-    },
-    {
-      "name": "Image",
-      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "img",
-      "propsWithCallSites": {
-        "src": { "components/cms/Landing/VerticalImageSection.tsx": 1 },
-        "alt": { "components/cms/Landing/VerticalImageSection.tsx": 1 },
-        "loading": { "components/cms/Landing/VerticalImageSection.tsx": 1 }
-      }
-    },
-    {
       "name": "AvatarContainer",
       "sourceFile": "components/cms/InfoCard/AvatarCard.tsx",
       "totalInstances": 1,
@@ -6366,6 +6169,234 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "Wrapper"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "section"
+    },
+    {
+      "name": "ProductHeader",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "li"
+    },
+    {
+      "name": "ImageWrapper",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Image",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "img",
+      "propsWithCallSites": {
+        "src": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
+        "alt": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
+        "loading": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 }
+      }
+    },
+    {
+      "name": "TitleWrapper",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "DateWrapper",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ButtonWrapper",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionItem.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ul"
+    },
+    {
+      "name": "StyledNextGenImage",
+      "sourceFile": "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ContentfulNextGenImage",
+      "propsWithCallSites": {
+        "url": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 },
+        "altMessage": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 },
+        "pictureWidth": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 },
+        "width": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 },
+        "height": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 }
+      }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "header"
+    },
+    {
+      "name": "Title",
+      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TextHeading3"
+    },
+    {
+      "name": "Subtitle",
+      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TextBodySmall"
+    },
+    {
+      "name": "GridContainer",
+      "sourceFile": "components/cms/Landing/FeaturesSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StyledContainer",
+      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Container",
+      "propsWithCallSites": {
+        "as": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
+        "isReverse": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 }
+      }
+    },
+    {
+      "name": "ImageContainer",
+      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Column",
+      "propsWithCallSites": {
+        "imageTheme": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
+        "themeMode": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
+        "isFullSizeImage": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 }
+      }
+    },
+    {
+      "name": "Image",
+      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "img",
+      "propsWithCallSites": {
+        "src": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
+        "alt": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
+        "loading": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 },
+        "isFullSizeImage": { "components/cms/Landing/TwoUpSplitSection.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextContainer",
+      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Column"
+    },
+    {
+      "name": "Title",
+      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TextHeading3"
+    },
+    {
+      "name": "Subtitle",
+      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TextBodySmall"
+    },
+    {
+      "name": "ContentContainer",
+      "sourceFile": "components/cms/Landing/TwoUpSplitSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StyledContainer",
+      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Container",
+      "propsWithCallSites": {
+        "as": { "components/cms/Landing/VerticalImageSection.tsx": 1 },
+        "verticalImageSectionTheme": { "components/cms/Landing/VerticalImageSection.tsx": 1 }
+      }
+    },
+    {
+      "name": "TextContainer",
+      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Title",
+      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TextHeading3"
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "TextBodySmall"
+    },
+    {
+      "name": "ImageContainer",
+      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "verticalImageSectionTheme": { "components/cms/Landing/VerticalImageSection.tsx": 1 }
+      }
+    },
+    {
+      "name": "Image",
+      "sourceFile": "components/cms/Landing/VerticalImageSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "img",
+      "propsWithCallSites": {
+        "src": { "components/cms/Landing/VerticalImageSection.tsx": 1 },
+        "alt": { "components/cms/Landing/VerticalImageSection.tsx": 1 },
+        "loading": { "components/cms/Landing/VerticalImageSection.tsx": 1 }
+      }
     },
     {
       "name": "Wrapper",
@@ -7006,14 +7037,6 @@
       }
     },
     {
-      "name": "BottomCard",
-      "sourceFile": "pages/AssetPage/components/AssetPageLayout.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "section",
-      "callSites": { "pages/AssetPage/components/AssetPageLayout.tsx": 2 }
-    },
-    {
       "name": "AssetInfo",
       "sourceFile": "@cb/shared/AssetInfo",
       "totalInstances": 1,
@@ -7026,36 +7049,14 @@
       }
     },
     {
-      "name": "BottomCardArticles",
-      "sourceFile": "pages/AssetPage/components/AssetPageLayout.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "BottomCard",
-      "callSites": { "pages/AssetPage/components/AssetPageLayout.tsx": 2 }
-    },
-    {
       "name": "AssetCommunityFeed",
-      "sourceFile": "@cb/shared/components/Earn/AssetCommunityFeed",
+      "sourceFile": "@cb/shared/components/Earn/components/Community/AssetCommunityFeed",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/components/Earn/AssetCommunityFeed",
+      "presentationalLibrary": "@cb/shared/components/Earn/components/Community/AssetCommunityFeed",
       "propsWithCallSites": {
         "slug": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
         "withLegacyTheme": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
-      }
-    },
-    {
-      "name": "AssetArticles",
-      "sourceFile": "@cb/shared/AssetArticles",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/AssetArticles",
-      "propsWithCallSites": {
-        "assetIdRender": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
-        "articles": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
-        "intl": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
-        "isMobile": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
-        "messages": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
       }
     },
     {
@@ -8073,6 +8074,97 @@
       }
     },
     {
+      "name": "HeaderSpacing",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StyledGiftBoxHorizontal",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "GiftBoxHorizontal"
+    },
+    {
+      "name": "Title",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Body",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "SignupFlowContainer",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "HorizontalRule",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BulletsTitle",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BulletsContainer",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BulletContainer",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "IconContainer",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BulletTitle",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "BulletContent",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "List",
       "sourceFile": "@cb/shared/List",
       "totalInstances": 4,
@@ -8172,97 +8264,6 @@
       "propsWithCallSites": { "marginBottom": { "pages/LandingPage/components/SignupForm.tsx": 1 } }
     },
     {
-      "name": "HeaderSpacing",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "StyledGiftBoxHorizontal",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "GiftBoxHorizontal"
-    },
-    {
-      "name": "Title",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Body",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "SignupFlowContainer",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "HorizontalRule",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BulletsTitle",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BulletsContainer",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BulletContainer",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "IconContainer",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BulletTitle",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "BulletContent",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "Wrapper",
       "sourceFile": "pages/Listing/components/Benefits.tsx",
       "totalInstances": 1,
@@ -8297,109 +8298,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
-    },
-    {
-      "name": "HeroSection",
-      "sourceFile": "pages/PaidLandingPages/sections/HeroSection",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "presentationalElement": "TwoPanelHeroSection",
-      "callSites": {
-        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
-        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1,
-        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
-          "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1,
-          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SmallSectionHeading",
-      "sourceFile": "components/LandingPages/Headings/SmallSectionHeading",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalElement": "HeaderContainer",
-      "callSites": {
-        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
-        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
-      },
-      "propsWithCallSites": {
-        "maxTextWidth": {
-          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
-          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SecuritySection",
-      "sourceFile": "pages/PaidLandingPages/sections/SecuritySection",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "Container",
-      "callSites": {
-        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FeatureImageSection",
-      "sourceFile": "pages/PaidLandingPages/sections/FeatureImageSection",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "presentationalElement": "StyledTwoPanelSection",
-      "callSites": {
-        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
-        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1
-      }
-    },
-    {
-      "name": "FeatureHeading",
-      "sourceFile": "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "SectionHeading"
-    },
-    {
-      "name": "FeatureSubHeading",
-      "sourceFile": "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "SubHeading"
-    },
-    {
-      "name": "StyledFeaturesList",
-      "sourceFile": "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "FeaturesList"
-    },
-    {
-      "name": "CTASection",
-      "sourceFile": "pages/PaidLandingPages/sections/CTASection",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "presentationalElement": "StyledSection",
-      "callSites": {
-        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
-        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1,
-        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
-      }
     },
     {
       "name": "StyledNextGenImage",
@@ -8516,6 +8414,109 @@
         "altMessage": { "pages/NewHome/components/Tools.tsx": 1 },
         "width": { "pages/NewHome/components/Tools.tsx": 1 },
         "height": { "pages/NewHome/components/Tools.tsx": 1 }
+      }
+    },
+    {
+      "name": "HeroSection",
+      "sourceFile": "pages/PaidLandingPages/sections/HeroSection",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalElement": "TwoPanelHeroSection",
+      "callSites": {
+        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
+        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1,
+        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
+          "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1,
+          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SmallSectionHeading",
+      "sourceFile": "components/LandingPages/Headings/SmallSectionHeading",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalElement": "HeaderContainer",
+      "callSites": {
+        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
+        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
+      },
+      "propsWithCallSites": {
+        "maxTextWidth": {
+          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
+          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SecuritySection",
+      "sourceFile": "pages/PaidLandingPages/sections/SecuritySection",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "Container",
+      "callSites": {
+        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "FeatureImageSection",
+      "sourceFile": "pages/PaidLandingPages/sections/FeatureImageSection",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "presentationalElement": "StyledTwoPanelSection",
+      "callSites": {
+        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
+        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1
+      }
+    },
+    {
+      "name": "FeatureHeading",
+      "sourceFile": "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "SectionHeading"
+    },
+    {
+      "name": "FeatureSubHeading",
+      "sourceFile": "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "SubHeading"
+    },
+    {
+      "name": "StyledFeaturesList",
+      "sourceFile": "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "FeaturesList"
+    },
+    {
+      "name": "CTASection",
+      "sourceFile": "pages/PaidLandingPages/sections/CTASection",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "presentationalElement": "StyledSection",
+      "callSites": {
+        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 1,
+        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1,
+        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 1
       }
     },
     {
@@ -8636,6 +8637,16 @@
       }
     },
     {
+      "name": "StyledCard",
+      "sourceFile": "pages/PaidLandingPages/sections/SecuritySection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Card",
+      "propsWithCallSites": {
+        "column": { "pages/PaidLandingPages/sections/SecuritySection.tsx": 1 }
+      }
+    },
+    {
       "name": "StyledListFromConfig",
       "sourceFile": "pages/PaidLandingPages/components/FeaturesList.tsx",
       "totalInstances": 1,
@@ -8647,16 +8658,6 @@
       "propsWithCallSites": {
         "config": { "pages/PaidLandingPages/components/FeaturesList.tsx": 1 },
         "className": { "pages/PaidLandingPages/components/FeaturesList.tsx": 1 }
-      }
-    },
-    {
-      "name": "StyledCard",
-      "sourceFile": "pages/PaidLandingPages/sections/SecuritySection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Card",
-      "propsWithCallSites": {
-        "column": { "pages/PaidLandingPages/sections/SecuritySection.tsx": 1 }
       }
     },
     {
@@ -10202,6 +10203,20 @@
       "styledComponent": "div"
     },
     {
+      "name": "AssetArticles",
+      "sourceFile": "@cb/shared/AssetArticles",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/AssetArticles",
+      "propsWithCallSites": {
+        "assetIdRender": { "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 },
+        "articles": { "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 },
+        "intl": { "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 },
+        "isMobile": { "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 },
+        "messages": { "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 }
+      }
+    },
+    {
       "name": "MetaTags",
       "sourceFile": "@cb/shared/components/MetaTags",
       "totalInstances": 1,
@@ -11416,6 +11431,33 @@
       }
     },
     {
+      "name": "CustomContentWrapper",
+      "sourceFile": "pages/cms/Home/components/TwoUpCTAWithImage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "ImageContainer",
+      "sourceFile": "pages/cms/Home/components/TwoUpCTAWithImage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "StyledNextGenImage",
+      "sourceFile": "pages/cms/Home/components/TwoUpCTAWithImage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ContentfulNextGenImage",
+      "propsWithCallSites": {
+        "url": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 },
+        "altMessage": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 },
+        "width": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 },
+        "height": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 }
+      }
+    },
+    {
       "name": "StyledNextGenImage",
       "sourceFile": "pages/cms/Home/components/TwoUpFeature.tsx",
       "totalInstances": 1,
@@ -12334,8 +12376,8 @@
     {
       "name": "Helmet",
       "sourceFile": "react-helmet/Helmet",
-      "totalInstances": 14,
-      "totalCallSites": 14,
+      "totalInstances": 16,
+      "totalCallSites": 16,
       "callSites": {
         "cosmos.decorator.tsx": 1,
         "server/Document.tsx": 1,
@@ -12344,10 +12386,12 @@
         "pages/NewHome/Home.tsx": 1,
         "components/Layout/components/LayoutHelmet.tsx": 1,
         "components/cms/BasicHero/TwoUpHero.tsx": 1,
+        "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1,
         "components/cms/Landing/Hero/ImageHero.tsx": 1,
         "components/cms/Landing/Hero/TwoUpHero.tsx": 1,
         "pages/AssetPage/components/AssetPageMetaDataHelmet/AssetPageMetaDataHelmet.tsx": 1,
         "pages/cms/ContentHub/components/PageCard.tsx": 1,
+        "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
         "pages/cms/Home/components/TwoUpFeature.tsx": 1,
         "pages/cms/Home/components/TwoUpFormHero.tsx": 1,
         "pages/cms/ContentHub/components/Article/Article.tsx": 1
@@ -13341,8 +13385,8 @@
       "callSites": {
         "components/cms/Layout.tsx": 2,
         "components/cms/SidebarNav.tsx": 1,
-        "components/cms/Landing/FeaturesSection.tsx": 1,
         "components/cms/InfoCard/EventInfoCard.tsx": 1,
+        "components/cms/Landing/FeaturesSection.tsx": 1,
         "pages/cms/ContentHub/components/Anchor.tsx": 1,
         "pages/cms/ContentHub/components/ArticleSection.tsx": 1,
         "pages/cms/ContentHub/components/CardGrid.tsx": 1,
@@ -13355,8 +13399,8 @@
         "col": {
           "components/cms/Layout.tsx": 2,
           "components/cms/SidebarNav.tsx": 1,
-          "components/cms/Landing/FeaturesSection.tsx": 1,
           "components/cms/InfoCard/EventInfoCard.tsx": 1,
+          "components/cms/Landing/FeaturesSection.tsx": 1,
           "pages/cms/ContentHub/components/Anchor.tsx": 1,
           "pages/cms/ContentHub/components/ArticleSection.tsx": 1,
           "pages/cms/ContentHub/components/CardGrid.tsx": 1,
@@ -13368,8 +13412,8 @@
         "rowGap": {
           "components/cms/Layout.tsx": 1,
           "components/cms/SidebarNav.tsx": 1,
-          "components/cms/Landing/FeaturesSection.tsx": 1,
           "components/cms/InfoCard/EventInfoCard.tsx": 1,
+          "components/cms/Landing/FeaturesSection.tsx": 1,
           "pages/cms/ContentHub/components/Anchor.tsx": 1,
           "pages/cms/ContentHub/components/ArticleSection.tsx": 1,
           "pages/cms/ContentHub/components/CardGrid.tsx": 1,
@@ -13380,13 +13424,13 @@
         },
         "colGap": {
           "components/cms/Layout.tsx": 1,
-          "components/cms/Landing/FeaturesSection.tsx": 1,
-          "components/cms/InfoCard/EventInfoCard.tsx": 1
+          "components/cms/InfoCard/EventInfoCard.tsx": 1,
+          "components/cms/Landing/FeaturesSection.tsx": 1
         },
         "breakpoints": {
           "components/cms/Layout.tsx": 1,
-          "components/cms/Landing/FeaturesSection.tsx": 1,
           "components/cms/InfoCard/EventInfoCard.tsx": 1,
+          "components/cms/Landing/FeaturesSection.tsx": 1,
           "pages/cms/ContentHub/components/CardGrid.tsx": 1,
           "pages/cms/ContentHub/components/FeatureWithFeed.tsx": 1,
           "pages/cms/ContentHub/components/Article/Article.tsx": 1
@@ -13718,15 +13762,16 @@
       "name": "Layout",
       "sourceFile": "components/Layout",
       "totalInstances": 38,
-      "totalCallSites": 37,
+      "totalCallSites": 38,
       "callSites": {
         "pages/Affiliates/Affiliates.tsx": 1,
         "pages/Browse/Browse.tsx": 1,
         "pages/CoinbaseCard/CoinbaseCard.tsx": 1,
-        "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2,
+        "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 1,
+        "pages/CoinbaseNFT/CoinbaseNFTTermsPage.tsx": 1,
         "pages/Earn/Home.tsx": 1,
-        "pages/ErrorPages/ErrorPage.tsx": 1,
         "pages/Home/ControlHomepage.tsx": 1,
+        "pages/ErrorPages/ErrorPage.tsx": 1,
         "pages/International/International.tsx": 1,
         "pages/Lend/LendWaitlist.tsx": 1,
         "pages/Listing/Listing.tsx": 1,
@@ -13747,8 +13792,8 @@
         "pages/Borrow/Loan/BorrowLoanWaitlist.tsx": 1,
         "pages/Corporate/MissionPage/index.tsx": 1,
         "pages/Corporate/PressPage/index.tsx": 1,
-        "pages/LandingPage/components/Page.tsx": 1,
         "pages/Join/JoinPageContents/JoinPageContents.tsx": 1,
+        "pages/LandingPage/components/Page.tsx": 1,
         "pages/Partners/components/PartnersPageLayout.tsx": 1,
         "pages/cms/Page/Page.tsx": 1,
         "pages/cms/PageCompose/PageCompose.tsx": 1,
@@ -13782,8 +13827,8 @@
         "pages/Browse/Browse.tsx": 1,
         "pages/CoinbaseCard/CoinbaseCard.tsx": 1,
         "pages/Earn/Home.tsx": 1,
-        "pages/ErrorPages/ErrorPage.tsx": 1,
         "pages/Home/ControlHomepage.tsx": 1,
+        "pages/ErrorPages/ErrorPage.tsx": 1,
         "pages/International/International.tsx": 1,
         "pages/Lend/LendWaitlist.tsx": 1,
         "pages/Listing/Listing.tsx": 1,
@@ -13812,8 +13857,8 @@
           "pages/Browse/Browse.tsx": 1,
           "pages/CoinbaseCard/CoinbaseCard.tsx": 1,
           "pages/Earn/Home.tsx": 1,
-          "pages/ErrorPages/ErrorPage.tsx": 1,
           "pages/Home/ControlHomepage.tsx": 1,
+          "pages/ErrorPages/ErrorPage.tsx": 1,
           "pages/International/International.tsx": 1,
           "pages/Lend/LendWaitlist.tsx": 1,
           "pages/Listing/Listing.tsx": 1,
@@ -13915,8 +13960,8 @@
         "pages/Affiliates/Affiliates.tsx": 1,
         "pages/Browse/Browse.tsx": 1,
         "pages/CoinbaseCard/CoinbaseCard.tsx": 1,
-        "pages/ErrorPages/ErrorPage.tsx": 1,
         "pages/Home/ControlHomepage.tsx": 1,
+        "pages/ErrorPages/ErrorPage.tsx": 1,
         "pages/International/International.tsx": 1,
         "pages/Lend/LendWaitlist.tsx": 1,
         "pages/Listing/Listing.tsx": 1,
@@ -14042,60 +14087,32 @@
       "totalCallSites": 1
     },
     {
-      "name": "h3",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
+      "name": "div",
+      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "label",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "htmlFor": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 } }
     },
     {
       "name": "ul",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2 }
-    },
-    {
-      "name": "li",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 9,
-      "totalCallSites": 1,
-      "callSites": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 9 }
-    },
-    {
-      "name": "p",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 2 }
-    },
-    {
-      "name": "div",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 3 }
-    },
-    {
-      "name": "Leaderboard",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
+      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "JoinWaitlistRequestForm",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
+      "name": "li",
+      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 3 }
+    },
+    {
+      "name": "Leaderboard",
+      "sourceFile": "pages/CoinbaseNFT/components/Leaderboard",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "referrerId": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 },
-        "onChange": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 }
+        "rank": { "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 1 },
+        "refLink": { "pages/CoinbaseNFT/CoinbaseNFTAnnouncement.tsx": 1 }
       }
     },
     {
@@ -14104,68 +14121,39 @@
       "totalInstances": 3,
       "totalCallSites": 3,
       "callSites": {
-        "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1,
+        "pages/CoinbaseNFT/CoinbaseNFTRouter.tsx": 1,
         "pages/SharePortfolio/SharePortfolio.tsx": 1,
         "pages/SharePortfolio/SharePortfolioContent.tsx": 1
       },
       "propsWithCallSites": {
         "to": {
-          "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1,
+          "pages/CoinbaseNFT/CoinbaseNFTRouter.tsx": 1,
           "pages/SharePortfolio/SharePortfolio.tsx": 1,
           "pages/SharePortfolio/SharePortfolioContent.tsx": 1
         }
       }
     },
     {
-      "name": "TermsPage",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
+      "name": "CoinbaseNFTTermsPage",
+      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFTTermsPage",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "CoinbaseNFTPage",
-      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFT.tsx",
+      "name": "CoinbaseNFTAnnouncement",
+      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFTAnnouncement",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "referrerId": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 },
-        "mySocialId": { "pages/CoinbaseNFT/CoinbaseNFT.tsx": 1 }
+        "referrerId": { "pages/CoinbaseNFT/CoinbaseNFTRouter.tsx": 1 },
+        "mySocialId": { "pages/CoinbaseNFT/CoinbaseNFTRouter.tsx": 1 }
       }
     },
     {
-      "name": "ErrorPage",
-      "sourceFile": "pages/ErrorPages/ErrorPage",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
-      "propsWithCallSites": {
-        "title": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
-        "body": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
-        "buttonText": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
-        "buttonLink": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
-        "illustration": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
-        "metaTitle": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 }
-      }
-    },
-    {
-      "name": "img",
-      "sourceFile": "pages/ErrorPages/Error500.tsx",
+      "name": "div",
+      "sourceFile": "pages/CoinbaseNFT/CoinbaseNFTTermsPage.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": { "pages/ErrorPages/Error500.tsx": 1 },
-        "alt": { "pages/ErrorPages/Error500.tsx": 1 }
-      }
-    },
-    {
-      "name": "img",
-      "sourceFile": "pages/ErrorPages/NotFound.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": { "pages/ErrorPages/NotFound.tsx": 1 },
-        "alt": { "pages/ErrorPages/NotFound.tsx": 1 }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "MetaTags",
@@ -14251,6 +14239,41 @@
       "propsWithCallSites": {
         "initialAssets": { "pages/Home/Home.tsx": 1 },
         "earnCampaigns": { "pages/Home/Home.tsx": 1 }
+      }
+    },
+    {
+      "name": "ErrorPage",
+      "sourceFile": "pages/ErrorPages/ErrorPage",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
+      "propsWithCallSites": {
+        "title": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
+        "body": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
+        "buttonText": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
+        "buttonLink": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
+        "illustration": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 },
+        "metaTitle": { "pages/ErrorPages/Error500.tsx": 1, "pages/ErrorPages/NotFound.tsx": 1 }
+      }
+    },
+    {
+      "name": "img",
+      "sourceFile": "pages/ErrorPages/Error500.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "src": { "pages/ErrorPages/Error500.tsx": 1 },
+        "alt": { "pages/ErrorPages/Error500.tsx": 1 }
+      }
+    },
+    {
+      "name": "img",
+      "sourceFile": "pages/ErrorPages/NotFound.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "src": { "pages/ErrorPages/NotFound.tsx": 1 },
+        "alt": { "pages/ErrorPages/NotFound.tsx": 1 }
       }
     },
     {
@@ -15316,26 +15339,6 @@
       }
     },
     {
-      "name": "CMSLandingResourcesSectionList",
-      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionList",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "resourcesList": { "components/cms/Landing/CMSLandingResourcesSection.tsx": 1 }
-      }
-    },
-    {
-      "name": "LazyResourcesFormModal",
-      "sourceFile": "components/cms/Landing/components/LazyResourcesFormModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isOpen": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
-        "closeModal": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
-        "assetUrl": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 }
-      }
-    },
-    {
       "name": "li",
       "sourceFile": "components/cms/InfoCard/CTAWithImageInfoCard.tsx",
       "totalInstances": 1,
@@ -15358,6 +15361,37 @@
       "sourceFile": "components/cms/InfoCard/AvatarCard",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "CMSLandingResourcesSectionList",
+      "sourceFile": "components/cms/Landing/CMSLandingResourcesSectionList",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "resourcesList": { "components/cms/Landing/CMSLandingResourcesSection.tsx": 1 }
+      }
+    },
+    {
+      "name": "LazyResourcesFormModal",
+      "sourceFile": "components/cms/Landing/components/LazyResourcesFormModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isOpen": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
+        "closeModal": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 },
+        "assetUrl": { "components/cms/Landing/CMSLandingResourcesSectionItem.tsx": 1 }
+      }
+    },
+    {
+      "name": "link",
+      "sourceFile": "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "rel": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 },
+        "href": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 },
+        "as": { "components/cms/Landing/CMSLandingTwoUpRedirectCard.tsx": 1 }
+      }
     },
     {
       "name": "CustomTextWithIcon",
@@ -15589,6 +15623,13 @@
       }
     },
     {
+      "name": "BottomCard",
+      "sourceFile": "pages/AssetPage/utils/sharedStyles/BottomCard",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "pages/AssetPage/components/AssetPageLayout.tsx": 2 }
+    },
+    {
       "name": "FAQRichText",
       "sourceFile": "pages/AssetPage/components/FAQRichText",
       "totalInstances": 1,
@@ -15616,14 +15657,24 @@
       }
     },
     {
-      "name": "ArticlesCTA",
-      "sourceFile": "pages/AssetPage/components/ArticlesCTA",
+      "name": "BottomCardArticles",
+      "sourceFile": "pages/AssetPage/utils/sharedStyles/BottomCardArticles",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "pages/AssetPage/components/AssetPageLayout.tsx": 1,
+        "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1
+      }
+    },
+    {
+      "name": "AssetArticles",
+      "sourceFile": "pages/AssetPage/components/AssetArticles",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "isLast": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
-        "isMobile": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
-        "onClickSignup": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
+        "asset": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
+        "articles": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 },
+        "languageCode": { "pages/AssetPage/components/AssetPageLayout.tsx": 1 }
       }
     },
     {
@@ -15783,6 +15834,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "opacity": { "pages/CoinbaseCardBack/components/CardBack.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "pages/CoinbaseNFT/components/Leaderboard.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "pages/CoinbaseNFT/components/Leaderboard.tsx": 3 }
     },
     {
       "name": "Hero",
@@ -16106,6 +16164,65 @@
       "totalCallSites": 1
     },
     {
+      "name": "b",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "StyledLearnMoreLink",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SignupFlow",
+      "sourceFile": "components/SignupForm/SignupFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "referrerId": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 1 },
+        "referrerSrc": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 1 },
+        "showSignInCTA": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 1 }
+      }
+    },
+    {
+      "name": "Bullet",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 },
+      "propsWithCallSites": {
+        "icon": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 },
+        "title": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 },
+        "body": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 }
+      }
+    },
+    {
+      "name": "ReactComponent",
+      "sourceFile": "pages/Join/JoinPageContents/icons/arrowsHorizontal.svg/ReactComponent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ReactComponent",
+      "sourceFile": "pages/Join/JoinPageContents/icons/safe.svg/ReactComponent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ReactComponent",
+      "sourceFile": "pages/Join/JoinPageContents/icons/chartBar.svg/ReactComponent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "Page",
       "sourceFile": "pages/LandingPage/components/Page",
       "totalInstances": 4,
@@ -16255,65 +16372,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "b",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "StyledLearnMoreLink",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SignupFlow",
-      "sourceFile": "components/SignupForm/SignupFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "referrerId": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 1 },
-        "referrerSrc": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 1 },
-        "showSignInCTA": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 1 }
-      }
-    },
-    {
-      "name": "Bullet",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 },
-      "propsWithCallSites": {
-        "icon": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 },
-        "title": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 },
-        "body": { "pages/Join/JoinPageContents/JoinPageContents.tsx": 3 }
-      }
-    },
-    {
-      "name": "ReactComponent",
-      "sourceFile": "pages/Join/JoinPageContents/icons/arrowsHorizontal.svg/ReactComponent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ReactComponent",
-      "sourceFile": "pages/Join/JoinPageContents/icons/safe.svg/ReactComponent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ReactComponent",
-      "sourceFile": "pages/Join/JoinPageContents/icons/chartBar.svg/ReactComponent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "pages/Join/JoinPageContents/JoinPageContents.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "li",
       "sourceFile": "pages/Listing/components/Benefits.tsx",
       "totalInstances": 1,
@@ -16328,51 +16386,16 @@
       "propsWithCallSites": { "to": { "pages/Listing/components/Benefits.tsx": 1 } }
     },
     {
-      "name": "StatsList",
-      "sourceFile": "components/LandingPages/StatsList",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
-        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1
-      }
-    },
-    {
-      "name": "Spacer",
-      "sourceFile": "pages/PaidLandingPages/styles/Spacer",
-      "totalInstances": 9,
-      "totalCallSites": 4,
-      "callSites": {
-        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 2,
-        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 2,
-        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 2,
-        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 3
-      },
-      "propsWithCallSites": {
-        "size": {
-          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 2,
-          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 2,
-          "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 2,
-          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 3
-        },
-        "hideOnMobile": {
-          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 2,
-          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 2,
-          "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 2,
-          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 3
-        }
-      }
-    },
-    {
       "name": "SectionsWrapper",
       "sourceFile": "pages/NewHome/components/SectionsWrapper",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 6,
+      "totalCallSites": 6,
       "callSites": {
         "pages/NewHome/components/Disclaimers.tsx": 1,
         "pages/NewHome/components/Features.tsx": 1,
         "pages/NewHome/components/FreeYourMoney.tsx": 1,
         "pages/NewHome/components/Tools.tsx": 1,
+        "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1,
         "pages/cms/Home/components/TwoUpFeature.tsx": 1
       }
     },
@@ -16471,6 +16494,42 @@
       "propsWithCallSites": { "as": { "pages/NewHome/components/Tools.tsx": 1 } }
     },
     {
+      "name": "StatsList",
+      "sourceFile": "components/LandingPages/StatsList",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 1,
+        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 1
+      }
+    },
+    {
+      "name": "Spacer",
+      "sourceFile": "pages/PaidLandingPages/styles/Spacer",
+      "totalInstances": 9,
+      "totalCallSites": 4,
+      "callSites": {
+        "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 2,
+        "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 2,
+        "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 2,
+        "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 3
+      },
+      "propsWithCallSites": {
+        "size": {
+          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 2,
+          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 2,
+          "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 2,
+          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 3
+        },
+        "hideOnMobile": {
+          "pages/PaidLandingPages/NarrativeFour/NarrativeFour.tsx": 2,
+          "pages/PaidLandingPages/NarrativeOne/NarrativeOne.tsx": 2,
+          "pages/PaidLandingPages/NarrativeThree/NarrativeThree.tsx": 2,
+          "pages/PaidLandingPages/NarrativeTwo/NarrativeTwo.tsx": 3
+        }
+      }
+    },
+    {
       "name": "ReactComponent",
       "sourceFile": "pages/PaidLandingPages/NarrativeOne/assets/icons/star.svg/ReactComponent",
       "totalInstances": 1,
@@ -16515,6 +16574,13 @@
       }
     },
     {
+      "name": "SharedRewardsSection",
+      "sourceFile": "components/LandingPages/RewardsSection/SharedRewardsSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "title": { "pages/PaidLandingPages/sections/RewardsSection.tsx": 1 } }
+    },
+    {
       "name": "PortfolioIcon",
       "sourceFile": "pages/PaidLandingPages/styles/PortfolioIcon",
       "totalInstances": 1,
@@ -16531,13 +16597,6 @@
       "sourceFile": "pages/PaidLandingPages/styles/AccessCryptoIcon",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "SharedRewardsSection",
-      "sourceFile": "components/LandingPages/RewardsSection/SharedRewardsSection",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "title": { "pages/PaidLandingPages/sections/RewardsSection.tsx": 1 } }
     },
     {
       "name": "a",
@@ -17661,6 +17720,16 @@
       }
     },
     {
+      "name": "ArticlesCTA",
+      "sourceFile": "pages/AssetPage/components/ArticlesCTA",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isLast": { "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 },
+        "onClickSignup": { "pages/AssetPage/components/AssetArticles/AssetArticles.tsx": 1 }
+      }
+    },
+    {
       "name": "MobileLayout",
       "sourceFile": "pages/AssetPage/components/AssetCTACardWithButton/AssetCTACardWithButton.tsx",
       "totalInstances": 1,
@@ -18335,6 +18404,24 @@
         "inputPlaceholderText": { "pages/cms/Home/components/EmailCTA.tsx": 1 },
         "buttonLabel": { "pages/cms/Home/components/EmailCTA.tsx": 1 }
       }
+    },
+    {
+      "name": "link",
+      "sourceFile": "pages/cms/Home/components/TwoUpCTAWithImage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "rel": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 },
+        "href": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 },
+        "as": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 }
+      }
+    },
+    {
+      "name": "Title",
+      "sourceFile": "pages/cms/Home/components/TwoUpCTAWithImage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "as": { "pages/cms/Home/components/TwoUpCTAWithImage.tsx": 1 } }
     },
     {
       "name": "link",

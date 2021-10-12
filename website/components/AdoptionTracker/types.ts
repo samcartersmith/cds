@@ -1,6 +1,6 @@
 import { adopters } from ':cds-website/data/adopters';
 
-export type Adopter = typeof adopters[number];
+export type Adopter = typeof adopters[number]['id'];
 
 export type AdopterProjectInfo = {
   github: string;

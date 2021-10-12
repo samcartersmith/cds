@@ -1,18 +1,20 @@
 // test svg's here
 
 import path from 'path';
-import { ProjectParser, ProjectParserConfig } from '../ProjectParser';
+import { ProjectParser } from '../ProjectParser';
+import type { AdopterConfig } from '../../types';
 
 type ComponentData = { name: string; sourceFile: string };
 
 describe('FileParser Tests', () => {
   test('svg does not dig into the tree', async () => {
-    const config: ProjectParserConfig = {
+    const config: AdopterConfig = {
       root: path.join(__dirname, 'project'),
       github: 'frontend/coinbase-www',
       id: 'retail-web-shared',
       label: 'Retail Web Shared',
       sourceGlob: `**/SVGParseTest.tsx`,
+      type: 'doc',
     };
 
     const projectParser = new ProjectParser(config);
@@ -44,19 +46,20 @@ describe('FileParser Tests', () => {
   });
 
   test('nested presentational component', async () => {
-    const config: ProjectParserConfig = {
+    const config: AdopterConfig = {
       root: path.join(__dirname, 'project'),
       github: 'frontend/coinbase-www',
       id: 'retail-web-shared',
       label: 'Retail Web Shared',
       projectTsAliases: ['@test/frontend'],
       sourceGlob: `**/presentational/**/*.(ts|tsx|js|jsx)`,
+      type: 'doc',
     };
 
     const projectParser = new ProjectParser(config);
     await projectParser.parse();
 
-    // console.log(JSON.stringify(JSON.parse(projectParser.components), null, 2));
+    // console.log(projectParser.components);
     // console.log(projectParser.extendedStyledComponents.entries());
     // console.log(projectParser.styledComponents.entries());
     // console.log(projectParser.aliasedCdsComponents.entries());

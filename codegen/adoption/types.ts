@@ -29,7 +29,7 @@ export type ParsedFile = {
   // components: Record<string, TsJsxNode[]>;
 };
 
-export type Config = {
+export type AdopterConfig = {
   /** The absolute path for the source files to parse. */
   root: string;
   /** The github url for the projects repo. This will be used to link to source files. */
@@ -39,14 +39,26 @@ export type Config = {
   /** A label to use when displaying metrics on website. */
   label: string;
   /** The Typescript Alias for the project (optional). */
-  tsAlias?: string;
+  projectTsAliases?: string[];
+  presentationalElements?: string[];
+  presentationalLibraries?: string[];
+  presentationalAttributes?: string[];
+  cdsAliases?: string[];
+  ignoreDirs?: string[];
+  sourceGlob?: string;
+  tsconfigFileName?: string;
+  type: 'doc';
+  pillar?: string;
 };
 
-export type ParsedConfig = {
-  files: File[];
-  dependencies: ObjectString;
-  tsAliases: ObjectString;
-} & Config;
+export type AdoptersConfig = {
+  type: 'category';
+  label: string;
+  collapsed: boolean;
+  items: (AdopterConfig | AdoptersConfig)[];
+};
+
+export type AdopterConfigForSidebar = Extract<AdopterConfig, 'type' | 'id' | 'label'>;
 
 export type TsStyledNode = ObjectString;
 export type TSImports = ObjectString;

@@ -2,11 +2,11 @@
 /* eslint-disable import/no-dynamic-require */
 import React, { useEffect, memo, useCallback, useMemo, useState } from 'react';
 import { Card, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
-import { TextBody, TextDisplay2, TextHeadline } from '@cbhq/cds-web/typography';
+import { TextBody, TextTitle2, TextDisplay2, TextHeadline } from '@cbhq/cds-web/typography';
 import { CellDetailVariant, join, SetState, useToggler } from '@cbhq/cds-common';
 import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
 import Link from '@docusaurus/Link';
-import { first as getFirst } from 'lodash';
+import { first as getFirst, toPairs, groupBy } from 'lodash';
 import { Button } from '@cbhq/cds-web/buttons';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 import { Icon } from '@cbhq/cds-web/icons';
@@ -72,7 +72,7 @@ const PercentChange = memo(({ showParenthesis }: { showParenthesis?: boolean }) 
 });
 
 const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
-  const { label, id, github } = useAdopterProjectInfo();
+  const { label, id } = useAdopterProjectInfo();
   const { latest } = useAdopterStats();
 
   const start = (
@@ -80,9 +80,6 @@ const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
       <TextHeadline as="p" overflow="truncate">
         {label}
       </TextHeadline>
-      <TextBody as="p" overflow="truncate" color="foregroundMuted">
-        {github}
-      </TextBody>
     </VStack>
   );
 
@@ -219,21 +216,26 @@ const ActiveProject = memo(() => {
 });
 
 export const AdoptionTrackerOverview = memo(() => {
-  const [activeProject, setActiveProject] = useState<Adopter>(adopters[0]);
+  const [activeProjectId, setActiveProject] = useState<Adopter>(adopters[0].id);
   const start = useMemo(() => {
-    return (
-      <VStack gap={1}>
-        {adopters.map((id) => (
-          <Project key={id} id={id}>
-            <ProjectCell active={activeProject === id} setActiveProject={setActiveProject} />
-          </Project>
-        ))}
-      </VStack>
-    );
-  }, [activeProject]);
+    return toPairs(groupBy(adopters, 'pillar')).map(([pillar, projects]) => {
+      return (
+        <VStack key={pillar} gap={1} spacingBottom={5}>
+          <TextTitle2 as="h2" spacingBottom={2}>
+            {pillar}
+          </TextTitle2>
+          {projects.map(({ id }) => (
+            <Project key={id} id={id}>
+              <ProjectCell active={activeProjectId === id} setActiveProject={setActiveProject} />
+            </Project>
+          ))}
+        </VStack>
+      );
+    });
+  }, [activeProjectId]);
 
   const end = (
-    <Project id={activeProject}>
+    <Project id={activeProjectId}>
       <ActiveProject />
     </Project>
   );

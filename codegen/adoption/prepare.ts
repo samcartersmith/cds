@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { writeFile } from '../utils/writeFile';
 import { ProjectParser } from './parsers/ProjectParser';
-import { adopters } from './config';
+import { adopters, adoptersSidebar, adoptersWithPillar } from './config';
 import { getTempRepos, cleanup } from './utils/getTempRepos';
 import { getPreviousStats } from './utils/getPreviousStats';
 import { getSourcePath } from '../utils/getSourcePath';
@@ -69,8 +69,15 @@ async function prepare() {
     // Required to associate adopters with their stats.json file for Adoption Overview page.
     await writeFile({
       template: 'objectMap.ejs',
-      data: { adopters: adopters.map((item) => item.id) },
+      data: { adopters: adoptersWithPillar },
       dest: `website/data/adopters.ts`,
+    });
+    // Required to for website sidebar.
+    await writeFile({
+      template: 'objectMap.ejs',
+      data: { adopters: adoptersSidebar },
+      dest: `website/data/sidebar/adopters.js`,
+      config: { commonJS: true },
     });
     await Promise.all(
       adopters.map(async (config) => {

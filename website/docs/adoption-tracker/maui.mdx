@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Growth Email Templating App
-sidebar_label: Growth Email Templating App
+title: Maui
+sidebar_label: Maui
 ---
 
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
@@ -10,15 +10,9 @@ import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTrack
 import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
-<AdopterStatsProvider
-  {...require('@site/static/data/adoption/growth-email-templating-app/stats.json')}
->
-  <AdopterProjectInfoProvider
-    {...require('@site/static/data/adoption/growth-email-templating-app/project.json')}
-  >
-    <AdopterComponentsProvider
-      {...require('@site/static/data/adoption/growth-email-templating-app/components.json')}
-    >
+<AdopterStatsProvider {...require('@site/static/data/adoption/maui/stats.json')}>
+  <AdopterProjectInfoProvider {...require('@site/static/data/adoption/maui/project.json')}>
+    <AdopterComponentsProvider {...require('@site/static/data/adoption/maui/components.json')}>
       <AdopterDetails />
     </AdopterComponentsProvider>
   </AdopterProjectInfoProvider>

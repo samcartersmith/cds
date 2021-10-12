@@ -178,8 +178,8 @@
             "@trust_and_safety/pages/Consent/ConsentPage.tsx",
             "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx",
             "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx",
-            "@trust_and_safety/pages/Password/PasswordPage.tsx",
             "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx",
+            "@trust_and_safety/pages/Password/PasswordPage.tsx",
             "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx",
             "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
             "@trust_and_safety/pages/Username/UsernamePage.tsx"
@@ -192,8 +192,8 @@
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 2,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 2,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
-        "@trust_and_safety/pages/Password/PasswordPage.tsx": 4,
         "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
+        "@trust_and_safety/pages/Password/PasswordPage.tsx": 4,
         "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 2,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 2,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
@@ -219,8 +219,8 @@
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
-          "@trust_and_safety/pages/Password/PasswordPage.tsx": 4,
           "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/Password/PasswordPage.tsx": 4,
           "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
           "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
@@ -245,8 +245,8 @@
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
-        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
@@ -267,8 +267,8 @@
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
-          "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
           "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
           "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
           "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
@@ -613,8 +613,8 @@
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
-        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
@@ -636,8 +636,8 @@
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
-        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
         "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1

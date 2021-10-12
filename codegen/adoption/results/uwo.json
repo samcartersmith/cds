@@ -1893,8 +1893,8 @@
       "totalCallSites": 14,
       "callSites": {
         "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
         "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
         "@uwo/commonScenes/shared/components/AddressSceneLayout.tsx": 1,
@@ -1911,8 +1911,8 @@
         "data-test-id": { "@uwo/businessApplicationScenes/SceneLayout.tsx": 1 },
         "color": {
           "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
           "@uwo/experiences/onboardingComplete/OnboardingCompletePresentation.tsx": 1,
           "@uwo/commonScenes/shared/components/AddressSceneLayout.tsx": 1,
@@ -1927,8 +1927,8 @@
         },
         "spacing": {
           "@uwo/businessApplicationScenes/SceneLayout.tsx": 1,
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
           "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
           "@uwo/commonScenes/shared/components/AddressSceneLayout.tsx": 1,
           "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
@@ -2611,53 +2611,15 @@
       }
     },
     {
-      "name": "Label",
-      "sourceFile": "@uwo/components/common/Label",
-      "totalInstances": 6,
-      "totalCallSites": 5,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
-        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
-        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
-        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
-        "@uwo/components/common/form/Date/DateFields.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "data-test-id": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
-      }
-    },
-    {
       "name": "SettingCellContainer",
       "sourceFile": "@uwo/components/common/core/SettingCellContainer",
       "totalInstances": 4,
       "totalCallSites": 4,
       "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "@uwo/commonScenes/KYCQuestion/QuestionScene.tsx": 1,
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
-      }
-    },
-    {
-      "name": "AddressAutocompleteItem",
-      "sourceFile": "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "key": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "name": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "predictionStructuredFormatting": {
-          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
-        },
-        "data-test-id": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
-        "accessory": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
       }
     },
     {
@@ -2718,6 +2680,44 @@
           "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1
         }
+      }
+    },
+    {
+      "name": "Label",
+      "sourceFile": "@uwo/components/common/Label",
+      "totalInstances": 6,
+      "totalCallSites": 5,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 2,
+        "@uwo/commonScenes/PersonalInfo/CountryOfResidenceField.tsx": 1,
+        "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
+        "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
+        "@uwo/components/common/form/Date/DateFields.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "data-test-id": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
+      }
+    },
+    {
+      "name": "AddressAutocompleteItem",
+      "sourceFile": "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClick": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "key": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "name": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "predictionStructuredFormatting": {
+          "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocomplete.tsx": 1
+        },
+        "data-test-id": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 },
+        "accessory": { "@uwo/commonScenes/AddressSearch/AddressSearchPresentation.tsx": 1 }
       }
     },
     {
