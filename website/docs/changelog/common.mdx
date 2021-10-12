@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.5 (10/12/2021, 04:20 AM PST)
+
+#### 🐞 Fixes
+
+- Modal known issues. [#37314](https://github.cbhq.net/mono/repo/pull/37314)
+
 ## 0.24.4 (10/11/2021, 04:48 PM PST)
 
 #### 🐞 Fixes

@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.28.5 (10/12/2021, 04:20 AM PST)
+
+#### 🐞 Fixes
+
+- Fix Input bugs based on Bug Bash and add Kitchen Sink Input example to website. [#37465](https://github.cbhq.net/mono/repo/pull/37465), [CDS-1572](https://jira.coinbase-corp.com/browse/CDS-1572)
+- Modal known issues. [#37314](https://github.cbhq.net/mono/repo/pull/37314)
+
 ## 0.28.4 (10/11/2021, 04:48 PM PST)
 
 #### 🐞 Fixes
