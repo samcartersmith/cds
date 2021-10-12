@@ -66,6 +66,10 @@ module.exports = {
               label: 'Modal',
               href: 'modal',
             },
+            {
+              label: 'Inputs',
+              href: 'inputs',
+            },
           ],
         },
       ],

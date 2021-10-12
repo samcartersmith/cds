@@ -1,0 +1,77 @@
+```jsx live
+function InputsKitchenSinkExample() {
+  function getWindowDimensions() {
+	const { innerWidth: width, innerHeight: height } = window;
+	return {
+		width,
+		height,
+	};
+  }
+
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    // eslint-disable-next-line no-console
+    console.log(e.currentTarget.nodeValue);
+    // eslint-disable-next-line no-alert
+    alert('Submitted');
+  }, []);
+
+  return (
+	<ThemeProvider>
+		<form onSubmit={onSubmit} action={undefined}>
+			<VStack gap={5} spacing={windowDimensions.width < 400 ? 0.5 : 10}>
+				<BetaTextField
+				label="Campaign title"
+				aria-label="campain title"
+				helperText="This won't be displayed to users"
+				placeholder="Title"
+				/>
+				<BetaTextField
+				label="Campaign description"
+				aria-label="campain description"
+				helperText="A one-line description that users will see"
+				placeholder="Description"
+				/>
+				<BetaTextField
+				start={
+					<Icon spacingTop={0.5} spacingEnd={2} size="s" color="foreground" name="cashUSD" />
+				}
+				label="Campaign budget"
+				placeholder="0"
+				suffix="BAL"
+				/>
+				<BetaTextField
+				label="US wallet account UUID"
+				placeholder="US wallet account UUID"
+				helperText="Get account UUID from https://admin.cbhq.net"
+				/>
+				<BetaTextField
+				label="UK wallet account UUID"
+				placeholder="UK wallet account UUID"
+				helperText="Get account UUID from https://admin.cbhq.net"
+				/>
+				<BetaTextField
+				label="UK wallet account UUID"
+				placeholder="UK wallet account UUID"
+				helperText="Get account UUID from https://admin.cbhq.net"
+				/>
+				<HStack justifyContent="flex-end">
+				<Button type="submit">Next: add images</Button>
+				</HStack>
+			</VStack>
+		</form>
+    </ThemeProvider>
+	)
+}
+```

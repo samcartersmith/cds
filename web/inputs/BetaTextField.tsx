@@ -10,7 +10,6 @@ import { HelperText } from './HelperText';
 
 import { InputStack } from '../layout/InputStack';
 
-import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { InputLabel } from './InputLabel';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -62,7 +61,9 @@ export const BetaTextField = memo(function BetaTextField({
    * In normal circumnstances, spacing horizontal should be 2 (16px)
    */
   const startSpacing = useSpacingStyles({
+    spacingVertical: 2,
     spacingStart: 0.5,
+    spacingEnd: 2,
   });
 
   return (
@@ -98,10 +99,10 @@ export const BetaTextField = memo(function BetaTextField({
       }
       startNode={
         (compact || !!start) && (
-          <Box justifyContent="center" alignItems="center" spacingStart={2}>
+          <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2}>
             {compact && <InputLabel color={labelColor}>{label}</InputLabel>}
             {!!start && <>{start}</>}
-          </Box>
+          </HStack>
         )
       }
       endNode={
