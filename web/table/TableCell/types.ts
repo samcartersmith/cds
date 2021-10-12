@@ -1,0 +1,88 @@
+import { ReactNode, ReactElement } from 'react';
+import { FlexAxisValue, FlexSpaceCommon, PaletteForeground } from '@cbhq/cds-common';
+
+export type TableCellTag = 'td' | 'th' | 'div';
+
+type TableCellBaseProps = {
+  /**
+   * Media (icon, asset, image, etc) to display at the start of the cell
+   * @default undefined
+   */
+  media?: ReactElement;
+  /**
+   * Accessory (text, icon, asset, image, etc) to display at the end of the cell
+   * @default undefined
+   */
+  accessory?: ReactElement;
+  /**
+   * Linaria flavored className.
+   * @default undefined
+   */
+  className?: string;
+  /**
+   * CDS Palette foreground color name
+   * @default undefined
+   */
+  color?: PaletteForeground;
+  /**
+   * This prop us useful for right-aligning the last column
+   * @default 'flex-start'
+   */
+  justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
+  /**
+   * This prop us useful for top-aligning cells
+   * @default 'center'
+   */
+  alignItems?: 'flex-start' | 'center';
+  /**
+   * The colSpan attribute defines the number of columns a cell should span
+   * @default 1
+   */
+  colSpan?: number;
+  /**
+   * Useful for preventing columns from jumping around with pagination
+   * @default 1
+   */
+  minWidth?: string | number;
+  /**
+   * Callback to fire when pressed
+   * @default noop
+   */
+  onPress?: React.MouseEventHandler;
+};
+
+type TableCellPropsWithInputs = {
+  /** Children to render within the button. */
+  // children: NonNullable<React.ReactNode>;
+  children?: never;
+  /**
+   * If a title is provided, the default type style
+   * will be inferred from context. If the cell is rendered
+   * in a TableHead, it will render as a TextLabel2. But when
+   * rendered in a TableBody the text will render as TextBody.
+   * @default undefined
+   */
+  title: string;
+  /**
+   * A subtitle will appear below the title
+   * @default undefined
+   */
+  subtitle?: string;
+  /**
+   * A description will appear below the subtitle
+   * @default undefined
+   */
+  description?: string;
+} & TableCellBaseProps;
+type TableCellPropsWithChildren = {
+  /**
+   * If children are provided, title, subtitle and description MUST be unset
+   * @default undefined
+   */
+  children: NonNullable<ReactNode | ReactNode[]>;
+  title?: never;
+  subtitle?: never;
+  description?: never;
+} & TableCellBaseProps;
+
+export type TableCellProps = TableCellPropsWithInputs | TableCellPropsWithChildren;
