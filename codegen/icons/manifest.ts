@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 58579,
+  lastUnicode: 58589,
   unicodeMap: {
     cashUSD: { '8': 'uE000', '12': 'uE001', '16': 'uE002', '24': 'uE003', '32': 'uE004' },
     cashGBP: { '8': 'uE005', '12': 'uE006', '16': 'uE007', '24': 'uE008', '32': 'uE009' },
@@ -270,5 +270,7 @@ export const manifest = {
     telephone: { '8': 'uE4C5', '12': 'uE4C6', '16': 'uE4C7', '24': 'uE4C8', '32': 'uE4C9' },
     laptop: { '8': 'uE4CA', '12': 'uE4CB', '16': 'uE4CC', '24': 'uE4CD', '32': 'uE4CE' },
     clockOutline: { '8': 'uE4CF', '12': 'uE4D0', '16': 'uE4D1', '24': 'uE4D2', '32': 'uE4D3' },
+    cashRupee: { '8': 'uE4D4', '12': 'uE4D5', '16': 'uE4D6', '24': 'uE4D7', '32': 'uE4D8' },
+    chainLink: { '8': 'uE4D9', '12': 'uE4DA', '16': 'uE4DB', '24': 'uE4DC', '32': 'uE4DD' },
   },
 };

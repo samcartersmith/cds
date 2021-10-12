@@ -67,7 +67,7 @@ export const IconBase = memo(
               aria-labelledby={labeledBy}
               data-icon-name={name}
             >
-              {iconGlyphMap[name][iconSize]}
+              {iconGlyphMap[name as never][iconSize]}
             </span>
             {title ? (
               <span id={labeledBy} className={visuallyHidden}>

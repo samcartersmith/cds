@@ -182,6 +182,8 @@ export const iconNames = [
   'telephone',
   'laptop',
   'clockOutline',
+  'cashRupee',
+  'chainLink',
 ] as const;
 
 export const navigationIconNames = [

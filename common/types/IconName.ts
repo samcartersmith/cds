@@ -177,7 +177,9 @@ export type IconName =
   | 'wifi'
   | 'telephone'
   | 'laptop'
-  | 'clockOutline';
+  | 'clockOutline'
+  | 'cashRupee'
+  | 'chainLink';
 
 export type NavigationIconName =
   | 'chartCandles'

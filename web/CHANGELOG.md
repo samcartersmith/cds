@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.6 (10/12/2021, 01:31 PM PST)
+
+#### 🐞 Fixes
+
+- Updated icons.
+
 ## 0.24.5 (10/12/2021, 04:20 AM PST)
 
 #### 🐞 Fixes
