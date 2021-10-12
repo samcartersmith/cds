@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common/types';
+import { useBeta } from '@cbhq/cds-common/beta';
 
 import { css, cx } from 'linaria';
 import { usePinStyles } from '../hooks/usePinStyles';
@@ -32,10 +33,10 @@ export const Card: React.FC<CardProps> = memo(
     const bg = background === true ? 'background' : background;
     const pinStyles = usePinStyles(pin);
     const linkable = Boolean(onPress ?? to);
-
+    const { frontierCard } = useBeta();
     const content = (
       <VStack
-        borderRadius="standard"
+        borderRadius={frontierCard ? 'none' : 'standard'}
         background={linkable ? undefined : bg}
         pin={linkable ? undefined : pin}
         elevation={linkable ? undefined : elevation}
@@ -51,7 +52,7 @@ export const Card: React.FC<CardProps> = memo(
     return linkable ? (
       <Pressable
         backgroundColor={bg}
-        borderRadius="standard"
+        borderRadius={frontierCard ? 'none' : 'standard'}
         borderColor="line"
         borderWidth="card"
         elevation={elevation}

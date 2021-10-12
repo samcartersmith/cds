@@ -22,9 +22,11 @@ import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSInputs from '@cbhq/cds-web/inputs';
 import * as CDSLayout from '@cbhq/cds-web/layout';
+import * as CDSCardElements from '@cbhq/cds-web/layout/CardElements';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
+import * as CDSMedia from '@cbhq/cds-web/media/RemoteImage';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
@@ -40,6 +42,7 @@ import { ThemeToggles } from ':cds-website/components/ThemeToggles';
 import { assets, assetColors } from ':cds-website/data/assets';
 import { loremIpsum } from ':cds-website/data/loremIpsum';
 import { prices } from ':cds-website/data/prices';
+import { PatternArtboard } from ':cds-website/components/PatternArtboard';
 
 import { useStatusButtons } from './useStatusButtons';
 
@@ -71,11 +74,13 @@ const ReactLiveScope = {
   Text: CDSTypography.TextBody,
   ...CDSAnimation,
   ...CDSButtons,
+  ...CDSCardElements,
   ...CDSCells,
   ...CDSControls,
   ...CDSIcons,
   ...CDSLayout,
   ...CDSLoaders,
+  ...CDSMedia,
   ...CDSNavigation,
   ...CDSOverlays,
   ...CDSSystem,
@@ -95,6 +100,7 @@ const ReactLiveScope = {
   ColorTile,
   ExampleWithThemeToggles,
   ThemeToggles,
+  Artboard: PatternArtboard,
 };
 
 export default ReactLiveScope;

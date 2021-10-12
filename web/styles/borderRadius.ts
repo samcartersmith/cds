@@ -4,6 +4,10 @@
  */
 import { css } from 'linaria';
 
+export const none = css`
+  border-radius: 0;
+`;
+
 export const compact = css`
   border-radius: 4px;
 `;

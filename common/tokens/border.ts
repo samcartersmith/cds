@@ -4,6 +4,7 @@
  */
 
 export const borderRadius = {
+  none: 0,
   compact: 4,
   standard: 8,
   badge: 9,
@@ -14,6 +15,7 @@ export const borderRadius = {
 } as const;
 
 export const borderWidth = {
+  none: 0,
   button: 1,
   card: 1,
   checkbox: 2,

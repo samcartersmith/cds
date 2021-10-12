@@ -80,6 +80,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Recipes',
+      collapsed: true,
+      items: ['recipes/cards'],
+    },
+    {
+      type: 'category',
       label: 'Resources',
       collapsed: false,
       items: [

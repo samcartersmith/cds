@@ -4,6 +4,10 @@
  */
 import { css } from 'linaria';
 
+export const none = css`
+  border-width: 0;
+`;
+
 export const button = css`
   border-width: 1px;
 `;

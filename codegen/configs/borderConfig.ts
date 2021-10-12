@@ -1,6 +1,7 @@
 import { mapValues } from '@cbhq/cds-utils';
 
 export const borderRadiusConfig = {
+  none: 0,
   compact: 4,
   standard: 8,
   badge: 9,
@@ -12,11 +13,12 @@ export const borderRadiusConfig = {
 
 export const borderRadiusCss = mapValues(borderRadiusConfig, (val) => {
   return {
-    'border-radius': typeof val === 'string' ? val : `${val}px`,
+    'border-radius': typeof val === 'string' || val === 0 ? val : `${val}px`,
   };
 });
 
 export const borderWidthConfig = {
+  none: 0,
   button: 1,
   card: 1,
   checkbox: 2,
@@ -27,7 +29,5 @@ export const borderWidthConfig = {
 };
 
 export const borderWidthCss = mapValues(borderWidthConfig, (val) => {
-  return {
-    'border-width': `${val}px`,
-  };
+  return val ? { 'border-width': `${val}px` } : { 'border-width': 0 };
 });
