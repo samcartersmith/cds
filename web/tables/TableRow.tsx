@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from 'react';
 import { cx } from 'linaria';
-import { TableCell } from '../TableCell';
-import { palette } from '../../tokens';
+import { TableCell } from './TableCell';
+import { palette } from '../tokens';
 
-import { TableRowProps } from './types';
-import { tableRow, tableRowHover } from './styles';
+import { TableRowProps } from './types/tableRowTypes';
+import { tableRow, tableRowHover } from './styles/tableRowStyles';
 
 export const TableRow = memo(function TableRow({
   fullWidth = false,

@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { TableSectionProps } from './tableSectionTypes';
 
 export type TableVariant = 'default' | 'graph' | 'ruled';
 
@@ -28,7 +29,7 @@ export type TableProps = {
    * TableHead and TableFoot are both optional, and will magically
    * flow into the correct place in the table (top/bottom)
    */
-  children: ReactElement<unknown> | ReactElement<unknown>[]; // Unkowns will use TableSecion types in a later PR
+  children: ReactElement<TableSectionProps> | ReactElement<TableSectionProps>[];
   /**
    * When provided, we'll apply a border around the entire table
    */

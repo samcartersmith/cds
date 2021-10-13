@@ -1,12 +1,13 @@
 import { ReactElement } from 'react';
 import { PaletteBackground, PaletteForeground } from '@cbhq/cds-common';
+import { TableCellProps } from './tableCellTypes';
 
 export type TableRowProps = {
   /**
    * Children are required, and should always include TableCell | TableCell[].
    * @default undefined
    */
-  children: ReactElement<unknown> | ReactElement<unknown>[]; // Use ReactElement<TableCellProps> | ReactElement<TAbleCellProps>[] when they are avialable
+  children: ReactElement<TableCellProps> | ReactElement<TableCellProps>[];
   /**
    * Linaria flavored className.
    * @default undefined

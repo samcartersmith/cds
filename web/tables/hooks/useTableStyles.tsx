@@ -1,9 +1,13 @@
 import { cx } from 'linaria';
 import { useMemo } from 'react';
-import { tableVariantBase, tableVariantGraph, tableVariantRuled, tableBorder } from '../styles';
-import { TableVariant } from '../types';
+import {
+  tableVariantBase,
+  tableVariantGraph,
+  tableVariantRuled,
+  tableBorder,
+} from '../styles/tableStyles';
+import { TableVariant } from '../types/tableTypes';
 
-// TODO remove this if it's unused in design
 type Props = {
   variant?: TableVariant;
   border?: boolean;

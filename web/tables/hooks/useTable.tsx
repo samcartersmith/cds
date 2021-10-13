@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { TableSectionContext } from '../context/TableSectionContext';
-import { TableSectionTag } from '../TableSection/types';
-import { TableCellTag } from '../TableCell/types';
+import { TableSectionTag } from '../types/tableSectionTypes';
+import { TableCellTag } from '../types/tableCellTypes';
 
 const CELL_TAG_MAP: Record<TableSectionTag, TableCellTag> = {
   thead: 'th',

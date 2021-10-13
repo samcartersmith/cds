@@ -1,5 +1,5 @@
 import { renderA11y } from '@cbhq/jest-utils';
-import { TableRow } from '..';
+import { TableRow } from './TableRow';
 
 describe('TableRow', () => {
   it('passes accessibility', async () => {

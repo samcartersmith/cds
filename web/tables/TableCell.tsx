@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
 
 import { cx } from 'linaria';
-import { Cell, truncateClassName } from '../../cells/Cell';
-import { VStack, Box } from '../../layout';
-import { TextBody, TextLabel2, TextHeadline } from '../../typography';
+import { Cell, truncateClassName } from '../cells/Cell';
+import { VStack, Box } from '../layout';
+import { TextBody, TextLabel2, TextHeadline } from '../typography';
 
-import { TableCellProps } from './types';
-import { tableCell, tableHeaderCell, tableFooterCell } from './styles';
-import { useTableCellTag, useTableSectionTag } from '../hooks/useTable';
+import { TableCellProps } from './types/tableCellTypes';
+import { tableCell, tableHeaderCell, tableFooterCell } from './styles/tableCellStyles';
+import { useTableCellTag, useTableSectionTag } from './hooks/useTable';
 
 export const TableCell = memo(function TableCell({
   alignItems = 'center',

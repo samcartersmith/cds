@@ -1,7 +1,7 @@
 import React, { Children, ReactNode } from 'react';
-import { TableSectionContext } from '../context/TableSectionContext';
+import { TableSectionContext } from './context/TableSectionContext';
 
-import { TableSectionProps, TableSectionInternalProps } from './types';
+import { TableSectionProps, TableSectionInternalProps } from './types/tableSectionTypes';
 
 const TableSection = ({ as = 'tbody', className, children }: TableSectionInternalProps) => {
   const TableSectionComponent = as;

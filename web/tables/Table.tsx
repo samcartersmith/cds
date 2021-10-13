@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { cx } from 'linaria';
-import { TableContext } from '../context';
+import { TableContext } from './context/TableContext';
 import { useTableStyles } from './hooks/useTableStyles';
-import { TableProps } from './types';
-import { table } from './styles';
+import { TableProps } from './types/tableTypes';
+import { table } from './styles/tableStyles';
 
 export const Table = memo(function Table({ className, children, variant, border }: TableProps) {
   const variantStyles = useTableStyles({ variant, border });
