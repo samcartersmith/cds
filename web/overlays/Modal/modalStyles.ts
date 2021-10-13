@@ -27,13 +27,15 @@ export const modalDefaultClassName = css`
   ${modalAnimationStyles}
   position: absolute;
   top: ${spacing[10]};
-  max-width: 612px;
+  width: 612px;
   max-height: calc(100vh - ${spacing[10]}*2);
   border-radius: ${borderRadius.standard}px;
 `;
 
 export const modalResponsiveClassName = css`
   @media only screen and (${devices.tablet}) {
+    max-width: 612px;
+    width: auto;
     right: ${spacing[3]};
     left: ${spacing[3]};
   }

@@ -53,8 +53,7 @@ export const Modal = memo(
         >
           <VStack
             animated
-            opacity={opacity}
-            dangerouslySetStyle={{ transform: [{ scale }] }}
+            dangerouslySetStyle={{ transform: [{ scale }], opacity, borderWidth: 0 }}
             pin="all"
             elevation={2}
           >
