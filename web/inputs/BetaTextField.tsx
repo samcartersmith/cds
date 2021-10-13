@@ -99,7 +99,7 @@ export const BetaTextField = memo(function BetaTextField({
       }
       startNode={
         (compact || !!start) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2}>
+          <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2} minWidth={0}>
             {compact && <InputLabel color={labelColor}>{label}</InputLabel>}
             {!!start && <>{start}</>}
           </HStack>
@@ -107,7 +107,7 @@ export const BetaTextField = memo(function BetaTextField({
       }
       endNode={
         (suffix !== '' || !!end) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2}>
+          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2} minWidth={0}>
             {suffix !== '' && (
               <TextLabel1 as="p" color="foregroundMuted">
                 {suffix}
