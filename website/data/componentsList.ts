@@ -47,4 +47,5 @@ export const components = [
   'ThemeProvider',
   'Sparkline',
   'SparklineGradient',
+  'Avatar',
 ] as const;

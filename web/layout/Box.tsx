@@ -22,6 +22,7 @@ import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as backgroundColorStyles from '../styles/backgroundColor';
+import * as borderColorStyles from '../styles/borderColor';
 import { getBorderStyles } from '../styles/border';
 import * as borderRadii from '../styles/borderRadius';
 import { getFlexStyles } from '../styles/flex';
@@ -148,6 +149,7 @@ export const BoxInner = forwardRef(
       borderedEnd,
       borderedHorizontal,
       borderedVertical,
+      borderColor,
       // Dimension
       height,
       maxHeight,
@@ -214,6 +216,7 @@ export const BoxInner = forwardRef(
             justifyContent,
           }),
           background && backgroundColorStyles[background === true ? 'background' : background],
+          borderColor && borderColorStyles[borderColor],
           overflow && overflowStyles[overflow],
           borderRadius && borderRadii[borderRadius],
           getBorderStyles({
@@ -268,6 +271,7 @@ export const BoxInner = forwardRef(
           top,
           zIndex,
           opacity,
+          borderColor,
           ...borderRadiusStyles,
           ...elevationStyles,
         },

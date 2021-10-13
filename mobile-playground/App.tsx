@@ -50,6 +50,7 @@ import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
 import LogoScreen from './src/Logo';
+import AvatarScreen from './src/Avatar';
 
 const Stack = createStackNavigator();
 
@@ -120,6 +121,7 @@ const AppContent = () => {
         <Stack.Screen name="TextTitle1" component={TextTitle1Screen} />
         <Stack.Screen name="TextTitle2" component={TextTitle2Screen} />
         <Stack.Screen name="TextTitle3" component={TextTitle3Screen} />
+        <Stack.Screen name="Avatar" component={AvatarScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

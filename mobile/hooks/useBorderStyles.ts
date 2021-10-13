@@ -15,6 +15,7 @@ export const useBorderStyles = ({
   borderedHorizontal,
   borderedVertical,
   borderRadius,
+  borderColor,
   elevation,
 }: BorderedStyles & { elevation?: ElevationLevels }): ViewStyle => {
   const palette = usePalette();
@@ -67,8 +68,13 @@ export const useBorderStyles = ({
       styles.borderColor = palette.line;
     }
 
+    if (borderColor) {
+      styles.borderColor = palette[borderColor];
+    }
+
     return styles;
   }, [
+    borderRadius,
     elevation,
     bordered,
     borderedVertical,
@@ -77,7 +83,7 @@ export const useBorderStyles = ({
     borderedBottom,
     borderedStart,
     borderedEnd,
-    borderRadius,
-    palette.line,
+    borderColor,
+    palette,
   ]);
 };

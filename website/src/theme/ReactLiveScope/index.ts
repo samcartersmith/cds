@@ -36,7 +36,7 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
 import { PortalProvider } from '@cbhq/cds-web/context/PortalProvider';
-
+import * as CDSAvatar from '@cbhq/cds-web/avatar';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
@@ -90,6 +90,7 @@ const ReactLiveScope = {
   ...CDSIllustrations,
   ...CDSInputs,
   ...CDSVisualizations,
+  ...CDSAvatar,
   // context
   PortalProvider,
   // Utils

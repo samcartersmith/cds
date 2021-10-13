@@ -26,6 +26,7 @@ export const CDS_SUB_DIRS = [
   'system',
   'tables',
   'visualizations',
+  'avatar',
 ] as const;
 
 export const CDS_SUB_DIRS_MAP = arrayToObject(CDS_SUB_DIRS);

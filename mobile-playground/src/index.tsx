@@ -49,6 +49,7 @@ const components = [
   { key: 'TextTitle1' },
   { key: 'TextTitle2' },
   { key: 'TextTitle3' },
+  { key: 'Avatar' },
 ];
 
 // eslint-disable-next-line @typescript-eslint/ban-types

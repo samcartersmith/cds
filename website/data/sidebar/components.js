@@ -133,5 +133,11 @@ module.exports = {
         'components/visualizations/SparklineGradient/sparkline-gradient',
       ],
     },
+    {
+      type: 'category',
+      label: 'Avatar',
+      collapsed: true,
+      items: ['components/avatar/Avatar/avatar'],
+    },
   ],
 };

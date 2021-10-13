@@ -1,7 +1,6 @@
 import React, { memo, useMemo } from 'react';
 
 import { AspectRatio, FixedValue, Shape, useSpectrum } from '@cbhq/cds-common';
-import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import {
   Image,
   ImageProps,
@@ -11,6 +10,7 @@ import {
 } from 'react-native';
 import { SvgCssUri } from 'react-native-svg';
 
+import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 import { useInvertedPaletteColor } from '../color/useInvertedPaletteColor';
 import { usePalette } from '../hooks/usePalette';
 
@@ -68,22 +68,7 @@ export const RemoteImage = memo(function RemoteImage({
   source,
   ...props
 }: RemoteImageProps) {
-  const borderRadius = useMemo(() => {
-    switch (shape) {
-      case 'squircle':
-        return borderRadii.standard;
-      case 'circle':
-        if (typeof height === 'number') {
-          return height;
-        }
-        if (typeof width === 'number') {
-          return width;
-        }
-        return 0;
-      default:
-        return 0;
-    }
-  }, [shape, height, width]);
+  const borderRadius = useShapeToBorderRadiusSize(shape);
 
   const spectrum = useSpectrum();
   const palette = usePalette();

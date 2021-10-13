@@ -1,0 +1,135 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/avatar/Avatar](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/avatar/Avatar.tsx)
+
+<ComponentDetails componentName="Avatar" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Avatar" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Avatar" templateName="a11y" />
+
+## Props
+
+### borderColor
+
+Adds a border to the Avatar
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="borderColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+  ]}
+  webOptions={['line', 'lineHeavy', 'negative', 'positive', 'primary', 'primaryWash', 'secondary']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-borderColor" />
+
+### compact
+
+Shows the Avatar in compact size
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-compact" />
+
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+Adds a className to the Avatar. If you pass in a className make sure your styles override the Avatar using the avatar class .cds-avatar like this: .my-class.cds-avatar
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-dangerouslySetClassName" />
+
+### dangerouslySetSize
+
+Custom Avatar size in px
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="dangerouslySetSize"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-dangerouslySetSize" />
+
+### name
+
+This is the name associated with the entity in the Avatar. This is used in the image alt tag for accessibility. If no image is provided the first letter is used for the text avatar.
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-name" />
+
+### shape
+
+Shape of Avatar
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="shape"
+  required={false}
+  defaultValue=""
+  mobileOptions={['circle', 'square', 'squircle']}
+  webOptions={['circle', 'square', 'squircle']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-shape" />
+
+### src
+
+Absolute url to the image that should be shown in the Avatar
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="src"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-src" />
+
+<ComponentDetails componentName="Avatar" templateName="outro" />

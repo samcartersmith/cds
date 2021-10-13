@@ -97,6 +97,7 @@ export const BoxInner = memo(
     borderedHorizontal,
     borderedVertical,
     borderRadius,
+    borderColor,
     // Dimension
     height,
     maxHeight,
@@ -142,6 +143,7 @@ export const BoxInner = memo(
       borderedHorizontal,
       borderedVertical,
       borderRadius,
+      borderColor,
       elevation,
     });
     const spacingStyles = useSpacingStyles({

@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
 
 import { AspectRatio, FixedValue, Shape } from '@cbhq/cds-common';
-import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
 import { cx, css } from 'linaria';
+import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 
 const image = css`
   display: block;
@@ -18,6 +18,7 @@ type BaseRemoteImageProps = {
   height?: FixedValue;
   shape?: Shape;
   width?: FixedValue;
+  alt?: string;
   source: string;
 } & Omit<
   React.ImgHTMLAttributes<HTMLImageElement>,
@@ -50,24 +51,10 @@ export const RemoteImage = memo(function RemoteImage({
   aspectRatio,
   shape = 'square',
   source,
+  alt,
   ...props
 }: RemoteImageProps) {
-  const borderRadius = useMemo(() => {
-    switch (shape) {
-      case 'squircle':
-        return borderRadii.standard;
-      case 'circle':
-        if (typeof height === 'number') {
-          return height;
-        }
-        if (typeof width === 'number') {
-          return width;
-        }
-        return 0;
-      default:
-        return 0;
-    }
-  }, [shape, height, width]);
+  const borderRadius = useShapeToBorderRadiusSize(shape);
 
   const styles = useMemo(
     () =>
@@ -80,7 +67,7 @@ export const RemoteImage = memo(function RemoteImage({
 
   return (
     <img
-      alt=""
+      alt={alt ?? ''}
       {...props}
       src={source}
       width={width}

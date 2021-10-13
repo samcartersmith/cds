@@ -1,7 +1,7 @@
 import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { ElevationLevels } from './ElevationLevels';
-import { PaletteBackground } from './Palette';
+import { PaletteBackground, PaletteBorder } from './Palette';
 import { OffsetProps, SpacingProps } from './SpacingProps';
 import { SpacingScale } from './SpacingScale';
 
@@ -79,6 +79,8 @@ export type BorderedStyles = {
   borderedVertical?: boolean;
   /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
   borderRadius?: BorderRadius;
+  /** Adds a custom border color from the palette */
+  borderColor?: PaletteBorder;
 };
 
 export type BoxBaseProps = {
