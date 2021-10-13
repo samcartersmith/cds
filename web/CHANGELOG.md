@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.7 (10/12/2021, 06:37 PM PST)
+
+#### 🚀 Updates
+
+- CDS Table. [#37591](https://github.cbhq.net/mono/repo/pull/37591), [CDS-974](https://jira.coinbase-corp.com/browse/CDS-974)
+
+#### 📘 Misc
+
+- Icon Oct 12, 2021 Release, 2 New Icons. [#37612](https://github.cbhq.net/mono/repo/pull/37612)
+- Create Base Card. [#37201](https://github.cbhq.net/mono/repo/pull/37201), [CDS-1094](https://jira.coinbase-corp.com/browse/CDS-1094)
+- Modal doc. [#37164](https://github.cbhq.net/mono/repo/pull/37164)
+
 ## 0.24.6 (10/12/2021, 01:31 PM PST)
 
 #### 🐞 Fixes
