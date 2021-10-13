@@ -68,11 +68,6 @@ type TableCellPropsWithInputs = {
    * @default undefined
    */
   subtitle?: string;
-  /**
-   * A description will appear below the subtitle
-   * @default undefined
-   */
-  description?: string;
 } & TableCellBaseProps;
 type TableCellPropsWithChildren = {
   /**
@@ -82,7 +77,6 @@ type TableCellPropsWithChildren = {
   children: NonNullable<ReactNode | ReactNode[]>;
   title?: never;
   subtitle?: never;
-  description?: never;
 } & TableCellBaseProps;
 
 export type TableCellProps = TableCellPropsWithInputs | TableCellPropsWithChildren;

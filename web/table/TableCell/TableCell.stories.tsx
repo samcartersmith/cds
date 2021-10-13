@@ -81,14 +81,11 @@ export const SampleCells: Story = () => {
                   <MockAvatar src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" />
                 </Box>
               }
-              title="First Item"
-              subtitle="This one will get truncated if it gets too long, you only need to use other special CDS components"
+              title="Bitcoin"
+              subtitle="BTC"
             />
-            <TableCell title="Second Item" subtitle="This gets truncated too cause it's so long" />
-            <TableCell
-              title="Third Item"
-              description="This is a description, it is _never_ turncated"
-            />
+            <TableCell title="$2,475.68" subtitle="0.11882557" />
+            <TableCell title="35.60%" />
           </TableRow>
         </TableBody>
         <TableFoot>

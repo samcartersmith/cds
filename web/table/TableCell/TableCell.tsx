@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import { cx } from 'linaria';
-import { Cell, truncateClassName, overflowClassName } from '../../cells/Cell';
+import { Cell, truncateClassName } from '../../cells/Cell';
 import { VStack, Box } from '../../layout';
 import { TextBody, TextLabel2, TextHeadline } from '../../typography';
 
@@ -23,17 +23,14 @@ export const TableCell = memo(function TableCell({
   // Only available when Children is null
   title,
   subtitle,
-  description,
 }: TableCellProps) {
   const tableSectionType = useTableSectionTag();
   const TableCellComponent = useTableCellTag();
   const TextComponent = TableCellComponent === 'th' ? TextHeadline : TextBody;
 
   if (process.env.NODE_ENV !== 'production') {
-    if (children && (title || subtitle || description)) {
-      throw new Error(
-        'TableCell: Cannot use `title`, `subtitle` or `description` with `children`.',
-      );
+    if (children && (title || subtitle)) {
+      throw new Error('TableCell: Cannot use `title` or `subtitle` with `children`.');
     }
   }
 
@@ -66,24 +63,11 @@ export const TableCell = memo(function TableCell({
                 {title}
               </TextComponent>
               {subtitle ? (
-                <TextLabel2
-                  as="div"
-                  spacingTop={title ? 0.5 : 0}
-                  spacingBottom={description ? 0.5 : 0}
-                  overflow="truncate"
-                >
+                <TextLabel2 as="div" spacingTop={title ? 0.5 : 0} overflow="truncate">
                   {subtitle}
                 </TextLabel2>
               ) : null}
             </VStack>
-
-            {!!description && (
-              <div className={overflowClassName}>
-                <TextBody as="div" color="foregroundMuted">
-                  {description}
-                </TextBody>
-              </div>
-            )}
           </>
         )}
       </Cell>
