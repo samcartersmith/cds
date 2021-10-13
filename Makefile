@@ -5,18 +5,19 @@ Help:
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.lottie              -- Build the `lottie-files` package.
   $$ make build.mobile              -- Build the `mobile` package.
-  $$ make build.ios                 -- Build the playground ios app.
-  $$ make build.android             -- Build the playground android app.
   $$ make build.theme               -- Build the `theme` package.
   $$ make build.utils               -- Build the `utils` package.
   $$ make build.web                 -- Build the `web` package.
+  $$ make build.packages            -- Build all packages. 
+  $$ make build.ios                 -- Build the playground ios app.
+  $$ make build.android             -- Build the playground android app.
   $$ make test                      -- Run web and mobile unit tests.
   $$ make test.mobile               -- Run mobile unit tests.
   $$ make test.web                  -- Run web unit tests.
   $$ make docgen                    -- Generate docs for CDS website.
   $$ make codegen                   -- Generate code in design system.
   $$ make lint                      -- Run eslint on all sources.
-  $$ make lint.fix                   -- Auto fixes lints issues
+  $$ make lint.fix                  -- Auto fixes lints issues
   $$ make new.package name=<name>   -- Scaffold a new package with the defined name.
   $$ make start.story               -- Start storybook local dev server.
   $$ make start.website             -- Start docusaurus website.
@@ -39,6 +40,15 @@ export HELP_TEXT
 help:
 	@echo "$$HELP_TEXT"
 
+.PHONY: build.packages 
+build.packages: 
+	 make build.common
+	 make build.fonts 
+	 make build.lottie
+	 make build.mobile
+	 make build.theme 
+	 make build.utils
+	 make build.web  
 
 .PHONY: clean
 clean:
