@@ -5,7 +5,7 @@ import { useTableStyles } from './hooks/useTableStyles';
 import { TableProps } from './types/tableTypes';
 import { table } from './styles/tableStyles';
 
-export const Table = memo(function Table({ className, children, variant, border }: TableProps) {
+export const Table = memo(({ className, children, variant, border }: TableProps) => {
   const variantStyles = useTableStyles({ variant, border });
 
   const wrapperStyles = cx(variantStyles, className);
@@ -19,3 +19,5 @@ export const Table = memo(function Table({ className, children, variant, border 
     </TableContext.Provider>
   );
 });
+
+Table.displayName = 'Table';

@@ -1,8 +1,9 @@
 import { css } from 'linaria';
-import { palette, spacing } from '../../tokens';
+import { palette } from '../../tokens';
 
 export const tableCell = css`
-  padding: ${spacing['1']} ${spacing['2']};
+  padding: 0; /* Padding now handled by the cell */
+  margin: 0;
   vertical-align: middle;
   border: none;
 `;

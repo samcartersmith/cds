@@ -24,6 +24,7 @@ export const CDS_SUB_DIRS = [
   'overlays',
   'typography',
   'system',
+  'tables',
   'visualizations',
 ] as const;
 

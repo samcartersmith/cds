@@ -1,6 +1,6 @@
 import { renderA11y } from '@cbhq/jest-utils';
-import { TableHead, TableBody, TableFoot } from './TableSection';
-import { Table } from './Table';
+import { TableHead, TableBody, TableFoot } from '../TableSection';
+import { Table } from '../Table';
 
 describe('Table Sections', () => {
   it('Table Head passes accessibility', async () => {

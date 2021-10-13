@@ -70,6 +70,10 @@ module.exports = {
               label: 'Inputs',
               href: 'inputs',
             },
+            {
+              label: 'Tables',
+              href: 'tables',
+            },
           ],
         },
       ],

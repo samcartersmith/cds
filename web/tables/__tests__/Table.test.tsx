@@ -1,13 +1,13 @@
 import { renderA11y } from '@cbhq/jest-utils';
-import { TableRow } from './TableRow';
+import { Table } from '../Table';
 
-describe('TableRow', () => {
+describe('Table', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <TableRow>
+        <Table>
           <>Child</>
-        </TableRow>,
+        </Table>,
       ),
     ).toHaveNoViolations();
   });

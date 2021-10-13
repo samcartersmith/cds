@@ -28,6 +28,7 @@ import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import * as CDSMedia from '@cbhq/cds-web/media/RemoteImage';
 import * as CDSSystem from '@cbhq/cds-web/system';
+import * as CDSTables from '@cbhq/cds-web/tables';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
@@ -84,6 +85,7 @@ const ReactLiveScope = {
   ...CDSNavigation,
   ...CDSOverlays,
   ...CDSSystem,
+  ...CDSTables,
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSInputs,
