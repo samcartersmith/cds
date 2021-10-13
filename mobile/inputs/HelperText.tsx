@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
-import { TextLabel2, TextProps } from '../typography';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { TextLabel2, TextBody, TextProps } from '../typography';
 
 export type InputTextProps = {
   /**
@@ -10,6 +11,12 @@ export type InputTextProps = {
   color?: InputVariant;
 } & TextProps;
 
-export const HelperText = memo(function HelperText({ color, ...props }: InputTextProps) {
-  return <TextLabel2 color={color} {...props} />;
+export const HelperText = memo(function HelperText({ ...props }: InputTextProps) {
+  const density = useScaleDensity();
+
+  if (density === 'dense') {
+    return <TextBody {...props} />;
+  }
+
+  return <TextLabel2 {...props} />;
 });

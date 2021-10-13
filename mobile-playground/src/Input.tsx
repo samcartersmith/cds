@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
 import { Icon } from '@cbhq/cds-mobile/icons';
 
-import { BetaTextField, BetaTextFieldProps } from '@cbhq/cds-mobile/inputs/BetaTextField';
+import { TextField, TextFieldProps } from '@cbhq/cds-mobile/inputs/TextField';
 
 import { TextBody } from '@cbhq/cds-mobile/typography';
 
@@ -11,16 +11,16 @@ import { Button } from '@cbhq/cds-mobile/buttons';
 import ExamplesScreen from './internal/ExamplesScreen';
 import Example from './internal/Example';
 
-const MockTextInput = ({ ...props }: BetaTextFieldProps) => {
+const MockTextInput = ({ ...props }: TextFieldProps) => {
   const [text, onChangeText] = useState('');
 
-  return <BetaTextField onChangeText={onChangeText} value={text} {...props} />;
+  return <TextField onChangeText={onChangeText} value={text} {...props} />;
 };
 
-const MockCompactTextInput = ({ ...props }: BetaTextFieldProps) => {
+const MockCompactTextInput = ({ ...props }: TextFieldProps) => {
   const [text, onChangeText] = useState('');
 
-  return <BetaTextField compact onChangeText={onChangeText} value={text} {...props} />;
+  return <TextField compact onChangeText={onChangeText} value={text} {...props} />;
 };
 
 const MockComplexInput = () => {
@@ -28,9 +28,9 @@ const MockComplexInput = () => {
 
   return (
     <HStack justifyContent="center">
-      <BetaTextField width={50} label="Test" onChangeText={onChangeText} value={text} />
+      <TextField width={50} label="Test" onChangeText={onChangeText} value={text} />
       <VStack spacingTop={0.5}>
-        <Box spacingTop={2}>
+        <Box spacingTop={3}>
           <Button>Hello</Button>
         </Box>
       </VStack>

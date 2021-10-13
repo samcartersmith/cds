@@ -13,10 +13,7 @@ export const useInputBorderStyle = (focused: boolean) => {
     if (focused) {
       const outStyle = {
         ...focusedStyle,
-        marginTop: -1,
-        marginLeft: -1,
-        marginRight: -1,
-        marginBottom: -1,
+        margin: -(focusedStyle.borderWidth / 2),
       };
       return css`
         ${outStyle}

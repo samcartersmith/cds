@@ -1,1 +1,1 @@
-export * from './BetaTextField';
+export * from './TextField';

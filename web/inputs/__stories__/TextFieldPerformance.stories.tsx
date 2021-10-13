@@ -2,12 +2,12 @@ import { css } from 'linaria';
 import { withPerformance } from 'storybook-addon-performance';
 import { createStories } from ':cds-storybook/stories/PerformanceBenchmark';
 
-import { BetaTextField } from '../BetaTextField';
+import { TextField } from '../TextField';
 import { Link } from '../../typography/Link';
 
 export default {
   title: 'Core Components/Inputs/TextFieldPerformance',
-  component: BetaTextField,
+  component: TextField,
   decorators: [withPerformance],
 };
 
@@ -17,7 +17,7 @@ const borderStyle = css`
 
 export const CDSTextField = () => {
   return (
-    <BetaTextField
+    <TextField
       label="Label"
       start={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid

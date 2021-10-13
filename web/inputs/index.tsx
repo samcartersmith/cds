@@ -1,2 +1,2 @@
-export * from './BetaTextField';
+export * from './TextField';
 export * from './NativeInput';

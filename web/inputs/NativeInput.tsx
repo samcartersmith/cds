@@ -21,7 +21,8 @@ export type NativeInputProps = {
   React.InputHTMLAttributes<HTMLInputElement>;
 
 const containerStyle = css`
-  flex: 2;
+  min-width: 0;
+  flex-grow: 2;
   background-color: transparent;
 
   &:focus {

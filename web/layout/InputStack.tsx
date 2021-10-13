@@ -14,7 +14,8 @@ const inputBaseAreaStyles = css`
   flex-direction: row;
   border-radius: ${borderRadius.input}px;
   display: flex;
-  flex: 2;
+  min-width: 0;
+  flex-grow: 2;
 `;
 
 export type InputStackProps = {
@@ -38,7 +39,8 @@ export const InputStack = memo(function Input({
   testID,
   ...props
 }: InputStackProps) {
-  const borderColor = usePalette()[variant];
+  const palette = usePalette();
+  const borderColor = variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant];
   const inputBorderRadius = {
     ...(prependNode
       ? {

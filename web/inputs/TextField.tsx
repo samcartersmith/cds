@@ -15,9 +15,9 @@ import { InputLabel } from './InputLabel';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 
-export type BetaTextFieldProps = TextFieldBaseProps & React.InputHTMLAttributes<HTMLInputElement>;
+export type TextFieldProps = TextFieldBaseProps & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const BetaTextField = memo(function BetaTextField({
+export const TextField = memo(function TextField({
   label,
   helperText = '',
   variant = 'foregroundMuted',
@@ -32,7 +32,7 @@ export const BetaTextField = memo(function BetaTextField({
   onFocus,
   onBlur,
   ...htmlInputElmProps
-}: BetaTextFieldProps) {
+}: TextFieldProps) {
   const [focused, setFocused] = useState(false);
   const variantWithFocus = useInputVariant(focused, variant);
   const labelColor = useInputLabelColor(variant);
@@ -99,7 +99,7 @@ export const BetaTextField = memo(function BetaTextField({
       }
       startNode={
         (compact || !!start) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2} minWidth={0}>
+          <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2}>
             {compact && <InputLabel color={labelColor}>{label}</InputLabel>}
             {!!start && <>{start}</>}
           </HStack>
@@ -107,7 +107,7 @@ export const BetaTextField = memo(function BetaTextField({
       }
       endNode={
         (suffix !== '' || !!end) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2} minWidth={0}>
+          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2}>
             {suffix !== '' && (
               <TextLabel1 as="p" color="foregroundMuted">
                 {suffix}

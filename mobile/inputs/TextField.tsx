@@ -19,9 +19,9 @@ import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
 
-export type BetaTextFieldProps = TextFieldBaseProps & RNTextInputProps;
+export type TextFieldProps = TextFieldBaseProps & RNTextInputProps;
 
-export const BetaTextField = memo(function BetaTextField({
+export const TextField = memo(function TextField({
   label,
   helperText = '',
   variant = 'foregroundMuted',
@@ -34,7 +34,7 @@ export const BetaTextField = memo(function BetaTextField({
   compact,
   suffix = '',
   ...editableInputProps
-}: BetaTextFieldProps) {
+}: TextFieldProps) {
   const [focused, setFocused] = useState(false);
   const variantWithFocus = useInputVariant(focused, variant);
   const labelColor = useInputLabelColor(variant);

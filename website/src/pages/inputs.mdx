@@ -28,50 +28,59 @@ function InputsKitchenSinkExample() {
   }, []);
 
   return (
-	<ThemeProvider>
-		<form onSubmit={onSubmit} action={undefined}>
-			<VStack gap={5} spacing={windowDimensions.width < 400 ? 0.5 : 10}>
-				<BetaTextField
-				label="Campaign title"
-				aria-label="campain title"
-				helperText="This won't be displayed to users"
-				placeholder="Title"
-				/>
-				<BetaTextField
-				label="Campaign description"
-				aria-label="campain description"
-				helperText="A one-line description that users will see"
-				placeholder="Description"
-				/>
-				<BetaTextField
-				start={
-					<Icon spacingTop={0.5} spacingEnd={2} size="s" color="foreground" name="cashUSD" />
-				}
-				label="Campaign budget"
-				placeholder="0"
-				suffix="BAL"
-				/>
-				<BetaTextField
-				label="US wallet account UUID"
-				placeholder="US wallet account UUID"
-				helperText="Get account UUID from https://admin.cbhq.net"
-				/>
-				<BetaTextField
-				label="UK wallet account UUID"
-				placeholder="UK wallet account UUID"
-				helperText="Get account UUID from https://admin.cbhq.net"
-				/>
-				<BetaTextField
-				label="UK wallet account UUID"
-				placeholder="UK wallet account UUID"
-				helperText="Get account UUID from https://admin.cbhq.net"
-				/>
-				<HStack justifyContent="flex-end">
-				<Button type="submit">Next: add images</Button>
-				</HStack>
-			</VStack>
-		</form>
-    </ThemeProvider>
+
+    <ExampleWithThemeToggles>
+		<ThemeProvider>
+			<form onSubmit={onSubmit} action={undefined}>
+				<VStack gap={5} spacing={windowDimensions.width < 400 ? 0.5 : 10}>
+					{/* TextField 1 */}
+					<TextField
+						label="Campaign title"
+						aria-label="campain title"
+						helperText="This won't be displayed to users"
+						placeholder="Title"
+					/>
+					{/* TextField 2 */}
+					<TextField
+						label="Campaign description"
+						aria-label="campain description"
+						helperText="A one-line description that users will see"
+						placeholder="Description"
+					/>
+					{/* TextField 3 */}
+					<TextField
+						start={
+							<Icon spacingTop={0.5} spacingEnd={2} size="s" color="foreground" name="cashUSD" />
+						}
+						label="Campaign budget"
+						placeholder="0"
+						suffix="BAL"
+					/>
+					{/* TextField 4 */}
+					<TextField
+						label="US wallet account UUID"
+						placeholder="US wallet account UUID"
+						helperText="Get account UUID from https://admin.cbhq.net"
+					/>
+					{/* TextField 5 */}
+					<TextField
+						label="UK wallet account UUID"
+						placeholder="UK wallet account UUID"
+						helperText="Get account UUID from https://admin.cbhq.net"
+					/>
+					{/* TextField 6 */}
+					<TextField
+						label="UK wallet account UUID"
+						placeholder="UK wallet account UUID"
+						helperText="Get account UUID from https://admin.cbhq.net"
+					/>
+					<HStack justifyContent="flex-end">
+						<Button type="submit">Next: add images</Button>
+					</HStack>
+				</VStack>
+			</form>
+		</ThemeProvider>
+    </ExampleWithThemeToggles>
 	)
 }
 ```
