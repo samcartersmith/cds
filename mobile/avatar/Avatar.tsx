@@ -23,6 +23,7 @@ export const Avatar: React.FC<AvatarBaseProps> = memo(
         height={height}
         source={{ uri: src }}
         resizeMode="cover"
+        testID="avatar-image"
       />
     ) : (
       <AvatarText
@@ -47,6 +48,7 @@ export const Avatar: React.FC<AvatarBaseProps> = memo(
         alignItems="center"
         justifyContent="center"
         dangerouslySetStyle={borderColor ? styles.border : undefined}
+        testID="avatar-box"
       >
         {childNode}
       </Box>
