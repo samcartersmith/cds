@@ -1,2 +1,93 @@
-Please go to the [Prototype](/modal) page for usage examples.
+### Basic Modal
 
+Basic Modal visibility is controlled by the `visible` and `onClose` props.
+When visible, the Modal node will be rendered next to the trigger, in this case `button`.
+
+When content exceeds the maximum height (determined by the height of the window and maintaining an `10` spacing vertically), the container will become scrollable. 
+
+**NOTE:** Basic Modal doesn't have default zIndex, you need to pass in zIndex to make sure it displays on top of other content.
+```jsx live
+function BasicModalExample() {
+  const [visible, { toggleOn, toggleOff }] = useToggler();
+  const [scrolling, { toggle: toggleScrolling }] = useToggler();
+
+  return (
+    <ExampleWithThemeToggles>
+      <ButtonGroup>
+        <Button onPress={toggleOn}>Basic Modal</Button>
+        <Switch onChange={toggleScrolling} checked={scrolling}>
+          Show long content
+        </Switch>
+      </ButtonGroup>
+      <Modal
+        visible={visible}
+        onClose={toggleOff}
+        title="Basic Modal"
+        footer={
+          <ModalFooter
+            PrimaryAction={<Button onPress={toggleOff}>Save</Button>}
+            SecondaryAction={<Button variant="secondary"  onPress={toggleOff}>Cancel</Button>}
+          />
+        }
+        zIndex={1001}
+      >
+        <ModalBody>
+          <TextBody as='p'>
+            {loremIpsum.repeat(scrolling ? 50 : 1)}
+          </TextBody>
+        </ModalBody>
+      </Modal>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Portal Modal
+
+You can control Modal with Portal by wrapping it with `PortalProvider`, and then programmatically control visibility using `addPortal()` and `removePortal()`.
+
+Modal node will be rendered inside the `portalRoot` div which is a sibling of the React root div. This is implemented using the [React Portal](https://reactjs.org/docs/portals.html).
+Portal root has a large zIndex to make sure anything inside always displays on top of the stack order. This is useful for overlay components like Modal, Alert, Toasts and so on.
+
+**NOTE:** PortalProvider is unstable on mobile and will break if multiple portals implements React Native Modal. This is a known issue with React Native Modal which doesn't support multiple modals display at the same time.
+
+```jsx live
+function PortalModalExample() {
+  function ModalExample() {
+    const { addPortal, removePortal } = usePortal();
+
+    const closeModal = () => removePortal('portalModal');
+    const showModal = () => addPortal(
+      'portalModal',
+      <Modal
+        visible
+        onClose={closeModal}
+        title="Portal Modal"
+        footer={
+          <ModalFooter 
+            PrimaryAction={<Button>Save</Button>}
+            SecondaryAction={<Button variant="secondary">Cancel</Button>}
+          />
+        }
+      >
+        <ModalBody>
+          <TextBody as="p">{loremIpsum}</TextBody>
+        </ModalBody>
+      </Modal>,
+      'modal',
+    );
+
+    return (
+      <ExampleWithThemeToggles>
+        <Button onPress={showModal}>Open Modal</Button>
+      </ExampleWithThemeToggles>
+    );
+  }
+
+  return (
+    <PortalProvider>
+      <ModalExample />
+    </PortalProvider>
+  );
+}
+```

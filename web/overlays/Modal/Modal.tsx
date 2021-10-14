@@ -192,9 +192,9 @@ export const Modal: React.FC<ModalProps> = memo(
               onClose={hideCloseIcon ? undefined : handleClose}
               accessibilityLabelledBy={accessibilityLabelledBy}
             />
-            {!hideDividers && <Divider spacingBottom={3} />}
+            {!hideDividers && <Divider />}
             {children}
-            {!hideDividers && <Divider spacingTop={3} />}
+            {!hideDividers && <Divider />}
             {footer}
           </VStack>
         </Box>
