@@ -11,10 +11,6 @@
     "url": "git@github.cbhq.net:mono/repo.git",
     "directory": "eng/shared/design-system/<package>"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://publish-npm.cbhq.net"
-  },
   "authors": "Coinbase",
   "main": "index.js",
   "typings": "index.d.ts"

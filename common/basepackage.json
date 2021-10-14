@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-common",
-  "version": "0.24.7",
+  "version": "0.24.9",
   "description": "Coinbase Design System - Common",
   "keywords": [
     "cds",
@@ -13,10 +13,6 @@
     "type": "git",
     "url": "git@github.cbhq.net:mono/repo.git",
     "directory": "eng/shared/design-system/common"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://publish-npm.cbhq.net"
   },
   "authors": "Coinbase",
   "main": "index.js",

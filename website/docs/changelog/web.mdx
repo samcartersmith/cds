@@ -8,6 +8,38 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.9 (10/14/2021, 09:56 AM PST)
+
+#### 🚀 Updates
+
+- CardGroup for web and mobile. [#37987](https://github.cbhq.net/mono/repo/pull/37987)
+- FeedCard. [#37816](https://github.cbhq.net/mono/repo/pull/37816)
+- Added hover state for inputs. [#37925](https://github.cbhq.net/mono/repo/pull/37925), [CDS-1590](https://jira.coinbase-corp.com/browse/CDS-1590)
+- Avatar website docs. [#37435](https://github.cbhq.net/mono/repo/pull/37435), [CDS-1570](https://jira.coinbase-corp.com/browse/CDS-1570)
+- CDS Table. [#37591](https://github.cbhq.net/mono/repo/pull/37591), [CDS-974](https://jira.coinbase-corp.com/browse/CDS-974)
+
+#### 🐞 Fixes
+
+- Update jsdoc to tell the truth. [#37975](https://github.cbhq.net/mono/repo/pull/37975)
+- PublishConfig registry. [#37972](https://github.cbhq.net/mono/repo/pull/37972)
+- Update spacing to new spec. [#37973](https://github.cbhq.net/mono/repo/pull/37973)
+- Rename props to better align with CDS. [#37967](https://github.cbhq.net/mono/repo/pull/37967)
+- Add beta warning tag to modal doc. [#37825](https://github.cbhq.net/mono/repo/pull/37825)
+- **[Input]** Fix input bugs based on bug bash. [#37724](https://github.cbhq.net/mono/repo/pull/37724), [CDS-1588](https://jira.coinbase-corp.com/browse/CDS-1588)
+- Flatten table component directories. [#37737](https://github.cbhq.net/mono/repo/pull/37737)
+- Text Field issues on smaller screens. [#37644](https://github.cbhq.net/mono/repo/pull/37644)
+- Remove description from TableCell. [#37705](https://github.cbhq.net/mono/repo/pull/37705)
+- Release. [#37712](https://github.cbhq.net/mono/repo/pull/37712)
+- Fix modal bugs from bug bash. [#37659](https://github.cbhq.net/mono/repo/pull/37659)
+
+#### 📘 Misc
+
+- Initial doc release. [#37854](https://github.cbhq.net/mono/repo/pull/37854)
+- Create table documentation. [#37746](https://github.cbhq.net/mono/repo/pull/37746)
+- Icon Oct 12, 2021 Release, 2 New Icons. [#37612](https://github.cbhq.net/mono/repo/pull/37612)
+- Create Base Card. [#37201](https://github.cbhq.net/mono/repo/pull/37201), [CDS-1094](https://jira.coinbase-corp.com/browse/CDS-1094)
+- Modal doc. [#37164](https://github.cbhq.net/mono/repo/pull/37164)
+
 ## 0.24.7 (10/12/2021, 06:37 PM PST)
 
 #### 🚀 Updates

@@ -5,7 +5,6 @@ Help:
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.lottie              -- Build the `lottie-files` package.
   $$ make build.mobile              -- Build the `mobile` package.
-  $$ make build.theme               -- Build the `theme` package.
   $$ make build.utils               -- Build the `utils` package.
   $$ make build.web                 -- Build the `web` package.
   $$ make build.css                 -- Build the fonts and css.
@@ -47,7 +46,6 @@ build.packages:
 	 make build.fonts 
 	 make build.lottie
 	 make build.mobile
-	 make build.theme 
 	 make build.utils
 	 make build.web  
 
@@ -206,11 +204,11 @@ clean.ios:
 
 .PHONY: release
 release:
-	bazel run :release | pbcopy
+	bazel run :release
 	bazel run :changelog
 	bazel run :docgen
 	bazel run website:lint_fix
-	pbpaste | tail -1
+
 
 .PHONY: typecheck
 typecheck:

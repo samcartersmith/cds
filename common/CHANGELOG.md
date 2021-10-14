@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.24.9 (10/14/2021, 09:56 AM PST)
+
+#### 🚀 Updates
+
+- CardGroup for web and mobile. [#37987](https://github.cbhq.net/mono/repo/pull/37987)
+- FeedCard. [#37816](https://github.cbhq.net/mono/repo/pull/37816)
+- Avatar website docs. [#37435](https://github.cbhq.net/mono/repo/pull/37435), [CDS-1570](https://jira.coinbase-corp.com/browse/CDS-1570)
+- CDS Table. [#37591](https://github.cbhq.net/mono/repo/pull/37591), [CDS-974](https://jira.coinbase-corp.com/browse/CDS-974)
+- CDS Frontier feature flags to BetaProvider. [#37489](https://github.cbhq.net/mono/repo/pull/37489)
+
+#### 🐞 Fixes
+
+- PublishConfig registry. [#37972](https://github.cbhq.net/mono/repo/pull/37972)
+- Release. [#37712](https://github.cbhq.net/mono/repo/pull/37712)
+
+#### 📘 Misc
+
+- Icon Oct 12, 2021 Release, 2 New Icons. [#37612](https://github.cbhq.net/mono/repo/pull/37612)
+- Create Base Card. [#37201](https://github.cbhq.net/mono/repo/pull/37201), [CDS-1094](https://jira.coinbase-corp.com/browse/CDS-1094)
+- Modal doc. [#37164](https://github.cbhq.net/mono/repo/pull/37164)
+
 ## 0.24.7 (10/12/2021, 06:37 PM PST)
 
 #### 🚀 Updates

@@ -19,21 +19,6 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### accessory <Badge variant="web" />
-
-Accessory (text, icon, asset, image, etc) to display at the end of the cell
-
-<ApiDetails
-  componentName="TableCell"
-  propertyName="accessory"
-  required={false}
-  defaultValue="undefined"
-  mobileOptions={[]}
-  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
-/>
-
-<ComponentDetails componentName="TableCell" templateName="prop-accessory" />
-
 ### alignItems <Badge variant="web" />
 
 This prop us useful for top-aligning cells
@@ -51,7 +36,7 @@ This prop us useful for top-aligning cells
 
 ### children <Badge variant="web" />
 
-Children to render within the button. If children are provided, title, subtitle and description MUST be unset
+Children to render within the cell. If children are provided, title, subtitle and description MUST be unset
 
 <ApiDetails
   componentName="TableCell"
@@ -130,6 +115,21 @@ The colSpan attribute defines the number of columns a cell should span
 
 <ComponentDetails componentName="TableCell" templateName="prop-colSpan" />
 
+### end <Badge variant="web" />
+
+Element (icon, asset, image, etc) to display at the end of the cell
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="end"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-end" />
+
 ### justifyContent <Badge variant="web" />
 
 This prop us useful for right-aligning the last column
@@ -144,21 +144,6 @@ This prop us useful for right-aligning the last column
 />
 
 <ComponentDetails componentName="TableCell" templateName="prop-justifyContent" />
-
-### media <Badge variant="web" />
-
-Media (icon, asset, image, etc) to display at the start of the cell
-
-<ApiDetails
-  componentName="TableCell"
-  propertyName="media"
-  required={false}
-  defaultValue="undefined"
-  mobileOptions={[]}
-  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
-/>
-
-<ComponentDetails componentName="TableCell" templateName="prop-media" />
 
 ### minWidth <Badge variant="web" />
 
@@ -190,9 +175,24 @@ Callback to fire when pressed
 
 <ComponentDetails componentName="TableCell" templateName="prop-onPress" />
 
+### start <Badge variant="web" />
+
+Element (icon, asset, image, etc) to display at the start of the cell
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="start"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-start" />
+
 ### subtitle <Badge variant="web" />
 
-A subtitle will appear below the title
+A subtitle will appear below the title. Type is set with TextLabel2
 
 <ApiDetails
   componentName="TableCell"
@@ -207,7 +207,7 @@ A subtitle will appear below the title
 
 ### title <Badge variant="web" />
 
-If a title is provided, the default type style will be inferred from context. If the cell is rendered in a TableHead, it will render as a TextLabel2. But when rendered in a TableBody the text will render as TextBody.
+If a title is provided, the default type style will be inferred from context. If the cell is rendered in a TableHead, it will render as a TextHeadline. But when rendered in a TableBody the text will render as TextBody.
 
 <ApiDetails
   componentName="TableCell"

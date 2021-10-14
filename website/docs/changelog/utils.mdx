@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.12 (10/14/2021, 09:56 AM PST)
+
+#### 🐞 Fixes
+
+- PublishConfig registry. [#37972](https://github.cbhq.net/mono/repo/pull/37972)
+
 ## 0.2.10 (10/11/2021, 04:48 PM PST)
 
 #### 🐞 Fixes
