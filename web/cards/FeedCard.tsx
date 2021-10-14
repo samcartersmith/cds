@@ -19,15 +19,20 @@ export const FeedCard: React.FC<FeedCardBaseProps> = ({
 }) => {
   return (
     <Card>
-      <CardHeader avatarUrl={avatarUrl} description={headerDescription} action={headerActionNode} />
+      <CardHeader
+        avatarUrl={avatarUrl}
+        description={headerDescription}
+        action={headerActionNode}
+        spacing={2}
+      />
       <CardBody
         title={bodyTitle}
         description={bodyDescription}
-        media={<RemoteImage source={bodyMediaUrl} height="229px" width="100%" />}
-        spacing={3}
+        media={<RemoteImage source={bodyMediaUrl} height="auto" width="100%" />}
+        spacing={2}
         orientation={bodyOrientation}
       />
-      <CardFooter spacing={3}>{footerActions}</CardFooter>
+      <CardFooter spacing={2}>{footerActions}</CardFooter>
     </Card>
   );
 };

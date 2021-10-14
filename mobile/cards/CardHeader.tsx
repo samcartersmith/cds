@@ -11,11 +11,10 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
   avatarUrl,
   description,
   action,
-  children,
-  ...props
+  spacing,
 }) => {
   return (
-    <HStack justifyContent="space-between" alignItems="center" spacing={3} {...props}>
+    <HStack justifyContent="space-between" alignItems="center" spacing={spacing}>
       <HStack flexGrow={1} alignItems="center" gap={2}>
         {avatarUrl ? (
           <RemoteImage source={{ uri: avatarUrl }} width={32} height={32} resizeMode="center" />
