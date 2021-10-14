@@ -1,8 +1,9 @@
-import React, { memo } from 'react';
+import React, { useMemo, memo } from 'react';
 
 import { InputBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { defaultPalette } from '@cbhq/cds-common';
 
 import { css, cx } from 'linaria';
 import { usePalette } from '../hooks/usePalette';
@@ -16,6 +17,10 @@ const inputBaseAreaStyles = css`
   display: flex;
   min-width: 0;
   flex-grow: 2;
+
+  &:hover {
+    background-color: rgb(var(--${defaultPalette.backgroundAlternate}), 0.3);
+  }
 `;
 
 export type InputStackProps = {
@@ -40,21 +45,31 @@ export const InputStack = memo(function Input({
   ...props
 }: InputStackProps) {
   const palette = usePalette();
-  const borderColor = variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant];
-  const inputBorderRadius = {
-    ...(prependNode
-      ? {
-          borderTopLeftRadius: 0,
-          borderBottomLeftRadius: 0,
-        }
-      : {}),
-    ...(appendNode
-      ? {
-          borderTopRightRadius: 0,
-          borderBottomRightRadius: 0,
-        }
-      : {}),
-  };
+
+  // Styling
+  const inputBorderRadius = useMemo(() => {
+    return {
+      ...(prependNode
+        ? {
+            borderTopLeftRadius: 0,
+            borderBottomLeftRadius: 0,
+          }
+        : {}),
+      ...(appendNode
+        ? {
+            borderTopRightRadius: 0,
+            borderBottomRightRadius: 0,
+          }
+        : {}),
+    };
+  }, [prependNode, appendNode]);
+
+  const defaultBorderStyles = useMemo(() => {
+    return {
+      borderColor: variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant],
+      ...inputBorderRadius,
+    };
+  }, [variant, palette, inputBorderRadius]);
 
   return (
     <VStack testID={testID} width={`${width}%`} gap={0.5} {...props}>
@@ -63,10 +78,7 @@ export const InputStack = memo(function Input({
       )}
       <HStack opacity={disabled ? opacityDisabled : 1}>
         {!!prependNode && <>{prependNode}</>}
-        <div
-          style={{ borderColor, ...inputBorderRadius }}
-          className={cx(inputBaseAreaStyles, borderStyle)}
-        >
+        <div style={defaultBorderStyles} className={cx(inputBaseAreaStyles, borderStyle)}>
           {!!startNode && <>{startNode}</>}
           {inputNode}
           {!!endNode && <>{endNode}</>}
