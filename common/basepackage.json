@@ -16,7 +16,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry-npm.cbhq.net"
+    "registry": "https://publish-npm.cbhq.net"
   },
   "authors": "Coinbase",
   "main": "index.js",
