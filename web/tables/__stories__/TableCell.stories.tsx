@@ -3,8 +3,8 @@ import { Story, Meta } from '@storybook/react';
 
 import { Table, TableRow, TableBody, TableFoot, TableCell, TableHead } from '..';
 import { ThemeProvider } from '../../system';
+import { TextLabel2, TextHeadline } from '../../typography';
 import { Box } from '../../layout';
-import { TextHeadline } from '../../typography';
 
 export default {
   title: 'Core Components/Table/TableCell',
@@ -67,10 +67,17 @@ export const SampleCells: Story = () => {
                 </Box>
               }
               title="Bitcoin"
-              subtitle="BTC"
+              subtitle="BTC and I'm like please please truncate me"
             />
-            <TableCell title="$2,475.68" subtitle="0.11882557" />
-            <TableCell title="35.60%" />
+            <TableCell alignItems="flex-start" title="$2,475.68" subtitle="0.11882557" />
+            <TableCell className={overflowClass}>
+              <TextHeadline as="h2" color="currentColor">
+                $2,221.01
+              </TextHeadline>
+              <TextLabel2 as="p" color="currentColor">
+                0.1519581 BTC
+              </TextLabel2>
+            </TableCell>
           </TableRow>
         </TableBody>
         <TableFoot>

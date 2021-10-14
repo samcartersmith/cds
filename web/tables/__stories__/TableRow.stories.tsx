@@ -26,7 +26,7 @@ export const TableRowExample: Story = () => {
     <Table variant="ruled" border>
       <TableBody>
         <TableRow className={customHoverStyles}>
-          <TableCell justifyContent="space-between">
+          <TableCell direction="horizontal">
             <TextHeadline as="h2">Sample Row 1 (custom styles)</TextHeadline>
             <Button variant="secondary" compact onPress={handlePress}>
               Export
@@ -35,7 +35,7 @@ export const TableRowExample: Story = () => {
         </TableRow>
         <TableRow backgroundColor="backgroundAlternate">
           <TableCell
-            colSpan={1000}
+            direction="horizontal"
             title="Sample Row 2 (with background set)"
             end={
               <Button variant="secondary" compact onPress={handlePress}>
@@ -45,7 +45,7 @@ export const TableRowExample: Story = () => {
           />
         </TableRow>
         <TableRow indicateHover>
-          <TableCell justifyContent="space-between">
+          <TableCell direction="horizontal">
             <TextHeadline as="h2">Sample Row 3 (default hover)</TextHeadline>
             <Button variant="secondary" compact onPress={handlePress}>
               Export

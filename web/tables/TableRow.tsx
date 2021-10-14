@@ -8,14 +8,7 @@ import { tableRow, tableRowHover } from './styles/tableRowStyles';
 
 export type { TableRowProps } from './types/tableRowTypes';
 export const TableRow = memo(
-  ({
-    fullWidth = false,
-    indicateHover = false,
-    className,
-    children,
-    backgroundColor,
-    color,
-  }: TableRowProps) => {
+  ({ fullWidth, indicateHover, className, children, backgroundColor, color }: TableRowProps) => {
     const inlineStyles = useMemo(() => {
       return {
         color: color && palette[color],
@@ -25,7 +18,11 @@ export const TableRow = memo(
 
     return (
       <tr style={inlineStyles} className={cx(tableRow, indicateHover && tableRowHover, className)}>
-        {fullWidth && <TableCell colSpan={1000}>{children}</TableCell>}
+        {fullWidth && (
+          <TableCell direction="horizontal" colSpan={1000}>
+            {children}
+          </TableCell>
+        )}
         {!fullWidth && <>{children}</>}
       </tr>
     );

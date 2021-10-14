@@ -50,10 +50,11 @@ type TableCellBaseProps = {
    */
   onPress?: React.MouseEventHandler;
   /**
-   * Force children to flow horizontally, similar to using an HStack
-   * @default false
+   * Direction provides content flow control.
+   * Use vertical to inherit a VStask, horizontal for an HStack
+   * @default vertical
    */
-  horizontal?: boolean;
+  direction?: 'vertical' | 'horizontal';
 } & (TdHTMLAttributes<HTMLTableCellElement> | ThHTMLAttributes<HTMLTableCellElement>);
 
 type TableCellPropsWithInputs = {

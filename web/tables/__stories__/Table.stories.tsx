@@ -6,7 +6,7 @@ import { Story, Meta } from '@storybook/react';
 import { startCase } from 'lodash';
 import { Icon } from '../../icons';
 import { Button } from '../../buttons';
-import { HStack, VStack } from '../../layout';
+import { HStack } from '../../layout';
 import { Spacer } from '../../layout/Spacer';
 import { TextDisplay2 } from '../../typography';
 import { Switch } from '../../controls/Switch';
@@ -82,13 +82,7 @@ const SortableIconHelper = ({
   color: 'primary' | 'foregroundMuted';
 }) => {
   return (
-    <VStack>
-      <Icon
-        color={color}
-        name={direction === 'DESC' ? 'sortUpCenter' : 'sortDownCenter'}
-        size="s"
-      />
-    </VStack>
+    <Icon color={color} name={direction === 'DESC' ? 'sortUpCenter' : 'sortDownCenter'} size="s" />
   );
 };
 
