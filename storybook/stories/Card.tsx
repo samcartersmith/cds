@@ -208,7 +208,7 @@ export function createStories({
           headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
           bodyTitle="LEARN AMP. EARN $3 IN AMP."
           bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-          bodyMediaUrl="https://source.unsplash.com/240x240?beach-0"
+          bodyMediaUrl="https://via.placeholder.com/350x220"
           bodyOrientation="vertical"
           footerActions={
             <Button compact variant="secondary">
