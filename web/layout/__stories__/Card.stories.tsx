@@ -1,10 +1,11 @@
 import { createStories, CreateCardProps } from ':cds-storybook/stories/Card';
 
 import { Button } from '../../buttons/Button';
+import { IconButton } from '../../buttons/IconButton';
 import { ListCell, CellMedia } from '../../cells';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Box } from '../Box';
-import { Card } from '../Card';
+import { Card, FeedCard } from '../../cards';
 import { VStack } from '../VStack';
 import { LoremIpsum } from './LoremIpsum';
 
@@ -26,10 +27,13 @@ export const {
   PinnedRightCard,
   PinnedBottomCard,
   PinnedLeftCard,
+  FeedCardExample,
 } = createStories({
   Box,
   Button,
   Card,
+  FeedCard,
+  IconButton,
   CellMedia,
   ListCell,
   LoremIpsum,
@@ -50,6 +54,8 @@ export const {
   Box,
   Button,
   Card,
+  FeedCard,
+  IconButton,
   CellMedia,
   ListCell,
   LoremIpsum,

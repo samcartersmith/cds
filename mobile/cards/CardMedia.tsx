@@ -1,10 +1,10 @@
 import React from 'react';
-
 import {
   IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
   IllustrationPictogramNames,
 } from '@cbhq/cds-common/types/IllustrationNames';
+
 import { SpotRectangle, SpotSquare, Pictogram } from '../illustrations';
 import { VStack } from '../layout/VStack';
 

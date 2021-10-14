@@ -7,7 +7,7 @@ import { useBeta } from '@cbhq/cds-common/beta';
 import { css, cx } from 'linaria';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { LinkableProps, Pressable } from '../system/Pressable';
-import { VStack } from './VStack';
+import { VStack } from '../layout/VStack';
 
 const cardPressableStyles = css`
   padding: 0;

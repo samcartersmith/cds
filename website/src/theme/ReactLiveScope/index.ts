@@ -22,7 +22,7 @@ import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSInputs from '@cbhq/cds-web/inputs';
 import * as CDSLayout from '@cbhq/cds-web/layout';
-import * as CDSCardElements from '@cbhq/cds-web/layout/CardElements';
+import * as CDSCardElements from '@cbhq/cds-web/cards';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';

@@ -6,7 +6,7 @@ import { VStack, VStackProps } from '../layout/VStack';
 import { TextHeadline } from '../typography/TextHeadline';
 import { TextBody } from '../typography/TextBody';
 
-export type CardBodyProps = VStackProps<'div'> & CardBodyBaseProps & CardBodyOrientationProps;
+export type CardBodyProps = VStackProps & CardBodyBaseProps & CardBodyOrientationProps;
 
 export const CardBody: React.FC<CardBodyProps> = ({
   title,
@@ -21,10 +21,8 @@ export const CardBody: React.FC<CardBodyProps> = ({
       {media}
       <VStack gap={1} {...props}>
         <VStack gap={1}>
-          <TextHeadline as="h3">{title}</TextHeadline>
-          <TextBody as="p" color="foregroundMuted">
-            {description}
-          </TextBody>
+          <TextHeadline>{title}</TextHeadline>
+          <TextBody color="foregroundMuted">{description}</TextBody>
         </VStack>
         {children}
       </VStack>
@@ -35,10 +33,8 @@ export const CardBody: React.FC<CardBodyProps> = ({
     <HStack gap={1} justifyContent="space-between">
       <VStack gap={1} {...props}>
         <VStack gap={1}>
-          <TextHeadline as="h3">{title}</TextHeadline>
-          <TextBody as="p" color="foregroundMuted">
-            {description}
-          </TextBody>
+          <TextHeadline>{title}</TextHeadline>
+          <TextBody color="foregroundMuted">{description}</TextBody>
         </VStack>
         {children}
       </VStack>

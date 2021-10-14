@@ -6,6 +6,23 @@ title: Cards
   *BETA* Cards are likely to change. Production use in Beta is strongly discouraged
 </h3>
 
+## FeedCard
+
+```jsx live
+<Artboard>
+  <FeedCard
+    avatarUrl="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg"
+    headerDescription="Earn crypto"
+    headerActionNode={<IconButton name="more" onPress={console.log} variant="foregroundMuted" transparent />}
+    bodyTitle="LEARN AMP. EARN $3 IN AMP."
+    bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+    bodyMediaUrl="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg"
+    bodyOrientation="vertical"
+    footerActions={<Button compact variant="secondary">Actions</Button>}
+  />
+</Artboard>
+```
+
 ## Base Card
 
 ```jsx live
@@ -43,12 +60,12 @@ title: Cards
 
 ```jsx live
 <Artboard>
-  <Card >
+  <Card>
     <CardBody
       title="Title/Headline"
       description={loremIpsum}
       media={
-        <RemoteImage source="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg" />
+        <RemoteImage source="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg" width="100%" height="100%"/>
       }
       spacing={3}
     />

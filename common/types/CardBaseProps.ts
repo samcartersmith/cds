@@ -18,3 +18,45 @@ export type CardBaseProps = {
   OffsetProps &
   SharedProps &
   SpacingProps;
+
+export type CardHeaderBaseProps = {
+  /** Absolute or Relative path to Avatar */
+  avatarUrl?: string;
+  /** Text to be displayed in TextCaption */
+  description: string;
+  /** IconButton ReactNode */
+  action: React.ReactNode;
+};
+
+export type CardBodyBaseProps = {
+  /** Text to be displayed in TextHeadline */
+  title?: string;
+  /** Text to be displayed in TextBody */
+  description?: string;
+  /** Remote Image or other Image React Node */
+  media?: React.ReactNode;
+};
+
+export type CardBodyOrientationProps = {
+  /** Vertical places media above text content, Horizontal places media to the side of text content */
+  orientation?: 'vertical' | 'horizontal';
+};
+
+export type FeedCardBaseProps = {
+  /** Absolute or Relative to Avatar */
+  avatarUrl?: string;
+  /** Text to be displayed in TextCaption */
+  headerDescription: string;
+  /** IconButton ReactNode */
+  headerActionNode: React.ReactNode;
+  /** Text to be displayed in TextHeadline */
+  bodyTitle?: string;
+  /** Text to be displayed in TextBody */
+  bodyDescription: string;
+  /** Absolute or Relative to Image */
+  bodyMediaUrl: string;
+  /** Vertical places media above text content, Horizontal places media to the side of text content */
+  bodyOrientation: CardBodyOrientationProps['orientation'];
+  /** ReactNode that should be one or more actions */
+  footerActions: React.ReactNode;
+};

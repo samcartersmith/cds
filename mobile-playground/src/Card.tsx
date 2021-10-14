@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button } from '@cbhq/cds-mobile/buttons/Button';
+import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
 import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
-import { Box, VStack, Card } from '@cbhq/cds-mobile/layout';
+import { Box, VStack } from '@cbhq/cds-mobile/layout';
+import { Card, FeedCard } from '@cbhq/cds-mobile/cards';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
 import { createStories } from ':cds-storybook/stories/Card';
 
@@ -19,10 +21,13 @@ const {
   PinnedRightCard,
   PinnedBottomCard,
   PinnedLeftCard,
+  FeedCardExample,
 } = createStories({
   Box,
   Button,
   Card,
+  FeedCard,
+  IconButton,
   VStack,
   ListCell,
   CellMedia,
@@ -33,6 +38,9 @@ const {
 const CardScreen = () => {
   return (
     <ExamplesScreen>
+      <Example title="FeedCard">
+        <FeedCardExample />
+      </Example>
       <Example title="Card with ListCells">
         <ListCellCard />
       </Example>

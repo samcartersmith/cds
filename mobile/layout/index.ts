@@ -1,5 +1,8 @@
 export * from './Box';
-export * from './Card';
+/**
+ * @deprecated The method should not be used
+ */
+export * from '../cards/Card';
 export * from './Divider';
 export * from './Fallback';
 export * from './HStack';

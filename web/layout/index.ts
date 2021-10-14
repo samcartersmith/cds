@@ -1,5 +1,8 @@
 export * from './Box';
-export * from './Card';
+/**
+ * @deprecated Card has been moved to web/cards
+ */
+export * from '../cards';
 export * from './Divider';
 export * from './Fallback';
 export * from './HStack';
