@@ -74,20 +74,19 @@ export const SampleTable: Story = () => {
   );
 };
 
-const SortableIconHelper = ({ direction }: { direction?: 'DESC' | 'ASC' }) => {
+const SortableIconHelper = ({
+  direction,
+  color,
+}: {
+  direction?: 'DESC' | 'ASC';
+  color: 'primary' | 'foregroundMuted';
+}) => {
   return (
     <VStack>
       <Icon
-        color={direction === 'DESC' ? 'primary' : 'foregroundMuted'}
-        name="sortUpCenter"
-        size="xs"
-      />
-      <Icon
-        color={direction === 'ASC' ? 'primary' : 'foregroundMuted'}
-        name="sortDownCenter"
-        size="xs"
-        // @ts-expect-error This in not exposed, but we want to use it
-        offsetTop={0.5}
+        color={color}
+        name={direction === 'DESC' ? 'sortUpCenter' : 'sortDownCenter'}
+        size="s"
       />
     </VStack>
   );
@@ -132,20 +131,33 @@ export const SortingExample: Story = () => {
             onPress={() => sortTable('name')}
             color={sortBy === 'name' ? 'primary' : 'foregroundMuted'}
             title="Asset"
-            end={<SortableIconHelper direction={sortBy === 'name' ? sortDirection : undefined} />}
+            end={
+              <SortableIconHelper
+                color={sortBy === 'name' ? 'primary' : 'foregroundMuted'}
+                direction={sortBy === 'name' ? sortDirection : undefined}
+              />
+            }
           />
           <TableCell
             onPress={() => sortTable('ticker')}
             color={sortBy === 'ticker' ? 'primary' : 'foregroundMuted'}
             title="Ticker"
-            end={<SortableIconHelper direction={sortBy === 'ticker' ? sortDirection : undefined} />}
+            end={
+              <SortableIconHelper
+                color={sortBy === 'ticker' ? 'primary' : 'foregroundMuted'}
+                direction={sortBy === 'ticker' ? sortDirection : undefined}
+              />
+            }
           />
           <TableCell
             onPress={() => sortTable('appStatus')}
             color={sortBy === 'appStatus' ? 'primary' : 'foregroundMuted'}
             title="Application Status"
             end={
-              <SortableIconHelper direction={sortBy === 'appStatus' ? sortDirection : undefined} />
+              <SortableIconHelper
+                color={sortBy === 'appStatus' ? 'primary' : 'foregroundMuted'}
+                direction={sortBy === 'appStatus' ? sortDirection : undefined}
+              />
             }
           />
         </TableRow>

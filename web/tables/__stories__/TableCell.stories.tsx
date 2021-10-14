@@ -3,8 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { Table, TableRow, TableBody, TableFoot, TableCell, TableHead } from '..';
 import { ThemeProvider } from '../../system';
-import { Box, VStack } from '../../layout';
-import { Icon } from '../../icons';
+import { Box } from '../../layout';
 import { TextHeadline } from '../../typography';
 
 export default {
@@ -49,21 +48,7 @@ export const SampleCells: Story = () => {
       <Table variant="ruled" border>
         <TableHead>
           <TableRow backgroundColor="backgroundAlternate">
-            <TableCell
-              title="First Header"
-              end={
-                <VStack>
-                  <Icon color="foregroundMuted" name="sortUpCenter" size="xs" />
-                  <Icon
-                    color="foregroundMuted"
-                    name="sortDownCenter"
-                    size="xs"
-                    // @ts-expect-error This in not exposed, but we want to use it
-                    offsetTop={0.5}
-                  />
-                </VStack>
-              }
-            />
+            <TableCell title="First Header" />
             <TableCell>
               <TextHeadline as="p" color="currentColor">
                 Second Header
