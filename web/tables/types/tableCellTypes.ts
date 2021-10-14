@@ -1,4 +1,4 @@
-import { ReactNode, ReactElement } from 'react';
+import { ReactNode, ReactElement, TdHTMLAttributes, ThHTMLAttributes } from 'react';
 import { FlexAxisValue, FlexSpaceCommon, PaletteForeground } from '@cbhq/cds-common';
 
 export type TableCellTag = 'td' | 'th' | 'div';
@@ -49,7 +49,12 @@ type TableCellBaseProps = {
    * @default noop
    */
   onPress?: React.MouseEventHandler;
-};
+  /**
+   * Force children to flow horizontally, similar to using an HStack
+   * @default false
+   */
+  horizontal?: boolean;
+} & (TdHTMLAttributes<HTMLTableCellElement> | ThHTMLAttributes<HTMLTableCellElement>);
 
 type TableCellPropsWithInputs = {
   /** Children to render within the cell. */

@@ -25,6 +25,7 @@ export const TableCell = memo(
     // Only available when Children is null
     title,
     subtitle,
+    ...props
   }: TableCellProps) => {
     const tableSectionType = useTableSectionTag();
     const TableCellComponent = useTableCellTag();
@@ -44,7 +45,7 @@ export const TableCell = memo(
     );
 
     return (
-      <TableCellComponent className={tableCellClass} colSpan={colSpan} width={minWidth}>
+      <TableCellComponent className={tableCellClass} colSpan={colSpan} width={minWidth} {...props}>
         <Cell onPress={onPress} spacing={0} alignItems={alignItems} accessory={end} media={start}>
           {children ? (
             <TextComponent as="div" noWrap color={color ?? 'currentColor'}>
