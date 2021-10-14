@@ -52,19 +52,19 @@ type TableCellBaseProps = {
 };
 
 type TableCellPropsWithInputs = {
-  /** Children to render within the button. */
-  // children: NonNullable<React.ReactNode>;
+  /** Children to render within the cell. */
   children?: never;
   /**
    * If a title is provided, the default type style
    * will be inferred from context. If the cell is rendered
-   * in a TableHead, it will render as a TextLabel2. But when
+   * in a TableHead, it will render as a TextHeadline. But when
    * rendered in a TableBody the text will render as TextBody.
    * @default undefined
    */
   title: string;
   /**
-   * A subtitle will appear below the title
+   * A subtitle will appear below the title.
+   * Type is set with TextLabel2
    * @default undefined
    */
   subtitle?: string;
