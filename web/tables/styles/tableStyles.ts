@@ -5,6 +5,7 @@ import { palette } from '../../tokens';
 export const table = css`
   display: table;
   width: 100%;
+  margin: 0;
   padding: 0;
   border-collapse: collapse;
   border: none;

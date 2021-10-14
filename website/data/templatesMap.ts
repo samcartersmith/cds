@@ -1201,6 +1201,108 @@ export const ThemeProvider = {
   ),
 };
 
+export const Table = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/Table/a11y.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/Table/implementation.mdx'
+      ),
+  ),
+  table: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/Table/table.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/Table/usage.mdx'
+      ),
+  ),
+};
+
+export const TableBody = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableBody/implementation.mdx'
+      ),
+  ),
+  'table-body': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableBody/table-body.mdx'
+      ),
+  ),
+};
+
+export const TableCell = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableCell/implementation.mdx'
+      ),
+  ),
+  'table-cell': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableCell/table-cell.mdx'
+      ),
+  ),
+};
+
+export const TableFoot = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFoot/implementation.mdx'
+      ),
+  ),
+  'table-foot': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFoot/table-foot.mdx'
+      ),
+  ),
+};
+
+export const TableHead = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHead/implementation.mdx'
+      ),
+  ),
+  'table-head': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHead/table-head.mdx'
+      ),
+  ),
+};
+
+export const TableRow = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableRow/implementation.mdx'
+      ),
+  ),
+  'table-row': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableRow/table-row.mdx'
+      ),
+  ),
+};
+
 export const Sparkline = {
   implementation: React.lazy(
     async () =>

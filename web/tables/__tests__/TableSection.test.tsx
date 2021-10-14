@@ -1,5 +1,7 @@
 import { renderA11y } from '@cbhq/jest-utils';
-import { TableHead, TableBody, TableFoot } from '../TableSection';
+import { TableHead } from '../TableHead';
+import { TableBody } from '../TableBody';
+import { TableFoot } from '../TableFoot';
 import { Table } from '../Table';
 
 describe('Table Sections', () => {

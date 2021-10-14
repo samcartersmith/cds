@@ -5,6 +5,7 @@ import { useTableStyles } from './hooks/useTableStyles';
 import { TableProps } from './types/tableTypes';
 import { table } from './styles/tableStyles';
 
+export type { TableProps, TableVariant } from './types/tableTypes';
 export const Table = memo(({ className, children, variant, border }: TableProps) => {
   const variantStyles = useTableStyles({ variant, border });
 

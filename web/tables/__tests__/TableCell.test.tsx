@@ -1,6 +1,6 @@
 import { renderA11y } from '@cbhq/jest-utils';
 import { Table } from '../Table';
-import { TableBody } from '../TableSection';
+import { TableBody } from '../TableBody';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 

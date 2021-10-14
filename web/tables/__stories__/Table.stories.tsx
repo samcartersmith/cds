@@ -22,7 +22,7 @@ export default {
 
 export const SampleTable: Story = () => {
   const [border, { toggle }] = useToggler();
-  const [variant, setVariant] = useState<TableVariant>('default');
+  const [variant, setVariant] = useState<TableVariant | undefined>('default');
 
   const data = assetHubMock.slice(0, 6);
   const variants: TableVariant[] = ['default', 'graph', 'ruled'];

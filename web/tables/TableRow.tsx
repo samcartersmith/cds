@@ -6,25 +6,30 @@ import { palette } from '../tokens';
 import { TableRowProps } from './types/tableRowTypes';
 import { tableRow, tableRowHover } from './styles/tableRowStyles';
 
-export const TableRow = memo(function TableRow({
-  fullWidth = false,
-  indicateHover = false,
-  className,
-  children,
-  backgroundColor,
-  color,
-}: TableRowProps) {
-  const inlineStyles = useMemo(() => {
-    return {
-      color: color && palette[color],
-      backgroundColor: backgroundColor && palette[backgroundColor],
-    };
-  }, [backgroundColor, color]);
+export type { TableRowProps } from './types/tableRowTypes';
+export const TableRow = memo(
+  ({
+    fullWidth = false,
+    indicateHover = false,
+    className,
+    children,
+    backgroundColor,
+    color,
+  }: TableRowProps) => {
+    const inlineStyles = useMemo(() => {
+      return {
+        color: color && palette[color],
+        backgroundColor: backgroundColor && palette[backgroundColor],
+      };
+    }, [backgroundColor, color]);
 
-  return (
-    <tr style={inlineStyles} className={cx(tableRow, indicateHover && tableRowHover, className)}>
-      {fullWidth && <TableCell colSpan={1000}>{children}</TableCell>}
-      {!fullWidth && <>{children}</>}
-    </tr>
-  );
-});
+    return (
+      <tr style={inlineStyles} className={cx(tableRow, indicateHover && tableRowHover, className)}>
+        {fullWidth && <TableCell colSpan={1000}>{children}</TableCell>}
+        {!fullWidth && <>{children}</>}
+      </tr>
+    );
+  },
+);
+
+TableRow.displayName = 'TableRow';

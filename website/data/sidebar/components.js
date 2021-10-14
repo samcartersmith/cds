@@ -126,6 +126,19 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Tables',
+      collapsed: true,
+      items: [
+        'components/tables/Table/table',
+        'components/tables/TableBody/table-body',
+        'components/tables/TableCell/table-cell',
+        'components/tables/TableFoot/table-foot',
+        'components/tables/TableHead/table-head',
+        'components/tables/TableRow/table-row',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Visualizations',
       collapsed: true,
       items: [

@@ -1,0 +1,223 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/tables/TableCell](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/tables/TableCell.tsx)
+
+<ComponentDetails componentName="TableCell" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="TableCell" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="TableCell" templateName="a11y" />
+
+## Props
+
+### accessory <Badge variant="web" />
+
+Accessory (text, icon, asset, image, etc) to display at the end of the cell
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="accessory"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-accessory" />
+
+### alignItems <Badge variant="web" />
+
+This prop us useful for top-aligning cells
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="alignItems"
+  required={false}
+  defaultValue="'center'"
+  mobileOptions={[]}
+  webOptions={['center', 'flex-start']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-alignItems" />
+
+### children <Badge variant="web" />
+
+Children to render within the button. If children are provided, title, subtitle and description MUST be unset
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="children"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactNode[]',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-children" />
+
+### className <Badge variant="web" />
+
+Linaria flavored className.
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="className"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-className" />
+
+### color <Badge variant="web" />
+
+CDS Palette foreground color name
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="color"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-color" />
+
+### colSpan <Badge variant="web" />
+
+The colSpan attribute defines the number of columns a cell should span
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="colSpan"
+  required={false}
+  defaultValue="1"
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-colSpan" />
+
+### justifyContent <Badge variant="web" />
+
+This prop us useful for right-aligning the last column
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="justifyContent"
+  required={false}
+  defaultValue="'flex-start'"
+  mobileOptions={[]}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-justifyContent" />
+
+### media <Badge variant="web" />
+
+Media (icon, asset, image, etc) to display at the start of the cell
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="media"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-media" />
+
+### minWidth <Badge variant="web" />
+
+Useful for preventing columns from jumping around with pagination
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="minWidth"
+  required={false}
+  defaultValue="1"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-minWidth" />
+
+### onPress <Badge variant="web" />
+
+Callback to fire when pressed
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="onPress"
+  required={false}
+  defaultValue="noop"
+  mobileOptions={[]}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-onPress" />
+
+### subtitle <Badge variant="web" />
+
+A subtitle will appear below the title
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="subtitle"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-subtitle" />
+
+### title <Badge variant="web" />
+
+If a title is provided, the default type style will be inferred from context. If the cell is rendered in a TableHead, it will render as a TextLabel2. But when rendered in a TableBody the text will render as TextBody.
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="title"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-title" />
+
+<ComponentDetails componentName="TableCell" templateName="outro" />
