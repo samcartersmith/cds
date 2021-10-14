@@ -44,4 +44,4 @@ export type ModalFooterBaseProps = {
   PrimaryAction: NonNullable<ReactElement<ButtonBaseProps>>;
   /** Secondary action button */
   SecondaryAction?: ReactElement<ButtonBaseProps>;
-};
+} & SharedProps;

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import type { TextInputProps } from 'react-native';
 import { ButtonBaseProps, SystemProviderProps, useToggler } from '@cbhq/cds-common';
-import { ModalBaseProps, ModalFooterBaseProps } from '@cbhq/cds-common/types';
+import type { ModalBaseProps, ModalFooterBaseProps, SharedProps } from '@cbhq/cds-common/types';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { usePortal } from '@cbhq/cds-common/context/PortalContext';
 
@@ -10,7 +10,7 @@ export type CreateModalProps = {
   ModalBody: React.ComponentType;
   ModalFooter: React.ComponentType<ModalFooterBaseProps>;
   LoremIpsum: React.ComponentType<Record<string, unknown>>;
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
+  Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
   ThemeProvider: React.ComponentType<SystemProviderProps>;
   PortalProvider: React.ComponentType<SystemProviderProps>;
   Input?: React.ComponentType<TextInputProps>;
@@ -26,7 +26,7 @@ export function createStories({
   ThemeProvider,
   PortalProvider,
 }: CreateModalProps) {
-  const BasicModalExample: React.FC = ({ children }) => {
+  const BasicModalExample: React.FC = ({ children, ...props }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler();
 
     return (
@@ -43,6 +43,7 @@ export function createStories({
             />
           }
           zIndex={zIndex.overlays.portal}
+          {...props}
         >
           <ModalBody>{children}</ModalBody>
         </Modal>
@@ -81,6 +82,40 @@ export function createStories({
     return <Button onPress={showModal}>Open Modal</Button>;
   };
 
+  const MockModal: React.FC<Partial<ModalBaseProps>> = ({
+    onClose,
+    onBack,
+    title = 'Basic Modal',
+    visible: externalVisible,
+  }) => {
+    const [visible, { toggleOn, toggleOff }] = useToggler();
+
+    return (
+      <>
+        <Button onPress={toggleOn} testID="modal-trigger">
+          Open Modal
+        </Button>
+        <Modal
+          visible={externalVisible ?? visible}
+          onClose={onClose ?? toggleOff}
+          title={title}
+          onBack={onBack}
+          footer={
+            <ModalFooter
+              testID="modal-footer"
+              PrimaryAction={<Button>Save</Button>}
+              SecondaryAction={<Button variant="secondary">Cancel</Button>}
+            />
+          }
+        >
+          <ModalBody>
+            <LoremIpsum />
+          </ModalBody>
+        </Modal>
+      </>
+    );
+  };
+
   const BasicModal = () => (
     <BasicModalExample>
       <LoremIpsum />
@@ -117,5 +152,7 @@ export function createStories({
     DarkModal,
     LongModal,
     PortalModal,
+    BasicModalExample,
+    MockModal,
   };
 }

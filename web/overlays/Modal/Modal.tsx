@@ -27,6 +27,11 @@ export type ModalProps = {
    * @default false
    */
   disableOverlayClick?: boolean;
+  /**
+   * Point to the id of the modal title
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role
+   */
+  accessibilityLabelledBy?: React.AriaAttributes['aria-labelledby'];
 } & ModalBaseProps;
 
 export const Modal: React.FC<ModalProps> = memo(
@@ -42,6 +47,7 @@ export const Modal: React.FC<ModalProps> = memo(
         hideCloseIcon = false,
         disableOverlayClick = false,
         footer,
+        accessibilityLabelledBy = 'modal_title',
         zIndex,
       },
       ref,
@@ -165,12 +171,14 @@ export const Modal: React.FC<ModalProps> = memo(
           justifyContent="center"
           role="dialog"
           aria-modal="true"
+          aria-labelledby={accessibilityLabelledBy}
           zIndex={zIndex}
         >
           <Overlay
             onPress={disableOverlayClick ? undefined : handleClose}
             dangerouslySetClassName={cx(overlayResponsiveClassName)}
             ref={overlayRef}
+            testID="modal-overlay"
           />
           <VStack
             elevation={2}
@@ -182,6 +190,7 @@ export const Modal: React.FC<ModalProps> = memo(
               onBack={onBack}
               title={title}
               onClose={hideCloseIcon ? undefined : handleClose}
+              accessibilityLabelledBy={accessibilityLabelledBy}
             />
             {!hideDividers && <Divider spacingBottom={3} />}
             {children}

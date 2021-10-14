@@ -20,7 +20,9 @@ export class Animated {
 
     return {
       start: async (cb?) => {
-        const animation = ref?.current?.animate(
+        if (!ref?.current?.animate) return { finished: false };
+
+        const animation = ref.current.animate(
           { [property]: [fromValue, toValue] as number[] | string[] },
           animationOptions,
         );

@@ -118,6 +118,7 @@ jest_test(
     srcs = TEST_SRCS,
     tests = [
         "//eng/shared/design-system/common:source",
+        "//eng/shared/design-system/storybook:source",
         "//eng/shared/design-system/utils:source",
         "//eng/shared/design-system/web:source",
     ],
@@ -132,6 +133,7 @@ jest_test(
     mobile = True,
     tests = [
         "//eng/shared/design-system/mobile:source",
+        "//eng/shared/design-system/storybook:source_no_decorators",
     ],
     deps = TEST_DEPS + [
         "@npm//@cbhq/cds-mobile",

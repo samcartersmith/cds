@@ -17,13 +17,17 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBack, onClose
   return (
     <HStack spacingHorizontal={3} spacingVertical={2} alignItems="center">
       <Box flexGrow={1} flexBasis={0}>
-        {!!onBack && <IconButton transparent name="backArrow" onPress={onBack} />}
+        {!!onBack && (
+          <IconButton transparent name="backArrow" onPress={onBack} testID="modal-back-button" />
+        )}
       </Box>
       <Box flexGrow={1} flexBasis={0} alignItems="center" justifyContent="center">
         <TextHeadline>{title}</TextHeadline>
       </Box>
       <Box flexGrow={1} flexBasis={0} alignItems="flex-end">
-        {!!onClose && <IconButton transparent name="close" onPress={onClose} />}
+        {!!onClose && (
+          <IconButton transparent name="close" onPress={onClose} testID="modal-close-button" />
+        )}
       </Box>
     </HStack>
   );

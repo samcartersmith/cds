@@ -10,6 +10,7 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
   PrimaryAction,
   SecondaryAction,
   vertical,
+  testID,
 }) => {
   const actions = [SecondaryAction, PrimaryAction];
 
@@ -19,7 +20,7 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
   }
 
   return (
-    <Box spacingHorizontal={3} spacingVertical={2}>
+    <Box spacingHorizontal={3} spacingVertical={2} testID={testID}>
       {/* eslint-disable-next-line react-native-a11y/has-accessibility-hint */}
       <ButtonGroup accessibilityLabel="Group" block={!vertical} vertical={vertical}>
         {actions.map((action) => (

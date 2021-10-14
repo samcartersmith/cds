@@ -30,6 +30,22 @@ filegroup(
 )
 
 filegroup(
+    name = "source_no_decorators",
+    srcs = glob(
+        [
+            "**/*.js",
+            "**/*.ts",
+            "**/*.tsx",
+        ],
+        exclude = [
+            ".storybook/**/*",
+            "decorators/**/*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
     name = "project_source",
     srcs = glob([
         "data/**/*.ts",
