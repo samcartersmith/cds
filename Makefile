@@ -8,6 +8,7 @@ Help:
   $$ make build.theme               -- Build the `theme` package.
   $$ make build.utils               -- Build the `utils` package.
   $$ make build.web                 -- Build the `web` package.
+  $$ make build.css                 -- Build the fonts and css.
   $$ make build.packages            -- Build all packages. 
   $$ make build.ios                 -- Build the playground ios app.
   $$ make build.android             -- Build the playground android app.
@@ -218,3 +219,7 @@ typecheck:
 	bazel test mobile-playground:typecheck
 	bazel test web:typecheck
 	bazel test website:typecheck
+
+.PHONY: build.css
+build.css:
+	bazel build //eng/shared/design-system/cloud:web
