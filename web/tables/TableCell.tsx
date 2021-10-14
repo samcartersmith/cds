@@ -18,8 +18,8 @@ export const TableCell = memo(
     minWidth,
     className,
     color,
-    media,
-    accessory,
+    start,
+    end,
     onPress,
     children,
     // Only available when Children is null
@@ -45,13 +45,7 @@ export const TableCell = memo(
 
     return (
       <TableCellComponent className={tableCellClass} colSpan={colSpan} width={minWidth}>
-        <Cell
-          onPress={onPress}
-          spacing={0}
-          alignItems={alignItems}
-          accessory={accessory}
-          media={media}
-        >
+        <Cell onPress={onPress} spacing={0} alignItems={alignItems} accessory={end} media={start}>
           {children ? (
             <TextComponent as="div" noWrap color={color ?? 'currentColor'}>
               <Box alignItems={alignItems} justifyContent={justifyContent} width="100%">

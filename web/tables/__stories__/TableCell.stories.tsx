@@ -51,7 +51,7 @@ export const SampleCells: Story = () => {
           <TableRow backgroundColor="backgroundAlternate">
             <TableCell
               title="First Header"
-              accessory={
+              end={
                 <VStack>
                   <Icon color="foregroundMuted" name="sortUpCenter" size="xs" />
                   <Icon
@@ -76,7 +76,7 @@ export const SampleCells: Story = () => {
           <TableRow>
             <TableCell
               className={overflowClass}
-              media={
+              start={
                 <Box spacingEnd={1}>
                   <MockAvatar src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" />
                 </Box>

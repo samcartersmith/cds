@@ -37,7 +37,7 @@ export const TableRowExample: Story = () => {
           <TableCell
             colSpan={1000}
             title="Sample Row 2 (with background set)"
-            accessory={
+            end={
               <Button variant="secondary" compact onPress={handlePress}>
                 Export
               </Button>

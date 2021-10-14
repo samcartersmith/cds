@@ -5,15 +5,15 @@ export type TableCellTag = 'td' | 'th' | 'div';
 
 type TableCellBaseProps = {
   /**
-   * Media (icon, asset, image, etc) to display at the start of the cell
+   * Element (icon, asset, image, etc) to display at the start of the cell
    * @default undefined
    */
-  media?: ReactElement;
+  start?: ReactElement;
   /**
-   * Accessory (text, icon, asset, image, etc) to display at the end of the cell
+   * Element (icon, asset, image, etc) to display at the end of the cell
    * @default undefined
    */
-  accessory?: ReactElement;
+  end?: ReactElement;
   /**
    * Linaria flavored className.
    * @default undefined

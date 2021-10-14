@@ -132,23 +132,19 @@ export const SortingExample: Story = () => {
             onPress={() => sortTable('name')}
             color={sortBy === 'name' ? 'primary' : 'foregroundMuted'}
             title="Asset"
-            accessory={
-              <SortableIconHelper direction={sortBy === 'name' ? sortDirection : undefined} />
-            }
+            end={<SortableIconHelper direction={sortBy === 'name' ? sortDirection : undefined} />}
           />
           <TableCell
             onPress={() => sortTable('ticker')}
             color={sortBy === 'ticker' ? 'primary' : 'foregroundMuted'}
             title="Ticker"
-            accessory={
-              <SortableIconHelper direction={sortBy === 'ticker' ? sortDirection : undefined} />
-            }
+            end={<SortableIconHelper direction={sortBy === 'ticker' ? sortDirection : undefined} />}
           />
           <TableCell
             onPress={() => sortTable('appStatus')}
             color={sortBy === 'appStatus' ? 'primary' : 'foregroundMuted'}
             title="Application Status"
-            accessory={
+            end={
               <SortableIconHelper direction={sortBy === 'appStatus' ? sortDirection : undefined} />
             }
           />
