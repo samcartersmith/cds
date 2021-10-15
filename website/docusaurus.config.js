@@ -70,6 +70,10 @@ module.exports = {
               label: 'Tables',
               href: 'tables',
             },
+            {
+              label: 'Cards',
+              href: 'cards',
+            },
           ],
         },
       ],

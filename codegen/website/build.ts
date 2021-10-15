@@ -56,6 +56,10 @@ const lookupDocgen =
     const web = findData(docgenData.web[subDir], next.componentName);
     const mobile = findData(docgenData.mobile[subDir], next.componentName);
     if (web || mobile) {
+      // Temporary hack to ensure deprecated card doesn't overwrite new card.
+      if (subDir === 'layout' && next.componentName === 'Card') {
+        return prev;
+      }
       const data = new ComponentDocgen({
         web,
         mobile,

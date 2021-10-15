@@ -13,6 +13,7 @@ export const DOCS_DIR = 'website/docs/components';
 export const CDS_SUB_DIRS = [
   'animation',
   'buttons',
+  'cards',
   'cells',
   'controls',
   'icons',

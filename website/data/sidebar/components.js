@@ -26,6 +26,19 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Cards',
+      collapsed: true,
+      items: [
+        'components/cards/Card/card',
+        'components/cards/CardBody/card-body',
+        'components/cards/CardFooter/card-footer',
+        'components/cards/CardGroup/card-group',
+        'components/cards/CardHeader/card-header',
+        'components/cards/FeedCard/feed-card',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Cells',
       collapsed: true,
       items: [
@@ -76,7 +89,6 @@ module.exports = {
       collapsed: true,
       items: [
         'components/layout/Box/box',
-        'components/layout/Card/card',
         'components/layout/Divider/divider',
         'components/layout/Fallback/fallback',
         'components/layout/HStack/hstack',

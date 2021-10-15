@@ -1,0 +1,302 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/cards/CardGroup](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/cards/CardGroup.tsx)
+
+<ComponentDetails componentName="CardGroup" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="CardGroup" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="CardGroup" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel
+
+Accessibility label describing the group of cards.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-accessibilityLabel" />
+
+### children
+
+Cards to render as a group.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'OptionalElement<CardBaseProps>[]',
+    'ReactElement<CardBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
+  ]}
+  webOptions={[
+    'OptionalElement<CardBaseProps>[]',
+    'ReactElement<CardBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
+  ]}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-children" />
+
+### height
+
+Set a fixed height.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="height"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-height" />
+
+### horizontal
+
+Stack cards horizontally instead of vertically.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="horizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-horizontal" />
+
+### maxHeight
+
+Set a maximum height.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-maxHeight" />
+
+### maxWidth
+
+Set a maximum width.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-maxWidth" />
+
+### minHeight
+
+Set a minimum height.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="minHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-minHeight" />
+
+### minWidth
+
+Set a minimum width.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="minWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-minWidth" />
+
+### offset
+
+Apply negative outer spacing on all sides.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="offset"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-offset" />
+
+### offsetBottom
+
+Apply negative outer spacing on the bottom side.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="offsetBottom"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-offsetBottom" />
+
+### offsetEnd
+
+Apply negative outer spacing on the trailing side.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="offsetEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-offsetEnd" />
+
+### offsetHorizontal
+
+Apply negative outer spacing on the leading and trailing sides.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-offsetHorizontal" />
+
+### offsetStart
+
+Apply negative outer spacing on the leading side.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="offsetStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-offsetStart" />
+
+### offsetTop
+
+Apply negative outer spacing on the top side.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="offsetTop"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-offsetTop" />
+
+### offsetVertical
+
+Apply negative outer spacing on the top and bottom sides.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="offsetVertical"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-offsetVertical" />
+
+### pin
+
+Direction in which to absolutely pin the box.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="pin"
+  required={false}
+  defaultValue=""
+  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
+  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-pin" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-testID" />
+
+### width
+
+Set a fixed width.
+
+<ApiDetails
+  componentName="CardGroup"
+  propertyName="width"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="CardGroup" templateName="prop-width" />
+
+<ComponentDetails componentName="CardGroup" templateName="outro" />

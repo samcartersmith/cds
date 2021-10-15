@@ -1,0 +1,76 @@
+## Base CardBody
+
+```jsx live
+<ExampleWithThemeToggles>
+  <Artboard>
+    <Card>
+      <CardBody
+        title="Title/Headline"
+        description="You can fit up to fifty two chararcters on 2 lines"
+      />
+    </Card>
+  </Artboard>
+</ExampleWithThemeToggles>
+```
+
+## CardBody with Image
+
+```jsx live
+<Artboard>
+  <Card>
+    <CardBody
+      title="Title/Headline"
+      description={loremIpsum}
+      media={
+        <RemoteImage
+          source="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg"
+          width="100%"
+          height="100%"
+        />
+      }
+    />
+
+    <CardFooter>
+      <Button compact variant="secondary">
+        Action
+      </Button>
+    </CardFooter>
+  </Card>
+</Artboard>
+```
+
+## CardBody with SpotRectangle
+
+```jsx live
+<Artboard>
+  <Card>
+    <CardSpotRectangle name="portfolioOverview" />
+
+    <CardBody
+      title="Title/Headline"
+      description="You can fit up to fifty two chararcters on 2 lines"
+    />
+
+    <CardFooter>
+      <Button compact variant="secondary">
+        Action
+      </Button>
+    </CardFooter>
+  </Card>
+</Artboard>
+```
+
+## CardBody with SpotSquare
+
+```jsx live
+<Artboard>
+  <Card>
+    <CardBody
+      title="Title/Headline"
+      description="You can fit up to fifty two chararcters on 2 lines"
+      media={<SpotSquare name="addMultipleCrypto" />}
+      orientation="horizontal"
+    />
+  </Card>
+</Artboard>
+```
