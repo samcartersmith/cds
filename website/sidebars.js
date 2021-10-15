@@ -3,7 +3,7 @@ const { adopters } = require('./data/sidebar/adopters');
 
 // useful mechanism to hide a component in the side bar while still uploading its docs.
 // Unhide when the component is ready to go live
-const componentsToExcludeByLabel = new Set([]);
+const componentsToExcludeByLabel = new Set(['Avatar']);
 
 module.exports = {
   docs: [
