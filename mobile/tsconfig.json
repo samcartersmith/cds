@@ -8,9 +8,7 @@
     "**/*"
   ],
   "exclude": [
-    "dts/**/*",
-    "**/*.stories.*",
-    "**/*.test.*"
+    "dts/**/*"
   ],
   "references": [
     {
@@ -20,7 +18,10 @@
       "path": "../lottie-files"
     },
     {
+      "path": "../storybook"
+    },
+    {
       "path": "../utils"
-    }
+    },
   ]
 }
