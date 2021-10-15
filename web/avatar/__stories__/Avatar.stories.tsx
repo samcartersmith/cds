@@ -28,16 +28,17 @@ export const Normal = () => {
           <Avatar name="Dopey" src={image56} shape="squircle" />
           <Avatar name="Happy" src={image56} shape="square" />
           <Avatar name="Sleepy" src={image56} borderColor="positive" />
-          <Avatar name="Bashful" src={image48} dangerouslySetSize={48} />
-          <Avatar name="Grumpy" src={image80} dangerouslySetSize={80} />
+          <Avatar name="Bashful" src={image48} size={48} />
+          <Avatar name="Grumpy" src={image80} size={80} />
         </HStack>
         <HStack gap={2} alignItems="center">
           <Avatar name="Sneezy" />
           <Avatar name="Dopey" shape="squircle" />
           <Avatar name="Happy" shape="square" />
           <Avatar name="Sleepy" borderColor="positive" />
-          <Avatar name="Bashful" dangerouslySetSize={48} />
-          <Avatar name="Grumpy" dangerouslySetSize={80} />
+          <Avatar name="Bashful" size={48} />
+          <Avatar name="Grumpy" size={80} />
+          <Avatar name="Grumpy" size={30} />
         </HStack>
       </VStack>
     </ThemeProvider>

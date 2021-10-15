@@ -15,7 +15,7 @@ export type AvatarBaseProps = {
   shape?: AvatarShape;
 
   /** Custom Avatar size in px */
-  dangerouslySetSize?: number;
+  size?: number;
 
   /** Shows the Avatar in compact size */
   compact?: boolean;

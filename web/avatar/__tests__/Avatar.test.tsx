@@ -34,7 +34,7 @@ describe('Avatar', () => {
   });
 
   it('renders a custom size', () => {
-    const { container } = render(<Avatar name="TestName" dangerouslySetSize={100} />);
+    const { container } = render(<Avatar name="TestName" size={100} />);
     const box: HTMLDivElement | null = container.querySelector('.cds-avatar');
     expect(box).toBeTruthy();
     expect(box?.style.width).toEqual('100px');

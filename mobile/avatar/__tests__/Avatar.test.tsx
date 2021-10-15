@@ -39,7 +39,7 @@ describe('Avatar', () => {
   });
 
   it('renders a custom size', () => {
-    const { queryByTestId } = render(<Avatar name="TestName" dangerouslySetSize={100} />);
+    const { queryByTestId } = render(<Avatar name="TestName" size={100} />);
 
     const box = queryByTestId('avatar-box');
     expect(box).toBeTruthy();

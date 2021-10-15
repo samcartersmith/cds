@@ -14,33 +14,34 @@ const AvatarScreen = () => {
     <ExamplesScreen>
       <Example title="Normal Size">
         <VStack gap={2}>
-          <HStack gap={2} alignItems="center">
+          <HStack gap={2} alignItems="center" flexWrap="wrap">
             <Avatar name="Sneezy" src={image80} />
             <Avatar name="Dopey" src={image56} shape="squircle" />
             <Avatar name="Happy" src={image56} shape="square" />
             <Avatar name="Sleepy" src={image56} borderColor="positive" />
-            <Avatar name="Bashful" src={image48} dangerouslySetSize={48} />
-            <Avatar name="Grumpy" src={image80} dangerouslySetSize={80} />
+            <Avatar name="Bashful" src={image48} size={48} />
+            <Avatar name="Grumpy" src={image80} size={80} />
           </HStack>
-          <HStack gap={2} alignItems="center">
+          <HStack gap={2} alignItems="center" flexWrap="wrap">
             <Avatar name="Sneezy" />
             <Avatar name="Dopey" shape="squircle" />
             <Avatar name="Happy" shape="square" />
             <Avatar name="Sleepy" borderColor="positive" />
-            <Avatar name="Bashful" dangerouslySetSize={48} />
-            <Avatar name="Grumpy" dangerouslySetSize={80} />
+            <Avatar name="Bashful" size={48} />
+            <Avatar name="Grumpy" size={80} />
+            <Avatar name="Grumpy" size={30} />
           </HStack>
         </VStack>
       </Example>
       <Example title="Compact Size">
         <VStack gap={2}>
-          <HStack gap={2} alignItems="center">
+          <HStack gap={2} alignItems="center" flexWrap="wrap">
             <Avatar name="Sneezy" src={image40} compact />
             <Avatar name="Dopey" src={image40} compact shape="squircle" />
             <Avatar name="Happy" src={image40} shape="square" compact />
             <Avatar name="Sleepy" src={image40} borderColor="positive" compact />
           </HStack>
-          <HStack gap={2} alignItems="center">
+          <HStack gap={2} alignItems="center" flexWrap="wrap">
             <Avatar name="Sneezy" compact />
             <Avatar name="Dopey" shape="squircle" compact />
             <Avatar name="Happy" shape="square" compact />
