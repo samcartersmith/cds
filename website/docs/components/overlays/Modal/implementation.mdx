@@ -145,20 +145,20 @@ Component to render as the Modal content
 
 <ComponentDetails componentName="Modal" templateName="prop-children" />
 
-### disableOverlayClick <Badge variant="web" />
+### disableOverlayPress <Badge variant="web" />
 
 Disable overlay click that closes the Modal
 
 <ApiDetails
   componentName="Modal"
-  propertyName="disableOverlayClick"
+  propertyName="disableOverlayPress"
   required={false}
   defaultValue="false"
   mobileOptions={[]}
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Modal" templateName="prop-disableOverlayClick" />
+<ComponentDetails componentName="Modal" templateName="prop-disableOverlayPress" />
 
 ### footer
 
@@ -175,20 +175,20 @@ Component to render as the Modal footer
 
 <ComponentDetails componentName="Modal" templateName="prop-footer" />
 
-### hideCloseIcon
+### hideCloseButton
 
 Hide the close icon on the top right
 
 <ApiDetails
   componentName="Modal"
-  propertyName="hideCloseIcon"
+  propertyName="hideCloseButton"
   required={false}
   defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Modal" templateName="prop-hideCloseIcon" />
+<ComponentDetails componentName="Modal" templateName="prop-hideCloseButton" />
 
 ### hideDividers
 
@@ -205,35 +205,35 @@ Hide top and bottom dividers inside Modal body
 
 <ComponentDetails componentName="Modal" templateName="prop-hideDividers" />
 
-### onBack
+### onBackButtonPress
 
 Handles back action
 
 <ApiDetails
   componentName="Modal"
-  propertyName="onBack"
+  propertyName="onBackButtonPress"
   required={false}
   defaultValue=""
   mobileOptions={['NoopFn']}
   webOptions={['NoopFn']}
 />
 
-<ComponentDetails componentName="Modal" templateName="prop-onBack" />
+<ComponentDetails componentName="Modal" templateName="prop-onBackButtonPress" />
 
-### onClose
+### onRequestClose
 
 Handles Modal close
 
 <ApiDetails
   componentName="Modal"
-  propertyName="onClose"
+  propertyName="onRequestClose"
   required={true}
   defaultValue=""
   mobileOptions={[]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Modal" templateName="prop-onClose" />
+<ComponentDetails componentName="Modal" templateName="prop-onRequestClose" />
 
 ### testID
 
