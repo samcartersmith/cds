@@ -21,7 +21,7 @@ export type TableProps = {
   variant?: TableVariant;
   /**
    * Children are required, and should always include a TableBody.
-   * TableHead and TableFoot are both optional, and will magically
+   * TableHeader and TableFooter are both optional, and will magically
    * flow into the correct place in the table (top/bottom)
    */
   children: ReactElement<TableSectionProps> | ReactElement<TableSectionProps>[];

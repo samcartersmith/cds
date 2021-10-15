@@ -19,24 +19,24 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### border <Badge variant="web" />
+### bordered <Badge variant="web" />
 
-When provided, well apply a border around the entire table
+When provided, well apply a bordered around the entire table
 
 <ApiDetails
   componentName="Table"
-  propertyName="border"
+  propertyName="bordered"
   required={false}
   defaultValue=""
   mobileOptions={[]}
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Table" templateName="prop-border" />
+<ComponentDetails componentName="Table" templateName="prop-bordered" />
 
 ### children <Badge variant="web" />
 
-Children are required, and should always include a TableBody. TableHead and TableFoot are both optional, and will magically flow into the correct place in the table (top/bottom)
+Children are required, and should always include a TableBody. TableHeader and TableFooter are both optional, and will magically flow into the correct place in the table (top/bottom)
 
 <ApiDetails
   componentName="Table"
@@ -51,21 +51,6 @@ Children are required, and should always include a TableBody. TableHead and Tabl
 />
 
 <ComponentDetails componentName="Table" templateName="prop-children" />
-
-### className <Badge variant="web" />
-
-Linaria flavored className.
-
-<ApiDetails
-  componentName="Table"
-  propertyName="className"
-  required={false}
-  defaultValue="undefined"
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="Table" templateName="prop-className" />
 
 ### variant <Badge variant="web" />
 

@@ -16,7 +16,8 @@ type TableCellBaseProps = {
    */
   end?: ReactElement;
   /**
-   * CDS Palette foreground color name
+   * The color for all text components rendered inside the TableCell.
+   * Use titleColor and subtitleColor if you need to be more specific
    * @default undefined
    */
   color?: PaletteForeground;
@@ -59,7 +60,7 @@ type TableCellPropsWithInputs = {
   /**
    * If a title is provided, the default type style
    * will be inferred from context. If the cell is rendered
-   * in a TableHead, it will render as a TextHeadline. But when
+   * in a TableHeader, it will render as a TextHeadline. But when
    * rendered in a TableBody the text will render as TextBody.
    * @default undefined
    */

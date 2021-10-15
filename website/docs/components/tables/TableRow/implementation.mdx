@@ -61,21 +61,6 @@ Children are required, and should always include TableCell | TableCell[].
 
 <ComponentDetails componentName="TableRow" templateName="prop-children" />
 
-### className <Badge variant="web" />
-
-Linaria flavored className.
-
-<ApiDetails
-  componentName="TableRow"
-  propertyName="className"
-  required={false}
-  defaultValue="undefined"
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="TableRow" templateName="prop-className" />
-
 ### color <Badge variant="web" />
 
 Set the text color for this entire row to some CDS Palette foreground color name
@@ -102,6 +87,21 @@ Set the text color for this entire row to some CDS Palette foreground color name
 
 <ComponentDetails componentName="TableRow" templateName="prop-color" />
 
+### disableHoverIndicator <Badge variant="web" />
+
+When set, well set a hover background color of palette.backgroundAlternate for the row.
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="disableHoverIndicator"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-disableHoverIndicator" />
+
 ### fullWidth <Badge variant="web" />
 
 Should this row span the entire width of the table? Useful for treating a row as a Control Strip.
@@ -116,20 +116,5 @@ Should this row span the entire width of the table? Useful for treating a row as
 />
 
 <ComponentDetails componentName="TableRow" templateName="prop-fullWidth" />
-
-### indicateHover <Badge variant="web" />
-
-When set, well set a hover bacgkround color of palette.backgroundAlternate for the row.
-
-<ApiDetails
-  componentName="TableRow"
-  propertyName="indicateHover"
-  required={false}
-  defaultValue="false"
-  mobileOptions={[]}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="TableRow" templateName="prop-indicateHover" />
 
 <ComponentDetails componentName="TableRow" templateName="outro" />

@@ -71,12 +71,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Inputs',
-      collapsed: true,
-      items: ['components/inputs/TextField/text-field'],
-    },
-    {
-      type: 'category',
       label: 'Layout',
       collapsed: true,
       items: [
@@ -138,8 +132,8 @@ module.exports = {
         'components/tables/Table/table',
         'components/tables/TableBody/table-body',
         'components/tables/TableCell/table-cell',
-        'components/tables/TableFoot/table-foot',
-        'components/tables/TableHead/table-head',
+        'components/tables/TableFooter/table-footer',
+        'components/tables/TableHeader/table-header',
         'components/tables/TableRow/table-row',
       ],
     },

@@ -46,37 +46,67 @@ Children to render within the cell. If children are provided, title, subtitle an
   mobileOptions={[]}
   webOptions={[
     'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactNodeArray',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
+    'ReactElement<any, string | JSXElementConstructor<any>> & false',
+    'ReactElement<any, string | JSXElementConstructor<any>> & number',
+    'ReactElement<any, string | JSXElementConstructor<any>> & string',
+    'ReactElement<any, string | JSXElementConstructor<any>> & true',
     'ReactNodeArray',
+    'ReactNodeArray & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray & ReactPortal',
+    'ReactNodeArray & false',
+    'ReactNodeArray & number',
+    'ReactNodeArray & string',
+    'ReactNodeArray & true',
     'ReactNode[]',
+    'ReactNode[] & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNode[] & ReactNodeArray',
+    'ReactNode[] & ReactPortal',
+    'ReactNode[] & false',
+    'ReactNode[] & number',
+    'ReactNode[] & string',
+    'ReactNode[] & true',
     'ReactPortal',
+    'ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal & ReactNodeArray',
+    'ReactPortal & false',
+    'ReactPortal & number',
+    'ReactPortal & string',
+    'ReactPortal & true',
     'false',
+    'false & ReactElement<any, string | JSXElementConstructor<any>>',
+    'false & ReactNodeArray',
+    'false & ReactPortal',
+    'false & {}',
     'number',
+    'number & ReactElement<any, string | JSXElementConstructor<any>>',
+    'number & ReactNodeArray',
+    'number & ReactPortal',
+    'number & {}',
     'string',
+    'string & ReactElement<any, string | JSXElementConstructor<any>>',
+    'string & ReactNodeArray',
+    'string & ReactPortal',
+    'string & {}',
     'true',
+    'true & ReactElement<any, string | JSXElementConstructor<any>>',
+    'true & ReactNodeArray',
+    'true & ReactPortal',
+    'true & {}',
     '{}',
+    '{} & false',
+    '{} & number',
+    '{} & string',
+    '{} & true',
   ]}
 />
 
 <ComponentDetails componentName="TableCell" templateName="prop-children" />
 
-### className <Badge variant="web" />
-
-Linaria flavored className.
-
-<ApiDetails
-  componentName="TableCell"
-  propertyName="className"
-  required={false}
-  defaultValue="undefined"
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="TableCell" templateName="prop-className" />
-
 ### color <Badge variant="web" />
 
-CDS Palette foreground color name
+The color for all text components rendered inside the TableCell. Use titleColor and subtitleColor if you need to be more specific
 
 <ApiDetails
   componentName="TableCell"
@@ -115,6 +145,21 @@ The colSpan attribute defines the number of columns a cell should span
 
 <ComponentDetails componentName="TableCell" templateName="prop-colSpan" />
 
+### direction <Badge variant="web" />
+
+Direction provides content flow control. Use vertical to inherit a VStask, horizontal for an HStack
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="direction"
+  required={false}
+  defaultValue="vertical"
+  mobileOptions={[]}
+  webOptions={['horizontal', 'vertical']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-direction" />
+
 ### end <Badge variant="web" />
 
 Element (icon, asset, image, etc) to display at the end of the cell
@@ -145,21 +190,6 @@ This prop us useful for right-aligning the last column
 
 <ComponentDetails componentName="TableCell" templateName="prop-justifyContent" />
 
-### minWidth <Badge variant="web" />
-
-Useful for preventing columns from jumping around with pagination
-
-<ApiDetails
-  componentName="TableCell"
-  propertyName="minWidth"
-  required={false}
-  defaultValue="1"
-  mobileOptions={[]}
-  webOptions={['number', 'string']}
-/>
-
-<ComponentDetails componentName="TableCell" templateName="prop-minWidth" />
-
 ### onPress <Badge variant="web" />
 
 Callback to fire when pressed
@@ -174,6 +204,21 @@ Callback to fire when pressed
 />
 
 <ComponentDetails componentName="TableCell" templateName="prop-onPress" />
+
+### overflow <Badge variant="web" />
+
+Should the title/subtitle text truncate
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="overflow"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['clip', 'truncate']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-overflow" />
 
 ### start <Badge variant="web" />
 
@@ -205,9 +250,33 @@ A subtitle will appear below the title. Type is set with TextLabel2
 
 <ComponentDetails componentName="TableCell" templateName="prop-subtitle" />
 
+### subtitleColor <Badge variant="web" />
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="subtitleColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-subtitleColor" />
+
 ### title <Badge variant="web" />
 
-If a title is provided, the default type style will be inferred from context. If the cell is rendered in a TableHead, it will render as a TextHeadline. But when rendered in a TableBody the text will render as TextBody.
+If a title is provided, the default type style will be inferred from context. If the cell is rendered in a TableHeader, it will render as a TextHeadline. But when rendered in a TableBody the text will render as TextBody.
 
 <ApiDetails
   componentName="TableCell"
@@ -219,5 +288,29 @@ If a title is provided, the default type style will be inferred from context. If
 />
 
 <ComponentDetails componentName="TableCell" templateName="prop-title" />
+
+### titleColor <Badge variant="web" />
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="titleColor"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-titleColor" />
 
 <ComponentDetails componentName="TableCell" templateName="outro" />

@@ -625,33 +625,6 @@ export const SpotSquare = {
   ),
 };
 
-export const TextField = {
-  'text-field': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/text-field.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/implementation.mdx'
-      ),
-  ),
-  intro: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/intro.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/usage.mdx'
-      ),
-  ),
-};
-
 export const Box = {
   a11y: React.lazy(
     async () =>
@@ -1285,32 +1258,32 @@ export const TableCell = {
   ),
 };
 
-export const TableFoot = {
+export const TableFooter = {
   implementation: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFoot/implementation.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFooter/implementation.mdx'
       ),
   ),
-  'table-foot': React.lazy(
+  'table-footer': React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFoot/table-foot.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFooter/table-footer.mdx'
       ),
   ),
 };
 
-export const TableHead = {
+export const TableHeader = {
   implementation: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHead/implementation.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHeader/implementation.mdx'
       ),
   ),
-  'table-head': React.lazy(
+  'table-header': React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHead/table-head.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHeader/table-header.mdx'
       ),
   ),
 };

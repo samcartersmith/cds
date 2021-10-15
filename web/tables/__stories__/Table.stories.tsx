@@ -11,7 +11,7 @@ import { Spacer } from '../../layout/Spacer';
 import { TextDisplay2 } from '../../typography';
 import { Switch } from '../../controls/Switch';
 
-import { Table, TableVariant, TableHead, TableBody, TableRow, TableCell } from '..';
+import { Table, TableVariant, TableHeader, TableBody, TableRow, TableCell } from '..';
 import { assetHubMock } from '../__mocks__';
 
 const LABELS = ['name', 'ticker', 'appStatus'];
@@ -29,7 +29,7 @@ export const SampleTable: Story = () => {
 
   return (
     <Table bordered={hasBorder} variant={variant}>
-      <TableHead>
+      <TableHeader>
         <TableRow fullWidth>
           <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
             <TextDisplay2 as="h2">Sample Table</TextDisplay2>
@@ -58,7 +58,7 @@ export const SampleTable: Story = () => {
             <TableCell key={`${label}--idk`} title={startCase(label)} />
           ))}
         </TableRow>
-      </TableHead>
+      </TableHeader>
       <TableBody>
         {data.map((row) => (
           <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
@@ -111,7 +111,7 @@ export const SortingExample: Story = () => {
 
   return (
     <Table bordered variant="ruled">
-      <TableHead>
+      <TableHeader>
         <TableRow fullWidth>
           <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
             <TextDisplay2 as="h2">Your assets</TextDisplay2>
@@ -155,7 +155,7 @@ export const SortingExample: Story = () => {
             }
           />
         </TableRow>
-      </TableHead>
+      </TableHeader>
       <TableBody>
         {data.map((row) => (
           <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>

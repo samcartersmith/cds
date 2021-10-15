@@ -19,6 +19,23 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### accessibilityLabelledBy <Badge variant="web" />
+
+Point to the id of the modal title
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role**
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-accessibilityLabelledBy" />
+
 ### children
 
 Component to render as the Modal content

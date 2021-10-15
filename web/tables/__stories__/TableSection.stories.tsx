@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react';
 import { TextHeadline } from '../../typography';
 
-import { Table, TableHead, TableBody, TableFoot, TableRow, TableCell } from '..';
+import { Table, TableHeader, TableBody, TableFooter, TableRow, TableCell } from '..';
 import { Spinner } from '../../loaders';
 import { VStack } from '../../layout';
 
@@ -13,21 +13,21 @@ export default {
 export const SampleTableSection: Story = () => {
   return (
     <Table bordered variant="ruled">
-      <TableHead>
+      <TableHeader>
         <TableRow>
-          <TableCell title="TableHead" subtitle="This is the TableHead" />
+          <TableCell title="TableHeader" subtitle="This is the TableHeader" />
         </TableRow>
-      </TableHead>
+      </TableHeader>
       <TableBody>
         <TableRow>
           <TableCell title="TableBody" subtitle="This is the TableBody" />
         </TableRow>
       </TableBody>
-      <TableFoot>
+      <TableFooter>
         <TableRow>
-          <TableCell title="TableFoot" subtitle="This is the TableFoot" />
+          <TableCell title="TableFooter" subtitle="This is the TableFooter" />
         </TableRow>
-      </TableFoot>
+      </TableFooter>
     </Table>
   );
 };
@@ -40,16 +40,16 @@ export const SectionFlowControl: Story = () => {
           <TableCell title="TableBody" subtitle="This is the TableBody" />
         </TableRow>
       </TableBody>
-      <TableFoot>
+      <TableFooter>
         <TableRow>
-          <TableCell title="TableFoot" subtitle="This is the TableFoot" />
+          <TableCell title="TableFooter" subtitle="This is the TableFooter" />
         </TableRow>
-      </TableFoot>
-      <TableHead>
+      </TableFooter>
+      <TableHeader>
         <TableRow>
-          <TableCell title="TableHead" subtitle="This is the TableHead" />
+          <TableCell title="TableHeader" subtitle="This is the TableHeader" />
         </TableRow>
-      </TableHead>
+      </TableHeader>
     </Table>
   );
 };
@@ -57,11 +57,11 @@ export const SectionFlowControl: Story = () => {
 export const LoadingStateExample: Story = () => {
   return (
     <Table bordered variant="ruled">
-      <TableHead>
+      <TableHeader>
         <TableRow>
-          <TableCell title="TableHead" />
+          <TableCell title="TableHeader" />
         </TableRow>
-      </TableHead>
+      </TableHeader>
       <TableBody>
         <VStack minHeight={500} alignItems="center" justifyContent="center">
           <Spinner size={4} color="primary" />

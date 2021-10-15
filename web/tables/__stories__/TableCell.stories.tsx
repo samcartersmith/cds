@@ -1,7 +1,7 @@
 import { css } from 'linaria';
 import { Story, Meta } from '@storybook/react';
 
-import { Table, TableRow, TableBody, TableFoot, TableCell, TableHead } from '..';
+import { Table, TableRow, TableBody, TableFooter, TableCell, TableHeader } from '..';
 import { ThemeProvider } from '../../system';
 import { TextLabel2, TextHeadline } from '../../typography';
 import { Box } from '../../layout';
@@ -42,7 +42,7 @@ export const SampleCells: Story = () => {
   return (
     <ThemeProvider spectrum="light">
       <Table variant="ruled" bordered>
-        <TableHead>
+        <TableHeader>
           <TableRow backgroundColor="backgroundAlternate">
             <TableCell title="First Header" />
             <TableCell>
@@ -52,7 +52,7 @@ export const SampleCells: Story = () => {
             </TableCell>
             <TableCell title="Third Header" />
           </TableRow>
-        </TableHead>
+        </TableHeader>
         <TableBody>
           <TableRow>
             <TableCell
@@ -81,13 +81,13 @@ export const SampleCells: Story = () => {
             </TableCell>
           </TableRow>
         </TableBody>
-        <TableFoot>
+        <TableFooter>
           <TableRow>
             <TableCell title="First Item (footer)" />
             <TableCell title="Second Item (footer)" />
             <TableCell title="Third Item (footer)" />
           </TableRow>
-        </TableFoot>
+        </TableFooter>
       </Table>
     </ThemeProvider>
   );

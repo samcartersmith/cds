@@ -14,7 +14,7 @@ const useTableContext = () => {
   const { type } = useContext(TableSectionContext);
 
   if (!type) {
-    throw new Error('This component must be wrapped in a TableHead, TableBody or TableFoot.');
+    throw new Error('This component must be wrapped in a TableHeader, TableBody or TableFooter.');
   }
 
   return { type };

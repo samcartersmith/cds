@@ -1,7 +1,7 @@
 import { renderA11y } from '@cbhq/jest-utils';
-import { TableHead } from '../TableHead';
+import { TableHeader } from '../TableHeader';
 import { TableBody } from '../TableBody';
-import { TableFoot } from '../TableFoot';
+import { TableFooter } from '../TableFooter';
 import { Table } from '../Table';
 
 describe('Table Sections', () => {
@@ -9,10 +9,10 @@ describe('Table Sections', () => {
     expect(
       await renderA11y(
         <Table>
-          <TableHead>
+          <TableHeader>
             <th>Heading 1</th>
             <th>Heading 2</th>
-          </TableHead>
+          </TableHeader>
         </Table>,
       ),
     ).toHaveNoViolations();
@@ -33,10 +33,10 @@ describe('Table Sections', () => {
     expect(
       await renderA11y(
         <Table>
-          <TableFoot>
+          <TableFooter>
             <td>Foot Cell 1</td>
             <td>Foot Cell 2</td>
-          </TableFoot>
+          </TableFooter>
         </Table>,
       ),
     ).toHaveNoViolations();
@@ -45,18 +45,18 @@ describe('Table Sections', () => {
     expect(
       await renderA11y(
         <Table>
-          <TableHead>
+          <TableHeader>
             <th>Heading 1</th>
             <th>Heading 2</th>
-          </TableHead>
+          </TableHeader>
           <TableBody>
             <td>Cell 1</td>
             <td>Cell 2</td>
           </TableBody>
-          <TableFoot>
+          <TableFooter>
             <td>Foot Cell 1</td>
             <td>Foot Cell 2</td>
-          </TableFoot>
+          </TableFooter>
         </Table>,
       ),
     ).toHaveNoViolations();
