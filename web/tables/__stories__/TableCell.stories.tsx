@@ -74,7 +74,7 @@ export const SampleCells: Story = () => {
               <TextHeadline as="h2" color="currentColor">
                 $2,221.01
               </TextHeadline>
-              <TextLabel2 as="p" color="currentColor">
+              <TextLabel2 as="p" color="foregroundMuted">
                 0.1519581 BTC
               </TextLabel2>
             </TableCell>

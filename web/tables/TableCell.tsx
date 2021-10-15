@@ -24,12 +24,15 @@ export const TableCell = memo(
     children,
     // Only available when Children is null
     title,
+    titleColor,
     subtitle,
     direction = 'vertical',
+    subtitleColor = 'foregroundMuted',
     ...props
   }: TableCellProps) => {
     const tableSectionType = useTableSectionTag();
     const TableCellComponent = useTableCellTag();
+    const isInBody = tableSectionType === 'tbody';
     const TextComponent = TableCellComponent === 'th' ? TextHeadline : TextBody;
     const Stack = direction === 'vertical' ? VStack : HStack;
 
@@ -39,6 +42,9 @@ export const TableCell = memo(
     // Setup justification
     const defaultJustifyContent = direction === 'vertical' ? 'flex-start' : 'space-between';
     const smartJustifyContent = justifyContent ?? defaultJustifyContent;
+    // Setup default text colors
+    const defaultTitleColor = isInBody ? 'foreground' : 'foregroundMuted';
+    const smartTitleColor = titleColor ?? color ?? defaultTitleColor;
 
     if (process.env.NODE_ENV !== 'production') {
       if (children && (title || subtitle)) {
@@ -84,11 +90,16 @@ export const TableCell = memo(
               justifyContent={smartJustifyContent}
               alignItems={smartAlignItems}
             >
-              <TextComponent as="div" noWrap color={color ?? 'currentColor'}>
+              <TextComponent as="div" noWrap color={smartTitleColor}>
                 {title}
               </TextComponent>
               {subtitle ? (
-                <TextLabel2 as="div" spacingTop={title ? 0.5 : 0} overflow="truncate">
+                <TextLabel2
+                  color={subtitleColor ?? color ?? 'currentColor'}
+                  as="div"
+                  spacingTop={title ? 0.5 : 0}
+                  overflow="truncate"
+                >
                   {subtitle}
                 </TextLabel2>
               ) : null}

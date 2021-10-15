@@ -68,12 +68,14 @@ type TableCellPropsWithInputs = {
    * @default undefined
    */
   title: string;
+  titleColor?: PaletteForeground;
   /**
    * A subtitle will appear below the title.
    * Type is set with TextLabel2
    * @default undefined
    */
   subtitle?: string;
+  subtitleColor?: PaletteForeground;
 } & TableCellBaseProps;
 type TableCellPropsWithChildren = {
   /**
@@ -82,7 +84,9 @@ type TableCellPropsWithChildren = {
    */
   children: NonNullable<ReactNode | ReactNode[]>;
   title?: never;
+  titleColor?: never;
   subtitle?: never;
+  subtitleColor?: never;
 } & TableCellBaseProps;
 
 export type TableCellProps = TableCellPropsWithInputs | TableCellPropsWithChildren;
