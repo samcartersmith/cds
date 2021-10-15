@@ -21,7 +21,7 @@ function BasicModalExample() {
       </ButtonGroup>
       <Modal
         visible={visible}
-        onClose={toggleOff}
+        onRequestClose={toggleOff}
         title="Basic Modal"
         footer={
           <ModalFooter
@@ -61,7 +61,7 @@ function PortalModalExample() {
       'portalModal',
       <Modal
         visible
-        onClose={closeModal}
+        onRequestClose={closeModal}
         title="Portal Modal"
         footer={
           <ModalFooter 
