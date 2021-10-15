@@ -48,24 +48,24 @@ describe('Modal', () => {
   });
 
   it('triggers close on close button click', async () => {
-    const onClose = jest.fn();
-    const result = render(<MockModal onClose={onClose} />);
+    const onRequestClose = jest.fn();
+    const result = render(<MockModal onRequestClose={onRequestClose} />);
 
     fireEvent.press(result.getByText('Open Modal'));
     fireEvent.press(result.getByTestId('modal-close-button'));
 
     // wait for animation to finish
-    await waitFor(() => expect(onClose).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
   });
 
   it('triggers back action on back button click', async () => {
-    const onBack = jest.fn();
-    const { getByText, getByTestId } = render(<MockModal onBack={onBack} />);
+    const onBackButtonPress = jest.fn();
+    const { getByText, getByTestId } = render(<MockModal onBackButtonPress={onBackButtonPress} />);
 
     fireEvent.press(getByText('Open Modal'));
     fireEvent.press(getByTestId('modal-back-button'));
 
-    expect(onBack).toHaveBeenCalledTimes(1);
+    expect(onBackButtonPress).toHaveBeenCalledTimes(1);
   });
 
   it('renders modal title', async () => {

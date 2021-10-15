@@ -13,11 +13,11 @@ export type ModalBaseProps = {
    */
   visible: boolean;
   /** Handles Modal close */
-  onClose: NoopFn;
+  onRequestClose: NoopFn;
   /** Component to render as the Modal footer */
   footer?: ReactElement<ModalFooterBaseProps>;
   /** Handles back action */
-  onBack?: NoopFn;
+  onBackButtonPress?: NoopFn;
   /** Title of the Modal */
   title?: string;
   /**
@@ -29,15 +29,17 @@ export type ModalBaseProps = {
    * Hide the close icon on the top right
    * @default false
    */
-  hideCloseIcon?: boolean;
+  hideCloseButton?: boolean;
 } & SharedProps &
   Pick<PositionStyles, 'zIndex'>;
 
 export type ModalRefBaseProps = {
-  onClose: NoopFn | MouseEventHandler<Element>;
+  onRequestClose: NoopFn | MouseEventHandler<Element>;
 };
 
-export type ModalHeaderBaseProps = Partial<Pick<ModalBaseProps, 'onClose' | 'onBack' | 'title'>>;
+export type ModalHeaderBaseProps = Partial<
+  Pick<ModalBaseProps, 'onRequestClose' | 'onBackButtonPress' | 'title'>
+>;
 
 export type ModalFooterBaseProps = {
   /** Primary action button */

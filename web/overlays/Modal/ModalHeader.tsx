@@ -8,21 +8,21 @@ import { IconButton } from '../../buttons';
 
 export type ModalHeaderProps = {
   /** Handles back button press */
-  onBack?: React.MouseEventHandler;
+  onBackButtonPress?: React.MouseEventHandler;
   /** Handles close button press */
-  onClose?: React.MouseEventHandler;
+  onRequestClose?: React.MouseEventHandler;
   accessibilityLabelledBy?: React.AriaAttributes['aria-labelledby'];
-} & Omit<ModalHeaderBaseProps, 'onClose' | 'onBack'>;
+} & Omit<ModalHeaderBaseProps, 'onRequestClose' | 'onBackButtonPress'>;
 
 export const ModalHeader: React.FC<ModalHeaderProps> = ({
   title,
-  onBack,
-  onClose,
+  onBackButtonPress,
+  onRequestClose,
   accessibilityLabelledBy,
 }) => {
   const height = useInteractableHeight(true);
 
-  if (!title && !onBack && !onClose) return null;
+  if (!title && !onBackButtonPress && !onRequestClose) return null;
 
   // use empty placeholder which has the same size as IconButton to maintain horizontal position
   const emptyPlaceholder = <Box height={height} width={height} />;
@@ -30,8 +30,13 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
   return (
     <HStack spacingHorizontal={3} spacingVertical={2} alignItems="center">
       <Box>
-        {onBack ? (
-          <IconButton transparent name="backArrow" onPress={onBack} testID="modal-back-button" />
+        {onBackButtonPress ? (
+          <IconButton
+            transparent
+            name="backArrow"
+            onPress={onBackButtonPress}
+            testID="modal-back-button"
+          />
         ) : (
           emptyPlaceholder
         )}
@@ -42,8 +47,13 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
         </TextHeadline>
       </Box>
       <Box justifyContent="flex-end">
-        {onClose ? (
-          <IconButton transparent name="close" onPress={onClose} testID="modal-close-button" />
+        {onRequestClose ? (
+          <IconButton
+            transparent
+            name="close"
+            onPress={onRequestClose}
+            testID="modal-close-button"
+          />
         ) : (
           emptyPlaceholder
         )}

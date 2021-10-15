@@ -26,7 +26,7 @@ export type ModalProps = {
    * Disable overlay click that closes the Modal
    * @default false
    */
-  disableOverlayClick?: boolean;
+  disableOverlayPress?: boolean;
   /**
    * Point to the id of the modal title
    * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role
@@ -40,12 +40,12 @@ export const Modal: React.FC<ModalProps> = memo(
       {
         children,
         visible = false,
-        onClose,
-        onBack,
+        onRequestClose,
+        onBackButtonPress,
         title,
         hideDividers = false,
-        hideCloseIcon = false,
-        disableOverlayClick = false,
+        hideCloseButton = false,
+        disableOverlayPress = false,
         footer,
         accessibilityLabelledBy = 'modal_title',
         zIndex,
@@ -79,10 +79,10 @@ export const Modal: React.FC<ModalProps> = memo(
         // unmount after animations finished
         const finished = await animateOut();
         if (finished) {
-          onClose();
+          onRequestClose();
           isFocused.current = false;
         }
-      }, [animateOut, onClose]);
+      }, [animateOut, onRequestClose]);
 
       // trap focus in modal for accessibility
       const handleTabKey = useCallback(
@@ -153,7 +153,7 @@ export const Modal: React.FC<ModalProps> = memo(
       useImperativeHandle(
         ref,
         () => ({
-          onClose: handleClose,
+          onRequestClose: handleClose,
         }),
         [handleClose],
       );
@@ -175,7 +175,7 @@ export const Modal: React.FC<ModalProps> = memo(
           zIndex={zIndex}
         >
           <Overlay
-            onPress={disableOverlayClick ? undefined : handleClose}
+            onPress={disableOverlayPress ? undefined : handleClose}
             dangerouslySetClassName={cx(overlayResponsiveClassName)}
             ref={overlayRef}
             testID="modal-overlay"
@@ -187,9 +187,9 @@ export const Modal: React.FC<ModalProps> = memo(
             ref={modalRef}
           >
             <ModalHeader
-              onBack={onBack}
+              onBackButtonPress={onBackButtonPress}
               title={title}
-              onClose={hideCloseIcon ? undefined : handleClose}
+              onRequestClose={hideCloseButton ? undefined : handleClose}
               accessibilityLabelledBy={accessibilityLabelledBy}
             />
             {!hideDividers && <Divider />}

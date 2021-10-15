@@ -14,7 +14,17 @@ export type ModalProps = ModalBaseProps &
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>(
     (
-      { children, visible, onClose, onBack, title, hideDividers, hideCloseIcon, footer, ...props },
+      {
+        children,
+        visible,
+        onRequestClose,
+        onBackButtonPress,
+        title,
+        hideDividers,
+        hideCloseButton,
+        footer,
+        ...props
+      },
       ref,
     ) => {
       const [{ opacity, scale }, animateIn, animateOut] = useModalAnimation();
@@ -28,17 +38,17 @@ export const Modal = memo(
       const handleClose = useCallback(() => {
         animateOut.start(({ finished }) => {
           if (finished) {
-            onClose();
+            onRequestClose();
           }
         });
-      }, [onClose, animateOut]);
+      }, [onRequestClose, animateOut]);
 
       useImperativeHandle(
         ref,
         () => ({
-          onClose,
+          onRequestClose,
         }),
-        [onClose],
+        [onRequestClose],
       );
 
       return (
@@ -59,9 +69,9 @@ export const Modal = memo(
           >
             <SafeAreaView style={styles.safeAreaContainer}>
               <ModalHeader
-                onBack={onBack}
+                onBackButtonPress={onBackButtonPress}
                 title={title}
-                onClose={hideCloseIcon ? undefined : handleClose}
+                onRequestClose={hideCloseButton ? undefined : handleClose}
               />
               {!hideDividers && <Divider />}
               {children}

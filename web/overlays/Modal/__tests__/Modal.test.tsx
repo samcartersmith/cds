@@ -59,8 +59,10 @@ describe('Modal', () => {
   });
 
   it('triggers close on overlay click', async () => {
-    const onClose = jest.fn();
-    const { container, getByRole, getByTestId } = render(<MockModal onClose={onClose} />);
+    const onRequestClose = jest.fn();
+    const { container, getByRole, getByTestId } = render(
+      <MockModal onRequestClose={onRequestClose} />,
+    );
 
     fireEvent.click(container.querySelector('button') as Element);
 
@@ -68,39 +70,45 @@ describe('Modal', () => {
     fireEvent.click(getByTestId('modal-overlay'));
 
     // wait for animation to finish
-    await waitFor(() => expect(onClose).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
   });
 
   it('triggers close on close button click', async () => {
-    const onClose = jest.fn();
-    const { container, getByRole, getByTestId } = render(<MockModal onClose={onClose} />);
+    const onRequestClose = jest.fn();
+    const { container, getByRole, getByTestId } = render(
+      <MockModal onRequestClose={onRequestClose} />,
+    );
 
     fireEvent.click(container.querySelector('button') as Element);
 
     await waitFor(() => getByRole('dialog'));
     fireEvent.click(getByTestId('modal-close-button'));
 
-    await waitFor(() => expect(onClose).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
   });
 
   it('triggers back action on back button click', async () => {
-    const onBack = jest.fn();
-    const { getByTestId } = render(<MockModal visible onClose={jest.fn()} onBack={onBack} />);
+    const onBackButtonPress = jest.fn();
+    const { getByTestId } = render(
+      <MockModal visible onRequestClose={jest.fn()} onBackButtonPress={onBackButtonPress} />,
+    );
 
     fireEvent.click(getByTestId('modal-back-button'));
 
-    expect(onBack).toHaveBeenCalledTimes(1);
+    expect(onBackButtonPress).toHaveBeenCalledTimes(1);
   });
 
   it('renders modal title', async () => {
     const title = 'Basic Modal';
-    const { getByText } = render(<MockModal visible onClose={jest.fn()} title={title} />);
+    const { getByText } = render(<MockModal visible onRequestClose={jest.fn()} title={title} />);
 
     expect(getByText(title)).toBeTruthy();
   });
 
   it('renders modal body', async () => {
-    const { container, getByRole, getByText } = render(<MockModal visible onClose={jest.fn()} />);
+    const { container, getByRole, getByText } = render(
+      <MockModal visible onRequestClose={jest.fn()} />,
+    );
 
     fireEvent.click(container.querySelector('button') as Element);
     await waitFor(() => getByRole('dialog'));
@@ -112,7 +120,7 @@ describe('Modal', () => {
     const { container, getByRole, getByTestId } = render(
       <MockModal
         visible
-        onClose={jest.fn()}
+        onRequestClose={jest.fn()}
         footer={
           <ModalFooter
             testID="modal-footer"

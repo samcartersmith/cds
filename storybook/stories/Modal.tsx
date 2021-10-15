@@ -34,7 +34,7 @@ export function createStories({
         <Button onPress={toggleOn}>Open Modal</Button>
         <Modal
           visible={visible}
-          onClose={toggleOff}
+          onRequestClose={toggleOff}
           title="Basic Modal"
           footer={
             <ModalFooter
@@ -63,7 +63,7 @@ export function createStories({
           modalKey,
           <Modal
             visible
-            onClose={closeModal}
+            onRequestClose={closeModal}
             title="Basic Modal"
             footer={
               <ModalFooter
@@ -83,8 +83,8 @@ export function createStories({
   };
 
   const MockModal: React.FC<Partial<ModalBaseProps>> = ({
-    onClose,
-    onBack,
+    onRequestClose,
+    onBackButtonPress,
     title = 'Basic Modal',
     visible: externalVisible,
   }) => {
@@ -97,9 +97,9 @@ export function createStories({
         </Button>
         <Modal
           visible={externalVisible ?? visible}
-          onClose={onClose ?? toggleOff}
+          onRequestClose={onRequestClose ?? toggleOff}
           title={title}
-          onBack={onBack}
+          onBackButtonPress={onBackButtonPress}
           footer={
             <ModalFooter
               testID="modal-footer"
