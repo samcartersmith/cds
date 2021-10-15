@@ -7,8 +7,11 @@ import { CardBody } from './CardBody';
 import { CardFooter } from './CardFooter';
 import { RemoteImage } from '../media/RemoteImage';
 
+const aspectRatio = [240, 120] as [number, number];
+
 export const FeedCard: React.FC<FeedCardBaseProps> = ({
   avatarUrl,
+  headerMetaData,
   headerDescription,
   headerActionNode,
   bodyTitle,
@@ -21,6 +24,7 @@ export const FeedCard: React.FC<FeedCardBaseProps> = ({
     <Card>
       <CardHeader
         avatarUrl={avatarUrl}
+        metaData={headerMetaData}
         description={headerDescription}
         action={headerActionNode}
         spacing={2}
@@ -28,7 +32,9 @@ export const FeedCard: React.FC<FeedCardBaseProps> = ({
       <CardBody
         title={bodyTitle}
         description={bodyDescription}
-        media={<RemoteImage source={bodyMediaUrl} height="auto" width="100%" />}
+        media={
+          <RemoteImage source={bodyMediaUrl} height="auto" width="100%" aspectRatio={aspectRatio} />
+        }
         spacing={2}
         orientation={bodyOrientation}
       />

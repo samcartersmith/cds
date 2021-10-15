@@ -2,13 +2,14 @@ import React from 'react';
 
 import { CardHeaderBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
 import { HStack, HStackProps } from '../layout/HStack';
-import { TextLabel1 } from '../typography';
+import { TextLabel1, TextLegal } from '../typography';
 import { RemoteImage } from '../media/RemoteImage';
 
 type CardHeaderProps = HStackProps<'div'> & CardHeaderBaseProps;
 
 export const CardHeader: React.FC<CardHeaderProps> = ({
   avatarUrl,
+  metaData,
   description,
   action,
   spacing,
@@ -19,7 +20,8 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
         {avatarUrl ? (
           <RemoteImage source={avatarUrl} width="32px" height="32px" shape="circle" />
         ) : null}
-        <TextLabel1 as="p">{description}</TextLabel1>
+        {!!description && <TextLabel1 as="p">{description}</TextLabel1>}
+        {!!metaData && <TextLegal as="p">{metaData}</TextLegal>}
       </HStack>
       {action}
     </HStack>

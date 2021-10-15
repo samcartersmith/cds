@@ -23,10 +23,12 @@ export type CardBaseProps = {
 export type CardHeaderBaseProps = {
   /** Absolute or Relative path to Avatar */
   avatarUrl?: string;
+  /** Meta Data Text to be displayed in TextLegal */
+  metaData?: string;
   /** Text to be displayed in TextCaption */
-  description: string;
+  description?: string;
   /** IconButton ReactNode */
-  action: React.ReactNode;
+  action?: React.ReactNode;
 };
 
 export type CardBodyBaseProps = {
@@ -48,6 +50,8 @@ export type CardBodyOrientationProps = {
 export type FeedCardBaseProps = {
   /** Absolute or Relative to Avatar */
   avatarUrl?: string;
+  /** Meta Data Text to be displayed in TextLegal */
+  headerMetaData?: string;
   /** Text to be displayed in TextCaption */
   headerDescription: string;
   /** IconButton ReactNode */
