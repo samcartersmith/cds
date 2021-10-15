@@ -19,35 +19,41 @@ Text Fields enable users to type, enter, and/or edit text. Text Field is customi
 
 <Box justifyContent="center">
   <Image
-    light="/img/components/inputs/TextField/textfield_anatomy.png"
-    dark="/img/components/inputs/TextField/textfield_anatomy.png"
+    light="/img/components/inputs/TextField/anatomy.png"
+    dark="/img/components/inputs/TextField/anatomy.png"
   />
 </Box>
 
 <span>&nbsp;</span>
 
-1. **Label**: Title / brief description of input
-2. **Base Field**: Container of input
-3. **Content Type**: Content will vary based on type of input
-4. **Helper Text**: Assistive message about the input 
+1.	**Label:** Title / brief description of input
+2.	**Container:** Container of input
+3.	**Input Text:** Content will vary based on type of input
+4.	**Helper Text** (Optional): Assistive message about the input 
 
-## Content Guidelines 
+## Guidance
+- Use Text Fields for free form responses or when we can’t predict a user’s answer.
+- Use another component like Dropdown, Date Input, or one of our Group Selection Control components if a user is selecting from a set of options. 
+
+## Content Guidelines
+
 - Always include a label. 
 - Write Input Labels, Placeholder Text, and Helper Text in sentence case.
 - Use Helper Text to show hints, formatting, and requirements. 
 - Use Helper Text instead of Placeholder Text.
-- Do not explain what is wrong but rather offer a solution. Error messages should - be clear and concise. 
-- For more info on writing Text Fields, check our [Content Design Guide](https://docs.google.com/document/d/1QnxOOjhqUb8ENrGt3hQTTDCDxnCPRyEfkO-U-ftm4uc/edit#heading=h.m7ffxiih1sf1)
+- Do not explain what is wrong but rather offer a solution. Error messages should be clear and concise. 
+- For more info on writing text inputs, check our [Content Design Guide](https://docs.google.com/document/d/1QnxOOjhqUb8ENrGt3hQTTDCDxnCPRyEfkO-U-ftm4uc/edit#heading=h.m7ffxiih1sf1).
 
-## Sizing & Scale  
-Text Fields are available in Dense and Normal scales. We also offer a compact option for smaller spaces and dense experiences. 
+## Sizing & Scale
+
+Text Fields are available in Dense and Normal scales. We also offer a compact option for smaller spaces and dense experiences. 
 
 When stacking inputs, use spacing 3 (24px). For dense experiences, use spacing 2 (16px).
 
 <Box justifyContent="center">
   <Image
-    light="/img/components/inputs/TextField/size_and_scale.png"
-    dark="/img/components/inputs/TextField/size_and_scale.png"
+    light="/img/components/inputs/TextField/sizing_and_scale_breakdown.png"
+    dark="/img/components/inputs/TextField/sizing_and_scale_breakdown.png"
   />
 </Box>
 
@@ -61,8 +67,7 @@ Heights are predetermined and based on scale. Please avoid customizing the heigh
 	</Box>
 </HStack>
 ```
-
-Input widths can be customized but we recommend being consistent. This is especially important when grouping Text Fields in a Form. Be sure to set Inputs to “full-width” if placing Inputs inline. 
+Input widths can be customized but we recommend being consistent. This is especially important when grouping Text Fields in a Form.  
 
 ```jsx live
 function FormExample() {
@@ -79,7 +84,7 @@ function FormExample() {
 	<form onSubmit={onSubmit} action={undefined}>
 		<VStack gap={gap}>
 			<TextField label="Street address" placeholder="4321 Jade Palace" helperText="Please enter your primary address." />
-			<TextField label="Unit #" />
+			<TextField label="Unit #" aria-required="true" />
 			<HStack gap={gap}>
 				<TextField label="City/town" width={70} /> 
 				<TextField label="State" width={30} /> 
@@ -89,7 +94,7 @@ function FormExample() {
 				<TextField label="Country" width={60} /> 
 			</HStack>
 			<ButtonGroup>
-				<Button>Save</Button>
+				<Button type="submit">Save</Button>
 			</ButtonGroup>
 		</VStack>
 	</form>

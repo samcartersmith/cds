@@ -17,7 +17,7 @@ Default composition of Inputs.
 
     <div>
       Use the compact variant when space is tight.
-      <TextField compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      <TextField compact type="number" step="0.01" label="Amount" placeholder="8293323.23" suffix="USD" />
     </div>
   </VStack>
 </ExampleWithThemeToggles>
@@ -72,7 +72,7 @@ We recommend right aligning input content when using the compact variant.
 
     <div>
       Right aligned. Used with compact
-      <TextField label="Limit price" compact align="right" placeholder="29.3" suffix="USD" />
+      <TextField label="Limit price" compact align="right" type="number" step="0.01" placeholder="29.3" suffix="USD" />
     </div>
   </VStack>
 </ExampleWithThemeToggles>
@@ -146,7 +146,7 @@ Icon objects are not interactive.
 
     <div>
       The most common use case for placing a text object at the end of an input is currency. This object is not interactive. 
-      <TextField label="Amount" compact placeholder="98329.23" suffix="USD" />
+      <TextField label="Amount" type="number" step="0.01" compact placeholder="98329.23" suffix="USD" />
     </div>
 
     <div>

@@ -1,9 +1,10 @@
 import { SharedProps, ForwardedRef, TextBaseProps } from '@cbhq/cds-common';
 import React, { memo, forwardRef } from 'react';
 import { css, cx } from 'linaria';
+import { palette } from '../tokens';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import * as textStyles from '../typography/textStyles';
+import { body } from '../typography/textStyles';
 
 export type NativeInputProps = {
   /** Custom container spacing if needed. This will add to the existing spacing */
@@ -20,15 +21,31 @@ export type NativeInputProps = {
 } & SharedProps &
   React.InputHTMLAttributes<HTMLInputElement>;
 
-const containerStyle = css`
+const nativeInputBaseStyle = css`
   min-width: 0;
   flex-grow: 2;
   background-color: transparent;
+  color: ${palette.foreground};
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   &:focus {
     outline-style: none;
     box-shadow: none;
     border-color: transparent;
+  }
+
+  &::placeholder {
+    color: ${palette.foregroundMuted};
+    opacity: 1;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
   }
 `;
 
@@ -56,11 +73,7 @@ export const NativeInput = memo(
       return (
         <input
           style={{ textAlign: align }}
-          className={cx(
-            textStyles.body,
-            containerSpacing ?? defaultContainerSpacing,
-            containerStyle,
-          )}
+          className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
           data-testid={testID}
           tabIndex={0}
           onClick={onPress}
