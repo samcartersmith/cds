@@ -32,9 +32,9 @@ export type TableRowProps = {
    */
   color?: PaletteForeground;
   /**
-   * When set, we'll set a hover bacgkround color
+   * When set, we'll set a hover background color
    * of palette.backgroundAlternate for the row.
    * @default false
    */
-  indicateHover?: boolean;
+  disableHoverIndicator?: boolean;
 };

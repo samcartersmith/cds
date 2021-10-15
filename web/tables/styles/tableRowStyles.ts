@@ -1,5 +1,9 @@
 import { css } from 'linaria';
+import { toCssVar } from '@cbhq/cds-utils';
 import { palette } from '../../tokens';
+
+const gray5CssVar = toCssVar('gray5');
+const hoverColor = `rgba(var(${gray5CssVar}), 0.35)`;
 
 export const tableRow = css`
   /* Let us be specific */
@@ -14,7 +18,7 @@ export const tableRowHover = css`
   /* Lest we be overridden */
   &:nth-child(1n) {
     &:hover {
-      background-color: ${palette.backgroundAlternate};
+      background-color: ${hoverColor};
     }
   }
 `;

@@ -158,7 +158,7 @@ export const SortingExample: Story = () => {
       </TableHead>
       <TableBody>
         {data.map((row) => (
-          <TableRow indicateHover key={`row-${row.name}--${row.appSubmittedAt}`}>
+          <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
             <TableCell title={row.name} />
             <TableCell>{row.type}</TableCell>
             <TableCell>{row.appStatus}</TableCell>

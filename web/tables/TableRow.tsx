@@ -1,5 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { cx } from 'linaria';
+import { useTableSectionTag } from './hooks/useTable';
 import { TableCell } from './TableCell';
 import { palette } from '../tokens';
 
@@ -8,7 +9,18 @@ import { tableRow, tableRowHover } from './styles/tableRowStyles';
 
 export type { TableRowProps } from './types/tableRowTypes';
 export const TableRow = memo(
-  ({ fullWidth, indicateHover, className, children, backgroundColor, color }: TableRowProps) => {
+  ({
+    fullWidth,
+    disableHoverIndicator,
+    className,
+    children,
+    backgroundColor,
+    color,
+  }: TableRowProps) => {
+    const tableSectionType = useTableSectionTag();
+    const isCellInBody = tableSectionType === 'tbody';
+    const shouldIndicateHover = isCellInBody && !disableHoverIndicator;
+
     const inlineStyles = useMemo(() => {
       return {
         color: color && palette[color],
@@ -17,7 +29,10 @@ export const TableRow = memo(
     }, [backgroundColor, color]);
 
     return (
-      <tr style={inlineStyles} className={cx(tableRow, indicateHover && tableRowHover, className)}>
+      <tr
+        style={inlineStyles}
+        className={cx(tableRow, shouldIndicateHover && tableRowHover, className)}
+      >
         {fullWidth && (
           <TableCell direction="horizontal" colSpan={1000}>
             {children}

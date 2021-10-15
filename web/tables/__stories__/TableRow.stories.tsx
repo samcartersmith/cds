@@ -44,9 +44,9 @@ export const TableRowExample: Story = () => {
             }
           />
         </TableRow>
-        <TableRow indicateHover>
+        <TableRow disableHoverIndicator>
           <TableCell direction="horizontal">
-            <TextHeadline as="h2">Sample Row 3 (default hover)</TextHeadline>
+            <TextHeadline as="h2">Sample Row 3 (disable hover indicator)</TextHeadline>
             <Button variant="secondary" compact onPress={handlePress}>
               Export
             </Button>
