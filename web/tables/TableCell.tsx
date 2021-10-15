@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-import { cx } from 'linaria';
-import { Cell, overflowClassName, truncateClassName } from '../cells/Cell';
+import { cx, css } from 'linaria';
+import { Cell, truncateClassName } from '../cells/Cell';
 import { VStack, HStack } from '../layout';
 import { TextBody, TextLabel2, TextHeadline } from '../typography';
 
@@ -13,20 +13,19 @@ export type { TableCellProps } from './types/tableCellTypes';
 export const TableCell = memo(
   ({
     alignItems,
-    justifyContent,
-    colSpan = 1,
-    minWidth,
-    className,
-    color,
-    start,
-    end,
-    onPress,
     children,
+    colSpan = 1,
+    color,
+    direction = 'vertical',
+    end,
+    justifyContent,
+    onPress,
+    start,
+    overflow,
     // Only available when Children is null
     title,
     titleColor,
     subtitle,
-    direction = 'vertical',
     subtitleColor = 'foregroundMuted',
     ...props
   }: TableCellProps) => {
@@ -52,16 +51,22 @@ export const TableCell = memo(
       }
     }
 
+    // Required to handle truncation - this is whack, but
+    // the table behavior override this. We use `width` to
+    // explicitly define a table columns width
+    const overflowWidth = css`
+      max-width: 0;
+    `;
+
     const tableCellClass = cx(
       tableCell,
       tableSectionType === 'thead' && tableHeaderCell,
       tableSectionType === 'tfoot' && tableFooterCell,
-      overflowClassName,
-      className,
+      overflow === 'truncate' && overflowWidth,
     );
 
     return (
-      <TableCellComponent className={tableCellClass} colSpan={colSpan} width={minWidth} {...props}>
+      <TableCellComponent className={tableCellClass} colSpan={colSpan} {...props}>
         <Cell
           onPress={onPress}
           spacing={0}
@@ -71,7 +76,7 @@ export const TableCell = memo(
           reduceHorizontalSpacing
         >
           {children ? (
-            <TextComponent as="div" noWrap color={color ?? 'currentColor'}>
+            <TextComponent as="div" noWrap color={color ?? 'currentColor'} overflow={overflow}>
               <Stack
                 flexGrow={1}
                 flexShrink={1}
@@ -86,11 +91,11 @@ export const TableCell = memo(
             <Stack
               flexGrow={1}
               flexShrink={1}
-              dangerouslySetClassName={truncateClassName}
+              dangerouslySetClassName={overflow === 'truncate' ? truncateClassName : undefined}
               justifyContent={smartJustifyContent}
               alignItems={smartAlignItems}
             >
-              <TextComponent as="div" noWrap color={smartTitleColor}>
+              <TextComponent as="div" noWrap color={smartTitleColor} overflow={overflow}>
                 {title}
               </TextComponent>
               {subtitle ? (
@@ -98,7 +103,7 @@ export const TableCell = memo(
                   color={subtitleColor ?? color ?? 'currentColor'}
                   as="div"
                   spacingTop={title ? 0.5 : 0}
-                  overflow="truncate"
+                  overflow={overflow}
                 >
                   {subtitle}
                 </TextLabel2>

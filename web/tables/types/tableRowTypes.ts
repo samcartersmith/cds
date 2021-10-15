@@ -9,11 +9,6 @@ export type TableRowProps = {
    */
   children: ReactElement<TableCellProps> | ReactElement<TableCellProps>[];
   /**
-   * Linaria flavored className.
-   * @default undefined
-   */
-  className?: string;
-  /**
    * Should this row span the entire width of the table?
    * Useful for treating a row as a Control Strip.
    * @default undefined

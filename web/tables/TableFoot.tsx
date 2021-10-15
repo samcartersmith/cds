@@ -4,12 +4,8 @@ import { TableSectionProps } from './types/tableSectionTypes';
 import { TableSection } from './TableSection';
 
 export type TableFootProps = TableSectionProps;
-export const TableFoot = memo(({ className, children }: TableFootProps) => {
-  return (
-    <TableSection className={className} as="tfoot">
-      {children}
-    </TableSection>
-  );
+export const TableFoot = memo(({ children }: TableFootProps) => {
+  return <TableSection as="tfoot">{children}</TableSection>;
 });
 
 TableFoot.displayName = 'TableFoot';

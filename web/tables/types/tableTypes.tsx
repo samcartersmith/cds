@@ -14,11 +14,6 @@ export type TableCtx = {
 
 export type TableProps = {
   /**
-   * Linaria flavored className.
-   * @default undefined
-   */
-  className?: string;
-  /**
    * The variant prop allows clients to use a
    * CDS approved style for their Table.
    * @default undefined

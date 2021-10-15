@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-import { css } from 'linaria';
 import { Story, Meta } from '@storybook/react';
 import { Button } from '../../buttons';
 import { TextHeadline } from '../../typography';
@@ -12,22 +10,17 @@ export default {
 } as Meta;
 
 const handlePress = () => {
+  // eslint-disable-next-line no-console
   return () => console.log('Thanks for tapping');
 };
-
-const customHoverStyles = css`
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.0125);
-  }
-`;
 
 export const TableRowExample: Story = () => {
   return (
     <Table variant="ruled" border>
       <TableBody>
-        <TableRow className={customHoverStyles}>
+        <TableRow>
           <TableCell direction="horizontal">
-            <TextHeadline as="h2">Sample Row 1 (custom styles)</TextHeadline>
+            <TextHeadline as="h2">Sample Row 1</TextHeadline>
             <Button variant="secondary" compact onPress={handlePress}>
               Export
             </Button>

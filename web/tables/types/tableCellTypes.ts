@@ -1,5 +1,6 @@
 import { ReactNode, ReactElement, TdHTMLAttributes, ThHTMLAttributes } from 'react';
 import { FlexAxisValue, FlexSpaceCommon, PaletteForeground } from '@cbhq/cds-common';
+import { TextProps } from '@cbhq/cds-web/typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
 
@@ -14,11 +15,6 @@ type TableCellBaseProps = {
    * @default undefined
    */
   end?: ReactElement;
-  /**
-   * Linaria flavored className.
-   * @default undefined
-   */
-  className?: string;
   /**
    * CDS Palette foreground color name
    * @default undefined
@@ -40,15 +36,15 @@ type TableCellBaseProps = {
    */
   colSpan?: number;
   /**
-   * Useful for preventing columns from jumping around with pagination
-   * @default 1
-   */
-  minWidth?: string | number;
-  /**
    * Callback to fire when pressed
    * @default noop
    */
   onPress?: React.MouseEventHandler;
+  /**
+   * Should the title/subtitle text truncate
+   * @default false
+   */
+  overflow?: TextProps['overflow'];
   /**
    * Direction provides content flow control.
    * Use vertical to inherit a VStask, horizontal for an HStack

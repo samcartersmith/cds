@@ -38,10 +38,6 @@ const MockAvatar = (props: Partial<HTMLImageElement>) => {
   );
 };
 
-const overflowClass = css`
-  max-width: 200px;
-`;
-
 export const SampleCells: Story = () => {
   return (
     <ThemeProvider spectrum="light">
@@ -60,7 +56,7 @@ export const SampleCells: Story = () => {
         <TableBody>
           <TableRow>
             <TableCell
-              className={overflowClass}
+              overflow="truncate"
               start={
                 <Box spacingEnd={1}>
                   <MockAvatar src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" />
@@ -69,8 +65,13 @@ export const SampleCells: Story = () => {
               title="Bitcoin"
               subtitle="BTC and I'm like please please truncate me"
             />
-            <TableCell alignItems="flex-start" title="$2,475.68" subtitle="0.11882557" />
-            <TableCell className={overflowClass}>
+            <TableCell
+              overflow="truncate"
+              alignItems="flex-start"
+              title="$2,475.68"
+              subtitle="0.11882557"
+            />
+            <TableCell>
               <TextHeadline as="h2" color="currentColor">
                 $2,221.01
               </TextHeadline>

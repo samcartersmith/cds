@@ -8,16 +8,8 @@ export type TableSectionCtx = {
 
 export type TableSectionProps = PropsWithChildren<{
   /**
-   * Linaria flavored className.
-   * @default undefined
-   */
-  className?: string;
-}>;
-
-export type TableSectionInternalProps = TableSectionProps & {
-  /**
    * Internal only
    * @default undefined
    */
   as?: TableSectionTag;
-};
+}>;
