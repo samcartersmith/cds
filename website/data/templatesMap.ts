@@ -625,6 +625,33 @@ export const SpotSquare = {
   ),
 };
 
+export const TextField = {
+  'text-field': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/text-field.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/intro.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/inputs/TextField/usage.mdx'
+      ),
+  ),
+};
+
 export const Box = {
   a11y: React.lazy(
     async () =>

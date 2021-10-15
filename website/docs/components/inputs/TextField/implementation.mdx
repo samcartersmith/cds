@@ -1,0 +1,242 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/inputs/TextField](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/inputs/TextField.tsx)
+
+<ComponentDetails componentName="TextField" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="TextField" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="TextField" templateName="a11y" />
+
+## Props
+
+### align 
+
+Aligns text inside input and helperText
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="align"
+  required={false}
+  defaultValue="start"
+  mobileOptions={['center', 'end', 'justify', 'start']}
+  webOptions={['center', 'end', 'justify', 'start']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-align" />
+
+### compact 
+
+Enables compact variation
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="compact"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-compact" />
+
+### disabled 
+
+Toggles input interactability and opacity
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="disabled"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-disabled" />
+
+### end 
+
+Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="end"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-end" />
+
+### helperText 
+
+For cases where label is not enough information to describe what the text input is for. Can also be used for showing positive/negative messages
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="helperText"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-helperText" />
+
+### label 
+
+Short messageArea indicating purpose of input
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="label"
+  required={true}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-label" />
+
+### placeholder 
+
+Placeholder text
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="placeholder"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-placeholder" />
+
+### start 
+
+Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="start"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-start" />
+
+### suffix 
+
+Adds suffix text to the end of input
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="suffix"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-suffix" />
+
+### testID 
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-testID" />
+
+### variant 
+
+Determines the sentiment of the input. Because we allow startContent and endContent to be custom ReactNode, the content placed inside these slots will not change colors according to the variant. You will have to add that yourself
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="variant"
+  required={false}
+  defaultValue="foregroundMuted"
+  mobileOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
+  webOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-variant" />
+
+### width 
+
+Width of input. The number is converted to percentage.
+
+<ApiDetails
+  componentName="TextField"
+  propertyName="width"
+  required={false}
+  defaultValue="100"
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="TextField" templateName="prop-width" />
+
+<ComponentDetails componentName="TextField" templateName="outro" />

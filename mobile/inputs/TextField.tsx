@@ -6,7 +6,6 @@ import {
   TextInputFocusEventData,
 } from 'react-native';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import { useInputLabelColor } from '@cbhq/cds-common/hooks/useInputLabelColor';
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
 
@@ -37,7 +36,6 @@ export const TextField = memo(function TextField({
 }: TextFieldProps) {
   const [focused, setFocused] = useState(false);
   const variantWithFocus = useInputVariant(focused, variant);
-  const labelColor = useInputLabelColor(variant);
   const inputBorderStyle = useInputBorderStyle(focused);
 
   const editableInputAddonProps = {
@@ -84,21 +82,11 @@ export const TextField = memo(function TextField({
           </HelperText>
         )
       }
-      labelNode={
-        !compact && (
-          <InputLabel disabled={disabled} color={labelColor}>
-            {label}
-          </InputLabel>
-        )
-      }
+      labelNode={!compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
       startNode={
         (compact || !!start) && (
           <Box justifyContent="center" alignItems="center" spacingStart={1}>
-            {compact && (
-              <InputLabel disabled={disabled} color={labelColor}>
-                {label}
-              </InputLabel>
-            )}
+            {compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
             {!!start && <>{start}</>}
           </Box>
         )

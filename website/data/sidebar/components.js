@@ -71,6 +71,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Inputs',
+      collapsed: true,
+      items: ['components/inputs/TextField/text-field'],
+    },
+    {
+      type: 'category',
       label: 'Layout',
       collapsed: true,
       items: [

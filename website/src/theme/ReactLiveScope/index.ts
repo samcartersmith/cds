@@ -93,6 +93,7 @@ const ReactLiveScope = {
   ...CDSAvatar,
   // context
   PortalProvider,
+  ...CDSInputs,
   // Utils
   loremIpsum,
   ReactRouterLink,

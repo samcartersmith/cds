@@ -2,7 +2,6 @@ import { TextFieldBaseProps } from '@cbhq/cds-common/types/TextFieldBaseProps';
 import React, { useCallback, useState, memo } from 'react';
 
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import { useInputLabelColor } from '@cbhq/cds-common/hooks/useInputLabelColor';
 
 import { TextLabel1 } from '../typography';
 import { NativeInput } from './NativeInput';
@@ -35,7 +34,6 @@ export const TextField = memo(function TextField({
 }: TextFieldProps) {
   const [focused, setFocused] = useState(false);
   const variantWithFocus = useInputVariant(focused, variant);
-  const labelColor = useInputLabelColor(variant);
   const inputBorderStyle = useInputBorderStyle(focused);
 
   const handleOnFocus = useCallback(
@@ -90,17 +88,11 @@ export const TextField = memo(function TextField({
           </HelperText>
         )
       }
-      labelNode={
-        !compact && (
-          <InputLabel disabled={disabled} color={labelColor}>
-            {label}
-          </InputLabel>
-        )
-      }
+      labelNode={!compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
       startNode={
         (compact || !!start) && (
           <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2}>
-            {compact && <InputLabel color={labelColor}>{label}</InputLabel>}
+            {compact && <InputLabel>{label}</InputLabel>}
             {!!start && <>{start}</>}
           </HStack>
         )

@@ -17,6 +17,7 @@ export const CDS_SUB_DIRS = [
   'controls',
   'icons',
   'illustrations',
+  'inputs',
   'layout',
   'media',
   'loaders',

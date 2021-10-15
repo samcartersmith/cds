@@ -25,6 +25,8 @@ export const components = [
   'Pictogram',
   'SpotRectangle',
   'SpotSquare',
+  'BetaTextField',
+  'NativeInput',
   'Box',
   'Card',
   'Divider',
