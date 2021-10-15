@@ -21,14 +21,14 @@ export default {
 } as Meta;
 
 export const SampleTable: Story = () => {
-  const [border, { toggle }] = useToggler();
+  const [hasBorder, { toggle }] = useToggler();
   const [variant, setVariant] = useState<TableVariant | undefined>('default');
 
   const data = assetHubMock.slice(0, 6);
   const variants: TableVariant[] = ['default', 'graph', 'ruled'];
 
   return (
-    <Table border={border} variant={variant}>
+    <Table bordered={hasBorder} variant={variant}>
       <TableHead>
         <TableRow fullWidth>
           <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
@@ -47,7 +47,7 @@ export const SampleTable: Story = () => {
                   <Spacer horizontal={2} />
                 </>
               ))}
-              <Switch onChange={toggle} checked={border}>
+              <Switch onChange={toggle} checked={hasBorder}>
                 Border
               </Switch>
             </HStack>
@@ -110,7 +110,7 @@ export const SortingExample: Story = () => {
   };
 
   return (
-    <Table border variant="ruled">
+    <Table bordered variant="ruled">
       <TableHead>
         <TableRow fullWidth>
           <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>

@@ -41,7 +41,7 @@ const MockAvatar = (props: Partial<HTMLImageElement>) => {
 export const SampleCells: Story = () => {
   return (
     <ThemeProvider spectrum="light">
-      <Table variant="ruled" border>
+      <Table variant="ruled" bordered>
         <TableHead>
           <TableRow backgroundColor="backgroundAlternate">
             <TableCell title="First Header" />

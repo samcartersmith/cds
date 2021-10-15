@@ -16,7 +16,7 @@ const handlePress = () => {
 
 export const TableRowExample: Story = () => {
   return (
-    <Table variant="ruled" border>
+    <Table variant="ruled" bordered>
       <TableBody>
         <TableRow>
           <TableCell direction="horizontal">

@@ -26,7 +26,7 @@ export type TableProps = {
    */
   children: ReactElement<TableSectionProps> | ReactElement<TableSectionProps>[];
   /**
-   * When provided, we'll apply a border around the entire table
+   * When provided, we'll apply a bordered around the entire table
    */
-  border?: boolean;
+  bordered?: boolean;
 };

@@ -12,7 +12,7 @@ export default {
 
 export const SampleTableSection: Story = () => {
   return (
-    <Table border variant="ruled">
+    <Table bordered variant="ruled">
       <TableHead>
         <TableRow>
           <TableCell title="TableHead" subtitle="This is the TableHead" />
@@ -34,7 +34,7 @@ export const SampleTableSection: Story = () => {
 
 export const SectionFlowControl: Story = () => {
   return (
-    <Table border variant="ruled">
+    <Table bordered variant="ruled">
       <TableBody>
         <TableRow>
           <TableCell title="TableBody" subtitle="This is the TableBody" />
@@ -56,7 +56,7 @@ export const SectionFlowControl: Story = () => {
 
 export const LoadingStateExample: Story = () => {
   return (
-    <Table border variant="ruled">
+    <Table bordered variant="ruled">
       <TableHead>
         <TableRow>
           <TableCell title="TableHead" />

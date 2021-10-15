@@ -5,8 +5,8 @@ import { TableProps } from './types/tableTypes';
 import { table } from './styles/tableStyles';
 
 export type { TableProps, TableVariant } from './types/tableTypes';
-export const Table = memo(({ children, variant, border }: TableProps) => {
-  const variantStyles = useTableStyles({ variant, border });
+export const Table = memo(({ children, variant, bordered }: TableProps) => {
+  const variantStyles = useTableStyles({ variant, bordered });
 
   return (
     // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
