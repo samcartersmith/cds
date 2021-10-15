@@ -40,4 +40,5 @@ export * from './SparklineBaseProps';
 export * from './SparklinePathBaseProps';
 export * from './Spectrum';
 export * from './TextBaseProps';
+export * from './TextInputBaseProps';
 export * from './Typography';

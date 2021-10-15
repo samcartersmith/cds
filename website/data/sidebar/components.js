@@ -44,6 +44,7 @@ module.exports = {
         'components/controls/Checkbox/checkbox',
         'components/controls/RadioGroup/radio-group',
         'components/controls/Switch/switch',
+        'components/controls/TextInput/text-input',
       ],
     },
     {
@@ -145,12 +146,6 @@ module.exports = {
         'components/visualizations/Sparkline/sparkline',
         'components/visualizations/SparklineGradient/sparkline-gradient',
       ],
-    },
-    {
-      type: 'category',
-      label: 'Avatar',
-      collapsed: true,
-      items: ['components/avatar/Avatar/avatar'],
     },
   ],
 };

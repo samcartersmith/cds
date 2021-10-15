@@ -7,9 +7,9 @@ import { defaultPalette } from '@cbhq/cds-common';
 
 import { css, cx } from 'linaria';
 import { usePalette } from '../hooks/usePalette';
-import { HStack } from './HStack';
-import { VStack } from './VStack';
-import { InputLabel } from '../inputs/InputLabel';
+import { HStack } from '../layout/HStack';
+import { VStack } from '../layout/VStack';
+import { InputLabel } from './InputLabel';
 
 const inputBaseAreaStyles = css`
   flex-direction: row;

@@ -20,7 +20,6 @@ import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
-import * as CDSInputs from '@cbhq/cds-web/inputs';
 import * as CDSLayout from '@cbhq/cds-web/layout';
 import * as CDSCardElements from '@cbhq/cds-web/cards';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
@@ -98,12 +97,10 @@ const ReactLiveScope = {
   ...CDSTables,
   ...CDSTypography,
   ...CDSIllustrations,
-  ...CDSInputs,
   ...CDSVisualizations,
   ...CDSAvatar,
   // context
   PortalProvider,
-  ...CDSInputs,
   // Utils
   loremIpsum,
   ReactRouterLink,

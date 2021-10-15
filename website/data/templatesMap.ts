@@ -409,6 +409,33 @@ export const Switch = {
   ),
 };
 
+export const TextInput = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/TextInput/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/TextInput/intro.mdx'
+      ),
+  ),
+  'text-input': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/TextInput/text-input.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/TextInput/usage.mdx'
+      ),
+  ),
+};
+
 export const Icon = {
   a11y: React.lazy(
     async () =>
@@ -1371,33 +1398,6 @@ export const SparklineGradient = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineGradient/sparkline-gradient.mdx'
-      ),
-  ),
-};
-
-export const Avatar = {
-  avatar: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/avatar/Avatar/avatar.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/avatar/Avatar/implementation.mdx'
-      ),
-  ),
-  intro: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/avatar/Avatar/intro.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/avatar/Avatar/usage.mdx'
       ),
   ),
 };

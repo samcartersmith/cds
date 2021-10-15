@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { TextLabel2, TextBody, TextProps } from '../typography';
 
-type HelperTextProps = {
+export type HelperTextProps = {
   /** Color of helper text */
   color?: InputVariant;
 } & TextProps;

@@ -1,0 +1,356 @@
+Use Text Fields for free form responses or when we can’t predict a user’s answer.
+Use another component like Dropdown, Date Input, or one of our Group Selection Control components if a user is selecting from a set of options.
+
+**Note** TextField extends props from HTMLInputElement on web. On mobile, it extends TextInputProps from react-native.
+
+### Input Label
+
+Default composition of Inputs.
+
+```jsx live
+<ExampleWithThemeToggles>
+  <VStack gap={3}>
+    <div>
+      <TextInput
+        label="API Access Token"
+        placeholder="HaeJiWplJohn6W42eCq0Qqft0"
+        end={
+          <Link color="primary" to="">
+            COPY
+          </Link>
+        }
+      />
+    </div>
+
+    <div>
+      Use the compact variant when space is tight.
+      <TextInput
+        compact
+        type="number"
+        step="0.01"
+        label="Amount"
+        placeholder="8293323.23"
+        suffix="USD"
+      />
+    </div>
+  </VStack>
+</ExampleWithThemeToggles>
+```
+
+### Placeholder Text
+
+Please use placeholder text with caution. Because placeholder text disappears as soon as a user enters text, it is not accessible for people with cognitive or visual disabilities. Do not place essential information or instructions related to the input in placeholder text. Instead, use Helper Text.
+
+```jsx live
+<ExampleWithThemeToggles>
+  <TextInput label="Label" placeholder="placeholder" />
+</ExampleWithThemeToggles>
+```
+
+### Helper Text
+
+Helper Text appears below the Text Input and does not disappear. Use Helper Text to provide additional context or instruction about the input. Helper Text is dynamic and can handle sentiment states such as success or error states.
+
+#### Default Sentiment
+
+```jsx live
+<ExampleWithThemeToggles>
+  <VStack gap={3}>
+    <div>
+      Default sentiment
+      <TextInput
+        label="Campaign title"
+        placeholder="Title"
+        helperText="This won't be displayed to user"
+      />
+    </div>
+
+    <div>
+      Positive sentiment
+      <TextInput
+        label="Address"
+        helperText="Valid BTC address"
+        variant="positive"
+        placeholder="HaeJiWplJohn6W42eCq0Qqft0"
+        end={<Icon color="positive" name="visibleActive" size="m" />}
+      />
+    </div>
+
+    <div>
+      Negative Sentiment
+      <TextInput
+        label="Address"
+        helperText="Invalid BTC address"
+        variant="negative"
+        placeholder="HaeJiWplJohn6W42eCq0Qqft0"
+        end={<Icon color="negative" name="visibleActive" size="m" />}
+      />
+    </div>
+  </VStack>
+</ExampleWithThemeToggles>
+```
+
+### Content Alignment
+
+You have the option to align input content to the left or right. However, please use with caution. Also, be consistent with your alignment.
+All inputs will be left aligned by default.
+
+We recommend right aligning input content when using the compact variant.
+
+```jsx live
+<ExampleWithThemeToggles>
+  <VStack gap={3}>
+    <div>
+      Left aligned. This is the default setting.
+      <TextInput label="City/town" placeholder="Oakland" />
+    </div>
+
+    <div>
+      Right aligned. Used with compact
+      <TextInput
+        label="Limit price"
+        compact
+        align="right"
+        type="number"
+        step="0.01"
+        placeholder="29.3"
+        suffix="USD"
+      />
+    </div>
+  </VStack>
+</ExampleWithThemeToggles>
+```
+
+### StartContent & EndContent
+
+We’ve built TextField so you can add many different types of content at the start or end of the input.
+
+Here are some examples and best practices when using content in a TextField.
+
+### Examples of Input Objects placed at the Start
+
+```jsx live
+function StartContentExamples() {
+  const profileImg =
+    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAKAAoAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+t6KPxr0D4VeF7fVJrjUbtFmjgYJFGwyu/GSSPYY/OgDhvsFz5PnfZ5vJ6+ZsO386gr6awMY7V5N8VvC9vpklvqVoiwpO5jlRRhd+MggdsgHP0oA8+oo/GigA/CvR/hJ4hgtHudLndYmmcSQljgM2MFfrwMfjXnKIZHVEBZmOAo5JNez+DPh7aaHbR3N7EtxqLDcd4ysXsB6+/5UAdnz6V5Z8XPEMF19n0qB1laF/NmKnIVsEBfryc/hXqXHvXG+NPh7aa5bSXNlEtvqKgsNgwsvsR6+/wCdAHi/4UUroY3ZHBVlOCp4IPpRQB1Xwy05dR8WW5cBlt1afHuOB+RIP4V7hz60UUAHPrRz60UUAeH/ABN05dO8WXBQBUuEWfHucg/qCfxooooA/9k=';
+
+  const btcAssetIcon =
+    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAwIDIwMDAiIHdpZHRoPSIyMDAwIiBoZWlnaHQ9IjIwMDAiPjxwYXRoIGQ9Ik0xOTcwLDEyNDJjLTEzMy40OCw1MzUuNjYtNjc2LjE4LDg2MS42OC0xMjEyLDcyOFMtMTAzLjY5LDEyOTMuODksMzAsNzU4LjE4LDcwNi4xMi0xMDMuNywxMjQxLjgyLDMwLDIxMDMuNjksNzA2LjE2LDE5NzAsMTI0MmgwWiIgZmlsbD0iI2Y3OTMxYSIvPjxwYXRoIGQ9Ik0xNDQxLDg1Ny41M2MxOS44OC0xMzMuMDctODEuNDQtMjA0LjYxLTIyMC0yNTIuMzNsNDUtMTgwLjI1LTEwOS43Ni0yNy4zNC00My44NCwxNzUuNTFjLTI4LjgyLTcuMTgtNTguNDQtMTQtODcuODgtMjAuNjhsNDQtMTc2LjY3TDk1OC44NywzNDguNDMsOTE0LDUyOC42MSw2OTIuNjgsNDczLjc5LDY2My40OCw1OTFzODEuNDIsMTguNjYsNzkuNywxOS44MmM0NC40NCwxMS4xLDUyLjUsNDAuNSw1MS4xNCw2My44MmwtMTIzLjE0LDQ5My44Yy01LjQ0LDEzLjUtMTkuMjIsMzMuNzQtNTAuMjgsMjYsMS4xLDEuNi03OS43Ni0yMC03OS43Ni0yMGwtNTQuNDgsMTI1Ljc5LDIyMSw1NS44LTQ1LjQyLDE4Mi4zNSwxMDkuNiwyNy4zNCw0NS0xODAuMzljMzAsOC4xMiw1OSwxNS42Miw4Ny40MiwyMi42OGwtNDQuODIsMTc5LjU1LDEwOS43NCwyNy4zNCw0NS40Mi0xODJjMTg3LjEzLDM1LjQsMzI3Ljg1LDIxLjEyLDM4Ny0xNDgsNDcuNzItMTM2LjI1LTIuMzQtMjE0Ljg1LTEwMC44LTI2Ni4xMyw3MS43LTE2LjYsMTI1LjctNjMuNzQsMTQwLjExLTE2MS4xN20tMjUwLjcxLDM1MS41MmMtMzQsMTM2LjI1LTI2My4zNSw2Mi42Mi0zMzcuNzcsNDQuMTJsNjAuMjYtMjQxLjU1Yzc0LjM4LDE4LjU2LDMxMi44OSw1NS4zMiwyNzcuNTUsMTk3LjQxbTM0LTM1My41Yy0zMC45NCwxMjQtMjIxLjkxLDYxLTI4My44OSw0NS41NEw5OTQuOTEsNjgyYzYyLDE1LjQ4LDI2MS41MSw0NC4zLDIyOS4yNSwxNzMuNTkiIGZpbGw9IiNmZmYiLz48L3N2Zz4=';
+
+  return (
+    <ExampleWithThemeToggles>
+      <VStack gap={3}>
+        <div>
+          Avatar - Use the avatar object at the start of an input for inputs like username.
+          <TextInput
+            label="Email"
+            placeholder="brian@coinbase.com"
+            start={
+              <Box spacingHorizontal={1}>
+                <Avatar size={30} src={profileImg} name="s" />
+              </Box>
+            }
+          />
+        </div>
+
+        <div>
+          Asset - Asset objects are not interactive
+          <TextInput
+            label="Address"
+            start={
+              <Box spacingHorizontal={1}>
+                <Avatar size={30} src={btcAssetIcon} name="address" />
+              </Box>
+            }
+            placeholder="HaeJiWplJohn6W42eCq0Qqft0"
+          />
+        </div>
+
+        <div>
+          Icon - Icon objects are not interactive.
+          <TextInput
+            label="Amount"
+            start={
+              <Box spacingHorizontal={1}>
+                <Icon color="foreground" name="cashUSD" size="s" />
+              </Box>
+            }
+            placeholder={1234}
+          />
+        </div>
+
+        <div>
+          IconButton - The most common use case for Icon Button at the start of a Text Field is
+          search.
+          <TextInput
+            label="Search"
+            start={<IconButton transparent name="search" />}
+            placeholder="Search for anything"
+          />
+        </div>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+## Example of Input Objects placed at the End
+
+Here are some examples and best practices when using end content in a TextField.
+
+### Icon
+
+Icon objects are not interactive.
+
+```jsx live
+<ExampleWithThemeToggles>
+  <VStack gap={3}>
+    <div>
+      Icon - Icon objects are not interactive.
+      <TextInput
+        label="Address"
+        placeholder="1234 Abc Way"
+        end={<Icon name="checkmark" size="m" variant="positive" />}
+      />
+    </div>
+
+    <div>
+      The most common use case for placing a text object at the end of an input is currency. This
+      object is not interactive.
+      <TextInput
+        label="Amount"
+        type="number"
+        step="0.01"
+        compact
+        placeholder="98329.23"
+        suffix="USD"
+      />
+    </div>
+
+    <div>
+      You can add a Text Button object at the end of an Input. “Copy” is a great example of this.
+      <TextInput
+        label="API Access Token"
+        placeholder="HaeJiWplJohn6W42eCq0Qqft0"
+        end={
+          <Link color="primary" to="">
+            COPY
+          </Link>
+        }
+      />
+    </div>
+  </VStack>
+</ExampleWithThemeToggles>
+```
+
+### Password input
+
+Password Input - Use Icon Buttons at the end for actions like showing a password or clearing text from an input
+
+```jsx live
+function PasswordInput() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [type, setType] = useState('text');
+
+  useEffect(() => {
+    setType(isVisible ? 'text' : 'password');
+  }, [isVisible]);
+
+  // If you want to also change color of end and start content
+  // when focused, you can do this.
+  const handleOnFocus = useCallback(() => {
+    setFocused(true);
+  }, [setFocused]);
+
+  const handleOnBlur = useCallback(() => {
+    setFocused(false);
+  }, [setFocused]);
+
+  const handleOnPress = useCallback(() => {
+    setIsVisible(!isVisible);
+  }, [isVisible]);
+
+  return (
+    <ExampleWithThemeToggles>
+      <TextInput
+        label="Password"
+        type={type}
+        onFocus={handleOnFocus}
+        onBlur={handleOnBlur}
+        end={
+          <IconButton
+            transparent
+            name={isVisible ? 'visibleActive' : 'visibleInactive'}
+            variant={focused ? 'primary' : 'secondary'}
+            onPress={handleOnPress}
+          />
+        }
+        size="m"
+      />
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Link + Icon Button
+
+If needed, you can add a Link + Icon Button like this example here. Use this sparingly and only at the End of an Input.
+
+```jsx live
+function CopyTextField() {
+  const [copied, setCopied] = useState(false);
+  const [variant, setVariant] = useState('foregroundMuted');
+  const [helperText, setHelperText] = useState('');
+
+  useEffect(() => {
+    if (copied) {
+      setVariant('positive');
+      setHelperText('Your token has been copied!');
+    } else {
+      setVariant('foregroundMuted');
+      setHelperText('');
+    }
+  }, [copied]);
+
+  const handleOnCopy = useCallback(() => {
+    setCopied(!copied);
+  }, [copied]);
+
+  const handleOnChange = useCallback(() => {
+    setVariant('foregroundMuted');
+    setCopied(false);
+    setHelperText('');
+  }, []);
+
+  return (
+    <ExampleWithThemeToggles>
+      <div>
+        <TextInput
+          /* eslint-disable jsx-a11y/anchor-is-valid */
+          end={
+            <HStack>
+              <Link onPress={handleOnCopy} color={variant}>
+                {copied ? 'copied' : 'copy'}
+              </Link>
+              <Icon spacingHorizontal={1} color="primary" name="visibleActive" size="m" />
+            </HStack>
+          }
+          onChange={handleOnChange}
+          variant={variant}
+          helperText={helperText}
+          label="API Access Token"
+        />
+      </div>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Disabled
+
+```jsx live
+<ExampleWithThemeToggles>
+  <TextInput label="Label" disabled />
+</ExampleWithThemeToggles>
+```

@@ -1,11 +1,11 @@
 ```jsx live
 function InputsKitchenSinkExample() {
   function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
-	return {
-		width,
-		height,
-	};
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height,
+    };
   }
 
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
@@ -19,7 +19,7 @@ function InputsKitchenSinkExample() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const onSubmit = useCallback((e) => {
+  const onSubmit = useCallback(e => {
     e.preventDefault();
     // eslint-disable-next-line no-console
     console.log(e.currentTarget.nodeValue);
@@ -28,59 +28,58 @@ function InputsKitchenSinkExample() {
   }, []);
 
   return (
-
     <ExampleWithThemeToggles>
-		<ThemeProvider>
-			<form onSubmit={onSubmit} action={undefined}>
-				<VStack gap={5} spacing={windowDimensions.width < 400 ? 0.5 : 10}>
-					{/* TextField 1 */}
-					<TextField
-						label="Campaign title"
-						aria-label="campain title"
-						helperText="This won't be displayed to users"
-						placeholder="Title"
-					/>
-					{/* TextField 2 */}
-					<TextField
-						label="Campaign description"
-						aria-label="campain description"
-						helperText="A one-line description that users will see"
-						placeholder="Description"
-					/>
-					{/* TextField 3 */}
-					<TextField
-						start={
-							<Icon spacingTop={0.5} spacingEnd={2} size="s" color="foreground" name="cashUSD" />
-						}
-						label="Campaign budget"
-						placeholder="0"
-						suffix="BAL"
-					/>
-					{/* TextField 4 */}
-					<TextField
-						label="US wallet account UUID"
-						placeholder="US wallet account UUID"
-						helperText="Get account UUID from https://admin.cbhq.net"
-					/>
-					{/* TextField 5 */}
-					<TextField
-						label="UK wallet account UUID"
-						placeholder="UK wallet account UUID"
-						helperText="Get account UUID from https://admin.cbhq.net"
-					/>
-					{/* TextField 6 */}
-					<TextField
-						label="UK wallet account UUID"
-						placeholder="UK wallet account UUID"
-						helperText="Get account UUID from https://admin.cbhq.net"
-					/>
-					<HStack justifyContent="flex-end">
-						<Button type="submit">Next: add images</Button>
-					</HStack>
-				</VStack>
-			</form>
-		</ThemeProvider>
+      <ThemeProvider>
+        <form onSubmit={onSubmit} action={undefined}>
+          <VStack gap={5} spacing={windowDimensions.width < 400 ? 0.5 : 10}>
+            {/* TextInput 1 */}
+            <TextInput
+              label="Campaign title"
+              aria-label="campain title"
+              helperText="This won't be displayed to users"
+              placeholder="Title"
+            />
+            {/* TextInput 2 */}
+            <TextInput
+              label="Campaign description"
+              aria-label="campain description"
+              helperText="A one-line description that users will see"
+              placeholder="Description"
+            />
+            {/* TextInput 3 */}
+            <TextInput
+              start={
+                <Icon spacingTop={0.5} spacingEnd={2} size="s" color="foreground" name="cashUSD" />
+              }
+              label="Campaign budget"
+              placeholder="0"
+              suffix="BAL"
+            />
+            {/* TextInput 4 */}
+            <TextInput
+              label="US wallet account UUID"
+              placeholder="US wallet account UUID"
+              helperText="Get account UUID from https://admin.cbhq.net"
+            />
+            {/* TextInput 5 */}
+            <TextInput
+              label="UK wallet account UUID"
+              placeholder="UK wallet account UUID"
+              helperText="Get account UUID from https://admin.cbhq.net"
+            />
+            {/* TextInput 6 */}
+            <TextInput
+              label="UK wallet account UUID"
+              placeholder="UK wallet account UUID"
+              helperText="Get account UUID from https://admin.cbhq.net"
+            />
+            <HStack justifyContent="flex-end">
+              <Button type="submit">Next: add images</Button>
+            </HStack>
+          </VStack>
+        </form>
+      </ThemeProvider>
     </ExampleWithThemeToggles>
-	)
+  );
 }
 ```

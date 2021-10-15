@@ -17,6 +17,7 @@ export const components = [
   'Checkbox',
   'RadioGroup',
   'Switch',
+  'TextInput',
   'Icon',
   'NavigationIcon',
   'SubBrandLogoMark',
@@ -53,5 +54,4 @@ export const components = [
   'TableRow',
   'Sparkline',
   'SparklineGradient',
-  'Avatar',
 ] as const;

@@ -1,4 +1,4 @@
-import { InputStack } from '@cbhq/cds-mobile/layout/InputStack';
+import { InputStack } from '@cbhq/cds-mobile/controls/InputStack';
 import React from 'react';
 
 import { TextBody } from '@cbhq/cds-mobile/typography';

@@ -2,7 +2,7 @@ import { InputBaseProps } from './InputBaseProps';
 import { SharedProps } from './SharedProps';
 import { TextAlignProps } from './TextBaseProps';
 
-export type TextFieldBaseProps = {
+export type TextInputBaseProps = {
   /** Short messageArea indicating purpose of input */
   label: string;
   /** Placeholder text */

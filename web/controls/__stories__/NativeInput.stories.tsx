@@ -1,7 +1,7 @@
 import { css } from 'linaria';
 import { useCallback } from 'react';
 import { NativeInput } from '../NativeInput';
-import { InputStack } from '../../layout/InputStack';
+import { InputStack } from '../InputStack';
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 
 /* eslint-disable no-console */

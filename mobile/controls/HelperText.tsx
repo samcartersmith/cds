@@ -3,7 +3,7 @@ import { InputVariant } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { TextLabel2, TextBody, TextProps } from '../typography';
 
-export type InputTextProps = {
+export type HelperTextProps = {
   /**
    * Determines the color of the text
    * @default foregroundMuted
@@ -11,7 +11,7 @@ export type InputTextProps = {
   color?: InputVariant;
 } & TextProps;
 
-export const HelperText = memo(function HelperText({ ...props }: InputTextProps) {
+export const HelperText = memo(function HelperText({ ...props }: HelperTextProps) {
   const density = useScaleDensity();
 
   if (density === 'dense') {

@@ -7,7 +7,8 @@ import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { usePalette } from '../hooks/usePalette';
-import { HStack, VStack } from '.';
+import { HStack } from '../layout/HStack';
+import { VStack } from '../layout/VStack';
 import { DangerouslySetStyle } from '../types';
 
 export type InputStackProps = {

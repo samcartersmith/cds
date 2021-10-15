@@ -2,12 +2,12 @@ import { css } from 'linaria';
 import { withPerformance } from 'storybook-addon-performance';
 import { createStories } from ':cds-storybook/stories/PerformanceBenchmark';
 
-import { TextField } from '../TextField';
+import { TextInput } from '../TextInput';
 import { Link } from '../../typography/Link';
 
 export default {
-  title: 'Core Components/Inputs/TextFieldPerformance',
-  component: TextField,
+  title: 'Core Components/Inputs/TextInputPerformance',
+  component: TextInput,
   decorators: [withPerformance],
 };
 
@@ -15,9 +15,9 @@ const borderStyle = css`
   border-width: 1px;
 `;
 
-export const CDSTextField = () => {
+export const CDSTextInput = () => {
   return (
-    <TextField
+    <TextInput
       label="Label"
       start={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
@@ -47,4 +47,4 @@ export const {
   HundredHTMLComponent,
   ThousandCDSComponents,
   ThousandHTMLComponent,
-} = createStories(CDSTextField, HTMLInput);
+} = createStories(CDSTextInput, HTMLInput);

@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
-import { TextField } from '../TextField';
+import { TextInput } from '../TextInput';
 import { IconButton } from '../../buttons';
 import { HStack } from '../../layout';
 import { Link } from '../../typography';
@@ -9,8 +9,8 @@ import { Icon } from '../../icons';
 /* eslint-disable no-console */
 
 export default {
-  title: 'Core Components/Inputs/TextField',
-  component: TextField,
+  title: 'Core Components/Inputs/TextInput',
+  component: TextInput,
 };
 
 /**
@@ -26,15 +26,15 @@ export const Basic = function Basic() {
     console.log('Blurring');
   }, []);
 
-  return <TextField label="Label" onFocus={onFocus} onBlur={onBlur} />;
+  return <TextInput label="Label" onFocus={onFocus} onBlur={onBlur} />;
 };
 
 export const Placeholder = function Placeholder() {
-  return <TextField label="Label" placeholder="placeholder" />;
+  return <TextInput label="Label" placeholder="placeholder" />;
 };
 
 export const HelperText = function HelperText() {
-  return <TextField label="Label" placeholder="placeholder" helperText="helperText" />;
+  return <TextInput label="Label" placeholder="placeholder" helperText="helperText" />;
 };
 
 export const Align = function Align() {
@@ -43,7 +43,7 @@ export const Align = function Align() {
   return (
     <>
       {alignments.map((align) => (
-        <TextField label="Label" placeholder="placeholder" helperText="helperText" align={align} />
+        <TextInput label="Label" placeholder="placeholder" helperText="helperText" align={align} />
       ))}
     </>
   );
@@ -55,7 +55,7 @@ export const Variants = function Variants() {
   return (
     <>
       {variants.map((variant) => (
-        <TextField
+        <TextInput
           label="Label"
           placeholder="placeholder"
           helperText="helperText"
@@ -72,7 +72,7 @@ export const Width = function Width() {
   return (
     <>
       {widths.map((width) => (
-        <TextField
+        <TextInput
           key={`input-width-${width}%`}
           label={`Width: ${width}%`}
           placeholder="placeholder"
@@ -85,16 +85,16 @@ export const Width = function Width() {
 };
 
 export const Disabled = function Disabled() {
-  return <TextField label="Label" disabled />;
+  return <TextInput label="Label" disabled />;
 };
 
 export const StartContent = function StartContent() {
-  return <TextField label="Label" start={<IconButton name="add" transparent />} />;
+  return <TextInput label="Label" start={<IconButton name="add" transparent />} />;
 };
 
 export const EndContent = function EndContent() {
   return (
-    <TextField
+    <TextInput
       label="Label"
       end={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
@@ -107,11 +107,11 @@ export const EndContent = function EndContent() {
 };
 
 export const Suffix = function Suffix() {
-  return <TextField label="Label" suffix="USD" />;
+  return <TextInput label="Label" suffix="USD" />;
 };
 
 export const SuffixAndEndContent = function SuffixAndEndContent() {
-  return <TextField label="Label" suffix="USD" end={<IconButton name="add" transparent />} />;
+  return <TextInput label="Label" suffix="USD" end={<IconButton name="add" transparent />} />;
 };
 
 /**
@@ -119,12 +119,12 @@ export const SuffixAndEndContent = function SuffixAndEndContent() {
  */
 
 export const CompactInput = function CompactInput() {
-  return <TextField label="Label" compact />;
+  return <TextInput label="Label" compact />;
 };
 
 export const CompactInputStart = function CompactInputStart() {
   return (
-    <TextField
+    <TextInput
       label="Label"
       start={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
@@ -139,7 +139,7 @@ export const CompactInputStart = function CompactInputStart() {
 
 export const CompactInputEnd = function CompactInputEnd() {
   return (
-    <TextField
+    <TextInput
       label="Label"
       end={
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
@@ -153,11 +153,11 @@ export const CompactInputEnd = function CompactInputEnd() {
 };
 
 export const CompactInputSuffix = function CompactInputSuffix() {
-  return <TextField label="Label" suffix="USD" compact />;
+  return <TextInput label="Label" suffix="USD" compact />;
 };
 
 export const CompactHelperText = function CompactHelperText() {
-  return <TextField label="Label" suffix="USD" compact helperText="helperText" />;
+  return <TextInput label="Label" suffix="USD" compact helperText="helperText" />;
 };
 
 export const InputOnChange = function InputOnChange() {
@@ -169,7 +169,7 @@ export const InputOnChange = function InputOnChange() {
 
   return (
     <div>
-      <TextField onChange={onChange} helperText={inputText} label="Label" />
+      <TextInput onChange={onChange} helperText={inputText} label="Label" />
     </div>
   );
 };
@@ -180,7 +180,7 @@ export const InputOnChange = function InputOnChange() {
  * to prove that it can be done with our component.
  */
 
-export const CopyTextField = function CopyTextField() {
+export const CopyTextInput = function CopyTextInput() {
   const [copied, setCopied] = useState(false);
   const [variant, setVariant] = useState<InputVariant>('foregroundMuted');
 
@@ -201,7 +201,7 @@ export const CopyTextField = function CopyTextField() {
 
   return (
     <div>
-      <TextField
+      <TextInput
         /* eslint-disable jsx-a11y/anchor-is-valid */
         end={
           <HStack>

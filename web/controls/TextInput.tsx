@@ -1,26 +1,22 @@
-import { TextFieldBaseProps } from '@cbhq/cds-common/types/TextFieldBaseProps';
-import React, { useState, memo } from 'react';
-import {
-  TextInputProps as RNTextInputProps,
-  NativeSyntheticEvent,
-  TextInputFocusEventData,
-} from 'react-native';
+import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
+import React, { useCallback, useState, memo } from 'react';
+
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+
+import { TextLabel1 } from '../typography';
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
 
-import { InputStack } from '../layout/InputStack';
+import { InputStack } from './InputStack';
 
-import { Box } from '../layout/Box';
-import { InputLabel } from './InputLabel';
-import { useInputBorderStyle } from '../hooks/useInputStyles';
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
-import { TextLabel1 } from '../typography/TextLabel1';
+import { InputLabel } from './InputLabel';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 
-export type TextFieldProps = TextFieldBaseProps & RNTextInputProps;
+export type TextInputProps = TextInputBaseProps & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const TextField = memo(function TextField({
+export const TextInput = memo(function TextInput({
   label,
   helperText = '',
   variant = 'foregroundMuted',
@@ -30,34 +26,42 @@ export const TextField = memo(function TextField({
   width = 100,
   disabled = false,
   align = 'start',
-  compact,
+  compact = false,
   suffix = '',
-  ...editableInputProps
-}: TextFieldProps) {
+  onFocus,
+  onBlur,
+  ...htmlInputElmProps
+}: TextInputProps) {
   const [focused, setFocused] = useState(false);
   const variantWithFocus = useInputVariant(focused, variant);
   const inputBorderStyle = useInputBorderStyle(focused);
 
-  const editableInputAddonProps = {
-    ...editableInputProps,
-    onFocus: (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      editableInputProps?.onFocus?.(e);
+  const handleOnFocus = useCallback(
+    (e: React.FocusEvent<HTMLInputElement>) => {
+      onFocus?.(e);
       setFocused(true);
     },
-    onBlur: (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-      editableInputProps?.onBlur?.(e);
+    [setFocused, onFocus],
+  );
+
+  const handleOnBlur = useCallback(
+    (e: React.FocusEvent<HTMLInputElement>) => {
+      onBlur?.(e);
       setFocused(false);
     },
-  };
+    [setFocused, onBlur],
+  );
 
   /**
-   * If startContent exist, the padding
+   * If start exist, the padding
    * between input area and icon should be 0.5 (4px).
-   * This is not the case when there is no startContent.
+   * This is not the case when there is no start.
    * In normal circumnstances, spacing horizontal should be 2 (16px)
    */
   const startSpacing = useSpacingStyles({
+    spacingVertical: 2,
     spacingStart: 0.5,
+    spacingEnd: 2,
   });
 
   return (
@@ -65,14 +69,16 @@ export const TextField = memo(function TextField({
       testID={testID}
       width={width}
       disabled={disabled}
-      variant={variantWithFocus}
       borderStyle={inputBorderStyle}
+      variant={variantWithFocus}
       inputNode={
         <NativeInput
-          containerSpacing={start ? startSpacing : {}}
           align={align}
+          containerSpacing={start ? startSpacing : undefined}
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
           disabled={disabled}
-          {...editableInputAddonProps}
+          {...htmlInputElmProps}
         />
       }
       helperTextNode={
@@ -85,16 +91,20 @@ export const TextField = memo(function TextField({
       labelNode={!compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
       startNode={
         (compact || !!start) && (
-          <Box justifyContent="center" alignItems="center" spacingStart={1}>
-            {compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
+          <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2}>
+            {compact && <InputLabel>{label}</InputLabel>}
             {!!start && <>{start}</>}
-          </Box>
+          </HStack>
         )
       }
       endNode={
         (suffix !== '' || !!end) && (
           <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2}>
-            {suffix !== '' && <TextLabel1 color="foregroundMuted">{suffix}</TextLabel1>}
+            {suffix !== '' && (
+              <TextLabel1 as="p" color="foregroundMuted">
+                {suffix}
+              </TextLabel1>
+            )}
             {!!end && <>{end}</>}
           </HStack>
         )

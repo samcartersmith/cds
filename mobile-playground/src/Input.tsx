@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
 import { Icon } from '@cbhq/cds-mobile/icons';
 
-import { TextField, TextFieldProps } from '@cbhq/cds-mobile/inputs/TextField';
+import { TextInput, TextInputProps } from '@cbhq/cds-mobile/controls/TextInput';
 
 import { TextBody } from '@cbhq/cds-mobile/typography';
 
@@ -11,16 +11,16 @@ import { Button } from '@cbhq/cds-mobile/buttons';
 import ExamplesScreen from './internal/ExamplesScreen';
 import Example from './internal/Example';
 
-const MockTextInput = ({ ...props }: TextFieldProps) => {
+const MockTextInput = ({ ...props }: TextInputProps) => {
   const [text, onChangeText] = useState('');
 
-  return <TextField onChangeText={onChangeText} value={text} {...props} />;
+  return <TextInput onChangeText={onChangeText} value={text} {...props} />;
 };
 
-const MockCompactTextInput = ({ ...props }: TextFieldProps) => {
+const MockCompactTextInput = ({ ...props }: TextInputProps) => {
   const [text, onChangeText] = useState('');
 
-  return <TextField compact onChangeText={onChangeText} value={text} {...props} />;
+  return <TextInput compact onChangeText={onChangeText} value={text} {...props} />;
 };
 
 const MockComplexInput = () => {
@@ -28,7 +28,7 @@ const MockComplexInput = () => {
 
   return (
     <HStack justifyContent="center">
-      <TextField width={50} label="Test" onChangeText={onChangeText} value={text} />
+      <TextInput width={50} label="Test" onChangeText={onChangeText} value={text} />
       <VStack spacingTop={0.5}>
         <Box spacingTop={3}>
           <Button>Hello</Button>
@@ -41,7 +41,7 @@ const MockComplexInput = () => {
 export default function InputScreen() {
   return (
     <ExamplesScreen>
-      <Example inline title="TextField ForegroundMuted">
+      <Example inline title="TextInput ForegroundMuted">
         <MockTextInput
           label="Username"
           helperText="username must start with an @ symbol"
@@ -49,7 +49,7 @@ export default function InputScreen() {
           placeholder="john.doe@coinbase.com"
         />
       </Example>
-      <Example inline title="TextField Positive">
+      <Example inline title="TextInput Positive">
         <MockTextInput
           label="Username"
           helperText="username must start with an @ symbol"
@@ -57,7 +57,7 @@ export default function InputScreen() {
           placeholder="john.doe@coinbase.com"
         />
       </Example>
-      <Example inline title="TextField Negative">
+      <Example inline title="TextInput Negative">
         <MockTextInput
           label="Username"
           helperText="username must start with an @ symbol"
@@ -65,7 +65,7 @@ export default function InputScreen() {
           placeholder="john.doe@coinbase.com"
         />
       </Example>
-      <Example inline title="TextField startNode">
+      <Example inline title="TextInput startNode">
         <MockTextInput
           start={<IconButton variant="foregroundMuted" name="search" transparent />}
           label="Search"
@@ -74,7 +74,7 @@ export default function InputScreen() {
           placeholder="ex. Bitcoin"
         />
       </Example>
-      <Example inline title="TextField endNode">
+      <Example inline title="TextInput endNode">
         <MockTextInput
           end={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
           label="Search"
@@ -83,7 +83,7 @@ export default function InputScreen() {
           placeholder="ex. Bitcoin"
         />
       </Example>
-      <Example inline title="TextField endNode 50%">
+      <Example inline title="TextInput endNode 50%">
         <MockTextInput
           end={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
           label="Search"
@@ -93,7 +93,7 @@ export default function InputScreen() {
           placeholder="ex. Bitcoin"
         />
       </Example>
-      <Example inline title="TextField Start Align Input Text and HelperText">
+      <Example inline title="TextInput Start Align Input Text and HelperText">
         <MockTextInput
           label="Search"
           placeholder="ex. Bitcoin"
@@ -101,7 +101,7 @@ export default function InputScreen() {
           helperText="HelperText"
         />
       </Example>
-      <Example inline title="TextField End Align Input Text and HelperText">
+      <Example inline title="TextInput End Align Input Text and HelperText">
         <MockTextInput
           label="Search"
           placeholder="ex. Bitcoin"
@@ -109,7 +109,7 @@ export default function InputScreen() {
           align="end"
         />
       </Example>
-      <Example inline title="TextField start/end Node">
+      <Example inline title="TextInput start/end Node">
         <MockTextInput
           end={<TextBody color="foregroundMuted">Cancel</TextBody>}
           start={<IconButton name="search" transparent />}
@@ -119,7 +119,7 @@ export default function InputScreen() {
           placeholder="ex. Bitcoin"
         />
       </Example>
-      <Example inline title="TextField Disabled">
+      <Example inline title="TextInput Disabled">
         <MockTextInput
           disabled
           label="One Time Password"
@@ -127,14 +127,14 @@ export default function InputScreen() {
           placeholder="189-280-1111"
         />
       </Example>
-      <Example inline title="CompactTextField">
+      <Example inline title="CompactTextInput">
         <MockCompactTextInput
           label="One Time Password"
           variant="foregroundMuted"
           placeholder="189-280-1111"
         />
       </Example>
-      <Example inline title="CompactTextField Negative">
+      <Example inline title="CompactTextInput Negative">
         <MockCompactTextInput
           label="One Time Password"
           variant="negative"
@@ -142,7 +142,7 @@ export default function InputScreen() {
           helperText="Password is in an incorrect format"
         />
       </Example>
-      <Example inline title="CompactTextField Positive">
+      <Example inline title="CompactTextInput Positive">
         <MockCompactTextInput
           label="One Time Password"
           variant="positive"
@@ -150,7 +150,7 @@ export default function InputScreen() {
           helperText="Password is looking good!"
         />
       </Example>
-      <Example inline title="CompactTextField Start Align Input Text and HelperText">
+      <Example inline title="CompactTextInput Start Align Input Text and HelperText">
         <MockCompactTextInput
           label="One Time Password"
           placeholder="189-280-1111"
@@ -158,10 +158,10 @@ export default function InputScreen() {
           helperText="Password is looking good!"
         />
       </Example>
-      <Example inline title="CompactTextField 50%">
+      <Example inline title="CompactTextInput 50%">
         <MockCompactTextInput label="Bitcoin" width={50} placeholder="190" />
       </Example>
-      <Example inline title="CompactTextField Disabled">
+      <Example inline title="CompactTextInput Disabled">
         <MockCompactTextInput label="Bitcoin" disabled />
       </Example>
       <Example>

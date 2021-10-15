@@ -5,26 +5,26 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-(web|mobile)/inputs/TextField](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/inputs/TextField.tsx)
+> [@cbhq/cds-(web|mobile)/controls/TextInput](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/TextInput.tsx)
 
-<ComponentDetails componentName="TextField" templateName="intro" />
+<ComponentDetails componentName="TextInput" templateName="intro" />
 
 ## Usage
 
-<ComponentDetails componentName="TextField" templateName="usage" />
+<ComponentDetails componentName="TextInput" templateName="usage" />
 
 ## Accessibility
 
-<ComponentDetails componentName="TextField" templateName="a11y" />
+<ComponentDetails componentName="TextInput" templateName="a11y" />
 
 ## Props
 
-### align 
+### align
 
 Aligns text inside input and helperText
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="align"
   required={false}
   defaultValue="start"
@@ -32,14 +32,14 @@ Aligns text inside input and helperText
   webOptions={['center', 'end', 'justify', 'start']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-align" />
+<ComponentDetails componentName="TextInput" templateName="prop-align" />
 
-### compact 
+### compact
 
 Enables compact variation
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="compact"
   required={false}
   defaultValue="false"
@@ -47,14 +47,14 @@ Enables compact variation
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-compact" />
+<ComponentDetails componentName="TextInput" templateName="prop-compact" />
 
-### disabled 
+### disabled
 
 Toggles input interactability and opacity
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="disabled"
   required={false}
   defaultValue="false"
@@ -62,14 +62,14 @@ Toggles input interactability and opacity
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-disabled" />
+<ComponentDetails componentName="TextInput" templateName="prop-disabled" />
 
-### end 
+### end
 
 Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="end"
   required={false}
   defaultValue=""
@@ -97,14 +97,14 @@ Adds content to the end of the inner input. Refer to diagram for location of end
   ]}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-end" />
+<ComponentDetails componentName="TextInput" templateName="prop-end" />
 
-### helperText 
+### helperText
 
 For cases where label is not enough information to describe what the text input is for. Can also be used for showing positive/negative messages
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="helperText"
   required={false}
   defaultValue=""
@@ -112,29 +112,29 @@ For cases where label is not enough information to describe what the text input 
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-helperText" />
+<ComponentDetails componentName="TextInput" templateName="prop-helperText" />
 
-### label 
+### label
 
 Short messageArea indicating purpose of input
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="label"
   required={true}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={[]}
+  webOptions={[]}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-label" />
+<ComponentDetails componentName="TextInput" templateName="prop-label" />
 
-### placeholder 
+### placeholder
 
 Placeholder text
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="placeholder"
   required={false}
   defaultValue=""
@@ -142,14 +142,14 @@ Placeholder text
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-placeholder" />
+<ComponentDetails componentName="TextInput" templateName="prop-placeholder" />
 
-### start 
+### start
 
 Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="start"
   required={false}
   defaultValue=""
@@ -177,14 +177,14 @@ Adds content to the start of the inner input. Refer to diagram for location of s
   ]}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-start" />
+<ComponentDetails componentName="TextInput" templateName="prop-start" />
 
-### suffix 
+### suffix
 
 Adds suffix text to the end of input
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="suffix"
   required={false}
   defaultValue=""
@@ -192,14 +192,14 @@ Adds suffix text to the end of input
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-suffix" />
+<ComponentDetails componentName="TextInput" templateName="prop-suffix" />
 
-### testID 
+### testID
 
 Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="testID"
   required={false}
   defaultValue=""
@@ -207,14 +207,14 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-testID" />
+<ComponentDetails componentName="TextInput" templateName="prop-testID" />
 
-### variant 
+### variant
 
 Determines the sentiment of the input. Because we allow startContent and endContent to be custom ReactNode, the content placed inside these slots will not change colors according to the variant. You will have to add that yourself
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="variant"
   required={false}
   defaultValue="foregroundMuted"
@@ -222,14 +222,14 @@ Determines the sentiment of the input. Because we allow startContent and endCont
   webOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-variant" />
+<ComponentDetails componentName="TextInput" templateName="prop-variant" />
 
-### width 
+### width
 
 Width of input. The number is converted to percentage.
 
 <ApiDetails
-  componentName="TextField"
+  componentName="TextInput"
   propertyName="width"
   required={false}
   defaultValue="100"
@@ -237,6 +237,6 @@ Width of input. The number is converted to percentage.
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="TextField" templateName="prop-width" />
+<ComponentDetails componentName="TextInput" templateName="prop-width" />
 
-<ComponentDetails componentName="TextField" templateName="outro" />
+<ComponentDetails componentName="TextInput" templateName="outro" />
