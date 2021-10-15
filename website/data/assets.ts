@@ -58,3 +58,4 @@ export const assets = {
 };
 
 export const assetColors = Object.entries(assets).map(([, value]) => value.color);
+export const assetImages = Object.entries(assets).map(([, value]) => value.imageUrl);

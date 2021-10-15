@@ -40,12 +40,20 @@ import * as CDSAvatar from '@cbhq/cds-web/avatar';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
-import { assets, assetColors } from ':cds-website/data/assets';
+import { assets, assetColors, assetImages } from ':cds-website/data/assets';
 import { loremIpsum } from ':cds-website/data/loremIpsum';
 import { prices } from ':cds-website/data/prices';
 import { PatternArtboard } from ':cds-website/components/PatternArtboard';
 
 import { useStatusButtons } from './useStatusButtons';
+
+// Add any mock data for examples here
+const mocks = {
+  assets,
+  assetColors,
+  assetImages,
+  prices,
+};
 
 // Add react-live imports you need here
 const ReactLiveScope = {
@@ -100,6 +108,7 @@ const ReactLiveScope = {
   assets,
   assetColors,
   prices,
+  mocks,
   // Example components
   ColorTile,
   ExampleWithThemeToggles,

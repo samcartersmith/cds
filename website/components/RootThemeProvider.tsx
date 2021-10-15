@@ -11,14 +11,11 @@ const betaFeatures = { fontMigration: true };
 
 const overrides = css`
   display: contents;
-  :global() {
-    :root {
-      --ifm-avatar-photo-size-md: 80px;
-      --ifm-background-color: var(--background);
-      --ifm-pre-background: var(--background);
-      --ifm-color-primary: var(--primary);
-    }
-  }
+  --ifm-avatar-photo-size-md: 80px;
+  --ifm-background-color: var(--background);
+  --ifm-pre-background: var(--background);
+  --ifm-color-primary: var(--primary);
+  --ifm-link-color: var(--primary);
 `;
 
 const DocusaurusThemeProvider: React.FC = ({ children }) => {
