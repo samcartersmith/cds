@@ -26,7 +26,7 @@ IconButton ReactNode
 <ApiDetails
   componentName="CardHeader"
   propertyName="action"
-  required={true}
+  required={false}
   defaultValue=""
   mobileOptions={[
     'ReactElement<any, string | JSXElementConstructor<any>>',
@@ -449,10 +449,10 @@ Text to be displayed in TextCaption
 <ApiDetails
   componentName="CardHeader"
   propertyName="description"
-  required={true}
+  required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="CardHeader" templateName="prop-description" />
@@ -628,6 +628,21 @@ Set a maximum width.
 />
 
 <ComponentDetails componentName="CardHeader" templateName="prop-maxWidth" />
+
+### metaData
+
+Meta Data Text to be displayed in TextLegal
+
+<ApiDetails
+  componentName="CardHeader"
+  propertyName="metaData"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="CardHeader" templateName="prop-metaData" />
 
 ### minHeight
 

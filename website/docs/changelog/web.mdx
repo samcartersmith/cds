@@ -8,6 +8,39 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.25.0 (10/15/2021, 04:00 PM PST)
+
+#### 💥 Breaking
+
+- Rename TextField to TextInput and move to controls. [#38226](https://github.cbhq.net/mono/repo/pull/38226)
+
+#### 🚀 Updates
+
+- Never expose className. [#38156](https://github.cbhq.net/mono/repo/pull/38156)
+- Invert the indicateHover prop. [#38030](https://github.cbhq.net/mono/repo/pull/38030)
+- Specify default subtitle color. [#38049](https://github.cbhq.net/mono/repo/pull/38049)
+- Allow client control over TableCell content flow (vertical/horizontal). [#37989](https://github.cbhq.net/mono/repo/pull/37989)
+
+#### 🐞 Fixes
+
+- Remove tsconfig.tests.json. [#38174](https://github.cbhq.net/mono/repo/pull/38174)
+- **[Inputs]** Fix placeholder color in dark mode. Hide input Number arrow. Updated documentation. [#38145](https://github.cbhq.net/mono/repo/pull/38145)
+- Rename props. [#38179](https://github.cbhq.net/mono/repo/pull/38179)
+- Rename TableHead and TableFoot. [#38164](https://github.cbhq.net/mono/repo/pull/38164)
+- Rename border prop. [#38152](https://github.cbhq.net/mono/repo/pull/38152)
+- Card bug bash fixes. [#38131](https://github.cbhq.net/mono/repo/pull/38131)
+- Modal unit tests. [#37947](https://github.cbhq.net/mono/repo/pull/37947)
+- Fixes the stories using a sort example. [#38015](https://github.cbhq.net/mono/repo/pull/38015)
+- Allow all td and th props on TableCell. [#38009](https://github.cbhq.net/mono/repo/pull/38009)
+
+#### 📘 Misc
+
+- Support Meta data text in CardHeader, Add theme aware Artboard. [#38243](https://github.cbhq.net/mono/repo/pull/38243)
+- Avatar fixes. [#38073](https://github.cbhq.net/mono/repo/pull/38073)
+- Add documentation to inputs, and add live examples. [#37232](https://github.cbhq.net/mono/repo/pull/37232), [CDS-735](https://jira.coinbase-corp.com/browse/CDS-735)
+- Get Modal doc ready for prod. [#38080](https://github.cbhq.net/mono/repo/pull/38080)
+- Avatar unit tests. [#37942](https://github.cbhq.net/mono/repo/pull/37942)
+
 ## 0.24.9 (10/14/2021, 09:56 AM PST)
 
 #### 🚀 Updates

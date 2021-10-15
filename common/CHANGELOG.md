@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.25.0 (10/15/2021, 04:00 PM PST)
+
+#### 💥 Breaking
+
+- Rename TextField to TextInput and move to controls. [#38226](https://github.cbhq.net/mono/repo/pull/38226)
+
+#### 🐞 Fixes
+
+- Rename props. [#38179](https://github.cbhq.net/mono/repo/pull/38179)
+- Card bug bash fixes. [#38131](https://github.cbhq.net/mono/repo/pull/38131)
+- Modal unit tests. [#37947](https://github.cbhq.net/mono/repo/pull/37947)
+
+#### 📘 Misc
+
+- Support Meta data text in CardHeader, Add theme aware Artboard. [#38243](https://github.cbhq.net/mono/repo/pull/38243)
+- Avatar fixes. [#38073](https://github.cbhq.net/mono/repo/pull/38073)
+- Add documentation to inputs, and add live examples. [#37232](https://github.cbhq.net/mono/repo/pull/37232), [CDS-735](https://jira.coinbase-corp.com/browse/CDS-735)
+
 ## 0.24.9 (10/14/2021, 09:56 AM PST)
 
 #### 🚀 Updates
