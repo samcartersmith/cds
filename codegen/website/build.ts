@@ -114,7 +114,7 @@ const prepareTemplate =
 
 const getTemplates = async ({ subDir, displayName }: ComponentDocgenResponse) => {
   const subDirPath = await getSourcePath(`${DOCS_DIR}/${subDir}/${displayName}`);
-  const files = await glob(`*.mdx`, { absolute: true, cwd: subDirPath });
+  const files = await glob(`*.mdx`, { absolute: true, cwd: subDirPath, ignore: ['_*.mdx'] });
   return { displayName, subDir, files };
 };
 

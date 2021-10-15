@@ -1,0 +1,80 @@
+```jsx live
+function Example() {
+  const totalResults = mocks.accounts.length;
+  const PAGE_SIZE = 7;
+  const [page, setPage] = useState(1);
+  const startIdx = (page - 1) * PAGE_SIZE;
+  const endIdx = Math.min(startIdx + PAGE_SIZE, totalResults);
+  const accounts = mocks.accounts.slice(startIdx, endIdx);
+
+  const columns = useMemo(
+    () => [
+      {
+        title: 'Asset',
+        key: 'col1',
+      },
+      {
+        title: 'Balance',
+        key: 'col2',
+      },
+      {
+        title: 'Primary',
+        key: 'col3',
+      },
+    ],
+    []
+  );
+
+  return (
+    <Table bordered variant="ruled">
+      <TableHeader>
+        <TableRow fullWidth>
+          <TextDisplay2 as="h2">Fixed Column Widths</TextDisplay2>
+        </TableRow>
+        <TableRow>
+          <TableCell title="Currency" />
+          <TableCell title="Balance" />
+          <TableCell title="Status" alignItems="flex-end" />
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {accounts.map(account => {
+          return (
+            <TableRow key={`row--${account.name}`}>
+              <TableCell
+                width={280}
+                start={<Icon name="currencies" size="m" />}
+                title={account.name}
+                subtitle={account.currency.name}
+              />
+              <TableCell title={`$${account.balance.amount}`} subtitle={account.balance.currency} />
+              <TableCell direction="horizontal" justifyContent="flex-end">
+                <Icon
+                  name={account.primary ? 'circleCheckmark' : 'circleCross'}
+                  size="m"
+                  color={account.primary ? 'positive' : 'negative'}
+                />
+              </TableCell>
+            </TableRow>
+          );
+        })}
+      </TableBody>
+      <TableFooter>
+        <TableRow fullWidth>
+          <TableCell direction="horizontal">
+            {[1, 2, 3, 4, 5].map(pg => (
+              <Button
+                compact
+                variant={page === pg ? 'primary' : 'secondary'}
+                onPress={() => setPage(pg)}
+              >
+                {pg}
+              </Button>
+            ))}
+          </TableCell>
+        </TableRow>
+      </TableFooter>
+    </Table>
+  );
+}
+```

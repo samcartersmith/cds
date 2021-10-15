@@ -1,0 +1,50 @@
+```jsx live
+<Table variant="ruled" bordered>
+  <TableHeader>
+    <TableRow backgroundColor="backgroundAlternate">
+      <TableCell title="First Header" />
+      <TableCell>
+        <TextHeadline as="p" color="currentColor">
+          Second Header
+        </TextHeadline>
+      </TableCell>
+      <TableCell title="Third Header" />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell
+        overflow="truncate"
+        start={
+          <Box spacingEnd={1}>
+            <Avatar name="John Doe" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" />
+          </Box>
+        }
+        title="Bitcoin"
+        subtitle="BTC and I'm like please please truncate me"
+      />
+      <TableCell
+        overflow="truncate"
+        alignItems="flex-start"
+        title="$2,475.68"
+        subtitle="0.11882557"
+      />
+      <TableCell>
+        <TextHeadline as="h2" color="currentColor">
+          $2,221.01
+        </TextHeadline>
+        <TextLabel2 as="p" color="foregroundMuted">
+          0.1519581 BTC
+        </TextLabel2>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+  <TableFooter>
+    <TableRow>
+      <TableCell title="First Item (footer)" />
+      <TableCell title="Second Item (footer)" />
+      <TableCell title="Third Item (footer)" />
+    </TableRow>
+  </TableFooter>
+</Table>
+```

@@ -41,6 +41,7 @@ import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
 import { assets, assetColors, assetImages } from ':cds-website/data/assets';
+import { accounts } from ':cds-website/data/accounts';
 import { loremIpsum } from ':cds-website/data/loremIpsum';
 import { prices } from ':cds-website/data/prices';
 import { PatternArtboard } from ':cds-website/components/PatternArtboard';
@@ -49,6 +50,7 @@ import { useStatusButtons } from './useStatusButtons';
 
 // Add any mock data for examples here
 const mocks = {
+  accounts,
   assets,
   assetColors,
   assetImages,

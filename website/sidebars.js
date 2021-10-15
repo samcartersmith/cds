@@ -86,7 +86,7 @@ module.exports = {
       type: 'category',
       label: 'Recipes',
       collapsed: true,
-      items: ['recipes/cards', 'recipes/tables'],
+      items: ['recipes/cards'],
     },
     {
       type: 'category',

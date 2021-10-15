@@ -1241,6 +1241,12 @@ export const TableBody = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableBody/table-body.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableBody/usage.mdx'
+      ),
+  ),
 };
 
 export const TableCell = {
@@ -1254,6 +1260,12 @@ export const TableCell = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableCell/table-cell.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableCell/usage.mdx'
       ),
   ),
 };
@@ -1271,6 +1283,12 @@ export const TableFooter = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFooter/table-footer.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableFooter/usage.mdx'
+      ),
+  ),
 };
 
 export const TableHeader = {
@@ -1286,6 +1304,12 @@ export const TableHeader = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHeader/table-header.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableHeader/usage.mdx'
+      ),
+  ),
 };
 
 export const TableRow = {
@@ -1299,6 +1323,12 @@ export const TableRow = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableRow/table-row.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableRow/usage.mdx'
       ),
   ),
 };
