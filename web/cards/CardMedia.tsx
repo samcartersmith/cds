@@ -10,7 +10,7 @@ import { VStack } from '../layout/VStack';
 
 export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNames }) => {
   return (
-    <VStack width="100%" alignItems="center" justifyContent="center" height={190}>
+    <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
       <SpotRectangle name={name} />
     </VStack>
   );
@@ -18,7 +18,7 @@ export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNam
 
 export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) => {
   return (
-    <VStack width="100%" alignItems="center" justifyContent="center" height={190}>
+    <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
       <SpotSquare name={name} />
     </VStack>
   );
@@ -26,7 +26,7 @@ export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) 
 
 export const CardPictogram = ({ name }: { name: IllustrationPictogramNames }) => {
   return (
-    <VStack width="100%" alignItems="center" justifyContent="center" height={190}>
+    <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
       <Pictogram name={name} />
     </VStack>
   );

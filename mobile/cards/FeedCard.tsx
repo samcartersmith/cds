@@ -32,7 +32,8 @@ export const FeedCard: React.FC<FeedCardBaseProps> = ({
           <RemoteImage
             source={{ uri: bodyMediaUrl }}
             height="auto"
-            width={380}
+            width="100%"
+            aspectRatio={[240, 120]}
             resizeMode="cover"
           />
         }

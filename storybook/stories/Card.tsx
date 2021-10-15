@@ -3,11 +3,13 @@ import {
   BoxBaseProps,
   ButtonBaseProps,
   CardBaseProps,
+  CardBodyBaseProps,
   PaletteForeground,
   StackBaseProps,
   ListCellBaseProps,
   CellMediaProps,
   IconButtonBaseProps,
+  SpotSquareProps,
 } from '@cbhq/cds-common';
 
 import { FeedCardBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
@@ -32,6 +34,8 @@ const pinnedSharedWrapperProps = {
 export type CreateCardProps = {
   Box: React.ComponentType<BoxBaseProps>;
   Card: React.ComponentType<CardBaseProps & BoxBaseProps>;
+  CardBody: React.ComponentType<CardBodyBaseProps>;
+  SpotSquare: React.ComponentType<SpotSquareProps & BoxBaseProps>;
   FeedCard: React.ComponentType<FeedCardBaseProps>;
   IconButton: React.ComponentType<IconButtonBaseProps>;
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
@@ -51,6 +55,8 @@ export function createStories({
   Box,
   Button,
   Card,
+  CardBody,
+  SpotSquare,
   FeedCard,
   IconButton,
   VStack,
@@ -201,22 +207,33 @@ export function createStories({
 
   const FeedCardExample = () => (
     <ThemeProvider>
-      <Box {...sharedPressProps} background="backgroundAlternate">
-        <FeedCard
-          avatarUrl="https://dynamic-assets.coinbase.com/dbb4b4983bde81309ddab83eb598358eb44375b930b94687ebe38bc22e52c3b2125258ffb8477a5ef22e33d6bd72e32a506c391caa13af64c00e46613c3e5806/asset_icons/4113b082d21cc5fab17fc8f2d19fb996165bcce635e6900f7fc2d57c4ef33ae9.png"
-          headerDescription="Earn crypto"
-          headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
-          bodyTitle="LEARN AMP. EARN $3 IN AMP."
-          bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-          bodyMediaUrl="https://via.placeholder.com/350x220"
-          bodyOrientation="vertical"
-          footerActions={
-            <Button compact variant="secondary">
-              Actions
-            </Button>
-          }
+      <FeedCard
+        avatarUrl="https://via.placeholder.com/350x220"
+        headerDescription="Earn crypto"
+        headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
+        bodyTitle="LEARN AMP. EARN $3 IN AMP."
+        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+        bodyMediaUrl="https://via.placeholder.com/350x220"
+        bodyOrientation="vertical"
+        footerActions={
+          <Button compact variant="secondary">
+            Actions
+          </Button>
+        }
+      />
+    </ThemeProvider>
+  );
+
+  const SpotSquareExample = () => (
+    <ThemeProvider>
+      <Card>
+        <CardBody
+          title="Title/Headline"
+          description="You can fit up to fifty two chararcters on 2 lines"
+          media={<SpotSquare name="addMultipleCrypto" />}
+          orientation="horizontal"
         />
-      </Box>
+      </Card>
     </ThemeProvider>
   );
 
@@ -231,5 +248,6 @@ export function createStories({
     PinnedBottomCard,
     PinnedLeftCard,
     FeedCardExample,
+    SpotSquareExample,
   };
 }

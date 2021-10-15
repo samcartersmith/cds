@@ -14,13 +14,12 @@ export const CardBody: React.FC<CardBodyProps> = ({
   media,
   children,
   orientation = 'vertical',
-  ...props
 }) => {
   const verticalContent = (
     <VStack>
       {media}
-      <VStack gap={1} {...props}>
-        <VStack gap={1}>
+      <VStack spacingHorizontal={3} spacingTop={2}>
+        <VStack gap={1} spacingBottom={2}>
           <TextHeadline as="h3">{title}</TextHeadline>
           <TextBody as="p" color="foregroundMuted">
             {description}
@@ -32,9 +31,16 @@ export const CardBody: React.FC<CardBodyProps> = ({
   );
 
   const horizontalContent = (
-    <HStack gap={1} justifyContent="space-between">
-      <VStack gap={1} {...props}>
-        <VStack gap={1}>
+    <HStack
+      gap={1}
+      justifyContent="space-between"
+      alignItems="center"
+      spacingHorizontal={3}
+      spacingTop={2}
+      spacingBottom={media ? 2 : 0}
+    >
+      <VStack gap={2} width="70%">
+        <VStack gap={1} spacingTop={media ? 0 : 2}>
           <TextHeadline as="h3">{title}</TextHeadline>
           <TextBody as="p" color="foregroundMuted">
             {description}

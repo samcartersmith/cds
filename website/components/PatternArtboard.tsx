@@ -15,7 +15,7 @@ export function PatternArtboard({ children }: { children: React.ReactNode }) {
       spacing={8}
       dangerouslySetClassName={playgroundOverrides}
     >
-      <VStack width={380}>{children}</VStack>
+      <VStack width="100%">{children}</VStack>
     </VStack>
   );
 }

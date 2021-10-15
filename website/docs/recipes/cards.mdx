@@ -13,12 +13,18 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
   <FeedCard
     avatarUrl="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg"
     headerDescription="Earn crypto"
-    headerActionNode={<IconButton name="more" onPress={console.log} variant="foregroundMuted" transparent />}
+    headerActionNode={
+      <IconButton name="more" onPress={console.log} variant="foregroundMuted" transparent />
+    }
     bodyTitle="LEARN AMP. EARN $3 IN AMP."
     bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
     bodyMediaUrl="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg"
     bodyOrientation="vertical"
-    footerActions={<Button compact variant="secondary">Actions</Button>}
+    footerActions={
+      <Button compact variant="secondary">
+        Actions
+      </Button>
+    }
   />
 </Artboard>
 ```
@@ -28,7 +34,7 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
 ```jsx live
 <ExampleWithThemeToggles>
   <Artboard>
-    <Card spacing={2}>
+    <Card>
       <CardBody
         title="Title/Headline"
         description="You can fit up to fifty two chararcters on 2 lines"
@@ -42,7 +48,7 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
 
 ```jsx live
 <Artboard>
-  <Card spacing={2}>
+  <Card>
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
@@ -65,11 +71,14 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
       title="Title/Headline"
       description={loremIpsum}
       media={
-        <RemoteImage source="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg" width="100%" height="100%"/>
+        <RemoteImage
+          source="https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg"
+          width="100%"
+          height="100%"
+        />
       }
-      spacing={2}
     />
-    <CardFooter spacing={2}>
+    <CardFooter>
       <Button compact variant="secondary">
         Action
       </Button>
@@ -82,7 +91,7 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
 
 ```jsx live
 <Artboard>
-  <Card spacing={2}>
+  <Card>
     <CardSpotRectangle name="portfolioOverview" />
     <CardBody
       title="Title/Headline"
@@ -101,7 +110,7 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
 
 ```jsx live
 <Artboard>
-  <Card spacing={2}>
+  <Card>
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
@@ -116,7 +125,7 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
 
 ```jsx live
 <Artboard>
-  <Card spacing={2}>
+  <Card>
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
@@ -137,21 +146,21 @@ import { BetaWarning } from ':cds-website/components/BetaWarning';
 ```jsx live
 <Artboard>
   <Divider direction="horizontal" />
-  <VStack background spacing={2}>
+  <VStack background>
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
     />
   </VStack>
   <Divider direction="horizontal" />
-  <VStack background spacing={2}>
+  <VStack background>
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
     />
   </VStack>
   <Divider direction="horizontal" />
-  <VStack background spacing={2}>
+  <VStack background>
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"

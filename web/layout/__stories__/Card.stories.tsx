@@ -5,7 +5,8 @@ import { IconButton } from '../../buttons/IconButton';
 import { ListCell, CellMedia } from '../../cells';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Box } from '../Box';
-import { Card, FeedCard } from '../../cards';
+import { Card, FeedCard, CardBody } from '../../cards';
+import { SpotSquare } from '../../illustrations';
 import { VStack } from '../VStack';
 import { LoremIpsum } from './LoremIpsum';
 
@@ -28,10 +29,13 @@ export const {
   PinnedBottomCard,
   PinnedLeftCard,
   FeedCardExample,
+  SpotSquareExample,
 } = createStories({
   Box,
   Button,
   Card,
+  CardBody,
+  SpotSquare,
   FeedCard,
   IconButton,
   CellMedia,
@@ -54,6 +58,8 @@ export const {
   Box,
   Button,
   Card,
+  CardBody,
+  SpotSquare,
   FeedCard,
   IconButton,
   CellMedia,

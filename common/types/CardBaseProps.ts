@@ -36,6 +36,8 @@ export type CardBodyBaseProps = {
   description?: string;
   /** Remote Image or other Image React Node */
   media?: React.ReactNode;
+  /** Vertical places media above text content, Horizontal places media to the side of text content */
+  orientation?: CardBodyOrientationProps['orientation'];
 };
 
 export type CardBodyOrientationProps = {
