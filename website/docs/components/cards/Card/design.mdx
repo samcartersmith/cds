@@ -1,3 +1,4 @@
+import { Image } from ':cds-website/components/Image';
 import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
@@ -6,15 +7,24 @@ Cards are containers that showcase content and actions related to a singular top
 
 ## Usage
 
-### Use Cards to:
+**Use Cards to:**
 
-- Guide users to product features.- Prompt or encourage users to take action or complete a task.- Act as an entry point or gateway to more information. 
-  ###When not to use a Card:
+- Guide users to product features.
+- Prompt or encourage users to take action or complete a task.
+- Act as an entry point or gateway to more information.
+
+**When not to use Cards:**
+
 - Do not use Cards to display large amounts of data or information. Consider using another container.
 
 ## Anatomy of Cards
 
-[Image](https://www.figma.com/file/XThVyXI6cr4EqWLF0opDDZ/CDS-Documentation?node-id=1170%3A23836)
+<Box justifyContent="center">
+  <Image
+    light="/img/components/cards/CardAnatomy.png"
+    dark="/img/components/cards/CardAnatomy_Dark.png"
+  />
+</Box>
 
 Each Card is created with the following sections: Header, Body, and Footer. Each section relates to the subject of the Card.
 
@@ -42,22 +52,24 @@ By leveraging this framework and respecting the default placements, we can ensur
 
 ## Content Guidelines
 
-### Header
+**Header**
 
 - Use clear, descriptive text that helps the user understand the theme of the card
 
-### Body
+**Body**
 
 - Write clear, concise language that explains the benefit and sells the action.
 - Keep headlines to one line
 - Keep body copy to 1–3 lines
-  ###Footer
+
+**Footer**
+
 - Start with a verb
 - Be concise (1–3 words). Some examples include:
-  - “Learn more”
-  - “Read more”
-  - “Start earning”
-  - “Invite friends”
+  - "Learn more"
+  - "Read more"
+  - "Start earning"
+  - "Invite friends"
 
 ## Sizing & Scale
 
@@ -68,13 +80,18 @@ Cards that are set in a tile grid should all be the same height.
 
 Generally speaking dividers are used to draw the basic layout of the page and separate distinct modules and sections from each other. Full-width dividers are placed on the top and/or bottom of Card and used to communicate card boundaries. Toggle on top/bottom dividers when grouping or stacking cards together.
 
-Related component: [Dividers](https://cds.cbhq.net/components/divider)
+Related component: [Dividers](/components/divider)
 
 ## Actions
 
 The Card itself is typically the primary action. However, we recommend placing a Button in the Footer to encourage engagement or to make the Card feel more actionable. Buttons in the Footer should callout the main CTA of the Card.
 
-[Image](https://www.figma.com/file/XThVyXI6cr4EqWLF0opDDZ/CDS-Documentation?node-id=1170%3A23836)
+<Box justifyContent="center">
+  <Image
+    light="/img/components/cards/CardActions.png"
+    dark="/img/components/cards/CardActions_Dark.png"
+  />
+</Box>
 
 Cards can also have supplementary actions in the Header or Footer such as:
 
