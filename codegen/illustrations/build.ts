@@ -30,15 +30,16 @@ import { modified } from './modified';
 
 const ILLUSTRATION_FILE_ID = 'ay6SCdu5QMjKthzcoPtVOh';
 const NODE_ID = '527:531';
+const FILE_FORMAT = 'svg';
 
-type FileFormat = 'svg' | 'png';
 type Spectrum = 'light' | 'dark';
 
 const figmaClient = FigmaClient(CDS_PERSONAL_ACCESS_TOKEN);
 
 const localManifestData: Record<string, Record<string, IllustrationSummary>> = manifestData;
-let svgOptimizerConfig: OptimizeOptions;
 const nameToNodeIdMap: Record<string, string> = {};
+let svgOptimizerConfig: OptimizeOptions;
+let mobileImagesPath: string;
 
 const newIllustrations: string[] = [];
 const modifiedIllustrations: string[] = [];
@@ -68,18 +69,58 @@ const fileHasChanged = (oldFileBase64: string, newFileBase64: string): boolean =
   return oldFileBase64 !== newFileBase64;
 };
 
+// Converts an svg into an xml string.
+// Outputs it into a js in an object so it can be exported
+const createSvgXML = (data: {
+  outPath: string;
+  svgStr: string;
+  fileName: string;
+  fileStatus: string;
+}) => {
+  const { outPath, svgStr, fileName, fileStatus } = data;
+
+  fs.writeFile(outPath, `/* eslint-disable */ module.exports = {content:\`${svgStr}\`} `, (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(`Created ${fileName} at ${outPath}, File Status: ${fileStatus}`);
+    }
+  });
+};
+
+const createFileName = (fileName: string, versionNum: number, fileFormat: 'svg' | 'js') => {
+  return `${fileName}-${versionNum}.${fileFormat}`;
+};
+
+// If the file has changed, it writes the new svg output to a
+// new file, and name has to be changed to reflect the new version.
+// This does that for you
+const renameFileWithNewVersion = (data: {
+  imageName: string;
+  fileNameFullPath: string;
+  imageOutFullPath: string;
+  nodeId: string;
+}): string => {
+  const { imageName, fileNameFullPath, imageOutFullPath, nodeId } = data;
+  // Since the file has changed, we need to rename file such that it has the new time
+  const newVersionNum = localManifestData[FILE_FORMAT][nodeId].versionNum + 1;
+  localManifestData[FILE_FORMAT][nodeId].versionNum = newVersionNum;
+  const newFileName = createFileName(imageName, newVersionNum, FILE_FORMAT);
+  renameSync(fileNameFullPath, path.join(imageOutFullPath, newFileName));
+  return newFileName;
+};
+
 const loadOneImage = async (
   imageURL: string,
   nodeId: string,
   outDirPath: string,
   spinner: Ora,
-  scale: number,
-  exportFormat: FileFormat,
 ): Promise<void> => {
-  const imageMetadata = localManifestData[exportFormat][nodeId];
+  const imageMetadata = localManifestData[FILE_FORMAT][nodeId];
   const imageName = imageMetadata.name;
   const { versionNum, spectrum } = imageMetadata;
   const imageOutFullPath = `${outDirPath}/${spectrum}/`;
+  const jsOutFullPath = `${mobileImagesPath}/${spectrum}/`;
 
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
@@ -87,74 +128,90 @@ const loadOneImage = async (
     errMsg(spinner, (err as Error).message);
   }
 
-  const fileName =
-    scale === 1
-      ? `${imageName}-${versionNum}.${exportFormat}`
-      : `${imageName}-${versionNum}@${scale}x.${exportFormat}`;
+  const fileName = createFileName(imageName, versionNum, FILE_FORMAT);
+  const jsFileName = createFileName(imageName, versionNum, 'js');
 
-  return axios
+  const res = await axios
     .get(imageURL, {
-      responseType: exportFormat === 'png' ? 'arraybuffer' : '',
+      responseType: '',
       headers: {
-        Accept: exportFormat === 'png' ? 'image/png' : 'image/svg+xml',
+        Accept: 'image/svg+xml',
       },
     })
-    .then(async (res) => {
-      if (!res) return;
-
-      const fileNameFullPath = path.join(imageOutFullPath, fileName);
-      const nameAndSpectrum = `${imageName}-${spectrum}`;
-      const encoding = exportFormat === 'svg' ? 'utf8' : 'binary';
-      let oldFileBase64 = '';
-
-      // Tracks whether this image is new, or is modified
-      let fileStatus = 'new';
-
-      if (existsSync(fileNameFullPath)) {
-        const binaryData = readFileSync(fileNameFullPath, encoding);
-        oldFileBase64 = binaryToBase64(binaryData);
-        fileStatus = 'modified';
-      }
-
-      // Due to some weird issues with keeping track of
-      // modified illustrations. We have to manually
-      // track which files are modified. We will have to
-      // specify modified files in modified.ts, and then
-      // it will get added to the modifiedIllustrations array
-      if (modified.includes(nameAndSpectrum)) {
-        modifiedIllustrations.push(nameAndSpectrum);
-      }
-
-      if (fileStatus === 'modified' && !modified.includes(nameAndSpectrum)) return;
-
-      if (exportFormat === 'svg') {
-        const optimizedSVG = optimize(String(res.data), svgOptimizerConfig);
-        fs.writeFileSync(fileNameFullPath, optimizedSVG.data, encoding);
-      } else {
-        fs.writeFileSync(fileNameFullPath, Buffer.from(String(res.data), 'binary'), encoding);
-      }
-
-      const newFileBase64 = binaryToBase64(readFileSync(fileNameFullPath, encoding));
-
-      if (fileHasChanged(oldFileBase64, newFileBase64)) {
-        // Since the file has changed, we need to rename file such that it has the new time
-        const newVersionNum = localManifestData[exportFormat][nodeId].versionNum + 1;
-        localManifestData[exportFormat][nodeId].versionNum = newVersionNum;
-        const newFileName = `${imageName}-${newVersionNum}.${exportFormat}`;
-        renameSync(fileNameFullPath, path.join(imageOutFullPath, newFileName));
-
-        if (fileStatus === 'new') {
-          newIllustrations.push(nameAndSpectrum);
-        }
-
-        console.log(`Created ${newFileName} at ${imageOutFullPath}, File Status: ${fileStatus}`);
-      } else {
-        console.log(`File: ${fileName} has not changed`);
-      }
-    })
     .catch((err) => {
+      console.error(`${fileName} cannot be fetched`);
       errMsg(spinner, (err as Error).message);
     });
+
+  if (!res) return;
+
+  const fileNameFullPath = path.join(imageOutFullPath, fileName);
+  const jsFileNameFullPath = path.join(jsOutFullPath, jsFileName);
+
+  const nameAndSpectrum = `${imageName}-${spectrum}`;
+  const ENCODING = 'utf8';
+  let oldFileBase64 = '';
+
+  // Tracks whether this image is new, or is modified
+  let fileStatus = 'new';
+
+  if (existsSync(fileNameFullPath)) {
+    const binaryData = readFileSync(fileNameFullPath, ENCODING);
+    oldFileBase64 = binaryToBase64(binaryData);
+    fileStatus = 'modified';
+  }
+
+  // Due to some weird issues with keeping track of
+  // modified illustrations. We have to manually
+  // track which files are modified. We will have to
+  // specify modified files in modified.ts, and then
+  // it will get added to the modifiedIllustrations array
+  if (modified.includes(nameAndSpectrum)) {
+    modifiedIllustrations.push(nameAndSpectrum);
+  }
+
+  /** Disable this if statement and enable createSvgXML on line 179. And you
+   * will be able recreate every js file regardless of whether it has been modified or not */
+  if (fileStatus === 'modified' && !modified.includes(nameAndSpectrum)) return;
+
+  const optimizedSVG = optimize(String(res.data), svgOptimizerConfig);
+  fs.writeFileSync(fileNameFullPath, optimizedSVG.data, ENCODING);
+
+  /** Enable to recreate all the js files  */
+  // createSvgXML({
+  //   outPath: jsFileNameFullPath,
+  //   svgStr: optimizedSVG.data,
+  //   fileName: jsFileName,
+  //   fileStatus,
+  // });
+
+  const newFileBase64 = binaryToBase64(readFileSync(fileNameFullPath, ENCODING));
+
+  if (fileHasChanged(oldFileBase64, newFileBase64)) {
+    const newFileName = renameFileWithNewVersion({
+      imageName,
+      fileNameFullPath,
+      imageOutFullPath,
+      nodeId,
+    });
+
+    // You only need to create a new svgXML string if
+    // the illustration was changed or it is new.
+    createSvgXML({
+      outPath: jsOutFullPath,
+      svgStr: optimizedSVG.data,
+      fileName: jsFileName,
+      fileStatus,
+    });
+
+    if (fileStatus === 'new') {
+      newIllustrations.push(nameAndSpectrum);
+    }
+
+    console.log(`Created ${newFileName} at ${jsFileNameFullPath}, File Status: ${fileStatus}`);
+  } else {
+    console.log(`File: ${fileName} has not changed`);
+  }
 };
 
 const getComponents = async (): Promise<IllustrationComponent | null> => {
@@ -187,46 +244,37 @@ const createNewImgsDirIfDNE = (outDirPath: string) => {
   }
 };
 
-const loadImagesLocally = async (
-  nodeIds: string[],
-  outDirPath: string,
-  exportFormat: FileFormat,
-): Promise<void> => {
+const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
   const spinner = ora(
     `Getting image urls for ${nodeIds.length} illustrations from Figma\n`,
   ).start();
 
-  // Defining the different scales we want to illustrations to have
-  const SCALE_SIZES = exportFormat === 'png' ? [1, 2, 3] : [1];
-
   createNewImgsDirIfDNE(outDirPath);
 
-  await Promise.all(
-    SCALE_SIZES.map(async (scale) => {
-      const fileImageResponse = await figmaClient
-        .fileImages(ILLUSTRATION_FILE_ID, nodeIds, exportFormat, scale)
-        .catch((err) => errMsg(spinner, (err as Error).message));
+  const fileImageResponse = await figmaClient
+    .fileImages(ILLUSTRATION_FILE_ID, nodeIds, FILE_FORMAT, 1)
+    .catch((err) => errMsg(spinner, (err as Error).message));
 
-      if (!fileImageResponse) return undefined;
+  if (!fileImageResponse) {
+    console.error('Empty image file');
+    return undefined;
+  }
 
-      if (fileImageResponse.data.err) {
-        errMsg(spinner, fileImageResponse.data.err);
-        return undefined;
-      }
+  if (fileImageResponse.data.err) {
+    errMsg(spinner, fileImageResponse.data.err);
+    return undefined;
+  }
 
-      // Start downloading images from Figma CDN
-      const loadImagePromiseArr = Object.entries(fileImageResponse.data.images).map((info) => {
-        const [nodeId, imageURL] = info;
+  // Start downloading images from Figma CDN
+  const loadImagePromiseArr = Object.entries(fileImageResponse.data.images).map((info) => {
+    const [nodeId, imageURL] = info;
 
-        if (!nodeId || !localManifestData) return undefined;
+    if (!nodeId || !localManifestData) return undefined;
 
-        return loadOneImage(imageURL, nodeId, outDirPath, spinner, scale, exportFormat);
-      });
+    return loadOneImage(imageURL, nodeId, outDirPath, spinner);
+  });
 
-      return Promise.all(loadImagePromiseArr);
-    }),
-  );
-  spinner.stop();
+  return Promise.all(loadImagePromiseArr);
 };
 
 /**
@@ -364,8 +412,7 @@ const genStatistics = async (destPath: string, names: IllustrationNamesMap) => {
   });
 
   const illustrationMetadata = {
-    numIllustrations:
-      Object.keys(localManifestData.png).length + Object.keys(localManifestData.svg).length,
+    numIllustrations: Object.keys(localManifestData.svg).length,
     ...variantCountMap,
     newIllustration: newIllustrations.sort(),
     modifiedIllustrations: modifiedIllustrations.sort(),
@@ -410,12 +457,9 @@ const createTypes = async (names: IllustrationNamesMap, variants: string[]) => {
   }
 };
 
-const createVersionNumManifest = async (
-  destPath: string,
-  fileFormat: FileFormat,
-): Promise<VersionNumManifestStruct> => {
+const createVersionNumManifest = async (destPath: string): Promise<VersionNumManifestStruct> => {
   const versionNumManifest: VersionNumManifestStruct = reduce(
-    localManifestData[fileFormat],
+    localManifestData[FILE_FORMAT],
     (res, metadata) => {
       res[`${metadata.name}-${metadata.spectrum}`] = metadata.versionNum;
       return res;
@@ -491,11 +535,11 @@ const createConstants = async (names: IllustrationNamesMap, outPaths: string[]) 
   }
 };
 
-const getImgPath = (name: string, fileFormat: FileFormat, spectrum: Spectrum) => {
+const getImgPath = (name: string, spectrum: Spectrum) => {
   const nameAndSpectrum = `${name}-${spectrum}`;
   if (nameAndSpectrum in nameToNodeIdMap) {
     const nodeId = nameToNodeIdMap[`${name}-${spectrum}`];
-    return `require("./images/${spectrum}/${name}-${localManifestData[fileFormat][nodeId].versionNum}.${fileFormat}")`;
+    return `import("./images/${spectrum}/${name}-${localManifestData[FILE_FORMAT][nodeId].versionNum}")`;
   }
   return null;
 };
@@ -512,12 +556,10 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
     allNames,
     (acc, name) => {
       try {
-        const fileFormat = 'svg';
-
         acc[`"${name}"`] = {
-          light: getImgPath(name, fileFormat, 'light'),
-          dark: getImgPath(name, fileFormat, 'dark'),
-          fileFormat: `"${fileFormat}"`,
+          light: getImgPath(name, 'light'),
+          dark: getImgPath(name, 'dark'),
+          fileFormat: `"${FILE_FORMAT}"`,
         };
       } catch (err) {
         errMsg(spinner, (err as Error).message);
@@ -542,7 +584,7 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
     },
     types: {
       IllustrationFilePathMap:
-        "Record<string, { light: unknown, dark: unknown, fileFormat: 'svg' | 'png' }>",
+        " Record<string,{ light: Promise<{ default: { content: string; }; content: string; }>; dark: Promise<{ default: { content: string; }; content: string; }> | null; fileFormat:'svg' }>",
     },
     header: '/* eslint-disable */\n',
   });
@@ -553,7 +595,8 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
 const main = async (deleteImgsDir = false) => {
   try {
     const svgOptCfgFullPath = await getSourcePath('codegen/configs/svgo.config.js');
-    const outDirPath = await getSourcePath('mobile/illustrations/images');
+    const outDirPath = await getSourcePath('codegen/illustrations/images');
+    mobileImagesPath = await getSourcePath('mobile/illustrations/images');
 
     svgOptimizerConfig = await loadConfig(svgOptCfgFullPath);
     const components = await getComponents();
@@ -568,13 +611,12 @@ const main = async (deleteImgsDir = false) => {
     const { camelCaseNames, pascalCaseNames, variants } =
       getIllustrationNamesAndVariants(components);
     await updateManifest(components);
-    await loadImagesLocally(Object.keys(localManifestData.svg), outDirPath, 'svg');
+    await loadImagesLocally(Object.keys(localManifestData.svg), outDirPath);
     await genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
 
     console.log('All images loaded');
     await createTypes(camelCaseNames, variants);
     await createConstants(camelCaseNames, [
-      // 'mobile-playground/src/data/illustrationData.ts',
       'website/data/illustrationData.ts',
       'storybook/data/illustrationData.ts',
     ]);
@@ -582,7 +624,6 @@ const main = async (deleteImgsDir = false) => {
     await createManifestFile('codegen/illustrations/illustration_manifest.ts');
     const versionNumManifest = await createVersionNumManifest(
       'web/illustrations/versionNumManifest.ts',
-      'svg',
     );
     checkLightModeExistsForAllAssets(versionNumManifest);
 

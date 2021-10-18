@@ -4,11 +4,11 @@
  */
 
 export const illustrationMetadata = {
-  numIllustrations: 576,
-  heroSquareCount: 112,
+  numIllustrations: 596,
+  heroSquareCount: 117,
   pictogramCount: 124,
-  spotRectangleCount: 21,
-  spotSquareCount: 36,
-  newIllustration: ['defiRisk-light'],
+  spotRectangleCount: 22,
+  spotSquareCount: 40,
+  newIllustration: [],
   modifiedIllustrations: [],
 };

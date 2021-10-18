@@ -4,6 +4,7 @@ SOURCE = [
     "**/*.ts",
     "**/*.tsx",
     "**/*.ttf",
+    "**/*.js",
 ]
 
 DEPS = [
@@ -41,7 +42,6 @@ filegroup(
     srcs = glob(
         SOURCE + [
             "**/*.png",
-            "**/*.svg",
             "**/*.md",
         ],
         exclude = [

@@ -1,17 +1,20 @@
-import React, { memo, useMemo } from 'react';
+import React, { useState, memo, useEffect, useMemo } from 'react';
 
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { IllustrationBaseProps } from '@cbhq/cds-common/types/IllustrationProps';
-import { Image } from 'react-native';
-import { SvgCssUri } from 'react-native-svg';
+import { SvgXml } from 'react-native-svg';
 
 import { IllustrationFilePathMap } from './RelativePathMap';
 
 export const Illustration = memo(function Illustration({ name, ...props }: IllustrationBaseProps) {
   const imageMetadata = useMemo(() => IllustrationFilePathMap[name], [name]);
+  const [illustrationXML, setIllustrationXML] = useState<string | null>(null);
 
-  const image = (useSpectrumConditional({ light: imageMetadata.light, dark: imageMetadata.dark }) ??
-    imageMetadata.light) as number;
+  const imagePath =
+    useSpectrumConditional({
+      light: imageMetadata.light,
+      dark: imageMetadata.dark,
+    }) ?? imageMetadata.light;
 
   const style = useMemo(
     () => ({
@@ -22,21 +25,29 @@ export const Illustration = memo(function Illustration({ name, ...props }: Illus
     [props.width, props.height],
   );
 
-  if (image === null) {
+  useEffect(() => {
+    const importIllustration = async (): Promise<void> => {
+      try {
+        const xml = (await imagePath).content;
+        setIllustrationXML(xml);
+      } catch (err) {
+        /* eslint-disable-next-line no-console */
+        console.error(err);
+      }
+    };
+    importIllustration().catch((err) =>
+      /* eslint-disable-next-line no-console */
+      console.error(err),
+    );
+  }, [imagePath, name]);
+
+  if (imagePath === null) {
     return null;
   }
 
   if (imageMetadata.fileFormat === 'svg') {
-    return <SvgCssUri style={style} uri={Image.resolveAssetSource(image).uri} {...props} />;
+    return <SvgXml style={style} xml={illustrationXML} {...props} />;
   }
 
-  return (
-    <Image
-      style={style}
-      source={image ?? imageMetadata.light}
-      resizeMode="contain"
-      accessibilityIgnoresInvertColors
-      {...props}
-    />
-  );
+  return null;
 });
