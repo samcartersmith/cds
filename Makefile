@@ -8,7 +8,7 @@ Help:
   $$ make build.utils               -- Build the `utils` package.
   $$ make build.web                 -- Build the `web` package.
   $$ make build.css                 -- Build the fonts and css.
-  $$ make build.packages            -- Build all packages. 
+  $$ make build.packages            -- Build all packages.
   $$ make build.ios                 -- Build the playground ios app.
   $$ make build.android             -- Build the playground android app.
   $$ make test                      -- Run web and mobile unit tests.
@@ -18,7 +18,6 @@ Help:
   $$ make codegen                   -- Generate code in design system.
   $$ make lint                      -- Run eslint on all sources.
   $$ make lint.fix                  -- Auto fixes lints issues
-  $$ make new.package name=<name>   -- Scaffold a new package with the defined name.
   $$ make start.story               -- Start storybook local dev server.
   $$ make start.website             -- Start docusaurus website.
   $$ make start.mobile              -- Start react native packager.
@@ -40,14 +39,14 @@ export HELP_TEXT
 help:
 	@echo "$$HELP_TEXT"
 
-.PHONY: build.packages 
-build.packages: 
+.PHONY: build.packages
+build.packages:
 	 make build.common
-	 make build.fonts 
+	 make build.fonts
 	 make build.lottie
 	 make build.mobile
 	 make build.utils
-	 make build.web  
+	 make build.web
 
 .PHONY: clean
 clean:
@@ -130,10 +129,6 @@ lint.fix:
 	bazel run utils:lint_fix
 	bazel run web:lint_fix
 	bazel run website:lint_fix
-
-.PHONY: new.package
-new.package:
-	bazel run :new_package -- --root=$(PWD) --name=$(name) --description=${description}
 
 .PHONY: prepare.icons
 prepare.icons:
