@@ -18,6 +18,7 @@ export type TextInputProps = TextInputBaseProps & React.InputHTMLAttributes<HTML
 
 export const TextInput = memo(function TextInput({
   label,
+  accessibilityLabel,
   helperText = '',
   variant = 'foregroundMuted',
   testID,
@@ -74,6 +75,7 @@ export const TextInput = memo(function TextInput({
       inputNode={
         <NativeInput
           align={align}
+          accessibilityLabel={accessibilityLabel ?? label}
           containerSpacing={start ? startSpacing : undefined}
           onFocus={handleOnFocus}
           onBlur={handleOnBlur}

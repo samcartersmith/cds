@@ -1,7 +1,9 @@
 import TestRenderer from 'react-test-renderer';
+import { render, waitFor } from '@testing-library/react-native';
 
 import { TextInput as RNTextInput } from 'react-native';
 import { InputStack, InputStackProps } from '../InputStack';
+import { NativeInput } from '../NativeInput';
 
 const TEST_ID = 'input';
 
@@ -37,4 +39,21 @@ describe('disabled', () => {
 
 describe('variant', () => {
   expectAttribute('variant', ['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']);
+});
+
+describe('styles', () => {
+  it('renders a custom borderStyle', async () => {
+    const borderStyle = {
+      borderRadius: 8,
+      borderWidth: 1,
+    };
+
+    const { getByTestId } = render(
+      <InputStack testID={TEST_ID} borderStyle={borderStyle} inputNode={<NativeInput />} />,
+    );
+
+    await waitFor(() => getByTestId('input-area'));
+
+    expect(getByTestId('input-area')).toHaveStyle(borderStyle);
+  });
 });

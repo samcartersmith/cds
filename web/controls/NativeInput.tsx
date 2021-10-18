@@ -1,6 +1,9 @@
-import { SharedProps, ForwardedRef, TextBaseProps } from '@cbhq/cds-common';
+import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
+import { TextBaseProps } from '@cbhq/cds-common/types/TextBaseProps';
 import React, { memo, forwardRef } from 'react';
 import { css, cx } from 'linaria';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { palette } from '../tokens';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -19,6 +22,7 @@ export type NativeInputProps = {
    */
   onPress?: React.MouseEventHandler;
 } & SharedProps &
+  SharedAccessibilityProps &
   React.InputHTMLAttributes<HTMLInputElement>;
 
 const nativeInputBaseStyle = css`
@@ -61,6 +65,7 @@ export const NativeInput = memo(
         onBlur,
         onKeyDown,
         onChange,
+        accessibilityLabel,
         ...props
       }: NativeInputProps,
       ref: ForwardedRef<HTMLInputElement>,
@@ -73,6 +78,7 @@ export const NativeInput = memo(
       return (
         <input
           style={{ textAlign: align }}
+          aria-label={accessibilityLabel}
           className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
           data-testid={testID}
           tabIndex={0}

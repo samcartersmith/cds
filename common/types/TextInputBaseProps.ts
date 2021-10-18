@@ -1,5 +1,6 @@
 import { InputBaseProps } from './InputBaseProps';
 import { SharedProps } from './SharedProps';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { TextAlignProps } from './TextBaseProps';
 
 export type TextInputBaseProps = {
@@ -32,4 +33,5 @@ export type TextInputBaseProps = {
   /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
   end?: React.ReactNode;
 } & SharedProps &
+  SharedAccessibilityProps &
   Pick<InputBaseProps, 'variant' | 'width' | 'disabled'>;

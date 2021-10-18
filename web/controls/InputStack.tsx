@@ -11,6 +11,10 @@ import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { InputLabel } from './InputLabel';
 
+/**
+ * TODO: The hover state needs to be a token at some point. Need to sync
+ * with Jake cause I know his table uses this too.
+ */
 const inputBaseAreaStyles = css`
   flex-direction: row;
   border-radius: ${borderRadius.input}px;
