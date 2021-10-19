@@ -25,7 +25,7 @@ describe('useInteractableTokens', () => {
 
     expect(result.current).toEqual({
       backgroundColor: 'rgb(158, 189, 255)',
-      contentOpacity: 1,
+      contentOpacity: 0.38,
     });
   });
 

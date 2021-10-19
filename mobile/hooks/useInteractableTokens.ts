@@ -83,7 +83,7 @@ const useContentOpacity = (
 ) => {
   return useMemo(() => {
     if (!interactableState) return 1;
-    if (interactableState === 'disabled') return 1;
+    if (interactableState === 'disabled') return opacityDisabled;
     return overlayOpacities[interactableState];
   }, [overlayOpacities, interactableState]);
 };

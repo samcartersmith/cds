@@ -126,6 +126,7 @@ lint.fix:
 	bazel run common:lint_fix
 	bazel run lottie-files:lint_fix
 	bazel run mobile:lint_fix
+	bazel run mobile-playground:lint_fix
 	bazel run utils:lint_fix
 	bazel run web:lint_fix
 	bazel run website:lint_fix

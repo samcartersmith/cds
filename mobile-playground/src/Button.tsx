@@ -30,6 +30,12 @@ const ButtonScreen = () => {
       <Example title="States" inline>
         <Button loading>Loading</Button>
         <Button disabled>Disabled</Button>
+        <Button disabled variant="secondary">
+          Secondary Disabled
+        </Button>
+        <Button disabled variant="negative">
+          Negative Disabled
+        </Button>
       </Example>
 
       <Example title="Variants" inline>
