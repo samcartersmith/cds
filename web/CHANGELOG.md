@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.26.0 (10/18/2021, 04:13 PM PST)
+
+#### 💥 Breaking
+
+- **[Illustrations]** Load SVGs using XML strings. [#36771](https://github.cbhq.net/mono/repo/pull/36771), [CDS-1562](https://jira.coinbase-corp.com/browse/CDS-1562)
+
+#### 📘 Misc
+
+- **[Inputs]** Improved input accessibility. Added more test cases for web and mobile input. [#38321](https://github.cbhq.net/mono/repo/pull/38321), [CDS-1601](https://jira.coinbase-corp.com/browse/CDS-1601)
+
 ## 0.25.0 (10/15/2021, 04:00 PM PST)
 
 #### 💥 Breaking
