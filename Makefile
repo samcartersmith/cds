@@ -215,4 +215,5 @@ typecheck:
 
 .PHONY: build.css
 build.css:
+	bazel build web:package
 	bazel build //eng/shared/design-system/cloud:web

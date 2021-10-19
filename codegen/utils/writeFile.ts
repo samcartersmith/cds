@@ -47,7 +47,8 @@ const getFileDocString = (ext: string) => {
   switch (ext) {
     case '.json':
     case '.mdx':
-    case '.md': {
+    case '.md':
+    case '.css': {
       return '';
     }
     default:

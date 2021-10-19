@@ -60,7 +60,7 @@ export const createIconFont = async () => {
     'fontFace.ejs': [
       {
         data: { fileName: webFontName },
-        dest: 'web/styles/iconFont.ts',
+        dest: 'web/styles/icon-font.css',
       },
     ],
   });

@@ -84,7 +84,7 @@ async function combine() {
   );
 
   // Extract icon font CSS
-  let fontsCss = await readCss(mapCssPaths(['iconFont.css'], cssFiles));
+  let fontsCss = await readCss(mapCssPaths(['icon-font.css'], cssFiles));
 
   // Update font file path to be relative to this combined file
   fontsCss = fontsCss.replace('../icons/font/', './');

@@ -2,6 +2,7 @@ load("//tools/js:def.bzl", "eslint_test", "ts_package", "type_check")
 load(":deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
 
 SOURCE = [
+    "**/*.css",
     "**/*.ts",
     "**/*.tsx",
     "**/*.woff2",
@@ -31,6 +32,7 @@ filegroup(
         ],
         exclude = [
             "**/*.woff2",
+            "**/*.css",
         ],
     ),
     visibility = ["//visibility:public"],
