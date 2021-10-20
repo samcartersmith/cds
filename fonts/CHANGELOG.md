@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.11 (10/20/2021, 09:07 AM PST)
+
+#### 🐞 Fixes
+
+- Lockdown fonts > 500 to use medium. [#36328](https://github.cbhq.net/mono/repo/pull/36328)
+
 ## 0.2.10 (10/14/2021, 09:56 AM PST)
 
 #### 🐞 Fixes

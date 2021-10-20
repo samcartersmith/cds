@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.27.0 (10/20/2021, 09:07 AM PST)
+
+#### 💥 Breaking
+
+- Update globalStyles to be where we compose fonts and resets. [#38415](https://github.cbhq.net/mono/repo/pull/38415)
+
+#### 🚀 Updates
+
+- Modal updates. [#38463](https://github.cbhq.net/mono/repo/pull/38463)
+
+#### 🐞 Fixes
+
+- Add testID's to all Tables components. [#38676](https://github.cbhq.net/mono/repo/pull/38676)
+- CardHeader should set its own spacing. [#38502](https://github.cbhq.net/mono/repo/pull/38502)
+
 ## 0.26.0 (10/18/2021, 04:13 PM PST)
 
 #### 💥 Breaking

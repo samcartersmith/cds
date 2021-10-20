@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.1 (10/20/2021, 09:07 AM PST)
+
+#### 🚀 Updates
+
+- Modal updates. [#38463](https://github.cbhq.net/mono/repo/pull/38463)
+
+#### 🐞 Fixes
+
+- **[Button]** Fix button disable state. [#38565](https://github.cbhq.net/mono/repo/pull/38565)
+- CardHeader should set its own spacing. [#38502](https://github.cbhq.net/mono/repo/pull/38502)
+
 ## 0.30.0 (10/18/2021, 04:13 PM PST)
 
 #### 💥 Breaking
