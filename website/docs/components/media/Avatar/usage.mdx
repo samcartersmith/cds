@@ -1,0 +1,45 @@
+**Avatar image usage**
+
+```jsx live
+<VStack gap={2}>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" size="m" />
+    <Avatar name="Happy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" size="m" shape="square" />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" />
+    <Avatar name="Happy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" shape="square" />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" size="xl" />
+    <Avatar name="Happy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" size="xl" shape="square" />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" size="xxl" />
+    <Avatar name="Happy" src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg" size="xxl" shape="square" />
+  </HStack>
+</VStack>
+```
+
+**Avatar fallback**
+
+```jsx live
+<VStack gap={2}>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" size="m" />
+    <Avatar name="Happy" size="m" shape="square" />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" />
+    <Avatar name="Happy" shape="square" />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" size="xl" />
+    <Avatar name="Happy" size="xl" shape="square" />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <Avatar name="Sneezy" size="xxl" />
+    <Avatar name="Happy" size="xxl" shape="square" />
+  </HStack>
+</VStack>
+```

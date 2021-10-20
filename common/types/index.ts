@@ -19,6 +19,7 @@ export * from './Helpers';
 export * from './IconBaseProps';
 export * from './IconName';
 export * from './IconSize';
+export * from './AvatarSize';
 export * from './IllustrationProps';
 export * from './InputBaseProps';
 export * from './ModalBaseProps';

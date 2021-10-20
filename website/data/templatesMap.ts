@@ -979,6 +979,33 @@ export const RemoteImage = {
   ),
 };
 
+export const Avatar = {
+  avatar: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/Avatar/avatar.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/Avatar/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/Avatar/intro.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/Avatar/usage.mdx'
+      ),
+  ),
+};
+
 export const Spinner = {
   implementation: React.lazy(
     async () =>

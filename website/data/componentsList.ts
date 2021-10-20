@@ -39,6 +39,7 @@ export const components = [
   'Spacer',
   'VStack',
   'RemoteImage',
+  'Avatar',
   'Spinner',
   'Tooltip',
   'Modal',

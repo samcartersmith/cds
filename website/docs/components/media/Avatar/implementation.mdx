@@ -5,7 +5,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-(web|mobile)/avatar/Avatar](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/avatar/Avatar.tsx)
+> [@cbhq/cds-(web|mobile)/media/Avatar](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/media/Avatar.tsx)
 
 <ComponentDetails componentName="Avatar" templateName="intro" />
 
@@ -18,6 +18,21 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 <ComponentDetails componentName="Avatar" templateName="a11y" />
 
 ## Props
+
+### alt
+
+This is the name associated with the entity in the Avatar. This is used in the image alt tag for accessibility.
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="alt"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-alt" />
 
 ### borderColor
 
@@ -42,21 +57,6 @@ Adds a border to the Avatar
 
 <ComponentDetails componentName="Avatar" templateName="prop-borderColor" />
 
-### compact
-
-Shows the Avatar in compact size
-
-<ApiDetails
-  componentName="Avatar"
-  propertyName="compact"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="Avatar" templateName="prop-compact" />
-
 ### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
 
 Adds a className to the Avatar. If you pass in a className make sure your styles override the Avatar using the avatar class .cds-avatar like this: .my-class.cds-avatar
@@ -72,21 +72,6 @@ Adds a className to the Avatar. If you pass in a className make sure your styles
 
 <ComponentDetails componentName="Avatar" templateName="prop-dangerouslySetClassName" />
 
-### name
-
-This is the name associated with the entity in the Avatar. This is used in the image alt tag for accessibility. If no image is provided the first letter is used for the text avatar.
-
-<ApiDetails
-  componentName="Avatar"
-  propertyName="name"
-  required={true}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="Avatar" templateName="prop-name" />
-
 ### shape
 
 Shape of Avatar
@@ -96,30 +81,30 @@ Shape of Avatar
   propertyName="shape"
   required={false}
   defaultValue=""
-  mobileOptions={['circle', 'square', 'squircle']}
-  webOptions={['circle', 'square', 'squircle']}
+  mobileOptions={['circle', 'square']}
+  webOptions={['circle', 'square']}
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-shape" />
 
 ### size
 
-Custom Avatar size in px
+Size for a given avatar.
 
 <ApiDetails
   componentName="Avatar"
   propertyName="size"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
+  webOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-size" />
 
 ### src
 
-Absolute url to the image that should be shown in the Avatar
+Absolute url to the image that should be shown in the Avatar. If no src is provided then a generic fallback image is used.
 
 <ApiDetails
   componentName="Avatar"
@@ -131,5 +116,20 @@ Absolute url to the image that should be shown in the Avatar
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-src" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-testID" />
 
 <ComponentDetails componentName="Avatar" templateName="outro" />

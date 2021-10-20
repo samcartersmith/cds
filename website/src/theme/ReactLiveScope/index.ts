@@ -36,7 +36,7 @@ import { useModal } from '@cbhq/cds-web/overlays/useModal';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
-import * as CDSAvatar from '@cbhq/cds-web/avatar';
+import * as CDSAvatar from '@cbhq/cds-web/media/avatar';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
