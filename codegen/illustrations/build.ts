@@ -100,14 +100,20 @@ const renameFileWithNewVersion = (data: {
   fileNameFullPath: string;
   imageOutFullPath: string;
   nodeId: string;
-}): string => {
+}): {
+  newFileName: string;
+  newVersionNum: number;
+} => {
   const { imageName, fileNameFullPath, imageOutFullPath, nodeId } = data;
   // Since the file has changed, we need to rename file such that it has the new time
   const newVersionNum = localManifestData[FILE_FORMAT][nodeId].versionNum + 1;
   localManifestData[FILE_FORMAT][nodeId].versionNum = newVersionNum;
   const newFileName = createFileName(imageName, newVersionNum, FILE_FORMAT);
   renameSync(fileNameFullPath, path.join(imageOutFullPath, newFileName));
-  return newFileName;
+  return {
+    newFileName,
+    newVersionNum,
+  };
 };
 
 const loadOneImage = async (
@@ -129,7 +135,6 @@ const loadOneImage = async (
   }
 
   const fileName = createFileName(imageName, versionNum, FILE_FORMAT);
-  const jsFileName = createFileName(imageName, versionNum, 'js');
 
   const res = await axios
     .get(imageURL, {
@@ -146,7 +151,6 @@ const loadOneImage = async (
   if (!res) return;
 
   const fileNameFullPath = path.join(imageOutFullPath, fileName);
-  const jsFileNameFullPath = path.join(jsOutFullPath, jsFileName);
 
   const nameAndSpectrum = `${imageName}-${spectrum}`;
   const ENCODING = 'utf8';
@@ -188,19 +192,21 @@ const loadOneImage = async (
   const newFileBase64 = binaryToBase64(readFileSync(fileNameFullPath, ENCODING));
 
   if (fileHasChanged(oldFileBase64, newFileBase64)) {
-    const newFileName = renameFileWithNewVersion({
+    const { newFileName, newVersionNum } = renameFileWithNewVersion({
       imageName,
       fileNameFullPath,
       imageOutFullPath,
       nodeId,
     });
+    const newJsFileName = createFileName(imageName, newVersionNum, 'js');
+    const newJsOutFullPath = path.join(jsOutFullPath, newJsFileName);
 
     // You only need to create a new svgXML string if
     // the illustration was changed or it is new.
     createSvgXML({
-      outPath: jsOutFullPath,
+      outPath: newJsOutFullPath,
       svgStr: optimizedSVG.data,
-      fileName: jsFileName,
+      fileName: newJsFileName,
       fileStatus,
     });
 
@@ -208,7 +214,7 @@ const loadOneImage = async (
       newIllustrations.push(nameAndSpectrum);
     }
 
-    console.log(`Created ${newFileName} at ${jsFileNameFullPath}, File Status: ${fileStatus}`);
+    console.log(`Created ${newFileName} at ${newJsOutFullPath}, File Status: ${fileStatus}`);
   } else {
     console.log(`File: ${fileName} has not changed`);
   }
