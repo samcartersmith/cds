@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import type { ContentCellBaseProps } from '@cbhq/cds-common/types';
 
-import { Box } from '../layout/Box';
+import { cx } from 'linaria';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
@@ -10,6 +10,7 @@ import { TextHeadline } from '../typography/TextHeadline';
 import { TextLabel2 } from '../typography/TextLabel2';
 import { Cell, CellSharedProps, truncateClassName, overflowClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';
+import { useSpacingStyles } from '../hooks/useSpacingStyles';
 
 export type ContentCellProps = ContentCellBaseProps & CellSharedProps;
 
@@ -32,6 +33,10 @@ export const ContentCell = memo(function ContentCell({
   }
 
   const accessoryType = selected ? 'selected' : accessory;
+  const metaSpacing = useSpacingStyles({
+    spacingTop: 0.5,
+    spacingStart: 2,
+  });
 
   return (
     <Cell
@@ -64,18 +69,11 @@ export const ContentCell = memo(function ContentCell({
           </VStack>
 
           {!!meta && (
-            <Box
-              flexGrow={0}
-              flexShrink={0}
-              justifyContent="flex-end"
-              spacingTop={0.5}
-              spacingStart={2}
-              dangerouslySetClassName={truncateClassName}
-            >
+            <div className={cx(metaSpacing, truncateClassName)}>
               <TextLabel2 as="span" color="foregroundMuted" overflow="truncate">
                 {meta}
               </TextLabel2>
-            </Box>
+            </div>
           )}
         </HStack>
       )}
