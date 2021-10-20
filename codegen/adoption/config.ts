@@ -1,8 +1,8 @@
 import { argv } from 'yargs';
 import path from 'path';
 import type { AdoptersConfig } from './types';
-import { flattenConfig } from "./utils/flattenConfig";
-import { formatSidebar } from "./utils/formatSidebar";
+import { flattenConfig } from './utils/flattenConfig';
+import { formatSidebar } from './utils/formatSidebar';
 
 const { tempDir } = argv as Record<string, string>;
 
@@ -12,6 +12,7 @@ const retailWebGit = 'frontend/coinbase-www';
 const walletGit = 'wallet/wallet-mobile';
 const unifiedAccountsGit = 'frontend/unified-identity-accounts';
 const mauiGit = 'frontend/maui';
+const primeMobileGit = 'prime/mobile';
 
 const monorepoConfig = {
   root: path.join(tempDir, monorepoGit),
@@ -54,7 +55,8 @@ export const config: AdoptersConfig[] = [
     collapsed: true,
     items: [
       {
-        ...monorepoConfig,
+        root: path.join(tempDir, primeMobileGit),
+        github: primeMobileGit,
         id: 'prime-mobile',
         label: 'Prime Mobile',
         projectTsAliases: ['@prime-mobile'],
@@ -195,7 +197,7 @@ export const config: AdoptersConfig[] = [
 
 export const adopters = flattenConfig(config);
 export const adoptersSidebar = formatSidebar(config);
-export const adoptersWithPillar = adopters.map((item) => ({
+export const adoptersWithPillar = adopters.map(item => ({
   id: item.id,
   pillar: item.pillar,
 }));
