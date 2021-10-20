@@ -44,6 +44,7 @@ export const components = [
   'Modal',
   'ModalBody',
   'ModalFooter',
+  'ModalHeader',
   'Link',
   'Text',
   'DevicePreferencesProvider',

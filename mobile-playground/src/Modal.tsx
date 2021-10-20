@@ -1,9 +1,9 @@
 import React from 'react';
 import { TextInput } from 'react-native';
 import { Button } from '@cbhq/cds-mobile/buttons';
-import { Modal, ModalBody, ModalFooter } from '@cbhq/cds-mobile/overlays';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '@cbhq/cds-mobile/overlays';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
-import { PortalProvider } from '@cbhq/cds-mobile/context/PortalProvider';
+import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
 import { CreateModalProps, createStories } from ':cds-storybook/stories/Modal';
 
 import Example from './internal/Example';
@@ -13,6 +13,7 @@ import { LoremIpsum } from './internal/LoremIpsum';
 const { BasicModal, LongModal, PortalModal } = createStories({
   Modal,
   ModalBody,
+  ModalHeader,
   ModalFooter,
   ThemeProvider,
   Button,

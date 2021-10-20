@@ -1,13 +1,23 @@
 import { BoxBaseProps } from '@cbhq/cds-common';
 import React from 'react';
 
+import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { Box } from '../../layout';
 
 export type ModalBodyProps = Pick<BoxBaseProps, 'flexDirection'>;
 
 export const ModalBody: React.FC<ModalBodyProps> = ({ children, flexDirection = 'column' }) => {
+  const { hideDividers } = useModalParent();
+
   return (
-    <Box spacing={3} flexGrow={1} overflow="auto" flexDirection={flexDirection}>
+    <Box
+      spacingHorizontal={3}
+      // remove vertical padding when dividers hidden
+      spacingVertical={hideDividers ? 0 : 3}
+      flexGrow={1}
+      overflow="auto"
+      flexDirection={flexDirection}
+    >
       {children}
     </Box>
   );

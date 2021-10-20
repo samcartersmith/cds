@@ -1,19 +1,13 @@
 import React, { ReactNode, useCallback, useMemo } from 'react';
 import { View } from 'react-native';
 import { OverlayZIndexKeys, zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { PortalContext, usePortal } from '@cbhq/cds-common/context/PortalContext';
-import { usePortalState, PortalNode } from '@cbhq/cds-common/hooks/usePortalState';
-
-export const PortalHost: React.FC = () => {
-  const { nodes } = usePortal();
-
-  return <View>{nodes.map((item: PortalNode) => item.node)}</View>;
-};
+import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
+import { usePortalState, PortalNode } from '@cbhq/cds-common/overlays/usePortalState';
 
 export const PortalProvider: React.FC = ({ children }) => {
   const { nodes, addNode, removeNode } = usePortalState();
 
-  const addPortal = useCallback(
+  const addPortalNode = useCallback(
     (portalKey: string, nodeChildren: ReactNode, zIndexKey?: OverlayZIndexKeys) => {
       addNode(
         portalKey,
@@ -25,21 +19,14 @@ export const PortalProvider: React.FC = ({ children }) => {
     [addNode],
   );
 
-  const removePortal = useCallback(
-    (key: string) => {
-      removeNode(key);
-    },
-    [removeNode],
-  );
-
   const contextValue = useMemo(
-    () => ({ nodes, addPortal, removePortal }),
-    [nodes, addPortal, removePortal],
+    () => ({ nodes, addNode: addPortalNode, removeNode }),
+    [nodes, addPortalNode, removeNode],
   );
 
   return (
     <PortalContext.Provider value={contextValue}>
-      <PortalHost />
+      <View>{nodes.map((item: PortalNode) => item.node)}</View>
       {children}
     </PortalContext.Provider>
   );

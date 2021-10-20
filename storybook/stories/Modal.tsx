@@ -1,13 +1,18 @@
 import React, { useCallback } from 'react';
 import type { TextInputProps } from 'react-native';
 import { ButtonBaseProps, SystemProviderProps, useToggler } from '@cbhq/cds-common';
-import type { ModalBaseProps, ModalFooterBaseProps, SharedProps } from '@cbhq/cds-common/types';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { usePortal } from '@cbhq/cds-common/context/PortalContext';
+import type {
+  ModalBaseProps,
+  ModalHeaderBaseProps,
+  ModalFooterBaseProps,
+  SharedProps,
+} from '@cbhq/cds-common/types';
+import { useModal } from '@cbhq/cds-common/overlays/useModal';
 
 export type CreateModalProps = {
-  Modal: React.ComponentType<ModalBaseProps>;
+  Modal: React.ComponentType<ModalBaseProps & { disablePortal?: boolean }>;
   ModalBody: React.ComponentType;
+  ModalHeader: React.ComponentType<ModalHeaderBaseProps>;
   ModalFooter: React.ComponentType<ModalFooterBaseProps>;
   LoremIpsum: React.ComponentType<Record<string, unknown>>;
   Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
@@ -19,6 +24,7 @@ export type CreateModalProps = {
 export function createStories({
   Modal,
   ModalBody,
+  ModalHeader,
   ModalFooter,
   Button,
   Input, // test keyboard avoiding on mobile
@@ -26,63 +32,54 @@ export function createStories({
   ThemeProvider,
   PortalProvider,
 }: CreateModalProps) {
-  const BasicModalExample: React.FC = ({ children, ...props }) => {
+  const BasicModalExample: React.FC<{ disablePortal?: boolean }> = ({
+    children,
+    disablePortal,
+  }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler();
 
     return (
       <>
         <Button onPress={toggleOn}>Open Modal</Button>
-        <Modal
-          visible={visible}
-          onRequestClose={toggleOff}
-          title="Basic Modal"
-          footer={
-            <ModalFooter
-              PrimaryAction={<Button>Save</Button>}
-              SecondaryAction={<Button variant="secondary">Cancel</Button>}
-            />
-          }
-          zIndex={zIndex.overlays.portal}
-          {...props}
-        >
+        <Modal visible={visible} onRequestClose={toggleOff} disablePortal={disablePortal}>
+          <ModalHeader title="Basic Modal" />
           <ModalBody>{children}</ModalBody>
+          <ModalFooter
+            primaryAction={<Button>Save</Button>}
+            secondaryAction={<Button variant="secondary">Cancel</Button>}
+          />
         </Modal>
       </>
     );
   };
 
-  const PortalModalExample: React.FC<{
-    modalKey: string;
-  }> = ({ modalKey, children }) => {
-    const { addPortal, removePortal } = usePortal();
+  const PortalModalExample: React.FC = ({ children }) => {
+    const { openModal } = useModal();
 
-    const closeModal = useCallback(() => removePortal(modalKey), [removePortal, modalKey]);
-    const showModal = useCallback(
+    const handlePress = useCallback(
       () =>
-        addPortal(
-          modalKey,
+        openModal(
           <Modal
             visible
-            onRequestClose={closeModal}
-            title="Basic Modal"
-            footer={
-              <ModalFooter
-                PrimaryAction={<Button>Save</Button>}
-                SecondaryAction={<Button variant="secondary">Cancel</Button>}
-              />
-            }
+            onRequestClose={() => {
+              console.log('close modal');
+            }}
           >
+            <ModalHeader title="Basic Modal" />
             <ModalBody>{children}</ModalBody>
+            <ModalFooter
+              primaryAction={<Button>Save</Button>}
+              secondaryAction={<Button variant="secondary">Cancel</Button>}
+            />
           </Modal>,
-          'modal',
         ),
-      [addPortal, closeModal, children, modalKey],
+      [openModal, children],
     );
 
-    return <Button onPress={showModal}>Open Modal</Button>;
+    return <Button onPress={handlePress}>Open Modal</Button>;
   };
 
-  const MockModal: React.FC<Partial<ModalBaseProps>> = ({
+  const MockModal: React.FC<Partial<ModalBaseProps & ModalHeaderBaseProps>> = ({
     onRequestClose,
     onBackButtonPress,
     title = 'Basic Modal',
@@ -98,49 +95,61 @@ export function createStories({
         <Modal
           visible={externalVisible ?? visible}
           onRequestClose={onRequestClose ?? toggleOff}
-          title={title}
-          onBackButtonPress={onBackButtonPress}
-          footer={
-            <ModalFooter
-              testID="modal-footer"
-              PrimaryAction={<Button>Save</Button>}
-              SecondaryAction={<Button variant="secondary">Cancel</Button>}
-            />
-          }
+          disablePortal
         >
+          <ModalHeader onBackButtonPress={onBackButtonPress} title={title} />
           <ModalBody>
             <LoremIpsum />
           </ModalBody>
+          <ModalFooter
+            testID="modal-footer"
+            primaryAction={<Button>Save</Button>}
+            secondaryAction={<Button variant="secondary">Cancel</Button>}
+          />
         </Modal>
       </>
     );
   };
 
   const BasicModal = () => (
-    <BasicModalExample>
-      <LoremIpsum />
-    </BasicModalExample>
+    <PortalProvider>
+      <BasicModalExample>
+        <LoremIpsum />
+      </BasicModalExample>
+    </PortalProvider>
+  );
+
+  const ModalWithoutPortal = () => (
+    <PortalProvider>
+      <BasicModalExample disablePortal>
+        <LoremIpsum />
+      </BasicModalExample>
+    </PortalProvider>
   );
 
   const DarkModal = () => (
     <ThemeProvider spectrum="dark">
-      <BasicModalExample>
-        <LoremIpsum />
-      </BasicModalExample>
+      <PortalProvider>
+        <BasicModalExample>
+          <LoremIpsum />
+        </BasicModalExample>
+      </PortalProvider>
     </ThemeProvider>
   );
 
   const LongModal = () => (
-    <BasicModalExample>
-      <LoremIpsum repeat={30} />
-      {!!Input && <Input placeholder="test input" />}
-    </BasicModalExample>
+    <PortalProvider>
+      <BasicModalExample>
+        <LoremIpsum repeat={30} />
+        {!!Input && <Input placeholder="test input" />}
+      </BasicModalExample>
+    </PortalProvider>
   );
 
   const PortalModal = () => {
     return (
       <PortalProvider>
-        <PortalModalExample modalKey="basicModal">
+        <PortalModalExample>
           <LoremIpsum />
         </PortalModalExample>
       </PortalProvider>
@@ -149,10 +158,10 @@ export function createStories({
 
   return {
     BasicModal,
+    ModalWithoutPortal,
     DarkModal,
     LongModal,
     PortalModal,
-    BasicModalExample,
     MockModal,
   };
 }

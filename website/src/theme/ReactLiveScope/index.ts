@@ -6,7 +6,6 @@ import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { usePortal } from '@cbhq/cds-common/context/PortalContext';
 
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
@@ -31,10 +30,12 @@ import * as CDSTables from '@cbhq/cds-web/tables';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+import { useModal } from '@cbhq/cds-web/overlays/useModal';
+
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
-import { PortalProvider } from '@cbhq/cds-web/context/PortalProvider';
 import * as CDSAvatar from '@cbhq/cds-web/avatar';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
@@ -79,7 +80,7 @@ const ReactLiveScope = {
   useSpectrumConditional,
   useStatusButtons,
   useToggler,
-  usePortal,
+  useModal,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAnimation,

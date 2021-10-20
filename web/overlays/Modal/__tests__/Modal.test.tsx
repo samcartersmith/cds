@@ -10,9 +10,10 @@ import {
 import { Modal } from '../Modal';
 import { ModalFooter } from '../ModalFooter';
 import { ModalBody } from '../ModalBody';
+import { ModalHeader } from '../ModalHeader';
 import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';
-import { PortalProvider } from '../../../context/PortalProvider';
+import { PortalProvider } from '../../PortalProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
 
 const LoremIpsum = createLoremIpsum({
@@ -23,6 +24,7 @@ const LoremIpsum = createLoremIpsum({
 const { MockModal } = createStories({
   Modal,
   ModalBody,
+  ModalHeader,
   ModalFooter,
   ThemeProvider,
   Button,
@@ -118,17 +120,7 @@ describe('Modal', () => {
 
   it('renders modal footer', async () => {
     const { container, getByRole, getByTestId } = render(
-      <MockModal
-        visible
-        onRequestClose={jest.fn()}
-        footer={
-          <ModalFooter
-            testID="modal-footer"
-            PrimaryAction={<Button>Save</Button>}
-            SecondaryAction={<Button variant="secondary">Cancel</Button>}
-          />
-        }
-      />,
+      <MockModal visible onRequestClose={jest.fn()} />,
     );
 
     fireEvent.click(container.querySelector('button') as Element);

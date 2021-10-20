@@ -19,6 +19,21 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### accessibilityLabel
+
+Aria label for Modal
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-accessibilityLabel" />
+
 ### accessibilityLabelledBy <Badge variant="web" />
 
 Point to the id of the modal title
@@ -160,20 +175,20 @@ Disable overlay click that closes the Modal
 
 <ComponentDetails componentName="Modal" templateName="prop-disableOverlayPress" />
 
-### footer
+### disablePortal <Badge variant="web" />
 
-Component to render as the Modal footer
+Disable React portal integration
 
 <ApiDetails
   componentName="Modal"
-  propertyName="footer"
+  propertyName="disablePortal"
   required={false}
   defaultValue=""
-  mobileOptions={['ReactElement<ModalFooterBaseProps, string | JSXElementConstructor<any>>']}
-  webOptions={['ReactElement<ModalFooterBaseProps, string | JSXElementConstructor<any>>']}
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="Modal" templateName="prop-footer" />
+<ComponentDetails componentName="Modal" templateName="prop-disablePortal" />
 
 ### hideCloseButton
 
@@ -205,21 +220,6 @@ Hide top and bottom dividers inside Modal body
 
 <ComponentDetails componentName="Modal" templateName="prop-hideDividers" />
 
-### onBackButtonPress
-
-Handles back action
-
-<ApiDetails
-  componentName="Modal"
-  propertyName="onBackButtonPress"
-  required={false}
-  defaultValue=""
-  mobileOptions={['NoopFn']}
-  webOptions={['NoopFn']}
-/>
-
-<ComponentDetails componentName="Modal" templateName="prop-onBackButtonPress" />
-
 ### onRequestClose
 
 Handles Modal close
@@ -249,21 +249,6 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-testID" />
-
-### title
-
-Title of the Modal
-
-<ApiDetails
-  componentName="Modal"
-  propertyName="title"
-  required={false}
-  defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="Modal" templateName="prop-title" />
 
 ### visible
 

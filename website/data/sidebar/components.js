@@ -117,6 +117,7 @@ module.exports = {
         'components/overlays/Modal/modal',
         'components/overlays/ModalBody/modal-body',
         'components/overlays/ModalFooter/modal-footer',
+        'components/overlays/ModalHeader/modal-header',
       ],
     },
     {

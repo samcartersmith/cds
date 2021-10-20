@@ -1028,16 +1028,16 @@ export const Modal = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/a11y.mdx'
       ),
   ),
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/implementation.mdx'
-      ),
-  ),
-  intro: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Modal/intro.mdx'
       ),
   ),
   modal: React.lazy(
@@ -1080,6 +1080,21 @@ export const ModalFooter = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalFooter/modal-footer.mdx'
+      ),
+  ),
+};
+
+export const ModalHeader = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalHeader/implementation.mdx'
+      ),
+  ),
+  'modal-header': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalHeader/modal-header.mdx'
       ),
   ),
 };

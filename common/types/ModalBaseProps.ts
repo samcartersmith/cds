@@ -14,12 +14,6 @@ export type ModalBaseProps = {
   visible: boolean;
   /** Handles Modal close */
   onRequestClose: NoopFn;
-  /** Component to render as the Modal footer */
-  footer?: ReactElement<ModalFooterBaseProps>;
-  /** Handles back action */
-  onBackButtonPress?: NoopFn;
-  /** Title of the Modal */
-  title?: string;
   /**
    * Hide top and bottom dividers inside Modal body
    * @default false
@@ -37,13 +31,16 @@ export type ModalRefBaseProps = {
   onRequestClose: NoopFn | MouseEventHandler<Element>;
 };
 
-export type ModalHeaderBaseProps = Partial<
-  Pick<ModalBaseProps, 'onRequestClose' | 'onBackButtonPress' | 'title'>
->;
+export type ModalHeaderBaseProps = {
+  /** Handles back action */
+  onBackButtonPress?: NoopFn;
+  /** Title of the Modal */
+  title?: string;
+} & SharedProps;
 
 export type ModalFooterBaseProps = {
   /** Primary action button */
-  PrimaryAction: NonNullable<ReactElement<ButtonBaseProps>>;
+  primaryAction: NonNullable<ReactElement<ButtonBaseProps>>;
   /** Secondary action button */
-  SecondaryAction?: ReactElement<ButtonBaseProps>;
+  secondaryAction?: ReactElement<ButtonBaseProps>;
 } & SharedProps;

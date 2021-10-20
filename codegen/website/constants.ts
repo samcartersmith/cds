@@ -40,7 +40,6 @@ export const filesToIgnore = [
   'LogoMark',
   'LogoWordmark',
   'Badge',
-  'ModalHeader',
   'Overlay',
 ];
 

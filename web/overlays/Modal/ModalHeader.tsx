@@ -1,7 +1,8 @@
 import React from 'react';
 import { ModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
-
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
+
 import { Box, HStack } from '../../layout';
 import { TextHeadline } from '../../typography';
 import { IconButton } from '../../buttons';
@@ -9,18 +10,12 @@ import { IconButton } from '../../buttons';
 export type ModalHeaderProps = {
   /** Handles back button press */
   onBackButtonPress?: React.MouseEventHandler;
-  /** Handles close button press */
-  onRequestClose?: React.MouseEventHandler;
-  accessibilityLabelledBy?: React.AriaAttributes['aria-labelledby'];
 } & Omit<ModalHeaderBaseProps, 'onRequestClose' | 'onBackButtonPress'>;
 
-export const ModalHeader: React.FC<ModalHeaderProps> = ({
-  title,
-  onBackButtonPress,
-  onRequestClose,
-  accessibilityLabelledBy,
-}) => {
+export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBackButtonPress }) => {
   const height = useInteractableHeight(true);
+  const { onRequestClose, accessibilityLabelledBy, hideCloseButton, hideDividers } =
+    useModalParent();
 
   if (!title && !onBackButtonPress && !onRequestClose) return null;
 
@@ -28,7 +23,12 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
   const emptyPlaceholder = <Box height={height} width={height} />;
 
   return (
-    <HStack spacingHorizontal={3} spacingVertical={2} alignItems="center">
+    <HStack
+      spacingHorizontal={3}
+      spacingVertical={2}
+      alignItems="center"
+      borderedBottom={!hideDividers}
+    >
       <Box>
         {onBackButtonPress ? (
           <IconButton
@@ -47,7 +47,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
         </TextHeadline>
       </Box>
       <Box justifyContent="flex-end">
-        {onRequestClose ? (
+        {!hideCloseButton ? (
           <IconButton
             transparent
             name="close"

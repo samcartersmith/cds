@@ -1,6 +1,7 @@
 import React from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { ModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
+import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 
 import { Box, HStack } from '../../layout';
 import { TextHeadline } from '../../typography';
@@ -9,17 +10,18 @@ import { IconButton } from '../../buttons';
 type ModalHeaderProps = {
   /** Handles back button press */
   onBackButtonPress?: (event: GestureResponderEvent) => void;
-  /** Handles close button press */
-  onRequestClose?: (event: GestureResponderEvent) => void;
 } & ModalHeaderBaseProps;
 
-export const ModalHeader: React.FC<ModalHeaderProps> = ({
-  title,
-  onBackButtonPress,
-  onRequestClose,
-}) => {
+export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, onBackButtonPress }) => {
+  const { onRequestClose, hideCloseButton, hideDividers } = useModalParent();
+
   return (
-    <HStack spacingHorizontal={3} spacingVertical={2} alignItems="center">
+    <HStack
+      spacingHorizontal={3}
+      spacingVertical={2}
+      alignItems="center"
+      borderedBottom={!hideDividers}
+    >
       <Box flexGrow={1} flexBasis={0}>
         {!!onBackButtonPress && (
           <IconButton
@@ -34,7 +36,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
         <TextHeadline>{title}</TextHeadline>
       </Box>
       <Box flexGrow={1} flexBasis={0} alignItems="flex-end">
-        {!!onRequestClose && (
+        {!hideCloseButton && (
           <IconButton
             transparent
             name="close"
