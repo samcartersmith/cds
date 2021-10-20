@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { PaletteBackground, PaletteForeground } from '@cbhq/cds-common';
+import { PaletteBackground, PaletteForeground, SharedProps } from '@cbhq/cds-common';
 import { TableCellProps } from './tableCellTypes';
 
 export type TableRowProps = {
@@ -32,4 +32,4 @@ export type TableRowProps = {
    * @default false
    */
   disableHoverIndicator?: boolean;
-};
+} & SharedProps;

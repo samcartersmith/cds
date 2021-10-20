@@ -1,5 +1,5 @@
 import { ReactNode, ReactElement, TdHTMLAttributes, ThHTMLAttributes } from 'react';
-import { FlexAxisValue, FlexSpaceCommon, PaletteForeground } from '@cbhq/cds-common';
+import { FlexAxisValue, FlexSpaceCommon, PaletteForeground, SharedProps } from '@cbhq/cds-common';
 import { TextProps } from '@cbhq/cds-web/typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
@@ -52,7 +52,8 @@ type TableCellBaseProps = {
    * @default vertical
    */
   direction?: 'vertical' | 'horizontal';
-} & (TdHTMLAttributes<HTMLTableCellElement> | ThHTMLAttributes<HTMLTableCellElement>);
+} & (TdHTMLAttributes<HTMLTableCellElement> | ThHTMLAttributes<HTMLTableCellElement>) &
+  SharedProps;
 
 type TableCellPropsWithInputs = {
   /** Children to render within the cell. */

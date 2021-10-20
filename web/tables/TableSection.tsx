@@ -3,7 +3,7 @@ import { TableSectionContext } from './context/TableSectionContext';
 
 import { TableSectionProps } from './types/tableSectionTypes';
 
-export const TableSection = memo(({ as = 'tbody', children }: TableSectionProps) => {
+export const TableSection = memo(({ as = 'tbody', children, testID }: TableSectionProps) => {
   const TableSectionComponent = as;
 
   // Provide the section type to child components (specifically TableCell) so that they can
@@ -11,7 +11,7 @@ export const TableSection = memo(({ as = 'tbody', children }: TableSectionProps)
   return (
     // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
     <TableSectionContext.Provider value={{ type: as }}>
-      <TableSectionComponent>
+      <TableSectionComponent data-testid={testID}>
         {Children.map(children, (child: ReactNode) => {
           // extra whitespace in table sections causes DOM validation errors
           // so we need to filter out empty children

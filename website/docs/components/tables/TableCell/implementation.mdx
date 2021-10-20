@@ -274,6 +274,21 @@ A subtitle will appear below the title. Type is set with TextLabel2
 
 <ComponentDetails componentName="TableCell" templateName="prop-subtitleColor" />
 
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-testID" />
+
 ### title <Badge variant="web" />
 
 If a title is provided, the default type style will be inferred from context. If the cell is rendered in a TableHeader, it will render as a TextHeadline. But when rendered in a TableBody the text will render as TextBody.

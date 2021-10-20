@@ -5,14 +5,16 @@ import { TableProps } from './types/tableTypes';
 import { table } from './styles/tableStyles';
 
 export type { TableProps, TableVariant } from './types/tableTypes';
-export const Table = memo(({ children, variant, bordered }: TableProps) => {
+export const Table = memo(({ children, variant, bordered, testID }: TableProps) => {
   const variantStyles = useTableStyles({ variant, bordered });
 
   return (
     // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
     <TableContext.Provider value={{ variant }}>
       <div className={variantStyles}>
-        <table className={table}>{children}</table>
+        <table className={table} data-testid={testID}>
+          {children}
+        </table>
       </div>
     </TableContext.Provider>
   );

@@ -21,6 +21,7 @@ export const TableCell = memo(
     justifyContent,
     onPress,
     start,
+    testID,
     overflow,
     // Only available when Children is null
     title,
@@ -66,7 +67,12 @@ export const TableCell = memo(
     );
 
     return (
-      <TableCellComponent className={tableCellClass} colSpan={colSpan} {...props}>
+      <TableCellComponent
+        data-testid={testID}
+        className={tableCellClass}
+        colSpan={colSpan}
+        {...props}
+      >
         <Cell
           onPress={onPress}
           spacing={0}

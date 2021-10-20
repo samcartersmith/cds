@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import { SharedProps } from '@cbhq/cds-common';
 
 export type TableSectionTag = 'thead' | 'tbody' | 'tfoot' | 'div';
 
@@ -12,4 +13,5 @@ export type TableSectionProps = PropsWithChildren<{
    * @default undefined
    */
   as?: TableSectionTag;
-}>;
+}> &
+  SharedProps;

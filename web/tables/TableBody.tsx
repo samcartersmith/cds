@@ -4,8 +4,12 @@ import { TableSectionProps } from './types/tableSectionTypes';
 import { TableSection } from './TableSection';
 
 export type TableBodyProps = TableSectionProps;
-export const TableBody = memo(({ children }: TableBodyProps) => {
-  return <TableSection as="tbody">{children}</TableSection>;
+export const TableBody = memo(({ children, testID }: TableBodyProps) => {
+  return (
+    <TableSection as="tbody" testID={testID}>
+      {children}
+    </TableSection>
+  );
 });
 
 TableBody.displayName = 'TableBody';

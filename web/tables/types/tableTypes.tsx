@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { SharedProps } from '@cbhq/cds-common';
 import { TableSectionProps } from './tableSectionTypes';
 
 export type TableVariant = 'default' | 'graph' | 'ruled';
@@ -29,4 +30,4 @@ export type TableProps = {
    * When provided, we'll apply a bordered around the entire table
    */
   bordered?: boolean;
-};
+} & SharedProps;

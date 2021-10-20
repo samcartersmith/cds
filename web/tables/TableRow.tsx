@@ -9,7 +9,14 @@ import { tableRow, tableRowHover } from './styles/tableRowStyles';
 
 export type { TableRowProps } from './types/tableRowTypes';
 export const TableRow = memo(
-  ({ fullWidth, disableHoverIndicator, children, backgroundColor, color }: TableRowProps) => {
+  ({
+    fullWidth,
+    disableHoverIndicator,
+    children,
+    backgroundColor,
+    color,
+    testID,
+  }: TableRowProps) => {
     const tableSectionType = useTableSectionTag();
     const isCellInBody = tableSectionType === 'tbody';
     const shouldIndicateHover = isCellInBody && !disableHoverIndicator;
@@ -22,7 +29,11 @@ export const TableRow = memo(
     }, [backgroundColor, color]);
 
     return (
-      <tr style={inlineStyles} className={cx(tableRow, shouldIndicateHover && tableRowHover)}>
+      <tr
+        style={inlineStyles}
+        className={cx(tableRow, shouldIndicateHover && tableRowHover)}
+        data-testid={testID}
+      >
         {fullWidth && (
           <TableCell direction="horizontal" colSpan={1000}>
             {children}
