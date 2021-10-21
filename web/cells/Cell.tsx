@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import type { CellBaseProps } from '@cbhq/cds-common/types';
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
@@ -17,21 +17,30 @@ const pressClassName = css`
   width: 100%;
 `;
 
+export const cellStaticClassName = 'cds-cell';
+
 // Display and min-width are necessary for truncation to work:
 // https://css-tricks.com/flexbox-truncated-text/
-export const truncateClassName = css`
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
+const truncate = css`
+  &.${cellStaticClassName} {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
 `;
 
-export const overflowClassName = css`
-  overflow: auto;
-  text-overflow: unset;
-  white-space: normal;
+const overflow = css`
+  &.${cellStaticClassName} {
+    overflow: auto;
+    text-overflow: unset;
+    white-space: normal;
+  }
 `;
+
+export const overflowClassName = cx(cellStaticClassName, overflow);
+export const truncateClassName = cx(cellStaticClassName, truncate);
 
 export type CellSharedProps = {
   /** The type of outer wrapping element. */
