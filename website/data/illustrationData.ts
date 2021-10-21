@@ -4,7 +4,6 @@
  */
 
 export const heroSquareNames = [
-  'coinbaseOnePhoneLightning',
   'accessToAdvancedCharts',
   'accountUnderReview',
   'addBankAccount',
