@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.26.2 (10/20/2021, 06:11 PM PST)
+
+#### 🚀 Updates
+
+- Update Avatar per feedback. [#38267](https://github.cbhq.net/mono/repo/pull/38267), [CDS-1608](https://jira.coinbase-corp.com/browse/CDS-1608)
+
 ## 0.26.1 (10/20/2021, 09:07 AM PST)
 
 #### 🚀 Updates
