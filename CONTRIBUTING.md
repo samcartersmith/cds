@@ -207,6 +207,26 @@ _Run the following steps in the terminal in this order_
 
 - **Emulator failed to load** Try manually launching the Emulator from terminal. Be sure the emulator also exists in Android Studio's AVD manager.
 
+
+## Retail RN Experiments 
+### Setup
+- Follow the steps in the Retail RN repo [here](https://github.cbhq.net/consumer/react-native/blob/master/doc/guides/add-an-experiment-or-feature-flag.md)
+### Integrate
+- Once you have setup the experiment in code, you need to access [Sherlock](https://sherlock.cbhq.net/) with the right permissions/Admin roles (general, engineer, cifer, level_2_support) follow the docs [here](https://github.cbhq.net/consumer/react-native/blob/master/doc/guides/add-an-experiment-or-feature-flag.md#step-1-access-cifer-via-sherlock)
+- Now that you have access to Sherlock, you can create tests by following the instructions [here](https://github.cbhq.net/consumer/react-native/blob/master/doc/guides/add-an-experiment-or-feature-flag.md#step-2-create-a-new-experiment)
+
+### Refine
+- Find the earliest Retail RN version has your experiment
+  - You will need to find the release that has your experiment to refine the test in Sherlock, specifically what is the minimum version to run it on.
+  - To do this, look in the [RN repo](https://github.cbhq.net/consumer/react-native) for the latest release and work your way backwards until you see your experiment in the config file [Experiments.tsx](https://github.cbhq.net/consumer/react-native/blob/master/src/packages/app/src/utils/experiments/Experiments.tsx)
+- Employee dogfooding
+  - To force employees into the control bucket, add them to the treatment group
+  ![](markdown-images/2021-10-21-11-57-00.png)
+
+### Tips
+- Add yourself to the `@rn-release-notifications` slack group for updates on releases
+- you can filter down branches of releases by Tags ![](markdown-images/2021-10-21-11-52-54.png) ![](markdown-images/2021-10-21-11-54-45.png)
+- If you know what release your experimentation PR was merged, you can just swap out the version in this GH link to check the experiment config file directly `https://github.cbhq.net/consumer/react-native/blob/release-{MAJOR.MINOR.PATCH}/src/packages/app/src/utils/experiments/Experiments.tsx`
 # CDS Website Development
 
 The CDS website (which can be accessed at go/cds or https://cds.cbhq.net) is built using using Docusaurus 2 and is where we document CDS principles, best practices, components, hooks and more. This website is very important because it gives the consumers of the design system a centralized location to identify the best way for their team to leverage the design system.
@@ -368,3 +388,5 @@ More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/
 
 - Run `yarn install` on the external project
 - If you update the package in the monorepo and want to sync it in the external project then you will have to run `yarn upgrade [dependency]`. For example `yarn upgrade @cbhq/cds-common`
+
+
