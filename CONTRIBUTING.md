@@ -283,32 +283,40 @@ For adding new imports, simply import in the same file and add it to the `ReactL
 
 # Miscellaneous
 
-### API Documentation
+For any usage examples, you can use all imports defined in `website/src/theme/ReactLiveScope/index.ts` directly without importing them in your jsx live.
 
-Web + Mobile documentation is viewed together on our website and we try minimze API deviation. However, there are times when the behavior slightly varies or there is a unique callout we want to make for a specific platform. To accomadate this we use JSDOC tags within API definitions to aid in documentation generation.
+For adding new imports, simply import in the same file and add it to the `ReactLiveScope` object.
 
-- `@default`: Default value of a property
-- `@danger`: Property which is used as an escape hatch and is not recommended.
-- `@link`: Link to MDN React Native or other documentation which is relevant
-- `@experimental`: Experimental/unstable API's
-- `@deprecated`: Deprecated API's
+# Release and CDS Consumers
 
-If you want to add a custom example or more details for a component you can create a directory in website/docs/components/examples matching the component's name. In that component's directory you can add mdx files for intro.mdx (shown at the very top of page), outro.mdx (at the very bottom of page) or for individual properties. For example, in examples/ThemeProvider we have a spectrum.mdx file with a live code example.
+You will often hear CDS team members refer to retail, prime, assetHub (and others) as consumers. CDS consumers are any teams at Coinbase that leverage CDS.
 
-Don't forget to add an index.ts to that component's example directory with exports for any children mdx files. You will also need to add a wildcard export for the directory in website/docs/components/examples/index.ts.
+We release our packages to consumers through Coinbase's internal NPM registry (Verdaccio - https://publish-npm.cbhq.net/). Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules at `lib/`. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
 
-### Create A New Package
+The following sections describe how to push new package releases to our consumers through Verdaccio.
 
-1. Run `make new.package name=<package>`.
-2. Edit [cds_package.bzl](./cds_package.bzl) `PACKAGES` to include the new package.
-3. Check out `<package>/basepackage.json` and `<package>/BUILD.bazel` and make necessary updates.
-4. Update `<package>/CHANGELOG.md`.
+### Creating a New Release
 
-### Package
+When you're ready to cut a new release, do the following:
 
-To use CDS packages outside of mono/repo, NPM packages are available through the Coinbase's internal NPM registry. Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules at `lib/`. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
+1. Run `make release` in the `eng/shared/design-system` directory.
 
-#### Publishing to the NPM registry
+This script will automatically update the `CHANGELOG` with the latest version and add latest merged PR titles, links, and Jira tickets. It will also run the docgen script and lint the website files.
+
+Copy the title that is in the logs and paste it to be you pull request title.
+
+Your pr should like this https://github.cbhq.net/mono/repo/pull/34005
+
+This is an example of how we would update the retail app to use an updated version of the CDS package https://github.cbhq.net/mono/repo/pull/34005
+
+The `make release` script will automatically update the `CHANGELOG` with the latest version and add latest merged PR titles, links, and Jira tickets. It will also run the docgen script and lint the website files.
+
+Checkout the [Release Workflow](https://cds.cbhq.net/resources/release) for more information. 
+For packages that are pre v1.0.0 we are not following a weekly Monday release like some docs may suggest. In order to move fast engineers will bump release as components are added.
+
+### Manual Release
+
+If `Make release` fails we must do a manual release.
 
 Continuous deploy is turned on for CDS package publishing. If you need to trigger a manual deploy, do the following
 
@@ -322,31 +330,25 @@ ash deploy -p eng/shared/design-system/cloud
 
 2. Enter the number for the commit/package you want to deploy for prod or development registry
 
-3. Check that the package is published at[development Coinbase NPM registry](https://registry-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://registry-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
+3. Check that the package is published at[development Coinbase NPM registry](https://publish-npm-dev.cbhq.net/) or [production Coinbase NPM registry](https://publish-npm.cbhq.net/). It usually takes about 10 min or so for the package to be uploaded.
 
-### Creating a New Release
+# Miscellaneous
 
-When you're ready to cut a new release, run `make release` within the `eng/shared/design-system` directory.
+### API Documentation
 
-This script will automatically update the `CHANGELOG` with the latest version and add latest merged PR titles, links, and Jira tickets. It will also run the docgen script and lint the website files.
+Because our components are used by so many teams it is vital that we document their APIs well. This section give a quick preview of how to effectively document our components.
 
-Checkout the [Release Workflow](https://cds.cbhq.net/resources/release) for more information.
+Web + Mobile documentation is viewed together on our website and we try minimze API deviation. However, there are times when the behavior slightly varies or there is a unique callout we want to make for a specific platform. To accomadate this we use JSDOC tags within API definitions to aid in documentation generation.
 
-### Adoption Script
+- `@default`: Default value of a property
+- `@danger`: Property which is used as an escape hatch and is not recommended.
+- `@link`: Link to MDN React Native or other documentation which is relevant
+- `@experimental`: Experimental/unstable API's
+- `@deprecated`: Deprecated API's
 
-Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
+If you want to add a custom example or more details for a component you can create a directory in website/docs/components/examples matching the component's name. In that component's directory you can add mdx files for intro.mdx (shown at the very top of page), outro.mdx (at the very bottom of page) or for individual properties. For example, in examples/ThemeProvider we have a spectrum.mdx file with a live code example.
 
-1. Run:
-
-```bash
-  // multiple projects
-  make prepare.adoption projects=commerce,assethub,prime
-
-  // single project
-  make prepare.adoption projects=commerce
-```
-
-2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
+Don't forget to add an index.ts to that component's example directory with exports for any children mdx files. You will also need to add a wildcard export for the directory in website/docs/components/examples/index.ts.
 
 ### Commit Message Conventions
 
@@ -369,7 +371,25 @@ With `logType` being one of the following:
 
 More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/master/tools/js/releasePackages.ts)
 
-### Testing on external projects
+
+### Adoption Script
+
+Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
+
+1. Run:
+
+```bash
+  // multiple projects
+  make prepare.adoption projects=commerce,assethub,prime
+
+  // single project
+  make prepare.adoption projects=commerce
+```
+
+2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
+
+
+### Testing Locally on external projects
 
 - Build your project and any dependencies of that project with `make build.packages`.
 - The output of the packages above will be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system`. Locate your package in the subdirectory `[package]/package`. For example
