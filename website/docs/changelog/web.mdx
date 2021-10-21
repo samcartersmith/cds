@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.28.0 (10/21/2021, 02:26 PM PST)
+
+#### 💥 Breaking
+
+- Oct-20-2021 Illustrations release. [#38832](https://github.cbhq.net/mono/repo/pull/38832)
+
+#### 🚀 Updates
+
+- Docusaurus css overrides teaching me to be more specific. [#38716](https://github.cbhq.net/mono/repo/pull/38716)
+- Add onPress handler to TableRow. [#38889](https://github.cbhq.net/mono/repo/pull/38889)
+
 ## 0.27.1 (10/20/2021, 06:11 PM PST)
 
 #### 🚀 Updates
