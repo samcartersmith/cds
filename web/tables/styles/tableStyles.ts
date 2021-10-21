@@ -14,63 +14,70 @@ export const table = css`
   tbody,
   tfoot {
     padding: 0;
+    margin: 0;
     border: none;
   }
 `;
 
 export const tableVariantBase = css`
-  background-color: ${palette.background};
-  color: ${palette.foreground};
+  table {
+    background-color: ${palette.background};
+    color: ${palette.foreground};
 
-  /* make sure table is as least as wide as its contents */
-  min-width: fit-content;
+    /* make sure table is as least as wide as its contents */
+    min-width: fit-content;
+  }
 `;
 
 export const tableVariantGraph = css`
-  tfoot {
-    border-top: ${borderWidth.card}px solid ${palette.line};
-  }
+  table {
+    & > tfoot {
+      border-top: ${borderWidth.card}px solid ${palette.line};
+    }
 
-  & > tr > td,
-  tbody > tr > td,
-  thead > tr > th,
-  tfoot > tr > td {
-    border-bottom: ${borderWidth.card}px solid ${palette.line};
-    border-right: ${borderWidth.card}px solid ${palette.line};
-  }
+    & > tr > td,
+    & > tbody > tr > td,
+    & > thead > tr > th,
+    & > tfoot > tr > td {
+      border-bottom: ${borderWidth.card}px solid ${palette.line};
+      border-right: ${borderWidth.card}px solid ${palette.line};
+    }
 
-  tbody > tr:last-child > td,
-  tfoot > tr:last-child > td {
-    border-bottom: none;
-  }
+    & > tbody > tr:last-child > td,
+    & > tfoot > tr:last-child > td {
+      border-bottom: none;
+    }
 
-  thead > tr > th:last-child,
-  tbody > tr > td:last-child,
-  tfoot > tr > td:last-child {
-    border-right: none;
+    & > thead > tr > th:last-child,
+    & > tbody > tr > td:last-child,
+    & > tfoot > tr > td:last-child {
+      border-right: none;
+    }
   }
 `;
 
 export const tableVariantRuled = css`
-  tfoot {
-    border-top: ${borderWidth.card}px solid ${palette.line};
-  }
+  table {
+    & > tfoot {
+      border-top: ${borderWidth.card}px solid ${palette.line};
+    }
 
-  & > tr > td,
-  tbody > tr > td,
-  thead > tr > th,
-  tfoot > tr > td {
-    border-bottom: ${borderWidth.card}px solid ${palette.line};
-  }
+    & > tr > td,
+    & > tbody > tr > td,
+    & > thead > tr > th,
+    & > tfoot > tr > td {
+      border-bottom: ${borderWidth.card}px solid ${palette.line};
+    }
 
-  tbody > tr:last-child > td,
-  tfoot > tr:last-child > td {
-    border: none;
+    & > tbody > tr:last-child > td,
+    & > tfoot > tr:last-child > td {
+      border: none;
+    }
   }
 `;
 
 export const tableBorder = css`
-  overflow: hidden;
+  overflow: auto;
   border: ${borderWidth.card}px solid ${palette.line};
   border-radius: ${borderRadius.standard}px;
 `;
