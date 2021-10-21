@@ -17,6 +17,7 @@ export const tableRow = css`
 export const tableRowHover = css`
   /* Lest we be overridden */
   &:nth-child(1n) {
+    &:focus,
     &:hover {
       background-color: ${hoverColor};
     }

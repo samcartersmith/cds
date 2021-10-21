@@ -7,7 +7,6 @@ import { startCase } from 'lodash';
 import { Icon } from '../../icons';
 import { Button } from '../../buttons';
 import { HStack } from '../../layout';
-import { Spacer } from '../../layout/Spacer';
 import { TextDisplay2 } from '../../typography';
 import { Switch } from '../../controls/Switch';
 
@@ -27,25 +26,31 @@ export const SampleTable: Story = () => {
   const data = assetHubMock.slice(0, 6);
   const variants: TableVariant[] = ['default', 'graph', 'ruled'];
 
+  const handlePress = (name: string) => {
+    // eslint-disable-next-line no-alert
+    alert(`hi ${name}`);
+  };
+  // Only apply a press event to a few items
+  const pressEvents = (name: string) => ({
+    onPress: name === 'Ethereum' ? () => handlePress(name) : undefined,
+  });
+
   return (
     <Table bordered={hasBorder} variant={variant}>
       <TableHeader>
         <TableRow fullWidth>
           <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
             <TextDisplay2 as="h2">Sample Table</TextDisplay2>
-            <HStack alignItems="center" justifyContent="space-between">
+            <HStack alignItems="center" justifyContent="space-between" gap={1}>
               {variants.map((v: TableVariant) => (
-                <>
-                  <Button
-                    compact
-                    key={v}
-                    variant={v === variant ? 'primary' : 'secondary'}
-                    onPress={() => setVariant(v)}
-                  >
-                    {v}
-                  </Button>
-                  <Spacer horizontal={2} />
-                </>
+                <Button
+                  compact
+                  key={v}
+                  variant={v === variant ? 'primary' : 'secondary'}
+                  onPress={() => setVariant(v)}
+                >
+                  {v}
+                </Button>
               ))}
               <Switch onChange={toggle} checked={hasBorder}>
                 Border
@@ -61,7 +66,7 @@ export const SampleTable: Story = () => {
       </TableHeader>
       <TableBody>
         {data.map((row) => (
-          <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
+          <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...pressEvents(row.name)}>
             {Object.entries(row)
               .filter(([label]) => LABELS.includes(label))
               .map(([key, val]) => (

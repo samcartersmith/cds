@@ -1,7 +1,8 @@
-import { ReactElement } from 'react';
+import { ReactElement, MouseEventHandler, MutableRefObject } from 'react';
 import { PaletteBackground, PaletteForeground, SharedProps } from '@cbhq/cds-common';
 import { TableCellProps } from './tableCellTypes';
 
+export type TableRowRef = MutableRefObject<HTMLTableRowElement | null>;
 export type TableRowProps = {
   /**
    * Children are required, and should always include TableCell | TableCell[].
@@ -32,4 +33,9 @@ export type TableRowProps = {
    * @default false
    */
   disableHoverIndicator?: boolean;
+  /**
+   * Callback to fire when pressed
+   * @default noop
+   */
+  onPress?: MouseEventHandler<Element> | (() => void);
 } & SharedProps;

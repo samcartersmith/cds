@@ -1,4 +1,10 @@
-import { ReactNode, ReactElement, TdHTMLAttributes, ThHTMLAttributes } from 'react';
+import {
+  ReactNode,
+  ReactElement,
+  TdHTMLAttributes,
+  ThHTMLAttributes,
+  MouseEventHandler,
+} from 'react';
 import { FlexAxisValue, FlexSpaceCommon, PaletteForeground, SharedProps } from '@cbhq/cds-common';
 import { TextProps } from '@cbhq/cds-web/typography';
 
@@ -40,7 +46,7 @@ type TableCellBaseProps = {
    * Callback to fire when pressed
    * @default noop
    */
-  onPress?: React.MouseEventHandler;
+  onPress?: MouseEventHandler;
   /**
    * Should the title/subtitle text truncate
    * @default false
