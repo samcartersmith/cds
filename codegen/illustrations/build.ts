@@ -592,7 +592,6 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
       IllustrationFilePathMap:
         " Record<string,{ light: Promise<{ default: { content: string; }; content: string; }>; dark: Promise<{ default: { content: string; }; content: string; }> | null; fileFormat:'svg' }>",
     },
-    header: '/* eslint-disable */\n',
   });
 
   spinner.stop();

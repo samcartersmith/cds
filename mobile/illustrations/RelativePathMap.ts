@@ -10,6 +10,11 @@ export const IllustrationFilePathMap: Record<
     fileFormat: 'svg';
   }
 > = {
+  coinbaseOnePhoneLightning: {
+    light: import('./images/light/coinbaseOnePhoneLightning-1'),
+    dark: import('./images/dark/coinbaseOnePhoneLightning-1'),
+    fileFormat: 'svg',
+  },
   accessToAdvancedCharts: {
     light: import('./images/light/accessToAdvancedCharts-0'),
     dark: null,
@@ -140,6 +145,36 @@ export const IllustrationFilePathMap: Record<
     dark: import('./images/dark/coinbaseIsDownMobile-0'),
     fileFormat: 'svg',
   },
+  coinbaseOneCardWarning: {
+    light: import('./images/light/coinbaseOneCardWarning-1'),
+    dark: import('./images/dark/coinbaseOneCardWarning-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneDiscountedAmount: {
+    light: import('./images/light/coinbaseOneDiscountedAmount-1'),
+    dark: import('./images/dark/coinbaseOneDiscountedAmount-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneDocWarning: {
+    light: import('./images/light/coinbaseOneDocWarning-1'),
+    dark: import('./images/dark/coinbaseOneDocWarning-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneInsufficientWallet: {
+    light: import('./images/light/coinbaseOneInsufficientWallet-1'),
+    dark: import('./images/dark/coinbaseOneInsufficientWallet-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneProtectedCrypto: {
+    light: import('./images/light/coinbaseOneProtectedCrypto-1'),
+    dark: import('./images/dark/coinbaseOneProtectedCrypto-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneSavingFunds: {
+    light: import('./images/light/coinbaseOneSavingFunds-1'),
+    dark: import('./images/dark/coinbaseOneSavingFunds-1'),
+    fileFormat: 'svg',
+  },
   coinbaseRedesigned: {
     light: import('./images/light/coinbaseRedesigned-0'),
     dark: import('./images/dark/coinbaseRedesigned-0'),
@@ -181,13 +216,13 @@ export const IllustrationFilePathMap: Record<
     fileFormat: 'svg',
   },
   cryptoApps: {
-    light: import('./images/light/cryptoApps-0'),
-    dark: import('./images/dark/cryptoApps-0'),
+    light: import('./images/light/cryptoApps-1'),
+    dark: import('./images/dark/cryptoApps-1'),
     fileFormat: 'svg',
   },
   cryptoAppsWallet: {
-    light: import('./images/light/cryptoAppsWallet-0'),
-    dark: import('./images/dark/cryptoAppsWallet-0'),
+    light: import('./images/light/cryptoAppsWallet-1'),
+    dark: import('./images/dark/cryptoAppsWallet-1'),
     fileFormat: 'svg',
   },
   currencyPairs: {
@@ -315,6 +350,16 @@ export const IllustrationFilePathMap: Record<
     dark: import('./images/dark/exploreDecentralizedApps-0'),
     fileFormat: 'svg',
   },
+  fileYourCryptoTaxes: {
+    light: import('./images/light/fileYourCryptoTaxes-1'),
+    dark: import('./images/dark/fileYourCryptoTaxes-1'),
+    fileFormat: 'svg',
+  },
+  fileYourCryptoTaxesCheck: {
+    light: import('./images/light/fileYourCryptoTaxesCheck-1'),
+    dark: import('./images/dark/fileYourCryptoTaxesCheck-1'),
+    fileFormat: 'svg',
+  },
   focusLimitOrders: {
     light: import('./images/light/focusLimitOrders-0'),
     dark: null,
@@ -393,11 +438,6 @@ export const IllustrationFilePathMap: Record<
   myNameIsSatoshi: {
     light: import('./images/light/myNameIsSatoshi-0'),
     dark: import('./images/dark/myNameIsSatoshi-1'),
-    fileFormat: 'svg',
-  },
-  networkFees: {
-    light: import('./images/light/networkFees-0'),
-    dark: import('./images/dark/networkFees-0'),
     fileFormat: 'svg',
   },
   notificationsAlt: {
@@ -571,8 +611,8 @@ export const IllustrationFilePathMap: Record<
     fileFormat: 'svg',
   },
   walletLoading: {
-    light: import('./images/light/walletLoading-0'),
-    dark: import('./images/dark/walletLoading-0'),
+    light: import('./images/light/walletLoading-1'),
+    dark: import('./images/dark/walletLoading-1'),
     fileFormat: 'svg',
   },
   walletNotifications: {
@@ -743,6 +783,41 @@ export const IllustrationFilePathMap: Record<
   clock: {
     light: import('./images/light/clock-0'),
     dark: import('./images/dark/clock-0'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneAuthenticator: {
+    light: import('./images/light/coinbaseOneAuthenticator-1'),
+    dark: import('./images/dark/coinbaseOneAuthenticator-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneChat: {
+    light: import('./images/light/coinbaseOneChat-1'),
+    dark: import('./images/dark/coinbaseOneChat-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneEarnCoins: {
+    light: import('./images/light/coinbaseOneEarnCoins-1'),
+    dark: import('./images/dark/coinbaseOneEarnCoins-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneFiat: {
+    light: import('./images/light/coinbaseOneFiat-1'),
+    dark: import('./images/dark/coinbaseOneFiat-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneRefreshed: {
+    light: import('./images/light/coinbaseOneRefreshed-1'),
+    dark: import('./images/dark/coinbaseOneRefreshed-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneShield: {
+    light: import('./images/light/coinbaseOneShield-1'),
+    dark: import('./images/dark/coinbaseOneShield-1'),
+    fileFormat: 'svg',
+  },
+  coinbaseOneTrusted: {
+    light: import('./images/light/coinbaseOneTrusted-1'),
+    dark: import('./images/dark/coinbaseOneTrusted-1'),
     fileFormat: 'svg',
   },
   commerceCheckout: {
@@ -1020,6 +1095,11 @@ export const IllustrationFilePathMap: Record<
     dark: import('./images/dark/orders-0'),
     fileFormat: 'svg',
   },
+  ordersGray: {
+    light: import('./images/light/ordersGray-1'),
+    dark: import('./images/dark/ordersGray-1'),
+    fileFormat: 'svg',
+  },
   partialCoins: {
     light: import('./images/light/partialCoins-0'),
     dark: import('./images/dark/partialCoins-0'),
@@ -1135,6 +1215,21 @@ export const IllustrationFilePathMap: Record<
     dark: import('./images/dark/target-0'),
     fileFormat: 'svg',
   },
+  taxBeta: {
+    light: import('./images/light/taxBeta-1'),
+    dark: import('./images/dark/taxBeta-1'),
+    fileFormat: 'svg',
+  },
+  taxSeason: {
+    light: import('./images/light/taxSeason-1'),
+    dark: import('./images/dark/taxSeason-1'),
+    fileFormat: 'svg',
+  },
+  taxes: {
+    light: import('./images/light/taxes-1'),
+    dark: import('./images/dark/taxes-1'),
+    fileFormat: 'svg',
+  },
   tokenBaskets: {
     light: import('./images/light/tokenBaskets-0'),
     dark: import('./images/dark/tokenBaskets-0'),
@@ -1230,6 +1325,11 @@ export const IllustrationFilePathMap: Record<
     dark: null,
     fileFormat: 'svg',
   },
+  coinbaseOnePhoneLightningAlt: {
+    light: import('./images/light/coinbaseOnePhoneLightningAlt-1'),
+    dark: import('./images/dark/coinbaseOnePhoneLightningAlt-1'),
+    fileFormat: 'svg',
+  },
   creditCardExcitement: {
     light: import('./images/light/creditCardExcitement-0'),
     dark: import('./images/dark/creditCardExcitement-0'),
@@ -1243,6 +1343,16 @@ export const IllustrationFilePathMap: Record<
   diamond: {
     light: import('./images/light/diamond-0'),
     dark: import('./images/dark/diamond-0'),
+    fileFormat: 'svg',
+  },
+  fileYourCryptoTaxesAlt: {
+    light: import('./images/light/fileYourCryptoTaxesAlt-1'),
+    dark: import('./images/dark/fileYourCryptoTaxesAlt-1'),
+    fileFormat: 'svg',
+  },
+  fileYourCryptoTaxesCheckAlt: {
+    light: import('./images/light/fileYourCryptoTaxesCheckAlt-1'),
+    dark: import('./images/dark/fileYourCryptoTaxesCheckAlt-1'),
     fileFormat: 'svg',
   },
   focusLimitOrdersAlt: {
@@ -1311,18 +1421,23 @@ export const IllustrationFilePathMap: Record<
     fileFormat: 'svg',
   },
   transferEth: {
-    light: import('./images/light/transferEth-0'),
-    dark: import('./images/dark/transferEth-0'),
+    light: import('./images/light/transferEth-1'),
+    dark: import('./images/dark/transferEth-1'),
     fileFormat: 'svg',
   },
   walletReconnect: {
-    light: import('./images/light/walletReconnect-0'),
-    dark: import('./images/dark/walletReconnect-0'),
+    light: import('./images/light/walletReconnect-1'),
+    dark: import('./images/dark/walletReconnect-1'),
     fileFormat: 'svg',
   },
   walletReconnectSuccess: {
-    light: import('./images/light/walletReconnectSuccess-0'),
-    dark: import('./images/dark/walletReconnectSuccess-0'),
+    light: import('./images/light/walletReconnectSuccess-1'),
+    dark: import('./images/dark/walletReconnectSuccess-1'),
+    fileFormat: 'svg',
+  },
+  yieldHoldingAlt: {
+    light: import('./images/light/yieldHoldingAlt-1'),
+    dark: import('./images/dark/yieldHoldingAlt-1'),
     fileFormat: 'svg',
   },
   addMultipleCrypto: {
@@ -1413,6 +1528,16 @@ export const IllustrationFilePathMap: Record<
   ethereumStaking: {
     light: import('./images/light/ethereumStaking-0'),
     dark: import('./images/dark/ethereumStaking-0'),
+    fileFormat: 'svg',
+  },
+  fileYourCryptoTaxesCheckOther: {
+    light: import('./images/light/fileYourCryptoTaxesCheckOther-1'),
+    dark: import('./images/dark/fileYourCryptoTaxesCheckOther-1'),
+    fileFormat: 'svg',
+  },
+  fileYourCryptoTaxesOther: {
+    light: import('./images/light/fileYourCryptoTaxesOther-1'),
+    dark: import('./images/dark/fileYourCryptoTaxesOther-1'),
     fileFormat: 'svg',
   },
   giftBoxCrypto: {

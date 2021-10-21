@@ -54,6 +54,7 @@ filegroup(
     srcs = glob([
         "**/*.ts",
         "**/*.tsx",
+        "**/*.svg",
     ]) + ["tsconfig.json"],
     visibility = ["//visibility:public"],
 )
