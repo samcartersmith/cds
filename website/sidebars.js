@@ -1,8 +1,25 @@
 const { components } = require('./data/sidebar/components');
 const { adopters } = require('./data/sidebar/adopters');
 
-// useful mechanism to hide a component in the side bar while still uploading its docs.
-const componentsToExcludeByLabel = new Set();
+// removes unfinished categories from side bar
+const sectionsToExcludeByLabel = new Set();
+
+// Removes unfinished components from section in side bar
+const componentsToExcludeByLabel = new Set(['components/buttons/AvatarButton/avatar-button']);
+
+// removes unfinished categories from side bar
+const filteredComponents = components
+  .filter((component) => !sectionsToExcludeByLabel.has(component.label))
+  .map((componentJSON) => {
+    const items = componentJSON.items.filter((path) => !componentsToExcludeByLabel.has(path));
+
+    return {
+      ...componentJSON,
+      items,
+    };
+  });
+
+// Removes unfinished components from section in side bar
 
 module.exports = {
   docs: [
@@ -51,7 +68,7 @@ module.exports = {
       type: 'category',
       label: 'Components',
       collapsed: true,
-      items: components.filter((component) => !componentsToExcludeByLabel.has(component.label)),
+      items: filteredComponents,
     },
     {
       type: 'category',

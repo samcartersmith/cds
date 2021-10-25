@@ -19,6 +19,7 @@ module.exports = {
       label: 'Buttons',
       collapsed: true,
       items: [
+        'components/buttons/AvatarButton/avatar-button',
         'components/buttons/Button/button',
         'components/buttons/ButtonGroup/button-group',
         'components/buttons/IconButton/icon-button',

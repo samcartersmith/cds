@@ -39,6 +39,8 @@ export const iconButton = css`
   min-width: unset;
 `;
 
+export const avatarButton = iconButton;
+
 export const startIcon = css`
   display: inline-block;
   margin-right: ${spacing[1]};

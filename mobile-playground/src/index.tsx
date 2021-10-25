@@ -50,6 +50,7 @@ const components = [
   { key: 'TextTitle2' },
   { key: 'TextTitle3' },
   { key: 'Avatar' },
+  { key: 'AvatarButton' },
 ];
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -67,7 +68,7 @@ const Index = ({ navigation }: StackScreenProps<Record<string, {}>>) => {
   return (
     <View style={{ backgroundColor: palette.background, height: '100%' }}>
       <FlatList
-        data={components}
+        data={components.sort((a, b) => a.key.localeCompare(b.key))}
         renderItem={({ item }) => (
           <TouchableHighlight
             activeOpacity={1}

@@ -72,6 +72,22 @@ Adds a className to the Avatar. If you pass in a className make sure your styles
 
 <ComponentDetails componentName="Avatar" templateName="prop-dangerouslySetClassName" />
 
+### dangerouslySetSize <Badge variant="danger" order={1} />
+
+This is an escape hatch when using the Avatar in a fixed size container where you cannot control the dimensions.
+Creates a custom Avatar size. The size prop should be used in most circumstances.
+
+<ApiDetails
+  componentName="Avatar"
+  propertyName="dangerouslySetSize"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Avatar" templateName="prop-dangerouslySetSize" />
+
 ### shape
 
 Shape of Avatar

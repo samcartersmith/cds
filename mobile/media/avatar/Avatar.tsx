@@ -8,18 +8,20 @@ import { Box } from '../../layout';
 import { RemoteImage } from '../RemoteImage';
 
 export const Avatar: React.FC<AvatarBaseProps> = memo(
-  ({ src, shape = 'circle', size = 'l', borderColor, testID }) => {
+  ({ src, shape = 'circle', size = 'l', borderColor, testID, dangerouslySetSize }) => {
     const borderRadius = useShapeToBorderRadiusAlias(shape);
     const avatarSize = useAvatarSize(size);
     const imgSrc = useAvatarSrc(src);
+
+    const computedSize = dangerouslySetSize ?? avatarSize;
 
     return (
       <Box
         dangerouslySetBackground={src}
         borderRadius={borderRadius}
         borderColor={borderColor}
-        width={avatarSize}
-        height={avatarSize}
+        width={computedSize}
+        height={computedSize}
         position="relative"
         overflow="hidden"
         alignItems="center"
@@ -31,8 +33,8 @@ export const Avatar: React.FC<AvatarBaseProps> = memo(
       >
         <RemoteImage
           shape={shape}
-          width={avatarSize}
-          height={avatarSize}
+          width={computedSize}
+          height={computedSize}
           source={{ uri: imgSrc }}
           resizeMode="cover"
           testID={`${testID ?? ''}-image`}

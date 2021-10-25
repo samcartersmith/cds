@@ -1,0 +1,203 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/buttons/AvatarButton](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/buttons/AvatarButton.tsx)
+
+<ComponentDetails componentName="AvatarButton" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="AvatarButton" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="AvatarButton" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel
+
+Full length accessibility label when the child text is not descriptive enough.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-accessibilityLabel" />
+
+### alt
+
+This is the name associated with the entity in the Avatar. This is used in the image alt tag for accessibility.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="alt"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-alt" />
+
+### as <Badge variant="web" />
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ComponentClass<HTMLAttributes<HTMLElement>, any>',
+    'FunctionComponent<HTMLAttributes<HTMLElement>>',
+  ]}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-as" />
+
+### compact
+
+Reduce the inner padding within the button itself.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-compact" />
+
+### disabled
+
+Mark the button as disabled.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="disabled"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-disabled" />
+
+### disableDebounce <Badge variant="mobile" />
+
+React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior such as double navigations where we push a screen onto the stack 2 times. Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental double-tap.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="disableDebounce"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-disableDebounce" />
+
+### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="feedback"
+  required={false}
+  defaultValue="none"
+  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-feedback" />
+
+### loading
+
+Is the element currenty loading.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="loading"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-loading" />
+
+### onPress
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-onPress" />
+
+### src
+
+Absolute url to the image that should be shown in the Avatar. If no src is provided then a generic fallback image is used.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="src"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-src" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-testID" />
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="AvatarButton"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="AvatarButton" templateName="prop-to" />
+
+<ComponentDetails componentName="AvatarButton" templateName="outro" />

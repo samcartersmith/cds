@@ -20,4 +20,10 @@ export type AvatarBaseProps = {
 
   /** Adds a border to the Avatar */
   borderColor?: PaletteBorder;
+
+  /**
+   * @danger Creates a custom Avatar size. The size prop should be used in most circumstances.
+   * This is an escape hatch when using the Avatar in a fixed size container where you cannot control the dimensions.
+   */
+  dangerouslySetSize?: number;
 } & SharedProps;

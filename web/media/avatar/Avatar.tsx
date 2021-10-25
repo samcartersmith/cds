@@ -18,10 +18,21 @@ type AvatarWebProps = {
 } & AvatarBaseProps;
 
 export const Avatar: React.FC<AvatarWebProps> = memo(
-  ({ alt, src, shape = 'circle', size = 'l', borderColor, dangerouslySetClassName, testID }) => {
+  ({
+    alt,
+    src,
+    shape = 'circle',
+    size = 'l',
+    borderColor,
+    dangerouslySetClassName,
+    testID,
+    dangerouslySetSize,
+  }) => {
     const borderRadius = useShapeToBorderRadiusAlias(shape);
     const avatarSize = useAvatarSize(size);
     const imgSrc = useAvatarSrc(src);
+
+    const computedSize = dangerouslySetSize ?? avatarSize;
 
     return (
       <Box
@@ -33,8 +44,8 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
         dangerouslySetBackground={src}
         borderRadius={borderRadius}
         borderColor={borderColor}
-        width={avatarSize}
-        height={avatarSize}
+        width={computedSize}
+        height={computedSize}
         position="relative"
         overflow="hidden"
         alignItems="center"
@@ -43,7 +54,7 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
         flexGrow={0}
         data-testid={testID}
       >
-        <RemoteImage width={avatarSize} height={avatarSize} source={imgSrc} alt={alt} />
+        <RemoteImage width={computedSize} height={computedSize} source={imgSrc} alt={alt} />
       </Box>
     );
   },

@@ -6,6 +6,7 @@
 export const components = [
   'Lottie',
   'LottieStatusAnimation',
+  'AvatarButton',
   'Button',
   'ButtonGroup',
   'IconButton',

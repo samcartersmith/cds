@@ -6,7 +6,7 @@ import {
   MouseEventHandler,
 } from 'react';
 import { FlexAxisValue, FlexSpaceCommon, PaletteForeground, SharedProps } from '@cbhq/cds-common';
-import { TextProps } from '@cbhq/cds-web/typography';
+import { TextProps } from '../../typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
 

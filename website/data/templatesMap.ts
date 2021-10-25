@@ -52,6 +52,33 @@ export const LottieStatusAnimation = {
   ),
 };
 
+export const AvatarButton = {
+  'avatar-button': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/AvatarButton/avatar-button.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/AvatarButton/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/AvatarButton/intro.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/AvatarButton/usage.mdx'
+      ),
+  ),
+};
+
 export const Button = {
   a11y: React.lazy(
     async () =>
