@@ -4,7 +4,6 @@ import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRad
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common/types';
 import { ViewStyle } from 'react-native';
-
 import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
@@ -39,7 +38,6 @@ export const Card: React.FC<CardProps> = memo(
       () => [borderRadiusOverrides, dangerouslySetStyle],
       [borderRadiusOverrides, dangerouslySetStyle],
     );
-
     const content = (
       <VStack
         borderRadius="standard"

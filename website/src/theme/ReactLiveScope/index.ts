@@ -45,6 +45,7 @@ import { accounts } from ':cds-website/data/accounts';
 import { loremIpsum } from ':cds-website/data/loremIpsum';
 import { prices } from ':cds-website/data/prices';
 import { PatternArtboard } from ':cds-website/components/PatternArtboard';
+import { TypographySheet } from ':cds-website/components/TypographySheet';
 
 import { useStatusButtons } from './useStatusButtons';
 
@@ -114,6 +115,7 @@ const ReactLiveScope = {
   ExampleWithThemeToggles,
   ThemeToggles,
   Artboard: PatternArtboard,
+  TypographySheet,
 };
 
 export default ReactLiveScope;

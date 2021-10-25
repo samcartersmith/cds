@@ -49,6 +49,7 @@ export const components = [
   'Link',
   'Text',
   'DevicePreferencesProvider',
+  'FeatureFlagProvider',
   'Interactable',
   'Pressable',
   'PressableOpacity',

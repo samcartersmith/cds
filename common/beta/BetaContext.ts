@@ -1,20 +1,16 @@
-import { mapValues } from '@cbhq/cds-utils';
-import { createContext } from 'react';
+import {
+  defaultFeatureFlags,
+  FeatureFlagContext,
+  FeatureFlags,
+} from '../system/FeatureFlagContext';
 
-export const frontierFeatures = {
-  frontierButton: false,
-  frontierCard: false,
-  frontierColor: false,
-  frontierTypography: false,
-};
+export { frontierFeatures, frontierFeaturesOn } from '../system/FeatureFlagContext';
 
-export const frontierFeaturesOn = mapValues(frontierFeatures, () => true);
+/** @deprecated DEFAULT_BETA_CONTEXT has been renamed to defaultFeatureFlags and moved to common/system/FeatureFlagContext. */
+export const DEFAULT_BETA_CONTEXT = defaultFeatureFlags;
 
-export const DEFAULT_BETA_CONTEXT = {
-  fontMigration: false,
-  ...frontierFeatures,
-  frontier: false,
-};
+/** @deprecated BetaContextType has been renamed to FeatureFlags and moved to common/system/FeatureFlagContext. */
+export type BetaContextType = FeatureFlags;
 
-export type BetaContextType = typeof DEFAULT_BETA_CONTEXT;
-export const BetaContext = createContext<BetaContextType>(DEFAULT_BETA_CONTEXT);
+/** @deprecated BetaContext has been renamed to FeatureFlagContext and moved to common/system/FeatureFlagContext. */
+export const BetaContext = FeatureFlagContext;

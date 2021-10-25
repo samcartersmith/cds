@@ -1,0 +1,20 @@
+```jsx live
+function Example() {
+  const [fontMigrationIsEnabled, { toggle }] = useToggler(false);
+
+  return (
+    <FeatureFlagProvider fontMigration={fontMigrationIsEnabled}>
+      <ThemeProvider>
+        <VStack gap={2}>
+          <HStack gap={1} alignItems="center">
+            <Switch onChange={toggle} checked={fontMigrationIsEnabled} />
+            <TextBody as="p">Toggle font family</TextBody>
+          </HStack>
+          <Divider direction="horizontal" />
+          <TypographySheet />
+        </VStack>
+      </ThemeProvider>
+    </FeatureFlagProvider>
+  );
+}
+```

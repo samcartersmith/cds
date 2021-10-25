@@ -1,0 +1,127 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/system/FeatureFlagProvider](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/system/FeatureFlagProvider.tsx)
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="a11y" />
+
+## Props
+
+### fontMigration
+
+Replace Graphik & Inter with Coinbase Sans and Coinbase Display fonts.
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="fontMigration"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-fontMigration" />
+
+### frontier
+
+Conventiently toggle all the Frontier flags at once.
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="frontier"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-frontier" />
+
+### frontierButton
+
+Replace rounded border radius with pill style.
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="frontierButton"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-frontierButton" />
+
+### frontierCard
+
+Remove rounded border radius and elevation.
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="frontierCard"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-frontierCard" />
+
+### frontierColor
+
+Change secondary palette from gray0 to gray60 at 10%.
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="frontierColor"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-frontierColor" />
+
+### frontierSparkline
+
+TBD
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="frontierSparkline"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-frontierSparkline" />
+
+### frontierTypography
+
+Reduce Display2 fontSize/lineHeight. Add Display3 and Title4 components.
+
+<ApiDetails
+  componentName="FeatureFlagProvider"
+  propertyName="frontierTypography"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="prop-frontierTypography" />
+
+<ComponentDetails componentName="FeatureFlagProvider" templateName="outro" />

@@ -1,0 +1,30 @@
+### Current feature flags
+
+| Name          | Available | Description                                                            |
+| ------------- | --------- | ---------------------------------------------------------------------- |
+| fontMigration | 9/22/21   | Replace Graphik & Inter with Coinbase Sans and Coinbase Display fonts. |
+
+### Upcoming feature flags
+
+| Name               | Available | Description                                                              |
+| ------------------ | --------- | ------------------------------------------------------------------------ |
+| frontierTypography | 10/28/21  | Reduce Display2 fontSize/lineHeight. Add Display3 and Title4 components. |
+| frontierButton     | 11/4/21   | Replace rounded border radius with pill style.                           |
+| frontierColor      | 11/11/21  | Change secondary palette from gray0 to gray60 at 10%.                    |
+| frontierCard       | 11/18/21  | Remove rounded border radius and elevation.                              |
+| frontierSparkline  | 12/9/21   | TBD                                                                      |
+| frontier           | 10/28/21  | Conventiently toggle all the Frontier flags at once.                     |
+
+### What is the process for rolling out a new feature flag?
+
+- Add feature flag to CDS library and cut a new release
+- Announce feature flag is available in #announcements-cds
+- Provide a launch date for moving from beta to stable
+- Product testing/feedback period
+- Product pillar sign-off on launch date
+- Launch date
+  - Toggle feature flag default from false to true (no longer opt-in)
+  - Cut a new release
+  - Post in #announcements-cds that feature has moved to stable
+- Deprecate feature flag
+  - Cleanup conditional code

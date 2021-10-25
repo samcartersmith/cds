@@ -1,21 +1,11 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 
-import {
-  BetaContext,
-  DEFAULT_BETA_CONTEXT,
-  BetaContextType,
-  frontierFeaturesOn,
-} from './BetaContext';
+import { FeatureFlagProvider, FeatureFlagProviderProps } from '../system/FeatureFlagProvider';
 
-export type BetaProviderProps = { features?: Partial<BetaContextType> };
+/** @deprecated BetaProviderProps has been renamed to FeatureFlagProviderProps and moved to common/system directory */
+export type BetaProviderProps = { features?: FeatureFlagProviderProps };
+
+/** @deprecated BetaProvider has been renamed to FeatureFlagProvider and moved to common/system directory */
 export const BetaProvider: React.FC<BetaProviderProps> = memo(({ features, children }) => {
-  const value = useMemo(
-    () => ({
-      ...DEFAULT_BETA_CONTEXT,
-      ...(features?.frontier ? frontierFeaturesOn : {}),
-      ...features,
-    }),
-    [features],
-  );
-  return <BetaContext.Provider value={value}>{children}</BetaContext.Provider>;
+  return <FeatureFlagProvider {...features}>{children}</FeatureFlagProvider>;
 });

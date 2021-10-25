@@ -132,6 +132,7 @@ module.exports = {
       collapsed: true,
       items: [
         'components/system/DevicePreferencesProvider/device-preferences-provider',
+        'components/system/FeatureFlagProvider/feature-flag-provider',
         'components/system/Interactable/interactable',
         'components/system/Pressable/pressable',
         'components/system/PressableOpacity/pressable-opacity',

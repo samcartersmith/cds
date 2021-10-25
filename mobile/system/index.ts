@@ -5,3 +5,4 @@ export * from './Interactable';
 export * from './DevicePreferencesProvider';
 export * from './Pressable';
 export * from './PressableOpacity';
+export * from './FeatureFlagProvider';

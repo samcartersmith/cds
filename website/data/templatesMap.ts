@@ -1225,6 +1225,39 @@ export const DevicePreferencesProvider = {
   ),
 };
 
+export const FeatureFlagProvider = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/FeatureFlagProvider/a11y.mdx'
+      ),
+  ),
+  'feature-flag-provider': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/FeatureFlagProvider/feature-flag-provider.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/FeatureFlagProvider/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/FeatureFlagProvider/intro.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/system/FeatureFlagProvider/usage.mdx'
+      ),
+  ),
+};
+
 export const Interactable = {
   a11y: React.lazy(
     async () =>
