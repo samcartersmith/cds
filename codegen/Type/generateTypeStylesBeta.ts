@@ -2,34 +2,52 @@ import { kebabCase, mapKeys, mapValues, pascalCase, toCssVar, toCssVarFn } from 
 import {
   typographyConfig,
   TypographyConfig,
+  fontFamilies,
   fontWeights,
-  FallbackStack,
-  fallbackStack,
-  FontFamily,
+  xHeight,
 } from '../configs/typographyConfigBeta';
 
 import { scaleConfig } from '../configs/scaleConfig';
 import { calculateMinFontSize, round } from './utils';
 
+type FontFamilies = typeof fontFamilies;
+type FontWeights = typeof fontWeights;
+type FontWeightName = keyof FontWeights;
+type FontWeight = FontWeights[FontWeightName];
+type FontFamily = FontFamilies[keyof FontFamilies]['fontFamily'];
+type FontFamilyWeb = FontFamilies[keyof FontFamilies]['stack'];
+type FontFamilyMobile = `${FontFamily}-${FontWeightName}`;
+
 type TypographyStyles = {
-  fontFamily?: `${FontFamily}-${keyof typeof fontWeights}` | `${FontFamily}, ${FallbackStack}`;
+  fontFamily?: FontFamilyMobile | FontFamilyWeb;
   // Mobile doesn't need font weight because the font family should include the weight
-  fontWeight?: typeof fontWeights[keyof typeof fontWeights];
+  fontWeight?: FontWeight;
   fontSize: string | number;
   textTransform?: string;
-  lineHeight?: string | number;
+  lineHeight: string | number;
 };
 
+function getFontFamilyConfig(size: number | string) {
+  const sizeAsNumber: number = typeof size === 'string' ? parseFloat(size.replace('px', '')) : size;
+  if (sizeAsNumber >= fontFamilies.display.minimum) {
+    return fontFamilies.display;
+  }
+  if (sizeAsNumber >= fontFamilies.sans.minimum) {
+    return fontFamilies.sans;
+  }
+  return fontFamilies.text;
+}
+
+function getFontFamilyStyles(size: number | string, fontWeight: FontWeightName, mobile: boolean) {
+  const config = getFontFamilyConfig(size);
+  if (mobile) {
+    return { fontFamily: `${config.fontFamily}-${fontWeight}` as const };
+  }
+  return { fontWeight: fontWeights[fontWeight], fontFamily: config.stack };
+}
+
 const calculateVariantStyle = (
-  {
-    baseFontSize,
-    fontFamily,
-    fontWeight,
-    allowAllCaps,
-    disableMinimums,
-    leading,
-    xHeight,
-  }: TypographyConfig,
+  { baseFontSize, fontWeight, allowAllCaps, disableMinimums, leading }: TypographyConfig,
   scaleConversion: number,
   { mobile }: { mobile: boolean } = { mobile: false },
 ) => {
@@ -40,7 +58,7 @@ const calculateVariantStyle = (
   const defaultLineHeight = mobile ? roundedLineHeight : `${roundedLineHeight}px`;
 
   // check to see what minimum font sizes are for lowercase and upper case letters
-  const minLowerCaseFontSize = Math.ceil(calculateMinFontSize(xHeight));
+  const minLowerCaseFontSize = Math.ceil(calculateMinFontSize(xHeight.text));
   const minLowercaseLineHeight = round(minLowerCaseFontSize + leading);
 
   const minUpperCaseFontSize = Math.ceil(calculateMinFontSize(1));
@@ -81,14 +99,10 @@ const calculateVariantStyle = (
     styles = lowercase;
   }
 
-  if (mobile) {
-    styles.fontFamily = `${fontFamily}-${fontWeight}` as const;
-  } else {
-    styles.fontWeight = fontWeights[fontWeight];
-    styles.fontFamily = `${fontFamily}, ${fallbackStack}` as const;
-  }
-
-  return styles;
+  return {
+    ...styles,
+    ...getFontFamilyStyles(styles.fontSize, fontWeight, mobile),
+  };
 };
 
 // Codegen data

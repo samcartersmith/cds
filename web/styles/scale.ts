@@ -44,13 +44,13 @@ export const xSmall = css`
   --label1-line-height: 16px;
   --label1-text-transform: uppercase;
   --label1-font-weight: 500;
-  --label1-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --label1-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --label2-font-size: 11px;
   --label2-line-height: 16px;
   --label2-text-transform: uppercase;
   --label2-font-weight: 400;
-  --label2-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --label2-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --caption-font-size: 10px;
   --caption-line-height: 12px;
@@ -121,13 +121,13 @@ export const small = css`
   --label1-line-height: 16px;
   --label1-text-transform: uppercase;
   --label1-font-weight: 500;
-  --label1-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --label1-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --label2-font-size: 12px;
   --label2-line-height: 16px;
   --label2-text-transform: uppercase;
   --label2-font-weight: 400;
-  --label2-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --label2-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --caption-font-size: 11px;
   --caption-line-height: 16px;
@@ -198,13 +198,13 @@ export const medium = css`
   --label1-line-height: 16px;
   --label1-text-transform: uppercase;
   --label1-font-weight: 500;
-  --label1-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --label1-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --label2-font-size: 13px;
   --label2-line-height: 16px;
   --label2-text-transform: uppercase;
   --label2-font-weight: 400;
-  --label2-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --label2-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --caption-font-size: 12px;
   --caption-line-height: 16px;
@@ -359,12 +359,12 @@ export const xLarge = css`
   --caption-font-size: 15px;
   --caption-line-height: 20px;
   --caption-font-weight: 500;
-  --caption-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --caption-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --legal-font-size: 15px;
   --legal-line-height: 20px;
   --legal-font-weight: 400;
-  --legal-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --legal-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
@@ -433,12 +433,12 @@ export const xxLarge = css`
   --caption-font-size: 17px;
   --caption-line-height: 20px;
   --caption-font-weight: 500;
-  --caption-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --caption-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --legal-font-size: 17px;
   --legal-line-height: 20px;
   --legal-font-weight: 400;
-  --legal-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --legal-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
@@ -482,7 +482,7 @@ export const xxxLarge = css`
   --title3-font-size: 26px;
   --title3-line-height: 32px;
   --title3-font-weight: 500;
-  --title3-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --title3-font-family: CoinbaseDisplay, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --headline-font-size: 22px;
   --headline-line-height: 28px;
@@ -507,12 +507,12 @@ export const xxxLarge = css`
   --caption-font-size: 19px;
   --caption-line-height: 24px;
   --caption-font-weight: 500;
-  --caption-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --caption-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --legal-font-size: 19px;
   --legal-line-height: 24px;
   --legal-font-weight: 400;
-  --legal-font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  --legal-font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
