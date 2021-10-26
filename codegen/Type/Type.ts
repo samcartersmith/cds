@@ -1,17 +1,14 @@
 import { pascalCase } from '@cbhq/cds-utils';
 
 import { scaleConfig } from '../configs/scaleConfig';
+import { typographyScaleMapForMobile } from './generateTypeStyles';
+
 import {
   typographyCss,
   typographyScaleMapWithCssVariables,
   typographyScaleMapForWeb,
-  typographyPascalCaseConfig,
-  typographyScaleMapForMobile,
-} from './generateTypeStyles';
-
-import {
   typographyScaleMapForMobile as typographyScaleMapForMobileBeta,
-  typographyScaleMapWithCssVariables as typographyScaleMapWithCssVariablesBeta,
+  typographyPascalCaseConfig,
 } from './generateTypeStylesBeta';
 
 const mdTable = ([header, ...rows]: string[][]) => {
@@ -39,7 +36,6 @@ export const Type = {
   pascalCaseConfig: typographyPascalCaseConfig,
   css: typographyCss,
   scaleCss: typographyScaleMapWithCssVariables,
-  scaleCssBeta: typographyScaleMapWithCssVariablesBeta,
   generateScaleTable: () => {
     // include type names
     const tableBody = Object.keys(typographyPascalCaseConfig).map((typeName) => [

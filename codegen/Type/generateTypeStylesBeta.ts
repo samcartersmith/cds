@@ -117,7 +117,7 @@ export const typographyScaleMapWithCssVariables = mapValues(scaleConfig, (_, sca
   }, {} as typeof textVariants[keyof typeof textVariants]);
 });
 
-export const typographyCssBeta = mapValues(
+export const typographyCss = mapValues(
   // Smaller scales (< large) have uppercase text-transform for small font size typography styles.
   // We want to make sure the generated textStyles include those declarations.
   typographyScaleMapForWeb.xSmall,

@@ -51,16 +51,6 @@ async function codegen() {
         }),
       },
       {
-        dest: 'web/styles/scaleBeta.ts',
-        data: mapValues(scaleConfig, (_, scale) => {
-          return {
-            ...Type.scaleCssBeta[scale],
-            ...Spacing.scaleCss[scale],
-            ...Control.scaleCss[scale],
-          };
-        }),
-      },
-      {
         dest: 'web/styles/spectrum.ts',
         data: Spectrum.css,
       },

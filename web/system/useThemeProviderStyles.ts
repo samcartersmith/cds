@@ -2,12 +2,10 @@ import { useMemo } from 'react';
 import { cx } from 'linaria';
 
 import { useScale, SystemProvider } from '@cbhq/cds-common';
-import { useBeta } from '@cbhq/cds-common/beta/useBeta';
 
 import { usePaletteToCssVars } from '../color/usePaletteToCssVars';
 import { useSpectrumClassName } from '../color/useSpectrumClassName';
 import * as scaleCss from '../styles/scale';
-import * as scaleCssBeta from '../styles/scaleBeta';
 
 /**
  * Internally the `ThemeProvider` component includes a div element which is used to attach CSS variables that are needed for palette overrides.
@@ -22,9 +20,7 @@ export const useThemeProviderStyles = () => {
   const scale = useScale();
   const palette = usePaletteToCssVars();
   const spectrumClassName = useSpectrumClassName();
-
-  const { fontMigration } = useBeta();
-  const activeScaleCss = fontMigration ? scaleCssBeta[scale] : scaleCss[scale];
+  const activeScaleCss = scaleCss[scale];
   return useMemo(
     () =>
       ({

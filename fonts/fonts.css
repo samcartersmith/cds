@@ -1,31 +1,119 @@
 @font-face {
   font-display: swap;
-  font-family: 'Graphik';
+  font-family: 'CoinbaseSans';
   font-style: normal;
   font-weight: 400;
-  src: url('./Graphik-Regular.woff2') format('woff2');
+  src: url('./CoinbaseSans-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Graphik';
+  font-family: 'CoinbaseSans';
   font-style: normal;
   font-weight: 500;
-  src: url('./Graphik-Medium.woff2') format('woff2');
+  src: url('./CoinbaseSans-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./Inter-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'Inter';
+  font-family: 'CoinbaseSans';
   font-style: normal;
   font-weight: 600;
-  src: url('./Inter-Semi-Bold.woff2') format('woff2');
+  src: url('./CoinbaseSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./CoinbaseSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseSans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./CoinbaseSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseDisplay';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./CoinbaseDisplay-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseDisplay';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./CoinbaseDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseDisplay';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./CoinbaseDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseDisplay';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./CoinbaseDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseDisplay';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./CoinbaseDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseText';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./CoinbaseText-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseText';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./CoinbaseText-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseText';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./CoinbaseText-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseText';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./CoinbaseText-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseText';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./CoinbaseText-Medium.woff2') format('woff2');
 }
