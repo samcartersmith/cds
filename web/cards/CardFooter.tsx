@@ -1,12 +1,16 @@
-import React from 'react';
-import { HStack, HStackProps } from '../layout/HStack';
+import { SharedProps } from '@cbhq/cds-common';
+import React, { memo } from 'react';
+import { HStack } from '../layout/HStack';
 
-export type CardFooterProps = HStackProps<'div'>;
+export type CardFooterProps = {
+  /** CardFooter takes one or many actions as children */
+  children: React.ReactNode;
+} & SharedProps;
 
-export const CardFooter: React.FC<CardFooterProps> = ({ children }) => {
+export const CardFooter: React.FC<CardFooterProps> = memo(({ children, testID }) => {
   return (
-    <HStack spacingBottom={2} spacingHorizontal={3}>
+    <HStack spacingBottom={2} spacingHorizontal={3} testID={testID}>
       {children}
     </HStack>
   );
-};
+});

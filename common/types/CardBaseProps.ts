@@ -29,7 +29,7 @@ export type CardHeaderBaseProps = {
   description?: string;
   /** IconButton ReactNode */
   action?: React.ReactNode;
-};
+} & SharedProps;
 
 export type CardBodyBaseProps = {
   /** Text to be displayed in TextHeadline */
@@ -40,7 +40,7 @@ export type CardBodyBaseProps = {
   media?: React.ReactNode;
   /** Vertical places media above text content, Horizontal places media to the side of text content */
   orientation?: CardBodyOrientationProps['orientation'];
-};
+} & SharedProps;
 
 export type CardBodyOrientationProps = {
   /** Vertical places media above text content, Horizontal places media to the side of text content */
@@ -66,7 +66,7 @@ export type FeedCardBaseProps = {
   bodyOrientation: CardBodyOrientationProps['orientation'];
   /** ReactNode that should be one or more actions */
   footerActions: React.ReactNode;
-};
+} & SharedProps;
 
 export type CardGroupBaseProps = {
   /** Accessibility label describing the group of cards. */
