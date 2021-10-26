@@ -1,0 +1,85 @@
+---
+id: faq
+title: FAQ
+hide_table_of_contents: true
+---
+
+import { Image } from ':cds-website/components/Image';
+
+<Image light="/img/frontier/hero_faq_light.png" dark="/img/frontier/hero_faq_dark.png" />
+
+## Frequently Asked Questions
+
+**What changes are in Frontier?**
+
+We'll be making small changes to Typography, Buttons, Colors, Cards, and Sparklines. We'll be announcing more details as we progress in the work.
+
+---
+
+**What is Frontier? Is it a new Design System?**
+
+Frontier is a version of CDS. It's best to think about it like an annual update similiar to iOS, Android, and macOS.
+
+---
+
+**How can I see the changes in Frontier?**
+
+We'll be providing feature flags that you can enable through the [Feature Flag Provider](../components/feature-flag-provider).
+
+We also will be adding Frontier to the debug menu on CB Alpha, so you can play with Frontier right on your phone!
+
+---
+
+**How will these changes affect current design in production?**
+
+If Frontier is enabled, it'll slightly modify the interface. However, you won't need to do anything more than enabling/disabling Frontier.
+
+---
+
+**Are there mandates for when my product team must update to Frontier?**
+
+No, CDS has no current mandates to adopt Frontier. Product teams can impose their own mandates.
+
+---
+
+**Whats the difference between Frontier and Unified App?**
+
+Unified App is a product strategy where we create a singular experience for particular Coinbase products.
+
+Frontier is strictly a visual style upgrade for CDS and has no product implications.
+
+---
+
+**Why are we doing Frontier?**
+
+Frontier contains series of small updates to better support and achieve Unified App's vision.
+
+---
+
+**How do we avoid views having Frontier + non-frontier things?**
+
+Two things to keep in mind:
+
+1. Adopt CDS components as much as possible. Anything that is not CDS needs to be tested to ensure it does not have any divergent styles i.e. rounded rectangle buttons and pill buttons.
+
+2. Setting Frontier once on the root or highest level ThemeProvider will ensure CDS components do not inherit conflicting styles.
+
+---
+
+**When will Frontier be ready?**
+
+We will be building Frontier in Q4, and it'll be ready for teams to consume right away.
+
+---
+
+**Who owns Frontier?**
+
+Frontier is a CDS update, so it is owned and maintained by CDS.
+
+---
+
+**What will CDS deliver as “Frontier” (New Figma styles / New Components / New Providers)?**
+
+All new and existing CDS components will be Frontier-compatible.
+
+CDS will be updating Design and Engineering resources to reflect its new offerings.

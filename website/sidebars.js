@@ -23,6 +23,7 @@ const filteredComponents = components
 
 module.exports = {
   docs: [
+
     {
       type: 'category',
       label: 'Introduction',
@@ -69,6 +70,15 @@ module.exports = {
       label: 'Components',
       collapsed: true,
       items: filteredComponents,
+    },
+    {
+      type: 'category',
+      label: 'Frontier (New)',
+      collapsed: true,
+      items: [
+        'frontier/overview',
+        'frontier/faq'
+      ],
     },
     {
       type: 'category',
