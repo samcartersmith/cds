@@ -1,8 +1,14 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { emptyObject } from '@cbhq/cds-utils';
+import { renderHook, act } from '@testing-library/react-hooks';
 
-import { frontierFeaturesOn, defaultFeatureFlags } from '../FeatureFlagContext';
-import { FeatureFlagProvider } from '../FeatureFlagProvider';
+import {
+  frontierFeaturesOn,
+  frontierFeaturesOff,
+  defaultFeatureFlags,
+} from '../FeatureFlagContext';
+import { FeatureFlagProvider, getFrontierFlags } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
+import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 
 describe('FeatureFlagProvider', () => {
   it('sets defaultFeatureFlags iF no props are provided', () => {
@@ -35,5 +41,86 @@ describe('FeatureFlagProvider', () => {
       ...frontierFeaturesOn,
       frontierButton: false,
     });
+  });
+
+  it('handles prop changes', () => {
+    const { result, rerender } = renderHook(() => useFeatureFlags(), {
+      wrapper: (props) => <FeatureFlagProvider {...props} />,
+      initialProps: { frontierCard: true, frontierButton: true },
+    });
+
+    expect(result.current).toMatchObject({ frontierCard: true, frontierButton: true });
+    rerender({ frontierCard: false, frontierButton: false });
+    expect(result.current).toMatchObject({
+      frontierCard: false,
+      frontierButton: false,
+    });
+  });
+
+  it('imperative updates + props can work together', async () => {
+    const { result } = renderHook(
+      () => {
+        return {
+          update: useFeatureFlagUpdater(),
+          featureFlags: useFeatureFlags(),
+        };
+      },
+      {
+        wrapper: (props) => <FeatureFlagProvider {...props} />,
+        initialProps: {
+          frontierButton: true,
+        },
+      },
+    );
+
+    expect(result.current.featureFlags).toMatchObject({
+      frontierTypography: false,
+      frontierButton: true,
+    });
+    await act(() => {
+      result.current.update({ frontierTypography: true });
+    });
+    expect(result.current.featureFlags).toMatchObject({
+      frontierTypography: true,
+      frontierButton: true, // no change
+    });
+  });
+
+  it('imperative updates take precendence to props if they conflict', async () => {
+    const { result } = renderHook(
+      () => {
+        return {
+          update: useFeatureFlagUpdater(),
+          featureFlags: useFeatureFlags(),
+        };
+      },
+      {
+        wrapper: (props) => <FeatureFlagProvider {...props} />,
+        initialProps: {
+          frontierButton: true,
+        },
+      },
+    );
+
+    expect(result.current.featureFlags.frontierButton).toEqual(true);
+    await act(() => {
+      result.current.update({ frontierButton: false });
+    });
+    expect(result.current.featureFlags.frontierButton).toEqual(false); // imperative update wins
+  });
+
+  it('getFrontierFlags works correctly for undefined', () => {
+    const result = getFrontierFlags(undefined);
+    expect(result).toEqual(emptyObject);
+  });
+
+  it('getFrontierFlags works correctly for true', () => {
+    const result = getFrontierFlags(true);
+    expect(result).toEqual(frontierFeaturesOn);
+  });
+
+  it('getFrontierFlags works correctly for false', () => {
+    const result = getFrontierFlags(false);
+    expect(result).toEqual(frontierFeaturesOff);
   });
 });

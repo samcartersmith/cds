@@ -32,6 +32,9 @@ import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { useModal } from '@cbhq/cds-web/overlays/useModal';
+import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
+import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
+import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -82,6 +85,9 @@ const ReactLiveScope = {
   useStatusButtons,
   useToggler,
   useModal,
+  useFeatureFlags,
+  useFeatureFlag,
+  useFeatureFlagUpdater,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAnimation,

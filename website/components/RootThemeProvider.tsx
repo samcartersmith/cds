@@ -1,6 +1,10 @@
 import React, { memo, useMemo } from 'react';
 
-import { DevicePreferencesProvider, ThemeProvider } from '@cbhq/cds-web/system';
+import {
+  DevicePreferencesProvider,
+  FeatureFlagProvider,
+  ThemeProvider,
+} from '@cbhq/cds-web/system';
 import useTheme from '@theme/hooks/useTheme';
 import ThemeContext from '@theme/ThemeContext';
 import { Spectrum } from '@cbhq/cds-common';
@@ -14,6 +18,9 @@ const overrides = css`
   --ifm-pre-background: var(--background);
   --ifm-color-primary: var(--primary);
   --ifm-link-color: var(--primary);
+  .markdown h1:first-child {
+    margin: 0;
+  }
 `;
 
 const DocusaurusThemeProvider: React.FC = ({ children }) => {
@@ -28,13 +35,15 @@ const DocusaurusThemeProvider: React.FC = ({ children }) => {
 export const RootThemeProvider: React.FC = memo(({ children }) => {
   const storedSpectrum: Spectrum = getThemeStorage() ?? 'system';
   return (
-    <DevicePreferencesProvider spectrum={storedSpectrum}>
-      <ThemeProvider>
-        <DocusaurusThemeProvider>
-          <div className={overrides}>{children}</div>
-        </DocusaurusThemeProvider>
-      </ThemeProvider>
-    </DevicePreferencesProvider>
+    <FeatureFlagProvider>
+      <DevicePreferencesProvider spectrum={storedSpectrum}>
+        <ThemeProvider>
+          <DocusaurusThemeProvider>
+            <div className={overrides}>{children}</div>
+          </DocusaurusThemeProvider>
+        </ThemeProvider>
+      </DevicePreferencesProvider>
+    </FeatureFlagProvider>
   );
 });
 
