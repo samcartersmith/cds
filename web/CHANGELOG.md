@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.0 (10/26/2021, 02:33 PM PST)
+
+#### 💥 Breaking
+
+- Replace fonts.css with fontsBeta.css declarations. [#39205](https://github.cbhq.net/mono/repo/pull/39205)
+
+#### 🚀 Updates
+
+- Implement AvatarButton. [#39006](https://github.cbhq.net/mono/repo/pull/39006), [CDS-1607](https://jira.coinbase-corp.com/browse/CDS-1607)
+- Add FeatureFlagProvider and docs. [#39106](https://github.cbhq.net/mono/repo/pull/39106), [CDS-1598](https://jira.coinbase-corp.com/browse/CDS-1598)
+
+#### 🐞 Fixes
+
+- Typography config for coinbase fonts. [#39288](https://github.cbhq.net/mono/repo/pull/39288)
+
 ## 0.28.0 (10/21/2021, 02:26 PM PST)
 
 #### 💥 Breaking

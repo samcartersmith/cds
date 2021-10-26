@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.0 (10/26/2021, 02:33 PM PST)
+
+#### 💥 Breaking
+
+- Replace fonts.css with fontsBeta.css declarations. [#39205](https://github.cbhq.net/mono/repo/pull/39205)
+
 ## 0.2.12 (10/21/2021, 02:26 PM PST)
 
 #### 🐞 Fixes

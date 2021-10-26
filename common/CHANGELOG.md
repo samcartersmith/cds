@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.27.1 (10/26/2021, 02:33 PM PST)
+
+#### 🚀 Updates
+
+- Implement AvatarButton. [#39006](https://github.cbhq.net/mono/repo/pull/39006), [CDS-1607](https://jira.coinbase-corp.com/browse/CDS-1607)
+- Add FeatureFlagProvider and docs. [#39106](https://github.cbhq.net/mono/repo/pull/39106), [CDS-1598](https://jira.coinbase-corp.com/browse/CDS-1598)
+
 ## 0.27.0 (10/21/2021, 02:26 PM PST)
 
 #### 💥 Breaking
