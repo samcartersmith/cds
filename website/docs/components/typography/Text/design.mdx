@@ -27,6 +27,7 @@ Display styles are to be used very sparingly. Display styles supersede Title sty
 <ThemeProvider scale="xLarge">
   <TextDisplay1 as="h1">Display1</TextDisplay1>
   <TextDisplay2 as="h2">Display2</TextDisplay2>
+  <TextDisplay3 as="h3">Display3 🆕</TextDisplay3>
 </ThemeProvider>
 ```
 
@@ -39,6 +40,7 @@ Title styles are used to establish the primary hierarchy in a layout. They shoul
   <TextTitle1 as="h3">Title1</TextTitle1>
   <TextTitle2 as="h4">Title2</TextTitle2>
   <TextTitle3 as="p">Title3</TextTitle3>
+  <TextTitle4 as="p">Title4 🆕</TextTitle4>
 </ThemeProvider>
 ```
 
@@ -135,9 +137,11 @@ For accessibility purposes, heading tags, i.e. h1-h6, carry hierarchy informatio
 <ThemeProvider scale="xLarge">
   <TextDisplay1 as="h1">Display1</TextDisplay1>
   <TextDisplay2 as="h2">Display2</TextDisplay2>
+  <TextDisplay3 as="h3">Display2</TextDisplay3>
   <TextTitle1 as="h3">Title1</TextTitle1>
   <TextTitle2 as="h4">Title2</TextTitle2>
   <TextTitle3 as="p">Title3</TextTitle3>
+  <TextTitle4 as="p">Title4</TextTitle4>
   <TextHeadline as="p">Headline</TextHeadline>
   <TextBody as="p">Body</TextBody>
   <TextLabel1 as="p">Label1</TextLabel1>
@@ -151,18 +155,21 @@ For accessibility purposes, heading tags, i.e. h1-h6, carry hierarchy informatio
 
 <!-- styles table start -->
 
-|            | xSmall (-3) | small (-2)  | medium (-1) | large (0)   | xLarge (+2) | xxLarge (+4) | xxxLarge (+6) |
-| ---------- | ----------- | ----------- | ----------- | ----------- | ----------- | ------------ | ------------- |
-| `Display1` | 61px / 68px | 62px / 72px | 63px / 72px | 64px / 72px | 66px / 76px | 68px / 76px  | 70px / 80px   |
-| `Display2` | 31px / 40px | 32px / 40px | 33px / 40px | 34px / 44px | 36px / 44px | 38px / 48px  | 40px / 48px   |
-| `Title1`   | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
-| `Title2`   | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
-| `Title3`   | 17px / 24px | 18px / 24px | 19px / 24px | 20px / 28px | 22px / 28px | 24px / 32px  | 26px / 32px   |
-| `Headline` | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
-| `Body`     | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
-| `Label1`   | 11px / 16px | 12px / 16px | 13px / 16px | 14px / 20px | 16px / 20px | 18px / 24px  | 20px / 24px   |
-| `Label2`   | 11px / 16px | 12px / 16px | 13px / 16px | 14px / 20px | 16px / 20px | 18px / 24px  | 20px / 24px   |
-| `Caption`  | 10px / 12px | 11px / 16px | 12px / 16px | 13px / 16px | 15px / 20px | 17px / 20px  | 19px / 24px   |
-| `Legal`    | 10px / 12px | 11px / 16px | 12px / 16px | 13px / 16px | 15px / 20px | 17px / 20px  | 19px / 24px   |
+|                    | xSmall (-3) | small (-2)  | medium (-1) | large (0)   | xLarge (+2) | xxLarge (+4) | xxxLarge (+6) |
+| ------------------ | ----------- | ----------- | ----------- | ----------- | ----------- | ------------ | ------------- |
+| `Display1`         | 61px / 68px | 62px / 72px | 63px / 72px | 64px / 72px | 66px / 76px | 68px / 76px  | 70px / 80px   |
+| `Display2`         | 31px / 40px | 32px / 40px | 33px / 40px | 34px / 44px | 36px / 44px | 38px / 48px  | 40px / 48px   |
+| `Display2Frontier` | 45px / 52px | 46px / 56px | 47px / 56px | 48px / 56px | 50px / 60px | 52px / 60px  | 54px / 64px   |
+| `Display3`         | 37px / 44px | 38px / 48px | 39px / 48px | 40px / 48px | 42px / 52px | 44px / 52px  | 46px / 56px   |
+| `Title1`           | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
+| `Title2`           | 25px / 32px | 26px / 32px | 27px / 36px | 28px / 36px | 30px / 36px | 32px / 40px  | 34px / 40px   |
+| `Title3`           | 17px / 24px | 18px / 24px | 19px / 24px | 20px / 28px | 22px / 28px | 24px / 32px  | 26px / 32px   |
+| `Title4`           | 17px / 24px | 18px / 24px | 19px / 24px | 20px / 28px | 22px / 28px | 24px / 32px  | 26px / 32px   |
+| `Headline`         | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
+| `Body`             | 14px / 20px | 14px / 20px | 15px / 20px | 16px / 24px | 18px / 24px | 20px / 28px  | 22px / 28px   |
+| `Label1`           | 11px / 16px | 12px / 16px | 13px / 16px | 14px / 20px | 16px / 20px | 18px / 24px  | 20px / 24px   |
+| `Label2`           | 11px / 16px | 12px / 16px | 13px / 16px | 14px / 20px | 16px / 20px | 18px / 24px  | 20px / 24px   |
+| `Caption`          | 10px / 12px | 11px / 16px | 12px / 16px | 13px / 16px | 15px / 20px | 17px / 20px  | 19px / 24px   |
+| `Legal`            | 10px / 12px | 11px / 16px | 12px / 16px | 13px / 16px | 15px / 20px | 17px / 20px  | 19px / 24px   |
 
 <!-- styles table end -->

@@ -18,6 +18,20 @@ export const display2 = css`
   font-family: var(--display2-font-family);
 `;
 
+export const display2Frontier = css`
+  font-size: var(--display2-frontier-font-size);
+  line-height: var(--display2-frontier-line-height);
+  font-weight: var(--display2-frontier-font-weight);
+  font-family: var(--display2-frontier-font-family);
+`;
+
+export const display3 = css`
+  font-size: var(--display3-font-size);
+  line-height: var(--display3-line-height);
+  font-weight: var(--display3-font-weight);
+  font-family: var(--display3-font-family);
+`;
+
 export const title1 = css`
   font-size: var(--title1-font-size);
   line-height: var(--title1-line-height);
@@ -37,6 +51,13 @@ export const title3 = css`
   line-height: var(--title3-line-height);
   font-weight: var(--title3-font-weight);
   font-family: var(--title3-font-family);
+`;
+
+export const title4 = css`
+  font-size: var(--title4-font-size);
+  line-height: var(--title4-line-height);
+  font-weight: var(--title4-font-weight);
+  font-family: var(--title4-font-family);
 `;
 
 export const headline = css`

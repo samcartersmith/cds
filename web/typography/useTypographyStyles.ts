@@ -1,13 +1,10 @@
-import { useMemo } from 'react';
-
 import { Typography } from '@cbhq/cds-common';
+import * as typographyStyles from './textStyles';
 
-import { useTypographyStylesMap } from './useTypographyStylesMap';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export const useTypographyStyles = (name: Typography) => {
-  const typographyStyles = useTypographyStylesMap();
   const isFrontier = useFeatureFlag('frontierTypography');
   const finalName = name === 'display2' && isFrontier ? 'display2Frontier' : name;
-  return useMemo(() => typographyStyles[finalName], [typographyStyles, finalName]);
+  return typographyStyles[finalName];
 };

@@ -35,56 +35,62 @@ export const fontFamilies = {
 
 export const typographyConfig = {
   display1: {
-    tag: 'h1' as const,
     baseFontSize: 64,
     leading: 7,
     fontWeight: 'Regular' as const,
   },
   display2: {
-    tag: 'h2' as const,
     baseFontSize: 34,
     leading: 7,
     fontWeight: 'Regular' as const,
   },
+  display2Frontier: {
+    baseFontSize: 48,
+    leading: 7,
+    fontWeight: 'Regular' as const,
+  },
+  display3: {
+    baseFontSize: 40,
+    leading: 7,
+    fontWeight: 'Regular' as const,
+  },
   title1: {
-    tag: 'h3' as const,
     baseFontSize: 28,
     leading: 6,
     fontWeight: 'Medium' as const,
   },
   title2: {
-    tag: 'h4' as const,
     baseFontSize: 28,
     leading: 6,
     fontWeight: 'Regular' as const,
   },
   title3: {
-    tag: 'h5' as const,
     baseFontSize: 20,
     leading: 5,
     fontWeight: 'Medium' as const,
   },
+  title4: {
+    baseFontSize: 20,
+    leading: 5,
+    fontWeight: 'Regular' as const,
+  },
   headline: {
-    tag: 'div' as const,
     baseFontSize: 16,
     leading: 5,
     fontWeight: 'Medium' as const,
   },
   body: {
-    tag: 'div' as const,
     baseFontSize: 16,
     leading: 5,
     fontWeight: 'Regular' as const,
   },
   label1: {
-    tag: 'div' as const,
     baseFontSize: 14,
     leading: 3,
     fontWeight: 'Medium' as const,
     allowAllCaps: true,
   },
   label2: {
-    tag: 'div' as const,
     baseFontSize: 14,
     leading: 3,
     fontWeight: 'Regular' as const,
@@ -92,7 +98,6 @@ export const typographyConfig = {
     tnum: true,
   },
   caption: {
-    tag: 'div' as const,
     baseFontSize: 13,
     leading: 2,
     fontWeight: 'Medium' as const,
@@ -100,7 +105,6 @@ export const typographyConfig = {
     tnum: true,
   },
   legal: {
-    tag: 'div' as const,
     baseFontSize: 13,
     leading: 2,
     fontWeight: 'Regular' as const,

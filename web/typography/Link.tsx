@@ -17,6 +17,7 @@ import { TextProps, HTMLNonHeadingTextTags } from './TextProps';
 import { TextTitle1 } from './TextTitle1';
 import { TextTitle2 } from './TextTitle2';
 import { TextTitle3 } from './TextTitle3';
+import { TextTitle4 } from './TextTitle4';
 import { TextInherited } from './TextInherited';
 
 const link = css`
@@ -42,6 +43,7 @@ const TYPOGRAPHY_MAP: Record<
   title1: TextTitle1,
   title2: TextTitle2,
   title3: TextTitle3,
+  title4: TextTitle4,
   legal: TextLegal,
   inherit: TextInherited,
 };

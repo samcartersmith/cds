@@ -6,9 +6,11 @@ import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../TextProps';
 import {
   TextDisplay1,
   TextDisplay2,
+  TextDisplay3,
   TextTitle1,
   TextTitle2,
   TextTitle3,
+  TextTitle4,
   TextHeadline,
   TextBody,
   TextLabel1,
@@ -20,9 +22,11 @@ import {
 const textComponents = [
   TextDisplay1,
   TextDisplay2,
+  TextDisplay3,
   TextTitle1,
   TextTitle2,
   TextTitle3,
+  TextTitle4,
   TextHeadline,
   TextBody,
   TextLabel1,

@@ -7,9 +7,11 @@ import { TextProps } from '../createText';
 import {
   TextDisplay1,
   TextDisplay2,
+  TextDisplay3,
   TextTitle1,
   TextTitle2,
   TextTitle3,
+  TextTitle4,
   TextHeadline,
   TextBody,
   TextLabel1,
@@ -21,9 +23,11 @@ import {
 const Type = {
   TextDisplay1,
   TextDisplay2,
+  TextDisplay3,
   TextTitle1,
   TextTitle2,
   TextTitle3,
+  TextTitle4,
   TextHeadline,
   TextBody,
   TextLabel1,

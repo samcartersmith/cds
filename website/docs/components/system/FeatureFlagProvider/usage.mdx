@@ -1,1 +1,20 @@
-Coming soon...
+```jsx live
+function Example() {
+  const [isEnabled, { toggle }] = useToggler(false);
+
+  return (
+    <FeatureFlagProvider frontierTypography={isEnabled}>
+      <ThemeProvider>
+        <VStack gap={2}>
+          <HStack gap={1} alignItems="center">
+            <Switch onChange={toggle} checked={isEnabled} />
+            <TextBody as="p">Toggle frontierTypography</TextBody>
+          </HStack>
+          <Divider direction="horizontal" />
+          <TypographySheet />
+        </VStack>
+      </ThemeProvider>
+    </FeatureFlagProvider>
+  );
+}
+```

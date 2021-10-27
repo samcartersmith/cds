@@ -11,9 +11,9 @@ import { disabledState } from '../styles/interactable';
 import { getTypographyStyles } from '../styles/typography';
 import type { DynamicElement } from '../types';
 import type { HTMLTextTags, TextProps } from './TextProps';
-import * as textStyles from './textStyles';
+import { useTypographyStyles } from './useTypographyStyles';
 
-const typographyStyles = css`
+const typographyResets = css`
   margin: 0;
 `;
 
@@ -58,6 +58,8 @@ export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: b
     dangerouslySetColor,
     ...props
   }: DynamicElement<TextProps, T, true /* as prop is required */>) => {
+    const typographyStyles = useTypographyStyles(name);
+
     const spacingStyles = useSpacingStyles({
       spacing,
       spacingTop,
@@ -78,8 +80,8 @@ export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: b
       children,
       style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
       className: cx(
-        typographyStyles,
-        inherit ? textInherit : textStyles[name],
+        typographyResets,
+        inherit ? textInherit : typographyStyles,
         color === 'currentColor' ? currentColor : foregroundStyles[color],
         disabled && disabledState,
         ...getTypographyStyles({
