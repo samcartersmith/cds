@@ -8,6 +8,8 @@ NPM_DEPS = [
     "@npm//d3-scale",
     "@npm//d3-shape",
     "@npm//type-fest",
+    "@npm//uuid",
+    "@npm//@types/uuid",
 ]
 
 NPM_PEER_DEPS = [

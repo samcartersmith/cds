@@ -42,12 +42,20 @@ export function createStories({
       <>
         <Button onPress={toggleOn}>Open Modal</Button>
         <Modal visible={visible} onRequestClose={toggleOff} disablePortal={disablePortal}>
-          <ModalHeader title="Basic Modal" />
-          <ModalBody>{children}</ModalBody>
-          <ModalFooter
-            primaryAction={<Button>Save</Button>}
-            secondaryAction={<Button variant="secondary">Cancel</Button>}
-          />
+          {({ closeModal }) => (
+            <>
+              <ModalHeader title="Basic Modal" />
+              <ModalBody>{children}</ModalBody>
+              <ModalFooter
+                primaryAction={<Button onPress={closeModal}>Save</Button>}
+                secondaryAction={
+                  <Button onPress={closeModal} variant="secondary">
+                    Cancel
+                  </Button>
+                }
+              />
+            </>
+          )}
         </Modal>
       </>
     );
@@ -65,12 +73,20 @@ export function createStories({
               console.log('close modal');
             }}
           >
-            <ModalHeader title="Basic Modal" />
-            <ModalBody>{children}</ModalBody>
-            <ModalFooter
-              primaryAction={<Button>Save</Button>}
-              secondaryAction={<Button variant="secondary">Cancel</Button>}
-            />
+            {({ closeModal }) => (
+              <>
+                <ModalHeader title="Basic Modal" />
+                <ModalBody>{children}</ModalBody>
+                <ModalFooter
+                  primaryAction={<Button onPress={closeModal}>Save</Button>}
+                  secondaryAction={
+                    <Button onPress={closeModal} variant="secondary">
+                      Cancel
+                    </Button>
+                  }
+                />
+              </>
+            )}
           </Modal>,
         ),
       [openModal, children],
@@ -97,15 +113,27 @@ export function createStories({
           onRequestClose={onRequestClose ?? toggleOff}
           disablePortal
         >
-          <ModalHeader onBackButtonPress={onBackButtonPress} title={title} />
-          <ModalBody>
-            <LoremIpsum />
-          </ModalBody>
-          <ModalFooter
-            testID="modal-footer"
-            primaryAction={<Button>Save</Button>}
-            secondaryAction={<Button variant="secondary">Cancel</Button>}
-          />
+          {({ closeModal }) => (
+            <>
+              <ModalHeader onBackButtonPress={onBackButtonPress} title={title} />
+              <ModalBody>
+                <LoremIpsum />
+              </ModalBody>
+              <ModalFooter
+                testID="modal-footer"
+                primaryAction={
+                  <Button onPress={closeModal} testID="modal-footer-save">
+                    Save
+                  </Button>
+                }
+                secondaryAction={
+                  <Button onPress={closeModal} variant="secondary">
+                    Cancel
+                  </Button>
+                }
+              />
+            </>
+          )}
         </Modal>
       </>
     );

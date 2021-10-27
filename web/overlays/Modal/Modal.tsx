@@ -47,7 +47,7 @@ export type ModalProps = {
   disablePortal?: boolean;
 } & ModalBaseProps;
 
-export const Modal: React.FC<ModalProps> = memo(
+export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
     const {
       children,
@@ -87,7 +87,7 @@ export const Modal: React.FC<ModalProps> = memo(
       // unmount after animations finished
       const finished = await animateOut();
       if (finished) {
-        onRequestClose();
+        onRequestClose?.();
         isFocused.current = false;
       }
     }, [animateOut, onRequestClose]);
@@ -171,6 +171,8 @@ export const Modal: React.FC<ModalProps> = memo(
       [handleClose, props],
     );
 
+    const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
+
     if (!visible) {
       return null;
     }
@@ -200,7 +202,9 @@ export const Modal: React.FC<ModalProps> = memo(
           dangerouslySetClassName={cx(modalDefaultClassName, modalResponsiveClassName)}
           ref={modalRef}
         >
-          <ModalParentContext.Provider value={modalData}>{children}</ModalParentContext.Provider>
+          <ModalParentContext.Provider value={modalData}>
+            {typeof children === 'function' ? children(renderChildrenProps) : children}
+          </ModalParentContext.Provider>
         </VStack>
       </Box>
     );

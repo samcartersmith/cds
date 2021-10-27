@@ -15,6 +15,7 @@ import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';
 import { PortalProvider } from '../../PortalProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
+import { Animated } from '../../../animation/Animated';
 
 const LoremIpsum = createLoremIpsum({
   TextBody,
@@ -127,5 +128,21 @@ describe('Modal', () => {
     await waitFor(() => getByRole('dialog'));
 
     expect(getByTestId('modal-footer')).toBeTruthy();
+  });
+
+  it('triggers close animation on footer action press', async () => {
+    const onRequestClose = jest.fn();
+    const animationParallelSpy = jest.spyOn(Animated, 'parallel');
+    const animationTimingSpy = jest.spyOn(Animated, 'timing');
+
+    const { getByTestId } = render(<MockModal visible onRequestClose={onRequestClose} />);
+
+    // press on footer action
+    fireEvent.click(getByTestId('modal-footer-save'));
+
+    expect(animationParallelSpy).toHaveBeenCalledTimes(2);
+    expect(animationTimingSpy).toHaveBeenCalledTimes(6);
+    // wait for animation to finish
+    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
   });
 });

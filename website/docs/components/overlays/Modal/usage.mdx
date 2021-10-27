@@ -1,12 +1,6 @@
 ### Get Started
-1. Add `PortalProvider` to the root of your app. Import it from `import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';`;
-2. Recommended to place your `Modal` inside the same parent as the trigger, compose with `ModalHeader`, `ModalBody`, and `ModalFooter` as you need.
-3. Wire up `visible` and `onRequestClose` to control visibility.
-
-### Default Modal
-- Modal is using React Portal by default, which will port the node to the end of the `body` tag. You can add `disabledPortal` to disable this behavior.
-
-- Although `ModalHeader`, `ModalBody`, `ModalFooter` are optional sub-components, it's **recommended** to compose them like below for consistency:
+1. Add `PortalProvider` to the root of your app. Import it from `import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';`.
+2. Compose `Modal` with `ModalHeader`, `ModalBody`, and `ModalFooter` like below for consistency.
 ```
 <Modal>
 	<ModalHeader />
@@ -16,6 +10,12 @@
 	<ModalFooter />
 </Modal>
 ```
+3. Wire up `visible` and `onRequestClose` to control visibility.
+
+### Default Modal
+Modal is using React Portal by default, which will port the node to the end of the `body` tag. You can add `disabledPortal` to disable this behavior.
+
+**Recommended** to use the `closeModal()` from render children to close the Modal which will have the close animation play properly.
 
 ```jsx live
 // import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
@@ -37,16 +37,20 @@ function DefaultModalExample() {
           visible={visible}
           onRequestClose={toggleOff}
         >
-          <ModalHeader title="Basic Modal" /> {/* close action is inherited from onRequestClose */}
-          <ModalBody>
-            <TextBody as='p'>
-              {loremIpsum.repeat(scrolling ? 50 : 1)}
-            </TextBody>
-          </ModalBody>
-          <ModalFooter
-            primaryAction={<Button onPress={toggleOff}>Save</Button>}
-            secondaryAction={<Button variant="secondary"  onPress={toggleOff}>Cancel</Button>}
-          />
+          {({ closeModal }) => (
+            <>
+              <ModalHeader title="Basic Modal" /> {/* close action is inherited from onRequestClose */}
+              <ModalBody>
+                <TextBody as='p'>
+                  {loremIpsum.repeat(scrolling ? 50 : 1)}
+                </TextBody>
+              </ModalBody>
+              <ModalFooter
+                primaryAction={<Button onPress={closeModal}>Save</Button>}
+                secondaryAction={<Button variant="secondary"  onPress={closeModal}>Cancel</Button>}
+              />
+            </>
+          )}
         </Modal>
       </PortalProvider>
     </ExampleWithThemeToggles>
@@ -59,6 +63,14 @@ function DefaultModalExample() {
 `PortalProvider` is a convenient way for adding anything to the CDS portal. The CDS portal is what CDS uses to centralize all elements that need a portal and handles the zIndex of those pieces.
 You can control Modal visibility programmatically using `openModal()` and `closeModal()` from the `useModal()` hook which consumes `PortalProvider` under the hood.
 
+To **open** the modal, simple pass your `Modal` component into `openModal()` like `openModal(<Modal />)`.
+
+To **close** the modal, these are the recommended approaches:
+1. Use the `closeModal()` from render children.
+2. Pass a ref to the Modal and close it with `ref.current.onRequestClose()`.
+
+See below for detailed examples.
+
 **NOTE:** PortalProvider is unstable on mobile and will break if multiple portals implements React Native Modal. This is a known issue with React Native Modal which doesn't support multiple modals display at the same time.
 
 ```jsx live
@@ -66,19 +78,49 @@ You can control Modal visibility programmatically using `openModal()` and `close
 // import { useModal } from '@cbhq/cds-web/overlays/useModal';
 
 function PortalModalExample() {
-  function ModalExample() {
+  function CloseWithRenderProps() {
     const { openModal } = useModal();
 
     const handlePress = useCallback(
+      () => {
+        openModal(
+          <Modal visible>
+            {({ closeModal }) =>
+              <>
+                <ModalHeader title="Basic Modal" />
+                <ModalBody>
+                  <TextBody as="p">{loremIpsum}</TextBody>
+                </ModalBody>
+                <ModalFooter
+                  primaryAction={<Button onPress={closeModal}>Save</Button>}
+                />
+              </>
+            }
+          </Modal>
+        );
+      },
+      [openModal],
+    );
+
+    return (
+      <Box spacingBottom={2}>
+        <Button onPress={handlePress}>With Render Children</Button>
+      </Box>
+    );
+  }
+
+  function CloseWithHook() {
+    const { openModal, closeModal } = useModal();
+
+    const handlePress = useCallback(
       () => openModal(
-        <Modal visible onRequestClose={() => { console.log('close modal') }}>
+        <Modal visible>
           <ModalHeader title="Basic Modal" />
           <ModalBody>
             <TextBody as="p">{loremIpsum}</TextBody>
           </ModalBody>
           <ModalFooter
-            primaryAction={<Button>Save</Button>}
-            secondaryAction={<Button variant="secondary">Cancel</Button>}
+            primaryAction={<Button onPress={() => closeModal()}>Save</Button>}
           />
         </Modal>
       ),
@@ -86,15 +128,18 @@ function PortalModalExample() {
     );
 
     return (
-      <ExampleWithThemeToggles>
-        <Button onPress={handlePress}>Open Modal</Button>
-      </ExampleWithThemeToggles>
+      <Box>
+        <Button onPress={handlePress}>With Hook</Button>
+      </Box>
     );
   }
 
   return (
     <PortalProvider>
-      <ModalExample />
+      <ExampleWithThemeToggles>
+        <CloseWithRenderProps />
+        <CloseWithHook />
+      </ExampleWithThemeToggles>
     </PortalProvider>
   );
 }

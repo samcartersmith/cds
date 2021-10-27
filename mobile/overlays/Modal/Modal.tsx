@@ -32,7 +32,7 @@ export const Modal = memo(
     const handleClose = useCallback(() => {
       animateOut.start(({ finished }) => {
         if (finished) {
-          onRequestClose();
+          onRequestClose?.();
         }
       });
     }, [onRequestClose, animateOut]);
@@ -49,6 +49,8 @@ export const Modal = memo(
       () => ({ ...props, onRequestClose: handleClose }),
       [handleClose, props],
     );
+
+    const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
 
     return (
       <RNModal
@@ -67,7 +69,9 @@ export const Modal = memo(
           elevation={2}
         >
           <SafeAreaView style={styles.safeAreaContainer}>
-            <ModalParentContext.Provider value={modalData}>{children}</ModalParentContext.Provider>
+            <ModalParentContext.Provider value={modalData}>
+              {typeof children === 'function' ? children(renderChildrenProps) : children}
+            </ModalParentContext.Provider>
           </SafeAreaView>
         </VStack>
       </RNModal>

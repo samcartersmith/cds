@@ -1,5 +1,5 @@
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import { Modal as RNModal } from 'react-native';
+import { Modal as RNModal, Animated } from 'react-native';
 import {
   createLoremIpsum,
   CreateLoremIpsumProps,
@@ -95,5 +95,21 @@ describe('Modal', () => {
     fireEvent.press(getByText('Open Modal'));
 
     expect(getByTestId('modal-footer')).toBeTruthy();
+  });
+
+  it('triggers close animation on footer action press', async () => {
+    const onRequestClose = jest.fn();
+    const animationParallelSpy = jest.spyOn(Animated, 'parallel');
+    const animationTimingSpy = jest.spyOn(Animated, 'timing');
+
+    const { getByTestId } = render(<MockModal visible onRequestClose={onRequestClose} />);
+
+    // press on footer action
+    fireEvent.press(getByTestId('modal-footer-save'));
+
+    expect(animationParallelSpy).toHaveBeenCalledTimes(2);
+    expect(animationTimingSpy).toHaveBeenCalledTimes(4);
+    // wait for animation to finish
+    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
   });
 });

@@ -4,16 +4,18 @@ import { SharedProps } from './SharedProps';
 import { ButtonBaseProps } from './ButtonBaseProps';
 import { NoopFn } from './Helpers';
 
+export type ModalRenderChildren = (props: { closeModal: NoopFn }) => JSX.Element;
+
 export type ModalBaseProps = {
   /** Component to render as the Modal content */
-  children: NonNullable<ReactNode>;
+  children: ModalRenderChildren | NonNullable<ReactNode>;
   /**
    * Controls visibility of the Modal
    * @default false
    */
   visible: boolean;
-  /** Handles Modal close */
-  onRequestClose: NoopFn;
+  /** Handles Modal close. Optional for portal modal. */
+  onRequestClose?: NoopFn;
   /**
    * Hide top and bottom dividers inside Modal body
    * @default false
