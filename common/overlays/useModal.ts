@@ -1,5 +1,5 @@
 import { useCallback, useMemo, cloneElement, useRef, ReactElement } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { generateRandomId } from '@cbhq/cds-utils';
 import { usePortal } from './usePortal';
 import { ModalBaseProps } from '../types';
 
@@ -7,7 +7,7 @@ export const useModal = () => {
   const prevIndex = useRef(0);
   const { addNode, removeNode } = usePortal();
 
-  const id = uuidv4();
+  const id = generateRandomId('modal_');
 
   const openModal = useCallback(
     (content: ReactElement<ModalBaseProps>, customId?: string): string => {
