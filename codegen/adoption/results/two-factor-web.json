@@ -3,8 +3,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 11,
-      "totalCallSites": 7,
+      "totalInstances": 12,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -34,8 +34,8 @@
           "callSites": [
             "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx",
             "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx",
-            "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx"
+            "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx",
+            "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx"
           ]
         },
         {
@@ -46,6 +46,7 @@
         { "aliasPath": "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx", "callSites": [] }
       ],
       "callSites": {
+        "@cbhq/two-factor-web/components/Drawer.tsx": 1,
         "@cbhq/two-factor-web/components/Fallback.tsx": 1,
         "@cbhq/two-factor-web/components/Header.tsx": 1,
         "@cbhq/two-factor-web/components/InputCode.tsx": 1,
@@ -55,9 +56,34 @@
         "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
       },
       "propsWithCallSites": {
+        "ref": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
+        },
+        "background": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1
+        },
+        "zIndex": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "bottom": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "left": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "right": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "maxHeight": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "overflow": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
+        },
+        "spacing": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1
+        },
+        "dangerouslySetClassName": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
         "flexGrow": {
           "@cbhq/two-factor-web/components/Fallback.tsx": 1,
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2,
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
         },
         "alignItems": { "@cbhq/two-factor-web/components/Fallback.tsx": 1 },
         "justifyContent": { "@cbhq/two-factor-web/components/Fallback.tsx": 1 },
@@ -76,15 +102,128 @@
           "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
         },
         "position": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "overflow": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "ref": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 },
-        "background": {
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
-          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1
-        },
+        "minHeight": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
         "borderRadius": { "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1 },
-        "spacing": { "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1 },
         "gap": { "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1 }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 10,
+      "totalCallSites": 8,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@cbhq/two-factor-web/components/Loader.tsx",
+          "callSites": [
+            "@cbhq/two-factor-web/components/InputCode.tsx",
+            "@cbhq/two-factor-web/Confirm2FA/Confirm2FA.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@cbhq/two-factor-web/components/Warning.tsx",
+          "callSites": [
+            "@cbhq/two-factor-web/components/InputCode.tsx",
+            "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "@cbhq/two-factor-web/components/Drawer.tsx": 2,
+        "@cbhq/two-factor-web/components/InputCode.tsx": 1,
+        "@cbhq/two-factor-web/components/Loader.tsx": 1,
+        "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2,
+        "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1,
+        "@cbhq/two-factor-web/components/Warning.tsx": 1,
+        "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingVertical": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
+        },
+        "top": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "bottom": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "right": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "left": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "background": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "zIndex": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "dangerouslySetClassName": { "@cbhq/two-factor-web/components/Drawer.tsx": 1 },
+        "testID": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/InputCode.tsx": 1,
+          "@cbhq/two-factor-web/components/Loader.tsx": 1
+        },
+        "minWidth": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
+        "maxWidth": {
+          "@cbhq/two-factor-web/components/InputCode.tsx": 1,
+          "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1
+        },
+        "flexGrow": {
+          "@cbhq/two-factor-web/components/InputCode.tsx": 1,
+          "@cbhq/two-factor-web/components/Loader.tsx": 1,
+          "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1
+        },
+        "key": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
+        "alignItems": { "@cbhq/two-factor-web/components/Loader.tsx": 1 },
+        "justifyContent": {
+          "@cbhq/two-factor-web/components/Loader.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        },
+        "spacingTop": {
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        },
+        "flexDirection": { "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1 },
+        "spacingBottom": {
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-web/buttons/Button",
+      "totalInstances": 6,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/buttons/Button",
+      "callSites": {
+        "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+        "@cbhq/two-factor-web/components/Fallback.tsx": 2,
+        "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+        "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+      },
+      "propsWithCallSites": {
+        "variant": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/Fallback.tsx": 2,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        },
+        "onPress": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/Fallback.tsx": 2,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        },
+        "testID": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/Fallback.tsx": 2,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        },
+        "block": {
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        },
+        "loading": { "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1 }
       }
     },
     {
@@ -153,45 +292,6 @@
       }
     },
     {
-      "name": "Button",
-      "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 6,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/buttons/Button",
-      "callSites": {
-        "@cbhq/two-factor-web/components/Fallback.tsx": 2,
-        "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2,
-        "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPress": {
-          "@cbhq/two-factor-web/components/Fallback.tsx": 2,
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2,
-          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-        },
-        "variant": {
-          "@cbhq/two-factor-web/components/Fallback.tsx": 2,
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2,
-          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-        },
-        "testID": {
-          "@cbhq/two-factor-web/components/Fallback.tsx": 2,
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2,
-          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-        },
-        "block": {
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
-          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-        },
-        "loading": { "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1 }
-      }
-    },
-    {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
       "totalInstances": 2,
@@ -207,79 +307,6 @@
           "@cbhq/two-factor-web/components/NeedHelp.tsx": 1
         },
         "spacingBottom": { "@cbhq/two-factor-web/components/NeedHelp.tsx": 1 }
-      }
-    },
-    {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 9,
-      "totalCallSites": 7,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "@cbhq/two-factor-web/components/Loader.tsx",
-          "callSites": [
-            "@cbhq/two-factor-web/Confirm2FA/Confirm2FA.tsx",
-            "@cbhq/two-factor-web/components/InputCode.tsx"
-          ]
-        },
-        {
-          "aliasPath": "@cbhq/two-factor-web/components/Warning.tsx",
-          "callSites": [
-            "@cbhq/two-factor-web/components/InputCode.tsx",
-            "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx"
-          ]
-        }
-      ],
-      "callSites": {
-        "@cbhq/two-factor-web/components/InputCode.tsx": 1,
-        "@cbhq/two-factor-web/components/Loader.tsx": 1,
-        "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 3,
-        "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1,
-        "@cbhq/two-factor-web/components/Warning.tsx": 1,
-        "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-      },
-      "propsWithCallSites": {
-        "minWidth": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
-        "maxWidth": {
-          "@cbhq/two-factor-web/components/InputCode.tsx": 1,
-          "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1
-        },
-        "flexGrow": {
-          "@cbhq/two-factor-web/components/InputCode.tsx": 1,
-          "@cbhq/two-factor-web/components/Loader.tsx": 1,
-          "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1
-        },
-        "key": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
-        "testID": {
-          "@cbhq/two-factor-web/components/InputCode.tsx": 1,
-          "@cbhq/two-factor-web/components/Loader.tsx": 1
-        },
-        "alignItems": { "@cbhq/two-factor-web/components/Loader.tsx": 1 },
-        "justifyContent": {
-          "@cbhq/two-factor-web/components/Loader.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-        },
-        "spacingTop": {
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-        },
-        "spacingVertical": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "top": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "bottom": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "right": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "left": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "background": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "zIndex": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
-        "dangerouslySetClassName": {
-          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1
-        },
-        "flexDirection": { "@cbhq/two-factor-web/components/ViewWrapper.tsx": 1 },
-        "spacingBottom": {
-          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
-        }
       }
     },
     {
@@ -365,6 +392,23 @@
       }
     },
     {
+      "name": "Spacer",
+      "sourceFile": "@cbhq/cds-web/layout/Spacer",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/layout/Spacer",
+      "callSites": {
+        "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "@cbhq/two-factor-web/flows/email/EmailConfirmation.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FConnectKey.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Pictogram",
       "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
       "totalInstances": 1,
@@ -400,88 +444,36 @@
   ],
   "other": [
     {
-      "name": "Loader",
-      "sourceFile": "@cbhq/two-factor-web/components/Loader",
-      "totalInstances": 2,
+      "name": "CSSTransition",
+      "sourceFile": "react-transition-group/CSSTransition",
+      "totalInstances": 3,
       "totalCallSites": 2,
       "callSites": {
-        "@cbhq/two-factor-web/Confirm2FA/Confirm2FA.tsx": 1,
-        "@cbhq/two-factor-web/components/InputCode.tsx": 1
+        "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+        "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2
       },
       "propsWithCallSites": {
-        "position": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
-        "pin": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
-        "width": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 }
+        "mountOnEnter": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2
+        },
+        "unmountOnExit": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2
+        },
+        "timeout": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2
+        },
+        "in": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2
+        },
+        "classNames": {
+          "@cbhq/two-factor-web/components/Drawer.tsx": 1,
+          "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2
+        }
       }
-    },
-    {
-      "name": "SMSFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/SMSFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TOTPFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/TOTPFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "U2FFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/U2FFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "EmailFlow",
-      "sourceFile": "@cbhq/two-factor-web/flows/EmailFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Load2FAError",
-      "sourceFile": "@cbhq/two-factor-web/Confirm2FA/components/Load2FAError",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ViewWrapper",
-      "sourceFile": "@cbhq/two-factor-web/components/ViewWrapper",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@cbhq/two-factor-web/Confirm2FA/Confirm2FA.tsx": 1,
-        "@cbhq/two-factor-web/hooks/useBugsnag.tsx": 1
-      }
-    },
-    {
-      "name": "ErrorBoundary",
-      "sourceFile": "@cbhq/two-factor-web/config/bugsnag/ErrorBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "FallbackComponent": { "@cbhq/two-factor-web/Confirm2FA/index.tsx": 1 },
-        "onError": { "@cbhq/two-factor-web/Confirm2FA/index.tsx": 1 }
-      }
-    },
-    {
-      "name": "ClientPropsProvider",
-      "sourceFile": "@cbhq/two-factor-web/context/ClientPropsContext/ClientPropsProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "clientProps": { "@cbhq/two-factor-web/Confirm2FA/index.tsx": 1 } }
-    },
-    {
-      "name": "CurrentTwoFactorProvider",
-      "sourceFile": "@cbhq/two-factor-web/context/CurrentTwoFactorContext/CurrentTwoFactorProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Confirm2FA",
-      "sourceFile": "@cbhq/two-factor-web/Confirm2FA/Confirm2FA",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "DigitInput",
@@ -543,6 +535,21 @@
       }
     },
     {
+      "name": "Loader",
+      "sourceFile": "@cbhq/two-factor-web/components/Loader",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@cbhq/two-factor-web/components/InputCode.tsx": 1,
+        "@cbhq/two-factor-web/Confirm2FA/Confirm2FA.tsx": 1
+      },
+      "propsWithCallSites": {
+        "position": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
+        "pin": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 },
+        "width": { "@cbhq/two-factor-web/components/InputCode.tsx": 1 }
+      }
+    },
+    {
       "name": "NeedHelpOption",
       "sourceFile": "@cbhq/two-factor-web/components/NeedHelp.tsx",
       "totalInstances": 1,
@@ -554,20 +561,6 @@
       }
     },
     {
-      "name": "CSSTransition",
-      "sourceFile": "react-transition-group/CSSTransition",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 },
-      "propsWithCallSites": {
-        "mountOnEnter": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 },
-        "unmountOnExit": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 },
-        "timeout": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 },
-        "in": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 },
-        "classNames": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 }
-      }
-    },
-    {
       "name": "BaseView",
       "sourceFile": "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx",
       "totalInstances": 1,
@@ -576,10 +569,22 @@
     {
       "name": "DrawerView",
       "sourceFile": "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 },
+      "propsWithCallSites": {
+        "onCloseDrawer": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 2 }
+      }
+    },
+    {
+      "name": "Drawer",
+      "sourceFile": "@cbhq/two-factor-web/components/Drawer",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "onCloseDrawer": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 }
+        "isOpen": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "onClose": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 },
+        "closeButtonTestID": { "@cbhq/two-factor-web/components/ResponsiveDrawerContainer.tsx": 1 }
       }
     },
     {
@@ -592,6 +597,75 @@
         "onCloseDrawer": { "@cbhq/two-factor-web/components/ViewWithHelpDrawer.tsx": 1 },
         "toggleButtonText": { "@cbhq/two-factor-web/components/ViewWithHelpDrawer.tsx": 1 }
       }
+    },
+    {
+      "name": "SMSFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/sms/SMSFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TOTPFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/totp/TOTPFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "U2FFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/u2f/U2FFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EmailFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/email/EmailFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Load2FAError",
+      "sourceFile": "@cbhq/two-factor-web/Confirm2FA/components/Load2FAError",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ViewWrapper",
+      "sourceFile": "@cbhq/two-factor-web/components/ViewWrapper",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@cbhq/two-factor-web/Confirm2FA/Confirm2FA.tsx": 1,
+        "@cbhq/two-factor-web/hooks/useBugsnag.tsx": 1
+      }
+    },
+    {
+      "name": "ErrorBoundary",
+      "sourceFile": "@cbhq/two-factor-web/config/bugsnag/ErrorBoundary",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "FallbackComponent": { "@cbhq/two-factor-web/Confirm2FA/index.tsx": 1 },
+        "onError": { "@cbhq/two-factor-web/Confirm2FA/index.tsx": 1 }
+      }
+    },
+    {
+      "name": "ClientPropsProvider",
+      "sourceFile": "@cbhq/two-factor-web/context/ClientPropsContext/ClientPropsProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "clientProps": { "@cbhq/two-factor-web/Confirm2FA/index.tsx": 1 } }
+    },
+    {
+      "name": "CurrentTwoFactorProvider",
+      "sourceFile": "@cbhq/two-factor-web/context/CurrentTwoFactorContext/CurrentTwoFactorProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Confirm2FA",
+      "sourceFile": "@cbhq/two-factor-web/Confirm2FA/Confirm2FA",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Fallback",
@@ -624,33 +698,33 @@
       "callSites": {
         "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
         "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+        "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
       },
       "propsWithCallSites": {
         "BaseView": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
         },
         "DrawerView": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
         },
         "toggleButtonTestID": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/email/EmailFlow.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPFlow.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FFlow.tsx": 1
         }
       }
     },
@@ -662,33 +736,33 @@
       "callSites": {
         "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
         "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
+        "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+        "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
       },
       "propsWithCallSites": {
         "options": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
         },
         "onCloseDrawer": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
         },
         "twoFactorType": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
         },
         "testID": {
           "@cbhq/two-factor-web/flows/email/EmailNeedHelp.tsx": 1,
           "@cbhq/two-factor-web/flows/sms/SMSNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1,
-          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1
+          "@cbhq/two-factor-web/flows/totp/TOTPNeedHelp.tsx": 1,
+          "@cbhq/two-factor-web/flows/u2f/U2FNeedHelp.tsx": 1
         }
       }
     },
@@ -727,25 +801,6 @@
           "@cbhq/two-factor-web/flows/sms/SMSInputCode.tsx": 1,
           "@cbhq/two-factor-web/flows/totp/TOTPInputCode.tsx": 1
         }
-      }
-    },
-    {
-      "name": "TwoFactorProvider",
-      "sourceFile": "@cbhq/two-factor-web/context/TwoFactorContext/TwoFactorProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "applicationId": { "@cbhq/two-factor-web/tests/utils/renderWithContext.tsx": 1 }
-      }
-    },
-    {
-      "name": "IntlProvider",
-      "sourceFile": "react-intl/IntlProvider",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@cbhq/two-factor-web/tests/utils/renderWithContext.tsx": 2 },
-      "propsWithCallSites": {
-        "locale": { "@cbhq/two-factor-web/tests/utils/renderWithContext.tsx": 2 }
       }
     }
   ]

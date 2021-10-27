@@ -12,6 +12,7 @@ module.exports = {
       items: [
         { type: 'doc', id: 'adoption-tracker/assethub-web', label: 'AssetHub Issuer' },
         { type: 'doc', id: 'adoption-tracker/assethub-admin', label: 'AssetHub Admin' },
+        { type: 'doc', id: 'adoption-tracker/commerce', label: 'Commerce' },
         { type: 'doc', id: 'adoption-tracker/maui', label: 'Maui' },
       ],
     },

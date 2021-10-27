@@ -24,6 +24,12 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/system/Pressable",
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": "@trust_and_safety/components/EmailButton/EmailButton.tsx"
+        }
+      ],
       "aliasedCdsComponents": [
         {
           "aliasPath": "@trust_and_safety/components/EmailButton/EmailButton.tsx",
@@ -36,7 +42,8 @@
         "borderColor": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
         "borderWidth": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
         "borderRadius": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
-        "width": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 }
+        "width": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
+        "className": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 }
       }
     },
     {
@@ -189,9 +196,9 @@
           "aliasPath": "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx",
           "callSites": [
             "@trust_and_safety/errors/fallbacks/GenericErrorFallback.tsx",
-            "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx",
             "@trust_and_safety/pages/Consent/ConsentPage.tsx",
             "@trust_and_safety/pages/Dev/DevPage.tsx",
+            "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx",
             "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx",
             "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx",
             "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx",
@@ -206,9 +213,9 @@
       ],
       "callSites": {
         "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx": 1,
-        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 2,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 2,
         "@trust_and_safety/pages/Dev/DevPage.tsx": 3,
+        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 2,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 2,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 2,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
@@ -221,9 +228,9 @@
       "propsWithCallSites": {
         "width": {
           "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx": 1,
-          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
+          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
@@ -235,9 +242,9 @@
         },
         "spacingBottom": {
           "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx": 1,
-          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 2,
+          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 2,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
@@ -319,9 +326,9 @@
       "cds": "@cbhq/cds-web/typography/TextTitle1",
       "callSites": {
         "@trust_and_safety/errors/fallbacks/GenericErrorFallback.tsx": 1,
-        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
+        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 1,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
@@ -334,9 +341,9 @@
       "propsWithCallSites": {
         "as": {
           "@trust_and_safety/errors/fallbacks/GenericErrorFallback.tsx": 1,
-          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
+          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
@@ -347,9 +354,9 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "spacingBottom": {
-          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
+          "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 1,
           "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
@@ -506,6 +513,13 @@
         "onRequestClose": { "@trust_and_safety/pages/Password/PasswordPage.tsx": 1 },
         "hideDividers": { "@trust_and_safety/pages/Password/PasswordPage.tsx": 1 }
       }
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/overlays/ModalHeader"
     },
     {
       "name": "ModalBody",
@@ -788,9 +802,9 @@
       "callSites": {
         "@trust_and_safety/components/FullScreenSpinner/FullScreenSpinner.tsx": 1,
         "@trust_and_safety/errors/fallbacks/GenericErrorFallback.tsx": 1,
-        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
+        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 2,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
@@ -827,9 +841,9 @@
       "totalCallSites": 12,
       "callSites": {
         "@trust_and_safety/errors/fallbacks/GenericErrorFallback.tsx": 1,
-        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
+        "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationLandingPage.tsx": 2,
         "@trust_and_safety/pages/EmailVerification/EmailVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,

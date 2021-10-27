@@ -41,6 +41,13 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
+        ...monorepoConfig,
+        id: 'commerce',
+        label: 'Commerce',
+        projectTsAliases: ['@commerce/frontend'],
+        type: 'doc',
+      },
+      {
         root: path.join(tempDir, mauiGit, 'maui-frontend'),
         github: mauiGit,
         id: 'maui',
@@ -197,7 +204,7 @@ export const config: AdoptersConfig[] = [
 
 export const adopters = flattenConfig(config);
 export const adoptersSidebar = formatSidebar(config);
-export const adoptersWithPillar = adopters.map(item => ({
+export const adoptersWithPillar = adopters.map((item) => ({
   id: item.id,
   pillar: item.pillar,
 }));
