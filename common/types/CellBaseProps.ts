@@ -26,6 +26,7 @@ export type CellBaseProps = {
   intermediary?: React.ReactNode;
   media?: React.ReactElement;
   minHeight?: number;
+  shouldOverflow?: boolean;
 } & CellCommonProps &
   SpacingProps;
 

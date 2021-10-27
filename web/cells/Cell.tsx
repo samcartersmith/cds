@@ -19,6 +19,12 @@ const pressClassName = css`
 
 export const cellStaticClassName = 'cds-cell';
 
+const baseStyles = css`
+  &.${cellStaticClassName} {
+    display: block;
+  }
+`;
+
 // Display and min-width are necessary for truncation to work:
 // https://css-tricks.com/flexbox-truncated-text/
 const truncate = css`
@@ -67,10 +73,22 @@ export const Cell = memo(function Cell({
   selected,
   testID,
   to,
+  /**
+   * For TableCell, we don't want to apply an
+   * overflow class unless we've defined overflow
+   * as either `'truncate' | 'clip'`.
+   *
+   * */
+  shouldOverflow,
   ...props
 }: CellProps) {
   const offsetClassName = useOffsetStyles({ offsetHorizontal: 2 });
   const linkable = Boolean(onPress ?? to);
+  const maybeTruncateClassName = cx(
+    cellStaticClassName,
+    baseStyles,
+    !shouldOverflow && truncateClassName,
+  );
 
   let content = (
     <HStack
@@ -96,7 +114,7 @@ export const Cell = memo(function Cell({
         flexGrow={1}
         flexShrink={priority === 'start' ? 0 : 1}
         justifyContent="flex-start"
-        dangerouslySetClassName={truncateClassName}
+        dangerouslySetClassName={maybeTruncateClassName}
       >
         {children}
       </Box>
@@ -106,7 +124,7 @@ export const Cell = memo(function Cell({
           flexGrow={0}
           flexShrink={priority === 'middle' ? 0 : 1}
           justifyContent="center"
-          dangerouslySetClassName={truncateClassName}
+          dangerouslySetClassName={maybeTruncateClassName}
         >
           {intermediary}
         </Box>
@@ -121,7 +139,7 @@ export const Cell = memo(function Cell({
           alignItems="flex-end"
           justifyContent="flex-end"
           width={detailWidth}
-          dangerouslySetClassName={truncateClassName}
+          dangerouslySetClassName={maybeTruncateClassName}
         >
           {detail}
         </Box>

@@ -52,9 +52,9 @@ export const TableCell = memo(
       }
     }
 
-    // Required to handle truncation - this is whack, but
-    // the table behavior override this. We use `width` to
-    // explicitly define a table columns width
+    // Required to handle truncation - this looks whack, but
+    // the table behavior will override this. We use `width`
+    // to explicitly define a table columns width
     const overflowWidth = css`
       max-width: 0;
     `;
@@ -63,7 +63,7 @@ export const TableCell = memo(
       tableCell,
       tableSectionType === 'thead' && tableHeaderCell,
       tableSectionType === 'tfoot' && tableFooterCell,
-      overflow === 'truncate' && overflowWidth,
+      overflow && overflowWidth,
     );
 
     return (
@@ -80,6 +80,7 @@ export const TableCell = memo(
           media={start}
           accessory={end}
           reduceHorizontalSpacing
+          shouldOverflow={!overflow}
         >
           {children ? (
             <TextComponent as="div" noWrap color={color ?? 'currentColor'} overflow={overflow}>
@@ -97,7 +98,7 @@ export const TableCell = memo(
             <Stack
               flexGrow={1}
               flexShrink={1}
-              dangerouslySetClassName={overflow === 'truncate' ? truncateClassName : undefined}
+              dangerouslySetClassName={overflow ? truncateClassName : undefined}
               justifyContent={smartJustifyContent}
               alignItems={smartAlignItems}
             >
