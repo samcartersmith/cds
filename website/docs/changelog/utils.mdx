@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.13 (10/27/2021, 10:02 AM PST)
+
+#### 🐞 Fixes
+
+- Replace uuid package with util. [#39464](https://github.cbhq.net/mono/repo/pull/39464)
+
 ## 0.2.12 (10/14/2021, 09:56 AM PST)
 
 #### 🐞 Fixes

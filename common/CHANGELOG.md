@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.27.2 (10/27/2021, 10:02 AM PST)
+
+#### 🚀 Updates
+
+- FrontierTypography feature flag changes. [#39430](https://github.cbhq.net/mono/repo/pull/39430)
+- Add useFeatureFlagUpdater hook. [#39411](https://github.cbhq.net/mono/repo/pull/39411)
+- Card props and docs. Add testId. [#38749](https://github.cbhq.net/mono/repo/pull/38749)
+
+#### 🐞 Fixes
+
+- Cell should only clip content when it must. [#39198](https://github.cbhq.net/mono/repo/pull/39198)
+- Replace uuid package with util. [#39464](https://github.cbhq.net/mono/repo/pull/39464)
+- Add support for closeModal. [#39220](https://github.cbhq.net/mono/repo/pull/39220), [CDS-1651](https://jira.coinbase-corp.com/browse/CDS-1651)
+
 ## 0.27.1 (10/26/2021, 02:33 PM PST)
 
 #### 🚀 Updates
