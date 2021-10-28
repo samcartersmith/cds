@@ -1,3 +1,4 @@
+export * from './AlertBaseProps';
 export * from './BadgeBaseProps';
 export * from './BorderRadius';
 export * from './BorderWidth';

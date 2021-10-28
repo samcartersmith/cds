@@ -14,7 +14,9 @@ export type ModalBaseProps = {
    * @default false
    */
   visible: boolean;
-  /** Handles Modal close. Optional for portal modal. */
+  /**
+   * Callback function fired when modal is closed.
+   */
   onRequestClose?: NoopFn;
   /**
    * Hide top and bottom dividers inside Modal body
@@ -26,11 +28,13 @@ export type ModalBaseProps = {
    * @default false
    */
   hideCloseButton?: boolean;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetWidth?: number;
 } & SharedProps &
   Pick<PositionStyles, 'zIndex'>;
 
 export type ModalRefBaseProps = {
-  onRequestClose: NoopFn | MouseEventHandler<Element>;
+  onRequestClose: NoopFn & MouseEventHandler<Element>;
 };
 
 export type ModalHeaderBaseProps = {
