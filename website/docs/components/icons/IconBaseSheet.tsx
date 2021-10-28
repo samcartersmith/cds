@@ -10,15 +10,12 @@ import { Button } from '@cbhq/cds-web/buttons/Button';
 import { IconBase } from '@cbhq/cds-web/icons/IconBase';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
-import { cx } from 'linaria';
 import throttle from 'lodash/throttle';
+import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 import { navigationIconNames, iconNames, iconSizes } from ':cds-website/data/iconData';
-
-import { elevation, searchBox } from './styles';
 
 type Categories = 'product' | 'navigation';
 
@@ -91,7 +88,7 @@ const IconBaseContentSheet = <StateType extends string>({
   }, [category, state]);
 
   return (
-    <ThemeProvider>
+    <>
       <Box flexWrap="wrap">
         {states.map((item, idx) => (
           // eslint-disable-next-line react/no-array-index-key
@@ -108,11 +105,11 @@ const IconBaseContentSheet = <StateType extends string>({
       </Box>
 
       <Box flexWrap="wrap" spacingVertical={2}>
-        <input
-          className={cx(elevation, searchBox)}
+        <TextInput
           onChange={searchOnChange}
           type="text"
-          placeholder="Search icons here"
+          placeholder="Icon name"
+          label="Filter Icons"
         />
       </Box>
 
@@ -138,7 +135,7 @@ const IconBaseContentSheet = <StateType extends string>({
             );
           })}
       </Box>
-    </ThemeProvider>
+    </>
   );
 };
 

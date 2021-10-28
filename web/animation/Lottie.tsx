@@ -26,6 +26,12 @@ export const Lottie = memo(
         onAnimationFinish,
         handlers,
         resizeMode = 'contain',
+        filterSize = {
+          width: '200%',
+          height: '200%',
+          x: '-50%',
+          y: '-50%',
+        },
         ...otherProps
       }: LottieProps<Marker, Source>,
       // String wont work on literal unions, so use any here
@@ -37,6 +43,7 @@ export const Lottie = memo(
         autoplay,
         loop,
         resizeMode,
+        filterSize,
       });
 
       const play = useCallback(

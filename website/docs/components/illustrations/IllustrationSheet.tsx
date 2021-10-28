@@ -11,20 +11,17 @@ import {
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import { cx } from 'linaria';
 import throttle from 'lodash/throttle';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
+import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 import {
   heroSquareNames,
   spotRectangleNames,
   spotSquareNames,
   pictogramNames,
 } from ':cds-website/data/illustrationData';
-
-import { elevation, searchBox } from '../icons/styles';
 
 const variantToNamesMap: Record<
   string,
@@ -56,13 +53,13 @@ export const IllustrationSheet = function IllustrationSheet({
   }, 1000);
 
   return (
-    <ThemeProvider>
+    <>
       <Box flexWrap="wrap" spacingVertical={2}>
-        <input
-          className={cx(elevation, searchBox)}
+        <TextInput
           onChange={searchOnChange}
           type="text"
-          placeholder="Search Illustration Here"
+          placeholder="Illustration name"
+          label="Filter Illustrations"
         />
       </Box>
 
@@ -91,6 +88,6 @@ export const IllustrationSheet = function IllustrationSheet({
           );
         })}
       </Tabs>
-    </ThemeProvider>
+    </>
   );
 };

@@ -12,6 +12,7 @@ export const useLottieLoader = <Marker extends string, Source extends LottieSour
   loop,
   autoplay,
   resizeMode,
+  filterSize,
 }: LottieProps<Marker, Source>) => {
   const sourceWidth = source.w;
   const sourceHeight = source.h;
@@ -47,6 +48,7 @@ export const useLottieLoader = <Marker extends string, Source extends LottieSour
           preserveAspectRatio,
           viewBoxSize: `0 0 ${sourceWidth} ${sourceHeight}`,
           progressiveLoad: true,
+          filterSize,
         },
         autoplay,
         animationData: source,
@@ -59,7 +61,7 @@ export const useLottieLoader = <Marker extends string, Source extends LottieSour
 
       setAnimationLoaded(!!animationRef.current);
     },
-    [autoplay, preserveAspectRatio, source, sourceHeight, sourceWidth],
+    [autoplay, preserveAspectRatio, source, sourceHeight, sourceWidth, filterSize],
   );
 
   /**

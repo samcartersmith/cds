@@ -40,6 +40,7 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
 import * as CDSAvatar from '@cbhq/cds-web/media/avatar';
+import { nux } from '@cbhq/cds-lottie-files';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
@@ -49,6 +50,8 @@ import { loremIpsum } from ':cds-website/data/loremIpsum';
 import { prices } from ':cds-website/data/prices';
 import { PatternArtboard } from ':cds-website/components/PatternArtboard';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
+import { LottieSheet } from ':cds-website/docs/components/animation/Lottie/LottieSheet';
+import { LottieExample } from ':cds-website/docs/components/animation/Lottie/LottieExample';
 
 import { useStatusButtons } from './useStatusButtons';
 
@@ -122,6 +125,9 @@ const ReactLiveScope = {
   ThemeToggles,
   Artboard: PatternArtboard,
   TypographySheet,
+  LottieSheet,
+  LottieExample,
+  nux,
 };
 
 export default ReactLiveScope;

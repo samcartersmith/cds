@@ -5,15 +5,12 @@ import { Button } from '@cbhq/cds-web/buttons/Button';
 import { NavigationIcon } from '@cbhq/cds-web/icons/NavigationIcon';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
-import { cx } from 'linaria';
 import throttle from 'lodash/throttle';
+import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 import { navigationIconNames, navigationIconSizes } from ':cds-website/data/iconData';
-
-import { elevation, searchBox } from '../styles';
 
 const STATES = ['Inactive', 'Active'] as const;
 type StateTypes = 'Active' | 'Inactive';
@@ -30,7 +27,7 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
   }, 1000);
 
   return (
-    <ThemeProvider>
+    <>
       <Box flexWrap="wrap">
         {STATES.map((item) => (
           <Box key={item} spacingEnd={1} spacingBottom={1}>
@@ -46,11 +43,11 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
       </Box>
 
       <Box flexWrap="wrap" spacingVertical={2}>
-        <input
-          className={cx(elevation, searchBox)}
+        <TextInput
           onChange={searchOnChange}
           type="text"
-          placeholder="Search Navigation Icons Here"
+          placeholder="Navigation Icon name"
+          label="Filter Icons"
         />
       </Box>
 
@@ -72,7 +69,7 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
             </VStack>
           ))}
       </Box>
-    </ThemeProvider>
+    </>
   );
 };
 
