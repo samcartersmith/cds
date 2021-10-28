@@ -16,19 +16,21 @@ export const fontFamilies = {
   display: {
     name: 'display',
     fontFamily: 'CoinbaseDisplay',
-    stack: `CoinbaseDisplay, ${fallbackStack}`,
     minimum: 25,
   },
   sans: {
     name: 'sans',
     fontFamily: 'CoinbaseSans',
-    stack: `CoinbaseSans, ${fallbackStack}`,
     minimum: 14,
   },
   text: {
     name: 'text',
     fontFamily: 'CoinbaseText',
-    stack: `CoinbaseText, ${fallbackStack}`,
+    minimum: 0,
+  },
+  mono: {
+    name: 'mono',
+    fontFamily: 'CoinbaseMono',
     minimum: 0,
   },
 } as const;

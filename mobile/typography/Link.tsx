@@ -66,6 +66,7 @@ export const Link = memo(
     forceOpenOutsideApp = false,
     preventRedirectionIntoApp = false,
     readerMode = false,
+    mono,
   }: LinkProps) => {
     const openUrl = useWebBrowserOpener();
 
@@ -92,6 +93,7 @@ export const Link = memo(
         testID={testID}
         onPress={openUrlOnPress}
         color={color}
+        mono={mono}
       >
         {children}
       </TextComponent>

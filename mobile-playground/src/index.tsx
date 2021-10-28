@@ -42,6 +42,7 @@ const components = [
   { key: 'TextCaption' },
   { key: 'TextDisplay1' },
   { key: 'TextDisplay2' },
+  { key: 'TextDisplay3' },
   { key: 'TextHeadline' },
   { key: 'TextLabel1' },
   { key: 'TextLabel2' },
@@ -49,6 +50,7 @@ const components = [
   { key: 'TextTitle1' },
   { key: 'TextTitle2' },
   { key: 'TextTitle3' },
+  { key: 'TextTitle4' },
   { key: 'Avatar' },
   { key: 'AvatarButton' },
 ];

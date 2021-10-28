@@ -35,6 +35,17 @@ async function codegen() {
       },
     ],
     'lottieFiles.ejs': lottieFiles,
+    'fontFace.ejs': [
+      {
+        dest: 'fonts/fonts.css',
+        data: Type.fontFaceCss,
+      },
+      // TODO: Remove when fontsBeta is deprecated
+      {
+        dest: 'fonts/fonts-beta.css',
+        data: Type.fontFaceCss,
+      },
+    ],
     'css.ejs': [
       {
         dest: 'web/typography/textStyles.ts',
@@ -120,9 +131,16 @@ async function codegen() {
           spacing: Spacing.cssVariables,
           palette: Palette.cssVariables,
           control: Control.cssVariables,
+          fontFamily: Type.fontFamilyCssVariables,
           mediaQueries: {
             supportsHover: '@media (any-hover: hover)',
           },
+        },
+      },
+      {
+        dest: 'mobile/tokens.ts',
+        data: {
+          fontFamily: Type.fontFamilyMobileTokens,
         },
       },
       {
@@ -139,7 +157,7 @@ async function codegen() {
     'typescript.ejs': TypeScript,
   };
 
-  Palette.validate();
+  // Palette.validate();
 
   await buildTemplates(templates);
 }

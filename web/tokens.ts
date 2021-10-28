@@ -44,4 +44,11 @@ export const control = {
   switchThumbSize: 'var(--switch-thumb-size)',
 } as const;
 
+export const fontFamily = {
+  display: 'var(--cds-font-display)',
+  sans: 'var(--cds-font-sans)',
+  text: 'var(--cds-font-text)',
+  mono: 'var(--cds-font-mono)',
+} as const;
+
 export const mediaQueries = { supportsHover: '@media (any-hover: hover)' } as const;

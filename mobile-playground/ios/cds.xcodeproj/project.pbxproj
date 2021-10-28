@@ -24,6 +24,8 @@
 		DF3E308508E346C7A783FA4B /* CoinbaseDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A4FC161CFE54C59AC3446AB /* CoinbaseDisplay-Regular.otf */; };
 		DFEDD3948AA245E39653F84B /* CoinbaseText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FEE1EF04BD3C4422AE4F137A /* CoinbaseText-Medium.otf */; };
 		E35038609EB64CF8AF37E57D /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1903814ECFBB444AAAA55758 /* Graphik-Medium.otf */; };
+		6E2865E487A048169E2F1E79 /* CoinbaseMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6FF36590D904C0CB97B301D /* CoinbaseMono-Medium.otf */; };
+		2379334A51624224B3B24E76 /* CoinbaseMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC73219FFB9D440AA98E5886 /* CoinbaseMono-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FEE1EF04BD3C4422AE4F137A /* CoinbaseText-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "CoinbaseText-Medium.otf"; path = "../../fonts/native/CoinbaseText-Medium.otf"; sourceTree = "<group>"; };
+		B6FF36590D904C0CB97B301D /* CoinbaseMono-Medium.otf */ = {isa = PBXFileReference; name = "CoinbaseMono-Medium.otf"; path = "../../fonts/native/CoinbaseMono-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AC73219FFB9D440AA98E5886 /* CoinbaseMono-Regular.otf */ = {isa = PBXFileReference; name = "CoinbaseMono-Regular.otf"; path = "../../fonts/native/CoinbaseMono-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				512854AE302C4BB7ACF159D4 /* CoinbaseSans-Regular.otf */,
 				FEE1EF04BD3C4422AE4F137A /* CoinbaseText-Medium.otf */,
 				C8B4F5EB361C4BA1A863155B /* CoinbaseText-Regular.otf */,
+				B6FF36590D904C0CB97B301D /* CoinbaseMono-Medium.otf */,
+				AC73219FFB9D440AA98E5886 /* CoinbaseMono-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -224,6 +230,8 @@
 				9A50C2264DA446CEB753E00C /* CoinbaseSans-Regular.otf in Resources */,
 				DFEDD3948AA245E39653F84B /* CoinbaseText-Medium.otf in Resources */,
 				C11FF04F64F94322840238BA /* CoinbaseText-Regular.otf in Resources */,
+				6E2865E487A048169E2F1E79 /* CoinbaseMono-Medium.otf in Resources */,
+				2379334A51624224B3B24E76 /* CoinbaseMono-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

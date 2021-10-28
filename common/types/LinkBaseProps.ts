@@ -19,4 +19,6 @@ export type LinkBaseProps = {
    * @default inherit
    */
   variant?: LinkTypography;
+  /** Use CoinbaseMono font */
+  mono?: boolean;
 };

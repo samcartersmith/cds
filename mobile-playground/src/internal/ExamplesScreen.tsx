@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react';
 
 import { Switch } from '@cbhq/cds-mobile/controls/Switch';
-import { Divider, Spacer, VStack } from '@cbhq/cds-mobile/layout';
+import { Divider, VStack } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
+import { useFeatureFlagUpdater } from '@cbhq/cds-mobile/system/useFeatureFlagUpdater';
+import { useFeatureFlags } from '@cbhq/cds-mobile/system/useFeatureFlags';
 
 import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
@@ -13,6 +15,8 @@ import Screen from './Screen';
 const ExamplesScreen: React.FC = ({ children }) => {
   const rootScale = useRootScale();
   const rootSpectrum = useRootSpectrum();
+  const updateFeatureFlags = useFeatureFlagUpdater();
+  const { frontier } = useFeatureFlags();
 
   const isDarkEnabled = rootSpectrum === 'dark';
   const isDenseEnabled = rootScale === 'xSmall';
@@ -29,6 +33,10 @@ const ExamplesScreen: React.FC = ({ children }) => {
     rootScalePreferenceUpdater(newScale);
   }, [rootScalePreferenceUpdater, rootScale]);
 
+  const toggleFrontier = useCallback(() => {
+    updateFeatureFlags((prev) => ({ frontier: !prev.frontier }));
+  }, [updateFeatureFlags]);
+
   return (
     <ThemeProvider
       spectrum={isDarkEnabled ? 'dark' : rootSpectrum}
@@ -37,16 +45,17 @@ const ExamplesScreen: React.FC = ({ children }) => {
       <Screen>
         <ThemeProvider scale="xSmall">
           <VStack>
-            <VStack spacingTop={3} spacingHorizontal={2} background>
+            <VStack gap={1} spacingVertical={3} spacingHorizontal={2} background>
               <Switch onChange={toggleDark} checked={isDarkEnabled}>
                 Dark Spectrum
               </Switch>
-              <Spacer vertical={3} />
               <Switch onChange={toggleDense} checked={isDenseEnabled}>
                 Dense Scale
               </Switch>
+              <Switch onChange={toggleFrontier} checked={frontier}>
+                Frontier
+              </Switch>
             </VStack>
-            <Spacer vertical={3} />
             <Divider />
           </VStack>
         </ThemeProvider>

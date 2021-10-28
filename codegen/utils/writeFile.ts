@@ -38,6 +38,8 @@ const getParser = (ext: string): prettier.BuiltInParserName => {
       return 'babel';
     case '.json':
       return 'json';
+    case '.css':
+      return 'css';
     default:
       return 'typescript';
   }

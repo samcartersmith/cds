@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { FeatureFlagProvider } from '@cbhq/cds-mobile/system';
 import { usePalette } from '../mobile/hooks/usePalette';
 import { DevicePreferencesProvider } from '../mobile/system/DevicePreferencesProvider';
 import { useTypographyStyles } from '../mobile/typography';
@@ -42,6 +43,7 @@ import TextBodyScreen from './src/TextBody';
 import TextCaptionScreen from './src/TextCaption';
 import TextDisplay1Screen from './src/TextDisplay1';
 import TextDisplay2Screen from './src/TextDisplay2';
+import TextDisplay3Screen from './src/TextDisplay3';
 import TextHeadlineScreen from './src/TextHeadline';
 import TextLabel1Screen from './src/TextLabel1';
 import TextLabel2Screen from './src/TextLabel2';
@@ -49,6 +51,7 @@ import TextLegalScreen from './src/TextLegal';
 import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
+import TextTitle4Screen from './src/TextTitle4';
 import LogoScreen from './src/Logo';
 import AvatarScreen from './src/Avatar';
 import AvatarButtonScreen from './src/AvatarButton';
@@ -115,6 +118,7 @@ const AppContent = () => {
         <Stack.Screen name="TextCaption" component={TextCaptionScreen} />
         <Stack.Screen name="TextDisplay1" component={TextDisplay1Screen} />
         <Stack.Screen name="TextDisplay2" component={TextDisplay2Screen} />
+        <Stack.Screen name="TextDisplay3" component={TextDisplay3Screen} />
         <Stack.Screen name="TextHeadline" component={TextHeadlineScreen} />
         <Stack.Screen name="TextLabel1" component={TextLabel1Screen} />
         <Stack.Screen name="TextLabel2" component={TextLabel2Screen} />
@@ -122,6 +126,7 @@ const AppContent = () => {
         <Stack.Screen name="TextTitle1" component={TextTitle1Screen} />
         <Stack.Screen name="TextTitle2" component={TextTitle2Screen} />
         <Stack.Screen name="TextTitle3" component={TextTitle3Screen} />
+        <Stack.Screen name="TextTitle4" component={TextTitle4Screen} />
         <Stack.Screen name="Avatar" component={AvatarScreen} />
         <Stack.Screen name="AvatarButton" component={AvatarButtonScreen} />
       </Stack.Navigator>
@@ -131,9 +136,11 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <DevicePreferencesProvider>
-      <AppContent />
-    </DevicePreferencesProvider>
+    <FeatureFlagProvider fontMigration>
+      <DevicePreferencesProvider>
+        <AppContent />
+      </DevicePreferencesProvider>
+    </FeatureFlagProvider>
   );
 };
 

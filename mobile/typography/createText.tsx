@@ -64,6 +64,7 @@ export const createText = (name: Typography, inherit?: boolean) => {
     slashedZero,
     selectable = 'none',
     underline,
+    mono,
     noWrap,
     transform,
     disabled,
@@ -83,7 +84,7 @@ export const createText = (name: Typography, inherit?: boolean) => {
 
     const textAlign = useTextAlign(align);
 
-    const textStyles = useTypographyStyles(name);
+    const textStyles = useTypographyStyles(name, mono);
 
     // TODO: Update React Native to not override this and remove deprecatedLineHeight
     const lineHeight = useMemo(() => {

@@ -1,9 +1,10 @@
 /* eslint-disable react-native/no-raw-text */
 import { entries } from '@cbhq/cds-utils';
 import { render, waitFor } from '@testing-library/react-native';
-import { Animated, Text } from 'react-native';
+import { Animated, TextStyle, StyleSheet, Text } from 'react-native';
 
 import { TextProps } from '../createText';
+import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import {
   TextDisplay1,
   TextDisplay2,
@@ -88,6 +89,21 @@ describe('Text', () => {
       await waitFor(() => getByText('Text'));
 
       expect(getByText('Text').props).toHaveProperty('numberOfLines', 1);
+    });
+  });
+
+  textTestRunner((TextComponent) => {
+    it(`${TextComponent.displayName} renders mono font`, async () => {
+      const { getByText } = render(
+        <FeatureFlagProvider fontMigration>
+          <TextComponent mono>Text</TextComponent>
+        </FeatureFlagProvider>,
+      );
+      await waitFor(() => getByText('Text'));
+
+      // StyleSheet.flatten will Flattens an array of style objects, into one aggregated style object.
+      const styles = StyleSheet.flatten(getByText('Text').props?.style as TextStyle);
+      expect(styles.fontFamily).toContain('CoinbaseMono');
     });
   });
 });

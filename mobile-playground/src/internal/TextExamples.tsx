@@ -3,11 +3,14 @@ import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { TextProps } from '@cbhq/cds-mobile/typography/createText';
 
 import Example from './Example';
-import Screen from './Screen';
+import ExamplesScreen from './ExamplesScreen';
 
 const TextExamplesScreen = ({ component: Text }: { component: React.ComponentType<TextProps> }) => {
   return (
-    <Screen>
+    <ExamplesScreen>
+      <Example title="Mono">
+        <Text mono>Mono font</Text>
+      </Example>
       <Example title="Colors">
         <Box>
           <Text>Default foreground</Text>
@@ -126,7 +129,7 @@ const TextExamplesScreen = ({ component: Text }: { component: React.ComponentTyp
           <Text disabled>Hello</Text>
         </Box>
       </Example>
-    </Screen>
+    </ExamplesScreen>
   );
 };
 

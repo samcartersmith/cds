@@ -1,10 +1,20 @@
-import { kebabCase, mapKeys, mapValues, pascalCase, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
+import {
+  entries,
+  kebabCase,
+  mapKeys,
+  mapValues,
+  pascalCase,
+  toCssVar,
+  toCssVarFn,
+} from '@cbhq/cds-utils';
+import { fromPairs } from 'lodash';
 import {
   typographyConfig,
   TypographyConfig,
   fontFamilies,
   fontWeights,
   xHeight,
+  fallbackStack,
 } from '../configs/typographyConfigBeta';
 
 import { scaleConfig } from '../configs/scaleConfig';
@@ -15,11 +25,10 @@ type FontWeights = typeof fontWeights;
 type FontWeightName = keyof FontWeights;
 type FontWeight = FontWeights[FontWeightName];
 type FontFamily = FontFamilies[keyof FontFamilies]['fontFamily'];
-type FontFamilyWeb = FontFamilies[keyof FontFamilies]['stack'];
 type FontFamilyMobile = `${FontFamily}-${FontWeightName}`;
 
 type TypographyStyles = {
-  fontFamily?: FontFamilyMobile | FontFamilyWeb;
+  fontFamily?: FontFamilyMobile | string;
   // Mobile doesn't need font weight because the font family should include the weight
   fontWeight?: FontWeight;
   fontSize: string | number;
@@ -27,23 +36,37 @@ type TypographyStyles = {
   lineHeight: string | number;
 };
 
-function getFontFamilyConfig(size: number | string) {
+function getFontFamilyName(size: number | string) {
   const sizeAsNumber: number = typeof size === 'string' ? parseFloat(size.replace('px', '')) : size;
   if (sizeAsNumber >= fontFamilies.display.minimum) {
-    return fontFamilies.display;
+    return 'display';
   }
   if (sizeAsNumber >= fontFamilies.sans.minimum) {
-    return fontFamilies.sans;
+    return 'sans';
   }
-  return fontFamilies.text;
+  return 'text';
 }
 
+const fallbackCssId = `cds-font-fallback`;
+const fontFamilyCssVars = mapValues(fontFamilies, (value) => {
+  const name = `cds-font-${value.name}` as const;
+  return {
+    setter: [toCssVar(name), `${value.fontFamily}, ${toCssVarFn(fallbackCssId)}`] as [
+      string,
+      string,
+    ],
+    getter: toCssVarFn(name),
+  };
+});
+
 function getFontFamilyStyles(size: number | string, fontWeight: FontWeightName, mobile: boolean) {
-  const config = getFontFamilyConfig(size);
+  const familyName = getFontFamilyName(size);
   if (mobile) {
+    const config = fontFamilies[familyName];
     return { fontFamily: `${config.fontFamily}-${fontWeight}` as const };
   }
-  return { fontWeight: fontWeights[fontWeight], fontFamily: config.stack };
+  const fontFamily = fontFamilyCssVars[familyName].getter;
+  return { fontWeight: fontWeights[fontWeight], fontFamily };
 }
 
 const calculateVariantStyle = (
@@ -146,3 +169,15 @@ export const typographyCss = mapValues(
 export const typographyPascalCaseConfig = mapKeys(typographyConfig, (_, variantName) =>
   pascalCase(variantName),
 );
+
+export const fontFamilyCssVariables = mapValues(fontFamilyCssVars, (val) => val.getter);
+export const fontFaceCss = {
+  fonts: entries(fontFamilies).map(([, value]) => value.fontFamily),
+  css: {
+    ':root': fromPairs([
+      [toCssVar(fallbackCssId), fallbackStack] as [string, string],
+      ...Object.values(fontFamilyCssVars).map((item) => item.setter),
+    ]),
+  },
+};
+export const fontFamilyMobileTokens = mapValues(fontFamilies, (val) => val.fontFamily);

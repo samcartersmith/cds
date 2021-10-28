@@ -57,7 +57,7 @@ export const createIconFont = async () => {
   const webFontName = `CoinbaseIcons-${hash}.woff2`;
 
   await buildTemplates({
-    'fontFace.ejs': [
+    'iconFontFace.ejs': [
       {
         data: { fileName: webFontName },
         dest: 'web/styles/icon-font.css',

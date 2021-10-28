@@ -9,6 +9,9 @@ import {
   typographyScaleMapForWeb,
   typographyScaleMapForMobile as typographyScaleMapForMobileBeta,
   typographyPascalCaseConfig,
+  fontFaceCss,
+  fontFamilyCssVariables,
+  fontFamilyMobileTokens,
 } from './generateTypeStylesBeta';
 
 const mdTable = ([header, ...rows]: string[][]) => {
@@ -34,6 +37,9 @@ export const Type = {
   mobile: typographyScaleMapForMobile,
   mobileBeta: typographyScaleMapForMobileBeta,
   pascalCaseConfig: typographyPascalCaseConfig,
+  fontFamilyCssVariables,
+  fontFaceCss,
+  fontFamilyMobileTokens,
   css: typographyCss,
   scaleCss: typographyScaleMapWithCssVariables,
   generateScaleTable: () => {

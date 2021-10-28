@@ -38,6 +38,10 @@ export type TextBaseProps = {
    */
   underline?: boolean;
   /**
+   * Use CoinbaseMono font
+   */
+  mono?: boolean;
+  /**
    * Set text to be in a single line.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
    * @default false

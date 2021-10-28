@@ -2,9 +2,9 @@ import { createElement } from 'react';
 
 import type { Typography } from '@cbhq/cds-common';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
-import { pascalCase } from '@cbhq/cds-utils';
+import { emptyObject, pascalCase } from '@cbhq/cds-utils';
 import { cx, css } from 'linaria';
-
+import { fontFamily } from '../tokens';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as foregroundStyles from '../styles/foregroundColor';
 import { disabledState } from '../styles/interactable';
@@ -15,6 +15,9 @@ import { useTypographyStyles } from './useTypographyStyles';
 
 const typographyResets = css`
   margin: 0;
+  &[data-variant='mono'] {
+    font-family: ${fontFamily.mono};
+  }
 `;
 
 const currentColor = css`
@@ -40,6 +43,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: b
     slashedZero,
     selectable,
     underline,
+    mono,
     noWrap,
     overflow,
     testID,
@@ -77,6 +81,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: b
     return createElement(as, {
       ...props,
       'data-testid': testID,
+      ...(mono ? { 'data-variant': 'mono' } : emptyObject),
       children,
       style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
       className: cx(

@@ -74,6 +74,7 @@ export const Link = memo(function Link({
   onPress,
   // text props
   color = 'primary',
+  mono,
   ...props
 }: LinkProps) {
   const linkRef = useRef(null);
@@ -89,7 +90,7 @@ export const Link = memo(function Link({
     rel,
     target: openInNewWindow ? '_blank' : undefined,
     children: (
-      <TextComponent as="span" color={color}>
+      <TextComponent as="span" color={color} mono={mono}>
         {children}
       </TextComponent>
     ),
