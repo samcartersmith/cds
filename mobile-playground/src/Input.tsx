@@ -164,6 +164,13 @@ export default function InputScreen() {
       <Example inline title="CompactTextInput Disabled">
         <MockCompactTextInput label="Bitcoin" disabled />
       </Example>
+      <Example inline title="Accessibility Test">
+        <MockCompactTextInput
+          label="Bitcoin"
+          accessibilityHint="Bitcoin search"
+          accessibilityLabel="Bitcoin search"
+        />
+      </Example>
       <Example>
         <MockComplexInput />
       </Example>

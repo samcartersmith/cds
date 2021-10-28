@@ -45,7 +45,7 @@ export const InputStack = memo(function Input({
   borderStyle,
   variant = 'foregroundMuted',
   labelNode,
-  testID,
+  testID = '',
   ...props
 }: InputStackProps) {
   const palette = usePalette();

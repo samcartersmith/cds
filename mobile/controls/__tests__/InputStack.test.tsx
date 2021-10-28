@@ -52,8 +52,8 @@ describe('styles', () => {
       <InputStack testID={TEST_ID} borderStyle={borderStyle} inputNode={<NativeInput />} />,
     );
 
-    await waitFor(() => getByTestId('input-area'));
+    await waitFor(() => getByTestId(`${TEST_ID}-input-area`));
 
-    expect(getByTestId('input-area')).toHaveStyle(borderStyle);
+    expect(getByTestId(`${TEST_ID}-input-area`)).toHaveStyle(borderStyle);
   });
 });

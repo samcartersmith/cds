@@ -569,6 +569,18 @@ export const Switch = {
 };
 
 export const TextInput = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/TextInput/a11y.mdx'
+      ),
+  ),
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/TextInput/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(

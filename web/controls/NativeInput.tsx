@@ -1,9 +1,10 @@
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { TextBaseProps } from '@cbhq/cds-common/types/TextBaseProps';
-import React, { memo, forwardRef } from 'react';
+import React, { useMemo, memo, forwardRef } from 'react';
 import { css, cx } from 'linaria';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { palette } from '../tokens';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -51,6 +52,10 @@ const nativeInputBaseStyle = css`
   &[type='number'] {
     -moz-appearance: textfield;
   }
+
+  &:-webkit-autofill {
+    border-radius: ${borderRadius.input}px;
+  }
 `;
 
 export const NativeInput = memo(
@@ -71,13 +76,18 @@ export const NativeInput = memo(
       ref: ForwardedRef<HTMLInputElement>,
     ) => {
       const defaultContainerSpacing = useSpacingStyles({
-        spacingHorizontal: 2,
-        spacingVertical: 2,
+        spacing: 2,
       });
+
+      const alignStyle = useMemo(() => {
+        return {
+          textAlign: align,
+        };
+      }, [align]);
 
       return (
         <input
-          style={{ textAlign: align }}
+          style={alignStyle}
           aria-label={accessibilityLabel}
           className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
           data-testid={testID}

@@ -6,6 +6,7 @@ import {
   TextInputFocusEventData,
 } from 'react-native';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
 
@@ -18,7 +19,7 @@ import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
 
-export type TextInputProps = TextInputBaseProps & RNTextInputProps;
+export type TextInputProps = TextInputBaseProps & SharedAccessibilityProps & RNTextInputProps;
 
 export const TextInput = memo(function TextInput({
   label,
@@ -32,6 +33,7 @@ export const TextInput = memo(function TextInput({
   align = 'start',
   compact,
   suffix = '',
+  accessibilityLabel,
   ...editableInputProps
 }: TextInputProps) {
   const [focused, setFocused] = useState(false);
@@ -71,6 +73,8 @@ export const TextInput = memo(function TextInput({
         <NativeInput
           containerSpacing={start ? startSpacing : {}}
           align={align}
+          accessibilityLabel={accessibilityLabel ?? label}
+          accessibilityHint={accessibilityLabel ?? label}
           disabled={disabled}
           {...editableInputAddonProps}
         />
@@ -85,7 +89,7 @@ export const TextInput = memo(function TextInput({
       labelNode={!compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
       startNode={
         (compact || !!start) && (
-          <Box justifyContent="center" alignItems="center" spacingStart={1}>
+          <Box justifyContent="center" alignItems="center" spacingStart={2}>
             {compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
             {!!start && <>{start}</>}
           </Box>

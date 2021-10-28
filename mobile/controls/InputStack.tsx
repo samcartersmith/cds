@@ -30,7 +30,7 @@ export const InputStack = memo(function InputStack({
   borderStyle,
   variant,
   labelNode,
-  testID,
+  testID = '',
   ...props
 }: InputStackProps) {
   const palette = usePalette();
@@ -66,7 +66,7 @@ export const InputStack = memo(function InputStack({
       {!!labelNode && <>{labelNode}</>}
       <HStack opacity={disabled ? opacityDisabled : 1}>
         {!!prependNode && <>{prependNode}</>}
-        <View testID="input-area" style={inputAreaStyle}>
+        <View testID={testID && `${testID}-input-area`} style={inputAreaStyle}>
           {!!startNode && <>{startNode}</>}
           {inputNode}
           {!!endNode && <>{endNode}</>}

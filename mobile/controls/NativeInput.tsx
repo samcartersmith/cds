@@ -1,6 +1,7 @@
 import { SharedProps, TextBaseProps, useSpectrum } from '@cbhq/cds-common';
 import React, { useMemo, memo } from 'react';
 import { TextInputProps, View, ViewStyle, TextInput as RNTextInput } from 'react-native';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useInputTextStyles } from '../hooks/useInputStyles';
 import { useTextAlign } from '../hooks/useTextAlign';
@@ -20,20 +21,21 @@ export type NativeInputProps = {
    * */
   disabled?: boolean;
 } & SharedProps &
+  SharedAccessibilityProps &
   TextInputProps;
 
 export const NativeInput = memo(function NativeInput({
   containerSpacing,
-  testID,
+  testID = '',
   align = 'start',
   disabled,
+  accessibilityLabel,
   ...editableInputAddonProps
 }: NativeInputProps) {
   const textAlignInputTransformed = useTextAlign(align).textAlign;
   const inputTextStyle = useInputTextStyles('foreground');
   const containerSpacingStyle = useSpacingStyles({
-    spacingHorizontal: 2,
-    spacingVertical: 2,
+    spacing: 2,
   });
   const spectrum = useSpectrum();
   const palette = usePalette();
@@ -42,14 +44,18 @@ export const NativeInput = memo(function NativeInput({
     return {
       flex: 2,
       ...containerSpacingStyle,
+      ...containerSpacing,
     };
-  }, [containerSpacingStyle]);
+  }, [containerSpacingStyle, containerSpacing]);
 
   return (
-    <View style={[containerStyle, containerSpacing]} testID={testID}>
+    <View style={containerStyle} testID={testID && `${testID}-container`}>
       <RNTextInput
+        testID={testID}
         style={[inputTextStyle, { flex: 2, textAlign: textAlignInputTransformed }]}
         editable={!disabled}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityHint={accessibilityLabel}
         placeholderTextColor={palette.foregroundMuted}
         keyboardAppearance={spectrum}
         {...editableInputAddonProps}
