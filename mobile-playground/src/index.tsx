@@ -20,6 +20,8 @@ const components = [
   { key: 'IconButton' },
   { key: 'Illustration' },
   { key: 'Input' },
+  { key: 'InputIcon' },
+  { key: 'InputIconButton' },
   { key: 'InputStack' },
   { key: 'Link' },
   { key: 'ListCell' },

@@ -1,0 +1,38 @@
+import React, { useContext, memo } from 'react';
+import { IconButtonVariant } from '@cbhq/cds-common/types/IconButtonBaseProps';
+import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { Box } from '../layout/Box';
+import { IconButton, IconButtonProps } from '../buttons/IconButton';
+import { TextInputFocusVariantContext } from './context';
+
+export type InputIconButtonProps = {
+  /**
+   * If set to true, when parent input is focused, the icon will match the color of the focus state
+   * @default false
+   * */
+  disableInheritFocusStyle?: boolean;
+} & IconButtonProps &
+  SharedProps;
+
+const secondaryVariants = new Set(['positive', 'negative', 'foreground']);
+
+export const InputIconButton = memo(function InputIconButton({
+  disableInheritFocusStyle = false,
+  testID,
+  variant = 'primary',
+  ...props
+}: InputIconButtonProps) {
+  const contextVariant = useContext(TextInputFocusVariantContext) ?? variant;
+
+  const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
+
+  return (
+    <Box testID={testID}>
+      <IconButton
+        transparent
+        variant={disableInheritFocusStyle ? variant : (transformedVariant as IconButtonVariant)}
+        {...props}
+      />
+    </Box>
+  );
+});

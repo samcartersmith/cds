@@ -13,6 +13,7 @@ import { HStack } from '../layout/HStack';
 import { InputLabel } from './InputLabel';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
+import { TextInputFocusVariantContext } from './context';
 
 export type TextInputProps = TextInputBaseProps & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -66,51 +67,53 @@ export const TextInput = memo(function TextInput({
   });
 
   return (
-    <InputStack
-      testID={testID}
-      width={width}
-      disabled={disabled}
-      borderStyle={inputBorderStyle}
-      variant={variantWithFocus}
-      inputNode={
-        <NativeInput
-          align={align}
-          accessibilityLabel={accessibilityLabel ?? label}
-          containerSpacing={start ? startSpacing : undefined}
-          onFocus={handleOnFocus}
-          onBlur={handleOnBlur}
-          disabled={disabled}
-          {...htmlInputElmProps}
-        />
-      }
-      helperTextNode={
-        !!helperText && (
-          <HelperText color={variant} align={align}>
-            {helperText}
-          </HelperText>
-        )
-      }
-      labelNode={!compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
-      startNode={
-        (compact || !!start) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={2}>
-            {compact && <InputLabel>{label}</InputLabel>}
-            {!!start && <>{start}</>}
-          </HStack>
-        )
-      }
-      endNode={
-        (suffix !== '' || !!end) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2}>
-            {suffix !== '' && (
-              <TextLabel1 as="p" color="foregroundMuted">
-                {suffix}
-              </TextLabel1>
-            )}
-            {!!end && <>{end}</>}
-          </HStack>
-        )
-      }
-    />
+    <TextInputFocusVariantContext.Provider value={focused ? variantWithFocus : undefined}>
+      <InputStack
+        testID={testID}
+        width={width}
+        disabled={disabled}
+        borderStyle={inputBorderStyle}
+        variant={variantWithFocus}
+        inputNode={
+          <NativeInput
+            align={align}
+            accessibilityLabel={accessibilityLabel ?? label}
+            containerSpacing={start ? startSpacing : undefined}
+            onFocus={handleOnFocus}
+            onBlur={handleOnBlur}
+            disabled={disabled}
+            {...htmlInputElmProps}
+          />
+        }
+        helperTextNode={
+          !!helperText && (
+            <HelperText color={variant} align={align}>
+              {helperText}
+            </HelperText>
+          )
+        }
+        labelNode={!compact && <InputLabel>{label}</InputLabel>}
+        startNode={
+          (compact || !!start) && (
+            <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={1}>
+              {compact && <InputLabel spacingStart={1}>{label}</InputLabel>}
+              {!!start && <>{start}</>}
+            </HStack>
+          )
+        }
+        endNode={
+          (suffix !== '' || !!end) && (
+            <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={1}>
+              {suffix !== '' && (
+                <TextLabel1 spacingEnd={1} as="p" color="foregroundMuted">
+                  {suffix}
+                </TextLabel1>
+              )}
+              {!!end && <>{end}</>}
+            </HStack>
+          )
+        }
+      />
+    </TextInputFocusVariantContext.Provider>
   );
 });

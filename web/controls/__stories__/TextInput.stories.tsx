@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
 import { TextInput } from '../TextInput';
-import { IconButton } from '../../buttons';
 import { HStack } from '../../layout';
 import { Link } from '../../typography';
-import { Icon } from '../../icons';
+import { InputIcon } from '../InputIcon';
+import { InputIconButton } from '../InputIconButton';
 
 /* eslint-disable no-console */
 
@@ -89,7 +89,7 @@ export const Disabled = function Disabled() {
 };
 
 export const StartContent = function StartContent() {
-  return <TextInput label="Label" start={<IconButton name="add" transparent />} />;
+  return <TextInput label="Label" start={<InputIconButton name="add" transparent />} />;
 };
 
 export const EndContent = function EndContent() {
@@ -97,10 +97,12 @@ export const EndContent = function EndContent() {
     <TextInput
       label="Label"
       end={
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <Link to="" variant="headline">
-          Hello
-        </Link>
+        <HStack spacingEnd={1}>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <Link to="" variant="headline">
+            Hello
+          </Link>
+        </HStack>
       }
     />
   );
@@ -111,7 +113,7 @@ export const Suffix = function Suffix() {
 };
 
 export const SuffixAndEndContent = function SuffixAndEndContent() {
-  return <TextInput label="Label" suffix="USD" end={<IconButton name="add" transparent />} />;
+  return <TextInput label="Label" suffix="USD" end={<InputIconButton name="add" transparent />} />;
 };
 
 /**
@@ -127,10 +129,12 @@ export const CompactInputStart = function CompactInputStart() {
     <TextInput
       label="Label"
       start={
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <Link to="" variant="headline">
-          Hello
-        </Link>
+        <HStack spacingEnd={1}>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <Link to="" variant="headline">
+            Hello
+          </Link>
+        </HStack>
       }
       compact
     />
@@ -142,10 +146,12 @@ export const CompactInputEnd = function CompactInputEnd() {
     <TextInput
       label="Label"
       end={
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <Link to="" variant="headline">
-          Hello
-        </Link>
+        <HStack spacingEnd={1}>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <Link to="" variant="headline">
+            Hello
+          </Link>
+        </HStack>
       }
       compact
     />
@@ -184,10 +190,6 @@ export const CopyTextInput = function CopyTextInput() {
   const [copied, setCopied] = useState(false);
   const [variant, setVariant] = useState<InputVariant>('foregroundMuted');
 
-  // const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setInputText(e.target.value);
-  // }, []);
-
   const handleOnPress = useCallback(() => {
     setCopied(!copied);
     setVariant(copied ? 'foregroundMuted' : 'positive');
@@ -208,7 +210,7 @@ export const CopyTextInput = function CopyTextInput() {
             <Link onPress={handleOnPress} color={variant}>
               {copied ? 'copied' : 'copy'}
             </Link>
-            <Icon spacingHorizontal={1} color="primary" name="visibleActive" size="m" />
+            <InputIcon name="visibleActive" />
           </HStack>
         }
         onChange={handleOnChange}

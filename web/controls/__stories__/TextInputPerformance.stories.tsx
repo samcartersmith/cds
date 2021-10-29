@@ -3,7 +3,6 @@ import { withPerformance } from 'storybook-addon-performance';
 import { createStories } from ':cds-storybook/stories/PerformanceBenchmark';
 
 import { TextInput } from '../TextInput';
-import { Link } from '../../typography/Link';
 
 export default {
   title: 'Core Components/Inputs/TextInputPerformance',
@@ -16,26 +15,7 @@ const borderStyle = css`
 `;
 
 export const CDSTextInput = () => {
-  return (
-    <TextInput
-      label="Label"
-      start={
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <Link to="" variant="headline">
-          Hello
-        </Link>
-      }
-      end={
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <Link to="" variant="headline">
-          Hello
-        </Link>
-      }
-      helperText="Helper Text"
-      align="start"
-      compact
-    />
-  );
+  return <TextInput label="Label" helperText="Helper Text" align="start" compact />;
 };
 
 export const HTMLInput = () => {

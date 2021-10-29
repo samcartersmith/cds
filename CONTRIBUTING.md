@@ -273,7 +273,7 @@ Once you have built the component for **_both web and mobile_**. You can auto ge
 
 1. If you are not adding new directory, please go to step 2. If you are adding new directory you will need to add the name in `CDS_SUB_DIRS` in `eng/shared/design-system/codegen/website/constants.ts`
 
-2. Run `make codegen` in the root of eng/shared/design-system
+2. Run `make docgen` in the root of eng/shared/design-system
 
 ## Adding new imports to react-live
 
@@ -281,6 +281,15 @@ For any usage examples, you can use all imports defined in `website/src/theme/Re
 
 For adding new imports, simply import in the same file and add it to the `ReactLiveScope` object.
 
+## Adding a prototype page 
+
+Creating a prototype means you can access the component using a link like this https://cds.cbhq.net/inputs. In this case, we are 
+creating a prototype for inputs. However, the link generated will be in this form - https://cds.cbhq.net/<your-component>.
+
+Follow these steps to add a prototype page to the docusaurus website. This can be useful for bug bashing.
+
+1) Add your <component>.<mdx | tsx> file to eng/shared/design-system/website/src/pages
+2) Add the new component doc to docusaurus.config.js file under Prototypes dictionary. Mimic what the other prototype components have done. 
 # Miscellaneous
 
 For any usage examples, you can use all imports defined in `website/src/theme/ReactLiveScope/index.ts` directly without importing them in your jsx live.

@@ -56,6 +56,8 @@ module.exports = {
       collapsed: true,
       items: [
         'components/controls/Checkbox/checkbox',
+        'components/controls/InputIcon/input-icon',
+        'components/controls/InputIconButton/input-icon-button',
         'components/controls/RadioGroup/radio-group',
         'components/controls/Switch/switch',
         'components/controls/TextInput/text-input',

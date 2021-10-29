@@ -56,6 +56,7 @@ export const NativeInput = memo(function NativeInput({
         editable={!disabled}
         accessibilityLabel={accessibilityLabel}
         accessibilityHint={accessibilityLabel}
+        accessibilityRole="search"
         placeholderTextColor={palette.foregroundMuted}
         keyboardAppearance={spectrum}
         {...editableInputAddonProps}

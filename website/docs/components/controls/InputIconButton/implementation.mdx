@@ -1,0 +1,572 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/controls/InputIconButton](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/InputIconButton.tsx)
+
+<ComponentDetails componentName="InputIconButton" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="InputIconButton" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="InputIconButton" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel
+
+Full length accessibility label when the child text is not descriptive enough.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-accessibilityLabel" />
+
+### as <Badge variant="web" />
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="as"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ComponentClass<HTMLAttributes<HTMLElement>, any>',
+    'FunctionComponent<HTMLAttributes<HTMLElement>>',
+  ]}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-as" />
+
+### disabled
+
+Mark the button as disabled.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-disabled" />
+
+### disableDebounce <Badge variant="mobile" />
+
+React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior such as double navigations where we push a screen onto the stack 2 times. Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental double-tap.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="disableDebounce"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-disableDebounce" />
+
+### disableInheritFocusStyle
+
+If set to true, when parent input is focused, the icon will match the color of the focus state
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="disableInheritFocusStyle"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-disableInheritFocusStyle" />
+
+### feedback <Badge variant="mobile" />
+
+Haptic feedback to trigger when being pressed.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="feedback"
+  required={false}
+  defaultValue="none"
+  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-feedback" />
+
+### loading
+
+Is the element currenty loading.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="loading"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-loading" />
+
+### name
+
+Name of the icon, as defined in Figma.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'add',
+    'airdrop',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'bookmarkActive',
+    'bookmarkInactive',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cash',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashRupee',
+    'cashUSD',
+    'chainLink',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'chatBubble',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clipboard',
+    'clock',
+    'clockOutline',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'currencies',
+    'defi',
+    'deposit',
+    'dex',
+    'diagonalRightArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'downArrow',
+    'drag',
+    'email',
+    'error',
+    'ethereum',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'flame',
+    'followActive',
+    'followInactive',
+    'fork',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'keyboard',
+    'laptop',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'nft',
+    'noWifi',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'paperclip',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'pin',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'pyramid',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'report',
+    'safe',
+    'search',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'telephone',
+    'thumbsDown',
+    'thumbsUp',
+    'trashCan',
+    'trophy',
+    'undo',
+    'unknown',
+    'upArrow',
+    'upload',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'warning',
+    'wifi',
+    'wireTransfer',
+    'withdraw',
+  ]}
+  webOptions={[
+    'add',
+    'airdrop',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'bookmarkActive',
+    'bookmarkInactive',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cash',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashRupee',
+    'cashUSD',
+    'chainLink',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'chatBubble',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clipboard',
+    'clock',
+    'clockOutline',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'currencies',
+    'defi',
+    'deposit',
+    'dex',
+    'diagonalRightArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'downArrow',
+    'drag',
+    'email',
+    'error',
+    'ethereum',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'flame',
+    'followActive',
+    'followInactive',
+    'fork',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'keyboard',
+    'laptop',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'nft',
+    'noWifi',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'paperclip',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'pin',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'pyramid',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'report',
+    'safe',
+    'search',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'telephone',
+    'thumbsDown',
+    'thumbsUp',
+    'trashCan',
+    'trophy',
+    'undo',
+    'unknown',
+    'upArrow',
+    'upload',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'warning',
+    'wifi',
+    'wireTransfer',
+    'withdraw',
+  ]}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-name" />
+
+### onPress
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-onPress" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-testID" />
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-to" />
+
+### transparent
+
+Mark the background and border as transparent until interacted with.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="transparent"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-transparent" />
+
+### variant
+
+Toggle design and visual variants.
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="variant"
+  required={false}
+  defaultValue="primary"
+  mobileOptions={['foregroundMuted', 'primary', 'secondary']}
+  webOptions={['foregroundMuted', 'primary', 'secondary']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-variant" />
+
+<ComponentDetails componentName="InputIconButton" templateName="outro" />

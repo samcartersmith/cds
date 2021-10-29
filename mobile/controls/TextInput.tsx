@@ -18,6 +18,7 @@ import { useInputBorderStyle } from '../hooks/useInputStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
+import { TextInputFocusVariantContext } from './context';
 
 export type TextInputProps = TextInputBaseProps & SharedAccessibilityProps & RNTextInputProps;
 
@@ -86,20 +87,32 @@ export const TextInput = memo(function TextInput({
           </HelperText>
         )
       }
-      labelNode={!compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
+      labelNode={!compact && <InputLabel>{label}</InputLabel>}
       startNode={
         (compact || !!start) && (
-          <Box justifyContent="center" alignItems="center" spacingStart={2}>
-            {compact && <InputLabel disabled={disabled}>{label}</InputLabel>}
-            {!!start && <>{start}</>}
+          <Box justifyContent="center" alignItems="center" spacingStart={1}>
+            {compact && <InputLabel spacingStart={1}>{label}</InputLabel>}
+            {!!start && (
+              <TextInputFocusVariantContext.Provider value={variantWithFocus}>
+                {start}
+              </TextInputFocusVariantContext.Provider>
+            )}
           </Box>
         )
       }
       endNode={
         (suffix !== '' || !!end) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={2}>
-            {suffix !== '' && <TextLabel1 color="foregroundMuted">{suffix}</TextLabel1>}
-            {!!end && <>{end}</>}
+          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={1}>
+            {suffix !== '' && (
+              <TextLabel1 spacingEnd={1} color="foregroundMuted">
+                {suffix}
+              </TextLabel1>
+            )}
+            {!!end && (
+              <TextInputFocusVariantContext.Provider value={variantWithFocus}>
+                {end}
+              </TextInputFocusVariantContext.Provider>
+            )}
           </HStack>
         )
       }

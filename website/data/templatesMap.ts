@@ -508,6 +508,48 @@ export const Checkbox = {
   ),
 };
 
+export const InputIcon = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/InputIcon/implementation.mdx'
+      ),
+  ),
+  'input-icon': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/InputIcon/input-icon.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/InputIcon/usage.mdx'
+      ),
+  ),
+};
+
+export const InputIconButton = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/InputIconButton/implementation.mdx'
+      ),
+  ),
+  'input-icon-button': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/InputIconButton/input-icon-button.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/InputIconButton/usage.mdx'
+      ),
+  ),
+};
+
 export const RadioGroup = {
   a11y: React.lazy(
     async () =>

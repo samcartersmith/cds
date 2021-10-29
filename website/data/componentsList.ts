@@ -22,6 +22,8 @@ export const components = [
   'ListCell',
   'ListCellFallback',
   'Checkbox',
+  'InputIcon',
+  'InputIconButton',
   'RadioGroup',
   'Switch',
   'TextInput',

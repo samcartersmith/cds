@@ -22,6 +22,8 @@ import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
 import IllustrationScreen from './src/Illustration';
 import InputScreen from './src/Input';
+import InputIconScreen from './src/InputIcon';
+import InputIconButtonScreen from './src/InputIconButton';
 import InputStackScreen from './src/InputStack';
 import LinkScreen from './src/Link';
 import ListCellScreen from './src/ListCell';
@@ -96,6 +98,8 @@ const AppContent = () => {
         <Stack.Screen name="Icon" component={IconScreen} />
         <Stack.Screen name="IconButton" component={IconButtonScreen} />
         <Stack.Screen name="Input" component={InputScreen} />
+        <Stack.Screen name="InputIcon" component={InputIconScreen} />
+        <Stack.Screen name="InputIconButton" component={InputIconButtonScreen} />
         <Stack.Screen name="InputStack" component={InputStackScreen} />
         <Stack.Screen name="Link" component={LinkScreen} />
         <Stack.Screen name="ListCell" component={ListCellScreen} />

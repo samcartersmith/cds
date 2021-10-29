@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { IconButton } from '@cbhq/cds-mobile/buttons/IconButton';
-import { Icon } from '@cbhq/cds-mobile/icons';
 
 import { TextInput, TextInputProps } from '@cbhq/cds-mobile/controls/TextInput';
+import { InputIcon } from '@cbhq/cds-mobile/controls/InputIcon';
+import { InputIconButton } from '@cbhq/cds-mobile/controls/InputIconButton';
 
 import { TextBody } from '@cbhq/cds-mobile/typography';
 
@@ -67,7 +67,7 @@ export default function InputScreen() {
       </Example>
       <Example inline title="TextInput startNode">
         <MockTextInput
-          start={<IconButton variant="foregroundMuted" name="search" transparent />}
+          start={<InputIconButton name="search" transparent />}
           label="Search"
           helperText="Search for assets here"
           variant="foregroundMuted"
@@ -76,7 +76,7 @@ export default function InputScreen() {
       </Example>
       <Example inline title="TextInput endNode">
         <MockTextInput
-          end={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
+          end={<InputIcon name="lightningBolt" />}
           label="Search"
           helperText="Search for assets here"
           variant="foregroundMuted"
@@ -85,7 +85,7 @@ export default function InputScreen() {
       </Example>
       <Example inline title="TextInput endNode 50%">
         <MockTextInput
-          end={<Icon size="m" color="foregroundMuted" name="lightningBolt" />}
+          end={<InputIcon name="lightningBolt" />}
           label="Search"
           width={50}
           helperText="Search for assets here"
@@ -112,11 +112,20 @@ export default function InputScreen() {
       <Example inline title="TextInput start/end Node">
         <MockTextInput
           end={<TextBody color="foregroundMuted">Cancel</TextBody>}
-          start={<IconButton name="search" transparent />}
+          start={<InputIconButton name="search" transparent />}
           label="Search"
           helperText="Search for assets here"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
+        />
+      </Example>
+      <Example inline title="TextInput suffix">
+        <MockTextInput
+          label="Search"
+          helperText="Search for assets here"
+          variant="foregroundMuted"
+          placeholder="ex. Bitcoin"
+          suffix="DOGE"
         />
       </Example>
       <Example inline title="TextInput Disabled">
