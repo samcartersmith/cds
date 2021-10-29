@@ -35,6 +35,7 @@ filegroup(
             "**/*.svg",
             "**/*.ts",
             "**/*.tsx",
+            "**/*.mp4",
             "**/*.gif",
         ],
         exclude = exclude_glob,

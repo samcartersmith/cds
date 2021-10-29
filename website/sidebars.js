@@ -60,7 +60,17 @@ module.exports = {
         'foundation/iconography',
         'foundation/illustration',
         'foundation/layout',
-        'foundation/motion',
+        {
+          type: 'category',
+          label: 'Motion',
+          collapsed: false,
+          items: [
+            'foundation/motion/product-motion-language',
+            'foundation/motion/timing',
+            'foundation/motion/motion-handoff',
+            'foundation/motion/brand-motion',
+          ],
+        },
         'foundation/scale',
         'foundation/typography',
       ],
