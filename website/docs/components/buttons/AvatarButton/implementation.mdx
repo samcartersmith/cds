@@ -80,21 +80,6 @@ Reduce the inner padding within the button itself.
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-compact" />
 
-### disabled
-
-Mark the button as disabled.
-
-<ApiDetails
-  componentName="AvatarButton"
-  propertyName="disabled"
-  required={false}
-  defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="AvatarButton" templateName="prop-disabled" />
-
 ### disableDebounce <Badge variant="mobile" />
 
 React Native is historically trash at debouncing touch events. This can cause a lot of unwanted behavior such as double navigations where we push a screen onto the stack 2 times. Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and the accidental double-tap.

@@ -66,38 +66,3 @@ export const Loading = () => {
     </ThemeProvider>
   );
 };
-
-export const Disabled = () => {
-  return (
-    <ThemeProvider>
-      <VStack gap={2}>
-        <HStack gap={2} alignItems="center">
-          <AvatarButton
-            alt="Sneezy"
-            src={avatarImageUrl}
-            onPress={handlePress}
-            disabled
-            accessibilityLabel="Sneezy Button"
-          />
-          <AvatarButton
-            compact
-            alt="Sneezy"
-            src={avatarImageUrl}
-            to="/"
-            disabled
-            accessibilityLabel="Sneezy Button"
-          />
-        </HStack>
-        <HStack gap={2} alignItems="center">
-          <AvatarButton
-            alt="Sneezy"
-            onPress={handlePress}
-            disabled
-            accessibilityLabel="Sneezy Button"
-          />
-          <AvatarButton compact alt="Sneezy" to="/" disabled accessibilityLabel="Sneezy Button" />
-        </HStack>
-      </VStack>
-    </ThemeProvider>
-  );
-};

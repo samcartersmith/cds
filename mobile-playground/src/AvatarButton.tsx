@@ -23,9 +23,11 @@ const AvatarButtonScreen = () => {
         <VStack gap={2}>
           <HStack gap={2} alignItems="center" flexWrap="wrap">
             <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} />
+            <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} compact />
           </HStack>
           <HStack gap={2} alignItems="center" flexWrap="wrap">
             <AvatarButton alt="Sneezy" onPress={handlePress} />
+            <AvatarButton alt="Sneezy" onPress={handlePress} compact />
           </HStack>
         </VStack>
       </Example>
@@ -34,20 +36,11 @@ const AvatarButtonScreen = () => {
         <VStack gap={2}>
           <HStack gap={2} alignItems="center" flexWrap="wrap">
             <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} loading />
+            <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} loading compact />
           </HStack>
           <HStack gap={2} alignItems="center" flexWrap="wrap">
             <AvatarButton alt="Sneezy" onPress={handlePress} loading />
-          </HStack>
-        </VStack>
-      </Example>
-
-      <Example title="Disabled">
-        <VStack gap={2}>
-          <HStack gap={2} alignItems="center" flexWrap="wrap">
-            <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} disabled />
-          </HStack>
-          <HStack gap={2} alignItems="center" flexWrap="wrap">
-            <AvatarButton alt="Sneezy" onPress={handlePress} disabled />
+            <AvatarButton alt="Sneezy" onPress={handlePress} loading compact />
           </HStack>
         </VStack>
       </Example>
