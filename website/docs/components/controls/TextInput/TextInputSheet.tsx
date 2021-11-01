@@ -14,17 +14,19 @@ import { InputVariant } from '@cbhq/cds-common/types';
 export const TextInputSheet = () => {
   return (
     <ThemeProvider>
-      <HStack gap={3} width="80%">
-        <TextInput label="Label" placeholder="Input text" helperText="Assistive Message" />
-        <Box spacingTop={4}>
-          <TextInput
-            compact
-            label="Label"
-            placeholder="Input text"
-            helperText="Assistive Message"
-          />
-        </Box>
-      </HStack>
+      <VStack gap={3} width="80%">
+        <TextInput
+          label="Default TextInput"
+          placeholder="Input text"
+          helperText="Assistive Message"
+        />
+        <TextInput
+          compact
+          label="Compact Textinput"
+          placeholder="Input text"
+          helperText="Assistive Message"
+        />
+      </VStack>
     </ThemeProvider>
   );
 };
