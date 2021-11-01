@@ -5,10 +5,13 @@ import { palette } from '../tokens';
 
 const FOCUS_RING_PADDING = 4;
 
+// if we use the focus ring we need to turn off the browser stylesheet outline
 export const focusRing = css`
   position: relative;
   &:focus-visible,
   &.focus-visible {
+    outline: none;
+
     &:before {
       content: '';
       position: absolute;
