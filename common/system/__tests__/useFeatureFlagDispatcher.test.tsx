@@ -1,16 +1,16 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
-import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
+import { useFeatureFlagDispatcher } from '../useFeatureFlagDispatcher';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { frontierFeaturesOn, frontierFeaturesOff } from '../FeatureFlagContext';
 
-describe('useFeatureFlagUpdater', () => {
+describe('useFeatureFlagDispatcher', () => {
   it('updates features flags when called', () => {
     const { result } = renderHook(
       () => {
         return {
-          update: useFeatureFlagUpdater(),
+          dispatch: useFeatureFlagDispatcher(),
           featureFlags: useFeatureFlags(),
         };
       },
@@ -21,7 +21,7 @@ describe('useFeatureFlagUpdater', () => {
 
     expect(result.current.featureFlags.frontierTypography).toEqual(false);
     void act(() => {
-      result.current.update({ frontierTypography: true });
+      result.current.dispatch({ type: 'update', value: { frontierTypography: true } });
     });
     expect(result.current.featureFlags.frontierTypography).toEqual(true);
   });
@@ -30,7 +30,7 @@ describe('useFeatureFlagUpdater', () => {
     const { result } = renderHook(
       () => {
         return {
-          update: useFeatureFlagUpdater(),
+          dispatch: useFeatureFlagDispatcher(),
           featureFlags: useFeatureFlags(),
         };
       },
@@ -41,8 +41,11 @@ describe('useFeatureFlagUpdater', () => {
 
     expect(result.current.featureFlags.frontierTypography).toEqual(false);
     void act(() => {
-      result.current.update({ frontierTypography: true, frontierCard: true });
-      result.current.update({ frontierButton: true });
+      result.current.dispatch({
+        type: 'update',
+        value: { frontierTypography: true, frontierCard: true },
+      });
+      result.current.dispatch({ type: 'update', value: { frontierButton: true } });
     });
     expect(result.current.featureFlags).toMatchObject({
       frontierTypography: true,
@@ -55,7 +58,7 @@ describe('useFeatureFlagUpdater', () => {
     const { result } = renderHook(
       () => {
         return {
-          update: useFeatureFlagUpdater(),
+          dispatch: useFeatureFlagDispatcher(),
           featureFlags: useFeatureFlags(),
         };
       },
@@ -65,11 +68,11 @@ describe('useFeatureFlagUpdater', () => {
     );
 
     void act(() => {
-      result.current.update({ frontier: true });
+      result.current.dispatch({ type: 'toggle', name: 'frontier' });
     });
     expect(result.current.featureFlags).toMatchObject(frontierFeaturesOn);
     void act(() => {
-      result.current.update({ frontier: false });
+      result.current.dispatch({ type: 'toggle', name: 'frontier' });
     });
     expect(result.current.featureFlags).toMatchObject(frontierFeaturesOff);
   });

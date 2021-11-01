@@ -17,6 +17,7 @@ import CarouselScreen from './src/Carousel';
 import CheckboxScreen from './src/Checkbox';
 import ContentCellScreen from './src/ContentCell';
 import ContentCellFallbackScreen from './src/ContentCellFallback';
+import DebugFrontierScreen from './src/DebugFrontier';
 import DividerScreen from './src/Divider';
 import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
@@ -94,6 +95,7 @@ const AppContent = () => {
         <Stack.Screen name="Checkbox" component={CheckboxScreen} />
         <Stack.Screen name="ContentCell" component={ContentCellScreen} />
         <Stack.Screen name="ContentCellFallback" component={ContentCellFallbackScreen} />
+        <Stack.Screen name="DebugFrontier" component={DebugFrontierScreen} />
         <Stack.Screen name="Divider" component={DividerScreen} />
         <Stack.Screen name="Icon" component={IconScreen} />
         <Stack.Screen name="IconButton" component={IconButtonScreen} />

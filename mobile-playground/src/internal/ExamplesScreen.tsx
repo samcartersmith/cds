@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import { Switch } from '@cbhq/cds-mobile/controls/Switch';
 import { Divider, VStack } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
-import { useFeatureFlagUpdater } from '@cbhq/cds-mobile/system/useFeatureFlagUpdater';
+import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
 import { useFeatureFlags } from '@cbhq/cds-mobile/system/useFeatureFlags';
 
 import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
@@ -15,7 +15,7 @@ import Screen from './Screen';
 const ExamplesScreen: React.FC = ({ children }) => {
   const rootScale = useRootScale();
   const rootSpectrum = useRootSpectrum();
-  const updateFeatureFlags = useFeatureFlagUpdater();
+  const toggleFeatureFlag = useFeatureFlagToggler();
   const { frontier } = useFeatureFlags();
 
   const isDarkEnabled = rootSpectrum === 'dark';
@@ -34,8 +34,8 @@ const ExamplesScreen: React.FC = ({ children }) => {
   }, [rootScalePreferenceUpdater, rootScale]);
 
   const toggleFrontier = useCallback(() => {
-    updateFeatureFlags((prev) => ({ frontier: !prev.frontier }));
-  }, [updateFeatureFlags]);
+    toggleFeatureFlag('frontier');
+  }, [toggleFeatureFlag]);
 
   return (
     <ThemeProvider

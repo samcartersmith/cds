@@ -1,11 +1,7 @@
 import { emptyObject } from '@cbhq/cds-utils';
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import {
-  frontierFeaturesOn,
-  frontierFeaturesOff,
-  defaultFeatureFlags,
-} from '../FeatureFlagContext';
+import { frontierFeaturesOn, defaultFeatureFlags } from '../FeatureFlagContext';
 import { FeatureFlagProvider, getFrontierFlags } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
@@ -121,6 +117,6 @@ describe('FeatureFlagProvider', () => {
 
   it('getFrontierFlags works correctly for false', () => {
     const result = getFrontierFlags(false);
-    expect(result).toEqual(frontierFeaturesOff);
+    expect(result).toEqual(emptyObject);
   });
 });

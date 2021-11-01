@@ -1,39 +1,45 @@
 import { emptyObject } from '@cbhq/cds-utils';
-import React, { useCallback, useState, memo, useMemo } from 'react';
+import React, { useReducer, memo, useMemo } from 'react';
 import {
   FeatureFlagContext,
-  FeatureFlagUpdater,
-  FeatureFlagUpdaterFnParams,
+  FeatureFlagDispatcherContext,
+  FeatureFlagDispatcherAction,
   FeatureFlagsPartial,
   defaultFeatureFlags,
   frontierFeaturesOn,
-  frontierFeaturesOff,
 } from './FeatureFlagContext';
 
 export type FeatureFlagProviderProps = FeatureFlagsPartial;
 
 export function getFrontierFlags(val: boolean | undefined) {
   if (val === undefined) return emptyObject;
-  return val ? frontierFeaturesOn : frontierFeaturesOff;
+  return val ? frontierFeaturesOn : emptyObject;
+}
+
+function featureFlagReducer(state: FeatureFlagsPartial, action: FeatureFlagDispatcherAction) {
+  switch (action.type) {
+    case 'update': {
+      const newState = { ...state, ...action.value };
+      action.updateLocalStorage?.(newState);
+      return newState;
+    }
+    case 'toggle': {
+      const newState = { ...state, [action.name]: !state[action.name] };
+      action.updateLocalStorage?.(newState);
+      return newState;
+    }
+    default: {
+      if (process.env.NODE_ENV === 'production') {
+        return state;
+      }
+      throw new Error('useFeatureFlagUpdater requires `type` to be provided');
+    }
+  }
 }
 
 export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
   ({ children, ...featureFlagProps }) => {
-    const [featureFlagsState, setFeatureFlags] = useState<FeatureFlagsPartial>(emptyObject);
-
-    // Allow imperative updates via debug menu, an experiment check lower in tree or some user action.
-    const handleFeatureFlagsUpdate = useCallback((params: FeatureFlagUpdaterFnParams) => {
-      if (typeof params === 'function') {
-        setFeatureFlags((prev) => {
-          // Pass previous featureFlagsState in callback
-          const newParams = params(prev);
-          // In case consumer forgets to merge with old values
-          return { ...prev, ...newParams };
-        });
-      } else {
-        setFeatureFlags((prev) => ({ ...prev, ...params }));
-      }
-    }, []);
+    const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
 
     const value = useMemo(
       () => ({
@@ -50,9 +56,9 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
     );
 
     return (
-      <FeatureFlagUpdater.Provider value={handleFeatureFlagsUpdate}>
+      <FeatureFlagDispatcherContext.Provider value={dispatch}>
         <FeatureFlagContext.Provider value={value}>{children}</FeatureFlagContext.Provider>
-      </FeatureFlagUpdater.Provider>
+      </FeatureFlagDispatcherContext.Provider>
     );
   },
 );

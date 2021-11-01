@@ -15,6 +15,7 @@ const components = [
   { key: 'Checkbox' },
   { key: 'ContentCell' },
   { key: 'ContentCellFallback' },
+  { key: 'DebugFrontier' },
   { key: 'Divider' },
   { key: 'Icon' },
   { key: 'IconButton' },
