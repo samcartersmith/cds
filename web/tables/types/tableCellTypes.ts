@@ -10,6 +10,9 @@ import { TextProps } from '../../typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
 
+type TableCellSharedProps = (TdHTMLAttributes<HTMLTableCellElement> &
+  ThHTMLAttributes<HTMLTableCellElement>) &
+  SharedProps;
 type TableCellBaseProps = {
   /**
    * Element (icon, asset, image, etc) to display at the start of the cell
@@ -58,8 +61,12 @@ type TableCellBaseProps = {
    * @default vertical
    */
   direction?: 'vertical' | 'horizontal';
-} & (TdHTMLAttributes<HTMLTableCellElement> | ThHTMLAttributes<HTMLTableCellElement>) &
-  SharedProps;
+  /**
+   * HTML width attribute to help with column layout
+   * @default undefined
+   */
+  width?: TableCellSharedProps['width'];
+} & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {
   /** Children to render within the cell. */
