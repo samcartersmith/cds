@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState, useCallback } from 'react';
 import { TextInput } from '@cbhq/cds-web/controls/TextInput';
+import { InputIcon } from '@cbhq/cds-web/controls/InputIcon';
+import { InputIconButton } from '@cbhq/cds-web/controls/InputIconButton';
 import { HStack, Box, VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
-import { ButtonGroup, Button, IconButton } from '@cbhq/cds-web/buttons';
-import { Icon } from '@cbhq/cds-web/icons/Icon';
+import { ButtonGroup, Button } from '@cbhq/cds-web/buttons';
 import { Link } from '@cbhq/cds-web/typography/Link';
 import { Avatar } from '@cbhq/cds-web/media/avatar/Avatar';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
@@ -89,9 +90,11 @@ export const NormalInput = () => {
       label="API Access Token"
       placeholder="HaeJiWplJohn6W42eCq0Qqft0"
       end={
-        <Link variant="caption" color="primary" to="">
-          COPY
-        </Link>
+        <Box spacingEnd={2}>
+          <Link variant="caption" color="primary" to="">
+            COPY
+          </Link>
+        </Box>
       }
     />
   );
@@ -131,7 +134,7 @@ export const PositiveSentiment = () => {
       helperText="Valid BTC address"
       variant="positive"
       placeholder="HaeJiWplJohn6W42eCq0Qqft0"
-      end={<Icon color="positive" name="visibleActive" size="s" />}
+      end={<InputIcon color="positive" name="visibleActive" />}
     />
   );
 };
@@ -143,7 +146,7 @@ export const NegativeSentiment = () => {
       helperText="Invalid BTC address"
       variant="negative"
       placeholder="HaeJiWplJohn6W42eCq0Qqft0"
-      end={<Icon color="negative" name="visibleActive" size="s" />}
+      end={<InputIcon color="negative" name="visibleActive" />}
     />
   );
 };
@@ -171,7 +174,7 @@ export const AssetStartContent = () => {
     <TextInput
       label="Address"
       start={
-        <Box spacingEnd={1}>
+        <Box spacingHorizontal={2}>
           <Avatar
             size="l"
             src="https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png"
@@ -185,24 +188,14 @@ export const AssetStartContent = () => {
 };
 
 export const IconStartContent = () => {
-  return (
-    <TextInput
-      label="Amount"
-      start={
-        <Box spacingEnd={1}>
-          <Icon color="foreground" name="cashUSD" size="s" />
-        </Box>
-      }
-      placeholder="1234"
-    />
-  );
+  return <TextInput label="Amount" start={<InputIcon name="cashUSD" />} placeholder="1234" />;
 };
 
 export const IconButtonStartContent = () => {
   return (
     <TextInput
       label="Search"
-      start={<IconButton transparent variant="primary" name="search" />}
+      start={<InputIconButton name="search" />}
       placeholder="Search for anything"
     />
   );
@@ -227,9 +220,11 @@ export const TextButtonInput = () => {
       label="API Access Token"
       placeholder="HaeJiWplJohn6W42eCq0Qqft0"
       end={
-        <Link variant="caption" color="primary" to="">
-          COPY
-        </Link>
+        <Box spacingEnd={2}>
+          <Link variant="caption" color="primary" to="">
+            COPY
+          </Link>
+        </Box>
       }
     />
   );
@@ -237,11 +232,7 @@ export const TextButtonInput = () => {
 
 export const IconButtonEndContent = () => {
   return (
-    <TextInput
-      label="Asset name"
-      end={<IconButton transparent variant="primary" name="close" />}
-      placeholder="Dodge"
-    />
+    <TextInput label="Asset name" end={<InputIconButton name="close" />} placeholder="Dodge" />
   );
 };
 
@@ -250,7 +241,7 @@ export const AddressEndContent = () => {
     <TextInput
       label="Address"
       placeholder="1234 Abc Way"
-      end={<Icon name="checkmark" size="s" color="positive" />}
+      end={<InputIcon name="checkmark" color="positive" />}
     />
   );
 };
@@ -272,10 +263,8 @@ export const PasswordInput = () => {
       label="Password"
       type={type}
       end={
-        <IconButton
-          transparent
+        <InputIconButton
           name={isVisible ? 'visibleActive' : 'visibleInactive'}
-          variant="primary"
           onPress={handleOnPress}
         />
       }
@@ -316,7 +305,7 @@ export function CopyTextInputExample() {
           <Link onPress={handleOnCopy} variant="caption" color={variant}>
             {copied ? 'copied' : 'copy'}
           </Link>
-          <Icon spacingHorizontal={1} color="primary" name="visibleActive" size="s" />
+          <InputIcon color="primary" name="visibleActive" />
         </HStack>
       }
       onChange={handleOnChange}
@@ -333,7 +322,7 @@ export const AvatarInput = () => {
   return (
     <TextInput
       start={
-        <Box spacingEnd={1}>
+        <Box spacingHorizontal={2}>
           <Avatar alt="profile picture" src={avatarImageUrl} size="m" />
         </Box>
       }

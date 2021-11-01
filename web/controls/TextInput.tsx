@@ -82,6 +82,7 @@ export const TextInput = memo(function TextInput({
             onFocus={handleOnFocus}
             onBlur={handleOnBlur}
             disabled={disabled}
+            compact={compact}
             {...htmlInputElmProps}
           />
         }
@@ -95,17 +96,17 @@ export const TextInput = memo(function TextInput({
         labelNode={!compact && <InputLabel>{label}</InputLabel>}
         startNode={
           (compact || !!start) && (
-            <HStack justifyContent="center" alignItems="center" gap={2} spacingStart={1}>
-              {compact && <InputLabel spacingStart={1}>{label}</InputLabel>}
+            <HStack justifyContent="center" alignItems="center" gap={2}>
+              {compact && <InputLabel spacingStart={2}>{label}</InputLabel>}
               {!!start && <>{start}</>}
             </HStack>
           )
         }
         endNode={
           (suffix !== '' || !!end) && (
-            <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={1}>
+            <HStack justifyContent="center" alignItems="center" gap={2}>
               {suffix !== '' && (
-                <TextLabel1 spacingEnd={1} as="p" color="foregroundMuted">
+                <TextLabel1 spacingEnd={2} as="p" color="foregroundMuted">
                   {suffix}
                 </TextLabel1>
               )}

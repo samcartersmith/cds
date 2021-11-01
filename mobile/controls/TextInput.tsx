@@ -77,6 +77,7 @@ export const TextInput = memo(function TextInput({
           accessibilityLabel={accessibilityLabel ?? label}
           accessibilityHint={accessibilityLabel ?? label}
           disabled={disabled}
+          compact={compact}
           {...editableInputAddonProps}
         />
       }
@@ -90,8 +91,8 @@ export const TextInput = memo(function TextInput({
       labelNode={!compact && <InputLabel>{label}</InputLabel>}
       startNode={
         (compact || !!start) && (
-          <Box justifyContent="center" alignItems="center" spacingStart={1}>
-            {compact && <InputLabel spacingStart={1}>{label}</InputLabel>}
+          <Box justifyContent="center" alignItems="center">
+            {compact && <InputLabel spacingStart={2}>{label}</InputLabel>}
             {!!start && (
               <TextInputFocusVariantContext.Provider value={variantWithFocus}>
                 {start}
@@ -102,9 +103,9 @@ export const TextInput = memo(function TextInput({
       }
       endNode={
         (suffix !== '' || !!end) && (
-          <HStack justifyContent="center" alignItems="center" gap={2} spacingEnd={1}>
+          <HStack justifyContent="center" alignItems="center" gap={2}>
             {suffix !== '' && (
-              <TextLabel1 spacingEnd={1} color="foregroundMuted">
+              <TextLabel1 spacingEnd={2} color="foregroundMuted">
                 {suffix}
               </TextLabel1>
             )}

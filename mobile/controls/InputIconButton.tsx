@@ -27,7 +27,7 @@ export const InputIconButton = memo(function InputIconButton({
   const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
 
   return (
-    <Box testID={testID}>
+    <Box spacingStart={1} spacingEnd={0.5} testID={testID}>
       <IconButton
         transparent
         variant={disableInheritFocusStyle ? variant : (transformedVariant as IconButtonVariant)}

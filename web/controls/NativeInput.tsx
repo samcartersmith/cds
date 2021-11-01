@@ -5,6 +5,7 @@ import React, { useMemo, memo, forwardRef } from 'react';
 import { css, cx } from 'linaria';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 import { palette } from '../tokens';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -23,6 +24,7 @@ export type NativeInputProps = {
    */
   onPress?: React.MouseEventHandler;
 } & SharedProps &
+  Pick<TextInputBaseProps, 'compact'> &
   SharedAccessibilityProps &
   React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -71,12 +73,13 @@ export const NativeInput = memo(
         onKeyDown,
         onChange,
         accessibilityLabel,
+        compact,
         ...props
       }: NativeInputProps,
       ref: ForwardedRef<HTMLInputElement>,
     ) => {
       const defaultContainerSpacing = useSpacingStyles({
-        spacing: 2,
+        spacing: compact ? 1 : 2,
       });
 
       const alignStyle = useMemo(() => {

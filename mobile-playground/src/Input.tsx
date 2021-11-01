@@ -29,7 +29,7 @@ const MockComplexInput = () => {
   return (
     <HStack justifyContent="center">
       <TextInput width={50} label="Test" onChangeText={onChangeText} value={text} />
-      <VStack spacingTop={0.5}>
+      <VStack spacingTop={1}>
         <Box spacingTop={3}>
           <Button>Hello</Button>
         </Box>
@@ -111,7 +111,11 @@ export default function InputScreen() {
       </Example>
       <Example inline title="TextInput start/end Node">
         <MockTextInput
-          end={<TextBody color="foregroundMuted">Cancel</TextBody>}
+          end={
+            <TextBody spacingEnd={2} color="foregroundMuted">
+              Cancel
+            </TextBody>
+          }
           start={<InputIconButton name="search" transparent />}
           label="Search"
           helperText="Search for assets here"
