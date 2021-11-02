@@ -7,13 +7,13 @@ import { useFeatureFlags } from '../system/useFeatureFlags';
 
 const descriptions = {
   frontierTypography: 'Adjusts size of Display 2',
-  frontierButton: 'More details soon...',
+  frontierButton: 'Updated border radius',
   frontierColor: 'More details soon...',
   frontierCard: 'More details soon...',
   frontierSparkline: 'More details soon...',
 };
 
-const availableFlags = new Set(['frontierTypography']);
+const availableFlags = new Set(['frontierTypography', 'frontierButton']);
 
 type DebugFrontierProps = {
   updateLocalStorage?: FeatureFlagLocalStorageCallback;

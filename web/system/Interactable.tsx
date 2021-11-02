@@ -6,13 +6,14 @@ import {
   ElevationChildrenProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
+import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { cx } from 'linaria';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import * as borderColors from '../styles/borderColor';
-import * as borderRadii from '../styles/borderRadius';
 import * as borderWidths from '../styles/borderWidth';
+
 import { focusRing } from '../styles/focus';
 import {
   interactable,
@@ -81,6 +82,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
   const elevationStyles = useElevationStyles(elevation);
   const spectrumAlias = backgroundColor === 'transparent' ? '' : paletteConfig[backgroundColor];
   const { underlayColor, hoverOpacity, pressedOpacity } = useInteractableTokens(backgroundColor);
+  const borderRadiusValue = useInteractableBorderRadius(borderRadius);
 
   const backgroundStyles = useMemo(() => {
     // Transparent by default, opaque when interacted with
@@ -100,7 +102,6 @@ export const InteractableContent = forwardRef(function InteractableContent(
     ...backgroundStyles,
     !wrapWithLayeredElements && transparentChildren,
     borderColors[borderColor],
-    borderRadius && borderRadii[borderRadius],
     borderWidth && borderWidths[borderWidth],
     disabled ? disabledState : focusRing,
     block && fullWidth,
@@ -114,11 +115,13 @@ export const InteractableContent = forwardRef(function InteractableContent(
         '--interactable-opacity-pressed': pressedOpacity,
         '--interactable-overlay': spectrumAlias ? (`var(--${spectrumAlias})` as const) : undefined,
         '--interactable-underlay': palette[underlayColor],
+        '--interactable-border-radius': `${borderRadiusValue}px`,
         width,
         height,
         ...elevationStyles,
       } as React.CSSProperties),
     [
+      borderRadiusValue,
       hoverOpacity,
       pressedOpacity,
       spectrumAlias,
@@ -135,10 +138,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
       children
     ) : (
       <>
-        <span
-          className={cx(underlay, borderRadius && borderRadii[borderRadius])}
-          role="presentation"
-        />
+        <span className={underlay} role="presentation" />
         <span className={overlay}>{children}</span>
       </>
     );

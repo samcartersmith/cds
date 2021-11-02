@@ -3,6 +3,7 @@ import React, { forwardRef, useMemo } from 'react';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps } from 'reakit/Button';
 
@@ -50,6 +51,7 @@ export const Button = forwardRef(function Button(
 ) {
   const spacingClass = useButtonSpacing(compact);
   const height = useInteractableHeight(compact);
+  const borderRadius = useButtonBorderRadius(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
   const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
 
@@ -61,7 +63,7 @@ export const Button = forwardRef(function Button(
       backgroundColor={backgroundColor}
       block={block}
       borderColor={borderColor}
-      borderRadius={compact ? 'compact' : 'standard'}
+      borderRadius={borderRadius}
       borderWidth="button"
       className={cx(
         foregroundColors[color],

@@ -3,6 +3,7 @@ import React, { memo, useMemo } from 'react';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { StyleSheet, ActivityIndicator, View } from 'react-native';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
@@ -28,6 +29,7 @@ export const Button = memo(function Button({
 }: ButtonProps) {
   const palette = usePalette();
   const height = useInteractableHeight(compact);
+  const borderRadius = useButtonBorderRadius(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
   const spacingStyles = useButtonSpacing(compact);
   const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
@@ -44,7 +46,7 @@ export const Button = memo(function Button({
       backgroundColor={backgroundColor}
       block={block}
       borderColor={borderColor}
-      borderRadius={compact ? 'compact' : 'standard'}
+      borderRadius={borderRadius}
       borderWidth="button"
       feedback={feedback ?? (compact ? 'light' : 'normal')}
       loading={loading}

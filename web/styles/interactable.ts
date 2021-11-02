@@ -7,6 +7,7 @@ export const interactable = css`
   cursor: pointer;
   user-select: none;
   text-decoration: none;
+  border-radius: var(--interactable-border-radius);
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
@@ -102,6 +103,7 @@ export const underlay = css`
   overflow: hidden;
   background-color: var(--interactable-underlay);
   display: block;
+  border-radius: var(--interactable-border-radius);
 `;
 
 // Apply opacity to children as well

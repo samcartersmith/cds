@@ -1,9 +1,7 @@
 import { useMemo } from 'react';
 
-import {
-  borderRadius as borderRadiusTokens,
-  borderWidth as borderWidthTokens,
-} from '@cbhq/cds-common/tokens/border';
+import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/tokens/border';
+import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
 import { Animated, Falsy, ViewStyle } from 'react-native';
 
 import type { InteractableProps } from '../system/Interactable';
@@ -46,15 +44,16 @@ export const useInteractableBorderStyles = ({
   ...props
 }: InteractableBorderStyleProps): Animated.WithAnimatedValue<Falsy | ViewStyle>[] => {
   const borderColor = useInteractableBorderColor(props);
+  const borderRadiusValue = useInteractableBorderRadius(borderRadius);
 
   return useMemo(() => {
     return [
       {
         borderColor,
         borderStyle: 'solid',
+        borderRadius: borderRadiusValue,
       },
-      borderRadius && { borderRadius: borderRadiusTokens[borderRadius] },
       borderWidth && { borderWidth: borderWidthTokens[borderWidth] },
     ];
-  }, [borderColor, borderRadius, borderWidth]);
+  }, [borderColor, borderRadiusValue, borderWidth]);
 };

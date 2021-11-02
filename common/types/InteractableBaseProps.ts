@@ -10,8 +10,8 @@ export type InteractableBaseProps = {
   block?: boolean;
   /** Border color of the element being interacted with. */
   borderColor?: PaletteBorder | 'transparent';
-  /** Border radius of the element being interacted with. */
-  borderRadius?: BorderRadius;
+  /** Border radius of the element being interacted with. Number should only be used if value comes from useButtonBorderRadius. */
+  borderRadius?: BorderRadius | number;
   /** Width of the border. */
   borderWidth?: BorderWidth;
   /** Is the element currently disabled. */

@@ -50,6 +50,7 @@ import { loremIpsum } from ':cds-website/data/loremIpsum';
 import { prices } from ':cds-website/data/prices';
 import { PatternArtboard } from ':cds-website/components/PatternArtboard';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
+import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { LottieSheet } from ':cds-website/docs/components/animation/Lottie/LottieSheet';
 import { LottieExample } from ':cds-website/docs/components/animation/Lottie/LottieExample';
 
@@ -120,6 +121,7 @@ const ReactLiveScope = {
   prices,
   mocks,
   // Example components
+  ButtonSheet,
   ColorTile,
   ExampleWithThemeToggles,
   ThemeToggles,

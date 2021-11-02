@@ -61,6 +61,14 @@ Component to render as the Modal content
   required={false}
   defaultValue=""
   mobileOptions={[
+    'ModalRenderChildren',
+    'ModalRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ModalRenderChildren & ReactNodeArray',
+    'ModalRenderChildren & ReactPortal',
+    'ModalRenderChildren & false',
+    'ModalRenderChildren & number',
+    'ModalRenderChildren & string',
+    'ModalRenderChildren & true',
     'ReactElement<any, string | JSXElementConstructor<any>>',
     'ReactElement<any, string | JSXElementConstructor<any>> & ReactNodeArray',
     'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
@@ -109,6 +117,14 @@ Component to render as the Modal content
     '{} & true',
   ]}
   webOptions={[
+    'ModalRenderChildren',
+    'ModalRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ModalRenderChildren & ReactNodeArray',
+    'ModalRenderChildren & ReactPortal',
+    'ModalRenderChildren & false',
+    'ModalRenderChildren & number',
+    'ModalRenderChildren & string',
+    'ModalRenderChildren & true',
     'ReactElement<any, string | JSXElementConstructor<any>>',
     'ReactElement<any, string | JSXElementConstructor<any>> & ReactNodeArray',
     'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
@@ -159,6 +175,21 @@ Component to render as the Modal content
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-children" />
+
+### dangerouslySetWidth <Badge variant="danger" order={1} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="dangerouslySetWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-dangerouslySetWidth" />
 
 ### disableOverlayPress <Badge variant="web" />
 
@@ -222,15 +253,15 @@ Hide top and bottom dividers inside Modal body
 
 ### onRequestClose
 
-Handles Modal close
+Callback function fired when modal is closed.
 
 <ApiDetails
   componentName="Modal"
   propertyName="onRequestClose"
-  required={true}
+  required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-onRequestClose" />
