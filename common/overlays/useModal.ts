@@ -7,7 +7,7 @@ export const useModal = () => {
   return useMemo(
     () => ({
       openModal: show,
-      closeModa: hide,
+      closeModal: hide,
     }),
     [show, hide],
   );

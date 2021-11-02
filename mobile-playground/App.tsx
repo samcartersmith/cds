@@ -9,39 +9,42 @@ import { DevicePreferencesProvider } from '../mobile/system/DevicePreferencesPro
 import { useTypographyStyles } from '../mobile/typography';
 
 import List from './src';
+import AlertScreen from './src/Alert';
+import AvatarButtonScreen from './src/AvatarButton';
+import AvatarScreen from './src/Avatar';
 import BoxScreen from './src/Box';
-import ButtonScreen from './src/Button';
 import ButtonGroupScreen from './src/ButtonGroup';
+import ButtonScreen from './src/Button';
 import CardScreen from './src/Card';
 import CarouselScreen from './src/Carousel';
 import CheckboxScreen from './src/Checkbox';
-import ContentCellScreen from './src/ContentCell';
 import ContentCellFallbackScreen from './src/ContentCellFallback';
+import ContentCellScreen from './src/ContentCell';
 import DebugFrontierScreen from './src/DebugFrontier';
 import DividerScreen from './src/Divider';
-import IconScreen from './src/Icon';
 import IconButtonScreen from './src/IconButton';
+import IconScreen from './src/Icon';
 import IllustrationScreen from './src/Illustration';
 import InputScreen from './src/Input';
 import InputIconScreen from './src/InputIcon';
 import InputIconButtonScreen from './src/InputIconButton';
 import InputStackScreen from './src/InputStack';
 import LinkScreen from './src/Link';
-import ListCellScreen from './src/ListCell';
 import ListCellFallbackScreen from './src/ListCellFallback';
+import ListCellScreen from './src/ListCell';
+import LogoScreen from './src/Logo';
 import LottieScreen from './src/Lottie';
 import LottieStatusAnimationScreen from './src/LottieStatusAnimation';
 import ModalScreen from './src/Modal';
 import OverlayScreen from './src/Overlay';
-import PressableScreen from './src/Pressable';
 import PressableOpacityScreen from './src/PressableOpacity';
+import PressableScreen from './src/Pressable';
 import RadioGroupScreen from './src/RadioGroup';
 import RemoteImageScreen from './src/RemoteImage';
 import SpacerScreen from './src/Spacer';
-import SparklineScreen from './src/Sparkline';
 import SparklineGradientScreen from './src/SparklineGradient';
+import SparklineScreen from './src/Sparkline';
 import SwitchScreen from './src/Switch';
-import TextScreen from './src/Text';
 import TextBodyScreen from './src/TextBody';
 import TextCaptionScreen from './src/TextCaption';
 import TextDisplay1Screen from './src/TextDisplay1';
@@ -51,13 +54,11 @@ import TextHeadlineScreen from './src/TextHeadline';
 import TextLabel1Screen from './src/TextLabel1';
 import TextLabel2Screen from './src/TextLabel2';
 import TextLegalScreen from './src/TextLegal';
+import TextScreen from './src/Text';
 import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
 import TextTitle4Screen from './src/TextTitle4';
-import LogoScreen from './src/Logo';
-import AvatarScreen from './src/Avatar';
-import AvatarButtonScreen from './src/AvatarButton';
 
 const Stack = createStackNavigator();
 
@@ -86,7 +87,9 @@ const AppContent = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Index" screenOptions={screenOptions}>
         <Stack.Screen name="Index" component={List} options={{ title: 'Coinbase Design System' }} />
-        <Stack.Screen name="Illustration" component={IllustrationScreen} />
+        <Stack.Screen name="Alert" component={AlertScreen} />
+        <Stack.Screen name="Avatar" component={AvatarScreen} />
+        <Stack.Screen name="AvatarButton" component={AvatarButtonScreen} />
         <Stack.Screen name="Box" component={BoxScreen} />
         <Stack.Screen name="Button" component={ButtonScreen} />
         <Stack.Screen name="ButtonGroup" component={ButtonGroupScreen} />
@@ -99,6 +102,7 @@ const AppContent = () => {
         <Stack.Screen name="Divider" component={DividerScreen} />
         <Stack.Screen name="Icon" component={IconScreen} />
         <Stack.Screen name="IconButton" component={IconButtonScreen} />
+        <Stack.Screen name="Illustration" component={IllustrationScreen} />
         <Stack.Screen name="Input" component={InputScreen} />
         <Stack.Screen name="InputIcon" component={InputIconScreen} />
         <Stack.Screen name="InputIconButton" component={InputIconButtonScreen} />
@@ -106,9 +110,9 @@ const AppContent = () => {
         <Stack.Screen name="Link" component={LinkScreen} />
         <Stack.Screen name="ListCell" component={ListCellScreen} />
         <Stack.Screen name="ListCellFallback" component={ListCellFallbackScreen} />
+        <Stack.Screen name="Logo" component={LogoScreen} />
         <Stack.Screen name="Lottie" component={LottieScreen} />
         <Stack.Screen name="LottieStatusAnimation" component={LottieStatusAnimationScreen} />
-        <Stack.Screen name="Logo" component={LogoScreen} />
         <Stack.Screen name="Modal" component={ModalScreen} />
         <Stack.Screen name="Overlay" component={OverlayScreen} />
         <Stack.Screen name="Pressable" component={PressableScreen} />
@@ -133,8 +137,6 @@ const AppContent = () => {
         <Stack.Screen name="TextTitle2" component={TextTitle2Screen} />
         <Stack.Screen name="TextTitle3" component={TextTitle3Screen} />
         <Stack.Screen name="TextTitle4" component={TextTitle4Screen} />
-        <Stack.Screen name="Avatar" component={AvatarScreen} />
-        <Stack.Screen name="AvatarButton" component={AvatarButtonScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

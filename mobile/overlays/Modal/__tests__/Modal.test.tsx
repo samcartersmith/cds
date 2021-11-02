@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { render, fireEvent, waitFor, cleanup } from '@testing-library/react-native';
 import { Modal as RNModal, Animated } from 'react-native';
 import {
   createLoremIpsum,
@@ -33,6 +33,8 @@ const { MockModal } = createStories({
 } as CreateModalProps);
 
 describe('Modal', () => {
+  afterEach(cleanup);
+
   it('renders React Native Modal', () => {
     const result = render(<MockModal />);
 
@@ -107,9 +109,11 @@ describe('Modal', () => {
     // press on footer action
     fireEvent.press(getByTestId('modal-footer-save'));
 
-    expect(animationParallelSpy).toHaveBeenCalledTimes(2);
-    expect(animationTimingSpy).toHaveBeenCalledTimes(4);
     // wait for animation to finish
-    await waitFor(() => expect(onRequestClose).toHaveBeenCalledTimes(1));
+    await waitFor(() => {
+      expect(animationParallelSpy).toHaveBeenCalledTimes(2);
+      expect(animationTimingSpy).toHaveBeenCalledTimes(4);
+      expect(onRequestClose).toHaveBeenCalledTimes(1);
+    });
   });
 });

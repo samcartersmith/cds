@@ -1,21 +1,21 @@
-import { ReactNode, useCallback, useMemo, useState } from 'react';
+import { ReactElement, useCallback, useMemo, useState } from 'react';
 
-export type PortalNode = { key: string; node: ReactNode };
+export type PortalNode = { id: string; element: ReactElement };
 
 export const usePortalState = () => {
   const [nodes, setNodes] = useState<PortalNode[]>([]);
 
-  const addNode = useCallback((key: string, node: ReactNode) => {
+  const addNode = useCallback((id: string, element: PortalNode['element']) => {
     setNodes((prevNodes) => {
-      const index = prevNodes.findIndex((item) => item.key === key);
+      const index = prevNodes.findIndex((item) => item.id === id);
       if (index !== -1) return prevNodes;
 
-      return [...prevNodes, { key, node }];
+      return [...prevNodes, { id, element }];
     });
   }, []);
 
   const removeNode = useCallback(
-    (key: string) => setNodes((prevNodes) => prevNodes.filter((item) => item.key !== key)),
+    (id: string) => setNodes((prevNodes) => prevNodes.filter((item) => item.id !== id)),
     [],
   );
 

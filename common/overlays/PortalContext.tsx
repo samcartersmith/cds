@@ -1,8 +1,8 @@
-import { createContext, ReactNode } from 'react';
+import { createContext } from 'react';
 import { PortalNode } from './usePortalState';
 
 export type PortalProviderStates = {
-  addNode: (id: string, nodeChildren: ReactNode) => void;
+  addNode: (id: string, element: PortalNode['element']) => void;
   removeNode: (id: string) => void;
   nodes: PortalNode[];
 };

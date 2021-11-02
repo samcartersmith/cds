@@ -7,6 +7,9 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { View, FlatList, TouchableHighlight } from 'react-native';
 
 const components = [
+  { key: 'Alert' },
+  { key: 'Avatar' },
+  { key: 'AvatarButton' },
   { key: 'Box' },
   { key: 'Button' },
   { key: 'ButtonGroup' },
@@ -54,8 +57,6 @@ const components = [
   { key: 'TextTitle2' },
   { key: 'TextTitle3' },
   { key: 'TextTitle4' },
-  { key: 'Avatar' },
-  { key: 'AvatarButton' },
 ];
 
 // eslint-disable-next-line @typescript-eslint/ban-types

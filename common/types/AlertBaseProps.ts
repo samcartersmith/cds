@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import { IllustrationPictogramNames } from './IllustrationNames';
 import { NoopFn } from './Helpers';
 import { PositionStyles } from './BoxBaseProps';
@@ -33,6 +34,10 @@ export type AlertBaseProps = {
    * Callback function fired when the secondary action is pressed.
    */
   secondaryActionOnPress?: NoopFn;
-} & Pick<ModalBaseProps, 'onRequestClose'> &
+} & Pick<ModalBaseProps, 'onRequestClose' | 'visible'> &
   SharedProps &
   Pick<PositionStyles, 'zIndex'>;
+
+export type AlertRefBaseProps = {
+  onRequestClose: NoopFn & MouseEventHandler<Element>;
+};

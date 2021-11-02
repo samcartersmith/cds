@@ -52,7 +52,7 @@ export const PortalProvider: React.FC = ({ children }) => {
 
   return (
     <PortalContext.Provider value={contextValue}>
-      {nodes.map((item: PortalNode) => item.node)}
+      {nodes.map((node: PortalNode) => node.element)}
       {children}
     </PortalContext.Provider>
   );
