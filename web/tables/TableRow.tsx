@@ -19,6 +19,7 @@ export const TableRow = memo(
     color,
     testID,
     onPress,
+    ...rest
   }: TableRowProps) => {
     const tableSectionType = useTableSectionTag();
     const isCellInBody = tableSectionType === 'tbody';
@@ -45,6 +46,7 @@ export const TableRow = memo(
         ref={rowRef}
         onClick={onPress}
         tabIndex={onPress && 0}
+        {...rest}
       >
         {fullWidth && (
           <TableCell direction="horizontal" colSpan={1000}>

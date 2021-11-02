@@ -4,9 +4,9 @@ import { TableSectionProps } from './types/tableSectionTypes';
 import { TableSection } from './TableSection';
 
 export type TableHeaderProps = TableSectionProps;
-export const TableHeader = memo(({ children, testID }: TableHeaderProps) => {
+export const TableHeader = memo(({ children, testID, ...rest }: TableHeaderProps) => {
   return (
-    <TableSection as="thead" data-testid={testID}>
+    <TableSection as="thead" data-testid={testID} {...rest}>
       {children}
     </TableSection>
   );
