@@ -8,6 +8,25 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.31.3 (11/2/2021, 10:28 AM PST)
+
+#### 🚀 Updates
+
+- Frontier Button feature flag style updates. [#40232](https://github.cbhq.net/mono/repo/pull/40232), [CDS-1596](https://jira.coinbase-corp.com/browse/CDS-1596)
+- Alerts mobile. [#39817](https://github.cbhq.net/mono/repo/pull/39817), [CDS-1252](https://jira.coinbase-corp.com/browse/CDS-1252)
+- Add useFeatureFlagToggler and useFeatureFlagDispatcher. [#40040](https://github.cbhq.net/mono/repo/pull/40040)
+- Added InputIcon and InputIconButton. [#39209](https://github.cbhq.net/mono/repo/pull/39209), [CDS-1640](https://jira.coinbase-corp.com/browse/CDS-1640)
+- Add CoinbaseMono font and mono prop to typography. [#39662](https://github.cbhq.net/mono/repo/pull/39662), [CDS-1597](https://jira.coinbase-corp.com/browse/CDS-1597)
+
+#### 🐞 Fixes
+
+- **[Input]** Fix compact height and some other spacing. [#39953](https://github.cbhq.net/mono/repo/pull/39953)
+
+#### 📘 Misc
+
+- AvatarButton feedback updates. [#40078](https://github.cbhq.net/mono/repo/pull/40078)
+- **[Input]** Improve textinput website documentation. [#38445](https://github.cbhq.net/mono/repo/pull/38445), [CDS-1615](https://jira.coinbase-corp.com/browse/CDS-1615)
+
 ## 0.31.2 (10/27/2021, 10:02 AM PST)
 
 #### 🚀 Updates

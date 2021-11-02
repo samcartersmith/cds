@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.4.0 (11/2/2021, 10:28 AM PST)
+
+#### 💥 Breaking
+
+- Replace fonts.css with fontsBeta.css declarations. [#39205](https://github.cbhq.net/mono/repo/pull/39205)
+
+#### 🚀 Updates
+
+- Add CoinbaseMono font and mono prop to typography. [#39662](https://github.cbhq.net/mono/repo/pull/39662), [CDS-1597](https://jira.coinbase-corp.com/browse/CDS-1597)
+
+#### 🐞 Fixes
+
+- Release. [#39387](https://github.cbhq.net/mono/repo/pull/39387)
+
 ## 0.3.0 (10/26/2021, 02:33 PM PST)
 
 #### 💥 Breaking

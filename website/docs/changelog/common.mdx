@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.27.3 (11/2/2021, 10:28 AM PST)
+
+#### 🚀 Updates
+
+- Frontier Button feature flag style updates. [#40232](https://github.cbhq.net/mono/repo/pull/40232), [CDS-1596](https://jira.coinbase-corp.com/browse/CDS-1596)
+- Alerts mobile. [#39817](https://github.cbhq.net/mono/repo/pull/39817), [CDS-1252](https://jira.coinbase-corp.com/browse/CDS-1252)
+- Add useFeatureFlagToggler and useFeatureFlagDispatcher. [#40040](https://github.cbhq.net/mono/repo/pull/40040)
+- Add CoinbaseMono font and mono prop to typography. [#39662](https://github.cbhq.net/mono/repo/pull/39662), [CDS-1597](https://jira.coinbase-corp.com/browse/CDS-1597)
+- Alerts types and hooks. [#39547](https://github.cbhq.net/mono/repo/pull/39547), [CDS-1252](https://jira.coinbase-corp.com/browse/CDS-1252)
+
 ## 0.27.2 (10/27/2021, 10:02 AM PST)
 
 #### 🚀 Updates

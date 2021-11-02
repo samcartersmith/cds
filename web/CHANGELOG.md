@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.2 (11/2/2021, 10:28 AM PST)
+
+#### 🚀 Updates
+
+- Frontier Button feature flag style updates. [#40232](https://github.cbhq.net/mono/repo/pull/40232), [CDS-1596](https://jira.coinbase-corp.com/browse/CDS-1596)
+- Alerts mobile. [#39817](https://github.cbhq.net/mono/repo/pull/39817), [CDS-1252](https://jira.coinbase-corp.com/browse/CDS-1252)
+- Added InputIcon and InputIconButton. [#39209](https://github.cbhq.net/mono/repo/pull/39209), [CDS-1640](https://jira.coinbase-corp.com/browse/CDS-1640)
+- Add CoinbaseMono font and mono prop to typography. [#39662](https://github.cbhq.net/mono/repo/pull/39662), [CDS-1597](https://jira.coinbase-corp.com/browse/CDS-1597)
+
+#### 🐞 Fixes
+
+- IconButton Accessibility tabbing creating double border. [#40167](https://github.cbhq.net/mono/repo/pull/40167), [CDS-1642](https://jira.coinbase-corp.com/browse/CDS-1642)
+- Include width explicitly as a prop we want documented. [#40123](https://github.cbhq.net/mono/repo/pull/40123)
+- **[Input]** Add forward ref for TextInput. [#39948](https://github.cbhq.net/mono/repo/pull/39948)
+- **[Input]** Fix compact height and some other spacing. [#39953](https://github.cbhq.net/mono/repo/pull/39953)
+
+#### 📘 Misc
+
+- Prepare the build for new navigation work. [#39830](https://github.cbhq.net/mono/repo/pull/39830), [CDS-1682](https://jira.coinbase-corp.com/browse/CDS-1682)
+- AvatarButton feedback updates. [#40078](https://github.cbhq.net/mono/repo/pull/40078)
+- Expose filterSize prop in Lottie component, Improve Lottie docs. [#39555](https://github.cbhq.net/mono/repo/pull/39555), [CDS-1560](https://jira.coinbase-corp.com/browse/CDS-1560)
+- **[Input]** Improve textinput website documentation. [#38445](https://github.cbhq.net/mono/repo/pull/38445), [CDS-1615](https://jira.coinbase-corp.com/browse/CDS-1615)
+
 ## 0.29.1 (10/27/2021, 10:02 AM PST)
 
 #### 🚀 Updates
