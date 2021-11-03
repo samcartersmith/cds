@@ -12,18 +12,19 @@ import { cx } from 'linaria';
 import { createPortal } from 'react-dom';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
+import { Position } from '@cbhq/cds-common';
 
 import { Box, VStack } from '../../layout';
 import { Overlay } from '../Overlay/Overlay';
 import {
   modalDefaultClassName,
   modalResponsiveClassName,
-  overlayResponsiveClassName,
+  modalOverlayDefaultClassName,
+  modalOverlayResponsiveClassName,
 } from './modalStyles';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { useModalAnimation } from './useModalAnimation';
 import { isSSR } from '../../utils/browser';
-import { ThemeProvider } from '../../system';
 import { modalContainerId } from '../PortalProvider';
 
 export type ModalProps = {
@@ -45,6 +46,22 @@ export type ModalProps = {
    * Disable React portal integration
    */
   disablePortal?: boolean;
+  /**
+   * If pressing the esc key should close the modal
+   * @default true
+   */
+  shouldCloseOnEscPress?: boolean;
+  /**
+   * Disable responsiveness so it maintains the same UI across different viewports.
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   * @default false
+   */
+  dangerouslyDisableResponsiveness?: boolean;
+  /**
+   * Set the position for the modal dialogue
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  dangerouslySetPosition?: Position;
 } & ModalBaseProps;
 
 export const Modal = memo(
@@ -58,6 +75,10 @@ export const Modal = memo(
       accessibilityLabelledBy = 'modal_title',
       accessibilityLabel = 'modal',
       zIndex: customZIndex,
+      dangerouslySetWidth,
+      dangerouslyDisableResponsiveness = false,
+      dangerouslySetPosition,
+      shouldCloseOnEscPress = true,
     } = props;
 
     const blockScroll = useScrollBlocker();
@@ -137,7 +158,7 @@ export const Modal = memo(
     // close modal on Escape key press for accessibility
     const handleKeyDown = useCallback(
       (event: KeyboardEvent) => {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && shouldCloseOnEscPress) {
           void handleClose();
         }
 
@@ -148,7 +169,7 @@ export const Modal = memo(
         // Swallow the event, in case someone is listening on the body.
         event.stopPropagation();
       },
-      [handleClose, handleTabKey],
+      [handleClose, handleTabKey, shouldCloseOnEscPress],
     );
 
     useEffect(() => {
@@ -184,6 +205,7 @@ export const Modal = memo(
         height="100vh"
         width="100vw"
         justifyContent="center"
+        alignItems="center"
         role="dialog"
         aria-modal="true"
         aria-labelledby={accessibilityLabelledBy}
@@ -192,14 +214,22 @@ export const Modal = memo(
       >
         <Overlay
           onPress={disableOverlayPress ? undefined : handleClose}
-          dangerouslySetClassName={cx(overlayResponsiveClassName)}
+          dangerouslySetClassName={cx(
+            modalOverlayDefaultClassName,
+            !dangerouslyDisableResponsiveness && modalOverlayResponsiveClassName,
+          )}
           ref={overlayRef}
           testID="modal-overlay"
         />
         <VStack
           elevation={2}
           background="background"
-          dangerouslySetClassName={cx(modalDefaultClassName, modalResponsiveClassName)}
+          width={dangerouslySetWidth}
+          position={dangerouslySetPosition}
+          dangerouslySetClassName={cx(
+            modalDefaultClassName,
+            !dangerouslyDisableResponsiveness && modalResponsiveClassName,
+          )}
           ref={modalRef}
         >
           <ModalParentContext.Provider value={modalData}>
@@ -213,9 +243,6 @@ export const Modal = memo(
       return modalNode;
     }
 
-    return createPortal(
-      <ThemeProvider>{modalNode}</ThemeProvider>,
-      document.getElementById(modalContainerId) as HTMLElement,
-    );
+    return createPortal(modalNode, document.getElementById(modalContainerId) as HTMLElement);
   }),
 );

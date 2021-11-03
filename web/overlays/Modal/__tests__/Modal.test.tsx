@@ -35,7 +35,7 @@ const { MockModal } = createStories({
 
 describe('Modal', () => {
   it('passes a11y', async () => {
-    expect(await renderA11y(<MockModal />)).toHaveNoViolations();
+    expect(await renderA11y(<MockModal visible />)).toHaveNoViolations();
   });
 
   it('passes a11y when visible', async () => {

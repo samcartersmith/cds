@@ -44,6 +44,7 @@ export const components = [
   'RemoteImage',
   'Avatar',
   'Spinner',
+  'Alert',
   'Tooltip',
   'Modal',
   'ModalBody',

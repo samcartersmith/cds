@@ -1,12 +1,11 @@
-import { render, fireEvent } from '@testing-library/react-native';
-import { Modal as RNModal, Animated } from 'react-native';
+import { render, fireEvent, waitFor } from '@testing-library/react';
+import { renderA11y } from '@cbhq/jest-utils';
 import { createStories, CreateAlertProps } from ':cds-storybook/stories/Alert';
 
 import { Alert } from '../Alert';
 import { Button } from '../../buttons';
 import { PortalProvider } from '../PortalProvider';
-
-jest.useFakeTimers();
+import { Animated } from '../../animation/Animated';
 
 const { MockAlert } = createStories({
   Alert,
@@ -18,23 +17,33 @@ const animationParallelSpy = jest.spyOn(Animated, 'parallel');
 const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
 describe('Alert', () => {
-  it('renders React Native Modal', () => {
-    const result = render(<MockAlert />);
-
-    expect(result.UNSAFE_queryAllByType(RNModal)).toHaveLength(1);
+  it('passes a11y', async () => {
+    expect(await renderA11y(<MockAlert visible />)).toHaveNoViolations();
   });
 
-  it('show alert on press', () => {
-    const result = render(<MockAlert />);
+  it('passes a11y when visible', async () => {
+    expect(
+      await renderA11y(<MockAlert />, {
+        async afterRender({ container, getByRole }) {
+          fireEvent.click(container.querySelector('button') as Element);
 
-    expect(result.UNSAFE_queryByProps({ visible: false })).toBeTruthy();
+          return waitFor(() => getByRole('dialog'));
+        },
+      }),
+    ).toHaveNoViolations();
+  });
 
-    fireEvent.press(result.getByText('Show Alert'));
+  it('show alert on press', async () => {
+    const { getByRole, getByText } = render(<MockAlert />);
 
+    fireEvent.click(getByText('Show Alert'));
+
+    const alert = await waitFor(() => getByRole('dialog'));
     // in animation
     expect(animationParallelSpy).toHaveBeenCalled();
     expect(animationTimingSpy).toHaveBeenCalled();
-    expect(result.UNSAFE_queryByProps({ visible: true })).toBeTruthy();
+
+    expect(alert).toBeTruthy();
   });
 
   it('renders title', () => {
@@ -51,7 +60,7 @@ describe('Alert', () => {
     expect(getByText(body)).toBeTruthy();
   });
 
-  it('renders preferred action', async () => {
+  it('renders preferred action', () => {
     const onPreferredActionPress = jest.fn();
     const onRequestClose = jest.fn();
 
@@ -64,7 +73,7 @@ describe('Alert', () => {
       />,
     );
 
-    fireEvent.press(getByText('Save'));
+    fireEvent.click(getByText('Save'));
 
     expect(onPreferredActionPress).toHaveBeenCalledTimes(1);
     // out animation
@@ -79,7 +88,7 @@ describe('Alert', () => {
       <MockAlert visible dismissActionLabel="Cancel" onRequestClose={onRequestClose} />,
     );
 
-    fireEvent.press(getByText('Cancel'));
+    fireEvent.click(getByText('Cancel'));
 
     // out animation
     expect(animationParallelSpy).toHaveBeenCalled();

@@ -20,12 +20,11 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
           visible={visible}
           title="Alert title"
           body="Alert body type that can run over multiple lines, but should be kept short."
-          pictogramName="warning"
+          pictogram="warning"
           onRequestClose={toggleOff}
-          primaryActionTitle="Primary"
-          primaryActionOnPress={() => console.log('primary pressed')}
-          secondaryActionTitle={singleAction ? undefined : 'Secondary'}
-          secondaryActionOnPress={singleAction ? undefined : () => console.log('secondary pressed')}
+          preferredActionLabel="Primary"
+          onPreferredActionPress={() => console.log('primary pressed')}
+          dismissActionLabel={singleAction ? undefined : 'Cancel'}
         />
       </>
     );
@@ -42,12 +41,12 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
               visible
               title="Alert title"
               body="Alert body type that can run over multiple lines, but should be kept short."
-              pictogramName="warning"
+              pictogram="warning"
               onRequestClose={() => console.log('Alert dimissed!')}
-              primaryActionTitle="Primary"
-              primaryActionOnPress={() => console.log('primary pressed')}
-              secondaryActionTitle="Secondary"
-              secondaryActionOnPress={() => console.log('secondary pressed')}
+              preferredActionLabel="Save"
+              onPreferredActionPress={() => console.log('primary pressed')}
+              preferredActionVariant="negative"
+              dismissActionLabel="Cancel"
             />,
           ),
         [alert],
@@ -69,11 +68,10 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
     onRequestClose,
     title,
     body,
-    pictogramName,
-    primaryActionTitle,
-    primaryActionOnPress,
-    secondaryActionTitle,
-    secondaryActionOnPress,
+    pictogram,
+    preferredActionLabel,
+    onPreferredActionPress,
+    dismissActionLabel,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler();
 
@@ -81,18 +79,17 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
       <>
         <Button onPress={toggleOn}>Show Alert</Button>
         <Alert
-          testID="alert-mock"
           visible={externalVisible ?? visible}
           title={title ?? 'Alert title'}
           body={
             body ?? 'Alert body type that can run over multiple lines, but should be kept short.'
           }
-          pictogramName={pictogramName ?? 'warning'}
+          pictogram={pictogram ?? 'warning'}
           onRequestClose={onRequestClose ?? toggleOff}
-          primaryActionTitle={primaryActionTitle ?? 'Primary'}
-          primaryActionOnPress={primaryActionOnPress ?? (() => {})}
-          secondaryActionTitle={secondaryActionTitle}
-          secondaryActionOnPress={secondaryActionOnPress}
+          preferredActionLabel={preferredActionLabel ?? 'Save'}
+          onPreferredActionPress={onPreferredActionPress ?? (() => {})}
+          dismissActionLabel={dismissActionLabel}
+          disablePortal
         />
       </>
     );
@@ -100,6 +97,7 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
 
   return {
     BasicAlert,
+    SingleActionAlert: () => <BasicAlert singleAction />,
     PortalAlert,
     MockAlert,
   };

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, cloneElement, useRef, ReactElement } from 'react';
+import { useCallback, useMemo, cloneElement, ReactElement } from 'react';
 import { generateRandomId } from '@cbhq/cds-utils';
 import { usePortal } from './usePortal';
 import { AlertBaseProps, ModalBaseProps } from '../types';
@@ -6,25 +6,20 @@ import { AlertBaseProps, ModalBaseProps } from '../types';
 type OverlayElementProps = ModalBaseProps | AlertBaseProps;
 
 export const useOverlay = (idPrefix?: string) => {
-  const prevIndex = useRef(0);
   const { addNode, removeNode } = usePortal();
 
   const id = generateRandomId(idPrefix);
 
   const show = useCallback(
     (content: ReactElement<OverlayElementProps>, customId?: string): string => {
-      prevIndex.current += 1;
       const computedId = customId ?? id;
-      const nextIndex = prevIndex.current;
       const onRequestClose = () => {
         content.props.onRequestClose?.();
-
         removeNode(computedId);
       };
 
       const component = cloneElement(content, {
         key: computedId,
-        zIndex: nextIndex,
         onRequestClose,
       });
 

@@ -1,5 +1,10 @@
 import { css } from 'linaria';
 
+// static is a reserved word
+export const staticPosition = css`
+  position: static;
+`;
+
 export const relative = css`
   position: relative;
 `;

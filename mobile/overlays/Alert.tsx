@@ -17,13 +17,13 @@ export const Alert = memo(
       {
         title,
         body,
-        pictogramName,
+        pictogram,
         visible = false,
         onRequestClose,
-        primaryActionTitle,
-        primaryActionOnPress,
-        secondaryActionTitle,
-        secondaryActionOnPress,
+        preferredActionLabel,
+        onPreferredActionPress,
+        preferredActionVariant,
+        dismissActionLabel,
         testID,
       },
       ref,
@@ -54,14 +54,13 @@ export const Alert = memo(
       );
 
       const handlePrimaryActionPress = useCallback(() => {
-        primaryActionOnPress();
+        onPreferredActionPress();
         handleClose();
-      }, [primaryActionOnPress, handleClose]);
+      }, [onPreferredActionPress, handleClose]);
 
       const handleSecondaryActionPress = useCallback(() => {
-        secondaryActionOnPress?.();
         handleClose();
-      }, [secondaryActionOnPress, handleClose]);
+      }, [handleClose]);
 
       return (
         <RNModal
@@ -93,11 +92,11 @@ export const Alert = memo(
                 flexDirection="column"
                 alignItems="center"
               >
-                {!!pictogramName && (
+                {!!pictogram && (
                   <Box spacingBottom={2}>
                     {/* fixed size: 120x120 */}
                     <Pictogram
-                      name={pictogramName}
+                      name={pictogram}
                       dimension="96x96"
                       scaleMultiplier={1.25}
                       testID={testID && `${testID}-pictogram`}
@@ -115,16 +114,16 @@ export const Alert = memo(
                 justifyContent="space-between"
                 gap={2}
               >
-                {!!secondaryActionTitle && !!secondaryActionOnPress && (
+                {!!dismissActionLabel && (
                   <Box flexGrow={1} flexBasis={0}>
                     <Button onPress={handleSecondaryActionPress} block variant="secondary">
-                      {secondaryActionTitle}
+                      {dismissActionLabel}
                     </Button>
                   </Box>
                 )}
                 <Box flexGrow={1} flexBasis={0}>
-                  <Button onPress={handlePrimaryActionPress} block>
-                    {primaryActionTitle}
+                  <Button onPress={handlePrimaryActionPress} block variant={preferredActionVariant}>
+                    {preferredActionLabel}
                   </Button>
                 </Box>
               </HStack>

@@ -35,6 +35,7 @@ import { useModal } from '@cbhq/cds-web/overlays/useModal';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
+import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -92,6 +93,7 @@ const ReactLiveScope = {
   useFeatureFlags,
   useFeatureFlag,
   useFeatureFlagUpdater,
+  useAlert,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAnimation,

@@ -4,9 +4,13 @@ import React from 'react';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { Box } from '../../layout';
 
-export type ModalBodyProps = Pick<BoxBaseProps, 'flexDirection'>;
+export type ModalBodyProps = Pick<BoxBaseProps, 'flexDirection' | 'alignItems'>;
 
-export const ModalBody: React.FC<ModalBodyProps> = ({ children, flexDirection = 'column' }) => {
+export const ModalBody: React.FC<ModalBodyProps> = ({
+  children,
+  flexDirection = 'column',
+  ...props
+}) => {
   const { hideDividers } = useModalParent();
 
   return (
@@ -17,6 +21,7 @@ export const ModalBody: React.FC<ModalBodyProps> = ({ children, flexDirection = 
       flexGrow={1}
       overflow="auto"
       flexDirection={flexDirection}
+      {...props}
     >
       {children}
     </Box>

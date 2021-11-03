@@ -1,1 +1,1 @@
-export type Position = 'relative' | 'fixed' | 'absolute' | 'sticky';
+export type Position = 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky';

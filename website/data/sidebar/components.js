@@ -116,6 +116,7 @@ module.exports = {
       label: 'Overlays',
       collapsed: true,
       items: [
+        'components/overlays/Alert/alert',
         'components/overlays/Tooltip/tooltip',
         'components/overlays/Modal/modal',
         'components/overlays/ModalBody/modal-body',

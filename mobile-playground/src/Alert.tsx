@@ -11,7 +11,7 @@ import { CreateAlertProps, createStories } from ':cds-storybook/stories/Alert';
 import Example from './internal/Example';
 import ExamplesScreen from './internal/ExamplesScreen';
 
-const { BasicAlert, PortalAlert } = createStories({
+const { BasicAlert, SingleActionAlert, PortalAlert } = createStories({
   Alert,
   ThemeProvider,
   Button,
@@ -34,9 +34,9 @@ const AlertScreen = () => {
             visible
             title="Alert title"
             body="Alert body type that can run over multiple lines, but should be kept short."
-            pictogramName="warning"
-            primaryActionTitle="Primary"
-            primaryActionOnPress={handlePrimaryActionPress}
+            pictogram="warning"
+            preferredActionLabel="Primary"
+            onPreferredActionPress={handlePrimaryActionPress}
           />,
         ),
       [alert],
@@ -67,7 +67,7 @@ const AlertScreen = () => {
         <BasicAlert />
       </Example>
       <Example title="Single Action Alert">
-        <BasicAlert singleAction />
+        <SingleActionAlert />
       </Example>
       <Example title="Portal Alert">
         <PortalAlert />

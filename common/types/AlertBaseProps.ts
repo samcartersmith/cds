@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import { ButtonVariant } from './ButtonBaseProps';
 import { IllustrationPictogramNames } from './IllustrationNames';
 import { NoopFn } from './Helpers';
 import { PositionStyles } from './BoxBaseProps';
@@ -17,23 +18,24 @@ export type AlertBaseProps = {
   /**
    * Illustration pictogram name for alert
    */
-  pictogramName?: IllustrationPictogramNames;
+  pictogram?: IllustrationPictogramNames;
   /**
-   * Title of the primary action
+   * Label of the preferred action
    */
-  primaryActionTitle: string;
+  preferredActionLabel: string;
   /**
-   * Callback function fired when the primary action is pressed.
+   * Callback function fired when the preferred action is pressed
    */
-  primaryActionOnPress: NoopFn;
+  onPreferredActionPress: NoopFn;
   /**
-   * Title of the secondary action
+   * Button variant of the preferred action
+   * @default primary
    */
-  secondaryActionTitle?: string;
+  preferredActionVariant?: Extract<ButtonVariant, 'primary' | 'negative'>;
   /**
-   * Callback function fired when the secondary action is pressed.
+   * Label of the dimiss action
    */
-  secondaryActionOnPress?: NoopFn;
+  dismissActionLabel?: string;
 } & Pick<ModalBaseProps, 'onRequestClose' | 'visible'> &
   SharedProps &
   Pick<PositionStyles, 'zIndex'>;

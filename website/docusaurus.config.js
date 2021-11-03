@@ -60,19 +60,23 @@ module.exports = {
           items: [
             {
               label: 'Navigation',
-              href: 'navigation',
+              href: '/navigation',
             },
             {
               label: 'Inputs',
-              href: 'inputs',
+              href: '/inputs',
             },
             {
               label: 'Tables',
-              href: 'tables',
+              href: '/tables',
             },
             {
               label: 'Cards',
-              href: 'cards',
+              href: '/cards',
+            },
+            {
+              label: 'Alerts',
+              href: '/alerts',
             },
           ],
         },

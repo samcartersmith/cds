@@ -5,7 +5,7 @@ const { adopters } = require('./data/sidebar/adopters');
 const sectionsToExcludeByLabel = new Set();
 
 // Removes unfinished components from section in side bar
-const componentsToExcludeByLabel = new Set([]);
+const componentsToExcludeByLabel = new Set(['components/overlays/Alert/alert']);
 
 // removes unfinished categories from side bar
 const filteredComponents = components
@@ -23,7 +23,6 @@ const filteredComponents = components
 
 module.exports = {
   docs: [
-
     {
       type: 'category',
       label: 'Introduction',
@@ -85,11 +84,7 @@ module.exports = {
       type: 'category',
       label: 'Frontier (CDS Update)',
       collapsed: true,
-      items: [
-        'frontier/overview',
-        'frontier/typography',
-        'frontier/faq',
-      ],
+      items: ['frontier/overview', 'frontier/typography', 'frontier/faq'],
     },
     {
       type: 'category',

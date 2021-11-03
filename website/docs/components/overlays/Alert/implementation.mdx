@@ -1,0 +1,506 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/overlays/Alert](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/overlays/Alert.tsx)
+
+<ComponentDetails componentName="Alert" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Alert" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Alert" templateName="a11y" />
+
+## Props
+
+### accessibilityLabel <Badge variant="web" />
+
+Aria label for Modal
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Point to the id of the modal title
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role**
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-accessibilityLabelledBy" />
+
+### body
+
+Alert body/description
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="body"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-body" />
+
+### disablePortal <Badge variant="web" />
+
+Disable React portal integration
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-disablePortal" />
+
+### dismissActionLabel
+
+Label of the dimiss action
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="dismissActionLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-dismissActionLabel" />
+
+### onPreferredActionPress
+
+Callback function fired when the preferred action is pressed
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="onPreferredActionPress"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-onPreferredActionPress" />
+
+### onRequestClose
+
+Callback function fired when modal is closed.
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="onRequestClose"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-onRequestClose" />
+
+### pictogram
+
+Illustration pictogram name for alert
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="pictogram"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    '2fa',
+    'add',
+    'addCard',
+    'addPayment',
+    'addPhone',
+    'addToWatchlist',
+    'addWallet',
+    'addressBook',
+    'advancedTradingDesktop',
+    'alerts',
+    'applyForHigherLimits',
+    'authenticationApp',
+    'authenticator',
+    'authenticatorAlt',
+    'authenticatorProgress',
+    'barChart',
+    'bitcoinPizza',
+    'bitcoinWhitePaper',
+    'browser',
+    'browserTransaction',
+    'bundle',
+    'bundleGray',
+    'calendar',
+    'cardBlocked',
+    'cardDeclined',
+    'chart',
+    'chat',
+    'checkmark',
+    'clock',
+    'coinbaseOneAuthenticator',
+    'coinbaseOneChat',
+    'coinbaseOneEarnCoins',
+    'coinbaseOneFiat',
+    'coinbaseOneRefreshed',
+    'coinbaseOneShield',
+    'coinbaseOneTrusted',
+    'commerceCheckout',
+    'commerceInvoice',
+    'commerceNoPaymentsGray',
+    'contactInfo',
+    'creditCard',
+    'cryptoCard',
+    'defiEarnMoment',
+    'delegate',
+    'done',
+    'earnCoins',
+    'easyToUse',
+    'email',
+    'enableVoting',
+    'envelope',
+    'error',
+    'explore',
+    'exploreGray',
+    'fast',
+    'fiat',
+    'formDownload',
+    'gem',
+    'giftbox',
+    'googleAuthenticator',
+    'graphsGray',
+    'higherLimits',
+    'idVerification',
+    'identityCard',
+    'increaseLimits',
+    'institutions',
+    'internet',
+    'key',
+    'laptop',
+    'laptopCharts',
+    'laptopVideo',
+    'learn',
+    'listingFees',
+    'lock',
+    'lowFees',
+    'mobileCharts',
+    'mobileNotifcation',
+    'moneyEarn',
+    'moneySwift',
+    'moreThanBitcoin',
+    'multiPlatform',
+    'multipleAssets',
+    'newUserChecklistBuyCrypto',
+    'newUserChecklistCompleteAccount',
+    'newUserChecklistVerifyId',
+    'noAnnualFee',
+    'noNotificationsGray',
+    'noTransactions',
+    'noVisibility',
+    'noWiFi',
+    'notifications',
+    'orders',
+    'ordersGray',
+    'partialCoins',
+    'paypal',
+    'pendingApprovalGray',
+    'phone',
+    'pieChart',
+    'pizza',
+    'predictionMarkets',
+    'priceTracking',
+    'recurringPurchases',
+    'reviewAndAdd',
+    'safe',
+    'security',
+    'settings',
+    'settled',
+    'shield',
+    'smsAuthenticate',
+    'startToday',
+    'strongInfo',
+    'strongWarning',
+    'successPhone',
+    'support',
+    'takeQuiz',
+    'target',
+    'taxBeta',
+    'taxSeason',
+    'taxes',
+    'tokenBaskets',
+    'trading',
+    'transferSend',
+    'transistor',
+    'trusted',
+    'tryAgainLater',
+    'typeScript',
+    'ubiKey',
+    'usaProduct',
+    'waiting',
+    'waitingForConsensus',
+    'wallet',
+    'walletDeposit',
+    'walletExchange',
+    'walletWarning',
+    'warning',
+    'worldwide',
+  ]}
+  webOptions={[
+    '2fa',
+    'add',
+    'addCard',
+    'addPayment',
+    'addPhone',
+    'addToWatchlist',
+    'addWallet',
+    'addressBook',
+    'advancedTradingDesktop',
+    'alerts',
+    'applyForHigherLimits',
+    'authenticationApp',
+    'authenticator',
+    'authenticatorAlt',
+    'authenticatorProgress',
+    'barChart',
+    'bitcoinPizza',
+    'bitcoinWhitePaper',
+    'browser',
+    'browserTransaction',
+    'bundle',
+    'bundleGray',
+    'calendar',
+    'cardBlocked',
+    'cardDeclined',
+    'chart',
+    'chat',
+    'checkmark',
+    'clock',
+    'coinbaseOneAuthenticator',
+    'coinbaseOneChat',
+    'coinbaseOneEarnCoins',
+    'coinbaseOneFiat',
+    'coinbaseOneRefreshed',
+    'coinbaseOneShield',
+    'coinbaseOneTrusted',
+    'commerceCheckout',
+    'commerceInvoice',
+    'commerceNoPaymentsGray',
+    'contactInfo',
+    'creditCard',
+    'cryptoCard',
+    'defiEarnMoment',
+    'delegate',
+    'done',
+    'earnCoins',
+    'easyToUse',
+    'email',
+    'enableVoting',
+    'envelope',
+    'error',
+    'explore',
+    'exploreGray',
+    'fast',
+    'fiat',
+    'formDownload',
+    'gem',
+    'giftbox',
+    'googleAuthenticator',
+    'graphsGray',
+    'higherLimits',
+    'idVerification',
+    'identityCard',
+    'increaseLimits',
+    'institutions',
+    'internet',
+    'key',
+    'laptop',
+    'laptopCharts',
+    'laptopVideo',
+    'learn',
+    'listingFees',
+    'lock',
+    'lowFees',
+    'mobileCharts',
+    'mobileNotifcation',
+    'moneyEarn',
+    'moneySwift',
+    'moreThanBitcoin',
+    'multiPlatform',
+    'multipleAssets',
+    'newUserChecklistBuyCrypto',
+    'newUserChecklistCompleteAccount',
+    'newUserChecklistVerifyId',
+    'noAnnualFee',
+    'noNotificationsGray',
+    'noTransactions',
+    'noVisibility',
+    'noWiFi',
+    'notifications',
+    'orders',
+    'ordersGray',
+    'partialCoins',
+    'paypal',
+    'pendingApprovalGray',
+    'phone',
+    'pieChart',
+    'pizza',
+    'predictionMarkets',
+    'priceTracking',
+    'recurringPurchases',
+    'reviewAndAdd',
+    'safe',
+    'security',
+    'settings',
+    'settled',
+    'shield',
+    'smsAuthenticate',
+    'startToday',
+    'strongInfo',
+    'strongWarning',
+    'successPhone',
+    'support',
+    'takeQuiz',
+    'target',
+    'taxBeta',
+    'taxSeason',
+    'taxes',
+    'tokenBaskets',
+    'trading',
+    'transferSend',
+    'transistor',
+    'trusted',
+    'tryAgainLater',
+    'typeScript',
+    'ubiKey',
+    'usaProduct',
+    'waiting',
+    'waitingForConsensus',
+    'wallet',
+    'walletDeposit',
+    'walletExchange',
+    'walletWarning',
+    'warning',
+    'worldwide',
+  ]}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-pictogram" />
+
+### preferredActionLabel
+
+Label of the preferred action
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="preferredActionLabel"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-preferredActionLabel" />
+
+### preferredActionVariant
+
+Button variant of the preferred action
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="preferredActionVariant"
+  required={false}
+  defaultValue="primary"
+  mobileOptions={['negative', 'primary']}
+  webOptions={['negative', 'primary']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-preferredActionVariant" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-testID" />
+
+### title
+
+Alert title
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="title"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-title" />
+
+### visible
+
+Controls visibility of the Modal
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="visible"
+  required={true}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-visible" />
+
+### zIndex
+
+Adjust the z-index positioning layer.
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="zIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-zIndex" />
+
+<ComponentDetails componentName="Alert" templateName="outro" />

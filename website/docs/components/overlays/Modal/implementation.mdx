@@ -176,6 +176,38 @@ Component to render as the Modal content
 
 <ComponentDetails componentName="Modal" templateName="prop-children" />
 
+### dangerouslyDisableResponsiveness <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+Disable responsiveness so it maintains the same UI across different viewports.
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="dangerouslyDisableResponsiveness"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-dangerouslyDisableResponsiveness" />
+
+### dangerouslySetPosition <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+Set the position for the modal dialogue
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="dangerouslySetPosition"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['absolute', 'fixed', 'relative', 'static', 'sticky']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-dangerouslySetPosition" />
+
 ### dangerouslySetWidth <Badge variant="danger" order={1} />
 
 This is a migration escape hatch. It is not intended to be used normally.
@@ -265,6 +297,21 @@ Callback function fired when modal is closed.
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-onRequestClose" />
+
+### shouldCloseOnEscPress <Badge variant="web" />
+
+If pressing the esc key should close the modal
+
+<ApiDetails
+  componentName="Modal"
+  propertyName="shouldCloseOnEscPress"
+  required={false}
+  defaultValue="true"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Modal" templateName="prop-shouldCloseOnEscPress" />
 
 ### testID
 

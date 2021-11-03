@@ -1108,6 +1108,21 @@ export const Spinner = {
   ),
 };
 
+export const Alert = {
+  alert: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Alert/alert.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Alert/implementation.mdx'
+      ),
+  ),
+};
+
 export const Tooltip = {
   implementation: React.lazy(
     async () =>
