@@ -16,6 +16,13 @@ import { useLottieHandlers } from './useLottieHandlers';
 import { useLottieListeners } from './useLottieListeners';
 import { useLottieLoader } from './useLottieLoader';
 
+const defaultFilterSize = {
+  width: '200%',
+  height: '200%',
+  x: '-50%',
+  y: '-50%',
+};
+
 export const Lottie = memo(
   forwardRef(
     <Marker extends string, Source extends LottieSource<Marker>>(
@@ -26,12 +33,7 @@ export const Lottie = memo(
         onAnimationFinish,
         handlers,
         resizeMode = 'contain',
-        filterSize = {
-          width: '200%',
-          height: '200%',
-          x: '-50%',
-          y: '-50%',
-        },
+        filterSize = defaultFilterSize,
         ...otherProps
       }: LottieProps<Marker, Source>,
       // String wont work on literal unions, so use any here
