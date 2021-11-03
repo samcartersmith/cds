@@ -5,8 +5,15 @@ import {
   UseButtonSpacingParams,
 } from '@cbhq/cds-common/hooks/useButtonSpacing';
 import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export const useButtonSpacing = (params: UseButtonSpacingParams): ViewStyle => {
-  const spacing = useSharedButtonSpacing(params);
-  return useInternalSpacingStyles(spacing);
+  const hasFrontier = useFeatureFlag('frontierButton');
+  const frontierSpacing = useSharedButtonSpacing(params);
+  const nonFrontierSpacing = useInternalSpacingStyles({
+    horizontal: params.compact ? 2 : 3,
+    vertical: params.compact ? 0.5 : 1,
+  });
+  if (hasFrontier) return frontierSpacing;
+  return nonFrontierSpacing;
 };
