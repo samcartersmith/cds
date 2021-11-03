@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.4 (11/3/2021, 03:55 PM PST)
+
+#### 🚀 Updates
+
+- Alerts web. [#40312](https://github.cbhq.net/mono/repo/pull/40312), [CDS-1252](https://jira.coinbase-corp.com/browse/CDS-1252)
+
 ## 0.29.3 (11/3/2021, 08:53 AM PST)
 
 #### 🚀 Updates
