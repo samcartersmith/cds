@@ -22,6 +22,7 @@ export const IconButton = forwardRef(
     {
       accessibilityLabel,
       as,
+      compact = true,
       disabled = false,
       name,
       onPress,
@@ -36,7 +37,7 @@ export const IconButton = forwardRef(
       alignItems: 'center',
       justifyContent: 'center',
     });
-    const height = useInteractableHeight(true);
+    const height = useInteractableHeight(compact);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
     const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
 

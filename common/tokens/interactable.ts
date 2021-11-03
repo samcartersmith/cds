@@ -1,11 +1,13 @@
 import { SpectrumHueStep } from '../types';
 import { ScaleDensity } from '../types/Scale';
 
+/** @deprecated Please leverage common/tokens/interactableHeight moving forward */
 export const defaultHeight: Record<ScaleDensity, number> = {
   dense: 44,
   normal: 56,
 };
 
+/** @deprecated Please leverage common/tokens/interactableHeight moving forward */
 export const compactHeight: Record<ScaleDensity, number> = {
   dense: 36,
   normal: 40,

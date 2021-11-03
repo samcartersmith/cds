@@ -3,6 +3,8 @@ import { IconName } from './IconName';
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'foregroundMuted';
 export type IconButtonBaseProps = {
+  /** Reduce the inner padding within the button itself. */
+  compact?: boolean;
   /** Name of the icon, as defined in Figma. */
   name: IconName;
   /**

@@ -4,8 +4,10 @@ import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
+import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { StyleSheet, ActivityIndicator, View } from 'react-native';
 
+import { useFeatureFlag } from '@cbhq/cds-mobile/system/useFeatureFlag';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -31,8 +33,13 @@ export const Button = memo(function Button({
   const height = useInteractableHeight(compact);
   const borderRadius = useButtonBorderRadius(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-  const spacingStyles = useButtonSpacing(compact);
   const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
+  const hasFrontier = useFeatureFlag('frontierButton');
+  const iconSize = useButtonIconSize(compact);
+  const spacingStyles = useButtonSpacing({ compact, startIcon, endIcon });
+  const frontierButtonStyles = hasFrontier && (startIcon || endIcon) && styles.frontierButton;
+  const startIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierStartIcon];
+  const endIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierEndIcon];
   const buttonStyles = useMemo(
     () => [styles.button, { height }, spacingStyles],
     [height, spacingStyles],
@@ -53,24 +60,22 @@ export const Button = memo(function Button({
       style={pressableStyles}
       {...props}
     >
-      <View style={buttonStyles}>
+      <View style={[buttonStyles, frontierButtonStyles]}>
         {loading ? (
           <ActivityIndicator size="small" color={palette[color]} />
         ) : (
           <>
             {!!startIcon && (
-              <View style={startIconStyles}>
-                <Icon name={startIcon} size={compact ? 'xs' : 's'} color={color} />
+              <View style={[startIconStyles, startIconFrontierStyles]}>
+                <Icon name={startIcon} size={iconSize} color={color} />
               </View>
             )}
-
             <TextHeadline color={color} selectable="none" noWrap>
               {children}
             </TextHeadline>
-
             {!!endIcon && (
-              <View style={endIconStyles}>
-                <Icon name={endIcon} size={compact ? 'xs' : 's'} color={color} />
+              <View style={[endIconStyles, endIconFrontierStyles]}>
+                <Icon name={endIcon} size={iconSize} color={color} />
               </View>
             )}
           </>
@@ -95,5 +100,21 @@ export const styles = StyleSheet.create({
   block: {
     width: '100%',
     maxWidth: '100%',
+  },
+  // Frontier specific styles
+  frontierButton: {
+    justifyContent: 'space-between',
+  },
+  frontierIcon: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexGrow: 1,
+    flexShrink: 0,
+  },
+  frontierStartIcon: {
+    justifyContent: 'flex-start',
+  },
+  frontierEndIcon: {
+    justifyContent: 'flex-end',
   },
 });

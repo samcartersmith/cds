@@ -1,8 +1,10 @@
+import {
+  useButtonSpacing as useSharedButtonSpacing,
+  UseButtonSpacingParams,
+} from '@cbhq/cds-common/hooks/useButtonSpacing';
 import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
 
-export const useButtonSpacing = (compact?: boolean): string => {
-  return useInternalSpacingStyles({
-    horizontal: compact ? 2 : 3,
-    vertical: compact ? 1 : 2,
-  });
+export const useButtonSpacing = (params: UseButtonSpacingParams): string => {
+  const spacing = useSharedButtonSpacing(params);
+  return useInternalSpacingStyles(spacing);
 };

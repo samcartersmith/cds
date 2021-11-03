@@ -23,14 +23,18 @@ export const button = css`
 `;
 
 export const buttonCompact = css`
-  min-width: auto;
+  && {
+    min-width: auto;
+  }
 `;
 
 export const buttonBlock = css`
-  display: flex;
-  width: 100%;
-  max-width: 100%;
-  white-space: normal;
+  && {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
 `;
 
 export const iconButton = css`
@@ -67,4 +71,30 @@ export const visibilityHidden = css`
 
 export const positionRelative = css`
   position: relative;
+`;
+
+// Frontier specific styles
+export const frontierButton = css`
+  && {
+    justify-content: space-between;
+  }
+`;
+
+export const frontierIcon = `
+  display: flex;
+  flex-direction: row;
+  alignItems: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+`;
+
+export const frontierStartIcon = css`
+  ${frontierIcon};
+  justify-content: flex-start;
+  margin-right: ${spacing[1]};
+`;
+export const frontierEndIcon = css`
+  ${frontierIcon};
+  justify-content: flex-end;
+  margin-left: ${spacing[1]};
 `;

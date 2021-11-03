@@ -11,6 +11,7 @@ import { Pressable, PressableProps } from '../system/Pressable';
 export type IconButtonProps = IconButtonBaseProps & PressableProps;
 
 export const IconButton = memo(function IconButton({
+  compact = true,
   feedback = 'light',
   name,
   transparent,
@@ -18,7 +19,7 @@ export const IconButton = memo(function IconButton({
   ...props
 }: IconButtonProps) {
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-  const height = useInteractableHeight(true);
+  const height = useInteractableHeight(compact);
 
   return (
     <Pressable

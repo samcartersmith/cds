@@ -1,10 +1,12 @@
 import { ViewStyle } from 'react-native';
 
+import {
+  useButtonSpacing as useSharedButtonSpacing,
+  UseButtonSpacingParams,
+} from '@cbhq/cds-common/hooks/useButtonSpacing';
 import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
 
-export const useButtonSpacing = (compact?: boolean): ViewStyle => {
-  return useInternalSpacingStyles({
-    horizontal: compact ? 2 : 3,
-    vertical: compact ? 0.5 : 1,
-  });
+export const useButtonSpacing = (params: UseButtonSpacingParams): ViewStyle => {
+  const spacing = useSharedButtonSpacing(params);
+  return useInternalSpacingStyles(spacing);
 };

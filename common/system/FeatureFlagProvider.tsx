@@ -5,9 +5,9 @@ import {
   FeatureFlagDispatcherContext,
   FeatureFlagDispatcherAction,
   FeatureFlagsPartial,
-  defaultFeatureFlags,
   frontierFeaturesOn,
 } from './FeatureFlagContext';
+import { useFeatureFlags } from './useFeatureFlags';
 
 export type FeatureFlagProviderProps = FeatureFlagsPartial;
 
@@ -40,7 +40,8 @@ function featureFlagReducer(state: FeatureFlagsPartial, action: FeatureFlagDispa
 export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
   ({ children, ...featureFlagProps }) => {
     const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
-
+    // Deep merge if nesting FeatureFlagProviders
+    const defaultFeatureFlags = useFeatureFlags();
     const value = useMemo(
       () => ({
         // Fallbacks
@@ -52,7 +53,7 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
         // Updated imperatively
         ...featureFlagsState,
       }),
-      [featureFlagProps, featureFlagsState],
+      [defaultFeatureFlags, featureFlagProps, featureFlagsState],
     );
 
     return (

@@ -33,3 +33,14 @@ export type SpacingProps = {
   /** Apply inner spacing on the top and bottom sides. */
   spacingVertical?: SpacingScale;
 };
+
+export type InternalSpacingProps = {
+  all?: SpacingScale;
+  top?: SpacingScale;
+  bottom?: SpacingScale;
+  start?: SpacingScale;
+  end?: SpacingScale;
+  horizontal?: SpacingScale;
+  vertical?: SpacingScale;
+  isInverted?: boolean;
+};

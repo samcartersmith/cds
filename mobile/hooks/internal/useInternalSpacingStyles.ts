@@ -1,20 +1,11 @@
 import { useMemo } from 'react';
 
-import { SpacingScale, useScale } from '@cbhq/cds-common';
+import { SpacingScale, useScale, InternalSpacingProps } from '@cbhq/cds-common';
 import { I18nManager, ViewStyle } from 'react-native';
 
 import * as scales from '../../styles/scale';
 
-export type UseInternalSpacingStylesProps = {
-  all?: SpacingScale;
-  top?: SpacingScale;
-  bottom?: SpacingScale;
-  start?: SpacingScale;
-  end?: SpacingScale;
-  horizontal?: SpacingScale;
-  vertical?: SpacingScale;
-  isInverted?: boolean;
-};
+export type UseInternalSpacingStylesProps = InternalSpacingProps;
 
 export const useInternalSpacingStyles = ({
   all,
