@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.3 (11/3/2021, 08:53 AM PST)
+
+#### 🚀 Updates
+
+- Frontier button height and spacing updates. [#40481](https://github.cbhq.net/mono/repo/pull/40481), [CDS-1596](https://jira.coinbase-corp.com/browse/CDS-1596)
+- Spread props into core Tables components. [#40131](https://github.cbhq.net/mono/repo/pull/40131)
+
+#### 🐞 Fixes
+
+- Lottie status animation wasn't able to handle a status change. [#40431](https://github.cbhq.net/mono/repo/pull/40431)
+
 ## 0.29.2 (11/2/2021, 10:28 AM PST)
 
 #### 🚀 Updates
