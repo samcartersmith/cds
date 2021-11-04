@@ -1,5 +1,6 @@
 import { css } from 'linaria';
 
+import { Typography } from '@cbhq/cds-common';
 import { CSSMap } from '../types';
 import { TextProps } from '../typography/TextProps';
 
@@ -86,7 +87,8 @@ const noWrap = css`
   white-space: nowrap;
 `;
 
-export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
+export const textItemsThatHaveTransform = new Set<string>(['label1', 'label2', 'caption']);
+export const getTypographyStyles = (name: Typography, props: Omit<TextProps, 'children'>) => {
   return [
     transition,
     props.align && textAlign[props.align],
@@ -97,6 +99,6 @@ export const getTypographyStyles = (props: Omit<TextProps, 'children'>) => {
     props.underline && underline,
     props.noWrap && noWrap,
     props.overflow && overflow[props.overflow],
-    props.transform && transform[props.transform],
+    props.transform && !textItemsThatHaveTransform.has(name) && transform[props.transform],
   ];
 };

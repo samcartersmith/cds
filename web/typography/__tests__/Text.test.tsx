@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
 
+import { textItemsThatHaveTransform } from '@cbhq/cds-web/styles/typography';
 import { DynamicElement } from '../../types';
 import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../TextProps';
 import {
@@ -161,7 +162,10 @@ describe('Text', () => {
 
   describe('transform', () => {
     textTestRunner((TextComponent) => {
-      expectClassName(TextComponent, 'transform', ['uppercase', 'lowercase', 'capitalize']);
+      const name = TextComponent.displayName?.replace('Text', '').toLowerCase();
+      if (!textItemsThatHaveTransform.has(name as string)) {
+        expectClassName(TextComponent, 'transform', ['uppercase', 'lowercase', 'capitalize']);
+      }
     });
   });
 });

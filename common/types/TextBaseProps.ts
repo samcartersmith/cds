@@ -48,7 +48,7 @@ export type TextBaseProps = {
    */
   noWrap?: boolean;
   /**
-   * Transform text to all uppercase, all lowercase, or capitalized.
+   * Transform text to all uppercase, all lowercase, or capitalized. This is not available for label1, label2 and caption.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) | [React Native Docs](https://reactnative.dev/docs/text-style-props#texttransform)
    */
   transform?: 'uppercase' | 'lowercase' | 'capitalize';

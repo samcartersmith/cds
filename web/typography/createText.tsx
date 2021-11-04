@@ -89,7 +89,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: b
         inherit ? textInherit : typographyStyles,
         color === 'currentColor' ? currentColor : foregroundStyles[color],
         disabled && disabledState,
-        ...getTypographyStyles({
+        ...getTypographyStyles(name, {
           align,
           display,
           tabularNumbers,
