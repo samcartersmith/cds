@@ -10,3 +10,4 @@ export * from './nux';
 export * from './splash';
 export * from './tradeStatus';
 export * from './watchListStar';
+export * from './giftingZoom';
