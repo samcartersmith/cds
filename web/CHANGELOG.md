@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.5 (11/5/2021, 10:52 AM PST)
+
+#### 🐞 Fixes
+
+- Transform prop does not work properly on Typography component. [#40192](https://github.cbhq.net/mono/repo/pull/40192), [CDS-1680](https://jira.coinbase-corp.com/browse/CDS-1680)
+
 ## 0.29.4 (11/3/2021, 03:55 PM PST)
 
 #### 🚀 Updates

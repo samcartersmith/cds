@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.20 (11/5/2021, 10:52 AM PST)
+
+#### 🚀 Updates
+
+- Added giftingZoom lottie. [#40709](https://github.cbhq.net/mono/repo/pull/40709)
+
 ## 0.2.19 (10/14/2021, 09:56 AM PST)
 
 #### 🐞 Fixes
