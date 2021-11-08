@@ -151,6 +151,7 @@ module.exports = {
         'components/tables/Table/table',
         'components/tables/TableBody/table-body',
         'components/tables/TableCell/table-cell',
+        'components/tables/TableCellFallback/table-cell-fallback',
         'components/tables/TableFooter/table-footer',
         'components/tables/TableHeader/table-header',
         'components/tables/TableRow/table-row',

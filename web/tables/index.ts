@@ -4,3 +4,4 @@ export * from './TableBody';
 export * from './TableFooter';
 export * from './TableRow';
 export * from './TableCell';
+export * from './TableCellFallback';

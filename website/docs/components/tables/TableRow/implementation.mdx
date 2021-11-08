@@ -54,8 +54,17 @@ Children are required, and should always include TableCell | TableCell[].
   defaultValue="undefined"
   mobileOptions={[]}
   webOptions={[
-    'ReactElement<TableCellProps, string | JSXElementConstructor<any>>',
-    'ReactElement<TableCellProps, string | JSXElementConstructor<any>>[]',
+    'ReactElement<TableCellProps | TableCellFallbackProps, string | JSXElementConstructor<any>>',
+    'ReactElement<TableCellProps | TableCellFallbackProps[], string | JSXElementConstructor<any>>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactNode[]',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
 />
 

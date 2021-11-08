@@ -1,5 +1,6 @@
-import { ReactElement, MouseEventHandler, MutableRefObject } from 'react';
+import { ReactElement, ReactNode, MouseEventHandler, MutableRefObject } from 'react';
 import { PaletteBackground, PaletteForeground, SharedProps } from '@cbhq/cds-common';
+import { TableCellFallbackProps } from './tableCellFallbackTypes';
 import { TableCellProps } from './tableCellTypes';
 
 export type TableRowRef = MutableRefObject<HTMLTableRowElement | null>;
@@ -8,7 +9,12 @@ export type TableRowProps = {
    * Children are required, and should always include TableCell | TableCell[].
    * @default undefined
    */
-  children: ReactElement<TableCellProps> | ReactElement<TableCellProps>[];
+  children: NonNullable<
+    | ReactNode
+    | ReactNode[]
+    | ReactElement<TableCellProps | TableCellFallbackProps>
+    | ReactElement<TableCellProps | TableCellFallbackProps[]>
+  >;
   /**
    * Should this row span the entire width of the table?
    * Useful for treating a row as a Control Strip.

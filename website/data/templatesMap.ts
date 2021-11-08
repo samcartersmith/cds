@@ -1579,6 +1579,27 @@ export const TableCell = {
   ),
 };
 
+export const TableCellFallback = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableCellFallback/implementation.mdx'
+      ),
+  ),
+  'table-cell-fallback': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableCellFallback/table-cell-fallback.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableCellFallback/usage.mdx'
+      ),
+  ),
+};
+
 export const TableFooter = {
   implementation: React.lazy(
     async () =>

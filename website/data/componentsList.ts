@@ -61,6 +61,7 @@ export const components = [
   'Table',
   'TableBody',
   'TableCell',
+  'TableCellFallback',
   'TableFooter',
   'TableHeader',
   'TableRow',
