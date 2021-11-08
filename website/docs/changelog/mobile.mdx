@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.0 (11/8/2021, 02:07 PM PST)
+
+#### 💥 Breaking
+
+- Remove SpacingProps in Cell and use innerSpacing + outerSpacing. [#41057](https://github.cbhq.net/mono/repo/pull/41057)
+
+#### 🐞 Fixes
+
+- **[button]** Frontier spacing conversion. [#40711](https://github.cbhq.net/mono/repo/pull/40711)
+
+#### 📘 Misc
+
+- Alert fixes. [#40971](https://github.cbhq.net/mono/repo/pull/40971)
+
 ## 0.31.5 (11/3/2021, 03:55 PM PST)
 
 #### 🚀 Updates
