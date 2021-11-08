@@ -9,7 +9,8 @@ import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export const useButtonSpacing = (params: UseButtonSpacingParams): ViewStyle => {
   const hasFrontier = useFeatureFlag('frontierButton');
-  const frontierSpacing = useSharedButtonSpacing(params);
+  const frontierSpacingParams = useSharedButtonSpacing(params);
+  const frontierSpacing = useInternalSpacingStyles(frontierSpacingParams);
   const nonFrontierSpacing = useInternalSpacingStyles({
     horizontal: params.compact ? 2 : 3,
     vertical: params.compact ? 0.5 : 1,
