@@ -16,11 +16,17 @@ import { HStack, Box } from '../layout';
 import { Pictogram } from '../illustrations';
 import { Button } from '../buttons';
 import { isSSR } from '../utils/browser';
+import { alertOverModalClassName } from './alertStyles';
 
-export type AlertProps = AlertBaseProps &
+export type AlertProps = {
+  /**
+   * Indicating if Alert is stacked on top of Modal
+   */
+  stacked?: boolean;
+} & AlertBaseProps &
   Pick<ModalProps, 'disablePortal' | 'accessibilityLabel' | 'accessibilityLabelledBy'>;
 
-export const Alert: React.FC<AlertProps> = memo(
+export const Alert = memo(
   forwardRef<AlertRefBaseProps, React.PropsWithChildren<AlertProps>>(
     (
       {
@@ -33,8 +39,10 @@ export const Alert: React.FC<AlertProps> = memo(
         onPreferredActionPress,
         preferredActionVariant,
         dismissActionLabel,
+        onDismissActionPress,
         disablePortal,
         testID,
+        stacked,
         ...props
       },
       ref,
@@ -49,9 +57,13 @@ export const Alert: React.FC<AlertProps> = memo(
         [onPreferredActionPress],
       );
 
-      const handleDimissActionPress = useCallback((event: MouseEvent<HTMLElement>) => {
-        modalRef.current?.onRequestClose(event);
-      }, []);
+      const handleDimissActionPress = useCallback(
+        (event: MouseEvent<HTMLElement>) => {
+          onDismissActionPress?.();
+          modalRef.current?.onRequestClose(event);
+        },
+        [onDismissActionPress],
+      );
 
       useImperativeHandle(
         ref,
@@ -71,8 +83,9 @@ export const Alert: React.FC<AlertProps> = memo(
           disableOverlayPress
           dangerouslySetWidth={318} // from design
           dangerouslyDisableResponsiveness
-          dangerouslySetPosition="static" // center alert vertically
+          dangerouslySetPosition={!stacked ? 'static' : undefined} // center alert vertically
           shouldCloseOnEscPress={!!dismissActionLabel} // disable esc close when no Dimiss action
+          dangerouslySetClassName={stacked ? alertOverModalClassName : undefined}
           testID={testID}
           {...props}
         >

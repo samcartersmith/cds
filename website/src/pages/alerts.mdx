@@ -18,8 +18,9 @@ function DefaultAlertExample() {
           visible={visible}
           onRequestClose={toggleOff}
           preferredActionLabel="Primary"
-          onPreferredActionPress={() => console.log('primary pressed')}
+          onPreferredActionPress={() => console.log('preferred pressed')}
           dismissActionLabel="Cancel"
+          onDismissActionPress={() => console.log('dismiss pressed')}
         />
       </PortalProvider>
     </ExampleWithThemeToggles>
@@ -35,7 +36,7 @@ function PortalAlertExample() {
   function PortalAlert() {
     const alert = useAlert();
   
-    const showAlert = () => alert.show(
+    const showAlert = () => alert.open(
       <Alert
         title="Alert title"
         body="Alert body type that can run over multiple lines, but should be kept short."
@@ -60,7 +61,7 @@ function PortalAlertExample() {
 }
 ```
 
-## Alert on Modal
+## Alert over Modal
 Alert displays on top of a Modal.
 
 ```jsx live
@@ -70,7 +71,7 @@ function AlertOnModalExample() {
     const alert = useAlert();
   
     const showAlert = () =>
-      alert.show(
+      alert.open(
         <Alert
           visible
           title="Are you sure?"
@@ -80,6 +81,7 @@ function AlertOnModalExample() {
           onPreferredActionPress={() => closeModal()}
           preferredActionVariant="negative"
           dismissActionLabel="Cancel"
+          stacked
         />,
       );
   

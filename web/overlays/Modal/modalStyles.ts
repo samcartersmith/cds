@@ -12,10 +12,12 @@ const breakpoints = {
   phone: 414,
 };
 
-const devices = {
+export const devices = {
   phone: `max-width: ${breakpoints.phone}px`,
   tablet: `max-width: ${breakpoints.tablet}px`,
 };
+
+export const modalTopSpacing = spacing[10];
 
 // these properties will be animated
 const modalAnimationStyles = {
@@ -32,9 +34,9 @@ export const modalDefault = css`
   &.${modalStaticClassName} {
     ${modalAnimationStyles}
     position: absolute;
-    top: ${spacing[10]};
+    top: ${modalTopSpacing};
     width: 612px;
-    max-height: calc(100vh - ${spacing[10]}*2);
+    max-height: calc(100vh - ${modalTopSpacing}*2);
     border-radius: ${borderRadius.standard}px;
   }
 `;

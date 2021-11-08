@@ -1,14 +1,15 @@
 import { useMemo } from 'react';
 import { useOverlay } from './useOverlay';
 
+// TODO: change the API to open/close instead of openModal/closeModal
 export const useModal = () => {
-  const { show, hide } = useOverlay('modal_');
+  const { open, close } = useOverlay('modal_');
 
   return useMemo(
     () => ({
-      openModal: show,
-      closeModal: hide,
+      openModal: open,
+      closeModal: close,
     }),
-    [show, hide],
+    [open, close],
   );
 };

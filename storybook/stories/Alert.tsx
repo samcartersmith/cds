@@ -36,7 +36,7 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
 
       const showAlert = useCallback(
         () =>
-          alert.show(
+          alert.open(
             <Alert
               visible
               title="Alert title"

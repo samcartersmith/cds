@@ -14,7 +14,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { Position } from '@cbhq/cds-common';
 
-import { Box, VStack } from '../../layout';
+import { Box, VStack, BoxProps } from '../../layout';
 import { Overlay } from '../Overlay/Overlay';
 import {
   modalDefaultClassName,
@@ -62,7 +62,8 @@ export type ModalProps = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetPosition?: Position;
-} & ModalBaseProps;
+} & ModalBaseProps &
+  Pick<BoxProps, 'dangerouslySetClassName'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
@@ -79,6 +80,7 @@ export const Modal = memo(
       dangerouslyDisableResponsiveness = false,
       dangerouslySetPosition,
       shouldCloseOnEscPress = true,
+      dangerouslySetClassName,
     } = props;
 
     const blockScroll = useScrollBlocker();
@@ -211,6 +213,7 @@ export const Modal = memo(
         aria-labelledby={accessibilityLabelledBy}
         aria-label={accessibilityLabel}
         zIndex={customZIndex ?? zIndex.overlays.modal}
+        dangerouslySetClassName={dangerouslySetClassName}
       >
         <Overlay
           onPress={disableOverlayPress ? undefined : handleClose}

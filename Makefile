@@ -47,6 +47,7 @@ build.packages:
 	 make build.mobile
 	 make build.utils
 	 make build.web
+	 make build.css
 
 .PHONY: clean
 clean:

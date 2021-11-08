@@ -66,6 +66,42 @@ Alert body/description
 
 <ComponentDetails componentName="Alert" templateName="prop-body" />
 
+### children <Badge variant="danger" order={1} />
+
+Should only be used internally to support overlay component over alert on mobile
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-children" />
+
 ### disablePortal <Badge variant="web" />
 
 Disable React portal integration
@@ -95,6 +131,21 @@ Label of the dimiss action
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-dismissActionLabel" />
+
+### onDismissActionPress
+
+Callback function fired when the dismiss action is pressed
+
+<ApiDetails
+  componentName="Alert"
+  propertyName="onDismissActionPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="Alert" templateName="prop-onDismissActionPress" />
 
 ### onPreferredActionPress
 

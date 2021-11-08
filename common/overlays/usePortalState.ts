@@ -1,6 +1,17 @@
-import { ReactElement, useCallback, useMemo, useState } from 'react';
+import { ReactElement, useCallback, useMemo, useState, RefAttributes } from 'react';
+import type {
+  AlertBaseProps,
+  ModalBaseProps,
+  ModalRefBaseProps,
+  AlertRefBaseProps,
+} from '../types';
 
-export type PortalNode = { id: string; element: ReactElement };
+export type PortalNode = {
+  id: string;
+  element: ReactElement<
+    (ModalBaseProps | AlertBaseProps) & RefAttributes<ModalRefBaseProps | AlertRefBaseProps>
+  >;
+};
 
 export const usePortalState = () => {
   const [nodes, setNodes] = useState<PortalNode[]>([]);

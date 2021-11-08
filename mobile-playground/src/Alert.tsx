@@ -29,7 +29,7 @@ const AlertScreen = () => {
 
     const showAlert = useCallback(
       () =>
-        alert.show(
+        alert.open(
           <Alert
             visible
             title="Alert title"
@@ -72,7 +72,7 @@ const AlertScreen = () => {
       <Example title="Portal Alert">
         <PortalAlert />
       </Example>
-      <Example title="Alert on Modal (Multiple Modals)">
+      <Example title="Alert over Modal (Multiple Modals)">
         <PortalProvider>
           <AlertOnModal />
         </PortalProvider>

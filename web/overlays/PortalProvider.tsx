@@ -1,21 +1,26 @@
-import React, { useEffect, memo } from 'react';
+import React, { useEffect, memo, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
 import { usePortalState, PortalNode } from '@cbhq/cds-common/overlays/usePortalState';
 import { ThemeProvider } from '../system';
 
-const portalRoot = document?.createElement('div');
 export const portalRootId = 'portalRoot';
 export const modalContainerId = 'modalsContainer';
 export const alertContainerId = 'alertsContainer';
 
 const PortalHost = memo(() => {
+  const portalRoot = useMemo(
+    // prevent duplicate portal root
+    () => document.createElement('div'),
+    [],
+  );
+
   useEffect(() => {
     const target = document?.body;
 
-    // prevent duplicate portal root
-    if (document?.getElementById(portalRootId)) return undefined;
+    // prevent duplicate host
+    if (document?.getElementById(portalRootId) || !portalRoot) return undefined;
 
     portalRoot.id = portalRootId;
     portalRoot.style.zIndex = String(zIndex.overlays.portal);
@@ -33,7 +38,7 @@ const PortalHost = memo(() => {
       // Remove element from dom
       target?.removeChild(portalRoot);
     };
-  }, []);
+  }, [portalRoot]);
 
   // prevent duplicate host
   if (document?.getElementById(portalRootId)) return null;
@@ -52,7 +57,7 @@ export const PortalProvider: React.FC = ({ children }) => {
 
   return (
     <PortalContext.Provider value={portalState}>
-      <PortalHost />
+      {!!window?.document && <PortalHost />}
       {portalState.nodes.map((node: PortalNode) => node.element)}
       {children}
     </PortalContext.Provider>

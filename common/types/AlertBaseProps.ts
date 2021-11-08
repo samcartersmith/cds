@@ -1,4 +1,4 @@
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 import { ButtonVariant } from './ButtonBaseProps';
 import { IllustrationPictogramNames } from './IllustrationNames';
 import { NoopFn } from './Helpers';
@@ -36,6 +36,15 @@ export type AlertBaseProps = {
    * Label of the dimiss action
    */
   dismissActionLabel?: string;
+  /**
+   * Callback function fired when the dismiss action is pressed
+   */
+  onDismissActionPress?: NoopFn;
+  /**
+   * Should only be used internally to support overlay component over alert on mobile
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  children?: ReactNode;
 } & Pick<ModalBaseProps, 'onRequestClose' | 'visible'> &
   SharedProps &
   Pick<PositionStyles, 'zIndex'>;

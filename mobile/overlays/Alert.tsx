@@ -24,6 +24,7 @@ export const Alert = memo(
         onPreferredActionPress,
         preferredActionVariant,
         dismissActionLabel,
+        onDismissActionPress,
         testID,
       },
       ref,
@@ -59,8 +60,9 @@ export const Alert = memo(
       }, [onPreferredActionPress, handleClose]);
 
       const handleSecondaryActionPress = useCallback(() => {
+        onDismissActionPress?.();
         handleClose();
-      }, [handleClose]);
+      }, [onDismissActionPress, handleClose]);
 
       return (
         <RNModal
