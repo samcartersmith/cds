@@ -10,6 +10,7 @@ import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useR
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import Screen from './Screen';
 
 const ExamplesScreen: React.FC = ({ children }) => {
@@ -45,7 +46,7 @@ const ExamplesScreen: React.FC = ({ children }) => {
       <Screen>
         <ThemeProvider scale="xSmall">
           <VStack>
-            <VStack gap={1} spacingVertical={3} spacingHorizontal={2} background>
+            <VStack gap={1} spacingVertical={3} spacingHorizontal={gutter} background>
               <Switch onChange={toggleDark} checked={isDarkEnabled}>
                 Dark Spectrum
               </Switch>

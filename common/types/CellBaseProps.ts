@@ -1,22 +1,37 @@
+import { BorderRadius } from './BorderRadius';
 import { IconName } from './IconName';
 import { IllustrationPictogramNames } from './IllustrationNames';
 import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
 import { SpacingProps, OffsetProps } from './SpacingProps';
+import { SpacingScale } from './SpacingScale';
+
+export type CellSpacing = SpacingProps & OffsetProps;
+export type CellSpacingConfig = Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'>;
 
 export type CellCommonProps = {
+  borderRadius?: BorderRadius;
   /** Apply a fixed width to the detail (end). */
   detailWidth?: number | string;
   /** Is the cell disabled? Will apply opacity and disable interaction. */
   disabled?: boolean;
   /** Which piece of content has the highest priority in regards to text truncation, growing, and shrinking. */
   priority?: 'start' | 'middle' | 'end';
-  /** Reduce horizontal spacing for tighter layout requirements. */
+  /** Reduce horizontal spacing for tighter layout requirements.
+   * @deprecated Please use innerSpacing={{ spacingHorizontal: xyz }} moving forward
+   */
   reduceHorizontalSpacing?: boolean;
+  /** Reduce horizontal offset if parent container already has spacing.
+   * @deprecated Please use outerSpacing={{ offsetHorizontal: xyz }} moving forward
+   */
+  offsetHorizontal?: SpacingScale;
   /** Is the cell selected? Will apply a background and selected accessory. */
   selected?: boolean;
-} & SharedProps &
-  Pick<OffsetProps, 'offsetHorizontal'>;
+  /** The spacing to use on the parent wrapper of Cell */
+  outerSpacing?: CellSpacing;
+  /** The spacing to use on the inner content of Cell */
+  innerSpacing?: CellSpacing;
+} & SharedProps;
 
 export type CellBaseProps = {
   accessory?: React.ReactElement<CellAccessoryProps>;
@@ -27,8 +42,7 @@ export type CellBaseProps = {
   media?: React.ReactElement;
   minHeight?: number;
   shouldOverflow?: boolean;
-} & CellCommonProps &
-  SpacingProps;
+} & CellCommonProps;
 
 export type CellAccessoryType = 'arrow' | 'more' | 'selected';
 

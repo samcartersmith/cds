@@ -9,9 +9,10 @@ type ExampleProps = {
   children: React.ReactNode;
   inline?: boolean;
   title?: string;
+  titleSpacing?: SpacingProps;
 } & SpacingProps;
 
-const Example = ({ children, inline, title, ...props }: ExampleProps) => {
+const Example = ({ children, inline, title, titleSpacing, ...props }: ExampleProps) => {
   const childStyles = useMemo(() => {
     const style: ViewStyle = { paddingTop: 12 };
 
@@ -25,7 +26,7 @@ const Example = ({ children, inline, title, ...props }: ExampleProps) => {
   const content = (
     <>
       <Box spacing={2} spacingBottom={3} background {...props}>
-        {!!title && <TextTitle3>{title}</TextTitle3>}
+        {!!title && <TextTitle3 {...titleSpacing}>{title}</TextTitle3>}
 
         {typeof children === 'function'
           ? children()

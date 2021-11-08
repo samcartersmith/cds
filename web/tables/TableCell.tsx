@@ -75,7 +75,6 @@ export const TableCell = memo(
       >
         <Cell
           onPress={onPress}
-          spacing={0}
           alignItems={alignItems}
           media={start}
           accessory={end}

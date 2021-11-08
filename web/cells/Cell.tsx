@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import type { CellBaseProps } from '@cbhq/cds-common/types';
+import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import { css, cx } from 'linaria';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
@@ -59,6 +60,7 @@ export const Cell = memo(function Cell({
   accessory,
   as = 'div',
   alignItems = 'center',
+  borderRadius = 'standard',
   children,
   detail,
   detailWidth,
@@ -66,10 +68,8 @@ export const Cell = memo(function Cell({
   intermediary,
   media,
   minHeight,
-  offsetHorizontal,
   onPress,
   priority,
-  reduceHorizontalSpacing,
   selected,
   testID,
   to,
@@ -80,9 +80,11 @@ export const Cell = memo(function Cell({
    *
    * */
   shouldOverflow,
-  ...props
+  /** Props for useCellSpacing */
+  ...spacingProps
 }: CellProps) {
-  const offsetClassName = useOffsetStyles({ offsetHorizontal: 2 });
+  const spacing = useCellSpacing(spacingProps);
+  const offsetClassName = useOffsetStyles({ offsetHorizontal: spacing.inner.offsetHorizontal });
   const linkable = Boolean(onPress ?? to);
   const maybeTruncateClassName = cx(
     cellStaticClassName,
@@ -94,15 +96,13 @@ export const Cell = memo(function Cell({
     <HStack
       flexGrow={1}
       background={selected ? 'backgroundAlternate' : undefined}
-      borderRadius="standard"
+      borderRadius={borderRadius}
       alignItems={alignItems}
       gap={2}
-      spacingHorizontal={reduceHorizontalSpacing ? 1 : 2}
-      spacingVertical={1}
       width="100%"
       testID={testID}
-      dangerouslySetClassName={linkable ? undefined : offsetClassName}
-      {...props}
+      {...spacing.inner}
+      offsetHorizontal={linkable ? undefined : spacing.inner.offsetHorizontal}
     >
       {media && (
         <Box flexGrow={0} flexShrink={0}>
@@ -159,7 +159,7 @@ export const Cell = memo(function Cell({
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
-        borderRadius="standard"
+        borderRadius={borderRadius}
         disabled={disabled}
         onPress={onPress}
         to={to}
@@ -171,15 +171,7 @@ export const Cell = memo(function Cell({
   }
 
   return (
-    <Box
-      as={as}
-      alignItems="stretch"
-      width="100%"
-      minHeight={minHeight}
-      offsetHorizontal={offsetHorizontal}
-      spacingVertical={1}
-      spacingHorizontal={3}
-    >
+    <Box as={as} alignItems="stretch" width="100%" minHeight={minHeight} {...spacing.outer}>
       {content}
     </Box>
   );

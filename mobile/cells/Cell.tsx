@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
+import { ViewProps } from 'react-native';
 
 import { CellBaseProps } from '@cbhq/cds-common';
-import { ViewProps } from 'react-native';
+import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';
@@ -18,6 +19,7 @@ export type CellProps = CellBaseProps & CellSharedProps;
 export const Cell = memo(function Cell({
   accessory,
   alignItems = 'center',
+  borderRadius = 'standard',
   children,
   detail,
   detailWidth,
@@ -25,31 +27,29 @@ export const Cell = memo(function Cell({
   intermediary,
   media,
   minHeight,
-  offsetHorizontal,
   onLayout,
   onPress,
   priority,
-  reduceHorizontalSpacing,
   selected,
   testID,
-  ...props
+  /** Props for useCellSpacing */
+  ...spacingProps
 }: CellProps) {
-  const offsetStyle = useOffsetStyles({ offsetHorizontal: 2 });
+  const spacing = useCellSpacing(spacingProps);
+  const offsetStyle = useOffsetStyles({ offsetHorizontal: spacing.inner.offsetHorizontal });
 
   let content = (
     <HStack
       background={selected ? 'backgroundAlternate' : undefined}
-      borderRadius="standard"
+      borderRadius={borderRadius}
       alignItems={alignItems}
       flexGrow={1}
       gap={2}
-      spacingHorizontal={reduceHorizontalSpacing ? 1 : 2}
-      spacingVertical={1}
       width="100%"
       renderToHardwareTextureAndroid={disabled}
       testID={testID}
-      dangerouslySetStyle={onPress ? undefined : offsetStyle}
-      {...props}
+      {...spacing.inner}
+      offsetHorizontal={onPress ? undefined : spacing.inner.offsetHorizontal}
     >
       {!!media && (
         <Box flexGrow={0} flexShrink={0}>
@@ -94,7 +94,7 @@ export const Cell = memo(function Cell({
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
-        borderRadius="standard"
+        borderRadius={borderRadius}
         block
         disabled={disabled}
         onPress={onPress}
@@ -112,10 +112,8 @@ export const Cell = memo(function Cell({
       flexDirection="row"
       width="100%"
       minHeight={minHeight}
-      offsetHorizontal={offsetHorizontal}
-      spacingVertical={1}
-      spacingHorizontal={3}
       onLayout={onLayout}
+      {...spacing.outer}
     >
       {content}
     </Box>

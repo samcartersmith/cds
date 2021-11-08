@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   ButtonBaseProps,
   CellMediaProps,
@@ -6,8 +7,11 @@ import {
   ListCellBaseProps,
 } from '@cbhq/cds-common';
 import { IllustrationPictogramNames } from '@cbhq/cds-common/types/IllustrationNames';
+import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
 
 import { mockAsset } from './constants';
+
+const onPressConsole = () => console.log('onPress');
 
 export function createStories(
   ListCell: React.ComponentType<
@@ -20,7 +24,7 @@ export function createStories(
   Button: React.ComponentType<ButtonBaseProps>,
   IconButton: React.ComponentType<IconButtonBaseProps>,
   Checkbox: React.ComponentType<ControlBaseProps<string> & { accessibilityLabel: string }>,
-  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>
+  Pictogram: React.ComponentType<{ name: IllustrationPictogramNames }>,
 ) {
   const Content = () => {
     return (
@@ -62,16 +66,16 @@ export function createStories(
 
   const PressableContent = () => (
     <>
-      <ListCell title="Title" onPress={() => {}} />
+      <ListCell title="Title" onPress={onPressConsole} />
 
-      <ListCell title="Title" subdetail="Neutral" onPress={() => {}} />
+      <ListCell title="Title" subdetail="Neutral" onPress={onPressConsole} />
 
-      <ListCell title="Title" description="Multi-line description" onPress={() => {}} multiline />
+      <ListCell title="Title" description="Multi-line description" onPress={onPressConsole} />
 
       <ListCell
         title="Title"
         description="Multi-line description"
-        onPress={() => {}}
+        onPress={onPressConsole}
         multiline
         selected
       />
@@ -79,26 +83,26 @@ export function createStories(
       <ListCell
         title="Title"
         description="Multi-line description goes here with really long text"
-        onPress={() => {}}
+        onPress={onPressConsole}
         multiline
       />
 
       <ListCell
         title="Title"
         description="Multi-line description goes here with really long text"
-        onPress={() => {}}
+        onPress={onPressConsole}
         multiline
         selected
       />
 
-      <ListCell title="Title" description="Description" detail="Detail" onPress={() => {}} />
+      <ListCell title="Title" description="Description" detail="Detail" onPress={onPressConsole} />
 
       <ListCell
         title="Title"
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        onPress={() => {}}
+        onPress={onPressConsole}
         reduceHorizontalSpacing
       />
 
@@ -107,7 +111,7 @@ export function createStories(
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        onPress={() => {}}
+        onPress={onPressConsole}
         selected
       />
 
@@ -116,7 +120,7 @@ export function createStories(
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        onPress={() => {}}
+        onPress={onPressConsole}
         disabled
         reduceHorizontalSpacing
       />
@@ -127,7 +131,7 @@ export function createStories(
         detail="Detail"
         subdetail="+Postive"
         variant="positive"
-        onPress={() => {}}
+        onPress={onPressConsole}
         selected
         disabled
       />
@@ -230,7 +234,7 @@ export function createStories(
       <ListCell
         title="Icon (pressable)"
         media={<CellMedia type="icon" name="email" />}
-        onPress={console.log}
+        onPress={onPressConsole}
       />
 
       <ListCell
@@ -333,6 +337,30 @@ export function createStories(
     </>
   );
 
+  const CustomSpacing = () => (
+    <>
+      <ListCell
+        title="Title"
+        description="Description"
+        detail="$1,230"
+        detailWidth={100}
+        onPress={onPressConsole}
+        selected
+        borderRadius="none"
+        {...selectCellSpacingConfig}
+      />
+      <ListCell
+        title="Title"
+        description="Description"
+        detail="$1,230"
+        detailWidth={100}
+        onPress={onPressConsole}
+        borderRadius="none"
+        {...selectCellSpacingConfig}
+      />
+    </>
+  );
+
   return {
     Content,
     PressableContent,
@@ -342,5 +370,6 @@ export function createStories(
     WithMedia,
     WithActions,
     WithIntermediary,
+    CustomSpacing,
   };
 }
