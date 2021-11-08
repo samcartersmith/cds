@@ -998,6 +998,13 @@
       }
     },
     {
+      "name": "Annotation",
+      "sourceFile": "@uwo/components/common/interactables/inputs/Select.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "span"
+    },
+    {
       "name": "div",
       "sourceFile": "@uwo/components/common/interactables/inputs/Select.tsx",
       "totalInstances": 2,
@@ -3894,21 +3901,6 @@
       }
     },
     {
-      "name": "AddressDetailsPresentation",
-      "sourceFile": "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "labels": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
-        "address1": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
-        "address2": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
-        "city": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
-        "state": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
-        "zip": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
-        "onSubmit": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 }
-      }
-    },
-    {
       "name": "AddressSearchPresentation",
       "sourceFile": "@uwo/commonScenes/AddressSearch/AddressSearchPresentation",
       "totalInstances": 1,
@@ -3921,6 +3913,21 @@
           "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1
         },
         "labels": { "@uwo/experiences/edp/scenes/AddressSearch/AddressSearchScene.tsx": 1 }
+      }
+    },
+    {
+      "name": "AddressDetailsPresentation",
+      "sourceFile": "@uwo/commonScenes/AddressDetails/AddressDetailsPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "labels": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
+        "address1": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
+        "address2": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
+        "city": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
+        "state": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
+        "zip": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 },
+        "onSubmit": { "@uwo/experiences/edp/scenes/AddressDetails/AddressDetailsScene.tsx": 1 }
       }
     },
     {

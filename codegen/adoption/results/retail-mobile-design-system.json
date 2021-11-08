@@ -13,6 +13,163 @@
       "propsWithCallSites": { "scale": { "@designSystem/navigation/bottomNav/BottomNav.tsx": 1 } }
     },
     {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-mobile/layout/VStack",
+      "totalInstances": 18,
+      "totalCallSites": 12,
+      "cds": "@cbhq/cds-mobile/layout/VStack",
+      "aliasedCdsComponents": [
+        { "aliasPath": "@designSystem/core/card/Card.tsx", "callSites": [] },
+        { "aliasPath": "@designSystem/interactables/controls/NumPad.tsx", "callSites": [] },
+        { "aliasPath": "@designSystem/interactables/inputs/PinCodeInput.tsx", "callSites": [] },
+        {
+          "aliasPath": "@designSystem/interactables/inputs/TextInput.tsx",
+          "callSites": [
+            "@designSystem/interactables/inputs/PasswordInput.tsx",
+            "@designSystem/interactables/inputs/TextInput.tsx",
+            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
+            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
+            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
+            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
+            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
+            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx"
+          ]
+        },
+        { "aliasPath": "@designSystem/navigation/bottomNav/BottomNavItem.tsx", "callSites": [] },
+        {
+          "aliasPath": "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx",
+          "callSites": ["@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx"]
+        },
+        {
+          "aliasPath": "@designSystem/navigation/progress/ProgressSummary/ProgressSummary.tsx",
+          "callSites": []
+        }
+      ],
+      "callSites": {
+        "@designSystem/core/card/Card.tsx": 4,
+        "@designSystem/core/cell/Cell.tsx": 1,
+        "@designSystem/core/section/Section.tsx": 2,
+        "@designSystem/interactables/controls/NumPad.tsx": 2,
+        "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
+        "@designSystem/interactables/inputs/TextInput.tsx": 1,
+        "@designSystem/navigation/header/Header.tsx": 2,
+        "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
+        "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1,
+        "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
+        "@designSystem/navigation/progress/ProgressSummary/ProgressSummary.tsx": 1,
+        "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "background": {
+          "@designSystem/core/card/Card.tsx": 1,
+          "@designSystem/core/cell/Cell.tsx": 1
+        },
+        "dangerouslySetStyle": {
+          "@designSystem/core/card/Card.tsx": 3,
+          "@designSystem/interactables/controls/NumPad.tsx": 1,
+          "@designSystem/interactables/inputs/TextInput.tsx": 1,
+          "@designSystem/navigation/header/Header.tsx": 1
+        },
+        "overflow": { "@designSystem/core/card/Card.tsx": 1 },
+        "flexGrow": {
+          "@designSystem/core/card/Card.tsx": 1,
+          "@designSystem/interactables/controls/NumPad.tsx": 1,
+          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
+          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
+        },
+        "animated": {
+          "@designSystem/core/card/Card.tsx": 1,
+          "@designSystem/navigation/header/Header.tsx": 1
+        },
+        "bordered": { "@designSystem/core/card/Card.tsx": 2 },
+        "elevation": { "@designSystem/core/card/Card.tsx": 2 },
+        "spacing": {
+          "@designSystem/core/card/Card.tsx": 3,
+          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
+          "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummary.tsx": 1
+        },
+        "pin": { "@designSystem/core/card/Card.tsx": 2 },
+        "width": {
+          "@designSystem/core/card/Card.tsx": 2,
+          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
+        },
+        "height": {
+          "@designSystem/core/card/Card.tsx": 2,
+          "@designSystem/interactables/controls/NumPad.tsx": 1
+        },
+        "onLayout": { "@designSystem/core/cell/Cell.tsx": 1 },
+        "offsetHorizontal": {
+          "@designSystem/core/cell/Cell.tsx": 1,
+          "@designSystem/core/section/Section.tsx": 1,
+          "@designSystem/interactables/controls/NumPad.tsx": 1,
+          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
+        },
+        "spacingVertical": {
+          "@designSystem/core/cell/Cell.tsx": 1,
+          "@designSystem/core/section/Section.tsx": 1
+        },
+        "borderRadius": { "@designSystem/core/cell/Cell.tsx": 1 },
+        "flexShrink": {
+          "@designSystem/interactables/controls/NumPad.tsx": 1,
+          "@designSystem/navigation/header/Header.tsx": 2,
+          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
+        },
+        "alignItems": {
+          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
+          "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
+          "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1
+        },
+        "justifyContent": {
+          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
+          "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1
+        },
+        "spacingBottom": { "@designSystem/interactables/inputs/TextInput.tsx": 1 },
+        "spacingStart": {
+          "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
+        },
+        "minWidth": { "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1 },
+        "testID": { "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1 },
+        "pointerEvents": { "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1 },
+        "spacingEnd": {
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PressableOpacity",
+      "sourceFile": "@cbhq/cds-mobile/system/PressableOpacity",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-mobile/system/PressableOpacity",
+      "callSites": {
+        "@designSystem/core/card/Card.tsx": 1,
+        "@designSystem/core/cell/Cell.tsx": 1,
+        "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
+        "@designSystem/navigation/header/Header.tsx": 1,
+        "@designSystem/navigation/navbar/Navbar.tsx": 1,
+        "@designSystem/navigation/tabs/TabBarButton.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "@designSystem/core/card/Card.tsx": 1,
+          "@designSystem/core/cell/Cell.tsx": 1,
+          "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
+          "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/navigation/navbar/Navbar.tsx": 1,
+          "@designSystem/navigation/tabs/TabBarButton.tsx": 1
+        },
+        "contentStyle": { "@designSystem/core/card/Card.tsx": 1 },
+        "onLongPress": { "@designSystem/navigation/header/Header.tsx": 1 }
+      }
+    },
+    {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
       "totalInstances": 21,
@@ -29,12 +186,12 @@
           "callSites": []
         },
         {
-          "aliasPath": "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
-          "callSites": []
-        },
-        {
           "aliasPath": "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx",
           "callSites": ["@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx"]
+        },
+        {
+          "aliasPath": "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
+          "callSites": []
         }
       ],
       "callSites": {
@@ -46,15 +203,15 @@
         "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
         "@designSystem/interactables/inputs/SelectInput.tsx": 1,
         "@designSystem/interactables/inputs/TextInput.tsx": 2,
-        "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
         "@designSystem/navigation/header/Header.tsx": 1,
         "@designSystem/navigation/navbar/Navbar.tsx": 2,
+        "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
         "@designSystem/navigation/tabs/TabBar.tsx": 2,
         "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 2,
         "@designSystem/navigation/progress/ProgressBar/ProgressBar.tsx": 1,
-        "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1,
+        "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
         "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-        "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1
+        "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
       },
       "propsWithCallSites": {
         "testID": { "@designSystem/core/carousel/Carousel.tsx": 1 },
@@ -63,8 +220,8 @@
           "@designSystem/core/carousel/Carousel.tsx": 1,
           "@designSystem/interactables/inputs/SelectInput.tsx": 1,
           "@designSystem/interactables/inputs/TextInput.tsx": 1,
-          "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
-          "@designSystem/navigation/navbar/Navbar.tsx": 2
+          "@designSystem/navigation/navbar/Navbar.tsx": 2,
+          "@designSystem/navigation/bottomNav/BottomNav.tsx": 1
         },
         "onLayout": {
           "@designSystem/core/carousel/Carousel.tsx": 1,
@@ -81,11 +238,11 @@
         "justifyContent": {
           "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
           "@designSystem/interactables/controls/NumPad.tsx": 1,
-          "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
           "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
           "@designSystem/navigation/progress/ProgressBar/ProgressBar.tsx": 1,
-          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1,
-          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1
+          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
+          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
         },
         "spacing": {
           "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
@@ -131,19 +288,19 @@
         "spacingStart": { "@designSystem/navigation/tabs/TabBar.tsx": 1 },
         "offsetHorizontal": {
           "@designSystem/navigation/progress/ProgressBar/ProgressBar.tsx": 1,
-          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1,
-          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1
+          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
+          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
         },
         "flexGrow": {
           "@designSystem/navigation/progress/ProgressBar/ProgressBar.tsx": 1,
           "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
         },
+        "spacingVertical": {
+          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1,
+          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
+        },
         "flexBasis": {
           "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
-        },
-        "spacingVertical": {
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-          "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx": 1
         }
       }
     },
@@ -159,9 +316,9 @@
       "callSites": {
         "@designSystem/core/carousel/Carousel.tsx": 1,
         "@designSystem/interactables/drawer/Drawer.tsx": 1,
-        "@designSystem/primitives/spacing/Screen.tsx": 1,
         "@designSystem/interactables/inputs/TextInput.tsx": 2,
         "@designSystem/navigation/tabBar/AnimatedTabHeader.tsx": 1,
+        "@designSystem/primitives/spacing/Screen.tsx": 1,
         "@designSystem/navigation/progress/ProgressCarousel/ProgressCarouselExample.tsx": 1
       },
       "propsWithCallSites": {
@@ -174,172 +331,15 @@
           "@designSystem/interactables/drawer/Drawer.tsx": 1,
           "@designSystem/navigation/tabBar/AnimatedTabHeader.tsx": 1
         },
-        "spacingTop": { "@designSystem/primitives/spacing/Screen.tsx": 1 },
         "spacingHorizontal": {
-          "@designSystem/primitives/spacing/Screen.tsx": 1,
-          "@designSystem/interactables/inputs/TextInput.tsx": 2
+          "@designSystem/interactables/inputs/TextInput.tsx": 2,
+          "@designSystem/primitives/spacing/Screen.tsx": 1
         },
-        "spacingBottom": { "@designSystem/primitives/spacing/Screen.tsx": 1 },
         "background": { "@designSystem/navigation/tabBar/AnimatedTabHeader.tsx": 1 },
+        "spacingTop": { "@designSystem/primitives/spacing/Screen.tsx": 1 },
+        "spacingBottom": { "@designSystem/primitives/spacing/Screen.tsx": 1 },
         "offsetStart": {
           "@designSystem/navigation/progress/ProgressCarousel/ProgressCarouselExample.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PressableOpacity",
-      "sourceFile": "@cbhq/cds-mobile/system/PressableOpacity",
-      "totalInstances": 6,
-      "totalCallSites": 6,
-      "cds": "@cbhq/cds-mobile/system/PressableOpacity",
-      "callSites": {
-        "@designSystem/core/cell/Cell.tsx": 1,
-        "@designSystem/core/card/Card.tsx": 1,
-        "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
-        "@designSystem/navigation/header/Header.tsx": 1,
-        "@designSystem/navigation/navbar/Navbar.tsx": 1,
-        "@designSystem/navigation/tabs/TabBarButton.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPress": {
-          "@designSystem/core/cell/Cell.tsx": 1,
-          "@designSystem/core/card/Card.tsx": 1,
-          "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
-          "@designSystem/navigation/header/Header.tsx": 1,
-          "@designSystem/navigation/navbar/Navbar.tsx": 1,
-          "@designSystem/navigation/tabs/TabBarButton.tsx": 1
-        },
-        "contentStyle": { "@designSystem/core/card/Card.tsx": 1 },
-        "onLongPress": { "@designSystem/navigation/header/Header.tsx": 1 }
-      }
-    },
-    {
-      "name": "VStack",
-      "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 18,
-      "totalCallSites": 12,
-      "cds": "@cbhq/cds-mobile/layout/VStack",
-      "aliasedCdsComponents": [
-        { "aliasPath": "@designSystem/core/card/Card.tsx", "callSites": [] },
-        { "aliasPath": "@designSystem/interactables/controls/NumPad.tsx", "callSites": [] },
-        { "aliasPath": "@designSystem/interactables/inputs/PinCodeInput.tsx", "callSites": [] },
-        {
-          "aliasPath": "@designSystem/interactables/inputs/TextInput.tsx",
-          "callSites": [
-            "@designSystem/interactables/inputs/PasswordInput.tsx",
-            "@designSystem/interactables/inputs/TextInput.tsx",
-            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
-            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
-            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
-            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
-            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
-            "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx"
-          ]
-        },
-        { "aliasPath": "@designSystem/navigation/bottomNav/BottomNavItem.tsx", "callSites": [] },
-        {
-          "aliasPath": "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx",
-          "callSites": ["@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx"]
-        },
-        {
-          "aliasPath": "@designSystem/navigation/progress/ProgressSummary/ProgressSummary.tsx",
-          "callSites": []
-        }
-      ],
-      "callSites": {
-        "@designSystem/core/cell/Cell.tsx": 1,
-        "@designSystem/core/card/Card.tsx": 4,
-        "@designSystem/core/section/Section.tsx": 2,
-        "@designSystem/interactables/controls/NumPad.tsx": 2,
-        "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
-        "@designSystem/interactables/inputs/TextInput.tsx": 1,
-        "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
-        "@designSystem/navigation/header/Header.tsx": 2,
-        "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1,
-        "@designSystem/navigation/progress/ProgressSummary/ProgressSummary.tsx": 1,
-        "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-        "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onLayout": { "@designSystem/core/cell/Cell.tsx": 1 },
-        "offsetHorizontal": {
-          "@designSystem/core/cell/Cell.tsx": 1,
-          "@designSystem/core/section/Section.tsx": 1,
-          "@designSystem/interactables/controls/NumPad.tsx": 1,
-          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
-        },
-        "spacingVertical": {
-          "@designSystem/core/cell/Cell.tsx": 1,
-          "@designSystem/core/section/Section.tsx": 1
-        },
-        "background": {
-          "@designSystem/core/cell/Cell.tsx": 1,
-          "@designSystem/core/card/Card.tsx": 1
-        },
-        "borderRadius": { "@designSystem/core/cell/Cell.tsx": 1 },
-        "dangerouslySetStyle": {
-          "@designSystem/core/card/Card.tsx": 3,
-          "@designSystem/interactables/controls/NumPad.tsx": 1,
-          "@designSystem/interactables/inputs/TextInput.tsx": 1,
-          "@designSystem/navigation/header/Header.tsx": 1
-        },
-        "overflow": { "@designSystem/core/card/Card.tsx": 1 },
-        "flexGrow": {
-          "@designSystem/core/card/Card.tsx": 1,
-          "@designSystem/interactables/controls/NumPad.tsx": 1,
-          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
-        },
-        "animated": {
-          "@designSystem/core/card/Card.tsx": 1,
-          "@designSystem/navigation/header/Header.tsx": 1
-        },
-        "bordered": { "@designSystem/core/card/Card.tsx": 2 },
-        "elevation": { "@designSystem/core/card/Card.tsx": 2 },
-        "spacing": {
-          "@designSystem/core/card/Card.tsx": 3,
-          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
-          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
-          "@designSystem/navigation/header/Header.tsx": 1,
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummary.tsx": 1
-        },
-        "pin": { "@designSystem/core/card/Card.tsx": 2 },
-        "width": {
-          "@designSystem/core/card/Card.tsx": 2,
-          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
-        },
-        "height": {
-          "@designSystem/core/card/Card.tsx": 2,
-          "@designSystem/interactables/controls/NumPad.tsx": 1
-        },
-        "flexShrink": {
-          "@designSystem/interactables/controls/NumPad.tsx": 1,
-          "@designSystem/navigation/header/Header.tsx": 2,
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1,
-          "@designSystem/navigation/progress/ProgressCarousel/ProgressCarousel.tsx": 1
-        },
-        "alignItems": {
-          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
-          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
-          "@designSystem/navigation/header/Header.tsx": 1,
-          "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1
-        },
-        "justifyContent": {
-          "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
-          "@designSystem/navigation/header/Header.tsx": 1,
-          "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1
-        },
-        "spacingBottom": { "@designSystem/interactables/inputs/TextInput.tsx": 1 },
-        "minWidth": { "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1 },
-        "testID": { "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1 },
-        "spacingStart": {
-          "@designSystem/navigation/header/Header.tsx": 1,
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
-        },
-        "pointerEvents": { "@designSystem/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx": 1 },
-        "spacingEnd": {
-          "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 1
         }
       }
     },
@@ -413,8 +413,8 @@
         "@designSystem/core/chart/ChartPeriodSelector.tsx": 1,
         "@designSystem/interactables/inputs/SelectInput.tsx": 1,
         "@designSystem/interactables/inputs/TextInput.tsx": 1,
-        "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
         "@designSystem/navigation/header/Header.tsx": 1,
+        "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
         "@designSystem/navigation/tabs/TabBarButton.tsx": 1
       },
       "propsWithCallSites": {
@@ -430,13 +430,13 @@
         },
         "color": {
           "@designSystem/interactables/inputs/TextInput.tsx": 1,
-          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
           "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
           "@designSystem/navigation/tabs/TabBarButton.tsx": 1
         },
         "spacing": {
-          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
           "@designSystem/navigation/header/Header.tsx": 1,
+          "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1,
           "@designSystem/navigation/tabs/TabBarButton.tsx": 1
         },
         "deprecatedLineHeight": { "@designSystem/navigation/bottomNav/BottomNavItem.tsx": 1 }
@@ -607,17 +607,6 @@
       }
     },
     {
-      "name": "Divider",
-      "sourceFile": "@cbhq/cds-mobile/layout/Divider",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-mobile/layout/Divider",
-      "callSites": {
-        "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
-        "@designSystem/navigation/tabBar/AnimatedTabBar.tsx": 1
-      }
-    },
-    {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
       "totalInstances": 1,
@@ -628,6 +617,17 @@
         "numberOfLines": { "@designSystem/navigation/header/Header.tsx": 1 },
         "spacing": { "@designSystem/navigation/header/Header.tsx": 1 },
         "tabularNumbers": { "@designSystem/navigation/header/Header.tsx": 1 }
+      }
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-mobile/layout/Divider",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/layout/Divider",
+      "callSites": {
+        "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
+        "@designSystem/navigation/tabBar/AnimatedTabBar.tsx": 1
       }
     },
     {
@@ -763,9 +763,9 @@
         { "prop": "style", "callSite": "@designSystem/interactables/inputs/TextInput.tsx" },
         { "prop": "style", "callSite": "@designSystem/interactables/inputs/TextInput.tsx" },
         { "prop": "style", "callSite": "@designSystem/interactables/inputs/TextInput.tsx" },
+        { "prop": "style", "callSite": "@designSystem/navigation/navbar/Navbar.tsx" },
+        { "prop": "style", "callSite": "@designSystem/navigation/navbar/Navbar.tsx" },
         { "prop": "style", "callSite": "@designSystem/navigation/bottomNav/BottomNav.tsx" },
-        { "prop": "style", "callSite": "@designSystem/navigation/navbar/Navbar.tsx" },
-        { "prop": "style", "callSite": "@designSystem/navigation/navbar/Navbar.tsx" },
         { "prop": "style", "callSite": "@designSystem/navigation/tabs/TabBarButton.tsx" },
         {
           "prop": "style",
@@ -781,8 +781,8 @@
         "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
         "@designSystem/interactables/inputs/SelectInput.tsx": 1,
         "@designSystem/interactables/inputs/TextInput.tsx": 3,
-        "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
         "@designSystem/navigation/navbar/Navbar.tsx": 2,
+        "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
         "@designSystem/navigation/tabs/TabBarButton.tsx": 2,
         "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1,
         "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 2
@@ -792,8 +792,8 @@
           "@designSystem/core/chart/Chart.tsx": 2,
           "@designSystem/interactables/inputs/PinCodeInput.tsx": 1,
           "@designSystem/interactables/inputs/TextInput.tsx": 3,
-          "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
           "@designSystem/navigation/navbar/Navbar.tsx": 2,
+          "@designSystem/navigation/bottomNav/BottomNav.tsx": 1,
           "@designSystem/navigation/tabs/TabBarButton.tsx": 1,
           "@designSystem/navigation/progress/ProgressSummary/ProgressSummaryItem.tsx": 2
         },
@@ -1210,26 +1210,6 @@
       }
     },
     {
-      "name": "SolidProgressBarItem",
-      "sourceFile": "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "View",
-      "presentationalLibrary": "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
-      "propsWithCallSites": {
-        "weight": { "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1 },
-        "fillColor": {
-          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
-        },
-        "percentAnimation": {
-          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
-        },
-        "activeInputRange": {
-          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ProgressDot",
       "sourceFile": "@designSystem/navigation/progress/ProgressDots/ProgressDot",
       "totalInstances": 2,
@@ -1282,6 +1262,26 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalLibrary": "@designSystem/navigation/progress/ProgressDots/ProgressDots.tsx"
+    },
+    {
+      "name": "SolidProgressBarItem",
+      "sourceFile": "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "View",
+      "presentationalLibrary": "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
+      "propsWithCallSites": {
+        "weight": { "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1 },
+        "fillColor": {
+          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
+        },
+        "percentAnimation": {
+          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
+        },
+        "activeInputRange": {
+          "@designSystem/navigation/progress/SolidProgressBar/SolidProgressBar.tsx": 1
+        }
+      }
     }
   ],
   "other": [

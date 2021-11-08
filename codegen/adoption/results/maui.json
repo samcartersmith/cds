@@ -10,6 +10,35 @@
       "propsWithCallSites": { "spectrum": { "test-utils.tsx": 1, "pages/_app.tsx": 1 } }
     },
     {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-web/buttons/Button",
+      "totalInstances": 7,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/buttons/Button",
+      "callSites": {
+        "pages/convert.tsx": 2,
+        "pages/discover.tsx": 1,
+        "components/AccSettings/EditSettingsDialog.tsx": 3,
+        "components/General/CompactButton.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "pages/convert.tsx": 1,
+          "pages/discover.tsx": 1,
+          "components/AccSettings/EditSettingsDialog.tsx": 2
+        },
+        "disabled": { "pages/discover.tsx": 1, "components/AccSettings/EditSettingsDialog.tsx": 1 },
+        "loading": { "pages/discover.tsx": 1 },
+        "type": { "components/AccSettings/EditSettingsDialog.tsx": 1 },
+        "block": { "components/AccSettings/EditSettingsDialog.tsx": 3 },
+        "compact": {
+          "components/AccSettings/EditSettingsDialog.tsx": 3,
+          "components/General/CompactButton.tsx": 1
+        },
+        "variant": { "components/AccSettings/EditSettingsDialog.tsx": 1 }
+      }
+    },
+    {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
       "totalInstances": 3,
@@ -37,27 +66,18 @@
       }
     },
     {
-      "name": "Button",
-      "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 5,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/buttons/Button",
-      "callSites": {
-        "pages/discover.tsx": 1,
-        "components/AccSettings/EditSettingsDialog.tsx": 3,
-        "components/General/CompactButton.tsx": 1
-      },
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextLabel1",
+      "callSites": { "components/NFTDetails/NFTDetails.tsx": 2 },
       "propsWithCallSites": {
-        "onPress": { "pages/discover.tsx": 1, "components/AccSettings/EditSettingsDialog.tsx": 2 },
-        "disabled": { "pages/discover.tsx": 1, "components/AccSettings/EditSettingsDialog.tsx": 1 },
-        "loading": { "pages/discover.tsx": 1 },
-        "type": { "components/AccSettings/EditSettingsDialog.tsx": 1 },
-        "block": { "components/AccSettings/EditSettingsDialog.tsx": 3 },
-        "compact": {
-          "components/AccSettings/EditSettingsDialog.tsx": 3,
-          "components/General/CompactButton.tsx": 1
-        },
-        "variant": { "components/AccSettings/EditSettingsDialog.tsx": 1 }
+        "as": { "components/NFTDetails/NFTDetails.tsx": 2 },
+        "selectable": { "components/NFTDetails/NFTDetails.tsx": 1 },
+        "tabularNumbers": { "components/NFTDetails/NFTDetails.tsx": 1 },
+        "dangerouslySetClassName": { "components/NFTDetails/NFTDetails.tsx": 2 },
+        "color": { "components/NFTDetails/NFTDetails.tsx": 2 }
       }
     },
     {
@@ -73,25 +93,25 @@
         }
       ],
       "callSites": {
-        "components/General/MauiImage.tsx": 1,
         "components/NFTDetails/NFTDetails.tsx": 2,
+        "components/General/MauiImage.tsx": 1,
         "components/Profile/ArtCardLink.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
-          "components/General/MauiImage.tsx": 1,
           "components/NFTDetails/NFTDetails.tsx": 2,
-          "components/Profile/ArtCardLink.tsx": 1
-        },
-        "color": {
           "components/General/MauiImage.tsx": 1,
-          "components/NFTDetails/NFTDetails.tsx": 2
+          "components/Profile/ArtCardLink.tsx": 1
         },
         "selectable": { "components/NFTDetails/NFTDetails.tsx": 2 },
         "tabularNumbers": { "components/NFTDetails/NFTDetails.tsx": 2 },
         "dangerouslySetClassName": {
           "components/NFTDetails/NFTDetails.tsx": 2,
           "components/Profile/ArtCardLink.tsx": 1
+        },
+        "color": {
+          "components/NFTDetails/NFTDetails.tsx": 2,
+          "components/General/MauiImage.tsx": 1
         }
       }
     },
@@ -141,21 +161,6 @@
           "components/Nav/NavProfilePopover.tsx": 1,
           "components/Onboarding/SignInWalletLinkingButton.tsx": 1
         }
-      }
-    },
-    {
-      "name": "TextLabel1",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextLabel1",
-      "callSites": { "components/NFTDetails/NFTDetails.tsx": 2 },
-      "propsWithCallSites": {
-        "as": { "components/NFTDetails/NFTDetails.tsx": 2 },
-        "selectable": { "components/NFTDetails/NFTDetails.tsx": 1 },
-        "tabularNumbers": { "components/NFTDetails/NFTDetails.tsx": 1 },
-        "dangerouslySetClassName": { "components/NFTDetails/NFTDetails.tsx": 2 },
-        "color": { "components/NFTDetails/NFTDetails.tsx": 2 }
       }
     },
     {
@@ -210,18 +215,19 @@
     {
       "name": "Loader",
       "sourceFile": "components/General/Loader",
-      "totalInstances": 4,
+      "totalInstances": 5,
       "totalCallSites": 3,
       "presentationalElement": "div",
       "presentationalProps": [
+        { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" }
       ],
       "callSites": {
         "pages/_app.tsx": 2,
         "components/Nav/Nav.tsx": 1,
-        "components/Nav/NavProfilePopover.tsx": 1
+        "components/Nav/NavProfilePopover.tsx": 2
       },
-      "propsWithCallSites": { "className": { "components/Nav/NavProfilePopover.tsx": 1 } }
+      "propsWithCallSites": { "className": { "components/Nav/NavProfilePopover.tsx": 2 } }
     },
     {
       "name": "FooterNav",
@@ -251,6 +257,14 @@
       "totalCallSites": 1,
       "presentationalProps": [{ "prop": "className", "callSite": "pages/_document.tsx" }],
       "propsWithCallSites": { "className": { "pages/_document.tsx": 1 } }
+    },
+    {
+      "name": "p",
+      "sourceFile": "pages/convert.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "className", "callSite": "pages/convert.tsx" }],
+      "propsWithCallSites": { "className": { "pages/convert.tsx": 1 } }
     },
     {
       "name": "aside",
@@ -362,7 +376,7 @@
     {
       "name": "div",
       "sourceFile": "components/AccSettings/EditSettingsDialog.tsx",
-      "totalInstances": 4,
+      "totalInstances": 7,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/AccSettings/EditSettingsDialog.tsx" },
@@ -370,7 +384,7 @@
         { "prop": "className", "callSite": "components/AccSettings/EditSettingsDialog.tsx" },
         { "prop": "className", "callSite": "components/AccSettings/EditSettingsDialog.tsx" }
       ],
-      "callSites": { "components/AccSettings/EditSettingsDialog.tsx": 4 },
+      "callSites": { "components/AccSettings/EditSettingsDialog.tsx": 7 },
       "propsWithCallSites": { "className": { "components/AccSettings/EditSettingsDialog.tsx": 4 } }
     },
     {
@@ -450,6 +464,31 @@
       "propsWithCallSites": { "className": { "components/AccSettings/EditSettingsDialog.tsx": 2 } }
     },
     {
+      "name": "EmailSubscriptionsDetails",
+      "sourceFile": "components/AccSettings/SettingsContent.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "ul",
+      "propsWithCallSites": {
+        "id": { "components/AccSettings/SettingsContent.tsx": 1 },
+        "updateNotification": { "components/AccSettings/SettingsContent.tsx": 1 },
+        "isMobile": { "components/AccSettings/SettingsContent.tsx": 1 },
+        "notifications": { "components/AccSettings/SettingsContent.tsx": 1 }
+      }
+    },
+    {
+      "name": "li",
+      "sourceFile": "components/NFTDetails/NFTDetails.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/NFTDetails/NFTDetails.tsx" },
+        { "prop": "className", "callSite": "components/NFTDetails/NFTDetails.tsx" }
+      ],
+      "callSites": { "components/NFTDetails/NFTDetails.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/NFTDetails/NFTDetails.tsx": 2 } }
+    },
+    {
       "name": "div",
       "sourceFile": "components/General/Backdrop.tsx",
       "totalInstances": 1,
@@ -483,6 +522,7 @@
         "loading": { "components/General/MauiImage.tsx": 1 },
         "allowFullScreen": { "components/General/MauiImage.tsx": 1 },
         "allowTransparency": { "components/General/MauiImage.tsx": 1 },
+        "title": { "components/General/MauiImage.tsx": 1 },
         "sandbox": { "components/General/MauiImage.tsx": 1 }
       }
     },
@@ -829,16 +869,17 @@
     {
       "name": "p",
       "sourceFile": "components/Nav/NavProfilePopover.tsx",
-      "totalInstances": 5,
+      "totalInstances": 6,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
+        { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" },
         { "prop": "className", "callSite": "components/Nav/NavProfilePopover.tsx" }
       ],
-      "callSites": { "components/Nav/NavProfilePopover.tsx": 5 },
-      "propsWithCallSites": { "className": { "components/Nav/NavProfilePopover.tsx": 4 } }
+      "callSites": { "components/Nav/NavProfilePopover.tsx": 6 },
+      "propsWithCallSites": { "className": { "components/Nav/NavProfilePopover.tsx": 5 } }
     },
     {
       "name": "QuestionMarkCircleIcon",
@@ -880,18 +921,6 @@
         "className": { "components/Nav/NavProfilePopover.tsx": 1 },
         "aria-hidden": { "components/Nav/NavProfilePopover.tsx": 1 }
       }
-    },
-    {
-      "name": "li",
-      "sourceFile": "components/NFTDetails/NFTDetails.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "components/NFTDetails/NFTDetails.tsx" },
-        { "prop": "className", "callSite": "components/NFTDetails/NFTDetails.tsx" }
-      ],
-      "callSites": { "components/NFTDetails/NFTDetails.tsx": 2 },
-      "propsWithCallSites": { "className": { "components/NFTDetails/NFTDetails.tsx": 2 } }
     },
     {
       "name": "div",
@@ -1060,7 +1089,10 @@
       "callSites": { "components/Profile/NavigateAwayDialog.tsx": 4 },
       "propsWithCallSites": {
         "className": { "components/Profile/NavigateAwayDialog.tsx": 4 },
-        "onClick": { "components/Profile/NavigateAwayDialog.tsx": 1 }
+        "onClick": { "components/Profile/NavigateAwayDialog.tsx": 1 },
+        "onKeyDown": { "components/Profile/NavigateAwayDialog.tsx": 1 },
+        "role": { "components/Profile/NavigateAwayDialog.tsx": 1 },
+        "tabIndex": { "components/Profile/NavigateAwayDialog.tsx": 1 }
       }
     },
     {
@@ -1102,18 +1134,14 @@
     {
       "name": "div",
       "sourceFile": "components/Profile/Profile.tsx",
-      "totalInstances": 3,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalProps": [
         { "prop": "className", "callSite": "components/Profile/Profile.tsx" },
-        { "prop": "className", "callSite": "components/Profile/Profile.tsx" },
         { "prop": "className", "callSite": "components/Profile/Profile.tsx" }
       ],
-      "callSites": { "components/Profile/Profile.tsx": 3 },
-      "propsWithCallSites": {
-        "className": { "components/Profile/Profile.tsx": 3 },
-        "onClick": { "components/Profile/Profile.tsx": 1 }
-      }
+      "callSites": { "components/Profile/Profile.tsx": 2 },
+      "propsWithCallSites": { "className": { "components/Profile/Profile.tsx": 2 } }
     },
     {
       "name": "h1",
@@ -1124,6 +1152,20 @@
         { "prop": "className", "callSite": "components/Profile/Profile.tsx" }
       ],
       "propsWithCallSites": { "className": { "components/Profile/Profile.tsx": 1 } }
+    },
+    {
+      "name": "button",
+      "sourceFile": "components/Profile/Profile.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "presentationalProps": [
+        { "prop": "className", "callSite": "components/Profile/Profile.tsx" }
+      ],
+      "propsWithCallSites": {
+        "className": { "components/Profile/Profile.tsx": 1 },
+        "onClick": { "components/Profile/Profile.tsx": 1 }
+      }
     },
     {
       "name": "div",
@@ -1231,8 +1273,9 @@
     {
       "name": "Loader",
       "sourceFile": "@maui/components/General/Loader",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": { "test-utils.tsx": 1, "pages/convert.tsx": 1 }
     },
     {
       "name": "Provider",
@@ -1371,6 +1414,18 @@
         "title": { "pages/_error.tsx": 1 }
       }
     },
+    { "name": "div", "sourceFile": "pages/convert.tsx", "totalInstances": 1, "totalCallSites": 1 },
+    {
+      "name": "Input",
+      "sourceFile": "@maui/components/General/Input",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "value": { "pages/convert.tsx": 1 },
+        "onChange": { "pages/convert.tsx": 1 },
+        "label": { "pages/convert.tsx": 1 }
+      }
+    },
     {
       "name": "section",
       "sourceFile": "pages/discover.tsx",
@@ -1491,6 +1546,7 @@
         "id": { "pages/settings.tsx": 1 },
         "username": { "pages/settings.tsx": 1 },
         "email": { "pages/settings.tsx": 1 },
+        "deleteUser": { "pages/settings.tsx": 1 },
         "updateUser": { "pages/settings.tsx": 1 },
         "updateNotification": { "pages/settings.tsx": 1 },
         "isOpen": { "pages/settings.tsx": 1 },
@@ -1508,6 +1564,7 @@
         "id": { "pages/settings.tsx": 2 },
         "username": { "pages/settings.tsx": 2 },
         "email": { "pages/settings.tsx": 2 },
+        "deleteUser": { "pages/settings.tsx": 2 },
         "updateUser": { "pages/settings.tsx": 2 },
         "updateNotification": { "pages/settings.tsx": 2 },
         "isMobile": { "pages/settings.tsx": 2 }
@@ -1538,6 +1595,7 @@
         "id": { "pages/settings.tsx": 1 },
         "username": { "pages/settings.tsx": 1 },
         "email": { "pages/settings.tsx": 1 },
+        "deleteUser": { "pages/settings.tsx": 1 },
         "updateUser": { "pages/settings.tsx": 1 },
         "updateNotification": { "pages/settings.tsx": 1 },
         "isMobile": { "pages/settings.tsx": 1 }
