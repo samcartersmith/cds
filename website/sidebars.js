@@ -57,7 +57,8 @@ module.exports = {
         'foundation/content',
         'foundation/elevation',
         'foundation/iconography',
-        'foundation/illustration',
+        'foundation/creating-and-maintaining-iconography',
+        'foundation/product-illustration',
         'foundation/layout',
         {
           type: 'category',
