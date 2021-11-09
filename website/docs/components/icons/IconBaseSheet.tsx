@@ -1,68 +1,110 @@
-import { useCallback, useState, useMemo } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 
-import { IconSize, PaletteForeground, paletteForegrounds } from '@cbhq/cds-common';
+import { PaletteForeground, paletteForegrounds } from '@cbhq/cds-common';
 import {
-  IconName,
-  NavigationIconName,
+  IconName as ProductIconName,
   NavigationIconInternalName,
+  NavigationIconName,
 } from '@cbhq/cds-common/types/IconName';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { IconBase } from '@cbhq/cds-web/icons/IconBase';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
 import { TextInput } from '@cbhq/cds-web/controls/TextInput';
+import { IconSize } from '@cbhq/cds-common/types/IconSize';
+import { Tabs } from ':cds-website/components/Tabs';
 import { navigationIconNames, iconNames, iconSizes } from ':cds-website/data/iconData';
+import { iconDescriptionGraph } from ':cds-website/data/icon/iconDescriptionGraph';
 
-type Categories = 'product' | 'navigation';
+type IconData = typeof iconData;
+type IconType = keyof IconData;
+type IconMap<T extends IconType> = IconData[T];
+type IconName<T extends IconType = IconType> = IconMap<T>['names'][number];
+type IconVariant<T extends IconType = IconType> = IconMap<T>['variants'][number];
 
-const categoryToData: Record<
-  string,
-  {
-    names: readonly (IconName | NavigationIconName)[];
-    sizes: readonly (IconSize | Exclude<IconSize, 'xs'>)[];
-  }
-> = {
+const iconData = {
   product: {
     names: iconNames,
     sizes: iconSizes,
+    variants: paletteForegrounds,
+    defaultVariant: 'primary',
   },
   navigation: {
     names: navigationIconNames,
     sizes: iconSizes.filter((size) => !['xs'].includes(size)),
+    variants: ['Active', 'Inactive'],
+    defaultVariant: 'Active',
   },
-};
+} as const;
 
-type IconBaseContentProp<StateType> = {
+type IconBaseContentProp<T> = {
   size: IconSize;
-  defaultState: StateType;
-  states: StateType[];
-  category: Categories;
+  category: T;
+};
+function isNavIconName(name: IconName): name is NavigationIconName {
+  return iconData.navigation.names.findIndex((item) => item === name) !== -1;
+}
+function isNavVariant(variant: IconVariant): variant is IconVariant<'navigation'> {
+  return iconData.navigation.variants.findIndex((item) => item === variant) !== -1;
+}
+function isProductIconName(name: IconName): name is ProductIconName {
+  return iconData.product.names.findIndex((item) => item === name) !== -1;
+}
+function isProductVariant(variant: IconVariant): variant is IconVariant<'product'> {
+  return iconData.product.variants.findIndex((item) => item === variant) !== -1;
+}
+
+function getIconName<T extends IconType>(
+  category: T,
+  name: IconName<T>,
+  variant: IconVariant<T>,
+): NavigationIconInternalName | ProductIconName {
+  switch (category) {
+    case 'navigation':
+      if (isNavIconName(name) && isNavVariant(variant)) {
+        return `${name}${variant}` as const;
+      }
+      break;
+    case 'product':
+      if (isProductIconName(name) && isProductVariant(variant)) {
+        return name;
+      }
+      break;
+    default:
+      throw new Error("Trying to get an icon name that doesn't exist");
+  }
+  throw new Error("Trying to get an icon name that doesn't exist");
+}
+
+const queryMatchesName = (query: string, name: string) => {
+  const queryRe = new RegExp(query.trim().toLowerCase(), 'gi');
+  const nameRe = new RegExp(name.toLowerCase(), 'gi');
+
+  const matchedIconNames: string[] = [];
+
+  if (query in iconDescriptionGraph) {
+    matchedIconNames.push(...iconDescriptionGraph[query]);
+  }
+
+  return name.match(queryRe) !== null || matchedIconNames.join(' ').match(nameRe) !== null;
 };
 
-const IconBaseContentSheet = <StateType extends string>({
-  size,
-  defaultState,
-  states,
-  category,
-}: IconBaseContentProp<StateType>) => {
-  const [state, setState] = useState<StateType>(defaultState);
+const IconBaseContentSheet = <T extends IconType>({ size, category }: IconBaseContentProp<T>) => {
+  const { defaultVariant, names, variants } = iconData[category];
+  const [variant, setVariant] = useState<IconVariant<T>>(defaultVariant);
   const [query, setQuery] = useState('');
-  const onPress = useCallback((pressState: StateType) => {
-    return () => setState(pressState);
+  const onPress = useCallback((_variant: IconVariant<T>) => {
+    return () => setVariant(_variant);
   }, []);
 
   const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   }, 1000);
 
-  const { names } = useMemo(() => categoryToData[category], [category]);
-
   const background = useMemo(() => {
-    switch (state) {
+    switch (variant) {
       case 'primaryForeground':
         return 'primary';
       case 'positiveForeground':
@@ -74,29 +116,49 @@ const IconBaseContentSheet = <StateType extends string>({
       default:
         return undefined;
     }
-  }, [state]);
+  }, [variant]);
 
   const color = useMemo(() => {
     switch (category) {
       case 'navigation':
-        return state === 'Active' ? 'primary' : 'foreground';
+        return variant === 'Active' ? 'primary' : 'foreground';
       case 'product':
-        return state;
+        return variant;
       default:
         return 'primary';
     }
-  }, [category, state]);
+  }, [category, variant]);
+
+  const icons = useMemo(() => {
+    if (Array.isArray(names)) {
+      return names
+        .filter((name: IconName<T>) => {
+          return queryMatchesName(query, name);
+        })
+        .map((name: IconName<T>) => {
+          const iconName = getIconName(category, name, variant);
+          return (
+            <VStack spacing={3} alignItems="center" key={iconName}>
+              <IconBase name={iconName} size={size} color={color as PaletteForeground} />
+              <TextLabel1 align="center" as="p" spacing={2}>
+                {name}
+              </TextLabel1>
+            </VStack>
+          );
+        });
+    }
+    return null;
+  }, [category, color, names, query, size, variant]);
 
   return (
     <>
       <Box flexWrap="wrap">
-        {states.map((item, idx) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Box key={idx} spacingEnd={1} spacingBottom={1}>
+        {variants.map((item) => (
+          <Box key={`${category}-${item}`} spacingEnd={1} spacingBottom={1}>
             <Button
               compact
               onPress={onPress(item)}
-              variant={state === item ? 'primary' : 'secondary'}
+              variant={variant === item ? 'primary' : 'secondary'}
             >
               {item}
             </Button>
@@ -114,51 +176,25 @@ const IconBaseContentSheet = <StateType extends string>({
       </Box>
 
       <Box flexWrap="wrap" background={background} spacingTop={1} spacingBottom={3}>
-        {names
-          .filter((name) => {
-            const re = new RegExp(query, 'gi');
-            return (name.match(re)?.length ?? 0) > 0;
-          })
-          .map((filteredName) => {
-            const finalName =
-              category === 'navigation'
-                ? (`${filteredName}${state}` as NavigationIconInternalName)
-                : (filteredName as IconName);
-
-            return (
-              <VStack spacing={3} alignItems="center" key={filteredName}>
-                <IconBase name={finalName} size={size} color={color as PaletteForeground} />
-                <TextLabel1 align="center" as="p" spacing={2}>
-                  {filteredName}
-                </TextLabel1>
-              </VStack>
-            );
-          })}
+        {icons}
       </Box>
     </>
   );
 };
 
-const iconStates = ['Active', 'Inactive'];
-export const IconBaseSheet = ({ category }: { category: Categories }) => {
-  const { sizes } = categoryToData[category];
+export const IconBaseSheet = ({ category }: { category: IconType }) => {
+  const { sizes } = iconData[category];
+  const tabsData = useMemo(() => {
+    return {
+      id: `icon-sheet-${category}`,
+      defaultTab: 'm',
+      values: sizes.map((size) => ({
+        id: size,
+        label: size,
+        content: <IconBaseContentSheet size={size} category={category} />,
+      })),
+    };
+  }, [category, sizes]);
 
-  return (
-    <Tabs defaultValue="m" values={sizes.map((item) => ({ label: item, value: item }))}>
-      {sizes.map((item) => (
-        <TabItem key={item} value={item}>
-          <IconBaseContentSheet
-            size={item}
-            states={
-              category === 'product'
-                ? (paletteForegrounds as unknown as PaletteForeground[])
-                : iconStates
-            }
-            defaultState={category === 'product' ? 'primary' : 'Active'}
-            category={category}
-          />
-        </TabItem>
-      ))}
-    </Tabs>
-  );
+  return <Tabs {...tabsData} />;
 };

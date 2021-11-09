@@ -210,10 +210,12 @@ async function syncIcons() {
     );
 
     writePromises.push(
-      fs.promises.writeFile(
-        await getSourcePath('codegen/icons/iconsManifest.json'),
-        JSON.stringify(iconComponents, null, 2),
-      ),
+      writeFile({
+        template: 'objectMap.ejs',
+        data: { iconManifest: iconComponents },
+        config: { disableAsConst: true },
+        dest: 'codegen/icons/iconManifest.ts',
+      }),
     );
 
     await Promise.all(writePromises);

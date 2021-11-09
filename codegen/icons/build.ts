@@ -1,8 +1,11 @@
 import { buildTemplates } from '../utils/buildTemplates';
 import { createIconFont, removeSVGs } from './createIconFont';
+import { createDescriptionGraph } from './createDescriptionGraph';
 
 async function buildIcons() {
   const iconData = await createIconFont();
+  const iconDescriptionGraph = createDescriptionGraph();
+
   const templates = {
     'objectMap.ejs': [
       // We ship web and mobile iconGlyphMap's separately to guarantee
@@ -15,6 +18,16 @@ async function buildIcons() {
       {
         dest: 'web/icons/iconGlyphMap.ts',
         data: { iconGlyphMap: iconData.glyphMap },
+      },
+      {
+        dest: 'website/data/icon/iconDescriptionGraph.ts',
+        data: { iconDescriptionGraph },
+        types: {
+          iconDescriptionGraph: 'Record<string, string[]>',
+        },
+        config: {
+          disableAsConst: true,
+        },
       },
     ],
     'typescript.ejs': [

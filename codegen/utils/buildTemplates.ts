@@ -8,16 +8,18 @@ export const buildTemplates = async (templates: TemplateMap) => {
     template: string;
     dest: string;
     data: unknown;
+    types?: Record<string, string>;
     config?: AnyObject;
   }[] = [];
 
   try {
     Object.entries(templates).forEach(([template, items]) => {
-      items.forEach(({ dest, data, config = {} }) => {
+      items.forEach(({ dest, data, types, config = {} }) => {
         templateInputs.push({
           template,
           dest,
           data,
+          types,
           config,
         });
       });
