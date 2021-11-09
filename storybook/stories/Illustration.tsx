@@ -30,16 +30,18 @@ export function createStories(
         return (
           <VStack key={`${name}_pictogram`}>
             <TextLabel1>{name}</TextLabel1>
-            <HStack gap={1}>
+            <VStack gap={1}>
               {Object.keys(illustrationSizes.pictogram).map((dimension) => (
-                <Pictogram
-                  key={`${name}_pictogram_${dimension}`}
-                  name={name}
-                  dimension={dimension as never}
-                />
+                <VStack key={`${name}_pictogram_${dimension}`}>
+                  <Pictogram name={name} dimension={dimension as never} />
+                  <TextLabel1>{dimension}</TextLabel1>
+                </VStack>
               ))}
-              <Pictogram name={name} scaleMultiplier={1.5} />
-            </HStack>
+              <VStack>
+                <Pictogram name={name} scaleMultiplier={1.5} />
+                <TextLabel1>Scale to 1.5</TextLabel1>
+              </VStack>
+            </VStack>
           </VStack>
         );
       })}
@@ -52,16 +54,18 @@ export function createStories(
         return (
           <VStack key={`${name}_heroSquare`}>
             <TextLabel1>{name}</TextLabel1>
-            <HStack gap={1}>
+            <VStack gap={1}>
               {Object.keys(illustrationSizes.heroSquare).map((dimension) => (
-                <HeroSquare
-                  key={`${name}_heroSquare_${dimension}`}
-                  name={name}
-                  dimension={dimension as never}
-                />
+                <VStack key={`${name}_heroSquare_${dimension}`}>
+                  <HeroSquare name={name} dimension={dimension as never} />
+                  <TextLabel1>{dimension}</TextLabel1>
+                </VStack>
               ))}
-            </HStack>
-            <HeroSquare name={name} scaleMultiplier={1.5} />
+            </VStack>
+            <VStack>
+              <HeroSquare name={name} scaleMultiplier={1.5} />
+              <TextLabel1>Scale to 1.5</TextLabel1>
+            </VStack>
           </VStack>
         );
       })}
@@ -74,16 +78,17 @@ export function createStories(
         return (
           <VStack key={`${name}_spotSquare`}>
             <TextLabel1>{name}</TextLabel1>
-            <HStack gap={1}>
+            <VStack gap={1}>
               {Object.keys(illustrationSizes.spotSquare).map((dimension) => (
-                <SpotSquare
-                  key={`${name}_spotSquare_${dimension}`}
-                  name={name}
-                  dimension={dimension as never}
-                />
+                <VStack key={`${name}_spotSquare_${dimension}`}>
+                  <SpotSquare name={name} dimension={dimension as never} />
+                </VStack>
               ))}
-            </HStack>
-            <SpotSquare name={name} scaleMultiplier={2} />
+            </VStack>
+            <VStack>
+              <SpotSquare name={name} scaleMultiplier={2} />
+              <TextLabel1>Scale to 2</TextLabel1>
+            </VStack>
           </VStack>
         );
       })}
@@ -96,16 +101,18 @@ export function createStories(
         return (
           <VStack key={`${name}_spotRectangle`}>
             <TextLabel1>{name}</TextLabel1>
-            <HStack gap={1}>
+            <VStack gap={1}>
               {Object.keys(illustrationSizes.spotRectangle).map((dimension) => (
-                <SpotRectangle
-                  key={`${name}_spotRectangle_${dimension}`}
-                  name={name}
-                  dimension={dimension as never}
-                />
+                <VStack key={`${name}_spotRectangle_${dimension}`}>
+                  <SpotRectangle name={name} dimension={dimension as never} />
+                  <TextLabel1>{dimension}</TextLabel1>
+                </VStack>
               ))}
-            </HStack>
-            <SpotRectangle name={name} scaleMultiplier={3} />
+            </VStack>
+            <VStack>
+              <SpotRectangle name={name} scaleMultiplier={3} />
+              <TextLabel1>Scale to 3</TextLabel1>
+            </VStack>
           </VStack>
         );
       })}

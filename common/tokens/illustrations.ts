@@ -4,6 +4,10 @@ export const illustrationSizes = {
       width: 240,
       height: 240,
     },
+    '200x200': {
+      width: 200,
+      height: 200,
+    },
   },
   spotRectangle: {
     '240x120': {

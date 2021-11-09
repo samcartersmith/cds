@@ -1,1 +1,0 @@
-/* eslint-disable */ module.exports = {content:`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48"><path fill="#A5C1FD" d="M31.5 15h-15v33h15V15z"/><path fill="#588AF5" d="M46.5 0h-15v48h15V0z"/><path fill="#144FCE" d="M16.5 30h-15v18h15V30z"/></svg>`} 

@@ -35,8 +35,8 @@ export const isMetadataEqual = (
   return (
     metadata1.name === metadata2.name &&
     metadata1.spectrum === metadata2.spectrum &&
-    metadata1.variant === metadata2.variant &&
-    metadata1.description === metadata2.description
+    metadata1.variant === metadata2.variant
+    // metadata1.description === metadata2.description
   );
 };
 

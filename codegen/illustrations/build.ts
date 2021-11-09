@@ -1,7 +1,7 @@
 import { renameKeys, camelCase, pascalCase } from '@cbhq/cds-utils';
 import axios from 'axios';
 import chalk from 'chalk';
-import fs, { readFileSync, existsSync, renameSync } from 'fs';
+import fs, { readFileSync, existsSync, renameSync, unlink } from 'fs';
 import { reduce } from 'lodash';
 import ora, { Ora } from 'ora';
 import path from 'path';
@@ -29,7 +29,7 @@ import { blacklist } from './blacklist';
 import { modified } from './modified';
 
 const ILLUSTRATION_FILE_ID = 'ay6SCdu5QMjKthzcoPtVOh';
-const NODE_ID = '527:531';
+const NODE_ID = '3972:345';
 const FILE_FORMAT = 'svg';
 
 type Spectrum = 'light' | 'dark';
@@ -88,6 +88,16 @@ const createSvgXML = (data: {
   });
 };
 
+const deleteSvgXML = (deletePath: string) => {
+  if (fs.existsSync(deletePath)) {
+    // Will first delete the old JS File before creating a new one
+    unlink(deletePath, (err) => {
+      if (err) throw err;
+      console.log(`${deletePath} was deleted`);
+    });
+  }
+};
+
 const createFileName = (fileName: string, versionNum: number, fileFormat: 'svg' | 'js') => {
   return `${fileName}-${versionNum}.${fileFormat}`;
 };
@@ -130,6 +140,7 @@ const loadOneImage = async (
 
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
+    if (!fs.existsSync(jsOutFullPath)) fs.mkdirSync(jsOutFullPath, { recursive: true });
   } catch (err) {
     errMsg(spinner, (err as Error).message);
   }
@@ -199,7 +210,14 @@ const loadOneImage = async (
       nodeId,
     });
     const newJsFileName = createFileName(imageName, newVersionNum, 'js');
+    const oldJsFileName = createFileName(imageName, newVersionNum - 1, 'js');
     const newJsOutFullPath = path.join(jsOutFullPath, newJsFileName);
+    const oldJsOutFullPath = path.join(jsOutFullPath, oldJsFileName);
+
+    // Will first delete the old JS File before creating a new one
+    // Otherwise the newest and older versions will coexist in the package.
+    // We only want to keep the newest version in the package
+    deleteSvgXML(oldJsOutFullPath);
 
     // You only need to create a new svgXML string if
     // the illustration was changed or it is new.
@@ -313,9 +331,9 @@ const getIllustrationNamesAndVariants = (
 
     const variantKey = `${variant}Names`;
     if (variantKey in illustrationNames) {
-      illustrationNames[variantKey].add(name);
+      illustrationNames[variantKey].add(name.trim());
     } else {
-      illustrationNames[variantKey] = new Set([name]);
+      illustrationNames[variantKey] = new Set([name.trim()]);
     }
   });
 
@@ -378,8 +396,10 @@ const updateManifest = async (
       versionNum: -1,
     };
 
+    const nameAndSpectrum = `${imgName}-${props.spectrum}`;
+
     // Update the nameToNodeIdMap
-    nameToNodeIdMap[`${imgName}-${props.spectrum}`] = nodeId;
+    nameToNodeIdMap[nameAndSpectrum] = nodeId;
 
     if (
       !(nodeId in localManifestData.svg) ||
@@ -615,7 +635,9 @@ const main = async (deleteImgsDir = false) => {
 
     const { camelCaseNames, pascalCaseNames, variants } =
       getIllustrationNamesAndVariants(components);
+
     await updateManifest(components);
+
     await loadImagesLocally(Object.keys(localManifestData.svg), outDirPath);
     await genStatistics('codegen/illustrations/illustration_statistics.ts', pascalCaseNames);
 
