@@ -1115,10 +1115,22 @@ export const Alert = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Alert/alert.mdx'
       ),
   ),
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Alert/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Alert/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Alert/usage.mdx'
       ),
   ),
 };

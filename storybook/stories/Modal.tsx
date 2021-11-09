@@ -62,7 +62,7 @@ export function createStories({
   };
 
   const PortalModalExample: React.FC = ({ children }) => {
-    const { openModal } = useModal();
+    const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(
       () =>
@@ -73,23 +73,19 @@ export function createStories({
               console.log('close modal');
             }}
           >
-            {({ closeModal }) => (
-              <>
-                <ModalHeader title="Basic Modal" />
-                <ModalBody>{children}</ModalBody>
-                <ModalFooter
-                  primaryAction={<Button onPress={closeModal}>Save</Button>}
-                  secondaryAction={
-                    <Button onPress={closeModal} variant="secondary">
-                      Cancel
-                    </Button>
-                  }
-                />
-              </>
-            )}
+            <ModalHeader title="Basic Modal" />
+            <ModalBody>{children}</ModalBody>
+            <ModalFooter
+              primaryAction={<Button onPress={closeModal}>Save</Button>}
+              secondaryAction={
+                <Button onPress={closeModal} variant="secondary">
+                  Cancel
+                </Button>
+              }
+            />
           </Modal>,
         ),
-      [openModal, children],
+      [openModal, closeModal, children],
     );
 
     return <Button onPress={handlePress}>Open Modal</Button>;

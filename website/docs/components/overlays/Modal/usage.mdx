@@ -28,7 +28,7 @@ function DefaultModalExample() {
     <ExampleWithThemeToggles>
       <PortalProvider>
         <ButtonGroup>
-          <Button onPress={toggleOn}>Basic Modal</Button>
+          <Button onPress={toggleOn}>Open Modal</Button>
           <Switch onChange={toggleScrolling} checked={scrolling}>
             Show long content
           </Switch>
@@ -65,51 +65,16 @@ You can control Modal visibility programmatically using `openModal()` and `close
 
 To **open** the modal, simple pass your `Modal` component into `openModal()` like `openModal(<Modal />)`.
 
-To **close** the modal, these are the recommended approaches:
-1. Use the `closeModal()` from render children.
-2. Pass a ref to the Modal and close it with `ref.current.onRequestClose()`.
+To **close** the modal, simply call the `closeModal()` function from `useModal()`.
 
-See below for detailed examples.
-
-**NOTE:** PortalProvider is unstable on mobile and will break if multiple portals implements React Native Modal. This is a known issue with React Native Modal which doesn't support multiple modals display at the same time.
+Multiple Modals? No problem, check example [here](/hooks/useOverlay#multiple)
 
 ```jsx live
 // import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 // import { useModal } from '@cbhq/cds-web/overlays/useModal';
 
 function PortalModalExample() {
-  function CloseWithRenderProps() {
-    const { openModal } = useModal();
-
-    const handlePress = useCallback(
-      () => {
-        openModal(
-          <Modal visible>
-            {({ closeModal }) =>
-              <>
-                <ModalHeader title="Basic Modal" />
-                <ModalBody>
-                  <TextBody as="p">{loremIpsum}</TextBody>
-                </ModalBody>
-                <ModalFooter
-                  primaryAction={<Button onPress={closeModal}>Save</Button>}
-                />
-              </>
-            }
-          </Modal>
-        );
-      },
-      [openModal],
-    );
-
-    return (
-      <Box spacingBottom={2}>
-        <Button onPress={handlePress}>With Render Children</Button>
-      </Box>
-    );
-  }
-
-  function CloseWithHook() {
+  function PortalModal() {
     const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(
@@ -120,7 +85,7 @@ function PortalModalExample() {
             <TextBody as="p">{loremIpsum}</TextBody>
           </ModalBody>
           <ModalFooter
-            primaryAction={<Button onPress={() => closeModal()}>Save</Button>}
+            primaryAction={<Button onPress={closeModal}>Save</Button>}
           />
         </Modal>
       ),
@@ -129,7 +94,7 @@ function PortalModalExample() {
 
     return (
       <Box>
-        <Button onPress={handlePress}>With Hook</Button>
+        <Button onPress={handlePress}>Open Modal</Button>
       </Box>
     );
   }
@@ -137,8 +102,7 @@ function PortalModalExample() {
   return (
     <PortalProvider>
       <ExampleWithThemeToggles>
-        <CloseWithRenderProps />
-        <CloseWithHook />
+        <PortalModal />
       </ExampleWithThemeToggles>
     </PortalProvider>
   );

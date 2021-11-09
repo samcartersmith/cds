@@ -63,20 +63,12 @@ module.exports = {
               href: '/navigation',
             },
             {
-              label: 'Inputs',
-              href: '/inputs',
-            },
-            {
               label: 'Tables',
               href: '/tables',
             },
             {
               label: 'Cards',
               href: '/cards',
-            },
-            {
-              label: 'Alerts',
-              href: '/alerts',
             },
           ],
         },

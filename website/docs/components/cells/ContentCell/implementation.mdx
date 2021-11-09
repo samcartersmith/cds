@@ -49,6 +49,19 @@ The type of outer wrapping element.
 
 <ComponentDetails componentName="ContentCell" templateName="prop-as" />
 
+### borderRadius
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={['badge', 'compact', 'input', 'none', 'pill', 'round', 'standard', 'tooltip']}
+  webOptions={['badge', 'compact', 'input', 'none', 'pill', 'round', 'standard', 'tooltip']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-borderRadius" />
+
 ### description
 
 Description of content. Content will wrap accordingly.
@@ -114,6 +127,21 @@ Is the cell disabled? Will apply opacity and disable interaction.
 
 <ComponentDetails componentName="ContentCell" templateName="prop-disabled" />
 
+### innerSpacing
+
+The spacing to use on the inner content of Cell
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="innerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-innerSpacing" />
+
 ### media
 
 <ApiDetails
@@ -162,9 +190,9 @@ Meta information to display at the end of the title.
 
 <ComponentDetails componentName="ContentCell" templateName="prop-meta" />
 
-### offsetHorizontal
+### offsetHorizontal <Badge variant="deprecated" order={1} />
 
-Apply negative outer spacing on the leading and trailing sides.
+Reduce horizontal offset if parent container already has spacing.
 
 <ApiDetails
   componentName="ContentCell"
@@ -207,6 +235,21 @@ Callback fired when the element is pressed.
 
 <ComponentDetails componentName="ContentCell" templateName="prop-onPress" />
 
+### outerSpacing
+
+The spacing to use on the parent wrapper of Cell
+
+<ApiDetails
+  componentName="ContentCell"
+  propertyName="outerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="ContentCell" templateName="prop-outerSpacing" />
+
 ### priority
 
 Which piece of content has the highest priority in regards to text truncation, growing, and shrinking.
@@ -222,7 +265,7 @@ Which piece of content has the highest priority in regards to text truncation, g
 
 <ComponentDetails componentName="ContentCell" templateName="prop-priority" />
 
-### reduceHorizontalSpacing
+### reduceHorizontalSpacing <Badge variant="deprecated" order={1} />
 
 Reduce horizontal spacing for tighter layout requirements.
 

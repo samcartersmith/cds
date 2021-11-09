@@ -61,7 +61,7 @@ function PortalAlertExample() {
 }
 ```
 
-## Alert over Modal
+### Alert over Modal
 Alert displays on top of a Modal.
 
 ```jsx live
@@ -78,7 +78,7 @@ function AlertOnModalExample() {
           body="Cancel will discard your existing changes, are you sure?"
           pictogram="warning"
           preferredActionLabel="Discard"
-          onPreferredActionPress={() => closeModal()}
+          onPreferredActionPress={closeModal}
           preferredActionVariant="negative"
           dismissActionLabel="Cancel"
           stacked
@@ -92,7 +92,7 @@ function AlertOnModalExample() {
             <TextBody as="p">{loremIpsum}</TextBody>
           </ModalBody>
           <ModalFooter
-            primaryAction={<Button onPress={() => closeModal()}>Save</Button>}
+            primaryAction={<Button onPress={closeModal}>Save</Button>}
             secondaryAction={<Button onPress={showAlert}>Cancel</Button>}
           />
         </Modal>

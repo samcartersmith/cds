@@ -84,6 +84,19 @@ The type of outer wrapping element.
 
 <ComponentDetails componentName="ListCell" templateName="prop-as" />
 
+### borderRadius
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={['badge', 'compact', 'input', 'none', 'pill', 'round', 'standard', 'tooltip']}
+  webOptions={['badge', 'compact', 'input', 'none', 'pill', 'round', 'standard', 'tooltip']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-borderRadius" />
+
 ### description
 
 Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate.
@@ -184,6 +197,21 @@ Is the cell disabled? Will apply opacity and disable interaction.
 
 <ComponentDetails componentName="ListCell" templateName="prop-disabled" />
 
+### innerSpacing
+
+The spacing to use on the inner content of Cell
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="innerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-innerSpacing" />
+
 ### intermediary
 
 For internal use only.
@@ -247,9 +275,9 @@ Allow the description to span multiple lines. This _will_ break fixed height req
 
 <ComponentDetails componentName="ListCell" templateName="prop-multiline" />
 
-### offsetHorizontal
+### offsetHorizontal <Badge variant="deprecated" order={1} />
 
-Apply negative outer spacing on the leading and trailing sides.
+Reduce horizontal offset if parent container already has spacing.
 
 <ApiDetails
   componentName="ListCell"
@@ -292,6 +320,21 @@ Callback fired when the element is pressed.
 
 <ComponentDetails componentName="ListCell" templateName="prop-onPress" />
 
+### outerSpacing
+
+The spacing to use on the parent wrapper of Cell
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="outerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-outerSpacing" />
+
 ### priority
 
 Which piece of content has the highest priority in regards to text truncation, growing, and shrinking.
@@ -307,7 +350,7 @@ Which piece of content has the highest priority in regards to text truncation, g
 
 <ComponentDetails componentName="ListCell" templateName="prop-priority" />
 
-### reduceHorizontalSpacing
+### reduceHorizontalSpacing <Badge variant="deprecated" order={1} />
 
 Reduce horizontal spacing for tighter layout requirements.
 

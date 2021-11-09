@@ -6,8 +6,9 @@ import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
+import { useOverlay } from '@cbhq/cds-common/overlays/useOverlay';
+
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
@@ -94,6 +95,7 @@ const ReactLiveScope = {
   useFeatureFlag,
   useFeatureFlagUpdater,
   useAlert,
+  useOverlay,
   // CDS Components
   Text: CDSTypography.TextBody,
   ...CDSAnimation,
