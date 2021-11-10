@@ -59,6 +59,7 @@ import TextTitle1Screen from './src/TextTitle1';
 import TextTitle2Screen from './src/TextTitle2';
 import TextTitle3Screen from './src/TextTitle3';
 import TextTitle4Screen from './src/TextTitle4';
+import ProgressBarScreen from './src/ProgressBar';
 
 const Stack = createStackNavigator();
 
@@ -137,6 +138,7 @@ const AppContent = () => {
         <Stack.Screen name="TextTitle2" component={TextTitle2Screen} />
         <Stack.Screen name="TextTitle3" component={TextTitle3Screen} />
         <Stack.Screen name="TextTitle4" component={TextTitle4Screen} />
+        <Stack.Screen name="ProgressBar" component={ProgressBarScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

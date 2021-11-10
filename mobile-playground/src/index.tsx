@@ -57,6 +57,7 @@ const components = [
   { key: 'TextTitle2' },
   { key: 'TextTitle3' },
   { key: 'TextTitle4' },
+  { key: 'ProgressBar' },
 ];
 
 // eslint-disable-next-line @typescript-eslint/ban-types

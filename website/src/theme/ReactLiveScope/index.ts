@@ -37,6 +37,7 @@ import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
+import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -134,6 +135,7 @@ const ReactLiveScope = {
   LottieSheet,
   LottieExample,
   nux,
+  ProgressContainerWithButtons,
 };
 
 export default ReactLiveScope;

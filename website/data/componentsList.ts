@@ -65,6 +65,7 @@ export const components = [
   'TableFooter',
   'TableHeader',
   'TableRow',
+  'ProgressBar',
   'Sparkline',
   'SparklineGradient',
 ] as const;

@@ -5,7 +5,9 @@ const { adopters } = require('./data/sidebar/adopters');
 const sectionsToExcludeByLabel = new Set();
 
 // Removes unfinished components from section in side bar
-const componentsToExcludeByLabel = new Set([]);
+const componentsToExcludeByLabel = new Set([
+  'components/visualizations/ProgressBar/progress-bar',
+]);
 
 // removes unfinished categories from side bar
 const filteredComponents = components

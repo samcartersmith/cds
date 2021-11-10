@@ -162,6 +162,7 @@ module.exports = {
       label: 'Visualizations',
       collapsed: true,
       items: [
+        'components/visualizations/ProgressBar/progress-bar',
         'components/visualizations/Sparkline/sparkline',
         'components/visualizations/SparklineGradient/sparkline-gradient',
       ],

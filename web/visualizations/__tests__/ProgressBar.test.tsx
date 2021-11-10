@@ -1,0 +1,142 @@
+import { renderA11y } from '@cbhq/jest-utils';
+import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
+import { ProgressBar } from '../ProgressBar';
+import { Box } from '../../layout';
+import { palette } from '../../tokens';
+
+/* eslint-disable react-perf/jsx-no-new-object-as-prop */
+
+let iter = 0;
+describe('ProgressBar test', () => {
+  beforeEach(() => {
+    Object.defineProperties(window.HTMLElement.prototype, {
+      offsetWidth: {
+        get() {
+          iter += 1;
+          if (iter % 2 === 0) {
+            // text container
+            return 20;
+          }
+
+          // whole container width
+          return 200;
+        },
+      },
+    });
+  });
+
+  it('passes accessibility', async () => {
+    expect(await renderA11y(<ProgressBar progress={0} />)).toHaveNoViolations();
+  });
+
+  it('places bar label in correct position if it flows off the left container', () => {
+    const { getByTestId, getAllByText } = render(
+      <Box width="200">
+        <ProgressBar progress={0} endLabel={{ value: 0, float: true }} />
+      </Box>,
+    );
+
+    const floatLabel = getByTestId('cds-progress-bar-float-label');
+
+    expect(floatLabel).toHaveStyle({
+      transform: 'translateX(0px)',
+    });
+
+    expect(getAllByText('0%')).toHaveLength(2);
+  });
+
+  it('places bar label in correct position in middle', () => {
+    const { getByTestId, getAllByText } = render(
+      <Box width="200">
+        <ProgressBar progress={0.5} endLabel={{ value: 50, float: true }} />
+      </Box>,
+    );
+
+    const floatLabel = getByTestId('cds-progress-bar-float-label');
+
+    expect(floatLabel).toHaveStyle({
+      transform: 'translateX(80px)',
+    });
+
+    const floatLabelText = getAllByText('50%')[0];
+    expect(floatLabelText).toHaveStyle({
+      color: palette.foregroundMuted,
+    });
+  });
+
+  it('renders fixed labels in correct position', () => {
+    const { getByTestId, getAllByText } = render(
+      <Box width="200">
+        <ProgressBar progress={50} startLabel={{ value: 0 }} endLabel={{ value: 50 }} />
+      </Box>,
+    );
+
+    const startLabel = getByTestId('cds-progress-bar-fixed-label-start');
+    const endLabel = getByTestId('cds-progress-bar-fixed-label-end');
+
+    expect(startLabel.style.left).toEqual('0px');
+    expect(endLabel.style.right).toEqual('0px');
+
+    const startLabelText = getAllByText('0%')[0];
+    const endLabelText = getAllByText('50%')[0];
+
+    expect(startLabelText).toHaveStyle({
+      color: palette.foreground,
+    });
+    expect(endLabelText).toHaveStyle({
+      color: palette.foreground,
+    });
+  });
+
+  it('has correct bar width', () => {
+    const { getByTestId } = render(
+      <Box width="200">
+        <ProgressBar progress={0.77} barColor="positive" />
+      </Box>,
+    );
+
+    const bar = getByTestId('cds-progress-bar-inner-bar');
+    expect(bar).toHaveStyle({
+      backgroundColor: palette.positive,
+      transform: 'scaleX(0.77)',
+    });
+  });
+
+  it('has correct bar height', () => {
+    const { getByTestId } = render(
+      <Box width="200">
+        <ProgressBar progress={0.77} weight="heavy" />
+      </Box>,
+    );
+
+    const bar = getByTestId('cds-progress-bar-inner-bar-container');
+    expect(bar).toHaveStyle({
+      height: '12px',
+    });
+  });
+
+  it('handles disabled state correctly', () => {
+    const { getByTestId, getAllByText } = render(
+      <Box width="200">
+        <ProgressBar progress={0.77} startLabel={{ value: 0 }} endLabel={{ value: 77 }} disabled />
+      </Box>,
+    );
+
+    const bar = getByTestId('cds-progress-bar-inner-bar');
+    const startLabelText = getAllByText('0%')[0];
+    const endLabelText = getAllByText('77%')[0];
+
+    expect(bar).toHaveStyle({
+      backgroundColor: palette.lineHeavy,
+      transform: 'scaleX(0.77)',
+    });
+
+    expect(startLabelText).toHaveStyle({
+      color: palette.lineHeavy,
+    });
+    expect(endLabelText).toHaveStyle({
+      color: palette.lineHeavy,
+    });
+  });
+});

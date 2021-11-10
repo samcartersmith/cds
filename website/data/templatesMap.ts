@@ -1675,6 +1675,33 @@ export const TableRow = {
   ),
 };
 
+export const ProgressBar = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBar/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBar/intro.mdx'
+      ),
+  ),
+  'progress-bar': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBar/progress-bar.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBar/usage.mdx'
+      ),
+  ),
+};
+
 export const Sparkline = {
   implementation: React.lazy(
     async () =>
