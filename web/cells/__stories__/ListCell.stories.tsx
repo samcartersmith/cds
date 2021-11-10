@@ -13,7 +13,9 @@ export default {
 
 export const {
   Content,
+  CompactContent,
   PressableContent,
+  CompactPressableContent,
   LongContent,
   PriorityContent,
   WithAccessory,

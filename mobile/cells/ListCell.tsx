@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { ListCellBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { listHeight } from '@cbhq/cds-common/tokens/cell';
+import { useListCellMinHeight } from '@cbhq/cds-common/hooks/useListCellMinHeight';
 
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
@@ -15,6 +15,7 @@ export type ListCellProps = ListCellBaseProps & CellSharedProps;
 export const ListCell = memo(function ListCell({
   accessory,
   action,
+  compact,
   title,
   description,
   detail,
@@ -28,7 +29,8 @@ export const ListCell = memo(function ListCell({
   onPress,
   ...props
 }: ListCellProps) {
-  const minHeight = useScaleConditional(listHeight);
+  const calculatedListHeight = useListCellMinHeight(description, compact);
+  const minHeight = useScaleConditional(calculatedListHeight);
   const accessoryType = selected ? 'selected' : accessory;
   // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const hasDetails = Boolean(detail || subdetail);
@@ -37,6 +39,7 @@ export const ListCell = memo(function ListCell({
     <Cell
       {...props}
       accessory={accessoryType ? <CellAccessory type={accessoryType} /> : undefined}
+      compact={compact}
       detail={
         action ||
         (hasDetails && (

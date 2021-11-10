@@ -64,6 +64,52 @@ export function createStories(
     );
   };
 
+  const CompactContent = () => {
+    return (
+      <>
+        <ListCell compact title="Title" />
+
+        <ListCell compact title="Title" detail="Detail" />
+
+        <ListCell compact title="Title" description="Description" />
+
+        <ListCell compact title="Title" description="Description" detail="Detail" />
+
+        <ListCell
+          compact
+          title="Title"
+          description="Description"
+          detail="Detail"
+          subdetail="Neutral"
+        />
+
+        <ListCell compact title="Title" detail="Detail" subdetail="Neutral" />
+
+        <ListCell
+          compact
+          title="Title"
+          description="Description"
+          detail="Detail"
+          subdetail="+Positive"
+          variant="positive"
+        />
+
+        <ListCell compact title="Title" subdetail="+Positive" variant="positive" />
+
+        <ListCell
+          compact
+          title="Title"
+          description="Description"
+          detail="Detail"
+          subdetail="-Negative"
+          variant="negative"
+        />
+
+        <ListCell compact title="Title" detail="Detail" subdetail="-Negative" variant="negative" />
+      </>
+    );
+  };
+
   const PressableContent = () => (
     <>
       <ListCell title="Title" onPress={onPressConsole} />
@@ -132,6 +178,99 @@ export function createStories(
         subdetail="+Postive"
         variant="positive"
         onPress={onPressConsole}
+        selected
+        disabled
+      />
+    </>
+  );
+
+  const CompactPressableContent = () => (
+    <>
+      <ListCell compact title="Title" onPress={() => {}} />
+
+      <ListCell compact title="Title" subdetail="Neutral" onPress={() => {}} />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Multi-line description"
+        onPress={() => {}}
+        multiline
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Multi-line description"
+        onPress={() => {}}
+        multiline
+        selected
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Multi-line description goes here with really long text"
+        onPress={() => {}}
+        multiline
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Multi-line description goes here with really long text"
+        onPress={() => {}}
+        multiline
+        selected
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Description"
+        detail="Detail"
+        onPress={() => {}}
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Description"
+        detail="Detail"
+        subdetail="Neutral"
+        onPress={() => {}}
+        reduceHorizontalSpacing
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Description"
+        detail="Detail"
+        subdetail="Neutral"
+        onPress={() => {}}
+        selected
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Description"
+        detail="Detail"
+        subdetail="Neutral"
+        onPress={() => {}}
+        disabled
+        reduceHorizontalSpacing
+      />
+
+      <ListCell
+        compact
+        title="Title"
+        description="Description"
+        detail="Detail"
+        subdetail="+Postive"
+        variant="positive"
+        onPress={() => {}}
         selected
         disabled
       />
@@ -363,7 +502,9 @@ export function createStories(
 
   return {
     Content,
+    CompactContent,
     PressableContent,
+    CompactPressableContent,
     LongContent,
     PriorityContent,
     WithAccessory,

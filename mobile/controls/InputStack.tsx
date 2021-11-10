@@ -2,7 +2,7 @@ import React, { useMemo, memo } from 'react';
 
 import { View, ViewStyle } from 'react-native';
 
-import { InputBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
+import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
@@ -14,7 +14,7 @@ import { DangerouslySetStyle } from '../types';
 export type InputStackProps = {
   /** Adds border styling to input  */
   borderStyle?: ViewStyle;
-} & InputBaseProps &
+} & InputStackBaseProps &
   DangerouslySetStyle<ViewStyle>;
 
 export const InputStack = memo(function InputStack({

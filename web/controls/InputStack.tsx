@@ -1,6 +1,6 @@
 import React, { useMemo, memo } from 'react';
 
-import { InputBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
+import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { defaultPalette } from '@cbhq/cds-common';
@@ -30,7 +30,7 @@ const inputBaseAreaStyles = css`
 export type InputStackProps = {
   /** Adds border styling to input  */
   borderStyle?: string;
-} & InputBaseProps;
+} & InputStackBaseProps;
 
 export const InputStack = memo(function Input({
   /** CDS custom props */

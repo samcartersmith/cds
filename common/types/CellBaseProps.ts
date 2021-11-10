@@ -11,6 +11,8 @@ export type CellSpacingConfig = Pick<CellBaseProps, 'innerSpacing' | 'outerSpaci
 
 export type CellCommonProps = {
   borderRadius?: BorderRadius;
+  /** enables compact spacing */
+  compact?: boolean;
   /** Apply a fixed width to the detail (end). */
   detailWidth?: number | string;
   /** Is the cell disabled? Will apply opacity and disable interaction. */
@@ -149,4 +151,4 @@ export type ListCellFallbackProps = {
   subdetail?: boolean;
   /** Display title shimmer. */
   title?: boolean;
-};
+} & Pick<CellCommonProps, 'compact'>;

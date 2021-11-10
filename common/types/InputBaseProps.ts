@@ -1,14 +1,14 @@
 import { ReactNode } from 'react';
 import type { SharedProps } from './SharedProps';
 import { PaletteForeground } from './Palette';
+import { DimensionValue } from './DimensionStyles';
 
 export type InputVariant = Extract<
   PaletteForeground,
   'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted'
 >;
 
-export type InputBaseProps = {
-  children?: (p: InputBaseProps) => ReactNode;
+export type InputStackBaseProps = {
   /**
    * Determines the sentiment of the input. Because
    * we allow startContent and endContent to be custom ReactNode,
@@ -26,7 +26,7 @@ export type InputBaseProps = {
    * Height of input
    * @default auto
    */
-  height?: number | string | 'auto';
+  height?: DimensionValue;
   /**
    * Toggles input interactability and opacity
    * @default false
@@ -47,3 +47,21 @@ export type InputBaseProps = {
   /** A message indicating the purpose of this input */
   labelNode?: ReactNode;
 } & SharedProps;
+
+export type SharedInputProps = {
+  /**
+   * Enables compact variation
+   * @default false
+   */
+  compact?: boolean;
+  /** Short messageArea indicating purpose of input */
+  label: string;
+  /** Placeholder text */
+  placeholder?: string;
+  /**
+   * For cases where label is not enough information
+   * to describe what the text input is for. Can also be used for
+   * showing positive/negative messages
+   */
+  helperText?: string;
+};

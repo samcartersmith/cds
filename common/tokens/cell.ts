@@ -14,8 +14,23 @@ export const imageSize: Record<ScaleDensity, number> = {
 };
 
 export const listHeight: Record<ScaleDensity, number> = {
-  dense: 64,
+  normal: 56,
+  dense: 44,
+};
+
+export const compactListHeight: Record<ScaleDensity, number> = {
+  normal: 40,
+  dense: 36,
+};
+
+export const listHeightWithDescription: Record<ScaleDensity, number> = {
   normal: 80,
+  dense: 64,
+};
+
+export const compactListHeightWithDescription: Record<ScaleDensity, number> = {
+  normal: 64,
+  dense: 56,
 };
 
 /** Spacing configs for Cells to be parsed in common/hooks/useCellSpacing */

@@ -15,6 +15,7 @@ export const ListCellFallback = memo(function ListCellFallback({
   detail,
   subdetail,
   media,
+  compact,
 }: ListCellFallbackProps) {
   const lineHeight = useLineHeightMap();
 
@@ -23,6 +24,7 @@ export const ListCellFallback = memo(function ListCellFallback({
       description={
         description && <Fallback height={lineHeight.body} width={110} spacingTop={0.5} />
       }
+      compact={compact}
       detail={detail && <Fallback height={lineHeight.body} width={60} />}
       media={media ? <MediaFallback type={media} /> : undefined}
       subdetail={subdetail && <Fallback height={lineHeight.body} width={60} spacingTop={0.5} />}
