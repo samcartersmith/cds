@@ -170,6 +170,7 @@ const InnerProgress: React.FC<InnerProgressBarBaseProps> = memo(
           height={height}
           dangerouslySetBackground={palette.line}
           borderRadius="standard"
+          overflow="hidden"
         >
           <Box
             ref={innerBarRef}
@@ -180,7 +181,6 @@ const InnerProgress: React.FC<InnerProgressBarBaseProps> = memo(
             flexShrink={0}
             flexGrow={0}
             width="0%"
-            borderRadius="standard"
             dangerouslySetBackground={!disabled ? palette[barColor] : palette.lineHeavy}
           />
         </Box>
