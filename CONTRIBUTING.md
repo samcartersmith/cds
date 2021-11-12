@@ -207,26 +207,32 @@ _Run the following steps in the terminal in this order_
 
 - **Emulator failed to load** Try manually launching the Emulator from terminal. Be sure the emulator also exists in Android Studio's AVD manager.
 
+## Retail RN Experiments
 
-## Retail RN Experiments 
 ### Setup
+
 - Follow the steps in the Retail RN repo [here](https://github.cbhq.net/consumer/react-native/blob/master/doc/guides/add-an-experiment-or-feature-flag.md)
+
 ### Integrate
+
 - Once you have setup the experiment in code, you need to access [Sherlock](https://sherlock.cbhq.net/) with the right permissions/Admin roles (general, engineer, cifer, level_2_support) follow the docs [here](https://github.cbhq.net/consumer/react-native/blob/master/doc/guides/add-an-experiment-or-feature-flag.md#step-1-access-cifer-via-sherlock)
 - Now that you have access to Sherlock, you can create tests by following the instructions [here](https://github.cbhq.net/consumer/react-native/blob/master/doc/guides/add-an-experiment-or-feature-flag.md#step-2-create-a-new-experiment)
 
 ### Refine
+
 - Find the earliest Retail RN version has your experiment
   - You will need to find the release that has your experiment to refine the test in Sherlock, specifically what is the minimum version to run it on.
   - To do this, look in the [RN repo](https://github.cbhq.net/consumer/react-native) for the latest release and work your way backwards until you see your experiment in the config file [Experiments.tsx](https://github.cbhq.net/consumer/react-native/blob/master/src/packages/app/src/utils/experiments/Experiments.tsx)
 - Employee dogfooding
   - To force employees into the control bucket, add them to the treatment group
-  ![](markdown-images/2021-10-21-11-57-00.png)
+    ![](markdown-images/2021-10-21-11-57-00.png)
 
 ### Tips
+
 - Add yourself to the `@rn-release-notifications` slack group for updates on releases
 - you can filter down branches of releases by Tags ![](markdown-images/2021-10-21-11-52-54.png) ![](markdown-images/2021-10-21-11-54-45.png)
 - If you know what release your experimentation PR was merged, you can just swap out the version in this GH link to check the experiment config file directly `https://github.cbhq.net/consumer/react-native/blob/release-{MAJOR.MINOR.PATCH}/src/packages/app/src/utils/experiments/Experiments.tsx`
+
 # CDS Website Development
 
 The CDS website (which can be accessed at go/cds or https://cds.cbhq.net) is built using using Docusaurus 2 and is where we document CDS principles, best practices, components, hooks and more. This website is very important because it gives the consumers of the design system a centralized location to identify the best way for their team to leverage the design system.
@@ -281,15 +287,28 @@ For any usage examples, you can use all imports defined in `website/src/theme/Re
 
 For adding new imports, simply import in the same file and add it to the `ReactLiveScope` object.
 
-## Adding a prototype page 
+## Adding a prototype page
 
-Creating a prototype means you can access the component using a link like this https://cds.cbhq.net/inputs. In this case, we are 
+Creating a prototype means you can access the component using a link like this https://cds.cbhq.net/inputs. In this case, we are
 creating a prototype for inputs. However, the link generated will be in this form - https://cds.cbhq.net/<your-component>.
 
 Follow these steps to add a prototype page to the docusaurus website. This can be useful for bug bashing.
 
-1) Add your <component>.<mdx | tsx> file to eng/shared/design-system/website/src/pages
-2) Add the new component doc to docusaurus.config.js file under Prototypes dictionary. Mimic what the other prototype components have done. 
+1. Add your <component>.<mdx | tsx> file to eng/shared/design-system/website/src/pages
+2. Add the new component doc to docusaurus.config.js file under Prototypes dictionary. Mimic what the other prototype components have done.
+
+## Hide page from sidebar
+
+If you want to hide your doc page from the sidebar, you can add your component path to `componentsToExcludeByLabel` inside `eng/shared/design-system/website/sidebars.js`. For example,
+
+```
+const componentsToExcludeByLabel = new Set([
+  'components/visualizations/ProgressBar/progress-bar',
+]);
+```
+
+This is useful when you are prototyping the component and don't want it to be visible to consumers.
+
 # Miscellaneous
 
 For any usage examples, you can use all imports defined in `website/src/theme/ReactLiveScope/index.ts` directly without importing them in your jsx live.
@@ -320,7 +339,7 @@ This is an example of how we would update the retail app to use an updated versi
 
 The `make release` script will automatically update the `CHANGELOG` with the latest version and add latest merged PR titles, links, and Jira tickets. It will also run the docgen script and lint the website files.
 
-Checkout the [Release Workflow](https://cds.cbhq.net/resources/release) for more information. 
+Checkout the [Release Workflow](https://cds.cbhq.net/resources/release) for more information.
 For packages that are pre v1.0.0 we are not following a weekly Monday release like some docs may suggest. In order to move fast engineers will bump release as components are added.
 
 ### Manual Release
@@ -407,7 +426,6 @@ alias gct:tests='gct tests $2'
 
 More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/master/tools/js/releasePackages.ts)
 
-
 ### Adoption Script
 
 Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
@@ -423,7 +441,6 @@ Currently we have a hardcoded map of projects whose key is a project name of com
 ```
 
 2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
-
 
 ### Testing Locally on external projects
 
@@ -444,5 +461,3 @@ Currently we have a hardcoded map of projects whose key is a project name of com
 
 - Run `yarn install` on the external project
 - If you update the package in the monorepo and want to sync it in the external project then you will have to run `yarn upgrade [dependency]`. For example `yarn upgrade @cbhq/cds-common`
-
-
