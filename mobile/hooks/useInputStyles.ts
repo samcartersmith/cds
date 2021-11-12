@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
-import { focusedStyle, unfocusedStyle } from '@cbhq/cds-common/tokens/input';
 import { useTypographyStyles } from '../typography';
 import { usePalette } from './usePalette';
 
@@ -23,26 +22,4 @@ export const useInputTextStyles = (textColor: InputVariant) => {
       color: palette[textColor],
     };
   }, [palette, textColor, fontFamily, fontSize, lineHeight]);
-};
-
-/**
- *
- * @param focused
- * @param position
- * @returns
- */
-export const useInputBorderStyle = (focused: boolean) => {
-  return useMemo(() => {
-    if (focused) {
-      return {
-        ...focusedStyle,
-        marginTop: -1,
-        marginLeft: -1,
-        marginRight: -1,
-        marginBottom: -1,
-      };
-    }
-
-    return unfocusedStyle;
-  }, [focused]);
 };

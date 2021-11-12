@@ -1,6 +1,6 @@
 import React, { useMemo, memo } from 'react';
 
-import { View, ViewStyle } from 'react-native';
+import { Animated, ViewStyle, StyleProp } from 'react-native';
 
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
@@ -13,7 +13,7 @@ import { DangerouslySetStyle } from '../types';
 
 export type InputStackProps = {
   /** Adds border styling to input  */
-  borderStyle?: ViewStyle;
+  borderStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
 } & InputStackBaseProps &
   DangerouslySetStyle<ViewStyle>;
 
@@ -34,8 +34,8 @@ export const InputStack = memo(function InputStack({
   ...props
 }: InputStackProps) {
   const palette = usePalette();
-  const inputAreaStyle: ViewStyle = useMemo(() => {
-    const inputBorderRadius: ViewStyle = {
+  const inputAreaStyle: Animated.WithAnimatedValue<StyleProp<ViewStyle>> = useMemo(() => {
+    const inputBorderRadius = {
       ...(prependNode
         ? {
             borderTopLeftRadius: 0,
@@ -56,21 +56,23 @@ export const InputStack = memo(function InputStack({
       borderRadius: borderRadius.input,
       flexDirection: 'row',
       flex: 1,
-      ...borderStyle,
       ...inputBorderRadius,
     };
-  }, [borderStyle, palette, variant, appendNode, prependNode]);
+  }, [palette, variant, appendNode, prependNode]);
 
   return (
     <VStack testID={testID} width={`${width}%`} gap={0.5} {...props}>
       {!!labelNode && <>{labelNode}</>}
       <HStack opacity={disabled ? opacityDisabled : 1}>
         {!!prependNode && <>{prependNode}</>}
-        <View testID={testID && `${testID}-input-area`} style={inputAreaStyle}>
+        <Animated.View
+          testID={testID && `${testID}-input-area`}
+          style={[inputAreaStyle, borderStyle]}
+        >
           {!!startNode && <>{startNode}</>}
           {inputNode}
           {!!endNode && <>{endNode}</>}
-        </View>
+        </Animated.View>
         {!!appendNode && <>{appendNode}</>}
       </HStack>
       {!!helperTextNode && <>{helperTextNode}</>}

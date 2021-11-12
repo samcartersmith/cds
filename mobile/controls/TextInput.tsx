@@ -14,11 +14,11 @@ import { InputStack } from './InputStack';
 
 import { Box } from '../layout/Box';
 import { InputLabel } from './InputLabel';
-import { useInputBorderStyle } from '../hooks/useInputStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
 import { TextInputFocusVariantContext } from './context';
+import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 
 export type TextInputProps = TextInputBaseProps & SharedAccessibilityProps & RNTextInputProps;
 
@@ -38,8 +38,12 @@ export const TextInput = memo(function TextInput({
   ...editableInputProps
 }: TextInputProps) {
   const [focused, setFocused] = useState(false);
-  const variantWithFocus = useInputVariant(focused, variant);
-  const inputBorderStyle = useInputBorderStyle(focused);
+  const focusedVariant = useInputVariant(focused, variant);
+  const { borderColor, borderWidth, margin } = useInputBorderStyle(
+    focused,
+    variant,
+    focusedVariant,
+  );
 
   const editableInputAddonProps = {
     ...editableInputProps,
@@ -68,8 +72,12 @@ export const TextInput = memo(function TextInput({
       testID={testID}
       width={width}
       disabled={disabled}
-      variant={variantWithFocus}
-      borderStyle={inputBorderStyle}
+      variant={focusedVariant}
+      borderStyle={{
+        borderColor,
+        borderWidth,
+        margin,
+      }}
       inputNode={
         <NativeInput
           containerSpacing={start ? startSpacing : {}}
@@ -94,7 +102,7 @@ export const TextInput = memo(function TextInput({
           <Box justifyContent="center" alignItems="center">
             {compact && <InputLabel spacingStart={2}>{label}</InputLabel>}
             {!!start && (
-              <TextInputFocusVariantContext.Provider value={variantWithFocus}>
+              <TextInputFocusVariantContext.Provider value={focusedVariant}>
                 {start}
               </TextInputFocusVariantContext.Provider>
             )}
@@ -110,7 +118,7 @@ export const TextInput = memo(function TextInput({
               </TextLabel1>
             )}
             {!!end && (
-              <TextInputFocusVariantContext.Provider value={variantWithFocus}>
+              <TextInputFocusVariantContext.Provider value={focusedVariant}>
                 {end}
               </TextInputFocusVariantContext.Provider>
             )}

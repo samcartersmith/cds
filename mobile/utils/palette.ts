@@ -1,5 +1,6 @@
 import {
   defaultPalette,
+  PaletteAlias,
   PaletteValue,
   PaletteValueToRgbaArray,
   PaletteValueToRgbaString,
@@ -23,6 +24,16 @@ export const paletteValueToRgbaString: PaletteValueToRgbaString = (paletteValue,
   const [alias, opacity] = paletteValueToTuple(paletteValue);
   const spectrumValue = spectrumColors[spectrum][alias];
   return `rgba(${[...spectrumValue, opacity].join(',')})`;
+};
+
+/**
+ * Given a palette alias, such as foregroundMuted, and the spectrum, it will output the rgba value
+ * @param palette - foregroundMuted, foreground, background etc...
+ * @param spectrum - light or dark
+ * @returns rgba string - rgba(255, 255, 255, 1)
+ */
+export const paletteAliasToRgbaString = (palette: PaletteAlias, spectrum: Spectrum) => {
+  return paletteValueToRgbaString(defaultPalette[palette] as PaletteValue, spectrum);
 };
 
 /**

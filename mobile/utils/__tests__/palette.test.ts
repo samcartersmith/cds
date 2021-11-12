@@ -1,8 +1,10 @@
 import { defaultPalette } from '@cbhq/cds-common/palette/constants';
 
+import { PaletteAlias } from '@cbhq/cds-common';
 import { light, dark } from '../../styles/spectrum';
 import * as spectrumColors from '../../styles/spectrum';
 import {
+  paletteAliasToRgbaString,
   paletteValueToRgbaString,
   paletteConfigToRgbaStrings,
   paletteValueToRgbaArray,
@@ -31,6 +33,36 @@ describe('paletteValueToRgbaString', () => {
     expect(paletteValueToRgbaString(['blue90', 0.33], 'dark')).toEqual(
       `rgba(${dark.blue90.join(',')},${0.33})`,
     );
+  });
+});
+
+describe('paletteAliasToRgbaString', () => {
+  it('gets the correct rgb value for spectrum alias in light mode', () => {
+    for (const [palette, paletteValue] of Object.entries(defaultPalette)) {
+      let expectedRgbaVal = '';
+      if (typeof paletteValue !== 'string') {
+        const [color, alpha] = paletteValue;
+        expectedRgbaVal = `rgba(${light[color as keyof typeof light].join(',')},${[alpha]})`;
+      } else {
+        expectedRgbaVal = `rgba(${light[paletteValue as keyof typeof light].join(',')},1)`;
+      }
+
+      expect(paletteAliasToRgbaString(palette as PaletteAlias, 'light')).toEqual(expectedRgbaVal);
+    }
+  });
+
+  it('gets the correct rgb value for spectrum alias in dark mode', () => {
+    for (const [palette, paletteValue] of Object.entries(defaultPalette)) {
+      let expectedRgbaVal = '';
+      if (typeof paletteValue !== 'string') {
+        const [color, alpha] = paletteValue;
+        expectedRgbaVal = `rgba(${dark[color as keyof typeof dark].join(',')},${[alpha]})`;
+      } else {
+        expectedRgbaVal = `rgba(${dark[paletteValue as keyof typeof dark].join(',')},1)`;
+      }
+
+      expect(paletteAliasToRgbaString(palette as PaletteAlias, 'dark')).toEqual(expectedRgbaVal);
+    }
   });
 });
 
