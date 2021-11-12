@@ -1,6 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 
 import { IconButtonBaseProps, SharedProps } from '@cbhq/cds-common';
+import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { cx } from 'linaria';
@@ -9,6 +10,7 @@ import { iconButton } from './buttonStyles';
 import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../styles/flex';
 import { Pressable, PressableProps } from '../system/Pressable';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export type IconButtonProps = {
   as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;
@@ -40,6 +42,8 @@ export const IconButton = forwardRef(
     const height = useInteractableHeight(compact);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
     const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
+    const hasFrontier = useFeatureFlag('frontierButton');
+    const iconSize = useButtonIconSize(compact);
 
     return (
       <Pressable
@@ -58,7 +62,7 @@ export const IconButton = forwardRef(
         ref={ref}
         to={to}
       >
-        <Icon name={name} size="s" color={color} />
+        <Icon name={name} size={hasFrontier ? iconSize : 's'} color={color} />
       </Pressable>
     );
   },

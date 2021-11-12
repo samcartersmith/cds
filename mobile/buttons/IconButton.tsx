@@ -2,11 +2,13 @@ import React, { memo } from 'react';
 
 import { IconButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { StyleSheet, View } from 'react-native';
 
 import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export type IconButtonProps = IconButtonBaseProps & PressableProps;
 
@@ -20,6 +22,8 @@ export const IconButton = memo(function IconButton({
 }: IconButtonProps) {
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
   const height = useInteractableHeight(compact);
+  const hasFrontier = useFeatureFlag('frontierButton');
+  const iconSize = useButtonIconSize(compact);
 
   return (
     <Pressable
@@ -32,7 +36,7 @@ export const IconButton = memo(function IconButton({
       {...props}
     >
       <View style={[styles.iconButton, { height, width: height }]}>
-        <Icon name={name} size="s" color={color} />
+        <Icon name={name} size={hasFrontier ? iconSize : 's'} color={color} />
       </View>
     </Pressable>
   );
