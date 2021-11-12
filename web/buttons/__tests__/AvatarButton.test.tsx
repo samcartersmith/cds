@@ -24,12 +24,6 @@ describe('AvatarButton', () => {
     expect(button).toHaveAttribute('href', '/');
   });
 
-  it('can mark as disabled', () => {
-    const { container } = render(<AvatarButton alt="Sneezy" disabled />);
-
-    expect(container.querySelector('button')).toHaveAttribute('disabled');
-  });
-
   it('fires `onPress` when clicked', () => {
     const spy = jest.fn();
     const { container } = render(<AvatarButton alt="Sneezy" onPress={spy} />);

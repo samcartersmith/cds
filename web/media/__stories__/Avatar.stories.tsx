@@ -1,6 +1,6 @@
-import { HStack, VStack } from '../../../layout';
+import { HStack, VStack } from '../../layout';
 import { Avatar } from '../Avatar';
-import { ThemeProvider } from '../../../system';
+import { ThemeProvider } from '../../system';
 
 const avatarImageUrl = 'https://uifaces.co/our-content/donated/fyXUlj0e.jpg';
 

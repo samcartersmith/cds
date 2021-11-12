@@ -1,6 +1,6 @@
 import React from 'react';
 import { HStack, VStack } from '@cbhq/cds-mobile/layout';
-import { Avatar } from '@cbhq/cds-mobile/media/avatar';
+import { Avatar } from '@cbhq/cds-mobile/media';
 import ExamplesScreen from './internal/ExamplesScreen';
 import Example from './internal/Example';
 

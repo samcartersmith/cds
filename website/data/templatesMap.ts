@@ -1039,27 +1039,6 @@ export const VStack = {
   ),
 };
 
-export const RemoteImage = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/implementation.mdx'
-      ),
-  ),
-  'remote-image': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/remote-image.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/usage.mdx'
-      ),
-  ),
-};
-
 export const Avatar = {
   avatar: React.lazy(
     async () =>
@@ -1083,6 +1062,27 @@ export const Avatar = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/Avatar/usage.mdx'
+      ),
+  ),
+};
+
+export const RemoteImage = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/implementation.mdx'
+      ),
+  ),
+  'remote-image': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/remote-image.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/media/RemoteImage/usage.mdx'
       ),
   ),
 };

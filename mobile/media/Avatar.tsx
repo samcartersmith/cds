@@ -4,8 +4,8 @@ import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { useAvatarSrc } from '@cbhq/cds-common/media/useAvatarSrc';
-import { Box } from '../../layout';
-import { RemoteImage } from '../RemoteImage';
+import { Box } from '../layout';
+import { RemoteImage } from './RemoteImage';
 
 export const Avatar: React.FC<AvatarBaseProps> = memo(
   ({ src, shape = 'circle', size = 'l', borderColor, testID, dangerouslySetSize }) => {

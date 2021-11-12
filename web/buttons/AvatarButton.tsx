@@ -6,7 +6,7 @@ import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHei
 import { avatarButton } from './buttonStyles';
 import { PressableOpacity, PressableProps } from '../system';
 import { getFlexStyles } from '../styles/flex';
-import { Avatar } from '../media/avatar/Avatar';
+import { Avatar } from '../media';
 
 type AvatarButtonProps = {
   as?: React.ComponentType<React.HTMLAttributes<HTMLElement>>;

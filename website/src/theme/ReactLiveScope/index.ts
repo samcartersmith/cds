@@ -25,7 +25,7 @@ import * as CDSCardElements from '@cbhq/cds-web/cards';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
-import * as CDSMedia from '@cbhq/cds-web/media/RemoteImage';
+import * as CDSMedia from '@cbhq/cds-web/media';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import * as CDSTables from '@cbhq/cds-web/tables';
 import { palette } from '@cbhq/cds-web/tokens';
@@ -42,7 +42,6 @@ import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/Progr
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useDeviceSpectrum } from '@cbhq/cds-web/hooks/useDeviceSpectrum';
-import * as CDSAvatar from '@cbhq/cds-web/media/avatar';
 import { nux } from '@cbhq/cds-lottie-files';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
@@ -115,7 +114,6 @@ const ReactLiveScope = {
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSVisualizations,
-  ...CDSAvatar,
   // context
   PortalProvider,
   // Utils

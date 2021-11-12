@@ -1,14 +1,19 @@
 import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 import React, { memo } from 'react';
-import { cx } from 'linaria';
+import { css, cx } from 'linaria';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { useAvatarSrc } from '@cbhq/cds-common/media/useAvatarSrc';
-import { Box } from '../../layout';
-import * as avatarStyles from './avatarStyles';
-import { RemoteImage } from '../RemoteImage';
+import { Box } from '../layout';
+import { RemoteImage } from './RemoteImage';
 
 const staticClassName = 'cds-avatar';
+
+export const borderStyles = css`
+  &.${staticClassName} {
+    border-width: 2px;
+  }
+`;
 
 type AvatarWebProps = {
   /**
@@ -39,7 +44,7 @@ export const Avatar: React.FC<AvatarWebProps> = memo(
         dangerouslySetClassName={cx(
           staticClassName,
           dangerouslySetClassName as string,
-          borderColor ? avatarStyles.borderStyles : undefined,
+          borderColor ? borderStyles : undefined,
         )}
         dangerouslySetBackground={src}
         borderRadius={borderRadius}

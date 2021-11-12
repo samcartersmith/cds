@@ -7,7 +7,7 @@ import { HStack, Box, VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 import { ButtonGroup, Button } from '@cbhq/cds-web/buttons';
 import { Link } from '@cbhq/cds-web/typography/Link';
-import { Avatar } from '@cbhq/cds-web/media/avatar/Avatar';
+import { Avatar } from '@cbhq/cds-web/media';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { InputVariant } from '@cbhq/cds-common/types';
 
