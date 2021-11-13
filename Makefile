@@ -170,7 +170,9 @@ build.website:
 
 .PHONY: deploy.website
 deploy.website:
-	bazel run website/cloud:deploy
+	@echo "Run the following commands:";
+	@echo "ash_login";
+	@echo "ash deploy -p eng/shared/design-system/website/cloud"
 
 .PHONY: deploy.website-dev
 deploy.website-dev:

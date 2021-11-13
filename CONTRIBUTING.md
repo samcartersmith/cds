@@ -270,8 +270,20 @@ make deploy.website
 
 ```console
 ash_login
-make deploy.website-dev
+ash deploy -p eng/shared/design-system/website/cloud
 ```
+
+Select the artifact to deploy.
+
+Please not that anything you want to deploy to production aka cds.cbhq.net must be merged into master prior to deployment. This is because artifcats only exist for merges to master.
+
+### Debugging s3 bucket
+
+1. Go to okta https://coinbase.okta.com/
+2. Select AWS
+3. Select "production @ read" at bottom of roles list
+4. Select s3 card from dashboard
+5. URL should be https://s3.console.aws.amazon.com/s3/buckets/coinbase-design-system-website
 
 ## How to auto generate component docs
 
