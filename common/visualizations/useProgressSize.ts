@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { useScaleConditional } from '../scale/useScaleConditional';
-import { ProgressBarWeight } from '../types/ProgressBarBaseProps';
+import { Weight } from '../types/Weight';
 
-export const useProgressBarHeight = (weight: ProgressBarWeight) => {
+export const useProgressSize = (weight: Weight) => {
   const heavyHeight = useScaleConditional({ dense: 10, normal: 12 });
   return useMemo(() => {
     if (weight === 'heavy') {

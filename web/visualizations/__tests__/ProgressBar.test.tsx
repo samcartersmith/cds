@@ -92,7 +92,7 @@ describe('ProgressBar test', () => {
   it('has correct bar width', () => {
     const { getByTestId } = render(
       <Box width="200">
-        <ProgressBar progress={0.77} barColor="positive" />
+        <ProgressBar progress={0.77} color="positive" />
       </Box>,
     );
 

@@ -1,27 +1,7 @@
-import { PaletteForeground, SharedProps } from '.';
-
-export type ProgressBarColor = Extract<
-  PaletteForeground,
-  'positive' | 'negative' | 'primary' | 'foreground'
->;
-
-export type ProgressBarWeight = 'normal' | 'heavy';
+import { ProgressBaseProps } from './ProgressBaseProps';
+import { Placement } from './Placement';
 
 export type ProgressBarBaseProps = {
-  /** Number between 0-1 representing the progress bar percentage */
-  progress: number;
-
-  /** Toggle used to show a thicker bar
-   * @default normal
-   * */
-  weight?: ProgressBarWeight;
-
-  /**
-   * Toggle used to show a disabled bar and text
-   * @default false
-   */
-  disabled?: boolean;
-
   /** Label that is pinned to the start of the container */
   startLabel?: {
     value: number;
@@ -39,20 +19,14 @@ export type ProgressBarBaseProps = {
    * Position of label relative to the bar
    * @default above
    * */
-  labelPlacement?: 'above' | 'below' | 'beside';
-
-  /**
-   * Custom bar color.
-   * @default primary
-   */
-  barColor?: ProgressBarColor;
-} & SharedProps;
+  labelPlacement?: Extract<Placement, 'above' | 'below' | 'beside'>;
+} & ProgressBaseProps;
 
 // The rest are not exposed to public
 export type InnerProgressBarBaseProps = {
   height: number;
 } & Pick<ProgressBarBaseProps, 'progress' | 'startLabel' | 'endLabel' | 'disabled'> &
-  Required<Pick<ProgressBarBaseProps, 'barColor'>>;
+  Required<Pick<ProgressBarBaseProps, 'color'>>;
 
 export type ProgressLabelContainerBaseProps = Pick<
   ProgressBarBaseProps,

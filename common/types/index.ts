@@ -48,3 +48,5 @@ export * from './TextBaseProps';
 export * from './TextInputBaseProps';
 export * from './TrayBaseProps';
 export * from './Typography';
+export * from './Weight';
+export * from './Placement';

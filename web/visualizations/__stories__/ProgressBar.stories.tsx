@@ -153,11 +153,11 @@ export const Colors = () => {
   return (
     <ThemeProvider>
       <VStack gap={2}>
-        <ProgressBar barColor="positive" progress={0.5} />
-        <ProgressBar barColor="negative" progress={0.5} />
-        <ProgressBar barColor="primary" progress={0.5} />
-        <ProgressBar barColor="foreground" progress={0.5} />
-        <ProgressBar disabled barColor="foreground" progress={0.5} />
+        <ProgressBar color="positive" progress={0.5} />
+        <ProgressBar color="negative" progress={0.5} />
+        <ProgressBar color="primary" progress={0.5} />
+        <ProgressBar color="foreground" progress={0.5} />
+        <ProgressBar disabled color="foreground" progress={0.5} />
       </VStack>
     </ThemeProvider>
   );

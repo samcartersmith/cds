@@ -15,7 +15,7 @@ import {
   ProgressLabelContainerBaseProps,
   ProgressTextLabelProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
-import { useProgressBarHeight } from '@cbhq/cds-common/visualizations/useProgressBarHeight';
+import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 import { useProgressBarHasLabel } from '@cbhq/cds-common/visualizations/useProgressBarHasLabel';
 import { Palette } from '@cbhq/cds-common';
 import { durations } from '@cbhq/cds-common/tokens/motion';
@@ -100,7 +100,7 @@ const ProgressTextLabel = memo(
 );
 
 const InnerProgress: React.FC<InnerProgressBarBaseProps> = memo(
-  ({ height, progress, barColor, startLabel, endLabel, disabled }: InnerProgressBarBaseProps) => {
+  ({ height, progress, color, startLabel, endLabel, disabled }: InnerProgressBarBaseProps) => {
     const palette = usePalette();
     const lastPercent = useRef<number[]>([0]);
     const animatedProgress = useRef(
@@ -213,7 +213,7 @@ const InnerProgress: React.FC<InnerProgressBarBaseProps> = memo(
             width="100%"
             animated
             dangerouslySetStyle={progressStyle}
-            dangerouslySetBackground={!disabled ? palette[barColor] : palette.lineHeavy}
+            dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
           />
         </Box>
         {I18nManager.isRTL ? startLabelEl : endLabelEl}
@@ -397,11 +397,11 @@ export const ProgressBar: React.FC<ProgressBarBaseProps> = memo(
     startLabel,
     endLabel,
     labelPlacement = 'above',
-    barColor = 'primary',
+    color = 'primary',
     disabled = false,
     testID,
   }: ProgressBarBaseProps) => {
-    const height = useProgressBarHeight(weight);
+    const height = useProgressSize(weight);
     const hasLabel = useProgressBarHasLabel({
       startLabel,
       endLabel,
@@ -423,7 +423,7 @@ export const ProgressBar: React.FC<ProgressBarBaseProps> = memo(
 
         <InnerProgress
           height={height}
-          barColor={barColor}
+          color={color}
           progress={progress}
           startLabel={labelPlacement === 'beside' ? startLabel : undefined}
           endLabel={labelPlacement === 'beside' ? endLabel : undefined}
