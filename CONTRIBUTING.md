@@ -13,6 +13,7 @@ yarn
 - [Web Development](#web-development)
 - [React Native Development](#react-native-development)
 - [The CDS Website Development](#cds-website-development)
+- [Testing](#testing)
 - [Miscellaneous](#miscellaneous)
 
 # Web development
@@ -454,7 +455,61 @@ Currently we have a hardcoded map of projects whose key is a project name of com
 
 2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
 
-### Testing Locally on external projects
+# Testing 
+
+When you build anything at CDS, you should at least create 1 test case for each item you build. This section will describe how you can test your new feature within monorepo and also outside of monorepo. 
+
+<br />
+
+## **Running Test Cases within Monorepo**
+
+**Test Mobile**: To run tests on mobile, run the command `make test.mobile` inside CDS Directory. 
+
+**Test Web**: To run tests on web, run the command `make test.web` inside CDS Directory. 
+
+**Both**: You can also test both by running the command `make test` inside CDS Directory 
+
+<br />
+
+By default, these commands will run every test that exist. You can configure it such that it only run tests that you care about. 
+
+<br />
+
+### **Selectively Test Web Features**  
+<br />
+
+To do this, you need to modify [`jest.config.web.js`](eng/shared/design-system/jest.config.web.js) file. Change the regular expression so that it only matches tests you care about. 
+
+For example, if you change the testMatch to this, it will only run tests for Alert. 
+```
+testMatch: ['**/__tests__/**/Alert.test.[jt]s?(x)'],
+```
+
+You can also test more than 1 feature at a time. Here is an example of how you can test InputStack and Alert simultaneously  
+```
+testMatch: [
+  '**/__tests__/**/InputStack.test.[jt]s?(x)', 
+  '**/__tests__/**/Alert.test.[jt]s?(x)'
+]
+```
+
+<br />
+
+> **Note:** Please don't commit your jest.config.web.js changes.
+
+### **Selectively Test Mobile Features**  
+
+<br />
+
+The steps required to selectively test mobile features are very similar to how you do it in web. The only difference is that you will be modifying [`jest.config.mobile.js`](eng/shared/design-system/jest.config.mobile.js) instead. 
+
+<br />
+
+> **Note:** Please don't commit your jest.config.mobile.js changes.
+
+<br />
+
+## **Testing Locally on external projects**
 
 - Build your project and any dependencies of that project with `make build.packages`.
 - The output of the packages above will be in `bazel-out/darwin-fastbuild/bin/eng/shared/design-system`. Locate your package in the subdirectory `[package]/package`. For example

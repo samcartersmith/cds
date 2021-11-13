@@ -116,6 +116,7 @@ TEST_DEPS = [
 jest_test(
     name = "unit_tests_web",
     srcs = TEST_SRCS,
+    jest_config = "jest.config.web.js",
     tests = [
         "//eng/shared/design-system/common:source",
         "//eng/shared/design-system/storybook:source",
@@ -130,7 +131,7 @@ jest_test(
 jest_test(
     name = "unit_tests_mobile",
     srcs = TEST_SRCS,
-    mobile = True,
+    jest_config = "jest.config.mobile.js",
     tests = [
         "//eng/shared/design-system/mobile:source",
         "//eng/shared/design-system/storybook:source_no_decorators",

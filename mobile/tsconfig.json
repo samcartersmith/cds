@@ -6,7 +6,7 @@
     "allowJs": true
   },
   "include": [
-    "**/*"
+    "**/*", "../jest.config.mobile.js"  
   ],
   "exclude": [
     "dts/**/*"
