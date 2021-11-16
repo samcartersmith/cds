@@ -12,7 +12,7 @@ import { createPortal } from 'react-dom';
 import { Modal, ModalProps } from './Modal/Modal';
 import { TextTitle3, TextBody } from '../typography';
 import { alertContainerId } from './PortalProvider';
-import { HStack, Box } from '../layout';
+import { HStack, VStack, Box } from '../layout';
 import { Pictogram } from '../illustrations';
 import { Button } from '../buttons';
 import { isSSR } from '../utils/browser';
@@ -43,11 +43,13 @@ export const Alert = memo(
         disablePortal,
         testID,
         stacked,
+        actionLayout = 'horizontal',
         ...props
       },
       ref,
     ) => {
       const modalRef = useRef<ModalRefBaseProps>(null);
+      const isVerticalActions = actionLayout === 'vertical';
 
       const handlePreferredActionPress = useCallback(
         (event: MouseEvent<HTMLElement>) => {
@@ -72,6 +74,28 @@ export const Alert = memo(
         }),
         [],
       );
+
+      const ActionsContainer = isVerticalActions ? VStack : HStack;
+      const actions = [
+        !!dismissActionLabel && (
+          // need to set minWidth to 0 to make actions equal width
+          <Box flexGrow={1} flexBasis={0} minWidth={0} key="dismiss">
+            <Button onPress={handleDimissActionPress} block variant="secondary">
+              {dismissActionLabel}
+            </Button>
+          </Box>
+        ),
+        <Box flexGrow={1} flexBasis={0} minWidth={0} key="preferred">
+          <Button onPress={handlePreferredActionPress} block variant={preferredActionVariant}>
+            {preferredActionLabel}
+          </Button>
+        </Box>,
+      ];
+
+      // display preferred action on top
+      if (isVerticalActions) {
+        actions.reverse();
+      }
 
       const alertNode = (
         <Modal
@@ -114,21 +138,9 @@ export const Alert = memo(
               {body}
             </TextBody>
           </Box>
-          <HStack spacingHorizontal={3} spacingVertical={2} justifyContent="space-between" gap={2}>
-            {!!dismissActionLabel && (
-              // need to set minWidth to 0 to make actions equal width
-              <Box flexGrow={1} flexBasis={0} minWidth={0}>
-                <Button onPress={handleDimissActionPress} block variant="secondary">
-                  {dismissActionLabel}
-                </Button>
-              </Box>
-            )}
-            <Box flexGrow={1} flexBasis={0} minWidth={0}>
-              <Button onPress={handlePreferredActionPress} block variant={preferredActionVariant}>
-                {preferredActionLabel}
-              </Button>
-            </Box>
-          </HStack>
+          <ActionsContainer spacingHorizontal={3} spacingVertical={2} gap={2}>
+            {actions}
+          </ActionsContainer>
         </Modal>
       );
 

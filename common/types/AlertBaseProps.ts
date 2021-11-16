@@ -45,6 +45,11 @@ export type AlertBaseProps = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   children?: ReactNode;
+  /**
+   * Layout of the actions
+   * @default horizontal
+   */
+  actionLayout?: 'horizontal' | 'vertical';
 } & Pick<ModalBaseProps, 'onRequestClose' | 'visible'> &
   SharedProps &
   Pick<PositionStyles, 'zIndex'>;

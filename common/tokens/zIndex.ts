@@ -1,5 +1,6 @@
 export type OverlayZIndexKeys = keyof typeof zIndex.overlays;
 
+// For CDS internal use only
 export const zIndex = {
   navigation: 2,
   overlays: {

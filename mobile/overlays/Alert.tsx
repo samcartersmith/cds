@@ -3,7 +3,7 @@ import { Modal as RNModal } from 'react-native';
 import type { AlertBaseProps, AlertRefBaseProps } from '@cbhq/cds-common';
 
 import { TextTitle3, TextBody } from '../typography';
-import { HStack, Box } from '../layout';
+import { HStack, VStack, Box } from '../layout';
 import { Pictogram } from '../illustrations';
 import { Button } from '../buttons';
 import { Overlay } from './Overlay/Overlay';
@@ -26,11 +26,13 @@ export const Alert = memo(
         dismissActionLabel,
         onDismissActionPress,
         testID,
+        actionLayout = 'horizontal',
       },
       ref,
     ) => {
       const [{ modalOpacity, modalScale, overlayOpacity }, animateIn, animateOut] =
         useAlertAnimation();
+      const isVerticalActions = actionLayout === 'vertical';
 
       useEffect(() => {
         if (visible) {
@@ -63,6 +65,28 @@ export const Alert = memo(
         onDismissActionPress?.();
         handleClose();
       }, [onDismissActionPress, handleClose]);
+
+      const ActionsContainer = isVerticalActions ? VStack : HStack;
+      const actionFlexBasis = isVerticalActions ? undefined : 0;
+      const actions = [
+        !!dismissActionLabel && (
+          <Box flexGrow={1} flexBasis={actionFlexBasis} key="dismiss">
+            <Button onPress={handleSecondaryActionPress} block variant="secondary">
+              {dismissActionLabel}
+            </Button>
+          </Box>
+        ),
+        <Box flexGrow={1} flexBasis={actionFlexBasis} key="preferred">
+          <Button onPress={handlePrimaryActionPress} block variant={preferredActionVariant}>
+            {preferredActionLabel}
+          </Button>
+        </Box>,
+      ];
+
+      // display preferred action on top
+      if (isVerticalActions) {
+        actions.reverse();
+      }
 
       return (
         <RNModal
@@ -110,25 +134,9 @@ export const Alert = memo(
                   {body}
                 </TextBody>
               </Box>
-              <HStack
-                spacingHorizontal={3}
-                spacingVertical={2}
-                justifyContent="space-between"
-                gap={2}
-              >
-                {!!dismissActionLabel && (
-                  <Box flexGrow={1} flexBasis={0}>
-                    <Button onPress={handleSecondaryActionPress} block variant="secondary">
-                      {dismissActionLabel}
-                    </Button>
-                  </Box>
-                )}
-                <Box flexGrow={1} flexBasis={0}>
-                  <Button onPress={handlePrimaryActionPress} block variant={preferredActionVariant}>
-                    {preferredActionLabel}
-                  </Button>
-                </Box>
-              </HStack>
+              <ActionsContainer spacingHorizontal={3} spacingVertical={2} gap={2}>
+                {actions}
+              </ActionsContainer>
             </Box>
           </Box>
         </RNModal>
