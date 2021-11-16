@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.0 (11/15/2021, 04:01 PM PST)
+
+#### 💥 Breaking
+
+- Added border animation for TextInput for Mobile. Created a useInputBorderAnimation so all components that fall under the Input family can use it. [#41693](https://github.cbhq.net/mono/repo/pull/41693), [CDS-1710](https://jira.coinbase-corp.com/browse/CDS-1710)
+
+#### 🚀 Updates
+
+- Types, Utils, Hooks, and Compact List Cell (part 1 of many for SelectInput). [#41448](https://github.cbhq.net/mono/repo/pull/41448), [CDS-1536](https://jira.coinbase-corp.com/browse/CDS-1536)
+- **[Illustrations]** Migrate to Illustration 2.0. [#40456](https://github.cbhq.net/mono/repo/pull/40456), [CDS-1429](https://jira.coinbase-corp.com/browse/CDS-1429)
+
+#### 📘 Misc
+
+- Setting up types for ProgressCircle. [#41838](https://github.cbhq.net/mono/repo/pull/41838)
+- Build Progress bar. [#39938](https://github.cbhq.net/mono/repo/pull/39938), [CDS-1681](https://jira.coinbase-corp.com/browse/CDS-1681)
+
 ## 0.28.0 (11/8/2021, 02:07 PM PST)
 
 #### 💥 Breaking
