@@ -89,7 +89,7 @@ async function prepare() {
     cleanup();
   } catch (err) {
     if (err instanceof Error) {
-      console.log(err?.message);
+      console.log(err.message);
       cleanup();
     } else {
       throw err;

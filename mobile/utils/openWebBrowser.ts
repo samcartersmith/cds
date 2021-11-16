@@ -100,13 +100,9 @@ export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions
       await Linking.openURL(url);
     }
   } catch (err) {
-    if (err instanceof Error) {
-      // TODO: Should output this to Bugsnag
-      // eslint-disable-next-line no-console
-      console.error(`An error occurred: ${err}`);
-      InAppBrowser.close();
-    } else {
-      throw err;
-    }
+    // TODO: Should output this to Bugsnag
+    // eslint-disable-next-line no-console
+    console.error(`An error occurred: ${err}`);
+    InAppBrowser.close();
   }
 };

@@ -19,7 +19,7 @@ export async function getProjectFiles(dir: string, ignoreDirs: string[], source?
       absolute: true,
     });
     return files;
-  } catch (err) {
+  } catch {
     throw new Error(`Failed to get typescript files for ${dir}`);
   }
 }
