@@ -264,19 +264,19 @@ make serve.website
 
 ```console
 ash_login
-make deploy.website
-```
-
-### Deploy Dev
-
-```console
-ash_login
 ash deploy -p eng/shared/design-system/website/cloud
 ```
 
 Select the artifact to deploy.
 
 Please not that anything you want to deploy to production aka cds.cbhq.net must be merged into master prior to deployment. This is because artifcats only exist for merges to master.
+
+### Deploy Dev
+
+```console
+ash_login
+make deploy.website-dev
+```
 
 ### Debugging s3 bucket
 
