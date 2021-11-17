@@ -1,12 +1,7 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import {
-  compactListHeightWithDescription,
-  listHeight,
-  listHeightWithDescription,
-  compactListHeight,
-} from '@cbhq/cds-common/tokens/cell';
+import { listHeight, compactListHeight } from '@cbhq/cds-common/tokens/cell';
 import type { ListCellBaseProps } from '@cbhq/cds-common/types';
 
 import { Box } from '../layout/Box';
@@ -34,13 +29,8 @@ export const ListCell = memo(function ListCell({
   variant,
   ...props
 }: ListCellProps) {
-  const calculatedListHeight = useMemo(() => {
-    if (description) {
-      return compact ? compactListHeightWithDescription : listHeightWithDescription;
-    }
-    return compact ? compactListHeight : listHeight;
-  }, [compact, description]);
-  const minHeight = useScaleConditional(calculatedListHeight);
+  const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
+
   const accessoryType = selected ? 'selected' : accessory;
   let end;
 

@@ -23,16 +23,6 @@ export const compactListHeight: Record<ScaleDensity, number> = {
   dense: 36,
 };
 
-export const listHeightWithDescription: Record<ScaleDensity, number> = {
-  normal: 80,
-  dense: 64,
-};
-
-export const compactListHeightWithDescription: Record<ScaleDensity, number> = {
-  normal: 64,
-  dense: 56,
-};
-
 /** Spacing configs for Cells to be parsed in common/hooks/useCellSpacing */
 
 /** Default spacing config */
