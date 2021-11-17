@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 
 import { css } from 'linaria';
-import { Pressable, PressableProps } from '../system/Pressable';
-import { TextLabel1 } from '../typography/TextLabel1';
+import { Pressable, PressableProps } from '../../system/Pressable';
+import { TextLabel1 } from '../../typography/TextLabel1';
 
 const tabStyles = css`
   border-style: none;

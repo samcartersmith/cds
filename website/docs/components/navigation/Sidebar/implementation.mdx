@@ -1,0 +1,78 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import Example from './_example.mdx';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/navigation/Sidebar](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/navigation/Sidebar.tsx)
+
+<ComponentDetails componentName="Sidebar" templateName="intro" />
+
+## Usage
+<Example />
+
+<ComponentDetails componentName="Sidebar" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Sidebar" templateName="a11y" />
+
+## Props
+
+### children <Badge variant="web" />
+
+Children are expected to be an array of SidebarItems
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="children"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[]',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & ReactNodeArray',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & ReactPortal',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & false',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & number',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & string',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & true',
+  ]}
+/>
+
+<ComponentDetails componentName="Sidebar" templateName="prop-children" />
+
+### compact <Badge variant="web" />
+
+Use compact to show only the logo
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="compact"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Sidebar" templateName="prop-compact" />
+
+### logo <Badge variant="web" />
+
+The logo to display
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="logo"
+  required={true}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Sidebar" templateName="prop-logo" />
+
+<ComponentDetails componentName="Sidebar" templateName="outro" />

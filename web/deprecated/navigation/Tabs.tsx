@@ -4,7 +4,7 @@ import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 import { SetState } from '@cbhq/cds-common/types';
 
 import { TabItemBaseProps, TabItemProps } from './TabItem';
-import { HStack } from '../layout';
+import { HStack } from '../../layout';
 
 export type TabsProps = {
   activeIndex?: number;

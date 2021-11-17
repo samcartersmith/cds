@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-import { HStack } from '../layout/HStack';
-import { TextTitle3, TextLabel2 } from '../typography';
+import { HStack } from '../../layout/HStack';
+import { TextTitle3, TextLabel2 } from '../../typography';
 import { navbarSpacing, subtitleColor } from './navigationTokens';
 
 export type NavigationBarTitlesProps = {

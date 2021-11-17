@@ -7,18 +7,18 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { MotionConfig, useElementScroll, m as motion } from 'framer-motion';
 import { cx } from 'linaria';
 
-import { useDimensions } from '../hooks/useDimensions';
-import { useInterpolate } from '../hooks/useInterpolate';
-import { Box, Divider, VStack } from '../layout';
-import { bottom as pinBottom } from '../styles/pin';
+import { useDimensions } from '../../hooks/useDimensions';
+import { useInterpolate } from '../../hooks/useInterpolate';
+import { Box, Divider, VStack } from '../../layout';
+import { bottom as pinBottom } from '../../styles/pin';
 import { NavigationProvider, SidebarLayout, defaultLayout, useNavigation } from './context';
-import { MobileMenu } from './MobileMenu';
-import { NavigationBarProps } from './NavigationBar';
 import { NavigationDisplayTitleProps } from './NavigationDisplayTitle';
 import { rootStyles, gridForSidebar, scrollContent } from './navigationStyles';
 import { sidebarWidth, appContentSpacing } from './navigationTokens';
-import { SidebarProps } from './Sidebar';
 import { TabsProps } from './Tabs';
+import { MobileMenu } from './MobileMenu';
+import { NavigationBarProps } from './NavigationBar';
+import { SidebarProps } from './Sidebar';
 
 export type NavigationProps = {
   displayTitle?: React.ReactElement<NavigationDisplayTitleProps> | false | null;

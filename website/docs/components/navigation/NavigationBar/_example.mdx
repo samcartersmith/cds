@@ -1,0 +1,25 @@
+```jsx live
+function NavigationWithPress() {
+  const handlePress = (name) => alert(`Pressed ${name}`);
+  const { name, avatar } = mocks.users.find(({ name }) => name === 'Donna');
+
+  return (
+    <NavigationBar
+      start={<IconButton name="arrowLeft" onPress={() => handlePress('Back')} />}
+      end={
+        <HStack gap={1} alignItems="center">
+          <IconButton name="bell" onPress={() => handlePress('Notifications')} />
+          <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
+            <HStack gap={1} alignItems="center">
+              <Avatar alt={name} src={avatar} size="xl" />
+              <TextHeadline as="h2">{name}</TextHeadline>
+            </HStack>
+          </Pressable>
+        </HStack>
+      }
+    >
+      <PageTitle>Personal Portfolio</PageTitle>
+    </NavigationBar>
+  );
+}
+```

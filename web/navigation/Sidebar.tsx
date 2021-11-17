@@ -1,40 +1,59 @@
-import React, { memo } from 'react';
+import React, { memo, Children, cloneElement, ReactElement, useMemo } from 'react';
 
-import { TrackIndexProvider } from '@cbhq/cds-common/context/TrackIndexProvider';
-import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
-import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
+import { SidebarItemProps } from './SidebarItem';
 import { LogoMarkProps } from '../icons/LogoMark';
-import { VStack } from '../layout/VStack';
-import { hideForMobile, sidebarListReset } from './navigationStyles';
+import { VStack, Box } from '../layout';
 
 export type SidebarProps = {
-  logo: React.ReactElement<LogoMarkProps>;
-  children: React.ReactNode;
+  /**
+   * The logo to display
+   * @default undefined
+   */
+  logo: ReactElement<LogoMarkProps>;
+  /**
+   * Children are expected to be an array of SidebarItems
+   * @default undefined
+   */
+  children: ReactElement<SidebarItemProps>[];
+  /**
+   * Use compact to show only the logo
+   * @default false
+   */
+  compact?: boolean;
 };
 
-export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children }) => {
+export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children, compact }) => {
+  const decoratedChildren = useMemo(
+    () =>
+      Children.map(children, (child) => {
+        return child
+          ? cloneElement(child, {
+              compact: child.props?.compact ?? compact,
+            })
+          : null;
+      }),
+    [children, compact],
+  );
+
   return (
-    <ScaleProvider value={DEFAULT_SCALE}>
-      <VStack
-        background
-        borderedEnd
-        height="100%"
-        width="100%"
-        spacingHorizontal={2}
-        spacingBottom={2}
-        spacingTop={gutter}
-        dangerouslySetClassName={hideForMobile}
-      >
-        <VStack spacingTop={0.5} spacingStart={1} spacingBottom={3}>
-          {logo}
-        </VStack>
-        <ul className={sidebarListReset}>
-          <TrackIndexProvider>{children}</TrackIndexProvider>
-        </ul>
+    <VStack
+      background
+      borderedEnd
+      height="100%"
+      width={compact ? 87 : 240}
+      spacingHorizontal={2}
+      spacingBottom={2}
+      spacingTop={gutter}
+    >
+      <Box spacingTop={0.5} spacingStart={1} spacingBottom={4}>
+        {logo}
+      </Box>
+      <VStack gap={0.5} offsetStart={0.5}>
+        {decoratedChildren}
       </VStack>
-    </ScaleProvider>
+    </VStack>
   );
 });
 

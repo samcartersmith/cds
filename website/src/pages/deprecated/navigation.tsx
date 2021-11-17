@@ -17,7 +17,7 @@ import {
   Sidebar,
   NavigationListItem,
   SidebarSection,
-} from '@cbhq/cds-web/navigation';
+} from '@cbhq/cds-web/deprecated/navigation';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
 import Head from '@docusaurus/Head';

@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 
 import { join } from '@cbhq/cds-common/utils/join';
 
-import { ButtonProps } from '../buttons/Button';
-import { Box } from '../layout/Box';
-import { Spacer } from '../layout/Spacer';
+import { ButtonProps } from '../../buttons/Button';
+import { Box } from '../../layout/Box';
+import { Spacer } from '../../layout/Spacer';
 import { hideForCondensed } from './navigationStyles';
 import { navbarSpacing } from './navigationTokens';
 

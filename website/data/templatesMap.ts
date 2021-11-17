@@ -1039,6 +1039,27 @@ export const VStack = {
   ),
 };
 
+export const Spinner = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/implementation.mdx'
+      ),
+  ),
+  spinner: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/spinner.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/usage.mdx'
+      ),
+  ),
+};
+
 export const Avatar = {
   avatar: React.lazy(
     async () =>
@@ -1087,23 +1108,62 @@ export const RemoteImage = {
   ),
 };
 
-export const Spinner = {
+export const NavigationBar = {
   implementation: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/implementation.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavigationBar/implementation.mdx'
       ),
   ),
-  spinner: React.lazy(
+  'navigation-bar': React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/spinner.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavigationBar/navigation-bar.mdx'
       ),
   ),
-  usage: React.lazy(
+};
+
+export const PageTitle = {
+  implementation: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/loaders/Spinner/usage.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/PageTitle/implementation.mdx'
+      ),
+  ),
+  'page-title': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/PageTitle/page-title.mdx'
+      ),
+  ),
+};
+
+export const Sidebar = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Sidebar/implementation.mdx'
+      ),
+  ),
+  sidebar: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Sidebar/sidebar.mdx'
+      ),
+  ),
+};
+
+export const SidebarItem = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarItem/implementation.mdx'
+      ),
+  ),
+  'sidebar-item': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarItem/sidebar-item.mdx'
       ),
   ),
 };
@@ -1230,72 +1290,6 @@ export const ModalHeader = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalHeader/modal-header.mdx'
-      ),
-  ),
-};
-
-export const Link = {
-  a11y: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/a11y.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/implementation.mdx'
-      ),
-  ),
-  link: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/link.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/usage.mdx'
-      ),
-  ),
-};
-
-export const Text = {
-  a11y: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/a11y.mdx'
-      ),
-  ),
-  design: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/design.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/implementation.mdx'
-      ),
-  ),
-  intro: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/intro.mdx'
-      ),
-  ),
-  text: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/text.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/usage.mdx'
       ),
   ),
 };
@@ -1671,6 +1665,72 @@ export const TableRow = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/tables/TableRow/usage.mdx'
+      ),
+  ),
+};
+
+export const Link = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/a11y.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/implementation.mdx'
+      ),
+  ),
+  link: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/link.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Link/usage.mdx'
+      ),
+  ),
+};
+
+export const Text = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/a11y.mdx'
+      ),
+  ),
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/design.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/intro.mdx'
+      ),
+  ),
+  text: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/text.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/typography/Text/usage.mdx'
       ),
   ),
 };

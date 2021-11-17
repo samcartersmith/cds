@@ -101,15 +101,26 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Loaders',
+      collapsed: true,
+      items: ['components/loaders/Spinner/spinner'],
+    },
+    {
+      type: 'category',
       label: 'Media',
       collapsed: true,
       items: ['components/media/Avatar/avatar', 'components/media/RemoteImage/remote-image'],
     },
     {
       type: 'category',
-      label: 'Loaders',
+      label: 'Navigation',
       collapsed: true,
-      items: ['components/loaders/Spinner/spinner'],
+      items: [
+        'components/navigation/NavigationBar/navigation-bar',
+        'components/navigation/PageTitle/page-title',
+        'components/navigation/Sidebar/sidebar',
+        'components/navigation/SidebarItem/sidebar-item',
+      ],
     },
     {
       type: 'category',
@@ -123,12 +134,6 @@ module.exports = {
         'components/overlays/ModalFooter/modal-footer',
         'components/overlays/ModalHeader/modal-header',
       ],
-    },
-    {
-      type: 'category',
-      label: 'Typography',
-      collapsed: true,
-      items: ['components/typography/Link/link', 'components/typography/Text/text'],
     },
     {
       type: 'category',
@@ -156,6 +161,12 @@ module.exports = {
         'components/tables/TableHeader/table-header',
         'components/tables/TableRow/table-row',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Typography',
+      collapsed: true,
+      items: ['components/typography/Link/link', 'components/typography/Text/text'],
     },
     {
       type: 'category',

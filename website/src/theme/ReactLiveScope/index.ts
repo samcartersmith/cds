@@ -50,6 +50,8 @@ import { assets, assetColors, assetImages } from ':cds-website/data/assets';
 import { accounts } from ':cds-website/data/accounts';
 import { loremIpsum } from ':cds-website/data/loremIpsum';
 import { prices } from ':cds-website/data/prices';
+import { users } from ':cds-website/data/users';
+import { product } from ':cds-website/data/product';
 import { PatternArtboard } from ':cds-website/components/PatternArtboard';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
@@ -65,6 +67,8 @@ const mocks = {
   assetColors,
   assetImages,
   prices,
+  users,
+  product,
 };
 
 // Add react-live imports you need here

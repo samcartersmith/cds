@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 
 import { SpacingScale } from '@cbhq/cds-common';
 
-import { Box } from '../layout/Box';
-import { TextDisplay1, TextTitle1 } from '../typography';
+import { Box } from '../../layout/Box';
+import { TextDisplay1, TextTitle1 } from '../../typography';
 import { displayTitleSpacing, subtitleColor } from './navigationTokens';
 
 export type NavigationDisplayTitleProps = {

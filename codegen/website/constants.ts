@@ -19,13 +19,13 @@ export const CDS_SUB_DIRS = [
   'icons',
   'illustrations',
   'layout',
-  'media',
   'loaders',
-  // 'navigation', TODO: add usage details and hide internal props
+  'media',
+  'navigation',
   'overlays',
-  'typography',
   'system',
   'tables',
+  'typography',
   'visualizations',
 ] as const;
 

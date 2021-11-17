@@ -1,704 +1,107 @@
-import React, { forwardRef, useCallback, useMemo, useState } from 'react';
+/* eslint-disable react-perf/jsx-no-new-function-as-prop */
+import React, { useState } from 'react';
 
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-
-import { Button, IconButton } from '../../buttons/index';
+import { palette } from '../../tokens';
+import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/index';
 import { LogoMark } from '../../icons/LogoMark';
-import { VStack } from '../../layout';
-import { ThemeProvider } from '../../system/ThemeProvider';
-import { TextBody, TextTitle1 } from '../../typography';
-import {
-  TabItem,
-  Tabs,
-  Navigation,
-  NavigationBar,
-  NavigationBarActions,
-  NavigationBarCtas,
-  NavigationBarControls,
-  NavigationIconButton,
-  NavigationBarTitles,
-  NavigationDisplayTitle,
-  Sidebar,
-  NavigationListItem,
-  NavigationListItemLinkProps,
-  SidebarSection,
-} from '../index';
-
-const defaultRoute = '/navigation';
+import { HStack } from '../../layout';
+import { TextHeadline } from '../../typography';
+import { NavigationBar, PageTitle, Sidebar, SidebarItem, SidebarItemProps } from '../index';
+import { Pressable } from '../../system';
+import { Avatar } from '../../media';
 
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
   TabsAndTitle: 'With Tabs and displayTitle',
 };
 
-// Avoids react-router errors. Just mock the link as its super lightweight.
-// If we need a more robust mock we can look into something like storybook-react-router.
-const MockLink = forwardRef<HTMLAnchorElement, NavigationListItemLinkProps>(function MockLink(
-  { children, to, ...props },
-  ref,
-) {
+// eslint-disable-next-line no-console
+const handlePress = (name: string) => console.log(`Pressed ${name}`);
+export const NavigationBarFullExample: React.FC = () => {
   return (
-    <a {...props} href={String(to)} ref={ref}>
-      {children}
-    </a>
-  );
-});
-
-export const DefaultTabs = () => (
-  <Tabs>
-    <TabItem label="Overview" />
-    <TabItem label="Wallet" />
-    <TabItem label="Vault" />
-  </Tabs>
-);
-
-export const NoTabsNoTitle: React.FC = () => {
-  const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
-  const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
-
-  const navbar = useMemo(() => {
-    return (
-      <NavigationBar
-        controls={
-          <NavigationBarControls>
-            <IconButton name="arrowLeft" />
-          </NavigationBarControls>
-        }
-        ctas={
-          <NavigationBarCtas>
-            <Button compact variant="primary">
-              Buy & Sell
-            </Button>
-            <Button compact variant="secondary">
-              Send & Recieve
-            </Button>
-          </NavigationBarCtas>
-        }
-        actions={
-          <NavigationBarActions>
-            <NavigationIconButton onPress={toggleSidebarSections} name="gear" label="Settings" />
-            <NavigationIconButton onPress={toggleDarkMode} name="api" label="Last item" />
-          </NavigationBarActions>
-        }
-      />
-    );
-  }, [toggleDarkMode, toggleSidebarSections]);
-
-  const sidebar = useMemo(() => {
-    const logo = (
-      <MockLink to={defaultRoute}>
-        <LogoMark />
-      </MockLink>
-    );
-
-    const sidebarList = (
-      <>
-        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
-        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
-      </>
-    );
-
-    const sidebarSections = (
-      <>
-        <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
-        <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
-          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
-        </SidebarSection>
-      </>
-    );
-
-    return <Sidebar logo={logo}>{showSidebarSections ? sidebarSections : sidebarList}</Sidebar>;
-  }, [showSidebarSections]);
-
-  const loremBlock = useMemo(() => {
-    return (
-      <VStack>
-        <TextTitle1 as="h1" spacingBottom={2}>
-          Lorem ipsum
-        </TextTitle1>
-        <TextBody as="p" spacingBottom={3}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-          libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-          imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-          Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.{' '}
-        </TextBody>
-      </VStack>
-    );
-  }, []);
-
-  return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <NavigationBar
+      start={<IconButton name="arrowLeft" onPress={() => handlePress('Back')} />}
+      end={
+        <HStack gap={1} alignItems="center">
+          <IconButton name="bell" onPress={() => handlePress('Notifications')} />
+          <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
+            <HStack gap={1} alignItems="center">
+              <Avatar alt="Andy" size="xl" />
+              <TextHeadline as="h2">Andy</TextHeadline>
+            </HStack>
+          </Pressable>
+        </HStack>
+      }
+    >
+      <PageTitle>Personal Portfolio</PageTitle>
+    </NavigationBar>
   );
 };
 
-export const TabsNoTitle: React.FC = () => {
-  const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
-  const [showTabs, { toggle: toggleTabs }] = useToggler(true);
-  const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
-
-  const tabs = useMemo(
-    () => (
-      <Tabs>
-        <TabItem label="Overview" />
-        <TabItem label="Wallet" />
-        <TabItem label="Vault" />
-      </Tabs>
-    ),
-    [],
-  );
-
-  const navbar = useMemo(() => {
-    return (
-      <NavigationBar
-        controls={
-          <NavigationBarControls>
-            <IconButton name="arrowLeft" />
-          </NavigationBarControls>
-        }
-        ctas={
-          <NavigationBarCtas>
-            <Button compact variant="primary">
-              Buy & Sell
-            </Button>
-            <Button compact variant="secondary">
-              Send & Recieve
-            </Button>
-          </NavigationBarCtas>
-        }
-        actions={
-          <NavigationBarActions>
-            <NavigationIconButton onPress={toggleSidebarSections} name="gear" label="Settings" />
-            <NavigationIconButton onPress={toggleTabs} name="list" label="Another item" />
-            <NavigationIconButton onPress={toggleDarkMode} name="api" label="Last item" />
-          </NavigationBarActions>
-        }
-      />
-    );
-  }, [toggleDarkMode, toggleSidebarSections, toggleTabs]);
-
-  const sidebar = useMemo(() => {
-    const logo = (
-      <MockLink to={defaultRoute}>
-        <LogoMark />
-      </MockLink>
-    );
-
-    const sidebarList = (
-      <>
-        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
-        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
-      </>
-    );
-
-    const sidebarSections = (
-      <>
-        <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
-        <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
-          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
-          <NavigationListItem as={MockLink} icon="bell" label="Illustration" />
-        </SidebarSection>
-      </>
-    );
-
-    return <Sidebar logo={logo}>{showSidebarSections ? sidebarSections : sidebarList}</Sidebar>;
-  }, [showSidebarSections]);
-
-  const loremBlock = useMemo(() => {
-    return (
-      <VStack>
-        <TextTitle1 as="h1" spacingBottom={2}>
-          Lorem ipsum
-        </TextTitle1>
-        <TextBody as="p" spacingBottom={3}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-          libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-          imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-          Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.{' '}
-        </TextBody>
-      </VStack>
-    );
-  }, []);
-
+export const NavigationBarTitle: React.FC = () => {
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <NavigationBar
+      end={
+        <HStack gap={1} alignItems="center">
+          <IconButton name="bell" onPress={() => handlePress('Notifications')} />
+          <AvatarButton alt="Donna" onPress={() => handlePress('Avatar')} compact />
+        </HStack>
+      }
+    >
+      <PageTitle>Personal Portfolio</PageTitle>
+    </NavigationBar>
   );
 };
 
-export const TitleNoTabs: React.FC = () => {
-  const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
-  const [showDisplayTitle, setShowDisplayTitle] = useState(true);
-  const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
-  const title = 'Bitcoin';
-  const subtitle = 'BTC';
-  const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
-  const handlePress = useCallback(() => setShowDisplayTitle((prev) => !prev), []);
-
-  const navbar = useMemo(() => {
-    return (
-      <NavigationBar
-        controls={
-          <NavigationBarControls>
-            <IconButton name="arrowLeft" />
-          </NavigationBarControls>
-        }
-        titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
-        ctas={
-          <NavigationBarCtas>
-            <Button compact variant="primary">
-              Buy & Sell
-            </Button>
-            <Button compact variant="secondary">
-              Send & Recieve
-            </Button>
-          </NavigationBarCtas>
-        }
-        actions={
-          <NavigationBarActions>
-            <NavigationIconButton onPress={toggleSidebarSections} name="gear" label="Settings" />
-            <NavigationIconButton onPress={handlePress} name="expand" label="Notifications" />
-            <NavigationIconButton onPress={toggleDarkMode} name="api" label="Last item" />
-          </NavigationBarActions>
-        }
-      />
-    );
-  }, [toggleDarkMode, toggleSidebarSections, handlePress]);
-
-  const sidebar = useMemo(() => {
-    const logo = (
-      <MockLink to={defaultRoute}>
-        <LogoMark />
-      </MockLink>
-    );
-
-    const sidebarList = (
-      <>
-        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
-        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
-      </>
-    );
-
-    const sidebarSections = (
-      <>
-        <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
-        <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
-          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
-        </SidebarSection>
-      </>
-    );
-
-    return <Sidebar logo={logo}>{showSidebarSections ? sidebarSections : sidebarList}</Sidebar>;
-  }, [showSidebarSections]);
-
-  const loremBlock = useMemo(() => {
-    return (
-      <VStack>
-        <TextTitle1 as="h1" spacingBottom={2}>
-          Lorem ipsum
-        </TextTitle1>
-        <TextBody as="p" spacingBottom={3}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-          libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-          imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-          Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.{' '}
-        </TextBody>
-      </VStack>
-    );
-  }, []);
+type Items = { title: string; icon: SidebarItemProps['icon'] }[];
+export const SidebarExample: React.FC = () => {
+  const items: Items = [
+    { title: 'Assets', icon: 'chartPie' },
+    { title: 'Trade', icon: 'trading' },
+    { title: 'Pay', icon: 'pay' },
+    { title: 'For you', icon: 'newsfeed' },
+    { title: 'Earn', icon: 'giftBox' },
+    { title: 'Borrow', icon: 'cash' },
+    { title: 'DeFi', icon: 'defi' },
+  ];
+  const [compact, setCompact] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showDisplayTitle} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
-  );
-};
-
-export const TabsAndDisplayTitle: React.FC = () => {
-  const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
-  const [showTabs, { toggle: toggleTabs }] = useToggler(true);
-  const [showDisplayTitle, { toggle: toggleDisplayTitle }] = useToggler(false);
-  const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
-  const title = 'Bitcoin';
-  const subtitle = 'BTC';
-  const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
-
-  const tabs = useMemo(
-    () => (
-      <Tabs>
-        <TabItem label="Overview" />
-        <TabItem label="Wallet" />
-        <TabItem label="Vault" />
-      </Tabs>
-    ),
-    [],
-  );
-
-  const navbar = useMemo(() => {
-    return (
-      <NavigationBar
-        controls={
-          <NavigationBarControls>
-            <IconButton name="arrowLeft" />
-          </NavigationBarControls>
-        }
-        titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
-        ctas={
-          <NavigationBarCtas>
-            <Button compact variant="primary">
-              Buy & Sell
-            </Button>
-            <Button compact variant="secondary">
-              Send & Recieve
-            </Button>
-          </NavigationBarCtas>
-        }
-        actions={
-          <NavigationBarActions>
-            <NavigationIconButton onPress={toggleSidebarSections} name="gear" label="Settings" />
-            <NavigationIconButton
-              onPress={toggleDisplayTitle}
-              name="expand"
-              label="Notifications"
-            />
-            <NavigationIconButton onPress={toggleTabs} name="list" label="Another item" />
-            <NavigationIconButton onPress={toggleDarkMode} name="api" label="Last item" />
-          </NavigationBarActions>
-        }
-      />
-    );
-  }, [toggleDarkMode, toggleDisplayTitle, toggleSidebarSections, toggleTabs]);
-
-  const sidebar = useMemo(() => {
-    const logo = (
-      <MockLink to={defaultRoute}>
-        <LogoMark />
-      </MockLink>
-    );
-
-    const sidebarList = (
-      <>
-        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
-        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
-      </>
-    );
-
-    const sidebarSections = (
-      <>
-        <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
-        <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
-          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
-        </SidebarSection>
-      </>
-    );
-
-    return <Sidebar logo={logo}>{showSidebarSections ? sidebarSections : sidebarList}</Sidebar>;
-  }, [showSidebarSections]);
-
-  const loremBlock = useMemo(() => {
-    return (
-      <VStack>
-        <TextTitle1 as="h1" spacingBottom={2}>
-          Lorem ipsum
-        </TextTitle1>
-        <TextBody as="p" spacingBottom={3}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-          libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-          imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-          Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.{' '}
-        </TextBody>
-      </VStack>
-    );
-  }, []);
-
-  return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showDisplayTitle} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
-  );
-};
-
-export const SidebarCollapsed: React.FC = () => {
-  const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
-  const [showTabs, { toggle: toggleTabs }] = useToggler(false);
-  const [showDisplayTitle, { toggle: toggleDisplayTitle }] = useToggler(false);
-
-  const title = 'Bitcoin';
-  const subtitle = 'BTC';
-  const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
-
-  const tabs = useMemo(
-    () => (
-      <Tabs>
-        <TabItem label="Overview" />
-        <TabItem label="Wallet" />
-        <TabItem label="Vault" />
-      </Tabs>
-    ),
-    [],
-  );
-
-  const navbar = useMemo(() => {
-    return (
-      <NavigationBar
-        controls={
-          <NavigationBarControls>
-            <IconButton name="arrowLeft" />
-          </NavigationBarControls>
-        }
-        titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
-        ctas={
-          <NavigationBarCtas>
-            <Button compact variant="primary">
-              Buy & Sell
-            </Button>
-            <Button compact variant="secondary">
-              Send & Recieve
-            </Button>
-          </NavigationBarCtas>
-        }
-        actions={
-          <NavigationBarActions>
-            <NavigationIconButton
-              onPress={toggleDisplayTitle}
-              name="expand"
-              label="Notifications"
-            />
-            <NavigationIconButton onPress={toggleTabs} name="list" label="Another item" />
-            <NavigationIconButton onPress={toggleDarkMode} name="api" label="Last item" />
-          </NavigationBarActions>
-        }
-      />
-    );
-  }, [toggleDarkMode, toggleDisplayTitle, toggleTabs]);
-
-  const loremBlock = useMemo(() => {
-    return (
-      <VStack>
-        <TextTitle1 as="h1" spacingBottom={2}>
-          Lorem ipsum
-        </TextTitle1>
-        <TextBody as="p" spacingBottom={3}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-          libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-          imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-          Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.{' '}
-        </TextBody>
-      </VStack>
-    );
-  }, []);
-
-  return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showDisplayTitle}`}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
-  );
-};
-
-export const SidebarWithSections: React.FC = () => {
-  const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
-  const [showTabs, { toggle: toggleTabs }] = useToggler(false);
-  const [showDisplayTitle, { toggle: toggleDisplayTitle }] = useToggler(false);
-  const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(true);
-  const title = 'Bitcoin';
-  const subtitle = 'BTC';
-  const displayTitle = <NavigationDisplayTitle title={title} subtitle={subtitle} />;
-
-  const tabs = useMemo(
-    () => (
-      <Tabs>
-        <TabItem label="Overview" />
-        <TabItem label="Wallet" />
-        <TabItem label="Vault" />
-      </Tabs>
-    ),
-    [],
-  );
-
-  const navbar = useMemo(() => {
-    return (
-      <NavigationBar
-        controls={
-          <NavigationBarControls>
-            <IconButton name="arrowLeft" />
-          </NavigationBarControls>
-        }
-        titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
-        ctas={
-          <NavigationBarCtas>
-            <Button compact variant="primary">
-              Buy & Sell
-            </Button>
-            <Button compact variant="secondary">
-              Send & Recieve
-            </Button>
-          </NavigationBarCtas>
-        }
-        actions={
-          <NavigationBarActions>
-            <NavigationIconButton onPress={toggleSidebarSections} name="gear" label="Settings" />
-            <NavigationIconButton
-              onPress={toggleDisplayTitle}
-              name="expand"
-              label="Notifications"
-            />
-            <NavigationIconButton onPress={toggleTabs} name="list" label="Another item" />
-            <NavigationIconButton onPress={toggleDarkMode} name="api" label="Last item" />
-          </NavigationBarActions>
-        }
-      />
-    );
-  }, [toggleDarkMode, toggleDisplayTitle, toggleSidebarSections, toggleTabs]);
-
-  const sidebar = useMemo(() => {
-    const logo = (
-      <MockLink to={defaultRoute}>
-        <LogoMark />
-      </MockLink>
-    );
-
-    const sidebarList = (
-      <>
-        <NavigationListItem as={MockLink} icon="chartPie" label="Overview" active />
-        <NavigationListItem as={MockLink} icon="gab" label="Principles" badge={3} />
-        <NavigationListItem as={MockLink} icon="home" label="Getting started" />
-        <NavigationListItem as={MockLink} icon="pay" label="Pay" />
-        <NavigationListItem as={MockLink} icon="settings" label="Support" badge={12} />
-      </>
-    );
-
-    const sidebarSections = (
-      <>
-        <SidebarSection title="Introduction">{sidebarList}</SidebarSection>
-        <SidebarSection title="Foundation">
-          <NavigationListItem as={MockLink} icon="cash" label="Overview" />
-          <NavigationListItem as={MockLink} icon="newsfeed" label="Color" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Typography" />
-          <NavigationListItem as={MockLink} icon="invoice" label="Illustration" />
-        </SidebarSection>
-      </>
-    );
-
-    return <Sidebar logo={logo}>{showSidebarSections ? sidebarSections : sidebarList}</Sidebar>;
-  }, [showSidebarSections]);
-
-  const loremBlock = useMemo(() => {
-    return (
-      <VStack>
-        <TextTitle1 as="h1" spacingBottom={2}>
-          Lorem ipsum
-        </TextTitle1>
-        <TextBody as="p" spacingBottom={3}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-          libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-          imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-          Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.{' '}
-        </TextBody>
-      </VStack>
-    );
-  }, []);
-
-  return (
-    <>
-      <ThemeProvider spectrum={showDarkMode ? 'dark' : 'light'}>
-        <Navigation
-          key={`${showDarkMode} ${showTabs} ${showDisplayTitle} ${showSidebarSections}`}
-          sidebar={sidebar}
-          navbar={navbar}
-          displayTitle={showDisplayTitle && displayTitle}
-          tabs={showTabs && tabs}
-        >
-          {loremBlock}
-          {loremBlock}
-          {loremBlock}
-        </Navigation>
-      </ThemeProvider>
-    </>
+    <HStack
+      justifyContent="center"
+      alignItems="flex-start"
+      dangerouslySetBackground={palette.backgroundAlternate}
+    >
+      <Sidebar compact={compact} logo={<LogoMark />}>
+        {items.map((props, index) => (
+          <SidebarItem
+            key={`sidebar-item--${props.title}`}
+            active={index === activeIndex}
+            onPress={() => setActiveIndex(index)}
+            {...props}
+          />
+        ))}
+      </Sidebar>
+      <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
+        <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
+        <ButtonGroup accessibilityLabel="make compact">
+          <Button
+            compact
+            variant={compact ? 'secondary' : 'primary'}
+            onPress={() => setCompact(false)}
+          >
+            default
+          </Button>
+          <Button
+            compact
+            variant={compact ? 'primary' : 'secondary'}
+            onPress={() => setCompact(true)}
+          >
+            compact
+          </Button>
+        </ButtonGroup>
+      </HStack>
+    </HStack>
   );
 };

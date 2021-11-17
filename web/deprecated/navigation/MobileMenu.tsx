@@ -6,9 +6,9 @@ import React, { useMemo, memo } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import flattenNodes, { hasProps } from '@cbhq/cds-common/utils/flattenNodes';
 
-import { Button } from '../buttons';
-import { Divider } from '../layout/Divider';
-import { VStack } from '../layout/VStack';
+import { Button } from '../../buttons';
+import { Divider } from '../../layout/Divider';
+import { VStack } from '../../layout/VStack';
 import { NavigationBarProps } from './NavigationBar';
 import { NavigationIconButton } from './NavigationIconButton';
 import { NavigationListItem } from './NavigationListItem';

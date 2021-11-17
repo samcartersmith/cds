@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 
 import { useIndexTracker } from '@cbhq/cds-common/context/TrackIndexProvider';
 
-import { Divider } from '../layout/Divider';
-import { VStack } from '../layout/VStack';
-import { TextCaption } from '../typography/TextCaption';
+import { Divider } from '../../layout/Divider';
+import { VStack } from '../../layout/VStack';
+import { TextCaption } from '../../typography/TextCaption';
 import { hideForCondensed, showForCondensed } from './navigationStyles';
 import { navbarSpacing } from './navigationTokens';
 
