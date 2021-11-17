@@ -1,4 +1,5 @@
-import { RefObject, useState, useRef, useEffect, useCallback } from 'react';
+import { RefObject, useState, useRef, useEffect, useCallback, useLayoutEffect } from 'react';
+import { debounce } from '@cbhq/cds-common/utils/debounce';
 
 export const observerErr =
   "💡 react-cool-dimensions: the browser doesn't support Resize Observer, please use polyfill: https://github.com/wellyshen/react-cool-dimensions#resizeobserver-polyfill";
@@ -33,6 +34,8 @@ export type Options<T> = {
   onResize?: OnResize<T>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   polyfill?: any;
+  debounceMs?: number; // debounces the resizeObserver to fire less when an element is being resized constantly e.g. dragging
+  shouldSetInitialState?: boolean; // initializes the state with dimensions before any resize has occurred
 };
 type Return<T> = {
   ref: RefObject<T>;
@@ -87,6 +90,8 @@ export const useDimensions = <T extends HTMLElement>({
   shouldUpdate,
   onResize,
   polyfill,
+  debounceMs,
+  shouldSetInitialState,
 }: Options<T> = {}): Return<T> => {
   const [state, setState] = useState<State>({
     currentBreakpoint: '',
@@ -125,6 +130,16 @@ export const useDimensions = <T extends HTMLElement>({
     if (observerRef.current) observerRef.current.disconnect();
   }, []);
 
+  useLayoutEffect(() => {
+    if (shouldSetInitialState && ref.current) {
+      setState({
+        currentBreakpoint: '',
+        width: ref.current?.offsetWidth ?? 0,
+        height: ref.current?.offsetHeight ?? 0,
+      });
+    }
+  }, [shouldSetInitialState]);
+
   useEffect(() => {
     if (!ref.current) return () => null;
     if ((!('ResizeObserver' in window) || !('ResizeObserverEntry' in window)) && !polyfill) {
@@ -136,7 +151,7 @@ export const useDimensions = <T extends HTMLElement>({
     // eslint-disable-next-line compat/compat
     const Observer = (polyfill || window.ResizeObserver) as typeof window.ResizeObserver;
 
-    observerRef.current = new Observer(([entry]) => {
+    const observerFn = ([entry]: ResizeObserverEntry[]) => {
       const { contentBoxSize, borderBoxSize, contentRect } = entry;
       let boxSize = contentBoxSize;
 
@@ -198,7 +213,9 @@ export const useDimensions = <T extends HTMLElement>({
       }
 
       setState(next);
-    });
+    };
+
+    observerRef.current = new Observer(debounceMs ? debounce(observerFn, debounceMs) : observerFn);
 
     observe(null);
 

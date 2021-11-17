@@ -7,6 +7,15 @@ import { palette } from '../../tokens';
 
 /* eslint-disable react-perf/jsx-no-new-object-as-prop */
 
+jest.mock('../../hooks/useDimensions', () => ({
+  useDimensions: jest.fn(() => {
+    return {
+      width: 200,
+      height: 100,
+    };
+  }),
+}));
+
 let iter = 0;
 describe('ProgressBar test', () => {
   beforeEach(() => {
@@ -21,6 +30,11 @@ describe('ProgressBar test', () => {
 
           // whole container width
           return 200;
+        },
+      },
+      offsetHeight: {
+        get() {
+          return 100;
         },
       },
     });

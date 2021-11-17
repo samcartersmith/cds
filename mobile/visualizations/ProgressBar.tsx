@@ -19,23 +19,12 @@ import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize
 import { useProgressBarHasLabel } from '@cbhq/cds-common/visualizations/useProgressBarHasLabel';
 import { Palette } from '@cbhq/cds-common';
 import { durations } from '@cbhq/cds-common/tokens/motion';
+import { addToLabelNumRefArray, getLastLabelNum } from '@cbhq/cds-common/utils/labelNum';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Box, HStack, VStack } from '../layout';
 import { TextLabel2 } from '../typography';
 import { usePalette } from '../hooks/usePalette';
 import { Counter } from './Counter';
-
-function addToLabelNumRefArray(numArray: number[], num: number | null) {
-  if (Number.isFinite(num)) {
-    if (numArray.length === 0 || numArray[numArray.length - 1] !== num) {
-      numArray.push(num as number);
-    }
-  }
-}
-
-function getLastLabelNum(numArray: number[], num: number) {
-  return numArray.length > 1 ? numArray[numArray.length - 2] : num;
-}
 
 function renderPercent(percent: number) {
   return `${percent}%`;

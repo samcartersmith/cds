@@ -47,7 +47,7 @@ export const Counter: React.FC<CounterBaseProps> = ({
 
   return (
     <div className={containerClassName}>
-      <span className={hiddenClassName}>{renderFunction(Math.max(endNum, startNum))}</span>
+      <span className={hiddenClassName}>{renderFunction(endNum)}</span>
       <span className={visibleClassName}>{renderFunction(count)}</span>
     </div>
   );

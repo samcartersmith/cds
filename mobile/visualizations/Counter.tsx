@@ -20,7 +20,7 @@ export const Counter: React.FC<CounterBaseProps> = ({
 
   return (
     <Box justifyContent="center" alignSelf="flex-start">
-      <View style={styles.hidden}>{renderFunction(Math.max(endNum, startNum))}</View>
+      <View style={styles.hidden}>{renderFunction(endNum)}</View>
       <View style={styles.visible}>{renderFunction(count)}</View>
     </Box>
   );

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useRef, useLayoutEffect } from 'react';
 import { cx } from 'linaria';
 import {
   ProgressBarBaseProps,
@@ -12,6 +12,8 @@ import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize
 import { useProgressBarHasLabel } from '@cbhq/cds-common/visualizations/useProgressBarHasLabel';
 import { durations } from '@cbhq/cds-common/tokens/motion';
 import { Palette } from '@cbhq/cds-common';
+import { addToLabelNumRefArray, getLastLabelNum } from '@cbhq/cds-common/utils/labelNum';
+import { useDimensions } from '../hooks/useDimensions';
 import { isRtl } from '../utils/isRtl';
 import { usePalette } from '../hooks/usePalette';
 import { TextLabel2 } from '../typography';
@@ -195,18 +197,22 @@ const ProgressLabelFloat: React.FC<ProgressBarFloatLabelBaseProps> = memo(
     const containerRef = useRef<HTMLDivElement>(null);
     const textContainerRef = useRef<HTMLDivElement>(null);
     const lastPercent = useRef<number>(0);
-    const lastLabelNum = useRef<number>(0);
-    const [resizeNum, setResizeNum] = useState(0);
+    const lastLabelNum = useRef<number[]>([0]);
     const palette = usePalette();
+
+    // the animation uses a pixel translate which is outdated on a window resize, we have to account for this
+    const { width: cWidth, height: cHeight } = useDimensions({
+      ref: containerRef,
+      debounceMs: 400,
+      shouldSetInitialState: true,
+    });
 
     const { value: labelNum, render: renderLabel } = label;
 
-    useEffect(() => {
-      lastLabelNum.current = labelNum;
-    }, [labelNum]);
+    addToLabelNumRefArray(lastLabelNum.current, labelNum);
 
-    useEffect(() => {
-      if (textContainerRef.current && containerRef.current) {
+    useLayoutEffect(() => {
+      if (textContainerRef.current && containerRef.current && cHeight > 0 && cWidth > 0) {
         const containerWidth = containerRef.current.offsetWidth;
         const textContainerWidth = textContainerRef.current.offsetWidth;
         const startLeftTranslate = isRtl()
@@ -233,31 +239,10 @@ const ProgressLabelFloat: React.FC<ProgressBarFloatLabelBaseProps> = memo(
         })?.start();
 
         textContainerRef.current.style.transform = `translateX(${endLeftTranslate}px)`;
+
+        lastPercent.current = progress;
       }
-
-      lastPercent.current = progress;
-    }, [progress, resizeNum]);
-
-    // the animation uses a pixel translate which is outdated on a window resize, we have to account for this
-    useEffect(() => {
-      function handleResize() {
-        let timeoutId: ReturnType<typeof setTimeout>;
-        return () => {
-          clearTimeout(timeoutId);
-          timeoutId = setTimeout(() => {
-            setResizeNum((oldResizeNum) => oldResizeNum + 1);
-          }, 500);
-        };
-      }
-
-      const handleResizeWithDebounce = handleResize();
-
-      window.addEventListener('resize', handleResizeWithDebounce);
-
-      return () => {
-        window.removeEventListener('resize', handleResizeWithDebounce);
-      };
-    }, []);
+    }, [progress, cWidth, cHeight]);
 
     return (
       <Box ref={containerRef} flexWrap="nowrap">
@@ -268,7 +253,7 @@ const ProgressLabelFloat: React.FC<ProgressBarFloatLabelBaseProps> = memo(
           ref={textContainerRef}
         >
           <ProgressTextLabel
-            startNum={lastLabelNum.current}
+            startNum={getLastLabelNum(lastLabelNum.current, labelNum)}
             endNum={labelNum}
             renderLabel={renderLabel ?? generateRenderFloatLabel(palette)}
             disabled={disabled}
