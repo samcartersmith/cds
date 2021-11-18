@@ -21,8 +21,14 @@ type InputBorderAnimationReturnType = {
 };
 
 // border variant animation
-const borderInConfig = convertMotionConfig(animateInputBorderInConfig);
-const borderOutConfig = convertMotionConfig(animateInputBorderOutConfig);
+const borderInConfig = convertMotionConfig({
+  ...animateInputBorderInConfig,
+  useNativeDriver: false,
+});
+const borderOutConfig = convertMotionConfig({
+  ...animateInputBorderOutConfig,
+  useNativeDriver: false,
+});
 
 export const useInputBorderAnimation = (
   fromVariant: InputVariant,

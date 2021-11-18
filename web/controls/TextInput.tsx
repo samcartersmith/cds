@@ -13,10 +13,15 @@ import { InputStack } from './InputStack';
 import { HStack } from '../layout/HStack';
 import { InputLabel } from './InputLabel';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { TextInputFocusVariantContext } from './context';
 
-export type TextInputProps = TextInputBaseProps & React.InputHTMLAttributes<HTMLInputElement>;
+export type TextInputProps = {
+  /**
+   * Callback fired when pressed/clicked
+   */
+  onPress?: React.MouseEventHandler;
+} & TextInputBaseProps &
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 export const TextInput = memo(
   forwardRef(function TextInput(
@@ -40,15 +45,14 @@ export const TextInput = memo(
     ref: ForwardedRef<HTMLInputElement>,
   ) {
     const [focused, setFocused] = useState(false);
-    const variantWithFocus = useInputVariant(focused, variant);
-    const inputBorderStyle = useInputBorderStyle(focused);
+    const focusedVariant = useInputVariant(focused, variant);
 
     const handleOnFocus = useCallback(
       (e: React.FocusEvent<HTMLInputElement>) => {
-        onFocus?.(e);
         setFocused(true);
+        onFocus?.(e);
       },
-      [setFocused, onFocus],
+      [onFocus],
     );
 
     const handleOnBlur = useCallback(
@@ -56,7 +60,7 @@ export const TextInput = memo(
         onBlur?.(e);
         setFocused(false);
       },
-      [setFocused, onBlur],
+      [onBlur],
     );
 
     /**
@@ -72,13 +76,12 @@ export const TextInput = memo(
     });
 
     return (
-      <TextInputFocusVariantContext.Provider value={focused ? variantWithFocus : undefined}>
+      <TextInputFocusVariantContext.Provider value={focused ? focusedVariant : undefined}>
         <InputStack
           testID={testID}
           width={width}
           disabled={disabled}
-          borderStyle={inputBorderStyle}
-          variant={variantWithFocus}
+          variant={variant}
           inputNode={
             <NativeInput
               align={align}

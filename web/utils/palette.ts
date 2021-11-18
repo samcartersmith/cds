@@ -1,4 +1,4 @@
-import { defaultPalette, PaletteValue, PartialPaletteConfig } from '@cbhq/cds-common';
+import { defaultPalette, PaletteValue, PaletteAlias, PartialPaletteConfig } from '@cbhq/cds-common';
 import { mapValues, mapKeys, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 
 /**
@@ -14,6 +14,15 @@ export const paletteValueToCssVar = (paletteValue: PaletteValue) => {
     return `rgba(${cssVariable},${opacity})` as const;
   }
   return `rgb(${cssVariable})` as const;
+};
+
+/**
+ * Given a palette alias, such as foregroundMuted, and the spectrum, it will output the rgb or rgba string with interpolated css variables.
+ * @param palette - foregroundMuted, foreground, background etc...
+ * @returns rgb or rgba string - rgb(var(--gray0))
+ */
+export const paletteAliasToCssVar = (palette: PaletteAlias) => {
+  return paletteValueToCssVar(defaultPalette[palette] as PaletteValue);
 };
 
 /**

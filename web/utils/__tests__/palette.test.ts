@@ -1,8 +1,10 @@
+import { PaletteAlias } from '@cbhq/cds-common';
 import { defaultPalette } from '@cbhq/cds-common/palette/constants';
 
 import {
   paletteConfigToCssVars,
   paletteValueToCssVar,
+  paletteAliasToCssVar,
   setPaletteConfigToCssVars,
 } from '../palette';
 
@@ -13,6 +15,22 @@ describe('paletteValueToCssVar', () => {
 
   it('should handle palette alias with opacity conversion', () => {
     expect(paletteValueToCssVar(['blue60', 0.2])).toEqual('rgba(var(--blue60),0.2)');
+  });
+});
+
+describe('paletteAliasToCssVar', () => {
+  it('gets the correct css var', () => {
+    for (const [palette, paletteValue] of Object.entries(defaultPalette)) {
+      let expectedCssVar = '';
+      if (typeof paletteValue !== 'string') {
+        const [color, alpha] = paletteValue;
+        expectedCssVar = `rgba(var(--${color}),${alpha})`;
+      } else {
+        expectedCssVar = `rgb(var(--${paletteValue}))`;
+      }
+
+      expect(paletteAliasToCssVar(palette as PaletteAlias)).toEqual(expectedCssVar);
+    }
   });
 });
 
