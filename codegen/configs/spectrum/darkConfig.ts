@@ -235,4 +235,60 @@ export const dark = [
       rotation: 'clockwise',
     },
   },
+  {
+    properties: {
+      steps: 11,
+      hue: {
+        start: 208,
+        end: 185,
+        curve: 'linear',
+      },
+      saturation: {
+        start: 1,
+        end: 0.04,
+        rate: 1.5,
+        curve: 'easeInCubic',
+      },
+      brightness: {
+        start: 0.2,
+        end: 1,
+        curve: 'easeOutQuad',
+      },
+    },
+    options: {
+      minorSteps: [0, 1],
+      name: 'teal',
+      rotation: 'counterclockwise',
+    },
+  },
+];
+
+export const frontierDark = [
+  {
+    properties: {
+      steps: 11,
+      hue: {
+        start: 15,
+        end: 49,
+        curve: 'easeOutQuad',
+      },
+      saturation: {
+        start: 1,
+        end: 0.04,
+        rate: 1.4,
+        curve: 'easeInCubic',
+      },
+      brightness: {
+        start: 0,
+        end: 1,
+        curve: 'easeOutSine',
+      },
+    },
+    options: {
+      minorSteps: [0, 1],
+      name: 'yellow',
+      lockHex: 'FFD200',
+      rotation: 'clockwise',
+    },
+  },
 ];

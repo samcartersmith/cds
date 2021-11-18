@@ -1,14 +1,13 @@
-import { useMemo } from 'react';
-
-import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
+import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
+import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
+import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 
 import styles from './styles.module.css';
 
 const hueNames = [
   'blue',
+  'teal',
   'green',
   'orange',
   'yellow',
@@ -20,46 +19,38 @@ const hueNames = [
 ] as const;
 export const hueSteps = [0, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100] as const;
 
-const tabs = [
-  { label: 'Light', value: 'light' },
-  { label: 'Dark', value: 'dark' },
-];
-
 export const Spectrum = () => {
-  const spectrumHues = useMemo(() => {
-    return hueNames.map((hue) => {
-      return (
-        <div key={hue} className={styles.hueColumn}>
-          {hueSteps.map((step) => {
-            return (
-              <div
-                key={`${hue}${step}`}
-                className={styles.hueBox}
-                style={{ backgroundColor: `rgb(var(--${hue}${step}))` }}
-              >
-                <span className={styles.hue}>
-                  <TextCaption as="span" align="center">{`${hue}${step}`}</TextCaption>
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      );
-    });
-  }, []);
-
+  const getAccessibleForeground = useAccessibleForeground();
+  const getRgbaString = usePaletteValueToRgbaString();
   return (
-    <Tabs defaultValue="light" values={tabs}>
-      <TabItem value="light">
-        <ThemeProvider spectrum="light">
-          <div className={styles.hueGrid}>{spectrumHues}</div>
-        </ThemeProvider>
-      </TabItem>
-      <TabItem value="dark">
-        <ThemeProvider spectrum="dark">
-          <div className={styles.hueGrid}>{spectrumHues}</div>
-        </ThemeProvider>
-      </TabItem>
-    </Tabs>
+    <ExampleWithThemeToggles>
+      <div className={styles.hueGrid}>
+        {hueNames.map((hue) => {
+          return (
+            <div key={hue} className={styles.hueColumn}>
+              {hueSteps.map((step) => {
+                const background = getRgbaString(`${hue}${step}`);
+                const foreground = getAccessibleForeground({
+                  background,
+                  color: 'auto',
+                  usage: 'normalText',
+                });
+                return (
+                  <div key={`${hue}${step}`} className={styles.hueBox} style={{ background }}>
+                    <span className={styles.hue}>
+                      <TextCaption
+                        dangerouslySetColor={foreground}
+                        as="span"
+                        align="center"
+                      >{`${hue}${step}`}</TextCaption>
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </ExampleWithThemeToggles>
   );
 };

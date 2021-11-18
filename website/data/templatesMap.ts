@@ -1121,6 +1121,12 @@ export const NavigationBar = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavigationBar/navigation-bar.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavigationBar/usage.mdx'
+      ),
+  ),
 };
 
 export const PageTitle = {
@@ -1134,6 +1140,12 @@ export const PageTitle = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/PageTitle/page-title.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/PageTitle/usage.mdx'
       ),
   ),
 };
@@ -1151,6 +1163,12 @@ export const Sidebar = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Sidebar/sidebar.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Sidebar/usage.mdx'
+      ),
+  ),
 };
 
 export const SidebarItem = {
@@ -1164,6 +1182,12 @@ export const SidebarItem = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarItem/sidebar-item.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarItem/usage.mdx'
       ),
   ),
 };

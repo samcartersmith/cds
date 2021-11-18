@@ -14,7 +14,8 @@ export type SpectrumHue =
   | 'indigo'
   | 'pink'
   | 'purple'
-  | 'red';
+  | 'red'
+  | 'teal';
 
 export type SpectrumHueStep = 0 | 5 | 10 | 15 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
 

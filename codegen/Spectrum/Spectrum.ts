@@ -13,6 +13,7 @@ export const hueNames = [
   'pink',
   'purple',
   'red',
+  'teal',
 ] as const;
 
 export const hueSteps = [0, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100] as const;
@@ -24,7 +25,8 @@ export const spectrumRgbArrayMap = mapValues(spectrumModes, (_, mode) =>
   createSpectrum(mode, 'rgbArray'),
 );
 
-const modes = Object.keys(spectrumModes);
+const modes = ['dark', 'light'];
+
 export const Spectrum = {
   css: mapValues(spectrumRgbStringMap, (_, spectrum) =>
     mapKeys(spectrumRgbStringMap[spectrum], (_2, key) => toCssVar(key)),

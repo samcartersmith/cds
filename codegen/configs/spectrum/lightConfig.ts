@@ -236,4 +236,60 @@ export const light = [
       rotation: 'counterclockwise',
     },
   },
+  {
+    properties: {
+      steps: 11,
+      hue: {
+        start: 185,
+        end: 208,
+        curve: 'linear',
+      },
+      saturation: {
+        start: 0.04,
+        end: 1,
+        rate: 1.5,
+        curve: 'easeOutCubic',
+      },
+      brightness: {
+        start: 1,
+        end: 0.2,
+        curve: 'easeInQuad',
+      },
+    },
+    options: {
+      minorSteps: [0, 1],
+      name: 'teal',
+      rotation: 'clockwise',
+    },
+  },
+];
+
+export const frontierLight = [
+  {
+    properties: {
+      steps: 11,
+      hue: {
+        start: 49,
+        end: 15,
+        curve: 'easeInQuad',
+      },
+      saturation: {
+        start: 0.04,
+        end: 1,
+        rate: 1.4,
+        curve: 'easeOutCubic',
+      },
+      brightness: {
+        start: 1,
+        end: 0,
+        curve: 'easeInSine',
+      },
+    },
+    options: {
+      minorSteps: [0, 1],
+      name: 'yellow',
+      lockHex: 'FFD200',
+      rotation: 'counterclockwise',
+    },
+  },
 ];
