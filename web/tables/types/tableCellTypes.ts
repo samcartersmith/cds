@@ -5,7 +5,13 @@ import {
   ThHTMLAttributes,
   MouseEventHandler,
 } from 'react';
-import { FlexAxisValue, FlexSpaceCommon, PaletteForeground, SharedProps } from '@cbhq/cds-common';
+import {
+  CellBaseProps,
+  FlexAxisValue,
+  FlexSpaceCommon,
+  PaletteForeground,
+  SharedProps,
+} from '@cbhq/cds-common';
 import { TextProps } from '../../typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
@@ -36,10 +42,10 @@ type TableCellBaseProps = {
    */
   justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
   /**
-   * This prop us useful for top-aligning cells
+   * This prop us useful for aligning the last item to the right, or top-aligning cells
    * @default 'center'
    */
-  alignItems?: 'flex-start' | 'center';
+  alignItems?: CellBaseProps['alignItems'];
   /**
    * The colSpan attribute defines the number of columns a cell should span
    * @default 1
@@ -62,7 +68,13 @@ type TableCellBaseProps = {
    */
   direction?: 'vertical' | 'horizontal';
   /**
-   * HTML width attribute to help with column layout
+   * @danger HTML width attribute to help with column layout.This attr
+   * is deprecated, and should _only_ be used to unblock migration efforts
+   * @default undefined
+   */
+  dangerouslySetHtmlWidth?: TableCellSharedProps['width'];
+  /**
+   * As a convenience, the width prop will set the css width and maxWidth props
    * @default undefined
    */
   width?: TableCellSharedProps['width'];

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { useMemo, memo } from 'react';
 
 import { cx, css } from 'linaria';
 import { Cell, truncateClassName } from '../cells/Cell';
@@ -28,6 +28,8 @@ export const TableCell = memo(
     titleColor,
     subtitle,
     subtitleColor = 'foregroundMuted',
+    dangerouslySetHtmlWidth,
+    width,
     ...props
   }: TableCellProps) => {
     const tableSectionType = useTableSectionTag();
@@ -45,6 +47,7 @@ export const TableCell = memo(
     // Setup default text colors
     const defaultTitleColor = isInBody ? 'foreground' : 'foregroundMuted';
     const smartTitleColor = titleColor ?? color ?? defaultTitleColor;
+    const shouldHandleOverflow = !!overflow && !width;
 
     if (process.env.NODE_ENV !== 'production') {
       if (children && (title || subtitle)) {
@@ -59,11 +62,19 @@ export const TableCell = memo(
       max-width: 0;
     `;
 
+    const inlineStyles = useMemo(
+      () => ({
+        width,
+        maxWidth: width,
+      }),
+      [width],
+    );
+
     const tableCellClass = cx(
       tableCell,
       tableSectionType === 'thead' && tableHeaderCell,
       tableSectionType === 'tfoot' && tableFooterCell,
-      overflow && overflowWidth,
+      shouldHandleOverflow && overflowWidth,
     );
 
     return (
@@ -71,6 +82,8 @@ export const TableCell = memo(
         data-testid={testID}
         className={tableCellClass}
         colSpan={colSpan}
+        width={dangerouslySetHtmlWidth}
+        style={inlineStyles}
         {...props}
       >
         <Cell
@@ -82,7 +95,12 @@ export const TableCell = memo(
           shouldOverflow={!overflow}
         >
           {children ? (
-            <TextComponent as="div" noWrap color={color ?? 'currentColor'} overflow={overflow}>
+            <TextComponent
+              as="div"
+              noWrap={!!overflow}
+              color={color ?? 'currentColor'}
+              overflow={overflow}
+            >
               <Stack
                 flexGrow={1}
                 flexShrink={1}
@@ -101,7 +119,12 @@ export const TableCell = memo(
               justifyContent={smartJustifyContent}
               alignItems={smartAlignItems}
             >
-              <TextComponent as="div" noWrap color={smartTitleColor} overflow={overflow}>
+              <TextComponent
+                noWrap={!!overflow}
+                as="div"
+                color={smartTitleColor}
+                overflow={overflow}
+              >
                 {title}
               </TextComponent>
               {subtitle ? (

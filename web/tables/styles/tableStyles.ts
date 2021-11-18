@@ -19,6 +19,10 @@ export const table = css`
   }
 `;
 
+export const tableFixed = css`
+  table-layout: fixed;
+`;
+
 export const tableVariantBase = css`
   table {
     background-color: ${palette.background};
@@ -38,6 +42,7 @@ export const tableVariantGraph = css`
     & > tr > td,
     & > tbody > tr > td,
     & > thead > tr > th,
+    & > thead > .table-row,
     & > tfoot > tr > td {
       border-bottom: ${borderWidth.card}px solid ${palette.line};
       border-right: ${borderWidth.card}px solid ${palette.line};
@@ -50,6 +55,7 @@ export const tableVariantGraph = css`
 
     & > thead > tr > th:last-child,
     & > tbody > tr > td:last-child,
+    & > thead > .table-row:last-child,
     & > tfoot > tr > td:last-child {
       border-right: none;
     }

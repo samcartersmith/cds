@@ -37,7 +37,7 @@ export type CellCommonProps = {
 
 export type CellBaseProps = {
   accessory?: React.ReactElement<CellAccessoryProps>;
-  alignItems?: 'center' | 'flex-start';
+  alignItems?: 'center' | 'flex-start' | 'flex-end';
   children: React.ReactNode;
   detail?: React.ReactNode;
   intermediary?: React.ReactNode;

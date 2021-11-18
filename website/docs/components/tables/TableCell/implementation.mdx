@@ -21,7 +21,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ### alignItems <Badge variant="web" />
 
-This prop us useful for top-aligning cells
+This prop us useful for aligning the last item to the right, or top-aligning cells
 
 <ApiDetails
   componentName="TableCell"
@@ -29,7 +29,7 @@ This prop us useful for top-aligning cells
   required={false}
   defaultValue="'center'"
   mobileOptions={[]}
-  webOptions={['center', 'flex-start']}
+  webOptions={['center', 'flex-end', 'flex-start']}
 />
 
 <ComponentDetails componentName="TableCell" templateName="prop-alignItems" />
@@ -144,6 +144,22 @@ The colSpan attribute defines the number of columns a cell should span
 />
 
 <ComponentDetails componentName="TableCell" templateName="prop-colSpan" />
+
+### dangerouslySetHtmlWidth <Badge variant="web" /> <Badge variant="danger" order={2} /> <Badge variant="deprecated" order={3} />
+
+is deprecated, and should _only_ be used to unblock migration efforts
+HTML width attribute to help with column layout.This attr
+
+<ApiDetails
+  componentName="TableCell"
+  propertyName="dangerouslySetHtmlWidth"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="TableCell" templateName="prop-dangerouslySetHtmlWidth" />
 
 ### direction <Badge variant="web" />
 
@@ -330,7 +346,7 @@ If a title is provided, the default type style will be inferred from context. If
 
 ### width <Badge variant="web" />
 
-HTML width attribute to help with column layout
+As a convenience, the width prop will set the css width and maxWidth props
 
 <ApiDetails
   componentName="TableCell"

@@ -2,16 +2,15 @@ import { ReactElement } from 'react';
 import { SharedProps } from '@cbhq/cds-common';
 import { TableSectionProps } from './tableSectionTypes';
 
+/**
+ * The table variant will be provided via context and available
+ * to any internal Table component (TableBody, TableCell, etc)
+ * @default undefined
+ */
 export type TableVariant = 'default' | 'graph' | 'ruled';
+export type TableLayout = 'auto' | 'fixed';
 
-export type TableCtx = {
-  /**
-   * The table variant will be provided via context and available
-   * to any internal Table component (TableBody, TableCell, etc)
-   * @default undefined
-   */
-  variant?: TableVariant;
-};
+export type TableCtx = TableVariant | undefined;
 
 export type TableProps = {
   /**
@@ -30,4 +29,9 @@ export type TableProps = {
    * When provided, we'll apply a bordered around the entire table
    */
   bordered?: boolean;
+  /**
+   * Use tableLayout='fixed' if you need full control over cell width
+   * @default 'auto'
+   */
+  tableLayout?: TableLayout;
 } & SharedProps;

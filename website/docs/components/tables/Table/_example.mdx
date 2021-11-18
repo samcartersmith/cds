@@ -3,6 +3,7 @@ function Example() {
   const totalResults = mocks.accounts.length;
   const PAGE_SIZE = 7;
   const [page, setPage] = useState(1);
+  const [isFixed, { toggle }] = useToggler(false);
   const startIdx = (page - 1) * PAGE_SIZE;
   const endIdx = Math.min(startIdx + PAGE_SIZE, totalResults);
   const accounts = mocks.accounts.slice(startIdx, endIdx);
@@ -26,15 +27,12 @@ function Example() {
   );
 
   return (
-    <Table bordered variant="ruled">
+    <Table bordered variant="ruled" tableLayout={isFixed ? 'fixed' : 'auto'}>
       <TableHeader>
-        <TableRow fullWidth>
-          <TextDisplay2 as="h2">Fixed Column Widths</TextDisplay2>
-        </TableRow>
         <TableRow>
-          <TableCell title="Currency" />
-          <TableCell title="Balance" />
-          <TableCell title="Status" alignItems="flex-end" />
+          <TableCell title="Currency" width="20%" />
+          <TableCell title="Balance" width="40%" />
+          <TableCell title="Status" alignItems="flex-end" width="60%" />
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -42,7 +40,6 @@ function Example() {
           return (
             <TableRow key={`row--${account.name}`}>
               <TableCell
-                width={280}
                 start={<Icon name="currencies" size="m" />}
                 title={account.name}
                 subtitle={account.currency.name}
@@ -71,6 +68,11 @@ function Example() {
                 {pg}
               </Button>
             ))}
+          </TableCell>
+          <TableCell>
+            <Switch onChange={toggle} checked={isFixed}>
+              Fixed Layout
+            </Switch>
           </TableCell>
         </TableRow>
       </TableFooter>

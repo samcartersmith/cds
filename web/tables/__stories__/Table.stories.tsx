@@ -13,7 +13,8 @@ import { Switch } from '../../controls/Switch';
 import { Table, TableVariant, TableHeader, TableBody, TableRow, TableCell } from '..';
 import { assetHubMock } from '../__mocks__';
 
-const LABELS = ['name', 'ticker', 'appStatus'];
+const LABELS = ['name', 'ticker', 'appStatus', 'type', 'bookmarked'];
+const LABELS_SHORT = LABELS.slice(0, 3);
 export default {
   title: 'Core Components/Table/Table',
   component: Table,
@@ -59,7 +60,7 @@ export const SampleTable: Story = () => {
           </HStack>
         </TableRow>
         <TableRow backgroundColor="backgroundAlternate">
-          {LABELS.map((label) => (
+          {LABELS_SHORT.map((label) => (
             <TableCell key={`${label}--idk`} title={startCase(label)} />
           ))}
         </TableRow>
@@ -68,7 +69,7 @@ export const SampleTable: Story = () => {
         {data.map((row) => (
           <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...pressEvents(row.name)}>
             {Object.entries(row)
-              .filter(([label]) => LABELS.includes(label))
+              .filter(([label]) => LABELS_SHORT.includes(label))
               .map(([key, val]) => (
                 <TableCell key={`${key}--idk`}>{val}</TableCell>
               ))}
@@ -171,5 +172,61 @@ export const SortingExample: Story = () => {
         ))}
       </TableBody>
     </Table>
+  );
+};
+
+export const FixedLayoutExample: Story = () => {
+  const [isFixed, { toggle }] = useToggler(true);
+
+  const data = assetHubMock.slice(0, 6);
+  const handlePress = (name: string) => {
+    // eslint-disable-next-line no-alert
+    alert(`hi ${name}`);
+  };
+  // Only apply a press event to a few items
+  const pressEvents = (name: string) => ({
+    onPress: name === 'Ethereum' ? () => handlePress(name) : undefined,
+  });
+  const widths = ['20%', '10%', '30%', '20%', '30%'];
+
+  return (
+    <>
+      <HStack spacingBottom={2} alignItems="center" justifyContent="space-between" flexGrow={1}>
+        <TextDisplay2 as="h2">Sample Table</TextDisplay2>
+        <HStack alignItems="center" justifyContent="space-between" gap={1}>
+          <Switch onChange={toggle} checked={isFixed}>
+            Fixed Layout
+          </Switch>
+        </HStack>
+      </HStack>
+      <Table tableLayout={isFixed ? 'fixed' : 'auto'} variant="graph" bordered>
+        <TableHeader>
+          <TableRow backgroundColor="backgroundAlternate">
+            {LABELS.map((label, index) => (
+              <TableCell
+                key={`fixed-table-cell--${label}`}
+                title={startCase(label)}
+                width={widths[index]}
+              />
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {data.map((row) => (
+            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...pressEvents(row.name)}>
+              {Object.entries(row)
+                .filter(([label]) => LABELS.includes(label))
+                .map(([key, val]) => (
+                  <TableCell
+                    key={`fixed-table-cell--${key}`}
+                    overflow="truncate"
+                    title={`${val} and a little more`}
+                  />
+                ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 };
