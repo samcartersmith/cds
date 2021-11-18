@@ -1,13 +1,13 @@
 const { components } = require('./data/sidebar/components');
 const { adopters } = require('./data/sidebar/adopters');
 
-// removes unfinished categories from side bar
-const sectionsToExcludeByLabel = new Set();
+// Removes unfinished categories from side bar
+const sectionsToExcludeByLabel = new Set(['Navigation']);
 
 // Removes unfinished components from section in side bar
 const componentsToExcludeByLabel = new Set(['components/visualizations/ProgressBar/progress-bar']);
 
-// removes unfinished categories from side bar
+// Filter sidebar components
 const filteredComponents = components
   .filter((component) => !sectionsToExcludeByLabel.has(component.label))
   .map((componentJSON) => {
@@ -18,8 +18,6 @@ const filteredComponents = components
       items,
     };
   });
-
-// Removes unfinished components from section in side bar
 
 module.exports = {
   docs: [
