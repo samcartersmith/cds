@@ -1,13 +1,21 @@
 import { useContext } from 'react';
+import { emptyObject, merge } from '@cbhq/cds-utils';
+
+import { useSpectrumConditional } from '../hooks/useSpectrumConditional';
+import { useFeatureFlag } from '../system/useFeatureFlag';
+import { defaultPalette, frontierSpectrumPalette } from './constants';
 
 import { PaletteConfig } from '../types/Palette';
-import { defaultPalette } from './constants';
 import { PaletteConfigContext } from './context';
 
 export const usePaletteConfig = (): PaletteConfig => {
   const context = useContext(PaletteConfigContext);
+  const hasFrontier = useFeatureFlag('frontierColor');
+  const frontierPalette = useSpectrumConditional(frontierSpectrumPalette);
+  const paletteToMerge = hasFrontier ? frontierPalette : emptyObject;
+
   if (!context) {
-    return defaultPalette;
+    return merge(defaultPalette, paletteToMerge);
   }
-  return context;
+  return merge(context, paletteToMerge);
 };

@@ -37,3 +37,16 @@ export const renameKeys = <T>(obj: Record<string, T>, newKeys: Record<string, st
   }, {} as Record<string, T>);
   return transformedObj;
 };
+
+/**
+ *
+ * @param baseObj The base object you want to merge onto or return if condition is not met
+ * @param objToMerge The object you want to merge
+ * @returns newly merged object
+ */
+export function merge<
+  BaseObj extends AnyObject | Readonly<AnyObject>,
+  ConditionalObj extends AnyObject | Readonly<AnyObject>,
+>(baseObj: BaseObj, objToMerge: ConditionalObj | undefined | false) {
+  return { ...baseObj, ...(objToMerge ?? emptyObject) };
+}

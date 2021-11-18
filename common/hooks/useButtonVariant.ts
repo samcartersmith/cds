@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { PaletteBackground, PaletteForeground, PaletteBorder, ButtonVariant } from '../types';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export type ButtonVariantStyles = {
   backgroundColor: PaletteBackground;
@@ -8,7 +9,9 @@ export type ButtonVariantStyles = {
   color: PaletteForeground;
 };
 
-const variants: Record<ButtonVariant, ButtonVariantStyles> = {
+export type ButtonVariantConfig = Record<ButtonVariant, ButtonVariantStyles>;
+
+const variants: ButtonVariantConfig = {
   primary: {
     color: 'primaryForeground',
     backgroundColor: 'primary',
@@ -36,7 +39,7 @@ const variants: Record<ButtonVariant, ButtonVariantStyles> = {
   },
 };
 
-const transparentVariants: Record<ButtonVariant, ButtonVariantStyles> = {
+const transparentVariants: ButtonVariantConfig = {
   primary: {
     color: 'primary',
     backgroundColor: 'background',
@@ -64,12 +67,23 @@ const transparentVariants: Record<ButtonVariant, ButtonVariantStyles> = {
   },
 };
 
+const frontierVariants: ButtonVariantConfig = {
+  ...variants,
+  secondary: {
+    color: 'secondaryForeground',
+    backgroundColor: 'secondary',
+    borderColor: 'transparent',
+  },
+};
+
 export const useButtonVariant = (
   variant: ButtonVariant,
   transparent?: boolean,
 ): ButtonVariantStyles => {
+  const hasFrontier = useFeatureFlag('frontierColor');
+  const nonTransparentVariants = hasFrontier ? frontierVariants : variants;
   return useMemo(
-    () => (transparent ? transparentVariants : variants)[variant],
-    [variant, transparent],
+    () => (transparent ? transparentVariants : nonTransparentVariants)[variant],
+    [transparent, nonTransparentVariants, variant],
   );
 };

@@ -23,6 +23,15 @@ const switchPalette = {
   backgroundAlternate: 'gray20',
 } as const;
 
+const frontierSpectrumPalette = {
+  light: {
+    secondary: 'gray5',
+  },
+  dark: {
+    secondary: 'gray20',
+  },
+} as const;
+
 export const paletteForegrounds = [
   'foreground',
   'foregroundMuted',
@@ -91,6 +100,7 @@ export const Palette = {
   cssVariables,
   defaultPalette,
   switchPalette,
+  frontierSpectrumPalette,
   paletteForegrounds,
   paletteBackgrounds,
   paletteBorders,
