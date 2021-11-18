@@ -83,7 +83,13 @@ module.exports = {
       type: 'category',
       label: 'Frontier (CDS Update)',
       collapsed: true,
-      items: ['frontier/overview', 'frontier/typography', 'frontier/button', 'frontier/faq'],
+      items: [
+        'frontier/overview',
+        'frontier/typography',
+        'frontier/button',
+        'frontier/color',
+        'frontier/faq',
+      ],
     },
     {
       type: 'category',

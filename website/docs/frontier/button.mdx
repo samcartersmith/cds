@@ -6,6 +6,7 @@ hide_title: true
 ---
 
 import { Image } from ':cds-website/components/Image';
+import ButtonExample from ':cds-website/docs/components/system/FeatureFlagProvider/_frontier-button-example.mdx';
 
 <Image light="/img/frontier/hero_button_light.png" dark="/img/frontier/hero_button_dark.png" />
 
@@ -32,6 +33,16 @@ Frontier to make it easier to design with buttons!
 
 ## Want to start using Frontier buttons now?
 
+### Designers
+
+We’ve added [Frontier Button into Figma](https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=561%3A2). We want to prevent any confusion, so your mocks will not auto update to the new Frontier Button until you’re ready to do so. When ready, just swap instances or drag the new Frontier Button into your mock.
+
+We’ve also made some improvements to the Figma interface. This will expose more functionality that was available in code but not available in Figma, so you’ll see some new toggles but know that those options are also available outside of Frontier.
+
+In Q1, we’ll ask everyone to migrate all button instances to Frontier buttons in Figma. This is Figma only, so your engineer will not need to mirror this in code. We’ll rename Frontier Button to Button and rename the current to Button (Deprecated) and no longer support bugs.
+
+Have questions regarding Frontier? Reach us via #ask-cds
+
 ### Engineers
 
 Leverage the new [CDS FeatureFlagProvider](/components/feature-flag-provider) to toggle on the new button styles. CDS feature flags aren't backend driven or anything fancy so they will need to be configured per project/platform. This is similar to how a ThemeProvider can be customized per product and per platform.
@@ -46,12 +57,4 @@ To demonstrate how this works we’ve set up a CDS Frontier page in the [Retail 
 
 Please note, this CDS Frontier Debug Menu is just for demonstration purposes and these settings will not propagate across accounts or mobile/web. This Debug Menu simply saves your feature flag preferences to local storage and updates the [CDS FeatureFlagProvider](/components/feature-flag-provider). To carry these changes more permanently the CDS feature flags would need to be turned on permanently or powered by the backend (via experiment, etc).
 
-### Designers
-
-We’ve added [Frontier Button into Figma](https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=561%3A2). We want to prevent any confusion, so your mocks will not auto update to the new Frontier Button until you’re ready to do so. When ready, just swap instances or drag the new Frontier Button into your mock.
-
-We’ve also made some improvements to the Figma interface. This will expose more functionality that was available in code but not available in Figma, so you’ll see some new toggles but know that those options are also available outside of Frontier.
-
-In Q1, we’ll ask everyone to migrate all button instances to Frontier buttons in Figma. This is Figma only, so your engineer will not need to mirror this in code. We’ll rename Frontier Button to Button and rename the current to Button (Deprecated) and no longer support bugs.
-
-Have questions regarding Frontier? Reach us via #ask-cds
+<ButtonExample />

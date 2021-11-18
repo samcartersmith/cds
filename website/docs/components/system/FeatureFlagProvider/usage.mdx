@@ -1,41 +1,7 @@
-```jsx live
-function Example() {
-  const [isEnabled, { toggle }] = useToggler(false);
+import TypographyExample from './_frontier-typography-example.mdx';
+import ButtonExample from './_frontier-button-example.mdx';
+import ColorExample from './_frontier-color-example.mdx';
 
-  return (
-    <FeatureFlagProvider frontierTypography={isEnabled}>
-      <ThemeProvider>
-        <VStack gap={2}>
-          <HStack gap={1} alignItems="center">
-            <Switch onChange={toggle} checked={isEnabled} />
-            <TextBody as="p">Toggle frontierTypography</TextBody>
-          </HStack>
-          <Divider direction="horizontal" />
-          <TypographySheet />
-        </VStack>
-      </ThemeProvider>
-    </FeatureFlagProvider>
-  );
-}
-```
-
-```jsx live
-function Example() {
-  const [isEnabled, { toggle }] = useToggler(false);
-
-  return (
-    <FeatureFlagProvider frontierButton={isEnabled}>
-      <ThemeProvider>
-        <VStack gap={2}>
-          <HStack gap={1} alignItems="center">
-            <Switch onChange={toggle} checked={isEnabled} />
-            <TextBody as="p">Toggle frontierButton</TextBody>
-          </HStack>
-          <Divider direction="horizontal" />
-          <ButtonSheet />
-        </VStack>
-      </ThemeProvider>
-    </FeatureFlagProvider>
-  );
-}
-```
+<TypographyExample />
+<ButtonExample />
+<ColorExample />
