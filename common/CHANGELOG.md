@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.1 (11/17/2021, 05:43 PM PST)
+
+#### 🚀 Updates
+
+- Web Circular Progress. [#42126](https://github.cbhq.net/mono/repo/pull/42126)
+
+#### 🐞 Fixes
+
+- Fixes ListCell minHeight which was being calculated incorrectly. [#42380](https://github.cbhq.net/mono/repo/pull/42380)
+
 ## 0.29.0 (11/15/2021, 04:01 PM PST)
 
 #### 💥 Breaking

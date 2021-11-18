@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.2 (11/17/2021, 05:43 PM PST)
+
+#### 🚀 Updates
+
+- Navigation Updates. [#42112](https://github.cbhq.net/mono/repo/pull/42112), [CDS-1682](https://jira.coinbase-corp.com/browse/CDS-1682)
+- Web Circular Progress. [#42126](https://github.cbhq.net/mono/repo/pull/42126)
+
+#### 🐞 Fixes
+
+- Fixes ListCell minHeight which was being calculated incorrectly. [#42380](https://github.cbhq.net/mono/repo/pull/42380)
+
 ## 0.30.1 (11/15/2021, 04:01 PM PST)
 
 #### 🚀 Updates
