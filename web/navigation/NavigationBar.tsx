@@ -1,5 +1,5 @@
 import React, { memo, ReactNode } from 'react';
-import { HStack } from '../layout';
+import { HStack, VStack } from '../layout';
 
 export type NavigationBarProps = {
   /**
@@ -26,12 +26,13 @@ export const NavigationBar = memo(({ start, children, end }: NavigationBarProps)
       borderedBottom
       spacing={2}
       width="100%"
+      minHeight={80} // TODO move this to some sizing tokens
       alignItems="flex-start"
       justifyContent="space-between"
     >
       <HStack gap={2} alignItems="flex-start" justifyContent="flex-start">
         {start}
-        {children}
+        <VStack>{children}</VStack>
       </HStack>
       {end}
     </HStack>

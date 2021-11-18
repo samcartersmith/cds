@@ -1,17 +1,16 @@
 import React, { memo, Children, cloneElement, ReactElement, useMemo } from 'react';
 
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
-
 import { SidebarItemProps } from './SidebarItem';
-import { LogoMarkProps } from '../icons/LogoMark';
-import { VStack, Box } from '../layout';
+import { VStack } from '../layout';
+
+export const WIDTH = { default: 240, compact: 87 };
 
 export type SidebarProps = {
   /**
    * The logo to display
    * @default undefined
    */
-  logo: ReactElement<LogoMarkProps>;
+  logo: ReactElement;
   /**
    * Children are expected to be an array of SidebarItems
    * @default undefined
@@ -42,14 +41,15 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children, compact }
       background
       borderedEnd
       height="100%"
-      width={compact ? 87 : 240}
+      width={compact ? WIDTH.compact : WIDTH.default}
+      minWidth={compact ? WIDTH.compact : WIDTH.default}
       spacingHorizontal={2}
       spacingBottom={2}
-      spacingTop={gutter}
+      spacingTop={2}
     >
-      <Box spacingTop={0.5} spacingStart={1} spacingBottom={4}>
+      <VStack spacingTop={0.5} spacingStart={1} spacingBottom={4}>
         {logo}
-      </Box>
+      </VStack>
       <VStack gap={0.5} offsetStart={0.5}>
         {decoratedChildren}
       </VStack>

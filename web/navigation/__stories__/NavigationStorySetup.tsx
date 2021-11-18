@@ -4,16 +4,29 @@ import React, { useState } from 'react';
 import { palette } from '../../tokens';
 import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/index';
 import { LogoMark } from '../../icons/LogoMark';
-import { HStack } from '../../layout';
-import { TextHeadline } from '../../typography';
+import { HStack, VStack, Box } from '../../layout';
+import { TextLabel1, TextHeadline, TextDisplay2 } from '../../typography';
 import { NavigationBar, PageTitle, Sidebar, SidebarItem, SidebarItemProps } from '../index';
 import { Pressable } from '../../system';
 import { Avatar } from '../../media';
+import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
   TabsAndTitle: 'With Tabs and displayTitle',
 };
+
+// Helpers
+type Items = { title: string; icon: SidebarItemProps['icon'] }[];
+const items: Items = [
+  { title: 'Assets', icon: 'chartPie' },
+  { title: 'Trade', icon: 'trading' },
+  { title: 'Pay', icon: 'pay' },
+  { title: 'For you', icon: 'newsfeed' },
+  { title: 'Earn', icon: 'giftBox' },
+  { title: 'Borrow', icon: 'cash' },
+  { title: 'DeFi', icon: 'defi' },
+];
 
 // eslint-disable-next-line no-console
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
@@ -53,17 +66,7 @@ export const NavigationBarTitle: React.FC = () => {
   );
 };
 
-type Items = { title: string; icon: SidebarItemProps['icon'] }[];
 export const SidebarExample: React.FC = () => {
-  const items: Items = [
-    { title: 'Assets', icon: 'chartPie' },
-    { title: 'Trade', icon: 'trading' },
-    { title: 'Pay', icon: 'pay' },
-    { title: 'For you', icon: 'newsfeed' },
-    { title: 'Earn', icon: 'giftBox' },
-    { title: 'Borrow', icon: 'cash' },
-    { title: 'DeFi', icon: 'defi' },
-  ];
   const [compact, setCompact] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -102,6 +105,45 @@ export const SidebarExample: React.FC = () => {
           </Button>
         </ButtonGroup>
       </HStack>
+    </HStack>
+  );
+};
+
+export const ComposedSystem: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <HStack>
+      <Sidebar
+        logo={
+          <HStack gap={1} alignItems="center">
+            <LogoMark />
+            <TextLabel1 as="p" color="foreground">
+              Asset Hub
+            </TextLabel1>
+          </HStack>
+        }
+      >
+        {items.map((props, index) => (
+          <SidebarItem
+            key={`sidebar-item--${props.title}`}
+            active={index === activeIndex}
+            onPress={() => setActiveIndex(index)}
+            {...props}
+          />
+        ))}
+      </Sidebar>
+      <VStack>
+        <Box position="sticky" top={0}>
+          <NavigationBarFullExample />
+        </Box>
+        <VStack spacing={4}>
+          <TextDisplay2 as="h2" spacingBottom={1}>
+            {items[activeIndex].title}
+          </TextDisplay2>
+          <LoremIpsum repeat={20} />
+        </VStack>
+      </VStack>
     </HStack>
   );
 };
