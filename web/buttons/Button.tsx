@@ -51,6 +51,7 @@ export const Button = forwardRef(function Button(
   }: ButtonProps,
   ref: React.Ref<HTMLButtonElement>,
 ) {
+  const hasIcon = Boolean(startIcon ?? endIcon);
   const hasFrontier = useFeatureFlag('frontierButton');
   const iconSize = useButtonIconSize(compact);
   const spacingClass = useButtonSpacing({ compact, startIcon, endIcon });
@@ -72,7 +73,7 @@ export const Button = forwardRef(function Button(
       className={cx(
         foregroundColors[color],
         buttonStyles.button,
-        hasFrontier && buttonStyles.frontierButton,
+        hasFrontier && hasIcon && buttonStyles.frontierButton,
         compact && buttonStyles.buttonCompact,
         block && buttonStyles.buttonBlock,
         spacingClass,

@@ -34,10 +34,11 @@ export const Button = memo(function Button({
   const borderRadius = useButtonBorderRadius(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
   const pressableStyles = useMemo(() => [block ? styles.block : styles.inline], [block]);
+  const hasIcon = Boolean(startIcon ?? endIcon);
   const hasFrontier = useFeatureFlag('frontierButton');
   const iconSize = useButtonIconSize(compact);
   const spacingStyles = useButtonSpacing({ compact, startIcon, endIcon });
-  const frontierButtonStyles = hasFrontier && (startIcon || endIcon) && styles.frontierButton;
+  const frontierButtonStyles = hasFrontier && hasIcon && styles.frontierButton;
   const startIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierStartIcon];
   const endIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierEndIcon];
   const buttonStyles = useMemo(
