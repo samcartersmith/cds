@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.4 (11/19/2021, 08:48 AM PST)
+
+#### 🚀 Updates
+
+- Frontier spectrum changes to yellow. [#42707](https://github.cbhq.net/mono/repo/pull/42707)
+- Add a scale provider to force normal scale at all time. [#42597](https://github.cbhq.net/mono/repo/pull/42597)
+
 ## 0.30.3 (11/18/2021, 04:59 PM PST)
 
 #### 🚀 Updates
