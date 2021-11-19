@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.5 (11/19/2021, 10:24 AM PST)
+
+#### 🚀 Updates
+
+- NavLink Component. [#42697](https://github.cbhq.net/mono/repo/pull/42697), [CDS-1726](https://jira.coinbase-corp.com/browse/CDS-1726)
+
 ## 0.30.4 (11/19/2021, 08:48 AM PST)
 
 #### 🚀 Updates
