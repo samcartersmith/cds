@@ -12,9 +12,10 @@ import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 
 export type ThemeTogglesProps = {
   showFrontier?: boolean;
+  hideDense?: boolean;
 };
 
-export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier }) => {
+export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier, hideDense }) => {
   const spectrum = useRootSpectrum();
   const scale = useRootScale();
   const spectrumUpdate = useRootSpectrumPreferenceUpdater();
@@ -41,10 +42,14 @@ export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier })
       <Switch onChange={toggleSpectrum} checked={spectrum === 'dark'}>
         Dark Spectrum
       </Switch>
-      <Spacer vertical={3} />
-      <Switch onChange={toggleScale} checked={scale === 'medium'}>
-        Dense Scale
-      </Switch>
+      {!hideDense && (
+        <>
+          <Spacer vertical={3} />
+          <Switch onChange={toggleScale} checked={scale === 'medium'}>
+            Dense Scale
+          </Switch>
+        </>
+      )}
       {showFrontier && (
         <>
           <Spacer vertical={3} />

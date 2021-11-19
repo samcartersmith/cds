@@ -24,7 +24,7 @@ export const Spectrum = () => {
   const getAccessibleForeground = useAccessibleForeground();
   const getRgbaString = usePaletteValueToRgbaString();
   return (
-    <ExampleWithThemeToggles showFrontier>
+    <ExampleWithThemeToggles showFrontier hideDense>
       <div className={styles.hueGrid}>
         {hueNames.map((hue) => {
           return (
@@ -32,10 +32,7 @@ export const Spectrum = () => {
               {hueSteps.map((step) => {
                 const paletteValue = `${hue}${step}` as const;
                 const background = getRgbaString(paletteValue);
-                const backgroundColor =
-                  background === 'rgb(255, 255, 255)'
-                    ? paletteValueToCssVar(paletteValue)
-                    : background;
+                const backgroundColor = paletteValueToCssVar(paletteValue);
                 const foreground = getAccessibleForeground({
                   background,
                   color: 'auto',

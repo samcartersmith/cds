@@ -44,6 +44,7 @@ import RemoteImageScreen from './src/RemoteImage';
 import SpacerScreen from './src/Spacer';
 import SparklineGradientScreen from './src/SparklineGradient';
 import SparklineScreen from './src/Sparkline';
+import SpectrumScreen from './src/Spectrum';
 import SwitchScreen from './src/Switch';
 import TextBodyScreen from './src/TextBody';
 import TextCaptionScreen from './src/TextCaption';
@@ -123,6 +124,7 @@ const AppContent = () => {
         <Stack.Screen name="Spacer" component={SpacerScreen} />
         <Stack.Screen name="Sparkline" component={SparklineScreen} />
         <Stack.Screen name="SparklineGradient" component={SparklineGradientScreen} />
+        <Stack.Screen name="Spectrum" component={SpectrumScreen} />
         <Stack.Screen name="Switch" component={SwitchScreen} />
         <Stack.Screen name="Text" component={TextScreen} options={{ title: 'Text (all)' }} />
         <Stack.Screen name="TextBody" component={TextBodyScreen} />

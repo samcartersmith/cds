@@ -7,7 +7,7 @@ import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { ThemeToggles, ThemeTogglesProps } from './ThemeToggles';
 
 export const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
-  ({ children, showFrontier }) => {
+  ({ children, ...toggleProps }) => {
     const scale = useRootScale();
     return (
       /** Remove the gap that ReactLiveScope adds to the live editor */
@@ -16,7 +16,7 @@ export const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
           <VStack spacingVertical={2} spacingHorizontal={3} background>
             <ThemeProvider scale="xSmall">
               <VStack gap={3} spacingBottom={3}>
-                <ThemeToggles showFrontier={showFrontier} />
+                <ThemeToggles {...toggleProps} />
                 <Divider offsetHorizontal={5} />
               </VStack>
             </ThemeProvider>

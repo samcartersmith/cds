@@ -42,6 +42,7 @@ const components = [
   { key: 'Spacer' },
   { key: 'Sparkline' },
   { key: 'SparklineGradient' },
+  { key: 'Spectrum' },
   { key: 'Switch' },
   { key: 'Text', label: 'Text (all)' },
   { key: 'TextBody' },
