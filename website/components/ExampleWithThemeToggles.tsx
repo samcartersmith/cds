@@ -4,31 +4,28 @@ import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
-import { css } from 'linaria';
-import { ThemeToggles } from './ThemeToggles';
+import { ThemeToggles, ThemeTogglesProps } from './ThemeToggles';
 
-const resets = css`
-  // put resets here
-`;
-
-export const ExampleWithThemeToggles: React.FC = memo(({ children }) => {
-  const scale = useRootScale();
-  return (
-    /** Remove the gap that ReactLiveScope adds to the live editor */
-    <div className={resets} style={{ margin: '-1rem' }}>
-      <ThemeProvider scale="large">
-        <VStack spacingVertical={2} spacingHorizontal={3} background>
-          <ThemeProvider scale="xSmall">
-            <VStack gap={3} spacingBottom={3}>
-              <ThemeToggles />
-              <Divider offsetHorizontal={5} />
-            </VStack>
-          </ThemeProvider>
-          <ThemeProvider scale={scale}>{children}</ThemeProvider>
-        </VStack>
-      </ThemeProvider>
-    </div>
-  );
-});
+export const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
+  ({ children, showFrontier }) => {
+    const scale = useRootScale();
+    return (
+      /** Remove the gap that ReactLiveScope adds to the live editor */
+      <div style={{ margin: '-1rem' }}>
+        <ThemeProvider scale="large">
+          <VStack spacingVertical={2} spacingHorizontal={3} background>
+            <ThemeProvider scale="xSmall">
+              <VStack gap={3} spacingBottom={3}>
+                <ThemeToggles showFrontier={showFrontier} />
+                <Divider offsetHorizontal={5} />
+              </VStack>
+            </ThemeProvider>
+            <ThemeProvider scale={scale}>{children}</ThemeProvider>
+          </VStack>
+        </ThemeProvider>
+      </div>
+    );
+  },
+);
 
 ExampleWithThemeToggles.displayName = 'ExampleWithThemeToggles';

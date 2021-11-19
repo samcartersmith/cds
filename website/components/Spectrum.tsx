@@ -1,3 +1,4 @@
+import { paletteValueToCssVar } from '@cbhq/cds-web/utils/palette';
 import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
@@ -23,26 +24,29 @@ export const Spectrum = () => {
   const getAccessibleForeground = useAccessibleForeground();
   const getRgbaString = usePaletteValueToRgbaString();
   return (
-    <ExampleWithThemeToggles>
+    <ExampleWithThemeToggles showFrontier>
       <div className={styles.hueGrid}>
         {hueNames.map((hue) => {
           return (
             <div key={hue} className={styles.hueColumn}>
               {hueSteps.map((step) => {
-                const background = getRgbaString(`${hue}${step}`);
+                const paletteValue = `${hue}${step}` as const;
+                const background = getRgbaString(paletteValue);
+                const backgroundColor =
+                  background === 'rgb(255, 255, 255)'
+                    ? paletteValueToCssVar(paletteValue)
+                    : background;
                 const foreground = getAccessibleForeground({
                   background,
                   color: 'auto',
                   usage: 'normalText',
                 });
                 return (
-                  <div key={`${hue}${step}`} className={styles.hueBox} style={{ background }}>
+                  <div key={paletteValue} className={styles.hueBox} style={{ backgroundColor }}>
                     <span className={styles.hue}>
-                      <TextCaption
-                        dangerouslySetColor={foreground}
-                        as="span"
-                        align="center"
-                      >{`${hue}${step}`}</TextCaption>
+                      <TextCaption dangerouslySetColor={foreground} as="span" align="center">
+                        {paletteValue}
+                      </TextCaption>
                     </span>
                   </div>
                 );

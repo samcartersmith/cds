@@ -3,16 +3,24 @@ import { memo, useCallback } from 'react';
 import { Switch } from '@cbhq/cds-web/controls';
 import { Spacer } from '@cbhq/cds-web/layout';
 
+import { useFeatureFlagUpdater } from '@cbhq/cds-common/system/useFeatureFlagUpdater';
 import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
 import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
+import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 
-export const ThemeToggles = memo(() => {
+export type ThemeTogglesProps = {
+  showFrontier?: boolean;
+};
+
+export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier }) => {
   const spectrum = useRootSpectrum();
   const scale = useRootScale();
   const spectrumUpdate = useRootSpectrumPreferenceUpdater();
   const scaleUpdate = useRootScalePreferenceUpdater();
+  const featureFlagUpdate = useFeatureFlagUpdater();
+  const hasFrontier = useFeatureFlag('frontier');
 
   const toggleSpectrum = useCallback(() => {
     const newSpectrum = spectrum === 'dark' ? 'light' : 'dark';
@@ -24,6 +32,10 @@ export const ThemeToggles = memo(() => {
     scaleUpdate(newScale);
   }, [scale, scaleUpdate]);
 
+  const toggleFrontier = useCallback(() => {
+    featureFlagUpdate({ frontier: !hasFrontier });
+  }, [hasFrontier, featureFlagUpdate]);
+
   return (
     <>
       <Switch onChange={toggleSpectrum} checked={spectrum === 'dark'}>
@@ -33,6 +45,14 @@ export const ThemeToggles = memo(() => {
       <Switch onChange={toggleScale} checked={scale === 'medium'}>
         Dense Scale
       </Switch>
+      {showFrontier && (
+        <>
+          <Spacer vertical={3} />
+          <Switch onChange={toggleFrontier} checked={hasFrontier}>
+            Frontier
+          </Switch>
+        </>
+      )}
     </>
   );
 });

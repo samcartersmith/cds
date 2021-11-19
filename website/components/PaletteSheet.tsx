@@ -1,8 +1,8 @@
+import { Fragment } from 'react';
 import { css } from 'linaria';
 import { usePaletteConfig } from '@cbhq/cds-common';
 import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
 import { wordCase, entries } from '@cbhq/cds-utils';
-import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import { TextHeadline, TextLabel1 } from '@cbhq/cds-web/typography';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
@@ -24,16 +24,18 @@ const twoColumns = css`
   padding-right: 50px;
 `;
 
+type PaletteSheetProps = {
+  hideToggles?: boolean;
+};
+
 export const PaletteTiles = () => {
   const palette = usePalette();
   const paletteConfig = usePaletteConfig();
   const nRows = Math.ceil(Object.keys(palette).length / 2);
-  const getRgbaString = usePaletteValueToRgbaString();
   return (
     <section className={twoColumns} style={{ gridTemplateRows: `repeat(${nRows}, auto)` }}>
       {entries(palette).map(([name]) => {
         const paletteValue = paletteConfig[name];
-        const background = getRgbaString(paletteValue);
         const [hueStep, opacity] = paletteValueToTuple(paletteValue);
         const foreground = ['foreground', 'secondaryForeground'].includes(name)
           ? `var(--background)`
@@ -43,7 +45,7 @@ export const PaletteTiles = () => {
             key={name}
             className={tile}
             style={{
-              background,
+              background: palette[name],
               color: foreground,
               border: `1px solid ${palette.line}`,
             }}
@@ -67,8 +69,11 @@ export const PaletteTiles = () => {
   );
 };
 
-export const PaletteSheet = () => (
-  <ExampleWithThemeToggles>
-    <PaletteTiles />
-  </ExampleWithThemeToggles>
-);
+export const PaletteSheet = ({ hideToggles }: PaletteSheetProps) => {
+  const Wrapper = hideToggles ? Fragment : ExampleWithThemeToggles;
+  return (
+    <Wrapper>
+      <PaletteTiles />
+    </Wrapper>
+  );
+};
