@@ -40,7 +40,7 @@ const handlePress = (name: string) => console.log(`Pressed ${name}`);
 export const NavigationBarFullExample: React.FC = () => {
   return (
     <NavigationBar
-      start={<IconButton name="arrowLeft" onPress={() => handlePress('Back')} />}
+      start={<IconButton name="backArrow" onPress={() => handlePress('Back')} />}
       end={
         <HStack gap={1} alignItems="center">
           <IconButton name="bell" onPress={() => handlePress('Notifications')} />
