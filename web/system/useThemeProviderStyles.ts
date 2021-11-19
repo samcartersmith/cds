@@ -5,6 +5,7 @@ import { useScale, SystemProvider } from '@cbhq/cds-common';
 
 import { usePaletteToCssVars } from '../color/usePaletteToCssVars';
 import { useSpectrumClassName } from '../color/useSpectrumClassName';
+import { useSpectrumClassNameForFrontier } from '../color/useSpectrumClassNameForFrontier';
 import * as scaleCss from '../styles/scale';
 
 /**
@@ -20,14 +21,15 @@ export const useThemeProviderStyles = () => {
   const scale = useScale();
   const palette = usePaletteToCssVars();
   const spectrumClassName = useSpectrumClassName();
+  const spectrumClassNameForFrontier = useSpectrumClassNameForFrontier();
   const activeScaleCss = scaleCss[scale];
   return useMemo(
     () =>
       ({
-        className: cx(activeScaleCss, spectrumClassName),
+        className: cx(activeScaleCss, spectrumClassName, spectrumClassNameForFrontier),
         style: palette as React.CSSProperties,
       } as const),
-    [palette, activeScaleCss, spectrumClassName],
+    [palette, activeScaleCss, spectrumClassName, spectrumClassNameForFrontier],
   );
 };
 
