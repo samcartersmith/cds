@@ -9,24 +9,26 @@ function SidebarItemWithPress() {
   };
 
   return (
-    <HStack justifyContent="center" alignItems="flex-start" dangerouslySetBackground={palette.backgroundAlternate}>
-      <Sidebar compact={compact} logo={<LogoMark />}>
-        {items.map((props, index) => (
-          <SidebarItem
-            key={`sidebar-item--${props.title}`} 
-            active={index === activeIndex}
-            onPress={() => handlePress(index)}
-            {...props} />
-        ))}
-      </Sidebar>
-      <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
-        <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
-        <ButtonGroup accessibilityLabel="make compact">
-          <Button compact variant={compact ? 'secondary' : 'primary'} onPress={() => setCompact(false)}>default</Button>
-          <Button compact variant={compact ? 'primary' : 'secondary'} onPress={() => setCompact(true)}>compact</Button>
-        </ButtonGroup>
+    <ExampleWithThemeToggles>
+      <HStack justifyContent="center" alignItems="flex-start" dangerouslySetBackground={palette.backgroundAlternate}>
+        <Sidebar compact={compact} logo={<LogoMark />}>
+          {items.map((props, index) => (
+            <SidebarItem
+              key={`sidebar-item--${props.title}`} 
+              active={index === activeIndex}
+              onPress={() => handlePress(index)}
+              {...props} />
+          ))}
+        </Sidebar>
+        <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
+          <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
+          <ButtonGroup accessibilityLabel="make compact">
+            <Button compact variant={compact ? 'secondary' : 'primary'} onPress={() => setCompact(false)}>default</Button>
+            <Button compact variant={compact ? 'primary' : 'secondary'} onPress={() => setCompact(true)}>compact</Button>
+          </ButtonGroup>
+        </HStack>
       </HStack>
-    </HStack>
+    </ExampleWithThemeToggles>
   );
 }
 ```

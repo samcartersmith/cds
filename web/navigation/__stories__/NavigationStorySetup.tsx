@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { palette } from '../../tokens';
 import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/index';
 import { LogoMark } from '../../icons/LogoMark';
-import { HStack, VStack, Box } from '../../layout';
+import { HStack, VStack } from '../../layout';
 import { TextLabel1, TextHeadline, TextDisplay2 } from '../../typography';
 import { NavigationBar, PageTitle, Sidebar, SidebarItem, SidebarItemProps } from '../index';
 import { Pressable } from '../../system';
@@ -134,9 +134,7 @@ export const ComposedSystem: React.FC = () => {
         ))}
       </Sidebar>
       <VStack>
-        <Box position="sticky" top={0}>
-          <NavigationBarFullExample />
-        </Box>
+        <NavigationBarFullExample />
         <VStack spacing={4}>
           <TextDisplay2 as="h2" spacingBottom={1}>
             {items[activeIndex].title}

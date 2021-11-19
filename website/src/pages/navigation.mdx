@@ -52,25 +52,25 @@ function fullExample() {
   const {name, avatar} = mocks.users[1];
 
   return (
-    <HStack>
-      <Sidebar
-        logo={
-          <Link to="/">
-            <LogoMark />
-          </Link>
-        }
-      >
-        {items.map((props, index) => (
-          <SidebarItem
-            key={`example--sidebar-item--${props.title}`}
-            active={index === activeIndex}
-            onPress={() => setActiveIndex(index)}
-            {...props}
-          />
-        ))}
-      </Sidebar>
-      <VStack>
-        <Box position="sticky" top={0}>
+    <ExampleWithThemeToggles>
+      <HStack>
+        <Sidebar
+          logo={
+            <Link to="/">
+              <LogoMark />
+            </Link>
+          }
+        >
+          {items.map((props, index) => (
+            <SidebarItem
+              key={`example--sidebar-item--${props.title}`}
+              active={index === activeIndex}
+              onPress={() => setActiveIndex(index)}
+              {...props}
+            />
+          ))}
+        </Sidebar>
+        <VStack>
           <NavigationBar
             end={
               <HStack gap={1} alignItems="center">
@@ -86,21 +86,21 @@ function fullExample() {
           >
             <PageTitle>Personal Portfolio</PageTitle>
           </NavigationBar>
-        </Box>
-        <VStack spacing={2}>
-          <TextDisplay2 as="h2" spacingBottom={1}>
-            {items[activeIndex].title}
-          </TextDisplay2>
-          {loremIpsum}
-          {loremIpsum}
-          {loremIpsum}
-          {loremIpsum}
-          {loremIpsum}
-          {loremIpsum}
-          {loremIpsum}
+          <VStack spacing={2}>
+            <TextDisplay2 as="h2" spacingBottom={1}>
+              {items[activeIndex].title}
+            </TextDisplay2>
+            {loremIpsum}
+            {loremIpsum}
+            {loremIpsum}
+            {loremIpsum}
+            {loremIpsum}
+            {loremIpsum}
+            {loremIpsum}
+          </VStack>
         </VStack>
-      </VStack>
-    </HStack>
+      </HStack>
+    </ExampleWithThemeToggles>
   );
 }
 ```

@@ -1,4 +1,6 @@
 import React, { memo, ReactNode } from 'react';
+import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import { ThemeProvider } from '../system/ThemeProvider';
 import { HStack, VStack } from '../layout';
 
 export type NavigationBarProps = {
@@ -21,21 +23,27 @@ export type NavigationBarProps = {
 
 export const NavigationBar = memo(({ start, children, end }: NavigationBarProps) => {
   return (
-    <HStack
-      background
-      borderedBottom
-      spacing={2}
-      width="100%"
-      minHeight={80} // TODO move this to some sizing tokens
-      alignItems="flex-start"
-      justifyContent="space-between"
-    >
-      <HStack gap={2} alignItems="flex-start" justifyContent="flex-start">
-        {start}
-        <VStack>{children}</VStack>
+    <ThemeProvider scale={DEFAULT_SCALE}>
+      <HStack
+        position="sticky"
+        top={0}
+        left={0}
+        right={0}
+        background
+        borderedBottom
+        spacing={2}
+        width="100%"
+        minHeight={80} // TODO move this to some sizing tokens
+        alignItems="flex-start"
+        justifyContent="space-between"
+      >
+        <HStack gap={2} alignItems="flex-start" justifyContent="flex-start">
+          {start}
+          <VStack>{children}</VStack>
+        </HStack>
+        {end}
       </HStack>
-      {end}
-    </HStack>
+    </ThemeProvider>
   );
 });
 
