@@ -116,6 +116,7 @@ module.exports = {
       label: 'Navigation',
       collapsed: true,
       items: [
+        'components/navigation/NavLink/nav-link',
         'components/navigation/NavigationBar/navigation-bar',
         'components/navigation/PageTitle/page-title',
         'components/navigation/Sidebar/sidebar',

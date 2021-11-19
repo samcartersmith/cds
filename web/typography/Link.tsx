@@ -2,7 +2,7 @@ import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 
 import { ButtonOrLink } from '../system/ButtonOrLink';
 import { OnPress } from '../types';
@@ -20,13 +20,16 @@ import { TextTitle3 } from './TextTitle3';
 import { TextTitle4 } from './TextTitle4';
 import { TextInherited } from './TextInherited';
 
+export const linkClassName = 'cds-link';
 const link = css`
-  text-decoration: none;
-  cursor: pointer;
-  background: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
+  &.${linkClassName} {
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
 `;
 
 const TYPOGRAPHY_MAP: Record<
@@ -58,6 +61,10 @@ export type LinkProps = {
   onPress?: OnPress<HTMLAnchorElement>;
   /** Callback for custom Link component */
   renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
+  /**
+   * @danger Adds a className to the Link. If you pass in a className make sure your styles override the Link styles using the Link class .cds-link like this: .my-class.cds-link
+   */
+  dangerouslySetClassName?: string;
 } & LinkBaseProps &
   SharedProps &
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'color'>;
@@ -75,6 +82,7 @@ export const Link = memo(function Link({
   // text props
   color = 'primary',
   mono,
+  dangerouslySetClassName,
   ...props
 }: LinkProps) {
   const linkRef = useRef(null);
@@ -83,7 +91,7 @@ export const Link = memo(function Link({
   const enhancedProps = {
     'aria-label': accessibilityLabel,
     'data-testid': testID,
-    className: link,
+    className: cx(linkClassName, link, dangerouslySetClassName),
     onClick: onPress,
     ref: linkRef,
     href: to,

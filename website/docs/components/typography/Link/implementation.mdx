@@ -104,6 +104,21 @@ Color of the foreground text.
 
 <ComponentDetails componentName="Link" templateName="prop-color" />
 
+### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+Adds a className to the Link. If you pass in a className make sure your styles override the Link styles using the Link class .cds-link like this: .my-class.cds-link
+
+<ApiDetails
+  componentName="Link"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Link" templateName="prop-dangerouslySetClassName" />
+
 ### forceOpenOutsideApp <Badge variant="mobile" />
 
 Toggles whether the link should be opened outside or within app

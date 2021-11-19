@@ -6,7 +6,14 @@ import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/ind
 import { LogoMark } from '../../icons/LogoMark';
 import { HStack, VStack } from '../../layout';
 import { TextLabel1, TextHeadline, TextDisplay2 } from '../../typography';
-import { NavigationBar, PageTitle, Sidebar, SidebarItem, SidebarItemProps } from '../index';
+import {
+  NavigationBar,
+  PageTitle,
+  Sidebar,
+  SidebarItem,
+  SidebarItemProps,
+  NavLink,
+} from '../index';
 import { Pressable } from '../../system';
 import { Avatar } from '../../media';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
@@ -142,6 +149,23 @@ export const ComposedSystem: React.FC = () => {
           <LoremIpsum repeat={20} />
         </VStack>
       </VStack>
+    </HStack>
+  );
+};
+
+export const NavLinkExample: React.FC = () => {
+  const [activeItem, setActiveItem] = useState('assets');
+  const getProps = (name: string) => ({
+    onPress: () => setActiveItem(name),
+    active: name === activeItem,
+  });
+
+  return (
+    <HStack gap={3}>
+      <NavLink {...getProps('assets')}>Assets</NavLink>
+      <NavLink {...getProps('payments')}>Payments</NavLink>
+      <NavLink {...getProps('myWallet')}>My Wallet</NavLink>
+      <NavLink {...getProps('defi')}>DeFi</NavLink>
     </HStack>
   );
 };

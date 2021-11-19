@@ -1108,6 +1108,27 @@ export const RemoteImage = {
   ),
 };
 
+export const NavLink = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavLink/implementation.mdx'
+      ),
+  ),
+  'nav-link': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavLink/nav-link.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavLink/usage.mdx'
+      ),
+  ),
+};
+
 export const NavigationBar = {
   implementation: React.lazy(
     async () =>

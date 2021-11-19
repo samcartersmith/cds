@@ -44,6 +44,7 @@ export const components = [
   'Spinner',
   'Avatar',
   'RemoteImage',
+  'NavLink',
   'NavigationBar',
   'PageTitle',
   'Sidebar',
