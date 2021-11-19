@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.3 (11/18/2021, 04:59 PM PST)
+
+#### 🚀 Updates
+
+- Provide a fixed table-layout. [#41699](https://github.cbhq.net/mono/repo/pull/41699)
+- Create a full example for Asset hub. [#42347](https://github.cbhq.net/mono/repo/pull/42347)
+- **[Inputs]** Add Input animations for web. [#42078](https://github.cbhq.net/mono/repo/pull/42078)
+- Add Frontier color configs. [#42505](https://github.cbhq.net/mono/repo/pull/42505), [CDS-1735](https://jira.coinbase-corp.com/browse/CDS-1735)
+
+#### 🐞 Fixes
+
+- Frontier button alignment. [#42627](https://github.cbhq.net/mono/repo/pull/42627)
+- **[Illustration]** Nov 17th Illustration Update. [#42463](https://github.cbhq.net/mono/repo/pull/42463)
+
 ## 0.30.2 (11/17/2021, 05:43 PM PST)
 
 #### 🚀 Updates

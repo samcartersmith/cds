@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.2 (11/18/2021, 04:59 PM PST)
+
+#### 🚀 Updates
+
+- **[Inputs]** Add Input animations for web. [#42078](https://github.cbhq.net/mono/repo/pull/42078)
+- Add Frontier color configs. [#42505](https://github.cbhq.net/mono/repo/pull/42505), [CDS-1735](https://jira.coinbase-corp.com/browse/CDS-1735)
+
+#### 🐞 Fixes
+
+- Frontier button alignment. [#42627](https://github.cbhq.net/mono/repo/pull/42627)
+- **[Illustration]** Nov 17th Illustration Update. [#42463](https://github.cbhq.net/mono/repo/pull/42463)
+
+#### 📘 Misc
+
+- Add frontierColor to mobile debug menu. [#42670](https://github.cbhq.net/mono/repo/pull/42670)
+
 ## 0.33.1 (11/17/2021, 05:43 PM PST)
 
 #### 🚀 Updates

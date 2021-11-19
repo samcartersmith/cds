@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.14 (11/18/2021, 04:59 PM PST)
+
+#### 🚀 Updates
+
+- Frontier palette changes. [#42588](https://github.cbhq.net/mono/repo/pull/42588), [CDS-1736](https://jira.coinbase-corp.com/browse/CDS-1736)
+
 ## 0.2.13 (10/27/2021, 10:02 AM PST)
 
 #### 🐞 Fixes
