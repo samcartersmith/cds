@@ -1,19 +1,18 @@
-import React, { memo, useEffect, useState, useRef, useCallback } from 'react';
+import React, { memo, useEffect, useState, useRef } from 'react';
 import {
   ProgressCircleBaseProps,
   ProgressCircleTextBaseProps,
   ProgressInnerCircleBaseProps,
 } from '@cbhq/cds-common/types/ProgressCircleBaseProps';
 import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { css, cx } from 'linaria';
 import { getCenter, getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
-import { Counter } from './Counter';
 import { Box } from '../layout';
-import { TextLabel2 } from '../typography';
 import { usePalette } from '../hooks/usePalette';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { VisualizationContainer, Dimension } from './VisualizationContainer';
+import { ProgressTextLabel } from './ProgressTextLabel';
 
 const svgClassName = css`
   display: block;
@@ -26,8 +25,7 @@ const svgCircleClassName = css`
 
 const { easing, duration } = convertMotionConfig({
   toValue: 0,
-  duration: 'slow3',
-  easing: 'global',
+  ...animateProgressBaseSpec,
 });
 
 const innerSvgCircleClassName = css`
@@ -37,36 +35,12 @@ const innerSvgCircleClassName = css`
 `;
 
 const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progress, disabled }) => {
-  const lastLabelNum = useRef<number>(0);
-  const palette = usePalette();
-
-  const renderNum = useCallback(
-    (num: number) => {
-      return (
-        <TextLabel2
-          disabled={disabled}
-          dangerouslySetColor={palette.foregroundMuted}
-          as="span"
-          align="end"
-        >
-          {num}%
-        </TextLabel2>
-      );
-    },
-    [disabled, palette.foregroundMuted],
-  );
-
-  useEffect(() => {
-    lastLabelNum.current = progress;
-  }, [progress]);
-
   return (
     <Box width="100%" height="100%" position="absolute" justifyContent="center" alignItems="center">
-      <Counter
-        startNum={Math.round(lastLabelNum.current * 100)}
-        renderNum={renderNum}
-        endNum={Math.round(progress * 100)}
-        durationInMillis={durations.slow3}
+      <ProgressTextLabel
+        value={Math.round(progress * 100)}
+        disabled={disabled}
+        color="foregroundMuted"
       />
     </Box>
   );

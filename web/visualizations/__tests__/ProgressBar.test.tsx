@@ -4,8 +4,8 @@ import { render } from '@testing-library/react';
 import { ProgressBar } from '../ProgressBar';
 import { Box } from '../../layout';
 import { palette } from '../../tokens';
-
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
+import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
+import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 
 jest.mock('../../hooks/useDimensions', () => ({
   useDimensions: jest.fn(() => {
@@ -47,7 +47,9 @@ describe('ProgressBar test', () => {
   it('places bar label in correct position if it flows off the left container', () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
-        <ProgressBar progress={0} endLabel={{ value: 0, float: true }} />
+        <ProgressBarWithFloatLabel label={0} progress={0}>
+          <ProgressBar progress={0} />
+        </ProgressBarWithFloatLabel>
       </Box>,
     );
 
@@ -63,7 +65,9 @@ describe('ProgressBar test', () => {
   it('places bar label in correct position in middle', () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
-        <ProgressBar progress={0.5} endLabel={{ value: 50, float: true }} />
+        <ProgressBarWithFloatLabel label={50} progress={0.5}>
+          <ProgressBar progress={0.5} />
+        </ProgressBarWithFloatLabel>
       </Box>,
     );
 
@@ -82,7 +86,9 @@ describe('ProgressBar test', () => {
   it('renders fixed labels in correct position', () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
-        <ProgressBar progress={50} startLabel={{ value: 0 }} endLabel={{ value: 50 }} />
+        <ProgressBarWithFixedLabels startLabel={0} endLabel={50} labelPlacement="above">
+          <ProgressBar progress={50} />
+        </ProgressBarWithFixedLabels>
       </Box>,
     );
 
@@ -133,7 +139,9 @@ describe('ProgressBar test', () => {
   it('handles disabled state correctly', () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
-        <ProgressBar progress={0.77} startLabel={{ value: 0 }} endLabel={{ value: 77 }} disabled />
+        <ProgressBarWithFixedLabels startLabel={0} endLabel={77} disabled>
+          <ProgressBar progress={0.77} disabled />
+        </ProgressBarWithFixedLabels>
       </Box>,
     );
 

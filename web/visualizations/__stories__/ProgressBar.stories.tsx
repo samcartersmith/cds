@@ -1,3 +1,5 @@
+import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
+import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 import { ProgressBar } from '../ProgressBar';
 import { VStack } from '../../layout';
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
@@ -42,16 +44,20 @@ export const LabelAbove = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <VStack gap={2}>
-          <ProgressBar
+          <ProgressBarWithFloatLabel
+            label={Math.round(calculateProgress(0) * 100)}
             progress={calculateProgress(0)}
-            endLabel={{ value: Math.round(calculateProgress(0) * 100), float: true }}
             labelPlacement="above"
-          />
-          <ProgressBar
+          >
+            <ProgressBar progress={calculateProgress(0)} />
+          </ProgressBarWithFloatLabel>
+          <ProgressBarWithFloatLabel
+            label={Math.round(calculateProgress(0.2) * 100)}
             progress={calculateProgress(0.2)}
-            endLabel={{ value: Math.round(calculateProgress(0.2) * 100), float: true }}
             labelPlacement="above"
-          />
+          >
+            <ProgressBar progress={calculateProgress(0.2)} />
+          </ProgressBarWithFloatLabel>
         </VStack>
       )}
     </ProgressContainerWithButtons>
@@ -63,16 +69,20 @@ export const LabelBelow = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <VStack gap={2}>
-          <ProgressBar
+          <ProgressBarWithFloatLabel
+            label={Math.round(calculateProgress(0) * 100)}
             progress={calculateProgress(0)}
-            endLabel={{ value: Math.round(calculateProgress(0) * 100), float: true }}
             labelPlacement="below"
-          />
-          <ProgressBar
+          >
+            <ProgressBar progress={calculateProgress(0)} />
+          </ProgressBarWithFloatLabel>
+          <ProgressBarWithFloatLabel
+            label={Math.round(calculateProgress(0.2) * 100)}
             progress={calculateProgress(0.2)}
-            endLabel={{ value: Math.round(calculateProgress(0.2) * 100), float: true }}
             labelPlacement="below"
-          />
+          >
+            <ProgressBar progress={calculateProgress(0.2)} />
+          </ProgressBarWithFloatLabel>
         </VStack>
       )}
     </ProgressContainerWithButtons>
@@ -84,17 +94,19 @@ export const LabelAtBoundsBelow = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <VStack gap={2}>
-          <ProgressBar
-            progress={calculateProgress(0.2)}
-            startLabel={{ value: 0 }}
-            endLabel={{ value: Math.round(calculateProgress(0.2) * 100) }}
+          <ProgressBarWithFixedLabels
+            startLabel={0}
+            endLabel={Math.round(calculateProgress(0.2) * 100)}
             labelPlacement="below"
-          />
-          <ProgressBar
-            progress={calculateProgress(0.2)}
-            endLabel={{ value: Math.round(calculateProgress(0.2) * 100) }}
+          >
+            <ProgressBar progress={calculateProgress(0.2)} />
+          </ProgressBarWithFixedLabels>
+          <ProgressBarWithFixedLabels
+            endLabel={Math.round(calculateProgress(0.2) * 100)}
             labelPlacement="below"
-          />
+          >
+            <ProgressBar progress={calculateProgress(0.2)} />
+          </ProgressBarWithFixedLabels>
         </VStack>
       )}
     </ProgressContainerWithButtons>
@@ -106,17 +118,19 @@ export const LabelBeside = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <VStack gap={2}>
-          <ProgressBar
-            progress={calculateProgress(0.2)}
-            startLabel={{ value: 0 }}
-            endLabel={{ value: Math.round(calculateProgress(0.2) * 100) }}
+          <ProgressBarWithFixedLabels
+            startLabel={0}
+            endLabel={Math.round(calculateProgress(0.2) * 100)}
             labelPlacement="beside"
-          />
-          <ProgressBar
-            progress={calculateProgress(0.2)}
-            endLabel={{ value: Math.round(calculateProgress(0.2) * 100) }}
+          >
+            <ProgressBar progress={calculateProgress(0.2)} />
+          </ProgressBarWithFixedLabels>
+          <ProgressBarWithFixedLabels
+            endLabel={Math.round(calculateProgress(0.2) * 100)}
             labelPlacement="beside"
-          />
+          >
+            <ProgressBar progress={calculateProgress(0.2)} />
+          </ProgressBarWithFixedLabels>
         </VStack>
       )}
     </ProgressContainerWithButtons>
@@ -127,23 +141,21 @@ export const Disabled = () => {
   return (
     <ThemeProvider>
       <VStack gap={2}>
-        <ProgressBar disabled progress={0.5} startLabel={{ value: 50 }} labelPlacement="beside" />
-        <ProgressBar disabled progress={0.1} endLabel={{ value: 10 }} labelPlacement="beside" />
-        <ProgressBar
-          disabled
-          progress={0.2}
-          startLabel={{ value: 0 }}
-          endLabel={{ value: 20 }}
-          labelPlacement="beside"
-        />
-        <ProgressBar
-          disabled
-          progress={0.5}
-          startLabel={{ value: 0 }}
-          endLabel={{ value: 50 }}
-          labelPlacement="below"
-        />
-        <ProgressBar disabled progress={0.7} endLabel={{ value: 70, float: true }} />
+        <ProgressBarWithFixedLabels disabled startLabel={50} labelPlacement="beside">
+          <ProgressBar disabled progress={0.5} />
+        </ProgressBarWithFixedLabels>
+        <ProgressBarWithFixedLabels disabled endLabel={10} labelPlacement="beside">
+          <ProgressBar disabled progress={0.1} />
+        </ProgressBarWithFixedLabels>
+        <ProgressBarWithFixedLabels disabled endLabel={20} startLabel={0} labelPlacement="beside">
+          <ProgressBar disabled progress={0.2} />
+        </ProgressBarWithFixedLabels>
+        <ProgressBarWithFixedLabels disabled endLabel={50} startLabel={0} labelPlacement="beside">
+          <ProgressBar disabled progress={0.5} />
+        </ProgressBarWithFixedLabels>
+        <ProgressBarWithFloatLabel label={70} progress={0.7} disabled>
+          <ProgressBar disabled progress={0.7} />
+        </ProgressBarWithFloatLabel>
       </VStack>
     </ThemeProvider>
   );
@@ -184,17 +196,20 @@ export const CustomLabels = () => {
     <ProgressContainerWithButtons hideIncrease>
       {() => (
         <VStack gap={2}>
-          <ProgressBar
-            progress={0.6}
+          <ProgressBarWithFixedLabels
             startLabel={{ value: 12500, render: renderStartLabelNum }}
             endLabel={{ value: 35500, render: renderEndLabelNum }}
             labelPlacement="above"
-          />
-          <ProgressBar
+          >
+            <ProgressBar progress={0.6} />
+          </ProgressBarWithFixedLabels>
+          <ProgressBarWithFloatLabel
             progress={0.6}
-            endLabel={{ value: 12500, render: renderStartLabelNum, float: true }}
+            label={{ value: 12500, render: renderStartLabelNum }}
             labelPlacement="above"
-          />
+          >
+            <ProgressBar progress={0.6} />
+          </ProgressBarWithFloatLabel>
         </VStack>
       )}
     </ProgressContainerWithButtons>
@@ -206,17 +221,21 @@ export const CustomStringLabel = () => {
     <ProgressContainerWithButtons hideIncrease>
       {() => (
         <VStack gap={2}>
-          <ProgressBar
+          <ProgressBarWithFloatLabel
             progress={0.6}
-            endLabel={{ value: 35500, render: renderCustomStringLabel, float: true }}
+            label={{ value: 35500, render: renderCustomStringLabel }}
             labelPlacement="above"
-          />
-          <ProgressBar
+          >
+            <ProgressBar progress={0.6} />
+          </ProgressBarWithFloatLabel>
+          <ProgressBarWithFloatLabel
             progress={0.6}
-            endLabel={{ value: 35500, render: renderCustomStringLabel, float: true }}
+            label={{ value: 35500, render: renderCustomStringLabel }}
+            labelPlacement="above"
             disabled
-            labelPlacement="above"
-          />
+          >
+            <ProgressBar progress={0.6} disabled />
+          </ProgressBarWithFloatLabel>
         </VStack>
       )}
     </ProgressContainerWithButtons>
