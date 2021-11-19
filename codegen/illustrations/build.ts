@@ -565,7 +565,7 @@ const getImgPath = (name: string, spectrum: Spectrum) => {
   const nameAndSpectrum = `${name}-${spectrum}`;
   if (nameAndSpectrum in nameToNodeIdMap) {
     const nodeId = nameToNodeIdMap[`${name}-${spectrum}`];
-    return `import("./images/${spectrum}/${name}-${localManifestData[FILE_FORMAT][nodeId].versionNum}")`;
+    return `require("./images/${spectrum}/${name}-${localManifestData[FILE_FORMAT][nodeId].versionNum}")`;
   }
   return null;
 };
@@ -612,6 +612,8 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
       IllustrationFilePathMap:
         " Record<string,{ light: Promise<{ default: { content: string; }; content: string; }>; dark: Promise<{ default: { content: string; }; content: string; }> | null; fileFormat:'svg' }>",
     },
+    header:
+      '/* eslint-disable global-require */ \n /* eslint-disable @typescript-eslint/no-unsafe-assignment */\n',
   });
 
   spinner.stop();
