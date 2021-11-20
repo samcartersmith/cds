@@ -49,40 +49,6 @@ Toggle used to show a disabled progress visualization
 
 <ComponentDetails componentName="ProgressBar" templateName="prop-disabled" />
 
-### endLabel
-
-Label that is pinned to the end of the container or floated at the end of the filled in bar. If a render function is omitted then the value will be formatted as a percentage.
-
-<ApiDetails
-  componentName="ProgressBar"
-  propertyName="endLabel"
-  required={false}
-  defaultValue=""
-  mobileOptions={[
-    '{ value: number; float?: boolean | undefined; render?: ((num: number, disabled?: boolean | undefined) => ReactNode) | undefined; }',
-  ]}
-  webOptions={[
-    '{ value: number; float?: boolean | undefined; render?: ((num: number, disabled?: boolean | undefined) => ReactNode) | undefined; }',
-  ]}
-/>
-
-<ComponentDetails componentName="ProgressBar" templateName="prop-endLabel" />
-
-### labelPlacement
-
-Position of label relative to the bar
-
-<ApiDetails
-  componentName="ProgressBar"
-  propertyName="labelPlacement"
-  required={false}
-  defaultValue="above"
-  mobileOptions={['above', 'below', 'beside']}
-  webOptions={['above', 'below', 'beside']}
-/>
-
-<ComponentDetails componentName="ProgressBar" templateName="prop-labelPlacement" />
-
 ### progress
 
 Number between 0-1 representing the progress percentage
@@ -97,25 +63,6 @@ Number between 0-1 representing the progress percentage
 />
 
 <ComponentDetails componentName="ProgressBar" templateName="prop-progress" />
-
-### startLabel
-
-Label that is pinned to the start of the container
-
-<ApiDetails
-  componentName="ProgressBar"
-  propertyName="startLabel"
-  required={false}
-  defaultValue=""
-  mobileOptions={[
-    '{ value: number; render?: ((num: number, disabled?: boolean | undefined) => ReactNode) | undefined; }',
-  ]}
-  webOptions={[
-    '{ value: number; render?: ((num: number, disabled?: boolean | undefined) => ReactNode) | undefined; }',
-  ]}
-/>
-
-<ComponentDetails componentName="ProgressBar" templateName="prop-startLabel" />
 
 ### testID
 

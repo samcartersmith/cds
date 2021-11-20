@@ -441,19 +441,23 @@ More info: [tools/js/releasePackages.ts](https://github.cbhq.net/mono/repo/blob/
 
 ### Adoption Script
 
-Currently we have a hardcoded map of projects whose key is a project name of commerce, assethub, or prime. Those projects have a path value (to the entry directory) in the map to generate the TS AST.
+#### Overview
 
-1. Run:
+config - codegen/adoption/config.ts
+script - codegen/adoption/prepare.ts
+parser - codegen/adoption/parsers/Parser.ts
 
-```bash
-  // multiple projects
-  make prepare.adoption projects=commerce,assethub,prime
+### Adding a project
 
-  // single project
-  make prepare.adoption projects=commerce
-```
+Add to codegen/adoption/config.ts and run `make prepare.adoption` and it will automatically be added to website
 
-2. The result will be a scoped csv file (until we hook up to datadog) which you can upload and [paste to a google sheet](https://support.google.com/a/users/answer/9308645?hl=en).
+### Running script
+
+1. Run `make prepare.adoption`
+
+2. The result will be output to json files to codegen and website
+
+3. Commit changes
 
 # Testing 
 

@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.4 (11/19/2021, 03:57 PM PST)
+
+#### 🐞 Fixes
+
+- Changed the path to use require, not import. [#42839](https://github.cbhq.net/mono/repo/pull/42839)
+
+#### 📘 Misc
+
+- Refactored progress bar api. [#42706](https://github.cbhq.net/mono/repo/pull/42706)
+
 ## 0.33.3 (11/19/2021, 08:48 AM PST)
 
 #### 🚀 Updates
