@@ -25,6 +25,7 @@ export const NavigationBar = memo(({ start, children, end }: NavigationBarProps)
   return (
     <ThemeProvider scale={DEFAULT_SCALE}>
       <HStack
+        as="nav"
         position="sticky"
         top={0}
         left={0}

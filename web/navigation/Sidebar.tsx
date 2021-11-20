@@ -41,6 +41,7 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children, compact }
   return (
     <ThemeProvider scale={DEFAULT_SCALE}>
       <VStack
+        as="nav"
         background
         borderedEnd
         height="100%"
