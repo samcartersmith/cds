@@ -46,6 +46,8 @@ export type InputStackBaseProps = {
   helperTextNode?: ReactNode;
   /** A message indicating the purpose of this input */
   labelNode?: ReactNode;
+  /** This should only be used if the InputNode is a non interactable component */
+  focused?: boolean;
 } & SharedProps;
 
 export type SharedInputProps = {
@@ -56,7 +58,7 @@ export type SharedInputProps = {
   compact?: boolean;
   /** Short messageArea indicating purpose of input */
   label: string;
-  /** Placeholder text */
+  /** Placeholder text displayed inside of the input. Will be replaced if there is a value. */
   placeholder?: string;
   /**
    * For cases where label is not enough information

@@ -51,6 +51,7 @@ export const InputStack = memo(
       variant = 'foregroundMuted',
       labelNode,
       testID = '',
+      focused,
       ...props
     }: InputStackProps,
     ref: ForwardedRef<HTMLElement>,

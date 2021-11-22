@@ -1,4 +1,4 @@
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { css } from 'linaria';
 
 import { palette } from '../tokens';
@@ -22,6 +22,27 @@ export const focusRing = css`
       bottom: calc(-1 * (${FOCUS_RING_PADDING}px + ${borderWidth.button}px));
       border: ${borderWidth.focusRing}px solid ${palette.primary};
       border-radius: inherit;
+    }
+  }
+`;
+
+const INSET_FOCUS_RING_PADDING = 2;
+
+export const insetFocusRing = css`
+  position: relative;
+  &:focus-visible {
+    outline: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: ${INSET_FOCUS_RING_PADDING}px;
+      left: ${INSET_FOCUS_RING_PADDING}px;
+      right: ${INSET_FOCUS_RING_PADDING}px;
+      bottom: ${INSET_FOCUS_RING_PADDING}px;
+      border: ${borderWidth.focusRing}px solid ${palette.primary};
+      border-radius: ${borderRadius.standard};
+      transition: ease-out opacity 0.1s;
     }
   }
 `;

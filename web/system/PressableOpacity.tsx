@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, ForwardedRef } from 'react';
 
 import { Pressable, PressableInternalProps } from './Pressable';
 
@@ -7,10 +7,12 @@ export type PressableOpacityProps = Omit<
   'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'transparentWhileInactive'
 >;
 
-export const PressableOpacity = ({ children, ...props }: PressableOpacityProps) => {
-  return (
-    <Pressable {...props} backgroundColor="transparent">
-      {children}
-    </Pressable>
-  );
-};
+export const PressableOpacity = forwardRef(
+  ({ children, ...props }: PressableOpacityProps, ref: ForwardedRef<HTMLElement>) => {
+    return (
+      <Pressable ref={ref} {...props} backgroundColor="transparent">
+        {children}
+      </Pressable>
+    );
+  },
+);

@@ -116,7 +116,7 @@ const focusRing = css`
   position: relative;
   &::after {
     content: '';
-    border: 2px solid ${palette.primary};
+    border: ${borderWidth.focusRing}px solid ${palette.primary};
     border-radius: ${borderRadius.round}px;
     position: absolute;
     left: -${FOCUS_PADDING}px;

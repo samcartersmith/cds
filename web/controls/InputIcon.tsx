@@ -1,4 +1,4 @@
-import React, { useContext, memo } from 'react';
+import React, { useContext, memo, forwardRef, ForwardedRef } from 'react';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 import { Icon } from '../icons';
 import { Box } from '../layout/Box';
@@ -15,18 +15,18 @@ export type InputIconProps = {
   SharedProps;
 
 export const InputIcon = memo(
-  ({
-    disableInheritFocusStyle = false,
-    testID,
-    color = 'foreground',
-    ...props
-  }: InputIconProps) => {
-    const variant = useContext(TextInputFocusVariantContext) ?? color;
+  forwardRef(
+    (
+      { disableInheritFocusStyle = false, testID, color = 'foreground', ...props }: InputIconProps,
+      ref: ForwardedRef<HTMLDivElement>,
+    ) => {
+      const variant = useContext(TextInputFocusVariantContext) ?? color;
 
-    return (
-      <Box spacingHorizontal={2} testID={testID}>
-        <Icon color={disableInheritFocusStyle ? color : variant} size="s" {...props} />
-      </Box>
-    );
-  },
+      return (
+        <Box spacingHorizontal={2} testID={testID}>
+          <Icon color={disableInheritFocusStyle ? color : variant} size="s" {...props} ref={ref} />
+        </Box>
+      );
+    },
+  ),
 );
