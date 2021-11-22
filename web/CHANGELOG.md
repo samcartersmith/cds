@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.6 (11/22/2021, 03:27 PM PST)
+
+#### 🚀 Updates
+
+- SelectInput for Web types, changes to existing components, utils, animations. [#42932](https://github.cbhq.net/mono/repo/pull/42932), [CDS-1536](https://jira.coinbase-corp.com/browse/CDS-1536)
+- Updated ProgressBar website docs. [#42984](https://github.cbhq.net/mono/repo/pull/42984)
+- Align items properly - will address subnav situations in a future pr. [#42958](https://github.cbhq.net/mono/repo/pull/42958)
+- Rename compact to collapsed. [#42952](https://github.cbhq.net/mono/repo/pull/42952)
+- Use correct html elements for nav systems. [#42815](https://github.cbhq.net/mono/repo/pull/42815)
+
+#### 📘 Misc
+
+- Update inner progress bar border radius. [#42832](https://github.cbhq.net/mono/repo/pull/42832)
+- Refactored progress bar api. [#42706](https://github.cbhq.net/mono/repo/pull/42706)
+- Use the correct back arrow for navigation docs. [#42788](https://github.cbhq.net/mono/repo/pull/42788)
+
 ## 0.30.5 (11/19/2021, 10:24 AM PST)
 
 #### 🚀 Updates

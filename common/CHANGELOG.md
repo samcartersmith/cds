@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.4 (11/22/2021, 03:27 PM PST)
+
+#### 🚀 Updates
+
+- SelectInput for Web types, changes to existing components, utils, animations. [#42932](https://github.cbhq.net/mono/repo/pull/42932), [CDS-1536](https://jira.coinbase-corp.com/browse/CDS-1536)
+- Updated ProgressBar website docs. [#42984](https://github.cbhq.net/mono/repo/pull/42984)
+
+#### 🐞 Fixes
+
+- Revert list cell heights. [#43022](https://github.cbhq.net/mono/repo/pull/43022)
+- Memoize return value from usePaletteConfig. [#43053](https://github.cbhq.net/mono/repo/pull/43053)
+
+#### 📘 Misc
+
+- Refactored progress bar api. [#42706](https://github.cbhq.net/mono/repo/pull/42706)
+
 ## 0.29.3 (11/19/2021, 08:48 AM PST)
 
 #### 🚀 Updates

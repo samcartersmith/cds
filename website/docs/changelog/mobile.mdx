@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.5 (11/22/2021, 03:27 PM PST)
+
+#### 🚀 Updates
+
+- Updated ProgressBar website docs. [#42984](https://github.cbhq.net/mono/repo/pull/42984)
+
+#### 📘 Misc
+
+- Update inner progress bar border radius. [#42832](https://github.cbhq.net/mono/repo/pull/42832)
+
 ## 0.33.4 (11/19/2021, 03:57 PM PST)
 
 #### 🐞 Fixes
