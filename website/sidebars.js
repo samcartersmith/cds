@@ -5,7 +5,11 @@ const { adopters } = require('./data/sidebar/adopters');
 const sectionsToExcludeByLabel = new Set(['Navigation']);
 
 // Removes unfinished components from section in side bar
-const componentsToExcludeByLabel = new Set(['components/visualizations/ProgressBar/progress-bar']);
+const componentsToExcludeByLabel = new Set([
+  'components/visualizations/ProgressBar/progress-bar',
+  'components/visualizations/ProgressBarWithFixedLabels/progress-bar-with-fixed-labels',
+  'components/visualizations/ProgressBarWithFloatLabel/progress-bar-with-float-label',
+]);
 
 // Filter sidebar components
 const filteredComponents = components

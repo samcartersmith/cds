@@ -6,7 +6,7 @@ export type ProgressBarLabel =
   | number
   | {
       value: number;
-      render: (num: number) => React.ReactNode;
+      render: (num: number, disabled?: boolean) => React.ReactNode;
     };
 
 export type ProgressBarWithFixedLabelsProps = {

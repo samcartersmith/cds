@@ -49,7 +49,7 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
     }, [previousPercent, progress]);
 
     return (
-      <VStack spacingVertical={1} flexGrow={1} flexShrink={0} testID={testID}>
+      <VStack flexGrow={1} flexShrink={0} testID={testID}>
         <HStack alignItems="center">
           <Box
             testID="cds-progress-bar-inner-bar-container"

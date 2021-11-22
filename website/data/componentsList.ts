@@ -71,6 +71,8 @@ export const components = [
   'Link',
   'Text',
   'ProgressBar',
+  'ProgressBarWithFixedLabels',
+  'ProgressBarWithFloatLabel',
   'Sparkline',
   'SparklineGradient',
 ] as const;

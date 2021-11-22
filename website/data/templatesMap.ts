@@ -1807,6 +1807,60 @@ export const ProgressBar = {
   ),
 };
 
+export const ProgressBarWithFixedLabels = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFixedLabels/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFixedLabels/intro.mdx'
+      ),
+  ),
+  'progress-bar-with-fixed-labels': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFixedLabels/progress-bar-with-fixed-labels.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFixedLabels/usage.mdx'
+      ),
+  ),
+};
+
+export const ProgressBarWithFloatLabel = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFloatLabel/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFloatLabel/intro.mdx'
+      ),
+  ),
+  'progress-bar-with-float-label': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFloatLabel/progress-bar-with-float-label.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressBarWithFloatLabel/usage.mdx'
+      ),
+  ),
+};
+
 export const Sparkline = {
   implementation: React.lazy(
     async () =>

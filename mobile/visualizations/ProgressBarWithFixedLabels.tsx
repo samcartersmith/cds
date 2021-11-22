@@ -6,9 +6,8 @@ import {
   ProgressBarWithFixedLabelsProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
-import { I18nManager, View, ViewStyle } from 'react-native';
+import { I18nManager, View } from 'react-native';
 import { ProgressTextLabel } from './ProgressTextLabel';
-import { styles } from './progressStyles';
 import { Box, VStack } from '../layout';
 
 const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = memo(
@@ -28,27 +27,8 @@ const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = 
 
 const ProgressBarFixedLabel: React.FC<ProgressBarFixedLabelProps> = memo(
   ({ label, position, disabled }) => {
-    const style: ViewStyle = {};
-    if (position === 'start') {
-      if (I18nManager.isRTL) {
-        style.right = 0;
-      } else {
-        style.left = 0;
-      }
-    }
-    if (position === 'end') {
-      if (I18nManager.isRTL) {
-        style.left = 0;
-      } else {
-        style.right = 0;
-      }
-    }
-
     return (
-      <View
-        testID={`cds-progress-bar-fixed-label-${position}`}
-        style={[styles.labelTextStyle, style]}
-      >
+      <View testID={`cds-progress-bar-fixed-label-${position}`}>
         <ProgressBarFixedLabelBeside label={label} disabled={disabled} />
       </View>
     );
@@ -68,6 +48,9 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
           label={startLabel}
         />,
       );
+    } else {
+      // pushes an end label to the end if it's available
+      nodes.push(<View />);
     }
 
     if (typeof endLabel !== 'undefined') {
@@ -79,12 +62,25 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
           label={endLabel}
         />,
       );
+    } else {
+      // pushes an end label to the end if it's available
+      nodes.push(<View />);
+    }
+
+    if (I18nManager.isRTL) {
+      nodes.reverse();
     }
 
     return (
-      <View testID="label-container" style={styles.progressLabelContainer}>
+      <Box
+        flexDirection="row"
+        testID="cds-progress-label-container"
+        alignItems="center"
+        justifyContent="space-between"
+        width="100%"
+      >
         {nodes}
-      </View>
+      </Box>
     );
   },
 );
@@ -109,7 +105,11 @@ export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProp
     return (
       <VStack testID={testID}>
         {labelPlacement === 'above' && (
-          <ProgressBarFixedLabelContainer startLabel={startLabel} endLabel={endLabel} />
+          <ProgressBarFixedLabelContainer
+            disabled={disabled}
+            startLabel={startLabel}
+            endLabel={endLabel}
+          />
         )}
 
         <Box width="100%" flexShrink={0} flexWrap="nowrap" flexDirection="row" alignItems="center">
@@ -119,7 +119,11 @@ export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProp
         </Box>
 
         {labelPlacement === 'below' && (
-          <ProgressBarFixedLabelContainer startLabel={startLabel} endLabel={endLabel} />
+          <ProgressBarFixedLabelContainer
+            disabled={disabled}
+            startLabel={startLabel}
+            endLabel={endLabel}
+          />
         )}
       </VStack>
     );

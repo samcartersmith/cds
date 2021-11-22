@@ -84,19 +84,13 @@ describe('ProgressBar test', () => {
   });
 
   it('renders fixed labels in correct position', () => {
-    const { getByTestId, getAllByText } = render(
+    const { getAllByText } = render(
       <Box width="200">
         <ProgressBarWithFixedLabels startLabel={0} endLabel={50} labelPlacement="above">
           <ProgressBar progress={50} />
         </ProgressBarWithFixedLabels>
       </Box>,
     );
-
-    const startLabel = getByTestId('cds-progress-bar-fixed-label-start');
-    const endLabel = getByTestId('cds-progress-bar-fixed-label-end');
-
-    expect(startLabel.style.left).toEqual('0px');
-    expect(endLabel.style.right).toEqual('0px');
 
     const startLabelText = getAllByText('0%')[0];
     const endLabelText = getAllByText('50%')[0];

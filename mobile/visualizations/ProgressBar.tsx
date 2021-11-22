@@ -61,7 +61,7 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
     };
 
     return (
-      <VStack spacingVertical={1} flexGrow={1} flexShrink={1} testID={testID}>
+      <VStack flexGrow={1} flexShrink={0} testID={testID}>
         <HStack justifyContent="center" alignItems="center">
           <Box
             onLayout={handleLayout}

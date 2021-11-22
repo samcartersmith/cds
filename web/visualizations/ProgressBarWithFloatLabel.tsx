@@ -2,17 +2,16 @@ import {
   ProgressBarWithFloatLabelProps,
   ProgressBarFloatLabelProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 import React, { memo, useLayoutEffect, useRef } from 'react';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
-import { VStack } from '../layout';
+import { Box, VStack } from '../layout';
 import { useDimensions } from '../hooks/useDimensions';
 import { isRtl } from '../utils/isRtl';
 import { Animated } from '../animation/Animated';
 import { ProgressTextLabel } from './ProgressTextLabel';
-import * as progressBarStyles from './progressBarStyles';
 
 const floatingTextContainerClassName = css`
   position: relative;
@@ -67,11 +66,7 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
   }, [progress, cWidth, cHeight, previousPercent]);
 
   return (
-    <div
-      ref={containerRef}
-      data-testid="cds-progress-label-container"
-      className={cx(progressBarStyles.labelContainer)}
-    >
+    <Box alignItems="center" ref={containerRef} testID="cds-progress-label-container" width="100%">
       <div
         className={floatingTextContainerClassName}
         data-testid="cds-progress-bar-float-label"
@@ -84,7 +79,7 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
           color="foregroundMuted"
         />
       </div>
-    </div>
+    </Box>
   );
 });
 

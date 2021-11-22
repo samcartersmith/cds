@@ -132,10 +132,12 @@ export const useDimensions = <T extends HTMLElement>({
 
   useLayoutEffect(() => {
     if (shouldSetInitialState && ref.current) {
+      const rect = ref.current?.getBoundingClientRect();
+
       setState({
         currentBreakpoint: '',
-        width: ref.current?.offsetWidth ?? 0,
-        height: ref.current?.offsetHeight ?? 0,
+        width: rect?.width ?? 0,
+        height: rect?.height ?? 0,
       });
     }
   }, [shouldSetInitialState]);

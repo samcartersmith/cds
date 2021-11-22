@@ -6,8 +6,6 @@ import {
   ProgressBarWithFixedLabelsProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
-import { cx } from 'linaria';
-import * as progressBarStyles from './progressBarStyles';
 import { Box, VStack } from '../layout';
 import { ProgressTextLabel } from './ProgressTextLabel';
 import { isRtl } from '../utils/isRtl';
@@ -29,28 +27,8 @@ const ProgressBarFixedLabelBeside: React.FC<ProgressBarFixedLabelBesideProps> = 
 
 const ProgressBarFixedLabel: React.FC<ProgressBarFixedLabelProps> = memo(
   ({ label, position, disabled }) => {
-    const style: React.CSSProperties = {};
-    if (position === 'start') {
-      if (isRtl()) {
-        style.right = '0';
-      } else {
-        style.left = '0';
-      }
-    }
-    if (position === 'end') {
-      if (isRtl()) {
-        style.left = '0';
-      } else {
-        style.right = '0';
-      }
-    }
-
     return (
-      <span
-        data-testid={`cds-progress-bar-fixed-label-${position}`}
-        className={progressBarStyles.labelText}
-        style={style}
-      >
+      <span data-testid={`cds-progress-bar-fixed-label-${position}`}>
         <ProgressBarFixedLabelBeside label={label} disabled={disabled} />
       </span>
     );
@@ -69,6 +47,9 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
           label={startLabel}
         />,
       );
+    } else {
+      // pushes an end label to the end if it's available
+      nodes.push(<div />);
     }
 
     if (typeof endLabel !== 'undefined') {
@@ -80,15 +61,24 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
           label={endLabel}
         />,
       );
+    } else {
+      // pushes an end label to the end if it's available
+      nodes.push(<div />);
+    }
+
+    if (isRtl()) {
+      nodes.reverse();
     }
 
     return (
-      <div
-        data-testid="cds-progress-label-container"
-        className={cx(progressBarStyles.labelContainer)}
+      <Box
+        alignItems="center"
+        testID="cds-progress-label-container"
+        justifyContent="space-between"
+        width="100%"
       >
         {nodes}
-      </div>
+      </Box>
     );
   },
 );
@@ -113,17 +103,25 @@ export const ProgressBarWithFixedLabels: React.FC<ProgressBarWithFixedLabelsProp
     return (
       <VStack testID={testID}>
         {labelPlacement === 'above' && (
-          <ProgressBarFixedLabelContainer startLabel={startLabel} endLabel={endLabel} />
+          <ProgressBarFixedLabelContainer
+            disabled={disabled}
+            startLabel={startLabel}
+            endLabel={endLabel}
+          />
         )}
 
-        <Box width="100%" flexShrink={0} flexWrap="nowrap">
+        <Box width="100%" flexShrink={0} flexWrap="nowrap" alignItems="center">
           {labelPlacement === 'beside' && leftEl}
           {children}
           {labelPlacement === 'beside' && rightEl}
         </Box>
 
         {labelPlacement === 'below' && (
-          <ProgressBarFixedLabelContainer startLabel={startLabel} endLabel={endLabel} />
+          <ProgressBarFixedLabelContainer
+            disabled={disabled}
+            startLabel={startLabel}
+            endLabel={endLabel}
+          />
         )}
       </VStack>
     );

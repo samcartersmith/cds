@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Animated, I18nManager, LayoutChangeEvent, View } from 'react-native';
+import { Animated, I18nManager, LayoutChangeEvent } from 'react-native';
 import {
   ProgressBarFloatLabelProps,
   ProgressBarWithFloatLabelProps,
@@ -8,7 +8,6 @@ import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getPro
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { Box, VStack } from '../layout';
-import { styles } from './progressStyles';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { ProgressTextLabel } from './ProgressTextLabel';
 import { useLayout } from '../hooks/useLayout';
@@ -59,26 +58,24 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
   };
 
   return (
-    <View style={styles.progressLabelContainer}>
-      <Box onLayout={onLayout} testID="cds-progress-bar-float-label-container" flexWrap="nowrap">
-        <Box
-          flexGrow={0}
-          flexShrink={0}
-          testID="cds-progress-bar-float-label"
-          onLayout={handleTextLayout}
-          animated
-          dangerouslySetStyle={progressStyle}
-          alignSelf="flex-start"
-        >
-          <ProgressTextLabel
-            value={labelNum}
-            renderLabel={renderLabel}
-            disabled={disabled}
-            color="foregroundMuted"
-          />
-        </Box>
+    <Box onLayout={onLayout} testID="cds-progress-bar-float-label-container" flexWrap="nowrap">
+      <Box
+        flexGrow={0}
+        flexShrink={0}
+        testID="cds-progress-bar-float-label"
+        onLayout={handleTextLayout}
+        animated
+        dangerouslySetStyle={progressStyle}
+        alignSelf="flex-start"
+      >
+        <ProgressTextLabel
+          value={labelNum}
+          renderLabel={renderLabel}
+          disabled={disabled}
+          color="foregroundMuted"
+        />
       </Box>
-    </View>
+    </Box>
   );
 });
 
