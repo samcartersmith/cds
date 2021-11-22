@@ -35,10 +35,10 @@ export const NavigationBar = memo(({ start, children, end }: NavigationBarProps)
         spacing={2}
         width="100%"
         minHeight={80} // TODO move this to some sizing tokens
-        alignItems="flex-start"
+        alignItems="center"
         justifyContent="space-between"
       >
-        <HStack gap={2} alignItems="flex-start" justifyContent="flex-start">
+        <HStack gap={2} alignItems="center" justifyContent="flex-start">
           {start}
           <VStack>{children}</VStack>
         </HStack>
