@@ -14,8 +14,8 @@ export const imageSize: Record<ScaleDensity, number> = {
 };
 
 export const listHeight: Record<ScaleDensity, number> = {
-  normal: 56,
-  dense: 44,
+  normal: 80,
+  dense: 64,
 };
 
 export const compactListHeight: Record<ScaleDensity, number> = {
@@ -43,4 +43,9 @@ export const defaultSpacingConfig = {
 export const selectCellSpacingConfig: CellSpacingConfig = {
   outerSpacing: { spacingHorizontal: 0, spacingVertical: 0 },
   innerSpacing: { offsetHorizontal: 0, spacingHorizontal: gutter },
+};
+
+export const selectOptionCellHeight: Record<ScaleDensity, number> = {
+  normal: 56,
+  dense: 44,
 };
