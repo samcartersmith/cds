@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { emptyObject, merge } from '@cbhq/cds-utils';
 
 import { useSpectrumConditional } from '../hooks/useSpectrumConditional';
@@ -14,8 +14,10 @@ export const usePaletteConfig = (): PaletteConfig => {
   const frontierPalette = useSpectrumConditional(frontierSpectrumPalette);
   const paletteToMerge = hasFrontier ? frontierPalette : emptyObject;
 
-  if (!context) {
-    return merge(defaultPalette, paletteToMerge);
-  }
-  return merge(context, paletteToMerge);
+  return useMemo(() => {
+    if (!context) {
+      return merge(defaultPalette, paletteToMerge);
+    }
+    return merge(context, paletteToMerge);
+  }, [context, paletteToMerge]);
 };
