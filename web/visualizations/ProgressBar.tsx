@@ -31,20 +31,25 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
       if (innerBarRef.current) {
         innerBarRef.current.style.transformOrigin = isRtl() ? 'right' : 'left';
 
+        const translateXStart = isRtl()
+          ? 100 - previousPercent * 100
+          : -100 + previousPercent * 100;
+
+        const translateXEnd = isRtl() ? 100 - progress * 100 : -100 + progress * 100;
         Animated.timing(innerBarRef, {
           property: 'transform',
-          fromValue: `scaleX(${previousPercent})`,
-          toValue: `scaleX(${progress})`,
+          fromValue: `translateX(${translateXStart}%)`,
+          toValue: `translateX(${translateXEnd}%)`,
           ...animateProgressBaseSpec,
         })?.start();
 
-        innerBarRef.current.style.width = '100%';
-        innerBarRef.current.style.transform = `scaleX(${progress})`;
+        innerBarRef.current.style.transform = `translateX(${translateXEnd}%)`;
+        innerBarRef.current.style.opacity = '1';
       }
     }, [previousPercent, progress]);
 
     return (
-      <VStack spacingVertical={1} flexGrow={1} flexShrink={0} testID={testID} height={height}>
+      <VStack spacingVertical={1} flexGrow={1} flexShrink={0} testID={testID}>
         <HStack alignItems="center">
           <Box
             testID="cds-progress-bar-inner-bar-container"
@@ -65,7 +70,9 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
               height={height}
               flexShrink={0}
               flexGrow={0}
-              width="0%"
+              width="100%"
+              opacity={0}
+              borderRadius="standard"
               dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
             />
           </Box>

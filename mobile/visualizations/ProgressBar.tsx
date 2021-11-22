@@ -49,24 +49,19 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
     }, []);
 
     const progressStyle = {
+      opacity: innerWidth > -1 ? 1 : 0,
       transform: [
         {
           translateX: animatedProgress.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [innerWidth / (I18nManager.isRTL ? 2 : -2), 0],
-          }),
-        },
-        {
-          scaleX: animatedProgress.current.interpolate({
-            inputRange: [0, 1],
-            outputRange: [0.0001, 1],
+            outputRange: I18nManager.isRTL ? [innerWidth, 0] : [innerWidth * -1, 0],
           }),
         },
       ],
     };
 
     return (
-      <VStack spacingVertical={1} flexGrow={1} flexShrink={1} testID={testID} height={height}>
+      <VStack spacingVertical={1} flexGrow={1} flexShrink={1} testID={testID}>
         <HStack justifyContent="center" alignItems="center">
           <Box
             onLayout={handleLayout}
@@ -90,6 +85,7 @@ export const ProgressBar: React.FC<ProgressBaseProps> = memo(
               width="100%"
               animated
               dangerouslySetStyle={progressStyle}
+              borderRadius="standard"
               dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
             />
           </Box>

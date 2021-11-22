@@ -119,7 +119,7 @@ describe('ProgressBar test', () => {
     const bar = getByTestId('cds-progress-bar-inner-bar');
     expect(bar).toHaveStyle({
       backgroundColor: palette.positive,
-      transform: 'scaleX(0.77)',
+      transform: 'translateX(-23%)',
     });
   });
 
@@ -151,7 +151,7 @@ describe('ProgressBar test', () => {
 
     expect(bar).toHaveStyle({
       backgroundColor: palette.lineHeavy,
-      transform: 'scaleX(0.77)',
+      transform: 'translateX(-23%)',
     });
 
     expect(startLabelText).toHaveStyle({
