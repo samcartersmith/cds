@@ -5,7 +5,7 @@ import { SidebarItemProps } from './SidebarItem';
 import { VStack } from '../layout';
 import { ThemeProvider } from '../system/ThemeProvider';
 
-export const WIDTH = { default: 240, compact: 87 };
+export const WIDTH = { default: 240, collapsed: 87 };
 
 export type SidebarProps = {
   /**
@@ -19,23 +19,23 @@ export type SidebarProps = {
    */
   children: ReactElement<SidebarItemProps>[];
   /**
-   * Use compact to show only the logo
+   * Use collapsed to show only the logo
    * @default false
    */
-  compact?: boolean;
+  collapsed?: boolean;
 };
 
-export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children, compact }) => {
+export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children, collapsed }) => {
   const decoratedChildren = useMemo(
     () =>
       Children.map(children, (child) => {
         return child
           ? cloneElement(child, {
-              compact: child.props?.compact ?? compact,
+              collapsed: child.props?.collapsed ?? collapsed,
             })
           : null;
       }),
-    [children, compact],
+    [children, collapsed],
   );
 
   return (
@@ -45,8 +45,8 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ logo, children, compact }
         background
         borderedEnd
         height="100%"
-        width={compact ? WIDTH.compact : WIDTH.default}
-        minWidth={compact ? WIDTH.compact : WIDTH.default}
+        width={collapsed ? WIDTH.collapsed : WIDTH.default}
+        minWidth={collapsed ? WIDTH.collapsed : WIDTH.default}
         spacingHorizontal={2}
         spacingBottom={2}
         spacingTop={2}

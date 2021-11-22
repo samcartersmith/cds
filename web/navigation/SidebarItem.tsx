@@ -21,10 +21,10 @@ export type SidebarItemProps = {
    */
   onPress: () => void;
   /**
-   * Use compact to show only the logo
+   * Use collapsed to show only the logo
    * @default false
    */
-  compact?: boolean;
+  collapsed?: boolean;
   /**
    * Use the active prop to identify the current page
    * @default false
@@ -32,7 +32,7 @@ export type SidebarItemProps = {
   active?: boolean;
 };
 
-export const SidebarItem = memo(({ icon, title, onPress, compact, active }: SidebarItemProps) => {
+export const SidebarItem = memo(({ icon, title, onPress, collapsed, active }: SidebarItemProps) => {
   const color = active ? 'primary' : 'foreground';
 
   return (
@@ -46,7 +46,7 @@ export const SidebarItem = memo(({ icon, title, onPress, compact, active }: Side
     >
       <HStack gap={2} spacing={2} alignItems="center">
         <NavigationIcon name={icon} active={active} />
-        {!compact && (
+        {!collapsed && (
           <TextHeadline as="h2" color={color}>
             {title}
           </TextHeadline>

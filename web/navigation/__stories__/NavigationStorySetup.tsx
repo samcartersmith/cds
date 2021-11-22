@@ -74,7 +74,7 @@ export const NavigationBarTitle: React.FC = () => {
 };
 
 export const SidebarExample: React.FC = () => {
-  const [compact, setCompact] = useState(false);
+  const [collapsed, setCompact] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -83,7 +83,7 @@ export const SidebarExample: React.FC = () => {
       alignItems="flex-start"
       dangerouslySetBackground={palette.backgroundAlternate}
     >
-      <Sidebar compact={compact} logo={<LogoMark />}>
+      <Sidebar collapsed={collapsed} logo={<LogoMark />}>
         {items.map((props, index) => (
           <SidebarItem
             key={`sidebar-item--${props.title}`}
@@ -95,20 +95,20 @@ export const SidebarExample: React.FC = () => {
       </Sidebar>
       <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
         <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
-        <ButtonGroup accessibilityLabel="make compact">
+        <ButtonGroup accessibilityLabel="make collapsed">
           <Button
             compact
-            variant={compact ? 'secondary' : 'primary'}
+            variant={collapsed ? 'secondary' : 'primary'}
             onPress={() => setCompact(false)}
           >
             default
           </Button>
           <Button
             compact
-            variant={compact ? 'primary' : 'secondary'}
+            variant={collapsed ? 'primary' : 'secondary'}
             onPress={() => setCompact(true)}
           >
-            compact
+            collapsed
           </Button>
         </ButtonGroup>
       </HStack>
