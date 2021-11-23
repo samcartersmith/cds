@@ -19,17 +19,30 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### offset <Badge variant="web" />
+### offsetConfig <Badge variant="web" />
 
 <ApiDetails
   componentName="Menu"
-  propertyName="offset"
+  propertyName="offsetConfig"
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['number']}
+  webOptions={['OffsetConfigProps']}
 />
 
-<ComponentDetails componentName="Menu" templateName="prop-offset" />
+<ComponentDetails componentName="Menu" templateName="prop-offsetConfig" />
+
+### parentRef <Badge variant="web" />
+
+<ApiDetails
+  componentName="Menu"
+  propertyName="parentRef"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['RefObject<HTMLElement | null>']}
+/>
+
+<ComponentDetails componentName="Menu" templateName="prop-parentRef" />
 
 <ComponentDetails componentName="Menu" templateName="outro" />

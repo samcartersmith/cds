@@ -21,43 +21,29 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ### accessory <Badge variant="web" />
 
-Accessory to display at the end of the cell.
-
 <ApiDetails
   componentName="SelectOptionCell"
   propertyName="accessory"
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['arrow', 'more', 'selected']}
+  webOptions={['ReactElement<CellAccessoryProps, string | JSXElementConstructor<any>>']}
 />
 
 <ComponentDetails componentName="SelectOptionCell" templateName="prop-accessory" />
 
-### action <Badge variant="web" />
-
-Interactive action, like a CTA or form element. Cannot be used alongside `onPress`.
+### alignItems <Badge variant="web" />
 
 <ApiDetails
   componentName="SelectOptionCell"
-  propertyName="action"
+  propertyName="alignItems"
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
-  ]}
+  webOptions={['center', 'flex-end', 'flex-start']}
 />
 
-<ComponentDetails componentName="SelectOptionCell" templateName="prop-action" />
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-alignItems" />
 
 ### borderRadius <Badge variant="web" />
 
@@ -113,8 +99,6 @@ Description of content. Max 1 line (with title) or 2 lines (without), otherwise 
 <ComponentDetails componentName="SelectOptionCell" templateName="prop-description" />
 
 ### detail <Badge variant="web" />
-
-Label and or extra detail.
 
 <ApiDetails
   componentName="SelectOptionCell"
@@ -184,8 +168,6 @@ The spacing to use on the inner content of Cell
 
 ### intermediary <Badge variant="web" />
 
-For internal use only.
-
 <ApiDetails
   componentName="SelectOptionCell"
   propertyName="intermediary"
@@ -235,6 +217,19 @@ Note: the value passed will be ignored on Web because SelectInput overrides it w
 
 <ComponentDetails componentName="SelectOptionCell" templateName="prop-media" />
 
+### minHeight <Badge variant="web" />
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="minHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-minHeight" />
+
 ### multiline <Badge variant="web" />
 
 Allow the description to span multiple lines. This _will_ break fixed height requirements, so should not be used in a `FlatList`.
@@ -266,6 +261,8 @@ Reduce horizontal offset if parent container already has spacing.
 <ComponentDetails componentName="SelectOptionCell" templateName="prop-offsetHorizontal" />
 
 ### onKeyDown <Badge variant="web" />
+
+callback fired whenever a key is pressed while SelectOptionCell is focused
 
 <ApiDetails
   componentName="SelectOptionCell"
@@ -353,30 +350,18 @@ Is the cell selected? Will apply a background and selected accessory.
 
 <ComponentDetails componentName="SelectOptionCell" templateName="prop-selected" />
 
-### subdetail <Badge variant="web" />
-
-Subdetail providing more information.
+### shouldOverflow <Badge variant="web" />
 
 <ApiDetails
   componentName="SelectOptionCell"
-  propertyName="subdetail"
+  propertyName="shouldOverflow"
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
-  ]}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="SelectOptionCell" templateName="prop-subdetail" />
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-shouldOverflow" />
 
 ### testID <Badge variant="web" />
 
@@ -435,7 +420,7 @@ URL that this links to when pressed.
 
 ### value <Badge variant="web" />
 
-Note: the value passed will be ignored on Web because SelectInput overrides it with React.cloneElement()
+automatically focus a select option if its already been selected Note: the value passed will be ignored on Web because SelectInput overrides it with React.cloneElement()
 
 <ApiDetails
   componentName="SelectOptionCell"
@@ -447,20 +432,5 @@ Note: the value passed will be ignored on Web because SelectInput overrides it w
 />
 
 <ComponentDetails componentName="SelectOptionCell" templateName="prop-value" />
-
-### variant <Badge variant="web" />
-
-Variant color to apply to the subdetail text.
-
-<ApiDetails
-  componentName="SelectOptionCell"
-  propertyName="variant"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['foregroundMuted', 'negative', 'positive']}
-/>
-
-<ComponentDetails componentName="SelectOptionCell" templateName="prop-variant" />
 
 <ComponentDetails componentName="SelectOptionCell" templateName="outro" />

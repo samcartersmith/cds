@@ -5,7 +5,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-web/controls/SelectInput](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/SelectInput.tsx)
+> [@cbhq/cds-(web|mobile)/controls/SelectInput](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/SelectInput.tsx)
 
 <ComponentDetails componentName="SelectInput" templateName="intro" />
 
@@ -19,7 +19,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### accessibilityHint <Badge variant="web" />
+### accessibilityHint
 
 Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
 
@@ -28,13 +28,13 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-accessibilityHint" />
 
-### accessibilityLabel <Badge variant="web" />
+### accessibilityLabel
 
 Accessibility label describing the control. If no accessibilityLabel, it will set it to label
 
@@ -43,13 +43,13 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-accessibilityLabel" />
 
-### compact <Badge variant="web" />
+### compact
 
 Enables compact variation
 
@@ -58,13 +58,13 @@ Enables compact variation
   propertyName="compact"
   required={false}
   defaultValue="false"
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-compact" />
 
-### disabled <Badge variant="web" />
+### disabled
 
 Toggles input interactability and opacity
 
@@ -73,13 +73,13 @@ Toggles input interactability and opacity
   propertyName="disabled"
   required={false}
   defaultValue="false"
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-disabled" />
 
-### helperText <Badge variant="web" />
+### helperText
 
 For cases where label is not enough information to describe what the text input is for. Can also be used for showing positive/negative messages
 
@@ -88,13 +88,13 @@ For cases where label is not enough information to describe what the text input 
   propertyName="helperText"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-helperText" />
 
-### label <Badge variant="web" />
+### label
 
 Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input
 
@@ -103,7 +103,7 @@ Optional string placed above the input (or within if compact is enabled) to indi
   propertyName="label"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
@@ -111,7 +111,7 @@ Optional string placed above the input (or within if compact is enabled) to indi
 
 ### onChange <Badge variant="web" />
 
-Callback that is fired whenever a select option is selected (web only)
+Callback that is fired whenever a select option is selected
 
 <ApiDetails
   componentName="SelectInput"
@@ -124,7 +124,7 @@ Callback that is fired whenever a select option is selected (web only)
 
 <ComponentDetails componentName="SelectInput" templateName="prop-onChange" />
 
-### onPress <Badge variant="web" />
+### onPress
 
 Event handler for when the Select Input trigger is pressed
 
@@ -133,13 +133,13 @@ Event handler for when the Select Input trigger is pressed
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['NoopFn']}
   webOptions={['NoopFn']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-onPress" />
 
-### placeholder <Badge variant="web" />
+### placeholder
 
 Placeholder text displayed inside of the input. Will be replaced if there is a value.
 
@@ -148,13 +148,13 @@ Placeholder text displayed inside of the input. Will be replaced if there is a v
   propertyName="placeholder"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-placeholder" />
 
-### testID <Badge variant="web" />
+### testID
 
 Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
 
@@ -163,28 +163,28 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-testID" />
 
-### value <Badge variant="web" />
+### value
 
-Pass a value that will prepopulate the select input. This will replace the placeholder text. It will also replace the label text unless you pass `shouldAlwaysShowLabel`
+Pass a value that will prepopulate the select input. This will replace the placeholder text.
 
 <ApiDetails
   componentName="SelectInput"
   propertyName="value"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-value" />
 
-### variant <Badge variant="web" />
+### variant
 
 Determines the sentiment of the input. Because we allow startContent and endContent to be custom ReactNode, the content placed inside these slots will not change colors according to the variant. You will have to add that yourself
 
@@ -193,13 +193,13 @@ Determines the sentiment of the input. Because we allow startContent and endCont
   propertyName="variant"
   required={false}
   defaultValue="foregroundMuted"
-  mobileOptions={[]}
+  mobileOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
   webOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-variant" />
 
-### width <Badge variant="web" />
+### width
 
 Width of input. The number is converted to percentage.
 
@@ -208,7 +208,7 @@ Width of input. The number is converted to percentage.
   propertyName="width"
   required={false}
   defaultValue="100"
-  mobileOptions={[]}
+  mobileOptions={['number']}
   webOptions={['number']}
 />
 
