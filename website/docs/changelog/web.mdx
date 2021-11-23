@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.7 (11/23/2021, 10:29 AM PST)
+
+#### 🚀 Updates
+
+- CDS Mobile Drawer + Tray + SelectInput. [#38777](https://github.cbhq.net/mono/repo/pull/38777), [CDS-1536](https://jira.coinbase-corp.com/browse/CDS-1536)
+- SelectInput for Web. [#41498](https://github.cbhq.net/mono/repo/pull/41498), [CDS-1536](https://jira.coinbase-corp.com/browse/CDS-1536)
+
+#### 🐞 Fixes
+
+- ProgressBar unit tests for mobile. [#43087](https://github.cbhq.net/mono/repo/pull/43087)
+- Teal brightness for dark mode. [#43077](https://github.cbhq.net/mono/repo/pull/43077)
+
 ## 0.30.6 (11/22/2021, 03:27 PM PST)
 
 #### 🚀 Updates

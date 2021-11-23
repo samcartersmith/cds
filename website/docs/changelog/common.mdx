@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.5 (11/23/2021, 10:29 AM PST)
+
+#### 🚀 Updates
+
+- CDS Mobile Drawer + Tray + SelectInput. [#38777](https://github.cbhq.net/mono/repo/pull/38777), [CDS-1536](https://jira.coinbase-corp.com/browse/CDS-1536)
+- SelectInput for Web. [#41498](https://github.cbhq.net/mono/repo/pull/41498), [CDS-1536](https://jira.coinbase-corp.com/browse/CDS-1536)
+
 ## 0.29.4 (11/22/2021, 03:27 PM PST)
 
 #### 🚀 Updates
