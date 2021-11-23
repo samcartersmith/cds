@@ -200,13 +200,14 @@ Try running `sudo chown -R $(whoami):staff ~/Library/LaunchAgents` (from [this g
 
 _Run the following steps in the terminal in this order_
 
-1. `make setup.mobile` (Note: this only need to be ran the 1st time)
+1. `make setup.mobile` (Note: you should only need to run this once, and after every time you run `make clean.ios/android`)
 2. `make start.mobile`
 3. While `make start.mobile` is running in the terminal/shell, run `make build.ios/make build.android` (depends on what mobile OS you want to test) in another terminal
 
 ### Troubleshooting Guide
 
 - **Emulator failed to load** Try manually launching the Emulator from terminal. Be sure the emulator also exists in Android Studio's AVD manager.
+- When in doubt, run `make clean.ios/android` and then run through the previous 3 steps again (in order).
 
 ## Retail RN Experiments
 

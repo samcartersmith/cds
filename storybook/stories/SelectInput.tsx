@@ -1,17 +1,19 @@
 import React, { useState, ReactElement } from 'react';
-
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import {
+  SelectInputBaseProps,
+  SelectOptionCellBaseProps,
+  TrayBaseProps,
+  Spectrum,
+  SystemProviderProps,
   BoxBaseProps,
   StackBaseProps,
   Scale,
-  SelectInputBaseProps,
-  SelectOptionCellBaseProps,
-  Spectrum,
-  SystemProviderProps,
 } from '@cbhq/cds-common';
+import { GestureResponderEvent, ScrollViewProps } from 'react-native';
 
 type LinkableProps = {
-  onPress?: null | ((event: unknown) => void) | undefined;
+  onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
 };
 
 type SelectOptionCellProps = {
@@ -36,7 +38,7 @@ export type CreateSelectInputStoriesProps = {
   scale?: Scale;
 };
 
-export const options = [
+export const priceOptions = [
   '666',
   '2387',
   '4542',
@@ -84,7 +86,7 @@ export const createStories = ({
             testID={testID}
             onPress={onPress}
           >
-            {options.map((option) => (
+            {priceOptions.map((option) => (
               <SelectOptionCell
                 value={option}
                 key={option}
@@ -110,7 +112,7 @@ export const createStories = ({
             label="Pick your poison"
             helperText="You only get one choice"
           >
-            {options.map((option) => (
+            {priceOptions.map((option) => (
               <SelectOptionCell value={option} key={option} title={option} description="BTC" />
             ))}
           </SelectInput>
@@ -129,7 +131,7 @@ export const createStories = ({
             placeholder="Choose something"
             label="Pick your poison"
           >
-            {options.map((option) => (
+            {priceOptions.map((option) => (
               <SelectOptionCell value={option} key={option} title={option} description="BTC" />
             ))}
           </SelectInput>
@@ -150,7 +152,7 @@ export const createStories = ({
             label="Pick your poison"
             helperText="You only get one choice"
           >
-            {options.map((option) => (
+            {priceOptions.map((option) => (
               <SelectOptionCell
                 compact
                 value={option}
@@ -181,5 +183,125 @@ export const createStories = ({
     Compact,
     Variants,
     WithLabel,
+  };
+};
+
+export type CreateSelectInputProps = {
+  SelectInput: React.ComponentType<SelectInputBaseProps>;
+  Tray: React.ComponentType<TrayBaseProps>;
+  SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps & LinkableProps>;
+  ScrollView: React.ComponentType<ScrollViewProps>;
+};
+
+type OptionProps = {
+  label: string;
+  value: string;
+};
+
+type DefaultSelectInputTypes = {
+  options: OptionProps[];
+  trayTitle?: string;
+  hasDescription?: boolean;
+  compactSelectOptionCell?: boolean;
+  hideHandleBar?: boolean;
+} & Omit<SelectInputBaseProps, 'children'>;
+
+export const createMobileStories = ({
+  Tray,
+  SelectInput,
+  SelectOptionCell,
+  ScrollView,
+}: CreateSelectInputProps) => {
+  const DefaultSelectInput = ({
+    options,
+    value: initialValue,
+    trayTitle,
+    hasDescription,
+    compactSelectOptionCell,
+    hideHandleBar,
+    ...props
+  }: DefaultSelectInputTypes) => {
+    const [isTrayVisible, { toggleOff, toggleOn }] = useToggler(false);
+    const [value, setValue] = useState<string | undefined>(initialValue);
+    return (
+      <SelectInput value={value} onPress={toggleOn} {...props}>
+        {isTrayVisible && (
+          <Tray
+            title={trayTitle}
+            onCloseComplete={toggleOff}
+            hideHandleBar={hideHandleBar}
+            testID="select-input-tray"
+          >
+            {({ closeTray }) =>
+              options.map((option) => {
+                return (
+                  <SelectOptionCell
+                    title={option.label}
+                    compact={compactSelectOptionCell}
+                    key={option.value}
+                    description={hasDescription && 'BTC'}
+                    onPress={() => {
+                      setValue(option.value);
+                      // eslint-disable-next-line
+                      closeTray();
+                    }}
+                    selected={value === option.value}
+                  />
+                );
+              })
+            }
+          </Tray>
+        )}
+      </SelectInput>
+    );
+  };
+
+  const ScrollableSelectInput = ({
+    options,
+    value: initialValue,
+    trayTitle,
+    hasDescription,
+    compactSelectOptionCell,
+    ...props
+  }: DefaultSelectInputTypes) => {
+    const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
+    const [value, setValue] = useState<string | undefined>(initialValue);
+    return (
+      <SelectInput value={value} onPress={toggleOn} {...props}>
+        {isTrayVisible && (
+          <Tray
+            disableCapturePanGestureToDismiss={false}
+            title={trayTitle}
+            onCloseComplete={toggleOff}
+          >
+            {({ closeTray }) => (
+              <ScrollView>
+                {options.map((option) => {
+                  return (
+                    <SelectOptionCell
+                      title={option.label}
+                      compact={compactSelectOptionCell}
+                      key={option.value}
+                      description={hasDescription && 'BTC'}
+                      onPress={() => {
+                        setValue(option.value);
+                        // eslint-disable-next-line
+                        closeTray();
+                      }}
+                      selected={value === option.value}
+                    />
+                  );
+                })}
+              </ScrollView>
+            )}
+          </Tray>
+        )}
+      </SelectInput>
+    );
+  };
+
+  return {
+    DefaultSelectInput,
+    ScrollableSelectInput,
   };
 };

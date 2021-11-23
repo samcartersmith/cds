@@ -299,9 +299,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-cds/Pods-cds-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Highwind/Highwind.framework/Highwind",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GeoZip/GeoZip.framework/GeoZip",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Castle/Highwind.framework/Highwind",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Castle/GeoZip.framework/GeoZip",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

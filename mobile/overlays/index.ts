@@ -1,5 +1,7 @@
+export * from './Drawer/Drawer';
 export * from './Overlay/Overlay';
 export * from './Overlay/useOverlayAnimation';
+export * from './Tray/Tray';
 export * from './Modal/Modal';
 export * from './Modal/ModalHeader';
 export * from './Modal/ModalBody';

@@ -20,6 +20,7 @@ const components = [
   { key: 'ContentCellFallback' },
   { key: 'DebugFrontier' },
   { key: 'Divider' },
+  { key: 'Drawer' },
   { key: 'Icon' },
   { key: 'IconButton' },
   { key: 'Illustration' },
@@ -37,8 +38,10 @@ const components = [
   { key: 'Overlay' },
   { key: 'Pressable' },
   { key: 'PressableOpacity' },
+  { key: 'ProgressBar' },
   { key: 'RadioGroup' },
   { key: 'RemoteImage' },
+  { key: 'SelectInput' },
   { key: 'Spacer' },
   { key: 'Sparkline' },
   { key: 'SparklineGradient' },
@@ -58,7 +61,7 @@ const components = [
   { key: 'TextTitle2' },
   { key: 'TextTitle3' },
   { key: 'TextTitle4' },
-  { key: 'ProgressBar' },
+  { key: 'Tray' },
 ];
 
 // eslint-disable-next-line @typescript-eslint/ban-types

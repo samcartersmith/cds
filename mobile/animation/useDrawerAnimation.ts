@@ -3,8 +3,10 @@ import { useMemo, useRef } from 'react';
 import { PinningDirection } from '@cbhq/cds-common';
 import { Animated, useWindowDimensions } from 'react-native';
 import {
-  animateDrawerInConfig,
-  animateDrawerOutConfig,
+  animateHorizontalDrawerInConfig,
+  animateHorizontalDrawerOutConfig,
+  animateVerticalDrawerInConfig,
+  animateVerticalDrawerOutConfig,
   MAX_OVER_DRAG,
 } from '@cbhq/cds-common/animation/drawer';
 import { convertMotionConfig } from './convertMotionConfig';
@@ -33,13 +35,19 @@ export const useDrawerAnimation = (
   const { width, height } = useWindowDimensions();
 
   const drawerAnimation = useRef(new Animated.Value(0));
+  const isPinHorizontal = pin === 'left' || pin === 'right';
+
   const animateDrawerIn = Animated.timing(
     drawerAnimation.current,
-    convertMotionConfig(animateDrawerInConfig),
+    convertMotionConfig(
+      isPinHorizontal ? animateHorizontalDrawerInConfig : animateVerticalDrawerInConfig,
+    ),
   );
   const animateDrawerOut = Animated.timing(
     drawerAnimation.current,
-    convertMotionConfig(animateDrawerOutConfig),
+    convertMotionConfig(
+      isPinHorizontal ? animateHorizontalDrawerOutConfig : animateVerticalDrawerOutConfig,
+    ),
   );
 
   const translation = useMemo(() => {
@@ -48,14 +56,14 @@ export const useDrawerAnimation = (
         return {
           translateY: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [-height, -MAX_OVER_DRAG],
+            outputRange: [-height * 0.75, -MAX_OVER_DRAG],
           }),
         };
       case 'left':
         return {
           translateX: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [-width, -MAX_OVER_DRAG],
+            outputRange: [-width * 0.85, -MAX_OVER_DRAG],
           }),
         };
       case 'bottom':
@@ -63,14 +71,14 @@ export const useDrawerAnimation = (
         return {
           translateY: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [height, MAX_OVER_DRAG],
+            outputRange: [height * 0.75, MAX_OVER_DRAG],
           }),
         };
       case 'right':
         return {
           translateX: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [width, MAX_OVER_DRAG],
+            outputRange: [width * 0.85, MAX_OVER_DRAG],
           }),
         };
     }

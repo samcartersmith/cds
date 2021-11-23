@@ -10,6 +10,7 @@ export type InputIconProps = {
    * @default false
    * */
   disableInheritFocusStyle?: boolean;
+  compact?: boolean;
 } & Omit<IconProps, 'size'> &
   SharedProps;
 
@@ -18,12 +19,13 @@ export const InputIcon = memo(
     disableInheritFocusStyle = false,
     testID,
     color = 'foreground',
+    compact,
     ...props
   }: InputIconProps) => {
     const variant = useContext(TextInputFocusVariantContext) ?? color;
 
     return (
-      <Box spacingHorizontal={2} testID={testID}>
+      <Box spacingHorizontal={compact ? 1 : 2} testID={testID}>
         <Icon color={disableInheritFocusStyle ? color : variant} size="s" {...props} />
       </Box>
     );

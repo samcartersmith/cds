@@ -1,8 +1,11 @@
 import { ReactNode } from 'react';
-import { DrawerRenderChildren, DrawerBaseProps } from './DrawerBaseProps';
+import { DrawerBaseProps } from './DrawerBaseProps';
+import { NoopFn } from './Helpers';
+
+export type TrayRenderChildren = (props: { closeTray: NoopFn }) => NonNullable<ReactNode>;
 
 export type TrayBaseProps = {
-  children: NonNullable<ReactNode> | DrawerRenderChildren;
+  children: NonNullable<ReactNode> | TrayRenderChildren;
   /**
    * Optional callback that, if provided, will be triggered when the Tray is toggled open/ closed
    * If used for analytics, context ('visible' | 'hidden') can be bundled with the event info to track whether the

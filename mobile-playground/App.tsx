@@ -22,6 +22,7 @@ import ContentCellFallbackScreen from './src/ContentCellFallback';
 import ContentCellScreen from './src/ContentCell';
 import DebugFrontierScreen from './src/DebugFrontier';
 import DividerScreen from './src/Divider';
+import Drawer from './src/Drawer';
 import IconButtonScreen from './src/IconButton';
 import IconScreen from './src/Icon';
 import IllustrationScreen from './src/Illustration';
@@ -35,12 +36,14 @@ import ListCellScreen from './src/ListCell';
 import LogoScreen from './src/Logo';
 import LottieScreen from './src/Lottie';
 import LottieStatusAnimationScreen from './src/LottieStatusAnimation';
+import TrayScreen from './src/Tray';
 import ModalScreen from './src/Modal';
 import OverlayScreen from './src/Overlay';
 import PressableOpacityScreen from './src/PressableOpacity';
 import PressableScreen from './src/Pressable';
 import RadioGroupScreen from './src/RadioGroup';
 import RemoteImageScreen from './src/RemoteImage';
+import SelectInputScreen from './src/SelectInput';
 import SpacerScreen from './src/Spacer';
 import SparklineGradientScreen from './src/SparklineGradient';
 import SparklineScreen from './src/Sparkline';
@@ -102,6 +105,7 @@ const AppContent = () => {
         <Stack.Screen name="ContentCellFallback" component={ContentCellFallbackScreen} />
         <Stack.Screen name="DebugFrontier" component={DebugFrontierScreen} />
         <Stack.Screen name="Divider" component={DividerScreen} />
+        <Stack.Screen name="Drawer" component={Drawer} />
         <Stack.Screen name="Icon" component={IconScreen} />
         <Stack.Screen name="IconButton" component={IconButtonScreen} />
         <Stack.Screen name="Illustration" component={IllustrationScreen} />
@@ -115,12 +119,14 @@ const AppContent = () => {
         <Stack.Screen name="Logo" component={LogoScreen} />
         <Stack.Screen name="Lottie" component={LottieScreen} />
         <Stack.Screen name="LottieStatusAnimation" component={LottieStatusAnimationScreen} />
+        <Stack.Screen name="Tray" component={TrayScreen} />
         <Stack.Screen name="Modal" component={ModalScreen} />
         <Stack.Screen name="Overlay" component={OverlayScreen} />
         <Stack.Screen name="Pressable" component={PressableScreen} />
         <Stack.Screen name="PressableOpacity" component={PressableOpacityScreen} />
         <Stack.Screen name="RadioGroup" component={RadioGroupScreen} />
         <Stack.Screen name="RemoteImage" component={RemoteImageScreen} />
+        <Stack.Screen name="SelectInput" component={SelectInputScreen} />
         <Stack.Screen name="Spacer" component={SpacerScreen} />
         <Stack.Screen name="Sparkline" component={SparklineScreen} />
         <Stack.Screen name="SparklineGradient" component={SparklineGradientScreen} />

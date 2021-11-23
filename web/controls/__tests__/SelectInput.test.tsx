@@ -3,7 +3,7 @@ import { renderA11y } from '@cbhq/jest-utils';
 import {
   createStories,
   CreateSelectInputStoriesProps,
-  options,
+  priceOptions,
 } from ':cds-storybook/stories/SelectInput';
 import { SelectInput } from '../SelectInput';
 import { VStack } from '../../layout/VStack';
@@ -47,7 +47,7 @@ describe('SelectInput', () => {
     expect(onPressSpy).toHaveBeenCalled();
 
     // expect Menu and SelectOptionCell to render
-    expect(getByText(options[0])).toBeDefined();
+    expect(getByText(priceOptions[0])).toBeDefined();
   });
   it('closes the Menu when an option is pressed and fires onChange', async () => {
     const onChangeSpy = jest.fn();
@@ -58,7 +58,7 @@ describe('SelectInput', () => {
     fireEvent.click(getByText(mockPlaceholder));
 
     // expect Menu and SelectOptionCell to render
-    const firstSelectOptionCell = await waitFor(() => getByText(options[0]));
+    const firstSelectOptionCell = await waitFor(() => getByText(priceOptions[0]));
 
     // select the first option
     fireEvent.click(firstSelectOptionCell);
@@ -73,9 +73,9 @@ describe('SelectInput', () => {
     fireEvent.click(getByText(mockPlaceholder));
 
     // expect Menu and SelectOptionCell to render
-    const secondSelectOptionCell = await waitFor(() => getByText(options[1]));
+    const secondSelectOptionCell = await waitFor(() => getByText(priceOptions[1]));
     fireEvent.click(secondSelectOptionCell);
 
-    expect(getByText(options[1])).toBeDefined();
+    expect(getByText(priceOptions[1])).toBeDefined();
   });
 });

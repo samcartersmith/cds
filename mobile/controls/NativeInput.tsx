@@ -1,8 +1,7 @@
-import { SharedProps, TextBaseProps, useSpectrum } from '@cbhq/cds-common';
+import { SharedProps, TextBaseProps, TextInputBaseProps, useSpectrum } from '@cbhq/cds-common';
 import React, { useMemo, memo } from 'react';
 import { TextInputProps, View, ViewStyle, TextInput as RNTextInput } from 'react-native';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useInputTextStyles } from '../hooks/useInputStyles';
 import { useTextAlign } from '../hooks/useTextAlign';

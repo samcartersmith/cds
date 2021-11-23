@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 import { NoopFn } from './Helpers';
 import { PinningDirection } from './BoxBaseProps';
+import { SharedProps } from './SharedProps';
 
-export type DrawerRenderChildren = (props: { closeDrawer: NoopFn }) => JSX.Element;
+export type DrawerRenderChildren = (props: { closeDrawer: NoopFn }) => NonNullable<ReactNode>;
 
 export type DrawerBaseProps = {
   /** Component to render as the Modal content */
@@ -24,13 +25,11 @@ export type DrawerBaseProps = {
   hideHandleBar?: boolean;
   /** Action that will happen when drawer is dismissed */
   onCloseComplete: NoopFn;
-  /** This is for testing purposes only when we want to interact with the overlay directly */
-  overlayTestID?: string;
   /**
    * Prevents the Drawer from capturing pan gestures on children. Set to true when using a ScrollView as a child
    */
   disableCapturePanGestureToDismiss?: boolean;
-};
+} & SharedProps;
 
 export type DrawerRefBaseProps = {
   /** ref callback that animates out the drawer */

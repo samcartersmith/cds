@@ -9,15 +9,28 @@ export const DISMISSAL_VELOCITY_THRESHOLD = 0.8;
 /** Minimum panning distance required to capture pan gesture */
 export const MIN_PAN_DISTANCE = 2;
 
-export const animateDrawerInConfig: MotionBaseSpec = {
+export const animateHorizontalDrawerInConfig: MotionBaseSpec = {
   property: 'transform',
   toValue: 1,
   easing: 'enterFunctional',
   duration: 'moderate3',
 };
-export const animateDrawerOutConfig: MotionBaseSpec = {
+export const animateHorizontalDrawerOutConfig: MotionBaseSpec = {
   property: 'transform',
   toValue: 0,
   easing: 'exitFunctional',
-  duration: 'moderate2',
+  duration: 'moderate3',
+};
+
+export const animateVerticalDrawerInConfig: MotionBaseSpec = {
+  property: 'transform',
+  toValue: 1,
+  easing: 'enterFunctional',
+  duration: 'slow2',
+};
+export const animateVerticalDrawerOutConfig: MotionBaseSpec = {
+  property: 'transform',
+  toValue: 0,
+  easing: 'exitFunctional',
+  duration: 'slow2',
 };

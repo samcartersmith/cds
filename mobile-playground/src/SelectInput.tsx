@@ -1,0 +1,96 @@
+import React from 'react';
+import { ScrollView } from 'react-native';
+import { SelectInput } from '@cbhq/cds-mobile/controls/SelectInput';
+import { Tray } from '@cbhq/cds-mobile/overlays';
+import { SelectOptionCell } from '@cbhq/cds-mobile/controls/SelectOptionCell';
+import ExamplesScreen from './internal/ExamplesScreen';
+import Example from './internal/Example';
+import { prices } from './data/prices';
+import { createMobileStories, CreateSelectInputProps } from ':cds-storybook/stories/SelectInput';
+
+export default function SelectInputScreen() {
+  const { DefaultSelectInput, ScrollableSelectInput } = createMobileStories({
+    Tray,
+    SelectInput,
+    SelectOptionCell,
+    ScrollView,
+  } as CreateSelectInputProps);
+
+  return (
+    <ExamplesScreen>
+      <Example title="Default with Tray">
+        <DefaultSelectInput placeholder="Cake or death?" options={options} />
+      </Example>
+      <Example title="With Helper Text & Scrollable Tray">
+        <ScrollableSelectInput
+          placeholder="Choose an option"
+          options={longListOfOptions}
+          hasDescription
+          helperText="I am helpful"
+        />
+      </Example>
+      <Example title="With Label">
+        <DefaultSelectInput
+          label="What is your demise? "
+          placeholder="Choose wisely... "
+          options={options}
+        />
+      </Example>
+      <Example title="Compact with Label">
+        <ScrollableSelectInput
+          label="$"
+          placeholder="1,000,000"
+          compact
+          hasDescription
+          compactSelectOptionCell
+          options={longListOfOptions}
+        />
+      </Example>
+      <Example title="Disabled">
+        <DefaultSelectInput
+          placeholder="This is a really long placeholder that will overflow and be truncated"
+          disabled
+          options={options}
+          label="I am a label"
+          helperText="I am helpful"
+        />
+      </Example>
+      <Example title="Negative without HandleBar">
+        <DefaultSelectInput
+          label="I am a label"
+          variant="negative"
+          placeholder="Someone needs to fix this"
+          helperText="Wow this is really broken. Good luck! "
+          options={options}
+          hideHandleBar
+        />
+      </Example>
+      <Example title="Positive">
+        <DefaultSelectInput
+          label="What do you want?"
+          variant="positive"
+          placeholder="Some positive feedback"
+          options={options}
+        />
+      </Example>
+    </ExamplesScreen>
+  );
+}
+
+const options = [
+  {
+    label: 'Cake',
+    value: 'CAKE',
+  },
+  {
+    label: 'Death',
+    value: 'DEATH',
+  },
+];
+
+const longListOfOptions = prices.slice(0, 10).map((option) => {
+  return {
+    label: option,
+    value: option,
+  };
+});
