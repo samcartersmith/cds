@@ -250,7 +250,7 @@ export const dark = [
         curve: 'easeInCubic',
       },
       brightness: {
-        start: 0.2,
+        start: 0.15,
         end: 1,
         curve: 'easeOutQuad',
       },

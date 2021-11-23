@@ -43,8 +43,14 @@ Label that is pinned to the end of the container. If a number is used then it wi
   propertyName="endLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['number', '{ value: number; render: (num: number) => ReactNode; }']}
-  webOptions={['number', '{ value: number; render: (num: number) => ReactNode; }']}
+  mobileOptions={[
+    'number',
+    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+  ]}
+  webOptions={[
+    'number',
+    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+  ]}
 />
 
 <ComponentDetails componentName="ProgressBarWithFixedLabels" templateName="prop-endLabel" />
@@ -73,8 +79,14 @@ Label that is pinned to the start of the container. If a number is used then it 
   propertyName="startLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['number', '{ value: number; render: (num: number) => ReactNode; }']}
-  webOptions={['number', '{ value: number; render: (num: number) => ReactNode; }']}
+  mobileOptions={[
+    'number',
+    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+  ]}
+  webOptions={[
+    'number',
+    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+  ]}
 />
 
 <ComponentDetails componentName="ProgressBarWithFixedLabels" templateName="prop-startLabel" />

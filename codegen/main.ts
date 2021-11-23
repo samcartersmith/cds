@@ -148,7 +148,7 @@ async function codegen() {
         data: {
           defaultPalette: Palette.defaultPalette,
           switchPalette: Palette.switchPalette,
-          frontierPalette: Palette.frontierSpectrumPalette,
+          frontierSpectrumPalette: Palette.frontierSpectrumPalette,
           paletteForegrounds: Palette.paletteForegrounds,
           paletteBackgrounds: Palette.paletteBackgrounds,
           paletteBorders: Palette.paletteBorders,

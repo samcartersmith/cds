@@ -43,8 +43,14 @@ Label that is floated at the end of the filled in bar. If a number is used then 
   propertyName="label"
   required={true}
   defaultValue=""
-  mobileOptions={['number', '{ value: number; render: (num: number) => ReactNode; }']}
-  webOptions={['number', '{ value: number; render: (num: number) => ReactNode; }']}
+  mobileOptions={[
+    'number',
+    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+  ]}
+  webOptions={[
+    'number',
+    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+  ]}
 />
 
 <ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="prop-label" />
