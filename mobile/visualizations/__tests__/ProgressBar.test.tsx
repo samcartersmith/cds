@@ -1,50 +1,68 @@
-import { renderA11y } from '@cbhq/jest-utils';
-import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react-native';
+
+import { defaultPalette } from '@cbhq/cds-common';
+import { ReactTestInstance } from 'react-test-renderer';
 import { ProgressBar } from '../ProgressBar';
 import { Box } from '../../layout';
-import { palette } from '../../tokens';
+import { paletteValueToRgbaString } from '../../utils/palette';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 
-jest.mock('../../hooks/useDimensions', () => ({
-  useDimensions: jest.fn(() => {
-    return {
-      width: 200,
-      height: 100,
-    };
-  }),
-}));
+// TODO move this to global mocks
+jest.mock('react-native/Libraries/Animated/Animated', () => {
+  return {
+    ...jest.requireActual<Record<string, unknown>>('react-native/Libraries/Animated/Animated'),
+    timing: (value: { setValue: (arg0: unknown) => void }, config: { toValue: unknown }) => {
+      return {
+        start: jest.fn((callback?: ({ finished }: { finished: boolean }) => void) => {
+          value.setValue(config.toValue);
+          callback?.({ finished: true });
+        }),
+      };
+    },
+  };
+});
 
-let iter = 0;
-describe('ProgressBar test', () => {
-  beforeEach(() => {
-    Object.defineProperties(window.HTMLElement.prototype, {
-      offsetWidth: {
-        get() {
-          iter += 1;
-          if (iter % 2 === 0) {
-            // text container
-            return 20;
-          }
-
-          // whole container width
-          return 200;
-        },
-      },
-      offsetHeight: {
-        get() {
-          return 100;
+function fireTextEvent(floatLabel: ReactTestInstance) {
+  void act(() => {
+    fireEvent(floatLabel, 'layout', {
+      nativeEvent: {
+        layout: {
+          x: 0,
+          y: 0,
+          width: 20,
+          height: 20,
+          pageX: 0,
+          pageY: 0,
         },
       },
     });
   });
+}
 
-  it('passes accessibility', async () => {
-    expect(await renderA11y(<ProgressBar progress={0} />)).toHaveNoViolations();
+function fireTextContainerEvent(floatLabelContainer: ReactTestInstance) {
+  void act(() => {
+    fireEvent(floatLabelContainer, 'layout', {
+      nativeEvent: {
+        layout: {
+          x: 0,
+          y: 0,
+          width: 200,
+          height: 20,
+          pageX: 0,
+          pageY: 0,
+        },
+      },
+    });
+  });
+}
+
+describe('ProgressBar test', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
-  it('places bar label in correct position if it flows off the left container', () => {
+  it('places bar label in correct position if it flows off the left container', async () => {
     const { getByTestId, getAllByText } = render(
       <Box width="200">
         <ProgressBarWithFloatLabel label={0} progress={0}>
@@ -54,9 +72,12 @@ describe('ProgressBar test', () => {
     );
 
     const floatLabel = getByTestId('cds-progress-bar-float-label');
+    fireTextEvent(floatLabel);
+
+    fireTextContainerEvent(getByTestId('cds-progress-bar-float-label-container'));
 
     expect(floatLabel).toHaveStyle({
-      transform: 'translateX(0px)',
+      transform: [{}],
     });
 
     expect(getAllByText('0%')).toHaveLength(2);
@@ -72,14 +93,17 @@ describe('ProgressBar test', () => {
     );
 
     const floatLabel = getByTestId('cds-progress-bar-float-label');
+    fireTextEvent(floatLabel);
+
+    fireTextContainerEvent(getByTestId('cds-progress-bar-float-label-container'));
 
     expect(floatLabel).toHaveStyle({
-      transform: 'translateX(80px)',
+      transform: [{ translateX: 90 }], // (200/2) -10
     });
 
     const floatLabelText = getAllByText('50%')[0];
     expect(floatLabelText).toHaveStyle({
-      color: palette.foregroundMuted,
+      color: paletteValueToRgbaString(defaultPalette.foregroundMuted, 'light'),
     });
   });
 
@@ -96,10 +120,10 @@ describe('ProgressBar test', () => {
     const endLabelText = getAllByText('50%')[0];
 
     expect(startLabelText).toHaveStyle({
-      color: palette.foreground,
+      color: paletteValueToRgbaString(defaultPalette.foreground, 'light'),
     });
     expect(endLabelText).toHaveStyle({
-      color: palette.foreground,
+      color: paletteValueToRgbaString(defaultPalette.foreground, 'light'),
     });
   });
 
@@ -110,10 +134,12 @@ describe('ProgressBar test', () => {
       </Box>,
     );
 
+    fireTextContainerEvent(getByTestId('cds-progress-bar-inner-bar-container'));
+
     const bar = getByTestId('cds-progress-bar-inner-bar');
     expect(bar).toHaveStyle({
-      backgroundColor: palette.positive,
-      transform: 'translateX(-23%)',
+      backgroundColor: paletteValueToRgbaString(defaultPalette.positive, 'light'),
+      transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
     });
   });
 
@@ -124,9 +150,11 @@ describe('ProgressBar test', () => {
       </Box>,
     );
 
+    fireTextContainerEvent(getByTestId('cds-progress-bar-inner-bar-container'));
+
     const bar = getByTestId('cds-progress-bar-inner-bar-container');
     expect(bar).toHaveStyle({
-      height: '12px',
+      height: 12,
     });
   });
 
@@ -139,20 +167,22 @@ describe('ProgressBar test', () => {
       </Box>,
     );
 
+    fireTextContainerEvent(getByTestId('cds-progress-bar-inner-bar-container'));
+
     const bar = getByTestId('cds-progress-bar-inner-bar');
     const startLabelText = getAllByText('0%')[0];
     const endLabelText = getAllByText('77%')[0];
 
     expect(bar).toHaveStyle({
-      backgroundColor: palette.lineHeavy,
-      transform: 'translateX(-23%)',
+      backgroundColor: paletteValueToRgbaString(defaultPalette.lineHeavy, 'light'),
+      transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
     });
 
     expect(startLabelText).toHaveStyle({
-      color: palette.foreground,
+      color: paletteValueToRgbaString(defaultPalette.foreground, 'light'),
     });
     expect(endLabelText).toHaveStyle({
-      color: palette.foreground,
+      color: paletteValueToRgbaString(defaultPalette.foreground, 'light'),
     });
   });
 });
