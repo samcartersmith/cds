@@ -292,7 +292,7 @@ Once you have built the component for **_both web and mobile_**. You can auto ge
 
 1. If you are not adding new directory, please go to step 2. If you are adding new directory you will need to add the name in `CDS_SUB_DIRS` in `eng/shared/design-system/codegen/website/constants.ts`
 
-2. Run `make docgen` in the root of eng/shared/design-system
+2. Run `make docgen` in the root of eng/shared/design-system (make sure you've exported your component from the appropriate subdirectory, first)
 
 ## Adding new imports to react-live
 
@@ -459,40 +459,43 @@ Add to codegen/adoption/config.ts and run `make prepare.adoption` and it will au
 
 3. Commit changes
 
-# Testing 
+# Testing
 
-When you build anything at CDS, you should at least create 1 test case for each item you build. This section will describe how you can test your new feature within monorepo and also outside of monorepo. 
+When you build anything at CDS, you should at least create 1 test case for each item you build. This section will describe how you can test your new feature within monorepo and also outside of monorepo.
 
 <br />
 
 ## **Running Test Cases within Monorepo**
 
-**Test Mobile**: To run tests on mobile, run the command `make test.mobile` inside CDS Directory. 
+**Test Mobile**: To run tests on mobile, run the command `make test.mobile` inside CDS Directory.
 
-**Test Web**: To run tests on web, run the command `make test.web` inside CDS Directory. 
+**Test Web**: To run tests on web, run the command `make test.web` inside CDS Directory.
 
-**Both**: You can also test both by running the command `make test` inside CDS Directory 
-
-<br />
-
-By default, these commands will run every test that exist. You can configure it such that it only run tests that you care about. 
+**Both**: You can also test both by running the command `make test` inside CDS Directory
 
 <br />
 
-### **Selectively Test Web Features**  
+By default, these commands will run every test that exist. You can configure it such that it only run tests that you care about.
+
 <br />
 
-To do this, you need to modify [`jest.config.web.js`](eng/shared/design-system/jest.config.web.js) file. Change the regular expression so that it only matches tests you care about. 
+### **Selectively Test Web Features**
 
-For example, if you change the testMatch to this, it will only run tests for Alert. 
+<br />
+
+To do this, you need to modify [`jest.config.web.js`](eng/shared/design-system/jest.config.web.js) file. Change the regular expression so that it only matches tests you care about.
+
+For example, if you change the testMatch to this, it will only run tests for Alert.
+
 ```
 testMatch: ['**/__tests__/**/Alert.test.[jt]s?(x)'],
 ```
 
-You can also test more than 1 feature at a time. Here is an example of how you can test InputStack and Alert simultaneously  
+You can also test more than 1 feature at a time. Here is an example of how you can test InputStack and Alert simultaneously
+
 ```
 testMatch: [
-  '**/__tests__/**/InputStack.test.[jt]s?(x)', 
+  '**/__tests__/**/InputStack.test.[jt]s?(x)',
   '**/__tests__/**/Alert.test.[jt]s?(x)'
 ]
 ```
@@ -501,11 +504,11 @@ testMatch: [
 
 > **Note:** Please don't commit your jest.config.web.js changes.
 
-### **Selectively Test Mobile Features**  
+### **Selectively Test Mobile Features**
 
 <br />
 
-The steps required to selectively test mobile features are very similar to how you do it in web. The only difference is that you will be modifying [`jest.config.mobile.js`](eng/shared/design-system/jest.config.mobile.js) instead. 
+The steps required to selectively test mobile features are very similar to how you do it in web. The only difference is that you will be modifying [`jest.config.mobile.js`](eng/shared/design-system/jest.config.mobile.js) instead.
 
 <br />
 

@@ -1,0 +1,202 @@
+### Select Input
+
+#### Web Implementation
+
+**Note**: this is for web only!
+
+Default composition of a Select Input
+
+```jsx live
+function DefaultSelectInput() {
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <SelectInput value={value} placeholder="Choose something" onChange={setValue}>
+          {options.map((option) => (
+            <SelectOptionCell value={option} key={option} title={option} description="BTC" />
+          ))}
+        </SelectInput>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+#### Mobile Implementation
+
+**Note**: this is for mobile only!
+
+Default composition of a Select Input
+
+```jsx
+function DefaultSelectInputMobile() {
+  const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <SelectInput value={value} onPress={toggleOn}>
+      {isTrayVisible && (
+        <Tray title={trayTitle} onCloseComplete={toggleOff}>
+          {({ closeTray }) =>
+            options.map((option) => {
+              return (
+                <SelectOptionCell
+                  title={option.label}
+                  key={option.value}
+                  onPress={() => {
+                    setValue(option.value);
+                    closeTray();
+                  }}
+                  selected={value === option.value}
+                />
+              );
+            })
+          }
+        </Tray>
+      )}
+    </SelectInput>
+  );
+}
+```
+
+### Input Stack Options
+
+#### Compact
+
+When space is tight, this brings the label inside of the Input. Should be used with a `compact` `SelectOptionCell`.
+
+```jsx live
+function CompactSelectInput() {
+  const [value, setValue] = useState('54534');
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <SelectInput
+          compact
+          label="$"
+          value={value}
+          placeholder="Choose something"
+          onChange={setValue}
+        >
+          {options.map((option) => (
+            <SelectOptionCell
+              compact
+              value={option}
+              key={option}
+              title={option}
+              description="BTC"
+            />
+          ))}
+        </SelectInput>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+#### Label
+
+```jsx live
+function SelectInputWithLabel() {
+  const [value, setValue] = useState('54534');
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <SelectInput
+          label="Choose an amount"
+          value={value}
+          placeholder="Choose an option... "
+          onChange={setValue}
+        >
+          {options.map((option) => (
+            <SelectOptionCell value={option} key={option} title={option} description="BTC" />
+          ))}
+        </SelectInput>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+#### Helper Text
+
+```jsx live
+function SelectInputWithHelperText() {
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <SelectInput
+          value={value}
+          helperText="This text should be helpful"
+          placeholder="Choose something"
+          onChange={setValue}
+        >
+          {options.map((option) => (
+            <SelectOptionCell value={option} key={option} title={option} description="BTC" />
+          ))}
+        </SelectInput>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Variants
+
+#### Positive
+
+```jsx live
+function SelectInputPositive() {
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <SelectInput
+          variant="positive"
+          value={value}
+          placeholder="Choose something"
+          onChange={setValue}
+        >
+          {options.map((option) => (
+            <SelectOptionCell value={option} key={option} title={option} description="BTC" />
+          ))}
+        </SelectInput>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+#### Negative
+
+Useful for surfacing error states.
+
+```jsx live
+function SelectInputNegative() {
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <SelectInput
+          variant="negative"
+          value={value}
+          placeholder="Choose something"
+          onChange={setValue}
+        >
+          {options.map((option) => (
+            <SelectOptionCell value={option} key={option} title={option} description="BTC" />
+          ))}
+        </SelectInput>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```

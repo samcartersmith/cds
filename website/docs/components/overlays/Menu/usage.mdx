@@ -1,0 +1,11 @@
+Should be used as a child of a `SelectInput` on mobile. This is already included in the web implementation of `SelectInput` and should only accept `SelectOptionCell` as children for web.
+
+```jsx live
+const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+
+<Menu title="Select an option">
+  {options.map((option) => (
+    <SelectOptionCell title={option} key={option} value={option} description="BTC" />
+  ))}
+</Menu>;
+```

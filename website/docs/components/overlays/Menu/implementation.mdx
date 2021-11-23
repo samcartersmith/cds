@@ -1,0 +1,35 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/overlays/Menu](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/overlays/Menu.tsx)
+
+<ComponentDetails componentName="Menu" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Menu" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Menu" templateName="a11y" />
+
+## Props
+
+### offset <Badge variant="web" />
+
+<ApiDetails
+  componentName="Menu"
+  propertyName="offset"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Menu" templateName="prop-offset" />
+
+<ComponentDetails componentName="Menu" templateName="outro" />

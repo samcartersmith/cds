@@ -19,6 +19,36 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### accessibilityHint <Badge variant="web" />
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="prop-accessibilityHint" />
+
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="prop-accessibilityLabel" />
+
 ### as <Badge variant="web" />
 
 Element or component to render the container as.
@@ -253,6 +283,21 @@ Is the element elevated.
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-elevation" />
+
+### insetFocusStyles <Badge variant="web" />
+
+Should only be used when parent has overflow: hidden
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="insetFocusStyles"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="prop-insetFocusStyles" />
 
 ### pressed
 

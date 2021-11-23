@@ -31,6 +31,7 @@ export * from './LottieBaseProps';
 export * from './LottiePlayer';
 export * from './LottieSource';
 export * from './LottieStatusAnimationProps';
+export * from './MenuBaseProps';
 export * from './Palette';
 export * from './Position';
 export * from './RadioGroupBaseProps';

@@ -48,6 +48,7 @@ module.exports = {
         'components/cells/ContentCellFallback/content-cell-fallback',
         'components/cells/ListCell/list-cell',
         'components/cells/ListCellFallback/list-cell-fallback',
+        'components/cells/SelectOptionCell/select-option-cell',
       ],
     },
     {
@@ -59,6 +60,7 @@ module.exports = {
         'components/controls/InputIcon/input-icon',
         'components/controls/InputIconButton/input-icon-button',
         'components/controls/RadioGroup/radio-group',
+        'components/controls/SelectInput/select-input',
         'components/controls/Switch/switch',
         'components/controls/TextInput/text-input',
       ],
@@ -130,6 +132,7 @@ module.exports = {
       items: [
         'components/overlays/Alert/alert',
         'components/overlays/Tooltip/tooltip',
+        'components/overlays/Menu/menu',
         'components/overlays/Modal/modal',
         'components/overlays/ModalBody/modal-body',
         'components/overlays/ModalFooter/modal-footer',

@@ -475,6 +475,27 @@ export const ListCellFallback = {
   ),
 };
 
+export const SelectOptionCell = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOptionCell/implementation.mdx'
+      ),
+  ),
+  'select-option-cell': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOptionCell/select-option-cell.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOptionCell/usage.mdx'
+      ),
+  ),
+};
+
 export const Checkbox = {
   a11y: React.lazy(
     async () =>
@@ -579,6 +600,27 @@ export const RadioGroup = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/RadioGroup/usage.mdx'
+      ),
+  ),
+};
+
+export const SelectInput = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectInput/implementation.mdx'
+      ),
+  ),
+  'select-input': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectInput/select-input.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectInput/usage.mdx'
       ),
   ),
 };
@@ -1257,6 +1299,27 @@ export const Tooltip = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/usage.mdx'
+      ),
+  ),
+};
+
+export const Menu = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Menu/implementation.mdx'
+      ),
+  ),
+  menu: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Menu/menu.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Menu/usage.mdx'
       ),
   ),
 };

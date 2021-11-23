@@ -10,6 +10,7 @@ import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteracta
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { cx } from 'linaria';
 
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import * as borderColors from '../styles/borderColor';
 import * as borderWidths from '../styles/borderWidth';
@@ -53,7 +54,8 @@ export type InteractableProps = {
   wrapWithLayeredElements?: boolean;
 } & InteractableBaseProps &
   InteractableInheritedProps &
-  SharedProps;
+  SharedProps &
+  SharedAccessibilityProps;
 
 export const InteractableContent = forwardRef(function InteractableContent(
   {
@@ -74,6 +76,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     wrapWithLayeredElements,
     width,
     height,
+    accessibilityLabel,
     ...props
   }: InteractableProps,
   ref: React.Ref<Element>,
@@ -148,6 +151,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     {
       'aria-pressed': pressed,
       'data-testid': testID,
+      'aria-label': accessibilityLabel,
       ...props,
       className,
       disabled,

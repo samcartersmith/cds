@@ -70,6 +70,10 @@ module.exports = {
               label: 'Cards',
               href: '/cards',
             },
+            {
+              label: 'Select Input',
+              href: '/selectinput',
+            },
           ],
         },
       ],

@@ -19,6 +19,36 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### accessibilityHint
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="prop-accessibilityHint" />
+
+### accessibilityLabel
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="prop-accessibilityLabel" />
+
 ### as <Badge variant="web" />
 
 Element or component to render the container as.
@@ -272,6 +302,21 @@ Haptic feedback to trigger when being pressed.
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-feedback" />
+
+### insetFocusStyles <Badge variant="web" />
+
+Should only be used when parent has overflow: hidden
+
+<ApiDetails
+  componentName="Pressable"
+  propertyName="insetFocusStyles"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Pressable" templateName="prop-insetFocusStyles" />
 
 ### loading
 

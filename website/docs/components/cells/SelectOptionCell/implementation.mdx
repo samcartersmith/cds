@@ -1,0 +1,466 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/cells/SelectOptionCell](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/cells/SelectOptionCell.tsx)
+
+<ComponentDetails componentName="SelectOptionCell" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="SelectOptionCell" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="SelectOptionCell" templateName="a11y" />
+
+## Props
+
+### accessory <Badge variant="web" />
+
+Accessory to display at the end of the cell.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="accessory"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['arrow', 'more', 'selected']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-accessory" />
+
+### action <Badge variant="web" />
+
+Interactive action, like a CTA or form element. Cannot be used alongside `onPress`.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="action"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-action" />
+
+### borderRadius <Badge variant="web" />
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['badge', 'compact', 'input', 'none', 'pill', 'round', 'standard', 'tooltip']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-borderRadius" />
+
+### compact <Badge variant="web" />
+
+enables compact spacing
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-compact" />
+
+### description <Badge variant="web" />
+
+Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="description"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-description" />
+
+### detail <Badge variant="web" />
+
+Label and or extra detail.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="detail"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-detail" />
+
+### detailWidth <Badge variant="web" />
+
+Apply a fixed width to the detail (end).
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="detailWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-detailWidth" />
+
+### disabled <Badge variant="web" />
+
+Is the cell disabled? Will apply opacity and disable interaction.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-disabled" />
+
+### innerSpacing <Badge variant="web" />
+
+The spacing to use on the inner content of Cell
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="innerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-innerSpacing" />
+
+### intermediary <Badge variant="web" />
+
+For internal use only.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="intermediary"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-intermediary" />
+
+### key <Badge variant="web" />
+
+Note: the value passed will be ignored on Web because SelectInput overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="key"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-key" />
+
+### media <Badge variant="web" />
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="media"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-media" />
+
+### multiline <Badge variant="web" />
+
+Allow the description to span multiple lines. This _will_ break fixed height requirements, so should not be used in a `FlatList`.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="multiline"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-multiline" />
+
+### offsetHorizontal <Badge variant="web" /> <Badge variant="deprecated" order={2} />
+
+Reduce horizontal offset if parent container already has spacing.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-offsetHorizontal" />
+
+### onKeyDown <Badge variant="web" />
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="onKeyDown"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(event: KeyboardEvent<HTMLElement>) => void']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-onKeyDown" />
+
+### onPress <Badge variant="web" />
+
+Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-onPress" />
+
+### outerSpacing <Badge variant="web" />
+
+The spacing to use on the parent wrapper of Cell
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="outerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-outerSpacing" />
+
+### priority <Badge variant="web" />
+
+Which piece of content has the highest priority in regards to text truncation, growing, and shrinking.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="priority"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['end', 'middle', 'start']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-priority" />
+
+### reduceHorizontalSpacing <Badge variant="web" /> <Badge variant="deprecated" order={2} />
+
+Reduce horizontal spacing for tighter layout requirements.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="reduceHorizontalSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-reduceHorizontalSpacing" />
+
+### selected <Badge variant="web" />
+
+Is the cell selected? Will apply a background and selected accessory.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="selected"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-selected" />
+
+### subdetail <Badge variant="web" />
+
+Subdetail providing more information.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="subdetail"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-subdetail" />
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-testID" />
+
+### title <Badge variant="web" />
+
+Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-title" />
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-to" />
+
+### value <Badge variant="web" />
+
+Note: the value passed will be ignored on Web because SelectInput overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="value"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-value" />
+
+### variant <Badge variant="web" />
+
+Variant color to apply to the subdetail text.
+
+<ApiDetails
+  componentName="SelectOptionCell"
+  propertyName="variant"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['foregroundMuted', 'negative', 'positive']}
+/>
+
+<ComponentDetails componentName="SelectOptionCell" templateName="prop-variant" />
+
+<ComponentDetails componentName="SelectOptionCell" templateName="outro" />

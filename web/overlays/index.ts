@@ -5,3 +5,4 @@ export * from './Modal/ModalBody';
 export * from './Modal/ModalFooter';
 export * from './Overlay/Overlay';
 export * from './Alert';
+export * from './Menu/Menu';
