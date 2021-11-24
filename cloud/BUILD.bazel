@@ -61,7 +61,7 @@ syn_deployable(
             src = ":web_zip",
             bucket = "cb-assets-prod",
             is_zip = True,
-            key = "sw-cache/",
+            key = "assets/sw-cache/",
         ),
     ],
     config_name = "production",
