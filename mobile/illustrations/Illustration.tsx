@@ -31,14 +31,18 @@ export const Illustration = memo(function Illustration({ name, ...props }: Illus
         const xml = (await imagePath).content;
         setIllustrationXML(xml);
       } catch (err) {
+        if (process.env.NODE_ENV !== 'production') {
+          /* eslint-disable-next-line no-console */
+          console.error(err);
+        }
+      }
+    };
+    importIllustration().catch((err) => {
+      if (process.env.NODE_ENV !== 'production') {
         /* eslint-disable-next-line no-console */
         console.error(err);
       }
-    };
-    importIllustration().catch((err) =>
-      /* eslint-disable-next-line no-console */
-      console.error(err),
-    );
+    });
   }, [imagePath, name]);
 
   if (imagePath === null) {
