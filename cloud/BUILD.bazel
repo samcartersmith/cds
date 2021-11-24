@@ -54,6 +54,22 @@ syn_deployable(
 )
 
 syn_deployable(
+    name = "upload_css_sw_cache",
+    assets = [
+        syn_file_asset(
+            name = "cds-css-sw",
+            src = ":web_zip",
+            bucket = "cb-assets-prod",
+            is_zip = True,
+            key = "sw-cache/",
+        ),
+    ],
+    config_name = "production",
+    continuous_deployment = True,
+    target = "production",
+)
+
+syn_deployable(
     name = "upload_css_dev",
     assets = [
         syn_file_asset(
