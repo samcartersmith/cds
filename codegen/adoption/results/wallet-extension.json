@@ -1,34 +1,29 @@
 {
   "cds": [
     {
+      "name": "FeatureFlagProvider",
+      "sourceFile": "@cbhq/cds-web/system/FeatureFlagProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/system/FeatureFlagProvider",
+      "propsWithCallSites": { "frontierButton": { "src/providers/CdsProvider.tsx": 1 } }
+    },
+    {
       "name": "ThemeProvider",
       "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "cds": "@cbhq/cds-web/system/ThemeProvider",
-      "callSites": {
-        "src/forceUpdateWarning.tsx": 1,
-        "src/index.tsx": 1,
-        "src/maliciousSiteWarning.tsx": 1
-      },
       "propsWithCallSites": {
-        "scale": {
-          "src/forceUpdateWarning.tsx": 1,
-          "src/index.tsx": 1,
-          "src/maliciousSiteWarning.tsx": 1
-        },
-        "spectrum": {
-          "src/forceUpdateWarning.tsx": 1,
-          "src/index.tsx": 1,
-          "src/maliciousSiteWarning.tsx": 1
-        }
+        "scale": { "src/providers/CdsProvider.tsx": 1 },
+        "spectrum": { "src/providers/CdsProvider.tsx": 1 }
       }
     },
     {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
-      "totalInstances": 19,
-      "totalCallSites": 19,
+      "totalInstances": 20,
+      "totalCallSites": 20,
       "cds": "@cbhq/cds-web/typography/TextTitle1",
       "callSites": {
         "src/components/BannedLocationGate/BannedLocationScreen.tsx": 1,
@@ -42,10 +37,11 @@
         "src/components/shared/LogoHeader.tsx": 1,
         "src/components/statusAnimation/StatusAnimation.tsx": 1,
         "src/components/transaction/GlobalTxnHistory.tsx": 1,
+        "src/components/transaction/txnDetail.tsx": 1,
         "src/components/onboarding/steps/Backup/Backup.tsx": 1,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
         "src/components/onboarding/steps/Success/Success.tsx": 1,
         "src/components/onboarding/steps/Username/Username.tsx": 1,
@@ -64,10 +60,11 @@
           "src/components/shared/LogoHeader.tsx": 1,
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/transaction/GlobalTxnHistory.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
           "src/components/onboarding/steps/Success/Success.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
@@ -95,7 +92,10 @@
         "data-testid": { "src/components/crypto/AssetBalance.tsx": 1 },
         "align": { "src/components/statusAnimation/StatusAnimation.tsx": 1 },
         "spacingStart": { "src/components/transaction/GlobalTxnHistory.tsx": 1 },
-        "testID": { "src/components/onboarding/steps/Success/Success.tsx": 1 }
+        "testID": {
+          "src/components/transaction/txnDetail.tsx": 1,
+          "src/components/onboarding/steps/Success/Success.tsx": 1
+        }
       }
     },
     {
@@ -111,11 +111,14 @@
             "src/components/amountInput/CurrencyInput.tsx",
             "src/components/assetDetail/AssetDetailContainer.tsx",
             "src/components/settings/DAppSettings.tsx",
-            "src/components/transaction/txnAmountDisplay.tsx",
             "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx",
             "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx",
             "src/components/send/steps/EntryStep/AssetSelector.tsx"
           ]
+        },
+        {
+          "aliasPath": "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx",
+          "callSites": ["src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx"]
         }
       ],
       "callSites": {
@@ -148,7 +151,6 @@
         "src/components/settings/Settings.tsx": 2,
         "src/components/shared/LogoHeader.tsx": 1,
         "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
-        "src/components/transaction/txnDetail.tsx": 1,
         "src/components/onboarding/shared/BlurText.tsx": 1,
         "src/components/onboarding/shared/Checkbox.tsx": 1,
         "src/components/onboarding/shared/StepWrapper.tsx": 1,
@@ -163,14 +165,15 @@
         "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
         "src/components/onboarding/steps/Backup/Backup.tsx": 2,
         "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1,
         "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 4,
         "src/components/onboarding/steps/Success/Success.tsx": 2,
         "src/components/onboarding/steps/Username/Username.tsx": 2,
         "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 2,
         "src/components/send/steps/EntryStep/AssetSelector.tsx": 2,
+        "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1,
         "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
       },
       "propsWithCallSites": {
@@ -187,7 +190,8 @@
           "src/components/shared/TransactionDetails/TransactionDetailRowLoadingFallback.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
           "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "justifyContent": {
           "src/components/BannedLocationGate/BannedLocationScreen.tsx": 1,
@@ -205,7 +209,8 @@
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
           "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "alignItems": {
           "src/components/BannedLocationGate/BannedLocationScreen.tsx": 1,
@@ -219,7 +224,8 @@
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
           "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "spacingTop": {
           "src/components/BannedLocationGate/BannedLocationScreen.tsx": 1,
@@ -230,7 +236,8 @@
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
           "src/components/onboarding/steps/Success/Success.tsx": 2,
-          "src/components/onboarding/steps/Username/Username.tsx": 1
+          "src/components/onboarding/steps/Username/Username.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         },
         "spacingBottom": {
           "src/components/BannedLocationGate/BannedLocationScreen.tsx": 1,
@@ -258,10 +265,10 @@
         },
         "height": {
           "src/components/amountInput/MaxButton.tsx": 1,
-          "src/components/collectibles/CollectibleListItem.tsx": 1,
           "src/components/receive/Username.tsx": 1,
           "src/components/onboarding/shared/StepWrapper.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "borderRadius": {
           "src/components/amountInput/MaxButton.tsx": 1,
@@ -271,7 +278,8 @@
           "src/components/receive/Address.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1
+          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "bordered": {
           "src/components/amountInput/MaxButton.tsx": 1,
@@ -313,7 +321,6 @@
           "src/components/receive/Address.tsx": 1,
           "src/components/settings/ChangePassword.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1
         },
@@ -335,7 +342,6 @@
           "src/components/dapp/MaliciousSiteWarning.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
           "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
@@ -343,6 +349,10 @@
         "dangerouslySetClassName": {
           "src/components/dapp/SignatureRequest.tsx": 1,
           "src/components/onboarding/shared/Checkbox.tsx": 1,
+          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
+        },
+        "testID": {
+          "src/components/portfolio/PortfolioMenu.tsx": 3,
           "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
         "as": {
@@ -371,16 +381,16 @@
         },
         "dangerouslySetBackground": {
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
-          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1
-        },
-        "testID": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 }
+          "src/components/onboarding/steps/ScanQr/QrCode.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
+        }
       }
     },
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 54,
-      "totalCallSites": 41,
+      "totalInstances": 66,
+      "totalCallSites": 42,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "src/components/BannedLocationGate/BannedLocationScreen.tsx": 1,
@@ -390,6 +400,7 @@
         "src/components/collectibleDetail/Attributes.tsx": 1,
         "src/components/collectibleDetail/ChainData.tsx": 6,
         "src/components/collectibleDetail/CollectibleMetadata.tsx": 1,
+        "src/components/collectibles/Collections.tsx": 2,
         "src/components/connection/ConnectionLost.tsx": 1,
         "src/components/crypto/AddFundsPrompt.tsx": 1,
         "src/components/dapp/MaliciousSiteWarning.tsx": 2,
@@ -406,18 +417,18 @@
         "src/components/statusAnimation/StatusAnimation.tsx": 1,
         "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
         "src/components/transaction/GlobalTxnHistory.tsx": 1,
-        "src/components/transaction/txnAmountDisplay.tsx": 1,
-        "src/components/transaction/txnDetail.tsx": 4,
+        "src/components/transaction/txnDetail.tsx": 14,
         "src/components/transaction/txnHistoryListItem.tsx": 1,
         "src/components/onboarding/shared/BlurText.tsx": 1,
+        "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
         "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
         "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 2,
         "src/components/shared/TransactionDetails/TransactionDetailRowLoadingFallback.tsx": 1,
         "src/components/onboarding/steps/Backup/Backup.tsx": 1,
         "src/components/onboarding/steps/Entry/Entry.tsx": 1,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 2,
+        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
         "src/components/onboarding/steps/Success/Success.tsx": 1,
         "src/components/onboarding/steps/Username/Username.tsx": 1,
@@ -434,6 +445,7 @@
           "src/components/collectibleDetail/Attributes.tsx": 1,
           "src/components/collectibleDetail/ChainData.tsx": 6,
           "src/components/collectibleDetail/CollectibleMetadata.tsx": 1,
+          "src/components/collectibles/Collections.tsx": 2,
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/crypto/AddFundsPrompt.tsx": 1,
           "src/components/dapp/MaliciousSiteWarning.tsx": 2,
@@ -450,18 +462,18 @@
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
           "src/components/transaction/GlobalTxnHistory.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 4,
+          "src/components/transaction/txnDetail.tsx": 14,
           "src/components/transaction/txnHistoryListItem.tsx": 1,
           "src/components/onboarding/shared/BlurText.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 2,
           "src/components/shared/TransactionDetails/TransactionDetailRowLoadingFallback.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 2,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
           "src/components/onboarding/steps/Success/Success.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
@@ -477,6 +489,7 @@
           "src/components/collectibleDetail/Attributes.tsx": 1,
           "src/components/collectibleDetail/ChainData.tsx": 2,
           "src/components/collectibleDetail/CollectibleMetadata.tsx": 1,
+          "src/components/collectibles/Collections.tsx": 1,
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/crypto/AddFundsPrompt.tsx": 1,
           "src/components/dapp/MaliciousSiteWarning.tsx": 2,
@@ -491,15 +504,14 @@
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
           "src/components/transaction/GlobalTxnHistory.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 4,
+          "src/components/transaction/txnDetail.tsx": 7,
           "src/components/onboarding/shared/BlurText.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 2,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
           "src/components/onboarding/steps/Success/Success.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
@@ -514,26 +526,26 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 7,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1,
           "src/components/send/steps/StatusStep/StatusStep.tsx": 1
         },
         "spacingHorizontal": { "src/components/crypto/AddFundsPrompt.tsx": 1 },
         "testID": {
           "src/components/crypto/AddFundsPrompt.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/onboarding/shared/BlurText.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 2
         },
         "spacingTop": {
           "src/components/dapp/MaliciousSiteWarning.tsx": 1,
-          "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1
+          "src/components/forceUpdate/ForceUpdateWarning.tsx": 1
         },
         "spacingEnd": { "src/components/settings/AutoLockTimer.tsx": 1 },
         "spacingBottom": {
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1
         },
-        "spacingStart": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
         "tabIndex": { "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 2 },
         "title": { "src/components/send/steps/EntryStep/AssetSelector.tsx": 1 }
       }
@@ -541,8 +553,8 @@
     {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 26,
-      "totalCallSites": 18,
+      "totalInstances": 27,
+      "totalCallSites": 19,
       "cds": "@cbhq/cds-web/layout/Spacer",
       "callSites": {
         "src/components/BannedLocationGate/BannedLocationScreen.tsx": 2,
@@ -551,6 +563,7 @@
         "src/components/authentication/ForgotPassword.tsx": 2,
         "src/components/authentication/SignOutConfirmation.tsx": 1,
         "src/components/collectibleDetail/ChainData.tsx": 3,
+        "src/components/collectibles/CollectibleListItem.tsx": 1,
         "src/components/crypto/AddFundsPrompt.tsx": 4,
         "src/components/entrySelector/EntrySelector.tsx": 1,
         "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
@@ -617,8 +630,8 @@
         "src/components/onboarding/steps/Backup/Backup.tsx": 1,
         "src/components/onboarding/steps/Entry/Entry.tsx": 1,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/Username/Username.tsx": 1,
         "src/components/onboarding/steps/Verify/Verify.tsx": 1,
         "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
@@ -643,8 +656,8 @@
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
@@ -678,8 +691,8 @@
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/onboarding/steps/Verify/Verify.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
@@ -729,8 +742,8 @@
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/onboarding/steps/Verify/Verify.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
@@ -780,12 +793,13 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 33,
-      "totalCallSites": 24,
+      "totalInstances": 36,
+      "totalCallSites": 27,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "callSites": {
         "src/components/NavTitle/NavTitle.tsx": 1,
         "src/components/amountInput/CurrencyInput.tsx": 1,
+        "src/components/collectibles/CollectibleListItem.tsx": 1,
         "src/components/crypto/PortfolioWallet.tsx": 1,
         "src/components/dapp/SignatureRequest.tsx": 1,
         "src/components/entrySelector/EntrySelector.tsx": 4,
@@ -794,11 +808,13 @@
         "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
         "src/components/receive/Address.tsx": 2,
         "src/components/receive/Username.tsx": 1,
-        "src/components/settings/AutoLockTimer.tsx": 1,
+        "src/components/transaction/txnDetail.tsx": 1,
         "src/components/transaction/txnHistoryListItem.tsx": 2,
         "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
         "src/components/onboarding/shared/Checkbox.tsx": 1,
         "src/components/settings/networks/AddCustomNetwork.tsx": 1,
+        "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
+        "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
         "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
         "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
         "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
@@ -813,6 +829,7 @@
         "as": {
           "src/components/NavTitle/NavTitle.tsx": 1,
           "src/components/amountInput/CurrencyInput.tsx": 1,
+          "src/components/collectibles/CollectibleListItem.tsx": 1,
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/dapp/SignatureRequest.tsx": 1,
           "src/components/entrySelector/EntrySelector.tsx": 4,
@@ -821,11 +838,13 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/receive/Address.tsx": 2,
           "src/components/receive/Username.tsx": 1,
-          "src/components/settings/AutoLockTimer.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 2,
           "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
           "src/components/onboarding/shared/Checkbox.tsx": 1,
           "src/components/settings/networks/AddCustomNetwork.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
@@ -839,6 +858,7 @@
         "color": {
           "src/components/NavTitle/NavTitle.tsx": 1,
           "src/components/amountInput/CurrencyInput.tsx": 1,
+          "src/components/collectibles/CollectibleListItem.tsx": 1,
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/dapp/SignatureRequest.tsx": 1,
           "src/components/entrySelector/EntrySelector.tsx": 3,
@@ -847,11 +867,13 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/receive/Address.tsx": 1,
           "src/components/receive/Username.tsx": 1,
-          "src/components/settings/AutoLockTimer.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 2,
           "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
           "src/components/onboarding/shared/Checkbox.tsx": 1,
           "src/components/settings/networks/AddCustomNetwork.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 2,
@@ -865,6 +887,7 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/receive/Username.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1
@@ -877,24 +900,28 @@
         "overflow": { "src/components/entrySelector/EntrySelector.tsx": 1 },
         "testID": {
           "src/components/forms/ConnectedTextInput.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/settings/networks/AddCustomNetwork.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         },
         "spacingEnd": { "src/components/onboarding/shared/Checkbox.tsx": 1 },
         "disabled": { "src/components/onboarding/shared/Checkbox.tsx": 1 },
+        "spacingTop": {
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
         "tabIndex": {
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1
         },
-        "dangerouslySetColor": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 },
-        "spacingTop": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+        "dangerouslySetColor": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 }
       }
     },
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 152,
-      "totalCallSites": 76,
+      "totalInstances": 156,
+      "totalCallSites": 80,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -943,8 +970,8 @@
             "src/components/onboarding/steps/Backup/Backup.tsx",
             "src/components/onboarding/steps/Entry/Entry.tsx",
             "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx",
-            "src/components/onboarding/steps/Password/Password.tsx",
             "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx",
+            "src/components/onboarding/steps/Password/Password.tsx",
             "src/components/onboarding/steps/ScanQr/ScanQr.tsx",
             "src/components/onboarding/steps/Success/Success.tsx",
             "src/components/onboarding/steps/Username/Username.tsx",
@@ -964,6 +991,14 @@
             "src/components/trade/steps/EntryStep/EntryStep.tsx",
             "src/components/trade/steps/PhoneConfirmation/PhoneConfirmation.tsx"
           ]
+        },
+        {
+          "aliasPath": "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx",
+          "callSites": ["src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx"]
+        },
+        {
+          "aliasPath": "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx",
+          "callSites": ["src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx"]
         },
         {
           "aliasPath": "src/components/shared/TransactionDetails/TransactionDetails.tsx",
@@ -991,15 +1026,17 @@
         "src/components/amountInput/AmountInputFallback.tsx": 2,
         "src/components/amountInput/CurrencyInput.tsx": 1,
         "src/components/assetDetail/AssetDetailBalance.tsx": 1,
-        "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+        "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
         "src/components/authentication/ForgotPassword.tsx": 1,
         "src/components/authentication/SignOutConfirmation.tsx": 1,
         "src/components/authentication/UnLockScreen.tsx": 2,
         "src/components/collectibleDetail/Attributes.tsx": 2,
         "src/components/collectibleDetail/ChainData.tsx": 1,
+        "src/components/collectibleDetail/CollectibleDetailContainer.tsx": 1,
         "src/components/collectibleDetail/CollectibleMetadata.tsx": 2,
         "src/components/collectibleDetail/Links.tsx": 1,
         "src/components/collectibles/CollectibleListItem.tsx": 1,
+        "src/components/collectibles/Collections.tsx": 1,
         "src/components/connection/ConnectionLost.tsx": 4,
         "src/components/crypto/AddFundsPrompt.tsx": 3,
         "src/components/crypto/AssetBalance.tsx": 1,
@@ -1030,8 +1067,8 @@
         "src/components/shared/TxnListFallback.tsx": 1,
         "src/components/statusAnimation/StatusAnimation.tsx": 2,
         "src/components/switchEthereumChain/SwitchChainRequest.tsx": 2,
-        "src/components/transaction/GlobalTxnHistory.tsx": 2,
-        "src/components/transaction/txnDetail.tsx": 7,
+        "src/components/transaction/GlobalTxnHistory.tsx": 3,
+        "src/components/transaction/txnDetail.tsx": 4,
         "src/components/transaction/txnDetailContainer.tsx": 4,
         "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
         "src/components/onboarding/shared/BlurText.tsx": 1,
@@ -1040,6 +1077,8 @@
         "src/components/settings/networks/AddCustomNetwork.tsx": 1,
         "src/components/settings/networks/NetworkSelector.tsx": 2,
         "src/components/shared/ErrorState/ErrorState.tsx": 2,
+        "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
+        "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
         "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 2,
         "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
         "src/components/shared/TransactionConfirmationTopSection/TopSectionItemLoadingFallback.tsx": 1,
@@ -1048,15 +1087,15 @@
         "src/components/onboarding/steps/Backup/Backup.tsx": 2,
         "src/components/onboarding/steps/Entry/Entry.tsx": 4,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 4,
-        "src/components/onboarding/steps/Password/Password.tsx": 2,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 2,
         "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 2,
         "src/components/onboarding/steps/Success/Success.tsx": 2,
         "src/components/onboarding/steps/Username/Username.tsx": 2,
         "src/components/onboarding/steps/Verify/Verify.tsx": 3,
         "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
         "src/components/send/steps/EntryStep/EntryStep.tsx": 4,
-        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 3,
+        "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 4,
         "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
         "src/components/send/steps/StatusStep/StatusStep.tsx": 1,
         "src/components/trade/steps/EntryStep/EntryStep.tsx": 3,
@@ -1073,6 +1112,8 @@
           "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
           "src/components/forms/ConnectedTextInput.tsx": 1,
           "src/components/receive/Address.tsx": 1,
+          "src/components/settings/DAppSettings.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/onboarding/shared/StepperIndicator.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItemLoadingFallback.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 2,
@@ -1086,7 +1127,9 @@
           "src/components/entrySelector/EntrySelector.tsx": 1,
           "src/components/entrySelector/EntrySelectorLoadingFallback.tsx": 1,
           "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
+          "src/components/settings/DAppSettings.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/onboarding/shared/StepperIndicator.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1
         },
@@ -1098,6 +1141,7 @@
           "src/components/NavTitle/NavTitle.tsx": 1,
           "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/amountInput/CurrencyInput.tsx": 1,
+          "src/components/collectibles/Collections.tsx": 1,
           "src/components/crypto/AddFundsPrompt.tsx": 2,
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/dapp/MaliciousSiteWarning.tsx": 1,
@@ -1108,7 +1152,9 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 4,
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
           "src/components/transaction/GlobalTxnHistory.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/shared/ErrorState/ErrorState.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/onboarding/steps/Entry/Entry.tsx": 1,
           "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1
@@ -1123,8 +1169,10 @@
           "src/components/settings/DAppSettings.tsx": 1,
           "src/components/settings/SettingPage.tsx": 1,
           "src/components/settings/SettingsItems.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/settings/networks/AddCustomNetwork.tsx": 1,
           "src/components/settings/networks/NetworkSelector.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 2,
           "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1
@@ -1133,8 +1181,9 @@
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/crypto/AddFundsPrompt.tsx": 3,
-          "src/components/transaction/txnDetail.tsx": 2,
+          "src/components/shared/TxnListFallback.tsx": 1,
           "src/components/shared/ErrorState/ErrorState.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
           "src/components/onboarding/steps/Backup/Backup.tsx": 1,
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
@@ -1149,9 +1198,10 @@
           "src/components/settings/ChangePassword.tsx": 1,
           "src/components/settings/DAppSettings.tsx": 1,
           "src/components/transaction/GlobalTxnHistory.tsx": 2,
-          "src/components/transaction/txnDetail.tsx": 5,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 3,
-          "src/components/onboarding/steps/Success/Success.tsx": 1
+          "src/components/onboarding/steps/Success/Success.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         },
         "spacingHorizontal": {
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
@@ -1163,10 +1213,12 @@
           "src/components/dapp/SignatureRequest.tsx": 1,
           "src/components/portfolio/Portfolio.tsx": 1,
           "src/components/settings/ChangePassword.tsx": 1,
-          "src/components/settings/DAppSettings.tsx": 1,
+          "src/components/settings/DAppSettings.tsx": 2,
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 2,
           "src/components/transaction/txnDetailContainer.tsx": 2,
           "src/components/settings/networks/NetworkSelector.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 3,
           "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
           "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
@@ -1182,7 +1234,9 @@
           "src/components/connection/ConnectionLost.tsx": 2,
           "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
           "src/components/settings/ChangePassword.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1,
+          "src/components/settings/DAppSettings.tsx": 2,
+          "src/components/transaction/GlobalTxnHistory.tsx": 2,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/onboarding/shared/StepperIndicator.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 3,
           "src/components/send/steps/StatusStep/StatusStep.tsx": 1
@@ -1191,6 +1245,7 @@
           "src/components/authentication/ForgotPassword.tsx": 1,
           "src/components/authentication/SignOutConfirmation.tsx": 1,
           "src/components/authentication/UnLockScreen.tsx": 1,
+          "src/components/collectibles/Collections.tsx": 1,
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/crypto/AddFundsPrompt.tsx": 1,
           "src/components/dapp/MaliciousSiteWarning.tsx": 1,
@@ -1202,11 +1257,14 @@
           "src/components/settings/SettingPage.tsx": 1,
           "src/components/settings/Settings.tsx": 1,
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 3,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
           "src/components/settings/networks/AddCustomNetwork.tsx": 1,
           "src/components/settings/networks/NetworkSelector.tsx": 1,
           "src/components/shared/ErrorState/ErrorState.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 2,
           "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
@@ -1217,6 +1275,7 @@
         },
         "justifyContent": {
           "src/components/authentication/UnLockScreen.tsx": 2,
+          "src/components/collectibles/Collections.tsx": 1,
           "src/components/connection/ConnectionLost.tsx": 4,
           "src/components/crypto/AddFundsPrompt.tsx": 1,
           "src/components/entrySelector/EntrySelector.tsx": 1,
@@ -1229,6 +1288,7 @@
           "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
           "src/components/shared/ErrorState/ErrorState.tsx": 2,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItemLoadingFallback.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1,
@@ -1245,8 +1305,10 @@
           "src/components/authentication/UnLockScreen.tsx": 1,
           "src/components/collectibleDetail/Attributes.tsx": 2,
           "src/components/collectibleDetail/ChainData.tsx": 1,
+          "src/components/collectibleDetail/CollectibleDetailContainer.tsx": 1,
           "src/components/collectibleDetail/CollectibleMetadata.tsx": 2,
           "src/components/collectibleDetail/Links.tsx": 1,
+          "src/components/collectibles/Collections.tsx": 1,
           "src/components/dapp/MaliciousSiteWarning.tsx": 1,
           "src/components/dapp/SignatureRequest.tsx": 1,
           "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
@@ -1259,6 +1321,13 @@
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/onboarding/steps/Verify/Verify.tsx": 1,
           "src/components/send/steps/StatusStep/StatusStep.tsx": 1
+        },
+        "alignContent": {
+          "src/components/collectibles/Collections.tsx": 1,
+          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
+          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
         "spacing": {
           "src/components/connection/ConnectionLost.tsx": 1,
@@ -1300,37 +1369,44 @@
         "maxWidth": { "src/components/entrySelector/EntrySelector.tsx": 1 },
         "bottom": {
           "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
+          "src/components/settings/DAppSettings.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
           "src/components/transaction/txnDetail.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1
         },
         "right": {
           "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
+          "src/components/settings/DAppSettings.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
+          "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1
+        },
+        "background": {
+          "src/components/settings/DAppSettings.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
+          "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1
+        },
+        "dangerouslySetClassName": { "src/components/transaction/GlobalTxnHistory.tsx": 1 },
+        "ref": { "src/components/transaction/GlobalTxnHistory.tsx": 1 },
+        "offsetHorizontal": {
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1
         },
         "maxHeight": {
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1
         },
-        "offsetHorizontal": {
-          "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1
-        },
-        "background": { "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1 },
         "spacingVertical": {
           "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1
         },
-        "alignContent": {
-          "src/components/send/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
-          "src/components/trade/steps/EntryStep/EntryStep.tsx": 1,
-          "src/components/trade/steps/EntryStep/EntryStepFallback.tsx": 1
-        },
-        "minHeight": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+        "minHeight": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
+        "borderedTop": {
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        }
       }
     },
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 20,
+      "totalInstances": 17,
       "totalCallSites": 15,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
@@ -1342,7 +1418,7 @@
         "src/components/crypto/PortfolioWallet.tsx": 1,
         "src/components/dapp/SignatureRequest.tsx": 2,
         "src/components/statusAnimation/StatusAnimation.tsx": 1,
-        "src/components/transaction/txnDetail.tsx": 4,
+        "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
         "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 2,
         "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1,
         "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
@@ -1360,7 +1436,7 @@
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/dapp/SignatureRequest.tsx": 2,
           "src/components/statusAnimation/StatusAnimation.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 4,
+          "src/components/shared/SearchSuggestionsList/NoSearchResults.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 2,
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
@@ -1389,10 +1465,7 @@
           "src/components/shared/TransactionDetails/TransactionDetails.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1
         },
-        "color": {
-          "src/components/dapp/SignatureRequest.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 4
-        },
+        "color": { "src/components/dapp/SignatureRequest.tsx": 1 },
         "spacing": { "src/components/dapp/SignatureRequest.tsx": 1 },
         "tabIndex": {
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 2,
@@ -1406,7 +1479,7 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 52,
+      "totalInstances": 57,
       "totalCallSites": 34,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
@@ -1460,6 +1533,7 @@
         "src/components/assetDetail/AssetDetailContainer.tsx": 1,
         "src/components/collectibleDetail/ChainData.tsx": 3,
         "src/components/collectibleDetail/Links.tsx": 1,
+        "src/components/collectibles/CollectibleListItem.tsx": 1,
         "src/components/crypto/PortfolioWallet.tsx": 2,
         "src/components/dapp/SignatureRequest.tsx": 2,
         "src/components/entrySelector/EntrySelector.tsx": 3,
@@ -1471,8 +1545,7 @@
         "src/components/recovery/RecoveryPhrase.tsx": 1,
         "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
         "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-        "src/components/transaction/txnAmountDisplay.tsx": 1,
-        "src/components/transaction/txnDetail.tsx": 3,
+        "src/components/transaction/txnDetail.tsx": 8,
         "src/components/onboarding/shared/BlurText.tsx": 1,
         "src/components/onboarding/shared/StepperIndicator.tsx": 2,
         "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 2,
@@ -1493,7 +1566,7 @@
           "src/components/amountInput/CurrencyInput.tsx": 1,
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
           "src/components/dapp/SignatureRequest.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/onboarding/shared/BlurText.tsx": 1,
           "src/components/onboarding/shared/StepperIndicator.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
@@ -1507,7 +1580,8 @@
           "src/components/dapp/SignatureRequest.tsx": 1,
           "src/components/entrySelector/EntrySelector.tsx": 1,
           "src/components/recovery/RecoveryPhrase.tsx": 1,
-          "src/components/recovery/ShowRecoveryPhrase.tsx": 1
+          "src/components/recovery/ShowRecoveryPhrase.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1
         },
         "justifyContent": {
           "src/components/NavTitle/NavTitle.tsx": 1,
@@ -1522,8 +1596,7 @@
           "src/components/entrySelector/RowLoadingFallback.tsx": 2,
           "src/components/portfolio/PortfolioContainer.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
-          "src/components/transaction/txnDetail.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 7,
           "src/components/onboarding/shared/StepperIndicator.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItemLoadingFallback.tsx": 1,
@@ -1541,6 +1614,7 @@
           "src/components/amountInput/AmountInputFallback.tsx": 1,
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
           "src/components/assetDetail/AssetDetailContainer.tsx": 1,
+          "src/components/collectibles/CollectibleListItem.tsx": 1,
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/dapp/SignatureRequest.tsx": 2,
           "src/components/entrySelector/EntrySelector.tsx": 3,
@@ -1548,7 +1622,6 @@
           "src/components/entrySelector/RowLoadingFallback.tsx": 3,
           "src/components/portfolio/PortfolioContainer.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 2,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItemLoadingFallback.tsx": 2,
           "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 2,
@@ -1571,10 +1644,12 @@
         },
         "width": {
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/collectibles/CollectibleListItem.tsx": 1,
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/entrySelector/EntrySelector.tsx": 2,
           "src/components/entrySelector/RowLoadingFallback.tsx": 2,
           "src/components/portfolio/PortfolioContainer.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 7,
           "src/components/onboarding/shared/StepperIndicator.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItemLoadingFallback.tsx": 1,
@@ -1588,6 +1663,15 @@
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
         },
+        "height": {
+          "src/components/collectibles/CollectibleListItem.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1
+        },
+        "overflow": {
+          "src/components/collectibles/CollectibleListItem.tsx": 1,
+          "src/components/entrySelector/EntrySelector.tsx": 1,
+          "src/components/entrySelector/RowLoadingFallback.tsx": 1
+        },
         "spacingHorizontal": {
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/dapp/SignatureRequest.tsx": 1,
@@ -1596,10 +1680,6 @@
         },
         "flexGrow": { "src/components/crypto/PortfolioWallet.tsx": 1 },
         "flexBasis": { "src/components/crypto/PortfolioWallet.tsx": 1 },
-        "overflow": {
-          "src/components/entrySelector/EntrySelector.tsx": 1,
-          "src/components/entrySelector/RowLoadingFallback.tsx": 1
-        },
         "spacing": {
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/entrySelector/RowLoadingFallback.tsx": 1,
@@ -1609,6 +1689,7 @@
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/entrySelector/RowLoadingFallback.tsx": 1,
           "src/components/portfolio/PortfolioContainer.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 6,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItemLoadingFallback.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1,
@@ -1620,7 +1701,6 @@
           "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1
         },
-        "height": { "src/components/entrySelector/RowLoadingFallback.tsx": 1 },
         "alignContent": {
           "src/components/portfolio/PortfolioMenu.tsx": 1,
           "src/components/shared/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
@@ -1634,13 +1714,19 @@
     {
       "name": "Pressable",
       "sourceFile": "@cbhq/cds-web/system/Pressable",
-      "totalInstances": 13,
-      "totalCallSites": 11,
+      "totalInstances": 14,
+      "totalCallSites": 12,
       "cds": "@cbhq/cds-web/system/Pressable",
       "presentationalProps": [
         {
           "prop": "className",
           "callSite": "src/components/onboarding/steps/Verify/MnemonicRow.tsx"
+        }
+      ],
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx",
+          "callSites": ["src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx"]
         }
       ],
       "callSites": {
@@ -1654,6 +1740,7 @@
         "src/components/entrySelector/Row.tsx": 1,
         "src/components/portfolio/PortfolioSelector.tsx": 2,
         "src/components/receive/Receive.tsx": 2,
+        "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
         "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
       },
       "propsWithCallSites": {
@@ -1665,11 +1752,13 @@
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/portfolio/PortfolioSelector.tsx": 2,
           "src/components/receive/Receive.tsx": 2,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
         "testID": {
           "src/components/NavTitle/NavTitle.tsx": 1,
           "src/components/entrySelector/Row.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
         "onPress": {
@@ -1683,6 +1772,7 @@
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/portfolio/PortfolioSelector.tsx": 2,
           "src/components/receive/Receive.tsx": 2,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
         "backgroundColor": {
@@ -1696,19 +1786,17 @@
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/portfolio/PortfolioSelector.tsx": 2,
           "src/components/receive/Receive.tsx": 2,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
         "disabled": {
           "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/entrySelector/Row.tsx": 1
         },
-        "borderColor": {
-          "src/components/collectibles/CollectibleListItem.tsx": 1,
-          "src/components/portfolio/PortfolioSelector.tsx": 2,
-          "src/components/receive/Receive.tsx": 2,
-          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
+        "noScaleOnPress": {
+          "src/components/entrySelector/Row.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1
         },
-        "noScaleOnPress": { "src/components/entrySelector/Row.tsx": 1 },
         "borderRadius": {
           "src/components/entrySelector/Row.tsx": 1,
           "src/components/portfolio/PortfolioSelector.tsx": 2,
@@ -1723,14 +1811,19 @@
           "src/components/receive/Receive.tsx": 2,
           "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
+        "borderColor": {
+          "src/components/portfolio/PortfolioSelector.tsx": 2,
+          "src/components/receive/Receive.tsx": 2,
+          "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1
+        },
         "className": { "src/components/onboarding/steps/Verify/MnemonicRow.tsx": 1 }
       }
     },
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 41,
-      "totalCallSites": 25,
+      "totalInstances": 40,
+      "totalCallSites": 26,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "src/components/NavTitle/NavTitle.tsx": 1,
@@ -1746,7 +1839,7 @@
         "src/components/error/GenericFullPageError.tsx": 1,
         "src/components/navigation/Navigation.tsx": 3,
         "src/components/settings/SettingsItems.tsx": 2,
-        "src/components/transaction/txnDetail.tsx": 3,
+        "src/components/transaction/txnDetail.tsx": 1,
         "src/components/welcome/LinkWithIcon.tsx": 1,
         "src/components/onboarding/shared/BlurText.tsx": 2,
         "src/components/settings/networks/NetworkList.tsx": 1,
@@ -1757,7 +1850,8 @@
         "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
         "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1,
         "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-        "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+        "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+        "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
@@ -1774,7 +1868,7 @@
           "src/components/error/GenericFullPageError.tsx": 1,
           "src/components/navigation/Navigation.tsx": 3,
           "src/components/settings/SettingsItems.tsx": 2,
-          "src/components/transaction/txnDetail.tsx": 3,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/welcome/LinkWithIcon.tsx": 1,
           "src/components/onboarding/shared/BlurText.tsx": 2,
           "src/components/settings/networks/NetworkList.tsx": 1,
@@ -1785,7 +1879,8 @@
           "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "size": {
           "src/components/NavTitle/NavTitle.tsx": 1,
@@ -1801,7 +1896,7 @@
           "src/components/error/GenericFullPageError.tsx": 1,
           "src/components/navigation/Navigation.tsx": 3,
           "src/components/settings/SettingsItems.tsx": 2,
-          "src/components/transaction/txnDetail.tsx": 3,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/welcome/LinkWithIcon.tsx": 1,
           "src/components/onboarding/shared/BlurText.tsx": 2,
           "src/components/settings/networks/NetworkList.tsx": 1,
@@ -1812,7 +1907,8 @@
           "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "color": {
           "src/components/NavTitle/NavTitle.tsx": 1,
@@ -1827,7 +1923,7 @@
           "src/components/error/GenericFullPageError.tsx": 1,
           "src/components/navigation/Navigation.tsx": 3,
           "src/components/settings/SettingsItems.tsx": 2,
-          "src/components/transaction/txnDetail.tsx": 3,
+          "src/components/transaction/txnDetail.tsx": 1,
           "src/components/welcome/LinkWithIcon.tsx": 1,
           "src/components/onboarding/shared/BlurText.tsx": 2,
           "src/components/shared/SearchAssetBar/SearchAssetBar.tsx": 1,
@@ -1836,7 +1932,8 @@
           "src/components/shared/TransactionDetails/TransactionDetailError.tsx": 1,
           "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1,
           "src/components/onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/components/send/steps/EntryStep/AssetSelector.tsx": 1,
+          "src/components/send/steps/SelectRecipientStep/DestinationIcon.tsx": 1
         },
         "spacingStart": {
           "src/components/dapp/SignatureRequest.tsx": 1,
@@ -2049,8 +2146,8 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 11,
-      "totalCallSites": 9,
+      "totalInstances": 12,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
         "src/components/amountInput/MaxButton.tsx": 1,
@@ -2061,6 +2158,7 @@
         "src/components/portfolio/PortfolioSelector.tsx": 2,
         "src/components/receive/Receive.tsx": 2,
         "src/components/onboarding/shared/BlurText.tsx": 1,
+        "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
         "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
       },
       "propsWithCallSites": {
@@ -2073,14 +2171,19 @@
           "src/components/portfolio/PortfolioSelector.tsx": 2,
           "src/components/receive/Receive.tsx": 2,
           "src/components/onboarding/shared/BlurText.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         },
-        "spacing": { "src/components/collectibles/CollectibleListItem.tsx": 1 },
+        "spacing": {
+          "src/components/collectibles/CollectibleListItem.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1
+        },
         "color": {
           "src/components/collectibles/CollectibleListItem.tsx": 1,
           "src/components/crypto/AssetBalance.tsx": 1,
           "src/components/portfolio/PortfolioSelector.tsx": 2,
           "src/components/receive/Receive.tsx": 2,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         },
         "testID": {
@@ -2089,6 +2192,7 @@
         },
         "spacingStart": { "src/components/onboarding/shared/BlurText.tsx": 1 },
         "spacingBottom": {
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         }
       }
@@ -2096,15 +2200,17 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 18,
-      "totalCallSites": 18,
+      "totalInstances": 24,
+      "totalCallSites": 20,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+        "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
         "src/components/authorization/AuthorizationRequest.tsx": 1,
         "src/components/collectibleDetail/Attributes.tsx": 1,
         "src/components/collectibleDetail/CollectibleMetadata.tsx": 1,
         "src/components/collectibleDetail/Links.tsx": 1,
+        "src/components/collectibles/Collections.tsx": 1,
         "src/components/connection/ConnectionLost.tsx": 1,
         "src/components/crypto/AddFundsPrompt.tsx": 1,
         "src/components/dapp/MaliciousSiteWarning.tsx": 1,
@@ -2114,7 +2220,7 @@
         "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
         "src/components/shared/LogoHeader.tsx": 1,
         "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-        "src/components/transaction/GlobalTxnHistory.tsx": 1,
+        "src/components/transaction/GlobalTxnHistory.tsx": 4,
         "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
         "src/components/settings/networks/NetworkList.tsx": 1,
         "src/components/shared/ErrorState/ErrorState.tsx": 1
@@ -2122,10 +2228,12 @@
       "propsWithCallSites": {
         "as": {
           "src/components/assetDetail/AssetDetailBalance.tsx": 1,
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
           "src/components/authorization/AuthorizationRequest.tsx": 1,
           "src/components/collectibleDetail/Attributes.tsx": 1,
           "src/components/collectibleDetail/CollectibleMetadata.tsx": 1,
           "src/components/collectibleDetail/Links.tsx": 1,
+          "src/components/collectibles/Collections.tsx": 1,
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/crypto/AddFundsPrompt.tsx": 1,
           "src/components/dapp/MaliciousSiteWarning.tsx": 1,
@@ -2135,7 +2243,7 @@
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/shared/LogoHeader.tsx": 1,
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 4,
           "src/components/dapp/TransactionRequest/TransactionRequestTopSection.tsx": 1,
           "src/components/settings/networks/NetworkList.tsx": 1,
           "src/components/shared/ErrorState/ErrorState.tsx": 1
@@ -2145,6 +2253,17 @@
           "src/components/connection/ConnectionLost.tsx": 1,
           "src/components/shared/LogoHeader.tsx": 1
         },
+        "spacingTop": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
+          "src/components/dapp/MaliciousSiteWarning.tsx": 1,
+          "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 2,
+          "src/components/shared/ErrorState/ErrorState.tsx": 1
+        },
+        "spacingStart": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
+          "src/components/transaction/GlobalTxnHistory.tsx": 3
+        },
         "align": {
           "src/components/authorization/AuthorizationRequest.tsx": 1,
           "src/components/connection/ConnectionLost.tsx": 1,
@@ -2153,11 +2272,6 @@
           "src/components/switchEthereumChain/SwitchChainRequest.tsx": 1
         },
         "testID": { "src/components/crypto/AddFundsPrompt.tsx": 1 },
-        "spacingTop": {
-          "src/components/dapp/MaliciousSiteWarning.tsx": 1,
-          "src/components/forceUpdate/ForceUpdateWarning.tsx": 1,
-          "src/components/shared/ErrorState/ErrorState.tsx": 1
-        },
         "spacingBottom": {
           "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/shared/LogoHeader.tsx": 1
@@ -2385,13 +2499,14 @@
     {
       "name": "ListCell",
       "sourceFile": "@cbhq/cds-web/cells/ListCell",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "cds": "@cbhq/cds-web/cells/ListCell",
       "callSites": {
         "src/components/settings/DAppSettings.tsx": 1,
         "src/components/settings/SettingsItems.tsx": 1,
         "src/components/transaction/txnHistoryListItem.tsx": 1,
+        "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
         "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1
       },
       "propsWithCallSites": {
@@ -2399,11 +2514,13 @@
           "src/components/settings/DAppSettings.tsx": 1,
           "src/components/settings/SettingsItems.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1
         },
         "description": {
           "src/components/settings/DAppSettings.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1
         },
         "detail": {
@@ -2415,6 +2532,7 @@
         "media": {
           "src/components/settings/DAppSettings.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 1,
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1
         },
         "priority": {
@@ -2426,6 +2544,7 @@
           "src/components/shared/SharedAssetRowItem/SharedAssetRowItem.tsx": 1
         },
         "action": { "src/components/settings/SettingsItems.tsx": 1 },
+        "detailWidth": { "src/components/settings/SettingsItems.tsx": 1 },
         "onPress": {
           "src/components/settings/SettingsItems.tsx": 1,
           "src/components/transaction/txnHistoryListItem.tsx": 1,
@@ -2440,6 +2559,44 @@
       }
     },
     {
+      "name": "Link",
+      "sourceFile": "@cbhq/cds-web/typography/Link",
+      "totalInstances": 7,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/typography/Link",
+      "callSites": {
+        "src/components/settings/DAppSettings.tsx": 1,
+        "src/components/shared/TransactionDetails/useTransactionDetailsErrors.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 2,
+        "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
+        "src/components/trade/steps/ConfirmationPreviewStep/useTradeTransactionDetailsErrors.tsx": 1,
+        "src/components/trade/steps/EntryStep/useTargetSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "src/components/settings/DAppSettings.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 2,
+          "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1
+        },
+        "href": { "src/components/shared/TransactionDetails/useTransactionDetailsErrors.tsx": 1 },
+        "target": { "src/components/shared/TransactionDetails/useTransactionDetailsErrors.tsx": 1 },
+        "variant": {
+          "src/components/onboarding/steps/Password/Password.tsx": 2,
+          "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
+          "src/components/trade/steps/ConfirmationPreviewStep/useTradeTransactionDetailsErrors.tsx": 1,
+          "src/components/trade/steps/EntryStep/useTargetSelector.tsx": 1
+        },
+        "onPress": {
+          "src/components/onboarding/steps/Password/Password.tsx": 2,
+          "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1
+        },
+        "onClick": {
+          "src/components/trade/steps/ConfirmationPreviewStep/useTradeTransactionDetailsErrors.tsx": 1,
+          "src/components/trade/steps/EntryStep/useTargetSelector.tsx": 1
+        }
+      }
+    },
+    {
       "name": "LottieStatusAnimation",
       "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
       "totalInstances": 1,
@@ -2451,28 +2608,25 @@
       }
     },
     {
-      "name": "TextDisplay1",
-      "sourceFile": "@cbhq/cds-web/typography/TextDisplay1",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextDisplay1",
-      "propsWithCallSites": {
-        "as": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
-        "color": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
-        "align": { "src/components/transaction/txnAmountDisplay.tsx": 1 }
-      }
-    },
-    {
       "name": "TextDisplay2",
       "sourceFile": "@cbhq/cds-web/typography/TextDisplay2",
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/typography/TextDisplay2",
       "propsWithCallSites": {
-        "as": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
-        "color": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
-        "align": { "src/components/transaction/txnAmountDisplay.tsx": 1 },
-        "spacingVertical": { "src/components/transaction/txnAmountDisplay.tsx": 1 }
+        "testID": { "src/components/transaction/txnDetail.tsx": 1 },
+        "as": { "src/components/transaction/txnDetail.tsx": 1 }
+      }
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-web/layout/Divider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Divider",
+      "propsWithCallSites": {
+        "direction": { "src/components/transaction/txnDetail.tsx": 1 },
+        "spacingTop": { "src/components/transaction/txnDetail.tsx": 1 }
       }
     },
     {
@@ -2569,15 +2723,15 @@
     {
       "name": "TableCell",
       "sourceFile": "@cbhq/cds-web/tables/TableCell",
-      "totalInstances": 4,
+      "totalInstances": 5,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/tables/TableCell",
-      "callSites": { "src/components/settings/networks/NetworkList.tsx": 4 },
+      "callSites": { "src/components/settings/networks/NetworkList.tsx": 5 },
       "propsWithCallSites": {
         "title": { "src/components/settings/networks/NetworkList.tsx": 2 },
         "onPress": { "src/components/settings/networks/NetworkList.tsx": 2 },
-        "direction": { "src/components/settings/networks/NetworkList.tsx": 1 },
-        "justifyContent": { "src/components/settings/networks/NetworkList.tsx": 1 }
+        "direction": { "src/components/settings/networks/NetworkList.tsx": 2 },
+        "justifyContent": { "src/components/settings/networks/NetworkList.tsx": 2 }
       }
     },
     {
@@ -2643,42 +2797,6 @@
         "content": { "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1 },
         "placement": { "src/components/shared/TransactionDetails/TransactionDetailRow.tsx": 1 }
       }
-    },
-    {
-      "name": "Link",
-      "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 6,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/typography/Link",
-      "callSites": {
-        "src/components/shared/TransactionDetails/useTransactionDetailsErrors.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 2,
-        "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
-        "src/components/trade/steps/ConfirmationPreviewStep/useTradeTransactionDetailsErrors.tsx": 1,
-        "src/components/trade/steps/EntryStep/useTargetSelector.tsx": 1
-      },
-      "propsWithCallSites": {
-        "href": { "src/components/shared/TransactionDetails/useTransactionDetailsErrors.tsx": 1 },
-        "target": { "src/components/shared/TransactionDetails/useTransactionDetailsErrors.tsx": 1 },
-        "variant": {
-          "src/components/onboarding/steps/Password/Password.tsx": 2,
-          "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
-          "src/components/trade/steps/ConfirmationPreviewStep/useTradeTransactionDetailsErrors.tsx": 1,
-          "src/components/trade/steps/EntryStep/useTargetSelector.tsx": 1
-        },
-        "color": {
-          "src/components/onboarding/steps/Password/Password.tsx": 2,
-          "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1
-        },
-        "onPress": {
-          "src/components/onboarding/steps/Password/Password.tsx": 2,
-          "src/components/send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1
-        },
-        "onClick": {
-          "src/components/trade/steps/ConfirmationPreviewStep/useTradeTransactionDetailsErrors.tsx": 1,
-          "src/components/trade/steps/EntryStep/useTargetSelector.tsx": 1
-        }
-      }
     }
   ],
   "presentational": [
@@ -2697,6 +2815,14 @@
       "totalCallSites": 1,
       "presentationalProps": [{ "prop": "className", "callSite": "src/App.tsx" }],
       "propsWithCallSites": { "id": { "src/App.tsx": 1 }, "className": { "src/App.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [{ "prop": "className", "callSite": "src/index.tsx" }],
+      "propsWithCallSites": { "className": { "src/index.tsx": 1 } }
     },
     {
       "name": "StyledToastItem",
@@ -3011,13 +3137,6 @@
       }
     },
     {
-      "name": "CenteredText",
-      "sourceFile": "src/components/collectibles/CollectibleListItem.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "div",
       "sourceFile": "src/components/collectibles/CollectiblesList.tsx",
       "totalInstances": 4,
@@ -3040,19 +3159,79 @@
     {
       "name": "FixedSizeGrid",
       "sourceFile": "react-window/FixedSizeGrid",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/collectibles/CollectiblesList.tsx" },
+        { "prop": "className", "callSite": "src/components/collectibles/CollectionsList.tsx" }
+      ],
+      "callSites": {
+        "src/components/collectibles/CollectiblesList.tsx": 1,
+        "src/components/collectibles/CollectionsList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "className": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "columnCount": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "rowCount": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "columnWidth": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "rowHeight": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "width": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "height": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "img",
+      "sourceFile": "src/components/collectibles/Collections.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "src/components/collectibles/CollectiblesList.tsx" }
+        { "prop": "className", "callSite": "src/components/collectibles/Collections.tsx" }
       ],
       "propsWithCallSites": {
-        "className": { "src/components/collectibles/CollectiblesList.tsx": 1 },
-        "columnCount": { "src/components/collectibles/CollectiblesList.tsx": 1 },
-        "rowCount": { "src/components/collectibles/CollectiblesList.tsx": 1 },
-        "columnWidth": { "src/components/collectibles/CollectiblesList.tsx": 1 },
-        "rowHeight": { "src/components/collectibles/CollectiblesList.tsx": 1 },
-        "width": { "src/components/collectibles/CollectiblesList.tsx": 1 },
-        "height": { "src/components/collectibles/CollectiblesList.tsx": 1 }
+        "className": { "src/components/collectibles/Collections.tsx": 1 },
+        "src": { "src/components/collectibles/Collections.tsx": 1 },
+        "alt": { "src/components/collectibles/Collections.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/collectibles/CollectionsList.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/collectibles/CollectionsList.tsx" },
+        { "prop": "className", "callSite": "src/components/collectibles/CollectionsList.tsx" },
+        { "prop": "style", "callSite": "src/components/collectibles/CollectionsList.tsx" },
+        { "prop": "className", "callSite": "src/components/collectibles/CollectionsList.tsx" },
+        { "prop": "className", "callSite": "src/components/collectibles/CollectionsList.tsx" }
+      ],
+      "callSites": { "src/components/collectibles/CollectionsList.tsx": 4 },
+      "propsWithCallSites": {
+        "data-testid": { "src/components/collectibles/CollectionsList.tsx": 2 },
+        "className": { "src/components/collectibles/CollectionsList.tsx": 4 },
+        "key": { "src/components/collectibles/CollectionsList.tsx": 1 },
+        "style": { "src/components/collectibles/CollectionsList.tsx": 1 }
       }
     },
     {
@@ -3344,24 +3523,27 @@
       "name": "Tooltip",
       "sourceFile": "src/components/shared/Tooltip",
       "totalInstances": 9,
-      "totalCallSites": 4,
+      "totalCallSites": 5,
       "presentationalElement": "TooltipPopover",
       "callSites": {
         "src/components/navigation/Navigation.tsx": 3,
         "src/components/portfolio/PortfolioMenu.tsx": 3,
-        "src/components/transaction/txnDetail.tsx": 2,
+        "src/components/settings/DAppSettings.tsx": 1,
+        "src/components/transaction/txnDetail.tsx": 1,
         "src/components/shared/SharedAssetRowItem/AssetIcon.tsx": 1
       },
       "propsWithCallSites": {
         "content": {
           "src/components/navigation/Navigation.tsx": 3,
           "src/components/portfolio/PortfolioMenu.tsx": 3,
-          "src/components/transaction/txnDetail.tsx": 2
+          "src/components/settings/DAppSettings.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1
         },
         "placement": {
           "src/components/navigation/Navigation.tsx": 3,
           "src/components/portfolio/PortfolioMenu.tsx": 3,
-          "src/components/transaction/txnDetail.tsx": 2
+          "src/components/settings/DAppSettings.tsx": 1,
+          "src/components/transaction/txnDetail.tsx": 1
         }
       }
     },
@@ -3602,19 +3784,6 @@
       }
     },
     {
-      "name": "div",
-      "sourceFile": "src/components/transaction/GlobalTxnHistory.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "style", "callSite": "src/components/transaction/GlobalTxnHistory.tsx" }
-      ],
-      "propsWithCallSites": {
-        "style": { "src/components/transaction/GlobalTxnHistory.tsx": 1 },
-        "key": { "src/components/transaction/GlobalTxnHistory.tsx": 1 }
-      }
-    },
-    {
       "name": "img",
       "sourceFile": "src/components/transaction/GlobalTxnHistory.tsx",
       "totalInstances": 1,
@@ -3630,20 +3799,26 @@
     },
     {
       "name": "div",
-      "sourceFile": "src/components/transaction/txnDetail.tsx",
-      "totalInstances": 4,
+      "sourceFile": "src/components/transaction/GlobalTxnHistory.tsx",
+      "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalProps": [
-        { "prop": "className", "callSite": "src/components/transaction/txnDetail.tsx" },
-        { "prop": "className", "callSite": "src/components/transaction/txnDetail.tsx" },
-        { "prop": "className", "callSite": "src/components/transaction/txnDetail.tsx" },
+        { "prop": "style", "callSite": "src/components/transaction/GlobalTxnHistory.tsx" }
+      ],
+      "propsWithCallSites": {
+        "style": { "src/components/transaction/GlobalTxnHistory.tsx": 1 },
+        "key": { "src/components/transaction/GlobalTxnHistory.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/transaction/txnDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
         { "prop": "className", "callSite": "src/components/transaction/txnDetail.tsx" }
       ],
-      "callSites": { "src/components/transaction/txnDetail.tsx": 4 },
-      "propsWithCallSites": {
-        "className": { "src/components/transaction/txnDetail.tsx": 4 },
-        "onClick": { "src/components/transaction/txnDetail.tsx": 1 }
-      }
+      "propsWithCallSites": { "className": { "src/components/transaction/txnDetail.tsx": 1 } }
     },
     {
       "name": "a",
@@ -3945,6 +4120,32 @@
         "viewBox": { "src/components/shared/svgIcons/CoinbaseWalletIcon.tsx": 1 },
         "fill": { "src/components/shared/svgIcons/CoinbaseWalletIcon.tsx": 1 },
         "xmlns": { "src/components/shared/svgIcons/CoinbaseWalletIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/shared/svgIcons/DisconnectIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "src/components/shared/svgIcons/DisconnectIcon.tsx" }
+      ],
+      "propsWithCallSites": {
+        "className": { "src/components/shared/svgIcons/DisconnectIcon.tsx": 1 }
+      }
+    },
+    {
+      "name": "svg",
+      "sourceFile": "src/components/shared/svgIcons/DisconnectIcon.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg",
+      "propsWithCallSites": {
+        "width": { "src/components/shared/svgIcons/DisconnectIcon.tsx": 1 },
+        "height": { "src/components/shared/svgIcons/DisconnectIcon.tsx": 1 },
+        "viewBox": { "src/components/shared/svgIcons/DisconnectIcon.tsx": 1 },
+        "fill": { "src/components/shared/svgIcons/DisconnectIcon.tsx": 1 },
+        "xmlns": { "src/components/shared/svgIcons/DisconnectIcon.tsx": 1 }
       }
     },
     {
@@ -4273,25 +4474,34 @@
       }
     },
     {
-      "name": "HoverTooltipDiv",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "name": "Item",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "div"
+      "styledComponent": "Caps",
+      "propsWithCallSites": {
+        "key": {
+          "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
+        },
+        "color": {
+          "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
+        },
+        "visible": {
+          "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
+        }
+      }
     },
     {
-      "name": "PriceText",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "name": "Container",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "span"
-    },
-    {
-      "name": "DateText",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Caption"
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "data-testid": {
+          "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 1
+        }
+      }
     },
     {
       "name": "Container",
@@ -4357,34 +4567,25 @@
       }
     },
     {
-      "name": "Item",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
+      "name": "HoverTooltipDiv",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "Caps",
-      "propsWithCallSites": {
-        "key": {
-          "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
-        },
-        "color": {
-          "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
-        },
-        "visible": {
-          "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx": 1
-        }
-      }
+      "styledComponent": "div"
     },
     {
-      "name": "Container",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx",
+      "name": "PriceText",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "data-testid": {
-          "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 1
-        }
-      }
+      "styledComponent": "span"
+    },
+    {
+      "name": "DateText",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverTooltip/HoverTooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Caption"
     },
     {
       "name": "SelectorContainer",
@@ -4518,6 +4719,17 @@
       "sourceFile": "src/components/BannedLocationGate/BannedLocationGate",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "CdsProvider",
+      "sourceFile": "src/providers/CdsProvider",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/forceUpdateWarning.tsx": 1,
+        "src/index.tsx": 1,
+        "src/maliciousSiteWarning.tsx": 1
+      }
     },
     {
       "name": "IntlProvider",
@@ -4783,33 +4995,25 @@
     {
       "name": "AssetIcon",
       "sourceFile": "@components/shared/SharedAssetRowItem/AssetIcon",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "src/components/amountInput/CurrencyInput.tsx": 1,
         "src/components/assetDetail/AssetDetailContainer.tsx": 1,
-        "src/components/transaction/txnAmountDisplay.tsx": 1,
         "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
       },
       "propsWithCallSites": {
         "asset": {
           "src/components/amountInput/CurrencyInput.tsx": 1,
           "src/components/assetDetail/AssetDetailContainer.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1,
           "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
         },
         "spacingEnd": {
           "src/components/amountInput/CurrencyInput.tsx": 1,
           "src/components/send/steps/EntryStep/AssetSelector.tsx": 1
         },
-        "layout": {
-          "src/components/assetDetail/AssetDetailContainer.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1
-        },
-        "size": {
-          "src/components/assetDetail/AssetDetailContainer.tsx": 1,
-          "src/components/transaction/txnAmountDisplay.tsx": 1
-        }
+        "layout": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
+        "size": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
       }
     },
     {
@@ -4848,6 +5052,7 @@
           "src/components/crypto/PortfolioWallet.tsx": 1
         },
         "hideTrade": {
+          "src/components/assetDetail/AssetDetailBalance.tsx": 1,
           "src/components/crypto/PortfolioWallet.tsx": 1,
           "src/components/portfolio/PortfolioContainer.tsx": 1
         },
@@ -4868,11 +5073,12 @@
     {
       "name": "NavTitle",
       "sourceFile": "@components/NavTitle",
-      "totalInstances": 13,
-      "totalCallSites": 12,
+      "totalInstances": 14,
+      "totalCallSites": 13,
       "callSites": {
         "src/components/assetDetail/AssetDetailContainer.tsx": 1,
         "src/components/collectibleDetail/CollectibleDetailContainer.tsx": 1,
+        "src/components/collectibles/CollectionView.tsx": 1,
         "src/components/error/GenericFullPageError.tsx": 1,
         "src/components/phoneConfirmation/PhoneConfirmation.tsx": 1,
         "src/components/receive/Receive.tsx": 1,
@@ -4887,7 +5093,7 @@
       "propsWithCallSites": {
         "title": {
           "src/components/assetDetail/AssetDetailContainer.tsx": 1,
-          "src/components/collectibleDetail/CollectibleDetailContainer.tsx": 1,
+          "src/components/collectibles/CollectionView.tsx": 1,
           "src/components/receive/Receive.tsx": 1,
           "src/components/settings/SettingPage.tsx": 1,
           "src/components/transaction/txnDetailContainer.tsx": 2,
@@ -4928,6 +5134,7 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "walletId": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
+        "isL2Asset": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
         "fiatValueDisplay": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 },
         "cryptoValueDisplay": { "src/components/assetDetail/AssetDetailContainer.tsx": 1 }
       }
@@ -4953,26 +5160,6 @@
       }
     },
     {
-      "name": "TxnHistoryListItem",
-      "sourceFile": "src/components/transaction/txnHistoryListItem/TxnHistoryListItem",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
-        "src/components/transaction/GlobalTxnHistory.tsx": 1
-      },
-      "propsWithCallSites": {
-        "key": {
-          "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1
-        },
-        "transaction": {
-          "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TxnListFallback",
       "sourceFile": "src/components/shared/TxnListFallback",
       "totalInstances": 2,
@@ -4983,59 +5170,115 @@
       }
     },
     {
-      "name": "WindowScroller",
-      "sourceFile": "react-virtualized/WindowScroller",
+      "name": "Transactions",
+      "sourceFile": "src/components/assetDetail/AssetTransactionHistory.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "scrollElement": { "src/components/assetDetail/AssetTransactionHistory.tsx": 1 }
+        "transactions": { "src/components/assetDetail/AssetTransactionHistory.tsx": 1 },
+        "container": { "src/components/assetDetail/AssetTransactionHistory.tsx": 1 }
+      }
+    },
+    {
+      "name": "TxnHistoryListItem",
+      "sourceFile": "src/components/transaction/txnHistoryListItem/TxnHistoryListItem",
+      "totalInstances": 4,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
+        "src/components/transaction/GlobalTxnHistory.tsx": 2
+      },
+      "propsWithCallSites": {
+        "key": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
+          "src/components/transaction/GlobalTxnHistory.tsx": 2
+        },
+        "transaction": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 2,
+          "src/components/transaction/GlobalTxnHistory.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "WindowScroller",
+      "sourceFile": "react-virtualized/WindowScroller",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+        "src/components/transaction/GlobalTxnHistory.tsx": 1
+      },
+      "propsWithCallSites": {
+        "scrollElement": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1
+        }
       }
     },
     {
       "name": "AutoSizer",
       "sourceFile": "react-virtualized/AutoSizer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+        "src/components/transaction/GlobalTxnHistory.tsx": 1
+      },
       "propsWithCallSites": {
-        "disableHeight": { "src/components/assetDetail/AssetTransactionHistory.tsx": 1 },
+        "disableHeight": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1
+        },
         "defaultHeight": { "src/components/assetDetail/AssetTransactionHistory.tsx": 1 }
       }
     },
     {
       "name": "List",
       "sourceFile": "react-virtualized/List",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+        "src/components/transaction/GlobalTxnHistory.tsx": 1,
         "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
         "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1
       },
       "propsWithCallSites": {
-        "autoHeight": { "src/components/assetDetail/AssetTransactionHistory.tsx": 1 },
+        "autoHeight": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1
+        },
         "height": {
           "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1
         },
         "width": {
           "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1
         },
-        "scrollTop": { "src/components/assetDetail/AssetTransactionHistory.tsx": 1 },
+        "scrollTop": {
+          "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1
+        },
         "rowHeight": {
           "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1
         },
         "rowRenderer": {
           "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1
         },
         "rowCount": {
           "src/components/assetDetail/AssetTransactionHistory.tsx": 1,
+          "src/components/transaction/GlobalTxnHistory.tsx": 1,
           "src/components/shared/SharedSelectWalletStep/SharedSelectWalletStep.tsx": 1,
           "src/components/trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1
         },
@@ -5281,6 +5524,15 @@
     },
     {
       "name": "div",
+      "sourceFile": "src/components/collectibleDetail/CollectibleDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data-testid": { "src/components/collectibleDetail/CollectibleDetail.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
       "sourceFile": "src/components/collectibleDetail/CollectibleDetailContainer.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -5356,13 +5608,48 @@
       }
     },
     {
-      "name": "RenderForDev",
-      "sourceFile": "@src/util/RenderForDev",
+      "name": "AutoSizer",
+      "sourceFile": "react-virtualized-auto-sizer/AutoSizer",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/components/collectibles/CollectiblesList.tsx": 1,
+        "src/components/collectibles/CollectionsList.tsx": 1,
+        "src/components/crypto/AssetList.tsx": 1
+      }
+    },
+    {
+      "name": "CollectibleListItem",
+      "sourceFile": "src/components/collectibles/CollectibleListItem",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "src/components/collectibles/Collectible.tsx": 1,
-        "src/components/portfolio/Portfolio.tsx": 1
+        "src/components/collectibles/CollectiblesList.tsx": 1,
+        "src/components/collectibles/CollectionsList.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onSelect": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "name": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "imageURL": {
+          "src/components/collectibles/CollectiblesList.tsx": 1,
+          "src/components/collectibles/CollectionsList.tsx": 1
+        },
+        "count": { "src/components/collectibles/CollectionsList.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/collectibles/CollectionView.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data-testid": { "src/components/collectibles/CollectionView.tsx": 1 }
       }
     },
     {
@@ -5371,29 +5658,59 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "key": { "src/components/collectibles/Collectible.tsx": 1 },
-        "collectibles": { "src/components/collectibles/Collectible.tsx": 1 }
+        "collectibles": { "src/components/collectibles/CollectionView.tsx": 1 }
       }
     },
     {
-      "name": "AutoSizer",
-      "sourceFile": "react-virtualized-auto-sizer/AutoSizer",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "name": "div",
+      "sourceFile": "src/components/collectibles/Collections.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "data-testid": { "src/components/collectibles/Collections.tsx": 1 } }
+    },
+    {
+      "name": "a",
+      "sourceFile": "src/components/collectibles/Collections.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "RenderForDev",
+      "sourceFile": "@src/util/RenderForDev",
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "callSites": {
-        "src/components/collectibles/CollectiblesList.tsx": 1,
-        "src/components/crypto/AssetList.tsx": 1,
-        "src/components/transaction/GlobalTxnHistory.tsx": 1
+        "src/components/collectibles/Collections.tsx": 1,
+        "src/components/portfolio/Portfolio.tsx": 1
       }
     },
     {
-      "name": "CollectibleListItem",
-      "sourceFile": "src/components/collectibles/CollectibleListItem",
+      "name": "CollectionsList",
+      "sourceFile": "src/components/collectibles/CollectionsList",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "onSelect": { "src/components/collectibles/CollectiblesList.tsx": 1 },
-        "collectible": { "src/components/collectibles/CollectiblesList.tsx": 1 }
+        "data-testid": { "src/components/collectibles/Collections.tsx": 1 },
+        "collections": { "src/components/collectibles/Collections.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/components/collectibles/PortfolioCollection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data-testid": { "src/components/collectibles/PortfolioCollection.tsx": 1 },
+        "ref": { "src/components/collectibles/PortfolioCollection.tsx": 1 }
+      }
+    },
+    {
+      "name": "CollectionView",
+      "sourceFile": "src/components/collectibles/CollectionView",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "collection": { "src/components/collectibles/PortfolioCollection.tsx": 1 }
       }
     },
     {
@@ -5467,29 +5784,13 @@
     {
       "name": "FixedSizeList",
       "sourceFile": "react-window/FixedSizeList",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/components/crypto/AssetList.tsx": 1,
-        "src/components/transaction/GlobalTxnHistory.tsx": 1
-      },
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "propsWithCallSites": {
-        "itemCount": {
-          "src/components/crypto/AssetList.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1
-        },
-        "width": {
-          "src/components/crypto/AssetList.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1
-        },
-        "height": {
-          "src/components/crypto/AssetList.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1
-        },
-        "itemSize": {
-          "src/components/crypto/AssetList.tsx": 1,
-          "src/components/transaction/GlobalTxnHistory.tsx": 1
-        }
+        "itemCount": { "src/components/crypto/AssetList.tsx": 1 },
+        "width": { "src/components/crypto/AssetList.tsx": 1 },
+        "height": { "src/components/crypto/AssetList.tsx": 1 },
+        "itemSize": { "src/components/crypto/AssetList.tsx": 1 }
       }
     },
     {
@@ -5675,7 +5976,7 @@
           "src/components/receive/Receive.tsx": 2
         },
         "exact": {
-          "src/components/portfolio/Portfolio.tsx": 1,
+          "src/components/portfolio/Portfolio.tsx": 2,
           "src/components/receive/Receive.tsx": 1
         },
         "component": {
@@ -5959,9 +6260,8 @@
           "src/components/settings/ChangePassword.tsx": 1
         },
         "onEnter": { "src/components/recovery/ShowRecoveryPhrase.tsx": 1 },
-        "end": { "src/components/settings/AutoLockTimer.tsx": 1 },
-        "onPaste": { "src/components/settings/AutoLockTimer.tsx": 1 },
         "maxLength": { "src/components/settings/AutoLockTimer.tsx": 1 },
+        "suffix": { "src/components/settings/AutoLockTimer.tsx": 1 },
         "placeholder": { "src/components/settings/ChangePassword.tsx": 1 }
       }
     },
@@ -6050,12 +6350,6 @@
       }
     },
     {
-      "name": "InputAccessory",
-      "sourceFile": "src/components/settings/AutoLockTimer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "SetPassword",
       "sourceFile": "@src/components/shared/SetPassword",
       "totalInstances": 2,
@@ -6078,14 +6372,10 @@
       }
     },
     {
-      "name": "img",
-      "sourceFile": "src/components/settings/DAppSettings.tsx",
+      "name": "DisconnectIcon",
+      "sourceFile": "src/components/shared/svgIcons/DisconnectIcon",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": { "src/components/settings/DAppSettings.tsx": 1 },
-        "alt": { "src/components/settings/DAppSettings.tsx": 1 }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "AssetIcon",
@@ -6336,26 +6626,13 @@
       }
     },
     {
-      "name": "TxnAmountDisplay",
-      "sourceFile": "src/components/transaction/txnAmountDisplay/TxnAmountDisplay",
+      "name": "Transactions",
+      "sourceFile": "src/components/transaction/GlobalTxnHistory.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "fiatAmountDisplay": { "src/components/transaction/txnDetail.tsx": 1 },
-        "cryptoAmountDisplay": { "src/components/transaction/txnDetail.tsx": 1 },
-        "wallet": { "src/components/transaction/txnDetail.tsx": 1 }
-      }
-    },
-    {
-      "name": "img",
-      "sourceFile": "src/components/transaction/txnDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "height": { "src/components/transaction/txnDetail.tsx": 1 },
-        "width": { "src/components/transaction/txnDetail.tsx": 1 },
-        "src": { "src/components/transaction/txnDetail.tsx": 1 },
-        "alt": { "src/components/transaction/txnDetail.tsx": 1 }
+        "transactions": { "src/components/transaction/GlobalTxnHistory.tsx": 1 },
+        "networkContext": { "src/components/transaction/GlobalTxnHistory.tsx": 1 }
       }
     },
     {
@@ -6364,7 +6641,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "wallet": { "src/components/transaction/txnDetailContainer.tsx": 1 },
         "transaction": { "src/components/transaction/txnDetailContainer.tsx": 1 }
       }
     },
@@ -6542,42 +6818,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "SharedAssetRowItem",
-      "sourceFile": "@components/shared/SharedAssetRowItem",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
-        "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
-          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
-        },
-        "imageUrl": {
-          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
-          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
-        },
-        "currencyCode": {
-          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
-          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
-        },
-        "network": {
-          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
-          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
-        },
-        "onSelect": {
-          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
-          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
-        },
-        "disabled": { "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1 },
-        "fiatBalance": { "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1 },
-        "currencyBalance": { "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1 },
-        "isDescriptionVisible": { "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1 }
-      }
-    },
-    {
       "name": "Formik",
       "sourceFile": "formik/Formik",
       "totalInstances": 1,
@@ -6637,12 +6877,74 @@
       "callSites": { "src/components/settings/networks/NetworkSelector.tsx": 2 },
       "propsWithCallSites": {
         "key": { "src/components/settings/networks/NetworkSelector.tsx": 1 },
-        "isDevModeOnly": { "src/components/settings/networks/NetworkSelector.tsx": 2 },
         "title": { "src/components/settings/networks/NetworkSelector.tsx": 2 },
         "networks": { "src/components/settings/networks/NetworkSelector.tsx": 2 },
         "currentNetwork": { "src/components/settings/networks/NetworkSelector.tsx": 2 },
         "onNetworkChange": { "src/components/settings/networks/NetworkSelector.tsx": 2 },
         "additionalEntries": { "src/components/settings/networks/NetworkSelector.tsx": 1 }
+      }
+    },
+    {
+      "name": "SharedAssetRowItem",
+      "sourceFile": "@components/shared/SharedAssetRowItem",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
+        "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
+          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
+        },
+        "imageUrl": {
+          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
+          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
+        },
+        "currencyCode": {
+          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
+          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
+        },
+        "network": {
+          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
+          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
+        },
+        "onSelect": {
+          "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1,
+          "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1
+        },
+        "disabled": { "src/components/shared/AssetRowItem/AssetRowItem.tsx": 1 },
+        "fiatBalance": { "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1 },
+        "currencyBalance": { "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1 },
+        "isDescriptionVisible": { "src/components/shared/WalletRowItem/WalletRowItem.tsx": 1 }
+      }
+    },
+    {
+      "name": "NoSearchResults",
+      "sourceFile": "src/components/shared/SearchSuggestionsList/NoSearchResults",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "noSearchResultsMessage": {
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SearchSuggestionCell",
+      "sourceFile": "src/components/shared/SearchSuggestionsList/SearchSuggestionCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1 },
+        "title": { "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1 },
+        "description": {
+          "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1
+        },
+        "onPress": { "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1 },
+        "media": { "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1 },
+        "testID": { "src/components/shared/SearchSuggestionsList/SearchSuggestionsList.tsx": 1 }
       }
     },
     {
@@ -6856,8 +7158,8 @@
       "callSites": {
         "src/components/onboarding/steps/Entry/Entry.tsx": 1,
         "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+        "src/components/onboarding/steps/Password/Password.tsx": 1,
         "src/components/onboarding/steps/Success/Success.tsx": 1,
         "src/components/onboarding/steps/Username/Username.tsx": 1,
         "src/components/onboarding/steps/Verify/Verify.tsx": 1
@@ -6865,16 +7167,16 @@
       "propsWithCallSites": {
         "flexDirection": {
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/Success/Success.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/onboarding/steps/Verify/Verify.tsx": 1
         },
         "justifyContent": {
           "src/components/onboarding/steps/ImportWallet/ImportWallet.tsx": 1,
-          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/components/onboarding/steps/Password/Password.tsx": 1,
           "src/components/onboarding/steps/Username/Username.tsx": 1,
           "src/components/onboarding/steps/Verify/Verify.tsx": 1
         }
@@ -7048,6 +7350,25 @@
       }
     },
     {
+      "name": "img",
+      "sourceFile": "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "alt": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
+        "src": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+      }
+    },
+    {
+      "name": "DestinationIcon",
+      "sourceFile": "src/components/send/steps/SelectRecipientStep/DestinationIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "type": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+      }
+    },
+    {
       "name": "SendAddressInput",
       "sourceFile": "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx",
       "totalInstances": 1,
@@ -7060,18 +7381,41 @@
       }
     },
     {
-      "name": "NextButton",
-      "sourceFile": "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx",
+      "name": "SearchSuggestionsList",
+      "sourceFile": "@components/shared/SearchSuggestionsList/SearchSuggestionsList",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "handlePress": {
+        "suggestions": {
           "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "showTitle": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
+        "title": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
+        "handleSuggestionClick": {
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "searchQuery": {
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        },
+        "noSearchResultsMessage": {
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NextButton",
+      "sourceFile": "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 2 },
+      "propsWithCallSites": {
+        "handlePress": {
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 2
         },
         "isDisabled": {
-          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+          "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 2
         },
-        "isLoading": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+        "isLoading": { "src/components/send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 2 }
       }
     },
     {
@@ -7450,26 +7794,6 @@
       }
     },
     {
-      "name": "HoverPoint",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverPoint",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "x": {
-          "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverIndicator.tsx": 1
-        },
-        "points": {
-          "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverIndicator.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "g",
-      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverPoint.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "Container",
       "sourceFile": "src/external-libs/assetChart/components/Chart/components/HorizontalAxis/HorizontalAxis.tsx",
       "totalInstances": 1,
@@ -7510,6 +7834,26 @@
           "src/external-libs/assetChart/components/Chart/components/EmptyChart/EmptyChart.tsx": 2
         }
       }
+    },
+    {
+      "name": "HoverPoint",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverPoint",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "x": {
+          "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverIndicator.tsx": 1
+        },
+        "points": {
+          "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverIndicator.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "g",
+      "sourceFile": "src/external-libs/assetChart/components/Chart/components/HoverIndicator/HoverPoint.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Component",
