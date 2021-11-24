@@ -211,4 +211,6 @@ export const navigationIconNames = [
   'directDeposit',
   'support',
   'planet',
+  'application',
+  'appSwitcher',
 ] as const;

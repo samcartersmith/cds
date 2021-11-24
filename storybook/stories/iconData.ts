@@ -240,4 +240,8 @@ export const unicodeMap = {
   clockOutline: { '8': 'uE4CF', '12': 'uE4D0', '16': 'uE4D1', '24': 'uE4D2', '32': 'uE4D3' },
   cashRupee: { '8': 'uE4D4', '12': 'uE4D5', '16': 'uE4D6', '24': 'uE4D7', '32': 'uE4D8' },
   chainLink: { '8': 'uE4D9', '12': 'uE4DA', '16': 'uE4DB', '24': 'uE4DC', '32': 'uE4DD' },
+  applicationInactive: { '8': 'uE4DE', '12': 'uE4DF', '16': 'uE4E0', '24': 'uE4E1', '32': 'uE4E2' },
+  applicationActive: { '8': 'uE4E3', '12': 'uE4E4', '16': 'uE4E5', '24': 'uE4E6', '32': 'uE4E7' },
+  appSwitcherInactive: { '8': 'uE4E8', '12': 'uE4E9', '16': 'uE4EA', '24': 'uE4EB', '32': 'uE4EC' },
+  appSwitcherActive: { '8': 'uE4ED', '12': 'uE4EE', '16': 'uE4EF', '24': 'uE4F0', '32': 'uE4F1' },
 } as const;

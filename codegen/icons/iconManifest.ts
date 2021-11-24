@@ -465,16 +465,16 @@ export const iconManifest = {
     description: 'pulse, activity, trading, spark, line, ⚡️, ❇️, 📈, 📉',
     documentationLinks: [],
   },
-  '2207:208': {
-    key: 'd5b51bb3e0df1c5fb50f9099c9dba48da93b736a',
-    name: 'Icon/chartPie_24',
-    description: 'chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧',
-    documentationLinks: [],
-  },
   '1292:3': {
     key: 'b39c13a001e035f73c20d0c5066e1ae110b4ebc6',
     name: 'Icon/sparkle_24',
     description: 'popularity, top, sparkle, ✨, ❇️',
+    documentationLinks: [],
+  },
+  '2207:208': {
+    key: 'd5b51bb3e0df1c5fb50f9099c9dba48da93b736a',
+    name: 'Icon/chartPie_24',
+    description: 'chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧',
     documentationLinks: [],
   },
   '1292:97': {
@@ -514,16 +514,16 @@ export const iconManifest = {
     description: 'arrow up, send, upwards, increase, ⬆️, ',
     documentationLinks: [],
   },
-  '2207:55': {
-    key: '48d85a81ab451b92a993fd202091d679e050e265',
-    name: 'Icon/dot_24',
-    description: 'dot, spot, bullet point, point, mark, round, 🔴, ⚫️, 🔵, ⚪️',
-    documentationLinks: [],
-  },
   '4032:52': {
     key: '08935b50c05724d6cf25765b3e4ceeb9f5113ac0',
     name: 'Icon/info_24',
     description: 'information, info, resource, help, guide, details, facts, ℹ️',
+    documentationLinks: [],
+  },
+  '2207:55': {
+    key: '48d85a81ab451b92a993fd202091d679e050e265',
+    name: 'Icon/dot_24',
+    description: 'dot, spot, bullet point, point, mark, round, 🔴, ⚫️, 🔵, ⚪️',
     documentationLinks: [],
   },
   '1292:103': {
@@ -1142,7 +1142,7 @@ export const iconManifest = {
   '2210:108': {
     key: '18fe4a309ed16aff71f0a1edf50a37c99642ddfa',
     name: 'Icon/heart_24/active',
-    description: 'heart, love, support, active, ❤️, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻',
+    description: 'heart, love, support, active, ≈💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻',
     documentationLinks: [],
   },
   '4465:187': {
@@ -3830,6 +3830,375 @@ export const iconManifest = {
     key: '74c3e243c8a5eb091f528c2f563fde0ec4f77703',
     name: 'Icon/thumbsUp_12',
     description: 'yes, thumbs up, thumb, up, 👍',
+    documentationLinks: [],
+  },
+  '7445:352': {
+    key: 'a25012473b9100f550e5a8373ed53eef20dcb952',
+    name: 'NavigationIcon/directDeposit_16/inactive',
+    description:
+      'navigation, speciality, direct, deposit, money, transfer, payment, pay, 💰, 💵, 💸, 💴, 💷, 💶',
+    documentationLinks: [],
+  },
+  '7445:353': {
+    key: '4aa68333165994b7d7439e5827039e20dc519647',
+    name: 'NavigationIcon/directDeposit_16/active',
+    description:
+      'navigation, speciality, direct, deposit, money, transfer, payment, pay, 💰, 💵, 💸, 💴, 💷, 💶',
+    documentationLinks: [],
+  },
+  '7445:354': {
+    key: '59fb2bf6c9633db6473a545a9f0f97b8c90e7a61',
+    name: 'NavigationIcon/directDeposit_12/inactive',
+    description:
+      'navigation, speciality, direct, deposit, money, transfer, payment, pay, 💰, 💵, 💸, 💴, 💷, 💶',
+    documentationLinks: [],
+  },
+  '7445:355': {
+    key: 'c5c1bf0130ff97309c1effa84b3eb624a1b6e398',
+    name: 'NavigationIcon/directDeposit_12/active',
+    description:
+      'navigation, speciality, direct, deposit, money, transfer, payment, pay, 💰, 💵, 💸, 💴, 💷, 💶',
+    documentationLinks: [],
+  },
+  '7445:356': {
+    key: '0587993c3bed372ce5eb2642709704be7f69918d',
+    name: 'NavigationIcon/directDeposit_24/inactive',
+    description:
+      'navigation, speciality, direct, deposit, money, transfer, payment, pay, 💰, 💵, 💸, 💴, 💷, 💶',
+    documentationLinks: [],
+  },
+  '7445:357': {
+    key: '4851b584a6c02fe4e5fd35e42cc2b8de81982038',
+    name: 'NavigationIcon/directDeposit_24/active',
+    description:
+      'navigation, speciality, direct, deposit, money, transfer, payment, pay, 💰, 💵, 💸, 💴, 💷, 💶',
+    documentationLinks: [],
+  },
+  '7445:360': {
+    key: 'dbc31289a6b00abca89ee3a2c19d315a3cfb3bd5',
+    name: 'NavigationIcon/support_16/inactive',
+    description:
+      'navigation, speciality, support, help, communication, chat, heart, assist, aid, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 💬, 🎗, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:361': {
+    key: '6e1855b756cd1ad18a061a3feb906a4241722041',
+    name: 'NavigationIcon/support_16/active',
+    description:
+      'navigation, speciality, support, help, communication, chat, heart, assist, aid, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 💬, 🎗, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:362': {
+    key: '587de87d12771703e9a46120ccd7df1de47e0253',
+    name: 'NavigationIcon/support_12/inactive',
+    description:
+      'navigation, speciality, support, help, communication, chat, heart, assist, aid, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 💬, 🎗, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:363': {
+    key: '0e74f5ee1834bb10bf9e89d76be7e89bad5ad601',
+    name: 'NavigationIcon/support_12/active',
+    description:
+      'navigation, speciality, support, help, communication, chat, heart, assist, aid, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 💬, 🎗, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:364': {
+    key: '96f43d9960d501d0f2ea9396f05e549f6ab2ac79',
+    name: 'NavigationIcon/support_24/inactive',
+    description:
+      'navigation, speciality, support, help, communication, chat, heart, assist, aid, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 💬, 🎗, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:365': {
+    key: '8bb695a40e33d21a501455d273e69cf2c7de39f7',
+    name: 'NavigationIcon/support_24/active',
+    description:
+      'navigation, speciality, support, help, communication, chat, heart, assist, aid, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 💬, 🎗, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:380': {
+    key: '70a823bd21cb9093b0de8b56074a2e1a91bf8b41',
+    name: 'NavigationIcon/planet_16/inactive',
+    description:
+      'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '7445:381': {
+    key: '6bb4c6a26f9edbcd099267218c161a4d6154814e',
+    name: 'NavigationIcon/planet_16/active',
+    description:
+      'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '7445:382': {
+    key: 'f128e29ed73e0f2a39ab6ad8b480659ff89c6d04',
+    name: 'NavigationIcon/planet_12/inactive',
+    description:
+      'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '7445:383': {
+    key: '7008254bcb93b3462281d08a4cc706123ed2edde',
+    name: 'NavigationIcon/planet_12/active',
+    description:
+      'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '7445:384': {
+    key: '3a256df94ff1b30e6407e5d307ddc29540698491',
+    name: 'NavigationIcon/planet_24/inactive',
+    description:
+      'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '7445:385': {
+    key: '93a0f2973df711e16bfc52a59641cf6dfbe3a1ca',
+    name: 'NavigationIcon/planet_24/active',
+    description:
+      'navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '7445:430': {
+    key: '7d953cc54c5bd0b418ff0c2f6d942d63e9ca2c2e',
+    name: 'Icon/paperclip_12',
+    description:
+      'paperclip, attach, attachment, file, document, picture, movie, sound file, spreadsheet, 📎, 🖇, 🗃, 📁, 📂, 🗂',
+    documentationLinks: [],
+  },
+  '7445:431': {
+    key: '30583cb6a1cf0706db7706a9258d8412b85d7377',
+    name: 'Icon/paperclip_16',
+    description:
+      'paperclip, attach, attachment, file, document, picture, movie, sound file, spreadsheet, 📎, 🖇, 🗃, 📁, 📂, 🗂',
+    documentationLinks: [],
+  },
+  '7445:432': {
+    key: '7917e788d578e9be83d20d7f9531bd56090b51bb',
+    name: 'Icon/paperclip_24',
+    description:
+      'paperclip, attach, attachment, file, document, picture, movie, sound file, spreadsheet, 📎, 🖇, 🗃, 📁, 📂, 🗂',
+    documentationLinks: [],
+  },
+  '7445:433': {
+    key: 'ca5205e1cad6ff28a6a038895a5a21c3b3d8eb1c',
+    name: 'Icon/upload_16',
+    description: 'upload, transmit, data, file, uploading, ⬆️, 🔼, ⏫, 📎, 🖇, 🗃, 📁, 📂, 🗂',
+    documentationLinks: [],
+  },
+  '7445:434': {
+    key: '66e8ac41f89ef1134e27d6e736f0af735e5d70c0',
+    name: 'Icon/upload_24',
+    description: 'upload, transmit, data, file, uploading, ⬆️, 🔼, ⏫, 📎, 🖇, 🗃, 📁, 📂, 🗂',
+    documentationLinks: [],
+  },
+  '7445:435': {
+    key: 'c84f63a7ce4cf1f2bf581f995c6814b830c23fd1',
+    name: 'Icon/upload_12',
+    description: 'upload, transmit, data, file, uploading, ⬆️, 🔼, ⏫, 📎, 🖇, 🗃, 📁, 📂, 🗂',
+    documentationLinks: [],
+  },
+  '7445:437': {
+    key: '7177e101614d36605f958e37d46138185de0e982',
+    name: 'Icon/noWifi_12',
+    description: 'internet, disconnect, disconnection, wireless',
+    documentationLinks: [],
+  },
+  '7445:438': {
+    key: '9ea1e99f4459c32b72b2528a82040a95ec25698d',
+    name: 'Icon/wifi_12',
+    description: 'internet, connection, connect, wireless',
+    documentationLinks: [],
+  },
+  '7445:439': {
+    key: 'efd587fae9d5bc4e70861a8f1b7d2b388fe0da85',
+    name: 'Icon/noWifi_16',
+    description: 'internet, disconnect, disconnection, wireless',
+    documentationLinks: [],
+  },
+  '7445:440': {
+    key: '8f9ba1ebe0515485bea6dd3e6d6af6874468c5fb',
+    name: 'Icon/wifi_24',
+    description: 'internet, connection, connect, wireless',
+    documentationLinks: [],
+  },
+  '7445:441': {
+    key: '3ca279368824ec1899b47871c89ac87735542ab7',
+    name: 'Icon/noWifi_24',
+    description: 'internet, disconnect, disconnection, wireless',
+    documentationLinks: [],
+  },
+  '7445:442': {
+    key: '3b1d59e6a9240ef9a093a87defff2ab34e8494bf',
+    name: 'Icon/telephone_24',
+    description: 'phone, call, device, communication, communicate, conversation, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:443': {
+    key: '2d844774b34d383090c2ded42fc7e51ff72c5f37',
+    name: 'Icon/telephone_16',
+    description: 'phone, call, device, communication, communicate, conversation, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:444': {
+    key: 'f7513a8e3a47e771dd19dff6abd46d469beee7fe',
+    name: 'Icon/telephone_12',
+    description: 'phone, call, device, communication, communicate, conversation, 📞, ☎️',
+    documentationLinks: [],
+  },
+  '7445:445': {
+    key: 'e77b7c20adf4230d0fb2bd6ead5ccdc496ecee58',
+    name: 'Icon/laptop_24',
+    description: 'computer, device, screen, 💻, 👩‍💻, 🧑‍💻, 👨‍💻, 💼',
+    documentationLinks: [],
+  },
+  '7445:446': {
+    key: 'e8b22adcd8c16ceebd0a5b3da57e22f1ab11fb37',
+    name: 'Icon/laptop_16',
+    description: 'computer, device, screen, 💻, 👩‍💻, 🧑‍💻, 👨‍💻, 💼',
+    documentationLinks: [],
+  },
+  '7445:447': {
+    key: '6f03be31f1d19d5fed1461e568d5c47f5552a175',
+    name: 'Icon/laptop_12',
+    description: 'computer, device, screen, 💻, 👩‍💻, 🧑‍💻, 👨‍💻, 💼',
+    documentationLinks: [],
+  },
+  '7446:75': {
+    key: 'a28214fe9386e281dee4c99966b07b3d470336ce',
+    name: 'Icon/clockOutline_12',
+    description:
+      'clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
+    documentationLinks: [],
+  },
+  '7446:78': {
+    key: 'a62e76db50d2902add5296791aef0b17df65b7a8',
+    name: 'Icon/clockOutline_16',
+    description:
+      'clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
+    documentationLinks: [],
+  },
+  '7446:77': {
+    key: 'eb539e15b493ac9be24e560ebe64c9c543184bf2',
+    name: 'Icon/clockOutline_24',
+    description:
+      'clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️',
+    documentationLinks: [],
+  },
+  '7568:136': {
+    key: 'ccbfe7c260c878dde6cc19c4f5edaadb498e6750',
+    name: 'Icon/cashRupee_24',
+    description:
+      'cash, money, ₹, currency, international, india, indonesia, the maldives, mauritius, nepal, pakistan, seychelles, sri lanka, 🇮🇳, 🇮🇩, 🇲🇻, 🇲🇺, 🇳🇵, 🇵🇰, 🇸🇨, 🇱🇰, 💰, 💵, 💸',
+    documentationLinks: [],
+  },
+  '7568:138': {
+    key: 'fbba685cbd595ec085c877923b8215ff8ac6c359',
+    name: 'Icon/cashRupee_12',
+    description:
+      'cash, money, ₹, currency, international, india, indonesia, the maldives, mauritius, nepal, pakistan, seychelles, sri lanka, 🇮🇳, 🇮🇩, 🇲🇻, 🇲🇺, 🇳🇵, 🇵🇰, 🇸🇨, 🇱🇰, 💰, 💵, 💸',
+    documentationLinks: [],
+  },
+  '7568:137': {
+    key: 'd3f854f02cf1ddba21aa98c8bce45b11b1dbd0f0',
+    name: 'Icon/cashRupee_16',
+    description:
+      'cash, money, ₹, currency, international, india, indonesia, the maldives, mauritius, nepal, pakistan, seychelles, sri lanka, 🇮🇳, 🇮🇩, 🇲🇻, 🇲🇺, 🇳🇵, 🇵🇰, 🇸🇨, 🇱🇰, 💰, 💵, 💸',
+    documentationLinks: [],
+  },
+  '7576:153': {
+    key: '7f82afd92b5adfdf3034c3ca1575dbfdeba30a39',
+    name: 'Icon/chainLink_24',
+    description: 'link, attach, linkage, connect, connection, ⛓, 🔗, 🖇',
+    documentationLinks: [],
+  },
+  '7576:154': {
+    key: 'eaa7fc2e6e800f098e8db2a835ff85d0494aa0b2',
+    name: 'Icon/chainLink_16',
+    description: 'link, attach, linkage, connect, connection, ⛓, 🔗, 🖇',
+    documentationLinks: [],
+  },
+  '7576:155': {
+    key: 'c17b78c4f9c5abfd6192844b0aa4d117706cf6f0',
+    name: 'Icon/chainLink_12',
+    description: 'link, attach, linkage, connect, connection, ⛓, 🔗, 🖇',
+    documentationLinks: [],
+  },
+  '7720:235': {
+    key: '15c2b471d91a85e51799930d99ec57041f3d3b96',
+    name: 'NavigationIcon/application_24/inactive',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '7720:234': {
+    key: '765c32bf88625ba94b2cdd2ec9c4934b9ef69b40',
+    name: 'NavigationIcon/application_24/active',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '7720:232': {
+    key: '38f1bb92fd964497cc143f8bf2000471aac0786c',
+    name: 'NavigationIcon/application_16/inactive',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '7720:231': {
+    key: '381c61a596cb8f5dd308a7c3974337d7ea9f24cc',
+    name: 'NavigationIcon/application_16/active',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '7720:230': {
+    key: '4f2e37ac7d06534a12ca723c2e9837ab56a233e8',
+    name: 'NavigationIcon/application_12/inactive',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '7720:233': {
+    key: '64720fc987c1267c64e5b24d508dbabfbc8809fd',
+    name: 'NavigationIcon/application_12/active',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '7720:498': {
+    key: '51bcbd1e297d8048a1fedad1a9035223e3ab940e',
+    name: 'NavigationIcon/appSwitcher_16/inactive',
+    description: 'navigation, speciality, switcher, apps, products, brand, grid',
+    documentationLinks: [],
+  },
+  '7720:502': {
+    key: '7dc347bf6c37777b40eff65f05245044021ae2cc',
+    name: 'NavigationIcon/appSwitcher_16/active',
+    description: 'navigation, speciality, switcher, apps, products, brand, grid',
+    documentationLinks: [],
+  },
+  '7720:501': {
+    key: '7594b1c97f8695c9de08b1ed18fc981af58253e6',
+    name: 'NavigationIcon/appSwitcher_12/inactive',
+    description: 'navigation, speciality, switcher, apps, products, brand, grid',
+    documentationLinks: [],
+  },
+  '7720:500': {
+    key: 'd3086db1d38fdc987925300eeda0c22bbebd4135',
+    name: 'NavigationIcon/appSwitcher_12/active',
+    description: 'navigation, speciality, switcher, apps, products, brand, grid',
+    documentationLinks: [],
+  },
+  '7720:499': {
+    key: 'e665a4d4e24d9487b65ddd14bc9e1569caeeeff6',
+    name: 'NavigationIcon/appSwitcher_24/inactive',
+    description: 'navigation, speciality, switcher, apps, products, brand, grid',
+    documentationLinks: [],
+  },
+  '7720:497': {
+    key: '867ff7fa8ea73ae647ebd438a014fa5702c4ccb9',
+    name: 'NavigationIcon/appSwitcher_24/active',
+    description: 'navigation, speciality, switcher, apps, products, brand, grid',
     documentationLinks: [],
   },
 };

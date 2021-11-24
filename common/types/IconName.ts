@@ -205,7 +205,9 @@ export type NavigationIconName =
   | 'earn'
   | 'directDeposit'
   | 'support'
-  | 'planet';
+  | 'planet'
+  | 'application'
+  | 'appSwitcher';
 
 export type NavigationIconInternalName =
   | 'chartCandlesInactive'
@@ -255,4 +257,8 @@ export type NavigationIconInternalName =
   | 'supportInactive'
   | 'supportActive'
   | 'planetInactive'
-  | 'planetActive';
+  | 'planetActive'
+  | 'applicationInactive'
+  | 'applicationActive'
+  | 'appSwitcherInactive'
+  | 'appSwitcherActive';
