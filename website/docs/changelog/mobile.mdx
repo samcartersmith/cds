@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.8 (11/24/2021, 01:24 PM PST)
+
+#### 🐞 Fixes
+
+- Remove minHeight on Cell. [#43420](https://github.cbhq.net/mono/repo/pull/43420)
+
 ## 0.33.7 (11/24/2021, 09:06 AM PST)
 
 #### 🚀 Updates
