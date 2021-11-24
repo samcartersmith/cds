@@ -44,7 +44,6 @@ export const Cell = memo(function Cell({
       borderRadius={borderRadius}
       alignItems={alignItems}
       flexGrow={1}
-      minHeight={minHeight}
       gap={2}
       width="100%"
       renderToHardwareTextureAndroid={disabled}

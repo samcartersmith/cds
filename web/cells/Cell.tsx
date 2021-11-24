@@ -105,7 +105,6 @@ export const Cell = memo(
         borderRadius={borderRadius}
         alignItems={alignItems}
         gap={2}
-        minHeight={minHeight}
         width="100%"
         testID={testID}
         {...spacing.inner}
