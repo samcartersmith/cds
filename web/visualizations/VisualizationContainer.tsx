@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState, ReactNode, memo } from 'react';
+import React, { ReactNode, memo } from 'react';
 
 import { DimensionValue } from '@cbhq/cds-common';
 import { Box } from '../layout';
@@ -21,32 +21,16 @@ Some visualizations need a static width to render. This container can be dynamic
  */
 export const VisualizationContainer: React.FC<VisualizationContainerProps> = memo(
   ({ width, height, children }) => {
-    const [dimensions, setDimensions] = useState<Dimension | null>(null);
-    const boxRef = useRef<HTMLElement>(null);
-
-    const { width: boxWidth, height: boxHeight } = useDimensions({
-      ref: boxRef,
-      debounceMs: 400,
-      shouldSetInitialState: true,
-    });
-
-    useLayoutEffect(() => {
-      if (boxRef.current) {
-        const { offsetWidth, offsetHeight } = boxRef.current;
-
-        setDimensions({
-          width: offsetWidth,
-          height: offsetHeight,
-          circleSize: Math.min(offsetHeight, offsetWidth),
-        });
-      }
-    }, [boxWidth, boxHeight]);
-
-    const childrenWithDimensions = dimensions ? children({ ...dimensions }) : null;
+    const { observe, width: boxWidth, height: boxHeight } = useDimensions();
+    const dimensions = {
+      width: boxWidth,
+      height: boxHeight,
+      circleSize: Math.min(boxHeight, boxWidth),
+    };
 
     return (
-      <Box ref={boxRef} width={width} height={height}>
-        {childrenWithDimensions}
+      <Box ref={observe} width={width} height={height}>
+        {dimensions ? children(dimensions) : null}
       </Box>
     );
   },

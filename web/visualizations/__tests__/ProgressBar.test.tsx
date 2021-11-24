@@ -12,6 +12,7 @@ jest.mock('../../hooks/useDimensions', () => ({
     return {
       width: 200,
       height: 100,
+      observe: jest.fn(),
     };
   }),
 }));
