@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.8 (11/24/2021, 09:06 AM PST)
+
+#### 🚀 Updates
+
+- **[Icon]** New Icon release for Nov 24th. [#43355](https://github.cbhq.net/mono/repo/pull/43355)
+
+#### 🐞 Fixes
+
+- Update useDimensions usage with progress bar. [#43270](https://github.cbhq.net/mono/repo/pull/43270)
+
 ## 0.30.7 (11/23/2021, 10:29 AM PST)
 
 #### 🚀 Updates

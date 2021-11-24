@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.6 (11/24/2021, 09:06 AM PST)
+
+#### 🚀 Updates
+
+- **[Icon]** New Icon release for Nov 24th. [#43355](https://github.cbhq.net/mono/repo/pull/43355)
+
+#### 🐞 Fixes
+
+- UseCounter tests. [#43117](https://github.cbhq.net/mono/repo/pull/43117)
+
 ## 0.29.5 (11/23/2021, 10:29 AM PST)
 
 #### 🚀 Updates

@@ -6,12 +6,9 @@ const sectionsToExcludeByLabel = new Set(['Navigation']);
 
 // Removes unfinished components from section in side bar
 const componentsToExcludeByLabel = new Set([
-  'components/visualizations/ProgressBar/progress-bar',
   'components/controls/SelectInput/select-input',
   'components/overlays/Menu/menu',
   'components/cells/SelectOptionCell/select-option-cell',
-  'components/visualizations/ProgressBarWithFixedLabels/progress-bar-with-fixed-labels',
-  'components/visualizations/ProgressBarWithFloatLabel/progress-bar-with-float-label',
 ]);
 
 // Filter sidebar components
