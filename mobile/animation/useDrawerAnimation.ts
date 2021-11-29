@@ -2,53 +2,28 @@ import { useMemo, useRef } from 'react';
 
 import { PinningDirection } from '@cbhq/cds-common';
 import { Animated, useWindowDimensions } from 'react-native';
-import {
-  animateHorizontalDrawerInConfig,
-  animateHorizontalDrawerOutConfig,
-  animateVerticalDrawerInConfig,
-  animateVerticalDrawerOutConfig,
-  MAX_OVER_DRAG,
-} from '@cbhq/cds-common/animation/drawer';
+import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import { convertMotionConfig } from './convertMotionConfig';
 
-type DrawerAnimation = {
-  drawerAnimation: Animated.Value;
-  animateDrawerOut: Animated.CompositeAnimation;
-  animateDrawerIn: Animated.CompositeAnimation;
-  drawerAnimationStyles: {
-    transform: (
-      | {
-          translateY: Animated.AnimatedInterpolation;
-          translateX?: Animated.AnimatedInterpolation;
-        }
-      | {
-          translateX: Animated.AnimatedInterpolation;
-          translateY?: Animated.AnimatedInterpolation;
-        }
-    )[];
-  };
-};
+const animateInConfig = convertMotionConfig({
+  toValue: 1,
+  easing: 'enterFunctional',
+  duration: 'moderate3',
+});
 
-export const useDrawerAnimation = (
-  pin: PinningDirection | undefined = 'bottom',
-): DrawerAnimation => {
+const animateOutConfig = convertMotionConfig({
+  toValue: 0,
+  easing: 'exitFunctional',
+  duration: 'moderate2',
+});
+
+export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom') => {
   const { width, height } = useWindowDimensions();
 
   const drawerAnimation = useRef(new Animated.Value(0));
-  const isPinHorizontal = pin === 'left' || pin === 'right';
 
-  const animateDrawerIn = Animated.timing(
-    drawerAnimation.current,
-    convertMotionConfig(
-      isPinHorizontal ? animateHorizontalDrawerInConfig : animateVerticalDrawerInConfig,
-    ),
-  );
-  const animateDrawerOut = Animated.timing(
-    drawerAnimation.current,
-    convertMotionConfig(
-      isPinHorizontal ? animateHorizontalDrawerOutConfig : animateVerticalDrawerOutConfig,
-    ),
-  );
+  const animateDrawerIn = Animated.timing(drawerAnimation.current, animateInConfig);
+  const animateDrawerOut = Animated.timing(drawerAnimation.current, animateOutConfig);
 
   const translation = useMemo(() => {
     switch (pin) {
