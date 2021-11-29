@@ -42,6 +42,7 @@ const selectTrigger = css`
     :focus-visible {
       outline: none;
     }
+  }
 `;
 
 const selectKeys = [' ', 'Spacebar', 'Enter'];
