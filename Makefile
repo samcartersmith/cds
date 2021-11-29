@@ -32,6 +32,7 @@ Help:
   $$ make typecheck                 -- Run global typecheck
   $$ make setup.mobile              -- Setup mobile dependencies
   $$ make clean.ios                 -- Clean ios build
+  $$ make mobile.routes             -- Create routes for mobile-playgrounds from screens directory.
 endef
 export HELP_TEXT
 
@@ -221,3 +222,7 @@ typecheck:
 build.css:
 	bazel build web:package
 	bazel build //eng/shared/design-system/cloud:web
+
+.PHONY: mobile.routes
+mobile.routes:
+	bazel run :prepare_mobile_routes

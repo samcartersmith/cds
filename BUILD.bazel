@@ -243,6 +243,13 @@ ts_script(
 )
 
 ts_script(
+    name = "prepare_mobile_routes",
+    srcs = CODEGEN_SRCS,
+    script = "eng/shared/design-system/codegen/playground/prepareRoutes.ts",
+    deps = CODEGEN_DEPS,
+)
+
+ts_script(
     name = "new_package",
     srcs = [
         "//eng/shared/design-system/codegen:runtime_source",

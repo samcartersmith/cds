@@ -1,0 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable global-require */
+
+export const codegenRoutes = [
+  <%_ data.codegenRoutes.map((route) => { _%>
+    { 
+      key: '<%- route %>',
+      getComponent: () => require("../screens/<%- route %>").default,
+    },
+  <%_ }) _%>
+] as const;
+  

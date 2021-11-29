@@ -198,11 +198,21 @@ Try running `sudo chown -R $(whoami):staff ~/Library/LaunchAgents` (from [this g
 
 ## React Native CDS Development Workflow
 
+### Running mobile-playground in simulator
+
 _Run the following steps in the terminal in this order_
 
 1. `make setup.mobile` (Note: you should only need to run this once, and after every time you run `make clean.ios/android`)
 2. `make start.mobile`
 3. While `make start.mobile` is running in the terminal/shell, run `make build.ios/make build.android` (depends on what mobile OS you want to test) in another terminal
+
+### Adding new example screen
+
+1. Run `make start.mobile` and open simulator.
+2. Create your component screen in mobile-playground/src/screens. The only requirement is that the screen has a default export.
+3. Run `make mobile.routes` to generate the necessary routing for the new screen.
+4. Confirm your new item is showing up in the master list of simulator and when clicking it navigates to its respective screen.
+5. If you want a different title than the file name you can add your title override to the `titleOverrides` map in mobile-playground/src/routing/routes.
 
 ### Troubleshooting Guide
 
