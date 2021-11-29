@@ -1,11 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 
-export const useCounter = (startNum: number, endNum: number, durationInMillis: number) => {
+type UseCounterParams = {
+  startNum: number;
+  endNum: number;
+  durationInMillis: number;
+};
+
+export const useCounter = ({ startNum, endNum, durationInMillis }: UseCounterParams) => {
   const [count, setCount] = useState(startNum);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
-    const startTime = new Date().getTime();
+    const startTime = Date.now();
     const endTime = startTime + durationInMillis;
     clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
     let currCount = startNum;
@@ -15,7 +21,7 @@ export const useCounter = (startNum: number, endNum: number, durationInMillis: n
         return;
       }
 
-      const currTime = new Date().getTime();
+      const currTime = Date.now();
       const timeLeft = endTime - currTime;
       const incrementTime = timeLeft / Math.abs(endNum - currCount); // durationInMillis / Math.abs(endNum - startNum);
 

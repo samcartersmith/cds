@@ -37,7 +37,7 @@ export const Counter: React.FC<CounterBaseProps> = ({
   renderNum,
   durationInMillis,
 }) => {
-  const count = useCounter(startNum, endNum, durationInMillis);
+  const count = useCounter({ startNum, endNum, durationInMillis });
 
   const renderFunction = useMemo(() => {
     return (num: number) => {
