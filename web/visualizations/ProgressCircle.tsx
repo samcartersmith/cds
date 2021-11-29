@@ -6,21 +6,19 @@ import {
 } from '@cbhq/cds-common/types/ProgressCircleBaseProps';
 import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
-import { css, cx } from 'linaria';
-import { getCenter, getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
+import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
+import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
+import { css } from 'linaria';
+import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
 import { Box } from '../layout';
 import { usePalette } from '../hooks/usePalette';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { VisualizationContainer, Dimension } from './VisualizationContainer';
+import { VisualizationContainer } from './VisualizationContainer';
 import { ProgressTextLabel } from './ProgressTextLabel';
 
 const svgClassName = css`
   display: block;
   max-width: 100%;
-`;
-
-const svgCircleClassName = css`
-  fill: none;
 `;
 
 const { easing, duration } = convertMotionConfig({
@@ -46,33 +44,37 @@ const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progre
   );
 });
 
-const ProgressInnerCircle: React.FC<ProgressInnerCircleBaseProps> = memo(
+const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
   ({ size, progress, color, weight, disabled }) => {
     const strokeWidth = useProgressSize(weight);
     const palette = usePalette();
     const circleRef = useRef<SVGCircleElement>(null);
 
-    const radius = getRadius(size, strokeWidth);
-    const circumference = getCircumference(radius);
-    const center = getCenter(size);
+    const circumference = getCircumference(getRadius(size, strokeWidth));
 
     const [offset, setOffset] = useState(circumference);
     useEffect(() => {
       const progressOffset = (1 - progress) * circumference;
-      setOffset(progressOffset);
-    }, [setOffset, circumference, progress, offset]);
+
+      // If you have multiple circle progresses then this is required to animate them in parallel.
+      // The browser can struggle to perform css transitions in parallel, this should be rare
+      requestAnimationFrame(() => {
+        setOffset(progressOffset);
+      });
+    }, [setOffset, circumference, progress]);
 
     return (
       <circle
         ref={circleRef}
-        className={cx(svgCircleClassName, innerSvgCircleClassName)}
-        stroke={!disabled ? palette[color] : palette.lineHeavy}
-        cx={center}
-        cy={center}
-        r={radius}
-        strokeWidth={strokeWidth}
+        className={innerSvgCircleClassName}
         strokeDasharray={circumference}
         strokeDashoffset={offset}
+        strokeLinecap="round"
+        {...getProgressCircleParams({
+          size,
+          strokeWidth,
+          stroke: !disabled ? palette[color] : palette.lineHeavy,
+        })}
       />
     );
   },
@@ -93,7 +95,7 @@ export const ProgressCircle: React.FC<ProgressCircleBaseProps> = memo(
 
     return (
       <VisualizationContainer width={size} height={size}>
-        {({ width, height, circleSize }: Dimension) => (
+        {({ width, height, circleSize }: VisualizationContainerDimension) => (
           <Box
             testID={testID}
             alignItems="center"
@@ -110,14 +112,13 @@ export const ProgressCircle: React.FC<ProgressCircleBaseProps> = memo(
             >
               <svg key={circleSize} className={svgClassName} width={circleSize} height={circleSize}>
                 <circle
-                  className={svgCircleClassName}
-                  stroke={palette.line}
-                  cx={getCenter(circleSize)}
-                  cy={getCenter(circleSize)}
-                  r={getRadius(circleSize, strokeWidth)}
-                  strokeWidth={strokeWidth}
+                  {...getProgressCircleParams({
+                    size: circleSize,
+                    strokeWidth,
+                    stroke: palette.line,
+                  })}
                 />
-                <ProgressInnerCircle
+                <ProgressCircleInner
                   progress={progress}
                   color={color}
                   size={circleSize}

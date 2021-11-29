@@ -135,6 +135,10 @@ export const codegenRoutes = [
     getComponent: () => require('../screens/ProgressBar').default,
   },
   {
+    key: 'ProgressCircle',
+    getComponent: () => require('../screens/ProgressCircle').default,
+  },
+  {
     key: 'RadioGroup',
     getComponent: () => require('../screens/RadioGroup').default,
   },
