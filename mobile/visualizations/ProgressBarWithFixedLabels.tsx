@@ -49,8 +49,8 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
         />,
       );
     } else {
-      // pushes an end label to the end if it's available
-      nodes.push(<View />);
+      // pushes an end label to the end if no start label is available to push it
+      nodes.push(<View key="end-label-spacer" />);
     }
 
     if (typeof endLabel !== 'undefined') {
@@ -63,8 +63,8 @@ const ProgressBarFixedLabelContainer: React.FC<ProgressBarFixedLabelContainerPro
         />,
       );
     } else {
-      // pushes an end label to the end if it's available
-      nodes.push(<View />);
+      // pushes a start label to the start if there is no end label available to push it
+      nodes.push(<View key="start-label-spacer" />);
     }
 
     if (I18nManager.isRTL) {
