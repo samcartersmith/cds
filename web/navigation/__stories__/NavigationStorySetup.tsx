@@ -8,7 +8,7 @@ import { HStack, VStack } from '../../layout';
 import { TextLabel1, TextHeadline, TextDisplay2 } from '../../typography';
 import {
   NavigationBar,
-  PageTitle,
+  NavigationTitle,
   Sidebar,
   SidebarItem,
   SidebarItemProps,
@@ -53,7 +53,7 @@ export const NavigationBarFullExample: React.FC = () => {
         </HStack>
       }
     >
-      <PageTitle>Personal Portfolio</PageTitle>
+      <NavigationTitle>Personal Portfolio</NavigationTitle>
     </NavigationBar>
   );
 };
@@ -68,7 +68,7 @@ export const NavigationBarTitle: React.FC = () => {
         </HStack>
       }
     >
-      <PageTitle>Personal Portfolio</PageTitle>
+      <NavigationTitle>Personal Portfolio</NavigationTitle>
     </NavigationBar>
   );
 };

@@ -1,7 +1,7 @@
 import NavigationBarExample from ':cds-website/docs/components/navigation/NavigationBar/_example.mdx';
 import SidebarExample from ':cds-website/docs/components/navigation/Sidebar/_example.mdx';
-import PageTitleExample from ':cds-website/docs/components/navigation/PageTitle/_example.mdx';
-import PageTitleSelect from ':cds-website/docs/components/navigation/PageTitle/_example_select.mdx';
+import NavigationTitleExample from ':cds-website/docs/components/navigation/NavigationTitle/_example.mdx';
+import NavigationTitleSelect from ':cds-website/docs/components/navigation/NavigationTitle/_example_select.mdx';
 import SidebarItemExample from ':cds-website/docs/components/navigation/SidebarItem/_example.mdx';
 import NavLinkExample from ':cds-website/docs/components/navigation/NavLink/_example.mdx';
 
@@ -40,15 +40,15 @@ This component is to be used inside a Sidebar. Clients can use the `compact` pro
 
 <SidebarItemExample />
 
-## PageTitle
+## NavigationTitle
 This is the page title component
 
-<PageTitle />
+<NavigationTitle />
 
-## PageTitle Select
-You can easily compose a PageTitle select
+## NavigationTitle Select
+You can easily compose a NavigationTitle select
 
-<PageTitleSelectExample />
+<NavigationTitleSelectExample />
 
 ## Full Example
 
@@ -91,7 +91,7 @@ function fullExample() {
               </HStack>
             }
           >
-            <PageTitle>Personal Portfolio</PageTitle>
+            <NavigationTitle>Personal Portfolio</NavigationTitle>
           </NavigationBar>
           <VStack spacing={2}>
             <TextDisplay2 as="h2" spacingBottom={1}>
