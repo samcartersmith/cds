@@ -1,15 +1,12 @@
-import { render, waitFor } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
 import { Pictogram } from '../Pictogram';
 
 const PICTOGRAM_TEST_ID = 'add-pictogram-test';
 
 describe('Pictogram', () => {
-  it('renders a pictogram', async () => {
+  it('renders a pictogram', () => {
     const result = render(<Pictogram name="add" testID={PICTOGRAM_TEST_ID} />);
-
-    await waitFor(() => result.getByTestId(PICTOGRAM_TEST_ID));
-
-    expect(result.getByTestId('add-pictogram-test')).toBeTruthy();
+    expect(result.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
   });
 });

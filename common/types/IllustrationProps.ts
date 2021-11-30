@@ -8,7 +8,7 @@ import {
 } from './IllustrationNames';
 import { SharedProps } from './SharedProps';
 
-type IllustrationNames =
+export type IllustrationNames =
   | IllustrationHeroSquareNames
   | IllustrationSpotRectangleNames
   | IllustrationPictogramNames

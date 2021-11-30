@@ -145,6 +145,7 @@ prepare.icons:
 .PHONY: prepare.illustrations
 prepare.illustrations:
 	bazel run :build_illustrations
+	yarn eslint --fix eng/shared/design-system/mobile/illustrations/illustrationSpectrumMap.ts --quiet
 	make docgen
 
 .PHONY: prepare.adoption

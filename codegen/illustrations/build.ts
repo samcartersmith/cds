@@ -570,7 +570,7 @@ const getImgPath = (name: string, spectrum: Spectrum) => {
   return null;
 };
 
-const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPath: string) => {
+const createMobileSpectrumMap = async (names: IllustrationNamesMap, outDirPath: string) => {
   const spinner = ora(`Start creating relative path map`).start();
 
   const allNames = Object.keys(names).reduce(
@@ -585,7 +585,6 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
         acc[`"${name}"`] = {
           light: getImgPath(name, 'light'),
           dark: getImgPath(name, 'dark'),
-          fileFormat: `"${FILE_FORMAT}"`,
         };
       } catch (err) {
         errMsg(spinner, (err as Error).message);
@@ -597,23 +596,19 @@ const createNameToRelativePathMap = async (names: IllustrationNamesMap, outDirPa
       {
         light: string | null;
         dark: string | null;
-        fileFormat: string;
       }
     >,
   );
 
   await writeFile({
-    template: 'objectMapUnevaled.ejs',
-    dest: `${outDirPath}/RelativePathMap.ts`,
+    template: 'mobile/illustrationSpectrumMap.ejs',
+    dest: `${outDirPath}/illustrationSpectrumMap.ts`,
     data: {
-      IllustrationFilePathMap: paths,
+      illustrationSpectrumMap: paths,
     },
-    types: {
-      IllustrationFilePathMap:
-        " Record<string,{ light: Promise<{ default: { content: string; }; content: string; }>; dark: Promise<{ default: { content: string; }; content: string; }> | null; fileFormat:'svg' }>",
+    config: {
+      disablePrettier: true,
     },
-    header:
-      '/* eslint-disable global-require */ \n /* eslint-disable @typescript-eslint/no-unsafe-assignment */\n',
   });
 
   spinner.stop();
@@ -649,7 +644,7 @@ const main = async (deleteImgsDir = false) => {
       'website/data/illustrationData.ts',
       'storybook/data/illustrationData.ts',
     ]);
-    await createNameToRelativePathMap(camelCaseNames, 'mobile/illustrations');
+    await createMobileSpectrumMap(camelCaseNames, 'mobile/illustrations');
     await createManifestFile('codegen/illustrations/illustration_manifest.ts');
     const versionNumManifest = await createVersionNumManifest(
       'web/illustrations/versionNumManifest.ts',
