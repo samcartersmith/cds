@@ -45,7 +45,12 @@ export const createIconFont = async () => {
     fontName: 'CoinbaseIcons',
     formats: ['ttf', 'woff2'],
     normalize: true,
-    startUnicode: 0xe000, // uE000
+    /**
+     * Make sure generated unicode is inside PUA to avoid fallback emojis on iOS
+     * https://www.filamentgroup.com/lab/bulletproof_icon_fonts.html
+     * https://github.com/nfroidure/svgicons2svgfont/blob/master/src/metadata.js#L10-L15
+     */
+    startUnicode: 0xf000, // U+F000
     prependUnicode: true,
   })) as {
     ttf: string;
