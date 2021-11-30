@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.31.0 (11/30/2021, 07:43 AM PST)
+
+#### 💥 Breaking
+
+- Prevent CoinbaseIcons from falling back to emoji unicode range. [#43429](https://github.cbhq.net/mono/repo/pull/43429), [CDS-725](https://jira.coinbase-corp.com/browse/CDS-725)
+
+#### 🚀 Updates
+
+- SelectInput bug bash fixes part 1 (Menu and keyboard events). [#43665](https://github.cbhq.net/mono/repo/pull/43665)
+
+#### 🐞 Fixes
+
+- **[Select]** Css closing tag for selectTrigger className. [#43583](https://github.cbhq.net/mono/repo/pull/43583)
+
+#### 📘 Misc
+
+- Circular Progress Website docs. [#43735](https://github.cbhq.net/mono/repo/pull/43735)
+- Mobile circular progress. [#43590](https://github.cbhq.net/mono/repo/pull/43590)
+- Implement useCounter tests with mock timers and update API. [#43550](https://github.cbhq.net/mono/repo/pull/43550)
+
 ## 0.30.9 (11/24/2021, 01:24 PM PST)
 
 #### 🐞 Fixes

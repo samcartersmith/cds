@@ -19,7 +19,24 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### dismissMenu <Badge variant="web" />
+
+Callback used to dismiss the Menu via interactions with children
+
+<ApiDetails
+  componentName="Menu"
+  propertyName="dismissMenu"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Menu" templateName="prop-dismissMenu" />
+
 ### offsetConfig <Badge variant="web" />
+
+Object passed when SelectInput is used as a trigger. Used to calculate the Menu offset based on presence of nodes in parent InputStack
 
 <ApiDetails
   componentName="Menu"
@@ -32,7 +49,24 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <ComponentDetails componentName="Menu" templateName="prop-offsetConfig" />
 
+### onChange <Badge variant="web" />
+
+Callback that is fired whenever a select option is selected
+
+<ApiDetails
+  componentName="Menu"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(newValue: string) => void']}
+/>
+
+<ComponentDetails componentName="Menu" templateName="prop-onChange" />
+
 ### parentRef <Badge variant="web" />
+
+Parent Ref is used to calculate Menu offset when the trigger is a SelectInput
 
 <ApiDetails
   componentName="Menu"
@@ -44,5 +78,50 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 />
 
 <ComponentDetails componentName="Menu" templateName="prop-parentRef" />
+
+### triggerRef <Badge variant="web" />
+
+Trigger Ref is required, because we need to be able to focus the trigger after an option has been chosen via keyboard interaction
+
+<ApiDetails
+  componentName="Menu"
+  propertyName="triggerRef"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Menu" templateName="prop-triggerRef" />
+
+### value <Badge variant="web" />
+
+Default selected value, or preselected value
+
+<ApiDetails
+  componentName="Menu"
+  propertyName="value"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Menu" templateName="prop-value" />
+
+### width <Badge variant="web" />
+
+Menu width
+
+<ApiDetails
+  componentName="Menu"
+  propertyName="width"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Menu" templateName="prop-width" />
 
 <ComponentDetails componentName="Menu" templateName="outro" />

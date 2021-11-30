@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.29.7 (11/30/2021, 07:43 AM PST)
+
+#### 🚀 Updates
+
+- SelectInput bug bash fixes part 1 (Menu and keyboard events). [#43665](https://github.cbhq.net/mono/repo/pull/43665)
+- CDS toast types and hooks. [#42716](https://github.cbhq.net/mono/repo/pull/42716), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
+#### 🐞 Fixes
+
+- **[Tray]** Animation configs for mobile Tray. [#43609](https://github.cbhq.net/mono/repo/pull/43609)
+
+#### 📘 Misc
+
+- Circular Progress Website docs. [#43735](https://github.cbhq.net/mono/repo/pull/43735)
+- Mobile circular progress. [#43590](https://github.cbhq.net/mono/repo/pull/43590)
+- Implement useCounter tests with mock timers and update API. [#43550](https://github.cbhq.net/mono/repo/pull/43550)
+- Disable flaky useCounter test. [#43389](https://github.cbhq.net/mono/repo/pull/43389)
+
 ## 0.29.6 (11/24/2021, 09:06 AM PST)
 
 #### 🚀 Updates
