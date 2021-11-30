@@ -6,7 +6,7 @@ import { palette } from '../../tokens';
 import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/index';
 import { LogoMark } from '../../icons/LogoMark';
 import { HStack, VStack } from '../../layout';
-import { TextLabel1, TextHeadline, TextDisplay2 } from '../../typography';
+import { TextHeadline, TextDisplay2 } from '../../typography';
 import {
   NavigationBar,
   NavigationTitle,
@@ -123,16 +123,7 @@ export const ComposedSystem: React.FC = () => {
 
   return (
     <HStack>
-      <Sidebar
-        logo={
-          <HStack gap={1} alignItems="center">
-            <LogoMark />
-            <TextLabel1 as="p" color="foreground">
-              Asset Hub
-            </TextLabel1>
-          </HStack>
-        }
-      >
+      <Sidebar autoCollapse logo={<LogoMark />}>
         {items.map((props, index) => (
           <SidebarItem
             key={`sidebar-item--${props.title}`}

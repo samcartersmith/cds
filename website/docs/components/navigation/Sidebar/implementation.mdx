@@ -19,6 +19,21 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### autoCollapse <Badge variant="web" />
+
+When set, the sidebar will auto collapse at or below the tablet breakpoint (currently 768px)
+
+<ApiDetails
+  componentName="Sidebar"
+  propertyName="autoCollapse"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Sidebar" templateName="prop-autoCollapse" />
+
 ### children <Badge variant="web" />
 
 Children are expected to be an array of SidebarItems
