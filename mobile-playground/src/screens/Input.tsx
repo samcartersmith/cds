@@ -28,7 +28,7 @@ const MockComplexInput = () => {
 
   return (
     <HStack justifyContent="center">
-      <TextInput width={50} label="Test" onChangeText={onChangeText} value={text} />
+      <TextInput width="50%" label="Test" onChangeText={onChangeText} value={text} />
       <VStack spacingTop={1}>
         <Box spacingTop={3}>
           <Button>Hello</Button>
@@ -87,7 +87,7 @@ export default function InputScreen() {
         <MockTextInput
           end={<InputIcon name="lightningBolt" />}
           label="Search"
-          width={50}
+          width="50%"
           helperText="Search for assets here"
           variant="foregroundMuted"
           placeholder="ex. Bitcoin"
@@ -172,7 +172,7 @@ export default function InputScreen() {
         />
       </Example>
       <Example inline title="CompactTextInput 50%">
-        <MockCompactTextInput label="Bitcoin" width={50} placeholder="190" />
+        <MockCompactTextInput label="Bitcoin" width="50%" placeholder="190" />
       </Example>
       <Example inline title="CompactTextInput Disabled">
         <MockCompactTextInput label="Bitcoin" disabled />

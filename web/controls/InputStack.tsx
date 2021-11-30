@@ -39,7 +39,7 @@ export const InputStack = memo(
   forwardRef(function InputStack(
     {
       /** CDS custom props */
-      width = 100,
+      width = '100%',
       prependNode,
       endNode,
       appendNode,
@@ -87,7 +87,7 @@ export const InputStack = memo(
     }, [variant, palette, inputBorderRadius]);
 
     return (
-      <VStack testID={testID} width={`${width}%`} gap={0.5} {...props}>
+      <VStack testID={testID} width={width} gap={0.5} {...props}>
         {!!labelNode && (
           <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
         )}

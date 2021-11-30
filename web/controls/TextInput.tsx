@@ -21,7 +21,7 @@ export type TextInputProps = {
    */
   onPress?: React.MouseEventHandler;
 } & TextInputBaseProps &
-  React.InputHTMLAttributes<HTMLInputElement>;
+  Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width'>;
 
 export const TextInput = memo(
   forwardRef(function TextInput(
@@ -33,7 +33,7 @@ export const TextInput = memo(
       testID,
       start,
       end,
-      width = 100,
+      width = '100%',
       disabled = false,
       align = 'start',
       compact = false,

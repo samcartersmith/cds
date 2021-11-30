@@ -29,7 +29,7 @@ export const TextInput = memo(function TextInput({
   testID,
   start,
   end,
-  width = 100,
+  width = '100%',
   disabled = false,
   align = 'start',
   compact,

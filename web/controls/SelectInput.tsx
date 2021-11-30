@@ -56,7 +56,7 @@ export const SelectInput = memo(
       variant = 'foregroundMuted',
       disabled = false,
       testID,
-      width = 100,
+      width = '100%',
       compact,
       onPress,
       onChange,

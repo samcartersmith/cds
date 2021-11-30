@@ -67,14 +67,14 @@ export const Variants = function Variants() {
 };
 
 export const Width = function Width() {
-  const widths = [100, 30, 75, 10] as const;
+  const widths = ['100%', '30%', '75%', '10%'] as const;
 
   return (
     <>
       {widths.map((width) => (
         <TextInput
-          key={`input-width-${width}%`}
-          label={`Width: ${width}%`}
+          key={`input-width-${width}`}
+          label={`Width: ${width}`}
           placeholder="placeholder"
           helperText="helperText"
           width={width}

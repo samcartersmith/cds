@@ -201,15 +201,15 @@ Determines the sentiment of the input. Because we allow startContent and endCont
 
 ### width
 
-Width of input. The number is converted to percentage.
+Width of input as a percentage string.
 
 <ApiDetails
   componentName="SelectInput"
   propertyName="width"
   required={false}
-  defaultValue="100"
-  mobileOptions={['number']}
-  webOptions={['number']}
+  defaultValue="100%"
+  mobileOptions={['`${number}%`']}
+  webOptions={['`${number}%`']}
 />
 
 <ComponentDetails componentName="SelectInput" templateName="prop-width" />

@@ -26,7 +26,7 @@ function expectAttribute<
 }
 
 describe('width', () => {
-  expectAttribute('width', [10, 50, 100]);
+  expectAttribute('width', ['10%', '50%', '100%']);
 });
 
 describe('height', () => {

@@ -19,7 +19,7 @@ export type InputStackProps = {
 
 export const InputStack = memo(function InputStack({
   /** CDS custom props */
-  width = 100,
+  width = '100%',
   prependNode,
   endNode,
   appendNode,
@@ -61,7 +61,7 @@ export const InputStack = memo(function InputStack({
   }, [palette, variant, appendNode, prependNode]);
 
   return (
-    <VStack testID={testID} width={`${width}%`} gap={0.5} {...props}>
+    <VStack testID={testID} width={width} gap={0.5} {...props}>
       {!!labelNode && <>{labelNode}</>}
       <HStack opacity={disabled ? opacityDisabled : 1}>
         {!!prependNode && <>{prependNode}</>}

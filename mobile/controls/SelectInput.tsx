@@ -29,7 +29,7 @@ export const SelectInput = memo(
         value,
         disabled = false,
         testID,
-        width = 100,
+        width = '100%',
         accessibilityLabel,
         accessibilityHint,
         compact,

@@ -18,10 +18,10 @@ export type InputStackBaseProps = {
    */
   variant?: InputVariant;
   /**
-   * Width of input. The number is converted to percentage.
-   * @default 100
+   * Width of input as a percentage string.
+   * @default 100%
    * */
-  width?: number;
+  width?: `${number}%`;
   /**
    * Height of input
    * @default auto

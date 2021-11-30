@@ -70,12 +70,12 @@ export const FormInputsExample = () => {
           />
           <TextInput label="Unit #" aria-required="true" />
           <HStack gap={gap}>
-            <TextInput label="City/town" width={70} />
-            <TextInput label="State" width={30} />
+            <TextInput label="City/town" width="70%" />
+            <TextInput label="State" width="30%" />
           </HStack>
           <HStack gap={gap}>
-            <TextInput label="Postal code" width={40} />
-            <TextInput label="Country" width={60} />
+            <TextInput label="Postal code" width="40%" />
+            <TextInput label="Country" width="60%" />
           </HStack>
           <ButtonGroup accessibilityLabel="Save form">
             <Button type="submit">Save</Button>
