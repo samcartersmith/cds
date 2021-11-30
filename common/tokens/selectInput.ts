@@ -11,3 +11,5 @@ export const selectOptionCellMinHeight: Record<ScaleDensity, number> = {
   normal: 56,
   dense: 44,
 };
+
+export const selectKeys = [' ', 'Spacebar', 'Enter'];

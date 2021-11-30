@@ -1,4 +1,4 @@
-import React, { useContext, memo } from 'react';
+import React, { useContext, memo, forwardRef, ForwardedRef } from 'react';
 import { IconButtonVariant } from '@cbhq/cds-common/types/IconButtonBaseProps';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 import { Box } from '../layout/Box';
@@ -16,23 +16,29 @@ export type InputIconButtonProps = {
 } & IconButtonProps &
   SharedProps;
 
-export const InputIconButton = memo(function InputIconButton({
-  disableInheritFocusStyle = false,
-  testID,
-  variant = 'primary',
-  ...props
-}: InputIconButtonProps) {
-  const contextVariant = useContext(TextInputFocusVariantContext) ?? variant;
+export const InputIconButton = memo(
+  forwardRef(function InputIconButton(
+    {
+      disableInheritFocusStyle = false,
+      testID,
+      variant = 'primary',
+      ...props
+    }: InputIconButtonProps,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) {
+    const contextVariant = useContext(TextInputFocusVariantContext) ?? variant;
 
-  const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
+    const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
 
-  return (
-    <Box spacingStart={1} spacingEnd={0.5} testID={testID}>
-      <IconButton
-        transparent
-        variant={disableInheritFocusStyle ? variant : (transformedVariant as IconButtonVariant)}
-        {...props}
-      />
-    </Box>
-  );
-});
+    return (
+      <Box spacingStart={1} spacingEnd={0.5} testID={testID}>
+        <IconButton
+          ref={ref}
+          transparent
+          variant={disableInheritFocusStyle ? variant : (transformedVariant as IconButtonVariant)}
+          {...props}
+        />
+      </Box>
+    );
+  }),
+);

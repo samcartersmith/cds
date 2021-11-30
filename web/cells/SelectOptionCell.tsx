@@ -7,6 +7,7 @@ import { LinkableProps } from '../system';
 import { Cell, overflowClassName } from './Cell';
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
+import { CellAccessory } from './CellAccessory';
 
 export type SelectOptionCellProps = {
   /** automatically focus a select option if it's already been selected
@@ -25,7 +26,7 @@ export type SelectOptionCellProps = {
 export const SelectOptionCell = memo(
   forwardRef(
     (
-      { onKeyDown, title, description, multiline, ...props }: SelectOptionCellProps,
+      { onKeyDown, title, description, multiline, selected, ...props }: SelectOptionCellProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
       const minHeight = useScaleConditional(selectOptionCellMinHeight);
@@ -36,6 +37,7 @@ export const SelectOptionCell = memo(
           onKeyDown={onKeyDown}
           borderRadius="none"
           minHeight={minHeight}
+          accessory={selected ? <CellAccessory type="selected" /> : undefined}
           {...props}
         >
           <VStack>

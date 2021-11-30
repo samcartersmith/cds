@@ -33,9 +33,9 @@ describe('SelectInput', () => {
     expect(getByTestId(mockTestID)).toHaveAttribute('aria-label', accessibilityLabel);
   });
   it('renders the SelectInput trigger', async () => {
-    const { getByRole } = render(<MockSelectInput />);
+    const { getByTestId } = render(<MockSelectInput testID={mockTestID} />);
 
-    expect(getByRole('button')).toBeDefined();
+    expect(getByTestId(mockTestID)).toBeDefined();
   });
   it('opens the Menu when the SelectInput is pressed', () => {
     const onPressSpy = jest.fn();
