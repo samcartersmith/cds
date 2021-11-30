@@ -217,6 +217,7 @@ _Run the following steps in the terminal in this order_
 ### Troubleshooting Guide
 
 - **Emulator failed to load** Try manually launching the Emulator from terminal. Be sure the emulator also exists in Android Studio's AVD manager.
+- **Icons failed to load on iOS** Run `make rebuild.ios` to clean the previous build and rebuild.
 - When in doubt, run `make clean.ios/android` and then run through the previous 3 steps again (in order).
 
 ## Retail RN Experiments

@@ -1,38 +1,40 @@
 define HELP_TEXT
 Help:
 -----
+  $$ make build.android             -- Build the playground android app.
   $$ make build.common              -- Build the `common` package.
+  $$ make build.css                 -- Build the fonts and css.
   $$ make build.fonts               -- Build the `fonts` package.
+  $$ make build.ios                 -- Build the playground ios app.
   $$ make build.lottie              -- Build the `lottie-files` package.
   $$ make build.mobile              -- Build the `mobile` package.
+  $$ make build.packages            -- Build all packages.
+  $$ make build.story               -- Build storybook.
   $$ make build.utils               -- Build the `utils` package.
   $$ make build.web                 -- Build the `web` package.
-  $$ make build.css                 -- Build the fonts and css.
-  $$ make build.packages            -- Build all packages.
-  $$ make build.ios                 -- Build the playground ios app.
-  $$ make build.android             -- Build the playground android app.
+  $$ make build.website             -- Build docusaurus website.
+  $$ make clean.ios                 -- Clean ios build
+  $$ make codegen                   -- Generate code in design system.
+  $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
+  $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
+  $$ make docgen                    -- Generate docs for CDS website.
+  $$ make lint                      -- Run eslint on all sources.
+  $$ make lint.fix                  -- Auto fixes lints issues
+  $$ make mobile.routes             -- Create routes for mobile-playgrounds from screens directory.
+  $$ make prepare.adoption          -- Prepare adoption numbers
+  $$ make prepare.icons             -- Prepare icons
+  $$ make prepare.illustrations     -- Prepare illustrations
+  $$ make rebuild.ios               -- Rebuild the playground ios app.
+  $$ make release                   -- Automatically update CHANGELOG based on PR titles
+  $$ make setup.mobile              -- Setup mobile dependencies
+  $$ make start.mobile              -- Start react native packager.
+  $$ make start.story               -- Start storybook local dev server.
+  $$ make start.website             -- Start docusaurus website.
   $$ make test                      -- Run web and mobile unit tests.
   $$ make test.mobile               -- Run mobile unit tests.
   $$ make test.web                  -- Run web unit tests.
-  $$ make docgen                    -- Generate docs for CDS website.
-  $$ make codegen                   -- Generate code in design system.
-  $$ make lint                      -- Run eslint on all sources.
-  $$ make lint.fix                  -- Auto fixes lints issues
-  $$ make start.story               -- Start storybook local dev server.
-  $$ make start.website             -- Start docusaurus website.
-  $$ make start.mobile              -- Start react native packager.
-  $$ make build.story               -- Build storybook.
-  $$ make build.website             -- Build docusaurus website.
-  $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
-  $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
-  $$ make prepare.icons             -- Prepare icons
-  $$ make prepare.illustrations     -- Prepare illustrations
-  $$ make prepare.adoption          -- Prepare adoption numbers
-  $$ make release                   -- Automatically update CHANGELOG based on PR titles
   $$ make typecheck                 -- Run global typecheck
-  $$ make setup.mobile              -- Setup mobile dependencies
-  $$ make clean.ios                 -- Clean ios build
-  $$ make mobile.routes             -- Create routes for mobile-playgrounds from screens directory.
+
 endef
 export HELP_TEXT
 
@@ -209,7 +211,6 @@ release:
 	bazel run :docgen
 	bazel run website:lint_fix
 
-
 .PHONY: typecheck
 typecheck:
 	bazel test common:typecheck
@@ -226,3 +227,9 @@ build.css:
 .PHONY: mobile.routes
 mobile.routes:
 	bazel run :prepare_mobile_routes
+
+.PHONY: rebuild.ios
+rebuild.ios:
+	make clean.ios
+	make setup.mobile
+	make build.ios
