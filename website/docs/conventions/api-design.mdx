@@ -96,4 +96,56 @@ Add a suffix of `Props`
 type ButtonProps = ButtonBaseProps & PressableProps;
 ```
 
+## Overlay components naming
+
+Overlay components provides an additional layer on top of current interface.
+They can be toggled on/off using a boolean prop.
+Current CDS Overlay components:
+- [Modal](/components/modal)
+- [Alert](/components/alert)
+- Overlay
+- Tray
+- Select
+- Drawer
+- Toast
+- Tooltip
+- Popover
+
+All the overlay components above should follow the following conventions to be consistent.
+
+### Visibility
+
+Overlay components visibility should be controlled using the `visible` prop.
+
+#### Controlled :heavy_check_mark:  
+```jsx
+const [visible, setVisible] = useState(false);
+
+<Modal visible={visible}>
+  {children}
+</Modal>
+```
+
+#### Uncontrolled :x:
+```jsx
+const [visible, setVisible] = useState(false);
+
+{visible &&
+  <Modal>
+    {children}
+  </Modal>
+}
+```
+
+### Lifecycle methods naming
+
+Lifecycle methods are used to operate on component visibility state changes.
+Provide the lifecycle methods that you feel are likely needed, and add more methods base on consumer requests.
+
+| Method     | Description                                    |
+|------------|------------------------------------------------|
+| onWillShow | Callback fired before the component shows.     |
+| onDidShow  | Callback fired after the component is visible. |
+| onWillHide | Callback fired before the component hides.     |
+| onDidHide  | Callback fired after the component is hidden.  |
 
