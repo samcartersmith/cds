@@ -1,6 +1,7 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useState } from 'react';
 
+import { css } from 'linaria';
 import { palette } from '../../tokens';
 import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/index';
 import { LogoMark } from '../../icons/LogoMark';
@@ -14,6 +15,7 @@ import {
   SidebarItemProps,
   NavLink,
 } from '../index';
+import { navLinkClassName } from '../NavLink';
 import { Pressable } from '../../system';
 import { Avatar } from '../../media';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
@@ -153,6 +155,12 @@ export const ComposedSystem: React.FC = () => {
   );
 };
 
+const testOverrideClass = css`
+  &.${navLinkClassName} {
+    color: ${palette.negative};
+  }
+`;
+
 export const NavLinkExample: React.FC = () => {
   const [activeItem, setActiveItem] = useState('assets');
   const getProps = (name: string) => ({
@@ -162,6 +170,9 @@ export const NavLinkExample: React.FC = () => {
 
   return (
     <HStack gap={3}>
+      <NavLink {...getProps('test')} dangerouslySetClassName={testOverrideClass}>
+        Override Test
+      </NavLink>
       <NavLink {...getProps('assets')}>Assets</NavLink>
       <NavLink {...getProps('payments')}>Payments</NavLink>
       <NavLink {...getProps('myWallet')}>My Wallet</NavLink>

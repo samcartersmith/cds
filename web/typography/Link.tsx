@@ -51,6 +51,8 @@ const TYPOGRAPHY_MAP: Record<
   inherit: TextInherited,
 };
 export type LinkProps = {
+  /** Color of the foreground text. */
+  color?: LinkBaseProps['color'] | 'currentColor';
   /**
    * If true, it opens the link in a new window.
    * If false, it replaces the current screen with the link
@@ -65,7 +67,7 @@ export type LinkProps = {
    * @danger Adds a className to the Link. If you pass in a className make sure your styles override the Link styles using the Link class .cds-link like this: .my-class.cds-link
    */
   dangerouslySetClassName?: string;
-} & LinkBaseProps &
+} & Omit<LinkBaseProps, 'color'> &
   SharedProps &
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'color'>;
 
