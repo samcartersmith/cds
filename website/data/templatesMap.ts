@@ -1924,6 +1924,33 @@ export const ProgressBarWithFloatLabel = {
   ),
 };
 
+export const ProgressCircle = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressCircle/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressCircle/intro.mdx'
+      ),
+  ),
+  'progress-circle': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressCircle/progress-circle.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ProgressCircle/usage.mdx'
+      ),
+  ),
+};
+
 export const Sparkline = {
   implementation: React.lazy(
     async () =>

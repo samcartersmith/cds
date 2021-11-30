@@ -180,6 +180,7 @@ module.exports = {
         'components/visualizations/ProgressBar/progress-bar',
         'components/visualizations/ProgressBarWithFixedLabels/progress-bar-with-fixed-labels',
         'components/visualizations/ProgressBarWithFloatLabel/progress-bar-with-float-label',
+        'components/visualizations/ProgressCircle/progress-circle',
         'components/visualizations/Sparkline/sparkline',
         'components/visualizations/SparklineGradient/sparkline-gradient',
       ],
