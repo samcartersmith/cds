@@ -7,13 +7,20 @@ type UseCounterParams = {
 };
 
 export const useCounter = ({ startNum, endNum, durationInMillis }: UseCounterParams) => {
-  const [count, setCount] = useState(startNum);
+  const skipAnimation = Boolean(process.env.PERCY_TOKEN);
+  const [count, setCount] = useState(skipAnimation ? endNum : startNum);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
+    const clearTimeoutRef = () => {
+      clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
+    };
+    if (skipAnimation) {
+      return clearTimeoutRef;
+    }
     const startTime = Date.now();
     const endTime = startTime + durationInMillis;
-    clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
+    clearTimeoutRef();
     let currCount = startNum;
 
     function runUpdateAfterTimer() {
@@ -49,10 +56,8 @@ export const useCounter = ({ startNum, endNum, durationInMillis }: UseCounterPar
       runUpdateAfterTimer();
     }
 
-    return () => {
-      clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
-    };
-  }, [startNum, endNum, durationInMillis]);
+    return clearTimeoutRef;
+  }, [startNum, endNum, durationInMillis, skipAnimation]);
 
   return count;
 };
