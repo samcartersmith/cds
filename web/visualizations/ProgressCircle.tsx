@@ -65,6 +65,7 @@ const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
 
     return (
       <circle
+        data-testid="cds-progress-circle-inner"
         ref={circleRef}
         className={innerSvgCircleClassName}
         strokeDasharray={circumference}

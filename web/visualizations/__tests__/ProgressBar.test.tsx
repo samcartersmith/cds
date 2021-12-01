@@ -1,12 +1,16 @@
 import { renderA11y } from '@cbhq/jest-utils';
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
+import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { ProgressBar } from '../ProgressBar';
 import { Box } from '../../layout';
 import { palette } from '../../tokens';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 
+jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
+  useCounter: ({ endNum }: UseCounterParams) => endNum,
+}));
 jest.mock('../../hooks/useDimensions', () => ({
   useDimensions: jest.fn(() => {
     return {

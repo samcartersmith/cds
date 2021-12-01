@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-type UseCounterParams = {
+export type UseCounterParams = {
   startNum: number;
   endNum: number;
   durationInMillis: number;
