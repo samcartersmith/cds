@@ -1,6 +1,7 @@
 import React, { useMemo, memo } from 'react';
 
 import { cx, css } from 'linaria';
+import { CellSpacing } from '@cbhq/cds-common/types';
 import { Cell, truncateClassName } from '../cells/Cell';
 import { VStack, HStack } from '../layout';
 import { TextBody, TextLabel2, TextHeadline } from '../typography';
@@ -9,6 +10,7 @@ import { TableCellProps } from './types/tableCellTypes';
 import { tableCell, tableHeaderCell, tableFooterCell } from './styles/tableCellStyles';
 import { useTableCellTag, useTableSectionTag } from './hooks/useTable';
 
+const cellOuterSpacing: CellSpacing = { spacingHorizontal: 0 };
 export type { TableCellProps } from './types/tableCellTypes';
 export const TableCell = memo(
   ({
@@ -93,6 +95,7 @@ export const TableCell = memo(
           accessory={end}
           reduceHorizontalSpacing
           shouldOverflow={!overflow}
+          outerSpacing={cellOuterSpacing}
         >
           {children ? (
             <TextComponent
