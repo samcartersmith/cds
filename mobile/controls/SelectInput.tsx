@@ -1,21 +1,23 @@
 import React, { useCallback, memo, useEffect, forwardRef, ForwardedRef } from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { SelectInputBaseProps } from '@cbhq/cds-common/types';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import {
   animateCaretInConfig,
   animateCaretOutConfig,
 } from '@cbhq/cds-common/animation/selectInput';
-import { useRotateAnimation } from '@cbhq/cds-mobile/animation/useRotateAnimation';
-import { InputIcon } from '@cbhq/cds-mobile/controls/InputIcon';
-import { useToggler } from '@cbhq/cds-common';
+
+import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
-import { InputLabel } from './InputLabel';
-import { HelperText } from './HelperText';
 import { HStack } from '../layout/HStack';
 import { TextBody } from '../typography/TextBody';
+
+import { InputIcon } from './InputIcon';
+import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
+import { HelperText } from './HelperText';
 
 export const SelectInput = memo(
   forwardRef(
