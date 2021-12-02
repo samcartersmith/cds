@@ -1,20 +1,41 @@
 import React, { memo } from 'react';
+import { css, cx } from 'linaria';
 
 import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 
 import { useThemeProviderStyles } from './useThemeProviderStyles';
 
-const ThemeManager: React.FC = ({ children }) => {
-  const props = useThemeProviderStyles();
-  return <div {...props}>{children}</div>;
+// https://developer.mozilla.org/en-US/docs/Web/CSS/display#display_contents
+const displayContents = css`
+  display: contents;
+`;
+
+type ThemeManagerProps = {
+  /** Visually remove the ThemeProviders box and replace it with its content. 
+  Conceptually this makes ThemeProvider behave like React.Fragment,
+  but we can still apply css variable overrides via style attribute for its children to inherit. */
+  display?: 'contents';
 };
 
-export const ThemeProvider: React.FC<SystemProviderProps> = memo(({ children, ...props }) => {
+export type ThemeProviderProps = SystemProviderProps & ThemeManagerProps;
+
+const ThemeManager: React.FC<ThemeManagerProps> = ({ children, display }) => {
+  const { style, className } = useThemeProviderStyles();
   return (
-    <SystemProvider {...props}>
-      <ThemeManager>{children}</ThemeManager>
-    </SystemProvider>
+    <div style={style} className={cx(className, display === 'contents' && displayContents)}>
+      {children}
+    </div>
   );
-});
+};
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = memo(
+  ({ children, display, ...props }) => {
+    return (
+      <SystemProvider {...props}>
+        <ThemeManager display={display}>{children}</ThemeManager>
+      </SystemProvider>
+    );
+  },
+);
 
 ThemeProvider.displayName = 'ThemeProvider';

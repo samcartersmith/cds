@@ -19,6 +19,21 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### display <Badge variant="web" />
+
+Visually remove the ThemeProviders box and replace it with its content. Conceptually this makes ThemeProvider behave like React.Fragment, but we can still apply css variable overrides via style attribute for its children to inherit.
+
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="display"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['contents']}
+/>
+
+<ComponentDetails componentName="ThemeProvider" templateName="prop-display" />
+
 ### palette
 
 Takes a configurable palette. If a partial palette is provided it will be merged with the closest parent `ThemeProvider` if present, if not it will be fallback to merging with the default CDS palette.
