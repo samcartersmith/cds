@@ -1,5 +1,5 @@
 import { useScaleConditional } from '../scale/useScaleConditional';
-import type { AvatarSize, AvatarPixelSize } from '../types';
+import type { AvatarSize, AvatarPixelSize } from '../types/AvatarSize';
 
 type AvatarScaleMap = Record<AvatarSize, AvatarPixelSize>;
 

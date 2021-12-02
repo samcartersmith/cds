@@ -1,7 +1,7 @@
 import { renderA11y } from '@cbhq/jest-utils';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { AvatarSize } from '@cbhq/cds-common';
+import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
 import { getNormalAvatarPixelSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { Avatar } from '../Avatar';
 

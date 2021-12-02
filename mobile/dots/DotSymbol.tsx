@@ -1,0 +1,35 @@
+import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
+import React, { ImageSourcePropType, View, ViewStyle } from 'react-native';
+import { useDotPlacementStyles } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
+import { RemoteImage } from '../media/RemoteImage';
+import { dotStyles } from './dotStyles';
+
+export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
+  source: ImageSourcePropType | string;
+};
+
+export const DotSymbol = ({
+  children,
+  placement,
+  source,
+  size = 's',
+  ...props
+}: DotSymbolProps) => {
+  const placementStyles = useDotPlacementStyles(placement) as ViewStyle;
+  const { iconSize } = useIconSize(size);
+
+  return (
+    <View style={Boolean(children) && dotStyles.dotRootContainerStyles} {...props}>
+      {children}
+      <View style={placementStyles}>
+        <RemoteImage
+          shape="circle"
+          source={typeof source === 'string' ? { uri: source } : source}
+          width={iconSize}
+          height={iconSize}
+          resizeMode="cover"
+        />
+      </View>
+    </View>
+  );
+};

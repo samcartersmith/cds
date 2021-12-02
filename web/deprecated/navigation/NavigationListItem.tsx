@@ -1,6 +1,7 @@
 import React, { memo, useCallback } from 'react';
 
-import { BadgeValue, NavigationIconName } from '@cbhq/cds-common';
+import { NavigationIconName } from '@cbhq/cds-common';
+import { BadgeValue } from '@cbhq/cds-common/types/BadgeBaseProps';
 import { emptyObject } from '@cbhq/cds-utils';
 import { cx } from 'linaria';
 

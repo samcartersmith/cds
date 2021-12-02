@@ -59,6 +59,10 @@ export const codegenRoutes = [
     getComponent: () => require('../screens/Divider').default,
   },
   {
+    key: 'Dots',
+    getComponent: () => require('../screens/Dots').default,
+  },
+  {
     key: 'Drawer',
     getComponent: () => require('../screens/Drawer').default,
   },

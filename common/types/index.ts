@@ -1,6 +1,5 @@
 export * from './AlertBaseProps';
-export * from './AvatarSize';
-export * from './BadgeBaseProps';
+export * from './DotBaseProps';
 export * from './BorderRadius';
 export * from './BorderWidth';
 export * from './BoxBaseProps';
