@@ -21,6 +21,7 @@ import { TextTitle4 } from './TextTitle4';
 import { TextInherited } from './TextInherited';
 
 export const linkClassName = 'cds-link';
+export const linkContainerClassName = `${linkClassName}--container`;
 const link = css`
   &.${linkClassName} {
     text-decoration: none;
@@ -100,7 +101,12 @@ export const Link = memo(function Link({
     rel,
     target: openInNewWindow ? '_blank' : undefined,
     children: (
-      <TextComponent as="span" color={color} mono={mono}>
+      <TextComponent
+        as="span"
+        color={color}
+        mono={mono}
+        dangerouslySetClassName={linkContainerClassName}
+      >
         {children}
       </TextComponent>
     ),

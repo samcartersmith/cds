@@ -1,8 +1,8 @@
 import { css, cx } from 'linaria';
 import React, { memo } from 'react';
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { opacityPressed } from '@cbhq/cds-common/tokens/interactable';
 import { palette, spacing } from '../tokens';
-import { Link, LinkProps } from '../typography/Link';
+import { Link, LinkProps, linkContainerClassName } from '../typography/Link';
 import { focusRing } from '../styles/focus';
 
 type NavLinkProps = {
@@ -12,27 +12,35 @@ type NavLinkProps = {
 export const navLinkClassName = 'cds-nav-link';
 const navLinkStyles = css`
   &.${navLinkClassName} {
-    transition: border ${durations.fast3}ms ease-out;
     padding-top: ${spacing[3]};
     padding-bottom: ${spacing[3]};
     color: ${palette.foreground};
     border-bottom: 2px solid transparent;
 
-    // hover and pressed state
+    // Disable default transitions from Link
+    .${linkContainerClassName} {
+      transition: color 0ms;
+    }
+
+    // Hover and pressed state
     &:hover,
     &:active {
       color: ${palette.primary};
     }
 
-    // pressed and active states
-    &:active,
-    &.current {
-      border-bottom-color: ${palette.primary};
+    // Pressed state
+    &:active {
+      opacity: ${opacityPressed[60]};
     }
 
-    // Don't show hover effect if this item is currently active
-    &.current:hover {
-      color: ${palette.foreground};
+    // Current state
+    &.current {
+      border-bottom-color: ${palette.primary};
+
+      // Don't show hover effect if this item is currently active
+      &:hover {
+        color: ${palette.foreground};
+      }
     }
   }
 `;
