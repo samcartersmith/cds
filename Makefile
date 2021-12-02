@@ -10,6 +10,7 @@ Help:
   $$ make build.mobile              -- Build the `mobile` package.
   $$ make build.packages            -- Build all packages.
   $$ make build.story               -- Build storybook.
+  $$ make build.story.percy         -- Build storybook that is used for Percy pipeline.
   $$ make build.utils               -- Build the `utils` package.
   $$ make build.web                 -- Build the `web` package.
   $$ make build.website             -- Build docusaurus website.
@@ -29,6 +30,7 @@ Help:
   $$ make setup.mobile              -- Setup mobile dependencies
   $$ make start.mobile              -- Start react native packager.
   $$ make start.story               -- Start storybook local dev server.
+  $$ make start.story.percy         -- Start storybook local dev server that is used for Percy pipeline.
   $$ make start.website             -- Start docusaurus website.
   $$ make test                      -- Run web and mobile unit tests.
   $$ make test.mobile               -- Run mobile unit tests.
@@ -160,6 +162,10 @@ debug.adoption:
 start.story:
 	bazel run :storybook_serve
 
+.PHONY: start.story.percy
+start.story.percy:
+	bazel run :percy_serve
+
 .PHONY: start.website
 start.website:
 	bazel run website:docusaurus_serve
@@ -167,6 +173,10 @@ start.website:
 .PHONY: build.story
 build.story:
 	bazel build :storybook_build
+
+.PHONY: build.story.percy
+build.story.percy:
+	bazel build :percy_build
 
 .PHONY: build.website
 build.website:

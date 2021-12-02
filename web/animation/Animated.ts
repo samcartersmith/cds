@@ -21,7 +21,7 @@ export class Animated {
     return {
       start: async (cb?) => {
         // don't animate anything in percy, it just leads to flakey snapshots
-        const skipAnimation = Boolean(process.env.PERCY_TOKEN);
+        const skipAnimation = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
         if (skipAnimation) {
           return { finished: true };
         }

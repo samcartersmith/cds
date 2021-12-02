@@ -267,20 +267,43 @@ release_packages(
 # *** Storybook ***
 # *****************
 
+STORY_SRCS = [
+    ":web_source",
+    "//eng/shared/design-system/fonts:runtime_source",
+    "//eng/shared/design-system/web:story_source",
+]
+
+STORY_DEPS = [
+    "@npm//react-router-dom",
+    "@npm//typescript",
+] + DEPS + PEER_DEPS + DEV_DEPS
+
+STORY_LIVE_PACKAGES = "cds-\\w+"
+
+STORY_STATIC_FILES = ["eng/shared/design-system/fonts"]
+
+STORY_CONFIG = "//eng/shared/design-system/storybook:.storybook"
+
 storybook(
     name = "storybook",
-    srcs = [
-        ":web_source",
-        "//eng/shared/design-system/fonts:runtime_source",
-        "//eng/shared/design-system/web:story_source",
-    ],
-    live_packages = "cds-\\w+",
-    static_files = ["eng/shared/design-system/fonts"],
-    storybook_config = "//eng/shared/design-system/storybook:.storybook",
-    deps = [
-        "@npm//react-router-dom",
-        "@npm//typescript",
-    ] + DEPS + PEER_DEPS + DEV_DEPS,
+    srcs = STORY_SRCS,
+    live_packages = STORY_LIVE_PACKAGES,
+    static_files = STORY_STATIC_FILES,
+    storybook_config = STORY_CONFIG,
+    deps = STORY_DEPS,
+)
+
+# We have to do separate target for percy so we can set env to skip animations
+storybook(
+    name = "percy",
+    srcs = STORY_SRCS,
+    env = {
+        "STORYBOOK_SKIP_ANIMATION": "true",
+    },
+    live_packages = STORY_LIVE_PACKAGES,
+    static_files = STORY_STATIC_FILES,
+    storybook_config = STORY_CONFIG,
+    deps = STORY_DEPS,
 )
 
 # *************************
@@ -291,8 +314,8 @@ storybook(
 percy_storybook(
     name = "storybook_percy",
     args = [
-        "-b eng/shared/design-system/storybook_build",
+        "-b eng/shared/design-system/percy_build",
         "--widths=320,768,1170",
     ],
-    data = ["//eng/shared/design-system:storybook_build"],
+    data = ["//eng/shared/design-system:percy_build"],
 )

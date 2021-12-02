@@ -11,7 +11,7 @@ export function useFallbackShape(shape: Shape, baseWidth: number | string) {
       shape === 'rectangle' &&
       typeof baseWidth === 'number' &&
       process.env.NODE_ENV !== 'test' &&
-      !process.env.PERCY_TOKEN
+      !process.env.STORYBOOK_SKIP_ANIMATION
     ) {
       const quarter = Math.round(baseWidth / 4);
       const min = Math.max(baseWidth - quarter, 1);

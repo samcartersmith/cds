@@ -7,7 +7,7 @@ export type UseCounterParams = {
 };
 
 export const useCounter = ({ startNum, endNum, durationInMillis }: UseCounterParams) => {
-  const skipAnimation = Boolean(process.env.PERCY_TOKEN);
+  const skipAnimation = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
   const [count, setCount] = useState(skipAnimation ? endNum : startNum);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 

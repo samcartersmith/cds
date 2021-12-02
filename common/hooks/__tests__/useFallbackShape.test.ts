@@ -15,7 +15,7 @@ describe('useFallbackShape()', () => {
 
   it('doesnt randomize for percy', () => {
     process.env.NODE_ENV = 'production';
-    process.env.PERCY_TOKEN = 'yolo';
+    process.env.STORYBOOK_SKIP_ANIMATION = 'yolo';
 
     const { result, rerender } = renderHook(() => {
       return useFallbackShape('rectangle', 100);
@@ -26,6 +26,6 @@ describe('useFallbackShape()', () => {
     expect(result.current).toEqual({ borderRadius: 0, width: 100 });
 
     process.env.NODE_ENV = 'test';
-    process.env.PERCY_TOKEN = undefined;
+    process.env.STORYBOOK_SKIP_ANIMATION = undefined;
   });
 });

@@ -1,15 +1,19 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const HtmlPlugin = require('html-webpack-plugin');
 
 const { configureForStorybook } = require('@cbhq/webpack-utils');
 
 module.exports = (storybook) => {
-  const config = configureForStorybook({
-    ...storybook,
-    environmentFile: storybook.environmentFile ||
-      path.resolve(__dirname, `.env${process.env.NODE_ENV === 'development' ? '.local' : '.prod'}`),
-  });
+  const config = configureForStorybook(storybook);
+
+  config.plugins?.push(
+    new Dotenv({
+      path: storybook.environmentFile,
+      STORYBOOK_SKIP_ANIMATION: process.env.STORYBOOK_SKIP_ANIMATION,
+    }),
+  );
 
   config.plugins.push(
     new HtmlPlugin({

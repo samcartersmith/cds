@@ -94,7 +94,8 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
 
 export const ProgressBarWithFloatLabel: React.FC<ProgressBarWithFloatLabelProps> = memo(
   ({ label, labelPlacement = 'above', progress, disabled, children, testID }) => {
-    const progressBarFloatLabel = (
+    const skipLabel = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
+    const progressBarFloatLabel = !skipLabel && (
       <ProgressBarFloatLabel label={label} progress={progress} disabled={disabled} />
     );
 
