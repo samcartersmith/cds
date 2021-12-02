@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.0 (12/2/2021, 09:43 AM PST)
+
+#### 💥 Breaking
+
+- **[Input]** Change allowed width type to percentage string for inputs. [#43620](https://github.cbhq.net/mono/repo/pull/43620), [CDS-1772](https://jira.coinbase-corp.com/browse/CDS-1772)
+
+#### 🚀 Updates
+
+- Sidebar can auto collapse for smaller devices. [#42981](https://github.cbhq.net/mono/repo/pull/42981)
+- Ensure NavLink states match the new design spec. [#43781](https://github.cbhq.net/mono/repo/pull/43781)
+- Rename PageTitle to NavigationTitle. [#43657](https://github.cbhq.net/mono/repo/pull/43657)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish Icons Dec 1, 2021. [#44063](https://github.cbhq.net/mono/repo/pull/44063)
+- Let TableCell be responsible for padding. [#44046](https://github.cbhq.net/mono/repo/pull/44046)
+- **[ProgressBarFixedLabelContainer]** Add keys to spacer nodes. [#43780](https://github.cbhq.net/mono/repo/pull/43780)
+
+#### 📘 Misc
+
+- ProgressCircle web tests. [#43973](https://github.cbhq.net/mono/repo/pull/43973)
+- Disable animations with percy. [#43864](https://github.cbhq.net/mono/repo/pull/43864)
+
 ## 0.31.0 (11/30/2021, 07:43 AM PST)
 
 #### 💥 Breaking

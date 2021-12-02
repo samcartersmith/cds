@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.0 (12/2/2021, 09:43 AM PST)
+
+#### 💥 Breaking
+
+- **[Input]** Change allowed width type to percentage string for inputs. [#43620](https://github.cbhq.net/mono/repo/pull/43620), [CDS-1772](https://jira.coinbase-corp.com/browse/CDS-1772)
+
+#### 🚀 Updates
+
+- Cds toast mobile. [#43739](https://github.cbhq.net/mono/repo/pull/43739), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
+#### 🐞 Fixes
+
+- **[Illustration]** Refactor Illustration to remove async requires. [#43779](https://github.cbhq.net/mono/repo/pull/43779), [CDS-1775](https://jira.coinbase-corp.com/browse/CDS-1775)
+
+#### 📘 Misc
+
+- ProgressCircle web tests. [#43973](https://github.cbhq.net/mono/repo/pull/43973)
+
 ## 0.29.7 (11/30/2021, 07:43 AM PST)
 
 #### 🚀 Updates

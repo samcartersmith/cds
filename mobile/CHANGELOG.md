@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.0 (12/2/2021, 09:43 AM PST)
+
+#### 💥 Breaking
+
+- **[Input]** Change allowed width type to percentage string for inputs. [#43620](https://github.cbhq.net/mono/repo/pull/43620), [CDS-1772](https://jira.coinbase-corp.com/browse/CDS-1772)
+
+#### 🚀 Updates
+
+- Cds toast mobile. [#43739](https://github.cbhq.net/mono/repo/pull/43739), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
+#### 🐞 Fixes
+
+- **[Icons]** Publish Icons Dec 1, 2021. [#44063](https://github.cbhq.net/mono/repo/pull/44063)
+- Do not animate to intiial value onMount for mobile controls. [#43992](https://github.cbhq.net/mono/repo/pull/43992)
+- **[SelectInput]** Use relative imports for mobile. [#43994](https://github.cbhq.net/mono/repo/pull/43994)
+- **[ProgressBarFixedLabelContainer]** Add keys to spacer nodes. [#43780](https://github.cbhq.net/mono/repo/pull/43780)
+- **[Illustration]** Refactor Illustration to remove async requires. [#43779](https://github.cbhq.net/mono/repo/pull/43779), [CDS-1775](https://jira.coinbase-corp.com/browse/CDS-1775)
+
+#### 📘 Misc
+
+- Implement mobile ProgressCircle tests. [#44184](https://github.cbhq.net/mono/repo/pull/44184)
+
 ## 0.34.0 (11/30/2021, 07:43 AM PST)
 
 #### 💥 Breaking
