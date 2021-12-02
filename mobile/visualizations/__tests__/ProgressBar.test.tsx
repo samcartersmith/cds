@@ -1,6 +1,7 @@
 import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { defaultPalette } from '@cbhq/cds-common';
+import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { ReactTestInstance } from 'react-test-renderer';
 import { ProgressBar } from '../ProgressBar';
 import { Box } from '../../layout';
@@ -8,7 +9,10 @@ import { paletteValueToRgbaString } from '../../utils/palette';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 
-// TODO move this to global mocks
+jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
+  useCounter: ({ endNum }: UseCounterParams) => endNum,
+}));
+
 jest.mock('react-native/Libraries/Animated/Animated', () => {
   return {
     ...jest.requireActual<Record<string, unknown>>('react-native/Libraries/Animated/Animated'),

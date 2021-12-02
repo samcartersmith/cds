@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useRef } from 'react';
-import Svg, { Circle, G } from 'react-native-svg';
+import Svg, { Circle, CircleProps, G } from 'react-native-svg';
 import { Animated } from 'react-native';
 import {
   ProgressCircleBaseProps,
@@ -11,13 +11,15 @@ import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
+import { SharedProps } from '@cbhq/cds-common';
 import { VisualizationContainer } from './VisualizationContainer';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Box } from '../layout';
 import { usePalette } from '../hooks/usePalette';
 import { ProgressTextLabel } from './ProgressTextLabel';
 
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+type CircleType = React.ComponentClass<CircleProps & SharedProps>;
+const AnimatedCircle = Animated.createAnimatedComponent(Circle as CircleType);
 
 const ProgressCircleText: React.FC<ProgressCircleTextBaseProps> = memo(({ progress, disabled }) => {
   return (
@@ -57,7 +59,9 @@ const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
 
     return (
       <AnimatedCircle
-        ref={circleRef}
+        testID="cds-progress-circle-inner"
+        // This is required because Circle is mocked in the unit test to support testID. The mock does not support refs
+        ref={process.env.NODE_ENV !== 'test' ? circleRef : undefined}
         strokeDasharray={circumference}
         strokeDashoffset={animatedStrokeDashOffset.current}
         strokeLinecap={progress > 0 ? 'round' : 'butt'}
