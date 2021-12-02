@@ -1,35 +1,59 @@
-import { useCallback, useState, useEffect, useRef } from 'react';
-import { PortalNode } from './usePortalState';
+import {
+  useCallback,
+  useState,
+  useEffect,
+  useRef,
+  ReactElement,
+  RefAttributes,
+  cloneElement,
+} from 'react';
+import { ToastRefBaseProps, ToastBaseProps } from '../types';
 
-export type ToastNode = { duration: number } & Pick<PortalNode, 'element'>;
+export type ToastNode = {
+  duration: number;
+  element: ReactElement<ToastBaseProps & RefAttributes<ToastRefBaseProps>>;
+};
 
 export const useToastQueue = () => {
   const [activeToast, setActiveToast] = useState<ToastNode>();
   const toastQueue = useRef<ToastNode[]>([]);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const activeToastRef = useRef<ToastRefBaseProps | null>(null);
 
-  const clearTimer = useCallback(
-    () => clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>),
-    [],
+  const clearTimer = useCallback(() => {
+    clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
+    timeoutRef.current = undefined;
+  }, []);
+
+  const removeToast = useCallback(
+    async (shouldTriggerAnimation = true) => {
+      if (shouldTriggerAnimation) {
+        // wait for animation to finish
+        await activeToastRef.current?.hide();
+      }
+      clearTimer();
+      setActiveToast(undefined);
+    },
+    [clearTimer, setActiveToast, activeToastRef],
   );
-
-  const removeToast = useCallback(() => {
-    setActiveToast(undefined);
-    clearTimer();
-  }, [clearTimer]);
 
   const setToast = useCallback(
     (toast?: ToastNode) => {
       if (!toast) return;
 
-      setActiveToast(toast);
+      activeToastRef.current = null;
+
+      setActiveToast({
+        ...toast,
+        element: cloneElement(toast.element, { ref: activeToastRef }),
+      });
 
       // remove toast after duration
       timeoutRef.current = setTimeout(() => {
-        removeToast();
+        void removeToast();
       }, toast.duration);
     },
-    [setActiveToast, removeToast],
+    [removeToast],
   );
 
   const addToast = useCallback(
@@ -58,7 +82,7 @@ export const useToastQueue = () => {
   }, [clearTimer]);
 
   const clearToastQueue = () => {
-    removeToast();
+    void removeToast();
     toastQueue.current.length = 0;
   };
 

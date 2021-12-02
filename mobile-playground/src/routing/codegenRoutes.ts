@@ -227,6 +227,10 @@ export const codegenRoutes = [
     getComponent: () => require('../screens/TextTitle4').default,
   },
   {
+    key: 'Toast',
+    getComponent: () => require('../screens/Toast').default,
+  },
+  {
     key: 'Tray',
     getComponent: () => require('../screens/Tray').default,
   },

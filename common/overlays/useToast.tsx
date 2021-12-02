@@ -17,7 +17,7 @@ export const useToast = (Toast: ComponentType<ToastBaseProps>) => {
       // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const onDidHide = () => {
         options?.onDidHide?.();
-        removeToast();
+        void removeToast(false);
       };
 
       const calculateDuration = () => {

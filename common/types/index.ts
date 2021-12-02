@@ -24,6 +24,7 @@ export * from './IconName';
 export * from './IconSize';
 export * from './IllustrationProps';
 export * from './InputBaseProps';
+export * from './LinkBaseProps';
 export * from './LottieBaseProps';
 export * from './LottiePlayer';
 export * from './LottieSource';

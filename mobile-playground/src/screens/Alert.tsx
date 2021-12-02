@@ -73,9 +73,7 @@ const AlertScreen = () => {
         <PortalAlert />
       </Example>
       <Example title="Alert over Modal (Multiple Modals)">
-        <PortalProvider>
-          <AlertOnModal />
-        </PortalProvider>
+        <AlertOnModal />
       </Example>
     </ExamplesScreen>
   );

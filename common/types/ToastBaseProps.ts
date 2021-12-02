@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { NoopFn } from './Helpers';
+import { OverlayLifecycleProps } from './OverlayLifecycleProps';
 
 export type ToastText = string;
 export type ToastDuration = {
@@ -17,15 +17,16 @@ export type ToastBaseOptions = {
    */
   action?: ReactElement;
   /**
-   * Callback fired when the close button is pressed.
+   * Hide the close button on the right
+   * @default false
    */
-  onWillHide?: NoopFn;
-  /**
-   * Callback fired when toast close animation is finished.
-   */
-  onDidHide?: NoopFn;
-};
+  hideCloseButton?: boolean;
+} & Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'>;
 
 export type ToastOptions = ToastBaseOptions & ToastDuration;
 
 export type ToastBaseProps = { text: ToastText } & ToastBaseOptions;
+
+export type ToastRefBaseProps = {
+  hide: () => Promise<boolean>;
+};

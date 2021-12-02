@@ -7,6 +7,7 @@ import { FeatureFlagProvider } from '@cbhq/cds-mobile/system';
 import { usePalette } from '../mobile/hooks/usePalette';
 import { DevicePreferencesProvider } from '../mobile/system/DevicePreferencesProvider';
 import { useTypographyStyles } from '../mobile/typography';
+import { PortalProvider } from '../mobile/overlays/PortalProvider';
 
 import { RoutesList } from './src/routing/RoutesList';
 import { routes } from './src/routing/routes';
@@ -54,7 +55,9 @@ const App = () => {
   return (
     <FeatureFlagProvider fontMigration>
       <DevicePreferencesProvider>
-        <AppContent />
+        <PortalProvider>
+          <AppContent />
+        </PortalProvider>
       </DevicePreferencesProvider>
     </FeatureFlagProvider>
   );
