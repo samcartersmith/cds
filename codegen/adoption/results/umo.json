@@ -775,7 +775,7 @@
     {
       "name": "Button",
       "sourceFile": "@components/interactables/Button",
-      "totalInstances": 77,
+      "totalInstances": 78,
       "totalCallSites": 56,
       "cds": "@components/interactables/Button",
       "callSites": {
@@ -833,7 +833,7 @@
         "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 2,
         "@onboarding/screens/tos/TOSScreen.tsx": 1,
         "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1,
-        "@onboarding/components/UI/AlertScreen/AlertScreen.tsx": 1,
+        "@onboarding/components/UI/AlertScreen/AlertScreen.tsx": 2,
         "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
       },
       "propsWithCallSites": {
@@ -958,7 +958,7 @@
           "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 2,
           "@onboarding/screens/tos/TOSScreen.tsx": 1,
           "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1,
-          "@onboarding/components/UI/AlertScreen/AlertScreen.tsx": 1,
+          "@onboarding/components/UI/AlertScreen/AlertScreen.tsx": 2,
           "@onboarding/screens/kyc/KYCRefreshScreen/KYCRefreshScreen.tsx": 1
         },
         "variant": {
@@ -979,7 +979,8 @@
           "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 2,
           "@onboarding/screens/signup/MarketingEmailScreen.tsx": 1,
           "@onboarding/screens/signup/VerifyEmailScreen.tsx": 1,
-          "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 1
+          "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 1,
+          "@onboarding/components/UI/AlertScreen/AlertScreen.tsx": 2
         },
         "flexGrow": {
           "@onboarding/components/UI/NavBar.tsx": 2,

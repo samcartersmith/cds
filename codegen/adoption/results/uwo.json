@@ -219,118 +219,6 @@
       }
     },
     {
-      "name": "StyledDiamond",
-      "sourceFile": "@uwo/components/Tooltip/Tooltip.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@uwo/components/Tooltip/Tooltip.tsx" }
-      ],
-      "styledComponent": "div",
-      "propsWithCallSites": { "className": { "@uwo/components/Tooltip/Tooltip.tsx": 1 } }
-    },
-    {
-      "name": "Diamond",
-      "sourceFile": "@uwo/assets/icons/Diamond",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "HStack",
-      "sourceFile": "@uwo/components/common/primitives/HStack",
-      "totalInstances": 10,
-      "totalCallSites": 7,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx"
-        }
-      ],
-      "callSites": {
-        "@uwo/components/common/Banner.tsx": 1,
-        "@uwo/components/common/core/listCell/ListCell.tsx": 1,
-        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
-        "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
-        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-        "@uwo/components/common/interactables/inputs/Select.tsx": 2,
-        "@uwo/components/common/interactables/inputs/TextInput.tsx": 2
-      },
-      "propsWithCallSites": {
-        "dangerouslySetStyle": {
-          "@uwo/components/common/Banner.tsx": 1,
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1
-        },
-        "key": { "@uwo/components/common/Banner.tsx": 1 },
-        "width": { "@uwo/components/common/Banner.tsx": 1 },
-        "height": { "@uwo/components/common/Banner.tsx": 1 },
-        "alignItems": {
-          "@uwo/components/common/Banner.tsx": 1,
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
-          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 1
-        },
-        "spacing": {
-          "@uwo/components/common/Banner.tsx": 1,
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
-          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
-          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 2,
-          "@uwo/components/common/interactables/inputs/TextInput.tsx": 2
-        },
-        "data-test-id": {
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
-          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 2
-        },
-        "className": { "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1 },
-        "justifyContent": {
-          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Info",
-      "sourceFile": "@uwo/assets/icons/Info",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalElement": "svg",
-      "callSites": {
-        "@uwo/components/common/Banner.tsx": 1,
-        "@uwo/components/common/form/Address/InfoElement.tsx": 1
-      },
-      "propsWithCallSites": { "color": { "@uwo/components/common/Banner.tsx": 1 } }
-    },
-    {
-      "name": "Description",
-      "sourceFile": "@uwo/components/common/Banner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Text"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "@uwo/components/common/Spinner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "InnerSpinner",
-      "sourceFile": "@uwo/components/common/Spinner.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "size": { "@uwo/components/common/Spinner.tsx": 1 },
-        "center": { "@uwo/components/common/Spinner.tsx": 1 },
-        "color": { "@uwo/components/common/Spinner.tsx": 1 }
-      }
-    },
-    {
       "name": "Caption",
       "sourceFile": "@uwo/components/common/Caption",
       "totalInstances": 5,
@@ -571,6 +459,118 @@
       }
     },
     {
+      "name": "StyledDiamond",
+      "sourceFile": "@uwo/components/Tooltip/Tooltip.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "@uwo/components/Tooltip/Tooltip.tsx" }
+      ],
+      "styledComponent": "div",
+      "propsWithCallSites": { "className": { "@uwo/components/Tooltip/Tooltip.tsx": 1 } }
+    },
+    {
+      "name": "Diamond",
+      "sourceFile": "@uwo/assets/icons/Diamond",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@uwo/components/common/primitives/HStack",
+      "totalInstances": 10,
+      "totalCallSites": 7,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx"
+        }
+      ],
+      "callSites": {
+        "@uwo/components/common/Banner.tsx": 1,
+        "@uwo/components/common/core/listCell/ListCell.tsx": 1,
+        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
+        "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
+        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+        "@uwo/components/common/interactables/inputs/Select.tsx": 2,
+        "@uwo/components/common/interactables/inputs/TextInput.tsx": 2
+      },
+      "propsWithCallSites": {
+        "dangerouslySetStyle": {
+          "@uwo/components/common/Banner.tsx": 1,
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1
+        },
+        "key": { "@uwo/components/common/Banner.tsx": 1 },
+        "width": { "@uwo/components/common/Banner.tsx": 1 },
+        "height": { "@uwo/components/common/Banner.tsx": 1 },
+        "alignItems": {
+          "@uwo/components/common/Banner.tsx": 1,
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
+          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 1
+        },
+        "spacing": {
+          "@uwo/components/common/Banner.tsx": 1,
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 2,
+          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
+          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 2,
+          "@uwo/components/common/interactables/inputs/TextInput.tsx": 2
+        },
+        "data-test-id": {
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
+          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 2
+        },
+        "className": { "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1 },
+        "justifyContent": {
+          "@uwo/components/common/form/ReadOnlyDisplay/ReadOnlyDisplay.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Info",
+      "sourceFile": "@uwo/assets/icons/Info",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "svg",
+      "callSites": {
+        "@uwo/components/common/Banner.tsx": 1,
+        "@uwo/components/common/form/Address/InfoElement.tsx": 1
+      },
+      "propsWithCallSites": { "color": { "@uwo/components/common/Banner.tsx": 1 } }
+    },
+    {
+      "name": "Description",
+      "sourceFile": "@uwo/components/common/Banner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Text"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "@uwo/components/common/Spinner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "InnerSpinner",
+      "sourceFile": "@uwo/components/common/Spinner.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "size": { "@uwo/components/common/Spinner.tsx": 1 },
+        "center": { "@uwo/components/common/Spinner.tsx": 1 },
+        "color": { "@uwo/components/common/Spinner.tsx": 1 }
+      }
+    },
+    {
       "name": "ResponsiveTwoColumnReverseLayout",
       "sourceFile": "@uwo/components/common/layout/ResponsiveTwoColumnReverseLayout",
       "totalInstances": 11,
@@ -629,6 +629,13 @@
       "presentationalElement": "svg"
     },
     {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "SecureAccountCheckpoint",
       "sourceFile": "@uwo/assets/icons/SecureAccountCheckpoint",
       "totalInstances": 1,
@@ -682,13 +689,6 @@
       "propsWithCallSites": {
         "hideRightOnMobile": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
       }
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/commonScenes/shared/components/CollapsibleSidebar.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "Body",
@@ -1165,6 +1165,7 @@
       "propsWithCallSites": {
         "style": { "@uwo/components/common/interactables/inputs/Select.tsx": 2 },
         "data-test-id": { "@uwo/components/common/interactables/inputs/Select.tsx": 1 },
+        "onTouchStart": { "@uwo/components/common/interactables/inputs/Select.tsx": 1 },
         "onClick": { "@uwo/components/common/interactables/inputs/Select.tsx": 1 }
       }
     },
@@ -1483,6 +1484,13 @@
       "presentationalElement": "svg"
     },
     {
+      "name": "MobileUploadExplainerImage",
+      "sourceFile": "@uwo/assets/images/MobileUploadExplainerImage",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
       "name": "Columns",
       "sourceFile": "@uwo/components/common/primitives/spacing/Columns",
       "totalInstances": 2,
@@ -1554,13 +1562,6 @@
       }
     },
     {
-      "name": "MobileUploadExplainerImage",
-      "sourceFile": "@uwo/assets/images/MobileUploadExplainerImage",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
       "name": "DriversLicense",
       "sourceFile": "@uwo/assets/icons/DriversLicense",
       "totalInstances": 2,
@@ -1590,6 +1591,13 @@
       "presentationalElement": "svg"
     },
     {
+      "name": "VerifyIDExplainerImage",
+      "sourceFile": "@uwo/assets/images/VerifyIDExplainerImage",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "svg"
+    },
+    {
       "name": "MobileCamera",
       "sourceFile": "@uwo/assets/icons/MobileCamera",
       "totalInstances": 1,
@@ -1606,13 +1614,6 @@
     {
       "name": "FileUpload",
       "sourceFile": "@uwo/assets/icons/FileUpload",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "svg"
-    },
-    {
-      "name": "VerifyIDExplainerImage",
-      "sourceFile": "@uwo/assets/images/VerifyIDExplainerImage",
       "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalElement": "svg"
@@ -2893,56 +2894,6 @@
       }
     },
     {
-      "name": "VStack",
-      "sourceFile": "@uwo/components/common/primitives/VStack",
-      "totalInstances": 14,
-      "totalCallSites": 10,
-      "callSites": {
-        "@uwo/components/common/Banner.tsx": 2,
-        "@uwo/components/common/core/listCell/ListCell.tsx": 4,
-        "@uwo/components/common/form/Address/Address.tsx": 1,
-        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-        "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
-        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
-        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
-        "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "@uwo/components/common/Banner.tsx": 2,
-          "@uwo/components/common/core/listCell/ListCell.tsx": 4,
-          "@uwo/components/common/form/Address/Address.tsx": 1,
-          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
-          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
-          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
-          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
-          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
-          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
-          "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
-        },
-        "alignItems": {
-          "@uwo/components/common/Banner.tsx": 1,
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1
-        },
-        "width": { "@uwo/components/common/Banner.tsx": 1 },
-        "flexGrow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
-        "flexShrink": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
-        "overflow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
-        "dangerouslySetStyle": {
-          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
-          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
-        },
-        "data-test-id": {
-          "@uwo/components/common/form/Address/Address.tsx": 1,
-          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1
-        },
-        "maxWidth": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 },
-        "alignSelf": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 }
-      }
-    },
-    {
       "name": "Button",
       "sourceFile": "@uwo/components/common/interactables/buttons/Button",
       "totalInstances": 20,
@@ -3300,6 +3251,56 @@
       "sourceFile": "@uwo/commonScenes/PersonalInfo/PersonalInfoCollapsible",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@uwo/components/common/primitives/VStack",
+      "totalInstances": 14,
+      "totalCallSites": 10,
+      "callSites": {
+        "@uwo/components/common/Banner.tsx": 2,
+        "@uwo/components/common/core/listCell/ListCell.tsx": 4,
+        "@uwo/components/common/form/Address/Address.tsx": 1,
+        "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+        "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+        "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+        "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
+        "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
+        "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
+        "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacing": {
+          "@uwo/components/common/Banner.tsx": 2,
+          "@uwo/components/common/core/listCell/ListCell.tsx": 4,
+          "@uwo/components/common/form/Address/Address.tsx": 1,
+          "@uwo/components/common/form/FileUpload/FileUploadPrompt.tsx": 1,
+          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1,
+          "@uwo/components/common/interactables/inputs/Select.tsx": 1,
+          "@uwo/components/common/interactables/inputs/SelectBox.tsx": 1,
+          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1,
+          "@uwo/components/common/form/Address/AddressAutocomplete/AddressAutocompleteItem.tsx": 1,
+          "@uwo/components/common/navigation/steps/StepStatus/StepStatus.tsx": 1
+        },
+        "alignItems": {
+          "@uwo/components/common/Banner.tsx": 1,
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1
+        },
+        "width": { "@uwo/components/common/Banner.tsx": 1 },
+        "flexGrow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
+        "flexShrink": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
+        "overflow": { "@uwo/components/common/core/listCell/ListCell.tsx": 1 },
+        "dangerouslySetStyle": {
+          "@uwo/components/common/core/listCell/ListCell.tsx": 1,
+          "@uwo/components/common/interactables/inputs/TextInput.tsx": 1
+        },
+        "data-test-id": {
+          "@uwo/components/common/form/Address/Address.tsx": 1,
+          "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1
+        },
+        "maxWidth": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 },
+        "alignSelf": { "@uwo/components/common/interactables/inputs/PickSelect.tsx": 1 }
+      }
     },
     {
       "name": "ScrollToTop",
@@ -3717,17 +3718,6 @@
       }
     },
     {
-      "name": "Columns",
-      "sourceFile": "@uwo/components/common/primitives/Columns",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "columnsByWidth": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
-        "gridColumnGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
-        "gridRowGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
-      }
-    },
-    {
       "name": "CollapsibleContainer",
       "sourceFile": "@uwo/components/common/core/collapsible/CollapsibleContainer",
       "totalInstances": 4,
@@ -3767,6 +3757,17 @@
       }
     },
     {
+      "name": "Columns",
+      "sourceFile": "@uwo/components/common/primitives/Columns",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "columnsByWidth": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
+        "gridColumnGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 },
+        "gridRowGap": { "@uwo/components/common/layout/ResponsiveTwoColumnLayout.tsx": 1 }
+      }
+    },
+    {
       "name": "VStack",
       "sourceFile": "@uwo/components/common/primitives/spacing/VStack",
       "totalInstances": 11,
@@ -3776,8 +3777,8 @@
         "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
         "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
         "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+        "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
         "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
         "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
       },
@@ -3792,8 +3793,8 @@
           "@uwo/components/common/core/collapsible/Collapsible.tsx": 2,
           "@uwo/experiences/idv/scenes/IdvPhotoCaptureScene/IdvPhotoCapturePresentation.tsx": 2,
           "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation.tsx": 1,
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/UploadScene/UploadPresentation.tsx": 1,
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation.tsx": 1,
           "@uwo/experiences/idv/scenes/components/IdvPhotoCaptureTips.tsx": 2,
           "@uwo/experiences/idv/scenes/components/MobileUploadButton.tsx": 1
         },
@@ -4534,6 +4535,17 @@
       }
     },
     {
+      "name": "MobileUploadExplainerPresentation",
+      "sourceFile": "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "phone": {
+          "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerScene.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ProgressBar",
       "sourceFile": "@uwo/components/common/navigation/ProgressBar",
       "totalInstances": 2,
@@ -4748,17 +4760,6 @@
       }
     },
     {
-      "name": "MobileUploadExplainerPresentation",
-      "sourceFile": "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "phone": {
-          "@uwo/experiences/idv/scenes/MobileUploadExplainerScene/MobileUploadExplainerScene.tsx": 1
-        }
-      }
-    },
-    {
       "name": "SelectIDTypePresentation",
       "sourceFile": "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypePresentation",
       "totalInstances": 1,
@@ -4768,26 +4769,6 @@
           "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1
         },
         "idTypes": { "@uwo/experiences/idv/scenes/SelectIDTypeScene/SelectIDTypeScene.tsx": 1 }
-      }
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/components/common/core/CollapsibleWrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SelectUploadMethodPresentation",
-      "sourceFile": "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "handleSelection": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
-        },
-        "uploadMethods": {
-          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
-        }
       }
     },
     {
@@ -4827,6 +4808,26 @@
         },
         "handleClick": {
           "@uwo/experiences/idv/scenes/VerifyIDExplainerScene/VerifyIDExplainerScene.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "@uwo/components/common/core/CollapsibleWrapper",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SelectUploadMethodPresentation",
+      "sourceFile": "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodPresentation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "handleSelection": {
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
+        },
+        "uploadMethods": {
+          "@uwo/experiences/idv/scenes/SelectUploadMethodScene/SelectUploadMethodScene.tsx": 1
         }
       }
     },

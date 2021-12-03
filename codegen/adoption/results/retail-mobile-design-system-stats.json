@@ -1,6 +1,6 @@
 {
   "latest": {
-    "date": "11/24/2021",
+    "date": "12/3/2021",
     "cdsPercent": 0.5942857142857143,
     "cds": 104,
     "presentational": 71,
@@ -78,6 +78,14 @@
       "cds": 102,
       "presentational": 71,
       "totalCdsAndPresentational": 173,
+      "totalOther": 7
+    },
+    {
+      "date": "11/24/2021",
+      "cdsPercent": 0.5942857142857143,
+      "cds": 104,
+      "presentational": 71,
+      "totalCdsAndPresentational": 175,
       "totalOther": 7
     }
   ]
