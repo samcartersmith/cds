@@ -37,18 +37,6 @@ describe('Select Input', () => {
 
     expect(getByText(placeholderText)).toBeTruthy();
   });
-  it('opens the tray when the select input trigger is pressed', async () => {
-    const { getByText, getByTestId } = render(
-      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <DefaultSelectInput options={options} placeholder={placeholderText} />
-      </SafeAreaProvider>,
-    );
-
-    fireEvent.press(getByText(placeholderText));
-    const firstOption = await waitFor(() => getByText(options[0].label));
-    expect(firstOption).toBeTruthy();
-    expect(getByTestId('select-input-tray')).toBeTruthy();
-  });
   it('closes the tray when an option is pressed and replaces the placeholder text with the selected option', async () => {
     const { getByText, getByTestId, queryByText } = render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
