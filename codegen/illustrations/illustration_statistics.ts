@@ -4,11 +4,28 @@
  */
 
 export const illustrationMetadata = {
-  numIllustrations: 724,
-  spotSquareCount: 52,
+  numIllustrations: 740,
+  spotSquareCount: 56,
   spotRectangleCount: 27,
-  heroSquareCount: 141,
+  heroSquareCount: 145,
   pictogramCount: 141,
-  newIllustration: [],
+  newIllustration: [
+    'cardReloadFunds-dark',
+    'cardReloadFunds-light',
+    'confirmAddress-dark',
+    'confirmAddress-light',
+    'confirmEmail-dark',
+    'confirmEmail-light',
+    'confirmIDCard-dark',
+    'confirmIDCard-light',
+    'confirmSocialSecurity-dark',
+    'confirmSocialSecurity-light',
+    'desktopUnknown-dark',
+    'desktopUnknown-light',
+    'phoneUnknown-dark',
+    'phoneUnknown-light',
+    'stopLimitOrder-dark',
+    'stopLimitOrder-light',
+  ],
   modifiedIllustrations: [],
 };

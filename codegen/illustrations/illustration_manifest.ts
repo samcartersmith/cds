@@ -5419,5 +5419,123 @@ export const manifestData = {
       spectrum: 'dark',
       versionNum: 0,
     },
+    '4953:1928': {
+      variant: 'heroSquare',
+      description:
+        'coinbase, card, recurring, add, funds, refresh, auto, reload, automate, money, crypto, asset, credit',
+      name: 'cardReloadFunds',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4953:1934': {
+      variant: 'spotSquare',
+      description: 'confirm, check, validate, address, envelope, mail, checkmark, kyc, onboarding',
+      name: 'confirmAddress',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4953:1935': {
+      variant: 'heroSquare',
+      description:
+        'coinbase, card, recurring, add, funds, refresh, auto, reload, automate, money, crypto, asset, credit',
+      name: 'cardReloadFunds',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '4953:1936': {
+      variant: 'spotSquare',
+      description:
+        'onboarding, kyc, confirm, validate, check, id, indentification, card, license, checkmark',
+      name: 'confirmIDCard',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4953:1933': {
+      variant: 'spotSquare',
+      description: 'confirm, check, validate, address, envelope, mail, checkmark, kyc, onboarding',
+      name: 'confirmAddress',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '4953:1926': {
+      variant: 'spotSquare',
+      description:
+        'confirm, check, validate, kyc, onboarding, social, security, card, number, ssn, checkmark',
+      name: 'confirmSocialSecurity',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4953:1931': {
+      variant: 'spotSquare',
+      description:
+        'onboarding, kyc, confirm, validate, check, id, indentification, card, license, checkmark',
+      name: 'confirmIDCard',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '4953:1930': {
+      variant: 'spotSquare',
+      description: 'confirm, check, validate, kyc, onboarding, envelope, email, checkmark',
+      name: 'confirmEmail',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4953:1932': {
+      variant: 'spotSquare',
+      description:
+        'confirm, check, validate, kyc, onboarding, social, security, card, number, ssn, checkmark',
+      name: 'confirmSocialSecurity',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '4953:1927': {
+      variant: 'spotSquare',
+      description: 'confirm, check, validate, kyc, onboarding, envelope, email, checkmark',
+      name: 'confirmEmail',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '4953:1929': {
+      variant: 'heroSquare',
+      description: 'desktop, lap top, unknown, question mark, ❓ , ❔ ',
+      name: 'desktopUnknown',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4953:1925': {
+      variant: 'heroSquare',
+      description: 'desktop, lap top, unknown, question mark, ❓ , ❔ ',
+      name: 'desktopUnknown',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '4953:1924': {
+      variant: 'heroSquare',
+      description: 'phone, unknown, question mark, ❓ , ❔ ',
+      name: 'phoneUnknown',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4953:1923': {
+      variant: 'heroSquare',
+      description: 'phone, unknown, question mark, ❓ , ❔ ',
+      name: 'phoneUnknown',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '4960:1564': {
+      variant: 'heroSquare',
+      description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
+      name: 'stopLimitOrder',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '4960:1585': {
+      variant: 'heroSquare',
+      description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
+      name: 'stopLimitOrder',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
   },
 };
