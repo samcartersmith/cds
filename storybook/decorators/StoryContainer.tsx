@@ -1,23 +1,57 @@
-import React from 'react';
-import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import React, { memo, useMemo } from 'react';
 import { css } from 'linaria';
+import { merge } from 'lodash';
+import { Story } from '@storybook/react';
+import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
+import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import { StoryBuilderConfig } from '../utils/storyBuilder';
+
 import { ThemeProvider } from '../../web/system/ThemeProvider';
 import { palette } from '../../web/tokens';
 
 import type { GetStory } from './types';
 
-export const LightStoryContainer = (getStory: GetStory) => (
-  <ThemeProvider scale={DEFAULT_SCALE}>
-    <div
-      className={css`
-        padding: 20px;
-      `}
-    >
-      {getStory()}
-    </div>
-  </ThemeProvider>
-);
+export function StoryContainer<T>(StoryComponent: Story, context: StoryBuilderConfig<T>) {
+  const Container = memo(() => {
+    const contents = useMemo(() => {
+      if (context.parameters.stories) {
+        // React.Children.toArray will guarantee unique keys when mapped over
+        return React.Children.toArray(
+          context.parameters.stories.map((child) => {
+            const mergedProps = merge({}, child.args, context.args);
+            return React.createElement(child, mergedProps);
+          }),
+        );
+      }
+      return <StoryComponent />;
+    }, []);
 
+    const Wrapper = context.parameters.wrapper;
+
+    return (
+      <FeatureFlagProvider frontier={context.args.frontier}>
+        <ThemeProvider
+          display="contents"
+          scale={context.args.scale}
+          spectrum={context.args.spectrum}
+        >
+          <div
+            className={css`
+              padding: 20px;
+            `}
+          >
+            {Wrapper ? <Wrapper>{contents}</Wrapper> : <StoryComponent />}
+          </div>
+        </ThemeProvider>
+      </FeatureFlagProvider>
+    );
+  });
+
+  Container.displayName = 'StoryContainer';
+  return <Container />;
+}
+
+// TODO: delete once Checkbox and Switch are migrated to storyBuilder
 export const DarkStoryContainer = (getStory: GetStory) => (
   <ThemeProvider scale={DEFAULT_SCALE} spectrum="dark">
     <div

@@ -51,6 +51,8 @@ filegroup(
         "data/**/*.ts",
         "stories/**/*.ts",
         "stories/**/*.tsx",
+        "utils/**/*.ts",
+        "utils/**/*.tsx",
     ]) + ["tsconfig.json"],
     visibility = ["//visibility:public"],
 )

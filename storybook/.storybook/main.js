@@ -25,14 +25,4 @@ module.exports = {
     'storybook-addon-performance/register',
     'storybook-addon-pseudo-states',
   ],
-  typescript: {
-    check: false,
-    checkOptions: {},
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      tsconfigPath: path.join(__dirname, '../../../../../tsconfig.json'),
-      shouldExtractLiteralValuesFromEnum: false,
-      shouldRemoveUndefinedFromOptional: true,
-    },
-  },
 };

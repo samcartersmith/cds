@@ -5,13 +5,8 @@
     "outDir": "./dts"
   },
   // Dont include decorators to avoid cycles
-  "include": [
-    "data/**/*",
-    "stories/**/*"
-  ],
-  "exclude": [
-    "dts/**/*"
-  ],
+  "include": ["data/**/*", "stories/**/*", "utils/**/*"],
+  "exclude": ["dts/**/*"],
   "references": [
     {
       "path": "../common"
