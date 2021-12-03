@@ -1,0 +1,101 @@
+import { Image } from ':cds-website/components/Image';
+import { Collection, Item } from ':cds-website/components/Collection';
+
+import { Box } from '@cbhq/cds-web/layout';
+
+# Navigation Bar
+
+<span>&nbsp;</span>
+
+<Box justifyContent="center">
+  <Image
+    light="/img/components/navigation/navbar/hero_light.jpg"
+    dark="/img/components/navigation/navbar/hero_dark.jpg"
+  />
+</Box>
+
+<span>&nbsp;</span>
+
+## Intro
+The Navigation Bar appears at the top of the screen and de facto serves as a screen header. Providing orientation is a key element behind this component, which is why it includes the page’s title.
+
+In addition, the bar enables navigation through a series of hierarchical screens by displaying relevant controls on the left side (e.g. back or close). The right hand side of the Navigation Bar can contain additional relevant actions (e.g. settings, help or search) – and hosts the account information on desktop web.
+
+<span>&nbsp;</span>
+
+## Usage
+### Do
+Include the title of the page. The Navigation Bar provides top-level hierarchy information to the screen. As such, all Navigation Bar variants include the title.
+Make sure the title is clear and succinct.
+Make sure the title is left-aligned.
+If applicable, the Navigation Bar should provide consistent access to navigational controls (e.g. back or close) on the left hand side.
+The right hand side provides space for quick actions (e.g. settings, search or account information).
+On desktop, the Navigation Bar can further contain top-level call-to-actions.
+### Don’t
+Hide the title or important controls. The Navigation Bar is designed to be sticky at the top and should never scroll away.
+Use text-alignments other than the previously stated.
+Truncate the title
+Show more than one control at the time (e.g. back or close).
+
+<span>&nbsp;</span>
+
+## Anatomy
+At the minimum, the Navigation Bar displays the title of the page – serving as the screen header. Additionally, the bar hosts navigational controls enabling navigation through a series of hierarchical screens (e.g. navigating back to the price overview page after looking at the Bitcoin asset page) and can optionally contain additional shortcuts to important actions.
+
+<Box justifyContent="center">
+  <Image
+    light="/img/components/navigation/navbar/anatomy_light.jpg"
+    dark="/img/components/navigation/navbar/anatomy_dark.jpg"
+  />
+</Box>
+
+<span>&nbsp;</span>
+
+1. **Start** (i.e. back button)
+2. **Middle** (i.e. title)
+3. **End** (i.e. action buttons and avatar)
+4. **Container**
+
+<span>&nbsp;</span>
+
+## NavigationTitle
+The title of the page appears left-aligned. By default, we use a single row title. You do have the option to display an additional subtitle. Subtitles appear next to the title on desktop.
+
+Examples for subtitles might include displaying secondary information such as account balances in transaction flows.
+
+<span>&nbsp;</span>
+
+## Back
+
+A back button should appear the moment the user navigates to a page not directly accessible through the main navigation. Upon tapping the back button users should return to the previous screen they’ve been on.
+
+<span>&nbsp;</span>
+
+## Tabs
+The Navigation Bar can optionally contain Tabs.
+
+<Box justifyContent="center">
+  <Image
+    light="/img/components/navigation/navbar/tabs_light.jpg"
+    dark="/img/components/navigation/navbar/tabs_dark.jpg"
+  />
+</Box>
+
+<span>&nbsp;</span>
+
+## Search
+Search is currently not covered in this component.
+
+<span>&nbsp;</span>
+
+## Content
+Titles should be concise and descriptive. The nav title should describe the entire page. Use sentence case capitalization and aim for 1–2 words max.
+
+On web, the page’s HTML title should reference the nav bar title. For example, if the nav bar title is “Settings”, the HTML title might be “Settings | Coinbase”.
+
+Tabs should be ordered by priority, left to right.
+
+<span>&nbsp;</span>
+
+## NavLinks
+>  In the case for Logged Out pages, use [NavLinks](/components/nav-links).

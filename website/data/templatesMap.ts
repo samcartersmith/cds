@@ -1172,6 +1172,12 @@ export const NavLink = {
 };
 
 export const NavigationBar = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/NavigationBar/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(
@@ -1214,6 +1220,12 @@ export const NavigationTitle = {
 };
 
 export const Sidebar = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/Sidebar/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(
