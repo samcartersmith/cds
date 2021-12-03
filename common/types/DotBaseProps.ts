@@ -3,6 +3,7 @@ import { IconSize } from './IconSize';
 import { PaletteBackground } from './Palette';
 import { SharedProps } from './SharedProps';
 import { BadgePlacement } from './Placement';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 
 export type DotBaseProps = {
   /** Position of dot relative to its children */
@@ -13,4 +14,5 @@ export type DotBaseProps = {
   children?: ReactNode;
   /** Size of dot */
   size?: IconSize;
-} & SharedProps;
+} & SharedProps &
+  SharedAccessibilityProps;

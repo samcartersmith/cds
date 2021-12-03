@@ -2,11 +2,12 @@ import { useMemo } from 'react';
 import { BadgePlacement } from '../types/Placement';
 
 export const OFFSET = -12;
+export type Platforms = 'web' | 'mobile';
 
-export const useDotPlacementStyles = (placement?: BadgePlacement) => {
+export const useDotPlacementStyles = (platform: Platforms, placement?: BadgePlacement) => {
   return useMemo(() => {
     if (placement === undefined) {
-      return { position: 'relative' };
+      return {};
     }
 
     // splits string based on dash. (i.e top-right -> [top, right])
@@ -17,12 +18,18 @@ export const useDotPlacementStyles = (placement?: BadgePlacement) => {
 
     const verticalDirection = directions[0]; // top or bottom
 
-    const horizontalDirection = directions[1]; // start or end
+    let horizontalDirection = directions[1]; // start or end
+
+    // Web doesn't understand start/end, so we have to convert it
+    // to left/right
+    if (platform === 'web') {
+      horizontalDirection = directions[1] === 'start' ? 'left' : 'right';
+    }
 
     return {
       position: 'absolute',
       [verticalDirection]: OFFSET,
       [horizontalDirection]: OFFSET,
     };
-  }, [placement]);
+  }, [placement, platform]);
 };
