@@ -1,35 +1,44 @@
-import React, { memo, useCallback, useEffect, forwardRef, useImperativeHandle } from 'react';
+import React, {
+  memo,
+  useCallback,
+  forwardRef,
+  useImperativeHandle,
+  useEffect,
+  useRef,
+} from 'react';
+import { createPortal } from 'react-dom';
 import { ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { HStack, Box } from '../layout';
 import { TextLabel1, Link as LinkButton } from '../typography';
 import { Icon } from '../icons';
 import { Pressable } from '../system';
+import { toastClassName } from './toastStyles';
+import { toastContainerId } from './PortalProvider';
+import { isSSR } from '../utils/browser';
+import { ModalProps } from './Modal/Modal';
 import { useToastAnimation } from './useToastAnimation';
 
-export type ToastProps = ToastBaseProps;
+export type ToastProps = ToastBaseProps & Pick<ModalProps, 'disablePortal'>;
 
 export const Toast: React.FC<ToastProps> = memo(
   forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
-    ({ text, action, onWillHide, onDidHide, hideCloseButton = false }, ref) => {
-      const [{ opacity, bottom }, animateIn, animateOut] = useToastAnimation();
+    (
+      { text, action, onWillHide, onDidHide, disablePortal = false, hideCloseButton = false },
+      ref,
+    ) => {
+      const toastRef = useRef<HTMLElement>(null);
+      const { animateIn, animateOut } = useToastAnimation(toastRef);
 
       useEffect(() => {
-        animateIn.start();
+        void animateIn.start();
       }, [animateIn]);
 
       const handleClose = useCallback(async (): Promise<boolean> => {
         onWillHide?.();
-
-        return new Promise((resolve) => {
-          animateOut.start(({ finished }) => {
-            if (finished) {
-              onDidHide?.();
-              resolve(finished);
-            }
-          });
-        });
+        await animateOut.start();
+        onDidHide?.();
+        return true;
       }, [onWillHide, onDidHide, animateOut]);
 
       useImperativeHandle(
@@ -42,21 +51,9 @@ export const Toast: React.FC<ToastProps> = memo(
 
       const handleActionPress = action?.onPress;
 
-      return (
-        <Box
-          spacing={2}
-          position="absolute"
-          bottom={4}
-          alignSelf="center"
-          zIndex={zIndex.overlays.portal}
-          maxWidth="100%"
-          dangerouslySetStyle={{
-            // display on android
-            elevation: zIndex.overlays.portal,
-          }}
-        >
+      const toastNode = (
+        <Box dangerouslySetClassName={toastClassName} spacing={2} ref={toastRef}>
           <HStack
-            animated
             spacingVertical={2}
             spacingHorizontal={3}
             gap={4}
@@ -64,14 +61,11 @@ export const Toast: React.FC<ToastProps> = memo(
             background="backgroundAlternate"
             borderRadius="standard"
             alignItems="center"
-            dangerouslySetStyle={{
-              opacity,
-              transform: [{ translateY: bottom }],
-            }}
+            maxWidth={550}
           >
             {/* avoid pushing contents off screen */}
             <Box flexShrink={1}>
-              <TextLabel1>{text}</TextLabel1>
+              <TextLabel1 as="p">{text}</TextLabel1>
             </Box>
             {!!action && (
               <LinkButton
@@ -97,6 +91,12 @@ export const Toast: React.FC<ToastProps> = memo(
           </HStack>
         </Box>
       );
+
+      if (disablePortal || isSSR() || !document?.getElementById(toastContainerId)) {
+        return toastNode;
+      }
+
+      return createPortal(toastNode, document.getElementById(toastContainerId) as HTMLElement);
     },
   ),
 );

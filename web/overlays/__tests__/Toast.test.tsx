@@ -1,26 +1,21 @@
-import { render, fireEvent } from '@testing-library/react-native';
-import { Animated } from 'react-native';
-import { Toast } from '../Toast';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 
-jest.mock('react-native/Libraries/Animated/Animated', () => {
-  return {
-    ...jest.requireActual<Record<string, unknown>>('react-native/Libraries/Animated/Animated'),
-    parallel: () => {
-      return {
-        start: jest.fn((callback?: ({ finished }: { finished: boolean }) => void) => {
-          callback?.({ finished: true });
-        }),
-      };
-    },
-  };
-});
+import { renderA11y } from '@cbhq/jest-utils';
+import { Toast } from '../Toast';
+import { Animated } from '../../animation/Animated';
 
 const animationParallelSpy = jest.spyOn(Animated, 'parallel');
 const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
+const mockAction = {
+  label: 'Action',
+  onPress: jest.fn(),
+  testID: 'toast-action',
+};
+
 describe('Toast', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
+  it('passes a11y', async () => {
+    expect(await renderA11y(<Toast text="toast copy" />)).toHaveNoViolations();
   });
 
   it('renders text and close button', () => {
@@ -33,15 +28,11 @@ describe('Toast', () => {
 
   it('renders action', () => {
     const text = 'Toast copy';
-    const action = {
-      label: 'Action',
-      onPress: jest.fn(),
-      testID: 'toast-action',
-    };
-    const { getByTestId } = render(<Toast text={text} action={action} />);
 
-    fireEvent.press(getByTestId(action.testID));
-    expect(action.onPress).toHaveBeenCalledTimes(1);
+    const { getByTestId } = render(<Toast text={text} action={mockAction} />);
+
+    fireEvent.click(getByTestId(mockAction.testID));
+    expect(mockAction.onPress).toHaveBeenCalledTimes(1);
   });
 
   it('triggers animation', () => {
@@ -52,7 +43,7 @@ describe('Toast', () => {
     expect(animationTimingSpy).toHaveBeenCalled();
   });
 
-  it('fires callbacks on close', () => {
+  it('fires callbacks on close', async () => {
     const text = 'Toast copy';
     const onWillHide = jest.fn();
     const onDidHide = jest.fn();
@@ -63,9 +54,9 @@ describe('Toast', () => {
       <Toast text={text} onWillHide={onWillHide} onDidHide={onDidHide} />,
     );
 
-    fireEvent.press(getByTestId('toast-close-button'));
+    fireEvent.click(getByTestId('toast-close-button'));
 
     expect(onWillHide).toHaveBeenCalledTimes(1);
-    expect(onDidHide).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(onDidHide).toHaveBeenCalledTimes(1));
   });
 });

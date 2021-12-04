@@ -1,0 +1,57 @@
+```jsx live
+
+function ToastExample() {
+  function BasicToast() {
+    const toast = useToast();
+    const [toastCopy, setToastCopy] = useState('Copied to clipboard');
+
+    const handleShowToast = useCallback(() => {
+      toast.show(toastCopy, {
+        action: { label: 'Action', onPress: () => console.log('action pressed') },
+        // dangerouslySetDuration: 10000,
+        onWillHide: () => {
+          console.log('toast hiding');
+        },
+        onDidHide: () => {
+          console.log('toast hidden');
+        },
+      });
+    }, [toast, toastCopy]);
+
+    const handleNoAction = () => toast.show(toastCopy);
+    
+    const handleNoClose = () =>
+      toast.show(toastCopy, {
+        action: { label: 'Action', onPress: () => console.log('action pressed') },
+        hideCloseButton: true
+      });
+
+    const handleCopyOnly = () => toast.show(toastCopy, { hideCloseButton: true });
+
+    return (
+      <>
+        <Box spacingBottom={3}>
+          <TextInput
+            label="Toast copy"
+            placeholder="Type anything to show in toast"
+            value={toastCopy}
+            onChange={(e) => setToastCopy(e.target.value)}
+          />
+        </Box>
+        <HStack gap={3}>
+          <Button onPress={handleShowToast}>Show Toast</Button>
+          <Button onPress={handleNoAction}>No Action</Button>
+          <Button onPress={handleNoClose}>No Close</Button>
+          <Button onPress={handleCopyOnly}>Copy Only</Button>
+        </HStack>
+      </>
+    );
+  };
+
+  return (
+    <PortalProvider>
+      <BasicToast />
+    </PortalProvider>
+  )
+}
+```

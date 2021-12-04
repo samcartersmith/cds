@@ -3,11 +3,14 @@ import { createPortal } from 'react-dom';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
 import { usePortalState, PortalNode } from '@cbhq/cds-common/overlays/usePortalState';
+import { ToastProvider } from '@cbhq/cds-common/overlays/ToastProvider';
+
 import { ThemeProvider } from '../system';
 
 export const portalRootId = 'portalRoot';
 export const modalContainerId = 'modalsContainer';
 export const alertContainerId = 'alertsContainer';
+export const toastContainerId = 'toastsContainer';
 
 const PortalHost = memo(() => {
   const portalRoot = useMemo(
@@ -46,6 +49,7 @@ const PortalHost = memo(() => {
   return createPortal(
     <ThemeProvider>
       <div id={modalContainerId} style={{ zIndex: zIndex.overlays.modal }} />
+      <div id={toastContainerId} style={{ zIndex: zIndex.overlays.toast }} />
       <div id={alertContainerId} style={{ zIndex: zIndex.overlays.alert }} />
     </ThemeProvider>,
     portalRoot,
@@ -57,9 +61,11 @@ export const PortalProvider: React.FC = ({ children }) => {
 
   return (
     <PortalContext.Provider value={portalState}>
-      {!!window?.document && <PortalHost />}
-      {portalState.nodes.map((node: PortalNode) => node.element)}
-      {children}
+      <ToastProvider>
+        {!!window?.document && <PortalHost />}
+        {portalState.nodes.map((node: PortalNode) => node.element)}
+        {children}
+      </ToastProvider>
     </PortalContext.Provider>
   );
 };

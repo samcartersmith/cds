@@ -9,7 +9,7 @@ import { CreateToastProps, createStories } from ':cds-storybook/stories/Toast';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 
-const { BasicToast } = createStories({
+const { BasicToast, MultilineToast } = createStories({
   Toast,
   Link,
   Button,
@@ -21,6 +21,9 @@ const ToastScreen = () => {
     <ExamplesScreen>
       <Example title="Basic Toast">
         <BasicToast />
+      </Example>
+      <Example title="Multiline Toast">
+        <MultilineToast />
       </Example>
     </ExamplesScreen>
   );

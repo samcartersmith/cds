@@ -1,25 +1,21 @@
-import React, { useState, useCallback } from 'react';
-import { ButtonBaseProps, LinkBaseProps, TextInputBaseProps } from '@cbhq/cds-common/types';
+import React, { useCallback } from 'react';
+import { ButtonBaseProps } from '@cbhq/cds-common/types';
 import type { ToastBaseProps } from '@cbhq/cds-common/types';
 import { useToast } from '@cbhq/cds-common/overlays/useToast';
 
 export type CreateToastProps = {
   Toast: React.ComponentType<ToastBaseProps>;
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  Link: React.ComponentType<LinkBaseProps>;
-  TextInput: React.ComponentType<
-    TextInputBaseProps & { value: string; onChangeText: ((text: string) => void) | undefined }
-  >;
+  PortalProvider?: React.ComponentType;
 };
 
-export function createStories({ Toast, Button, Link, TextInput }: CreateToastProps) {
+export function createStories({ Toast, Button, PortalProvider }: CreateToastProps) {
   const BasicToast = () => {
     const toast = useToast(Toast);
-    const [toastCopy, setToastCopy] = useState('');
 
-    const handlePress = useCallback(() => {
-      toast.show(toastCopy || 'Toast copy', {
-        action: <Link to="https://www.google.com/">Action</Link>,
+    const handleShow = useCallback(() => {
+      toast.show('Toast copy', {
+        action: { label: 'Action', onPress: () => console.log('action pressed') },
         // hideCloseButton: true,
         // dangerouslySetDuration: 10000,
         onWillHide: () => {
@@ -29,22 +25,43 @@ export function createStories({ Toast, Button, Link, TextInput }: CreateToastPro
           console.log('toast hidden');
         },
       });
-    }, [toast, toastCopy]);
+    }, [toast]);
 
     return (
       <>
-        <TextInput
-          label="Toast copy"
-          placeholder="Type anything to show in toast"
-          value={toastCopy}
-          onChangeText={setToastCopy}
-        />
-        <Button onPress={handlePress}>Show Toast</Button>
+        <Button onPress={handleShow}>Show Toast</Button>
       </>
     );
   };
 
+  const MultilineToast = () => {
+    const toast = useToast(Toast);
+
+    const handleShow = useCallback(() => {
+      toast.show('Very very very very very long toast copy', {
+        action: { label: 'Action', onPress: () => console.log('action pressed') },
+      });
+    }, [toast]);
+
+    return (
+      <>
+        <Button onPress={handleShow}>Multiline Toast</Button>
+      </>
+    );
+  };
+
+  const Wrapper = PortalProvider ?? React.Fragment;
+
   return {
-    BasicToast,
+    BasicToast: () => (
+      <Wrapper>
+        <BasicToast />
+      </Wrapper>
+    ),
+    MultilineToast: () => (
+      <Wrapper>
+        <MultilineToast />
+      </Wrapper>
+    ),
   };
 }
