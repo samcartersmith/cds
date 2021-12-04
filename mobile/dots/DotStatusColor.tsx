@@ -27,7 +27,10 @@ export const DotStatusColor = memo(
     return (
       <View style={!!children && dotStyles.dotRootContainerStyles} {...props}>
         {children}
-        <View style={[placementStyles, dotOuterContainerStyles as ViewStyle, dotContentStyles]} />
+        <View
+          testID="dotstatuscolor-inner-container"
+          style={[placementStyles, dotOuterContainerStyles as ViewStyle, dotContentStyles]}
+        />
       </View>
     );
   },

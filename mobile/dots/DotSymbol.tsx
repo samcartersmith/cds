@@ -17,9 +17,10 @@ export const DotSymbol = memo(
     return (
       <View style={!!children && dotStyles.dotRootContainerStyles} {...props}>
         {children}
-        <View style={placementStyles}>
+        <View testID="dotsymbol-inner-container" style={placementStyles}>
           <RemoteImage
             shape="circle"
+            testID="dotsymbol-remote-image"
             source={typeof source === 'string' ? { uri: source } : source}
             width={iconSize}
             height={iconSize}
