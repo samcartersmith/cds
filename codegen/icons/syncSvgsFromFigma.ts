@@ -188,12 +188,11 @@ async function syncIcons() {
     const templates = {
       'objectMap.ejs': [
         {
-          dest: 'website/data/iconData.ts',
-          data: iconData,
-        },
-        {
-          dest: 'storybook/stories/iconData.ts',
-          data: { unicodeMap },
+          dest: 'common/internal/data/iconData.ts',
+          data: {
+            ...iconData,
+            unicodeMap,
+          },
         },
       ],
     };

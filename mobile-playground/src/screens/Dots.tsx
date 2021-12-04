@@ -1,4 +1,5 @@
 import React from 'react';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { DotCount, DotStatusColor, DotSymbol } from '@cbhq/cds-mobile/dots';
 import { Box, VStack } from '@cbhq/cds-mobile/layout';
 import { Avatar } from '@cbhq/cds-mobile/media';
@@ -6,7 +7,6 @@ import { Icon } from '@cbhq/cds-mobile/icons';
 import { TextLabel1 } from '@cbhq/cds-mobile/typography';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
-import { assets } from '../data/assets';
 
 import { PLACEMENTS, SIZES, createStories } from ':cds-storybook/stories/Dots';
 

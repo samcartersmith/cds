@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContentCellFallbackProps } from '@cbhq/cds-common';
 
 export function createStories(ContentCellFallback: React.ComponentType<ContentCellFallbackProps>) {

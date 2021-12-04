@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
 import { TextInput } from '@cbhq/cds-web/controls/TextInput';
-import { navigationIconNames, navigationIconSizes } from ':cds-website/data/iconData';
+import { navigationIconNames, navigationIconSizes } from '@cbhq/cds-common/internal/data/iconData';
 
 const STATES = ['Inactive', 'Active'] as const;
 type StateTypes = 'Active' | 'Inactive';

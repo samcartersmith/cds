@@ -10,7 +10,7 @@ import {
 } from '@cbhq/cds-common';
 import { GestureResponderEvent, ModalProps, ScrollViewProps } from 'react-native';
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
-import { prices } from ':cds-storybook/data/prices';
+import { prices } from '@cbhq/cds-common/internal/data/prices';
 
 type LinkableProps = {
   onPress?: null | ((event: GestureResponderEvent) => void) | undefined;

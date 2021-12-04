@@ -2,7 +2,7 @@ import React from 'react';
 import { BoxBaseProps, IconBaseProps, StackBaseProps, SystemProviderProps } from '@cbhq/cds-common';
 import { entries } from '@cbhq/cds-utils';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
-import { unicodeMap } from './iconData';
+import { unicodeMap } from '@cbhq/cds-common/internal/data/iconData';
 
 export type CreateIconSheetParams = {
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
@@ -19,7 +19,7 @@ export function createIconSheet({ HStack, Icon, ThemeProvider }: CreateIconSheet
       group.push(
         <ThemeProvider scale="xSmall">
           <Icon color="foreground" name={name} size="xs" />
-        </ThemeProvider>
+        </ThemeProvider>,
       );
       // Handle remaining sizes in normal scale
       for (const size of ['xs', 's', 'm', 'l'] as const) {
@@ -29,7 +29,7 @@ export function createIconSheet({ HStack, Icon, ThemeProvider }: CreateIconSheet
       components.push(
         <HStack gap={2} spacingBottom={2}>
           {flattenNodes(group)}
-        </HStack>
+        </HStack>,
       );
     }
     return (

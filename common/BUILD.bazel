@@ -8,6 +8,7 @@ NPM_DEPS = [
     "@npm//d3-scale",
     "@npm//d3-shape",
     "@npm//type-fest",
+    "@npm//lodash",
 ]
 
 NPM_PEER_DEPS = [
@@ -20,6 +21,7 @@ NPM_DEV_DEPS = [
     "@npm//@types/d3-scale",
     "@npm//@types/d3-shape",
     "@npm//@types/react",
+    "@npm//@types/lodash",
 ]
 
 # Files to publish to NPM

@@ -640,10 +640,7 @@ const main = async (deleteImgsDir = false) => {
 
     console.log('All images loaded');
     await createTypes(camelCaseNames, variants);
-    await createConstants(camelCaseNames, [
-      'website/data/illustrationData.ts',
-      'storybook/data/illustrationData.ts',
-    ]);
+    await createConstants(camelCaseNames, ['common/internal/data/illustrationData.ts']);
     await createMobileSpectrumMap(camelCaseNames, 'mobile/illustrations');
     await createManifestFile('codegen/illustrations/illustration_manifest.ts');
     const versionNumManifest = await createVersionNumManifest(
@@ -652,7 +649,7 @@ const main = async (deleteImgsDir = false) => {
     checkLightModeExistsForAllAssets(versionNumManifest);
 
     outputImgBasedOnMostRecentlyUpdated(versionNumManifest, [
-      'storybook/data/sortedIllustrationData.ts',
+      'common/internal/data/sortedIllustrationData.ts',
     ]);
   } catch (err) {
     console.error(err);

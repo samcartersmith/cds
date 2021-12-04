@@ -10,8 +10,8 @@ import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { Dimensions } from 'react-native';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { assets } from '../data/assets';
-import { prices, pricesWithScalingFactor } from '../data/prices';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { prices, pricesWithScalingFactor } from '@cbhq/cds-common/internal/data/prices';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 

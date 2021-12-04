@@ -21,7 +21,7 @@ import {
   spotRectangleNames,
   spotSquareNames,
   pictogramNames,
-} from ':cds-website/data/illustrationData';
+} from '@cbhq/cds-common/internal/data/illustrationData';
 
 const variantToNamesMap: Record<
   string,

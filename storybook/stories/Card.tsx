@@ -14,7 +14,7 @@ import {
 
 import { FeedCardBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
 
-import { mockAsset } from './constants';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
 
 const onPressConsole = () => console.log('pressed');
 
@@ -81,7 +81,7 @@ export function createStories({
                 variant="negative"
                 detailWidth={95}
                 intermediary={<CellMedia type="icon" name="chartLine" />}
-                media={<CellMedia type="image" source={mockAsset} title="Title" />}
+                media={<CellMedia type="image" source={assets.eth.imageUrl} title="Title" />}
                 reduceHorizontalSpacing
               />
             );

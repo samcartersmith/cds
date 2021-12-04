@@ -1,23 +1,85 @@
 import React, { useMemo } from 'react';
-import { BaseAnnotations } from '@storybook/addons';
 import { merge, omit, isObject } from 'lodash';
 import { generateRandomId } from '@cbhq/cds-utils';
-import { ArgTypes, Story, Parameters } from '@storybook/react';
-import { Scale, Spectrum } from '@cbhq/cds-common/types';
+
+import { Scale, Spectrum } from '../../types';
 
 const emptyObject = {};
 
-export type StoryBuilderConfig<Args = unknown> = {
+type ArgType<T> = {
+  name?: string;
+  description?: string;
+  defaultValue?: T;
+  control?: 'text' | 'select' | 'boolean';
+};
+
+type ArgTypes<Props> = { [key in keyof Props]?: ArgType<Props[key]> };
+
+type Parameters<Props> = {
+  stories?: Story<Props>[];
+  wrapper?: React.ComponentType;
+  // add types for parameters within addons that we want to support here
+};
+
+export type Story<Props, ExampleFnReturnType = React.ReactElement<unknown>> = {
+  (args: Props, context: StoryBuilderConfig<Props>): ExampleFnReturnType;
+  /**
+   * Override the display name in the UI
+   */
+  storyName?: string;
+  /**
+   * Used to only include certain named exports as stories. Useful when you want to have non-story exports such as mock data or ignore a few stories.
+   * @example
+   * includeStories: ['SimpleStory', 'ComplexStory']
+   * includeStories: /.*Story$/
+   *
+   * @see [Non-story exports](https://storybook.js.org/docs/formats/component-story-format/#non-story-exports)
+   */
+  includeStories?: string[] | RegExp;
+  /**
+   * Used to exclude certain named exports. Useful when you want to have non-story exports such as mock data or ignore a few stories.
+   * @example
+   * excludeStories: ['simpleData', 'complexData']
+   * excludeStories: /.*Data$/
+   *
+   * @see [Non-story exports](https://storybook.js.org/docs/formats/component-story-format/#non-story-exports)
+   */
+  excludeStories?: string[] | RegExp;
+  /**
+   * Dynamic data that are provided (and possibly updated by) Storybook and its addons.
+   * @see [Arg story inputs](https://storybook.js.org/docs/react/api/csf#args-story-inputs)
+   */
+  args?: Partial<Props>;
+  /**
+   * ArgTypes encode basic metadata for args, such as `name`, `description`, `defaultValue` for an arg. These get automatically filled in by Storybook Docs.
+   * @see [Control annotations](https://github.com/storybookjs/storybook/blob/91e9dee33faa8eff0b342a366845de7100415367/addons/controls/README.md#control-annotations)
+   */
+  argTypes?: ArgTypes<Props>;
+  /**
+   * Custom metadata for a story.
+   * @see [Parameters](https://storybook.js.org/docs/basics/writing-stories/#parameters)
+   */
+  parameters?: Parameters<Props>;
+  /**
+   * Wrapper components or Storybook decorators that wrap a story.
+   *
+   * Decorators defined in Meta will be applied to every story variation.
+   * @see [Decorators](https://storybook.js.org/docs/addons/introduction/#1-decorators)
+   */
+  decorators?: ((
+    story: () => ExampleFnReturnType,
+    context: StoryBuilderConfig<Props>,
+  ) => ExampleFnReturnType)[];
+};
+
+export type StoryBuilderConfig<Props = unknown> = {
   args?: {
     frontier?: boolean;
     spectrum?: Spectrum;
     scale?: Scale;
-  } & Args;
-  argTypes?: ArgTypes;
-  parameters?: Parameters & {
-    stories?: Story[];
-    wrapper?: React.ComponentType;
-  };
+  } & Props;
+  argTypes?: ArgTypes<Props>;
+  parameters?: Parameters<Props>;
 };
 
 const baseConfig = {
@@ -58,6 +120,12 @@ const baseConfig = {
   },
 };
 
+function isArray<Props>(
+  props: Props | Props[] | Readonly<Props> | Readonly<Props[]>,
+): props is Props[] | Readonly<Props[]> {
+  return Array.isArray(props);
+}
+
 export function storyBuilder<StoryBuilderArgs>(
   builderConfig?: StoryBuilderConfig<StoryBuilderArgs>,
 ) {
@@ -65,7 +133,7 @@ export function storyBuilder<StoryBuilderArgs>(
     Component: React.ComponentType<Props>,
     sharedConfig?: StoryBuilderConfig<PropsWithoutChildren>,
   ) {
-    const storiesSet = new Set<Story>();
+    const storiesSet = new Set<Story<PropsWithoutChildren>>();
     const defaultConfig = merge({}, baseConfig, builderConfig);
 
     const build = (
@@ -82,14 +150,14 @@ export function storyBuilder<StoryBuilderArgs>(
         }, [props]);
         return <Component key={id} {...sanitizedProps} />;
       };
-      const Template = TemplateFn.bind({}) as unknown as Story;
+      const Template = TemplateFn.bind({}) as unknown as Story<PropsWithoutChildren>;
       const mergedConfig = merge(
         {},
         defaultConfig,
         sharedConfig,
         { args },
         customConfig,
-      ) as unknown as BaseAnnotations<Props, Story>;
+      ) as unknown as StoryBuilderConfig<PropsWithoutChildren>;
       Template.parameters = mergedConfig.parameters;
       Template.args = mergedConfig.args;
       Template.argTypes = mergedConfig.argTypes;
@@ -101,15 +169,16 @@ export function storyBuilder<StoryBuilderArgs>(
       args?:
         | PropsWithoutChildren
         | PropsWithoutChildren[]
-        | Readonly<PropsWithoutChildren | PropsWithoutChildren[]>,
+        | Readonly<PropsWithoutChildren>
+        | Readonly<PropsWithoutChildren[]>,
       config?: StoryBuilderConfig<PropsWithoutChildren>,
     ) => {
       let stories = Array.from(storiesSet.values());
       const StorySheet = () => null;
-      const Template = StorySheet.bind({}) as unknown as Story;
+      const Template = StorySheet.bind({}) as unknown as Story<PropsWithoutChildren>;
 
-      if (Array.isArray(args)) {
-        const storiesOverride: Story[] = [];
+      if (isArray(args)) {
+        const storiesOverride: Story<PropsWithoutChildren>[] = [];
         args.forEach((itemArgs) => {
           stories.forEach((StoryTemplate) => {
             const StoryTemplateCopy = StoryTemplate.bind({});
@@ -122,7 +191,7 @@ export function storyBuilder<StoryBuilderArgs>(
       }
 
       const mergedConfig = merge({}, defaultConfig, sharedConfig, config);
-      Template.args = Array.isArray(args) ? mergedConfig.args : args;
+      Template.args = isArray(args) ? mergedConfig.args : args;
       Template.argTypes = merge({}, mergedConfig.argTypes, stories[0].argTypes);
       Template.parameters = {
         ...mergedConfig.parameters,

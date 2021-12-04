@@ -10,8 +10,8 @@ import { TextHeadline, TextBody } from '@cbhq/cds-mobile/typography';
 import { SparklineGradient } from '@cbhq/cds-mobile/visualizations/SparklineGradient';
 import { Dimensions } from 'react-native';
 
-import { assets } from '../data/assets';
-import { prices, pricesWithScalingFactor } from '../data/prices';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { prices, pricesWithScalingFactor } from '@cbhq/cds-common/internal/data/prices';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 

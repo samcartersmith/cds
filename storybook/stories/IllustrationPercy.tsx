@@ -9,7 +9,7 @@ import {
 } from '@cbhq/cds-common';
 import { IllustrationBaseProps } from '@cbhq/cds-common/types/IllustrationProps';
 
-import { sortedImg } from '../data/sortedIllustrationData';
+import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
 
 export function createStories(
   Illustration: React.ComponentType<IllustrationBaseProps>,

@@ -55,7 +55,21 @@ export const assets = {
     imageUrl:
       'https://dynamic-assets.coinbase.com/a1f4b7b34069888e313f284b49012a01b3bbc37b5113319c7105170a8fe268de8f60be5a0af7a8dafa8aba31fcc21ef44bc30c1e8bbb8379064ac94965bccf26/asset_icons/aafc2f5fff21664213e2a5a2c6e31aa055f277d1069b16745d54f84c0e94f1f3.png',
   },
+  hbar: {
+    symbol: 'HBAR',
+    name: 'Hedera Hashgraph',
+    color: '#222222',
+    imageUrl:
+      'https://dynamic-assets.coinbase.com/ae4087fcfeef11ad77d8875405ba933b9d623bcc8c483f280d3a15f2782de980349076c4f7b4616cc350c3727010d736448194829c4409e2824f710ee8f9832d/asset_icons/32d85085a6a6193b483ea8a9a23d4bf1384269d44c724a0349f0e0bd757f7427.png',
+  },
 };
 
 export const assetColors = Object.entries(assets).map(([, value]) => value.color);
 export const assetImages = Object.entries(assets).map(([, value]) => value.imageUrl);
+
+export const svgs = [
+  'https://static-assets.coinbase.com/design-system/illustrations/light/giftBoxCrypto-0.svg',
+  'https://static-assets.coinbase.com/design-system/illustrations/light/interestForYou-0.svg',
+  'https://static-assets.coinbase.com/design-system/illustrations/light/ethereumStaking-0.svg',
+  'https://static-assets.coinbase.com/design-system/illustrations/light/moneyRewards-0.svg',
+];

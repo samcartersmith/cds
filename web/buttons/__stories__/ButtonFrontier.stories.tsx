@@ -1,5 +1,6 @@
+import { buttonBuilder } from '@cbhq/cds-common/internal/buttonBuilder';
+
 import { Button } from '../Button';
-import { buttonBuilder } from ':cds-storybook/stories/buttonBuilder';
 import { VStack } from '../../layout/VStack';
 
 const { build, buildSheet } = buttonBuilder(Button, { args: { frontier: true } });

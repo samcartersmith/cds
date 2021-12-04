@@ -20,7 +20,7 @@ async function buildIcons() {
         data: { iconGlyphMap: iconData.glyphMap },
       },
       {
-        dest: 'website/data/icon/iconDescriptionGraph.ts',
+        dest: 'common/internal/data/iconDescriptionGraph.ts',
         data: { iconDescriptionGraph },
         types: {
           iconDescriptionGraph: 'Record<string, string[]>',

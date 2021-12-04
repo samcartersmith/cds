@@ -1,7 +1,8 @@
+import React from 'react';
 import { ContentCellBaseProps, CellMediaProps } from '@cbhq/cds-common';
 import { IllustrationPictogramNames } from '@cbhq/cds-common/types/IllustrationNames';
 
-import { mockAsset } from './constants';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
 
 export function createStories(
   ContentCell: React.ComponentType<
@@ -81,14 +82,14 @@ export function createStories(
         title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         subtitle="Subtitle is short lol"
         description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
-        media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
         accessory="more"
       />
 
       <ContentCell
         title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         meta="Long meta title"
-        media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
       />
     </>
   );
@@ -143,7 +144,7 @@ export function createStories(
         title="Avatar"
         description="Description"
         subtitle="Subtitle"
-        media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
       />
 
       <ContentCell
@@ -151,14 +152,14 @@ export function createStories(
         description="Description"
         meta="Meta"
         subtitle="Subtitle"
-        media={<CellMedia type="asset" source={mockAsset} title="Title" />}
+        media={<CellMedia type="asset" source={assets.eth.imageUrl} title="Title" />}
       />
 
       <ContentCell
         title="Image"
         subtitle="Subtitle"
         meta="Meta"
-        media={<CellMedia type="image" source={mockAsset} title="Title" />}
+        media={<CellMedia type="image" source={assets.eth.imageUrl} title="Title" />}
       />
 
       <ContentCell

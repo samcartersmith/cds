@@ -12,7 +12,7 @@ import {
   pictogramNames,
   spotRectangleNames,
   spotSquareNames,
-} from '../data/illustrationData';
+} from '@cbhq/cds-common/internal/data/illustrationData';
 
 export function createStories(
   Pictogram: React.ComponentType<PictogramProps>,

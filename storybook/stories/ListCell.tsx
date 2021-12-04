@@ -9,7 +9,7 @@ import {
 import { IllustrationPictogramNames } from '@cbhq/cds-common/types/IllustrationNames';
 import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
 
-import { mockAsset } from './constants';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
 
 const onPressConsole = () => console.log('onPress');
 
@@ -386,7 +386,7 @@ export function createStories(
         title="Avatar"
         description="Description"
         detail="Detail"
-        media={<CellMedia type="avatar" source={mockAsset} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
       />
 
       <ListCell
@@ -394,13 +394,13 @@ export function createStories(
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        media={<CellMedia type="asset" source={mockAsset} title="Title" />}
+        media={<CellMedia type="asset" source={assets.eth.imageUrl} title="Title" />}
       />
 
       <ListCell
         title="Image"
         detail="Detail"
-        media={<CellMedia type="image" source={mockAsset} title="Title" />}
+        media={<CellMedia type="image" source={assets.eth.imageUrl} title="Title" />}
       />
 
       <ListCell

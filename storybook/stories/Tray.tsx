@@ -7,7 +7,7 @@ import {
   TrayBaseProps,
 } from '@cbhq/cds-common/types';
 import { GestureResponderEvent, ScrollViewProps } from 'react-native';
-import { prices } from '../data/prices';
+import { prices } from '@cbhq/cds-common/internal/data/prices';
 
 const options: string[] = prices.slice(0, 5);
 const lotsOfOptions: string[] = prices.slice(0, 30);

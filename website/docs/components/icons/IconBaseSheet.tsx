@@ -14,9 +14,9 @@ import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
 import throttle from 'lodash/throttle';
 import { TextInput } from '@cbhq/cds-web/controls/TextInput';
 import { IconSize } from '@cbhq/cds-common/types/IconSize';
+import { navigationIconNames, iconNames, iconSizes } from '@cbhq/cds-common/internal/data/iconData';
+import { iconDescriptionGraph } from '@cbhq/cds-common/internal/data/iconDescriptionGraph';
 import { Tabs } from ':cds-website/components/Tabs';
-import { navigationIconNames, iconNames, iconSizes } from ':cds-website/data/iconData';
-import { iconDescriptionGraph } from ':cds-website/data/icon/iconDescriptionGraph';
 
 type IconData = typeof iconData;
 type IconType = keyof IconData;
