@@ -1,4 +1,4 @@
-import { createStories } from ':cds-storybook/stories/ContentCell';
+import { contentCellBuilder } from '@cbhq/cds-common/internal/contentCellBuilder';
 
 import { Box } from '../../layout/Box';
 import { CellMedia } from '../CellMedia';
@@ -9,8 +9,7 @@ export default {
   component: ContentCell,
 };
 
-export const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = createStories(
-  ContentCell,
-  CellMedia,
-  (props) => <Box {...props} background="backgroundAlternate" />,
-);
+export const { Content, PressableContent, LongContent, WithAccessory, WithMedia } =
+  contentCellBuilder(ContentCell, CellMedia, (props) => (
+    <Box {...props} background="backgroundAlternate" />
+  ));

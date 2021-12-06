@@ -3,13 +3,12 @@ import { Button } from '@cbhq/cds-mobile/buttons';
 import { Link } from '@cbhq/cds-mobile/typography';
 import { Toast } from '@cbhq/cds-mobile/overlays';
 import { TextInput } from '@cbhq/cds-mobile/controls';
-
-import { CreateToastProps, createStories } from ':cds-storybook/stories/Toast';
+import { CreateToastProps, toastBuilder } from '@cbhq/cds-common/internal/toastBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 
-const { BasicToast, MultilineToast } = createStories({
+const { BasicToast, MultilineToast } = toastBuilder({
   Toast,
   Link,
   Button,

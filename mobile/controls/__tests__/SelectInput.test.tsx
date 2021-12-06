@@ -1,13 +1,17 @@
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
+import {
+  selectInputBuilderMobile,
+  CreateSelectInputProps,
+} from '@cbhq/cds-common/internal/selectInputBuilder';
+
 import { SelectInput } from '../SelectInput';
-import { createMobileStories, CreateSelectInputProps } from ':cds-storybook/stories/SelectInput';
 import { Tray } from '../../overlays/Tray/Tray';
 import { SelectOptionCell } from '../SelectOptionCell';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
 
-const { DefaultSelectInput } = createMobileStories({
+const { DefaultSelectInput } = selectInputBuilderMobile({
   Tray,
   SelectInput,
   SelectOptionCell,

@@ -5,12 +5,12 @@ import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Checkbox } from '@cbhq/cds-mobile/controls/Checkbox';
 import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
 import { entries } from '@cbhq/cds-utils';
-import { createStories } from ':cds-storybook/stories/ListCell';
+import { listCellBuilder } from '@cbhq/cds-common/internal/listCellBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 
-const stories = createStories(ListCell, CellMedia, Button, IconButton, Checkbox, Pictogram);
+const stories = listCellBuilder(ListCell, CellMedia, Button, IconButton, Checkbox, Pictogram);
 const titleSpacing = { spacingHorizontal: gutter } as const;
 
 const ListCellScreen = () => {

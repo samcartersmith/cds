@@ -1,11 +1,11 @@
 import { renderA11y } from '@cbhq/jest-utils';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import { createStories, CreateModalProps } from ':cds-storybook/stories/Modal';
+import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
 import {
-  createLoremIpsum,
+  loremIpsumBuilder,
   CreateLoremIpsumProps,
   loremIpsum,
-} from ':cds-storybook/stories/LoremIpsum';
+} from '@cbhq/cds-common/internal/loremIpsumBuilder';
 
 import { Modal } from '../Modal';
 import { ModalFooter } from '../ModalFooter';
@@ -17,12 +17,12 @@ import { PortalProvider } from '../../PortalProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
 import { Animated } from '../../../animation/Animated';
 
-const LoremIpsum = createLoremIpsum({
+const LoremIpsum = loremIpsumBuilder({
   TextBody,
   TextLabel1,
 } as CreateLoremIpsumProps);
 
-const { MockModal } = createStories({
+const { MockModal } = modalBuilder({
   Modal,
   ModalBody,
   ModalHeader,

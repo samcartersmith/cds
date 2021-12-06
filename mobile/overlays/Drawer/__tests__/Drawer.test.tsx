@@ -1,32 +1,54 @@
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import { Modal, ScrollView } from 'react-native';
-import { SelectOptionCell } from '@cbhq/cds-mobile/controls/SelectOptionCell';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Modal } from 'react-native';
+import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
+import {
+  loremIpsumBuilder,
+  CreateLoremIpsumProps,
+  loremIpsum,
+} from '@cbhq/cds-common/internal/loremIpsumBuilder';
+import { DrawerBaseProps } from '@cbhq/cds-common/types';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+
 import { Button } from '../../../buttons';
 import { Drawer } from '../Drawer';
 import { VStack } from '../../../layout/VStack';
-import { createStories, CreateDrawerProps } from ':cds-storybook/stories/Drawer';
 import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
-import {
-  createLoremIpsum,
-  CreateLoremIpsumProps,
-  loremIpsum,
-} from ':cds-storybook/stories/LoremIpsum';
 import { TextBody, TextLabel1 } from '../../../typography';
 
-const LoremIpsum = createLoremIpsum({
+const LoremIpsum = loremIpsumBuilder({
   TextBody,
   TextLabel1,
 } as CreateLoremIpsumProps);
 
-const { MockDrawer } = createStories({
-  Drawer,
-  Button,
-  LoremIpsum,
-  VStack,
-  ScrollView,
-  SelectOptionCell,
-} as CreateDrawerProps);
+const MockDrawer: React.FC<Partial<DrawerBaseProps>> = ({ onCloseComplete, pin = 'bottom' }) => {
+  const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
+
+  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+  const handleRequestClose = () => {
+    onCloseComplete?.();
+    toggleOff();
+  };
+
+  return (
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+      <Button onPress={toggleOn} testID="open-drawer-button">
+        Open Drawer
+      </Button>
+      {isVisible ? (
+        <Drawer visible={isVisible} onCloseComplete={handleRequestClose} pin={pin}>
+          {({ closeDrawer }) => (
+            <VStack spacing={2}>
+              <LoremIpsum />
+              <Button testID="close-drawer-button" onPress={closeDrawer}>
+                Close Drawer
+              </Button>
+            </VStack>
+          )}
+        </Drawer>
+      ) : null}
+    </SafeAreaProvider>
+  );
+};
 
 const MockDrawerWithSafeArea = ({ ...props }) => {
   return (

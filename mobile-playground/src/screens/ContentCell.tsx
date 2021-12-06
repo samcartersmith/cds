@@ -2,12 +2,12 @@ import React from 'react';
 import { ContentCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram';
 import { Box } from '@cbhq/cds-mobile/layout';
-import { createStories } from ':cds-storybook/stories/ContentCell';
+import { contentCellBuilder } from '@cbhq/cds-common/internal/contentCellBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 
-const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = createStories(
+const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = contentCellBuilder(
   ContentCell,
   CellMedia,
   Pictogram,

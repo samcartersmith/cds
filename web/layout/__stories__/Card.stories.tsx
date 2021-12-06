@@ -1,4 +1,4 @@
-import { createStories, CreateCardProps } from ':cds-storybook/stories/Card';
+import { cardBuilder, CreateCardProps } from '@cbhq/cds-common/internal/cardBuilder';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
@@ -30,7 +30,7 @@ export const {
   PinnedLeftCard,
   FeedCardExample,
   SpotSquareExample,
-} = createStories({
+} = cardBuilder({
   Box,
   Button,
   Card,
@@ -54,7 +54,7 @@ export const {
   PinnedRightCard: DarkModePinnedRightCard,
   PinnedBottomCard: DarkModePinnedBottomCard,
   PinnedLeftCard: DarkModePinnedLeftCard,
-} = createStories({
+} = cardBuilder({
   Box,
   Button,
   Card,

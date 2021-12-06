@@ -1,6 +1,6 @@
 import { css } from 'linaria';
 import { withPerformance } from 'storybook-addon-performance';
-import { createStories } from ':cds-storybook/stories/PerformanceBenchmark';
+import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
 
 import { TextInput } from '../TextInput';
 
@@ -27,4 +27,4 @@ export const {
   HundredHTMLComponent,
   ThousandCDSComponents,
   ThousandHTMLComponent,
-} = createStories(CDSTextInput, HTMLInput);
+} = performanceBenchmarkBuilder(CDSTextInput, HTMLInput);

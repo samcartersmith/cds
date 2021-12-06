@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { loremIpsum } from ':cds-storybook/stories/LoremIpsum';
+import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { Tray } from '../Tray';
 import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { TextBody } from '../../../typography';

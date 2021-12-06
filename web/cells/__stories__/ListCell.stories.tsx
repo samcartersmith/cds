@@ -1,4 +1,4 @@
-import { createStories } from ':cds-storybook/stories/ListCell';
+import { listCellBuilder } from '@cbhq/cds-common/internal/listCellBuilder';
 
 import { Button, IconButton } from '../../buttons';
 import { Checkbox } from '../../controls';
@@ -22,6 +22,6 @@ export const {
   WithMedia,
   WithActions,
   WithIntermediary,
-} = createStories(ListCell, CellMedia, Button, IconButton, Checkbox, (props) => (
+} = listCellBuilder(ListCell, CellMedia, Button, IconButton, Checkbox, (props) => (
   <Box {...props} background="backgroundAlternate" />
 ));

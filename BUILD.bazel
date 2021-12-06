@@ -134,7 +134,6 @@ jest_test(
     jest_config = "jest.config.mobile.js",
     tests = [
         "//eng/shared/design-system/mobile:source",
-        "//eng/shared/design-system/storybook:source_no_decorators",
     ],
     deps = TEST_DEPS + [
         "@npm//@cbhq/cds-mobile",

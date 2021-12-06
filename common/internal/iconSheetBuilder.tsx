@@ -1,16 +1,16 @@
 import React from 'react';
-import { BoxBaseProps, IconBaseProps, StackBaseProps, SystemProviderProps } from '@cbhq/cds-common';
 import { entries } from '@cbhq/cds-utils';
-import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
-import { unicodeMap } from '@cbhq/cds-common/internal/data/iconData';
+import type { BoxBaseProps, IconBaseProps, StackBaseProps, ThemeProviderBaseProps } from '../types';
+import flattenNodes from '../utils/flattenNodes';
+import { unicodeMap } from './data/iconData';
 
 export type CreateIconSheetParams = {
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
   Icon: React.ComponentType<IconBaseProps & { color: string }>;
-  ThemeProvider: React.ComponentType<SystemProviderProps>;
+  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
 };
 
-export function createIconSheet({ HStack, Icon, ThemeProvider }: CreateIconSheetParams) {
+export function iconSheetBuilder({ HStack, Icon, ThemeProvider }: CreateIconSheetParams) {
   function IconSheet() {
     const components = [];
     for (const [name] of entries(unicodeMap)) {

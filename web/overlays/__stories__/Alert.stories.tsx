@@ -1,4 +1,4 @@
-import { createStories, CreateAlertProps } from ':cds-storybook/stories/Alert';
+import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 import { PortalProvider } from '../PortalProvider';
 import { Button } from '../../buttons/Button';
 import { Alert } from '..';
@@ -8,7 +8,7 @@ export default {
   component: Alert,
 };
 
-export const { BasicAlert, SingleActionAlert, PortalAlert } = createStories({
+export const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
   Alert,
   Button,
   PortalProvider,

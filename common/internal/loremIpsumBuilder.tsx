@@ -15,7 +15,7 @@ export type CreateLoremIpsumProps = {
 export const loremIpsum =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo nulla. Nam eu blandit dui, a dignissim mi.';
 
-export function createLoremIpsum({ TextLabel1, TextBody }: CreateLoremIpsumProps) {
+export function loremIpsumBuilder({ TextLabel1, TextBody }: CreateLoremIpsumProps) {
   const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
     return (
       <>

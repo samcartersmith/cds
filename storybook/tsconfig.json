@@ -4,8 +4,6 @@
     "declarationDir": "./dts",
     "outDir": "./dts"
   },
-  // Dont include decorators to avoid cycles
-  "include": ["data/**/*", "stories/**/*", "utils/**/*"],
   "exclude": ["dts/**/*"],
   "references": [
     {

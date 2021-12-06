@@ -1,16 +1,20 @@
 import React, { ComponentType } from 'react';
-import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
-import { BoxBaseProps } from '@cbhq/cds-common/types/BoxBaseProps';
-import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
-import { TextBaseProps } from '@cbhq/cds-common/types/TextBaseProps';
-import { IconBaseProps } from '@cbhq/cds-common/types/IconBaseProps';
-import { StackBaseProps, IconName, DotBaseProps } from '@cbhq/cds-common';
+import type {
+  AvatarBaseProps,
+  BoxBaseProps,
+  DotBaseProps,
+  DotCountBaseProps,
+  IconBaseProps,
+  IconName,
+  StackBaseProps,
+  TextBaseProps,
+} from '../types';
 
 export const VARIANTS = ['positive', 'negative'] as const;
 export const PLACEMENTS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'] as const;
 export const SIZES = ['xs', 's', 'm', 'l'] as const;
 
-export function createStories(
+export function dotBuilder(
   DotCount: ComponentType<DotCountBaseProps>,
   DotStatusColor: ComponentType<DotBaseProps>,
   Box: ComponentType<BoxBaseProps>,

@@ -1,11 +1,11 @@
 import { render, fireEvent, waitFor, cleanup } from '@testing-library/react-native';
 import { Modal as RNModal, Animated } from 'react-native';
 import {
-  createLoremIpsum,
+  loremIpsumBuilder,
   CreateLoremIpsumProps,
   loremIpsum,
-} from ':cds-storybook/stories/LoremIpsum';
-import { createStories, CreateModalProps } from ':cds-storybook/stories/Modal';
+} from '@cbhq/cds-common/internal/loremIpsumBuilder';
+import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
 
 import { Modal } from '../Modal';
 import { ModalFooter } from '../ModalFooter';
@@ -16,12 +16,12 @@ import { ThemeProvider } from '../../../system/ThemeProvider';
 import { PortalProvider } from '../../PortalProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
 
-const LoremIpsum = createLoremIpsum({
+const LoremIpsum = loremIpsumBuilder({
   TextBody,
   TextLabel1,
 } as CreateLoremIpsumProps);
 
-const { MockModal } = createStories({
+const { MockModal } = modalBuilder({
   Modal,
   ModalBody,
   ModalHeader,

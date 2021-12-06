@@ -1,4 +1,4 @@
-import { createStories, CreateModalProps } from ':cds-storybook/stories/Modal';
+import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
 import { PortalProvider } from '../PortalProvider';
 import { Button } from '../../buttons/Button';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
@@ -10,7 +10,7 @@ export default {
   component: Modal,
 };
 
-export const { BasicModal, ModalWithoutPortal, DarkModal, LongModal, PortalModal } = createStories({
+export const { BasicModal, ModalWithoutPortal, DarkModal, LongModal, PortalModal } = modalBuilder({
   Modal,
   ModalBody,
   ModalHeader,

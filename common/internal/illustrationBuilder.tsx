@@ -1,20 +1,22 @@
-import {
+import React from 'react';
+import type {
+  BoxBaseProps,
   HeroSquareProps,
   PictogramProps,
   SpotRectangleProps,
   SpotSquareProps,
-} from '@cbhq/cds-common/types/IllustrationProps';
-import { illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
-import React from 'react';
-import { BoxBaseProps, StackBaseProps, TextBaseProps } from '@cbhq/cds-common';
+  StackBaseProps,
+  TextBaseProps,
+} from '../types';
+import { illustrationSizes } from '../tokens/illustrations';
 import {
   heroSquareNames,
   pictogramNames,
   spotRectangleNames,
   spotSquareNames,
-} from '@cbhq/cds-common/internal/data/illustrationData';
+} from './data/illustrationData';
 
-export function createStories(
+export function illustrationBuilder(
   Pictogram: React.ComponentType<PictogramProps>,
   SpotSquare: React.ComponentType<SpotSquareProps>,
   SpotRectangle: React.ComponentType<SpotRectangleProps>,

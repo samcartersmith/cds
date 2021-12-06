@@ -1,19 +1,19 @@
 import React from 'react';
 
-import {
-  SystemProviderProps,
+import type {
   BoxBaseProps,
-  StackBaseProps,
+  IllustrationBaseProps,
   Spectrum,
+  StackBaseProps,
+  ThemeProviderBaseProps,
   TextBaseProps,
-} from '@cbhq/cds-common';
-import { IllustrationBaseProps } from '@cbhq/cds-common/types/IllustrationProps';
+} from '../types';
 
-import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
+import { sortedImg } from './data/sortedIllustrationData';
 
-export function createStories(
+export function illustrationPercyBuilder(
   Illustration: React.ComponentType<IllustrationBaseProps>,
-  ThemeProvider: React.ComponentType<SystemProviderProps>,
+  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>,
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>,
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>,
   Box: React.ComponentType<BoxBaseProps>,

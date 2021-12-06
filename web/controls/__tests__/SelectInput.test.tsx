@@ -1,16 +1,17 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
 import {
-  createStories,
+  selectInputBuilder,
   CreateSelectInputStoriesProps,
   priceOptions,
-} from ':cds-storybook/stories/SelectInput';
+} from '@cbhq/cds-common/internal/selectInputBuilder';
+
 import { SelectInput } from '../SelectInput';
 import { VStack } from '../../layout/VStack';
 import { SelectOptionCell } from '../../cells/SelectOptionCell';
 import { ThemeProvider } from '../../system/ThemeProvider';
 
-const { Default: MockSelectInput } = createStories({
+const { Default: MockSelectInput } = selectInputBuilder({
   SelectInput,
   VStack,
   SelectOptionCell,

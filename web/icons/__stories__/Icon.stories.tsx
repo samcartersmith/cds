@@ -1,4 +1,7 @@
-import { createIconSheet, CreateIconSheetParams } from ':cds-storybook/stories/IconSheet';
+import {
+  iconSheetBuilder,
+  CreateIconSheetParams,
+} from '@cbhq/cds-common/internal/iconSheetBuilder';
 import { HStack } from '../../layout';
 import { Icon } from '../Icon';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -8,7 +11,7 @@ export default {
   component: Icon,
 };
 
-export const { IconSheet } = createIconSheet({
+export const { IconSheet } = iconSheetBuilder({
   Icon,
   HStack,
   ThemeProvider,

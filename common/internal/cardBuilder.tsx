@@ -4,18 +4,18 @@ import {
   ButtonBaseProps,
   CardBaseProps,
   CardBodyBaseProps,
+  FeedCardBaseProps,
   PaletteForeground,
   StackBaseProps,
   ListCellBaseProps,
   CellMediaProps,
   IconButtonBaseProps,
   SpotSquareProps,
-} from '@cbhq/cds-common';
+} from '../types';
 
-import { FeedCardBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
+import { assets } from './data/assets';
 
-import { assets } from '@cbhq/cds-common/internal/data/assets';
-
+// eslint-disable-next-line no-console
 const onPressConsole = () => console.log('pressed');
 
 const sharedWrapperProps = {
@@ -51,7 +51,7 @@ export type CreateCardProps = {
   ThemeProvider: React.ComponentType;
 };
 
-export function createStories({
+export function cardBuilder({
   Box,
   Button,
   Card,
@@ -72,6 +72,7 @@ export function createStories({
           {Array.from({ length: 4 }).map((_, i) => {
             return (
               <ListCell
+                // eslint-disable-next-line react/no-array-index-key
                 key={`card-cell-${i}`}
                 onPress={onPressConsole}
                 title="Title"

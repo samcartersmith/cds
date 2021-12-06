@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function createStories(
+export function performanceBenchmarkBuilder(
   CDSComponent: React.ComponentType<unknown>,
   HTMLComponent: React.ComponentType<unknown>,
 ) {

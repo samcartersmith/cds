@@ -1,19 +1,18 @@
 import React, { useState, ReactElement } from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import {
+import type {
   SelectInputBaseProps,
   SelectOptionCellBaseProps,
   TrayBaseProps,
   Spectrum,
-  SystemProviderProps,
+  ThemeProviderBaseProps,
   BoxBaseProps,
   StackBaseProps,
   Scale,
-} from '@cbhq/cds-common';
-import { GestureResponderEvent, ScrollViewProps } from 'react-native';
+} from '../types';
+import { useToggler } from '../hooks/useToggler';
 
 type LinkableProps = {
-  onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
+  onPress?: null | ((event: unknown) => void) | undefined;
 };
 
 type SelectOptionCellProps = {
@@ -33,7 +32,7 @@ export type CreateSelectInputStoriesProps = {
   SelectInput: React.ComponentType<SelectInputProps>;
   VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
   SelectOptionCell: React.ComponentType<SelectOptionCellProps>;
-  ThemeProvider: React.ComponentType<SystemProviderProps>;
+  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
   spectrum?: Spectrum;
   scale?: Scale;
 };
@@ -53,7 +52,7 @@ export const priceOptions = [
   '65655',
 ];
 
-export const createStories = ({
+export const selectInputBuilder = ({
   SelectInput,
   VStack,
   SelectOptionCell,
@@ -190,7 +189,7 @@ export type CreateSelectInputProps = {
   SelectInput: React.ComponentType<SelectInputBaseProps>;
   Tray: React.ComponentType<TrayBaseProps>;
   SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps & LinkableProps>;
-  ScrollView: React.ComponentType<ScrollViewProps>;
+  ScrollView: React.ComponentType;
 };
 
 type OptionProps = {
@@ -206,7 +205,7 @@ type DefaultSelectInputTypes = {
   hideHandleBar?: boolean;
 } & Omit<SelectInputBaseProps, 'children'>;
 
-export const createMobileStories = ({
+export const selectInputBuilderMobile = ({
   Tray,
   SelectInput,
   SelectOptionCell,
@@ -234,17 +233,18 @@ export const createMobileStories = ({
           >
             {({ closeTray }) =>
               options.map((option) => {
+                // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+                const onPress = () => {
+                  setValue(option.value);
+                  closeTray();
+                };
                 return (
                   <SelectOptionCell
                     title={option.label}
                     compact={compactSelectOptionCell}
                     key={option.value}
                     description={hasDescription && 'BTC'}
-                    onPress={() => {
-                      setValue(option.value);
-                      // eslint-disable-next-line
-                      closeTray();
-                    }}
+                    onPress={onPress}
                     selected={value === option.value}
                   />
                 );
@@ -277,17 +277,18 @@ export const createMobileStories = ({
             {({ closeTray }) => (
               <ScrollView>
                 {options.map((option) => {
+                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+                  const onPress = () => {
+                    setValue(option.value);
+                    closeTray();
+                  };
                   return (
                     <SelectOptionCell
                       title={option.label}
                       compact={compactSelectOptionCell}
                       key={option.value}
                       description={hasDescription && 'BTC'}
-                      onPress={() => {
-                        setValue(option.value);
-                        // eslint-disable-next-line
-                        closeTray();
-                      }}
+                      onPress={onPress}
                       selected={value === option.value}
                     />
                   );

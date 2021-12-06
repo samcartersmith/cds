@@ -1,4 +1,4 @@
-import { createStories } from ':cds-storybook/stories/Dots';
+import { dotBuilder } from '@cbhq/cds-common/internal/dotBuilder';
 import { DotCount, DotStatusColor } from '..';
 import { Box, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
@@ -15,7 +15,7 @@ export const {
   DotStatusColorVariant,
   DotStatusColorPlacements,
   DotStatusColorSizes,
-} = createStories(
+} = dotBuilder(
   DotCount,
   DotStatusColor,
   (props) => <Box {...props} />,

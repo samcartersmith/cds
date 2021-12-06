@@ -1,10 +1,12 @@
 import React from 'react';
-import { ContentCellBaseProps, CellMediaProps } from '@cbhq/cds-common';
-import { IllustrationPictogramNames } from '@cbhq/cds-common/types/IllustrationNames';
+import type { ContentCellBaseProps, CellMediaProps, IllustrationPictogramNames } from '../types';
 
-import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { assets } from './data/assets';
 
-export function createStories(
+// eslint-disable-next-line no-console
+const onPressConsole = () => console.log('pressed');
+
+export function contentCellBuilder(
   ContentCell: React.ComponentType<
     ContentCellBaseProps & {
       onPress?: () => void;
@@ -34,27 +36,27 @@ export function createStories(
 
   const PressableContent = () => (
     <>
-      <ContentCell title="Title" to="#" onPress={() => {}} />
+      <ContentCell title="Title" to="#" onPress={onPressConsole} />
 
-      <ContentCell title="Title" subtitle="Subtitle" onPress={() => {}} />
+      <ContentCell title="Title" subtitle="Subtitle" onPress={onPressConsole} />
 
       <ContentCell
         title="Title"
         meta="Meta"
         description="Description"
         subtitle="Subtitle"
-        onPress={() => {}}
+        onPress={onPressConsole}
         to="#"
         reduceHorizontalSpacing
       />
 
-      <ContentCell description="Description" subtitle="Subtitle" onPress={() => {}} />
+      <ContentCell description="Description" subtitle="Subtitle" onPress={onPressConsole} />
 
       <ContentCell
         title="Title"
         description="Description"
         meta="Meta"
-        onPress={() => {}}
+        onPress={onPressConsole}
         reduceHorizontalSpacing
         selected
       />
@@ -63,11 +65,11 @@ export function createStories(
         title="Title"
         description="Description"
         subtitle="Subtitle"
-        onPress={() => {}}
+        onPress={onPressConsole}
         disabled
       />
 
-      <ContentCell title="Title" subtitle="Subtitle" onPress={() => {}} selected disabled />
+      <ContentCell title="Title" subtitle="Subtitle" onPress={onPressConsole} selected disabled />
     </>
   );
 
@@ -125,7 +127,7 @@ export function createStories(
       <ContentCell
         title="Icon (pressable)"
         media={<CellMedia type="icon" name="email" />}
-        onPress={console.log}
+        onPress={onPressConsole}
       />
 
       <ContentCell

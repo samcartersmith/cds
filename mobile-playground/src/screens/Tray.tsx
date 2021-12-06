@@ -1,4 +1,5 @@
 import React from 'react';
+import { trayBuilder, CreateTrayProps } from '@cbhq/cds-common/internal/trayBuilder';
 
 import { Button } from '@cbhq/cds-mobile/buttons';
 import { Tray } from '@cbhq/cds-mobile/overlays/Tray/Tray';
@@ -6,10 +7,9 @@ import { SelectOptionCell } from '@cbhq/cds-mobile/controls/SelectOptionCell';
 import { ScrollView, View } from 'react-native';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
-import { createStories, CreateTrayProps } from ':cds-storybook/stories/Tray';
 
 const TrayScreen = () => {
-  const { DefaultTray, ScrollableTray } = createStories({
+  const { DefaultTray, ScrollableTray } = trayBuilder({
     Tray,
     Button,
     SelectOptionCell,

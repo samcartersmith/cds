@@ -1,11 +1,11 @@
 import React from 'react';
 import { ContentCellFallback } from '@cbhq/cds-mobile/cells';
-import { createStories } from ':cds-storybook/stories/ContentCellFallback';
+import { contentCellFallbackBuilder } from '@cbhq/cds-common/internal/contentCellFallbackBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 
-const { Fallbacks } = createStories(ContentCellFallback);
+const { Fallbacks } = contentCellFallbackBuilder(ContentCellFallback);
 
 const ContentCellFallbackScreen = () => {
   return (

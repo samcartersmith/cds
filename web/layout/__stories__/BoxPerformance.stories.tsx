@@ -1,6 +1,6 @@
 import { withPerformance } from 'storybook-addon-performance';
+import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
 import { Box } from '../Box';
-import { createStories } from ':cds-storybook/stories/PerformanceBenchmark';
 
 export default {
   component: Box,
@@ -27,4 +27,4 @@ export const {
   HundredHTMLComponent,
   ThousandCDSComponents,
   ThousandHTMLComponent,
-} = createStories(CDSBox, SingleDiv);
+} = performanceBenchmarkBuilder(CDSBox, SingleDiv);

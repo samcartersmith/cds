@@ -1,16 +1,16 @@
 import React from 'react';
-import { TextInput } from 'react-native';
 import { Button } from '@cbhq/cds-mobile/buttons';
+import { TextInput } from '@cbhq/cds-mobile/controls/TextInput';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '@cbhq/cds-mobile/overlays';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
 import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
-import { CreateModalProps, createStories } from ':cds-storybook/stories/Modal';
+import { modalBuilder, CreateModalProps } from '@cbhq/cds-common/internal/modalBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 import { LoremIpsum } from '../internal/LoremIpsum';
 
-const { BasicModal, LongModal, PortalModal } = createStories({
+const { BasicModal, LongModal, PortalModal } = modalBuilder({
   Modal,
   ModalBody,
   ModalHeader,
@@ -19,7 +19,7 @@ const { BasicModal, LongModal, PortalModal } = createStories({
   Button,
   LoremIpsum,
   PortalProvider,
-  Input: TextInput,
+  TextInput,
 } as CreateModalProps);
 
 const ModalScreen = () => {

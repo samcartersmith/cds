@@ -10,21 +10,22 @@ import { StackScreenProps, createStackNavigator } from '@react-navigation/stack'
 import { View } from 'react-native';
 import { pascalCase } from '@cbhq/cds-utils';
 import { illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
-import { createStories } from ':cds-storybook/stories/Illustration';
+import { illustrationBuilder } from '@cbhq/cds-common/internal/illustrationBuilder';
 
 import Example from '../internal/Example';
 import ExampleScreen from '../internal/ExamplesScreen';
 
-const { ListPictograms, ListHeroSquares, ListSpotSquares, ListSpotRectangles } = createStories(
-  Pictogram,
-  SpotSquare,
-  SpotRectangle,
-  HeroSquare,
-  HStack,
-  VStack,
-  Box,
-  TextLabel1,
-);
+const { ListPictograms, ListHeroSquares, ListSpotSquares, ListSpotRectangles } =
+  illustrationBuilder(
+    Pictogram,
+    SpotSquare,
+    SpotRectangle,
+    HeroSquare,
+    HStack,
+    VStack,
+    Box,
+    TextLabel1,
+  );
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 const NavScreen = function NavScreen({ navigation }: StackScreenProps<Record<string, {}>>) {

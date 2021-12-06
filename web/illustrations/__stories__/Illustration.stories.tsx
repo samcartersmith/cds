@@ -1,4 +1,4 @@
-import { createStories } from ':cds-storybook/stories/IllustrationPercy';
+import { illustrationPercyBuilder } from '@cbhq/cds-common/internal/illustrationPercyBuilder';
 import { HStack, VStack, Box } from '../../layout';
 import { ThemeProvider } from '../../system';
 import { TextLabel1 } from '../../typography';
@@ -9,7 +9,7 @@ export default {
   component: Illustration,
 };
 
-export const { ListIllustrations } = createStories(
+export const { ListIllustrations } = illustrationPercyBuilder(
   Illustration,
   ThemeProvider,
   (props) => <HStack {...props} />,

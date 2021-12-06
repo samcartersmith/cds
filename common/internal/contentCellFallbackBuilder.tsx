@@ -1,7 +1,9 @@
 import React from 'react';
-import { ContentCellFallbackProps } from '@cbhq/cds-common';
+import type { ContentCellFallbackProps } from '../types';
 
-export function createStories(ContentCellFallback: React.ComponentType<ContentCellFallbackProps>) {
+export function contentCellFallbackBuilder(
+  ContentCellFallback: React.ComponentType<ContentCellFallbackProps>,
+) {
   const Fallbacks = () => {
     return (
       <>

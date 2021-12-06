@@ -6,12 +6,12 @@ import { useAlert } from '@cbhq/cds-common/overlays/useAlert';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
 import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
 import { TextBody } from '@cbhq/cds-mobile/typography';
-import { CreateAlertProps, createStories } from ':cds-storybook/stories/Alert';
+import { CreateAlertProps, alertBuilder } from '@cbhq/cds-common/internal/alertBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 
-const { BasicAlert, SingleActionAlert, PortalAlert } = createStories({
+const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
   Alert,
   ThemeProvider,
   Button,

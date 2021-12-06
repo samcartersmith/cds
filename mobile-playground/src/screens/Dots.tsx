@@ -1,5 +1,7 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { PLACEMENTS, SIZES, dotBuilder } from '@cbhq/cds-common/internal/dotBuilder';
+
 import { DotCount, DotStatusColor, DotSymbol } from '@cbhq/cds-mobile/dots';
 import { Box, VStack } from '@cbhq/cds-mobile/layout';
 import { Avatar } from '@cbhq/cds-mobile/media';
@@ -7,8 +9,6 @@ import { Icon } from '@cbhq/cds-mobile/icons';
 import { TextLabel1 } from '@cbhq/cds-mobile/typography';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
-
-import { PLACEMENTS, SIZES, createStories } from ':cds-storybook/stories/Dots';
 
 const {
   DotCountBasic,
@@ -18,7 +18,7 @@ const {
   DotStatusColorSizes,
   DotCountPlacements,
   DotStatusColorPlacements,
-} = createStories(DotCount, DotStatusColor, Box, Avatar, TextLabel1, Icon, VStack);
+} = dotBuilder(DotCount, DotStatusColor, Box, Avatar, TextLabel1, Icon, VStack);
 
 const DotSymbolPlacements = () => {
   return (

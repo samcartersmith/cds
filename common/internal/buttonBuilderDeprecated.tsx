@@ -1,20 +1,27 @@
 import React from 'react';
-import { BoxBaseProps, ButtonBaseProps, Spectrum, Scale, StackBaseProps } from '@cbhq/cds-common';
-import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
-import { SystemProviderProps } from '@cbhq/cds-common/SystemProvider';
+import type {
+  BoxBaseProps,
+  ButtonBaseProps,
+  Spectrum,
+  Scale,
+  StackBaseProps,
+  ThemeProviderBaseProps,
+} from '../types';
+import { FeatureFlagProvider } from '../system/FeatureFlagProvider';
 
+// eslint-disable-next-line no-console
 const onPressConsole = () => console.log('pressed');
 
 export type CreateButtonStoriesParams = {
   Button: React.ComponentType<ButtonBaseProps & { onPress?: () => void }>;
-  ThemeProvider: React.ComponentType<SystemProviderProps>;
+  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
   frontier?: boolean;
   spectrum?: Spectrum;
   scale?: Scale;
 };
 
-export function createButtonStories({
+export function buttonBuilderDeprecated({
   Button,
   ThemeProvider,
   VStack,

@@ -1,13 +1,13 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
-import { createStories, CreateAlertProps } from ':cds-storybook/stories/Alert';
+import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 
 import { Alert } from '../Alert';
 import { Button } from '../../buttons';
 import { PortalProvider } from '../PortalProvider';
 import { Animated } from '../../animation/Animated';
 
-const { MockAlert } = createStories({
+const { MockAlert } = alertBuilder({
   Alert,
   Button,
   PortalProvider,

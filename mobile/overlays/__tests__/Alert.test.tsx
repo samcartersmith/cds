@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react-native';
 import { Modal as RNModal, Animated } from 'react-native';
-import { createStories, CreateAlertProps } from ':cds-storybook/stories/Alert';
+import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 
 import { Alert } from '../Alert';
 import { Button } from '../../buttons';
@@ -8,7 +8,7 @@ import { PortalProvider } from '../PortalProvider';
 
 jest.useFakeTimers();
 
-const { MockAlert } = createStories({
+const { MockAlert } = alertBuilder({
   Alert,
   Button,
   PortalProvider,

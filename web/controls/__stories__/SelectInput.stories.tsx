@@ -1,15 +1,19 @@
+import {
+  selectInputBuilder,
+  CreateSelectInputStoriesProps,
+} from '@cbhq/cds-common/internal/selectInputBuilder';
+
 import { VStack } from '../../layout/VStack';
 import { SelectOptionCell } from '../../cells/SelectOptionCell';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { SelectInput } from '../SelectInput';
-import { createStories, CreateSelectInputStoriesProps } from ':cds-storybook/stories/SelectInput';
 
 export default {
   title: 'Core Components/Inputs/SelectInput',
   component: SelectInput,
 };
 
-export const { Default, InputStackOptions, WithLabel, Compact, Variants } = createStories({
+export const { Default, InputStackOptions, WithLabel, Compact, Variants } = selectInputBuilder({
   SelectInput,
   VStack,
   SelectOptionCell,
@@ -22,7 +26,7 @@ export const {
   WithLabel: DarkWithLabel,
   Compact: DarkCompact,
   Variants: DarkVariants,
-} = createStories({
+} = selectInputBuilder({
   SelectInput,
   VStack,
   SelectOptionCell,
@@ -36,7 +40,7 @@ export const {
   WithLabel: DenseWithLabel,
   Compact: DenseCompact,
   Variants: DenseVariants,
-} = createStories({
+} = selectInputBuilder({
   SelectInput,
   VStack,
   SelectOptionCell,

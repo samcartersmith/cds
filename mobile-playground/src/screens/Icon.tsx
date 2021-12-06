@@ -9,7 +9,10 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { convertMotionConfig } from '@cbhq/cds-mobile/animation/convertMotionConfig';
 import { Animated } from 'react-native';
-import { createIconSheet, CreateIconSheetParams } from ':cds-storybook/stories/IconSheet';
+import {
+  iconSheetBuilder,
+  CreateIconSheetParams,
+} from '@cbhq/cds-common/internal/iconSheetBuilder';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
 
@@ -39,7 +42,7 @@ export const useAnimation = (): [
   }, []);
 };
 
-export const { IconSheet } = createIconSheet({
+export const { IconSheet } = iconSheetBuilder({
   Icon,
   HStack,
   ThemeProvider,

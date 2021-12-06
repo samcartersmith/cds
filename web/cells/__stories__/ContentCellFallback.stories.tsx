@@ -1,4 +1,4 @@
-import { createStories } from ':cds-storybook/stories/ContentCellFallback';
+import { contentCellFallbackBuilder } from '@cbhq/cds-common/internal/contentCellFallbackBuilder';
 
 import { ContentCellFallback } from '../ContentCellFallback';
 
@@ -7,4 +7,4 @@ export default {
   component: ContentCellFallback,
 };
 
-export const { Fallbacks } = createStories(ContentCellFallback);
+export const { Fallbacks } = contentCellFallbackBuilder(ContentCellFallback);

@@ -1,7 +1,13 @@
 import React, { useCallback } from 'react';
-import { ButtonBaseProps } from '@cbhq/cds-common/types';
-import type { ToastBaseProps } from '@cbhq/cds-common/types';
-import { useToast } from '@cbhq/cds-common/overlays/useToast';
+import type { ButtonBaseProps, ToastBaseProps } from '../types';
+import { useToast } from '../overlays/useToast';
+
+// eslint-disable-next-line no-console
+const onActionPressConsole = () => console.log('action pressed');
+// eslint-disable-next-line no-console
+const onWillHideConsole = () => console.log('toast hiding');
+// eslint-disable-next-line no-console
+const onDidHideConsole = () => console.log('toast hidden');
 
 export type CreateToastProps = {
   Toast: React.ComponentType<ToastBaseProps>;
@@ -9,21 +15,17 @@ export type CreateToastProps = {
   PortalProvider?: React.ComponentType;
 };
 
-export function createStories({ Toast, Button, PortalProvider }: CreateToastProps) {
+export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps) {
   const BasicToast = () => {
     const toast = useToast(Toast);
 
     const handleShow = useCallback(() => {
       toast.show('Toast copy', {
-        action: { label: 'Action', onPress: () => console.log('action pressed') },
+        action: { label: 'Action', onPress: onActionPressConsole },
         // hideCloseButton: true,
         // dangerouslySetDuration: 10000,
-        onWillHide: () => {
-          console.log('toast hiding');
-        },
-        onDidHide: () => {
-          console.log('toast hidden');
-        },
+        onWillHide: onWillHideConsole,
+        onDidHide: onDidHideConsole,
       });
     }, [toast]);
 
@@ -39,7 +41,7 @@ export function createStories({ Toast, Button, PortalProvider }: CreateToastProp
 
     const handleShow = useCallback(() => {
       toast.show('Very very very very very long toast copy', {
-        action: { label: 'Action', onPress: () => console.log('action pressed') },
+        action: { label: 'Action', onPress: onActionPressConsole },
       });
     }, [toast]);
 

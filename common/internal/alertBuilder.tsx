@@ -1,7 +1,12 @@
 import React, { useCallback } from 'react';
-import { ButtonBaseProps, useToggler } from '@cbhq/cds-common';
-import type { AlertBaseProps, SharedProps } from '@cbhq/cds-common/types';
-import { useAlert } from '@cbhq/cds-common/overlays/useAlert';
+import { useToggler } from '../hooks/useToggler';
+import { useAlert } from '../overlays/useAlert';
+import type { AlertBaseProps, ButtonBaseProps, SharedProps } from '../types';
+
+// eslint-disable-next-line no-console
+const onPressConsole = () => console.log('pressed');
+// eslint-disable-next-line no-console
+const onRequestCloseConsole = () => console.log('Alert dimissed!');
 
 export type CreateAlertProps = {
   Alert: React.ComponentType<AlertBaseProps & { disablePortal?: boolean }>;
@@ -9,7 +14,7 @@ export type CreateAlertProps = {
   PortalProvider: React.ComponentType;
 };
 
-export function createStories({ Alert, Button, PortalProvider }: CreateAlertProps) {
+export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps) {
   const BasicAlert = ({ singleAction }: { singleAction?: boolean }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler();
 
@@ -23,7 +28,7 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
           pictogram="warning"
           onRequestClose={toggleOff}
           preferredActionLabel="Primary"
-          onPreferredActionPress={() => console.log('primary pressed')}
+          onPreferredActionPress={onPressConsole}
           dismissActionLabel={singleAction ? undefined : 'Cancel'}
         />
       </>
@@ -42,9 +47,9 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
               title="Alert title"
               body="Alert body type that can run over multiple lines, but should be kept short."
               pictogram="warning"
-              onRequestClose={() => console.log('Alert dimissed!')}
+              onRequestClose={onRequestCloseConsole}
               preferredActionLabel="Save"
-              onPreferredActionPress={() => console.log('primary pressed')}
+              onPreferredActionPress={onPressConsole}
               preferredActionVariant="negative"
               dismissActionLabel="Cancel"
             />,
@@ -87,7 +92,7 @@ export function createStories({ Alert, Button, PortalProvider }: CreateAlertProp
           pictogram={pictogram ?? 'warning'}
           onRequestClose={onRequestClose ?? toggleOff}
           preferredActionLabel={preferredActionLabel ?? 'Save'}
-          onPreferredActionPress={onPreferredActionPress ?? (() => {})}
+          onPreferredActionPress={onPreferredActionPress ?? onPressConsole}
           dismissActionLabel={dismissActionLabel}
           disablePortal
         />

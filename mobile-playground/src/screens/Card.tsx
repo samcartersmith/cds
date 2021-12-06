@@ -6,7 +6,7 @@ import { ListCell, CellMedia } from '@cbhq/cds-mobile/cells';
 import { Box, VStack } from '@cbhq/cds-mobile/layout';
 import { Card, FeedCard, CardBody } from '@cbhq/cds-mobile/cards';
 import { ThemeProvider } from '@cbhq/cds-mobile/system';
-import { createStories } from ':cds-storybook/stories/Card';
+import { cardBuilder } from '@cbhq/cds-common/internal/cardBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
@@ -24,7 +24,7 @@ const {
   PinnedLeftCard,
   FeedCardExample,
   SpotSquareExample,
-} = createStories({
+} = cardBuilder({
   Box,
   Button,
   Card,

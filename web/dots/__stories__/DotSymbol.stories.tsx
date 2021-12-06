@@ -1,6 +1,6 @@
 import { BadgePlacement } from '@cbhq/cds-common';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { PLACEMENTS, SIZES } from ':cds-storybook/stories/Dots';
+import { PLACEMENTS, SIZES } from '@cbhq/cds-common/internal/dotBuilder';
 import { DotSymbol } from '..';
 import { VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';

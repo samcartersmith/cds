@@ -1,13 +1,18 @@
 import React, { useCallback } from 'react';
-import type { TextInputProps } from 'react-native';
-import { ButtonBaseProps, SystemProviderProps, useToggler } from '@cbhq/cds-common';
 import type {
+  ButtonBaseProps,
   ModalBaseProps,
   ModalHeaderBaseProps,
   ModalFooterBaseProps,
   SharedProps,
-} from '@cbhq/cds-common/types';
-import { useModal } from '@cbhq/cds-common/overlays/useModal';
+  ThemeProviderBaseProps,
+  TextInputBaseProps,
+} from '../types';
+import { useToggler } from '../hooks/useToggler';
+import { useModal } from '../overlays/useModal';
+
+// eslint-disable-next-line no-console
+const onRequestCloseConsole = () => console.log('close modal');
 
 export type CreateModalProps = {
   Modal: React.ComponentType<ModalBaseProps & { disablePortal?: boolean }>;
@@ -16,18 +21,18 @@ export type CreateModalProps = {
   ModalFooter: React.ComponentType<ModalFooterBaseProps>;
   LoremIpsum: React.ComponentType<Record<string, unknown>>;
   Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
-  ThemeProvider: React.ComponentType<SystemProviderProps>;
-  PortalProvider: React.ComponentType<SystemProviderProps>;
-  Input?: React.ComponentType<TextInputProps>;
+  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
+  PortalProvider: React.ComponentType<ThemeProviderBaseProps>;
+  TextInput?: React.ComponentType<TextInputBaseProps>;
 };
 
-export function createStories({
+export function modalBuilder({
   Modal,
   ModalBody,
   ModalHeader,
   ModalFooter,
   Button,
-  Input, // test keyboard avoiding on mobile
+  TextInput, // test keyboard avoiding on mobile
   LoremIpsum,
   ThemeProvider,
   PortalProvider,
@@ -67,12 +72,7 @@ export function createStories({
     const handlePress = useCallback(
       () =>
         openModal(
-          <Modal
-            visible
-            onRequestClose={() => {
-              console.log('close modal');
-            }}
-          >
+          <Modal visible onRequestClose={onRequestCloseConsole}>
             <ModalHeader title="Basic Modal" />
             <ModalBody>{children}</ModalBody>
             <ModalFooter
@@ -165,7 +165,7 @@ export function createStories({
     <PortalProvider>
       <BasicModalExample>
         <LoremIpsum repeat={30} />
-        {!!Input && <Input placeholder="test input" />}
+        {!!TextInput && <TextInput label="" placeholder="test input" />}
       </BasicModalExample>
     </PortalProvider>
   );

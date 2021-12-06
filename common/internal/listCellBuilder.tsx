@@ -1,19 +1,20 @@
 import React from 'react';
-import {
+import type {
   ButtonBaseProps,
   CellMediaProps,
   ControlBaseProps,
   IconButtonBaseProps,
+  IllustrationPictogramNames,
   ListCellBaseProps,
-} from '@cbhq/cds-common';
-import { IllustrationPictogramNames } from '@cbhq/cds-common/types/IllustrationNames';
-import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
+} from '../types';
+import { selectCellSpacingConfig } from '../tokens/cell';
 
-import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { assets } from './data/assets';
 
+// eslint-disable-next-line no-console
 const onPressConsole = () => console.log('onPress');
 
-export function createStories(
+export function listCellBuilder(
   ListCell: React.ComponentType<
     ListCellBaseProps & {
       onPress?: () => void;
@@ -186,15 +187,15 @@ export function createStories(
 
   const CompactPressableContent = () => (
     <>
-      <ListCell compact title="Title" onPress={() => {}} />
+      <ListCell compact title="Title" onPress={onPressConsole} />
 
-      <ListCell compact title="Title" subdetail="Neutral" onPress={() => {}} />
+      <ListCell compact title="Title" subdetail="Neutral" onPress={onPressConsole} />
 
       <ListCell
         compact
         title="Title"
         description="Multi-line description"
-        onPress={() => {}}
+        onPress={onPressConsole}
         multiline
       />
 
@@ -202,7 +203,7 @@ export function createStories(
         compact
         title="Title"
         description="Multi-line description"
-        onPress={() => {}}
+        onPress={onPressConsole}
         multiline
         selected
       />
@@ -211,7 +212,7 @@ export function createStories(
         compact
         title="Title"
         description="Multi-line description goes here with really long text"
-        onPress={() => {}}
+        onPress={onPressConsole}
         multiline
       />
 
@@ -219,7 +220,7 @@ export function createStories(
         compact
         title="Title"
         description="Multi-line description goes here with really long text"
-        onPress={() => {}}
+        onPress={onPressConsole}
         multiline
         selected
       />
@@ -229,7 +230,7 @@ export function createStories(
         title="Title"
         description="Description"
         detail="Detail"
-        onPress={() => {}}
+        onPress={onPressConsole}
       />
 
       <ListCell
@@ -238,7 +239,7 @@ export function createStories(
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        onPress={() => {}}
+        onPress={onPressConsole}
         reduceHorizontalSpacing
       />
 
@@ -248,7 +249,7 @@ export function createStories(
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        onPress={() => {}}
+        onPress={onPressConsole}
         selected
       />
 
@@ -258,7 +259,7 @@ export function createStories(
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        onPress={() => {}}
+        onPress={onPressConsole}
         disabled
         reduceHorizontalSpacing
       />
@@ -270,7 +271,7 @@ export function createStories(
         detail="Detail"
         subdetail="+Postive"
         variant="positive"
-        onPress={() => {}}
+        onPress={onPressConsole}
         selected
         disabled
       />

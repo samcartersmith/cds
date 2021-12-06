@@ -1,12 +1,17 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
+import {
+  selectInputBuilderMobile,
+  CreateSelectInputProps,
+} from '@cbhq/cds-common/internal/selectInputBuilder';
+
 import { SelectInput } from '@cbhq/cds-mobile/controls/SelectInput';
 import { Tray } from '@cbhq/cds-mobile/overlays';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { SelectOptionCell } from '@cbhq/cds-mobile/controls/SelectOptionCell';
+
 import ExamplesScreen from '../internal/ExamplesScreen';
 import Example from '../internal/Example';
-import { createMobileStories, CreateSelectInputProps } from ':cds-storybook/stories/SelectInput';
 
 const longListOfOptions = prices.slice(0, 10).map((option) => {
   return {
@@ -16,7 +21,7 @@ const longListOfOptions = prices.slice(0, 10).map((option) => {
 });
 
 export default function SelectInputScreen() {
-  const { DefaultSelectInput, ScrollableSelectInput } = createMobileStories({
+  const { DefaultSelectInput, ScrollableSelectInput } = selectInputBuilderMobile({
     Tray,
     SelectInput,
     SelectOptionCell,

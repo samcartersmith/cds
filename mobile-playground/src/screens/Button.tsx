@@ -1,4 +1,6 @@
 import React from 'react';
+import { buttonBuilderDeprecated } from '@cbhq/cds-common/internal/buttonBuilderDeprecated';
+
 import { Button } from '@cbhq/cds-mobile/buttons/Button';
 import { VStack } from '@cbhq/cds-mobile/layout/VStack';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
@@ -6,9 +8,8 @@ import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { entries } from '@cbhq/cds-utils';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
-import { createButtonStories } from ':cds-storybook/stories/Button';
 
-const stories = createButtonStories({
+const stories = buttonBuilderDeprecated({
   Button,
   ThemeProvider,
   VStack,

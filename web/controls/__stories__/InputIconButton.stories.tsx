@@ -1,7 +1,8 @@
+import { inputIconButtonBuilder } from '@cbhq/cds-common/internal/inputIconButtonBuilder';
+
 import { InputIconButton } from '../InputIconButton';
 import { TextInput } from '../TextInput';
 import { Box } from '../../layout/Box';
-import { createStories } from ':cds-storybook/stories/InputIconButton';
 
 export default {
   title: 'Core Components/Inputs/InputIconButton',
@@ -16,6 +17,6 @@ export const {
   AddCustomColor,
   AddCustomColorEnd,
   InvalidPlacement,
-} = createStories(TextInput, InputIconButton, (props) => (
+} = inputIconButtonBuilder(TextInput, InputIconButton, (props) => (
   <Box {...props} background="backgroundAlternate" />
 ));

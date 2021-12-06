@@ -1,13 +1,13 @@
-import {
+import React, { ComponentType } from 'react';
+import type {
   BoxBaseProps,
   IconBaseProps,
   IconName,
   PaletteForeground,
   TextInputBaseProps,
-} from '@cbhq/cds-common';
-import React, { ComponentType } from 'react';
+} from '../types';
 
-export function createStories(
+export function inputIconBuilder(
   TextInput: ComponentType<TextInputBaseProps>,
   InputIcon: ComponentType<
     {

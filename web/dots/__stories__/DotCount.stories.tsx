@@ -1,4 +1,4 @@
-import { createStories } from ':cds-storybook/stories/Dots';
+import { dotBuilder } from '@cbhq/cds-common/internal/dotBuilder';
 import { DotCount, DotStatusColor } from '..';
 import { Box, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
@@ -10,7 +10,7 @@ export default {
   component: DotCount,
 };
 
-export const { DotCountBasic, DotCountVariant, DotCountPlacements } = createStories(
+export const { DotCountBasic, DotCountVariant, DotCountPlacements } = dotBuilder(
   DotCount,
   DotStatusColor,
   (props) => <Box {...props} />,

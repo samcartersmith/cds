@@ -1,25 +1,35 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
 
 import { Button } from '@cbhq/cds-mobile/buttons';
 import { Drawer } from '@cbhq/cds-mobile/overlays';
 import { VStack } from '@cbhq/cds-mobile/layout/VStack';
-import { SelectOptionCell } from '@cbhq/cds-mobile/controls/SelectOptionCell';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { DrawerBaseProps } from '@cbhq/cds-common/types';
+
 import { LoremIpsum } from '../internal/LoremIpsum';
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
-import { CreateDrawerProps, createStories } from ':cds-storybook/stories/Drawer';
+
+const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
+  const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
+  return (
+    <>
+      <Button onPress={toggleOn}>Open</Button>
+      {isVisible && (
+        <Drawer pin={pin} onCloseComplete={toggleOff}>
+          {({ closeDrawer }) => (
+            <VStack spacing={2}>
+              <LoremIpsum />
+              <Button onPress={closeDrawer}>Close Drawer</Button>
+            </VStack>
+          )}
+        </Drawer>
+      )}
+    </>
+  );
+};
 
 const DrawerScreen = () => {
-  const { DefaultDrawer } = createStories({
-    Drawer,
-    Button,
-    LoremIpsum,
-    VStack,
-    ScrollView,
-    SelectOptionCell,
-  } as CreateDrawerProps);
-
   return (
     <ExamplesScreen>
       <Example title="Left Drawer">

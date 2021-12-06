@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@cbhq/cds-mobile/layout';
 import { TextInput } from '@cbhq/cds-mobile/controls/TextInput';
 import { InputIcon } from '@cbhq/cds-mobile/controls/InputIcon';
-import { createStories } from ':cds-storybook/stories/InputIcon';
+import { inputIconBuilder } from '@cbhq/cds-common/internal/inputIconBuilder';
 
 import Example from '../internal/Example';
 import ExamplesScreen from '../internal/ExamplesScreen';
@@ -15,7 +15,7 @@ export const {
   AddCustomColor,
   AddCustomColorEnd,
   InvalidPlacement,
-} = createStories(TextInput, InputIcon, (props) => (
+} = inputIconBuilder(TextInput, InputIcon, (props) => (
   <Box {...props} background="backgroundAlternate" />
 ));
 

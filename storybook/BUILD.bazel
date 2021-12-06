@@ -30,30 +30,8 @@ filegroup(
 )
 
 filegroup(
-    name = "source_no_decorators",
-    srcs = glob(
-        [
-            "**/*.js",
-            "**/*.ts",
-            "**/*.tsx",
-        ],
-        exclude = [
-            ".storybook/**/*",
-            "decorators/**/*",
-        ],
-    ),
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
     name = "project_source",
-    srcs = glob([
-        "data/**/*.ts",
-        "stories/**/*.ts",
-        "stories/**/*.tsx",
-        "utils/**/*.ts",
-        "utils/**/*.tsx",
-    ]) + ["tsconfig.json"],
+    srcs = ["tsconfig.json"],
     visibility = ["//visibility:public"],
 )
 
