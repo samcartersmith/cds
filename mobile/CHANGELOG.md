@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.1 (12/6/2021, 12:08 PM PST)
+
+#### 🚀 Updates
+
+- **[Card]** FrontierCard gated Card & CardGroup changes. [#44358](https://github.cbhq.net/mono/repo/pull/44358), [CDS-1661](https://jira.coinbase-corp.com/browse/CDS-1661)
+- Move mobile examples to cds-mobile package. [#44651](https://github.cbhq.net/mono/repo/pull/44651), [CDS-1788](https://jira.coinbase-corp.com/browse/CDS-1788)
+- Cds toast web. [#44343](https://github.cbhq.net/mono/repo/pull/44343), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
+#### 🐞 Fixes
+
+- Add more test cases for DotStatusColor, DotSymbol, DotCount for mobile. [#44555](https://github.cbhq.net/mono/repo/pull/44555)
+- Disable SelectInput flakey test. [#44547](https://github.cbhq.net/mono/repo/pull/44547)
+- **[Illustrations]** Publish Illustration - Dec 1st 2021. [#44345](https://github.cbhq.net/mono/repo/pull/44345)
+
+#### 📘 Misc
+
+- Move story builders to common/internal. [#44615](https://github.cbhq.net/mono/repo/pull/44615)
+- Dot Badges for Web. [#44414](https://github.cbhq.net/mono/repo/pull/44414), [CDS-1792](https://jira.coinbase-corp.com/browse/CDS-1792)
+- Add DotStatusColor, DotCount, DotSymbol Component for Mobile. [#43064](https://github.cbhq.net/mono/repo/pull/43064), [CDS-1508](https://jira.coinbase-corp.com/browse/CDS-1508)
+
 ## 0.35.0 (12/2/2021, 09:43 AM PST)
 
 #### 💥 Breaking

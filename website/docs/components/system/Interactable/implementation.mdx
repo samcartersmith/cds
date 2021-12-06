@@ -36,7 +36,7 @@ Accessibility hint for assisted devices when focused. Message should indicate th
 
 ### accessibilityLabel <Badge variant="web" />
 
-Accessibility label describing the control. If no accessibilityLabel, it will set it to label
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
 
 <ApiDetails
   componentName="Interactable"
@@ -48,6 +48,23 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Interactable"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Interactable" templateName="prop-accessibilityLabelledBy" />
 
 ### as <Badge variant="web" />
 

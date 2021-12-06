@@ -36,7 +36,7 @@ Accessibility hint for assisted devices when focused. Message should indicate th
 
 ### accessibilityLabel
 
-Accessibility label describing the control. If no accessibilityLabel, it will set it to label
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
 
 <ApiDetails
   componentName="PressableOpacity"
@@ -48,6 +48,23 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-accessibilityLabelledBy" />
 
 ### as <Badge variant="web" />
 
@@ -199,6 +216,21 @@ Dont scale element on press.
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-noScaleOnPress" />
 
+### onKeyPress <Badge variant="web" />
+
+Callback fired when a key is pressed
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="onKeyPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['KeyboardEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-onKeyPress" />
+
 ### onPress
 
 Callback fired when the element is pressed.
@@ -263,6 +295,21 @@ Callback fired before `onPress` when button is released.
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-style" />
+
+### tabIndex <Badge variant="web" />
+
+Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+
+<ApiDetails
+  componentName="PressableOpacity"
+  propertyName="tabIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="PressableOpacity" templateName="prop-tabIndex" />
 
 ### testID
 

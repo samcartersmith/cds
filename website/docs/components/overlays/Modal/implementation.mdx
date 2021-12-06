@@ -21,7 +21,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ### accessibilityLabel
 
-Aria label for Modal
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
 
 <ApiDetails
   componentName="Modal"
@@ -36,9 +36,9 @@ Aria label for Modal
 
 ### accessibilityLabelledBy <Badge variant="web" />
 
-Point to the id of the modal title
+Accessibility prop that describes the component that labels it by its `id`
 
-**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role**
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
 
 <ApiDetails
   componentName="Modal"

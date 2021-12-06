@@ -1294,6 +1294,21 @@ export const Alert = {
   ),
 };
 
+export const Toast = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Toast/implementation.mdx'
+      ),
+  ),
+  toast: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Toast/toast.mdx'
+      ),
+  ),
+};
+
 export const Tooltip = {
   implementation: React.lazy(
     async () =>

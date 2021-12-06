@@ -19,6 +19,38 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### accessibilityLabel
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelledBy
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="prop-accessibilityLabelledBy" />
+
 ### alignItems
 
 Set the alignment of all direct children on the cross-axis.
@@ -464,6 +496,21 @@ Set a fixed height.
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-height" />
+
+### id <Badge variant="danger" order={1} />
+
+This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls
+
+<ApiDetails
+  componentName="Lottie"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Lottie" templateName="prop-id" />
 
 ### left
 
