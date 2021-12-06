@@ -10,12 +10,12 @@ import React, {
 } from 'react';
 import { StyleSheet, Modal, Animated, ModalProps, useWindowDimensions } from 'react-native';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
-import { useDrawerSpacing } from '@cbhq/cds-mobile/hooks/useDrawerSpacing';
 import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import { emptyObject } from '@cbhq/cds-utils';
 import { useSpectrum } from '@cbhq/cds-common';
 import { DrawerStatusBar } from './DrawerStatusBar';
 import { useDrawerAnimation } from '../../animation/useDrawerAnimation';
+import { useDrawerSpacing } from '../../hooks/useDrawerSpacing';
 import { useDrawerPanResponder } from '../../hooks/useDrawerPanResponder';
 import { HandleBar } from '../HandleBar/HandleBar';
 import { Box } from '../../layout/Box';

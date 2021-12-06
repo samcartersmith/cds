@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
 
-import { textItemsThatHaveTransform } from '@cbhq/cds-web/styles/typography';
+import { textItemsThatHaveTransform } from '../../styles/typography';
 import { DynamicElement } from '../../types';
 import { HTMLNonHeadingTextTags, HTMLTextTags, TextProps } from '../TextProps';
 import {

@@ -1,13 +1,13 @@
 import { useMemo, useRef } from 'react';
 import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
 import { Animated } from 'react-native';
-import { convertMotionConfig } from '@cbhq/cds-mobile/animation/convertMotionConfig';
 import {
   animateInputBorderInConfig,
   animateInputBorderOutConfig,
 } from '@cbhq/cds-common/animation/border';
 import { widthFocused, widthUnfocused } from '@cbhq/cds-common/tokens/input';
 import { useSpectrum } from '@cbhq/cds-common';
+import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { paletteAliasToRgbaString } from '../utils/palette';
 
 type InputBorderAnimationReturnType = {

@@ -7,12 +7,12 @@ import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRad
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { StyleSheet, ActivityIndicator, View } from 'react-native';
 
-import { useFeatureFlag } from '@cbhq/cds-mobile/system/useFeatureFlag';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
 
 export type ButtonProps = ButtonBaseProps & PressableProps;

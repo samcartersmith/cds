@@ -42,6 +42,7 @@ eslint_test(
     name = "lint",
     srcs = ["//eng/shared/design-system/storybook:source"],
     lints = [":source"],
+    local_eslint_config = ".eslintrc",
     deps = DEPS + PEER_DEPS + DEV_DEPS,
 )
 

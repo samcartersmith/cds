@@ -55,6 +55,7 @@ filegroup(
 eslint_test(
     name = "lint",
     lints = [":source"],
+    local_eslint_config = ".eslintrc",
     deps = ["@npm//@cbhq/cds-utils"],
 )
 

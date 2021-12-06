@@ -1,0 +1,13 @@
+{
+  "rules": {
+    // Dont import from itself
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": ["@cbhq/cds-web"],
+        "patterns": ["@cbhq/cds-web/*"]
+      }
+    ],
+    "@cbhq/prefer-react-named-module-import": "off"
+  }
+}

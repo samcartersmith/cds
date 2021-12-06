@@ -201,6 +201,7 @@ setup.mobile:
 
 .PHONY: start.mobile
 start.mobile:
+	make mobile.routes
 	cd ../../..; LIVE_PACKAGES="cds-\w+" RN_PROJECT=cds npx react-native start --reset-cache
 
 .PHONY: build.android

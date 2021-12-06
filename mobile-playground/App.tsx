@@ -1,51 +1,26 @@
 import React, { useMemo } from 'react';
-
-import 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { FeatureFlagProvider } from '@cbhq/cds-mobile/system';
-import { usePalette } from '../mobile/hooks/usePalette';
 import { DevicePreferencesProvider } from '../mobile/system/DevicePreferencesProvider';
-import { useTypographyStyles } from '../mobile/typography';
+import { FeatureFlagProvider } from '../mobile/system/FeatureFlagProvider';
 import { PortalProvider } from '../mobile/overlays/PortalProvider';
 
-import { RoutesList } from './src/routing/RoutesList';
-import { routes } from './src/routing/routes';
+import {
+  ExamplesSearchProvider,
+  useExampleScreenOptions,
+  routes,
+} from '../mobile/examples/Examples';
 
 const Stack = createStackNavigator();
 
 const AppContent = () => {
-  const palette = usePalette();
-  const headlineStyles = useTypographyStyles('headline');
-  const screenOptions = useMemo(
-    () =>
-      ({
-        headerBackAllowFontScaling: false,
-        headerBackTitle: 'All',
-        headerBackTitleVisible: true,
-        headerStyle: {
-          backgroundColor: palette.primary,
-        },
-        headerTintColor: palette.primaryForeground,
-        headerTitleAllowFontScaling: false,
-        headerTitleAlign: 'center',
-        headerTitleStyle: headlineStyles,
-        gestureDirection: 'horizontal',
-      } as const),
-    [headlineStyles, palette.primary, palette.primaryForeground],
-  );
+  const screenOptions = useExampleScreenOptions();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Index" screenOptions={screenOptions}>
-        <Stack.Screen
-          name="Index"
-          component={RoutesList}
-          options={{ title: 'Coinbase Design System' }}
-        />
-        {routes.map((route) => (
-          <Stack.Screen {...route.stackProps} />
-        ))}
+      <Stack.Navigator {...screenOptions}>
+        {useMemo(() => routes.map((route) => <Stack.Screen {...route} />), [])}
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -53,13 +28,17 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <FeatureFlagProvider fontMigration>
-      <DevicePreferencesProvider>
-        <PortalProvider>
-          <AppContent />
-        </PortalProvider>
-      </DevicePreferencesProvider>
-    </FeatureFlagProvider>
+    <SafeAreaProvider>
+      <FeatureFlagProvider fontMigration>
+        <DevicePreferencesProvider>
+          <PortalProvider>
+            <ExamplesSearchProvider>
+              <AppContent />
+            </ExamplesSearchProvider>
+          </PortalProvider>
+        </DevicePreferencesProvider>
+      </FeatureFlagProvider>
+    </SafeAreaProvider>
   );
 };
 

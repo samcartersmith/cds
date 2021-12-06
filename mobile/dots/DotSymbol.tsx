@@ -1,6 +1,6 @@
+import React, { memo } from 'react';
+import { ImageSourcePropType, View, ViewStyle } from 'react-native';
 import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
-import React, { ImageSourcePropType, View, ViewStyle } from 'react-native';
-import { memo } from 'react';
 import { useDotPlacementStyles } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 import { RemoteImage } from '../media/RemoteImage';
 import { dotStyles } from './dotStyles';

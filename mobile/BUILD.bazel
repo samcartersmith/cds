@@ -26,6 +26,7 @@ PEER_DEPS = [
     "@npm//react",
     "@npm//react-native-inappbrowser-reborn",
     "@npm//react-native-safe-area-context",
+    "@npm//@react-navigation/stack",  # for types in mobile/examples
 ]
 
 DEV_DEPS = [
@@ -70,6 +71,7 @@ eslint_test(
     name = "lint",
     srcs = ["//eng/shared/design-system/storybook:source"],
     lints = [":source"],
+    local_eslint_config = ".eslintrc",
     deps = DEPS + PEER_DEPS + DEV_DEPS,
 )
 

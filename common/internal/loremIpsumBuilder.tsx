@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TextBaseProps } from '@cbhq/cds-common/types';
+import type { TextBaseProps } from '../types';
 
 export type LoremIpsumProps = {
   title?: string;

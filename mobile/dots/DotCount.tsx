@@ -1,5 +1,5 @@
-import React, { View, ViewStyle } from 'react-native';
-import { memo } from 'react';
+import React, { memo } from 'react';
+import { View, ViewStyle } from 'react-native';
 import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
 import { useDotPlacementStyles } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';

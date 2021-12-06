@@ -1,5 +1,5 @@
-import { useMemo, memo } from 'react';
-import React, { View, ViewStyle } from 'react-native';
+import React, { useMemo, memo } from 'react';
+import { View, ViewStyle } from 'react-native';
 import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
 import { useDotPlacementStyles } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
