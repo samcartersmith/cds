@@ -1,6 +1,14 @@
-import React, { useMemo, memo, useState, useEffect, Dispatch, SetStateAction } from 'react';
+import React, {
+  useMemo,
+  memo,
+  useState,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  forwardRef,
+} from 'react';
 
-import { BoxBaseProps, ElevationLevels, SharedProps } from '@cbhq/cds-common';
+import { BoxBaseProps, ElevationLevels, ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import {
   ElevationProvider,
   ElevationChildrenProvider,
@@ -38,15 +46,21 @@ export type BoxProps = {
   OmitStyle<ViewProps> &
   DangerouslySetStyle<ViewStyle>;
 
-export const Box: React.FC<BoxProps> = memo(({ children, ...props }) => {
-  const boxInner = <BoxInner {...props}>{children}</BoxInner>;
+export const Box = memo(
+  forwardRef(({ children, ...props }: BoxProps, forwardedRef: ForwardedRef<View>) => {
+    const boxInner = (
+      <BoxInner {...props} ref={forwardedRef}>
+        {children}
+      </BoxInner>
+    );
 
-  if (props.elevation) {
-    return <ElevationProvider elevation={props?.elevation}>{boxInner}</ElevationProvider>;
-  }
+    if (props.elevation) {
+      return <ElevationProvider elevation={props?.elevation}>{boxInner}</ElevationProvider>;
+    }
 
-  return boxInner;
-});
+    return boxInner;
+  }),
+);
 
 type ElevationStylesContainerProps = {
   elevation: ElevationLevels;
@@ -69,165 +83,181 @@ const ElevationStylesContainer = ({
 };
 
 export const BoxInner = memo(
-  ({
-    animated,
-    background,
-    children,
-    dangerouslySetBackground,
-    dangerouslySetStyle,
-    elevation,
-    overflow = 'visible',
-    opacity,
-    // Flex
-    alignContent,
-    alignItems = 'stretch',
-    alignSelf = 'auto',
-    flexBasis,
-    flexDirection = 'column',
-    flexGrow,
-    flexShrink,
-    flexWrap = 'nowrap',
-    justifyContent = 'flex-start',
-    // Border
-    bordered,
-    borderedTop,
-    borderedBottom,
-    borderedStart,
-    borderedEnd,
-    borderedHorizontal,
-    borderedVertical,
-    borderRadius,
-    borderColor,
-    // Dimension
-    height,
-    maxHeight,
-    maxWidth,
-    minHeight,
-    minWidth,
-    width,
-    // Position
-    bottom,
-    left,
-    position,
-    right,
-    top,
-    zIndex,
-    pin,
-    // Spacing
-    spacing,
-    spacingBottom,
-    spacingEnd,
-    spacingHorizontal,
-    spacingStart,
-    spacingTop,
-    spacingVertical,
-    // Offset
-    offset,
-    offsetBottom,
-    offsetEnd,
-    offsetHorizontal,
-    offsetStart,
-    offsetTop,
-    offsetVertical,
-    ...props
-  }: BoxProps) => {
-    const [elevationStyles, setElevationStyles] = useState<ViewStyle | undefined>(undefined);
-
-    const palette = usePalette();
-    const borderStyles = useBorderStyles({
-      bordered,
-      borderedTop,
-      borderedBottom,
-      borderedStart,
-      borderedEnd,
-      borderedHorizontal,
-      borderedVertical,
-      borderRadius,
-      borderColor,
-      elevation,
-    });
-    const spacingStyles = useSpacingStyles({
-      spacing,
-      spacingBottom,
-      spacingEnd,
-      spacingHorizontal,
-      spacingStart,
-      spacingTop,
-      spacingVertical,
-    });
-    const offsetStyles = useOffsetStyles({
-      offset,
-      offsetBottom,
-      offsetEnd,
-      offsetHorizontal,
-      offsetStart,
-      offsetTop,
-      offsetVertical,
-    });
-    const pinStyles = usePinStyles(pin);
-    const flexStyles = useMemo(
-      () => ({
+  forwardRef(
+    (
+      {
+        animated,
+        background,
+        children,
+        dangerouslySetBackground,
+        dangerouslySetStyle,
+        elevation,
+        overflow = 'visible',
+        opacity,
+        // Flex
         alignContent,
-        alignItems,
-        alignSelf,
+        alignItems = 'stretch',
+        alignSelf = 'auto',
         flexBasis,
-        flexDirection,
+        flexDirection = 'column',
         flexGrow,
         flexShrink,
-        flexWrap,
-        justifyContent,
-      }),
-      [
-        alignContent,
-        alignItems,
-        alignSelf,
-        flexBasis,
-        flexDirection,
-        flexGrow,
-        flexShrink,
-        flexWrap,
-        justifyContent,
-      ],
-    );
-    const dimensionStyles = useMemo(
-      () => ({ height, maxHeight, maxWidth, minHeight, minWidth, width }),
-      [height, maxHeight, maxWidth, minHeight, minWidth, width],
-    );
-    const positionStyles = useMemo(
-      () => ({
+        flexWrap = 'nowrap',
+        justifyContent = 'flex-start',
+        // Border
+        bordered,
+        borderedTop,
+        borderedBottom,
+        borderedStart,
+        borderedEnd,
+        borderedHorizontal,
+        borderedVertical,
+        borderRadius,
+        borderColor,
+        // Dimension
+        height,
+        maxHeight,
+        maxWidth,
+        minHeight,
+        minWidth,
+        width,
+        // Position
         bottom,
         left,
         position,
         right,
         top,
         zIndex,
-      }),
-      [bottom, left, position, right, top, zIndex],
-    );
-    const boxStyles = useMemo(() => {
-      const style: ViewStyle = {};
+        pin,
+        // Spacing
+        spacing,
+        spacingBottom,
+        spacingEnd,
+        spacingHorizontal,
+        spacingStart,
+        spacingTop,
+        spacingVertical,
+        // Offset
+        offset,
+        offsetBottom,
+        offsetEnd,
+        offsetHorizontal,
+        offsetStart,
+        offsetTop,
+        offsetVertical,
+        ...props
+      }: BoxProps,
+      forwardedRef: ForwardedRef<View>,
+    ) => {
+      const [elevationStyles, setElevationStyles] = useState<ViewStyle | undefined>(undefined);
 
-      if (dangerouslySetBackground) {
-        style.backgroundColor = dangerouslySetBackground;
-      } else if (background) {
-        style.backgroundColor = palette[background === true ? 'background' : background];
-      } else if (elevation) {
-        // Shadows will not render without a background color
-        style.backgroundColor = palette.background;
-      }
+      const palette = usePalette();
+      const borderStyles = useBorderStyles({
+        bordered,
+        borderedTop,
+        borderedBottom,
+        borderedStart,
+        borderedEnd,
+        borderedHorizontal,
+        borderedVertical,
+        borderRadius,
+        borderColor,
+        elevation,
+      });
+      const spacingStyles = useSpacingStyles({
+        spacing,
+        spacingBottom,
+        spacingEnd,
+        spacingHorizontal,
+        spacingStart,
+        spacingTop,
+        spacingVertical,
+      });
+      const offsetStyles = useOffsetStyles({
+        offset,
+        offsetBottom,
+        offsetEnd,
+        offsetHorizontal,
+        offsetStart,
+        offsetTop,
+        offsetVertical,
+      });
+      const pinStyles = usePinStyles(pin);
+      const flexStyles = useMemo(
+        () => ({
+          alignContent,
+          alignItems,
+          alignSelf,
+          flexBasis,
+          flexDirection,
+          flexGrow,
+          flexShrink,
+          flexWrap,
+          justifyContent,
+        }),
+        [
+          alignContent,
+          alignItems,
+          alignSelf,
+          flexBasis,
+          flexDirection,
+          flexGrow,
+          flexShrink,
+          flexWrap,
+          justifyContent,
+        ],
+      );
+      const dimensionStyles = useMemo(
+        () => ({ height, maxHeight, maxWidth, minHeight, minWidth, width }),
+        [height, maxHeight, maxWidth, minHeight, minWidth, width],
+      );
+      const positionStyles = useMemo(
+        () => ({
+          bottom,
+          left,
+          position,
+          right,
+          top,
+          zIndex,
+        }),
+        [bottom, left, position, right, top, zIndex],
+      );
+      const boxStyles = useMemo(() => {
+        const style: ViewStyle = {};
 
-      if (opacity) {
-        style.opacity = opacity as number;
-      }
+        if (dangerouslySetBackground) {
+          style.backgroundColor = dangerouslySetBackground;
+        } else if (background) {
+          style.backgroundColor = palette[background === true ? 'background' : background];
+        } else if (elevation) {
+          // Shadows will not render without a background color
+          style.backgroundColor = palette.background;
+        }
 
-      if (overflow !== 'gradient') {
-        style.overflow = overflow;
-      }
+        if (opacity) {
+          style.opacity = opacity as number;
+        }
 
-      return style;
-    }, [background, dangerouslySetBackground, elevation, opacity, overflow, palette]);
-    const style = useMemo(
-      () =>
+        if (overflow !== 'gradient') {
+          style.overflow = overflow;
+        }
+
+        return style;
+      }, [background, dangerouslySetBackground, elevation, opacity, overflow, palette]);
+      const style = useMemo(
+        () =>
+          [
+            borderStyles,
+            elevationStyles,
+            spacingStyles,
+            offsetStyles,
+            flexStyles,
+            dimensionStyles,
+            positionStyles,
+            pinStyles,
+            boxStyles,
+            dangerouslySetStyle as ViewStyle,
+          ].filter(Boolean),
         [
           borderStyles,
           elevationStyles,
@@ -238,40 +268,29 @@ export const BoxInner = memo(
           positionStyles,
           pinStyles,
           boxStyles,
-          dangerouslySetStyle as ViewStyle,
-        ].filter(Boolean),
-      [
-        borderStyles,
-        elevationStyles,
-        spacingStyles,
-        offsetStyles,
-        flexStyles,
-        dimensionStyles,
-        positionStyles,
-        pinStyles,
-        boxStyles,
-        dangerouslySetStyle,
-      ],
-    );
+          dangerouslySetStyle,
+        ],
+      );
 
-    const ViewComponent = animated ? Animated.View : View;
+      const ViewComponent = animated ? Animated.View : View;
 
-    const childNodes = elevation ? (
-      <>
-        <ElevationStylesContainer elevation={elevation} setElevationStyles={setElevationStyles} />
-        <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
-      </>
-    ) : (
-      children
-    );
+      const childNodes = elevation ? (
+        <>
+          <ElevationStylesContainer elevation={elevation} setElevationStyles={setElevationStyles} />
+          <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+        </>
+      ) : (
+        children
+      );
 
-    return (
-      <ViewComponent style={style} {...props}>
-        {childNodes}
-        {overflow === 'gradient' && <OverflowGradient />}
-      </ViewComponent>
-    );
-  },
+      return (
+        <ViewComponent style={style} {...props} ref={forwardedRef}>
+          {childNodes}
+          {overflow === 'gradient' && <OverflowGradient />}
+        </ViewComponent>
+      );
+    },
+  ),
 );
 
 Box.displayName = 'Box';

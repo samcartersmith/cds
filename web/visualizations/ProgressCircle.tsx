@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState, useRef } from 'react';
+import React, { memo, useEffect, useState, useRef, forwardRef } from 'react';
 import {
   ProgressCircleBaseProps,
   ProgressCircleTextBaseProps,
@@ -10,6 +10,7 @@ import { VisualizationContainerDimension } from '@cbhq/cds-common/types/Visualiz
 import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
 import { css } from 'linaria';
 import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
+import { ForwardedRef } from '@cbhq/cds-common';
 import { Box } from '../layout';
 import { usePalette } from '../hooks/usePalette';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
@@ -81,57 +82,69 @@ const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
   },
 );
 
-export const ProgressCircle: React.FC<ProgressCircleBaseProps> = memo(
-  ({
-    weight = 'normal',
-    progress,
-    color = 'primary',
-    disabled = false,
-    testID,
-    hideText,
-    size = '100%',
-  }) => {
-    const strokeWidth = useProgressSize(weight);
-    const palette = usePalette();
+export const ProgressCircle = memo(
+  forwardRef(
+    (
+      {
+        weight = 'normal',
+        progress,
+        color = 'primary',
+        disabled = false,
+        testID,
+        hideText,
+        size,
+      }: ProgressCircleBaseProps,
+      forwardedRef: ForwardedRef<HTMLElement>,
+    ) => {
+      const strokeWidth = useProgressSize(weight);
+      const palette = usePalette();
 
-    return (
-      <VisualizationContainer width={size} height={size}>
-        {({ width, height, circleSize }: VisualizationContainerDimension) => (
-          <Box
-            testID={testID}
-            alignItems="center"
-            justifyContent="center"
-            width={width}
-            height={height}
-          >
+      const visSize = size ?? '100%';
+      return (
+        <VisualizationContainer width={visSize} height={visSize}>
+          {({ width, height, circleSize }: VisualizationContainerDimension) => (
             <Box
-              flexGrow={0}
-              flexShrink={0}
-              width={circleSize}
-              height={circleSize}
-              position="relative"
+              testID={testID}
+              alignItems="center"
+              justifyContent="center"
+              width={width}
+              height={height}
+              ref={forwardedRef}
             >
-              <svg key={circleSize} className={svgClassName} width={circleSize} height={circleSize}>
-                <circle
-                  {...getProgressCircleParams({
-                    size: circleSize,
-                    strokeWidth,
-                    stroke: palette.line,
-                  })}
-                />
-                <ProgressCircleInner
-                  progress={progress}
-                  color={color}
-                  size={circleSize}
-                  weight={weight}
-                  disabled={disabled}
-                />
-              </svg>
-              {!hideText && <ProgressCircleText progress={progress} disabled={disabled} />}
+              <Box
+                flexGrow={0}
+                flexShrink={0}
+                width={circleSize}
+                height={circleSize}
+                position="relative"
+              >
+                <svg
+                  key={circleSize}
+                  className={svgClassName}
+                  width={circleSize}
+                  height={circleSize}
+                >
+                  <circle
+                    {...getProgressCircleParams({
+                      size: circleSize,
+                      strokeWidth,
+                      stroke: palette.line,
+                    })}
+                  />
+                  <ProgressCircleInner
+                    progress={progress}
+                    color={color}
+                    size={circleSize}
+                    weight={weight}
+                    disabled={disabled}
+                  />
+                </svg>
+                {!hideText && <ProgressCircleText progress={progress} disabled={disabled} />}
+              </Box>
             </Box>
-          </Box>
-        )}
-      </VisualizationContainer>
-    );
-  },
+          )}
+        </VisualizationContainer>
+      );
+    },
+  ),
 );

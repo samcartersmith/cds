@@ -1,6 +1,6 @@
-import React, { memo, useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef, forwardRef } from 'react';
 import Svg, { Circle, CircleProps, G } from 'react-native-svg';
-import { Animated } from 'react-native';
+import { Animated, View } from 'react-native';
 import {
   ProgressCircleBaseProps,
   ProgressCircleTextBaseProps,
@@ -11,7 +11,7 @@ import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
-import { SharedProps } from '@cbhq/cds-common';
+import { ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import { VisualizationContainer } from './VisualizationContainer';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Box } from '../layout';
@@ -75,58 +75,65 @@ const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
   },
 );
 
-export const ProgressCircle: React.FC<ProgressCircleBaseProps> = memo(
-  ({
-    weight = 'normal',
-    progress,
-    color = 'primary',
-    disabled = false,
-    testID,
-    hideText,
-    size = '100%',
-  }) => {
-    const strokeWidth = useProgressSize(weight);
-    const palette = usePalette();
+export const ProgressCircle = memo(
+  forwardRef(
+    (
+      {
+        weight = 'normal',
+        progress,
+        color = 'primary',
+        disabled = false,
+        testID,
+        hideText,
+        size,
+      }: ProgressCircleBaseProps,
+      forwardedRef: ForwardedRef<View>,
+    ) => {
+      const strokeWidth = useProgressSize(weight);
+      const palette = usePalette();
 
-    return (
-      <VisualizationContainer width={size} height={size}>
-        {({ width, height, circleSize }: VisualizationContainerDimension) => (
-          <Box
-            testID={testID}
-            alignItems="center"
-            justifyContent="center"
-            width={width}
-            height={height}
-          >
-            <Box flexGrow={0} flexShrink={0} width={circleSize} height={circleSize}>
-              <Svg
-                key={circleSize}
-                width={circleSize}
-                height={circleSize}
-                viewBox={`0 0 ${circleSize} ${circleSize}`}
-              >
-                <G rotation={-90} origin={`${circleSize / 2}, ${circleSize / 2}`}>
-                  <Circle
-                    {...getProgressCircleParams({
-                      size: circleSize,
-                      strokeWidth,
-                      stroke: palette.line,
-                    })}
-                  />
-                  <ProgressCircleInner
-                    progress={progress}
-                    color={color}
-                    size={circleSize}
-                    weight={weight}
-                    disabled={disabled}
-                  />
-                </G>
-              </Svg>
-              {!hideText && <ProgressCircleText progress={progress} disabled={disabled} />}
+      const visSize = size ?? '100%';
+      return (
+        <VisualizationContainer width={visSize} height={visSize}>
+          {({ width, height, circleSize }: VisualizationContainerDimension) => (
+            <Box
+              testID={testID}
+              alignItems="center"
+              justifyContent="center"
+              width={width}
+              height={height}
+              ref={forwardedRef}
+            >
+              <Box flexGrow={0} flexShrink={0} width={circleSize} height={circleSize}>
+                <Svg
+                  key={circleSize}
+                  width={circleSize}
+                  height={circleSize}
+                  viewBox={`0 0 ${circleSize} ${circleSize}`}
+                >
+                  <G rotation={-90} origin={`${circleSize / 2}, ${circleSize / 2}`}>
+                    <Circle
+                      {...getProgressCircleParams({
+                        size: circleSize,
+                        strokeWidth,
+                        stroke: palette.line,
+                      })}
+                    />
+                    <ProgressCircleInner
+                      progress={progress}
+                      color={color}
+                      size={circleSize}
+                      weight={weight}
+                      disabled={disabled}
+                    />
+                  </G>
+                </Svg>
+                {!hideText && <ProgressCircleText progress={progress} disabled={disabled} />}
+              </Box>
             </Box>
-          </Box>
-        )}
-      </VisualizationContainer>
-    );
-  },
+          )}
+        </VisualizationContainer>
+      );
+    },
+  ),
 );

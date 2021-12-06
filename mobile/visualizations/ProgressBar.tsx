@@ -1,96 +1,102 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import { Animated, LayoutChangeEvent, I18nManager } from 'react-native';
+import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
+import { Animated, LayoutChangeEvent, I18nManager, View } from 'react-native';
 import { ProgressBaseProps } from '@cbhq/cds-common/types/ProgressBaseProps';
 
 import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { ForwardedRef } from '@cbhq/cds-common';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Box, HStack, VStack } from '../layout';
 import { usePalette } from '../hooks/usePalette';
 
 export const ProgressBar: React.FC<ProgressBaseProps> = memo(
-  ({
-    weight = 'normal',
-    progress,
-    color = 'primary',
-    disabled = false,
-    testID,
-  }: ProgressBaseProps) => {
-    const height = useProgressSize(weight);
-    const palette = usePalette();
+  forwardRef(
+    (
+      {
+        weight = 'normal',
+        progress,
+        color = 'primary',
+        disabled = false,
+        testID,
+      }: ProgressBaseProps,
+      forwardedRef: ForwardedRef<View>,
+    ) => {
+      const height = useProgressSize(weight);
+      const palette = usePalette();
 
-    const { getPreviousValue: getPreviousPercent, addPreviousValue: addPreviousPercent } =
-      usePreviousValues<number>([0]);
+      const { getPreviousValue: getPreviousPercent, addPreviousValue: addPreviousPercent } =
+        usePreviousValues<number>([0]);
 
-    addPreviousPercent(progress);
-    const previousPercent = getPreviousPercent() ?? 0;
+      addPreviousPercent(progress);
+      const previousPercent = getPreviousPercent() ?? 0;
 
-    const animatedProgress = useRef(new Animated.Value(previousPercent));
+      const animatedProgress = useRef(new Animated.Value(previousPercent));
 
-    const [innerWidth, setInnerWidth] = useState<number>(-1);
+      const [innerWidth, setInnerWidth] = useState<number>(-1);
 
-    useEffect(() => {
-      if (innerWidth > -1) {
-        Animated.timing(
-          animatedProgress.current,
-          convertMotionConfig({
-            toValue: progress,
-            ...animateProgressBaseSpec,
-            useNativeDriver: true,
-          }),
-        )?.start();
-      }
-    }, [progress, animatedProgress, innerWidth]);
+      useEffect(() => {
+        if (innerWidth > -1) {
+          Animated.timing(
+            animatedProgress.current,
+            convertMotionConfig({
+              toValue: progress,
+              ...animateProgressBaseSpec,
+              useNativeDriver: true,
+            }),
+          )?.start();
+        }
+      }, [progress, animatedProgress, innerWidth]);
 
-    const handleLayout = useCallback((event: LayoutChangeEvent) => {
-      setInnerWidth(event.nativeEvent.layout.width);
-    }, []);
+      const handleLayout = useCallback((event: LayoutChangeEvent) => {
+        setInnerWidth(event.nativeEvent.layout.width);
+      }, []);
 
-    const progressStyle = {
-      opacity: innerWidth > -1 ? 1 : 0,
-      transform: [
-        {
-          translateX: animatedProgress.current.interpolate({
-            inputRange: [0, 1],
-            outputRange: I18nManager.isRTL ? [innerWidth, 0] : [innerWidth * -1, 0],
-          }),
-        },
-      ],
-    };
+      const progressStyle = {
+        opacity: innerWidth > -1 ? 1 : 0,
+        transform: [
+          {
+            translateX: animatedProgress.current.interpolate({
+              inputRange: [0, 1],
+              outputRange: I18nManager.isRTL ? [innerWidth, 0] : [innerWidth * -1, 0],
+            }),
+          },
+        ],
+      };
 
-    return (
-      <VStack flexGrow={1} flexShrink={0} testID={testID}>
-        <HStack justifyContent="center" alignItems="center">
-          <Box
-            onLayout={handleLayout}
-            testID="cds-progress-bar-inner-bar-container"
-            justifyContent="center"
-            alignItems={I18nManager.isRTL ? 'flex-end' : 'flex-start'}
-            flexGrow={1}
-            flexShrink={1}
-            height={height}
-            dangerouslySetBackground={palette.line}
-            borderRadius="standard"
-            overflow="hidden"
-          >
+      return (
+        <VStack flexGrow={1} flexShrink={0} testID={testID} ref={forwardedRef}>
+          <HStack justifyContent="center" alignItems="center">
             <Box
-              testID="cds-progress-bar-inner-bar"
+              onLayout={handleLayout}
+              testID="cds-progress-bar-inner-bar-container"
               justifyContent="center"
-              alignItems="flex-start"
+              alignItems={I18nManager.isRTL ? 'flex-end' : 'flex-start'}
+              flexGrow={1}
+              flexShrink={1}
               height={height}
-              flexShrink={0}
-              flexGrow={0}
-              width="100%"
-              animated
-              dangerouslySetStyle={progressStyle}
+              dangerouslySetBackground={palette.line}
               borderRadius="standard"
-              dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
-            />
-          </Box>
-        </HStack>
-      </VStack>
-    );
-  },
+              overflow="hidden"
+            >
+              <Box
+                testID="cds-progress-bar-inner-bar"
+                justifyContent="center"
+                alignItems="flex-start"
+                height={height}
+                flexShrink={0}
+                flexGrow={0}
+                width="100%"
+                animated
+                dangerouslySetStyle={progressStyle}
+                borderRadius="standard"
+                dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
+              />
+            </Box>
+          </HStack>
+        </VStack>
+      );
+    },
+  ),
 );
