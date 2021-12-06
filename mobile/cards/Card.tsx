@@ -1,14 +1,15 @@
-import React, { memo, useMemo } from 'react';
+import React, { useCallback, memo, useMemo } from 'react';
 
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
-import type { CardBaseProps } from '@cbhq/cds-common/types';
+import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/types';
 import { ViewStyle } from 'react-native';
 import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { DangerouslySetStyle } from '../types';
 import { VStack } from '../layout/VStack';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export type CardProps = {
   onPress?: PressableProps['onPress'];
@@ -28,6 +29,7 @@ export const Card: React.FC<CardProps> = memo(
     height: heightProps,
     ...props
   }) => {
+    const isFrontier = useFeatureFlag('frontierCard');
     const width = widthProps ?? cardSizes[size].width;
     const height = heightProps ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
@@ -38,12 +40,35 @@ export const Card: React.FC<CardProps> = memo(
       () => [borderRadiusOverrides, dangerouslySetStyle],
       [borderRadiusOverrides, dangerouslySetStyle],
     );
+
+    const borderRadius = isFrontier ? undefined : 'standard';
+
+    const getBorderWidth = useCallback(
+      (borderWidth?: BorderWidth) => {
+        if (isFrontier) {
+          return undefined;
+        }
+        return borderWidth;
+      },
+      [isFrontier],
+    );
+
+    const getElevation = useCallback(
+      (level?: ElevationLevels) => {
+        if (isFrontier) {
+          return undefined;
+        }
+        return level;
+      },
+      [isFrontier],
+    );
+
     const content = (
       <VStack
-        borderRadius="standard"
+        borderRadius={borderRadius}
         background={onPress ? undefined : bg}
         pin={onPress ? undefined : pin}
-        elevation={onPress ? undefined : elevation}
+        elevation={getElevation(onPress ? undefined : elevation)}
         width={onPress ? undefined : width}
         height={onPress ? undefined : height}
         dangerouslySetStyle={contentStyles}
@@ -56,9 +81,9 @@ export const Card: React.FC<CardProps> = memo(
     return onPress ? (
       <Pressable
         backgroundColor={bg}
-        borderRadius="standard"
-        borderWidth={elevation ? elevationBorderWidth : 'card'}
-        elevation={elevation}
+        borderRadius={borderRadius}
+        borderWidth={getBorderWidth(elevation ? elevationBorderWidth : 'card')}
+        elevation={getElevation(elevation)}
         onPress={onPress}
         style={{ ...pinStyles, width, height }}
       >

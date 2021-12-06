@@ -1,12 +1,13 @@
-import React, { memo } from 'react';
+import React, { useCallback, memo } from 'react';
 
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
-import type { CardBaseProps } from '@cbhq/cds-common/types';
+import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/types';
 import { css, cx } from 'linaria';
 
 import { usePinStyles } from '../hooks/usePinStyles';
 import { LinkableProps, Pressable } from '../system/Pressable';
 import { VStack } from '../layout/VStack';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 const cardPressableStyles = css`
   padding: 0;
@@ -27,17 +28,41 @@ export const Card: React.FC<CardProps> = memo(
     height: heightProps,
     ...props
   }) => {
+    const isFrontier = useFeatureFlag('frontierCard');
     const width = widthProps ?? cardSizes[size].width;
     const height = heightProps ?? cardSizes[size].height;
     const bg = background === true ? 'background' : background;
     const pinStyles = usePinStyles(pin);
     const linkable = Boolean(onPress ?? to);
+    const borderColor = isFrontier ? undefined : 'line';
+    const borderRadius = isFrontier ? undefined : 'standard';
+
+    const getBorderWidth = useCallback(
+      (borderWidth?: BorderWidth) => {
+        if (isFrontier) {
+          return undefined;
+        }
+        return borderWidth;
+      },
+      [isFrontier],
+    );
+
+    const getElevation = useCallback(
+      (level?: ElevationLevels) => {
+        if (isFrontier) {
+          return undefined;
+        }
+        return level;
+      },
+      [isFrontier],
+    );
+
     const content = (
       <VStack
-        borderRadius="standard"
+        borderRadius={borderRadius}
         background={linkable ? undefined : bg}
         pin={linkable ? undefined : pin}
-        elevation={linkable ? undefined : elevation}
+        elevation={getElevation(linkable ? undefined : elevation)}
         width={linkable ? undefined : width}
         height={linkable ? undefined : height}
         overflow="hidden"
@@ -50,10 +75,10 @@ export const Card: React.FC<CardProps> = memo(
     return linkable ? (
       <Pressable
         backgroundColor={bg}
-        borderRadius="standard"
-        borderColor="line"
-        borderWidth="card"
-        elevation={elevation}
+        borderRadius={borderRadius}
+        borderColor={borderColor}
+        borderWidth={getBorderWidth('card')}
+        elevation={getElevation(elevation)}
         onPress={onPress}
         className={cx(cardPressableStyles, pinStyles)}
         to={to}

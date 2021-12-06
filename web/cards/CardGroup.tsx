@@ -1,12 +1,15 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
-import { CardGroupBaseProps, useBeta } from '@cbhq/cds-common';
+import { CardGroupBaseProps } from '@cbhq/cds-common';
+import { join } from '@cbhq/cds-common/utils/join';
 import { css } from 'linaria';
 
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
+import { Divider } from '../layout/Divider';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Card } from './Card';
+import { useFeatureFlag } from '../system/useFeatureFlag';
 
 const list = css`
   list-style: none;
@@ -26,8 +29,21 @@ export const CardGroup = memo(function CardGroup({
   horizontal,
   ...otherBoxProps
 }: CardGroupBaseProps) {
-  const { frontierCard } = useBeta();
+  const isFrontier = useFeatureFlag('frontierCard');
   const Stack = horizontal ? HStack : VStack;
+
+  const cards = useMemo(() => {
+    const nodes = flattenNodes(children)
+      .filter((child) => child && typeof child === 'object' && child.type === Card)
+      .map((child) => {
+        return <li className={listItem}>{child}</li>;
+      });
+
+    if (isFrontier) {
+      return join(nodes, <Divider />);
+    }
+    return nodes;
+  }, [children, isFrontier]);
 
   return (
     <Stack
@@ -36,16 +52,12 @@ export const CardGroup = memo(function CardGroup({
       as="ul"
       alignItems="stretch"
       flexWrap="nowrap"
-      gap={frontierCard ? 0 : 1}
+      gap={isFrontier ? 0 : 1}
       testID={testID}
       dangerouslySetClassName={list}
       {...otherBoxProps}
     >
-      {flattenNodes(children)
-        .filter((child) => child && typeof child === 'object' && child.type === Card)
-        .map((child) => {
-          return <li className={listItem}>{child}</li>;
-        })}
+      {cards}
     </Stack>
   );
 });
