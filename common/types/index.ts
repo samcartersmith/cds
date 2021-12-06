@@ -36,6 +36,7 @@ export * from './ModalBaseProps';
 export * from './Motion';
 export * from './Palette';
 export * from './Placement';
+export * from './PopoverMenuBaseProps';
 export * from './Position';
 export * from './RadioGroupBaseProps';
 export * from './React';

@@ -18,6 +18,8 @@ const pressablePaddingResetStyles = css`
 export type LinkableProps = {
   /** Callback fired when the element is pressed. */
   onPress?: React.MouseEventHandler;
+  /** Callback fired when a key is pressed */
+  onKeyPress?: React.KeyboardEventHandler;
   /** URL that this links to when pressed. */
   to?: string;
 };
@@ -25,6 +27,11 @@ export type LinkableProps = {
 export type PressableProps = {
   /** Is the element currenty loading. */
   loading?: boolean;
+  /**
+   * Necessary to control roving tabindex for accessibility
+   * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+   * */
+  tabIndex?: number;
 } & React.AriaAttributes &
   SharedProps &
   LinkableProps;
@@ -49,7 +56,9 @@ export const Pressable = forwardRef(function Pressable(
     disabled,
     loading,
     onPress,
+    onKeyPress,
     noScaleOnPress,
+    tabIndex,
     ...props
   }: PressableInternalProps,
   ref: React.Ref<Element>,
@@ -73,10 +82,12 @@ export const Pressable = forwardRef(function Pressable(
       aria-disabled={isDisabled}
       as={as ?? ButtonOrLink}
       onClick={onPress}
+      onKeyPress={onKeyPress}
       {...props}
       className={cx(!noScaleOnPress && scaledDownState, className, resetStyles)}
       disabled={isDisabled}
       ref={ref}
+      tabIndex={tabIndex}
     >
       {children}
     </Interactable>

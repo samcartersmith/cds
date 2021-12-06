@@ -1,3 +1,4 @@
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { ElevationLevels } from './ElevationLevels';
@@ -97,12 +98,15 @@ export type BoxBaseProps = {
   elevation?: ElevationLevels;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetBackground?: string;
+  /** @danger This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls */
+  id?: string;
 } & DimensionStyles &
   FlexStyles &
   OffsetProps &
   SpacingProps &
   PositionStyles &
-  BorderedStyles;
+  BorderedStyles &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;
 
 export type StackBaseProps = {
   /** Gap to insert between siblings. */

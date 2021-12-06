@@ -14,6 +14,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { Position } from '@cbhq/cds-common';
 
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { Box, VStack, BoxProps } from '../../layout';
 import { Overlay } from '../Overlay/Overlay';
 import {
@@ -33,15 +34,6 @@ export type ModalProps = {
    * @default false
    */
   disableOverlayPress?: boolean;
-  /**
-   * Aria label for Modal
-   */
-  accessibilityLabel?: React.AriaAttributes['aria-label'];
-  /**
-   * Point to the id of the modal title
-   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role
-   */
-  accessibilityLabelledBy?: React.AriaAttributes['aria-labelledby'];
   /**
    * Disable React portal integration
    */
@@ -63,7 +55,8 @@ export type ModalProps = {
    */
   dangerouslySetPosition?: Position;
 } & ModalBaseProps &
-  Pick<BoxProps, 'dangerouslySetClassName'>;
+  Pick<BoxProps, 'dangerouslySetClassName'> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
@@ -210,8 +203,8 @@ export const Modal = memo(
         alignItems="center"
         role="dialog"
         aria-modal="true"
-        aria-labelledby={accessibilityLabelledBy}
-        aria-label={accessibilityLabel}
+        accessibilityLabelledBy={accessibilityLabelledBy}
+        accessibilityLabel={accessibilityLabel}
         zIndex={customZIndex ?? zIndex.overlays.modal}
         dangerouslySetClassName={dangerouslySetClassName}
       >

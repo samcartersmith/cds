@@ -55,7 +55,14 @@ export type CellSharedProps = {
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
 } & LinkableProps;
 
-export type CellProps = CellBaseProps & CellSharedProps;
+export type CellProps = {
+  /**
+   * Necessary to control roving tabindex for accessibility of interactable Cells
+   * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+   * */
+  tabIndex?: number;
+} & CellBaseProps &
+  CellSharedProps;
 
 export const Cell = memo(
   forwardRef(function Cell(
@@ -76,6 +83,7 @@ export const Cell = memo(
       selected,
       testID,
       to,
+      tabIndex,
       onKeyDown,
       /**
        * For TableCell, we don't want to apply an
@@ -171,6 +179,7 @@ export const Cell = memo(
           onKeyDown={onKeyDown}
           to={to}
           className={`${pressClassName} ${offsetClassName}`}
+          tabIndex={tabIndex}
         >
           {content}
         </Pressable>

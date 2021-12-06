@@ -123,6 +123,8 @@ export const BoxInner = forwardRef(
   <As extends BoxElement = 'div'>(props: BoxProps<As>, forwardedRef: ForwardedRef<HTMLElement>) => {
     const {
       as = 'div',
+      accessibilityLabel,
+      accessibilityLabelledBy,
       background,
       elevation,
       children,
@@ -251,6 +253,8 @@ export const BoxInner = forwardRef(
           dangerouslySetClassName,
         ),
         role,
+        'aria-label': accessibilityLabel,
+        'aria-labelledby': accessibilityLabelledBy,
         style: {
           ...(dangerouslySetBackground
             ? { backgroundColor: dangerouslySetBackground }
