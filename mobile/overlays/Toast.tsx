@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, forwardRef, useImperativeHandle } from 'react';
-import { ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common';
+import { ToastBaseProps, ToastRefBaseProps, ToastHandleClose } from '@cbhq/cds-common';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { HStack, Box } from '../layout';
@@ -7,6 +7,7 @@ import { TextLabel1, Link as LinkButton } from '../typography';
 import { Icon } from '../icons';
 import { Pressable } from '../system';
 import { useToastAnimation } from './useToastAnimation';
+import { useToastPanResponder } from './useToastPanResponder';
 
 export type ToastProps = ToastBaseProps;
 
@@ -19,7 +20,7 @@ export const Toast: React.FC<ToastProps> = memo(
         animateIn.start();
       }, [animateIn]);
 
-      const handleClose = useCallback(async (): Promise<boolean> => {
+      const handleClose: ToastHandleClose = useCallback(async () => {
         onWillHide?.();
 
         return new Promise((resolve) => {
@@ -31,6 +32,11 @@ export const Toast: React.FC<ToastProps> = memo(
           });
         });
       }, [onWillHide, onDidHide, animateOut]);
+
+      const { panHandlers, panResponderAnimation } = useToastPanResponder({
+        onWillHide,
+        onDidHide,
+      });
 
       useImperativeHandle(
         ref,
@@ -66,8 +72,9 @@ export const Toast: React.FC<ToastProps> = memo(
             alignItems="center"
             dangerouslySetStyle={{
               opacity,
-              transform: [{ translateY: bottom }],
+              transform: [{ translateY: bottom }, ...panResponderAnimation],
             }}
+            {...panHandlers}
           >
             {/* avoid pushing contents off screen */}
             <Box flexShrink={1}>

@@ -37,3 +37,7 @@ export const animateOutBottomConfig: MotionBaseSpec = {
   toValue: toastHiddenBottom,
   fromValue: toastVisibleBottom,
 };
+
+// pan responder configs
+export const horizontalPanThreshold = 50;
+export const bottomPanThreshold = 10;

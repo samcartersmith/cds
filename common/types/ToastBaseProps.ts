@@ -39,6 +39,8 @@ export type ToastOptions = ToastBaseOptions & ToastDuration;
 
 export type ToastBaseProps = { text: ToastText } & ToastBaseOptions & SharedProps;
 
+export type ToastHandleClose = () => Promise<boolean>;
+
 export type ToastRefBaseProps = {
-  hide: () => Promise<boolean>;
+  hide: ToastHandleClose;
 };
