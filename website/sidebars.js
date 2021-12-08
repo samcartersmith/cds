@@ -9,6 +9,7 @@ const componentsToExcludeByLabel = new Set([
   'components/controls/SelectInput/select-input',
   'components/overlays/Menu/menu',
   'components/cells/SelectOptionCell/select-option-cell',
+  'components/overlays/Toast/toast',
 ]);
 
 // Filter sidebar components

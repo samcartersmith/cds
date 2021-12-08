@@ -1295,6 +1295,12 @@ export const Alert = {
 };
 
 export const Toast = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Toast/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(
