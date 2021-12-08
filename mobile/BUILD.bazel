@@ -27,6 +27,8 @@ PEER_DEPS = [
     "@npm//react-native-inappbrowser-reborn",
     "@npm//react-native-safe-area-context",
     "@npm//@react-navigation/stack",  # for types in mobile/examples
+    "@npm//d3-interpolate-path",
+    "@npm//react-native-reanimated",
 ]
 
 DEV_DEPS = [
@@ -35,6 +37,7 @@ DEV_DEPS = [
     "@npm//@types/react-native",
     "@npm//@types/url-parse",
     "@npm//type-fest",
+    "@npm//@types/d3-interpolate-path",
 ]
 
 # Files to publish to NPM

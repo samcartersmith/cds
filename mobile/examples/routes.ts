@@ -14,6 +14,7 @@ export const routes = {
   ButtonGroup: () => require('../buttons/__stories__/ButtonGroup.stories').default,
   Card: () => require('../cards/__stories__/Card.stories').default,
   Carousel: () => require('../media/__stories__/Carousel.stories').default,
+  Chart: () => require('../visualizations/chart/__stories__/Chart.stories').default,
   Checkbox: () => require('../controls/__stories__/Checkbox.stories').default,
   ContentCell: () => require('../cells/__stories__/ContentCell.stories').default,
   ContentCellFallback: () => require('../cells/__stories__/ContentCellFallback.stories').default,
