@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.30.2 (12/8/2021, 08:59 AM PST)
+
+#### 🚀 Updates
+
+- Cds toast gesture handles. [#44782](https://github.cbhq.net/mono/repo/pull/44782), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
 ## 0.30.1 (12/6/2021, 12:08 PM PST)
 
 #### 🚀 Updates

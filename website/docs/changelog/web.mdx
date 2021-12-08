@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.2 (12/8/2021, 08:59 AM PST)
+
+#### 🚀 Updates
+
+- Added forwardRef to progress components. [#44716](https://github.cbhq.net/mono/repo/pull/44716)
+
+#### 🐞 Fixes
+
+- Add text-transform:none as default. [#44918](https://github.cbhq.net/mono/repo/pull/44918)
+- Lock toast scale to normal. [#44849](https://github.cbhq.net/mono/repo/pull/44849), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
 ## 0.32.1 (12/6/2021, 12:08 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.2 (12/8/2021, 08:59 AM PST)
+
+#### 🚀 Updates
+
+- Cds toast gesture handles. [#44782](https://github.cbhq.net/mono/repo/pull/44782), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+- Added forwardRef to progress components. [#44716](https://github.cbhq.net/mono/repo/pull/44716)
+- **[CardGroup]** Frontier gated CardGroup updates for mobile. [#44720](https://github.cbhq.net/mono/repo/pull/44720)
+
+#### 🐞 Fixes
+
+- Add text-transform:none as default. [#44918](https://github.cbhq.net/mono/repo/pull/44918)
+- Lock toast scale to normal. [#44849](https://github.cbhq.net/mono/repo/pull/44849), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
+#### 📘 Misc
+
+- Port over react-native Chart to cds. [#44840](https://github.cbhq.net/mono/repo/pull/44840)
+
 ## 0.35.1 (12/6/2021, 12:08 PM PST)
 
 #### 🚀 Updates
