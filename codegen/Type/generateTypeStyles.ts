@@ -55,6 +55,7 @@ const calculateVariantStyle = (
     fontSize: defaultFontSize,
     lineHeight: defaultLineHeight,
     letterSpacing: defaultLetterSpacing,
+    textTransform: 'none',
   };
 
   const allCaps = {
@@ -66,6 +67,7 @@ const calculateVariantStyle = (
     fontSize: mobile ? minLowerCaseFontSize : `${minLowerCaseFontSize}px`,
     lineHeight: mobile ? minLowercaseLineHeight : `${minLowercaseLineHeight}px`,
     letterSpacing: minLowercaseLetterSpacing,
+    textTransform: 'none',
   };
 
   const adjustedUppercase = {

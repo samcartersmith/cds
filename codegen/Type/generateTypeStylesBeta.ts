@@ -90,6 +90,7 @@ const calculateVariantStyle = (
   const lowercase = {
     fontSize: defaultFontSize,
     lineHeight: defaultLineHeight,
+    textTransform: 'none',
   };
 
   const allCaps = {
@@ -100,6 +101,7 @@ const calculateVariantStyle = (
   const adjustedLowercase = {
     fontSize: mobile ? minLowerCaseFontSize : `${minLowerCaseFontSize}px`,
     lineHeight: mobile ? minLowercaseLineHeight : `${minLowercaseLineHeight}px`,
+    textTransform: 'none',
   };
 
   const adjustedUppercase = {

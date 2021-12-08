@@ -60,14 +60,21 @@ const overflow: CSSMap<TextProps['overflow']> = {
 };
 
 const transform: CSSMap<TextProps['transform']> = {
+  // && to make it more specific than default text-transform
   uppercase: css`
-    text-transform: uppercase;
+    && {
+      text-transform: uppercase;
+    }
   `,
   lowercase: css`
-    text-transform: lowercase;
+    && {
+      text-transform: lowercase;
+    }
   `,
   capitalize: css`
-    text-transform: capitalize;
+    && {
+      text-transform: capitalize;
+    }
   `,
 };
 
