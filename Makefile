@@ -120,6 +120,7 @@ lint:
 	bazel test common:lint
 	bazel test lottie-files:lint
 	bazel test mobile:lint
+	bazel test storybook:lint
 	bazel test utils:lint
 	bazel test web:lint
 	bazel test website:lint
@@ -133,6 +134,7 @@ lint.fix:
 	bazel run lottie-files:lint_fix
 	bazel run mobile:lint_fix
 	bazel run mobile-playground:lint_fix
+	bazel run storybook:lint_fix
 	bazel run utils:lint_fix
 	bazel run web:lint_fix
 	bazel run website:lint_fix
@@ -228,6 +230,7 @@ typecheck:
 	bazel test common:typecheck
 	bazel test mobile:typecheck
 	bazel test mobile-playground:typecheck
+	bazel test storybook:typecheck
 	bazel test web:typecheck
 	bazel test website:typecheck
 

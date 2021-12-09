@@ -4,20 +4,23 @@ import { merge } from 'lodash';
 import { Story } from '@storybook/react';
 import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
-import { StoryBuilderConfig } from '../utils/storyBuilder';
+import { StoryBuilderConfig } from '@cbhq/cds-common/internal/utils/storyBuilder';
 
-import { ThemeProvider } from '../../web/system/ThemeProvider';
-import { palette } from '../../web/tokens';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+import { palette } from '@cbhq/cds-web/tokens';
 
 import type { GetStory } from './types';
+
+const FallbackWrapper: React.FC = (props) => <VStack alignItems="flex-start" gap={2} {...props} />;
 
 export function StoryContainer<T>(StoryComponent: Story, context: StoryBuilderConfig<T>) {
   const Container = memo(() => {
     const contents = useMemo(() => {
-      if (context.parameters.stories) {
+      if (context.parameters?.stories) {
         // React.Children.toArray will guarantee unique keys when mapped over
         return React.Children.toArray(
-          context.parameters.stories.map((child) => {
+          context.parameters?.stories.map((child) => {
             const mergedProps = merge({}, child.args, context.args);
             return React.createElement(child, mergedProps);
           }),
@@ -26,21 +29,22 @@ export function StoryContainer<T>(StoryComponent: Story, context: StoryBuilderCo
       return <StoryComponent />;
     }, []);
 
-    const Wrapper = context.parameters.wrapper;
+    const storyLength = context.parameters?.stories?.length ?? 1;
+    const Wrapper = context.parameters?.wrapper ?? FallbackWrapper;
 
     return (
-      <FeatureFlagProvider frontier={context.args.frontier}>
+      <FeatureFlagProvider frontier={context.args?.frontier}>
         <ThemeProvider
           display="contents"
-          scale={context.args.scale}
-          spectrum={context.args.spectrum}
+          scale={context.args?.scale}
+          spectrum={context.args?.spectrum}
         >
           <div
             className={css`
               padding: 20px;
             `}
           >
-            {Wrapper ? <Wrapper>{contents}</Wrapper> : <StoryComponent />}
+            {storyLength > 1 ? <Wrapper>{contents}</Wrapper> : <StoryComponent />}
           </div>
         </ThemeProvider>
       </FeatureFlagProvider>

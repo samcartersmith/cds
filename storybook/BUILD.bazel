@@ -1,4 +1,16 @@
-load("//tools/js:def.bzl", "type_check")
+load("//tools/js:def.bzl", "eslint_test", "type_check")
+load(":deps.bzl", "STORYBOOK_DEPS")
+
+DEPS = STORYBOOK_DEPS + ["@npm//@storybook/react"]
+
+SRCS = [
+    ":project_source",
+    "//eng/shared/design-system/common:project_source",
+    "//eng/shared/design-system/lottie-files:project_source",
+    "//eng/shared/design-system/utils:project_source",
+    "//eng/shared/design-system/web:project_source",
+    "//eng/shared/utils/jest:project_source",
+]
 
 exports_files([
     ".storybook",
@@ -35,18 +47,15 @@ filegroup(
     visibility = ["//visibility:public"],
 )
 
+eslint_test(
+    name = "lint",
+    srcs = SRCS,
+    lints = [":source"],
+    deps = DEPS,
+)
+
 type_check(
     name = "typecheck",
-    srcs = [
-        ":project_source",
-        "//eng/shared/design-system/common:project_source",
-        "//eng/shared/design-system/lottie-files:project_source",
-        "//eng/shared/design-system/mobile:project_source",
-        "//eng/shared/design-system/utils:project_source",
-    ],
-    deps = [
-        "@npm//@cbhq/cds-common",
-        "@npm//@types/react",
-        "@npm//@types/react-native",
-    ],
+    srcs = SRCS,
+    deps = DEPS,
 )

@@ -2,7 +2,7 @@ load("//tools:def.bzl", "release_packages", "stylelint_test")
 load("//tools/js:def.bzl", "TS_CONFIGS", "jest_test", "storybook", "ts_script")
 load("@npm//@percy/storybook:index.bzl", "percy_storybook")
 load(":config.bzl", "PACKAGES", "STATIC_PACKAGES")
-load("//eng/shared/design-system/web:deps.bzl", "DEPS", "DEV_DEPS", "PEER_DEPS")
+load("//eng/shared/design-system/storybook:deps.bzl", "STORYBOOK_DEPS")
 
 exports_files([
     ".babelrc.js",
@@ -26,7 +26,6 @@ filegroup(
         "//eng/shared/design-system/%s:project_source" % p
         for p in PACKAGES
     ] + [
-        "//eng/shared/design-system/storybook:project_source",
         "//eng/shared/utils/jest:project_source",
     ],
     visibility = ["//visibility:public"],
@@ -36,7 +35,6 @@ filegroup(
     name = "web_source",
     srcs = [
         ":build_source",
-        "//eng/shared/design-system/storybook:source",
     ] + glob(
         include = [
             "**/*.js",
@@ -270,12 +268,9 @@ STORY_SRCS = [
     ":web_source",
     "//eng/shared/design-system/fonts:runtime_source",
     "//eng/shared/design-system/web:story_source",
+    "//eng/shared/design-system/storybook:project_source",
+    "//eng/shared/design-system/storybook:source",
 ]
-
-STORY_DEPS = [
-    "@npm//react-router-dom",
-    "@npm//typescript",
-] + DEPS + PEER_DEPS + DEV_DEPS
 
 STORY_LIVE_PACKAGES = "cds-\\w+"
 
@@ -289,7 +284,7 @@ storybook(
     live_packages = STORY_LIVE_PACKAGES,
     static_files = STORY_STATIC_FILES,
     storybook_config = STORY_CONFIG,
-    deps = STORY_DEPS,
+    deps = STORYBOOK_DEPS,
 )
 
 # We have to do separate target for percy so we can set env to skip animations
@@ -302,7 +297,7 @@ storybook(
     live_packages = STORY_LIVE_PACKAGES,
     static_files = STORY_STATIC_FILES,
     storybook_config = STORY_CONFIG,
-    deps = STORY_DEPS,
+    deps = STORYBOOK_DEPS,
 )
 
 # *************************

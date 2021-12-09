@@ -23,6 +23,6 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-addon-designs',
     'storybook-addon-performance/register',
-    'storybook-addon-pseudo-states',
+    // 'storybook-addon-pseudo-states', enable when addon/docs is removed
   ],
 };

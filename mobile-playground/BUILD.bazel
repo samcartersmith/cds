@@ -32,7 +32,6 @@ eslint_test(
         "//eng/shared/design-system/common:source",
         "//eng/shared/design-system/lottie-files:source",
         "//eng/shared/design-system/mobile:source",
-        "//eng/shared/design-system/storybook:source",
         "//eng/shared/design-system/utils:source",
     ],
     lints = [":source"],
@@ -40,7 +39,6 @@ eslint_test(
 
 METRO_SRCS = [
     "//eng/shared/design-system/mobile-playground:source",
-    "//eng/shared/design-system/storybook:source",
 ]
 
 METRO_DEPS = [
@@ -82,7 +80,6 @@ type_check(
         "//eng/shared/design-system/common:project_source",
         "//eng/shared/design-system/lottie-files:project_source",
         "//eng/shared/design-system/mobile:project_source",
-        "//eng/shared/design-system/storybook:project_source",
         "//eng/shared/design-system/utils:project_source",
     ],
     deps = [

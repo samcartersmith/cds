@@ -4,10 +4,14 @@
     "declarationDir": "./dts",
     "outDir": "./dts"
   },
-  "exclude": ["dts/**/*"],
+  "include": ["**/*"],
+  "exclude": [".storybook/**/*, dts/**/*"],
   "references": [
     {
       "path": "../common"
+    },
+    {
+      "path": "../web"
     },
     {
       "path": "../utils"

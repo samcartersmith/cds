@@ -5,12 +5,8 @@
     "outDir": "./dts",
     "allowJs": true
   },
-  "include": [
-    "**/*", "../jest.config.mobile.js"  
-  ],
-  "exclude": [
-    "dts/**/*"
-  ],
+  "include": ["**/*", "../jest.config.mobile.js"],
+  "exclude": ["dts/**/*"],
   "references": [
     {
       "path": "../common"
@@ -19,10 +15,7 @@
       "path": "../lottie-files"
     },
     {
-      "path": "../storybook"
-    },
-    {
       "path": "../utils"
-    },
+    }
   ]
 }

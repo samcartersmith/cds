@@ -4,21 +4,14 @@
     "declarationDir": "./dts",
     "outDir": "./dts"
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "dts/**/*"
-  ],
+  "include": ["**/*"],
+  "exclude": ["dts/**/*"],
   "references": [
     {
       "path": "../common"
     },
     {
       "path": "../lottie-files"
-    },
-    {
-      "path": "../storybook"
     },
     {
       "path": "../utils"

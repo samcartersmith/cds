@@ -72,7 +72,6 @@ filegroup(
 
 eslint_test(
     name = "lint",
-    srcs = ["//eng/shared/design-system/storybook:source"],
     lints = [":source"],
     local_eslint_config = ".eslintrc",
     deps = DEPS + PEER_DEPS + DEV_DEPS,
@@ -109,7 +108,6 @@ type_check(
         ":project_source",
         "//eng/shared/design-system/common:project_source",
         "//eng/shared/design-system/lottie-files:project_source",
-        "//eng/shared/design-system/storybook:project_source",
         "//eng/shared/design-system/utils:project_source",
     ],
     deps = DEPS + PEER_DEPS + DEV_DEPS,
