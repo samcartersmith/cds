@@ -140,6 +140,13 @@
           ]
         },
         {
+          "aliasPath": "@assethub/shared/components/Charts/ChartCard/ChartCard.tsx",
+          "callSites": [
+            "@assethub/admin/auth/fallbacks/ForbiddenFallback.tsx",
+            "@assethub/admin/pages/Application/ApplicationFilePage.tsx"
+          ]
+        },
+        {
           "aliasPath": "@assethub/shared/components/DataTable/cells/DateTimeCell.tsx",
           "callSites": []
         }
@@ -188,10 +195,10 @@
         "@assethub/shared/components/Alert/Alert.tsx": 1,
         "@assethub/shared/components/Banner/Banner.tsx": 1,
         "@assethub/shared/components/BulletedList/BulletedList.tsx": 1,
+        "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
         "@assethub/shared/components/DataTable/DataTable.tsx": 3,
         "@assethub/shared/components/DataTable/DataTableBodyEmpty.tsx": 1,
         "@assethub/shared/components/DataTable/DataTableHeader.tsx": 1,
-        "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
         "@assethub/shared/components/DividedList/DividedList.tsx": 1,
         "@assethub/shared/components/Form/FormControl.tsx": 1,
         "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1,
@@ -304,9 +311,9 @@
           "@assethub/admin/components/ApplicationTeamReview/Inputs/FormControl.tsx": 1,
           "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
+          "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
           "@assethub/shared/components/DataTable/DataTable.tsx": 1,
           "@assethub/shared/components/DataTable/DataTableBodyEmpty.tsx": 1,
-          "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
           "@assethub/shared/components/Form/FormControl.tsx": 1,
           "@assethub/shared/components/Modal/Modal.tsx": 2,
           "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
@@ -779,8 +786,8 @@
       "callSites": {
         "@assethub/admin/components/Page.tsx": 1,
         "@assethub/admin/components/ApplicationDetails/QuestionAnswerPerson.tsx": 1,
-        "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
         "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 3,
+        "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
         "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignInfoForm.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignWizardButtons.tsx": 1,
@@ -835,7 +842,7 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 31,
+      "totalInstances": 30,
       "totalCallSites": 22,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "aliasedCdsComponents": [
@@ -866,7 +873,7 @@
         "@assethub/admin/components/HistoryItem/HistoryItem.tsx": 1,
         "@assethub/admin/components/SearchResults/SearchResults.tsx": 2,
         "@assethub/admin/pages/Campaigns/CampaignListPage.tsx": 1,
-        "@assethub/admin/pages/Nfts/NftContentPage.tsx": 5,
+        "@assethub/admin/pages/Nfts/NftContentPage.tsx": 4,
         "@assethub/admin/pages/User/ApplicationModule.tsx": 1,
         "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1,
         "@assethub/shared/components/DataTable/DataTableBodyEmpty.tsx": 1,
@@ -891,7 +898,7 @@
           "@assethub/admin/components/HistoryItem/HistoryItem.tsx": 1,
           "@assethub/admin/components/SearchResults/SearchResults.tsx": 2,
           "@assethub/admin/pages/Campaigns/CampaignListPage.tsx": 1,
-          "@assethub/admin/pages/Nfts/NftContentPage.tsx": 5,
+          "@assethub/admin/pages/Nfts/NftContentPage.tsx": 4,
           "@assethub/admin/pages/User/ApplicationModule.tsx": 1,
           "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1,
           "@assethub/shared/components/DataTable/DataTableBodyEmpty.tsx": 1,
@@ -978,9 +985,9 @@
         "@assethub/shared/components/Alert/Alert.tsx": 1,
         "@assethub/shared/components/Banner/Banner.tsx": 1,
         "@assethub/shared/components/Collapse/Collapse.tsx": 1,
+        "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
         "@assethub/shared/components/DataTable/DataTableHeader.tsx": 1,
         "@assethub/shared/components/DataTable/DataTableHeaderMenu.tsx": 1,
-        "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
         "@assethub/shared/components/Pagination/Pagination.tsx": 1,
         "@assethub/shared/components/Charts/ChartTooltip/ChartTooltip.tsx": 1,
         "@assethub/shared/components/DataTable/cells/DateTimeCell.tsx": 1,
@@ -1007,9 +1014,9 @@
           "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1,
           "@assethub/shared/components/Alert/Alert.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
+          "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
           "@assethub/shared/components/DataTable/DataTableHeader.tsx": 1,
           "@assethub/shared/components/DataTable/DataTableHeaderMenu.tsx": 1,
-          "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
           "@assethub/shared/components/Pagination/Pagination.tsx": 1,
           "@assethub/shared/components/Charts/ChartTooltip/ChartTooltip.tsx": 1,
           "@assethub/shared/components/DataTable/cells/DateTimeCell.tsx": 1,
@@ -1044,9 +1051,9 @@
           "@assethub/shared/components/Alert/Alert.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/Collapse/Collapse.tsx": 1,
+          "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
           "@assethub/shared/components/DataTable/DataTableHeader.tsx": 1,
           "@assethub/shared/components/DataTable/DataTableHeaderMenu.tsx": 1,
-          "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
           "@assethub/shared/components/Pagination/Pagination.tsx": 1,
           "@assethub/shared/components/Charts/ChartTooltip/ChartTooltip.tsx": 1,
           "@assethub/shared/components/DataTable/cells/DateTimeCell.tsx": 1,
@@ -1121,8 +1128,8 @@
       "callSites": {
         "@assethub/admin/components/PageErrorBoundary.tsx": 1,
         "@assethub/admin/components/StatusBadge.tsx": 1,
-        "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
         "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
+        "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
         "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 3,
         "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
@@ -1142,8 +1149,8 @@
         "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal.tsx": 1,
         "@assethub/admin/pages/Application/Sidebar/AboutModule.tsx": 4,
         "@assethub/admin/pages/Nfts/components/NftTableCells.tsx": 2,
-        "@assethub/shared/components/Blockquote/Blockquote.tsx": 1,
         "@assethub/shared/components/BulletedList/BulletedListItem.tsx": 1,
+        "@assethub/shared/components/Blockquote/Blockquote.tsx": 1,
         "@assethub/shared/components/Collapse/Collapse.tsx": 1,
         "@assethub/shared/components/DividedList/DividedList.tsx": 1,
         "@assethub/shared/components/DropdownMenu/DropdownMenu.tsx": 1,
@@ -1163,8 +1170,8 @@
         "as": {
           "@assethub/admin/components/PageErrorBoundary.tsx": 1,
           "@assethub/admin/components/StatusBadge.tsx": 1,
-          "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
           "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
+          "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
           "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 3,
           "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
@@ -1184,8 +1191,8 @@
           "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal.tsx": 1,
           "@assethub/admin/pages/Application/Sidebar/AboutModule.tsx": 4,
           "@assethub/admin/pages/Nfts/components/NftTableCells.tsx": 2,
-          "@assethub/shared/components/Blockquote/Blockquote.tsx": 1,
           "@assethub/shared/components/BulletedList/BulletedListItem.tsx": 1,
+          "@assethub/shared/components/Blockquote/Blockquote.tsx": 1,
           "@assethub/shared/components/Collapse/Collapse.tsx": 1,
           "@assethub/shared/components/DividedList/DividedList.tsx": 1,
           "@assethub/shared/components/DropdownMenu/DropdownMenu.tsx": 1,
@@ -1511,8 +1518,8 @@
       "callSites": {
         "@assethub/admin/components/ApplicationDetails/QuestionAnswerImage.tsx": 1,
         "@assethub/admin/components/ApplicationDetails/QuestionAnswerPerson.tsx": 4,
-        "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 2,
         "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
+        "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 2,
         "@assethub/admin/components/CampaignTable/CampaignTable.tsx": 4,
         "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 2,
         "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
@@ -1572,6 +1579,12 @@
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1
         },
+        "maxWidth": {
+          "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
+          "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
+          "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
+          "@assethub/admin/pages/Nfts/components/NftTableCells.tsx": 1
+        },
         "alignItems": {
           "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
           "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
@@ -1614,12 +1627,6 @@
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1
-        },
-        "maxWidth": {
-          "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
-          "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
-          "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
-          "@assethub/admin/pages/Nfts/components/NftTableCells.tsx": 1
         },
         "spacingVertical": {
           "@assethub/admin/components/CampaignTable/CampaignTable.tsx": 2,
@@ -2579,19 +2586,6 @@
       }
     },
     {
-      "name": "BookmarkButton",
-      "sourceFile": "@assethub/admin/components/ApplicationTable/BookmarkButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "button",
-      "propsWithCallSites": {
-        "applicationId": {
-          "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1
-        },
-        "bookmarked": { "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1 }
-      }
-    },
-    {
       "name": "RedNumber",
       "sourceFile": "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx",
       "totalInstances": 1,
@@ -2637,6 +2631,19 @@
         },
         "disabled": { "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 2 },
         "tabIndex": { "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 2 }
+      }
+    },
+    {
+      "name": "BookmarkButton",
+      "sourceFile": "@assethub/admin/components/ApplicationTable/BookmarkButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "button",
+      "propsWithCallSites": {
+        "applicationId": {
+          "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1
+        },
+        "bookmarked": { "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1 }
       }
     },
     {
@@ -3061,13 +3068,6 @@
       }
     },
     {
-      "name": "StyledButtonGroup",
-      "sourceFile": "@assethub/shared/components/Button/ButtonGroup.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "StyledCard",
       "sourceFile": "@assethub/shared/components/Card/Card.tsx",
       "totalInstances": 1,
@@ -3083,6 +3083,13 @@
         "hidden": { "@assethub/shared/components/Card/Card.tsx": 1 },
         "rounded": { "@assethub/shared/components/Card/Card.tsx": 1 }
       }
+    },
+    {
+      "name": "StyledButtonGroup",
+      "sourceFile": "@assethub/shared/components/Button/ButtonGroup.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "div",
@@ -3125,6 +3132,24 @@
       "propsWithCallSites": { "ref": { "@assethub/shared/components/Collapse/Collapse.tsx": 1 } }
     },
     {
+      "name": "Comp",
+      "sourceFile": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "data-synthetic-id": {
+          "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1
+        },
+        "style": { "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1 }
+      }
+    },
+    {
       "name": "Badge",
       "sourceFile": "@assethub/shared/components/Badge/Badge",
       "totalInstances": 1,
@@ -3154,24 +3179,6 @@
       ],
       "propsWithCallSites": {
         "className": { "@assethub/shared/components/DataTable/DataTablePagination.tsx": 1 }
-      }
-    },
-    {
-      "name": "Comp",
-      "sourceFile": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "data-synthetic-id": {
-          "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1
-        },
-        "style": { "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1 }
       }
     },
     {
@@ -3649,6 +3656,33 @@
       }
     },
     {
+      "name": "TextArea",
+      "sourceFile": "@assethub/shared/components/Inputs/Text/TextArea.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Text/TextArea.tsx" }
+      ],
+      "styledComponent": "Input",
+      "propsWithCallSites": {
+        "as": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "className": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "name": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "placeholder": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "title": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "value": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "rows": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "resizable": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "readOnly": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "disabled": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "required": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "hasError": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "onFocus": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "onBlur": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "onChange": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 }
+      }
+    },
+    {
       "name": "InputContainer",
       "sourceFile": "@assethub/shared/components/Inputs/Url/UrlListInput.tsx",
       "totalInstances": 2,
@@ -3704,33 +3738,6 @@
       "styledComponent": "div",
       "propsWithCallSites": {
         "hidden": { "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextArea",
-      "sourceFile": "@assethub/shared/components/Inputs/Text/TextArea.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Text/TextArea.tsx" }
-      ],
-      "styledComponent": "Input",
-      "propsWithCallSites": {
-        "as": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "className": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "name": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "placeholder": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "title": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "value": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "rows": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "resizable": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "readOnly": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "disabled": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "required": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "hasError": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "onFocus": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "onBlur": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "onChange": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 }
       }
     },
     {
@@ -4423,6 +4430,156 @@
       }
     },
     {
+      "name": "StatusBadge",
+      "sourceFile": "@assethub/admin/components/StatusBadge",
+      "totalInstances": 15,
+      "totalCallSites": 8,
+      "callSites": {
+        "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 2,
+        "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 1,
+        "@assethub/admin/pages/Application/ApplicationHistoryPage.tsx": 1,
+        "@assethub/admin/pages/User/ApplicationModule.tsx": 4,
+        "@assethub/admin/components/ApplicationTeamReview/Inputs/StatusSelect.tsx": 1,
+        "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal.tsx": 1,
+        "@assethub/admin/pages/Application/Sidebar/ApprovalsModule.tsx": 3,
+        "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 2
+      },
+      "propsWithCallSites": {
+        "status": {
+          "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 1,
+          "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 1,
+          "@assethub/admin/pages/Application/ApplicationHistoryPage.tsx": 1,
+          "@assethub/admin/pages/User/ApplicationModule.tsx": 4,
+          "@assethub/admin/components/ApplicationTeamReview/Inputs/StatusSelect.tsx": 1,
+          "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal.tsx": 1,
+          "@assethub/admin/pages/Application/Sidebar/ApprovalsModule.tsx": 3,
+          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 2
+        },
+        "todoOnUndefined": { "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1 }
+      }
+    },
+    {
+      "name": "ScoreOrStatus",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "state": { "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 1 },
+        "hasRisks": { "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 1 }
+      }
+    },
+    {
+      "name": "TableBody",
+      "sourceFile": "@assethub/shared/components/Table/TableBody",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ReviewsTable",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/ReviewsTable",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 4 }
+    },
+    {
+      "name": "FeatureFlag",
+      "sourceFile": "@assethub/shared/featureFlags/FeatureFlag",
+      "totalInstances": 5,
+      "totalCallSites": 4,
+      "callSites": {
+        "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 2,
+        "@assethub/admin/components/Navigation/AppSidebar.tsx": 1,
+        "@assethub/admin/components/Protected/Protected.tsx": 1,
+        "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
+      },
+      "propsWithCallSites": {
+        "featureFlag": {
+          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 2,
+          "@assethub/admin/components/Navigation/AppSidebar.tsx": 1,
+          "@assethub/admin/components/Protected/Protected.tsx": 1,
+          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
+        },
+        "fallback": { "@assethub/admin/components/Protected/Protected.tsx": 1 }
+      }
+    },
+    {
+      "name": "ReviewRow",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/ReviewsTable/ReviewRow",
+      "totalInstances": 11,
+      "totalCallSites": 1,
+      "callSites": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
+      "propsWithCallSites": {
+        "label": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
+        "state": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
+        "onPress": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
+        "url": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 4 },
+        "risksStatus": {
+          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 4
+        }
+      }
+    },
+    {
+      "name": "ReviewScoreModal",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ReviewScoreModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 },
+        "type": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 }
+      }
+    },
+    {
+      "name": "ProductApprovalModal",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1,
+        "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onClose": {
+          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1,
+          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
+        },
+        "type": {
+          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1,
+          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ChecksApprovalModal",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ChecksApprovalModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 },
+        "type": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 }
+      }
+    },
+    {
+      "name": "ChecksConflictModal",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ChecksConflictModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 },
+        "status": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 }
+      }
+    },
+    {
+      "name": "TeamReviewCard",
+      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 3 },
+      "propsWithCallSites": {
+        "team": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 3 },
+        "status": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 3 }
+      }
+    },
+    {
       "name": "DataTable",
       "sourceFile": "@assethub/shared/components/DataTable",
       "totalInstances": 7,
@@ -4575,156 +4732,6 @@
           "@assethub/admin/pages/User/ApplicationModule.tsx": 1,
           "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
         }
-      }
-    },
-    {
-      "name": "StatusBadge",
-      "sourceFile": "@assethub/admin/components/StatusBadge",
-      "totalInstances": 15,
-      "totalCallSites": 8,
-      "callSites": {
-        "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 2,
-        "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 1,
-        "@assethub/admin/pages/Application/ApplicationHistoryPage.tsx": 1,
-        "@assethub/admin/pages/User/ApplicationModule.tsx": 4,
-        "@assethub/admin/components/ApplicationTeamReview/Inputs/StatusSelect.tsx": 1,
-        "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal.tsx": 1,
-        "@assethub/admin/pages/Application/Sidebar/ApprovalsModule.tsx": 3,
-        "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 2
-      },
-      "propsWithCallSites": {
-        "status": {
-          "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 1,
-          "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 1,
-          "@assethub/admin/pages/Application/ApplicationHistoryPage.tsx": 1,
-          "@assethub/admin/pages/User/ApplicationModule.tsx": 4,
-          "@assethub/admin/components/ApplicationTeamReview/Inputs/StatusSelect.tsx": 1,
-          "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal.tsx": 1,
-          "@assethub/admin/pages/Application/Sidebar/ApprovalsModule.tsx": 3,
-          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 2
-        },
-        "todoOnUndefined": { "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1 }
-      }
-    },
-    {
-      "name": "ScoreOrStatus",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "state": { "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 1 },
-        "hasRisks": { "@assethub/admin/components/ApplicationTeamReview/ReviewsTable.tsx": 1 }
-      }
-    },
-    {
-      "name": "TableBody",
-      "sourceFile": "@assethub/shared/components/Table/TableBody",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ReviewsTable",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/ReviewsTable",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 4 }
-    },
-    {
-      "name": "FeatureFlag",
-      "sourceFile": "@assethub/shared/featureFlags/FeatureFlag",
-      "totalInstances": 5,
-      "totalCallSites": 4,
-      "callSites": {
-        "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 2,
-        "@assethub/admin/components/Navigation/AppSidebar.tsx": 1,
-        "@assethub/admin/components/Protected/Protected.tsx": 1,
-        "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
-      },
-      "propsWithCallSites": {
-        "featureFlag": {
-          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 2,
-          "@assethub/admin/components/Navigation/AppSidebar.tsx": 1,
-          "@assethub/admin/components/Protected/Protected.tsx": 1,
-          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
-        },
-        "fallback": { "@assethub/admin/components/Protected/Protected.tsx": 1 }
-      }
-    },
-    {
-      "name": "ReviewRow",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/ReviewsTable/ReviewRow",
-      "totalInstances": 11,
-      "totalCallSites": 1,
-      "callSites": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
-      "propsWithCallSites": {
-        "label": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
-        "state": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
-        "onPress": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 11 },
-        "url": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 4 },
-        "risksStatus": {
-          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 4
-        }
-      }
-    },
-    {
-      "name": "ReviewScoreModal",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ReviewScoreModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClose": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 },
-        "type": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 }
-      }
-    },
-    {
-      "name": "ProductApprovalModal",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ProductApprovalModal",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1,
-        "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onClose": {
-          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1,
-          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
-        },
-        "type": {
-          "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1,
-          "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ChecksApprovalModal",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ChecksApprovalModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClose": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 },
-        "type": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 }
-      }
-    },
-    {
-      "name": "ChecksConflictModal",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/Modals/ChecksConflictModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClose": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 },
-        "status": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewContent.tsx": 1 }
-      }
-    },
-    {
-      "name": "TeamReviewCard",
-      "sourceFile": "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 3 },
-      "propsWithCallSites": {
-        "team": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 3 },
-        "status": { "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 3 }
       }
     },
     {
@@ -6437,7 +6444,9 @@
         "stroke": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 },
         "fill": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 },
         "fillOpacity": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 },
-        "strokeWidth": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 }
+        "strokeWidth": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 },
+        "type": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 },
+        "animationDuration": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 }
       }
     },
     {
@@ -6484,7 +6493,11 @@
           "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1
         },
         "labelFormatter": { "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1 },
-        "valueFormatter": { "@assethub/shared/components/Charts/BarChart/BarChart.tsx": 1 }
+        "valueFormatter": {
+          "@assethub/shared/components/Charts/AreaChart/AreaChart.tsx": 1,
+          "@assethub/shared/components/Charts/BarChart/BarChart.tsx": 1,
+          "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1
+        }
       }
     },
     {
@@ -6504,7 +6517,8 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "dataKey": { "@assethub/shared/components/Charts/BarChart/BarChart.tsx": 1 },
-        "fill": { "@assethub/shared/components/Charts/BarChart/BarChart.tsx": 1 }
+        "fill": { "@assethub/shared/components/Charts/BarChart/BarChart.tsx": 1 },
+        "animationDuration": { "@assethub/shared/components/Charts/BarChart/BarChart.tsx": 1 }
       }
     },
     {
@@ -6531,7 +6545,8 @@
         "startAngle": { "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1 },
         "endAngle": { "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1 },
         "innerRadius": { "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1 },
-        "outerRadius": { "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1 }
+        "outerRadius": { "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1 },
+        "animationDuration": { "@assethub/shared/components/Charts/DonutChart/DonutChart.tsx": 1 }
       }
     },
     {
@@ -6564,7 +6579,8 @@
         "stroke": { "@assethub/shared/components/Charts/LineChart/LineChart.tsx": 1 },
         "strokeWidth": { "@assethub/shared/components/Charts/LineChart/LineChart.tsx": 1 },
         "dot": { "@assethub/shared/components/Charts/LineChart/LineChart.tsx": 1 },
-        "connectNulls": { "@assethub/shared/components/Charts/LineChart/LineChart.tsx": 1 }
+        "connectNulls": { "@assethub/shared/components/Charts/LineChart/LineChart.tsx": 1 },
+        "animationDuration": { "@assethub/shared/components/Charts/LineChart/LineChart.tsx": 1 }
       }
     },
     {
