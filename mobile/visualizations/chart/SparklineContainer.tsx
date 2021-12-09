@@ -2,7 +2,7 @@ import React, { memo, ReactNode, useCallback, useEffect, useMemo, useState } fro
 import { Animated, StyleSheet, View } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
-import noop from 'lodash/noop';
+import { noop } from '@cbhq/cds-utils';
 import {
   ChartData,
   ChartDataPoint,
@@ -13,7 +13,6 @@ import {
 } from '@cbhq/cds-common/types';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { usePalette } from '../../hooks/usePalette';
-import { useSpacingScale } from '../../hooks/useSpacingScale';
 
 import { ChartAnimatedPath } from './ChartAnimatedPath';
 import { ChartLineVertical } from './ChartLineVertical';
@@ -25,20 +24,93 @@ import { ChartProvider, useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { useUpdateChartHeader } from './useUpdateChartHeader';
 
-export type ChartProps<Period extends string> = {
-  data?: Record<Period, ChartData>;
+export type SparklineContainerProps<Period extends string> = {
+  /**
+   * Chart data bucketed by Period. Period is a string key
+   */
+  data: Record<Period, ChartData>;
+
+  /**
+   * A list of periods that th chart will use. label is what is shown in the bottom of the chart and the value is the key.
+   */
   periods: { label: string; value: Period }[];
+
+  /**
+   * default period value that the chart will use
+   */
   defaultPeriod: Period;
+
+  /**
+   * Callback when the user selects a new period.
+   * @param period
+   */
   onPeriodChanged?: (period: Period) => void;
+
+  /**
+   * Callback when the user starts scrubbing
+   */
   onScrubStart?: () => void;
+
+  /**
+   * Callback when a user finishes scrubbing
+   */
   onScrubEnd?: () => void;
+
+  /**
+   * Calbback used when the user is scrubbing. This will be called for every data point change.
+   * @param params
+   */
   onScrub?: (params: ChartScrubParams<Period>) => void;
+
+  /**
+   * Disables the scrub user interaction from the chart
+   *
+   * @default false
+   */
+  disableScrubbing?: boolean;
+
+  /**
+   * function used to format the amount of money used in the minMaxLabel
+   */
   formatAmount: ChartFormatAmount;
+
+  /**
+   * function used to format the date that is shown in the bottom of the chart as the user scrubs
+   */
   formatDate: ChartFormatDate<Period>;
+
+  /**
+   * Color of the line
+   *
+   * @default primary palette color
+   */
   strokeColor?: string;
+
+  /**
+   * Fallback shown in the chart when data is not available. This is usually a loading state.
+   */
   fallback?: ReactNode;
+
+  /**
+   * Show the chart in compact height
+   *
+   * @default false
+   */
   compact?: boolean;
-  isChartHeightExperiment?: boolean;
+
+  /**
+   * Hides the min and max label
+   *
+   * @default false
+   */
+  hideMinMaxLabel?: boolean;
+
+  /**
+   * Hides the period selector at the bottom of the chart
+   *
+   * @default false
+   */
+  hidePeriodSelector?: boolean;
 };
 
 const emptyArray = [] as ChartData;
@@ -59,23 +131,28 @@ const minMax = (data: ChartData) => {
   return [min, max];
 };
 
-type ChartContentProps<Period extends string> = Omit<ChartProps<Period>, 'compact'>;
+type SparklineContainerContentProps<Period extends string> = Omit<
+  SparklineContainerProps<Period>,
+  'compact'
+>;
 
-function ChartWithGeneric<Period extends string>({
+function SparklineContainerWithGeneric<Period extends string>({
   compact,
-  isChartHeightExperiment,
   ...props
-}: ChartProps<Period>) {
+}: SparklineContainerProps<Period>) {
   return (
-    <ChartProvider compact={compact} isChartHeightExperiment={isChartHeightExperiment}>
-      <ChartContent {...props} />
+    <ChartProvider compact={compact}>
+      <SparklineContainerContent {...props} />
     </ChartProvider>
   );
 }
 
-export const Chart = memo(ChartWithGeneric) as typeof ChartWithGeneric;
+// typescript doesn't understand the memo with the generic so it gets casted to a base react component
+export const SparklineContainer = memo(
+  SparklineContainerWithGeneric,
+) as typeof SparklineContainerWithGeneric;
 
-function ChartContentWithGeneric<Period extends string>({
+function SparklineContainerContentWithGeneric<Period extends string>({
   data,
   periods,
   defaultPeriod,
@@ -87,17 +164,13 @@ function ChartContentWithGeneric<Period extends string>({
   formatAmount,
   formatDate,
   fallback = null,
-}: ChartContentProps<Period>) {
-  const {
-    isFallbackVisible,
-    showFallback,
-    chartOpacity,
-    minMaxOpacity,
-    compact,
-    isChartHeightExperiment,
-  } = useChartContext();
+  hideMinMaxLabel = false,
+  hidePeriodSelector = false,
+  disableScrubbing = false,
+}: SparklineContainerContentProps<Period>) {
+  const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
+    useChartContext();
   const colors = usePalette();
-  const spacing = useSpacingScale();
   const color = strokeColor ?? colors.primary;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
 
@@ -141,7 +214,7 @@ function ChartContentWithGeneric<Period extends string>({
   );
 
   const { chartHorizontalGutter, chartDimensionStyles, chartWidth, chartHeight } =
-    useChartConstants({ compact, isChartHeightExperiment });
+    useChartConstants({ compact });
 
   const { xFunction, path, getMarker } = useSparklineCoordinates({
     data: dataForPeriod,
@@ -158,11 +231,16 @@ function ChartContentWithGeneric<Period extends string>({
     <Animated.View
       style={{
         paddingHorizontal: chartHorizontalGutter,
-        marginTop: spacing[2],
       }}
     >
-      <ChartPanGestureHandler onScrubEnd={onScrubEnd} onScrubStart={onScrubStart}>
-        <ChartMinMax formatAmount={formatAmount} dataPoint={max} xFunction={xFunction} />
+      <ChartPanGestureHandler
+        onScrubEnd={onScrubEnd}
+        onScrubStart={onScrubStart}
+        disabled={disableScrubbing}
+      >
+        {!hideMinMaxLabel && (
+          <ChartMinMax formatAmount={formatAmount} dataPoint={max} xFunction={xFunction} />
+        )}
         <View style={chartDimensionStyles}>
           {!!isFallbackVisible && !compact && (
             <View style={StyleSheet.absoluteFill}>{fallback}</View>
@@ -170,27 +248,33 @@ function ChartContentWithGeneric<Period extends string>({
           <Animated.View style={{ opacity: chartOpacity }}>
             {!!hasData && !!path && (
               <>
-                <ChartLineVertical isChartHeightExperiment={isChartHeightExperiment} />
+                <ChartLineVertical />
                 <ChartAnimatedPath d={path} color={color} selectedPeriod={selectedPeriod} />
               </>
             )}
           </Animated.View>
         </View>
-        <ChartMinMax formatAmount={formatAmount} dataPoint={min} xFunction={xFunction} />
+        {!hideMinMaxLabel && (
+          <ChartMinMax formatAmount={formatAmount} dataPoint={min} xFunction={xFunction} />
+        )}
       </ChartPanGestureHandler>
-      <BelowChart
-        color={color}
-        formatDate={formatDate}
-        getMarker={getMarker}
-        periods={periods}
-        selectedPeriod={selectedPeriod}
-        setSelectedPeriod={updatePeriod}
-      />
+      {!hidePeriodSelector && (
+        <BelowChart
+          color={color}
+          formatDate={formatDate}
+          getMarker={getMarker}
+          periods={periods}
+          selectedPeriod={selectedPeriod}
+          setSelectedPeriod={updatePeriod}
+        />
+      )}
     </Animated.View>
   );
 }
 
-export const ChartContent = memo(ChartContentWithGeneric) as typeof ChartContentWithGeneric;
+const SparklineContainerContent = memo(
+  SparklineContainerContentWithGeneric,
+) as typeof SparklineContainerContentWithGeneric;
 
 type BelowChartProps<Period extends string> = {
   color: string;

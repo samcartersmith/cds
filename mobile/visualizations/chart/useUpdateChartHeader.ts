@@ -1,7 +1,7 @@
 import { call, cond, eq, onChange, useCode } from 'react-native-reanimated';
-import { noop } from 'lodash';
 import { ChartGetMarker, ChartScrubParams } from '@cbhq/cds-common/types';
 
+import { noop } from '@cbhq/cds-utils';
 import { useChartContext } from './ChartProvider';
 
 type UpdateChartHeaderParams<Period> = {

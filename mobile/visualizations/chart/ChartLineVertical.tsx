@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Animated as RNAnimated, StyleSheet } from 'react-native';
 import Animated from 'react-native-reanimated';
 import Svg, { Line } from 'react-native-svg';
@@ -8,25 +8,22 @@ import { useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { useChartLineStyles } from './useChartLineStyles';
 
-type Props = {
-  isChartHeightExperiment?: boolean;
-};
-export const ChartLineVertical: FunctionComponent<Props> = memo(({ isChartHeightExperiment }) => {
+export const ChartLineVertical = memo(() => {
   const { markerOpacity } = useChartContext();
 
   return (
     <RNAnimated.View style={[styles.wrapper, { opacity: markerOpacity }]} pointerEvents="none">
-      <ChartDottedLine isChartHeightExperiment={isChartHeightExperiment} />
+      <ChartDottedLine />
     </RNAnimated.View>
   );
 });
 
-const ChartDottedLine: FunctionComponent<Props> = memo(({ isChartHeightExperiment }) => {
+const ChartDottedLine = memo(() => {
   const colors = usePalette();
   const { markerXPosition, compact } = useChartContext();
   const { lineProps } = useChartLineStyles();
   const { chartHeight, chartMinMaxLabelHeight, chartVerticalLineWidth, chartWidth } =
-    useChartConstants({ compact, isChartHeightExperiment });
+    useChartConstants({ compact });
 
   const dottedLineHeight = chartHeight + chartMinMaxLabelHeight * 2;
   const lineStyles = useMemo(() => {

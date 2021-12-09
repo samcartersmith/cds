@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { Dimensions } from 'react-native';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { useWindowDimensions } from 'react-native';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
 const chart = 320;
@@ -9,15 +9,16 @@ const chartCompact = 120;
 
 type Props = {
   compact?: boolean;
-  isChartHeightExperiment?: boolean;
 };
 
-export function useChartConstants({ compact = false, isChartHeightExperiment = false }: Props) {
+export function useChartConstants({ compact = false }: Props) {
   const spacing = useSpacingScale();
+  const { width: screenWidth } = useWindowDimensions();
+
   return useMemo(() => {
     const chartHorizontalGutter = spacing[gutter];
-    const chartWidth = Dimensions.get('screen').width - chartHorizontalGutter * 2;
-    const chartHeight = compact || isChartHeightExperiment ? chartCompact : chart;
+    const chartWidth = screenWidth - chartHorizontalGutter * 2;
+    const chartHeight = compact ? chartCompact : chart;
     const chartMarkerSize = spacing[2];
     const chartMinMaxLabelHeight = spacing[3];
     const chartMinMaxVerticalGutter = spacing[0.5];
@@ -44,5 +45,5 @@ export function useChartConstants({ compact = false, isChartHeightExperiment = f
       startX,
       endX,
     };
-  }, [compact, spacing, isChartHeightExperiment]);
+  }, [compact, screenWidth, spacing]);
 }

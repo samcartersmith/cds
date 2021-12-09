@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Animated as RNAnimated } from 'react-native';
+import { Animated as RNAnimated, useWindowDimensions, View } from 'react-native';
 import {
   LongPressGestureHandler,
   LongPressGestureHandlerGestureEvent,
@@ -18,9 +18,8 @@ import Animated, {
   set,
   sub,
 } from 'react-native-reanimated';
-import { noop } from 'lodash';
+import { noop } from '@cbhq/cds-utils';
 
-import { useDimensions } from '../../hooks/useDimensions';
 import { Haptics } from '../../utils/haptics';
 import { useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
@@ -28,12 +27,13 @@ import { useChartConstants } from './useChartConstants';
 export type ChartPanGestureHandlerProps = {
   onScrubEnd?: () => void;
   onScrubStart?: () => void;
+  disabled?: boolean;
   children: React.ReactNode;
 };
 
 export const ChartPanGestureHandler = memo(
-  ({ onScrubEnd = noop, onScrubStart = noop, children }: ChartPanGestureHandlerProps) => {
-    const { screenWidth } = useDimensions();
+  ({ onScrubEnd = noop, onScrubStart = noop, children, disabled }: ChartPanGestureHandlerProps) => {
+    const { width: screenWidth } = useWindowDimensions();
     const {
       markerXPosition,
       markerGestureState,
@@ -43,6 +43,10 @@ export const ChartPanGestureHandler = memo(
       animateMinxMaxOut,
     } = useChartContext();
     const { chartVerticalLineWidth, endX, startX } = useChartConstants({});
+
+    if (disabled) {
+      return <View>{children}</View>;
+    }
 
     return (
       <LongPressGestureHandler

@@ -1,7 +1,7 @@
 import React, { createContext, memo, useCallback, useContext, useRef, useState } from 'react';
 import { Animated } from 'react-native';
 import { Value } from 'react-native-reanimated';
-import { noop } from 'lodash';
+import { noop } from '@cbhq/cds-utils';
 import { useOpacityAnimation } from './useOpacityAnimation';
 
 type ChartContextInterface = {
@@ -19,7 +19,6 @@ type ChartContextInterface = {
   animateMinMaxIn: Animated.CompositeAnimation;
   animateMinxMaxOut: Animated.CompositeAnimation;
   compact: boolean;
-  isChartHeightExperiment: boolean;
 };
 
 const ChartContext = createContext<ChartContextInterface>({
@@ -37,19 +36,10 @@ const ChartContext = createContext<ChartContextInterface>({
   animateMinMaxIn: noop as unknown as Animated.CompositeAnimation,
   animateMinxMaxOut: noop as unknown as Animated.CompositeAnimation,
   compact: false,
-  isChartHeightExperiment: false,
 });
 
 export const ChartProvider = memo(
-  ({
-    children,
-    compact = false,
-    isChartHeightExperiment = false,
-  }: {
-    children: React.ReactNode;
-    compact?: boolean;
-    isChartHeightExperiment?: boolean;
-  }) => {
+  ({ children, compact = false }: { children: React.ReactNode; compact?: boolean }) => {
     const [isFallbackVisible, setIsFallbackVisible] = useState(true);
     const markerXPosition = useRef(new Value(-1)).current;
     const markerGestureState = useRef(new Value(0)).current;
@@ -85,7 +75,6 @@ export const ChartProvider = memo(
           animateMinMaxIn,
           animateMinxMaxOut,
           compact,
-          isChartHeightExperiment,
         }}
       >
         {children}
