@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.3 (12/9/2021, 09:13 AM PST)
+
+#### 🐞 Fixes
+
+- Remove text-transform checks. [#45142](https://github.cbhq.net/mono/repo/pull/45142)
+
 ## 0.32.2 (12/8/2021, 08:59 AM PST)
 
 #### 🚀 Updates
