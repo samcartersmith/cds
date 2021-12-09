@@ -106,6 +106,7 @@ export const getTypographyStyles = (name: Typography, props: Omit<TextProps, 'ch
     props.underline && underline,
     props.noWrap && noWrap,
     props.overflow && overflow[props.overflow],
+    // don't allow user to set to lower case in dense mode for accessibility reasons
     props.transform && !textItemsThatHaveTransform.has(name) && transform[props.transform],
   ];
 };

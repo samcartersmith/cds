@@ -114,13 +114,9 @@ export const createText = (name: Typography, inherit?: boolean) => {
       ellipsizeMode: ellipsize,
     };
 
-    // Only allow text transform if not already bundled in text styles for a given scale
     const textTransform = useMemo(() => {
-      if (!('textTransform' in textStyles) && transform) {
-        return { textTransform: transform };
-      }
-      return undefined;
-    }, [textStyles, transform]);
+      return { textTransform: transform };
+    }, [transform]);
 
     const style = useMemo(
       () => [
