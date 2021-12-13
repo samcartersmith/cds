@@ -8,6 +8,7 @@ import {
   cloneElement,
 } from 'react';
 import { ToastRefBaseProps, ToastBaseProps } from '../types';
+import { useTimer } from '../hooks/useTimer';
 
 export type ToastNode = {
   duration: number;
@@ -17,13 +18,8 @@ export type ToastNode = {
 export const useToastQueue = () => {
   const [activeToast, setActiveToast] = useState<ToastNode>();
   const toastQueue = useRef<ToastNode[]>([]);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
   const activeToastRef = useRef<ToastRefBaseProps | null>(null);
-
-  const clearTimer = useCallback(() => {
-    clearTimeout(timeoutRef.current as ReturnType<typeof setTimeout>);
-    timeoutRef.current = undefined;
-  }, []);
+  const timer = useTimer();
 
   const removeToast = useCallback(
     async (shouldTriggerAnimation = true) => {
@@ -31,10 +27,10 @@ export const useToastQueue = () => {
         // wait for animation to finish
         await activeToastRef.current?.hide();
       }
-      clearTimer();
+      timer.clear();
       setActiveToast(undefined);
     },
-    [clearTimer, setActiveToast, activeToastRef],
+    [timer, setActiveToast, activeToastRef],
   );
 
   const setToast = useCallback(
@@ -49,11 +45,11 @@ export const useToastQueue = () => {
       });
 
       // remove toast after duration
-      timeoutRef.current = setTimeout(() => {
+      timer.start(() => {
         void removeToast();
       }, toast.duration);
     },
-    [removeToast],
+    [timer, removeToast],
   );
 
   const addToast = useCallback(
@@ -75,16 +71,17 @@ export const useToastQueue = () => {
     }
   }, [activeToast, toastQueue, setToast]);
 
-  useEffect(() => {
-    return () => {
-      clearTimer();
-    };
-  }, [clearTimer]);
-
-  const clearToastQueue = () => {
+  const clearToastQueue = useCallback(() => {
     void removeToast();
     toastQueue.current.length = 0;
-  };
+  }, [removeToast]);
 
-  return { activeToast, addToast, removeToast, clearToastQueue };
+  return {
+    activeToast,
+    addToast,
+    removeToast,
+    clearToastQueue,
+    pauseTimer: timer.pause,
+    resumeTimer: timer.resume,
+  };
 };

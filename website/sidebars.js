@@ -113,6 +113,7 @@ module.exports = {
         'hooks/useOverlay',
         'hooks/useModal',
         'hooks/useAlert',
+        'hooks/useToast',
       ],
     },
     {

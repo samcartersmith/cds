@@ -28,11 +28,6 @@ export type ToastBaseOptions = {
    * Optional toast action
    */
   action?: ToastAction;
-  /**
-   * Hide the close button on the right
-   * @default false
-   */
-  hideCloseButton?: boolean;
 } & Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'>;
 
 export type ToastOptions = ToastBaseOptions & ToastDuration;

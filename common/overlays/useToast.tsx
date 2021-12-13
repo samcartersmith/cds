@@ -10,7 +10,7 @@ import {
 } from '../tokens/toast';
 
 export const useToast = (Toast: ComponentType<ToastBaseProps>) => {
-  const { addToast, removeToast } = useContext(ToastContext);
+  const { addToast, removeToast, clearToastQueue } = useContext(ToastContext);
 
   const showToast = useCallback(
     (text: ToastText, options?: ToastOptions) => {
@@ -39,5 +39,8 @@ export const useToast = (Toast: ComponentType<ToastBaseProps>) => {
     [addToast, removeToast, Toast],
   );
 
-  return useMemo(() => ({ show: showToast, hide: removeToast }), [showToast, removeToast]);
+  return useMemo(
+    () => ({ show: showToast, hide: removeToast, clearQueue: clearToastQueue }),
+    [showToast, removeToast, clearToastQueue],
+  );
 };

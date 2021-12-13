@@ -17,31 +17,37 @@ jest.mock('react-native/Libraries/Animated/Animated', () => {
 
 const animationParallelSpy = jest.spyOn(Animated, 'parallel');
 const animationTimingSpy = jest.spyOn(Animated, 'timing');
+jest.useFakeTimers();
 
 describe('Toast', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it('renders text and close button', () => {
+  it('renders text', () => {
     const text = 'Toast copy';
-    const { getByText, getByTestId } = render(<Toast text={text} />);
+    const { getByText } = render(<Toast text={text} />);
 
     expect(getByText(text)).toBeTruthy();
-    expect(getByTestId('toast-close-button')).toBeTruthy();
   });
 
   it('renders action', () => {
+    const onWillHide = jest.fn();
+    const onDidHide = jest.fn();
     const text = 'Toast copy';
     const action = {
       label: 'Action',
       onPress: jest.fn(),
       testID: 'toast-action',
     };
-    const { getByTestId } = render(<Toast text={text} action={action} />);
+    const { getByTestId } = render(
+      <Toast text={text} action={action} onWillHide={onWillHide} onDidHide={onDidHide} />,
+    );
 
     fireEvent.press(getByTestId(action.testID));
     expect(action.onPress).toHaveBeenCalledTimes(1);
+    expect(onWillHide).toHaveBeenCalledTimes(1);
+    expect(onDidHide).toHaveBeenCalledTimes(1);
   });
 
   it('triggers animation', () => {
@@ -50,22 +56,5 @@ describe('Toast', () => {
 
     expect(animationParallelSpy).toHaveBeenCalled();
     expect(animationTimingSpy).toHaveBeenCalled();
-  });
-
-  it('fires callbacks on close', () => {
-    const text = 'Toast copy';
-    const onWillHide = jest.fn();
-    const onDidHide = jest.fn();
-
-    jest.useFakeTimers();
-
-    const { getByTestId } = render(
-      <Toast text={text} onWillHide={onWillHide} onDidHide={onDidHide} />,
-    );
-
-    fireEvent.press(getByTestId('toast-close-button'));
-
-    expect(onWillHide).toHaveBeenCalledTimes(1);
-    expect(onDidHide).toHaveBeenCalledTimes(1);
   });
 });

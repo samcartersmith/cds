@@ -43,9 +43,6 @@ const PortalHost = memo(() => {
     };
   }, [portalRoot]);
 
-  // prevent duplicate host
-  if (document?.getElementById(portalRootId)) return null;
-
   return createPortal(
     <ThemeProvider>
       <div id={modalContainerId} style={{ zIndex: zIndex.overlays.modal }} />
@@ -56,7 +53,7 @@ const PortalHost = memo(() => {
   );
 });
 
-export const PortalProvider: React.FC = ({ children }) => {
+export const PortalProvider: React.FC = memo(({ children }) => {
   const portalState = usePortalState();
 
   return (
@@ -68,4 +65,4 @@ export const PortalProvider: React.FC = ({ children }) => {
       </ToastProvider>
     </PortalContext.Provider>
   );
-};
+});
