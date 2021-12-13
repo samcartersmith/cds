@@ -7,7 +7,7 @@ const sectionsToExcludeByLabel = new Set([]);
 // Removes unfinished components from section in side bar
 const componentsToExcludeByLabel = new Set([
   'components/controls/Select/select',
-  'components/cells/SelectOptionCell/select-option-cell',
+  'components/cells/SelectOption/select-option',
   'components/overlays/Toast/toast',
   'components/visualizations/SparklineContainer/sparkline-container',
 ]);

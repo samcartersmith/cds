@@ -2,7 +2,7 @@ import React, { useState, useCallback, ReactNode } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import {
   PopoverMenuBaseProps,
-  SelectOptionCellBaseProps,
+  SelectOptionBaseProps,
   BoxBaseProps,
   StackBaseProps,
   IconButtonBaseProps,
@@ -52,7 +52,7 @@ export type CreatePopoverMenuStoriesProps = {
   MenuItem: React.ComponentType<MenuItemProps>;
   VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
   HStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps>;
+  SelectOption: React.ComponentType<SelectOptionBaseProps>;
   IconButton: React.ComponentType<IconButtonBaseProps & SharedProps>;
   NavigationBar: React.ComponentType<NavigationBarProps>;
   NavigationTitle: React.ComponentType<NavigationTitleProps>;
@@ -110,7 +110,7 @@ export const popoverMenuBuilder = ({
   MenuItem,
   VStack,
   HStack,
-  SelectOptionCell,
+  SelectOption,
   IconButton,
   NavigationBar,
   NavigationTitle,
@@ -151,7 +151,7 @@ export const popoverMenuBuilder = ({
           <MenuSectionLabel text="Section Heading" />
           {priceOptions.slice(0, 4).map((option) => (
             <MenuItem value={option} key={option}>
-              <SelectOptionCell
+              <SelectOption
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
@@ -163,7 +163,7 @@ export const popoverMenuBuilder = ({
           <MenuSectionLabel text="Section Heading" />
           {priceOptions.slice(5, 9).map((option) => (
             <MenuItem value={option} key={option}>
-              <SelectOptionCell
+              <SelectOption
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
@@ -209,7 +209,7 @@ export const popoverMenuBuilder = ({
               >
                 {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                   <MenuItem key={name} value={optionValue}>
-                    <SelectOptionCell
+                    <SelectOption
                       title={name}
                       description={description}
                       media={<Pictogram dimension="48x48" name={mediaName} />}
@@ -262,7 +262,7 @@ export const popoverMenuBuilder = ({
           >
             {priceOptions.map((option) => (
               <MenuItem value={option} key={option}>
-                <SelectOptionCell
+                <SelectOption
                   title={option}
                   description="BTC"
                   testID={`option-${option}`}
@@ -317,7 +317,7 @@ export const popoverMenuBuilder = ({
             <MenuSectionLabel text="Section Heading" />
             {priceOptions.slice(0, 4).map((option) => (
               <MenuItem value={option} key={option}>
-                <SelectOptionCell
+                <SelectOption
                   title={option}
                   description="BTC"
                   testID={`option-${option}`}
@@ -329,7 +329,7 @@ export const popoverMenuBuilder = ({
             <MenuSectionLabel text="Section Heading" />
             {priceOptions.slice(5, 9).map((option) => (
               <MenuItem value={option} key={option}>
-                <SelectOptionCell
+                <SelectOption
                   title={option}
                   description="BTC"
                   testID={`option-${option}`}

@@ -48,7 +48,7 @@ module.exports = {
         'components/cells/ContentCellFallback/content-cell-fallback',
         'components/cells/ListCell/list-cell',
         'components/cells/ListCellFallback/list-cell-fallback',
-        'components/cells/SelectOptionCell/select-option-cell',
+        'components/cells/SelectOption/select-option',
       ],
     },
     {

@@ -8,7 +8,7 @@ import {
 
 import { Select } from '../Select';
 import { VStack } from '../../layout/VStack';
-import { SelectOptionCell } from '../../cells/SelectOptionCell';
+import { SelectOption } from '../../cells/SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { MenuItem } from '../../overlays/MenuItem';
 
@@ -16,7 +16,7 @@ const { Default: MockSelect } = selectBuilder({
   Select,
   MenuItem,
   VStack,
-  SelectOptionCell,
+  SelectOption,
   ThemeProvider,
 } as CreateSelectStoriesProps);
 
@@ -47,7 +47,7 @@ describe('Select', () => {
     fireEvent.click(getByText(mockPlaceholder));
     expect(onPressSpy).toHaveBeenCalled();
 
-    // expect Menu and SelectOptionCell to render
+    // expect Menu and SelectOption to render
     expect(getByText(priceOptions[0])).toBeDefined();
   });
   it('closes the Menu when an option is pressed and fires onChange', async () => {
@@ -58,23 +58,23 @@ describe('Select', () => {
 
     fireEvent.click(getByText(mockPlaceholder));
 
-    // expect Menu and SelectOptionCell to render
-    const firstSelectOptionCell = await waitFor(() => getByText(priceOptions[0]));
+    // expect Menu and SelectOption to render
+    const firstSelectOption = await waitFor(() => getByText(priceOptions[0]));
 
     // select the first option
-    fireEvent.click(firstSelectOptionCell);
+    fireEvent.click(firstSelectOption);
 
     // the first option cell content should replace the placeholder
-    expect(firstSelectOptionCell).toBeDefined();
+    expect(firstSelectOption).toBeDefined();
   });
   it('replaces the placeholder text with the selected value when pressed', async () => {
     const { getByText } = render(<MockSelect placeholder={mockPlaceholder} />);
 
     fireEvent.click(getByText(mockPlaceholder));
 
-    // expect Menu and SelectOptionCell to render
-    const secondSelectOptionCell = await waitFor(() => getByText(priceOptions[1]));
-    fireEvent.click(secondSelectOptionCell);
+    // expect Menu and SelectOption to render
+    const secondSelectOption = await waitFor(() => getByText(priceOptions[1]));
+    fireEvent.click(secondSelectOption);
 
     expect(getByText(priceOptions[1])).toBeDefined();
   });

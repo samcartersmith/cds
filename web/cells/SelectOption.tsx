@@ -1,5 +1,5 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
-import { SelectOptionCellBaseProps } from '@cbhq/cds-common/types';
+import { SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import {
   listHeight,
@@ -11,10 +11,10 @@ import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
 import { CellAccessory } from './CellAccessory';
 
-export const SelectOptionCell = memo(
+export const SelectOption = memo(
   forwardRef(
     (
-      { title, description, multiline, selected, compact, ...props }: SelectOptionCellBaseProps,
+      { title, description, multiline, selected, compact, ...props }: SelectOptionBaseProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
       const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);

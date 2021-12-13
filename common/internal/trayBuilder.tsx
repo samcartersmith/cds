@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import type {
-  ButtonBaseProps,
-  SelectOptionCellBaseProps,
-  SharedProps,
-  TrayBaseProps,
-} from '../types';
+import type { ButtonBaseProps, SelectOptionBaseProps, SharedProps, TrayBaseProps } from '../types';
 import { useToggler } from '../hooks/useToggler';
 import { prices } from './data/prices';
 
@@ -18,7 +13,7 @@ type LinkableProps = {
 export type CreateTrayProps = {
   Tray: React.ComponentType<TrayBaseProps>;
   Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
-  SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps & LinkableProps>;
+  SelectOption: React.ComponentType<SelectOptionBaseProps & LinkableProps>;
   ScrollView: React.ComponentType;
 };
 
@@ -27,7 +22,7 @@ type DefaultTrayTypes = {
   title?: string;
 };
 
-export const trayBuilder = ({ Tray, Button, SelectOptionCell, ScrollView }: CreateTrayProps) => {
+export const trayBuilder = ({ Tray, Button, SelectOption, ScrollView }: CreateTrayProps) => {
   const DefaultTray = ({ compact, title }: DefaultTrayTypes) => {
     const [isTrayVisible, toggleTray] = useToggler(false);
     const [value, setValue] = useState<string>();
@@ -40,7 +35,7 @@ export const trayBuilder = ({ Tray, Button, SelectOptionCell, ScrollView }: Crea
           <Tray title={title} onCloseComplete={() => toggleTray.toggleOff()}>
             {({ closeTray }) =>
               options.map((option: string) => (
-                <SelectOptionCell
+                <SelectOption
                   key={option}
                   compact={compact}
                   title={option}
@@ -77,7 +72,7 @@ export const trayBuilder = ({ Tray, Button, SelectOptionCell, ScrollView }: Crea
               return (
                 <ScrollView>
                   {lotsOfOptions.map((option: string) => (
-                    <SelectOptionCell
+                    <SelectOption
                       key={option}
                       compact={compact}
                       title={option}

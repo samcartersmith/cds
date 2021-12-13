@@ -21,7 +21,7 @@ export const components = [
   'ContentCellFallback',
   'ListCell',
   'ListCellFallback',
-  'SelectOptionCell',
+  'SelectOption',
   'Checkbox',
   'InputIcon',
   'InputIconButton',

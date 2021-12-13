@@ -45,7 +45,7 @@ export const selectCellSpacingConfig: CellSpacingConfig = {
   innerSpacing: { offsetHorizontal: 0, spacingHorizontal: gutter },
 };
 
-export const selectOptionCellHeight: Record<ScaleDensity, number> = {
+export const selectOptionHeight: Record<ScaleDensity, number> = {
   normal: 56,
   dense: 44,
 };

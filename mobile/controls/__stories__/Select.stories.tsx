@@ -6,7 +6,7 @@ import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/interna
 import { Tray } from '../../overlays/Tray/Tray';
 
 import { Select } from '../Select';
-import { SelectOptionCell } from '../SelectOptionCell';
+import { SelectOption } from '../SelectOption';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
@@ -21,7 +21,7 @@ export default function SelectScreen() {
   const { DefaultSelect, ScrollableSelect } = selectBuilderMobile({
     Tray,
     Select,
-    SelectOptionCell,
+    SelectOption,
     ScrollView,
   } as CreateSelectProps);
 
@@ -51,7 +51,7 @@ export default function SelectScreen() {
           placeholder="1,000,000"
           compact
           hasDescription
-          compactSelectOptionCell
+          compactSelectOption
           options={longListOfOptions}
         />
       </Example>

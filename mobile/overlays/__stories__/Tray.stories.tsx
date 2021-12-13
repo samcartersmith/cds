@@ -3,7 +3,7 @@ import { ScrollView, View } from 'react-native';
 import { trayBuilder, CreateTrayProps } from '@cbhq/cds-common/internal/trayBuilder';
 
 import { Button } from '../../buttons/Button';
-import { SelectOptionCell } from '../../controls/SelectOptionCell';
+import { SelectOption } from '../../controls/SelectOption';
 
 import { Tray } from '../Tray/Tray';
 
@@ -13,7 +13,7 @@ const TrayScreen = () => {
   const { DefaultTray, ScrollableTray } = trayBuilder({
     Tray,
     Button,
-    SelectOptionCell,
+    SelectOption,
     ScrollView,
     View,
   } as CreateTrayProps);

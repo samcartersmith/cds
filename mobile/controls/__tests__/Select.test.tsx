@@ -5,13 +5,13 @@ import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/interna
 
 import { Select } from '../Select';
 import { Tray } from '../../overlays/Tray/Tray';
-import { SelectOptionCell } from '../SelectOptionCell';
+import { SelectOption } from '../SelectOption';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
 
 const { DefaultSelect } = selectBuilderMobile({
   Tray,
   Select,
-  SelectOptionCell,
+  SelectOption,
   ScrollView,
 } as CreateSelectProps);
 

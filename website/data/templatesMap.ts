@@ -475,23 +475,23 @@ export const ListCellFallback = {
   ),
 };
 
-export const SelectOptionCell = {
+export const SelectOption = {
   implementation: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOptionCell/implementation.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOption/implementation.mdx'
       ),
   ),
-  'select-option-cell': React.lazy(
+  'select-option': React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOptionCell/select-option-cell.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOption/select-option.mdx'
       ),
   ),
   usage: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOptionCell/usage.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOption/usage.mdx'
       ),
   ),
 };

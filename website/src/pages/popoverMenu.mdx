@@ -46,7 +46,7 @@ function Default() {
       >
         {priceOptions.map((option) => (
           <MenuItem value={option} key={option}>
-            <SelectOptionCell
+            <SelectOption
               title={option}
               description="BTC"
               testID={`option-${option}`}
@@ -108,7 +108,7 @@ function NavigationMenu() {
               value={value}
             >
               <MenuItem key="Coinbase" value="Coinbase">
-                <SelectOptionCell
+                <SelectOption
                   title="Coinbase"
                   description="Buy, sell, use crypto"
                   media={<Pictogram dimension="48x48" name="coinbaseOneLogoPictogram" />}
@@ -116,7 +116,7 @@ function NavigationMenu() {
                 />
               </MenuItem>
               <MenuItem key="Wallet" value="Wallet">
-                <SelectOptionCell
+                <SelectOption
                   title="Wallet"
                   description="The best self-hosted crypto wallet"
                   media={<Pictogram dimension="48x48" name="wallet" />}
@@ -185,7 +185,7 @@ function FeedCardMenu() {
         >
           {priceOptions.map((option) => (
             <MenuItem value={option} key={option}>
-              <SelectOptionCell
+              <SelectOption
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}

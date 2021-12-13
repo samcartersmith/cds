@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { SelectOptionCellBaseProps } from '@cbhq/cds-common/types';
+import { SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import {
   listHeight,
   compactListHeight,
@@ -11,10 +11,10 @@ import { Cell } from '../cells/Cell';
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
 
-export type SelectOptionCellProps = SelectOptionCellBaseProps & LinkableProps;
+export type SelectOptionProps = SelectOptionBaseProps & LinkableProps;
 
-export const SelectOptionCell = memo(
-  ({ title, description, multiline, compact, ...props }: SelectOptionCellProps) => {
+export const SelectOption = memo(
+  ({ title, description, multiline, compact, ...props }: SelectOptionProps) => {
     const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
     return (
       <Cell {...selectCellSpacingConfig} borderRadius="none" minHeight={minHeight} {...props}>

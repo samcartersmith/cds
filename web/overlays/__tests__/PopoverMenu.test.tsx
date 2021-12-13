@@ -6,7 +6,7 @@ import {
   priceOptions,
 } from '../__stories__/popoverMenuBuilder';
 import { PopoverMenu } from '../PopoverMenu';
-import { SelectOptionCell } from '../../cells/SelectOptionCell';
+import { SelectOption } from '../../cells/SelectOption';
 import { IconButton } from '../../buttons/IconButton';
 import { MenuItem } from '../MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -18,7 +18,7 @@ import { Divider } from '../../layout/Divider';
 const { Default: MockPopoverMenu } = popoverMenuBuilder({
   PopoverMenu,
   MenuItem,
-  SelectOptionCell,
+  SelectOption,
   IconButton,
   ThemeProvider,
   VStack,
@@ -79,7 +79,7 @@ describe('PopoverMenu', () => {
 
     expect(onPressSpy).toHaveBeenCalled();
 
-    // expect PopoverMenu and SelectOptionCell to render
+    // expect PopoverMenu and SelectOption to render
     expect(getByText(priceOptions[0])).toBeDefined();
   });
   it('closes the PopoverMenu when an option is pressed and fires onChange', () => {
@@ -95,7 +95,7 @@ describe('PopoverMenu', () => {
     // press the trigger
     fireEvent.click(getByTestId(mockTriggerTestID));
 
-    // expect PopoverMenu and SelectOptionCell to render
+    // expect PopoverMenu and SelectOption to render
     const firstOption = getAllByRole('menuitem')[0];
 
     // select the first option

@@ -1,7 +1,7 @@
 import React, { useState, ReactElement } from 'react';
 import type {
   SelectBaseProps,
-  SelectOptionCellBaseProps,
+  SelectOptionBaseProps,
   TrayBaseProps,
   Spectrum,
   ThemeProviderBaseProps,
@@ -31,7 +31,7 @@ export type CreateSelectStoriesProps = {
   Select: React.ComponentType<SelectProps>;
   MenuItem: React.ComponentType<MenuItemProps>;
   VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps>;
+  SelectOption: React.ComponentType<SelectOptionBaseProps>;
   ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
   spectrum?: Spectrum;
   scale?: Scale;
@@ -56,7 +56,7 @@ export const selectBuilder = ({
   Select,
   MenuItem,
   VStack,
-  SelectOptionCell,
+  SelectOption,
   ThemeProvider,
   spectrum,
   scale,
@@ -89,7 +89,7 @@ export const selectBuilder = ({
           >
             {priceOptions.map((option) => (
               <MenuItem value={option} key={option}>
-                <SelectOptionCell
+                <SelectOption
                   title={option}
                   description="BTC"
                   testID={`option-${option}`}
@@ -117,7 +117,7 @@ export const selectBuilder = ({
           >
             {priceOptions.map((option) => (
               <MenuItem value={option} key={option}>
-                <SelectOptionCell
+                <SelectOption
                   title={option}
                   description="BTC"
                   testID={`option-${option}`}
@@ -144,7 +144,7 @@ export const selectBuilder = ({
           >
             {priceOptions.map((option) => (
               <MenuItem value={option} key={option}>
-                <SelectOptionCell
+                <SelectOption
                   title={option}
                   description="BTC"
                   testID={`option-${option}`}
@@ -173,7 +173,7 @@ export const selectBuilder = ({
           >
             {priceOptions.map((option) => (
               <MenuItem value={option} key={option}>
-                <SelectOptionCell
+                <SelectOption
                   compact
                   title={option}
                   description="BTC"
@@ -210,7 +210,7 @@ export const selectBuilder = ({
 export type CreateSelectProps = {
   Select: React.ComponentType<SelectBaseProps>;
   Tray: React.ComponentType<TrayBaseProps>;
-  SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps & LinkableProps>;
+  SelectOption: React.ComponentType<SelectOptionBaseProps & LinkableProps>;
   ScrollView: React.ComponentType;
 };
 
@@ -223,14 +223,14 @@ type DefaultSelectTypes = {
   options: OptionProps[];
   trayTitle?: string;
   hasDescription?: boolean;
-  compactSelectOptionCell?: boolean;
+  compactSelectOption?: boolean;
   hideHandleBar?: boolean;
 } & Omit<SelectBaseProps, 'children'>;
 
 export const selectBuilderMobile = ({
   Tray,
   Select,
-  SelectOptionCell,
+  SelectOption,
   ScrollView,
 }: CreateSelectProps) => {
   const DefaultSelect = ({
@@ -238,7 +238,7 @@ export const selectBuilderMobile = ({
     value: initialValue,
     trayTitle,
     hasDescription,
-    compactSelectOptionCell,
+    compactSelectOption,
     hideHandleBar,
     ...props
   }: DefaultSelectTypes) => {
@@ -261,9 +261,9 @@ export const selectBuilderMobile = ({
                   closeTray();
                 };
                 return (
-                  <SelectOptionCell
+                  <SelectOption
                     title={option.label}
-                    compact={compactSelectOptionCell}
+                    compact={compactSelectOption}
                     key={option.value}
                     description={hasDescription && 'BTC'}
                     onPress={onPress}
@@ -283,7 +283,7 @@ export const selectBuilderMobile = ({
     value: initialValue,
     trayTitle,
     hasDescription,
-    compactSelectOptionCell,
+    compactSelectOption,
     ...props
   }: DefaultSelectTypes) => {
     const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
@@ -305,9 +305,9 @@ export const selectBuilderMobile = ({
                     closeTray();
                   };
                   return (
-                    <SelectOptionCell
+                    <SelectOption
                       title={option.label}
-                      compact={compactSelectOptionCell}
+                      compact={compactSelectOption}
                       key={option.value}
                       description={hasDescription && 'BTC'}
                       onPress={onPress}

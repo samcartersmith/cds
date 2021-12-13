@@ -6,4 +6,4 @@ export * from './TextInput';
 export * from './InputIcon';
 export * from './InputIconButton';
 export * from './Select';
-export * from './SelectOptionCell';
+export * from './SelectOption';

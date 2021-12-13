@@ -1,4 +1,4 @@
 import { CellBaseProps, ListCellBaseProps } from './CellBaseProps';
 
-export type SelectOptionCellBaseProps = Omit<CellBaseProps, 'children'> &
+export type SelectOptionBaseProps = Omit<CellBaseProps, 'children'> &
   Pick<ListCellBaseProps, 'title' | 'description' | 'multiline' | 'compact'>;

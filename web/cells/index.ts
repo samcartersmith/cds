@@ -3,4 +3,4 @@ export * from './ContentCell';
 export * from './ContentCellFallback';
 export * from './ListCell';
 export * from './ListCellFallback';
-export * from './SelectOptionCell';
+export * from './SelectOption';

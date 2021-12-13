@@ -41,7 +41,7 @@ export * from './RadioGroupBaseProps';
 export * from './React';
 export * from './Scale';
 export * from './SelectBaseProps';
-export * from './SelectOptionCellBaseProps';
+export * from './SelectOptionBaseProps';
 export * from './Shape';
 export * from './SharedProps';
 export * from './SpacingProps';

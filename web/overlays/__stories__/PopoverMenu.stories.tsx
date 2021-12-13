@@ -1,6 +1,6 @@
 import { popoverMenuBuilder, CreatePopoverMenuStoriesProps } from './popoverMenuBuilder';
 import { PopoverMenu } from '../PopoverMenu';
-import { SelectOptionCell } from '../../cells/SelectOptionCell';
+import { SelectOption } from '../../cells/SelectOption';
 import { IconButton, Button } from '../../buttons';
 import { VStack, HStack } from '../../layout';
 import { NavigationBar, NavigationTitle } from '../../navigation';
@@ -20,7 +20,7 @@ const components = {
   PopoverMenu,
   VStack,
   HStack,
-  SelectOptionCell,
+  SelectOption,
   MenuItem,
   IconButton,
   NavigationBar,

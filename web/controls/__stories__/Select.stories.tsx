@@ -1,7 +1,7 @@
 import { selectBuilder, CreateSelectStoriesProps } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { VStack } from '../../layout/VStack';
-import { SelectOptionCell } from '../../cells/SelectOptionCell';
+import { SelectOption } from '../../cells/SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Select } from '../Select';
 import { MenuItem } from '../../overlays/MenuItem';
@@ -15,7 +15,7 @@ const components = {
   Select,
   MenuItem,
   VStack,
-  SelectOptionCell,
+  SelectOption,
   ThemeProvider,
 };
 
