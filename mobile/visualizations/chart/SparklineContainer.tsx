@@ -28,10 +28,10 @@ export type SparklineContainerProps<Period extends string> = {
   /**
    * Chart data bucketed by Period. Period is a string key
    */
-  data: Record<Period, ChartData>;
+  data?: Record<Period, ChartData>;
 
   /**
-   * A list of periods that th chart will use. label is what is shown in the bottom of the chart and the value is the key.
+   * A list of periods that the chart will use. label is what is shown in the bottom of the chart and the value is the key.
    */
   periods: { label: string; value: Period }[];
 
@@ -42,7 +42,6 @@ export type SparklineContainerProps<Period extends string> = {
 
   /**
    * Callback when the user selects a new period.
-   * @param period
    */
   onPeriodChanged?: (period: Period) => void;
 
@@ -57,8 +56,7 @@ export type SparklineContainerProps<Period extends string> = {
   onScrubEnd?: () => void;
 
   /**
-   * Calbback used when the user is scrubbing. This will be called for every data point change.
-   * @param params
+   * Callback used when the user is scrubbing. This will be called for every data point change.
    */
   onScrub?: (params: ChartScrubParams<Period>) => void;
 

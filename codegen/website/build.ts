@@ -135,8 +135,14 @@ const flattenTemplatesMap = (
   return { ...prev, [displayName]: data };
 };
 
+// This is a list of mobile only directories
+const mobileOnlyIncludes: string[] = ['mobile/visualizations/chart'];
+
 async function buildWebsite() {
-  const subDirFiles = await Promise.all(CDS_SUB_DIRS.map(getSubDirFiles('web')));
+  const subDirFiles = await Promise.all(
+    CDS_SUB_DIRS.map(getSubDirFiles('web', undefined, mobileOnlyIncludes)),
+  );
+
   const docgenData = subDirFiles.reduce(
     prepareDocgen({
       web: getDocgenForPlatform('web'),

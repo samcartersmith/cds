@@ -10,6 +10,7 @@ const componentsToExcludeByLabel = new Set([
   'components/overlays/Menu/menu',
   'components/cells/SelectOptionCell/select-option-cell',
   'components/overlays/Toast/toast',
+  'components/visualizations/SparklineContainer/sparkline-container',
 ]);
 
 // Filter sidebar components

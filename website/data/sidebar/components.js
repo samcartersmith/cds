@@ -184,6 +184,7 @@ module.exports = {
         'components/visualizations/ProgressCircle/progress-circle',
         'components/visualizations/Sparkline/sparkline',
         'components/visualizations/SparklineGradient/sparkline-gradient',
+        'components/visualizations/SparklineContainer/sparkline-container',
       ],
     },
   ],

@@ -1,0 +1,240 @@
+import { Image } from ':cds-website/components/Image';
+import { Box } from '../../../../../web/layout';
+
+#### Example code
+All examples use the following code to generate the SparklineContainer
+
+```tsx
+type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
+
+type PriceChartProps = Omit<
+  SparklineContainerProps<ChartPeriod>,
+  'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
+> &
+  Partial<Pick<SparklineContainerProps<ChartPeriod>, 'defaultPeriod'>>;
+
+export const DEFAULT_CHART_PERIOD = 'day';
+
+const periods = [
+  {
+    label: '1H',
+    value: 'hour' as const,
+  },
+  {
+    label: '1D',
+    value: 'day' as const,
+  },
+  {
+    label: '1W',
+    value: 'week' as const,
+  },
+  {
+    label: '1M',
+    value: 'month' as const,
+  },
+  {
+    label: '1Y',
+    value: 'year' as const,
+  },
+  {
+    label: 'All',
+    value: 'all' as const,
+  },
+];
+
+// eslint-disable-next-line consistent-return
+const getFormattingConfigForPeriod = (period: ChartPeriod) => {
+  // eslint-disable-next-line default-case
+  switch (period) {
+    case 'hour':
+    case 'day':
+      return {
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+
+    case 'week':
+    case 'month':
+      return {
+        month: 'numeric',
+        day: 'numeric',
+      } as const;
+
+    case 'year':
+    case 'all':
+      return {
+        month: 'numeric',
+        year: 'numeric',
+      } as const;
+  }
+};
+
+export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) => {
+  const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
+    const config = getFormattingConfigForPeriod(period);
+    return value.toLocaleString('en-US', config);
+  }, []);
+
+  const fallback = useMemo(() => {
+    // We override line palette since default line color is a bit too dark.
+    // Changing to gray20 more closely matches the line color currently used in production
+    return (
+      <ThemeProvider palette={{ line: 'gray20' }}>
+        <Lottie autoplay source={chartFallbackPositive} loop />
+      </ThemeProvider>
+    );
+  }, []);
+
+  const formatAmount = useCallback((amount: number | string) => {
+    return `$${parseInt(amount as string, 10).toLocaleString()}`;
+  }, []);
+
+  return (
+    <SparklineContainer
+      {...props}
+      periods={periods}
+      formatDate={formatDateWithConfig}
+      fallback={fallback}
+      defaultPeriod={defaultPeriod ?? DEFAULT_CHART_PERIOD}
+      formatAmount={formatAmount}
+    />
+  );
+});
+```
+
+The data shape of `sparklineContainerData` is shown below. There are a lot more data points in the example screenshots than are shown below
+
+```json
+{
+    "hour": [
+        {
+            "value": 48941.53,
+            "date": "2021-12-06T03:03:40.000Z"
+        },
+        {
+            "value": 48950.98,
+            "date": "2021-12-06T03:03:50.000Z"
+        }
+    ],
+    "day": [
+        {
+            "value": 49259.38,
+            "date": "2021-12-05T04:00:00.000Z"
+        },
+        {
+            "value": 49163.79,
+            "date": "2021-12-05T04:05:00.000Z"
+        }
+    ],
+    "week": [
+        {
+            "value": 57408.85,
+            "date": "2021-11-29T04:00:00.000Z"
+        },
+        {
+            "value": 57349.6,
+            "date": "2021-11-29T04:30:00.000Z"
+        }
+    ],
+    "month": [
+        {
+            "value": 61170.39,
+            "date": "2021-11-06T04:00:00.000Z"
+        },
+        {
+            "value": 61474.28,
+            "date": "2021-11-06T06:00:00.000Z"
+        }
+    ],
+    "year": [
+        {
+            "value": 19375.6,
+            "date": "2020-12-07T00:00:00.000Z"
+        },
+        {
+            "value": 19177.08,
+            "date": "2020-12-08T00:00:00.000Z"
+        }
+    ],
+    "all": [
+        {
+            "value": 105.12,
+            "date": "2013-08-05T00:00:00.000Z"
+        },
+        {
+            "value": 112.562,
+            "date": "2013-08-15T00:00:00.000Z"
+        }
+    ]
+}
+````
+
+#### Default usage
+
+```jsx
+  <PriceChart data={sparklineContainerData} />
+```
+
+<Box width="100%" justifyContent="center">
+    <Image
+        options={{ maxWidth: "450px"}}
+        light="/img/components/sparkline-container/SparklineContainerDefaultLight.png"
+        dark="/img/components/sparkline-container/SparklineContainerDefaultDark.png"
+    />
+</Box>
+
+#### Compact
+
+```jsx
+  <PriceChart data={sparklineContainerData} compact />
+```
+
+<Box width="100%" justifyContent="center">
+    <Image
+        options={{ maxWidth: "450px"}}
+        light="/img/components/sparkline-container/SparklineContainerCompactLight.png"
+        dark="/img/components/sparkline-container/SparklineContainerCompactDark.png"
+    />
+</Box>
+
+#### Hide period selector
+
+```jsx
+  <PriceChart data={sparklineContainerData} hidePeriodSelector />
+```
+
+<Box width="100%" justifyContent="center">
+    <Image
+        options={{ maxWidth: "450px"}}
+        light="/img/components/sparkline-container/SparklineContainerHidePeriodSelectorLight.png"
+        dark="/img/components/sparkline-container/SparklineContainerHidePeriodSelectorDark.png"
+    />
+</Box>
+
+#### Hide min/max label
+
+```jsx
+  <PriceChart data={sparklineContainerData} hideMinMaxLabel />
+```
+
+<Box width="100%" justifyContent="center">
+    <Image
+        options={{ maxWidth: "450px"}}
+        light="/img/components/sparkline-container/SparklineContainerHideMinMaxLabelLight.png"
+        dark="/img/components/sparkline-container/SparklineContainerHideMinMaxLabelDark.png"
+    />
+</Box>
+
+#### Different color
+
+```jsx
+  <PriceChart data={sparklineContainerData} strokeColor={palette.positive} />
+```
+
+<Box width="100%" justifyContent="center">
+    <Image
+        options={{ maxWidth: "450px"}}
+        light="/img/components/sparkline-container/SparklineContainerDifferentColorLight.png"
+        dark="/img/components/sparkline-container/SparklineContainerDifferentColorDark.png"
+    />
+</Box>

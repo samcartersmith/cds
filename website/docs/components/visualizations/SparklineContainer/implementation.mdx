@@ -1,0 +1,257 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-mobile/visualizations/SparklineContainer](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/mobile/visualizations/SparklineContainer.tsx)
+
+<ComponentDetails componentName="SparklineContainer" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="SparklineContainer" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="SparklineContainer" templateName="a11y" />
+
+## Props
+
+### compact <Badge variant="mobile" />
+
+Show the chart in compact height
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="compact"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-compact" />
+
+### data <Badge variant="mobile" />
+
+Chart data bucketed by Period. Period is a string key
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="data"
+  required={false}
+  defaultValue=""
+  mobileOptions={['Record<Period, ChartData>']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-data" />
+
+### defaultPeriod <Badge variant="mobile" />
+
+default period value that the chart will use
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="defaultPeriod"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-defaultPeriod" />
+
+### disableScrubbing <Badge variant="mobile" />
+
+Disables the scrub user interaction from the chart
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="disableScrubbing"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-disableScrubbing" />
+
+### fallback <Badge variant="mobile" />
+
+Fallback shown in the chart when data is not available. This is usually a loading state.
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="fallback"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-fallback" />
+
+### formatAmount <Badge variant="mobile" />
+
+function used to format the amount of money used in the minMaxLabel
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="formatAmount"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-formatAmount" />
+
+### formatDate <Badge variant="mobile" />
+
+function used to format the date that is shown in the bottom of the chart as the user scrubs
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="formatDate"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-formatDate" />
+
+### hideMinMaxLabel <Badge variant="mobile" />
+
+Hides the min and max label
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="hideMinMaxLabel"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-hideMinMaxLabel" />
+
+### hidePeriodSelector <Badge variant="mobile" />
+
+Hides the period selector at the bottom of the chart
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="hidePeriodSelector"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-hidePeriodSelector" />
+
+### onPeriodChanged <Badge variant="mobile" />
+
+Callback when the user selects a new period.
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="onPeriodChanged"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(period: Period) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-onPeriodChanged" />
+
+### onScrub <Badge variant="mobile" />
+
+Callback used when the user is scrubbing. This will be called for every data point change.
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="onScrub"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(params: ChartScrubParams<Period>) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-onScrub" />
+
+### onScrubEnd <Badge variant="mobile" />
+
+Callback when a user finishes scrubbing
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="onScrubEnd"
+  required={false}
+  defaultValue=""
+  mobileOptions={['() => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-onScrubEnd" />
+
+### onScrubStart <Badge variant="mobile" />
+
+Callback when the user starts scrubbing
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="onScrubStart"
+  required={false}
+  defaultValue=""
+  mobileOptions={['() => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-onScrubStart" />
+
+### periods <Badge variant="mobile" />
+
+A list of periods that the chart will use. label is what is shown in the bottom of the chart and the value is the key.
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="periods"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-periods" />
+
+### strokeColor <Badge variant="mobile" />
+
+Color of the line
+
+<ApiDetails
+  componentName="SparklineContainer"
+  propertyName="strokeColor"
+  required={false}
+  defaultValue="primary palette color"
+  mobileOptions={['string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SparklineContainer" templateName="prop-strokeColor" />
+
+<ComponentDetails componentName="SparklineContainer" templateName="outro" />

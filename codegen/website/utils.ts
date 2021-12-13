@@ -27,11 +27,24 @@ export const includeSimpleFiles = ({ filePath }: ComponentDocgenResponse) =>
 export const excludeSimpleFiles = (res: ComponentDocgenResponse) => !includeSimpleFiles(res);
 
 export const getSubDirFiles =
-  (startPath: string | undefined = 'web', extension = '.tsx') =>
+  (startPath: string | undefined = 'web', extension = '.tsx', fullPaths?: string[]) =>
   async (subDir: SubDir) => {
     const subDirPath = await getSourcePath(`${startPath}/${subDir}`);
-    const files = await glob(`**/*${extension}`, { absolute: true, cwd: subDirPath });
-    return { subDir, files: files.filter(excludeIgnored) };
+    const fullFilePaths: string[] = fullPaths
+      ? await Promise.all(
+          fullPaths.map(async (fullPath: string) => {
+            return getSourcePath(fullPath);
+          }),
+        )
+      : [];
+    const allPaths: string[] = [subDirPath, ...fullFilePaths];
+
+    const files: string[][] = await Promise.all(
+      allPaths.map(async (filePath: string) =>
+        glob(`**/*${extension}`, { absolute: true, cwd: filePath }),
+      ),
+    );
+    return { subDir, files: files.flat().filter(excludeIgnored) };
   };
 
 export const sortNames = (prev: string, next: string) => prev.localeCompare(next);

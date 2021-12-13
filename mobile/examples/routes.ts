@@ -14,7 +14,6 @@ export const routes = {
   ButtonGroup: () => require('../buttons/__stories__/ButtonGroup.stories').default,
   Card: () => require('../cards/__stories__/Card.stories').default,
   Carousel: () => require('../media/__stories__/Carousel.stories').default,
-  Chart: () => require('../visualizations/chart/__stories__/Chart.stories').default,
   Checkbox: () => require('../controls/__stories__/Checkbox.stories').default,
   ContentCell: () => require('../cells/__stories__/ContentCell.stories').default,
   ContentCellFallback: () => require('../cells/__stories__/ContentCellFallback.stories').default,
@@ -48,6 +47,8 @@ export const routes = {
   SelectInput: () => require('../controls/__stories__/SelectInput.stories').default,
   Spacer: () => require('../layout/__stories__/Spacer.stories').default,
   Sparkline: () => require('../visualizations/__stories__/Sparkline.stories').default,
+  SparklineContainer: () =>
+    require('../visualizations/chart/__stories__/SparklineContainer.stories').default,
   SparklineGradient: () =>
     require('../visualizations/__stories__/SparklineGradient.stories').default,
   Spectrum: () => require('../system/__stories__/Spectrum.stories').default,

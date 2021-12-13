@@ -15,37 +15,32 @@ type PriceChartProps = Omit<
 
 export const DEFAULT_CHART_PERIOD = 'day';
 
-const usePeriods = () => {
-  return useMemo(
-    () => [
-      {
-        label: '1H',
-        value: 'hour' as const,
-      },
-      {
-        label: '1D',
-        value: 'day' as const,
-      },
-      {
-        label: '1W',
-        value: 'week' as const,
-      },
-      {
-        label: '1M',
-        value: 'month' as const,
-      },
-      {
-        label: '1Y',
-        value: 'year' as const,
-      },
-      {
-        label: 'All',
-        value: 'all' as const,
-      },
-    ],
-    [],
-  );
-};
+const periods = [
+  {
+    label: '1H',
+    value: 'hour' as const,
+  },
+  {
+    label: '1D',
+    value: 'day' as const,
+  },
+  {
+    label: '1W',
+    value: 'week' as const,
+  },
+  {
+    label: '1M',
+    value: 'month' as const,
+  },
+  {
+    label: '1Y',
+    value: 'year' as const,
+  },
+  {
+    label: 'All',
+    value: 'all' as const,
+  },
+];
 
 // eslint-disable-next-line consistent-return
 const getFormattingConfigForPeriod = (period: ChartPeriod) => {
@@ -80,7 +75,6 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
     return value.toLocaleString('en-US', config);
   }, []);
 
-  const periods = usePeriods();
   const fallback = useMemo(() => {
     // We override line palette since default line color is a bit too dark.
     // Changing to gray20 more closely matches the line color currently used in production

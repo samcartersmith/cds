@@ -29,7 +29,7 @@ const transformAndFilterPrices = (
     .sort((a, b) => a.date.getTime() - b.date.getTime());
 };
 
-export const assetData = (() => {
+export const sparklineContainerData = (() => {
   const { asset } = assetJSON.data.viewer.assetByUuid;
 
   return {

@@ -80,4 +80,5 @@ export const components = [
   'ProgressCircle',
   'Sparkline',
   'SparklineGradient',
+  'SparklineContainer',
 ] as const;
