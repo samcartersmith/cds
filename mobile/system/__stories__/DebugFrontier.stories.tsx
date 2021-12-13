@@ -17,7 +17,12 @@ const descriptions = {
   frontierSparkline: 'More details coming soon...',
 };
 
-const availableFlags = new Set(['frontierTypography', 'frontierButton', 'frontierColor']);
+const availableFlags = new Set([
+  'frontierTypography',
+  'frontierButton',
+  'frontierColor',
+  'frontierCard',
+]);
 
 type DebugFrontierProps = {
   updateLocalStorage?: FeatureFlagLocalStorageCallback;
