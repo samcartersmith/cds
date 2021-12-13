@@ -2,7 +2,7 @@
 title: API Design
 ---
 
-import {UnknownIcon} from '../../components/InlineIcons';
+import { UnknownIcon } from '../../components/InlineIcons';
 
 This guide provides a development path for common use cases that CDS developers come across. Sections marked with <UnknownIcon />
 represent topics where a final decision has not been made. Please check with the CDS team before using an undecided convention.
@@ -24,19 +24,19 @@ Use a prefix that clearly indicates a boolean value `is` `can` `has` `should`
 
 ```jsx
 <Component isVisible={false}>
-    <div/>
+  <div />
 </Component>
 ```
 
 ```jsx
 <Section shouldShowSubSection={true}>
-    <div/>
+  <div />
 </Section>
 ```
 
 ```jsx
 <Element isCompact={true}>
-    <div/>
+  <div />
 </Element>
 ```
 
@@ -85,7 +85,7 @@ Use prefix element or elements `hoverElement` `listItemElements`
 Use singular naming
 
 ```tsx
-type Position = 'relative' | 'absolute' | 'fixed'
+type Position = 'relative' | 'absolute' | 'fixed';
 ```
 
 ### Prop Types <UnknownIcon />
@@ -101,6 +101,7 @@ type ButtonProps = ButtonBaseProps & PressableProps;
 Overlay components provides an additional layer on top of current interface.
 They can be toggled on/off using a boolean prop.
 Current CDS Overlay components:
+
 - [Modal](/components/modal)
 - [Alert](/components/alert)
 - Overlay
@@ -117,23 +118,62 @@ All the overlay components above should follow the following conventions to be c
 
 Overlay components visibility should be controlled using the `visible` prop.
 
-#### Controlled :heavy_check_mark:  
-```jsx
-const [visible, setVisible] = useState(false);
+#### Controlled :heavy_check_mark:
 
-<Modal visible={visible}>
-  {children}
-</Modal>
+```jsx
+const [visible, { toggleOn, toggleOff }] = useToggler(false);
+
+<Modal visible={visible}>{children}</Modal>;
 ```
 
 #### Uncontrolled :x:
-```jsx
-const [visible, setVisible] = useState(false);
 
-{visible &&
-  <Modal>
-    {children}
-  </Modal>
+```jsx
+const [visible, { toggleOn, toggleOff }] = useToggler(false);
+
+{
+  visible && <Modal>{children}</Modal>;
+}
+```
+
+### Visibility Handling
+
+Methods that control component visibility should have declarative names that mirror
+the indicate the desired behavior. For example, visibility handlers for a
+`PopoverMenu` might be named:
+
+- `openMenu`
+- `closeMenu`
+
+```jsx
+const [visible, { toggleOn, toggleOff }] = useToggler(false);
+
+{
+  visible && (
+    <PopoverMenu openMenu={toggleOn} closeMenu={toggleOff}>
+      {children}
+    </PopoverMenu>
+  );
+}
+```
+
+#### Accessibility
+
+If a component's visibility is controlled by another component, use the
+`useAccessibleControlledVisibility` hook which will add accessibility props to
+both the trigger and the controlled component.
+
+```jsx
+const accessibilityLabel = 'open-menu-button';
+const [visible, { toggleOn, toggleOff }] = useToggler(false);
+const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
+  useAccessibleControlledVisibility(visible, accessibilityLabel);
+
+<Trigger {...triggerAccessibilityProps}>Click me!</Trigger>;
+{
+  visible && (
+    <PopoverMenu {...controlledElementAccessibilityProps}>My visibility is controlled</PopoverMenu>
+  );
 }
 ```
 
@@ -143,9 +183,8 @@ Lifecycle methods are used to operate on component visibility state changes.
 Provide the lifecycle methods that you feel are likely needed, and add more methods base on consumer requests.
 
 | Method     | Description                                    |
-|------------|------------------------------------------------|
+| ---------- | ---------------------------------------------- |
 | onWillShow | Callback fired before the component shows.     |
 | onDidShow  | Callback fired after the component is visible. |
 | onWillHide | Callback fired before the component hides.     |
 | onDidHide  | Callback fired after the component is hidden.  |
-
