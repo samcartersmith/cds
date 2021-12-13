@@ -5,6 +5,9 @@
 import { css } from 'linaria';
 
 export const all = {
+  0: css`
+    margin: calc(-1 * var(--spacing-0));
+  `,
   1: css`
     margin: calc(-1 * var(--spacing-1));
   `,
@@ -41,6 +44,9 @@ export const all = {
 };
 
 export const top = {
+  0: css`
+    margin-top: calc(-1 * var(--spacing-0));
+  `,
   1: css`
     margin-top: calc(-1 * var(--spacing-1));
   `,
@@ -77,6 +83,9 @@ export const top = {
 };
 
 export const bottom = {
+  0: css`
+    margin-bottom: calc(-1 * var(--spacing-0));
+  `,
   1: css`
     margin-bottom: calc(-1 * var(--spacing-1));
   `,
@@ -113,6 +122,9 @@ export const bottom = {
 };
 
 export const left = {
+  0: css`
+    margin-left: calc(-1 * var(--spacing-0));
+  `,
   1: css`
     margin-left: calc(-1 * var(--spacing-1));
   `,
@@ -149,6 +161,9 @@ export const left = {
 };
 
 export const right = {
+  0: css`
+    margin-right: calc(-1 * var(--spacing-0));
+  `,
   1: css`
     margin-right: calc(-1 * var(--spacing-1));
   `,

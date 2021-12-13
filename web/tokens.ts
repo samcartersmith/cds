@@ -4,6 +4,7 @@
  */
 
 export const spacing = {
+  '0': 'var(--spacing-0)',
   '1': 'var(--spacing-1)',
   '2': 'var(--spacing-2)',
   '3': 'var(--spacing-3)',

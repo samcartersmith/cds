@@ -1,5 +1,5 @@
 import { scales, RootScalePreference } from './configs/scaleConfig';
-import { spacingScaleWithZero } from './configs/spacingConfig';
+import { spacingScale } from './configs/spacingConfig';
 import { typographyConfig } from './configs/typographyConfig';
 import { Spectrum, RootSpectrumPreference } from './Spectrum/Spectrum';
 import { avatarPixelSizes, avatarSizes } from './configs/avatarConfig';
@@ -30,7 +30,7 @@ const templates = {
   },
   'common/types/SpacingScale.ts': {
     types: {
-      SpacingScale: spacingScaleWithZero,
+      SpacingScale: spacingScale,
     },
   },
   'common/types/AvatarSize.ts': {

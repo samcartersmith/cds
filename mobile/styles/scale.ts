@@ -61,6 +61,7 @@ export const xSmall = {
     legal: { fontSize: 10, lineHeight: 12, textTransform: 'none', fontFamily: 'Inter-Regular' },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 12,
     '3': 16,
@@ -140,6 +141,7 @@ export const small = {
     legal: { fontSize: 11, lineHeight: 16, textTransform: 'none', fontFamily: 'Inter-Regular' },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 12,
     '3': 16,
@@ -219,6 +221,7 @@ export const medium = {
     legal: { fontSize: 12, lineHeight: 16, textTransform: 'none', fontFamily: 'Inter-Regular' },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 12,
     '3': 16,
@@ -288,6 +291,7 @@ export const large = {
     legal: { fontSize: 13, lineHeight: 16, textTransform: 'none', fontFamily: 'Inter-Regular' },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,
@@ -352,6 +356,7 @@ export const xLarge = {
     legal: { fontSize: 15, lineHeight: 20, textTransform: 'none', fontFamily: 'Inter-Regular' },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,
@@ -416,6 +421,7 @@ export const xxLarge = {
     legal: { fontSize: 17, lineHeight: 20, textTransform: 'none', fontFamily: 'Inter-Regular' },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,
@@ -480,6 +486,7 @@ export const xxxLarge = {
     legal: { fontSize: 19, lineHeight: 24, textTransform: 'none', fontFamily: 'Inter-Regular' },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,

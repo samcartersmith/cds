@@ -5,6 +5,9 @@
 import { css } from 'linaria';
 
 export const all = {
+  0: css`
+    padding: var(--spacing-0);
+  `,
   1: css`
     padding: var(--spacing-1);
   `,
@@ -41,6 +44,9 @@ export const all = {
 };
 
 export const top = {
+  0: css`
+    padding-top: var(--spacing-0);
+  `,
   1: css`
     padding-top: var(--spacing-1);
   `,
@@ -77,6 +83,9 @@ export const top = {
 };
 
 export const bottom = {
+  0: css`
+    padding-bottom: var(--spacing-0);
+  `,
   1: css`
     padding-bottom: var(--spacing-1);
   `,
@@ -113,6 +122,9 @@ export const bottom = {
 };
 
 export const left = {
+  0: css`
+    padding-left: var(--spacing-0);
+  `,
   1: css`
     padding-left: var(--spacing-1);
   `,
@@ -149,6 +161,9 @@ export const left = {
 };
 
 export const right = {
+  0: css`
+    padding-right: var(--spacing-0);
+  `,
   1: css`
     padding-right: var(--spacing-1);
   `,

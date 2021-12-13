@@ -23,29 +23,29 @@ export const useInternalSpacingStyles = ({
     const spacingClasses = [];
     const styles = isInverted ? marginStyles : paddingStyles;
 
-    if (all) {
+    if (all !== undefined) {
       spacingClasses.push(styles.all[all]);
     }
 
-    if (vertical) {
+    if (vertical !== undefined) {
       spacingClasses.push(styles.top[vertical]);
       spacingClasses.push(styles.bottom[vertical]);
     }
 
-    if (horizontal) {
+    if (horizontal !== undefined) {
       spacingClasses.push(styles.left[horizontal]);
       spacingClasses.push(styles.right[horizontal]);
     }
 
-    if (top) {
+    if (top !== undefined) {
       spacingClasses.push(styles.top[top]);
     }
 
-    if (bottom) {
+    if (bottom !== undefined) {
       spacingClasses.push(styles.bottom[bottom]);
     }
 
-    if (start) {
+    if (start !== undefined) {
       if (isRtl()) {
         spacingClasses.push(styles.right[start]);
       } else {
@@ -53,7 +53,7 @@ export const useInternalSpacingStyles = ({
       }
     }
 
-    if (end) {
+    if (end !== undefined) {
       if (isRtl()) {
         spacingClasses.push(styles.left[end]);
       } else {

@@ -91,6 +91,7 @@ export const xSmall = {
     },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 12,
     '3': 16,
@@ -200,6 +201,7 @@ export const small = {
     },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 12,
     '3': 16,
@@ -309,6 +311,7 @@ export const medium = {
     },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 12,
     '3': 16,
@@ -418,6 +421,7 @@ export const large = {
     },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,
@@ -527,6 +531,7 @@ export const xLarge = {
     },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,
@@ -636,6 +641,7 @@ export const xxLarge = {
     },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,
@@ -745,6 +751,7 @@ export const xxxLarge = {
     },
   },
   spacing: {
+    '0': 0,
     '1': 8,
     '2': 16,
     '3': 24,
