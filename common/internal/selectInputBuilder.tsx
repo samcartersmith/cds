@@ -15,23 +15,23 @@ type LinkableProps = {
   onPress?: null | ((event: unknown) => void) | undefined;
 };
 
-type SelectOptionCellProps = {
+type MenuItemProps = {
   value: string;
   key?: string;
   ref?: ((ref: HTMLElement) => void) | undefined;
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-} & SelectOptionCellBaseProps &
-  LinkableProps;
+} & LinkableProps;
 
 export type SelectInputProps = {
-  children: ReactElement<SelectOptionCellProps>[];
+  children: ReactElement<MenuItemProps>[];
   onChange?: (newValue: string) => void;
 } & SelectInputBaseProps;
 
 export type CreateSelectInputStoriesProps = {
   SelectInput: React.ComponentType<SelectInputProps>;
+  MenuItem: React.ComponentType<MenuItemProps>;
   VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOptionCell: React.ComponentType<SelectOptionCellProps>;
+  SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps>;
   ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
   spectrum?: Spectrum;
   scale?: Scale;
@@ -54,6 +54,7 @@ export const priceOptions = [
 
 export const selectInputBuilder = ({
   SelectInput,
+  MenuItem,
   VStack,
   SelectOptionCell,
   ThemeProvider,
@@ -71,7 +72,8 @@ export const selectInputBuilder = ({
     SelectInputProps,
     'variant' | 'label' | 'placeholder' | 'accessibilityLabel' | 'testID' | 'onPress'
   >) => {
-    const [value, setValue] = useState<string | undefined>();
+    const [value, setValue] = useState<string | undefined>('');
+
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={600}>
@@ -86,13 +88,14 @@ export const selectInputBuilder = ({
             onPress={onPress}
           >
             {priceOptions.map((option) => (
-              <SelectOptionCell
-                value={option}
-                key={option}
-                title={option}
-                description="BTC"
-                testID={`option-${option}`}
-              />
+              <MenuItem value={option} key={option}>
+                <SelectOptionCell
+                  title={option}
+                  description="BTC"
+                  testID={`option-${option}`}
+                  selected={value === option}
+                />
+              </MenuItem>
             ))}
           </SelectInput>
         </VStack>
@@ -100,7 +103,8 @@ export const selectInputBuilder = ({
     );
   };
   const InputStackOptions = () => {
-    const [value, setValue] = useState<string | undefined>();
+    const [value, setValue] = useState<string | undefined>('');
+
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={100}>
@@ -112,7 +116,14 @@ export const selectInputBuilder = ({
             helperText="You only get one choice"
           >
             {priceOptions.map((option) => (
-              <SelectOptionCell value={option} key={option} title={option} description="BTC" />
+              <MenuItem value={option} key={option}>
+                <SelectOptionCell
+                  title={option}
+                  description="BTC"
+                  testID={`option-${option}`}
+                  selected={value === option}
+                />
+              </MenuItem>
             ))}
           </SelectInput>
         </VStack>
@@ -120,7 +131,8 @@ export const selectInputBuilder = ({
     );
   };
   const WithLabel = () => {
-    const [value, setValue] = useState<string | undefined>();
+    const [value, setValue] = useState<string | undefined>('');
+
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={100}>
@@ -131,7 +143,14 @@ export const selectInputBuilder = ({
             label="Pick your poison"
           >
             {priceOptions.map((option) => (
-              <SelectOptionCell value={option} key={option} title={option} description="BTC" />
+              <MenuItem value={option} key={option}>
+                <SelectOptionCell
+                  title={option}
+                  description="BTC"
+                  testID={`option-${option}`}
+                  selected={value === option}
+                />
+              </MenuItem>
             ))}
           </SelectInput>
         </VStack>
@@ -139,7 +158,8 @@ export const selectInputBuilder = ({
     );
   };
   const Compact = () => {
-    const [value, setValue] = useState<string | undefined>();
+    const [value, setValue] = useState<string | undefined>('');
+
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={100}>
@@ -152,13 +172,15 @@ export const selectInputBuilder = ({
             helperText="You only get one choice"
           >
             {priceOptions.map((option) => (
-              <SelectOptionCell
-                compact
-                value={option}
-                key={option}
-                title={option}
-                description="BTC"
-              />
+              <MenuItem value={option} key={option}>
+                <SelectOptionCell
+                  compact
+                  title={option}
+                  description="BTC"
+                  testID={`option-${option}`}
+                  selected={value === option}
+                />
+              </MenuItem>
             ))}
           </SelectInput>
         </VStack>

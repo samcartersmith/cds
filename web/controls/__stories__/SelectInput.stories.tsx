@@ -7,18 +7,24 @@ import { VStack } from '../../layout/VStack';
 import { SelectOptionCell } from '../../cells/SelectOptionCell';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { SelectInput } from '../SelectInput';
+import { MenuItem } from '../../overlays/MenuItem';
 
 export default {
   title: 'Core Components/Inputs/SelectInput',
   component: SelectInput,
 };
 
-export const { Default, InputStackOptions, WithLabel, Compact, Variants } = selectInputBuilder({
+const components = {
   SelectInput,
+  MenuItem,
   VStack,
   SelectOptionCell,
   ThemeProvider,
-} as CreateSelectInputStoriesProps);
+};
+
+export const { Default, InputStackOptions, WithLabel, Compact, Variants } = selectInputBuilder(
+  components as CreateSelectInputStoriesProps,
+);
 
 export const {
   Default: DarkMode,
@@ -27,10 +33,7 @@ export const {
   Compact: DarkCompact,
   Variants: DarkVariants,
 } = selectInputBuilder({
-  SelectInput,
-  VStack,
-  SelectOptionCell,
-  ThemeProvider,
+  ...components,
   spectrum: 'dark',
 } as CreateSelectInputStoriesProps);
 
@@ -41,9 +44,6 @@ export const {
   Compact: DenseCompact,
   Variants: DenseVariants,
 } = selectInputBuilder({
-  SelectInput,
-  VStack,
-  SelectOptionCell,
-  ThemeProvider,
+  ...components,
   scale: 'xSmall',
 } as CreateSelectInputStoriesProps);

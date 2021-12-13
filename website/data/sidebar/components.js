@@ -133,7 +133,6 @@ module.exports = {
         'components/overlays/Alert/alert',
         'components/overlays/Toast/toast',
         'components/overlays/Tooltip/tooltip',
-        'components/overlays/Menu/menu',
         'components/overlays/Modal/modal',
         'components/overlays/ModalBody/modal-body',
         'components/overlays/ModalFooter/modal-footer',

@@ -10,9 +10,11 @@ import { SelectInput } from '../SelectInput';
 import { VStack } from '../../layout/VStack';
 import { SelectOptionCell } from '../../cells/SelectOptionCell';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { MenuItem } from '../../overlays/MenuItem';
 
 const { Default: MockSelectInput } = selectInputBuilder({
   SelectInput,
+  MenuItem,
   VStack,
   SelectOptionCell,
   ThemeProvider,
@@ -66,7 +68,6 @@ describe('SelectInput', () => {
 
     // the first option cell content should replace the placeholder
     expect(firstSelectOptionCell).toBeDefined();
-    // TODO: check that the menu should be dismounted
   });
   it('replaces the placeholder text with the selected value when pressed', async () => {
     const { getByText } = render(<MockSelectInput placeholder={mockPlaceholder} />);

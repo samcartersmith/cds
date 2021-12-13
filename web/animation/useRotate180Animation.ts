@@ -6,7 +6,7 @@ import {
 import { Animated } from './Animated';
 
 export const useRotate180Animation = () => {
-  const rotateAnimationRef = useRef<HTMLButtonElement>(null);
+  const rotateAnimationRef = useRef<HTMLDivElement>(null);
 
   const animateCaretIn = useCallback(async (): Promise<{ finished: boolean } | undefined> => {
     return Animated.timing(rotateAnimationRef, {

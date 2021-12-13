@@ -1336,27 +1336,6 @@ export const Tooltip = {
   ),
 };
 
-export const Menu = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Menu/implementation.mdx'
-      ),
-  ),
-  menu: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Menu/menu.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Menu/usage.mdx'
-      ),
-  ),
-};
-
 export const Modal = {
   a11y: React.lazy(
     async () =>

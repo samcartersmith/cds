@@ -1,40 +1,28 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { SelectOptionCellBaseProps } from '@cbhq/cds-common/types';
-import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { selectOptionCellMinHeight } from '@cbhq/cds-common/tokens/selectInput';
-import { LinkableProps } from '../system';
+import {
+  listHeight,
+  compactListHeight,
+  selectCellSpacingConfig,
+} from '@cbhq/cds-common/tokens/cell';
 import { Cell, overflowClassName } from './Cell';
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
 import { CellAccessory } from './CellAccessory';
 
-export type SelectOptionCellProps = {
-  /** automatically focus a select option if it's already been selected
-   * Note: the value passed will be ignored on Web because SelectInput overrides it with React.cloneElement()
-   */
-  value: string;
-  /** Note: the value passed will be ignored on Web because SelectInput overrides it with React.cloneElement() */
-  key?: string;
-  /** Note: the value passed will be ignored on Web because SelectInput overrides it with React.cloneElement() */
-  ref?: ((ref: HTMLElement) => void) | undefined;
-  /** callback fired whenever a key is pressed while SelectOptionCell is focused */
-  onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-} & SelectOptionCellBaseProps &
-  LinkableProps;
-
 export const SelectOptionCell = memo(
   forwardRef(
     (
-      { onKeyDown, title, description, multiline, selected, ...props }: SelectOptionCellProps,
+      { title, description, multiline, selected, compact, ...props }: SelectOptionCellBaseProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
-      const minHeight = useScaleConditional(selectOptionCellMinHeight);
+      const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
+
       return (
         <Cell
           {...selectCellSpacingConfig}
           ref={ref}
-          onKeyDown={onKeyDown}
           borderRadius="none"
           minHeight={minHeight}
           accessory={selected ? <CellAccessory type="selected" /> : undefined}

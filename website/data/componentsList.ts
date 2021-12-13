@@ -54,7 +54,6 @@ export const components = [
   'Alert',
   'Toast',
   'Tooltip',
-  'Menu',
   'Modal',
   'ModalBody',
   'ModalFooter',

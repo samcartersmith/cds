@@ -41,12 +41,10 @@ export type PopoverMenuBaseProps = {
    * Since the trigger is cloned, if you pass it an onPress handler directly, it will not fire. You will need to use this prop instead.
    */
   onPress?: NoopFn;
-  /** Callback that mounts and unmounts the Menu */
-  togglePopoverMenuVisibility: {
-    toggleOn: () => void;
-    toggleOff: () => void;
-    toggle: () => void;
-  };
+  /** Callback that mounts the Menu */
+  openMenu: NoopFn;
+  /** Callback that unMounts the Menu */
+  closeMenu: NoopFn;
   /**
    * Whether Menu is mounted or dismounted
    * @default false
