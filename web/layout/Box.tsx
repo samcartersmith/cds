@@ -30,6 +30,7 @@ import {
   ArticleAccessibilityRole,
   AsideAccessibilityRole,
   CSSMap,
+  Display,
   DivAccessibilityRole,
   HeaderFooterAccessibilityRole,
   MainAccessibilityRole,
@@ -82,6 +83,10 @@ const overflowStyles: CSSMap<BoxProps['overflow']> = {
 export type BoxProps<As extends BoxElement = 'div'> = {
   /** The semantic element to render the box as. Is necessary for accessibility support and assistive technologies. */
   as?: As;
+  /** The display value to uss in CSS display attribute.
+   * @default flex
+   */
+  display?: Display;
   /** Semantic role whole using a non-semantic element. */
   role?: InferBoxRole<As>;
   /** Control how the content should overflow. */
@@ -126,8 +131,9 @@ export const BoxInner = forwardRef(
       accessibilityLabel,
       accessibilityLabelledBy,
       background,
-      elevation,
       children,
+      display = 'flex',
+      elevation,
       overflow,
       opacity,
       role,
@@ -210,6 +216,7 @@ export const BoxInner = forwardRef(
         ref: forwardedRef,
         className: cx(
           getFlexStyles({
+            display,
             alignContent,
             alignItems,
             alignSelf,

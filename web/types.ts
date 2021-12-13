@@ -2,6 +2,8 @@ import { PaletteAlias, SpectrumAlias } from '@cbhq/cds-common';
 import { opacityHovered } from '@cbhq/cds-common/tokens/interactable';
 import { CssVariableFn } from '@cbhq/cds-utils';
 
+export type { Display } from './styles/display';
+
 //  web only
 export type FilteredHTMLAttributes<T, P extends keyof T = never> = Omit<
   T,

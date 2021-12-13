@@ -1,11 +1,8 @@
 import { FlexStyles } from '@cbhq/cds-common';
 import { css, cx } from 'linaria';
 
-import { CSSMap } from '../types';
-
-export const flex = css`
-  display: flex;
-`;
+import { CSSMap, Display } from '../types';
+import { display as displayStyles } from './display';
 
 export const alignContent: CSSMap<FlexStyles['alignContent']> = {
   'flex-start': css`
@@ -115,9 +112,12 @@ export const justifyContent: CSSMap<FlexStyles['justifyContent']> = {
   `,
 };
 
-export const getFlexStyles = (props: FlexStyles) => {
+export const getFlexStyles = ({
+  display = 'flex',
+  ...props
+}: FlexStyles & { display?: Display }) => {
   return cx(
-    flex,
+    displayStyles[display],
     props.alignContent && alignContent[props.alignContent],
     props.alignItems && alignItems[props.alignItems],
     props.alignSelf && alignSelf[props.alignSelf],

@@ -2,8 +2,13 @@ import { render } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
 
 import { Box, BoxProps } from '../Box';
+import { display } from '../../styles/display';
 
 const DEFAULT_CLASS = 'flex';
+
+function keys<T>(obj: { [key in keyof T]: T[key] }) {
+  return Object.keys(obj) as unknown as Extract<keyof T, string>[];
+}
 
 function expectClassName<K extends keyof BoxProps>(
   prop: K,
@@ -63,6 +68,10 @@ describe('Box', () => {
       'positive',
       'negative',
     ]);
+  });
+
+  describe('display', () => {
+    expectClassName('display', keys(display), '');
   });
 
   describe('border', () => {

@@ -409,6 +409,21 @@ This is a migration escape hatch. It is not intended to be used normally.
 
 <ComponentDetails componentName="Fallback" templateName="prop-dangerouslySetStyle" />
 
+### display <Badge variant="web" />
+
+The display value to uss in CSS display attribute.
+
+<ApiDetails
+  componentName="Fallback"
+  propertyName="display"
+  required={false}
+  defaultValue="flex"
+  mobileOptions={[]}
+  webOptions={['contents', 'flex', 'inline-flex']}
+/>
+
+<ComponentDetails componentName="Fallback" templateName="prop-display" />
+
 ### elevation
 
 Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
