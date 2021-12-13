@@ -2,12 +2,9 @@ import React, { useCallback, memo, useEffect, forwardRef, ForwardedRef } from 'r
 import { TouchableWithoutFeedback, View } from 'react-native';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { SelectInputBaseProps } from '@cbhq/cds-common/types';
+import { SelectBaseProps } from '@cbhq/cds-common/types';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import {
-  animateCaretInConfig,
-  animateCaretOutConfig,
-} from '@cbhq/cds-common/animation/selectInput';
+import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common/animation/select';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
@@ -19,7 +16,7 @@ import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
 import { HelperText } from './HelperText';
 
-export const SelectInput = memo(
+export const Select = memo(
   forwardRef(
     (
       {
@@ -36,7 +33,7 @@ export const SelectInput = memo(
         accessibilityHint,
         compact,
         onPress,
-      }: SelectInputBaseProps,
+      }: SelectBaseProps,
       ref: ForwardedRef<TouchableWithoutFeedback>,
     ) => {
       const { rotateAnimation, animateRotateIn, animateRotateOut, rotateAnimationStyles } =
@@ -61,7 +58,7 @@ export const SelectInput = memo(
         toggleSelectTray.toggleOff();
       }, [animateRotateIn, animateRotateOut, children, rotateAnimation, toggleSelectTray]);
 
-      const onSelectInputTriggerPress = useCallback(() => {
+      const onSelectTriggerPress = useCallback(() => {
         onPress?.();
         toggleSelectTray.toggleOn();
       }, [onPress, toggleSelectTray]);
@@ -69,7 +66,7 @@ export const SelectInput = memo(
       return (
         <View>
           <TouchableWithoutFeedback
-            onPress={onSelectInputTriggerPress}
+            onPress={onSelectTriggerPress}
             testID={testID}
             accessibilityLabel={accessibilityLabel ?? label}
             accessibilityHint={accessibilityHint ?? label}

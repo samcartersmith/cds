@@ -3,7 +3,7 @@ import { Animated } from 'react-native';
 import { MotionBaseSpec } from '@cbhq/cds-common';
 import { convertMotionConfig } from './convertMotionConfig';
 
-type SelectInputAnimation = {
+type SelectAnimation = {
   rotateAnimation: Animated.Value;
   animateRotateIn: Animated.CompositeAnimation;
   animateRotateOut: Animated.CompositeAnimation;
@@ -18,7 +18,7 @@ export const useRotateAnimation = (
   animateInConfig: MotionBaseSpec,
   animateOutConfig: MotionBaseSpec,
   degree: number,
-): SelectInputAnimation => {
+): SelectAnimation => {
   const rotateAnimation = useRef(new Animated.Value(0));
 
   const animateRotateIn = Animated.timing(

@@ -60,7 +60,7 @@ module.exports = {
         'components/controls/InputIcon/input-icon',
         'components/controls/InputIconButton/input-icon-button',
         'components/controls/RadioGroup/radio-group',
-        'components/controls/SelectInput/select-input',
+        'components/controls/Select/select',
         'components/controls/Switch/switch',
         'components/controls/TextInput/text-input',
       ],

@@ -1,14 +1,11 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
-import {
-  selectInputBuilderMobile,
-  CreateSelectInputProps,
-} from '@cbhq/cds-common/internal/selectInputBuilder';
+import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { Tray } from '../../overlays/Tray/Tray';
 
-import { SelectInput } from '../SelectInput';
+import { Select } from '../Select';
 import { SelectOptionCell } from '../SelectOptionCell';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -20,21 +17,21 @@ const longListOfOptions = prices.slice(0, 10).map((option) => {
   };
 });
 
-export default function SelectInputScreen() {
-  const { DefaultSelectInput, ScrollableSelectInput } = selectInputBuilderMobile({
+export default function SelectScreen() {
+  const { DefaultSelect, ScrollableSelect } = selectBuilderMobile({
     Tray,
-    SelectInput,
+    Select,
     SelectOptionCell,
     ScrollView,
-  } as CreateSelectInputProps);
+  } as CreateSelectProps);
 
   return (
     <ExampleScreen>
       <Example title="Default with Tray">
-        <DefaultSelectInput placeholder="Cake or death?" options={options} />
+        <DefaultSelect placeholder="Cake or death?" options={options} />
       </Example>
       <Example title="With Helper Text & Scrollable Tray">
-        <ScrollableSelectInput
+        <ScrollableSelect
           placeholder="Choose an option"
           options={longListOfOptions}
           hasDescription
@@ -42,14 +39,14 @@ export default function SelectInputScreen() {
         />
       </Example>
       <Example title="With Label">
-        <DefaultSelectInput
+        <DefaultSelect
           label="What is your demise? "
           placeholder="Choose wisely... "
           options={options}
         />
       </Example>
       <Example title="Compact with Label">
-        <ScrollableSelectInput
+        <ScrollableSelect
           label="$"
           placeholder="1,000,000"
           compact
@@ -59,7 +56,7 @@ export default function SelectInputScreen() {
         />
       </Example>
       <Example title="Disabled">
-        <DefaultSelectInput
+        <DefaultSelect
           placeholder="This is a really long placeholder that will overflow and be truncated"
           disabled
           options={options}
@@ -68,7 +65,7 @@ export default function SelectInputScreen() {
         />
       </Example>
       <Example title="Negative without HandleBar">
-        <DefaultSelectInput
+        <DefaultSelect
           label="I am a label"
           variant="negative"
           placeholder="Someone needs to fix this"
@@ -78,7 +75,7 @@ export default function SelectInputScreen() {
         />
       </Example>
       <Example title="Positive">
-        <DefaultSelectInput
+        <DefaultSelect
           label="What do you want?"
           variant="positive"
           placeholder="Some positive feedback"

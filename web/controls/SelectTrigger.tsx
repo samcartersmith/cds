@@ -1,5 +1,5 @@
 import React, { RefObject, ForwardedRef, MouseEvent, forwardRef } from 'react';
-import { InputVariant, SelectInputBaseProps } from '@cbhq/cds-common';
+import { InputVariant, SelectBaseProps } from '@cbhq/cds-common';
 import { InputStack } from './InputStack';
 import { InputLabel } from './InputLabel';
 import { HStack } from '../layout/HStack';
@@ -8,15 +8,15 @@ import { TextBody } from '../typography/TextBody';
 import { InputIcon } from './InputIcon';
 import { HelperText } from './HelperText';
 
-export type SelectInputTriggerProps = {
+export type SelectTriggerProps = {
   rotateAnimationRef: RefObject<HTMLDivElement>;
   ref: ForwardedRef<HTMLButtonElement>;
-  onSelectInputPress: (event: MouseEvent<HTMLElement>) => void;
+  onSelectPress: (event: MouseEvent<HTMLElement>) => void;
   triggerRef: RefObject<HTMLButtonElement>;
   labelTextColor: InputVariant;
-} & Omit<SelectInputBaseProps, 'children' | 'onPress'>;
+} & Omit<SelectBaseProps, 'children' | 'onPress'>;
 
-export const SelectInputTrigger = forwardRef(
+export const SelectTrigger = forwardRef(
   (
     {
       compact,
@@ -29,11 +29,11 @@ export const SelectInputTrigger = forwardRef(
       testID,
       variant,
       width,
-      onSelectInputPress,
+      onSelectPress,
       triggerRef,
       accessibilityLabel,
       labelTextColor,
-    }: SelectInputTriggerProps,
+    }: SelectTriggerProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
     return (
@@ -56,7 +56,7 @@ export const SelectInputTrigger = forwardRef(
             width="100%"
             noScaleOnPress
             ref={triggerRef}
-            onPress={onSelectInputPress}
+            onPress={onSelectPress}
             testID={testID}
             accessibilityLabel={accessibilityLabel}
           >

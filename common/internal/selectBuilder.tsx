@@ -1,6 +1,6 @@
 import React, { useState, ReactElement } from 'react';
 import type {
-  SelectInputBaseProps,
+  SelectBaseProps,
   SelectOptionCellBaseProps,
   TrayBaseProps,
   Spectrum,
@@ -22,13 +22,13 @@ type MenuItemProps = {
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
 } & LinkableProps;
 
-export type SelectInputProps = {
+export type SelectProps = {
   children: ReactElement<MenuItemProps>[];
   onChange?: (newValue: string) => void;
-} & SelectInputBaseProps;
+} & SelectBaseProps;
 
-export type CreateSelectInputStoriesProps = {
-  SelectInput: React.ComponentType<SelectInputProps>;
+export type CreateSelectStoriesProps = {
+  Select: React.ComponentType<SelectProps>;
   MenuItem: React.ComponentType<MenuItemProps>;
   VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
   SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps>;
@@ -52,15 +52,15 @@ export const priceOptions = [
   '65655',
 ];
 
-export const selectInputBuilder = ({
-  SelectInput,
+export const selectBuilder = ({
+  Select,
   MenuItem,
   VStack,
   SelectOptionCell,
   ThemeProvider,
   spectrum,
   scale,
-}: CreateSelectInputStoriesProps) => {
+}: CreateSelectStoriesProps) => {
   const Default = ({
     variant,
     placeholder = 'Choose something',
@@ -69,7 +69,7 @@ export const selectInputBuilder = ({
     testID,
     onPress,
   }: Pick<
-    SelectInputProps,
+    SelectProps,
     'variant' | 'label' | 'placeholder' | 'accessibilityLabel' | 'testID' | 'onPress'
   >) => {
     const [value, setValue] = useState<string | undefined>('');
@@ -77,7 +77,7 @@ export const selectInputBuilder = ({
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={600}>
-          <SelectInput
+          <Select
             value={value}
             variant={variant}
             label={label}
@@ -97,7 +97,7 @@ export const selectInputBuilder = ({
                 />
               </MenuItem>
             ))}
-          </SelectInput>
+          </Select>
         </VStack>
       </ThemeProvider>
     );
@@ -108,7 +108,7 @@ export const selectInputBuilder = ({
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={100}>
-          <SelectInput
+          <Select
             value={value}
             onChange={setValue}
             placeholder="Choose something"
@@ -125,7 +125,7 @@ export const selectInputBuilder = ({
                 />
               </MenuItem>
             ))}
-          </SelectInput>
+          </Select>
         </VStack>
       </ThemeProvider>
     );
@@ -136,7 +136,7 @@ export const selectInputBuilder = ({
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={100}>
-          <SelectInput
+          <Select
             value={value}
             onChange={setValue}
             placeholder="Choose something"
@@ -152,7 +152,7 @@ export const selectInputBuilder = ({
                 />
               </MenuItem>
             ))}
-          </SelectInput>
+          </Select>
         </VStack>
       </ThemeProvider>
     );
@@ -163,7 +163,7 @@ export const selectInputBuilder = ({
     return (
       <ThemeProvider spectrum={spectrum} scale={scale}>
         <VStack spacing={2} background minHeight={100}>
-          <SelectInput
+          <Select
             value={value}
             compact
             onChange={setValue}
@@ -182,7 +182,7 @@ export const selectInputBuilder = ({
                 />
               </MenuItem>
             ))}
-          </SelectInput>
+          </Select>
         </VStack>
       </ThemeProvider>
     );
@@ -207,8 +207,8 @@ export const selectInputBuilder = ({
   };
 };
 
-export type CreateSelectInputProps = {
-  SelectInput: React.ComponentType<SelectInputBaseProps>;
+export type CreateSelectProps = {
+  Select: React.ComponentType<SelectBaseProps>;
   Tray: React.ComponentType<TrayBaseProps>;
   SelectOptionCell: React.ComponentType<SelectOptionCellBaseProps & LinkableProps>;
   ScrollView: React.ComponentType;
@@ -219,21 +219,21 @@ type OptionProps = {
   value: string;
 };
 
-type DefaultSelectInputTypes = {
+type DefaultSelectTypes = {
   options: OptionProps[];
   trayTitle?: string;
   hasDescription?: boolean;
   compactSelectOptionCell?: boolean;
   hideHandleBar?: boolean;
-} & Omit<SelectInputBaseProps, 'children'>;
+} & Omit<SelectBaseProps, 'children'>;
 
-export const selectInputBuilderMobile = ({
+export const selectBuilderMobile = ({
   Tray,
-  SelectInput,
+  Select,
   SelectOptionCell,
   ScrollView,
-}: CreateSelectInputProps) => {
-  const DefaultSelectInput = ({
+}: CreateSelectProps) => {
+  const DefaultSelect = ({
     options,
     value: initialValue,
     trayTitle,
@@ -241,11 +241,11 @@ export const selectInputBuilderMobile = ({
     compactSelectOptionCell,
     hideHandleBar,
     ...props
-  }: DefaultSelectInputTypes) => {
+  }: DefaultSelectTypes) => {
     const [isTrayVisible, { toggleOff, toggleOn }] = useToggler(false);
     const [value, setValue] = useState<string | undefined>(initialValue);
     return (
-      <SelectInput value={value} onPress={toggleOn} {...props}>
+      <Select value={value} onPress={toggleOn} {...props}>
         {isTrayVisible && (
           <Tray
             title={trayTitle}
@@ -274,22 +274,22 @@ export const selectInputBuilderMobile = ({
             }
           </Tray>
         )}
-      </SelectInput>
+      </Select>
     );
   };
 
-  const ScrollableSelectInput = ({
+  const ScrollableSelect = ({
     options,
     value: initialValue,
     trayTitle,
     hasDescription,
     compactSelectOptionCell,
     ...props
-  }: DefaultSelectInputTypes) => {
+  }: DefaultSelectTypes) => {
     const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
     const [value, setValue] = useState<string | undefined>(initialValue);
     return (
-      <SelectInput value={value} onPress={toggleOn} {...props}>
+      <Select value={value} onPress={toggleOn} {...props}>
         {isTrayVisible && (
           <Tray
             disableCapturePanGestureToDismiss={false}
@@ -319,12 +319,12 @@ export const selectInputBuilderMobile = ({
             )}
           </Tray>
         )}
-      </SelectInput>
+      </Select>
     );
   };
 
   return {
-    DefaultSelectInput,
-    ScrollableSelectInput,
+    DefaultSelect,
+    ScrollableSelect,
   };
 };

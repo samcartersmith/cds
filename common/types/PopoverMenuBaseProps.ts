@@ -11,7 +11,7 @@ type OffsetConfigProps = {
 /** Menu is exclusively for Web ONLY. Use Tray for Mobile */
 export type PopoverMenuBaseProps = {
   /**
-   * Object passed when SelectInput is used as a trigger. Used to calculate the Menu offset based on presence of nodes in parent InputStack
+   * Object passed when Select is used as a trigger. Used to calculate the Menu offset based on presence of nodes in parent InputStack
    * @danger internal use only
    * */
   offsetConfig?: OffsetConfigProps;

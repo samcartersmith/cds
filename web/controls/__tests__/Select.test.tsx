@@ -1,50 +1,48 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
 import {
-  selectInputBuilder,
-  CreateSelectInputStoriesProps,
+  selectBuilder,
+  CreateSelectStoriesProps,
   priceOptions,
-} from '@cbhq/cds-common/internal/selectInputBuilder';
+} from '@cbhq/cds-common/internal/selectBuilder';
 
-import { SelectInput } from '../SelectInput';
+import { Select } from '../Select';
 import { VStack } from '../../layout/VStack';
 import { SelectOptionCell } from '../../cells/SelectOptionCell';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { MenuItem } from '../../overlays/MenuItem';
 
-const { Default: MockSelectInput } = selectInputBuilder({
-  SelectInput,
+const { Default: MockSelect } = selectBuilder({
+  Select,
   MenuItem,
   VStack,
   SelectOptionCell,
   ThemeProvider,
-} as CreateSelectInputStoriesProps);
+} as CreateSelectStoriesProps);
 
 const mockPlaceholder = 'Choose something...';
 const accessibilityLabel = 'label';
 const mockTestID = 'select-input-test';
 
-describe('SelectInput', () => {
+describe('Select', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<MockSelectInput accessibilityLabel="label" />)).toHaveNoViolations();
+    expect(await renderA11y(<MockSelect accessibilityLabel="label" />)).toHaveNoViolations();
   });
   it('can pass `aria-label` attribute', () => {
     const { getByTestId } = render(
-      <MockSelectInput accessibilityLabel={accessibilityLabel} testID={mockTestID} />,
+      <MockSelect accessibilityLabel={accessibilityLabel} testID={mockTestID} />,
     );
 
     expect(getByTestId(mockTestID)).toHaveAttribute('aria-label', accessibilityLabel);
   });
-  it('renders the SelectInput trigger', async () => {
-    const { getByTestId } = render(<MockSelectInput testID={mockTestID} />);
+  it('renders the Select trigger', async () => {
+    const { getByTestId } = render(<MockSelect testID={mockTestID} />);
 
     expect(getByTestId(mockTestID)).toBeDefined();
   });
-  it('opens the Menu when the SelectInput is pressed', () => {
+  it('opens the Menu when the Select is pressed', () => {
     const onPressSpy = jest.fn();
-    const { getByText } = render(
-      <MockSelectInput placeholder={mockPlaceholder} onPress={onPressSpy} />,
-    );
+    const { getByText } = render(<MockSelect placeholder={mockPlaceholder} onPress={onPressSpy} />);
 
     fireEvent.click(getByText(mockPlaceholder));
     expect(onPressSpy).toHaveBeenCalled();
@@ -55,7 +53,7 @@ describe('SelectInput', () => {
   it('closes the Menu when an option is pressed and fires onChange', async () => {
     const onChangeSpy = jest.fn();
     const { getByText } = render(
-      <MockSelectInput placeholder={mockPlaceholder} onPress={onChangeSpy} />,
+      <MockSelect placeholder={mockPlaceholder} onPress={onChangeSpy} />,
     );
 
     fireEvent.click(getByText(mockPlaceholder));
@@ -70,7 +68,7 @@ describe('SelectInput', () => {
     expect(firstSelectOptionCell).toBeDefined();
   });
   it('replaces the placeholder text with the selected value when pressed', async () => {
-    const { getByText } = render(<MockSelectInput placeholder={mockPlaceholder} />);
+    const { getByText } = render(<MockSelect placeholder={mockPlaceholder} />);
 
     fireEvent.click(getByText(mockPlaceholder));
 

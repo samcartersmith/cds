@@ -1,22 +1,19 @@
 import { render, fireEvent } from '@testing-library/react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
-import {
-  selectInputBuilderMobile,
-  CreateSelectInputProps,
-} from '@cbhq/cds-common/internal/selectInputBuilder';
+import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/internal/selectBuilder';
 
-import { SelectInput } from '../SelectInput';
+import { Select } from '../Select';
 import { Tray } from '../../overlays/Tray/Tray';
 import { SelectOptionCell } from '../SelectOptionCell';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
 
-const { DefaultSelectInput } = selectInputBuilderMobile({
+const { DefaultSelect } = selectBuilderMobile({
   Tray,
-  SelectInput,
+  Select,
   SelectOptionCell,
   ScrollView,
-} as CreateSelectInputProps);
+} as CreateSelectProps);
 
 const options = [
   {
@@ -35,7 +32,7 @@ describe('Select Input', () => {
   it('renders the Select Input trigger', async () => {
     const { getByText } = render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <DefaultSelectInput options={options} placeholder={placeholderText} />
+        <DefaultSelect options={options} placeholder={placeholderText} />
       </SafeAreaProvider>,
     );
 
@@ -45,7 +42,7 @@ describe('Select Input', () => {
     const onPressSpy = jest.fn();
     const { getByText } = render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <DefaultSelectInput
+        <DefaultSelect
           options={options}
           placeholder={placeholderText}
           onPress={onPressSpy}

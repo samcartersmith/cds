@@ -26,7 +26,7 @@ export const components = [
   'InputIcon',
   'InputIconButton',
   'RadioGroup',
-  'SelectInput',
+  'Select',
   'Switch',
   'TextInput',
   'Icon',

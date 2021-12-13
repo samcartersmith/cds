@@ -5,5 +5,5 @@ export * from './Switch';
 export * from './TextInput';
 export * from './InputIcon';
 export * from './InputIconButton';
-export * from './SelectInput';
+export * from './Select';
 export * from './SelectOptionCell';

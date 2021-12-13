@@ -1,7 +1,7 @@
-# SelectInput Prototype
+# Select Prototype
 
 ```jsx live
-function DefaultSelectInput() {
+function DefaultSelect() {
   const [year, setYear] = useState();
   const [asset, setAsset] = useState();
   const [showResult, toggleShowResult] = useToggler(false);
@@ -27,16 +27,16 @@ function DefaultSelectInput() {
     <ExampleWithThemeToggles>
       <VStack gap={2} minHeight={500}>
         <HStack gap={1}>
-          <SelectInput value={year} onChange={setYear} placeholder="Year">
+          <Select value={year} onChange={setYear} placeholder="Year">
             {years.map((option) => (
               <SelectOptionCell value={option} key={option} title={option} description="BTC" />
             ))}
-          </SelectInput>
-          <SelectInput value={asset} onChange={setAsset} placeholder="Assets">
+          </Select>
+          <Select value={asset} onChange={setAsset} placeholder="Assets">
             {currencies.map((option) => (
               <SelectOptionCell value={option} key={option} title={option} description="BTC" />
             ))}
-          </SelectInput>
+          </Select>
         </HStack>
         <Button onPress={handleButtonPress}>Submit</Button>
         {showResult && (

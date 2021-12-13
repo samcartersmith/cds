@@ -15,9 +15,9 @@ import { menuGutter, selectKeys } from '@cbhq/cds-common/tokens/menu';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { ElementChildren, PopoverMenuBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
 import {
-  selectInputPopoverMenuMaxHeight,
+  selectPopoverMenuMaxHeight,
   inputStackHelperTextHeight,
-} from '@cbhq/cds-common/tokens/selectInput';
+} from '@cbhq/cds-common/tokens/select';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { useAccessibleControlledVisibility } from '@cbhq/cds-common/hooks/useAccessibleControlledVisibility';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
@@ -76,7 +76,7 @@ export const PopoverMenu = memo(
       const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
         useAccessibleControlledVisibility(visible, accessibilityLabel);
 
-      // When PopoverMenu is used with a SelectInput as a trigger, we need to calculate PopoverMenu offset based on presence of nodes in the SelectInput
+      // When PopoverMenu is used with a Select as a trigger, we need to calculate PopoverMenu offset based on presence of nodes in the Select
       const labelHeight = useScaleConditional(inputStackHelperTextHeight);
 
       // if used in a select menu and there is helper text, you need to shave off the height of the helper text before you add the gutter
@@ -88,7 +88,7 @@ export const PopoverMenu = memo(
         popperYOffset,
       );
 
-      // when Popover is used with a SelectInput, the width should be that of the parent,
+      // when Popover is used with a Select, the width should be that of the parent,
       // else it should be the width of the content or what's passed in explicitly
       const calculatePopoverWidth = hasSelectTrigger ? width ?? '100%' : 'auto';
       const calculateTriggerWidth = hasSelectTrigger ? '100%' : 'auto';
@@ -222,7 +222,7 @@ export const PopoverMenu = memo(
                 width={width ?? '100%'}
                 borderRadius={hasFrontier ? 'pill' : 'standard'}
                 role="menu"
-                maxHeight={selectInputPopoverMenuMaxHeight}
+                maxHeight={selectPopoverMenuMaxHeight}
               >
                 {flattenNodes(children).map((child) => {
                   if (child && typeof child === 'object' && child.type === MenuItem) {

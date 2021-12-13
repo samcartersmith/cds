@@ -9,22 +9,22 @@ import React, {
   ReactElement,
   MouseEvent,
 } from 'react';
-import { SelectInputBaseProps, PopoverMenuRefProps, InputVariant } from '@cbhq/cds-common/types';
+import { SelectBaseProps, PopoverMenuRefProps, InputVariant } from '@cbhq/cds-common/types';
 import { useToggler } from '@cbhq/cds-common';
 import { LinkableProps } from '../system';
 import { useRotate180Animation } from '../animation/useRotate180Animation';
-import { SelectInputTrigger } from './SelectInputTrigger';
+import { SelectTrigger } from './SelectTrigger';
 import { PopoverMenu } from '../overlays/PopoverMenu';
 import { MenuItemProps } from '../overlays/MenuItem';
 
-export type SelectInputProps = {
+export type SelectProps = {
   children: ReactElement<MenuItemProps & LinkableProps>[];
   /** Callback that is fired whenever a select option is selected */
   onChange?: (newValue: string) => void;
-} & SelectInputBaseProps;
+} & SelectBaseProps;
 
-export const SelectInput = memo(
-  forwardRef(function SelectInput(
+export const Select = memo(
+  forwardRef(function Select(
     {
       children,
       helperText,
@@ -36,7 +36,7 @@ export const SelectInput = memo(
       onPress,
       onChange,
       ...props
-    }: SelectInputProps,
+    }: SelectProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) {
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
@@ -65,7 +65,7 @@ export const SelectInput = memo(
       }
     }, [animateCaretIn, animateCaretOut, visible]);
 
-    const handleOnSelectInputPress = useCallback(
+    const handleOnSelectPress = useCallback(
       (event: MouseEvent<HTMLElement>) => {
         onPress?.();
         popoverMenuRef.current?.handleOnPopoverMenuTriggerPress(event);
@@ -75,7 +75,7 @@ export const SelectInput = memo(
 
     const renderTriggerNode = useCallback(() => {
       return (
-        <SelectInputTrigger
+        <SelectTrigger
           compact={compact}
           disabled={disabled}
           helperText={helperText}
@@ -84,7 +84,7 @@ export const SelectInput = memo(
           variant={variant}
           width={width}
           ref={ref}
-          onSelectInputPress={handleOnSelectInputPress}
+          onSelectPress={handleOnSelectPress}
           triggerRef={triggerRef}
           labelTextColor={labelTextColor}
           {...props}
@@ -99,7 +99,7 @@ export const SelectInput = memo(
       width,
       ref,
       helperText,
-      handleOnSelectInputPress,
+      handleOnSelectPress,
       triggerRef,
       props,
     ]);

@@ -604,23 +604,23 @@ export const RadioGroup = {
   ),
 };
 
-export const SelectInput = {
+export const Select = {
   implementation: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectInput/implementation.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Select/implementation.mdx'
       ),
   ),
-  'select-input': React.lazy(
+  select: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectInput/select-input.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Select/select.mdx'
       ),
   ),
   usage: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectInput/usage.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Select/usage.mdx'
       ),
   ),
 };

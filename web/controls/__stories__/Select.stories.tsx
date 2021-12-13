@@ -1,29 +1,26 @@
-import {
-  selectInputBuilder,
-  CreateSelectInputStoriesProps,
-} from '@cbhq/cds-common/internal/selectInputBuilder';
+import { selectBuilder, CreateSelectStoriesProps } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { VStack } from '../../layout/VStack';
 import { SelectOptionCell } from '../../cells/SelectOptionCell';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { SelectInput } from '../SelectInput';
+import { Select } from '../Select';
 import { MenuItem } from '../../overlays/MenuItem';
 
 export default {
-  title: 'Core Components/Inputs/SelectInput',
-  component: SelectInput,
+  title: 'Core Components/Inputs/Select',
+  component: Select,
 };
 
 const components = {
-  SelectInput,
+  Select,
   MenuItem,
   VStack,
   SelectOptionCell,
   ThemeProvider,
 };
 
-export const { Default, InputStackOptions, WithLabel, Compact, Variants } = selectInputBuilder(
-  components as CreateSelectInputStoriesProps,
+export const { Default, InputStackOptions, WithLabel, Compact, Variants } = selectBuilder(
+  components as CreateSelectStoriesProps,
 );
 
 export const {
@@ -32,10 +29,10 @@ export const {
   WithLabel: DarkWithLabel,
   Compact: DarkCompact,
   Variants: DarkVariants,
-} = selectInputBuilder({
+} = selectBuilder({
   ...components,
   spectrum: 'dark',
-} as CreateSelectInputStoriesProps);
+} as CreateSelectStoriesProps);
 
 export const {
   Default: Dense,
@@ -43,7 +40,7 @@ export const {
   WithLabel: DenseWithLabel,
   Compact: DenseCompact,
   Variants: DenseVariants,
-} = selectInputBuilder({
+} = selectBuilder({
   ...components,
   scale: 'xSmall',
-} as CreateSelectInputStoriesProps);
+} as CreateSelectStoriesProps);

@@ -40,7 +40,7 @@ export * from './Position';
 export * from './RadioGroupBaseProps';
 export * from './React';
 export * from './Scale';
-export * from './SelectInputBaseProps';
+export * from './SelectBaseProps';
 export * from './SelectOptionCellBaseProps';
 export * from './Shape';
 export * from './SharedProps';

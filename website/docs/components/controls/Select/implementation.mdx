@@ -5,17 +5,17 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-(web|mobile)/controls/SelectInput](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/SelectInput.tsx)
+> [@cbhq/cds-(web|mobile)/controls/Select](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/Select.tsx)
 
-<ComponentDetails componentName="SelectInput" templateName="intro" />
+<ComponentDetails componentName="Select" templateName="intro" />
 
 ## Usage
 
-<ComponentDetails componentName="SelectInput" templateName="usage" />
+<ComponentDetails componentName="Select" templateName="usage" />
 
 ## Accessibility
 
-<ComponentDetails componentName="SelectInput" templateName="a11y" />
+<ComponentDetails componentName="Select" templateName="a11y" />
 
 ## Props
 
@@ -24,7 +24,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
@@ -32,14 +32,14 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-accessibilityHint" />
+<ComponentDetails componentName="Select" templateName="prop-accessibilityHint" />
 
 ### accessibilityLabel
 
 Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
@@ -47,7 +47,7 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-accessibilityLabel" />
+<ComponentDetails componentName="Select" templateName="prop-accessibilityLabel" />
 
 ### accessibilityLabelledBy
 
@@ -56,7 +56,7 @@ Accessibility prop that describes the component that labels it by its `id`
 **https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
@@ -64,14 +64,14 @@ Accessibility prop that describes the component that labels it by its `id`
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails componentName="Select" templateName="prop-accessibilityLabelledBy" />
 
 ### compact
 
 Enables compact variation
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="compact"
   required={false}
   defaultValue="false"
@@ -79,14 +79,14 @@ Enables compact variation
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-compact" />
+<ComponentDetails componentName="Select" templateName="prop-compact" />
 
 ### disabled
 
 Toggles input interactability and opacity
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="disabled"
   required={false}
   defaultValue="false"
@@ -94,14 +94,14 @@ Toggles input interactability and opacity
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-disabled" />
+<ComponentDetails componentName="Select" templateName="prop-disabled" />
 
 ### helperText
 
 For cases where label is not enough information to describe what the text input is for. Can also be used for showing positive/negative messages
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="helperText"
   required={false}
   defaultValue=""
@@ -109,14 +109,14 @@ For cases where label is not enough information to describe what the text input 
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-helperText" />
+<ComponentDetails componentName="Select" templateName="prop-helperText" />
 
 ### label
 
 Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="label"
   required={false}
   defaultValue=""
@@ -124,14 +124,14 @@ Optional string placed above the input (or within if compact is enabled) to indi
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-label" />
+<ComponentDetails componentName="Select" templateName="prop-label" />
 
 ### onChange <Badge variant="web" />
 
 Callback that is fired whenever a select option is selected
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="onChange"
   required={false}
   defaultValue=""
@@ -139,14 +139,14 @@ Callback that is fired whenever a select option is selected
   webOptions={['(newValue: string) => void']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-onChange" />
+<ComponentDetails componentName="Select" templateName="prop-onChange" />
 
 ### onPress
 
 Event handler for when the Select Input trigger is pressed
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="onPress"
   required={false}
   defaultValue=""
@@ -154,14 +154,14 @@ Event handler for when the Select Input trigger is pressed
   webOptions={['NoopFn']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-onPress" />
+<ComponentDetails componentName="Select" templateName="prop-onPress" />
 
 ### placeholder
 
 Placeholder text displayed inside of the input. Will be replaced if there is a value.
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="placeholder"
   required={false}
   defaultValue=""
@@ -169,14 +169,14 @@ Placeholder text displayed inside of the input. Will be replaced if there is a v
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-placeholder" />
+<ComponentDetails componentName="Select" templateName="prop-placeholder" />
 
 ### testID
 
 Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="testID"
   required={false}
   defaultValue=""
@@ -184,14 +184,14 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-testID" />
+<ComponentDetails componentName="Select" templateName="prop-testID" />
 
 ### value
 
 Pass a value that will prepopulate the select input. This will replace the placeholder text.
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="value"
   required={false}
   defaultValue=""
@@ -199,14 +199,14 @@ Pass a value that will prepopulate the select input. This will replace the place
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-value" />
+<ComponentDetails componentName="Select" templateName="prop-value" />
 
 ### variant
 
 Determines the sentiment of the input. Because we allow startContent and endContent to be custom ReactNode, the content placed inside these slots will not change colors according to the variant. You will have to add that yourself
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="variant"
   required={false}
   defaultValue="foregroundMuted"
@@ -214,14 +214,14 @@ Determines the sentiment of the input. Because we allow startContent and endCont
   webOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-variant" />
+<ComponentDetails componentName="Select" templateName="prop-variant" />
 
 ### width
 
 Width of input as a percentage string.
 
 <ApiDetails
-  componentName="SelectInput"
+  componentName="Select"
   propertyName="width"
   required={false}
   defaultValue="100%"
@@ -229,6 +229,6 @@ Width of input as a percentage string.
   webOptions={['`${number}%`']}
 />
 
-<ComponentDetails componentName="SelectInput" templateName="prop-width" />
+<ComponentDetails componentName="Select" templateName="prop-width" />
 
-<ComponentDetails componentName="SelectInput" templateName="outro" />
+<ComponentDetails componentName="Select" templateName="outro" />
