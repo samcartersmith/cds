@@ -1,4 +1,5 @@
 import React, {
+  useRef,
   useCallback,
   memo,
   useEffect,
@@ -6,11 +7,14 @@ import React, {
   useImperativeHandle,
   PropsWithChildren,
   useMemo,
-  useRef,
 } from 'react';
-import { StyleSheet, Modal, Animated, ModalProps, useWindowDimensions } from 'react-native';
+import { StyleSheet, Modal, Animated, ModalProps, useWindowDimensions, View } from 'react-native';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
-import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
+import {
+  MAX_OVER_DRAG,
+  verticalDrawerPercentageOfView,
+  horizontalDrawerPercentageOfView,
+} from '@cbhq/cds-common/animation/drawer';
 import { emptyObject } from '@cbhq/cds-utils';
 import { useSpectrum } from '@cbhq/cds-common';
 import { DrawerStatusBar } from './DrawerStatusBar';
@@ -38,12 +42,20 @@ export const Drawer = memo(
       },
       ref,
     ) => {
-      const { drawerAnimation, animateDrawerOut, animateDrawerIn, drawerAnimationStyles } =
-        useDrawerAnimation(pin);
+      const { width, height } = useWindowDimensions();
+
+      const {
+        drawerAnimation,
+        animateDrawerOut,
+        animateDrawerIn,
+        drawerAnimationStyles,
+        onLayout,
+        hasDrawerRendered,
+      } = useDrawerAnimation(pin);
       const [opacity, animateOverlayIn, animateOverlayOut] = useOverlayAnimation();
       const scheme = useSpectrum();
-      const isMounted = useRef(false);
       const spacingStyles = useDrawerSpacing(pin);
+      const isMounted = useRef(false);
 
       const handleCloseRequest = useCallback(() => {
         requestAnimationFrame(() => {
@@ -58,14 +70,16 @@ export const Drawer = memo(
 
       useEffect(() => {
         if (!isMounted.current) {
-          isMounted.current = true;
-          drawerAnimation.flattenOffset();
-          Animated.parallel([animateOverlayIn, animateDrawerIn]).start();
+          if (hasDrawerRendered) {
+            isMounted.current = true;
+            drawerAnimation.flattenOffset();
+            Animated.parallel([animateOverlayIn, animateDrawerIn]).start();
+          }
         }
         return () => {
           isMounted.current = false;
         };
-      }, [drawerAnimation, animateOverlayIn, animateDrawerIn]);
+      }, [drawerAnimation, animateOverlayIn, animateDrawerIn, hasDrawerRendered]);
 
       const panGestureHandlers = useDrawerPanResponder({
         pin,
@@ -74,13 +88,14 @@ export const Drawer = memo(
         handleCloseRequest,
         disableCapturePanGestureToDismiss,
       });
+
       const isPinHorizontal = pin === 'left' || pin === 'right';
       const shouldShowHandleBar = !hideHandleBar && pin === 'bottom';
-      const { width, height } = useWindowDimensions();
+
       // leave 15% of the screenwidth as open area for menu drawer
-      const horizontalDrawerWidth = width * 0.85 + MAX_OVER_DRAG;
+      const horizontalDrawerWidth = width * horizontalDrawerPercentageOfView + MAX_OVER_DRAG;
       // drawer will automatically size itself based on content, but will cap at 75% of viewport height
-      const verticalDrawerMaxHeight = height * 0.75 + MAX_OVER_DRAG;
+      const verticalDrawerMaxHeight = height * verticalDrawerPercentageOfView + MAX_OVER_DRAG;
 
       const handleOverlayPress = useCallback(() => {
         if (!preventDismissGestures) {
@@ -157,7 +172,9 @@ export const Drawer = memo(
             width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
             dangerouslySetStyle={combinedStyles}
           >
-            <Content />
+            <View onLayout={onLayout}>
+              <Content />
+            </View>
           </Box>
         </Modal>
       );

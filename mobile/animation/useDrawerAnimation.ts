@@ -2,28 +2,45 @@ import { useMemo, useRef } from 'react';
 
 import { PinningDirection } from '@cbhq/cds-common';
 import { Animated, useWindowDimensions } from 'react-native';
-import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
+import {
+  MAX_OVER_DRAG,
+  drawerHeightThreshold,
+  verticalDrawerPercentageOfView,
+  horizontalDrawerPercentageOfView,
+  handleBarOffset,
+} from '@cbhq/cds-common/animation/drawer';
+import { useLayout } from '../hooks/useLayout';
 import { convertMotionConfig } from './convertMotionConfig';
 
-const animateInConfig = convertMotionConfig({
-  toValue: 1,
-  easing: 'enterFunctional',
-  duration: 'moderate3',
-});
-
-const animateOutConfig = convertMotionConfig({
-  toValue: 0,
-  easing: 'exitFunctional',
-  duration: 'moderate2',
-});
-
 export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom') => {
-  const { width, height } = useWindowDimensions();
+  const windowDimensions = useWindowDimensions();
+  const [drawerDimensions, onLayout] = useLayout();
+
+  const isPinVertical = pin === 'top' || pin === 'bottom';
+  const dimension = isPinVertical ? 'height' : 'width';
+  const drawerDimension = drawerDimensions[dimension]
+    ? drawerDimensions[dimension]
+    : windowDimensions[dimension];
+  const drawerPercentOfScreen = drawerDimension / windowDimensions[dimension];
+  const isLargeVerticalDrawer = isPinVertical && drawerPercentOfScreen > drawerHeightThreshold;
+  const hasDrawerRendered = drawerDimensions[dimension] > 0;
+
+  const duration = isLargeVerticalDrawer ? 'slow2' : 'moderate3';
+  const animateDrawerInConfig = convertMotionConfig({
+    toValue: 1,
+    easing: 'enterFunctional',
+    duration,
+  });
+  const animateDrawerOutConfig = convertMotionConfig({
+    toValue: 0,
+    easing: 'exitFunctional',
+    duration,
+  });
 
   const drawerAnimation = useRef(new Animated.Value(0));
 
-  const animateDrawerIn = Animated.timing(drawerAnimation.current, animateInConfig);
-  const animateDrawerOut = Animated.timing(drawerAnimation.current, animateOutConfig);
+  const animateDrawerIn = Animated.timing(drawerAnimation.current, animateDrawerInConfig);
+  const animateDrawerOut = Animated.timing(drawerAnimation.current, animateDrawerOutConfig);
 
   const translation = useMemo(() => {
     switch (pin) {
@@ -31,14 +48,14 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
         return {
           translateY: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [-height * 0.75, -MAX_OVER_DRAG],
+            outputRange: [-drawerDimension * verticalDrawerPercentageOfView, -MAX_OVER_DRAG],
           }),
         };
       case 'left':
         return {
           translateX: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [-width * 0.85, -MAX_OVER_DRAG],
+            outputRange: [-drawerDimension * horizontalDrawerPercentageOfView, -MAX_OVER_DRAG],
           }),
         };
       case 'bottom':
@@ -46,18 +63,21 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
         return {
           translateY: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [height * 0.75, MAX_OVER_DRAG],
+            outputRange: [
+              (drawerDimension + handleBarOffset) * verticalDrawerPercentageOfView,
+              MAX_OVER_DRAG,
+            ],
           }),
         };
       case 'right':
         return {
           translateX: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [width * 0.85, MAX_OVER_DRAG],
+            outputRange: [drawerDimension * horizontalDrawerPercentageOfView, MAX_OVER_DRAG],
           }),
         };
     }
-  }, [pin, height, width]);
+  }, [pin, drawerDimension]);
 
   return useMemo(() => {
     return {
@@ -65,6 +85,8 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
       animateDrawerOut,
       animateDrawerIn,
       drawerAnimationStyles: { transform: [translation] },
+      onLayout,
+      hasDrawerRendered,
     };
-  }, [animateDrawerOut, animateDrawerIn, translation]);
+  }, [animateDrawerOut, animateDrawerIn, translation, onLayout, hasDrawerRendered]);
 };

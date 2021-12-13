@@ -8,7 +8,7 @@ import type {
 import { useToggler } from '../hooks/useToggler';
 import { prices } from './data/prices';
 
-const options: string[] = prices.slice(0, 5);
+const options: string[] = prices.slice(0, 4);
 const lotsOfOptions: string[] = prices.slice(0, 30);
 
 type LinkableProps = {
