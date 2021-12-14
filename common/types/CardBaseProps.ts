@@ -1,10 +1,10 @@
 import type { PinningDirection } from './BoxBaseProps';
 import type { DimensionStyles } from './DimensionStyles';
 import type { ElevationLevels } from './ElevationLevels';
+import type { GroupBaseProps } from './GroupBaseProps';
 import type { PaletteBackground } from './Palette';
 import type { SharedProps } from './SharedProps';
 import type { OffsetProps, SpacingProps } from './SpacingProps';
-import { ElementChildren } from './React';
 
 export type CardBaseProps = {
   /** Set the background color of the Card. Passing `true` will enable the default background, otherwise a custom palette alias can be passed. */
@@ -29,6 +29,11 @@ export type CardHeaderBaseProps = {
   description?: string;
   /** IconButton ReactNode */
   action?: React.ReactNode;
+} & SharedProps;
+
+export type CardFooterBaseProps = {
+  /** CardFooter takes one or many actions as children */
+  children: React.ReactNode;
 } & SharedProps;
 
 export type CardBodyBaseProps = {
@@ -68,15 +73,4 @@ export type FeedCardBaseProps = {
   footerActions: React.ReactNode;
 } & SharedProps;
 
-export type CardGroupBaseProps = {
-  /** Accessibility label describing the group of cards. */
-  accessibilityLabel?: string;
-  /** Cards to render as a group. */
-  children: ElementChildren<CardBaseProps>;
-  /** Stack cards horizontally instead of vertically. */
-  horizontal?: boolean;
-  /** Direction in which to absolutely pin the box. */
-  pin?: PinningDirection;
-} & DimensionStyles &
-  OffsetProps &
-  SharedProps;
+export type CardGroupBaseProps<BoxProps> = GroupBaseProps<BoxProps>;

@@ -4,11 +4,14 @@ import { View, StyleSheet } from 'react-native';
 import { CardGroupBaseProps } from '@cbhq/cds-common';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
 import { join } from '@cbhq/cds-common/utils/join';
+import { BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Card } from './Card';
 import { useFeatureFlag } from '../system/useFeatureFlag';
+
+export type CardGroupProps = CardGroupBaseProps<BoxProps>;
 
 export const CardGroup = memo(function CardGroup({
   accessibilityLabel,
@@ -16,7 +19,7 @@ export const CardGroup = memo(function CardGroup({
   testID,
   horizontal,
   ...otherBoxProps
-}: CardGroupBaseProps) {
+}: CardGroupProps) {
   const isFrontier = useFeatureFlag('frontierCard');
   const Stack = horizontal ? HStack : VStack;
 

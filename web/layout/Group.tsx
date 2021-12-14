@@ -38,10 +38,11 @@ export const Group = memo(
             gap,
             divider,
             renderItem,
+            direction,
             Spacer,
             ItemWrapper,
           }),
-        [children, divider, gap, renderItem],
+        [children, direction, divider, gap, renderItem],
       );
 
       return (

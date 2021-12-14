@@ -4,24 +4,42 @@ import { merge } from 'lodash';
 import { Story } from '@storybook/react';
 import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
-import { StoryBuilderConfig } from '@cbhq/cds-common/internal/utils/storyBuilder';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { StoryBuilderConfig, sanitizeProps } from '@cbhq/cds-common/internal/utils/storyBuilder';
 
-import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { Group } from '@cbhq/cds-web/layout/Group';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 import { palette } from '@cbhq/cds-web/tokens';
 
 import type { GetStory } from './types';
 
-const FallbackWrapper: React.FC = (props) => <VStack alignItems="flex-start" gap={2} {...props} />;
+const wrapperProps = {
+  old: {
+    dangerouslySetClassName: css`
+      padding: 20px;
+      display: block;
+    `,
+  },
+  new: {
+    background: true,
+    alignItems: 'flex-start',
+    spacing: gutter,
+    gap: 2,
+  },
+} as const;
 
-export function StoryContainer<T>(StoryComponent: Story, context: StoryBuilderConfig<T>) {
+export function StoryContainer<Props>(
+  StoryComponent: Story,
+  context: StoryBuilderConfig<Props, { children?: React.ReactNode }>,
+) {
+  const stories = context.parameters?.stories;
   const Container = memo(() => {
     const contents = useMemo(() => {
-      if (context.parameters?.stories) {
+      if (stories) {
         // React.Children.toArray will guarantee unique keys when mapped over
         return React.Children.toArray(
-          context.parameters?.stories.map((child) => {
-            const mergedProps = merge({}, child.args, context.args);
+          stories.map((child) => {
+            const mergedProps = sanitizeProps(merge({}, child.args, context.args));
             return React.createElement(child, mergedProps);
           }),
         );
@@ -29,8 +47,8 @@ export function StoryContainer<T>(StoryComponent: Story, context: StoryBuilderCo
       return <StoryComponent />;
     }, []);
 
-    const storyLength = context.parameters?.stories?.length ?? 1;
-    const Wrapper = context.parameters?.wrapper ?? FallbackWrapper;
+    const InnerWrapper = context.parameters?.wrapper ?? React.Fragment;
+    const isNewStory = context.args?.frontier !== undefined ?? stories;
 
     return (
       <FeatureFlagProvider frontier={context.args?.frontier}>
@@ -39,13 +57,9 @@ export function StoryContainer<T>(StoryComponent: Story, context: StoryBuilderCo
           scale={context.args?.scale}
           spectrum={context.args?.spectrum}
         >
-          <div
-            className={css`
-              padding: 20px;
-            `}
-          >
-            {storyLength > 1 ? <Wrapper>{contents}</Wrapper> : <StoryComponent />}
-          </div>
+          <Group {...wrapperProps[isNewStory ? 'new' : 'old']}>
+            <InnerWrapper>{contents}</InnerWrapper>
+          </Group>
         </ThemeProvider>
       </FeatureFlagProvider>
     );

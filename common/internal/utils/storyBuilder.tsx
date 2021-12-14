@@ -15,14 +15,14 @@ type ArgType<T> = {
 
 type ArgTypes<Props> = { [key in keyof Props]?: ArgType<Props[key]> };
 
-type Parameters<Props> = {
-  stories?: Story<Props>[];
-  wrapper?: React.ComponentType;
+type Parameters<Props, WrapperProps> = {
+  stories?: Story<Props, WrapperProps>[];
+  wrapper?: React.ComponentType<WrapperProps>;
   // add types for parameters within addons that we want to support here
 };
 
-export type Story<Props, ExampleFnReturnType = React.ReactElement<unknown>> = {
-  (args: Props, context: StoryBuilderConfig<Props>): ExampleFnReturnType;
+export type Story<Props, WrapperProps, ExampleFnReturnType = React.ReactElement<unknown>> = {
+  (args: Props, context: StoryBuilderConfig<Props, WrapperProps>): ExampleFnReturnType;
   /**
    * Override the display name in the UI
    */
@@ -59,7 +59,7 @@ export type Story<Props, ExampleFnReturnType = React.ReactElement<unknown>> = {
    * Custom metadata for a story.
    * @see [Parameters](https://storybook.js.org/docs/basics/writing-stories/#parameters)
    */
-  parameters?: Parameters<Props>;
+  parameters?: Parameters<Props, WrapperProps>;
   /**
    * Wrapper components or Storybook decorators that wrap a story.
    *
@@ -68,18 +68,18 @@ export type Story<Props, ExampleFnReturnType = React.ReactElement<unknown>> = {
    */
   decorators?: ((
     story: () => ExampleFnReturnType,
-    context: StoryBuilderConfig<Props>,
+    context: StoryBuilderConfig<Props, WrapperProps>,
   ) => ExampleFnReturnType)[];
 };
 
-export type StoryBuilderConfig<Props = unknown> = {
+export type StoryBuilderConfig<Props, WrapperProps> = {
   args?: {
     frontier?: boolean;
     spectrum?: Spectrum;
     scale?: Scale;
   } & Props;
   argTypes?: ArgTypes<Props>;
-  parameters?: Parameters<Props>;
+  parameters?: Parameters<Props, WrapperProps>;
 };
 
 const baseConfig = {
@@ -126,38 +126,40 @@ function isArray<Props>(
   return Array.isArray(props);
 }
 
-export function storyBuilder<StoryBuilderArgs>(
-  builderConfig?: StoryBuilderConfig<StoryBuilderArgs>,
+export function sanitizeProps<Props>(props: Props) {
+  if (isObject(props)) {
+    return omit(props, ['frontier', 'scale', 'spectrum']) as Props;
+  }
+  return emptyObject as Props;
+}
+
+export function storyBuilder<StoryBuilderArgs, WrapperProps>(
+  builderConfig?: StoryBuilderConfig<StoryBuilderArgs, WrapperProps>,
 ) {
   function builder<Props, PropsWithoutChildren extends Omit<Props, 'children'>>(
     Component: React.ComponentType<Props>,
-    sharedConfig?: StoryBuilderConfig<PropsWithoutChildren>,
+    sharedConfig?: StoryBuilderConfig<PropsWithoutChildren, WrapperProps>,
   ) {
-    const storiesSet = new Set<Story<PropsWithoutChildren>>();
+    const storiesSet = new Set<Story<PropsWithoutChildren, WrapperProps>>();
     const defaultConfig = merge({}, baseConfig, builderConfig);
 
     const build = (
       args?: PropsWithoutChildren,
-      customConfig?: StoryBuilderConfig<PropsWithoutChildren>,
+      customConfig?: StoryBuilderConfig<PropsWithoutChildren, WrapperProps>,
     ) => {
       const id = generateRandomId();
       const TemplateFn = (props: Props) => {
-        const sanitizedProps = useMemo(() => {
-          if (isObject(props)) {
-            return omit(props, ['frontier', 'scale', 'spectrum']) as Props;
-          }
-          return emptyObject as Props;
-        }, [props]);
+        const sanitizedProps = useMemo(() => sanitizeProps(props), [props]);
         return <Component key={id} {...sanitizedProps} />;
       };
-      const Template = TemplateFn.bind({}) as unknown as Story<PropsWithoutChildren>;
+      const Template = TemplateFn.bind({}) as unknown as Story<PropsWithoutChildren, WrapperProps>;
       const mergedConfig = merge(
         {},
         defaultConfig,
         sharedConfig,
         { args },
         customConfig,
-      ) as unknown as StoryBuilderConfig<PropsWithoutChildren>;
+      ) as unknown as StoryBuilderConfig<PropsWithoutChildren, WrapperProps>;
       Template.parameters = mergedConfig.parameters;
       Template.args = mergedConfig.args;
       Template.argTypes = mergedConfig.argTypes;
@@ -165,20 +167,23 @@ export function storyBuilder<StoryBuilderArgs>(
       return Template;
     };
 
-    const buildSheet = (
+    function buildSheet<SheetWrapperProps>(
       args?:
         | PropsWithoutChildren
         | PropsWithoutChildren[]
         | Readonly<PropsWithoutChildren>
         | Readonly<PropsWithoutChildren[]>,
-      config?: StoryBuilderConfig<PropsWithoutChildren>,
-    ) => {
+      config?: StoryBuilderConfig<
+        StoryBuilderConfig<PropsWithoutChildren, WrapperProps>['args'],
+        SheetWrapperProps
+      >,
+    ) {
       let stories = Array.from(storiesSet.values());
       const StorySheet = () => null;
-      const Template = StorySheet.bind({}) as unknown as Story<PropsWithoutChildren>;
+      const Template = StorySheet.bind({}) as unknown as Story<PropsWithoutChildren, WrapperProps>;
 
       if (isArray(args)) {
-        const storiesOverride: Story<PropsWithoutChildren>[] = [];
+        const storiesOverride: Story<PropsWithoutChildren, WrapperProps>[] = [];
         args.forEach((itemArgs) => {
           stories.forEach((StoryTemplate) => {
             const StoryTemplateCopy = StoryTemplate.bind({});
@@ -198,7 +203,7 @@ export function storyBuilder<StoryBuilderArgs>(
         stories,
       };
       return Template;
-    };
+    }
 
     return { build, buildSheet };
   }
