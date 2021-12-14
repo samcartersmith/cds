@@ -2,13 +2,14 @@ const { components } = require('./data/sidebar/components');
 const { adopters } = require('./data/sidebar/adopters');
 
 // Removes unfinished categories from side bar
-const sectionsToExcludeByLabel = new Set([]);
+const sectionsToExcludeByLabel = new Set(['Dots']);
 
 // Removes unfinished components from section in side bar
 const componentsToExcludeByLabel = new Set([
   'components/controls/Select/select',
   'components/cells/SelectOption/select-option',
   'components/overlays/Toast/toast',
+  'components/overlays/MenuItem/menu-item',
   'components/visualizations/SparklineContainer/sparkline-container',
 ]);
 

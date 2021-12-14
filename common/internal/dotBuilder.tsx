@@ -10,9 +10,9 @@ import type {
   TextBaseProps,
 } from '../types';
 
-export const VARIANTS = ['positive', 'negative'] as const;
-export const PLACEMENTS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'] as const;
-export const SIZES = ['xs', 's', 'm', 'l'] as const;
+export const VARIANTS = ['positive', 'negative', 'primary', 'foregroundMuted'] as const;
+export const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'] as const;
+export const SIZES = ['s', 'm', 'l'] as const;
 
 export function dotBuilder(
   DotCount: ComponentType<DotCountBaseProps>,
@@ -29,7 +29,7 @@ export function dotBuilder(
       <>
         {counts.map((count) => (
           <Box spacing={1} key={`DotCount-${count}`}>
-            <DotCount count={count} variant="positive" />
+            <DotCount count={count} />
           </Box>
         ))}
       </>
@@ -43,11 +43,9 @@ export function dotBuilder(
   const DotCountVariant = () => {
     return (
       <>
-        {VARIANTS.map((variant) => (
-          <VStack gap={1} key={`DotCount-variant-${variant}`}>
-            <DotCount variant={variant} count={30} />
-          </VStack>
-        ))}
+        <VStack gap={1} key="DotCount-variant-negative">
+          <DotCount variant="negative" count={30} />
+        </VStack>
       </>
     );
   };
@@ -79,20 +77,22 @@ export function dotBuilder(
   const DotCountPlacements = () => {
     return (
       <>
-        {PLACEMENTS.map((placement) => (
-          <VStack gap={4} spacing={1} key={`DotCount-placement-${placement}`} spacingBottom={4}>
-            <TextLabel1>{placement}</TextLabel1>
-            <DotCount variant="positive" placement={placement} count={30}>
-              <Avatar size="xxxl" alt="Sneezy" />
-            </DotCount>
-            <DotCount variant="positive" placement={placement} count={30}>
-              <Avatar size="xl" alt="Sneezy" />
-            </DotCount>
-            <DotCount variant="positive" placement={placement} count={1}>
-              <Icon name="airdrop" size="l" />
-            </DotCount>
-          </VStack>
-        ))}
+        <VStack gap={4} spacing={1} key="DotCount-placement-top-end" spacingBottom={4}>
+          <TextLabel1>top-end</TextLabel1>
+          <DotCount pin="top-end" count={30}>
+            <Avatar size="xl" shape="square" alt="Sneezy" />
+          </DotCount>
+          <DotCount pin="top-end" count={30}>
+            <Avatar size="l" shape="square" alt="Sneezy" />
+          </DotCount>
+          <DotCount pin="top-end" count={1}>
+            <Icon name="calendar" size="m" />
+          </DotCount>
+          <DotCount pin="top-end" count={0}>
+            <TextLabel1>Count = 0. Dot should not show up</TextLabel1>
+            <Icon name="calendar" size="m" />
+          </DotCount>
+        </VStack>
       </>
     );
   };
@@ -100,22 +100,22 @@ export function dotBuilder(
   const DotStatusColorPlacements = () => {
     return (
       <>
-        {PLACEMENTS.map((placement) => (
+        {PIN_DIRECTIONS.map((pinDirection) => (
           <VStack
             gap={4}
             spacing={1}
-            key={`DotStatusColor-placement-${placement}`}
+            key={`DotStatusColor-placement-${pinDirection}`}
             spacingBottom={4}
           >
-            <TextLabel1>{placement}</TextLabel1>
-            <DotStatusColor variant="positive" placement={placement}>
-              <Avatar size="xxxl" alt="Sneezy" />
+            <TextLabel1>{pinDirection}</TextLabel1>
+            <DotStatusColor variant="positive" pin={pinDirection}>
+              <Avatar shape="square" size="l" alt="Sneezy" />
             </DotStatusColor>
-            <DotStatusColor variant="positive" placement={placement}>
-              <Avatar size="xxl" alt="Sneezy" />
+            <DotStatusColor variant="positive" pin={pinDirection}>
+              <Avatar shape="square" size="xxl" alt="Sneezy" />
             </DotStatusColor>
-            <DotStatusColor variant="positive" placement={placement}>
-              <Icon name="airdrop" size="l" />
+            <DotStatusColor variant="positive" pin={pinDirection}>
+              <Icon name="calendar" size="l" />
             </DotStatusColor>
           </VStack>
         ))}

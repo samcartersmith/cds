@@ -189,21 +189,6 @@ The spacing to use on the inner content of Cell
 
 <ComponentDetails componentName="SelectOption" templateName="prop-intermediary" />
 
-### key <Badge variant="web" />
-
-Note: the value passed will be ignored on Web because Select overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="key"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-key" />
-
 ### media <Badge variant="web" />
 
 <ApiDetails
@@ -259,51 +244,6 @@ Reduce horizontal offset if parent container already has spacing.
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-offsetHorizontal" />
-
-### onKeyDown <Badge variant="web" />
-
-callback fired whenever a key is pressed while SelectOption is focused
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="onKeyDown"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(event: KeyboardEvent<HTMLElement>) => void']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-onKeyDown" />
-
-### onKeyPress <Badge variant="web" />
-
-Callback fired when a key is pressed
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="onKeyPress"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['KeyboardEventHandler<Element>']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-onKeyPress" />
-
-### onPress <Badge variant="web" />
-
-Callback fired when the element is pressed.
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="onPress"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['MouseEventHandler<Element>']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-onPress" />
 
 ### outerSpacing <Badge variant="web" />
 
@@ -417,35 +357,5 @@ Title of content. Max 1 line (with description) or 2 lines (without), otherwise 
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-title" />
-
-### to <Badge variant="web" />
-
-URL that this links to when pressed.
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="to"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-to" />
-
-### value <Badge variant="web" />
-
-automatically focus a select option if its already been selected Note: the value passed will be ignored on Web because Select overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="value"
-  required={true}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-value" />
 
 <ComponentDetails componentName="SelectOption" templateName="outro" />

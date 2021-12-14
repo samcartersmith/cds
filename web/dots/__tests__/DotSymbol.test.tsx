@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
-import { OFFSET } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 
 import { DotSymbol } from '../DotSymbol';
 
@@ -31,15 +30,16 @@ describe('DotSymbol', () => {
 
   it('Placed in the correct position relative to its children', () => {
     const { getByTestId } = render(
-      <DotSymbol placement="bottom-start" source={src}>
+      <DotSymbol pin="bottom-start" source={src}>
         <div />
       </DotSymbol>,
     );
 
     expect(getByTestId('dotsymbol-inner-container')).toHaveStyle({
       position: 'absolute',
-      bottom: `${OFFSET}px`,
-      left: `${OFFSET}px`,
+      bottom: 0,
+      left: 0,
+      transform: 'translate(-50%, 50%)',
     });
   });
 });

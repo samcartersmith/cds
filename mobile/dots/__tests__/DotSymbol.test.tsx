@@ -1,7 +1,8 @@
-import { render } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 
-import { OFFSET } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
+import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
 import { DotSymbol } from '../DotSymbol';
+import { Icon } from '../../icons/Icon';
 
 const DOTSYMBOL_TESTID = 'dot-symbol-test';
 
@@ -27,16 +28,30 @@ describe('DotSymbol', () => {
   });
 
   it('Placed in the correct position relative to its children', () => {
+    const iconSize = normalScaleMap.l;
+    const dotSize = 16;
+
     const { getByTestId } = render(
-      <DotSymbol placement="bottom-start" source={src}>
-        <div />
+      <DotSymbol testID={DOTSYMBOL_TESTID} pin="bottom-start" source={src}>
+        <Icon name="airdrop" size="l" />
       </DotSymbol>,
     );
 
+    // Trigger onLayout for the icon
+    fireEvent(getByTestId(DOTSYMBOL_TESTID), 'layout', {
+      nativeEvent: { layout: { height: iconSize, width: iconSize } },
+    });
+
     expect(getByTestId('dotsymbol-inner-container')).toHaveStyle({
       position: 'absolute',
-      bottom: OFFSET,
-      start: OFFSET,
+      transform: [
+        {
+          translateX: -(dotSize / 2),
+        },
+        {
+          translateY: iconSize - dotSize / 2,
+        },
+      ],
     });
   });
 });

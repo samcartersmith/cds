@@ -67,6 +67,16 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Dots',
+      collapsed: true,
+      items: [
+        'components/dots/DotCount/dot-count',
+        'components/dots/DotStatusColor/dot-status-color',
+        'components/dots/DotSymbol/dot-symbol',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Icons',
       collapsed: true,
       items: [
@@ -131,6 +141,9 @@ module.exports = {
       collapsed: true,
       items: [
         'components/overlays/Alert/alert',
+        'components/overlays/MenuItem/menu-item',
+        'components/overlays/MenuSectionLabel/menu-section-label',
+        'components/overlays/PopoverMenu/popover-menu',
         'components/overlays/Toast/toast',
         'components/overlays/Tooltip/tooltip',
         'components/overlays/Modal/modal',

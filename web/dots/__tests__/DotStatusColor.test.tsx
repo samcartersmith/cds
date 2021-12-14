@@ -1,8 +1,6 @@
 import { render } from '@testing-library/react';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { renderA11y } from '@cbhq/jest-utils';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
-import { OFFSET } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 import { paletteAliasToCssVar } from '../../utils/palette';
 import { DotStatusColor } from '../DotStatusColor';
 
@@ -63,26 +61,18 @@ describe('DotStatusColor', () => {
     });
   });
 
-  it('renders a white border', () => {
-    const { getByTestId } = render(<DotStatusColor variant="negative" />);
-
-    expect(getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
-      borderColor: 'white',
-      borderWidth: borderWidth.button,
-    });
-  });
-
   it('Placed in the correct position relative to its children', () => {
     const { getByTestId } = render(
-      <DotStatusColor placement="bottom-start" variant="negative">
+      <DotStatusColor pin="bottom-start" variant="negative">
         <div />
       </DotStatusColor>,
     );
 
     expect(getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
       position: 'absolute',
-      bottom: `${OFFSET}px`,
-      left: `${OFFSET}px`,
+      bottom: 0,
+      left: 0,
+      transform: 'translate(-50%, 50%)',
     });
   });
 });

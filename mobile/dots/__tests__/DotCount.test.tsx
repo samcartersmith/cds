@@ -1,7 +1,7 @@
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { render } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 
-import { OFFSET } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
+import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
 import { DotCount } from '../DotCount';
 import { Icon } from '../../icons/Icon';
 
@@ -19,7 +19,7 @@ describe('DotCount', () => {
   it('renders a white border', () => {
     const { getByTestId } = render(<DotCount variant="negative" count={1} />);
 
-    expect(getByTestId('dot-outer-container-test-id')).toHaveStyle({
+    expect(getByTestId('dotcount-inner-container')).toHaveStyle({
       borderColor: 'white',
       borderWidth: borderWidth.button,
     });
@@ -34,9 +34,9 @@ describe('DotCount', () => {
   });
 
   it('renders correct count when count  0', () => {
-    const { getByText } = render(<DotCount variant="negative" count={0} />);
+    const { queryByText } = render(<DotCount variant="negative" count={0} />);
 
-    expect(getByText('0')).toBeTruthy();
+    expect(queryByText('0')).toBeNull();
   });
 
   it('renders count 99+ when count > 99', () => {
@@ -46,16 +46,35 @@ describe('DotCount', () => {
   });
 
   it('DotCount is placed in the correct position relative to its children', () => {
+    const iconSize = normalScaleMap.l;
+    const dotSize = 24;
+
     const { getByTestId } = render(
-      <DotCount placement="bottom-start" variant="negative" count={1}>
-        <Icon name="airdrop" size="m" />
+      <DotCount pin="top-end" testID={DOTCOUNT_TESTID} variant="negative" count={1}>
+        <Icon name="airdrop" size="l" />
       </DotCount>,
     );
 
-    expect(getByTestId('dot-outer-container-test-id')).toHaveStyle({
+    // Trigger onLayout for the icon
+    fireEvent(getByTestId(DOTCOUNT_TESTID), 'layout', {
+      nativeEvent: { layout: { height: iconSize, width: iconSize } },
+    });
+
+    // Trigger onLayout for the dot
+    fireEvent(getByTestId('dotcount-inner-container'), 'layout', {
+      nativeEvent: { layout: { height: dotSize, width: dotSize } },
+    });
+
+    expect(getByTestId('dotcount-inner-container')).toHaveStyle({
       position: 'absolute',
-      bottom: OFFSET,
-      start: OFFSET,
+      transform: [
+        {
+          translateX: iconSize - dotSize / 2,
+        },
+        {
+          translateY: -(dotSize / 2),
+        },
+      ],
     });
   });
 });

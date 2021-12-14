@@ -1,8 +1,7 @@
 import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
-import { useDotPlacementStyles } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
-import React, { CSSProperties, memo } from 'react';
+import React, { memo } from 'react';
 import { RemoteImage } from '../media/RemoteImage';
-import { dotRootContainerStyles } from './dotStyles';
+import { dotRootContainerStyles, getTransform } from './dotStyles';
 
 export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
   source: string;
@@ -11,16 +10,8 @@ export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
 const aspectRatio: [number, number] = [1, 1];
 
 export const DotSymbol = memo(
-  ({
-    children,
-    placement,
-    source,
-    size = 's',
-    testID,
-    accessibilityLabel,
-    ...props
-  }: DotSymbolProps) => {
-    const placementStyles = useDotPlacementStyles('web', placement) as CSSProperties;
+  ({ children, pin, source, size = 's', testID, accessibilityLabel, ...props }: DotSymbolProps) => {
+    const pinStyles = getTransform(pin);
     const { iconSize } = useIconSize(size);
 
     return (
@@ -31,7 +22,7 @@ export const DotSymbol = memo(
         {...props}
       >
         {children}
-        <div style={placementStyles} data-testid="dotsymbol-inner-container">
+        <div style={pinStyles} data-testid="dotsymbol-inner-container">
           <RemoteImage shape="circle" aspectRatio={aspectRatio} source={source} width={iconSize} />
         </div>
       </div>

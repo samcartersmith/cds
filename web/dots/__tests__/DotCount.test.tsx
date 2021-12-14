@@ -1,8 +1,6 @@
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { render } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
 
-import { OFFSET } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 import { DotCount } from '../DotCount';
 import { Icon } from '../../icons/Icon';
 
@@ -21,15 +19,6 @@ describe('DotCount', () => {
     expect(getByTestId(DOTCOUNT_TESTID)).toBeTruthy();
   });
 
-  it('renders a white border', () => {
-    const { getByTestId } = render(<DotCount variant="negative" count={1} />);
-
-    expect(getByTestId('dotcount-outer-container')).toHaveStyle({
-      borderColor: 'white',
-      borderWidth: borderWidth.button,
-    });
-  });
-
   it('renders correct count when count equals 1', () => {
     const { getByText } = render(
       <DotCount testID={DOTCOUNT_TESTID} variant="negative" count={1} />,
@@ -39,9 +28,9 @@ describe('DotCount', () => {
   });
 
   it('renders correct count when count  0', () => {
-    const { getByText } = render(<DotCount variant="negative" count={0} />);
+    const { queryByText } = render(<DotCount variant="negative" count={0} />);
 
-    expect(getByText('0')).toBeTruthy();
+    expect(queryByText('0')).toBeNull();
   });
 
   it('renders count 99+ when count > 99', () => {
@@ -52,15 +41,16 @@ describe('DotCount', () => {
 
   it('Placed in the correct position relative to its children', () => {
     const { getByTestId } = render(
-      <DotCount placement="bottom-start" variant="negative" count={1}>
+      <DotCount pin="top-end" variant="negative" count={1}>
         <Icon name="airdrop" size="m" />
       </DotCount>,
     );
 
     expect(getByTestId('dotcount-outer-container')).toHaveStyle({
       position: 'absolute',
-      bottom: `${OFFSET}px`,
-      left: `${OFFSET}px`,
+      top: 0,
+      right: 0,
+      transform: 'translate(50%, -50%)',
     });
   });
 });

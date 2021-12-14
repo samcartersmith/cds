@@ -1,34 +1,43 @@
-import React, { useMemo, CSSProperties, memo } from 'react';
+import React, { useMemo, memo } from 'react';
 import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
-import { useDotPlacementStyles } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
-import { dotOuterContainerStyles, dotCountContent } from '@cbhq/cds-common/tokens/dot';
-import { dotRootContainerStyles } from './dotStyles';
-
+import {
+  dotOuterContainerStyles,
+  dotCountContent,
+  dotCountPadding,
+} from '@cbhq/cds-common/tokens/dot';
+import { css } from 'linaria';
+import { dotRootContainerStyles, getTransform } from './dotStyles';
 import { usePalette } from '../hooks/usePalette';
 import { TextCaption } from '../typography/TextCaption';
+
+const dotCountContentLinaria = css`
+  && {
+    ${dotCountContent}
+    ${dotOuterContainerStyles}
+    ${dotCountPadding}
+  }
+`;
 
 export const DotCount = memo(
   ({
     children,
-    placement,
-    variant,
+    pin,
+    variant = 'negative',
     count,
     testID,
     accessibilityLabel,
     ...props
   }: DotCountBaseProps) => {
     const palette = usePalette();
-    const placementStyles = useDotPlacementStyles('web', placement) as CSSProperties;
+    const pinStyles = getTransform(pin);
 
     const styles = useMemo(() => {
       return {
         backgroundColor: palette[variant],
-        ...dotCountContent,
-        ...placementStyles,
-        ...(dotOuterContainerStyles as CSSProperties),
+        ...pinStyles,
       };
-    }, [palette, placementStyles, variant]);
+    }, [palette, pinStyles, variant]);
 
     return (
       <div
@@ -38,11 +47,17 @@ export const DotCount = memo(
         {...props}
       >
         {children}
-        <div data-testid="dotcount-outer-container" style={styles}>
-          <TextCaption align="center" as="p" color="primaryForeground">
-            {parseDotCountMaxOverflow(count)}
-          </TextCaption>
-        </div>
+        {count > 0 && (
+          <div
+            className={dotCountContentLinaria}
+            data-testid="dotcount-outer-container"
+            style={styles}
+          >
+            <TextCaption align="center" as="p" color="primaryForeground">
+              {parseDotCountMaxOverflow(count)}
+            </TextCaption>
+          </div>
+        )}
       </div>
     );
   },

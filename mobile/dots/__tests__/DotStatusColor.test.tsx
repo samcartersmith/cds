@@ -1,12 +1,12 @@
-import { render } from '@testing-library/react-native';
-import { OFFSET } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
+import { render, fireEvent } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { paletteAliasToRgbaString } from '../../utils/palette';
+import { Icon } from '../../icons/Icon';
 
 import { DotStatusColor } from '../DotStatusColor';
 
 const DOTSTATUSCOLOR_TESTID = 'dot-status-color-test';
+const INNER_CONTAINER_TESTID = 'dotstatuscolor-inner-container';
 
 describe('DotStatusColor', () => {
   it('renders a DotStatusColor', () => {
@@ -20,7 +20,7 @@ describe('DotStatusColor', () => {
   it('can change variant to negative', () => {
     const { getByTestId } = render(<DotStatusColor variant="negative" />);
 
-    expect(getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
+    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: paletteAliasToRgbaString('negative', 'light'),
     });
   });
@@ -28,7 +28,7 @@ describe('DotStatusColor', () => {
   it('can change variant to positive', () => {
     const { getByTestId } = render(<DotStatusColor variant="positive" />);
 
-    expect(getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
+    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: paletteAliasToRgbaString('positive', 'light'),
     });
   });
@@ -40,32 +40,37 @@ describe('DotStatusColor', () => {
       <DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" size="s" />,
     );
 
-    expect(getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
+    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       width: iconSize,
       height: iconSize,
     });
   });
 
-  it('renders a white border', () => {
-    const { getByTestId } = render(<DotStatusColor variant="negative" />);
-
-    expect(getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
-      borderColor: 'white',
-      borderWidth: borderWidth.button,
-    });
-  });
-
   it('Placed in the correct position relative to its children', () => {
+    const iconSize = normalScaleMap.l;
+    const dotSize = 16;
+
     const { getByTestId } = render(
-      <DotStatusColor placement="bottom-start" variant="negative">
-        <div />
+      <DotStatusColor testID={DOTSTATUSCOLOR_TESTID} pin="bottom-start" variant="negative">
+        <Icon name="airdrop" size="l" />
       </DotStatusColor>,
     );
 
-    expect(getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
+    // Trigger onLayout for the icon
+    fireEvent(getByTestId(DOTSTATUSCOLOR_TESTID), 'layout', {
+      nativeEvent: { layout: { height: iconSize, width: iconSize } },
+    });
+
+    expect(getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       position: 'absolute',
-      bottom: OFFSET,
-      start: OFFSET,
+      transform: [
+        {
+          translateX: -(dotSize / 2),
+        },
+        {
+          translateY: iconSize - dotSize / 2,
+        },
+      ],
     });
   });
 });

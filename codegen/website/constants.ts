@@ -16,6 +16,7 @@ export const CDS_SUB_DIRS = [
   'cards',
   'cells',
   'controls',
+  'dots',
   'icons',
   'illustrations',
   'layout',

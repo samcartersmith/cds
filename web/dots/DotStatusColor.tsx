@@ -1,26 +1,16 @@
-import React, { useMemo, CSSProperties, memo } from 'react';
+import React, { useMemo, memo } from 'react';
 import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
-import { useDotPlacementStyles } from '@cbhq/cds-common/hooks/useDotPlacementStyles';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
-import { dotOuterContainerStyles } from '@cbhq/cds-common/tokens/dot';
-import { dotRootContainerStyles } from './dotStyles';
+import { dotRootContainerStyles, getTransform } from './dotStyles';
 import { usePalette } from '../hooks/usePalette';
 
 export const DotStatusColor = memo(
-  ({
-    variant,
-    placement,
-    size = 's',
-    children,
-    testID,
-    accessibilityLabel,
-    ...props
-  }: DotBaseProps) => {
+  ({ variant, pin, size = 's', children, testID, accessibilityLabel, ...props }: DotBaseProps) => {
     const palette = usePalette();
     const { iconSize } = useIconSize(size);
 
-    const placementStyles = useDotPlacementStyles('web', placement) as CSSProperties;
+    const pinStyles = getTransform(pin);
 
     const styles = useMemo(() => {
       return {
@@ -28,10 +18,11 @@ export const DotStatusColor = memo(
         width: `${iconSize}px`,
         height: `${iconSize}px`,
         backgroundColor: palette[variant],
-        ...(dotOuterContainerStyles as CSSProperties),
-        ...placementStyles,
+        alignItems: 'center',
+        justifyContent: 'center',
+        ...pinStyles,
       };
-    }, [iconSize, palette, placementStyles, variant]);
+    }, [iconSize, palette, pinStyles, variant]);
 
     return (
       <div

@@ -691,6 +691,69 @@ export const TextInput = {
   ),
 };
 
+export const DotCount = {
+  'dot-count': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotCount/dot-count.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotCount/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotCount/usage.mdx'
+      ),
+  ),
+};
+
+export const DotStatusColor = {
+  'dot-status-color': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotStatusColor/dot-status-color.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotStatusColor/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotStatusColor/usage.mdx'
+      ),
+  ),
+};
+
+export const DotSymbol = {
+  'dot-symbol': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotSymbol/dot-symbol.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotSymbol/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotSymbol/usage.mdx'
+      ),
+  ),
+};
+
 export const Icon = {
   a11y: React.lazy(
     async () =>
@@ -1290,6 +1353,51 @@ export const Alert = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Alert/usage.mdx'
+      ),
+  ),
+};
+
+export const MenuItem = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/implementation.mdx'
+      ),
+  ),
+  'menu-item': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/menu-item.mdx'
+      ),
+  ),
+};
+
+export const MenuSectionLabel = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuSectionLabel/implementation.mdx'
+      ),
+  ),
+  'menu-section-label': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuSectionLabel/menu-section-label.mdx'
+      ),
+  ),
+};
+
+export const PopoverMenu = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/implementation.mdx'
+      ),
+  ),
+  'popover-menu': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/popover-menu.mdx'
       ),
   ),
 };

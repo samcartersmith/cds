@@ -1,18 +1,25 @@
 import { ReactNode } from 'react';
 import { IconSize } from './IconSize';
-import { PaletteBackground } from './Palette';
 import { SharedProps } from './SharedProps';
-import { BadgePlacement } from './Placement';
+import { PinPlacement } from './Placement';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { PaletteForeground } from './Palette';
+
+export type DotVariant = Extract<
+  PaletteForeground,
+  'positive' | 'negative' | 'primary' | 'foregroundMuted'
+>;
+
+export type DotSize = Extract<IconSize, 'l' | 'm' | 's'>;
 
 export type DotBaseProps = {
-  /** Position of dot relative to its children */
-  placement?: BadgePlacement;
+  /** Position of dot relative to its parent */
+  pin?: PinPlacement;
   /** background color of dot */
-  variant: Extract<PaletteBackground, 'positive' | 'negative'>;
+  variant: DotVariant;
   /** children of where the dot will anchor to */
   children?: ReactNode;
   /** Size of dot */
-  size?: IconSize;
+  size?: DotSize;
 } & SharedProps &
   SharedAccessibilityProps;

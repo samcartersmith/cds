@@ -1,6 +1,6 @@
-import { BadgePlacement } from '@cbhq/cds-common';
+import { PinPlacement } from '@cbhq/cds-common/types/Placement';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { PLACEMENTS, SIZES } from '@cbhq/cds-common/internal/dotBuilder';
+import { PIN_DIRECTIONS, SIZES } from '@cbhq/cds-common/internal/dotBuilder';
 import { DotSymbol } from '..';
 import { VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
@@ -15,16 +15,16 @@ export default {
 export const DotSymbolPlacements = () => {
   return (
     <>
-      {PLACEMENTS.map((placement: BadgePlacement) => (
-        <VStack gap={4} spacing={1} key={`dotsymbol-placement-${placement}`} spacingBottom={4}>
-          <TextLabel1 as="p">{placement}</TextLabel1>
-          <DotSymbol size="m" placement={placement} source={assets.eth.imageUrl}>
+      {PIN_DIRECTIONS.map((pinDirection: PinPlacement) => (
+        <VStack gap={4} spacing={1} key={`dotsymbol-placement-${pinDirection}`} spacingBottom={4}>
+          <TextLabel1 as="p">{pinDirection}</TextLabel1>
+          <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
             <Avatar size="xxxl" alt="Sneezy" />
           </DotSymbol>
-          <DotSymbol size="m" placement={placement} source={assets.eth.imageUrl}>
+          <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
             <Avatar size="xl" alt="Sneezy" />
           </DotSymbol>
-          <DotSymbol size="m" placement={placement} source={assets.eth.imageUrl}>
+          <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
             <Icon name="airdrop" size="l" />
           </DotSymbol>
         </VStack>

@@ -21,6 +21,7 @@ import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSLayout from '@cbhq/cds-web/layout';
+import * as CDSDots from '@cbhq/cds-web/dots';
 import * as CDSCardElements from '@cbhq/cds-web/cards';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
@@ -110,6 +111,7 @@ const ReactLiveScope = {
   ...CDSCardElements,
   ...CDSCells,
   ...CDSControls,
+  ...CDSDots,
   ...CDSIcons,
   ...CDSLayout,
   ...CDSLoaders,
