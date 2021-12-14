@@ -43,6 +43,7 @@ export type CellBaseProps = {
   intermediary?: React.ReactNode;
   media?: React.ReactElement;
   minHeight?: number;
+  maxHeight?: number;
   shouldOverflow?: boolean;
 } & CellCommonProps;
 

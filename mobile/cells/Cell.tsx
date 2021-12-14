@@ -27,6 +27,7 @@ export const Cell = memo(function Cell({
   intermediary,
   media,
   minHeight,
+  maxHeight,
   onLayout,
   onPress,
   priority,
@@ -112,6 +113,7 @@ export const Cell = memo(function Cell({
       flexDirection="row"
       width="100%"
       minHeight={minHeight}
+      maxHeight={maxHeight}
       onLayout={onLayout}
       {...spacing.outer}
     >

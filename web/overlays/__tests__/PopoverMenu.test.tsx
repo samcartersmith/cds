@@ -6,7 +6,7 @@ import {
   priceOptions,
 } from '../__stories__/popoverMenuBuilder';
 import { PopoverMenu } from '../PopoverMenu';
-import { SelectOption } from '../../cells/SelectOption';
+import { SelectOption } from '../../controls/SelectOption';
 import { IconButton } from '../../buttons/IconButton';
 import { MenuItem } from '../MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';

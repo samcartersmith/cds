@@ -6,3 +6,4 @@ export * from './TextInput';
 export * from './InputIcon';
 export * from './InputIconButton';
 export * from './Select';
+export * from './SelectOption';

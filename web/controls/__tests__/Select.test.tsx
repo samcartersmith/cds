@@ -8,7 +8,7 @@ import {
 
 import { Select } from '../Select';
 import { VStack } from '../../layout/VStack';
-import { SelectOption } from '../../cells/SelectOption';
+import { SelectOption } from '../SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { MenuItem } from '../../overlays/MenuItem';
 

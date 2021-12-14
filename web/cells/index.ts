@@ -3,4 +3,3 @@ export * from './ContentCell';
 export * from './ContentCellFallback';
 export * from './ListCell';
 export * from './ListCellFallback';
-export * from './SelectOption';

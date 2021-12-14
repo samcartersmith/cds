@@ -78,6 +78,7 @@ export const Cell = memo(
       intermediary,
       media,
       minHeight,
+      maxHeight,
       onPress,
       priority,
       selected,
@@ -192,6 +193,7 @@ export const Cell = memo(
         alignItems="stretch"
         width="100%"
         minHeight={minHeight}
+        maxHeight={maxHeight}
         {...spacing.outer}
         ref={ref}
       >

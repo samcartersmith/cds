@@ -1,15 +1,17 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
 import {
-  listHeight,
-  compactListHeight,
-  selectCellSpacingConfig,
-} from '@cbhq/cds-common/tokens/cell';
-import { Cell, overflowClassName } from './Cell';
+  selectOptionMinHeight,
+  selectOptionMaxHeight,
+  selectOptionCompactMinHeight,
+  selectOptionCompactMaxHeight,
+} from '@cbhq/cds-common/tokens/select';
+import { Cell, overflowClassName } from '../cells/Cell';
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
-import { CellAccessory } from './CellAccessory';
+import { CellAccessory } from '../cells/CellAccessory';
 
 export const SelectOption = memo(
   forwardRef(
@@ -17,7 +19,12 @@ export const SelectOption = memo(
       { title, description, multiline, selected, compact, ...props }: SelectOptionBaseProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
-      const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
+      const minHeight = useScaleConditional(
+        compact ? selectOptionCompactMinHeight : selectOptionMinHeight,
+      );
+      const maxHeight = useScaleConditional(
+        compact ? selectOptionCompactMaxHeight : selectOptionMaxHeight,
+      );
 
       return (
         <Cell
@@ -25,7 +32,9 @@ export const SelectOption = memo(
           ref={ref}
           borderRadius="none"
           minHeight={minHeight}
+          maxHeight={maxHeight}
           accessory={selected ? <CellAccessory type="selected" /> : undefined}
+          selected={selected}
           {...props}
         >
           <VStack>

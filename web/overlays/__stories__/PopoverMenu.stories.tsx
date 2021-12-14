@@ -1,6 +1,6 @@
 import { popoverMenuBuilder, CreatePopoverMenuStoriesProps } from './popoverMenuBuilder';
 import { PopoverMenu } from '../PopoverMenu';
-import { SelectOption } from '../../cells/SelectOption';
+import { SelectOption } from '../../controls/SelectOption';
 import { IconButton, Button } from '../../buttons';
 import { VStack, HStack } from '../../layout';
 import { NavigationBar, NavigationTitle } from '../../navigation';
