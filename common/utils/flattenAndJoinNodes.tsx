@@ -46,7 +46,7 @@ export function flattenAndJoinNodes<BoxProps>({
         finalChildren = [...finalChildren, item, ...itemsToJoin];
       }
     });
-    return finalChildren;
+    return React.Children.toArray(finalChildren);
   }
   return childrenContents;
 }

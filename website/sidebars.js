@@ -96,6 +96,8 @@ module.exports = {
         'frontier/typography',
         'frontier/button',
         'frontier/color',
+        'frontier/card',
+        'frontier/sparkline',
         'frontier/faq',
       ],
     },
