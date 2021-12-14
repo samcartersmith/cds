@@ -87,8 +87,10 @@ export const Toast: React.FC<ToastProps> = memo(
               maxWidth={550}
             >
               {/* avoid pushing contents off screen */}
-              <Box flexShrink={1} spacingEnd={2} spacingVertical={1}>
-                <TextHeadline as="p">{text}</TextHeadline>
+              <Box flexShrink={1} spacingEnd={2} spacingVertical={1} role="alert">
+                <TextHeadline as="p" tabIndex={0}>
+                  {text}
+                </TextHeadline>
               </Box>
               <HStack>
                 {!!action && (
