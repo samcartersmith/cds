@@ -1,38 +1,21 @@
-import { useMemo } from 'react';
-
-import { extent } from 'd3-array';
-import { scaleLinear } from 'd3-scale';
+import { useCallback } from 'react';
 import { curveBasis, line } from 'd3-shape';
 
-import { getSparklineRange } from './getSparklineRange';
-import { largestTriangleThreeBucket } from './largestTriangleThreeBucket';
+import {
+  SparklineGeneratorParams,
+  useSparklinePathGenerator,
+  UseSparklinePathParams,
+} from './useSparklinePathGenerator';
 
-export type UseSparklinePathParams = {
-  data: number[] | string[];
-  height: number;
-  width: number;
-  yAxisScalingFactor?: number;
-};
-
-export const useSparklinePath = ({
-  data,
-  height,
-  width,
-  yAxisScalingFactor = 1.0,
-}: UseSparklinePathParams) => {
-  const dataList = useMemo(() => data.map(Number), [data]);
-  return useMemo(() => {
-    const { xRange, yRange } = getSparklineRange({ height, width, yAxisScalingFactor });
-    const downsampledData = largestTriangleThreeBucket(dataList, width / 3) as [number];
-    const xDomain = [0, downsampledData.length];
-    const xFunction = scaleLinear().domain(xDomain).range(xRange);
-    const yDomain = extent(downsampledData) as [number, number];
-    const yFunction = scaleLinear().domain(yDomain).range(yRange);
+export const useSparklinePath = (props: UseSparklinePathParams) => {
+  const generator = useCallback(({ xFunction, yFunction, data }: SparklineGeneratorParams) => {
     return (
       line<number>()
         .curve(curveBasis)
         .x((_, i) => xFunction(i))
-        .y((y) => yFunction(y))(downsampledData) ?? ''
+        .y((y) => yFunction(y))(data) ?? ''
     );
-  }, [height, width, yAxisScalingFactor, dataList]);
+  }, []);
+
+  return useSparklinePathGenerator({ generator, ...props });
 };

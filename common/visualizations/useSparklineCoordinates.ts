@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { bisector, extent } from 'd3-array';
 import { scaleLinear, scaleTime } from 'd3-scale';
-import { line } from 'd3-shape';
+import { area, line } from 'd3-shape';
 
 import { ChartData, ChartDataPoint } from '../types';
 import { getSparklineRange } from './getSparklineRange';
@@ -32,9 +32,14 @@ export const useSparklineCoordinates = ({
       .domain(yDomain)
       .range(yRange);
 
-    const createSparkline = line<ChartDataPoint>()
+    const createSparklinePath = line<ChartDataPoint>()
       .x((item) => xFunction(item.date))
       .y((item) => yFunction(item.value));
+
+    const createSparklineArea = area<ChartDataPoint>()
+      .x((item) => xFunction(item.date))
+      .y0(height)
+      .y1((item) => yFunction(item.value));
 
     // Bisector goes from x coordinate to index of data array
     const bisect = bisector((item: { date: Date }) => item.date).left;
@@ -55,7 +60,8 @@ export const useSparklineCoordinates = ({
     return {
       xFunction,
       yFunction,
-      path: createSparkline(data) ?? '',
+      path: createSparklinePath(data) ?? '',
+      area: createSparklineArea(data) ?? '',
       getMarker,
     };
   }, [data, height, width, yAxisScalingFactor]);

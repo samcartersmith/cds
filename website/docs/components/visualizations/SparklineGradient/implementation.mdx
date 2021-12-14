@@ -34,6 +34,31 @@ Only use if you have a non CDS color powering the background color that a Sparkl
 
 <ComponentDetails componentName="SparklineGradient" templateName="prop-background" />
 
+### children
+
+an optional SparklineArea that can be used to fill in the Sparkline
+
+<ApiDetails
+  componentName="SparklineGradient"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'OptionalElement<SparklineAreaBaseProps>[]',
+    'ReactElement<SparklineAreaBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
+  ]}
+  webOptions={[
+    'OptionalElement<SparklineAreaBaseProps>[]',
+    'ReactElement<SparklineAreaBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
+  ]}
+/>
+
+<ComponentDetails componentName="SparklineGradient" templateName="prop-children" />
+
 ### color
 
 Color of the plotted Sparkline. Accepts any valid color value. Do not pass in a CDS alias such as foreground or a CSS Variable.

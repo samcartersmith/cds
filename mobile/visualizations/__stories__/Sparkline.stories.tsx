@@ -5,6 +5,7 @@ import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { prices, pricesWithScalingFactor } from '@cbhq/cds-common/internal/data/prices';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
+import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 
 import { Cell } from '../../cells/Cell';
 import { CellMedia } from '../../cells/CellMedia';
@@ -17,6 +18,7 @@ import { TextHeadline } from '../../typography/TextHeadline';
 import { Sparkline } from '../Sparkline';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { SparklineArea } from '../SparklineArea';
 
 type SparklineExampleProps = {
   imageUrl: string;
@@ -65,6 +67,7 @@ const SparklineExample: React.FC<SparklineExampleProps> = ({ imageUrl, name, sym
 type SparklineCompactExampleProps = {
   yAxisScalingFactor: number;
   data: string[];
+  fill?: boolean;
 };
 
 const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = (props) => {
@@ -74,6 +77,7 @@ const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = (props) 
   const height = useScaleConditional({ dense: 160, normal: 320 });
   const dimensions = { width, height };
   const path = useSparklinePath({ ...dimensions, ...props });
+  const area = useSparklineArea({ ...dimensions, ...props });
 
   return (
     <VStack>
@@ -85,7 +89,9 @@ const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = (props) 
         path={path}
         color="#F7931A"
         yAxisScalingFactor={props.yAxisScalingFactor}
-      />
+      >
+        {props.fill && <SparklineArea area={area} />}
+      </Sparkline>
     </VStack>
   );
 };
@@ -105,6 +111,11 @@ const PressableOpacityScreen = () => {
       <Example title="SparklineWithScale">
         {pricesWithScalingFactor.map((item) => (
           <SparklineScalingExample key={item.yAxisScalingFactor} {...item} />
+        ))}
+      </Example>
+      <Example title="SparklineWithScaleAndFill">
+        {pricesWithScalingFactor.map((item) => (
+          <SparklineScalingExample key={item.yAxisScalingFactor} {...item} fill />
         ))}
       </Example>
     </ExampleScreen>

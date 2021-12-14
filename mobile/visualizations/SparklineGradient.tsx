@@ -1,16 +1,17 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { SparklineBaseProps } from '@cbhq/cds-common/types';
+import { SparklineBaseProps } from '@cbhq/cds-common/types/SparklineBaseProps';
 import { TextInput } from 'react-native';
-import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
+import Svg, { G, Defs, LinearGradient, Path, Stop } from 'react-native-svg';
 
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
+import { SparklineAreaPattern } from './SparklineAreaPattern';
 
 export const SparklineGradient = memo(
   forwardRef<TextInput | null, SparklineBaseProps>(
-    ({ background, color, path, height, width, yAxisScalingFactor }, ref) => {
+    ({ background, color, path, height, width, yAxisScalingFactor, children }, ref) => {
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const linearGradient = useMemo(() => {
@@ -22,22 +23,25 @@ export const SparklineGradient = memo(
                 <Stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </LinearGradient>
+            {!!children && <SparklineAreaPattern color={color} />}
           </Defs>
         );
-      }, [gradient]);
+      }, [children, color, gradient]);
 
       return (
         <Svg width={width} height={height}>
           {linearGradient}
-          <Path
-            ref={ref}
-            d={path}
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth={borderWidth.sparkline}
-            stroke="url(#gradient)"
-            {...translateProps}
-          />
+          <G {...translateProps}>
+            <Path
+              ref={ref}
+              d={path}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth={borderWidth.sparkline}
+              stroke="url(#gradient)"
+            />
+            {children}
+          </G>
         </Svg>
       );
     },

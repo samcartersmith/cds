@@ -50,6 +50,20 @@ describe('useSparklineCoordinates', () => {
     expect(path1).not.toEqual(path2);
   });
 
+  it('returns the correct area', () => {
+    const { result, rerender } = renderHook((props: UseSparklineCoordinatesParams = mockData1) => {
+      return useSparklineCoordinates(props);
+    });
+    const area1 = result.current.area;
+    rerender(mockData2);
+    const area2 = result.current.area;
+
+    expect(mockData1).not.toEqual(mockData2);
+    expect(area1).toEqual('M2,318L438,2L438,320L2,320Z');
+    expect(area2).toEqual('M2,2L438,318L438,320L2,320Z');
+    expect(area1).not.toEqual(area2);
+  });
+
   it('returns the data point for a given x position', () => {
     const marker1 = {
       value: 0,

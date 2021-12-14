@@ -6,6 +6,7 @@ import { prices, pricesWithScalingFactor } from '@cbhq/cds-common/internal/data/
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 
+import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { Cell } from '../../cells/Cell';
 import { CellMedia } from '../../cells/CellMedia';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
@@ -15,12 +16,14 @@ import { TextHeadline, TextBody } from '../../typography';
 import { SparklineGradient } from '../SparklineGradient';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { SparklineArea } from '../SparklineArea';
 
 type SparklineGradientExampleProps = {
   imageUrl: string;
   name: string;
   symbol: string;
   color: string;
+  fill?: boolean;
 };
 
 const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
@@ -28,6 +31,7 @@ const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
   name,
   symbol,
   color,
+  fill,
 }) => {
   const spacing = useSpacingScale();
   const chartHorizontalGutter = spacing[gutter];
@@ -35,6 +39,8 @@ const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
   const height = useScaleConditional({ dense: 160, normal: 320 });
   const dimensions = { width, height };
   const path = useSparklinePath({ ...dimensions, data: prices });
+  const area = useSparklineArea({ ...dimensions, data: prices });
+
   return (
     <VStack>
       <Cell media={<CellMedia type="image" source={imageUrl} title="Title" />}>
@@ -47,7 +53,9 @@ const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
           </TextBody>
         </VStack>
       </Cell>
-      <SparklineGradient {...dimensions} path={path} color={color} />
+      <SparklineGradient {...dimensions} path={path} color={color}>
+        {fill && <SparklineArea area={area} />}
+      </SparklineGradient>
     </VStack>
   );
 };
@@ -55,6 +63,7 @@ const SparklineGradientExample: React.FC<SparklineGradientExampleProps> = ({
 type SparklineCompactExampleProps = {
   yAxisScalingFactor: number;
   data: string[];
+  fill?: boolean;
 };
 
 const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = (props) => {
@@ -64,6 +73,7 @@ const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = (props) 
   const height = useScaleConditional({ dense: 160, normal: 320 });
   const dimensions = { width, height };
   const path = useSparklinePath({ ...dimensions, ...props });
+  const area = useSparklineArea({ ...dimensions, ...props });
 
   return (
     <VStack>
@@ -75,7 +85,9 @@ const SparklineScalingExample: React.FC<SparklineCompactExampleProps> = (props) 
         path={path}
         color="#F7931A"
         yAxisScalingFactor={props.yAxisScalingFactor}
-      />
+      >
+        {props.fill && <SparklineArea area={area} />}
+      </SparklineGradient>
     </VStack>
   );
 };
@@ -91,9 +103,22 @@ const PressableOpacityScreen = () => {
         <SparklineGradientExample {...assets.dai} />
         <SparklineGradientExample {...assets.sushi} />
       </Example>
+      <Example title="SparklineGradientWithArea">
+        <SparklineGradientExample {...assets.btc} fill />
+        <SparklineGradientExample {...assets.eth} fill />
+        <SparklineGradientExample {...assets.ltc} fill />
+        <SparklineGradientExample {...assets.xrp} fill />
+        <SparklineGradientExample {...assets.dai} fill />
+        <SparklineGradientExample {...assets.sushi} fill />
+      </Example>
       <Example title="SparklineGradientWithScale">
         {pricesWithScalingFactor.map((item) => (
           <SparklineScalingExample key={item.yAxisScalingFactor} {...item} />
+        ))}
+      </Example>
+      <Example title="SparklineGradientWithAreaAndScale">
+        {pricesWithScalingFactor.map((item) => (
+          <SparklineScalingExample key={item.yAxisScalingFactor} {...item} fill />
         ))}
       </Example>
     </ExampleScreen>
