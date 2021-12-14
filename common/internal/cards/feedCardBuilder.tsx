@@ -48,7 +48,14 @@ export function createConfigs<WrapperProps, PressFn>({
   const sheet = [defaultItem, defaultItem, defaultItem] as const;
 
   return {
-    defaultItem,
+    defaultItem: [
+      defaultItem,
+      {
+        parameters: {
+          wrapper: VerticalGroup,
+        },
+      },
+    ],
     vertical: [
       sheet,
       {

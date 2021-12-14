@@ -1,9 +1,9 @@
-import feedCardBuilder, { createConfigs } from '@cbhq/cds-common/internal/cards/feedCardBuilder';
+import announcementCardBuilder, {
+  createConfigs,
+} from '@cbhq/cds-common/internal/cards/announcementCardBuilder';
 
 import { CardGroup, CardGroupRenderItem } from '../CardGroup';
-import { FeedCard } from '../FeedCard';
-import { Button } from '../../buttons/Button';
-import { IconButton } from '../../buttons/IconButton';
+import { AnnouncementCard } from '../AnnouncementCard';
 
 const renderHorizontalItem: CardGroupRenderItem = ({ item, Wrapper }) => (
   <Wrapper display="flex" width={250}>
@@ -12,18 +12,17 @@ const renderHorizontalItem: CardGroupRenderItem = ({ item, Wrapper }) => (
 );
 
 const { defaultItem, vertical, horizontal } = createConfigs({
-  Button,
   CardGroup,
-  IconButton,
   renderHorizontalItem,
 });
-const { build, buildSheet } = feedCardBuilder(FeedCard);
+
+const { build, buildSheet } = announcementCardBuilder(AnnouncementCard);
 
 export const Default = build(...defaultItem);
 export const Vertical = buildSheet(...vertical);
 export const Horizontal = buildSheet(...horizontal);
 
 export default {
-  title: 'Core Components/Cards/FeedCard',
-  component: FeedCard,
+  title: 'Core Components/Cards/AnnouncementCard',
+  component: AnnouncementCard,
 };

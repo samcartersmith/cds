@@ -143,10 +143,10 @@ export function storyBuilder<StoryBuilderArgs, WrapperProps>(
     const storiesSet = new Set<Story<PropsWithoutChildren, WrapperProps>>();
     const defaultConfig = merge({}, baseConfig, builderConfig);
 
-    const build = (
+    function build<BuildWrapperProps>(
       args?: PropsWithoutChildren,
-      customConfig?: StoryBuilderConfig<PropsWithoutChildren, WrapperProps>,
-    ) => {
+      customConfig?: StoryBuilderConfig<PropsWithoutChildren, BuildWrapperProps>,
+    ) {
       const id = generateRandomId();
       const TemplateFn = (props: Props) => {
         const sanitizedProps = useMemo(() => sanitizeProps(props), [props]);
@@ -165,7 +165,7 @@ export function storyBuilder<StoryBuilderArgs, WrapperProps>(
       Template.argTypes = mergedConfig.argTypes;
       storiesSet.add(Template);
       return Template;
-    };
+    }
 
     function buildSheet<SheetWrapperProps>(
       args?:
