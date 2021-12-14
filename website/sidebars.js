@@ -8,7 +8,6 @@ const sectionsToExcludeByLabel = new Set(['Dots']);
 const componentsToExcludeByLabel = new Set([
   'components/controls/Select/select',
   'components/cells/SelectOption/select-option',
-  'components/overlays/Toast/toast',
   'components/overlays/MenuItem/menu-item',
   'components/visualizations/SparklineContainer/sparkline-container',
 ]);

@@ -74,10 +74,6 @@ module.exports = {
               label: 'Select Input',
               href: '/selectinput',
             },
-            {
-              label: 'Toast',
-              href: '/toast',
-            },
           ],
         },
       ],

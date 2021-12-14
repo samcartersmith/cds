@@ -1436,6 +1436,12 @@ export const Toast = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Toast/toast.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Toast/usage.mdx'
+      ),
+  ),
 };
 
 export const Tooltip = {
