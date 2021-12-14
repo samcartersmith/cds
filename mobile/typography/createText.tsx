@@ -50,33 +50,34 @@ export type TextProps = {
   OmitStyle<RNTextProps, 'selectable'> &
   DangerouslySetStyle<TextStyle>;
 
-export const createText = (name: Typography, inherit?: boolean) => {
+export const createText = (name: Typography, overrides?: TextProps) => {
   const TextComponent: React.FC<TextProps> = function TextComponent({
-    children,
-    color = 'foreground',
-    align = 'start',
-    tabularNumbers = false,
-    ellipsize,
-    animated,
-    dangerouslySetStyle,
-    deprecatedLineHeight,
-    // TODO: replace with glyph
+    children = overrides?.children,
+    color = overrides?.color ?? 'foreground',
+    align = overrides?.align ?? 'start',
+    tabularNumbers = overrides?.tabularNumbers ?? false,
+    ellipsize = overrides?.ellipsize,
+    animated = overrides?.animated,
+    dangerouslySetStyle = overrides?.dangerouslySetStyle,
+    deprecatedLineHeight = overrides?.deprecatedLineHeight,
+    // TODO: replace with glyph. This is not implemented yet
     slashedZero,
-    selectable = 'none',
-    underline,
-    mono,
-    noWrap,
-    transform,
-    disabled,
+    selectable = overrides?.selectable ?? 'none',
+    underline = overrides?.underline,
+    mono = overrides?.mono,
+    noWrap = overrides?.noWrap,
+    transform = overrides?.transform,
+    disabled = overrides?.disabled,
+    inherit = overrides?.inherit,
     // Spacing
-    spacing,
-    spacingTop,
-    spacingBottom,
-    spacingStart,
-    spacingEnd,
-    spacingVertical,
-    spacingHorizontal,
-    dangerouslySetColor,
+    spacing = overrides?.spacing,
+    spacingTop = overrides?.spacingTop,
+    spacingBottom = overrides?.spacingBottom,
+    spacingStart = overrides?.spacingStart,
+    spacingEnd = overrides?.spacingEnd,
+    spacingVertical = overrides?.spacingVertical,
+    spacingHorizontal = overrides?.spacingHorizontal,
+    dangerouslySetColor = overrides?.dangerouslySetColor,
     // RN Text props
     ...props
   }) {
@@ -148,6 +149,7 @@ export const createText = (name: Typography, inherit?: boolean) => {
         underline,
         dangerouslySetStyle,
         ellipsize,
+        inherit,
       ],
     );
 

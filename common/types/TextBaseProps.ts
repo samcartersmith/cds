@@ -58,5 +58,7 @@ export type TextBaseProps = {
   disabled?: boolean;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetColor?: string;
+  /** Should the Text component inherit styles of parent */
+  inherit?: boolean;
 } & SpacingProps &
   TextAlignProps;

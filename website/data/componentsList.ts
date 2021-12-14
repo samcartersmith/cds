@@ -43,6 +43,7 @@ export const components = [
   'Box',
   'Divider',
   'Fallback',
+  'Group',
   'HStack',
   'Spacer',
   'VStack',

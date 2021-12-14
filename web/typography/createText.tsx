@@ -32,36 +32,47 @@ const textInherit = css`
   font-family: inherit;
 `;
 
-export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: boolean) => {
+export const createText = <
+  E extends HTMLTextTags,
+  Overrides extends TextProps & { as?: E } = TextProps & { as?: E },
+>(
+  name: Typography,
+  overrides?: Overrides,
+) => {
   const TextComponent = <T extends E>({
     as,
-    children,
-    color = 'foreground',
-    align = 'start',
-    display,
-    tabularNumbers,
-    slashedZero,
-    selectable,
-    underline,
-    mono,
-    noWrap,
-    overflow,
-    testID,
-    transform,
-    dangerouslySetClassName,
+    children = overrides?.children,
+    color = overrides?.color ?? 'foreground',
+    align = overrides?.align ?? 'start',
+    display = overrides?.display,
+    tabularNumbers = overrides?.tabularNumbers,
+    slashedZero = overrides?.slashedZero,
+    selectable = overrides?.selectable,
+    underline = overrides?.underline,
+    mono = overrides?.mono,
+    noWrap = overrides?.noWrap,
+    overflow = overrides?.overflow,
+    testID = overrides?.testID,
+    transform = overrides?.transform,
+    dangerouslySetClassName = overrides?.dangerouslySetClassName,
+    inherit = overrides?.inherit,
     // Spacing
-    spacing,
-    spacingTop,
-    spacingBottom,
-    spacingStart,
-    spacingEnd,
-    spacingVertical,
-    spacingHorizontal,
+    spacing = overrides?.spacing,
+    spacingTop = overrides?.spacingTop,
+    spacingBottom = overrides?.spacingBottom,
+    spacingStart = overrides?.spacingStart,
+    spacingEnd = overrides?.spacingEnd,
+    spacingVertical = overrides?.spacingVertical,
+    spacingHorizontal = overrides?.spacingHorizontal,
     // interactable ex. label
-    disabled,
-    dangerouslySetColor,
+    disabled = overrides?.disabled,
+    dangerouslySetColor = overrides?.dangerouslySetColor,
     ...props
-  }: DynamicElement<TextProps, T, true /* as prop is required */>) => {
+  }: DynamicElement<
+    TextProps,
+    T,
+    Overrides extends { as: E } ? false : true /* as prop is required */
+  >) => {
     const typographyStyles = useTypographyStyles(name);
 
     const spacingStyles = useSpacingStyles({
@@ -78,7 +89,7 @@ export const createText = <E extends HTMLTextTags>(name: Typography, inherit?: b
       return null;
     }
 
-    return createElement(as, {
+    return createElement(overrides?.as ?? as, {
       ...props,
       'data-testid': testID,
       ...(mono ? { 'data-variant': 'mono' } : emptyObject),

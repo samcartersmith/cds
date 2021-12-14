@@ -1,3 +1,3 @@
 import { createText } from './createText';
 
-export const TextInherited = createText('body', true);
+export const TextInherited = createText('body', { inherit: true });

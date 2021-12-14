@@ -1057,6 +1057,21 @@ export const Fallback = {
   ),
 };
 
+export const Group = {
+  group: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Group/group.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Group/implementation.mdx'
+      ),
+  ),
+};
+
 export const HStack = {
   a11y: React.lazy(
     async () =>

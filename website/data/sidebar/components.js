@@ -106,6 +106,7 @@ module.exports = {
         'components/layout/Box/box',
         'components/layout/Divider/divider',
         'components/layout/Fallback/fallback',
+        'components/layout/Group/group',
         'components/layout/HStack/hstack',
         'components/layout/Spacer/spacer',
         'components/layout/VStack/vstack',
