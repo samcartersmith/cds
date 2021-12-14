@@ -1,0 +1,70 @@
+`MenuSectionLabel` is to be used exclusively as a child of a `PopoverMenu` or `Select` to label a group of `SelectOption`s.
+
+```jsx live
+function NavigationMenu() {
+  const [value, setValue] = useState('');
+  const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+  const navigationOptions = [
+    {
+      name: 'Coinbase',
+      value: 'coinbase',
+      description: 'Buy, sell, use crypto',
+      mediaName: 'coinbaseOneLogoPictogram',
+    },
+    {
+      name: 'Wallet',
+      value: 'wallet',
+      description: 'The best self-hosted crypto wallet',
+      mediaName: 'wallet',
+    },
+  ];
+
+  const handleMenuValueChange = useCallback(
+    (newValue) => {
+      setValue(newValue);
+    },
+    [setValue],
+  );
+
+  const createTrigger = useCallback(
+    () => <IconButton transparent name="more" variant="secondary" />,
+    [],
+  );
+
+  return (
+    <VStack minHeight={500} background="background">
+      <NavigationBar
+        end={
+          <HStack gap={1}>
+            <PopoverMenu
+              width={350}
+              triggerNode={createTrigger}
+              openMenu={togglePopoverMenuVisibility.toggleOn}
+              closeMenu={togglePopoverMenuVisibility.toggleOff}
+              visible={visible}
+              onChange={handleMenuValueChange}
+              value={value}
+            >
+              <MenuSectionLabel text="For Individuals" />
+              {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
+                <MenuItem key={name} value={optionValue}>
+                  <SelectOption
+                    title={name}
+                    description={description}
+                    media={<Pictogram name={mediaName} />}
+                    selected={value === optionValue}
+                  />
+                </MenuItem>
+              ))}
+            </PopoverMenu>
+            <IconButton name="bell" variant="secondary" />
+          </HStack>
+        }
+      >
+        <NavigationTitle>Navigation Example</NavigationTitle>
+      </NavigationBar>
+    </VStack>
+  );
+}
+```

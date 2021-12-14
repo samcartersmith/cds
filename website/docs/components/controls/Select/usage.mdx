@@ -1,34 +1,12 @@
-### Select Input
+### Mobile Implementation
 
-#### Web Implementation
+The mobile version of `Select` is quite different from web. When you interact with the trigger, it will toggle the visibility of a `Tray` which contains all the `SelectOption`s.
 
-**Note**: this is for web only!
+You can add a `title` as a prop to the`Tray`.
 
-Default composition of a Select Input
+**Note**: `Tray` exposes a `closeTray` method as a prop to child functions. We recommend using the pattern shown below to control the visibility of the `Tray`.
 
-```jsx live
-function DefaultSelect() {
-  const [value, setValue] = useState();
-  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
-  return (
-    <ExampleWithThemeToggles>
-      <VStack spacing={2} background minHeight={600}>
-        <Select value={value} placeholder="Choose something" onChange={setValue}>
-          {options.map((option) => (
-            <SelectOption value={option} key={option} title={option} description="BTC" />
-          ))}
-        </Select>
-      </VStack>
-    </ExampleWithThemeToggles>
-  );
-}
-```
-
-#### Mobile Implementation
-
-**Note**: this is for mobile only!
-
-Default composition of a Select Input
+#### Default Composition
 
 ```jsx
 function DefaultSelectMobile() {
@@ -61,7 +39,37 @@ function DefaultSelectMobile() {
 }
 ```
 
+### Web Implementation
+
+`Select` can take anything as a child, however, please note that you will need to wrap all interactable children (eg: `SelectOption`s) with `MenuItem` to make them keyboard navigable. This will also add required accessibility properties and focus behaviors.
+
+We strongly recommend that you use `SelectOption`. It has the same API as a `ListCell`, but with custom styles specific to usage within a `Select`.
+
+#### Default Composition
+
+```jsx live
+function DefaultSelect() {
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <Select value={value} placeholder="Choose something" onChange={setValue}>
+          {options.map((option) => (
+            <MenuItem value={option} key={option}>
+              <SelectOption description={option} />
+            </MenuItem>
+          ))}
+        </Select>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
 ### Input Stack Options
+
+The `Select` trigger can be customized similar to `TextInput`. These options are also available for mobile implementations.
 
 #### Compact
 
@@ -76,7 +84,9 @@ function CompactSelect() {
       <VStack spacing={2} background minHeight={600}>
         <Select compact label="$" value={value} placeholder="Choose something" onChange={setValue}>
           {options.map((option) => (
-            <SelectOption compact value={option} key={option} title={option} description="BTC" />
+            <MenuItem value={option} key={option}>
+              <SelectOption compact title={option} description="BTC" />
+            </MenuItem>
           ))}
         </Select>
       </VStack>
@@ -101,7 +111,9 @@ function SelectWithLabel() {
           onChange={setValue}
         >
           {options.map((option) => (
-            <SelectOption value={option} key={option} title={option} description="BTC" />
+            <MenuItem value={option} key={option}>
+              <SelectOption title={option} description="BTC" />
+            </MenuItem>
           ))}
         </Select>
       </VStack>
@@ -126,7 +138,9 @@ function SelectWithHelperText() {
           onChange={setValue}
         >
           {options.map((option) => (
-            <SelectOption value={option} key={option} title={option} description="BTC" />
+            <MenuItem value={option} key={option}>
+              <SelectOption title={option} description="BTC" />
+            </MenuItem>
           ))}
         </Select>
       </VStack>
@@ -146,9 +160,17 @@ function SelectPositive() {
   return (
     <ExampleWithThemeToggles>
       <VStack spacing={2} background minHeight={600}>
-        <Select variant="positive" value={value} placeholder="Choose something" onChange={setValue}>
+        <Select
+          variant="positive"
+          value={value}
+          placeholder="Choose something"
+          helperText="This text should be helpful"
+          onChange={setValue}
+        >
           {options.map((option) => (
-            <SelectOption value={option} key={option} title={option} description="BTC" />
+            <MenuItem value={option} key={option}>
+              <SelectOption title={option} description="BTC" />
+            </MenuItem>
           ))}
         </Select>
       </VStack>
@@ -168,9 +190,17 @@ function SelectNegative() {
   return (
     <ExampleWithThemeToggles>
       <VStack spacing={2} background minHeight={600}>
-        <Select variant="negative" value={value} placeholder="Choose something" onChange={setValue}>
+        <Select
+          variant="negative"
+          value={value}
+          placeholder="Choose something"
+          helperText="This text should be helpful"
+          onChange={setValue}
+        >
           {options.map((option) => (
-            <SelectOption value={option} key={option} title={option} description="BTC" />
+            <MenuItem value={option} key={option}>
+              <SelectOption title={option} description="BTC" />
+            </MenuItem>
           ))}
         </Select>
       </VStack>

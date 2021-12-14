@@ -5,10 +5,13 @@ const { adopters } = require('./data/sidebar/adopters');
 const sectionsToExcludeByLabel = new Set(['Dots']);
 
 // Removes unfinished components from section in side bar
+// Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
+  'components/overlays/MenuItem/menu-item',
+  'components/overlays/MenuSectionLabel/menu-section-label',
+  'components/overlays/PopoverMenu/popover-menu',
   'components/controls/Select/select',
   'components/cells/SelectOption/select-option',
-  'components/overlays/MenuItem/menu-item',
   'components/visualizations/SparklineContainer/sparkline-container',
 ]);
 

@@ -1,5 +1,7 @@
 # Select Prototype
 
+## Filter Example
+
 ```jsx live
 function DefaultSelect() {
   const [year, setYear] = useState();
@@ -27,14 +29,18 @@ function DefaultSelect() {
     <ExampleWithThemeToggles>
       <VStack gap={2} minHeight={500}>
         <HStack gap={1}>
-          <Select value={year} onChange={setYear} placeholder="Year">
+          <Select width={200} value={year} onChange={setYear} placeholder="Year">
             {years.map((option) => (
-              <SelectOption value={option} key={option} title={option} description="BTC" />
+              <MenuItem value={option} key={option}>
+                <SelectOption title={option} description="BTC" selected={option === year} />
+              </MenuItem>
             ))}
           </Select>
-          <Select value={asset} onChange={setAsset} placeholder="Assets">
+          <Select width={200} value={asset} onChange={setAsset} placeholder="Assets">
             {currencies.map((option) => (
-              <SelectOption value={option} key={option} title={option} description="BTC" />
+              <MenuItem value={option} key={option}>
+                <SelectOption title={option} description="BTC" selected={option === asset} />
+              </MenuItem>
             ))}
           </Select>
         </HStack>
@@ -48,6 +54,46 @@ function DefaultSelect() {
         )}
       </VStack>
     </ExampleWithThemeToggles>
+  );
+}
+```
+
+## Form Example
+
+```jsx live
+function FormExample() {
+  const accountTypeOptions = ['Savings Account', 'Checking Account'];
+
+  const [accountType, setAccountType] = useState(accountTypeOptions[0]);
+  const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+  const handleAccountTypeChange = useCallback(
+    (newValue) => {
+      setAccountType(newValue);
+    },
+    [setAccountType],
+  );
+
+  const handleSubmit = useCallback((event) => {
+    event.preventDefault();
+    alert('Submitted');
+  }, []);
+
+  return (
+    <form onSubmit={handleSubmit} action={undefined}>
+      <VStack gap={2} minHeight={700} background="background">
+        <TextInput label="Account number" />
+        <TextInput label="Re-enter account number" />
+        <Select value={accountType} onChange={handleAccountTypeChange}>
+          {accountTypeOptions.map((option) => (
+            <MenuItem value={option} key={option}>
+              <SelectOption description={option} selected={accountType === option} />
+            </MenuItem>
+          ))}
+        </Select>
+        <Button type="submit">Submit</Button>
+      </VStack>
+    </form>
   );
 }
 ```

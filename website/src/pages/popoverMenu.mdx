@@ -41,7 +41,8 @@ function Default() {
         triggerNode={createTrigger}
         value={value}
         onChange={handleMenuValueChange}
-        togglePopoverMenuVisibility={togglePopoverMenuVisibility}
+        openMenu={togglePopoverMenuVisibility.toggleOn}
+        closeMenu={togglePopoverMenuVisibility.toggleOff}
         visible={visible}
       >
         {priceOptions.map((option) => (
@@ -102,7 +103,8 @@ function NavigationMenu() {
             <PopoverMenu
               width={350}
               triggerNode={createTrigger}
-              togglePopoverMenuVisibility={togglePopoverMenuVisibility}
+              openMenu={togglePopoverMenuVisibility.toggleOn}
+              closeMenu={togglePopoverMenuVisibility.toggleOff}
               visible={visible}
               onChange={handleMenuValueChange}
               value={value}
@@ -180,7 +182,8 @@ function FeedCardMenu() {
           triggerNode={createTrigger}
           value={value}
           onChange={handleMenuValueChange}
-          togglePopoverMenuVisibility={togglePopoverMenuVisibility}
+          openMenu={togglePopoverMenuVisibility.toggleOn}
+          closeMenu={togglePopoverMenuVisibility.toggleOff}
           visible={visible}
         >
           {priceOptions.map((option) => (

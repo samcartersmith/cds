@@ -211,7 +211,7 @@ export const PopoverMenu = memo(
             <div
               ref={setPopoverMenuDOMNode}
               {...popperAttributes.popper}
-              style={{ ...popperStyles.popper, width: calculatePopoverWidth }}
+              style={{ ...popperStyles.popper, width: calculatePopoverWidth, zIndex: 1 }}
             >
               <VStack
                 ref={popoverMenuRef}
