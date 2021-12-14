@@ -3,6 +3,7 @@ export * from './Box';
 export * from './Card';
 export * from './Divider';
 export * from './Fallback';
+export * from './Group';
 export * from './HStack';
 export * from './Spacer';
 export * from './VStack';
