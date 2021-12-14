@@ -27,7 +27,7 @@ describe('width', () => {
 });
 
 describe('height', () => {
-  expectAttribute('height', ['10%', '50%', '100%']);
+  expectAttribute('height', ['10%', '50%', '100%', 56, 40]);
 });
 
 describe('disabled', () => {

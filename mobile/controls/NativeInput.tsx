@@ -1,6 +1,6 @@
 import { SharedProps, TextBaseProps, TextInputBaseProps, useSpectrum } from '@cbhq/cds-common';
-import React, { useMemo, memo } from 'react';
-import { TextInputProps, View, ViewStyle, TextInput as RNTextInput } from 'react-native';
+import React, { useMemo, memo, ForwardedRef, forwardRef } from 'react';
+import { TextInputProps, View, ViewStyle, TextInput as RNTextInput, TextInput } from 'react-native';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useInputTextStyles } from '../hooks/useInputStyles';
@@ -25,44 +25,52 @@ export type NativeInputProps = {
   SharedAccessibilityProps &
   TextInputProps;
 
-export const NativeInput = memo(function NativeInput({
-  containerSpacing,
-  testID = '',
-  align = 'start',
-  disabled,
-  accessibilityLabel,
-  compact,
-  ...editableInputAddonProps
-}: NativeInputProps) {
-  const textAlignInputTransformed = useTextAlign(align).textAlign;
-  const inputTextStyle = useInputTextStyles('foreground');
-  const containerSpacingStyle = useSpacingStyles({
-    spacing: compact ? 1 : 2,
-  });
-  const spectrum = useSpectrum();
-  const palette = usePalette();
+export const NativeInput = memo(
+  forwardRef(
+    (
+      {
+        containerSpacing,
+        testID = '',
+        align = 'start',
+        disabled,
+        accessibilityLabel,
+        compact,
+        ...editableInputAddonProps
+      }: NativeInputProps,
+      ref: ForwardedRef<TextInput>,
+    ) => {
+      const textAlignInputTransformed = useTextAlign(align).textAlign;
+      const inputTextStyle = useInputTextStyles('foreground');
+      const containerSpacingStyle = useSpacingStyles({
+        spacing: compact ? 1 : 2,
+      });
+      const spectrum = useSpectrum();
+      const palette = usePalette();
 
-  const containerStyle: ViewStyle = useMemo(() => {
-    return {
-      flex: 2,
-      ...containerSpacingStyle,
-      ...containerSpacing,
-    };
-  }, [containerSpacingStyle, containerSpacing]);
+      const containerStyle: ViewStyle = useMemo(() => {
+        return {
+          flex: 2,
+          ...containerSpacingStyle,
+          ...containerSpacing,
+        };
+      }, [containerSpacingStyle, containerSpacing]);
 
-  return (
-    <View style={containerStyle} testID={testID && `${testID}-container`}>
-      <RNTextInput
-        testID={testID}
-        style={[inputTextStyle, { flex: 2, textAlign: textAlignInputTransformed }]}
-        editable={!disabled}
-        accessibilityLabel={accessibilityLabel}
-        accessibilityHint={accessibilityLabel}
-        accessibilityRole="search"
-        placeholderTextColor={palette.foregroundMuted}
-        keyboardAppearance={spectrum}
-        {...editableInputAddonProps}
-      />
-    </View>
-  );
-});
+      return (
+        <View style={containerStyle} testID={testID && `${testID}-container`}>
+          <RNTextInput
+            testID={testID}
+            ref={ref}
+            style={[inputTextStyle, { flex: 2, textAlign: textAlignInputTransformed }]}
+            editable={!disabled}
+            accessibilityLabel={accessibilityLabel}
+            accessibilityHint={accessibilityLabel}
+            accessibilityRole="search"
+            placeholderTextColor={palette.foregroundMuted}
+            keyboardAppearance={spectrum}
+            {...editableInputAddonProps}
+          />
+        </View>
+      );
+    },
+  ),
+);

@@ -2,11 +2,14 @@ import { ReactNode } from 'react';
 import type { SharedProps } from './SharedProps';
 import { PaletteForeground } from './Palette';
 import { DimensionValue } from './DimensionStyles';
+import { BorderRadius } from './BorderRadius';
 
 export type InputVariant = Extract<
   PaletteForeground,
   'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted'
 >;
+
+export type InputStackBorderRadius = Extract<BorderRadius, 'input'>;
 
 export type InputStackBaseProps = {
   /**
@@ -48,6 +51,11 @@ export type InputStackBaseProps = {
   labelNode?: ReactNode;
   /** This should only be used if the InputNode is a non interactable component */
   focused?: boolean;
+  /**
+   * Leverage one of the borderRadius styles we offer to round the corners of the input.
+   * @default input
+   */
+  borderRadius?: InputStackBorderRadius;
 } & SharedProps;
 
 export type SharedInputProps = {
@@ -57,7 +65,7 @@ export type SharedInputProps = {
    */
   compact?: boolean;
   /** Short messageArea indicating purpose of input */
-  label: string;
+  label?: string;
   /** Placeholder text displayed inside of the input. Will be replaced if there is a value. */
   placeholder?: string;
   /**

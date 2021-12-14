@@ -141,6 +141,9 @@ export default function InputScreen() {
           placeholder="189-280-1111"
         />
       </Example>
+      <Example inline title="TextInput No Label">
+        <MockTextInput variant="foregroundMuted" placeholder="189-280-1111" />
+      </Example>
       <Example inline title="CompactTextInput">
         <MockCompactTextInput
           label="One Time Password"

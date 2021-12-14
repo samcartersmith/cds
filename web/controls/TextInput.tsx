@@ -40,6 +40,8 @@ export const TextInput = memo(
       suffix = '',
       onFocus,
       onBlur,
+      borderRadius = 'input',
+      height,
       ...htmlInputElmProps
     }: TextInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -82,6 +84,8 @@ export const TextInput = memo(
           width={width}
           disabled={disabled}
           variant={variant}
+          borderRadius={borderRadius}
+          height={height}
           inputNode={
             <NativeInput
               align={align}
@@ -102,11 +106,11 @@ export const TextInput = memo(
               </HelperText>
             )
           }
-          labelNode={!compact && <InputLabel>{label}</InputLabel>}
+          labelNode={!compact && !!label && <InputLabel>{label}</InputLabel>}
           startNode={
             (compact || !!start) && (
               <HStack justifyContent="center" alignItems="center" gap={2}>
-                {compact && <InputLabel spacingStart={2}>{label}</InputLabel>}
+                {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
                 {!!start && <>{start}</>}
               </HStack>
             )

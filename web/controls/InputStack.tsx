@@ -1,7 +1,7 @@
 import React, { useMemo, memo, forwardRef } from 'react';
 
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
-import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { ForwardedRef } from '@cbhq/cds-common';
 
@@ -16,7 +16,6 @@ import { Interactable } from '../system/Interactable';
 const inputBaseAreaStyles = css`
   && {
     flex-direction: row;
-    border-radius: ${borderRadius.input}px;
     display: flex;
     min-width: 0;
     flex-grow: 2;
@@ -52,6 +51,8 @@ export const InputStack = memo(
       labelNode,
       testID = '',
       focused,
+      borderRadius = 'input',
+      height,
       ...props
     }: InputStackProps,
     ref: ForwardedRef<HTMLElement>,
@@ -98,7 +99,9 @@ export const InputStack = memo(
             backgroundColor="background"
             borderWidth="input"
             ref={ref}
-            borderRadius="input"
+            height={height}
+            testID="input-interactable-area"
+            borderRadius={borderRadius}
             disabled={disabled}
             style={defaultBorderStyles}
             className={cx(inputBaseAreaStyles, borderStyle)}

@@ -19,5 +19,5 @@ export type TextInputBaseProps = {
   end?: React.ReactNode;
 } & SharedProps &
   SharedAccessibilityProps &
-  Pick<InputStackBaseProps, 'variant' | 'width' | 'disabled'> &
-  SharedInputProps;
+  SharedInputProps &
+  Pick<InputStackBaseProps, 'variant' | 'width' | 'disabled' | 'borderRadius'>;

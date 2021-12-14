@@ -84,8 +84,48 @@ export const Width = function Width() {
   );
 };
 
+export const Height = function Height() {
+  const heights = [56, 40];
+
+  return (
+    <>
+      {heights.map((height) => (
+        <TextInput
+          key={`input-height-${height}`}
+          label={`Height: ${height}`}
+          placeholder="placeholder"
+          helperText="helperText"
+          height={height}
+        />
+      ))}
+    </>
+  );
+};
+
+export const BorderRadius = function BorderRadius() {
+  const borderRadiuses = ['input'] as const;
+
+  return (
+    <>
+      {borderRadiuses.map((borderRadius) => (
+        <TextInput
+          key={`border-radius-${borderRadius}`}
+          label={`BorderRadius: ${borderRadius}`}
+          placeholder="placeholder"
+          helperText="helperText"
+          borderRadius={borderRadius}
+        />
+      ))}
+    </>
+  );
+};
+
 export const Disabled = function Disabled() {
   return <TextInput label="Label" disabled />;
+};
+
+export const NoLabel = function NoLabel() {
+  return <TextInput />;
 };
 
 export const StartContent = function StartContent() {
