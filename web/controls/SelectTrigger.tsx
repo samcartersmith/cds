@@ -13,7 +13,6 @@ export type SelectTriggerProps = {
   ref: ForwardedRef<HTMLButtonElement>;
   onSelectPress: (event: MouseEvent<HTMLElement>) => void;
   triggerRef: RefObject<HTMLButtonElement>;
-  labelTextColor: InputVariant;
 } & Omit<SelectBaseProps, 'children' | 'onPress'>;
 
 export const SelectTrigger = forwardRef(
@@ -32,51 +31,53 @@ export const SelectTrigger = forwardRef(
       onSelectPress,
       triggerRef,
       accessibilityLabel,
-      labelTextColor,
     }: SelectTriggerProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const labelTextColor: InputVariant = 'foreground';
     return (
       <InputStack
         width={width}
         disabled={disabled}
         variant={variant}
         ref={ref}
-        startNode={
-          compact && (
-            <HStack spacingStart={compact ? 1 : 2} alignItems="center">
-              <InputLabel color={labelTextColor} disabled={disabled}>
-                {label}
-              </InputLabel>
-            </HStack>
-          )
-        }
         inputNode={
-          <PressableOpacity
-            width="100%"
-            noScaleOnPress
-            ref={triggerRef}
-            onPress={onSelectPress}
-            testID={testID}
-            accessibilityLabel={accessibilityLabel}
-          >
-            <HStack
-              alignItems="center"
-              borderRadius="standard"
-              justifyContent="space-between"
-              spacingStart={compact ? 1 : 2}
-              spacingVertical={compact ? 1 : 2}
+          <HStack width="100%">
+            {compact && (
+              <HStack maxWidth="40%">
+                <HStack spacingStart={2} spacingEnd={1} alignItems="center" minWidth={0}>
+                  <InputLabel color={labelTextColor} disabled={disabled} overflow="truncate">
+                    {label}
+                  </InputLabel>
+                </HStack>
+              </HStack>
+            )}
+            <PressableOpacity
+              width="100%"
+              noScaleOnPress
+              ref={triggerRef}
+              onPress={onSelectPress}
+              testID={testID}
+              accessibilityLabel={accessibilityLabel}
             >
-              <HStack flexGrow={1}>
-                <TextBody as="p" color="foregroundMuted" disabled={disabled} overflow="truncate">
-                  {value ?? placeholder ?? (!compact && label)}
-                </TextBody>
+              <HStack
+                alignItems="center"
+                borderRadius="standard"
+                justifyContent="space-between"
+                spacingStart={compact ? 0 : 2}
+                spacingVertical={compact ? 1 : 2}
+              >
+                <HStack flexGrow={1} minWidth={0}>
+                  <TextBody as="p" color="foregroundMuted" disabled={disabled} overflow="truncate">
+                    {value ?? placeholder ?? (!compact && label)}
+                  </TextBody>
+                </HStack>
+                <HStack alignItems="center">
+                  <InputIcon ref={rotateAnimationRef} name="caretDown" />
+                </HStack>
               </HStack>
-              <HStack alignItems="center">
-                <InputIcon ref={rotateAnimationRef} name="caretDown" />
-              </HStack>
-            </HStack>
-          </PressableOpacity>
+            </PressableOpacity>
+          </HStack>
         }
         helperTextNode={
           Boolean(helperText) && (

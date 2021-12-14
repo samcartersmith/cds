@@ -85,8 +85,8 @@ export const Select = memo(
               animated
               startNode={
                 compact && (
-                  <HStack spacingStart={compact ? 1 : 2} alignItems="center">
-                    <InputLabel color={labelTextColor} disabled={disabled}>
+                  <HStack spacingStart={2} alignItems="center" maxWidth="40%">
+                    <InputLabel color={labelTextColor} disabled={disabled} noWrap>
                       {label}
                     </InputLabel>
                   </HStack>

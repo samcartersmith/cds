@@ -68,9 +68,10 @@ export const selectBuilder = ({
     accessibilityLabel,
     testID,
     onPress,
+    helperText,
   }: Pick<
     SelectProps,
-    'variant' | 'label' | 'placeholder' | 'accessibilityLabel' | 'testID' | 'onPress'
+    'variant' | 'label' | 'placeholder' | 'accessibilityLabel' | 'testID' | 'onPress' | 'helperText'
   >) => {
     const [value, setValue] = useState<string | undefined>('');
 
@@ -86,6 +87,7 @@ export const selectBuilder = ({
             accessibilityLabel={accessibilityLabel}
             testID={testID}
             onPress={onPress}
+            helperText={helperText}
           >
             {priceOptions.map((option) => (
               <MenuItem value={option} key={option}>
@@ -111,9 +113,9 @@ export const selectBuilder = ({
           <Select
             value={value}
             onChange={setValue}
-            placeholder="Choose something"
-            label="Pick your poison"
-            helperText="You only get one choice"
+            placeholder="I am some ridiculously, absurdly, ostentatiously long placeholder text that would ideally get truncated when I meet the edge of my parent container. "
+            label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
+            helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
           >
             {priceOptions.map((option) => (
               <MenuItem value={option} key={option}>
@@ -190,11 +192,11 @@ export const selectBuilder = ({
   const Variants = () => {
     return (
       <VStack>
-        <Default variant="foreground" />
-        <Default variant="foregroundMuted" />
-        <Default variant="primary" />
-        <Default variant="positive" />
-        <Default variant="negative" />
+        <Default label="I am a label" helperText="I am helpful text" variant="foreground" />
+        <Default label="I am a label" helperText="I am helpful text" variant="foregroundMuted" />
+        <Default label="I am a label" helperText="I am helpful text" variant="primary" />
+        <Default label="I am a label" helperText="I am helpful text" variant="positive" />
+        <Default label="I am a label" helperText="I am helpful text" variant="negative" />
       </VStack>
     );
   };

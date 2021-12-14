@@ -9,7 +9,7 @@ import React, {
   ReactElement,
   MouseEvent,
 } from 'react';
-import { SelectBaseProps, PopoverMenuRefProps, InputVariant } from '@cbhq/cds-common/types';
+import { SelectBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
 import { useToggler } from '@cbhq/cds-common';
 import { LinkableProps } from '../system';
 import { useRotate180Animation } from '../animation/useRotate180Animation';
@@ -48,7 +48,6 @@ export const Select = memo(
 
     // this corrects for when value is initialized with an empty string, coerce it to undefined
     const sanitizedValue = value === '' ? undefined : value;
-    const labelTextColor: InputVariant = 'foregroundMuted';
     const menuOffsetConfig = useMemo(() => {
       return {
         helperText: !!helperText,
@@ -86,7 +85,6 @@ export const Select = memo(
           ref={ref}
           onSelectPress={handleOnSelectPress}
           triggerRef={triggerRef}
-          labelTextColor={labelTextColor}
           {...props}
         />
       );
