@@ -761,6 +761,12 @@ export const TextInput = {
 };
 
 export const DotCount = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotCount/design.mdx'
+      ),
+  ),
   'dot-count': React.lazy(
     async () =>
       import(
@@ -782,6 +788,12 @@ export const DotCount = {
 };
 
 export const DotStatusColor = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotStatusColor/design.mdx'
+      ),
+  ),
   'dot-status-color': React.lazy(
     async () =>
       import(
@@ -803,6 +815,12 @@ export const DotStatusColor = {
 };
 
 export const DotSymbol = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/dots/DotSymbol/design.mdx'
+      ),
+  ),
   'dot-symbol': React.lazy(
     async () =>
       import(

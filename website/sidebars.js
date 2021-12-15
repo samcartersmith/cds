@@ -2,7 +2,7 @@ const { components } = require('./data/sidebar/components');
 const { adopters } = require('./data/sidebar/adopters');
 
 // Removes unfinished categories from side bar
-const sectionsToExcludeByLabel = new Set(['Dots']);
+const sectionsToExcludeByLabel = new Set([]);
 
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
@@ -14,11 +14,7 @@ const componentsToExcludeByLabel = new Set([
   'components/controls/Select/select',
   'components/controls/SelectOption/select-option',
   'components/controls/SearchInput/search-input',
-  'components/overlays/Toast/toast',
   'components/overlays/MenuItem/menu-item',
-  'components/overlays/Toast/toast',
-  'components/overlays/MenuItem/menu-item',
-  'components/visualizations/SparklineContainer/sparkline-container',
 ]);
 
 // Filter sidebar components

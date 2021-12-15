@@ -2,10 +2,13 @@ import { styled } from 'linaria/react';
 import { palette } from '@cbhq/cds-web/tokens';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
 import { Box, VStack, HStack } from '@cbhq/cds-web/layout';
+import { SpacingScale } from '@cbhq/cds-common';
+
 import { Image, ImageProps } from './Image';
 
 type Props = {
   children: React.ReactNode;
+  spacingVertical: SpacingScale;
 };
 
 type DoExampleProps = {
@@ -15,9 +18,7 @@ type DoExampleProps = {
 
 type ExampleProps = {
   type: 'do' | 'dont';
-  img?: ImageProps;
-  children: React.ReactNode;
-};
+} & DoExampleProps;
 
 type LineProps = {
   color: 'positive' | 'negative';
@@ -29,9 +30,9 @@ const Line = styled.div<LineProps>`
   background: ${({ color }) => (color === 'positive' ? palette.positive : palette.negative)};
 `;
 
-export const DoDont: React.FC<Props> = ({ children = [] }) => {
+export const DoDont: React.FC<Props> = ({ children = [], spacingVertical = 10 }) => {
   return (
-    <HStack spacingVertical={10} gap={2}>
+    <HStack spacingVertical={spacingVertical} gap={2}>
       {children}
     </HStack>
   );

@@ -1,0 +1,119 @@
+import { Image } from ':cds-website/components/Image';
+import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
+import { Collection, Item } from ':cds-website/components/Collection';
+import { Divider } from '@cbhq/cds-web/layout';
+import { TextLabel2 } from '@cbhq/cds-web/typography';
+
+# Dots
+**Dots are component adornments,** typically used to communicate a numerical value or indicate the status or identity of a component to the end-user.
+<Image
+  src="/img/components/dots/demo_Dots_Hero_Anim.gif"
+/>
+
+## Usage
+<Image
+  src="/img/components/dots/Hero_Usage.png"
+/>
+
+<TextLabel2 as="p" align="center">Dot Status Color | Dot Count | Dot Symbol</TextLabel2>
+
+Dots are used as a descriptor attribute used to help visualize the status of a thing, the # of a thing or the type of a thing. The use cases covered:
+- Dot Status Color
+- Dot Count
+- Dot Symbol 
+
+## Principles
+Use of Dots should follow the rule of being meaningful, specific and discernible, in that it:
+- Does not depend on color. Color alone is not enough to communicate meaning.
+- Accompanies text that spells out its meaning in order to avoid making the end-user interpret the Dots intent.
+- Displays symbols to communicate an element's identity or attribute
+<DoDont spacingVertical={0}>
+  <DoExample img={{src:'/img/components/dots/Do_01a.png'}} >
+    Use Dot Count to communicate the count of notifications available to the end-user.
+  </DoExample>
+  <DontExample img={{src:'/img/components/dots/Dont_01b.png'}}>
+    This Dot does not communicate anything significant or meaningful. It is not clear what is the purpose of this Dot. And the use of Red, (a semantic color for a negative, a problem, a warning, a failure) further dilutes its purpose.
+  </DontExample>
+</DoDont>
+<DoDont spacingVertical={0}>
+  <DoExample img={{src:'/img/components/dots/Do_02a.png'}} >
+    When applicable, do show the # of items.
+  </DoExample>
+  <DontExample img={{src:'/img/components/dots/Dont_02b.png'}}>
+    A dot next to text, Notifications, fails to communicate its purpose without displaying the count.
+  </DontExample>
+</DoDont>
+
+<Divider />
+
+## Dot Count
+Dot Count are used to show the amount of a unit of information, usually a communication (such as a message or email). **Dot Counts are ephemeral.** They only appear when there is a count of 1 or more.
+- When there is no count, when Dot Count = 0, the Dot is not displayed.
+- When count is a single digit Dot Count is shown in a dot/circular shape, but
+- When count is double digits, Dot Count shape “pills” to accommodate n
+- If count is more than 99, Dot Count truncates to 99+
+
+Positioning: Dot Count can be positioned
+- Right or left of the text its associated with or
+- "Badged" to the top-right of a component (eg, an icon or avatar) . The Dot Count overlapping the component from the center of the dot 
+
+Styling:
+- Dot Count comes one size in Normal and Dense, and one color: CDS Red
+- When Dot Count is badged to another component a white border is displayed around it
+
+<Collection>
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Count_04.png',
+    }}
+  />
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Count_05.png',
+    }}
+  />
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Count_06.png',
+    }}
+  />
+</Collection>
+
+<Collection>
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Count_01.png',
+    }}
+  />
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Count_02.png',
+    }}
+  />
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Count_03.png',
+    }}
+  />
+</Collection>
+
+*Dot Count inline and Dot Count badged (pinned)*
+
+<Divider />
+
+## Accessibility
+Dot variants are attributes that are treated as part of a whole and not as separate standalone components. Set up your navigation and aria labels so that the dots are in context to the element it is attributing.
+<Image
+  src="/img/components/dots/Example_A11y_01.gif"
+/>
+
+**Tabbing and Tap targets:** Dots do not have a tap target or micro-interactions independent from the component it is attributed to. When a Dot variant  appears with a component that has a tap target, the tap target increases to accommodate the component and the Dot. Tapping the Dot or the component should point to the same destination.
+
+**Aria Labels:** When a Dot is visible on your element include a contextual description of the badge's content or purpose
+
+## Resources
+
+- [Figma Dot sticker sheet](https://www.figma.com/file/OkoLiQkwimFzYM42pCWzGd/%F0%9F%9A%A6Dots-%26-Labels-Q4.21?node-id=434%3A63577)
+
+## Content guidelines
+We have no specific content guidelines for Dot variants. For general content guidelines, please visit [Content](/foundation/content).
