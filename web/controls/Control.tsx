@@ -5,6 +5,7 @@ import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
 import { css, cx } from 'linaria';
 
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { Box, Spacer } from '../layout';
 import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
@@ -25,7 +26,7 @@ const controlInput = css`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: ${zIndex.interactable};
 `;
 
 const interactableContainer = css`

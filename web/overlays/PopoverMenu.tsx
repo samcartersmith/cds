@@ -21,6 +21,7 @@ import {
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { useAccessibleControlledVisibility } from '@cbhq/cds-common/hooks/useAccessibleControlledVisibility';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { usePopover } from './usePopover';
 import { VStack, HStack } from '../layout';
 import { MenuItemProps, MenuItem } from './MenuItem';
@@ -211,7 +212,11 @@ export const PopoverMenu = memo(
             <div
               ref={setPopoverMenuDOMNode}
               {...popperAttributes.popper}
-              style={{ ...popperStyles.popper, width: calculatePopoverWidth, zIndex: 1 }}
+              style={{
+                ...popperStyles.popper,
+                width: calculatePopoverWidth,
+                zIndex: zIndex.overlays.popoverMenu,
+              }}
             >
               <VStack
                 ref={popoverMenuRef}

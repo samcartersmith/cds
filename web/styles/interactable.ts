@@ -1,4 +1,5 @@
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { css } from 'linaria';
 import { mediaQueries } from '../tokens';
 
@@ -87,7 +88,7 @@ export const disabledState = css`
 
 export const overlay = css`
   position: relative;
-  z-index: 1;
+  z-index: ${zIndex.interactable};
   transition: opacity 150ms ease-out;
   opacity: var(--interactable-opacity, 1);
   display: block;
