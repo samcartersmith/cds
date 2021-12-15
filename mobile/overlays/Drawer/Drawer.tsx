@@ -37,7 +37,7 @@ export const Drawer = memo(
         onCloseComplete,
         preventDismissGestures = false,
         hideHandleBar = false,
-        disableCapturePanGestureToDismiss = true,
+        disableCapturePanGestureToDismiss = false,
         ...props
       },
       ref,

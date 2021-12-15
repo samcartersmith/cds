@@ -1,13 +1,7 @@
 import React, { ForwardedRef, forwardRef, memo, RefAttributes } from 'react';
-import { SelectOptionBaseProps } from '@cbhq/cds-common/types';
+import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
-import {
-  selectOptionMinHeight,
-  selectOptionMaxHeight,
-  selectOptionCompactMinHeight,
-  selectOptionCompactMaxHeight,
-} from '@cbhq/cds-common/tokens/select';
 import { Cell, overflowClassName } from '../cells/Cell';
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
@@ -20,6 +14,23 @@ type SelectOptionWebProps = Omit<SelectOptionBaseProps, 'selected'>;
 export type SelectOptionProps = SelectOptionWebProps &
   Pick<MenuItemProps, 'value' | 'key' | 'onChange' | 'popoverMenuRef' | 'hideMenu' | 'selected'> &
   RefAttributes<HTMLElement>;
+
+const selectOptionMinHeight: Record<ScaleDensity, number> = {
+  normal: 48,
+  dense: 44,
+};
+const selectOptionMaxHeight: Record<ScaleDensity, number> = {
+  normal: 64,
+  dense: 56,
+};
+const selectOptionCompactMinHeight: Record<ScaleDensity, number> = {
+  normal: 40,
+  dense: 40,
+};
+const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
+  normal: 56,
+  dense: 48,
+};
 
 export const SelectOption = memo(
   forwardRef(

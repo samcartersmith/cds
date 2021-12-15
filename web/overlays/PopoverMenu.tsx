@@ -221,7 +221,7 @@ export const PopoverMenu = memo(
                 background
                 elevation={2}
                 width={width ?? '100%'}
-                borderRadius="pill"
+                borderRadius="popover"
                 role="menu"
                 maxHeight={maxHeight}
               >

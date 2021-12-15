@@ -9,6 +9,8 @@ import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { HStack, VStack } from '../../layout';
+import { TextInput } from '../TextInput';
 
 const longListOfOptions = prices.slice(0, 10).map((option) => {
   return {
@@ -17,12 +19,26 @@ const longListOfOptions = prices.slice(0, 10).map((option) => {
   };
 });
 
+const options = [
+  {
+    label: 'Cake',
+    value: 'Cake',
+  },
+  {
+    label: 'Death',
+    value: 'Death',
+  },
+];
+
 export default function SelectScreen() {
-  const { DefaultSelect, ScrollableSelect } = selectBuilderMobile({
+  const { DefaultSelect, ScrollableSelect, SelectFilter, SelectForm } = selectBuilderMobile({
     Tray,
     Select,
     SelectOption,
     ScrollView,
+    HStack,
+    TextInput,
+    VStack,
   } as CreateSelectProps);
 
   return (
@@ -82,17 +98,12 @@ export default function SelectScreen() {
           options={options}
         />
       </Example>
+      <Example title="Select Filters">
+        <SelectFilter />
+      </Example>
+      <Example title="Select in a Form">
+        <SelectForm />
+      </Example>
     </ExampleScreen>
   );
 }
-
-const options = [
-  {
-    label: 'Cake',
-    value: 'CAKE',
-  },
-  {
-    label: 'Death',
-    value: 'DEATH',
-  },
-];

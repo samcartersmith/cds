@@ -1,32 +1,32 @@
 import React, { memo } from 'react';
-import { SelectOptionBaseProps } from '@cbhq/cds-common/types';
-import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/cell';
+import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import {
-  selectOptionMinHeight,
-  selectOptionMaxHeight,
-  selectOptionCompactMinHeight,
-  selectOptionCompactMaxHeight,
-} from '@cbhq/cds-common/tokens/select';
+import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/cell';
 import { LinkableProps } from '../system';
 import { Cell } from '../cells/Cell';
 import { VStack } from '../layout/VStack';
 import { CellAccessory } from '../cells/CellAccessory';
 import { TextHeadline, TextBody } from '../typography';
 
-export type SelectOptionProps = SelectOptionBaseProps & LinkableProps;
+const selectOptionMinHeight: Record<ScaleDensity, number> = {
+  normal: 56,
+  dense: 53,
+};
+
+const selectOptionMaxHeight: Record<ScaleDensity, number> = {
+  normal: 64,
+  dense: 56,
+};
+
+export type SelectOptionProps = Omit<SelectOptionBaseProps, 'compact'> & LinkableProps;
 
 export const SelectOption = memo(
-  ({ title, description, multiline, compact, selected, ...props }: SelectOptionProps) => {
-    const minHeight = useScaleConditional(
-      compact ? selectOptionCompactMinHeight : selectOptionMinHeight,
-    );
-    const maxHeight = useScaleConditional(
-      compact ? selectOptionCompactMaxHeight : selectOptionMaxHeight,
-    );
+  ({ title, description, multiline, selected, ...props }: SelectOptionProps) => {
+    const minHeight = useScaleConditional(selectOptionMinHeight);
+    const maxHeight = useScaleConditional(selectOptionMaxHeight);
     return (
       <Cell
-        {...selectCellSpacingConfig}
+        {...selectCellMobileSpacingConfig}
         borderRadius="none"
         minHeight={minHeight}
         maxHeight={maxHeight}

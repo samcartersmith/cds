@@ -30,11 +30,13 @@ module.exports = {
       label: 'Cards',
       collapsed: true,
       items: [
+        'components/cards/AnnouncementCard/announcement-card',
         'components/cards/Card/card',
         'components/cards/CardBody/card-body',
         'components/cards/CardFooter/card-footer',
         'components/cards/CardGroup/card-group',
         'components/cards/CardHeader/card-header',
+        'components/cards/FeatureEntryCard/feature-entry-card',
         'components/cards/FeedCard/feed-card',
       ],
     },
@@ -152,6 +154,8 @@ module.exports = {
         'components/overlays/ModalBody/modal-body',
         'components/overlays/ModalFooter/modal-footer',
         'components/overlays/ModalHeader/modal-header',
+        'components/overlays/Drawer/drawer',
+        'components/overlays/Tray/tray',
       ],
     },
     {

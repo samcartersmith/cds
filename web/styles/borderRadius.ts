@@ -39,3 +39,7 @@ export const input = css`
 export const search = css`
   border-radius: 56px;
 `;
+
+export const popover = css`
+  border-radius: 16px;
+`;

@@ -26,7 +26,7 @@ export const focusRing = css`
   }
 `;
 
-const INSET_FOCUS_RING_PADDING = 0;
+const INSET_FOCUS_RING_PADDING = -1;
 
 export const insetFocusRing = css`
   position: relative;
@@ -46,14 +46,14 @@ export const insetFocusRing = css`
     }
     &:first-child {
       &:before {
-        border-top-right-radius: ${borderRadius.pill}px;
-        border-top-left-radius: ${borderRadius.pill}px;
+        border-top-right-radius: ${borderRadius.popover}px;
+        border-top-left-radius: ${borderRadius.popover}px;
       }
     }
     &:last-child {
       &:before {
-        border-bottom-right-radius: ${borderRadius.pill}px;
-        border-bottom-left-radius: ${borderRadius.pill}px;
+        border-bottom-right-radius: ${borderRadius.popover}px;
+        border-bottom-left-radius: ${borderRadius.popover}px;
       }
     }
   }

@@ -8,6 +8,7 @@ import type {
   BoxBaseProps,
   StackBaseProps,
   Scale,
+  TextInputBaseProps,
 } from '../types';
 import { useToggler } from '../hooks/useToggler';
 
@@ -215,6 +216,9 @@ export type CreateSelectProps = {
   Tray: React.ComponentType<TrayBaseProps>;
   SelectOption: React.ComponentType<SelectOptionBaseProps & LinkableProps>;
   ScrollView: React.ComponentType;
+  HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  TextInput: React.ComponentType<TextInputBaseProps>;
 };
 
 type OptionProps = {
@@ -235,6 +239,9 @@ export const selectBuilderMobile = ({
   Select,
   SelectOption,
   ScrollView,
+  HStack,
+  VStack,
+  TextInput,
 }: CreateSelectProps) => {
   const DefaultSelect = ({
     options,
@@ -294,11 +301,7 @@ export const selectBuilderMobile = ({
     return (
       <Select value={value} onPress={toggleOn} {...props}>
         {isTrayVisible && (
-          <Tray
-            disableCapturePanGestureToDismiss={false}
-            title={trayTitle}
-            onCloseComplete={toggleOff}
-          >
+          <Tray disableCapturePanGestureToDismiss title={trayTitle} onCloseComplete={toggleOff}>
             {({ closeTray }) => (
               <ScrollView>
                 {options.map((option) => {
@@ -326,8 +329,125 @@ export const selectBuilderMobile = ({
     );
   };
 
+  const SelectFilter = () => {
+    const [year, setYear] = useState<string>();
+    const [asset, setAsset] = useState<string>();
+    const [yearTrayVisible, handleYearTrayVisibility] = useToggler(false);
+    const [assetTrayVisible, handleAssetTrayVisibility] = useToggler(false);
+
+    const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021'];
+    const assets = [
+      'Bitcoin',
+      'Litecoin',
+      'Ethereum',
+      'Algorand',
+      'Cardano',
+      'Doge',
+      'AMP',
+      'Arpa',
+    ];
+    return (
+      <HStack width="100%" gap={1}>
+        <Select
+          width="48%"
+          placeholder="All years"
+          value={year}
+          onPress={handleYearTrayVisibility.toggle}
+        >
+          {yearTrayVisible && (
+            <Tray onCloseComplete={handleYearTrayVisibility.toggleOff}>
+              {({ closeTray }) =>
+                years.map((option) => {
+                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+                  const onPress = () => {
+                    setYear(option);
+                    closeTray();
+                  };
+                  return (
+                    <SelectOption
+                      title={option}
+                      key={option}
+                      onPress={onPress}
+                      selected={year === option}
+                    />
+                  );
+                })
+              }
+            </Tray>
+          )}
+        </Select>
+        <Select
+          width="48%"
+          placeholder="All assets"
+          value={asset}
+          onPress={handleAssetTrayVisibility.toggle}
+        >
+          {assetTrayVisible && (
+            <Tray onCloseComplete={handleAssetTrayVisibility.toggleOff}>
+              {({ closeTray }) =>
+                assets.map((option) => {
+                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+                  const onPress = () => {
+                    setAsset(option);
+                    closeTray();
+                  };
+                  return (
+                    <SelectOption
+                      title={option}
+                      key={option}
+                      onPress={onPress}
+                      selected={asset === option}
+                    />
+                  );
+                })
+              }
+            </Tray>
+          )}
+        </Select>
+      </HStack>
+    );
+  };
+  const SelectForm = () => {
+    const accountTypeOptions = ['Savings Account', 'Checking Account'];
+
+    const [accountType, setAccountType] = useState(accountTypeOptions[0]);
+    const [visible, handleTrayVisibility] = useToggler(false);
+
+    return (
+      <VStack gap={2} minHeight={400} background="background">
+        <TextInput label="Account number" />
+        <TextInput label="Re-enter account number" />
+        <Select value={accountType} onPress={handleTrayVisibility.toggle}>
+          {visible && (
+            <Tray onCloseComplete={handleTrayVisibility.toggleOff}>
+              {({ closeTray }) =>
+                accountTypeOptions.map((option) => {
+                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+                  const onPress = () => {
+                    setAccountType(option);
+                    closeTray();
+                  };
+                  return (
+                    <SelectOption
+                      title={option}
+                      key={option}
+                      onPress={onPress}
+                      selected={accountType === option}
+                    />
+                  );
+                })
+              }
+            </Tray>
+          )}
+        </Select>
+      </VStack>
+    );
+  };
+
   return {
     DefaultSelect,
     ScrollableSelect,
+    SelectFilter,
+    SelectForm,
   };
 };

@@ -9,7 +9,11 @@ const sectionsToExcludeByLabel = new Set(['Dots']);
 const componentsToExcludeByLabel = new Set([
   'components/overlays/MenuSectionLabel/menu-section-label',
   'components/overlays/PopoverMenu/popover-menu',
-  'components/cells/SelectOption/select-option',
+  'components/overlays/Drawer/drawer',
+  'components/overlays/Tray/tray',
+  'components/controls/Select/select',
+  'components/controls/SelectOption/select-option',
+  'components/controls/SearchInput/search-input',
   'components/overlays/Toast/toast',
   'components/overlays/MenuItem/menu-item',
   'components/overlays/Toast/toast',

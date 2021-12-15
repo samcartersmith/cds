@@ -27,6 +27,7 @@ export type DrawerBaseProps = {
   onCloseComplete: NoopFn;
   /**
    * Prevents the Drawer from capturing pan gestures on children. Set to true when using a ScrollView as a child
+   * @default false
    */
   disableCapturePanGestureToDismiss?: boolean;
 } & SharedProps;

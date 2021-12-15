@@ -39,8 +39,14 @@ export const defaultSpacingConfig = {
   },
 } as const;
 
-/** Spacing config for Select (web) or Tray (mobile) Cell */
+/** Spacing config for Select Option (web) */
 export const selectCellSpacingConfig: CellSpacingConfig = {
+  outerSpacing: { spacingHorizontal: 0, spacingVertical: 0 },
+  innerSpacing: { offsetHorizontal: 0, spacingHorizontal: 2 },
+};
+
+/** Spacing config for Select Option (mobile) */
+export const selectCellMobileSpacingConfig: CellSpacingConfig = {
   outerSpacing: { spacingHorizontal: 0, spacingVertical: 0 },
   innerSpacing: { offsetHorizontal: 0, spacingHorizontal: gutter },
 };

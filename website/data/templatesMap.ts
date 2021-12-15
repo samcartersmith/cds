@@ -178,6 +178,21 @@ export const IconButton = {
   ),
 };
 
+export const AnnouncementCard = {
+  'announcement-card': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/AnnouncementCard/announcement-card.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/AnnouncementCard/implementation.mdx'
+      ),
+  ),
+};
+
 export const Card = {
   card: React.lazy(
     async () =>
@@ -285,6 +300,21 @@ export const CardHeader = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/CardHeader/usage.mdx'
+      ),
+  ),
+};
+
+export const FeatureEntryCard = {
+  'feature-entry-card': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/FeatureEntryCard/feature-entry-card.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/FeatureEntryCard/implementation.mdx'
       ),
   ),
 };
@@ -654,6 +684,12 @@ export const SelectOption = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectOption/select-option.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectOption/usage.mdx'
       ),
   ),
 };
@@ -1418,6 +1454,12 @@ export const MenuItem = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/menu-item.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/usage.mdx'
+      ),
+  ),
 };
 
 export const MenuSectionLabel = {
@@ -1433,9 +1475,21 @@ export const MenuSectionLabel = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuSectionLabel/menu-section-label.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuSectionLabel/usage.mdx'
+      ),
+  ),
 };
 
 export const PopoverMenu = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/a11y.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(
@@ -1446,6 +1500,12 @@ export const PopoverMenu = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/popover-menu.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/usage.mdx'
       ),
   ),
 };
@@ -1572,6 +1632,48 @@ export const ModalHeader = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalHeader/modal-header.mdx'
+      ),
+  ),
+};
+
+export const Drawer = {
+  drawer: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Drawer/drawer.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Drawer/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Drawer/usage.mdx'
+      ),
+  ),
+};
+
+export const Tray = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tray/implementation.mdx'
+      ),
+  ),
+  tray: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tray/tray.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tray/usage.mdx'
       ),
   ),
 };

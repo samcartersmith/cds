@@ -23,21 +23,6 @@ export default function SelectOptionScreen() {
           onPress={handleOptionPress}
         />
       </Example>
-      <Example title="Default (Compact)">
-        <SelectOption compact description="Description" onPress={handleOptionPress} />
-      </Example>
-      <Example title="Default with description (Compact)">
-        <SelectOption compact title="Title" description="Description" onPress={handleOptionPress} />
-      </Example>
-      <Example title="Default with description and selected (Compact)">
-        <SelectOption
-          compact
-          title="Title"
-          description="Description"
-          selected
-          onPress={handleOptionPress}
-        />
-      </Example>
     </ExampleScreen>
   );
 }

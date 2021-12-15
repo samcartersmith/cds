@@ -136,7 +136,11 @@ const flattenTemplatesMap = (
 };
 
 // This is a list of mobile only directories
-const mobileOnlyIncludes: string[] = ['mobile/visualizations/chart'];
+const mobileOnlyIncludes: string[] = [
+  'mobile/overlays/Drawer',
+  'mobile/overlays/Tray',
+  'mobile/visualizations/chart',
+];
 
 async function buildWebsite() {
   const subDirFiles = await Promise.all(

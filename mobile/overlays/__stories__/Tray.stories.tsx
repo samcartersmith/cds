@@ -8,14 +8,22 @@ import { SelectOption } from '../../controls/SelectOption';
 import { Tray } from '../Tray/Tray';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { IconButton } from '../../buttons/IconButton';
+import { FeedCard } from '../../cards/FeedCard';
+import { Pictogram } from '../../illustrations/Pictogram';
+import { HStack } from '../../layout/HStack';
 
 const TrayScreen = () => {
-  const { DefaultTray, ScrollableTray } = trayBuilder({
+  const { DefaultTray, ScrollableTray, FeedCardTray, NavigationTray } = trayBuilder({
     Tray,
     Button,
     SelectOption,
     ScrollView,
     View,
+    IconButton,
+    FeedCard,
+    Pictogram,
+    HStack,
   } as CreateTrayProps);
 
   return (
@@ -23,14 +31,17 @@ const TrayScreen = () => {
       <Example title="Tray">
         <DefaultTray />
       </Example>
-      <Example title="Compact Tray">
-        <DefaultTray compact />
-      </Example>
       <Example title="Tray with Title">
         <DefaultTray title="How much would you like to donate? " />
       </Example>
       <Example title="Tray with Scrollable Children">
         <ScrollableTray title="Lots of options..." />
+      </Example>
+      <Example title="Feed Card with Tray">
+        <FeedCardTray />
+      </Example>
+      <Example title="Navigation with Tray">
+        <NavigationTray />
       </Example>
     </ExampleScreen>
   );

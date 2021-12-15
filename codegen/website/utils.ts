@@ -31,12 +31,9 @@ export const getSubDirFiles =
   async (subDir: SubDir) => {
     const subDirPath = await getSourcePath(`${startPath}/${subDir}`);
     const fullFilePaths: string[] = fullPaths
-      ? await Promise.all(
-          fullPaths.map(async (fullPath: string) => {
-            return getSourcePath(fullPath);
-          }),
-        )
+      ? await Promise.all(fullPaths.map(async (fullPath: string) => getSourcePath(fullPath)))
       : [];
+
     const allPaths: string[] = [subDirPath, ...fullFilePaths];
 
     const files: string[][] = await Promise.all(

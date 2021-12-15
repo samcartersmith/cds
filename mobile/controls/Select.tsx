@@ -1,5 +1,5 @@
 import React, { useCallback, memo, useEffect, forwardRef, ForwardedRef } from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native';
 
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
@@ -64,7 +64,7 @@ export const Select = memo(
       }, [onPress, toggleSelectTray]);
 
       return (
-        <View>
+        <>
           <TouchableWithoutFeedback
             onPress={onSelectTriggerPress}
             testID={testID}
@@ -128,7 +128,7 @@ export const Select = memo(
             />
           </TouchableWithoutFeedback>
           {isSelectTrayOpen && children}
-        </View>
+        </>
       );
     },
   ),

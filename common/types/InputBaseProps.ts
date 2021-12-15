@@ -24,7 +24,7 @@ export type InputStackBaseProps = {
    * Width of input as a percentage string.
    * @default 100%
    * */
-  width?: `${number}%`;
+  width?: `${number}%` | number;
   /**
    * Height of input
    * @default auto

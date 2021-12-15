@@ -13,6 +13,7 @@ export const borderRadius = {
   round: 100,
   input: 8,
   search: 56,
+  popover: 16,
 } as const;
 
 export const borderWidth = {

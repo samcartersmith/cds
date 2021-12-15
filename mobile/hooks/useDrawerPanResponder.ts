@@ -73,7 +73,7 @@ export const useDrawerPanResponder = ({
 
   const shouldCaptureGestures = useCallback(
     (_: GestureResponderEvent, state: PanResponderGestureState) => {
-      if (!disableCapturePanGestureToDismiss) {
+      if (disableCapturePanGestureToDismiss) {
         return false;
       }
       return shouldHandleGesture(state);

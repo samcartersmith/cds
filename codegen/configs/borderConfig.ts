@@ -10,6 +10,7 @@ export const borderRadiusConfig = {
   round: 100,
   input: 8,
   search: 56,
+  popover: 16,
 };
 
 export const borderRadiusCss = mapValues(borderRadiusConfig, (val) => {

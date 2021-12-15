@@ -111,6 +111,21 @@ Disable interaction with the Menu and trigger
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-disabled" />
 
+### maxHeight <Badge variant="web" />
+
+Can optionally pass a maxHeight.
+
+<ApiDetails
+  componentName="PopoverMenu"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue="300"
+  mobileOptions={[]}
+  webOptions={['`${number}%`', 'number']}
+/>
+
+<ComponentDetails componentName="PopoverMenu" templateName="prop-maxHeight" />
+
 ### offsetConfig <Badge variant="web" /> <Badge variant="danger" order={2} />
 
 Object passed when Select is used as a trigger. Used to calculate the Menu offset based on presence of nodes in parent InputStack
@@ -126,6 +141,21 @@ internal use only
 />
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-offsetConfig" />
+
+### onBlur <Badge variant="web" />
+
+Callback that fires when PopoverMenu or trigger are blurred
+
+<ApiDetails
+  componentName="PopoverMenu"
+  propertyName="onBlur"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="PopoverMenu" templateName="prop-onBlur" />
 
 ### onChange <Badge variant="web" />
 

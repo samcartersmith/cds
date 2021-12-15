@@ -58,6 +58,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
     'input',
     'none',
     'pill',
+    'popover',
     'round',
     'search',
     'standard',
@@ -69,6 +70,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
     'input',
     'none',
     'pill',
+    'popover',
     'round',
     'search',
     'standard',
@@ -78,7 +80,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <ComponentDetails componentName="SelectOption" templateName="prop-borderRadius" />
 
-### compact
+### compact <Badge variant="web" />
 
 enables compact spacing
 
@@ -87,7 +89,7 @@ enables compact spacing
   propertyName="compact"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
+  mobileOptions={[]}
   webOptions={['false', 'true']}
 />
 
@@ -191,6 +193,22 @@ Is the cell disabled? Will apply opacity and disable interaction.
 
 <ComponentDetails componentName="SelectOption" templateName="prop-disabled" />
 
+### hideMenu <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+this is for internal use only when a MenuItem is a child of a PopoverMenu. For custom handlers please use onPress
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="hideMenu"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-hideMenu" />
+
 ### innerSpacing
 
 The spacing to use on the inner content of Cell
@@ -238,6 +256,21 @@ The spacing to use on the inner content of Cell
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-intermediary" />
+
+### key <Badge variant="web" />
+
+Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="key"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-key" />
 
 ### maxHeight
 
@@ -308,6 +341,21 @@ Reduce horizontal offset if parent container already has spacing.
 
 <ComponentDetails componentName="SelectOption" templateName="prop-offsetHorizontal" />
 
+### onChange <Badge variant="web" />
+
+Callback that is fired whenever a select option is selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(newValue: string) => void']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-onChange" />
+
 ### outerSpacing
 
 The spacing to use on the parent wrapper of Cell
@@ -322,6 +370,21 @@ The spacing to use on the parent wrapper of Cell
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-outerSpacing" />
+
+### popoverMenuRef <Badge variant="web" />
+
+This is passed in via React.cloneElement and is necessary to control option focus during keyboard interactions
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="popoverMenuRef"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['MutableRefObject<HTMLElement | null>']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-popoverMenuRef" />
 
 ### priority
 
@@ -355,13 +418,13 @@ Reduce horizontal spacing for tighter layout requirements.
 
 ### selected
 
-Is the cell selected? Will apply a background and selected accessory.
+Indicates whether option has been chosen already Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
 
 <ApiDetails
   componentName="SelectOption"
   propertyName="selected"
   required={false}
-  defaultValue=""
+  defaultValue="false"
   mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
@@ -430,5 +493,20 @@ Title of content. Max 1 line (with description) or 2 lines (without), otherwise 
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-title" />
+
+### value <Badge variant="web" />
+
+automatically focus a select option if its already been selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="value"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-value" />
 
 <ComponentDetails componentName="SelectOption" templateName="outro" />

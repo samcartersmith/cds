@@ -8,7 +8,7 @@ export type MenuSectionLabelProps = {
 
 export const MenuSectionLabel = ({ text }: MenuSectionLabelProps) => {
   return (
-    <HStack spacingHorizontal={2} spacingTop={3} spacingBottom={2}>
+    <HStack spacingHorizontal={3} spacingTop={3} spacingBottom={2}>
       <TextCaption as="p">{text}</TextCaption>
     </HStack>
   );
