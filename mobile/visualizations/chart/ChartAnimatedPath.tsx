@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { TextInput } from 'react-native';
 import * as interpolate from 'd3-interpolate-path';
+import { SparklineArea } from '../SparklineArea';
 import { SparklineGradient } from '../SparklineGradient';
 
 import { useChartContext } from './ChartProvider';
@@ -10,6 +11,7 @@ import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
 type ChartAnimatedPathProps = {
   d: string;
   color: string;
+  area?: string;
   selectedPeriod: string;
 };
 const useValueChanges = (newValue: string) => {
@@ -25,9 +27,10 @@ const useValueChanges = (newValue: string) => {
 };
 
 export const ChartAnimatedPath = memo(
-  ({ d = '', color, selectedPeriod }: ChartAnimatedPathProps) => {
+  ({ d = '', color, selectedPeriod, area }: ChartAnimatedPathProps) => {
     const { isFallbackVisible, hideFallback, animateMinMaxIn, compact } = useChartContext();
     const pathRef = useRef<TextInput | null>(null);
+    const areaRef = useRef<TextInput | null>(null);
 
     // Only tween animation on period changes
     const { hasNotChanged: skipAnimation } = useValueChanges(selectedPeriod);
@@ -37,27 +40,46 @@ export const ChartAnimatedPath = memo(
       hasChanged: shouldUpdatePath,
     } = useValueChanges(d);
 
-    const interpolator = useMemo(
+    const {
+      previousValue: previousArea,
+      newValue: newArea,
+      hasChanged: shouldUpdateArea,
+    } = useValueChanges(area ?? '');
+
+    const pathInterpolator = useMemo(
       () => interpolate.interpolatePath(previousPath as string, newPath),
       [previousPath, newPath],
+    );
+
+    const areaInterpolator = useMemo(
+      () => interpolate.interpolatePath(previousArea as string, newArea),
+      [previousArea, newArea],
     );
 
     const animationListener = useCallback(
       ({ value }: { value: number }) => {
         const val = Number(value.toFixed(4));
         pathRef.current?.setNativeProps({
-          d: interpolator(val),
+          d: pathInterpolator(val),
+        });
+        areaRef.current?.setNativeProps({
+          d: areaInterpolator(val),
         });
       },
-      [interpolator],
+      [areaInterpolator, pathInterpolator],
     );
 
     const updatePathWithoutAnimation = useCallback(() => {
       pathRef.current?.setNativeProps({
-        d: interpolator(1),
+        d: pathInterpolator(1),
       });
+
+      areaRef.current?.setNativeProps({
+        d: areaInterpolator(1),
+      });
+
       animateMinMaxIn.start();
-    }, [animateMinMaxIn, interpolator]);
+    }, [animateMinMaxIn, areaInterpolator, pathInterpolator]);
 
     const playAnimation = useInterruptiblePathAnimation({
       animationListener,
@@ -74,10 +96,13 @@ export const ChartAnimatedPath = memo(
         } else {
           playAnimation();
         }
+      } else if (shouldUpdateArea) {
+        updatePathWithoutAnimation();
       }
     }, [
       hideFallback,
       shouldUpdatePath,
+      shouldUpdateArea,
       skipAnimation,
       updatePathWithoutAnimation,
       playAnimation,
@@ -87,7 +112,9 @@ export const ChartAnimatedPath = memo(
     const { chartWidth, chartHeight } = useChartConstants({ compact });
 
     return (
-      <SparklineGradient ref={pathRef} width={chartWidth} height={chartHeight} color={color} />
+      <SparklineGradient ref={pathRef} width={chartWidth} height={chartHeight} color={color}>
+        {!!area && <SparklineArea ref={areaRef} />}
+      </SparklineGradient>
     );
   },
 );

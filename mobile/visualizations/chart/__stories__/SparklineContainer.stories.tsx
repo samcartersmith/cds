@@ -66,6 +66,14 @@ const SparklineContainerScreen = () => {
           <PriceChart data={sparklineContainerData} strokeColor={palette.positive} />
         </Box>
       </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            Fill
+          </TextTitle3>
+          <PriceChart data={sparklineContainerData} strokeColor={palette.positive} fill />
+        </Box>
+      </Example>
     </ExampleScreen>
   );
 };

@@ -12,6 +12,7 @@ import {
   ChartScrubParams,
 } from '@cbhq/cds-common/types';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
+import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import { usePalette } from '../../hooks/usePalette';
 
 import { ChartAnimatedPath } from './ChartAnimatedPath';
@@ -109,6 +110,13 @@ export type SparklineContainerProps<Period extends string> = {
    * @default false
    */
   hidePeriodSelector?: boolean;
+
+  /*
+   * Adds an area fill to the Sparkline
+   *
+   * @default true for frontier false otherwise
+   */
+  fill?: boolean;
 };
 
 const emptyArray = [] as ChartData;
@@ -165,12 +173,16 @@ function SparklineContainerContentWithGeneric<Period extends string>({
   hideMinMaxLabel = false,
   hidePeriodSelector = false,
   disableScrubbing = false,
+  fill,
 }: SparklineContainerContentProps<Period>) {
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useChartContext();
   const colors = usePalette();
   const color = strokeColor ?? colors.primary;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
+  const hasFrontier = useFeatureFlag('frontierSparkline');
+
+  const shouldShowFill = typeof fill !== 'undefined' ? fill : hasFrontier;
 
   const dataForPeriod = useMemo(() => {
     if (!data) {
@@ -214,7 +226,7 @@ function SparklineContainerContentWithGeneric<Period extends string>({
   const { chartHorizontalGutter, chartDimensionStyles, chartWidth, chartHeight } =
     useChartConstants({ compact });
 
-  const { xFunction, path, getMarker } = useSparklineCoordinates({
+  const { xFunction, path, area, getMarker } = useSparklineCoordinates({
     data: dataForPeriod,
     width: chartWidth,
     height: chartHeight,
@@ -247,7 +259,12 @@ function SparklineContainerContentWithGeneric<Period extends string>({
             {!!hasData && !!path && (
               <>
                 <ChartLineVertical />
-                <ChartAnimatedPath d={path} color={color} selectedPeriod={selectedPeriod} />
+                <ChartAnimatedPath
+                  d={path}
+                  area={shouldShowFill ? area : undefined}
+                  color={color}
+                  selectedPeriod={selectedPeriod}
+                />
               </>
             )}
           </Animated.View>

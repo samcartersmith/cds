@@ -14,7 +14,7 @@ export const SparklineAreaPattern = ({ color }: { color: string }) => {
     >
       <G>
         <Rect fill="transparent" height="4" width="4" />
-        <Circle cx="2" cy="2" r="1" fill={color} fillOpacity={0.2} />
+        <Circle cx="1" cy="1" r="1" fill={color} fillOpacity={0.2} />
       </G>
     </Pattern>
   );
