@@ -6,27 +6,25 @@ const ROLE = 'search';
 
 describe('Search', () => {
   it('renders a search', () => {
-    const result = render(<SearchInput placeholder="Placeholder" label="Label" />);
+    const result = render(<SearchInput placeholder="Placeholder" />);
 
     expect(result.getByRole(ROLE)).toBeDefined();
   });
 
   it('able to set a default value', () => {
-    const result = render(<SearchInput value="value" testID={TEST_ID} label="Label" />);
+    const result = render(<SearchInput value="value" testID={TEST_ID} />);
 
     expect(result.getByRole('search').props.value).toBe('value');
   });
 
   it('renders a backArrow icon button at the start node', () => {
-    const result = render(<SearchInput testID={TEST_ID} placeholder="Placeholder" label="Label" />);
+    const result = render(<SearchInput testID={TEST_ID} placeholder="Placeholder" />);
 
     expect(result.getByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeDefined();
   });
 
   it('renders a close icon button at the end node', () => {
-    const result = render(
-      <SearchInput value="value" testID={TEST_ID} placeholder="Placeholder" label="Label" />,
-    );
+    const result = render(<SearchInput value="value" testID={TEST_ID} placeholder="Placeholder" />);
 
     expect(result.getByTestId(`${TEST_ID}-close-iconbtn`)).toBeDefined();
   });
@@ -34,7 +32,7 @@ describe('Search', () => {
   it('fires `onSearch` when search btn is pressed', () => {
     const spy = jest.fn();
     const result = render(
-      <SearchInput testID={TEST_ID} onSearch={spy} placeholder="Placeholder" label="Label" />,
+      <SearchInput testID={TEST_ID} onSearch={spy} placeholder="Placeholder" />,
     );
 
     fireEvent.press(result.getByTestId(`${TEST_ID}-searchinput-iconbtn`));
@@ -42,20 +40,15 @@ describe('Search', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('fires `onClear` when search btn is pressed', () => {
-    const spy = jest.fn();
+  it('fires `onClear` when clear btn is pressed', () => {
+    const spyOnClear = jest.fn();
+
     const result = render(
-      <SearchInput
-        value="value"
-        testID={TEST_ID}
-        onClear={spy}
-        placeholder="Placeholder"
-        label="Label"
-      />,
+      <SearchInput value="value" testID={TEST_ID} onClear={spyOnClear} placeholder="Placeholder" />,
     );
 
     fireEvent.press(result.getByTestId(`${TEST_ID}-close-iconbtn`));
 
-    expect(spy).toHaveBeenCalled();
+    expect(spyOnClear).toHaveBeenCalled();
   });
 });

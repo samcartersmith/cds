@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
 import { SearchInput } from '../SearchInput';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -7,6 +7,8 @@ const { Basic, OnBlur, OnFocus, OnClear, OnSearch, Disabled, Compact, DefaultVal
   searchInputBuilder(SearchInput);
 
 const SearchInputScreen = () => {
+  const ref = useRef(null);
+
   return (
     <ExampleScreen>
       <Example title="Basic">
@@ -26,6 +28,9 @@ const SearchInputScreen = () => {
       </Example>
       <Example title="Disabled">
         <Disabled />
+      </Example>
+      <Example title="Custom Ref">
+        <SearchInput ref={ref} value="Value" />
       </Example>
       <Example title="Compact">
         <Compact />

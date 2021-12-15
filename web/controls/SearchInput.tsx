@@ -1,11 +1,13 @@
-import React, { useCallback, memo, useState, forwardRef } from 'react';
+import React, { useCallback, memo, useState, forwardRef, useRef } from 'react';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { InputIcon } from './InputIcon';
 import { InputIconButton } from './InputIconButton';
 import { TextInput } from './TextInput';
+import { Box } from '../layout/Box';
 
 export type SearchInputProps = SearchInputBaseProps &
   React.InputHTMLAttributes<HTMLInputElement> & {
@@ -19,7 +21,10 @@ export const SearchInput = memo(
   ) {
     const [text, setText] = useState(value);
     const scale = useScale();
-    const height = interactableHeight[scale][compact ? 'compact' : 'regular'];
+    const height =
+      interactableHeight[scale][compact ? 'compact' : 'regular'] + borderWidth.input * 2;
+    const internalRef = useRef<HTMLInputElement>(null);
+    const externalRef = ref ?? internalRef;
 
     const handleOnChange = useCallback(
       (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,28 +38,33 @@ export const SearchInput = memo(
       (e: React.MouseEvent) => {
         onClear?.(e);
         setText('');
+
+        if (externalRef && 'current' in externalRef) {
+          externalRef.current?.focus();
+        }
       },
-      [onClear],
+      [externalRef, onClear],
     );
 
     return (
       <TextInput
         start={<InputIcon testID={testID && `${testID}-search-icon`} name="search" />}
-        height={height + 2}
+        height={height}
         end={
-          text !== '' &&
-          text !== undefined && (
-            <InputIconButton
-              name="close"
-              testID={testID && `${testID}-close-iconbtn`}
-              onPress={handleOnClear}
-            />
+          !!text && (
+            <Box spacingEnd={0.5}>
+              <InputIconButton
+                name="close"
+                testID={testID && `${testID}-close-iconbtn`}
+                onPress={handleOnClear}
+              />
+            </Box>
           )
         }
         borderRadius="search"
         onChange={handleOnChange}
         role="searchbox"
-        ref={ref}
+        ref={externalRef}
         value={text}
         testID={testID}
         {...props}

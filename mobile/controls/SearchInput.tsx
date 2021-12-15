@@ -1,4 +1,4 @@
-import React, { useCallback, memo, useState, ForwardedRef, forwardRef } from 'react';
+import React, { useRef, useCallback, memo, useState, ForwardedRef, forwardRef } from 'react';
 import {
   GestureResponderEvent,
   TextInputProps as RNTextInputProps,
@@ -35,6 +35,8 @@ export const SearchInput = memo(
     ) => {
       const [text, setText] = useState(value);
       const [startIconName, setStartIconName] = useState<IconName>('search');
+      const localRef = useRef<RNTextInput>(null);
+      const externalRef = ref ?? localRef;
 
       const handleOnFocus = useCallback(
         (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
@@ -64,8 +66,12 @@ export const SearchInput = memo(
         (e: GestureResponderEvent) => {
           onClear?.(e);
           setText('');
+
+          if (externalRef && 'current' in externalRef) {
+            externalRef.current?.focus();
+          }
         },
-        [setText, onClear],
+        [externalRef, onClear],
       );
 
       return (
@@ -81,7 +87,7 @@ export const SearchInput = memo(
             />
           }
           borderRadius="search"
-          ref={ref}
+          ref={externalRef}
           end={
             !!text && (
               <Box spacingEnd={0.5}>
