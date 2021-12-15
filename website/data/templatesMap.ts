@@ -617,6 +617,12 @@ export const SearchInput = {
 };
 
 export const Select = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Select/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(
