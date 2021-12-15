@@ -44,5 +44,17 @@ export const insetFocusRing = css`
       border-radius: ${borderRadius.standard};
       transition: ease-out opacity 0.1s;
     }
+    &:first-child {
+      &:before {
+        border-top-right-radius: ${borderRadius.pill}px;
+        border-top-left-radius: ${borderRadius.pill}px;
+      }
+    }
+    &:last-child {
+      &:before {
+        border-bottom-right-radius: ${borderRadius.pill}px;
+        border-bottom-left-radius: ${borderRadius.pill}px;
+      }
+    }
   }
 `;

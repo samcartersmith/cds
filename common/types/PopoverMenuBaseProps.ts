@@ -24,6 +24,10 @@ export type PopoverMenuBaseProps = {
    * @default 100%
    * */
   width?: `${number}%` | number;
+  /** Can optionally pass a maxHeight.
+   * @default 300
+   * */
+  maxHeight?: `${number}%` | number;
   /**
    * Callback that returns a node used to trigger Menu open and close
    * Can optionally accept focus state and/or the currently selected value as props

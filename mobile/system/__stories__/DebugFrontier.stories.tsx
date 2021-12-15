@@ -15,7 +15,6 @@ const descriptions = {
   frontierColor: 'Updated secondary palette, yellow & torquise hue',
   frontierCard: 'Remove border radius, borders & full bleed CardGroup',
   frontierSparkline: 'Dotted fills in Charts',
-  frontierPopoverMenu: 'Increases border radius of PopoverMenu',
 };
 
 const availableFlags = new Set([

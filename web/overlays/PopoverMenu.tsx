@@ -11,23 +11,17 @@ import React, {
   FocusEvent,
   useImperativeHandle,
 } from 'react';
-import { menuGutter, selectKeys } from '@cbhq/cds-common/tokens/menu';
+import { menuGutter, selectKeys, popoverMenuMaxHeight } from '@cbhq/cds-common/tokens/menu';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { ElementChildren, PopoverMenuBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
-import {
-  selectPopoverMenuMaxHeight,
-  inputStackHelperTextHeight,
-} from '@cbhq/cds-common/tokens/select';
+import { inputStackHelperTextHeight } from '@cbhq/cds-common/tokens/select';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { useAccessibleControlledVisibility } from '@cbhq/cds-common/hooks/useAccessibleControlledVisibility';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { usePopover } from './usePopover';
 import { VStack, HStack } from '../layout';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 import { SelectOption, SelectOptionProps } from '../controls/SelectOption';
-
-export const menuStaticClassName = 'cds-menu';
 
 export type PopoverMenuProps = {
   children: ElementChildren<SelectOptionProps> | HTMLElement;
@@ -45,6 +39,7 @@ export const PopoverMenu = memo(
         onChange,
         value,
         width,
+        maxHeight = popoverMenuMaxHeight,
         openMenu,
         closeMenu,
         visible,
@@ -56,7 +51,6 @@ export const PopoverMenu = memo(
       ref,
     ) => {
       const [focused, toggleFocused] = useToggler(false);
-      const hasFrontier = useFeatureFlag('frontierPopoverMenu');
 
       // TODO: These are necessary callback refs to make PopperJS work. They are causing double renders, will be looking at another third party solution in separate PR
       const [triggerDOMNode, setTriggerDOMNode] = useState<HTMLElement | null>(null);
@@ -177,7 +171,6 @@ export const PopoverMenu = memo(
             disabled,
             ref: defaultTriggerRef,
             value: sanitizedValue,
-            // TODO: investigate this in focus PR
             focused: focused.toString(),
             ...triggerAccessibilityProps,
           });
@@ -202,7 +195,12 @@ export const PopoverMenu = memo(
       );
 
       return (
-        <HStack position="relative" onBlur={handlePopoverMenuBlur} {...props}>
+        <HStack
+          position="relative"
+          width={width === '100%' ? width : 'auto'}
+          onBlur={handlePopoverMenuBlur}
+          {...props}
+        >
           <HStack width={calculateTriggerWidth} ref={setTriggerDOMNode}>
             {renderPopoverMenuTrigger(triggerNode())}
           </HStack>
@@ -223,9 +221,9 @@ export const PopoverMenu = memo(
                 background
                 elevation={2}
                 width={width ?? '100%'}
-                borderRadius={hasFrontier ? 'pill' : 'standard'}
+                borderRadius="pill"
                 role="menu"
-                maxHeight={selectPopoverMenuMaxHeight}
+                maxHeight={maxHeight}
               >
                 {flattenNodes(children).map((child) => {
                   if (child && typeof child === 'object' && child.type === SelectOption) {

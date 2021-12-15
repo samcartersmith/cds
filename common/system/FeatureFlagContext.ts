@@ -28,11 +28,6 @@ export const frontierFeaturesOff = {
    * @default false
    */
   frontierSparkline: false,
-  /**
-   * Increases border radius of PopoverMenu
-   * @default false
-   */
-  frontierPopoverMenu: false,
 };
 
 export const frontierFeaturesOn = mapValues(frontierFeaturesOff, () => true);

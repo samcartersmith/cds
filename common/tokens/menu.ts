@@ -3,3 +3,5 @@ export const menuGutter = 4;
 
 /** keys used to "select" or choose an option */
 export const selectKeys = [' ', 'Spacebar', 'Enter'];
+
+export const popoverMenuMaxHeight = 300;

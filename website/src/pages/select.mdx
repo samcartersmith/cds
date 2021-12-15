@@ -29,7 +29,7 @@ function DefaultSelect() {
     <ExampleWithThemeToggles>
       <VStack gap={2} minHeight={500}>
         <HStack gap={1}>
-          <Select width={200} value={year} onChange={setYear} placeholder="Year">
+          <Select width="100%" value={year} onChange={setYear} placeholder="Year">
             {years.map((option) => (
               <SelectOption
                 value={option}
@@ -40,7 +40,7 @@ function DefaultSelect() {
               />
             ))}
           </Select>
-          <Select width={200} value={asset} onChange={setAsset} placeholder="Assets">
+          <Select width="100%" value={asset} onChange={setAsset} placeholder="Assets">
             {currencies.map((option) => (
               <SelectOption
                 value={option}

@@ -1,5 +1,6 @@
 import React, { RefObject, ForwardedRef, MouseEvent, forwardRef, memo } from 'react';
 import { InputVariant, SelectBaseProps } from '@cbhq/cds-common';
+import { css } from 'linaria';
 import { InputStack } from './InputStack';
 import { InputLabel } from './InputLabel';
 import { HStack } from '../layout/HStack';
@@ -15,6 +16,14 @@ export type SelectTriggerProps = {
   triggerRef: RefObject<HTMLButtonElement>;
   hasFocus: boolean;
 } & Omit<SelectBaseProps, 'children' | 'onPress'>;
+
+const pressableOverrides = css`
+  &:focus-visible {
+    &:before {
+      content: none;
+    }
+  }
+`;
 
 export const SelectTrigger = memo(
   forwardRef(
@@ -63,6 +72,7 @@ export const SelectTrigger = memo(
                 onPress={onSelectPress}
                 testID={testID}
                 accessibilityLabel={accessibilityLabel}
+                className={pressableOverrides}
               >
                 <HStack
                   alignItems="center"

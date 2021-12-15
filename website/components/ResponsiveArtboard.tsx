@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { entries } from '@cbhq/cds-utils';
 import { Select } from '@cbhq/cds-web/controls/Select';
 import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
-import { MenuItem } from '@cbhq/cds-web/overlays/MenuItem';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
@@ -83,9 +82,7 @@ export function ResponsiveArtboard({
             compact
           >
             {entries(options).map(([id, { label }]) => (
-              <MenuItem key={id} value={id}>
-                <SelectOption title={label} />
-              </MenuItem>
+              <SelectOption key={id} value={id} title={label} />
             ))}
           </Select>
           <Select
@@ -95,9 +92,7 @@ export function ResponsiveArtboard({
             compact
           >
             {scales.map((scale) => (
-              <MenuItem key={scale} value={scale}>
-                <SelectOption title={scale} />
-              </MenuItem>
+              <SelectOption key={scale} value={scale} title={scale} />
             ))}
           </Select>
           <HStack alignItems="center" gap={1}>
