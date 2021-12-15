@@ -35,6 +35,8 @@ export type GroupBaseProps<BoxProps> = {
     Wrapper: React.ComponentType<BoxProps>;
     item: React.ReactChild;
     index: number;
+    isFirst: boolean;
+    isLast: boolean;
   }) => React.ReactChild;
 } & BoxProps &
   SharedProps;

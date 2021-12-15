@@ -11,7 +11,7 @@ import type { PaletteForeground, SpacingProps } from '@cbhq/cds-common/types';
 
 import { Switch } from '../controls/Switch';
 import { usePalette } from '../hooks/usePalette';
-import { Box } from '../layout/Box';
+import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
 import { ThemeProvider } from '../system/ThemeProvider';
@@ -47,7 +47,7 @@ type ExampleProps = {
   inline?: boolean;
   title?: string;
   titleSpacing?: SpacingProps;
-} & SpacingProps;
+} & BoxProps;
 
 export const Example = ({ children, inline, title, titleSpacing, ...props }: ExampleProps) => {
   const childStyles = useMemo(() => {

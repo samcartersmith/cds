@@ -14,7 +14,7 @@ export function createConfigs<WrapperProps>({
   CardGroup,
   renderHorizontalItem,
 }: Params<WrapperProps>) {
-  const defaultItem = {
+  const exampleProps = {
     title: 'Send a crypto gift',
     description: 'Share the gift of crypto this holiday season',
     spotSquare: 'coinbaseCardSparkle',
@@ -27,11 +27,12 @@ export function createConfigs<WrapperProps>({
     <CardGroup {...props} direction="horizontal" renderItem={renderHorizontalItem} />
   );
 
-  const sheet = [defaultItem, defaultItem, defaultItem] as const;
+  const sheet = [exampleProps, exampleProps, exampleProps] as const;
 
   return {
+    exampleProps,
     defaultItem: [
-      defaultItem,
+      exampleProps,
       {
         parameters: {
           wrapper: VerticalGroup,

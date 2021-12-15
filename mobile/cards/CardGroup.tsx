@@ -1,58 +1,34 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 
-import { View, StyleSheet } from 'react-native';
-import { CardGroupBaseProps } from '@cbhq/cds-common';
-import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
-import { join } from '@cbhq/cds-common/utils/join';
-import { BoxProps } from '../layout/Box';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+
 import { Divider } from '../layout/Divider';
-import { HStack } from '../layout/HStack';
-import { VStack } from '../layout/VStack';
-import { Card } from './Card';
+import { Group, GroupProps, RenderGroupItem } from '../layout/Group';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 
-export type CardGroupProps = CardGroupBaseProps<BoxProps>;
+export type CardGroupProps = GroupProps;
+export type CardGroupRenderItem = RenderGroupItem;
 
 export const CardGroup = memo(function CardGroup({
   accessibilityLabel,
   children,
-  testID,
-  horizontal,
-  ...otherBoxProps
+  direction = 'vertical',
+  horizontal = false,
+  ...props
 }: CardGroupProps) {
   const isFrontier = useFeatureFlag('frontierCard');
-  const Stack = horizontal ? HStack : VStack;
-
-  const cards = useMemo(() => {
-    const nodes = flattenNodes(children)
-      .filter((child) => child && typeof child === 'object' && child.type === Card)
-      .map((child) => {
-        return <View style={styles.cardItem}>{child}</View>;
-      });
-
-    if (isFrontier) {
-      return join(nodes, <Divider />);
-    }
-    return nodes;
-  }, [children, isFrontier]);
-
+  const isHorizontal = horizontal || direction === 'horizontal';
   return (
-    <Stack
+    <Group
       accessibilityHint={accessibilityLabel}
       accessibilityLabel={accessibilityLabel}
-      alignItems="stretch"
-      flexWrap="nowrap"
-      gap={isFrontier ? 0 : 1}
-      testID={testID}
-      {...otherBoxProps}
+      direction={isHorizontal ? 'horizontal' : 'vertical'}
+      divider={isFrontier ? Divider : null}
+      gap={isFrontier ? 0 : gutter}
+      offsetHorizontal={isFrontier && !isHorizontal ? gutter : 0}
+      {...props}
     >
-      {cards}
-    </Stack>
+      {children}
+    </Group>
   );
-});
-
-const styles = StyleSheet.create({
-  cardItem: {
-    flex: 1,
-  },
 });

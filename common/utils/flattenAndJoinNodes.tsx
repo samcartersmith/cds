@@ -21,6 +21,8 @@ export function flattenAndJoinNodes<BoxProps>({
   const itemsToJoin: React.ReactNode[] = [];
   const shouldJoin = gap !== undefined || divider !== undefined;
   const childrenAsArray = React.Children.toArray(children);
+  const flattenedChildren =
+    shouldJoin || childrenAsArray.length > 1 ? flattenNodes(childrenAsArray) : undefined;
 
   if (gap) {
     itemsToJoin.push(<Spacer {...{ [direction]: gap }} />);
@@ -31,9 +33,17 @@ export function flattenAndJoinNodes<BoxProps>({
     itemsToJoin.push(<Divider />);
   }
 
-  const childrenContents = shouldJoin
-    ? flattenNodes(childrenAsArray).map((item, index) =>
-        renderItem && ItemWrapper ? renderItem({ item, Wrapper: ItemWrapper, index }) : item,
+  const childrenContents = flattenedChildren
+    ? flattenedChildren.map((item, index) =>
+        renderItem && ItemWrapper
+          ? renderItem({
+              item,
+              Wrapper: ItemWrapper,
+              index,
+              isFirst: index === 0,
+              isLast: flattenedChildren.length - 1 === index,
+            })
+          : item,
       )
     : childrenAsArray;
 

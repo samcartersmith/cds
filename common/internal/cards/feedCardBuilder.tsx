@@ -24,7 +24,7 @@ export function createConfigs<WrapperProps, PressFn>({
   IconButton,
   renderHorizontalItem,
 }: CreateFeedCardSheetParams<WrapperProps, PressFn>) {
-  const defaultItem = {
+  const exampleProps = {
     avatarUrl: 'https://via.placeholder.com/350x220',
     headerDescription: 'Earn crypto',
     headerActionNode: <IconButton name="more" variant="foregroundMuted" transparent />,
@@ -45,11 +45,12 @@ export function createConfigs<WrapperProps, PressFn>({
     <CardGroup {...props} direction="horizontal" renderItem={renderHorizontalItem} />
   );
 
-  const sheet = [defaultItem, defaultItem, defaultItem] as const;
+  const sheet = [exampleProps, exampleProps, exampleProps] as const;
 
   return {
+    exampleProps,
     defaultItem: [
-      defaultItem,
+      exampleProps,
       {
         parameters: {
           wrapper: VerticalGroup,

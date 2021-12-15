@@ -1,5 +1,9 @@
 import React from 'react';
 import { cardBuilder } from '@cbhq/cds-common/internal/cardBuilder';
+import { createConfigs as createFeatureEntryProps } from '@cbhq/cds-common/internal/cards/featureEntryCardBuilder';
+import { createConfigs as createAnnouncementCardProps } from '@cbhq/cds-common/internal/cards/announcementCardBuilder';
+import { createConfigs as createFeedCardProps } from '@cbhq/cds-common/internal/cards/feedCardBuilder';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
@@ -11,10 +15,32 @@ import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
 
 import { Card } from '../Card';
+import { CardGroup, CardGroupRenderItem } from '../CardGroup';
+import { AnnouncementCard } from '../AnnouncementCard';
 import { FeedCard } from '../FeedCard';
+import { FeatureEntryCard } from '../FeatureEntryCard';
 import { CardBody } from '../CardBody';
 
 import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
+
+const renderHorizontalItem: CardGroupRenderItem = ({ item, Wrapper }) => (
+  <Wrapper width={250}>{item}</Wrapper>
+);
+
+const { exampleProps: announcementCardProps } = createAnnouncementCardProps({
+  CardGroup,
+  renderHorizontalItem,
+});
+const { exampleProps: featureEntryProps } = createFeatureEntryProps({
+  CardGroup,
+  renderHorizontalItem,
+});
+const { exampleProps: feedCardProps } = createFeedCardProps({
+  Button,
+  CardGroup,
+  IconButton,
+  renderHorizontalItem,
+});
 
 const {
   ListCellCard,
@@ -26,7 +52,6 @@ const {
   PinnedRightCard,
   PinnedBottomCard,
   PinnedLeftCard,
-  FeedCardExample,
   SpotSquareExample,
 } = cardBuilder({
   Box,
@@ -46,8 +71,23 @@ const {
 const CardScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="FeedCard">
-        <FeedCardExample />
+      <Example title="FeedCard" spacing={gutter} overflow="visible">
+        <CardGroup>
+          <FeedCard {...feedCardProps} />
+          <FeedCard {...feedCardProps} />
+        </CardGroup>
+      </Example>
+      <Example title="AnnouncementCard" spacing={gutter} overflow="visible">
+        <CardGroup>
+          <AnnouncementCard {...announcementCardProps} />
+          <AnnouncementCard {...announcementCardProps} />
+        </CardGroup>
+      </Example>
+      <Example title="FeatureEntryCard" spacing={gutter} overflow="visible">
+        <CardGroup>
+          <FeatureEntryCard {...featureEntryProps} />
+          <FeatureEntryCard {...featureEntryProps} />
+        </CardGroup>
       </Example>
       <Example title="Card with SpotSquare">
         <SpotSquareExample />
