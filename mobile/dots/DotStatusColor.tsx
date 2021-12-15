@@ -4,7 +4,7 @@ import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { useIconSize } from '@cbhq/cds-common';
 import { usePalette } from '../hooks/usePalette';
-import { dotStyles, getTransform } from './dotStyles';
+import { getTransform } from './dotStyles';
 import { useLayout } from '../hooks/useLayout';
 
 export const DotStatusColor = memo(
@@ -41,7 +41,7 @@ export const DotStatusColor = memo(
     }, [iconSize, palette, pinStyles, variant]);
 
     return (
-      <View onLayout={onLayout} style={!!children && dotStyles.dotRootContainerStyles} {...props}>
+      <View onLayout={onLayout} {...props}>
         {children}
         <View testID="dotstatuscolor-inner-container" style={dotContentStyles} />
       </View>

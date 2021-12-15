@@ -28,7 +28,7 @@ export function dotBuilder(
     return (
       <>
         {counts.map((count) => (
-          <Box spacing={1} key={`DotCount-${count}`}>
+          <Box alignItems="flex-start" spacing={1} key={`DotCount-${count}`}>
             <DotCount count={count} />
           </Box>
         ))}
@@ -43,7 +43,7 @@ export function dotBuilder(
   const DotCountVariant = () => {
     return (
       <>
-        <VStack gap={1} key="DotCount-variant-negative">
+        <VStack alignItems="flex-start" gap={1} key="DotCount-variant-negative">
           <DotCount variant="negative" count={30} />
         </VStack>
       </>
@@ -54,7 +54,7 @@ export function dotBuilder(
     return (
       <>
         {VARIANTS.map((variant) => (
-          <VStack gap={1} key={`DotStatusColor-variant-${variant}`}>
+          <VStack alignItems="flex-start" gap={1} key={`DotStatusColor-variant-${variant}`}>
             <DotStatusColor variant={variant} />
           </VStack>
         ))}
@@ -66,7 +66,7 @@ export function dotBuilder(
     return (
       <>
         {SIZES.map((size) => (
-          <VStack gap={1} key={`DotStatusColor-size-${size}`}>
+          <VStack alignItems="flex-start" gap={1} key={`DotStatusColor-size-${size}`}>
             <DotStatusColor variant="negative" size={size} />
           </VStack>
         ))}
@@ -77,7 +77,13 @@ export function dotBuilder(
   const DotCountPlacements = () => {
     return (
       <>
-        <VStack gap={4} spacing={1} key="DotCount-placement-top-end" spacingBottom={4}>
+        <VStack
+          alignItems="flex-start"
+          gap={4}
+          spacing={1}
+          key="DotCount-placement-top-end"
+          spacingBottom={4}
+        >
           <TextLabel1>top-end</TextLabel1>
           <DotCount pin="top-end" count={30}>
             <Avatar size="xl" shape="square" alt="Sneezy" />
@@ -104,6 +110,7 @@ export function dotBuilder(
           <VStack
             gap={4}
             spacing={1}
+            alignItems="flex-start"
             key={`DotStatusColor-placement-${pinDirection}`}
             spacingBottom={4}
           >

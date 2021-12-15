@@ -9,7 +9,7 @@ import {
 } from '@cbhq/cds-common/tokens/dot';
 import { usePalette } from '../hooks/usePalette';
 import { TextCaption } from '../typography/TextCaption';
-import { dotStyles, getTransform } from './dotStyles';
+import { getTransform } from './dotStyles';
 import { useLayout } from '../hooks/useLayout';
 
 export const DotCount = memo(
@@ -36,11 +36,7 @@ export const DotCount = memo(
 
     return (
       <>
-        <View
-          onLayout={onChildrenLayout}
-          style={!!children && dotStyles.dotRootContainerStyles}
-          {...props}
-        >
+        <View onLayout={onChildrenLayout} {...props}>
           {children}
           {count > 0 && (
             <View

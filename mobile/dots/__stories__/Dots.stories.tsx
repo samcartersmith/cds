@@ -28,7 +28,13 @@ const DotSymbolPlacements = () => {
   return (
     <>
       {PIN_DIRECTIONS.map((pinDirection) => (
-        <VStack gap={4} spacing={1} key={`DotSymbol-placement-${pinDirection}`} spacingBottom={4}>
+        <VStack
+          alignItems="flex-start"
+          gap={4}
+          spacing={1}
+          key={`DotSymbol-placement-${pinDirection}`}
+          spacingBottom={4}
+        >
           <TextLabel1>{pinDirection}</TextLabel1>
           <DotSymbol size="m" pin={pinDirection} source={assets.btc.imageUrl}>
             <Avatar size="xxxl" shape="square" alt="Sneezy" />
@@ -49,7 +55,7 @@ const DotSymbolSizes = () => {
   return (
     <>
       {SIZES.map((size) => (
-        <VStack gap={1} key={`DotSymbol-size-${size}`}>
+        <VStack alignItems="flex-start" gap={1} key={`DotSymbol-size-${size}`}>
           <DotSymbol source={{ uri: assets.dai.imageUrl }} size={size} />
         </VStack>
       ))}

@@ -2,7 +2,7 @@ import React, { useMemo, memo } from 'react';
 import { ImageSourcePropType, View } from 'react-native';
 import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
 import { RemoteImage } from '../media/RemoteImage';
-import { dotStyles, getTransform } from './dotStyles';
+import { getTransform } from './dotStyles';
 import { useLayout } from '../hooks/useLayout';
 
 export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
@@ -29,7 +29,7 @@ export const DotSymbol = memo(({ children, pin, source, size = 's', ...props }: 
   }, [iconSize, layoutSize.height, layoutSize.width, pin]);
 
   return (
-    <View onLayout={onLayout} style={!!children && dotStyles.dotRootContainerStyles} {...props}>
+    <View onLayout={onLayout} {...props}>
       {children}
       <View testID="dotsymbol-inner-container" style={pinStyles}>
         <RemoteImage
