@@ -475,27 +475,6 @@ export const ListCellFallback = {
   ),
 };
 
-export const SelectOption = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOption/implementation.mdx'
-      ),
-  ),
-  'select-option': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOption/select-option.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cells/SelectOption/usage.mdx'
-      ),
-  ),
-};
-
 export const Checkbox = {
   a11y: React.lazy(
     async () =>
@@ -604,6 +583,33 @@ export const RadioGroup = {
   ),
 };
 
+export const SearchInput = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SearchInput/a11y.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SearchInput/implementation.mdx'
+      ),
+  ),
+  'search-input': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SearchInput/search-input.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SearchInput/usage.mdx'
+      ),
+  ),
+};
+
 export const Select = {
   implementation: React.lazy(
     async () =>
@@ -621,6 +627,21 @@ export const Select = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Select/usage.mdx'
+      ),
+  ),
+};
+
+export const SelectOption = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectOption/implementation.mdx'
+      ),
+  ),
+  'select-option': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SelectOption/select-option.mdx'
       ),
   ),
 };

@@ -35,3 +35,7 @@ export const round = css`
 export const input = css`
   border-radius: 8px;
 `;
+
+export const search = css`
+  border-radius: 56px;
+`;

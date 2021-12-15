@@ -46,6 +46,7 @@ export const routes = {
   RemoteImage: () => require('../media/__stories__/RemoteImage.stories').default,
   Select: () => require('../controls/__stories__/Select.stories').default,
   SelectOption: () => require('../controls/__stories__/SelectOption.stories').default,
+  SearchInput: () => require('../controls/__stories__/SearchInput.stories').default,
   Spacer: () => require('../layout/__stories__/Spacer.stories').default,
   Sparkline: () => require('../visualizations/__stories__/Sparkline.stories').default,
   SparklineContainer: () =>

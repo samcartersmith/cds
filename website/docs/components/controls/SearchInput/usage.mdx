@@ -1,0 +1,43 @@
+```jsx live 
+<SearchInput placeholder="Placeholder" />
+```
+
+## Clearing Logic 
+Try typing something in the input. The close IconButton should appear when there is some value. When 
+value is empty again, it should disappear. When you click on the clear 
+button it should clear the text AND log Clearing....
+
+```jsx live 
+function ClearButtonAppears() {
+	return (
+		<SearchInput 
+			onClear={() => console.log('Clearing...')} 
+			placeholder="Placeholder" 
+		/>
+	)
+}
+```
+
+## Disabled 
+```jsx live 
+function ClearButtonAppears() {
+	return (
+		<SearchInput 
+			disabled
+			placeholder="Placeholder" 
+		/>
+	)
+}
+```
+
+## Compact 
+```jsx live 
+function ClearButtonAppears() {
+	return (
+		<SearchInput 
+			compact
+			placeholder="Placeholder" 
+		/>
+	)
+}
+```

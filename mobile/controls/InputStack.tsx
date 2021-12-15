@@ -38,7 +38,6 @@ export const InputStack = memo(function InputStack({
 
   const inputAreaStyle: ViewStyle = useMemo(() => {
     const inputBorderRadius: ViewStyle = {
-      backgroundColor: palette.secondary,
       ...(prependNode
         ? {
             borderTopLeftRadius: 0,
@@ -58,6 +57,7 @@ export const InputStack = memo(function InputStack({
         variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant ?? 'lineHeavy'],
       flexDirection: 'row',
       flex: 1,
+      backgroundColor: palette.secondary,
       borderRadius: borderRadiusTokens[borderRadius],
       ...inputBorderRadius,
     };

@@ -9,7 +9,7 @@ export type InputVariant = Extract<
   'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted'
 >;
 
-export type InputStackBorderRadius = Extract<BorderRadius, 'input'>;
+export type InputStackBorderRadius = Extract<BorderRadius, 'input' | 'search'>;
 
 export type InputStackBaseProps = {
   /**

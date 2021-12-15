@@ -12,6 +12,7 @@ export const borderRadius = {
   pill: 18,
   round: 100,
   input: 8,
+  search: 56,
 } as const;
 
 export const borderWidth = {
