@@ -13,7 +13,6 @@ const componentsToExcludeByLabel = new Set([
   'components/overlays/Tray/tray',
   'components/controls/Select/select',
   'components/controls/SelectOption/select-option',
-  'components/controls/SearchInput/search-input',
   'components/overlays/MenuItem/menu-item',
 ]);
 
