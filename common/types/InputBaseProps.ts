@@ -49,7 +49,7 @@ export type InputStackBaseProps = {
   helperTextNode?: ReactNode;
   /** A message indicating the purpose of this input */
   labelNode?: ReactNode;
-  /** This should only be used if the InputNode is a non interactable component */
+  /** This should only be used when focused styles need to be persisted */
   focused?: boolean;
   /**
    * Leverage one of the borderRadius styles we offer to round the corners of the input.

@@ -50,6 +50,7 @@ export const PopoverMenu = memo(
         visible,
         accessibilityLabel,
         customTriggerRef,
+        onBlur,
         ...props
       },
       ref,
@@ -132,9 +133,10 @@ export const PopoverMenu = memo(
           if (eventIsBlur && !isOptionFocused && !isTriggerFocused) {
             closeMenu();
             toggleFocused.toggleOff();
+            onBlur?.();
           }
         },
-        [closeMenu, toggleFocused, popoverMenuRef, triggerRef],
+        [closeMenu, toggleFocused, popoverMenuRef, triggerRef, onBlur],
       );
 
       const handleOnPopoverMenuTriggerPress = useCallback(() => {

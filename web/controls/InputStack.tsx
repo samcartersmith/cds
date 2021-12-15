@@ -29,6 +29,14 @@ const inputBaseAreaStyles = css`
   }
 `;
 
+/** this should only be used as a last resort, when focus styles need to be persisted. eg: when a Select PopoverMenu is opened */
+const persistedFocusStyles = css`
+  &&&& {
+    border-color: var(--border-color-focused);
+    box-shadow: 0px 0px 0px ${borderWidth.input}px var(--border-color-focused);
+  }
+`;
+
 export type InputStackProps = {
   /** Adds border styling to input  */
   borderStyle?: string;
@@ -50,7 +58,7 @@ export const InputStack = memo(
       variant = 'foregroundMuted',
       labelNode,
       testID = '',
-      focused,
+      focused = false,
       borderRadius = 'input',
       height,
       ...props
@@ -104,7 +112,7 @@ export const InputStack = memo(
             borderRadius={borderRadius}
             disabled={disabled}
             style={defaultBorderStyles}
-            className={cx(inputBaseAreaStyles, borderStyle)}
+            className={cx(inputBaseAreaStyles, borderStyle, focused && persistedFocusStyles)}
           >
             {!!startNode && <>{startNode}</>}
             {inputNode}

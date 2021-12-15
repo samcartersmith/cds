@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 import { NoopFn } from '@cbhq/cds-common';
+import { insetFocusRing } from '../styles/focus';
 import { Pressable, PressableProps } from '../system/Pressable';
 
 export type MenuItemProps = {
@@ -130,6 +131,7 @@ export const MenuItem = memo(
           onKeyDown={handleOnOptionSelectKeyDown}
           tabIndex={selected ? 0 : tabIndex ?? -1}
           role="menuitem"
+          className={insetFocusRing}
           {...props}
         >
           {children}

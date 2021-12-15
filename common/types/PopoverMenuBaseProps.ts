@@ -50,6 +50,8 @@ export type PopoverMenuBaseProps = {
    * @default false
    */
   visible: boolean;
+  /** Callback that fires when PopoverMenu or trigger are blurred */
+  onBlur?: NoopFn;
 } & SharedProps &
   SharedAccessibilityProps;
 

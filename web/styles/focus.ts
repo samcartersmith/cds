@@ -26,7 +26,7 @@ export const focusRing = css`
   }
 `;
 
-const INSET_FOCUS_RING_PADDING = 2;
+const INSET_FOCUS_RING_PADDING = 0;
 
 export const insetFocusRing = css`
   position: relative;

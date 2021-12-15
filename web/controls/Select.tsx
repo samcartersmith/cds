@@ -40,6 +40,7 @@ export const Select = memo(
     ref: ForwardedRef<HTMLButtonElement>,
   ) {
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
+    const [triggerHasFocus, toggleTriggerFocus] = useToggler(false);
     const { rotateAnimationRef, animateCaretIn, animateCaretOut } = useRotate180Animation();
     const popoverMenuRef = useRef<PopoverMenuRefProps>(null);
     const defaultTriggerRef = useRef<HTMLButtonElement | null>(null);
@@ -68,9 +69,14 @@ export const Select = memo(
       (event: MouseEvent<HTMLElement>) => {
         onPress?.();
         popoverMenuRef.current?.handleOnPopoverMenuTriggerPress(event);
+        toggleTriggerFocus.toggleOn();
       },
-      [onPress],
+      [onPress, toggleTriggerFocus],
     );
+
+    const handleBlur = useCallback(() => {
+      toggleTriggerFocus.toggleOff();
+    }, [toggleTriggerFocus]);
 
     const renderTriggerNode = useCallback(() => {
       return (
@@ -85,6 +91,7 @@ export const Select = memo(
           ref={ref}
           onSelectPress={handleOnSelectPress}
           triggerRef={triggerRef}
+          hasFocus={triggerHasFocus}
           {...props}
         />
       );
@@ -100,6 +107,7 @@ export const Select = memo(
       handleOnSelectPress,
       triggerRef,
       props,
+      triggerHasFocus,
     ]);
 
     return (
@@ -114,6 +122,7 @@ export const Select = memo(
         triggerNode={renderTriggerNode}
         ref={popoverMenuRef}
         customTriggerRef={triggerRef}
+        onBlur={handleBlur}
       >
         {children}
       </PopoverMenu>
