@@ -2,16 +2,16 @@ import { Image } from ':cds-website/components/Image';
 import { Box } from '../../../../../web/layout';
 
 #### Example code
-All examples use the following code to generate the SparklineContainer
+All examples use the following code to generate the InteractiveSparkline
 
 ```tsx
 type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
 type PriceChartProps = Omit<
-  SparklineContainerProps<ChartPeriod>,
+  InteractiveSparklineProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
-  Partial<Pick<SparklineContainerProps<ChartPeriod>, 'defaultPeriod'>>;
+  Partial<Pick<InteractiveSparklineProps<ChartPeriod>, 'defaultPeriod'>>;
 
 export const DEFAULT_CHART_PERIOD = 'day';
 
@@ -90,7 +90,7 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
   }, []);
 
   return (
-    <SparklineContainer
+    <InteractiveSparkline
       {...props}
       periods={periods}
       formatDate={formatDateWithConfig}
@@ -102,7 +102,7 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
 });
 ```
 
-The data shape of `sparklineContainerData` is shown below. There are a lot more data points in the example screenshots than are shown below
+The data shape of `interactiveSparklineData` is shown below. There are a lot more data points in the example screenshots than are shown below
 
 ```json
 {
@@ -172,83 +172,83 @@ The data shape of `sparklineContainerData` is shown below. There are a lot more 
 #### Default usage
 
 ```jsx
-  <PriceChart data={sparklineContainerData} />
+  <PriceChart data={interactiveSparklineData} />
 ```
 
 <Box width="100%" justifyContent="center">
     <Image
         options={{ maxWidth: "450px"}}
-        light="/img/components/sparkline-container/SparklineContainerDefaultLight.png"
-        dark="/img/components/sparkline-container/SparklineContainerDefaultDark.png"
+        light="/img/components/interactive-sparkline/InteractiveSparklineDefaultLight.png"
+        dark="/img/components/interactive-sparkline/InteractiveSparklineDefaultDark.png"
     />
 </Box>
 
 #### Compact
 
 ```jsx
-  <PriceChart data={sparklineContainerData} compact />
+  <PriceChart data={interactiveSparklineData} compact />
 ```
 
 <Box width="100%" justifyContent="center">
     <Image
         options={{ maxWidth: "450px"}}
-        light="/img/components/sparkline-container/SparklineContainerCompactLight.png"
-        dark="/img/components/sparkline-container/SparklineContainerCompactDark.png"
+        light="/img/components/interactive-sparkline/InteractiveSparklineCompactLight.png"
+        dark="/img/components/interactive-sparkline/InteractiveSparklineCompactDark.png"
     />
 </Box>
 
 #### Hide period selector
 
 ```jsx
-  <PriceChart data={sparklineContainerData} hidePeriodSelector />
+  <PriceChart data={interactiveSparklineData} hidePeriodSelector />
 ```
 
 <Box width="100%" justifyContent="center">
     <Image
         options={{ maxWidth: "450px"}}
-        light="/img/components/sparkline-container/SparklineContainerHidePeriodSelectorLight.png"
-        dark="/img/components/sparkline-container/SparklineContainerHidePeriodSelectorDark.png"
+        light="/img/components/interactive-sparkline/InteractiveSparklineHidePeriodSelectorLight.png"
+        dark="/img/components/interactive-sparkline/InteractiveSparklineHidePeriodSelectorDark.png"
     />
 </Box>
 
 #### Hide min/max label
 
 ```jsx
-  <PriceChart data={sparklineContainerData} hideMinMaxLabel />
+  <PriceChart data={interactiveSparklineData} hideMinMaxLabel />
 ```
 
 <Box width="100%" justifyContent="center">
     <Image
         options={{ maxWidth: "450px"}}
-        light="/img/components/sparkline-container/SparklineContainerHideMinMaxLabelLight.png"
-        dark="/img/components/sparkline-container/SparklineContainerHideMinMaxLabelDark.png"
+        light="/img/components/interactive-sparkline/InteractiveSparklineHideMinMaxLabelLight.png"
+        dark="/img/components/interactive-sparkline/InteractiveSparklineHideMinMaxLabelDark.png"
     />
 </Box>
 
 #### Different color
 
 ```jsx
-  <PriceChart data={sparklineContainerData} strokeColor={palette.positive} />
+  <PriceChart data={interactiveSparklineData} strokeColor={palette.positive} />
 ```
 
 <Box width="100%" justifyContent="center">
     <Image
         options={{ maxWidth: "450px"}}
-        light="/img/components/sparkline-container/SparklineContainerDifferentColorLight.png"
-        dark="/img/components/sparkline-container/SparklineContainerDifferentColorDark.png"
+        light="/img/components/interactive-sparkline/InteractiveSparklineDifferentColorLight.png"
+        dark="/img/components/interactive-sparkline/InteractiveSparklineDifferentColorDark.png"
     />
 </Box>
 
 #### fill
 
 ```jsx
-  <PriceChart data={sparklineContainerData} strokeColor={palette.positive} fill />
+  <PriceChart data={interactiveSparklineData} strokeColor={palette.positive} fill />
 ```
 
 <Box width="100%" justifyContent="center">
     <Image
         options={{ maxWidth: "450px"}}
-        light="/img/components/sparkline-container/SparklineContainerFillLight.png"
-        dark="/img/components/sparkline-container/SparklineContainerFillDark.png"
+        light="/img/components/interactive-sparkline/InteractiveSparklineFillLight.png"
+        dark="/img/components/interactive-sparkline/InteractiveSparklineFillDark.png"
     />
 </Box>

@@ -3,15 +3,15 @@ import { chartFallbackPositive } from '@cbhq/cds-lottie-files/chartFallbackPosit
 import { Lottie } from '../../../animation';
 import { ThemeProvider } from '../../../system/ThemeProvider';
 
-import { SparklineContainer, SparklineContainerProps } from '../SparklineContainer';
+import { InteractiveSparkline, InteractiveSparklineProps } from '../InteractiveSparkline';
 
 type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
 type PriceChartProps = Omit<
-  SparklineContainerProps<ChartPeriod>,
+  InteractiveSparklineProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
-  Partial<Pick<SparklineContainerProps<ChartPeriod>, 'defaultPeriod'>>;
+  Partial<Pick<InteractiveSparklineProps<ChartPeriod>, 'defaultPeriod'>>;
 
 export const DEFAULT_CHART_PERIOD = 'day';
 
@@ -90,7 +90,7 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
   }, []);
 
   return (
-    <SparklineContainer
+    <InteractiveSparkline
       {...props}
       periods={periods}
       formatDate={formatDateWithConfig}

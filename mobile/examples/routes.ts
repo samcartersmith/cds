@@ -29,6 +29,8 @@ export const routes = {
   InputIcon: () => require('../controls/__stories__/InputIcon.stories').default,
   InputIconButton: () => require('../controls/__stories__/InputIconButton.stories').default,
   InputStack: () => require('../controls/__stories__/InputStack.stories').default,
+  InteractiveSparkline: () =>
+    require('../visualizations/chart/__stories__/InteractiveSparkline.stories').default,
   Link: () => require('../typography/__stories__/Link.stories').default,
   ListCell: () => require('../cells/__stories__/ListCell.stories').default,
   ListCellFallback: () => require('../cells/__stories__/ListCellFallback.stories').default,
@@ -50,8 +52,6 @@ export const routes = {
   SelectOption: () => require('../controls/__stories__/SelectOption.stories').default,
   Spacer: () => require('../layout/__stories__/Spacer.stories').default,
   Sparkline: () => require('../visualizations/__stories__/Sparkline.stories').default,
-  SparklineContainer: () =>
-    require('../visualizations/chart/__stories__/SparklineContainer.stories').default,
   SparklineGradient: () =>
     require('../visualizations/__stories__/SparklineGradient.stories').default,
   Spectrum: () => require('../system/__stories__/Spectrum.stories').default,

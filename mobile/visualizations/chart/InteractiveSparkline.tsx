@@ -25,7 +25,7 @@ import { ChartProvider, useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { useUpdateChartHeader } from './useUpdateChartHeader';
 
-export type SparklineContainerProps<Period extends string> = {
+export type InteractiveSparklineProps<Period extends string> = {
   /**
    * Chart data bucketed by Period. Period is a string key
    */
@@ -137,28 +137,28 @@ const minMax = (data: ChartData) => {
   return [min, max];
 };
 
-type SparklineContainerContentProps<Period extends string> = Omit<
-  SparklineContainerProps<Period>,
+type InteractiveSparklineContentProps<Period extends string> = Omit<
+  InteractiveSparklineProps<Period>,
   'compact'
 >;
 
-function SparklineContainerWithGeneric<Period extends string>({
+function InteractiveSparklineWithGeneric<Period extends string>({
   compact,
   ...props
-}: SparklineContainerProps<Period>) {
+}: InteractiveSparklineProps<Period>) {
   return (
     <ChartProvider compact={compact}>
-      <SparklineContainerContent {...props} />
+      <InteractiveSparklineContent {...props} />
     </ChartProvider>
   );
 }
 
 // typescript doesn't understand the memo with the generic so it gets casted to a base react component
-export const SparklineContainer = memo(
-  SparklineContainerWithGeneric,
-) as typeof SparklineContainerWithGeneric;
+export const InteractiveSparkline = memo(
+  InteractiveSparklineWithGeneric,
+) as typeof InteractiveSparklineWithGeneric;
 
-function SparklineContainerContentWithGeneric<Period extends string>({
+function InteractiveSparklineContentWithGeneric<Period extends string>({
   data,
   periods,
   defaultPeriod,
@@ -174,7 +174,7 @@ function SparklineContainerContentWithGeneric<Period extends string>({
   hidePeriodSelector = false,
   disableScrubbing = false,
   fill,
-}: SparklineContainerContentProps<Period>) {
+}: InteractiveSparklineContentProps<Period>) {
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useChartContext();
   const colors = usePalette();
@@ -287,9 +287,9 @@ function SparklineContainerContentWithGeneric<Period extends string>({
   );
 }
 
-const SparklineContainerContent = memo(
-  SparklineContainerContentWithGeneric,
-) as typeof SparklineContainerContentWithGeneric;
+const InteractiveSparklineContent = memo(
+  InteractiveSparklineContentWithGeneric,
+) as typeof InteractiveSparklineContentWithGeneric;
 
 type BelowChartProps<Period extends string> = {
   color: string;

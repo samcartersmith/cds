@@ -91,5 +91,5 @@ export const components = [
   'ProgressCircle',
   'Sparkline',
   'SparklineGradient',
-  'SparklineContainer',
+  'InteractiveSparkline',
 ] as const;
