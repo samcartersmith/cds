@@ -5,7 +5,11 @@ export default {
   component: SelectOption,
 };
 
-export const Default = () => <SelectOption description="Description" />;
-export const Title = () => <SelectOption description="Description" title="Title" />;
-export const Compact = () => <SelectOption description="Description" compact />;
-export const CompactTitle = () => <SelectOption description="Description" title="Title" compact />;
+export const Default = () => <SelectOption description="Description" value="Description" />;
+export const Title = () => (
+  <SelectOption description="Description" title="Title" value="Description" />
+);
+export const Compact = () => <SelectOption description="Description" compact value="Description" />;
+export const CompactTitle = () => (
+  <SelectOption description="Description" title="Title" compact value="Description" />
+);

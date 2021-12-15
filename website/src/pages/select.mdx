@@ -31,16 +31,24 @@ function DefaultSelect() {
         <HStack gap={1}>
           <Select width={200} value={year} onChange={setYear} placeholder="Year">
             {years.map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption title={option} description="BTC" selected={option === year} />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                selected={option === year}
+              />
             ))}
           </Select>
           <Select width={200} value={asset} onChange={setAsset} placeholder="Assets">
             {currencies.map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption title={option} description="BTC" selected={option === asset} />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                selected={option === asset}
+              />
             ))}
           </Select>
         </HStack>
@@ -86,9 +94,12 @@ function FormExample() {
         <TextInput label="Re-enter account number" />
         <Select value={accountType} onChange={handleAccountTypeChange}>
           {accountTypeOptions.map((option) => (
-            <MenuItem value={option} key={option}>
-              <SelectOption description={option} selected={accountType === option} />
-            </MenuItem>
+            <SelectOption
+              value={option}
+              key={option}
+              description={option}
+              selected={accountType === option}
+            />
           ))}
         </Select>
         <Button type="submit">Submit</Button>

@@ -48,14 +48,14 @@ function NavigationMenu() {
             >
               <MenuSectionLabel text="For Individuals" />
               {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
-                <MenuItem key={name} value={optionValue}>
-                  <SelectOption
-                    title={name}
-                    description={description}
-                    media={<Pictogram name={mediaName} />}
-                    selected={value === optionValue}
-                  />
-                </MenuItem>
+                <SelectOption
+                  key={name}
+                  value={optionValue}
+                  title={name}
+                  description={description}
+                  media={<Pictogram name={mediaName} />}
+                  selected={value === optionValue}
+                />
               ))}
             </PopoverMenu>
             <IconButton name="bell" variant="secondary" />

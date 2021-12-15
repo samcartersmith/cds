@@ -20,7 +20,10 @@ type MenuItemProps = {
   key?: string;
   ref?: ((ref: HTMLElement) => void) | undefined;
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
+  selected?: boolean;
 } & LinkableProps;
+
+type SelectOptionProps = SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key' | 'selected'>;
 
 export type SelectProps = {
   children: ReactElement<MenuItemProps>[];
@@ -29,9 +32,8 @@ export type SelectProps = {
 
 export type CreateSelectStoriesProps = {
   Select: React.ComponentType<SelectProps>;
-  MenuItem: React.ComponentType<MenuItemProps>;
   VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOption: React.ComponentType<SelectOptionBaseProps>;
+  SelectOption: React.ComponentType<SelectOptionProps>;
   ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
   spectrum?: Spectrum;
   scale?: Scale;
@@ -54,7 +56,6 @@ export const priceOptions = [
 
 export const selectBuilder = ({
   Select,
-  MenuItem,
   VStack,
   SelectOption,
   ThemeProvider,
@@ -90,14 +91,14 @@ export const selectBuilder = ({
             helperText={helperText}
           >
             {priceOptions.map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption
-                  title={option}
-                  description="BTC"
-                  testID={`option-${option}`}
-                  selected={value === option}
-                />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                testID={`option-${option}`}
+                selected={value === option}
+              />
             ))}
           </Select>
         </VStack>
@@ -118,14 +119,14 @@ export const selectBuilder = ({
             helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
           >
             {priceOptions.map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption
-                  title={option}
-                  description="BTC"
-                  testID={`option-${option}`}
-                  selected={value === option}
-                />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                testID={`option-${option}`}
+                selected={value === option}
+              />
             ))}
           </Select>
         </VStack>
@@ -145,14 +146,14 @@ export const selectBuilder = ({
             label="Pick your poison"
           >
             {priceOptions.map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption
-                  title={option}
-                  description="BTC"
-                  testID={`option-${option}`}
-                  selected={value === option}
-                />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                testID={`option-${option}`}
+                selected={value === option}
+              />
             ))}
           </Select>
         </VStack>
@@ -174,15 +175,15 @@ export const selectBuilder = ({
             helperText="You only get one choice"
           >
             {priceOptions.map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption
-                  compact
-                  title={option}
-                  description="BTC"
-                  testID={`option-${option}`}
-                  selected={value === option}
-                />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                compact
+                title={option}
+                description="BTC"
+                testID={`option-${option}`}
+                selected={value === option}
+              />
             ))}
           </Select>
         </VStack>

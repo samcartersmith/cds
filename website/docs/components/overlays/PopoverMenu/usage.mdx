@@ -56,14 +56,14 @@ function Default() {
         visible={visible}
       >
         {priceOptions.map((option) => (
-          <MenuItem value={option} key={option}>
-            <SelectOption
-              title={option}
-              description="BTC"
-              testID={`option-${option}`}
-              selected={value === option}
-            />
-          </MenuItem>
+          <SelectOption
+            value={option}
+            key={option}
+            title={option}
+            description="BTC"
+            testID={`option-${option}`}
+            selected={value === option}
+          />
         ))}
       </PopoverMenu>
     </VStack>
@@ -123,14 +123,14 @@ function NavigationMenu() {
             >
               <MenuSectionLabel text="For Individuals" />
               {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
-                <MenuItem key={name} value={optionValue}>
-                  <SelectOption
-                    title={name}
-                    description={description}
-                    media={<Pictogram dimension="48x48" name={mediaName} />}
-                    selected={value === optionValue}
-                  />
-                </MenuItem>
+                <SelectOption
+                  key={name}
+                  value={optionValue}
+                  title={name}
+                  description={description}
+                  media={<Pictogram dimension="48x48" name={mediaName} />}
+                  selected={value === optionValue}
+                />
               ))}
             </PopoverMenu>
             <IconButton name="bell" variant="secondary" />

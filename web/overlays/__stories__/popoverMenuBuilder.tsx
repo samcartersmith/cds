@@ -49,10 +49,9 @@ type TypographyProps = {
 
 export type CreatePopoverMenuStoriesProps = {
   PopoverMenu: React.ComponentType<PopoverMenuProps>;
-  MenuItem: React.ComponentType<MenuItemProps>;
   VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
   HStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOption: React.ComponentType<SelectOptionBaseProps>;
+  SelectOption: React.ComponentType<SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key'>>;
   IconButton: React.ComponentType<IconButtonBaseProps & SharedProps>;
   NavigationBar: React.ComponentType<NavigationBarProps>;
   NavigationTitle: React.ComponentType<NavigationTitleProps>;
@@ -107,7 +106,6 @@ type DefaultPopoverMenuProps = {
 
 export const popoverMenuBuilder = ({
   PopoverMenu,
-  MenuItem,
   VStack,
   HStack,
   SelectOption,
@@ -150,26 +148,26 @@ export const popoverMenuBuilder = ({
         >
           <MenuSectionLabel text="Section Heading" />
           {priceOptions.slice(0, 4).map((option) => (
-            <MenuItem value={option} key={option}>
-              <SelectOption
-                title={option}
-                description="BTC"
-                testID={`option-${option}`}
-                selected={value === option}
-              />
-            </MenuItem>
+            <SelectOption
+              value={option}
+              key={option}
+              title={option}
+              description="BTC"
+              testID={`option-${option}`}
+              selected={value === option}
+            />
           ))}
           <Divider />
           <MenuSectionLabel text="Section Heading" />
           {priceOptions.slice(5, 9).map((option) => (
-            <MenuItem value={option} key={option}>
-              <SelectOption
-                title={option}
-                description="BTC"
-                testID={`option-${option}`}
-                selected={value === option}
-              />
-            </MenuItem>
+            <SelectOption
+              value={option}
+              key={option}
+              title={option}
+              description="BTC"
+              testID={`option-${option}`}
+              selected={value === option}
+            />
           ))}
         </PopoverMenu>
       </VStack>
@@ -208,14 +206,14 @@ export const popoverMenuBuilder = ({
                 value={value}
               >
                 {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
-                  <MenuItem key={name} value={optionValue}>
-                    <SelectOption
-                      title={name}
-                      description={description}
-                      media={<Pictogram dimension="48x48" name={mediaName} />}
-                      selected={value === optionValue}
-                    />
-                  </MenuItem>
+                  <SelectOption
+                    value={optionValue}
+                    key={optionValue}
+                    title={name}
+                    description={description}
+                    media={<Pictogram dimension="48x48" name={mediaName} />}
+                    selected={value === optionValue}
+                  />
                 ))}
               </PopoverMenu>
               <IconButton name="bell" variant="secondary" />
@@ -261,14 +259,14 @@ export const popoverMenuBuilder = ({
             visible={visible}
           >
             {priceOptions.map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption
-                  title={option}
-                  description="BTC"
-                  testID={`option-${option}`}
-                  selected={value === option}
-                />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                testID={`option-${option}`}
+                selected={value === option}
+              />
             ))}
           </PopoverMenu>
         }
@@ -316,26 +314,26 @@ export const popoverMenuBuilder = ({
           >
             <MenuSectionLabel text="Section Heading" />
             {priceOptions.slice(0, 4).map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption
-                  title={option}
-                  description="BTC"
-                  testID={`option-${option}`}
-                  selected={value === option}
-                />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                testID={`option-${option}`}
+                selected={value === option}
+              />
             ))}
             <Divider />
             <MenuSectionLabel text="Section Heading" />
             {priceOptions.slice(5, 9).map((option) => (
-              <MenuItem value={option} key={option}>
-                <SelectOption
-                  title={option}
-                  description="BTC"
-                  testID={`option-${option}`}
-                  selected={value === option}
-                />
-              </MenuItem>
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                description="BTC"
+                testID={`option-${option}`}
+                selected={value === option}
+              />
             ))}
           </PopoverMenu>
         </VStack>

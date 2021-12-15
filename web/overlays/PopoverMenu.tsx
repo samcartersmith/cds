@@ -24,13 +24,13 @@ import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { usePopover } from './usePopover';
 import { VStack, HStack } from '../layout';
-import { MenuItemProps, MenuItem } from './MenuItem';
 import { useFeatureFlag } from '../system/useFeatureFlag';
+import { SelectOption, SelectOptionProps } from '../controls/SelectOption';
 
 export const menuStaticClassName = 'cds-menu';
 
 export type PopoverMenuProps = {
-  children: ElementChildren<MenuItemProps> | HTMLElement;
+  children: ElementChildren<SelectOptionProps> | HTMLElement;
 } & PopoverMenuBaseProps;
 
 export const PopoverMenu = memo(
@@ -157,14 +157,10 @@ export const PopoverMenu = memo(
       );
 
       const renderMenuItem = useCallback(
-        (child: ReactElement<MenuItemProps>) => {
+        (child: ReactElement<SelectOptionProps>) => {
           return cloneElement(child, {
             selected: child.props.value === value,
-            ref: (node: HTMLElement) => {
-              if (node && child.props.value === value) {
-                selectOptionRef.current = node;
-              }
-            },
+            ref: child.props.value === value ? selectOptionRef : undefined,
             onChange: handleOptionChange,
             popoverMenuRef,
             hideMenu: closeMenu,
@@ -232,8 +228,8 @@ export const PopoverMenu = memo(
                 maxHeight={selectPopoverMenuMaxHeight}
               >
                 {flattenNodes(children).map((child) => {
-                  if (child && typeof child === 'object' && child.type === MenuItem) {
-                    return renderMenuItem(child as ReactElement<MenuItemProps>);
+                  if (child && typeof child === 'object' && child.type === SelectOption) {
+                    return renderMenuItem(child as ReactElement<SelectOptionProps>);
                   }
 
                   return child;

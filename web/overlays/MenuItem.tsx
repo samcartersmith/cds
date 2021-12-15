@@ -1,10 +1,10 @@
 import React, {
-  ForwardedRef,
-  forwardRef,
   memo,
   useCallback,
   KeyboardEvent,
   ReactElement,
+  forwardRef,
+  ForwardedRef,
 } from 'react';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 import { NoopFn } from '@cbhq/cds-common';
@@ -24,8 +24,6 @@ export type MenuItemProps = {
   onChange?: (newValue: string) => void;
   /** Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() */
   key?: string;
-  /** Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() */
-  ref?: ((ref: HTMLElement) => void) | undefined;
   /** This is passed in via React.cloneElement and is necessary to control option focus during keyboard interactions */
   popoverMenuRef?: React.MutableRefObject<HTMLElement | null>;
   /**
@@ -40,6 +38,7 @@ export type MenuItemProps = {
   /** Custom event handler for when a MenuItem is pressed */
   onPress?: NoopFn;
   /** Indicates whether option has been chosen already
+   * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
    * @default false
    */
   selected?: boolean;
@@ -59,7 +58,7 @@ export const MenuItem = memo(
         onPress,
         ...props
       }: MenuItemProps,
-      ref: ForwardedRef<HTMLButtonElement>,
+      ref: ForwardedRef<HTMLElement>,
     ) => {
       const handleValueChange = useCallback(() => {
         hideMenu?.();

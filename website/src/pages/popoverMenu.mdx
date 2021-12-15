@@ -46,14 +46,14 @@ function Default() {
         visible={visible}
       >
         {priceOptions.map((option) => (
-          <MenuItem value={option} key={option}>
-            <SelectOption
-              title={option}
-              description="BTC"
-              testID={`option-${option}`}
-              selected={value === option}
-            />
-          </MenuItem>
+          <SelectOption
+            value={option}
+            key={option}
+            title={option}
+            description="BTC"
+            testID={`option-${option}`}
+            selected={value === option}
+          />
         ))}
       </PopoverMenu>
     </VStack>
@@ -109,22 +109,22 @@ function NavigationMenu() {
               onChange={handleMenuValueChange}
               value={value}
             >
-              <MenuItem key="Coinbase" value="Coinbase">
-                <SelectOption
-                  title="Coinbase"
-                  description="Buy, sell, use crypto"
-                  media={<Pictogram dimension="48x48" name="coinbaseOneLogoPictogram" />}
-                  selected={value === 'Coinbase'}
-                />
-              </MenuItem>
-              <MenuItem key="Wallet" value="Wallet">
-                <SelectOption
-                  title="Wallet"
-                  description="The best self-hosted crypto wallet"
-                  media={<Pictogram dimension="48x48" name="wallet" />}
-                  selected={value === 'Wallet'}
-                />
-              </MenuItem>
+              <SelectOption
+                key="Coinbase"
+                value="Coinbase"
+                title="Coinbase"
+                description="Buy, sell, use crypto"
+                media={<Pictogram dimension="48x48" name="coinbaseOneLogoPictogram" />}
+                selected={value === 'Coinbase'}
+              />
+              <SelectOption
+                key="Wallet"
+                value="Wallet"
+                title="Wallet"
+                description="The best self-hosted crypto wallet"
+                media={<Pictogram dimension="48x48" name="wallet" />}
+                selected={value === 'Wallet'}
+              />
             </PopoverMenu>
             <IconButton name="bell" variant="secondary" />
           </HStack>
@@ -187,14 +187,14 @@ function FeedCardMenu() {
           visible={visible}
         >
           {priceOptions.map((option) => (
-            <MenuItem value={option} key={option}>
-              <SelectOption
-                title={option}
-                description="BTC"
-                testID={`option-${option}`}
-                selected={value === option}
-              />
-            </MenuItem>
+            <SelectOption
+              value={option}
+              key={option}
+              title={option}
+              description="BTC"
+              testID={`option-${option}`}
+              selected={value === option}
+            />
           ))}
         </PopoverMenu>
       }

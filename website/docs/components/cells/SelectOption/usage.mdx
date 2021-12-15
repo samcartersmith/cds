@@ -6,14 +6,10 @@ Supports the same props and usage as `ListCell`, but with styling specific to us
 
 ### Web
 
-You **must** wrap `SelectOption` in a `MenuItem` when used in a `Select` or `PopoverMenu`. This allows for keyboard navigation, injects accessibility attributes, and focus behavior.
-
-We strongly recommend that you use `SelectOption`. It has the same API as a `ListCell`, but with custom styles specific to usage within a `Select`.
+We strongly recommend that you use `SelectOption`s within `PopoverMenu`s and `Select`s. It has the same API as a `ListCell`, but with custom styles specific to usage within a `Select`.
 
 #### Default Composition
 
 ```jsx live
-<MenuItem value={option} key={option}>
-  <SelectOption title={option} description="BTC" />
-</MenuItem>
+<SelectOption value={option} title={option} description="BTC" />
 ```
