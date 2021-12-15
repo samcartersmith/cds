@@ -12,17 +12,39 @@ type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'star
 
 export function searchInputBuilder(SearchInput: React.ComponentType<SearchInputProps>) {
   const Basic = () => {
+    return <SearchInput placeholder="Placeholder" />;
+  };
+
+  const OnClear = () => {
     const handleOnClear = useCallback(() => {
       console.log('Clearing...');
     }, []);
 
+    return <SearchInput onClear={handleOnClear} placeholder="Placeholder" />;
+  };
+
+  const OnSearch = () => {
     const handleOnSearch = useCallback(() => {
       console.log('Searching...');
     }, []);
 
-    return (
-      <SearchInput onSearch={handleOnSearch} onClear={handleOnClear} placeholder="Placeholder" />
-    );
+    return <SearchInput onSearch={handleOnSearch} placeholder="Placeholder" />;
+  };
+
+  const OnFocus = () => {
+    const handleOnFocus = useCallback(() => {
+      console.log('Focusing...');
+    }, []);
+
+    return <SearchInput onFocus={handleOnFocus} placeholder="Placeholder" />;
+  };
+
+  const OnBlur = () => {
+    const handleOnBlur = useCallback(() => {
+      console.log('Blurring...');
+    }, []);
+
+    return <SearchInput onBlur={handleOnBlur} placeholder="Placeholder" />;
   };
 
   const Compact = () => <SearchInput accessibilityLabel="searchbox" compact />;
@@ -33,6 +55,10 @@ export function searchInputBuilder(SearchInput: React.ComponentType<SearchInputP
 
   return {
     Basic,
+    OnClear,
+    OnBlur,
+    OnFocus,
+    OnSearch,
     Disabled,
     Compact,
     DefaultValue,

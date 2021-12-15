@@ -1,8 +1,10 @@
-import React, { useMemo, useCallback, memo, useState, ForwardedRef, forwardRef } from 'react';
+import React, { useCallback, memo, useState, ForwardedRef, forwardRef } from 'react';
 import {
   GestureResponderEvent,
   TextInputProps as RNTextInputProps,
   TextInput as RNTextInput,
+  NativeSyntheticEvent,
+  TextInputFocusEventData,
 } from 'react-native';
 import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
 import { IconName } from '@cbhq/cds-common/types';
@@ -19,29 +21,44 @@ export type SearchInputProps = SearchInputBaseProps &
 export const SearchInput = memo(
   forwardRef(
     (
-      { onChangeText, onSearch, onClear, value, testID, ...props }: SearchInputProps,
+      {
+        value,
+        testID,
+        onChangeText,
+        onSearch,
+        onClear,
+        onFocus,
+        onBlur,
+        ...props
+      }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
     ) => {
       const [text, setText] = useState(value);
       const [startIconName, setStartIconName] = useState<IconName>('search');
 
-      const addonProps = useMemo(() => {
-        return {
-          ...props,
-          onChangeText: (textStr: string) => {
-            onChangeText?.(textStr);
-            setText(textStr);
-          },
-          // The icon of the start IconButton changes based on the focus state
-          // When focused, it will be backArrow, otherwise its search
-          onFocus: () => {
-            setStartIconName('backArrow');
-          },
-          onBlur: () => {
-            setStartIconName('search');
-          },
-        };
-      }, [props, onChangeText]);
+      const handleOnFocus = useCallback(
+        (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+          onFocus?.(e);
+          setStartIconName('backArrow');
+        },
+        [onFocus],
+      );
+
+      const handleOnBlur = useCallback(
+        (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+          onBlur?.(e);
+          setStartIconName('search');
+        },
+        [onBlur],
+      );
+
+      const handleOnChangeText = useCallback(
+        (textStr: string) => {
+          onChangeText?.(textStr);
+          setText(textStr);
+        },
+        [onChangeText],
+      );
 
       const handleOnClear = useCallback(
         (e: GestureResponderEvent) => {
@@ -53,6 +70,9 @@ export const SearchInput = memo(
 
       return (
         <TextInput
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
+          onChangeText={handleOnChangeText}
           start={
             <InputIconButton
               testID={testID && `${testID}-searchinput-iconbtn`}
@@ -63,8 +83,7 @@ export const SearchInput = memo(
           borderRadius="search"
           ref={ref}
           end={
-            text !== '' &&
-            text !== undefined && (
+            !!text && (
               <Box spacingEnd={0.5}>
                 <InputIconButton
                   name="close"
@@ -77,7 +96,7 @@ export const SearchInput = memo(
           accessibilityRole="search"
           value={text}
           testID={testID}
-          {...addonProps}
+          {...props}
         />
       );
     },

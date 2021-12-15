@@ -6,4 +6,5 @@ export default {
   component: SearchInput,
 };
 
-export const { Basic, Disabled, Compact, DefaultValue } = searchInputBuilder(SearchInput);
+export const { Basic, OnClear, OnFocus, OnBlur, Disabled, Compact, DefaultValue } =
+  searchInputBuilder(SearchInput);
