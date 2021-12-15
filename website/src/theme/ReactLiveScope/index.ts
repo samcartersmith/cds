@@ -7,6 +7,7 @@ import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
+import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useOverlay } from '@cbhq/cds-common/overlays/useOverlay';
 
 import * as lottieFiles from '@cbhq/cds-lottie-files';
@@ -40,6 +41,7 @@ import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
 import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
+import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -94,6 +96,7 @@ const ReactLiveScope = {
   useScale,
   useScaleConditional,
   useSparklinePath,
+  useSparklineArea,
   useSpectrum,
   useSpectrumConditional,
   useStatusButtons,
@@ -146,6 +149,7 @@ const ReactLiveScope = {
   LottieExample,
   nux,
   ProgressContainerWithButtons,
+  SparklineArea,
 };
 
 export default ReactLiveScope;

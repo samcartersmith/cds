@@ -92,3 +92,25 @@ function Example() {
   );
 }
 ```
+
+## Sparkline fill
+```jsx live
+function Example() {
+  const normal = { width: 400, height: 200 };
+  const dense = { width: 200, height: 100 };
+  const dimensions = useScaleConditional({ normal, dense });
+  const path = useSparklinePath({ ...dimensions, data: prices });
+  const area = useSparklineArea({ ...dimensions, data: prices });
+  return (
+    <ExampleWithThemeToggles>
+      <VStack gap={2}>
+        {assetColors.map(color => (
+          <Sparkline key={color} {...dimensions} path={path} color={color}>
+            <SparklineArea area={area} />
+          </Sparkline>
+        ))}
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```

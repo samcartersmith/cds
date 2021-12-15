@@ -22,6 +22,10 @@ export type SparklineFallbackProps = Pick<SparklineBaseProps, 'height' | 'width'
 
 export type SparklineAreaBaseProps = {
   area?: string;
+  patternId?: string;
 };
 
-export const sparklineAreaPatternId = 'cds-sparkline-area-pattern';
+export type SparklineAreaPatternBaseProps = {
+  color: string;
+  id: string;
+};

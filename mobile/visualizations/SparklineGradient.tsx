@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo, useMemo, useRef } from 'react';
 
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { SparklineBaseProps } from '@cbhq/cds-common/types/SparklineBaseProps';
@@ -6,12 +6,15 @@ import { TextInput } from 'react-native';
 import Svg, { G, Defs, LinearGradient, Path, Stop } from 'react-native-svg';
 
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
+import { generateRandomId } from '@cbhq/cds-utils';
+import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 
 export const SparklineGradient = memo(
   forwardRef<TextInput | null, SparklineBaseProps>(
     ({ background, color, path, height, width, yAxisScalingFactor, children }, ref) => {
+      const patternId = useRef<string>(generateRandomId());
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const linearGradient = useMemo(() => {
@@ -23,7 +26,7 @@ export const SparklineGradient = memo(
                 <Stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </LinearGradient>
-            {!!children && <SparklineAreaPattern color={color} />}
+            {!!children && <SparklineAreaPattern id={patternId.current} color={color} />}
           </Defs>
         );
       }, [children, color, gradient]);
@@ -40,7 +43,7 @@ export const SparklineGradient = memo(
               strokeWidth={borderWidth.sparkline}
               stroke="url(#gradient)"
             />
-            {children}
+            {generateSparklineAreaWithId(patternId.current, children)}
           </G>
         </Svg>
       );
