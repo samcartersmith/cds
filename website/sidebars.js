@@ -11,7 +11,6 @@ const componentsToExcludeByLabel = new Set([
   'components/overlays/PopoverMenu/popover-menu',
   'components/controls/Select/select',
   'components/cells/SelectOption/select-option',
-  'components/controls/SearchInput/search-input',
   'components/overlays/Toast/toast',
   'components/overlays/MenuItem/menu-item',
   'components/overlays/Toast/toast',
