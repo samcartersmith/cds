@@ -179,6 +179,12 @@ export const IconButton = {
 };
 
 export const AnnouncementCard = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/AnnouncementCard/a11y.mdx'
+      ),
+  ),
   'announcement-card': React.lazy(
     async () =>
       import(
@@ -189,6 +195,12 @@ export const AnnouncementCard = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/AnnouncementCard/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/AnnouncementCard/usage.mdx'
       ),
   ),
 };
@@ -263,6 +275,12 @@ export const CardFooter = {
 };
 
 export const CardGroup = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/CardGroup/a11y.mdx'
+      ),
+  ),
   'card-group': React.lazy(
     async () =>
       import(
@@ -305,6 +323,12 @@ export const CardHeader = {
 };
 
 export const FeatureEntryCard = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/FeatureEntryCard/a11y.mdx'
+      ),
+  ),
   'feature-entry-card': React.lazy(
     async () =>
       import(
@@ -317,9 +341,21 @@ export const FeatureEntryCard = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/FeatureEntryCard/implementation.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/FeatureEntryCard/usage.mdx'
+      ),
+  ),
 };
 
 export const FeedCard = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/FeedCard/a11y.mdx'
+      ),
+  ),
   'feed-card': React.lazy(
     async () =>
       import(
@@ -632,6 +668,12 @@ export const SearchInput = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SearchInput/implementation.mdx'
       ),
   ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/SearchInput/intro.mdx'
+      ),
+  ),
   'search-input': React.lazy(
     async () =>
       import(
@@ -657,6 +699,12 @@ export const Select = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Select/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/Select/intro.mdx'
       ),
   ),
   select: React.lazy(
@@ -1145,6 +1193,12 @@ export const Fallback = {
 };
 
 export const Group = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Group/a11y.mdx'
+      ),
+  ),
   group: React.lazy(
     async () =>
       import(
@@ -1155,6 +1209,12 @@ export const Group = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Group/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/layout/Group/usage.mdx'
       ),
   ),
 };

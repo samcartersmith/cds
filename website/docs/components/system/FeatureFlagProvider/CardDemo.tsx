@@ -28,7 +28,7 @@ export function CardDemo() {
   }, []);
 
   return (
-    <ResponsiveArtboard>
+    <ResponsiveArtboard notInLiveEditor>
       <CardGroup>
         {demoCard}
         {demoCard}

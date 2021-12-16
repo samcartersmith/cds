@@ -1,1 +1,20 @@
-Coming soon!
+```jsx live
+function Example() {
+  const normal = { width: 400, height: 200 };
+  const dense = { width: 200, height: 100 };
+  const dimensions = useScaleConditional({ normal, dense });
+  const path = useSparklinePath({ ...dimensions, data: prices });
+  const area = useSparklineArea({ ...dimensions, data: prices });
+  return (
+    <ExampleWithThemeToggles>
+      <VStack gap={2}>
+        {assetColors.map((color) => (
+          <SparklineGradient key={color} {...dimensions} path={path} color={color}>
+            <SparklineArea area={area} />
+          </SparklineGradient>
+        ))}
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```

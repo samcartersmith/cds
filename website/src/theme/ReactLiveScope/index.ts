@@ -53,6 +53,7 @@ import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { users } from '@cbhq/cds-common/internal/data/users';
 import { product } from '@cbhq/cds-common/internal/data/product';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ColorTile } from ':cds-website/components/ColorTile';
@@ -63,6 +64,7 @@ import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { LottieSheet } from ':cds-website/docs/components/animation/Lottie/LottieSheet';
 import { LottieExample } from ':cds-website/docs/components/animation/Lottie/LottieExample';
 import { PaletteSheet } from ':cds-website/components/PaletteSheet';
+import { ExampleBox } from ':cds-website/components/ExampleBox';
 
 import { useStatusButtons } from './useStatusButtons';
 
@@ -136,10 +138,12 @@ const ReactLiveScope = {
   assetColors,
   prices,
   mocks,
+  gutter,
   // Example components
   ButtonSheet,
   ColorTile,
   ExampleWithThemeToggles,
+  ExampleBox,
   ThemeToggles,
   Artboard: PatternArtboard,
   ResponsiveArtboard,

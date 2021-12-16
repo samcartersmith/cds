@@ -1,0 +1,106 @@
+### Basic example
+
+```jsx live
+function Example() {
+  return (
+    <Group>
+      <ExampleBox>Box 1</ExampleBox>
+      <ExampleBox>Box 2</ExampleBox>
+      <ExampleBox>Box 3</ExampleBox>
+    </Group>
+  );
+}
+```
+
+### With gap
+
+```jsx live
+function Example() {
+  return (
+    <Group gap={3}>
+      <ExampleBox>Box 1</ExampleBox>
+      <ExampleBox>Box 2</ExampleBox>
+      <ExampleBox>Box 3</ExampleBox>
+    </Group>
+  );
+}
+```
+
+### With divider
+
+```jsx live
+function Example() {
+  return (
+    <Group divider={Divider}>
+      <ExampleBox>Box 1</ExampleBox>
+      <ExampleBox>Box 2</ExampleBox>
+      <ExampleBox>Box 3</ExampleBox>
+    </Group>
+  );
+}
+```
+
+### With custom divider
+
+```jsx live
+function Example() {
+  const CustomDivider = (
+    <Box>
+      <Box height={4} background="primary" width="100%" />
+    </Box>
+  );
+  return (
+    <Group divider={CustomDivider}>
+      <ExampleBox>Box 1</ExampleBox>
+      <ExampleBox>Box 2</ExampleBox>
+      <ExampleBox>Box 3</ExampleBox>
+    </Group>
+  );
+}
+```
+
+### With custom divider and gap
+
+```jsx live
+function Example() {
+  const CustomDivider = (
+    <Box spacingBottom={gutter}>
+      <Box height={4} background="primary" width="100%" />
+    </Box>
+  );
+  return (
+    <Group gap={gutter} divider={CustomDivider}>
+      <ExampleBox>Box 1</ExampleBox>
+      <ExampleBox>Box 2</ExampleBox>
+      <ExampleBox>Box 3</ExampleBox>
+    </Group>
+  );
+}
+```
+
+### With custom renderItem callback
+
+```jsx live
+function Example() {
+  const CustomDivider = (
+    <Box spacingBottom={gutter}>
+      <Box height={4} background="primary" width="100%" />
+    </Box>
+  );
+
+  const customRenderItem = useCallback(({ item, Wrapper, isFirst, isLast }) => {
+    return (
+      <Wrapper borderColor="lineHeavy" borderedTop={isFirst} borderedBottom={isLast}>
+        {item}
+      </Wrapper>
+    );
+  }, []);
+  return (
+    <Group gap={gutter} divider={CustomDivider} renderItem={customRenderItem}>
+      <ExampleBox>Box 1</ExampleBox>
+      <ExampleBox>Box 2</ExampleBox>
+      <ExampleBox>Box 3</ExampleBox>
+    </Group>
+  );
+}
+```
