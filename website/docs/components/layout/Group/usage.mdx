@@ -44,10 +44,13 @@ function Example() {
 
 ```jsx live
 function Example() {
-  const CustomDivider = (
-    <Box>
-      <Box height={4} background="primary" width="100%" />
-    </Box>
+  const CustomDivider = useCallback(
+    () => (
+      <Box>
+        <Box height={4} background="primary" width="100%" />
+      </Box>
+    ),
+    [],
   );
   return (
     <Group divider={CustomDivider}>
@@ -63,11 +66,15 @@ function Example() {
 
 ```jsx live
 function Example() {
-  const CustomDivider = (
-    <Box spacingBottom={gutter}>
-      <Box height={4} background="primary" width="100%" />
-    </Box>
+  const CustomDivider = useCallback(
+    () => (
+      <Box spacingBottom={gutter}>
+        <Box height={4} background="primary" width="100%" />
+      </Box>
+    ),
+    [],
   );
+
   return (
     <Group gap={gutter} divider={CustomDivider}>
       <ExampleBox>Box 1</ExampleBox>
@@ -82,21 +89,27 @@ function Example() {
 
 ```jsx live
 function Example() {
-  const CustomDivider = (
-    <Box spacingBottom={gutter}>
-      <Box height={4} background="primary" width="100%" />
-    </Box>
+  const CustomDivider = useCallback(
+    () => (
+      <Box spacingBottom={gutter}>
+        <Box height={4} background="primary" width="100%" />
+      </Box>
+    ),
+    [],
   );
 
-  const customRenderItem = useCallback(({ item, Wrapper, isFirst, isLast }) => {
+  const renderItem = useCallback(({ item, Wrapper, isFirst, isLast }) => {
     return (
-      <Wrapper borderColor="lineHeavy" borderedTop={isFirst} borderedBottom={isLast}>
+      <Wrapper>
+        {isFirst && <Divider color="lineHeavy" />}
         {item}
+        {isLast && <Divider color="lineHeavy" />}
       </Wrapper>
     );
   }, []);
+
   return (
-    <Group gap={gutter} divider={CustomDivider} renderItem={customRenderItem}>
+    <Group gap={gutter} divider={CustomDivider} renderItem={renderItem}>
       <ExampleBox>Box 1</ExampleBox>
       <ExampleBox>Box 2</ExampleBox>
       <ExampleBox>Box 3</ExampleBox>
