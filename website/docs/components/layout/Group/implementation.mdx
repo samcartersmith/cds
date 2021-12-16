@@ -5,7 +5,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-web/layout/Group](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/layout/Group.tsx)
+> [@cbhq/cds-(web|mobile)/layout/Group](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/layout/Group.tsx)
 
 <ComponentDetails componentName="Group" templateName="intro" />
 
@@ -19,7 +19,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### accessibilityLabel <Badge variant="web" />
+### accessibilityLabel
 
 Accessibility label describing the group of items. Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
 
@@ -28,13 +28,13 @@ Accessibility label describing the group of items. Accessibility label describin
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-accessibilityLabel" />
 
-### accessibilityLabelledBy <Badge variant="web" />
+### accessibilityLabelledBy
 
 Accessibility prop that describes the component that labels it by its `id`
 
@@ -45,13 +45,13 @@ Accessibility prop that describes the component that labels it by its `id`
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-accessibilityLabelledBy" />
 
-### alignContent <Badge variant="web" />
+### alignContent
 
 Set the distribution of space between and around content items along the cross-axis.
 
@@ -60,13 +60,13 @@ Set the distribution of space between and around content items along the cross-a
   propertyName="alignContent"
   required={false}
   defaultValue="flex-start"
-  mobileOptions={[]}
+  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
   webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-alignContent" />
 
-### alignItems <Badge variant="web" />
+### alignItems
 
 Set the alignment of all direct children on the cross-axis.
 
@@ -75,13 +75,13 @@ Set the alignment of all direct children on the cross-axis.
   propertyName="alignItems"
   required={false}
   defaultValue="stretch"
-  mobileOptions={[]}
+  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
   webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-alignItems" />
 
-### alignSelf <Badge variant="web" />
+### alignSelf
 
 Override the parents defined item alignment for this element alone.
 
@@ -90,11 +90,26 @@ Override the parents defined item alignment for this element alone.
   propertyName="alignSelf"
   required={false}
   defaultValue="auto"
-  mobileOptions={[]}
+  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
   webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-alignSelf" />
+
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="Group"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Group" templateName="prop-animated" />
 
 ### as <Badge variant="web" />
 
@@ -111,7 +126,22 @@ The semantic element to render the box as. Is necessary for accessibility suppor
 
 <ComponentDetails componentName="Group" templateName="prop-as" />
 
-### background <Badge variant="web" />
+### aspectRatio <Badge variant="mobile" />
+
+Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS. On a node with a set width/height, aspect ratio controls the size of the unset dimension. On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset. On a node with a measure function, aspect ratio works as though the measure function measures the flex basis. On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset. Aspect ratio takes min/max dimensions into account.
+
+<ApiDetails
+  componentName="Group"
+  propertyName="aspectRatio"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Group" templateName="prop-aspectRatio" />
+
+### background
 
 Set the background color of the box. Passing `true` will enable the default background, otherwise a custom palette alias can be passed.
 
@@ -120,7 +150,17 @@ Set the background color of the box. Passing `true` will enable the default back
   propertyName="background"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+    'true',
+  ]}
   webOptions={[
     'background',
     'backgroundAlternate',
@@ -136,7 +176,7 @@ Set the background color of the box. Passing `true` will enable the default back
 
 <ComponentDetails componentName="Group" templateName="prop-background" />
 
-### borderColor <Badge variant="web" />
+### borderColor
 
 Adds a custom border color from the palette
 
@@ -145,13 +185,21 @@ Adds a custom border color from the palette
   propertyName="borderColor"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={[
+    'line',
+    'lineHeavy',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+  ]}
   webOptions={['line', 'lineHeavy', 'negative', 'positive', 'primary', 'primaryWash', 'secondary']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-borderColor" />
 
-### bordered <Badge variant="web" />
+### bordered
 
 Add a border around all sides of the box.
 
@@ -160,13 +208,13 @@ Add a border around all sides of the box.
   propertyName="bordered"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-bordered" />
 
-### borderedBottom <Badge variant="web" />
+### borderedBottom
 
 Add a border to the bottom side of the box.
 
@@ -175,13 +223,13 @@ Add a border to the bottom side of the box.
   propertyName="borderedBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-borderedBottom" />
 
-### borderedEnd <Badge variant="web" />
+### borderedEnd
 
 Add a border to the trailing side of the box.
 
@@ -190,13 +238,13 @@ Add a border to the trailing side of the box.
   propertyName="borderedEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-borderedEnd" />
 
-### borderedHorizontal <Badge variant="web" />
+### borderedHorizontal
 
 Add a border to the leading and trailing sides of the box.
 
@@ -205,13 +253,13 @@ Add a border to the leading and trailing sides of the box.
   propertyName="borderedHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-borderedHorizontal" />
 
-### borderedStart <Badge variant="web" />
+### borderedStart
 
 Add a border to the leading side of the box.
 
@@ -220,13 +268,13 @@ Add a border to the leading side of the box.
   propertyName="borderedStart"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-borderedStart" />
 
-### borderedTop <Badge variant="web" />
+### borderedTop
 
 Add a border to the top side of the box.
 
@@ -235,13 +283,13 @@ Add a border to the top side of the box.
   propertyName="borderedTop"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-borderedTop" />
 
-### borderedVertical <Badge variant="web" />
+### borderedVertical
 
 Add a border to the top and bottom sides of the box.
 
@@ -250,13 +298,13 @@ Add a border to the top and bottom sides of the box.
   propertyName="borderedVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-borderedVertical" />
 
-### borderRadius <Badge variant="web" />
+### borderRadius
 
 Leverage one of the borderRadius styles we offer to round the corners of the box.
 
@@ -265,7 +313,18 @@ Leverage one of the borderRadius styles we offer to round the corners of the box
   propertyName="borderRadius"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+  ]}
   webOptions={[
     'badge',
     'compact',
@@ -282,7 +341,7 @@ Leverage one of the borderRadius styles we offer to round the corners of the box
 
 <ComponentDetails componentName="Group" templateName="prop-borderRadius" />
 
-### bottom <Badge variant="web" />
+### bottom
 
 Position the box to the bottom edge.
 
@@ -291,13 +350,13 @@ Position the box to the bottom edge.
   propertyName="bottom"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-bottom" />
 
-### children <Badge variant="web" />
+### children
 
 Items to render in a group. Content to render within the box.
 
@@ -306,7 +365,17 @@ Items to render in a group. Content to render within the box.
   propertyName="children"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
   webOptions={[
     'ReactElement<any, string | JSXElementConstructor<any>>',
     'ReactNodeArray',
@@ -322,7 +391,7 @@ Items to render in a group. Content to render within the box.
 
 <ComponentDetails componentName="Group" templateName="prop-children" />
 
-### dangerouslySetBackground <Badge variant="web" /> <Badge variant="danger" order={2} />
+### dangerouslySetBackground <Badge variant="danger" order={1} />
 
 This is a migration escape hatch. It is not intended to be used normally.
 
@@ -331,7 +400,7 @@ This is a migration escape hatch. It is not intended to be used normally.
   propertyName="dangerouslySetBackground"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
@@ -352,7 +421,32 @@ This is a migration escape hatch. It is not intended to be used normally.
 
 <ComponentDetails componentName="Group" templateName="prop-dangerouslySetClassName" />
 
-### direction <Badge variant="web" />
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="Group"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'ViewStyle',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Group" templateName="prop-dangerouslySetStyle" />
+
+### direction
 
 Direction a group of components should flow.
 
@@ -361,7 +455,7 @@ Direction a group of components should flow.
   propertyName="direction"
   required={false}
   defaultValue="vertical"
-  mobileOptions={[]}
+  mobileOptions={['horizontal', 'vertical']}
   webOptions={['horizontal', 'vertical']}
 />
 
@@ -382,7 +476,7 @@ The display value to uss in CSS display attribute.
 
 <ComponentDetails componentName="Group" templateName="prop-display" />
 
-### divider <Badge variant="web" />
+### divider
 
 Divider Component to include between each item in a group.
 
@@ -391,13 +485,13 @@ Divider Component to include between each item in a group.
   propertyName="divider"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['ComponentClass<{}, any>', 'FunctionComponent<{}>', 'null']}
   webOptions={['ComponentClass<{}, any>', 'FunctionComponent<{}>', 'null']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-divider" />
 
-### elevation <Badge variant="web" />
+### elevation
 
 Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped.
 
@@ -406,13 +500,13 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '1', '2']}
   webOptions={['0', '1', '2']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-elevation" />
 
-### flexBasis <Badge variant="web" />
+### flexBasis
 
 Sets the initial main flex size.
 
@@ -421,13 +515,13 @@ Sets the initial main flex size.
   propertyName="flexBasis"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-flexBasis" />
 
-### flexDirection <Badge variant="web" />
+### flexDirection
 
 Order children on the main-axis in this direction.
 
@@ -436,13 +530,13 @@ Order children on the main-axis in this direction.
   propertyName="flexDirection"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
   webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-flexDirection" />
 
-### flexGrow <Badge variant="web" />
+### flexGrow
 
 Set the grow factor of this flex item.
 
@@ -451,13 +545,13 @@ Set the grow factor of this flex item.
   propertyName="flexGrow"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number']}
   webOptions={['number']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-flexGrow" />
 
-### flexShrink <Badge variant="web" />
+### flexShrink
 
 Set the shrink factor of this flex item.
 
@@ -466,13 +560,13 @@ Set the shrink factor of this flex item.
   propertyName="flexShrink"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number']}
   webOptions={['number']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-flexShrink" />
 
-### flexWrap <Badge variant="web" />
+### flexWrap
 
 How should children wrap when overflowing.
 
@@ -481,13 +575,13 @@ How should children wrap when overflowing.
   propertyName="flexWrap"
   required={false}
   defaultValue="nowrap"
-  mobileOptions={[]}
+  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
   webOptions={['nowrap', 'wrap', 'wrap-reverse']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-flexWrap" />
 
-### gap <Badge variant="web" />
+### gap
 
 Gap to insert between siblings.
 
@@ -496,13 +590,13 @@ Gap to insert between siblings.
   propertyName="gap"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-gap" />
 
-### height <Badge variant="web" />
+### height
 
 Set a fixed height.
 
@@ -511,13 +605,13 @@ Set a fixed height.
   propertyName="height"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-height" />
 
-### horizontal <Badge variant="web" /> <Badge variant="deprecated" order={2} />
+### horizontal <Badge variant="deprecated" order={1} />
 
 Stack items horizontally instead of vertically.
 
@@ -526,13 +620,13 @@ Stack items horizontally instead of vertically.
   propertyName="horizontal"
   required={false}
   defaultValue="false"
-  mobileOptions={[]}
+  mobileOptions={['false', 'true']}
   webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-horizontal" />
 
-### id <Badge variant="web" /> <Badge variant="danger" order={2} />
+### id <Badge variant="danger" order={1} />
 
 This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls
 
@@ -541,13 +635,13 @@ This should only be used for accessibility purposes, eg: aria-controls https://a
   propertyName="id"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-id" />
 
-### justifyContent <Badge variant="web" />
+### justifyContent
 
 Set the distribution of space between and around content items along the main-axis.
 
@@ -556,13 +650,20 @@ Set the distribution of space between and around content items along the main-ax
   propertyName="justifyContent"
   required={false}
   defaultValue="flex-start"
-  mobileOptions={[]}
+  mobileOptions={[
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly',
+  ]}
   webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-justifyContent" />
 
-### left <Badge variant="web" />
+### left
 
 Position the box to the left edge.
 
@@ -571,13 +672,13 @@ Position the box to the left edge.
   propertyName="left"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-left" />
 
-### maxHeight <Badge variant="web" />
+### maxHeight
 
 Set a maximum height.
 
@@ -586,13 +687,13 @@ Set a maximum height.
   propertyName="maxHeight"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-maxHeight" />
 
-### maxWidth <Badge variant="web" />
+### maxWidth
 
 Set a maximum width.
 
@@ -601,13 +702,13 @@ Set a maximum width.
   propertyName="maxWidth"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-maxWidth" />
 
-### minHeight <Badge variant="web" />
+### minHeight
 
 Set a minimum height.
 
@@ -616,13 +717,13 @@ Set a minimum height.
   propertyName="minHeight"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-minHeight" />
 
-### minWidth <Badge variant="web" />
+### minWidth
 
 Set a minimum width.
 
@@ -631,13 +732,13 @@ Set a minimum width.
   propertyName="minWidth"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-minWidth" />
 
-### offset <Badge variant="web" />
+### offset
 
 Apply negative outer spacing on all sides.
 
@@ -646,13 +747,13 @@ Apply negative outer spacing on all sides.
   propertyName="offset"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-offset" />
 
-### offsetBottom <Badge variant="web" />
+### offsetBottom
 
 Apply negative outer spacing on the bottom side.
 
@@ -661,13 +762,13 @@ Apply negative outer spacing on the bottom side.
   propertyName="offsetBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-offsetBottom" />
 
-### offsetEnd <Badge variant="web" />
+### offsetEnd
 
 Apply negative outer spacing on the trailing side.
 
@@ -676,13 +777,13 @@ Apply negative outer spacing on the trailing side.
   propertyName="offsetEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-offsetEnd" />
 
-### offsetHorizontal <Badge variant="web" />
+### offsetHorizontal
 
 Apply negative outer spacing on the leading and trailing sides.
 
@@ -691,13 +792,13 @@ Apply negative outer spacing on the leading and trailing sides.
   propertyName="offsetHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-offsetHorizontal" />
 
-### offsetStart <Badge variant="web" />
+### offsetStart
 
 Apply negative outer spacing on the leading side.
 
@@ -706,13 +807,13 @@ Apply negative outer spacing on the leading side.
   propertyName="offsetStart"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-offsetStart" />
 
-### offsetTop <Badge variant="web" />
+### offsetTop
 
 Apply negative outer spacing on the top side.
 
@@ -721,13 +822,13 @@ Apply negative outer spacing on the top side.
   propertyName="offsetTop"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-offsetTop" />
 
-### offsetVertical <Badge variant="web" />
+### offsetVertical
 
 Apply negative outer spacing on the top and bottom sides.
 
@@ -736,13 +837,13 @@ Apply negative outer spacing on the top and bottom sides.
   propertyName="offsetVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-offsetVertical" />
 
-### opacity <Badge variant="web" />
+### opacity
 
 Sets the opacity of the box
 
@@ -751,13 +852,22 @@ Sets the opacity of the box
   propertyName="opacity"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={[
+    'AnimatedInterpolation',
+    'RegisteredStyle<ViewStyle>',
+    'Value',
+    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<ViewStyle>',
+    'false',
+    'null',
+    'number',
+  ]}
   webOptions={['number']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-opacity" />
 
-### overflow <Badge variant="web" />
+### overflow
 
 Control how the content should overflow.
 
@@ -766,13 +876,13 @@ Control how the content should overflow.
   propertyName="overflow"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['gradient', 'hidden', 'visible']}
   webOptions={['auto', 'hidden', 'scroll', 'visible']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-overflow" />
 
-### pin <Badge variant="web" />
+### pin
 
 Direction in which to absolutely pin the box.
 
@@ -781,13 +891,13 @@ Direction in which to absolutely pin the box.
   propertyName="pin"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
   webOptions={['all', 'bottom', 'left', 'right', 'top']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-pin" />
 
-### position <Badge variant="web" />
+### position
 
 How to position the box within its parent.
 
@@ -796,13 +906,13 @@ How to position the box within its parent.
   propertyName="position"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['absolute', 'relative']}
   webOptions={['absolute', 'fixed', 'relative', 'static', 'sticky']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-position" />
 
-### renderItem <Badge variant="web" />
+### renderItem
 
 Control the layout of each item in a group. @example `renderItem={({item, Wrapper, index}) => { return <Wrapper borderedTop={index === 0}>{item}</Wrapper> }}`
 
@@ -811,15 +921,17 @@ Control the layout of each item in a group. @example `renderItem={({item, Wrappe
   propertyName="renderItem"
   required={false}
   defaultValue="Box component for given platform"
-  mobileOptions={[]}
+  mobileOptions={[
+    '(info: { Wrapper: ComponentType<BoxProps>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild',
+  ]}
   webOptions={[
-    '(info: { Wrapper: ComponentType<BoxProps<div>>; item: ReactChild; index: number; }) => ReactChild',
+    '(info: { Wrapper: ComponentType<BoxProps<div>>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild',
   ]}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-renderItem" />
 
-### right <Badge variant="web" />
+### right
 
 Position the box to the right edge.
 
@@ -828,7 +940,7 @@ Position the box to the right edge.
   propertyName="right"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
@@ -849,7 +961,7 @@ Semantic role whole using a non-semantic element.
 
 <ComponentDetails componentName="Group" templateName="prop-role" />
 
-### spacing <Badge variant="web" />
+### spacing
 
 Apply inner spacing on all sides.
 
@@ -858,13 +970,13 @@ Apply inner spacing on all sides.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-spacing" />
 
-### spacingBottom <Badge variant="web" />
+### spacingBottom
 
 Apply inner spacing on the bottom side.
 
@@ -873,13 +985,13 @@ Apply inner spacing on the bottom side.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-spacingBottom" />
 
-### spacingEnd <Badge variant="web" />
+### spacingEnd
 
 Apply inner spacing on the trailing side.
 
@@ -888,13 +1000,13 @@ Apply inner spacing on the trailing side.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-spacingEnd" />
 
-### spacingHorizontal <Badge variant="web" />
+### spacingHorizontal
 
 Apply inner spacing on the leading and trailing sides.
 
@@ -903,13 +1015,13 @@ Apply inner spacing on the leading and trailing sides.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-spacingHorizontal" />
 
-### spacingStart <Badge variant="web" />
+### spacingStart
 
 Apply inner spacing on the leading side.
 
@@ -918,13 +1030,13 @@ Apply inner spacing on the leading side.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-spacingStart" />
 
-### spacingTop <Badge variant="web" />
+### spacingTop
 
 Apply inner spacing on the top side.
 
@@ -933,13 +1045,13 @@ Apply inner spacing on the top side.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-spacingTop" />
 
-### spacingVertical <Badge variant="web" />
+### spacingVertical
 
 Apply inner spacing on the top and bottom sides.
 
@@ -948,13 +1060,13 @@ Apply inner spacing on the top and bottom sides.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
   webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-spacingVertical" />
 
-### testID <Badge variant="web" />
+### testID
 
 Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
 
@@ -963,13 +1075,13 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['string']}
   webOptions={['string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-testID" />
 
-### top <Badge variant="web" />
+### top
 
 Position the box to the top edge.
 
@@ -978,13 +1090,13 @@ Position the box to the top edge.
   propertyName="top"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-top" />
 
-### width <Badge variant="web" />
+### width
 
 Set a fixed width.
 
@@ -993,13 +1105,13 @@ Set a fixed width.
   propertyName="width"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number', 'string']}
   webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="Group" templateName="prop-width" />
 
-### zIndex <Badge variant="web" />
+### zIndex
 
 Adjust the z-index positioning layer.
 
@@ -1008,7 +1120,7 @@ Adjust the z-index positioning layer.
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
+  mobileOptions={['number']}
   webOptions={['number']}
 />
 

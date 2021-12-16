@@ -8,6 +8,43 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.4 (12/15/2021, 02:10 PM PST)
+
+#### 🚀 Updates
+
+- Add SparklineArea to web. [#46261](https://github.cbhq.net/mono/repo/pull/46261)
+- PopoverMenu cleanup work. [#46099](https://github.cbhq.net/mono/repo/pull/46099)
+- **[Search]** Create Search for Web and Mobile. [#41009](https://github.cbhq.net/mono/repo/pull/41009), [CDS-1546](https://jira.coinbase-corp.com/browse/CDS-1546)
+- Moved MenuItem inside of SelectOption. [#46136](https://github.cbhq.net/mono/repo/pull/46136)
+- Added focus styles to select. [#46164](https://github.cbhq.net/mono/repo/pull/46164)
+- Made all z-indexes use tokens. [#46117](https://github.cbhq.net/mono/repo/pull/46117)
+- Ensure keys for Group component & add Frontier card docs. [#46094](https://github.cbhq.net/mono/repo/pull/46094)
+- **[Text]** Support prop overrides in createText hoc fn. [#46023](https://github.cbhq.net/mono/repo/pull/46023)
+- **[Input]** Optional label & height prop and add forwardRef. [#45971](https://github.cbhq.net/mono/repo/pull/45971)
+- **[Cards]** Add FeatureEntryCard and AnnouncementCard. [#45978](https://github.cbhq.net/mono/repo/pull/45978)
+- **[CardGroup]** To leverage the new Group component on web. [#45942](https://github.cbhq.net/mono/repo/pull/45942)
+- **[Group]** Add new Group component for web. [#45921](https://github.cbhq.net/mono/repo/pull/45921)
+- **[Box]** Add support for display prop on web. [#45784](https://github.cbhq.net/mono/repo/pull/45784), [CDS-1684](https://jira.coinbase-corp.com/browse/CDS-1684)
+
+#### 🐞 Fixes
+
+- **[SearchInput]** Spacing, onClear and focus refinements. [#46361](https://github.cbhq.net/mono/repo/pull/46361)
+- Refactored Code based on Feedback. [#46269](https://github.cbhq.net/mono/repo/pull/46269)
+- Create stories for SelectOptions and add custom heights. [#45976](https://github.cbhq.net/mono/repo/pull/45976)
+- Figured out truncation for select input trigger. [#45841](https://github.cbhq.net/mono/repo/pull/45841)
+- Toast web a11y. [#45927](https://github.cbhq.net/mono/repo/pull/45927)
+- Changed select option cell to select option. [#45918](https://github.cbhq.net/mono/repo/pull/45918)
+- Rename CDS SelectInput to Select. [#45863](https://github.cbhq.net/mono/repo/pull/45863)
+- CDS PopoverMenu + MenuItem. [#43669](https://github.cbhq.net/mono/repo/pull/43669)
+- Spacing of 0 should set padding of 0. [#45708](https://github.cbhq.net/mono/repo/pull/45708)
+
+#### 📘 Misc
+
+- Mobile docs for Tray & Drawer, prototypes for Select and Tray. [#46297](https://github.cbhq.net/mono/repo/pull/46297)
+- PopoverMenu, MenuItem, Select, SelectOption, MenuSectionLabel docs. [#46026](https://github.cbhq.net/mono/repo/pull/46026)
+- Dot Changes according to Design changes and Bug Bash feedback. [#44959](https://github.cbhq.net/mono/repo/pull/44959)
+- Cds toast fixes. [#45350](https://github.cbhq.net/mono/repo/pull/45350), [CDS-1211](https://jira.coinbase-corp.com/browse/CDS-1211)
+
 ## 0.32.3 (12/9/2021, 09:13 AM PST)
 
 #### 🐞 Fixes

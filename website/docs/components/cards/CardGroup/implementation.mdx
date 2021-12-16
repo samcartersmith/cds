@@ -922,10 +922,10 @@ Control the layout of each item in a group. @example `renderItem={({item, Wrappe
   required={false}
   defaultValue="Box component for given platform"
   mobileOptions={[
-    '(info: { Wrapper: ComponentType<BoxProps>; item: ReactChild; index: number; }) => ReactChild',
+    '(info: { Wrapper: ComponentType<BoxProps>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild',
   ]}
   webOptions={[
-    '(info: { Wrapper: ComponentType<BoxProps<div>>; item: ReactChild; index: number; }) => ReactChild',
+    '(info: { Wrapper: ComponentType<BoxProps<div>>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild',
   ]}
 />
 
