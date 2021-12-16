@@ -1202,13 +1202,13 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-mobile/icons/Icon",
-      "totalInstances": 18,
+      "totalInstances": 20,
       "totalCallSites": 13,
       "cds": "@cbhq/cds-mobile/icons/Icon",
       "callSites": {
         "@onboarding/components/Form/PromoCodeInput.tsx": 1,
         "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1,
-        "@onboarding/components/UI/NavBar.tsx": 2,
+        "@onboarding/components/UI/NavBar.tsx": 4,
         "@onboarding/screens/idvMarqeta/SelectIdTypeScreenMarqeta.tsx": 4,
         "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
         "@onboarding/screens/kycNonUs/BirthPlaceScreen.tsx": 1,
@@ -1224,7 +1224,7 @@
         "color": {
           "@onboarding/components/Form/PromoCodeInput.tsx": 1,
           "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1,
-          "@onboarding/components/UI/NavBar.tsx": 2,
+          "@onboarding/components/UI/NavBar.tsx": 4,
           "@onboarding/screens/idvMarqeta/SelectIdTypeScreenMarqeta.tsx": 2,
           "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
           "@onboarding/screens/kycNonUs/BirthPlaceScreen.tsx": 1,
@@ -1238,7 +1238,7 @@
         "name": {
           "@onboarding/components/Form/PromoCodeInput.tsx": 1,
           "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1,
-          "@onboarding/components/UI/NavBar.tsx": 2,
+          "@onboarding/components/UI/NavBar.tsx": 4,
           "@onboarding/screens/idvMarqeta/SelectIdTypeScreenMarqeta.tsx": 4,
           "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
           "@onboarding/screens/kycNonUs/BirthPlaceScreen.tsx": 1,
@@ -1253,7 +1253,7 @@
         "size": {
           "@onboarding/components/Form/PromoCodeInput.tsx": 1,
           "@onboarding/components/Form/QuestionAnswerInputSelector.tsx": 1,
-          "@onboarding/components/UI/NavBar.tsx": 2,
+          "@onboarding/components/UI/NavBar.tsx": 4,
           "@onboarding/screens/idvMarqeta/SelectIdTypeScreenMarqeta.tsx": 4,
           "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 2,
           "@onboarding/screens/kycNonUs/BirthPlaceScreen.tsx": 1,
@@ -1269,6 +1269,7 @@
           "@onboarding/components/Form/PromoCodeInput.tsx": 1,
           "@onboarding/screens/kyc/KYCRefreshScreen/KycRefreshStatusMessage.tsx": 1
         },
+        "testID": { "@onboarding/components/UI/NavBar.tsx": 2 },
         "spacingEnd": {
           "@onboarding/screens/kycNonUs/BirthPlaceScreen.tsx": 1,
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
@@ -1665,13 +1666,15 @@
     {
       "name": "View",
       "sourceFile": "react-native/View",
-      "totalInstances": 10,
+      "totalInstances": 12,
       "totalCallSites": 7,
       "presentationalProps": [
         { "prop": "style", "callSite": "@onboarding/components/Layout/BulletItem.tsx" },
         { "prop": "style", "callSite": "@onboarding/components/Layout/ImageView.tsx" },
         { "prop": "style", "callSite": "@onboarding/components/UI/CaptureButton.tsx" },
         { "prop": "style", "callSite": "@onboarding/components/UI/CaptureButton.tsx" },
+        { "prop": "style", "callSite": "@onboarding/components/UI/NavBar.tsx" },
+        { "prop": "style", "callSite": "@onboarding/components/UI/NavBar.tsx" },
         { "prop": "style", "callSite": "@onboarding/components/UI/NavBar.tsx" },
         { "prop": "style", "callSite": "@onboarding/components/UI/NavBar.tsx" }
       ],
@@ -1680,7 +1683,7 @@
         "@onboarding/components/Layout/BulletItem.tsx": 1,
         "@onboarding/components/Layout/ImageView.tsx": 1,
         "@onboarding/components/UI/CaptureButton.tsx": 2,
-        "@onboarding/components/UI/NavBar.tsx": 3,
+        "@onboarding/components/UI/NavBar.tsx": 5,
         "@onboarding/components/UI/SkipButton.tsx": 1,
         "@onboarding/utils/ScreenUtils/createScreen.tsx": 1
       },
@@ -1689,11 +1692,11 @@
           "@onboarding/components/Layout/BulletItem.tsx": 1,
           "@onboarding/components/Layout/ImageView.tsx": 1,
           "@onboarding/components/UI/CaptureButton.tsx": 2,
-          "@onboarding/components/UI/NavBar.tsx": 2
+          "@onboarding/components/UI/NavBar.tsx": 4
         },
         "onTouchStart": { "@onboarding/components/UI/NavBar.tsx": 1 },
         "testID": {
-          "@onboarding/components/UI/NavBar.tsx": 1,
+          "@onboarding/components/UI/NavBar.tsx": 2,
           "@onboarding/utils/ScreenUtils/createScreen.tsx": 1
         }
       }
@@ -2889,15 +2892,15 @@
     {
       "name": "TouchableWithoutFeedback",
       "sourceFile": "react-native/TouchableWithoutFeedback",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 2,
       "callSites": {
-        "@onboarding/components/UI/NavBar.tsx": 2,
+        "@onboarding/components/UI/NavBar.tsx": 3,
         "@onboarding/components/UI/SkipButton.tsx": 1
       },
       "propsWithCallSites": {
         "onPress": {
-          "@onboarding/components/UI/NavBar.tsx": 1,
+          "@onboarding/components/UI/NavBar.tsx": 2,
           "@onboarding/components/UI/SkipButton.tsx": 1
         },
         "testID": { "@onboarding/components/UI/SkipButton.tsx": 1 }
