@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.5 (1/4/2022, 09:25 AM PST)
+
+#### 🐞 Fixes
+
+- FeatureFlagProvider causing unnecessary re-renders. [#47242](https://github.cbhq.net/mono/repo/pull/47242), [CDS-1820](https://jira.coinbase-corp.com/browse/CDS-1820)
+- Update SparklineGradient fill. [#46727](https://github.cbhq.net/mono/repo/pull/46727)
+
 ## 0.35.4 (12/15/2021, 02:10 PM PST)
 
 #### 🚀 Updates

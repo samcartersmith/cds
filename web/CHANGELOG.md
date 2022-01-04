@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.5 (1/4/2022, 09:25 AM PST)
+
+#### 🐞 Fixes
+
+- Update SparklineGradient fill. [#46727](https://github.cbhq.net/mono/repo/pull/46727)
+
 ## 0.32.4 (12/15/2021, 02:10 PM PST)
 
 #### 🚀 Updates
