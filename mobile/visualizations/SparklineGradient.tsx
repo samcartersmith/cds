@@ -10,6 +10,7 @@ import { generateRandomId } from '@cbhq/cds-utils';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
 import { SparklineAreaPattern } from './SparklineAreaPattern';
+import { useAccessibleForeground } from '../color/useAccessibleForeground';
 
 export const SparklineGradient = memo(
   forwardRef<TextInput | null, SparklineBaseProps>(
@@ -17,6 +18,7 @@ export const SparklineGradient = memo(
       const patternId = useRef<string>(generateRandomId());
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
+      const areaColor = useAccessibleForeground({ background, color, usage: 'graphic' });
       const linearGradient = useMemo(() => {
         return (
           <Defs>
@@ -26,10 +28,10 @@ export const SparklineGradient = memo(
                 <Stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </LinearGradient>
-            {!!children && <SparklineAreaPattern id={patternId.current} color={color} />}
+            {!!children && <SparklineAreaPattern id={patternId.current} color={areaColor} />}
           </Defs>
         );
-      }, [children, color, gradient]);
+      }, [areaColor, children, gradient]);
 
       return (
         <Svg width={width} height={height}>

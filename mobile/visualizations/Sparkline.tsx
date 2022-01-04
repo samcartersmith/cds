@@ -26,7 +26,7 @@ export const Sparkline = memo(
 
     const defs = children ? (
       <Defs>
-        <SparklineAreaPattern id={patternId.current} color={color} />
+        <SparklineAreaPattern id={patternId.current} color={stroke} />
       </Defs>
     ) : null;
 

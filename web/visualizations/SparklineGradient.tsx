@@ -5,6 +5,7 @@ import { SparklineBaseProps } from '@cbhq/cds-common/types';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { generateRandomId } from '@cbhq/cds-utils';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
+import { useAccessibleForeground } from '../color/useAccessibleForeground';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
 import { SparklinePath, SparklinePathRef } from './SparklinePath';
 import { SparklineAreaPattern } from './SparklineAreaPattern';
@@ -14,6 +15,7 @@ export const SparklineGradient = memo(
     ({ background, color, path, height, width, yAxisScalingFactor, children }, forwardedRef) => {
       const patternId = useRef<string>(generateRandomId());
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
+      const areaColor = useAccessibleForeground({ background, color, usage: 'graphic' });
       const gradientId = background
         ? `sparkline-gradient-${background}-${color}`
         : `sparkline-gradient-${color}`;
@@ -28,10 +30,10 @@ export const SparklineGradient = memo(
                 <stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </linearGradient>
-            {!!children && <SparklineAreaPattern id={patternId.current} color={color} />}
+            {!!children && <SparklineAreaPattern id={patternId.current} color={areaColor} />}
           </defs>
         );
-      }, [cleanId, gradient, children, color]);
+      }, [cleanId, gradient, children, areaColor]);
 
       return (
         <svg width={width} height={height}>
