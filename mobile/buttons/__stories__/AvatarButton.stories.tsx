@@ -7,7 +7,8 @@ import { AvatarButton } from '../AvatarButton';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
-const avatarImageUrl = 'https://uifaces.co/our-content/donated/fyXUlj0e.jpg';
+const avatarImageUrl =
+  'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
 
 const AvatarButtonScreen = () => {
   const [numPresses, setNumPresses] = useState(0);

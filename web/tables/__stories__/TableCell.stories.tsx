@@ -31,7 +31,7 @@ export const SampleCells: Story = () => {
               start={
                 <Avatar
                   alt="test-avatar"
-                  src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg"
+                  src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
                   size="l"
                 />
               }
@@ -83,7 +83,7 @@ export const SampleFixedLayout: Story = () => {
               start={
                 <Avatar
                   alt="test-avatar"
-                  src="https://uifaces.co/our-content/donated/fyXUlj0e.jpg"
+                  src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
                   size="l"
                 />
               }
