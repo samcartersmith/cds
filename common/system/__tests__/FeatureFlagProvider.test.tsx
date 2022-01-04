@@ -1,7 +1,7 @@
 import { emptyObject } from '@cbhq/cds-utils';
 import { renderHook, act } from '@testing-library/react-hooks';
+import { defaultFeatureFlags } from '../FeatureFlagContext';
 
-import { frontierFeaturesOn, defaultFeatureFlags } from '../FeatureFlagContext';
 import { FeatureFlagProvider, getFrontierFlags } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
@@ -22,7 +22,11 @@ describe('FeatureFlagProvider', () => {
     expect(result.current).toEqual({
       fontMigration: false,
       frontier: true,
-      ...frontierFeaturesOn,
+      frontierButton: true,
+      frontierCard: true,
+      frontierColor: true,
+      frontierSparkline: true,
+      frontierTypography: true,
     });
   });
 
@@ -34,7 +38,10 @@ describe('FeatureFlagProvider', () => {
     expect(result.current).toEqual({
       fontMigration: false,
       frontier: true,
-      ...frontierFeaturesOn,
+      frontierCard: true,
+      frontierColor: true,
+      frontierSparkline: true,
+      frontierTypography: true,
       frontierButton: false,
     });
   });
@@ -112,7 +119,14 @@ describe('FeatureFlagProvider', () => {
 
   it('getFrontierFlags works correctly for true', () => {
     const result = getFrontierFlags(true);
-    expect(result).toEqual(frontierFeaturesOn);
+    expect(result).toEqual({
+      frontier: true,
+      frontierButton: true,
+      frontierCard: true,
+      frontierColor: true,
+      frontierSparkline: true,
+      frontierTypography: true,
+    });
   });
 
   it('getFrontierFlags works correctly for false', () => {

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { frontierFeaturesOn, DEFAULT_BETA_CONTEXT } from '../BetaContext';
+import { DEFAULT_BETA_CONTEXT } from '../BetaContext';
 import { BetaProvider } from '../BetaProvider';
 import { useBeta } from '../useBeta';
 
@@ -20,7 +20,11 @@ describe('BetaProvider', () => {
     expect(result.current).toEqual({
       fontMigration: false,
       frontier: true,
-      ...frontierFeaturesOn,
+      frontierButton: true,
+      frontierCard: true,
+      frontierColor: true,
+      frontierSparkline: true,
+      frontierTypography: true,
     });
   });
 
@@ -32,7 +36,10 @@ describe('BetaProvider', () => {
     expect(result.current).toEqual({
       fontMigration: false,
       frontier: true,
-      ...frontierFeaturesOn,
+      frontierCard: true,
+      frontierColor: true,
+      frontierSparkline: true,
+      frontierTypography: true,
       frontierButton: false,
     });
   });

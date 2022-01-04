@@ -1,8 +1,18 @@
-import { mapValues, noop, entries } from '@cbhq/cds-utils';
+import { noop } from '@cbhq/cds-utils';
 import { createContext } from 'react';
 
 // Feature Flag tokens
-export const frontierFeaturesOff = {
+export const defaultFeatureFlags = {
+  /**
+   * Replace Graphik & Inter with Coinbase Sans and Coinbase Display fonts.
+   * @default false
+   */
+  fontMigration: false,
+  /**
+   * Conventiently toggle all the Frontier flags at once.
+   * @default false
+   */
+  frontier: false,
   /**
    * Reduce Display2 fontSize/lineHeight. Add Display3 and Title4 components.
    * @default false
@@ -30,23 +40,14 @@ export const frontierFeaturesOff = {
   frontierSparkline: false,
 };
 
-export const frontierFeaturesOn = mapValues(frontierFeaturesOff, () => true);
-
-export const defaultFeatureFlags = {
-  /**
-   * Replace Graphik & Inter with Coinbase Sans and Coinbase Display fonts.
-   * @default false
-   */
-  fontMigration: false,
-  /**
-   * Conventiently toggle all the Frontier flags at once.
-   * @default false
-   */
-  frontier: false,
-  ...frontierFeaturesOff,
+export const frontierFeaturesOn = {
+  frontier: true,
+  frontierTypography: true,
+  frontierButton: true,
+  frontierColor: true,
+  frontierCard: true,
+  frontierSparkline: true,
 };
-
-export const frontierFeatures = entries(frontierFeaturesOn).map(([key]) => key);
 
 // Feature Flag types
 export type FeatureFlags = typeof defaultFeatureFlags;

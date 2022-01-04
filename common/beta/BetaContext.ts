@@ -4,8 +4,6 @@ import {
   FeatureFlags,
 } from '../system/FeatureFlagContext';
 
-export { frontierFeatures, frontierFeaturesOn } from '../system/FeatureFlagContext';
-
 /** @deprecated DEFAULT_BETA_CONTEXT has been renamed to defaultFeatureFlags and moved to common/system/FeatureFlagContext. */
 export const DEFAULT_BETA_CONTEXT = defaultFeatureFlags;
 

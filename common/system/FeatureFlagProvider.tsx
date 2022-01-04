@@ -1,9 +1,10 @@
-import { emptyObject } from '@cbhq/cds-utils';
+import { emptyObject, entries } from '@cbhq/cds-utils';
 import React, { useReducer, memo, useMemo } from 'react';
 import {
   FeatureFlagContext,
   FeatureFlagDispatcherContext,
   FeatureFlagDispatcherAction,
+  FeatureFlag,
   FeatureFlagsPartial,
   frontierFeaturesOn,
 } from './FeatureFlagContext';
@@ -38,23 +39,53 @@ function featureFlagReducer(state: FeatureFlagsPartial, action: FeatureFlagDispa
 }
 
 export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
-  ({ children, ...featureFlagProps }) => {
+  ({
+    children,
+    frontierTypography,
+    frontierButton,
+    frontierColor,
+    frontierCard,
+    frontierSparkline,
+    fontMigration,
+    frontier,
+  }) => {
     const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
     // Deep merge if nesting FeatureFlagProviders
     const defaultFeatureFlags = useFeatureFlags();
-    const value = useMemo(
-      () => ({
-        // Fallbacks
-        ...defaultFeatureFlags,
-        // Shorthand to update all frontier flags to on/off if `frontier` is present in props or state
-        ...getFrontierFlags(featureFlagProps?.frontier ?? featureFlagsState?.frontier),
-        // Passed in via props
-        ...featureFlagProps,
-        // Updated imperatively
-        ...featureFlagsState,
-      }),
-      [defaultFeatureFlags, featureFlagProps, featureFlagsState],
-    );
+    const value = useMemo(() => {
+      let featureFlags = defaultFeatureFlags;
+      const props: { [key in FeatureFlag]: boolean | undefined } = {
+        fontMigration,
+        frontier,
+        frontierButton,
+        frontierCard,
+        frontierColor,
+        frontierSparkline,
+        frontierTypography,
+      };
+      // Shorthand to update all frontier flags to on/off if `frontier` is present in props or state
+      if (frontier ?? featureFlagsState?.frontier) {
+        featureFlags = { ...featureFlags, ...frontierFeaturesOn };
+      }
+      // Apply prop values
+      for (const [prop, propValue] of entries(props)) {
+        if (propValue !== undefined) {
+          featureFlags[prop] = propValue;
+        }
+      }
+      // Apply values which were updated imperatively
+      return { ...featureFlags, ...featureFlagsState };
+    }, [
+      defaultFeatureFlags,
+      featureFlagsState,
+      fontMigration,
+      frontier,
+      frontierButton,
+      frontierCard,
+      frontierColor,
+      frontierSparkline,
+      frontierTypography,
+    ]);
 
     return (
       <FeatureFlagDispatcherContext.Provider value={dispatch}>

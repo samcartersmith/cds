@@ -1,15 +1,17 @@
 import React, { memo, useMemo } from 'react';
 import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
+import { FeatureFlag } from '@cbhq/cds-common/system/FeatureFlagContext';
+import { entries } from '@cbhq/cds-utils';
 
 import { ListCell } from '../../cells/ListCell';
 import { Switch } from '../../controls/Switch';
 
-import { frontierFeatures, FeatureFlagLocalStorageCallback } from '../FeatureFlagContext';
+import { FeatureFlagLocalStorageCallback, frontierFeaturesOn } from '../FeatureFlagContext';
 import { useFeatureFlags } from '../useFeatureFlags';
 
 import { ExampleScreen } from '../../examples/ExampleScreen';
 
-const descriptions = {
+const descriptions: { [key in FeatureFlag]?: string } = {
   frontierTypography: 'Adjusts size of Display 2',
   frontierButton: 'Updated border radius',
   frontierColor: 'Updated secondary palette, yellow & torquise hue',
@@ -34,7 +36,7 @@ const DebugFrontier = memo(({ updateLocalStorage }: DebugFrontierProps) => {
 
   const featureFlags = useFeatureFlags();
   const listCells = useMemo(() => {
-    return frontierFeatures.map((item) => {
+    return entries(frontierFeaturesOn).map(([item]) => {
       // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const toggle = () => {
         toggleFeatureFlag(item, updateLocalStorage);

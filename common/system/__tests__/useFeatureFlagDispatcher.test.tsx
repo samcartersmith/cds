@@ -3,7 +3,6 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
 import { useFeatureFlagDispatcher } from '../useFeatureFlagDispatcher';
 import { useFeatureFlags } from '../useFeatureFlags';
-import { frontierFeaturesOn, frontierFeaturesOff } from '../FeatureFlagContext';
 
 describe('useFeatureFlagDispatcher', () => {
   it('updates features flags when called', () => {
@@ -70,10 +69,24 @@ describe('useFeatureFlagDispatcher', () => {
     void act(() => {
       result.current.dispatch({ type: 'toggle', name: 'frontier' });
     });
-    expect(result.current.featureFlags).toMatchObject(frontierFeaturesOn);
+    expect(result.current.featureFlags).toMatchObject({
+      frontier: true,
+      frontierButton: true,
+      frontierCard: true,
+      frontierColor: true,
+      frontierSparkline: true,
+      frontierTypography: true,
+    });
     void act(() => {
       result.current.dispatch({ type: 'toggle', name: 'frontier' });
     });
-    expect(result.current.featureFlags).toMatchObject(frontierFeaturesOff);
+    expect(result.current.featureFlags).toMatchObject({
+      frontier: false,
+      frontierButton: false,
+      frontierCard: false,
+      frontierColor: false,
+      frontierSparkline: false,
+      frontierTypography: false,
+    });
   });
 });
