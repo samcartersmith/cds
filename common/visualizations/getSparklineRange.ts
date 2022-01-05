@@ -11,8 +11,8 @@ export const getSparklineRange = ({
 }) => {
   const xRange = [borderWidth.sparkline, width - borderWidth.sparkline];
   const yRange = [
-    (height - borderWidth.sparkline) * yAxisScalingFactor,
-    borderWidth.sparkline / yAxisScalingFactor,
+    Math.max(borderWidth.sparkline + 1, (height - borderWidth.sparkline) * yAxisScalingFactor),
+    borderWidth.sparkline,
   ];
   return { xRange, yRange };
 };
