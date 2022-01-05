@@ -74,6 +74,14 @@ const InteractiveSparklineScreen = () => {
           <PriceChart data={interactiveSparklineData} strokeColor={palette.positive} fill />
         </Box>
       </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            Y axis scaling
+          </TextTitle3>
+          <PriceChart data={interactiveSparklineData} yAxisScalingFactor={0.1} />
+        </Box>
+      </Example>
     </ExampleScreen>
   );
 };

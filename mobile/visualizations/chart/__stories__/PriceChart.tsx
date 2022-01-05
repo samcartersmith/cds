@@ -1,17 +1,18 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { chartFallbackPositive } from '@cbhq/cds-lottie-files/chartFallbackPositive';
+import { InteractiveSparklineBaseProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
 import { Lottie } from '../../../animation';
 import { ThemeProvider } from '../../../system/ThemeProvider';
 
-import { InteractiveSparkline, InteractiveSparklineProps } from '../InteractiveSparkline';
+import { InteractiveSparkline } from '../InteractiveSparkline';
 
 type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
 type PriceChartProps = Omit<
-  InteractiveSparklineProps<ChartPeriod>,
+  InteractiveSparklineBaseProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
-  Partial<Pick<InteractiveSparklineProps<ChartPeriod>, 'defaultPeriod'>>;
+  Partial<Pick<InteractiveSparklineBaseProps<ChartPeriod>, 'defaultPeriod'>>;
 
 export const DEFAULT_CHART_PERIOD = 'day';
 

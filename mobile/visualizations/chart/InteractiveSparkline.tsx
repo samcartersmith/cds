@@ -1,18 +1,12 @@
-import React, { memo, ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
 import { noop } from '@cbhq/cds-utils';
-import {
-  ChartData,
-  ChartDataPoint,
-  ChartFormatAmount,
-  ChartFormatDate,
-  ChartGetMarker,
-  ChartScrubParams,
-} from '@cbhq/cds-common/types';
+import { ChartData, ChartDataPoint, ChartFormatDate, ChartGetMarker } from '@cbhq/cds-common/types';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+import { InteractiveSparklineBaseProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
 import { usePalette } from '../../hooks/usePalette';
 
 import { ChartAnimatedPath } from './ChartAnimatedPath';
@@ -24,100 +18,6 @@ import { ChartPeriodSelector } from './ChartPeriodSelector';
 import { ChartProvider, useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { useUpdateChartHeader } from './useUpdateChartHeader';
-
-export type InteractiveSparklineProps<Period extends string> = {
-  /**
-   * Chart data bucketed by Period. Period is a string key
-   */
-  data?: Record<Period, ChartData>;
-
-  /**
-   * A list of periods that the chart will use. label is what is shown in the bottom of the chart and the value is the key.
-   */
-  periods: { label: string; value: Period }[];
-
-  /**
-   * default period value that the chart will use
-   */
-  defaultPeriod: Period;
-
-  /**
-   * Callback when the user selects a new period.
-   */
-  onPeriodChanged?: (period: Period) => void;
-
-  /**
-   * Callback when the user starts scrubbing
-   */
-  onScrubStart?: () => void;
-
-  /**
-   * Callback when a user finishes scrubbing
-   */
-  onScrubEnd?: () => void;
-
-  /**
-   * Callback used when the user is scrubbing. This will be called for every data point change.
-   */
-  onScrub?: (params: ChartScrubParams<Period>) => void;
-
-  /**
-   * Disables the scrub user interaction from the chart
-   *
-   * @default false
-   */
-  disableScrubbing?: boolean;
-
-  /**
-   * function used to format the amount of money used in the minMaxLabel
-   */
-  formatAmount: ChartFormatAmount;
-
-  /**
-   * function used to format the date that is shown in the bottom of the chart as the user scrubs
-   */
-  formatDate: ChartFormatDate<Period>;
-
-  /**
-   * Color of the line
-   *
-   * @default primary palette color
-   */
-  strokeColor?: string;
-
-  /**
-   * Fallback shown in the chart when data is not available. This is usually a loading state.
-   */
-  fallback?: ReactNode;
-
-  /**
-   * Show the chart in compact height
-   *
-   * @default false
-   */
-  compact?: boolean;
-
-  /**
-   * Hides the min and max label
-   *
-   * @default false
-   */
-  hideMinMaxLabel?: boolean;
-
-  /**
-   * Hides the period selector at the bottom of the chart
-   *
-   * @default false
-   */
-  hidePeriodSelector?: boolean;
-
-  /*
-   * Adds an area fill to the Sparkline
-   *
-   * @default true for frontier false otherwise
-   */
-  fill?: boolean;
-};
 
 const emptyArray = [] as ChartData;
 const minMax = (data: ChartData) => {
@@ -138,14 +38,14 @@ const minMax = (data: ChartData) => {
 };
 
 type InteractiveSparklineContentProps<Period extends string> = Omit<
-  InteractiveSparklineProps<Period>,
+  InteractiveSparklineBaseProps<Period>,
   'compact'
 >;
 
 function InteractiveSparklineWithGeneric<Period extends string>({
   compact,
   ...props
-}: InteractiveSparklineProps<Period>) {
+}: InteractiveSparklineBaseProps<Period>) {
   return (
     <ChartProvider compact={compact}>
       <InteractiveSparklineContent {...props} />
@@ -174,6 +74,7 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   hidePeriodSelector = false,
   disableScrubbing = false,
   fill,
+  yAxisScalingFactor = 1.0,
 }: InteractiveSparklineContentProps<Period>) {
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useChartContext();
@@ -230,6 +131,7 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
     data: dataForPeriod,
     width: chartWidth,
     height: chartHeight,
+    yAxisScalingFactor,
   });
   useUpdateChartHeader({
     getMarker,
@@ -264,6 +166,7 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
                   area={shouldShowFill ? area : undefined}
                   color={color}
                   selectedPeriod={selectedPeriod}
+                  yAxisScalingFactor={yAxisScalingFactor}
                 />
               </>
             )}

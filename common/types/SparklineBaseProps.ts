@@ -12,11 +12,15 @@ export type SparklineBaseProps = {
   path?: string;
   /** Width of the Sparkline */
   width: number;
-  /** Scales the sparkline to show more or less variance. Use a number less than 1 for less variance and a number greater than 1 for more variance. If you use a number greater than 1 it may clip the boundaries of the sparkline. */
-  yAxisScalingFactor?: number;
   /** an optional SparklineArea that can be used to fill in the Sparkline */
   children?: ElementChildren<SparklineAreaBaseProps>;
-} & SharedProps;
+} & SharedProps &
+  SparklineScalingBaseProps;
+
+export type SparklineScalingBaseProps = {
+  /** Scales the sparkline to show more or less variance. Use a number less than 1 for less variance and a number greater than 1 for more variance. If you use a number greater than 1 it may clip the boundaries of the sparkline. */
+  yAxisScalingFactor?: number;
+};
 
 export type SparklineFallbackProps = Pick<SparklineBaseProps, 'height' | 'width'>;
 

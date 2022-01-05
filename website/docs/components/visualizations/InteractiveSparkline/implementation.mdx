@@ -267,4 +267,19 @@ Color of the line
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-strokeColor" />
 
+### yAxisScalingFactor <Badge variant="mobile" />
+
+Scales the sparkline to show more or less variance. Use a number less than 1 for less variance and a number greater than 1 for more variance. If you use a number greater than 1 it may clip the boundaries of the sparkline.
+
+<ApiDetails
+  componentName="InteractiveSparkline"
+  propertyName="yAxisScalingFactor"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InteractiveSparkline" templateName="prop-yAxisScalingFactor" />
+
 <ComponentDetails componentName="InteractiveSparkline" templateName="outro" />

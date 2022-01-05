@@ -13,6 +13,7 @@ type ChartAnimatedPathProps = {
   color: string;
   area?: string;
   selectedPeriod: string;
+  yAxisScalingFactor: number;
 };
 const useValueChanges = (newValue: string) => {
   const previousValueRef = useRef<typeof newValue>();
@@ -27,7 +28,7 @@ const useValueChanges = (newValue: string) => {
 };
 
 export const ChartAnimatedPath = memo(
-  ({ d = '', color, selectedPeriod, area }: ChartAnimatedPathProps) => {
+  ({ d = '', color, selectedPeriod, area, yAxisScalingFactor }: ChartAnimatedPathProps) => {
     const { isFallbackVisible, hideFallback, animateMinMaxIn, compact } = useChartContext();
     const pathRef = useRef<TextInput | null>(null);
     const areaRef = useRef<TextInput | null>(null);
@@ -112,7 +113,13 @@ export const ChartAnimatedPath = memo(
     const { chartWidth, chartHeight } = useChartConstants({ compact });
 
     return (
-      <SparklineGradient ref={pathRef} width={chartWidth} height={chartHeight} color={color}>
+      <SparklineGradient
+        ref={pathRef}
+        width={chartWidth}
+        height={chartHeight}
+        color={color}
+        yAxisScalingFactor={yAxisScalingFactor}
+      >
         {!!area && <SparklineArea ref={areaRef} />}
       </SparklineGradient>
     );
