@@ -1,9 +1,12 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import {
   ChartData,
+  ChartDataPoint,
   ChartFormatAmount,
   ChartFormatDate,
+  ChartGetMarker,
   ChartScrubParams,
+  ChartXFunction,
   SparklineScalingBaseProps,
 } from '.';
 
@@ -51,21 +54,14 @@ export type InteractiveSparklineBaseProps<Period extends string> = {
   disableScrubbing?: boolean;
 
   /**
-   * function used to format the amount of money used in the minMaxLabel
-   */
-  formatAmount: ChartFormatAmount;
-
-  /**
    * function used to format the date that is shown in the bottom of the chart as the user scrubs
    */
   formatDate: ChartFormatDate<Period>;
 
   /**
-   * Color of the line
-   *
-   * @default primary palette color
+   * Color of the line*
    */
-  strokeColor?: string;
+  strokeColor: string;
 
   /**
    * Fallback shown in the chart when data is not available. This is usually a loading state.
@@ -80,23 +76,86 @@ export type InteractiveSparklineBaseProps<Period extends string> = {
   compact?: boolean;
 
   /**
-   * Hides the min and max label
-   *
-   * @default false
-   */
-  hideMinMaxLabel?: boolean;
-
-  /**
    * Hides the period selector at the bottom of the chart
    *
    * @default false
    */
   hidePeriodSelector?: boolean;
 
-  /*
+  /**
    * Adds an area fill to the Sparkline
    *
    * @default true for frontier false otherwise
    */
   fill?: boolean;
+
+  /**
+    Formats the date above the chart as you scrub. Omit this if you don't want to show the date as the user scrubs
+   */
+  formatHoverDate?: (date: Date, period: Period) => string;
+
+  /**
+   * Adds a header node above the chart. It will be placed next to the period selector on web.
+   */
+  headerNode?: ReactNode;
 } & SparklineScalingBaseProps;
+
+export type InteractiveSparklineContentProps<Period extends string> = Omit<
+  InteractiveSparklineBaseProps<Period>,
+  'compact'
+>;
+
+export type ChartMinMaxProps = {
+  dataPoint: ChartDataPoint | undefined;
+  formatAmount: ChartFormatAmount;
+  xFunction: ChartXFunction;
+};
+
+export type ChartScrubHandlerProps = {
+  onScrubEnd?: () => void;
+  onScrubStart?: () => void;
+  disabled?: boolean;
+  children: React.ReactNode;
+};
+
+export type ChartAnimatedPathProps = {
+  d: string;
+  color: string;
+  area?: string;
+  selectedPeriod: string;
+  yAxisScalingFactor: number;
+};
+
+export type ChartMarkerDatesProps<Period extends string> = {
+  getMarker: ChartGetMarker;
+  formatDate: ChartFormatDate<Period>;
+  selectedPeriod: Period;
+};
+
+export type GetFormattedDateParams<Period extends string> = {
+  getMarker: ChartGetMarker;
+  formatDate: ChartFormatDate<Period>;
+  selectedPeriod: Period;
+};
+
+export type ChartPeriodSelectorProps<Period extends string> = {
+  selectedPeriod: Period;
+  setSelectedPeriod: (period: Period) => void;
+  periods: { label: string; value: Period }[];
+  color: string;
+};
+
+export type ChartPeriodProps<Period extends string> = {
+  period: { label: string; value: Period };
+  selectedPeriod: Period;
+  setSelectedPeriod: ChartPeriodSelectorProps<Period>['setSelectedPeriod'];
+  color: string;
+};
+
+export type ChartLineVerticalProps = {
+  color: string;
+};
+
+export type ChartHoverDateRefProps<Period extends string> = {
+  update: (params: ChartScrubParams<Period>) => void;
+};

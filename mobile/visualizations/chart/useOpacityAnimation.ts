@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { Animated } from 'react-native';
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { fadeDuration } from '@cbhq/cds-common/tokens/sparkline';
 
 export function useOpacityAnimation(
   initialValue: number | undefined = 0,
-  duration: number | undefined = durations.moderate1,
+  duration: number | undefined = fadeDuration,
 ): [Animated.Value, Animated.CompositeAnimation, Animated.CompositeAnimation] {
   const animation = useRef(new Animated.Value(initialValue)).current;
 

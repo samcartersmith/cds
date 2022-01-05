@@ -1,5 +1,9 @@
 import React, { memo, useCallback } from 'react';
 import { Animated } from 'react-native';
+import {
+  ChartPeriodSelectorProps,
+  ChartPeriodProps,
+} from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { usePalette } from '../../hooks/usePalette';
 import { HStack } from '../../layout/HStack';
@@ -9,20 +13,6 @@ import { TextLabel1 } from '../../typography';
 import { Haptics } from '../../utils/haptics';
 
 import { useChartContext } from './ChartProvider';
-
-type ChartPeriodSelectorProps<Period extends string> = {
-  selectedPeriod: Period;
-  setSelectedPeriod: (period: Period) => void;
-  periods: { label: string; value: Period }[];
-  color: string;
-};
-
-type ChartPeriodProps<Period extends string> = {
-  period: { label: string; value: Period };
-  selectedPeriod: Period;
-  setSelectedPeriod: ChartPeriodSelectorProps<Period>['setSelectedPeriod'];
-  color: string;
-};
 
 export const ChartPeriodSelector = <Period extends string>({
   selectedPeriod,

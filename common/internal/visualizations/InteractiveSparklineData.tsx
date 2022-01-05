@@ -1,5 +1,5 @@
-import { ChartDataPoint } from '@cbhq/cds-common/types/Chart';
-import assetJSON from './data/Asset';
+import { ChartDataPoint } from '../../types/Chart';
+import assetJSON from '../data/asset';
 
 const transformAndFilterPrices = (
   data?: readonly {

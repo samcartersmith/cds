@@ -3,6 +3,8 @@ import type { ScaleTime } from 'd3-scale';
 export type ChartDataPoint = {
   value: number;
   date: Date;
+  x?: number;
+  y?: number;
 };
 export type ChartData = ChartDataPoint[];
 export type ChartFormatDate<Period extends string> = (value: Date, period: Period) => string;

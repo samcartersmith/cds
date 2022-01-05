@@ -106,11 +106,13 @@ Fallback shown in the chart when data is not available. This is usually a loadin
 
 ### fill <Badge variant="mobile" />
 
+Adds an area fill to the Sparkline
+
 <ApiDetails
   componentName="InteractiveSparkline"
   propertyName="fill"
   required={false}
-  defaultValue=""
+  defaultValue="true for frontier false otherwise"
   mobileOptions={['false', 'true']}
   webOptions={[]}
 />
@@ -146,6 +148,46 @@ function used to format the date that is shown in the bottom of the chart as the
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatDate" />
+
+### formatHoverDate <Badge variant="mobile" />
+
+Formats the date above the chart as you scrub. Omit this if you dont want to show the date as the user scrubs
+
+<ApiDetails
+  componentName="InteractiveSparkline"
+  propertyName="formatHoverDate"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(date: Date, period: Period) => string']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatHoverDate" />
+
+### headerNode <Badge variant="mobile" />
+
+Adds a header node above the chart. It will be placed next to the period selector on web.
+
+<ApiDetails
+  componentName="InteractiveSparkline"
+  propertyName="headerNode"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="InteractiveSparkline" templateName="prop-headerNode" />
 
 ### hideMinMaxLabel <Badge variant="mobile" />
 
@@ -259,9 +301,9 @@ Color of the line
 <ApiDetails
   componentName="InteractiveSparkline"
   propertyName="strokeColor"
-  required={false}
-  defaultValue="primary palette color"
-  mobileOptions={['string']}
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
   webOptions={[]}
 />
 

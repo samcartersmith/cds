@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import {
+  chartCompactHeight,
+  chartHeight as chartHeightToken,
+} from '@cbhq/cds-common/tokens/sparkline';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
-
-const chart = 320;
-const chartCompact = 120;
 
 type Props = {
   compact?: boolean;
@@ -18,7 +19,7 @@ export function useChartConstants({ compact = false }: Props) {
   return useMemo(() => {
     const chartHorizontalGutter = spacing[gutter];
     const chartWidth = screenWidth - chartHorizontalGutter * 2;
-    const chartHeight = compact ? chartCompact : chart;
+    const chartHeight = compact ? chartCompactHeight : chartHeightToken;
     const chartMarkerSize = spacing[2];
     const chartMinMaxLabelHeight = spacing[3];
     const chartMinMaxVerticalGutter = spacing[0.5];

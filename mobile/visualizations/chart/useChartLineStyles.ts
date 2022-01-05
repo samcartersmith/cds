@@ -1,16 +1,15 @@
 import { useMemo } from 'react';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { lineDashArray, lineOpacity } from '@cbhq/cds-common/tokens/sparkline';
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
-const chartLineOpacity = 0.4;
 const staticLineProps = {
   x1: 0,
   x2: 0,
   y1: 0,
   y2: 0,
-  strokeDasharray: [2, 4],
-  opacity: chartLineOpacity,
+  strokeDasharray: lineDashArray,
 };
 
 export function useChartLineStyles() {
@@ -32,7 +31,7 @@ export function useChartLineStyles() {
           height: chartLineSize,
           width: chartLineSize,
           borderRadius: chartLineSize / 2,
-          opacity: chartLineOpacity,
+          opacity: lineOpacity,
         },
       ],
       lineProps: {

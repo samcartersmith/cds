@@ -19,20 +19,14 @@ import Animated, {
   sub,
 } from 'react-native-reanimated';
 import { noop } from '@cbhq/cds-utils';
+import { ChartScrubHandlerProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
 
 import { Haptics } from '../../utils/haptics';
 import { useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 
-export type ChartPanGestureHandlerProps = {
-  onScrubEnd?: () => void;
-  onScrubStart?: () => void;
-  disabled?: boolean;
-  children: React.ReactNode;
-};
-
 export const ChartPanGestureHandler = memo(
-  ({ onScrubEnd = noop, onScrubStart = noop, children, disabled }: ChartPanGestureHandlerProps) => {
+  ({ onScrubEnd = noop, onScrubStart = noop, children, disabled }: ChartScrubHandlerProps) => {
     const { width: screenWidth } = useWindowDimensions();
     const {
       markerXPosition,
@@ -41,6 +35,8 @@ export const ChartPanGestureHandler = memo(
       animateMarkerOut,
       animateMinMaxIn,
       animateMinxMaxOut,
+      animateHoverDateIn,
+      animateHoverDateOut,
     } = useChartContext();
     const { chartVerticalLineWidth, endX, startX } = useChartConstants({});
 
@@ -79,7 +75,11 @@ export const ChartPanGestureHandler = memo(
                       call([], () => {
                         void Haptics.lightImpact();
                         onScrubStart();
-                        RNAnimated.parallel([animateMarkerIn, animateMinxMaxOut]).start();
+                        RNAnimated.parallel([
+                          animateMarkerIn,
+                          animateMinxMaxOut,
+                          animateHoverDateIn,
+                        ]).start();
                       }),
                       set(markerGestureState, 1),
                       set(
@@ -102,13 +102,15 @@ export const ChartPanGestureHandler = memo(
                     block([
                       call([], () => {
                         onScrubEnd();
-                        RNAnimated.parallel([animateMarkerOut, animateMinMaxIn]).start(
-                          ({ finished }) => {
-                            if (finished) {
-                              markerXPosition.setValue(-1);
-                            }
-                          },
-                        );
+                        RNAnimated.parallel([
+                          animateMarkerOut,
+                          animateMinMaxIn,
+                          animateHoverDateOut,
+                        ]).start(({ finished }) => {
+                          if (finished) {
+                            markerXPosition.setValue(-1);
+                          }
+                        });
                       }),
                       set(markerGestureState, 0),
                     ]),

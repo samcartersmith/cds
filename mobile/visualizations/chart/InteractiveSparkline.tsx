@@ -1,13 +1,23 @@
-import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
-import { noop } from '@cbhq/cds-utils';
-import { ChartData, ChartDataPoint, ChartFormatDate, ChartGetMarker } from '@cbhq/cds-common/types';
+import { emptyArray, noop } from '@cbhq/cds-utils';
+import {
+  ChartDataPoint,
+  ChartFormatAmount,
+  ChartFormatDate,
+  ChartGetMarker,
+  ChartScrubParams,
+} from '@cbhq/cds-common/types';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
-import { InteractiveSparklineBaseProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
-import { usePalette } from '../../hooks/usePalette';
+import {
+  ChartHoverDateRefProps,
+  InteractiveSparklineBaseProps,
+} from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+import { minMax } from '@cbhq/cds-common/utils/chart';
+import { chartFallbackPositive } from '@cbhq/cds-lottie-files';
 
 import { ChartAnimatedPath } from './ChartAnimatedPath';
 import { ChartLineVertical } from './ChartLineVertical';
@@ -18,34 +28,40 @@ import { ChartPeriodSelector } from './ChartPeriodSelector';
 import { ChartProvider, useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { useUpdateChartHeader } from './useUpdateChartHeader';
+import { ThemeProvider } from '../../system';
+import { Lottie } from '../../animation';
+import { ChartHoverDate } from './ChartHoverDate';
+import { Box } from '../../layout';
 
-const emptyArray = [] as ChartData;
-const minMax = (data: ChartData) => {
-  let min: ChartDataPoint | undefined;
-  let max: ChartDataPoint | undefined;
+const DefaultFallback = memo(() => {
+  // We override line palette since default line color is a bit too dark.
+  // Changing to gray20 more closely matches the line color currently used in production
+  return (
+    <ThemeProvider palette={{ line: 'gray20' }}>
+      <Lottie autoplay source={chartFallbackPositive} loop />
+    </ThemeProvider>
+  );
+});
 
-  for (let index = data.length; index >= 0; index -= 1) {
-    const datum = data[index];
-    if (min === undefined || datum.value < min.value) {
-      min = datum;
-    }
-    if (max === undefined || datum.value > max.value) {
-      max = datum;
-    }
-  }
+type InteractiveSparklineMobileProps<Period extends string> =
+  InteractiveSparklineBaseProps<Period> & {
+    /**
+     * Hides the min and max label
+     *
+     * @default false
+     */
+    hideMinMaxLabel?: boolean;
 
-  return [min, max];
-};
-
-type InteractiveSparklineContentProps<Period extends string> = Omit<
-  InteractiveSparklineBaseProps<Period>,
-  'compact'
->;
+    /**
+     * function used to format the amount of money used in the minMaxLabel
+     */
+    formatAmount: ChartFormatAmount;
+  };
 
 function InteractiveSparklineWithGeneric<Period extends string>({
   compact,
   ...props
-}: InteractiveSparklineBaseProps<Period>) {
+}: InteractiveSparklineMobileProps<Period>) {
   return (
     <ChartProvider compact={compact}>
       <InteractiveSparklineContent {...props} />
@@ -75,13 +91,15 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   disableScrubbing = false,
   fill,
   yAxisScalingFactor = 1.0,
-}: InteractiveSparklineContentProps<Period>) {
+  formatHoverDate,
+  headerNode,
+}: InteractiveSparklineMobileProps<Period>) {
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useChartContext();
-  const colors = usePalette();
-  const color = strokeColor ?? colors.primary;
+  const color = strokeColor;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
   const hasFrontier = useFeatureFlag('frontierSparkline');
+  const chartHoverTextInputRef = useRef<ChartHoverDateRefProps<Period> | null>(null);
 
   const shouldShowFill = typeof fill !== 'undefined' ? fill : hasFrontier;
 
@@ -95,7 +113,7 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   // If dataForPeriod is empty we know that we are either loading
   // or backend returned bad data and we should show fallback UI.
   const hasData = dataForPeriod.length > 0;
-  const [min, max] = minMax(dataForPeriod);
+  const [min, max] = minMax<ChartDataPoint>(dataForPeriod, (d: ChartDataPoint) => d.value);
 
   useEffect(() => {
     // If there is no data for selected period show fallback loader
@@ -133,11 +151,25 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
     height: chartHeight,
     yAxisScalingFactor,
   });
+
+  const handleScrub = useCallback(
+    (params: ChartScrubParams<Period>) => {
+      chartHoverTextInputRef.current?.update(params);
+      onScrub?.(params);
+    },
+    [onScrub],
+  );
+
   useUpdateChartHeader({
     getMarker,
-    onScrub,
+    onScrub: handleScrub,
     selectedPeriod,
   });
+
+  let header;
+  if (headerNode) {
+    header = <Box spacingBottom={2}>{headerNode}</Box>;
+  }
 
   return (
     <Animated.View
@@ -145,22 +177,30 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
         paddingHorizontal: chartHorizontalGutter,
       }}
     >
+      {header}
       <ChartPanGestureHandler
         onScrubEnd={onScrubEnd}
         onScrubStart={onScrubStart}
         disabled={disableScrubbing}
       >
+        {!!formatHoverDate && (
+          <ChartHoverDate
+            shouldTakeUpHeight={hideMinMaxLabel}
+            formatHoverDate={formatHoverDate}
+            ref={chartHoverTextInputRef}
+          />
+        )}
         {!hideMinMaxLabel && (
           <ChartMinMax formatAmount={formatAmount} dataPoint={max} xFunction={xFunction} />
         )}
         <View style={chartDimensionStyles}>
           {!!isFallbackVisible && !compact && (
-            <View style={StyleSheet.absoluteFill}>{fallback}</View>
+            <View style={StyleSheet.absoluteFill}>{fallback ?? <DefaultFallback />}</View>
           )}
           <Animated.View style={{ opacity: chartOpacity }}>
             {!!hasData && !!path && (
               <>
-                <ChartLineVertical />
+                <ChartLineVertical color={color} showHoverDate={!!formatHoverDate} />
                 <ChartAnimatedPath
                   d={path}
                   area={shouldShowFill ? area : undefined}

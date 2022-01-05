@@ -1,19 +1,13 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
+import { animatedPathConfig } from '@cbhq/cds-common/animation/sparkline';
 
 import { useChartContext } from './ChartProvider';
 
-const CHART_ANIMATED_PATH_DURATION = 450;
-
-function easeOutQuint(x: number): number {
-  return 1 - (1 - x) ** 5;
-}
-
 const animationConfig = {
+  ...animatedPathConfig,
   toValue: 1,
-  easing: easeOutQuint,
   useNativeDriver: true,
-  duration: CHART_ANIMATED_PATH_DURATION,
 };
 
 type Params = {

@@ -1,7 +1,9 @@
-import React, { FunctionComponent, memo, useCallback, useMemo } from 'react';
+import React, { FunctionComponent, memo, useMemo } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import times from 'lodash/times';
-import { ChartFormatDate, ChartGetMarker } from '@cbhq/cds-common/types';
+import { ChartMarkerDatesProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
+
 import { usePalette } from '../../hooks/usePalette';
 import { TextLabel2 } from '../../typography';
 import { useLayout } from '../../hooks/useLayout';
@@ -9,18 +11,6 @@ import { useLayout } from '../../hooks/useLayout';
 import { useChartContext } from './ChartProvider';
 
 const numberOfLabels = 5;
-
-type ChartMarkerDatesProps<Period extends string> = {
-  getMarker: ChartGetMarker;
-  formatDate: ChartFormatDate<Period>;
-  selectedPeriod: Period;
-};
-
-type GetFormattedDateParams<Period extends string> = {
-  getMarker: ChartGetMarker;
-  formatDate: ChartFormatDate<Period>;
-  selectedPeriod: Period;
-};
 
 function ChartMarkerDatesWithGeneric<Period extends string>({
   formatDate,
@@ -58,7 +48,7 @@ export const ChartMarkerDates = memo(
   ChartMarkerDatesWithGeneric,
 ) as typeof ChartMarkerDatesWithGeneric;
 
-export const ChartMarkerDate: FunctionComponent<{
+const ChartMarkerDate: FunctionComponent<{
   getFormattedDate: (xPosition: number) => string;
 }> = memo(({ getFormattedDate }) => {
   const [label, onLayout] = useLayout();
@@ -78,23 +68,6 @@ export const ChartMarkerDate: FunctionComponent<{
     </TextLabel2>
   );
 });
-
-function useDateLookup<Period extends string>({
-  getMarker,
-  formatDate,
-  selectedPeriod,
-}: GetFormattedDateParams<Period>) {
-  return useCallback(
-    (xPos: number) => {
-      const { date } = getMarker(xPos) ?? {};
-      if (!date) {
-        return '';
-      }
-      return formatDate(date, selectedPeriod);
-    },
-    [formatDate, getMarker, selectedPeriod],
-  );
-}
 
 const styles = StyleSheet.create({
   wrapper: {

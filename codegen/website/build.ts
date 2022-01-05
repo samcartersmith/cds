@@ -147,13 +147,27 @@ async function buildWebsite() {
     CDS_SUB_DIRS.map(getSubDirFiles('web', undefined, mobileOnlyIncludes)),
   );
 
-  const docgenData = subDirFiles.reduce(
+  const allDocgenData = subDirFiles.reduce(
     prepareDocgen({
       web: getDocgenForPlatform('web'),
       mobile: getDocgenForPlatform('mobile'),
     }),
     [],
   );
+
+  /*
+   removes duplicates by id.
+   This only currently happens if you have a mobile only component that has a corresponding web version that has not been exported yet
+   */
+  const ids = new Set<string>();
+  const docgenData = [];
+  for (const item of allDocgenData) {
+    const { id } = item;
+    if (!ids.has(id)) {
+      ids.add(item.id);
+      docgenData.push(item);
+    }
+  }
 
   const components = docgenData.filter(excludeSimpleFiles);
   const componentTemplate = components.map(prepareTemplate());

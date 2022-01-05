@@ -12,6 +12,7 @@ export type ComponentDocgenParams = {
   displayName: string;
   subDir: SubDir;
   slug: string;
+  id: string;
 };
 
 export type ComponentDocgenResponse = {

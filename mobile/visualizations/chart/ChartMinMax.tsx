@@ -1,6 +1,6 @@
 import React, { FunctionComponent, memo, useCallback, useRef } from 'react';
 import { Animated, LayoutChangeEvent, StyleSheet } from 'react-native';
-import { ChartDataPoint, ChartFormatAmount, ChartXFunction } from '@cbhq/cds-common/types';
+import { ChartMinMaxProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
 import { usePalette } from '../../hooks/usePalette';
 import { TextLabel2, useTypographyStyles } from '../../typography';
 
@@ -8,12 +8,6 @@ import { useLayout } from '../../hooks/useLayout';
 import { useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { useMinMaxTransform } from './useMinMaxTransform';
-
-export type ChartMinMaxProps = {
-  dataPoint: ChartDataPoint | undefined;
-  formatAmount: ChartFormatAmount;
-  xFunction: ChartXFunction;
-};
 
 type ChartMinMaxContentProps = {
   x: number;
