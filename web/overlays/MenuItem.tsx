@@ -5,6 +5,7 @@ import React, {
   ReactElement,
   forwardRef,
   ForwardedRef,
+  FocusEvent,
 } from 'react';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 import { NoopFn } from '@cbhq/cds-common';
@@ -53,6 +54,10 @@ export type MenuItemProps = {
    * @default false
    */
   selected?: boolean;
+  /** Handler called when the MenuItem is blurred
+   * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+   */
+  onBlur?: (event: FocusEvent<HTMLButtonElement>) => void;
 } & PressableProps;
 
 export const MenuItem = memo(
@@ -67,6 +72,7 @@ export const MenuItem = memo(
         value,
         children,
         onPress,
+        onBlur,
         ...props
       }: MenuItemProps,
       ref: ForwardedRef<HTMLElement>,
@@ -137,6 +143,7 @@ export const MenuItem = memo(
           tabIndex={selected ? 0 : tabIndex ?? -1}
           role="menuitem"
           className={cx(menuItemStaticClassName, insetFocusRing, pressableStyles)}
+          onBlur={onBlur}
           {...props}
         >
           {children}

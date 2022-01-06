@@ -117,25 +117,30 @@ export const PopoverMenu = memo(
       const handleOptionChange = useCallback(
         (newValue: string) => {
           onChange?.(newValue);
+          // this is a hack for Safari to prevent blur from being called on option click
+          selectOptionRef.current?.focus();
           handleExitMenu();
         },
         [onChange, handleExitMenu],
       );
 
       const handlePopoverMenuBlur = useCallback(
-        (event: FocusEvent<HTMLDivElement>) => {
+        (event: FocusEvent<HTMLButtonElement>) => {
           const eventIsBlur = event?.type === 'blur';
           const isOptionFocused = popoverMenuRef.current?.contains(
             event.relatedTarget as Node | null,
           );
           const isTriggerFocused = triggerRef === event.relatedTarget;
-          if (eventIsBlur && !isOptionFocused && !isTriggerFocused) {
+          if (isTriggerFocused) {
+            return;
+          }
+          if (eventIsBlur && !isOptionFocused) {
             closeMenu();
             toggleFocused.toggleOff();
             onBlur?.();
           }
         },
-        [closeMenu, toggleFocused, popoverMenuRef, triggerRef, onBlur],
+        [closeMenu, toggleFocused, popoverMenuRef, onBlur, triggerRef],
       );
 
       const handleOnPopoverMenuTriggerPress = useCallback(() => {
@@ -163,9 +168,10 @@ export const PopoverMenu = memo(
             onChange: handleOptionChange,
             popoverMenuRef,
             hideMenu: handleExitMenu,
+            onBlur: handlePopoverMenuBlur,
           });
         },
-        [value, handleOptionChange, handleExitMenu],
+        [value, handleOptionChange, handleExitMenu, handlePopoverMenuBlur],
       );
 
       const renderPopoverMenuTrigger = useCallback(
@@ -200,12 +206,7 @@ export const PopoverMenu = memo(
       );
 
       return (
-        <HStack
-          position="relative"
-          width={width === '100%' ? width : 'auto'}
-          onBlur={handlePopoverMenuBlur}
-          {...props}
-        >
+        <HStack position="relative" width={width === '100%' ? width : 'auto'} {...props}>
           <HStack width={calculateTriggerWidth} ref={setTriggerDOMNode}>
             {renderPopoverMenuTrigger(triggerNode())}
           </HStack>

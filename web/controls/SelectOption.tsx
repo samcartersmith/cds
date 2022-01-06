@@ -12,7 +12,10 @@ import { MenuItem, MenuItemProps } from '../overlays/MenuItem';
 type SelectOptionWebProps = Omit<SelectOptionBaseProps, 'selected'>;
 
 export type SelectOptionProps = SelectOptionWebProps &
-  Pick<MenuItemProps, 'value' | 'key' | 'onChange' | 'popoverMenuRef' | 'hideMenu' | 'selected'> &
+  Pick<
+    MenuItemProps,
+    'value' | 'key' | 'onChange' | 'popoverMenuRef' | 'hideMenu' | 'selected' | 'onBlur'
+  > &
   RefAttributes<HTMLElement>;
 
 const selectOptionMinHeight: Record<ScaleDensity, number> = {
