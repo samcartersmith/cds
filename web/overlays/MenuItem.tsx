@@ -8,11 +8,19 @@ import React, {
 } from 'react';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 import { NoopFn } from '@cbhq/cds-common';
-import { cx } from 'linaria';
+import { cx, css } from 'linaria';
 import { insetFocusRing } from '../styles/focus';
 import { Pressable, PressableProps } from '../system/Pressable';
 
 export const menuItemStaticClassName = 'cds-menu-item';
+
+const pressableStyles = css`
+  /* overrides button defaults */
+  padding: 0;
+  /* overrides button defaults in safari */
+  margin: 0;
+  border: none;
+`;
 
 export type MenuItemProps = {
   children: ReactElement;
@@ -63,15 +71,10 @@ export const MenuItem = memo(
       }: MenuItemProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
-      const handleValueChange = useCallback(() => {
-        hideMenu?.();
-        onChange?.(value);
-      }, [hideMenu, onChange, value]);
-
       const handleOnOptionSelectPress = useCallback(() => {
-        handleValueChange();
+        onChange?.(value);
         onPress?.();
-      }, [handleValueChange, onPress]);
+      }, [onChange, onPress, value]);
 
       const handleOnOptionSelectKeyDown = useCallback(
         (event: KeyboardEvent<HTMLElement>) => {
@@ -91,7 +94,7 @@ export const MenuItem = memo(
                 : -1;
 
               if (selectKeys.includes(event.key)) {
-                handleValueChange();
+                onChange?.(value);
               } else if (event.key === 'Escape' || (event.shiftKey && event.key === 'Tab')) {
                 hideMenu?.();
               } else if (event.key === 'ArrowUp') {
@@ -121,7 +124,7 @@ export const MenuItem = memo(
             }
           }
         },
-        [hideMenu, popoverMenuRef, handleValueChange],
+        [hideMenu, popoverMenuRef, onChange, value],
       );
 
       return (
@@ -133,7 +136,7 @@ export const MenuItem = memo(
           onKeyDown={handleOnOptionSelectKeyDown}
           tabIndex={selected ? 0 : tabIndex ?? -1}
           role="menuitem"
-          className={cx(menuItemStaticClassName, insetFocusRing)}
+          className={cx(menuItemStaticClassName, insetFocusRing, pressableStyles)}
           {...props}
         >
           {children}

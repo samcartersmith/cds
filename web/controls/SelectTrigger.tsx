@@ -18,8 +18,8 @@ export type SelectTriggerProps = {
 } & Omit<SelectBaseProps, 'children' | 'onPress'>;
 
 const pressableOverrides = css`
-  &:focus-visible {
-    &:before {
+  &.focus-visible {
+    &::before {
       content: none;
     }
   }
@@ -84,7 +84,7 @@ export const SelectTrigger = memo(
                   <HStack flexGrow={1} minWidth={0}>
                     <TextBody
                       as="p"
-                      color="foregroundMuted"
+                      color={value ? 'foreground' : 'foregroundMuted'}
                       disabled={disabled}
                       overflow="truncate"
                     >

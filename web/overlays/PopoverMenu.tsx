@@ -109,12 +109,17 @@ export const PopoverMenu = memo(
         }
       }, [visible, closeMenu, openMenu]);
 
+      const handleExitMenu = useCallback(() => {
+        closeMenu?.();
+        triggerRef?.focus();
+      }, [closeMenu, triggerRef]);
+
       const handleOptionChange = useCallback(
         (newValue: string) => {
           onChange?.(newValue);
-          triggerRef?.focus();
+          handleExitMenu();
         },
-        [onChange, triggerRef],
+        [onChange, handleExitMenu],
       );
 
       const handlePopoverMenuBlur = useCallback(
@@ -157,10 +162,10 @@ export const PopoverMenu = memo(
             ref: child.props.value === value ? selectOptionRef : undefined,
             onChange: handleOptionChange,
             popoverMenuRef,
-            hideMenu: closeMenu,
+            hideMenu: handleExitMenu,
           });
         },
-        [value, handleOptionChange, closeMenu],
+        [value, handleOptionChange, handleExitMenu],
       );
 
       const renderPopoverMenuTrigger = useCallback(

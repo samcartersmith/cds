@@ -5,14 +5,20 @@ import { palette } from '../tokens';
 
 const FOCUS_RING_PADDING = 4;
 
-// if we use the focus ring we need to turn off the browser stylesheet outline
+/**
+ * focusRing uses the focus-visible polyfill (since Safari does not yet support focus-visible)
+ * @link https://github.com/WICG/focus-visible
+ * this polyfill detects whether an interaction would have triggered the focus-visible property
+ *  and adds the .focus-visible class
+ */
 export const focusRing = css`
   position: relative;
-  &:focus-visible,
-  &.focus-visible {
+  /* if we use the focus ring we need to turn off the browser stylesheet outline */
+  &:focus {
     outline: none;
-
-    &:before {
+  }
+  &.focus-visible {
+    &::before {
       content: '';
       position: absolute;
       /* TODO: make border width work with other components */
@@ -26,14 +32,22 @@ export const focusRing = css`
   }
 `;
 
-const INSET_FOCUS_RING_PADDING = -1;
+const INSET_FOCUS_RING_PADDING = 0;
 
+/**
+ * insetFocusRing should only be used in a MenuItem or when overflow is hidden.
+ * insetFocusRing uses the focus-visible polyfill (since Safari does not yet support focus-visible)
+ * @link https://github.com/WICG/focus-visible
+ * this polyfill detects whether an interaction would have triggered the focus-visible property
+ *  and adds the .focus-visible class
+ */
 export const insetFocusRing = css`
   position: relative;
-  &:focus-visible {
+  &:focus {
     outline: none;
-
-    &:before {
+  }
+  &.focus-visible {
+    &::before {
       content: '';
       position: absolute;
       top: ${INSET_FOCUS_RING_PADDING}px;
@@ -42,19 +56,18 @@ export const insetFocusRing = css`
       bottom: ${INSET_FOCUS_RING_PADDING}px;
       border: ${borderWidth.focusRing}px solid ${palette.primary};
       border-radius: ${borderRadius.standard};
-      transition: ease-out opacity 0.1s;
     }
-    &:first-child {
-      &:before {
-        border-top-right-radius: ${borderRadius.popover}px;
-        border-top-left-radius: ${borderRadius.popover}px;
-      }
+  }
+  &:first-child {
+    &:before {
+      border-top-right-radius: ${borderRadius.popover}px;
+      border-top-left-radius: ${borderRadius.popover}px;
     }
-    &:last-child {
-      &:before {
-        border-bottom-right-radius: ${borderRadius.popover}px;
-        border-bottom-left-radius: ${borderRadius.popover}px;
-      }
+  }
+  &:last-child {
+    &:before {
+      border-bottom-right-radius: ${borderRadius.popover}px;
+      border-bottom-left-radius: ${borderRadius.popover}px;
     }
   }
 `;
