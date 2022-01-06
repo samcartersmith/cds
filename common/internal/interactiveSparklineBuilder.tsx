@@ -108,11 +108,17 @@ export const interactiveSparklineBuilder = ({
   return memo(({ defaultPeriod, hideHoverDate, ...props }: PriceChartProps) => {
     const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
       const config = getFormattingConfigForPeriod(period);
-      return value.toLocaleString('en-US', config);
+      return value.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        ...config,
+      });
     }, []);
 
     const formatHoverDate = useCallback((date: Date, period: ChartPeriod) => {
-      return date.toLocaleString('en-US', getDateHoverOptions(period));
+      return date.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        ...getDateHoverOptions(period),
+      });
     }, []);
 
     const formatAmount = useCallback((amount: number | string) => {
