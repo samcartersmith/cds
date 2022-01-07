@@ -5,6 +5,7 @@ import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
 import { TextTitle3 } from '../../../typography/TextTitle3';
 import { InteractiveSparkline } from '../InteractiveSparkline';
 import { Box } from '../../../layout';
+import { InteractiveSparklineWithHeaderExample } from '../../chart-header/__stories__/InteractiveSparklineWithHeaderExample';
 
 const InteractiveSparklineBuild = interactiveSparklineBuilder({
   InteractiveSparkline,
@@ -124,6 +125,14 @@ const InteractiveSparklineScreen = () => {
             data={interactiveSparklineData}
             hideHoverDate
           />
+        </Box>
+      </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            With Header Node
+          </TextTitle3>
+          <InteractiveSparklineWithHeaderExample />
         </Box>
       </Example>
     </ExampleScreen>
