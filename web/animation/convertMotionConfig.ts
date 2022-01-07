@@ -1,5 +1,5 @@
 import { curves, durations } from '@cbhq/cds-common/tokens/motion';
-import type { MotionBaseSpec as DefaultMotionSpec } from '@cbhq/cds-common/types';
+import type { MotionBaseSpec as DefaultMotionSpec, MotionCurve } from '@cbhq/cds-common/types';
 
 export const webCurves = {
   global: curves.global.join(),
@@ -18,6 +18,10 @@ export type MotionBaseSpec = {
 export type MotionConfigOutput = { easing: string; duration: number } & EffectTiming &
   Pick<MotionBaseSpec, 'toValue' | 'fromValue' | 'fill'>;
 
+export function cubicBezier(easing: MotionCurve) {
+  return `cubic-bezier(${webCurves[easing]})`;
+}
+
 export const convertMotionConfig = ({
   toValue,
   fromValue,
@@ -33,7 +37,7 @@ export const convertMotionConfig = ({
   return {
     toValue,
     fromValue,
-    easing: `cubic-bezier(${webCurves[easing]})`,
+    easing: cubicBezier(easing),
     duration: durations[duration],
     delay,
     fill,

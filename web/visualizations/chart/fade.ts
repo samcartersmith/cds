@@ -1,5 +1,6 @@
 import { css } from 'linaria';
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { fadeDuration } from '@cbhq/cds-common/tokens/sparkline';
+import { cubicBezier } from '../../animation/convertMotionConfig';
 
 export const resetFadeClassName = css`
   opacity: 0;
@@ -8,7 +9,7 @@ export const resetFadeClassName = css`
 // keyframes are global so they should be namespaced
 export const fadeInClassName = css`
   && {
-    animation: cdsChartFadeIn ${durations.moderate1}ms linear;
+    animation: cdsChartFadeIn ${fadeDuration}ms ${cubicBezier('global')};
     opacity: 1;
   }
 
@@ -24,7 +25,7 @@ export const fadeInClassName = css`
 
 export const fadeOutClassName = css`
   && {
-    animation: cdsChartFadeOut ${durations.moderate1}ms linear;
+    animation: cdsChartFadeOut ${fadeDuration}ms ${cubicBezier('global')};
     opacity: 0;
   }
 

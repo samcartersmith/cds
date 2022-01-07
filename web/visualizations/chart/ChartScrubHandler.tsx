@@ -7,10 +7,10 @@ import {
 import { css } from 'linaria';
 import { ChartGetMarker } from '@cbhq/cds-common';
 import { fadeDuration, maskOpacity } from '@cbhq/cds-common/tokens/sparkline';
-import { durations } from '@cbhq/cds-common/tokens/motion';
 import { useChartContext } from './ChartProvider';
 import { useChartScrubContext } from './ChartScrubProvider';
 import { fadeIn, fadeOut } from './fade';
+import { cubicBezier } from '../../animation/convertMotionConfig';
 
 const scrubHandlerContainerClassName = css`
   position: relative;
@@ -28,7 +28,7 @@ const scrubHandlerClassName = css`
 
 const fadeInMaskClassName = css`
   && {
-    animation: cdsChartScrubFadeInMask ${fadeDuration}ms linear;
+    animation: cdsChartScrubFadeInMask ${fadeDuration}ms ${cubicBezier('global')};
     opacity: ${maskOpacity};
   }
 
@@ -44,7 +44,7 @@ const fadeInMaskClassName = css`
 
 const fadeOutMaskClassName = css`
   && {
-    animation: cdsChartScrubFadeOutMask ${durations.moderate1}ms linear;
+    animation: cdsChartScrubFadeOutMask ${fadeDuration}ms ${cubicBezier('global')};
     opacity: 0;
   }
 

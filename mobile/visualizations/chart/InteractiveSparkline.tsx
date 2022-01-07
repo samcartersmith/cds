@@ -33,11 +33,12 @@ import { Lottie } from '../../animation';
 import { ChartHoverDate } from './ChartHoverDate';
 import { Box } from '../../layout';
 
+// We override line palette since default line color is a bit too dark.
+// Changing to gray20 more closely matches the line color currently used in production
+const customPalette = { line: 'gray20' } as const;
 const DefaultFallback = memo(() => {
-  // We override line palette since default line color is a bit too dark.
-  // Changing to gray20 more closely matches the line color currently used in production
   return (
-    <ThemeProvider palette={{ line: 'gray20' }}>
+    <ThemeProvider palette={customPalette}>
       <Lottie autoplay source={chartFallbackPositive} loop />
     </ThemeProvider>
   );
@@ -113,7 +114,9 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   // If dataForPeriod is empty we know that we are either loading
   // or backend returned bad data and we should show fallback UI.
   const hasData = dataForPeriod.length > 0;
-  const [min, max] = minMax<ChartDataPoint>(dataForPeriod, (d: ChartDataPoint) => d.value);
+  const [min, max] = useMemo(() => {
+    return minMax<ChartDataPoint>(dataForPeriod, (d: ChartDataPoint) => d.value);
+  }, [dataForPeriod]);
 
   useEffect(() => {
     // If there is no data for selected period show fallback loader

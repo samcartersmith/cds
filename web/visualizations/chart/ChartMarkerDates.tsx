@@ -1,5 +1,5 @@
 import { ChartMarkerDatesProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
-import React, { useState, FunctionComponent, memo, useCallback } from 'react';
+import React, { useState, FunctionComponent, memo, useCallback, useMemo } from 'react';
 import times from 'lodash/times';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
 import { Box } from '../../layout';
@@ -18,10 +18,14 @@ const ChartMarkerDate: FunctionComponent<{
     }
   }, []);
 
+  const dateStr = getFormattedDate(xPos);
+
+  // take up space while loading so when it finishes loading there is no jump
+  const fallback = <span style={{ visibility: 'hidden' }}>-</span>;
   return (
     <span ref={setupRef}>
       <TextLabel2 as="span" color="foregroundMuted" align="center" spacingTop={3}>
-        {getFormattedDate(xPos)}
+        {dateStr || fallback}
       </TextLabel2>
     </span>
   );
@@ -46,6 +50,13 @@ function ChartMarkerDatesWithGeneric<Period extends string>({
     }
   }, []);
 
+  const markers = useMemo(() => {
+    return times(numberOfLabels).map((_, i) => {
+      // eslint-disable-next-line react/no-array-index-key
+      return <ChartMarkerDate key={i} getFormattedDate={getFormattedDate} />;
+    });
+  }, [getFormattedDate, numberOfLabels]);
+
   return (
     <Box
       key={selectedPeriod}
@@ -57,10 +68,7 @@ function ChartMarkerDatesWithGeneric<Period extends string>({
       spacingTop={2}
       dangerouslySetClassName={fadeInClassName}
     >
-      {times(numberOfLabels).map((_, i) => {
-        // eslint-disable-next-line react/no-array-index-key
-        return <ChartMarkerDate key={i} getFormattedDate={getFormattedDate} />;
-      })}
+      {markers}
     </Box>
   );
 }

@@ -10,14 +10,14 @@ DEPS = [
     "@npm//lottie-web",
     "@npm//react-popper",
     "@npm//reakit",
+    "@npm//d3-interpolate-path",
+    "@npm//d3-selection",
+    "@npm//d3-transition",
 ]
 
 PEER_DEPS = [
     "@npm//react-dom",
     "@npm//react",
-    "@npm//d3-interpolate-path",
-    "@npm//d3-selection",
-    "@npm//d3-transition",
 ]
 
 DEV_DEPS = [

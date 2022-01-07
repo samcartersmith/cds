@@ -27,14 +27,12 @@ import { Lottie } from '../../animation';
 import { ChartMarkerDates } from './ChartMarkerDates';
 import { ChartPeriodSelector } from './ChartPeriodSelector';
 
+// We override line palette since default line color is a bit too dark.
+// Changing to gray20 more closely matches the line color currently used in production
+const customPalette = { line: 'gray20' } as const;
 const DefaultFallback = memo(() => {
-  // We override line palette since default line color is a bit too dark.
-  // Changing to gray20 more closely matches the line color currently used in production
-  const customPalette = { line: 'gray20' } as const;
-
   // don't show lottie animation in story book
   const skipLottie = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
-
   return (
     <ThemeProvider palette={customPalette}>
       {!skipLottie && <Lottie autoplay source={chartFallbackPositive} loop />}
