@@ -1,17 +1,58 @@
+## Default 
+The onChangeText is required for this to work. You must maintain your own
+value state using useState, and pass the state to the value prop. Below is 
+the most basic example of how to get this SearchInput working. 
+
 ```jsx live 
-<SearchInput placeholder="Placeholder" />
+function SearchExample() {
+	const [text, setText] = useState('');
+
+	return (
+		<>
+			<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
+			<TextLabel1 as="p">{text}</TextLabel1>
+		</>
+	);
+}
 ```
 
-## Clearing Logic 
-Try typing something in the input. The close IconButton should appear when there is some value. When 
-value is empty again, it should disappear. When you click on the clear 
-button it should clear the text AND log Clearing....
+## onSearch Example 
+onSearch is triggered when user hits 'Enter' on both Mobile and Web. 
+On Mobile, there are two ways to trigger onSearch. You can trigger by hitting 
+'Enter' on Keyboard or by pressing the Search Icon when its available
+
+```jsx live
+function OnSearchExample() {
+	const [text, setText] = useState('');
+
+	const handleOnSearch = useCallback(
+		(str) => {
+			console.log(`User just typed: ${str}`);
+		},
+		[],
+	)
+
+	return (
+		<>
+			<SearchInput value={text} onChangeText={setText} onSearch={handleOnSearch} placeholder="Hit Enter" />
+			<TextLabel1 as="p">{text}</TextLabel1>
+		</>
+	)
+}
+```
+
+## onClear Example 
+Add custom onClear logic example
 
 ```jsx live 
-function ClearButtonAppears() {
+function OnClearExample() {
+	const [text, setText] = useState('');
+
 	return (
 		<SearchInput 
 			onClear={() => console.log('Clearing...')} 
+			onChangeText={setText}
+			value={text}
 			placeholder="Placeholder" 
 		/>
 	)
@@ -20,24 +61,18 @@ function ClearButtonAppears() {
 
 ## Disabled 
 ```jsx live 
-function ClearButtonAppears() {
-	return (
-		<SearchInput 
-			disabled
-			placeholder="Placeholder" 
-		/>
-	)
+function DisabledSearchExample() {
+	const [text, setText] = useState('');
+
+	return (<SearchInput value={text} disabled onChangeText={setText} placeholder="Placeholder" />)
 }
 ```
 
 ## Compact 
 ```jsx live 
-function ClearButtonAppears() {
-	return (
-		<SearchInput 
-			compact
-			placeholder="Placeholder" 
-		/>
-	)
+function CompactSearchExample() {
+	const [text, setText] = useState('');
+
+	return (<SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />)
 }
 ```

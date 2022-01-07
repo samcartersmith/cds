@@ -1,9 +1,10 @@
-import React, { useCallback, memo, useState, forwardRef, useRef } from 'react';
+import React, { useCallback, memo, forwardRef, useRef } from 'react';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { InputIcon } from './InputIcon';
 import { InputIconButton } from './InputIconButton';
 import { TextInput } from './TextInput';
@@ -12,38 +13,54 @@ import { Box } from '../layout/Box';
 export type SearchInputProps = SearchInputBaseProps &
   React.InputHTMLAttributes<HTMLInputElement> & {
     onClear?: React.MouseEventHandler;
-  };
+    onChangeText: (text: string) => void;
+    onSearch?: (text: string) => void;
+  } & Required<Pick<HTMLInputElement, 'value'>>;
 
 export const SearchInput = memo(
   forwardRef(function SearchInput(
-    { onChange, onClear, testID, value, compact, ...props }: SearchInputProps,
+    {
+      onChange,
+      onClear,
+      onChangeText,
+      onSearch,
+      testID,
+      value,
+      compact,
+      ...props
+    }: SearchInputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) {
-    const [text, setText] = useState(value);
     const scale = useScale();
     const height =
       interactableHeight[scale][compact ? 'compact' : 'regular'] + borderWidth.input * 2;
     const internalRef = useRef<HTMLInputElement>(null);
-    const externalRef = ref ?? internalRef;
+    const refs = useMergedRef(ref, internalRef);
 
     const handleOnChange = useCallback(
       (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e);
-        setText(e.currentTarget.value);
+        onChangeText?.(e.target.value);
       },
-      [onChange],
+      [onChange, onChangeText],
+    );
+
+    const handleOnKeyUp = useCallback(
+      (event: React.KeyboardEvent<HTMLElement>) => {
+        if (event.key === 'Enter') {
+          onSearch?.(value?.toString() ?? '');
+        }
+      },
+      [onSearch, value],
     );
 
     const handleOnClear = useCallback(
       (e: React.MouseEvent) => {
         onClear?.(e);
-        setText('');
-
-        if (externalRef && 'current' in externalRef) {
-          externalRef.current?.focus();
-        }
+        internalRef.current?.focus();
+        onChangeText?.('');
       },
-      [externalRef, onClear],
+      [onClear, onChangeText],
     );
 
     return (
@@ -51,7 +68,7 @@ export const SearchInput = memo(
         start={<InputIcon testID={testID && `${testID}-search-icon`} name="search" />}
         height={height}
         end={
-          !!text && (
+          !!value && (
             <Box spacingEnd={0.5}>
               <InputIconButton
                 name="close"
@@ -63,9 +80,11 @@ export const SearchInput = memo(
         }
         borderRadius="search"
         onChange={handleOnChange}
+        onKeyUp={handleOnKeyUp}
         role="searchbox"
-        ref={externalRef}
-        value={text}
+        type="search"
+        ref={refs}
+        value={value}
         testID={testID}
         {...props}
       />

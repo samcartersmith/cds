@@ -5,50 +5,65 @@ const TEST_ID = 'search';
 const ROLE = 'search';
 
 describe('Search', () => {
+  let SearchComponent = <></>;
+  const onClearSpy = jest.fn();
+  const onChangeTextSpy = jest.fn();
+  const onSearchSpy = jest.fn();
+
+  beforeAll(() => {
+    SearchComponent = (
+      <SearchInput
+        value="value"
+        testID={TEST_ID}
+        onSearch={onSearchSpy}
+        onClear={onClearSpy}
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+      />
+    );
+  });
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders a search', () => {
-    const result = render(<SearchInput placeholder="Placeholder" />);
+    const result = render(SearchComponent);
 
     expect(result.getByRole(ROLE)).toBeDefined();
   });
 
   it('able to set a default value', () => {
-    const result = render(<SearchInput value="value" testID={TEST_ID} />);
+    const result = render(SearchComponent);
 
     expect(result.getByRole('search').props.value).toBe('value');
   });
 
   it('renders a backArrow icon button at the start node', () => {
-    const result = render(<SearchInput testID={TEST_ID} placeholder="Placeholder" />);
+    const result = render(SearchComponent);
 
     expect(result.getByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeDefined();
   });
 
   it('renders a close icon button at the end node', () => {
-    const result = render(<SearchInput value="value" testID={TEST_ID} placeholder="Placeholder" />);
+    const result = render(SearchComponent);
 
     expect(result.getByTestId(`${TEST_ID}-close-iconbtn`)).toBeDefined();
   });
 
   it('fires `onSearch` when search btn is pressed', () => {
-    const spy = jest.fn();
-    const result = render(
-      <SearchInput testID={TEST_ID} onSearch={spy} placeholder="Placeholder" />,
-    );
+    const result = render(SearchComponent);
 
     fireEvent.press(result.getByTestId(`${TEST_ID}-searchinput-iconbtn`));
 
-    expect(spy).toHaveBeenCalled();
+    expect(onSearchSpy).toHaveBeenCalled();
   });
 
   it('fires `onClear` when clear btn is pressed', () => {
-    const spyOnClear = jest.fn();
-
-    const result = render(
-      <SearchInput value="value" testID={TEST_ID} onClear={spyOnClear} placeholder="Placeholder" />,
-    );
+    const result = render(SearchComponent);
 
     fireEvent.press(result.getByTestId(`${TEST_ID}-close-iconbtn`));
 
-    expect(spyOnClear).toHaveBeenCalled();
+    expect(onClearSpy).toHaveBeenCalled();
   });
 });

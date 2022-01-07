@@ -8,15 +8,16 @@ import {
 } from 'react-native';
 import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
 import { IconName } from '@cbhq/cds-common/types';
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { TextInput } from './TextInput';
 import { Box } from '../layout/Box';
 import { InputIconButton } from './InputIconButton';
 
 export type SearchInputProps = SearchInputBaseProps &
   RNTextInputProps & {
-    onSearch?: null | ((event: GestureResponderEvent) => void) | undefined;
-    onClear?: null | ((event: GestureResponderEvent) => void) | undefined;
-  };
+    onSearch?: (str: string) => void;
+    onClear?: (event: GestureResponderEvent) => void;
+  } & Required<Pick<RNTextInputProps, 'onChangeText' | 'value'>>;
 
 export const SearchInput = memo(
   forwardRef(
@@ -24,8 +25,8 @@ export const SearchInput = memo(
       {
         value,
         testID,
-        onChangeText,
         onSearch,
+        onChangeText,
         onClear,
         onFocus,
         onBlur,
@@ -33,10 +34,9 @@ export const SearchInput = memo(
       }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
     ) => {
-      const [text, setText] = useState(value);
       const [startIconName, setStartIconName] = useState<IconName>('search');
-      const localRef = useRef<RNTextInput>(null);
-      const externalRef = ref ?? localRef;
+      const internalRef = useRef<RNTextInput>(null);
+      const refs = useMergedRef(ref, internalRef);
 
       const handleOnFocus = useCallback(
         (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
@@ -54,42 +54,39 @@ export const SearchInput = memo(
         [onBlur],
       );
 
-      const handleOnChangeText = useCallback(
-        (textStr: string) => {
-          onChangeText?.(textStr);
-          setText(textStr);
-        },
-        [onChangeText],
-      );
-
       const handleOnClear = useCallback(
         (e: GestureResponderEvent) => {
           onClear?.(e);
-          setText('');
-
-          if (externalRef && 'current' in externalRef) {
-            externalRef.current?.focus();
-          }
+          internalRef.current?.focus();
+          onChangeText?.('');
         },
-        [externalRef, onClear],
+        [internalRef, onClear, onChangeText],
       );
+
+      /**
+       * This is triggered when 'Enter' or when Search IconButton is pressed.
+       */
+      const handleOnSearch = useCallback(() => {
+        onSearch?.(value?.toString() ?? '');
+      }, [onSearch, value]);
 
       return (
         <TextInput
           onFocus={handleOnFocus}
           onBlur={handleOnBlur}
-          onChangeText={handleOnChangeText}
+          onSubmitEditing={handleOnSearch}
+          onChangeText={onChangeText}
           start={
             <InputIconButton
               testID={testID && `${testID}-searchinput-iconbtn`}
-              onPress={onSearch}
+              onPress={handleOnSearch}
               name={startIconName}
             />
           }
           borderRadius="search"
-          ref={externalRef}
+          ref={refs}
           end={
-            !!text && (
+            !!value && (
               <Box spacingEnd={0.5}>
                 <InputIconButton
                   name="close"
@@ -100,8 +97,9 @@ export const SearchInput = memo(
             )
           }
           accessibilityRole="search"
-          value={text}
+          value={value}
           testID={testID}
+          keyboardType="web-search"
           {...props}
         />
       );

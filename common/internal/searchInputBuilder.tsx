@@ -1,57 +1,119 @@
 /* eslint-disable no-console */
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, ComponentType } from 'react';
 import { TextInputBaseProps } from '../types/TextInputBaseProps';
+import { TextBaseProps } from '../types/TextBaseProps';
 
 type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'start' | 'end'> & {
   onFocus?: () => void;
   onBlur?: () => void;
-  onSearch?: () => void;
+  onSearch?: (str: string) => void;
   onClear?: () => void;
-  value?: string;
+  onChangeText: (str: string) => void;
+  value: string;
 };
 
-export function searchInputBuilder(SearchInput: React.ComponentType<SearchInputProps>) {
+export function searchInputBuilder(
+  SearchInput: ComponentType<SearchInputProps>,
+  TextLabel1: ComponentType<TextBaseProps>,
+) {
   const Basic = () => {
-    return <SearchInput placeholder="Placeholder" />;
+    const [text, setText] = useState('Value');
+
+    return <SearchInput placeholder="Placeholder" onChangeText={setText} value={text} />;
   };
 
   const OnClear = () => {
+    const [text, setText] = useState('');
+
     const handleOnClear = useCallback(() => {
       console.log('Clearing...');
     }, []);
 
-    return <SearchInput onClear={handleOnClear} placeholder="Placeholder" />;
+    return (
+      <SearchInput
+        onClear={handleOnClear}
+        onChangeText={setText}
+        value={text}
+        placeholder="Placeholder"
+      />
+    );
   };
 
   const OnSearch = () => {
-    const handleOnSearch = useCallback(() => {
-      console.log('Searching...');
+    const [text, setText] = useState('');
+
+    const handleOnSearch = useCallback((str: string) => {
+      console.log(`User is typing: ${str}`);
     }, []);
 
-    return <SearchInput onSearch={handleOnSearch} placeholder="Placeholder" />;
+    return (
+      <SearchInput
+        value={text}
+        onChangeText={setText}
+        onSearch={handleOnSearch}
+        placeholder="Hit Enter to see the string logged to console"
+      />
+    );
   };
 
   const OnFocus = () => {
+    const [text, setText] = useState('');
+
     const handleOnFocus = useCallback(() => {
       console.log('Focusing...');
     }, []);
 
-    return <SearchInput onFocus={handleOnFocus} placeholder="Placeholder" />;
+    return (
+      <SearchInput
+        value={text}
+        onChangeText={setText}
+        onFocus={handleOnFocus}
+        placeholder="Placeholder"
+      />
+    );
   };
 
   const OnBlur = () => {
+    const [text, setText] = useState('');
+
     const handleOnBlur = useCallback(() => {
       console.log('Blurring...');
     }, []);
 
-    return <SearchInput onBlur={handleOnBlur} placeholder="Placeholder" />;
+    return (
+      <SearchInput
+        value={text}
+        onChangeText={setText}
+        onBlur={handleOnBlur}
+        placeholder="Placeholder"
+      />
+    );
   };
 
-  const Compact = () => <SearchInput accessibilityLabel="searchbox" compact />;
+  const Compact = () => {
+    const [text, setText] = useState('');
 
-  const Disabled = () => <SearchInput disabled />;
+    return (
+      <SearchInput onChangeText={setText} value={text} accessibilityLabel="searchbox" compact />
+    );
+  };
 
-  const DefaultValue = () => <SearchInput value="value" />;
+  const Disabled = () => {
+    const [text, setText] = useState('');
+
+    return <SearchInput value={text} onChangeText={setText} disabled />;
+  };
+
+  const DisplayValue = () => {
+    const [text, setText] = useState('');
+
+    return (
+      <>
+        <SearchInput value={text} onChangeText={setText} />
+        <TextLabel1>{text}</TextLabel1>
+      </>
+    );
+  };
 
   return {
     Basic,
@@ -61,6 +123,6 @@ export function searchInputBuilder(SearchInput: React.ComponentType<SearchInputP
     OnSearch,
     Disabled,
     Compact,
-    DefaultValue,
+    DisplayValue,
   };
 }

@@ -1,16 +1,47 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
+import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import { SearchInput } from '../SearchInput';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { TextLabel1 } from '../../typography/TextLabel1';
 
-const { Basic, OnBlur, OnFocus, OnClear, OnSearch, Disabled, Compact, DefaultValue } =
-  searchInputBuilder(SearchInput);
+const { Basic, OnBlur, OnFocus, OnClear, OnSearch, Disabled, Compact, DisplayValue } =
+  searchInputBuilder(SearchInput, TextLabel1);
 
-const SearchInputScreen = () => {
+const CustomRef = () => {
   const ref = useRef(null);
 
+  const [text, setText] = useState('');
+
+  return <SearchInput value={text} onChangeText={setText} ref={ref} />;
+};
+
+/**
+ * This tests how the SearchInput will work when
+ * onChange and onChangeText are used together
+ */
+export const OnChangeExample = () => {
+  const [text, setText] = useState('');
+
+  const handleOnChange = useCallback((e: NativeSyntheticEvent<TextInputChangeEventData>) => {
+    // eslint-disable-next-line no-console
+    console.log(e.nativeEvent.text);
+  }, []);
+
+  return (
+    <>
+      <SearchInput value={text} onChange={handleOnChange} onChangeText={setText} />
+      <TextLabel1>{text}</TextLabel1>
+    </>
+  );
+};
+
+const SearchInputScreen = () => {
   return (
     <ExampleScreen>
+      <Example title="OnChangeExample">
+        <OnChangeExample />
+      </Example>
       <Example title="Basic">
         <Basic />
       </Example>
@@ -30,13 +61,13 @@ const SearchInputScreen = () => {
         <Disabled />
       </Example>
       <Example title="Custom Ref">
-        <SearchInput ref={ref} value="Value" />
+        <CustomRef />
       </Example>
       <Example title="Compact">
         <Compact />
       </Example>
-      <Example title="Default Value">
-        <DefaultValue />
+      <Example title="DisplayValue">
+        <DisplayValue />
       </Example>
     </ExampleScreen>
   );

@@ -55,6 +55,25 @@ const nativeInputBaseStyle = css`
     -moz-appearance: textfield;
   }
 
+  /* clears the "X" from Internet Explorer */
+  &[type='search']::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  &[type='search']::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  /* clears the "X" from Chrome */
+  &[type='search']::-webkit-search-decoration,
+  &[type='search']::-webkit-search-cancel-button,
+  &[type='search']::-webkit-search-results-button,
+  &[type='search']::-webkit-search-results-decoration {
+    display: none;
+  }
+
   &:-webkit-autofill {
     border-radius: ${borderRadius.input}px;
   }
