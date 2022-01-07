@@ -21,7 +21,7 @@ function DotCountBasic() {
 function Variants() {
 	return (
       <ExampleWithThemeToggles>
-            <DotCount count={30} />
+        <DotCount count={30} />
       </ExampleWithThemeToggles>
     );
 }
@@ -35,13 +35,13 @@ function Placements() {
       <ExampleWithThemeToggles>
         {PIN_DIRECTIONS.map((pinDirection) => (
           <VStack gap={4} spacing={1} key={`DotCount-placement-${pinDirection}`} spacingBottom={4}>
-            <DotCount variant="positive" pin={pinDirection} count={30}>
+            <DotCount pin={pinDirection} count={30}>
               <Avatar size="xxxl" shape="square" alt="Sneezy" />
             </DotCount>
-            <DotCount variant="positive" pin={pinDirection} count={30}>
+            <DotCount pin={pinDirection} count={30}>
               <Avatar size="xl" shape="square" alt="Sneezy" />
             </DotCount>
-            <DotCount variant="positive" pin={pinDirection} count={1}>
+            <DotCount pin={pinDirection} count={1}>
               <Icon name="airdrop" shape="square" size="l" />
             </DotCount>
           </VStack>
