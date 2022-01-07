@@ -32,9 +32,12 @@ const DefaultFallback = memo(() => {
   // Changing to gray20 more closely matches the line color currently used in production
   const customPalette = { line: 'gray20' } as const;
 
+  // don't show lottie animation in story book
+  const skipLottie = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
+
   return (
     <ThemeProvider palette={customPalette}>
-      <Lottie autoplay source={chartFallbackPositive} loop />
+      {!skipLottie && <Lottie autoplay source={chartFallbackPositive} loop />}
     </ThemeProvider>
   );
 });
