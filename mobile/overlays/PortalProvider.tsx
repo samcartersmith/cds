@@ -3,6 +3,11 @@ import { Platform } from 'react-native';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
 import { usePortalState, PortalNode } from '@cbhq/cds-common/overlays/usePortalState';
 import { ToastProvider } from '@cbhq/cds-common/overlays/ToastProvider';
+import { DimensionValue } from '@cbhq/cds-common';
+
+export type PortalProviderProps = {
+  toastBottomOffset?: DimensionValue;
+};
 
 type PortalHostProps = { nodes: PortalNode[] };
 
@@ -30,12 +35,15 @@ const PortalHost = ({ nodes }: PortalHostProps) => {
   return reducedNodes;
 };
 
-export const PortalProvider: React.FC = ({ children }) => {
+export const PortalProvider: React.FC<PortalProviderProps> = ({
+  children,
+  toastBottomOffset = 0,
+}) => {
   const portalState = usePortalState();
 
   return (
     <PortalContext.Provider value={portalState}>
-      <ToastProvider>
+      <ToastProvider toastBottomOffset={toastBottomOffset}>
         <PortalHost nodes={portalState.nodes} />
         {children}
       </ToastProvider>

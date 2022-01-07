@@ -15,7 +15,7 @@ export type ToastProps = ToastBaseProps;
 
 export const Toast: React.FC<ToastProps> = memo(
   forwardRef<ToastRefBaseProps, React.PropsWithChildren<ToastProps>>(
-    ({ text, action, onWillHide, onDidHide }, ref) => {
+    ({ text, action, onWillHide, onDidHide, bottomOffset }, ref) => {
       const [{ opacity, bottom }, animateIn, animateOut] = useToastAnimation();
       const spacing = useSpacingScale();
 
@@ -61,7 +61,7 @@ export const Toast: React.FC<ToastProps> = memo(
             spacing={2}
             position="absolute"
             alignSelf="center"
-            bottom={spacing['2']}
+            bottom={bottomOffset ?? spacing['2']}
             zIndex={zIndex.overlays.portal}
             maxWidth="100%"
             dangerouslySetStyle={{

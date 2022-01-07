@@ -1,6 +1,7 @@
 import { OverlayLifecycleProps } from './OverlayLifecycleProps';
 import { NoopFn } from './Helpers';
 import { SharedProps } from './SharedProps';
+import { DimensionValue } from './DimensionStyles';
 
 export type ToastText = string;
 export type ToastDuration = {
@@ -28,6 +29,10 @@ export type ToastBaseOptions = {
    * Optional toast action
    */
   action?: ToastAction;
+  /**
+   * Bottom offset postion
+   */
+  bottomOffset?: DimensionValue;
 } & Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'>;
 
 export type ToastOptions = ToastBaseOptions & ToastDuration;

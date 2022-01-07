@@ -1,6 +1,6 @@
-import React, { createContext } from 'react';
+import React, { createContext, cloneElement, isValidElement } from 'react';
 import { useToastQueue, ToastNode } from './useToastQueue';
-import { NoopFn } from '../types';
+import { NoopFn, DimensionValue } from '../types';
 
 export type ToastProviderStates = {
   activeToast?: ToastNode;
@@ -9,6 +9,10 @@ export type ToastProviderStates = {
   clearToastQueue: NoopFn;
   pauseTimer: NoopFn;
   resumeTimer: NoopFn;
+};
+
+export type ToastProviderProps = {
+  toastBottomOffset?: DimensionValue;
 };
 
 export const ToastContext = createContext<ToastProviderStates>({
@@ -20,14 +24,18 @@ export const ToastContext = createContext<ToastProviderStates>({
   resumeTimer: () => {},
 });
 
-export const ToastProvider: React.FC = ({ children }) => {
+export const ToastProvider: React.FC<ToastProviderProps> = ({ children, toastBottomOffset }) => {
   const toastState = useToastQueue();
+
+  const element = toastState.activeToast?.element;
 
   return (
     <ToastContext.Provider value={toastState}>
       {children}
       {/* render as the last element for it to work on android */}
-      {toastState.activeToast?.element}
+      {isValidElement(element) && toastBottomOffset
+        ? cloneElement(element, { bottomOffset: toastBottomOffset })
+        : element}
     </ToastContext.Provider>
   );
 };
