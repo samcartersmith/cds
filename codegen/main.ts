@@ -40,11 +40,6 @@ async function codegen() {
         dest: 'fonts/fonts.css',
         data: Type.fontFaceCss,
       },
-      // TODO: Remove when fontsBeta is deprecated
-      {
-        dest: 'fonts/fonts-beta.css',
-        data: Type.fontFaceCss,
-      },
     ],
     'css.ejs': [
       {
@@ -102,16 +97,6 @@ async function codegen() {
         data: mapValues(scaleConfig, (_, scale) => {
           return {
             typography: Type.mobile[scale],
-            spacing: Spacing.mobile[scale],
-            control: Control.mobile[scale],
-          };
-        }),
-      },
-      {
-        dest: 'mobile/styles/scaleBeta.ts',
-        data: mapValues(scaleConfig, (_, scale) => {
-          return {
-            typography: Type.mobileBeta[scale],
             spacing: Spacing.mobile[scale],
             control: Control.mobile[scale],
           };

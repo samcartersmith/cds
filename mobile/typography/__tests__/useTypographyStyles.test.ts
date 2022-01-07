@@ -34,13 +34,8 @@ describe('useTypographyStyles', () => {
     });
     expect(result.current).toEqual(large.typography.display2);
   });
-  it('returns the correct mono font-family if fontMigration and mono arg are true', () => {
-    const { result } = renderHook(() => useTypographyStyles('display2', true), {
-      wrapper: FeatureFlagProvider,
-      initialProps: {
-        fontMigration: true,
-      },
-    });
+  it('returns the correct mono font-family if mono arg is true', () => {
+    const { result } = renderHook(() => useTypographyStyles('display2', true));
     expect(result.current.fontFamily).toContain('CoinbaseMono');
   });
 });

@@ -4,11 +4,6 @@ import { createContext } from 'react';
 // Feature Flag tokens
 export const defaultFeatureFlags = {
   /**
-   * Replace Graphik & Inter with Coinbase Sans and Coinbase Display fonts.
-   * @default false
-   */
-  fontMigration: false,
-  /**
    * Conventiently toggle all the Frontier flags at once.
    * @default false
    */

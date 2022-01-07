@@ -29,7 +29,7 @@ const AppContent = () => {
 const App = () => {
   return (
     <SafeAreaProvider>
-      <FeatureFlagProvider fontMigration>
+      <FeatureFlagProvider>
         <DevicePreferencesProvider>
           <PortalProvider>
             <ExamplesSearchProvider>

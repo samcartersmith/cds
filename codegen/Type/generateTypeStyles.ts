@@ -1,37 +1,76 @@
-import { kebabCase, mapKeys, mapValues, pascalCase, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
+import {
+  entries,
+  kebabCase,
+  mapKeys,
+  mapValues,
+  pascalCase,
+  toCssVar,
+  toCssVarFn,
+} from '@cbhq/cds-utils';
+import { fromPairs } from 'lodash';
 import {
   typographyConfig,
   TypographyConfig,
+  fontFamilies,
   fontWeights,
-  FallbackStack,
+  xHeight,
   fallbackStack,
 } from '../configs/typographyConfig';
 
 import { scaleConfig } from '../configs/scaleConfig';
-import { calculateLetterSpacing, calculateMinFontSize, round } from './utils';
+import { calculateMinFontSize, round } from './utils';
 
-type FontFamily = 'Graphik' | 'Inter';
+type FontFamilies = typeof fontFamilies;
+type FontWeights = typeof fontWeights;
+type FontWeightName = keyof FontWeights;
+type FontWeight = FontWeights[FontWeightName];
+type FontFamily = FontFamilies[keyof FontFamilies]['fontFamily'];
+type FontFamilyMobile = `${FontFamily}-${FontWeightName}`;
 
 type TypographyStyles = {
-  fontFamily?: `${FontFamily}-${keyof typeof fontWeights}` | `${FontFamily}, ${FallbackStack}`;
+  fontFamily?: FontFamilyMobile | string;
   // Mobile doesn't need font weight because the font family should include the weight
-  fontWeight?: typeof fontWeights[keyof typeof fontWeights];
+  fontWeight?: FontWeight;
   fontSize: string | number;
-  lineHeight: string | number;
   textTransform?: string;
-  letterSpacing?: string | number;
+  lineHeight: string | number;
 };
 
+function getFontFamilyName(size: number | string) {
+  const sizeAsNumber: number = typeof size === 'string' ? parseFloat(size.replace('px', '')) : size;
+  if (sizeAsNumber >= fontFamilies.display.minimum) {
+    return 'display';
+  }
+  if (sizeAsNumber >= fontFamilies.sans.minimum) {
+    return 'sans';
+  }
+  return 'text';
+}
+
+const fallbackCssId = `cds-font-fallback`;
+const fontFamilyCssVars = mapValues(fontFamilies, (value) => {
+  const name = `cds-font-${value.name}` as const;
+  return {
+    setter: [toCssVar(name), `${value.fontFamily}, ${toCssVarFn(fallbackCssId)}`] as [
+      string,
+      string,
+    ],
+    getter: toCssVarFn(name),
+  };
+});
+
+function getFontFamilyStyles(size: number | string, fontWeight: FontWeightName, mobile: boolean) {
+  const familyName = getFontFamilyName(size);
+  if (mobile) {
+    const config = fontFamilies[familyName];
+    return { fontFamily: `${config.fontFamily}-${fontWeight}` as const };
+  }
+  const fontFamily = fontFamilyCssVars[familyName].getter;
+  return { fontWeight: fontWeights[fontWeight], fontFamily };
+}
+
 const calculateVariantStyle = (
-  {
-    baseFontSize,
-    fontFamily,
-    fontWeight,
-    allowAllCaps,
-    disableMinimums,
-    leading,
-    xHeight,
-  }: TypographyConfig,
+  { baseFontSize, fontWeight, allowAllCaps, disableMinimums, leading }: TypographyConfig,
   scaleConversion: number,
   { mobile }: { mobile: boolean } = { mobile: false },
 ) => {
@@ -40,21 +79,17 @@ const calculateVariantStyle = (
   const roundedLineHeight = round(rawFontSize + leading);
   const defaultFontSize = mobile ? rawFontSize : `${rawFontSize}px`;
   const defaultLineHeight = mobile ? roundedLineHeight : `${roundedLineHeight}px`;
-  const defaultLetterSpacing = calculateLetterSpacing(rawFontSize, mobile);
 
   // check to see what minimum font sizes are for lowercase and upper case letters
-  const minLowerCaseFontSize = Math.ceil(calculateMinFontSize(xHeight));
+  const minLowerCaseFontSize = Math.ceil(calculateMinFontSize(xHeight.text));
   const minLowercaseLineHeight = round(minLowerCaseFontSize + leading);
-  const minLowercaseLetterSpacing = calculateLetterSpacing(minLowerCaseFontSize, mobile);
 
   const minUpperCaseFontSize = Math.ceil(calculateMinFontSize(1));
   const minUpperCaseLineHeight = round(minUpperCaseFontSize + leading);
-  const minUpperCaseLetterSpacing = calculateLetterSpacing(minUpperCaseFontSize, mobile);
 
   const lowercase = {
     fontSize: defaultFontSize,
     lineHeight: defaultLineHeight,
-    letterSpacing: defaultLetterSpacing,
     textTransform: 'none',
   };
 
@@ -66,7 +101,6 @@ const calculateVariantStyle = (
   const adjustedLowercase = {
     fontSize: mobile ? minLowerCaseFontSize : `${minLowerCaseFontSize}px`,
     lineHeight: mobile ? minLowercaseLineHeight : `${minLowercaseLineHeight}px`,
-    letterSpacing: minLowercaseLetterSpacing,
     textTransform: 'none',
   };
 
@@ -74,7 +108,6 @@ const calculateVariantStyle = (
     fontSize: mobile ? minUpperCaseFontSize : `${minUpperCaseFontSize}px`,
     lineHeight: mobile ? minUpperCaseLineHeight : `${minUpperCaseLineHeight}px`,
     textTransform: 'uppercase',
-    letterSpacing: minUpperCaseLetterSpacing,
   };
 
   const lowercasePasses = rawFontSize >= minLowerCaseFontSize;
@@ -91,17 +124,10 @@ const calculateVariantStyle = (
     styles = lowercase;
   }
 
-  if (mobile) {
-    // mobile will not be using letter spacing and font weight is baked into the font family name.
-    delete styles.letterSpacing;
-    styles.fontFamily = `${fontFamily}-${fontWeight}` as const;
-  } else {
-    // web doesn't need font-family in scale styles.
-    styles.fontWeight = fontWeights[fontWeight];
-    styles.fontFamily = `${fontFamily}, ${fallbackStack}` as const;
-  }
-
-  return styles;
+  return {
+    ...styles,
+    ...getFontFamilyStyles(styles.fontSize, fontWeight, mobile),
+  };
 };
 
 // Codegen data
@@ -145,3 +171,15 @@ export const typographyCss = mapValues(
 export const typographyPascalCaseConfig = mapKeys(typographyConfig, (_, variantName) =>
   pascalCase(variantName),
 );
+
+export const fontFamilyCssVariables = mapValues(fontFamilyCssVars, (val) => val.getter);
+export const fontFaceCss = {
+  fonts: entries(fontFamilies).map(([, value]) => value.fontFamily),
+  css: {
+    ':root': fromPairs([
+      [toCssVar(fallbackCssId), fallbackStack] as [string, string],
+      ...Object.values(fontFamilyCssVars).map((item) => item.setter),
+    ]),
+  },
+};
+export const fontFamilyMobileTokens = mapValues(fontFamilies, (val) => val.fontFamily);

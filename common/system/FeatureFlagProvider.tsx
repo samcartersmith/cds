@@ -46,7 +46,6 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
     frontierColor,
     frontierCard,
     frontierSparkline,
-    fontMigration,
     frontier,
   }) => {
     const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
@@ -55,7 +54,6 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
     const value = useMemo(() => {
       let featureFlags = defaultFeatureFlags;
       const props: { [key in FeatureFlag]: boolean | undefined } = {
-        fontMigration,
         frontier,
         frontierButton,
         frontierCard,
@@ -78,7 +76,6 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
     }, [
       defaultFeatureFlags,
       featureFlagsState,
-      fontMigration,
       frontier,
       frontierButton,
       frontierCard,

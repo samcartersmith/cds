@@ -19,12 +19,10 @@ function getMonoFont(fontFamily: FontFamily) {
 export const useTypographyStyles = (name: Typography, mono?: boolean) => {
   const typographyStyles = useTypographyStylesMap();
   const isFrontier = useFeatureFlag('frontierTypography');
-  const isNewFont = useFeatureFlag('fontMigration');
   return useMemo(() => {
     const finalName = name === 'display2' && isFrontier ? 'display2Frontier' : name;
     const styles = typographyStyles[finalName];
-    // TODO: Remove frontier check once we deprecate Graphik and Inter.
-    const fontFamily = mono && isNewFont ? getMonoFont(styles.fontFamily) : styles.fontFamily;
+    const fontFamily = mono ? getMonoFont(styles.fontFamily) : styles.fontFamily;
     return { ...typographyStyles[finalName], fontFamily };
-  }, [name, isFrontier, typographyStyles, mono, isNewFont]);
+  }, [name, isFrontier, typographyStyles, mono]);
 };
