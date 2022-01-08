@@ -741,4 +741,8 @@ export const versionNumManifest: Record<string, number> = {
   'phoneUnknown-dark': 0,
   'stopLimitOrder-light': 0,
   'stopLimitOrder-dark': 0,
+  'downloadCoinbaseWalletArrow-light': 0,
+  'downloadCoinbaseWalletArrow-dark': 0,
+  'stopLimitOrderDown-dark': 0,
+  'stopLimitOrderDown-light': 0,
 };

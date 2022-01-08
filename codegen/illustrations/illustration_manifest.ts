@@ -5537,5 +5537,33 @@ export const manifestData = {
       spectrum: 'dark',
       versionNum: 0,
     },
+    '5198:1525': {
+      variant: 'spotRectangle',
+      description: 'wallet, phone, arrow, download',
+      name: 'downloadCoinbaseWalletArrow',
+      spectrum: 'light',
+      versionNum: 0,
+    },
+    '5217:1485': {
+      variant: 'spotRectangle',
+      description: '',
+      name: 'downloadCoinbaseWalletArrow',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '5220:1565': {
+      variant: 'heroSquare',
+      description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
+      name: 'stopLimitOrderDown',
+      spectrum: 'dark',
+      versionNum: 0,
+    },
+    '5220:1592': {
+      variant: 'heroSquare',
+      description: 'focus, limit, stoplimitorder, arrow, chart, advanced, advancedtrading ',
+      name: 'stopLimitOrderDown',
+      spectrum: 'light',
+      versionNum: 0,
+    },
   },
 };

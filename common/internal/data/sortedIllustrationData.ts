@@ -741,4 +741,8 @@ export const sortedImg = [
   'phoneUnknown-dark',
   'stopLimitOrder-light',
   'stopLimitOrder-dark',
+  'downloadCoinbaseWalletArrow-light',
+  'downloadCoinbaseWalletArrow-dark',
+  'stopLimitOrderDown-dark',
+  'stopLimitOrderDown-light',
 ] as const;
