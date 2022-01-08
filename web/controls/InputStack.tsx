@@ -20,11 +20,13 @@ const inputBaseAreaStyles = css`
     min-width: 0;
     flex-grow: 2;
     border-color: var(--border-color-unfocused);
+    /* stylelint-disable plugin/no-low-performance-animation-properties */
     transition: box-shadow ${durations.moderate1}ms ease-in-out;
+    /* stylelint-enable plugin/no-low-performance-animation-properties */
 
     &:focus-within {
       border-color: var(--border-color-focused);
-      box-shadow: 0px 0px 0px ${borderWidth.input}px var(--border-color-focused);
+      box-shadow: 0 0 0 ${borderWidth.input}px var(--border-color-focused);
     }
   }
 `;
@@ -33,7 +35,7 @@ const inputBaseAreaStyles = css`
 const persistedFocusStyles = css`
   &&&& {
     border-color: var(--border-color-focused);
-    box-shadow: 0px 0px 0px ${borderWidth.input}px var(--border-color-focused);
+    box-shadow: 0 0 0 ${borderWidth.input}px var(--border-color-focused);
   }
 `;
 

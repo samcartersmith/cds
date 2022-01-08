@@ -22,7 +22,7 @@ const visibleClassName = css`
   display: flex;
   align-items: center;
 
-  // allows text to take full space so it can be aligned correctly (start or end)
+  /* allows text to take full space so it can be aligned correctly (start or end) */
   & > * {
     width: 100%;
     height: 100%;

@@ -17,27 +17,27 @@ const navLinkStyles = css`
     color: ${palette.foreground};
     border-bottom: 2px solid transparent;
 
-    // Disable default transitions from Link
+    /* Disable default transitions from Link */
     .${linkContainerClassName} {
       transition: color 0ms;
     }
 
-    // Hover and pressed state
+    /* Hover and pressed state */
     &:hover,
     &:active {
       color: ${palette.primary};
     }
 
-    // Pressed state
+    /* Pressed state */
     &:active {
       opacity: ${opacityPressed[60]};
     }
 
-    // Current state
+    /* Current state */
     &.current {
       border-bottom-color: ${palette.primary};
 
-      // Don't show hover effect if this item is currently active
+      /* Do not show hover effect if this item is currently active */
       &:hover {
         color: ${palette.foreground};
       }

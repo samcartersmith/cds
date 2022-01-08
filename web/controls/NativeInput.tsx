@@ -55,6 +55,7 @@ const nativeInputBaseStyle = css`
     -moz-appearance: textfield;
   }
 
+  /* stylelint-disable a11y/no-display-none */
   /* clears the "X" from Internet Explorer */
   &[type='search']::-ms-clear {
     display: none;
@@ -73,6 +74,7 @@ const nativeInputBaseStyle = css`
   &[type='search']::-webkit-search-results-decoration {
     display: none;
   }
+  /* stylelint-enable a11y/no-display-none */
 
   &:-webkit-autofill {
     border-radius: ${borderRadius.input}px;

@@ -27,6 +27,7 @@ const fallback = css`
   display: inline-block;
   position: relative;
 
+  /* stylelint-disable plugin/no-low-performance-animation-properties */
   @keyframes shimmer {
     0% {
       background-position: -600px 0;
@@ -36,6 +37,7 @@ const fallback = css`
       background-position: 600px 0;
     }
   }
+  /* stylelint-enable plugin/no-low-performance-animation-properties */
 `;
 
 export type FallbackProps = {

@@ -7,5 +7,10 @@ module.exports = {
       true,
       { ignoreProperties: ['color', 'border-color', 'background-color'] },
     ],
+    'font-family-no-missing-generic-family-keyword': [
+      true,
+      { ignoreFontFamilies: ['CoinbaseIcons'] },
+    ],
+    'property-no-unknown': [true, { ignoreProperties: ['aspect-ratio'] }],
   },
 };

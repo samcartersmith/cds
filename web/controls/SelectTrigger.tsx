@@ -18,11 +18,13 @@ export type SelectTriggerProps = {
 } & Omit<SelectBaseProps, 'children' | 'onPress'>;
 
 const pressableOverrides = css`
+  /* stylelint-disable a11y/content-property-no-static-value */
   &.focus-visible {
     &::before {
       content: none;
     }
   }
+  /* stylelint-enable a11y/content-property-no-static-value */
 `;
 
 export const SelectTrigger = memo(
