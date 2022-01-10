@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.15 (1/10/2022, 12:32 PM PST)
+
+#### 🐞 Fixes
+
+- Process.env checks to ensure process is available. [#47988](https://github.cbhq.net/mono/repo/pull/47988), [CDS-1850](https://jira.coinbase-corp.com/browse/CDS-1850)
+
 ## 0.2.14 (11/18/2021, 04:59 PM PST)
 
 #### 🚀 Updates
