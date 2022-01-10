@@ -1,5 +1,6 @@
 import { RefObject } from 'react';
 import { MotionBaseSpec } from '@cbhq/cds-common';
+import { isStorybook } from '@cbhq/cds-utils';
 import { convertMotionConfig } from './convertMotionConfig';
 
 type MotionSpec = {
@@ -21,7 +22,7 @@ export class Animated {
     return {
       start: async (cb?) => {
         // don't animate anything in percy, it just leads to flakey snapshots
-        const skipAnimation = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
+        const skipAnimation = isStorybook();
         if (skipAnimation) {
           return { finished: true };
         }

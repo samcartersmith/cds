@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
-import { emptyArray, noop } from '@cbhq/cds-utils';
+import { emptyArray, noop, isStorybook } from '@cbhq/cds-utils';
 import { InteractiveSparklineBaseProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
 import { chartCompactHeight, chartHeight } from '@cbhq/cds-common/tokens/sparkline';
@@ -32,7 +32,7 @@ import { ChartPeriodSelector } from './ChartPeriodSelector';
 const customPalette = { line: 'gray20' } as const;
 const DefaultFallback = memo(() => {
   // don't show lottie animation in story book
-  const skipLottie = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
+  const skipLottie = isStorybook();
   return (
     <ThemeProvider palette={customPalette}>
       {!skipLottie && <Lottie autoplay source={chartFallbackPositive} loop />}

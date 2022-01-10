@@ -1,4 +1,4 @@
-import { emptyObject, entries } from '@cbhq/cds-utils';
+import { emptyObject, entries, isProduction } from '@cbhq/cds-utils';
 import React, { useReducer, memo, useMemo } from 'react';
 import {
   FeatureFlagContext,
@@ -30,7 +30,7 @@ function featureFlagReducer(state: FeatureFlagsPartial, action: FeatureFlagDispa
       return newState;
     }
     default: {
-      if (process.env.NODE_ENV === 'production') {
+      if (isProduction()) {
         return state;
       }
       throw new Error('useFeatureFlagUpdater requires `type` to be provided');

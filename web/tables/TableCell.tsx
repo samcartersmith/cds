@@ -2,6 +2,7 @@ import React, { useMemo, memo } from 'react';
 
 import { cx, css } from 'linaria';
 import { CellSpacing } from '@cbhq/cds-common/types';
+import { isProduction } from '@cbhq/cds-utils';
 import { Cell, truncateClassName } from '../cells/Cell';
 import { VStack, HStack } from '../layout';
 import { TextBody, TextLabel2, TextHeadline } from '../typography';
@@ -51,7 +52,7 @@ export const TableCell = memo(
     const smartTitleColor = titleColor ?? color ?? defaultTitleColor;
     const shouldHandleOverflow = !!overflow && !width;
 
-    if (process.env.NODE_ENV !== 'production') {
+    if (!isProduction()) {
       if (children && (title || subtitle)) {
         throw new Error('TableCell: Cannot use `title` or `subtitle` with `children`.');
       }

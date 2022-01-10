@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-
+import { isProduction } from '@cbhq/cds-utils';
 import { RootScalePreferenceContext } from './context';
 
 export const useRootScalePreference = () => {
   const context = useContext(RootScalePreferenceContext);
-  if (process.env.NODE_ENV !== 'production' && !context) {
+  if (!isProduction() && !context) {
     // eslint-disable-next-line no-console
     console.error('Cannot use `useRootScalePreference` outside of RootScalePreferenceProvider');
   }

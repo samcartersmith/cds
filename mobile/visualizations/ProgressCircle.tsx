@@ -12,6 +12,7 @@ import { VisualizationContainerDimension } from '@cbhq/cds-common/types/Visualiz
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
 import { ForwardedRef, SharedProps } from '@cbhq/cds-common';
+import { isTest } from '@cbhq/cds-utils';
 import { VisualizationContainer } from './VisualizationContainer';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Box } from '../layout';
@@ -61,7 +62,7 @@ const ProgressCircleInner: React.FC<ProgressInnerCircleBaseProps> = memo(
       <AnimatedCircle
         testID="cds-progress-circle-inner"
         // This is required because Circle is mocked in the unit test to support testID. The mock does not support refs
-        ref={process.env.NODE_ENV !== 'test' ? circleRef : undefined}
+        ref={!isTest() ? circleRef : undefined}
         strokeDasharray={circumference}
         strokeDashoffset={animatedStrokeDashOffset.current}
         strokeLinecap={progress > 0 ? 'round' : 'butt'}

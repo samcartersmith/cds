@@ -7,6 +7,7 @@ import React, { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { isStorybook } from '@cbhq/cds-utils';
 import { Box, VStack } from '../layout';
 import { useDimensions } from '../hooks/useDimensions';
 import { isRtl } from '../utils/isRtl';
@@ -94,7 +95,7 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
 
 export const ProgressBarWithFloatLabel: React.FC<ProgressBarWithFloatLabelProps> = memo(
   ({ label, labelPlacement = 'above', progress, disabled, children, testID }) => {
-    const skipLabel = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
+    const skipLabel = isStorybook();
     const progressBarFloatLabel = !skipLabel && (
       <ProgressBarFloatLabel label={label} progress={progress} disabled={disabled} />
     );

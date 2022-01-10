@@ -8,6 +8,7 @@
         "patterns": ["@cbhq/cds-mobile/*"]
       }
     ],
+    "no-process-env": "error",
     "@cbhq/prefer-react-named-module-import": "off"
   }
 }

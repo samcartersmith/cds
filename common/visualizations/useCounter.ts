@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { isStorybook } from '@cbhq/cds-utils';
 
 export type UseCounterParams = {
   startNum: number;
@@ -7,7 +8,7 @@ export type UseCounterParams = {
 };
 
 export const useCounter = ({ startNum, endNum, durationInMillis }: UseCounterParams) => {
-  const skipAnimation = Boolean(process.env.STORYBOOK_SKIP_ANIMATION);
+  const skipAnimation = isStorybook();
   const [count, setCount] = useState(skipAnimation ? endNum : startNum);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 

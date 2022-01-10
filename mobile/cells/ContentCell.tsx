@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import { ContentCellBaseProps } from '@cbhq/cds-common';
+import { isProduction } from '@cbhq/cds-utils';
 
 import { Box, HStack, VStack } from '../layout';
 import { TextHeadline, TextBody, TextLabel2 } from '../typography';
@@ -20,7 +21,7 @@ export const ContentCell = memo(function ContentCell({
   subtitle,
   ...props
 }: ContentCellProps) {
-  if (process.env.NODE_ENV !== 'production') {
+  if (!isProduction()) {
     if (meta && !title && !subtitle) {
       // eslint-disable-next-line no-console
       console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');

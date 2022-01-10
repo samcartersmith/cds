@@ -1,3 +1,4 @@
+/* eslint-disable no-process-env */
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useFallbackShape } from '../useFallbackShape';

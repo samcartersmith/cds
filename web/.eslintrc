@@ -8,6 +8,7 @@
         "patterns": ["@cbhq/cds-web/*"]
       }
     ],
+    "no-process-env": "error",
     "@cbhq/prefer-react-named-module-import": "off"
   }
 }

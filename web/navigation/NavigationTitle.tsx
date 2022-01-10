@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { isProduction } from '@cbhq/cds-utils';
 import { TextTitle1, TextProps } from '../typography';
 
 export type NavigationTitleProps = {
@@ -7,7 +8,7 @@ export type NavigationTitleProps = {
 
 // TODO if/when we eventually handle the router, this should also setup html meta attrs for SEO
 export const NavigationTitle = memo((props: NavigationTitleProps) => {
-  if (process.env.NODE_ENV !== 'production') {
+  if (!isProduction()) {
     if (typeof props.children !== 'string') {
       throw new Error('NavigationTitle: Children must be a string');
     }

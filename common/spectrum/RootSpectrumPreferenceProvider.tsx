@@ -1,4 +1,5 @@
 import React, { memo, useContext, useState } from 'react';
+import { isProduction } from '@cbhq/cds-utils';
 import { RootSpectrumPreference } from '../types';
 
 import { RootSpectrumPreferenceContext, RootSpectrumPreferenceUpdaterContext } from './context';
@@ -14,7 +15,7 @@ export const RootSpectrumPreferenceProvider: React.FC<RootSpectrumPreferenceProv
     const context = useContext(RootSpectrumPreferenceContext);
 
     /** Guarantee we only have a single RootScaleContext  */
-    if (process.env.NODE_ENV !== 'production' && context) {
+    if (!isProduction() && context) {
       // eslint-disable-next-line no-console
       console.error(
         'Multiple RootSpectrumPreferenceProviders were rendered and there should only be one. Ensure there is a single RootSpectrumPreferenceProvider to resolve.',

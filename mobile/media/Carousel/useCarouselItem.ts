@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { noop } from '@cbhq/cds-utils';
+import { noop, isProduction } from '@cbhq/cds-utils';
 
 import { CarouselItemContext } from './CarouselItemContext';
 import type { CarouselItemContextValue } from './types';
@@ -9,7 +9,7 @@ import type { CarouselItemContextValue } from './types';
 export const useCarouselItem = (): CarouselItemContextValue => {
   const context = useContext(CarouselItemContext);
   if (context === undefined) {
-    if (process.env.NODE_ENV !== 'production') {
+    if (!isProduction()) {
       // eslint-disable-next-line no-console
       console.error('useCarouselItem: Cannot use `useCarouselItem` outside of Carousel component.');
     }
