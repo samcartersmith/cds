@@ -1,5 +1,5 @@
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
-import React, { useState, memo, forwardRef, ForwardedRef, useMemo } from 'react';
+import React, { useState, memo, forwardRef, ForwardedRef } from 'react';
 import {
   TextInputProps as RNTextInputProps,
   NativeSyntheticEvent,
@@ -8,18 +8,17 @@ import {
 } from 'react-native';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+
+import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
-
 import { InputStack } from './InputStack';
-
 import { Box } from '../layout/Box';
 import { InputLabel } from './InputLabel';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
 import { TextInputFocusVariantContext } from './context';
-import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 
 export type TextInputProps = TextInputBaseProps & SharedAccessibilityProps & RNTextInputProps;
 
@@ -46,7 +45,7 @@ export const TextInput = memo(
     ) => {
       const [focused, setFocused] = useState(false);
       const focusedVariant = useInputVariant(focused, variant);
-      const { borderColor, borderWidth, margin } = useInputBorderStyle(
+      const { borderFocusedStyle, borderUnfocusedStyle } = useInputBorderStyle(
         focused,
         variant,
         focusedVariant,
@@ -74,14 +73,6 @@ export const TextInput = memo(
         spacingStart: 0.5,
       });
 
-      const borderStyle = useMemo(() => {
-        return {
-          borderColor,
-          borderWidth,
-          margin,
-        };
-      }, [borderColor, borderWidth, margin]);
-
       return (
         <InputStack
           testID={testID}
@@ -89,7 +80,9 @@ export const TextInput = memo(
           borderRadius={borderRadius}
           disabled={disabled}
           variant={focusedVariant}
-          borderStyle={borderStyle}
+          borderStyle={borderUnfocusedStyle}
+          borderFocusedStyle={borderFocusedStyle}
+          focused={focused}
           inputNode={
             <NativeInput
               containerSpacing={start ? startSpacing : {}}

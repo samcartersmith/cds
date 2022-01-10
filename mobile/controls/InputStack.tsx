@@ -5,15 +5,19 @@ import { Animated, ViewStyle, StyleProp } from 'react-native';
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/border';
+import { inputBorderWidth, focusedInputBorderWidth } from '@cbhq/cds-common/tokens/input';
 
 import { usePalette } from '../hooks/usePalette';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { DangerouslySetStyle } from '../types';
+import { useLayout } from '../hooks/useLayout';
 
 export type InputStackProps = {
   /** Adds border styling to input  */
   borderStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
+  /** Border overlay to animate border when focused */
+  borderFocusedStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
 } & InputStackBaseProps &
   DangerouslySetStyle<ViewStyle>;
 
@@ -32,9 +36,12 @@ export const InputStack = memo(function InputStack({
   labelNode,
   testID = '',
   borderRadius = 'input',
+  borderFocusedStyle,
+  focused,
   ...props
 }: InputStackProps) {
   const palette = usePalette();
+  const [inputAreaSize, onInputAreaLayout] = useLayout();
 
   const inputAreaStyle: ViewStyle = useMemo(() => {
     const inputBorderRadius: ViewStyle = {
@@ -67,12 +74,36 @@ export const InputStack = memo(function InputStack({
     return [inputAreaStyle, borderStyle];
   }, [borderStyle, inputAreaStyle]);
 
+  const borderFocusedStyles: Animated.WithAnimatedValue<StyleProp<ViewStyle>> = useMemo(() => {
+    return [
+      inputAreaStyle,
+      borderFocusedStyle,
+      {
+        transform: [
+          { translateX: inputAreaSize.x - inputBorderWidth },
+          { translateY: inputAreaSize.y - inputBorderWidth },
+        ],
+        width: inputAreaSize.width + focusedInputBorderWidth,
+        height: inputAreaSize.height + focusedInputBorderWidth,
+        x: inputAreaSize.x,
+        y: inputAreaSize.y,
+        position: 'absolute',
+        borderWidth: focusedInputBorderWidth,
+      },
+    ];
+  }, [borderFocusedStyle, inputAreaSize, inputAreaStyle]);
+
   return (
     <VStack testID={testID} width={width} gap={0.5} {...props}>
       {!!labelNode && <>{labelNode}</>}
       <HStack opacity={disabled ? opacityDisabled : 1}>
+        {focused && <Animated.View style={borderFocusedStyles} />}
         {!!prependNode && <>{prependNode}</>}
-        <Animated.View testID={testID && `${testID}-input-area`} style={inputAreaStyles}>
+        <Animated.View
+          onLayout={onInputAreaLayout}
+          testID={testID && `${testID}-input-area`}
+          style={inputAreaStyles}
+        >
           {!!startNode && <>{startNode}</>}
           {inputNode}
           {!!endNode && <>{endNode}</>}

@@ -40,7 +40,8 @@ export const Select = memo(
         useRotateAnimation(animateCaretInConfig, animateCaretOutConfig, 180);
       const [isSelectTrayOpen, toggleSelectTray] = useToggler(false);
       const focusedVariant = useInputVariant(!!isSelectTrayOpen, variant);
-      const { borderColor, borderWidth, margin } = useInputBorderStyle(
+
+      const { borderFocusedStyle, borderUnfocusedStyle } = useInputBorderStyle(
         !!isSelectTrayOpen,
         variant,
         focusedVariant,
@@ -77,11 +78,9 @@ export const Select = memo(
               width={width}
               disabled={disabled}
               variant={focusedVariant}
-              borderStyle={{
-                borderColor,
-                borderWidth,
-                margin,
-              }}
+              borderStyle={borderUnfocusedStyle}
+              borderFocusedStyle={borderFocusedStyle}
+              focused={isSelectTrayOpen}
               animated
               startNode={
                 compact && (

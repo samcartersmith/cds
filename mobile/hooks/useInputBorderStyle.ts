@@ -1,5 +1,7 @@
 import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
+
+import { inputBorderWidth } from '@cbhq/cds-common/tokens/input';
 import { useInputBorderAnimation } from './useInputBorderAnimation';
 
 /**
@@ -11,8 +13,29 @@ export const useInputBorderStyle = (
   initialVariant: InputVariant,
   focusedVariant: InputVariant,
 ) => {
-  const { animateInputBorderIn, animateInputBorderOut, interpolatedValues } =
-    useInputBorderAnimation(initialVariant, focusedVariant);
+  const {
+    animateInputBorderIn,
+    animateInputBorderOut,
+    focusedBorderRgba,
+    unFocusedBorderRgba,
+    focusedBorderOpacity,
+  } = useInputBorderAnimation(initialVariant, focusedVariant);
+
+  /** Border style for when input is not focused */
+  const borderUnfocusedStyle = useMemo(() => {
+    return {
+      borderColor: focused ? focusedBorderRgba : unFocusedBorderRgba,
+      borderWidth: inputBorderWidth,
+    };
+  }, [focused, focusedBorderRgba, unFocusedBorderRgba]);
+
+  /** Border style for when input is focused */
+  const borderFocusedStyle = useMemo(() => {
+    return {
+      opacity: focusedBorderOpacity,
+      borderColor: focusedBorderRgba,
+    };
+  }, [focusedBorderOpacity, focusedBorderRgba]);
 
   useEffect(() => {
     if (focused) {
@@ -24,5 +47,10 @@ export const useInputBorderStyle = (
     }
   }, [animateInputBorderIn, animateInputBorderOut, focused]);
 
-  return interpolatedValues;
+  return useMemo(() => {
+    return {
+      borderUnfocusedStyle,
+      borderFocusedStyle,
+    };
+  }, [borderUnfocusedStyle, borderFocusedStyle]);
 };
