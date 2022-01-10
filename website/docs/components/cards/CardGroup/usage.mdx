@@ -9,12 +9,12 @@ function Example() {
     action: 'Start gifting',
   };
   return (
-    <ResponsiveArtboard>
-      <CardGroup>
+    <ResponsiveExample>
+      <CardGroup borderedVertical>
         <FeatureEntryCard {...cardProps} />
         <FeatureEntryCard {...cardProps} />
       </CardGroup>
-    </ResponsiveArtboard>
+    </ResponsiveExample>
   );
 }
 ```
@@ -33,12 +33,12 @@ function Example() {
     action: 'Start gifting',
   };
   return (
-    <ResponsiveArtboard>
+    <ResponsiveExample>
       <CardGroup divider={null}>
         <FeatureEntryCard {...cardProps} />
         <FeatureEntryCard {...cardProps} />
       </CardGroup>
-    </ResponsiveArtboard>
+    </ResponsiveExample>
   );
 }
 ```
@@ -60,12 +60,12 @@ function Example() {
   );
 
   return (
-    <ResponsiveArtboard>
+    <ResponsiveExample>
       <CardGroup divider={CustomDivider}>
         <FeatureEntryCard {...cardProps} />
         <FeatureEntryCard {...cardProps} />
       </CardGroup>
-    </ResponsiveArtboard>
+    </ResponsiveExample>
   );
 }
 ```
@@ -94,12 +94,12 @@ function Example() {
   }, []);
 
   return (
-    <ResponsiveArtboard>
+    <ResponsiveExample>
       <CardGroup renderItem={customRenderItem}>
         <FeatureEntryCard {...cardProps} />
         <FeatureEntryCard {...cardProps} />
       </CardGroup>
-    </ResponsiveArtboard>
+    </ResponsiveExample>
   );
 }
 ```

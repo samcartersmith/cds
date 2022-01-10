@@ -4,11 +4,10 @@ import { Switch } from '@cbhq/cds-web/controls';
 import { Spacer } from '@cbhq/cds-web/layout';
 
 import { useFeatureFlagUpdater } from '@cbhq/cds-common/system/useFeatureFlagUpdater';
-import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
-import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+import useThemeContext from '@theme/hooks/useThemeContext';
 
 export type ThemeTogglesProps = {
   showFrontier?: boolean;
@@ -16,17 +15,16 @@ export type ThemeTogglesProps = {
 };
 
 export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier, hideDense }) => {
-  const spectrum = useRootSpectrum();
   const scale = useRootScale();
-  const spectrumUpdate = useRootSpectrumPreferenceUpdater();
+  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const scaleUpdate = useRootScalePreferenceUpdater();
   const featureFlagUpdate = useFeatureFlagUpdater();
   const hasFrontier = useFeatureFlag('frontier');
 
   const toggleSpectrum = useCallback(() => {
-    const newSpectrum = spectrum === 'dark' ? 'light' : 'dark';
-    spectrumUpdate(newSpectrum);
-  }, [spectrum, spectrumUpdate]);
+    const updateFn = isDarkTheme ? setLightTheme : setDarkTheme;
+    updateFn();
+  }, [setDarkTheme, setLightTheme, isDarkTheme]);
 
   const toggleScale = useCallback(() => {
     const newScale = scale === 'large' ? 'medium' : 'large';
@@ -39,7 +37,7 @@ export const ThemeToggles: React.FC<ThemeTogglesProps> = memo(({ showFrontier, h
 
   return (
     <>
-      <Switch onChange={toggleSpectrum} checked={spectrum === 'dark'}>
+      <Switch onChange={toggleSpectrum} checked={isDarkTheme}>
         Dark Spectrum
       </Switch>
       {!hideDense && (

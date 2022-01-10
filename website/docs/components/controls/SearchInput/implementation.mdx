@@ -96,6 +96,19 @@ Toggles input interactability and opacity
 
 <ComponentDetails componentName="SearchInput" templateName="prop-disabled" />
 
+### onChangeText
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="onChangeText"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SearchInput" templateName="prop-onChangeText" />
+
 ### onClear
 
 <ApiDetails
@@ -103,21 +116,21 @@ Toggles input interactability and opacity
   propertyName="onClear"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
+  mobileOptions={['(event: GestureResponderEvent) => void']}
   webOptions={['MouseEventHandler<Element>']}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-onClear" />
 
-### onSearch <Badge variant="mobile" />
+### onSearch
 
 <ApiDetails
   componentName="SearchInput"
   propertyName="onSearch"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
-  webOptions={[]}
+  mobileOptions={['(str: string) => void']}
+  webOptions={['(text: string) => void']}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-onSearch" />

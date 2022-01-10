@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { CardGroup, FeedCard } from '@cbhq/cds-web/cards';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
-import { ResponsiveArtboard } from ':cds-website/components/ResponsiveArtboard';
+import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 
 export function CardDemo() {
   // eslint-disable-next-line no-console
@@ -28,12 +28,12 @@ export function CardDemo() {
   }, []);
 
   return (
-    <ResponsiveArtboard notInLiveEditor>
+    <ResponsiveExample notInLiveEditor>
       <CardGroup>
         {demoCard}
         {demoCard}
         {demoCard}
       </CardGroup>
-    </ResponsiveArtboard>
+    </ResponsiveExample>
   );
 }

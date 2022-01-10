@@ -1,4 +1,4 @@
-import React, { createContext, memo, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, memo, useContext, useEffect, useMemo, useState } from 'react';
 
 import { SetState } from '@cbhq/cds-common/types';
 import { noop } from '@cbhq/cds-utils';
@@ -8,6 +8,7 @@ export type TOCItem = {
   readonly value: string;
   readonly id: string;
   readonly children: TOCItem[];
+  readonly level: number;
 };
 
 type RightSidebarItems = TOCItem[] | undefined;

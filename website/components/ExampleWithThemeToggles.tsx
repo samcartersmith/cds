@@ -11,7 +11,7 @@ export const ExampleWithThemeToggles: React.FC<ThemeTogglesProps> = memo(
     const scale = useRootScale();
     return (
       /** Remove the gap that ReactLiveScope adds to the live editor */
-      <div style={{ margin: '-1rem' }}>
+      <div>
         <ThemeProvider scale="large">
           <VStack spacingVertical={2} spacingHorizontal={3} background>
             <ThemeProvider scale="xSmall">

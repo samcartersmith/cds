@@ -65,6 +65,21 @@ Is the element currenty loading.
 
 <ComponentDetails componentName="MenuItem" templateName="prop-loading" />
 
+### onBlur <Badge variant="web" />
+
+Handler called when the MenuItem is blurred Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="onBlur"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(event: FocusEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-onBlur" />
+
 ### onChange <Badge variant="web" />
 
 Callback that is fired whenever a select option is selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()

@@ -341,6 +341,21 @@ Reduce horizontal offset if parent container already has spacing.
 
 <ComponentDetails componentName="SelectOption" templateName="prop-offsetHorizontal" />
 
+### onBlur <Badge variant="web" />
+
+Handler called when the MenuItem is blurred Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="onBlur"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(event: FocusEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-onBlur" />
+
 ### onChange <Badge variant="web" />
 
 Callback that is fired whenever a select option is selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()

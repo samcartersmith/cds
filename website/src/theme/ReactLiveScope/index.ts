@@ -57,8 +57,7 @@ import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { ThemeToggles } from ':cds-website/components/ThemeToggles';
 import { ExampleWithThemeToggles } from ':cds-website/components/ExampleWithThemeToggles';
 import { ColorTile } from ':cds-website/components/ColorTile';
-import { PatternArtboard } from ':cds-website/components/PatternArtboard';
-import { ResponsiveArtboard } from ':cds-website/components/ResponsiveArtboard';
+import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 import { TypographySheet } from ':cds-website/components/TypographySheet';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { LottieSheet } from ':cds-website/docs/components/animation/Lottie/LottieSheet';
@@ -145,8 +144,7 @@ const ReactLiveScope = {
   ExampleWithThemeToggles,
   ExampleBox,
   ThemeToggles,
-  Artboard: PatternArtboard,
-  ResponsiveArtboard,
+  ResponsiveExample,
   TypographySheet,
   PaletteSheet,
   LottieSheet,

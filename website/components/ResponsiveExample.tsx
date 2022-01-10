@@ -34,13 +34,15 @@ const options = {
 
 const scales = ['large', 'xSmall', 'small', 'medium', 'xLarge', 'xxLarge', 'xxxLarge'] as const;
 
-export function ResponsiveArtboard({
+export function ResponsiveExample({
   children,
   notInLiveEditor = false,
+  noSpacing,
   ...featureFlags
 }: {
   children?: React.ReactNode;
   notInLiveEditor?: boolean;
+  noSpacing?: boolean;
 } & FeatureFlagProviderProps) {
   const [selectedId, setValue] = useState<ResponsiveId>('largeMobile');
   const [selectedScale, setScale] = useState<Scale>('large');
@@ -60,7 +62,7 @@ export function ResponsiveArtboard({
         <Spacer />
         <ThemeProvider scale={selectedScale} spectrum={darkModeEnabled ? 'dark' : 'light'}>
           <Box
-            spacingHorizontal={gutter}
+            spacing={gutter}
             overflow="scroll"
             background
             bordered
