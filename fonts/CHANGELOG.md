@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.5.0 (1/10/2022, 09:23 AM PST)
+
+#### 💥 Breaking
+
+- Remove fontMigration feature flag and old Graphik,Inter fonts. [#47636](https://github.cbhq.net/mono/repo/pull/47636), [CDS-1818](https://jira.coinbase-corp.com/browse/CDS-1818)
+
 ## 0.4.0 (11/2/2021, 10:28 AM PST)
 
 #### 💥 Breaking

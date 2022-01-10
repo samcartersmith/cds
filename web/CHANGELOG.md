@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.6 (1/10/2022, 09:23 AM PST)
+
+#### 🚀 Updates
+
+- Web based InteractiveSparkline. [#47472](https://github.cbhq.net/mono/repo/pull/47472)
+
+#### 🐞 Fixes
+
+- **[Illustration]** Jan 7th, 2022 Illustration Update. [#47935](https://github.cbhq.net/mono/repo/pull/47935)
+- **[SearchInput]** Fixed clearing returning previous value rather than empty string bug. Added onSearch which is triggered when 'Enter' is pressed. [#47853](https://github.cbhq.net/mono/repo/pull/47853), [CDS-1833](https://jira.coinbase-corp.com/browse/CDS-1833)
+- Web sparkline fixes. [#47812](https://github.cbhq.net/mono/repo/pull/47812)
+- Use the same timezones for chart tresting. [#47779](https://github.cbhq.net/mono/repo/pull/47779)
+- Fixed popover blurring on safari. [#47703](https://github.cbhq.net/mono/repo/pull/47703)
+- Style fixes for select and menu item. [#47339](https://github.cbhq.net/mono/repo/pull/47339)
+- Replace sample avatar image that was removed. [#47340](https://github.cbhq.net/mono/repo/pull/47340)
+
+#### 📘 Misc
+
+- Fix stylelint issues on cds. [#47962](https://github.cbhq.net/mono/repo/pull/47962)
+
 ## 0.32.5 (1/4/2022, 09:25 AM PST)
 
 #### 🐞 Fixes

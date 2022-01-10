@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.36.0 (1/10/2022, 09:23 AM PST)
+
+#### 💥 Breaking
+
+- Remove fontMigration feature flag and old Graphik,Inter fonts. [#47636](https://github.cbhq.net/mono/repo/pull/47636), [CDS-1818](https://jira.coinbase-corp.com/browse/CDS-1818)
+
+#### 🚀 Updates
+
+- Add ChartHeader for mobile. [#47815](https://github.cbhq.net/mono/repo/pull/47815)
+- Add support for toast bottom offset. [#47765](https://github.cbhq.net/mono/repo/pull/47765)
+- Web based InteractiveSparkline. [#47472](https://github.cbhq.net/mono/repo/pull/47472)
+- Added y-axis scaling to InteractiveSparkline. [#46897](https://github.cbhq.net/mono/repo/pull/46897)
+
+#### 🐞 Fixes
+
+- **[Illustration]** Jan 7th, 2022 Illustration Update. [#47935](https://github.cbhq.net/mono/repo/pull/47935)
+- **[SearchInput]** Fixed clearing returning previous value rather than empty string bug. Added onSearch which is triggered when 'Enter' is pressed. [#47853](https://github.cbhq.net/mono/repo/pull/47853), [CDS-1833](https://jira.coinbase-corp.com/browse/CDS-1833)
+- Web sparkline fixes. [#47812](https://github.cbhq.net/mono/repo/pull/47812)
+- Replace sample avatar image that was removed. [#47340](https://github.cbhq.net/mono/repo/pull/47340)
+
 ## 0.35.5 (1/4/2022, 09:25 AM PST)
 
 #### 🐞 Fixes
