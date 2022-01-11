@@ -46,7 +46,7 @@ function ChartMarkerDatesWithGeneric<Period extends string>({
   const setupRef = useCallback((ref: HTMLDivElement) => {
     if (ref) {
       const numberOfLabelsFromWidth = Math.floor(ref.offsetWidth / labelWidth);
-      setNumberOfLabels(numberOfLabelsFromWidth);
+      setNumberOfLabels(Math.max(numberOfLabelsFromWidth, 4));
     }
   }, []);
 

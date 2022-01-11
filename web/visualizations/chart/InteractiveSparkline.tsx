@@ -26,6 +26,7 @@ import { ThemeProvider } from '../../system';
 import { Lottie } from '../../animation';
 import { ChartMarkerDates } from './ChartMarkerDates';
 import { ChartPeriodSelector } from './ChartPeriodSelector';
+import { useDimensions } from '../../hooks/useDimensions';
 
 // We override line palette since default line color is a bit too dark.
 // Changing to gray20 more closely matches the line color currently used in production
@@ -40,6 +41,7 @@ const DefaultFallback = memo(() => {
   );
 });
 
+const mobileLayoutBreakpoint = 650;
 function InteractiveSparklineContentWithGeneric<Period extends string>({
   data,
   periods,
@@ -61,6 +63,9 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
 }: InteractiveSparklineBaseProps<Period>) {
   const innerChartHeight = compact ? chartCompactHeight : chartHeight;
   const { isFallbackVisible, showFallback } = useChartContext();
+  const { observe: containerRef, width: containerWidth } = useDimensions();
+
+  const isMobileLayout = containerWidth > 0 && containerWidth < mobileLayoutBreakpoint;
 
   const color = strokeColor;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
@@ -116,21 +121,36 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
 
   let header;
   if (headerNode) {
-    header = <Box spacingHorizontal={gutter}>{headerNode}</Box>;
+    header = (
+      <Box spacingHorizontal={!isMobileLayout ? gutter : 0} flexGrow={1}>
+        {headerNode}
+      </Box>
+    );
   }
 
+  const periodSelector = (
+    <ChartPeriodSelector
+      periods={periods}
+      selectedPeriod={selectedPeriod}
+      setSelectedPeriod={updatePeriod}
+      color={color}
+    />
+  );
+
   return (
-    <div>
+    <div ref={containerRef}>
       {(!hidePeriodSelector || !!headerNode) && (
-        <Box justifyContent="space-between" spacingBottom={2}>
-          {header ?? <div />}
-          <ChartPeriodSelector
-            periods={periods}
-            selectedPeriod={selectedPeriod}
-            setSelectedPeriod={updatePeriod}
-            color={color}
-          />
-        </Box>
+        <>
+          {isMobileLayout && (
+            <Box spacingBottom={2} width="100%">
+              {periodSelector}
+            </Box>
+          )}
+          <Box justifyContent="space-between" spacingBottom={2}>
+            {header ?? <div />}
+            {!isMobileLayout && <Box flexGrow={0}>{periodSelector}</Box>}
+          </Box>
+        </>
       )}
       <ChartScrubProvider>
         {!!formatHoverDate && (

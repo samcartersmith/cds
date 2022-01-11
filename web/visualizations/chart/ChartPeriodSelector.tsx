@@ -47,7 +47,7 @@ export const ChartPeriodSelector = <Period extends string>({
   });
 
   return (
-    <HStack justifyContent="space-between" spacing={0}>
+    <HStack justifyContent="space-between" width="100%" spacing={0}>
       {periods.map((period) => (
         <ChartPeriod
           key={period.value}

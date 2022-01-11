@@ -9,6 +9,9 @@ import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpol
 import { usePalette } from '../../hooks/usePalette';
 import { TextHeadline, TextDisplay3, TextTitle4 } from '../../typography';
 import { HStack } from '../../layout';
+import { useDimensions } from '../../hooks/useDimensions';
+
+const mobileLayoutBreakpoint = 650;
 
 const ChartHeaderStable = memo(
   forwardRef<ChartHeaderRef, ChartHeaderProps>(
@@ -19,6 +22,9 @@ const ChartHeaderStable = memo(
       const subHeadRef = useRef<HTMLSpanElement>(null);
       const subHeadAccessoryRef = useRef<HTMLSpanElement>(null);
       const palette = usePalette();
+      const { observe: containerRef, width: containerWidth } = useDimensions();
+
+      const isMobileLayout = containerWidth > 0 && containerWidth < mobileLayoutBreakpoint;
 
       const valuesRef = useRef<ChartHeaderValues>({
         title: defaultTitle,
@@ -111,33 +117,39 @@ const ChartHeaderStable = memo(
       const subHeadColorStyles: React.CSSProperties = defaultSubHead
         ? { color: palette[defaultSubHead.variant] }
         : {};
-      const title = (
-        <HStack spacing={0} alignItems="baseline">
-          <TextDisplay3 tabularNumbers as="div" color="foreground" spacingEnd={1}>
-            <span ref={titleRef}>{defaultTitle}</span>
-          </TextDisplay3>
-          {!!defaultSubHead && (
-            <>
-              <TextTitle4 tabularNumbers as="div">
-                <span ref={subHeadIconRef} style={subHeadColorStyles}>
-                  {defaultSubHead.sign}
-                </span>
-                <span ref={subHeadRef} style={subHeadColorStyles}>
-                  {interpolateSubHeadText(defaultSubHead)}
-                </span>
-              </TextTitle4>
-              {!!defaultSubHead.accessoryText && (
-                <TextTitle4 tabularNumbers as="div" color="foregroundMuted" spacingStart={1}>
-                  <span ref={subHeadAccessoryRef}>{defaultSubHead.accessoryText}</span>
-                </TextTitle4>
-              )}
-            </>
+
+      const subHead = !!defaultSubHead && (
+        <div>
+          <TextTitle4 tabularNumbers as="span">
+            <span ref={subHeadIconRef} style={subHeadColorStyles}>
+              {defaultSubHead.sign}
+            </span>
+            <span ref={subHeadRef} style={subHeadColorStyles}>
+              {interpolateSubHeadText(defaultSubHead)}
+            </span>
+          </TextTitle4>
+          {!!defaultSubHead.accessoryText && (
+            <TextTitle4 tabularNumbers as="span" color="foregroundMuted" spacingStart={1}>
+              <span ref={subHeadAccessoryRef}>{defaultSubHead.accessoryText}</span>
+            </TextTitle4>
           )}
-        </HStack>
+        </div>
+      );
+
+      const title = (
+        <>
+          <HStack spacing={0} alignItems="baseline">
+            <TextDisplay3 tabularNumbers as="div" color="foreground" spacingEnd={1}>
+              <span ref={titleRef}>{defaultTitle}</span>
+            </TextDisplay3>
+            {!isMobileLayout && subHead}
+          </HStack>
+          {isMobileLayout && subHead}
+        </>
       );
 
       return (
-        <div data-testid={testID}>
+        <div data-testid={testID} ref={containerRef} style={{ width: '100%' }}>
           {label}
           {title}
         </div>
