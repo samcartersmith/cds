@@ -1,15 +1,19 @@
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
-import React, { useState, memo, forwardRef, ForwardedRef } from 'react';
+import React, { useCallback, useState, memo, forwardRef, ForwardedRef, useRef } from 'react';
 import {
   TextInputProps as RNTextInputProps,
   NativeSyntheticEvent,
   TextInput as RNTextInput,
   TextInputFocusEventData,
+  Pressable,
 } from 'react-native';
+
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
+
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
 import { InputStack } from './InputStack';
@@ -45,6 +49,8 @@ export const TextInput = memo(
     ) => {
       const [focused, setFocused] = useState(false);
       const focusedVariant = useInputVariant(focused, variant);
+      const internalRef = useRef<RNTextInput>(null);
+      const refs = useMergedRef(ref, internalRef);
       const { borderFocusedStyle, borderUnfocusedStyle } = useInputBorderStyle(
         focused,
         variant,
@@ -62,6 +68,11 @@ export const TextInput = memo(
           setFocused(false);
         },
       };
+
+      const handleNodePress = useCallback(() => {
+        setFocused(true);
+        internalRef.current?.focus();
+      }, [setFocused, internalRef]);
 
       /**
        * If startContent exist, the padding
@@ -87,7 +98,7 @@ export const TextInput = memo(
             <NativeInput
               containerSpacing={start ? startSpacing : {}}
               align={align}
-              ref={ref}
+              ref={refs}
               accessibilityLabel={accessibilityLabel ?? label}
               accessibilityHint={accessibilityLabel ?? label}
               disabled={disabled}
@@ -106,28 +117,32 @@ export const TextInput = memo(
           startNode={
             (compact || !!start) && (
               <Box justifyContent="center" alignItems="center">
-                {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
-                {!!start && (
-                  <TextInputFocusVariantContext.Provider value={focusedVariant}>
-                    {start}
-                  </TextInputFocusVariantContext.Provider>
-                )}
+                <Pressable onPress={handleNodePress}>
+                  {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
+                  {!!start && (
+                    <TextInputFocusVariantContext.Provider value={focusedVariant}>
+                      {start}
+                    </TextInputFocusVariantContext.Provider>
+                  )}
+                </Pressable>
               </Box>
             )
           }
           endNode={
             (suffix !== '' || !!end) && (
               <HStack justifyContent="center" alignItems="center" gap={2}>
-                {suffix !== '' && (
-                  <TextLabel1 spacingEnd={2} color="foregroundMuted">
-                    {suffix}
-                  </TextLabel1>
-                )}
-                {!!end && (
-                  <TextInputFocusVariantContext.Provider value={focusedVariant}>
-                    {end}
-                  </TextInputFocusVariantContext.Provider>
-                )}
+                <Pressable onPress={handleNodePress}>
+                  {suffix !== '' && (
+                    <TextLabel1 spacingEnd={2} color="foregroundMuted">
+                      {suffix}
+                    </TextLabel1>
+                  )}
+                  {!!end && (
+                    <TextInputFocusVariantContext.Provider value={focusedVariant}>
+                      {end}
+                    </TextInputFocusVariantContext.Provider>
+                  )}
+                </Pressable>
               </HStack>
             )
           }

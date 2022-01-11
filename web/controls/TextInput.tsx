@@ -1,9 +1,10 @@
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import React, { useCallback, useState, memo, forwardRef } from 'react';
+import React, { useCallback, useState, memo, forwardRef, useRef } from 'react';
 
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { TextLabel1 } from '../typography';
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
@@ -48,6 +49,8 @@ export const TextInput = memo(
   ) {
     const [focused, setFocused] = useState(false);
     const focusedVariant = useInputVariant(focused, variant);
+    const internalRef = useRef<HTMLInputElement>();
+    const refs = useMergedRef(ref, internalRef);
 
     const handleOnFocus = useCallback(
       (e: React.FocusEvent<HTMLInputElement>) => {
@@ -64,6 +67,11 @@ export const TextInput = memo(
       },
       [onBlur],
     );
+
+    const handleNodePress = useCallback(() => {
+      setFocused(true);
+      internalRef.current?.focus();
+    }, [setFocused, internalRef]);
 
     /**
      * If start exist, the padding
@@ -95,7 +103,7 @@ export const TextInput = memo(
               onBlur={handleOnBlur}
               disabled={disabled}
               compact={compact}
-              ref={ref}
+              ref={refs}
               {...htmlInputElmProps}
             />
           }
@@ -109,7 +117,7 @@ export const TextInput = memo(
           labelNode={!compact && !!label && <InputLabel>{label}</InputLabel>}
           startNode={
             (compact || !!start) && (
-              <HStack justifyContent="center" alignItems="center" gap={2}>
+              <HStack onClick={handleNodePress} alignItems="center" justifyContent="center" gap={2}>
                 {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
                 {!!start && <>{start}</>}
               </HStack>
@@ -117,7 +125,7 @@ export const TextInput = memo(
           }
           endNode={
             (suffix !== '' || !!end) && (
-              <HStack justifyContent="center" alignItems="center" gap={2}>
+              <HStack onClick={handleNodePress} alignItems="center" justifyContent="center" gap={2}>
                 {suffix !== '' && (
                   <TextLabel1 spacingEnd={2} as="p" color="foregroundMuted">
                     {suffix}

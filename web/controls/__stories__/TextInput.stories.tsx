@@ -103,7 +103,7 @@ export const Height = function Height() {
 };
 
 export const BorderRadius = function BorderRadius() {
-  const borderRadiuses = ['input'] as const;
+  const borderRadiuses = ['input', 'search'] as const;
 
   return (
     <>
@@ -121,7 +121,12 @@ export const BorderRadius = function BorderRadius() {
 };
 
 export const Disabled = function Disabled() {
-  return <TextInput label="Label" disabled />;
+  return (
+    <>
+      <TextInput label="Label" disabled />
+      <TextInput label="Label" start={<InputIconButton name="add" transparent />} disabled />
+    </>
+  );
 };
 
 export const NoLabel = function NoLabel() {
