@@ -1,38 +1,25 @@
+export const illustrationDimensions = {
+  heroSquare: ['240x240', '200x200'],
+  spotRectangle: ['240x120'],
+  spotSquare: ['120x120'],
+  pictogram: ['48x48', '64x64', '96x96'],
+} as const;
+
+export const illustrationDimensionDefaults = {
+  all: '48x48',
+  heroSquare: '240x240',
+  pictogram: '48x48',
+  spotSquare: '120x120',
+  spotRectangle: '240x120',
+} as const;
+
+/** [width, height] tuples for allowed dimensions */
 export const illustrationSizes = {
-  heroSquare: {
-    '240x240': {
-      width: 240,
-      height: 240,
-    },
-    '200x200': {
-      width: 200,
-      height: 200,
-    },
-  },
-  spotRectangle: {
-    '240x120': {
-      width: 240,
-      height: 120,
-    },
-  },
-  spotSquare: {
-    '120x120': {
-      width: 120,
-      height: 120,
-    },
-  },
-  pictogram: {
-    '48x48': {
-      width: 48,
-      height: 48,
-    },
-    '64x64': {
-      width: 64,
-      height: 64,
-    },
-    '96x96': {
-      width: 96,
-      height: 96,
-    },
-  },
+  '48x48': [48, 48],
+  '64x64': [64, 64],
+  '96x96': [96, 96],
+  '120x120': [120, 120],
+  '200x200': [200, 200],
+  '240x120': [240, 120],
+  '240x240': [240, 240],
 } as const;

@@ -1,17 +1,17 @@
-import { illustrationSizes } from '../tokens/illustrations';
 import { IllustrationVariant } from '../types/IllustrationNames';
+import { IllustrationDimension } from '../types/IllustrationProps';
+import { convertDimensionToSize } from './convertDimensionToSize';
+import { convertSizeWithMultiplier } from './convertSizeWithMultiplier';
 
+/** @deprecated - please use convertDimensionToSize and convertSizeWithMultiplier */
 export const getIllustrationScaledDimension = (
-  dimension: string,
+  dimension: IllustrationDimension,
   illustrationType: IllustrationVariant,
   scaleMultiplier?: number,
 ) => {
-  const { width, height } = illustrationSizes[illustrationType][dimension as never];
-  const scaledWidth = scaleMultiplier ? scaleMultiplier * width : width;
-  const scaledHeight = scaleMultiplier ? scaleMultiplier * height : height;
-
-  return {
-    width: scaledWidth,
-    height: scaledHeight,
-  };
+  const size = convertDimensionToSize(dimension);
+  if (scaleMultiplier) {
+    return convertSizeWithMultiplier(size, scaleMultiplier);
+  }
+  return size;
 };

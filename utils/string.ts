@@ -1,5 +1,5 @@
 import { decamelize, camelize, pascalize } from 'humps';
-import { KebabCase, CamelCase, PascalCase } from 'type-fest';
+import { KebabCase, CamelCase, PascalCase, Split } from 'type-fest';
 
 export const camelCase = <T extends string>(str: T): CamelCase<T> => camelize(str) as CamelCase<T>;
 export const pascalCase = <T extends string>(str: T) => pascalize(str) as PascalCase<typeof str>;
@@ -10,6 +10,10 @@ export const kebabCase = <T extends string>(str: T) =>
 
 export const toCssVar = <T extends string>(str: T) => {
   return `--${kebabCase(str)}` as const;
+};
+
+export const split = <T extends string, K extends string>(str: T, separator: K) => {
+  return str.split(separator) as Split<T, K>;
 };
 
 export const toCssVarFn = <T extends string>(str: T) => {

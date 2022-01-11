@@ -1,20 +1,5 @@
-import React, { memo } from 'react';
+import { createIllustration } from './createIllustration';
 
-import { SpotRectangleProps } from '@cbhq/cds-common/types/IllustrationProps';
-import { getIllustrationScaledDimension } from '@cbhq/cds-common/utils/getIllustrationScaledDimension';
+export type { SpotRectangleProps } from '@cbhq/cds-common/types/IllustrationProps';
 
-import { Illustration } from './Illustration';
-
-export const SpotRectangle = memo(function SpotRectangle({
-  dimension = '240x120',
-  scaleMultiplier,
-  ...props
-}: SpotRectangleProps) {
-  const { width, height } = getIllustrationScaledDimension(
-    dimension,
-    'spotRectangle',
-    scaleMultiplier,
-  );
-
-  return <Illustration width={width} height={height} {...props} />;
-});
+export const SpotRectangle = createIllustration('spotRectangle');

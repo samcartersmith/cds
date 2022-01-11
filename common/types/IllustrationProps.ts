@@ -1,12 +1,11 @@
-import { illustrationSizes } from '../tokens/illustrations';
 import {
   IllustrationHeroSquareNames,
   IllustrationSpotRectangleNames,
   IllustrationPictogramNames,
   IllustrationSpotSquareNames,
-  IllustrationVariant,
 } from './IllustrationNames';
 import { SharedProps } from './SharedProps';
+import { illustrationDimensions } from '../tokens/illustrations';
 
 export type IllustrationNames =
   | IllustrationHeroSquareNames
@@ -14,35 +13,49 @@ export type IllustrationNames =
   | IllustrationPictogramNames
   | IllustrationSpotSquareNames;
 
-export type IllustrationBaseProps = {
-  name: IllustrationNames;
-  /** @internal Do not use! */
-  width?: number;
-  /** @internal Do not use! */
-  height?: number;
-} & SharedProps;
+export type IllustrationNamesMap = {
+  all: IllustrationNames;
+  heroSquare: IllustrationHeroSquareNames;
+  spotRectangle: IllustrationSpotRectangleNames;
+  pictogram: IllustrationPictogramNames;
+  spotSquare: IllustrationSpotSquareNames;
+};
 
-export type Dimension<T extends IllustrationVariant> = keyof typeof illustrationSizes[T];
+type HeroSquareDimension = typeof illustrationDimensions.heroSquare[number];
+type SpotSquareDimension = typeof illustrationDimensions.spotSquare[number];
+type SpotRectangleDimension = typeof illustrationDimensions.spotRectangle[number];
+type PictogramDimension = typeof illustrationDimensions.pictogram[number];
 
-export type IllustrationProps<
-  Name extends IllustrationNames,
-  Variant extends IllustrationVariant,
-> = {
+export type IllustrationDimension =
+  | HeroSquareDimension
+  | SpotSquareDimension
+  | SpotRectangleDimension
+  | PictogramDimension;
+
+export type IllustrationDimensionsMap = {
+  all: IllustrationDimension;
+  heroSquare: HeroSquareDimension;
+  spotSquare: SpotSquareDimension;
+  spotRectangle: SpotRectangleDimension;
+  pictogram: PictogramDimension;
+};
+
+export type IllustrationBaseProps<T extends keyof IllustrationNamesMap> = {
   /** Name of illustration as defined in Figma */
-  name: Name;
+  name: IllustrationNamesMap[T];
   /**
    * Size of illustration given that the size constraint is available in Figma
    * @default pictogram - 48x48, heroSquare - 240x240, spotRectangle - 240x120, spotSquare 120x120
    */
-  dimension?: Dimension<Variant>;
+  dimension?: IllustrationDimensionsMap[T];
   /** Multiply the width & height while maintaining aspect ratio */
   scaleMultiplier?: number;
 } & SharedProps;
 
-export type HeroSquareProps = IllustrationProps<IllustrationHeroSquareNames, 'heroSquare'>;
+export type HeroSquareProps = IllustrationBaseProps<'heroSquare'>;
 
-export type SpotSquareProps = IllustrationProps<IllustrationSpotSquareNames, 'spotSquare'>;
+export type SpotSquareProps = IllustrationBaseProps<'spotSquare'>;
 
-export type PictogramProps = IllustrationProps<IllustrationPictogramNames, 'pictogram'>;
+export type PictogramProps = IllustrationBaseProps<'pictogram'>;
 
-export type SpotRectangleProps = IllustrationProps<IllustrationSpotRectangleNames, 'spotRectangle'>;
+export type SpotRectangleProps = IllustrationBaseProps<'spotRectangle'>;

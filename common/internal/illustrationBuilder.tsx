@@ -8,13 +8,13 @@ import type {
   StackBaseProps,
   TextBaseProps,
 } from '../types';
-import { illustrationSizes } from '../tokens/illustrations';
 import {
   heroSquareNames,
   pictogramNames,
   spotRectangleNames,
   spotSquareNames,
 } from './data/illustrationData';
+import { illustrationDimensions } from '../tokens/illustrations';
 
 export function illustrationBuilder(
   Pictogram: React.ComponentType<PictogramProps>,
@@ -33,9 +33,9 @@ export function illustrationBuilder(
           <VStack key={`${name}_pictogram`}>
             <TextLabel1>{name}</TextLabel1>
             <VStack gap={1}>
-              {Object.keys(illustrationSizes.pictogram).map((dimension) => (
+              {illustrationDimensions.pictogram.map((dimension) => (
                 <VStack key={`${name}_pictogram_${dimension}`}>
-                  <Pictogram name={name} dimension={dimension as never} />
+                  <Pictogram name={name} dimension={dimension} />
                   <TextLabel1>{dimension}</TextLabel1>
                 </VStack>
               ))}
@@ -57,9 +57,9 @@ export function illustrationBuilder(
           <VStack key={`${name}_heroSquare`}>
             <TextLabel1>{name}</TextLabel1>
             <VStack gap={1}>
-              {Object.keys(illustrationSizes.heroSquare).map((dimension) => (
+              {illustrationDimensions.heroSquare.map((dimension) => (
                 <VStack key={`${name}_heroSquare_${dimension}`}>
-                  <HeroSquare name={name} dimension={dimension as never} />
+                  <HeroSquare name={name} dimension={dimension} />
                   <TextLabel1>{dimension}</TextLabel1>
                 </VStack>
               ))}
@@ -81,9 +81,9 @@ export function illustrationBuilder(
           <VStack key={`${name}_spotSquare`}>
             <TextLabel1>{name}</TextLabel1>
             <VStack gap={1}>
-              {Object.keys(illustrationSizes.spotSquare).map((dimension) => (
+              {illustrationDimensions.spotSquare.map((dimension) => (
                 <VStack key={`${name}_spotSquare_${dimension}`}>
-                  <SpotSquare name={name} dimension={dimension as never} />
+                  <SpotSquare name={name} dimension={dimension} />
                 </VStack>
               ))}
             </VStack>
@@ -104,9 +104,9 @@ export function illustrationBuilder(
           <VStack key={`${name}_spotRectangle`}>
             <TextLabel1>{name}</TextLabel1>
             <VStack gap={1}>
-              {Object.keys(illustrationSizes.spotRectangle).map((dimension) => (
+              {illustrationDimensions.spotRectangle.map((dimension) => (
                 <VStack key={`${name}_spotRectangle_${dimension}`}>
-                  <SpotRectangle name={name} dimension={dimension as never} />
+                  <SpotRectangle name={name} dimension={dimension} />
                   <TextLabel1>{dimension}</TextLabel1>
                 </VStack>
               ))}

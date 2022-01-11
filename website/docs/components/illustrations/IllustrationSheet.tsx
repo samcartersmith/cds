@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-import { illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
+import {
+  illustrationDimensionDefaults,
+  illustrationDimensions,
+} from '@cbhq/cds-common/tokens/illustrations';
 import {
   IllustrationHeroSquareNames,
   IllustrationSpotRectangleNames,
@@ -45,8 +48,8 @@ export const IllustrationSheet = function IllustrationSheet({
 }) {
   const [query, setQuery] = useState('');
   const names = variantToNamesMap[variant];
-  const dimensions = illustrationSizes[variant];
-  const defaultVal = Object.keys(dimensions)[0];
+  const dimensions = illustrationDimensions[variant];
+  const defaultVal = illustrationDimensionDefaults[variant];
 
   const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
@@ -65,11 +68,9 @@ export const IllustrationSheet = function IllustrationSheet({
 
       <Tabs
         defaultValue={defaultVal}
-        values={Object.keys(dimensions).map((dim) => ({ label: dim, value: dim }))}
+        values={dimensions.map((dim) => ({ label: dim, value: dim }))}
       >
-        {Object.keys(dimensions).map((dim) => {
-          const { width, height } = dimensions[dim as never];
-
+        {dimensions.map((dim) => {
           return (
             <TabItem key={dim} value={dim}>
               <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
@@ -77,7 +78,7 @@ export const IllustrationSheet = function IllustrationSheet({
                   .filter((name) => name.includes(query))
                   .map((filteredName) => (
                     <VStack spacing={3} alignItems="center" key={filteredName}>
-                      <Illustration name={filteredName} width={width} height={height} />
+                      <Illustration name={filteredName} dimension={dim} />
                       <TextLabel1 align="center" as="p" spacing={2}>
                         {filteredName}
                       </TextLabel1>

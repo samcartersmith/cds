@@ -1,9 +1,8 @@
 import React from 'react';
-
+import { split } from '@cbhq/cds-utils';
 import type {
   BoxBaseProps,
   IllustrationBaseProps,
-  Spectrum,
   StackBaseProps,
   ThemeProviderBaseProps,
   TextBaseProps,
@@ -12,7 +11,7 @@ import type {
 import { sortedImg } from './data/sortedIllustrationData';
 
 export function illustrationPercyBuilder(
-  Illustration: React.ComponentType<IllustrationBaseProps>,
+  Illustration: React.ComponentType<IllustrationBaseProps<'all'>>,
   ThemeProvider: React.ComponentType<ThemeProviderBaseProps>,
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>,
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>,
@@ -29,12 +28,12 @@ export function illustrationPercyBuilder(
         alignItems="center"
       >
         {sortedImg.map((nameAndSpectrum) => {
-          const [name, spectrum] = nameAndSpectrum.split('-');
+          const [name, spectrum] = split(nameAndSpectrum, '-');
           return (
             <VStack gap={1} alignItems="center">
-              <ThemeProvider spectrum={spectrum as Spectrum}>
+              <ThemeProvider spectrum={spectrum}>
                 <Box background="background">
-                  <Illustration name={name as never} width={150} />
+                  <Illustration name={name} dimension="120x120" />
                 </Box>
               </ThemeProvider>
               <TextLabel1>{nameAndSpectrum}</TextLabel1>
