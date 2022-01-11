@@ -6,13 +6,14 @@ import {
   ChartHeaderValues,
   ChartSubHead,
 } from '@cbhq/cds-common/types/ChartHeaderBaseProps';
+import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
 import { useChartHeaderStyles } from './useChartHeaderStyles';
 import { fontScaleProps } from '../../hooks/useDeviceScaleToCdsScale';
 import { HStack } from '../../layout';
 
 export const ChartHeader = memo(
   forwardRef<ChartHeaderRef, ChartHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead }, ref) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID }, ref) => {
       return (
         <ChartHeaderStable
           ref={ref}
@@ -23,25 +24,16 @@ export const ChartHeader = memo(
           defaultLabel={useRef(defaultLabel).current}
           defaultTitle={useRef(defaultTitle).current}
           defaultSubHead={useRef(defaultSubHead).current}
+          testID={testID}
         />
       );
     },
   ),
 );
 
-const interpolateSubHeadText = (subHead: ChartSubHead) => {
-  if (subHead.priceChange && subHead.percent) {
-    return `${subHead.priceChange} (${subHead.percent})`;
-  }
-  if (subHead.priceChange) {
-    return subHead.priceChange;
-  }
-  return '';
-};
-
 const ChartHeaderStable = memo(
   forwardRef<ChartHeaderRef, ChartHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead }, forwardedRef) => {
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID }, forwardedRef) => {
       const labelRef = useRef<TextInput>(null);
       const titleRef = useRef<TextInput>(null);
       const subHeadRef = useRef<TextInput>(null);
@@ -198,7 +190,7 @@ const ChartHeaderStable = memo(
       );
 
       return (
-        <View testID="ChartHeaderInputs">
+        <View testID={testID}>
           {label}
           {title}
         </View>

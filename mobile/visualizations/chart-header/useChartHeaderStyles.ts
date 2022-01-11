@@ -1,14 +1,12 @@
 import { useCallback, useMemo } from 'react';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
-import { ChartSubHead } from '@cbhq/cds-common/types/ChartHeaderBaseProps';
+import { SubHeadIconColor } from '@cbhq/cds-common/types/ChartHeaderBaseProps';
 
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { numberStyles, useTypographyStyles } from '../../typography';
 
 import { getAdjustedFontScale } from '../../utils/getAdjustedFontScale';
-
-type SubHeadIconColor = ChartSubHead['variant'];
 
 // The – character width is larger than the width of the + character.
 // To prevent layout jank and jumping around we set a fixed width for

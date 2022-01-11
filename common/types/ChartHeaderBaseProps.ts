@@ -1,3 +1,5 @@
+import { SharedProps } from './SharedProps';
+
 export type ChartHeaderProps = {
   /**
    * Default title, changing this prop has no effect once the default is rendered.
@@ -13,7 +15,7 @@ export type ChartHeaderProps = {
    * Default SubHead, changing this prop has no effect once the default is rendered.
    */
   defaultSubHead?: ChartSubHead;
-};
+} & SharedProps;
 
 export type ChartHeaderVariant = 'foregroundMuted' | 'positive' | 'negative';
 
@@ -34,3 +36,5 @@ export type ChartHeaderValues = {
 export type ChartHeaderRef = {
   update: (params: ChartHeaderValues) => void;
 };
+
+export type SubHeadIconColor = ChartSubHead['variant'];

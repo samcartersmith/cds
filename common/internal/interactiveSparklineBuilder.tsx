@@ -1,6 +1,8 @@
-import React, { memo, useCallback } from 'react';
-import { ChartFormatAmount } from '../types/Chart';
+import React, { memo, useCallback, useRef, useState } from 'react';
+import { ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { InteractiveSparklineBaseProps } from '../types/InteractiveSparklineBaseProps';
+import { ChartHeaderProps, ChartHeaderRef, ChartSubHead } from '../types/ChartHeaderBaseProps';
+import { interactiveSparklineData } from './visualizations/InteractiveSparklineData';
 
 export type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
@@ -102,6 +104,12 @@ type InteractiveSparklineBuilderProps = {
   InteractiveSparkline: React.ComponentType<InteractiveSparklineBuilderComponentProps<ChartPeriod>>;
 };
 
+function numToLocaleString(num: number) {
+  return num.toLocaleString(undefined, {
+    maximumFractionDigits: 2,
+  });
+}
+
 export const interactiveSparklineBuilder = ({
   InteractiveSparkline,
 }: InteractiveSparklineBuilderProps) => {
@@ -122,7 +130,7 @@ export const interactiveSparklineBuilder = ({
     }, []);
 
     const formatAmount = useCallback((amount: number | string) => {
-      return `$${parseInt(amount as string, 10).toLocaleString()}`;
+      return `$${numToLocaleString(parseInt(amount as string, 10))}`;
     }, []);
 
     return (
@@ -133,6 +141,92 @@ export const interactiveSparklineBuilder = ({
         formatHoverDate={!hideHoverDate ? formatHoverDate : undefined}
         defaultPeriod={defaultPeriod ?? DEFAULT_CHART_PERIOD}
         formatAmount={formatAmount}
+      />
+    );
+  });
+};
+
+function generateSubHead(point: ChartDataPoint, period: ChartPeriod): ChartSubHead {
+  const data = interactiveSparklineData[period];
+  const firstPoint = data[0];
+
+  const increase = point.value > firstPoint.value;
+  const subHead: ChartSubHead = {
+    percent: `${numToLocaleString(
+      Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
+    )}%`,
+    sign: increase ? '+' : '–',
+    variant: increase ? 'positive' : 'negative',
+    priceChange: `$${numToLocaleString(Math.abs(point.value - firstPoint.value))}`,
+  };
+
+  return subHead;
+}
+
+type InteractiveSparklineWithHeaderBuilderProps = InteractiveSparklineBuilderProps & {
+  ChartHeader: React.ForwardRefExoticComponent<
+    ChartHeaderProps & React.RefAttributes<ChartHeaderRef>
+  >;
+};
+
+export const interactiveSparklineWithHeaderBuilder = ({
+  InteractiveSparkline,
+  ChartHeader,
+}: InteractiveSparklineWithHeaderBuilderProps) => {
+  const InteractiveSparklineBuild = interactiveSparklineBuilder({
+    InteractiveSparkline,
+  });
+
+  const strokeColor = '#F7931A';
+  return memo(() => {
+    const chartHeaderRef = useRef<ChartHeaderRef | null>(null);
+    const [currentPeriod, setCurrentPeriod] = useState<ChartPeriod>(DEFAULT_CHART_PERIOD);
+    const data = interactiveSparklineData[currentPeriod];
+    const lastPoint = data[data.length - 1];
+
+    const handleScrub = useCallback(({ point, period }: ChartScrubParams<ChartPeriod>) => {
+      chartHeaderRef.current?.update({
+        title: `$${point.value.toLocaleString()}`,
+        subHead: generateSubHead(point, period),
+      });
+    }, []);
+
+    const handleScrubEnd = useCallback(() => {
+      chartHeaderRef.current?.update({
+        title: `$${numToLocaleString(lastPoint.value)}`,
+        subHead: generateSubHead(lastPoint, currentPeriod),
+      });
+    }, [currentPeriod, lastPoint]);
+
+    const handleOnPeriodChanged = useCallback((period: ChartPeriod) => {
+      setCurrentPeriod(period);
+
+      const newData = interactiveSparklineData[period];
+      const newLastPoint = newData[newData.length - 1];
+
+      chartHeaderRef.current?.update({
+        title: `$${numToLocaleString(newLastPoint.value)}`,
+        subHead: generateSubHead(newLastPoint, period),
+      });
+    }, []);
+
+    const header = (
+      <ChartHeader
+        ref={chartHeaderRef}
+        defaultLabel="Bitcoin Price"
+        defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
+        defaultSubHead={generateSubHead(lastPoint, currentPeriod)}
+      />
+    );
+
+    return (
+      <InteractiveSparklineBuild
+        strokeColor={strokeColor}
+        data={interactiveSparklineData}
+        headerNode={header}
+        onScrub={handleScrub}
+        onScrubEnd={handleScrubEnd}
+        onPeriodChanged={handleOnPeriodChanged}
       />
     );
   });

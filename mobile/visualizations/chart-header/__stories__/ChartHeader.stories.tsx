@@ -1,8 +1,15 @@
 import React from 'react';
+import { interactiveSparklineWithHeaderBuilder } from '@cbhq/cds-common/internal/interactiveSparklineBuilder';
+import { InteractiveSparkline } from '../../chart/InteractiveSparkline';
+import { ChartHeader } from '../ChartHeader';
 import { Box } from '../../../layout';
 import { TextTitle3 } from '../../../typography/TextTitle3';
-import { InteractiveSparklineWithHeaderExample } from './InteractiveSparklineWithHeaderExample';
 import { Example } from '../../../examples/ExampleScreen';
+
+const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilder({
+  InteractiveSparkline,
+  ChartHeader,
+});
 
 const ChartHeaderScreen = () => {
   return (
@@ -11,7 +18,7 @@ const ChartHeaderScreen = () => {
         <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
           Chart Header Example
         </TextTitle3>
-        <InteractiveSparklineWithHeaderExample />
+        <InteractiveSparklineWithHeaderBuild />
       </Box>
     </Example>
   );
