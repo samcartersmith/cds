@@ -1,8 +1,9 @@
-import { IconName, InternalSpacingProps } from '../types';
+import { ButtonBaseProps, IconName, InternalSpacingProps } from '../types';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 
 const defaultSpacing = 4;
 const iconSpacing = 3;
+const flushSpacing = 2;
 
 export type UseButtonSpacingParams = {
   compact?: boolean;
@@ -10,21 +11,24 @@ export type UseButtonSpacingParams = {
   startIcon?: IconName;
   /** If present decrease horizontal padding since icons have built in white space. */
   endIcon?: IconName;
+  /** If present decrease horizontal padding */
+  flush?: ButtonBaseProps['flush'];
 };
 
 export function useButtonSpacing({
   compact,
   startIcon,
   endIcon,
+  flush,
 }: UseButtonSpacingParams): InternalSpacingProps {
   const hasFrontier = useFeatureFlag('frontierButton');
   if (hasFrontier) {
     const spacing: InternalSpacingProps = {
-      start: defaultSpacing,
-      end: defaultSpacing,
+      start: flush ? flushSpacing : defaultSpacing,
+      end: flush ? flushSpacing : defaultSpacing,
     };
-    if (startIcon) spacing.start = iconSpacing;
-    if (endIcon) spacing.end = iconSpacing;
+    if (!flush && startIcon) spacing.start = iconSpacing;
+    if (!flush && endIcon) spacing.end = iconSpacing;
     return spacing;
   }
   return {

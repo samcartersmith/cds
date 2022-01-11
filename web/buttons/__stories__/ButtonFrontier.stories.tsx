@@ -16,6 +16,8 @@ export const All = buildSheet([
   { startIcon: 'backArrow' },
   { startIcon: 'backArrow', endIcon: 'forwardArrow' },
   { startIcon: 'backArrow', endIcon: 'forwardArrow', block: true },
+  { transparent: true, flush: 'start', compact: true, endIcon: 'forwardArrow' },
+  { transparent: true, flush: 'end', compact: true, endIcon: 'forwardArrow' },
 ]);
 
 const ButtonBaseline = (props: JSX.IntrinsicElements['button']) => (

@@ -16,6 +16,11 @@ export type ButtonBaseProps = {
   disabled?: boolean;
   /** Icon to render at the end of the button. */
   endIcon?: IconName;
+  /** Ensure the button aligns flush on the left or right.
+   * This prop will translate the entire button left/right,
+   * so take care to ensure it is not overflowing awkwardly
+   */
+  flush?: 'start' | 'end';
   /** Mark the button as loading and display a spinner. */
   loading?: boolean;
   /** Uniquely identify the button within a form. */

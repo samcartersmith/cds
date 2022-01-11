@@ -43,6 +43,14 @@ export function buttonBuilderDeprecated({
           <Button compact block onPress={onPressConsole}>
             Compact full-width button
           </Button>
+          <Button compact flush="start" transparent onPress={onPressConsole}>
+            Flush Left + Compact button
+          </Button>
+          <VStack alignItems="flex-end" width="100%">
+            <Button compact flush="end" transparent onPress={onPressConsole}>
+              Flush Right + Compact button
+            </Button>
+          </VStack>
         </VStack>
       </ThemeProvider>
     </FeatureFlagProvider>

@@ -5,10 +5,12 @@ import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
+import { useButtonSpacing as useSharedButtonSpacing } from '@cbhq/cds-common/hooks/useButtonSpacing';
 import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps } from 'reakit/Button';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
+import { useFlushStyles } from '../hooks/useFlushStyles';
 import { Icon } from '../icons/Icon';
 import { MaterialSpinner } from '../loaders/MaterialSpinner';
 import { useFeatureFlag } from '../system/useFeatureFlag';
@@ -45,6 +47,7 @@ export const Button = forwardRef(function Button(
     startIcon,
     to,
     transparent,
+    flush,
     type = 'button',
     variant = 'primary',
     ...props
@@ -54,11 +57,16 @@ export const Button = forwardRef(function Button(
   const hasIcon = Boolean(startIcon ?? endIcon);
   const hasFrontier = useFeatureFlag('frontierButton');
   const iconSize = useButtonIconSize(compact);
-  const spacingClass = useButtonSpacing({ compact, startIcon, endIcon });
+  const spacing = useSharedButtonSpacing({ flush, compact, startIcon, endIcon });
+  const flushStyles = useFlushStyles({ flush, spacing });
+  const spacingClass = useButtonSpacing({ flush, compact, startIcon, endIcon });
   const height = useInteractableHeight(compact);
   const borderRadius = useButtonBorderRadius(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-  const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
+  const style = useMemo(
+    () => ({ '--interactable-height': `${height}px`, ...flushStyles }),
+    [height, flushStyles],
+  );
 
   return (
     <Pressable
