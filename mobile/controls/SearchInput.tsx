@@ -54,21 +54,23 @@ export const SearchInput = memo(
         [onBlur],
       );
 
+      /**
+       * This is triggered when 'Enter', when Search IconButton is pressed, or when
+       * clearing
+       */
+      const handleOnSearch = useCallback(() => {
+        onSearch?.(value?.toString() ?? '');
+      }, [onSearch, value]);
+
       const handleOnClear = useCallback(
         (e: GestureResponderEvent) => {
           onClear?.(e);
           internalRef.current?.focus();
           onChangeText?.('');
+          handleOnSearch();
         },
-        [internalRef, onClear, onChangeText],
+        [onClear, onChangeText, handleOnSearch],
       );
-
-      /**
-       * This is triggered when 'Enter' or when Search IconButton is pressed.
-       */
-      const handleOnSearch = useCallback(() => {
-        onSearch?.(value?.toString() ?? '');
-      }, [onSearch, value]);
 
       return (
         <TextInput
