@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.7 (1/11/2022, 11:27 AM PST)
+
+#### 🚀 Updates
+
+- Add ChartHeader for web. [#48177](https://github.cbhq.net/mono/repo/pull/48177)
+
 ## 0.32.6 (1/10/2022, 09:23 AM PST)
 
 #### 🚀 Updates
