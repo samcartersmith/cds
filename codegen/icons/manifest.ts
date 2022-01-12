@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 60889,
+  lastUnicode: 60924,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -237,7 +237,7 @@ export const manifest = {
     pyramid: { '8': 'uED44', '12': 'uED45', '16': 'uED46', '24': 'uED47', '32': 'uED48' },
     bookmarkInactive: { '8': 'uED49', '12': 'uED4A', '16': 'uED4B', '24': 'uED4C', '32': 'uED4D' },
     bookmarkActive: { '8': 'uED4E', '12': 'uED4F', '16': 'uED50', '24': 'uED51', '32': 'uED52' },
-    report: { '8': 'uED53', '12': 'uED54', '16': 'uED55', '24': 'uED56', '32': 'uED57' },
+    reportActive: { '8': 'uED53', '12': 'uED54', '16': 'uED55', '24': 'uED56', '32': 'uED57' },
     earnInactive: { '8': 'uED58', '12': 'uED59', '16': 'uED5A', '24': 'uED5B', '32': 'uED5C' },
     earnActive: { '8': 'uED5D', '12': 'uED5E', '16': 'uED5F', '24': 'uED60', '32': 'uED61' },
     airdrop: { '8': 'uED62', '12': 'uED63', '16': 'uED64', '24': 'uED65', '32': 'uED66' },
@@ -288,5 +288,24 @@ export const manifest = {
       '32': 'uEDD4',
     },
     appSwitcherActive: { '8': 'uEDD5', '12': 'uEDD6', '16': 'uEDD7', '24': 'uEDD8', '32': 'uEDD9' },
+    reportInactive: { '8': 'uEDDA', '12': 'uEDDB', '16': 'uEDDC', '24': 'uEDDD', '32': 'uEDDE' },
+    download: { '8': 'uEDDF', '12': 'uEDE0', '16': 'uEDE1', '24': 'uEDE2', '32': 'uEDE3' },
+    setPinCode: { '8': 'uEDE4', '12': 'uEDE5', '16': 'uEDE6', '24': 'uEDE7', '32': 'uEDE8' },
+    diagonalUpArrow: { '8': 'uEDE9', '12': 'uEDEA', '16': 'uEDEB', '24': 'uEDEC', '32': 'uEDED' },
+    diagonalDownArrow: { '8': 'uEDEE', '12': 'uEDEF', '16': 'uEDF0', '24': 'uEDF1', '32': 'uEDF2' },
+    shoppingCartInactive: {
+      '8': 'uEDF3',
+      '12': 'uEDF4',
+      '16': 'uEDF5',
+      '24': 'uEDF6',
+      '32': 'uEDF7',
+    },
+    shoppingCartActive: {
+      '8': 'uEDF8',
+      '12': 'uEDF9',
+      '16': 'uEDFA',
+      '24': 'uEDFB',
+      '32': 'uEDFC',
+    },
   },
 };

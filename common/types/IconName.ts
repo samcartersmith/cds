@@ -165,7 +165,8 @@ export type IconName =
   | 'pyramid'
   | 'bookmarkInactive'
   | 'bookmarkActive'
-  | 'report'
+  | 'reportActive'
+  | 'reportInactive'
   | 'airdrop'
   | 'fork'
   | 'unknown'
@@ -179,7 +180,11 @@ export type IconName =
   | 'laptop'
   | 'clockOutline'
   | 'cashRupee'
-  | 'chainLink';
+  | 'chainLink'
+  | 'download'
+  | 'setPinCode'
+  | 'diagonalUpArrow'
+  | 'diagonalDownArrow';
 
 export type NavigationIconName =
   | 'chartCandles'
@@ -207,7 +212,8 @@ export type NavigationIconName =
   | 'support'
   | 'planet'
   | 'application'
-  | 'appSwitcher';
+  | 'appSwitcher'
+  | 'shoppingCart';
 
 export type NavigationIconInternalName =
   | 'chartCandlesInactive'
@@ -261,4 +267,6 @@ export type NavigationIconInternalName =
   | 'applicationInactive'
   | 'applicationActive'
   | 'appSwitcherInactive'
-  | 'appSwitcherActive';
+  | 'appSwitcherActive'
+  | 'shoppingCartInactive'
+  | 'shoppingCartActive';
