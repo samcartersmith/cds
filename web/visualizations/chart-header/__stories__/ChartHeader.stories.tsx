@@ -1,5 +1,6 @@
 import React from 'react';
 import { interactiveSparklineWithHeaderBuilder } from '@cbhq/cds-common/internal/interactiveSparklineBuilder';
+import { interactiveSparklineData } from '@cbhq/cds-common/internal/visualizations/InteractiveSparklineData';
 import { ChartHeader } from '../ChartHeader';
 import { InteractiveSparkline } from '../../chart/InteractiveSparkline';
 
@@ -14,5 +15,7 @@ const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilde
 });
 
 export const Default = () => {
-  return <InteractiveSparklineWithHeaderBuild />;
+  return (
+    <InteractiveSparklineWithHeaderBuild data={interactiveSparklineData} strokeColor="#F7931A" />
+  );
 };

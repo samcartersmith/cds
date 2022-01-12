@@ -1,5 +1,5 @@
 #### Example code
-All examples use the following code to generate the InteractiveSparkline
+All examples use the following code to generate the InteractiveSparkline with a ChartHeader
 
 ```tsx
 type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
@@ -98,8 +98,36 @@ function numToLocaleString(num: number) {
   });
 }
 
-export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) => {
-  const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
+function generateSubHead(
+  point: ChartDataPoint,
+  period: ChartPeriod,
+  interactiveSparklineData: Record<ChartPeriod, ChartData>,
+): ChartSubHead {
+  const data = interactiveSparklineData[period];
+  const firstPoint = data[0];
+
+  const increase = point.value > firstPoint.value;
+  const subHead: ChartSubHead = {
+    percent: `${numToLocaleString(
+      Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
+    )}%`,
+    sign: increase ? '+' : '–',
+    variant: increase ? 'positive' : 'negative',
+    priceChange: `$${numToLocaleString(Math.abs(point.value - firstPoint.value))}`,
+  };
+
+  return subHead;
+}
+
+export const PriceChartWithHeader = memo(({ defaultPeriod, ...props }: PriceChartProps) => {
+    const { data: sparklineData } = props;
+    const interactiveSparklineData = sparklineData as Record<ChartPeriod, ChartData>;
+    const chartHeaderRef = useRef<ChartHeaderRef | null>(null);
+    const [currentPeriod, setCurrentPeriod] = useState<ChartPeriod>(DEFAULT_CHART_PERIOD);
+    const data = interactiveSparklineData[currentPeriod];
+    const lastPoint = data[data.length - 1];
+
+    const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
       const config = getFormattingConfigForPeriod(period);
       return value.toLocaleString('en-US', {
         timeZone: 'America/New_York',
@@ -118,6 +146,41 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
       return `$${numToLocaleString(parseInt(amount as string, 10))}`;
     }, []);
 
+    const handleScrub = useCallback(({ point, period }: ChartScrubParams<ChartPeriod>) => {
+      chartHeaderRef.current?.update({
+        title: `$${point.value.toLocaleString()}`,
+        subHead: generateSubHead(point, period, interactiveSparklineData),
+      });
+    }, [interactiveSparklineData]);
+
+    const handleScrubEnd = useCallback(() => {
+      chartHeaderRef.current?.update({
+        title: `$${numToLocaleString(lastPoint.value)}`,
+        subHead: generateSubHead(lastPoint, currentPeriod, interactiveSparklineData),
+      });
+    }, [currentPeriod, interactiveSparklineData, lastPoint]);
+
+    const handleOnPeriodChanged = useCallback((period: ChartPeriod) => {
+      setCurrentPeriod(period);
+
+      const newData = interactiveSparklineData[period];
+      const newLastPoint = newData[newData.length - 1];
+
+      chartHeaderRef.current?.update({
+        title: `$${numToLocaleString(newLastPoint.value)}`,
+        subHead: generateSubHead(newLastPoint, period, interactiveSparklineData),
+      });
+    }, [interactiveSparklineData]);
+
+    const header = (
+      <ChartHeader
+        ref={chartHeaderRef}
+        defaultLabel="Bitcoin Price"
+        defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
+        defaultSubHead={generateSubHead(lastPoint, currentPeriod, interactiveSparklineData)}
+      />
+    );
+
     return (
       <InteractiveSparkline
         {...props}
@@ -126,6 +189,10 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
         formatHoverDate={formatHoverDate}
         defaultPeriod={defaultPeriod ?? DEFAULT_CHART_PERIOD}
         formatAmount={formatAmount}
+        headerNode={header}
+        onScrub={handleScrub}
+        onScrubEnd={handleScrubEnd}
+        onPeriodChanged={handleOnPeriodChanged}
       />
     );
 });
@@ -202,39 +269,13 @@ The data shape of `interactiveSparklineData` is shown below. There are a lot mor
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} strokeColor="#F7931A" />
+    <PriceChartWithHeader data={interactiveSparklineData} strokeColor="#F7931A" />
 </Box>
 ```
 
 #### fill
 
 If you are using frontier then the fill will be added by default
-
-```jsx live
-<Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} fill strokeColor="#F7931A" />
-</Box>
-```
-
-#### Compact
-
-```jsx live
-<Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} compact strokeColor="#F7931A" />
-</Box>
-```
-
-#### Hide period selector
-
-```jsx live
-<Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} hidePeriodSelector strokeColor="#F7931A" />
-</Box>
-```
-
-#### With header
-
-This example is using a PriceChartWithHeader component that has not been explained. Please see the [ChartHeader](/components/chart-header) component for more details.
 
 ```jsx live
 <Box spacing={3} width="100%">

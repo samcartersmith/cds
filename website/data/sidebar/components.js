@@ -203,6 +203,7 @@ module.exports = {
         'components/visualizations/Sparkline/sparkline',
         'components/visualizations/SparklineGradient/sparkline-gradient',
         'components/visualizations/InteractiveSparkline/interactive-sparkline',
+        'components/visualizations/ChartHeader/chart-header',
       ],
     },
   ],

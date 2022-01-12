@@ -1,8 +1,7 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
+import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { InteractiveSparklineBaseProps } from '../types/InteractiveSparklineBaseProps';
 import { ChartHeaderProps, ChartHeaderRef, ChartSubHead } from '../types/ChartHeaderBaseProps';
-import { interactiveSparklineData } from './visualizations/InteractiveSparklineData';
 
 export type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
@@ -146,7 +145,11 @@ export const interactiveSparklineBuilder = ({
   });
 };
 
-function generateSubHead(point: ChartDataPoint, period: ChartPeriod): ChartSubHead {
+function generateSubHead(
+  point: ChartDataPoint,
+  period: ChartPeriod,
+  interactiveSparklineData: Record<ChartPeriod, ChartData>,
+): ChartSubHead {
   const data = interactiveSparklineData[period];
   const firstPoint = data[0];
 
@@ -177,52 +180,58 @@ export const interactiveSparklineWithHeaderBuilder = ({
     InteractiveSparkline,
   });
 
-  const strokeColor = '#F7931A';
-  return memo(() => {
+  return memo((props: PriceChartProps) => {
+    const { data: sparklineData } = props;
+    const interactiveSparklineData = sparklineData as Record<ChartPeriod, ChartData>;
     const chartHeaderRef = useRef<ChartHeaderRef | null>(null);
     const [currentPeriod, setCurrentPeriod] = useState<ChartPeriod>(DEFAULT_CHART_PERIOD);
     const data = interactiveSparklineData[currentPeriod];
     const lastPoint = data[data.length - 1];
 
-    const handleScrub = useCallback(({ point, period }: ChartScrubParams<ChartPeriod>) => {
-      chartHeaderRef.current?.update({
-        title: `$${point.value.toLocaleString()}`,
-        subHead: generateSubHead(point, period),
-      });
-    }, []);
+    const handleScrub = useCallback(
+      ({ point, period }: ChartScrubParams<ChartPeriod>) => {
+        chartHeaderRef.current?.update({
+          title: `$${point.value.toLocaleString()}`,
+          subHead: generateSubHead(point, period, interactiveSparklineData),
+        });
+      },
+      [interactiveSparklineData],
+    );
 
     const handleScrubEnd = useCallback(() => {
       chartHeaderRef.current?.update({
         title: `$${numToLocaleString(lastPoint.value)}`,
-        subHead: generateSubHead(lastPoint, currentPeriod),
+        subHead: generateSubHead(lastPoint, currentPeriod, interactiveSparklineData),
       });
-    }, [currentPeriod, lastPoint]);
+    }, [currentPeriod, interactiveSparklineData, lastPoint]);
 
-    const handleOnPeriodChanged = useCallback((period: ChartPeriod) => {
-      setCurrentPeriod(period);
+    const handleOnPeriodChanged = useCallback(
+      (period: ChartPeriod) => {
+        setCurrentPeriod(period);
 
-      const newData = interactiveSparklineData[period];
-      const newLastPoint = newData[newData.length - 1];
+        const newData = interactiveSparklineData[period];
+        const newLastPoint = newData[newData.length - 1];
 
-      chartHeaderRef.current?.update({
-        title: `$${numToLocaleString(newLastPoint.value)}`,
-        subHead: generateSubHead(newLastPoint, period),
-      });
-    }, []);
+        chartHeaderRef.current?.update({
+          title: `$${numToLocaleString(newLastPoint.value)}`,
+          subHead: generateSubHead(newLastPoint, period, interactiveSparklineData),
+        });
+      },
+      [interactiveSparklineData],
+    );
 
     const header = (
       <ChartHeader
         ref={chartHeaderRef}
         defaultLabel="Bitcoin Price"
         defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
-        defaultSubHead={generateSubHead(lastPoint, currentPeriod)}
+        defaultSubHead={generateSubHead(lastPoint, currentPeriod, interactiveSparklineData)}
       />
     );
 
     return (
       <InteractiveSparklineBuild
-        strokeColor={strokeColor}
-        data={interactiveSparklineData}
+        {...props}
         headerNode={header}
         onScrub={handleScrub}
         onScrubEnd={handleScrubEnd}

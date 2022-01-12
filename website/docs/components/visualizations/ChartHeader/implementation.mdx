@@ -1,0 +1,82 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/visualizations/ChartHeader](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/ChartHeader.tsx)
+
+<ComponentDetails componentName="ChartHeader" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="ChartHeader" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="ChartHeader" templateName="a11y" />
+
+## Props
+
+### defaultLabel
+
+Default label, changing this prop has no effect once the default is rendered.
+
+<ApiDetails
+  componentName="ChartHeader"
+  propertyName="defaultLabel"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ChartHeader" templateName="prop-defaultLabel" />
+
+### defaultSubHead
+
+Default SubHead, changing this prop has no effect once the default is rendered.
+
+<ApiDetails
+  componentName="ChartHeader"
+  propertyName="defaultSubHead"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ChartSubHead']}
+  webOptions={['ChartSubHead']}
+/>
+
+<ComponentDetails componentName="ChartHeader" templateName="prop-defaultSubHead" />
+
+### defaultTitle
+
+Default title, changing this prop has no effect once the default is rendered.
+
+<ApiDetails
+  componentName="ChartHeader"
+  propertyName="defaultTitle"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ChartHeader" templateName="prop-defaultTitle" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="ChartHeader"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="ChartHeader" templateName="prop-testID" />
+
+<ComponentDetails componentName="ChartHeader" templateName="outro" />

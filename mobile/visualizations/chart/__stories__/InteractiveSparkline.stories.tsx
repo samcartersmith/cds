@@ -140,7 +140,10 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             With Header Node
           </TextTitle3>
-          <InteractiveSparklineWithHeaderBuild />
+          <InteractiveSparklineWithHeaderBuild
+            data={interactiveSparklineData}
+            strokeColor="#F7931A"
+          />
         </Box>
       </Example>
     </ExampleScreen>

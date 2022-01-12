@@ -70,5 +70,7 @@ export const NoHoverDate = () => (
 );
 
 export const WithHeaderNode = () => {
-  return <InteractiveSparklineWithHeaderBuild />;
+  return (
+    <InteractiveSparklineWithHeaderBuild data={interactiveSparklineData} strokeColor="#F7931A" />
+  );
 };
