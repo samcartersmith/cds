@@ -74,6 +74,7 @@ export const SearchInput = memo(
               <InputIconButton
                 name="close"
                 testID={testID && `${testID}-close-iconbtn`}
+                accessibilityLabel="Clear text"
                 onPress={handleOnClear}
               />
             </Box>
