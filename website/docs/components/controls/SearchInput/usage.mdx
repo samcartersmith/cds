@@ -8,11 +8,30 @@ function SearchExample() {
 	const [text, setText] = useState('');
 
 	return (
-		<>
+		<Box spacing={2}>
 			<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
 			<TextLabel1 as="p">{text}</TextLabel1>
-		</>
+		</Box>
 	);
+}
+```
+
+## Search Example for Mobile
+Using SearchInput on Mobile is very similar to using SearchInput on Web. However, there is one caveat. 
+SearchInput requires that users tap the clear button twice before it clears the text, which isn't a great user experience.
+
+To fix this issue, you can wrap the SearchInput in a ScrollView, and set keyboardShouldPersistTaps="always". Users can
+unfocus the Search by pressing the back button. Below is an example 
+```jsx 
+function SearchMobileExample() {
+	const [text, setText] = useState('');
+
+	return (
+		<ScrollView style={{ height: '100%' }} keyboardShouldPersistTaps="always">
+			<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
+			{...children}
+		</ScrollView> 
+	)
 }
 ```
 
@@ -33,10 +52,10 @@ function OnSearchExample() {
 	)
 
 	return (
-		<>
+		<Box spacing={2}>
 			<SearchInput value={text} onChangeText={setText} onSearch={handleOnSearch} placeholder="Hit Enter" />
 			<TextLabel1 as="p">{text}</TextLabel1>
-		</>
+		</Box>
 	)
 }
 ```
@@ -49,12 +68,14 @@ function OnClearExample() {
 	const [text, setText] = useState('');
 
 	return (
-		<SearchInput 
-			onClear={() => console.log('Clearing...')} 
-			onChangeText={setText}
-			value={text}
-			placeholder="Placeholder" 
-		/>
+		<Box spacing={2}>
+			<SearchInput 
+				onClear={() => console.log('Clearing...')} 
+				onChangeText={setText}
+				value={text}
+				placeholder="Placeholder" 
+			/>
+		</Box>
 	)
 }
 ```
@@ -64,7 +85,11 @@ function OnClearExample() {
 function DisabledSearchExample() {
 	const [text, setText] = useState('');
 
-	return (<SearchInput value={text} disabled onChangeText={setText} placeholder="Placeholder" />)
+	return (
+		<Box spacing={2}>
+			<SearchInput value={text} disabled onChangeText={setText} placeholder="Placeholder" />
+		</Box>
+	)
 }
 ```
 
@@ -73,6 +98,10 @@ function DisabledSearchExample() {
 function CompactSearchExample() {
 	const [text, setText] = useState('');
 
-	return (<SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />)
+	return (
+		<Box spacing={2}>
+			<SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />
+		</Box>
+	)
 }
 ```

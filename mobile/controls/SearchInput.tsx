@@ -60,16 +60,22 @@ export const SearchInput = memo(
        */
       const handleOnSearch = useCallback(() => {
         onSearch?.(value?.toString() ?? '');
-      }, [onSearch, value]);
+
+        if (startIconName === 'backArrow') {
+          internalRef.current?.blur();
+        } else {
+          internalRef.current?.focus();
+        }
+      }, [onSearch, startIconName, value]);
 
       const handleOnClear = useCallback(
         (e: GestureResponderEvent) => {
           onClear?.(e);
           internalRef.current?.focus();
           onChangeText?.('');
-          handleOnSearch();
+          onSearch?.('');
         },
-        [onClear, onChangeText, handleOnSearch],
+        [onClear, onChangeText, onSearch],
       );
 
       return (

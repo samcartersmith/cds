@@ -59,9 +59,9 @@ export const SearchInput = memo(
         onClear?.(e);
         internalRef.current?.focus();
         onChangeText?.('');
-        onSearch?.(value?.toString() ?? '');
+        onSearch?.('');
       },
-      [onClear, onChangeText, onSearch, value],
+      [onClear, onChangeText, onSearch],
     );
 
     return (

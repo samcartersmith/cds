@@ -85,7 +85,10 @@ const Screen: React.FC = ({ children }) => {
   const palette = usePalette();
 
   return (
-    <ScrollView style={{ backgroundColor: palette.background, height: '100%' }}>
+    <ScrollView
+      style={{ backgroundColor: palette.background, height: '100%' }}
+      keyboardShouldPersistTaps="always"
+    >
       {children}
     </ScrollView>
   );
