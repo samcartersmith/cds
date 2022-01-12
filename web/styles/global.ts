@@ -3,7 +3,7 @@ import { css } from 'linaria';
 // focus visible polyfill
 import 'focus-visible';
 
-export const global = css`
+export const globalStyles = css`
   :global() {
     *,
     ::before,
