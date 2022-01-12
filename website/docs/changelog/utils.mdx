@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.0 (1/12/2022, 05:27 AM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** Refactor Illustration to single HOC and remove width & height props. [#48247](https://github.cbhq.net/mono/repo/pull/48247)
+
 ## 0.2.15 (1/10/2022, 12:32 PM PST)
 
 #### 🐞 Fixes

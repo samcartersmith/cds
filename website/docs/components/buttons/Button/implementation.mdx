@@ -511,6 +511,21 @@ Haptic feedback to trigger when being pressed.
 
 <ComponentDetails componentName="Button" templateName="prop-feedback" />
 
+### flush
+
+Ensure the button aligns flush on the left or right. This prop will translate the entire button left/right, so take care to ensure it is not overflowing awkwardly
+
+<ApiDetails
+  componentName="Button"
+  propertyName="flush"
+  required={false}
+  defaultValue=""
+  mobileOptions={['end', 'start']}
+  webOptions={['end', 'start']}
+/>
+
+<ComponentDetails componentName="Button" templateName="prop-flush" />
+
 ### focusable <Badge variant="web" />
 
 When an element is `disabled`, it may still be `focusable`. It works similarly to `readOnly` on form elements. In this case, only `aria-disabled` will be set.

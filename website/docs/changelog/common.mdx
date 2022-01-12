@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.32.0 (1/12/2022, 05:27 AM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** Refactor Illustration to single HOC and remove width & height props. [#48247](https://github.cbhq.net/mono/repo/pull/48247)
+
+#### 🚀 Updates
+
+- Add support for flush buttons. [#48074](https://github.cbhq.net/mono/repo/pull/48074), [CDS-1823](https://jira.coinbase-corp.com/browse/CDS-1823)
+
 ## 0.31.1 (1/11/2022, 11:27 AM PST)
 
 #### 🚀 Updates

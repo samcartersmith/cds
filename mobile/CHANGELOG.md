@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.37.0 (1/12/2022, 05:27 AM PST)
+
+#### 💥 Breaking
+
+- **[Illustration]** Refactor Illustration to single HOC and remove width & height props. [#48247](https://github.cbhq.net/mono/repo/pull/48247)
+
+#### 🚀 Updates
+
+- Add support for flush buttons. [#48074](https://github.cbhq.net/mono/repo/pull/48074), [CDS-1823](https://jira.coinbase-corp.com/browse/CDS-1823)
+
+#### 🐞 Fixes
+
+- **[TextInput]** Fixed TextInput so that whatever content you pressed inside the Input will cause the focus state to trigger. [#48165](https://github.cbhq.net/mono/repo/pull/48165), [CDS-1859](https://jira.coinbase-corp.com/browse/CDS-1859)
+- Trigger onSearch when onClear is called. [#48285](https://github.cbhq.net/mono/repo/pull/48285)
+
 ## 0.36.1 (1/11/2022, 11:27 AM PST)
 
 #### 🚀 Updates
