@@ -8,10 +8,13 @@ All examples use the following code to generate the InteractiveSparkline
 type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
 type PriceChartProps = Omit<
-  InteractiveSparklineProps<ChartPeriod>,
+  InteractiveSparklineBaseProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
-  Partial<Pick<InteractiveSparklineProps<ChartPeriod>, 'defaultPeriod'>>;
+  Partial<Pick<InteractiveSparklineBaseProps<ChartPeriod>, 'defaultPeriod'>> & {
+    hideHoverDate?: boolean;
+    hideMinMaxLabel?: boolean;
+  };
 
 export const DEFAULT_CHART_PERIOD = 'day';
 
@@ -69,36 +72,65 @@ const getFormattingConfigForPeriod = (period: ChartPeriod) => {
   }
 };
 
+const getDateHoverOptions = (period: ChartPeriod) => {
+  switch (period) {
+    case 'hour':
+    case 'day':
+    case 'week':
+    case 'month':
+      return {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+    default:
+      return {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      } as const;
+  }
+};
+
+function numToLocaleString(num: number) {
+  return num.toLocaleString(undefined, {
+    maximumFractionDigits: 2,
+  });
+}
+
 export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) => {
   const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
-    const config = getFormattingConfigForPeriod(period);
-    return value.toLocaleString('en-US', config);
-  }, []);
+      const config = getFormattingConfigForPeriod(period);
+      return value.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        ...config,
+      });
+    }, []);
 
-  const fallback = useMemo(() => {
-    // We override line palette since default line color is a bit too dark.
-    // Changing to gray20 more closely matches the line color currently used in production
+    const formatHoverDate = useCallback((date: Date, period: ChartPeriod) => {
+      return date.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        ...getDateHoverOptions(period),
+      });
+    }, []);
+
+    const formatAmount = useCallback((amount: number | string) => {
+      return `$${numToLocaleString(parseInt(amount as string, 10))}`;
+    }, []);
+
     return (
-      <ThemeProvider palette={{ line: 'gray20' }}>
-        <Lottie autoplay source={chartFallbackPositive} loop />
-      </ThemeProvider>
+      <InteractiveSparkline
+        {...props}
+        periods={periods}
+        formatDate={formatDateWithConfig}
+        formatHoverDate={formatHoverDate}
+        defaultPeriod={defaultPeriod ?? DEFAULT_CHART_PERIOD}
+        formatAmount={formatAmount}
+      />
     );
-  }, []);
-
-  const formatAmount = useCallback((amount: number | string) => {
-    return `$${parseInt(amount as string, 10).toLocaleString()}`;
-  }, []);
-
-  return (
-    <InteractiveSparkline
-      {...props}
-      periods={periods}
-      formatDate={formatDateWithConfig}
-      fallback={fallback}
-      defaultPeriod={defaultPeriod ?? DEFAULT_CHART_PERIOD}
-      formatAmount={formatAmount}
-    />
-  );
 });
 ```
 
@@ -171,84 +203,44 @@ The data shape of `interactiveSparklineData` is shown below. There are a lot mor
 
 #### Default usage
 
-```jsx
-  <PriceChart data={interactiveSparklineData} strokeColor={palette.primary} />
-```
-
-<Box width="100%" justifyContent="center">
-    <Image
-        options={{ maxWidth: "450px"}}
-        light="/img/components/interactive-sparkline/InteractiveSparklineDefaultLight.png"
-        dark="/img/components/interactive-sparkline/InteractiveSparklineDefaultDark.png"
-    />
+```jsx live
+<Box spacing={3} width="100%">
+    <PriceChart data={interactiveSparklineData} strokeColor="#F7931A" />
 </Box>
-
-#### Compact
-
-```jsx
-  <PriceChart data={interactiveSparklineData} compact strokeColor={palette.primary} />
 ```
-
-<Box width="100%" justifyContent="center">
-    <Image
-        options={{ maxWidth: "450px"}}
-        light="/img/components/interactive-sparkline/InteractiveSparklineCompactLight.png"
-        dark="/img/components/interactive-sparkline/InteractiveSparklineCompactDark.png"
-    />
-</Box>
-
-#### Hide period selector
-
-```jsx
-  <PriceChart data={interactiveSparklineData} hidePeriodSelector strokeColor={palette.primary} />
-```
-
-<Box width="100%" justifyContent="center">
-    <Image
-        options={{ maxWidth: "450px"}}
-        light="/img/components/interactive-sparkline/InteractiveSparklineHidePeriodSelectorLight.png"
-        dark="/img/components/interactive-sparkline/InteractiveSparklineHidePeriodSelectorDark.png"
-    />
-</Box>
-
-#### Hide min/max label
-
-```jsx
-  <PriceChart data={interactiveSparklineData} hideMinMaxLabel strokeColor={palette.primary} />
-```
-
-<Box width="100%" justifyContent="center">
-    <Image
-        options={{ maxWidth: "450px"}}
-        light="/img/components/interactive-sparkline/InteractiveSparklineHideMinMaxLabelLight.png"
-        dark="/img/components/interactive-sparkline/InteractiveSparklineHideMinMaxLabelDark.png"
-    />
-</Box>
-
-#### Different color
-
-```jsx
-  <PriceChart data={interactiveSparklineData} strokeColor={palette.positive} />
-```
-
-<Box width="100%" justifyContent="center">
-    <Image
-        options={{ maxWidth: "450px"}}
-        light="/img/components/interactive-sparkline/InteractiveSparklineDifferentColorLight.png"
-        dark="/img/components/interactive-sparkline/InteractiveSparklineDifferentColorDark.png"
-    />
-</Box>
 
 #### fill
 
-```jsx
-  <PriceChart data={interactiveSparklineData} strokeColor={palette.positive} fill />
+If you are using frontier then the fill will be added by default
+
+```jsx live
+<Box spacing={3} width="100%">
+    <PriceChart data={interactiveSparklineData} fill strokeColor="#F7931A" />
+</Box>
 ```
 
-<Box width="100%" justifyContent="center">
-    <Image
-        options={{ maxWidth: "450px"}}
-        light="/img/components/interactive-sparkline/InteractiveSparklineFillLight.png"
-        dark="/img/components/interactive-sparkline/InteractiveSparklineFillDark.png"
-    />
+#### Compact
+
+```jsx live
+<Box spacing={3} width="100%">
+    <PriceChart data={interactiveSparklineData} compact strokeColor="#F7931A" />
 </Box>
+```
+
+#### Hide period selector
+
+```jsx live
+<Box spacing={3} width="100%">
+    <PriceChart data={interactiveSparklineData} hidePeriodSelector strokeColor="#F7931A" />
+</Box>
+```
+
+#### With header
+
+This example is using a PriceChartWithHeader component that has not been explained. Please see the ChartHeader component for more details.
+
+```jsx live
+<Box spacing={3} width="100%">
+    <PriceChartWithHeader />
+</Box>
+```

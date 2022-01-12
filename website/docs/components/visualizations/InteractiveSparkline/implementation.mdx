@@ -5,7 +5,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-mobile/visualizations/InteractiveSparkline](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/mobile/visualizations/InteractiveSparkline.tsx)
+> [@cbhq/cds-(web|mobile)/visualizations/InteractiveSparkline](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/InteractiveSparkline.tsx)
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="intro" />
 
@@ -19,7 +19,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### compact <Badge variant="mobile" />
+### compact
 
 Show the chart in compact height
 
@@ -29,12 +29,12 @@ Show the chart in compact height
   required={false}
   defaultValue="false"
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-compact" />
 
-### data <Badge variant="mobile" />
+### data
 
 Chart data bucketed by Period. Period is a string key
 
@@ -44,12 +44,12 @@ Chart data bucketed by Period. Period is a string key
   required={false}
   defaultValue=""
   mobileOptions={['Record<Period, ChartData>']}
-  webOptions={[]}
+  webOptions={['Record<Period, ChartData>']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-data" />
 
-### defaultPeriod <Badge variant="mobile" />
+### defaultPeriod
 
 default period value that the chart will use
 
@@ -64,7 +64,7 @@ default period value that the chart will use
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-defaultPeriod" />
 
-### disableScrubbing <Badge variant="mobile" />
+### disableScrubbing
 
 Disables the scrub user interaction from the chart
 
@@ -74,12 +74,12 @@ Disables the scrub user interaction from the chart
   required={false}
   defaultValue="false"
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-disableScrubbing" />
 
-### fallback <Badge variant="mobile" />
+### fallback
 
 Fallback shown in the chart when data is not available. This is usually a loading state.
 
@@ -99,12 +99,22 @@ Fallback shown in the chart when data is not available. This is usually a loadin
     'true',
     '{}',
   ]}
-  webOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-fallback" />
 
-### fill <Badge variant="mobile" />
+### fill
 
 Adds an area fill to the Sparkline
 
@@ -114,7 +124,7 @@ Adds an area fill to the Sparkline
   required={false}
   defaultValue="true for frontier false otherwise"
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-fill" />
@@ -134,7 +144,7 @@ function used to format the amount of money used in the minMaxLabel
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatAmount" />
 
-### formatDate <Badge variant="mobile" />
+### formatDate
 
 function used to format the date that is shown in the bottom of the chart as the user scrubs
 
@@ -149,7 +159,7 @@ function used to format the date that is shown in the bottom of the chart as the
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatDate" />
 
-### formatHoverDate <Badge variant="mobile" />
+### formatHoverDate
 
 Formats the date above the chart as you scrub. Omit this if you dont want to show the date as the user scrubs
 
@@ -159,12 +169,12 @@ Formats the date above the chart as you scrub. Omit this if you dont want to sho
   required={false}
   defaultValue=""
   mobileOptions={['(date: Date, period: Period) => string']}
-  webOptions={[]}
+  webOptions={['(date: Date, period: Period) => string']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatHoverDate" />
 
-### headerNode <Badge variant="mobile" />
+### headerNode
 
 Adds a header node above the chart. It will be placed next to the period selector on web.
 
@@ -184,7 +194,17 @@ Adds a header node above the chart. It will be placed next to the period selecto
     'true',
     '{}',
   ]}
-  webOptions={[]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-headerNode" />
@@ -204,7 +224,7 @@ Hides the min and max label
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-hideMinMaxLabel" />
 
-### hidePeriodSelector <Badge variant="mobile" />
+### hidePeriodSelector
 
 Hides the period selector at the bottom of the chart
 
@@ -214,12 +234,12 @@ Hides the period selector at the bottom of the chart
   required={false}
   defaultValue="false"
   mobileOptions={['false', 'true']}
-  webOptions={[]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-hidePeriodSelector" />
 
-### onPeriodChanged <Badge variant="mobile" />
+### onPeriodChanged
 
 Callback when the user selects a new period.
 
@@ -229,12 +249,12 @@ Callback when the user selects a new period.
   required={false}
   defaultValue=""
   mobileOptions={['(period: Period) => void']}
-  webOptions={[]}
+  webOptions={['(period: Period) => void']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-onPeriodChanged" />
 
-### onScrub <Badge variant="mobile" />
+### onScrub
 
 Callback used when the user is scrubbing. This will be called for every data point change.
 
@@ -244,12 +264,12 @@ Callback used when the user is scrubbing. This will be called for every data poi
   required={false}
   defaultValue=""
   mobileOptions={['(params: ChartScrubParams<Period>) => void']}
-  webOptions={[]}
+  webOptions={['(params: ChartScrubParams<Period>) => void']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-onScrub" />
 
-### onScrubEnd <Badge variant="mobile" />
+### onScrubEnd
 
 Callback when a user finishes scrubbing
 
@@ -259,12 +279,12 @@ Callback when a user finishes scrubbing
   required={false}
   defaultValue=""
   mobileOptions={['() => void']}
-  webOptions={[]}
+  webOptions={['() => void']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-onScrubEnd" />
 
-### onScrubStart <Badge variant="mobile" />
+### onScrubStart
 
 Callback when the user starts scrubbing
 
@@ -274,12 +294,12 @@ Callback when the user starts scrubbing
   required={false}
   defaultValue=""
   mobileOptions={['() => void']}
-  webOptions={[]}
+  webOptions={['() => void']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-onScrubStart" />
 
-### periods <Badge variant="mobile" />
+### periods
 
 A list of periods that the chart will use. label is what is shown in the bottom of the chart and the value is the key.
 
@@ -294,7 +314,7 @@ A list of periods that the chart will use. label is what is shown in the bottom 
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-periods" />
 
-### strokeColor <Badge variant="mobile" />
+### strokeColor
 
 Color of the line\*
 
@@ -309,7 +329,7 @@ Color of the line\*
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-strokeColor" />
 
-### yAxisScalingFactor <Badge variant="mobile" />
+### yAxisScalingFactor
 
 Scales the sparkline to show more or less variance. Use a number less than 1 for less variance and a number greater than 1 for more variance. If you use a number greater than 1 it may clip the boundaries of the sparkline.
 
@@ -319,7 +339,7 @@ Scales the sparkline to show more or less variance. Use a number less than 1 for
   required={false}
   defaultValue=""
   mobileOptions={['number']}
-  webOptions={[]}
+  webOptions={['number']}
 />
 
 <ComponentDetails componentName="InteractiveSparkline" templateName="prop-yAxisScalingFactor" />

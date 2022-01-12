@@ -138,7 +138,7 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   );
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} style={{ width: '100%' }}>
       {(!hidePeriodSelector || !!headerNode) && (
         <>
           {isMobileLayout && (

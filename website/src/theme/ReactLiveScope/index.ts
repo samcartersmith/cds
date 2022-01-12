@@ -9,6 +9,11 @@ import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useOverlay } from '@cbhq/cds-common/overlays/useOverlay';
+import {
+  interactiveSparklineBuilder,
+  interactiveSparklineWithHeaderBuilder,
+} from '@cbhq/cds-common/internal/interactiveSparklineBuilder';
+import { interactiveSparklineData } from '@cbhq/cds-common/internal/visualizations/InteractiveSparklineData';
 
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
@@ -42,6 +47,8 @@ import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
 import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
+import { InteractiveSparkline } from '@cbhq/cds-web/visualizations/chart/InteractiveSparkline';
+import { ChartHeader } from '@cbhq/cds-web/visualizations/chart-header/ChartHeader';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -66,6 +73,15 @@ import { PaletteSheet } from ':cds-website/components/PaletteSheet';
 import { ExampleBox } from ':cds-website/components/ExampleBox';
 
 import { useStatusButtons } from './useStatusButtons';
+
+const PriceChart = interactiveSparklineBuilder({
+  InteractiveSparkline,
+});
+
+const PriceChartWithHeader = interactiveSparklineWithHeaderBuilder({
+  InteractiveSparkline,
+  ChartHeader,
+});
 
 // Add any mock data for examples here
 const mocks = {
@@ -152,6 +168,9 @@ const ReactLiveScope = {
   nux,
   ProgressContainerWithButtons,
   SparklineArea,
+  PriceChart,
+  PriceChartWithHeader,
+  interactiveSparklineData,
 };
 
 export default ReactLiveScope;
