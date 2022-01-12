@@ -2,7 +2,8 @@ import React, { useCallback, memo } from 'react';
 
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/types';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { usePinStyles } from '../hooks/usePinStyles';
 import { LinkableProps, Pressable } from '../system/Pressable';

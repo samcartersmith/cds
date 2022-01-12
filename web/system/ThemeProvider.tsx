@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 
 import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
+import { cx } from '../utils/linaria';
 
 import { useThemeProviderStyles } from './useThemeProviderStyles';
 

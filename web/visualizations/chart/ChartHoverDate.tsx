@@ -1,5 +1,6 @@
 import React, { memo, useCallback } from 'react';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../../utils/linaria';
 import { TextLabel2 } from '../../typography/TextLabel2';
 import { useChartScrubContext } from './ChartScrubProvider';
 import { resetFadeClassName } from './fade';

@@ -1,5 +1,5 @@
-import { cx } from 'linaria';
 import { useMemo } from 'react';
+import { cx } from '../../utils/linaria';
 import {
   tableVariantBase,
   tableVariantGraph,

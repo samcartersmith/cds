@@ -1,6 +1,6 @@
 import { PinningDirection } from '@cbhq/cds-common';
 import { Position } from '@cbhq/cds-common/types/Position';
-import { cx } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import * as pinStyles from '../styles/pin';
 import * as positionStyles from '../styles/position';

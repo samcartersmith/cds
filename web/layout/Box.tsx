@@ -13,10 +13,11 @@ import {
   ElevationChildrenProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 
 import { emptyObject } from '@cbhq/cds-utils';
 import { ElevationLevels } from '@cbhq/cds-common';
+import { cx } from '../utils/linaria';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePinStyles } from '../hooks/usePinStyles';

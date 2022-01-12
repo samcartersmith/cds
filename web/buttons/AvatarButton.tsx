@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
-import { cx } from 'linaria';
 import { ButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { cx } from '../utils/linaria';
 import { avatarButton } from './buttonStyles';
 import { PressableOpacity, PressableProps } from '../system';
 import { getFlexStyles } from '../styles/flex';

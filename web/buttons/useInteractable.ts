@@ -7,7 +7,7 @@ import {
   NoopFn,
 } from '@cbhq/cds-common';
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
-import { cx } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import * as borderColors from '../styles/borderColor';
 import * as borderRadii from '../styles/borderRadius';

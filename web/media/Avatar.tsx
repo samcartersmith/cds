@@ -1,9 +1,10 @@
+import { css } from 'linaria';
 import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 import React, { memo } from 'react';
-import { css, cx } from 'linaria';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { useAvatarSrc } from '@cbhq/cds-common/media/useAvatarSrc';
+import { cx } from '../utils/linaria';
 import { Box } from '../layout';
 import { RemoteImage } from './RemoteImage';
 

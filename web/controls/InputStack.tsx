@@ -5,8 +5,9 @@ import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { ForwardedRef } from '@cbhq/cds-common';
 
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 import { durations } from '@cbhq/cds-common/tokens/motion';
+import { cx } from '../utils/linaria';
 import { usePalette } from '../hooks/usePalette';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';

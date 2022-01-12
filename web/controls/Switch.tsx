@@ -5,7 +5,8 @@ import { switchPalette } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { Box } from '../layout/Box';
 import { round } from '../styles/borderRadius';

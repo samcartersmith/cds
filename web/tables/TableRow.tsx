@@ -1,6 +1,6 @@
 import React, { useRef, memo, useMemo } from 'react';
-import { cx } from 'linaria';
 import { NoopFn } from '@cbhq/cds-common';
+import { cx } from '../utils/linaria';
 import { useTableSectionTag } from './hooks/useTable';
 import { useTableRowListener } from './hooks/useTableRowListener';
 import { TableCell } from './TableCell';

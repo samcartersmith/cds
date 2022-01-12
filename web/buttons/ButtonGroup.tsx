@@ -1,7 +1,8 @@
 import React, { Children, cloneElement, memo } from 'react';
 
 import { ButtonGroupBaseProps, SharedProps } from '@cbhq/cds-common';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { HStack, VStack } from '../layout';
 

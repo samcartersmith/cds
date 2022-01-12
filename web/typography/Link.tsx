@@ -2,7 +2,8 @@ import React, { AnchorHTMLAttributes, useRef, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { ButtonOrLink } from '../system/ButtonOrLink';
 import { OnPress } from '../types';

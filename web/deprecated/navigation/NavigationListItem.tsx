@@ -3,8 +3,7 @@ import React, { memo, useCallback } from 'react';
 import { NavigationIconName } from '@cbhq/cds-common';
 import { BadgeValue } from '@cbhq/cds-common/types/BadgeBaseProps';
 import { emptyObject } from '@cbhq/cds-utils';
-import { cx } from 'linaria';
-
+import { cx } from '../../utils/linaria';
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Badge } from '../../icons/Badge';
 import { NavigationIcon } from '../../icons/NavigationIcon';

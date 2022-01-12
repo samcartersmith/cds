@@ -3,7 +3,8 @@ import React, { forwardRef, memo } from 'react';
 
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { Icon } from '../icons/Icon';
 import { control, palette } from '../tokens';

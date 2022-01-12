@@ -6,8 +6,8 @@ import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonSpacing as useSharedButtonSpacing } from '@cbhq/cds-common/hooks/useButtonSpacing';
-import { cx } from 'linaria';
 import { ButtonProps as ReakitButtonProps } from 'reakit/Button';
+import { cx } from '../utils/linaria';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { useFlushStyles } from '../hooks/useFlushStyles';

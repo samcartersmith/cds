@@ -2,7 +2,8 @@ import React, { forwardRef } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
 
-import { cx, css } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 import { scaledDownState } from '../styles/interactable';
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';

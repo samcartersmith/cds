@@ -3,9 +3,10 @@ import React, { forwardRef, InputHTMLAttributes, memo, useRef } from 'react';
 import { SharedProps } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
-import { css, cx } from 'linaria';
-
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
+
 import { Box, Spacer } from '../layout';
 import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';

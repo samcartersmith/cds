@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Placement } from '@popperjs/core';
-import { cx } from 'linaria';
 import { Tooltip as TooltipPopover, TooltipReference, useTooltipState } from 'reakit/Tooltip';
+import { cx } from '../utils/linaria';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import * as tooltipStyles from './tooltipStyles';

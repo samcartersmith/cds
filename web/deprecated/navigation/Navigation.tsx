@@ -5,7 +5,7 @@ import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { MotionConfig, useElementScroll, m as motion } from 'framer-motion';
-import { cx } from 'linaria';
+import { cx } from '../../utils/linaria';
 
 import { useDimensions } from '../../hooks/useDimensions';
 import { useInterpolate } from '../../hooks/useInterpolate';

@@ -2,7 +2,8 @@ import React, { ForwardedRef, forwardRef, memo } from 'react';
 
 import type { CellBaseProps } from '@cbhq/cds-common/types';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';

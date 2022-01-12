@@ -4,7 +4,7 @@ import { IconButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { cx } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { iconButton } from './buttonStyles';
 import { Icon } from '../icons/Icon';

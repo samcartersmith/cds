@@ -1,7 +1,8 @@
-import { css, cx } from 'linaria';
 import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { modalHiddenOpacity, modalHiddenScale } from '@cbhq/cds-common/animation/modal';
 import { overlayHiddenOpacity } from '@cbhq/cds-common/animation/overlay';
+import { css } from 'linaria';
+import { cx } from '../../utils/linaria';
 
 import { spacing } from '../../tokens';
 

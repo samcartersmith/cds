@@ -1,6 +1,7 @@
-import { css, cx } from 'linaria';
 import React, { memo } from 'react';
+import { css } from 'linaria';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactable';
+import { cx } from '../utils/linaria';
 import { palette, spacing } from '../tokens';
 import { Link, LinkProps, linkContainerClassName } from '../typography/Link';
 import { focusRing } from '../styles/focus';

@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { DividerBaseProps } from '@cbhq/cds-common';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 import { Separator } from 'reakit/Separator';
+import { cx } from '../utils/linaria';
 
 import { palette } from '../tokens';
 import { Box, BoxProps } from './Box';

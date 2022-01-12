@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
-import { cx } from 'linaria';
-
 import { useScale, SystemProvider } from '@cbhq/cds-common';
+import { cx } from '../utils/linaria';
 
 import { usePaletteToCssVars } from '../color/usePaletteToCssVars';
 import { useSpectrumClassName } from '../color/useSpectrumClassName';

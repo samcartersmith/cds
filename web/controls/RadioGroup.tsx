@@ -5,7 +5,8 @@ import { SharedProps } from '@cbhq/cds-common';
 import { borderRadius, borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { Icon } from '../icons/Icon';
 import { control, palette } from '../tokens';

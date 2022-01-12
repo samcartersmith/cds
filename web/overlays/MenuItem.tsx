@@ -9,7 +9,8 @@ import React, {
 } from 'react';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 import { NoopFn } from '@cbhq/cds-common';
-import { cx, css } from 'linaria';
+import { css } from 'linaria';
+import { cx } from '../utils/linaria';
 import { insetFocusRing } from '../styles/focus';
 import { Pressable, PressableProps } from '../system/Pressable';
 

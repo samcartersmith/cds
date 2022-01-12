@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { cx } from 'linaria';
+import { cx } from '../utils/linaria';
 import { TableContext } from './context/TableContext';
 import { useTableStyles } from './hooks/useTableStyles';
 import { TableProps } from './types/tableTypes';

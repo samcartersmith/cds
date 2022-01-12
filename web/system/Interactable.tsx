@@ -8,9 +8,8 @@ import {
 import { useInteractableTokens } from '@cbhq/cds-common/hooks/useInteractableTokens';
 import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
-import { cx } from 'linaria';
-
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import { cx } from '../utils/linaria';
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import * as borderColors from '../styles/borderColor';
 import * as borderWidths from '../styles/borderWidth';

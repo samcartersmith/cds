@@ -8,13 +8,13 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
-import { cx } from 'linaria';
 import { createPortal } from 'react-dom';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { Position } from '@cbhq/cds-common';
 
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import { cx } from '../../utils/linaria';
 import { Box, VStack, BoxProps } from '../../layout';
 import { Overlay } from '../Overlay/Overlay';
 import {

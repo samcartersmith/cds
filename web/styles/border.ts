@@ -1,5 +1,6 @@
+import { css } from 'linaria';
 import { BorderedStyles, ElevationLevels } from '@cbhq/cds-common';
-import { css, cx } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { palette } from '../tokens';
 

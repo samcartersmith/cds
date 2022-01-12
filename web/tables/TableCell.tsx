@@ -1,8 +1,9 @@
 import React, { useMemo, memo } from 'react';
 
-import { cx, css } from 'linaria';
+import { css } from 'linaria';
 import { CellSpacing } from '@cbhq/cds-common/types';
 import { isProduction } from '@cbhq/cds-utils';
+import { cx } from '../utils/linaria';
 import { Cell, truncateClassName } from '../cells/Cell';
 import { VStack, HStack } from '../layout';
 import { TextBody, TextLabel2, TextHeadline } from '../typography';

@@ -1,5 +1,6 @@
+import { css } from 'linaria';
 import { FlexStyles } from '@cbhq/cds-common';
-import { css, cx } from 'linaria';
+import { cx } from '../utils/linaria';
 
 import { CSSMap, Display } from '../types';
 import { display as displayStyles } from './display';
