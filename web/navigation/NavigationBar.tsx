@@ -1,5 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { HStack, VStack } from '../layout';
 
@@ -23,7 +24,7 @@ export type NavigationBarProps = {
 
 export const NavigationBar = memo(({ start, children, end }: NavigationBarProps) => {
   return (
-    <ThemeProvider scale={DEFAULT_SCALE}>
+    <ThemeProvider scale={DEFAULT_SCALE} display="contents">
       <HStack
         as="nav"
         position="sticky"
@@ -37,6 +38,7 @@ export const NavigationBar = memo(({ start, children, end }: NavigationBarProps)
         minHeight={80} // TODO move this to some sizing tokens
         alignItems="center"
         justifyContent="space-between"
+        zIndex={zIndex.navigation}
       >
         <HStack gap={2} alignItems="center" justifyContent="flex-start">
           {start}

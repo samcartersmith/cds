@@ -2,6 +2,7 @@ import React, { memo, Children, cloneElement, ReactElement, useMemo } from 'reac
 
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { css } from 'linaria';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { SidebarItemProps } from './SidebarItem';
 import { VStack } from '../layout';
 import { ThemeProvider } from '../system/ThemeProvider';
@@ -73,19 +74,23 @@ export const Sidebar: React.FC<SidebarProps> = memo(
     );
 
     return (
-      <ThemeProvider scale={DEFAULT_SCALE}>
+      <ThemeProvider scale={DEFAULT_SCALE} display="contents">
         <VStack
           as="nav"
           background
           borderedEnd
           height="100%"
+          position="sticky"
+          top="0"
+          left="0"
           width={computedWidth}
           minWidth={computedWidth}
           spacingHorizontal={2}
           spacingBottom={2}
           spacingTop={2}
+          zIndex={zIndex.navigation}
         >
-          <VStack spacingTop={0.5} spacingStart={1} spacingBottom={4}>
+          <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
             {logo}
           </VStack>
           <VStack gap={0.5} offsetStart={0.5}>
