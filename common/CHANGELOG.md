@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.0 (1/12/2022, 03:10 PM PST)
+
+#### 💥 Breaking
+
+- **[Icons]** Publish icon jan-11-2022. Icon Name Change: report renamed to reportActive. [#48446](https://github.cbhq.net/mono/repo/pull/48446)
+
+#### 🚀 Updates
+
+- Added live examples and docs for chart header. [#48499](https://github.cbhq.net/mono/repo/pull/48499)
+
 ## 0.32.0 (1/12/2022, 05:27 AM PST)
 
 #### 💥 Breaking

@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.0 (1/12/2022, 03:10 PM PST)
+
+#### 💥 Breaking
+
+- **[Icons]** Publish icon jan-11-2022. Icon Name Change: report renamed to reportActive. [#48446](https://github.cbhq.net/mono/repo/pull/48446)
+
+#### 🚀 Updates
+
+- Added live examples and docs for chart header. [#48499](https://github.cbhq.net/mono/repo/pull/48499)
+
+#### 🐞 Fixes
+
+- Missed accessibility label. [#48576](https://github.cbhq.net/mono/repo/pull/48576)
+- **[SearchInput]** Fix issue with clearButton requiring 2 presses. [#48402](https://github.cbhq.net/mono/repo/pull/48402), [CDS-1808](https://jira.coinbase-corp.com/browse/CDS-1808)
+
 ## 0.37.0 (1/12/2022, 05:27 AM PST)
 
 #### 💥 Breaking
