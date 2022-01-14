@@ -14,4 +14,8 @@ export type SharedAccessibilityProps = {
    * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute
    */
   accessibilityLabelledBy?: string;
+  /** Used for a11y to indicate the relationship between a controlled element and its controller
+   * eg: a Button that controls the visibility of a Modal
+   */
+  id?: string;
 };

@@ -56,7 +56,7 @@ export type ModalProps = {
   dangerouslySetPosition?: Position;
 } & ModalBaseProps &
   Pick<BoxProps, 'dangerouslySetClassName'> &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
@@ -74,6 +74,7 @@ export const Modal = memo(
       dangerouslySetPosition,
       shouldCloseOnEscPress = true,
       dangerouslySetClassName,
+      id,
     } = props;
 
     const blockScroll = useScrollBlocker();
@@ -205,6 +206,7 @@ export const Modal = memo(
         aria-modal="true"
         accessibilityLabelledBy={accessibilityLabelledBy}
         accessibilityLabel={accessibilityLabel}
+        id={id}
         zIndex={customZIndex ?? zIndex.overlays.modal}
         dangerouslySetClassName={dangerouslySetClassName}
       >

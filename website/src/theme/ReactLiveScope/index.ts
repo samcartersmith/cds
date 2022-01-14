@@ -40,6 +40,7 @@ import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { useModal } from '@cbhq/cds-web/overlays/useModal';
+import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
 import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
 import { useFeatureFlags } from '@cbhq/cds-web/system/useFeatureFlags';
@@ -119,6 +120,7 @@ const ReactLiveScope = {
   useStatusButtons,
   useToggler,
   useModal,
+  useA11yControlledVisibility,
   useFeatureFlags,
   useFeatureFlag,
   useFeatureFlagUpdater,

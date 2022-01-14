@@ -1,6 +1,8 @@
 ### Get Started
+
 1. Add `PortalProvider` to the root of your app. Import it from `import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';`.
 2. Compose `Modal` with `ModalHeader`, `ModalBody`, and `ModalFooter` like below for consistency.
+
 ```
 <Modal>
 	<ModalHeader />
@@ -10,9 +12,11 @@
 	<ModalFooter />
 </Modal>
 ```
+
 3. Wire up `visible` and `onRequestClose` to control visibility.
 
 ### Default Modal
+
 Modal is using React Portal by default, which will port the node to the end of the `body` tag. You can add `disabledPortal` to disable this behavior.
 
 **Recommended** to use the `closeModal()` from render children to close the Modal which will have the close animation play properly.
@@ -23,12 +27,16 @@ Modal is using React Portal by default, which will port the node to the end of t
 function DefaultModalExample() {
   const [visible, { toggleOn, toggleOff }] = useToggler();
   const [scrolling, { toggle: toggleScrolling }] = useToggler();
+  const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
+    useA11yControlledVisibility(visible);
 
   return (
     <ExampleWithThemeToggles>
       <PortalProvider>
         <ButtonGroup>
-          <Button onPress={toggleOn}>Open Modal</Button>
+          <Button onPress={toggleOn} {...triggerAccessibilityProps}>
+            Open Modal
+          </Button>
           <Switch onChange={toggleScrolling} checked={scrolling}>
             Show long content
           </Switch>
@@ -36,18 +44,22 @@ function DefaultModalExample() {
         <Modal
           visible={visible}
           onRequestClose={toggleOff}
+          {...controlledElementAccessibilityProps}
         >
           {({ closeModal }) => (
             <>
-              <ModalHeader title="Basic Modal" /> {/* close action is inherited from onRequestClose */}
+              <ModalHeader title="Basic Modal" />{' '}
+              {/* close action is inherited from onRequestClose */}
               <ModalBody>
-                <TextBody as='p'>
-                  {loremIpsum.repeat(scrolling ? 50 : 1)}
-                </TextBody>
+                <TextBody as="p">{loremIpsum.repeat(scrolling ? 50 : 1)}</TextBody>
               </ModalBody>
               <ModalFooter
                 primaryAction={<Button onPress={closeModal}>Save</Button>}
-                secondaryAction={<Button variant="secondary"  onPress={closeModal}>Cancel</Button>}
+                secondaryAction={
+                  <Button variant="secondary" onPress={closeModal}>
+                    Cancel
+                  </Button>
+                }
               />
             </>
           )}
@@ -78,17 +90,16 @@ function PortalModalExample() {
     const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(
-      () => openModal(
-        <Modal visible>
-          <ModalHeader title="Basic Modal" />
-          <ModalBody>
-            <TextBody as="p">{loremIpsum}</TextBody>
-          </ModalBody>
-          <ModalFooter
-            primaryAction={<Button onPress={closeModal}>Save</Button>}
-          />
-        </Modal>
-      ),
+      () =>
+        openModal(
+          <Modal visible>
+            <ModalHeader title="Basic Modal" />
+            <ModalBody>
+              <TextBody as="p">{loremIpsum}</TextBody>
+            </ModalBody>
+            <ModalFooter primaryAction={<Button onPress={closeModal}>Save</Button>} />
+          </Modal>,
+        ),
       [openModal],
     );
 
