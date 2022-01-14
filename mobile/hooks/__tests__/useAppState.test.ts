@@ -4,15 +4,18 @@ import { AppStateStatus } from 'react-native';
 import { useAppState } from '../useAppState';
 
 describe('useAppState', () => {
-  const addListenerSpy = jest.fn();
   const removeListenerSpy = jest.fn();
+  const addListenerSpy = jest.fn(() => {
+    return {
+      remove: removeListenerSpy,
+    };
+  });
 
   const mockCurrentAppState = (state: AppStateStatus) => {
     jest.resetModules();
     jest.doMock('react-native/Libraries/AppState/AppState', () => ({
       currentState: state,
       addEventListener: addListenerSpy,
-      removeEventListener: removeListenerSpy,
     }));
   };
 

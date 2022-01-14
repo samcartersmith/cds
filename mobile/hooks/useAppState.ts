@@ -10,10 +10,10 @@ export const useAppState = () => {
   }, []);
 
   useEffect(() => {
-    AppState.addEventListener('change', handleChange);
+    const subscription = AppState.addEventListener('change', handleChange);
 
     return () => {
-      AppState.removeEventListener('change', handleChange);
+      subscription.remove();
     };
   }, [handleChange]);
 

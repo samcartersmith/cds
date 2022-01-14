@@ -1,5 +1,5 @@
 import { Appearance, Platform, useColorScheme } from 'react-native';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Spectrum } from '@cbhq/cds-common';
 import { useAppState } from './useAppState';
 
@@ -12,17 +12,19 @@ export const useDeviceSpectrum: () => Spectrum = () => {
   const isAndroid = Platform.OS === 'android';
 
   useEffect(() => {
-    if (isAndroid) {
-      const colorScheme = Appearance.getColorScheme();
-      setDevicePreference(colorScheme);
-    }
-  }, [appState, isAndroid]);
+    // There is a bug with the useColorScheme on RN 0.65.2 that fires dark once the app becomes inactive
+    // we only want to set the device preference when the app is active.
 
-  return useMemo(() => {
-    if (isAndroid) {
-      return devicePreference ?? 'light';
-    }
+    if (appState === 'active') {
+      if (isAndroid) {
+        const colorScheme = Appearance.getColorScheme();
+        setDevicePreference(colorScheme);
+        return;
+      }
 
-    return colorSchemeSubscription ?? 'light';
-  }, [isAndroid, colorSchemeSubscription, devicePreference]);
+      setDevicePreference(colorSchemeSubscription);
+    }
+  }, [colorSchemeSubscription, appState, isAndroid]);
+
+  return devicePreference ?? 'light';
 };

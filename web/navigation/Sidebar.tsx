@@ -61,8 +61,8 @@ export const Sidebar: React.FC<SidebarProps> = memo(
      * */
     const decoratedChildren = useMemo(
       () =>
-        Children.map(children, (child) => {
-          const collapseChild = child.props?.collapsed ?? computedCollapse;
+        Children.map(children, (child: ReactElement<SidebarItemProps>) => {
+          const collapseChild = child?.props?.collapsed ?? computedCollapse;
 
           return child
             ? cloneElement(child, {
