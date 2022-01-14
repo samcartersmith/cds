@@ -15,6 +15,8 @@ export type SelectTriggerProps = {
   onSelectPress: (event: MouseEvent<HTMLElement>) => void;
   triggerRef: RefObject<HTMLButtonElement>;
   hasFocus: boolean;
+  /** ID used to show the relationship between the Select label (if present) and the PopoverMenu */
+  accessibilityLabelId?: string;
 } & Omit<SelectBaseProps, 'children' | 'onPress'>;
 
 const pressableOverrides = css`
@@ -45,6 +47,7 @@ export const SelectTrigger = memo(
         triggerRef,
         accessibilityLabel,
         hasFocus,
+        accessibilityLabelId,
       }: SelectTriggerProps,
       ref: ForwardedRef<HTMLButtonElement>,
     ) => {
@@ -114,7 +117,12 @@ export const SelectTrigger = memo(
           labelNode={
             !compact &&
             Boolean(label) && (
-              <InputLabel overflow="truncate" color={labelTextColor} disabled={disabled}>
+              <InputLabel
+                overflow="truncate"
+                color={labelTextColor}
+                disabled={disabled}
+                id={accessibilityLabelId}
+              >
                 {label}
               </InputLabel>
             )

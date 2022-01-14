@@ -95,6 +95,7 @@ export const NativeInput = memo(
         onKeyDown,
         onChange,
         accessibilityLabel,
+        accessibilityHint,
         compact,
         ...props
       }: NativeInputProps,
@@ -114,6 +115,7 @@ export const NativeInput = memo(
         <input
           style={alignStyle}
           aria-label={accessibilityLabel}
+          aria-describedby={accessibilityHint}
           className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
           data-testid={testID}
           tabIndex={0}

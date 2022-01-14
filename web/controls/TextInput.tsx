@@ -15,6 +15,7 @@ import { HStack } from '../layout/HStack';
 import { InputLabel } from './InputLabel';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { TextInputFocusVariantContext } from './context';
+import { useA11yId } from '../hooks/useA11yId';
 
 export type TextInputProps = {
   /**
@@ -51,6 +52,7 @@ export const TextInput = memo(
     const focusedVariant = useInputVariant(focused, variant);
     const internalRef = useRef<HTMLInputElement>();
     const refs = useMergedRef(ref, internalRef);
+    const helperTextId = useA11yId('cds-textinput-description-');
 
     const handleOnFocus = useCallback(
       (e: React.FocusEvent<HTMLInputElement>) => {
@@ -98,6 +100,7 @@ export const TextInput = memo(
             <NativeInput
               align={align}
               accessibilityLabel={accessibilityLabel ?? label}
+              accessibilityHint={helperTextId}
               containerSpacing={start ? startSpacing : undefined}
               onFocus={handleOnFocus}
               onBlur={handleOnBlur}
@@ -109,7 +112,12 @@ export const TextInput = memo(
           }
           helperTextNode={
             !!helperText && (
-              <HelperText color={variant} align={align}>
+              <HelperText
+                color={variant}
+                align={align}
+                accessibilityLabel={helperText}
+                id={helperTextId}
+              >
                 {helperText}
               </HelperText>
             )

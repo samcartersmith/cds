@@ -16,6 +16,7 @@ import { useRotate180Animation } from '../animation/useRotate180Animation';
 import { SelectTrigger } from './SelectTrigger';
 import { PopoverMenu } from '../overlays/PopoverMenu';
 import { MenuItemProps } from '../overlays/MenuItem';
+import { useA11yId } from '../hooks/useA11yId';
 
 export type SelectProps = {
   children: ReactElement<MenuItemProps & LinkableProps>[];
@@ -47,6 +48,7 @@ export const Select = memo(
     const triggerRef =
       (ref as React.MutableRefObject<HTMLButtonElement | null>) ?? defaultTriggerRef;
 
+    const accessibilityLabelId = useA11yId();
     // this corrects for when value is initialized with an empty string, coerce it to undefined
     const sanitizedValue = value === '' ? undefined : value;
     const menuOffsetConfig = useMemo(() => {
@@ -92,6 +94,7 @@ export const Select = memo(
           onSelectPress={handleOnSelectPress}
           triggerRef={triggerRef}
           hasFocus={triggerHasFocus}
+          accessibilityLabelId={accessibilityLabelId}
           {...props}
         />
       );
@@ -108,6 +111,7 @@ export const Select = memo(
       triggerRef,
       props,
       triggerHasFocus,
+      accessibilityLabelId,
     ]);
 
     return (
@@ -123,6 +127,7 @@ export const Select = memo(
         ref={popoverMenuRef}
         customTriggerRef={triggerRef}
         onBlur={handleBlur}
+        accessibilityLabelledBy={accessibilityLabelId}
       >
         {children}
       </PopoverMenu>

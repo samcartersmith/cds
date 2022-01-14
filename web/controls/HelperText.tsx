@@ -6,6 +6,8 @@ import { TextLabel2, TextBody, TextProps } from '../typography';
 export type HelperTextProps = {
   /** Color of helper text */
   color?: InputVariant;
+  /** Used to associate the helper text with an input */
+  id?: string;
 } & TextProps;
 
 export const HelperText = memo(({ ...props }: HelperTextProps) => {

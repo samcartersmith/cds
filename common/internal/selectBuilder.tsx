@@ -143,8 +143,8 @@ export const selectBuilder = ({
           <Select
             value={value}
             onChange={setValue}
-            placeholder="Choose something"
-            label="Pick your poison"
+            placeholder="Choose an amount"
+            label="How many would you like?"
           >
             {priceOptions.map((option) => (
               <SelectOption
@@ -171,8 +171,8 @@ export const selectBuilder = ({
             value={value}
             compact
             onChange={setValue}
-            placeholder="Choose something"
-            label="Pick your poison"
+            placeholder="Choose an amount"
+            label="How many would you like? "
             helperText="You only get one choice"
           >
             {priceOptions.map((option) => (

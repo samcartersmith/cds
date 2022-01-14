@@ -1,4 +1,5 @@
 import type { TextBaseProps, PaletteForeground, SharedProps } from '@cbhq/cds-common';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
 export type TextProps = {
   /**
@@ -19,8 +20,11 @@ export type TextProps = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetClassName?: string;
+  /** Used to associate a label with a control */
+  id?: string;
 } & TextBaseProps &
-  SharedProps;
+  SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;
 
 export type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4';
 

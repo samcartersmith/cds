@@ -16,12 +16,12 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { ElementChildren, PopoverMenuBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
 import { inputStackHelperTextHeight } from '@cbhq/cds-common/tokens/select';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { useAccessibleControlledVisibility } from '@cbhq/cds-common/hooks/useAccessibleControlledVisibility';
 import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { usePopover } from './usePopover';
 import { VStack, HStack } from '../layout';
 import { SelectOption, SelectOptionProps } from '../controls/SelectOption';
+import { useA11yControlledVisibility } from '../hooks/useA11yControlledVisibility';
 
 export type PopoverMenuProps = {
   children: ElementChildren<SelectOptionProps> | HTMLElement;
@@ -46,6 +46,7 @@ export const PopoverMenu = memo(
         accessibilityLabel,
         customTriggerRef,
         onBlur,
+        accessibilityLabelledBy,
         ...props
       },
       ref,
@@ -70,7 +71,7 @@ export const PopoverMenu = memo(
 
       // used to generate unique aria labels and attributes
       const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
-        useAccessibleControlledVisibility(visible, accessibilityLabel);
+        useA11yControlledVisibility(visible, accessibilityLabel);
 
       // When PopoverMenu is used with a Select as a trigger, we need to calculate PopoverMenu offset based on presence of nodes in the Select
       const labelHeight = useScaleConditional(inputStackHelperTextHeight);
@@ -230,6 +231,7 @@ export const PopoverMenu = memo(
                 borderRadius="popover"
                 role="menu"
                 maxHeight={maxHeight}
+                accessibilityLabelledBy={accessibilityLabelledBy}
               >
                 {flattenNodes(children).map((child) => {
                   if (child && typeof child === 'object' && child.type === SelectOption) {

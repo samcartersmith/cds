@@ -68,6 +68,9 @@ export const createText = <
     // interactable ex. label
     disabled = overrides?.disabled,
     dangerouslySetColor = overrides?.dangerouslySetColor,
+    accessibilityLabel = overrides?.accessibilityLabel,
+    accessibilityLabelledBy = overrides?.accessibilityLabelledBy,
+    id = overrides?.id,
     ...props
   }: DynamicElement<
     TextProps,
@@ -93,6 +96,9 @@ export const createText = <
     return createElement(overrides?.as ?? as, {
       ...props,
       'data-testid': testID,
+      'aria-label': accessibilityLabel,
+      'aria-labelledby': accessibilityLabelledBy,
+      id,
       ...(mono ? { 'data-variant': 'mono' } : emptyObject),
       children,
       style: dangerouslySetColor ? { color: dangerouslySetColor } : undefined,

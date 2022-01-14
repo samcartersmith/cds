@@ -160,14 +160,14 @@ const [visible, { toggleOn, toggleOff }] = useToggler(false);
 #### Accessibility
 
 If a component's visibility is controlled by another component, use the
-`useAccessibleControlledVisibility` hook which will add accessibility props to
+`useA11yControlledVisibility` hook which will add accessibility props to
 both the trigger and the controlled component.
 
 ```jsx
 const accessibilityLabel = 'open-menu-button';
 const [visible, { toggleOn, toggleOff }] = useToggler(false);
 const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
-  useAccessibleControlledVisibility(visible, accessibilityLabel);
+  useA11yControlledVisibility(visible, accessibilityLabel);
 
 <Trigger {...triggerAccessibilityProps}>Click me!</Trigger>;
 {
