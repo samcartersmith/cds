@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.1 (1/14/2022, 10:30 AM PST)
+
+#### 🚀 Updates
+
+- Upgrade to React Native v0.65.2. [#47747](https://github.cbhq.net/mono/repo/pull/47747), [CDS-1841](https://jira.coinbase-corp.com/browse/CDS-1841)
+
+#### 🐞 Fixes
+
+- Navigation cannot be sticky. [#46664](https://github.cbhq.net/mono/repo/pull/46664)
+
 ## 0.34.0 (1/12/2022, 03:10 PM PST)
 
 #### 💥 Breaking
