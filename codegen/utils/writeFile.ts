@@ -15,6 +15,7 @@ export type TemplateConfig<T = unknown> = {
   data: T;
   types?: Record<string, string>;
   config?: {
+    defaultExport?: boolean;
     commonJS?: boolean;
     disableAsConst?: boolean;
     disableStringify?: boolean;

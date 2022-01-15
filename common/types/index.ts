@@ -53,6 +53,7 @@ export * from './SparklinePathBaseProps';
 export * from './Spectrum';
 export * from './TextBaseProps';
 export * from './TextInputBaseProps';
+export * from './ThemeConfig';
 export * from './ThemeProviderBaseProps';
 export * from './ToastBaseProps';
 export * from './TrayBaseProps';

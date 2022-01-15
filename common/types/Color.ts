@@ -13,7 +13,9 @@ export type PaletteFn<InputType, ReturnType> = (
 type PaletteCssVariableValue = `var(--${KebabCase<PaletteAlias>})`;
 export type GradientArray = { offset: string; color: string }[];
 export type RgbArray = [number, number, number];
-export type RgbaArray = [number, number, number, number];
+export type RgbaArray =
+  | [number, number, number, number]
+  | Readonly<[number, number, number, number]>;
 export type RgbString = `${string},${string},${string}`;
 export type PaletteValueToRgbaArray = PaletteFn<PaletteValue, RgbaArray>;
 export type PaletteValueToRgbaString = PaletteFn<PaletteValue, string>;
@@ -21,7 +23,11 @@ export type PaletteValueToHex = PaletteFn<PaletteValue, string>;
 export type PaletteAliasToRgbaString = PaletteFn<PaletteAlias, string>;
 export type PaletteConfigToRgbaStrings = PaletteFn<
   PartialPaletteConfig,
-  { [key in PaletteAlias]: string }
+  Record<PaletteAlias, string>
+>;
+export type PaletteConfigToHexValues = PaletteFn<
+  PartialPaletteConfig,
+  Record<PaletteAlias, string>
 >;
 export type A11yColorUsage = 'largeText' | 'normalText' | 'graphic';
 export type AccessibleForegroundParams = {

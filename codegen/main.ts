@@ -1,4 +1,4 @@
-import { mapValues } from '@cbhq/cds-utils';
+import { entries, mapValues } from '@cbhq/cds-utils';
 
 import {
   borderRadiusConfig,
@@ -9,15 +9,16 @@ import {
 import { scaleConfig } from './configs/scaleConfig';
 import { Control } from './Control';
 import { lottieFiles } from './Lottie';
+import { themeConfigs, fallbackShimmer } from './configs/themeConfigs';
 import { Palette, defaultPalette } from './Palette';
 import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
 import { Type } from './Type/Type';
 import { TypeScript } from './Typescript';
-import { buildTemplates } from './utils/buildTemplates';
+import { buildTemplates, TemplateMap } from './utils/buildTemplates';
 
 async function codegen() {
-  const templates = {
+  const templates: TemplateMap = {
     'lottieStyles.ejs': [
       {
         dest: 'web/animation/lottieStyles.ts',
@@ -91,6 +92,12 @@ async function codegen() {
         data: Spacing.css('margin'),
       },
     ],
+    'themes.ejs': [
+      {
+        dest: 'common/themes/index.ts',
+        data: entries(themeConfigs).map(([key]) => key),
+      },
+    ],
     'objectMap.ejs': [
       {
         dest: 'mobile/styles/scale.ts',
@@ -103,9 +110,25 @@ async function codegen() {
         }),
       },
       {
-        dest: 'mobile/styles/spectrum.ts',
+        dest: 'mobile/styles/fallbackShimmer.ts',
+        data: { fallbackShimmer },
+        config: {
+          disableAsConst: true,
+        },
+      },
+      {
+        dest: 'common/spectrum/spectrumRgbArray.ts',
         data: Spectrum.native,
       },
+      ...Object.values(
+        mapValues(themeConfigs, (value, key) => ({
+          dest: `common/themes/theme-${key}.ts`,
+          data: value,
+          config: {
+            defaultExport: true,
+          },
+        })),
+      ),
       {
         dest: 'common/tokens/border.ts',
         data: { borderRadius: borderRadiusConfig, borderWidth: borderWidthConfig },
