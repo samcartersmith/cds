@@ -2,8 +2,8 @@ import React, { memo, MouseEvent, useCallback, useRef } from 'react';
 import { noop } from '@cbhq/cds-utils';
 import {
   ChartScrubHandlerProps,
-  InteractiveSparklineBaseProps,
-} from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+  SparklineInteractiveBaseProps,
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { css } from 'linaria';
 import { ChartGetMarker } from '@cbhq/cds-common';
 import { fadeDuration, maskOpacity } from '@cbhq/cds-common/tokens/sparkline';
@@ -71,7 +71,7 @@ export function fadeInMask(domNode?: HTMLElement | null) {
 type ChartScrubHandlerWebProps<Period extends string> = ChartScrubHandlerProps & {
   getMarker: ChartGetMarker;
   selectedPeriod: Period;
-} & Pick<InteractiveSparklineBaseProps<Period>, 'onScrub' | 'formatHoverDate'>;
+} & Pick<SparklineInteractiveBaseProps<Period>, 'onScrub' | 'formatHoverDate'>;
 
 const ChartScrubHandlerWithGeneric = <Period extends string>({
   onScrubEnd = noop,

@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { GetFormattedDateParams } from '../types/InteractiveSparklineBaseProps';
+import { GetFormattedDateParams } from '../types/SparklineInteractiveBaseProps';
 
 export function useDateLookup<Period extends string>({
   getMarker,

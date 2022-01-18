@@ -5,17 +5,17 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
-> [@cbhq/cds-(web|mobile)/visualizations/InteractiveSparkline](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/InteractiveSparkline.tsx)
+> [@cbhq/cds-(web|mobile)/visualizations/SparklineInteractive](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/SparklineInteractive.tsx)
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="intro" />
+<ComponentDetails componentName="SparklineInteractive" templateName="intro" />
 
 ## Usage
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="usage" />
+<ComponentDetails componentName="SparklineInteractive" templateName="usage" />
 
 ## Accessibility
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="a11y" />
+<ComponentDetails componentName="SparklineInteractive" templateName="a11y" />
 
 ## Props
 
@@ -24,7 +24,7 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 Show the chart in compact height
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="compact"
   required={false}
   defaultValue="false"
@@ -32,14 +32,14 @@ Show the chart in compact height
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-compact" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-compact" />
 
 ### data
 
 Chart data bucketed by Period. Period is a string key
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="data"
   required={false}
   defaultValue=""
@@ -47,14 +47,14 @@ Chart data bucketed by Period. Period is a string key
   webOptions={['Record<Period, ChartData>']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-data" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-data" />
 
 ### defaultPeriod
 
 default period value that the chart will use
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="defaultPeriod"
   required={true}
   defaultValue=""
@@ -62,14 +62,14 @@ default period value that the chart will use
   webOptions={[]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-defaultPeriod" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-defaultPeriod" />
 
 ### disableScrubbing
 
 Disables the scrub user interaction from the chart
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="disableScrubbing"
   required={false}
   defaultValue="false"
@@ -77,14 +77,14 @@ Disables the scrub user interaction from the chart
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-disableScrubbing" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-disableScrubbing" />
 
 ### fallback
 
 Fallback shown in the chart when data is not available. This is usually a loading state.
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="fallback"
   required={false}
   defaultValue=""
@@ -112,14 +112,14 @@ Fallback shown in the chart when data is not available. This is usually a loadin
   ]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-fallback" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-fallback" />
 
 ### fill
 
 Adds an area fill to the Sparkline
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="fill"
   required={false}
   defaultValue="true for frontier false otherwise"
@@ -127,14 +127,14 @@ Adds an area fill to the Sparkline
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-fill" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-fill" />
 
 ### formatAmount <Badge variant="mobile" />
 
 function used to format the amount of money used in the minMaxLabel
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="formatAmount"
   required={true}
   defaultValue=""
@@ -142,14 +142,14 @@ function used to format the amount of money used in the minMaxLabel
   webOptions={[]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatAmount" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-formatAmount" />
 
 ### formatDate
 
 function used to format the date that is shown in the bottom of the chart as the user scrubs
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="formatDate"
   required={true}
   defaultValue=""
@@ -157,14 +157,14 @@ function used to format the date that is shown in the bottom of the chart as the
   webOptions={[]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatDate" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-formatDate" />
 
 ### formatHoverDate
 
 Formats the date above the chart as you scrub. Omit this if you dont want to show the date as the user scrubs
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="formatHoverDate"
   required={false}
   defaultValue=""
@@ -172,14 +172,14 @@ Formats the date above the chart as you scrub. Omit this if you dont want to sho
   webOptions={['(date: Date, period: Period) => string']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-formatHoverDate" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-formatHoverDate" />
 
 ### headerNode
 
 Adds a header node above the chart. It will be placed next to the period selector on web.
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="headerNode"
   required={false}
   defaultValue=""
@@ -207,14 +207,14 @@ Adds a header node above the chart. It will be placed next to the period selecto
   ]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-headerNode" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-headerNode" />
 
 ### hideMinMaxLabel <Badge variant="mobile" />
 
 Hides the min and max label
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="hideMinMaxLabel"
   required={false}
   defaultValue="false"
@@ -222,14 +222,14 @@ Hides the min and max label
   webOptions={[]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-hideMinMaxLabel" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-hideMinMaxLabel" />
 
 ### hidePeriodSelector
 
 Hides the period selector at the bottom of the chart
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="hidePeriodSelector"
   required={false}
   defaultValue="false"
@@ -237,14 +237,14 @@ Hides the period selector at the bottom of the chart
   webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-hidePeriodSelector" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-hidePeriodSelector" />
 
 ### onPeriodChanged
 
 Callback when the user selects a new period.
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="onPeriodChanged"
   required={false}
   defaultValue=""
@@ -252,14 +252,14 @@ Callback when the user selects a new period.
   webOptions={['(period: Period) => void']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-onPeriodChanged" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-onPeriodChanged" />
 
 ### onScrub
 
 Callback used when the user is scrubbing. This will be called for every data point change.
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="onScrub"
   required={false}
   defaultValue=""
@@ -267,14 +267,14 @@ Callback used when the user is scrubbing. This will be called for every data poi
   webOptions={['(params: ChartScrubParams<Period>) => void']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-onScrub" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-onScrub" />
 
 ### onScrubEnd
 
 Callback when a user finishes scrubbing
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="onScrubEnd"
   required={false}
   defaultValue=""
@@ -282,14 +282,14 @@ Callback when a user finishes scrubbing
   webOptions={['() => void']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-onScrubEnd" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-onScrubEnd" />
 
 ### onScrubStart
 
 Callback when the user starts scrubbing
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="onScrubStart"
   required={false}
   defaultValue=""
@@ -297,14 +297,14 @@ Callback when the user starts scrubbing
   webOptions={['() => void']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-onScrubStart" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-onScrubStart" />
 
 ### periods
 
 A list of periods that the chart will use. label is what is shown in the bottom of the chart and the value is the key.
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="periods"
   required={true}
   defaultValue=""
@@ -312,14 +312,14 @@ A list of periods that the chart will use. label is what is shown in the bottom 
   webOptions={[]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-periods" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-periods" />
 
 ### strokeColor
 
 Color of the line\*
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="strokeColor"
   required={true}
   defaultValue=""
@@ -327,14 +327,14 @@ Color of the line\*
   webOptions={[]}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-strokeColor" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-strokeColor" />
 
 ### yAxisScalingFactor
 
 Scales the sparkline to show more or less variance. Use a number less than 1 for less variance and a number greater than 1 for more variance. If you use a number greater than 1 it may clip the boundaries of the sparkline.
 
 <ApiDetails
-  componentName="InteractiveSparkline"
+  componentName="SparklineInteractive"
   propertyName="yAxisScalingFactor"
   required={false}
   defaultValue=""
@@ -342,6 +342,6 @@ Scales the sparkline to show more or less variance. Use a number less than 1 for
   webOptions={['number']}
 />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="prop-yAxisScalingFactor" />
+<ComponentDetails componentName="SparklineInteractive" templateName="prop-yAxisScalingFactor" />
 
-<ComponentDetails componentName="InteractiveSparkline" templateName="outro" />
+<ComponentDetails componentName="SparklineInteractive" templateName="outro" />

@@ -30,8 +30,6 @@ export const routes = {
   InputIcon: () => require('../controls/__stories__/InputIcon.stories').default,
   InputIconButton: () => require('../controls/__stories__/InputIconButton.stories').default,
   InputStack: () => require('../controls/__stories__/InputStack.stories').default,
-  InteractiveSparkline: () =>
-    require('../visualizations/chart/__stories__/InteractiveSparkline.stories').default,
   Link: () => require('../typography/__stories__/Link.stories').default,
   ListCell: () => require('../cells/__stories__/ListCell.stories').default,
   ListCellFallback: () => require('../cells/__stories__/ListCellFallback.stories').default,
@@ -55,6 +53,8 @@ export const routes = {
   Sparkline: () => require('../visualizations/__stories__/Sparkline.stories').default,
   SparklineGradient: () =>
     require('../visualizations/__stories__/SparklineGradient.stories').default,
+  SparklineInteractive: () =>
+    require('../visualizations/chart/__stories__/SparklineInteractive.stories').default,
   Spectrum: () => require('../system/__stories__/Spectrum.stories').default,
   SpotRectangle: () => require('../illustrations/__stories__/SpotRectangle.stories').default,
   SpotSquare: () => require('../illustrations/__stories__/SpotSquare.stories').default,

@@ -108,7 +108,7 @@ const ChartHeaderStable = memo(
         [update],
       );
 
-      const label = (
+      const label = !!defaultLabel && (
         <TextHeadline as="div" color="foregroundMuted">
           <span ref={labelRef}>{defaultLabel}</span>
         </TextHeadline>

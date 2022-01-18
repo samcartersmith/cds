@@ -1,14 +1,14 @@
 #### Example code
-All examples use the following code to generate the InteractiveSparkline
+All examples use the following code to generate the SparklineInteractive
 
 ```tsx
 type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
 type PriceChartProps = Omit<
-  InteractiveSparklineBaseProps<ChartPeriod>,
+  SparklineInteractiveBaseProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
-  Partial<Pick<InteractiveSparklineBaseProps<ChartPeriod>, 'defaultPeriod'>> & {
+  Partial<Pick<SparklineInteractiveBaseProps<ChartPeriod>, 'defaultPeriod'>> & {
     hideHoverDate?: boolean;
     hideMinMaxLabel?: boolean;
   };
@@ -119,7 +119,7 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
     }, []);
 
     return (
-      <InteractiveSparkline
+      <SparklineInteractive
         {...props}
         periods={periods}
         formatDate={formatDateWithConfig}
@@ -131,7 +131,7 @@ export const PriceChart = memo(({ defaultPeriod, ...props }: PriceChartProps) =>
 });
 ```
 
-The data shape of `interactiveSparklineData` is shown below. There are a lot more data points in the example screenshots than are shown below
+The data shape of `sparklineInteractiveData` is shown below. There are a lot more data points in the example screenshots than are shown below
 
 ```json
 {
@@ -202,7 +202,7 @@ The data shape of `interactiveSparklineData` is shown below. There are a lot mor
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} strokeColor="#F7931A" />
+    <PriceChart data={sparklineInteractiveData} strokeColor="#F7931A" />
 </Box>
 ```
 
@@ -212,7 +212,7 @@ If you are using frontier then the fill will be added by default
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} fill strokeColor="#F7931A" />
+    <PriceChart data={sparklineInteractiveData} fill strokeColor="#F7931A" />
 </Box>
 ```
 
@@ -220,7 +220,7 @@ If you are using frontier then the fill will be added by default
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} compact strokeColor="#F7931A" />
+    <PriceChart data={sparklineInteractiveData} compact strokeColor="#F7931A" />
 </Box>
 ```
 
@@ -228,7 +228,7 @@ If you are using frontier then the fill will be added by default
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <PriceChart data={interactiveSparklineData} hidePeriodSelector strokeColor="#F7931A" />
+    <PriceChart data={sparklineInteractiveData} hidePeriodSelector strokeColor="#F7931A" />
 </Box>
 ```
 
@@ -238,6 +238,6 @@ This example is using a PriceChartWithHeader component that has not been explain
 
 ```jsx live
 <Box spacing={3} width="100%">
-    <PriceChartWithHeader data={interactiveSparklineData} fill strokeColor="#F7931A" />
+    <PriceChartWithHeader data={sparklineInteractiveData} fill strokeColor="#F7931A" />
 </Box>
 ```

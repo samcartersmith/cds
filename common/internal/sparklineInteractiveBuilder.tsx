@@ -1,15 +1,15 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
-import { InteractiveSparklineBaseProps } from '../types/InteractiveSparklineBaseProps';
+import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import { ChartHeaderProps, ChartHeaderRef, ChartSubHead } from '../types/ChartHeaderBaseProps';
 
 export type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
 type PriceChartProps = Omit<
-  InteractiveSparklineBaseProps<ChartPeriod>,
+  SparklineInteractiveBaseProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
-  Partial<Pick<InteractiveSparklineBaseProps<ChartPeriod>, 'defaultPeriod'>> & {
+  Partial<Pick<SparklineInteractiveBaseProps<ChartPeriod>, 'defaultPeriod'>> & {
     hideHoverDate?: boolean;
     hideMinMaxLabel?: boolean;
   };
@@ -93,14 +93,14 @@ const getDateHoverOptions = (period: ChartPeriod) => {
   }
 };
 
-type InteractiveSparklineBuilderComponentProps<Period extends string> =
-  InteractiveSparklineBaseProps<Period> & {
+type SparklineInteractiveBuilderComponentProps<Period extends string> =
+  SparklineInteractiveBaseProps<Period> & {
     hideMinMaxLabel?: boolean;
     formatAmount: ChartFormatAmount;
   };
 
-type InteractiveSparklineBuilderProps = {
-  InteractiveSparkline: React.ComponentType<InteractiveSparklineBuilderComponentProps<ChartPeriod>>;
+type SparklineInteractiveBuilderProps = {
+  SparklineInteractive: React.ComponentType<SparklineInteractiveBuilderComponentProps<ChartPeriod>>;
   isMobile: boolean;
 };
 
@@ -110,10 +110,10 @@ function numToLocaleString(num: number) {
   });
 }
 
-export const interactiveSparklineBuilder = ({
-  InteractiveSparkline,
+export const sparklineInteractiveBuilder = ({
+  SparklineInteractive,
   isMobile,
-}: InteractiveSparklineBuilderProps) => {
+}: SparklineInteractiveBuilderProps) => {
   return memo(({ defaultPeriod, hideHoverDate, ...props }: PriceChartProps) => {
     // not supported onAndroid
     const timezoneObj = useMemo(() => {
@@ -152,7 +152,7 @@ export const interactiveSparklineBuilder = ({
     }, []);
 
     return (
-      <InteractiveSparkline
+      <SparklineInteractive
         {...props}
         periods={periods}
         formatDate={formatDateWithConfig}
@@ -167,9 +167,9 @@ export const interactiveSparklineBuilder = ({
 function generateSubHead(
   point: ChartDataPoint,
   period: ChartPeriod,
-  interactiveSparklineData: Record<ChartPeriod, ChartData>,
+  sparklineInteractiveData: Record<ChartPeriod, ChartData>,
 ): ChartSubHead {
-  const data = interactiveSparklineData[period];
+  const data = sparklineInteractiveData[period];
   const firstPoint = data[0];
 
   const increase = point.value > firstPoint.value;
@@ -185,60 +185,60 @@ function generateSubHead(
   return subHead;
 }
 
-type InteractiveSparklineWithHeaderBuilderProps = InteractiveSparklineBuilderProps & {
+type SparklineInteractiveWithHeaderBuilderProps = SparklineInteractiveBuilderProps & {
   ChartHeader: React.ForwardRefExoticComponent<
     ChartHeaderProps & React.RefAttributes<ChartHeaderRef>
   >;
 };
 
-export const interactiveSparklineWithHeaderBuilder = ({
-  InteractiveSparkline,
+export const sparklineInteractiveWithHeaderBuilder = ({
+  SparklineInteractive,
   ChartHeader,
   isMobile,
-}: InteractiveSparklineWithHeaderBuilderProps) => {
-  const InteractiveSparklineBuild = interactiveSparklineBuilder({
-    InteractiveSparkline,
+}: SparklineInteractiveWithHeaderBuilderProps) => {
+  const SparklineInteractiveBuild = sparklineInteractiveBuilder({
+    SparklineInteractive,
     isMobile,
   });
 
   return memo((props: PriceChartProps) => {
     const { data: sparklineData } = props;
-    const interactiveSparklineData = sparklineData as Record<ChartPeriod, ChartData>;
+    const sparklineInteractiveData = sparklineData as Record<ChartPeriod, ChartData>;
     const chartHeaderRef = useRef<ChartHeaderRef | null>(null);
     const [currentPeriod, setCurrentPeriod] = useState<ChartPeriod>(DEFAULT_CHART_PERIOD);
-    const data = interactiveSparklineData[currentPeriod];
+    const data = sparklineInteractiveData[currentPeriod];
     const lastPoint = data[data.length - 1];
 
     const handleScrub = useCallback(
       ({ point, period }: ChartScrubParams<ChartPeriod>) => {
         chartHeaderRef.current?.update({
           title: `$${point.value.toLocaleString('en-US')}`,
-          subHead: generateSubHead(point, period, interactiveSparklineData),
+          subHead: generateSubHead(point, period, sparklineInteractiveData),
         });
       },
-      [interactiveSparklineData],
+      [sparklineInteractiveData],
     );
 
     const handleScrubEnd = useCallback(() => {
       chartHeaderRef.current?.update({
         title: `$${numToLocaleString(lastPoint.value)}`,
-        subHead: generateSubHead(lastPoint, currentPeriod, interactiveSparklineData),
+        subHead: generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData),
       });
-    }, [currentPeriod, interactiveSparklineData, lastPoint]);
+    }, [currentPeriod, sparklineInteractiveData, lastPoint]);
 
     const handleOnPeriodChanged = useCallback(
       (period: ChartPeriod) => {
         setCurrentPeriod(period);
 
-        const newData = interactiveSparklineData[period];
+        const newData = sparklineInteractiveData[period];
         const newLastPoint = newData[newData.length - 1];
 
         chartHeaderRef.current?.update({
           title: `$${numToLocaleString(newLastPoint.value)}`,
-          subHead: generateSubHead(newLastPoint, period, interactiveSparklineData),
+          subHead: generateSubHead(newLastPoint, period, sparklineInteractiveData),
         });
       },
-      [interactiveSparklineData],
+      [sparklineInteractiveData],
     );
 
     const header = (
@@ -246,12 +246,12 @@ export const interactiveSparklineWithHeaderBuilder = ({
         ref={chartHeaderRef}
         defaultLabel="Bitcoin Price"
         defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
-        defaultSubHead={generateSubHead(lastPoint, currentPeriod, interactiveSparklineData)}
+        defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
       />
     );
 
     return (
-      <InteractiveSparklineBuild
+      <SparklineInteractiveBuild
         {...props}
         headerNode={header}
         onScrub={handleScrub}

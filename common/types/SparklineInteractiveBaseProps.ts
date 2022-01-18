@@ -10,7 +10,7 @@ import {
   SparklineScalingBaseProps,
 } from '.';
 
-export type InteractiveSparklineBaseProps<Period extends string> = {
+export type SparklineInteractiveBaseProps<Period extends string> = {
   /**
    * Chart data bucketed by Period. Period is a string key
    */
@@ -100,8 +100,8 @@ export type InteractiveSparklineBaseProps<Period extends string> = {
   headerNode?: ReactNode;
 } & SparklineScalingBaseProps;
 
-export type InteractiveSparklineContentProps<Period extends string> = Omit<
-  InteractiveSparklineBaseProps<Period>,
+export type SparklineInteractiveContentProps<Period extends string> = Omit<
+  SparklineInteractiveBaseProps<Period>,
   'compact'
 >;
 

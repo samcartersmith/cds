@@ -2347,33 +2347,6 @@ export const SparklineGradient = {
   ),
 };
 
-export const InteractiveSparkline = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/InteractiveSparkline/implementation.mdx'
-      ),
-  ),
-  'interactive-sparkline': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/InteractiveSparkline/interactive-sparkline.mdx'
-      ),
-  ),
-  intro: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/InteractiveSparkline/intro.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/InteractiveSparkline/usage.mdx'
-      ),
-  ),
-};
-
 export const ChartHeader = {
   'chart-header': React.lazy(
     async () =>
@@ -2397,6 +2370,33 @@ export const ChartHeader = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/usage.mdx'
+      ),
+  ),
+};
+
+export const SparklineInteractive = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineInteractive/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineInteractive/intro.mdx'
+      ),
+  ),
+  'sparkline-interactive': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineInteractive/sparkline-interactive.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineInteractive/usage.mdx'
       ),
   ),
 };

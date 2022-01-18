@@ -3,7 +3,7 @@ import { Animated } from 'react-native';
 import {
   ChartPeriodSelectorProps,
   ChartPeriodProps,
-} from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { usePalette } from '../../hooks/usePalette';
 import { HStack } from '../../layout/HStack';

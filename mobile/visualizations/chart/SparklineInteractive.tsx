@@ -14,8 +14,8 @@ import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSpar
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import {
   ChartHoverDateRefProps,
-  InteractiveSparklineBaseProps,
-} from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+  SparklineInteractiveBaseProps,
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { minMax } from '@cbhq/cds-common/utils/chart';
 import { chartFallbackPositive } from '@cbhq/cds-lottie-files';
 
@@ -44,8 +44,8 @@ const DefaultFallback = memo(() => {
   );
 });
 
-type InteractiveSparklineMobileProps<Period extends string> =
-  InteractiveSparklineBaseProps<Period> & {
+type SparklineInteractiveMobileProps<Period extends string> =
+  SparklineInteractiveBaseProps<Period> & {
     /**
      * Hides the min and max label
      *
@@ -59,23 +59,23 @@ type InteractiveSparklineMobileProps<Period extends string> =
     formatAmount: ChartFormatAmount;
   };
 
-function InteractiveSparklineWithGeneric<Period extends string>({
+function SparklineInteractiveWithGeneric<Period extends string>({
   compact,
   ...props
-}: InteractiveSparklineMobileProps<Period>) {
+}: SparklineInteractiveMobileProps<Period>) {
   return (
     <ChartProvider compact={compact}>
-      <InteractiveSparklineContent {...props} />
+      <SparklineInteractiveContent {...props} />
     </ChartProvider>
   );
 }
 
 // typescript doesn't understand the memo with the generic so it gets casted to a base react component
-export const InteractiveSparkline = memo(
-  InteractiveSparklineWithGeneric,
-) as typeof InteractiveSparklineWithGeneric;
+export const SparklineInteractive = memo(
+  SparklineInteractiveWithGeneric,
+) as typeof SparklineInteractiveWithGeneric;
 
-function InteractiveSparklineContentWithGeneric<Period extends string>({
+function SparklineInteractiveContentWithGeneric<Period extends string>({
   data,
   periods,
   defaultPeriod,
@@ -94,7 +94,7 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   yAxisScalingFactor = 1.0,
   formatHoverDate,
   headerNode,
-}: InteractiveSparklineMobileProps<Period>) {
+}: SparklineInteractiveMobileProps<Period>) {
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useChartContext();
   const color = strokeColor;
@@ -233,9 +233,9 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   );
 }
 
-const InteractiveSparklineContent = memo(
-  InteractiveSparklineContentWithGeneric,
-) as typeof InteractiveSparklineContentWithGeneric;
+const SparklineInteractiveContent = memo(
+  SparklineInteractiveContentWithGeneric,
+) as typeof SparklineInteractiveContentWithGeneric;
 
 type BelowChartProps<Period extends string> = {
   color: string;

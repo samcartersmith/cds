@@ -1,14 +1,14 @@
 import React from 'react';
-import { interactiveSparklineWithHeaderBuilder } from '@cbhq/cds-common/internal/interactiveSparklineBuilder';
-import { interactiveSparklineData } from '@cbhq/cds-common/internal/visualizations/InteractiveSparklineData';
-import { InteractiveSparkline } from '../../chart/InteractiveSparkline';
+import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
+import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import { SparklineInteractive } from '../../chart/SparklineInteractive';
 import { ChartHeader } from '../ChartHeader';
 import { Box } from '../../../layout';
 import { TextTitle3 } from '../../../typography/TextTitle3';
 import { Example } from '../../../examples/ExampleScreen';
 
-const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilder({
-  InteractiveSparkline,
+const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
+  SparklineInteractive,
   ChartHeader,
   isMobile: true,
 });
@@ -20,8 +20,8 @@ const ChartHeaderScreen = () => {
         <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
           Chart Header Example
         </TextTitle3>
-        <InteractiveSparklineWithHeaderBuild
-          data={interactiveSparklineData}
+        <SparklineInteractiveWithHeaderBuild
+          data={sparklineInteractiveData}
           strokeColor="#F7931A"
         />
       </Box>

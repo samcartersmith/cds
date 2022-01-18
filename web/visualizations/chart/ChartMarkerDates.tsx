@@ -1,4 +1,4 @@
-import { ChartMarkerDatesProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+import { ChartMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import React, { useState, FunctionComponent, memo, useCallback, useMemo } from 'react';
 import times from 'lodash/times';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';

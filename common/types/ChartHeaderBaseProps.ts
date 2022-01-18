@@ -9,7 +9,7 @@ export type ChartHeaderProps = {
   /**
    * Default label, changing this prop has no effect once the default is rendered.
    */
-  defaultLabel: string;
+  defaultLabel?: string;
 
   /**
    * Default SubHead, changing this prop has no effect once the default is rendered.

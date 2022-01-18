@@ -19,6 +19,38 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="NavigationTitle"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="NavigationTitle" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="NavigationTitle"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="NavigationTitle" templateName="prop-accessibilityLabelledBy" />
+
 ### align <Badge variant="web" />
 
 Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
@@ -122,6 +154,21 @@ Set CSS display attribute.
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-display" />
+
+### id <Badge variant="web" />
+
+Used to associate a label with a control
+
+<ApiDetails
+  componentName="NavigationTitle"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="NavigationTitle" templateName="prop-id" />
 
 ### inherit <Badge variant="web" />
 

@@ -19,7 +19,7 @@ import Animated, {
   sub,
 } from 'react-native-reanimated';
 import { noop } from '@cbhq/cds-utils';
-import { ChartScrubHandlerProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+import { ChartScrubHandlerProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 
 import { Haptics } from '../../utils/haptics';
 import { useChartContext } from './ChartProvider';

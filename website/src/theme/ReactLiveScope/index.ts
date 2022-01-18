@@ -10,10 +10,10 @@ import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePa
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useOverlay } from '@cbhq/cds-common/overlays/useOverlay';
 import {
-  interactiveSparklineBuilder,
-  interactiveSparklineWithHeaderBuilder,
-} from '@cbhq/cds-common/internal/interactiveSparklineBuilder';
-import { interactiveSparklineData } from '@cbhq/cds-common/internal/visualizations/InteractiveSparklineData';
+  sparklineInteractiveBuilder,
+  sparklineInteractiveWithHeaderBuilder,
+} from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
+import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
@@ -48,7 +48,7 @@ import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
 import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
-import { InteractiveSparkline } from '@cbhq/cds-web/visualizations/chart/InteractiveSparkline';
+import { SparklineInteractive } from '@cbhq/cds-web/visualizations/chart/SparklineInteractive';
 import { ChartHeader } from '@cbhq/cds-web/visualizations/chart-header/ChartHeader';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
@@ -75,13 +75,13 @@ import { ExampleBox } from ':cds-website/components/ExampleBox';
 
 import { useStatusButtons } from './useStatusButtons';
 
-const PriceChart = interactiveSparklineBuilder({
-  InteractiveSparkline,
+const PriceChart = sparklineInteractiveBuilder({
+  SparklineInteractive,
   isMobile: false,
 });
 
-const PriceChartWithHeader = interactiveSparklineWithHeaderBuilder({
-  InteractiveSparkline,
+const PriceChartWithHeader = sparklineInteractiveWithHeaderBuilder({
+  SparklineInteractive,
   ChartHeader,
   isMobile: false,
 });
@@ -174,7 +174,7 @@ const ReactLiveScope = {
   SparklineArea,
   PriceChart,
   PriceChartWithHeader,
-  interactiveSparklineData,
+  sparklineInteractiveData,
 };
 
 export default ReactLiveScope;

@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { emptyArray, noop, isStorybook } from '@cbhq/cds-utils';
-import { InteractiveSparklineBaseProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+import { SparklineInteractiveBaseProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
 import { chartCompactHeight, chartHeight } from '@cbhq/cds-common/tokens/sparkline';
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
@@ -42,7 +42,7 @@ const DefaultFallback = memo(() => {
 });
 
 const mobileLayoutBreakpoint = 650;
-function InteractiveSparklineContentWithGeneric<Period extends string>({
+function SparklineInteractiveContentWithGeneric<Period extends string>({
   data,
   periods,
   defaultPeriod,
@@ -60,7 +60,7 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
   compact,
   formatHoverDate,
   headerNode,
-}: InteractiveSparklineBaseProps<Period>) {
+}: SparklineInteractiveBaseProps<Period>) {
   const innerChartHeight = compact ? chartCompactHeight : chartHeight;
   const { isFallbackVisible, showFallback } = useChartContext();
   const { observe: containerRef, width: containerWidth } = useDimensions();
@@ -206,22 +206,22 @@ function InteractiveSparklineContentWithGeneric<Period extends string>({
 }
 
 // typescript doesn't understand the memo with the generic so it gets casted to a base react component
-export const InteractiveSparklineContent = memo(
-  InteractiveSparklineContentWithGeneric,
-) as typeof InteractiveSparklineContentWithGeneric;
+export const SparklineInteractiveContent = memo(
+  SparklineInteractiveContentWithGeneric,
+) as typeof SparklineInteractiveContentWithGeneric;
 
-function InteractiveSparklineWithGeneric<Period extends string>({
+function SparklineInteractiveWithGeneric<Period extends string>({
   compact,
   ...props
-}: InteractiveSparklineBaseProps<Period>) {
+}: SparklineInteractiveBaseProps<Period>) {
   return (
     <ChartProvider compact={compact}>
-      <InteractiveSparklineContent compact={compact} {...props} />
+      <SparklineInteractiveContent compact={compact} {...props} />
     </ChartProvider>
   );
 }
 
 // typescript doesn't understand the memo with the generic so it gets casted to a base react component
-export const InteractiveSparkline = memo(
-  InteractiveSparklineWithGeneric,
-) as typeof InteractiveSparklineWithGeneric;
+export const SparklineInteractive = memo(
+  SparklineInteractiveWithGeneric,
+) as typeof SparklineInteractiveWithGeneric;

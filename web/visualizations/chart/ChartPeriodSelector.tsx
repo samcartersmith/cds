@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import {
   ChartPeriodProps,
   ChartPeriodSelectorProps,
-} from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { HStack } from '../../layout';
 import { usePalette } from '../../hooks/usePalette';

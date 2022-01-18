@@ -3,15 +3,15 @@ import { Animated, StyleSheet, TextInput } from 'react-native';
 import { ChartScrubParams } from '@cbhq/cds-common/types';
 import {
   ChartHoverDateRefProps,
-  InteractiveSparklineBaseProps,
-} from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+  SparklineInteractiveBaseProps,
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { usePalette } from '../../hooks/usePalette';
 import { useTypographyStyles } from '../../typography';
 
 type Props<Period extends string> = Pick<
-  InteractiveSparklineBaseProps<Period>,
+  SparklineInteractiveBaseProps<Period>,
   'formatHoverDate'
 > & {
   shouldTakeUpHeight: boolean;

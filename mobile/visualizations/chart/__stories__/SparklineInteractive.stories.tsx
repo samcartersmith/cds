@@ -1,28 +1,28 @@
 import React from 'react';
 import {
-  interactiveSparklineBuilder,
-  interactiveSparklineWithHeaderBuilder,
-} from '@cbhq/cds-common/internal/interactiveSparklineBuilder';
-import { interactiveSparklineData } from '@cbhq/cds-common/internal/visualizations/InteractiveSparklineData';
+  sparklineInteractiveBuilder,
+  sparklineInteractiveWithHeaderBuilder,
+} from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
+import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
 import { TextTitle3 } from '../../../typography/TextTitle3';
-import { InteractiveSparkline } from '../InteractiveSparkline';
+import { SparklineInteractive } from '../SparklineInteractive';
 import { Box } from '../../../layout';
 import { ChartHeader } from '../../chart-header/ChartHeader';
 
-const InteractiveSparklineBuild = interactiveSparklineBuilder({
-  InteractiveSparkline,
+const SparklineInteractiveBuild = sparklineInteractiveBuilder({
+  SparklineInteractive,
   isMobile: true,
 });
 
-const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilder({
-  InteractiveSparkline,
+const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
+  SparklineInteractive,
   ChartHeader,
   isMobile: true,
 });
 
 const strokeColor = '#F7931A';
-const InteractiveSparklineScreen = () => {
+const SparklineInteractiveScreen = () => {
   return (
     <ExampleScreen>
       <Example spacing={0}>
@@ -30,7 +30,7 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Default
           </TextTitle3>
-          <InteractiveSparklineBuild data={interactiveSparklineData} strokeColor={strokeColor} />
+          <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
         </Box>
       </Example>
       <Example spacing={0}>
@@ -38,8 +38,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Compact
           </TextTitle3>
-          <InteractiveSparklineBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
             strokeColor={strokeColor}
             compact
           />
@@ -50,8 +50,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Disable Scrubbing
           </TextTitle3>
-          <InteractiveSparklineBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
             strokeColor={strokeColor}
             disableScrubbing
           />
@@ -62,8 +62,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Hide period selector
           </TextTitle3>
-          <InteractiveSparklineBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
             strokeColor={strokeColor}
             hidePeriodSelector
           />
@@ -74,8 +74,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Hide min/max label
           </TextTitle3>
-          <InteractiveSparklineBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
             strokeColor={strokeColor}
             hideMinMaxLabel
           />
@@ -86,8 +86,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Default period All
           </TextTitle3>
-          <InteractiveSparklineBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
             strokeColor={strokeColor}
             defaultPeriod="all"
           />
@@ -98,8 +98,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Fill
           </TextTitle3>
-          <InteractiveSparklineBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
             strokeColor={strokeColor}
             fill
           />
@@ -110,8 +110,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Y axis scaling
           </TextTitle3>
-          <InteractiveSparklineBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
             strokeColor={strokeColor}
             yAxisScalingFactor={0.1}
           />
@@ -122,7 +122,7 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Fallback
           </TextTitle3>
-          <InteractiveSparklineBuild strokeColor={strokeColor} />
+          <SparklineInteractiveBuild strokeColor={strokeColor} />
         </Box>
       </Example>
       <Example spacing={0}>
@@ -130,9 +130,9 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             No Hover Date
           </TextTitle3>
-          <InteractiveSparklineBuild
+          <SparklineInteractiveBuild
             strokeColor={strokeColor}
-            data={interactiveSparklineData}
+            data={sparklineInteractiveData}
             hideHoverDate
           />
         </Box>
@@ -142,8 +142,8 @@ const InteractiveSparklineScreen = () => {
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             With Header Node
           </TextTitle3>
-          <InteractiveSparklineWithHeaderBuild
-            data={interactiveSparklineData}
+          <SparklineInteractiveWithHeaderBuild
+            data={sparklineInteractiveData}
             strokeColor="#F7931A"
           />
         </Box>
@@ -152,4 +152,4 @@ const InteractiveSparklineScreen = () => {
   );
 };
 
-export default InteractiveSparklineScreen;
+export default SparklineInteractiveScreen;

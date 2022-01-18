@@ -126,7 +126,7 @@ const ChartHeaderStable = memo(
         [update],
       );
 
-      const label = (
+      const label = !!defaultLabel && (
         <TextInput
           ref={labelRef}
           editable={false}

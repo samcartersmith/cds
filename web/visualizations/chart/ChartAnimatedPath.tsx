@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import { ChartAnimatedPathProps } from '@cbhq/cds-common/types/InteractiveSparklineBaseProps';
+import { ChartAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useValueChanges } from '@cbhq/cds-common/hooks/useValueChanges';
 import { animatedPathConfig } from '@cbhq/cds-common/animation/sparkline';
 import { interpolatePath } from 'd3-interpolate-path';
