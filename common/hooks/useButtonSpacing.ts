@@ -31,7 +31,10 @@ export function useButtonSpacing({
     if (!flush && endIcon) spacing.end = iconSpacing;
     return spacing;
   }
+
   return {
+    start: flush === 'start' ? flushSpacing : undefined,
+    end: flush === 'end' ? flushSpacing : undefined,
     horizontal: compact ? 2 : 3,
     vertical: compact ? 1 : 2,
   };
