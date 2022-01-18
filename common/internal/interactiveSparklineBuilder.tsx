@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef, useState } from 'react';
+import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { InteractiveSparklineBaseProps } from '../types/InteractiveSparklineBaseProps';
 import { ChartHeaderProps, ChartHeaderRef, ChartSubHead } from '../types/ChartHeaderBaseProps';
@@ -101,32 +101,51 @@ type InteractiveSparklineBuilderComponentProps<Period extends string> =
 
 type InteractiveSparklineBuilderProps = {
   InteractiveSparkline: React.ComponentType<InteractiveSparklineBuilderComponentProps<ChartPeriod>>;
+  isMobile: boolean;
 };
 
 function numToLocaleString(num: number) {
-  return num.toLocaleString(undefined, {
+  return num.toLocaleString('en-US', {
     maximumFractionDigits: 2,
   });
 }
 
 export const interactiveSparklineBuilder = ({
   InteractiveSparkline,
+  isMobile,
 }: InteractiveSparklineBuilderProps) => {
   return memo(({ defaultPeriod, hideHoverDate, ...props }: PriceChartProps) => {
-    const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
-      const config = getFormattingConfigForPeriod(period);
-      return value.toLocaleString('en-US', {
-        timeZone: 'America/New_York',
-        ...config,
-      });
+    // not supported onAndroid
+    const timezoneObj = useMemo(() => {
+      const obj: { timeZone?: string } = {};
+      if (!isMobile) {
+        obj.timeZone = 'America/New_York';
+      }
+
+      return obj;
     }, []);
 
-    const formatHoverDate = useCallback((date: Date, period: ChartPeriod) => {
-      return date.toLocaleString('en-US', {
-        timeZone: 'America/New_York',
-        ...getDateHoverOptions(period),
-      });
-    }, []);
+    const formatDateWithConfig = useCallback(
+      (value: Date, period: ChartPeriod) => {
+        const config = getFormattingConfigForPeriod(period);
+
+        return value.toLocaleString('en-US', {
+          ...timezoneObj,
+          ...config,
+        });
+      },
+      [timezoneObj],
+    );
+
+    const formatHoverDate = useCallback(
+      (date: Date, period: ChartPeriod) => {
+        return date.toLocaleString('en-US', {
+          ...timezoneObj,
+          ...getDateHoverOptions(period),
+        });
+      },
+      [timezoneObj],
+    );
 
     const formatAmount = useCallback((amount: number | string) => {
       return `$${numToLocaleString(parseInt(amount as string, 10))}`;
@@ -175,9 +194,11 @@ type InteractiveSparklineWithHeaderBuilderProps = InteractiveSparklineBuilderPro
 export const interactiveSparklineWithHeaderBuilder = ({
   InteractiveSparkline,
   ChartHeader,
+  isMobile,
 }: InteractiveSparklineWithHeaderBuilderProps) => {
   const InteractiveSparklineBuild = interactiveSparklineBuilder({
     InteractiveSparkline,
+    isMobile,
   });
 
   return memo((props: PriceChartProps) => {
@@ -191,7 +212,7 @@ export const interactiveSparklineWithHeaderBuilder = ({
     const handleScrub = useCallback(
       ({ point, period }: ChartScrubParams<ChartPeriod>) => {
         chartHeaderRef.current?.update({
-          title: `$${point.value.toLocaleString()}`,
+          title: `$${point.value.toLocaleString('en-US')}`,
           subHead: generateSubHead(point, period, interactiveSparklineData),
         });
       },

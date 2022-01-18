@@ -12,6 +12,7 @@ export default {
 const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilder({
   InteractiveSparkline,
   ChartHeader,
+  isMobile: false,
 });
 
 export const Default = () => {

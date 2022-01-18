@@ -10,6 +10,7 @@ import { Example } from '../../../examples/ExampleScreen';
 const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilder({
   InteractiveSparkline,
   ChartHeader,
+  isMobile: true,
 });
 
 const ChartHeaderScreen = () => {

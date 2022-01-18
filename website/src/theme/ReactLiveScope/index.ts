@@ -77,11 +77,13 @@ import { useStatusButtons } from './useStatusButtons';
 
 const PriceChart = interactiveSparklineBuilder({
   InteractiveSparkline,
+  isMobile: false,
 });
 
 const PriceChartWithHeader = interactiveSparklineWithHeaderBuilder({
   InteractiveSparkline,
   ChartHeader,
+  isMobile: false,
 });
 
 // Add any mock data for examples here

@@ -14,11 +14,13 @@ export default {
 
 const InteractiveSparklineBuild = interactiveSparklineBuilder({
   InteractiveSparkline,
+  isMobile: false,
 });
 
 const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilder({
   InteractiveSparkline,
   ChartHeader,
+  isMobile: false,
 });
 
 const strokeColor = '#F7931A';

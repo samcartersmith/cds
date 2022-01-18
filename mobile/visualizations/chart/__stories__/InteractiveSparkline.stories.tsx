@@ -12,11 +12,13 @@ import { ChartHeader } from '../../chart-header/ChartHeader';
 
 const InteractiveSparklineBuild = interactiveSparklineBuilder({
   InteractiveSparkline,
+  isMobile: true,
 });
 
 const InteractiveSparklineWithHeaderBuild = interactiveSparklineWithHeaderBuilder({
   InteractiveSparkline,
   ChartHeader,
+  isMobile: true,
 });
 
 const strokeColor = '#F7931A';
