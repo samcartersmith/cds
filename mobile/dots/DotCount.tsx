@@ -34,6 +34,18 @@ export const DotCount = memo(
       return {};
     }, [pin, childrenSize.width, childrenSize.height, dotSize.width, dotSize.height]);
 
+    const innerContainerStyles = useMemo(() => {
+      return [
+        pinStyles,
+        dotCountContent,
+        dotCountPadding,
+        dotOuterContainerStyles,
+        {
+          backgroundColor: palette[variant],
+        },
+      ];
+    }, [palette, pinStyles, variant]);
+
     return (
       <>
         <View onLayout={onChildrenLayout} {...props}>
@@ -42,15 +54,7 @@ export const DotCount = memo(
             <View
               testID="dotcount-inner-container"
               onLayout={onDotLayout}
-              style={[
-                pinStyles,
-                dotCountContent,
-                dotCountPadding,
-                dotOuterContainerStyles,
-                {
-                  backgroundColor: palette[variant],
-                },
-              ]}
+              style={innerContainerStyles}
             >
               <TextCaption color="primaryForeground">{parseDotCountMaxOverflow(count)}</TextCaption>
             </View>

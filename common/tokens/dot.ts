@@ -3,6 +3,7 @@ import { borderWidth, borderRadius } from './border';
 export const dotOuterContainerStyles = {
   alignItems: 'center',
   justifyContent: 'center',
+  display: 'flex',
   borderWidth: borderWidth.button,
   borderColor: 'white',
 } as const;
