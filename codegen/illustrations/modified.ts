@@ -7,5 +7,6 @@
  * and make it such that the script will register these as modified and pull in the new illustration
  *
  * If an illustration is modified, add it to the list to catch it. Below is an example
+ * export const modified: string[] = ['downloadCoinbaseWalletArrow-dark', 'downloadCoinbaseWalletArrow-light'];
  */
 export const modified: string[] = [];

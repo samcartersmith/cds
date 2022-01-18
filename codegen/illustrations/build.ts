@@ -33,6 +33,7 @@ const NODE_ID = '3972:345';
 const FILE_FORMAT = 'svg';
 
 type Spectrum = 'light' | 'dark';
+type FileFormat = 'png' | 'svg' | 'js';
 
 const figmaClient = FigmaClient(CDS_PERSONAL_ACCESS_TOKEN);
 
@@ -98,7 +99,7 @@ const deleteSvgXML = (deletePath: string) => {
   }
 };
 
-const createFileName = (fileName: string, versionNum: number, fileFormat: 'svg' | 'js') => {
+const createFileName = (fileName: string, versionNum: number, fileFormat: FileFormat) => {
   return `${fileName}-${versionNum}.${fileFormat}`;
 };
 
@@ -126,8 +127,31 @@ const renameFileWithNewVersion = (data: {
   };
 };
 
+const downloadPNG = async (pngURL: string, fileName: string, outFullPath: string) => {
+  // get request for png
+  const pngRes = await axios
+    .get(pngURL, {
+      responseType: 'arraybuffer',
+      headers: {
+        Accept: 'image/png',
+      },
+    })
+    .catch((err) => {
+      console.error(`${fileName} cannot be fetched. Reason: ${err.message}`);
+    });
+
+  if (!pngRes) return;
+
+  fs.writeFile(outFullPath, pngRes.data as never, { encoding: 'binary' }, (err) => {
+    if (err) {
+      console.error(err.message);
+    }
+  });
+};
+
 const loadOneImage = async (
-  imageURL: string,
+  svgURL: string,
+  pngURL: string,
   nodeId: string,
   outDirPath: string,
   spinner: Ora,
@@ -136,19 +160,22 @@ const loadOneImage = async (
   const imageName = imageMetadata.name;
   const { versionNum, spectrum } = imageMetadata;
   const imageOutFullPath = `${outDirPath}/${spectrum}/`;
+  const pngOutFullPath = `${outDirPath}/png-${spectrum}/`;
   const jsOutFullPath = `${mobileImagesPath}/${spectrum}/`;
 
   try {
     if (!fs.existsSync(imageOutFullPath)) fs.mkdirSync(imageOutFullPath, { recursive: true });
     if (!fs.existsSync(jsOutFullPath)) fs.mkdirSync(jsOutFullPath, { recursive: true });
+    if (!fs.existsSync(pngOutFullPath)) fs.mkdirSync(pngOutFullPath, { recursive: true });
   } catch (err) {
     errMsg(spinner, (err as Error).message);
   }
 
   const fileName = createFileName(imageName, versionNum, FILE_FORMAT);
 
-  const res = await axios
-    .get(imageURL, {
+  // get request for svg
+  const svgRes = await axios
+    .get(svgURL, {
       responseType: '',
       headers: {
         Accept: 'image/svg+xml',
@@ -159,9 +186,12 @@ const loadOneImage = async (
       errMsg(spinner, (err as Error).message);
     });
 
-  if (!res) return;
+  if (!svgRes) return;
 
   const fileNameFullPath = path.join(imageOutFullPath, fileName);
+
+  const pngFileName = createFileName(imageName, versionNum, 'png');
+  void downloadPNG(pngURL, pngFileName, path.join(pngOutFullPath, pngFileName));
 
   const nameAndSpectrum = `${imageName}-${spectrum}`;
   const ENCODING = 'utf8';
@@ -185,11 +215,11 @@ const loadOneImage = async (
     modifiedIllustrations.push(nameAndSpectrum);
   }
 
-  /** Disable this if statement and enable createSvgXML on line 179. And you
+  /** Disable this if statement and enable createSvgXML. And you
    * will be able recreate every js file regardless of whether it has been modified or not */
   if (fileStatus === 'modified' && !modified.includes(nameAndSpectrum)) return;
 
-  const optimizedSVG = optimize(String(res.data), svgOptimizerConfig);
+  const optimizedSVG = optimize(String(svgRes.data), svgOptimizerConfig);
   fs.writeFileSync(fileNameFullPath, optimizedSVG.data, ENCODING);
 
   /** Enable to recreate all the js files  */
@@ -275,28 +305,49 @@ const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
 
   createNewImgsDirIfDNE(outDirPath);
 
-  const fileImageResponse = await figmaClient
-    .fileImages(ILLUSTRATION_FILE_ID, nodeIds, FILE_FORMAT, 1)
+  // Fetching SVG Images
+  const svgImageResponse = await figmaClient
+    .fileImages(ILLUSTRATION_FILE_ID, nodeIds, 'svg', 1)
     .catch((err) => errMsg(spinner, (err as Error).message));
 
-  if (!fileImageResponse) {
+  // Fetching PNG Images
+  const pngImageResponse = await figmaClient
+    .fileImages(ILLUSTRATION_FILE_ID, nodeIds, 'png', 1)
+    .catch((err) => errMsg(spinner, (err as Error).message));
+
+  if (!svgImageResponse || !pngImageResponse) {
     console.error('Empty image file');
     return undefined;
   }
 
-  if (fileImageResponse.data.err) {
-    errMsg(spinner, fileImageResponse.data.err);
+  if (svgImageResponse.data.err) {
+    errMsg(spinner, svgImageResponse.data.err);
+    return undefined;
+  }
+
+  if (pngImageResponse.data.err) {
+    errMsg(spinner, pngImageResponse.data.err);
+    return undefined;
+  }
+
+  const svgResponseKeys = Object.keys(svgImageResponse.data.images);
+  const pngResponseKeys = Object.keys(pngImageResponse.data.images);
+
+  if (svgResponseKeys.length !== pngResponseKeys.length) {
+    errMsg(spinner, 'Number of SVGs does not equal number of PNGs');
     return undefined;
   }
 
   // Start downloading images from Figma CDN
-  const loadImagePromiseArr = Object.entries(fileImageResponse.data.images).map((info) => {
-    const [nodeId, imageURL] = info;
+  const loadImagePromiseArr = [];
+  for (const [nodeId] of Object.entries(svgImageResponse.data.images)) {
+    const svgURL = svgImageResponse.data.images[nodeId];
+    const pngURL = pngImageResponse.data.images[nodeId];
 
     if (!nodeId || !localManifestData) return undefined;
 
-    return loadOneImage(imageURL, nodeId, outDirPath, spinner);
-  });
+    loadImagePromiseArr.push(loadOneImage(svgURL, pngURL, nodeId, outDirPath, spinner));
+  }
 
   return Promise.all(loadImagePromiseArr);
 };

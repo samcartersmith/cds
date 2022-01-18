@@ -4,7 +4,6 @@
  */
 
 export const versionNumManifest: Record<string, number> = {
-  'checkmark-dark': 1,
   'defiEarnAnnouncement-dark': 1,
   'protectedNotes-light': 1,
   'protectedNotes-dark': 1,
@@ -614,6 +613,7 @@ export const versionNumManifest: Record<string, number> = {
   'error-dark': 1,
   'settled-dark': 1,
   'add-dark': 1,
+  'checkmark-dark': 1,
   'defiNfts-light': 1,
   'bullishCase-light': 1,
   'nuxChecklist-light': 1,

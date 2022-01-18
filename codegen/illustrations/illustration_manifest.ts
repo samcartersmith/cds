@@ -5,13 +5,6 @@
 
 export const manifestData = {
   svg: {
-    '2072:8375': {
-      variant: 'pictogram',
-      description: '',
-      name: 'checkmark',
-      spectrum: 'dark',
-      versionNum: 0,
-    },
     '4201:2578': {
       variant: 'spotSquare',
       description:
@@ -5544,7 +5537,7 @@ export const manifestData = {
       spectrum: 'light',
       versionNum: 0,
     },
-    '5217:1485': {
+    '5381:1482': {
       variant: 'spotRectangle',
       description: '',
       name: 'downloadCoinbaseWalletArrow',

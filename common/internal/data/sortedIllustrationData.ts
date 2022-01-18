@@ -4,7 +4,6 @@
  */
 
 export const sortedImg = [
-  'checkmark-dark',
   'defiEarnAnnouncement-dark',
   'protectedNotes-light',
   'protectedNotes-dark',
@@ -614,6 +613,7 @@ export const sortedImg = [
   'error-dark',
   'settled-dark',
   'add-dark',
+  'checkmark-dark',
   'defiNfts-light',
   'bullishCase-light',
   'nuxChecklist-light',
