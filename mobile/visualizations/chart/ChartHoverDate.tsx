@@ -1,5 +1,5 @@
 import React, { ForwardedRef, forwardRef, useImperativeHandle, useRef } from 'react';
-import { Animated, StyleSheet, TextInput, View } from 'react-native';
+import { Animated, StyleSheet, TextInput } from 'react-native';
 import { ChartScrubParams } from '@cbhq/cds-common/types';
 import {
   ChartHoverDateRefProps,
@@ -17,6 +17,20 @@ type Props<Period extends string> = Pick<
   shouldTakeUpHeight: boolean;
 };
 
+function setTransform(
+  x: number,
+  elWidth: number,
+  containerWidth: number,
+  transform: Animated.ValueXY,
+) {
+  let newX = x - elWidth / 2;
+  newX = Math.max(0, newX);
+  newX = Math.min(newX, containerWidth - elWidth);
+
+  transform.setValue({ x: newX, y: 0 });
+}
+
+const MAX_MEASURE_ITERATIONS = 5;
 const ChartHoverDateWithGeneric = forwardRef(
   <Period extends string>(
     { formatHoverDate, shouldTakeUpHeight }: Props<Period>,
@@ -28,7 +42,10 @@ const ChartHoverDateWithGeneric = forwardRef(
     const label2Styles = useTypographyStyles('label2');
     const transform = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
     const textInputRef = useRef<TextInput>(null);
-    const containerRef = useRef<View>();
+
+    // period => number mapping
+    const measuredWidth = useRef<Record<string, number>>({});
+    const measureIterations = useRef<Record<string, number>>({});
 
     useImperativeHandle(ref, () => ({
       update: (params: ChartScrubParams<Period>) => {
@@ -37,18 +54,31 @@ const ChartHoverDateWithGeneric = forwardRef(
           period,
         } = params;
 
+        // the second conditional is to let typescript know x is always defined after this line
+        if (!Number.isFinite(x) || x === undefined) {
+          return;
+        }
+
+        const text = formatHoverDate?.(date, period);
+        if (!text) {
+          return;
+        }
+
         textInputRef.current?.setNativeProps({
           text: formatHoverDate?.(date, period),
         });
 
-        textInputRef.current?.measure((ox, oy, width) => {
-          if (x) {
-            let newX = x - width / 2;
-            newX = Math.max(0, newX);
-            newX = Math.min(newX, chartWidth - width);
-            transform.setValue({ x: newX, y: 0 });
-          }
-        });
+        measureIterations.current[period] = measureIterations.current[period] ?? 0;
+        if (measureIterations.current[period] > MAX_MEASURE_ITERATIONS) {
+          const currWidth = measuredWidth.current[period];
+          setTransform(x, currWidth, chartWidth, transform);
+        } else {
+          textInputRef.current?.measure((ox, oy, width) => {
+            measureIterations.current[period] += 1;
+            measuredWidth.current[period] = Math.max(width, measuredWidth.current[period] ?? 0);
+            setTransform(x, measuredWidth.current[period], chartWidth, transform);
+          });
+        }
       },
     }));
 
@@ -61,21 +91,18 @@ const ChartHoverDateWithGeneric = forwardRef(
         style={[
           {
             position: shouldTakeUpHeight ? 'relative' : 'absolute',
-            width: '100%',
-          },
-          {
             opacity: hoverDateOpacity,
             backgroundColor: colors.background,
             height: chartMinMaxLabelHeight,
           },
+          styles.outer,
         ]}
+        pointerEvents="none"
       >
         <Animated.View
-          ref={containerRef}
           style={[
             styles.caption,
             {
-              height: label2Styles.lineHeight,
               transform: transform.getTranslateTransform(),
             },
           ]}
@@ -95,9 +122,14 @@ type ForwardRefWithPeriod<Period extends string> = React.ForwardRefExoticCompone
 export const ChartHoverDate = ChartHoverDateWithGeneric as ForwardRefWithPeriod<any>;
 
 const styles = StyleSheet.create({
+  outer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+  },
   caption: {
+    alignSelf: 'center',
     position: 'absolute',
     left: 0,
-    top: 0,
   },
 });
