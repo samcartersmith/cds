@@ -1,4 +1,4 @@
-import { entries, mapValues } from '@cbhq/cds-utils';
+import { camelCase, mapValues } from '@cbhq/cds-utils';
 
 import {
   borderRadiusConfig,
@@ -92,17 +92,28 @@ async function codegen() {
         data: Spacing.css('margin'),
       },
     ],
-    'themes.ejs': [
-      {
-        dest: 'common/themes/index.ts',
-        data: entries(themeConfigs).map(([key]) => key),
-      },
+    'themeConfig.ejs': [
+      ...Object.values(
+        mapValues(themeConfigs, (value, name) => {
+          const fileName = camelCase(`theme ${name}`);
+          return {
+            dest: `common/themes/${fileName}.ts`,
+            data: {
+              name,
+              fileName,
+              config: value,
+              partialName: camelCase(`themePartial ${name}`),
+            },
+          };
+        }),
+      ),
     ],
     'objectMap.ejs': [
       {
         dest: 'mobile/styles/scale.ts',
         data: mapValues(scaleConfig, (_, scale) => {
           return {
+            name: scale,
             typography: Type.mobile[scale],
             spacing: Spacing.mobile[scale],
             control: Control.mobile[scale],
@@ -120,15 +131,6 @@ async function codegen() {
         dest: 'common/spectrum/spectrumRgbArray.ts',
         data: Spectrum.native,
       },
-      ...Object.values(
-        mapValues(themeConfigs, (value, key) => ({
-          dest: `common/themes/theme-${key}.ts`,
-          data: value,
-          config: {
-            defaultExport: true,
-          },
-        })),
-      ),
       {
         dest: 'common/tokens/border.ts',
         data: { borderRadius: borderRadiusConfig, borderWidth: borderWidthConfig },

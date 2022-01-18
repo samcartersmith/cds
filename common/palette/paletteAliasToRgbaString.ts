@@ -1,5 +1,6 @@
 import type { PaletteAliasToRgbaString } from '../types';
-import { baseTheme, frontierTheme } from '../themes';
+import { themeBase } from '../themes/themeBase';
+import { themeFrontier } from '../themes/themeFrontier';
 import { paletteValueToRgbaString } from './paletteValueToRgbaString';
 
 /**
@@ -14,7 +15,7 @@ export const paletteAliasToRgbaString: PaletteAliasToRgbaString = (
   spectrum,
   hasFrontier,
 ) => {
-  const theme = hasFrontier ? frontierTheme : baseTheme;
+  const theme = hasFrontier ? themeFrontier : themeBase;
   const palette = spectrum === 'light' ? theme.light.palette : theme.dark.palette;
   const paletteValue = palette[alias];
   return paletteValueToRgbaString(paletteValue, spectrum, hasFrontier);

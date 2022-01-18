@@ -4,6 +4,7 @@
  */
 
 export const xSmall = {
+  name: 'xSmall',
   typography: {
     display1: {
       fontSize: 61,
@@ -114,6 +115,7 @@ export const xSmall = {
 } as const;
 
 export const small = {
+  name: 'small',
   typography: {
     display1: {
       fontSize: 62,
@@ -224,6 +226,7 @@ export const small = {
 } as const;
 
 export const medium = {
+  name: 'medium',
   typography: {
     display1: {
       fontSize: 63,
@@ -334,6 +337,7 @@ export const medium = {
 } as const;
 
 export const large = {
+  name: 'large',
   typography: {
     display1: {
       fontSize: 64,
@@ -444,6 +448,7 @@ export const large = {
 } as const;
 
 export const xLarge = {
+  name: 'xLarge',
   typography: {
     display1: {
       fontSize: 66,
@@ -554,6 +559,7 @@ export const xLarge = {
 } as const;
 
 export const xxLarge = {
+  name: 'xxLarge',
   typography: {
     display1: {
       fontSize: 68,
@@ -664,6 +670,7 @@ export const xxLarge = {
 } as const;
 
 export const xxxLarge = {
+  name: 'xxxLarge',
   typography: {
     display1: {
       fontSize: 70,

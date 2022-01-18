@@ -1,4 +1,3 @@
-import { mapKeys, mapValues, toCssVar } from '@cbhq/cds-utils';
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 import { Palette } from '../Palette';
 import { BuildThemeConfig, buildTheme } from '../theme/buildTheme';
@@ -18,26 +17,45 @@ const switchControl: BuildThemeConfig = {
 
 const elevation1: BuildThemeConfig = {
   palette: {
-    background: 'gray5',
+    // TODO: uncomment when PR to add transparent has landed
+    // light: {
+    //   transparent: Palette.defaultPalette.background,
+    // },
+    dark: {
+      background: 'gray5',
+      // TODO: uncomment when PR to add transparent has landed
+      // transparent: 'gray5',
+    },
   },
 };
 
 const elevation2: BuildThemeConfig = {
   palette: {
-    background: 'gray10',
+    // light: {
+    //   transparent: Palette.defaultPalette.background,
+    // },
+    dark: {
+      background: 'gray10',
+      // TODO: uncomment when PR to add transparent has landed
+      // transparent: 'gray10',
+    },
   },
 };
 
 const elevation1Children: BuildThemeConfig = {
   palette: {
-    secondary: ['gray5', 0],
+    dark: {
+      secondary: ['gray5', 0],
+    },
   },
 };
 
 const elevation2Children: BuildThemeConfig = {
   palette: {
-    line: Palette.defaultPalette.lineHeavy,
-    secondary: ['gray10', 0],
+    dark: {
+      line: Palette.defaultPalette.lineHeavy,
+      secondary: ['gray10', 0],
+    },
   },
 };
 
@@ -79,14 +97,6 @@ export const themeConfigs = {
   ratNegativeButton: buildTheme(ratNegativeButton),
   ratMarketDetails: buildTheme(ratMarketDetails),
 };
-
-export const webthemes: unknown = mapValues(themeConfigs, (themeConfig) =>
-  mapValues(themeConfig, (configFormat) =>
-    mapValues(configFormat, (config) =>
-      config ? mapKeys(config, (val, key) => toCssVar(key)) : config,
-    ),
-  ),
-);
 
 export const fallbackShimmer = {
   light: [

@@ -1,43 +1,64 @@
-import { PartialPaletteConfig } from '@cbhq/cds-common/types/Palette';
+import {
+  PartialPaletteConfig,
+  PartialThemeConfig,
+  PartialThemeConfigForSpectrum,
+} from '@cbhq/cds-common/types';
 import { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
+import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
 import { paletteConfigToHexValues } from '@cbhq/cds-common/palette/paletteConfigToHexValues';
 import { Palette } from '../Palette';
 
 type SpectrumPalette = { light: PartialPaletteConfig; dark: PartialPaletteConfig };
+type LightOnlyConfig = { light: PartialPaletteConfig };
+type DarkOnlyConfig = { dark: PartialPaletteConfig };
+type ThemePaletteConfig = PartialPaletteConfig | SpectrumPalette | LightOnlyConfig | DarkOnlyConfig;
 export type BuildThemeConfig = {
-  palette?: PartialPaletteConfig | SpectrumPalette;
+  palette?: ThemePaletteConfig;
   hasFrontier?: boolean;
 };
-
-function isDarkPalette(
-  palette: PartialPaletteConfig | SpectrumPalette,
-): palette is SpectrumPalette {
-  if ('light' in palette) {
-    if ('dark' in palette) {
-      return true;
-    }
-  }
-  return false;
-}
 
 export function buildTheme({
   palette = Palette.defaultPalette,
   hasFrontier = false,
-}: BuildThemeConfig) {
-  const lightPalette = isDarkPalette(palette) ? palette.light : palette;
-  const darkPalette = isDarkPalette(palette) ? palette.dark : palette;
+}: BuildThemeConfig): Omit<PartialThemeConfig, 'name'> {
+  if ('light' in palette || 'dark' in palette) {
+    const temp: {
+      light: PartialThemeConfigForSpectrum | undefined;
+      dark: PartialThemeConfigForSpectrum | undefined;
+    } = { light: undefined, dark: undefined };
+
+    if ('light' in palette) {
+      temp.light = {
+        palette: palette.light,
+        rgbaStrings: paletteConfigToRgbaStrings(palette.light, 'light', hasFrontier),
+        hexValues: paletteConfigToHexValues(palette.light, 'light', hasFrontier),
+        interactableTokens: paletteConfigToInteractableTokens(palette.light, 'light'),
+      };
+    }
+    if ('dark' in palette) {
+      temp.dark = {
+        palette: palette.dark,
+        rgbaStrings: paletteConfigToRgbaStrings(palette.dark, 'dark', hasFrontier),
+        hexValues: paletteConfigToHexValues(palette.dark, 'dark', hasFrontier),
+        interactableTokens: paletteConfigToInteractableTokens(palette.dark, 'dark'),
+      };
+    }
+
+    return temp;
+  }
+
   return {
     light: {
-      palette: lightPalette,
-      rgbaStrings: paletteConfigToRgbaStrings(lightPalette, 'light', hasFrontier),
-      // rgbaArrays: convertPaletteToRgbaArray(lightColors, lightPalette), // We don't need this yet, but keeping in case we need for interactable styling
-      hexValues: paletteConfigToHexValues(lightPalette, 'light', hasFrontier),
+      palette,
+      rgbaStrings: paletteConfigToRgbaStrings(palette, 'light', hasFrontier),
+      hexValues: paletteConfigToHexValues(palette, 'light', hasFrontier),
+      interactableTokens: paletteConfigToInteractableTokens(palette, 'light'),
     },
     dark: {
-      ...(isDarkPalette(palette) ? { palette: darkPalette } : {}),
-      rgbaStrings: paletteConfigToRgbaStrings(darkPalette, 'dark', hasFrontier),
-      // rgbaArrays: convertPaletteToRgbaArray(darkColors, darkPalette),
-      hexValues: paletteConfigToHexValues(lightPalette, 'dark', hasFrontier),
+      palette,
+      rgbaStrings: paletteConfigToRgbaStrings(palette, 'dark', hasFrontier),
+      hexValues: paletteConfigToHexValues(palette, 'dark', hasFrontier),
+      interactableTokens: paletteConfigToInteractableTokens(palette, 'dark'),
     },
   };
 }
