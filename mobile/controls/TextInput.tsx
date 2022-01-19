@@ -117,7 +117,7 @@ export const TextInput = memo(
           startNode={
             (compact || !!start) && (
               <Box justifyContent="center" alignItems="center">
-                <Pressable onPress={handleNodePress}>
+                <Pressable disabled={disabled} onPress={handleNodePress}>
                   {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
                   {!!start && (
                     <TextInputFocusVariantContext.Provider value={focusedVariant}>
@@ -131,7 +131,7 @@ export const TextInput = memo(
           endNode={
             (suffix !== '' || !!end) && (
               <HStack justifyContent="center" alignItems="center" gap={2}>
-                <Pressable onPress={handleNodePress}>
+                <Pressable disabled={disabled} onPress={handleNodePress}>
                   {suffix !== '' && (
                     <TextLabel1 spacingEnd={2} color="foregroundMuted">
                       {suffix}

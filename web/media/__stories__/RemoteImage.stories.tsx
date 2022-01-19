@@ -22,6 +22,9 @@ const whiteBorder = css`
   border-width: 8px;
 `;
 
+const imageURL =
+  'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
+
 const mockItems = Array.from({ length: 4 });
 
 export const Default = () => {
@@ -32,14 +35,7 @@ export const Default = () => {
         <HStack gap={2}>
           {mockItems.map((_, idx) => {
             const key = `square-${idx}`;
-            return (
-              <RemoteImage
-                key={key}
-                source={`https://source.unsplash.com/120x120?beach-${idx}`}
-                {...sharedProps}
-                shape="square"
-              />
-            );
+            return <RemoteImage key={key} source={imageURL} {...sharedProps} shape="square" />;
           })}
         </HStack>
       </VStack>
@@ -48,13 +44,7 @@ export const Default = () => {
         <HStack gap={2}>
           {mockItems.map((_, idx) => {
             const key = `square-${idx}`;
-            return (
-              <RemoteImage
-                key={key}
-                source={`https://source.unsplash.com/120x120?avatar-${idx}`}
-                {...sharedProps}
-              />
-            );
+            return <RemoteImage key={key} source={imageURL} {...sharedProps} />;
           })}
         </HStack>
       </VStack>
@@ -63,14 +53,7 @@ export const Default = () => {
         <HStack gap={2}>
           {mockItems.map((_, idx) => {
             const key = `squircle-${idx}`;
-            return (
-              <RemoteImage
-                key={key}
-                source={`https://source.unsplash.com/120x120?user-${idx}`}
-                {...sharedProps}
-                shape="squircle"
-              />
-            );
+            return <RemoteImage key={key} source={imageURL} {...sharedProps} shape="squircle" />;
           })}
         </HStack>
       </VStack>

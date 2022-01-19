@@ -136,6 +136,12 @@ export default function InputScreen() {
       <Example inline title="TextInput Disabled">
         <MockTextInput
           disabled
+          end={
+            <TextBody spacingEnd={2} color="foregroundMuted">
+              Cancel
+            </TextBody>
+          }
+          start={<InputIconButton disabled name="search" transparent />}
           label="One Time Password"
           variant="foregroundMuted"
           placeholder="189-280-1111"

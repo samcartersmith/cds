@@ -30,6 +30,7 @@ export const SearchInput = memo(
         onClear,
         onFocus,
         onBlur,
+        disabled,
         ...props
       }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -84,12 +85,14 @@ export const SearchInput = memo(
           onBlur={handleOnBlur}
           onSubmitEditing={handleOnSearch}
           onChangeText={onChangeText}
+          disabled={disabled}
           start={
             <InputIconButton
               testID={testID && `${testID}-searchinput-iconbtn`}
               accessibilityLabel={startIconName}
               accessibilityHint={startIconName}
               onPress={handleOnSearch}
+              disabled={disabled}
               name={startIconName}
             />
           }
