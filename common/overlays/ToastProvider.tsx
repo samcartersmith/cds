@@ -25,12 +25,12 @@ export const ToastContext = createContext<ToastProviderStates>({
 });
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({ children, toastBottomOffset }) => {
-  const toastState = useToastQueue();
+  const { activeToast, ...contextValue } = useToastQueue();
 
-  const element = toastState.activeToast?.element;
+  const element = activeToast?.element;
 
   return (
-    <ToastContext.Provider value={toastState}>
+    <ToastContext.Provider value={contextValue}>
       {children}
       {/* render as the last element for it to work on android */}
       {isValidElement(element) && toastBottomOffset
