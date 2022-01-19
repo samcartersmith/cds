@@ -28,6 +28,13 @@ export const DotSymbol = memo(({ children, pin, source, size = 's', ...props }: 
     return {};
   }, [iconSize, layoutSize.height, layoutSize.width, pin]);
 
+  const imageBorderStyle = useMemo(() => {
+    return {
+      borderColor: 'white',
+      borderWidth: 1,
+    };
+  }, []);
+
   return (
     <View onLayout={onLayout} {...props}>
       {children}
@@ -35,6 +42,7 @@ export const DotSymbol = memo(({ children, pin, source, size = 's', ...props }: 
         <RemoteImage
           shape="circle"
           testID="dotsymbol-remote-image"
+          dangerouslySetStyle={imageBorderStyle}
           source={typeof source === 'string' ? { uri: source } : source}
           width={iconSize}
           height={iconSize}

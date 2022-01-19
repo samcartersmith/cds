@@ -6,12 +6,16 @@ import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBor
 import { cx } from '../utils/linaria';
 
 const image = css`
-  display: block;
-  object-fit: cover;
+  && {
+    display: block;
+    object-fit: cover;
+  }
 `;
 
 const imageRatio = css`
-  aspect-ratio: var(--image-aspect-ratio);
+  && {
+    aspect-ratio: var(--image-aspect-ratio);
+  }
 `;
 
 type BaseRemoteImageProps = {
@@ -21,6 +25,7 @@ type BaseRemoteImageProps = {
   width?: FixedValue;
   alt?: string;
   source: string;
+  dangerouslySetClassName?: string;
 } & Omit<
   React.ImgHTMLAttributes<HTMLImageElement>,
   'className' | 'style' | 'height' | 'width' | 'source'
@@ -53,6 +58,7 @@ export const RemoteImage = memo(function RemoteImage({
   shape = 'square',
   source,
   alt,
+  dangerouslySetClassName,
   ...props
 }: RemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
@@ -73,7 +79,7 @@ export const RemoteImage = memo(function RemoteImage({
       src={source}
       width={width}
       height={height}
-      className={cx(image, aspectRatio && imageRatio)}
+      className={cx(image, aspectRatio && imageRatio, dangerouslySetClassName)}
       style={styles}
     />
   );

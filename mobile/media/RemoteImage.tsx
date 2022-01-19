@@ -6,6 +6,7 @@ import {
   ImageProps,
   ImageResizeMode,
   ImageSourcePropType,
+  ImageStyle,
   ImageURISource,
 } from 'react-native';
 import { SvgCssUri } from 'react-native-svg';
@@ -13,6 +14,7 @@ import { SvgCssUri } from 'react-native-svg';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 import { useInvertedPaletteColor } from '../color/useInvertedPaletteColor';
 import { usePalette } from '../hooks/usePalette';
+import { DangerouslySetStyle } from '../types';
 
 type BaseRemoteImageProps = {
   aspectRatio?: AspectRatio;
@@ -21,7 +23,8 @@ type BaseRemoteImageProps = {
   width?: FixedValue;
   /** Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.  */
   shouldApplyDarkModeEnhacements?: boolean;
-} & Omit<ImageProps, 'style' | 'width' | 'height'>;
+} & Omit<ImageProps, 'style' | 'width' | 'height'> &
+  DangerouslySetStyle<ImageStyle, false>;
 
 type RemoteImagePropsWithWidth = {
   width: FixedValue;
@@ -66,6 +69,7 @@ export const RemoteImage = memo(function RemoteImage({
   shape = 'square',
   shouldApplyDarkModeEnhacements,
   source,
+  dangerouslySetStyle,
   ...props
 }: RemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
@@ -93,9 +97,10 @@ export const RemoteImage = memo(function RemoteImage({
           aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
           borderRadius,
         } as const,
+        dangerouslySetStyle,
         darkModeStyles,
       ].filter(Boolean),
-    [aspectRatio, borderRadius, darkModeStyles, height, width],
+    [aspectRatio, borderRadius, dangerouslySetStyle, darkModeStyles, height, width],
   );
 
   if (isSvg(source)) {
