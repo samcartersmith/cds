@@ -12,5 +12,8 @@
   ],
   "authors": "Coinbase",
   "main": "index.js",
-  "typings": "index.d.ts"
+  "typings": "index.d.ts",
+  "dependencies": {
+    "@cbhq/cds-utils": "*"
+  }
 }

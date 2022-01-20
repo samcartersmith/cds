@@ -17,8 +17,9 @@
     "strict": true,
     "types": ["node"],
     "paths": {
-      "@cbhq/common": ["packages/common/index.ts"],
-      "@cbhq/utils": ["packages/utils/index.ts"]
+      "@cbhq/cds-common": ["packages/common/index.ts"],
+      "@cbhq/cds-common/*": ["packages/common/*"],
+      "@cbhq/cds-utils": ["packages/utils/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
