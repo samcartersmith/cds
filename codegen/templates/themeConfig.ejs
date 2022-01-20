@@ -21,7 +21,9 @@ const config = {
     <%_ } _%> 
     rgbaStrings: <%- JSON.stringify(data.config.light.rgbaStrings) -%>,
     hexValues: <%- JSON.stringify(data.config.light.hexValues) -%>,
+    <% if (data.config.light.interactableTokens){ -%>
     interactableTokens: <%- JSON.stringify(data.config.light.interactableTokens) -%>,
+    <%_ } _%> 
     name: '<%- data.name %>-light',
   },
   <%_ } _%> 
@@ -34,7 +36,9 @@ const config = {
     <%_ } _%> 
     rgbaStrings: <%- JSON.stringify(data.config.dark.rgbaStrings) -%>,
     hexValues: <%- JSON.stringify(data.config.dark.hexValues) -%>,
+    <% if (data.config.dark.interactableTokens){ -%>
     interactableTokens: <%- JSON.stringify(data.config.dark.interactableTokens) -%>,
+    <%_ } _%> 
     name: '<%- data.name %>-dark',
    },
    <%_ } _%> 

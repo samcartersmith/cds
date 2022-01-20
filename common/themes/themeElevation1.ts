@@ -14,12 +14,6 @@ const config = {
     palette: { background: 'gray5' },
     rgbaStrings: { background: 'rgba(20,21,25,1)' },
     hexValues: { background: '#141519' },
-    interactableTokens: {
-      background: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(20, 21, 25)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(39, 40, 43)' },
-      },
-    },
     name: 'elevation1-dark',
   },
 } as const;
