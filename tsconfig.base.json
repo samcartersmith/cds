@@ -15,9 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "strict": true,
+    "types": ["node"],
     "paths": {
-      "@cbhq/common": ["packages/common/src/index.ts"],
-      "@design-system/common": ["packages/common/src/index.ts"]
+      "@cbhq/common": ["packages/common/index.ts"],
+      "@cbhq/utils": ["packages/utils/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
