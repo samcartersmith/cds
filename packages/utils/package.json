@@ -1,0 +1,15 @@
+{
+  "name": "@cbhq/cds-utils",
+  "version": "0.3.0",
+  "description": "Coinbase Design System - Utils",
+  "keywords": [
+    "design system",
+    "utils",
+    "helpers"
+  ],
+  "authors": {
+    "coinbase": "coinbase"
+  },
+  "main": "index.js",
+  "typings": "index.d.ts"
+}
