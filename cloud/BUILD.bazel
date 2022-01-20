@@ -11,6 +11,29 @@ project_settings(
 
 [cds_deployable(name = package) for package in (PACKAGES + STATIC_PACKAGES)]
 
+pkg_zip(
+    name = "bundled_storybook_feature",
+    srcs = [
+        "//eng/shared/design-system:storybook_build",
+    ],
+    remap_paths = {"{gendir}/eng/shared/design-system/storybook": "feature/YOUR_FEATURE_BRANCH_NAME"},
+    visibility = ["//visibility:public"],
+)
+
+syn_deployable(
+    name = "storybook_feature",
+    assets = [
+        syn_file_asset(
+            name = "bundled_storybook_asset_feature",
+            src = ":bundled_storybook_feature",
+            bucket = "coinbase-design-system-storybook",
+            is_zip = True,
+        ),
+    ],
+    config_name = "storybook",  # config_name (i.e. Codeflow's config_name)
+    target = "development",  # environment to deploy to
+)
+
 # WEB CSS
 
 ts_script(
