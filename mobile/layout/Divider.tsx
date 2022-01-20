@@ -1,6 +1,4 @@
-/* eslint-disable react-native/no-unused-styles */
-
-import React, { useMemo } from 'react';
+import React, { useMemo, memo } from 'react';
 
 import { DividerBaseProps } from '@cbhq/cds-common';
 import { StyleSheet, View } from 'react-native';
@@ -10,11 +8,11 @@ import { Box, BoxProps } from './Box';
 
 export type DividerProps = DividerBaseProps & BoxProps;
 
-export const Divider = ({
+export const Divider = memo(function Divider({
   color = 'line',
   direction = 'horizontal',
   ...boxProps
-}: DividerProps) => {
+}: DividerProps) {
   const palette = usePalette();
   const style = useMemo(
     () => [
@@ -31,7 +29,7 @@ export const Divider = ({
       <View style={style} />
     </Box>
   );
-};
+});
 
 const styles = StyleSheet.create({
   horizontal: {

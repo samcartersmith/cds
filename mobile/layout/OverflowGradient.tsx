@@ -15,7 +15,10 @@ export type OverflowGradientProps = {
 const start = { x: 0, y: 0 } as const;
 const end = { x: 1, y: 0 } as const;
 
-export const OverflowGradient = memo(({ pin = 'right', testID }: OverflowGradientProps) => {
+export const OverflowGradient = memo(function OverflowGradient({
+  pin = 'right',
+  testID,
+}: OverflowGradientProps) {
   const palette = usePalette();
   const pinStyles = usePinStyles(pin);
   const gradientColors = useMemo(

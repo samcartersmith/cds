@@ -47,7 +47,7 @@ export type BoxProps = {
   DangerouslySetStyle<ViewStyle>;
 
 export const Box = memo(
-  forwardRef(({ children, ...props }: BoxProps, forwardedRef: ForwardedRef<View>) => {
+  forwardRef(function Box({ children, ...props }: BoxProps, forwardedRef: ForwardedRef<View>) {
     const boxInner = (
       <BoxInner {...props} ref={forwardedRef}>
         {children}

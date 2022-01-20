@@ -9,7 +9,10 @@ import { Spacer } from './Spacer';
 export type VStackProps = Omit<BoxProps, 'flexDirection'> & StackBaseProps;
 
 export const VStack = memo(
-  forwardRef(({ children, gap, ...props }: VStackProps, forwardedRef: ForwardedRef<View>) => {
+  forwardRef(function VStack(
+    { children, gap, ...props }: VStackProps,
+    forwardedRef: ForwardedRef<View>,
+  ) {
     const content = gap ? join(Children.toArray(children), <Spacer vertical={gap} />) : children;
 
     return (
