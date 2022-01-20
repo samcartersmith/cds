@@ -1,7 +1,0 @@
-export type BadgeVariant = 'empty' | 'singleDigit' | 'doubleDigit' | 'dot';
-export type BadgeValue = number | string;
-
-export type BadgeBaseProps = {
-  value?: BadgeValue;
-  variant?: BadgeVariant;
-};

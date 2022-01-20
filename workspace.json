@@ -1,7 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "common": "packages/common",
-    "common-2": "packages/common-2"
+    "common": "packages/common"
   }
 }
