@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
-import { SubHeadIconColor } from '@cbhq/cds-common/types/ChartHeaderBaseProps';
+import { SparklineInteractiveSubHeadIconColor } from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
@@ -16,7 +16,7 @@ import { getAdjustedFontScale } from '../../utils/getAdjustedFontScale';
 const useSubIconWidth = () => {
   const label1FontSize = useTypographyStyles('label1').fontSize;
   return useCallback(
-    (color: SubHeadIconColor) => {
+    (color: SparklineInteractiveSubHeadIconColor) => {
       const activeWidth = label1FontSize * 0.6;
       // Hide if color is muted aka 0% change so icon is flushed to far left
       return color === 'foregroundMuted' ? 0 : activeWidth;
@@ -93,7 +93,7 @@ export function useChartHeaderStyles() {
         },
       ] as StyleProp<TextStyle>,
       // SUBHEAD ICON STYLES - the + or - after price and in front of percent change)
-      subHeadIcon: (color: SubHeadIconColor): StyleProp<TextStyle> => [
+      subHeadIcon: (color: SparklineInteractiveSubHeadIconColor): StyleProp<TextStyle> => [
         typography.label1,
         styles.inputReset,
         {
@@ -104,7 +104,10 @@ export function useChartHeaderStyles() {
         },
       ],
       // SUBHEAD STYLES - the percent change text
-      subHead: (color: SubHeadIconColor, useFullWidth = true): StyleProp<TextStyle> => [
+      subHead: (
+        color: SparklineInteractiveSubHeadIconColor,
+        useFullWidth = true,
+      ): StyleProp<TextStyle> => [
         typography.label1,
         numberStyles,
         ...(useFullWidth ? [styles.fullWidth] : [{ width: 'auto' }]),

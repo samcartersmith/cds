@@ -2,14 +2,14 @@ import React from 'react';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { SparklineInteractive } from '../../chart/SparklineInteractive';
-import { ChartHeader } from '../ChartHeader';
+import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
 import { Box } from '../../../layout';
 import { TextTitle3 } from '../../../typography/TextTitle3';
 import { Example } from '../../../examples/ExampleScreen';
 
 const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,
-  ChartHeader,
+  SparklineInteractiveHeader,
   isMobile: true,
 });
 

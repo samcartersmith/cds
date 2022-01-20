@@ -1,6 +1,6 @@
-import { ChartSubHead } from '../types/ChartHeaderBaseProps';
+import { SparklineInteractiveSubHead } from '../types/SparklineInteractiveHeaderBaseProps';
 
-export const interpolateSubHeadText = (subHead: ChartSubHead) => {
+export const interpolateSubHeadText = (subHead: SparklineInteractiveSubHead) => {
   if (subHead.priceChange && subHead.percent) {
     return `${subHead.priceChange} (${subHead.percent})`;
   }

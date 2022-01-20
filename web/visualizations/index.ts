@@ -5,4 +5,4 @@ export * from './ProgressBarWithFixedLabels';
 export * from './ProgressBarWithFloatLabel';
 export * from './ProgressCircle';
 export * from './chart/SparklineInteractive';
-export * from './chart-header/ChartHeader';
+export * from './chart-header/SparklineInteractiveHeader';

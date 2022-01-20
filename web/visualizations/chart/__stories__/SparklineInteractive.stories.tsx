@@ -5,7 +5,7 @@ import {
 } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { SparklineInteractive } from '../SparklineInteractive';
-import { ChartHeader } from '../../chart-header/ChartHeader';
+import { SparklineInteractiveHeader } from '../../chart-header/SparklineInteractiveHeader';
 
 export default {
   component: SparklineInteractive,
@@ -19,7 +19,7 @@ const SparklineInteractiveBuild = sparklineInteractiveBuilder({
 
 const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,
-  ChartHeader,
+  SparklineInteractiveHeader,
   isMobile: false,
 });
 

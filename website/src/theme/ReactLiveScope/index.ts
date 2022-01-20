@@ -49,7 +49,7 @@ import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdate
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
 import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
 import { SparklineInteractive } from '@cbhq/cds-web/visualizations/chart/SparklineInteractive';
-import { ChartHeader } from '@cbhq/cds-web/visualizations/chart-header/ChartHeader';
+import { SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations/chart-header/SparklineInteractiveHeader';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';
@@ -75,14 +75,14 @@ import { ExampleBox } from ':cds-website/components/ExampleBox';
 
 import { useStatusButtons } from './useStatusButtons';
 
-const PriceChart = sparklineInteractiveBuilder({
+const SparklineInteractivePrice = sparklineInteractiveBuilder({
   SparklineInteractive,
   isMobile: false,
 });
 
-const PriceChartWithHeader = sparklineInteractiveWithHeaderBuilder({
+const SparklineInteractivePriceWithHeader = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,
-  ChartHeader,
+  SparklineInteractiveHeader,
   isMobile: false,
 });
 
@@ -172,8 +172,8 @@ const ReactLiveScope = {
   nux,
   ProgressContainerWithButtons,
   SparklineArea,
-  PriceChart,
-  PriceChartWithHeader,
+  SparklineInteractivePrice,
+  SparklineInteractivePriceWithHeader,
   sparklineInteractiveData,
 };
 

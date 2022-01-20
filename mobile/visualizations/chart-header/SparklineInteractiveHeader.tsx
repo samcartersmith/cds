@@ -1,18 +1,18 @@
 import React, { memo, forwardRef, useRef, useCallback, useImperativeHandle } from 'react';
 import { TextInput, View } from 'react-native';
 import {
-  ChartHeaderProps,
-  ChartHeaderRef,
-  ChartHeaderValues,
-  ChartSubHead,
-} from '@cbhq/cds-common/types/ChartHeaderBaseProps';
+  SparklineInteractiveHeaderProps,
+  SparklineInteractiveHeaderRef,
+  SparklineInteractiveHeaderValues,
+  SparklineInteractiveSubHead,
+} from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
 import { useChartHeaderStyles } from './useChartHeaderStyles';
 import { fontScaleProps } from '../../hooks/useDeviceScaleToCdsScale';
 import { HStack } from '../../layout';
 
-export const ChartHeader = memo(
-  forwardRef<ChartHeaderRef, ChartHeaderProps>(
+export const SparklineInteractiveHeader = memo(
+  forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
     ({ defaultLabel, defaultTitle, defaultSubHead, testID }, ref) => {
       return (
         <ChartHeaderStable
@@ -32,7 +32,7 @@ export const ChartHeader = memo(
 );
 
 const ChartHeaderStable = memo(
-  forwardRef<ChartHeaderRef, ChartHeaderProps>(
+  forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
     ({ defaultLabel, defaultTitle, defaultSubHead, testID }, forwardedRef) => {
       const labelRef = useRef<TextInput>(null);
       const titleRef = useRef<TextInput>(null);
@@ -40,7 +40,7 @@ const ChartHeaderStable = memo(
       const subHeadIconRef = useRef<TextInput>(null);
       const subHeadAccessoryRef = useRef<TextInput>(null);
 
-      const valuesRef = useRef<ChartHeaderValues>({
+      const valuesRef = useRef<SparklineInteractiveHeaderValues>({
         title: defaultTitle,
         label: defaultLabel,
         subHead: defaultSubHead,
@@ -75,7 +75,7 @@ const ChartHeaderStable = memo(
       );
 
       const updateSubHead = useCallback(
-        (subHead: ChartSubHead) => {
+        (subHead: SparklineInteractiveSubHead) => {
           const prevSubHead = valuesRef.current?.subHead;
 
           if (prevSubHead !== subHead) {
@@ -102,7 +102,7 @@ const ChartHeaderStable = memo(
       // so that we can avoid updating unnecessarily if previous
       // value is the same as the new value
       const update = useCallback(
-        ({ label, title, subHead }: ChartHeaderValues) => {
+        ({ label, title, subHead }: SparklineInteractiveHeaderValues) => {
           if (label) {
             updateLabel(label);
           }

@@ -1,10 +1,145 @@
-#### Example code
-All examples use the following code to generate the SparklineInteractive with a ChartHeader
+## Example code for SparklineInteractive
+
+--------------------------------------
+
+### SparklineInteractiveWithPrice ###
 
 ```tsx
 type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
-type PriceChartProps = Omit<
+type SparklineInteractivePriceProps = Omit<
+  SparklineInteractiveBaseProps<ChartPeriod>,
+  'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
+> &
+  Partial<Pick<SparklineInteractiveBaseProps<ChartPeriod>, 'defaultPeriod'>> & {
+    hideHoverDate?: boolean;
+    hideMinMaxLabel?: boolean;
+  };
+
+export const DEFAULT_CHART_PERIOD = 'day';
+
+const periods = [
+  {
+    label: '1H',
+    value: 'hour' as const,
+  },
+  {
+    label: '1D',
+    value: 'day' as const,
+  },
+  {
+    label: '1W',
+    value: 'week' as const,
+  },
+  {
+    label: '1M',
+    value: 'month' as const,
+  },
+  {
+    label: '1Y',
+    value: 'year' as const,
+  },
+  {
+    label: 'All',
+    value: 'all' as const,
+  },
+];
+
+// eslint-disable-next-line consistent-return
+const getFormattingConfigForPeriod = (period: ChartPeriod) => {
+  // eslint-disable-next-line default-case
+  switch (period) {
+    case 'hour':
+    case 'day':
+      return {
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+
+    case 'week':
+    case 'month':
+      return {
+        month: 'numeric',
+        day: 'numeric',
+      } as const;
+
+    case 'year':
+    case 'all':
+      return {
+        month: 'numeric',
+        year: 'numeric',
+      } as const;
+  }
+};
+
+const getDateHoverOptions = (period: ChartPeriod) => {
+  switch (period) {
+    case 'hour':
+    case 'day':
+    case 'week':
+    case 'month':
+      return {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+    default:
+      return {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      } as const;
+  }
+};
+
+function numToLocaleString(num: number) {
+  return num.toLocaleString(undefined, {
+    maximumFractionDigits: 2,
+  });
+}
+
+export const SparklineInteractivePrice = memo(({ defaultPeriod, ...props }: SparklineInteractivePriceProps) => {
+  const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
+      const config = getFormattingConfigForPeriod(period);
+      return value.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        ...config,
+      });
+    }, []);
+
+    const formatHoverDate = useCallback((date: Date, period: ChartPeriod) => {
+      return date.toLocaleString('en-US', {
+        timeZone: 'America/New_York',
+        ...getDateHoverOptions(period),
+      });
+    }, []);
+
+    const formatAmount = useCallback((amount: number | string) => {
+      return `$${numToLocaleString(parseInt(amount as string, 10))}`;
+    }, []);
+
+    return (
+      <SparklineInteractive
+        {...props}
+        periods={periods}
+        formatDate={formatDateWithConfig}
+        formatHoverDate={formatHoverDate}
+        defaultPeriod={defaultPeriod ?? DEFAULT_CHART_PERIOD}
+        formatAmount={formatAmount}
+      />
+    );
+});
+```
+
+### SparklineInteractivePriceWithHeader ###
+
+```tsx
+type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
+
+type SparklineInteractivePriceProps = Omit<
   SparklineInteractiveBaseProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
@@ -102,12 +237,12 @@ function generateSubHead(
   point: ChartDataPoint,
   period: ChartPeriod,
   sparklineInteractiveData: Record<ChartPeriod, ChartData>,
-): ChartSubHead {
+): SparklineInteractiveSubHead {
   const data = sparklineInteractiveData[period];
   const firstPoint = data[0];
 
   const increase = point.value > firstPoint.value;
-  const subHead: ChartSubHead = {
+  const subHead: SparklineInteractiveSubHead = {
     percent: `${numToLocaleString(
       Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
     )}%`,
@@ -119,39 +254,48 @@ function generateSubHead(
   return subHead;
 }
 
-export const PriceChartWithHeader = memo(({ defaultPeriod, ...props }: PriceChartProps) => {
+export const SparklineInteractivePriceWithHeader = memo(({ defaultPeriod, ...props }: SparklineInteractivePriceProps) => {
     const { data: sparklineData } = props;
     const sparklineInteractiveData = sparklineData as Record<ChartPeriod, ChartData>;
-    const chartHeaderRef = useRef<ChartHeaderRef | null>(null);
+    const chartHeaderRef = useRef<SparklineInteractiveHeaderRef | null>(null);
     const [currentPeriod, setCurrentPeriod] = useState<ChartPeriod>(DEFAULT_CHART_PERIOD);
     const data = sparklineInteractiveData[currentPeriod];
     const lastPoint = data[data.length - 1];
 
-    const formatDateWithConfig = useCallback((value: Date, period: ChartPeriod) => {
-      const config = getFormattingConfigForPeriod(period);
-      return value.toLocaleString('en-US', {
-        timeZone: 'America/New_York',
-        ...config,
-      });
-    }, []);
+    const formatDateWithConfig = useCallback(
+      (value: Date, period: ChartPeriod) => {
+        const config = getFormattingConfigForPeriod(period);
 
-    const formatHoverDate = useCallback((date: Date, period: ChartPeriod) => {
-      return date.toLocaleString('en-US', {
-        timeZone: 'America/New_York',
-        ...getDateHoverOptions(period),
-      });
-    }, []);
+        return value.toLocaleString('en-US', {
+          ...config,
+        });
+      },
+      [timezoneObj],
+    );
+
+    const formatHoverDate = useCallback(
+      (date: Date, period: ChartPeriod) => {
+        return date.toLocaleString('en-US', {
+          ...timezoneObj,
+          ...getDateHoverOptions(period),
+        });
+      },
+      [timezoneObj],
+    );
 
     const formatAmount = useCallback((amount: number | string) => {
       return `$${numToLocaleString(parseInt(amount as string, 10))}`;
     }, []);
 
-    const handleScrub = useCallback(({ point, period }: ChartScrubParams<ChartPeriod>) => {
-      chartHeaderRef.current?.update({
-        title: `$${point.value.toLocaleString()}`,
-        subHead: generateSubHead(point, period, sparklineInteractiveData),
-      });
-    }, [sparklineInteractiveData]);
+    const handleScrub = useCallback(
+      ({ point, period }: ChartScrubParams<ChartPeriod>) => {
+        chartHeaderRef.current?.update({
+          title: `$${point.value.toLocaleString('en-US')}`,
+          subHead: generateSubHead(point, period, sparklineInteractiveData),
+        });
+      },
+      [sparklineInteractiveData],
+    );
 
     const handleScrubEnd = useCallback(() => {
       chartHeaderRef.current?.update({
@@ -160,20 +304,23 @@ export const PriceChartWithHeader = memo(({ defaultPeriod, ...props }: PriceChar
       });
     }, [currentPeriod, sparklineInteractiveData, lastPoint]);
 
-    const handleOnPeriodChanged = useCallback((period: ChartPeriod) => {
-      setCurrentPeriod(period);
+    const handleOnPeriodChanged = useCallback(
+      (period: ChartPeriod) => {
+        setCurrentPeriod(period);
 
-      const newData = sparklineInteractiveData[period];
-      const newLastPoint = newData[newData.length - 1];
+        const newData = sparklineInteractiveData[period];
+        const newLastPoint = newData[newData.length - 1];
 
-      chartHeaderRef.current?.update({
-        title: `$${numToLocaleString(newLastPoint.value)}`,
-        subHead: generateSubHead(newLastPoint, period, sparklineInteractiveData),
-      });
-    }, [sparklineInteractiveData]);
+        chartHeaderRef.current?.update({
+          title: `$${numToLocaleString(newLastPoint.value)}`,
+          subHead: generateSubHead(newLastPoint, period, sparklineInteractiveData),
+        });
+      },
+      [sparklineInteractiveData],
+    );
 
     const header = (
-      <ChartHeader
+      <SparklineInteractiveHeader
         ref={chartHeaderRef}
         defaultLabel="Bitcoin Price"
         defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
@@ -197,6 +344,8 @@ export const PriceChartWithHeader = memo(({ defaultPeriod, ...props }: PriceChar
     );
 });
 ```
+
+### Sample Data Shape ###
 
 The data shape of `sparklineInteractiveData` is shown below. There are a lot more data points in the example screenshots than are shown below
 
@@ -264,21 +413,3 @@ The data shape of `sparklineInteractiveData` is shown below. There are a lot mor
     ]
 }
 ````
-
-#### Default usage
-
-```jsx live
-<Box spacing={3} width="100%">
-    <PriceChartWithHeader data={sparklineInteractiveData} strokeColor="#F7931A" />
-</Box>
-```
-
-#### fill
-
-If you are using frontier then the fill will be added by default
-
-```jsx live
-<Box spacing={3} width="100%">
-    <PriceChartWithHeader data={sparklineInteractiveData} fill strokeColor="#F7931A" />
-</Box>
-```

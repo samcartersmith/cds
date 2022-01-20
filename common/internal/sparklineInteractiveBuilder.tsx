@@ -1,11 +1,15 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
-import { ChartHeaderProps, ChartHeaderRef, ChartSubHead } from '../types/ChartHeaderBaseProps';
+import {
+  SparklineInteractiveHeaderProps,
+  SparklineInteractiveHeaderRef,
+  SparklineInteractiveSubHead,
+} from '../types/SparklineInteractiveHeaderBaseProps';
 
 export type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
-type PriceChartProps = Omit<
+type SparklineInteractivePriceProps = Omit<
   SparklineInteractiveBaseProps<ChartPeriod>,
   'periods' | 'defaultPeriod' | 'formatAmount' | 'formatDate'
 > &
@@ -114,7 +118,7 @@ export const sparklineInteractiveBuilder = ({
   SparklineInteractive,
   isMobile,
 }: SparklineInteractiveBuilderProps) => {
-  return memo(({ defaultPeriod, hideHoverDate, ...props }: PriceChartProps) => {
+  return memo(({ defaultPeriod, hideHoverDate, ...props }: SparklineInteractivePriceProps) => {
     // not supported onAndroid
     const timezoneObj = useMemo(() => {
       const obj: { timeZone?: string } = {};
@@ -168,12 +172,12 @@ function generateSubHead(
   point: ChartDataPoint,
   period: ChartPeriod,
   sparklineInteractiveData: Record<ChartPeriod, ChartData>,
-): ChartSubHead {
+): SparklineInteractiveSubHead {
   const data = sparklineInteractiveData[period];
   const firstPoint = data[0];
 
   const increase = point.value > firstPoint.value;
-  const subHead: ChartSubHead = {
+  const subHead: SparklineInteractiveSubHead = {
     percent: `${numToLocaleString(
       Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
     )}%`,
@@ -186,14 +190,14 @@ function generateSubHead(
 }
 
 type SparklineInteractiveWithHeaderBuilderProps = SparklineInteractiveBuilderProps & {
-  ChartHeader: React.ForwardRefExoticComponent<
-    ChartHeaderProps & React.RefAttributes<ChartHeaderRef>
+  SparklineInteractiveHeader: React.ForwardRefExoticComponent<
+    SparklineInteractiveHeaderProps & React.RefAttributes<SparklineInteractiveHeaderRef>
   >;
 };
 
 export const sparklineInteractiveWithHeaderBuilder = ({
   SparklineInteractive,
-  ChartHeader,
+  SparklineInteractiveHeader,
   isMobile,
 }: SparklineInteractiveWithHeaderBuilderProps) => {
   const SparklineInteractiveBuild = sparklineInteractiveBuilder({
@@ -201,10 +205,10 @@ export const sparklineInteractiveWithHeaderBuilder = ({
     isMobile,
   });
 
-  return memo((props: PriceChartProps) => {
+  return memo((props: SparklineInteractivePriceProps) => {
     const { data: sparklineData } = props;
     const sparklineInteractiveData = sparklineData as Record<ChartPeriod, ChartData>;
-    const chartHeaderRef = useRef<ChartHeaderRef | null>(null);
+    const chartHeaderRef = useRef<SparklineInteractiveHeaderRef | null>(null);
     const [currentPeriod, setCurrentPeriod] = useState<ChartPeriod>(DEFAULT_CHART_PERIOD);
     const data = sparklineInteractiveData[currentPeriod];
     const lastPoint = data[data.length - 1];
@@ -242,7 +246,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
     );
 
     const header = (
-      <ChartHeader
+      <SparklineInteractiveHeader
         ref={chartHeaderRef}
         defaultLabel="Bitcoin Price"
         defaultTitle={`$${numToLocaleString(lastPoint.value)}`}

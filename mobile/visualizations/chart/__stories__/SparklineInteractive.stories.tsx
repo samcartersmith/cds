@@ -8,7 +8,7 @@ import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
 import { TextTitle3 } from '../../../typography/TextTitle3';
 import { SparklineInteractive } from '../SparklineInteractive';
 import { Box } from '../../../layout';
-import { ChartHeader } from '../../chart-header/ChartHeader';
+import { SparklineInteractiveHeader } from '../../chart-header/SparklineInteractiveHeader';
 
 const SparklineInteractiveBuild = sparklineInteractiveBuilder({
   SparklineInteractive,
@@ -17,7 +17,7 @@ const SparklineInteractiveBuild = sparklineInteractiveBuilder({
 
 const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,
-  ChartHeader,
+  SparklineInteractiveHeader,
   isMobile: true,
 });
 
