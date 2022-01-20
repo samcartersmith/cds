@@ -1,3 +1,7 @@
+# CDS - Common
+
+Shared types and hooks between web and mobile.
+
 # common
 
 This library was generated with [Nx](https://nx.dev).

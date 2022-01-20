@@ -1,0 +1,18 @@
+/**
+ * DO NOT MODIFY
+ * Generated from scripts/codegen/main.ts
+ */
+
+export type Scale = 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge' | 'xxLarge' | 'xxxLarge';
+
+export type ScaleDensity = 'dense' | 'normal';
+
+export type RootScalePreference =
+  | 'xSmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xLarge'
+  | 'xxLarge'
+  | 'xxxLarge'
+  | 'system';

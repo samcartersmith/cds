@@ -1,5 +1,16 @@
 {
-  "name": "@design-system/common",
-  "version": "0.0.1",
-  "type": "commonjs"
+  "name": "@cbhq/cds-common",
+  "version": "0.33.0",
+  "description": "Coinbase Design System - Common",
+  "type": "commonjs",
+  "keywords": [
+    "cds",
+    "design system",
+    "core",
+    "common",
+    "types"
+  ],
+  "authors": "Coinbase",
+  "main": "index.js",
+  "typings": "index.d.ts"
 }

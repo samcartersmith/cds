@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@design-system/common": ["packages/common/src/index.ts"]
+      "@cbhq/common": ["packages/common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
