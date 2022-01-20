@@ -1,8 +1,7 @@
+import memoize from 'lodash/memoize';
 import { PartialPaletteConfig, PartialThemeConfig } from '../types';
 import { paletteConfigToHexValues } from '../palette/paletteConfigToHexValues';
 import { paletteConfigToRgbaStrings } from '../palette/paletteConfigToRgbaStrings';
-
-const cache: Record<string, PartialThemeConfig> = {};
 
 /**
  * Custom theme configs are expensive if created during React lifecycle.
@@ -14,34 +13,29 @@ const cache: Record<string, PartialThemeConfig> = {};
  * @param hasFrontier - (optional) boolean. If true it will use the new yellow from frontier work
  * when generating the rgbaStrings and hexValues.
  */
-export function createThemeConfig({
-  palette,
-  hasFrontier,
-  name,
-}: {
-  palette: PartialPaletteConfig;
-  hasFrontier?: boolean;
-  name: string;
-}): PartialThemeConfig {
-  if (name && cache[name]) {
-    return cache[name];
-  }
-  const config = {
+export const createThemeConfig = memoize(
+  ({
+    palette,
+    hasFrontier,
     name,
-    light: {
-      palette,
-      rgbaStrings: paletteConfigToRgbaStrings(palette, 'light', hasFrontier),
-      hexValues: paletteConfigToHexValues(palette, 'light', hasFrontier),
-      name: `${name}-light${hasFrontier ? '-frontier' : ''}`,
-    },
-    dark: {
-      palette,
-      rgbaStrings: paletteConfigToRgbaStrings(palette, 'dark', hasFrontier),
-      hexValues: paletteConfigToHexValues(palette, 'dark', hasFrontier),
-      name: `${name}-dark${hasFrontier ? '-frontier' : ''}`,
-    },
-  };
-
-  cache[name] = config;
-  return config;
-}
+  }: {
+    palette: PartialPaletteConfig;
+    hasFrontier?: boolean;
+    name: string;
+  }): PartialThemeConfig => {
+    return {
+      name,
+      light: {
+        palette,
+        rgbaStrings: paletteConfigToRgbaStrings(palette, 'light', hasFrontier),
+        hexValues: paletteConfigToHexValues(palette, 'light', hasFrontier),
+      },
+      dark: {
+        palette,
+        rgbaStrings: paletteConfigToRgbaStrings(palette, 'dark', hasFrontier),
+        hexValues: paletteConfigToHexValues(palette, 'dark', hasFrontier),
+      },
+    };
+  },
+  ({ name }) => name,
+);

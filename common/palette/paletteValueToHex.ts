@@ -1,9 +1,8 @@
+import memoize from 'lodash/memoize';
 import { colorToHex } from '../color/colorToHex';
 import type { PaletteValueToHex } from '../types';
-import { paletteValueTupleToRgbaArray } from './paletteValueTupleToRgbaArray';
-import { paletteValueToTupleWithCacheName } from './paletteValueToTupleWithCacheName';
-
-const cache: Record<string, string> = {};
+import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
+import { paletteValueToCacheName } from './paletteValueToCacheName';
 
 /**
  * Given a color that is a PaletteValue and the spectrum, output a hex value of this color
@@ -12,12 +11,10 @@ const cache: Record<string, string> = {};
  * @param hasFrontier - boolean returned from useFeatureFlag('frontierColor')
  * @returns hex value based on color and spectrum
  */
-export const paletteValueToHex: PaletteValueToHex = (color, spectrum, hasFrontier) => {
-  const [paletteValue, cacheName] = paletteValueToTupleWithCacheName(color, spectrum, hasFrontier);
-  if (cacheName in cache) return cache[cacheName];
-  // Transparent is converted to black hex. This fixes that.
-  const [red, green, blue] = paletteValueTupleToRgbaArray(paletteValue, spectrum, hasFrontier);
-  const hexValue = colorToHex(`rgb(${red},${green},${blue})`);
-  cache[cacheName] = hexValue;
-  return hexValue;
-};
+export const paletteValueToHex: PaletteValueToHex = memoize(
+  (paletteValue, spectrum, hasFrontier) => {
+    const [red, green, blue] = paletteValueToRgbaArray(paletteValue, spectrum, hasFrontier);
+    return colorToHex(`rgb(${red},${green},${blue})`);
+  },
+  paletteValueToCacheName,
+);

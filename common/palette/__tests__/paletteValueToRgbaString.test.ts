@@ -1,5 +1,5 @@
 import { spectrumConfigs } from '../../spectrum/spectrumConfigs';
-import { paletteValueToRgbaString, rgbaStringsCache } from '../paletteValueToRgbaString';
+import { paletteValueToRgbaString } from '../paletteValueToRgbaString';
 
 const gray100Light = `rgba(${spectrumConfigs.base.light.gray100.join(',')},1)`;
 const blue90Light = `rgba(${spectrumConfigs.base.light.blue90.join(',')},${0.33})`;
@@ -24,9 +24,9 @@ describe('paletteValueToRgbaString', () => {
   });
 
   it('properly caches values after lookup', () => {
-    expect(rgbaStringsCache['gray100-1-light']).toEqual(gray100Light);
-    expect(rgbaStringsCache['blue90-0.33-light']).toEqual(blue90Light);
-    expect(rgbaStringsCache['gray100-1-dark']).toEqual(gray100Dark);
-    expect(rgbaStringsCache['blue90-0.33-dark']).toEqual(blue90Dark);
+    expect(paletteValueToRgbaString.cache.get('gray100-1-light')).toEqual(gray100Light);
+    expect(paletteValueToRgbaString.cache.get('blue90-0.33-light')).toEqual(blue90Light);
+    expect(paletteValueToRgbaString.cache.get('gray100-1-dark')).toEqual(gray100Dark);
+    expect(paletteValueToRgbaString.cache.get('blue90-0.33-dark')).toEqual(blue90Dark);
   });
 });

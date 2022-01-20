@@ -1,83 +1,69 @@
-import { InteractableTokensConfig, PaletteConfig, PaletteValue, Spectrum } from '../types';
+import memoize from 'lodash/memoize';
+import { PaletteValue, Spectrum } from '../types';
 import { blendColors } from '../color/blendColors';
 import { opacityDisabled, opacityPressed } from '../tokens/interactable';
-import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
 import { paletteValueToHueStep } from './paletteValueToHueStep';
-import { paletteValueToTupleWithCacheName } from './paletteValueToTupleWithCacheName';
-import { paletteValueTupleToRgbaArray } from './paletteValueTupleToRgbaArray';
-
-const cache: Record<string, InteractableTokensConfig> = {};
+import { paletteValueToTuple } from './paletteValueToTuple';
+import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
+import { paletteValueToCacheName } from './paletteValueToCacheName';
 
 const transparentTokens = {
   disabled: { contentOpacity: 0.38, backgroundColor: 'transparent' },
   pressed: { contentOpacity: 0.82, backgroundColor: 'transparent' },
 };
 
-export function paletteValueToInteractableToken(
-  { background, foreground }: PaletteConfig,
-  value: PaletteValue,
-  spectrum: Spectrum,
-  hasFrontier?: boolean,
-): InteractableTokensConfig {
-  const [[overlayAlias, overlayOpacity], overlayCacheName] = paletteValueToTupleWithCacheName(
-    value,
-    spectrum,
-    hasFrontier,
-  );
-  if (overlayOpacity === 0) {
-    return transparentTokens;
-  }
+export const paletteValueToInteractableToken = memoize(
+  (
+    { background, foreground }: { background: PaletteValue; foreground: PaletteValue },
+    paletteValue: PaletteValue,
+    spectrum: Spectrum,
+    hasFrontier?: boolean,
+  ) => {
+    const [overlayAlias, overlayOpacity] = paletteValueToTuple(paletteValue);
+    if (overlayOpacity === 0) {
+      return transparentTokens;
+    }
+    const hueStep = paletteValueToHueStep(paletteValue);
+    const underlayAlias = hueStep > 60 ? 'background' : 'foreground';
+    const backgroundRgbaArray = paletteValueToRgbaArray(background, spectrum, hasFrontier);
+    const foregroundRgbaArray =
+      underlayAlias === 'background'
+        ? backgroundRgbaArray
+        : paletteValueToRgbaArray(foreground, spectrum, hasFrontier);
 
-  const [backgroundTuple, backgroundCacheName] = paletteValueToTupleWithCacheName(
-    background,
-    spectrum,
-    hasFrontier,
-  );
+    const opacity = {
+      disabled: opacityDisabled,
+      pressed: opacityPressed[hueStep],
+    };
 
-  const [foregroundTuple, foregroundCacheName] = paletteValueToTupleWithCacheName(
-    foreground,
-    spectrum,
-    hasFrontier,
-  );
+    const overlayColors = {
+      disabled: paletteValueToRgbaArray([overlayAlias, opacity.disabled], spectrum),
+      pressed: paletteValueToRgbaArray([overlayAlias, opacity.pressed], spectrum),
+    };
 
-  const cacheName = `${overlayCacheName}-${backgroundCacheName}-${foregroundCacheName}`;
-  if (cacheName in cache) {
-    return cache[cacheName];
-  }
+    const underlayColors = {
+      disabled: backgroundRgbaArray,
+      pressed: foregroundRgbaArray,
+    };
 
-  const hueStep = paletteValueToHueStep(value);
-  const underlayAlias = hueStep > 60 ? 'background' : 'foreground';
-  const backgroundRgbaArray = paletteValueTupleToRgbaArray(backgroundTuple, spectrum, hasFrontier);
-  const foregroundRgbaArray =
-    underlayAlias === 'background'
-      ? backgroundRgbaArray
-      : paletteValueTupleToRgbaArray(foregroundTuple, spectrum, hasFrontier);
-
-  const opacity = {
-    disabled: opacityDisabled,
-    pressed: opacityPressed[hueStep],
-  };
-
-  const overlayColors = {
-    disabled: paletteValueToRgbaArray([overlayAlias, opacity.disabled], spectrum),
-    pressed: paletteValueToRgbaArray([overlayAlias, opacity.pressed], spectrum),
-  };
-
-  const underlayColors = {
-    disabled: backgroundRgbaArray,
-    pressed: foregroundRgbaArray,
-  };
-
-  const tokens = {
-    disabled: {
-      contentOpacity: opacity.disabled,
-      backgroundColor: blendColors(backgroundRgbaArray, overlayColors.disabled),
-    },
-    pressed: {
-      contentOpacity: opacity.pressed,
-      backgroundColor: blendColors(underlayColors.pressed, overlayColors.pressed),
-    },
-  };
-  cache[cacheName] = tokens;
-  return tokens;
-}
+    return {
+      disabled: {
+        contentOpacity: opacity.disabled,
+        backgroundColor: blendColors(backgroundRgbaArray, overlayColors.disabled),
+      },
+      pressed: {
+        contentOpacity: opacity.pressed,
+        backgroundColor: blendColors(underlayColors.pressed, overlayColors.pressed),
+      },
+    };
+  },
+  ({ background, foreground }, paletteValue, spectrum, hasFrontier) => {
+    const [backgroundAlias, backgroundOpacity] = paletteValueToTuple(background);
+    const [foregroundAlias, foregroundOpacity] = paletteValueToTuple(foreground);
+    return `${paletteValueToCacheName(
+      paletteValue,
+      spectrum,
+      hasFrontier,
+    )}-background-${backgroundAlias}-${backgroundOpacity}-foreground-${foregroundAlias}-${foregroundOpacity}`;
+  },
+);

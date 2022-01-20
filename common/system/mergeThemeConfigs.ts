@@ -1,3 +1,4 @@
+import memoize from 'lodash/memoize';
 import {
   ThemeConfig,
   PartialThemeConfig,
@@ -6,26 +7,25 @@ import {
 } from '../types';
 import { paletteConfigToInteractableTokens } from '../palette/paletteConfigToInteractableTokens';
 
-const cache: Record<string, ThemeConfig> = {};
-
-function isLightConfig(config: PartialThemeConfig): config is PartialLightThemeConfig {
+export function isLightConfig(config: PartialThemeConfig): config is PartialLightThemeConfig {
   if ('light' in config) {
     return true;
   }
   return false;
 }
-function isDarkConfig(config: PartialThemeConfig): config is PartialDarkThemeConfig {
+export function isDarkConfig(config: PartialThemeConfig): config is PartialDarkThemeConfig {
   if ('dark' in config) {
     return true;
   }
   return false;
 }
 
-export function mergeThemeConfigs(config1: ThemeConfig, config2: PartialThemeConfig): ThemeConfig {
-  const name = `${config1.name}-${config2.name}`;
-  if (name in cache) {
-    return cache[name];
-  }
+function mergeNames(config1: ThemeConfig, config2: PartialThemeConfig) {
+  return `${config1.name}-${config2.name}`;
+}
+
+export const mergeThemeConfigs = memoize((config1: ThemeConfig, config2: PartialThemeConfig) => {
+  const name = mergeNames(config1, config2);
   const hasLightConfig = isLightConfig(config2);
   const hasDarkConfig = isDarkConfig(config2);
 
@@ -37,7 +37,7 @@ export function mergeThemeConfigs(config1: ThemeConfig, config2: PartialThemeCon
     ? { ...config1.dark.palette, ...config2.dark.palette }
     : config1.dark.palette;
 
-  const mergedConfig = {
+  return {
     name,
     light: hasLightConfig
       ? {
@@ -58,6 +58,4 @@ export function mergeThemeConfigs(config1: ThemeConfig, config2: PartialThemeCon
         }
       : config1.dark,
   };
-  cache[name] = mergedConfig;
-  return mergedConfig;
-}
+}, mergeNames);
