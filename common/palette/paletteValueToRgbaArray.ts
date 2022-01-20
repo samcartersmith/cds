@@ -1,6 +1,8 @@
-import type { PaletteValueToRgbaArray } from '../types';
-import { paletteValueToTuple } from './paletteValueToTuple';
-import { spectrumConfigs } from './paletteValueToRgbaString';
+import type { PaletteValueToRgbaArray, RgbaArray } from '../types';
+import { paletteValueToTupleWithCacheName } from './paletteValueToTupleWithCacheName';
+import { paletteValueTupleToRgbaArray } from './paletteValueTupleToRgbaArray';
+
+export const rgbaArraysCache: Record<string, RgbaArray> = {};
 
 /**
  * Given a color that is a PaletteValue and the spectrum, output a hex value of this color
@@ -14,9 +16,15 @@ export const paletteValueToRgbaArray: PaletteValueToRgbaArray = (
   spectrum,
   hasFrontier,
 ) => {
-  const [alias, opacity] = paletteValueToTuple(paletteValue);
-  const spectrumConfig = hasFrontier ? spectrumConfigs.frontier : spectrumConfigs.base;
-  const colors = spectrum === 'light' ? spectrumConfig.light : spectrumConfig.dark;
-  const [red, green, blue] = colors[alias];
-  return [red, green, blue, opacity];
+  const [paletteValueTuple, cacheName] = paletteValueToTupleWithCacheName(
+    paletteValue,
+    spectrum,
+    hasFrontier,
+  );
+  if (cacheName in rgbaArraysCache) {
+    return rgbaArraysCache[cacheName];
+  }
+  const rgbaArray = paletteValueTupleToRgbaArray(paletteValueTuple, spectrum, hasFrontier);
+  rgbaArraysCache[cacheName] = rgbaArray;
+  return rgbaArray;
 };

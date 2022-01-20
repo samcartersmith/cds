@@ -10,6 +10,7 @@ import type { SpectrumAlias, SpectrumAliasWithOpacity } from './Spectrum';
 
 export type PaletteAlias = keyof typeof defaultPalette;
 export type PaletteValue = SpectrumAlias | SpectrumAliasWithOpacity;
+export type PaletteValueTuple = SpectrumAliasWithOpacity;
 export type PaletteForeground = Extract<PaletteAlias, typeof paletteForegrounds[number]>;
 export type PaletteBackground = Extract<PaletteAlias, typeof paletteBackgrounds[number]>;
 export type PaletteBorder = Extract<PaletteAlias, typeof paletteBorders[number]>;

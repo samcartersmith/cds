@@ -1,17 +1,8 @@
 import type { PaletteValueToRgbaString } from '../types';
-import { light, dark, frontierLight, frontierDark } from '../spectrum/spectrumRgbArray';
-import { paletteValueToTuple } from './paletteValueToTuple';
+import { paletteValueTupleToRgbaString } from './paletteValueTupleToRgbaString';
+import { paletteValueToTupleWithCacheName } from './paletteValueToTupleWithCacheName';
 
-export const spectrumConfigs = {
-  base: {
-    light,
-    dark,
-  },
-  frontier: {
-    light: { ...light, ...frontierLight },
-    dark: { ...dark, ...frontierDark },
-  },
-};
+export const rgbaStringsCache: Record<string, string> = {};
 
 /**
  * `Please don't use this unless you absolutely have to. This is meant as last resort.`
@@ -26,10 +17,15 @@ export const paletteValueToRgbaString: PaletteValueToRgbaString = (
   spectrum,
   hasFrontier,
 ) => {
-  const [alias, opacity] = paletteValueToTuple(paletteValue);
-  const spectrumConfig = hasFrontier ? spectrumConfigs.frontier : spectrumConfigs.base;
-  const colors = spectrum === 'light' ? spectrumConfig.light : spectrumConfig.dark;
-  const [red, green, blue] = colors[alias];
-  const rgbaString = `rgba(${red},${green},${blue},${opacity})`;
+  const [paletteValueTuple, cacheName] = paletteValueToTupleWithCacheName(
+    paletteValue,
+    spectrum,
+    hasFrontier,
+  );
+  if (cacheName in rgbaStringsCache) {
+    return rgbaStringsCache[cacheName];
+  }
+  const rgbaString = paletteValueTupleToRgbaString(paletteValueTuple, spectrum, hasFrontier);
+  rgbaStringsCache[cacheName] = rgbaString;
   return rgbaString;
 };
