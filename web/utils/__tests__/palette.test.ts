@@ -53,6 +53,7 @@ describe('paletteConfigToCssVars', () => {
       positiveForeground: 'rgb(var(--gray0))',
       secondary: 'rgb(var(--gray0))',
       secondaryForeground: 'rgb(var(--gray100))',
+      transparent: 'rgba(var(--gray0),0)',
     });
   });
 });
@@ -76,6 +77,7 @@ describe('setPaletteConfigToCssVars', () => {
       '--positive-foreground': 'rgb(var(--gray0))',
       '--secondary': 'rgb(var(--gray0))',
       '--secondary-foreground': 'rgb(var(--gray100))',
+      '--transparent': 'rgba(var(--gray0),0)',
     });
   });
 });

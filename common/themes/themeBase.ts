@@ -22,6 +22,7 @@ const palette = {
   positiveForeground: 'gray0',
   secondary: 'gray0',
   secondaryForeground: 'gray100',
+  transparent: ['gray0', 0],
 } as const;
 
 const config = {
@@ -45,6 +46,7 @@ const config = {
       positiveForeground: 'rgba(255,255,255,1)',
       secondary: 'rgba(255,255,255,1)',
       secondaryForeground: 'rgba(10,11,13,1)',
+      transparent: 'rgba(255,255,255,0)',
     },
     hexValues: {
       foreground: '#0a0b0d',
@@ -63,6 +65,7 @@ const config = {
       positiveForeground: '#ffffff',
       secondary: '#ffffff',
       secondaryForeground: '#0a0b0d',
+      transparent: '#ffffff',
     },
     interactableTokens: {
       foreground: {
@@ -129,6 +132,10 @@ const config = {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(162, 162, 163)' },
         pressed: { contentOpacity: 0.82, backgroundColor: 'rgb(54, 55, 57)' },
       },
+      transparent: {
+        disabled: { contentOpacity: 0.38, backgroundColor: 'transparent' },
+        pressed: { contentOpacity: 0.82, backgroundColor: 'transparent' },
+      },
     },
     name: 'base-light',
   },
@@ -151,6 +158,7 @@ const config = {
       positiveForeground: 'rgba(10,11,13,1)',
       secondary: 'rgba(10,11,13,1)',
       secondaryForeground: 'rgba(255,255,255,1)',
+      transparent: 'rgba(10,11,13,0)',
     },
     hexValues: {
       foreground: '#ffffff',
@@ -169,6 +177,7 @@ const config = {
       positiveForeground: '#0a0b0d',
       secondary: '#0a0b0d',
       secondaryForeground: '#ffffff',
+      transparent: '#0a0b0d',
     },
     interactableTokens: {
       foreground: {
@@ -234,6 +243,10 @@ const config = {
       secondaryForeground: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(103, 104, 105)' },
         pressed: { contentOpacity: 0.82, backgroundColor: 'rgb(211, 211, 211)' },
+      },
+      transparent: {
+        disabled: { contentOpacity: 0.38, backgroundColor: 'transparent' },
+        pressed: { contentOpacity: 0.82, backgroundColor: 'transparent' },
       },
     },
     name: 'base-dark',

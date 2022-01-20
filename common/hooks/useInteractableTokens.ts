@@ -5,8 +5,10 @@ import { usePaletteConfig } from '../palette/usePaletteConfig';
 import { opacityDisabled, opacityHovered, opacityPressed } from '../tokens/interactable';
 import { PaletteAlias } from '../types';
 
+// TODO: Deprecate this in favor of paletteConfigToInteractableTokens which
+// is used at the theme level.
 export const useInteractableTokens = (
-  overlayColor?: PaletteAlias | 'transparent',
+  overlayColor?: PaletteAlias,
 ): {
   disabledOpacity: number;
   underlayColor: PaletteAlias;
@@ -14,8 +16,7 @@ export const useInteractableTokens = (
   hoverOpacity: typeof opacityHovered[keyof typeof opacityPressed];
 } => {
   const palette = usePaletteConfig();
-  const overlayColorAlias =
-    overlayColor && overlayColor !== 'transparent' ? palette[overlayColor] : '';
+  const overlayColorAlias = overlayColor ? palette[overlayColor] : '';
   const hueStep = useMemo(
     () => (overlayColorAlias ? paletteValueToHueStep(overlayColorAlias) : 60),
     [overlayColorAlias],

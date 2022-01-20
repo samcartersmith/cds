@@ -20,6 +20,7 @@ export const defaultPalette = {
   positiveForeground: 'gray0',
   secondary: 'gray0',
   secondaryForeground: 'gray100',
+  transparent: ['gray0', 0],
 } as const;
 
 export const switchPalette = { backgroundAlternate: 'gray20' } as const;
@@ -51,6 +52,7 @@ export const paletteBackgrounds = [
   'secondary',
   'positive',
   'negative',
+  'transparent',
 ] as const;
 
 export const paletteBorders = [
@@ -61,4 +63,5 @@ export const paletteBorders = [
   'negative',
   'line',
   'lineHeavy',
+  'transparent',
 ] as const;

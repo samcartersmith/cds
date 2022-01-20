@@ -150,4 +150,13 @@ export const lottieStyles = css`
       fill: ${palette.secondaryForeground};
     }
   }
+
+  .palette_transparent {
+    &_stroke {
+      stroke: ${palette.transparent};
+    }
+    &_fill {
+      fill: ${palette.transparent};
+    }
+  }
 `;

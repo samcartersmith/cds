@@ -13,7 +13,7 @@ const config = {
   dark: {
     palette: { line: ['gray60', 0.66], secondary: ['gray10', 0] },
     rgbaStrings: { line: 'rgba(138,145,158,0.66)', secondary: 'rgba(30,32,37,0)' },
-    hexValues: { line: '#8a919e', secondary: '#000000' },
+    hexValues: { line: '#8a919e', secondary: '#1e2025' },
     name: 'elevation2Children-dark',
   },
 } as const;

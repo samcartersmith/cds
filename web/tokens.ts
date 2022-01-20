@@ -35,6 +35,7 @@ export const palette = {
   positiveForeground: 'var(--positive-foreground)',
   secondary: 'var(--secondary)',
   secondaryForeground: 'var(--secondary-foreground)',
+  transparent: 'var(--transparent)',
 } as const;
 
 export const control = {

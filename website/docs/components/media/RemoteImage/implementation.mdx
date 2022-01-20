@@ -32,6 +32,21 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <ComponentDetails componentName="RemoteImage" templateName="prop-alt" />
 
+### animated <Badge variant="mobile" />
+
+If value is `true` then style prop can take animated values.
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="animated"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-animated" />
+
 ### aspectRatio
 
 <ApiDetails
@@ -45,6 +60,40 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <ComponentDetails componentName="RemoteImage" templateName="prop-aspectRatio" />
 
+### dangerouslySetClassName <Badge variant="web" />
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="dangerouslySetClassName"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-dangerouslySetClassName" />
+
+### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
+
+This is a migration escape hatch. It is not intended to be used normally.
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="dangerouslySetStyle"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ImageStyle',
+    'RecursiveArray<Falsy | ImageStyle | RegisteredStyle<ImageStyle>>',
+    'RegisteredStyle<ImageStyle>',
+    'false',
+    'null',
+  ]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-dangerouslySetStyle" />
+
 ### height
 
 <ApiDetails
@@ -57,6 +106,21 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 />
 
 <ComponentDetails componentName="RemoteImage" templateName="prop-height" />
+
+### opacity <Badge variant="mobile" />
+
+Opacity of element
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="opacity"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-opacity" />
 
 ### shape
 

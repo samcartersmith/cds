@@ -35,3 +35,7 @@ export const positive = css`
 export const negative = css`
   background-color: var(--negative);
 `;
+
+export const transparent = css`
+  background-color: var(--transparent);
+`;

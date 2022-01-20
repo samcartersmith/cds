@@ -17,27 +17,24 @@ const switchControl: BuildThemeConfig = {
 
 const elevation1: BuildThemeConfig = {
   palette: {
-    // TODO: uncomment when PR to add transparent has landed
-    // light: {
-    //   transparent: Palette.defaultPalette.background,
-    // },
+    light: {
+      transparent: Palette.defaultPalette.background,
+    },
     dark: {
       background: 'gray5',
-      // TODO: uncomment when PR to add transparent has landed
-      // transparent: 'gray5',
+      transparent: 'gray5',
     },
   },
 };
 
 const elevation2: BuildThemeConfig = {
   palette: {
-    // light: {
-    //   transparent: Palette.defaultPalette.background,
-    // },
+    light: {
+      transparent: Palette.defaultPalette.background,
+    },
     dark: {
       background: 'gray10',
-      // TODO: uncomment when PR to add transparent has landed
-      // transparent: 'gray10',
+      transparent: 'gray10',
     },
   },
 };

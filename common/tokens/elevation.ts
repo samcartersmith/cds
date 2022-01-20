@@ -1,7 +1,10 @@
 import { defaultPalette } from '../palette/constants';
 import type { ElevationLevels, PartialPaletteConfig, SpectrumAlias } from '../types';
 
-type ElevationPalette = Record<Exclude<ElevationLevels, 0>, { background: SpectrumAlias }>;
+type ElevationPalette = Record<
+  Exclude<ElevationLevels, 0>,
+  { background: SpectrumAlias; transparent: SpectrumAlias }
+>;
 type ElevationChildrenPalette = Record<Exclude<ElevationLevels, 0>, PartialPaletteConfig>;
 
 type ElevationToken = {
@@ -15,9 +18,11 @@ type ElevationToken = {
 export const elevationPalette: ElevationPalette = {
   1: {
     background: 'gray5',
+    transparent: 'gray5',
   },
   2: {
     background: 'gray10',
+    transparent: 'gray10',
   },
 };
 

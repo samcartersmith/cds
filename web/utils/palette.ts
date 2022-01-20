@@ -10,7 +10,7 @@ import { mapValues, mapKeys, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
 export const paletteValueToCssVar = (paletteValue: PaletteValue) => {
   const [alias, opacity] = typeof paletteValue === 'string' ? [paletteValue] : paletteValue;
   const cssVariable = toCssVarFn(alias);
-  if (opacity) {
+  if (opacity !== undefined) {
     return `rgba(${cssVariable},${opacity})` as const;
   }
   return `rgb(${cssVariable})` as const;
