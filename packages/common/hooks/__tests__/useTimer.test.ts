@@ -2,9 +2,9 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useTimer } from '../useTimer';
 
+jest.useFakeTimers();
 jest.spyOn(global, 'setTimeout');
 jest.spyOn(global, 'clearTimeout');
-jest.useFakeTimers();
 
 describe('useTimer', () => {
   afterEach(() => {

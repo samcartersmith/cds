@@ -3,7 +3,6 @@ import { useCounter } from '../useCounter';
 
 /* eslint-disable jest/expect-expect */
 
-// react-test-renderer calls setTimeout internally, we need to filter those out to complete our tests
 function countSetTimeoutCalls() {
   return (setTimeout as jest.MockedFunction<typeof setTimeout>).mock.calls.filter(
     ([fn, t]) => t !== 0 || !String(fn).includes('_flushCallback'),
