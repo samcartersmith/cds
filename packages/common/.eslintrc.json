@@ -1,18 +1,22 @@
 {
-  "extends": ["plugin:@nrwl/nx/react", "../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": ["@cbhq/cds-common"],
+            "patterns": ["@cbhq/cds-common/*"]
+          }
+        ],
+        "no-process-env": "error"
+      },
+      "parserOptions": {
+        "project": ["packages/common/tsconfig.*?.json"]
+      }
     }
   ]
 }

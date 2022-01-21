@@ -1,0 +1,11 @@
+bazel-out
+dist
+node_modules
+*.md
+*.bazel
+*.bzl
+Makefile
+OWNERS
+**/persisted_queries.json
+*.json
+.eslintrc.js

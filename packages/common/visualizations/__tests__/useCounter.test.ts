@@ -9,11 +9,13 @@ function countSetTimeoutCalls() {
   );
 }
 
+jest.useFakeTimers();
+jest.spyOn(global, 'setTimeout');
+
 const TIMEOUT_DURATION = 500;
 describe('useCounter tests', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
-    jest.spyOn(global, 'setTimeout');
+    jest.clearAllMocks();
   });
 
   async function runTest(startValue: number, endValue: number, expectedIterations: number) {

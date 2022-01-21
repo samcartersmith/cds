@@ -32,7 +32,7 @@ export const TrackIndexProvider = <T extends ReactNode>({
       <>
         {Children.map(flatNodes, (child, index) => (
           <TrackIndexContext.Provider
-            // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+            // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop, react/jsx-no-constructed-context-values
             value={{ index, isFirst: index === 0, isLast: index === arrayLength - 1 }}
           >
             {child}
