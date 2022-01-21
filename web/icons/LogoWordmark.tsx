@@ -14,6 +14,7 @@ export const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
       aria-labelledby="Coinbase logo"
       viewBox={viewBox}
       className={iconStyles}
+      width="100%"
     >
       <title>Coinbase logo</title>
       <path d={path} fill={color} />

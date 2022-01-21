@@ -20,6 +20,7 @@ export const SubBrandLogoMark = memo((props: SubBrandLogoMarkProps) => {
       aria-labelledby={title}
       viewBox={viewBox}
       className={iconStyles}
+      width="100%"
     >
       <title>{title}</title>
       <g>
