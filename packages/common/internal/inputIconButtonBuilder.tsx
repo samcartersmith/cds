@@ -39,13 +39,11 @@ export function inputIconButtonBuilder(
 
   const SetColorAndInheritFocusStyle = () => {
     return (
-      <>
-        <TextInput
-          label="Search"
-          variant="foregroundMuted"
-          start={<InputIconButton variant="secondary" name="search" />}
-        />
-      </>
+      <TextInput
+        label="Search"
+        variant="foregroundMuted"
+        start={<InputIconButton variant="secondary" name="search" />}
+      />
     );
   };
 

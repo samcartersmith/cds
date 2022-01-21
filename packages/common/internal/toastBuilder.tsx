@@ -29,11 +29,7 @@ export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps
       });
     }, [toast]);
 
-    return (
-      <>
-        <Button onPress={handleShow}>Show Toast</Button>
-      </>
-    );
+    return <Button onPress={handleShow}>Show Toast</Button>;
   };
 
   const MultilineToast = () => {
@@ -45,11 +41,7 @@ export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps
       });
     }, [toast]);
 
-    return (
-      <>
-        <Button onPress={handleShow}>Multiline Toast</Button>
-      </>
-    );
+    return <Button onPress={handleShow}>Multiline Toast</Button>;
   };
 
   const Wrapper = PortalProvider ?? React.Fragment;

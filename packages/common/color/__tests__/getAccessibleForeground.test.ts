@@ -8,16 +8,16 @@ describe('getAccessibleForeground', () => {
 
   it('returns the color passed in if meets accessibility requirements', () => {
     const color = getAccessibleForeground('#ffffff', '#000000', 'graphic', transformFn);
-    expect(color).toEqual('#000000');
+    expect(color).toBe('#000000');
   });
 
   it('returns the closest spectrum color if it does not meet accessibility requirements', () => {
     const color = getAccessibleForeground('#ffffff', '#fff000', 'graphic', transformFn);
-    expect(color).toEqual('yellow50');
+    expect(color).toBe('yellow50');
   });
 
   it('returns gray100 for non accessible gray colors', () => {
     const color = getAccessibleForeground('#ffffff', '#dddddd', 'graphic', transformFn);
-    expect(color).toEqual('gray100');
+    expect(color).toBe('gray100');
   });
 });

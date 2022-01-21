@@ -45,8 +45,8 @@ describe('useSparklineCoordinates', () => {
     const path2 = result.current.path;
 
     expect(mockData1).not.toEqual(mockData2);
-    expect(path1).toEqual('M2,318L438,2');
-    expect(path2).toEqual('M2,2L438,318');
+    expect(path1).toBe('M2,318L438,2');
+    expect(path2).toBe('M2,2L438,318');
     expect(path1).not.toEqual(path2);
   });
 
@@ -59,8 +59,8 @@ describe('useSparklineCoordinates', () => {
     const area2 = result.current.area;
 
     expect(mockData1).not.toEqual(mockData2);
-    expect(area1).toEqual('M2,318L438,2L438,320L2,320Z');
-    expect(area2).toEqual('M2,2L438,318L438,320L2,320Z');
+    expect(area1).toBe('M2,318L438,2L438,320L2,320Z');
+    expect(area2).toBe('M2,2L438,318L438,320L2,320Z');
     expect(area1).not.toEqual(area2);
   });
 

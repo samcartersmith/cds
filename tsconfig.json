@@ -1,7 +1,5 @@
 {
-  "extends": "./tsconfig.base.json",
-  "include": [],
-  "files": [],
+  "extends": "./tsconfig.projectOptions.json",
   "references": [
     {
       "path": "packages/common"

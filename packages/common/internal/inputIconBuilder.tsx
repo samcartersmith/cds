@@ -37,21 +37,17 @@ export function inputIconBuilder(
 
   const DefaultsToForeground = () => {
     return (
-      <>
-        <TextInput label="Search" variant="foregroundMuted" start={<InputIcon name="search" />} />
-      </>
+      <TextInput label="Search" variant="foregroundMuted" start={<InputIcon name="search" />} />
     );
   };
 
   const SetColorAndInheritFocusStyle = () => {
     return (
-      <>
-        <TextInput
-          label="Search"
-          variant="foregroundMuted"
-          start={<InputIcon color="positive" name="search" />}
-        />
-      </>
+      <TextInput
+        label="Search"
+        variant="foregroundMuted"
+        start={<InputIcon color="positive" name="search" />}
+      />
     );
   };
 

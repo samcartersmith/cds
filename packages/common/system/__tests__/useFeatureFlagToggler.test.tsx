@@ -17,10 +17,10 @@ describe('useFeatureFlagToggler', () => {
         wrapper: (props) => <FeatureFlagProvider {...props} />,
       },
     );
-    expect(result.current.featureFlags.frontierTypography).toEqual(false);
+    expect(result.current.featureFlags.frontierTypography).toBe(false);
     void act(() => {
       result.current.toggle('frontierTypography');
     });
-    expect(result.current.featureFlags.frontierTypography).toEqual(true);
+    expect(result.current.featureFlags.frontierTypography).toBe(true);
   });
 });

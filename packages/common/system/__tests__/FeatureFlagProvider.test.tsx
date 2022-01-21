@@ -103,11 +103,11 @@ describe('FeatureFlagProvider', () => {
       },
     );
 
-    expect(result.current.featureFlags.frontierButton).toEqual(true);
+    expect(result.current.featureFlags.frontierButton).toBe(true);
     await act(() => {
       result.current.update({ frontierButton: false });
     });
-    expect(result.current.featureFlags.frontierButton).toEqual(false); // imperative update wins
+    expect(result.current.featureFlags.frontierButton).toBe(false); // imperative update wins
   });
 
   it('getFrontierFlags works correctly for undefined', () => {
