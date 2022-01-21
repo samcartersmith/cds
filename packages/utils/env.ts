@@ -1,5 +1,7 @@
+/* eslint-disable no-process-env */
+
 function isEnv(env: 'development' | 'production' | 'test') {
-  return Boolean(typeof process === 'object' && process?.env?.NODE_ENV === env);
+  return Boolean(typeof process === 'object' && process?.env?.['NODE_ENV'] === env);
 }
 
 export const isDevelopment = () => {
@@ -15,5 +17,5 @@ export const isTest = () => {
 };
 
 export const isStorybook = () => {
-  return Boolean(typeof process === 'object' && process?.env?.STORYBOOK_SKIP_ANIMATION);
+  return Boolean(typeof process === 'object' && process?.env?.['STORYBOOK_SKIP_ANIMATION']);
 };
