@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@cbhq/eslint-plugin": "1.4.0",
+    "@cbhq/jest-preset": "0.1.0",
     "@nrwl/cli": "13.4.6",
     "@nrwl/eslint-plugin-nx": "13.4.6",
     "@nrwl/jest": "13.4.6",
