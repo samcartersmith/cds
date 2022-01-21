@@ -1,4 +1,8 @@
 import { Animated, StyleProp } from 'react-native';
+import { themePartialElevation1 } from '@cbhq/cds-common/themes/themeElevation1';
+import { themePartialElevation2 } from '@cbhq/cds-common/themes/themeElevation2';
+import { themePartialElevation1Children } from '@cbhq/cds-common/themes/themeElevation1Children';
+import { themePartialElevation2Children } from '@cbhq/cds-common/themes/themeElevation2Children';
 
 type ComponentProps = {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -27,3 +31,8 @@ export type DangerouslySetStyle<T, IsAnimated extends boolean = boolean> = {
 };
 
 export type HapticFeedbackType = 'light' | 'normal' | 'heavy' | 'none';
+
+export type ElevationThemeConfig = typeof themePartialElevation1 | typeof themePartialElevation2;
+export type ElevationChildrenThemeConfig =
+  | typeof themePartialElevation1Children
+  | typeof themePartialElevation2Children;
