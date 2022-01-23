@@ -89,5 +89,8 @@
     "ts-jest": "27.0.5",
     "tsconfig-paths": "3.9.0",
     "typescript": "~4.4.3"
+  },
+  "engines": {
+    "node": "16.13.*"
   }
 }

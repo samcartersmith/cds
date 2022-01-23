@@ -2,3 +2,11 @@
 
 /dist
 /coverage
+
+# Nx
+dts/
+lib/
+esm/
+package.json
+tsconfig.json
+tsconfig.*.json
