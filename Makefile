@@ -11,7 +11,8 @@ Help:
 
   $$ make lint.common               -- lint the `common` package.
   $$ make lint.utils                -- lint the `utils` package.
-  $$ make lint.all                  -- lint all of the affected packages
+  $$ make lint                      -- lint all of the affected packages
+  $$ make lint.fix                  -- lint all of the affected packages and fix errors
 
   $$ make test.common               -- test the `common` package.
   $$ make test.utils                -- test the `utils` package.
@@ -60,9 +61,13 @@ lint.common:
 lint.utils:
 	nx lint utils
 
-.PHONY: lint.all
-lint.all:
+.PHONY: lint
+lint:
 	nx affected --target=lint --all
+
+.PHONY: lint.fix
+lint.fix:
+	nx affected --target=lint --all --fix
 
 .PHONY: test.common
 test.common:

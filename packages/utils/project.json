@@ -4,30 +4,19 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/utils",
-        "main": "packages/utils/index.ts",
-        "tsConfig": "packages/utils/tsconfig.lib.json",
-        "assets": ["packages/utils/*.md"]
-      }
+      "executor": "@cbhq/mono-tasks:build-package"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["packages/utils/**/*.ts"]
-      }
+      "executor": "@cbhq/mono-tasks:lint"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/utils"],
-      "options": {
-        "jestConfig": "packages/utils/jest.config.js",
-        "passWithNoTests": true
-      }
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
     }
-  },
-  "tags": []
+  }
 }

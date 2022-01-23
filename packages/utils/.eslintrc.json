@@ -1,9 +1,8 @@
 {
   "extends": ["../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": ["*.ts", "*.tsx"],
       "rules": {
         "no-restricted-imports": [
           "error",
@@ -15,7 +14,7 @@
         "no-process-env": "error"
       },
       "parserOptions": {
-        "project": ["packages/utils/tsconfig.*?.json"]
+        "project": "./tsconfig.*?.json"
       }
     }
   ]
