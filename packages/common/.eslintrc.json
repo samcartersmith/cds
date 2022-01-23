@@ -2,7 +2,7 @@
   "extends": ["../../.eslintrc.json"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": ["*.ts", "*.tsx"],
       "rules": {
         "no-restricted-imports": [
           "error",

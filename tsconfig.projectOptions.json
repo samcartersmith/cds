@@ -1,25 +1,12 @@
 {
-  "compileOnSave": false,
+  "extends": "./tsconfig.base.json",
+  // Options for projects using project references
   "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "ES6",
-    "lib": ["dom", "esnext"],
-    "module": "CommonJS",
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "strict": true,
-    "paths": {
-      "@cbhq/cds-common": ["packages/common/index.ts"],
-      "@cbhq/cds-common/*": ["packages/common/*"],
-      "@cbhq/cds-utils": ["packages/utils/index.ts"]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "incremental": true,
+    "rootDirs": [".", "./.nx/dts"]
+  }
 }

@@ -9,3 +9,9 @@ OWNERS
 **/persisted_queries.json
 *.json
 .eslintrc.js
+
+# Nx/Builds
+**/dts/
+**/lib/
+**/esm/
+**/templates/

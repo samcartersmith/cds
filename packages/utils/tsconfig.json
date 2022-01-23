@@ -1,19 +1,9 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "outDir": "../../.nx/dts/packages/utils"
   },
-  "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+  "include": ["**/*", "src/*.json"],
+  "exclude": ["dts", "lib"],
+  "references": []
 }

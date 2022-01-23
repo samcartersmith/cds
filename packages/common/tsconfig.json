@@ -1,25 +1,13 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
     "outDir": "../../.nx/dts/packages/common"
   },
-  "files": [],
-  "include": [],
+  "include": ["**/*", "src/*.json"],
+  "exclude": ["dts", "lib"],
   "references": [
     {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
+      "path": "../utils"
     }
   ]
 }

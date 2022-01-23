@@ -1,6 +1,5 @@
 {
-  "extends": "./tsconfig.projectOptions.json",
-  "include": [
-    "packages/**/*",
-  ]
+  "extends": "./tsconfig.base.json",
+  "include": ["apps/**/*", "examples/**/*", "packages/**/*"],
+  "exclude": ["**/dts/**/*", "**/esm/**/*", "**/lib/**/*", "**/node_modules/**/*"]
 }

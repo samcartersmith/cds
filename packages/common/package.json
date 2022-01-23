@@ -11,9 +11,41 @@
     "types"
   ],
   "authors": "Coinbase",
-  "main": "index.js",
-  "typings": "index.d.ts",
+  "typings": "./dts/index.d.ts",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "inputs": {
+      "index": "src/index.ts"
+    }
+  },
   "dependencies": {
-    "@cbhq/cds-utils": "*"
+    "@cbhq/cds-utils": "*",
+    "d3-array": "2.3.3",
+    "d3-color": "2.0.0",
+    "d3-scale": "3.3.0",
+    "d3-shape": "2.1.0",
+    "lodash": "^4.17.21",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2"
+  },
+  "types": "./dts/index.d.ts",
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "node": "./lib/index.js",
+      "types": "./dts/index.d.ts"
+    },
+    "./*": {
+      "node": "./lib/*.js",
+      "types": "./dts/*.d.ts"
+    }
   }
 }

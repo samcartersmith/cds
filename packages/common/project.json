@@ -5,14 +5,10 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/common",
-        "main": "packages/common/index.ts",
-        "tsConfig": "packages/common/tsconfig.lib.json",
-        "assets": ["packages/common/*.md"]
-      }
+      "executor": "@cbhq/mono-tasks:build-package"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
     },
     "lint": {
       "executor": "@cbhq/mono-tasks:lint"
