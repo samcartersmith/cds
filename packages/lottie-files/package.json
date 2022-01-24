@@ -1,0 +1,39 @@
+{
+  "name": "@cbhq/cds-lottie-files",
+  "version": "0.2.20",
+  "description": "Coinbase Design System - Lottie Files",
+  "type": "commonjs",
+  "keywords": [
+    "cds",
+    "design system",
+    "lottie files",
+    "animations"
+  ],
+  "authors": "Coinbase",
+  "typings": "./dts/index.d.ts",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "inputs": {
+      "index": "src/index.ts"
+    }
+  },
+  "types": "./dts/index.d.ts",
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "node": "./lib/index.js",
+      "types": "./dts/index.d.ts"
+    },
+    "./*": {
+      "node": "./lib/*.js",
+      "types": "./dts/*.d.ts"
+    }
+  }
+}

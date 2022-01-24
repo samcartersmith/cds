@@ -17,10 +17,12 @@
     "strict": true,
     "target": "ES2020",
     "paths": {
-      "@cbhq/cds-common": ["packages/common/index.ts"],
-      "@cbhq/cds-common/*": ["packages/common/*"],
-      "@cbhq/cds-utils": ["packages/utils/index.ts"],
-      "@cbhq/cds-utils/*": ["packages/utils/*"]
+      "@cbhq/cds-common": ["packages/common/src/index.ts"],
+      "@cbhq/cds-common/*": ["packages/common/src/*"],
+      "@cbhq/cds-lottie-files": ["packages/lottie-files/src/index.ts"],
+      "@cbhq/cds-lottie-files/*": ["packages/lottie-files/src/*"],
+      "@cbhq/cds-utils": ["packages/utils/src/index.ts"],
+      "@cbhq/cds-utils/*": ["packages/utils/src/*"]
     }
   }
 }

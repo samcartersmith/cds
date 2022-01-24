@@ -5,6 +5,7 @@ import {
   CardHeaderBaseProps,
   CardBaseProps,
   CardBodyBaseProps,
+  CardFooterBaseProps,
   IconName,
   IconButtonBaseProps,
   IllustrationPictogramNames,
@@ -16,6 +17,7 @@ type CreateAnnouncementCardParams<T> = {
   CardHeader: React.ComponentType<CardHeaderBaseProps>;
   Card: React.ComponentType<CardBaseProps>;
   CardBody: React.ComponentType<CardBodyBaseProps>;
+  CardFooter: React.ComponentType<CardFooterBaseProps>;
   IconButton: React.ComponentType<IconButtonBaseProps & { onPress?: T }>;
   Pictogram: React.ComponentType<PictogramProps>;
 };
@@ -38,6 +40,7 @@ export function createAnnouncementCard<T>({
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   IconButton,
   Pictogram,
 }: CreateAnnouncementCardParams<T>) {
@@ -67,18 +70,12 @@ export function createAnnouncementCard<T>({
             description={description}
             orientation="horizontal"
             media={pictogram && <Pictogram name={pictogram} dimension="64x64" />}
-          >
-            <Button
-              compact
-              flush="start"
-              transparent
-              variant="primary"
-              onPress={onFooterActionPress}
-              endIcon="forwardArrow"
-            >
+          />
+          <CardFooter>
+            <Button compact variant="secondary" onPress={onFooterActionPress}>
               {footerAction}
             </Button>
-          </CardBody>
+          </CardFooter>
         </Card>
       );
     },

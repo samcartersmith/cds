@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.buildOptions.json",
+  "compilerOptions": {
+    "outDir": "dts"
+  },
+  "include": ["src"],
+  "exclude": ["dts", "*.test.ts", "*.test.tsx"],
+  "references": [
+    {
+      "path": "../utils"
+    },
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../lottie-files"
+    }
+  ]
+}

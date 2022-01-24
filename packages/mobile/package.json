@@ -1,0 +1,44 @@
+{
+  "name": "@cbhq/cds-mobile",
+  "version": "0.38.1",
+  "description": "Coinbase Design System - Mobile Native",
+  "type": "commonjs",
+  "keywords": [
+    "cds",
+    "design system",
+    "mobile",
+    "native"
+  ],
+  "authors": "Coinbase",
+  "typings": "./dts/index.d.ts",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "inputs": {
+      "index": "src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@cbhq/cds-utils": "*",
+    "@cbhq/cds-common": "*",
+    "@cbhq/cds-lottie-files": "*"
+  },
+  "types": "./dts/index.d.ts",
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "node": "./lib/index.js",
+      "types": "./dts/index.d.ts"
+    },
+    "./*": {
+      "node": "./lib/*.js",
+      "types": "./dts/*.d.ts"
+    }
+  }
+}

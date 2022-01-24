@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "common": "packages/common",
-    "utils": "packages/utils"
+    "utils": "packages/utils",
+    "mobile": "packages/mobile",
+    "lottie-files": "packages/lottie-files"
   }
 }

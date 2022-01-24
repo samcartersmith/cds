@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dts/packages/lottie-files"
+  },
+  "include": ["**/*", "src/**/*.json"],
+  "exclude": ["dts", "lib"],
+  "references": [
+    {
+      "path": "../utils"
+    }
+  ]
+}

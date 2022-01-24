@@ -1,0 +1,21 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": ["@cbhq/cds-lottie-files"],
+            "patterns": ["@cbhq/cds-lottie-files/*"]
+          }
+        ],
+        "no-process-env": "error"
+      },
+      "parserOptions": {
+        "project": "./tsconfig.*?.json"
+      }
+    }
+  ]
+}
