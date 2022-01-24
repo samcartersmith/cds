@@ -1,7 +1,9 @@
 import type { PaletteAliasToRgbaString } from '../types';
-import { themeBase } from '../themes/themeBase';
-import { themeFrontier } from '../themes/themeFrontier';
 import { paletteValueToRgbaString } from './paletteValueToRgbaString';
+import { defaultPalette, frontierSpectrumPalette } from './constants';
+
+const frontierLight = { ...defaultPalette, ...frontierSpectrumPalette.light } as const;
+const frontierDark = { ...defaultPalette, ...frontierSpectrumPalette.dark } as const;
 
 /**
  * Given a palette alias, such as foregroundMuted, and the spectrum, it will output the rgba value
@@ -15,8 +17,11 @@ export const paletteAliasToRgbaString: PaletteAliasToRgbaString = (
   spectrum,
   hasFrontier,
 ) => {
-  const theme = hasFrontier ? themeFrontier : themeBase;
-  const palette = spectrum === 'light' ? theme.light.palette : theme.dark.palette;
+  const paletteConfig = {
+    light: hasFrontier ? frontierLight : defaultPalette,
+    dark: hasFrontier ? frontierDark : defaultPalette,
+  };
+  const palette = spectrum === 'light' ? paletteConfig.light : paletteConfig.dark;
   const paletteValue = palette[alias];
   return paletteValueToRgbaString(paletteValue, spectrum, hasFrontier);
 };

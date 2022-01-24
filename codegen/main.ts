@@ -1,4 +1,4 @@
-import { camelCase, mapValues } from '@cbhq/cds-utils';
+import { mapValues } from '@cbhq/cds-utils';
 
 import {
   borderRadiusConfig,
@@ -9,7 +9,6 @@ import {
 import { scaleConfig } from './configs/scaleConfig';
 import { Control } from './Control';
 import { lottieFiles } from './Lottie';
-import { themeConfigs, fallbackShimmer } from './configs/themeConfigs';
 import { Palette, defaultPalette } from './Palette';
 import { Spacing } from './Spacing';
 import { Spectrum } from './Spectrum/Spectrum';
@@ -92,22 +91,6 @@ async function codegen() {
         data: Spacing.css('margin'),
       },
     ],
-    'themeConfig.ejs': [
-      ...Object.values(
-        mapValues(themeConfigs, (value, name) => {
-          const fileName = camelCase(`theme ${name}`);
-          return {
-            dest: `common/themes/${fileName}.ts`,
-            data: {
-              name,
-              fileName,
-              config: value,
-              partialName: camelCase(`themePartial ${name}`),
-            },
-          };
-        }),
-      ),
-    ],
     'objectMap.ejs': [
       {
         dest: 'mobile/styles/scale.ts',
@@ -122,7 +105,7 @@ async function codegen() {
       },
       {
         dest: 'mobile/styles/fallbackShimmer.ts',
-        data: { fallbackShimmer },
+        data: { fallbackShimmer: Palette.fallbackShimmer },
         config: {
           disableAsConst: true,
         },

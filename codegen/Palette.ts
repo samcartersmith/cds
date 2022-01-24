@@ -1,4 +1,5 @@
 import { arrayToObject, mapValues, toCssVarFn } from '@cbhq/cds-utils';
+import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 
 export const defaultPalette = {
   foreground: 'gray100',
@@ -96,6 +97,19 @@ const cssColor = mapValues(foregroundMap, (_, key) => {
 
 const paletteAliases = [...paletteForegrounds, ...paletteBackgrounds, ...paletteBorders];
 
+export const fallbackShimmer = {
+  light: [
+    paletteValueToRgbaString(['gray60', 0.05], 'light'),
+    paletteValueToRgbaString(['gray60', 0], 'light'),
+    paletteValueToRgbaString(['gray60', 0.1], 'light'),
+  ],
+  dark: [
+    paletteValueToRgbaString(['gray60', 0.05], 'dark'),
+    paletteValueToRgbaString(['gray60', 0], 'dark'),
+    paletteValueToRgbaString(['gray60', 0.1], 'dark'),
+  ],
+};
+
 export const Palette = {
   cssBackgroundColor,
   cssBorderColor,
@@ -107,6 +121,7 @@ export const Palette = {
   paletteForegrounds,
   paletteBackgrounds,
   paletteBorders,
+  fallbackShimmer,
   validate: () => {
     const aliases = Object.keys(defaultPalette);
     aliases.forEach((item) => {

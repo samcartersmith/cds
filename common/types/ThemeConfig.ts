@@ -1,6 +1,5 @@
 import { PaletteAlias, PaletteConfig, PartialPaletteConfig } from './Palette';
-
-export type SpectrumObject<T> = { light: T; dark: T };
+import { Spectrum } from './Spectrum';
 
 export type PaletteConfigWithRgbaStrings = Record<PaletteAlias, string>;
 export type PaletteConfigWithHexValues = Record<PaletteAlias, string>;
@@ -29,32 +28,35 @@ export type ThemeConfig = {
   name: string;
 };
 
-export type PartialThemeConfigForSpectrum = {
-  palette?: PartialPaletteConfig;
-  rgbaStrings: { [key in PaletteAlias]?: string };
-  hexValues: { [key in PaletteAlias]?: string };
+export type PartialPaletteConfigLight = {
+  light: PartialPaletteConfig;
 };
 
-export type PartialLightThemeConfig = {
-  light: PartialThemeConfigForSpectrum;
-  name: string;
+export type PartialPaletteConfigDark = {
+  dark: PartialPaletteConfig;
 };
 
-export type PartialDarkThemeConfig = {
-  dark: PartialThemeConfigForSpectrum;
-  name: string;
-};
-
-export type PartialThemeConfig =
+export type NewPartialPaletteConfig =
   | {
-      light?: PartialThemeConfigForSpectrum;
-      dark?: PartialThemeConfigForSpectrum;
-      name: string;
+      light?: PartialPaletteConfig;
+      dark?: PartialPaletteConfig;
     }
-  | PartialLightThemeConfig
-  | PartialDarkThemeConfig;
+  | PartialPaletteConfigLight
+  | PartialPaletteConfigDark
+  | PartialPaletteConfig;
 
 export type ThemeConfigContextValue = {
   activeConfig: ThemeConfigForSpectrum;
   config: ThemeConfig;
+};
+
+export type CreateThemeConfigParams = {
+  palette: NewPartialPaletteConfig;
+  parentThemeConfig?: ThemeConfig;
+  hasFrontier?: boolean;
+  name: string;
+};
+
+export type CreateThemeConfigForSpectrumParams = CreateThemeConfigParams & {
+  spectrum: Spectrum;
 };
