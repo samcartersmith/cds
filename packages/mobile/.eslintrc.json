@@ -15,8 +15,8 @@
         "@cbhq/prefer-react-named-module-import": "off"
       },
       "parserOptions": {
-        "project": "./tsconfig.*?.json"
-      },
+        "project": "../../tsconfig.eslint.json"
+      }
       "extends": [
         "plugin:@cbhq/react-native"
       ]
