@@ -2,7 +2,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useTimer } from '../useTimer';
 
-jest.useFakeTimers();
+jest.useFakeTimers('legacy');
 jest.spyOn(global, 'setTimeout');
 jest.spyOn(global, 'clearTimeout');
 

@@ -9,7 +9,7 @@ function countSetTimeoutCalls() {
   );
 }
 
-jest.useFakeTimers();
+jest.useFakeTimers('legacy');
 jest.spyOn(global, 'setTimeout');
 
 const TIMEOUT_DURATION = 500;

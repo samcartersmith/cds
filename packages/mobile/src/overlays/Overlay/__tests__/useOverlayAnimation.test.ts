@@ -4,7 +4,7 @@ import { Animated } from 'react-native';
 
 import { useOverlayAnimation } from '../useOverlayAnimation';
 
-jest.useFakeTimers();
+jest.useFakeTimers('legacy');
 
 jest.mock('react-native/Libraries/Animated/AnimatedImplementation', () => ({
   ...jest.requireActual<AnyObject>('react-native/Libraries/Animated/AnimatedImplementation'),

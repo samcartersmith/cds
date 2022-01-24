@@ -17,7 +17,7 @@ jest.mock('react-native/Libraries/Animated/Animated', () => {
 
 const animationParallelSpy = jest.spyOn(Animated, 'parallel');
 const animationTimingSpy = jest.spyOn(Animated, 'timing');
-jest.useFakeTimers();
+jest.useFakeTimers('legacy');
 
 describe('Toast', () => {
   afterEach(() => {

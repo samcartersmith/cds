@@ -21,7 +21,22 @@
   "dependencies": {
     "@cbhq/cds-utils": "*",
     "@cbhq/cds-common": "*",
-    "@cbhq/cds-lottie-files": "*"
+    "@cbhq/cds-lottie-files": "*",
+    "@react-native-community/netinfo": "^7.1.7",
+    "@react-navigation/stack": "5.12.8",
+    "d3-interpolate-path": "2.2.2",
+    "lodash": "^4.17.21",
+    "lottie-react-native": "4.1.3",
+    "react": "17.0.2",
+    "react-native": "0.65.2",
+    "react-native-gesture-handler": "1.9.0",
+    "react-native-inappbrowser-reborn": "3.6.3",
+    "react-native-linear-gradient": "2.5.6",
+    "react-native-navigation-bar-color": "2.0.1",
+    "react-native-reanimated": "1.13.1",
+    "react-native-safe-area-context": "3.1.9",
+    "react-native-svg": "12.1.0",
+    "url-parse": "1.5.1"
   },
   "types": "./dts/index.d.ts",
   "files": [

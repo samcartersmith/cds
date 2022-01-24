@@ -4,7 +4,7 @@ import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import { useAndroidNavigationBarUpdater } from '../AndroidNavigationBar';
 import { ThemeProvider } from '../ThemeProvider';
 
-jest.useFakeTimers();
+jest.useFakeTimers('legacy');
 jest.mock('react-native-navigation-bar-color');
 const mockPlatform = (OS: 'ios' | 'android', Version?: number) => {
   jest.runAllTimers();

@@ -6,7 +6,7 @@ import { Alert } from '../Alert';
 import { Button } from '../../buttons';
 import { PortalProvider } from '../PortalProvider';
 
-jest.useFakeTimers();
+jest.useFakeTimers('legacy');
 
 const { MockAlert } = alertBuilder({
   Alert,

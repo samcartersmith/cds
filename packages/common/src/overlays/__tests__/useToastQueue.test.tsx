@@ -7,7 +7,7 @@ function countSetTimeoutCalls() {
   );
 }
 
-jest.useFakeTimers();
+jest.useFakeTimers('legacy');
 jest.spyOn(global, 'setTimeout');
 jest.spyOn(global, 'clearTimeout');
 describe('useToastQueue', () => {

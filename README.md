@@ -20,7 +20,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 - [x] common
 - [x] utils
-- [ ] mobile
+- [x] mobile
 - [ ] fonts
 - [ ] codegen
 - [ ] web
