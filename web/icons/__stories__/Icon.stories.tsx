@@ -4,7 +4,6 @@ import {
 } from '@cbhq/cds-common/internal/iconSheetBuilder';
 import { HStack } from '../../layout';
 import { Icon } from '../Icon';
-import { ThemeProvider } from '../../system/ThemeProvider';
 
 export default {
   title: 'Core Components/Icon Sheet',
@@ -14,5 +13,4 @@ export default {
 export const { IconSheet } = iconSheetBuilder({
   Icon,
   HStack,
-  ThemeProvider,
 } as CreateIconSheetParams);

@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 import { useAndroidNavigationBarUpdater } from '../AndroidNavigationBar';
-import { ThemeProvider } from '../ThemeProvider';
+import { LightModeProvider } from '../ThemeProvider';
 
 jest.useFakeTimers();
 jest.mock('react-native-navigation-bar-color');
@@ -16,7 +16,7 @@ describe('useAndroidNavigationBarUpdater', () => {
   it('does not fire for iOS', () => {
     mockPlatform('ios');
     const { result } = renderHook(() => useAndroidNavigationBarUpdater(), {
-      wrapper: ThemeProvider,
+      wrapper: LightModeProvider,
     });
     result.current();
     expect(changeNavigationBarColor).not.toHaveBeenCalled();
@@ -26,7 +26,7 @@ describe('useAndroidNavigationBarUpdater', () => {
     mockPlatform('android', 26);
 
     const { result } = renderHook(() => useAndroidNavigationBarUpdater(), {
-      wrapper: ThemeProvider,
+      wrapper: LightModeProvider,
     });
     result.current();
     expect(changeNavigationBarColor).toHaveBeenCalled();

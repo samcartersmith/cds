@@ -8,7 +8,7 @@ import { usePalette } from '../hooks/usePalette';
 import { paletteConfigToRgbaStrings } from '../utils/palette';
 import { ThemeProviderProps } from './ThemeProvider';
 
-export type StatusBarProps = Omit<ThemeProviderProps, 'scale'> & {
+export type StatusBarProps = Omit<ThemeProviderProps, 'scale' | 'name'> & {
   barStyle?: StatusBarStyle;
 };
 /**

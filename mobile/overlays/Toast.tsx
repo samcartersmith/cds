@@ -2,10 +2,10 @@ import React, { memo, useCallback, useEffect, forwardRef, useImperativeHandle } 
 import { ToastBaseProps, ToastRefBaseProps, ToastHandleClose } from '@cbhq/cds-common';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 
 import { HStack, Box } from '../layout';
 import { TextHeadline } from '../typography';
-import { ThemeProvider } from '../system';
 import { useToastAnimation } from './useToastAnimation';
 import { useToastPanResponder } from './useToastPanResponder';
 import { Button } from '../buttons';
@@ -56,7 +56,7 @@ export const Toast: React.FC<ToastProps> = memo(
 
       return (
         // toast does not react to density as per design guideline
-        <ThemeProvider scale={DEFAULT_SCALE}>
+        <ScaleProvider value={DEFAULT_SCALE}>
           <Box
             spacing={2}
             position="absolute"
@@ -100,7 +100,7 @@ export const Toast: React.FC<ToastProps> = memo(
               )}
             </HStack>
           </Box>
-        </ThemeProvider>
+        </ScaleProvider>
       );
     },
   ),

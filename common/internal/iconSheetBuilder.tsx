@@ -1,25 +1,25 @@
 import React from 'react';
 import { entries } from '@cbhq/cds-utils';
-import type { BoxBaseProps, IconBaseProps, StackBaseProps, ThemeProviderBaseProps } from '../types';
+import type { BoxBaseProps, IconBaseProps, StackBaseProps } from '../types';
 import flattenNodes from '../utils/flattenNodes';
 import { unicodeMap } from './data/iconData';
+import { ScaleProvider } from '../scale/ScaleProvider';
 
 export type CreateIconSheetParams = {
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
   Icon: React.ComponentType<IconBaseProps & { color: string }>;
-  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
 };
 
-export function iconSheetBuilder({ HStack, Icon, ThemeProvider }: CreateIconSheetParams) {
+export function iconSheetBuilder({ HStack, Icon }: CreateIconSheetParams) {
   function IconSheet() {
     const components = [];
     for (const [name] of entries(unicodeMap)) {
       const group = [];
       // Handle 8px size
       group.push(
-        <ThemeProvider scale="xSmall">
+        <ScaleProvider value="xSmall">
           <Icon color="foreground" name={name} size="xs" />
-        </ThemeProvider>,
+        </ScaleProvider>,
       );
       // Handle remaining sizes in normal scale
       for (const size of ['xs', 's', 'm', 'l'] as const) {

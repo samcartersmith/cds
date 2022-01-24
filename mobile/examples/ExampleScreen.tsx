@@ -8,6 +8,7 @@ import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import type { PaletteForeground, SpacingProps } from '@cbhq/cds-common/types';
+import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 
 import { Switch } from '../controls/Switch';
 import { usePalette } from '../hooks/usePalette';
@@ -125,7 +126,7 @@ export const ExampleScreen: React.FC = ({ children }) => {
       scale={isDenseEnabled ? 'xSmall' : rootScale}
     >
       <Screen>
-        <ThemeProvider scale="xSmall">
+        <ScaleProvider value="xSmall">
           <VStack>
             <VStack gap={1} spacingVertical={3} spacingHorizontal={gutter} background>
               <Switch onChange={toggleDark} checked={isDarkEnabled}>
@@ -140,7 +141,7 @@ export const ExampleScreen: React.FC = ({ children }) => {
             </VStack>
             <Divider />
           </VStack>
-        </ThemeProvider>
+        </ScaleProvider>
         {children}
       </Screen>
     </ThemeProvider>

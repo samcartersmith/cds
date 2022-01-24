@@ -3,14 +3,12 @@ import { buttonBuilderDeprecated } from '@cbhq/cds-common/internal/buttonBuilder
 import { entries } from '@cbhq/cds-utils';
 
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { Button } from '../Button';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const stories = buttonBuilderDeprecated({
   Button,
-  ThemeProvider,
   VStack,
 });
 

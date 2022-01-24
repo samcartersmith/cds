@@ -1,9 +1,9 @@
 import React from 'react';
+import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
 
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider } from '../../system/ThemeProvider';
 
 import { LogoMark } from '../LogoMark';
 import { LogoWordmark } from '../LogoWordmark';
@@ -31,16 +31,16 @@ const LogoScreen = () => {
           <Box height={30} spacing={1}>
             <LogoWordmark />
           </Box>
-          <ThemeProvider spectrum="light">
+          <SpectrumProvider value="light">
             <Box height={30} background spacing={1}>
               <LogoWordmark foreground />
             </Box>
-          </ThemeProvider>
-          <ThemeProvider spectrum="dark">
+          </SpectrumProvider>
+          <SpectrumProvider value="dark">
             <Box height={30} background spacing={1}>
               <LogoWordmark foreground />
             </Box>
-          </ThemeProvider>
+          </SpectrumProvider>
         </VStack>
       </Example>
       <Example title="SubBrandLogoMark">

@@ -12,7 +12,6 @@ import { CellMedia } from '../../cells/CellMedia';
 import { SpotSquare } from '../../illustrations/SpotSquare';
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider } from '../../system/ThemeProvider';
 
 import { Card } from '../Card';
 import { CardGroup, CardGroupRenderItem } from '../CardGroup';
@@ -65,7 +64,7 @@ const {
   ListCell,
   CellMedia,
   LoremIpsum,
-  ThemeProvider,
+  ThemeProvider: React.Fragment,
 });
 
 const CardScreen = () => {

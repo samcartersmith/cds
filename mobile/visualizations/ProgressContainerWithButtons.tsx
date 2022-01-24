@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import { ProgressContainerWithButtonsProps } from '@cbhq/cds-common/types/ProgressContainerWithButtonsProps';
-import { ThemeProvider } from '../system';
 import { VStack } from '../layout';
 import { Button } from '../buttons';
 
@@ -32,18 +31,16 @@ export const ProgressContainerWithButtons = ({
   );
 
   return (
-    <ThemeProvider>
-      <VStack key={num} gap={2}>
-        {children({ calculateProgress })}
-        <Button compact onPress={reRender}>
-          Re-render
+    <VStack key={num} gap={2}>
+      {children({ calculateProgress })}
+      <Button compact onPress={reRender}>
+        Re-render
+      </Button>
+      {!hideIncrease && (
+        <Button compact onPress={increase}>
+          Increase 20%
         </Button>
-        {!hideIncrease && (
-          <Button compact onPress={increase}>
-            Increase 20%
-          </Button>
-        )}
-      </VStack>
-    </ThemeProvider>
+      )}
+    </VStack>
   );
 };

@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, fireEvent, waitFor, cleanup } from '@testing-library/react-native';
 import { Modal as RNModal, Animated } from 'react-native';
 import {
@@ -12,7 +13,6 @@ import { ModalFooter } from '../ModalFooter';
 import { ModalBody } from '../ModalBody';
 import { ModalHeader } from '../ModalHeader';
 import { Button } from '../../../buttons';
-import { ThemeProvider } from '../../../system/ThemeProvider';
 import { PortalProvider } from '../../PortalProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
 
@@ -26,7 +26,7 @@ const { MockModal } = modalBuilder({
   ModalBody,
   ModalHeader,
   ModalFooter,
-  ThemeProvider,
+  ThemeProvider: React.Fragment,
   Button,
   LoremIpsum,
   PortalProvider,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { TextLabel2 } from '../../typography/TextLabel2';
 
@@ -133,46 +132,32 @@ const ProgressBarScreen = () => {
         </ProgressContainerWithButtons>
       </Example>
       <Example title="Disabled">
-        <ThemeProvider>
-          <VStack gap={2}>
-            <ProgressBarWithFixedLabels disabled startLabel={50} labelPlacement="beside">
-              <ProgressBar disabled progress={0.5} />
-            </ProgressBarWithFixedLabels>
-            <ProgressBarWithFixedLabels disabled endLabel={10} labelPlacement="beside">
-              <ProgressBar disabled progress={0.1} />
-            </ProgressBarWithFixedLabels>
-            <ProgressBarWithFixedLabels
-              disabled
-              endLabel={20}
-              startLabel={0}
-              labelPlacement="beside"
-            >
-              <ProgressBar disabled progress={0.2} />
-            </ProgressBarWithFixedLabels>
-            <ProgressBarWithFixedLabels
-              disabled
-              endLabel={50}
-              startLabel={0}
-              labelPlacement="beside"
-            >
-              <ProgressBar disabled progress={0.5} />
-            </ProgressBarWithFixedLabels>
-            <ProgressBarWithFloatLabel label={70} progress={0.7} disabled>
-              <ProgressBar disabled progress={0.7} />
-            </ProgressBarWithFloatLabel>
-          </VStack>
-        </ThemeProvider>
+        <VStack gap={2}>
+          <ProgressBarWithFixedLabels disabled startLabel={50} labelPlacement="beside">
+            <ProgressBar disabled progress={0.5} />
+          </ProgressBarWithFixedLabels>
+          <ProgressBarWithFixedLabels disabled endLabel={10} labelPlacement="beside">
+            <ProgressBar disabled progress={0.1} />
+          </ProgressBarWithFixedLabels>
+          <ProgressBarWithFixedLabels disabled endLabel={20} startLabel={0} labelPlacement="beside">
+            <ProgressBar disabled progress={0.2} />
+          </ProgressBarWithFixedLabels>
+          <ProgressBarWithFixedLabels disabled endLabel={50} startLabel={0} labelPlacement="beside">
+            <ProgressBar disabled progress={0.5} />
+          </ProgressBarWithFixedLabels>
+          <ProgressBarWithFloatLabel label={70} progress={0.7} disabled>
+            <ProgressBar disabled progress={0.7} />
+          </ProgressBarWithFloatLabel>
+        </VStack>
       </Example>
       <Example title="Colors">
-        <ThemeProvider>
-          <VStack gap={2}>
-            <ProgressBar color="positive" progress={0.5} />
-            <ProgressBar color="negative" progress={0.5} />
-            <ProgressBar color="primary" progress={0.5} />
-            <ProgressBar color="foreground" progress={0.5} />
-            <ProgressBar disabled color="foreground" progress={0.5} />
-          </VStack>
-        </ThemeProvider>
+        <VStack gap={2}>
+          <ProgressBar color="positive" progress={0.5} />
+          <ProgressBar color="negative" progress={0.5} />
+          <ProgressBar color="primary" progress={0.5} />
+          <ProgressBar color="foreground" progress={0.5} />
+          <ProgressBar disabled color="foreground" progress={0.5} />
+        </VStack>
       </Example>
       <Example title="CustomLabel">
         <ProgressContainerWithButtons hideIncrease>

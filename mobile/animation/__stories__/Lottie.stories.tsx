@@ -2,7 +2,6 @@ import React from 'react';
 import * as animations from '@cbhq/cds-lottie-files';
 
 import { Box } from '../../layout/Box';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextBody } from '../../typography/TextBody';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
@@ -12,16 +11,14 @@ const LottieScreen = () => {
   return (
     <ExampleScreen>
       <Example>
-        <ThemeProvider>
-          <Box spacing={1}>
-            {Object.entries(animations).map(([name, source]) => (
-              <Box key={name} width={200}>
-                <TextBody>{name}</TextBody>
-                <Lottie autoplay loop source={source} width={200} height={200} />
-              </Box>
-            ))}
-          </Box>
-        </ThemeProvider>
+        <Box spacing={1}>
+          {Object.entries(animations).map(([name, source]) => (
+            <Box key={name} width={200}>
+              <TextBody>{name}</TextBody>
+              <Lottie autoplay loop source={source} width={200} height={200} />
+            </Box>
+          ))}
+        </Box>
       </Example>
     </ExampleScreen>
   );

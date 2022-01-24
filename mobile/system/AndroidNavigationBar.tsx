@@ -11,7 +11,7 @@ import { paletteConfigToRgbaStrings } from '../utils/palette';
 import { useStatusBarStyle } from './StatusBar';
 import { ThemeProviderProps } from './ThemeProvider';
 
-export type AndroidNavigationBarProps = Omit<ThemeProviderProps, 'scale'>;
+export type AndroidNavigationBarProps = Omit<ThemeProviderProps, 'scale' | 'name'>;
 
 export const useAndroidNavigationBarUpdater = ({
   palette,

@@ -7,7 +7,6 @@ import { Modal } from '../Modal/Modal';
 import { ModalBody } from '../Modal/ModalBody';
 import { ModalFooter } from '../Modal/ModalFooter';
 import { ModalHeader } from '../Modal/ModalHeader';
-import { ThemeProvider } from '../../system/ThemeProvider';
 
 import { PortalProvider } from '../PortalProvider';
 
@@ -18,7 +17,7 @@ const { BasicModal, LongModal, PortalModal } = modalBuilder({
   ModalBody,
   ModalHeader,
   ModalFooter,
-  ThemeProvider,
+  ThemeProvider: React.Fragment,
   Button,
   LoremIpsum,
   PortalProvider,

@@ -11,7 +11,6 @@ import { usePalette } from '../../hooks/usePalette';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { PressableOpacity } from '../../system/PressableOpacity';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextBody } from '../../typography';
 
 import { Icon } from '../Icon';
@@ -49,7 +48,6 @@ export const useAnimation = (): [
 export const { IconSheet } = iconSheetBuilder({
   Icon,
   HStack,
-  ThemeProvider,
 } as CreateIconSheetParams);
 
 const IconScreen = () => {

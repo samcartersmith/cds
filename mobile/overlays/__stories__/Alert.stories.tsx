@@ -4,7 +4,6 @@ import { useModal } from '@cbhq/cds-common/overlays/useModal';
 import { useAlert } from '@cbhq/cds-common/overlays/useAlert';
 import { CreateAlertProps, alertBuilder } from '@cbhq/cds-common/internal/alertBuilder';
 
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { Button } from '../../buttons/Button';
 import { TextBody } from '../../typography/TextBody';
 import { Alert } from '../Alert';
@@ -17,7 +16,6 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
   Alert,
-  ThemeProvider,
   Button,
   PortalProvider,
 } as CreateAlertProps);
