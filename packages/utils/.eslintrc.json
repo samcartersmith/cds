@@ -14,7 +14,7 @@
         "no-process-env": "error"
       },
       "parserOptions": {
-        "project": "./tsconfig.*?.json"
+        "project": "../../tsconfig.eslint.json"
       }
     }
   ]
