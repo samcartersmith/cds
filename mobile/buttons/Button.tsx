@@ -7,11 +7,11 @@ import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRad
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { StyleSheet, ActivityIndicator, View } from 'react-native';
 
-import { useFlushStyles } from '../hooks/useFlushStyles';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';
+import { getFlushStyles } from '../styles/getFlushStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
@@ -39,7 +39,7 @@ export const Button = memo(function Button({
   const hasFrontier = useFeatureFlag('frontierButton');
   const iconSize = useButtonIconSize(compact);
   const spacingStyles = useButtonSpacing({ flush, compact, startIcon, endIcon });
-  const flushStyles = useFlushStyles({ flush, spacing: spacingStyles });
+  const flushStyles = getFlushStyles({ flush, spacing: spacingStyles });
   const layoutStyles = block ? styles.block : styles.inline;
   const pressableStyles = useMemo(() => [layoutStyles, flushStyles], [layoutStyles, flushStyles]);
   const frontierButtonStyles = hasFrontier && hasIcon && styles.frontierButton;
