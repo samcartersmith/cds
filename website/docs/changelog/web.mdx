@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.2 (1/24/2022, 09:52 AM PST)
+
+#### 🚀 Updates
+
+- Remove unnecessary uses of ThemeProvider in CDS. [#50101](https://github.cbhq.net/mono/repo/pull/50101), [CDS-1942](https://jira.coinbase-corp.com/browse/CDS-1942)
+- Rename ChartHeader to SparklineInteractiveHeader. [#49798](https://github.cbhq.net/mono/repo/pull/49798)
+- Add transparent to palette aliases. [#49628](https://github.cbhq.net/mono/repo/pull/49628), [CDS-1932](https://jira.coinbase-corp.com/browse/CDS-1932)
+- Update card spacing. [#48433](https://github.cbhq.net/mono/repo/pull/48433), [CDS-1822](https://jira.coinbase-corp.com/browse/CDS-1822)
+- Rename InteractiveSparkline to SparklineInteractive. [#49327](https://github.cbhq.net/mono/repo/pull/49327)
+- **[Illustrations]** Update illustration build script to publish PNG equivalent during release. Simplified ./uploadToStaticAsset shell script. [#48874](https://github.cbhq.net/mono/repo/pull/48874), [CDS-1906](https://jira.coinbase-corp.com/browse/CDS-1906)
+- Added accessibility props to modal. [#48933](https://github.cbhq.net/mono/repo/pull/48933)
+
+#### 🐞 Fixes
+
+- **[LogoMarks]** LogoMarks were not rendering correctly on safari. [#49835](https://github.cbhq.net/mono/repo/pull/49835), [CDS-1919](https://jira.coinbase-corp.com/browse/CDS-1919)
+- **[SearchInput, TextInput]** Fixed it so that when SearchInput and TextInput are disabled, all children are non-interactable. [#49384](https://github.cbhq.net/mono/repo/pull/49384)
+- **[DotSymbol, RemoteImage]** Update RemoteImage to include dangerouslySetStyle for both web and mobile. Update DotSymbol to have white border. Added Storybook example to RemoteImage web. [#49293](https://github.cbhq.net/mono/repo/pull/49293), [CDS-1809](https://jira.coinbase-corp.com/browse/CDS-1809)
+- Align the date with the center of the x axis label. [#49171](https://github.cbhq.net/mono/repo/pull/49171)
+- Add support for toLocaleString() on Android. [#49059](https://github.cbhq.net/mono/repo/pull/49059)
+- Added accessibility labels to text and helper text. [#48696](https://github.cbhq.net/mono/repo/pull/48696), [CDS-1894](https://jira.coinbase-corp.com/browse/CDS-1894)
+
 ## 0.34.1 (1/14/2022, 10:30 AM PST)
 
 #### 🚀 Updates

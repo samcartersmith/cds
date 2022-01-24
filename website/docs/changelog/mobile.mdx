@@ -8,6 +8,31 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.2 (1/24/2022, 09:52 AM PST)
+
+#### 🚀 Updates
+
+- Remove new theme codegen. [#50104](https://github.cbhq.net/mono/repo/pull/50104), [CDS-1944](https://jira.coinbase-corp.com/browse/CDS-1944)
+- Memoized getSpacing and getButtonSpacing. [#50102](https://github.cbhq.net/mono/repo/pull/50102), [CDS-1943](https://jira.coinbase-corp.com/browse/CDS-1943)
+- Remove unnecessary uses of ThemeProvider in CDS. [#50101](https://github.cbhq.net/mono/repo/pull/50101), [CDS-1942](https://jira.coinbase-corp.com/browse/CDS-1942)
+- New Elevation styling mechanism with perf optimizations. [#49855](https://github.cbhq.net/mono/repo/pull/49855), [CDS-1932](https://jira.coinbase-corp.com/browse/CDS-1932)
+- Rename ChartHeader to SparklineInteractiveHeader. [#49798](https://github.cbhq.net/mono/repo/pull/49798)
+- Update card spacing. [#48433](https://github.cbhq.net/mono/repo/pull/48433), [CDS-1822](https://jira.coinbase-corp.com/browse/CDS-1822)
+- Rename InteractiveSparkline to SparklineInteractive. [#49327](https://github.cbhq.net/mono/repo/pull/49327)
+- Clean up ThemeConfig codegen. [#49087](https://github.cbhq.net/mono/repo/pull/49087)
+- Codegen logic for new theme configs. [#49080](https://github.cbhq.net/mono/repo/pull/49080), [CDS-1914](https://jira.coinbase-corp.com/browse/CDS-1914)
+
+#### 🐞 Fixes
+
+- : feat: createThemeConfig for mobile. [#50107](https://github.cbhq.net/mono/repo/pull/50107), [CDS-1944](https://jira.coinbase-corp.com/browse/CDS-1944)
+- **[useAccessibleForeground]** Pull from usePalette. [#50103](https://github.cbhq.net/mono/repo/pull/50103)
+- Add component names to CDS mobile components. [#49709](https://github.cbhq.net/mono/repo/pull/49709), [RAT-1819](https://jira.coinbase-corp.com/browse/RAT-1819)
+- **[SearchInput, TextInput]** Fixed it so that when SearchInput and TextInput are disabled, all children are non-interactable. [#49384](https://github.cbhq.net/mono/repo/pull/49384)
+- **[DotSymbol, RemoteImage]** Update RemoteImage to include dangerouslySetStyle for both web and mobile. Update DotSymbol to have white border. Added Storybook example to RemoteImage web. [#49293](https://github.cbhq.net/mono/repo/pull/49293), [CDS-1809](https://jira.coinbase-corp.com/browse/CDS-1809)
+- Fix hover date not showing on Android. [#49249](https://github.cbhq.net/mono/repo/pull/49249)
+- Fix dot issue. [#49241](https://github.cbhq.net/mono/repo/pull/49241)
+- Add support for toLocaleString() on Android. [#49059](https://github.cbhq.net/mono/repo/pull/49059)
+
 ## 0.38.1 (1/14/2022, 10:30 AM PST)
 
 #### 🚀 Updates

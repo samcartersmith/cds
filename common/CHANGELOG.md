@@ -8,6 +8,33 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.1 (1/24/2022, 09:52 AM PST)
+
+#### 🚀 Updates
+
+- Remove new theme codegen. [#50104](https://github.cbhq.net/mono/repo/pull/50104), [CDS-1944](https://jira.coinbase-corp.com/browse/CDS-1944)
+- Memoized getSpacing and getButtonSpacing. [#50102](https://github.cbhq.net/mono/repo/pull/50102), [CDS-1943](https://jira.coinbase-corp.com/browse/CDS-1943)
+- Remove unnecessary uses of ThemeProvider in CDS. [#50101](https://github.cbhq.net/mono/repo/pull/50101), [CDS-1942](https://jira.coinbase-corp.com/browse/CDS-1942)
+- Rename ChartHeader to SparklineInteractiveHeader. [#49798](https://github.cbhq.net/mono/repo/pull/49798)
+- Palette utils to leverage lodash memoize. [#49676](https://github.cbhq.net/mono/repo/pull/49676), [CDS-1933](https://jira.coinbase-corp.com/browse/CDS-1933)
+- Add transparent to palette aliases. [#49628](https://github.cbhq.net/mono/repo/pull/49628), [CDS-1932](https://jira.coinbase-corp.com/browse/CDS-1932)
+- Perf optimizations - cache palette util conversions. [#49481](https://github.cbhq.net/mono/repo/pull/49481), [CDS-1928](https://jira.coinbase-corp.com/browse/CDS-1928)
+- Toast optimization. [#49365](https://github.cbhq.net/mono/repo/pull/49365)
+- Update card spacing. [#48433](https://github.cbhq.net/mono/repo/pull/48433), [CDS-1822](https://jira.coinbase-corp.com/browse/CDS-1822)
+- Rename InteractiveSparkline to SparklineInteractive. [#49327](https://github.cbhq.net/mono/repo/pull/49327)
+- **[Illustrations]** Update illustration build script to publish PNG equivalent during release. Simplified ./uploadToStaticAsset shell script. [#48874](https://github.cbhq.net/mono/repo/pull/48874), [CDS-1906](https://jira.coinbase-corp.com/browse/CDS-1906)
+- Clean up ThemeConfig codegen. [#49087](https://github.cbhq.net/mono/repo/pull/49087)
+- Codegen logic for new theme configs. [#49080](https://github.cbhq.net/mono/repo/pull/49080), [CDS-1914](https://jira.coinbase-corp.com/browse/CDS-1914)
+- Added accessibility props to modal. [#48933](https://github.cbhq.net/mono/repo/pull/48933)
+
+#### 🐞 Fixes
+
+- UseToastQueue test error. [#50048](https://github.cbhq.net/mono/repo/pull/50048)
+- Update interactableTokens to be calculated during theme config merge. [#49468](https://github.cbhq.net/mono/repo/pull/49468), [CDS-1926](https://jira.coinbase-corp.com/browse/CDS-1926)
+- Fix dot issue. [#49241](https://github.cbhq.net/mono/repo/pull/49241)
+- Add support for toLocaleString() on Android. [#49059](https://github.cbhq.net/mono/repo/pull/49059)
+- Added accessibility labels to text and helper text. [#48696](https://github.cbhq.net/mono/repo/pull/48696), [CDS-1894](https://jira.coinbase-corp.com/browse/CDS-1894)
+
 ## 0.33.0 (1/12/2022, 03:10 PM PST)
 
 #### 💥 Breaking
