@@ -1,6 +1,6 @@
 import { useToast as useToastCommon } from '@cbhq/cds-common/overlays/useToast';
-import { Toast } from './Toast';
+import { Toast, ToastProps } from './Toast';
 
 export const useToast = () => {
-  return useToastCommon(Toast);
+  return useToastCommon<Pick<ToastProps, 'hideCloseButton' | 'disablePortal'>>(Toast);
 };

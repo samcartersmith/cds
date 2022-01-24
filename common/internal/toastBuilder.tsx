@@ -15,14 +15,20 @@ export type CreateToastProps = {
   PortalProvider?: React.ComponentType;
 };
 
+type UseToastProps = {
+  hideCloseButton?: boolean;
+  disablePortal?: boolean;
+};
+
 export function toastBuilder({ Toast, Button, PortalProvider }: CreateToastProps) {
   const BasicToast = () => {
-    const toast = useToast(Toast);
+    const toast = useToast<UseToastProps>(Toast);
 
     const handleShow = useCallback(() => {
       toast.show('Toast copy', {
         action: { label: 'Action', onPress: onActionPressConsole },
-        // hideCloseButton: true,
+        hideCloseButton: true,
+        disablePortal: true,
         // dangerouslySetDuration: 10000,
         onWillHide: onWillHideConsole,
         onDidHide: onDidHideConsole,

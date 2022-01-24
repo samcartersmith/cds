@@ -9,11 +9,11 @@ import {
   charsThreshold,
 } from '../tokens/toast';
 
-export const useToast = (Toast: ComponentType<ToastBaseProps>) => {
+export const useToast = <T,>(Toast: ComponentType<ToastBaseProps>) => {
   const { addToast, removeToast, clearToastQueue } = useContext(ToastContext);
 
   const showToast = useCallback(
-    (text: ToastText, options?: ToastOptions) => {
+    (text: ToastText, options?: ToastOptions & T) => {
       // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const onDidHide = () => {
         options?.onDidHide?.();
