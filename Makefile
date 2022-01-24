@@ -3,23 +3,28 @@ Help:
 -----
   $$ make build.common              -- Build the `common` package.
   $$ make build.utils               -- Build the `utils` package.
+  $$ make build.mobile              -- Build the `mobile` package.
   $$ make build.all                 -- Build all of the affected packages
 
   $$ make format.common             -- Format the `common` package.
   $$ make format.utils              -- Format the `utils` package.
+  $$ make format.mobile             -- Format the `mobile` package.
   $$ make format.all                -- Format all of the affected packages
 
   $$ make lint.common               -- lint the `common` package.
   $$ make lint.utils                -- lint the `utils` package.
+  $$ make lint.mobile               -- lint the `mobile` package.
   $$ make lint                      -- lint all of the affected packages
   $$ make lint.fix                  -- lint all of the affected packages and fix errors
 
   $$ make test.common               -- test the `common` package.
   $$ make test.utils                -- test the `utils` package.
+  $$ make test.mobile               -- test the `mobile` package.
   $$ make test.all                  -- test all of the affected packages
 
   $$ make typecheck.common          -- typecheck the `common` package.
   $$ make typecheck.utils           -- typecheck the `utils` package.
+  $$ make typecheck.mobile          -- typecheck the `mobile` package.
   $$ make typecheck.all             -- typecheck all of the affected packages
 
 endef
@@ -37,6 +42,10 @@ build.common:
 build.utils:
 	nx build utils
 
+.PHONY: build.mobile
+build.mobile:
+	nx build mobile
+
 .PHONY: build.all
 build.all:
 	nx affected --target=build --all
@@ -49,6 +58,10 @@ format.common:
 format.utils:
 	nx format utils
 
+.PHONY: format.mobile
+format.mobile:
+	nx format mobile
+
 .PHONY: format.all
 format.all:
 	nx affected --target=format --all
@@ -60,6 +73,10 @@ lint.common:
 .PHONY: lint.utils
 lint.utils:
 	nx lint utils
+
+.PHONY: lint.mobile
+lint.mobile:
+	nx lint mobile
 
 .PHONY: lint
 lint:
@@ -77,6 +94,10 @@ test.common:
 test.utils:
 	nx test utils
 
+.PHONY: test.mobile
+test.mobile:
+	nx test mobile
+
 .PHONY: test.all
 test.all:
 	nx affected --target=test --all
@@ -88,6 +109,10 @@ typecheck.common:
 .PHONY: typecheck.utils
 typecheck.utils:
 	nx typecheck utils
+
+.PHONY: typecheck.mobile
+typecheck.mobile:
+	nx typecheck mobile
 
 .PHONY: typecheck.all
 typecheck.all:
