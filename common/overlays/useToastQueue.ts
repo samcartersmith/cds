@@ -71,8 +71,8 @@ export const useToastQueue = () => {
     }
   }, [activeToast, toastQueue, setToast]);
 
-  const clearToastQueue = useCallback(() => {
-    void removeToast();
+  const clearToastQueue = useCallback(async () => {
+    await removeToast();
     toastQueue.current.length = 0;
   }, [removeToast]);
 

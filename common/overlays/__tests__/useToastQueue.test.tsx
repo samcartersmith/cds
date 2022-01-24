@@ -12,7 +12,7 @@ describe('useToastQueue', () => {
 
     const duration = 1000;
 
-    await act(() => {
+    void act(() => {
       result.current.addToast(<div />, duration);
     });
 
@@ -25,7 +25,7 @@ describe('useToastQueue', () => {
     const { result } = renderHook(() => useToastQueue());
     jest.useFakeTimers();
 
-    await act(() => {
+    void act(() => {
       result.current.addToast(<div />, 1000);
     });
 
@@ -41,12 +41,12 @@ describe('useToastQueue', () => {
     const { result } = renderHook(() => useToastQueue());
     jest.useFakeTimers();
 
-    await act(() => {
+    void act(() => {
       result.current.addToast(<div />, 1000);
     });
 
-    await act(() => {
-      result.current.clearToastQueue();
+    await act(async () => {
+      await result.current.clearToastQueue();
     });
 
     expect(clearTimeout).toHaveBeenCalledTimes(1);
