@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import type { AccessibleForegroundFn, AccessibleForegroundParams } from '@cbhq/cds-common';
 import { getAccessibleForeground } from '@cbhq/cds-common/color/getAccessibleForeground';
-import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
+import { usePalette } from '../hooks/usePalette';
 
 import { usePaletteValueToRgbaString } from './usePaletteValueToRgbaString';
 
@@ -10,8 +10,7 @@ import { usePaletteValueToRgbaString } from './usePaletteValueToRgbaString';
 function useAccessibleForeground(params: AccessibleForegroundParams): string;
 function useAccessibleForeground(params?: undefined): AccessibleForegroundFn;
 function useAccessibleForeground(params?: AccessibleForegroundParams) {
-  const paletteConfig = usePaletteConfig();
-  const backgroundFromPalette = usePaletteValueToRgbaString(paletteConfig.background);
+  const { background: backgroundFromPalette } = usePalette();
   const transformFn = usePaletteValueToRgbaString();
   const convert = useCallback(
     ({ background, color, usage }: AccessibleForegroundParams) =>
