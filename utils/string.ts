@@ -1,5 +1,5 @@
 import { decamelize, camelize, pascalize } from 'humps';
-import { KebabCase, CamelCase, PascalCase, Split } from 'type-fest';
+import { CamelCase, KebabCase, PascalCase, Split } from 'type-fest';
 
 export const camelCase = <T extends string>(str: T): CamelCase<T> => camelize(str) as CamelCase<T>;
 export const pascalCase = <T extends string>(str: T) => pascalize(str) as PascalCase<typeof str>;
