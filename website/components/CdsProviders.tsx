@@ -3,6 +3,7 @@ import { css } from 'linaria';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
+import { fontFamily, palette, spacing } from '@cbhq/cds-web/tokens';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
 
 const overrides = css`
@@ -12,12 +13,28 @@ const overrides = css`
   --ifm-pre-background: var(--background);
   --ifm-color-primary: var(--primary);
   --ifm-link-color: var(--primary);
+  --ifm-tabs-color: var(--foreground);
+  --ifm-tabs-color-active: var(--primary);
+  --ifm-tabs-color-active-border: var(--primary);
+
   .markdown h1:first-child {
     margin: 0;
   }
   [class^='playgroundPreview'],
   [class*=' playgroundPreview'] {
     padding: 0;
+  }
+  .tabs__item {
+    padding: ${spacing[2]} 0;
+    margin-right: ${spacing[3]};
+    font-family: ${fontFamily.sans};
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background: transparent;
+      color: ${palette.primary};
+    }
   }
 `;
 
