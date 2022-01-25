@@ -1,11 +1,12 @@
 import { ViewStyle } from 'react-native';
-
 import {
   useButtonSpacing as useSharedButtonSpacing,
   UseButtonSpacingParams,
 } from '@cbhq/cds-common/hooks/useButtonSpacing';
-import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
+
 import { useFeatureFlag } from '../system/useFeatureFlag';
+
+import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
 
 export const useButtonSpacing = (params: UseButtonSpacingParams): ViewStyle => {
   const hasFrontier = useFeatureFlag('frontierButton');

@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import { InputVariant } from '../types/InputBaseProps';
 
 export const useInputVariant = (focused: boolean, variant: InputVariant) => {

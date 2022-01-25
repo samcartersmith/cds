@@ -1,12 +1,11 @@
 import React, { cloneElement, memo } from 'react';
-
 import { CellMediaProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
-import { RemoteImage, getSource } from '../media/RemoteImage';
+import { getSource, RemoteImage } from '../media/RemoteImage';
 
 export type { CellMediaProps };
 

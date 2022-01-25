@@ -1,15 +1,15 @@
-import React, { useCallback, memo, useMemo } from 'react';
-
+import React, { memo, useCallback, useMemo } from 'react';
+import { ViewStyle } from 'react-native';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/types';
-import { ViewStyle } from 'react-native';
+
 import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { usePinStyles } from '../hooks/usePinStyles';
-import { Pressable, PressableProps } from '../system/Pressable';
-import { DangerouslySetStyle } from '../types';
 import { VStack } from '../layout/VStack';
+import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
+import { DangerouslySetStyle } from '../types';
 
 export type CardProps = {
   onPress?: PressableProps['onPress'];

@@ -2,11 +2,10 @@
 import React from 'react';
 import { GestureResponderEvent } from 'react-native';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { IconButton } from '../IconButton';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 function onPress(event: GestureResponderEvent) {
   // eslint-disable-next-line no-console

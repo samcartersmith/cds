@@ -18,10 +18,11 @@ import Animated, {
   set,
   sub,
 } from 'react-native-reanimated';
-import { noop } from '@cbhq/cds-utils';
 import { ChartScrubHandlerProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import { noop } from '@cbhq/cds-utils';
 
 import { Haptics } from '../../utils/haptics';
+
 import { useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 

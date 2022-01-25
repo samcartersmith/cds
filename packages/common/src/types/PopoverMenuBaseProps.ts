@@ -1,7 +1,8 @@
-import { ReactElement, MouseEvent, MutableRefObject } from 'react';
+import { MouseEvent, MutableRefObject, ReactElement } from 'react';
+
 import { NoopFn } from './Helpers';
-import { SharedProps } from './SharedProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SharedProps } from './SharedProps';
 
 type OffsetConfigProps = {
   helperText: boolean;

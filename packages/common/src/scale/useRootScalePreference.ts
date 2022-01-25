@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { isProduction } from '@cbhq/cds-utils';
+
 import { RootScalePreferenceContext } from './context';
 
 export const useRootScalePreference = () => {

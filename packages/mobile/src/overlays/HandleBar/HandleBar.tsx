@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { handleBarOffset } from '@cbhq/cds-common/animation/drawer';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 

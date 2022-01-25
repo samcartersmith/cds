@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
-
+import { ViewStyle } from 'react-native';
 import { ElevationLevels } from '@cbhq/cds-common';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { elevation as elevationTokens } from '@cbhq/cds-common/tokens/elevation';
-import { ViewStyle } from 'react-native';
 
 import { useElevationBorderColor } from './useElevationBorderColor';
 import { useElevationBorderWidth } from './useElevationBorderWidth';

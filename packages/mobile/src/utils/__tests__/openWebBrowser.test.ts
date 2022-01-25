@@ -1,6 +1,6 @@
-import { defaultPalette as paletteConfig } from '@cbhq/cds-common';
 import { Linking, Platform } from 'react-native';
 import { InAppBrowser } from 'react-native-inappbrowser-reborn';
+import { defaultPalette as paletteConfig } from '@cbhq/cds-common';
 
 import { CustomTabsHelper } from '../customTabsHelper';
 import { openWebBrowser } from '../openWebBrowser';

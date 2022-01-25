@@ -1,16 +1,18 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, I18nManager, LayoutChangeEvent } from 'react-native';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
+import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import {
   ProgressBarFloatLabelProps,
   ProgressBarWithFloatLabelProps,
 } from '@cbhq/cds-common/types/ProgressBarBaseProps';
 import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
-import { Box, VStack } from '../layout';
+
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { ProgressTextLabel } from './ProgressTextLabel';
 import { useLayout } from '../hooks/useLayout';
+import { Box, VStack } from '../layout';
+
+import { ProgressTextLabel } from './ProgressTextLabel';
 
 const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFloatLabelProps) => {
   const [textWidth, setTextWidth] = useState<number>(-1);

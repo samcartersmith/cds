@@ -1,6 +1,6 @@
 export {
-  light,
   dark,
-  frontierLight,
   frontierDark,
+  frontierLight,
+  light,
 } from '@cbhq/cds-common/spectrum/spectrumRgbArray';

@@ -1,7 +1,9 @@
-import React, { useContext, memo } from 'react';
+import React, { memo, useContext } from 'react';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+
 import { Icon, IconProps } from '../icons/Icon';
 import { Box } from '../layout/Box';
+
 import { TextInputFocusVariantContext } from './context';
 
 export type InputIconProps = {

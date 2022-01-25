@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from 'react';
 import { generateRandomId, isDevelopment } from '@cbhq/cds-utils';
 
-import { PartialPaletteConfig } from '../types';
-import { useFeatureFlags } from '../system/useFeatureFlags';
-import { ThemeConfigDynamicProvider } from '../system/ThemeConfigDynamicProvider';
 import { createThemeConfig } from '../system/createThemeConfig';
+import { ThemeConfigDynamicProvider } from '../system/ThemeConfigDynamicProvider';
+import { useFeatureFlags } from '../system/useFeatureFlags';
+import { PartialPaletteConfig } from '../types';
 
 export type PaletteConfigDynamicProviderProps = {
   value: PartialPaletteConfig;

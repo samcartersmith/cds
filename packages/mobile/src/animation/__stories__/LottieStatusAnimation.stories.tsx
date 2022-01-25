@@ -1,11 +1,10 @@
-import React, { useState, useMemo, useCallback } from 'react';
-import { LottieStatusAnimationType, join } from '@cbhq/cds-common';
+import React, { useCallback, useMemo, useState } from 'react';
+import { join, LottieStatusAnimationType } from '@cbhq/cds-common';
 
 import { Button } from '../../buttons/Button';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
 import { Spacer } from '../../layout/Spacer';
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-
 import { LottieStatusAnimation } from '../LottieStatusAnimation';
 
 const statuses = [

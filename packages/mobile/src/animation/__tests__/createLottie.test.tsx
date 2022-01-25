@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
-
-import { nux, NuxLottie } from '@cbhq/cds-lottie-files/nux';
+import { Animated } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 import uniqBy from 'lodash/uniqBy';
-import { Animated } from 'react-native';
+import { nux, NuxLottie } from '@cbhq/cds-lottie-files/nux';
 
 import { createLottie, LottiePlayerMobile } from '../createLottie';
 

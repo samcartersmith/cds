@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { illustrationDimensions } from '../tokens/illustrations';
 import type {
   BoxBaseProps,
   HeroSquareProps,
@@ -8,13 +10,13 @@ import type {
   StackBaseProps,
   TextBaseProps,
 } from '../types';
+
 import {
   heroSquareNames,
   pictogramNames,
   spotRectangleNames,
   spotSquareNames,
 } from './data/illustrationData';
-import { illustrationDimensions } from '../tokens/illustrations';
 
 export function illustrationBuilder(
   Pictogram: React.ComponentType<PictogramProps>,

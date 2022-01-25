@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-
 import { ContentCellBaseProps } from '@cbhq/cds-common';
 import { isProduction } from '@cbhq/cds-utils';
 
 import { Box, HStack, VStack } from '../layout';
-import { TextHeadline, TextBody, TextLabel2 } from '../typography';
+import { TextBody, TextHeadline, TextLabel2 } from '../typography';
+
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 

@@ -1,5 +1,5 @@
-import { OffsetProps } from '@cbhq/cds-common';
 import { ViewStyle } from 'react-native';
+import { OffsetProps } from '@cbhq/cds-common';
 
 import { useInternalSpacingStyles } from './internal/useInternalSpacingStyles';
 

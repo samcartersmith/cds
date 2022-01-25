@@ -1,5 +1,6 @@
+import { dark, frontierDark, frontierLight, light } from '../spectrum/spectrumRgbArray';
 import type { PaletteValueToRgbaString } from '../types';
-import { light, dark, frontierLight, frontierDark } from '../spectrum/spectrumRgbArray';
+
 import { paletteValueToTuple } from './paletteValueToTuple';
 
 export const spectrumConfigs = {

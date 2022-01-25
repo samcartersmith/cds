@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-
 import { renderHook } from '@testing-library/react-hooks';
 
 import { RootSpectrumPreferenceProvider } from '../RootSpectrumPreferenceProvider';

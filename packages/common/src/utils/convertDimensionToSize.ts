@@ -1,5 +1,5 @@
-import type { IllustrationDimension } from '../types';
 import { illustrationSizes } from '../tokens/illustrations';
+import type { IllustrationDimension } from '../types';
 
 export type SizeObject = { width: number; height: number };
 

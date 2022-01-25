@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-
 import { useScale } from '@cbhq/cds-common';
 
 import * as scales from '../styles/scale';

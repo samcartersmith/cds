@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
-
-import { SpacingScale, useScale, InternalSpacingProps } from '@cbhq/cds-common';
 import { I18nManager, ViewStyle } from 'react-native';
+import { InternalSpacingProps, SpacingScale, useScale } from '@cbhq/cds-common';
 
 import * as scales from '../../styles/scale';
 

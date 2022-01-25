@@ -1,5 +1,5 @@
+import { Text, View } from 'react-native';
 import { render } from '@testing-library/react-native';
-import { View, Text } from 'react-native';
 
 import { Button } from '../../buttons';
 import { CellMedia } from '../CellMedia';

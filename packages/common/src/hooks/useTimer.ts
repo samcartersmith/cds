@@ -1,4 +1,5 @@
-import { useRef, useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+
 import { NoopFn } from '../types';
 
 // timer for single execution

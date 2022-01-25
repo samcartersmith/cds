@@ -1,8 +1,8 @@
 import React from 'react';
-import { TextBody } from '../../typography/TextBody';
-import { Box } from '../Box';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { TextBody } from '../../typography/TextBody';
+import { Box } from '../Box';
 
 const BoxScreen = () => {
   return (

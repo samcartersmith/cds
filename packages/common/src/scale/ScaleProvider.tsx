@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import { Scale } from '../types';
+
 import { ScaleContext } from './context';
 import { useScale } from './useScale';
 

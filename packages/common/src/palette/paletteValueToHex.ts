@@ -1,5 +1,6 @@
 import { colorToHex } from '../color/colorToHex';
 import type { PaletteValueToHex } from '../types';
+
 import { paletteValueToRgbaString } from './paletteValueToRgbaString';
 
 /**

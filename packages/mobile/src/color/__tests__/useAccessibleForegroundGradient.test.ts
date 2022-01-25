@@ -1,5 +1,5 @@
-import { Spectrum } from '@cbhq/cds-common';
 import { renderHook } from '@testing-library/react-hooks';
+import { Spectrum } from '@cbhq/cds-common';
 
 import { DarkModeProvider } from '../../system';
 import { useAccessibleForegroundGradient } from '../useAccessibleForegroundGradient';

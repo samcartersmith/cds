@@ -1,7 +1,8 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
+
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
-import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import { ChartHeaderProps, ChartHeaderRef, ChartSubHead } from '../types/ChartHeaderBaseProps';
+import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 
 export type ChartPeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 

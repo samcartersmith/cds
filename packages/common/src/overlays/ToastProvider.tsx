@@ -1,6 +1,8 @@
-import React, { createContext, cloneElement, isValidElement } from 'react';
-import { useToastQueue, ToastNode } from './useToastQueue';
-import { NoopFn, DimensionValue } from '../types';
+import React, { cloneElement, createContext, isValidElement } from 'react';
+
+import { DimensionValue, NoopFn } from '../types';
+
+import { ToastNode, useToastQueue } from './useToastQueue';
 
 export type ToastProviderStates = {
   activeToast?: ToastNode;

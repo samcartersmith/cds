@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
-
+import { Text } from 'react-native';
 import { PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
-import { Text } from 'react-native';
 
 import { usePalette } from '../hooks/usePalette';
+
 import { IconProps } from './Icon';
 import { iconGlyphMap } from './iconGlyphMap';
 

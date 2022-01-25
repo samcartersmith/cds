@@ -1,13 +1,12 @@
 import React from 'react';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
+import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 
-import { TextCaption } from '../../typography/TextCaption';
-import { VStack } from '../../layout/VStack';
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
-import { paletteValueToRgbaString } from '../../utils/palette';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { VStack } from '../../layout/VStack';
+import { TextCaption } from '../../typography/TextCaption';
+import { paletteValueToRgbaString } from '../../utils/palette';
 
 const hueNames = [
   'blue',

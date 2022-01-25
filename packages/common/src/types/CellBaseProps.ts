@@ -3,7 +3,7 @@ import { IconName } from './IconName';
 import { IllustrationPictogramNames } from './IllustrationNames';
 import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
-import { SpacingProps, OffsetProps } from './SpacingProps';
+import { OffsetProps, SpacingProps } from './SpacingProps';
 import { SpacingScale } from './SpacingScale';
 
 export type CellSpacing = SpacingProps & OffsetProps;

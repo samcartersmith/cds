@@ -1,14 +1,14 @@
 import React, { forwardRef, memo } from 'react';
-
+import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 import { SharedProps, useScale } from '@cbhq/cds-common';
 import type { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
-import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 
 import { Icon } from '../icons/Icon';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
+
 import { Control, ControlIconProps, ControlProps } from './Control';
 
 export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;

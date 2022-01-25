@@ -1,15 +1,16 @@
 import { useMemo, useRef } from 'react';
-
-import { PinningDirection } from '@cbhq/cds-common';
 import { Animated, useWindowDimensions } from 'react-native';
+import { PinningDirection } from '@cbhq/cds-common';
 import {
-  MAX_OVER_DRAG,
   drawerHeightThreshold,
-  verticalDrawerPercentageOfView,
-  horizontalDrawerPercentageOfView,
   handleBarOffset,
+  horizontalDrawerPercentageOfView,
+  MAX_OVER_DRAG,
+  verticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/animation/drawer';
+
 import { useLayout } from '../hooks/useLayout';
+
 import { convertMotionConfig } from './convertMotionConfig';
 
 export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom') => {

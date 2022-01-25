@@ -2,11 +2,9 @@
 import React, { useState } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
-import { TextHeadline } from '../../typography/TextHeadline';
-
-import { Radio, RadioGroup } from '../RadioGroup';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { TextHeadline } from '../../typography/TextHeadline';
+import { Radio, RadioGroup } from '../RadioGroup';
 
 const RadioGroupScreen = () => {
   return (

@@ -1,6 +1,7 @@
-import type { PaletteAliasToRgbaString } from '../types';
 import { themeBase } from '../themes/themeBase';
 import { themeFrontier } from '../themes/themeFrontier';
+import type { PaletteAliasToRgbaString } from '../types';
+
 import { paletteValueToRgbaString } from './paletteValueToRgbaString';
 
 /**

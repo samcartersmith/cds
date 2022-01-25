@@ -1,11 +1,13 @@
-import React, { useMemo, memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
-import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
 import { useIconSize } from '@cbhq/cds-common';
-import { usePalette } from '../hooks/usePalette';
-import { getTransform } from './dotStyles';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
+
 import { useLayout } from '../hooks/useLayout';
+import { usePalette } from '../hooks/usePalette';
+
+import { getTransform } from './dotStyles';
 
 export const DotStatusColor = memo(
   ({ variant, pin, size = 's', children, ...props }: DotBaseProps) => {

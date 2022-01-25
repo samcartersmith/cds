@@ -1,8 +1,8 @@
-import { render, fireEvent } from '@testing-library/react-native';
-
+import { fireEvent, render } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
-import { DotSymbol } from '../DotSymbol';
+
 import { Icon } from '../../icons/Icon';
+import { DotSymbol } from '../DotSymbol';
 
 const DOTSYMBOL_TESTID = 'dot-symbol-test';
 

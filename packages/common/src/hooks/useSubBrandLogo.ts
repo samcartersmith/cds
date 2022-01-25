@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
+
+import { black, blue, white } from './useLogo';
 import { useSpectrumConditional } from './useSpectrumConditional';
-import { blue, black, white } from './useLogo';
 
 type SubBrandLogoData = {
   viewBox: string;

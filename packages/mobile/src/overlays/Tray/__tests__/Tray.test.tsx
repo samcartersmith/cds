@@ -1,9 +1,10 @@
-import { render } from '@testing-library/react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { render } from '@testing-library/react-native';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
-import { Tray } from '../Tray';
-import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
+
 import { TextBody } from '../../../typography';
+import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
+import { Tray } from '../Tray';
 
 const titleText = 'Test Title';
 

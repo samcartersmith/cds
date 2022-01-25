@@ -1,8 +1,10 @@
-import { useCallback, useMemo, cloneElement, useRef } from 'react';
+import { cloneElement, useCallback, useMemo, useRef } from 'react';
 import { generateRandomId } from '@cbhq/cds-utils';
+
+import type { AlertRefBaseProps, ModalRefBaseProps } from '../types';
+
 import { usePortal } from './usePortal';
 import { PortalNode } from './usePortalState';
-import type { ModalRefBaseProps, AlertRefBaseProps } from '../types';
 
 export const useOverlay = (idPrefix?: string) => {
   const { addNode, removeNode } = usePortal();

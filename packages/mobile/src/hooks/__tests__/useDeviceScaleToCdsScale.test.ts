@@ -1,5 +1,5 @@
-import { entries } from '@cbhq/cds-utils';
 import { renderHook } from '@testing-library/react-hooks';
+import { entries } from '@cbhq/cds-utils';
 
 import { deviceScaleMap, useDeviceScaleToCdsScale } from '../useDeviceScaleToCdsScale';
 

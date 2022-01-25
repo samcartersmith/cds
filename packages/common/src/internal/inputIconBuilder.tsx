@@ -1,4 +1,5 @@
 import React, { ComponentType } from 'react';
+
 import type {
   BoxBaseProps,
   IconBaseProps,

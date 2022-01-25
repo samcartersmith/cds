@@ -1,6 +1,7 @@
-import { ScaleDensity } from '../types/Scale';
-import { gutter } from './sizing';
 import { CellSpacingConfig } from '../types/CellBaseProps';
+import { ScaleDensity } from '../types/Scale';
+
+import { gutter } from './sizing';
 
 export const mediaSize: Record<ScaleDensity, number> = {
   dense: 24,

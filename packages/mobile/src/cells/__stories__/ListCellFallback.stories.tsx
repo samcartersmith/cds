@@ -1,9 +1,8 @@
 import React from 'react';
 import { listCellFallbackBuilder } from '@cbhq/cds-common/internal/listCellFallbackBuilder';
 
-import { ListCellFallback } from '../ListCellFallback';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { ListCellFallback } from '../ListCellFallback';
 
 const { Fallbacks } = listCellFallbackBuilder(ListCellFallback);
 

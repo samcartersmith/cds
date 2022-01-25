@@ -1,7 +1,7 @@
+import { act, renderHook } from '@testing-library/react-hooks';
 import { emptyObject } from '@cbhq/cds-utils';
-import { renderHook, act } from '@testing-library/react-hooks';
-import { defaultFeatureFlags } from '../FeatureFlagContext';
 
+import { defaultFeatureFlags } from '../FeatureFlagContext';
 import { FeatureFlagProvider, getFrontierFlags } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';

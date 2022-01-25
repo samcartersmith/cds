@@ -1,5 +1,5 @@
-import { renderHook } from '@testing-library/react-hooks';
 import { AppStateStatus } from 'react-native';
+import { renderHook } from '@testing-library/react-hooks';
 
 import { useAppState } from '../useAppState';
 

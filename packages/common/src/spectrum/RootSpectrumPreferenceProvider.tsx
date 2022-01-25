@@ -1,5 +1,6 @@
 import React, { memo, useContext, useState } from 'react';
 import { isProduction } from '@cbhq/cds-utils';
+
 import { RootSpectrumPreference } from '../types';
 
 import { RootSpectrumPreferenceContext, RootSpectrumPreferenceUpdaterContext } from './context';

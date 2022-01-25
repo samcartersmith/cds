@@ -1,9 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { PaletteConfigDynamicProvider } from '../PaletteConfigDynamicProvider';
-import { themeBase } from '../../themes/themeBase';
+
 // import { usePaletteConfig } from '../usePaletteConfig';
 import { useThemeConfig } from '../../system/useThemeConfig';
+import { themeBase } from '../../themes/themeBase';
 import { PartialPaletteConfig } from '../../types';
+import { PaletteConfigDynamicProvider } from '../PaletteConfigDynamicProvider';
 
 // TODO: Uncomment once usePaletteConfig is migrated to return useThemeConfig()
 // function renderUsePalette(config: PartialPaletteConfig) {

@@ -1,15 +1,15 @@
 // Simplified version of https://github.com/tomzaku/react-native-shimmer-placeholder/blob/master/lib/ShimmerPlaceholder.js
 
 import React, { memo, useEffect, useMemo, useRef } from 'react';
-
+import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import { FallbackBaseProps } from '@cbhq/cds-common';
 import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+
+import { paletteValueToRgbaString } from '../utils/palette';
 
 import { Box, BoxProps } from './Box';
-import { paletteValueToRgbaString } from '../utils/palette';
 
 export type FallbackProps = FallbackBaseProps & Omit<BoxProps, 'borderRadius' | 'height' | 'width'>;
 

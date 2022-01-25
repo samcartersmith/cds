@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
-import type { ButtonBaseProps, ToastBaseProps } from '../types';
+
 import { useToast } from '../overlays/useToast';
+import type { ButtonBaseProps, ToastBaseProps } from '../types';
 
 // eslint-disable-next-line no-console
 const onActionPressConsole = () => console.log('action pressed');

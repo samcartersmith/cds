@@ -5,10 +5,12 @@ import {
   ChartHoverDateRefProps,
   SparklineInteractiveBaseProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
-import { useChartContext } from './ChartProvider';
-import { useChartConstants } from './useChartConstants';
+
 import { usePalette } from '../../hooks/usePalette';
 import { useTypographyStyles } from '../../typography';
+
+import { useChartContext } from './ChartProvider';
+import { useChartConstants } from './useChartConstants';
 
 type Props<Period extends string> = Pick<
   SparklineInteractiveBaseProps<Period>,

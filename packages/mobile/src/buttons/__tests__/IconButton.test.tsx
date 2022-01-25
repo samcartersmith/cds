@@ -1,7 +1,7 @@
 /* eslint-disable react-native-a11y/has-accessibility-hint */
 
-import { render, fireEvent } from '@testing-library/react-native';
 import { Animated, Pressable } from 'react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { debounce } from '../../utils/debounce';
 import { IconButton } from '../IconButton';

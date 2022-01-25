@@ -1,8 +1,9 @@
-import { ReactNode, ReactElement, MouseEventHandler } from 'react';
+import { MouseEventHandler, ReactElement, ReactNode } from 'react';
+
 import { PositionStyles } from './BoxBaseProps';
-import { SharedProps } from './SharedProps';
 import { ButtonBaseProps } from './ButtonBaseProps';
 import { NoopFn } from './Helpers';
+import { SharedProps } from './SharedProps';
 
 export type ModalRenderChildren = (props: { closeModal: NoopFn }) => JSX.Element;
 

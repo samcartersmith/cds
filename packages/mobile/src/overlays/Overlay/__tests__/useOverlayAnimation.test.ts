@@ -1,6 +1,6 @@
-import { AnyObject } from '@cbhq/cds-utils';
-import { renderHook } from '@testing-library/react-hooks';
 import { Animated } from 'react-native';
+import { renderHook } from '@testing-library/react-hooks';
+import { AnyObject } from '@cbhq/cds-utils';
 
 import { useOverlayAnimation } from '../useOverlayAnimation';
 

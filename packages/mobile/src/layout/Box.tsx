@@ -1,19 +1,18 @@
 import React, {
-  useMemo,
-  memo,
-  useState,
-  useEffect,
   Dispatch,
-  SetStateAction,
   forwardRef,
+  memo,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useState,
 } from 'react';
-
+import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 import { BoxBaseProps, ElevationLevels, ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import {
-  ElevationProvider,
   ElevationChildrenProvider,
+  ElevationProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
-import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useBorderStyles } from '../hooks/useBorderStyles';
 import { useElevationStyles } from '../hooks/useElevationStyles';
@@ -21,7 +20,8 @@ import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { usePalette } from '../hooks/usePalette';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
-import { OmitStyle, DangerouslySetStyle } from '../types';
+import { DangerouslySetStyle, OmitStyle } from '../types';
+
 import { OverflowGradient } from './OverflowGradient';
 
 export type BoxProps = {

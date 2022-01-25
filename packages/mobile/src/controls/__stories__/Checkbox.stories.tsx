@@ -2,12 +2,11 @@
 import React from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
-import { Checkbox } from '../Checkbox';
-import { CheckboxGroup } from '../CheckboxGroup';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useCheckboxGroupState } from '../../hooks/useCheckboxGroupState';
 import { TextHeadline } from '../../typography/TextHeadline';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Checkbox } from '../Checkbox';
+import { CheckboxGroup } from '../CheckboxGroup';
 
 const CheckboxScreen = () => {
   return (

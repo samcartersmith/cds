@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import { useOverlay } from './useOverlay';
 
 // TODO: change the API to open/close instead of openModal/closeModal

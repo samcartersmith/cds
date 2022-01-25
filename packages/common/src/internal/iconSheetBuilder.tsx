@@ -1,7 +1,9 @@
 import React from 'react';
 import { entries } from '@cbhq/cds-utils';
+
 import type { BoxBaseProps, IconBaseProps, StackBaseProps, ThemeProviderBaseProps } from '../types';
 import flattenNodes from '../utils/flattenNodes';
+
 import { unicodeMap } from './data/iconData';
 
 export type CreateIconSheetParams = {

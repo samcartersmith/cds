@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-
 import { Animated, GestureResponderEvent } from 'react-native';
 
 export function usePressAnimation(

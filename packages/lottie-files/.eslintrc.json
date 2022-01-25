@@ -1,5 +1,5 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.js"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
@@ -12,9 +12,6 @@
           }
         ],
         "no-process-env": "error"
-      },
-      "parserOptions": {
-        "project": "../../tsconfig.eslint.json"
       }
     }
   ]

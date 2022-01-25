@@ -1,5 +1,5 @@
-import { PinningDirection } from '@cbhq/cds-common';
 import { StyleSheet } from 'react-native';
+import { PinningDirection } from '@cbhq/cds-common';
 
 const styles = StyleSheet.create({
   top: {

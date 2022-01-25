@@ -1,5 +1,5 @@
-import { renderHook } from '@testing-library/react-hooks';
 import { StatusBar as RNStatusBar } from 'react-native';
+import { renderHook } from '@testing-library/react-hooks';
 
 import { useStatusBarStyle, useStatusBarUpdater } from '../StatusBar';
 import { ThemeProvider } from '../ThemeProvider';

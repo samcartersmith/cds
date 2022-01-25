@@ -2,8 +2,8 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { SystemProvider } from '../../SystemProvider';
 import {
-  ElevationProvider,
   ElevationChildrenProvider,
+  ElevationProvider,
   useElevationChildOverrides,
 } from '../ElevationProvider';
 

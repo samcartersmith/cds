@@ -1,13 +1,11 @@
 import React from 'react';
 import { contentCellBuilder } from '@cbhq/cds-common/internal/contentCellBuilder';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { Box } from '../../layout/Box';
-
-import { ContentCell } from '../ContentCell';
 import { CellMedia } from '../CellMedia';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { ContentCell } from '../ContentCell';
 
 const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = contentCellBuilder(
   ContentCell,

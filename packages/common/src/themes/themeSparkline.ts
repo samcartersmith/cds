@@ -3,9 +3,9 @@
  * Generated from scripts/codegen/main.ts
  */
 
+import { mergeThemeConfigs } from '../system/mergeThemeConfigs';
 import { ThemeConfig } from '../types';
 
-import { mergeThemeConfigs } from '../system/mergeThemeConfigs';
 import { themeBase } from './themeBase';
 
 const palette = { line: 'gray20' } as const;

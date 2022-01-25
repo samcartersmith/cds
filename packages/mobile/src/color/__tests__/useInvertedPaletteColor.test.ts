@@ -1,5 +1,5 @@
-import { PaletteAlias, Spectrum } from '@cbhq/cds-common';
 import { renderHook } from '@testing-library/react-hooks';
+import { PaletteAlias, Spectrum } from '@cbhq/cds-common';
 
 import { DarkModeProvider } from '../../system';
 import { useInvertedPaletteColor } from '../useInvertedPaletteColor';

@@ -1,10 +1,11 @@
 import React from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextBody } from '../../typography/TextBody';
-import { Group, RenderGroupItem } from '../Group';
 import { Box, BoxProps } from '../Box';
 import { Divider } from '../Divider';
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Group, RenderGroupItem } from '../Group';
 
 function createCustomDivider(wrapperProps?: BoxProps, dividerProps?: BoxProps) {
   function CustomDivider() {

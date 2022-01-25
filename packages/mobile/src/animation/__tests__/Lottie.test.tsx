@@ -1,6 +1,6 @@
-import { nux } from '@cbhq/cds-lottie-files/nux';
 import { render } from '@testing-library/react-native';
 import LottieView from 'lottie-react-native';
+import { nux } from '@cbhq/cds-lottie-files/nux';
 
 import { Lottie } from '../Lottie';
 

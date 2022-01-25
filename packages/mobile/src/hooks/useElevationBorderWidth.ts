@@ -1,5 +1,5 @@
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { Platform } from 'react-native';
+import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 
 export const useElevationBorderWidth = (): 'card' | undefined => {
   return Platform.select({

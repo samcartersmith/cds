@@ -1,5 +1,5 @@
-import { fireEvent, render } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { Link } from '../Link';
 

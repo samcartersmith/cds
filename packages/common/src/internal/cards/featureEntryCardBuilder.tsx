@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { GroupBaseProps, RenderGroupItem } from '../../types';
 import { storyBuilder } from '../utils/storyBuilder';
 

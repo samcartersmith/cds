@@ -1,6 +1,6 @@
+import { Platform } from 'react-native';
 import { PaletteOrTransparentColor } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import { Platform } from 'react-native';
 
 import { usePaletteOrTransparentColor } from './usePaletteOrTransparentColor';
 

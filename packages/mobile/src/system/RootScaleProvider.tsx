@@ -1,11 +1,12 @@
+import React, { memo } from 'react';
+import { RootScaleContext } from '@cbhq/cds-common/scale/context';
 import {
   RootScalePreferenceProvider,
   RootScalePreferenceProviderProps,
 } from '@cbhq/cds-common/scale/RootScalePreferenceProvider';
-import React, { memo } from 'react';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
-import { RootScaleContext } from '@cbhq/cds-common/scale/context';
 import { useRootScalePreference } from '@cbhq/cds-common/scale/useRootScalePreference';
+
 import { useDeviceScaleToCdsScale } from '../hooks/useDeviceScaleToCdsScale';
 
 const LocalScaleProvider = ({ children }: { children: React.ReactNode }) => {

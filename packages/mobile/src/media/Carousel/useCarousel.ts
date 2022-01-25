@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-
 import { noop } from '@cbhq/cds-utils';
 
 import { CarouselRef } from './types';

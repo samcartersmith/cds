@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from '
 import { Animated, StyleSheet, View } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
-import { emptyArray, noop } from '@cbhq/cds-utils';
+import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import {
   ChartDataPoint,
   ChartFormatAmount,
@@ -10,16 +10,21 @@ import {
   ChartGetMarker,
   ChartScrubParams,
 } from '@cbhq/cds-common/types';
-import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import {
   ChartHoverDateRefProps,
   SparklineInteractiveBaseProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { minMax } from '@cbhq/cds-common/utils/chart';
+import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
 import { chartFallbackPositive } from '@cbhq/cds-lottie-files';
+import { emptyArray, noop } from '@cbhq/cds-utils';
+
+import { Lottie } from '../../animation';
+import { Box } from '../../layout';
+import { ThemeProvider } from '../../system';
 
 import { ChartAnimatedPath } from './ChartAnimatedPath';
+import { ChartHoverDate } from './ChartHoverDate';
 import { ChartLineVertical } from './ChartLineVertical';
 import { ChartMarkerDates } from './ChartMarkerDates';
 import { ChartMinMax } from './ChartMinMax';
@@ -28,10 +33,6 @@ import { ChartPeriodSelector } from './ChartPeriodSelector';
 import { ChartProvider, useChartContext } from './ChartProvider';
 import { useChartConstants } from './useChartConstants';
 import { useUpdateChartHeader } from './useUpdateChartHeader';
-import { ThemeProvider } from '../../system';
-import { Lottie } from '../../animation';
-import { ChartHoverDate } from './ChartHoverDate';
-import { Box } from '../../layout';
 
 // We override line palette since default line color is a bit too dark.
 // Changing to gray20 more closely matches the line color currently used in production

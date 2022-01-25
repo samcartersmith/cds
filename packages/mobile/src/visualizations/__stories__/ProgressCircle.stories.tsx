@@ -1,12 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
-
 import { ProgressCircle } from '../ProgressCircle';
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const ProgressBarScreen = () => {
   return (

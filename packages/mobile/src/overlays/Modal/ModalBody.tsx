@@ -2,9 +2,9 @@ import React, { useMemo } from 'react';
 import { KeyboardAvoidingView, ScrollView, ScrollViewProps } from 'react-native';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 
-import { Box } from '../../layout';
-import { useLayout } from '../../hooks/useLayout';
 import { useContentSize } from '../../hooks/useContentSize';
+import { useLayout } from '../../hooks/useLayout';
+import { Box } from '../../layout';
 
 type ModalBodyProps = ScrollViewProps;
 

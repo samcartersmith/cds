@@ -1,13 +1,13 @@
 import React, { memo, useRef } from 'react';
-
+import Svg, { Defs, G, Path } from 'react-native-svg';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { SparklineBaseProps } from '@cbhq/cds-common/types';
-import Svg, { Defs, G, Path } from 'react-native-svg';
-
+import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
 import { generateRandomId } from '@cbhq/cds-utils';
-import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
+
 import { useAccessibleForeground } from '../color/useAccessibleForeground';
+
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 
 export const Sparkline = memo(

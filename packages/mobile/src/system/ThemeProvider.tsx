@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 
 export const ThemeProvider = SystemProvider; // This is necessary for docs codegen

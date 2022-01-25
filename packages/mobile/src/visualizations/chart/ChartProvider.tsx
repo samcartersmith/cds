@@ -2,6 +2,7 @@ import React, { createContext, memo, useCallback, useContext, useRef, useState }
 import { Animated } from 'react-native';
 import { Value } from 'react-native-reanimated';
 import { noop } from '@cbhq/cds-utils';
+
 import { useOpacityAnimation } from './useOpacityAnimation';
 
 type ChartProviderProps = { children: React.ReactNode; compact?: boolean };

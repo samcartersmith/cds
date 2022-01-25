@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { isProduction } from '@cbhq/cds-utils';
+
 import { PortalContext } from './PortalContext';
 
 export const usePortal = () => {

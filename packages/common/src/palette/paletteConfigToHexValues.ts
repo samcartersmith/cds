@@ -1,6 +1,7 @@
 import { entries } from '@cbhq/cds-utils';
 
 import type { PaletteAlias, PaletteConfigToHexValues } from '../types';
+
 import { paletteValueToHex } from './paletteValueToHex';
 
 /**

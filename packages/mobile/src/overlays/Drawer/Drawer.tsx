@@ -1,30 +1,32 @@
 import React, {
-  useRef,
-  useCallback,
-  memo,
-  useEffect,
   forwardRef,
-  useImperativeHandle,
+  memo,
   PropsWithChildren,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
   useMemo,
+  useRef,
 } from 'react';
-import { StyleSheet, Modal, Animated, ModalProps, useWindowDimensions, View } from 'react-native';
-import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
+import { Animated, Modal, ModalProps, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { useSpectrum } from '@cbhq/cds-common';
 import {
+  horizontalDrawerPercentageOfView,
   MAX_OVER_DRAG,
   verticalDrawerPercentageOfView,
-  horizontalDrawerPercentageOfView,
 } from '@cbhq/cds-common/animation/drawer';
+import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
 import { emptyObject } from '@cbhq/cds-utils';
-import { useSpectrum } from '@cbhq/cds-common';
-import { DrawerStatusBar } from './DrawerStatusBar';
+
 import { useDrawerAnimation } from '../../animation/useDrawerAnimation';
-import { useDrawerSpacing } from '../../hooks/useDrawerSpacing';
 import { useDrawerPanResponder } from '../../hooks/useDrawerPanResponder';
-import { HandleBar } from '../HandleBar/HandleBar';
+import { useDrawerSpacing } from '../../hooks/useDrawerSpacing';
 import { Box } from '../../layout/Box';
-import { useOverlayAnimation } from '../Overlay/useOverlayAnimation';
+import { HandleBar } from '../HandleBar/HandleBar';
 import { Overlay } from '../Overlay/Overlay';
+import { useOverlayAnimation } from '../Overlay/useOverlayAnimation';
+
+import { DrawerStatusBar } from './DrawerStatusBar';
 
 export type DrawerProps = DrawerBaseProps & Omit<ModalProps, 'onRequestClose' | 'children'>;
 

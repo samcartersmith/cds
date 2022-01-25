@@ -1,23 +1,21 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { prices, pricesWithScalingFactor } from '@cbhq/cds-common/internal/data/prices';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
+import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 
 import { Cell } from '../../cells/Cell';
 import { CellMedia } from '../../cells/CellMedia';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { TextBody } from '../../typography/TextBody';
 import { TextHeadline } from '../../typography/TextHeadline';
-
 import { Sparkline } from '../Sparkline';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { SparklineArea } from '../SparklineArea';
 
 type SparklineExampleProps = {

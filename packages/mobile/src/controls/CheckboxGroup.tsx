@@ -1,9 +1,8 @@
 import React, { Children, cloneElement, forwardRef, isValidElement, memo } from 'react';
-
+import { View, ViewProps } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
-import { View, ViewProps } from 'react-native';
 
 import { CheckboxProps } from './Checkbox';
 

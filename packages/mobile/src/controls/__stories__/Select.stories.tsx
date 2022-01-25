@@ -1,15 +1,13 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
-import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/internal/selectBuilder';
-
-import { Tray } from '../../overlays/Tray/Tray';
-
-import { Select } from '../Select';
-import { SelectOption } from '../SelectOption';
+import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
+import { Tray } from '../../overlays/Tray/Tray';
+import { Select } from '../Select';
+import { SelectOption } from '../SelectOption';
 import { TextInput } from '../TextInput';
 
 const longListOfOptions = prices.slice(0, 10).map((option) => {

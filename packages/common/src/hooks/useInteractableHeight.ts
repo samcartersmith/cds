@@ -1,8 +1,8 @@
-import { useFeatureFlag } from '../system/useFeatureFlag';
-import { useScaleConditional } from '../scale/useScaleConditional';
-import { defaultHeight, compactHeight } from '../tokens/interactable';
-import { interactableHeight } from '../tokens/interactableHeight';
 import { useScale } from '../scale/useScale';
+import { useScaleConditional } from '../scale/useScaleConditional';
+import { useFeatureFlag } from '../system/useFeatureFlag';
+import { compactHeight, defaultHeight } from '../tokens/interactable';
+import { interactableHeight } from '../tokens/interactableHeight';
 
 export function useInteractableHeight(compact?: boolean): number {
   const scale = useScale();

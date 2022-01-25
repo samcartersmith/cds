@@ -1,4 +1,5 @@
 import { LottieSource } from '../types';
+
 import { getLottieFrameToMs, getLottieMarkers } from './lottieUtils';
 
 describe('lottieUtils', () => {

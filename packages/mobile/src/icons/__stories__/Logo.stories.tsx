@@ -1,16 +1,14 @@
 import React from 'react';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
-
 import { LogoMark } from '../LogoMark';
 import { LogoWordmark } from '../LogoWordmark';
 import { SubBrandLogoMark } from '../SubBrandLogoMark';
 import { SubBrandLogoWordmark } from '../SubBrandLogoWordmark';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const LogoScreen = () => {
   return (

@@ -1,11 +1,12 @@
+import { illustrationDimensions } from '../tokens/illustrations';
+
 import {
   IllustrationHeroSquareNames,
-  IllustrationSpotRectangleNames,
   IllustrationPictogramNames,
+  IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
 } from './IllustrationNames';
 import { SharedProps } from './SharedProps';
-import { illustrationDimensions } from '../tokens/illustrations';
 
 export type IllustrationNames =
   | IllustrationHeroSquareNames

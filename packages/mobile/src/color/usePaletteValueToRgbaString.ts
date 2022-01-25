@@ -1,5 +1,4 @@
 import { useCallback, useMemo } from 'react';
-
 import { PaletteValue, PaletteValueToRgbaStringFn } from '@cbhq/cds-common';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 

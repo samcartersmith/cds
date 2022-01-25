@@ -10,6 +10,7 @@ import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animat
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { ScrollToFn } from '../../hooks/useScrollTo';
+
 import type { CarouselDismissItemParams, CarouselItemId } from './types';
 
 const opacityConfig = convertMotionConfig(animateOpacityConfig);

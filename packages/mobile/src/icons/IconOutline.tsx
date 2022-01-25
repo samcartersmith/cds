@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
-
+import { Animated, StyleSheet, Text, TextStyle } from 'react-native';
 import { IconPixelSize } from '@cbhq/cds-common';
-import { StyleSheet, TextStyle, Animated, Text } from 'react-native';
 
 import { iconGlyphMap } from './iconGlyphMap';
 

@@ -2,9 +2,8 @@
 import React from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
-import { Switch } from '../Switch';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Switch } from '../Switch';
 
 const SwitchScreen = () => {
   return (

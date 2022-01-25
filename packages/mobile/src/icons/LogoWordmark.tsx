@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
-
-import { useLogoWordmark, LogoWordmarkParams } from '@cbhq/cds-common/hooks/useLogo';
 import Svg, { Path } from 'react-native-svg';
+import { LogoWordmarkParams, useLogoWordmark } from '@cbhq/cds-common/hooks/useLogo';
 
 export const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
   const { viewBox, path, color } = useLogoWordmark({ foreground });

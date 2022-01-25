@@ -1,5 +1,6 @@
-import { SharedProps } from '@cbhq/cds-common';
 import React, { memo } from 'react';
+import { SharedProps } from '@cbhq/cds-common';
+
 import { HStack } from '../layout/HStack';
 
 export type CardFooterProps = {

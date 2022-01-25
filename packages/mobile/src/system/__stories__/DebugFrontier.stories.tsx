@@ -1,15 +1,13 @@
 import React, { memo, useMemo } from 'react';
-import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
 import { FeatureFlag } from '@cbhq/cds-common/system/FeatureFlagContext';
+import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
 import { entries } from '@cbhq/cds-utils';
 
 import { ListCell } from '../../cells/ListCell';
 import { Switch } from '../../controls/Switch';
-
+import { ExampleScreen } from '../../examples/ExampleScreen';
 import { FeatureFlagLocalStorageCallback, frontierFeaturesOn } from '../FeatureFlagContext';
 import { useFeatureFlags } from '../useFeatureFlags';
-
-import { ExampleScreen } from '../../examples/ExampleScreen';
 
 const descriptions: { [key in FeatureFlag]?: string } = {
   frontierTypography: 'Adjusts size of Display 2',

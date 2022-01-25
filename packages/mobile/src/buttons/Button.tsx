@@ -1,14 +1,13 @@
 import React, { memo, useMemo } from 'react';
-
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { ButtonBaseProps } from '@cbhq/cds-common';
-import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
-import { StyleSheet, ActivityIndicator, View } from 'react-native';
+import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 
-import { useFlushStyles } from '../hooks/useFlushStyles';
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
+import { useFlushStyles } from '../hooks/useFlushStyles';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';

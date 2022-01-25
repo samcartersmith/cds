@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box } from '../../layout/Box';
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Box } from '../../layout/Box';
 import { TextProps } from '../createText';
 
 const TextExamplesScreen = ({ component: Text }: { component: React.ComponentType<TextProps> }) => {

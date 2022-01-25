@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 
-import { TextInput, TextInputProps } from '../TextInput';
-import { InputIcon } from '../InputIcon';
-import { InputIconButton } from '../InputIconButton';
-
 import { Button } from '../../buttons/Button';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { TextBody } from '../../typography/TextBody';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { InputIcon } from '../InputIcon';
+import { InputIconButton } from '../InputIconButton';
+import { TextInput, TextInputProps } from '../TextInput';
 
 const MockTextInput = ({ ...props }: TextInputProps) => {
   const [text, onChangeText] = useState('');

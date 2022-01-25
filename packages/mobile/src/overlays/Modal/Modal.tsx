@@ -1,18 +1,19 @@
 import React, {
-  memo,
   forwardRef,
-  useImperativeHandle,
-  useEffect,
+  memo,
   useCallback,
+  useEffect,
+  useImperativeHandle,
   useMemo,
 } from 'react';
 import { Modal as RNModal, ModalProps as RNModalProps, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
+import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types';
+
+import { VStack } from '../../layout';
 
 import { useModalAnimation } from './useModalAnimation';
-import { VStack } from '../../layout';
 
 export type ModalProps = ModalBaseProps &
   Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose'>;

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { TextBody } from '../../typography';
-
-import { Box } from '../Box';
-import { Spacer } from '../Spacer';
-import { HStack } from '../HStack';
-import { VStack } from '../VStack';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { TextBody } from '../../typography';
+import { Box } from '../Box';
+import { HStack } from '../HStack';
+import { Spacer } from '../Spacer';
+import { VStack } from '../VStack';
 
 const SpacerScreen = () => {
   return (

@@ -1,5 +1,5 @@
-import { LottieBaseProps, SharedProps } from '@cbhq/cds-common';
 import { Animated, ViewStyle } from 'react-native';
+import { LottieBaseProps, SharedProps } from '@cbhq/cds-common';
 
 import { DangerouslySetStyle } from '../types';
 

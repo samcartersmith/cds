@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { noop } from '@cbhq/cds-utils';
+
 import { FeatureFlagDispatcherContext } from './FeatureFlagContext';
 
 export const useFeatureFlagDispatcher = () => {

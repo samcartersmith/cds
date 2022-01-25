@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { VisualizationContainerBaseProps } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
 import { useVisualizationDimensions } from '@cbhq/cds-common/visualizations/useVisualizationDimensions';
+
 import { useLayout } from '../hooks/useLayout';
 import { Box } from '../layout';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { TextLegal } from '../TextLegal';
 
 import TextExamplesScreen from './TextExamples';

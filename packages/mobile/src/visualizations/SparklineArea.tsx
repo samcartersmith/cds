@@ -1,6 +1,6 @@
-import React, { memo, forwardRef } from 'react';
-import { Path } from 'react-native-svg';
+import React, { forwardRef, memo } from 'react';
 import { TextInput } from 'react-native';
+import { Path } from 'react-native-svg';
 import { SparklineAreaBaseProps } from '@cbhq/cds-common';
 
 export const SparklineArea = memo(

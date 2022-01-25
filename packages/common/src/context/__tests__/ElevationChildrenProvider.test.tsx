@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { defaultPalette } from '../../palette/constants';
 import { usePaletteConfig } from '../../palette/usePaletteConfig';
 import { SystemProvider } from '../../SystemProvider';
-import { ElevationProvider, ElevationChildrenProvider } from '../ElevationProvider';
+import { ElevationChildrenProvider, ElevationProvider } from '../ElevationProvider';
 
 describe('ElevationChildrenProvider', () => {
   /** Light mode */

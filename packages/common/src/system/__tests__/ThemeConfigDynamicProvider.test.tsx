@@ -1,7 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { ThemeConfigDynamicProvider } from '../ThemeConfigDynamicProvider';
+
 import { themeBase } from '../../themes/themeBase';
 import { PartialThemeConfig } from '../../types';
+import { ThemeConfigDynamicProvider } from '../ThemeConfigDynamicProvider';
 import { useThemeConfig } from '../useThemeConfig';
 
 const palette = { primary: ['orange60', 0.4] } as const;

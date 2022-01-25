@@ -1,5 +1,5 @@
-import { fireEvent, render } from '@testing-library/react-native';
 import { Pressable } from 'react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { iconGlyphMap } from '../../icons/iconGlyphMap';
 import { Checkbox } from '../Checkbox';

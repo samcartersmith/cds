@@ -1,15 +1,16 @@
-import React, { memo, useCallback, useEffect, forwardRef, useImperativeHandle } from 'react';
-import { ToastBaseProps, ToastRefBaseProps, ToastHandleClose } from '@cbhq/cds-common';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import React, { forwardRef, memo, useCallback, useEffect, useImperativeHandle } from 'react';
+import { ToastBaseProps, ToastHandleClose, ToastRefBaseProps } from '@cbhq/cds-common';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { HStack, Box } from '../layout';
-import { TextHeadline } from '../typography';
-import { ThemeProvider } from '../system';
-import { useToastAnimation } from './useToastAnimation';
-import { useToastPanResponder } from './useToastPanResponder';
 import { Button } from '../buttons';
 import { useSpacingScale } from '../hooks/useSpacingScale';
+import { Box, HStack } from '../layout';
+import { ThemeProvider } from '../system';
+import { TextHeadline } from '../typography';
+
+import { useToastAnimation } from './useToastAnimation';
+import { useToastPanResponder } from './useToastPanResponder';
 
 export type ToastProps = ToastBaseProps;
 
