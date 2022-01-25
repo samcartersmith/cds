@@ -34,6 +34,34 @@ const frontierSpectrumPalette = {
   },
 } as const;
 
+const elevation1Palette = {
+  dark: { background: 'gray5', transparent: 'gray5' },
+} as const;
+
+const elevation1ChildrenPalette = {
+  dark: { secondary: ['gray5', 0] },
+} as const;
+
+const elevation2Palette = {
+  dark: { background: 'gray10', transparent: 'gray10' },
+} as const;
+
+const elevation2ChildrenPalette = {
+  dark: { line: ['gray60', 0.66], secondary: ['gray10', 0] },
+} as const;
+
+const overlayPalette = {
+  light: { backgroundOverlay: ['gray80', 0.33] },
+  dark: { backgroundOverlay: ['gray0', 0.5] },
+} as const;
+
+const sparklinePalette = { line: 'gray20' } as const;
+
+const switchControlPalette = {
+  light: { background: 'gray0', backgroundAlternate: 'gray20' },
+  dark: { background: 'gray100', backgroundAlternate: 'gray20' },
+} as const;
+
 export const paletteForegrounds = [
   'foreground',
   'foregroundMuted',
@@ -115,9 +143,18 @@ export const Palette = {
   cssBorderColor,
   cssColor,
   cssVariables,
-  defaultPalette,
-  switchPalette,
-  frontierSpectrumPalette,
+  palettes: {
+    defaultPalette,
+    switchPalette,
+    frontierSpectrumPalette,
+    elevation1Palette,
+    elevation1ChildrenPalette,
+    elevation2Palette,
+    elevation2ChildrenPalette,
+    overlayPalette,
+    sparklinePalette,
+    switchControlPalette,
+  },
   paletteForegrounds,
   paletteBackgrounds,
   paletteBorders,

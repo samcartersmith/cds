@@ -139,9 +139,7 @@ async function codegen() {
       {
         dest: 'common/palette/constants.ts',
         data: {
-          defaultPalette: Palette.defaultPalette,
-          switchPalette: Palette.switchPalette,
-          frontierSpectrumPalette: Palette.frontierSpectrumPalette,
+          ...Palette.palettes,
           paletteForegrounds: Palette.paletteForegrounds,
           paletteBackgrounds: Palette.paletteBackgrounds,
           paletteBorders: Palette.paletteBorders,
