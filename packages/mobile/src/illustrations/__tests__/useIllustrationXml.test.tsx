@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { entries } from '@cbhq/cds-utils';
 
-import { useIllustrationXml } from '../useIllustrationXml';
-import { illustrationSpectrumMap } from '../illustrationSpectrumMap';
 import { DarkModeProvider } from '../../system/ThemeProvider';
+import { illustrationSpectrumMap } from '../illustrationSpectrumMap';
+import { useIllustrationXml } from '../useIllustrationXml';
 
 describe('useIllustrationXml', () => {
   it('light spectrum = returns correct svg xml for every illustration', () => {

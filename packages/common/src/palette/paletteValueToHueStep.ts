@@ -1,4 +1,5 @@
 import type { PaletteValue, SpectrumHueStep } from '../types';
+
 import { paletteValueToHueStepTuple } from './paletteValueToHueStepTuple';
 
 /**

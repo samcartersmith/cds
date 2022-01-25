@@ -3,11 +3,9 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import type { DrawerBaseProps } from '@cbhq/cds-common/types';
 
 import { Button } from '../../buttons/Button';
-import { VStack } from '../../layout/VStack';
-
-import { Drawer } from '../Drawer/Drawer';
-
 import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
+import { VStack } from '../../layout/VStack';
+import { Drawer } from '../Drawer/Drawer';
 
 const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
   const [isVisible, { toggleOn, toggleOff }] = useToggler(false);

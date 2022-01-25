@@ -1,7 +1,7 @@
-import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
 import { useEffect, useMemo } from 'react';
-
 import { inputBorderWidth } from '@cbhq/cds-common/tokens/input';
+import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
+
 import { useInputBorderAnimation } from './useInputBorderAnimation';
 
 /**

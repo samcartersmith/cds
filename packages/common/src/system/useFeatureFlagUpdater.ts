@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
-import { FeatureFlagsPartial, FeatureFlagLocalStorageCallback } from './FeatureFlagContext';
+
+import { FeatureFlagLocalStorageCallback, FeatureFlagsPartial } from './FeatureFlagContext';
 import { useFeatureFlagDispatcher } from './useFeatureFlagDispatcher';
 
 export const useFeatureFlagUpdater = () => {

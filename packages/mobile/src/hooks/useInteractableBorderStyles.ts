@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-
-import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/tokens/border';
-import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
 import { Animated, Falsy, ViewStyle } from 'react-native';
+import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
+import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/tokens/border';
 
 import type { InteractableProps } from '../system/Interactable';
+
 import { useElevationBorderColor } from './useElevationBorderColor';
 import { usePaletteOrTransparentColor } from './usePaletteOrTransparentColor';
 

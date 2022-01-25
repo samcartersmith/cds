@@ -1,6 +1,7 @@
 import { PaletteAlias } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
+
 import { paletteValueToRgbaString } from '../utils/palette';
 
 export function useInvertedPaletteColor(alias: PaletteAlias) {

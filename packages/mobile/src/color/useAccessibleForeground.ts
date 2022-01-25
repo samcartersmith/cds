@@ -1,5 +1,4 @@
 import { useCallback, useMemo } from 'react';
-
 import type { AccessibleForegroundFn, AccessibleForegroundParams } from '@cbhq/cds-common';
 import { getAccessibleForeground } from '@cbhq/cds-common/color/getAccessibleForeground';
 import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';

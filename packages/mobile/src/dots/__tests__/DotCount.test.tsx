@@ -1,9 +1,9 @@
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { render, fireEvent } from '@testing-library/react-native';
-
+import { fireEvent, render } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
-import { DotCount } from '../DotCount';
+import { borderWidth } from '@cbhq/cds-common/tokens/border';
+
 import { Icon } from '../../icons/Icon';
+import { DotCount } from '../DotCount';
 
 const DOTCOUNT_TESTID = 'dot-count-test';
 

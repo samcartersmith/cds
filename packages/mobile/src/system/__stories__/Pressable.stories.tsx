@@ -1,12 +1,10 @@
 import React from 'react';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { TextBody } from '../../typography/TextBody';
-
 import { Pressable } from '../Pressable';
 import { PressableOpacity } from '../PressableOpacity';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const PressableScreen = () => {
   return (

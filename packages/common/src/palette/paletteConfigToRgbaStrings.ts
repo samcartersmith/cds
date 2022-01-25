@@ -1,6 +1,7 @@
 import { entries } from '@cbhq/cds-utils';
 
 import type { PaletteAlias, PaletteConfigToRgbaStrings } from '../types';
+
 import { paletteValueToRgbaString } from './paletteValueToRgbaString';
 
 /**

@@ -1,4 +1,5 @@
 import type { A11yColorUsage } from '../types';
+
 import { getContrastRatio } from './getContrastRatio';
 /**
  * Contrast ratios can range from 1 to 21 (commonly written 1:1 to 21:1).

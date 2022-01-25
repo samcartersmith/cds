@@ -1,11 +1,10 @@
 import React from 'react';
-import { svgs, assets } from '@cbhq/cds-common/internal/data/assets';
+import { assets, svgs } from '@cbhq/cds-common/internal/data/assets';
 import { entries } from '@cbhq/cds-utils';
 
-import { HStack } from '../../layout/HStack';
-import { RemoteImage, getSource } from '../RemoteImage';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { HStack } from '../../layout/HStack';
+import { getSource, RemoteImage } from '../RemoteImage';
 
 const sharedProps = {
   resizeMode: 'cover',

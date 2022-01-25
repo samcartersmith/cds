@@ -4,8 +4,7 @@
   regular, one-dimensional array while ensuring element and fragment keys are preserved, unique, and stable between renders.
 */
 
-import { ReactNode, ReactElement, ReactChild, Children, isValidElement, cloneElement } from 'react';
-
+import { Children, cloneElement, isValidElement, ReactChild, ReactElement, ReactNode } from 'react';
 import { isFragment } from 'react-is';
 
 // typeguard to check for props in a ReactChild

@@ -1,9 +1,9 @@
-import React, { memo, useMemo, forwardRef } from 'react';
-
-import { ForwardedRef } from '@cbhq/cds-common';
+import React, { forwardRef, memo, useMemo } from 'react';
 import LottieView from 'lottie-react-native';
+import { ForwardedRef } from '@cbhq/cds-common';
 
 import { Box } from '../layout/Box';
+
 import { LottieProps } from './LottieProps';
 import { useLottieColorFilters } from './useLottieColorFilters';
 

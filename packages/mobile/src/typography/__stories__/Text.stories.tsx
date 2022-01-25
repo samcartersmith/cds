@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextBody } from '../TextBody';
 import { TextCaption } from '../TextCaption';
 import { TextDisplay1 } from '../TextDisplay1';
@@ -12,8 +14,6 @@ import { TextTitle1 } from '../TextTitle1';
 import { TextTitle2 } from '../TextTitle2';
 import { TextTitle3 } from '../TextTitle3';
 import { TextTitle4 } from '../TextTitle4';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const TextScreen = () => {
   return (

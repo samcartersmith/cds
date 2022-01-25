@@ -1,9 +1,10 @@
-import { ReactElement, useCallback, useMemo, useState, RefAttributes } from 'react';
+import { ReactElement, RefAttributes, useCallback, useMemo, useState } from 'react';
+
 import type {
   AlertBaseProps,
+  AlertRefBaseProps,
   ModalBaseProps,
   ModalRefBaseProps,
-  AlertRefBaseProps,
 } from '../types';
 
 export type PortalNode = {

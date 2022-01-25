@@ -1,4 +1,4 @@
-import React, { memo, forwardRef, useRef, useCallback, useImperativeHandle } from 'react';
+import React, { forwardRef, memo, useCallback, useImperativeHandle, useRef } from 'react';
 import { TextInput, View } from 'react-native';
 import {
   ChartHeaderProps,
@@ -7,9 +7,11 @@ import {
   ChartSubHead,
 } from '@cbhq/cds-common/types/ChartHeaderBaseProps';
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
-import { useChartHeaderStyles } from './useChartHeaderStyles';
+
 import { fontScaleProps } from '../../hooks/useDeviceScaleToCdsScale';
 import { HStack } from '../../layout';
+
+import { useChartHeaderStyles } from './useChartHeaderStyles';
 
 export const ChartHeader = memo(
   forwardRef<ChartHeaderRef, ChartHeaderProps>(

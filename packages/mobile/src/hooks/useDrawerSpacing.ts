@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-
-import { PinningDirection } from '@cbhq/cds-common';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { PinningDirection } from '@cbhq/cds-common';
 import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
+
 import { useSafeBottomPadding } from './useSafeBottomPadding';
 
 export const useDrawerSpacing = (pin: PinningDirection | undefined = 'bottom') => {

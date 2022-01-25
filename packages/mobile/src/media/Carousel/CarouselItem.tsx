@@ -1,11 +1,11 @@
-import React, { memo, useCallback, useMemo, useState, useRef } from 'react';
-
-import { NoopFn, SpacingScale } from '@cbhq/cds-common';
-import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
+import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { Animated, LayoutChangeEvent } from 'react-native';
+import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { carouselVisibleOpacity, carouselVisibleSize } from '@cbhq/cds-common/animation/carousel';
+import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 
 import { Box } from '../../layout/Box';
+
 import { CarouselItemContext } from './CarouselItemContext';
 import type { CarouselDismissItemInternal, CarouselItemId, CarouselUpdateLayoutMap } from './types';
 

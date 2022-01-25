@@ -1,7 +1,8 @@
 import React from 'react';
 
-import flattenNodes from './flattenNodes';
 import type { GroupBaseProps, SpacerBaseProps } from '../types';
+
+import flattenNodes from './flattenNodes';
 
 type FlattenAndJoinNodesParams<BoxProps> = {
   Spacer: React.ComponentType<SpacerBaseProps>;

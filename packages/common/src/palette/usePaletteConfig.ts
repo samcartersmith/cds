@@ -3,9 +3,9 @@ import { emptyObject, merge } from '@cbhq/cds-utils';
 
 import { useSpectrumConditional } from '../hooks/useSpectrumConditional';
 import { useFeatureFlag } from '../system/useFeatureFlag';
-import { defaultPalette, frontierSpectrumPalette } from './constants';
-
 import { PaletteConfig } from '../types/Palette';
+
+import { defaultPalette, frontierSpectrumPalette } from './constants';
 import { PaletteConfigContext } from './context';
 
 export const usePaletteConfig = (): PaletteConfig => {

@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { xSmall, large } from '../../styles/scale';
-import { DenseScaleProvider } from '../../system/ThemeProvider';
+import { large, xSmall } from '../../styles/scale';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
+import { DenseScaleProvider } from '../../system/ThemeProvider';
 import { useTypographyStyles } from '../useTypographyStyles';
 
 describe('useTypographyStyles', () => {

@@ -1,10 +1,9 @@
 import React from 'react';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../Box';
 import { Divider } from '../Divider';
 import { HStack } from '../HStack';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const DividerScreen = () => {
   return (

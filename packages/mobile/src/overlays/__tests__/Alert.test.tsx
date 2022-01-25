@@ -1,9 +1,9 @@
-import { render, fireEvent } from '@testing-library/react-native';
-import { Modal as RNModal, Animated } from 'react-native';
+import { Animated, Modal as RNModal } from 'react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 
-import { Alert } from '../Alert';
 import { Button } from '../../buttons';
+import { Alert } from '../Alert';
 import { PortalProvider } from '../PortalProvider';
 
 jest.useFakeTimers('legacy');

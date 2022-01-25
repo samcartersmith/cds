@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import { Spectrum } from '../types';
+
 import { SpectrumContext } from './context';
 import { useSpectrum } from './useSpectrum';
 

@@ -1,8 +1,8 @@
-import { render, fireEvent } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
-import { paletteAliasToRgbaString } from '../../utils/palette';
-import { Icon } from '../../icons/Icon';
 
+import { Icon } from '../../icons/Icon';
+import { paletteAliasToRgbaString } from '../../utils/palette';
 import { DotStatusColor } from '../DotStatusColor';
 
 const DOTSTATUSCOLOR_TESTID = 'dot-status-color-test';

@@ -1,6 +1,6 @@
-import { PartialPaletteConfig, PartialThemeConfig } from '../types';
 import { paletteConfigToHexValues } from '../palette/paletteConfigToHexValues';
 import { paletteConfigToRgbaStrings } from '../palette/paletteConfigToRgbaStrings';
+import { PartialPaletteConfig, PartialThemeConfig } from '../types';
 
 const cache: Record<string, PartialThemeConfig> = {};
 

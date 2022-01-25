@@ -1,8 +1,8 @@
-import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { ElevationLevels } from './ElevationLevels';
 import { PaletteBackground, PaletteBorder } from './Palette';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { OffsetProps, SpacingProps } from './SpacingProps';
 import { SpacingScale } from './SpacingScale';
 

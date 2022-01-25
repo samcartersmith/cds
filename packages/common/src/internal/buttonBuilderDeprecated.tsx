@@ -1,13 +1,14 @@
 import React from 'react';
+
+import { FeatureFlagProvider } from '../system/FeatureFlagProvider';
 import type {
   BoxBaseProps,
   ButtonBaseProps,
-  Spectrum,
   Scale,
+  Spectrum,
   StackBaseProps,
   ThemeProviderBaseProps,
 } from '../types';
-import { FeatureFlagProvider } from '../system/FeatureFlagProvider';
 
 // eslint-disable-next-line no-console
 const onPressConsole = () => console.log('pressed');

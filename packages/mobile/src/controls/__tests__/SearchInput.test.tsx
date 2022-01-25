@@ -1,4 +1,5 @@
-import { render, fireEvent } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
+
 import { SearchInput } from '../SearchInput';
 
 const TEST_ID = 'search';

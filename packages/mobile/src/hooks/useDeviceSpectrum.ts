@@ -1,6 +1,7 @@
-import { Appearance, Platform, useColorScheme } from 'react-native';
 import { useEffect, useState } from 'react';
+import { Appearance, Platform, useColorScheme } from 'react-native';
 import { Spectrum } from '@cbhq/cds-common';
+
 import { useAppState } from './useAppState';
 
 /** Update device preference on app state change for Android. React Native's useColorScheme does not seem to fire on Android on App State change - this fixes that. */

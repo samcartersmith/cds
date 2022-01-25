@@ -1,5 +1,6 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-types */
 import React, { useCallback, useContext, useMemo } from 'react';
 import {
@@ -8,6 +9,7 @@ import {
   NativeSyntheticEvent,
   TextInputChangeEventData,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   CardStyleInterpolators,
   HeaderStyleInterpolators,
@@ -16,18 +18,18 @@ import {
   StackNavigationProp,
 } from '@react-navigation/stack';
 import includes from 'lodash/includes';
+import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { emptyObject, mapValues } from '@cbhq/cds-utils';
 
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
-import { TextHeadline } from '../typography/TextHeadline';
-import { TextInput } from '../controls/TextInput';
 import { IconButton } from '../buttons/IconButton';
+import { ListCell } from '../cells/ListCell';
+import { TextInput } from '../controls/TextInput';
+import { useLayout } from '../hooks/useLayout';
+import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { ListCell } from '../cells/ListCell';
 import { Spacer } from '../layout/Spacer';
-import { useLayout } from '../hooks/useLayout';
+import { TextHeadline } from '../typography/TextHeadline';
 
 import {
   ExamplesSearchProvider,
@@ -35,7 +37,6 @@ import {
   SetSearchFilterContext,
 } from './ExamplesSearchProvider';
 import { routes as codegenRoutes } from './routes';
-import { usePalette } from '../hooks/usePalette';
 
 const initialRouteKey = 'Examples' as const;
 const searchRouteKey = 'Search' as const;

@@ -1,11 +1,12 @@
-import React, { memo, useCallback, useEffect, forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, memo, useCallback, useEffect, useImperativeHandle } from 'react';
 import { Modal as RNModal } from 'react-native';
 import type { AlertBaseProps, AlertRefBaseProps } from '@cbhq/cds-common';
 
-import { TextTitle3, TextBody } from '../typography';
-import { HStack, VStack, Box } from '../layout';
-import { Pictogram } from '../illustrations';
 import { Button } from '../buttons';
+import { Pictogram } from '../illustrations';
+import { Box, HStack, VStack } from '../layout';
+import { TextBody, TextTitle3 } from '../typography';
+
 import { Overlay } from './Overlay/Overlay';
 import { useAlertAnimation } from './useAlertAnimation';
 

@@ -1,9 +1,10 @@
-import React, { useState, useRef, useCallback } from 'react';
-import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
+import React, { useCallback, useRef, useState } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
-import { SearchInput } from '../SearchInput';
+import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
+
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextLabel1 } from '../../typography/TextLabel1';
+import { SearchInput } from '../SearchInput';
 
 const { Basic, OnBlur, OnFocus, OnClear, OnSearch, Disabled, Compact, DisplayValue } =
   searchInputBuilder(SearchInput, TextLabel1);

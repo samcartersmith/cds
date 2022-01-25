@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
-
+import { ViewStyle } from 'react-native';
 import { BorderedStyles, ElevationLevels } from '@cbhq/cds-common';
 import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/border';
-import { ViewStyle } from 'react-native';
 
 import { usePalette } from './usePalette';
 

@@ -1,13 +1,13 @@
+import { PaletteAlias } from '@cbhq/cds-common';
 import { defaultPalette } from '@cbhq/cds-common/palette/constants';
 
-import { PaletteAlias } from '@cbhq/cds-common';
-import { light, dark } from '../../styles/spectrum';
+import { dark, light } from '../../styles/spectrum';
 import * as spectrumColors from '../../styles/spectrum';
 import {
   paletteAliasToRgbaString,
-  paletteValueToRgbaString,
   paletteConfigToRgbaStrings,
   paletteValueToRgbaArray,
+  paletteValueToRgbaString,
 } from '../palette';
 
 describe('paletteValueToRgbaString', () => {

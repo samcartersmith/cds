@@ -1,12 +1,12 @@
-import { render, fireEvent } from '@testing-library/react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
-import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/internal/selectBuilder';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { fireEvent, render } from '@testing-library/react-native';
+import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
 
-import { Select } from '../Select';
 import { Tray } from '../../overlays/Tray/Tray';
-import { SelectOption } from '../SelectOption';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
+import { Select } from '../Select';
+import { SelectOption } from '../SelectOption';
 
 const { DefaultSelect } = selectBuilderMobile({
   Tray,

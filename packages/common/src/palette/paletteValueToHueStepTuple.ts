@@ -1,4 +1,5 @@
 import type { PaletteValue, SpectrumHue, SpectrumHueStep } from '../types';
+
 import { paletteValueToTuple } from './paletteValueToTuple';
 
 const HUE_STEP_REGEX = /[a-z]+|[^a-z]+/gi;

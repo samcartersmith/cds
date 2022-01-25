@@ -3,10 +3,9 @@ import { Modal } from 'react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Button } from '../../buttons/Button';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Overlay } from '../Overlay/Overlay';
 import { useOverlayAnimation } from '../Overlay/useOverlayAnimation';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const OverlayScreen = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(false);

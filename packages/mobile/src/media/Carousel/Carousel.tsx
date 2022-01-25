@@ -1,22 +1,22 @@
 import React, {
+  Children,
   forwardRef,
   memo,
   useCallback,
   useEffect,
-  useMemo,
-  useState,
-  useRef,
-  Children,
   useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
-
-import { SpacingScale, SharedProps } from '@cbhq/cds-common';
-import { emptyObject } from '@cbhq/cds-utils';
 import { Animated, Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
+import { SharedProps, SpacingScale } from '@cbhq/cds-common';
+import { emptyObject } from '@cbhq/cds-utils';
 
-import { useScrollTo, ScrollToParams } from '../../hooks/useScrollTo';
+import { ScrollToParams, useScrollTo } from '../../hooks/useScrollTo';
+
 import { CarouselItem } from './CarouselItem';
-import type { CarouselLayoutMap, CarouselRef, CarouselOnReady, CarouselItemId } from './types';
+import type { CarouselItemId, CarouselLayoutMap, CarouselOnReady, CarouselRef } from './types';
 import { useDismissCarouselItem } from './useDismissCarouselItem';
 
 export type CarouselProps = {

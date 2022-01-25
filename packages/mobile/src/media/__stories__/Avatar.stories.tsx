@@ -1,10 +1,9 @@
 import React from 'react';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../Avatar';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const image = 'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
 

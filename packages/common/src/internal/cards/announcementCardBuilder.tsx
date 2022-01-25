@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { GroupBaseProps, RenderGroupItem } from '../../types';
-import { storyBuilder } from '../utils/storyBuilder';
 import { assets } from '../data/assets';
+import { storyBuilder } from '../utils/storyBuilder';
 
 type Params<WrapperProps> = {
   CardGroup: React.ComponentType<GroupBaseProps<WrapperProps>>;

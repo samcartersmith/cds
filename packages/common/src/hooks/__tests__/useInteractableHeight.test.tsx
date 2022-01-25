@@ -1,11 +1,12 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { entries } from '@cbhq/cds-utils';
-import { useInteractableHeight } from '../useInteractableHeight';
-import { Scale } from '../../types';
-import { SystemProvider } from '../../SystemProvider';
+
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
+import { SystemProvider } from '../../SystemProvider';
+import { compactHeight, defaultHeight } from '../../tokens/interactable';
 import { interactableHeight } from '../../tokens/interactableHeight';
-import { defaultHeight, compactHeight } from '../../tokens/interactable';
+import { Scale } from '../../types';
+import { useInteractableHeight } from '../useInteractableHeight';
 
 function createWrapper({ frontierButton, scale }: { frontierButton: boolean; scale: Scale }) {
   const Wrapper: React.FC = ({ children }) => (

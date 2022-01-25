@@ -1,10 +1,10 @@
-import {
-  ThemeConfig,
-  PartialThemeConfig,
-  PartialLightThemeConfig,
-  PartialDarkThemeConfig,
-} from '../types';
 import { paletteConfigToInteractableTokens } from '../palette/paletteConfigToInteractableTokens';
+import {
+  PartialDarkThemeConfig,
+  PartialLightThemeConfig,
+  PartialThemeConfig,
+  ThemeConfig,
+} from '../types';
 
 const cache: Record<string, ThemeConfig> = {};
 

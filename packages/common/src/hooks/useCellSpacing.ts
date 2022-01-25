@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { emptyObject } from '@cbhq/cds-utils';
 
-import { CellBaseProps } from '../types';
 import { defaultSpacingConfig } from '../tokens/cell';
+import { CellBaseProps } from '../types';
 
 export const innerDefaults = defaultSpacingConfig.innerSpacing;
 export const outerDefaults = defaultSpacingConfig.outerSpacing;

@@ -2,12 +2,10 @@ import React from 'react';
 import { CreateToastProps, toastBuilder } from '@cbhq/cds-common/internal/toastBuilder';
 
 import { Button } from '../../buttons/Button';
-import { Link } from '../../typography/Link';
 import { TextInput } from '../../controls/TextInput';
-
-import { Toast } from '../Toast';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Link } from '../../typography/Link';
+import { Toast } from '../Toast';
 
 const { BasicToast, MultilineToast } = toastBuilder({
   Toast,

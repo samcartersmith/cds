@@ -1,18 +1,16 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { PIN_DIRECTIONS, SIZES, dotBuilder } from '@cbhq/cds-common/internal/dotBuilder';
+import { dotBuilder, PIN_DIRECTIONS, SIZES } from '@cbhq/cds-common/internal/dotBuilder';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Icon } from '../../icons/Icon';
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media/Avatar';
-import { Icon } from '../../icons/Icon';
 import { TextLabel1 } from '../../typography/TextLabel1';
-
 import { DotCount } from '../DotCount';
 import { DotStatusColor } from '../DotStatusColor';
 import { DotSymbol } from '../DotSymbol';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const {
   DotCountBasic,

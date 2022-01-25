@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
-import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/cell';
-import { LinkableProps } from '../system';
+import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
+
 import { Cell } from '../cells/Cell';
-import { VStack } from '../layout/VStack';
 import { CellAccessory } from '../cells/CellAccessory';
-import { TextHeadline, TextBody } from '../typography';
+import { VStack } from '../layout/VStack';
+import { LinkableProps } from '../system';
+import { TextBody, TextHeadline } from '../typography';
 
 const selectOptionMinHeight: Record<ScaleDensity, number> = {
   normal: 56,

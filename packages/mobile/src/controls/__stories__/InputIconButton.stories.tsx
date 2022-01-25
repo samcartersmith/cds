@@ -1,11 +1,10 @@
 import React from 'react';
 import { inputIconButtonBuilder } from '@cbhq/cds-common/internal/inputIconButtonBuilder';
 
-import { Box } from '../../layout/Box';
-import { TextInput } from '../TextInput';
-import { InputIconButton } from '../InputIconButton';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Box } from '../../layout/Box';
+import { InputIconButton } from '../InputIconButton';
+import { TextInput } from '../TextInput';
 
 export const {
   Basic,

@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
-import React, { useCallback, useState, ComponentType } from 'react';
-import { TextInputBaseProps } from '../types/TextInputBaseProps';
+import React, { ComponentType, useCallback, useState } from 'react';
+
 import { TextBaseProps } from '../types/TextBaseProps';
+import { TextInputBaseProps } from '../types/TextInputBaseProps';
 
 type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'start' | 'end'> & {
   onFocus?: () => void;

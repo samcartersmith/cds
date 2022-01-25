@@ -1,5 +1,5 @@
-import { noop } from '@cbhq/cds-utils';
 import { createContext } from 'react';
+import { noop } from '@cbhq/cds-utils';
 
 // Feature Flag tokens
 export const defaultFeatureFlags = {

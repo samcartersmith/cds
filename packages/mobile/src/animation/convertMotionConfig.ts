@@ -1,6 +1,6 @@
+import { Animated, Easing } from 'react-native';
 import { curves, durations } from '@cbhq/cds-common/tokens/motion';
 import type { MotionBaseSpec } from '@cbhq/cds-common/types';
-import { Animated, Easing } from 'react-native';
 
 type MotionSpec = Omit<MotionBaseSpec, 'property'>;
 

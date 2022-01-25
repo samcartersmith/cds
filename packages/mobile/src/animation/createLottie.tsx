@@ -1,14 +1,13 @@
 import React, { createRef, MutableRefObject } from 'react';
-
+import { Animated } from 'react-native';
+import LottieView from 'lottie-react-native';
 import {
   getLottieDuration,
   getLottieMarkers,
-  LottieSource,
   LottiePlayer,
+  LottieSource,
   NoopFn,
 } from '@cbhq/cds-common';
-import LottieView from 'lottie-react-native';
-import { Animated } from 'react-native';
 
 import { Lottie } from './Lottie';
 import { lottieProgressConfig } from './lottieProgresConfig';

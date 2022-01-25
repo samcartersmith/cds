@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { merge, omit, isObject } from 'lodash';
+import { isObject, merge, omit } from 'lodash';
 import { generateRandomId } from '@cbhq/cds-utils';
 
 import { Scale, Spectrum } from '../../types';

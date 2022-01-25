@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
-import { SelectOption } from '../SelectOption';
+
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { SelectOption } from '../SelectOption';
 
 export default function SelectOptionScreen() {
   const handleOptionPress = useCallback(() => {

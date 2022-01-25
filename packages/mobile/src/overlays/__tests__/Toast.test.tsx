@@ -1,5 +1,6 @@
-import { render, fireEvent } from '@testing-library/react-native';
 import { Animated } from 'react-native';
+import { fireEvent, render } from '@testing-library/react-native';
+
 import { Toast } from '../Toast';
 
 jest.mock('react-native/Libraries/Animated/Animated', () => {

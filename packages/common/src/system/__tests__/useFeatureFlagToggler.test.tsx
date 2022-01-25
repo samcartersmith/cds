@@ -1,8 +1,8 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
-import { useFeatureFlagToggler } from '../useFeatureFlagToggler';
 import { useFeatureFlags } from '../useFeatureFlags';
+import { useFeatureFlagToggler } from '../useFeatureFlagToggler';
 
 describe('useFeatureFlagToggler', () => {
   it('correctly handles toggling a feature flag', () => {

@@ -1,8 +1,8 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { FeatureFlagProvider } from '../FeatureFlagProvider';
-import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 import { useFeatureFlags } from '../useFeatureFlags';
+import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 
 describe('useFeatureFlagUpdater', () => {
   it('updates features flags when called', () => {

@@ -1,24 +1,22 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
-import {
-  iconSheetBuilder,
-  CreateIconSheetParams,
-} from '@cbhq/cds-common/internal/iconSheetBuilder';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import {
+  CreateIconSheetParams,
+  iconSheetBuilder,
+} from '@cbhq/cds-common/internal/iconSheetBuilder';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { usePalette } from '../../hooks/usePalette';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { PressableOpacity } from '../../system/PressableOpacity';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextBody } from '../../typography';
-
-import { Icon } from '../Icon';
 import { FiatIcon } from '../FiatIcon';
+import { Icon } from '../Icon';
 import { TextIcon } from '../TextIcon';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const animateInConfig = convertMotionConfig({
   easing: 'enterFunctional',

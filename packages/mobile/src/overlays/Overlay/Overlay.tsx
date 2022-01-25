@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
-
-import { OverlayProvider } from '@cbhq/cds-common/context/OverlayProvider';
 import { Animated } from 'react-native';
+import { OverlayProvider } from '@cbhq/cds-common/context/OverlayProvider';
 
 import { VStack, VStackProps } from '../../layout/VStack';
 

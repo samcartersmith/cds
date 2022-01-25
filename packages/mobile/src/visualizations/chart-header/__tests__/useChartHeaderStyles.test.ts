@@ -2,8 +2,8 @@ import { StyleProp, TextStyle } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 import { defaultPalette } from '@cbhq/cds-common';
 
-import { useChartHeaderStyles } from '../useChartHeaderStyles';
 import { paletteConfigToRgbaStrings } from '../../../utils/palette';
+import { useChartHeaderStyles } from '../useChartHeaderStyles';
 
 jest.mock('react-native/Libraries/Utilities/PixelRatio', () => ({
   get: jest.fn().mockReturnValue(1),

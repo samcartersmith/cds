@@ -1,7 +1,6 @@
 import { useMemo, useRef } from 'react';
-
-import { LottieSource } from '@cbhq/cds-common';
 import { Animated } from 'react-native';
+import { LottieSource } from '@cbhq/cds-common';
 
 import { createLottie } from './createLottie';
 

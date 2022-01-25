@@ -5,7 +5,6 @@ import { SubHeadIconColor } from '@cbhq/cds-common/types/ChartHeaderBaseProps';
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 import { numberStyles, useTypographyStyles } from '../../typography';
-
 import { getAdjustedFontScale } from '../../utils/getAdjustedFontScale';
 
 // The – character width is larger than the width of the + character.

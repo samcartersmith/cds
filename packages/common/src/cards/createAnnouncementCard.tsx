@@ -2,12 +2,12 @@ import React, { memo } from 'react';
 
 import {
   ButtonBaseProps,
-  CardHeaderBaseProps,
   CardBaseProps,
   CardBodyBaseProps,
   CardFooterBaseProps,
-  IconName,
+  CardHeaderBaseProps,
   IconButtonBaseProps,
+  IconName,
   IllustrationPictogramNames,
   PictogramProps,
 } from '../types';

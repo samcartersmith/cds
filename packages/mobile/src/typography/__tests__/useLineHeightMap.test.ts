@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { xSmall, large } from '../../styles/scale';
+import { large, xSmall } from '../../styles/scale';
 import { DenseScaleProvider } from '../../system/ThemeProvider';
 import { useLineHeightMap } from '../useLineHeightMap';
 

@@ -3,16 +3,15 @@ import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 
 import { Button } from '../../buttons';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Card, HStack } from '../../layout';
+import { TextHeadline } from '../../typography/TextHeadline';
+import { TextLabel1 } from '../../typography/TextLabel1';
 import { Carousel } from '../Carousel/Carousel';
 import { CarouselRef } from '../Carousel/types';
 import { useCarousel } from '../Carousel/useCarousel';
 import { useCarouselItem } from '../Carousel/useCarouselItem';
 import { RemoteImage } from '../RemoteImage';
-import { TextHeadline } from '../../typography/TextHeadline';
-import { TextLabel1 } from '../../typography/TextLabel1';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const ExampleCarouselItem = memo(() => {
   const { dismiss, id } = useCarouselItem();

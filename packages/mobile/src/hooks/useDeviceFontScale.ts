@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-
 import { PixelRatio } from 'react-native';
 
 import { useAppState } from './useAppState';

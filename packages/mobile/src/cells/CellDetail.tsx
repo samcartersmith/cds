@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-
 import { CellDetailProps as CellDetailBaseProps } from '@cbhq/cds-common';
 
 import { VStack } from '../layout/VStack';

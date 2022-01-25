@@ -1,19 +1,17 @@
 import React, { useCallback } from 'react';
-
-import { useModal } from '@cbhq/cds-common/overlays/useModal';
+import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 import { useAlert } from '@cbhq/cds-common/overlays/useAlert';
-import { CreateAlertProps, alertBuilder } from '@cbhq/cds-common/internal/alertBuilder';
+import { useModal } from '@cbhq/cds-common/overlays/useModal';
 
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { Button } from '../../buttons/Button';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextBody } from '../../typography/TextBody';
 import { Alert } from '../Alert';
 import { Modal } from '../Modal/Modal';
 import { ModalBody } from '../Modal/ModalBody';
 import { ModalFooter } from '../Modal/ModalFooter';
 import { PortalProvider } from '../PortalProvider';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
   Alert,

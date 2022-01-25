@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { useMemo } from 'react';
-
 import { blendColors } from '@cbhq/cds-common/color/blendColors';
 import { paletteValueToHueStep } from '@cbhq/cds-common/palette/paletteValueToHueStep';
 import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
@@ -9,8 +8,9 @@ import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactable';
 import { PaletteAlias, PaletteValue, SpectrumAlias, SpectrumHueStep } from '@cbhq/cds-common/types';
 
-import { usePalette } from './usePalette';
 import { paletteValueToRgbaArray } from '../utils/palette';
+
+import { usePalette } from './usePalette';
 
 export type InteractableState = 'pressed' | 'disabled';
 export type OverlayOpacities = Record<InteractableState, number>;

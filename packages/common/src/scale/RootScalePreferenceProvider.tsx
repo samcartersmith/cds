@@ -2,6 +2,7 @@ import React, { memo, useContext, useState } from 'react';
 import { isProduction } from '@cbhq/cds-utils';
 
 import type { RootScalePreference } from '../types';
+
 import { RootScalePreferenceContext, RootScalePreferenceUpdaterContext } from './context';
 
 export type RootScalePreferenceProviderProps = {

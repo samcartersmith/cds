@@ -1,15 +1,15 @@
 import React, { memo, useCallback } from 'react';
 import { Animated } from 'react-native';
 import {
-  ChartPeriodSelectorProps,
   ChartPeriodProps,
+  ChartPeriodSelectorProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { usePalette } from '../../hooks/usePalette';
 import { HStack } from '../../layout/HStack';
 import { PressableOpacity } from '../../system/PressableOpacity';
 import { TextLabel1 } from '../../typography';
-
 import { Haptics } from '../../utils/haptics';
 
 import { useChartContext } from './ChartProvider';

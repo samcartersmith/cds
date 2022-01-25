@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { useSpectrum } from '../spectrum/useSpectrum';
 import { getSpectrumConditional } from '../color/getSpectrumConditional';
+import { useSpectrum } from '../spectrum/useSpectrum';
 import type { SpectrumConditionalConfig } from '../types/Color';
 
 /**

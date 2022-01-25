@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
-
+import { Split } from 'type-fest';
 import { Typography } from '@cbhq/cds-common';
 
-import { Split } from 'type-fest';
-import { useTypographyStylesMap } from './useTypographyStylesMap';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { fontFamily as fontFamilyTokens } from '../tokens';
+
+import { useTypographyStylesMap } from './useTypographyStylesMap';
 
 type TypographyMap = ReturnType<typeof useTypographyStylesMap>;
 type TypographyStyles = TypographyMap[keyof TypographyMap];

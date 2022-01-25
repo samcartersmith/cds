@@ -1,4 +1,4 @@
-import React, { createContext, useContext, Children, ReactNode, useMemo } from 'react';
+import React, { Children, createContext, ReactNode, useContext, useMemo } from 'react';
 
 import flattenNodes from '../utils/flattenNodes';
 

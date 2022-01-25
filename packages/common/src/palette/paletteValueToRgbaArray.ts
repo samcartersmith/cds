@@ -1,6 +1,7 @@
 import type { PaletteValueToRgbaArray } from '../types';
-import { paletteValueToTuple } from './paletteValueToTuple';
+
 import { spectrumConfigs } from './paletteValueToRgbaString';
+import { paletteValueToTuple } from './paletteValueToTuple';
 
 /**
  * Given a color that is a PaletteValue and the spectrum, output a hex value of this color

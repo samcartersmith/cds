@@ -1,11 +1,11 @@
 /* eslint-disable react-native/no-unused-styles */
 
 import React, { useMemo } from 'react';
-
-import { DividerBaseProps } from '@cbhq/cds-common';
 import { StyleSheet, View } from 'react-native';
+import { DividerBaseProps } from '@cbhq/cds-common';
 
 import { usePalette } from '../hooks/usePalette';
+
 import { Box, BoxProps } from './Box';
 
 export type DividerProps = DividerBaseProps & BoxProps;

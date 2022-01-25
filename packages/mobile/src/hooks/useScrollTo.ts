@@ -1,8 +1,7 @@
 import { useCallback, useRef } from 'react';
-
-import { useMergedRef, AnyRef, CallbackRef } from '@cbhq/cds-common/hooks/useMergedRef';
-import { emptyObject } from '@cbhq/cds-utils';
 import { ScrollView } from 'react-native';
+import { AnyRef, CallbackRef, useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { emptyObject } from '@cbhq/cds-utils';
 
 export type ScrollRef = CallbackRef<ScrollView> | null;
 export type ScrollToParams = { x?: number; y?: number; animated?: boolean };

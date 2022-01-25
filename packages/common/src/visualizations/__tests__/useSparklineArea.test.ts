@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useSparklineArea } from '../useSparklineArea';
 
+import { useSparklineArea } from '../useSparklineArea';
 import { UseSparklinePathParams } from '../useSparklinePathGenerator';
 
 const sharedProps = {

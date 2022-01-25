@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-
 import { IconName, IconSize, SharedProps } from '@cbhq/cds-common';
 
 import { Icon } from './Icon';

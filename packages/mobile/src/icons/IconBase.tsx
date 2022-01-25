@@ -1,14 +1,14 @@
-import React, { useMemo, cloneElement } from 'react';
-
-import { IconBaseProps, PaletteForeground } from '@cbhq/cds-common';
-import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
+import React, { cloneElement, useMemo } from 'react';
 import { Animated, Text, ViewStyle } from 'react-native';
 import type { TextStyle } from 'react-native';
+import { IconBaseProps, PaletteForeground } from '@cbhq/cds-common';
+import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box } from '../layout/Box';
 import { DangerouslySetStyle } from '../types';
+
 import { BadgeProps } from './Badge';
 import { iconGlyphMap } from './iconGlyphMap';
 import { IconOutline } from './IconOutline';

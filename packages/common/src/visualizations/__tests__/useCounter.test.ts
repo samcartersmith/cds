@@ -1,4 +1,5 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
+
 import { useCounter } from '../useCounter';
 
 /* eslint-disable jest/expect-expect */

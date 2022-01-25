@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { useCallback, memo, useLayoutEffect, useRef } from 'react';
-
-import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
-import { emptyObject } from '@cbhq/cds-utils';
+import React, { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import { Platform } from 'react-native';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
+import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
+import { emptyObject } from '@cbhq/cds-utils';
 
 import { usePalette } from '../hooks/usePalette';
 import { paletteConfigToRgbaStrings } from '../utils/palette';
+
 import { useStatusBarStyle } from './StatusBar';
 import { ThemeProviderProps } from './ThemeProvider';
 

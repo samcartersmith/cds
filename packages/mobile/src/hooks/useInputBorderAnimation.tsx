@@ -1,11 +1,12 @@
 import { useMemo, useRef } from 'react';
-import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
 import { Animated } from 'react-native';
+import { useSpectrum } from '@cbhq/cds-common';
 import {
   animateInputBorderInConfig,
   animateInputBorderOutConfig,
 } from '@cbhq/cds-common/animation/border';
-import { useSpectrum } from '@cbhq/cds-common';
+import { InputVariant } from '@cbhq/cds-common/types/InputBaseProps';
+
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { paletteAliasToRgbaString } from '../utils/palette';
 

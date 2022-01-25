@@ -1,8 +1,9 @@
-import { TrayBaseProps } from '@cbhq/cds-common/types';
 import React, { memo } from 'react';
-import { Drawer } from '../Drawer/Drawer';
-import { TextTitle3 } from '../../typography/TextTitle3';
+import { TrayBaseProps } from '@cbhq/cds-common/types';
+
 import { HStack, VStack } from '../../layout';
+import { TextTitle3 } from '../../typography/TextTitle3';
+import { Drawer } from '../Drawer/Drawer';
 
 export const Tray: React.FC<TrayBaseProps> = memo(({ children, title, ...props }) => {
   return (

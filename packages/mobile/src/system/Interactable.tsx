@@ -1,13 +1,12 @@
-import React, { useMemo, memo } from 'react';
-
+import React, { memo, useMemo } from 'react';
+import { Animated, Falsy, View, ViewStyle } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
 import {
-  ElevationProvider,
   ElevationChildrenProvider,
+  ElevationProvider,
 } from '@cbhq/cds-common/context/ElevationProvider';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';
-import { Animated, Falsy, View, ViewStyle } from 'react-native';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { useInteractableBorderStyles } from '../hooks/useInteractableBorderStyles';

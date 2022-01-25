@@ -1,5 +1,5 @@
-import { AnyObject } from '@cbhq/cds-utils';
 import { renderHook } from '@testing-library/react-hooks';
+import { AnyObject } from '@cbhq/cds-utils';
 
 import { DarkModeProvider, LightModeProvider } from '../../system/ThemeProvider';
 import { useElevationBorderColor } from '../useElevationBorderColor';

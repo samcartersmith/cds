@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
-import type { SharedProps } from './SharedProps';
-import { PaletteForeground } from './Palette';
-import { DimensionValue } from './DimensionStyles';
+
 import { BorderRadius } from './BorderRadius';
+import { DimensionValue } from './DimensionStyles';
+import { PaletteForeground } from './Palette';
+import type { SharedProps } from './SharedProps';
 
 export type InputVariant = Extract<
   PaletteForeground,

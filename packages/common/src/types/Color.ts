@@ -1,4 +1,5 @@
 import { KebabCase } from 'type-fest';
+
 import { PaletteAlias, PaletteValue, PartialPaletteConfig } from './Palette';
 import { Spectrum } from './Spectrum';
 

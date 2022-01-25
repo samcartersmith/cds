@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react-native';
 import { Animated } from 'react-native';
+import { render } from '@testing-library/react-native';
 
 import { Overlay } from '../Overlay';
 import { useOverlayAnimation } from '../useOverlayAnimation';

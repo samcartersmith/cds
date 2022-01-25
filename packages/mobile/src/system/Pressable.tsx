@@ -1,17 +1,17 @@
 import React, { memo, useCallback, useState } from 'react';
-
-import { emptyArray } from '@cbhq/cds-utils';
 import {
   AccessibilityProps,
   GestureResponderEvent,
   Pressable as BasePressable,
   PressableProps as BasePressableProps,
 } from 'react-native';
+import { emptyArray } from '@cbhq/cds-utils';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { HapticFeedbackType } from '../types';
 import { debounce } from '../utils/debounce';
 import { Haptics } from '../utils/haptics';
+
 import { Interactable, InteractableProps } from './Interactable';
 
 export type LinkableProps = Pick<BasePressableProps, 'onPress'>;

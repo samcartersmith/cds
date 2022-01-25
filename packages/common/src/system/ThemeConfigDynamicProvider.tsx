@@ -1,10 +1,11 @@
-import React, { memo, useMemo, useContext } from 'react';
+import React, { memo, useContext, useMemo } from 'react';
 
-import { PartialThemeConfig } from '../types';
 import { useSpectrum } from '../spectrum/useSpectrum';
 import { themeBase } from '../themes/themeBase';
-import { ThemeConfigContext } from './ThemeConfigContext';
+import { PartialThemeConfig } from '../types';
+
 import { mergeThemeConfigs } from './mergeThemeConfigs';
+import { ThemeConfigContext } from './ThemeConfigContext';
 
 export type ThemeConfigDynamicProviderProps = {
   /** A partial theme config. */

@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
+import { usePaletteConfig, UsePaletteFn, useSpectrum } from '@cbhq/cds-common';
 
-import { useSpectrum, UsePaletteFn, usePaletteConfig } from '@cbhq/cds-common';
-
-import { paletteConfigToRgbaStrings } from '../utils/palette';
 import { useFeatureFlag } from '../system/useFeatureFlag';
+import { paletteConfigToRgbaStrings } from '../utils/palette';
 
 export const usePalette: UsePaletteFn = () => {
   const palette = usePaletteConfig();

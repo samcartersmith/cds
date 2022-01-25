@@ -1,11 +1,10 @@
-import React, { useState, useCallback } from 'react';
-import { View, Text } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { Text, View } from 'react-native';
 
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { AvatarButton } from '../AvatarButton';
-
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
 const avatarImageUrl =
   'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';

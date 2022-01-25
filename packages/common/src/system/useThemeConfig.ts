@@ -1,7 +1,9 @@
 import { useContext, useMemo } from 'react';
 import { isDevelopment } from '@cbhq/cds-utils';
-import { ThemeConfigContext, ThemeConfigContextValue } from './ThemeConfigContext';
+
 import { themeBase } from '../themes/themeBase';
+
+import { ThemeConfigContext, ThemeConfigContextValue } from './ThemeConfigContext';
 
 const fallback = {
   config: themeBase,

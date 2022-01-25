@@ -1,28 +1,27 @@
-import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
-import React, { useCallback, useState, memo, forwardRef, ForwardedRef, useRef } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback, useRef, useState } from 'react';
 import {
-  TextInputProps as RNTextInputProps,
   NativeSyntheticEvent,
+  Pressable,
   TextInput as RNTextInput,
   TextInputFocusEventData,
-  Pressable,
+  TextInputProps as RNTextInputProps,
 } from 'react-native';
-
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
-import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
-import { NativeInput } from './NativeInput';
-import { HelperText } from './HelperText';
-import { InputStack } from './InputStack';
-import { Box } from '../layout/Box';
-import { InputLabel } from './InputLabel';
+import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
+
 import { TextInputFocusVariantContext } from './context';
+import { HelperText } from './HelperText';
+import { InputLabel } from './InputLabel';
+import { InputStack } from './InputStack';
+import { NativeInput } from './NativeInput';
 
 export type TextInputProps = TextInputBaseProps & SharedAccessibilityProps & RNTextInputProps;
 

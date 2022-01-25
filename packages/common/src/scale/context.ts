@@ -1,5 +1,4 @@
 import { createContext } from 'react';
-
 import { noop } from '@cbhq/cds-utils';
 
 import { RootScalePreference, Scale, SetState } from '../types';

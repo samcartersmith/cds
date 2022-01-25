@@ -1,12 +1,12 @@
 import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import {
-  animateInOpacityConfig,
-  animateOutOpacityConfig,
   animateInBottomConfig,
+  animateInOpacityConfig,
   animateOutBottomConfig,
-  toastHiddenOpacity,
+  animateOutOpacityConfig,
   toastHiddenBottom,
+  toastHiddenOpacity,
 } from '@cbhq/cds-common/animation/toast';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';

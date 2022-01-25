@@ -1,11 +1,11 @@
 import React, { forwardRef, memo } from 'react';
-
-import { ControlBaseProps, useScale } from '@cbhq/cds-common';
 import { Animated, StyleSheet, View } from 'react-native';
+import { ControlBaseProps, useScale } from '@cbhq/cds-common';
 
 import { Icon } from '../icons/Icon';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
+
 import { Control, ControlIconProps, ControlProps } from './Control';
 
 export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;

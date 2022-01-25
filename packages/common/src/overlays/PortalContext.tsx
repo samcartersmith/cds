@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+
 import { PortalNode } from './usePortalState';
 
 export type PortalProviderStates = {

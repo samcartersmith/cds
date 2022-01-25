@@ -2,6 +2,7 @@ import React, { memo, useContext } from 'react';
 
 import { themeBase } from '../themes/themeBase';
 import { themeFrontier } from '../themes/themeFrontier';
+
 import { FeatureFlagContext } from './FeatureFlagContext';
 import { ThemeConfigProvider } from './ThemeConfigProvider';
 

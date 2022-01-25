@@ -1,10 +1,11 @@
+import React, { memo, useMemo, useReducer } from 'react';
 import { emptyObject, entries, isProduction } from '@cbhq/cds-utils';
-import React, { useReducer, memo, useMemo } from 'react';
+
 import {
-  FeatureFlagContext,
-  FeatureFlagDispatcherContext,
-  FeatureFlagDispatcherAction,
   FeatureFlag,
+  FeatureFlagContext,
+  FeatureFlagDispatcherAction,
+  FeatureFlagDispatcherContext,
   FeatureFlagsPartial,
   frontierFeaturesOn,
 } from './FeatureFlagContext';

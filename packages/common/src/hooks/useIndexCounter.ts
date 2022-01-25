@@ -1,5 +1,4 @@
 import { useCallback, useMemo, useState } from 'react';
-
 import { noop } from '@cbhq/cds-utils';
 
 type StepTrackerParams = {

@@ -1,15 +1,16 @@
 import React, { useCallback } from 'react';
+
+import { useToggler } from '../hooks/useToggler';
+import { useModal } from '../overlays/useModal';
 import type {
   ButtonBaseProps,
   ModalBaseProps,
-  ModalHeaderBaseProps,
   ModalFooterBaseProps,
+  ModalHeaderBaseProps,
   SharedProps,
-  ThemeProviderBaseProps,
   TextInputBaseProps,
+  ThemeProviderBaseProps,
 } from '../types';
-import { useToggler } from '../hooks/useToggler';
-import { useModal } from '../overlays/useModal';
 
 // eslint-disable-next-line no-console
 const onRequestCloseConsole = () => console.log('close modal');

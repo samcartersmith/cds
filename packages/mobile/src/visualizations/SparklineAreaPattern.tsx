@@ -1,5 +1,5 @@
-import { Circle, G, Pattern, Rect } from 'react-native-svg';
 import React from 'react';
+import { Circle, G, Pattern, Rect } from 'react-native-svg';
 import { SparklineAreaPatternBaseProps } from '@cbhq/cds-common';
 import { useSparklineAreaOpacity } from '@cbhq/cds-common/visualizations/useSparklineAreaOpacity';
 

@@ -1,14 +1,14 @@
-import { useMemo, useCallback } from 'react';
-
+import { useCallback, useMemo } from 'react';
 import {
-  AccessibleForegroundParams,
   AccessibleForegroundGradientFn,
+  AccessibleForegroundParams,
   GradientArray,
 } from '@cbhq/cds-common';
 import { getAccessibleForegroundGradient } from '@cbhq/cds-common/color/getAccessibleForegroundGradient';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 
 import { usePalette } from '../hooks/usePalette';
+
 import { usePaletteValueToRgbaString } from './usePaletteValueToRgbaString';
 
 /** See http://cds.cbhq.net/hooks/useAccessibleForegroundGradient for details and examples. */

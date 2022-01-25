@@ -1,6 +1,6 @@
-import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useMemo } from 'react';
 import { I18nManager, ViewStyle } from 'react-native';
+import { ButtonBaseProps } from '@cbhq/cds-common';
 
 type Props = {
   flush: ButtonBaseProps['flush'];

@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
-
-import { TextBaseProps, Typography, PaletteForeground, SharedProps } from '@cbhq/cds-common';
+import { Animated, StyleSheet, Text, TextProps as RNTextProps, TextStyle } from 'react-native';
+import { PaletteForeground, SharedProps, TextBaseProps, Typography } from '@cbhq/cds-common';
+import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
-import { Animated, Text, TextStyle, TextProps as RNTextProps, StyleSheet } from 'react-native';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { fontScaleProps } from '../hooks/useDeviceScaleToCdsScale';
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { useTextAlign } from '../hooks/useTextAlign';
-import { OmitStyle, DangerouslySetStyle } from '../types';
+import { DangerouslySetStyle, OmitStyle } from '../types';
+
 import { useTypographyStyles } from './useTypographyStyles';
 
 export type { Typography };

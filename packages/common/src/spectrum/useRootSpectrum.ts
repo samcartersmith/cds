@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { isProduction } from '@cbhq/cds-utils';
 
-import { RootSpectrumContext, DEFAULT_SPECTRUM } from './context';
+import { DEFAULT_SPECTRUM, RootSpectrumContext } from './context';
 
 export const useRootSpectrum = () => {
   const context = useContext(RootSpectrumContext);

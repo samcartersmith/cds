@@ -1,16 +1,18 @@
 import { entries } from '@cbhq/cds-utils';
+
+import { blendColors } from '../color/blendColors';
+import { opacityDisabled, opacityPressed } from '../tokens/interactable';
 import {
   InteractableTokensConfig,
   PaletteAlias,
-  PartialPaletteConfig,
   PaletteValue,
+  PartialPaletteConfig,
   Spectrum,
 } from '../types';
-import { blendColors } from '../color/blendColors';
-import { opacityDisabled, opacityPressed } from '../tokens/interactable';
+
+import { paletteValueToHueStep } from './paletteValueToHueStep';
 import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
 import { paletteValueToTuple } from './paletteValueToTuple';
-import { paletteValueToHueStep } from './paletteValueToHueStep';
 
 const foregroundFallback = 'gray100';
 const backgroundFallback = 'gray0';
