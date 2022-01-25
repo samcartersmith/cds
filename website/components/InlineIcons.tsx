@@ -1,14 +1,18 @@
 import { Icon } from '@cbhq/cds-web/icons/Icon';
-import { IconSize } from '@cbhq/cds-common';
+import { IconProps } from '@cbhq/cds-web/icons/IconProps';
 
-export const UnknownIcon = (props: { size: IconSize }) => {
+export const InlineIcon = ({ size = 's', ...props }: IconProps) => {
   const style: React.CSSProperties = {
     display: 'inline-flex',
   };
 
   return (
     <div style={style}>
-      <Icon name="unknown" size={props.size ?? 'xs'} />
+      <Icon size={size} {...props} />
     </div>
   );
+};
+
+export const UnknownIcon = ({ size = 'xs' }: Pick<IconProps, 'size'>) => {
+  return <InlineIcon name="unknown" size={size} />;
 };
