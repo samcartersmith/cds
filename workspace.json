@@ -3,12 +3,13 @@
   "projects": {
     "common": "packages/common",
     "fonts": "packages/fonts",
-    "lottie-files": "packages/lottie-files",
-    "mobile": "packages/mobile",
-    "utils": "packages/utils",
     "web": "packages/web",
     "web-utils": "packages/web-utils",
     "codegen": "packages/codegen",
-    "website": "apps/website"
+    "website": "apps/website",
+    "lottie-files": "packages/lottie-files",
+    "mobile": "packages/mobile",
+    "mobile-playground": "apps/mobile-playground",
+    "utils": "packages/utils"
   }
 }

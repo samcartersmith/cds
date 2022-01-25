@@ -1,0 +1,20 @@
+{
+  "name": "mobile-playground",
+  "version": "0.0.1",
+  "private": true,
+  "resolutions": {
+    "colors": "1.4.0"
+  },
+  "dependencies": {
+    "@testing-library/jest-native": "*",
+    "@testing-library/react-native": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-config": "*",
+    "react-native-svg": "*",
+    "react-native-codegen": "*"
+  },
+  "devDependencies": {
+    "react-native-codegen": "^0.0.11"
+  }
+}
