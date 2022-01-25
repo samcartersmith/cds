@@ -105,20 +105,20 @@ export type SparklineInteractiveContentProps<Period extends string> = Omit<
   'compact'
 >;
 
-export type ChartMinMaxProps = {
+export type SparklineInteractiveMinMaxProps = {
   dataPoint: ChartDataPoint | undefined;
-  formatAmount: ChartFormatAmount;
+  formatMinMaxLabel: ChartFormatAmount;
   xFunction: ChartXFunction;
 };
 
-export type ChartScrubHandlerProps = {
+export type SparklineInteractiveScrubHandlerProps = {
   onScrubEnd?: () => void;
   onScrubStart?: () => void;
   disabled?: boolean;
   children: React.ReactNode;
 };
 
-export type ChartAnimatedPathProps = {
+export type SparklineInteractiveAnimatedPathProps = {
   d: string;
   color: string;
   area?: string;
@@ -126,36 +126,30 @@ export type ChartAnimatedPathProps = {
   yAxisScalingFactor: number;
 };
 
-export type ChartMarkerDatesProps<Period extends string> = {
+export type SparklineInteractiveMarkerDatesProps<Period extends string> = {
   getMarker: ChartGetMarker;
   formatDate: ChartFormatDate<Period>;
   selectedPeriod: Period;
 };
 
-export type GetFormattedDateParams<Period extends string> = {
-  getMarker: ChartGetMarker;
-  formatDate: ChartFormatDate<Period>;
-  selectedPeriod: Period;
-};
-
-export type ChartPeriodSelectorProps<Period extends string> = {
+export type SparklineInteractivePeriodSelectorProps<Period extends string> = {
   selectedPeriod: Period;
   setSelectedPeriod: (period: Period) => void;
   periods: { label: string; value: Period }[];
   color: string;
 };
 
-export type ChartPeriodProps<Period extends string> = {
+export type SparklineInteractivePeriodProps<Period extends string> = {
   period: { label: string; value: Period };
   selectedPeriod: Period;
-  setSelectedPeriod: ChartPeriodSelectorProps<Period>['setSelectedPeriod'];
+  setSelectedPeriod: SparklineInteractivePeriodSelectorProps<Period>['setSelectedPeriod'];
   color: string;
 };
 
-export type ChartLineVerticalProps = {
+export type SparklineInteractiveLineVerticalProps = {
   color: string;
 };
 
-export type ChartHoverDateRefProps<Period extends string> = {
+export type SparklineInteractiveHoverDateRefProps<Period extends string> = {
   update: (params: ChartScrubParams<Period>) => void;
 };

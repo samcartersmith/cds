@@ -52,9 +52,10 @@ export const routes = {
   SparklineGradient: () =>
     require('../visualizations/__stories__/SparklineGradient.stories').default,
   SparklineInteractive: () =>
-    require('../visualizations/chart/__stories__/SparklineInteractive.stories').default,
+    require('../visualizations/sparkline-interactive/__stories__/SparklineInteractive.stories')
+      .default,
   SparklineInteractiveHeader: () =>
-    require('../visualizations/chart-header/__stories__/SparklineInteractiveHeader.stories')
+    require('../visualizations/sparkline-interactive-header/__stories__/SparklineInteractiveHeader.stories')
       .default,
   Spectrum: () => require('../system/__stories__/Spectrum.stories').default,
   SpotRectangle: () => require('../illustrations/__stories__/SpotRectangle.stories').default,

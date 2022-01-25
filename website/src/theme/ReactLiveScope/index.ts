@@ -48,8 +48,8 @@ import { useFeatureFlag } from '@cbhq/cds-web/system/useFeatureFlag';
 import { useFeatureFlagUpdater } from '@cbhq/cds-web/system/useFeatureFlagUpdater';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
 import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
-import { SparklineInteractive } from '@cbhq/cds-web/visualizations/chart/SparklineInteractive';
-import { SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations/chart-header/SparklineInteractiveHeader';
+import { SparklineInteractive } from '@cbhq/cds-web/visualizations/sparkline-interactive/SparklineInteractive';
+import { SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import { Link as ReactRouterLink } from 'react-router-dom';

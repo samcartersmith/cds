@@ -1,5 +1,11 @@
 import { useCallback } from 'react';
-import { GetFormattedDateParams } from '../types/SparklineInteractiveBaseProps';
+import { ChartFormatDate, ChartGetMarker } from '../types';
+
+export type GetFormattedDateParams<Period extends string> = {
+  getMarker: ChartGetMarker;
+  formatDate: ChartFormatDate<Period>;
+  selectedPeriod: Period;
+};
 
 export function useDateLookup<Period extends string>({
   getMarker,
