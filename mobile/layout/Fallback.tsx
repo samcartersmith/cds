@@ -1,5 +1,4 @@
 // Simplified version of https://github.com/tomzaku/react-native-shimmer-placeholder/blob/master/lib/ShimmerPlaceholder.js
-
 import React, { memo, useEffect, useMemo, useRef } from 'react';
 
 import { FallbackBaseProps } from '@cbhq/cds-common';
@@ -9,7 +8,7 @@ import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { Box, BoxProps } from './Box';
-import { paletteValueToRgbaString } from '../utils/palette';
+import { fallbackShimmer } from '../styles/fallbackShimmer';
 
 export type FallbackProps = FallbackBaseProps & Omit<BoxProps, 'borderRadius' | 'height' | 'width'>;
 
@@ -22,13 +21,14 @@ export const Fallback = memo(function Fallback({
   const { width, borderRadius } = useFallbackShape(shape, baseWidth);
 
   const spectrum = useSpectrum();
-  const shimmerPosition = useRef(new Animated.Value(-1)).current;
+  const shimmerColor = spectrum === 'light' ? fallbackShimmer.light : fallbackShimmer.dark;
+  const shimmerPosition = useRef(new Animated.Value(-1));
   const shimmerAnimation = useRef<Animated.CompositeAnimation>();
   const loopCount = useRef(0);
 
   useEffect(() => {
     const animateShimmer = () => {
-      shimmerAnimation.current = Animated.timing(shimmerPosition, {
+      shimmerAnimation.current = Animated.timing(shimmerPosition.current, {
         toValue: 1,
         duration: 1300,
         useNativeDriver: true,
@@ -39,7 +39,7 @@ export const Fallback = memo(function Fallback({
 
       shimmerAnimation.current.start(({ finished }) => {
         if (finished) {
-          shimmerPosition.setValue(-1);
+          shimmerPosition.current.setValue(-1);
 
           // We also want to avoid playing the animation forever
           // in the background, so stop once we loop 10 times.
@@ -54,28 +54,17 @@ export const Fallback = memo(function Fallback({
     animateShimmer();
 
     return () => shimmerAnimation.current?.stop();
-  }, [shimmerPosition]);
-
-  // Design agreed that paletteValueTo was better than adding these values to palette.
-  // Please do not look at this and think you should use paletteValueTo 🙏
-  const colorShimmer = useMemo(
-    () => [
-      paletteValueToRgbaString(['gray60', 0.05], spectrum),
-      paletteValueToRgbaString(['gray60', 0], spectrum),
-      paletteValueToRgbaString(['gray60', 0.1], spectrum),
-    ],
-    [spectrum],
-  );
+  }, []);
 
   const containerStyle: ViewStyle = useMemo(
     () => ({
       width,
       height,
       overflow: 'hidden',
-      backgroundColor: colorShimmer[0],
+      backgroundColor: shimmerColor[0],
       borderRadius,
     }),
-    [colorShimmer, height, borderRadius, width],
+    [width, height, shimmerColor, borderRadius],
   );
 
   const outputRange = useMemo(
@@ -92,7 +81,7 @@ export const Fallback = memo(function Fallback({
             {
               transform: [
                 {
-                  translateX: shimmerPosition.interpolate({
+                  translateX: shimmerPosition.current.interpolate({
                     inputRange: [-1, 1],
                     outputRange,
                   }),
@@ -103,7 +92,7 @@ export const Fallback = memo(function Fallback({
         >
           <LinearGradient
             style={styles.child}
-            colors={colorShimmer}
+            colors={shimmerColor}
             start={gradStart}
             end={gradEnd}
             locations={gradLocations}
