@@ -1,4 +1,4 @@
-import { useToast as useToastCommon } from '@cbhq/cds-common/overlays/useToast';
+import { useToast as useToastCommon } from '@cbhq/cds-common/src/overlays/useToast';
 
 import { Toast } from './Toast';
 

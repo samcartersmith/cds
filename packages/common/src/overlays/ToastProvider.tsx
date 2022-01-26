@@ -20,7 +20,7 @@ export type ToastProviderProps = {
 export const ToastContext = createContext<ToastProviderStates>({
   activeToast: undefined,
   addToast: () => {},
-  // eslint-disable-next-line compat/compat
+
   removeToast: async () => Promise.resolve(),
   clearToastQueue: () => {},
   pauseTimer: () => {},

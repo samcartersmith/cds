@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { KeyboardAvoidingView, ScrollView, ScrollViewProps } from 'react-native';
-import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
+import { useModalParent } from '@cbhq/cds-common/src/overlays/ModalParentContext';
 
 import { useContentSize } from '../../hooks/useContentSize';
 import { useLayout } from '../../hooks/useLayout';

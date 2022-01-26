@@ -1,6 +1,6 @@
 import { Animated, Modal as RNModal } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
-import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
+import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/src/internal/alertBuilder';
 
 import { Button } from '../../buttons';
 import { Alert } from '../Alert';

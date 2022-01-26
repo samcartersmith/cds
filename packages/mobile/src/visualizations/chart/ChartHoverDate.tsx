@@ -1,10 +1,10 @@
 import React, { ForwardedRef, forwardRef, useImperativeHandle, useRef } from 'react';
 import { Animated, StyleSheet, TextInput } from 'react-native';
-import { ChartScrubParams } from '@cbhq/cds-common/types';
+import { ChartScrubParams } from '@cbhq/cds-common/src/types';
 import {
   ChartHoverDateRefProps,
   SparklineInteractiveBaseProps,
-} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+} from '@cbhq/cds-common/src/types/SparklineInteractiveBaseProps';
 
 import { usePalette } from '../../hooks/usePalette';
 import { useTypographyStyles } from '../../typography';

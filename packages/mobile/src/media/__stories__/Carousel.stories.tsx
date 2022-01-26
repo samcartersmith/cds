@@ -1,6 +1,6 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { memo, useCallback, useMemo, useRef } from 'react';
-import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
+import { useIndexCounter } from '@cbhq/cds-common/src/hooks/useIndexCounter';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

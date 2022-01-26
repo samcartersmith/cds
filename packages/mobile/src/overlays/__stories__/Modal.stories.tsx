@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
+import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/src/internal/modalBuilder';
 
 import { Button } from '../../buttons/Button';
 import { TextInput } from '../../controls/TextInput';

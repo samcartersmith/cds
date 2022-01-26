@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react';
-import { IconButtonVariant } from '@cbhq/cds-common/types/IconButtonBaseProps';
-import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { IconButtonVariant } from '@cbhq/cds-common/src/types/IconButtonBaseProps';
+import { SharedProps } from '@cbhq/cds-common/src/types/SharedProps';
 
 import { IconButton, IconButtonProps } from '../buttons/IconButton';
 import { Box } from '../layout/Box';

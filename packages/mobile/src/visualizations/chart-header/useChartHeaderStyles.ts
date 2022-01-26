@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
-import { SubHeadIconColor } from '@cbhq/cds-common/types/ChartHeaderBaseProps';
+import { SubHeadIconColor } from '@cbhq/cds-common/src/types/ChartHeaderBaseProps';
 
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';

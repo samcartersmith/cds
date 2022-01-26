@@ -1,8 +1,8 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { TextInput } from 'react-native';
 import * as interpolate from 'd3-interpolate-path';
-import { useValueChanges } from '@cbhq/cds-common/hooks/useValueChanges';
-import { ChartAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import { useValueChanges } from '@cbhq/cds-common/src/hooks/useValueChanges';
+import { ChartAnimatedPathProps } from '@cbhq/cds-common/src/types/SparklineInteractiveBaseProps';
 
 import { SparklineArea } from '../SparklineArea';
 import { SparklineGradient } from '../SparklineGradient';

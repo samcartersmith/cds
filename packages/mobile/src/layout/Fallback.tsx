@@ -4,8 +4,8 @@ import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { FallbackBaseProps } from '@cbhq/cds-common';
-import { useFallbackShape } from '@cbhq/cds-common/hooks/useFallbackShape';
-import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
+import { useFallbackShape } from '@cbhq/cds-common/src/hooks/useFallbackShape';
+import { useSpectrum } from '@cbhq/cds-common/src/spectrum/useSpectrum';
 
 import { paletteValueToRgbaString } from '../utils/palette';
 

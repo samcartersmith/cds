@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { PinningDirection, SharedProps } from '@cbhq/cds-common';
-import { overrideAlpha } from '@cbhq/cds-common/color/overrideAlpha';
+import { overrideAlpha } from '@cbhq/cds-common/src/color/overrideAlpha';
 
 import { usePalette } from '../hooks/usePalette';
 import { usePinStyles } from '../hooks/usePinStyles';

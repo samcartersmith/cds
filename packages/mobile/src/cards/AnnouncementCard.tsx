@@ -1,4 +1,4 @@
-import { createAnnouncementCard } from '@cbhq/cds-common/cards/createAnnouncementCard';
+import { createAnnouncementCard } from '@cbhq/cds-common/src/cards/createAnnouncementCard';
 
 import { Button } from '../buttons/Button';
 import { IconButton } from '../buttons/IconButton';

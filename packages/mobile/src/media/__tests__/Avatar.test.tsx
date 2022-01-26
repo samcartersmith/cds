@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react-native';
-import { getNormalAvatarPixelSize } from '@cbhq/cds-common/media/useAvatarSize';
-import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
+import { getNormalAvatarPixelSize } from '@cbhq/cds-common/src/media/useAvatarSize';
+import { AvatarSize } from '@cbhq/cds-common/src/types/AvatarSize';
 
 import { Avatar } from '../Avatar';
 

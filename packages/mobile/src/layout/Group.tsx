@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { View } from 'react-native';
-import { GroupBaseProps } from '@cbhq/cds-common/types';
-import { flattenAndJoinNodes } from '@cbhq/cds-common/utils/flattenAndJoinNodes';
+import { GroupBaseProps } from '@cbhq/cds-common/src/types';
+import { flattenAndJoinNodes } from '@cbhq/cds-common/src/utils/flattenAndJoinNodes';
 
 import { Box, BoxProps } from './Box';
 import { Spacer } from './Spacer';

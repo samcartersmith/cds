@@ -1,12 +1,12 @@
 import { PlatformOSType, View } from 'react-native';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { Spectrum, useScale, useSpectrum } from '@cbhq/cds-common';
-import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
-import { useRootScalePreference } from '@cbhq/cds-common/scale/useRootScalePreference';
-import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
-import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
-import { useRootSpectrumPreference } from '@cbhq/cds-common/spectrum/useRootSpectrumPreference';
-import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
+import { useRootScale } from '@cbhq/cds-common/src/scale/useRootScale';
+import { useRootScalePreference } from '@cbhq/cds-common/src/scale/useRootScalePreference';
+import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/src/scale/useRootScalePreferenceUpdater';
+import { useRootSpectrum } from '@cbhq/cds-common/src/spectrum/useRootSpectrum';
+import { useRootSpectrumPreference } from '@cbhq/cds-common/src/spectrum/useRootSpectrumPreference';
+import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/src/spectrum/useRootSpectrumPreferenceUpdater';
 import { entries } from '@cbhq/cds-utils';
 
 import { deviceScaleMap } from '../../hooks/useDeviceScaleToCdsScale';

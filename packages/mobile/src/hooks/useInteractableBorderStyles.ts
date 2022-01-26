@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Animated, Falsy, ViewStyle } from 'react-native';
-import { useInteractableBorderRadius } from '@cbhq/cds-common/hooks/useInteractableBorderRadius';
-import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/tokens/border';
+import { useInteractableBorderRadius } from '@cbhq/cds-common/src/hooks/useInteractableBorderRadius';
+import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/src/tokens/border';
 
 import type { InteractableProps } from '../system/Interactable';
 

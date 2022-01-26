@@ -18,7 +18,7 @@ import {
   StackNavigationProp,
 } from '@react-navigation/stack';
 import includes from 'lodash/includes';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useInteractableHeight } from '@cbhq/cds-common/src/hooks/useInteractableHeight';
 import { emptyObject, mapValues } from '@cbhq/cds-utils';
 
 import { IconButton } from '../buttons/IconButton';

@@ -1,26 +1,39 @@
 {
-  "extends": "@nrwl/workspace/presets/core.json",
-  "npmScope": "design-system",
+  "npmScope": "cbhq",
   "affected": {
-    "defaultBase": "main"
+    "defaultBase": "master"
   },
   "cli": {
-    "defaultCollection": "@nrwl/react"
+    "defaultCollection": "@nrwl/workspace"
+  },
+  "implicitDependencies": {
+    "*.config.js": "*",
+    "nx.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tsconfig.*.json": "*",
+    "workspace.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheDirectory": ".nx/cache",
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "captureStderr": true
       }
     }
   },
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
       }
-    }
+    ]
   },
   "workspaceLayout": {
     "appsDir": "apps",

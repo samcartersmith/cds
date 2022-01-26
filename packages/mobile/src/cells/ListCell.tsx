@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { ListCellBaseProps } from '@cbhq/cds-common';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
+import { useScaleConditional } from '@cbhq/cds-common/src/scale/useScaleConditional';
+import { compactListHeight, listHeight } from '@cbhq/cds-common/src/tokens/cell';
 
 import { VStack } from '../layout/VStack';
 import { TextBody, TextHeadline } from '../typography';

@@ -1,0 +1,55 @@
+_shared_step: &shared_step
+  commands:
+    - tools/ci/setup.sh
+  plugins:
+    - file:///buildkite/plugins/docker:
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v16
+        propagate-environment: true
+        propagate-uid-gid: true
+        environment:
+          - "BUILDKITE_API_TOKEN"
+    - file:///buildkite/plugins/cache:
+        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
+        paths:
+          - ./.yarn/cache
+          - ./.yarn/install-state.gz
+  agents:
+    queue: docker
+    resource_class: large
+
+steps:
+  - label: Setup
+    key: setup
+    <<: *shared_step
+
+  - label: Build
+    <<: *shared_step
+    depends_on: setup
+    parallelism: 1
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci build
+
+  - label: Lint
+    <<: *shared_step
+    depends_on: setup
+    parallelism: 1
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci lint
+
+  - label: Test
+    <<: *shared_step
+    depends_on: setup
+    parallelism: 1
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci test
+
+  - label: Typecheck
+    <<: *shared_step
+    depends_on: setup
+    parallelism: 1
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci typecheck

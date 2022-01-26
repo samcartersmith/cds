@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
-import { FeatureFlag } from '@cbhq/cds-common/system/FeatureFlagContext';
-import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
+import { FeatureFlag } from '@cbhq/cds-common/src/system/FeatureFlagContext';
+import { useFeatureFlagToggler } from '@cbhq/cds-common/src/system/useFeatureFlagToggler';
 import { entries } from '@cbhq/cds-utils';
 
 import { ListCell } from '../../cells/ListCell';

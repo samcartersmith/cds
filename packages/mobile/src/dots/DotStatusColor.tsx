@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
 import { useIconSize } from '@cbhq/cds-common';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
-import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
+import { borderRadius } from '@cbhq/cds-common/src/tokens/border';
+import { DotBaseProps } from '@cbhq/cds-common/src/types/DotBaseProps';
 
 import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';

@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { useToggler } from '@cbhq/cds-common/src/hooks/useToggler';
 import {
   CreateIconSheetParams,
   iconSheetBuilder,
-} from '@cbhq/cds-common/internal/iconSheetBuilder';
+} from '@cbhq/cds-common/src/internal/iconSheetBuilder';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

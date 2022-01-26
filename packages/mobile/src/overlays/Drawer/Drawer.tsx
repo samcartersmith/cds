@@ -14,8 +14,8 @@ import {
   horizontalDrawerPercentageOfView,
   MAX_OVER_DRAG,
   verticalDrawerPercentageOfView,
-} from '@cbhq/cds-common/animation/drawer';
-import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
+} from '@cbhq/cds-common/src/animation/drawer';
+import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/src/types';
 import { emptyObject } from '@cbhq/cds-utils';
 
 import { useDrawerAnimation } from '../../animation/useDrawerAnimation';

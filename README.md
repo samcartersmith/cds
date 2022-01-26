@@ -8,6 +8,15 @@ This repo is currently a prototype of the new design system polyrepo.
 The existing CDS code used in this repo is a snapshot from https://github.cbhq.net/mono/repo/pull/49327. 
 Do not commit the latest CDS master code to this repo.
 
+## Running Nx
+
+Once everything is copied and configured, run:
+
+```
+yarn install
+yarn setup
+```
+
 ## Current commands
 
 See Makefile for a list of commands that currently work.

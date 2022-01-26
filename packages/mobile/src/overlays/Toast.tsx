@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useCallback, useEffect, useImperativeHandle } from 'react';
 import { ToastBaseProps, ToastHandleClose, ToastRefBaseProps } from '@cbhq/cds-common';
-import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { DEFAULT_SCALE } from '@cbhq/cds-common/src/scale/context';
+import { zIndex } from '@cbhq/cds-common/src/tokens/zIndex';
 
 import { Button } from '../buttons';
 import { useSpacingScale } from '../hooks/useSpacingScale';

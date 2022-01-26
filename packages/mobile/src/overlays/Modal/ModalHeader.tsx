@@ -1,7 +1,7 @@
 import React from 'react';
 import { GestureResponderEvent } from 'react-native';
-import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { ModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
+import { useModalParent } from '@cbhq/cds-common/src/overlays/ModalParentContext';
+import { ModalHeaderBaseProps } from '@cbhq/cds-common/src/types/ModalBaseProps';
 
 import { IconButton } from '../../buttons';
 import { Box, HStack } from '../../layout';

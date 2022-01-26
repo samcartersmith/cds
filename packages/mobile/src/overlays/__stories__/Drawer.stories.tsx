@@ -1,6 +1,6 @@
 import React from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import type { DrawerBaseProps } from '@cbhq/cds-common/types';
+import { useToggler } from '@cbhq/cds-common/src/hooks/useToggler';
+import type { DrawerBaseProps } from '@cbhq/cds-common/src/types';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';

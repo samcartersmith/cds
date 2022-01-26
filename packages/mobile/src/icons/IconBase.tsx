@@ -2,7 +2,7 @@ import React, { cloneElement, useMemo } from 'react';
 import { Animated, Text, ViewStyle } from 'react-native';
 import type { TextStyle } from 'react-native';
 import { IconBaseProps, PaletteForeground } from '@cbhq/cds-common';
-import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
+import { useIconSize } from '@cbhq/cds-common/src/hooks/useIconSize';
 
 import { usePalette } from '../hooks/usePalette';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';

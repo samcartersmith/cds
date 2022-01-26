@@ -1,5 +1,5 @@
 import React from 'react';
-import { BadgeBaseProps, useBadge } from '@cbhq/cds-common/hooks/useBadge';
+import { BadgeBaseProps, useBadge } from '@cbhq/cds-common/src/hooks/useBadge';
 
 import { Box, BoxProps } from '../layout';
 import { TextCaption } from '../typography';

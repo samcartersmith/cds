@@ -1,17 +1,12 @@
 {
-  "extends": ["../../.eslintrc.js"],
+  "extends": [
+    "../../.eslintrc.js",
+    "plugin:@cbhq/react-native"
+  ],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "no-restricted-imports": [
-          "error",
-          {
-            "paths": ["@cbhq/cds-mobile"],
-            "patterns": ["@cbhq/cds-mobile/*"]
-          }
-        ],
-        "no-process-env": "error",
         "@cbhq/prefer-react-named-module-import": "off"
       }
     }

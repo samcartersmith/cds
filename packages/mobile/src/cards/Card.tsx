@@ -1,8 +1,8 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { ViewStyle } from 'react-native';
-import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
-import { cardSizes } from '@cbhq/cds-common/tokens/card';
-import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/types';
+import { usePinBorderRadiusStyles } from '@cbhq/cds-common/src/hooks/usePinBorderRadiusStyles';
+import { cardSizes } from '@cbhq/cds-common/src/tokens/card';
+import type { BorderWidth, CardBaseProps, ElevationLevels } from '@cbhq/cds-common/src/types';
 
 import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { usePinStyles } from '../hooks/usePinStyles';

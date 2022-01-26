@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { IllustrationVariant } from '@cbhq/cds-common';
-import { IllustrationBaseProps } from '@cbhq/cds-common/types/IllustrationProps';
-import { convertDimensionToSize } from '@cbhq/cds-common/utils/convertDimensionToSize';
-import { convertSizeWithMultiplier } from '@cbhq/cds-common/utils/convertSizeWithMultiplier';
-import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common/utils/getDefaultSizeObjectForIllustration';
+import { IllustrationBaseProps } from '@cbhq/cds-common/src/types/IllustrationProps';
+import { convertDimensionToSize } from '@cbhq/cds-common/src/utils/convertDimensionToSize';
+import { convertSizeWithMultiplier } from '@cbhq/cds-common/src/utils/convertSizeWithMultiplier';
+import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common/src/utils/getDefaultSizeObjectForIllustration';
 
 import { useIllustrationXml } from './useIllustrationXml';
 

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { TrayBaseProps } from '@cbhq/cds-common/types';
+import { TrayBaseProps } from '@cbhq/cds-common/src/types';
 
 import { HStack, VStack } from '../../layout';
 import { TextTitle3 } from '../../typography/TextTitle3';

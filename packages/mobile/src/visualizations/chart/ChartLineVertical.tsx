@@ -2,8 +2,8 @@ import React, { memo, useMemo } from 'react';
 import { Animated as RNAnimated, StyleSheet } from 'react-native';
 import Animated from 'react-native-reanimated';
 import Svg, { Line } from 'react-native-svg';
-import { maskOpacity } from '@cbhq/cds-common/tokens/sparkline';
-import { ChartLineVerticalProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import { maskOpacity } from '@cbhq/cds-common/src/tokens/sparkline';
+import { ChartLineVerticalProps } from '@cbhq/cds-common/src/types/SparklineInteractiveBaseProps';
 
 import { usePalette } from '../../hooks/usePalette';
 

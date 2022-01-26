@@ -3,7 +3,7 @@ import {
   IllustrationPictogramNames,
   IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
-} from '@cbhq/cds-common/types/IllustrationNames';
+} from '@cbhq/cds-common/src/types/IllustrationNames';
 
 import { Pictogram, SpotRectangle, SpotSquare } from '../illustrations';
 import { VStack } from '../layout/VStack';

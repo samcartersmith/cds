@@ -2,7 +2,7 @@ import { ViewStyle } from 'react-native';
 import {
   useButtonSpacing as useSharedButtonSpacing,
   UseButtonSpacingParams,
-} from '@cbhq/cds-common/hooks/useButtonSpacing';
+} from '@cbhq/cds-common/src/hooks/useButtonSpacing';
 
 import { useFeatureFlag } from '../system/useFeatureFlag';
 

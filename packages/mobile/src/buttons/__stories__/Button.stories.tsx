@@ -1,5 +1,5 @@
 import React from 'react';
-import { buttonBuilderDeprecated } from '@cbhq/cds-common/internal/buttonBuilderDeprecated';
+import { buttonBuilderDeprecated } from '@cbhq/cds-common/src/internal/buttonBuilderDeprecated';
 import { entries } from '@cbhq/cds-utils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

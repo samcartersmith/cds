@@ -6,9 +6,9 @@ import {
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
 } from 'react-native';
-import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
-import { IconName } from '@cbhq/cds-common/types';
-import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
+import { useMergedRef } from '@cbhq/cds-common/src/hooks/useMergedRef';
+import { IconName } from '@cbhq/cds-common/src/types';
+import { SearchInputBaseProps } from '@cbhq/cds-common/src/types/SearchInputBaseProps';
 
 import { Box } from '../layout/Box';
 

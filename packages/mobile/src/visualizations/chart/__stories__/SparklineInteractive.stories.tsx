@@ -2,8 +2,8 @@ import React from 'react';
 import {
   sparklineInteractiveBuilder,
   sparklineInteractiveWithHeaderBuilder,
-} from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
-import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+} from '@cbhq/cds-common/src/internal/sparklineInteractiveBuilder';
+import { sparklineInteractiveData } from '@cbhq/cds-common/src/internal/visualizations/SparklineInteractiveData';
 
 import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
 import { Box } from '../../../layout';

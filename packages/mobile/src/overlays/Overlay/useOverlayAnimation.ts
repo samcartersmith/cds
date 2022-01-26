@@ -4,7 +4,7 @@ import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
   overlayHiddenOpacity,
-} from '@cbhq/cds-common/animation/overlay';
+} from '@cbhq/cds-common/src/animation/overlay';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 

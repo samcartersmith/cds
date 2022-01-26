@@ -1,9 +1,9 @@
 import React, { ForwardedRef, forwardRef, memo, useCallback, useEffect } from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
-import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common/animation/select';
-import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { SelectBaseProps } from '@cbhq/cds-common/types';
+import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common/src/animation/select';
+import { useInputVariant } from '@cbhq/cds-common/src/hooks/useInputVariant';
+import { useToggler } from '@cbhq/cds-common/src/hooks/useToggler';
+import { SelectBaseProps } from '@cbhq/cds-common/src/types';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';

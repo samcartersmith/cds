@@ -1,5 +1,5 @@
 import React from 'react';
-import { illustrationBuilder } from '@cbhq/cds-common/internal/illustrationBuilder';
+import { illustrationBuilder } from '@cbhq/cds-common/src/internal/illustrationBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';

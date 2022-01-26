@@ -12,9 +12,9 @@ import {
   DISMISSAL_VELOCITY_THRESHOLD,
   MAX_OVER_DRAG,
   MIN_PAN_DISTANCE,
-} from '@cbhq/cds-common/animation/drawer';
-import { horizontalDrawerWidth } from '@cbhq/cds-common/tokens/drawer';
-import { modulate } from '@cbhq/cds-common/utils/modulate';
+} from '@cbhq/cds-common/src/animation/drawer';
+import { horizontalDrawerWidth } from '@cbhq/cds-common/src/tokens/drawer';
+import { modulate } from '@cbhq/cds-common/src/utils/modulate';
 
 type UseDrawerPanResponderParams = {
   drawerAnimation: Animated.Value;

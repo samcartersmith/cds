@@ -1,3 +1,3 @@
-import { useModal } from '@cbhq/cds-common/overlays/useModal';
+import { useModal } from '@cbhq/cds-common/src/overlays/useModal';
 
 export { useModal };

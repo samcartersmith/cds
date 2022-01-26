@@ -1,6 +1,6 @@
 /* eslint-disable react-native-a11y/has-accessibility-hint */
 import React from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { useToggler } from '@cbhq/cds-common/src/hooks/useToggler';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useCheckboxGroupState } from '../../hooks/useCheckboxGroupState';

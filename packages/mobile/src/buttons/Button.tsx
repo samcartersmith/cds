@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { ButtonBaseProps } from '@cbhq/cds-common';
-import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
-import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
-import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useButtonBorderRadius } from '@cbhq/cds-common/src/hooks/useButtonBorderRadius';
+import { useButtonIconSize } from '@cbhq/cds-common/src/hooks/useButtonIconSize';
+import { useButtonVariant } from '@cbhq/cds-common/src/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/src/hooks/useInteractableHeight';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { useFlushStyles } from '../hooks/useFlushStyles';

@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react-native';
-import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { normalScaleMap } from '@cbhq/cds-common/src/hooks/useIconSize';
+import { borderWidth } from '@cbhq/cds-common/src/tokens/border';
 
 import { Icon } from '../../icons/Icon';
 import { DotCount } from '../DotCount';

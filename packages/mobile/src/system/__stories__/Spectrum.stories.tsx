@@ -1,6 +1,6 @@
 import React from 'react';
-import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+import { useSpectrum } from '@cbhq/cds-common/src/spectrum/useSpectrum';
+import { useFeatureFlag } from '@cbhq/cds-common/src/system/useFeatureFlag';
 
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

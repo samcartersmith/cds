@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
-import { CreateTrayProps, trayBuilder } from '@cbhq/cds-common/internal/trayBuilder';
+import { CreateTrayProps, trayBuilder } from '@cbhq/cds-common/src/internal/trayBuilder';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';

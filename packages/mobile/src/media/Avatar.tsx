@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { StyleSheet } from 'react-native';
-import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
-import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
-import { useAvatarSrc } from '@cbhq/cds-common/media/useAvatarSrc';
-import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
+import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/src/hooks/useShapeToBorderRadiusAlias';
+import { useAvatarSize } from '@cbhq/cds-common/src/media/useAvatarSize';
+import { useAvatarSrc } from '@cbhq/cds-common/src/media/useAvatarSrc';
+import { AvatarBaseProps } from '@cbhq/cds-common/src/types/AvatarBaseProps';
 
 import { Box } from '../layout';
 

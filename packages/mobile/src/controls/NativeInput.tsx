@@ -1,7 +1,7 @@
 import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
 import { TextInput as RNTextInput, TextInput, TextInputProps, View, ViewStyle } from 'react-native';
 import { SharedProps, TextBaseProps, TextInputBaseProps, useSpectrum } from '@cbhq/cds-common';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/src/types/SharedAccessibilityProps';
 
 import { useInputTextStyles } from '../hooks/useInputStyles';
 import { usePalette } from '../hooks/usePalette';

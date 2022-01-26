@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Animated } from 'react-native';
-import { fadeDuration } from '@cbhq/cds-common/tokens/sparkline';
+import { fadeDuration } from '@cbhq/cds-common/src/tokens/sparkline';
 
 export function useOpacityAnimation(
   initialValue: number | undefined = 0,

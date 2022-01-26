@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 import { ScrollView } from 'react-native';
-import { AnyRef, CallbackRef, useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { AnyRef, CallbackRef, useMergedRef } from '@cbhq/cds-common/src/hooks/useMergedRef';
 import { emptyObject } from '@cbhq/cds-utils';
 
 export type ScrollRef = CallbackRef<ScrollView> | null;

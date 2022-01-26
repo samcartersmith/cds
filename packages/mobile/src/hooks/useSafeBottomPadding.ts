@@ -1,5 +1,5 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useScale } from '@cbhq/cds-common/scale/useScale';
+import { useScale } from '@cbhq/cds-common/src/scale/useScale';
 
 import * as scales from '../styles/scale';
 

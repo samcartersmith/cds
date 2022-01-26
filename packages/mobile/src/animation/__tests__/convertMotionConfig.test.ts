@@ -1,4 +1,4 @@
-import { durations } from '@cbhq/cds-common/tokens/motion';
+import { durations } from '@cbhq/cds-common/src/tokens/motion';
 
 import { convertMotionConfig, mobileCurves } from '../convertMotionConfig';
 

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import type { Scale } from '@cbhq/cds-common/types';
+import type { Scale } from '@cbhq/cds-common/src/types';
 
 import { useDeviceFontScale } from './useDeviceFontScale';
 

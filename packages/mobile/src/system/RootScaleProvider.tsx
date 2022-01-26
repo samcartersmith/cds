@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import { RootScaleContext } from '@cbhq/cds-common/scale/context';
+import { RootScaleContext } from '@cbhq/cds-common/src/scale/context';
 import {
   RootScalePreferenceProvider,
   RootScalePreferenceProviderProps,
-} from '@cbhq/cds-common/scale/RootScalePreferenceProvider';
-import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
-import { useRootScalePreference } from '@cbhq/cds-common/scale/useRootScalePreference';
+} from '@cbhq/cds-common/src/scale/RootScalePreferenceProvider';
+import { ScaleProvider } from '@cbhq/cds-common/src/scale/ScaleProvider';
+import { useRootScalePreference } from '@cbhq/cds-common/src/scale/useRootScalePreference';
 
 import { useDeviceScaleToCdsScale } from '../hooks/useDeviceScaleToCdsScale';
 

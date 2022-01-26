@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Animated } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 import uniqBy from 'lodash/uniqBy';
-import { nux, NuxLottie } from '@cbhq/cds-lottie-files/nux';
+import { nux, NuxLottie } from '@cbhq/cds-lottie-files/src/nux';
 
 import { createLottie, LottiePlayerMobile } from '../createLottie';
 

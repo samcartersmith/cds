@@ -3,4 +3,4 @@
  * CDS common is dep of cds-mobile.
  * This allows consumers to pull directly from cds-mobile.
  */
-export { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+export { useFeatureFlag } from '@cbhq/cds-common/src/system/useFeatureFlag';

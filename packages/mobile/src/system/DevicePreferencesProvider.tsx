@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { DevicePreferencesBaseProviderProps } from '@cbhq/cds-common/system/DevicePreferencesBaseProvider';
+import { DevicePreferencesBaseProviderProps } from '@cbhq/cds-common/src/system/DevicePreferencesBaseProvider';
 
 import { RootScaleProvider } from './RootScaleProvider';
 import { RootSpectrumProvider } from './RootSpectrumProvider';

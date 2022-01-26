@@ -1,8 +1,8 @@
 import React, { forwardRef, memo } from 'react';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 import { SharedProps, useScale } from '@cbhq/cds-common';
-import type { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
-import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
+import type { ControlBaseProps } from '@cbhq/cds-common/src/types/ControlBaseProps';
+import type { RadioGroupBaseProps } from '@cbhq/cds-common/src/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
 
 import { Icon } from '../icons/Icon';

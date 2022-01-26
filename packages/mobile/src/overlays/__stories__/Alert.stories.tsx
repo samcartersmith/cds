@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
-import { useAlert } from '@cbhq/cds-common/overlays/useAlert';
-import { useModal } from '@cbhq/cds-common/overlays/useModal';
+import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/src/internal/alertBuilder';
+import { useAlert } from '@cbhq/cds-common/src/overlays/useAlert';
+import { useModal } from '@cbhq/cds-common/src/overlays/useModal';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

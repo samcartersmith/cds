@@ -5,8 +5,8 @@ import {
   ProgressBarFixedLabelContainerProps,
   ProgressBarFixedLabelProps,
   ProgressBarWithFixedLabelsProps,
-} from '@cbhq/cds-common/types/ProgressBarBaseProps';
-import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
+} from '@cbhq/cds-common/src/types/ProgressBarBaseProps';
+import { getProgressBarLabelParts } from '@cbhq/cds-common/src/visualizations/getProgressBarLabelParts';
 
 import { Box, VStack } from '../layout';
 

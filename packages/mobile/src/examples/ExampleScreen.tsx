@@ -1,13 +1,13 @@
 import React, { useCallback, useMemo } from 'react';
 import { ScrollView, View, ViewStyle } from 'react-native';
-import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
-import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
-import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
-import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
-import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
-import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import type { PaletteForeground, SpacingProps } from '@cbhq/cds-common/types';
+import { loremIpsum } from '@cbhq/cds-common/src/internal/data/loremIpsum';
+import { useRootScale } from '@cbhq/cds-common/src/scale/useRootScale';
+import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/src/scale/useRootScalePreferenceUpdater';
+import { useRootSpectrum } from '@cbhq/cds-common/src/spectrum/useRootSpectrum';
+import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/src/spectrum/useRootSpectrumPreferenceUpdater';
+import { useFeatureFlagToggler } from '@cbhq/cds-common/src/system/useFeatureFlagToggler';
+import { gutter } from '@cbhq/cds-common/src/tokens/sizing';
+import type { PaletteForeground, SpacingProps } from '@cbhq/cds-common/src/types';
 
 import { Switch } from '../controls/Switch';
 import { usePalette } from '../hooks/usePalette';
