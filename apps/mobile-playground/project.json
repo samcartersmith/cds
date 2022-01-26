@@ -3,73 +3,32 @@
   "sourceRoot": "apps/mobile-playground/src",
   "projectType": "application",
   "targets": {
-    "start": {
-      "executor": "@nrwl/react-native:start",
-      "options": {
-        "port": 8081
-      }
-    },
-    "serve": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "nx start mobile-playground"
-      }
-    },
-    "run-ios": {
-      "executor": "@nrwl/react-native:run-ios",
-      "options": {}
-    },
-    "bundle-ios": {
-      "executor": "@nrwl/react-native:bundle",
-      "outputs": ["apps/mobile-playground/build"],
-      "options": {
-        "entryFile": "apps/mobile-playground/src/main.tsx",
-        "platform": "ios",
-        "bundleOutput": "dist/apps/mobile-playground/ios/main.jsbundle"
-      }
-    },
-    "run-android": {
-      "executor": "@nrwl/react-native:run-android",
-      "options": {}
-    },
     "build-android": {
-      "executor": "@nrwl/react-native:build-android",
-      "outputs": [
-        "apps/mobile-playground/android/app/build/outputs/bundle",
-        "apps/mobile-playground/android/app/build/outputs/apk"
-      ],
-      "options": {}
+      "executor": "@cbhq/mono-tasks:build-android"
     },
-    "bundle-android": {
-      "executor": "@nrwl/react-native:bundle",
-      "options": {
-        "entryFile": "apps/mobile-playground/src/main.tsx",
-        "platform": "android",
-        "bundleOutput": "dist/apps/mobile-playground/android/main.jsbundle"
-      }
+    "build-ios": {
+      "executor": "@cbhq/mono-tasks:build-ios"
     },
-    "sync-deps": {
-      "executor": "@nrwl/react-native:sync-deps",
-      "options": {}
+    "start-android": {
+      "executor": "@cbhq/mono-tasks:start-android"
     },
-    "ensure-symlink": {
-      "executor": "@nrwl/react-native:ensure-symlink",
-      "options": {}
+    "start-ios": {
+      "executor": "@cbhq/mono-tasks:start-ios"
+    },
+    "start-metro": {
+      "executor": "@cbhq/mono-tasks:start-metro"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/mobile-playground/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@cbhq/mono-tasks:lint"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/mobile-playground"],
-      "options": {
-        "jestConfig": "apps/mobile-playground/jest.config.js",
-        "passWithNoTests": true
-      }
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
     }
   },
   "tags": []
