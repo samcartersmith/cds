@@ -6,9 +6,6 @@
   "repository": "git@github.cbhq.net:jonathan-rossi/design-system.git",
   "scripts": {
     "postinstall": "patch-package",
-    "build": "packemon build --filter '@cbhq/*'",
-    "diagnose": "yarn build && mono-env diagnose --group web",
-    "setup": "yarn build && mono-env setup --group web",
     "validate": "nx workspace-lint"
   },
   "workspaces": [
@@ -28,9 +25,9 @@
     "@types/node": "^16.11.19",
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
-    "packemon": "^1.10.0",
     "patch-package": "^6.4.7",
     "prettier": "^2.5.1",
+    "react": "17.0.2",
     "typescript": "~4.5.4"
   },
   "engines": {
