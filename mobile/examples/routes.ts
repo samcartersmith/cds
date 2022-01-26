@@ -77,5 +77,6 @@ export const routes = {
   TextTitle3: () => require('../typography/__stories__/TextTitle3.stories').default,
   TextTitle4: () => require('../typography/__stories__/TextTitle4.stories').default,
   Toast: () => require('../overlays/__stories__/Toast.stories').default,
+  TooltipV2: () => require('../overlays/__stories__/TooltipV2.stories').default,
   Tray: () => require('../overlays/__stories__/Tray.stories').default,
 } as const;
