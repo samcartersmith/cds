@@ -20,13 +20,6 @@
           "callSites": ["@commerce/frontend/app/navigation/AppNavigation.tsx"]
         },
         {
-          "aliasPath": "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx",
-          "callSites": [
-            "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx",
-            "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx"
-          ]
-        },
-        {
           "aliasPath": "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx",
           "callSites": [
             "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedSegment.tsx"
@@ -35,6 +28,13 @@
         {
           "aliasPath": "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx",
           "callSites": ["@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx"]
+        },
+        {
+          "aliasPath": "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx",
+          "callSites": [
+            "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx",
+            "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx"
+          ]
         },
         {
           "aliasPath": "@commerce/frontend/pages/selfManaged/Balances/BalancesTable/BalancesTableHeader.tsx",
@@ -171,9 +171,9 @@
         "@commerce/frontend/components/ListTable/ListTableItem.tsx": 1,
         "@commerce/frontend/components/PageActions/PageActions.tsx": 1,
         "@commerce/frontend/components/Toast/Toast.tsx": 2,
-        "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 1,
         "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 2,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 2,
+        "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 1,
         "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
         "@commerce/frontend/components/Form/CheckboxInput/CheckboxInput.tsx": 1,
         "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
@@ -223,8 +223,8 @@
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBodyRow.tsx": 2,
         "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1,
@@ -238,9 +238,9 @@
           "@commerce/frontend/components/AuthPageLayout/AuthPageLayout.tsx": 1,
           "@commerce/frontend/components/ExtendedSidebarItem/ExtendedSidebarItem.tsx": 1,
           "@commerce/frontend/components/PageActions/PageActions.tsx": 1,
-          "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 1,
           "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 2,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 2,
+          "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 1,
           "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
           "@commerce/frontend/components/Form/CheckboxInput/CheckboxInput.tsx": 1,
           "@commerce/frontend/components/Form/FormLayout/FormLayout.tsx": 1,
@@ -624,8 +624,8 @@
         "@commerce/frontend/components/Modal/Modal.tsx": 1,
         "@commerce/frontend/components/Modal/ModalSuspenseFallback.tsx": 1,
         "@commerce/frontend/components/ModalContent/ModalSuspenseFallback.tsx": 1,
-        "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 2,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx": 1,
+        "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 2,
         "@commerce/frontend/components/Form/CheckboxInput/CheckboxInput.tsx": 1,
         "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 2,
         "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
@@ -718,8 +718,8 @@
           "@commerce/frontend/components/Modal/Modal.tsx": 1,
           "@commerce/frontend/components/Modal/ModalSuspenseFallback.tsx": 1,
           "@commerce/frontend/components/ModalContent/ModalSuspenseFallback.tsx": 1,
-          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx": 1,
+          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/components/Form/ImageInput/ImageInput.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 2,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
@@ -843,8 +843,8 @@
           "@commerce/frontend/components/Modal/Modal.tsx": 1,
           "@commerce/frontend/components/Modal/ModalSuspenseFallback.tsx": 1,
           "@commerce/frontend/components/ModalContent/ModalSuspenseFallback.tsx": 1,
-          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/app/segments/selfManaged/SelfManagedSegment.tsx": 1,
+          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1,
           "@commerce/frontend/components/Table/TablePagination/TablePagination.tsx": 1,
           "@commerce/frontend/pages/coinbaseManaged/FinishAccountSetup/CoinbaseManagedFinishAccountSetup.tsx": 2,
           "@commerce/frontend/pages/selfManaged/ResendConfirmationEmail/ResendConfirmationEmail.tsx": 1,
@@ -1046,8 +1046,8 @@
           "aliasPath": "@commerce/frontend/components/ListTable/ListTable.tsx",
           "callSites": [
             "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx",
-            "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx",
             "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx",
+            "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx",
             "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx",
             "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx",
             "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/AccountInformation.tsx",
@@ -1336,10 +1336,10 @@
         "@commerce/frontend/components/NoSearchResults/NoSearchResults.tsx": 2,
         "@commerce/frontend/components/SingleColumnLayout/SingleColumnLayout.tsx": 1,
         "@commerce/frontend/components/StackedLabels/StackedLabels.tsx": 1,
-        "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 3,
-        "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems.tsx": 5,
         "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 1,
         "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1,
+        "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 3,
+        "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems.tsx": 5,
         "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
         "@commerce/frontend/components/Form/CheckboxInput/CheckboxInput.tsx": 1,
         "@commerce/frontend/components/Form/DropdownInput/DropdownInput.tsx": 1,
@@ -1406,8 +1406,8 @@
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 3,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 5,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 2,
@@ -1619,8 +1619,8 @@
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePayments.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/Withdrawals/RemoveLinkedCoinbaseAccountModal/RemoveLinkedCoinbaseAccountModal.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
         },
         "spacingHorizontal": {
           "@commerce/frontend/components/AccountingReports/AccountingReportsModal.tsx": 1,
@@ -2080,8 +2080,8 @@
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 4,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
@@ -2118,8 +2118,8 @@
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 4,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
@@ -2170,8 +2170,8 @@
           "@commerce/frontend/pages/shared/Payments/PaymentDetails/PaymentActivities/PaymentActivity/PaymentActivity.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 4,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 3,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
@@ -2219,8 +2219,8 @@
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/ChargeExpiry/ChargeExpiry.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
@@ -2551,8 +2551,8 @@
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 2,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
@@ -2638,8 +2638,8 @@
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EventsModal/EventsModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
@@ -2727,8 +2727,8 @@
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/TwoFactorVerification/SecondaryAuthentication/SecondaryAuthentication.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 2,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/EditModal/EditModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
@@ -2756,8 +2756,8 @@
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/ConfirmPassword.tsx": 2,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 2,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/AbsolutePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/RelativePaymentSettings.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/WhitelistedDomains/WhitelistedDomainsItem/WhitelistedDomainsItem.tsx": 1
@@ -2797,8 +2797,8 @@
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/CloseAccount/CloseAccountModal/ConfirmPassword.tsx": 1,
           "@commerce/frontend/pages/selfManaged/Settings/SelfManagedSecuritySettings/ChangePassword/ChangePasswordModal/ChangePasswordModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1,
@@ -3425,8 +3425,8 @@
         "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 2,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 2,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
@@ -3438,8 +3438,8 @@
           "@commerce/frontend/pages/shared/Error/ErrorPage.tsx": 3,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptionItem/SendTestModal/SendTestModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1
@@ -3458,8 +3458,8 @@
           "@commerce/frontend/pages/shared/Invoices/InvoiceDetails/InvoiceInformation/InvoiceInformationBody/InvoiceInformationBody.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1
         }
       }
@@ -3563,6 +3563,17 @@
       "cds": "@cbhq/cds-web/system/ThemeProvider"
     },
     {
+      "name": "NavigationTitle",
+      "sourceFile": "@cbhq/cds-web/navigation/NavigationTitle",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/navigation/NavigationTitle",
+      "callSites": {
+        "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 1,
+        "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+      }
+    },
+    {
       "name": "NavLink",
       "sourceFile": "@cbhq/cds-web/navigation/NavLink",
       "totalInstances": 1,
@@ -3575,17 +3586,6 @@
         "onPress": {
           "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 1
         }
-      }
-    },
-    {
-      "name": "NavigationTitle",
-      "sourceFile": "@cbhq/cds-web/navigation/NavigationTitle",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/navigation/NavigationTitle",
-      "callSites": {
-        "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx": 1,
-        "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
       }
     },
     {
@@ -4100,11 +4100,11 @@
         },
         {
           "prop": "style",
-          "callSite": "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx"
+          "callSite": "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx"
         },
         {
           "prop": "style",
-          "callSite": "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx"
+          "callSite": "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx"
         },
         {
           "prop": "style",
@@ -4124,8 +4124,8 @@
         "@commerce/frontend/pages/selfManaged/SelfManagedSignIn/SignIn/TfaSetup/TfaSetupInstructions.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 2,
@@ -4185,8 +4185,8 @@
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/SharedSecretModal/SharedSecretModal.tsx": 1,
@@ -4197,16 +4197,16 @@
           "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/RelativeField.tsx": 1
         },
         "style": {
           "@commerce/frontend/components/Form/AmountInput/AmountInput.tsx": 1,
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/RelativeField.tsx": 1
         },
@@ -4230,8 +4230,8 @@
           "@commerce/frontend/components/Form/TextInput/TextInput.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1
         },
@@ -4418,21 +4418,6 @@
       }
     },
     {
-      "name": "Backdrop",
-      "sourceFile": "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "MUIBackdrop",
-      "propsWithCallSites": {
-        "open": {
-          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
-        },
-        "onClick": {
-          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
-        }
-      }
-    },
-    {
       "name": "MobileMenuWrapper",
       "sourceFile": "@commerce/frontend/app/segments/coinbaseManaged/CoinbaseManagedAppNavBar.tsx",
       "totalInstances": 1,
@@ -4474,6 +4459,21 @@
       "styledComponent": "div",
       "propsWithCallSites": {
         "data-testid": { "@commerce/frontend/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1 }
+      }
+    },
+    {
+      "name": "Backdrop",
+      "sourceFile": "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "MUIBackdrop",
+      "propsWithCallSites": {
+        "open": {
+          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
+        },
+        "onClick": {
+          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
+        }
       }
     },
     {
@@ -5590,6 +5590,17 @@
       }
     },
     {
+      "name": "Router",
+      "sourceFile": "react-router-dom/Router",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "action": { "@commerce/frontend/app/routes/BrowserRouter.tsx": 1 },
+        "location": { "@commerce/frontend/app/routes/BrowserRouter.tsx": 1 },
+        "navigator": { "@commerce/frontend/app/routes/BrowserRouter.tsx": 1 }
+      }
+    },
+    {
       "name": "FullScreenLoadingSpinner",
       "sourceFile": "@commerce/frontend/components/FullScreenLoadingSpinner",
       "totalInstances": 3,
@@ -5663,17 +5674,6 @@
           "@commerce/frontend/app/navigation/ProfileButton.tsx": 1,
           "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
         }
-      }
-    },
-    {
-      "name": "Router",
-      "sourceFile": "react-router-dom/Router",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "action": { "@commerce/frontend/app/routes/BrowserRouter.tsx": 1 },
-        "location": { "@commerce/frontend/app/routes/BrowserRouter.tsx": 1 },
-        "navigator": { "@commerce/frontend/app/routes/BrowserRouter.tsx": 1 }
       }
     },
     {
@@ -6046,37 +6046,6 @@
       "sourceFile": "react-router-dom/BrowserRouter",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "SettingsNavigationTabItem",
-      "sourceFile": "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": {
-        "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 4
-      },
-      "propsWithCallSites": {
-        "label": {
-          "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 4
-        },
-        "url": {
-          "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 4
-        }
-      }
-    },
-    {
-      "name": "ProfileDropdownMenuItems",
-      "sourceFile": "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onProfileMenuDismiss": {
-          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
-        },
-        "onOpenAccountingReports": {
-          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
-        }
-      }
     },
     {
       "name": "SettingsNavigationTabs",
@@ -6470,6 +6439,37 @@
       "totalCallSites": 1
     },
     {
+      "name": "ProfileDropdownMenuItems",
+      "sourceFile": "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenuItems",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onProfileMenuDismiss": {
+          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
+        },
+        "onOpenAccountingReports": {
+          "@commerce/frontend/app/navigation/ProfileDropdownMenu/ProfileDropdownMenu.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SettingsNavigationTabItem",
+      "sourceFile": "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": {
+        "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 4
+      },
+      "propsWithCallSites": {
+        "label": {
+          "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 4
+        },
+        "url": {
+          "@commerce/frontend/app/navigation/SettingsNavigationTabs/SettingsNavigationTabs.tsx": 4
+        }
+      }
+    },
+    {
       "name": "Controller",
       "sourceFile": "react-hook-form/Controller",
       "totalInstances": 15,
@@ -6482,8 +6482,8 @@
         "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -6499,8 +6499,8 @@
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -6515,8 +6515,8 @@
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -6540,8 +6540,8 @@
           "@commerce/frontend/pages/shared/Checkouts/NewCheckout/NewCheckoutForm/NewCheckoutForm.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/PaymentSettings/FlexiblePayments/FlexiblePaymentsForm/FormFields/AmountField.tsx": 1,
@@ -6550,8 +6550,8 @@
         },
         "defaultValue": {
           "@commerce/frontend/pages/shared/Settings/SecuritySettings/AddWhitelistDomainModal/AddWhitelistDomainModal.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/components/PasswordConfirmationModal/PasswordConfirmationModal.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/NotificationSettings/WebhookSubscriptions/AddWebhookSubscriptionModal/AddWebhookSubscriptionModal.tsx": 1
         }
@@ -7970,6 +7970,29 @@
       "totalCallSites": 1
     },
     {
+      "name": "DepositInformationBody",
+      "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "deposit": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
+        },
+        "depositNumber": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
+        },
+        "totalDeposits": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
+        },
+        "autoconversionEnabledForMerchant": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
+        },
+        "key": {
+          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
+        }
+      }
+    },
+    {
       "name": "br",
       "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx",
       "totalInstances": 1,
@@ -7982,8 +8005,8 @@
       "totalCallSites": 22,
       "callSites": {
         "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1,
-        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
+        "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedBusinessSettings/AccountInformation/AccountInformation.tsx": 1,
         "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Payments/PaymentDetails/PaymentInformation/PaymentInformation.tsx": 1,
         "@commerce/frontend/pages/selfManaged/Settings/SelfManagedBusinessSettings/AccountInformation/AccountInformation.tsx": 1,
@@ -8061,29 +8084,6 @@
         },
         "exchangeRate": {
           "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DepositInformationBody",
-      "sourceFile": "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformationBody/DepositInformationBody",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "deposit": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
-        },
-        "depositNumber": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
-        },
-        "totalDeposits": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
-        },
-        "autoconversionEnabledForMerchant": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
-        },
-        "key": {
-          "@commerce/frontend/pages/coinbaseManaged/Payments/CoinbaseManagedPaymentDetails/DepositInformation/DepositInformation.tsx": 1
         }
       }
     },
@@ -8180,8 +8180,8 @@
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
         "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+        "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
@@ -8200,8 +8200,8 @@
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
         },
         "description": {
           "@commerce/frontend/pages/coinbaseManaged/Settings/CoinbaseManagedPaymentSettings/Autoconversions/Autoconversions.tsx": 1,
@@ -8219,8 +8219,8 @@
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/AccountInformation/Deposits/Deposits.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/BrandingColor/BrandingColor.tsx": 1,
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/Branding/Logo/Logo.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1,
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1,
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
         }
       }
     },
@@ -9151,20 +9151,6 @@
     },
     {
       "name": "form",
-      "sourceFile": "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSubmit": {
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
-        },
-        "name": {
-          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "form",
       "sourceFile": "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -9188,6 +9174,20 @@
         },
         "hidden": {
           "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/SupportEmailAddress/SupportEmailAddress.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "form",
+      "sourceFile": "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": {
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
+        },
+        "name": {
+          "@commerce/frontend/pages/shared/Settings/BusinessSettings/PublicBusinessInformation/PublicBusinessName/PublicBusinessName.tsx": 1
         }
       }
     },

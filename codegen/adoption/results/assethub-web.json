@@ -932,8 +932,8 @@
         "@assethub/www/components/Campaign/CampaignAnalytics.tsx": 1,
         "@assethub/www/components/Campaign/CampaignChartHeader.tsx": 1,
         "@assethub/www/components/Campaign/CampaignTableCells.tsx": 2,
-        "@assethub/www/components/Chip/CampaignSummaryChips.tsx": 1,
         "@assethub/www/components/CampaignAnalytics/EarnerByRegionChart.tsx": 2,
+        "@assethub/www/components/Chip/CampaignSummaryChips.tsx": 1,
         "@assethub/www/components/Layout/PageLayout.tsx": 2,
         "@assethub/www/components/Navigation/Navigation.tsx": 1,
         "@assethub/www/components/Navigation/SidebarItemLabel.tsx": 2,
@@ -1140,11 +1140,11 @@
           "@assethub/www/pages/Campaigns/RequestInfoForm.tsx": 2,
           "@assethub/www/components/Question/impl/AddressQuestion.tsx": 3
         },
-        "flexWrap": { "@assethub/www/components/Chip/CampaignSummaryChips.tsx": 1 },
         "offsetTop": {
           "@assethub/www/components/CampaignAnalytics/EarnerByRegionChart.tsx": 1,
           "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 1
         },
+        "flexWrap": { "@assethub/www/components/Chip/CampaignSummaryChips.tsx": 1 },
         "position": {
           "@assethub/www/components/Layout/PageLayout.tsx": 1,
           "@assethub/www/pages/Asset/DetailPage.tsx": 2,
@@ -3522,16 +3522,6 @@
       }
     },
     {
-      "name": "SummaryChip",
-      "sourceFile": "@assethub/www/components/Chip/SummaryChip",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "ChipContainer",
-      "propsWithCallSites": {
-        "key": { "@assethub/www/components/Chip/CampaignSummaryChips.tsx": 1 }
-      }
-    },
-    {
       "name": "CollapsibleRow",
       "sourceFile": "@assethub/www/components/CountryStateTable/CollapsibleRow",
       "totalInstances": 2,
@@ -3602,6 +3592,16 @@
       "totalCallSites": 1,
       "presentationalElement": "strong",
       "callSites": { "@assethub/www/components/CountryStateTable/CountryStateTable.tsx": 2 }
+    },
+    {
+      "name": "SummaryChip",
+      "sourceFile": "@assethub/www/components/Chip/SummaryChip",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "ChipContainer",
+      "propsWithCallSites": {
+        "key": { "@assethub/www/components/Chip/CampaignSummaryChips.tsx": 1 }
+      }
     },
     {
       "name": "Page",
@@ -3892,19 +3892,19 @@
           "prop": "style",
           "callSite": "@assethub/www/components/Question/impl/TextAreaQuestion.tsx"
         },
-        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" },
-        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Text/Text.tsx" }
+        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Text/Text.tsx" },
+        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" }
       ],
       "callSites": {
         "@assethub/www/components/Question/impl/TextAreaQuestion.tsx": 1,
-        "@assethub/shared/components/Inputs/Select/Select.tsx": 1,
-        "@assethub/shared/components/Inputs/Text/Text.tsx": 1
+        "@assethub/shared/components/Inputs/Text/Text.tsx": 1,
+        "@assethub/shared/components/Inputs/Select/Select.tsx": 1
       },
       "propsWithCallSites": {
         "value": {
           "@assethub/www/components/Question/impl/TextAreaQuestion.tsx": 1,
-          "@assethub/shared/components/Inputs/Select/Select.tsx": 1,
-          "@assethub/shared/components/Inputs/Text/Text.tsx": 1
+          "@assethub/shared/components/Inputs/Text/Text.tsx": 1,
+          "@assethub/shared/components/Inputs/Select/Select.tsx": 1
         },
         "hasError": {
           "@assethub/www/components/Question/impl/TextAreaQuestion.tsx": 1,
@@ -3912,31 +3912,31 @@
         },
         "as": { "@assethub/www/components/Question/impl/TextAreaQuestion.tsx": 1 },
         "style": { "@assethub/www/components/Question/impl/TextAreaQuestion.tsx": 1 },
-        "type": {
-          "@assethub/shared/components/Inputs/Select/Select.tsx": 1,
-          "@assethub/shared/components/Inputs/Text/Text.tsx": 1
-        },
         "className": {
-          "@assethub/shared/components/Inputs/Select/Select.tsx": 1,
-          "@assethub/shared/components/Inputs/Text/Text.tsx": 1
-        },
-        "onChange": {
-          "@assethub/shared/components/Inputs/Select/Select.tsx": 1,
-          "@assethub/shared/components/Inputs/Text/Text.tsx": 1
-        },
-        "autoFocus": {
-          "@assethub/shared/components/Inputs/Select/Select.tsx": 1,
-          "@assethub/shared/components/Inputs/Text/Text.tsx": 1
+          "@assethub/shared/components/Inputs/Text/Text.tsx": 1,
+          "@assethub/shared/components/Inputs/Select/Select.tsx": 1
         },
         "name": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
         "placeholder": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
+        "type": {
+          "@assethub/shared/components/Inputs/Text/Text.tsx": 1,
+          "@assethub/shared/components/Inputs/Select/Select.tsx": 1
+        },
         "title": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
         "tabIndex": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
         "readOnly": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
         "disabled": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
         "required": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
+        "autoFocus": {
+          "@assethub/shared/components/Inputs/Text/Text.tsx": 1,
+          "@assethub/shared/components/Inputs/Select/Select.tsx": 1
+        },
         "onFocus": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
         "onBlur": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 },
+        "onChange": {
+          "@assethub/shared/components/Inputs/Text/Text.tsx": 1,
+          "@assethub/shared/components/Inputs/Select/Select.tsx": 1
+        },
         "onKeyPress": { "@assethub/shared/components/Inputs/Text/Text.tsx": 1 }
       }
     },
@@ -4050,6 +4050,24 @@
       "propsWithCallSites": { "ref": { "@assethub/shared/components/Collapse/Collapse.tsx": 1 } }
     },
     {
+      "name": "Comp",
+      "sourceFile": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "data-synthetic-id": {
+          "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1
+        },
+        "style": { "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1 }
+      }
+    },
+    {
       "name": "Badge",
       "sourceFile": "@assethub/shared/components/Badge/Badge",
       "totalInstances": 1,
@@ -4137,24 +4155,6 @@
       "propsWithCallSites": {
         "onChange": { "@assethub/shared/components/DataTable/DataTableSearch.tsx": 1 },
         "placeholder": { "@assethub/shared/components/DataTable/DataTableSearch.tsx": 1 }
-      }
-    },
-    {
-      "name": "Comp",
-      "sourceFile": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "data-synthetic-id": {
-          "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1
-        },
-        "style": { "@assethub/shared/components/DatadogSyntheticTag/DatadogSyntheticTag.tsx": 1 }
       }
     },
     {
@@ -4455,32 +4455,6 @@
       "styledComponent": "div"
     },
     {
-      "name": "span",
-      "sourceFile": "@assethub/shared/components/Inputs/Select/Select.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" },
-        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" }
-      ],
-      "callSites": { "@assethub/shared/components/Inputs/Select/Select.tsx": 2 },
-      "propsWithCallSites": {
-        "className": { "@assethub/shared/components/Inputs/Select/Select.tsx": 2 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@assethub/shared/components/Inputs/Select/Select.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" }
-      ],
-      "propsWithCallSites": {
-        "className": { "@assethub/shared/components/Inputs/Select/Select.tsx": 1 }
-      }
-    },
-    {
       "name": "TextArea",
       "sourceFile": "@assethub/shared/components/Inputs/Text/TextArea.tsx",
       "totalInstances": 1,
@@ -4505,6 +4479,32 @@
         "onFocus": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
         "onBlur": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
         "onChange": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 }
+      }
+    },
+    {
+      "name": "span",
+      "sourceFile": "@assethub/shared/components/Inputs/Select/Select.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" },
+        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" }
+      ],
+      "callSites": { "@assethub/shared/components/Inputs/Select/Select.tsx": 2 },
+      "propsWithCallSites": {
+        "className": { "@assethub/shared/components/Inputs/Select/Select.tsx": 2 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "@assethub/shared/components/Inputs/Select/Select.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Select/Select.tsx" }
+      ],
+      "propsWithCallSites": {
+        "className": { "@assethub/shared/components/Inputs/Select/Select.tsx": 1 }
       }
     },
     {

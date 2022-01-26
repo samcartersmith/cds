@@ -135,8 +135,8 @@
       ],
       "callSites": {
         "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
-        "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
         "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx": 1,
+        "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
         "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 2,
         "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 2,
@@ -191,7 +191,6 @@
         "spacingHorizontal": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1
         },
-        "spacingVertical": { "@trust_and_safety/components/Layout/PageLayout.tsx": 1 },
         "width": {
           "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx": 1,
           "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
@@ -207,6 +206,7 @@
           "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1
         },
+        "spacingVertical": { "@trust_and_safety/components/Layout/PageLayout.tsx": 1 },
         "gap": {
           "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
@@ -1078,6 +1078,12 @@
       }
     },
     {
+      "name": "Logo",
+      "sourceFile": "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ThemePicker",
       "sourceFile": "@trust_and_safety/components/ThemePicker/ThemePicker",
       "totalInstances": 1,
@@ -1108,12 +1114,6 @@
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1
         }
       }
-    },
-    {
-      "name": "Logo",
-      "sourceFile": "@trust_and_safety/components/HeaderLogo/HeaderLogo.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "CSSTransition",

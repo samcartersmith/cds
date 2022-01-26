@@ -176,6 +176,22 @@ export const config: AdoptersConfig[] = [
         label: 'Retail Web Shared',
         type: 'doc',
       },
+      {
+        root: path.join(tempDir, walletGit, 'workspaces/apps/extension'),
+        github: walletGit,
+        id: 'wallet-extension',
+        label: 'Wallet Chrome Extension',
+        ignoreDirs: ['src/debug/**'],
+        type: 'doc',
+      },
+      {
+        root: path.join(tempDir, walletGit, 'workspaces/apps/rn'),
+        github: walletGit,
+        id: 'wallet-react-native',
+        label: 'Wallet React Native',
+        ignoreDirs: [''],
+        type: 'doc',
+      },
     ],
   },
   {
