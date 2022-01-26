@@ -1,8 +1,8 @@
 import { View } from 'react-native';
 import { render } from '@testing-library/react-native';
 import { defaultPalette } from '@cbhq/cds-common';
-import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
-import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
+import { getCircumference, getRadius } from '@cbhq/cds-common/src/utils/circle';
+import { UseCounterParams } from '@cbhq/cds-common/src/visualizations/useCounter';
 
 import { paletteValueToRgbaString } from '../../utils/palette';
 import { ProgressCircle } from '../ProgressCircle';
@@ -35,7 +35,7 @@ jest.mock('react-native/Libraries/Animated/Animated', () => {
   };
 });
 
-jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
+jest.mock('@cbhq/cds-common/src/visualizations/useCounter', () => ({
   useCounter: ({ endNum }: UseCounterParams) => endNum,
 }));
 

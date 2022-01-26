@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { CardHeaderBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
+import { CardHeaderBaseProps } from '@cbhq/cds-common/src/types/CardBaseProps';
 
 import { HStack } from '../layout/HStack';
 import { RemoteImage } from '../media/RemoteImage';

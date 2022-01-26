@@ -1,7 +1,7 @@
 import { ReactTestInstance } from 'react-test-renderer';
 import { act, fireEvent, render } from '@testing-library/react-native';
 import { defaultPalette } from '@cbhq/cds-common';
-import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
+import { UseCounterParams } from '@cbhq/cds-common/src/visualizations/useCounter';
 
 import { Box } from '../../layout';
 import { paletteValueToRgbaString } from '../../utils/palette';
@@ -9,7 +9,7 @@ import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
 
-jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
+jest.mock('@cbhq/cds-common/src/visualizations/useCounter', () => ({
   useCounter: ({ endNum }: UseCounterParams) => endNum,
 }));
 

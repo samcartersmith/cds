@@ -1,5 +1,5 @@
 import React from 'react';
-import { assets, svgs } from '@cbhq/cds-common/internal/data/assets';
+import { assets, svgs } from '@cbhq/cds-common/src/internal/data/assets';
 import { entries } from '@cbhq/cds-utils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

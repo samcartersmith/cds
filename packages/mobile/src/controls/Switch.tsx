@@ -1,8 +1,8 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { PressableProps, StyleSheet, View } from 'react-native';
 import { switchPalette, useScale } from '@cbhq/cds-common';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
+import { useSpectrumConditional } from '@cbhq/cds-common/src/hooks/useSpectrumConditional';
+import { ControlBaseProps } from '@cbhq/cds-common/src/types/ControlBaseProps';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';
 import { Box } from '../layout/Box';

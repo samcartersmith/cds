@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import type { IllustrationNames } from '@cbhq/cds-common/types/IllustrationProps';
+import { useSpectrumConditional } from '@cbhq/cds-common/src/hooks/useSpectrumConditional';
+import type { IllustrationNames } from '@cbhq/cds-common/src/types/IllustrationProps';
 
 import { illustrationSpectrumMap } from './illustrationSpectrumMap';
 

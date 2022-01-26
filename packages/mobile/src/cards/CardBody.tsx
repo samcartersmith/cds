@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { CardBodyBaseProps, CardBodyOrientationProps } from '@cbhq/cds-common/types/CardBaseProps';
+import { CardBodyBaseProps, CardBodyOrientationProps } from '@cbhq/cds-common/src/types/CardBaseProps';
 
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';

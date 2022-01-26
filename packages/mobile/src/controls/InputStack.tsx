@@ -1,9 +1,9 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, ViewStyle } from 'react-native';
-import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/border';
-import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common/tokens/input';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
-import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
+import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/src/tokens/border';
+import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common/src/tokens/input';
+import { opacityDisabled } from '@cbhq/cds-common/src/tokens/interactable';
+import { InputStackBaseProps } from '@cbhq/cds-common/src/types/InputBaseProps';
 
 import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';

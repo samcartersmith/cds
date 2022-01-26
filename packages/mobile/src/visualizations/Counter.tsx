@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { CounterBaseProps } from '@cbhq/cds-common/types/CounterBaseProps';
-import { useCounter } from '@cbhq/cds-common/visualizations/useCounter';
+import { CounterBaseProps } from '@cbhq/cds-common/src/types/CounterBaseProps';
+import { useCounter } from '@cbhq/cds-common/src/visualizations/useCounter';
 
 import { Box } from '../layout';
 

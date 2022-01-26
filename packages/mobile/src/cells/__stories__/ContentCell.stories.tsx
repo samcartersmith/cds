@@ -1,5 +1,5 @@
 import React from 'react';
-import { contentCellBuilder } from '@cbhq/cds-common/internal/contentCellBuilder';
+import { contentCellBuilder } from '@cbhq/cds-common/src/internal/contentCellBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { contentCellFallbackBuilder } from '@cbhq/cds-common/internal/contentCellFallbackBuilder';
+import { contentCellFallbackBuilder } from '@cbhq/cds-common/src/internal/contentCellFallbackBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { ContentCellFallback } from '../ContentCellFallback';

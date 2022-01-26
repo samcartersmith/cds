@@ -1,9 +1,9 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { DimensionValue } from '@cbhq/cds-common';
-import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
-import { ToastProvider } from '@cbhq/cds-common/overlays/ToastProvider';
-import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
+import { PortalContext } from '@cbhq/cds-common/src/overlays/PortalContext';
+import { ToastProvider } from '@cbhq/cds-common/src/overlays/ToastProvider';
+import { PortalNode, usePortalState } from '@cbhq/cds-common/src/overlays/usePortalState';
 
 export type PortalProviderProps = {
   toastBottomOffset?: DimensionValue;

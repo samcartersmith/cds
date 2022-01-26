@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { useMemo } from 'react';
-import { blendColors } from '@cbhq/cds-common/color/blendColors';
-import { paletteValueToHueStep } from '@cbhq/cds-common/palette/paletteValueToHueStep';
-import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
-import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
-import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/tokens/interactable';
-import { PaletteAlias, PaletteValue, SpectrumAlias, SpectrumHueStep } from '@cbhq/cds-common/types';
+import { blendColors } from '@cbhq/cds-common/src/color/blendColors';
+import { paletteValueToHueStep } from '@cbhq/cds-common/src/palette/paletteValueToHueStep';
+import { paletteValueToTuple } from '@cbhq/cds-common/src/palette/paletteValueToTuple';
+import { usePaletteConfig } from '@cbhq/cds-common/src/palette/usePaletteConfig';
+import { useSpectrum } from '@cbhq/cds-common/src/spectrum/useSpectrum';
+import { opacityDisabled, opacityPressed } from '@cbhq/cds-common/src/tokens/interactable';
+import { PaletteAlias, PaletteValue, SpectrumAlias, SpectrumHueStep } from '@cbhq/cds-common/src/types';
 
 import { paletteValueToRgbaArray } from '../utils/palette';
 

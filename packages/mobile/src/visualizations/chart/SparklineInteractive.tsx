@@ -2,20 +2,20 @@ import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from '
 import { Animated, StyleSheet, View } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
+import { useFeatureFlag } from '@cbhq/cds-common/src/system/useFeatureFlag';
 import {
   ChartDataPoint,
   ChartFormatAmount,
   ChartFormatDate,
   ChartGetMarker,
   ChartScrubParams,
-} from '@cbhq/cds-common/types';
+} from '@cbhq/cds-common/src/types';
 import {
   ChartHoverDateRefProps,
   SparklineInteractiveBaseProps,
-} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
-import { minMax } from '@cbhq/cds-common/utils/chart';
-import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
+} from '@cbhq/cds-common/src/types/SparklineInteractiveBaseProps';
+import { minMax } from '@cbhq/cds-common/src/utils/chart';
+import { useSparklineCoordinates } from '@cbhq/cds-common/src/visualizations/useSparklineCoordinates';
 import { chartFallbackPositive } from '@cbhq/cds-lottie-files';
 import { emptyArray, noop } from '@cbhq/cds-utils';
 

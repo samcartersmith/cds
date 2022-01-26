@@ -1,8 +1,8 @@
 import React, { FunctionComponent, memo, useMemo } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import times from 'lodash/times';
-import { ChartMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
-import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
+import { ChartMarkerDatesProps } from '@cbhq/cds-common/src/types/SparklineInteractiveBaseProps';
+import { useDateLookup } from '@cbhq/cds-common/src/visualizations/useDateLookup';
 
 import { useLayout } from '../../hooks/useLayout';
 import { usePalette } from '../../hooks/usePalette';

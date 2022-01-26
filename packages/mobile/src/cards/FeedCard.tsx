@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { FeedCardBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
+import { FeedCardBaseProps } from '@cbhq/cds-common/src/types/CardBaseProps';
 
 import { RemoteImage } from '../media/RemoteImage';
 

@@ -1,10 +1,10 @@
 import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, I18nManager, LayoutChangeEvent, View } from 'react-native';
 import { ForwardedRef } from '@cbhq/cds-common';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
-import { ProgressBaseProps } from '@cbhq/cds-common/types/ProgressBaseProps';
-import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/src/animation/progress';
+import { usePreviousValues } from '@cbhq/cds-common/src/hooks/usePreviousValues';
+import { ProgressBaseProps } from '@cbhq/cds-common/src/types/ProgressBaseProps';
+import { useProgressSize } from '@cbhq/cds-common/src/visualizations/useProgressSize';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { usePalette } from '../hooks/usePalette';

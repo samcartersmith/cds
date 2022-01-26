@@ -1,6 +1,6 @@
 import React from 'react';
-import { listCellBuilder } from '@cbhq/cds-common/internal/listCellBuilder';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { listCellBuilder } from '@cbhq/cds-common/src/internal/listCellBuilder';
+import { gutter } from '@cbhq/cds-common/src/tokens/sizing';
 import { entries } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons/Button';

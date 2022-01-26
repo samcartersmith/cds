@@ -7,7 +7,7 @@ import {
   horizontalDrawerPercentageOfView,
   MAX_OVER_DRAG,
   verticalDrawerPercentageOfView,
-} from '@cbhq/cds-common/animation/drawer';
+} from '@cbhq/cds-common/src/animation/drawer';
 
 import { useLayout } from '../hooks/useLayout';
 

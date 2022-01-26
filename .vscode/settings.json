@@ -1,0 +1,26 @@
+{
+  "editor.formatOnSave": true, // use ⌘-K S to format without saving
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Disable built-in formatters
+  "html.format.enable": false,
+  "json.format.enable": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+
+  // TypeScript
+  "javascript.validate.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.quoteStyle": "single",
+
+  // ESLint
+  "eslint.options": { "extensions": [".js", ".jsx", ".ts", ".tsx", ".mjs"] },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.packageManager": "yarn",
+  "eslint.format.enable": false,
+  "eslint.useESLintClass": true,
+
+  // Gitlens
+  "gitlens.remotes": [{ "domain": "github.cbhq.net", "type": "GitHub" }]
+}

@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
-import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
+import { searchInputBuilder } from '@cbhq/cds-common/src/internal/searchInputBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextLabel1 } from '../../typography/TextLabel1';

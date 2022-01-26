@@ -1,8 +1,8 @@
 import React, { memo, useCallback } from 'react';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
-import { durations } from '@cbhq/cds-common/tokens/motion';
-import { ProgressTextLabelProps } from '@cbhq/cds-common/types/ProgressBarBaseProps';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/src/animation/progress';
+import { usePreviousValues } from '@cbhq/cds-common/src/hooks/usePreviousValues';
+import { durations } from '@cbhq/cds-common/src/tokens/motion';
+import { ProgressTextLabelProps } from '@cbhq/cds-common/src/types/ProgressBarBaseProps';
 
 import { TextLabel2 } from '../typography';
 

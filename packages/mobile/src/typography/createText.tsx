@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { Animated, StyleSheet, Text, TextProps as RNTextProps, TextStyle } from 'react-native';
 import { PaletteForeground, SharedProps, TextBaseProps, Typography } from '@cbhq/cds-common';
-import { opacityDisabled } from '@cbhq/cds-common/tokens/interactable';
-import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
+import { opacityDisabled } from '@cbhq/cds-common/src/tokens/interactable';
+import { isChildrenFalsy } from '@cbhq/cds-common/src/utils/isChildrenFalsy';
 import { pascalCase } from '@cbhq/cds-utils';
 
 import { fontScaleProps } from '../hooks/useDeviceScaleToCdsScale';

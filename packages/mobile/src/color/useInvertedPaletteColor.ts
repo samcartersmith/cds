@@ -1,6 +1,6 @@
 import { PaletteAlias } from '@cbhq/cds-common';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
+import { useSpectrumConditional } from '@cbhq/cds-common/src/hooks/useSpectrumConditional';
+import { usePaletteConfig } from '@cbhq/cds-common/src/palette/usePaletteConfig';
 
 import { paletteValueToRgbaString } from '../utils/palette';
 

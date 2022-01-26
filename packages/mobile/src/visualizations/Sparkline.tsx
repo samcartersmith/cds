@@ -1,9 +1,9 @@
 import React, { memo, useRef } from 'react';
 import Svg, { Defs, G, Path } from 'react-native-svg';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { SparklineBaseProps } from '@cbhq/cds-common/types';
-import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
-import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
+import { borderWidth } from '@cbhq/cds-common/src/tokens/border';
+import { SparklineBaseProps } from '@cbhq/cds-common/src/types';
+import { generateSparklineAreaWithId } from '@cbhq/cds-common/src/visualizations/generateSparklineAreaWithId';
+import { getSparklineTransform } from '@cbhq/cds-common/src/visualizations/getSparklineTransform';
 import { generateRandomId } from '@cbhq/cds-utils';
 
 import { useAccessibleForeground } from '../color/useAccessibleForeground';

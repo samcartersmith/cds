@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react-native';
-import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
+import { normalScaleMap } from '@cbhq/cds-common/src/hooks/useIconSize';
 
 import { Icon } from '../../icons/Icon';
 import { DotSymbol } from '../DotSymbol';

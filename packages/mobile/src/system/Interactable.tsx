@@ -4,8 +4,8 @@ import { SharedProps } from '@cbhq/cds-common';
 import {
   ElevationChildrenProvider,
   ElevationProvider,
-} from '@cbhq/cds-common/context/ElevationProvider';
-import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
+} from '@cbhq/cds-common/src/context/ElevationProvider';
+import { InteractableBaseProps } from '@cbhq/cds-common/src/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';
 
 import { useElevationStyles } from '../hooks/useElevationStyles';

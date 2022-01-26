@@ -1,5 +1,5 @@
 import { PaletteAlias } from '@cbhq/cds-common';
-import { defaultPalette } from '@cbhq/cds-common/palette/constants';
+import { defaultPalette } from '@cbhq/cds-common/src/palette/constants';
 
 import { dark, light } from '../../styles/spectrum';
 import * as spectrumColors from '../../styles/spectrum';

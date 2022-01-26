@@ -14,7 +14,7 @@ export type ThemeConfigProviderProps = {
 /** Most performant option for handling palette overrides.
  * Requies providing full config with all palette aliases defined,
  * rgbaStrings and hexValues for light and dark mode. All CDS supported
- * theme configs can be found in `@cbhq/cds-common/themes`.
+ * theme configs can be found in `@cbhq/cds-common/src/themes`.
  * */
 export const ThemeConfigProvider: React.FC<ThemeConfigProviderProps> = memo(
   ({ value, children }) => {

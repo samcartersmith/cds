@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { Modal } from 'react-native';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { useToggler } from '@cbhq/cds-common/src/hooks/useToggler';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

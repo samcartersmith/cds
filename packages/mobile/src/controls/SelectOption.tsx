@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/cell';
-import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
+import { useScaleConditional } from '@cbhq/cds-common/src/scale/useScaleConditional';
+import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/src/tokens/cell';
+import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/src/types';
 
 import { Cell } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';

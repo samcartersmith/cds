@@ -3,7 +3,7 @@ import Svg, { G, Path } from 'react-native-svg';
 import {
   SubBrandLogoMarkParams,
   useSubBrandLogoMark,
-} from '@cbhq/cds-common/hooks/useSubBrandLogo';
+} from '@cbhq/cds-common/src/hooks/useSubBrandLogo';
 
 export type SubBrandLogoMarkProps = SubBrandLogoMarkParams;
 

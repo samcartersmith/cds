@@ -1,11 +1,11 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
-import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { prices, pricesWithScalingFactor } from '@cbhq/cds-common/internal/data/prices';
-import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
-import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
+import { assets } from '@cbhq/cds-common/src/internal/data/assets';
+import { prices, pricesWithScalingFactor } from '@cbhq/cds-common/src/internal/data/prices';
+import { useScaleConditional } from '@cbhq/cds-common/src/scale/useScaleConditional';
+import { gutter } from '@cbhq/cds-common/src/tokens/sizing';
+import { useSparklineArea } from '@cbhq/cds-common/src/visualizations/useSparklineArea';
+import { useSparklinePath } from '@cbhq/cds-common/src/visualizations/useSparklinePath';
 
 import { Cell } from '../../cells/Cell';
 import { CellMedia } from '../../cells/CellMedia';

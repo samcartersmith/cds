@@ -2,8 +2,8 @@ import { ComponentProps } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import LottieView from 'lottie-react-native';
 import { defaultPalette } from '@cbhq/cds-common';
-import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
-import { activityIndicator } from '@cbhq/cds-lottie-files/activityIndicator';
+import { colorToHex } from '@cbhq/cds-common/src/color/colorToHex';
+import { activityIndicator } from '@cbhq/cds-lottie-files/src/activityIndicator';
 
 import { paletteConfigToRgbaStrings } from '../../utils/palette';
 import { useLottieColorFilters } from '../useLottieColorFilters';

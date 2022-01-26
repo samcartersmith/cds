@@ -1,7 +1,7 @@
 import { ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { fireEvent, render } from '@testing-library/react-native';
-import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
+import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/src/internal/selectBuilder';
 
 import { Tray } from '../../overlays/Tray/Tray';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';

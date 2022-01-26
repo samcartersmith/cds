@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { Platform, StatusBar as RNStatusBar, StatusBarStyle } from 'react-native';
-import { isLightOrDarkColor } from '@cbhq/cds-common/color/isLightOrDarkColor';
+import { isLightOrDarkColor } from '@cbhq/cds-common/src/color/isLightOrDarkColor';
 import { emptyObject } from '@cbhq/cds-utils';
 
 import { usePalette } from '../hooks/usePalette';

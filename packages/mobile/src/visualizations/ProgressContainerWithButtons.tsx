@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { ProgressContainerWithButtonsProps } from '@cbhq/cds-common/types/ProgressContainerWithButtonsProps';
+import { ProgressContainerWithButtonsProps } from '@cbhq/cds-common/src/types/ProgressContainerWithButtonsProps';
 
 import { Button } from '../buttons';
 import { VStack } from '../layout';

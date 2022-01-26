@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { SvgCssUri } from 'react-native-svg';
 import { AspectRatio, FixedValue, Shape, useSpectrum } from '@cbhq/cds-common';
-import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
+import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/src/hooks/useShapeToBorderRadiusSize';
 
 import { useInvertedPaletteColor } from '../color/useInvertedPaletteColor';
 import { usePalette } from '../hooks/usePalette';

@@ -8,8 +8,8 @@ import React, {
 } from 'react';
 import { Modal as RNModal, ModalProps as RNModalProps, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types';
+import { ModalParentContext } from '@cbhq/cds-common/src/overlays/ModalParentContext';
+import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/src/types';
 
 import { VStack } from '../../layout';
 

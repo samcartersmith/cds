@@ -1,12 +1,12 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, I18nManager, LayoutChangeEvent } from 'react-native';
-import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
-import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
+import { animateProgressBaseSpec } from '@cbhq/cds-common/src/animation/progress';
+import { usePreviousValues } from '@cbhq/cds-common/src/hooks/usePreviousValues';
 import {
   ProgressBarFloatLabelProps,
   ProgressBarWithFloatLabelProps,
-} from '@cbhq/cds-common/types/ProgressBarBaseProps';
-import { getProgressBarLabelParts } from '@cbhq/cds-common/visualizations/getProgressBarLabelParts';
+} from '@cbhq/cds-common/src/types/ProgressBarBaseProps';
+import { getProgressBarLabelParts } from '@cbhq/cds-common/src/visualizations/getProgressBarLabelParts';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { useLayout } from '../hooks/useLayout';

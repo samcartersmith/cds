@@ -1,6 +1,6 @@
 import React from 'react';
-import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { dotBuilder, PIN_DIRECTIONS, SIZES } from '@cbhq/cds-common/internal/dotBuilder';
+import { assets } from '@cbhq/cds-common/src/internal/data/assets';
+import { dotBuilder, PIN_DIRECTIONS, SIZES } from '@cbhq/cds-common/src/internal/dotBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons/Icon';

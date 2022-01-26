@@ -4,9 +4,9 @@ import {
   dotCountContent,
   dotCountPadding,
   dotOuterContainerStyles,
-} from '@cbhq/cds-common/tokens/dot';
-import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
-import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
+} from '@cbhq/cds-common/src/tokens/dot';
+import { DotCountBaseProps } from '@cbhq/cds-common/src/types/DotCountBaseProps';
+import { parseDotCountMaxOverflow } from '@cbhq/cds-common/src/utils/parseDotCountMaxOverflow';
 
 import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';

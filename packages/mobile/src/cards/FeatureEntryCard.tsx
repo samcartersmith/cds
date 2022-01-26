@@ -1,4 +1,4 @@
-import { createFeatureEntryCard } from '@cbhq/cds-common/cards/createFeatureEntryCard';
+import { createFeatureEntryCard } from '@cbhq/cds-common/src/cards/createFeatureEntryCard';
 
 import { Button } from '../buttons/Button';
 import { SpotSquare } from '../illustrations/SpotSquare';

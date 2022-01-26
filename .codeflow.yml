@@ -1,0 +1,9 @@
+secure:
+  required_reviews: 1
+  branches:
+    - master
+build:
+  engines:
+    - BaldurNode:
+        name: package-example
+        path: ./packages/example/publish.Dockerfile

@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { IconButtonBaseProps } from '@cbhq/cds-common';
-import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
-import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useButtonIconSize } from '@cbhq/cds-common/src/hooks/useButtonIconSize';
+import { useButtonVariant } from '@cbhq/cds-common/src/hooks/useButtonVariant';
+import { useInteractableHeight } from '@cbhq/cds-common/src/hooks/useInteractableHeight';
 
 import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';

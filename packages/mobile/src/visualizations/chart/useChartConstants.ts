@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { borderWidth } from '@cbhq/cds-common/src/tokens/border';
+import { gutter } from '@cbhq/cds-common/src/tokens/sizing';
 import {
   chartCompactHeight,
   chartHeight as chartHeightToken,
-} from '@cbhq/cds-common/tokens/sparkline';
+} from '@cbhq/cds-common/src/tokens/sparkline';
 
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 

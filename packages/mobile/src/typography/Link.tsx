@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
-import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
+import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/src/types/LinkBaseProps';
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
 

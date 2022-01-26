@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { ModalFooterBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
+import { useModalParent } from '@cbhq/cds-common/src/overlays/ModalParentContext';
+import { ModalFooterBaseProps } from '@cbhq/cds-common/src/types/ModalBaseProps';
 
 import { ButtonGroup, ButtonGroupProps } from '../../buttons';
 import { Box } from '../../layout';

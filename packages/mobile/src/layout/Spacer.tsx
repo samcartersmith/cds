@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { Animated, View, ViewProps, ViewStyle } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
-import { SpacerBaseProps } from '@cbhq/cds-common/types/SpacerBaseProps';
-import { getSpacerStyle } from '@cbhq/cds-common/utils/getSpacerStyle';
+import { SpacerBaseProps } from '@cbhq/cds-common/src/types/SpacerBaseProps';
+import { getSpacerStyle } from '@cbhq/cds-common/src/utils/getSpacerStyle';
 
 import { useSpacingScale } from '../hooks/useSpacingScale';
 import type { DangerouslySetStyle, OmitStyle } from '../types';

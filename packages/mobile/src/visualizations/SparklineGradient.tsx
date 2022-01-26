@@ -1,10 +1,10 @@
 import React, { forwardRef, memo, useMemo, useRef } from 'react';
 import { TextInput } from 'react-native';
 import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
-import { SparklineBaseProps } from '@cbhq/cds-common/types/SparklineBaseProps';
-import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
-import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
+import { borderWidth } from '@cbhq/cds-common/src/tokens/border';
+import { SparklineBaseProps } from '@cbhq/cds-common/src/types/SparklineBaseProps';
+import { generateSparklineAreaWithId } from '@cbhq/cds-common/src/visualizations/generateSparklineAreaWithId';
+import { getSparklineTransform } from '@cbhq/cds-common/src/visualizations/getSparklineTransform';
 import { generateRandomId } from '@cbhq/cds-utils';
 
 import { useAccessibleForeground } from '../color/useAccessibleForeground';

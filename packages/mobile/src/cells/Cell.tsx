@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { ViewProps } from 'react-native';
 import { CellBaseProps } from '@cbhq/cds-common';
-import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
+import { useCellSpacing } from '@cbhq/cds-common/src/hooks/useCellSpacing';
 
 import { useOffsetStyles } from '../hooks/useOffsetStyles';
 import { Box } from '../layout/Box';

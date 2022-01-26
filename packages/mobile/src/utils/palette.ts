@@ -1,5 +1,5 @@
-export { paletteAliasToRgbaString } from '@cbhq/cds-common/palette/paletteAliasToRgbaString';
-export { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
-export { paletteValueToHex } from '@cbhq/cds-common/palette/paletteValueToHex';
-export { paletteValueToRgbaArray } from '@cbhq/cds-common/palette/paletteValueToRgbaArray';
-export { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
+export { paletteAliasToRgbaString } from '@cbhq/cds-common/src/palette/paletteAliasToRgbaString';
+export { paletteConfigToRgbaStrings } from '@cbhq/cds-common/src/palette/paletteConfigToRgbaStrings';
+export { paletteValueToHex } from '@cbhq/cds-common/src/palette/paletteValueToHex';
+export { paletteValueToRgbaArray } from '@cbhq/cds-common/src/palette/paletteValueToRgbaArray';
+export { paletteValueToRgbaString } from '@cbhq/cds-common/src/palette/paletteValueToRgbaString';

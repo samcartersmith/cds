@@ -3,4 +3,4 @@ export {
   frontierDark,
   frontierLight,
   light,
-} from '@cbhq/cds-common/spectrum/spectrumRgbArray';
+} from '@cbhq/cds-common/src/spectrum/spectrumRgbArray';

@@ -4,8 +4,8 @@ import {
   AccessibleForegroundParams,
   GradientArray,
 } from '@cbhq/cds-common';
-import { getAccessibleForegroundGradient } from '@cbhq/cds-common/color/getAccessibleForegroundGradient';
-import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
+import { getAccessibleForegroundGradient } from '@cbhq/cds-common/src/color/getAccessibleForegroundGradient';
+import { useSpectrum } from '@cbhq/cds-common/src/spectrum/useSpectrum';
 
 import { usePalette } from '../hooks/usePalette';
 

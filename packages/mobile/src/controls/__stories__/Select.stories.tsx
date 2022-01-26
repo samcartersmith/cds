@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { prices } from '@cbhq/cds-common/internal/data/prices';
-import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
+import { prices } from '@cbhq/cds-common/src/internal/data/prices';
+import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/src/internal/selectBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';

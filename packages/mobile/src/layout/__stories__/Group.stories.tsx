@@ -1,5 +1,5 @@
 import React from 'react';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { gutter } from '@cbhq/cds-common/src/tokens/sizing';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextBody } from '../../typography/TextBody';

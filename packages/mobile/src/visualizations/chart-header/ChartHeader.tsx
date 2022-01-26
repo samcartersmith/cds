@@ -5,8 +5,8 @@ import {
   ChartHeaderRef,
   ChartHeaderValues,
   ChartSubHead,
-} from '@cbhq/cds-common/types/ChartHeaderBaseProps';
-import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
+} from '@cbhq/cds-common/src/types/ChartHeaderBaseProps';
+import { interpolateSubHeadText } from '@cbhq/cds-common/src/visualizations/interpolateSubHeadText';
 
 import { fontScaleProps } from '../../hooks/useDeviceScaleToCdsScale';
 import { HStack } from '../../layout';

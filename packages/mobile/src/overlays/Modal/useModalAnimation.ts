@@ -7,7 +7,7 @@ import {
   animateOutScaleConfig,
   modalHiddenOpacity,
   modalHiddenScale,
-} from '@cbhq/cds-common/animation/modal';
+} from '@cbhq/cds-common/src/animation/modal';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 

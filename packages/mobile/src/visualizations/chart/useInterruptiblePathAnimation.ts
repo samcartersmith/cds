@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
-import { animatedPathConfig } from '@cbhq/cds-common/animation/sparkline';
+import { animatedPathConfig } from '@cbhq/cds-common/src/animation/sparkline';
 
 import { useChartContext } from './ChartProvider';
 

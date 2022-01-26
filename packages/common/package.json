@@ -2,6 +2,7 @@
   "name": "@cbhq/cds-common",
   "version": "0.33.0",
   "description": "Coinbase Design System - Common",
+  "repository": "git@github.cbhq.net:jonathan-rossi/design-system.git",
   "type": "commonjs",
   "keywords": [
     "cds",
@@ -14,39 +15,51 @@
   "typings": "./dts/index.d.ts",
   "packemon": {
     "format": "lib",
-    "platform": "node",
-    "inputs": {
-      "index": "src/index.ts"
-    }
+    "platform": "node"
   },
   "dependencies": {
     "@cbhq/cds-utils": "*",
+    "@types/react-is": "17.0.2",
     "d3-array": "2.3.3",
     "d3-color": "2.0.0",
     "d3-scale": "3.3.0",
     "d3-shape": "2.1.0",
     "lodash": "^4.17.21",
-    "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-is": "17.0.2",
     "type-fest": "1.2.0"
   },
+  "peerDependencies": {
+    "@types/react": "^17.0.3",
+    "react": "17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "3.7.0",
+    "@types/d3-array": "2.9.0",
+    "@types/d3-color": "2.0.1",
+    "@types/d3-scale": "3.2.2",
+    "@types/d3-shape": "2.0.0",
+    "@types/lodash": "4.14.178",
+    "@types/react": "^17.0.3",
+    "react": "17.0.2",
+    "react-test-renderer": "17.0.2"
+  },
   "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "node": "./lib/*.js",
+      "types": "./dts/*.d.ts"
+    },
+    ".": {
+      "node": "./lib/index.js",
+      "types": "./dts/index.d.ts"
+    }
+  },
   "files": [
     "dts/**/*.d.ts",
     "lib/**/*.{js,map}",
     "src/**/*.{ts,tsx,json}"
-  ],
-  "main": "./lib/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "node": "./lib/index.js",
-      "types": "./dts/index.d.ts"
-    },
-    "./*": {
-      "node": "./lib/*.js",
-      "types": "./dts/*.d.ts"
-    }
-  }
+  ]
 }

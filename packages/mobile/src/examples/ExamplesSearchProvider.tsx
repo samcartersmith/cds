@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SetState } from '@cbhq/cds-common/types';
+import { SetState } from '@cbhq/cds-common/src/types';
 import { noop } from '@cbhq/cds-utils';
 
 export const SearchFilterContext = React.createContext('');

@@ -1,12 +1,9 @@
-bazel-out
-dist
-node_modules
+*.json
 *.md
-*.bazel
-*.bzl
-Makefile
+dist/
+node_modules/
 OWNERS
-**/persisted_queries.json
+Makefile
 *.json
 .eslintrc.js
 

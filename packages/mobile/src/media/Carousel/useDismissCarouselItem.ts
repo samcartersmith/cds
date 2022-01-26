@@ -6,7 +6,7 @@ import {
   NativeSyntheticEvent,
   Platform,
 } from 'react-native';
-import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animation/carousel';
+import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/src/animation/carousel';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { ScrollToFn } from '../../hooks/useScrollTo';

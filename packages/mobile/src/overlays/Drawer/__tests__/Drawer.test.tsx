@@ -1,13 +1,13 @@
 import { Modal } from 'react-native';
 import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { useToggler } from '@cbhq/cds-common/src/hooks/useToggler';
 import {
   CreateLoremIpsumProps,
   loremIpsum,
   loremIpsumBuilder,
-} from '@cbhq/cds-common/internal/loremIpsumBuilder';
-import { DrawerBaseProps } from '@cbhq/cds-common/types';
+} from '@cbhq/cds-common/src/internal/loremIpsumBuilder';
+import { DrawerBaseProps } from '@cbhq/cds-common/src/types';
 
 import { Button } from '../../../buttons';
 import { VStack } from '../../../layout/VStack';

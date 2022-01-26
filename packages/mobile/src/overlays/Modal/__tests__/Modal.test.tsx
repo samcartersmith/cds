@@ -4,8 +4,8 @@ import {
   CreateLoremIpsumProps,
   loremIpsum,
   loremIpsumBuilder,
-} from '@cbhq/cds-common/internal/loremIpsumBuilder';
-import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
+} from '@cbhq/cds-common/src/internal/loremIpsumBuilder';
+import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/src/internal/modalBuilder';
 
 import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';

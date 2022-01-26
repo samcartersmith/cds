@@ -12,7 +12,7 @@ import { BoxBaseProps, ElevationLevels, ForwardedRef, SharedProps } from '@cbhq/
 import {
   ElevationChildrenProvider,
   ElevationProvider,
-} from '@cbhq/cds-common/context/ElevationProvider';
+} from '@cbhq/cds-common/src/context/ElevationProvider';
 
 import { useBorderStyles } from '../hooks/useBorderStyles';
 import { useElevationStyles } from '../hooks/useElevationStyles';

@@ -1,4 +1,4 @@
-import { PaletteOrTransparentColor } from '@cbhq/cds-common/types';
+import { PaletteOrTransparentColor } from '@cbhq/cds-common/src/types';
 
 import { usePalette } from './usePalette';
 

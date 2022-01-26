@@ -6,10 +6,10 @@ import {
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
 } from 'react-native';
-import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
-import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
+import { useInputVariant } from '@cbhq/cds-common/src/hooks/useInputVariant';
+import { useMergedRef } from '@cbhq/cds-common/src/hooks/useMergedRef';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/src/types/SharedAccessibilityProps';
+import { TextInputBaseProps } from '@cbhq/cds-common/src/types/TextInputBaseProps';
 
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';

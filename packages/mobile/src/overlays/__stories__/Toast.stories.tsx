@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateToastProps, toastBuilder } from '@cbhq/cds-common/internal/toastBuilder';
+import { CreateToastProps, toastBuilder } from '@cbhq/cds-common/src/internal/toastBuilder';
 
 import { Button } from '../../buttons/Button';
 import { TextInput } from '../../controls/TextInput';

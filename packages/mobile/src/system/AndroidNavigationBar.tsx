@@ -2,7 +2,7 @@
 import React, { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import { Platform } from 'react-native';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
-import { colorToHex } from '@cbhq/cds-common/color/colorToHex';
+import { colorToHex } from '@cbhq/cds-common/src/color/colorToHex';
 import { emptyObject } from '@cbhq/cds-utils';
 
 import { usePalette } from '../hooks/usePalette';

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
-import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { useScaleDensity } from '@cbhq/cds-common/src/scale/useScaleDensity';
 
 import { TextBody, TextLabel2, TextProps } from '../typography';
 

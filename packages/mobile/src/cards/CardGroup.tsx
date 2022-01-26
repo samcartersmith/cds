@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { gutter } from '@cbhq/cds-common/src/tokens/sizing';
 
 import { Divider } from '../layout/Divider';
 import { Group, GroupProps, RenderGroupItem } from '../layout/Group';

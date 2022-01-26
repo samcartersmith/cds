@@ -1,6 +1,6 @@
 import React, { FunctionComponent, memo, useCallback, useRef } from 'react';
 import { Animated, LayoutChangeEvent, StyleSheet } from 'react-native';
-import { ChartMinMaxProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import { ChartMinMaxProps } from '@cbhq/cds-common/src/types/SparklineInteractiveBaseProps';
 
 import { useLayout } from '../../hooks/useLayout';
 import { usePalette } from '../../hooks/usePalette';

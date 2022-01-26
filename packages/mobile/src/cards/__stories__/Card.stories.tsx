@@ -1,9 +1,9 @@
 import React from 'react';
-import { cardBuilder } from '@cbhq/cds-common/internal/cardBuilder';
-import { createConfigs as createAnnouncementCardProps } from '@cbhq/cds-common/internal/cards/announcementCardBuilder';
-import { createConfigs as createFeatureEntryProps } from '@cbhq/cds-common/internal/cards/featureEntryCardBuilder';
-import { createConfigs as createFeedCardProps } from '@cbhq/cds-common/internal/cards/feedCardBuilder';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { cardBuilder } from '@cbhq/cds-common/src/internal/cardBuilder';
+import { createConfigs as createAnnouncementCardProps } from '@cbhq/cds-common/src/internal/cards/announcementCardBuilder';
+import { createConfigs as createFeatureEntryProps } from '@cbhq/cds-common/src/internal/cards/featureEntryCardBuilder';
+import { createConfigs as createFeedCardProps } from '@cbhq/cds-common/src/internal/cards/feedCardBuilder';
+import { gutter } from '@cbhq/cds-common/src/tokens/sizing';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';

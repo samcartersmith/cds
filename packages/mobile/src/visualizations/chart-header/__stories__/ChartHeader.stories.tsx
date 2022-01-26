@@ -1,6 +1,6 @@
 import React from 'react';
-import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
-import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/src/internal/sparklineInteractiveBuilder';
+import { sparklineInteractiveData } from '@cbhq/cds-common/src/internal/visualizations/SparklineInteractiveData';
 
 import { Example } from '../../../examples/ExampleScreen';
 import { Box } from '../../../layout';
