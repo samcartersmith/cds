@@ -216,8 +216,8 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 79,
-      "totalCallSites": 76,
+      "totalInstances": 78,
+      "totalCallSites": 75,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
         "@onboarding/debugScreen/UMODebugScreen.tsx": 3,
@@ -293,7 +293,6 @@
         "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 1,
         "@onboarding/screens/suitability/TradingExperienceScreen.tsx": 1,
         "@onboarding/screens/suitability/WhatUseOfCoinbaseSuitabilityScreen.tsx": 1,
-        "@onboarding/screens/tos/TOSScreen.tsx": 1,
         "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1,
         "@onboarding/components/UI/AlertScreen/AlertScreen.tsx": 1
       },
@@ -418,7 +417,6 @@
           "@onboarding/screens/suitability/SuitabilityErrorScreen.tsx": 1,
           "@onboarding/screens/suitability/TradingExperienceScreen.tsx": 1,
           "@onboarding/screens/suitability/WhatUseOfCoinbaseSuitabilityScreen.tsx": 1,
-          "@onboarding/screens/tos/TOSScreen.tsx": 1,
           "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1
         },
         "align": {
@@ -446,10 +444,7 @@
           "@onboarding/screens/nationality/NationalityScreen.tsx": 1,
           "@onboarding/screens/poaConfirm/POAConfirmScreen.tsx": 1
         },
-        "spacingTop": {
-          "@onboarding/screens/tos/TOSScreen.tsx": 1,
-          "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1
-        }
+        "spacingTop": { "@onboarding/screens/unhandled/UnhandledRequirementScreen.tsx": 1 }
       }
     },
     {
@@ -1460,19 +1455,13 @@
       }
     },
     {
-      "name": "StatusBar",
-      "sourceFile": "@cbhq/cds-mobile/system/StatusBar",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/system/StatusBar"
-    },
-    {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
-      "totalInstances": 7,
-      "totalCallSites": 5,
+      "totalInstances": 8,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-mobile/typography/TextHeadline",
       "callSites": {
+        "@onboarding/components/UI/NavBar.tsx": 1,
         "@onboarding/refactoredDirector/VerifyEmailExperience/VerifyEmailScene.tsx": 1,
         "@onboarding/screens/idvMarqeta/IntroPhotoIdScreenMarqeta.tsx": 1,
         "@onboarding/screens/kyc/PersonalInfoScreen.tsx": 1,
@@ -1496,6 +1485,13 @@
       }
     },
     {
+      "name": "StatusBar",
+      "sourceFile": "@cbhq/cds-mobile/system/StatusBar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/system/StatusBar"
+    },
+    {
       "name": "Lottie",
       "sourceFile": "@cbhq/cds-mobile/animation/Lottie",
       "totalInstances": 1,
@@ -1511,17 +1507,22 @@
     {
       "name": "HeroSquare",
       "sourceFile": "@cbhq/cds-mobile/illustrations/HeroSquare",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-mobile/illustrations/HeroSquare",
       "callSites": {
         "@onboarding/screens/idvMarqeta/IntroPhotoIdScreenMarqeta.tsx": 1,
-        "@onboarding/screens/signup/TodoListFCAScreen.tsx": 1
+        "@onboarding/screens/signup/TodoListFCAScreen.tsx": 1,
+        "@onboarding/screens/kyc/KYCRefreshAlertScreen/KYCRefreshAlertScreen.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
           "@onboarding/screens/idvMarqeta/IntroPhotoIdScreenMarqeta.tsx": 1,
-          "@onboarding/screens/signup/TodoListFCAScreen.tsx": 1
+          "@onboarding/screens/signup/TodoListFCAScreen.tsx": 1,
+          "@onboarding/screens/kyc/KYCRefreshAlertScreen/KYCRefreshAlertScreen.tsx": 1
+        },
+        "dimension": {
+          "@onboarding/screens/kyc/KYCRefreshAlertScreen/KYCRefreshAlertScreen.tsx": 1
         }
       }
     },
@@ -1769,8 +1770,8 @@
     {
       "name": "Image",
       "sourceFile": "react-native/Image",
-      "totalInstances": 21,
-      "totalCallSites": 21,
+      "totalInstances": 20,
+      "totalCallSites": 20,
       "presentationalProps": [
         { "prop": "style", "callSite": "@onboarding/components/Layout/ImageView.tsx" }
       ],
@@ -1791,7 +1792,6 @@
         "@onboarding/components/Images/SecurityIDVerification/index.tsx": 1,
         "@onboarding/components/Images/VerifyEmail/index.tsx": 1,
         "@onboarding/components/Images/VerifyIdSecure/index.tsx": 1,
-        "@onboarding/components/Images/VerifyInfo/index.tsx": 1,
         "@onboarding/components/Images/VerifyPhotoId/index.tsx": 1,
         "@onboarding/components/Images/VideoPlay/index.tsx": 1,
         "@onboarding/screens/pendingDocuments/components/Document/index.tsx": 1,
@@ -1818,7 +1818,6 @@
           "@onboarding/components/Images/SecurityIDVerification/index.tsx": 1,
           "@onboarding/components/Images/VerifyEmail/index.tsx": 1,
           "@onboarding/components/Images/VerifyIdSecure/index.tsx": 1,
-          "@onboarding/components/Images/VerifyInfo/index.tsx": 1,
           "@onboarding/components/Images/VerifyPhotoId/index.tsx": 1,
           "@onboarding/components/Images/VideoPlay/index.tsx": 1,
           "@onboarding/screens/pendingDocuments/components/Document/index.tsx": 1,
@@ -1841,7 +1840,6 @@
           "@onboarding/components/Images/SecurityIDVerification/index.tsx": 1,
           "@onboarding/components/Images/VerifyEmail/index.tsx": 1,
           "@onboarding/components/Images/VerifyIdSecure/index.tsx": 1,
-          "@onboarding/components/Images/VerifyInfo/index.tsx": 1,
           "@onboarding/components/Images/VerifyPhotoId/index.tsx": 1,
           "@onboarding/components/Images/VideoPlay/index.tsx": 1,
           "@onboarding/screens/pendingDocuments/components/Document/index.tsx": 1,
@@ -1986,21 +1984,6 @@
           "@onboarding/components/UI/ProgressBar/BTCIncentivesProgressBar.tsx": 1,
           "@onboarding/components/UI/ProgressBar/index.tsx": 1
         }
-      }
-    },
-    {
-      "name": "VerifyInfo",
-      "sourceFile": "@onboarding/components/Images/VerifyInfo",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "@onboarding/screens/kyc/KYCRefreshAlertScreen/KYCRefreshAlertScreen.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "style": { "@onboarding/screens/kyc/KYCRefreshAlertScreen/KYCRefreshAlertScreen.tsx": 1 }
       }
     },
     {
@@ -2390,7 +2373,8 @@
         "name": { "@onboarding/debugScreen/UMODebugScreen.tsx": 1 },
         "testID": {
           "@onboarding/debugScreen/UMODebugScreen.tsx": 1,
-          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1
+          "@onboarding/screens/kyc/AddressDetailsScreen.tsx": 1,
+          "@onboarding/screens/tos/TOSScreen.tsx": 1
         },
         "scrollable": {
           "@onboarding/refactoredDirector/PhoneExperience/SecureAccountCheckpointScene.tsx": 1,
