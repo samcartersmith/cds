@@ -14,7 +14,6 @@ Once everything is copied and configured, run:
 
 ```
 yarn install
-yarn setup
 ```
 
 ## Current commands
@@ -25,17 +24,17 @@ See Makefile for a list of commands that currently work.
 
 The task list below is needed to get the hello world of the poly repo. There are no new features planned in these tasks.
 
-#### Linting, testing,  typechecking and formatting
+#### Linting, testing, typechecking and formatting
 
 - [x] common
 - [x] utils
 - [x] mobile
+- [x] lottie-files
 - [ ] fonts
 - [ ] codegen
 - [ ] web
-- [ ] website
+- [ ] website (Includes stylelint)
 - [ ] codemod
-- [ ] lottie-files
 
 #### npm package building
 
