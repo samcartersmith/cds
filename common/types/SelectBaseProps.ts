@@ -16,5 +16,8 @@ export type SelectBaseProps = {
   label?: string;
 } & SharedProps &
   Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused' | 'startNode'> &
-  SharedAccessibilityProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > &
   Omit<SharedInputProps, 'label'>;

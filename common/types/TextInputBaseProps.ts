@@ -18,6 +18,9 @@ export type TextInputBaseProps = {
   /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
   end?: React.ReactNode;
 } & SharedProps &
-  SharedAccessibilityProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > &
   SharedInputProps &
   Pick<InputStackBaseProps, 'variant' | 'width' | 'disabled' | 'borderRadius'>;

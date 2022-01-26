@@ -126,21 +126,6 @@ For cases where label is not enough information to describe what the text input 
 
 <ComponentDetails componentName="Select" templateName="prop-helperText" />
 
-### id
-
-Used for a11y to indicate the relationship between a controlled element and its controller eg: a Button that controls the visibility of a Modal
-
-<ApiDetails
-  componentName="Select"
-  propertyName="id"
-  required={false}
-  defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="Select" templateName="prop-id" />
-
 ### label
 
 Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input
@@ -200,6 +185,41 @@ Placeholder text displayed inside of the input. Will be replaced if there is a v
 />
 
 <ComponentDetails componentName="Select" templateName="prop-placeholder" />
+
+### startNode
+
+Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component
+
+<ApiDetails
+  componentName="Select"
+  propertyName="startNode"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Select" templateName="prop-startNode" />
 
 ### testID
 

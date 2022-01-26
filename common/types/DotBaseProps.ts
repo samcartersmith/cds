@@ -22,4 +22,7 @@ export type DotBaseProps = {
   /** Size of dot */
   size?: DotSize;
 } & SharedProps &
-  SharedAccessibilityProps;
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  >;

@@ -81,21 +81,6 @@ Callback that unMounts the Menu
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-closeMenu" />
 
-### customTriggerRef <Badge variant="web" /> <Badge variant="danger" order={2} />
-
-This is for internal use only! This is used exclusively when the trigger's heighest DOM node is not an interactable
-
-<ApiDetails
-  componentName="PopoverMenu"
-  propertyName="customTriggerRef"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['MutableRefObject<HTMLButtonElement | null>']}
-/>
-
-<ComponentDetails componentName="PopoverMenu" templateName="prop-customTriggerRef" />
-
 ### disabled <Badge variant="web" />
 
 Disable interaction with the Menu and trigger
@@ -111,20 +96,20 @@ Disable interaction with the Menu and trigger
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-disabled" />
 
-### id <Badge variant="web" />
+### flush <Badge variant="web" />
 
-Used for a11y to indicate the relationship between a controlled element and its controller eg: a Button that controls the visibility of a Modal
+When true, the PopoverMenu trigger will fill all available horizontal space
 
 <ApiDetails
   componentName="PopoverMenu"
-  propertyName="id"
+  propertyName="flush"
   required={false}
-  defaultValue=""
+  defaultValue="false"
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails componentName="PopoverMenu" templateName="prop-id" />
+<ComponentDetails componentName="PopoverMenu" templateName="prop-flush" />
 
 ### maxHeight <Badge variant="web" />
 
@@ -140,22 +125,6 @@ Can optionally pass a maxHeight.
 />
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-maxHeight" />
-
-### offsetConfig <Badge variant="web" /> <Badge variant="danger" order={2} />
-
-Object passed when Select is used as a trigger. Used to calculate the Menu offset based on presence of nodes in parent InputStack
-internal use only
-
-<ApiDetails
-  componentName="PopoverMenu"
-  propertyName="offsetConfig"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['OffsetConfigProps']}
-/>
-
-<ComponentDetails componentName="PopoverMenu" templateName="prop-offsetConfig" />
 
 ### onBlur <Badge variant="web" />
 
@@ -187,21 +156,6 @@ Callback that is fired whenever a select option is selected
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-onChange" />
 
-### onPress <Badge variant="web" />
-
-Optional callback fired whenever the trigger is pressed. Since the trigger is cloned, if you pass it an onPress handler directly, it will not fire. You will need to use this prop instead.
-
-<ApiDetails
-  componentName="PopoverMenu"
-  propertyName="onPress"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['NoopFn']}
-/>
-
-<ComponentDetails componentName="PopoverMenu" templateName="prop-onPress" />
-
 ### openMenu <Badge variant="web" />
 
 Callback that mounts the Menu
@@ -231,21 +185,6 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
 />
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-testID" />
-
-### triggerNode <Badge variant="web" />
-
-Callback that returns a node used to trigger Menu open and close Can optionally accept focus state and/or the currently selected value as props Eg: if you have custom focus states for the trigger or if you want to display the selected value in the trigger (respectively)
-
-<ApiDetails
-  componentName="PopoverMenu"
-  propertyName="triggerNode"
-  required={true}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="PopoverMenu" templateName="prop-triggerNode" />
 
 ### value <Badge variant="web" />
 

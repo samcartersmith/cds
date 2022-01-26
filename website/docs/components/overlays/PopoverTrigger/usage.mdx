@@ -1,0 +1,24 @@
+### Getting Started
+
+`PopoverTrigger` is a Higher Order Component that toggles the visibility of a `PopoverMenu`. It should only be used as a direct child of a `PopoverMenu` and wrap an interactable component.
+
+#### Triggers
+
+`PopoverTrigger` requires an interactable component (`Button`, `IconButton`, etc.) as a child that accepts a `ForwardRef`.
+
+If you need to wrap the trigger in a non interactable (like a layout component or a decorator like a `DotColor`) you will need to wrap the entire trigger node in `PopoverTriggerWrapper` and then wrap the interactable part with `PopoverTrigger`. For example, say we want to have an `AvatarButton` as the trigger, but we also want to surface a `DotStatus`. This is how you would compose it:
+
+```jsx
+const Example = () => (
+  <PopoverMenu>
+    <PopoverTriggerWrapper>
+      <DotStatusColor variant="positive" pin="top-start">
+        <PopoverTrigger>
+          <AvatarButton alt="Sneezy" />
+        </PopoverTrigger>
+      </DotStatusColor>
+    </PopoverTriggerWrapper>
+    {/* Popover Menu children */}
+  </PopoverMenu>
+);
+```

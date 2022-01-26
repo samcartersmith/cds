@@ -26,7 +26,10 @@ export type NativeInputProps = {
   onPress?: React.MouseEventHandler;
 } & SharedProps &
   Pick<TextInputBaseProps, 'compact'> &
-  SharedAccessibilityProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > &
   React.InputHTMLAttributes<HTMLInputElement>;
 
 const nativeInputBaseStyle = css`

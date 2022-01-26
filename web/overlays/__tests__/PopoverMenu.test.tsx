@@ -5,7 +5,9 @@ import {
   CreatePopoverMenuStoriesProps,
   priceOptions,
 } from '../__stories__/popoverMenuBuilder';
-import { PopoverMenu, PopoverTrigger, PopoverTriggerWrapper } from '../PopoverMenu';
+import { PopoverMenu } from '../PopoverMenu/PopoverMenu';
+import { PopoverTrigger } from '../PopoverMenu/PopoverTrigger';
+import { PopoverTriggerWrapper } from '../PopoverMenu/PopoverTriggerWrapper';
 import { SelectOption } from '../../controls/SelectOption';
 import { IconButton, AvatarButton } from '../../buttons';
 import { MenuItem } from '../MenuItem';

@@ -19,9 +19,39 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### accessibilityDescriptionId <Badge variant="web" />
+
+Used to associate descriptive text to an input for accessibility
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="accessibilityDescriptionId"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-accessibilityDescriptionId" />
+
+### accessibilityHint
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-accessibilityHint" />
+
 ### accessibilityLabel
 
-Full length accessibility label when the child text is not descriptive enough.
+Full length accessibility label when the child text is not descriptive enough. Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
 
 <ApiDetails
   componentName="InputIconButton"
@@ -33,6 +63,38 @@ Full length accessibility label when the child text is not descriptive enough.
 />
 
 <ComponentDetails componentName="InputIconButton" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelId <Badge variant="web" />
+
+Used to associate a label with an input for accessibility
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="accessibilityLabelId"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-accessibilityLabelId" />
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="InputIconButton"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="InputIconButton" templateName="prop-accessibilityLabelledBy" />
 
 ### as <Badge variant="web" />
 

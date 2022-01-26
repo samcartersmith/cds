@@ -9,6 +9,8 @@ const sectionsToExcludeByLabel = new Set([]);
 const componentsToExcludeByLabel = new Set([
   'components/overlays/MenuSectionLabel/menu-section-label',
   'components/overlays/PopoverMenu/popover-menu',
+  'components/overlays/PopoverTrigger/popover-trigger',
+  'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',
   'components/overlays/Drawer/drawer',
   'components/overlays/Tray/tray',
   'components/controls/Select/select',

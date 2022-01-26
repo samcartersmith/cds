@@ -193,22 +193,6 @@ Is the cell disabled? Will apply opacity and disable interaction.
 
 <ComponentDetails componentName="SelectOption" templateName="prop-disabled" />
 
-### hideMenu <Badge variant="web" /> <Badge variant="danger" order={2} />
-
-Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-this is for internal use only when a MenuItem is a child of a PopoverMenu. For custom handlers please use onPress
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="hideMenu"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['NoopFn']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-hideMenu" />
-
 ### innerSpacing
 
 The spacing to use on the inner content of Cell
@@ -256,21 +240,6 @@ The spacing to use on the inner content of Cell
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-intermediary" />
-
-### key <Badge variant="web" />
-
-Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="key"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['string']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-key" />
 
 ### maxHeight
 
@@ -341,36 +310,6 @@ Reduce horizontal offset if parent container already has spacing.
 
 <ComponentDetails componentName="SelectOption" templateName="prop-offsetHorizontal" />
 
-### onBlur <Badge variant="web" />
-
-Handler called when the MenuItem is blurred Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="onBlur"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(event: FocusEvent<HTMLButtonElement>) => void']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-onBlur" />
-
-### onChange <Badge variant="web" />
-
-Callback that is fired whenever a select option is selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="onChange"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(newValue: string) => void']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-onChange" />
-
 ### outerSpacing
 
 The spacing to use on the parent wrapper of Cell
@@ -385,21 +324,6 @@ The spacing to use on the parent wrapper of Cell
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-outerSpacing" />
-
-### popoverMenuRef <Badge variant="web" />
-
-This is passed in via React.cloneElement and is necessary to control option focus during keyboard interactions
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="popoverMenuRef"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['MutableRefObject<HTMLElement | null>']}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-popoverMenuRef" />
 
 ### priority
 
@@ -431,17 +355,17 @@ Reduce horizontal spacing for tighter layout requirements.
 
 <ComponentDetails componentName="SelectOption" templateName="prop-reduceHorizontalSpacing" />
 
-### selected
+### selected <Badge variant="mobile" />
 
-Indicates whether option has been chosen already Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+Is the cell selected? Will apply a background and selected accessory.
 
 <ApiDetails
   componentName="SelectOption"
   propertyName="selected"
   required={false}
-  defaultValue="false"
+  defaultValue=""
   mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  webOptions={[]}
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-selected" />
@@ -511,7 +435,7 @@ Title of content. Max 1 line (with description) or 2 lines (without), otherwise 
 
 ### value <Badge variant="web" />
 
-automatically focus a select option if its already been selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+automatically focus a select option if its already been selected
 
 <ApiDetails
   componentName="SelectOption"

@@ -19,36 +19,82 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
-### hideMenu <Badge variant="web" /> <Badge variant="danger" order={2} />
+### accessibilityDescriptionId <Badge variant="web" />
 
-Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-this is for internal use only when a MenuItem is a child of a PopoverMenu. For custom handlers please use onPress
-
-<ApiDetails
-  componentName="MenuItem"
-  propertyName="hideMenu"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['NoopFn']}
-/>
-
-<ComponentDetails componentName="MenuItem" templateName="prop-hideMenu" />
-
-### key <Badge variant="web" />
-
-Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+Used to associate descriptive text to an input for accessibility
 
 <ApiDetails
   componentName="MenuItem"
-  propertyName="key"
+  propertyName="accessibilityDescriptionId"
   required={false}
   defaultValue=""
   mobileOptions={[]}
   webOptions={['string']}
 />
 
-<ComponentDetails componentName="MenuItem" templateName="prop-key" />
+<ComponentDetails componentName="MenuItem" templateName="prop-accessibilityDescriptionId" />
+
+### accessibilityHint <Badge variant="web" />
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-accessibilityHint" />
+
+### accessibilityLabel <Badge variant="web" />
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelId <Badge variant="web" />
+
+Used to associate a label with an input for accessibility
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="accessibilityLabelId"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-accessibilityLabelId" />
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-accessibilityLabelledBy" />
 
 ### loading <Badge variant="web" />
 
@@ -64,36 +110,6 @@ Is the element currenty loading.
 />
 
 <ComponentDetails componentName="MenuItem" templateName="prop-loading" />
-
-### onBlur <Badge variant="web" />
-
-Handler called when the MenuItem is blurred Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="MenuItem"
-  propertyName="onBlur"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(event: FocusEvent<HTMLButtonElement>) => void']}
-/>
-
-<ComponentDetails componentName="MenuItem" templateName="prop-onBlur" />
-
-### onChange <Badge variant="web" />
-
-Callback that is fired whenever a select option is selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="MenuItem"
-  propertyName="onChange"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(newValue: string) => void']}
-/>
-
-<ComponentDetails componentName="MenuItem" templateName="prop-onChange" />
 
 ### onKeyPress <Badge variant="web" />
 
@@ -124,36 +140,6 @@ Custom event handler for when a MenuItem is pressed Callback fired when the elem
 />
 
 <ComponentDetails componentName="MenuItem" templateName="prop-onPress" />
-
-### popoverMenuRef <Badge variant="web" />
-
-This is passed in via React.cloneElement and is necessary to control option focus during keyboard interactions
-
-<ApiDetails
-  componentName="MenuItem"
-  propertyName="popoverMenuRef"
-  required={false}
-  defaultValue=""
-  mobileOptions={[]}
-  webOptions={['MutableRefObject<HTMLElement | null>']}
-/>
-
-<ComponentDetails componentName="MenuItem" templateName="prop-popoverMenuRef" />
-
-### selected <Badge variant="web" />
-
-Indicates whether option has been chosen already Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
-
-<ApiDetails
-  componentName="MenuItem"
-  propertyName="selected"
-  required={false}
-  defaultValue="false"
-  mobileOptions={[]}
-  webOptions={['false', 'true']}
-/>
-
-<ComponentDetails componentName="MenuItem" templateName="prop-selected" />
 
 ### tabIndex <Badge variant="web" />
 
@@ -202,7 +188,7 @@ URL that this links to when pressed.
 
 ### value <Badge variant="web" />
 
-automatically focus a select option if its already been selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+automatically focus a select option if its already been selected
 
 <ApiDetails
   componentName="MenuItem"

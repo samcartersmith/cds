@@ -36,4 +36,7 @@ export type PopoverMenuBaseProps = {
    */
   flush?: boolean;
 } & SharedProps &
-  SharedAccessibilityProps;
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  >;

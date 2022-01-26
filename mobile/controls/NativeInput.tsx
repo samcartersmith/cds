@@ -22,7 +22,10 @@ export type NativeInputProps = {
   disabled?: boolean;
 } & SharedProps &
   Pick<TextInputBaseProps, 'compact'> &
-  SharedAccessibilityProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > &
   TextInputProps;
 
 export const NativeInput = memo(
