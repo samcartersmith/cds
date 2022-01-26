@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../.nx/dts/packages/common"
   },
-  "include": ["**/*", "src/*.json"],
+  "include": ["**/*"],
   "exclude": ["dts", "lib"],
   "references": [
     {

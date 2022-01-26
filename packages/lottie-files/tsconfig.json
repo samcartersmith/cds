@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../.nx/dts/packages/lottie-files"
   },
-  "include": ["**/*", "src/**/*.json"],
+  "include": ["**/*", "**/*.json"],
   "exclude": ["dts", "lib"],
   "references": [
     {

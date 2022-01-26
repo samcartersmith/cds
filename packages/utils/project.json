@@ -3,9 +3,6 @@
   "sourceRoot": "packages/utils/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@cbhq/mono-tasks:build-package"
-    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
