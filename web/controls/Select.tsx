@@ -1,22 +1,13 @@
-import React, {
-  useEffect,
-  useRef,
-  memo,
-  useMemo,
-  forwardRef,
-  ForwardedRef,
-  useCallback,
-  ReactElement,
-  MouseEvent,
-} from 'react';
-import { SelectBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
+import React, { useEffect, memo, forwardRef, ForwardedRef, useCallback, ReactElement } from 'react';
+import { SelectBaseProps } from '@cbhq/cds-common/types';
 import { useToggler } from '@cbhq/cds-common';
 import { LinkableProps } from '../system';
 import { useRotate180Animation } from '../animation/useRotate180Animation';
 import { SelectTrigger } from './SelectTrigger';
-import { PopoverMenu } from '../overlays/PopoverMenu';
+import { PopoverMenu } from '../overlays/PopoverMenu/PopoverMenu';
 import { MenuItemProps } from '../overlays/MenuItem';
-import { useA11yId } from '../hooks/useA11yId';
+import { PopoverTriggerWrapper } from '../overlays/PopoverMenu/PopoverTriggerWrapper';
+import { HStack } from '../layout/HStack';
 
 export type SelectProps = {
   children: ReactElement<MenuItemProps & LinkableProps>[];
@@ -28,12 +19,10 @@ export const Select = memo(
   forwardRef(function Select(
     {
       children,
-      helperText,
       value,
       variant = 'foregroundMuted',
       disabled = false,
       width = '100%',
-      compact,
       onPress,
       onChange,
       ...props
@@ -43,94 +32,51 @@ export const Select = memo(
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
     const [triggerHasFocus, toggleTriggerFocus] = useToggler(false);
     const { rotateAnimationRef, animateCaretIn, animateCaretOut } = useRotate180Animation();
-    const popoverMenuRef = useRef<PopoverMenuRefProps>(null);
-    const defaultTriggerRef = useRef<HTMLButtonElement | null>(null);
-    const triggerRef =
-      (ref as React.MutableRefObject<HTMLButtonElement | null>) ?? defaultTriggerRef;
 
-    const accessibilityLabelId = useA11yId();
     // this corrects for when value is initialized with an empty string, coerce it to undefined
     const sanitizedValue = value === '' ? undefined : value;
-    const menuOffsetConfig = useMemo(() => {
-      return {
-        helperText: !!helperText,
-        compact: !!compact,
-      };
-    }, [helperText, compact]);
 
     // toggle focus animations for InputStack and caret whether menu is open or not
     useEffect(() => {
       if (visible) {
+        toggleTriggerFocus.toggleOn();
         void animateCaretIn();
       } else {
+        toggleTriggerFocus.toggleOff();
         void animateCaretOut();
       }
-    }, [animateCaretIn, animateCaretOut, visible]);
+    }, [animateCaretIn, animateCaretOut, visible, toggleTriggerFocus]);
 
-    const handleOnSelectPress = useCallback(
-      (event: MouseEvent<HTMLElement>) => {
-        onPress?.();
-        popoverMenuRef.current?.handleOnPopoverMenuTriggerPress(event);
-        toggleTriggerFocus.toggleOn();
-      },
-      [onPress, toggleTriggerFocus],
-    );
-
-    const handleBlur = useCallback(() => {
-      toggleTriggerFocus.toggleOff();
-    }, [toggleTriggerFocus]);
-
-    const renderTriggerNode = useCallback(() => {
-      return (
-        <SelectTrigger
-          compact={compact}
-          disabled={disabled}
-          helperText={helperText}
-          rotateAnimationRef={rotateAnimationRef}
-          value={sanitizedValue}
-          variant={variant}
-          width={width}
-          ref={ref}
-          onSelectPress={handleOnSelectPress}
-          triggerRef={triggerRef}
-          hasFocus={triggerHasFocus}
-          accessibilityLabelId={accessibilityLabelId}
-          {...props}
-        />
-      );
-    }, [
-      compact,
-      disabled,
-      rotateAnimationRef,
-      sanitizedValue,
-      variant,
-      width,
-      ref,
-      helperText,
-      handleOnSelectPress,
-      triggerRef,
-      props,
-      triggerHasFocus,
-      accessibilityLabelId,
-    ]);
+    const handleOnSelectPress = useCallback(() => {
+      onPress?.();
+      toggleTriggerFocus.toggleOn();
+    }, [toggleTriggerFocus, onPress]);
 
     return (
-      <PopoverMenu
-        value={value}
-        offsetConfig={menuOffsetConfig}
-        onChange={onChange}
-        width={width}
-        visible={visible}
-        openMenu={togglePopoverMenuVisibility.toggleOn}
-        closeMenu={togglePopoverMenuVisibility.toggleOff}
-        triggerNode={renderTriggerNode}
-        ref={popoverMenuRef}
-        customTriggerRef={triggerRef}
-        onBlur={handleBlur}
-        accessibilityLabelledBy={accessibilityLabelId}
-      >
-        {children}
-      </PopoverMenu>
+      <HStack width={width}>
+        <PopoverMenu
+          value={value}
+          onChange={onChange}
+          visible={visible}
+          openMenu={togglePopoverMenuVisibility.toggleOn}
+          closeMenu={togglePopoverMenuVisibility.toggleOff}
+          flush
+        >
+          <PopoverTriggerWrapper>
+            <SelectTrigger
+              disabled={disabled}
+              rotateAnimationRef={rotateAnimationRef}
+              value={sanitizedValue}
+              variant={variant}
+              triggerHasFocus={triggerHasFocus}
+              onPress={handleOnSelectPress}
+              ref={ref}
+              {...props}
+            />
+          </PopoverTriggerWrapper>
+          {children}
+        </PopoverMenu>
+      </HStack>
     );
   }),
 );

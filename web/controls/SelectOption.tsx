@@ -7,15 +7,13 @@ import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
 import { CellAccessory } from '../cells/CellAccessory';
 import { MenuItem, MenuItemProps } from '../overlays/MenuItem';
+import { usePopoverContext } from '../overlays/PopoverMenu/PopoverContext';
 
 // I know this looks weird.. but I got syntax errors whenever I tried to inline this
 type SelectOptionWebProps = Omit<SelectOptionBaseProps, 'selected'>;
 
 export type SelectOptionProps = SelectOptionWebProps &
-  Pick<
-    MenuItemProps,
-    'value' | 'key' | 'onChange' | 'popoverMenuRef' | 'hideMenu' | 'selected' | 'onBlur'
-  > &
+  Pick<MenuItemProps, 'value'> &
   RefAttributes<HTMLElement>;
 
 const selectOptionMinHeight: Record<ScaleDensity, number> = {
@@ -38,19 +36,7 @@ const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
 export const SelectOption = memo(
   forwardRef(
     (
-      {
-        title,
-        description,
-        multiline,
-        selected,
-        compact,
-        value,
-        key,
-        onChange,
-        popoverMenuRef,
-        hideMenu,
-        ...props
-      }: SelectOptionProps,
+      { title, description, multiline, compact, value, ...props }: SelectOptionProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
       const minHeight = useScaleConditional(
@@ -60,16 +46,11 @@ export const SelectOption = memo(
         compact ? selectOptionCompactMaxHeight : selectOptionMaxHeight,
       );
 
+      const { sanitizedValue } = usePopoverContext();
+      const selected = value === sanitizedValue;
+
       return (
-        <MenuItem
-          value={value}
-          key={key}
-          ref={ref}
-          onChange={onChange}
-          popoverMenuRef={popoverMenuRef}
-          hideMenu={hideMenu}
-          selected={selected}
-        >
+        <MenuItem value={value} ref={ref}>
           <Cell
             {...selectCellSpacingConfig}
             borderRadius="none"

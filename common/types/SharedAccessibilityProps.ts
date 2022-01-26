@@ -18,4 +18,8 @@ export type SharedAccessibilityProps = {
    * eg: a Button that controls the visibility of a Modal
    */
   id?: string;
+  /** Used to associate a label with an input for accessibility */
+  accessibilityLabelId?: string;
+  /** Used to associate descriptive text to an input for accessibility */
+  accessibilityDescriptionId?: string;
 };

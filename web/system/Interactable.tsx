@@ -76,6 +76,8 @@ export const InteractableContent = forwardRef(function InteractableContent(
     width,
     height,
     accessibilityLabel,
+    accessibilityLabelledBy,
+    accessibilityHint,
     ...props
   }: InteractableProps,
   ref: React.Ref<Element>,
@@ -151,6 +153,8 @@ export const InteractableContent = forwardRef(function InteractableContent(
       'aria-pressed': pressed,
       'data-testid': testID,
       'aria-label': accessibilityLabel,
+      'aria-labelledby': accessibilityLabelledBy,
+      'aria-describedby': accessibilityHint,
       ...props,
       className,
       disabled,

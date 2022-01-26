@@ -15,6 +15,6 @@ export type SelectBaseProps = {
   /** Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input */
   label?: string;
 } & SharedProps &
-  Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused'> &
+  Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused' | 'startNode'> &
   SharedAccessibilityProps &
   Omit<SharedInputProps, 'label'>;

@@ -1,25 +1,24 @@
-import React, { RefObject, ForwardedRef, MouseEvent, forwardRef, memo } from 'react';
-import { InputVariant, SelectBaseProps } from '@cbhq/cds-common';
+import React, { RefObject, forwardRef, memo } from 'react';
+import { ForwardedRef, SelectBaseProps } from '@cbhq/cds-common';
 import { css } from 'linaria';
-import { InputStack } from './InputStack';
-import { InputLabel } from './InputLabel';
-import { HStack } from '../layout/HStack';
-import { PressableOpacity } from '../system';
+import { labelTextColor } from '@cbhq/cds-common/tokens/select';
 import { TextBody } from '../typography/TextBody';
 import { InputIcon } from './InputIcon';
-import { HelperText } from './HelperText';
+import { PressableOpacity } from '../system';
+import { HStack } from '../layout/HStack';
+import { PopoverTrigger, PopoverTriggerProps } from '../overlays/PopoverMenu/PopoverTrigger';
+import { InputLabel } from './InputLabel';
+import { useA11yId } from '../hooks/useA11yId';
+import { SelectStack } from './SelectStack';
 
 export type SelectTriggerProps = {
   rotateAnimationRef: RefObject<HTMLDivElement>;
-  ref: ForwardedRef<HTMLButtonElement>;
-  onSelectPress: (event: MouseEvent<HTMLElement>) => void;
-  triggerRef: RefObject<HTMLButtonElement>;
-  hasFocus: boolean;
-  /** ID used to show the relationship between the Select label (if present) and the PopoverMenu */
-  accessibilityLabelId?: string;
-} & Omit<SelectBaseProps, 'children' | 'onPress'>;
+  triggerHasFocus: boolean;
+} & Omit<SelectBaseProps, 'children' | 'focused' | 'width'> &
+  Omit<PopoverTriggerProps, 'children' | 'focused'>;
 
 const pressableOverrides = css`
+  padding: 0;
   /* stylelint-disable a11y/content-property-no-static-value */
   &.focus-visible {
     &::before {
@@ -37,61 +36,79 @@ export const SelectTrigger = memo(
         placeholder,
         disabled,
         label,
-        helperText,
         rotateAnimationRef,
         value,
-        testID,
         variant,
-        width,
-        onSelectPress,
-        triggerRef,
-        accessibilityLabel,
-        hasFocus,
-        accessibilityLabelId,
+        triggerHasFocus,
+        helperText,
+        onPress,
+        startNode,
+        ...props
       }: SelectTriggerProps,
-      ref: ForwardedRef<HTMLButtonElement>,
+      ref: ForwardedRef<HTMLElement>,
     ) => {
-      const labelTextColor: InputVariant = 'foreground';
+      const accessibilityLabelId = useA11yId();
+      const accessibilityDescriptionId = useA11yId();
       return (
-        <InputStack
-          width={width}
+        <SelectStack
+          compact={compact}
+          label={label}
+          helperText={helperText}
           disabled={disabled}
           variant={variant}
+          focused={triggerHasFocus}
           ref={ref}
-          focused={hasFocus}
-          inputNode={
-            <HStack width="100%">
-              {compact && (
-                <HStack maxWidth="40%">
-                  <HStack spacingStart={2} spacingEnd={1} alignItems="center" minWidth={0}>
-                    <InputLabel color={labelTextColor} disabled={disabled} overflow="truncate">
-                      {label}
-                    </InputLabel>
+          accessibilityLabelId={accessibilityLabelId}
+          accessibilityDescriptionId={accessibilityDescriptionId}
+        >
+          <PopoverTrigger onPress={onPress}>
+            <PressableOpacity
+              width="100%"
+              noScaleOnPress
+              className={pressableOverrides}
+              ref={ref}
+              {...props}
+            >
+              <HStack width="100%">
+                {!!startNode && (
+                  <HStack spacingStart={2} alignItems="center" justifyContent="center" minWidth={0}>
+                    {startNode}
                   </HStack>
-                </HStack>
-              )}
-              <PressableOpacity
-                width="100%"
-                noScaleOnPress
-                ref={triggerRef}
-                onPress={onSelectPress}
-                testID={testID}
-                accessibilityLabel={accessibilityLabel}
-                className={pressableOverrides}
-              >
+                )}
+                {compact ? (
+                  <HStack maxWidth="40%">
+                    <HStack spacingStart={2} spacingEnd={1} alignItems="center" minWidth={0}>
+                      <InputLabel
+                        color={labelTextColor}
+                        disabled={disabled}
+                        overflow="truncate"
+                        id={accessibilityLabelId}
+                      >
+                        {label}
+                      </InputLabel>
+                    </HStack>
+                  </HStack>
+                ) : null}
                 <HStack
                   alignItems="center"
                   borderRadius="standard"
                   justifyContent="space-between"
                   spacingStart={compact ? 0 : 2}
                   spacingVertical={compact ? 1 : 2}
+                  width="100%"
                 >
-                  <HStack flexGrow={1} minWidth={0}>
+                  <HStack
+                    flexGrow={1}
+                    flexShrink={1}
+                    minWidth={0}
+                    justifyContent={compact ? 'flex-end' : 'flex-start'}
+                  >
                     <TextBody
                       as="p"
                       color={value ? 'foreground' : 'foregroundMuted'}
                       disabled={disabled}
                       overflow="truncate"
+                      align={compact ? 'end' : 'start'}
                     >
                       {value ?? placeholder ?? (!compact && label)}
                     </TextBody>
@@ -100,34 +117,14 @@ export const SelectTrigger = memo(
                     <InputIcon
                       ref={rotateAnimationRef}
                       name="caretDown"
-                      color={hasFocus ? 'primary' : variant}
+                      color={triggerHasFocus ? 'primary' : variant}
                     />
                   </HStack>
                 </HStack>
-              </PressableOpacity>
-            </HStack>
-          }
-          helperTextNode={
-            Boolean(helperText) && (
-              <HelperText overflow="truncate" color={variant ?? 'foregroundMuted'}>
-                {helperText}
-              </HelperText>
-            )
-          }
-          labelNode={
-            !compact &&
-            Boolean(label) && (
-              <InputLabel
-                overflow="truncate"
-                color={labelTextColor}
-                disabled={disabled}
-                id={accessibilityLabelId}
-              >
-                {label}
-              </InputLabel>
-            )
-          }
-        />
+              </HStack>
+            </PressableOpacity>
+          </PopoverTrigger>
+        </SelectStack>
       );
     },
   ),

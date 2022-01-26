@@ -1,5 +1,5 @@
-import React, { memo, useMemo } from 'react';
-import { ButtonBaseProps, SharedProps } from '@cbhq/cds-common';
+import React, { memo, useMemo, forwardRef } from 'react';
+import { ButtonBaseProps, ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { cx } from '../utils/linaria';
@@ -17,27 +17,33 @@ type AvatarButtonProps = {
   Pick<AvatarBaseProps, 'alt' | 'src'>;
 
 export const AvatarButton = memo(
-  ({ accessibilityLabel, as, onPress, to, alt, src, compact, ...props }: AvatarButtonProps) => {
-    const flexStyles = getFlexStyles({
-      alignItems: 'center',
-      justifyContent: 'center',
-    });
+  forwardRef(
+    (
+      { accessibilityLabel, as, onPress, to, alt, src, compact, ...props }: AvatarButtonProps,
+      ref: ForwardedRef<HTMLElement>,
+    ) => {
+      const flexStyles = getFlexStyles({
+        alignItems: 'center',
+        justifyContent: 'center',
+      });
 
-    const height = useInteractableHeight(compact);
-    const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
+      const height = useInteractableHeight(compact);
+      const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
 
-    return (
-      <PressableOpacity
-        aria-label={accessibilityLabel}
-        {...props}
-        as={as}
-        className={cx(flexStyles, avatarButton)}
-        onPress={onPress}
-        style={style}
-        to={to}
-      >
-        <Avatar src={src} alt={alt} dangerouslySetSize={height} />
-      </PressableOpacity>
-    );
-  },
+      return (
+        <PressableOpacity
+          aria-label={accessibilityLabel}
+          {...props}
+          as={as}
+          className={cx(flexStyles, avatarButton)}
+          onPress={onPress}
+          style={style}
+          to={to}
+          ref={ref}
+        >
+          <Avatar src={src} alt={alt} dangerouslySetSize={height} />
+        </PressableOpacity>
+      );
+    },
+  ),
 );

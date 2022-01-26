@@ -1,16 +1,37 @@
 ### Getting Started
 
-`PopoverMenu` is a **web only** component that is composed of trigger and an elevated surface that can be shown/hidden by interacting with the trigger and/or the contents of the PopoverMenu.
+`PopoverMenu` is a **web only** component that is composed of trigger and an elevated surface that can be shown/hidden by interacting with the trigger and/or the contents of the `PopoverMenu`.
 
-`PopoverMenu`s can display anything as children, and can take any interactable component as the trigger. Note: the trigger must be an interactable component in order to work, eg: `Pressable`, `Button`, `IconButton`, etc.
+#### PopoverMenu Triggers
+
+`PopoverMenu`s can take an interactable component (`Button`, `IconButton`, etc.) as the trigger, as long as it is wrapped in the `PopoverTrigger` higher order component.
+
+**Note**: a `PopoverMenu` trigger must contain `PopoverTrigger` as a direct descendent. The `PopoverTrigger`'s direct descendent must be an interactable component that accepts a `ForwardedRef`.
+
+If you need to wrap the trigger in a non interactable (like a layout component or a decorator like a `DotColor`) you will need to wrap it in `PopoverTriggerWrapper` and then wrap the interactable trigger node with `PopoverTrigger`. For example, say we want to have an `AvatarButton` as the trigger, but we also want to surface a `DotStatus`. This is how you would compose it:
+
+```jsx
+const Example = () => (
+  <PopoverMenu>
+    <PopoverTriggerWrapper>
+      <DotStatusColor variant="positive" pin="top-start">
+        <PopoverTrigger>
+          <AvatarButton alt="Sneezy" />
+        </PopoverTrigger>
+      </DotStatusColor>
+    </PopoverTriggerWrapper>
+    {/* children */}
+  </PopoverMenu>
+);
+```
+
+#### PopoverMenu Content
 
 We strongly recommend that you wrap each interactable child of a `PopoverMenu` in a `MenuItem`, which will add keyboard navigation, focus behaviors, and accessibility attributes, all for free. You just need to pass each `MenuItem` a unique value. See `MenuItem` usage for more details.
 
 ### Basic PopoverMenu
 
 `PopoverMenu`s are most often used to display lists of options, like a `Select`.
-
-You'll notice the `PopoverMenu` requires a trigger as a prop, `triggerNode`, which must be provided as a callback.
 
 ```jsx live
 function Default() {
@@ -39,22 +60,19 @@ function Default() {
     [setValue],
   );
 
-  const createTrigger = useCallback(
-    () => <IconButton transparent name="more" variant="secondary" />,
-    [],
-  );
-
   return (
-    <VStack minHeight={500} background="background">
+    <VStack minHeight={500} spacing={2} background="background">
       <PopoverMenu
         width={200}
-        triggerNode={createTrigger}
         value={value}
         onChange={handleMenuValueChange}
         openMenu={togglePopoverMenuVisibility.toggleOn}
         closeMenu={togglePopoverMenuVisibility.toggleOff}
         visible={visible}
       >
+        <PopoverTrigger>
+          <IconButton transparent name="more" variant="secondary" />
+        </PopoverTrigger>
         {priceOptions.map((option) => (
           <SelectOption
             value={option}
@@ -102,25 +120,27 @@ function NavigationMenu() {
     [setValue],
   );
 
-  const createTrigger = useCallback(
-    () => <IconButton transparent name="more" variant="secondary" />,
-    [],
-  );
-
   return (
-    <VStack minHeight={500} background="background">
+    <VStack minHeight={500} spacing={2} background="background">
       <NavigationBar
         end={
           <HStack gap={1}>
+            <IconButton name="bell" variant="secondary" />
             <PopoverMenu
               width={350}
-              triggerNode={createTrigger}
               openMenu={togglePopoverMenuVisibility.toggleOn}
               closeMenu={togglePopoverMenuVisibility.toggleOff}
               visible={visible}
               onChange={handleMenuValueChange}
               value={value}
             >
+              <PopoverTriggerWrapper>
+                <DotStatusColor variant="positive" pin="top-start">
+                  <PopoverTrigger>
+                    <AvatarButton compact alt="Sneezy" />
+                  </PopoverTrigger>
+                </DotStatusColor>
+              </PopoverTriggerWrapper>
               <MenuSectionLabel text="For Individuals" />
               {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                 <SelectOption
@@ -133,7 +153,6 @@ function NavigationMenu() {
                 />
               ))}
             </PopoverMenu>
-            <IconButton name="bell" variant="secondary" />
           </HStack>
         }
       >

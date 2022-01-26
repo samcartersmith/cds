@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState, ReactElement, ComponentType } from 'react';
 import type {
   SelectBaseProps,
   SelectOptionBaseProps,
@@ -9,6 +9,7 @@ import type {
   StackBaseProps,
   Scale,
   TextInputBaseProps,
+  IconBaseProps,
 } from '../types';
 import { useToggler } from '../hooks/useToggler';
 
@@ -32,12 +33,13 @@ export type SelectProps = {
 } & SelectBaseProps;
 
 export type CreateSelectStoriesProps = {
-  Select: React.ComponentType<SelectProps>;
-  VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOption: React.ComponentType<SelectOptionProps>;
-  ThemeProvider: React.ComponentType<ThemeProviderBaseProps>;
+  Select: ComponentType<SelectProps>;
+  VStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
+  SelectOption: ComponentType<SelectOptionProps>;
+  ThemeProvider: ComponentType<ThemeProviderBaseProps>;
   spectrum?: Spectrum;
   scale?: Scale;
+  Icon: ComponentType<IconBaseProps>;
 };
 
 export const priceOptions = [
@@ -62,6 +64,7 @@ export const selectBuilder = ({
   ThemeProvider,
   spectrum,
   scale,
+  Icon,
 }: CreateSelectStoriesProps) => {
   const Default = ({
     variant,
@@ -118,6 +121,7 @@ export const selectBuilder = ({
             placeholder="I am some ridiculously, absurdly, ostentatiously long placeholder text that would ideally get truncated when I meet the edge of my parent container. "
             label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
             helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
+            startNode={<Icon name="calendar" size="s" />}
           >
             {priceOptions.map((option) => (
               <SelectOption
@@ -134,7 +138,7 @@ export const selectBuilder = ({
       </ThemeProvider>
     );
   };
-  const WithLabel = () => {
+  const Disabled = () => {
     const [value, setValue] = useState<string | undefined>('');
 
     return (
@@ -145,6 +149,8 @@ export const selectBuilder = ({
             onChange={setValue}
             placeholder="Choose an amount"
             label="How many would you like?"
+            helperText="You can only choose one option"
+            disabled
           >
             {priceOptions.map((option) => (
               <SelectOption
@@ -207,18 +213,18 @@ export const selectBuilder = ({
     InputStackOptions,
     Compact,
     Variants,
-    WithLabel,
+    Disabled,
   };
 };
 
 export type CreateSelectProps = {
-  Select: React.ComponentType<SelectBaseProps>;
-  Tray: React.ComponentType<TrayBaseProps>;
-  SelectOption: React.ComponentType<SelectOptionBaseProps & LinkableProps>;
-  ScrollView: React.ComponentType;
-  HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
-  TextInput: React.ComponentType<TextInputBaseProps>;
+  Select: ComponentType<SelectBaseProps>;
+  Tray: ComponentType<TrayBaseProps>;
+  SelectOption: ComponentType<SelectOptionBaseProps & LinkableProps>;
+  ScrollView: ComponentType;
+  HStack: ComponentType<BoxBaseProps & StackBaseProps>;
+  VStack: ComponentType<BoxBaseProps & StackBaseProps>;
+  TextInput: ComponentType<TextInputBaseProps>;
 };
 
 type OptionProps = {

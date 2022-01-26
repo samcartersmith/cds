@@ -1,6 +1,3 @@
-import { ScaleDensity } from '../types';
+import { InputVariant } from '../types';
 
-export const inputStackHelperTextHeight: Record<ScaleDensity, number> = {
-  normal: 24,
-  dense: 24,
-};
+export const labelTextColor: InputVariant = 'foreground';

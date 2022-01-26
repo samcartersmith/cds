@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 import { SharedProps } from '@cbhq/cds-common';
 
 import { css } from 'linaria';
+import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { cx } from '../utils/linaria';
 import { scaledDownState } from '../styles/interactable';
 import { ButtonOrLink } from './ButtonOrLink';
@@ -35,7 +36,8 @@ export type PressableProps = {
   tabIndex?: number;
 } & React.AriaAttributes &
   SharedProps &
-  LinkableProps;
+  LinkableProps &
+  Omit<SharedAccessibilityProps, 'id'>;
 
 export type PressableInternalProps = {
   /** Element or component to render the container as. */

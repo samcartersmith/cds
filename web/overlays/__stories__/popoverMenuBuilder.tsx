@@ -1,4 +1,4 @@
-import React, { useState, useCallback, ReactNode } from 'react';
+import React, { useState, useCallback, ReactNode, ComponentType, ReactElement } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import {
   PopoverMenuBaseProps,
@@ -13,6 +13,8 @@ import {
   SharedProps,
   IllustrationPictogramNames,
   DividerBaseProps,
+  AvatarBaseProps,
+  DotBaseProps,
 } from '@cbhq/cds-common/types';
 import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
 
@@ -33,6 +35,10 @@ export type PopoverMenuProps = {
   onChange?: (newValue: string) => void;
 } & PopoverMenuBaseProps;
 
+export type PopoverTriggerProps = {
+  children: ReactElement;
+};
+
 export type NavigationBarProps = {
   start?: ReactNode;
   end?: ReactNode;
@@ -47,20 +53,28 @@ type TypographyProps = {
   text: string;
 };
 
+type PopoverTriggerWrapperProps = {
+  children: ReactNode;
+};
+
 export type CreatePopoverMenuStoriesProps = {
-  PopoverMenu: React.ComponentType<PopoverMenuProps>;
-  VStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  HStack: React.ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
-  SelectOption: React.ComponentType<SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key'>>;
-  IconButton: React.ComponentType<IconButtonBaseProps & SharedProps>;
-  NavigationBar: React.ComponentType<NavigationBarProps>;
-  NavigationTitle: React.ComponentType<NavigationTitleProps>;
-  Pictogram: React.ComponentType<PictogramProps>;
-  CellMedia: React.ComponentType<CellMediaProps>;
-  FeedCard: React.ComponentType<FeedCardBaseProps>;
-  Button: React.ComponentType<ButtonBaseProps>;
-  Divider: React.ComponentType<DividerBaseProps>;
-  MenuSectionLabel: React.ComponentType<TypographyProps>;
+  PopoverMenu: ComponentType<PopoverMenuProps>;
+  PopoverTrigger: ComponentType<PopoverTriggerProps>;
+  PopoverTriggerWrapper: ComponentType<PopoverTriggerWrapperProps>;
+  VStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
+  HStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
+  SelectOption: ComponentType<SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key'>>;
+  IconButton: ComponentType<IconButtonBaseProps & SharedProps>;
+  NavigationBar: ComponentType<NavigationBarProps>;
+  NavigationTitle: ComponentType<NavigationTitleProps>;
+  Pictogram: ComponentType<PictogramProps>;
+  CellMedia: ComponentType<CellMediaProps>;
+  FeedCard: ComponentType<FeedCardBaseProps>;
+  Button: ComponentType<ButtonBaseProps>;
+  Divider: ComponentType<DividerBaseProps>;
+  MenuSectionLabel: ComponentType<TypographyProps>;
+  DotStatusColor: ComponentType<DotBaseProps>;
+  AvatarButton: ComponentType<AvatarBaseProps>;
 };
 
 export const priceOptions = [
@@ -77,6 +91,10 @@ export const priceOptions = [
   '675765',
   '65655',
 ];
+
+const accountOptions = ['Settings', 'Appearance', 'Taxes & Reports', 'Help', 'Sign Out'];
+
+const feedCardOptions = ['Show me more like this', 'Show me less like this', 'Copy link'];
 
 type NavigationOptions = {
   name: string;
@@ -102,10 +120,12 @@ const navigationOptions: NavigationOptions[] = [
 
 type DefaultPopoverMenuProps = {
   triggerTestID?: string;
-} & Pick<PopoverMenuProps, 'testID' | 'onPress'>;
+} & Pick<PopoverMenuProps, 'testID'>;
 
 export const popoverMenuBuilder = ({
   PopoverMenu,
+  PopoverTrigger,
+  PopoverTriggerWrapper,
   VStack,
   HStack,
   SelectOption,
@@ -117,8 +137,13 @@ export const popoverMenuBuilder = ({
   Button,
   Divider,
   MenuSectionLabel,
+  DotStatusColor,
+  AvatarButton,
 }: CreatePopoverMenuStoriesProps) => {
-  const Default = ({ triggerTestID, ...props }: DefaultPopoverMenuProps) => {
+  const Default = ({
+    triggerTestID = 'popover-menu-trigger',
+    ...props
+  }: DefaultPopoverMenuProps) => {
     const [value, setValue] = useState('');
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
@@ -129,23 +154,20 @@ export const popoverMenuBuilder = ({
       [setValue],
     );
 
-    const createTrigger = useCallback(
-      () => <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />,
-      [triggerTestID],
-    );
-
     return (
       <VStack minHeight={500} background="background">
         <PopoverMenu
           {...props}
           width={200}
-          triggerNode={createTrigger}
           value={value}
           onChange={handleMenuValueChange}
           openMenu={togglePopoverMenuVisibility.toggleOn}
           closeMenu={togglePopoverMenuVisibility.toggleOff}
           visible={visible}
         >
+          <PopoverTrigger>
+            <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />
+          </PopoverTrigger>
           <MenuSectionLabel text="Section Heading" />
           {priceOptions.slice(0, 4).map((option) => (
             <SelectOption
@@ -174,7 +196,7 @@ export const popoverMenuBuilder = ({
     );
   };
 
-  const NavigationMenu = ({ ...props }: Pick<PopoverMenuProps, 'testID' | 'onPress'>) => {
+  const NavigationMenu = ({ ...props }: Pick<PopoverMenuProps, 'testID'>) => {
     const [value, setValue] = useState('');
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
@@ -185,11 +207,6 @@ export const popoverMenuBuilder = ({
       [setValue],
     );
 
-    const createTrigger = useCallback(
-      () => <IconButton transparent name="more" variant="secondary" />,
-      [],
-    );
-
     return (
       <VStack minHeight={500} background="background">
         <NavigationBar
@@ -198,13 +215,15 @@ export const popoverMenuBuilder = ({
               <PopoverMenu
                 {...props}
                 width={350}
-                triggerNode={createTrigger}
                 openMenu={togglePopoverMenuVisibility.toggleOn}
                 closeMenu={togglePopoverMenuVisibility.toggleOff}
                 visible={visible}
                 onChange={handleMenuValueChange}
                 value={value}
               >
+                <PopoverTrigger>
+                  <IconButton transparent name="more" variant="secondary" />
+                </PopoverTrigger>
                 {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                   <SelectOption
                     value={optionValue}
@@ -226,7 +245,7 @@ export const popoverMenuBuilder = ({
     );
   };
 
-  const FeedCardMenu = ({ ...props }: Pick<PopoverMenuProps, 'testID' | 'onPress'>) => {
+  const FeedCardMenu = ({ ...props }: Pick<PopoverMenuProps, 'testID'>) => {
     const [value, setValue] = useState('');
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
@@ -237,11 +256,6 @@ export const popoverMenuBuilder = ({
       [setValue],
     );
 
-    const createTrigger = useCallback(
-      () => <IconButton transparent name="more" variant="secondary" />,
-      [],
-    );
-
     return (
       <FeedCard
         avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
@@ -250,20 +264,21 @@ export const popoverMenuBuilder = ({
         headerActionNode={
           <PopoverMenu
             {...props}
-            width={200}
-            triggerNode={createTrigger}
+            width={250}
             value={value}
             onChange={handleMenuValueChange}
             openMenu={togglePopoverMenuVisibility.toggleOn}
             closeMenu={togglePopoverMenuVisibility.toggleOff}
             visible={visible}
           >
-            {priceOptions.map((option) => (
+            <PopoverTrigger>
+              <IconButton transparent name="more" variant="secondary" />
+            </PopoverTrigger>
+            {feedCardOptions.map((option) => (
               <SelectOption
                 value={option}
                 key={option}
                 title={option}
-                description="BTC"
                 testID={`option-${option}`}
                 selected={value === option}
               />
@@ -283,6 +298,50 @@ export const popoverMenuBuilder = ({
     );
   };
 
+  const AvatarButtonMenu = ({ triggerTestID, ...props }: DefaultPopoverMenuProps) => {
+    const [value, setValue] = useState('');
+    const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+    const handleMenuValueChange = useCallback(
+      (newValue: string) => {
+        setValue(newValue);
+      },
+      [setValue],
+    );
+
+    return (
+      <VStack minHeight={500} background="background">
+        <PopoverMenu
+          {...props}
+          width={200}
+          value={value}
+          onChange={handleMenuValueChange}
+          openMenu={togglePopoverMenuVisibility.toggleOn}
+          closeMenu={togglePopoverMenuVisibility.toggleOff}
+          visible={visible}
+        >
+          <PopoverTriggerWrapper>
+            <DotStatusColor variant="positive" pin="top-start">
+              <PopoverTrigger>
+                <AvatarButton testID={triggerTestID} alt="Sneezy" />
+              </PopoverTrigger>
+            </DotStatusColor>
+          </PopoverTriggerWrapper>
+          <MenuSectionLabel text="Manage your profile" />
+          {accountOptions.map((option) => (
+            <SelectOption
+              value={option}
+              key={option}
+              title={option}
+              testID={`option-${option}`}
+              selected={value === option}
+            />
+          ))}
+        </PopoverMenu>
+      </VStack>
+    );
+  };
+
   const FrontierMenu = ({ triggerTestID, ...props }: DefaultPopoverMenuProps) => {
     const [value, setValue] = useState('');
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
@@ -294,24 +353,21 @@ export const popoverMenuBuilder = ({
       [setValue],
     );
 
-    const createTrigger = useCallback(
-      () => <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />,
-      [triggerTestID],
-    );
-
     return (
       <FeatureFlagProvider frontier>
         <VStack minHeight={500} background="background">
           <PopoverMenu
             {...props}
             width={200}
-            triggerNode={createTrigger}
             value={value}
             onChange={handleMenuValueChange}
             openMenu={togglePopoverMenuVisibility.toggleOn}
             closeMenu={togglePopoverMenuVisibility.toggleOff}
             visible={visible}
           >
+            <PopoverTrigger>
+              <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />
+            </PopoverTrigger>
             <MenuSectionLabel text="Section Heading" />
             {priceOptions.slice(0, 4).map((option) => (
               <SelectOption
@@ -345,6 +401,7 @@ export const popoverMenuBuilder = ({
     Default,
     NavigationMenu,
     FeedCardMenu,
+    AvatarButtonMenu,
     FrontierMenu,
   };
 };

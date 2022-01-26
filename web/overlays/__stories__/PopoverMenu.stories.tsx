@@ -1,7 +1,9 @@
 import { popoverMenuBuilder, CreatePopoverMenuStoriesProps } from './popoverMenuBuilder';
-import { PopoverMenu } from '../PopoverMenu';
+import { PopoverMenu } from '../PopoverMenu/PopoverMenu';
+import { PopoverTrigger } from '../PopoverMenu/PopoverTrigger';
+import { PopoverTriggerWrapper } from '../PopoverMenu/PopoverTriggerWrapper';
 import { SelectOption } from '../../controls/SelectOption';
-import { IconButton, Button } from '../../buttons';
+import { IconButton, Button, AvatarButton } from '../../buttons';
 import { VStack, HStack } from '../../layout';
 import { NavigationBar, NavigationTitle } from '../../navigation';
 import { Pictogram } from '../../illustrations/Pictogram';
@@ -10,6 +12,7 @@ import { FeedCard } from '../../cards/FeedCard';
 import { MenuItem } from '../MenuItem';
 import { Divider } from '../../layout/Divider';
 import { MenuSectionLabel } from '../MenuSectionLabel';
+import { DotStatusColor } from '../../dots/DotStatusColor';
 
 export default {
   title: 'Core Components/PopoverMenu',
@@ -18,6 +21,8 @@ export default {
 
 const components = {
   PopoverMenu,
+  PopoverTrigger,
+  PopoverTriggerWrapper,
   VStack,
   HStack,
   SelectOption,
@@ -31,8 +36,9 @@ const components = {
   Button,
   Divider,
   MenuSectionLabel,
+  DotStatusColor,
+  AvatarButton,
 };
 
-export const { Default, NavigationMenu, FeedCardMenu, FrontierMenu } = popoverMenuBuilder(
-  components as CreatePopoverMenuStoriesProps,
-);
+export const { Default, NavigationMenu, FeedCardMenu, AvatarButtonMenu, FrontierMenu } =
+  popoverMenuBuilder(components as CreatePopoverMenuStoriesProps);

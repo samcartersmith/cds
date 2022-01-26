@@ -55,7 +55,7 @@ export const insetFocusRing = css`
       right: ${INSET_FOCUS_RING_PADDING}px;
       bottom: ${INSET_FOCUS_RING_PADDING}px;
       border: ${borderWidth.focusRing}px solid ${palette.primary};
-      border-radius: ${borderRadius.standard};
+      border-radius: ${borderRadius.compact}px;
     }
   }
   &:first-child {

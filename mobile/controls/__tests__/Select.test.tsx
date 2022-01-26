@@ -6,6 +6,8 @@ import { selectBuilderMobile, CreateSelectProps } from '@cbhq/cds-common/interna
 import { Select } from '../Select';
 import { Tray } from '../../overlays/Tray/Tray';
 import { SelectOption } from '../SelectOption';
+import { HStack, VStack } from '../../layout';
+import { TextInput } from '../TextInput';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
 
 const { DefaultSelect } = selectBuilderMobile({
@@ -13,6 +15,9 @@ const { DefaultSelect } = selectBuilderMobile({
   Select,
   SelectOption,
   ScrollView,
+  HStack,
+  VStack,
+  TextInput,
 } as CreateSelectProps);
 
 const options = [

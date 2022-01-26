@@ -29,22 +29,19 @@ function Default() {
     [setValue],
   );
 
-  const createTrigger = useCallback(
-    () => <IconButton transparent name="more" variant="secondary" />,
-    [],
-  );
-
   return (
-    <VStack minHeight={500} background="background">
+    <VStack minHeight={500} spacing={4} background="background">
       <PopoverMenu
         width={200}
-        triggerNode={createTrigger}
         value={value}
         onChange={handleMenuValueChange}
         openMenu={togglePopoverMenuVisibility.toggleOn}
         closeMenu={togglePopoverMenuVisibility.toggleOff}
         visible={visible}
       >
+        <PopoverTrigger>
+          <IconButton transparent name="more" variant="secondary" />
+        </PopoverTrigger>
         {priceOptions.map((option) => (
           <SelectOption
             value={option}
@@ -90,11 +87,6 @@ function NavigationMenu() {
     [setValue],
   );
 
-  const createTrigger = useCallback(
-    () => <IconButton transparent name="more" variant="secondary" />,
-    [],
-  );
-
   return (
     <VStack minHeight={500} background="background">
       <NavigationBar
@@ -102,13 +94,15 @@ function NavigationMenu() {
           <HStack gap={1}>
             <PopoverMenu
               width={350}
-              triggerNode={createTrigger}
               openMenu={togglePopoverMenuVisibility.toggleOn}
               closeMenu={togglePopoverMenuVisibility.toggleOff}
               visible={visible}
               onChange={handleMenuValueChange}
               value={value}
             >
+              <PopoverTrigger>
+                <IconButton transparent name="more" variant="secondary" />
+              </PopoverTrigger>
               <SelectOption
                 key="Coinbase"
                 value="Coinbase"
@@ -144,20 +138,7 @@ function FeedCardMenu() {
   const [value, setValue] = useState('');
   const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
-  const priceOptions = [
-    '666',
-    '2387',
-    '4542',
-    '54534',
-    '5435',
-    '77',
-    '123',
-    '4345345',
-    '6544',
-    '874',
-    '675765',
-    '65655',
-  ];
+  const feedCardOptions = ['Show me more like this', 'Show me less like this', 'Copy link'];
 
   const handleMenuValueChange = useCallback(
     (newValue) => {
@@ -166,48 +147,95 @@ function FeedCardMenu() {
     [setValue],
   );
 
-  const createTrigger = useCallback(
-    () => <IconButton transparent name="more" variant="secondary" />,
-    [],
+  return (
+    <VStack spacing={2}>
+      <FeedCard
+        avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        headerMetaData="Dec 18"
+        headerDescription="Earn crypto"
+        headerActionNode={
+          <PopoverMenu
+            width={250}
+            value={value}
+            onChange={handleMenuValueChange}
+            openMenu={togglePopoverMenuVisibility.toggleOn}
+            closeMenu={togglePopoverMenuVisibility.toggleOff}
+            visible={visible}
+          >
+            <PopoverTrigger>
+              <IconButton transparent name="more" variant="secondary" />
+            </PopoverTrigger>
+            {feedCardOptions.map((option) => (
+              <SelectOption
+                value={option}
+                key={option}
+                title={option}
+                testID={`option-${option}`}
+                selected={value === option}
+              />
+            ))}
+          </PopoverMenu>
+        }
+        bodyTitle="Learn AMP. Earn $3 in AMP."
+        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+        bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        bodyOrientation="vertical"
+        footerActions={
+          <Button compact variant="secondary">
+            Earn AMP
+          </Button>
+        }
+      />
+    </VStack>
+  );
+}
+```
+
+## AvatarButton Example with DotStatus
+
+```jsx live
+function AvatarButtonMenu() {
+  const [value, setValue] = useState('');
+  const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+  const accountOptions = ['Settings', 'Appearance', 'Taxes & Reports', 'Help', 'Sign Out'];
+
+  const handleMenuValueChange = useCallback(
+    (newValue) => {
+      setValue(newValue);
+    },
+    [setValue],
   );
 
   return (
-    <FeedCard
-      avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-      headerMetaData="Dec 18"
-      headerDescription="Earn crypto"
-      headerActionNode={
-        <PopoverMenu
-          width={200}
-          triggerNode={createTrigger}
-          value={value}
-          onChange={handleMenuValueChange}
-          openMenu={togglePopoverMenuVisibility.toggleOn}
-          closeMenu={togglePopoverMenuVisibility.toggleOff}
-          visible={visible}
-        >
-          {priceOptions.map((option) => (
-            <SelectOption
-              value={option}
-              key={option}
-              title={option}
-              description="BTC"
-              testID={`option-${option}`}
-              selected={value === option}
-            />
-          ))}
-        </PopoverMenu>
-      }
-      bodyTitle="Learn AMP. Earn $3 in AMP."
-      bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-      bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-      bodyOrientation="vertical"
-      footerActions={
-        <Button compact variant="secondary">
-          Earn AMP
-        </Button>
-      }
-    />
+    <VStack minHeight={500} spacing={4} background="background">
+      <PopoverMenu
+        width={200}
+        value={value}
+        onChange={handleMenuValueChange}
+        openMenu={togglePopoverMenuVisibility.toggleOn}
+        closeMenu={togglePopoverMenuVisibility.toggleOff}
+        visible={visible}
+      >
+        <PopoverTriggerWrapper>
+          <DotStatusColor variant="positive" pin="top-start">
+            <PopoverTrigger>
+              <AvatarButton alt="Sneezy" />
+            </PopoverTrigger>
+          </DotStatusColor>
+        </PopoverTriggerWrapper>
+        <MenuSectionLabel text="Manage your profile" />
+        {accountOptions.map((option) => (
+          <SelectOption
+            value={option}
+            key={option}
+            title={option}
+            testID={`option-${option}`}
+            selected={value === option}
+          />
+        ))}
+      </PopoverMenu>
+    </VStack>
   );
 }
 ```

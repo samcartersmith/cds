@@ -5,18 +5,21 @@ import {
   CreatePopoverMenuStoriesProps,
   priceOptions,
 } from '../__stories__/popoverMenuBuilder';
-import { PopoverMenu } from '../PopoverMenu';
+import { PopoverMenu, PopoverTrigger, PopoverTriggerWrapper } from '../PopoverMenu';
 import { SelectOption } from '../../controls/SelectOption';
-import { IconButton } from '../../buttons/IconButton';
+import { IconButton, AvatarButton } from '../../buttons';
 import { MenuItem } from '../MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { VStack } from '../../layout/VStack';
 import { MenuSectionLabel } from '../MenuSectionLabel';
 import { Divider } from '../../layout/Divider';
+import { DotStatusColor } from '../../dots/DotStatusColor';
 
-// @ts-expect-error TODO: fix this
-const { Default: MockPopoverMenu } = popoverMenuBuilder({
+// @ts-expect-error TODO: casting doesn't remove the need for all the component types
+const { Default: MockPopoverMenu, AvatarButtonMenu } = popoverMenuBuilder({
   PopoverMenu,
+  PopoverTrigger,
+  PopoverTriggerWrapper,
   MenuItem,
   SelectOption,
   IconButton,
@@ -24,6 +27,8 @@ const { Default: MockPopoverMenu } = popoverMenuBuilder({
   VStack,
   MenuSectionLabel,
   Divider,
+  DotStatusColor,
+  AvatarButton,
 } as CreatePopoverMenuStoriesProps);
 
 const mockTriggerTestID = 'popover-menu-trigger';
@@ -36,7 +41,6 @@ describe('PopoverMenu', () => {
   it('passes accessibility props to the trigger element', () => {
     const { getByTestId } = render(<MockPopoverMenu triggerTestID={mockTriggerTestID} />);
 
-    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('focused', 'false');
     expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-expanded', 'false');
     expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-controls');
     expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-haspopup', 'dialog');
@@ -65,31 +69,19 @@ describe('PopoverMenu', () => {
     expect(getByTestId(mockTriggerTestID)).toBeDefined();
   });
   it('opens the PopoverMenu when the Trigger is pressed', () => {
-    const onPressSpy = jest.fn();
     const { getByText, getByTestId } = render(
-      <MockPopoverMenu
-        triggerTestID={mockTriggerTestID}
-        onPress={onPressSpy}
-        testID={mockPopoverMenuTestID}
-      />,
+      <MockPopoverMenu triggerTestID={mockTriggerTestID} testID={mockPopoverMenuTestID} />,
     );
 
     // press the trigger
     fireEvent.click(getByTestId(mockTriggerTestID));
 
-    expect(onPressSpy).toHaveBeenCalled();
-
     // expect PopoverMenu and SelectOption to render
     expect(getByText(priceOptions[0])).toBeDefined();
   });
   it('closes the PopoverMenu when an option is pressed and fires onChange', () => {
-    const onChangeSpy = jest.fn();
     const { getAllByRole, getByTestId } = render(
-      <MockPopoverMenu
-        triggerTestID={mockTriggerTestID}
-        onPress={onChangeSpy}
-        testID={mockPopoverMenuTestID}
-      />,
+      <MockPopoverMenu triggerTestID={mockTriggerTestID} testID={mockPopoverMenuTestID} />,
     );
 
     // press the trigger
@@ -396,5 +388,43 @@ describe('PopoverMenu', () => {
 
     // expect the menu to close
     expect(firstOption).not.toBeInTheDocument();
+  });
+});
+
+describe('PopoverMenu trigger is injected with props when top level node is not the trigger (requires use of PopoverTriggerWrapper and PopoverTrigger)', () => {
+  it('renders', () => {
+    const { getByTestId } = render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
+
+    expect(getByTestId(mockTriggerTestID)).toBeDefined();
+  });
+  it('receives props from PopoverMenu', () => {
+    const { getByTestId } = render(<AvatarButtonMenu triggerTestID={mockTriggerTestID} />);
+
+    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-expanded', 'false');
+    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-controls');
+    expect(getByTestId(mockTriggerTestID)).toHaveAttribute('aria-haspopup', 'dialog');
+  });
+  it('opens the PopoverMenu when the trigger is pressed', () => {
+    const { getByTestId, getAllByRole } = render(
+      <AvatarButtonMenu triggerTestID={mockTriggerTestID} />,
+    );
+
+    fireEvent.click(getByTestId(mockTriggerTestID));
+
+    const firstOption = getAllByRole('menuitem')[0];
+    expect(firstOption).toBeDefined();
+  });
+  it('opens the PopoverMenu when an enter key is pressed when the trigger is focused', () => {
+    const { getByTestId, getAllByRole } = render(
+      <AvatarButtonMenu triggerTestID={mockTriggerTestID} />,
+    );
+
+    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
+      key: 'Enter',
+      code: 'Enter',
+    });
+
+    const firstOption = getAllByRole('menuitem')[0];
+    expect(firstOption).toBeDefined();
   });
 });

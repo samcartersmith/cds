@@ -27,11 +27,6 @@ function NavigationMenu() {
     [setValue],
   );
 
-  const createTrigger = useCallback(
-    () => <IconButton transparent name="more" variant="secondary" />,
-    [],
-  );
-
   return (
     <VStack minHeight={500} background="background">
       <NavigationBar
@@ -39,13 +34,15 @@ function NavigationMenu() {
           <HStack gap={1}>
             <PopoverMenu
               width={350}
-              triggerNode={createTrigger}
               openMenu={togglePopoverMenuVisibility.toggleOn}
               closeMenu={togglePopoverMenuVisibility.toggleOff}
               visible={visible}
               onChange={handleMenuValueChange}
               value={value}
             >
+              <PopoverTrigger>
+                <IconButton transparent name="more" variant="secondary" />
+              </PopoverTrigger>
               <MenuSectionLabel text="For Individuals" />
               {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                 <SelectOption
