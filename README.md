@@ -25,7 +25,7 @@ See Makefile for a list of commands that currently work.
 
 The task list below is needed to get the hello world of the poly repo. There are no new features planned in these tasks.
 
-#### Linting, building, testing,  typechecking and formatting
+#### Linting, testing,  typechecking and formatting
 
 - [x] common
 - [x] utils
@@ -35,6 +35,15 @@ The task list below is needed to get the hello world of the poly repo. There are
 - [ ] web
 - [ ] website
 - [ ] codemod
+- [ ] lottie-files
+
+#### npm package building
+
+- [ ] common
+- [ ] utils
+- [ ] mobile
+- [ ] fonts
+- [ ] web
 - [ ] lottie-files
 
 #### Storybook
