@@ -8,8 +8,9 @@ export const zIndex = {
     portal: 100001,
     popoverMenu: 2,
     modal: 3,
-    toast: 4,
-    alert: 5,
+    tooltip: 4,
+    toast: 5,
+    alert: 6,
   },
   max: 2147483647,
 } as const;
