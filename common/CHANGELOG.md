@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.2 (1/27/2022, 08:20 AM PST)
+
+#### 🚀 Updates
+
+- Ran prepare.icons. [#50772](https://github.cbhq.net/mono/repo/pull/50772)
+- Custom CDS memoize util. [#50841](https://github.cbhq.net/mono/repo/pull/50841)
+- Rename Chart Prefix to SparklineInteractive. [#50357](https://github.cbhq.net/mono/repo/pull/50357)
+- GetBorderStyles and getInteractableStyles. [#50334](https://github.cbhq.net/mono/repo/pull/50334), [CDS-1956](https://jira.coinbase-corp.com/browse/CDS-1956)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Jan 26th, 2022 Illustration Release. [#50746](https://github.cbhq.net/mono/repo/pull/50746)
+- Internal (Tooltip): Web Architecture Implementation. [#48656](https://github.cbhq.net/mono/repo/pull/48656)
+- UseToast missing types. [#50202](https://github.cbhq.net/mono/repo/pull/50202), [CDS-1946](https://jira.coinbase-corp.com/browse/CDS-1946)
+
+#### 📘 Misc
+
+- Adds docs for popover menu. [#50634](https://github.cbhq.net/mono/repo/pull/50634)
+- Popover rework with Context API. [#50012](https://github.cbhq.net/mono/repo/pull/50012)
+
 ## 0.33.1 (1/24/2022, 09:52 AM PST)
 
 #### 🚀 Updates

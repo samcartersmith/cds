@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.3 (1/27/2022, 08:20 AM PST)
+
+#### 🚀 Updates
+
+- Ran prepare.icons. [#50772](https://github.cbhq.net/mono/repo/pull/50772)
+- Split card and frontier card logic. [#50856](https://github.cbhq.net/mono/repo/pull/50856)
+- Custom CDS memoize util. [#50841](https://github.cbhq.net/mono/repo/pull/50841)
+- Rename Chart Prefix to SparklineInteractive. [#50357](https://github.cbhq.net/mono/repo/pull/50357)
+- GetBorderStyles and getInteractableStyles. [#50334](https://github.cbhq.net/mono/repo/pull/50334), [CDS-1956](https://jira.coinbase-corp.com/browse/CDS-1956)
+- Remove paletteValueToRgbaString from Fallback component. [#50322](https://github.cbhq.net/mono/repo/pull/50322), [CDS-1955](https://jira.coinbase-corp.com/browse/CDS-1955)
+
+#### 🐞 Fixes
+
+- **[Illustrations]** Jan 26th, 2022 Illustration Release. [#50746](https://github.cbhq.net/mono/repo/pull/50746)
+
+#### 📘 Misc
+
+- **[Tooltip]** Mobile Architecture Implementation. [#49178](https://github.cbhq.net/mono/repo/pull/49178)
+- Adds docs for popover menu. [#50634](https://github.cbhq.net/mono/repo/pull/50634)
+- Popover rework with Context API. [#50012](https://github.cbhq.net/mono/repo/pull/50012)
+
 ## 0.38.2 (1/24/2022, 09:52 AM PST)
 
 #### 🚀 Updates
