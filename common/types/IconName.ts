@@ -187,6 +187,12 @@ export type IconName =
   | 'diagonalDownArrow';
 
 export type NavigationIconName =
+  | 'account'
+  | 'securityShield'
+  | 'eye'
+  | 'taxes'
+  | 'documentation'
+  | 'paymentCard'
   | 'chartCandles'
   | 'trading'
   | 'bell'
@@ -216,6 +222,18 @@ export type NavigationIconName =
   | 'shoppingCart';
 
 export type NavigationIconInternalName =
+  | 'accountInactive'
+  | 'accountActive'
+  | 'securityShieldActive'
+  | 'eyeActive'
+  | 'securityShieldInactive'
+  | 'eyeInactive'
+  | 'taxesInactive'
+  | 'taxesActive'
+  | 'documentationInactive'
+  | 'documentationActive'
+  | 'paymentCardInactive'
+  | 'paymentCardActive'
   | 'chartCandlesInactive'
   | 'tradingInactive'
   | 'bellInactive'

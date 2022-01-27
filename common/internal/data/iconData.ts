@@ -192,6 +192,12 @@ export const iconNames = [
 ] as const;
 
 export const navigationIconNames = [
+  'account',
+  'securityShield',
+  'eye',
+  'taxes',
+  'documentation',
+  'paymentCard',
   'chartCandles',
   'trading',
   'bell',
@@ -475,4 +481,34 @@ export const unicodeMap = {
     '32': 'uEDF7',
   },
   shoppingCartActive: { '8': 'uEDF8', '12': 'uEDF9', '16': 'uEDFA', '24': 'uEDFB', '32': 'uEDFC' },
+  accountInactive: { '8': 'uEDFD', '12': 'uEDFE', '16': 'uEDFF', '24': 'uEE00', '32': 'uEE01' },
+  accountActive: { '8': 'uEE02', '12': 'uEE03', '16': 'uEE04', '24': 'uEE05', '32': 'uEE06' },
+  securityShieldActive: {
+    '8': 'uEE07',
+    '12': 'uEE08',
+    '16': 'uEE09',
+    '24': 'uEE0A',
+    '32': 'uEE0B',
+  },
+  eyeActive: { '8': 'uEE0C', '12': 'uEE0D', '16': 'uEE0E', '24': 'uEE0F', '32': 'uEE10' },
+  securityShieldInactive: {
+    '8': 'uEE11',
+    '12': 'uEE12',
+    '16': 'uEE13',
+    '24': 'uEE14',
+    '32': 'uEE15',
+  },
+  eyeInactive: { '8': 'uEE16', '12': 'uEE17', '16': 'uEE18', '24': 'uEE19', '32': 'uEE1A' },
+  taxesInactive: { '8': 'uEE1B', '12': 'uEE1C', '16': 'uEE1D', '24': 'uEE1E', '32': 'uEE1F' },
+  taxesActive: { '8': 'uEE20', '12': 'uEE21', '16': 'uEE22', '24': 'uEE23', '32': 'uEE24' },
+  documentationInactive: {
+    '8': 'uEE25',
+    '12': 'uEE26',
+    '16': 'uEE27',
+    '24': 'uEE28',
+    '32': 'uEE29',
+  },
+  documentationActive: { '8': 'uEE2A', '12': 'uEE2B', '16': 'uEE2C', '24': 'uEE2D', '32': 'uEE2E' },
+  paymentCardInactive: { '8': 'uEE2F', '12': 'uEE30', '16': 'uEE31', '24': 'uEE32', '32': 'uEE33' },
+  paymentCardActive: { '8': 'uEE34', '12': 'uEE35', '16': 'uEE36', '24': 'uEE37', '32': 'uEE38' },
 } as const;
