@@ -10,11 +10,13 @@
     "@testing-library/react-native": "*",
     "react": "*",
     "react-native": "*",
+    "react-native-codegen": "*",
     "react-native-config": "*",
-    "react-native-svg": "*",
-    "react-native-codegen": "*"
+    "react-native-svg": "*"
   },
   "devDependencies": {
-    "react-native-codegen": "^0.0.11"
+    "@babel/preset-env": "^7.16.7",
+    "@nrwl/react-native": "^13.5.3",
+    "react-native-svg-transformer": "^1.0.0"
   }
 }
