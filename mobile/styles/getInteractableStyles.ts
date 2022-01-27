@@ -1,5 +1,5 @@
 import { ViewStyle } from 'react-native';
-import memoize from 'lodash/memoize';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
 import { ThemeConfigForSpectrum } from '@cbhq/cds-common/types/ThemeConfig';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { ElevationConfigForSpectrum } from '../system/ElevationConfigsContext';
@@ -28,7 +28,7 @@ export type GetInteractableStylesParams = Pick<
   themeConfig: ThemeConfigForSpectrum;
 };
 
-const getCacheKey = ({
+function getCacheKey({
   backgroundColor,
   borderColor,
   borderRadius,
@@ -36,12 +36,12 @@ const getCacheKey = ({
   transparentWhileInactive = false,
   elevationConfig,
   themeConfig,
-}: GetInteractableStylesParams) => {
+}: GetInteractableStylesParams) {
   const elevationName = elevationConfig
     ? `${elevationConfig.themeConfig.activeConfig.name}`
     : 'no-elevation';
   return `${themeConfig.name}-${elevationName}-${backgroundColor}-${borderColor}-${borderRadius}-${borderWidth}-${transparentWhileInactive}`;
-};
+}
 
 export const getInteractableStyles = memoize(function getInteractableStyles({
   backgroundColor,

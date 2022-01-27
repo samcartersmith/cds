@@ -1,4 +1,4 @@
-import memoize from 'lodash/memoize';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
 import { SpacingScale, InternalSpacingProps, Scale } from '@cbhq/cds-common';
 import { I18nManager, ViewStyle } from 'react-native';
 import * as scales from './scale';
@@ -7,63 +7,74 @@ export type GetSpacingStylesParams = InternalSpacingProps & {
   scale: Scale;
 };
 
-export const getSpacingStyles = memoize(
-  function getSpacingStyles({
-    all,
-    bottom,
-    top,
-    start,
-    end,
-    vertical,
-    horizontal,
-    isInverted = false,
-    scale,
-  }: GetSpacingStylesParams): ViewStyle {
-    const styles: ViewStyle = {};
+function getCacheKey({
+  all,
+  bottom,
+  top,
+  start,
+  end,
+  vertical,
+  horizontal,
+  isInverted = false,
+  scale,
+}: GetSpacingStylesParams) {
+  return `${scale}-${all}-${bottom}-${top}-${start}-${end}-${vertical}-${horizontal}-${isInverted}`;
+}
 
-    const setSpacing = (prop: string, value: SpacingScale) => {
-      const spacingValue = value === 0 ? 0 : scales[scale].spacing[value];
-      if (isInverted) {
-        styles[prop.replace('spacing', 'margin') as 'margin'] = spacingValue * -1;
-      } else {
-        styles[prop.replace('spacing', 'padding') as 'padding'] = spacingValue;
-      }
-    };
+export const getSpacingStyles = memoize(function getSpacingStyles({
+  all,
+  bottom,
+  top,
+  start,
+  end,
+  vertical,
+  horizontal,
+  isInverted = false,
+  scale,
+}: GetSpacingStylesParams): ViewStyle {
+  const styles: ViewStyle = {};
 
-    if (all !== undefined) {
-      setSpacing('spacingTop', all);
-      setSpacing('spacingRight', all);
-      setSpacing('spacingBottom', all);
-      setSpacing('spacingLeft', all);
+  const setSpacing = (prop: string, value: SpacingScale) => {
+    const spacingValue = value === 0 ? 0 : scales[scale].spacing[value];
+    if (isInverted) {
+      styles[prop.replace('spacing', 'margin') as 'margin'] = spacingValue * -1;
+    } else {
+      styles[prop.replace('spacing', 'padding') as 'padding'] = spacingValue;
     }
+  };
 
-    if (vertical !== undefined) {
-      setSpacing('spacingTop', vertical);
-      setSpacing('spacingBottom', vertical);
-    }
+  if (all !== undefined) {
+    setSpacing('spacingTop', all);
+    setSpacing('spacingRight', all);
+    setSpacing('spacingBottom', all);
+    setSpacing('spacingLeft', all);
+  }
 
-    if (horizontal !== undefined) {
-      setSpacing('spacingLeft', horizontal);
-      setSpacing('spacingRight', horizontal);
-    }
+  if (vertical !== undefined) {
+    setSpacing('spacingTop', vertical);
+    setSpacing('spacingBottom', vertical);
+  }
 
-    if (top !== undefined) {
-      setSpacing('spacingTop', top);
-    }
+  if (horizontal !== undefined) {
+    setSpacing('spacingLeft', horizontal);
+    setSpacing('spacingRight', horizontal);
+  }
 
-    if (bottom !== undefined) {
-      setSpacing('spacingBottom', bottom);
-    }
+  if (top !== undefined) {
+    setSpacing('spacingTop', top);
+  }
 
-    if (start !== undefined) {
-      setSpacing(I18nManager.isRTL ? 'spacingRight' : 'spacingLeft', start);
-    }
+  if (bottom !== undefined) {
+    setSpacing('spacingBottom', bottom);
+  }
 
-    if (end !== undefined) {
-      setSpacing(I18nManager.isRTL ? 'spacingLeft' : 'spacingRight', end);
-    }
-    return styles;
-  },
-  ({ all, bottom, top, start, end, vertical, horizontal, isInverted = false, scale }) =>
-    `${scale}-${all}-${bottom}-${top}-${start}-${end}-${vertical}-${horizontal}-${isInverted}`,
-);
+  if (start !== undefined) {
+    setSpacing(I18nManager.isRTL ? 'spacingRight' : 'spacingLeft', start);
+  }
+
+  if (end !== undefined) {
+    setSpacing(I18nManager.isRTL ? 'spacingLeft' : 'spacingRight', end);
+  }
+  return styles;
+},
+getCacheKey);

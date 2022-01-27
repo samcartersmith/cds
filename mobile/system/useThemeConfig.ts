@@ -4,12 +4,7 @@ import {
   ThemeConfigContext,
   ThemeConfigContextValue,
 } from '@cbhq/cds-common/system/ThemeConfigContext';
-import { defaultThemeConfig } from './createThemeConfig';
-
-const fallback = {
-  config: defaultThemeConfig,
-  activeConfig: defaultThemeConfig.light,
-};
+import { createFallbackThemeConfig } from './createThemeConfig';
 
 export const useThemeConfig = (): ThemeConfigContextValue => {
   const context = useContext(ThemeConfigContext);
@@ -21,6 +16,11 @@ export const useThemeConfig = (): ThemeConfigContextValue => {
         console.log('useThemeConfig: Cannot use `useThemeConfig` outside ThemeConfigProvider.');
       }
     }
-    return context ?? fallback;
+    if (context) return context;
+    const fallbackConfig = createFallbackThemeConfig();
+    return {
+      config: fallbackConfig,
+      activeConfig: fallbackConfig.light,
+    };
   }, [context]);
 };

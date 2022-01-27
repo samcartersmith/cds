@@ -1,7 +1,6 @@
-import memoize from 'lodash/memoize';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
 import { PaletteConfig, PartialPaletteConfig, Spectrum } from '@cbhq/cds-common/types';
 import { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
-import { paletteConfigToHexValues } from '@cbhq/cds-common/palette/paletteConfigToHexValues';
 import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
 import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common';
 import {
@@ -81,7 +80,6 @@ export const createThemeConfigForSpectrum = memoize(
     return {
       palette: mergedPalette,
       rgbaStrings: paletteConfigToRgbaStrings(mergedPalette, spectrum, hasFrontier),
-      hexValues: paletteConfigToHexValues(mergedPalette, spectrum, hasFrontier),
       interactableTokens: paletteConfigToInteractableTokens(mergedPalette, spectrum, hasFrontier),
       name: getCacheKey({ name, hasFrontier, parentThemeConfig, spectrum }),
     };

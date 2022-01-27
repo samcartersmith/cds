@@ -1,6 +1,4 @@
-import { entries } from '@cbhq/cds-utils';
-
-import type { PaletteAlias, PaletteConfigToRgbaStrings } from '../types';
+import type { PaletteConfigToRgbaStrings, PaletteAlias } from '../types';
 import { paletteValueToRgbaString } from './paletteValueToRgbaString';
 
 /**
@@ -16,11 +14,15 @@ export const paletteConfigToRgbaStrings: PaletteConfigToRgbaStrings = (
   spectrum,
   hasFrontier,
 ) => {
-  const config = {} as Record<PaletteAlias, string>;
-  for (const [key, value] of entries(paletteConfig)) {
-    if (value) {
-      config[key] = paletteValueToRgbaString(value, spectrum, hasFrontier);
-    }
-  }
-  return config;
+  // Object.keys + reduce is more performant than for/of loop https://jsbench.me/uhkyu88ggg/1
+  return (Object.keys(paletteConfig) as Extract<keyof typeof paletteConfig, string>[]).reduce(
+    (acc, paletteAlias) => {
+      const value = paletteConfig[paletteAlias];
+      if (value) {
+        acc[paletteAlias] = paletteValueToRgbaString(value, spectrum, hasFrontier);
+      }
+      return acc;
+    },
+    {} as Record<PaletteAlias, string>,
+  );
 };

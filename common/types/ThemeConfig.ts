@@ -17,7 +17,6 @@ export type InteractableTokensConfig = {
 export type ThemeConfigForSpectrum = {
   palette: PaletteConfig;
   rgbaStrings: PaletteConfigWithRgbaStrings;
-  hexValues: PaletteConfigWithHexValues;
   interactableTokens: PaletteConfigWithInteractableTokens;
   name: string;
 };

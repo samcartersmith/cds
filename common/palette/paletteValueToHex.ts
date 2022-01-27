@@ -1,6 +1,6 @@
-import memoize from 'lodash/memoize';
+import { memoize } from '../utils/memoize';
 import { colorToHex } from '../color/colorToHex';
-import type { PaletteValueToHex } from '../types';
+import type { PaletteValue, Spectrum } from '../types';
 import { paletteValueToRgbaArray } from './paletteValueToRgbaArray';
 import { paletteValueToCacheName } from './paletteValueToCacheName';
 
@@ -11,8 +11,8 @@ import { paletteValueToCacheName } from './paletteValueToCacheName';
  * @param hasFrontier - boolean returned from useFeatureFlag('frontierColor')
  * @returns hex value based on color and spectrum
  */
-export const paletteValueToHex: PaletteValueToHex = memoize(
-  (paletteValue, spectrum, hasFrontier) => {
+export const paletteValueToHex = memoize(
+  (paletteValue: PaletteValue, spectrum: Spectrum, hasFrontier?: boolean) => {
     const [red, green, blue] = paletteValueToRgbaArray(paletteValue, spectrum, hasFrontier);
     return colorToHex(`rgb(${red},${green},${blue})`);
   },

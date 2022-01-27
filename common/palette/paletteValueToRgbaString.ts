@@ -1,10 +1,8 @@
-import memoize from 'lodash/memoize';
+import { memoize } from '../utils/memoize';
 import { spectrumConfigs } from '../spectrum/spectrumConfigs';
 import type { PaletteValue, Spectrum } from '../types';
 import { paletteValueToCacheName } from './paletteValueToCacheName';
 import { paletteValueToTuple } from './paletteValueToTuple';
-
-export const rgbaStringsCache: Record<string, string> = {};
 
 /**
  * `Please don't use this unless you absolutely have to. This is meant as last resort.`

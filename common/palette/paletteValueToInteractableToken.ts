@@ -1,5 +1,5 @@
-import memoize from 'lodash/memoize';
-import { PaletteValue, Spectrum } from '../types';
+import { memoize } from '../utils/memoize';
+import { PaletteConfig, PaletteValue, Spectrum } from '../types';
 import { blendColors } from '../color/blendColors';
 import { opacityDisabled, opacityPressed } from '../tokens/interactable';
 import { paletteValueToHueStep } from './paletteValueToHueStep';
@@ -12,13 +12,37 @@ const transparentTokens = {
   pressed: { contentOpacity: 0.82, backgroundColor: 'transparent' },
 };
 
+type PaletteValueToInteractableTokenParams = {
+  paletteConfig: PaletteConfig;
+  paletteValue: PaletteValue;
+  spectrum: Spectrum;
+  hasFrontier?: boolean;
+};
+
+function getCacheKey({
+  paletteConfig,
+  paletteValue,
+  spectrum,
+  hasFrontier,
+}: PaletteValueToInteractableTokenParams) {
+  const { background, foreground } = paletteConfig;
+  const [backgroundAlias, backgroundOpacity] = paletteValueToTuple(background);
+  const [foregroundAlias, foregroundOpacity] = paletteValueToTuple(foreground);
+  return `${paletteValueToCacheName(
+    paletteValue,
+    spectrum,
+    hasFrontier,
+  )}-background-${backgroundAlias}-${backgroundOpacity}-foreground-${foregroundAlias}-${foregroundOpacity}`;
+}
+
 export const paletteValueToInteractableToken = memoize(
-  (
-    { background, foreground }: { background: PaletteValue; foreground: PaletteValue },
-    paletteValue: PaletteValue,
-    spectrum: Spectrum,
-    hasFrontier?: boolean,
-  ) => {
+  ({
+    paletteConfig,
+    paletteValue,
+    spectrum,
+    hasFrontier,
+  }: PaletteValueToInteractableTokenParams) => {
+    const { background, foreground } = paletteConfig;
     const [overlayAlias, overlayOpacity] = paletteValueToTuple(paletteValue);
     if (overlayOpacity === 0) {
       return transparentTokens;
@@ -57,13 +81,5 @@ export const paletteValueToInteractableToken = memoize(
       },
     };
   },
-  ({ background, foreground }, paletteValue, spectrum, hasFrontier) => {
-    const [backgroundAlias, backgroundOpacity] = paletteValueToTuple(background);
-    const [foregroundAlias, foregroundOpacity] = paletteValueToTuple(foreground);
-    return `${paletteValueToCacheName(
-      paletteValue,
-      spectrum,
-      hasFrontier,
-    )}-background-${backgroundAlias}-${backgroundOpacity}-foreground-${foregroundAlias}-${foregroundOpacity}`;
-  },
+  getCacheKey,
 );

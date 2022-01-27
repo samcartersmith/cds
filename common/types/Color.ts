@@ -17,9 +17,6 @@ export type RgbaArray =
   | [number, number, number, number]
   | Readonly<[number, number, number, number]>;
 export type RgbString = `${string},${string},${string}`;
-export type PaletteValueToRgbaArray = PaletteFn<PaletteValue, RgbaArray>;
-export type PaletteValueToRgbaString = PaletteFn<PaletteValue, string>;
-export type PaletteValueToHex = PaletteFn<PaletteValue, string>;
 export type PaletteAliasToRgbaString = PaletteFn<PaletteAlias, string>;
 export type PaletteConfigToRgbaStrings = PaletteFn<
   PartialPaletteConfig,

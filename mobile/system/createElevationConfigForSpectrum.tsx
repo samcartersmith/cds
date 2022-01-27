@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Platform, ViewStyle } from 'react-native';
-import memoize from 'lodash/memoize';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
 import {
   BorderWidth,
   ElevationLevels,

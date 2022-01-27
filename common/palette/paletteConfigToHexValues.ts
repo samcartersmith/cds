@@ -1,6 +1,4 @@
-import { entries } from '@cbhq/cds-utils';
-
-import type { PaletteAlias, PaletteConfigToHexValues } from '../types';
+import type { PaletteConfigToHexValues, PaletteAlias } from '../types';
 import { paletteValueToHex } from './paletteValueToHex';
 
 /**
@@ -16,11 +14,15 @@ export const paletteConfigToHexValues: PaletteConfigToHexValues = (
   spectrum,
   hasFrontier,
 ) => {
-  const config = {} as Record<PaletteAlias, string>;
-  for (const [key, value] of entries(paletteConfig)) {
-    if (value) {
-      config[key] = paletteValueToHex(value, spectrum, hasFrontier);
-    }
-  }
-  return config;
+  // Object.keys + reduce is more performant than for/of loop https://jsbench.me/uhkyu88ggg/1
+  return (Object.keys(paletteConfig) as Extract<keyof typeof paletteConfig, string>[]).reduce(
+    (acc, paletteAlias) => {
+      const value = paletteConfig[paletteAlias];
+      if (value) {
+        acc[paletteAlias] = paletteValueToHex(value, spectrum, hasFrontier);
+      }
+      return acc;
+    },
+    {} as Record<PaletteAlias, string>,
+  );
 };

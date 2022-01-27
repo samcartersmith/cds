@@ -1,4 +1,4 @@
-import memoize from 'lodash/memoize';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
 import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common/palette/constants';
 import { createThemeConfigForSpectrum } from './createThemeConfigForSpectrum';
 import { CreateThemeConfigParams } from './ThemeConfig';
@@ -39,13 +39,16 @@ export const createThemeConfig = memoize(function createThemeConfig({
 },
 getCacheKey);
 
-export const defaultThemeConfig = createThemeConfig({
-  palette: defaultPalette,
-  name: 'default',
-});
-
-export const frontierThemeConfig = createThemeConfig({
-  palette: frontierSpectrumPalette,
-  hasFrontier: true,
-  name: 'frontier',
-});
+export function createFallbackThemeConfig(hasFrontier?: boolean) {
+  if (hasFrontier) {
+    return createThemeConfig({
+      palette: frontierSpectrumPalette,
+      hasFrontier: true,
+      name: 'frontier',
+    });
+  }
+  return createThemeConfig({
+    palette: defaultPalette,
+    name: 'default',
+  });
+}

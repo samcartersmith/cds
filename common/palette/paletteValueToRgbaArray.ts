@@ -1,4 +1,4 @@
-import memoize from 'lodash/memoize';
+import { memoize } from '../utils/memoize';
 import { spectrumConfigs } from '../spectrum/spectrumConfigs';
 import { paletteValueToCacheName } from './paletteValueToCacheName';
 import { paletteValueToTuple } from './paletteValueToTuple';

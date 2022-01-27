@@ -1,5 +1,5 @@
 import { ViewStyle } from 'react-native';
-import memoize from 'lodash/memoize';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
 import {
   BorderedStyles,
   BorderRadius,
@@ -21,94 +21,95 @@ export type GetBorderStyleParams = Omit<BorderedStyles, 'borderRadius'> & {
   themeConfig: ThemeConfigForSpectrum;
 };
 
-export const getBorderStyles = memoize(
-  function getBorderStyles({
-    bordered,
-    borderedTop,
-    borderedBottom,
-    borderedStart,
-    borderedEnd,
-    borderedHorizontal,
-    borderedVertical,
-    borderRadius,
-    borderColor,
-    borderWidth,
-    elevationConfig,
-    themeConfig,
-  }: GetBorderStyleParams) {
-    const styles: ViewStyle = {};
+function getCacheKey({
+  bordered,
+  borderedTop,
+  borderedBottom,
+  borderedStart,
+  borderedEnd,
+  borderedHorizontal,
+  borderedVertical,
+  borderRadius,
+  borderColor,
+  borderWidth,
+  elevationConfig,
+  themeConfig,
+}: GetBorderStyleParams) {
+  return `${themeConfig.name}-${
+    elevationConfig?.themeConfig?.activeConfig.name ?? 'no-elevation'
+  }-${bordered}-${borderedTop}-${borderedBottom}-${borderedStart}-${borderedEnd}-${borderedHorizontal}-${borderedVertical}-${borderRadius}-${borderWidth}-${borderColor}-${
+    elevationConfig?.level
+  }`;
+}
 
-    if (borderRadius) {
-      styles.borderRadius =
-        typeof borderRadius === 'number' ? borderRadius : borderRadii[borderRadius];
-    }
+export const getBorderStyles = memoize(function getBorderStyles({
+  bordered,
+  borderedTop,
+  borderedBottom,
+  borderedStart,
+  borderedEnd,
+  borderedHorizontal,
+  borderedVertical,
+  borderRadius,
+  borderColor,
+  borderWidth,
+  elevationConfig,
+  themeConfig,
+}: GetBorderStyleParams) {
+  const styles: ViewStyle = {};
 
-    if (bordered !== undefined) {
-      styles.borderWidth = bordered ? 1 : 0;
-    }
+  if (borderRadius) {
+    styles.borderRadius =
+      typeof borderRadius === 'number' ? borderRadius : borderRadii[borderRadius];
+  }
 
-    if (borderedVertical !== undefined) {
-      styles.borderTopWidth = borderedVertical ? 1 : 0;
-      styles.borderBottomWidth = borderedVertical ? 1 : 0;
-    }
+  if (bordered !== undefined) {
+    styles.borderWidth = bordered ? 1 : 0;
+  }
 
-    if (borderedHorizontal !== undefined) {
-      styles.borderStartWidth = borderedHorizontal ? 1 : 0;
-      styles.borderEndWidth = borderedHorizontal ? 1 : 0;
-    }
+  if (borderedVertical !== undefined) {
+    styles.borderTopWidth = borderedVertical ? 1 : 0;
+    styles.borderBottomWidth = borderedVertical ? 1 : 0;
+  }
 
-    if (borderedTop !== undefined) {
-      styles.borderTopWidth = borderedTop ? 1 : 0;
-    }
+  if (borderedHorizontal !== undefined) {
+    styles.borderStartWidth = borderedHorizontal ? 1 : 0;
+    styles.borderEndWidth = borderedHorizontal ? 1 : 0;
+  }
 
-    if (borderedBottom !== undefined) {
-      styles.borderBottomWidth = borderedBottom ? 1 : 0;
-    }
+  if (borderedTop !== undefined) {
+    styles.borderTopWidth = borderedTop ? 1 : 0;
+  }
 
-    if (borderedStart !== undefined) {
-      styles.borderStartWidth = borderedStart ? 1 : 0;
-    }
+  if (borderedBottom !== undefined) {
+    styles.borderBottomWidth = borderedBottom ? 1 : 0;
+  }
 
-    if (borderedEnd !== undefined) {
-      styles.borderEndWidth = borderedEnd ? 1 : 0;
-    }
+  if (borderedStart !== undefined) {
+    styles.borderStartWidth = borderedStart ? 1 : 0;
+  }
 
-    if (Object.keys(styles).length > (borderRadius ? 1 : 0)) {
-      styles.borderColor = themeConfig.rgbaStrings.line;
-    }
+  if (borderedEnd !== undefined) {
+    styles.borderEndWidth = borderedEnd ? 1 : 0;
+  }
 
-    if (borderColor) {
-      styles.borderColor = themeConfig.rgbaStrings[borderColor];
-    }
+  if (Object.keys(styles).length > (borderRadius ? 1 : 0)) {
+    styles.borderColor = themeConfig.rgbaStrings.line;
+  }
 
-    if (borderWidth) {
-      styles.borderWidth = borderWidthTokens[borderWidth];
-    }
+  if (borderColor) {
+    styles.borderColor = themeConfig.rgbaStrings[borderColor];
+  }
 
-    // When elevating, always apply a border
-    if (elevationConfig) {
-      styles.borderColor = elevationConfig.getBorderColor(borderColor);
-      styles.borderWidth = elevationConfig.getBorderWidth(borderWidth);
-    }
-    return styles;
-  },
-  ({
-    bordered,
-    borderedTop,
-    borderedBottom,
-    borderedStart,
-    borderedEnd,
-    borderedHorizontal,
-    borderedVertical,
-    borderRadius,
-    borderColor,
-    borderWidth,
-    elevationConfig,
-    themeConfig,
-  }) =>
-    `${themeConfig.name}-${
-      elevationConfig?.themeConfig?.activeConfig.name ?? 'no-elevation'
-    }-${bordered}-${borderedTop}-${borderedBottom}-${borderedStart}-${borderedEnd}-${borderedHorizontal}-${borderedVertical}-${borderRadius}-${borderWidth}-${borderColor}-${
-      elevationConfig?.level
-    }`,
-);
+  if (borderWidth) {
+    styles.borderWidth = borderWidthTokens[borderWidth];
+  }
+
+  // When elevating, always apply a border
+  if (elevationConfig) {
+    styles.borderColor = elevationConfig.getBorderColor(borderColor);
+    styles.borderWidth = elevationConfig.getBorderWidth(borderWidth);
+  }
+  return styles;
+},
+getCacheKey);
