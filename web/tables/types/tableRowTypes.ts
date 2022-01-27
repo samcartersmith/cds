@@ -44,4 +44,14 @@ export type TableRowProps = {
    * @default noop
    */
   onPress?: MouseEventHandler<Element> | (() => void);
+  /**
+   * The spacing to use on the parent wrapper of Cell.
+   * Will only take effect when fullWidth is set to true
+   */
+  outerSpacing?: TableCellProps['innerSpacing'];
+  /**
+   * The spacing to use on the inner content of Cell.
+   * Will only take effect when fullWidth is set to true
+   */
+  innerSpacing?: TableCellProps['innerSpacing'];
 } & SharedProps;

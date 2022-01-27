@@ -13,6 +13,7 @@ import {
   SharedProps,
 } from '@cbhq/cds-common';
 import { TextProps } from '../../typography';
+import { CellProps } from '../../cells/Cell';
 
 export type TableCellTag = 'td' | 'th' | 'div';
 
@@ -78,6 +79,15 @@ type TableCellBaseProps = {
    * @default undefined
    */
   width?: TableCellSharedProps['width'];
+  /**
+   * The spacing to use on the parent wrapper of Cell
+   */
+  outerSpacing?: CellProps['innerSpacing'];
+  /**
+   * The spacing to use on the inner content of Cell
+   * @default { spacingHorizontal: 0 }
+   */
+  innerSpacing?: CellProps['innerSpacing'];
 } & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {

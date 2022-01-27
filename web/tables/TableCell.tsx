@@ -12,7 +12,8 @@ import { TableCellProps } from './types/tableCellTypes';
 import { tableCell, tableHeaderCell, tableFooterCell } from './styles/tableCellStyles';
 import { useTableCellTag, useTableSectionTag } from './hooks/useTable';
 
-const cellOuterSpacing: CellSpacing = { spacingHorizontal: 0 };
+const defaultCellOuterSpacing: CellSpacing = { spacingHorizontal: 0 };
+
 export type { TableCellProps } from './types/tableCellTypes';
 export const TableCell = memo(
   ({
@@ -34,6 +35,8 @@ export const TableCell = memo(
     subtitleColor = 'foregroundMuted',
     dangerouslySetHtmlWidth,
     width,
+    innerSpacing,
+    outerSpacing = defaultCellOuterSpacing,
     ...props
   }: TableCellProps) => {
     const tableSectionType = useTableSectionTag();
@@ -97,7 +100,8 @@ export const TableCell = memo(
           accessory={end}
           reduceHorizontalSpacing
           shouldOverflow={!overflow}
-          outerSpacing={cellOuterSpacing}
+          outerSpacing={outerSpacing}
+          innerSpacing={innerSpacing}
         >
           {children ? (
             <TextComponent

@@ -127,6 +127,21 @@ Should this row span the entire width of the table? Useful for treating a row as
 
 <ComponentDetails componentName="TableRow" templateName="prop-fullWidth" />
 
+### innerSpacing <Badge variant="web" />
+
+The spacing to use on the inner content of Cell. Will only take effect when fullWidth is set to true
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="innerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-innerSpacing" />
+
 ### onPress <Badge variant="web" />
 
 Callback to fire when pressed
@@ -141,6 +156,21 @@ Callback to fire when pressed
 />
 
 <ComponentDetails componentName="TableRow" templateName="prop-onPress" />
+
+### outerSpacing <Badge variant="web" />
+
+The spacing to use on the parent wrapper of Cell. Will only take effect when fullWidth is set to true
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="outerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-outerSpacing" />
 
 ### testID <Badge variant="web" />
 

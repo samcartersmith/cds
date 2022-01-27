@@ -19,6 +19,8 @@ export const TableRow = memo(
     color,
     testID,
     onPress,
+    outerSpacing,
+    innerSpacing,
     ...rest
   }: TableRowProps) => {
     const tableSectionType = useTableSectionTag();
@@ -48,12 +50,18 @@ export const TableRow = memo(
         tabIndex={onPress && 0}
         {...rest}
       >
-        {fullWidth && (
-          <TableCell direction="horizontal" colSpan={1000}>
+        {fullWidth ? (
+          <TableCell
+            direction="horizontal"
+            colSpan={1000}
+            outerSpacing={outerSpacing}
+            innerSpacing={innerSpacing}
+          >
             {children}
           </TableCell>
+        ) : (
+          <>{children}</>
         )}
-        {!fullWidth && <>{children}</>}
       </tr>
     );
   },
