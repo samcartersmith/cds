@@ -3,11 +3,11 @@ import { useCallback, useEffect } from 'react';
 import { TableRowRef } from '../types/tableRowTypes';
 
 /** Call an event handler on Enter and Space keypress */
-export const useTableRowListener = (ref: TableRowRef, handler: NoopFn) => {
+export const useTableRowListener = (ref: TableRowRef, handler?: NoopFn) => {
   const handleEvent = useCallback(
     ({ key, code }: KeyboardEvent) => {
       if (key === 'Enter' || code === 'Space') {
-        handler();
+        handler?.();
       }
     },
     [handler],
