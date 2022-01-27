@@ -92,6 +92,9 @@ export const modalOverlayResponsiveClassName = cx(
 
 /** Footer actions layout */
 const stacked = {
+  '& > button, a': {
+    flex: 'none',
+  },
   'flex-direction': 'column-reverse',
   /* Set height for vertical Spacer */
   'span:nth-child(2)': {
@@ -100,19 +103,19 @@ const stacked = {
 };
 
 const block = {
-  button: {
+  '& > button, a': {
     flex: 1,
   },
 };
 
 export const modalFooterDefault = css`
   &.${modalFooterStaticClassName} {
-    @media only screen and (${devices.phone}) {
-      ${stacked}
-    }
-
     @media only screen and (${devices.tablet}) {
       ${block}
+    }
+
+    @media only screen and (${devices.phone}) {
+      ${stacked}
     }
   }
 `;
