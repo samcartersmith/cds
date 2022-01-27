@@ -6,6 +6,7 @@
 export type IllustrationVariant = 'spotSquare' | 'spotRectangle' | 'heroSquare' | 'pictogram';
 
 export type IllustrationSpotSquareNames =
+  | 'adaStaking'
   | 'addMultipleCrypto'
   | 'addPasswordProtection'
   | 'algoStaking'
@@ -73,6 +74,7 @@ export type IllustrationSpotRectangleNames =
   | 'currency'
   | 'diamond'
   | 'downloadCoinbaseWalletArrow'
+  | 'downloadingStatement'
   | 'fileYourCryptoTaxesAlt'
   | 'fileYourCryptoTaxesCheckAlt'
   | 'focusLimitOrdersAlt'
@@ -84,6 +86,7 @@ export type IllustrationSpotRectangleNames =
   | 'ratDashboard'
   | 'referralsBonus'
   | 'referralsBonusGray'
+  | 'sendCryptoFasterHorizontal'
   | 'sendingCrypto'
   | 'switchAdvancedToSimpleTradingAlt'
   | 'trade'
@@ -156,6 +159,7 @@ export type IllustrationHeroSquareNames =
   | 'documentCertified'
   | 'documentSuccess'
   | 'downloadCoinbaseWallet'
+  | 'earnCryptoCard'
   | 'earnGrowth'
   | 'earnIdVerification'
   | 'earnInterest'
@@ -170,6 +174,7 @@ export type IllustrationHeroSquareNames =
   | 'errorWeb404'
   | 'errorWeb500'
   | 'estimatedAmount'
+  | 'ethStakingUpsell'
   | 'exploreDecentralizedApps'
   | 'feeScale'
   | 'fileYourCryptoTaxes'
@@ -189,6 +194,8 @@ export type IllustrationHeroSquareNames =
   | 'insufficientBalance'
   | 'invite'
   | 'japanVerifyId'
+  | 'ledgerAccess'
+  | 'ledgerPlugin'
   | 'limitOrders'
   | 'mic'
   | 'myNameIsSatoshi'

@@ -11,6 +11,7 @@ import type { IllustrationNames } from '@cbhq/cds-common/types/IllustrationProps
 type IllustrationSpectrumMap = { light: () => string, dark: null | (() => string) };
 
 export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpectrumMap>  = {
+  "adaStaking": {light:() =>require("./images/light/adaStaking-0").content,dark:() =>require("./images/dark/adaStaking-0").content,},
   "addMultipleCrypto": {light:() =>require("./images/light/addMultipleCrypto-1").content,dark:() =>require("./images/dark/addMultipleCrypto-1").content,},
   "addPasswordProtection": {light:() =>require("./images/light/addPasswordProtection-1").content,dark:() =>require("./images/dark/addPasswordProtection-1").content,},
   "algoStaking": {light:() =>require("./images/light/algoStaking-2").content,dark:() =>require("./images/dark/algoStaking-1").content,},
@@ -76,6 +77,7 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   "currency": {light:() =>require("./images/light/currency-1").content,dark:() =>require("./images/dark/currency-2").content,},
   "diamond": {light:() =>require("./images/light/diamond-1").content,dark:() =>require("./images/dark/diamond-1").content,},
   "downloadCoinbaseWalletArrow": {light:() =>require("./images/light/downloadCoinbaseWalletArrow-0").content,dark:() =>require("./images/dark/downloadCoinbaseWalletArrow-0").content,},
+  "downloadingStatement": {light:() =>require("./images/light/downloadingStatement-0").content,dark:() =>require("./images/dark/downloadingStatement-0").content,},
   "fileYourCryptoTaxesAlt": {light:() =>require("./images/light/fileYourCryptoTaxesAlt-2").content,dark:() =>require("./images/dark/fileYourCryptoTaxesAlt-2").content,},
   "fileYourCryptoTaxesCheckAlt": {light:() =>require("./images/light/fileYourCryptoTaxesCheckAlt-2").content,dark:() =>require("./images/dark/fileYourCryptoTaxesCheckAlt-2").content,},
   "focusLimitOrdersAlt": {light:() =>require("./images/light/focusLimitOrdersAlt-1").content,dark:() =>require("./images/dark/focusLimitOrdersAlt-0").content,},
@@ -87,6 +89,7 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   "ratDashboard": {light:() =>require("./images/light/ratDashboard-1").content,dark:() =>require("./images/dark/ratDashboard-2").content,},
   "referralsBonus": {light:() =>require("./images/light/referralsBonus-1").content,dark:() =>require("./images/dark/referralsBonus-1").content,},
   "referralsBonusGray": {light:() =>require("./images/light/referralsBonusGray-1").content,dark:() =>require("./images/dark/referralsBonusGray-1").content,},
+  "sendCryptoFasterHorizontal": {light:() =>require("./images/light/sendCryptoFasterHorizontal-0").content,dark:null,},
   "sendingCrypto": {light:() =>require("./images/light/sendingCrypto-1").content,dark:() =>require("./images/dark/sendingCrypto-1").content,},
   "switchAdvancedToSimpleTradingAlt": {light:() =>require("./images/light/switchAdvancedToSimpleTradingAlt-1").content,dark:() =>require("./images/dark/switchAdvancedToSimpleTradingAlt-0").content,},
   "trade": {light:() =>require("./images/light/trade-1").content,dark:() =>require("./images/dark/trade-1").content,},
@@ -157,6 +160,7 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   "documentCertified": {light:() =>require("./images/light/documentCertified-1").content,dark:() =>require("./images/dark/documentCertified-2").content,},
   "documentSuccess": {light:() =>require("./images/light/documentSuccess-1").content,dark:() =>require("./images/dark/documentSuccess-2").content,},
   "downloadCoinbaseWallet": {light:() =>require("./images/light/downloadCoinbaseWallet-1").content,dark:() =>require("./images/dark/downloadCoinbaseWallet-2").content,},
+  "earnCryptoCard": {light:() =>require("./images/light/earnCryptoCard-0").content,dark:() =>require("./images/dark/earnCryptoCard-0").content,},
   "earnGrowth": {light:() =>require("./images/light/earnGrowth-0").content,dark:() =>require("./images/dark/earnGrowth-0").content,},
   "earnIdVerification": {light:() =>require("./images/light/earnIdVerification-1").content,dark:() =>require("./images/dark/earnIdVerification-1").content,},
   "earnInterest": {light:() =>require("./images/light/earnInterest-1").content,dark:() =>require("./images/dark/earnInterest-1").content,},
@@ -171,6 +175,7 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   "errorWeb404": {light:() =>require("./images/light/errorWeb404-2").content,dark:() =>require("./images/dark/errorWeb404-2").content,},
   "errorWeb500": {light:() =>require("./images/light/errorWeb500-1").content,dark:() =>require("./images/dark/errorWeb500-2").content,},
   "estimatedAmount": {light:() =>require("./images/light/estimatedAmount-1").content,dark:() =>require("./images/dark/estimatedAmount-1").content,},
+  "ethStakingUpsell": {light:() =>require("./images/light/ethStakingUpsell-0").content,dark:() =>require("./images/dark/ethStakingUpsell-0").content,},
   "exploreDecentralizedApps": {light:() =>require("./images/light/exploreDecentralizedApps-1").content,dark:() =>require("./images/dark/exploreDecentralizedApps-1").content,},
   "feeScale": {light:() =>require("./images/light/feeScale-0").content,dark:() =>require("./images/dark/feeScale-0").content,},
   "fileYourCryptoTaxes": {light:() =>require("./images/light/fileYourCryptoTaxes-2").content,dark:() =>require("./images/dark/fileYourCryptoTaxes-2").content,},
@@ -190,6 +195,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   "insufficientBalance": {light:() =>require("./images/light/insufficientBalance-1").content,dark:() =>require("./images/dark/insufficientBalance-1").content,},
   "invite": {light:() =>require("./images/light/invite-1").content,dark:() =>require("./images/dark/invite-1").content,},
   "japanVerifyId": {light:() =>require("./images/light/japanVerifyId-1").content,dark:() =>require("./images/dark/japanVerifyId-1").content,},
+  "ledgerAccess": {light:() =>require("./images/light/ledgerAccess-0").content,dark:null,},
+  "ledgerPlugin": {light:() =>require("./images/light/ledgerPlugin-0").content,dark:null,},
   "limitOrders": {light:() =>require("./images/light/limitOrders-1").content,dark:() =>require("./images/dark/limitOrders-1").content,},
   "mic": {light:() =>require("./images/light/mic-0").content,dark:() =>require("./images/dark/mic-0").content,},
   "myNameIsSatoshi": {light:() =>require("./images/light/myNameIsSatoshi-1").content,dark:() =>require("./images/dark/myNameIsSatoshi-2").content,},

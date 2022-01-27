@@ -4,11 +4,24 @@
  */
 
 export const illustrationMetadata = {
-  numIllustrations: 743,
-  spotSquareCount: 56,
-  spotRectangleCount: 28,
-  heroSquareCount: 146,
+  numIllustrations: 755,
+  spotSquareCount: 57,
+  spotRectangleCount: 30,
+  heroSquareCount: 150,
   pictogramCount: 141,
-  newIllustration: [],
-  modifiedIllustrations: ['downloadCoinbaseWalletArrow-dark'],
+  newIllustration: [
+    'adaStaking-dark',
+    'adaStaking-light',
+    'downloadingStatement-dark',
+    'downloadingStatement-light',
+    'earnCryptoCard-dark',
+    'earnCryptoCard-light',
+    'ethStakingUpsell-dark',
+    'ethStakingUpsell-light',
+    'ledgerAccess-light',
+    'ledgerPlugin-light',
+    'sendCryptoFasterHorizontal-light',
+    'sendCryptoFasterHorizontal-light',
+  ],
+  modifiedIllustrations: [],
 };

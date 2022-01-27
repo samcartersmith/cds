@@ -4,6 +4,7 @@
  */
 
 export const spotSquareNames = [
+  'adaStaking',
   'addMultipleCrypto',
   'addPasswordProtection',
   'algoStaking',
@@ -72,6 +73,7 @@ export const spotRectangleNames = [
   'currency',
   'diamond',
   'downloadCoinbaseWalletArrow',
+  'downloadingStatement',
   'fileYourCryptoTaxesAlt',
   'fileYourCryptoTaxesCheckAlt',
   'focusLimitOrdersAlt',
@@ -83,6 +85,7 @@ export const spotRectangleNames = [
   'ratDashboard',
   'referralsBonus',
   'referralsBonusGray',
+  'sendCryptoFasterHorizontal',
   'sendingCrypto',
   'switchAdvancedToSimpleTradingAlt',
   'trade',
@@ -156,6 +159,7 @@ export const heroSquareNames = [
   'documentCertified',
   'documentSuccess',
   'downloadCoinbaseWallet',
+  'earnCryptoCard',
   'earnGrowth',
   'earnIdVerification',
   'earnInterest',
@@ -170,6 +174,7 @@ export const heroSquareNames = [
   'errorWeb404',
   'errorWeb500',
   'estimatedAmount',
+  'ethStakingUpsell',
   'exploreDecentralizedApps',
   'feeScale',
   'fileYourCryptoTaxes',
@@ -189,6 +194,8 @@ export const heroSquareNames = [
   'insufficientBalance',
   'invite',
   'japanVerifyId',
+  'ledgerAccess',
+  'ledgerPlugin',
   'limitOrders',
   'mic',
   'myNameIsSatoshi',
