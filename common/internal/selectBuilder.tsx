@@ -39,7 +39,7 @@ export type CreateSelectStoriesProps = {
   ThemeProvider: ComponentType<ThemeProviderBaseProps>;
   spectrum?: Spectrum;
   scale?: Scale;
-  Icon: ComponentType<IconBaseProps>;
+  InputIcon: ComponentType<Omit<IconBaseProps, 'size'>>;
 };
 
 export const priceOptions = [
@@ -64,7 +64,7 @@ export const selectBuilder = ({
   ThemeProvider,
   spectrum,
   scale,
-  Icon,
+  InputIcon,
 }: CreateSelectStoriesProps) => {
   const Default = ({
     variant,
@@ -121,7 +121,7 @@ export const selectBuilder = ({
             placeholder="I am some ridiculously, absurdly, ostentatiously long placeholder text that would ideally get truncated when I meet the edge of my parent container. "
             label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
             helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
-            startNode={<Icon name="calendar" size="s" />}
+            startNode={<InputIcon name="calendar" />}
           >
             {priceOptions.map((option) => (
               <SelectOption

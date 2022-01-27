@@ -40,7 +40,6 @@ export const SelectStack = memo(
                 overflow="truncate"
                 color={variant ?? 'foregroundMuted'}
                 id={accessibilityDescriptionId}
-                disabled={disabled}
               >
                 {helperText}
               </HelperText>
@@ -49,12 +48,7 @@ export const SelectStack = memo(
           labelNode={
             !compact &&
             !!label && (
-              <InputLabel
-                overflow="truncate"
-                color={labelTextColor}
-                disabled={disabled}
-                id={accessibilityLabelId}
-              >
+              <InputLabel overflow="truncate" color={labelTextColor} id={accessibilityLabelId}>
                 {label}
               </InputLabel>
             )

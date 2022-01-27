@@ -155,6 +155,7 @@ export default function InputScreen() {
           label="One Time Password"
           variant="foregroundMuted"
           placeholder="189-280-1111"
+          start={<InputIcon name="search" />}
         />
       </Example>
       <Example inline title="CompactTextInput Negative">

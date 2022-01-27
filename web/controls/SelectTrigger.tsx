@@ -69,33 +69,30 @@ export const SelectTrigger = memo(
               ref={ref}
               {...props}
             >
-              <HStack width="100%">
+              <HStack width="100%" minWidth={0} spacingStart={startNode ? 0 : 2}>
                 {!!startNode && (
-                  <HStack spacingStart={2} alignItems="center" justifyContent="center" minWidth={0}>
+                  <HStack alignItems="center" justifyContent="center" minWidth={0}>
                     {startNode}
                   </HStack>
                 )}
                 {compact ? (
-                  <HStack maxWidth="40%">
-                    <HStack spacingStart={2} spacingEnd={1} alignItems="center" minWidth={0}>
-                      <InputLabel
-                        color={labelTextColor}
-                        disabled={disabled}
-                        overflow="truncate"
-                        id={accessibilityLabelId}
-                      >
-                        {label}
-                      </InputLabel>
-                    </HStack>
+                  <HStack spacingEnd={1} alignItems="center" minWidth={0} maxWidth="40%">
+                    <InputLabel
+                      color={labelTextColor}
+                      overflow="truncate"
+                      id={accessibilityLabelId}
+                    >
+                      {label}
+                    </InputLabel>
                   </HStack>
                 ) : null}
                 <HStack
                   alignItems="center"
                   borderRadius="standard"
                   justifyContent="space-between"
-                  spacingStart={compact ? 0 : 2}
                   spacingVertical={compact ? 1 : 2}
                   width="100%"
+                  minWidth={0}
                 >
                   <HStack
                     flexGrow={1}
@@ -106,14 +103,13 @@ export const SelectTrigger = memo(
                     <TextBody
                       as="p"
                       color={value ? 'foreground' : 'foregroundMuted'}
-                      disabled={disabled}
                       overflow="truncate"
                       align={compact ? 'end' : 'start'}
                     >
                       {value ?? placeholder ?? (!compact && label)}
                     </TextBody>
                   </HStack>
-                  <HStack alignItems="center">
+                  <HStack alignItems="center" minWidth={0}>
                     <InputIcon
                       ref={rotateAnimationRef}
                       name="caretDown"

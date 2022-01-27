@@ -15,6 +15,7 @@ import { InputIcon } from './InputIcon';
 import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
 import { HelperText } from './HelperText';
+import { TextInputFocusVariantContext } from './context';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Select = memo(
@@ -34,6 +35,7 @@ export const Select = memo(
         accessibilityHint,
         compact,
         onPress,
+        startNode,
       }: SelectBaseProps,
       ref: ForwardedRef<TouchableWithoutFeedback>,
     ) => {
@@ -41,6 +43,7 @@ export const Select = memo(
         useRotateAnimation(animateCaretInConfig, animateCaretOutConfig, 180);
       const [isSelectTrayOpen, toggleSelectTray] = useToggler(false);
       const focusedVariant = useInputVariant(!!isSelectTrayOpen, variant);
+      const getSpacingStart = compact ? 1 : 2;
 
       const { borderFocusedStyle, borderUnfocusedStyle } = useInputBorderStyle(
         !!isSelectTrayOpen,
@@ -66,7 +69,7 @@ export const Select = memo(
       }, [onPress, toggleSelectTray]);
 
       return (
-        <>
+        <TextInputFocusVariantContext.Provider value={focusedVariant}>
           <TouchableWithoutFeedback
             onPress={onSelectTriggerPress}
             testID={testID}
@@ -84,26 +87,34 @@ export const Select = memo(
               focused={isSelectTrayOpen}
               animated
               startNode={
-                compact && (
-                  <HStack spacingStart={2} alignItems="center" maxWidth="40%">
-                    <InputLabel color={labelTextColor} disabled={disabled} noWrap>
-                      {label}
-                    </InputLabel>
-                  </HStack>
-                )
+                <>
+                  {compact && (
+                    <HStack spacingStart={2} alignItems="center" maxWidth="40%">
+                      <InputLabel color={labelTextColor} disabled={disabled} noWrap>
+                        {label}
+                      </InputLabel>
+                    </HStack>
+                  )}
+                  {!!startNode && <HStack alignItems="center">{startNode}</HStack>}
+                </>
               }
               inputNode={
                 <HStack
                   alignItems="center"
                   background
                   borderRadius="standard"
-                  justifyContent="space-between"
-                  spacingStart={compact ? 1 : 2}
+                  justifyContent={compact ? 'flex-end' : 'flex-start'}
+                  spacingStart={startNode ? 0 : getSpacingStart}
                   spacingVertical={compact ? 1 : 2}
                   flexGrow={1}
                   flexShrink={1}
                 >
-                  <TextBody color="foregroundMuted" ellipsize="tail" disabled={disabled}>
+                  <TextBody
+                    color="foregroundMuted"
+                    ellipsize="tail"
+                    disabled={disabled}
+                    align={compact ? 'end' : 'start'}
+                  >
                     {value ?? placeholder ?? (!compact && label)}
                   </TextBody>
                 </HStack>
@@ -128,7 +139,7 @@ export const Select = memo(
             />
           </TouchableWithoutFeedback>
           {isSelectTrayOpen && children}
-        </>
+        </TextInputFocusVariantContext.Provider>
       );
     },
   ),

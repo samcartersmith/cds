@@ -11,6 +11,7 @@ import { SelectOption } from '../SelectOption';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
 import { TextInput } from '../TextInput';
+import { InputIcon } from '../InputIcon';
 
 const longListOfOptions = prices.slice(0, 10).map((option) => {
   return {
@@ -46,29 +47,45 @@ export default function SelectScreen() {
       <Example title="Default with Tray">
         <DefaultSelect placeholder="Cake or death?" options={options} />
       </Example>
-      <Example title="With Helper Text & Scrollable Tray">
+      <Example title="Scrollable Tray">
         <ScrollableSelect
           placeholder="Choose an option"
           options={longListOfOptions}
           hasDescription
-          helperText="I am helpful"
         />
       </Example>
-      <Example title="With Label">
+      <Example title="Label and Helper Text">
         <DefaultSelect
           label="What is your demise? "
+          helperText="You may choose only one option"
           placeholder="Choose wisely... "
           options={options}
         />
       </Example>
       <Example title="Compact with Label">
         <ScrollableSelect
-          label="$"
-          placeholder="1,000,000"
+          label="Amt. to deposit"
+          placeholder="$1,000,000"
           compact
           hasDescription
           compactSelectOption
           options={longListOfOptions}
+        />
+      </Example>
+      <Example title="Start Node">
+        <DefaultSelect
+          value={longListOfOptions[0].value}
+          options={longListOfOptions}
+          startNode={<InputIcon name="cashUSD" />}
+        />
+      </Example>
+      <Example title="Start Node with Compact Label">
+        <DefaultSelect
+          compact
+          label="How much would you like to deposit? "
+          value={longListOfOptions[0].value}
+          options={longListOfOptions}
+          startNode={<InputIcon name="cashUSD" />}
         />
       </Example>
       <Example title="Disabled">

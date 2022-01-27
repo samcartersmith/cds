@@ -5,7 +5,7 @@ import { SelectOption } from '../SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Select } from '../Select';
 import { MenuItem } from '../../overlays/MenuItem';
-import { Icon } from '../../icons/Icon';
+import { InputIcon } from '../InputIcon';
 
 export default {
   title: 'Core Components/Inputs/Select',
@@ -18,7 +18,7 @@ const components = {
   VStack,
   SelectOption,
   ThemeProvider,
-  Icon,
+  InputIcon,
 };
 
 export const { Default, InputStackOptions, Disabled, Compact, Variants } = selectBuilder(

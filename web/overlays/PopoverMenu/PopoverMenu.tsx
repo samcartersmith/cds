@@ -32,6 +32,8 @@ export const PopoverMenu = memo(
         maxHeight = popoverMenuMaxHeight,
         visible,
         flush,
+        openMenu,
+        closeMenu,
         ...props
       }: PopoverMenuProps,
       ref: ForwardedRef<HTMLElement>,
@@ -43,6 +45,8 @@ export const PopoverMenu = memo(
         maxHeight,
         visible,
         flush,
+        openMenu,
+        closeMenu,
         ...props,
       });
       const {
