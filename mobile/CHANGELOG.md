@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.0 (1/27/2022, 01:34 PM PST)
+
+#### 💥 Breaking
+
+- (Mobile only) Move palette, elevation and interactable color conversions to ThemeProvider. [#49874](https://github.cbhq.net/mono/repo/pull/49874), [CDS-1962](https://jira.coinbase-corp.com/browse/CDS-1962)
+
 ## 0.38.3 (1/27/2022, 08:20 AM PST)
 
 #### 🚀 Updates
