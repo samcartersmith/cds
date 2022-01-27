@@ -13,16 +13,16 @@
     "outDir": "../../.nx/dts/apps/mobile-playground"
   },
   "files": [
-    "../../node_modules/@nrwl/react-native/typings/svg.d.ts"
+    "src/main.tsx"
   ],
   "include": [
     "src/**/*.tsx",
-    "src/**/*.ts",
+    "src/**/*.ts"
   ],
   "references": [
     {
       "path": "./tsconfig.app.json"
-    },
+    }
   ],
   "exclude": [
     "node_modules"

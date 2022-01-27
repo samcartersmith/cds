@@ -17,6 +17,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.7",
     "@nrwl/react-native": "^13.5.3",
+    "@types/react-native": "0.66.8",
     "react-native-svg-transformer": "^1.0.0"
   }
 }

@@ -1,22 +1,17 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React, {  } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 
 // @ts-ignore
-
 
 const App = () => {
   return (
     <View style={styles.section}>
-    <Text style={styles.textLg}>Hello there,</Text>
-    <Text style={[styles.textXL, styles.appTitleText]} testID="heading">
-      Welcome MobilePlayground 👋
-    </Text>
-  </View>
+      <Text style={styles.textLg}>Hello there,</Text>
+      <Text style={[styles.textXL, styles.appTitleText]} testID="heading">
+        Welcome MobilePlayground 👋
+      </Text>
+    </View>
   );
 };
 const styles = StyleSheet.create({

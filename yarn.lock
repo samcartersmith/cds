@@ -292,6 +292,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@babel/core@npm:7.12.9":
   version: 7.12.9
   resolution: "@babel/core@npm:7.12.9"
@@ -322,6 +323,9 @@ __metadata:
   resolution: "@babel/core@npm:7.17.2"
 =======
 "@babel/core@npm:^7.1.6, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.15.0, @babel/core@npm:^7.15.5, @babel/core@npm:^7.8.0":
+=======
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.1.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.15.0, @babel/core@npm:^7.15.5, @babel/core@npm:^7.16.7, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   version: 7.16.12
   resolution: "@babel/core@npm:7.16.12"
 >>>>>>> 7775f22 (Fails, but need some help.)
@@ -658,6 +662,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.11, @babel/parser@npm:^7.12.16, @babel/parser@npm:^7.12.7, @babel/parser@npm:^7.14.0, @babel/parser@npm:^7.14.4, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.16.7, @babel/parser@npm:^7.17.0":
   version: 7.17.0
   resolution: "@babel/parser@npm:7.17.0"
@@ -672,6 +677,9 @@ __metadata:
   linkType: hard
 
 "@babel/parser@npm:^7.1.6, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.14.0, @babel/parser@npm:^7.16.12":
+=======
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.1.6, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.14.0, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.16.10, @babel/parser@npm:^7.16.12, @babel/parser@npm:^7.16.7":
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   version: 7.16.12
   resolution: "@babel/parser@npm:7.16.12"
 >>>>>>> 7775f22 (Fails, but need some help.)
@@ -3060,6 +3068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@emotion/hash@npm:0.8.0, @emotion/hash@npm:^0.8.0":
   version: 0.8.0
   resolution: "@emotion/hash@npm:0.8.0"
@@ -3070,6 +3079,11 @@ __metadata:
 "@emotion/is-prop-valid@npm:0.8.8, @emotion/is-prop-valid@npm:^0.8.2, @emotion/is-prop-valid@npm:^0.8.6, @emotion/is-prop-valid@npm:^0.8.8":
   version: 0.8.8
   resolution: "@emotion/is-prop-valid@npm:0.8.8"
+=======
+"@nrwl/cli@npm:13.5.3, @nrwl/cli@npm:^13.4.3":
+  version: 13.5.3
+  resolution: "@nrwl/cli@npm:13.5.3"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     "@emotion/memoize": 0.7.4
   checksum: bb7ec6d48c572c540e24e47cc94fc2f8dec2d6a342ae97bc9c8b6388d9b8d283862672172a1bb62d335c02662afe6291e10c71e9b8642664a8b43416cdceffac
@@ -3130,7 +3144,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/devkit@npm:13.5.3":
+"@nrwl/devkit@npm:13.5.3, @nrwl/devkit@npm:^13.4.3":
   version: 13.5.3
   resolution: "@nrwl/devkit@npm:13.5.3"
 >>>>>>> 7775f22 (Fails, but need some help.)
@@ -3144,6 +3158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@emotion/sheet@npm:0.9.4":
   version: 0.9.4
   resolution: "@emotion/sheet@npm:0.9.4"
@@ -3154,6 +3169,11 @@ __metadata:
 "@emotion/styled-base@npm:^10.3.0":
   version: 10.3.0
   resolution: "@emotion/styled-base@npm:10.3.0"
+=======
+"@nrwl/jest@npm:13.5.3":
+  version: 13.5.3
+  resolution: "@nrwl/jest@npm:13.5.3"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     "@babel/runtime": ^7.5.5
     "@emotion/is-prop-valid": 0.8.8
@@ -3311,6 +3331,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@nrwl/tao@npm:13.4.6":
   version: 13.4.6
   resolution: "@nrwl/tao@npm:13.4.6"
@@ -3332,6 +3353,11 @@ __metadata:
 "@figspec/components@npm:^1.0.0":
   version: 1.0.0
   resolution: "@figspec/components@npm:1.0.0"
+=======
+"@nrwl/tao@npm:13.5.3, @nrwl/tao@npm:^13.4.3":
+  version: 13.5.3
+  resolution: "@nrwl/tao@npm:13.5.3"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     copy-to-clipboard: ^3.0.0
     lit-element: ^2.4.0
@@ -7974,13 +8000,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001251, caniuse-lite@npm:^1.0.30001297":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001251, caniuse-lite@npm:^1.0.30001267, caniuse-lite@npm:^1.0.30001286, caniuse-lite@npm:^1.0.30001297":
   version: 1.0.30001302
   resolution: "caniuse-lite@npm:1.0.30001302"
   checksum: 612689059f6a9aeebad43afeabac655308ddbad8e0f345030edf7656564cf9d0d5af10e3cbf61b64b09b06a97f82ba3788f5621d6526c7a3e7e068cae88d6782
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "caniuse-lite@npm:^1.0.30001267, caniuse-lite@npm:^1.0.30001286":
   version: 1.0.30001300
   resolution: "caniuse-lite@npm:1.0.30001300"
@@ -7992,6 +8019,11 @@ __metadata:
 "@types/d3-scale@npm:3.2.2":
   version: 3.2.2
   resolution: "@types/d3-scale@npm:3.2.2"
+=======
+"capture-exit@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "capture-exit@npm:2.0.0"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     "@types/d3-time": "*"
   checksum: 040693004c65ca1d7b970fe66464aef1c6389c0cee2084476ca7003e5e58883960bf649b9ce2f94f395e7e35963b6fda91e534ed60fe63fc8c8059291b6abd3d
@@ -24205,9 +24237,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "loader-utils@npm:1.2.3":
   version: 1.2.3
   resolution: "loader-utils@npm:1.2.3"
+=======
+"mobile-playground@workspace:apps/mobile-playground":
+  version: 0.0.0-use.local
+  resolution: "mobile-playground@workspace:apps/mobile-playground"
+  dependencies:
+    "@babel/preset-env": ^7.16.7
+    "@nrwl/react-native": ^13.5.3
+    "@testing-library/jest-native": "*"
+    "@testing-library/react-native": "*"
+    "@types/react-native": 0.66.8
+    react: "*"
+    react-native: "*"
+    react-native-codegen: "*"
+    react-native-config: "*"
+    react-native-svg: "*"
+    react-native-svg-transformer: ^1.0.0
+  languageName: unknown
+  linkType: soft
+
+"moo-color@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "moo-color@npm:1.0.2"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     big.js: ^5.2.2
     emojis-list: ^2.0.0
@@ -24546,6 +24602,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "pkg-dir@npm:^4.1.0, pkg-dir@npm:^4.2.0":
   version: 4.2.0
   resolution: "pkg-dir@npm:4.2.0"
@@ -24558,6 +24615,11 @@ __metadata:
 "pkg-dir@npm:^5.0.0":
   version: 5.0.0
   resolution: "pkg-dir@npm:5.0.0"
+=======
+"nx@npm:13.5.3":
+  version: 13.5.3
+  resolution: "nx@npm:13.5.3"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     find-up: ^5.0.0
   checksum: b167bb8dac7bbf22b1d5e30ec223e6b064b84b63010c9d49384619a36734caf95ed23ad23d4f9bd975e8e8082b60a83395f43a89bb192df53a7c25a38ecb57d9
@@ -25352,6 +25414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "promise.prototype.finally@npm:^3.1.0":
   version: 3.1.3
   resolution: "promise.prototype.finally@npm:3.1.3"
@@ -25375,6 +25438,18 @@ __metadata:
 "promise@npm:^8.0.3":
   version: 8.1.0
   resolution: "promise@npm:8.1.0"
+=======
+"pirates@npm:^4.0.0, pirates@npm:^4.0.4":
+  version: 4.0.5
+  resolution: "pirates@npm:4.0.5"
+  checksum: c9994e61b85260bec6c4fc0307016340d9b0c4f4b6550a957afaaff0c9b1ad58fbbea5cfcf083860a25cb27a375442e2b0edf52e2e1e40e69934e08dcc52d227
+  languageName: node
+  linkType: hard
+
+"pkg-dir@npm:< 6 >= 5":
+  version: 5.0.0
+  resolution: "pkg-dir@npm:5.0.0"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     asap: ~2.0.6
   checksum: 89b71a56154ed7d66a73236d8e8351a9c59adddba3929ecc845f75421ff37fc08ea0c67ad76cd5c0b0d81812c7d07a32bed27e7df5fcc960c6d68b0c1cd771f7
@@ -26325,6 +26400,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "react-base16-styling@npm:^0.6.0":
   version: 0.6.0
   resolution: "react-base16-styling@npm:0.6.0"
@@ -26379,6 +26455,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
 "react-devtools-core@npm:^4.19.1, react-devtools-core@npm:^4.6.0":
   version: 4.23.0
   resolution: "react-devtools-core@npm:4.23.0"
@@ -27735,7 +27813,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "resolve@npm:^1.1.6, resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.13.1, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.22.0, resolve@npm:^1.3.2, resolve@npm:^1.9.0":
+=======
+"resolve@npm:1.20.0":
+  version: 1.20.0
+  resolution: "resolve@npm:1.20.0"
+  dependencies:
+    is-core-module: ^2.2.0
+    path-parse: ^1.0.6
+  checksum: 40cf70b2cde00ef57f99daf2dc63c6a56d6c14a1b7fc51735d06a6f0a3b97cb67b4fb7ef6c747b4e13a7baba83b0ef625d7c4ce92a483cd5af923c3b65fd16fe
+  languageName: node
+  linkType: hard
+
+"resolve@npm:^1.1.7, resolve@npm:^1.12.0, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.21.0":
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   version: 1.22.0
   resolution: "resolve@npm:1.22.0"
   dependencies:
@@ -27777,7 +27869,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
+=======
+"resolve@patch:resolve@1.20.0#~builtin<compat/resolve>":
+  version: 1.20.0
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
+  dependencies:
+    is-core-module: ^2.2.0
+    path-parse: ^1.0.6
+  checksum: a0dd7d16a8e47af23afa9386df2dff10e3e0debb2c7299a42e581d9d9b04d7ad5d2c53f24f1e043f7b3c250cbdc71150063e53d0b6559683d37f790b7c8c3cd5
+  languageName: node
+  linkType: hard
+
+"resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.21.0#~builtin<compat/resolve>":
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   version: 1.22.0
   resolution: "resolve@patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b"
   dependencies:
@@ -28024,9 +28130,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "rollup@npm:^2.67.0":
   version: 2.67.2
   resolution: "rollup@npm:2.67.2"
+=======
+"rollup@npm:^2.56.2, rollup@npm:^2.64.0":
+  version: 2.66.1
+  resolution: "rollup@npm:2.66.1"
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -28034,7 +28146,11 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
+<<<<<<< HEAD
   checksum: 9aca5251ba4b441064183cde2394b91567259002d68086bdd3906db66d55dd148ab27e57c51eb53830d7b9b813c2d4e834b7735d65e2a869780bc639d4a20c38
+=======
+  checksum: ecd7917deeaa3005ac7cdd64186daf024594bd9ba940e32fc8966602a83349074d0ec999256009dc4475e7c3786ac52cdd824ee9df514b8c356b960fda6bfb34
+>>>>>>> 51427f2 (A super simple mobile-playground working.)
   languageName: node
   linkType: hard
 
