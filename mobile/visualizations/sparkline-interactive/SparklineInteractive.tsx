@@ -18,6 +18,7 @@ import {
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { minMax } from '@cbhq/cds-common/utils/chart';
 import { chartFallbackPositive } from '@cbhq/cds-lottie-files';
+import { sparklinePalette } from '@cbhq/cds-common/palette/constants';
 
 import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
@@ -31,20 +32,19 @@ import {
 } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 import { useUpdateSparklineInteractiveHeader } from './useUpdateSparklineInteractiveHeader';
-import { ThemeProvider } from '../../system';
 import { Lottie } from '../../animation';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { Box } from '../../layout';
+import { ThemeProvider } from '../../system/ThemeProvider';
 
 export * from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 export * from '@cbhq/cds-common/types/Chart';
 
 // We override line palette since default line color is a bit too dark.
 // Changing to gray20 more closely matches the line color currently used in production
-const customPalette = { line: 'gray20' } as const;
 const DefaultFallback = memo(() => {
   return (
-    <ThemeProvider palette={customPalette}>
+    <ThemeProvider name="sparkline-fallback" palette={sparklinePalette}>
       <Lottie autoplay source={chartFallbackPositive} loop />
     </ThemeProvider>
   );

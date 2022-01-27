@@ -5,9 +5,8 @@ import {
   animateInputBorderInConfig,
   animateInputBorderOutConfig,
 } from '@cbhq/cds-common/animation/border';
-import { useSpectrum } from '@cbhq/cds-common';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { paletteAliasToRgbaString } from '../utils/palette';
+import { usePalette } from './usePalette';
 
 type InputBorderAnimationReturnType = {
   animateInputBorderIn: Animated.CompositeAnimation;
@@ -26,11 +25,11 @@ export const useInputBorderAnimation = (
   fromVariant: InputVariant,
   toVariant: InputVariant,
 ): InputBorderAnimationReturnType => {
-  const spectrum = useSpectrum();
+  const palette = usePalette();
   const focusedBorderOpacity = useRef(new Animated.Value(0)).current;
 
-  const fromVariantRgbaString = paletteAliasToRgbaString(fromVariant, spectrum);
-  const toVariantRgbaString = paletteAliasToRgbaString(toVariant, spectrum);
+  const fromVariantRgbaString = palette[fromVariant];
+  const toVariantRgbaString = palette[toVariant];
 
   return useMemo(() => {
     return {

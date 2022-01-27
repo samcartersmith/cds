@@ -1,17 +1,12 @@
 import React, { useMemo, memo } from 'react';
 
 import { SharedProps } from '@cbhq/cds-common';
-import {
-  ElevationProvider,
-  ElevationChildrenProvider,
-} from '@cbhq/cds-common/context/ElevationProvider';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';
 import { Animated, Falsy, View, ViewStyle } from 'react-native';
-
-import { useElevationStyles } from '../hooks/useElevationStyles';
-import { useInteractableBorderStyles } from '../hooks/useInteractableBorderStyles';
-import { useInteractableTokens } from '../hooks/useInteractableTokens';
+import { getInteractableStyles } from '../styles/getInteractableStyles';
+import { useElevationConfig } from './useElevationConfig';
+import { useThemeConfig } from './useThemeConfig';
 
 export type InteractableProps = {
   children?: React.ReactNode;
@@ -22,15 +17,7 @@ export type InteractableProps = {
 } & InteractableBaseProps &
   SharedProps;
 
-export const Interactable = memo(function Interactable({ children, ...props }: InteractableProps) {
-  return (
-    <ElevationProvider elevation={props?.elevation}>
-      <InteractableContent {...props}>{children}</InteractableContent>
-    </ElevationProvider>
-  );
-});
-
-export const InteractableContent = memo(function InteractableContent({
+export const Interactable = memo(function Interactable({
   backgroundColor,
   borderColor,
   borderRadius,
@@ -45,41 +32,53 @@ export const InteractableContent = memo(function InteractableContent({
   transparentWhileInactive,
   testID,
 }: InteractableProps) {
-  const bgColor = transparentWhileInactive && !pressed ? 'transparent' : backgroundColor;
-  const overlayColor = bgColor === 'transparent' ? undefined : bgColor;
+  const themeConfig = useThemeConfig().activeConfig;
+  const elevationConfig = useElevationConfig(elevation);
+  const ElevationChildrenWrapper = elevationConfig ? elevationConfig.WrapperForChildren : undefined;
 
-  const { backgroundColor: bg, contentOpacity } = useInteractableTokens({
-    overlayColor,
-    disabled,
-    pressed,
-  });
-
-  const borderStyles = useInteractableBorderStyles({
+  const { wrapperStyles, contentStyles } = useMemo(() => {
+    return getInteractableStyles({
+      themeConfig,
+      elevationConfig,
+      backgroundColor: transparentWhileInactive ? 'transparent' : backgroundColor,
+      borderColor: transparentWhileInactive ? 'transparent' : borderColor,
+      borderRadius,
+      borderWidth,
+    });
+  }, [
+    backgroundColor,
     borderColor,
     borderRadius,
     borderWidth,
-    elevation,
-    pressed,
+    elevationConfig,
+    themeConfig,
     transparentWhileInactive,
-  });
+  ]);
 
-  const elevationStyles = useElevationStyles(elevation);
-  const wrapperStyles = useMemo(
-    () =>
-      [
-        block && { flexGrow: 1 },
-        ...style,
-        { backgroundColor: bg } as const,
-        elevationStyles,
-        ...borderStyles,
-      ].filter(Boolean),
-    [block, bg, borderStyles, elevationStyles, style],
+  const mergedWrapperStyles = useMemo(
+    () => [
+      block && { flexGrow: 1 },
+      ...style,
+      wrapperStyles.static,
+      pressed && wrapperStyles.pressed,
+      disabled && wrapperStyles.disabled,
+    ],
+    [block, wrapperStyles, style, pressed, disabled],
+  );
+
+  const mergedContentStyles = useMemo(
+    () => [contentStyle, pressed && contentStyles.pressed, disabled && contentStyles.disabled],
+    [contentStyle, contentStyles.disabled, contentStyles.pressed, disabled, pressed],
   );
 
   return (
-    <Animated.View style={wrapperStyles} testID={testID}>
-      <View style={[contentStyle, { opacity: contentOpacity }]}>
-        <ElevationChildrenProvider>{children}</ElevationChildrenProvider>
+    <Animated.View style={mergedWrapperStyles} testID={testID}>
+      <View style={mergedContentStyles}>
+        {ElevationChildrenWrapper ? (
+          <ElevationChildrenWrapper>{children}</ElevationChildrenWrapper>
+        ) : (
+          children
+        )}
       </View>
     </Animated.View>
   );

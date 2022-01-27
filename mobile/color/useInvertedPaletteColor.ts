@@ -1,12 +1,11 @@
 import { PaletteAlias } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
-import { paletteValueToRgbaString } from '../utils/palette';
+import { useThemeConfig } from '../system/useThemeConfig';
 
 export function useInvertedPaletteColor(alias: PaletteAlias) {
-  const palette = usePaletteConfig();
+  const { config } = useThemeConfig();
   return useSpectrumConditional({
-    light: paletteValueToRgbaString(palette[alias], 'dark'),
-    dark: paletteValueToRgbaString(palette[alias], 'light'),
+    light: config.dark.rgbaStrings[alias],
+    dark: config.light.rgbaStrings[alias],
   });
 }

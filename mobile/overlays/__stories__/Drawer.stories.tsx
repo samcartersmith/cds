@@ -19,7 +19,9 @@ const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
           {({ closeDrawer }) => (
             <VStack spacing={2}>
               <LoremIpsum />
-              <Button onPress={closeDrawer}>Close Drawer</Button>
+              <Button variant="secondary" onPress={closeDrawer}>
+                Close Drawer
+              </Button>
             </VStack>
           )}
         </Drawer>

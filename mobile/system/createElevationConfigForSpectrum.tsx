@@ -14,6 +14,7 @@ import {
   elevation1Palette,
   elevation2ChildrenPalette,
   elevation2Palette,
+  frontierSpectrumPalette,
 } from '@cbhq/cds-common/palette/constants';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
@@ -84,8 +85,13 @@ export const createElevationConfigForSpectrum = memoize(function createElevation
   const childrenConfig = createThemeConfig({
     hasFrontier,
     name: childrenName,
-    palette: childrenPalette,
     parentThemeConfig: config,
+    palette: {
+      // frontier buttons don't have border color like old ones. This makes it so frontier buttons are visible on elevated surfaces.
+      dark: hasFrontier
+        ? { ...childrenPalette.dark, secondary: frontierSpectrumPalette.dark.secondary }
+        : childrenPalette.dark,
+    },
   });
 
   const activeConfig = spectrum === 'light' ? config.light : config.dark;

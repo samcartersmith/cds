@@ -102,6 +102,7 @@ export const getBorderStyles = memoize(function getBorderStyles({
   }
 
   if (borderWidth) {
+    styles.borderStyle = 'solid';
     styles.borderWidth = borderWidthTokens[borderWidth];
   }
 

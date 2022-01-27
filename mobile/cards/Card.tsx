@@ -2,7 +2,6 @@ import React, { memo, useMemo } from 'react';
 
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
-import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
 import { usePinStyles } from '../hooks/usePinStyles';
 import { Pressable } from '../system/Pressable';
 import { VStack } from '../layout/VStack';
@@ -26,7 +25,6 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
   const width = widthProps ?? cardSizes[size].width;
   const height = heightProps ?? cardSizes[size].height;
   const bg = background === true ? 'background' : background;
-  const elevationBorderWidth = useElevationBorderWidth();
   const pinStyles = usePinStyles(pin);
   const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 'standard');
   const contentStyles = useMemo(
@@ -55,7 +53,7 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
     <Pressable
       backgroundColor={bg}
       borderRadius={borderRadius}
-      borderWidth={elevation ? elevationBorderWidth : 'card'}
+      borderWidth="card"
       elevation={elevation}
       onPress={onPress}
       style={{ ...pinStyles, width, height }}

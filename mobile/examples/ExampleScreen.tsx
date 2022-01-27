@@ -124,6 +124,7 @@ export const ExampleScreen: React.FC = ({ children }) => {
     <ThemeProvider
       spectrum={isDarkEnabled ? 'dark' : rootSpectrum}
       scale={isDenseEnabled ? 'xSmall' : rootScale}
+      name="example-screen"
     >
       <Screen>
         <ScaleProvider value="xSmall">

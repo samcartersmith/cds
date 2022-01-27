@@ -1,11 +1,10 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 
-import { useScale, switchPalette } from '@cbhq/cds-common';
-import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+import { useScale } from '@cbhq/cds-common';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { PressableProps, StyleSheet, View } from 'react-native';
+import { switchControlPalette } from '@cbhq/cds-common/palette/constants';
 
-import { useElevationStyles } from '../hooks/useElevationStyles';
 import { Box } from '../layout/Box';
 import * as scaleStyles from '../styles/scale';
 import { Interactable } from '../system/Interactable';
@@ -26,13 +25,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
   testID,
 }) => {
   const cdsScale = useScale();
-  // Switch thumb is a special case where it should always be white.
-  const thumbColor = useSpectrumConditional({
-    light: 'primaryForeground' as const,
-    dark: 'foreground' as const,
-  });
   const { switchWidth, switchHeight, switchThumbSize } = scaleStyles[cdsScale].control;
-  const elevationStyle = useElevationStyles(1);
 
   const trackStyle = useMemo(
     () => [
@@ -58,10 +51,9 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
             }),
           },
         ],
-        elevationStyle,
       },
     ],
-    [animatedScaleValue, elevationStyle, switchThumbSize, switchWidth],
+    [animatedScaleValue, switchThumbSize, switchWidth],
   );
 
   return (
@@ -76,7 +68,7 @@ const SwitchIcon: React.FC<ControlIconProps> = ({
       <Interactable
         pressed={pressed}
         disabled={disabled}
-        backgroundColor={thumbColor}
+        backgroundColor="background"
         borderColor="line"
         borderWidth="card"
         borderRadius="round"
@@ -100,7 +92,7 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
   );
 
   return (
-    <ThemeProvider palette={switchPalette}>
+    <ThemeProvider name="switch-control" palette={switchControlPalette}>
       {children ? (
         <Box flexDirection="row" minHeight={switchHeight} alignItems="center">
           {switchNode}

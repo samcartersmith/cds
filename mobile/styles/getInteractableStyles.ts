@@ -17,12 +17,7 @@ export type InteractableStyles = {
 
 export type GetInteractableStylesParams = Pick<
   InteractableBaseProps,
-  | 'backgroundColor'
-  | 'borderColor'
-  | 'borderRadius'
-  | 'borderWidth'
-  | 'transparentWhileInactive'
-  | 'elevation'
+  'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'elevation'
 > & {
   elevationConfig?: ElevationConfigForSpectrum;
   themeConfig: ThemeConfigForSpectrum;
@@ -33,14 +28,13 @@ function getCacheKey({
   borderColor,
   borderRadius,
   borderWidth,
-  transparentWhileInactive = false,
   elevationConfig,
   themeConfig,
 }: GetInteractableStylesParams) {
   const elevationName = elevationConfig
     ? `${elevationConfig.themeConfig.activeConfig.name}`
     : 'no-elevation';
-  return `${themeConfig.name}-${elevationName}-${backgroundColor}-${borderColor}-${borderRadius}-${borderWidth}-${transparentWhileInactive}`;
+  return `${themeConfig.name}-${elevationName}-${backgroundColor}-${borderColor}-${borderRadius}-${borderWidth}`;
 }
 
 export const getInteractableStyles = memoize(function getInteractableStyles({
@@ -48,33 +42,30 @@ export const getInteractableStyles = memoize(function getInteractableStyles({
   borderColor,
   borderRadius,
   borderWidth,
-  transparentWhileInactive = false,
   elevationConfig,
   themeConfig: contextThemeConfig,
 }: GetInteractableStylesParams) {
   const themeConfig = elevationConfig?.themeConfig.activeConfig ?? contextThemeConfig;
-  const borderColorAlias = transparentWhileInactive ? 'transparent' : borderColor;
   const borderStyles = getBorderStyles({
-    borderColor: borderColorAlias,
+    borderColor,
     borderRadius,
     borderWidth,
     elevationConfig,
     themeConfig,
   });
 
-  const backgroundColorAlias = transparentWhileInactive ? 'transparent' : backgroundColor;
-  const staticStyles = {
-    ...elevationConfig?.styles,
-    ...borderStyles,
-    backgroundColor: themeConfig.rgbaStrings[backgroundColorAlias],
-  };
-
-  const pressedStyles = {
-    backgroundColor: themeConfig.interactableTokens[backgroundColor].pressed.backgroundColor,
-  };
-
-  const disabledStyles = {
-    backgroundColor: themeConfig.interactableTokens[backgroundColor].disabled.backgroundColor,
+  const wrapperStyles = {
+    static: {
+      ...elevationConfig?.styles,
+      ...borderStyles,
+      backgroundColor: themeConfig.rgbaStrings[backgroundColor],
+    },
+    pressed: {
+      backgroundColor: themeConfig.interactableTokens[backgroundColor].pressed.backgroundColor,
+    },
+    disabled: {
+      backgroundColor: themeConfig.interactableTokens[backgroundColor].disabled.backgroundColor,
+    },
   };
 
   const contentStyles = {
@@ -84,9 +75,7 @@ export const getInteractableStyles = memoize(function getInteractableStyles({
     },
   };
   return {
-    staticStyles,
-    pressedStyles,
-    disabledStyles,
+    wrapperStyles,
     contentStyles,
   };
 },

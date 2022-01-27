@@ -62,7 +62,7 @@ const App = memo(() => {
   return (
     <FeatureFlagProvider>
       <DevicePreferencesProvider>
-        <ThemeProvider>
+        <ThemeProvider name="root">
           <CdsSafeAreaProvider>
             <PortalProvider>
               <StatusBar />

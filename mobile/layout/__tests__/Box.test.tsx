@@ -2,7 +2,14 @@ import { render, waitFor } from '@testing-library/react-native';
 import { Animated, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Box } from '../Box';
+import { ThemeProvider } from '../../system/ThemeProvider';
+import { Box as BoxComponent, BoxProps } from '../Box';
+
+const Box = (props: BoxProps) => (
+  <ThemeProvider name="box-test">
+    <BoxComponent {...props} />
+  </ThemeProvider>
+);
 
 describe('Box', () => {
   it('renders a view', () => {
