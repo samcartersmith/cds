@@ -20,6 +20,7 @@ const selectOptionMaxHeight: Record<ScaleDensity, number> = {
 
 export type SelectOptionProps = Omit<SelectOptionBaseProps, 'compact'> & LinkableProps;
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const SelectOption = memo(
   ({ title, description, multiline, selected, ...props }: SelectOptionProps) => {
     const minHeight = useScaleConditional(selectOptionMinHeight);

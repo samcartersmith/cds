@@ -6,6 +6,7 @@ export type MenuSectionLabelProps = {
   text: string;
 };
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const MenuSectionLabel = ({ text }: MenuSectionLabelProps) => {
   return (
     <HStack spacingHorizontal={3} spacingTop={3} spacingBottom={2}>

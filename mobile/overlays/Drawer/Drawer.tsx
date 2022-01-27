@@ -28,6 +28,7 @@ import { Overlay } from '../Overlay/Overlay';
 
 export type DrawerProps = DrawerBaseProps & Omit<ModalProps, 'onRequestClose' | 'children'>;
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Drawer = memo(
   forwardRef<DrawerRefBaseProps, PropsWithChildren<DrawerProps>>(
     (

@@ -16,6 +16,7 @@ import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
 import { HelperText } from './HelperText';
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Select = memo(
   forwardRef(
     (

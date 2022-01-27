@@ -56,6 +56,7 @@ export type PopoverTriggerProps = {
   children: RefAttributes<HTMLButtonElement>;
 };
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const PopoverTrigger = ({ children, onPress }: PopoverTriggerHOCProps) => {
   const {
     togglePopoverMenuVisibility,

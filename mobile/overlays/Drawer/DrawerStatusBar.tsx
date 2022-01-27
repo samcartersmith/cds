@@ -10,8 +10,9 @@ type DrawerStatusBarProps = {
   visible: boolean;
 };
 
-/** this is only used for when the drawer comes from the side or top, and it fades out the menus in the notches (time and wifi/battery) */
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const DrawerStatusBar = memo(({ pin, visible }: DrawerStatusBarProps) => {
+  /** this is only used for when the drawer comes from the side or top, and it fades out the menus in the notches (time and wifi/battery) */
   const hasNotch = useHasNotch();
   const updateStatusBar = hasNotch && ['left', 'right', 'top'].includes(pin);
 

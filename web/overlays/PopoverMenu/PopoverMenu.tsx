@@ -20,6 +20,7 @@ export type PopoverMenuProps = {
   children: ReactNode[];
 } & PopoverMenuBaseProps;
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const PopoverMenu = memo(
   forwardRef(
     (

@@ -33,6 +33,7 @@ const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
   dense: 48,
 };
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const SelectOption = memo(
   forwardRef(
     (

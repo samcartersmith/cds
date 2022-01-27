@@ -4,6 +4,7 @@ import { Drawer } from '../Drawer/Drawer';
 import { TextTitle3 } from '../../typography/TextTitle3';
 import { HStack, VStack } from '../../layout';
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Tray: React.FC<TrayBaseProps> = memo(({ children, title, ...props }) => {
   return (
     <Drawer pin="bottom" {...props}>

@@ -30,6 +30,7 @@ export type MenuItemProps = {
   onPress?: NoopFn;
 } & PressableProps;
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const MenuItem = memo(
   forwardRef(
     (
