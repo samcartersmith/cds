@@ -2,19 +2,22 @@ import React, { memo, useMemo } from 'react';
 
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
-import { useElevationBorderWidth } from '../hooks/useElevationBorderWidth';
+import type { CardBaseProps } from '@cbhq/cds-common/types';
+import { ViewStyle } from 'react-native';
 import { usePinStyles } from '../hooks/usePinStyles';
-import { Pressable } from '../system/Pressable';
+import { Pressable, PressableProps } from '../system/Pressable';
+import { DangerouslySetStyle } from '../types';
 import { VStack } from '../layout/VStack';
-import { useFeatureFlag } from '../system/useFeatureFlag';
-import { CardProps, FrontierCard } from './FrontierCard';
 
-export type { CardProps };
+export type CardProps = {
+  onPress?: PressableProps['onPress'];
+} & CardBaseProps &
+  DangerouslySetStyle<ViewStyle>;
 
-const OldCard: React.FC<CardProps> = memo(function OldCard({
+export const FrontierCard: React.FC<CardProps> = memo(function FrontierCard({
   children,
   background = 'background',
-  elevation = 1,
+  elevation = 0,
   size = 'large',
   onPress,
   pin,
@@ -26,19 +29,20 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
   const width = widthProps ?? cardSizes[size].width;
   const height = heightProps ?? cardSizes[size].height;
   const bg = background === true ? 'background' : background;
-  const elevationBorderWidth = useElevationBorderWidth();
   const pinStyles = usePinStyles(pin);
-  const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 'standard');
+  const borderRadiusOverrides = usePinBorderRadiusStyles(pin);
   const contentStyles = useMemo(
     () => [borderRadiusOverrides, dangerouslySetStyle],
     [borderRadiusOverrides, dangerouslySetStyle],
   );
 
-  const borderRadius = 'standard';
+  const pressableStyles = useMemo(
+    () => ({ ...pinStyles, width, height }),
+    [height, pinStyles, width],
+  );
 
   const content = (
     <VStack
-      borderRadius={borderRadius}
       background={onPress ? undefined : bg}
       pin={onPress ? undefined : pin}
       elevation={onPress ? undefined : elevation}
@@ -47,19 +51,12 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
       dangerouslySetStyle={contentStyles}
       {...props}
     >
-      <VStack overflow="hidden">{children}</VStack>
+      {children}
     </VStack>
   );
 
   return onPress ? (
-    <Pressable
-      backgroundColor={bg}
-      borderRadius={borderRadius}
-      borderWidth={elevation ? elevationBorderWidth : 'card'}
-      elevation={elevation}
-      onPress={onPress}
-      style={{ ...pinStyles, width, height }}
-    >
+    <Pressable backgroundColor={bg} onPress={onPress} style={pressableStyles} noScaleOnPress>
       {content}
     </Pressable>
   ) : (
@@ -67,10 +64,4 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
   );
 });
 
-export const Card: React.FC<CardProps> = memo(function Card(props) {
-  const isFrontier = useFeatureFlag('frontierCard');
-  return isFrontier ? <FrontierCard {...props} /> : <OldCard {...props} />;
-});
-
-OldCard.displayName = 'OldCard';
-Card.displayName = 'Card';
+FrontierCard.displayName = 'FrontierCard';
