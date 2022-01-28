@@ -7,15 +7,14 @@ import {
 } from '@cbhq/cds-common/animation/toast';
 
 import { Animated } from '../animation/Animated';
-import { toastTranslateX } from './toastStyles';
 
 export const useToastAnimation = (toastRef: RefObject<HTMLElement>) => {
   const animateIn = Animated.parallel([
     Animated.timing(toastRef, animateInOpacityConfig),
     Animated.timing(toastRef, {
       ...animateInBottomConfig,
-      fromValue: `translate(${toastTranslateX}, ${animateInBottomConfig.fromValue}px)`,
-      toValue: `translate(${toastTranslateX}, ${animateInBottomConfig.toValue}px)`,
+      fromValue: `translateY(${animateInBottomConfig.fromValue}px)`,
+      toValue: `translateY(${animateInBottomConfig.toValue}px)`,
     }),
   ]);
 
@@ -23,8 +22,8 @@ export const useToastAnimation = (toastRef: RefObject<HTMLElement>) => {
     Animated.timing(toastRef, animateOutOpacityConfig),
     Animated.timing(toastRef, {
       ...animateOutBottomConfig,
-      fromValue: `translate(${toastTranslateX}, ${animateOutBottomConfig.fromValue}px)`,
-      toValue: `translate(${toastTranslateX}, ${animateOutBottomConfig.toValue}px)`,
+      fromValue: `translateY(${animateOutBottomConfig.fromValue}px)`,
+      toValue: `translateY(${animateOutBottomConfig.toValue}px)`,
     }),
   ]);
 
