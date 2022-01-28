@@ -47,7 +47,7 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
       dangerouslySetStyle={contentStyles}
       {...props}
     >
-      <VStack overflow="hidden">{children}</VStack>
+      {children}
     </VStack>
   );
 

@@ -71,7 +71,7 @@ export const Card: React.FC<CardProps> = memo(
         testID={linkable ? undefined : testID}
         {...props}
       >
-        <>{children}</>
+        {children}
       </VStack>
     );
 

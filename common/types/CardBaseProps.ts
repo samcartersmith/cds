@@ -1,4 +1,4 @@
-import type { PinningDirection } from './BoxBaseProps';
+import type { FlexStyles, PinningDirection } from './BoxBaseProps';
 import type { DimensionStyles } from './DimensionStyles';
 import type { ElevationLevels } from './ElevationLevels';
 import type { GroupBaseProps } from './GroupBaseProps';
@@ -19,6 +19,7 @@ export type CardBaseProps = {
   OffsetProps &
   SharedProps &
   SpacingProps &
+  FlexStyles &
   SharedProps;
 
 export type CardHeaderBaseProps = {
