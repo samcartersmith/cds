@@ -5,7 +5,7 @@ import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
-import { StyleSheet, ActivityIndicator, View } from 'react-native';
+import { StyleSheet, ActivityIndicator, View, ViewStyle } from 'react-native';
 
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { usePalette } from '../hooks/usePalette';
@@ -45,9 +45,12 @@ export const Button = memo(function Button({
   const frontierButtonStyles = hasFrontier && hasIcon && styles.frontierButton;
   const startIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierStartIcon];
   const endIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierEndIcon];
+  const justifyContent: ViewStyle['justifyContent'] = flush
+    ? 'flex-start'
+    : styles.button.justifyContent;
   const buttonStyles = useMemo(
-    () => [styles.button, { height }, spacingStyles],
-    [height, spacingStyles],
+    () => [styles.button, { height }, { justifyContent }, spacingStyles],
+    [height, spacingStyles, justifyContent],
   );
   const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
   const endIconStyles = useSpacingStyles({ spacingStart: 1 });
