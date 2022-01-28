@@ -1,0 +1,17 @@
+{
+  "root": "packages/fonts",
+  "sourceRoot": "packages/fonts/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}
