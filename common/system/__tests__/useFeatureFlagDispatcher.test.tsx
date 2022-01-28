@@ -9,7 +9,7 @@ describe('useFeatureFlagDispatcher', () => {
     const { result } = renderHook(
       () => {
         return {
-          dispatch: useFeatureFlagDispatcher(),
+          dispatcher: useFeatureFlagDispatcher(),
           featureFlags: useFeatureFlags(),
         };
       },
@@ -20,7 +20,7 @@ describe('useFeatureFlagDispatcher', () => {
 
     expect(result.current.featureFlags.frontierTypography).toEqual(false);
     void act(() => {
-      result.current.dispatch({ type: 'update', value: { frontierTypography: true } });
+      result.current.dispatcher.dispatch({ type: 'update', value: { frontierTypography: true } });
     });
     expect(result.current.featureFlags.frontierTypography).toEqual(true);
   });
@@ -29,7 +29,7 @@ describe('useFeatureFlagDispatcher', () => {
     const { result } = renderHook(
       () => {
         return {
-          dispatch: useFeatureFlagDispatcher(),
+          dispatcher: useFeatureFlagDispatcher(),
           featureFlags: useFeatureFlags(),
         };
       },
@@ -40,11 +40,11 @@ describe('useFeatureFlagDispatcher', () => {
 
     expect(result.current.featureFlags.frontierTypography).toEqual(false);
     void act(() => {
-      result.current.dispatch({
+      result.current.dispatcher.dispatch({
         type: 'update',
         value: { frontierTypography: true, frontierCard: true },
       });
-      result.current.dispatch({ type: 'update', value: { frontierButton: true } });
+      result.current.dispatcher.dispatch({ type: 'update', value: { frontierButton: true } });
     });
     expect(result.current.featureFlags).toMatchObject({
       frontierTypography: true,
@@ -57,7 +57,7 @@ describe('useFeatureFlagDispatcher', () => {
     const { result } = renderHook(
       () => {
         return {
-          dispatch: useFeatureFlagDispatcher(),
+          dispatcher: useFeatureFlagDispatcher(),
           featureFlags: useFeatureFlags(),
         };
       },
@@ -67,7 +67,7 @@ describe('useFeatureFlagDispatcher', () => {
     );
 
     void act(() => {
-      result.current.dispatch({ type: 'toggle', name: 'frontier' });
+      result.current.dispatcher.dispatch({ type: 'toggle', name: 'frontier' });
     });
     expect(result.current.featureFlags).toMatchObject({
       frontier: true,
@@ -78,7 +78,7 @@ describe('useFeatureFlagDispatcher', () => {
       frontierTypography: true,
     });
     void act(() => {
-      result.current.dispatch({ type: 'toggle', name: 'frontier' });
+      result.current.dispatcher.dispatch({ type: 'toggle', name: 'frontier' });
     });
     expect(result.current.featureFlags).toMatchObject({
       frontier: false,

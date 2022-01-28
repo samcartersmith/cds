@@ -6,7 +6,7 @@ import { entries } from '@cbhq/cds-utils';
 import { ListCell } from '../../cells/ListCell';
 import { Switch } from '../../controls/Switch';
 
-import { FeatureFlagLocalStorageCallback, frontierFeaturesOn } from '../FeatureFlagContext';
+import { frontierFeaturesOn } from '../FeatureFlagContext';
 import { useFeatureFlags } from '../useFeatureFlags';
 
 import { ExampleScreen } from '../../examples/ExampleScreen';
@@ -27,11 +27,7 @@ const availableFlags = new Set([
   'frontierSparkline',
 ]);
 
-type DebugFrontierProps = {
-  updateLocalStorage?: FeatureFlagLocalStorageCallback;
-};
-
-const DebugFrontier = memo(({ updateLocalStorage }: DebugFrontierProps) => {
+const DebugFrontier = memo(() => {
   const toggleFeatureFlag = useFeatureFlagToggler();
 
   const featureFlags = useFeatureFlags();
@@ -39,7 +35,7 @@ const DebugFrontier = memo(({ updateLocalStorage }: DebugFrontierProps) => {
     return entries(frontierFeaturesOn).map(([item]) => {
       // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const toggle = () => {
-        toggleFeatureFlag(item, updateLocalStorage);
+        toggleFeatureFlag(item);
       };
 
       return (
@@ -61,7 +57,7 @@ const DebugFrontier = memo(({ updateLocalStorage }: DebugFrontierProps) => {
         />
       );
     });
-  }, [featureFlags, toggleFeatureFlag, updateLocalStorage]);
+  }, [featureFlags, toggleFeatureFlag]);
 
   return <ExampleScreen>{listCells}</ExampleScreen>;
 });

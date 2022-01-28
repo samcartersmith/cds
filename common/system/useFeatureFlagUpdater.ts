@@ -1,13 +1,17 @@
 import { useCallback } from 'react';
-import { FeatureFlagsPartial, FeatureFlagLocalStorageCallback } from './FeatureFlagContext';
+import { FeatureFlagsPartial, FeatureFlagsOnChange } from './FeatureFlagContext';
 import { useFeatureFlagDispatcher } from './useFeatureFlagDispatcher';
 
 export const useFeatureFlagUpdater = () => {
-  const dispatch = useFeatureFlagDispatcher();
+  const dispatcher = useFeatureFlagDispatcher();
   return useCallback(
-    (values: FeatureFlagsPartial, updateLocalStorage?: FeatureFlagLocalStorageCallback) => {
-      dispatch({ type: 'update', value: values, updateLocalStorage });
+    (values: FeatureFlagsPartial, onChange?: FeatureFlagsOnChange) => {
+      dispatcher.dispatch({
+        type: 'update',
+        value: values,
+        onChange: onChange ?? dispatcher?.onChange,
+      });
     },
-    [dispatch],
+    [dispatcher],
   );
 };

@@ -48,16 +48,20 @@ export const frontierFeaturesOn = {
 export type FeatureFlags = typeof defaultFeatureFlags;
 export type FeatureFlagsPartial = Partial<FeatureFlags>;
 export type FeatureFlag = keyof FeatureFlags;
-export type FeatureFlagLocalStorageCallback = (newState: FeatureFlagsPartial) => void;
+export type FeatureFlagsOnChange = (newState: FeatureFlagsPartial) => void;
 export type FeatureFlagDispatcherAction =
   | {
       type: 'update';
       value: FeatureFlagsPartial;
-      updateLocalStorage?: FeatureFlagLocalStorageCallback;
+      onChange?: FeatureFlagsOnChange;
     }
-  | { type: 'toggle'; name: FeatureFlag; updateLocalStorage?: FeatureFlagLocalStorageCallback };
-
+  | { type: 'toggle'; name: FeatureFlag; onChange?: FeatureFlagsOnChange };
+export type FeatureFlagDispatcherContextType = {
+  dispatch: React.Dispatch<FeatureFlagDispatcherAction>;
+  onChange?: FeatureFlagsOnChange;
+};
 // Feature Flag contexts
 export const FeatureFlagContext = createContext<FeatureFlags>(defaultFeatureFlags);
-export const FeatureFlagDispatcherContext =
-  createContext<React.Dispatch<FeatureFlagDispatcherAction>>(noop);
+export const FeatureFlagDispatcherContext = createContext<FeatureFlagDispatcherContextType>({
+  dispatch: noop,
+});

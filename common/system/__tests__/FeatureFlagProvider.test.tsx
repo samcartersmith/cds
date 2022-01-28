@@ -1,8 +1,7 @@
-import { emptyObject } from '@cbhq/cds-utils';
 import { renderHook, act } from '@testing-library/react-hooks';
 import { defaultFeatureFlags } from '../FeatureFlagContext';
 
-import { FeatureFlagProvider, getFrontierFlags } from '../FeatureFlagProvider';
+import { FeatureFlagProvider } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 
@@ -108,27 +107,5 @@ describe('FeatureFlagProvider', () => {
       result.current.update({ frontierButton: false });
     });
     expect(result.current.featureFlags.frontierButton).toEqual(false); // imperative update wins
-  });
-
-  it('getFrontierFlags works correctly for undefined', () => {
-    const result = getFrontierFlags(undefined);
-    expect(result).toEqual(emptyObject);
-  });
-
-  it('getFrontierFlags works correctly for true', () => {
-    const result = getFrontierFlags(true);
-    expect(result).toEqual({
-      frontier: true,
-      frontierButton: true,
-      frontierCard: true,
-      frontierColor: true,
-      frontierSparkline: true,
-      frontierTypography: true,
-    });
-  });
-
-  it('getFrontierFlags works correctly for false', () => {
-    const result = getFrontierFlags(false);
-    expect(result).toEqual(emptyObject);
   });
 });

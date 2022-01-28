@@ -7,26 +7,22 @@ import {
   FeatureFlag,
   FeatureFlagsPartial,
   frontierFeaturesOn,
+  FeatureFlagsOnChange,
 } from './FeatureFlagContext';
 import { useFeatureFlags } from './useFeatureFlags';
 
-export type FeatureFlagProviderProps = FeatureFlagsPartial;
-
-export function getFrontierFlags(val: boolean | undefined) {
-  if (val === undefined) return emptyObject;
-  return val ? frontierFeaturesOn : emptyObject;
-}
+export type FeatureFlagProviderProps = FeatureFlagsPartial & { onChange?: FeatureFlagsOnChange };
 
 function featureFlagReducer(state: FeatureFlagsPartial, action: FeatureFlagDispatcherAction) {
   switch (action.type) {
     case 'update': {
       const newState = { ...state, ...action.value };
-      action.updateLocalStorage?.(newState);
+      action.onChange?.(newState);
       return newState;
     }
     case 'toggle': {
       const newState = { ...state, [action.name]: !state[action.name] };
-      action.updateLocalStorage?.(newState);
+      action.onChange?.(newState);
       return newState;
     }
     default: {
@@ -47,6 +43,7 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
     frontierCard,
     frontierSparkline,
     frontier,
+    onChange,
   }) => {
     const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
     // Deep merge if nesting FeatureFlagProviders
@@ -84,8 +81,10 @@ export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
       frontierTypography,
     ]);
 
+    const dispatcherValue = useMemo(() => ({ onChange, dispatch }), [onChange]);
+
     return (
-      <FeatureFlagDispatcherContext.Provider value={dispatch}>
+      <FeatureFlagDispatcherContext.Provider value={dispatcherValue}>
         <FeatureFlagContext.Provider value={value}>{children}</FeatureFlagContext.Provider>
       </FeatureFlagDispatcherContext.Provider>
     );

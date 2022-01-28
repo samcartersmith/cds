@@ -15,7 +15,6 @@ import { usePalette } from '../hooks/usePalette';
 import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
-import { ThemeProvider } from '../system/ThemeProvider';
 import { useFeatureFlags } from '../system/useFeatureFlags';
 import { TextBody } from '../typography/TextBody';
 import { TextLabel1 } from '../typography/TextLabel1';
@@ -121,30 +120,24 @@ export const ExampleScreen: React.FC = ({ children }) => {
   }, [toggleFeatureFlag]);
 
   return (
-    <ThemeProvider
-      spectrum={isDarkEnabled ? 'dark' : rootSpectrum}
-      scale={isDenseEnabled ? 'xSmall' : rootScale}
-      name="example-screen"
-    >
-      <Screen>
-        <ScaleProvider value="xSmall">
-          <VStack>
-            <VStack gap={1} spacingVertical={3} spacingHorizontal={gutter} background>
-              <Switch onChange={toggleDark} checked={isDarkEnabled}>
-                Dark Spectrum
-              </Switch>
-              <Switch onChange={toggleDense} checked={isDenseEnabled}>
-                Dense Scale
-              </Switch>
-              <Switch onChange={toggleFrontier} checked={frontier}>
-                Frontier
-              </Switch>
-            </VStack>
-            <Divider />
+    <Screen>
+      <ScaleProvider value="xSmall">
+        <VStack>
+          <VStack gap={1} spacingVertical={3} spacingHorizontal={gutter} background>
+            <Switch onChange={toggleDark} checked={isDarkEnabled}>
+              Dark Spectrum
+            </Switch>
+            <Switch onChange={toggleDense} checked={isDenseEnabled}>
+              Dense Scale
+            </Switch>
+            <Switch onChange={toggleFrontier} checked={frontier}>
+              Frontier
+            </Switch>
           </VStack>
-        </ScaleProvider>
-        {children}
-      </Screen>
-    </ThemeProvider>
+          <Divider />
+        </VStack>
+      </ScaleProvider>
+      {children}
+    </Screen>
   );
 };

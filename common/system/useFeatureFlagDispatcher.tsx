@@ -1,11 +1,14 @@
 import { useContext } from 'react';
 import { noop } from '@cbhq/cds-utils';
-import { FeatureFlagDispatcherContext } from './FeatureFlagContext';
+import {
+  FeatureFlagDispatcherContext,
+  FeatureFlagDispatcherContextType,
+} from './FeatureFlagContext';
 
-export const useFeatureFlagDispatcher = () => {
+export const useFeatureFlagDispatcher = (): FeatureFlagDispatcherContextType => {
   const context = useContext(FeatureFlagDispatcherContext);
   if (!context) {
-    return noop;
+    return { dispatch: noop };
   }
   return context;
 };

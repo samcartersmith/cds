@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
-import { FeatureFlag, FeatureFlagLocalStorageCallback } from './FeatureFlagContext';
+import { FeatureFlag, FeatureFlagsOnChange } from './FeatureFlagContext';
 import { useFeatureFlagDispatcher } from './useFeatureFlagDispatcher';
 
 export const useFeatureFlagToggler = () => {
-  const dispatch = useFeatureFlagDispatcher();
+  const dispatcher = useFeatureFlagDispatcher();
   return useCallback(
-    (name: FeatureFlag, updateLocalStorage?: FeatureFlagLocalStorageCallback) => {
-      dispatch({ type: 'toggle', name, updateLocalStorage });
+    (name: FeatureFlag, onChange?: FeatureFlagsOnChange) => {
+      dispatcher.dispatch({ type: 'toggle', name, onChange: onChange ?? dispatcher?.onChange });
     },
-    [dispatch],
+    [dispatcher],
   );
 };
