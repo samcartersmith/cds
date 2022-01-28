@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.4 (1/28/2022, 02:20 PM PST)
+
+#### 🐞 Fixes
+
+- **[Card]** Remove extra internal wrapper and allow flex props. [#51230](https://github.cbhq.net/mono/repo/pull/51230)
+- Popover context cleanup. [#51196](https://github.cbhq.net/mono/repo/pull/51196)
+- **[Card]** Ensure testID is passed to component. [#51211](https://github.cbhq.net/mono/repo/pull/51211)
+- **[Toast]** Incorrect width on mobile web. [#51138](https://github.cbhq.net/mono/repo/pull/51138)
+- **[Table]** Remove innerSpacing on TableCell. [#49872](https://github.cbhq.net/mono/repo/pull/49872), [CDS-1888](https://jira.coinbase-corp.com/browse/CDS-1888)
+- Modal footer frontier buttons on mobile web. [#50577](https://github.cbhq.net/mono/repo/pull/50577), [CDS-1961](https://jira.coinbase-corp.com/browse/CDS-1961)
+- Parity between mobile and web for select layout. [#50912](https://github.cbhq.net/mono/repo/pull/50912)
+- Mark unreleased components as deprecated. [#50993](https://github.cbhq.net/mono/repo/pull/50993)
+- Fixed onPress from being called when undefined. [#50919](https://github.cbhq.net/mono/repo/pull/50919)
+
 ## 0.34.3 (1/27/2022, 08:20 AM PST)
 
 #### 🚀 Updates

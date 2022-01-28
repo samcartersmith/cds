@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.1 (1/28/2022, 02:20 PM PST)
+
+#### 🚀 Updates
+
+- Add onChange to FeatureFlagProvider. [#51200](https://github.cbhq.net/mono/repo/pull/51200)
+
+#### 🐞 Fixes
+
+- Ensure flush buttons in non-frontier context display p…. [#51160](https://github.cbhq.net/mono/repo/pull/51160), [CDS-1929](https://jira.coinbase-corp.com/browse/CDS-1929)
+- **[Card]** Remove extra internal wrapper and allow flex props. [#51230](https://github.cbhq.net/mono/repo/pull/51230)
+- **[Card]** Ensure testID is passed to component. [#51211](https://github.cbhq.net/mono/repo/pull/51211)
+
 ## 0.39.0 (1/27/2022, 01:34 PM PST)
 
 #### 💥 Breaking

@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.3 (1/28/2022, 02:20 PM PST)
+
+#### 🚀 Updates
+
+- Add onChange to FeatureFlagProvider. [#51200](https://github.cbhq.net/mono/repo/pull/51200)
+
+#### 🐞 Fixes
+
+- **[Card]** Remove extra internal wrapper and allow flex props. [#51230](https://github.cbhq.net/mono/repo/pull/51230)
+- Popover context cleanup. [#51196](https://github.cbhq.net/mono/repo/pull/51196)
+- **[Card]** Ensure testID is passed to component. [#51211](https://github.cbhq.net/mono/repo/pull/51211)
+- Parity between mobile and web for select layout. [#50912](https://github.cbhq.net/mono/repo/pull/50912)
+
 ## 0.33.2 (1/27/2022, 08:20 AM PST)
 
 #### 🚀 Updates
