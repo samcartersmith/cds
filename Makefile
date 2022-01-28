@@ -192,7 +192,9 @@ deploy.website:
 
 .PHONY: deploy.website-dev
 deploy.website-dev:
-	bazel run website/cloud:deploy_dev
+	@echo "Run the following commands:";
+	@echo "ash_login";
+	@echo "bazel run website/cloud:deploy_dev"
 
 .PHONY: setup.mobile
 setup.mobile:
