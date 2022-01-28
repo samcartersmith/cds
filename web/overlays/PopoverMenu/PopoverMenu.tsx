@@ -1,13 +1,15 @@
-import React, { forwardRef, memo, ReactNode } from 'react';
-import { popoverMenuMaxHeight } from '@cbhq/cds-common/tokens/menu';
+import React, { forwardRef, memo, ReactNode, useEffect, useMemo } from 'react';
+import { popoverMenuMaxHeight, menuGutter } from '@cbhq/cds-common/tokens/menu';
 import { ForwardedRef, PopoverMenuBaseProps } from '@cbhq/cds-common/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 import { css } from 'linaria';
+import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { cx } from '../../utils/linaria';
 import { usePopoverMenu } from './usePopoverMenu';
 import { VStack, HStack } from '../../layout';
 import { usePopoverChildren } from './usePopoverChildren';
 import { PopoverProvider } from './PopoverContext';
+import { usePopoverPosition } from './usePopoverPosition';
 
 export const popoverMenuStaticClassName = 'cds-popover-menu';
 
@@ -51,25 +53,50 @@ export const PopoverMenu = memo(
       });
       const {
         popoverMenuRef,
+        selectOptionRef,
         setPopper,
-        popperAttributes,
-        popoverStyles,
+        trigger,
+        popper,
         controlledElementAccessibilityProps,
       } = context;
 
-      const { trigger, childNodes } = usePopoverChildren(children);
+      const { triggerNode, childNodes } = usePopoverChildren(children);
+      const { popperStyles, popperAttributes } = usePopoverPosition(trigger, popper, menuGutter);
 
-      if (isDevelopment() && !trigger) {
+      const convertedWidth = typeof width === 'number' ? `${width}px` : width;
+
+      const popoverStyles: React.CSSProperties = useMemo(
+        () => ({
+          ...popperStyles.popper,
+          width: convertedWidth,
+          zIndex: zIndex.overlays.popoverMenu,
+        }),
+        [popperStyles, convertedWidth],
+      );
+
+      // when menu is opened, focuses already selected option or first option
+      useEffect(() => {
+        if (visible) {
+          if (selectOptionRef.current) {
+            selectOptionRef.current.focus();
+          } else if (popoverMenuRef.current) {
+            const selectOptions = popoverMenuRef.current?.querySelectorAll('[role="menuitem"]');
+            (selectOptions[0] as HTMLButtonElement).focus();
+          }
+        }
+      }, [popoverMenuRef, selectOptionRef, visible]);
+
+      if (isDevelopment() && !triggerNode) {
         throw Error('Popover requires a trigger element to be wrapped in PopoverTrigger');
       }
-      if (isDevelopment() && !children) {
+      if (isDevelopment() && !childNodes) {
         throw Error('Popover requires children');
       }
 
       return (
         <PopoverProvider value={context}>
           <HStack position="relative" width={flush ? '100%' : 'auto'} ref={ref} {...props}>
-            {trigger}
+            {triggerNode}
             {visible && (
               <div ref={setPopper} {...popperAttributes.popper} style={popoverStyles}>
                 <VStack

@@ -1,9 +1,6 @@
 import { PopoverMenuBaseProps } from '@cbhq/cds-common';
-import { useRef, useState, useEffect, useCallback, useMemo, FocusEvent } from 'react';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { menuGutter } from '@cbhq/cds-common/tokens/menu';
+import { useRef, useState, useCallback, useMemo, FocusEvent } from 'react';
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
-import { usePopoverPosition } from './usePopoverPosition';
 
 /** this hook stores all the shared logic between all the PopoverMenu sub components: PopoverTrigger, MenuItem, SelectOption, and PopoverMenu */
 export const usePopoverMenu = ({
@@ -32,31 +29,6 @@ export const usePopoverMenu = ({
   // used to generate unique aria labels and attributes
   const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
     useA11yControlledVisibility(visible, accessibilityLabel);
-
-  const { popperStyles, popperAttributes } = usePopoverPosition(trigger, popper, menuGutter);
-
-  const convertedWidth = typeof width === 'number' ? `${width}px` : width;
-
-  const popoverStyles: React.CSSProperties = useMemo(
-    () => ({
-      ...popperStyles.popper,
-      width: convertedWidth,
-      zIndex: zIndex.overlays.popoverMenu,
-    }),
-    [popperStyles, convertedWidth],
-  );
-
-  // when menu is opened, focuses already selected option or first option
-  useEffect(() => {
-    if (visible) {
-      if (selectOptionRef.current) {
-        selectOptionRef.current.focus();
-      } else if (popoverMenuRef.current) {
-        const selectOptions = popoverMenuRef.current?.querySelectorAll('[role="menuitem"]');
-        (selectOptions[0] as HTMLButtonElement).focus();
-      }
-    }
-  }, [popoverMenuRef, visible]);
 
   const togglePopoverMenuVisibility = useCallback(() => {
     if (visible) {
@@ -90,43 +62,48 @@ export const usePopoverMenu = ({
 
   return useMemo(
     () => ({
-      disabled,
+      // refs
       triggerRef,
+      selectOptionRef,
+      popoverMenuRef,
+      // props
+      disabled,
       sanitizedValue,
+      width,
+      flush,
+      // state
+      setTrigger,
+      setPopper,
+      togglePopoverMenuVisibility,
+      trigger,
+      popper,
+      // shared a11y
       controlledElementAccessibilityProps,
       triggerAccessibilityProps,
-      width,
-      setTrigger,
-      selectOptionRef,
-      onChange,
-      popoverMenuRef,
+      // shared event handlers
       handleExitMenu,
       handlePopoverMenuBlur,
-      setPopper,
-      popperAttributes,
-      popoverStyles,
-      flush,
-      togglePopoverMenuVisibility,
+      onChange,
       onBlur,
     }),
     [
-      disabled,
       triggerRef,
-      sanitizedValue,
-      triggerAccessibilityProps,
-      width,
-      setTrigger,
       selectOptionRef,
-      onChange,
       popoverMenuRef,
+      disabled,
+      sanitizedValue,
+      width,
+      flush,
+      setTrigger,
+      setPopper,
+      togglePopoverMenuVisibility,
+      trigger,
+      popper,
+      controlledElementAccessibilityProps,
+      triggerAccessibilityProps,
       handleExitMenu,
       handlePopoverMenuBlur,
-      setPopper,
-      popperAttributes,
-      popoverStyles,
-      controlledElementAccessibilityProps,
-      flush,
-      togglePopoverMenuVisibility,
+      onChange,
       onBlur,
     ],
   );

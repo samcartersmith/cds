@@ -22,7 +22,7 @@ export const usePopoverChildren = (children: ReactNode) => {
   );
 
   return {
-    trigger: trigger.current,
+    triggerNode: trigger.current,
     childNodes,
   };
 };

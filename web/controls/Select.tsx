@@ -34,7 +34,7 @@ export const Select = memo(
   ) {
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
     const [triggerHasFocus, toggleTriggerFocus] = useToggler(false);
-    const { rotateAnimationRef, animateCaretIn, animateCaretOut } = useRotate180Animation();
+    const { rotateAnimationRef } = useRotate180Animation(visible);
     const focusedVariant = useInputVariant(triggerHasFocus, variant);
 
     // this corrects for when value is initialized with an empty string, coerce it to undefined
@@ -44,12 +44,10 @@ export const Select = memo(
     useEffect(() => {
       if (visible) {
         toggleTriggerFocus.toggleOn();
-        void animateCaretIn();
       } else {
         toggleTriggerFocus.toggleOff();
-        void animateCaretOut();
       }
-    }, [animateCaretIn, animateCaretOut, visible, toggleTriggerFocus]);
+    }, [visible, toggleTriggerFocus]);
 
     const handleOnSelectPress = useCallback(() => {
       onPress?.();
@@ -65,6 +63,7 @@ export const Select = memo(
           openMenu={togglePopoverMenuVisibility.toggleOn}
           closeMenu={togglePopoverMenuVisibility.toggleOff}
           flush
+          width="100%"
         >
           <PopoverTriggerWrapper>
             <TextInputFocusVariantContext.Provider value={focusedVariant}>

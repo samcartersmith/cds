@@ -1,8 +1,26 @@
-import { createContext } from '@cbhq/cds-common/utils/createContext';
+import React from 'react';
 import { PopoverContextType } from './usePopoverMenu';
 
-export const { useContext: usePopoverContext, ContextProvider: PopoverProvider } =
-  createContext<PopoverContextType>(
-    'PopoverContext',
-    '`context` is undefined. PopoverProvider was not found higher up the tree. ',
-  );
+const errorMessage =
+  'PopoverContext is undefined. PopoverProvider was not found higher up the tree. ';
+
+const createPopoverContext = () => {
+  const PopoverContext = React.createContext<PopoverContextType | undefined>(undefined);
+  const PopoverProvider = PopoverContext.Provider;
+
+  const usePopoverContext = () => {
+    const context = React.useContext(PopoverContext);
+    if (!context) {
+      throw new Error(errorMessage);
+    }
+    return context;
+  };
+
+  return {
+    usePopoverContext,
+    PopoverProvider,
+    PopoverContext,
+  };
+};
+
+export const { usePopoverContext, PopoverProvider, PopoverContext } = createPopoverContext();

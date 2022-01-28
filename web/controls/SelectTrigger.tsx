@@ -76,7 +76,7 @@ export const SelectTrigger = memo(
                   </HStack>
                 )}
                 {compact ? (
-                  <HStack spacingEnd={1} alignItems="center" minWidth={0} maxWidth="40%">
+                  <HStack spacingEnd={1} alignItems="center" maxWidth="40%">
                     <InputLabel
                       color={labelTextColor}
                       overflow="truncate"
@@ -109,7 +109,7 @@ export const SelectTrigger = memo(
                       {value ?? placeholder ?? (!compact && label)}
                     </TextBody>
                   </HStack>
-                  <HStack alignItems="center" minWidth={0}>
+                  <HStack alignItems="center">
                     <InputIcon
                       ref={rotateAnimationRef}
                       name="caretDown"
