@@ -18,7 +18,8 @@ export type CardBaseProps = {
 } & DimensionStyles &
   OffsetProps &
   SharedProps &
-  SpacingProps;
+  SpacingProps &
+  SharedProps;
 
 export type CardHeaderBaseProps = {
   /** Absolute or Relative path to Avatar */

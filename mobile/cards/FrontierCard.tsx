@@ -24,6 +24,7 @@ export const FrontierCard: React.FC<CardProps> = memo(function FrontierCard({
   dangerouslySetStyle,
   width: widthProps,
   height: heightProps,
+  testID,
   ...props
 }) {
   const width = widthProps ?? cardSizes[size].width;
@@ -49,6 +50,7 @@ export const FrontierCard: React.FC<CardProps> = memo(function FrontierCard({
       width={onPress ? undefined : width}
       height={onPress ? undefined : height}
       dangerouslySetStyle={contentStyles}
+      testID={onPress ? undefined : testID}
       {...props}
     >
       {children}
@@ -56,7 +58,13 @@ export const FrontierCard: React.FC<CardProps> = memo(function FrontierCard({
   );
 
   return onPress ? (
-    <Pressable backgroundColor={bg} onPress={onPress} style={pressableStyles} noScaleOnPress>
+    <Pressable
+      testID={testID}
+      backgroundColor={bg}
+      onPress={onPress}
+      style={pressableStyles}
+      noScaleOnPress
+    >
       {content}
     </Pressable>
   ) : (

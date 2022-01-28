@@ -27,6 +27,7 @@ export const Card: React.FC<CardProps> = memo(
     pin,
     width: widthProps,
     height: heightProps,
+    testID,
     ...props
   }) => {
     const isFrontier = useFeatureFlag('frontierCard');
@@ -67,6 +68,7 @@ export const Card: React.FC<CardProps> = memo(
         width={linkable ? undefined : width}
         height={linkable ? undefined : height}
         overflow="hidden"
+        testID={linkable ? undefined : testID}
         {...props}
       >
         <>{children}</>
@@ -85,6 +87,7 @@ export const Card: React.FC<CardProps> = memo(
         to={to}
         width={width}
         height={height}
+        testID={testID}
       >
         {content}
       </Pressable>

@@ -20,6 +20,7 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
   dangerouslySetStyle,
   width: widthProps,
   height: heightProps,
+  testID,
   ...props
 }) {
   const width = widthProps ?? cardSizes[size].width;
@@ -36,6 +37,7 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
 
   const content = (
     <VStack
+      testID={onPress ? undefined : testID}
       borderRadius={borderRadius}
       background={onPress ? undefined : bg}
       pin={onPress ? undefined : pin}
@@ -51,6 +53,7 @@ const OldCard: React.FC<CardProps> = memo(function OldCard({
 
   return onPress ? (
     <Pressable
+      testID={testID}
       backgroundColor={bg}
       borderRadius={borderRadius}
       borderWidth="card"
