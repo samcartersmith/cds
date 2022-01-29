@@ -11,7 +11,7 @@ import { CellMedia } from '../../cells/CellMedia';
 import { FeedCard } from '../../cards/FeedCard';
 import { MenuItem } from '../MenuItem';
 import { Divider } from '../../layout/Divider';
-import { MenuSectionLabel } from '../MenuSectionLabel';
+import { SectionTitle } from '../PopoverMenu/SectionTitle';
 import { DotStatusColor } from '../../dots/DotStatusColor';
 
 export default {
@@ -35,7 +35,7 @@ const components = {
   FeedCard,
   Button,
   Divider,
-  MenuSectionLabel,
+  SectionTitle,
   DotStatusColor,
   AvatarButton,
 };

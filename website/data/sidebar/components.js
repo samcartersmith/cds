@@ -146,7 +146,7 @@ module.exports = {
       items: [
         'components/overlays/Alert/alert',
         'components/overlays/MenuItem/menu-item',
-        'components/overlays/MenuSectionLabel/menu-section-label',
+        'components/overlays/SectionTitle/section-title',
         'components/overlays/Toast/toast',
         'components/overlays/Tooltip/tooltip',
         'components/overlays/Modal/modal',

@@ -72,7 +72,7 @@ export type CreatePopoverMenuStoriesProps = {
   FeedCard: ComponentType<FeedCardBaseProps>;
   Button: ComponentType<ButtonBaseProps>;
   Divider: ComponentType<DividerBaseProps>;
-  MenuSectionLabel: ComponentType<TypographyProps>;
+  SectionTitle: ComponentType<TypographyProps>;
   DotStatusColor: ComponentType<DotBaseProps>;
   AvatarButton: ComponentType<AvatarBaseProps>;
 };
@@ -136,7 +136,7 @@ export const popoverMenuBuilder = ({
   FeedCard,
   Button,
   Divider,
-  MenuSectionLabel,
+  SectionTitle,
   DotStatusColor,
   AvatarButton,
 }: CreatePopoverMenuStoriesProps) => {
@@ -168,7 +168,7 @@ export const popoverMenuBuilder = ({
           <PopoverTrigger>
             <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />
           </PopoverTrigger>
-          <MenuSectionLabel text="Section Heading" />
+          <SectionTitle text="Section Heading" />
           {priceOptions.slice(0, 4).map((option) => (
             <SelectOption
               value={option}
@@ -180,7 +180,7 @@ export const popoverMenuBuilder = ({
             />
           ))}
           <Divider />
-          <MenuSectionLabel text="Section Heading" />
+          <SectionTitle text="Section Heading" />
           {priceOptions.slice(5, 9).map((option) => (
             <SelectOption
               value={option}
@@ -235,7 +235,7 @@ export const popoverMenuBuilder = ({
                   />
                 ))}
               </PopoverMenu>
-              <IconButton name="bell" variant="secondary" />
+              <IconButton transparent name="bell" variant="secondary" />
             </HStack>
           }
         >
@@ -327,7 +327,7 @@ export const popoverMenuBuilder = ({
               </PopoverTrigger>
             </DotStatusColor>
           </PopoverTriggerWrapper>
-          <MenuSectionLabel text="Manage your profile" />
+          <SectionTitle text="Manage your profile" />
           {accountOptions.map((option) => (
             <SelectOption
               value={option}
@@ -368,7 +368,7 @@ export const popoverMenuBuilder = ({
             <PopoverTrigger>
               <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />
             </PopoverTrigger>
-            <MenuSectionLabel text="Section Heading" />
+            <SectionTitle text="Section Heading" />
             {priceOptions.slice(0, 4).map((option) => (
               <SelectOption
                 value={option}
@@ -380,7 +380,7 @@ export const popoverMenuBuilder = ({
               />
             ))}
             <Divider />
-            <MenuSectionLabel text="Section Heading" />
+            <SectionTitle text="Section Heading" />
             {priceOptions.slice(5, 9).map((option) => (
               <SelectOption
                 value={option}

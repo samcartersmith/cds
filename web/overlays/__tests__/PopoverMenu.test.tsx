@@ -13,7 +13,7 @@ import { IconButton, AvatarButton } from '../../buttons';
 import { MenuItem } from '../MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { VStack } from '../../layout/VStack';
-import { MenuSectionLabel } from '../MenuSectionLabel';
+import { SectionTitle } from '../PopoverMenu/SectionTitle';
 import { Divider } from '../../layout/Divider';
 import { DotStatusColor } from '../../dots/DotStatusColor';
 
@@ -27,7 +27,7 @@ const { Default: MockPopoverMenu, AvatarButtonMenu } = popoverMenuBuilder({
   IconButton,
   ThemeProvider,
   VStack,
-  MenuSectionLabel,
+  SectionTitle,
   Divider,
   DotStatusColor,
   AvatarButton,

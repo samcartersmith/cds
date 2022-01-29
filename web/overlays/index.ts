@@ -7,7 +7,7 @@ export * from './Overlay/Overlay';
 export * from './PopoverMenu/PopoverMenu';
 export * from './Toast';
 export * from './Tooltip';
-export * from './MenuSectionLabel';
+export * from './PopoverMenu/SectionTitle';
 export * from './MenuItem';
 export * from './PopoverMenu/PopoverTrigger';
 export * from './PopoverMenu/PopoverTriggerWrapper';

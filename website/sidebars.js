@@ -7,7 +7,7 @@ const sectionsToExcludeByLabel = new Set([]);
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
-  'components/overlays/MenuSectionLabel/menu-section-label',
+  'components/overlays/SectionTitle/section-title',
   'components/overlays/PopoverMenu/popover-menu',
   'components/overlays/PopoverTrigger/popover-trigger',
   'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',

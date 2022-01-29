@@ -1,4 +1,4 @@
-`MenuSectionLabel` is to be used exclusively as a child of a `PopoverMenu` or `Select` to label a group of `SelectOption`s.
+`SectionTitle` is to be used exclusively as a child of a `PopoverMenu` or `Select` to label a group of `SelectOption`s.
 
 ```jsx live
 function NavigationMenu() {
@@ -43,7 +43,7 @@ function NavigationMenu() {
               <PopoverTrigger>
                 <IconButton transparent name="more" variant="secondary" />
               </PopoverTrigger>
-              <MenuSectionLabel text="For Individuals" />
+              <SectionTitle text="For Individuals" />
               {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                 <SelectOption
                   key={name}

@@ -9,6 +9,7 @@ export const usePopoverPosition = (
   gutter: number,
 ) => {
   const { styles: popperStyles, attributes: popperAttributes } = usePopper(trigger, popover, {
+    placement: 'bottom-start',
     modifiers: [
       {
         name: 'offset',

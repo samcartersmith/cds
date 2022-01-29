@@ -34,7 +34,8 @@ export const Select = memo(
   ) {
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
     const [triggerHasFocus, toggleTriggerFocus] = useToggler(false);
-    const { rotateAnimationRef } = useRotate180Animation(visible);
+    const [animationsEnabled, toggleAnimations] = useToggler(false);
+    const { rotateAnimationRef } = useRotate180Animation(visible, animationsEnabled);
     const focusedVariant = useInputVariant(triggerHasFocus, variant);
 
     // this corrects for when value is initialized with an empty string, coerce it to undefined
@@ -50,9 +51,10 @@ export const Select = memo(
     }, [visible, toggleTriggerFocus]);
 
     const handleOnSelectPress = useCallback(() => {
+      toggleAnimations.toggleOn();
       onPress?.();
       toggleTriggerFocus.toggleOn();
-    }, [toggleTriggerFocus, onPress]);
+    }, [toggleTriggerFocus, toggleAnimations, onPress]);
 
     return (
       <HStack width={width}>

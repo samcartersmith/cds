@@ -1540,23 +1540,23 @@ export const MenuItem = {
   ),
 };
 
-export const MenuSectionLabel = {
+export const SectionTitle = {
   implementation: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuSectionLabel/implementation.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/implementation.mdx'
       ),
   ),
-  'menu-section-label': React.lazy(
+  'section-title': React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuSectionLabel/menu-section-label.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/section-title.mdx'
       ),
   ),
   usage: React.lazy(
     async () =>
       import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuSectionLabel/usage.mdx'
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/usage.mdx'
       ),
   ),
 };

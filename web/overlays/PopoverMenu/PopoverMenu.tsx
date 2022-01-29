@@ -81,7 +81,9 @@ export const PopoverMenu = memo(
             selectOptionRef.current.focus();
           } else if (popoverMenuRef.current) {
             const selectOptions = popoverMenuRef.current?.querySelectorAll('[role="menuitem"]');
-            (selectOptions[0] as HTMLButtonElement).focus();
+            if (selectOptions.length) {
+              (selectOptions[0] as HTMLButtonElement).focus();
+            }
           }
         }
       }, [popoverMenuRef, selectOptionRef, visible]);

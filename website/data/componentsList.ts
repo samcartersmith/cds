@@ -60,7 +60,7 @@ export const components = [
   'SidebarItem',
   'Alert',
   'MenuItem',
-  'MenuSectionLabel',
+  'SectionTitle',
   'Toast',
   'Tooltip',
   'Modal',

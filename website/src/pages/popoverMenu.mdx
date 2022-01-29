@@ -65,21 +65,6 @@ function NavigationMenu() {
   const [value, setValue] = useState('');
   const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
-  const priceOptions = [
-    '666',
-    '2387',
-    '4542',
-    '54534',
-    '5435',
-    '77',
-    '123',
-    '4345345',
-    '6544',
-    '874',
-    '675765',
-    '65655',
-  ];
-
   const handleMenuValueChange = useCallback(
     (newValue) => {
       setValue(newValue);
@@ -224,7 +209,7 @@ function AvatarButtonMenu() {
             </PopoverTrigger>
           </DotStatusColor>
         </PopoverTriggerWrapper>
-        <MenuSectionLabel text="Manage your profile" />
+        <SectionTitle text="Manage your profile" />
         {accountOptions.map((option) => (
           <SelectOption
             value={option}
@@ -235,6 +220,115 @@ function AvatarButtonMenu() {
           />
         ))}
       </PopoverMenu>
+    </VStack>
+  );
+}
+```
+
+## App Switcher POC
+
+```jsx live
+function AppSwitcherPOC() {
+  const [value, setValue] = useState('');
+  const [visible, togglePopoverMenuVisibility] = useToggler(false);
+
+  const handleMenuValueChange = useCallback(
+    (newValue) => {
+      setValue(newValue);
+    },
+    [setValue],
+  );
+
+  return (
+    <VStack minHeight={500} background="background">
+      <NavigationBar
+        end={
+          <HStack gap={1}>
+            <PopoverMenu
+              width={360}
+              openMenu={togglePopoverMenuVisibility.toggleOn}
+              closeMenu={togglePopoverMenuVisibility.toggleOff}
+              visible={visible}
+              onChange={handleMenuValueChange}
+              value={value}
+            >
+              <PopoverTrigger>
+                <Pressable>
+                  <NavigationIcon name="appSwitcher" />
+                </Pressable>
+              </PopoverTrigger>
+              <SectionTitle text="For Individuals" />
+              <HStack
+                flexWrap="wrap"
+                spacingHorizontal={2}
+                justifyContent="center"
+                spacingBottom={1}
+              >
+                <MenuItem value="wallet">
+                  <PressableOpacity role="menu-item">
+                    <VStack height={106} width={106} alignItems="center" justifyContent="center">
+                      <Pictogram name="wallet" dimension="48x48" />
+                      <TextLabel2 as="p">Wallet</TextLabel2>
+                    </VStack>
+                  </PressableOpacity>
+                </MenuItem>
+                <MenuItem value="coinbase">
+                  <PressableOpacity role="menu-item">
+                    <VStack height={106} width={106} alignItems="center" justifyContent="center">
+                      <Pictogram name="coinbaseOneLogoPictogram" dimension="48x48" />
+                      <TextLabel2 as="p">Coinbase</TextLabel2>
+                    </VStack>
+                  </PressableOpacity>
+                </MenuItem>
+                <MenuItem value="private">
+                  <PressableOpacity role="menu-item">
+                    <VStack height={106} width={106} alignItems="center" justifyContent="center">
+                      <Pictogram name="gem" dimension="48x48" />
+                      <TextLabel2 as="p">Private Client</TextLabel2>
+                    </VStack>
+                  </PressableOpacity>
+                </MenuItem>
+              </HStack>
+              <Divider />
+              <SectionTitle text="For Businesses" />
+              <HStack
+                flexWrap="wrap"
+                spacingHorizontal={2}
+                justifyContent="center"
+                spacingBottom={2}
+              >
+                <MenuItem value="prime">
+                  <PressableOpacity role="menu-item">
+                    <VStack height={106} width={106} alignItems="center" justifyContent="center">
+                      <Pictogram name="pieChart" dimension="48x48" />
+                      <TextLabel2 as="p">Prime</TextLabel2>
+                    </VStack>
+                  </PressableOpacity>
+                </MenuItem>
+                <MenuItem value="commerce">
+                  <PressableOpacity role="menu-item">
+                    <VStack height={106} width={106} alignItems="center" justifyContent="center">
+                      <Pictogram name="moreThanBitcoin" dimension="48x48" />
+                      <TextLabel2 as="p">Commerce</TextLabel2>
+                    </VStack>
+                  </PressableOpacity>
+                </MenuItem>
+                <MenuItem value="custody">
+                  <PressableOpacity role="menu-item">
+                    <VStack height={106} width={106} alignItems="center" justifyContent="center">
+                      <Pictogram name="coinbaseOneShield" dimension="48x48" />
+                      <TextLabel2 as="p">Custody</TextLabel2>
+                    </VStack>
+                  </PressableOpacity>
+                </MenuItem>
+              </HStack>
+            </PopoverMenu>
+            <IconButton transparent name="bell" variant="secondary" />
+          </HStack>
+        }
+      >
+        <NavigationTitle>Trade</NavigationTitle>
+      </NavigationBar>
     </VStack>
   );
 }
