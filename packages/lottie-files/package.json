@@ -14,8 +14,8 @@
     "format": "lib",
     "platform": "node"
   },
-  "types": "./dts/index.d.ts",
-  "main": "./lib/index.js",
+  "types": "./index.d.ts",
+  "main": "./index.js",
   "exports": {
     "./package.json": "./package.json",
     "./*": {

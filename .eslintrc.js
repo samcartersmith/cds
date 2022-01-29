@@ -30,7 +30,8 @@ module.exports = {
     {
       files: [
         '**/*.test.ts',
-        '**/*.test.tsx'
+        '**/*.test.tsx',
+        '**/*.stories.tsx'
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off'

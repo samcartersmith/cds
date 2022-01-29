@@ -8,10 +8,6 @@
     "helpers"
   ],
   "authors": "Coinbase",
-  "packemon": {
-    "format": "lib",
-    "platform": "node"
-  },
   "dependencies": {
     "humps": "^2.0.1",
     "type-fest": "1.2.0"
@@ -19,22 +15,6 @@
   "devDependencies": {
     "@types/humps": "^2.0.0"
   },
-  "types": "./dts/index.d.ts",
-  "main": "./lib/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "node": "./lib/*.js",
-      "types": "./dts/*.d.ts"
-    },
-    ".": {
-      "node": "./lib/index.js",
-      "types": "./dts/index.d.ts"
-    }
-  },
-  "files": [
-    "dts/**/*.d.ts",
-    "lib/**/*.{js,map}",
-    "src/**/*.{ts,tsx,json}"
-  ]
+  "types": "./index.d.ts",
+  "main": "./index.ts"
 }

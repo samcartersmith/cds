@@ -30,11 +30,16 @@ The task list below is needed to get the hello world of the poly repo. There are
 - [x] utils
 - [x] mobile
 - [x] lottie-files
-- [ ] fonts
+- [x] fonts
+- [x] web
+- [x] web utils (webpack, jest, etc.)
 - [ ] codegen
-- [ ] web
-- [ ] website (Includes stylelint)
+- [ ] website
 - [ ] codemod
+
+#### Stylelint
+
+- [ ] web
 
 #### npm package building
 

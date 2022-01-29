@@ -1,0 +1,19 @@
+import { CellMediaType, SharedProps } from '@cbhq/cds-common';
+
+import { TableCellProps } from './tableCellTypes';
+
+export type TableCellFallbackProps = {
+  /** Display title shimmer. */
+  title?: boolean;
+  /** Display subtitle shimmer. */
+  subtitle?: boolean;
+  /** Display start shimmer with a shape according to type. */
+  start?: CellMediaType;
+  /** Display end shimmer with a shape according to type. */
+  end?: CellMediaType;
+  /**
+   * HTML width attribute to help with column layout
+   * @default undefined
+   */
+  width?: TableCellProps['width'];
+} & SharedProps;

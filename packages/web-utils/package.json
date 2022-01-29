@@ -1,0 +1,40 @@
+{
+  "name": "@cbhq/cds-web-utils",
+  "version": "0.0.0",
+  "description": "Jest utils and developer tools.",
+  "dependencies": {
+    "@babel/types": "^7.14.4",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
+    "chalk": "4.1.0",
+    "dotenv": "8.2.0",
+    "dotenv-webpack": "7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "jest-axe": "4.1.0",
+    "linaria": "2.3.1",
+    "mini-css-extract-plugin": "2.2.0",
+    "node-polyfill-webpack-plugin": "1.1.4",
+    "prettier": "^2.4.1",
+    "source-map": "0.7.3",
+    "stylis": "^3.5.4",
+    "yargs": "^15.3.1"
+  },
+  "peerDependencies": {
+    "@testing-library/react": "11.2.5"
+  },
+  "keywords": [
+    "web utils"
+  ],
+  "devDependencies": {
+    "@testing-library/react": "11.2.5",
+    "@types/babel__core": "^7.1.14",
+    "@types/dotenv-webpack": "7.0.3",
+    "@types/jest-axe": "3.5.1",
+    "@types/mini-css-extract-plugin": "2.2.0",
+    "@types/node": "^14.0.14",
+    "@types/prettier": "^2.4.3",
+    "@types/react": "^17.0.3",
+    "@types/yargs": "15.0.5"
+  },
+  "types": "./index.d.ts",
+  "main": "./index.js"
+}
