@@ -1,3 +1,4 @@
+export * from './AccordionBaseProps';
 export * from './AlertBaseProps';
 export * from './AvatarBaseProps';
 export * from './BorderRadius';
