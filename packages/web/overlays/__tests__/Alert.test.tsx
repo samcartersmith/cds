@@ -1,0 +1,97 @@
+import { fireEvent, render, waitFor } from '@testing-library/react';
+import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
+import { Animated } from '../../animation/Animated';
+import { Button } from '../../buttons';
+import { Alert } from '../Alert';
+import { PortalProvider } from '../PortalProvider';
+
+const { MockAlert } = alertBuilder({
+  Alert,
+  Button,
+  PortalProvider,
+} as CreateAlertProps);
+
+const animationParallelSpy = jest.spyOn(Animated, 'parallel');
+const animationTimingSpy = jest.spyOn(Animated, 'timing');
+
+describe('Alert', () => {
+  it('passes a11y', async () => {
+    expect(await renderA11y(<MockAlert visible />)).toHaveNoViolations();
+  });
+
+  it('passes a11y when visible', async () => {
+    expect(
+      await renderA11y(<MockAlert />, {
+        async afterRender({ container, getByRole }) {
+          fireEvent.click(container.querySelector('button') as Element);
+
+          return waitFor(() => getByRole('dialog'));
+        },
+      }),
+    ).toHaveNoViolations();
+  });
+
+  it('show alert on press', async () => {
+    const { getByRole, getByText } = render(<MockAlert />);
+
+    fireEvent.click(getByText('Show Alert'));
+
+    const alert = await waitFor(() => getByRole('dialog'));
+    // in animation
+    expect(animationParallelSpy).toHaveBeenCalled();
+    expect(animationTimingSpy).toHaveBeenCalled();
+
+    expect(alert).toBeTruthy();
+  });
+
+  it('renders title', () => {
+    const title = 'Test title';
+    const { getByText } = render(<MockAlert visible title={title} />);
+
+    expect(getByText(title)).toBeTruthy();
+  });
+
+  it('renders body', () => {
+    const body = 'Test body';
+    const { getByText } = render(<MockAlert visible body={body} />);
+
+    expect(getByText(body)).toBeTruthy();
+  });
+
+  it('renders preferred action', () => {
+    const onPreferredActionPress = jest.fn();
+    const onRequestClose = jest.fn();
+
+    const { getByText } = render(
+      <MockAlert
+        visible
+        preferredActionLabel="Save"
+        onPreferredActionPress={onPreferredActionPress}
+        onRequestClose={onRequestClose}
+      />,
+    );
+
+    fireEvent.click(getByText('Save'));
+
+    expect(onPreferredActionPress).toHaveBeenCalledTimes(1);
+    // out animation
+    expect(animationParallelSpy).toHaveBeenCalled();
+    expect(animationTimingSpy).toHaveBeenCalled();
+  });
+
+  it('renders dismiss action', () => {
+    const onRequestClose = jest.fn();
+
+    const { getByText } = render(
+      <MockAlert visible dismissActionLabel="Cancel" onRequestClose={onRequestClose} />,
+    );
+
+    fireEvent.click(getByText('Cancel'));
+
+    // out animation
+    expect(animationParallelSpy).toHaveBeenCalled();
+    expect(animationTimingSpy).toHaveBeenCalled();
+  });
+});

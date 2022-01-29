@@ -4,6 +4,9 @@
     "common": "packages/common",
     "utils": "packages/utils",
     "mobile": "packages/mobile",
-    "lottie-files": "packages/lottie-files"
+    "lottie-files": "packages/lottie-files",
+    "web": "packages/web",
+    "fonts": "packages/fonts",
+    "web-utils": "packages/web-utils"
   }
 }

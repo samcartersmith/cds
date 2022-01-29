@@ -1,30 +1,30 @@
 define HELP_TEXT
 Help:
 -----
-  $$ make build.common              -- Build the `common` package.
-  $$ make build.utils               -- Build the `utils` package.
-  $$ make build.mobile              -- Build the `mobile` package.
-  $$ make build.all                 -- Build all of the affected packages
 
   $$ make format.common             -- Format the `common` package.
   $$ make format.utils              -- Format the `utils` package.
   $$ make format.mobile             -- Format the `mobile` package.
+  $$ make format.web                -- Format the `web` package.
   $$ make format.all                -- Format all of the affected packages
 
   $$ make lint.common               -- lint the `common` package.
   $$ make lint.utils                -- lint the `utils` package.
   $$ make lint.mobile               -- lint the `mobile` package.
+  $$ make lint.web                  -- lint the `web` package.
   $$ make lint                      -- lint all of the affected packages
   $$ make lint.fix                  -- lint all of the affected packages and fix errors
 
   $$ make test.common               -- test the `common` package.
   $$ make test.utils                -- test the `utils` package.
   $$ make test.mobile               -- test the `mobile` package.
+  $$ make test.web                  -- test the `web` package.
   $$ make test.all                  -- test all of the affected packages
 
   $$ make typecheck.common          -- typecheck the `common` package.
   $$ make typecheck.utils           -- typecheck the `utils` package.
   $$ make typecheck.mobile          -- typecheck the `mobile` package.
+  $$ make typecheck.web             -- typecheck the `web` package.
   $$ make typecheck.all             -- typecheck all of the affected packages
 
 endef
@@ -33,22 +33,6 @@ export HELP_TEXT
 .PHONY: help
 help:
 	@echo "$$HELP_TEXT"
-
-.PHONY: build.common
-build.common:
-	nx build common
-
-.PHONY: build.utils
-build.utils:
-	nx build utils
-
-.PHONY: build.mobile
-build.mobile:
-	nx build mobile
-
-.PHONY: build.all
-build.all:
-	nx affected --target=build --all
 
 .PHONY: format.common
 format.common:
@@ -61,6 +45,10 @@ format.utils:
 .PHONY: format.mobile
 format.mobile:
 	nx format mobile
+
+.PHONY: format.web
+format.web:
+	nx format web
 
 .PHONY: format.all
 format.all:
@@ -77,6 +65,10 @@ lint.utils:
 .PHONY: lint.mobile
 lint.mobile:
 	nx lint mobile
+
+.PHONY: lint.web
+lint.web:
+	nx lint web
 
 .PHONY: lint
 lint:
@@ -98,6 +90,10 @@ test.utils:
 test.mobile:
 	nx test mobile
 
+.PHONY: test.web
+test.web:
+	nx test web
+
 .PHONY: test.all
 test.all:
 	nx affected --target=test --all
@@ -113,6 +109,10 @@ typecheck.utils:
 .PHONY: typecheck.mobile
 typecheck.mobile:
 	nx typecheck mobile
+
+.PHONY: typecheck.web
+typecheck.web:
+	nx typecheck web
 
 .PHONY: typecheck.all
 typecheck.all:

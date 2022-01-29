@@ -12,11 +12,6 @@
     "types"
   ],
   "authors": "Coinbase",
-  "typings": "./dts/index.d.ts",
-  "packemon": {
-    "format": "lib",
-    "platform": "node"
-  },
   "dependencies": {
     "@cbhq/cds-utils": "*",
     "@types/react-is": "17.0.2",
@@ -43,22 +38,6 @@
     "@types/react": "^17.0.3",
     "react-test-renderer": "17.0.2"
   },
-  "types": "./dts/index.d.ts",
-  "main": "./lib/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "node": "./lib/*.js",
-      "types": "./dts/*.d.ts"
-    },
-    ".": {
-      "node": "./lib/index.js",
-      "types": "./dts/index.d.ts"
-    }
-  },
-  "files": [
-    "dts/**/*.d.ts",
-    "lib/**/*.{js,map}",
-    "src/**/*.{ts,tsx,json}"
-  ]
+  "types": "./index.d.ts",
+  "main": "./index.js"
 }

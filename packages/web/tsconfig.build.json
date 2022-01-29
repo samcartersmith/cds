@@ -1,0 +1,31 @@
+{
+  "extends": "../../tsconfig.buildOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dts/packages/web",
+    "baseUrl": "./"
+  },
+  "include": [
+    "**/*",
+  ],
+  "exclude": [
+    "**/*.stories.*",
+    "**/*.test.*"
+  ],
+  "references": [
+    {
+      "path": "../utils"
+    },
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../lottie-files"
+    },
+    {
+      "path": "../fonts"
+    },
+    {
+      "path": "../web-utils"
+    }
+  ]
+}
