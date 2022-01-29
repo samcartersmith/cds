@@ -1,141 +1,80 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, { useMemo, memo } from 'react';
+import { Platform } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
+import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
+import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
+import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
+import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
+import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
 
-// @ts-ignore
+import {
+  ExamplesSearchProvider,
+  useExampleScreenOptions,
+  routes,
+} from '@cbhq/cds-mobile/examples/Examples';
 
-const App = () => {
+// this code allows the use of toLocaleString() on Android
+if (Platform.OS === 'android') {
+  // eslint-disable-next-line global-require
+  require('intl');
+  // eslint-disable-next-line global-require
+  require('intl/locale-data/jsonp/en-US');
+}
+
+const Stack = createStackNavigator();
+
+const AppContent = memo(() => {
+  const screenOptions = useExampleScreenOptions();
+
   return (
-    <View style={styles.section}>
-      <Text style={styles.textLg}>Hello there,</Text>
-      <Text style={[styles.textXL, styles.appTitleText]} testID="heading">
-        Welcome MobilePlayground 👋
-      </Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName={screenOptions.initialRouteName}
+        screenOptions={screenOptions.screenOptions}
+      >
+        {useMemo(
+          () =>
+            routes.map((route) => (
+              <Stack.Screen
+                key={route.key}
+                name={route.name}
+                getComponent={route.getComponent}
+                options={route.options}
+              />
+            )),
+          [],
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: '#ffffff',
-  },
-  codeBlock: {
-    backgroundColor: 'rgba(55, 65, 81, 1)',
-    marginVertical: 12,
-    padding: 12,
-    borderRadius: 4,
-  },
-  monospace: {
-    color: '#ffffff',
-    fontFamily: 'Courier New',
-    marginVertical: 4,
-  },
-  comment: {
-    color: '#cccccc',
-  },
-  marginBottomSm: {
-    marginBottom: 6,
-  },
-  marginBottomMd: {
-    marginBottom: 18,
-  },
-  marginBottomLg: {
-    marginBottom: 24,
-  },
-  textLight: {
-    fontWeight: '300',
-  },
-  textBold: {
-    fontWeight: '500',
-  },
-  textCenter: {
-    textAlign: 'center',
-  },
-  text2XS: {
-    fontSize: 12,
-  },
-  textXS: {
-    fontSize: 14,
-  },
-  textSm: {
-    fontSize: 16,
-  },
-  textMd: {
-    fontSize: 18,
-  },
-  textLg: {
-    fontSize: 24,
-  },
-  textXL: {
-    fontSize: 48,
-  },
-  textContainer: {
-    marginVertical: 12,
-  },
-  textSubtle: {
-    color: '#6b7280',
-  },
-  section: {
-    marginVertical: 24,
-    marginHorizontal: 12,
-  },
-  shadowBox: {
-    backgroundColor: 'white',
-    borderRadius: 24,
-    shadowColor: 'black',
-    shadowOpacity: 0.15,
-    shadowOffset: {
-      width: 1,
-      height: 4,
-    },
-    shadowRadius: 12,
-    padding: 24,
-    marginBottom: 24,
-  },
-  listItem: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  listItemTextContainer: {
-    marginLeft: 12,
-    flex: 1,
-  },
-  appTitleText: {
-    paddingTop: 12,
-    fontWeight: '500',
-  },
-  hero: {
-    borderRadius: 12,
-    backgroundColor: '#143055',
-    padding: 36,
-    marginBottom: 24,
-  },
-  heroTitle: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  heroTitleText: {
-    color: '#ffffff',
-    marginLeft: 12,
-  },
-  heroText: {
-    color: '#ffffff',
-    marginVertical: 12,
-  },
-  whatsNextButton: {
-    backgroundColor: '#ffffff',
-    paddingVertical: 16,
-    borderRadius: 8,
-    width: '50%',
-    marginTop: 24,
-  },
-  learning: {
-    marginVertical: 12,
-  },
-  love: {
-    marginTop: 12,
-    justifyContent: 'center',
-  },
+});
+
+const CdsSafeAreaProvider: React.FC = memo(({ children }) => {
+  const { background } = usePalette();
+  const style = useMemo(() => ({ backgroundColor: background }), [background]);
+  return <SafeAreaProvider style={style}>{children}</SafeAreaProvider>;
+});
+
+const App = memo(() => {
+  return (
+    <FeatureFlagProvider>
+      <DevicePreferencesProvider>
+        <ThemeProvider>
+          <CdsSafeAreaProvider>
+            <PortalProvider>
+              <StatusBar />
+              <ExamplesSearchProvider>
+                <AppContent />
+              </ExamplesSearchProvider>
+            </PortalProvider>
+          </CdsSafeAreaProvider>
+        </ThemeProvider>
+      </DevicePreferencesProvider>
+    </FeatureFlagProvider>
+  );
 });
 
 export default App;

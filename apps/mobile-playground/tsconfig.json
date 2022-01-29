@@ -22,7 +22,16 @@
   "references": [
     {
       "path": "./tsconfig.app.json"
-    }
+    },
+    {
+      "path": "../../packages/mobile"
+    },
+    {
+      "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/fonts"
+    },
   ],
   "exclude": [
     "node_modules"

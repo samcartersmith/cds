@@ -36,12 +36,19 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mailto</string>
+		<string>tel</string>
+		<string>facetime</string>
+		<string>sms</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -51,5 +58,21 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Inter-Regular.otf</string>
+		<string>Graphik-Medium.otf</string>
+		<string>Graphik-Regular.otf</string>
+		<string>CoinbaseIcons.ttf</string>
+		<string>Inter-Semi-Bold.otf</string>
+		<string>CoinbaseDisplay-Medium.otf</string>
+		<string>CoinbaseDisplay-Regular.otf</string>
+		<string>CoinbaseSans-Medium.otf</string>
+		<string>CoinbaseSans-Regular.otf</string>
+		<string>CoinbaseText-Medium.otf</string>
+		<string>CoinbaseText-Regular.otf</string>
+		<string>CoinbaseMono-Medium.otf</string>
+		<string>CoinbaseMono-Regular.otf</string>
+	</array>
 </dict>
 </plist>
