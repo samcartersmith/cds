@@ -1,9 +1,11 @@
+import { ReactNode } from 'react';
 import { NoopFn } from './Helpers';
 import { SharedProps } from './SharedProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 
 /** Menu is exclusively for Web ONLY. Use Tray for Mobile */
 export type PopoverMenuBaseProps = {
+  children: ReactNode[];
   /** Callback that is fired whenever a select option is selected */
   onChange?: (newValue: string) => void;
   /** Default selected value, or preselected value */
@@ -35,6 +37,10 @@ export type PopoverMenuBaseProps = {
    * @default false
    */
   flush?: boolean;
+  /** Does not render the PopoverMenu inside of a portal (react-dom createPortal).
+   * Portal is automatically disabled for SSR
+   * */
+  disablePortal?: boolean;
 } & SharedProps &
   Pick<
     SharedAccessibilityProps,

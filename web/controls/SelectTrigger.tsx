@@ -1,7 +1,8 @@
 import React, { RefObject, forwardRef, memo } from 'react';
-import { ForwardedRef, SelectBaseProps } from '@cbhq/cds-common';
+import { ForwardedRef, InputVariant, SelectBaseProps } from '@cbhq/cds-common';
 import { css } from 'linaria';
 import { labelTextColor } from '@cbhq/cds-common/tokens/select';
+import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { TextBody } from '../typography/TextBody';
 import { InputIcon } from './InputIcon';
 import { PressableOpacity } from '../system';
@@ -10,6 +11,7 @@ import { PopoverTrigger, PopoverTriggerProps } from '../overlays/PopoverMenu/Pop
 import { InputLabel } from './InputLabel';
 import { useA11yId } from '../hooks/useA11yId';
 import { SelectStack } from './SelectStack';
+import { TextInputFocusVariantContext } from './context';
 
 export type SelectTriggerProps = {
   rotateAnimationRef: RefObject<HTMLDivElement>;
@@ -49,6 +51,8 @@ export const SelectTrigger = memo(
     ) => {
       const accessibilityLabelId = useA11yId();
       const accessibilityDescriptionId = useA11yId();
+      const focusedVariant = useInputVariant(triggerHasFocus, variant as InputVariant);
+
       return (
         <SelectStack
           compact={compact}
@@ -62,13 +66,7 @@ export const SelectTrigger = memo(
           accessibilityDescriptionId={accessibilityDescriptionId}
         >
           <PopoverTrigger onPress={onPress}>
-            <PressableOpacity
-              width="100%"
-              noScaleOnPress
-              className={pressableOverrides}
-              ref={ref}
-              {...props}
-            >
+            <PressableOpacity width="100%" noScaleOnPress className={pressableOverrides} {...props}>
               <HStack width="100%" minWidth={0} spacingStart={startNode ? 0 : 2}>
                 {!!startNode && (
                   <HStack alignItems="center" justifyContent="center" minWidth={0}>
@@ -110,11 +108,9 @@ export const SelectTrigger = memo(
                     </TextBody>
                   </HStack>
                   <HStack alignItems="center">
-                    <InputIcon
-                      ref={rotateAnimationRef}
-                      name="caretDown"
-                      color={triggerHasFocus ? 'primary' : variant}
-                    />
+                    <TextInputFocusVariantContext.Provider value={focusedVariant ?? undefined}>
+                      <InputIcon ref={rotateAnimationRef} name="caretDown" />
+                    </TextInputFocusVariantContext.Provider>
                   </HStack>
                 </HStack>
               </HStack>

@@ -1,26 +1,15 @@
-import React, { forwardRef, memo, ReactNode, useEffect, useMemo } from 'react';
-import { popoverMenuMaxHeight, menuGutter } from '@cbhq/cds-common/tokens/menu';
+import React, { forwardRef, memo, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import { popoverMenuMaxHeight } from '@cbhq/cds-common/tokens/menu';
 import { ForwardedRef, PopoverMenuBaseProps } from '@cbhq/cds-common/types';
-import { isDevelopment } from '@cbhq/cds-utils';
-import { css } from 'linaria';
+import { generateRandomId, isDevelopment } from '@cbhq/cds-utils';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { cx } from '../../utils/linaria';
+import { isSSR } from '../../utils/browser';
 import { usePopoverMenu } from './usePopoverMenu';
-import { VStack, HStack } from '../../layout';
+import { HStack } from '../../layout';
 import { usePopoverChildren } from './usePopoverChildren';
 import { PopoverProvider } from './PopoverContext';
-import { usePopoverPosition } from './usePopoverPosition';
-
-export const popoverMenuStaticClassName = 'cds-popover-menu';
-
-const popoverStyleOverrides = css`
-  overflow-y: auto;
-  overflow-x: hidden;
-`;
-
-export type PopoverMenuProps = {
-  children: ReactNode[];
-} & PopoverMenuBaseProps;
+import { PopoverContent } from './PopoverContent';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const PopoverMenu = memo(
@@ -36,10 +25,12 @@ export const PopoverMenu = memo(
         flush,
         openMenu,
         closeMenu,
+        disablePortal,
         ...props
-      }: PopoverMenuProps,
+      }: PopoverMenuBaseProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
+      const { triggerNode, childNodes } = usePopoverChildren(children);
       const context = usePopoverMenu({
         onChange,
         value,
@@ -51,28 +42,11 @@ export const PopoverMenu = memo(
         closeMenu,
         ...props,
       });
-      const {
-        popoverMenuRef,
-        selectOptionRef,
-        setPopper,
-        trigger,
-        popper,
-        controlledElementAccessibilityProps,
-      } = context;
+      const { popoverMenuRef, selectOptionRef } = context;
 
-      const { triggerNode, childNodes } = usePopoverChildren(children);
-      const { popperStyles, popperAttributes } = usePopoverPosition(trigger, popper, menuGutter);
-
-      const convertedWidth = typeof width === 'number' ? `${width}px` : width;
-
-      const popoverStyles: React.CSSProperties = useMemo(
-        () => ({
-          ...popperStyles.popper,
-          width: convertedWidth,
-          zIndex: zIndex.overlays.popoverMenu,
-        }),
-        [popperStyles, convertedWidth],
-      );
+      const containerPrefix = 'cds-popover-menu-container-';
+      // have to store it in a ref because PopperJS renders twice on mount causing issues with createPortal grabbing the id
+      const containerId = useRef<string>(generateRandomId(containerPrefix));
 
       // when menu is opened, focuses already selected option or first option
       useEffect(() => {
@@ -88,6 +62,16 @@ export const PopoverMenu = memo(
         }
       }, [popoverMenuRef, selectOptionRef, visible]);
 
+      const renderContent = () => {
+        if (isSSR() || disablePortal || !document.getElementById(containerId.current)) {
+          return <PopoverContent>{childNodes}</PopoverContent>;
+        }
+        return createPortal(
+          <PopoverContent>{childNodes}</PopoverContent>,
+          document.getElementById(containerId.current) as Element,
+        );
+      };
+
       if (isDevelopment() && !triggerNode) {
         throw Error('Popover requires a trigger element to be wrapped in PopoverTrigger');
       }
@@ -99,23 +83,9 @@ export const PopoverMenu = memo(
         <PopoverProvider value={context}>
           <HStack position="relative" width={flush ? '100%' : 'auto'} ref={ref} {...props}>
             {triggerNode}
-            {visible && (
-              <div ref={setPopper} {...popperAttributes.popper} style={popoverStyles}>
-                <VStack
-                  ref={popoverMenuRef}
-                  {...controlledElementAccessibilityProps}
-                  background
-                  elevation={2}
-                  width={width ?? '100%'}
-                  borderRadius="popover"
-                  role="menu"
-                  maxHeight={maxHeight}
-                  dangerouslySetClassName={cx(popoverMenuStaticClassName, popoverStyleOverrides)}
-                >
-                  {childNodes}
-                </VStack>
-              </div>
-            )}
+            <div id={containerId.current} style={{ zIndex: zIndex.overlays.popoverMenu }}>
+              {visible && renderContent()}
+            </div>
           </HStack>
         </PopoverProvider>
       );

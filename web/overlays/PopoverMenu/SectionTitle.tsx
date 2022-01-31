@@ -12,8 +12,10 @@ export type SectionTitleProps = {
  */
 export const SectionTitle = ({ text }: SectionTitleProps) => {
   return (
-    <HStack spacingHorizontal={2} spacingTop={3} spacingBottom={2}>
-      <TextCaption as="p">{text}</TextCaption>
+    <HStack spacingHorizontal={2} spacingVertical={2}>
+      <TextCaption as="p" color="foregroundMuted">
+        {text}
+      </TextCaption>
     </HStack>
   );
 };

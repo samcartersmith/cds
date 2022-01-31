@@ -13,6 +13,7 @@ import { MenuItem } from '../MenuItem';
 import { Divider } from '../../layout/Divider';
 import { SectionTitle } from '../PopoverMenu/SectionTitle';
 import { DotStatusColor } from '../../dots/DotStatusColor';
+import { PortalProvider } from '../PortalProvider';
 
 export default {
   title: 'Core Components/PopoverMenu',
@@ -38,6 +39,7 @@ const components = {
   SectionTitle,
   DotStatusColor,
   AvatarButton,
+  PortalProvider,
 };
 
 export const { Default, NavigationMenu, FeedCardMenu, AvatarButtonMenu, FrontierMenu } =

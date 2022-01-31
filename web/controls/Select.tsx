@@ -1,4 +1,4 @@
-import React, { useEffect, memo, forwardRef, ForwardedRef, useCallback, ReactElement } from 'react';
+import React, { memo, forwardRef, ForwardedRef, useCallback, ReactElement, useEffect } from 'react';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
 import { useToggler } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
@@ -41,14 +41,17 @@ export const Select = memo(
     // this corrects for when value is initialized with an empty string, coerce it to undefined
     const sanitizedValue = value === '' ? undefined : value;
 
-    // toggle focus animations for InputStack and caret whether menu is open or not
+    // toggle focus animations for InputStack when menu is open
     useEffect(() => {
       if (visible) {
         toggleTriggerFocus.toggleOn();
-      } else {
-        toggleTriggerFocus.toggleOff();
       }
+      // TODO: if !visible and menu was closed because an option was selected, toggleTriggerFocus.toggleOn();
     }, [visible, toggleTriggerFocus]);
+
+    const handleBlur = useCallback(() => {
+      toggleTriggerFocus.toggleOff();
+    }, [toggleTriggerFocus]);
 
     const handleOnSelectPress = useCallback(() => {
       toggleAnimations.toggleOn();
@@ -66,6 +69,7 @@ export const Select = memo(
           closeMenu={togglePopoverMenuVisibility.toggleOff}
           flush
           width="100%"
+          onBlur={handleBlur}
         >
           <PopoverTriggerWrapper>
             <TextInputFocusVariantContext.Provider value={focusedVariant}>

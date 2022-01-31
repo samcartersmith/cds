@@ -7,6 +7,7 @@ export const usePopoverMenu = ({
   onChange,
   value,
   width = '100%',
+  maxHeight,
   visible,
   disabled = false,
   openMenu,
@@ -14,7 +15,7 @@ export const usePopoverMenu = ({
   accessibilityLabel,
   onBlur,
   flush,
-}: PopoverMenuBaseProps) => {
+}: Omit<PopoverMenuBaseProps, 'children'>) => {
   // TODO: These are necessary callback refs to make PopperJS work. They are causing double renders, will be looking at another third party solution in separate PR
   const [trigger, setTrigger] = useState<HTMLElement | null>(null);
   const [popper, setPopper] = useState<HTMLDivElement | null>(null);
@@ -70,6 +71,7 @@ export const usePopoverMenu = ({
       disabled,
       sanitizedValue,
       width,
+      maxHeight,
       flush,
       // state
       setTrigger,
@@ -93,6 +95,7 @@ export const usePopoverMenu = ({
       disabled,
       sanitizedValue,
       width,
+      maxHeight,
       flush,
       setTrigger,
       setPopper,

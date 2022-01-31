@@ -30,11 +30,6 @@ type MenuItemProps = {
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
 } & LinkableProps;
 
-export type PopoverMenuProps = {
-  children: ReactNode[];
-  onChange?: (newValue: string) => void;
-} & PopoverMenuBaseProps;
-
 export type PopoverTriggerProps = {
   children: ReactElement;
 };
@@ -58,7 +53,7 @@ type PopoverTriggerWrapperProps = {
 };
 
 export type CreatePopoverMenuStoriesProps = {
-  PopoverMenu: ComponentType<PopoverMenuProps>;
+  PopoverMenu: ComponentType<PopoverMenuBaseProps>;
   PopoverTrigger: ComponentType<PopoverTriggerProps>;
   PopoverTriggerWrapper: ComponentType<PopoverTriggerWrapperProps>;
   VStack: ComponentType<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>;
@@ -120,7 +115,7 @@ const navigationOptions: NavigationOptions[] = [
 
 type DefaultPopoverMenuProps = {
   triggerTestID?: string;
-} & Pick<PopoverMenuProps, 'testID'>;
+} & Pick<PopoverMenuBaseProps, 'testID'>;
 
 export const popoverMenuBuilder = ({
   PopoverMenu,
@@ -196,7 +191,7 @@ export const popoverMenuBuilder = ({
     );
   };
 
-  const NavigationMenu = ({ ...props }: Pick<PopoverMenuProps, 'testID'>) => {
+  const NavigationMenu = ({ ...props }: Pick<PopoverMenuBaseProps, 'testID'>) => {
     const [value, setValue] = useState('');
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
@@ -220,6 +215,7 @@ export const popoverMenuBuilder = ({
                 visible={visible}
                 onChange={handleMenuValueChange}
                 value={value}
+                disablePortal
               >
                 <PopoverTrigger>
                   <IconButton transparent name="more" variant="secondary" />
@@ -245,7 +241,7 @@ export const popoverMenuBuilder = ({
     );
   };
 
-  const FeedCardMenu = ({ ...props }: Pick<PopoverMenuProps, 'testID'>) => {
+  const FeedCardMenu = ({ ...props }: Pick<PopoverMenuBaseProps, 'testID'>) => {
     const [value, setValue] = useState('');
     const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
