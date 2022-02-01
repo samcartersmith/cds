@@ -8,6 +8,8 @@ import { Box } from '../../../layout';
 import { Carousel } from '../Carousel';
 import { useCarousel } from '../useCarousel';
 
+jest.mock('../../../utils/debounce');
+
 jest.mock('react-native/Libraries/Components/ScrollView/ScrollView');
 
 describe('useCarousel', () => {

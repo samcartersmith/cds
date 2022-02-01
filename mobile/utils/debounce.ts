@@ -5,6 +5,11 @@ import _debounce from 'lodash/debounce';
 // where we push a screen/experience onto the stack 2 times). Debouncing the event
 // 500 miliseconds, but taking the leading event prevents this effect and the accidental "double-tap"
 // https://medium.com/@devmrin/debouncing-touch-events-in-react-native-prevent-navigating-twice-or-more-times-when-button-is-90687e4a8113
-export const debounce = (fn: ReturnType<Parameters<typeof _debounce>[0]>) => {
-  return _debounce(fn, 500, { leading: true });
+export const debounce = (
+  fn: ReturnType<Parameters<typeof _debounce>[0]>,
+  skipDebounce?: boolean,
+) => {
+  if (skipDebounce) return fn as () => void;
+
+  return _debounce(fn, 500, { leading: true, trailing: false });
 };

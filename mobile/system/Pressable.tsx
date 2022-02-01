@@ -77,8 +77,9 @@ export const Pressable = memo(function Pressable({
   const [pressIn, pressOut, pressScale] = usePressAnimation();
   const [pressed, setPressed] = useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handlePress = useCallback(
-    (event: GestureResponderEvent) => {
+    debounce((event: GestureResponderEvent) => {
       if (feedback === 'light') {
         void Haptics.lightImpact();
       } else if (feedback === 'normal') {
@@ -88,13 +89,9 @@ export const Pressable = memo(function Pressable({
       }
 
       if (onPress) {
-        if (disableDebounce) {
-          onPress(event);
-        } else {
-          debounce(onPress)(event);
-        }
+        onPress(event);
       }
-    },
+    }, disableDebounce),
     [feedback, onPress, disableDebounce],
   );
 
