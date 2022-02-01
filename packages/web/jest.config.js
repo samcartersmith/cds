@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'mobile',
-  preset: '@cbhq/jest-preset-mobile',
+  displayName: 'web',
+  preset: '../../jest.preset.js',
   moduleNameMapper: {
     '@cbhq/cds-utils/(.*)': '<rootDir>../utils/$1',
     '@cbhq/cds-utils': '<rootDir>../utils/index.ts',

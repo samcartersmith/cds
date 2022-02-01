@@ -27,6 +27,9 @@ Help:
   $$ make typecheck.web             -- typecheck the `web` package.
   $$ make typecheck.all             -- typecheck all of the affected packages
 
+  $$ make start.story               -- Start storybook local dev server.
+  $$ make build.story               -- Build storybook.
+
 endef
 export HELP_TEXT
 
@@ -117,3 +120,11 @@ typecheck.web:
 .PHONY: typecheck.all
 typecheck.all:
 	nx affected --target=typecheck --all
+
+.PHONY: build.story
+build.story:
+	nx run web:build-storybook
+
+.PHONY: start.story
+start.story:
+	nx run web:start-storybook

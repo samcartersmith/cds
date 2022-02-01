@@ -52,7 +52,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 #### Storybook
 
-- [ ] Deploy storybook with web stories
+- [x] Deploy storybook locally with web stories
 - [ ] Hook up Percy
 
 #### Mobile Playground
