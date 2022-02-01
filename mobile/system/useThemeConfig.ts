@@ -1,5 +1,4 @@
 import { useContext, useMemo } from 'react';
-import { isDevelopment } from '@cbhq/cds-utils';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { createFallbackThemeConfig } from './createThemeConfig';
@@ -10,10 +9,6 @@ export const useThemeConfig = () => {
 
   return useMemo(() => {
     if (!context) {
-      if (isDevelopment()) {
-        // eslint-disable-next-line no-console
-        console.log('useThemeConfig: Cannot use `useThemeConfig` outside ThemeConfigContext.');
-      }
       const fallbackConfig = createFallbackThemeConfig();
       return {
         config: fallbackConfig,
