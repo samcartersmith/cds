@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { IOS_BOTTOM_NAV_BAR_HEIGHT, useDimensions } from '../../hooks/useDimensions';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
-import { Placement, UseTooltipPositionParams } from './TooltipProps';
+import { TooltipPlacement, UseTooltipPositionParams } from './TooltipProps';
 
 export const useTooltipPosition = ({
   placement,
@@ -18,11 +18,12 @@ export const useTooltipPosition = ({
 
     const { width, pageOffsetX } = subjectLayout;
 
-    return pageOffsetX - (tooltipLayout.width / 2 - width / 2);
+    // Make sure we keep the Math.ceil is important. There is a bug with modals and justifyContent="space-around"|"space-evently" that causes an onLayout loop.
+    return pageOffsetX - Math.ceil(tooltipLayout.width / 2 - width / 2);
   }, [subjectLayout, tooltipLayout.width]);
 
   const calculateTooltipTop = useCallback(
-    (calculatedPlacement: Placement) => {
+    (calculatedPlacement: TooltipPlacement) => {
       if (subjectLayout === undefined || tooltipLayout.height === 0) return undefined;
 
       const { pageOffsetY } = subjectLayout;

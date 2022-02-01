@@ -10,7 +10,7 @@ type MotionSpec = {
 
 type AnimationCompleteCallback = ({ finished }: { finished: boolean }) => void;
 
-type TimingReturnValues = {
+export type TimingReturnValues = {
   start: (cb?: AnimationCompleteCallback) => Promise<{ finished: boolean }>;
 };
 
@@ -42,7 +42,7 @@ export class Animated {
     };
   }
 
-  static parallel(timings: (TimingReturnValues | null)[]) {
+  static parallel(timings: (TimingReturnValues | null)[]): TimingReturnValues {
     return {
       start: async (cb?: AnimationCompleteCallback) => {
         const resp = await Promise.all(timings.map((item) => item?.start()));

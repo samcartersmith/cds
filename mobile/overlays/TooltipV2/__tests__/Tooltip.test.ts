@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { basicCenterSubject } from './UseTooltipPositionTestData';
-import { Placement, UseTooltipPositionParams } from '../TooltipProps';
-import { useTooltipPosition } from '../useTooltipPosition';
 import { useDimensions } from '../../../hooks/useDimensions';
+import { TooltipPlacement, UseTooltipPositionParams } from '../TooltipProps';
+import { useTooltipPosition } from '../useTooltipPosition';
+import { basicCenterSubject } from './UseTooltipPositionTestData';
 
 jest.mock('../../../hooks/useDimensions');
 const mockUseDimensions = (mocks: ReturnType<typeof useDimensions>) => {
@@ -33,7 +33,7 @@ describe('Tooltip', () => {
         mockUseDimensions(basicCenterSubject.dimensions);
         mockPlatformAndroid();
 
-        const placement: Placement = 'top';
+        const placement: TooltipPlacement = 'top';
         const { subjectLayout, tooltipLayout, expectedTop } = basicCenterSubject;
 
         const { result } = createHookInstance({

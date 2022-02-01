@@ -1,18 +1,23 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { Modal as RNModal, TouchableOpacity, View } from 'react-native';
+import { useTooltipAnimation } from './useTooltipAnimation';
 import { InternalTooltip } from './InternalTooltip';
 import { SubjectLayout, TooltipProps } from './TooltipProps';
 
 export const Tooltip = memo(
-  ({ children, onCloseTooltip, content, placement = 'top' }: TooltipProps) => {
+  ({ children, content, placement = 'top', onCloseTooltip }: TooltipProps) => {
     const subjectRef = useRef<View | null>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [subjectLayout, setSubjectLayout] = useState<SubjectLayout>();
 
-    const handlePressOutsideTooltip = useCallback(() => {
-      setIsOpen(false);
-      onCloseTooltip?.();
-    }, [onCloseTooltip]);
+    const { opacity, translateY, animateIn, animateOut } = useTooltipAnimation();
+
+    const handleRequestClose = useCallback(() => {
+      animateOut.start(() => {
+        setIsOpen(false);
+        onCloseTooltip?.();
+      });
+    }, [animateOut, onCloseTooltip]);
 
     const handlePressSubject = useCallback(() => {
       subjectRef.current?.measure((x, y, width, height, pageOffsetX, pageOffsetY) => {
@@ -30,18 +35,22 @@ export const Tooltip = memo(
       <View collapsable={false} ref={subjectRef}>
         <TouchableOpacity onPress={handlePressSubject}>{children}</TouchableOpacity>
 
-        <RNModal hardwareAccelerated transparent animationType="none" visible={isOpen}>
-          <TouchableOpacity
-            onPress={handlePressOutsideTooltip}
-            style={{ flex: 1 }}
-            activeOpacity={1}
-          >
-            <InternalTooltip
-              subjectLayout={subjectLayout}
-              content={content}
-              placement={placement}
-            />
-          </TouchableOpacity>
+        <RNModal
+          hardwareAccelerated
+          transparent
+          animationType="none"
+          visible={isOpen}
+          onRequestClose={handleRequestClose}
+        >
+          <TouchableOpacity onPress={handleRequestClose} style={{ flex: 1 }} activeOpacity={1} />
+          <InternalTooltip
+            subjectLayout={subjectLayout}
+            content={content}
+            placement={placement}
+            opacity={opacity}
+            animateIn={animateIn}
+            translateY={translateY}
+          />
         </RNModal>
       </View>
     );

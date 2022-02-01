@@ -12,6 +12,10 @@ export const compact = css`
   border-radius: 4px;
 `;
 
+export const tooltipV2 = css`
+  border-radius: 6px;
+`;
+
 export const standard = css`
   border-radius: 8px;
 `;

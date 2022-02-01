@@ -11,6 +11,7 @@ export const portalRootId = 'portalRoot';
 export const modalContainerId = 'modalsContainer';
 export const alertContainerId = 'alertsContainer';
 export const toastContainerId = 'toastsContainer';
+export const tooltipContainerId = 'tooltipContainer';
 
 const PortalHost = memo(() => {
   const portalRoot = useMemo(
@@ -48,6 +49,7 @@ const PortalHost = memo(() => {
       <div id={modalContainerId} style={{ zIndex: zIndex.overlays.modal }} />
       <div id={toastContainerId} style={{ zIndex: zIndex.overlays.toast }} />
       <div id={alertContainerId} style={{ zIndex: zIndex.overlays.alert }} />
+      <div id={tooltipContainerId} style={{ zIndex: zIndex.overlays.tooltip }} />
     </ThemeProvider>,
     portalRoot,
   );

@@ -57,6 +57,7 @@ export * from './TextInputBaseProps';
 export * from './ThemeConfig';
 export * from './ThemeProviderBaseProps';
 export * from './ToastBaseProps';
+export * from './TooltipBaseProps';
 export * from './TrayBaseProps';
 export * from './Typography';
 export * from './Weight';

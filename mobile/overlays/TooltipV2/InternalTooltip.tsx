@@ -1,25 +1,31 @@
-import React, { memo, ReactNode, useMemo } from 'react';
+import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
 import { useInvertedPaletteColor } from '../../color/useInvertedPaletteColor';
 import { useLayout } from '../../hooks/useLayout';
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Box } from '../../layout/Box';
 import { TextLabel2 } from '../../typography';
-import { Placement, SubjectLayout } from './TooltipProps';
+import { InternalTooltipProps } from './TooltipProps';
 import { useTooltipPosition } from './useTooltipPosition';
-
-type InternalTooltipProps = {
-  subjectLayout: SubjectLayout | undefined;
-  content: ReactNode;
-  placement: Placement;
-};
 
 export const InternalTooltip = memo(function InternalTooltip({
   subjectLayout,
   content,
   placement,
+  opacity,
+  animateIn,
+  translateY,
 }: InternalTooltipProps) {
+  const didMount = useRef(false);
   const tooltipExternalGap = useSpacingStyles({ spacingVertical: 1 });
+
+  useEffect(() => {
+    if (!didMount.current) {
+      didMount.current = true;
+      animateIn.start();
+    }
+  }, [animateIn]);
 
   const backgroundColor = useInvertedPaletteColor('background');
   const foregroundColor = useInvertedPaletteColor('foreground');
@@ -44,10 +50,20 @@ export const InternalTooltip = memo(function InternalTooltip({
   return (
     <View style={outerTooltipStyles} onLayout={onTooltipLayout}>
       <Box
-        borderRadius="standard"
-        spacing={1}
+        animated
+        borderRadius="tooltipV2"
+        spacingHorizontal={spacingHorizontal}
+        spacingVertical={spacingVertical}
         dangerouslySetBackground={backgroundColor}
-        maxWidth={260}
+        opacity={opacity}
+        dangerouslySetStyle={{
+          transform: [
+            {
+              translateY,
+            },
+          ],
+        }}
+        maxWidth={maxWidth}
       >
         <TextLabel2 dangerouslySetColor={foregroundColor}>{content}</TextLabel2>
       </Box>

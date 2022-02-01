@@ -5,11 +5,12 @@ import { usePopper } from 'react-popper';
 import { PopperTooltip } from './PopperTooltip';
 import { TooltipPortal } from './TooltipPortal';
 import { TooltipProps } from './TooltipProps';
-import { usePopperAnimation } from './usePopperAnimation';
+import { useTooltipAnimation } from './useTooltipAnimation';
 import { useTooltipState } from './useTooltipState';
 
-const DEFAULT_GAP = 8;
-const DEFAULT_SKID = 0; // We do not offer an override for this, but it helps with readability of the config.
+// Naming these help with code readability.
+const POPPER_GAP = 0;
+const POPPER_SKID = 0;
 
 const subjectStyle = css`
   background-color: transparent;
@@ -21,15 +22,16 @@ export const Tooltip = ({
   children,
   content,
   placement = 'top',
-  gapOverride = DEFAULT_GAP,
+  gap = 1,
+  disablePortal,
 }: TooltipProps) => {
   const [subject, setSubject] = useState<HTMLDivElement | null>(null);
   const [popper, setPopper] = useState<HTMLDivElement | null>(null);
 
-  const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur } =
-    useTooltipState();
+  const { popperAnimationRef, animateIn, animateOut } = useTooltipAnimation();
 
-  const { isInAnimationState } = usePopperAnimation(popper, isOpen);
+  const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur } =
+    useTooltipState(animateOut);
 
   const popperOptions: Partial<PopperOptions> = useMemo(() => {
     return {
@@ -38,12 +40,12 @@ export const Tooltip = ({
         {
           name: 'offset',
           options: {
-            offset: [DEFAULT_SKID, gapOverride],
+            offset: [POPPER_SKID, POPPER_GAP],
           },
         },
       ],
     };
-  }, [gapOverride, placement]);
+  }, [placement]);
 
   const { styles, attributes, update } = usePopper(subject, popper, popperOptions);
 
@@ -52,29 +54,28 @@ export const Tooltip = ({
   }, [update]);
 
   return (
-    <div>
+    <div onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
       <div
         ref={setSubject}
         className={cx(subjectStyle)}
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseLeave}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
       >
         {children}
       </div>
-      <TooltipPortal>
-        {isOpen || isInAnimationState ? (
+      {isOpen ? (
+        <TooltipPortal disablePortal={disablePortal}>
           <PopperTooltip
-            ref={setPopper}
-            handleOnMouseEnter={handleOnMouseEnter}
-            handleOnMouseLeave={handleOnMouseLeave}
+            ref={popperAnimationRef}
+            setPopper={setPopper}
             content={content}
             popperStyles={styles}
             popperAttributes={attributes}
+            gap={gap}
+            animateIn={animateIn}
           />
-        ) : undefined}
-      </TooltipPortal>
+        </TooltipPortal>
+      ) : undefined}
     </div>
   );
 };

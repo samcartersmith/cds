@@ -1,50 +1,47 @@
-import { useSpectrum } from '@cbhq/cds-common';
+import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { css, cx } from 'linaria';
-import React, { ForwardedRef, forwardRef, useMemo } from 'react';
-import { PopperTooltipProps } from './TooltipProps';
-import { palette, spacing } from '../../tokens';
+import React, { ForwardedRef, forwardRef, useEffect, useMemo, useRef } from 'react';
+import { Box } from '../../layout/Box';
+import { spacing } from '../../tokens';
 import { TextLabel2 } from '../../typography';
-
-const tooltipStyle = css`
-  color: ${palette.foreground};
-  padding: ${spacing[3]} ${spacing[4]};
-  border-radius: 6px;
-  z-index: ${zIndex.overlays.tooltip};
-  opacity: 0;
-`;
+import { PopperTooltipProps } from './TooltipProps';
 
 export const PopperTooltip = forwardRef(
   (
-    {
-      handleOnMouseEnter,
-      handleOnMouseLeave,
-      content,
-      popperStyles,
-      popperAttributes,
-    }: PopperTooltipProps,
+    { setPopper, content, popperStyles, popperAttributes, gap, animateIn }: PopperTooltipProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
-    const spectrum = useSpectrum();
+    const didMount = useRef(false);
 
-    const style = useMemo(
+    useEffect(() => {
+      if (!didMount.current) {
+        didMount.current = true;
+        animateIn();
+      }
+    }, [animateIn]);
+
+    const outerStyle = useMemo(
       () => ({
         ...popperStyles.popper,
-        backgroundColor: palette[spectrum === 'light' ? 'background' : 'backgroundAlternate'],
+        padding: spacing[gap],
       }),
-      [popperStyles.popper, spectrum],
+      [gap, popperStyles.popper],
     );
 
     return (
-      <div
-        ref={ref}
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseLeave}
-        className={cx(tooltipStyle)}
-        style={style}
-        {...popperAttributes.popper}
-      >
-        <TextLabel2 as="p">{content}</TextLabel2>
+      <div ref={setPopper} style={outerStyle} {...popperAttributes.popper}>
+        <Box
+          ref={ref}
+          spacingHorizontal={spacingHorizontal}
+          spacingVertical={spacingVertical}
+          background="background"
+          borderRadius="tooltipV2"
+          zIndex={zIndex.overlays.tooltip}
+          maxWidth={maxWidth}
+          opacity={0}
+        >
+          <TextLabel2 as="p">{content}</TextLabel2>
+        </Box>
       </div>
     );
   },

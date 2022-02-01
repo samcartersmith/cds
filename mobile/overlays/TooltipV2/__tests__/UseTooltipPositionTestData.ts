@@ -37,7 +37,7 @@ export const basicCenterSubject: UseTooltipPositionTestData = {
   },
   dimensions: galaxyScreenDimensions,
 
-  expectedTop: { opacity: 1, start: 112.88888835906982, top: 212.97779083251953 },
+  expectedTop: { opacity: 1, start: 112.13333129882812, top: 212.97779083251953 },
 
   // To do:
   expectedBottom: {

@@ -1,25 +1,29 @@
-import { NoopFn } from '@cbhq/cds-common/types';
-import { BasePlacement } from '@popperjs/core/lib/enums';
+import {
+  NoopFn,
+  TooltipBaseProps,
+  GapSpacing,
+  BaseTooltipPlacement,
+  SetState,
+} from '@cbhq/cds-common/types';
 
-type TooltipPlacement = BasePlacement;
-
-export type PopperTooltipProps = {
-  handleOnMouseEnter: NoopFn;
-  handleOnMouseLeave: NoopFn;
-  popperStyles: Record<string, React.CSSProperties>;
-  popperAttributes: Record<string, Record<string, string> | undefined>;
-} & Pick<TooltipProps, 'content'>;
+type TooltipPlacement = BaseTooltipPlacement;
 
 export type TooltipProps = {
-  children: React.ReactNode;
-  /** Content to render within the tooltip. */
-  content: React.ReactNode;
-  /** The direction and alignment of the positioned tooltip. */
+  /** Position of tooltip in relation to the subject. */
   placement?: TooltipPlacement;
   /**
-   * @default 8
-   * TODO: use spacing
-   * An override for the gap between the subject and the tooltip.
+   * The `children` will be inside the DOM hierarchy of the parent component.
+   * @default false
    */
-  gapOverride?: number;
-};
+  disablePortal?: boolean;
+} & TooltipBaseProps;
+
+export type PopperTooltipProps = {
+  setPopper: SetState<HTMLDivElement | null>;
+  popperStyles: Record<string, React.CSSProperties>;
+  popperAttributes: Record<string, Record<string, string> | undefined>;
+  gap: GapSpacing;
+  animateIn: NoopFn;
+} & Pick<TooltipProps, 'content'>;
+
+export type PortalProps = Pick<TooltipProps, 'disablePortal'>;

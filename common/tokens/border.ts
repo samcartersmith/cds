@@ -6,6 +6,7 @@
 export const borderRadius = {
   none: 0,
   compact: 4,
+  tooltipV2: 6,
   standard: 8,
   badge: 9,
   tooltip: 12,
