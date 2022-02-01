@@ -4,7 +4,6 @@ import { NewPartialPaletteConfig, SystemProviderProps } from '@cbhq/cds-common';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
-import { ThemeConfigProvider } from '@cbhq/cds-common/system/ThemeConfigProvider';
 import { ElevationConfigsProvider } from './ElevationConfigsProvider';
 import { FeatureFlagContext } from './FeatureFlagContext';
 import { createThemeConfig, createFallbackThemeConfig } from './createThemeConfig';
@@ -17,7 +16,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemePr
   spectrum,
 }) {
   const hasFrontier = useContext(FeatureFlagContext)?.frontierColor;
-  const parentThemeConfigContext = useContext(ThemeConfigContext)?.config;
+  const parentThemeConfigContext = useContext(ThemeConfigContext);
   const config = useMemo(() => {
     const parentThemeConfig = parentThemeConfigContext ?? createFallbackThemeConfig(hasFrontier);
     if (palette) {
@@ -30,7 +29,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemePr
     }
     // This means this is the root ThemeProvider
     if (parentThemeConfigContext === undefined) return parentThemeConfig;
-    // Skip rendering ThemeConfigProvider if there are no changes
+    // Skip rendering ThemeConfigContext if there are no changes
     return undefined;
   }, [hasFrontier, name, palette, parentThemeConfigContext]);
   const skipThemeConfig = config === undefined;
@@ -41,11 +40,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemePr
         {skipThemeConfig ? (
           children
         ) : (
-          <ThemeConfigProvider value={config}>
+          <ThemeConfigContext.Provider value={config}>
             <ElevationConfigsProvider parentThemeConfig={config} hasFrontier={hasFrontier}>
               {children}
             </ElevationConfigsProvider>
-          </ThemeConfigProvider>
+          </ThemeConfigContext.Provider>
         )}
       </SpectrumProvider>
     </ScaleProvider>

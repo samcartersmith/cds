@@ -113,16 +113,9 @@ export const createElevationConfigForSpectrum = memoize(function createElevation
     return borderWidthValue;
   }
 
-  const childrenContextValue = {
-    config: childrenConfig,
-    activeConfig: spectrum === 'light' ? childrenConfig.light : childrenConfig.dark,
-  };
-
   const ElevationChildrenWrapper: React.FC = memo(function ElevationChildrenWrapper({ children }) {
     return (
-      <ThemeConfigContext.Provider value={childrenContextValue}>
-        {children}
-      </ThemeConfigContext.Provider>
+      <ThemeConfigContext.Provider value={childrenConfig}>{children}</ThemeConfigContext.Provider>
     );
   });
 

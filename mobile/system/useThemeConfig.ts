@@ -1,26 +1,29 @@
 import { useContext, useMemo } from 'react';
 import { isDevelopment } from '@cbhq/cds-utils';
-import {
-  ThemeConfigContext,
-  ThemeConfigContextValue,
-} from '@cbhq/cds-common/system/ThemeConfigContext';
+import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
+import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { createFallbackThemeConfig } from './createThemeConfig';
 
-export const useThemeConfig = (): ThemeConfigContextValue => {
+export const useThemeConfig = () => {
   const context = useContext(ThemeConfigContext);
+  const spectrum = useSpectrum();
 
   return useMemo(() => {
     if (!context) {
       if (isDevelopment()) {
         // eslint-disable-next-line no-console
-        console.log('useThemeConfig: Cannot use `useThemeConfig` outside ThemeConfigProvider.');
+        console.log('useThemeConfig: Cannot use `useThemeConfig` outside ThemeConfigContext.');
       }
+      const fallbackConfig = createFallbackThemeConfig();
+      return {
+        config: fallbackConfig,
+        activeConfig: spectrum === 'light' ? fallbackConfig.light : fallbackConfig.dark,
+      };
     }
-    if (context) return context;
-    const fallbackConfig = createFallbackThemeConfig();
+
     return {
-      config: fallbackConfig,
-      activeConfig: fallbackConfig.light,
+      config: context,
+      activeConfig: spectrum === 'light' ? context.light : context.dark,
     };
-  }, [context]);
+  }, [context, spectrum]);
 };
