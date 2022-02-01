@@ -34,6 +34,21 @@ Visually remove the ThemeProviders box and replace it with its content. Conceptu
 
 <ComponentDetails componentName="ThemeProvider" templateName="prop-display" />
 
+### name <Badge variant="mobile" />
+
+A unique name for the ThemeProvider instance. This is used to optimize when merging palettes / creating themes at runtime. Any partial custom palettes have to be merged with the parent palette config. On mobile this merging / conversion to rgba strings can be quite expensive so the name prop allows CDS to generate a unique cache key based on the parent name + override name so we can reuse conversions in other instances with same config combination. There is no way to guarantee names are unique so we recommend naming a ThemeProvider in such a way to as to avoid collisions with other ids in the cache.
+
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="name"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ThemeProvider" templateName="prop-name" />
+
 ### palette
 
 Takes a configurable palette. If a partial palette is provided it will be merged with the closest parent `ThemeProvider` if present, if not it will be fallback to merging with the default CDS palette.
@@ -45,6 +60,9 @@ Takes a configurable palette. If a partial palette is provided it will be merged
   defaultValue=""
   mobileOptions={[
     'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 6 more ... | transparent, PaletteValue>>>',
+    'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 6 more ... | transparent, PaletteValue>>> & PartialPaletteConfigDark',
+    'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 6 more ... | transparent, PaletteValue>>> & PartialPaletteConfigLight',
+    'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 6 more ... | transparent, PaletteValue>>> & { ...; }',
   ]}
   webOptions={[
     'Partial<ReadonlyObjectDeep<Record<transparent | foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 5 more ... | secondaryForeground, PaletteValue>>>',

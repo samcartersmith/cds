@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.5 (2/1/2022, 10:02 AM PST)
+
+#### 🚀 Updates
+
+- Added custom popovermenu portal. [#51533](https://github.cbhq.net/mono/repo/pull/51533)
+- Cleaning up the last of the PopoverMenu bugs. [#51271](https://github.cbhq.net/mono/repo/pull/51271)
+
 ## 0.34.4 (1/28/2022, 02:20 PM PST)
 
 #### 🐞 Fixes

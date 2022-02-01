@@ -96,6 +96,21 @@ Disable interaction with the Menu and trigger
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-disabled" />
 
+### disablePortal <Badge variant="web" />
+
+Does not render the PopoverMenu inside of a portal (react-dom createPortal). Portal is automatically disabled for SSR
+
+<ApiDetails
+  componentName="PopoverMenu"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="PopoverMenu" templateName="prop-disablePortal" />
+
 ### flush <Badge variant="web" />
 
 When true, the PopoverMenu trigger will fill all available horizontal space

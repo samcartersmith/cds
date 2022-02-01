@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.4 (2/1/2022, 10:02 AM PST)
+
+#### 🚀 Updates
+
+- Added custom popovermenu portal. [#51533](https://github.cbhq.net/mono/repo/pull/51533)
+- Accordion types. [#50498](https://github.cbhq.net/mono/repo/pull/50498), [CDS-1876](https://jira.coinbase-corp.com/browse/CDS-1876)
+
+#### 🐞 Fixes
+
+- UseThemeConfig to handle activeConfig based on spectrum. [#51722](https://github.cbhq.net/mono/repo/pull/51722), [CDS-1992](https://jira.coinbase-corp.com/browse/CDS-1992)
+
 ## 0.33.3 (1/28/2022, 02:20 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.2 (2/1/2022, 10:02 AM PST)
+
+#### 🐞 Fixes
+
+- Transparent pressables on elevated surface for light mode. [#51734](https://github.cbhq.net/mono/repo/pull/51734), [CDS-1993](https://jira.coinbase-corp.com/browse/CDS-1993)
+- UseThemeConfig to handle activeConfig based on spectrum. [#51722](https://github.cbhq.net/mono/repo/pull/51722), [CDS-1992](https://jira.coinbase-corp.com/browse/CDS-1992)
+- Debounce issue on Mobile. [#51481](https://github.cbhq.net/mono/repo/pull/51481), [CDS-1977](https://jira.coinbase-corp.com/browse/CDS-1977)
+
 ## 0.39.1 (1/28/2022, 02:20 PM PST)
 
 #### 🚀 Updates

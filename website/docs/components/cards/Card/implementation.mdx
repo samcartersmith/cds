@@ -19,6 +19,51 @@ import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 ## Props
 
+### alignContent
+
+Set the distribution of space between and around content items along the cross-axis.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="alignContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-alignContent" />
+
+### alignItems
+
+Set the alignment of all direct children on the cross-axis.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="alignItems"
+  required={false}
+  defaultValue="stretch"
+  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-alignItems" />
+
+### alignSelf
+
+Override the parents defined item alignment for this element alone.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="alignSelf"
+  required={false}
+  defaultValue="auto"
+  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-alignSelf" />
+
 ### animated <Badge variant="mobile" />
 
 If value is `true` then style prop can take animated values.
@@ -111,6 +156,81 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
 
 <ComponentDetails componentName="Card" templateName="prop-elevation" />
 
+### flexBasis
+
+Sets the initial main flex size.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexBasis"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-flexBasis" />
+
+### flexDirection
+
+Order children on the main-axis in this direction.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexDirection"
+  required={false}
+  defaultValue=""
+  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-flexDirection" />
+
+### flexGrow
+
+Set the grow factor of this flex item.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexGrow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-flexGrow" />
+
+### flexShrink
+
+Set the shrink factor of this flex item.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexShrink"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-flexShrink" />
+
+### flexWrap
+
+How should children wrap when overflowing.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="flexWrap"
+  required={false}
+  defaultValue="nowrap"
+  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
+  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-flexWrap" />
+
 ### height
 
 Set a fixed height.
@@ -125,6 +245,28 @@ Set a fixed height.
 />
 
 <ComponentDetails componentName="Card" templateName="prop-height" />
+
+### justifyContent
+
+Set the distribution of space between and around content items along the main-axis.
+
+<ApiDetails
+  componentName="Card"
+  propertyName="justifyContent"
+  required={false}
+  defaultValue="flex-start"
+  mobileOptions={[
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly',
+  ]}
+  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
+/>
+
+<ComponentDetails componentName="Card" templateName="prop-justifyContent" />
 
 ### maxHeight
 
