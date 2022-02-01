@@ -15,9 +15,10 @@ import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import {
   SparklineInteractiveHoverDateRefProps,
   SparklineInteractiveBaseProps,
+  SparklineInteractiveDefaultFallback,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { minMax } from '@cbhq/cds-common/utils/chart';
-import { chartFallbackPositive } from '@cbhq/cds-lottie-files';
+import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files';
 import { sparklinePalette } from '@cbhq/cds-common/palette/constants';
 
 import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
@@ -42,10 +43,11 @@ export * from '@cbhq/cds-common/types/Chart';
 
 // We override line palette since default line color is a bit too dark.
 // Changing to gray20 more closely matches the line color currently used in production
-const DefaultFallback = memo(() => {
+const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallback) => {
+  const source = fallbackType === 'negative' ? chartFallbackNegative : chartFallbackPositive;
   return (
     <ThemeProvider name="sparkline-fallback" palette={sparklinePalette}>
-      <Lottie autoplay source={chartFallbackPositive} loop />
+      <Lottie autoplay source={source} loop />
     </ThemeProvider>
   );
 });
@@ -100,6 +102,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   yAxisScalingFactor = 1.0,
   formatHoverDate,
   headerNode,
+  fallbackType = 'positive',
 }: SparklineInteractiveMobileProps<Period>) {
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useSparklineInteractiveContext();
@@ -208,7 +211,9 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
         )}
         <View style={chartDimensionStyles}>
           {!!isFallbackVisible && !compact && (
-            <View style={StyleSheet.absoluteFill}>{fallback ?? <DefaultFallback />}</View>
+            <View style={StyleSheet.absoluteFill}>
+              {fallback ?? <DefaultFallback fallbackType={fallbackType} />}
+            </View>
           )}
           <Animated.View style={{ opacity: chartOpacity }}>
             {!!hasData && !!path && (

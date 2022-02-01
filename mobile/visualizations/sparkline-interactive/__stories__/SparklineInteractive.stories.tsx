@@ -128,6 +128,14 @@ const SparklineInteractiveScreen = () => {
       <Example spacing={0}>
         <Box>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+            Fallback Negative
+          </TextTitle3>
+          <SparklineInteractiveBuild fallbackType="negative" strokeColor={strokeColor} />
+        </Box>
+      </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             No Hover Date
           </TextTitle3>
           <SparklineInteractiveBuild

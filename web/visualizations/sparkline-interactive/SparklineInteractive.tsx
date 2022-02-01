@@ -1,11 +1,14 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { emptyArray, noop, isStorybook } from '@cbhq/cds-utils';
-import { SparklineInteractiveBaseProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
+import {
+  SparklineInteractiveBaseProps,
+  SparklineInteractiveDefaultFallback,
+} from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { VisualizationContainerDimension } from '@cbhq/cds-common/types/VisualizationContainerBaseProps';
 import { chartCompactHeight, chartHeight } from '@cbhq/cds-common/tokens/sparkline';
 import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSparklineCoordinates';
-import { chartFallbackPositive } from '@cbhq/cds-lottie-files';
+import { chartFallbackPositive, chartFallbackNegative } from '@cbhq/cds-lottie-files';
 
 import isObject from 'lodash/isObject';
 import isEqual from 'lodash/isEqual';
@@ -37,12 +40,14 @@ export * from '@cbhq/cds-common/types/Chart';
 // We override line palette since default line color is a bit too dark.
 // Changing to gray20 more closely matches the line color currently used in production
 const customPalette = { line: 'gray20' } as const;
-const DefaultFallback = memo(() => {
+const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallback) => {
   // don't show lottie animation in story book
   const skipLottie = isStorybook();
+
+  const source = fallbackType === 'negative' ? chartFallbackNegative : chartFallbackPositive;
   return (
     <ThemeProvider palette={customPalette}>
-      {!skipLottie && <Lottie autoplay source={chartFallbackPositive} loop />}
+      {!skipLottie && <Lottie autoplay source={source} loop />}
     </ThemeProvider>
   );
 });
@@ -66,6 +71,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   compact,
   formatHoverDate,
   headerNode,
+  fallbackType = 'positive',
 }: SparklineInteractiveBaseProps<Period>) {
   const innerSparklineInteractiveHeight = compact ? chartCompactHeight : chartHeight;
   const { isFallbackVisible, showFallback } = useSparklineInteractiveContext();
@@ -179,7 +185,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
                 <Box width={width} height={height} position="relative">
                   {!!isFallbackVisible && !compact && (
                     <Box width="100%" height="100%" position="absolute" justifyContent="center">
-                      {fallback ?? <DefaultFallback />}
+                      {fallback ?? <DefaultFallback fallbackType={fallbackType} />}
                     </Box>
                   )}
                   <Box width="100%" height="100%">

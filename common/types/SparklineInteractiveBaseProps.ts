@@ -69,6 +69,11 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
   fallback?: ReactNode;
 
   /**
+   * If you use the default fallback then this specifies if the fallback line is decreasing or increasing
+   */
+  fallbackType?: 'positive' | 'negative';
+
+  /**
    * Show the chart in compact height
    *
    * @default false
@@ -153,3 +158,8 @@ export type SparklineInteractiveLineVerticalProps = {
 export type SparklineInteractiveHoverDateRefProps<Period extends string> = {
   update: (params: ChartScrubParams<Period>) => void;
 };
+
+export type SparklineInteractiveDefaultFallback = Pick<
+  SparklineInteractiveBaseProps<string>,
+  'fallbackType'
+>;

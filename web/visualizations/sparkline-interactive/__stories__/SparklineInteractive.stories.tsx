@@ -60,7 +60,10 @@ export const Fill = () => (
   <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} fill />
 );
 
-export const Fallback = () => <SparklineInteractiveBuild strokeColor={strokeColor} />;
+export const FallbackPositive = () => <SparklineInteractiveBuild strokeColor={strokeColor} />;
+export const FallbackNegative = () => (
+  <SparklineInteractiveBuild fallbackType="negative" strokeColor={strokeColor} />
+);
 
 export const NoHoverDate = () => (
   <SparklineInteractiveBuild
