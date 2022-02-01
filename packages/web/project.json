@@ -15,6 +15,12 @@
     },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "start-storybook": {
+      "executor": "@cbhq/mono-tasks:start-storybook"
+    },
+    "build-storybook": {
+      "executor": "@cbhq/mono-tasks:build-storybook"
     }
   }
 }

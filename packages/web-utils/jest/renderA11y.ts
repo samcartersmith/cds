@@ -25,6 +25,7 @@ export async function renderA11y(
     await afterRender(result);
   }
 
+  // @ts-expect-error mismatched types
   const results = await runAxe(result.container, options);
 
   // @types/jest-axe uses v3 axe types, while axe-core/jest-axe is v4.

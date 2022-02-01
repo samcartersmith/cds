@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
-    "incremental": true,
+    "isolatedModules": true,
     "rootDirs": [".", "./.nx/dts"]
   }
 }
