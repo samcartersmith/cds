@@ -82,17 +82,20 @@ export const createElevationConfigForSpectrum = memoize(function createElevation
     },
     parentThemeConfig,
   });
-  const childrenConfig = createThemeConfig({
-    hasFrontier,
-    name: childrenName,
-    parentThemeConfig: config,
-    palette: {
-      // frontier buttons don't have border color like old ones. This makes it so frontier buttons are visible on elevated surfaces.
-      dark: hasFrontier
-        ? { ...childrenPalette.dark, secondary: frontierSpectrumPalette.dark.secondary }
-        : childrenPalette.dark,
-    },
-  });
+  const childrenConfig =
+    spectrum === 'dark'
+      ? createThemeConfig({
+          hasFrontier,
+          name: childrenName,
+          parentThemeConfig: config,
+          palette: {
+            // frontier buttons don't have border color like old ones. This makes it so frontier buttons are visible on elevated surfaces.
+            dark: hasFrontier
+              ? { ...childrenPalette.dark, secondary: frontierSpectrumPalette.dark.secondary }
+              : childrenPalette.dark,
+          },
+        })
+      : undefined;
 
   const activeConfig = spectrum === 'light' ? config.light : config.dark;
 
