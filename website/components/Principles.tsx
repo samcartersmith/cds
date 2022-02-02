@@ -10,6 +10,9 @@ const principlesPictogramMap: Record<string, IllustrationPictogramNames> = {
   identifiable: 'target',
   efficient: 'tokenBaskets',
   easy: 'easyToUse',
+  contextual: 'support',
+  relevant: 'fast',
+  scannable: 'explore',
 } as const;
 
 export type PrinciplesProps = {
@@ -22,7 +25,7 @@ export const Principles: React.FC<PrinciplesProps> = (props: PrinciplesProps) =>
   return (
     <HStack justifyContent="space-between" gap={4}>
       {principles.map(([principle, description]) => (
-        <VStack gap={0.5}>
+        <VStack gap={0.5} key={principle}>
           <Pictogram name={principlesPictogramMap[principle]} />
           <TextTitle3 as="h2" spacingTop={2} spacingBottom={1}>
             {startCase(principle)}

@@ -1601,6 +1601,18 @@ export const PopoverMenu = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/implementation.mdx'
       ),
   ),
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/design.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/intro.mdx'
+      ),
+  ),
   'popover-menu': React.lazy(
     async () =>
       import(
@@ -1653,27 +1665,6 @@ export const PopoverTriggerWrapper = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTriggerWrapper/usage.mdx'
-      ),
-  ),
-};
-
-export const SectionTitle = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/implementation.mdx'
-      ),
-  ),
-  'section-title': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/section-title.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/usage.mdx'
       ),
   ),
 };
@@ -1752,6 +1743,27 @@ export const ModalHeader = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalHeader/modal-header.mdx'
+      ),
+  ),
+};
+
+export const SectionTitle = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/implementation.mdx'
+      ),
+  ),
+  'section-title': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/section-title.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/usage.mdx'
       ),
   ),
 };

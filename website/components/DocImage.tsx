@@ -9,9 +9,9 @@ type ImageOptions = {
 };
 
 export type ImageProps = {
-  /* The img src must resolve to /website/static/components/<component>/<name> */
+  /* The img src must resolve to /website/static/img/components/<component>/<name> */
   component?: string;
-  /* The img src must resolve to /website/static/components/<component>/<name> */
+  /* The img src must resolve to /website/static/img/components/<component>/<name> */
   name?: string;
   options?: ImageOptions;
   format?: 'jpg' | 'png';
