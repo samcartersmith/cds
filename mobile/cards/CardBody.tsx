@@ -11,7 +11,7 @@ export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
 export const CardBody: React.FC<CardBodyProps> = memo(
   ({ title, description, media, children, orientation = 'vertical', testID }) => {
     const verticalContent = (
-      <VStack testID={testID}>
+      <VStack testID={`${testID}-vertical`}>
         {media}
         <VStack spacingHorizontal={3} spacingTop={2}>
           <VStack gap={1} spacingBottom={2}>
@@ -31,7 +31,7 @@ export const CardBody: React.FC<CardBodyProps> = memo(
         spacingHorizontal={3}
         spacingTop={2}
         spacingBottom={media ? 2 : 0}
-        testID={testID}
+        testID={`${testID}-horizontal`}
       >
         <VStack gap={2} width="70%">
           <VStack gap={1} spacingTop={media ? 0 : 2}>
