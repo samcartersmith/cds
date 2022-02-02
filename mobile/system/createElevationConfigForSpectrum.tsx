@@ -22,7 +22,6 @@ import { createThemeConfig } from './createThemeConfig';
 import { getCacheKey } from './createThemeConfigForSpectrum';
 
 type ElevationLevel = Exclude<ElevationLevels, 0>;
-
 export type ElevationConfigForSpectrum = {
   WrapperForChildren: React.ComponentType;
   getBorderColor: (value?: PaletteBorder) => string;
@@ -31,14 +30,12 @@ export type ElevationConfigForSpectrum = {
   themeConfig: ThemeConfigContextValue;
   level: ElevationLevel;
 };
-
 export type CreateElevationConfigForSpectrumParams = {
   name: keyof typeof elevations;
   parentThemeConfig: ThemeConfig;
   spectrum: Spectrum;
   hasFrontier?: boolean;
 };
-
 const elevations = {
   elevation1: {
     level: 1,
@@ -63,7 +60,6 @@ const elevations = {
     },
   },
 } as const;
-
 /** Merges a parentThemeConfig with elevation palette to generate theme config to be used in components with elevation
  */
 export const createElevationConfigForSpectrum = memoize(function createElevationConfigForSpectrum({
@@ -82,20 +78,21 @@ export const createElevationConfigForSpectrum = memoize(function createElevation
     },
     parentThemeConfig,
   });
-  const childrenConfig =
-    spectrum === 'dark'
-      ? createThemeConfig({
-          hasFrontier,
-          name: childrenName,
-          parentThemeConfig: config,
-          palette: {
-            // frontier buttons don't have border color like old ones. This makes it so frontier buttons are visible on elevated surfaces.
-            dark: hasFrontier
-              ? { ...childrenPalette.dark, secondary: frontierSpectrumPalette.dark.secondary }
-              : childrenPalette.dark,
-          },
-        })
-      : undefined;
+  let childrenConfig = config;
+  // Only update childrenConfig in dark mode
+  if (spectrum === 'dark') {
+    childrenConfig = createThemeConfig({
+      hasFrontier,
+      name: childrenName,
+      parentThemeConfig: config,
+      palette: {
+        // frontier buttons don't have border color like old ones. This makes it so frontier buttons are visible on elevated surfaces.
+        dark: hasFrontier
+          ? { ...childrenPalette.dark, secondary: frontierSpectrumPalette.dark.secondary }
+          : childrenPalette.dark,
+      },
+    });
+  }
 
   const activeConfig = spectrum === 'light' ? config.light : config.dark;
 
@@ -103,7 +100,6 @@ export const createElevationConfigForSpectrum = memoize(function createElevation
     const alias = Platform.OS === 'android' ? 'transparent' : value;
     return activeConfig.rgbaStrings[alias];
   }
-
   function getBorderWidth(value: BorderWidth = 'card') {
     const borderWidthValue = borderWidth[value];
     if (Platform.OS === 'ios') {
@@ -116,14 +112,19 @@ export const createElevationConfigForSpectrum = memoize(function createElevation
     return borderWidthValue;
   }
 
+  const childrenContextValue = {
+    config: childrenConfig,
+    activeConfig: spectrum === 'light' ? childrenConfig.light : childrenConfig.dark,
+  };
+
   const ElevationChildrenWrapper: React.FC = memo(function ElevationChildrenWrapper({ children }) {
     return (
-      <ThemeConfigContext.Provider value={childrenConfig}>{children}</ThemeConfigContext.Provider>
+      <ThemeConfigContext.Provider value={childrenContextValue}>
+        {children}
+      </ThemeConfigContext.Provider>
     );
   });
-
   ElevationChildrenWrapper.displayName = 'ElevationChildrenWrapper';
-
   return {
     level,
     styles: {

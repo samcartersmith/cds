@@ -1,9 +1,9 @@
 import React, { memo, useContext, useMemo } from 'react';
-
 import { NewPartialPaletteConfig, SystemProviderProps } from '@cbhq/cds-common';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
+import { ThemeConfigProvider } from '@cbhq/cds-common/system/ThemeConfigProvider';
 import { ElevationConfigsProvider } from './ElevationConfigsProvider';
 import { FeatureFlagContext } from './FeatureFlagContext';
 import { createThemeConfig, createFallbackThemeConfig } from './createThemeConfig';
@@ -16,7 +16,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemePr
   spectrum,
 }) {
   const hasFrontier = useContext(FeatureFlagContext)?.frontierColor;
-  const parentThemeConfigContext = useContext(ThemeConfigContext);
+  const parentThemeConfigContext = useContext(ThemeConfigContext)?.config;
   const config = useMemo(() => {
     const parentThemeConfig = parentThemeConfigContext ?? createFallbackThemeConfig(hasFrontier);
     if (palette) {
@@ -29,28 +29,26 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemePr
     }
     // This means this is the root ThemeProvider
     if (parentThemeConfigContext === undefined) return parentThemeConfig;
-    // Skip rendering ThemeConfigContext if there are no changes
+    // Skip rendering ThemeConfigProvider if there are no changes
     return undefined;
   }, [hasFrontier, name, palette, parentThemeConfigContext]);
   const skipThemeConfig = config === undefined;
-
   return (
     <ScaleProvider value={scale}>
       <SpectrumProvider value={spectrum}>
         {skipThemeConfig ? (
           children
         ) : (
-          <ThemeConfigContext.Provider value={config}>
+          <ThemeConfigProvider value={config}>
             <ElevationConfigsProvider parentThemeConfig={config} hasFrontier={hasFrontier}>
               {children}
             </ElevationConfigsProvider>
-          </ThemeConfigContext.Provider>
+          </ThemeConfigProvider>
         )}
       </SpectrumProvider>
     </ScaleProvider>
   );
 });
-
 export const NormalScaleProvider = memo((props: SystemProviderProps) => (
   <ThemeProvider name="normal-only-scale" scale="large" {...props} />
 ));
@@ -63,7 +61,6 @@ export const DarkModeProvider = memo((props: SystemProviderProps) => (
 export const LightModeProvider = memo((props: SystemProviderProps) => (
   <ThemeProvider name="light-only-spectrum" spectrum="light" {...props} />
 ));
-
 export type ThemeProviderProps = SystemProviderProps & {
   /** A unique name for the ThemeProvider instance.
    * This is used to optimize when merging palettes / creating themes at runtime.
@@ -77,7 +74,6 @@ export type ThemeProviderProps = SystemProviderProps & {
   name: string;
   palette?: NewPartialPaletteConfig;
 };
-
 ThemeProvider.displayName = 'ThemeProvider';
 NormalScaleProvider.displayName = 'NormalScaleProvider';
 DenseScaleProvider.displayName = 'DenseScaleProvider';
