@@ -9,14 +9,31 @@ import { TextBody } from '../typography/TextBody';
 export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
 
 export const CardBody: React.FC<CardBodyProps> = memo(
-  ({ title, description, media, children, orientation = 'vertical', testID }) => {
+  ({
+    title,
+    description,
+    media,
+    children,
+    orientation = 'vertical',
+    testID,
+    numberOfLines = 3,
+  }) => {
+    const textContent = (
+      <>
+        <TextHeadline numberOfLines={numberOfLines} ellipsizeMode="tail">
+          {title}
+        </TextHeadline>
+        <TextBody numberOfLines={numberOfLines} ellipsizeMode="tail">
+          {description}
+        </TextBody>
+      </>
+    );
     const verticalContent = (
       <VStack testID={`${testID}-vertical`}>
         {media}
         <VStack spacingHorizontal={3} spacingTop={2}>
           <VStack gap={1} spacingBottom={2}>
-            <TextHeadline>{title}</TextHeadline>
-            <TextBody color="foregroundMuted">{description}</TextBody>
+            {textContent}
           </VStack>
           {children}
         </VStack>
@@ -35,8 +52,7 @@ export const CardBody: React.FC<CardBodyProps> = memo(
       >
         <VStack gap={2} width="70%">
           <VStack gap={1} spacingTop={media ? 0 : 2}>
-            <TextHeadline>{title}</TextHeadline>
-            <TextBody color="foregroundMuted">{description}</TextBody>
+            {textContent}
           </VStack>
           {children}
         </VStack>

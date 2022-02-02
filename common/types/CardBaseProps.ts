@@ -47,6 +47,11 @@ export type CardBodyBaseProps = {
   media?: React.ReactNode;
   /** Vertical places media above text content, Horizontal places media to the side of text content */
   orientation?: CardBodyOrientationProps['orientation'];
+  /**
+   * Maximum number of lines shown. Text that exceeds will be truncated.
+   * @default 3
+   */
+  numberOfLines?: number;
 } & SharedProps;
 
 export type CardBodyOrientationProps = {
