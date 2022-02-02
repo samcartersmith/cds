@@ -1519,27 +1519,6 @@ export const Alert = {
   ),
 };
 
-export const MenuItem = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/implementation.mdx'
-      ),
-  ),
-  'menu-item': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/menu-item.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/usage.mdx'
-      ),
-  ),
-};
-
 export const Toast = {
   design: React.lazy(
     async () =>
@@ -1584,87 +1563,6 @@ export const Tooltip = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/usage.mdx'
-      ),
-  ),
-};
-
-export const PopoverMenu = {
-  a11y: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/a11y.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/implementation.mdx'
-      ),
-  ),
-  design: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/design.mdx'
-      ),
-  ),
-  intro: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/intro.mdx'
-      ),
-  ),
-  'popover-menu': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/popover-menu.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/usage.mdx'
-      ),
-  ),
-};
-
-export const PopoverTrigger = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTrigger/implementation.mdx'
-      ),
-  ),
-  'popover-trigger': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTrigger/popover-trigger.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTrigger/usage.mdx'
-      ),
-  ),
-};
-
-export const PopoverTriggerWrapper = {
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTriggerWrapper/implementation.mdx'
-      ),
-  ),
-  'popover-trigger-wrapper': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTriggerWrapper/usage.mdx'
       ),
   ),
 };
@@ -1743,6 +1641,108 @@ export const ModalHeader = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/ModalHeader/modal-header.mdx'
+      ),
+  ),
+};
+
+export const MenuItem = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/implementation.mdx'
+      ),
+  ),
+  'menu-item': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/menu-item.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/MenuItem/usage.mdx'
+      ),
+  ),
+};
+
+export const PopoverMenu = {
+  a11y: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/a11y.mdx'
+      ),
+  ),
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/design.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/intro.mdx'
+      ),
+  ),
+  'popover-menu': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/popover-menu.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverMenu/usage.mdx'
+      ),
+  ),
+};
+
+export const PopoverTrigger = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTrigger/implementation.mdx'
+      ),
+  ),
+  'popover-trigger': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTrigger/popover-trigger.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTrigger/usage.mdx'
+      ),
+  ),
+};
+
+export const PopoverTriggerWrapper = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTriggerWrapper/implementation.mdx'
+      ),
+  ),
+  'popover-trigger-wrapper': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/PopoverTriggerWrapper/usage.mdx'
       ),
   ),
 };
