@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
 
 import { emptyArray } from '@cbhq/cds-utils';
 import {
@@ -77,9 +77,8 @@ export const Pressable = memo(function Pressable({
   const [pressIn, pressOut, pressScale] = usePressAnimation();
   const [pressed, setPressed] = useState(false);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handlePress = useCallback(
-    debounce((event: GestureResponderEvent) => {
+  const onPressHandler = useMemo(
+    () => (event: GestureResponderEvent) => {
       if (feedback === 'light') {
         void Haptics.lightImpact();
       } else if (feedback === 'normal') {
@@ -91,8 +90,21 @@ export const Pressable = memo(function Pressable({
       if (onPress) {
         onPress(event);
       }
-    }, disableDebounce),
-    [feedback, onPress, disableDebounce],
+    },
+    [feedback, onPress],
+  );
+
+  const debouncedOnPressHandler = useMemo(() => debounce(onPressHandler), [onPressHandler]);
+
+  const handlePress = useCallback(
+    (event: GestureResponderEvent) => {
+      if (!disableDebounce) {
+        debouncedOnPressHandler(event);
+      } else {
+        onPressHandler(event);
+      }
+    },
+    [debouncedOnPressHandler, onPressHandler, disableDebounce],
   );
 
   const handlePressIn = useCallback(

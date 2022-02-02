@@ -1,14 +1,12 @@
 import { useCallback, useMemo } from 'react';
 
-import { cleanup, fireEvent, render } from '@testing-library/react-native';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react-native';
 import { ScrollView } from 'react-native';
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
 import { Carousel } from '../Carousel';
 import { useCarousel } from '../useCarousel';
-
-jest.mock('../../../utils/debounce');
 
 jest.mock('react-native/Libraries/Components/ScrollView/ScrollView');
 
@@ -61,8 +59,12 @@ describe('useCarousel', () => {
     expect(spy).toHaveBeenCalledWith('Carousel length: 3');
 
     rerender(<MockCarousel length={4} />);
-    fireEvent.press(getByTestId('LogLength'));
-    expect(spy).toHaveBeenCalledWith('Carousel length: 4');
+
+    // Wait a sec so we get around the debounce
+    void waitFor(() => {
+      fireEvent.press(getByTestId('LogLength'));
+      expect(spy).toHaveBeenCalledWith('Carousel length: 4');
+    });
   });
 
   it('exposes scrollToId', async () => {
