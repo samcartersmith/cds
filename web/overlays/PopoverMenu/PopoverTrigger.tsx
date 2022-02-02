@@ -57,7 +57,6 @@ export type PopoverTriggerProps = {
   children: RefAttributes<HTMLButtonElement>;
 };
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const PopoverTrigger = memo(function PopoverTrigger({
   children,
   onPress,

@@ -156,7 +156,7 @@ export const popoverMenuBuilder = ({
     );
 
     return (
-      <VStack minHeight={500} background="background">
+      <HStack minHeight={500} background="background">
         <PopoverMenu
           {...props}
           width={200}
@@ -193,7 +193,7 @@ export const popoverMenuBuilder = ({
             />
           ))}
         </PopoverMenu>
-      </VStack>
+      </HStack>
     );
   };
 

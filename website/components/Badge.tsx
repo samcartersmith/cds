@@ -12,6 +12,7 @@ const badgePalettes = {
   product: 'pink40',
   deprecated: 'red60',
   internal: 'gray40',
+  comingSoon: 'blue10',
 } as const;
 
 const textOverrides = {
@@ -19,6 +20,7 @@ const textOverrides = {
   product: 'Product owned',
   mobile: 'Mobile only',
   web: 'Web only',
+  comingSoon: 'Coming soon',
 } as Record<BadgeVariant, string>;
 
 type Props = {

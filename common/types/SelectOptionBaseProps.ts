@@ -1,4 +1,7 @@
 import { CellBaseProps, ListCellBaseProps } from './CellBaseProps';
 
-export type SelectOptionBaseProps = Omit<CellBaseProps, 'children'> &
-  Pick<ListCellBaseProps, 'title' | 'description' | 'multiline' | 'compact' | 'media'>;
+export type SelectOptionBaseProps = Omit<
+  CellBaseProps,
+  'children' | 'offsetHorizontal' | 'reduceHorizontalSpacing'
+> &
+  Pick<ListCellBaseProps, 'title' | 'description' | 'multiline' | 'compact'>;

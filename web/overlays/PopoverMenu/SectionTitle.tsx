@@ -7,7 +7,6 @@ export type SectionTitleProps = {
 };
 
 /**
- * @deprecated DO NOT USE: This is an unreleased component and is unstable
  * SectionTitle should only be used inside of a PopoverMenu
  */
 export const SectionTitle = memo(function SectionTitle({ text }: SectionTitleProps) {

@@ -1,8 +1,14 @@
+import { Badge } from ':cds-website/components/Badge';
+
 ### Getting Started
 
 `PopoverMenu` is a **web only** component that is composed of trigger and an elevated surface that can be shown/hidden by interacting with the trigger and/or the contents of the `PopoverMenu`.
 
-#### PopoverMenu Triggers
+#### Mobile <Badge variant="comingSoon" />
+
+On mobile, `PopoverMenu` is displayed as a `Tray`.
+
+### PopoverMenu Triggers
 
 `PopoverMenu`s can take an interactable component (`Button`, `IconButton`, etc.) as the trigger, as long as it is wrapped in the `PopoverTrigger` higher order component.
 
@@ -25,9 +31,15 @@ const Example = () => (
 );
 ```
 
-#### PopoverMenu Content
+### PopoverMenu Content
 
-We strongly recommend that you wrap each interactable child of a `PopoverMenu` in a `MenuItem`, which will add keyboard navigation, focus behaviors, and accessibility attributes, all for free. You just need to pass each `MenuItem` a unique value. See `MenuItem` usage for more details.
+#### Interactables
+
+We strongly recommend that you use `SelectOption` for interactable `PopoverMenu` content because it adds keyboard navigation, focus behaviors, and accessibility attributes, all for free; and it comes with all the layout perks of ListCell. If you don't want to use `SelectOption` and you are passing interactables as children, then you will need to wrap each child in a `MenuItem`. See `MenuItem` usage for more details.
+
+#### Noninteractables
+
+`PopoverMenu` can also take non interactables as children.
 
 ### Basic PopoverMenu
 
@@ -38,20 +50,7 @@ function Default() {
   const [value, setValue] = useState('');
   const [visible, togglePopoverMenuVisibility] = useToggler(false);
 
-  const priceOptions = [
-    '666',
-    '2387',
-    '4542',
-    '54534',
-    '5435',
-    '77',
-    '123',
-    '4345345',
-    '6544',
-    '874',
-    '675765',
-    '65655',
-  ];
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
 
   const handleMenuValueChange = useCallback(
     (newValue) => {
@@ -61,7 +60,7 @@ function Default() {
   );
 
   return (
-    <VStack minHeight={500} spacing={2} background="background">
+    <VStack minHeight={400} spacing={2} background="background">
       <PopoverMenu
         width={200}
         value={value}
@@ -73,12 +72,12 @@ function Default() {
         <PopoverTrigger>
           <IconButton transparent name="more" variant="secondary" />
         </PopoverTrigger>
-        {priceOptions.map((option) => (
+        {options.map((option) => (
           <SelectOption
             value={option}
             key={option}
             title={option}
-            description="BTC"
+            description="Description"
             testID={`option-${option}`}
             selected={value === option}
           />
@@ -121,7 +120,7 @@ function NavigationMenu() {
   );
 
   return (
-    <VStack minHeight={500} spacing={2} background="background">
+    <VStack minHeight={300} spacing={2} background="background">
       <NavigationBar
         end={
           <HStack gap={1}>

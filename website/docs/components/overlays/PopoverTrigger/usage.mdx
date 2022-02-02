@@ -2,6 +2,17 @@
 
 `PopoverTrigger` is a Higher Order Component that toggles the visibility of a `PopoverMenu`. It should only be used as a direct child of a `PopoverMenu` and wrap an interactable component.
 
+```jsx
+const Example = () => (
+  <PopoverMenu>
+    <PopoverTrigger>
+      <IconButton name="more" />
+    </PopoverTrigger>
+    {/* Popover Menu children */}
+  </PopoverMenu>
+);
+```
+
 #### Triggers
 
 `PopoverTrigger` requires an interactable component (`Button`, `IconButton`, etc.) as a child that accepts a `ForwardRef`.

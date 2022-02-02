@@ -12,7 +12,7 @@ import { SelectOption } from '../../controls/SelectOption';
 import { IconButton, AvatarButton } from '../../buttons';
 import { MenuItem } from '../PopoverMenu/MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { VStack } from '../../layout/VStack';
+import { VStack, HStack } from '../../layout';
 import { SectionTitle } from '../PopoverMenu/SectionTitle';
 import { Divider } from '../../layout/Divider';
 import { DotStatusColor } from '../../dots/DotStatusColor';
@@ -27,6 +27,7 @@ const { Default: MockPopoverMenu, AvatarButtonMenu } = popoverMenuBuilder({
   IconButton,
   ThemeProvider,
   VStack,
+  HStack,
   SectionTitle,
   Divider,
   DotStatusColor,

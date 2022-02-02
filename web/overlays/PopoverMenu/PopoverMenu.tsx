@@ -11,7 +11,6 @@ import { usePopoverChildren } from './usePopoverChildren';
 import { PopoverProvider } from './PopoverContext';
 import { PopoverContent } from './PopoverContent';
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const PopoverMenu = memo(
   forwardRef(function PopoverMenu(
     {
@@ -80,7 +79,13 @@ export const PopoverMenu = memo(
 
     return (
       <PopoverProvider value={context}>
-        <HStack position="relative" width={flush ? '100%' : 'auto'} ref={ref} {...props}>
+        <HStack
+          position="relative"
+          height="100%"
+          width={flush ? '100%' : 'auto'}
+          ref={ref}
+          {...props}
+        >
           {triggerNode}
           <div id={containerId.current} style={{ zIndex: zIndex.overlays.popoverMenu }}>
             {visible && renderContent()}

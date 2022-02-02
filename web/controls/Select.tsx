@@ -17,7 +17,6 @@ export type SelectProps = {
   onChange?: (newValue: string) => void;
 } & SelectBaseProps;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Select = memo(
   forwardRef(function Select(
     {

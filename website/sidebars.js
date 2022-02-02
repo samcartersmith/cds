@@ -7,15 +7,8 @@ const sectionsToExcludeByLabel = new Set([]);
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
-  'components/overlays/SectionTitle/section-title',
-  'components/overlays/PopoverMenu/popover-menu',
-  'components/overlays/PopoverTrigger/popover-trigger',
-  'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',
   'components/overlays/Drawer/drawer',
   'components/overlays/Tray/tray',
-  'components/controls/Select/select',
-  'components/controls/SelectOption/select-option',
-  'components/overlays/MenuItem/menu-item',
 ]);
 
 // Filter sidebar components
