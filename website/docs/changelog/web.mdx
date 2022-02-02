@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.6 (2/2/2022, 01:42 PM PST)
+
+#### 🚀 Updates
+
+- Memo'ed all the Popover things. [#51768](https://github.cbhq.net/mono/repo/pull/51768)
+- Add fallbackType to SparklineInteractive. [#51881](https://github.cbhq.net/mono/repo/pull/51881)
+
+#### 🐞 Fixes
+
+- **[Icons]** Feb 2nd, 2022 Icon Publication. [#51993](https://github.cbhq.net/mono/repo/pull/51993)
+- **[Illustrations]** Feb 1st, 2022 Illustration Release. [#51944](https://github.cbhq.net/mono/repo/pull/51944)
+- Composite overlay. [#51718](https://github.cbhq.net/mono/repo/pull/51718)
+- Internal (Tooltip): Introduce tokens, merge mobile/web props, add animation. [#51704](https://github.cbhq.net/mono/repo/pull/51704)
+
+#### 📘 Misc
+
+- Undeprecate PopoverMenu and Select for release. [#51981](https://github.cbhq.net/mono/repo/pull/51981)
+
 ## 0.34.5 (2/1/2022, 10:02 AM PST)
 
 #### 🚀 Updates

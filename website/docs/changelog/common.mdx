@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.5 (2/2/2022, 01:42 PM PST)
+
+#### 🚀 Updates
+
+- Add trailing node to mobile SparklineInteractiveHeader. [#51913](https://github.cbhq.net/mono/repo/pull/51913)
+- Add fallbackType to SparklineInteractive. [#51881](https://github.cbhq.net/mono/repo/pull/51881)
+
+#### 🐞 Fixes
+
+- **[CardBody]** Add numberOfLines to CardBody text. [#51694](https://github.cbhq.net/mono/repo/pull/51694), [CDS-1901](https://jira.coinbase-corp.com/browse/CDS-1901)
+- **[Icons]** Feb 2nd, 2022 Icon Publication. [#51993](https://github.cbhq.net/mono/repo/pull/51993)
+- **[Illustrations]** Feb 1st, 2022 Illustration Release. [#51944](https://github.cbhq.net/mono/repo/pull/51944)
+- Revert useThemeConfig changes. [#51897](https://github.cbhq.net/mono/repo/pull/51897)
+- Internal (Tooltip): Introduce tokens, merge mobile/web props, add animation. [#51704](https://github.cbhq.net/mono/repo/pull/51704)
+
+#### 📘 Misc
+
+- Undeprecate PopoverMenu and Select for release. [#51981](https://github.cbhq.net/mono/repo/pull/51981)
+- Design docs for PopoverMenu. [#51912](https://github.cbhq.net/mono/repo/pull/51912)
+
 ## 0.33.4 (2/1/2022, 10:02 AM PST)
 
 #### 🚀 Updates
