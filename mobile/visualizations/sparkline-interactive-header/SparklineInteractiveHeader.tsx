@@ -1,4 +1,12 @@
-import React, { memo, forwardRef, useRef, useCallback, useImperativeHandle } from 'react';
+import React, {
+  memo,
+  forwardRef,
+  useRef,
+  useCallback,
+  useImperativeHandle,
+  ReactNode,
+  FunctionComponent,
+} from 'react';
 import { TextInput, View } from 'react-native';
 import {
   SparklineInteractiveHeaderProps,
@@ -9,13 +17,20 @@ import {
 import { interpolateSubHeadText } from '@cbhq/cds-common/visualizations/interpolateSubHeadText';
 import { useSparklineInteractiveHeaderStyles } from './useSparklineInteractiveHeaderStyles';
 import { fontScaleProps } from '../../hooks/useDeviceScaleToCdsScale';
-import { HStack } from '../../layout';
+import { HStack, VStack } from '../../layout';
 
 export * from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 
+type SparklineInteractiveHeaderMobileProps = {
+  /**
+   * Adds content next to the header. This is useful for interactive buttons
+   */
+  trailing?: ReactNode;
+} & SparklineInteractiveHeaderProps;
+
 export const SparklineInteractiveHeader = memo(
-  forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID }, ref) => {
+  forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderMobileProps>(
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing }, ref) => {
       return (
         <SparklineInteractiveHeaderStable
           ref={ref}
@@ -27,6 +42,7 @@ export const SparklineInteractiveHeader = memo(
           defaultTitle={useRef(defaultTitle).current}
           defaultSubHead={useRef(defaultSubHead).current}
           testID={testID}
+          trailing={trailing}
         />
       );
     },
@@ -34,8 +50,8 @@ export const SparklineInteractiveHeader = memo(
 );
 
 const SparklineInteractiveHeaderStable = memo(
-  forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
-    ({ defaultLabel, defaultTitle, defaultSubHead, testID }, forwardedRef) => {
+  forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderMobileProps>(
+    ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing }, forwardedRef) => {
       const labelRef = useRef<TextInput>(null);
       const titleRef = useRef<TextInput>(null);
       const subHeadRef = useRef<TextInput>(null);
@@ -192,11 +208,25 @@ const SparklineInteractiveHeaderStable = memo(
       );
 
       return (
-        <View testID={testID}>
-          {label}
-          {title}
-        </View>
+        <HStack testID={testID} spacing={0} justifyContent="space-between">
+          <VStack spacing={0} flexShrink={1}>
+            {label}
+            {title}
+          </VStack>
+          <Trailing>{trailing}</Trailing>
+        </HStack>
       );
     },
   ),
 );
+
+const Trailing: FunctionComponent = ({ children }) => {
+  if (children) {
+    return (
+      <VStack spacingStart={2} flexShrink={0} justifyContent="center" alignItems="center">
+        {children}
+      </VStack>
+    );
+  }
+  return null;
+};

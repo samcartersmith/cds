@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
+import React, { memo, useCallback, useMemo, useRef, useState, ReactNode } from 'react';
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import {
@@ -16,6 +16,7 @@ type SparklineInteractivePriceProps = Omit<
   Partial<Pick<SparklineInteractiveBaseProps<SparklinePeriod>, 'defaultPeriod'>> & {
     hideHoverDate?: boolean;
     hideMinMaxLabel?: boolean;
+    trailing?: ReactNode;
   };
 
 export const DEFAULT_PERIOD = 'day';
@@ -193,7 +194,8 @@ function generateSubHead(
 
 type SparklineInteractiveWithHeaderBuilderProps = SparklineInteractiveBuilderProps & {
   SparklineInteractiveHeader: React.ForwardRefExoticComponent<
-    SparklineInteractiveHeaderProps & React.RefAttributes<SparklineInteractiveHeaderRef>
+    SparklineInteractiveHeaderProps &
+      React.RefAttributes<SparklineInteractiveHeaderRef> & { trailing?: ReactNode }
   >;
 };
 
@@ -208,7 +210,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
   });
 
   return memo((props: SparklineInteractivePriceProps) => {
-    const { data: sparklineData } = props;
+    const { data: sparklineData, trailing } = props;
     const sparklineInteractiveData = sparklineData as Record<SparklinePeriod, ChartData>;
     const headerRef = useRef<SparklineInteractiveHeaderRef | null>(null);
     const [currentPeriod, setCurrentPeriod] = useState<SparklinePeriod>(DEFAULT_PERIOD);
@@ -253,6 +255,7 @@ export const sparklineInteractiveWithHeaderBuilder = ({
         defaultLabel="Bitcoin Price"
         defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
         defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
+        trailing={trailing}
       />
     );
 
