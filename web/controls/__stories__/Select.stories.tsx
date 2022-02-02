@@ -1,5 +1,6 @@
 import { selectBuilder, CreateSelectStoriesProps } from '@cbhq/cds-common/internal/selectBuilder';
 
+import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
 import { VStack } from '../../layout/VStack';
 import { SelectOption } from '../SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -46,3 +47,21 @@ export const {
   ...components,
   scale: 'xSmall',
 } as CreateSelectStoriesProps);
+
+const NativeSelect = () => {
+  return (
+    <select id="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="opel">Opel</option>
+      <option value="audi">Audi</option>
+    </select>
+  );
+};
+
+export const {
+  HundredCDSComponents: HundredCDSSelectComponents,
+  HundredHTMLComponent: HundredNativeSelectComponents,
+  ThousandCDSComponents: ThousandCDSSelectComponents,
+  ThousandHTMLComponent: ThousandNativeSelectComponents,
+} = performanceBenchmarkBuilder(Compact, NativeSelect);

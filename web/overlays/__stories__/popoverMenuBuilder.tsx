@@ -17,6 +17,8 @@ import {
   DotBaseProps,
 } from '@cbhq/cds-common/types';
 import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
+import { PressableProps, PressableInternalProps } from '../../system/Pressable';
+import { NavigationIconProps } from '../../icons';
 
 type LinkableProps = {
   onPress?: React.MouseEventHandler;
@@ -70,6 +72,8 @@ export type CreatePopoverMenuStoriesProps = {
   SectionTitle: ComponentType<TypographyProps>;
   DotStatusColor: ComponentType<DotBaseProps>;
   AvatarButton: ComponentType<AvatarBaseProps>;
+  Pressable: ComponentType<PressableInternalProps & PressableProps & LinkableProps>;
+  NavigationIcon: ComponentType<NavigationIconProps>;
 };
 
 export const priceOptions = [
@@ -134,6 +138,8 @@ export const popoverMenuBuilder = ({
   SectionTitle,
   DotStatusColor,
   AvatarButton,
+  Pressable,
+  NavigationIcon,
 }: CreatePopoverMenuStoriesProps) => {
   const Default = ({
     triggerTestID = 'popover-menu-trigger',
@@ -203,7 +209,7 @@ export const popoverMenuBuilder = ({
     );
 
     return (
-      <VStack minHeight={500} background="background">
+      <VStack background="background">
         <NavigationBar
           end={
             <HStack gap={1}>
@@ -218,7 +224,9 @@ export const popoverMenuBuilder = ({
                 disablePortal
               >
                 <PopoverTrigger>
-                  <IconButton transparent name="more" variant="secondary" />
+                  <Pressable as="button" backgroundColor="transparent">
+                    <NavigationIcon name="appSwitcher" />
+                  </Pressable>
                 </PopoverTrigger>
                 {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                   <SelectOption

@@ -13,6 +13,8 @@ import { MenuItem } from '../MenuItem';
 import { Divider } from '../../layout/Divider';
 import { SectionTitle } from '../PopoverMenu/SectionTitle';
 import { DotStatusColor } from '../../dots/DotStatusColor';
+import { Pressable } from '../../system/Pressable';
+import { NavigationIcon } from '../../icons';
 import { PortalProvider } from '../PortalProvider';
 
 export default {
@@ -39,6 +41,8 @@ const components = {
   SectionTitle,
   DotStatusColor,
   AvatarButton,
+  Pressable,
+  NavigationIcon,
   PortalProvider,
 };
 
