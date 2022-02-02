@@ -13,82 +13,80 @@ import { PopoverContent } from './PopoverContent';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const PopoverMenu = memo(
-  forwardRef(
-    (
-      {
-        children,
-        onChange,
-        value,
-        width,
-        maxHeight = popoverMenuMaxHeight,
-        visible,
-        flush,
-        openMenu,
-        closeMenu,
-        disablePortal,
-        ...props
-      }: PopoverMenuBaseProps,
-      ref: ForwardedRef<HTMLElement>,
-    ) => {
-      const { triggerNode, childNodes } = usePopoverChildren(children);
-      const context = usePopoverMenu({
-        onChange,
-        value,
-        width,
-        maxHeight,
-        visible,
-        flush,
-        openMenu,
-        closeMenu,
-        ...props,
-      });
-      const { popoverMenuRef, selectOptionRef } = context;
+  forwardRef(function PopoverMenu(
+    {
+      children,
+      onChange,
+      value,
+      width,
+      maxHeight = popoverMenuMaxHeight,
+      visible,
+      flush,
+      openMenu,
+      closeMenu,
+      disablePortal,
+      ...props
+    }: PopoverMenuBaseProps,
+    ref: ForwardedRef<HTMLElement>,
+  ) {
+    const { triggerNode, childNodes } = usePopoverChildren(children);
+    const context = usePopoverMenu({
+      onChange,
+      value,
+      width,
+      maxHeight,
+      visible,
+      flush,
+      openMenu,
+      closeMenu,
+      ...props,
+    });
+    const { popoverMenuRef, selectOptionRef } = context;
 
-      const containerPrefix = 'cds-popover-menu-container-';
-      // have to store it in a ref because PopperJS renders twice on mount causing issues with createPortal grabbing the id
-      const containerId = useRef<string>(generateRandomId(containerPrefix));
+    const containerPrefix = 'cds-popover-menu-container-';
+    // have to store it in a ref because PopperJS renders twice on mount causing issues with createPortal grabbing the id
+    const containerId = useRef<string>(generateRandomId(containerPrefix));
 
-      // when menu is opened, focuses already selected option or first option
-      useEffect(() => {
-        if (visible) {
-          if (selectOptionRef.current) {
-            selectOptionRef.current.focus();
-          } else if (popoverMenuRef.current) {
-            const selectOptions = popoverMenuRef.current?.querySelectorAll('[role="menuitem"]');
-            if (selectOptions.length) {
-              (selectOptions[0] as HTMLButtonElement).focus();
-            }
+    // when menu is opened, focuses already selected option or first option
+    useEffect(() => {
+      if (visible) {
+        if (selectOptionRef.current) {
+          selectOptionRef.current.focus();
+        } else if (popoverMenuRef.current) {
+          const selectOptions = popoverMenuRef.current?.querySelectorAll('[role="menuitem"]');
+          if (selectOptions.length) {
+            (selectOptions[0] as HTMLButtonElement).focus();
           }
         }
-      }, [popoverMenuRef, selectOptionRef, visible]);
-
-      const renderContent = () => {
-        if (isSSR() || disablePortal || !document.getElementById(containerId.current)) {
-          return <PopoverContent>{childNodes}</PopoverContent>;
-        }
-        return createPortal(
-          <PopoverContent>{childNodes}</PopoverContent>,
-          document.getElementById(containerId.current) as Element,
-        );
-      };
-
-      if (isDevelopment() && !triggerNode) {
-        throw Error('Popover requires a trigger element to be wrapped in PopoverTrigger');
       }
-      if (isDevelopment() && !childNodes) {
-        throw Error('Popover requires children');
-      }
+    }, [popoverMenuRef, selectOptionRef, visible]);
 
-      return (
-        <PopoverProvider value={context}>
-          <HStack position="relative" width={flush ? '100%' : 'auto'} ref={ref} {...props}>
-            {triggerNode}
-            <div id={containerId.current} style={{ zIndex: zIndex.overlays.popoverMenu }}>
-              {visible && renderContent()}
-            </div>
-          </HStack>
-        </PopoverProvider>
+    const renderContent = () => {
+      if (isSSR() || disablePortal || !document.getElementById(containerId.current)) {
+        return <PopoverContent>{childNodes}</PopoverContent>;
+      }
+      return createPortal(
+        <PopoverContent>{childNodes}</PopoverContent>,
+        document.getElementById(containerId.current) as Element,
       );
-    },
-  ),
+    };
+
+    if (isDevelopment() && !triggerNode) {
+      throw Error('Popover requires a trigger element to be wrapped in PopoverTrigger');
+    }
+    if (isDevelopment() && !childNodes) {
+      throw Error('Popover requires children');
+    }
+
+    return (
+      <PopoverProvider value={context}>
+        <HStack position="relative" width={flush ? '100%' : 'auto'} ref={ref} {...props}>
+          {triggerNode}
+          <div id={containerId.current} style={{ zIndex: zIndex.overlays.popoverMenu }}>
+            {visible && renderContent()}
+          </div>
+        </HStack>
+      </PopoverProvider>
+    );
+  }),
 );

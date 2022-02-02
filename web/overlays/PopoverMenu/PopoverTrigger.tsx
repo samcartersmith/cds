@@ -5,6 +5,7 @@ import React, {
   KeyboardEvent,
   MutableRefObject,
   RefAttributes,
+  memo,
 } from 'react';
 import { NoopFn } from '@cbhq/cds-common/types';
 import { selectKeys } from '@cbhq/cds-common/tokens/menu';
@@ -57,7 +58,10 @@ export type PopoverTriggerProps = {
 };
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const PopoverTrigger = ({ children, onPress }: PopoverTriggerHOCProps) => {
+export const PopoverTrigger = memo(function PopoverTrigger({
+  children,
+  onPress,
+}: PopoverTriggerHOCProps) {
   const {
     togglePopoverMenuVisibility,
     disabled,
@@ -112,4 +116,4 @@ export const PopoverTrigger = ({ children, onPress }: PopoverTriggerHOCProps) =>
       {renderPopoverMenuTrigger(children as ReactElement<PopoverTriggerProps>)}
     </HStack>
   );
-};
+});

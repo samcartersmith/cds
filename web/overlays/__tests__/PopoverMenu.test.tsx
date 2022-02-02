@@ -10,7 +10,7 @@ import { PopoverTrigger } from '../PopoverMenu/PopoverTrigger';
 import { PopoverTriggerWrapper } from '../PopoverMenu/PopoverTriggerWrapper';
 import { SelectOption } from '../../controls/SelectOption';
 import { IconButton, AvatarButton } from '../../buttons';
-import { MenuItem } from '../MenuItem';
+import { MenuItem } from '../PopoverMenu/MenuItem';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { VStack } from '../../layout/VStack';
 import { SectionTitle } from '../PopoverMenu/SectionTitle';

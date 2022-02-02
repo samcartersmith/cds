@@ -6,7 +6,7 @@ import { Cell, overflowClassName } from '../cells/Cell';
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
 import { CellAccessory } from '../cells/CellAccessory';
-import { MenuItem, MenuItemProps } from '../overlays/MenuItem';
+import { MenuItem, MenuItemProps } from '../overlays/PopoverMenu/MenuItem';
 import { usePopoverContext } from '../overlays/PopoverMenu/PopoverContext';
 
 // I know this looks weird.. but I got syntax errors whenever I tried to inline this
@@ -35,53 +35,51 @@ const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const SelectOption = memo(
-  forwardRef(
-    (
-      { title, description, multiline, compact, value, ...props }: SelectOptionProps,
-      ref: ForwardedRef<HTMLElement>,
-    ) => {
-      const minHeight = useScaleConditional(
-        compact ? selectOptionCompactMinHeight : selectOptionMinHeight,
-      );
-      const maxHeight = useScaleConditional(
-        compact ? selectOptionCompactMaxHeight : selectOptionMaxHeight,
-      );
+  forwardRef(function SelectOption(
+    { title, description, multiline, compact, value, ...props }: SelectOptionProps,
+    ref: ForwardedRef<HTMLElement>,
+  ) {
+    const minHeight = useScaleConditional(
+      compact ? selectOptionCompactMinHeight : selectOptionMinHeight,
+    );
+    const maxHeight = useScaleConditional(
+      compact ? selectOptionCompactMaxHeight : selectOptionMaxHeight,
+    );
 
-      const { sanitizedValue } = usePopoverContext();
-      const selected = value === sanitizedValue;
+    const { sanitizedValue } = usePopoverContext();
+    const selected = value === sanitizedValue;
 
-      return (
-        <MenuItem value={value} ref={ref}>
-          <Cell
-            {...selectCellSpacingConfig}
-            borderRadius="none"
-            minHeight={minHeight}
-            maxHeight={maxHeight}
-            accessory={selected ? <CellAccessory type="selected" /> : undefined}
-            selected={selected}
-            {...props}
-          >
-            <VStack>
-              {!!title && (
-                <TextHeadline as="div" overflow="truncate">
-                  {title}
-                </TextHeadline>
-              )}
+    return (
+      <MenuItem value={value} ref={ref}>
+        <Cell
+          {...selectCellSpacingConfig}
+          borderRadius="none"
+          minHeight={minHeight}
+          maxHeight={maxHeight}
+          accessory={selected ? <CellAccessory type="selected" /> : undefined}
+          selected={selected}
+          {...props}
+        >
+          <VStack>
+            {!!title && (
+              <TextHeadline as="div" overflow="truncate">
+                {title}
+              </TextHeadline>
+            )}
 
-              {!!description && (
-                <TextBody
-                  as="div"
-                  color="foregroundMuted"
-                  overflow={multiline ? undefined : 'truncate'}
-                  dangerouslySetClassName={multiline ? overflowClassName : undefined}
-                >
-                  {description}
-                </TextBody>
-              )}
-            </VStack>
-          </Cell>
-        </MenuItem>
-      );
-    },
-  ),
+            {!!description && (
+              <TextBody
+                as="div"
+                color="foregroundMuted"
+                overflow={multiline ? undefined : 'truncate'}
+                dangerouslySetClassName={multiline ? overflowClassName : undefined}
+              >
+                {description}
+              </TextBody>
+            )}
+          </VStack>
+        </Cell>
+      </MenuItem>
+    );
+  }),
 );

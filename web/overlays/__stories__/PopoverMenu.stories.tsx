@@ -9,7 +9,7 @@ import { NavigationBar, NavigationTitle } from '../../navigation';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { CellMedia } from '../../cells/CellMedia';
 import { FeedCard } from '../../cards/FeedCard';
-import { MenuItem } from '../MenuItem';
+import { MenuItem } from '../PopoverMenu/MenuItem';
 import { Divider } from '../../layout/Divider';
 import { SectionTitle } from '../PopoverMenu/SectionTitle';
 import { DotStatusColor } from '../../dots/DotStatusColor';

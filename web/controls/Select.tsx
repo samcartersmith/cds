@@ -7,7 +7,7 @@ import { LinkableProps } from '../system';
 import { useRotate180Animation } from '../animation/useRotate180Animation';
 import { SelectTrigger } from './SelectTrigger';
 import { PopoverMenu } from '../overlays';
-import { MenuItemProps } from '../overlays/MenuItem';
+import { MenuItemProps } from '../overlays/PopoverMenu/MenuItem';
 import { PopoverTriggerWrapper } from '../overlays/PopoverMenu/PopoverTriggerWrapper';
 import { HStack } from '../layout/HStack';
 

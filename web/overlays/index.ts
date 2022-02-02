@@ -8,6 +8,6 @@ export * from './PopoverMenu/PopoverMenu';
 export * from './Toast';
 export * from './Tooltip';
 export * from './PopoverMenu/SectionTitle';
-export * from './MenuItem';
+export * from './PopoverMenu/MenuItem';
 export * from './PopoverMenu/PopoverTrigger';
 export * from './PopoverMenu/PopoverTriggerWrapper';

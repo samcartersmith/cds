@@ -5,7 +5,7 @@ import { VStack } from '../../layout/VStack';
 import { SelectOption } from '../SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Select } from '../Select';
-import { MenuItem } from '../../overlays/MenuItem';
+import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
 import { InputIcon } from '../InputIcon';
 
 export default {

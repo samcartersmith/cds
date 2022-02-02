@@ -10,7 +10,7 @@ import { Select } from '../Select';
 import { VStack } from '../../layout/VStack';
 import { SelectOption } from '../SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { MenuItem } from '../../overlays/MenuItem';
+import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
 import { Icon } from '../../icons/Icon';
 
 const { Default: MockSelect } = selectBuilder({
