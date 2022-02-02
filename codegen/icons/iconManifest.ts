@@ -4555,4 +4555,82 @@ export const iconManifest = {
     description: 'navigation, speciality, shopping, cart, checkout, trolley, groceries, 🛒',
     documentationLinks: [],
   },
+  '8167:259': {
+    key: 'e97c63202c8f584f79724a76475a80c216cf96b1',
+    name: 'NavigationIcon/trophyCup_24/inactive',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:257': {
+    key: 'bef4ae132c8f90784260a20107faec759874421f',
+    name: 'NavigationIcon/trophyCup_24/active',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:256': {
+    key: '72181b77c623ccd76d685bd11f810fe3c2f1111b',
+    name: 'NavigationIcon/trophyCup_12/inactive',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:255': {
+    key: 'd49f2ab0664572b7081fd94bfaa739f79f3c8938',
+    name: 'NavigationIcon/trophyCup_12/active',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:254': {
+    key: '5a4fe2e53c4013feb2f43ab407edfb6ab4936c94',
+    name: 'NavigationIcon/trophyCup_16/inactive',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:258': {
+    key: '6c2597fe60803a93bd91bc366463b6d6db71d799',
+    name: 'NavigationIcon/trophyCup_16/active',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8178:145': {
+    key: 'a928c5e9378357a8edf290a6a71bc5341009d9b5',
+    name: 'NavigationIcon/moreVertical_24/inactive',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:143': {
+    key: 'c6ce26e0b3e5e45b1b26e7512f56c0d664bd6af2',
+    name: 'NavigationIcon/moreVertical_24/active',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:146': {
+    key: '367efbb67b6b087d94684f237d45647b16cfeb99',
+    name: 'NavigationIcon/moreVertical_16/inactive',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:144': {
+    key: '948849de7ac9029101261d8966bc25d7e02ee711',
+    name: 'NavigationIcon/moreVertical_16/active',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:147': {
+    key: 'b8f98075eda0344de83df8e279d19a4e25d75c1f',
+    name: 'NavigationIcon/moreVertical_12/inactive',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:142': {
+    key: '72dc4226d49e1e1487c7f0577929d265c4a91146',
+    name: 'NavigationIcon/moreVertical_12/active',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
 };

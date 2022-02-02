@@ -4,7 +4,7 @@
  */
 
 export const manifest = {
-  lastUnicode: 60984,
+  lastUnicode: 61004,
   unicodeMap: {
     cashUSD: { '8': 'uE966', '12': 'uE967', '16': 'uE968', '24': 'uE969', '32': 'uE96A' },
     cashGBP: { '8': 'uE96B', '12': 'uE96C', '16': 'uE96D', '24': 'uE96E', '32': 'uE96F' },
@@ -349,5 +349,21 @@ export const manifest = {
       '32': 'uEE33',
     },
     paymentCardActive: { '8': 'uEE34', '12': 'uEE35', '16': 'uEE36', '24': 'uEE37', '32': 'uEE38' },
+    trophyCupInactive: { '8': 'uEE39', '12': 'uEE3A', '16': 'uEE3B', '24': 'uEE3C', '32': 'uEE3D' },
+    trophyCupActive: { '8': 'uEE3E', '12': 'uEE3F', '16': 'uEE40', '24': 'uEE41', '32': 'uEE42' },
+    moreVerticalInactive: {
+      '8': 'uEE43',
+      '12': 'uEE44',
+      '16': 'uEE45',
+      '24': 'uEE46',
+      '32': 'uEE47',
+    },
+    moreVerticalActive: {
+      '8': 'uEE48',
+      '12': 'uEE49',
+      '16': 'uEE4A',
+      '24': 'uEE4B',
+      '32': 'uEE4C',
+    },
   },
 };

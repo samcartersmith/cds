@@ -225,6 +225,8 @@ export const navigationIconNames = [
   'application',
   'appSwitcher',
   'shoppingCart',
+  'trophyCup',
+  'moreVertical',
 ] as const;
 
 export const unicodeMap = {
@@ -511,4 +513,14 @@ export const unicodeMap = {
   documentationActive: { '8': 'uEE2A', '12': 'uEE2B', '16': 'uEE2C', '24': 'uEE2D', '32': 'uEE2E' },
   paymentCardInactive: { '8': 'uEE2F', '12': 'uEE30', '16': 'uEE31', '24': 'uEE32', '32': 'uEE33' },
   paymentCardActive: { '8': 'uEE34', '12': 'uEE35', '16': 'uEE36', '24': 'uEE37', '32': 'uEE38' },
+  trophyCupInactive: { '8': 'uEE39', '12': 'uEE3A', '16': 'uEE3B', '24': 'uEE3C', '32': 'uEE3D' },
+  trophyCupActive: { '8': 'uEE3E', '12': 'uEE3F', '16': 'uEE40', '24': 'uEE41', '32': 'uEE42' },
+  moreVerticalInactive: {
+    '8': 'uEE43',
+    '12': 'uEE44',
+    '16': 'uEE45',
+    '24': 'uEE46',
+    '32': 'uEE47',
+  },
+  moreVerticalActive: { '8': 'uEE48', '12': 'uEE49', '16': 'uEE4A', '24': 'uEE4B', '32': 'uEE4C' },
 } as const;

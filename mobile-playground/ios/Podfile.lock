@@ -351,7 +351,7 @@ PODS:
     - React-perflogger (= 0.65.2)
   - RNGestureHandler (1.9.0):
     - React-Core
-  - RNInAppBrowser (3.5.1):
+  - RNInAppBrowser (3.6.3):
     - React-Core
   - RNReanimated (1.13.1):
     - React
@@ -575,7 +575,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 5bedf6e704373fe9f0cc54aa35a112e5b0051b94
   ReactCommon: bf5dc45e9ec73a75f00de565f2519d6f8594ddf5
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
-  RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
+  RNInAppBrowser: 3ff3a3b8f458aaf25aaee879d057352862edf357
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   Yoga: e6db7a0be0e80eeb70c04663605e4f6a050ab013

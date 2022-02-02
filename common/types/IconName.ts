@@ -219,7 +219,9 @@ export type NavigationIconName =
   | 'planet'
   | 'application'
   | 'appSwitcher'
-  | 'shoppingCart';
+  | 'shoppingCart'
+  | 'trophyCup'
+  | 'moreVertical';
 
 export type NavigationIconInternalName =
   | 'accountInactive'
@@ -287,4 +289,8 @@ export type NavigationIconInternalName =
   | 'appSwitcherInactive'
   | 'appSwitcherActive'
   | 'shoppingCartInactive'
-  | 'shoppingCartActive';
+  | 'shoppingCartActive'
+  | 'trophyCupInactive'
+  | 'trophyCupActive'
+  | 'moreVerticalInactive'
+  | 'moreVerticalActive';
