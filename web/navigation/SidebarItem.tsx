@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { SharedProps } from '@cbhq/cds-common';
 import { HStack } from '../layout';
 import { TextHeadline } from '../typography';
 import { Pressable } from '../system';
@@ -30,30 +31,33 @@ export type SidebarItemProps = {
    * @default false
    */
   active?: boolean;
-};
+} & SharedProps;
 
-export const SidebarItem = memo(({ icon, title, onPress, collapsed, active }: SidebarItemProps) => {
-  const color = active ? 'primary' : 'foreground';
+export const SidebarItem = memo(
+  ({ icon, title, onPress, collapsed, active, testID }: SidebarItemProps) => {
+    const color = active ? 'primary' : 'foreground';
 
-  return (
-    <Pressable
-      backgroundColor="primaryWash"
-      borderRadius="round"
-      transparentWhileInactive={!active}
-      as="button"
-      onPress={onPress}
-      width="auto"
-    >
-      <HStack gap={2} spacing={2} alignItems="center">
-        <NavigationIcon name={icon} active={active} />
-        {!collapsed && (
-          <TextHeadline as="h2" color={color}>
-            {title}
-          </TextHeadline>
-        )}
-      </HStack>
-    </Pressable>
-  );
-});
+    return (
+      <Pressable
+        backgroundColor="primaryWash"
+        borderRadius="round"
+        transparentWhileInactive={!active}
+        as="button"
+        testID={testID}
+        onPress={onPress}
+        width="auto"
+      >
+        <HStack gap={2} spacing={2} alignItems="center">
+          <NavigationIcon name={icon} active={active} />
+          {!collapsed && (
+            <TextHeadline as="h2" color={color}>
+              {title}
+            </TextHeadline>
+          )}
+        </HStack>
+      </Pressable>
+    );
+  },
+);
 
 SidebarItem.displayName = 'SidebarItem';

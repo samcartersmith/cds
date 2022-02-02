@@ -3,6 +3,7 @@ import React, { memo, Children, cloneElement, ReactElement, useMemo } from 'reac
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { SharedProps } from '@cbhq/cds-common';
 import { SidebarItemProps } from './SidebarItem';
 import { VStack } from '../layout';
 import { ThemeProvider } from '../system/ThemeProvider';
@@ -45,10 +46,10 @@ export type SidebarProps = {
    * @default false
    */
   autoCollapse?: boolean;
-};
+} & SharedProps;
 
 export const Sidebar: React.FC<SidebarProps> = memo(
-  ({ logo, children, collapsed, autoCollapse }) => {
+  ({ logo, children, collapsed, autoCollapse, testID }) => {
     const { ref, currentBreakpoint } = useDimensions(BREAKPOINT_CONFIG);
     const computedCollapse = collapsed || (autoCollapse && currentBreakpoint === 'collapsed');
     const computedWidth = computedCollapse ? WIDTH.collapsed : WIDTH.expanded;
@@ -83,6 +84,7 @@ export const Sidebar: React.FC<SidebarProps> = memo(
           position="sticky"
           top="0"
           left="0"
+          testID={testID}
           width={computedWidth}
           minWidth={computedWidth}
           spacingHorizontal={2}
