@@ -1,0 +1,172 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/navigation/SidebarMoreMenu](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/navigation/SidebarMoreMenu.tsx)
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="a11y" />
+
+## Props
+
+### active <Badge variant="web" />
+
+Use the active prop to identify the current page
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="active"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-active" />
+
+### closeMenu <Badge variant="web" />
+
+Callback that unMounts the Menu
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="closeMenu"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-closeMenu" />
+
+### disablePortal <Badge variant="web" />
+
+Does not render the PopoverMenu inside of a portal (react-dom createPortal). Portal is automatically disabled for SSR
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="disablePortal"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-disablePortal" />
+
+### onBlur <Badge variant="web" />
+
+Callback that fires when PopoverMenu or trigger are blurred
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="onBlur"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-onBlur" />
+
+### onChange <Badge variant="web" />
+
+Callback that is fired whenever a select option is selected
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(newValue: string) => void']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-onChange" />
+
+### onPress <Badge variant="web" />
+
+Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-onPress" />
+
+### openMenu <Badge variant="web" />
+
+Callback that mounts the Menu
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="openMenu"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-openMenu" />
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-testID" />
+
+### value <Badge variant="web" />
+
+Default selected value, or preselected value
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="value"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-value" />
+
+### visible <Badge variant="web" />
+
+Whether Menu is mounted or dismounted
+
+<ApiDetails
+  componentName="SidebarMoreMenu"
+  propertyName="visible"
+  required={true}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="prop-visible" />
+
+<ComponentDetails componentName="SidebarMoreMenu" templateName="outro" />

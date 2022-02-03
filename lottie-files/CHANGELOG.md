@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.21 (2/3/2022, 01:35 PM PST)
+
+#### 🚀 Updates
+
+- Add new dApp Wallet animation. [#51536](https://github.cbhq.net/mono/repo/pull/51536), [CDS-1947](https://jira.coinbase-corp.com/browse/CDS-1947)
+
 ## 0.2.20 (11/5/2021, 10:52 AM PST)
 
 #### 🚀 Updates

@@ -1492,6 +1492,21 @@ export const SidebarItem = {
   ),
 };
 
+export const SidebarMoreMenu = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarMoreMenu/implementation.mdx'
+      ),
+  ),
+  'sidebar-more-menu': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarMoreMenu/sidebar-more-menu.mdx'
+      ),
+  ),
+};
+
 export const Alert = {
   alert: React.lazy(
     async () =>

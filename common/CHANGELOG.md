@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.6 (2/3/2022, 01:35 PM PST)
+
+#### 🚀 Updates
+
+- CDS Sidebar more menu. [#52216](https://github.cbhq.net/mono/repo/pull/52216)
+- **[Accordion]** CDS Accordion Web. [#51885](https://github.cbhq.net/mono/repo/pull/51885), [CDS-1878](https://jira.coinbase-corp.com/browse/CDS-1878)
+
 ## 0.33.5 (2/2/2022, 01:42 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.2 (2/3/2022, 01:35 PM PST)
+
+#### 🐞 Fixes
+
+- Add snake_case util to string utils. [#52248](https://github.cbhq.net/mono/repo/pull/52248)
+
 ## 0.3.1 (1/27/2022, 08:20 AM PST)
 
 #### 🚀 Updates

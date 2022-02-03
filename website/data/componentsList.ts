@@ -58,6 +58,7 @@ export const components = [
   'NavigationTitle',
   'Sidebar',
   'SidebarItem',
+  'SidebarMoreMenu',
   'Alert',
   'Toast',
   'Tooltip',

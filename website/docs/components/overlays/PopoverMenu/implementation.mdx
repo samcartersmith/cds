@@ -141,6 +141,36 @@ Can optionally pass a maxHeight.
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-maxHeight" />
 
+### maxWidth <Badge variant="web" />
+
+Maximum width of input as a percentage string or number converted to pixels.
+
+<ApiDetails
+  componentName="PopoverMenu"
+  propertyName="maxWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['`${number}%`', 'number']}
+/>
+
+<ComponentDetails componentName="PopoverMenu" templateName="prop-maxWidth" />
+
+### minWidth <Badge variant="web" />
+
+Minimum width of input as a percentage string or number converted to pixels.
+
+<ApiDetails
+  componentName="PopoverMenu"
+  propertyName="minWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['`${number}%`', 'number']}
+/>
+
+<ComponentDetails componentName="PopoverMenu" templateName="prop-minWidth" />
+
 ### onBlur <Badge variant="web" />
 
 Callback that fires when PopoverMenu or trigger are blurred
@@ -185,6 +215,21 @@ Callback that mounts the Menu
 />
 
 <ComponentDetails componentName="PopoverMenu" templateName="prop-openMenu" />
+
+### popoverPositionConfig <Badge variant="web" /> <Badge variant="internal" order={2} />
+
+Pass a custom config for the PopoverMenu position relative to the trigger
+
+<ApiDetails
+  componentName="PopoverMenu"
+  propertyName="popoverPositionConfig"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['PopoverPositionConfig']}
+/>
+
+<ComponentDetails componentName="PopoverMenu" templateName="prop-popoverPositionConfig" />
 
 ### testID <Badge variant="web" />
 

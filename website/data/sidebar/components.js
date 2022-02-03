@@ -137,6 +137,7 @@ module.exports = {
         'components/navigation/NavigationTitle/navigation-title',
         'components/navigation/Sidebar/sidebar',
         'components/navigation/SidebarItem/sidebar-item',
+        'components/navigation/SidebarMoreMenu/sidebar-more-menu',
       ],
     },
     {
