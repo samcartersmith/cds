@@ -3,6 +3,26 @@ import { NoopFn } from './Helpers';
 import { SharedProps } from './SharedProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 
+export type PopoverPositionConfig = {
+  offset: [number, number];
+  placement:
+    | 'auto'
+    | 'auto-start'
+    | 'auto-end'
+    | 'top'
+    | 'bottom'
+    | 'right'
+    | 'left'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'right-start'
+    | 'right-end'
+    | 'left-start'
+    | 'left-end';
+};
+
 /** Menu is exclusively for Web ONLY. Use Tray for Mobile */
 export type PopoverMenuBaseProps = {
   children: ReactNode[];
@@ -15,6 +35,10 @@ export type PopoverMenuBaseProps = {
    * @default 100%
    * */
   width?: `${number}%` | number;
+  /** Minimum width of input as a percentage string or number converted to pixels. */
+  minWidth?: `${number}%` | number;
+  /** Maximum width of input as a percentage string or number converted to pixels. */
+  maxWidth?: `${number}%` | number;
   /** Can optionally pass a maxHeight.
    * @default 300
    * */
@@ -41,6 +65,11 @@ export type PopoverMenuBaseProps = {
    * Portal is automatically disabled for SSR
    * */
   disablePortal?: boolean;
+  /**
+   * Pass a custom config for the PopoverMenu position relative to the trigger
+   * @internal this property is for internal use only!
+   */
+  popoverPositionConfig?: PopoverPositionConfig;
 } & SharedProps &
   Pick<
     SharedAccessibilityProps,

@@ -24,6 +24,9 @@ export const PopoverMenu = memo(
       openMenu,
       closeMenu,
       disablePortal,
+      popoverPositionConfig,
+      minWidth,
+      maxWidth,
       ...props
     }: PopoverMenuBaseProps,
     ref: ForwardedRef<HTMLElement>,
@@ -38,6 +41,9 @@ export const PopoverMenu = memo(
       flush,
       openMenu,
       closeMenu,
+      popoverPositionConfig,
+      minWidth,
+      maxWidth,
       ...props,
     });
     const { popoverMenuRef, selectOptionRef } = context;
@@ -45,6 +51,7 @@ export const PopoverMenu = memo(
     const containerPrefix = 'cds-popover-menu-container-';
     // have to store it in a ref because PopperJS renders twice on mount causing issues with createPortal grabbing the id
     const containerId = useRef<string>(generateRandomId(containerPrefix));
+    const popoverPortalZIndex = zIndex.overlays.portal + zIndex.overlays.popoverMenu;
 
     // when menu is opened, focuses already selected option or first option
     useEffect(() => {
@@ -87,7 +94,7 @@ export const PopoverMenu = memo(
           {...props}
         >
           {triggerNode}
-          <div id={containerId.current} style={{ zIndex: zIndex.overlays.popoverMenu }}>
+          <div id={containerId.current} style={{ zIndex: popoverPortalZIndex }}>
             {visible && renderContent()}
           </div>
         </HStack>

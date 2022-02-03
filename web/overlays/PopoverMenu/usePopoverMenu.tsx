@@ -2,19 +2,20 @@ import { PopoverMenuBaseProps } from '@cbhq/cds-common';
 import { useRef, useState, useCallback, useMemo, FocusEvent } from 'react';
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
 
-/** this hook stores all the shared logic between all the PopoverMenu sub components: PopoverTrigger, MenuItem, SelectOption, and PopoverMenu */
+/** This hook stores all the shared logic between all the PopoverMenu sub components: PopoverTrigger, MenuItem, SelectOption, and PopoverMenu */
 export const usePopoverMenu = ({
   onChange,
   value,
-  width = '100%',
-  maxHeight,
+  width: customWidth,
   visible,
   disabled = false,
   openMenu,
   closeMenu,
   accessibilityLabel,
   onBlur,
-  flush,
+  minWidth,
+  maxWidth,
+  ...props
 }: Omit<PopoverMenuBaseProps, 'children'>) => {
   // TODO: These are necessary callback refs to make PopperJS work. They are causing double renders, will be looking at another third party solution in separate PR
   const [trigger, setTrigger] = useState<HTMLElement | null>(null);
@@ -30,6 +31,9 @@ export const usePopoverMenu = ({
   // used to generate unique aria labels and attributes
   const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
     useA11yControlledVisibility(visible, accessibilityLabel);
+
+  // if a min or max width is declared, we don't want to instantiate width with the default of 100%
+  const width = minWidth || maxWidth ? undefined : customWidth ?? '100%';
 
   const togglePopoverMenuVisibility = useCallback(() => {
     if (visible) {
@@ -71,8 +75,9 @@ export const usePopoverMenu = ({
       disabled,
       sanitizedValue,
       width,
-      maxHeight,
-      flush,
+      minWidth,
+      maxWidth,
+      visible,
       // state
       setTrigger,
       setPopper,
@@ -87,6 +92,7 @@ export const usePopoverMenu = ({
       handlePopoverMenuBlur,
       onChange,
       onBlur,
+      ...props,
     }),
     [
       triggerRef,
@@ -95,8 +101,9 @@ export const usePopoverMenu = ({
       disabled,
       sanitizedValue,
       width,
-      maxHeight,
-      flush,
+      minWidth,
+      maxWidth,
+      visible,
       setTrigger,
       setPopper,
       togglePopoverMenuVisibility,
@@ -108,6 +115,7 @@ export const usePopoverMenu = ({
       handlePopoverMenuBlur,
       onChange,
       onBlur,
+      props,
     ],
   );
 };

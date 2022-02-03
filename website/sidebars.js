@@ -9,6 +9,7 @@ const sectionsToExcludeByLabel = new Set([]);
 const componentsToExcludeByLabel = new Set([
   'components/overlays/Drawer/drawer',
   'components/overlays/Tray/tray',
+  'components/navigation/SidebarMoreMenu/sidebar-more-menu',
 ]);
 
 // Filter sidebar components

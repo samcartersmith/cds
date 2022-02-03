@@ -212,7 +212,7 @@ export const popoverMenuBuilder = ({
       <VStack background="background">
         <NavigationBar
           end={
-            <HStack gap={1}>
+            <HStack alignItems="center" gap={1}>
               <PopoverMenu
                 {...props}
                 width={350}

@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 
 import { css } from 'linaria';
+import { NavigationIconName, useToggler } from '@cbhq/cds-common';
 import { palette } from '../../tokens';
 import { Button, IconButton, AvatarButton, ButtonGroup } from '../../buttons/index';
-import { LogoMark } from '../../icons/LogoMark';
+import { LogoMark, NavigationIcon } from '../../icons';
 import { HStack, VStack } from '../../layout';
 import { TextHeadline, TextDisplay2 } from '../../typography';
 import {
@@ -19,6 +20,8 @@ import { navLinkClassName } from '../NavLink';
 import { Pressable } from '../../system';
 import { Avatar } from '../../media';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
+import { SidebarMoreMenu } from '../SidebarMoreMenu';
+import { SelectOption } from '../../controls/SelectOption';
 
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
@@ -80,11 +83,7 @@ export const SidebarExample: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <HStack
-      justifyContent="center"
-      alignItems="flex-start"
-      dangerouslySetBackground={palette.backgroundAlternate}
-    >
+    <HStack justifyContent="center" alignItems="flex-start" background="backgroundAlternate">
       <Sidebar collapsed={collapsed} logo={<LogoMark />}>
         {items.map((props, index) => (
           <SidebarItem
@@ -168,6 +167,101 @@ export const NavLinkExample: React.FC = () => {
       <NavLink {...getProps('payments')}>Payments</NavLink>
       <NavLink {...getProps('myWallet')}>My Wallet</NavLink>
       <NavLink {...getProps('defi')}>DeFi</NavLink>
+    </HStack>
+  );
+};
+
+type MoreMenuOption = {
+  value: string;
+  label: string;
+  icon: NavigationIconName;
+};
+
+const moreMenuOptions: MoreMenuOption[] = [
+  {
+    value: 'earn',
+    label: 'Earn',
+    icon: 'earn',
+  },
+  {
+    value: 'borrow',
+    label: 'Borrow',
+    icon: 'cash',
+  },
+  {
+    value: 'defi',
+    label: 'DeFi',
+    icon: 'defi',
+  },
+];
+
+export const SidebarWithMoreMenuExample: React.FC = () => {
+  const [collapsed, setCompact] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [moreMenuVisible, toggleMoreMenuVisibility] = useToggler(false);
+  const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
+  const moreMenuIndex = 4;
+
+  const handleMoreMenuChange = (newValue: string) => {
+    setActiveIndex(moreMenuIndex);
+    setMoreMenuValue(newValue);
+  };
+
+  const handleItemPress = (index: number) => {
+    setActiveIndex(index);
+    setMoreMenuValue(undefined);
+  };
+
+  return (
+    <HStack justifyContent="center" alignItems="flex-start" background="backgroundAlternate">
+      <Sidebar collapsed={collapsed} logo={<LogoMark />}>
+        {items.slice(0, 4).map((props, index) => (
+          <SidebarItem
+            key={`sidebar-item--${props.title}`}
+            active={index === activeIndex}
+            onPress={() => handleItemPress(index)}
+            {...props}
+          />
+        ))}
+        <SidebarMoreMenu
+          onChange={handleMoreMenuChange}
+          value={moreMenuValue}
+          visible={moreMenuVisible}
+          active={activeIndex === moreMenuIndex}
+          openMenu={toggleMoreMenuVisibility.toggleOn}
+          closeMenu={toggleMoreMenuVisibility.toggleOff}
+          onPress={() => setActiveIndex(moreMenuIndex)}
+        >
+          {moreMenuOptions.map((item) => (
+            <SelectOption
+              key={`sidebar-more-menu-item--${item.value}`}
+              value={item.value}
+              description={item.label}
+              media={<NavigationIcon name={item.icon} />}
+            />
+          ))}
+        </SidebarMoreMenu>
+      </Sidebar>
+
+      <HStack spacing={2} gap={1} justifyContent="space-between" alignItems="center" flexGrow={1}>
+        <TextHeadline as="h2">Active Page: {items[activeIndex].title}</TextHeadline>
+        <ButtonGroup accessibilityLabel="make collapsed">
+          <Button
+            compact
+            variant={collapsed ? 'secondary' : 'primary'}
+            onPress={() => setCompact(false)}
+          >
+            default
+          </Button>
+          <Button
+            compact
+            variant={collapsed ? 'primary' : 'secondary'}
+            onPress={() => setCompact(true)}
+          >
+            collapsed
+          </Button>
+        </ButtonGroup>
+      </HStack>
     </HStack>
   );
 };

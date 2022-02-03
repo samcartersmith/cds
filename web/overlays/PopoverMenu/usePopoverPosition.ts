@@ -1,3 +1,5 @@
+import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
+import { PopoverPositionConfig } from '@cbhq/cds-common/types/PopoverMenuBaseProps';
 import { usePopper } from 'react-popper';
 
 /** TODO: this currently uses PopperJS which causes multiple rerenders since it relies on callback refs
@@ -6,15 +8,16 @@ import { usePopper } from 'react-popper';
 export const usePopoverPosition = (
   trigger: HTMLElement | null,
   popover: HTMLDivElement | null,
-  gutter: number,
+  popoverPositionConfig?: PopoverPositionConfig,
 ) => {
+  const getPopoverPositionConfig = popoverPositionConfig ?? defaultPopoverPositionConfig;
   const { styles: popperStyles, attributes: popperAttributes } = usePopper(trigger, popover, {
-    placement: 'bottom-start',
+    placement: getPopoverPositionConfig.placement,
     modifiers: [
       {
         name: 'offset',
         options: {
-          offset: [0, gutter],
+          offset: getPopoverPositionConfig.offset,
         },
       },
     ],

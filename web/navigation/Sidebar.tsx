@@ -1,14 +1,15 @@
-import React, { memo, Children, cloneElement, ReactElement, useMemo } from 'react';
+import React, { memo, ReactElement, ReactNode, useMemo } from 'react';
 
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { css } from 'linaria';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { SharedProps } from '@cbhq/cds-common';
-import { SidebarItemProps } from './SidebarItem';
+import { sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
+import { SharedProps } from '@cbhq/cds-common/types';
 import { VStack } from '../layout';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { useDimensions } from '../hooks/useDimensions';
 import { breakpoints } from '../layout/responsive';
+import { SidebarProvider } from './SidebarContext';
 
 const breakpointObserverClassName = css`
   width: 100%;
@@ -32,10 +33,11 @@ export type SidebarProps = {
    */
   logo: ReactElement;
   /**
+   * TODO: figure out typing for children (SidebarItemProps + Popover (optional) or SidebarMoreMenu?)
    * Children are expected to be an array of SidebarItems
    * @default undefined
    */
-  children: ReactElement<SidebarItemProps>[];
+  children: ReactNode[];
   /**
    * Use collapsed to show only the logo
    * @default false
@@ -51,55 +53,44 @@ export type SidebarProps = {
 export const Sidebar: React.FC<SidebarProps> = memo(
   ({ logo, children, collapsed, autoCollapse, testID }) => {
     const { ref, currentBreakpoint } = useDimensions(BREAKPOINT_CONFIG);
-    const computedCollapse = collapsed || (autoCollapse && currentBreakpoint === 'collapsed');
-    const computedWidth = computedCollapse ? WIDTH.collapsed : WIDTH.expanded;
-
     /**
-     * We'll decorate the SidebarItems (children) with the collapsed state.
+     * Calculates collapsed state which will be passed to the Sidebar Context Provider
      * Priority is as follows: First, respect what is set explicitly on SidebarItem,
      * Next, do what is set explicitly on Sidebar. And finally if autoCollapse is
      * set and we're within or outside the defined breakpoint, collapse or expand
      * */
-    const decoratedChildren = useMemo(
-      () =>
-        Children.map(children, (child: ReactElement<SidebarItemProps>) => {
-          const collapseChild = child?.props?.collapsed ?? computedCollapse;
-
-          return child
-            ? cloneElement(child, {
-                collapsed: collapseChild,
-              })
-            : null;
-        }),
-      [children, computedCollapse],
-    );
+    const computedCollapse = collapsed || (autoCollapse && currentBreakpoint === 'collapsed');
+    const computedWidth = computedCollapse ? WIDTH.collapsed : WIDTH.expanded;
+    const sidebarContext = useMemo(() => ({ collapsed: computedCollapse }), [computedCollapse]);
 
     return (
       <ThemeProvider scale={DEFAULT_SCALE} display="contents">
-        <VStack
-          as="nav"
-          background
-          borderedEnd
-          height="100%"
-          position="sticky"
-          top="0"
-          left="0"
-          testID={testID}
-          width={computedWidth}
-          minWidth={computedWidth}
-          spacingHorizontal={2}
-          spacingBottom={2}
-          spacingTop={2}
-          zIndex={zIndex.navigation}
-        >
-          <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
-            {logo}
+        <SidebarProvider value={sidebarContext}>
+          <VStack
+            as="nav"
+            background
+            borderedEnd
+            height="100%"
+            position="sticky"
+            top="0"
+            left="0"
+            width={computedWidth}
+            minWidth={computedWidth}
+            spacingHorizontal={sidebarHorizontalSpacing}
+            spacingBottom={2}
+            spacingTop={2}
+            zIndex={zIndex.navigation}
+            testID={testID}
+          >
+            <VStack spacingTop={1} spacingStart={1} spacingBottom={4}>
+              {logo}
+            </VStack>
+            <VStack gap={0.5} offsetStart={0.5}>
+              {children}
+            </VStack>
           </VStack>
-          <VStack gap={0.5} offsetStart={0.5}>
-            {decoratedChildren}
-          </VStack>
-        </VStack>
-        <span className={breakpointObserverClassName} ref={ref} />
+          <span className={breakpointObserverClassName} ref={ref} />
+        </SidebarProvider>
       </ThemeProvider>
     );
   },

@@ -1,6 +1,6 @@
 import React, { useMemo, ReactNode, memo } from 'react';
-import { menuGutter } from '@cbhq/cds-common/tokens/menu';
 import { css } from 'linaria';
+import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
 import { cx } from '../../utils/linaria';
 import { usePopoverContext } from './PopoverContext';
 import { usePopoverPosition } from './usePopoverPosition';
@@ -21,11 +21,19 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
     trigger,
     popper,
     width,
+    minWidth,
+    maxWidth,
     maxHeight,
     popoverMenuRef,
     controlledElementAccessibilityProps,
+    popoverPositionConfig,
+    visible,
   } = usePopoverContext();
-  const { popperStyles, popperAttributes } = usePopoverPosition(trigger, popper, menuGutter);
+  const { popperStyles, popperAttributes } = usePopoverPosition(
+    trigger,
+    popper,
+    popoverPositionConfig,
+  );
 
   const convertedWidth = typeof width === 'number' ? `${width}px` : width;
 
@@ -33,9 +41,13 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
     () => ({
       ...popperStyles.popper,
       width: convertedWidth,
+      minWidth,
+      maxWidth,
     }),
-    [popperStyles, convertedWidth],
+    [popperStyles, convertedWidth, minWidth, maxWidth],
   );
+
+  usePopoverMenuAnimation(visible, popoverMenuRef);
 
   return (
     <div ref={setPopper} {...popperAttributes.popper} style={popoverStyles}>
@@ -44,10 +56,12 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
         {...controlledElementAccessibilityProps}
         background
         elevation={2}
-        width={width ?? '100%'}
+        width={width}
         borderRadius="popover"
         role="menu"
         maxHeight={maxHeight}
+        minWidth={minWidth}
+        maxWidth={maxWidth}
         dangerouslySetClassName={cx(popoverMenuStaticClassName, popoverStyleOverrides)}
       >
         {children}

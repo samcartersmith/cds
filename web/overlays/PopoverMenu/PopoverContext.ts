@@ -1,3 +1,4 @@
+import { defaultPopoverPositionConfig } from '@cbhq/cds-common/tokens/menu';
 import { isProduction } from '@cbhq/cds-utils/env';
 import React from 'react';
 import { PopoverContextType } from './usePopoverMenu';
@@ -14,7 +15,9 @@ const defaultContext: PopoverContextType = {
   },
   disabled: false,
   sanitizedValue: undefined,
-  width: 0,
+  width: undefined,
+  minWidth: undefined,
+  maxWidth: undefined,
   maxHeight: undefined,
   flush: false,
   setTrigger: () => null,
@@ -35,29 +38,21 @@ const defaultContext: PopoverContextType = {
   handlePopoverMenuBlur: () => null,
   onChange: () => null,
   onBlur: () => null,
+  popoverPositionConfig: defaultPopoverPositionConfig,
+  visible: false,
 };
 
 const errorMessage =
   'PopoverContext is undefined. PopoverProvider was not found higher up the tree. ';
 
-const createPopoverContext = () => {
-  const PopoverContext = React.createContext<PopoverContextType>(defaultContext);
-  const PopoverProvider = PopoverContext.Provider;
+export const PopoverContext = React.createContext<PopoverContextType>(defaultContext);
+export const PopoverProvider = PopoverContext.Provider;
 
-  const usePopoverContext = () => {
-    const context = React.useContext(PopoverContext);
-    if (!context.onChange && !isProduction()) {
-      // eslint-disable-next-line no-console
-      console.error(errorMessage);
-    }
-    return context;
-  };
-
-  return {
-    usePopoverContext,
-    PopoverProvider,
-    PopoverContext,
-  };
+export const usePopoverContext = () => {
+  const context = React.useContext(PopoverContext);
+  if (!context.onChange && !isProduction()) {
+    // eslint-disable-next-line no-console
+    console.error(errorMessage);
+  }
+  return context;
 };
-
-export const { usePopoverContext, PopoverProvider, PopoverContext } = createPopoverContext();

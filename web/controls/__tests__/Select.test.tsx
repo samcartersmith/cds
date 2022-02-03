@@ -12,6 +12,7 @@ import { SelectOption } from '../SelectOption';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { MenuItem } from '../../overlays/PopoverMenu/MenuItem';
 import { Icon } from '../../icons/Icon';
+import { InputIcon } from '../InputIcon';
 
 const { Default: MockSelect } = selectBuilder({
   Select,
@@ -20,6 +21,7 @@ const { Default: MockSelect } = selectBuilder({
   SelectOption,
   ThemeProvider,
   Icon,
+  InputIcon,
 } as CreateSelectStoriesProps);
 
 const mockPlaceholder = 'Choose something...';

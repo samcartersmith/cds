@@ -92,6 +92,7 @@ export const PopoverTrigger = memo(function PopoverTrigger({
   const renderPopoverMenuTrigger = useCallback(
     (child: ReactElement<PopoverTriggerProps>) => {
       return cloneElement(child, {
+        ...child.props,
         onPress: handleOnPopoverMenuTriggerPress,
         onKeyDown: handleOnPopoverMenuTriggerKeyDown,
         disabled,
