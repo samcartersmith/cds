@@ -14,7 +14,7 @@ import type { DynamicElement } from '../types';
 import type { HTMLTextTags, TextProps } from './TextProps';
 import { useTypographyStyles } from './useTypographyStyles';
 
-const typographyResets = css`
+export const typographyResets = css`
   margin: 0;
   &[data-variant='mono'] {
     font-family: ${fontFamily.mono};

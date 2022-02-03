@@ -12,4 +12,7 @@ export const display = {
   contents: css`
     display: contents;
   `,
+  none: css`
+    display: none;
+  `,
 };

@@ -1,5 +1,6 @@
 import { ReactNode, ReactElement } from 'react';
 import { ListCellBaseProps } from './CellBaseProps';
+import { SharedProps } from './SharedProps';
 
 export type AccordionBaseProps = {
   /**
@@ -7,13 +8,13 @@ export type AccordionBaseProps = {
    * If not specified or doesn't exist in the accordion items,
    * all items will be closed on mount
    */
-  defaultActiveKey?: string | undefined;
+  defaultActiveKey?: string;
   /**
    * Callback function fired when any of accordion items is pressed
    */
   onItemPress?: (key: string) => void;
-  children: ReactElement<AccordionItemBaseProps>[];
-};
+  children: ReactElement<AccordionItemBaseProps>[] | ReactElement<AccordionItemBaseProps>;
+} & SharedProps;
 
 export type AccordionItemBaseProps = Omit<
   AccordionHeaderBaseProps & AccordionPanelBaseProps,
@@ -62,4 +63,4 @@ export type AccordionCommonProps = {
    * @default false
    */
   expanded: boolean;
-};
+} & SharedProps;
