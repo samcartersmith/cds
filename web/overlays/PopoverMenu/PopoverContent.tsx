@@ -47,7 +47,7 @@ export const PopoverContent = memo(({ children }: PopoverContentProps) => {
     [popperStyles, convertedWidth, minWidth, maxWidth],
   );
 
-  usePopoverMenuAnimation(visible, popoverMenuRef);
+  usePopoverMenuAnimation(visible, popoverMenuRef, popoverPositionConfig);
 
   return (
     <div ref={setPopper} {...popperAttributes.popper} style={popoverStyles}>

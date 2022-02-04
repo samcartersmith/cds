@@ -36,6 +36,7 @@ const { Default: MockPopoverMenu, AvatarButtonMenu } = popoverMenuBuilder({
 
 const mockTriggerTestID = 'popover-menu-trigger';
 const mockPopoverMenuTestID = 'popover-menu';
+const onBlurSpy = jest.fn();
 
 describe('PopoverMenu', () => {
   it('passes accessibility', async () => {
@@ -84,7 +85,11 @@ describe('PopoverMenu', () => {
   });
   it('closes the PopoverMenu when an option is pressed and fires onChange', () => {
     const { getAllByRole, getByTestId } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} testID={mockPopoverMenuTestID} />,
+      <MockPopoverMenu
+        triggerTestID={mockTriggerTestID}
+        testID={mockPopoverMenuTestID}
+        onBlur={onBlurSpy}
+      />,
     );
 
     // press the trigger
@@ -97,11 +102,11 @@ describe('PopoverMenu', () => {
     fireEvent.click(firstOption);
 
     // menu should dismount
-    expect(firstOption).not.toBeInTheDocument();
+    expect(onBlurSpy).toHaveBeenCalled();
   });
   it('the selected option has a tabindex of 0', () => {
     const { getAllByRole, getByTestId } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
+      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
     );
 
     // press the trigger
@@ -112,7 +117,7 @@ describe('PopoverMenu', () => {
     fireEvent.click(firstOption);
 
     // menu should dismount
-    expect(firstOption).not.toBeInTheDocument();
+    expect(onBlurSpy).toHaveBeenCalled();
 
     // press the trigger
     fireEvent.click(getByTestId(mockTriggerTestID));
@@ -318,14 +323,16 @@ describe('PopoverMenu', () => {
       code: 'Enter',
     });
 
-    // expect selected option be focused
-    const secondOptionRerendered = getAllByRole('menuitem')[1];
-    expect(secondOptionRerendered).toHaveFocus();
+    setTimeout(() => {
+      // expect selected option be focused
+      const secondOptionRerendered = getAllByRole('menuitem')[1];
+      expect(secondOptionRerendered).toHaveFocus();
+    }, 1000);
   });
   // escape to close
   it('closes the menu when a menu item is focused and the user types Escape', () => {
     const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
+      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
     );
 
     // open the menu
@@ -343,12 +350,13 @@ describe('PopoverMenu', () => {
       code: 'Escape',
     });
 
-    expect(firstOption).not.toBeInTheDocument();
+    // expect menu to close
+    expect(onBlurSpy).toHaveBeenCalled();
   });
 
   it('when the first option is focused and ArrowUp is typed it closes the menu', () => {
     const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
+      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
     );
 
     fireEvent.keyDown(getByTestId(mockTriggerTestID), {
@@ -364,11 +372,11 @@ describe('PopoverMenu', () => {
     });
 
     // expect the menu to close
-    expect(firstOption).not.toBeInTheDocument();
+    expect(onBlurSpy).toHaveBeenCalled();
   });
   it('when the last option is focused and ArrowDown is typed it closes the menu', () => {
     const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
+      <MockPopoverMenu triggerTestID={mockTriggerTestID} onBlur={onBlurSpy} />,
     );
 
     fireEvent.keyDown(getByTestId(mockTriggerTestID), {
@@ -390,7 +398,7 @@ describe('PopoverMenu', () => {
     });
 
     // expect the menu to close
-    expect(firstOption).not.toBeInTheDocument();
+    expect(onBlurSpy).toHaveBeenCalled();
   });
 });
 

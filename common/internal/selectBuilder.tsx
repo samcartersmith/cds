@@ -10,6 +10,7 @@ import type {
   Scale,
   TextInputBaseProps,
   IconBaseProps,
+  NoopFn,
 } from '../types';
 import { useToggler } from '../hooks/useToggler';
 
@@ -30,6 +31,7 @@ type SelectOptionProps = SelectOptionBaseProps & Pick<MenuItemProps, 'value' | '
 export type SelectProps = {
   children: ReactElement<MenuItemProps>[];
   onChange?: (newValue: string) => void;
+  onBlur?: NoopFn;
 } & SelectBaseProps;
 
 export type CreateSelectStoriesProps = {
@@ -74,9 +76,17 @@ export const selectBuilder = ({
     testID,
     onPress,
     helperText,
+    onBlur,
   }: Pick<
     SelectProps,
-    'variant' | 'label' | 'placeholder' | 'accessibilityLabel' | 'testID' | 'onPress' | 'helperText'
+    | 'variant'
+    | 'label'
+    | 'placeholder'
+    | 'accessibilityLabel'
+    | 'testID'
+    | 'onPress'
+    | 'helperText'
+    | 'onBlur'
   >) => {
     const [value, setValue] = useState<string | undefined>('');
 
@@ -93,6 +103,7 @@ export const selectBuilder = ({
             testID={testID}
             onPress={onPress}
             helperText={helperText}
+            onBlur={onBlur}
           >
             {priceOptions.map((option) => (
               <SelectOption

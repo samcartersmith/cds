@@ -119,7 +119,7 @@ const navigationOptions: NavigationOptions[] = [
 
 type DefaultPopoverMenuProps = {
   triggerTestID?: string;
-} & Pick<PopoverMenuBaseProps, 'testID'>;
+} & Pick<PopoverMenuBaseProps, 'testID' | 'onBlur'>;
 
 export const popoverMenuBuilder = ({
   PopoverMenu,

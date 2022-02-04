@@ -1,6 +1,7 @@
-import { PopoverMenuBaseProps } from '@cbhq/cds-common';
+import { NoopFn, PopoverMenuBaseProps } from '@cbhq/cds-common';
 import { useRef, useState, useCallback, useMemo, FocusEvent } from 'react';
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
+import { usePopoverMenuAnimation } from './usePopoverMenuAnimation';
 
 /** This hook stores all the shared logic between all the PopoverMenu sub components: PopoverTrigger, MenuItem, SelectOption, and PopoverMenu */
 export const usePopoverMenu = ({
@@ -15,6 +16,7 @@ export const usePopoverMenu = ({
   onBlur,
   minWidth,
   maxWidth,
+  popoverPositionConfig,
   ...props
 }: Omit<PopoverMenuBaseProps, 'children'>) => {
   // TODO: These are necessary callback refs to make PopperJS work. They are causing double renders, will be looking at another third party solution in separate PR
@@ -35,18 +37,36 @@ export const usePopoverMenu = ({
   // if a min or max width is declared, we don't want to instantiate width with the default of 100%
   const width = minWidth || maxWidth ? undefined : customWidth ?? '100%';
 
+  const { animatePopoverMenuOut } = usePopoverMenuAnimation(
+    visible,
+    popoverMenuRef,
+    popoverPositionConfig,
+  );
+
+  const animateOutAndCloseMenu = useCallback(
+    (cb?: NoopFn) => {
+      void animatePopoverMenuOut.start(({ finished }) => {
+        if (finished) {
+          closeMenu();
+          cb?.();
+        }
+      });
+    },
+    [animatePopoverMenuOut, closeMenu],
+  );
+
   const togglePopoverMenuVisibility = useCallback(() => {
     if (visible) {
-      closeMenu();
+      animateOutAndCloseMenu();
     } else {
       openMenu();
     }
-  }, [visible, closeMenu, openMenu]);
+  }, [visible, openMenu, animateOutAndCloseMenu]);
 
   const handleExitMenu = useCallback(() => {
-    closeMenu?.();
+    animateOutAndCloseMenu();
     triggerRef.current?.focus();
-  }, [closeMenu, triggerRef]);
+  }, [triggerRef, animateOutAndCloseMenu]);
 
   const handlePopoverMenuBlur = useCallback(
     (event: FocusEvent<HTMLButtonElement>) => {
@@ -58,11 +78,10 @@ export const usePopoverMenu = ({
         return;
       }
       if (eventIsBlur && !isOptionFocused) {
-        closeMenu();
-        onBlur?.();
+        animateOutAndCloseMenu(onBlur);
       }
     },
-    [closeMenu, popoverMenuRef, onBlur, triggerRef],
+    [popoverMenuRef, onBlur, triggerRef, animateOutAndCloseMenu],
   );
 
   return useMemo(
@@ -78,6 +97,7 @@ export const usePopoverMenu = ({
       minWidth,
       maxWidth,
       visible,
+      popoverPositionConfig,
       // state
       setTrigger,
       setPopper,
@@ -104,6 +124,7 @@ export const usePopoverMenu = ({
       minWidth,
       maxWidth,
       visible,
+      popoverPositionConfig,
       setTrigger,
       setPopper,
       togglePopoverMenuVisibility,

@@ -33,7 +33,6 @@ export type SidebarProps = {
    */
   logo: ReactElement;
   /**
-   * TODO: figure out typing for children (SidebarItemProps + Popover (optional) or SidebarMoreMenu?)
    * Children are expected to be an array of SidebarItems
    * @default undefined
    */

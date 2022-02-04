@@ -56,30 +56,38 @@ describe('Select', () => {
   });
   it('closes the Menu when an option is pressed and fires onChange', async () => {
     const onChangeSpy = jest.fn();
-    const { getByText } = render(
+
+    const { getByText, queryByText } = render(
       <MockSelect placeholder={mockPlaceholder} onPress={onChangeSpy} />,
     );
 
-    fireEvent.click(getByText(mockPlaceholder));
+    const placeholder = getByText(mockPlaceholder);
+
+    fireEvent.click(placeholder);
 
     // expect Menu and SelectOption to render
     const firstSelectOption = await waitFor(() => getByText(priceOptions[0]));
 
     // select the first option
     fireEvent.click(firstSelectOption);
+    expect(onChangeSpy).toHaveBeenCalled();
 
-    // the first option cell content should replace the placeholder
-    expect(firstSelectOption).toBeDefined();
+    expect(queryByText(mockPlaceholder)).toBeNull();
   });
   it('replaces the placeholder text with the selected value when pressed', async () => {
-    const { getByText } = render(<MockSelect placeholder={mockPlaceholder} />);
+    const { getByText, getAllByText, queryByText } = render(
+      <MockSelect placeholder={mockPlaceholder} />,
+    );
 
-    fireEvent.click(getByText(mockPlaceholder));
+    const placeholder = getByText(mockPlaceholder);
+
+    fireEvent.click(placeholder);
 
     // expect Menu and SelectOption to render
     const secondSelectOption = await waitFor(() => getByText(priceOptions[1]));
     fireEvent.click(secondSelectOption);
 
-    expect(getByText(priceOptions[1])).toBeDefined();
+    expect(getAllByText(priceOptions[1])).toBeDefined();
+    expect(queryByText(mockPlaceholder)).toBeNull();
   });
 });
