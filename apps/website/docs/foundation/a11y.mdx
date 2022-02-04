@@ -1,0 +1,167 @@
+---
+title: Accessibility
+---
+
+## What is accessibility?
+
+Accessibility is the practice of making a website or product usable by everyone. We traditionally think of this as targeting people with disabilities, but the practice of making sites accessible also benefits other groups such as those using mobile devices, or those with slow network connections.
+
+You might also think of accessibility as treating everyone the same, and giving them equal opportunities, no matter what their ability or circumstances. Just as it is wrong to exclude someone from a physical building because they are in a wheelchair (modern public buildings generally have wheelchair ramps or elevators), it is also not right to exclude someone from a website because they have a visual impairment. We are all different, but we are all human, and therefore have the same human rights.
+
+Accessibility is the right thing to do. Providing accessible sites is part of the law in some countries, which can open up some significant markets that otherwise would not be able to use your services or buy your products.
+
+:::note
+The World Health Organization's Disability and health fact sheet states that "Over a billion people, about 15% of the world's population, have some form of disability", and "Between 110 million and 190 million adults have significant difficulties in functioning.", with roughly 19% of Americans having some form of disability.
+:::
+
+## Impairments to support
+
+While technologies provide some form of automatic accessibility support, like semantic HTML feeding into screen readers, it’s not a be-all end-all solution. It is merely a foundation in which to build upon, as screen readers (and other assistive technology integrations) need to be carefully crafted to provide the optimum experience. Outside of the previously mentioned, there’s a wide range of impairments and technologies to support to be truly accessible.
+
+### Vision
+
+Vision impairments include blindness, color blindness, all forms of vision loss, and challenges and situations that make seeing the screen uncomfortable or difficult (dyslexia and photosensitivity). For users with vision impairments, most devices support text-to-speech screen reading, display accommodations such as color inversion, and text magnification.
+
+:::note
+The World Health Organization estimates that “285 million people are estimated to be visually impaired worldwide: 39 million are blind and 246 have low vision.”
+:::
+
+### Hearing
+
+In addition to deafness and all types of hearing loss, hearing impairments include situations in which people don’t want their devices to make noise. Hearing-impaired people do use ATs, but there are not really special ATs specific for computer/web use.
+
+:::note
+The World Health Organization estimates that “466 million people worldwide have disabling hearing loss.”
+:::
+
+Mobility
+People with physical and motor challenges can have difficulty holding or manipulating their devices. Most devices enable accommodations for those without fine motor control, like switch control devices, and voice recognition and commands.
+
+:::note
+The US Centers for Disease Control and Prevention Disability and Functioning reports the USA “Percent of adults with any physical functioning difficulty: 16.1%.”
+:::
+
+### Learning
+
+Literacy and learning challenges include difficulty speaking and reading, managing complexity, staying focused, and managing mental illness. To reduce cognitive load and support people with literacy and learning challenges, many features available for the vision impaired can also be applied for learning.
+
+A good foundation of accessibility for people with cognitive impairments includes:
+
+- Delivering content in more than one way, such as by text-to-speech or by video.
+- Easily understood content, such as text written using plain-language standards.
+- Focusing attention on important content.
+- Minimizing distractions, such as unnecessary content or advertisements.
+- Consistent web page layout and navigation.
+- Familiar elements, such as underlined links blue when not visited and purple when visited.
+- Dividing processes into logical, essential steps with progress indicators.
+- Website authenticates as easily as possible without compromising security.
+- Making forms easy to complete, such as with clear error messages and simple error recovery.
+
+### Short-term
+
+While the previous 4 categories represent permanent or long-lasting impairments, there are impairments categorized as short-term, which can and will apply to anybody (including you). This includes situations like injuries, pregnancies, medication induced, and even simple/stupid situations like losing ones glasses.
+
+## How can we make Coinbase products accessible?
+
+The first step to evaluating accessibility is to understand what the success criteria are for each platform.
+
+### Mobile
+
+- [Official React Native a11y documentation](https://reactnative.dev/docs/accessibility)
+- [Official Android a11y documentation](https://developer.android.com/guide/topics/ui/accessibility)
+- [Official iOS a11y documentation](https://developer.apple.com/documentation/uikit/accessibility_for_ios_and_tvos)
+- [iOS a11y design guidelines](https://developer.apple.com/design/human-interface-guidelines/accessibility/overview/introduction/)
+
+### Web
+
+- [Official React a11y documentation](https://reactjs.org/docs/accessibility.html)
+- [WC3 accessibility standards](https://www.w3.org/standards/webdesign/accessibility)
+
+### Areas to focus on
+
+#### Color contrast and meaning
+
+Color contrast is the difference in light between foreground content and background. There are two ways to describe color contrast: score and ratio. The ratio is calculated based on a formula designed by WCAG (Web Content Accessibility Guildelines) and ranges between 0-21, with 21 being the highest amount of contract and 0 being no contrast. The scores takes both the ratio and the stroke and size of the foreground content into account and informs legibility of the content.
+
+:::note
+WCAG considers 18 point text or 14 point bold text is judged to be large enough to require a lower contrast ratio. The ratio between sizes in points and CSS pixels is 1pt = 1.333px, therefore 14pt and 18pt are equivalent to approximately 18.5px and 24px.
+:::
+
+There are 5 scores:
+
+- **Fail** – Color contrast is less than 3.0. Text doesn't have enough contrast with the background.
+- **AA Large** – For larger type sizes (≥18pt) with at least **3.0**.
+- **AA** – For smaller text (<18pt) with a contrast ratio of at least **4.5**.
+- **AAA Large** – Large text with a contrast ratio of **4.5** or higher. This is the same score as AA.
+- **AAA** – This is enhanced contrast of at least **7.0**. Think longer form articles that will be read for a significant period of time. Note that in order to achieve a true AAA rating, section 1.4.8.1 of the WCAG also states that "Foreground and background colors can be selected by the user."
+
+To make sure all of our designs are at least **AA compliant**, we ask all of our designers to use Figma plugin [Contrast](https://www.figma.com/community/plugin/748533339900865323/Contrast).
+
+<img src="/img/figma-contrast-plugin.png" width="280px" />
+
+<!-- TODO (visual): add example for good and bad color contrast -->
+
+**Text over image or gradient should be used minimally with discretion.** It is tricky to ensure contrast ratio in those cases. One strategy to mitigate the issue is to have an overlay on top of the image or gradient to guarantee enough contrast for the text.
+
+<!-- TODO (visual): add examples for text over image and gradient with overlay -->
+
+Color blind users experience colors differently and may not be able to tell two colors apart. **Don’t rely on color only** to indicate crucial system information in our products. Consider adding a visual indicator, like an icon or symbol, to add clarity. Use the Figma plugin [Color Blind](https://www.figma.com/c/plugin/733343906244951586/Color-Blind) and Storybook [addon-a11y](https://www.npmjs.com/package/@storybook/addon-a11y) to simulate the various types of color-blindness by quickly previewing your designs and make adjustments as needed.
+
+<!-- TODO (visual): substitute this image with our own example-->
+
+<img src="/img/dont-use-color-alone.png" />
+
+#### Navigation
+
+Web best practices
+
+- Use semantic html `<nav> `.
+- Put links in an unordered list.
+- Have a skip to content link.
+
+```html
+<nav aria-label="main-navigation">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/trade/">Trade</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/support">support</a></li>
+  </ul>
+</nav>
+```
+
+[iOS guidelines](https://developer.apple.com/design/human-interface-guidelines/accessibility/overview/navigation/) focuses on navigating with VoiceOver
+
+#### Element focus
+
+Element focus mostly applied to desktop web applications. Only interactable element gets focus usually. It is important to consider both mouse focus and keyboard focus.
+
+<!-- TODO (visual): add gifs for mouse click focus on interactable and keyboard focus on interactable -->
+
+#### Labeling forms and controls
+
+#### UI roles, states, and properties
+
+#### Content visibility
+
+#### Audio and multimedia
+
+### Tooling
+
+- **Figma** - Integrate [Stark](https://www.getstark.co/) or [Contrast](https://www.figma.com/community/plugin/748533339900865323/Contrast) plugins for catching accessibility issues during the design stage!
+- **TypeScript** - Take advantage of types to ensure the appropriate accessibility attributes/properties are defined. If they’re missing, or the wrong type, it will fail the build.
+- **ESLint** - Utilize plugins like [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) and [eslint-plugin-react-native-a11y](https://github.com/FormidableLabs/eslint-plugin-react-native-a11y) to ensure we’re implementing accessibility correctly. Invalid usage will fail the build.
+- **Jest** - Improve our testing suite by integrating [axe-core](https://github.com/dequelabs/axe-core) for our React component based tests, and any found accessibility violations will fail the build. Unfortunately, this library was built for the web, so we’ll need to spend the time contributing React Native support. Other additions:
+  - [jest-axe](https://github.com/nickcolley/jest-axe) - Jest matchers for detecting axe violations.
+  - [@axe-core/react](https://www.npmjs.com/package/@axe-core/react) - Check for axe violations within the browser while rendering the application.
+- **Storybook** - Display accessibility violations within stories with the [addon-a11y](https://www.npmjs.com/package/@storybook/addon-a11y) library. Because this utilizes axe-core underneath the hood, we can share settings with testing.
+- Other
+  - [tota11y](https://khan.github.io/tota11y/)
+
+### Additional Resources
+
+- [How to use Android a11y features](https://support.google.com/accessibility/android/answer/6006564?hl=en)
+- [Audit Android apps with the Accessibility Scanner app](https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor)
+- [Intro to iOS a11y video](https://www.youtube.com/watch?v=ZeJ6SAqbdYg&feature=emb_title)
+- [iOS design criteria](https://a11y-guidelines.orange.com/en/mobile/ios/design/)
+- [iOS a11y inspector](https://www.deque.com/blog/intro-accessibility-inspector-tool-ios-native-apps/)

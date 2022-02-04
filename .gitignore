@@ -42,6 +42,9 @@ dts/
 lib/
 esm/
 *.tsbuildinfo
+/.cache-loader
+/.linaria-cache
+/build
 
 # Yarn
 .yarn/*
@@ -51,3 +54,6 @@ esm/
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# Docusaurus
+.docusaurus

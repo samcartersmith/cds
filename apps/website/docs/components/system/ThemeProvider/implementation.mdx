@@ -1,0 +1,86 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/system/ThemeProvider](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/system/ThemeProvider.tsx)
+
+<ComponentDetails componentName="ThemeProvider" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="ThemeProvider" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="ThemeProvider" templateName="a11y" />
+
+## Props
+
+### display <Badge variant="web" />
+
+Visually remove the ThemeProviders box and replace it with its content. Conceptually this makes ThemeProvider behave like React.Fragment, but we can still apply css variable overrides via style attribute for its children to inherit.
+
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="display"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['contents']}
+/>
+
+<ComponentDetails componentName="ThemeProvider" templateName="prop-display" />
+
+### palette
+
+Takes a configurable palette. If a partial palette is provided it will be merged with the closest parent `ThemeProvider` if present, if not it will be fallback to merging with the default CDS palette.
+
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="palette"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 5 more ... | secondaryForeground, PaletteValue>>>',
+  ]}
+  webOptions={[
+    'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 5 more ... | secondaryForeground, PaletteValue>>>',
+  ]}
+/>
+
+<ComponentDetails componentName="ThemeProvider" templateName="prop-palette" />
+
+### scale
+
+Determines which sizes to pull for typography, spacing, icons, and layout, and is based on an applications information density.
+
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="scale"
+  required={false}
+  defaultValue="large"
+  mobileOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+  webOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+/>
+
+<ComponentDetails componentName="ThemeProvider" templateName="prop-scale" />
+
+### spectrum
+
+Determines which spectrum a palette will pull from. For example, in the light spectrum, `gray100`, maps to black while in the dark spectrum `gray100` maps to white. The default palette CDS ships with assigns foreground to `gray100`. `foreground` is used as the default color in Text components.
+
+<ApiDetails
+  componentName="ThemeProvider"
+  propertyName="spectrum"
+  required={false}
+  defaultValue="light"
+  mobileOptions={['dark', 'light', 'null']}
+  webOptions={['dark', 'light', 'null']}
+/>
+
+<ComponentDetails componentName="ThemeProvider" templateName="prop-spectrum" />
+
+<ComponentDetails componentName="ThemeProvider" templateName="outro" />

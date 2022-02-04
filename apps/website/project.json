@@ -1,0 +1,22 @@
+{
+  "root": "apps/website",
+  "sourceRoot": "apps/website",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-docusaurus"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "start": {
+      "executor": "@cbhq/mono-tasks:start-docusaurus"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}

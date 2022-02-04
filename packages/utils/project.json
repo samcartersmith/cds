@@ -1,6 +1,6 @@
 {
   "root": "packages/utils",
-  "sourceRoot": "packages/utils/src",
+  "sourceRoot": "packages/utils",
   "projectType": "library",
   "targets": {
     "format": {

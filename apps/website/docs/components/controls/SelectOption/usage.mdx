@@ -1,0 +1,60 @@
+### Web
+
+`SelectOption` has the same API as a ListCell, but with custom styles specific to usage within a Select. `SelectOption` also comes with a lot of baked in functionality, like keyboard navigation, accessibility properties, and focus behaviors.
+
+#### Default Composition
+
+```jsx live
+function DefaultSelect() {
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={600}>
+        <Select value={value} placeholder="Choose something" onChange={setValue}>
+          {options.map((option) => (
+            <SelectOption value={option} key={option} description={option} />
+          ))}
+        </Select>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Mobile
+
+`SelectOption` has the same API as a ListCell, but with custom styles specific to usage within a Select. It takes an `onPress` callback.
+
+#### Default Composition
+
+```jsx
+function DefaultSelectMobile() {
+  const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
+  const [value, setValue] = useState();
+  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  return (
+    <Select value={value} onPress={toggleOn}>
+      {isTrayVisible && (
+        <Tray title={trayTitle} onCloseComplete={toggleOff}>
+          {({ closeTray }) =>
+            options.map((option) => {
+              return (
+                <SelectOption
+                  title={option.label}
+                  key={option.value}
+                  onPress={() => {
+                    setValue(option.value);
+                    closeTray();
+                  }}
+                  selected={value === option.value}
+                />
+              );
+            })
+          }
+        </Tray>
+      )}
+    </Select>
+  );
+}
+```

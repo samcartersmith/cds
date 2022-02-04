@@ -1,0 +1,297 @@
+import * as Input from './TextInputSheet';
+import { Spacer, Box, Divider, VStack, HStack } from '@cbhq/cds-web/layout';
+import { Table, TableBody, TableRow, TableCell, TableHeader } from '@cbhq/cds-web/tables';
+import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
+import { Image } from ':cds-website/components/Image';
+
+<Input.TextInputSheet />
+
+<span>&nbsp;</span>
+
+Text Inputs enable users to type, enter, and/or edit text. Text Field is customizable and has the ability to support various types of objects at the start and end of the input. This component is most commonly used in forms.
+
+Use Text Fields for free form responses or when we can’t predict a user’s answer. Use another component like Select, Date Input, or one of our Group Selection Control components if a user is selecting from a set of options.
+
+## Anatomy of Inputs
+
+<Box justifyContent="center">
+  <Image
+    light="/img/components/inputs/TextInput/anatomy_light.png"
+    dark="/img/components/inputs/TextInput/anatomy_dark.png"
+  />
+</Box>
+
+<span>&nbsp;</span>
+
+1. **Label**: Title / brief description of Input
+2. **Input Content**: Content users enter into Input
+3. **Helper Text (Optional)**: Assistive message about the Input
+4. **Start**: Add an Icon, Asset, Text, Link, or Icon Button to the start of an Input
+5. **End**: Add an Icon, Asset, Text, Link, or Icon Button to the start of an Input
+
+## Guidance
+
+- Use Text Inputs for free form responses or when we can’t predict a user’s answer.
+- Use another component like Select, Date Input, or one of our Group Selection Control components if a user is selecting from a set of options.
+
+## Content Guidelines
+
+- Always include a label.
+- Write Input Labels, Placeholder Text, and Helper Text in sentence case.
+- Use Helper Text to show hints, formatting, and requirements.
+- Use Helper Text instead of Placeholder Text.
+- Do not explain what is wrong but rather offer a solution. Error messages should be clear and concise.
+- For more info on writing text inputs, check our [Content Design Guide](https://docs.google.com/document/d/1QnxOOjhqUb8ENrGt3hQTTDCDxnCPRyEfkO-U-ftm4uc/edit#heading=h.m7ffxiih1sf1).
+
+## Sizing & Scale
+
+Text Inputs are available in Dense and Normal scales. We also offer a compact option for smaller spaces and dense experiences.
+
+When stacking inputs, use spacing 3.
+
+<Box justifyContent="center">
+  <Image
+    light="/img/components/inputs/TextInput/sizing_and_scale_breakdown_light.png"
+    dark="/img/components/inputs/TextInput/sizing_and_scale_breakdown_dark.png"
+  />
+</Box>
+
+<span>&nbsp;</span>
+
+Heights are predetermined and based on scale. Please avoid customizing the height of the input unless necessary. The height value has been selected to align with our Button components.
+
+<span>&nbsp;</span>
+
+## Best Practices
+
+### Input Label
+
+Always use a Label to communicate the intention of the Input to a user.
+
+Input Labels can be placed on top of the input or embedded within the input itself. By default, all Inputs will be top aligned. This is to accommodate longer label text, localization, and responsive layouts. Toggle on the compact variant for Embedded Labels. Embedded option for dense, compact spaces.
+
+<Table variant="graph" bordered>
+  <TableBody>
+    <TableRow>
+      <TableCell>
+        <Input.NormalInput />
+      </TableCell>
+      <TableCell>
+        <VStack spacingTop={4}>
+          <Input.CompactInput />
+        </VStack>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <TextBody as="p">Default composition of Inputs.</TextBody>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">Use the compact variant when space is tight. </TextBody>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### Placeholder Text
+
+Please use placeholder text with caution. Because placeholder text disappears as soon as a user enters text, it is not accessible for people with cognitive or visual disabilities. Do not place essential information or instructions related to the input in placeholder text. Instead, use Helper Text.
+
+<Input.Placeholder />
+
+### Helper Text
+
+Helper Text appears below the Text Field and does not disappear. Use Helper Text to provide additional context or instruction about the input. Helper Text is dynamic and can handle sentiment states such as success or error states.
+
+Sentiment states validate data before a form is submitted. Validation, either positive or negative, appears when the user has navigated out of the Input Field.
+
+- **Success message**: Triggered when there is a valid input entry. This message should not disappear.
+- **Error message**: Informs the user what has happened and provides guidance on how to resolve the entry. Error messages disappear once the data is corrected and passed as valid.
+
+<Table variant="graph" bordered>
+  <TableBody>
+    <TableRow>
+      <TableCell>
+        <Input.DefaultSentiment />
+      </TableCell>
+      <TableCell>
+        <Input.PositiveSentiment />
+      </TableCell>
+      <TableCell>
+        <Input.NegativeSentiment />
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### Content Alignment
+
+You have the option to align input content to the left or right. However, please use discretion and consistency when doing so. All inputs will be left aligned by default.
+
+We recommend right aligning input content when using the Compact Label variant.
+
+<Table variant="graph" bordered>
+  <TableBody>
+    <TableRow>
+      <TableCell>
+        <Input.LeftAlignInput />
+      </TableCell>
+      <TableCell>
+        <VStack spacingTop={4}>
+          <Input.RightAlignInput />
+        </VStack>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <TextBody as="p">
+          <strong>Left aligned.</strong> This is the default setting.
+        </TextBody>
+      </TableCell>
+      <TableCell>
+        <TextBody as="p">
+          <strong>Right aligned.</strong> Used with compact Label.
+        </TextBody>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### StartContent & EndContent
+
+We’ve built Text Fields so you can add many different types of objects at the start or end of the input.
+
+Here are some examples and best practices when using objects in a Text Field.
+
+<Table variant="graph" bordered>
+  <TableHeader>
+    <TableRow fullWidth backgroundColor="backgroundAlternate">
+      <TableCell color="foreground" title="Examples of Input Objects placed at Start" />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    {/* Avatar Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Avatar</TextHeadline>
+          <TextBody as="p">
+            Use the avatar object at the start of an input for inputs like username.
+          </TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.AvatarInput />
+      </TableCell>
+    </TableRow>
+    {/* Asset Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Asset</TextHeadline>
+          <TextBody as="p">Asset objects are not interactive.</TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.AssetStartContent />
+      </TableCell>
+    </TableRow>
+    {/* Icon Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Icon</TextHeadline>
+          <TextBody as="p">Icon objects are not interactive.</TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.IconStartContent />
+      </TableCell>
+    </TableRow>
+    {/* Icon Button Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Icon Button</TextHeadline>
+          <TextBody as="p">
+            The most common use case for Icon Button at <br />
+            the start of a Text Field is search.
+          </TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.IconButtonStartContent />
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+<span>&nbsp;</span>
+
+<Table variant="graph" bordered>
+  <TableHeader>
+    <TableRow fullWidth color="foreground" backgroundColor="backgroundAlternate">
+      <TableCell color="foreground" title="Examples of Input Objects placed at End" />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    {/* IconButton Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Icon Button</TextHeadline>
+          <TextBody as="p">
+            Use Icon Buttons at the end for actions <br />
+            like showing a password or clearing text from an input.
+          </TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.PasswordInput />
+        <Input.IconButtonEndContent />
+      </TableCell>
+    </TableRow>
+    {/* Icon Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Icon</TextHeadline>
+          <TextBody as="p">Icon objects are not interactive.</TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.AddressEndContent />
+      </TableCell>
+    </TableRow>
+    {/* Text Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Text</TextHeadline>
+          <TextBody as="p">
+            The most common use case for placing a text object at <br />
+            the end of an input is currency. This object is not interactive.
+          </TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.SuffixInput />
+      </TableCell>
+    </TableRow>
+    {/* Text Button + Link Example */}
+    <TableRow>
+      <TableCell>
+        <VStack gap={2}>
+          <TextHeadline as="h3">Text Button + Icon Button</TextHeadline>
+          <TextBody as="p">
+            If needed, you can add a Text Button + Icon Button <br />
+            like this example here. Use this sparingly and only at the End of an Input.
+          </TextBody>
+        </VStack>
+      </TableCell>
+      <TableCell>
+        <Input.CopyTextInputExample />
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

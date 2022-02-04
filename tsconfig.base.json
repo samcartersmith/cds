@@ -31,7 +31,8 @@
       "@cbhq/cds-fonts": ["packages/fonts/index.ts"],
       "@cbhq/cds-fonts/*": ["packages/fonts/*"],
       "@cbhq/cds-web-utils": ["packages/web-utils/index.ts"],
-      "@cbhq/cds-web-utils/*": ["packages/web-utils/*"]
+      "@cbhq/cds-web-utils/*": ["packages/web-utils/*"],
+      ":cds-website/*": ["apps/website/*"]
     }
   }
 }

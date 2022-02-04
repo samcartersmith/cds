@@ -1,0 +1,37 @@
+```jsx live
+function Example() {
+  const statuses = ['loading', 'success', 'failure', 'pending', 'cardSuccess'];
+  const [status, setStatus] = useState('loading');
+  const buttons = useMemo(() => {
+    // join is a util for adding a separator element
+    // between an array of React components
+    return join(
+      statuses.map(item => (
+        <Box spacing={1}>
+          <Button key={item} onPress={() => setStatus(item)}>
+            {item}
+          </Button>
+        </Box>
+      ))
+    );
+  }, []);
+
+  const [key, setKey] = useState(0);
+  const handleReset = () => {
+    setKey(key + 1);
+    setStatus('loading');
+  };
+
+  return (
+    <VStack alignSelf="center">
+      <LottieStatusAnimation key={key} height={350} status={status} />
+      <HStack flexWrap="wrap">{buttons}</HStack>
+      <HStack justifyContent="center">
+        <Button variant="secondary" onPress={handleReset}>
+          Reset animation
+        </Button>
+      </HStack>
+    </VStack>
+  );
+}
+```

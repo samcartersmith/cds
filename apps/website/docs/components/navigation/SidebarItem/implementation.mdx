@@ -1,0 +1,125 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/navigation/SidebarItem](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/navigation/SidebarItem.tsx)
+
+<ComponentDetails componentName="SidebarItem" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="SidebarItem" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="SidebarItem" templateName="a11y" />
+
+## Props
+
+### active <Badge variant="web" />
+
+Use the active prop to identify the current page
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="active"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SidebarItem" templateName="prop-active" />
+
+### collapsed <Badge variant="web" />
+
+Use collapsed to show only the logo
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="collapsed"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SidebarItem" templateName="prop-collapsed" />
+
+### icon <Badge variant="web" />
+
+The Navigation Icon this item represents
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="icon"
+  required={true}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'addPeople',
+    'appSwitcher',
+    'application',
+    'bell',
+    'caretUp',
+    'cash',
+    'chartBar',
+    'chartCandles',
+    'chartPie',
+    'dashboard',
+    'defi',
+    'directDeposit',
+    'earn',
+    'gab',
+    'giftBox',
+    'home',
+    'invoice',
+    'newsfeed',
+    'pay',
+    'planet',
+    'scanQrCode',
+    'settings',
+    'shoppingCart',
+    'support',
+    'tag',
+    'trading',
+    'wallet',
+  ]}
+/>
+
+<ComponentDetails componentName="SidebarItem" templateName="prop-icon" />
+
+### onPress <Badge variant="web" />
+
+Handle the press events, ie () => navigate(/trade)
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="onPress"
+  required={true}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SidebarItem" templateName="prop-onPress" />
+
+### title <Badge variant="web" />
+
+The title of the page this item represents
+
+<ApiDetails
+  componentName="SidebarItem"
+  propertyName="title"
+  required={true}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SidebarItem" templateName="prop-title" />
+
+<ComponentDetails componentName="SidebarItem" templateName="outro" />

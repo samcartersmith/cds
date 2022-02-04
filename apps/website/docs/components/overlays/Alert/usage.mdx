@@ -1,0 +1,113 @@
+### Default Alert
+Controled using `visible` and `onRequestClose`.
+
+```jsx live
+function DefaultAlertExample() {
+  const [visible, { toggleOn, toggleOff }] = useToggler();
+
+  return (
+    <ExampleWithThemeToggles>
+      <PortalProvider>
+        <ButtonGroup>
+          <Button onPress={toggleOn}>Show Alert</Button>
+        </ButtonGroup>
+        <Alert
+          title="Alert title"
+          body="Alert body type that can run over multiple lines, but should be kept short."
+          pictogram="warning"
+          visible={visible}
+          onRequestClose={toggleOff}
+          preferredActionLabel="Primary"
+          onPreferredActionPress={() => console.log('preferred pressed')}
+          dismissActionLabel="Cancel"
+          onDismissActionPress={() => console.log('dismiss pressed')}
+        />
+      </PortalProvider>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Portal Alert
+Controlled programmatically using the `useAlert` hook.
+
+```jsx live
+function PortalAlertExample() {
+  function PortalAlert() {
+    const alert = useAlert();
+  
+    const showAlert = () => alert.open(
+      <Alert
+        title="Alert title"
+        body="Alert body type that can run over multiple lines, but should be kept short."
+        pictogram="warning"
+        visible
+        onRequestClose={() => console.log('Alert dimissed!')}
+        preferredActionLabel="Save"
+        onPreferredActionPress={() => console.log('Save pressed')}
+      />
+    );
+
+    return <Button onPress={showAlert}>Show Alert</Button>
+  }
+
+  return (
+    <ExampleWithThemeToggles>
+      <PortalProvider>
+        <PortalAlert />
+      </PortalProvider>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
+### Alert over Modal
+Alert displays on top of a Modal.
+
+```jsx live
+function AlertOnModalExample() {
+  function AlertOnModal() {
+    const { openModal, closeModal } = useModal();
+    const alert = useAlert();
+  
+    const showAlert = () =>
+      alert.open(
+        <Alert
+          visible
+          title="Are you sure?"
+          body="Cancel will discard your existing changes, are you sure?"
+          pictogram="warning"
+          preferredActionLabel="Discard"
+          onPreferredActionPress={closeModal}
+          preferredActionVariant="negative"
+          dismissActionLabel="Cancel"
+          stacked
+        />,
+      );
+  
+    const handlePress = () => {
+      openModal(
+        <Modal visible>
+          <ModalBody>
+            <TextBody as="p">{loremIpsum}</TextBody>
+          </ModalBody>
+          <ModalFooter
+            primaryAction={<Button onPress={closeModal}>Save</Button>}
+            secondaryAction={<Button onPress={showAlert}>Cancel</Button>}
+          />
+        </Modal>
+      );
+    };
+  
+    return <Button onPress={handlePress}>Open Modal</Button>;
+  }
+
+  return (
+    <ExampleWithThemeToggles>
+      <PortalProvider>
+        <AlertOnModal />
+      </PortalProvider>
+    </ExampleWithThemeToggles>
+  );
+}
+```

@@ -1,0 +1,43 @@
+```jsx live
+function RadioGroupDemo() {
+  // static values should live outside the component in product code.
+  const options1 = {
+    btc: 'Bitcoin',
+    eth: 'Ethereum',
+    dai: 'Dai',
+  };
+
+  const options2 = {
+    'yellow-jacket': 'Yellow Jacket',
+    bruin: 'Bruin',
+    bronco: 'Bronco',
+  };
+
+  // example component using RadioGroup
+  const [group1, setGroup1] = useState('btc');
+  const [group2, setGroup2] = useState();
+  return (
+    <>
+      <RadioGroup
+        id="currency-radio-group"
+        label={<TextHeadline as="span">Choose a currency</TextHeadline>}
+        name="radio-group1"
+        selectedValue={group1}
+        onChange={setGroup1}
+        options={options1}
+      />
+      <TextHeadline as="span" id="choose-a-mascot">
+        Choose a mascot
+      </TextHeadline>
+      <RadioGroup
+        id="mascot-radio-group"
+        aria-labelledby="choose-a-mascot"
+        name="radio-group2"
+        selectedValue={group2}
+        onChange={setGroup2}
+        options={options2}
+      />
+    </>
+  );
+}
+```

@@ -1,0 +1,102 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/controls/CheckboxGroup](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/CheckboxGroup.tsx)
+
+<ComponentDetails componentName="CheckboxGroup" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="CheckboxGroup" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="CheckboxGroup" templateName="a11y" />
+
+## Props
+
+### children
+
+Checkbox elements that are part of the checkbox group.
+
+<ApiDetails
+  componentName="CheckboxGroup"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="CheckboxGroup" templateName="prop-children" />
+
+### label
+
+Set a label summary for the group of checkboxes.
+
+<ApiDetails
+  componentName="CheckboxGroup"
+  propertyName="label"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="CheckboxGroup" templateName="prop-label" />
+
+### onChange
+
+Handle change event when pressing on a checkbox option.
+
+<ApiDetails
+  componentName="CheckboxGroup"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(value?: T | undefined) => void']}
+  webOptions={['ChangeEventHandler<HTMLInputElement>']}
+/>
+
+<ComponentDetails componentName="CheckboxGroup" templateName="prop-onChange" />
+
+### selectedValues
+
+Checkbox options that are checked.
+
+<ApiDetails
+  componentName="CheckboxGroup"
+  propertyName="selectedValues"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="CheckboxGroup" templateName="prop-selectedValues" />
+
+<ComponentDetails componentName="CheckboxGroup" templateName="outro" />

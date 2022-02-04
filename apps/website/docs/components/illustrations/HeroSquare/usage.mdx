@@ -1,0 +1,19 @@
+import { HeroSquare } from '@cbhq/cds-web/illustrations/HeroSquare';
+
+```jsx live
+<HeroSquare name="accessToAdvancedCharts" />
+```
+
+Use scaleMultiplier sparingly, and with caution. We have predefined dimension to ensure 
+that the illustration are in the sizes it was originated for.
+
+If no dimension fits your use case, you can use scaleMultiplier to scale illustration at different size. If dimension prop is absent, it will
+scale based on the default size of HeroSquare, which is 240x240. Therefore, if you set the scaleMultiplier to 1.5, the final size would be (240 \* 1.5) x (240 \* 1.5) = 360 x 360
+```jsx live
+<HeroSquare name="accessToAdvancedCharts" scaleMultiplier={1.5} />
+```
+
+If dimension is provided, it will scale based on the dimension. 
+```jsx live
+<HeroSquare name="accessToAdvancedCharts" dimension="240x240" scaleMultiplier={1.5} />
+```

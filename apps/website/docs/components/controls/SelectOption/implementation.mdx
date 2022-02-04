@@ -1,0 +1,527 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/controls/SelectOption](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/SelectOption.tsx)
+
+<ComponentDetails componentName="SelectOption" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="SelectOption" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="SelectOption" templateName="a11y" />
+
+## Props
+
+### accessory
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="accessory"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<CellAccessoryProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<CellAccessoryProps, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-accessory" />
+
+### alignItems
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="alignItems"
+  required={false}
+  defaultValue=""
+  mobileOptions={['center', 'flex-end', 'flex-start']}
+  webOptions={['center', 'flex-end', 'flex-start']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-alignItems" />
+
+### borderRadius
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="borderRadius"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+  ]}
+  webOptions={[
+    'badge',
+    'compact',
+    'input',
+    'none',
+    'pill',
+    'popover',
+    'round',
+    'search',
+    'standard',
+    'tooltip',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-borderRadius" />
+
+### compact <Badge variant="web" />
+
+enables compact spacing
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="compact"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-compact" />
+
+### description
+
+Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="description"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-description" />
+
+### detail
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="detail"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-detail" />
+
+### detailWidth
+
+Apply a fixed width to the detail (end).
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="detailWidth"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number', 'string']}
+  webOptions={['number', 'string']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-detailWidth" />
+
+### disabled
+
+Is the cell disabled? Will apply opacity and disable interaction.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-disabled" />
+
+### hideMenu <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+this is for internal use only when a MenuItem is a child of a PopoverMenu. For custom handlers please use onPress
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="hideMenu"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-hideMenu" />
+
+### innerSpacing
+
+The spacing to use on the inner content of Cell
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="innerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-innerSpacing" />
+
+### intermediary
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="intermediary"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-intermediary" />
+
+### key <Badge variant="web" />
+
+Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="key"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-key" />
+
+### maxHeight
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-maxHeight" />
+
+### media
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="media"
+  required={false}
+  defaultValue=""
+  mobileOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-media" />
+
+### minHeight
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="minHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-minHeight" />
+
+### multiline
+
+Allow the description to span multiple lines. This _will_ break fixed height requirements, so should not be used in a `FlatList`.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="multiline"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-multiline" />
+
+### offsetHorizontal <Badge variant="deprecated" order={1} />
+
+Reduce horizontal offset if parent container already has spacing.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="offsetHorizontal"
+  required={false}
+  defaultValue=""
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-offsetHorizontal" />
+
+### onBlur <Badge variant="web" />
+
+Handler called when the MenuItem is blurred Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="onBlur"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(event: FocusEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-onBlur" />
+
+### onChange <Badge variant="web" />
+
+Callback that is fired whenever a select option is selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(newValue: string) => void']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-onChange" />
+
+### outerSpacing
+
+The spacing to use on the parent wrapper of Cell
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="outerSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['CellSpacing']}
+  webOptions={['CellSpacing']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-outerSpacing" />
+
+### popoverMenuRef <Badge variant="web" />
+
+This is passed in via React.cloneElement and is necessary to control option focus during keyboard interactions
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="popoverMenuRef"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['MutableRefObject<HTMLElement | null>']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-popoverMenuRef" />
+
+### priority
+
+Which piece of content has the highest priority in regards to text truncation, growing, and shrinking.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="priority"
+  required={false}
+  defaultValue=""
+  mobileOptions={['end', 'middle', 'start']}
+  webOptions={['end', 'middle', 'start']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-priority" />
+
+### reduceHorizontalSpacing <Badge variant="deprecated" order={1} />
+
+Reduce horizontal spacing for tighter layout requirements.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="reduceHorizontalSpacing"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-reduceHorizontalSpacing" />
+
+### selected
+
+Indicates whether option has been chosen already Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="selected"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-selected" />
+
+### shouldOverflow
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="shouldOverflow"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-shouldOverflow" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-testID" />
+
+### title
+
+Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate.
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="title"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-title" />
+
+### value <Badge variant="web" />
+
+automatically focus a select option if its already been selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="value"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-value" />
+
+<ComponentDetails componentName="SelectOption" templateName="outro" />

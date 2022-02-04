@@ -1,0 +1,3 @@
+`PopoverMenu`s come with baked in accessibility attributes for both the `triggerNode` and the elevated surface that is toggled by interacting with the trigger. To ensure the best user experience, we advise that you pass an `accessibilityLabel` to `PopoverMenu` to ensure that all `PopoverMenu`s have unique and indicative labels.
+
+Since a `PopoverMenu` can take any element as a child, we strongly recommend that you wrap each _interactable_ child of a `PopoverMenu` in a `MenuItem`, which will add keyboard navigation, focus behaviors, and accessibility attributes, all for free. You just need to pass each `MenuItem` a unique value. See `MenuItem` usage for more details.

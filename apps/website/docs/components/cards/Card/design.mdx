@@ -1,0 +1,112 @@
+import { Image } from ':cds-website/components/Image';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+Cards are containers that showcase content and actions related to a singular topic. By design, Cards organize, highlight, and bundle information. They encourage people to focus on a singular topic and take action if needed. Keep Cards concise, focused, and engaging.
+
+## Usage
+
+**Use Cards to:**
+
+- Guide users to product features.
+- Prompt or encourage users to take action or complete a task.
+- Act as an entry point or gateway to more information.
+
+**When not to use Cards:**
+
+- Do not use Cards to display large amounts of data or information. Consider using another container.
+
+## Anatomy of Cards
+
+<Box justifyContent="center">
+  <Image
+    light="/img/components/cards/CardAnatomy.png"
+    dark="/img/components/cards/CardAnatomy_Dark.png"
+  />
+</Box>
+
+Each Card is created with the following sections: Header, Body, and Footer. Each section relates to the subject of the Card.
+
+### Header
+
+This section provides high level information about the Card such as the author avatar, author name, and metadata. This is also the space for supplementary actions like viewing an overflow Menu or dismissing a Card.
+
+### Body
+
+Body is the meat and potatoes of a Card. It’s the most robust and flexible section of a Card and the only section that is always mandatory. 
+Body typically contains content like:
+
+- Media
+  - Pictogram
+  - Spot Square Illustration
+  - Spot Rectangle Illustration
+  - Image
+- Title
+- Description
+
+### Footer
+
+This section is reserved for primary call-to-actions. 
+By leveraging this framework and respecting the default placements, we can ensure cohesion and alignment regardless of content and layout.
+
+## Content Guidelines
+
+<table style={{ width: '100%' }}>
+  <tr>
+    <th>Header</th>
+    <th>Body</th>
+    <th>Footer</th>
+  </tr>
+  <tr>
+    <td style={{ verticalAlign: 'top', width: '33.3%' }}>
+      Use clear, descriptive text that helps the user understand the theme of the card.
+    </td>
+    <td style={{ verticalAlign: 'top', width: '33.3%' }}>
+      Write clear, concise language that explains the benefit and sells the action.
+      <br />
+      <br />
+      Keep headlines to one line Keep body copy to 1–3 lines.
+    </td>
+    <td style={{ verticalAlign: 'top', width: '33.3%' }}>
+      Start with a verb.
+      <br />
+      <br />
+      Be concise (1–3 words). Some examples include:
+      <br />
+      <ul>
+        <li>"Learn more"</li>
+        <li>"Read more"</li>
+        <li>"Start earning"</li>
+        <li>"Invite friends"</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Sizing & Scale
+
+Cards scale and adapt to different screen sizes. Although you could apply a fixed-width to a Card, we recommend determining Card widths based on the Grid. Card height is dependent on the grid and type of content within the card. 
+Cards that are set in a tile grid should all be the same height.
+
+## Dividers
+
+Generally speaking dividers are used to draw the basic layout of the page and separate distinct modules and sections from each other. Full-width dividers are placed on the top and/or bottom of Card and used to communicate card boundaries. Toggle on top/bottom dividers when grouping or stacking cards together.
+
+Related component: [Dividers](/components/divider)
+
+## Actions
+
+The Card itself is typically the primary action. However, we recommend placing a Button in the Footer to encourage engagement or to make the Card feel more actionable. Buttons in the Footer should callout the main CTA of the Card.
+
+<Box justifyContent="center">
+  <Image
+    light="/img/components/cards/CardActions.png"
+    dark="/img/components/cards/CardActions_Dark.png"
+  />
+</Box>
+
+Cards can also have supplementary actions in the Header or Footer such as:
+
+- **More actions**: This triggers a Select Menu. Use a More icon.
+- **Dismissible**: This closes the Card. Use a Close icon.

@@ -1,0 +1,218 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/overlays/MenuItem](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/overlays/MenuItem.tsx)
+
+<ComponentDetails componentName="MenuItem" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="MenuItem" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="MenuItem" templateName="a11y" />
+
+## Props
+
+### hideMenu <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+this is for internal use only when a MenuItem is a child of a PopoverMenu. For custom handlers please use onPress
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="hideMenu"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-hideMenu" />
+
+### key <Badge variant="web" />
+
+Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="key"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-key" />
+
+### loading <Badge variant="web" />
+
+Is the element currenty loading.
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="loading"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-loading" />
+
+### onBlur <Badge variant="web" />
+
+Handler called when the MenuItem is blurred Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="onBlur"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(event: FocusEvent<HTMLButtonElement>) => void']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-onBlur" />
+
+### onChange <Badge variant="web" />
+
+Callback that is fired whenever a select option is selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['(newValue: string) => void']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-onChange" />
+
+### onKeyPress <Badge variant="web" />
+
+Callback fired when a key is pressed
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="onKeyPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['KeyboardEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-onKeyPress" />
+
+### onPress <Badge variant="web" />
+
+Custom event handler for when a MenuItem is pressed Callback fired when the element is pressed.
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['NoopFn & MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-onPress" />
+
+### popoverMenuRef <Badge variant="web" />
+
+This is passed in via React.cloneElement and is necessary to control option focus during keyboard interactions
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="popoverMenuRef"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['MutableRefObject<HTMLElement | null>']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-popoverMenuRef" />
+
+### selected <Badge variant="web" />
+
+Indicates whether option has been chosen already Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="selected"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-selected" />
+
+### tabIndex <Badge variant="web" />
+
+Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="tabIndex"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-tabIndex" />
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-testID" />
+
+### to <Badge variant="web" />
+
+URL that this links to when pressed.
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="to"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-to" />
+
+### value <Badge variant="web" />
+
+automatically focus a select option if its already been selected Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement()
+
+<ApiDetails
+  componentName="MenuItem"
+  propertyName="value"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="MenuItem" templateName="prop-value" />
+
+<ComponentDetails componentName="MenuItem" templateName="outro" />

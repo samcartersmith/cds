@@ -1,0 +1,14 @@
+> [@cbhq/cds-common/scale/useScaleConditional](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/common/scale/useScaleConditional.ts)
+
+Conditionally return a value based on the active scale.
+
+```jsx live
+function Example() {
+  const size = useScaleConditional({ dense: 30, normal: 60 });
+  return (
+    <ExampleWithThemeToggles>
+      <Box background="primary" width={size} height={size} />
+    </ExampleWithThemeToggles>
+  );
+}
+```

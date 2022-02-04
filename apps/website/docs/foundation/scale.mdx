@@ -1,0 +1,29 @@
+---
+id: scale
+title: Scale
+---
+
+CDS supports 7 scales: `xSmall`, `small`, `medium`, `large`, `xLarge`, `xxLarge`, `xxxLarge`. Product can offer dynamic scales to users as a preference, but designs only need to focus on **Normal (`large`)** and **Dense (`xSmall`)** scales. The published CDS Figma component libraries are Dense Light, Dense Dark, Normal Light, and Normal Dark. All of CDS components including icons handle scaling without any additional effort from you.
+
+- [CDS Dense 🌞 (Light)](https://www.figma.com/file/PFrMlidBLdYwQRtIzTvMtV/CDS-Dense-%F0%9F%8C%9E?node-id=0%3A1)
+- [CDS Dense 🌙 (Dark)](https://www.figma.com/file/Z1nZasDnsAoUgTx3cckqY2/CDS-Dense-%F0%9F%8C%99?node-id=43%3A3)
+- [CDS Normal 🌞 (Light)](https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=106%3A2)
+- [CDS Normal 🌙 (Dark)](https://www.figma.com/file/YjFmec7quTC4bN0xvYnKsx/CDS-Normal-%F0%9F%8C%99?node-id=52%3A2)
+
+:::tip Recomended
+We recommend having **a single scale** throughout an app. The single scale can be configurable by user preference or responsive design but it should be uniform in a product.
+
+If a product must have multiple scales for different pages or screens, it should have only one scale for a page or a screen. One exception is that any navigation bar or header that appears across pages or screens of different scales should not change scale upon navigation as it causes layout shifts, which result in a poor user experience. Such components should use the dominant scale of the app.
+:::
+
+## Dense (xSmall)
+
+Dense scale is our `xSmall` scale. It’s an ideal scale for web tools that need to accommodate a lot of data such as advanced trading features.
+
+## Normal (large)
+
+Normal scale is our `large` scale. It’s an ideal scale for mobile products or landing pages.
+
+## Layout considerations
+
+Dynamic type can have a significant impact on layout, especially if scaled up. Consider different solutions to maintain original layout intent, and ensure product quality.

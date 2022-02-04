@@ -1,0 +1,159 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-web/tables/TableRow](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/tables/TableRow.tsx)
+
+<ComponentDetails componentName="TableRow" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="TableRow" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="TableRow" templateName="a11y" />
+
+## Props
+
+### backgroundColor <Badge variant="web" />
+
+Set the background color for this entire row to some CDS Palette background color name
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="backgroundColor"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'background',
+    'backgroundAlternate',
+    'backgroundOverlay',
+    'negative',
+    'positive',
+    'primary',
+    'primaryWash',
+    'secondary',
+  ]}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-backgroundColor" />
+
+### children <Badge variant="web" />
+
+Children are required, and should always include TableCell | TableCell[].
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="children"
+  required={true}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'ReactElement<TableCellProps | TableCellFallbackProps, string | JSXElementConstructor<any>>',
+    'ReactElement<TableCellProps | TableCellFallbackProps[], string | JSXElementConstructor<any>>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactNode[]',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-children" />
+
+### color <Badge variant="web" />
+
+Set the text color for this entire row to some CDS Palette foreground color name
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="color"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={[
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
+  ]}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-color" />
+
+### disableHoverIndicator <Badge variant="web" />
+
+When set, well set a hover background color of palette.backgroundAlternate for the row.
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="disableHoverIndicator"
+  required={false}
+  defaultValue="false"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-disableHoverIndicator" />
+
+### fullWidth <Badge variant="web" />
+
+Should this row span the entire width of the table? Useful for treating a row as a Control Strip.
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="fullWidth"
+  required={false}
+  defaultValue="undefined"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-fullWidth" />
+
+### onPress <Badge variant="web" />
+
+Callback to fire when pressed
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="onPress"
+  required={false}
+  defaultValue="noop"
+  mobileOptions={[]}
+  webOptions={['() => void', 'MouseEventHandler<Element>']}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-onPress" />
+
+### testID <Badge variant="web" />
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="TableRow"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="TableRow" templateName="prop-testID" />
+
+<ComponentDetails componentName="TableRow" templateName="outro" />
