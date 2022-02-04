@@ -236,6 +236,20 @@ Is the cell disabled? Will apply opacity and disable interaction.
 
 <ComponentDetails componentName="ListCell" templateName="prop-disabled" />
 
+### disableMultilineTitle <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="ListCell"
+  propertyName="disableMultilineTitle"
+  required={false}
+  defaultValue="false
+When there is no description the title will take up two lines by default. When this is set to true multiline title behavior is overwritten and regardless of description text state the title will take up a single line truncating with ellipses."
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="ListCell" templateName="prop-disableMultilineTitle" />
+
 ### innerSpacing
 
 The spacing to use on the inner content of Cell

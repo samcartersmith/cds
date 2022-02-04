@@ -10,13 +10,21 @@ import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 
-export type ListCellProps = ListCellBaseProps & CellSharedProps;
+export type ListCellProps = ListCellBaseProps &
+  CellSharedProps & {
+    /**
+     *  @default false
+     *  When there is no description the title will take up two lines by default. When this is set to true multiline title behavior is overwritten and regardless of description text state the title will take up a single line truncating with ellipses.
+     *   */
+    disableMultilineTitle?: boolean;
+  };
 
 export const ListCell = memo(function ListCell({
   accessory,
   action,
   compact,
   title,
+  disableMultilineTitle = false,
   description,
   detail,
   detailWidth,
@@ -59,7 +67,10 @@ export const ListCell = memo(function ListCell({
     >
       <VStack justifyContent="center">
         {!!title && (
-          <TextHeadline numberOfLines={description ? 1 : 2} ellipsize="tail">
+          <TextHeadline
+            numberOfLines={description || disableMultilineTitle ? 1 : 2}
+            ellipsize="tail"
+          >
             {title}
           </TextHeadline>
         )}

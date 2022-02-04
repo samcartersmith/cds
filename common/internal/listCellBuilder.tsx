@@ -19,6 +19,7 @@ export function listCellBuilder(
     ListCellBaseProps & {
       onPress?: () => void;
       to?: string;
+      disableMultilineTitle?: boolean;
     }
   >,
   CellMedia: React.ComponentType<CellMediaProps>,
@@ -283,6 +284,17 @@ export function listCellBuilder(
       <ListCell
         title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
+        detail="Detail also has a very long string"
+        subdetail="Neutral also does too"
+      />
+      <ListCell
+        title="disableMultilineTitle === undefined. Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
+        detail="Detail also has a very long string"
+        subdetail="Neutral also does too"
+      />
+      <ListCell
+        title="disableMultilineTitle === true. Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
+        disableMultilineTitle
         detail="Detail also has a very long string"
         subdetail="Neutral also does too"
       />
