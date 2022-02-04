@@ -30,6 +30,9 @@ Help:
   $$ make start.story               -- Start storybook local dev server.
   $$ make build.story               -- Build storybook.
 
+  $$ make start.website             -- Start website local dev server.
+  $$ make build.website             -- Build website.
+
 endef
 export HELP_TEXT
 
@@ -128,3 +131,11 @@ build.story:
 .PHONY: start.story
 start.story:
 	nx run web:start-storybook
+
+.PHONY: build.website
+build.website:
+	nx run website:build
+
+.PHONY: start.website
+start.website:
+	nx run website:start
