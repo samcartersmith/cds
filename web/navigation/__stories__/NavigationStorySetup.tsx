@@ -30,7 +30,7 @@ export const StoryMap = {
 
 // Helpers
 type Items = { title: string; icon: SidebarItemProps['icon'] }[];
-const items: Items = [
+export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },
   { title: 'Trade', icon: 'trading' },
   { title: 'Pay', icon: 'pay' },
@@ -177,7 +177,7 @@ type MoreMenuOption = {
   icon: NavigationIconName;
 };
 
-const moreMenuOptions: MoreMenuOption[] = [
+export const moreMenuOptions: MoreMenuOption[] = [
   {
     value: 'earn',
     label: 'Earn',

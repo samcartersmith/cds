@@ -1505,6 +1505,12 @@ export const SidebarMoreMenu = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarMoreMenu/sidebar-more-menu.mdx'
       ),
   ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/navigation/SidebarMoreMenu/usage.mdx'
+      ),
+  ),
 };
 
 export const Alert = {
