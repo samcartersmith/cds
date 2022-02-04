@@ -1,0 +1,179 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/dots/DotCount](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/dots/DotCount.tsx)
+
+<ComponentDetails componentName="DotCount" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="DotCount" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="DotCount" templateName="a11y" />
+
+## Props
+
+### accessibilityHint
+
+Accessibility hint for assisted devices when focused. Message should indicate the purpose of the control. If not supplied, will default to label
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="accessibilityHint"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-accessibilityHint" />
+
+### accessibilityLabel
+
+Accessibility label describing the control. If no accessibilityLabel, it will set it to label Maps to `aria-label`
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="accessibilityLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-accessibilityLabel" />
+
+### accessibilityLabelledBy
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-accessibilityLabelledBy" />
+
+### children
+
+children of where the dot will anchor to
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-children" />
+
+### count
+
+The number value to be shown in the dot. If count is <= 0, dot will not show up.
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="count"
+  required={true}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-count" />
+
+### id
+
+Used for a11y to indicate the relationship between a controlled element and its controller eg: a Button that controls the visibility of a Modal
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-id" />
+
+### pin
+
+Position of dot relative to its parent
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="pin"
+  required={false}
+  defaultValue=""
+  mobileOptions={['top-end']}
+  webOptions={['top-end']}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-pin" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-testID" />
+
+### variant
+
+Background color of dot
+
+<ApiDetails
+  componentName="DotCount"
+  propertyName="variant"
+  required={false}
+  defaultValue="negative"
+  mobileOptions={['negative']}
+  webOptions={['negative']}
+/>
+
+<ComponentDetails componentName="DotCount" templateName="prop-variant" />
+
+<ComponentDetails componentName="DotCount" templateName="outro" />

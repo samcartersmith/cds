@@ -33,8 +33,8 @@ The task list below is needed to get the hello world of the poly repo. There are
 - [x] fonts
 - [x] web
 - [x] web utils (webpack, jest, etc.)
+- [x] website
 - [ ] codegen
-- [ ] website
 - [ ] codemod
 
 #### Stylelint
@@ -61,7 +61,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 #### Website
 
-- [ ] deploy website locally
+- [x] deploy website locally
 - [ ] deploy dev website
 - [ ] deploy prod website
 
@@ -78,6 +78,12 @@ The task list below is needed to get the hello world of the poly repo. There are
 #### Buildkite
 
 - [ ] Hook up buildkite
+
+## Repo migration cutover items
+
+- [ ] Migrate mono repo to cds npm packages
+- [ ] Turn off website deployments in the monorepo
+- [ ] Turn on website deployments in the new polyrepo
 
 ## Understand your workspace
 

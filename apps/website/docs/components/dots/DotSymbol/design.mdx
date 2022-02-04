@@ -1,0 +1,103 @@
+import { Image } from ':cds-website/components/Image';
+import { DoDont, DoExample, DontExample } from ':cds-website/components/DoDont';
+import { Divider, HStack } from '@cbhq/cds-web/layout';
+import { TextLabel2 } from '@cbhq/cds-web/typography';
+import { Collection, Item } from ':cds-website/components/Collection';
+
+# Dots
+**Dots are component adornments,** typically used to communicate a numerical value or indicate the status or identity of a component to the end-user.
+<Image
+  src="/img/components/dots/demo_Dots_Hero_Anim.gif"
+/>
+
+## Usage
+<Image
+  src="/img/components/dots/Hero_Usage.png"
+/>
+
+<TextLabel2 as="p" align="center">Dot Status Color | Dot Count | Dot Symbol</TextLabel2>
+
+Dots are used as a descriptor attribute used to help visualize the status of a thing, the # of a thing or the type of a thing. The use cases covered:
+- Dot Status Color
+- Dot Count
+- Dot Symbol 
+
+## Principles
+Use of Dots should follow the rule of being meaningful, specific and discernible, in that it:
+- Does not depend on color. Color alone is not enough to communicate meaning.
+- Accompanies text that spells out its meaning in order to avoid making the end-user interpret the Dots intent.
+- Displays symbols to communicate an element's identity or attribute
+<DoDont spacingVertical={0}>
+  <DoExample img={{src:'/img/components/dots/Do_01a.png'}} >
+    Use Dot Count to communicate the count of notifications available to the end-user.
+  </DoExample>
+  <DontExample img={{src:'/img/components/dots/Dont_01b.png'}}>
+    This Dot does not communicate anything significant or meaningful. It is not clear what is the purpose of this Dot. And the use of Red, (a semantic color for a negative, a problem, a warning, a failure) further dilutes its purpose.
+  </DontExample>
+</DoDont>
+<DoDont spacingVertical={0}>
+  <DoExample img={{src:'/img/components/dots/Do_02a.png'}} >
+    When applicable, do show the # of items.
+  </DoExample>
+  <DontExample img={{src:'/img/components/dots/Dont_02b.png'}}>
+    A dot next to text, Notifications, fails to communicate its purpose without displaying the count.
+  </DontExample>
+</DoDont>
+
+<Divider />
+
+## Dot Symbol
+Dot Symbol adorns components as a "badge" to visualize the identity/brand of an element. Unlike Dot Status Color and Dot Count, Dot Symbol is not a standalone component. Essentially, CDS's Dot Symbol is a container for displaying symbols (logos, icons, etc) that are are positioned (or "pinned") in one of four positions:
+- Top-right
+- Top-left
+- Bottom-right (preferred)
+- Bottom-left
+
+### Dot Scale
+Dot Symbol comes in 4 sizes in Normal and Dense scales: Large, Medium, Small, Extra Small
+
+<HStack>
+  <Image
+    src="/img/components/dots/DotStatusColor_Sizes_Normal.png"
+  />
+</HStack>
+
+<Image
+  src="/img/components/dots/Example_Dot_Symbol_01.png"
+/>
+
+*Prime*
+
+<Collection spacingVertical={0}>
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Symbol_04.png',
+    }}
+  />
+  <Item
+    img={{
+      src: '/img/components/dots/Example_Dot_Symbol_05.png',
+    }}
+  />
+</Collection>
+
+*Core Trade : DeFi*
+
+<Divider />
+
+## Accessibility
+Dot variants are attributes that are treated as part of a whole and not as separate standalone components. Set up your navigation and aria labels so that the dots are in context to the element it is attributing.
+<Image
+  src="/img/components/dots/Example_A11y_01.gif"
+/>
+
+**Tabbing and Tap targets:** Dots do not have a tap target or micro-interactions independent from the component it is attributed to. When a Dot variant  appears with a component that has a tap target, the tap target increases to accommodate the component and the Dot. Tapping the Dot or the component should point to the same destination.
+
+**Aria Labels:** When a Dot is visible on your element include a contextual description of the badge's content or purpose
+
+## Resources
+
+- [Figma Dot sticker sheet](https://www.figma.com/file/OkoLiQkwimFzYM42pCWzGd/%F0%9F%9A%A6Dots-%26-Labels-Q4.21?node-id=434%3A63577)
+
+## Content guidelines
+We have no specific content guidelines for Dot variants. For general content guidelines, please visit [Content](/foundation/content).

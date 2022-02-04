@@ -1,0 +1,39 @@
+### Placements
+```jsx live
+function Placements() {
+  const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'];
+  return (
+    <ExampleWithThemeToggles>
+      {PIN_DIRECTIONS.map((pinDirection) => (
+        <VStack gap={4} spacing={1} key={`dotsymbol-placement-${pinDirection}`} spacingBottom={4}>
+          <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
+            <Avatar size="xxxl" shape="square" alt="Sneezy" />
+          </DotSymbol>
+          <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
+            <Avatar size="xl" shape="square" alt="Sneezy" />
+          </DotSymbol>
+          <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
+            <Icon name="airdrop" shape="square" size="l" />
+          </DotSymbol>
+        </VStack>
+      ))}
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
+### Sizes
+```jsx live
+function Sizes() {
+  const SIZES = ['s', 'm', 'l'];
+  return (
+    <ExampleWithThemeToggles>
+      {SIZES.map((size) => (
+        <VStack gap={1} key={`dotsymbol-size-${size}`}>
+          <DotSymbol source={assets.eth.imageUrl} size={size} />
+        </VStack>
+      ))}
+    </ExampleWithThemeToggles>
+  );
+}
+```

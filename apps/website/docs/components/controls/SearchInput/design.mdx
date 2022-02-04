@@ -1,0 +1,157 @@
+import { Image } from ':cds-website/components/Image';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+import searchDetachedLight from ':cds-website/static/img/components/controls/SearchInput/search_detached_light.png';
+import search_attached_light from ':cds-website/static/img/components/controls/SearchInput/search_attached_light.png';
+import search_embedded_light from ':cds-website/static/img/components/controls/SearchInput/search_embedded_light.png';
+import search_anatomy_light from ':cds-website/static/img/components/controls/SearchInput/search_anatomy_light.png';
+import search_section_light from ':cds-website/static/img/components/controls/SearchInput/search_section_light.png';
+import search_header_light from ':cds-website/static/img/components/controls/SearchInput/search_header_light.png';
+
+import { Video } from '../../../../components/Video';
+import { TextHeadline, TextBody } from '@cbhq/cds-web/typography';
+
+<RightSidebar toc={toc} />
+
+## Usage
+
+Search is used to discover content.
+
+<div style={{ display: 'flex', paddingTop: 20 }}>
+  <div style={{ width: '50%' }}>
+    <TextHeadline as="p" spacingBottom={2}>
+      Global
+    </TextHeadline>
+    <TextBody as="p">
+      Global search is placed in a header and scrubs an entire application.
+    </TextBody>
+  </div>
+  <div style={{ width: '50%' }}>
+    <TextHeadline as="p" spacingBottom={2}>
+      Local
+    </TextHeadline>
+    <TextBody as="p">
+      Local search is placed within a page or container and scrubs a particular dataset.
+    </TextBody>
+  </div>
+</div>
+
+## Search Results
+
+There are a couple ways search results can be displayed.
+
+<div style={{ display: 'flex' }}>
+  <div style={{ width: '30%', margin: 8 }}>
+    <TextHeadline as="p" spacingBottom={2}>
+      Detached
+    </TextHeadline>
+    <TextBody as="p">
+      Search results are populated below the Search Input on a dedicted search results page.
+    </TextBody>
+  </div>
+  <div style={{ width: '30%', margin: 8 }}>
+    <TextHeadline as="p" spacingBottom={2}>
+      Attached
+    </TextHeadline>
+    <TextBody as="p">Search results populate in a Popover Menu below the Search Input.</TextBody>
+  </div>
+  <div style={{ width: '30%', margin: 8 }}>
+    <TextHeadline as="p" spacingBottom={2}>
+      Embedded
+    </TextHeadline>
+    <TextBody as="p">
+      Embedded search is used when search is placed in a container. A common example is search
+      within Modals.
+    </TextBody>
+  </div>
+</div>
+
+<div style={{ display: 'flex' }}>
+  <div style={{ width: '30%', margin: 8 }}>
+    <img src={searchDetachedLight} alt="Image alt" />
+  </div>
+  <div style={{ width: '30%', margin: 8 }}>
+    <img src={search_attached_light} alt="Image alt" />
+  </div>
+  <div style={{ width: '30%', margin: 8 }}>
+    <img src={search_embedded_light} alt="Image alt" />
+  </div>
+</div>
+
+## Anatomy
+
+<img src={search_anatomy_light} alt="Image alt" />
+
+<ol>
+  <li>
+    <TextHeadline as="p">Search Input</TextHeadline>
+  </li>
+  <ul>
+    <li>Tapping or clicking on the input will trigger the focus state.</li>
+    <li>The magnifying glass icon always signals the search input.</li>
+  </ul>
+  <li>
+    <TextHeadline as="p">Placeholder Text</TextHeadline>
+  </li>
+  <ul>
+    <li>Make the placeholder text specific and related to the contents they are searching. </li>
+    <li>Don’t add critical information to the placeholder.</li>
+  </ul>
+  <li>
+    <TextHeadline as="p">Clearing Search</TextHeadline>
+  </li>
+  <ul>
+    <li>An “x” icon will appear once the user starts inputting text into the field.</li>
+    <li>Pressing the icon will clear any string of text inputted in the field.</li>
+  </ul>
+</ol>
+
+## Cross-Platform
+
+The main difference between Search on Mobile vs. Web is exiting the Search input.
+
+On Web, users can simply click out or press tab to exit search.<br />On Mobile, the Search icon will animate to a backArrow icon. Clicking on the backArrow icon will exit the search page.
+
+<div style={{ display: 'flex', paddingTop: 20 }}>
+  <div style={{ width: '50%', margin: 16 }}>
+    <Video
+      light="/video/lightmode/Search/search_exiting_web.mp4"
+      dark="/video/lightmode/Search/search_exiting_web.mp4"
+    />
+    <TextHeadline as="p" spacingBottom={2}>
+      Web
+    </TextHeadline>
+  </div>
+  <div style={{ width: '50%', margin: 16 }}>
+    <Video
+      light="/video/lightmode/Search/search_exiting_mobile.mp4"
+      dark="/video/lightmode/Search/search_exiting_mobile.mp4"
+    />
+    <TextHeadline as="p" spacingBottom={2}>
+      Mobile
+    </TextHeadline>
+  </div>
+</div>
+
+## Placement
+
+Always place Search above the content you are searching.
+
+<TextHeadline as="p" spacingBottom={2}>
+  In header:
+</TextHeadline>
+<img src={search_header_light} alt="Image alt" />
+
+<TextHeadline as="p" spacingTop={2} spacingBottom={2}>
+  Within Section:
+</TextHeadline>
+<img src={search_section_light} alt="Image alt" />
+
+## Content
+
+Coming soon.
+​
+
+## Motion
+
+Coming soon.

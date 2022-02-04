@@ -1,0 +1,130 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/controls/Switch](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/controls/Switch.tsx)
+
+<ComponentDetails componentName="Switch" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Switch" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Switch" templateName="a11y" />
+
+## Props
+
+### checked
+
+Set the control to selected/on.
+
+<ApiDetails
+  componentName="Switch"
+  propertyName="checked"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Switch" templateName="prop-checked" />
+
+### children
+
+Label for the control option.
+
+<ApiDetails
+  componentName="Switch"
+  propertyName="children"
+  required={false}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Switch" templateName="prop-children" />
+
+### disabled
+
+Disable user interaction.
+
+<ApiDetails
+  componentName="Switch"
+  propertyName="disabled"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Switch" templateName="prop-disabled" />
+
+### onChange
+
+<ApiDetails
+  componentName="Switch"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={['() => void']}
+  webOptions={['ChangeEventHandler<HTMLInputElement>']}
+/>
+
+<ComponentDetails componentName="Switch" templateName="prop-onChange" />
+
+### readOnly
+
+Set the control to ready-only. Similar effect as disabled.
+
+<ApiDetails
+  componentName="Switch"
+  propertyName="readOnly"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Switch" templateName="prop-readOnly" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Switch"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Switch" templateName="prop-testID" />
+
+<ComponentDetails componentName="Switch" templateName="outro" />
