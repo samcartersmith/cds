@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.8 (2/4/2022, 02:39 PM PST)
+
+#### 🚀 Updates
+
+- Added more motion to PopoverMenu. [#52531](https://github.cbhq.net/mono/repo/pull/52531)
+
+#### 📘 Misc
+
+- Added docs and more examples of sidebarmoremenu. [#52620](https://github.cbhq.net/mono/repo/pull/52620)
+
 ## 0.34.7 (2/3/2022, 01:35 PM PST)
 
 #### 🚀 Updates

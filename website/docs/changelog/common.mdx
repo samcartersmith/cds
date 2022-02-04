@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.7 (2/4/2022, 02:39 PM PST)
+
+#### 🚀 Updates
+
+- Added more motion to PopoverMenu. [#52531](https://github.cbhq.net/mono/repo/pull/52531)
+
+#### 🐞 Fixes
+
+- Add disableMultilineTitle. [#52051](https://github.cbhq.net/mono/repo/pull/52051)
+
 ## 0.33.6 (2/3/2022, 01:35 PM PST)
 
 #### 🚀 Updates
