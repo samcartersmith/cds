@@ -10,6 +10,7 @@ export const adopters = [
   { id: 'maui', pillar: 'Ecosystem' },
   { id: 'prime-mobile', pillar: 'Institutional' },
   { id: 'prime-web', pillar: 'Institutional' },
+  { id: 'prime-admin', pillar: 'Institutional' },
   { id: 'unified-accounts', pillar: 'Platform' },
   { id: 'umo', pillar: 'Platform' },
   { id: 'uwo', pillar: 'Platform' },

@@ -23,6 +23,7 @@ module.exports = {
       items: [
         { type: 'doc', id: 'adoption-tracker/prime-mobile', label: 'Prime Mobile' },
         { type: 'doc', id: 'adoption-tracker/prime-web', label: 'Prime Web' },
+        { type: 'doc', id: 'adoption-tracker/prime-admin', label: 'Prime Admin' },
       ],
     },
     {

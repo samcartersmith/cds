@@ -76,6 +76,13 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: ['@cbhq/prime-ui', '@cbhq/insto-ui-web'],
         type: 'doc',
       },
+      {
+        ...monorepoConfig,
+        id: 'prime-admin',
+        label: 'Prime Admin',
+        projectTsAliases: ['@prime-admin', '@instant-api-hooks'],
+        type: 'doc',
+      },
     ],
   },
   {

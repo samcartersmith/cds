@@ -377,6 +377,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "IDVFlow",
+      "sourceFile": "@cbhq/two-factor-web/flows/idv/IDVFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "LoadTwoFactorError",
       "sourceFile": "@cbhq/two-factor-web/ConfirmTwoFactor/components/LoadTwoFactorError",
       "totalInstances": 1,
@@ -792,6 +798,19 @@
           "@cbhq/two-factor-web/flows/totp/TOTPTryAnotherWay.tsx": 1,
           "@cbhq/two-factor-web/flows/u2f/U2FTryAnotherWay.tsx": 1
         }
+      }
+    },
+    {
+      "name": "IDVTwoFactor",
+      "sourceFile": "@cbhq/two-factor-idv/IDVTwoFactor",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onCancel": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
+        "onToast": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
+        "onError": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
+        "onSuccess": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 },
+        "logEvent": { "@cbhq/two-factor-web/flows/idv/IDVFlow.tsx": 1 }
       }
     },
     {
