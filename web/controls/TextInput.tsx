@@ -96,6 +96,7 @@ export const TextInput = memo(
           variant={variant}
           borderRadius={borderRadius}
           height={height}
+          labelNode={!compact && !!label && <InputLabel for={label}>{label}</InputLabel>}
           inputNode={
             <NativeInput
               align={align}
@@ -107,6 +108,7 @@ export const TextInput = memo(
               disabled={disabled}
               compact={compact}
               ref={refs}
+              id={label}
               {...htmlInputElmProps}
             />
           }
@@ -122,7 +124,6 @@ export const TextInput = memo(
               </HelperText>
             )
           }
-          labelNode={!compact && !!label && <InputLabel>{label}</InputLabel>}
           startNode={
             (compact || !!start) && (
               <HStack onClick={handleNodePress} alignItems="center" justifyContent="center" gap={2}>

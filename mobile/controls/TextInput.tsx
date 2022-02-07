@@ -104,8 +104,8 @@ export const TextInput = memo(
               containerSpacing={start ? startSpacing : {}}
               align={align}
               ref={refs}
-              accessibilityLabel={accessibilityLabel ?? label}
-              accessibilityHint={accessibilityLabel ?? label}
+              accessibilityLabel={accessibilityLabel}
+              accessibilityHint={accessibilityLabel}
               disabled={disabled}
               compact={compact}
               {...editableInputAddonProps}
