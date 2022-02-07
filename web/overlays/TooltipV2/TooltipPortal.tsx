@@ -23,9 +23,5 @@ export const TooltipPortal: React.FC<PortalProps> = ({ disablePortal = false, ch
     return <>{tooltipNode}</>;
   }
 
-  return createPortal(
-    tooltipNode,
-    // TODO: Update to Mike's once styling bug is resolved.
-    document.body,
-  );
+  return createPortal(tooltipNode, document?.getElementById(tooltipContainerId) as HTMLElement);
 };

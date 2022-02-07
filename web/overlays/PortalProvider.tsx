@@ -29,7 +29,7 @@ const PortalHost = memo(() => {
     portalRoot.id = portalRootId;
     portalRoot.style.zIndex = String(zIndex.overlays.portal);
     // enable stack order
-    portalRoot.style.position = 'fixed';
+    portalRoot.style.position = 'relative';
     // enable stack order on children
     portalRoot.style.display = 'flex';
 
