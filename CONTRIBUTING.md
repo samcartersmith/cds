@@ -371,7 +371,14 @@ For packages that are pre v1.0.0 we are not following a weekly Monday release li
 
 If `Make release` fails we must do a manual release.
 
-Continuous deploy is turned on for CDS package publishing. If you need to trigger a manual deploy, do the following
+After a release PR is merged, the following should automatically be deployed:
+
+- the website
+- all updated CDS packages to our internal NPM (Verdaccio)
+
+If the website is not updated, following the steps above for [how to manually release the website](#deploy).
+
+If Verdaccio is not updated, you need to trigger a manual deploy by following these steps:
 
 1. Run
 

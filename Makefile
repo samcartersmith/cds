@@ -18,6 +18,8 @@ Help:
   $$ make codegen                   -- Generate code in design system.
   $$ make deploy.website            -- Deploy docusaurus website to cds.cbhq.net.
   $$ make deploy.website-dev        -- Deploy docusaurus website to cds-dev.cbhq.net.
+  $$ make deploy.npm                -- Deploy CDS packages to internal NPM (Verdaccio).
+  $$ make deploy.npm-dev            -- Deploy CDS packages to internal NPM (Verdaccio) for development.
   $$ make docgen                    -- Generate docs for CDS website.
   $$ make lint                      -- Run eslint on all sources.
   $$ make lint.fix                  -- Auto fixes lints issues
@@ -195,6 +197,18 @@ deploy.website-dev:
 	@echo "Run the following commands:";
 	@echo "ash_login";
 	@echo "bazel run website/cloud:deploy_dev"
+
+.PHONY: deploy.npm
+deploy.npm:
+	@echo "Run the following commands:";
+	@echo "ash_login";
+	@echo "ash deploy -p eng/shared/design-system/cloud"
+
+.PHONY: deploy.npm-dev
+deploy.npm-dev:
+	@echo "Run the following commands:";
+	@echo "assume-role development eng-ops";
+	@echo "ash deploy -p eng/shared/design-system/cloud"
 
 .PHONY: setup.mobile
 setup.mobile:
