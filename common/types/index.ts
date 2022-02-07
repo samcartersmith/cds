@@ -52,6 +52,7 @@ export * from './SpacingScale';
 export * from './SparklineBaseProps';
 export * from './SparklinePathBaseProps';
 export * from './Spectrum';
+export * from './TabsProps';
 export * from './TextBaseProps';
 export * from './TextInputBaseProps';
 export * from './ThemeConfig';

@@ -61,6 +61,7 @@ export const routes = {
   SpotRectangle: () => require('../illustrations/__stories__/SpotRectangle.stories').default,
   SpotSquare: () => require('../illustrations/__stories__/SpotSquare.stories').default,
   Switch: () => require('../controls/__stories__/Switch.stories').default,
+  Tabs: () => require('../tabs/__stories__/Tabs.stories').default,
   Text: () => require('../typography/__stories__/Text.stories').default,
   TextBody: () => require('../typography/__stories__/TextBody.stories').default,
   TextCaption: () => require('../typography/__stories__/TextCaption.stories').default,
