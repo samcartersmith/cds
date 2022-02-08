@@ -15,6 +15,38 @@
     },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "build-package": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": ".nx/dist/packages/common",
+        "staticFiles": [
+          {
+            "source": "packages/common/package.json",
+            "dest": "package.json"
+          },
+          {
+            "source": "packages/common/CHANGELOG.md",
+            "dest": "CHANGELOG.md"
+          },
+          {
+            "source": "packages/common/README.md",
+            "dest": "README.md"
+          }
+        ],
+        "babelConfig": "./babel.build.config.js",
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
+        "typescriptConfig": "packages/common/tsconfig.build.json"
+      }
     }
   }
 }
+

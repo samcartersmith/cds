@@ -2,6 +2,7 @@
 node_modules
 yarn-debug.log*
 yarn-error.log*
+dist
 
 # OS ignores
 .DS_Store
@@ -57,3 +58,4 @@ esm/
 
 # Docusaurus
 .docusaurus
+/tools/executors/build-package/impl.js

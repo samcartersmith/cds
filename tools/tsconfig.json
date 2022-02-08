@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "composite": false,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "rootDir": "./"
+  },
+  "include": ["**/*.ts"],
+  "references": []
+}

@@ -14,6 +14,7 @@ Once everything is copied and configured, run:
 
 ```
 yarn install
+yarn setup
 ```
 
 ## Current commands
