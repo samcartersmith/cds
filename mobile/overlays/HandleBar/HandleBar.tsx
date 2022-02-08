@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
-import { handleBarOffset } from '@cbhq/cds-common/animation/drawer';
+import { handleBarOffset, handleBarHeight } from '@cbhq/cds-common/tokens/drawer';
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   handleBar: {
     width: 64,
-    height: 4,
+    height: handleBarHeight,
     borderRadius: 4,
   },
 });

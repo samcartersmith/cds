@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react';
 import {
   Animated,
   GestureResponderEvent,
+  LayoutRectangle,
   PanResponder,
   PanResponderGestureState,
   useWindowDimensions,
@@ -15,7 +16,12 @@ import {
   MAX_OVER_DRAG,
   MIN_PAN_DISTANCE,
 } from '@cbhq/cds-common/animation/drawer';
-import { horizontalDrawerWidth } from '@cbhq/cds-common/tokens/drawer';
+import {
+  handleBarHeight,
+  handleBarOffset,
+  horizontalDrawerPercentageOfView,
+  normalizeDrawerPanDistanceMultiplier,
+} from '@cbhq/cds-common/tokens/drawer';
 
 type UseDrawerPanResponderParams = {
   drawerAnimation: Animated.Value;
@@ -23,6 +29,7 @@ type UseDrawerPanResponderParams = {
   pin: PinningDirection;
   handleCloseRequest: NoopFn;
   disableCapturePanGestureToDismiss: boolean;
+  drawerDimensions: LayoutRectangle;
 };
 type DragDirection = 'up' | 'down' | 'left' | 'right' | undefined;
 
@@ -38,27 +45,16 @@ export const useDrawerPanResponder = ({
   animateDrawerIn,
   handleCloseRequest,
   disableCapturePanGestureToDismiss,
+  drawerDimensions,
 }: UseDrawerPanResponderParams) => {
   const { width } = useWindowDimensions();
-  const drawerWidth = width * horizontalDrawerWidth;
-
-  /** calculates drawer transformation based on gesture event */
-  const normalizeDragDistance = useCallback(
-    (
-      distance: number,
-      inputMax: number,
-      /** this basically creates a lag between press velocity and drawer animation, changes variably based on drawer size/layout */
-      outputMax: number,
-      clamp: boolean,
-    ): number => {
-      return modulate(distance, {
-        inputRange: [0, inputMax],
-        outputRange: [0, outputMax],
-        clamp,
-      });
-    },
-    [],
-  );
+  const drawerWidth = width * horizontalDrawerPercentageOfView + MAX_OVER_DRAG;
+  const handleBarTotalHeight = handleBarOffset + handleBarHeight;
+  const drawerHeight =
+    pin === 'bottom'
+      ? drawerDimensions.height + handleBarTotalHeight + MAX_OVER_DRAG
+      : drawerDimensions.height + MAX_OVER_DRAG;
+  const isHorizontalDrawer = pin === 'left' || pin === 'right';
 
   /** calculates whether gesture was great enough to warrant a response */
   const shouldHandleGesture = useCallback(
@@ -148,22 +144,26 @@ export const useDrawerPanResponder = ({
   const shouldDismiss = useCallback(
     (gestureState: PanResponderGestureState): boolean => {
       const { velocity, dragDirection, distance } = parseGestureState(gestureState);
+      const minDrawerWidthToDismiss = drawerWidth * DISMISSAL_DRAG_THRESHOLD;
+      const minDrawerHeightToDismiss = drawerHeight * DISMISSAL_DRAG_THRESHOLD;
+      const dismissalThreshold = isHorizontalDrawer
+        ? minDrawerWidthToDismiss
+        : minDrawerHeightToDismiss;
+
       if (isTryingToDismiss(dragDirection)) {
         switch (pin) {
           case 'top':
           case 'left':
-            return (
-              velocity <= -DISMISSAL_VELOCITY_THRESHOLD || distance <= -DISMISSAL_DRAG_THRESHOLD
-            );
+            return velocity <= -DISMISSAL_VELOCITY_THRESHOLD || distance <= -dismissalThreshold;
           case 'bottom':
           case 'right':
           default:
-            return velocity >= DISMISSAL_VELOCITY_THRESHOLD || distance > DISMISSAL_DRAG_THRESHOLD;
+            return velocity >= DISMISSAL_VELOCITY_THRESHOLD || distance >= dismissalThreshold;
         }
       }
       return false;
     },
-    [isTryingToDismiss, parseGestureState, pin],
+    [isTryingToDismiss, parseGestureState, pin, drawerWidth, drawerHeight, isHorizontalDrawer],
   );
 
   const panGestureHandlers = useMemo(() => {
@@ -173,26 +173,27 @@ export const useDrawerPanResponder = ({
       onMoveShouldSetPanResponderCapture: shouldCaptureGestures,
       onPanResponderMove: (_, gestureState) => {
         const { isDragging, distance, isOverDrag } = parseGestureState(gestureState);
-        const invertedPin = pin === 'bottom' || pin === 'right';
-        const isHorizontalDrawer = pin === 'left' || pin === 'right';
+        const isInvertedPin = pin === 'bottom' || pin === 'right';
+        const horizontalDrawerMaxPanDistance = isInvertedPin ? -drawerWidth : drawerWidth;
+        const verticalDrawerMaxPanDistance = isInvertedPin ? -drawerHeight : drawerHeight;
 
         if (isDragging) {
           if (isOverDrag) {
-            const normalizedDistance = normalizeDragDistance(
-              Math.abs(distance),
-              MAX_OVER_DRAG,
-              0.1,
-              true,
-            );
+            const normalizedDistance = modulate(Math.abs(distance), {
+              inputRange: [0, MAX_OVER_DRAG],
+              outputRange: [0, 0.1],
+              clamp: true,
+            });
             drawerAnimation.setOffset(calculateDragOffset(normalizedDistance));
           } else {
-            // output max is ideal for when drawer reaches max height
-            const normalizedDistance = normalizeDragDistance(
-              distance,
-              invertedPin ? -drawerWidth : drawerWidth,
-              isHorizontalDrawer ? 0.7 : 0.4,
-              false,
-            );
+            const normalizedDistance = modulate(distance, {
+              inputRange: [
+                0,
+                isHorizontalDrawer ? horizontalDrawerMaxPanDistance : verticalDrawerMaxPanDistance,
+              ],
+              outputRange: [0, normalizeDrawerPanDistanceMultiplier],
+              clamp: false,
+            });
             drawerAnimation.setOffset(normalizedDistance);
           }
         }
@@ -213,8 +214,9 @@ export const useDrawerPanResponder = ({
     shouldDismiss,
     handleCloseRequest,
     drawerWidth,
-    normalizeDragDistance,
+    drawerHeight,
     pin,
+    isHorizontalDrawer,
   ]);
 
   return panGestureHandlers;

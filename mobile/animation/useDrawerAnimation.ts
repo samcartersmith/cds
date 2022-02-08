@@ -1,20 +1,22 @@
 import { useMemo, useRef } from 'react';
 
 import { PinningDirection } from '@cbhq/cds-common';
-import { Animated, useWindowDimensions } from 'react-native';
+import { Animated, LayoutRectangle, useWindowDimensions } from 'react-native';
+import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import {
-  MAX_OVER_DRAG,
   drawerHeightThreshold,
   verticalDrawerPercentageOfView,
   horizontalDrawerPercentageOfView,
   handleBarOffset,
-} from '@cbhq/cds-common/animation/drawer';
-import { useLayout } from '../hooks/useLayout';
+} from '@cbhq/cds-common/tokens/drawer';
+
 import { convertMotionConfig } from './convertMotionConfig';
 
-export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom') => {
+export const useDrawerAnimation = (
+  pin: PinningDirection | undefined = 'bottom',
+  drawerDimensions: LayoutRectangle,
+) => {
   const windowDimensions = useWindowDimensions();
-  const [drawerDimensions, onLayout] = useLayout();
 
   const isPinVertical = pin === 'top' || pin === 'bottom';
   const dimension = isPinVertical ? 'height' : 'width';
@@ -85,8 +87,7 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
       animateDrawerOut,
       animateDrawerIn,
       drawerAnimationStyles: { transform: [translation] },
-      onLayout,
       hasDrawerRendered,
     };
-  }, [animateDrawerOut, animateDrawerIn, translation, onLayout, hasDrawerRendered]);
+  }, [animateDrawerOut, animateDrawerIn, translation, hasDrawerRendered]);
 };

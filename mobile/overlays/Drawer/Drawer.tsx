@@ -10,13 +10,12 @@ import React, {
 } from 'react';
 import { StyleSheet, Modal, Animated, ModalProps, useWindowDimensions, View } from 'react-native';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
+import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
+import { useSpectrum } from '@cbhq/cds-common';
 import {
-  MAX_OVER_DRAG,
   verticalDrawerPercentageOfView,
   horizontalDrawerPercentageOfView,
-} from '@cbhq/cds-common/animation/drawer';
-import { emptyObject } from '@cbhq/cds-utils';
-import { useSpectrum } from '@cbhq/cds-common';
+} from '@cbhq/cds-common/tokens/drawer';
 import { DrawerStatusBar } from './DrawerStatusBar';
 import { useDrawerAnimation } from '../../animation/useDrawerAnimation';
 import { useDrawerSpacing } from '../../hooks/useDrawerSpacing';
@@ -25,6 +24,7 @@ import { HandleBar } from '../HandleBar/HandleBar';
 import { Box } from '../../layout/Box';
 import { useOverlayAnimation } from '../Overlay/useOverlayAnimation';
 import { Overlay } from '../Overlay/Overlay';
+import { useLayout } from '../../hooks/useLayout';
 
 export type DrawerProps = DrawerBaseProps & Omit<ModalProps, 'onRequestClose' | 'children'>;
 
@@ -44,15 +44,15 @@ export const Drawer = memo(
       ref,
     ) => {
       const { width, height } = useWindowDimensions();
+      const [drawerDimensions, onLayout] = useLayout();
 
       const {
         drawerAnimation,
         animateDrawerOut,
         animateDrawerIn,
         drawerAnimationStyles,
-        onLayout,
         hasDrawerRendered,
-      } = useDrawerAnimation(pin);
+      } = useDrawerAnimation(pin, drawerDimensions);
       const [opacity, animateOverlayIn, animateOverlayOut] = useOverlayAnimation();
       const scheme = useSpectrum();
       const spacingStyles = useDrawerSpacing(pin);
@@ -88,6 +88,7 @@ export const Drawer = memo(
         animateDrawerIn,
         handleCloseRequest,
         disableCapturePanGestureToDismiss,
+        drawerDimensions,
       });
 
       const isPinHorizontal = pin === 'left' || pin === 'right';
@@ -97,6 +98,9 @@ export const Drawer = memo(
       const horizontalDrawerWidth = width * horizontalDrawerPercentageOfView + MAX_OVER_DRAG;
       // drawer will automatically size itself based on content, but will cap at 75% of viewport height
       const verticalDrawerMaxHeight = height * verticalDrawerPercentageOfView + MAX_OVER_DRAG;
+
+      const getPanGestureHandlers =
+        !preventDismissGestures && hasDrawerRendered ? panGestureHandlers.panHandlers : undefined;
 
       const handleOverlayPress = useCallback(() => {
         if (!preventDismissGestures) {
@@ -162,7 +166,7 @@ export const Drawer = memo(
           <DrawerStatusBar pin={pin} visible />
           <Overlay opacity={opacity} onTouchStart={handleOverlayPress} />
           <Box
-            {...(!preventDismissGestures ? panGestureHandlers.panHandlers : emptyObject)}
+            {...getPanGestureHandlers}
             background="background"
             borderRadius={isPinHorizontal ? 'none' : 'pill'}
             bordered={scheme === 'dark'}
