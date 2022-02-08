@@ -42,3 +42,10 @@ export type TabLabelProps = {
   /** Callback to fire when pressed */
   onPress?: () => void;
 } & SharedProps;
+
+export type TabIndicatorProps = {
+  /** The width of the active TabLabel. */
+  width: number;
+  /** The xPosition of the active TabLabel. */
+  xPosition: number;
+} & SharedProps;

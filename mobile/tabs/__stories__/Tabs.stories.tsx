@@ -1,10 +1,10 @@
-// TODO remove when https://github.cbhq.net/frontend/web/pull/62 lands
 /* eslint-disable react-native/no-raw-text */
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { TabIndicator } from '../TabIndicator';
 
 import { Tab, Tabs, TabLabel } from '..';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { HStack } from '../../layout';
+import { HStack, VStack } from '../../layout';
 import { TextBody } from '../../typography';
 
 const TabsScreen = () => {
@@ -12,9 +12,13 @@ const TabsScreen = () => {
     <ExampleScreen>
       <Example title="Tabs" spacing={gutter} overflow="visible">
         <Tabs>
-          <HStack gap={4}>
-            <TabLabel>Primary TabLabel</TabLabel>
-          </HStack>
+          <VStack>
+            <HStack gap={4}>
+              <TabLabel active>Primary TabLabel</TabLabel>
+              <TabLabel>Primary TabLabel</TabLabel>
+            </HStack>
+            <TabIndicator width={138} xPosition={0} />
+          </VStack>
           <Tab id="tab-1" label="Tab one">
             <HStack>
               <TextBody>This is the first tab</TextBody>
