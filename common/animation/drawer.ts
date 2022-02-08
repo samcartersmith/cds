@@ -6,3 +6,12 @@ export const DISMISSAL_DRAG_THRESHOLD = 0.4;
 export const DISMISSAL_VELOCITY_THRESHOLD = 0.8;
 /** Minimum panning distance required to capture pan gesture */
 export const MIN_PAN_DISTANCE = 2;
+export const drawerAnimationDefaultDuration = 'moderate3';
+export const animateDrawerInConfig = {
+  toValue: 1,
+  easing: 'enterFunctional',
+};
+export const animateDrawerOutConfig = {
+  toValue: 0,
+  easing: 'exitFunctional',
+};

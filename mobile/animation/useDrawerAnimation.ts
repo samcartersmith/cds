@@ -1,8 +1,12 @@
 import { useMemo, useRef } from 'react';
 
-import { PinningDirection } from '@cbhq/cds-common';
+import { MotionBaseSpec, PinningDirection } from '@cbhq/cds-common';
 import { Animated, LayoutRectangle, useWindowDimensions } from 'react-native';
-import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
+import {
+  animateDrawerInConfig,
+  animateDrawerOutConfig,
+  MAX_OVER_DRAG,
+} from '@cbhq/cds-common/animation/drawer';
 import {
   drawerHeightThreshold,
   verticalDrawerPercentageOfView,
@@ -28,21 +32,23 @@ export const useDrawerAnimation = (
   const hasDrawerRendered = drawerDimensions[dimension] > 0;
 
   const duration = isLargeVerticalDrawer ? 'slow2' : 'moderate3';
-  const animateDrawerInConfig = convertMotionConfig({
-    toValue: 1,
-    easing: 'enterFunctional',
-    duration,
-  });
-  const animateDrawerOutConfig = convertMotionConfig({
-    toValue: 0,
-    easing: 'exitFunctional',
-    duration,
-  });
 
   const drawerAnimation = useRef(new Animated.Value(0));
 
-  const animateDrawerIn = Animated.timing(drawerAnimation.current, animateDrawerInConfig);
-  const animateDrawerOut = Animated.timing(drawerAnimation.current, animateDrawerOutConfig);
+  const animateDrawerIn = Animated.timing(
+    drawerAnimation.current,
+    convertMotionConfig({
+      ...animateDrawerInConfig,
+      duration,
+    } as MotionBaseSpec),
+  );
+  const animateDrawerOut = Animated.timing(
+    drawerAnimation.current,
+    convertMotionConfig({
+      ...animateDrawerOutConfig,
+      duration,
+    } as MotionBaseSpec),
+  );
 
   const translation = useMemo(() => {
     switch (pin) {

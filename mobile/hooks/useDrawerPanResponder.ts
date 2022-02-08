@@ -199,10 +199,10 @@ export const useDrawerPanResponder = ({
         }
       },
       onPanResponderRelease: (_, gestureState) => {
-        drawerAnimation.flattenOffset();
         if (shouldDismiss(gestureState)) {
           return handleCloseRequest();
         }
+        drawerAnimation.flattenOffset();
         return animateDrawerIn.start();
       },
     });

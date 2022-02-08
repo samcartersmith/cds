@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { StyleSheet, Modal, Animated, ModalProps, useWindowDimensions, View } from 'react-native';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
-import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
+import { drawerAnimationDefaultDuration, MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import { useSpectrum } from '@cbhq/cds-common';
 import {
   verticalDrawerPercentageOfView,
@@ -53,7 +53,9 @@ export const Drawer = memo(
         drawerAnimationStyles,
         hasDrawerRendered,
       } = useDrawerAnimation(pin, drawerDimensions);
-      const [opacity, animateOverlayIn, animateOverlayOut] = useOverlayAnimation();
+      const [opacity, animateOverlayIn, animateOverlayOut] = useOverlayAnimation(
+        drawerAnimationDefaultDuration,
+      );
       const scheme = useSpectrum();
       const spacingStyles = useDrawerSpacing(pin);
       const isMounted = useRef(false);
