@@ -4,8 +4,11 @@ import { Animated } from 'react-native';
 import type { MotionBaseSpec } from '@cbhq/cds-common/types';
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 
-type MotionSpec = Pick<MotionBaseSpec, 'easing' | 'duration'>;
-export const useAnimatedValue = (nextValue: number, motionSpec: MotionSpec) => {
+/** Animate to a new value from it's previously tracked state */
+export const useAnimatedTransition = (
+  nextValue: number,
+  motionSpec: Omit<MotionBaseSpec, 'toValue' | 'property'>,
+) => {
   const { getPreviousValue, addPreviousValue } = usePreviousValues<number>([0]);
   addPreviousValue(nextValue);
   const previousValue = getPreviousValue() ?? 0;
@@ -17,7 +20,6 @@ export const useAnimatedValue = (nextValue: number, motionSpec: MotionSpec) => {
       convertMotionConfig({
         toValue: nextValue,
         ...motionSpec,
-        useNativeDriver: true,
       }),
     )?.start();
   }, [nextValue, animatedValue, motionSpec]);
