@@ -3,5 +3,41 @@
   "sourceRoot": "packages/fonts",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "build-package": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": ".nx/dist/packages/fonts",
+        "staticFiles": [
+          {
+            "source": "packages/fonts/package.json",
+            "dest": "package.json"
+          },
+          "packages/fonts/native",
+          "packages/fonts/CHANGELOG.md",
+          "packages/fonts/README.md",
+          "packages/fonts/fonts.css",
+          "packages/fonts/CoinbaseDisplay-Medium.woff2",
+          "packages/fonts/CoinbaseDisplay-Regular.woff2",
+          "packages/fonts/CoinbaseMono-Medium.woff2",
+          "packages/fonts/CoinbaseMono-Regular.woff2",
+          "packages/fonts/CoinbaseSans-Medium.woff2",
+          "packages/fonts/CoinbaseSans-Regular.woff2",
+          "packages/fonts/CoinbaseText-Medium.woff2",
+          "packages/fonts/CoinbaseText-Regular.woff2"
+        ],
+        "babelConfig": "./babel.build.config.js",
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
+        "typescriptConfig": "packages/fonts/tsconfig.build.json"
+      }
+    }
+  }
 }

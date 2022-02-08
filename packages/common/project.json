@@ -25,14 +25,8 @@
             "source": "packages/common/package.json",
             "dest": "package.json"
           },
-          {
-            "source": "packages/common/CHANGELOG.md",
-            "dest": "CHANGELOG.md"
-          },
-          {
-            "source": "packages/common/README.md",
-            "dest": "README.md"
-          }
+          "packages/common/CHANGELOG.md",
+          "packages/common/README.md"
         ],
         "babelConfig": "./babel.build.config.js",
         "babelExtensions": [
