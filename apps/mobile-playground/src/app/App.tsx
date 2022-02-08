@@ -1,20 +1,19 @@
-import React, { useMemo, memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
-import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
-import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
-import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
-import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
-import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
-
 import {
   ExamplesSearchProvider,
-  useExampleScreenOptions,
   routes,
+  useExampleScreenOptions,
 } from '@cbhq/cds-mobile/examples/Examples';
+import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
+import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
+import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
+import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
+import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
+import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 
 // this code allows the use of toLocaleString() on Android
 if (Platform.OS === 'android') {

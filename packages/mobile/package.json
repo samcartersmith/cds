@@ -52,7 +52,11 @@
     "src/**/*.{ts,tsx,json}"
   ],
   "types": "./index.d.ts",
+<<<<<<< HEAD
   "main": "./index.js",
+=======
+  "main": "./index.ts",
+>>>>>>> 99201f6 (Tmp configs.)
   "exports": {
     "./package.json": "./package.json",
     "./*": {

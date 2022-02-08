@@ -1,30 +1,30 @@
 // dependencies builder
-const data = require('./package.json');
+// const data = require('./package.json');
 
-const getReactNativeDependencies = (dependencies) =>
-  dependencies.filter(
-    (dependency) =>
-      (dependency !== 'react-native' && dependency.startsWith('react-native')) ||
-      dependency.startsWith('@react-native'),
-  );
+// const getReactNativeDependencies = (dependencies) =>
+//   dependencies.filter(
+//     (dependency) =>
+//       (dependency !== 'react-native' && dependency.startsWith('react-native')) ||
+//       dependency.startsWith('@react-native'),
+//   );
 
-const allDependencies = Object.keys(data.dependencies);
-const rnDependencies = getReactNativeDependencies(allDependencies);
+// const allDependencies = Object.keys(data.dependencies);
+// const rnDependencies = getReactNativeDependencies(allDependencies);
 
-const getExcludedDependencies = (dependencies) =>
-  dependencies.length > 0
-    ? rnDependencies
-        .filter((dependency) => !dependencies.includes(dependency))
-        .reduce((prev, next) => {
-          prev[next] = {
-            platforms: {
-              ios: null,
-              android: null,
-            },
-          };
-          return prev;
-        }, {})
-    : {};
+// const getExcludedDependencies = (dependencies) =>
+//   dependencies.length > 0
+//     ? rnDependencies
+//         .filter((dependency) => !dependencies.includes(dependency))
+//         .reduce((prev, next) => {
+//           prev[next] = {
+//             platforms: {
+//               ios: null,
+//               android: null,
+//             },
+//           };
+//           return prev;
+//         }, {})
+//     : {};
 
 const configCreator = (args) => {
   const { iosProject, androidSourceDir, assets = [], dependencies = [] } = args;
@@ -42,7 +42,7 @@ const configCreator = (args) => {
         },
       },
       assets: [...defaultAssets, ...assets],
-      dependencies: getExcludedDependencies(dependencies),
+      // dependencies: getExcludedDependencies(dependencies),
     };
   };
 

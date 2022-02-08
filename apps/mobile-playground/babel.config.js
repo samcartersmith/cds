@@ -1,8 +1,11 @@
+const baseConfig = require('../../babel.config');
+
 const isTestEnv = process.env.NODE_ENV === 'test';
 
 module.exports = {
   presets: [
+    ...baseConfig.presets,
     'module:metro-react-native-babel-preset',
-    ['@babel/preset-react', { runtime: 'automatic' }],
+    ['linaria/babel', { classNameSlug: (hash, title) => (isTestEnv ? title : `${title}-${hash}`) }],
   ],
 };

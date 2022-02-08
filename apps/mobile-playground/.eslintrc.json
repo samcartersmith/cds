@@ -4,7 +4,8 @@
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "@cbhq/prefer-react-named-module-import": "off"
+        "@cbhq/prefer-react-named-module-import": "off",
+        "import/no-extraneous-dependencies": "off"
       }
     }
   ]

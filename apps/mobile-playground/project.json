@@ -29,6 +29,46 @@
     },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
+    },
+
+    "start": {
+      "executor": "@nrwl/react-native:start",
+      "options": {
+        "port": 8081
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "nx start mobile-playground"
+      }
+    },
+    "run-ios": {
+      "executor": "@nrwl/react-native:run-ios",
+      "options": {
+        "install": true
+      }
+    },
+    "bundle-ios": {
+      "executor": "@nrwl/react-native:bundle",
+      "outputs": ["apps/mobile-playground/build"],
+      "options": {
+        "entryFile": "apps/mobile-playground/src/main.tsx",
+        "platform": "ios",
+        "bundleOutput": "dist/apps/mobile-playground/ios/main.jsbundle"
+      }
+    },
+    "run-android": {
+      "executor": "@nrwl/react-native:run-android",
+      "options": {}
+    },
+    "bundle-android": {
+      "executor": "@nrwl/react-native:bundle",
+      "options": {
+        "entryFile": "apps/mobile-playground/src/main.tsx",
+        "platform": "android",
+        "bundleOutput": "dist/apps/mobile-playground/android/main.jsbundle"
+      }
     }
   },
   "tags": []

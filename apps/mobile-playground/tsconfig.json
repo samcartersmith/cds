@@ -1,39 +1,13 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
     "outDir": "../../.nx/dts/apps/mobile-playground"
   },
-  "files": [
-    "src/main.tsx"
-  ],
-  "include": [
-    "src/**/*.tsx",
-    "src/**/*.ts"
-  ],
   "references": [
     {
-      "path": "./tsconfig.app.json"
-    },
-    {
       "path": "../../packages/mobile"
-    },
-    {
-      "path": "../../packages/common"
-    },
-    {
-      "path": "../../packages/fonts"
-    },
+    }
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["**/*"],
+  "exclude": ["dts/**/*"]
 }

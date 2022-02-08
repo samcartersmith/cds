@@ -1,34 +1,31 @@
-const { withNxMetro } = require('@nrwl/react-native');
-const { getDefaultConfig } = require('metro-config');
+const path = require('path');
 
-module.exports = (async () => {
-  const {
-    resolver: { sourceExts, assetExts },
-  } = await getDefaultConfig();
-  return withNxMetro(
-    {
-      transformer: {
-        getTransformOptions: async () => ({
-          transform: {
-            experimentalImportSupport: false,
-            inlineRequires: true,
-          },
-        }),
-        babelTransformerPath: require.resolve('react-native-svg-transformer'),
+// const config = {
+//   root: 'apps/mobile-playground/',
+// };
+
+// const projectRoot = path.resolve(__dirname, '');
+
+const metroConfig = {
+  // projectRoot,
+  resetCache: false,
+  watchFolders: [
+    path.resolve(__dirname, '../../node_modules'),
+    path.resolve(__dirname, '../../packages'),
+  ],
+  resolver: {
+    resolveMainFields: ['react-native', 'browser', 'main'],
+    sourceExts: ['cjs', 'ts', 'tsx', 'js', 'jsx', 'json'],
+    useWatchman: false,
+  },
+  transformer: {
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
       },
-      resolver: {
-        assetExts: [
-          ...assetExts.filter((ext) => ext !== 'svg')
-        ],
-        sourceExts: [...sourceExts, 'svg'],
-      },
-    },
-    {
-      // Change this to true to see debugging info.
-      // Useful if you have issues resolving modules
-      debug: false,
-      // all the file extensions used for imports other than 'ts', 'tsx', 'js', 'jsx'
-      extensions: [],
-    },
-  );
-})();
+    }),
+  },
+};
+
+module.exports = metroConfig;

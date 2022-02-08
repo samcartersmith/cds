@@ -33,6 +33,7 @@ Help:
   $$ make start.website             -- Start website local dev server.
   $$ make build.website             -- Build website.
 
+<<<<<<< HEAD
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.common              -- Build the `common` package.
   $$ make build.mobile              -- Build the `mobile` package.
@@ -43,6 +44,11 @@ Help:
   $$ make build.all                 -- Build all packages.
 
   $$ make docgen                    -- Generate docs for CDS website.
+=======
+  $$ make clean.ios                 -- Clean ios build
+  $$ make build.ios                 -- Build the playground ios app.
+  $$ make start.mobile              -- Start react native packager.
+>>>>>>> 99201f6 (Tmp configs.)
 
 endef
 export HELP_TEXT
@@ -187,3 +193,14 @@ build.all:
 docgen:
 	nx run codegen:docgen
 	nx run website:lint --fix
+.PHONY: clean.ios
+clean.ios:
+	rm -rf ~/Library/Developer/Xcode/DerivedData && rm -rf apps/mobile-playground/ios/Pods && rm -rf apps/mobile-playground/ios/build && rm -rf apps/mobile-playground/ios/app.xc*
+
+.PHONY: build.ios
+build.ios:
+	nx run mobile-playground:start-ios 
+
+.PHONY: start.mobile
+start.mobile:
+	nx run mobile-playground:start-metro
