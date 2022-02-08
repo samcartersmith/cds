@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "destinationDir": {
+      "type": "string",
+      "description": "relative path to output directory"
+    },
+    "staticFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "dest": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Static files to copy to the output"
+    },
+    "babelConfig": {
+      "type": "string",
+      "description": "relative path to babel config file"
+    },
+    "babelExtensions": {
+      "type": "array",
+      "description": "array of extensions of files to compile with babel"
+    },
+    "babelIgnore": {
+      "type": "array",
+      "description": "array of globs of files to ignore"
+    },
+    "typescriptConfig": {
+      "type": "string",
+      "description": "relative path of the typescript config file"
+    }
+  }
+}
