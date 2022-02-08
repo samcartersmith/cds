@@ -25,6 +25,7 @@ export const FALLBACK_PRESENTATIONAL_LIBRARIES = [
   'react-native-reanimated',
   'react-native-svg',
   'react-select',
+  'antd',
 ];
 
 export const FALLBACK_PRESENTATIONAL_ELEMENTS = [
