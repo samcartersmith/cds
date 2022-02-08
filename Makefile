@@ -33,6 +33,10 @@ Help:
   $$ make start.website             -- Start website local dev server.
   $$ make build.website             -- Build website.
 
+  $$ make build.fonts               -- Build the `fonts` package.
+  $$ make build.common              -- Build the `common` package.
+  $$ make build.all                 -- Build all packages.
+
 endef
 export HELP_TEXT
 
@@ -139,3 +143,16 @@ build.website:
 .PHONY: start.website
 start.website:
 	nx run website:start
+
+.PHONY: build.common
+build.common:
+	nx run common:build-package
+
+.PHONY: build.fonts
+build.fonts:
+	nx run fonts:build-package
+
+.PHONY: build.all
+build.all:
+	make build.common
+	make build.fonts

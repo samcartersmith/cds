@@ -44,10 +44,10 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 #### npm package building
 
-- [ ] common
+- [x] common
+- [x] fonts
 - [ ] utils
 - [ ] mobile
-- [ ] fonts
 - [ ] web
 - [ ] lottie-files
 
