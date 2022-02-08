@@ -1,14 +1,25 @@
 import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+import { zIndex as cdsZIndex } from '@cbhq/cds-common/tokens/zIndex';
 import React, { ForwardedRef, forwardRef, useEffect, useMemo, useRef } from 'react';
 import { Box } from '../../layout/Box';
 import { spacing } from '../../tokens';
 import { TextLabel2 } from '../../typography';
 import { PopperTooltipProps } from './TooltipProps';
 
+export const tooltipId = 'tooltipId';
+
 export const PopperTooltip = forwardRef(
   (
-    { setPopper, content, popperStyles, popperAttributes, gap, animateIn }: PopperTooltipProps,
+    {
+      setPopper,
+      content,
+      popperStyles,
+      popperAttributes,
+      gap,
+      animateIn,
+      testID,
+      zIndex,
+    }: PopperTooltipProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
     const didMount = useRef(false);
@@ -24,8 +35,9 @@ export const PopperTooltip = forwardRef(
       () => ({
         ...popperStyles.popper,
         padding: spacing[gap],
+        zIndex: zIndex ?? cdsZIndex.overlays.tooltip,
       }),
-      [gap, popperStyles.popper],
+      [gap, popperStyles.popper, zIndex],
     );
 
     return (
@@ -36,11 +48,17 @@ export const PopperTooltip = forwardRef(
           spacingVertical={spacingVertical}
           background="background"
           borderRadius="tooltipV2"
-          zIndex={zIndex.overlays.tooltip}
           maxWidth={maxWidth}
           opacity={0}
+          testID={testID}
         >
-          <TextLabel2 as="p">{content}</TextLabel2>
+          {typeof content === 'string' ? (
+            <TextLabel2 as="p" id={tooltipId} accessibilityLabel={content}>
+              {content}
+            </TextLabel2>
+          ) : (
+            <div id={tooltipId}>{content}</div>
+          )}
         </Box>
       </div>
     );

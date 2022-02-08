@@ -4,6 +4,7 @@ import {
   GapSpacing,
   BaseTooltipPlacement,
   SetState,
+  PositionStyles,
 } from '@cbhq/cds-common/types';
 
 type TooltipPlacement = BaseTooltipPlacement;
@@ -12,10 +13,16 @@ export type TooltipProps = {
   /** Position of tooltip in relation to the subject. */
   placement?: TooltipPlacement;
   /**
-   * The `children` will be inside the DOM hierarchy of the parent component.
+   * @danger By setting this to true you are essentially opting out of CDS zIndex management.
+   * By default the subject is rendered in a portal. If set to true the subject will be rendered in the DOM hierarchy of the parent component.
    * @default false
    */
   disablePortal?: boolean;
+  /**
+   * Typically only used when disablePortal is set to true to adjust zIndex of tooltip. When using portal this value should remain as default.
+   * @default 4
+   * */
+  zIndex?: PositionStyles['zIndex'];
 } & TooltipBaseProps;
 
 export type PopperTooltipProps = {
@@ -24,6 +31,6 @@ export type PopperTooltipProps = {
   popperAttributes: Record<string, Record<string, string> | undefined>;
   gap: GapSpacing;
   animateIn: NoopFn;
-} & Pick<TooltipProps, 'content'>;
+} & Pick<TooltipProps, 'content' | 'testID' | 'zIndex'>;
 
 export type PortalProps = Pick<TooltipProps, 'disablePortal'>;

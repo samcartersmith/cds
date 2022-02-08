@@ -9,6 +9,7 @@ export const useTooltipPosition = ({
   placement,
   subjectLayout,
   tooltipLayout,
+  yShiftByStatusBarHeight = false,
 }: UseTooltipPositionParams) => {
   const { screenHeight, screenWidth, statusBarHeight } = useDimensions();
   const spacing = useSpacingScale();
@@ -29,13 +30,15 @@ export const useTooltipPosition = ({
       const { pageOffsetY } = subjectLayout;
 
       const actualPageYOffset =
-        Platform.OS === 'android' ? pageOffsetY - (statusBarHeight ?? 0) : pageOffsetY;
+        Platform.OS === 'ios' || yShiftByStatusBarHeight
+          ? pageOffsetY
+          : pageOffsetY - (statusBarHeight ?? 0);
 
       return calculatedPlacement === 'bottom'
         ? actualPageYOffset + (subjectLayout?.height ?? 0)
         : actualPageYOffset - (tooltipLayout?.height ?? 0);
     },
-    [statusBarHeight, subjectLayout, tooltipLayout.height],
+    [statusBarHeight, subjectLayout, tooltipLayout.height, yShiftByStatusBarHeight],
   );
 
   const screenAwareTooltipPosition = useMemo(() => {

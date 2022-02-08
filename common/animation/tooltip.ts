@@ -3,7 +3,7 @@ import { MotionBaseSpec } from '../types';
 export const tooltipHiddenOpacity = 0;
 export const tooltipVisibleOpacity = 1;
 
-export const tooltipHiddenY = 2;
+export const tooltipHiddenY = 16;
 export const tooltipVisibleY = 0;
 
 const baseAnimation: Pick<MotionBaseSpec, 'duration' | 'delay'> = {

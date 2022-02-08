@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Options as PopperOptions } from '@popperjs/core';
 import { css, cx } from 'linaria';
-import React, { useLayoutEffect, useMemo, useState } from 'react';
+import React, { cloneElement, useLayoutEffect, useMemo, useState } from 'react';
 import { usePopper } from 'react-popper';
-import { PopperTooltip } from './PopperTooltip';
+import { PopperTooltip, tooltipId } from './PopperTooltip';
 import { TooltipPortal } from './TooltipPortal';
 import { TooltipProps } from './TooltipProps';
 import { useTooltipAnimation } from './useTooltipAnimation';
@@ -18,12 +19,19 @@ const subjectStyle = css`
   cursor: default;
 `;
 
+const onPreventMouseDown = (event: React.MouseEvent) => {
+  event.preventDefault();
+  event.stopPropagation();
+};
+
 export const Tooltip = ({
   children,
   content,
   placement = 'top',
   gap = 1,
   disablePortal,
+  testID,
+  zIndex,
 }: TooltipProps) => {
   const [subject, setSubject] = useState<HTMLDivElement | null>(null);
   const [popper, setPopper] = useState<HTMLDivElement | null>(null);
@@ -53,6 +61,12 @@ export const Tooltip = ({
     void update?.();
   }, [update]);
 
+  const clonedChild = useMemo(() => {
+    return cloneElement(children, {
+      'aria-describedby': tooltipId,
+    });
+  }, [children]);
+
   return (
     <div onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
       <div
@@ -60,8 +74,9 @@ export const Tooltip = ({
         className={cx(subjectStyle)}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
+        onMouseDown={onPreventMouseDown}
       >
-        {children}
+        {clonedChild}
       </div>
       {isOpen ? (
         <TooltipPortal disablePortal={disablePortal}>
@@ -73,6 +88,8 @@ export const Tooltip = ({
             popperAttributes={attributes}
             gap={gap}
             animateIn={animateIn}
+            testID={testID}
+            zIndex={zIndex}
           />
         </TooltipPortal>
       ) : undefined}

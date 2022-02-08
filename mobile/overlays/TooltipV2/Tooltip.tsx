@@ -5,7 +5,15 @@ import { InternalTooltip } from './InternalTooltip';
 import { SubjectLayout, TooltipProps } from './TooltipProps';
 
 export const Tooltip = memo(
-  ({ children, content, placement = 'top', onCloseTooltip }: TooltipProps) => {
+  ({
+    children,
+    content,
+    placement = 'top',
+    onCloseTooltip,
+    gap = 1,
+    yShiftByStatusBarHeight,
+    testID,
+  }: TooltipProps) => {
     const subjectRef = useRef<View | null>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [subjectLayout, setSubjectLayout] = useState<SubjectLayout>();
@@ -50,6 +58,9 @@ export const Tooltip = memo(
             opacity={opacity}
             animateIn={animateIn}
             translateY={translateY}
+            gap={gap}
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+            testID={testID}
           />
         </RNModal>
       </View>

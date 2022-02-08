@@ -16,9 +16,12 @@ export const InternalTooltip = memo(function InternalTooltip({
   opacity,
   animateIn,
   translateY,
+  gap,
+  yShiftByStatusBarHeight,
+  testID,
 }: InternalTooltipProps) {
   const didMount = useRef(false);
-  const tooltipExternalGap = useSpacingStyles({ spacingVertical: 1 });
+  const tooltipExternalGap = useSpacingStyles({ spacingVertical: gap });
 
   useEffect(() => {
     if (!didMount.current) {
@@ -36,6 +39,7 @@ export const InternalTooltip = memo(function InternalTooltip({
     placement,
     subjectLayout,
     tooltipLayout,
+    yShiftByStatusBarHeight,
   });
 
   const outerTooltipStyles = useMemo(() => {
@@ -64,8 +68,13 @@ export const InternalTooltip = memo(function InternalTooltip({
           ],
         }}
         maxWidth={maxWidth}
+        testID={testID}
       >
-        <TextLabel2 dangerouslySetColor={foregroundColor}>{content}</TextLabel2>
+        {typeof content === 'string' ? (
+          <TextLabel2 dangerouslySetColor={foregroundColor}>{content}</TextLabel2>
+        ) : (
+          content
+        )}
       </Box>
     </View>
   );
