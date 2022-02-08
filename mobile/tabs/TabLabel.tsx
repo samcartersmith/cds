@@ -1,6 +1,7 @@
 import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import React, { useMemo, memo } from 'react';
 import { TextHeadline, TextTitle3 } from '../typography';
+import { useSpacingScale } from '../hooks/useSpacingScale';
 import { TextProps } from '../typography/createText';
 
 const COLORS = {
@@ -19,7 +20,19 @@ export const TabLabel = memo(({ active, variant = 'primary', ...props }: TabLabe
   const TextElement = useMemo(() => (variant === 'primary' ? TextHeadline : TextTitle3), [variant]);
   const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
 
-  return <TextElement color={color} {...props} />;
+  // Styles
+  const spacing = useSpacingScale();
+  const styles = useMemo(
+    () =>
+      // Only primary tabs need special spacing
+      variant === 'primary' && {
+        marginTop: spacing[2],
+        marginBottom: spacing[2] - 2, // Account for the 2px TabIndicator
+      },
+    [spacing, variant],
+  );
+
+  return <TextElement color={color} {...props} dangerouslySetStyle={styles} />;
 });
 
 TabLabel.displayName = 'TabLabel';
