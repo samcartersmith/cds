@@ -1,13 +1,16 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import path from 'path';
 import fs from 'fs';
+import fse from 'fs-extra';
 import chalk from 'chalk';
 import execa from 'execa';
 
-type StaticFile = {
-  source: string;
-  dest: string;
-};
+type StaticFile =
+  | {
+      source: string;
+      dest: string;
+    }
+  | string;
 
 type BuildPackageOptions = {
   destinationDir: string;
@@ -112,18 +115,29 @@ async function copyFiles(
 ) {
   const promises: Promise<unknown>[] = [];
 
-  staticFiles.forEach(({ source, dest }: StaticFile) => {
+  staticFiles.forEach((file: StaticFile) => {
+    let source: string;
+    let dest: string;
+    if (typeof file === 'string') {
+      source = file;
+      dest = file.substring(file.lastIndexOf('/') + 1);
+    } else {
+      source = file.source;
+      dest = file.dest;
+    }
+
     const promise = new Promise((resolve, reject) => {
       const sourceFile = path.join(context.root, source);
       const destinationFile = path.join(destinationDir, dest);
 
       console.log(chalk.gray(`Copying ${sourceFile} to ${destinationFile}`));
-      fs.copyFile(sourceFile, destinationFile, (err) => {
+      fse.copy(source, destinationFile, function (err) {
         if (err) {
           reject(err);
+        } else {
+          console.log(`Copy successfull! ${destinationFile}`);
+          resolve(null);
         }
-        console.log('Copy successful!');
-        resolve(null);
       });
     });
 

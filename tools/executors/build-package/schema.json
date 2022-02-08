@@ -10,15 +10,22 @@
     "staticFiles": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "source": {
-            "type": "string"
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "dest": {
+                "type": "string"
+              }
+            }
           },
-          "dest": {
+          {
             "type": "string"
           }
-        }
+        ]
       },
       "description": "Static files to copy to the output"
     },
