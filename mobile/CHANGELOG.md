@@ -7,6 +7,24 @@ All notable changes to this project will be documented in this file.
 `@cbhq/cds-mobile` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- template-start -->
+
+## 0.39.5 (2/8/2022, 02:41 PM PST)
+
+#### 🚀 Updates
+
+- **[mobile]** Create the TabIndicator component. [#53033](https://github.cbhq.net/mono/repo/pull/53033), [CDS-2025](https://jira.coinbase-corp.com/browse/CDS-2025)
+- Add TabLabel and scaffold core tabs components. [#50243](https://github.cbhq.net/mono/repo/pull/50243), [CDS-2024](https://jira.coinbase-corp.com/browse/CDS-2024)
+
+#### 🐞 Fixes
+
+- Fix drawer motion. [#53088](https://github.cbhq.net/mono/repo/pull/53088)
+- Rename the useAnimatedValue hook to something that is more descriptive. [#53152](https://github.cbhq.net/mono/repo/pull/53152)
+- Fix drawer pan gesturing. [#52670](https://github.cbhq.net/mono/repo/pull/52670)
+- **[TextInput]** Change InputLabel to render Text as label instead of as p. [#52826](https://github.cbhq.net/mono/repo/pull/52826)
+
+#### 📘 Misc
+
+- TabLabel spacing and scale for the primary Variant. [#53092](https://github.cbhq.net/mono/repo/pull/53092)
 ## 0.39.4 (2/4/2022, 10:17 AM PST)
 
 #### 🐞 Fixes

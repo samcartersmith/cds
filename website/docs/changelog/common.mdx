@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.8 (2/8/2022, 02:41 PM PST)
+
+#### 🚀 Updates
+
+- **[mobile]** Create the TabIndicator component. [#53033](https://github.cbhq.net/mono/repo/pull/53033), [CDS-2025](https://jira.coinbase-corp.com/browse/CDS-2025)
+- Add TabLabel and scaffold core tabs components. [#50243](https://github.cbhq.net/mono/repo/pull/50243), [CDS-2024](https://jira.coinbase-corp.com/browse/CDS-2024)
+
+#### 🐞 Fixes
+
+- Fix drawer motion. [#53088](https://github.cbhq.net/mono/repo/pull/53088)
+- Rename the useAnimatedValue hook to something that is more descriptive. [#53152](https://github.cbhq.net/mono/repo/pull/53152)
+- Fix drawer pan gesturing. [#52670](https://github.cbhq.net/mono/repo/pull/52670)
+
 ## 0.33.7 (2/4/2022, 02:39 PM PST)
 
 #### 🚀 Updates

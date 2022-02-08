@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.9 (2/8/2022, 02:41 PM PST)
+
+#### 🚀 Updates
+
+- **[mobile]** Create the TabIndicator component. [#53033](https://github.cbhq.net/mono/repo/pull/53033), [CDS-2025](https://jira.coinbase-corp.com/browse/CDS-2025)
+- Add TabLabel and scaffold core tabs components. [#50243](https://github.cbhq.net/mono/repo/pull/50243), [CDS-2024](https://jira.coinbase-corp.com/browse/CDS-2024)
+
+#### 🐞 Fixes
+
+- Fix lint issue with cds-utils deep imports. [#52799](https://github.cbhq.net/mono/repo/pull/52799)
+- **[TextInput]** Change InputLabel to render Text as label instead of as p. [#52826](https://github.cbhq.net/mono/repo/pull/52826)
+- Change portal container position to relative. [#52330](https://github.cbhq.net/mono/repo/pull/52330)
+
 ## 0.34.8 (2/4/2022, 02:39 PM PST)
 
 #### 🚀 Updates
