@@ -36,13 +36,13 @@
         "@taxcenter/pages/Transactions/Transactions.tsx": 2,
         "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 2,
         "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
+        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
+        "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
         "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
         "@taxcenter/pages/Reports/components/GenerateReport.tsx": 3,
         "@taxcenter/pages/Reports/components/TaxForms.tsx": 1,
         "@taxcenter/pages/Reports/components/TaxReports.tsx": 2,
         "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
-        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
-        "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
         "@taxcenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 3,
         "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 2,
         "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
@@ -364,20 +364,20 @@
         "@taxcenter/components/LoadMore.tsx": 1,
         "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 5,
         "@taxcenter/pages/Preferences/Preferences.tsx": 3,
-        "@taxcenter/pages/Reports/Reports.tsx": 2,
         "@taxcenter/pages/TaxForms/VerifyTaxProfile.tsx": 1,
+        "@taxcenter/pages/Reports/Reports.tsx": 2,
         "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 8,
         "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
+        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 4,
+        "@taxcenter/pages/TaxForms/components/EW8Screen.tsx": 1,
+        "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 9,
         "@taxcenter/pages/Reports/components/GenerateReport.tsx": 5,
         "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
         "@taxcenter/pages/Reports/components/ReportsFAQ.tsx": 1,
         "@taxcenter/pages/Reports/components/TaxDocumentWithType.tsx": 1,
         "@taxcenter/pages/Reports/components/TaxForms.tsx": 6,
         "@taxcenter/pages/Reports/components/TaxReports.tsx": 6,
-        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 4,
-        "@taxcenter/pages/TaxForms/components/EW8Screen.tsx": 1,
-        "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 9,
         "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 8,
         "@taxcenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
         "@taxcenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
@@ -385,11 +385,11 @@
         "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 7,
         "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 8,
         "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 2,
-        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 4,
         "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 5,
         "@taxcenter/pages/TaxSummary/components/CTA/ContextAwareCTA.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 6,
         "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 2,
+        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 4,
         "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/Support/Support.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 2,
@@ -443,9 +443,9 @@
           "@taxcenter/pages/TaxForms/VerifyTaxProfile.tsx": 1,
           "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditTaxLot.tsx": 2,
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2,
@@ -465,9 +465,9 @@
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 3,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 2,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2,
@@ -483,9 +483,9 @@
           "@taxcenter/components/LoadMore.tsx": 1,
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@taxcenter/pages/TaxForms/VerifyTaxProfile.tsx": 1,
+          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4,
           "@taxcenter/pages/Reports/components/TaxForms.tsx": 2,
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1,
@@ -512,17 +512,17 @@
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@taxcenter/pages/Preferences/Preferences.tsx": 2,
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2,
+          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
+          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxForms.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
-          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 4,
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
@@ -542,10 +542,10 @@
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@taxcenter/pages/Preferences/Preferences.tsx": 1,
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2,
+          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
           "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxForms.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 4,
@@ -617,18 +617,18 @@
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 2,
           "@taxcenter/pages/Preferences/Preferences.tsx": 2,
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2,
+          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
+          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxForms.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
-          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 4,
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/Support/Support.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
@@ -669,11 +669,11 @@
         "width": {
           "@taxcenter/components/LastUpdatedBanner.tsx": 1,
           "@taxcenter/pages/Preferences/Preferences.tsx": 3,
+          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
+          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxForms.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
-          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 3,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
@@ -690,10 +690,10 @@
           "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 4,
           "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 3,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 4,
           "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 2
         },
         "spacingVertical": {
@@ -709,16 +709,16 @@
         "flexShrink": {
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2,
-          "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2
+          "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1
         },
         "flexBasis": {
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 6,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2,
-          "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2
+          "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 2,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1
         },
         "key": {
           "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
@@ -1125,9 +1125,9 @@
         "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
@@ -1187,8 +1187,8 @@
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 1,
           "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/TaxFormsModal/TaxFormsModal.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
@@ -1440,9 +1440,9 @@
         "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
         "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-        "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2,
         "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
         "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
+        "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2,
         "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -1465,9 +1465,9 @@
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
+          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -1482,9 +1482,9 @@
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
+          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2,
           "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
@@ -1525,8 +1525,8 @@
           "@taxcenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 2
         },
         "loading": {
-          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
+          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 1
         },
@@ -1583,13 +1583,13 @@
         "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 3,
         "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 2,
         "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 1,
+        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
+        "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
         "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
         "@taxcenter/pages/Reports/components/GenerateReport.tsx": 3,
         "@taxcenter/pages/Reports/components/TaxForms.tsx": 3,
         "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
         "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
-        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
-        "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
         "@taxcenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
         "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
@@ -1597,10 +1597,10 @@
         "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
         "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 6,
-        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 5,
         "@taxcenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
@@ -1628,13 +1628,13 @@
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 3,
           "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 2,
           "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 1,
+          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
+          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
           "@taxcenter/pages/Reports/components/GenerateReport.tsx": 3,
           "@taxcenter/pages/Reports/components/TaxForms.tsx": 3,
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
           "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 2,
-          "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 2,
           "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
@@ -1642,10 +1642,10 @@
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 6,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 5,
           "@taxcenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
@@ -1679,10 +1679,10 @@
           "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
           "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 2,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 6,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 5,
           "@taxcenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 1,
@@ -1695,10 +1695,10 @@
         },
         "spacingBottom": {
           "@taxcenter/modals/ConfirmRedirectModal.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 2
         },
         "testID": {
@@ -1710,9 +1710,9 @@
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
           "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 1,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 4,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/YourIncomeReports.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1
@@ -1722,12 +1722,12 @@
           "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1
         },
-        "spacingEnd": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2 },
-        "spacingStart": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 },
         "align": {
           "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/EmptyState.tsx": 1
         },
+        "spacingEnd": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2 },
+        "spacingStart": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 },
         "spacingVertical": {
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1
         }
@@ -1755,17 +1755,17 @@
         "@taxcenter/modals/IntroducingTaxesModal.tsx": 1,
         "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
         "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-        "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
-        "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
-        "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
         "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
         "@taxcenter/pages/TaxForms/components/EW8Screen.tsx": 1,
         "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
+        "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
+        "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
+        "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
         "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
         "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
         "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 3,
-        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
         "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
+        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
         "@taxcenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
         "@taxcenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
         "@taxcenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
@@ -1779,17 +1779,17 @@
           "@taxcenter/modals/IntroducingTaxesModal.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/CostBasis.tsx": 1,
           "@taxcenter/pages/FilingWizard/steps/FiledPreviously.tsx": 2,
-          "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
-          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
-          "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@taxcenter/pages/TaxForms/components/EW8Screen.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
+          "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
+          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
           "@taxcenter/pages/Transactions/components/MissingDetails.tsx": 1,
           "@taxcenter/pages/Preferences/components/CostBasisModal/CostBasisModal.tsx": 1,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 3,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
@@ -1798,15 +1798,20 @@
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/SizeAwareText.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainsLossDetails.tsx": 2
         },
+        "spacingEnd": {
+          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
+          "@taxcenter/pages/TaxForms/components/EW8Screen.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1
+        },
         "color": {
-          "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
-          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
-          "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@taxcenter/pages/TaxForms/components/EW8Screen.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
+          "@taxcenter/pages/Reports/components/CoinTrackerCTA.tsx": 1,
+          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
+          "@taxcenter/pages/Reports/components/TurboTaxCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditReceiveForm.tsx": 3,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditSendForm.tsx": 3,
           "@taxcenter/pages/Transactions/ManualEdits/components/EditTabs.tsx": 2,
@@ -1821,17 +1826,12 @@
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/IRSResources.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/SizeAwareText.tsx": 1
         },
-        "spacingEnd": {
-          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/EW8Screen.tsx": 1,
+        "spacingBottom": {
+          "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1
         },
         "spacingStart": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 },
         "spacingTop": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 },
-        "spacingBottom": {
-          "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 1
-        },
         "align": {
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/FinishPageComponents/TaxLiabiltySummary.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/TransactionRow/SizeAwareText.tsx": 1
@@ -1895,10 +1895,10 @@
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
         "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
+        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
         "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
         "@taxcenter/pages/Reports/components/TaxForms.tsx": 1,
         "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
-        "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
         "@taxcenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
         "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
         "@taxcenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
@@ -1925,10 +1925,10 @@
       "propsWithCallSites": {
         "as": {
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
+          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxForms.tsx": 1,
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
-          "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
           "@taxcenter/pages/Transactions/ManualEdits/ManualEdits.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsAggregate.tsx": 2,
           "@taxcenter/pages/FilingWizard/steps/ExitPoint/CalculationComponent.tsx": 1,
@@ -1958,8 +1958,8 @@
         },
         "spacingBottom": {
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
-          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/TaxForms/components/ConsentScreen.tsx": 1,
+          "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1,
           "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 1,
           "@taxcenter/pages/TaxSummary/components/UpcomingKeyDate/UpcomingKeyDate.tsx": 1,
@@ -2048,34 +2048,6 @@
       }
     },
     {
-      "name": "TextCaption",
-      "sourceFile": "@cbhq/cds-web/typography/TextCaption",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/typography/TextCaption",
-      "callSites": {
-        "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
-        "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "color": {
-          "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
-          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "spacing": { "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1 },
-        "spacingStart": {
-          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        },
-        "transform": {
-          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Pressable",
       "sourceFile": "@cbhq/cds-web/system/Pressable",
       "totalInstances": 7,
@@ -2132,6 +2104,34 @@
         "noScaleOnPress": {
           "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/EstimateDisclaimer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextCaption",
+      "sourceFile": "@cbhq/cds-web/typography/TextCaption",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextCaption",
+      "callSites": {
+        "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
+        "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "color": {
+          "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1,
+          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "spacing": { "@taxcenter/pages/Reports/components/PendingOrDownload.tsx": 1 },
+        "spacingStart": {
+          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
+        },
+        "transform": {
+          "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1
         }
       }
     },
@@ -2238,6 +2238,13 @@
       "styledComponent": "div"
     },
     {
+      "name": "SpinnerContainer",
+      "sourceFile": "@taxcenter/TaxCenter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "LinkBox",
       "sourceFile": "@taxcenter/components/GenericCTACard.tsx",
       "totalInstances": 1,
@@ -2306,37 +2313,20 @@
       "presentationalElement": "LinkBox"
     },
     {
+      "name": "FixedHeightSpinner",
+      "sourceFile": "@taxcenter/pages/TaxSummary/TaxSummary.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Spinner",
+      "callSites": { "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2 }
+    },
+    {
       "name": "TaxDocuments",
       "sourceFile": "@taxcenter/pages/TaxSummary/components/TaxDocuments",
       "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalElement": "StyledContainer",
       "callSites": { "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2 }
-    },
-    {
-      "name": "GenerateSelect",
-      "sourceFile": "@taxcenter/pages/Reports/components/GenerateReport.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "Select",
-      "callSites": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-      "propsWithCallSites": {
-        "components": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-        "options": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-        "isSearchable": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-        "onChange": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-        "value": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-        "menuPortalTarget": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-        "styles": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
-        "isDisabled": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1 }
-      }
-    },
-    {
-      "name": "TaxReportsHeader",
-      "sourceFile": "@taxcenter/pages/Reports/components/TaxReports.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "NumberedList",
@@ -2363,6 +2353,31 @@
       "propsWithCallSites": {
         "key": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 }
       }
+    },
+    {
+      "name": "GenerateSelect",
+      "sourceFile": "@taxcenter/pages/Reports/components/GenerateReport.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "Select",
+      "callSites": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+      "propsWithCallSites": {
+        "components": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+        "options": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+        "isSearchable": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+        "onChange": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+        "value": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+        "menuPortalTarget": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+        "styles": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 2 },
+        "isDisabled": { "@taxcenter/pages/Reports/components/GenerateReport.tsx": 1 }
+      }
+    },
+    {
+      "name": "TaxReportsHeader",
+      "sourceFile": "@taxcenter/pages/Reports/components/TaxReports.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "ManualEditsContainer",
@@ -2573,6 +2588,20 @@
       }
     },
     {
+      "name": "CTAButtonContainer",
+      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CTAButtonContainer",
+      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "NegativeMargins",
       "sourceFile": "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx",
       "totalInstances": 1,
@@ -2591,20 +2620,6 @@
         "src": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 },
         "alt": { "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 1 }
       }
-    },
-    {
-      "name": "CTAButtonContainer",
-      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CTAButtonContainer",
-      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "NegativeMargins",
@@ -2858,16 +2873,16 @@
     {
       "name": "Suspense",
       "sourceFile": "react/Suspense",
-      "totalInstances": 5,
+      "totalInstances": 6,
       "totalCallSites": 3,
       "callSites": {
-        "@taxcenter/TaxCenter.tsx": 1,
+        "@taxcenter/TaxCenter.tsx": 2,
         "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
         "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 3
       },
       "propsWithCallSites": {
         "fallback": {
-          "@taxcenter/TaxCenter.tsx": 1,
+          "@taxcenter/TaxCenter.tsx": 2,
           "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
           "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 3
         }
@@ -2876,13 +2891,13 @@
     {
       "name": "Spinner",
       "sourceFile": "@ubo/components/Spinner",
-      "totalInstances": 4,
-      "totalCallSites": 3,
+      "totalInstances": 3,
+      "totalCallSites": 2,
       "callSites": {
-        "@taxcenter/TaxCenter.tsx": 1,
-        "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1,
-        "@taxcenter/pages/TaxSummary/TaxSummary.tsx": 2
-      }
+        "@taxcenter/TaxCenter.tsx": 2,
+        "@taxcenter/pages/PositionsDisabledLanding/PositionsDisabledLanding.tsx": 1
+      },
+      "propsWithCallSites": { "center": { "@taxcenter/TaxCenter.tsx": 1 } }
     },
     {
       "name": "SubpageNav",
@@ -2968,10 +2983,10 @@
         "@taxcenter/pages/Preferences/components/PaperlessDelivery/PaperlessDelivery.tsx": 4,
         "@taxcenter/pages/Preferences/components/TaxSettings/TaxSettings.tsx": 10,
         "@taxcenter/pages/TaxSummary/components/ActivityTable/ActivityTableHeader.tsx": 1,
-        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 5,
         "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA.tsx": 5,
         "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx": 3,
+        "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 2,
         "@taxcenter/pages/TaxSummary/components/GainsLossTable/GainsLossTable.tsx": 6,
         "@taxcenter/pages/TaxSummary/components/IncomeTable/IncomeTable.tsx": 3,
@@ -3436,34 +3451,6 @@
       }
     },
     {
-      "name": "TaxForms",
-      "sourceFile": "@taxcenter/pages/Reports/components/TaxForms",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TaxReports",
-      "sourceFile": "@taxcenter/pages/Reports/components/TaxReports",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TurboTaxCTA",
-      "sourceFile": "@taxcenter/pages/Reports/components/TurboTaxCTA",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@taxcenter/pages/Reports/Reports.tsx": 1,
-        "@taxcenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1
-      }
-    },
-    {
-      "name": "ReportsFAQ",
-      "sourceFile": "@taxcenter/pages/Reports/components/ReportsFAQ",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "ReviewScreen",
       "sourceFile": "@taxcenter/pages/TaxForms/components/ReviewScreen",
       "totalInstances": 1,
@@ -3490,6 +3477,34 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "onBack": { "@taxcenter/pages/TaxForms/VerifyTaxProfile.tsx": 1 } }
+    },
+    {
+      "name": "TaxForms",
+      "sourceFile": "@taxcenter/pages/Reports/components/TaxForms",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TaxReports",
+      "sourceFile": "@taxcenter/pages/Reports/components/TaxReports",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TurboTaxCTA",
+      "sourceFile": "@taxcenter/pages/Reports/components/TurboTaxCTA",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@taxcenter/pages/Reports/Reports.tsx": 1,
+        "@taxcenter/pages/FilingWizard/steps/ExitPoint/Finish.tsx": 1
+      }
+    },
+    {
+      "name": "ReportsFAQ",
+      "sourceFile": "@taxcenter/pages/Reports/components/ReportsFAQ",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "li",
@@ -3592,6 +3607,29 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "filters": { "@taxcenter/pages/Transactions/Transactions.tsx": 1 } }
+    },
+    {
+      "name": "div",
+      "sourceFile": "@taxcenter/pages/TaxForms/components/EW8Screen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DetailsTableRowEditable",
+      "sourceFile": "@ubo/settings/components/DetailsTable/DetailsTableRowEditable",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+      "propsWithCallSites": {
+        "name": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+        "value": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+        "rawValue": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+        "optionalProps": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+        "isExpanded": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+        "editType": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+        "onSave": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
+        "onCancel": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 }
+      }
     },
     {
       "name": "GenericCTACard",
@@ -3920,29 +3958,6 @@
           "@taxcenter/pages/Reports/components/TaxReports.tsx": 1,
           "@taxcenter/pages/Transactions/components/TransactionsTable/components/TransactionDetails/GainsLossDetails/GainLossTableRow.tsx": 1
         }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@taxcenter/pages/TaxForms/components/EW8Screen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DetailsTableRowEditable",
-      "sourceFile": "@ubo/settings/components/DetailsTable/DetailsTableRowEditable",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-      "propsWithCallSites": {
-        "name": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-        "value": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-        "rawValue": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-        "optionalProps": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-        "isExpanded": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-        "editType": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-        "onSave": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 },
-        "onCancel": { "@taxcenter/pages/TaxForms/components/ReviewScreen.tsx": 4 }
       }
     },
     {
@@ -4326,6 +4341,39 @@
       }
     },
     {
+      "name": "img",
+      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 },
+      "propsWithCallSites": {
+        "src": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 },
+        "alt": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 },
+        "height": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 }
+      }
+    },
+    {
+      "name": "CointrackerCTA",
+      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "track": { "@taxcenter/pages/TaxSummary/components/CTA/ContextAwareCTA.tsx": 1 }
+      }
+    },
+    {
+      "name": "FilingWizardCTA",
+      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "div",
+      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ArticleWrapper",
       "sourceFile": "@taxcenter/pages/TaxSummary/components/ArticleCard/ArticleCard/ArticleWrapper",
       "totalInstances": 2,
@@ -4364,48 +4412,6 @@
       }
     },
     {
-      "name": "img",
-      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 },
-      "propsWithCallSites": {
-        "src": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 },
-        "alt": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 },
-        "height": { "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA.tsx": 2 }
-      }
-    },
-    {
-      "name": "CointrackerCTA",
-      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/CointrackerCTA",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "track": { "@taxcenter/pages/TaxSummary/components/CTA/ContextAwareCTA.tsx": 1 }
-      }
-    },
-    {
-      "name": "FilingWizardCTA",
-      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/FilingWizardCTA",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "@taxcenter/pages/TaxSummary/components/CTA/GiveCryptoCTA.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "AccordionGroup",
-      "sourceFile": "@ubo/components/Accordion/AccordionGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data-testid": { "@taxcenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1 }
-      }
-    },
-    {
       "name": "TaxFormsModal",
       "sourceFile": "@taxcenter/pages/TaxSummary/components/TaxFormsModal",
       "totalInstances": 1,
@@ -4416,6 +4422,15 @@
         },
         "onClose": { "@taxcenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1 },
         "widthVariant": { "@taxcenter/pages/TaxSummary/components/FormsNotice/FormsNotice.tsx": 1 }
+      }
+    },
+    {
+      "name": "AccordionGroup",
+      "sourceFile": "@ubo/components/Accordion/AccordionGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data-testid": { "@taxcenter/pages/TaxSummary/components/FAQ/FAQ.tsx": 1 }
       }
     },
     {

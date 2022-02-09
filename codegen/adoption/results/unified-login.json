@@ -45,6 +45,20 @@
       }
     },
     {
+      "name": "IconButton",
+      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/buttons/IconButton",
+      "propsWithCallSites": {
+        "name": { "@trust_and_safety/hooks/useVisiblePasswordToggle.tsx": 1 },
+        "transparent": { "@trust_and_safety/hooks/useVisiblePasswordToggle.tsx": 1 },
+        "variant": { "@trust_and_safety/hooks/useVisiblePasswordToggle.tsx": 1 },
+        "onPress": { "@trust_and_safety/hooks/useVisiblePasswordToggle.tsx": 1 },
+        "accessibilityLabel": { "@trust_and_safety/hooks/useVisiblePasswordToggle.tsx": 1 }
+      }
+    },
+    {
       "name": "Alert",
       "sourceFile": "@cbhq/cds-web/overlays/Alert",
       "totalInstances": 2,
@@ -106,7 +120,10 @@
         },
         {
           "aliasPath": "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal.tsx",
-          "callSites": ["@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx"]
+          "callSites": [
+            "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx",
+            "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx"
+          ]
         }
       ],
       "callSites": {
@@ -153,7 +170,7 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 40,
+      "totalInstances": 41,
       "totalCallSites": 19,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
@@ -164,17 +181,17 @@
             "@trust_and_safety/pages/Blocked/BlockedPage.tsx",
             "@trust_and_safety/pages/Consent/ConsentPage.tsx",
             "@trust_and_safety/pages/Dev/DevPage.tsx",
-            "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx",
             "@trust_and_safety/pages/Error/ErrorFallback.tsx",
             "@trust_and_safety/pages/Error/ErrorPageDefault.tsx",
             "@trust_and_safety/pages/Error/OAuthErrorPage.tsx",
+            "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx",
             "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx",
             "@trust_and_safety/pages/Logout/LogoutPage.tsx",
             "@trust_and_safety/pages/Password/PasswordPage.tsx",
             "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx",
             "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx",
-            "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
-            "@trust_and_safety/pages/Username/UsernamePage.tsx"
+            "@trust_and_safety/pages/Username/UsernamePage.tsx",
+            "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx"
           ]
         }
       ],
@@ -187,17 +204,17 @@
         "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 2,
         "@trust_and_safety/pages/Dev/DevPage.tsx": 7,
-        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 2,
         "@trust_and_safety/pages/Error/ErrorFallback.tsx": 2,
         "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 2,
         "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 2,
+        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 2,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
         "@trust_and_safety/pages/Logout/LogoutPage.tsx": 2,
         "@trust_and_safety/pages/Password/PasswordPage.tsx": 4,
-        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 3,
         "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 2,
-        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-        "@trust_and_safety/pages/Username/UsernamePage.tsx": 2
+        "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
+        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
       },
       "propsWithCallSites": {
         "alignItems": {
@@ -205,10 +222,10 @@
           "@trust_and_safety/components/Layout/PageLayout.tsx": 1,
           "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal.tsx": 1,
           "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 2,
-          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorFallback.tsx": 2,
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
+          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
         },
         "justifyContent": {
@@ -228,17 +245,17 @@
           "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 5,
-          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
+          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 4,
-          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 3,
           "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "spacingHorizontal": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -250,12 +267,11 @@
           "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
-          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
+          "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1,
-          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1
         },
         "spacingVertical": { "@trust_and_safety/components/Layout/PageLayout.tsx": 1 },
@@ -266,10 +282,12 @@
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
-          "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1
+          "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2
         },
         "spacingTop": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 2
         }
       }
@@ -323,7 +341,6 @@
           "@trust_and_safety/pages/AccountRecovery/AccountRecoveryPage.tsx": 1,
           "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
-          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
@@ -340,8 +357,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 8,
-      "totalCallSites": 8,
+      "totalInstances": 9,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -351,7 +368,8 @@
         "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
         "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
         "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
-        "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1
+        "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -362,7 +380,8 @@
           "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
           "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
           "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
-          "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1
+          "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
         },
         "color": {
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
@@ -403,8 +422,8 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 18,
-      "totalCallSites": 11,
+      "totalInstances": 19,
+      "totalCallSites": 12,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 2,
@@ -416,6 +435,7 @@
         "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
         "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
         "@trust_and_safety/utils/testing/RenderWithContext.tsx": 1
       },
@@ -426,6 +446,7 @@
           "@trust_and_safety/components/ThemePicker/ThemePicker.tsx": 1,
           "@trust_and_safety/pages/Dev/DevPage.tsx": 4,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 2,
           "@trust_and_safety/utils/testing/RenderWithContext.tsx": 1
         },
@@ -442,6 +463,7 @@
           "@trust_and_safety/components/CancelFlowModal/CancelFlowModal.tsx": 1,
           "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 2,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 2
         },
         "compact": {
@@ -465,16 +487,19 @@
         "type": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "disabled": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "loading": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "data-testid": { "@trust_and_safety/utils/testing/RenderWithContext.tsx": 1 }
@@ -544,11 +569,18 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
+      "callSites": {
+        "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
+      },
       "propsWithCallSites": {
-        "as": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 },
+        "as": {
+          "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
+        },
         "overflow": { "@trust_and_safety/components/EmailButton/EmailButton.tsx": 1 }
       }
     },
@@ -606,7 +638,7 @@
         },
         {
           "aliasPath": "@trust_and_safety/components/PasswordStrength/PasswordStrength.tsx",
-          "callSites": []
+          "callSites": ["@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx"]
         },
         {
           "aliasPath": "@trust_and_safety/components/ThemePicker/ThemePicker.tsx",
@@ -849,76 +881,77 @@
     {
       "name": "TextInput",
       "sourceFile": "@cbhq/cds-web/controls/TextInput",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 5,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/controls/TextInput",
       "callSites": {
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
         "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
         "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
       },
       "propsWithCallSites": {
         "label": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "placeholder": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "value": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "onChange": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "type": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "name": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "variant": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "helperText": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "autoFocus": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
         "testID": {
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2,
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         },
-        "end": { "@trust_and_safety/pages/Password/PasswordPage.tsx": 1 }
-      }
-    },
-    {
-      "name": "IconButton",
-      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/buttons/IconButton",
-      "propsWithCallSites": {
-        "name": { "@trust_and_safety/pages/Password/PasswordPage.tsx": 1 },
-        "transparent": { "@trust_and_safety/pages/Password/PasswordPage.tsx": 1 },
-        "variant": { "@trust_and_safety/pages/Password/PasswordPage.tsx": 1 },
-        "onPress": { "@trust_and_safety/pages/Password/PasswordPage.tsx": 1 }
+        "end": {
+          "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 2
+        }
       }
     }
   ],
@@ -1183,18 +1216,18 @@
         "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
-        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
         "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
         "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
         "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
+        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
         "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1,
         "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
         "@trust_and_safety/pages/Risk/RiskPage.tsx": 1,
         "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
-        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
       },
       "propsWithCallSites": {
         "showCancelFlow": {
@@ -1278,18 +1311,24 @@
         "@trust_and_safety/pages/Blocked/BlockedPage.tsx": 1,
         "@trust_and_safety/pages/Consent/ConsentPage.tsx": 1,
         "@trust_and_safety/pages/Dev/DevPage.tsx": 1,
-        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
         "@trust_and_safety/pages/Error/ErrorFallback.tsx": 1,
         "@trust_and_safety/pages/Error/ErrorPageDefault.tsx": 1,
         "@trust_and_safety/pages/Error/OAuthErrorPage.tsx": 1,
+        "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
         "@trust_and_safety/pages/Logout/LogoutPage.tsx": 1,
         "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
         "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
         "@trust_and_safety/pages/SecurityUpgrade/SecurityUpgradePage.tsx": 1,
-        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
       }
+    },
+    {
+      "name": "ErrorPageDefault",
+      "sourceFile": "@trust_and_safety/pages/Error/ErrorPageDefault",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "form",
@@ -1328,61 +1367,66 @@
     {
       "name": "ReCaptcha",
       "sourceFile": "@cbhq/recaptcha/ReCaptcha",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 6,
+      "totalCallSites": 6,
       "callSites": {
         "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
         "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
         "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+        "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
       },
       "propsWithCallSites": {
         "visibleSiteKey": {
           "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "invisibleSiteKey": {
           "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "display": {
           "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "theme": {
           "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "onLoad": {
           "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "onError": {
           "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "locale": {
           "@trust_and_safety/pages/DeviceVerification/DeviceVerificationPage.tsx": 1,
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
-          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1,
-          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
+          "@trust_and_safety/pages/Username/UsernamePage.tsx": 1,
+          "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx": 1
         },
         "onSuccess": {
           "@trust_and_safety/pages/Password/PasswordPage.tsx": 1,
@@ -1393,12 +1437,6 @@
           "@trust_and_safety/pages/Username/UsernamePage.tsx": 1
         }
       }
-    },
-    {
-      "name": "ErrorPageDefault",
-      "sourceFile": "@trust_and_safety/pages/Error/ErrorPageDefault",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "form",
@@ -1413,11 +1451,21 @@
     {
       "name": "ResetConfirmationModal",
       "sourceFile": "@trust_and_safety/components/ResetConfirmationModal/ResetConfirmationModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+        "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
+      },
       "propsWithCallSites": {
-        "showModal": { "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1 },
-        "showModalControl": { "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1 }
+        "showModal": {
+          "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
+        },
+        "showModalControl": {
+          "@trust_and_safety/pages/ForgotPassword/ForgotPasswordPage.tsx": 1,
+          "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1
+        }
       }
     },
     {
@@ -1442,9 +1490,22 @@
     },
     {
       "name": "form",
-      "sourceFile": "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
+      "sourceFile": "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSubmit": { "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1 },
+        "noValidate": { "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1 }
+      }
+    },
+    {
+      "name": "PasswordStrength",
+      "sourceFile": "@trust_and_safety/components/PasswordStrength/PasswordStrength",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "score": { "@trust_and_safety/pages/ResetPassword/ResetPasswordPage.tsx": 1 }
+      }
     },
     {
       "name": "form",
@@ -1455,6 +1516,12 @@
         "onSubmit": { "@trust_and_safety/pages/Username/UsernamePage.tsx": 1 },
         "noValidate": { "@trust_and_safety/pages/Username/UsernamePage.tsx": 1 }
       }
+    },
+    {
+      "name": "form",
+      "sourceFile": "@trust_and_safety/pages/TwoFactor/TwoFactorPage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "div",

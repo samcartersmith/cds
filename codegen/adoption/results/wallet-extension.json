@@ -108,6 +108,13 @@
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1,
           "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestStep.tsx": 1
         },
+        "borderColor": {
+          "src/components/LargeContentButton.tsx": 1,
+          "src/components/SharedSelectSourceStep/CryptoNFTSelector.tsx": 2,
+          "src/screens/Portfolio/PortfolioSelector.tsx": 2,
+          "src/screens/Receive/Receive.tsx": 2,
+          "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 1
+        },
         "borderRadius": {
           "src/components/LargeContentButton.tsx": 1,
           "src/components/SharedSelectSourceStep/CryptoNFTSelector.tsx": 2,
@@ -145,12 +152,6 @@
           "src/screens/Receive/Receive.tsx": 2,
           "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
-        "borderColor": {
-          "src/components/SharedSelectSourceStep/CryptoNFTSelector.tsx": 2,
-          "src/screens/Portfolio/PortfolioSelector.tsx": 2,
-          "src/screens/Receive/Receive.tsx": 2,
-          "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 1
-        },
         "transparentWhileInactive": { "src/screens/Trade/EntrySelector/Row.tsx": 1 },
         "data-element-handle": { "src/screens/Trade/EntrySelector/Row.tsx": 1 },
         "aria-label": { "src/screens/Trade/EntrySelector/Row.tsx": 1 },
@@ -160,8 +161,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 221,
-      "totalCallSites": 114,
+      "totalInstances": 227,
+      "totalCallSites": 117,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -177,7 +178,9 @@
             "src/components/RecoveryPhrase/RecoveryPhrase.tsx",
             "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx",
             "src/screens/BannedLocationGate/BannedLocationScreen.tsx",
-            "src/screens/HardwareWallet/HardwareWalletStepper.tsx"
+            "src/screens/HardwareWallet/HardwareWalletStepper.tsx",
+            "src/screens/Send/steps/StatusStep/StatusStep.tsx",
+            "src/screens/Trade/steps/StatusStep/StatusStep.tsx"
           ]
         },
         {
@@ -335,11 +338,13 @@
         { "aliasPath": "src/screens/Onramp/Interstitial.tsx", "callSites": [] },
         { "aliasPath": "src/screens/Routes/Routes.tsx", "callSites": [] },
         { "aliasPath": "src/screens/Send/Send.tsx", "callSites": [] },
+        { "aliasPath": "src/screens/Trade/Trade.tsx", "callSites": [] },
         {
-          "aliasPath": "src/screens/Settings/AddCustomNetwork.tsx",
+          "aliasPath": "src/screens/Settings/NetworkList.tsx",
           "callSites": [
-            "src/screens/Settings/NetworkSelector.tsx",
-            "src/screens/Settings/pages/AddCustomNetworkPage/AddCustomNetworkPage.tsx"
+            "src/screens/Settings/CustomNetworks.tsx",
+            "src/screens/Settings/DefaultNetworks.tsx",
+            "src/screens/Settings/DefaultNetworks.tsx"
           ]
         },
         {
@@ -357,7 +362,13 @@
           "aliasPath": "src/screens/Settings/SettingsItems.tsx",
           "callSites": ["src/screens/Settings/pages/SettingsPage.tsx"]
         },
-        { "aliasPath": "src/screens/Trade/Trade.tsx", "callSites": [] },
+        {
+          "aliasPath": "src/screens/Settings/SharedCustomNetworkForm.tsx",
+          "callSites": [
+            "src/screens/Settings/AddCustomNetwork.tsx",
+            "src/screens/Settings/UpdateCustomNetwork.tsx"
+          ]
+        },
         { "aliasPath": "src/screens/TransactionHistory/RenderRows.tsx", "callSites": [] },
         {
           "aliasPath": "src/screens/TransactionHistory/Transactions.tsx",
@@ -477,6 +488,15 @@
           ]
         },
         {
+          "aliasPath": "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx",
+          "callSites": [
+            "src/screens/Onboarding/OnboardingStepper.tsx",
+            "src/screens/Web3/SignatureRequest/SignatureRequest.tsx",
+            "src/screens/Send/steps/StatusStep/StatusStep.tsx",
+            "src/screens/Trade/steps/StatusStep/StatusStep.tsx"
+          ]
+        },
+        {
           "aliasPath": "src/screens/Onboarding/steps/hardware-wallet/HWWalletConnectionAnimation/HWWalletConnectionAnimation.tsx",
           "callSites": [
             "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx"
@@ -484,10 +504,6 @@
         },
         {
           "aliasPath": "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx",
-          "callSites": ["src/screens/Onboarding/OnboardingStepper.tsx"]
-        },
-        {
-          "aliasPath": "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx",
           "callSites": ["src/screens/Onboarding/OnboardingStepper.tsx"]
         },
         {
@@ -554,22 +570,25 @@
         "src/screens/PortfolioCollection/CollectionView.tsx": 1,
         "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
         "src/screens/Receive/Address.tsx": 1,
+        "src/screens/Receive/AssetReceiveByAddress.tsx": 3,
         "src/screens/Receive/GenericReceiveByAddress.tsx": 1,
         "src/screens/Receive/Receive.tsx": 2,
+        "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
         "src/screens/Receive/ReceiveWalletAddressModal.tsx": 3,
         "src/screens/Routes/RouteTransitions.tsx": 1,
         "src/screens/Routes/Routes.tsx": 1,
         "src/screens/Send/Send.tsx": 1,
-        "src/screens/Settings/AddCustomNetwork.tsx": 1,
+        "src/screens/Trade/Trade.tsx": 1,
         "src/screens/Settings/AddCustomToken.tsx": 1,
         "src/screens/Settings/AutoLockTimer.tsx": 2,
         "src/screens/Settings/ChangePassword.tsx": 2,
         "src/screens/Settings/ConnectedTextInput.tsx": 1,
         "src/screens/Settings/DAppSettings.tsx": 4,
+        "src/screens/Settings/NetworkList.tsx": 2,
         "src/screens/Settings/NetworkSelector.tsx": 1,
         "src/screens/Settings/Page.tsx": 2,
         "src/screens/Settings/SettingsItems.tsx": 2,
-        "src/screens/Trade/Trade.tsx": 1,
+        "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
         "src/screens/TransactionHistory/RenderRows.tsx": 2,
         "src/screens/TransactionHistory/TransactionHistory.tsx": 2,
         "src/screens/TransactionHistory/Transactions.tsx": 1,
@@ -585,12 +604,12 @@
         "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
         "src/screens/PortfolioWallet/components/AssetTransactionHistory.tsx": 1,
         "src/screens/PortfolioWallet/components/AssetTransactions.tsx": 1,
-        "src/screens/Settings/pages/SettingsPage.tsx": 1,
         "src/screens/Trade/EntrySelector/EntrySelector.tsx": 4,
         "src/screens/Trade/EntrySelector/EntrySelectorLoadingFallback.tsx": 1,
         "src/screens/Trade/EntrySelector/RowLoadingFallback.tsx": 2,
+        "src/screens/Settings/pages/SettingsPage.tsx": 1,
         "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 4,
-        "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 3,
+        "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 4,
         "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 2,
         "src/screens/Onboarding/steps/Backup/Backup.tsx": 2,
         "src/screens/Onboarding/steps/Entry/Entry.tsx": 4,
@@ -609,16 +628,16 @@
         "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 5,
         "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1,
         "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
-        "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1,
         "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 3,
         "src/screens/Trade/steps/EntryStep/EntryStepFallback.tsx": 3,
         "src/screens/Trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
         "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 3,
+        "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 5,
         "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 3,
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 4,
         "src/screens/Onboarding/steps/hardware-wallet/HWWalletConnectionAnimation/HWWalletConnectionAnimation.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 3,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 4,
+        "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 5,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 1,
         "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 2,
@@ -628,12 +647,14 @@
       "propsWithCallSites": {
         "bordered": {
           "src/components/PopupAwareVStack.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelectorLoadingFallback.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1
         },
         "borderRadius": {
           "src/components/PopupAwareVStack.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelectorLoadingFallback.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1
@@ -651,6 +672,7 @@
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
           "src/screens/HardwareWallet/HardwareWallet.tsx": 1,
           "src/screens/Send/Send.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/Settings/Page.tsx": 1,
           "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
@@ -712,8 +734,8 @@
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 2,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 2
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 2,
+          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1
         },
         "maxWidth": {
           "src/components/AssetBalance/AssetBalance.tsx": 1,
@@ -740,8 +762,7 @@
           "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 2,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 2,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 2,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 1,
           "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 2
         },
@@ -782,8 +803,8 @@
           "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 2,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 2,
           "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 2,
           "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
         },
         "height": {
@@ -806,12 +827,12 @@
           "src/screens/Routes/RouteTransitions.tsx": 1,
           "src/screens/Routes/Routes.tsx": 1,
           "src/screens/Send/Send.tsx": 1,
+          "src/screens/Trade/Trade.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
           "src/screens/Settings/AutoLockTimer.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 2,
           "src/screens/Settings/NetworkSelector.tsx": 1,
           "src/screens/Settings/Page.tsx": 2,
-          "src/screens/Trade/Trade.tsx": 1,
           "src/screens/TransactionHistory/TransactionHistory.tsx": 2,
           "src/screens/TransactionHistory/Transactions.tsx": 1,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
@@ -826,16 +847,16 @@
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
           "src/screens/Send/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
-          "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1,
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Trade/steps/EntryStep/EntryStepFallback.tsx": 1,
           "src/screens/Trade/steps/SelectAssetStep/SelectAssetStep.tsx": 1,
           "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1,
+          "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWWalletConnectionAnimation/HWWalletConnectionAnimation.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1,
           "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1,
           "src/screens/Settings/pages/AddCustomTokenPage/steps/AddTokenStep/AddTokenStep.tsx": 1,
@@ -846,17 +867,16 @@
           "src/components/PhoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
           "src/screens/Settings/AutoLockTimer.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
           "src/screens/Portfolio/CollectionsPortfolio/Collections.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
           "src/screens/Send/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Trade/steps/EntryStep/EntryStepFallback.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1
         },
         "flexGrow": {
@@ -923,18 +943,20 @@
           "src/screens/Receive/Receive.tsx": 1,
           "src/screens/Settings/ChangePassword.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 2,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/TransactionHistory/TransactionHistory.tsx": 1,
           "src/screens/TransactionHistory/Transactions.tsx": 1,
           "src/screens/AppLock/components/UnLockScreen.tsx": 1,
           "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
           "src/screens/Settings/pages/SettingsPage.tsx": 1,
+          "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
           "src/screens/Onboarding/steps/Success/Success.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWWalletConnectionAnimation/HWWalletConnectionAnimation.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 2
+          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2
         },
         "spacingBottom": {
           "src/components/RecoveryPhrase/RecoveryPhrase.tsx": 1,
@@ -975,6 +997,7 @@
           "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
           "src/screens/Portfolio/Portfolio.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Settings/ChangePassword.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 3,
           "src/screens/Settings/Page.tsx": 1,
@@ -987,7 +1010,7 @@
           "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
           "src/screens/Settings/pages/SettingsPage.tsx": 1,
           "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
-          "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
+          "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 2,
           "src/screens/Send/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
@@ -999,7 +1022,8 @@
         },
         "spacingVertical": {
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 2,
-          "src/components/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1
+          "src/components/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1
         },
         "bottom": {
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
@@ -1012,6 +1036,7 @@
         },
         "borderedTop": {
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1
         },
@@ -1043,6 +1068,7 @@
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1
         },
         "flexBasis": { "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1 },
+        "offsetStart": { "src/screens/Settings/NetworkList.tsx": 1 },
         "key": { "src/screens/TransactionHistory/RenderRows.tsx": 1 },
         "dangerouslySetClassName": { "src/screens/TransactionHistory/Transactions.tsx": 1 },
         "ref": {
@@ -1054,8 +1080,7 @@
           "src/screens/Send/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
-          "src/screens/Trade/steps/EntryStep/EntryStepFallback.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1
+          "src/screens/Trade/steps/EntryStep/EntryStepFallback.tsx": 1
         },
         "minHeight": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "elevation": {
@@ -1066,8 +1091,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 100,
-      "totalCallSites": 70,
+      "totalInstances": 104,
+      "totalCallSites": 72,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         { "aliasPath": "src/components/PortfolioMenu/PortfolioOnrampButton.tsx", "callSites": [] },
@@ -1091,6 +1116,10 @@
             "src/components/TransactionConfirmationTopSection/TransactionConfirmationTopSection.tsx",
             "src/screens/CollectibleDetail/CollectibleDetailContainer.tsx"
           ]
+        },
+        {
+          "aliasPath": "src/screens/Receive/AssetReceiveByAddress.tsx",
+          "callSites": ["src/screens/Receive/ReceiveByAddress.tsx"]
         },
         {
           "aliasPath": "src/screens/Receive/GenericReceiveByAddress.tsx",
@@ -1157,11 +1186,13 @@
         "src/screens/PortfolioCollection/CollectiblesList.tsx": 1,
         "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
         "src/screens/Receive/Address.tsx": 2,
+        "src/screens/Receive/AssetReceiveByAddress.tsx": 2,
         "src/screens/Receive/GenericReceiveByAddress.tsx": 1,
         "src/screens/Receive/Receive.tsx": 1,
         "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
         "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1,
         "src/screens/Settings/ChangePassword.tsx": 1,
+        "src/screens/Settings/NetworkList.tsx": 1,
         "src/screens/TransactionHistory/SpeedUpAndCancelIcon.tsx": 1,
         "src/screens/AppLock/components/UnLockScreen.tsx": 1,
         "src/screens/Onboarding/shared/Checkbox.tsx": 1,
@@ -1169,8 +1200,8 @@
         "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
         "src/screens/Portfolio/CollectionsPortfolio/CollectionsList.tsx": 1,
         "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
-        "src/screens/Settings/pages/SettingsPage.tsx": 2,
         "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
+        "src/screens/Settings/pages/SettingsPage.tsx": 2,
         "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
         "src/screens/Web3/DappTransactionRequest/DappTransactionRequest.tsx": 1,
         "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 6,
@@ -1188,8 +1219,8 @@
         "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
         "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
         "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2,
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
         "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
       },
       "propsWithCallSites": {
@@ -1271,8 +1302,10 @@
           "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1,
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
           "src/screens/Receive/Address.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Receive/Receive.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancelIcon.tsx": 1,
           "src/screens/Onboarding/shared/Checkbox.tsx": 1,
           "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 3,
@@ -1311,12 +1344,12 @@
           "src/components/BlurText/BlurText.tsx": 1,
           "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/svgIcons/PendingTransactionIcon.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancelIcon.tsx": 1,
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
           "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
           "src/screens/Onboarding/steps/ScanQr/ScanQr.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
         },
         "bottom": {
           "src/components/BlurText/BlurText.tsx": 1,
@@ -1347,7 +1380,8 @@
           "src/screens/PortfolioCollection/CollectiblesList.tsx": 1,
           "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
-          "src/screens/Portfolio/CollectionsPortfolio/CollectionsList.tsx": 1
+          "src/screens/Portfolio/CollectionsPortfolio/CollectionsList.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
         },
         "spacingEnd": {
           "src/components/NavTitle/NavTitle.tsx": 1,
@@ -1361,16 +1395,17 @@
           "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
           "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
         },
         "offsetStart": {
           "src/components/RecoveryPhrase/RecoveryPhrase.tsx": 1,
-          "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1
+          "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
         "spacingHorizontal": {
           "src/components/SearchAssetBar/SearchAssetBar.tsx": 1,
           "src/screens/Receive/Address.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Receive/GenericReceiveByAddress.tsx": 1,
           "src/screens/Settings/ChangePassword.tsx": 1,
           "src/screens/Settings/pages/SettingsPage.tsx": 1,
@@ -1388,7 +1423,8 @@
           "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
           "src/screens/Onboarding/steps/ScanQr/QrCode.tsx": 1,
           "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 2,
-          "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+          "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
         },
         "dangerouslySetBackground": {
           "src/components/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
@@ -1410,7 +1446,8 @@
           "src/screens/Onboarding/steps/ScanQr/ScanQr.tsx": 1,
           "src/screens/Onboarding/steps/Success/Success.tsx": 2,
           "src/screens/Onboarding/steps/Username/Username.tsx": 1,
-          "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
+          "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
         },
         "borderColor": {
           "src/components/svgIcons/PendingTransactionIcon.tsx": 1,
@@ -1430,10 +1467,19 @@
           "src/screens/CollectibleDetail/CollectibleMedia.tsx": 1,
           "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
           "src/screens/Receive/Receive.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancelIcon.tsx": 1,
           "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
         "overflow": { "src/screens/CollectibleDetail/CollectibleMedia.tsx": 3 },
+        "spacingVertical": {
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+          "src/screens/Settings/pages/SettingsPage.tsx": 1,
+          "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
+          "src/screens/Onboarding/steps/Entry/Entry.tsx": 1,
+          "src/screens/Onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
+          "src/screens/Send/steps/EntryStep/AssetSelector.tsx": 1
+        },
         "display": { "src/screens/Receive/Receive.tsx": 1 },
         "flexDirection": {
           "src/screens/Receive/Receive.tsx": 1,
@@ -1449,21 +1495,15 @@
           "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 1
         },
         "borderedBottom": { "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1 },
+        "onMouseEnter": { "src/screens/Settings/NetworkList.tsx": 1 },
+        "onMouseLeave": { "src/screens/Settings/NetworkList.tsx": 1 },
         "as": {
           "src/screens/Onboarding/shared/Checkbox.tsx": 1,
           "src/screens/Onboarding/steps/LinkWallet/LinkWallet.tsx": 1
         },
         "top": {
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
-        },
-        "spacingVertical": {
-          "src/screens/Settings/pages/SettingsPage.tsx": 1,
-          "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
-          "src/screens/Onboarding/steps/Entry/Entry.tsx": 1,
-          "src/screens/Onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
-          "src/screens/Send/steps/EntryStep/AssetSelector.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
         }
       }
     },
@@ -1572,7 +1612,7 @@
         "src/components/PhoneConfirmation/PhoneConfirmation.tsx": 1,
         "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
         "src/screens/Onramp/Interstitial.tsx": 1,
-        "src/screens/Settings/List.tsx": 1,
+        "src/screens/Settings/NetworkList.tsx": 1,
         "src/screens/Settings/SettingsItems.tsx": 1,
         "src/screens/TransactionHistory/TransactionHistory.tsx": 1,
         "src/screens/TransactionHistory/Transactions.tsx": 2,
@@ -1583,8 +1623,8 @@
         "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
         "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
         "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1,
         "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
       },
@@ -1595,7 +1635,7 @@
           "src/components/PhoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
-          "src/screens/Settings/List.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 1,
           "src/screens/TransactionHistory/TransactionHistory.tsx": 1,
           "src/screens/TransactionHistory/Transactions.tsx": 2,
@@ -1606,8 +1646,8 @@
           "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
           "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1,
           "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
         },
@@ -1643,9 +1683,11 @@
           "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1
         },
         "spacingStart": {
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/TransactionHistory/Transactions.tsx": 2,
           "src/screens/PortfolioWallet/components/AssetTransactions.tsx": 2
-        }
+        },
+        "spacingVertical": { "src/screens/Settings/NetworkList.tsx": 1 }
       }
     },
     {
@@ -1659,8 +1701,8 @@
         "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
         "src/components/SharedAdjustGasPresetStep/SharedAdjustGasPresetStep.tsx": 3,
         "src/screens/Portfolio/Portfolio.tsx": 5,
+        "src/screens/Settings/CustomNetworks.tsx": 1,
         "src/screens/Settings/DAppSettings.tsx": 1,
-        "src/screens/Settings/List.tsx": 1,
         "src/screens/Portfolio/CryptoAssetPortfolio/components/AssetList.tsx": 5
       },
       "propsWithCallSites": {
@@ -1669,16 +1711,16 @@
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
           "src/components/SharedAdjustGasPresetStep/SharedAdjustGasPresetStep.tsx": 3,
           "src/screens/Portfolio/Portfolio.tsx": 5,
+          "src/screens/Settings/CustomNetworks.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
-          "src/screens/Settings/List.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AssetList.tsx": 5
         },
         "description": {
           "src/components/TxnListFallback.tsx": 1,
           "src/components/SharedAdjustGasPresetStep/SharedAdjustGasPresetStep.tsx": 3,
           "src/screens/Portfolio/Portfolio.tsx": 5,
+          "src/screens/Settings/CustomNetworks.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
-          "src/screens/Settings/List.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AssetList.tsx": 5
         },
         "detail": {
@@ -1686,8 +1728,8 @@
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
           "src/components/SharedAdjustGasPresetStep/SharedAdjustGasPresetStep.tsx": 3,
           "src/screens/Portfolio/Portfolio.tsx": 5,
+          "src/screens/Settings/CustomNetworks.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
-          "src/screens/Settings/List.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AssetList.tsx": 5
         },
         "subdetail": {
@@ -1695,8 +1737,8 @@
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
           "src/components/SharedAdjustGasPresetStep/SharedAdjustGasPresetStep.tsx": 3,
           "src/screens/Portfolio/Portfolio.tsx": 5,
+          "src/screens/Settings/CustomNetworks.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
-          "src/screens/Settings/List.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AssetList.tsx": 5
         },
         "media": {
@@ -1739,8 +1781,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 81,
-      "totalCallSites": 44,
+      "totalInstances": 83,
+      "totalCallSites": 45,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -1845,8 +1887,9 @@
         "src/screens/Portfolio/PortfolioSelector.tsx": 1,
         "src/screens/PortfolioCollection/CollectionData.tsx": 1,
         "src/screens/PortfolioWallet/PortfolioWallet.tsx": 2,
+        "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
         "src/screens/Receive/Receive.tsx": 1,
-        "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 2,
+        "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 3,
         "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1,
         "src/screens/TransactionHistory/txnDetail.tsx": 10,
         "src/screens/Onboarding/shared/StepperIndicator.tsx": 2,
@@ -1864,7 +1907,7 @@
         "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 1,
         "src/screens/Send/steps/EntryStep/AssetSelector.tsx": 2,
         "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 2,
-        "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 4,
         "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
       },
@@ -1884,6 +1927,7 @@
           "src/components/TransactionDetails/TransactionDetails.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
           "src/screens/PortfolioWallet/PortfolioWallet.tsx": 2,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Receive/Receive.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1,
@@ -1900,6 +1944,7 @@
           "src/screens/Onboarding/steps/Verify/MnemonicRow.tsx": 1,
           "src/screens/Send/steps/EntryStep/AssetSelector.tsx": 1,
           "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1
         },
         "alignItems": {
@@ -1959,6 +2004,8 @@
           "src/components/NavTitle/NavTitle.tsx": 1,
           "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/TransactionDetails/TransactionDetailError.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+          "src/screens/Receive/Receive.tsx": 1,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
           "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
@@ -1998,6 +2045,7 @@
           "src/components/NavTitle/NavTitle.tsx": 1,
           "src/components/NavTitle/NavTitleFallback.tsx": 1,
           "src/components/NetworkSelectionText/NetworkSelectionText.tsx": 1,
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Trade/EntrySelector/RowLoadingFallback.tsx": 1
         },
         "flexGrow": {
@@ -2042,7 +2090,7 @@
           "src/screens/CollectibleDetail/CollectibleChainData.tsx": 1,
           "src/screens/CollectibleDetail/CollectibleLinks.tsx": 2,
           "src/screens/Receive/Receive.tsx": 1,
-          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 2,
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 3,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/PortfolioWallet/components/AssetDetail.tsx": 1,
           "src/screens/Onboarding/steps/Entry/Entry.tsx": 1,
@@ -2066,8 +2114,8 @@
     {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 35,
-      "totalCallSites": 28,
+      "totalInstances": 36,
+      "totalCallSites": 29,
       "cds": "@cbhq/cds-web/layout/Spacer",
       "callSites": {
         "src/components/AmountInput/AmountInput.tsx": 1,
@@ -2085,13 +2133,14 @@
         "src/screens/CollectibleDetail/CollectibleChainData.tsx": 1,
         "src/screens/CollectibleDetail/CollectibleLinks.tsx": 1,
         "src/screens/Portfolio/PortfolioSelector.tsx": 1,
+        "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
         "src/screens/Settings/AutoLockTimer.tsx": 1,
         "src/screens/Settings/ConnectedTextInput.tsx": 1,
         "src/screens/AppLock/components/ForgotPassword.tsx": 2,
         "src/screens/AppLock/components/Recovery.tsx": 2,
-        "src/screens/Settings/pages/SettingsPage.tsx": 1,
         "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
         "src/screens/Trade/EntrySelector/EntrySelectorLoadingFallback.tsx": 1,
+        "src/screens/Settings/pages/SettingsPage.tsx": 1,
         "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
         "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 2,
         "src/screens/Send/steps/EntryStep/EntryStep.tsx": 1,
@@ -2112,6 +2161,7 @@
           "src/components/SharedSelectSourceStep/SharedSelectSourceStep.tsx": 1,
           "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 2,
           "src/screens/CollectibleDetail/CollectibleLinks.tsx": 1,
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Settings/AutoLockTimer.tsx": 1,
           "src/screens/Settings/ConnectedTextInput.tsx": 1,
           "src/screens/AppLock/components/ForgotPassword.tsx": 1,
@@ -2132,22 +2182,23 @@
       "name": "IconButton",
       "sourceFile": "@cbhq/cds-web/buttons/IconButton",
       "totalInstances": 14,
-      "totalCallSites": 13,
+      "totalCallSites": 14,
       "cds": "@cbhq/cds-web/buttons/IconButton",
       "callSites": {
         "src/components/AmountInput/AmountInput.tsx": 1,
         "src/components/AmountInput/AmountInputFallback.tsx": 1,
+        "src/components/CopyIconButton/CopyIconButton.tsx": 1,
         "src/components/PortfolioMenu/PortfolioOnrampButton.tsx": 1,
         "src/components/PortfolioMenu/PortfolioSendbutton.tsx": 1,
         "src/components/PortfolioMenu/PortfolioTradeButton.tsx": 1,
         "src/components/RecoveryPhrase/RecoveryPhrase.tsx": 1,
         "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
         "src/components/TransactionDetails/TransactionDetailError.tsx": 1,
-        "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 2,
+        "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
         "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
         "src/screens/Onboarding/shared/forms/ValidatedTextInput.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
       },
       "propsWithCallSites": {
         "testID": {
@@ -2156,22 +2207,23 @@
           "src/components/PortfolioMenu/PortfolioOnrampButton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioSendbutton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioTradeButton.tsx": 1,
-          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 2
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1
         },
         "name": {
           "src/components/AmountInput/AmountInput.tsx": 1,
           "src/components/AmountInput/AmountInputFallback.tsx": 1,
+          "src/components/CopyIconButton/CopyIconButton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioOnrampButton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioSendbutton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioTradeButton.tsx": 1,
           "src/components/RecoveryPhrase/RecoveryPhrase.tsx": 1,
           "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
           "src/components/TransactionDetails/TransactionDetailError.tsx": 1,
-          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 2,
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
           "src/screens/Onboarding/shared/forms/ValidatedTextInput.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
         "variant": {
           "src/components/AmountInput/AmountInput.tsx": 1,
@@ -2183,18 +2235,20 @@
         },
         "onPress": {
           "src/components/AmountInput/AmountInput.tsx": 1,
+          "src/components/CopyIconButton/CopyIconButton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioOnrampButton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioSendbutton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioTradeButton.tsx": 1,
           "src/components/RecoveryPhrase/RecoveryPhrase.tsx": 1,
           "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
           "src/components/TransactionDetails/TransactionDetailError.tsx": 1,
-          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 2,
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
           "src/screens/Onboarding/shared/forms/ValidatedTextInput.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
+        "compact": { "src/components/CopyIconButton/CopyIconButton.tsx": 1 },
         "disabled": {
           "src/components/PortfolioMenu/PortfolioSendbutton.tsx": 1,
           "src/components/PortfolioMenu/PortfolioTradeButton.tsx": 1
@@ -2206,21 +2260,21 @@
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
           "src/screens/Onboarding/shared/forms/ValidatedTextInput.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
         "accessibilityLabel": {
           "src/components/RecoveryPhrase/RecoveryPhrase.tsx": 1,
           "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
           "src/screens/Onboarding/shared/StepperIndicator.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         }
       }
     },
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 51,
+      "totalInstances": 50,
       "totalCallSites": 38,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "callSites": {
@@ -2239,13 +2293,13 @@
         "src/screens/CollectibleDetail/CollectibleAttributes.tsx": 1,
         "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
         "src/screens/Receive/Address.tsx": 2,
-        "src/screens/Receive/Receive.tsx": 2,
+        "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
         "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
         "src/screens/Receive/ReceiveWalletAddressModal.tsx": 2,
-        "src/screens/Settings/AddCustomNetwork.tsx": 1,
         "src/screens/Settings/AddCustomToken.tsx": 1,
         "src/screens/Settings/ConnectedTextInput.tsx": 2,
         "src/screens/Settings/DAppConnectionInfoRow.tsx": 1,
+        "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
         "src/screens/TransactionHistory/txnDetail.tsx": 1,
         "src/screens/Onboarding/shared/Checkbox.tsx": 1,
         "src/screens/Trade/EntrySelector/EntrySelector.tsx": 4,
@@ -2259,7 +2313,7 @@
         "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 3,
         "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
         "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1,
         "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
       },
@@ -2280,13 +2334,13 @@
           "src/screens/CollectibleDetail/CollectibleAttributes.tsx": 1,
           "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
           "src/screens/Receive/Address.tsx": 2,
-          "src/screens/Receive/Receive.tsx": 2,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressModal.tsx": 2,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
           "src/screens/Settings/ConnectedTextInput.tsx": 2,
           "src/screens/Settings/DAppConnectionInfoRow.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/Onboarding/shared/Checkbox.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 4,
@@ -2300,7 +2354,7 @@
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 3,
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1,
           "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
         },
@@ -2319,12 +2373,12 @@
           "src/screens/CollectibleDetail/CollectibleAttributes.tsx": 1,
           "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
           "src/screens/Receive/Address.tsx": 1,
-          "src/screens/Receive/Receive.tsx": 2,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressModal.tsx": 2,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
           "src/screens/Settings/ConnectedTextInput.tsx": 2,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/Onboarding/shared/Checkbox.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 3,
@@ -2343,7 +2397,6 @@
           "src/components/PhoneConfirmation/PhoneConfirmation.tsx": 1,
           "src/components/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/components/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
-          "src/screens/Receive/Receive.tsx": 2,
           "src/screens/Send/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1
@@ -2359,12 +2412,13 @@
           "src/components/RecoveryPhraseInput/RecoveryPhraseInput.tsx": 1,
           "src/components/TransactionConfirmationTopSection/TopSectionItem.tsx": 1,
           "src/screens/CollectibleDetail/CollectibleAttributes.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
           "src/screens/Receive/ReceiveWalletAddressModal.tsx": 2,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
           "src/screens/Settings/ConnectedTextInput.tsx": 1,
           "src/screens/Settings/DAppConnectionInfoRow.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 3,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
@@ -2455,8 +2509,8 @@
     {
       "name": "PressableOpacity",
       "sourceFile": "@cbhq/cds-web/system/PressableOpacity",
-      "totalInstances": 14,
-      "totalCallSites": 11,
+      "totalInstances": 15,
+      "totalCallSites": 12,
       "cds": "@cbhq/cds-web/system/PressableOpacity",
       "aliasedCdsComponents": [
         {
@@ -2475,6 +2529,7 @@
         "src/components/TransactionConfirmationTopSection/TransactionConfirmationTopSection.tsx": 1,
         "src/screens/CollectibleDetail/CollectibleLinks.tsx": 1,
         "src/screens/Settings/DAppConnectionInfoRow.tsx": 1,
+        "src/screens/Settings/NetworkList.tsx": 1,
         "src/screens/TransactionHistory/SpeedUpAndCancelIcon.tsx": 1,
         "src/screens/AppLock/components/UnLockScreen.tsx": 1,
         "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 3,
@@ -2489,6 +2544,7 @@
           "src/components/TransactionConfirmationTopSection/TransactionConfirmationTopSection.tsx": 1,
           "src/screens/CollectibleDetail/CollectibleLinks.tsx": 1,
           "src/screens/Settings/DAppConnectionInfoRow.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancelIcon.tsx": 1,
           "src/screens/AppLock/components/UnLockScreen.tsx": 1,
           "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 3,
@@ -2499,6 +2555,7 @@
           "src/components/AmountInput/MaxButton.tsx": 1,
           "src/components/BlurText/BlurText.tsx": 2,
           "src/screens/Settings/DAppConnectionInfoRow.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/Onboarding/steps/ScanQr/ScanQr.tsx": 1,
           "src/screens/Send/steps/EntryStep/AssetSelector.tsx": 1
         },
@@ -2543,7 +2600,7 @@
         "src/screens/Receive/Receive.tsx": 2,
         "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
         "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -2560,7 +2617,7 @@
           "src/screens/Receive/Receive.tsx": 2,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
         "testID": {
           "src/components/AssetBalance/AssetBalance.tsx": 1,
@@ -2581,24 +2638,23 @@
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         },
         "spacingStart": { "src/components/BlurText/BlurText.tsx": 1 },
-        "spacing": {
-          "src/components/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
-          "src/screens/Receive/Receive.tsx": 2
-        },
+        "spacing": { "src/components/SearchSuggestionsList/SearchSuggestionsList.tsx": 1 },
         "spacingBottom": {
           "src/components/SearchSuggestionsList/SearchSuggestionsList.tsx": 1,
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1
         },
         "align": { "src/screens/CollectibleDetail/CollectibleLinks.tsx": 1 },
         "onClick": { "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1 },
-        "id": { "src/screens/PortfolioCollection/CollectionData.tsx": 2 }
+        "id": { "src/screens/PortfolioCollection/CollectionData.tsx": 2 },
+        "spacingVertical": { "src/screens/Receive/Receive.tsx": 2 },
+        "spacingHorizontal": { "src/screens/Receive/Receive.tsx": 2 }
       }
     },
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 76,
-      "totalCallSites": 49,
+      "totalInstances": 77,
+      "totalCallSites": 51,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "src/components/BlurText/BlurText.tsx": 1,
@@ -2619,8 +2675,10 @@
         "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
         "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
         "src/screens/Onramp/Interstitial.tsx": 1,
+        "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
         "src/screens/Settings/AutoLockTimer.tsx": 1,
         "src/screens/Settings/ChangePassword.tsx": 1,
+        "src/screens/Settings/NetworkList.tsx": 1,
         "src/screens/Settings/SettingsItems.tsx": 2,
         "src/screens/TransactionHistory/TransactionHistory.tsx": 1,
         "src/screens/TransactionHistory/txnDetail.tsx": 16,
@@ -2646,8 +2704,8 @@
         "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 3,
         "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 3,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 1
       },
@@ -2671,8 +2729,10 @@
           "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Settings/AutoLockTimer.tsx": 1,
           "src/screens/Settings/ChangePassword.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 2,
           "src/screens/TransactionHistory/TransactionHistory.tsx": 1,
           "src/screens/TransactionHistory/txnDetail.tsx": 16,
@@ -2698,8 +2758,8 @@
           "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 3,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 3,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 1
         },
@@ -2711,6 +2771,7 @@
           "src/components/TransactionDetails/TransactionDetailRow.tsx": 2,
           "src/screens/CollectibleDetail/CollectibleChainData.tsx": 1,
           "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
           "src/screens/Settings/ChangePassword.tsx": 1,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
@@ -2758,8 +2819,8 @@
           "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 3,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 2
         },
         "spacingStart": {
@@ -2778,10 +2839,13 @@
           "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
           "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
+          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 1
         },
-        "spacingVertical": { "src/components/PhoneConfirmation/PhoneConfirmation.tsx": 1 },
+        "spacingVertical": {
+          "src/components/PhoneConfirmation/PhoneConfirmation.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1
+        },
         "overflow": {
           "src/components/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/screens/CollectibleDetail/CollectibleChainData.tsx": 1
@@ -2800,6 +2864,7 @@
         "spacingEnd": { "src/screens/Settings/AutoLockTimer.tsx": 1 },
         "spacingTop": {
           "src/screens/Settings/SettingsItems.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 1
         },
         "spacingHorizontal": {
@@ -2811,7 +2876,7 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 57,
+      "totalInstances": 58,
       "totalCallSites": 35,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
@@ -2834,7 +2899,7 @@
         "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
         "src/screens/Navigation/Navigation.tsx": 3,
         "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
-        "src/screens/Settings/List.tsx": 1,
+        "src/screens/Settings/NetworkList.tsx": 2,
         "src/screens/Settings/SettingsItems.tsx": 3,
         "src/screens/TransactionHistory/txnDetail.tsx": 4,
         "src/screens/Trade/EntrySelector/EntrySelector.tsx": 3,
@@ -2872,7 +2937,7 @@
           "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
           "src/screens/Navigation/Navigation.tsx": 3,
           "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
-          "src/screens/Settings/List.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 2,
           "src/screens/Settings/SettingsItems.tsx": 3,
           "src/screens/TransactionHistory/txnDetail.tsx": 4,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 3,
@@ -2909,7 +2974,7 @@
           "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
           "src/screens/Navigation/Navigation.tsx": 3,
           "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
-          "src/screens/Settings/List.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 2,
           "src/screens/Settings/SettingsItems.tsx": 3,
           "src/screens/TransactionHistory/txnDetail.tsx": 4,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 3,
@@ -2946,6 +3011,7 @@
           "src/screens/CollectibleDetail/CollectibleMetadata.tsx": 1,
           "src/screens/Navigation/Navigation.tsx": 3,
           "src/screens/PortfolioWallet/PortfolioWallet.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 3,
           "src/screens/TransactionHistory/txnDetail.tsx": 4,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 3,
@@ -2996,7 +3062,7 @@
           "src/components/TransactionConfirmationTopSection/TransactionConfirmationTopSection.tsx": 1
         },
         "testID": {
-          "src/screens/Settings/List.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 2,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 2,
           "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestTopSection.tsx": 1
         },
@@ -3010,13 +3076,16 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 62,
+      "totalInstances": 63,
       "totalCallSites": 46,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
         {
           "aliasPath": "src/components/CopyButton/CopyButton.tsx",
-          "callSites": ["src/screens/Receive/ReceiveWalletAddressModal.tsx"]
+          "callSites": [
+            "src/screens/Receive/AssetReceiveByAddress.tsx",
+            "src/screens/Receive/ReceiveWalletAddressModal.tsx"
+          ]
         }
       ],
       "callSites": {
@@ -3033,12 +3102,12 @@
         "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1,
         "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
         "src/screens/Onramp/Interstitial.tsx": 2,
-        "src/screens/Settings/AddCustomNetwork.tsx": 2,
         "src/screens/Settings/AddCustomToken.tsx": 2,
         "src/screens/Settings/AutoLockTimer.tsx": 1,
         "src/screens/Settings/ChangePassword.tsx": 1,
         "src/screens/Settings/DAppSettings.tsx": 1,
         "src/screens/Settings/SettingsItems.tsx": 2,
+        "src/screens/Settings/SharedCustomNetworkForm.tsx": 3,
         "src/screens/TransactionHistory/txnDetail.tsx": 1,
         "src/screens/AppLock/components/ForgotPassword.tsx": 2,
         "src/screens/AppLock/components/Recovery.tsx": 2,
@@ -3062,8 +3131,8 @@
         "src/screens/Trade/steps/EntryStep/EntryStepFallback.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 2,
         "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 2
       },
@@ -3076,11 +3145,11 @@
           "src/components/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
-          "src/screens/Settings/AddCustomNetwork.tsx": 2,
           "src/screens/Settings/AddCustomToken.tsx": 2,
           "src/screens/Settings/AutoLockTimer.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 3,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/AppLock/components/ForgotPassword.tsx": 2,
           "src/screens/AppLock/components/Recovery.tsx": 2,
@@ -3108,12 +3177,12 @@
           "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1,
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 2,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
           "src/screens/Settings/AutoLockTimer.tsx": 1,
           "src/screens/Settings/ChangePassword.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 2,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 2,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/AppLock/components/ForgotPassword.tsx": 2,
           "src/screens/AppLock/components/Recovery.tsx": 2,
@@ -3136,8 +3205,8 @@
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 2,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 2
         },
@@ -3149,11 +3218,11 @@
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
           "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
           "src/components/SignOutConfirmation/SignOutConfirmation.tsx": 1,
-          "src/screens/Settings/AddCustomNetwork.tsx": 2,
           "src/screens/Settings/AddCustomToken.tsx": 2,
           "src/screens/Settings/AutoLockTimer.tsx": 1,
           "src/screens/Settings/ChangePassword.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 3,
           "src/screens/TransactionHistory/txnDetail.tsx": 1,
           "src/screens/AppLock/components/ForgotPassword.tsx": 2,
           "src/screens/AppLock/components/Recovery.tsx": 2,
@@ -3171,7 +3240,7 @@
           "src/screens/Trade/steps/EntryStep/EntryStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 2,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 2
         },
@@ -3203,7 +3272,7 @@
           "src/screens/Trade/steps/EntryStep/EntryStepFallback.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep.tsx": 2,
           "src/screens/TransactionHistory/SpeedUpAndCancel/steps/StatusStep/StatusStep.tsx": 2
         },
@@ -3233,8 +3302,8 @@
           "src/components/CreatePassword/CreatePassword.tsx": 1,
           "src/components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep.tsx": 1,
           "src/components/SignOutConfirmation/SignOutConfirmation.tsx": 1,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
           "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
           "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
           "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
@@ -3253,8 +3322,8 @@
         },
         "type": {
           "src/screens/ConnectionLost/ConnectionLost.tsx": 1,
-          "src/screens/Settings/AddCustomNetwork.tsx": 2,
           "src/screens/Settings/AddCustomToken.tsx": 2,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 3,
           "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 2,
           "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 2,
           "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 2
@@ -3269,7 +3338,7 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 19,
+      "totalInstances": 20,
       "totalCallSites": 17,
       "cds": "@cbhq/cds-web/typography/Link",
       "aliasedCdsComponents": [
@@ -3300,8 +3369,8 @@
         "src/screens/Send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
         "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1,
         "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2,
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
         "src/screens/Trade/steps/ConfirmationPreviewStep/hooks/useTradeTransactionDetailsErrors.tsx": 1,
         "src/screens/Trade/steps/EntryStep/hooks/useTargetSelector.tsx": 1
       },
@@ -3315,7 +3384,7 @@
           "src/screens/Send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1,
           "src/screens/Trade/steps/ConfirmationPreviewStep/hooks/useTradeTransactionDetailsErrors.tsx": 1,
           "src/screens/Trade/steps/EntryStep/hooks/useTargetSelector.tsx": 1
         },
@@ -3326,7 +3395,7 @@
           "src/screens/Send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
         "onPress": {
           "src/components/CreatePassword/CreatePassword.tsx": 2,
@@ -3338,8 +3407,8 @@
           "src/screens/Send/steps/SignOnPhoneStep/SignOnPhoneStep.tsx": 1,
           "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2,
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
         "onClick": {
           "src/components/NetworkSelectionText/NetworkSelectionText.tsx": 1,
@@ -3364,7 +3433,7 @@
           "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1,
           "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 1
         },
         "to": { "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1 }
       }
@@ -3372,23 +3441,28 @@
     {
       "name": "Pictogram",
       "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
-      "totalInstances": 3,
-      "totalCallSites": 2,
+      "totalInstances": 4,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/illustrations/Pictogram",
       "callSites": {
         "src/components/ErrorState/ErrorState.tsx": 1,
-        "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 2
+        "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 2,
+        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
           "src/components/ErrorState/ErrorState.tsx": 1,
-          "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 2
+          "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 2,
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
         },
         "dimension": {
           "src/components/ErrorState/ErrorState.tsx": 1,
           "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 2
         },
-        "scaleMultiplier": { "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 2 }
+        "scaleMultiplier": {
+          "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 2,
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
+        }
       }
     },
     {
@@ -3402,8 +3476,8 @@
         "src/components/TransactionDetails/TransactionDetails.tsx": 1,
         "src/components/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
         "src/screens/Onramp/Interstitial.tsx": 1,
-        "src/screens/Settings/AddCustomNetwork.tsx": 1,
         "src/screens/Settings/AddCustomToken.tsx": 1,
+        "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
         "src/screens/Settings/pages/SettingsPage.tsx": 1,
         "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
         "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
@@ -3415,8 +3489,8 @@
           "src/components/TransactionDetails/TransactionDetails.tsx": 1,
           "src/components/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
           "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
           "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
           "src/screens/Onboarding/steps/hardware-wallet/LedgerPopup/LedgerPopup.tsx": 1
@@ -3434,8 +3508,8 @@
           "src/components/TransactionDetails/TransactionDetails.tsx": 1,
           "src/components/TransactionDetails/TransactionDetailsLoadingFallback.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
           "src/screens/Settings/AddCustomToken.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1,
           "src/screens/Settings/pages/SettingsPage.tsx": 1,
           "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
           "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1,
@@ -3625,8 +3699,8 @@
     {
       "name": "ListCell",
       "sourceFile": "@cbhq/cds-web/cells/ListCell",
-      "totalInstances": 16,
-      "totalCallSites": 8,
+      "totalInstances": 17,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/cells/ListCell",
       "callSites": {
         "src/components/SearchSuggestionsList/SearchSuggestionCell.tsx": 1,
@@ -3635,6 +3709,7 @@
         "src/components/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
         "src/components/SharedNFTRowItem/SharedNFTRowItem.tsx": 1,
         "src/screens/Settings/DAppConnectionInfoRow.tsx": 1,
+        "src/screens/Settings/NetworkList.tsx": 1,
         "src/screens/Settings/SettingsItems.tsx": 1,
         "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 6
       },
@@ -3645,6 +3720,7 @@
           "src/components/SharedAdjustGasPresetStep/SharedAdjustGasPresetStep.tsx": 4,
           "src/components/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/components/SharedNFTRowItem/SharedNFTRowItem.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 1,
           "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 6
         },
@@ -3685,6 +3761,7 @@
           "src/components/SharedAdjustGasPresetStep/SharedAdjustGasPresetStep.tsx": 4,
           "src/components/SharedAssetRowItem/SharedAssetRowItem.tsx": 1,
           "src/components/SharedNFTRowItem/SharedNFTRowItem.tsx": 1,
+          "src/screens/Settings/NetworkList.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 1
         },
         "disabled": {
@@ -3692,10 +3769,15 @@
           "src/components/SharedNFTRowItem/SharedNFTRowItem.tsx": 1
         },
         "priority": { "src/screens/Settings/DAppConnectionInfoRow.tsx": 1 },
+        "key": { "src/screens/Settings/NetworkList.tsx": 1 },
+        "outerSpacing": { "src/screens/Settings/NetworkList.tsx": 1 },
+        "compact": {
+          "src/screens/Settings/NetworkList.tsx": 1,
+          "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 6
+        },
         "action": { "src/screens/Settings/SettingsItems.tsx": 1 },
         "detailWidth": { "src/screens/Settings/SettingsItems.tsx": 1 },
         "variant": { "src/screens/Settings/SettingsItems.tsx": 1 },
-        "compact": { "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 6 },
         "innerSpacing": { "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 6 }
       }
     },
@@ -3721,45 +3803,49 @@
     {
       "name": "TextLegal",
       "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 11,
-      "totalCallSites": 8,
+      "totalInstances": 14,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/typography/TextLegal",
       "callSites": {
         "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
         "src/screens/Onramp/Interstitial.tsx": 1,
         "src/screens/PortfolioCollection/CollectionData.tsx": 2,
-        "src/screens/Settings/pages/SettingsPage.tsx": 1,
+        "src/screens/Receive/Receive.tsx": 2,
         "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
+        "src/screens/Settings/pages/SettingsPage.tsx": 1,
         "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
         "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 3,
-        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
+        "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2
       },
       "propsWithCallSites": {
         "as": {
           "src/components/ShowRecoveryPhrase/ShowRecoveryPhrase.tsx": 1,
           "src/screens/Onramp/Interstitial.tsx": 1,
           "src/screens/PortfolioCollection/CollectionData.tsx": 2,
-          "src/screens/Settings/pages/SettingsPage.tsx": 1,
+          "src/screens/Receive/Receive.tsx": 2,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
+          "src/screens/Settings/pages/SettingsPage.tsx": 1,
           "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
           "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 3,
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2
         },
         "color": {
           "src/screens/Onramp/Interstitial.tsx": 1,
           "src/screens/PortfolioCollection/CollectionData.tsx": 2,
-          "src/screens/Settings/pages/SettingsPage.tsx": 1,
+          "src/screens/Receive/Receive.tsx": 2,
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
+          "src/screens/Settings/pages/SettingsPage.tsx": 1,
           "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
           "src/screens/Onboarding/steps/ImportWallet/ImportOrLink.tsx": 3,
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2
         },
+        "align": { "src/screens/Receive/Receive.tsx": 2 },
         "spacingTop": { "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1 },
         "testID": {
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2
         },
         "spacingBottom": {
-          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 1
+          "src/screens/Onboarding/steps/hardware-wallet/HWSignOnDevice/HWSignOnDevice.tsx": 2
         }
       }
     },
@@ -3834,18 +3920,18 @@
         "src/screens/Onramp/Interstitial.tsx": 1,
         "src/screens/Onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
         "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
-        "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 2
+        "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 2
       },
       "propsWithCallSites": {
         "name": {
           "src/screens/Onramp/Interstitial.tsx": 1,
           "src/screens/Onboarding/steps/LinkWallet/LinkWallet.tsx": 1,
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1,
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 2
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 2
         },
         "testID": { "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx": 1 },
         "scaleMultiplier": {
-          "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting.tsx": 2
+          "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting.tsx": 2
         }
       }
     },
@@ -3876,75 +3962,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/overlays/Modal/ModalHeader"
-    },
-    {
-      "name": "TableRow",
-      "sourceFile": "@cbhq/cds-web/tables/TableRow",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/tables/TableRow",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "src/screens/Settings/List.tsx",
-          "callSites": ["src/screens/Settings/List.tsx", "src/screens/Settings/List.tsx"]
-        }
-      ],
-      "callSites": { "src/screens/Settings/List.tsx": 2 },
-      "propsWithCallSites": {
-        "key": { "src/screens/Settings/List.tsx": 1 },
-        "testID": { "src/screens/Settings/List.tsx": 1 },
-        "onPress": { "src/screens/Settings/List.tsx": 1 }
-      }
-    },
-    {
-      "name": "TableCell",
-      "sourceFile": "@cbhq/cds-web/tables/TableCell",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/tables/TableCell",
-      "callSites": { "src/screens/Settings/List.tsx": 3 },
-      "propsWithCallSites": {
-        "title": { "src/screens/Settings/List.tsx": 1 },
-        "direction": { "src/screens/Settings/List.tsx": 1 },
-        "justifyContent": { "src/screens/Settings/List.tsx": 1 }
-      }
-    },
-    {
-      "name": "Table",
-      "sourceFile": "@cbhq/cds-web/tables/Table",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/tables/Table",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "src/screens/Settings/List.tsx",
-          "callSites": [
-            "src/components/SharedSelectSourceStep/SharedSelectSourceStep.tsx",
-            "src/screens/Settings/CustomNetworks.tsx",
-            "src/screens/Settings/DefaultNetworks.tsx",
-            "src/screens/Settings/DefaultNetworks.tsx",
-            "src/screens/TransactionHistory/Transactions.tsx",
-            "src/screens/PortfolioWallet/components/AssetTransactions.tsx",
-            "src/screens/Trade/steps/SelectAssetStep/SelectAssetStep.tsx",
-            "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TableHeader",
-      "sourceFile": "@cbhq/cds-web/tables/TableHeader",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/tables/TableHeader"
-    },
-    {
-      "name": "TableBody",
-      "sourceFile": "@cbhq/cds-web/tables/TableBody",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/tables/TableBody",
-      "propsWithCallSites": { "testID": { "src/screens/Settings/List.tsx": 1 } }
     },
     {
       "name": "Switch",
@@ -4103,7 +4120,11 @@
       "aliasedCdsComponents": [
         {
           "aliasPath": "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx",
-          "callSites": ["src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx"]
+          "callSites": [
+            "src/screens/Settings/NetworkList.tsx",
+            "src/screens/Settings/NetworkList.tsx",
+            "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx"
+          ]
         }
       ],
       "propsWithCallSites": {
@@ -4816,8 +4837,8 @@
         { "prop": "style", "callSite": "src/screens/Settings/AddCustomToken.tsx" }
       ],
       "callSites": {
-        "src/screens/Settings/AddCustomNetwork.tsx": 1,
-        "src/screens/Settings/AddCustomToken.tsx": 1
+        "src/screens/Settings/AddCustomToken.tsx": 1,
+        "src/screens/Settings/SharedCustomNetworkForm.tsx": 1
       },
       "propsWithCallSites": { "style": { "src/screens/Settings/AddCustomToken.tsx": 1 } }
     },
@@ -4938,6 +4959,14 @@
         "data-testid": { "src/screens/Settings/DAppConnectionInfoRow.tsx": 1 },
         "key": { "src/screens/Settings/DAppConnectionInfoRow.tsx": 1 }
       }
+    },
+    {
+      "name": "CustomAccessoryContainer",
+      "sourceFile": "src/screens/Settings/NetworkList.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": { "src/screens/Settings/NetworkList.tsx": 2 }
     },
     {
       "name": "SmallListCell",
@@ -5946,10 +5975,10 @@
       "name": "Suspense",
       "sourceFile": "react/Suspense",
       "totalInstances": 13,
-      "totalCallSites": 12,
+      "totalCallSites": 13,
       "callSites": {
         "test/MockedQueryProvider.tsx": 1,
-        "src/data/DataProvider.tsx": 2,
+        "src/data/DataProvider.tsx": 1,
         "src/data/QueryProvider.tsx": 1,
         "src/components/SuspenseWithTransition/SuspenseWithTransition.tsx": 1,
         "src/screens/Portfolio/Portfolio.tsx": 1,
@@ -5957,6 +5986,7 @@
         "src/screens/Settings/CustomNetworks.tsx": 1,
         "src/screens/Settings/DAppSettings.tsx": 1,
         "src/screens/Settings/SettingsItems.tsx": 1,
+        "src/screens/TransactionHistory/TransactionHistory.tsx": 1,
         "src/util/RootSuspense/RootSuspense.tsx": 1,
         "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
         "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1
@@ -5964,7 +5994,7 @@
       "propsWithCallSites": {
         "fallback": {
           "test/MockedQueryProvider.tsx": 1,
-          "src/data/DataProvider.tsx": 2,
+          "src/data/DataProvider.tsx": 1,
           "src/data/QueryProvider.tsx": 1,
           "src/components/SuspenseWithTransition/SuspenseWithTransition.tsx": 1,
           "src/screens/Portfolio/Portfolio.tsx": 1,
@@ -5972,6 +6002,7 @@
           "src/screens/Settings/CustomNetworks.tsx": 1,
           "src/screens/Settings/DAppSettings.tsx": 1,
           "src/screens/Settings/SettingsItems.tsx": 1,
+          "src/screens/TransactionHistory/TransactionHistory.tsx": 1,
           "src/util/RootSuspense/RootSuspense.tsx": 1,
           "src/screens/PortfolioWallet/components/AssetDetailBalance.tsx": 1,
           "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep.tsx": 1
@@ -6001,6 +6032,12 @@
       }
     },
     {
+      "name": "ServiceProvider",
+      "sourceFile": "@providers/ServiceProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "iframe",
       "sourceFile": "src/components/IFramePortal.tsx",
       "totalInstances": 1,
@@ -6010,18 +6047,6 @@
     {
       "name": "TooltipReference",
       "sourceFile": "reakit/Tooltip/TooltipReference",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ServiceProvider",
-      "sourceFile": "@providers/ServiceProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "HookToRepositoryBridge",
-      "sourceFile": "src/data/HookToRepositoryBridge",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -7063,12 +7088,34 @@
         "src/hooks/useSignMessageLedger/useSignMessageLedger.tsx": 1
       },
       "propsWithCallSites": {
+        "flow": { "src/hooks/useSignAndSubmitLedger/useSignAndSubmitLedger.tsx": 1 },
         "onResend": {
           "src/hooks/useSignAndSubmitLedger/useSignAndSubmitLedger.tsx": 1,
           "src/hooks/useSignMessageLedger/useSignMessageLedger.tsx": 1
         },
         "isSigningMessage": { "src/hooks/useSignMessageLedger/useSignMessageLedger.tsx": 1 }
       }
+    },
+    {
+      "name": "ErrorState",
+      "sourceFile": "@components/ErrorState/ErrorState",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/screens/AppErrorBoundary/AppErrorBoundary.tsx": 1,
+        "src/screens/Trade/Trade.tsx": 1,
+        "src/screens/Trade/steps/PhoneConfirmationStep/PhoneConfirmationStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "primaryButtonText": { "src/screens/AppErrorBoundary/AppErrorBoundary.tsx": 1 },
+        "onPrimaryButtonPress": { "src/screens/AppErrorBoundary/AppErrorBoundary.tsx": 1 }
+      }
+    },
+    {
+      "name": "InternalBanner",
+      "sourceFile": "@components/InternalBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "MemoryRouter",
@@ -7118,11 +7165,13 @@
     {
       "name": "PopupAwareVStack",
       "sourceFile": "@components/PopupAwareVStack",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1,
-        "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1
+        "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1,
+        "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
+        "src/screens/Trade/steps/StatusStep/StatusStep.tsx": 1
       },
       "propsWithCallSites": {
         "spacingHorizontal": { "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1 },
@@ -7131,9 +7180,15 @@
         "height": { "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1 },
         "elevation": {
           "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1,
-          "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1
+          "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1,
+          "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
+          "src/screens/Trade/steps/StatusStep/StatusStep.tsx": 1
         },
-        "testID": { "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1 }
+        "testID": { "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1 },
+        "spacing": {
+          "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
+          "src/screens/Trade/steps/StatusStep/StatusStep.tsx": 1
+        }
       }
     },
     {
@@ -7144,21 +7199,6 @@
       "propsWithCallSites": {
         "src": { "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1 },
         "alt": { "src/screens/BannedLocationGate/BannedLocationScreen.tsx": 1 }
-      }
-    },
-    {
-      "name": "ErrorState",
-      "sourceFile": "@components/ErrorState/ErrorState",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "src/screens/AppErrorBoundary/AppErrorBoundary.tsx": 1,
-        "src/screens/Trade/Trade.tsx": 1,
-        "src/screens/Trade/steps/PhoneConfirmationStep/PhoneConfirmationStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "primaryButtonText": { "src/screens/AppErrorBoundary/AppErrorBoundary.tsx": 1 },
-        "onPrimaryButtonPress": { "src/screens/AppErrorBoundary/AppErrorBoundary.tsx": 1 }
       }
     },
     {
@@ -7311,6 +7351,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "flow": { "src/screens/HardwareWallet/HardwareWallet.tsx": 1 },
         "onResend": { "src/screens/HardwareWallet/HardwareWallet.tsx": 1 },
         "isSigningMessage": { "src/screens/HardwareWallet/HardwareWallet.tsx": 1 }
       }
@@ -7321,6 +7362,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "flow": { "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1 },
         "key": { "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1 },
         "isDevicePaired": { "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1 },
         "isOnboarding": { "src/screens/HardwareWallet/HardwareWalletStepper.tsx": 1 },
@@ -7445,8 +7487,8 @@
       "propsWithCallSites": { "key": { "src/screens/Onboarding/OnboardingStepper.tsx": 1 } }
     },
     {
-      "name": "TroubleConnecting",
-      "sourceFile": "src/screens/Onboarding/steps/hardware-wallet/TroubleConnecting/TroubleConnecting",
+      "name": "HWTroubleConnecting",
+      "sourceFile": "src/screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -7461,6 +7503,12 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "key": { "src/screens/Onboarding/OnboardingStepper.tsx": 1 } }
+    },
+    {
+      "name": "MockedServiceProvider",
+      "sourceFile": "@test/MockedServiceProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "OnboardingTestWrapper",
@@ -7736,6 +7784,50 @@
       "propsWithCallSites": { "address": { "src/screens/Receive/Address.tsx": 1 } }
     },
     {
+      "name": "QRCode",
+      "sourceFile": "@components/QRCodes/QRCode",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+        "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "qrCodeValue": {
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+          "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1
+        },
+        "embeddedIconSettings": {
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+          "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1
+        },
+        "testID": {
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+          "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CopyButton",
+      "sourceFile": "@components/CopyButton/CopyButton",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+        "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "textToCopy": {
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+          "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1
+        },
+        "testID": {
+          "src/screens/Receive/AssetReceiveByAddress.tsx": 1,
+          "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ReceiveWalletAddressModal",
       "sourceFile": "src/screens/Receive/ReceiveWalletAddressModal",
       "totalInstances": 1,
@@ -7770,26 +7862,52 @@
       "propsWithCallSites": { "wallet": { "src/screens/Receive/Receive.tsx": 1 } }
     },
     {
+      "name": "AssetReceiveByAddress",
+      "sourceFile": "src/screens/Receive/AssetReceiveByAddress",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "wallet": { "src/screens/Receive/ReceiveByAddress.tsx": 1 } }
+    },
+    {
       "name": "GenericReceiveByAddress",
       "sourceFile": "src/screens/Receive/GenericReceiveByAddress",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "Address",
-      "sourceFile": "src/screens/Receive/Address",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "name": "NetworkIcon",
+      "sourceFile": "@components/SharedAssetRowItem/NetworkIcon",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
+        "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
+        "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "network": {
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
+          "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
+          "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1
+        },
+        "size": {
+          "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1,
+          "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
+          "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1
+        },
+        "key": { "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1 },
+        "layout": { "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1 }
+      }
     },
     {
-      "name": "QRCode",
-      "sourceFile": "@components/QRCodes/QRCode",
+      "name": "CopyIconButton",
+      "sourceFile": "@components/CopyIconButton/CopyIconButton",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "qrCodeValue": { "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1 },
-        "embeddedIconSettings": { "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1 },
-        "testID": { "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1 }
+        "textToCopy": { "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1 },
+        "onPress": { "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1 },
+        "testID": { "src/screens/Receive/ReceiveWalletAddressListItem.tsx": 1 }
       }
     },
     {
@@ -7798,16 +7916,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": { "testID": { "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1 } }
-    },
-    {
-      "name": "CopyButton",
-      "sourceFile": "@components/CopyButton/CopyButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "textToCopy": { "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1 },
-        "testID": { "src/screens/Receive/ReceiveWalletAddressModal.tsx": 1 }
-      }
     },
     {
       "name": "CSSTransition",
@@ -7950,50 +8058,143 @@
       }
     },
     {
+      "name": "ConvertProvider",
+      "sourceFile": "src/screens/Trade/ConvertProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "convertibleAssets": { "src/screens/Trade/Trade.tsx": 1 },
+        "supportedChains": { "src/screens/Trade/Trade.tsx": 1 }
+      }
+    },
+    {
+      "name": "TradeStepper",
+      "sourceFile": "src/screens/Trade/TradeStepper",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "mostPopularSwapAssetId": { "src/screens/Trade/Trade.tsx": 1 } }
+    },
+    {
+      "name": "SuspenseWithTransition",
+      "sourceFile": "@components/SuspenseWithTransition/SuspenseWithTransition",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "fallback": { "src/screens/Trade/Trade.tsx": 1 } }
+    },
+    {
+      "name": "EntryStepFallback",
+      "sourceFile": "src/screens/Trade/steps/EntryStep/EntryStepFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TradeContent",
+      "sourceFile": "src/screens/Trade/Trade.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "StepWithNavigation",
+      "sourceFile": "@components/StepWithNavigation/StepWithNavigation",
+      "totalInstances": 7,
+      "totalCallSites": 1,
+      "callSites": { "src/screens/Trade/TradeStepper.tsx": 7 },
+      "propsWithCallSites": {
+        "key": { "src/screens/Trade/TradeStepper.tsx": 7 },
+        "component": { "src/screens/Trade/TradeStepper.tsx": 7 },
+        "hideNavigation": { "src/screens/Trade/TradeStepper.tsx": 3 }
+      }
+    },
+    {
+      "name": "EntryStep",
+      "sourceFile": "src/screens/Trade/steps/EntryStep/EntryStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "wallet": { "src/screens/Trade/TradeStepper.tsx": 1 } }
+    },
+    {
+      "name": "SelectAssetStep",
+      "sourceFile": "src/screens/Trade/steps/SelectAssetStep/SelectAssetStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "selectedWallet": { "src/screens/Trade/TradeStepper.tsx": 1 } }
+    },
+    {
+      "name": "SelectSourceStep",
+      "sourceFile": "src/screens/Trade/steps/SelectSourceStep/SelectSourceStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SelectNetworkStep",
+      "sourceFile": "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ConfirmationPreviewStep",
+      "sourceFile": "src/screens/Trade/steps/ConfirmationPreviewStep/ConfirmationPreviewStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PhoneConfirmationStep",
+      "sourceFile": "src/screens/Trade/steps/PhoneConfirmationStep/PhoneConfirmationStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "StatusStep",
+      "sourceFile": "src/screens/Trade/steps/StatusStep/StatusStep",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SharedCustomNetworkForm",
+      "sourceFile": "src/screens/Settings/SharedCustomNetworkForm",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/screens/Settings/AddCustomNetwork.tsx": 1,
+        "src/screens/Settings/UpdateCustomNetwork.tsx": 1
+      },
+      "propsWithCallSites": {
+        "initialValues": {
+          "src/screens/Settings/AddCustomNetwork.tsx": 1,
+          "src/screens/Settings/UpdateCustomNetwork.tsx": 1
+        },
+        "handleSubmit": {
+          "src/screens/Settings/AddCustomNetwork.tsx": 1,
+          "src/screens/Settings/UpdateCustomNetwork.tsx": 1
+        },
+        "handleGoBack": {
+          "src/screens/Settings/AddCustomNetwork.tsx": 1,
+          "src/screens/Settings/UpdateCustomNetwork.tsx": 1
+        },
+        "handleDelete": { "src/screens/Settings/UpdateCustomNetwork.tsx": 1 }
+      }
+    },
+    {
       "name": "Formik",
       "sourceFile": "formik/Formik",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
-        "src/screens/Settings/AddCustomNetwork.tsx": 1,
-        "src/screens/Settings/AddCustomToken.tsx": 1
+        "src/screens/Settings/AddCustomToken.tsx": 1,
+        "src/screens/Settings/SharedCustomNetworkForm.tsx": 1
       },
       "propsWithCallSites": {
         "initialValues": {
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
-          "src/screens/Settings/AddCustomToken.tsx": 1
+          "src/screens/Settings/AddCustomToken.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1
         },
         "validationSchema": {
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
-          "src/screens/Settings/AddCustomToken.tsx": 1
+          "src/screens/Settings/AddCustomToken.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1
         },
         "onSubmit": {
-          "src/screens/Settings/AddCustomNetwork.tsx": 1,
-          "src/screens/Settings/AddCustomToken.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextInput",
-      "sourceFile": "src/screens/Settings/ConnectedTextInput",
-      "totalInstances": 8,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/screens/Settings/AddCustomNetwork.tsx": 5,
-        "src/screens/Settings/AddCustomToken.tsx": 3
-      },
-      "propsWithCallSites": {
-        "testID": {
-          "src/screens/Settings/AddCustomNetwork.tsx": 5,
-          "src/screens/Settings/AddCustomToken.tsx": 3
-        },
-        "label": {
-          "src/screens/Settings/AddCustomNetwork.tsx": 5,
-          "src/screens/Settings/AddCustomToken.tsx": 3
-        },
-        "name": {
-          "src/screens/Settings/AddCustomNetwork.tsx": 5,
-          "src/screens/Settings/AddCustomToken.tsx": 3
+          "src/screens/Settings/AddCustomToken.tsx": 1,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 1
         }
       }
     },
@@ -8002,6 +8203,30 @@
       "sourceFile": "src/screens/Settings/AddCustomToken.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "TextInput",
+      "sourceFile": "src/screens/Settings/ConnectedTextInput",
+      "totalInstances": 8,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/screens/Settings/AddCustomToken.tsx": 3,
+        "src/screens/Settings/SharedCustomNetworkForm.tsx": 5
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "src/screens/Settings/AddCustomToken.tsx": 3,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 5
+        },
+        "label": {
+          "src/screens/Settings/AddCustomToken.tsx": 3,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 5
+        },
+        "name": {
+          "src/screens/Settings/AddCustomToken.tsx": 3,
+          "src/screens/Settings/SharedCustomNetworkForm.tsx": 5
+        }
+      }
     },
     {
       "name": "Page",
@@ -8024,14 +8249,8 @@
       }
     },
     {
-      "name": "ListFallback",
-      "sourceFile": "src/screens/Settings/List/ListFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "List",
-      "sourceFile": "src/screens/Settings/List",
+      "name": "NetworkList",
+      "sourceFile": "src/screens/Settings/NetworkList",
       "totalInstances": 3,
       "totalCallSites": 2,
       "callSites": {
@@ -8049,7 +8268,9 @@
         },
         "selectedItemId": { "src/screens/Settings/CustomNetworks.tsx": 1 },
         "onSelection": { "src/screens/Settings/CustomNetworks.tsx": 1 },
-        "footerActions": { "src/screens/Settings/CustomNetworks.tsx": 1 }
+        "onUpdate": { "src/screens/Settings/CustomNetworks.tsx": 1 },
+        "footerActions": { "src/screens/Settings/CustomNetworks.tsx": 1 },
+        "isCustomNetworks": { "src/screens/Settings/CustomNetworks.tsx": 1 }
       }
     },
     {
@@ -8087,14 +8308,16 @@
       "totalCallSites": 1
     },
     {
-      "name": "ListItem",
-      "sourceFile": "src/screens/Settings/List.tsx",
+      "name": "NetworkListItem",
+      "sourceFile": "src/screens/Settings/NetworkList.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
-      "callSites": { "src/screens/Settings/List.tsx": 2 },
+      "callSites": { "src/screens/Settings/NetworkList.tsx": 2 },
       "propsWithCallSites": {
-        "key": { "src/screens/Settings/List.tsx": 2 },
-        "testID": { "src/screens/Settings/List.tsx": 1 }
+        "key": { "src/screens/Settings/NetworkList.tsx": 2 },
+        "isCustom": { "src/screens/Settings/NetworkList.tsx": 1 },
+        "onUpdate": { "src/screens/Settings/NetworkList.tsx": 1 },
+        "testID": { "src/screens/Settings/NetworkList.tsx": 1 }
       }
     },
     {
@@ -8105,12 +8328,20 @@
       "propsWithCallSites": { "onBack": { "src/screens/Settings/NetworkSelector.tsx": 1 } }
     },
     {
+      "name": "UpdateCustomNetwork",
+      "sourceFile": "src/screens/Settings/UpdateCustomNetwork",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "onBack": { "src/screens/Settings/NetworkSelector.tsx": 1 } }
+    },
+    {
       "name": "CustomNetworks",
       "sourceFile": "src/screens/Settings/CustomNetworks",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "onAddCustomNetwork": { "src/screens/Settings/NetworkSelector.tsx": 1 }
+        "onAddCustomNetwork": { "src/screens/Settings/NetworkSelector.tsx": 1 },
+        "onUpdateCustomNetwork": { "src/screens/Settings/NetworkSelector.tsx": 1 }
       }
     },
     {
@@ -8128,6 +8359,13 @@
     },
     {
       "name": "AddStep",
+      "sourceFile": "src/screens/Settings/NetworkSelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "key": { "src/screens/Settings/NetworkSelector.tsx": 1 } }
+    },
+    {
+      "name": "UpdateStep",
       "sourceFile": "src/screens/Settings/NetworkSelector.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -8225,104 +8463,6 @@
       "callSites": { "src/screens/Settings/SettingsItems.tsx": 2 }
     },
     {
-      "name": "ConvertProvider",
-      "sourceFile": "src/screens/Trade/ConvertProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "convertibleAssets": { "src/screens/Trade/Trade.tsx": 1 },
-        "supportedChains": { "src/screens/Trade/Trade.tsx": 1 }
-      }
-    },
-    {
-      "name": "TradeStepper",
-      "sourceFile": "src/screens/Trade/TradeStepper",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "mostPopularSwapAssetId": { "src/screens/Trade/Trade.tsx": 1 },
-        "chainId": { "src/screens/Trade/Trade.tsx": 1 }
-      }
-    },
-    {
-      "name": "SuspenseWithTransition",
-      "sourceFile": "@components/SuspenseWithTransition/SuspenseWithTransition",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "fallback": { "src/screens/Trade/Trade.tsx": 1 } }
-    },
-    {
-      "name": "EntryStepFallback",
-      "sourceFile": "src/screens/Trade/steps/EntryStep/EntryStepFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TradeContent",
-      "sourceFile": "src/screens/Trade/Trade.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "StepWithNavigation",
-      "sourceFile": "@components/StepWithNavigation/StepWithNavigation",
-      "totalInstances": 7,
-      "totalCallSites": 1,
-      "callSites": { "src/screens/Trade/TradeStepper.tsx": 7 },
-      "propsWithCallSites": {
-        "key": { "src/screens/Trade/TradeStepper.tsx": 7 },
-        "component": { "src/screens/Trade/TradeStepper.tsx": 7 },
-        "hideNavigation": { "src/screens/Trade/TradeStepper.tsx": 3 }
-      }
-    },
-    {
-      "name": "EntryStep",
-      "sourceFile": "src/screens/Trade/steps/EntryStep/EntryStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "wallet": { "src/screens/Trade/TradeStepper.tsx": 1 },
-        "chainId": { "src/screens/Trade/TradeStepper.tsx": 1 }
-      }
-    },
-    {
-      "name": "SelectAssetStep",
-      "sourceFile": "src/screens/Trade/steps/SelectAssetStep/SelectAssetStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "selectedWallet": { "src/screens/Trade/TradeStepper.tsx": 1 } }
-    },
-    {
-      "name": "SelectSourceStep",
-      "sourceFile": "src/screens/Trade/steps/SelectSourceStep/SelectSourceStep",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "SelectNetworkStep",
-      "sourceFile": "src/screens/Trade/steps/SelectNetworkStep/SelectNetworkStep",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ConfirmationPreviewStep",
-      "sourceFile": "src/screens/Trade/steps/ConfirmationPreviewStep/ConfirmationPreviewStep",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PhoneConfirmationStep",
-      "sourceFile": "src/screens/Trade/steps/PhoneConfirmationStep/PhoneConfirmationStep",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "StatusStep",
-      "sourceFile": "src/screens/Trade/steps/StatusStep/StatusStep",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "TxnHistoryListItem",
       "sourceFile": "@components/TxnHistoryListItem/TxnHistoryListItem",
       "totalInstances": 2,
@@ -8331,6 +8471,16 @@
       "propsWithCallSites": {
         "key": { "src/screens/TransactionHistory/RenderRows.tsx": 2 },
         "transaction": { "src/screens/TransactionHistory/RenderRows.tsx": 2 }
+      }
+    },
+    {
+      "name": "Transactions",
+      "sourceFile": "src/screens/TransactionHistory/Transactions",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "transactions": { "src/screens/TransactionHistory/TransactionHistory.tsx": 1 },
+        "networkContext": { "src/screens/TransactionHistory/TransactionHistory.tsx": 1 }
       }
     },
     {
@@ -8344,14 +8494,10 @@
       }
     },
     {
-      "name": "Transactions",
-      "sourceFile": "src/screens/TransactionHistory/Transactions",
+      "name": "GlobalTransactionHistoryComponent",
+      "sourceFile": "src/screens/TransactionHistory/TransactionHistory.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "transactions": { "src/screens/TransactionHistory/TransactionHistory.tsx": 1 },
-        "networkContext": { "src/screens/TransactionHistory/TransactionHistory.tsx": 1 }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "WindowScroller",
@@ -8648,7 +8794,7 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "wallet": { "src/screens/PortfolioWallet/components/AssetDetail.tsx": 1 },
-        "container": { "src/screens/PortfolioWallet/components/AssetDetail.tsx": 1 }
+        "scrollElement": { "src/screens/PortfolioWallet/components/AssetDetail.tsx": 1 }
       }
     },
     {
@@ -8674,47 +8820,7 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "transactions": { "src/screens/PortfolioWallet/components/AssetTransactionHistory.tsx": 1 },
-        "container": { "src/screens/PortfolioWallet/components/AssetTransactionHistory.tsx": 1 }
-      }
-    },
-    {
-      "name": "Page",
-      "sourceFile": "src/screens/Settings/Page",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1,
-        "src/screens/Settings/pages/SettingsPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": { "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1 },
-        "testID": { "src/screens/Settings/pages/SettingsPage.tsx": 1 }
-      }
-    },
-    {
-      "name": "NetworkSelector",
-      "sourceFile": "src/screens/Settings/NetworkSelector",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onChange": { "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1 },
-        "selectedNetworkId": { "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1 }
-      }
-    },
-    {
-      "name": "Username",
-      "sourceFile": "src/screens/Settings/pages/SettingsPage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": { "name": { "src/screens/Settings/pages/SettingsPage.tsx": 1 } }
-    },
-    {
-      "name": "SettingsItems",
-      "sourceFile": "src/screens/Settings/SettingsItems",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "openSettingsPage": { "src/screens/Settings/pages/SettingsPage.tsx": 1 }
+        "scrollElement": { "src/screens/PortfolioWallet/components/AssetTransactionHistory.tsx": 1 }
       }
     },
     {
@@ -8755,27 +8861,6 @@
           "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
           "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1
         }
-      }
-    },
-    {
-      "name": "NetworkIcon",
-      "sourceFile": "@components/SharedAssetRowItem/NetworkIcon",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
-        "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1
-      },
-      "propsWithCallSites": {
-        "network": {
-          "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
-          "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1
-        },
-        "size": {
-          "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1,
-          "src/screens/Trade/steps/SelectNetworkStep/NetworkListItem.tsx": 1
-        },
-        "layout": { "src/screens/Trade/EntrySelector/EntrySelector.tsx": 1 }
       }
     },
     {
@@ -8828,6 +8913,74 @@
       }
     },
     {
+      "name": "Page",
+      "sourceFile": "src/screens/Settings/Page",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1,
+        "src/screens/Settings/pages/SettingsPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": { "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1 },
+        "testID": { "src/screens/Settings/pages/SettingsPage.tsx": 1 }
+      }
+    },
+    {
+      "name": "NetworkSelector",
+      "sourceFile": "src/screens/Settings/NetworkSelector",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onChange": { "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1 },
+        "selectedNetworkId": { "src/screens/Settings/pages/ActiveNetworkSelectorPage.tsx": 1 }
+      }
+    },
+    {
+      "name": "Username",
+      "sourceFile": "src/screens/Settings/pages/SettingsPage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": { "name": { "src/screens/Settings/pages/SettingsPage.tsx": 1 } }
+    },
+    {
+      "name": "SettingsItems",
+      "sourceFile": "src/screens/Settings/SettingsItems",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "openSettingsPage": { "src/screens/Settings/pages/SettingsPage.tsx": 1 }
+      }
+    },
+    {
+      "name": "AuthorizationError",
+      "sourceFile": "@components/AuthorizationError/AuthorizationError",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
+        "src/screens/Web3/AuthorizationRequest/AuthorizationRequest.tsx": 1,
+        "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1
+      },
+      "propsWithCallSites": {
+        "resetError": {
+          "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
+          "src/screens/Web3/AuthorizationRequest/AuthorizationRequest.tsx": 1,
+          "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "img",
+      "sourceFile": "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "src": { "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1 },
+        "alt": { "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1 }
+      }
+    },
+    {
       "name": "SpeedUpCancelStep",
       "sourceFile": "src/screens/TransactionHistory/SpeedUpAndCancel/steps/SpeedUpCancelStep/SpeedUpCancelStep",
       "totalInstances": 1,
@@ -8862,34 +9015,6 @@
       }
     },
     {
-      "name": "AuthorizationError",
-      "sourceFile": "@components/AuthorizationError/AuthorizationError",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
-        "src/screens/Web3/AuthorizationRequest/AuthorizationRequest.tsx": 1,
-        "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1
-      },
-      "propsWithCallSites": {
-        "resetError": {
-          "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1,
-          "src/screens/Web3/AuthorizationRequest/AuthorizationRequest.tsx": 1,
-          "src/screens/Web3/SwitchEthereumChain/SwitchChainRequest.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "img",
-      "sourceFile": "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": { "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1 },
-        "alt": { "src/screens/Web3/AddEthereumChain/AddChainRequest.tsx": 1 }
-      }
-    },
-    {
       "name": "TransactionRequestStep",
       "sourceFile": "src/screens/Web3/DappTransactionRequest/steps/TransactionRequestStep/TransactionRequestStep",
       "totalInstances": 1,
@@ -8920,6 +9045,33 @@
       "propsWithCallSites": {
         "key": { "src/screens/Web3/DappTransactionRequest/DappTransactionRequest.tsx": 1 },
         "wallet": { "src/screens/Web3/DappTransactionRequest/DappTransactionRequest.tsx": 1 }
+      }
+    },
+    {
+      "name": "HWTroubleConnecting",
+      "sourceFile": "@screens/Onboarding/steps/hardware-wallet/HWTroubleConnecting/HWTroubleConnecting",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
+        "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
+        "src/screens/Trade/steps/StatusStep/StatusStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "statusCode": {
+          "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
+          "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
+          "src/screens/Trade/steps/StatusStep/StatusStep.tsx": 1
+        },
+        "handleBack": {
+          "src/screens/Web3/SignatureRequest/SignatureRequest.tsx": 1,
+          "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
+          "src/screens/Trade/steps/StatusStep/StatusStep.tsx": 1
+        },
+        "errorId": {
+          "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1,
+          "src/screens/Trade/steps/StatusStep/StatusStep.tsx": 1
+        }
       }
     },
     {
@@ -9176,60 +9328,6 @@
       }
     },
     {
-      "name": "SharedAdjustGasCustomStep",
-      "sourceFile": "@components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-        "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-        "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "wallet": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "toAddress": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "unsignedTx": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "isEntireBalance": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "initialFees": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "handleGenerateTx": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "goBack": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "flowType": {
-          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
-          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        },
-        "nonce": {
-          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
-        }
-      }
-    },
-    {
       "name": "a",
       "sourceFile": "src/screens/Portfolio/CryptoAssetPortfolio/components/AddFundsPrompt.tsx",
       "totalInstances": 1,
@@ -9292,6 +9390,60 @@
         "itemSize": { "src/screens/Portfolio/CryptoAssetPortfolio/components/AssetList.tsx": 1 },
         "overscanCount": {
           "src/screens/Portfolio/CryptoAssetPortfolio/components/AssetList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SharedAdjustGasCustomStep",
+      "sourceFile": "@components/SharedAdjustGasCustomStep/SharedAdjustGasCustomStep",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+        "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+        "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "wallet": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "toAddress": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "unsignedTx": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "isEntireBalance": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "initialFees": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "handleGenerateTx": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "goBack": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "flowType": {
+          "src/screens/Send/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1,
+          "src/screens/Web3/DappTransactionRequest/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
+        },
+        "nonce": {
+          "src/screens/TransactionHistory/SpeedUpAndCancel/steps/AdjustGasCustomStep/AdjustGasCustomStep.tsx": 1
         }
       }
     },
@@ -9466,6 +9618,7 @@
         },
         "handleInput": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "hasError": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
+        "maxLength": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "testID": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "autoFocus": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
       }
@@ -9485,8 +9638,10 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "blockchain": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "hasError": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
-        "handleInput": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
+        "handleInput": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
+        "maxLength": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 }
       }
     },
     {
@@ -9495,6 +9650,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "wallet": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "suggestions": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "title": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 1 },
         "handleSuggestionClick": {
@@ -9520,6 +9676,36 @@
         "isDisabled": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 2 },
         "isLoading": { "src/screens/Send/steps/SelectRecipientStep/SelectRecipientStep.tsx": 2 }
       }
+    },
+    {
+      "name": "div",
+      "sourceFile": "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "data-testid": {
+          "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CollectibleDetailContainer",
+      "sourceFile": "@screens/CollectibleDetail/CollectibleDetailContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "collectible": {
+          "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1
+        },
+        "fromSend": { "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1 },
+        "goBack": { "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1 }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "SharedSelectSourceStep",
@@ -9572,36 +9758,6 @@
     {
       "name": "SelectNFTStepContent",
       "sourceFile": "src/screens/Send/steps/SelectSourceStep/SelectSourceStep.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "div",
-      "sourceFile": "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data-testid": {
-          "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CollectibleDetailContainer",
-      "sourceFile": "@screens/CollectibleDetail/CollectibleDetailContainer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "collectible": {
-          "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1
-        },
-        "fromSend": { "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1 },
-        "goBack": { "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx": 1 }
-      }
-    },
-    {
-      "name": "Fallback",
-      "sourceFile": "src/screens/Send/steps/SendCollectibleDetail/SendCollectibleDetail.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -9689,48 +9845,6 @@
         "tryAgain": { "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1 },
         "goBackHome": { "src/screens/Send/steps/StatusStep/StatusStep.tsx": 1 }
       }
-    },
-    {
-      "name": "AddCustomNetwork",
-      "sourceFile": "@screens/Settings/AddCustomNetwork",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onBack": { "src/screens/Settings/pages/AddCustomNetworkPage/AddCustomNetworkPage.tsx": 1 }
-      }
-    },
-    {
-      "name": "ChooseNetworkStep",
-      "sourceFile": "src/screens/Settings/pages/AddCustomTokenPage/steps/ChooseNetworkStep/ChooseNetworkStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 },
-        "network": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 },
-        "setNetwork": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 }
-      }
-    },
-    {
-      "name": "AddTokenStep",
-      "sourceFile": "src/screens/Settings/pages/AddCustomTokenPage/steps/AddTokenStep/AddTokenStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 },
-        "network": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 }
-      }
-    },
-    {
-      "name": "Steps",
-      "sourceFile": "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DAppSettings",
-      "sourceFile": "@screens/Settings/DAppSettings",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "NetworkSelectionSubHeader",
@@ -9821,6 +9935,48 @@
       "totalCallSites": 1
     },
     {
+      "name": "AddCustomNetwork",
+      "sourceFile": "@screens/Settings/AddCustomNetwork",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onBack": { "src/screens/Settings/pages/AddCustomNetworkPage/AddCustomNetworkPage.tsx": 1 }
+      }
+    },
+    {
+      "name": "ChooseNetworkStep",
+      "sourceFile": "src/screens/Settings/pages/AddCustomTokenPage/steps/ChooseNetworkStep/ChooseNetworkStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 },
+        "network": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 },
+        "setNetwork": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 }
+      }
+    },
+    {
+      "name": "AddTokenStep",
+      "sourceFile": "src/screens/Settings/pages/AddCustomTokenPage/steps/AddTokenStep/AddTokenStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 },
+        "network": { "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx": 1 }
+      }
+    },
+    {
+      "name": "Steps",
+      "sourceFile": "src/screens/Settings/pages/AddCustomTokenPage/AddCustomTokenPage.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DAppSettings",
+      "sourceFile": "@screens/Settings/DAppSettings",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "HWWalletConnectionAnimation",
       "sourceFile": "src/screens/Onboarding/steps/hardware-wallet/HWWalletConnectionAnimation/HWWalletConnectionAnimation",
       "totalInstances": 1,
@@ -9837,6 +9993,9 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "requiresBlindSigning": {
+          "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1
+        },
         "onBack": {
           "src/screens/Onboarding/steps/hardware-wallet/ConnectDevice/ConnectDevice.tsx": 1
         },

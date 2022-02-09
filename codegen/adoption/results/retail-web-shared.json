@@ -5488,6 +5488,73 @@
       }
     },
     {
+      "name": "Modal",
+      "sourceFile": "components/Modal",
+      "totalInstances": 7,
+      "totalCallSites": 7,
+      "presentationalElement": "react-modal/ReactModal",
+      "callSites": {
+        "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
+        "components/Earn/components/JoinModal/JoinModal.tsx": 1,
+        "components/Earn/components/ModalClaimEarn/ModalClaimEarn.tsx": 1,
+        "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
+        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+        "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "close": {
+          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
+          "components/Earn/components/JoinModal/JoinModal.tsx": 1,
+          "components/Earn/components/ModalClaimEarn/ModalClaimEarn.tsx": 1,
+          "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
+          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
+          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
+          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
+        },
+        "isOpen": {
+          "components/Earn/components/JoinModal/JoinModal.tsx": 1,
+          "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StyledModalContainer",
+      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalContainer"
+    },
+    {
+      "name": "StyledModalBody",
+      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ModalBody"
+    },
+    {
+      "name": "Description",
+      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "IgnoreButton",
+      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "Button",
+      "propsWithCallSites": {
+        "onClick": {
+          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
+        },
+        "type": {
+          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Container",
       "sourceFile": "components/Earn/components/CampaignCard/CampaignCard.tsx",
       "totalInstances": 1,
@@ -5564,73 +5631,6 @@
       "presentationalElement": "CTAContainer",
       "propsWithCallSites": {
         "campaignDisplayData": { "components/Earn/components/CampaignCard/CampaignCard.tsx": 1 }
-      }
-    },
-    {
-      "name": "Modal",
-      "sourceFile": "components/Modal",
-      "totalInstances": 7,
-      "totalCallSites": 7,
-      "presentationalElement": "react-modal/ReactModal",
-      "callSites": {
-        "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
-        "components/Earn/components/JoinModal/JoinModal.tsx": 1,
-        "components/Earn/components/ModalClaimEarn/ModalClaimEarn.tsx": 1,
-        "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-        "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
-        "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
-        "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "close": {
-          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1,
-          "components/Earn/components/JoinModal/JoinModal.tsx": 1,
-          "components/Earn/components/ModalClaimEarn/ModalClaimEarn.tsx": 1,
-          "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1,
-          "components/Earn/components/ModalGetStarted/ModalGetStarted.tsx": 1,
-          "components/Earn/components/ModalPendingIDV/ModalPendingIDV.tsx": 1,
-          "components/Earn/components/VerifyIdentityModal/VerifyIdentityModal.tsx": 1
-        },
-        "isOpen": {
-          "components/Earn/components/JoinModal/JoinModal.tsx": 1,
-          "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "StyledModalContainer",
-      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalContainer"
-    },
-    {
-      "name": "StyledModalBody",
-      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "ModalBody"
-    },
-    {
-      "name": "Description",
-      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "IgnoreButton",
-      "sourceFile": "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "Button",
-      "propsWithCallSites": {
-        "onClick": {
-          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
-        },
-        "type": {
-          "components/Earn/components/BlockedFromEarningModal/BlockedFromEarningModal.tsx": 1
-        }
       }
     },
     {
@@ -11140,24 +11140,6 @@
       }
     },
     {
-      "name": "CampaignCardContent",
-      "sourceFile": "components/Earn/components/CampaignCard/CampaignCard.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "components/Earn/components/CampaignCard/CampaignCard.tsx": 2 }
-    },
-    {
-      "name": "P",
-      "sourceFile": "components/Earn/components/Common/P",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "components/Earn/components/CampaignCard/CampaignCard.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/ErrorMessage.tsx": 1,
-        "components/Earn/components/Lesson/EarnStories/StoryQuizError.tsx": 1
-      }
-    },
-    {
       "name": "ModalHeader",
       "sourceFile": "components/Modal/ModalHeader",
       "totalInstances": 7,
@@ -11198,6 +11180,24 @@
           "components/Earn/components/ModalClaimEarn/ModalClaimEarn.tsx": 1,
           "components/Earn/components/ModalGeofenced/ModalGeofenced.tsx": 1
         }
+      }
+    },
+    {
+      "name": "CampaignCardContent",
+      "sourceFile": "components/Earn/components/CampaignCard/CampaignCard.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": { "components/Earn/components/CampaignCard/CampaignCard.tsx": 2 }
+    },
+    {
+      "name": "P",
+      "sourceFile": "components/Earn/components/Common/P",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/Earn/components/CampaignCard/CampaignCard.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/ErrorMessage.tsx": 1,
+        "components/Earn/components/Lesson/EarnStories/StoryQuizError.tsx": 1
       }
     },
     {
