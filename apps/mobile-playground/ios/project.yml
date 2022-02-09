@@ -1,0 +1,30 @@
+name: MobilePlayground
+configs:
+  Debug: debug
+targets:
+  MobilePlayground:
+    type: application
+    platform: iOS
+    deploymentTarget: '11.0'
+    sources:
+      - path: MobilePlayground
+        compilerFlags:
+          - '-fstack-protector-all'
+    settings:
+      base:
+        APP_VERSION: '1.0.0'
+        BUILD_NUMBER: '001'
+        CURRENT_PROJECT_VERSION: '001'
+        TARGETED_DEVICE_FAMILY: 1 # support iPhone/iPod touch only
+        SWIFT_VERSION: 5.0
+        ENABLE_BITCODE: false
+        CODE_SIGN_STYLE: Manual
+        PRODUCT_NAME: 'MobilePlayground'
+        # SWIFT_OBJC_BRIDGING_HEADER: app/Bridging-Header.h
+        'EXCLUDED_ARCHS[sdk=iphonesimulator*]': arm64
+      configs:
+        Debug:
+          DEBUG: true
+          CLANG_ENABLE_OBJC_ARC: true
+          APP_DISPLAY_NAME: MobilePlayground
+          PRODUCT_BUNDLE_IDENTIFIER: com.coinbase.mobileplayground

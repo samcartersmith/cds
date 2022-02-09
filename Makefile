@@ -204,3 +204,9 @@ build.ios:
 .PHONY: start.mobile
 start.mobile:
 	nx run mobile-playground:start-metro
+	make build.common
+	make build.fonts
+	make build.mobile
+	make build.web
+	make build.lottie
+	make build.utils
