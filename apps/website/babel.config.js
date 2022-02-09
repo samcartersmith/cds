@@ -5,7 +5,10 @@ const isTestEnv = process.env.NODE_ENV === 'test';
 module.exports = {
   presets: [
     ...baseConfig.presets,
-    ['linaria/babel', { classNameSlug: (hash, title) => (isTestEnv ? title : `${title}-${hash}`) }],
+    [
+      require.resolve('../../packages/web-utils/dist/babel/linariaPreset'),
+      require('./linaria.config'),
+    ],
   ],
   plugins: [
     [
