@@ -35,6 +35,10 @@ Help:
 
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.common              -- Build the `common` package.
+  $$ make build.mobile              -- Build the `mobile` package.
+  $$ make build.web                 -- Build the `web` package.
+  $$ make build.lottie              -- Build the `lottie` package.
+  $$ make build.utils               -- Build the `utils` package.
   $$ make build.all                 -- Build all packages.
 
 endef
@@ -152,7 +156,27 @@ build.common:
 build.fonts:
 	nx run fonts:build-package
 
+.PHONY: build.mobile
+build.mobile:
+	nx run mobile:build-package
+
+.PHONY: build.web
+build.web:
+	nx run web:build-package
+
+.PHONY: build.lottie
+build.lottie:
+	nx run lottie-files:build-package
+
+.PHONY: build.utils
+build.utils:
+	nx run utils:build-package
+
 .PHONY: build.all
 build.all:
 	make build.common
 	make build.fonts
+	make build.mobile
+	make build.web
+	make build.lottie
+	make build.utils
