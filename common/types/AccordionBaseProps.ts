@@ -35,7 +35,7 @@ export type AccordionPanelBaseProps = {
   /**
    * Content of the accordion item
    */
-  children: ReactNode;
+  children: NonNullable<ReactNode>;
 } & AccordionCommonProps;
 
 export type AccordionMediaBaseProps = Pick<ListCellBaseProps, 'media'>;
