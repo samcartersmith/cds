@@ -7,27 +7,9 @@
       "type": "string",
       "description": "relative path to output directory"
     },
-    "staticFiles": {
+    "staticFilesToIgnore": {
       "type": "array",
-      "items": {
-        "oneOf": [
-          {
-            "type": "object",
-            "properties": {
-              "source": {
-                "type": "string"
-              },
-              "dest": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "type": "string"
-          }
-        ]
-      },
-      "description": "Static files to copy to the output"
+      "description": "Static files to remove from the output"
     },
     "babelConfig": {
       "type": "string",

@@ -20,13 +20,11 @@
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/common",
-        "staticFiles": [
-          {
-            "source": "packages/common/package.json",
-            "dest": "package.json"
-          },
-          "packages/common/CHANGELOG.md",
-          "packages/common/README.md"
+        "staticFilesToIgnore": [
+          "jest.config.js",
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
         ],
         "babelConfig": "./babel.build.config.js",
         "babelExtensions": [

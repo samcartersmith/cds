@@ -26,13 +26,14 @@
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/web",
-        "staticFiles": [
-          {
-            "source": "packages/web/package.json",
-            "dest": "package.json"
-          },
-          "packages/web/CHANGELOG.md",
-          "packages/web/README.md"
+        "staticFilesToIgnore": [
+          "babel.build.config.js",
+          "babel.config.js",
+          "jest.config.js",
+          "linaria.config.js",
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
         ],
         "babelConfig": "./packages/web/babel.build.config.js",
         "babelExtensions": [
@@ -42,7 +43,8 @@
         "babelIgnore": [
           "**/*.js",
           "**/*.test.ts",
-          "**/*.test.tsx"
+          "**/*.test.tsx",
+          "**/*.stories.tsx"
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json"
       }
