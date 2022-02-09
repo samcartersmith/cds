@@ -3,6 +3,7 @@ import React, { memo, FC } from 'react';
 import { VStack } from '../layout';
 import { TextDisplay1, TextBody } from '../typography';
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Tabs: FC<TabsProps> = memo((props) => {
   return (
     <VStack>

@@ -4,6 +4,7 @@ import { Animated, View } from 'react-native';
 import { Box } from '../layout';
 import { useTabIndicatorStyles } from './hooks/useTabIndicatorStyles';
 
+/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabIndicator = memo(
   forwardRef(
     (
