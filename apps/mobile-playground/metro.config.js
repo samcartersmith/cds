@@ -1,22 +1,31 @@
 const path = require('path');
+const homedir = require('os').homedir();
 
 // const config = {
 //   root: 'apps/mobile-playground/',
 // };
 
 // const projectRoot = path.resolve(__dirname, '');
+const projectRoot = path.resolve(homedir, 'design-system');
+
+const extraNodeModules = {
+  react: path.join(projectRoot, 'node_modules/react'),
+  'react-native': path.join(projectRoot, 'node_modules/react-native'),
+};
 
 const metroConfig = {
-  // projectRoot,
+  projectRoot,
   resetCache: false,
   watchFolders: [
-    path.resolve(__dirname, '../../node_modules'),
-    path.resolve(__dirname, '../../packages'),
+    path.resolve(projectRoot, 'node_modules'),
+    path.resolve(projectRoot, 'packages'),
+    path.resolve(projectRoot, 'apps/mobile-playground/src'),
   ],
   resolver: {
     resolveMainFields: ['react-native', 'browser', 'main'],
     sourceExts: ['cjs', 'ts', 'tsx', 'js', 'jsx', 'json'],
     useWatchman: false,
+    extraNodeModules,
   },
   transformer: {
     getTransformOptions: async () => ({

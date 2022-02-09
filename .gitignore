@@ -26,7 +26,9 @@ DerivedData
 *.ipa
 *.xcuserstate
 *.xcworkspace
+*.xcodeproj/
 Pods/
+
 
 # Android/IntelliJ
 **/android/build/
