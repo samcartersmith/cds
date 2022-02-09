@@ -17,11 +17,10 @@
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": "packages/web-utils/dist",
-        "staticFiles": [
-          {
-            "source": "packages/web-utils/package.json",
-            "dest": "package.json"
-          }
+        "staticFilesToIgnore": [
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
         ],
         "babelConfig": "./babel.build.config.js",
         "babelExtensions": [

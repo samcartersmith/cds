@@ -17,13 +17,10 @@
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/lottie-files",
-        "staticFiles": [
-          {
-            "source": "packages/lottie-files/package.json",
-            "dest": "package.json"
-          },
-          "packages/lottie-files/CHANGELOG.md",
-          "packages/lottie-files/README.md"
+        "staticFilesToIgnore": [
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
         ],
         "babelConfig": "./babel.build.config.js",
         "babelExtensions": [

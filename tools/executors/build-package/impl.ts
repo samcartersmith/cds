@@ -1,20 +1,12 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import path from 'path';
 import fs from 'fs';
-import fse from 'fs-extra';
 import chalk from 'chalk';
 import execa from 'execa';
 
-type StaticFile =
-  | {
-      source: string;
-      dest: string;
-    }
-  | string;
-
 type BuildPackageOptions = {
   destinationDir: string;
-  staticFiles: StaticFile[];
+  staticFilesToIgnore: string[];
   babelConfig: string;
   babelExtensions: string[];
   babelIgnore: string[];
@@ -28,9 +20,9 @@ type PackageArgs = {
   destinationDir: string;
 
   /*
-  Paths of the static files that you wish to copy to the destination directory
+  Paths of the static files that you wish to remove from the destination directory
    */
-  staticFiles?: StaticFile[];
+  staticFilesToIgnore?: string[];
 };
 
 type BabelArgs = {
@@ -89,9 +81,11 @@ async function runBabel(
     extensions.join(','),
     '--ignore',
     ignore.join(','),
-    '--source-maps',
+    //'--source-maps',
     '--out-dir',
     destinationDir,
+    '--copy-files',
+    '--no-copy-ignored',
   ];
 
   return runLocalCommand(context, bin, args);
@@ -108,34 +102,23 @@ async function runTsc(context: ExecutorContext, tscArgs: TscArgs) {
   return runLocalCommand(context, bin, args);
 }
 
-async function copyFiles(
+async function removeIgnoredFiles(
   context: ExecutorContext,
   destinationDir: string,
-  staticFiles: StaticFile[],
+  staticFilesToIgnore: string[],
 ) {
   const promises: Promise<unknown>[] = [];
 
-  staticFiles.forEach((file: StaticFile) => {
-    let source: string;
-    let dest: string;
-    if (typeof file === 'string') {
-      source = file;
-      dest = file.substring(file.lastIndexOf('/') + 1);
-    } else {
-      source = file.source;
-      dest = file.dest;
-    }
+  staticFilesToIgnore.forEach((file: string) => {
+    const filePath = path.resolve(destinationDir, file);
 
     const promise = new Promise((resolve, reject) => {
-      const sourceFile = path.join(context.root, source);
-      const destinationFile = path.join(destinationDir, dest);
-
-      console.log(chalk.gray(`Copying ${sourceFile} to ${destinationFile}`));
-      fse.copy(source, destinationFile, function (err) {
+      console.log(chalk.gray(`Deleting ${filePath}`));
+      fs.rm(filePath, { recursive: true }, (err) => {
         if (err) {
           reject(err);
         } else {
-          console.log(`Copy successfull! ${destinationFile}`);
+          console.log(`Delete successful ${filePath}`);
           resolve(null);
         }
       });
@@ -153,10 +136,10 @@ async function copyFiles(
 export default async function buildPackage(options: BuildPackageOptions, context: ExecutorContext) {
   const {
     destinationDir: dest,
-    staticFiles,
+    staticFilesToIgnore = [],
     babelConfig,
     babelExtensions,
-    babelIgnore,
+    babelIgnore = [],
     typescriptConfig,
   } = options;
 
@@ -201,7 +184,9 @@ export default async function buildPackage(options: BuildPackageOptions, context
 
   success = success ? (await runTsc(context, tscArgs)).success : success;
 
-  success = success ? (await copyFiles(context, destinationDir, staticFiles)).success : success;
+  success = success
+    ? (await removeIgnoredFiles(context, destinationDir, staticFilesToIgnore)).success
+    : success;
 
   return Promise.resolve({ success });
 }

@@ -20,13 +20,13 @@
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/mobile",
-        "staticFiles": [
-          {
-            "source": "packages/mobile/package.json",
-            "dest": "package.json"
-          },
-          "packages/mobile/CHANGELOG.md",
-          "packages/mobile/README.md"
+        "staticFilesToIgnore": [
+          "babel.build.config.js",
+          "babel.config.js",
+          "jest.config.js",
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
         ],
         "babelConfig": "./packages/mobile/babel.build.config.js",
         "babelExtensions": [
