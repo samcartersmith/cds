@@ -46,10 +46,11 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 - [x] common
 - [x] fonts
-- [ ] utils
-- [ ] mobile
-- [ ] web
-- [ ] lottie-files
+- [x] utils
+- [x] mobile
+- [x] web
+- [x] lottie-files
+- [ ] static css
 
 #### Storybook
 
