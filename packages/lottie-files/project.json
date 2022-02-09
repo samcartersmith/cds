@@ -12,6 +12,31 @@
     },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "build-package": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": ".nx/dist/packages/lottie-files",
+        "staticFiles": [
+          {
+            "source": "packages/lottie-files/package.json",
+            "dest": "package.json"
+          },
+          "packages/lottie-files/CHANGELOG.md",
+          "packages/lottie-files/README.md"
+        ],
+        "babelConfig": "./babel.build.config.js",
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
+        "typescriptConfig": "packages/lottie-files/tsconfig.build.json"
+      }
     }
   }
 }

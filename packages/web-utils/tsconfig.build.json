@@ -1,12 +1,13 @@
 {
   "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
-    "outDir": "dts"
+    "outDir": "./dist",
+    "rootDir": "./"
   },
   "include": [
-    "src"
+    "**/*"
   ],
   "exclude": [
-    "dts"
+    "dist"
   ]
 }

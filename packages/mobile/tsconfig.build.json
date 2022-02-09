@@ -1,11 +1,22 @@
 {
   "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
-    "outDir": "dts",
-    "baseUrl": "./"
+    "outDir": "../../.nx/dist/packages/mobile",
+    "rootDir": "./"
   },
-  "include": ["src"],
-  "exclude": ["dts", "*.test.ts", "*.test.tsx"],
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "jest.config.js",
+    "babel.config.js",
+    "babel.build.config.js"
+  ],
   "references": [
     {
       "path": "../utils"
@@ -15,6 +26,9 @@
     },
     {
       "path": "../lottie-files"
+    },
+    {
+      "path": "../fonts"
     }
   ]
 }

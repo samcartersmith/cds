@@ -11,7 +11,7 @@ export default function linariaPreset(
   cwd: string,
 ): TransformOptions {
   // If we're not building a package, we can skip the extraction plugin
-  if (!babel.env('package') || !argv._[0]) {
+  if (!argv._[0]) {
     return {};
   }
 

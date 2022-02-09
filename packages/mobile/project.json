@@ -15,6 +15,31 @@
     },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "build-package": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": ".nx/dist/packages/mobile",
+        "staticFiles": [
+          {
+            "source": "packages/mobile/package.json",
+            "dest": "package.json"
+          },
+          "packages/mobile/CHANGELOG.md",
+          "packages/mobile/README.md"
+        ],
+        "babelConfig": "./packages/mobile/babel.build.config.js",
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
+        "typescriptConfig": "packages/mobile/tsconfig.build.json"
+      }
     }
   }
 }

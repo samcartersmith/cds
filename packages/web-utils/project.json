@@ -12,6 +12,29 @@
     },
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "build-package": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": "packages/web-utils/dist",
+        "staticFiles": [
+          {
+            "source": "packages/web-utils/package.json",
+            "dest": "package.json"
+          }
+        ],
+        "babelConfig": "./babel.build.config.js",
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
+        "typescriptConfig": "packages/web-utils/tsconfig.build.json"
+      }
     }
   }
 }

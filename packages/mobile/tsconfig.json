@@ -1,14 +1,17 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/packages/mobile"
+    "outDir": "../../.nx/dts/packages/mobile",
+    "rootDir": "./"
   },
   "include": [
     "**/*"
   ],
   "exclude": [
-    "dts/**/*",
-    "**/babel.config.js"
+    "dist",
+    "jest.config.js",
+    "babel.config.js",
+    "babel.build.config.js"
   ],
   "references": [
     {

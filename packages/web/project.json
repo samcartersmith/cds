@@ -21,6 +21,31 @@
     },
     "build-storybook": {
       "executor": "@cbhq/mono-tasks:build-storybook"
+    },
+    "build-package": {
+      "executor": "./tools/executors/build-package:build-package",
+      "options": {
+        "destinationDir": ".nx/dist/packages/web",
+        "staticFiles": [
+          {
+            "source": "packages/web/package.json",
+            "dest": "package.json"
+          },
+          "packages/web/CHANGELOG.md",
+          "packages/web/README.md"
+        ],
+        "babelConfig": "./packages/web/babel.build.config.js",
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
+        "typescriptConfig": "packages/web/tsconfig.build.json"
+      }
     }
   }
 }
