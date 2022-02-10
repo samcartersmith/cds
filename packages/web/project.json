@@ -48,6 +48,14 @@
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json"
       }
+    },
+    "build-css": {
+      "executor": "./tools/executors/build-css:build-css",
+      "options": {
+        "fontsOutputDir": ".nx/dist/packages/fonts",
+        "webOutputDir": ".nx/dist/packages/web",
+        "outputDir": ".nx/dist/cloud/css"
+      }
     }
   }
 }

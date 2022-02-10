@@ -6712,6 +6712,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/yargs@npm:15.0.5":
+  version: 15.0.5
+  resolution: "@types/yargs@npm:15.0.5"
+  dependencies:
+    "@types/yargs-parser": "*"
+  checksum: fe56199c6ffc539948bb80b17fa8ffff8d7ed77e8cb21f11b5aea434582b72f03751fe5e681bff0b195724d8ea60faa5102c3051292df560b96bb2741327b2dc
+  languageName: node
+  linkType: hard
+
 "@types/yargs@npm:^13.0.0":
   version: 13.0.12
   resolution: "@types/yargs@npm:13.0.12"
@@ -11296,6 +11305,7 @@ __metadata:
     "@types/react-router-dom": 5.1.5
     "@types/react-virtualized": 9.21.13
     "@types/url-parse": 1.4.3
+    "@types/yargs": 15.0.5
     antd: 4.4.1
     babel-loader: ^8.2.2
     babel-plugin-dotenv-import: 2.2.0
@@ -11314,6 +11324,7 @@ __metadata:
     dotenv-webpack: 7.0.3
     eslint: ^8.7.0
     execa: ^5.1.1
+    fast-glob: 3.2.5
     file-loader: ^6.2.0
     focus-visible: 5.2.0
     framer-motion: 3.10.4
@@ -11362,6 +11373,7 @@ __metadata:
     webpack-bundle-analyzer: 4.4.2
     webpack-cli: ^4.7.2
     webpack-dev-server: ^3.11.0
+    yargs: ^15.3.1
   languageName: unknown
   linkType: soft
 
@@ -12952,6 +12964,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-glob@npm:3.2.5":
+  version: 3.2.5
+  resolution: "fast-glob@npm:3.2.5"
+  dependencies:
+    "@nodelib/fs.stat": ^2.0.2
+    "@nodelib/fs.walk": ^1.2.3
+    glob-parent: ^5.1.0
+    merge2: ^1.3.0
+    micromatch: ^4.0.2
+    picomatch: ^2.2.1
+  checksum: 5d6772c9b63dbb739d60b5630851e1f2cbf9744119e0968eac44c9f8cbc2d3d5cb4f2f0c74715ccb23daa336c87bea42186ed367e6c991afee61cd3d967320eb
+  languageName: node
+  linkType: hard
+
 "fast-glob@npm:3.2.7":
   version: 3.2.7
   resolution: "fast-glob@npm:3.2.7"
@@ -13869,7 +13895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
+"glob-parent@npm:^5.1.0, glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
   version: 5.1.2
   resolution: "glob-parent@npm:5.1.2"
   dependencies:

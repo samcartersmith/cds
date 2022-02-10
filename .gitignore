@@ -58,4 +58,6 @@ esm/
 
 # Docusaurus
 .docusaurus
-/tools/executors/build-package/impl.js
+
+# Executors
+/tools/executors/**/*.js
