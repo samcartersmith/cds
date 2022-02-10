@@ -775,4 +775,10 @@ export const sortedImg = [
   'seedPhrase-light',
   'ethAddress-light',
   'ethAddress-dark',
+  'taxDocuments-dark',
+  'taxDocuments-light',
+  'linkCoinbaseWalletSmall-light',
+  'linkCoinbaseWalletSmall-dark',
+  'transferFunds-light',
+  'transferFunds-dark',
 ] as const;

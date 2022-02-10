@@ -311,8 +311,13 @@ const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
     .fileImages(ILLUSTRATION_FILE_ID, nodeIds, 'png', 1)
     .catch((err) => console.error(err.message));
 
-  if (!svgImageResponse || !pngImageResponse) {
-    console.error('Empty image file');
+  if (!svgImageResponse) {
+    console.error('SVG Image is not loading');
+    return undefined;
+  }
+
+  if (!pngImageResponse) {
+    console.error('PNG Image is not loading');
     return undefined;
   }
 

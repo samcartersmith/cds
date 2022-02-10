@@ -42,6 +42,7 @@ export type IllustrationSpotSquareNames =
   | 'guideNftDefi'
   | 'guideStartInvesting'
   | 'interestForYou'
+  | 'linkCoinbaseWalletSmall'
   | 'moneyRewards'
   | 'nft'
   | 'nuxChecklist'
@@ -58,6 +59,7 @@ export type IllustrationSpotSquareNames =
   | 'sparkleToken'
   | 'starToken'
   | 'switchReward'
+  | 'taxDocuments'
   | 'tezosStakingRewards'
   | 'transferringCrypto'
   | 'waitlistNft'
@@ -97,6 +99,7 @@ export type IllustrationSpotRectangleNames =
   | 'trade'
   | 'transferCoins'
   | 'transferEth'
+  | 'transferFunds'
   | 'walletReconnect'
   | 'walletReconnectSuccess'
   | 'yieldHoldingAlt';

@@ -775,4 +775,10 @@ export const versionNumManifest: Record<string, number> = {
   'seedPhrase-light': 0,
   'ethAddress-light': 0,
   'ethAddress-dark': 0,
+  'taxDocuments-dark': 0,
+  'taxDocuments-light': 0,
+  'linkCoinbaseWalletSmall-light': 0,
+  'linkCoinbaseWalletSmall-dark': 0,
+  'transferFunds-light': 0,
+  'transferFunds-dark': 0,
 };
