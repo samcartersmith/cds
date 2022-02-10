@@ -26,51 +26,41 @@
 //         }, {})
 //     : {};
 
-const configCreator = (args) => {
-  const { iosProject, androidSourceDir, assets = [], dependencies = [] } = args;
+// const configCreator = (args) => {
+//   const { iosProject, androidSourceDir, assets = [], dependencies = [] } = args;
 
-  const defaultAssets = ['../../packages/fonts/native'];
+//   const defaultAssets = ['../../packages/fonts/native'];
 
-  const getConfig = () => {
-    return {
-      project: {
-        ios: {
-          project: iosProject,
-        },
-        android: {
-          sourceDir: androidSourceDir,
-        },
-      },
-      assets: [...defaultAssets, ...assets],
-      // dependencies: getExcludedDependencies(dependencies),
-    };
-  };
+//   const getConfig = () => {
+//     return {
+//       project: {
+//         ios: {
+//           project: iosProject,
+//         },
+//         android: {
+//           sourceDir: androidSourceDir,
+//         },
+//       },
+//       assets: [...defaultAssets, ...assets],
+//       // dependencies: getExcludedDependencies(dependencies),
+//     };
+//   };
 
-  const getDependencies = () => dependencies;
-  const getAssets = () => assets;
+//   const getDependencies = () => dependencies;
+//   const getAssets = () => assets;
 
-  return {
-    getAssets,
-    getConfig,
-    getDependencies,
-  };
-};
+//   return {
+//     getAssets,
+//     getConfig,
+//     getDependencies,
+//   };
+// };
 
-const cdsConfig = configCreator({
-  assets: ['../../packages/mobile/icons/font'],
-  iosProject: './ios/MobilePlayground.xcodeproj',
-  androidSourceDir: './android',
-  dependencies: [
-    'react-native-gesture-handler',
-    'react-native-linear-gradient',
-    'react-native-navigation-bar-color',
-    'react-native-reanimated',
-    'react-native-safe-area-context',
-    'react-native-svg',
-    'react-native-webview',
-    'react-native-inappbrowser-reborn',
-  ],
-});
+// const cdsConfig = configCreator({
+//   assets: ['../../packages/mobile/icons/font'],
+//   iosProject: './ios/MobilePlayground.xcodeproj',
+//   androidSourceDir: './android',
+// });
 
 // React Native CLI/config doesn't really support multiple projects
 // within the same repo, so we need to differentiate through env vars.
@@ -86,4 +76,15 @@ const cdsConfig = configCreator({
 //     throw new Error('Missing RN_PROJECT!');
 // }
 
-module.exports = cdsConfig.getConfig();
+// module.exports = cdsConfig.getConfig();
+module.exports = {
+  project: {
+    ios: {
+      project: './ios/MobilePlayground.xcodeproj',
+    },
+    android: {
+      project: './android',
+    },
+  },
+  assets: ['../../packages/fonts/native', '../../packages/mobile/icons/font'],
+};

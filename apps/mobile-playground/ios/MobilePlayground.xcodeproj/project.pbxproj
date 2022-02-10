@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20F4A6235FC402312F91054C /* libPods-MobilePlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7249A6D71CC4ACC71998520 /* libPods-MobilePlayground.a */; };
 		3B13C4F7BBAE5578C4BD4AD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FAE5370AADDABE43A1BEEB /* Images.xcassets */; };
 		600A8A14489CBF2D6EDE9C5C /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE486B00E491326F2B5756B5 /* dummy.swift */; settings = {COMPILER_FLAGS = "-fstack-protector-all"; }; };
 		6B2D00267F451703C5A6802D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D93720A60CF2749CBBFDCFA /* LaunchScreen.xib */; };
@@ -15,29 +14,30 @@
 		9D335A2080B2B4269C143351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3814F40C440DD270A45259C9 /* main.m */; settings = {COMPILER_FLAGS = "-fstack-protector-all"; }; };
 		C389EA49F65C9493C155B8F4 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B331A1CEBB4A9401D6F70DF0 /* Expo.plist */; };
 		C4BEEF66111A100224BBAB10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB5B8C0018A4B5342AFD3BE /* LaunchScreen.storyboard */; };
+		F3BD1863B59515AA22FBACFA /* libPods-MobilePlayground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61129CD0533C66E274C14CB5 /* libPods-MobilePlayground.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		059CCFE407F64E6169A2EF7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3814F40C440DD270A45259C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55FAE5370AADDABE43A1BEEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		78FE7115CE17ACE2841FA43F /* Pods-MobilePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePlayground.debug.xcconfig"; path = "Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		61129CD0533C66E274C14CB5 /* libPods-MobilePlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobilePlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A348BEF0E069DB27E02B3BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DB5B8C0018A4B5342AFD3BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F45F740BDCF16D09E5CD89C /* MobilePlayground.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MobilePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7249A6D71CC4ACC71998520 /* libPods-MobilePlayground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobilePlayground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B331A1CEBB4A9401D6F70DF0 /* Expo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Expo.plist; sourceTree = "<group>"; };
 		B8BB2A46E68931574FB81D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CF70D7B04CFD53B2417711AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE486B00E491326F2B5756B5 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
+		EAE3F72AAAA25794B3001660 /* Pods-MobilePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePlayground.debug.xcconfig"; path = "Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5B2303F6430FECB73BBB95D6 /* Frameworks */ = {
+		0F2F06D57205BD3F9359D60C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F4A6235FC402312F91054C /* libPods-MobilePlayground.a in Frameworks */,
+				F3BD1863B59515AA22FBACFA /* libPods-MobilePlayground.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,10 +63,10 @@
 		350C0B014D98A2BCC58496FC = {
 			isa = PBXGroup;
 			children = (
+				BCF1BE05B7B55AC12036882E /* Frameworks */,
 				1A0434228FED217969DE01DA /* MobilePlayground */,
+				B9DDFA8F745DD509D8B3FA6A /* Pods */,
 				F2B0EF1B3F5688EA79F868F6 /* Products */,
-				E34C43F3C3A96C9A6BF69C9F /* Pods */,
-				AA9A380B25D0B273EAAF5403 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,21 +78,21 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
-		AA9A380B25D0B273EAAF5403 /* Frameworks */ = {
+		B9DDFA8F745DD509D8B3FA6A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A7249A6D71CC4ACC71998520 /* libPods-MobilePlayground.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E34C43F3C3A96C9A6BF69C9F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				78FE7115CE17ACE2841FA43F /* Pods-MobilePlayground.debug.xcconfig */,
+				EAE3F72AAAA25794B3001660 /* Pods-MobilePlayground.debug.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BCF1BE05B7B55AC12036882E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61129CD0533C66E274C14CB5 /* libPods-MobilePlayground.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F2B0EF1B3F5688EA79F868F6 /* Products */ = {
@@ -110,12 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EA23218344FB97C4CB61C5C /* Build configuration list for PBXNativeTarget "MobilePlayground" */;
 			buildPhases = (
-				99F59FC8C0EC352BD1122716 /* [CP] Check Pods Manifest.lock */,
+				8158B03D17FA4AD96E426A9F /* [CP] Check Pods Manifest.lock */,
 				2272E9D10ED4BF677F98B9A5 /* Sources */,
 				C43E27A04669DC34A571F075 /* Resources */,
-				5B2303F6430FECB73BBB95D6 /* Frameworks */,
-				7AF274D430132035239F4A8A /* [CP] Embed Pods Frameworks */,
-				2556A6DC0FB1176509BDAC0D /* [CP] Copy Pods Resources */,
+				0F2F06D57205BD3F9359D60C /* Frameworks */,
+				2FB8373DB80A4DA5FAF1C69F /* [CP] Embed Pods Frameworks */,
+				4CD60019568BF4A176E181B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,24 +172,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2556A6DC0FB1176509BDAC0D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AF274D430132035239F4A8A /* [CP] Embed Pods Frameworks */ = {
+		2FB8373DB80A4DA5FAF1C69F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,7 +189,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		99F59FC8C0EC352BD1122716 /* [CP] Check Pods Manifest.lock */ = {
+		4CD60019568BF4A176E181B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilePlayground/Pods-MobilePlayground-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8158B03D17FA4AD96E426A9F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,7 +320,7 @@
 		};
 		1A157E5958B758EDD761E876 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78FE7115CE17ACE2841FA43F /* Pods-MobilePlayground.debug.xcconfig */;
+			baseConfigurationReference = EAE3F72AAAA25794B3001660 /* Pods-MobilePlayground.debug.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = MobilePlayground;
 				APP_VERSION = 1.0.0;

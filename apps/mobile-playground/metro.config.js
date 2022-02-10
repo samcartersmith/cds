@@ -1,4 +1,5 @@
 const path = require('path');
+const blacklist = require('metro-config/src/defaults/exclusionList');
 const homedir = require('os').homedir();
 
 // const config = {
@@ -6,7 +7,7 @@ const homedir = require('os').homedir();
 // };
 
 // const projectRoot = path.resolve(__dirname, '');
-const projectRoot = path.resolve(homedir, 'design-system');
+const projectRoot = path.resolve(homedir, 'Projects', 'design-system');
 
 const extraNodeModules = {
   react: path.join(projectRoot, 'node_modules/react'),
@@ -22,6 +23,7 @@ const metroConfig = {
     path.resolve(projectRoot, 'apps/mobile-playground/src'),
   ],
   resolver: {
+    blacklistRE: blacklist([/dist\/@cb\/.*/, /dist\/package.json/]),
     resolveMainFields: ['react-native', 'browser', 'main'],
     sourceExts: ['cjs', 'ts', 'tsx', 'js', 'jsx', 'json'],
     useWatchman: false,

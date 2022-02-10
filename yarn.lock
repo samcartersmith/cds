@@ -335,6 +335,7 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.16, @babel/core@npm:^7.12.3, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.3, @babel/core@npm:^7.16.12, @babel/core@npm:^7.17.0, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
   version: 7.17.2
   resolution: "@babel/core@npm:7.17.2"
@@ -356,6 +357,9 @@ __metadata:
   resolution: "@babel/core@npm:7.17.0"
 >>>>>>> 99201f6 (Tmp configs.)
 =======
+=======
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.1.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.16, @babel/core@npm:^7.12.3, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.3, @babel/core@npm:^7.16.12, @babel/core@npm:^7.17.0, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.17.2
   resolution: "@babel/core@npm:7.17.2"
 >>>>>>> b3e859a (Update yarn.lock.)
@@ -824,6 +828,7 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/plugin-proposal-class-properties@npm:^7.0.0, @babel/plugin-proposal-class-properties@npm:^7.10.4, @babel/plugin-proposal-class-properties@npm:^7.12.1, @babel/plugin-proposal-class-properties@npm:^7.16.7":
 =======
 "@babel/plugin-proposal-class-properties@npm:^7.0.0, @babel/plugin-proposal-class-properties@npm:^7.1.0, @babel/plugin-proposal-class-properties@npm:^7.13.0, @babel/plugin-proposal-class-properties@npm:^7.14.5, @babel/plugin-proposal-class-properties@npm:^7.16.7":
@@ -834,6 +839,9 @@ __metadata:
 =======
 "@babel/plugin-proposal-class-properties@npm:^7.0.0, @babel/plugin-proposal-class-properties@npm:^7.1.0, @babel/plugin-proposal-class-properties@npm:^7.10.4, @babel/plugin-proposal-class-properties@npm:^7.12.1, @babel/plugin-proposal-class-properties@npm:^7.14.5, @babel/plugin-proposal-class-properties@npm:^7.16.7":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"@babel/plugin-proposal-class-properties@npm:^7.0.0, @babel/plugin-proposal-class-properties@npm:^7.1.0, @babel/plugin-proposal-class-properties@npm:^7.10.4, @babel/plugin-proposal-class-properties@npm:^7.12.1, @babel/plugin-proposal-class-properties@npm:^7.16.7":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.16.7
   resolution: "@babel/plugin-proposal-class-properties@npm:7.16.7"
   dependencies:
@@ -860,6 +868,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/plugin-proposal-decorators@npm:^7.12.12, @babel/plugin-proposal-decorators@npm:^7.17.0":
   version: 7.17.2
   resolution: "@babel/plugin-proposal-decorators@npm:7.17.2"
@@ -872,6 +881,9 @@ __metadata:
     "@babel/helper-create-class-features-plugin": ^7.17.1
 =======
 "@babel/plugin-proposal-decorators@npm:^7.12.12, @babel/plugin-proposal-decorators@npm:^7.14.5, @babel/plugin-proposal-decorators@npm:^7.17.0":
+=======
+"@babel/plugin-proposal-decorators@npm:^7.12.12, @babel/plugin-proposal-decorators@npm:^7.17.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.17.2
   resolution: "@babel/plugin-proposal-decorators@npm:7.17.2"
   dependencies:
@@ -1329,7 +1341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-typescript@npm:^7.16.7, @babel/plugin-syntax-typescript@npm:^7.3.3, @babel/plugin-syntax-typescript@npm:^7.7.2":
+"@babel/plugin-syntax-typescript@npm:^7.16.7, @babel/plugin-syntax-typescript@npm:^7.7.2":
   version: 7.16.7
   resolution: "@babel/plugin-syntax-typescript@npm:7.16.7"
   dependencies:
@@ -1746,7 +1758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-regenerator@npm:^7.0.0, @babel/plugin-transform-regenerator@npm:^7.14.5, @babel/plugin-transform-regenerator@npm:^7.16.7":
+"@babel/plugin-transform-regenerator@npm:^7.0.0, @babel/plugin-transform-regenerator@npm:^7.16.7":
   version: 7.16.7
   resolution: "@babel/plugin-transform-regenerator@npm:7.16.7"
   dependencies:
@@ -1770,6 +1782,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/plugin-transform-runtime@npm:>=7, @babel/plugin-transform-runtime@npm:^7.0.0, @babel/plugin-transform-runtime@npm:^7.12.15, @babel/plugin-transform-runtime@npm:^7.17.0":
   version: 7.17.0
   resolution: "@babel/plugin-transform-runtime@npm:7.17.0"
@@ -1780,6 +1793,9 @@ __metadata:
 >>>>>>> 7775f22 (Fails, but need some help.)
 =======
 "@babel/plugin-transform-runtime@npm:>=7, @babel/plugin-transform-runtime@npm:^7.0.0, @babel/plugin-transform-runtime@npm:^7.12.15, @babel/plugin-transform-runtime@npm:^7.15.0, @babel/plugin-transform-runtime@npm:^7.17.0":
+=======
+"@babel/plugin-transform-runtime@npm:>=7, @babel/plugin-transform-runtime@npm:^7.0.0, @babel/plugin-transform-runtime@npm:^7.12.15, @babel/plugin-transform-runtime@npm:^7.17.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.17.0
   resolution: "@babel/plugin-transform-runtime@npm:7.17.0"
 >>>>>>> 99201f6 (Tmp configs.)
@@ -1891,6 +1907,7 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.12.16, @babel/preset-env@npm:^7.14.4, @babel/preset-env@npm:^7.16.11":
 =======
 "@babel/preset-env@npm:^7.15.0, @babel/preset-env@npm:^7.15.6, @babel/preset-env@npm:^7.16.7, @babel/preset-env@npm:^7.16.8":
@@ -1901,6 +1918,9 @@ __metadata:
 =======
 "@babel/preset-env@npm:^7.0.0, @babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.12.16, @babel/preset-env@npm:^7.14.4, @babel/preset-env@npm:^7.15.0, @babel/preset-env@npm:^7.16.11":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"@babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.12.16, @babel/preset-env@npm:^7.14.4, @babel/preset-env@npm:^7.16.11":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.16.11
   resolution: "@babel/preset-env@npm:7.16.11"
   dependencies:
@@ -2027,6 +2047,7 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/preset-react@npm:^7.12.10, @babel/preset-react@npm:^7.12.13, @babel/preset-react@npm:^7.12.5, @babel/preset-react@npm:^7.13.13, @babel/preset-react@npm:^7.16.7":
 =======
 "@babel/preset-react@npm:^7.14.5, @babel/preset-react@npm:^7.16.7":
@@ -2037,6 +2058,9 @@ __metadata:
 =======
 "@babel/preset-react@npm:^7.12.10, @babel/preset-react@npm:^7.12.13, @babel/preset-react@npm:^7.12.5, @babel/preset-react@npm:^7.13.13, @babel/preset-react@npm:^7.14.5, @babel/preset-react@npm:^7.16.7":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"@babel/preset-react@npm:^7.12.10, @babel/preset-react@npm:^7.12.13, @babel/preset-react@npm:^7.12.5, @babel/preset-react@npm:^7.13.13, @babel/preset-react@npm:^7.16.7":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.16.7
   resolution: "@babel/preset-react@npm:7.16.7"
   dependencies:
@@ -2055,6 +2079,7 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/preset-typescript@npm:^7.12.16, @babel/preset-typescript@npm:^7.12.7, @babel/preset-typescript@npm:^7.16.7":
 =======
 "@babel/preset-typescript@npm:^7.1.0, @babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.15.0, @babel/preset-typescript@npm:^7.16.7":
@@ -2065,6 +2090,9 @@ __metadata:
 =======
 "@babel/preset-typescript@npm:^7.1.0, @babel/preset-typescript@npm:^7.12.16, @babel/preset-typescript@npm:^7.12.7, @babel/preset-typescript@npm:^7.15.0, @babel/preset-typescript@npm:^7.16.7":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"@babel/preset-typescript@npm:^7.1.0, @babel/preset-typescript@npm:^7.12.16, @babel/preset-typescript@npm:^7.12.7, @babel/preset-typescript@npm:^7.16.7":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.16.7
   resolution: "@babel/preset-typescript@npm:7.16.7"
   dependencies:
@@ -2122,6 +2150,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.3, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
@@ -2151,6 +2180,9 @@ __metadata:
   linkType: hard
 
 "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.8, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+=======
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
   dependencies:
@@ -2177,6 +2209,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/traverse@npm:^7.1.6, @babel/traverse@npm:^7.12.11, @babel/traverse@npm:^7.12.13, @babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.14.0, @babel/traverse@npm:^7.16.7, @babel/traverse@npm:^7.16.8, @babel/traverse@npm:^7.17.0, @babel/traverse@npm:^7.4.5, @babel/traverse@npm:^7.7.2, @babel/traverse@npm:^7.7.4":
   version: 7.17.0
   resolution: "@babel/traverse@npm:7.17.0"
@@ -2187,6 +2220,9 @@ __metadata:
 >>>>>>> 7775f22 (Fails, but need some help.)
 =======
 "@babel/traverse@npm:^7.1.6, @babel/traverse@npm:^7.12.11, @babel/traverse@npm:^7.12.13, @babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.14.0, @babel/traverse@npm:^7.16.0, @babel/traverse@npm:^7.16.7, @babel/traverse@npm:^7.16.8, @babel/traverse@npm:^7.17.0, @babel/traverse@npm:^7.4.5, @babel/traverse@npm:^7.7.2, @babel/traverse@npm:^7.7.4":
+=======
+"@babel/traverse@npm:^7.1.6, @babel/traverse@npm:^7.12.11, @babel/traverse@npm:^7.12.13, @babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.14.0, @babel/traverse@npm:^7.16.7, @babel/traverse@npm:^7.16.8, @babel/traverse@npm:^7.17.0, @babel/traverse@npm:^7.4.5, @babel/traverse@npm:^7.7.2, @babel/traverse@npm:^7.7.4":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.17.0
   resolution: "@babel/traverse@npm:7.17.0"
 >>>>>>> 99201f6 (Tmp configs.)
@@ -2737,6 +2773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@cypress/webpack-preprocessor@npm:4.1.5":
   version: 4.1.5
   resolution: "@cypress/webpack-preprocessor@npm:4.1.5"
@@ -2843,6 +2880,8 @@ __metadata:
 
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "@discoveryjs/json-ext@npm:^0.5.0, @discoveryjs/json-ext@npm:^0.5.3":
   version: 0.5.6
   resolution: "@discoveryjs/json-ext@npm:0.5.6"
@@ -11054,34 +11093,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@npmcli/git@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@npmcli/git@npm:2.1.0"
-  dependencies:
-    "@npmcli/promise-spawn": ^1.3.2
-    lru-cache: ^6.0.0
-    mkdirp: ^1.0.4
-    npm-pick-manifest: ^6.1.1
-    promise-inflight: ^1.0.1
-    promise-retry: ^2.0.1
-    semver: ^7.3.5
-    which: ^2.0.2
-  checksum: 1f89752df7b836f378b8828423c6ae344fe59399915b9460acded19686e2d0626246251a3cd4cc411ed21c1be6fe7f0c2195c17f392e88748581262ee806dc33
-  languageName: node
-  linkType: hard
-
-"@npmcli/installed-package-contents@npm:^1.0.6":
-  version: 1.0.7
-  resolution: "@npmcli/installed-package-contents@npm:1.0.7"
-  dependencies:
-    npm-bundled: ^1.1.1
-    npm-normalize-package-bin: ^1.0.1
-  bin:
-    installed-package-contents: index.js
-  checksum: a4a29b99d439827ce2e7817c1f61b56be160e640696e31dc513a2c8a37c792f75cdb6258ec15a1e22904f20df0a8a3019dd3766de5e6619f259834cf64233538
-  languageName: node
-  linkType: hard
-
 "@npmcli/move-file@npm:^1.0.1":
   version: 1.1.2
   resolution: "@npmcli/move-file@npm:1.1.2"
@@ -11092,35 +11103,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@npmcli/node-gyp@npm:^1.0.2":
-  version: 1.0.3
-  resolution: "@npmcli/node-gyp@npm:1.0.3"
-  checksum: 496d5eef2e90e34bb07e96adbcbbce3dba5370ae87e8c46ff5b28570848f35470c8e008b8f69e50863632783e0a9190e6f55b2e4b049c537142821153942d26a
-  languageName: node
-  linkType: hard
-
-"@npmcli/promise-spawn@npm:^1.2.0, @npmcli/promise-spawn@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "@npmcli/promise-spawn@npm:1.3.2"
-  dependencies:
-    infer-owner: ^1.0.4
-  checksum: 543b7c1e26230499b4100b10d45efa35b1077e8f25595050f34930ca3310abe9524f7387279fe4330139e0f28a0207595245503439276fd4b686cca2b6503080
-  languageName: node
-  linkType: hard
-
-"@npmcli/run-script@npm:^1.8.2":
-  version: 1.8.6
-  resolution: "@npmcli/run-script@npm:1.8.6"
-  dependencies:
-    "@npmcli/node-gyp": ^1.0.2
-    "@npmcli/promise-spawn": ^1.3.2
-    node-gyp: ^7.1.0
-    read-package-json-fast: ^2.0.1
-  checksum: 41924e7925452ac8e78d78bef5d65b3d58f86eea4481a453e11e3a9099504bfbfcf1f65d7f75d92170b846fa347d05424e58e617fb9c17b3efd87db599a0f46e
-  languageName: node
-  linkType: hard
-
-"@nrwl/cli@npm:*, @nrwl/cli@npm:13.8.0, @nrwl/cli@npm:^13.4.3":
+"@nrwl/cli@npm:13.8.0, @nrwl/cli@npm:^13.4.3":
   version: 13.8.0
   resolution: "@nrwl/cli@npm:13.8.0"
   dependencies:
@@ -11135,73 +11118,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/cli@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/cli@npm:12.10.1"
-  dependencies:
-    "@nrwl/tao": 12.10.1
-    chalk: 4.1.0
-    v8-compile-cache: 2.3.0
-    yargs: 15.4.1
-    yargs-parser: 20.0.0
-  bin:
-    nx: bin/nx.js
-  checksum: 6d211fbacae856383d3bcea8c85cdd6fca37387767e9a67c57d5ccdfd7d493535ab2aad216aca4b03866687f983dd7c80183161dd4862f427bf66b9f661f078f
-  languageName: node
-  linkType: hard
-
-"@nrwl/cypress@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/cypress@npm:12.10.1"
-  dependencies:
-    "@cypress/webpack-preprocessor": 4.1.5
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/linter": 12.10.1
-    "@nrwl/workspace": 12.10.1
-    chalk: 4.1.0
-    fork-ts-checker-webpack-plugin: 6.2.10
-    rxjs: ^6.5.4
-    ts-loader: 5.4.5
-    tsconfig-paths-webpack-plugin: 3.4.1
-    tslib: ^2.0.0
-    webpack-node-externals: 1.7.2
-    yargs-parser: 20.0.0
-  peerDependencies:
-    cypress: ">= 3 < 9"
-  checksum: 14d6ec75091b5c771a59e4c2fac57e70e2b4efc61b8547e59ee782471cc05eb7a9d21681f6e503941ae75bb36ecffd10f2bcd1b81daad383352b80c46c34ef66
-  languageName: node
-  linkType: hard
-
-"@nrwl/detox@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/detox@npm:12.10.1"
-  dependencies:
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/jest": 12.10.1
-    "@nrwl/linter": 12.10.1
-    "@nrwl/react": 12.10.1
-    chalk: ^4.1.0
-  peerDependencies:
-    "@nrwl/workspace": 12.10.1
-    detox: 18.18.0
-  checksum: 0caaa86b1fdf966503a7f079855a64b52ff1b2465820a781b9ad52bcbd442e045724c7d39fba52f13bad4d07f2b124d326ffdd404fee17d464b40d747a340858
-  languageName: node
-  linkType: hard
-
-"@nrwl/devkit@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/devkit@npm:12.10.1"
-  dependencies:
-    "@nrwl/tao": 12.10.1
-    ejs: ^3.1.5
-    ignore: ^5.0.4
-    rxjs: ^6.5.4
-    semver: 7.3.4
-    tslib: ^2.0.0
-  checksum: 4c2b429cbac01db846a3af4539b6d512a5b08ce03858c8c788f812f8dec7ad75926cc52e76b29b9d75f6e49bf02b53476d269ee095403d90bcdd6a4127b34e7d
-  languageName: node
-  linkType: hard
-
 "@nrwl/devkit@npm:13.8.0, @nrwl/devkit@npm:^13.4.3, @nrwl/devkit@npm:^13.7.1":
   version: 13.8.0
   resolution: "@nrwl/devkit@npm:13.8.0"
@@ -11213,24 +11129,6 @@ __metadata:
     semver: 7.3.4
     tslib: ^2.3.0
   checksum: b8510e687446bd51ca71efbb411e75c9bc140af3b9c8ef9c386eafad6d340f7f0c452995e0f856321e4c690a07e1fa327d41518fd678b11a32a6523cc5a51dc0
-  languageName: node
-  linkType: hard
-
-"@nrwl/jest@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/jest@npm:12.10.1"
-  dependencies:
-    "@jest/reporters": 27.2.2
-    "@jest/test-result": 27.2.2
-    "@nrwl/devkit": 12.10.1
-    chalk: 4.1.0
-    identity-obj-proxy: 3.0.0
-    jest-config: 27.2.2
-    jest-resolve: 27.2.2
-    jest-util: 27.2.0
-    rxjs: ^6.5.4
-    tslib: ^2.0.0
-  checksum: da8fc64e07978d7b6fdaa1d1cfd3bfe1c8649cdc02f97390e828057214ab9e11d59e59567e450668857b36d5b97b7083b1e3e1012f03a3b9777a81895be1a431
   languageName: node
   linkType: hard
 
@@ -11253,20 +11151,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/linter@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/linter@npm:12.10.1"
-  dependencies:
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/jest": 12.10.1
-    glob: 7.1.4
-    minimatch: 3.0.4
-    tmp: ~0.2.1
-    tslib: ^2.0.0
-  checksum: c5d16af29c806701c0864e03c21dc698bb5c28c513b27fe2feef9bb237a65e048be8f30495f0d888c1789f4803240056ee3c2426e969f4318559f81dfcda8f3c
-  languageName: node
-  linkType: hard
-
 "@nrwl/linter@npm:13.8.0":
   version: 13.8.0
   resolution: "@nrwl/linter@npm:13.8.0"
@@ -11282,94 +11166,6 @@ __metadata:
     eslint:
       optional: true
   checksum: 7c3551f761be44c3bbe15d489f0e5bdf171986cbe078ab05664bce505c3f86a5e940d31ad88c19d28365f032319ec39f507e4404035af7aeb661b9f0c7574047
-  languageName: node
-  linkType: hard
-
-"@nrwl/react-native@npm:^12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/react-native@npm:12.10.1"
-  dependencies:
-    "@nrwl/detox": 12.10.1
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/jest": 12.10.1
-    "@nrwl/linter": 12.10.1
-    "@nrwl/react": 12.10.1
-    chalk: ^4.1.0
-    ignore: ^5.0.4
-    metro-resolver: ^0.66.2
-    node-fetch: ^2.6.1
-    tsconfig-paths: ^3.9.0
-  peerDependencies:
-    "@nrwl/workspace": 12.10.1
-    react-native: 0.65.1
-  checksum: 00f19ad6ded6363842000421d8633a90f9df71dc4008a8991d12f1e02200bcf5c779bc07636e0740993a49a1ca740f3644addc3c896fc892b5c707879b1bc9fd
-  languageName: node
-  linkType: hard
-
-"@nrwl/react@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/react@npm:12.10.1"
-  dependencies:
-    "@babel/core": ^7.15.0
-    "@babel/preset-react": ^7.14.5
-    "@nrwl/cypress": 12.10.1
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/jest": 12.10.1
-    "@nrwl/linter": 12.10.1
-    "@nrwl/storybook": 12.10.1
-    "@nrwl/web": 12.10.1
-    "@nrwl/workspace": 12.10.1
-    "@pmmmwh/react-refresh-webpack-plugin": ^0.5.1
-    "@storybook/node-logger": 6.1.20
-    "@svgr/webpack": ^5.5.0
-    chalk: 4.1.0
-    eslint-plugin-import: ^2.22.1
-    eslint-plugin-jsx-a11y: ^6.4.1
-    eslint-plugin-react: ^7.23.1
-    eslint-plugin-react-hooks: ^4.2.0
-    react-refresh: ^0.9.0
-    semver: 7.3.4
-    url-loader: ^3.0.0
-    webpack: 4.46.0
-    webpack-merge: 4.2.1
-  checksum: 7e340055ba0fbe9d54d0258322e66a57e46203eb12bfc8edd0a31e638614753553db8fc1762f375f66e17f7b5352a3b440aaa9bcfd4570cbe7010594d41fd157
-  languageName: node
-  linkType: hard
-
-"@nrwl/storybook@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/storybook@npm:12.10.1"
-  dependencies:
-    "@nrwl/cypress": 12.10.1
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/linter": 12.10.1
-    "@nrwl/workspace": 12.10.1
-    core-js: ^3.6.5
-    semver: 7.3.4
-    ts-loader: 5.4.5
-    tsconfig-paths-webpack-plugin: 3.4.1
-  checksum: a5a80605baa7a7582ab574e89d9deb2f3983e9ac001a0bdb256b0f3aa659ad2e6a3cf72032f5e242228964721390820b67d346440835aedd64a404da043153ea
-  languageName: node
-  linkType: hard
-
-"@nrwl/tao@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/tao@npm:12.10.1"
-  dependencies:
-    chalk: 4.1.0
-    enquirer: ~2.3.6
-    fs-extra: ^9.1.0
-    jsonc-parser: 3.0.0
-    nx: 12.10.1
-    rxjs: ^6.5.4
-    rxjs-for-await: 0.0.2
-    semver: 7.3.4
-    tmp: ~0.2.1
-    tslib: ^2.0.0
-    yargs-parser: 20.0.0
-  bin:
-    tao: index.js
-  checksum: 5bcd74ef3f73feb2fb06f97abbfb33b94746853ad07a1c10fc687a8a7b4d79469739f127588471038e625c6f7bf73d0d6c5cd6ab190c2ff29da2b5aaf6bc6f1c
   languageName: node
   linkType: hard
 
@@ -11393,128 +11189,6 @@ __metadata:
   bin:
     tao: index.js
   checksum: e6a874a5bd2ee517d005c1ae0e2a9343147d17a742a2e8a2939734e2fb34fc2eb86e768db3f222b00e9f6d2d0508f7464cb49cc1f9fe5d33fa2e34972bb4510c
-  languageName: node
-  linkType: hard
-
-"@nrwl/web@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/web@npm:12.10.1"
-  dependencies:
-    "@babel/core": ^7.15.0
-    "@babel/plugin-proposal-class-properties": ^7.14.5
-    "@babel/plugin-proposal-decorators": ^7.14.5
-    "@babel/plugin-transform-regenerator": ^7.14.5
-    "@babel/plugin-transform-runtime": ^7.15.0
-    "@babel/preset-env": ^7.15.0
-    "@babel/preset-typescript": ^7.15.0
-    "@babel/runtime": ^7.14.8
-    "@nrwl/cypress": 12.10.1
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/jest": 12.10.1
-    "@nrwl/linter": 12.10.1
-    "@nrwl/workspace": 12.10.1
-    "@rollup/plugin-babel": ^5.3.0
-    "@rollup/plugin-commonjs": ^20.0.0
-    "@rollup/plugin-image": ^2.1.0
-    "@rollup/plugin-json": ^4.1.0
-    "@rollup/plugin-node-resolve": ^13.0.4
-    autoprefixer: ^10.2.5
-    babel-loader: 8.1.0
-    babel-plugin-const-enum: ^1.0.1
-    babel-plugin-macros: ^2.8.0
-    babel-plugin-transform-async-to-promises: ^0.8.15
-    babel-plugin-transform-typescript-metadata: ^0.3.1
-    browserslist: ^4.16.6
-    caniuse-lite: ^1.0.30001251
-    chalk: 4.1.0
-    chokidar: ^3.5.1
-    circular-dependency-plugin: 5.2.0
-    clean-css: 4.2.1
-    copy-webpack-plugin: 6.4.1
-    core-js: ^3.6.5
-    css-loader: 3.6.0
-    file-loader: 4.2.0
-    fork-ts-checker-webpack-plugin: 6.2.10
-    fs-extra: ^9.1.0
-    http-server: 0.12.3
-    identity-obj-proxy: 3.0.0
-    ignore: ^5.0.4
-    less: 3.12.2
-    less-loader: 5.0.0
-    license-webpack-plugin: 2.3.15
-    loader-utils: 1.2.3
-    mini-css-extract-plugin: 0.8.0
-    open: ^7.4.2
-    parse5: 4.0.0
-    parse5-html-rewriting-stream: 6.0.1
-    postcss: 8.3.0
-    postcss-import: 14.0.2
-    postcss-loader: 4.2.0
-    raw-loader: 3.1.0
-    rimraf: ^3.0.2
-    rollup: ^2.56.2
-    rollup-plugin-copy: ^3.4.0
-    rollup-plugin-filesize: ^9.1.1
-    rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-postcss: ^4.0.1
-    rollup-plugin-typescript2: ^0.30.0
-    rxjs: ^6.5.4
-    rxjs-for-await: 0.0.2
-    sass: ^1.42.1
-    sass-loader: 8.0.2
-    semver: 7.3.4
-    source-map: 0.7.3
-    source-map-loader: 0.2.4
-    style-loader: 1.0.0
-    stylus: 0.54.5
-    stylus-loader: 3.0.2
-    terser: 4.3.8
-    terser-webpack-plugin: 2.3.8
-    ts-loader: 5.4.5
-    tsconfig-paths-webpack-plugin: 3.4.1
-    tslib: ^2.0.0
-    webpack: 4.46.0
-    webpack-dev-server: 3.11.2
-    webpack-merge: 4.2.1
-    webpack-sources: 1.4.3
-    webpack-subresource-integrity: ^1.5.2
-    worker-plugin: 3.2.0
-  checksum: 363c0cba6a924ad7069a4343c258397e3366d98674afe1caa41ac8b3782308bc4ba9bef7b5ff37a6113900802d5c77549887e0b07ea035d7ef9ec4687426c871
-  languageName: node
-  linkType: hard
-
-"@nrwl/workspace@npm:12.10.1":
-  version: 12.10.1
-  resolution: "@nrwl/workspace@npm:12.10.1"
-  dependencies:
-    "@nrwl/cli": 12.10.1
-    "@nrwl/devkit": 12.10.1
-    "@nrwl/jest": 12.10.1
-    "@nrwl/linter": 12.10.1
-    "@parcel/watcher": 2.0.0-alpha.11
-    chalk: 4.1.0
-    chokidar: ^3.5.1
-    cosmiconfig: ^4.0.0
-    dotenv: ~10.0.0
-    enquirer: ~2.3.6
-    flat: ^5.0.2
-    fs-extra: ^9.1.0
-    glob: 7.1.4
-    ignore: ^5.0.4
-    minimatch: 3.0.4
-    npm-run-all: ^4.1.5
-    npm-run-path: ^4.0.1
-    open: ^7.4.2
-    rxjs: ^6.5.4
-    semver: 7.3.4
-    strip-ansi: 6.0.0
-    tmp: ~0.2.1
-    tslib: ^2.0.0
-    yargs: 15.4.1
-    yargs-parser: 20.0.0
-  peerDependencies:
-    prettier: ^2.3.0
-  checksum: 1b20aa90431a67c221da4898cf5de6208d8cfbd4d1c14f6cae0e6109a73fa8308d660b164031210985879917a259349b27108f008f58b01005c3d695211ff675
   languageName: node
   linkType: hard
 
@@ -11553,17 +11227,6 @@ __metadata:
     prettier:
       optional: true
   checksum: a29b0660fa3ec10e14bd1467eb005400117f93ed40d21d58afafa4d678d419afdcd314cb219ff2882e6e52959d48c793cf69b6a261be9c0478e6b66784e656b0
-  languageName: node
-  linkType: hard
-
-"@parcel/watcher@npm:2.0.0-alpha.11":
-  version: 2.0.0-alpha.11
-  resolution: "@parcel/watcher@npm:2.0.0-alpha.11"
-  dependencies:
-    node-addon-api: ^3.0.2
-    node-gyp: latest
-    node-gyp-build: ^4.2.3
-  checksum: 8f3ca21ecb2696aaec9792cafb2f1d6bcc9147b6f25ea0c49e816b6e0adb75245b4b68b143bf9213ccd2ab2b01e36ccfe0e384db9ebc487aad51c29cad20c21a
   languageName: node
   linkType: hard
 
@@ -11976,23 +11639,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-commonjs@npm:^20.0.0":
-  version: 20.0.0
-  resolution: "@rollup/plugin-commonjs@npm:20.0.0"
-  dependencies:
-    "@rollup/pluginutils": ^3.1.0
-    commondir: ^1.0.1
-    estree-walker: ^2.0.1
-    glob: ^7.1.6
-    is-reference: ^1.2.1
-    magic-string: ^0.25.7
-    resolve: ^1.17.0
-  peerDependencies:
-    rollup: ^2.38.3
-  checksum: fefc4b5ab1509ff64e26dfee3eca2f23cea204bf20f3dc76c616d3aa3faf4b1035166287518a64ba07faaaea1621a0af5b94b8f8199371ca67db905562e7e619
-  languageName: node
-  linkType: hard
-
 "@rollup/plugin-commonjs@npm:^21.0.1":
   version: 21.0.1
   resolution: "@rollup/plugin-commonjs@npm:21.0.1"
@@ -12007,18 +11653,6 @@ __metadata:
   peerDependencies:
     rollup: ^2.38.3
   checksum: 3e56be58c72d655face6f361f85923ddcc3cc07760b5a3a91cfc728115dfed358fc595781148c512d53a03be8c703133379f228e78fd2aed8655fae9d83800b6
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-image@npm:^2.1.0":
-  version: 2.1.1
-  resolution: "@rollup/plugin-image@npm:2.1.1"
-  dependencies:
-    "@rollup/pluginutils": ^3.1.0
-    mini-svg-data-uri: ^1.2.3
-  peerDependencies:
-    rollup: ^1.20.0 || ^2.0.0
-  checksum: a629c8f22233ca159c23655fdbc3449dab3c939372178ed4462fc9c525cc4ecd8b11fae359eb94be4f769d26f48b85fb18eb16ce1fbc33ed16b6a7c1f84391f6
   languageName: node
   linkType: hard
 
@@ -12046,7 +11680,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:^13.0.4, @rollup/plugin-node-resolve@npm:^13.1.3":
+"@rollup/plugin-node-resolve@npm:^13.1.3":
   version: 13.1.3
   resolution: "@rollup/plugin-node-resolve@npm:13.1.3"
   dependencies:
@@ -12072,16 +11706,6 @@ __metadata:
   peerDependencies:
     rollup: ^1.20.0||^2.0.0
   checksum: 8be16e27863c219edbb25a4e6ec2fe0e1e451d9e917b6a43cf2ae5bc025a6b8faaa40f82a6e53b66d0de37b58ff472c6c3d57a83037ae635041f8df959d6d9aa
-  languageName: node
-  linkType: hard
-
-"@rollup/pluginutils@npm:^4.1.0":
-  version: 4.1.2
-  resolution: "@rollup/pluginutils@npm:4.1.2"
-  dependencies:
-    estree-walker: ^2.0.1
-    picomatch: ^2.2.2
-  checksum: 498d67e7b48c707e3e0d9f7ddaa405833d77575b2d9607cd1914be40455ed534235e0512f9d046bf0e4ed1740e7816fd32ab1c673195e897c4fa180bcbfd7283
   languageName: node
   linkType: hard
 
@@ -13216,19 +12840,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/node-logger@npm:6.1.20":
-  version: 6.1.20
-  resolution: "@storybook/node-logger@npm:6.1.20"
-  dependencies:
-    "@types/npmlog": ^4.1.2
-    chalk: ^4.0.0
-    core-js: ^3.0.1
-    npmlog: ^4.1.2
-    pretty-hrtime: ^1.0.3
-  checksum: 840295da7cac04a200867b363c050573af7562beec177a6fecc9c6b5647571ac0d34c32d4e2793fd33bba8c2f46c2a1f602990d4ef9e744525a1afe11a777a24
-  languageName: node
-  linkType: hard
-
 "@storybook/node-logger@npm:6.4.18":
   version: 6.4.18
   resolution: "@storybook/node-logger@npm:6.4.18"
@@ -13934,6 +13545,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@types/fs-extra@npm:^8.0.1":
   version: 8.1.2
   resolution: "@types/fs-extra@npm:8.1.2"
@@ -13945,6 +13557,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "@types/fs-extra@npm:^9.0.13":
   version: 9.0.13
   resolution: "@types/fs-extra@npm:9.0.13"
@@ -14642,6 +14256,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "@types/webpack-sources@npm:^0.1.5":
   version: 0.1.9
@@ -14655,6 +14270,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "@types/webpack@npm:^4.41.26, @types/webpack@npm:^4.41.8":
   version: 4.41.32
   resolution: "@types/webpack@npm:4.41.32"
@@ -16206,6 +15823,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "ajv@npm:^6.1.0, ajv@npm:^6.10.0, ajv@npm:^6.10.2, ajv@npm:^6.12.2, ajv@npm:^6.12.4, ajv@npm:^6.12.5, ajv@npm:~6.12.6":
 =======
 "ajv@npm:^6.1.0, ajv@npm:^6.10.0, ajv@npm:^6.10.2, ajv@npm:^6.12.2, ajv@npm:^6.12.4, ajv@npm:^6.12.5, ajv@npm:^6.5.5, ajv@npm:~6.12.6":
@@ -16213,6 +15831,9 @@ __metadata:
 =======
 "ajv@npm:^6.1.0, ajv@npm:^6.10.0, ajv@npm:^6.10.2, ajv@npm:^6.12.2, ajv@npm:^6.12.3, ajv@npm:^6.12.4, ajv@npm:^6.12.5, ajv@npm:~6.12.6":
 >>>>>>> b3e859a (Update yarn.lock.)
+=======
+"ajv@npm:^6.1.0, ajv@npm:^6.10.0, ajv@npm:^6.10.2, ajv@npm:^6.12.2, ajv@npm:^6.12.4, ajv@npm:^6.12.5, ajv@npm:~6.12.6":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 6.12.6
   resolution: "ajv@npm:6.12.6"
   dependencies:
@@ -16287,6 +15908,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "amdefine@npm:>=0.0.4":
   version: 1.0.1
@@ -16296,6 +15918,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "anser@npm:^1.4.9":
   version: 1.4.10
   resolution: "anser@npm:1.4.10"
@@ -16397,10 +16021,14 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "ansi-html@npm:^0.0.7":
 =======
 "ansi-html@npm:0.0.7, ansi-html@npm:^0.0.7":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"ansi-html@npm:^0.0.7":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 0.0.7
   resolution: "ansi-html@npm:0.0.7"
   bin:
@@ -16680,8 +16308,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "aproba@npm:^1.0.3, aproba@npm:^1.1.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"aproba@npm:^1.1.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.2.0
   resolution: "aproba@npm:1.2.0"
   checksum: 0fca141966559d195072ed047658b6e6c4fe92428c385dd38e288eacfc55807e7b4989322f030faff32c0f46bb0bc10f1e0ac32ec22d25315a1e5bbc0ebb76dc
@@ -16698,6 +16330,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 "are-we-there-yet@npm:^3.0.0":
@@ -16719,6 +16352,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "arg@npm:^4.1.0":
   version: 4.1.3
   resolution: "arg@npm:4.1.3"
@@ -17165,6 +16800,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "asn1@npm:~0.2.3":
   version: 0.2.6
@@ -17183,6 +16819,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "assert@npm:^1.1.1":
   version: 1.5.0
   resolution: "assert@npm:1.5.0"
@@ -17411,10 +17049,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "async@npm:^2.4.0, async@npm:^2.6.2":
 =======
 "async@npm:^2.4.0, async@npm:^2.5.0, async@npm:^2.6.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"async@npm:^2.4.0, async@npm:^2.6.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.6.3
   resolution: "async@npm:2.6.3"
   dependencies:
@@ -17619,6 +17261,7 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "axe-core@npm:^3.5.5":
   version: 3.5.6
   resolution: "axe-core@npm:3.5.6"
@@ -17671,6 +17314,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "axe-core@npm:^3.5.5":
   version: 3.5.6
   resolution: "axe-core@npm:3.5.6"
@@ -17791,6 +17436,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "babel-loader@npm:8.1.0":
   version: 8.1.0
   resolution: "babel-loader@npm:8.1.0"
@@ -17809,6 +17455,9 @@ __metadata:
 
 "babel-loader@npm:^8.0.0, babel-loader@npm:^8.0.2, babel-loader@npm:^8.2.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"babel-loader@npm:^8.0.0, babel-loader@npm:^8.2.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 8.2.3
   resolution: "babel-loader@npm:8.2.3"
   dependencies:
@@ -17950,6 +17599,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "babel-plugin-const-enum@npm:^1.0.1":
   version: 1.2.0
@@ -17965,6 +17615,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "babel-plugin-dotenv-import@npm:2.2.0":
   version: 2.2.0
   resolution: "babel-plugin-dotenv-import@npm:2.2.0"
@@ -18454,10 +18106,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "babel-plugin-transform-async-to-promises@npm:^0.8.18":
 =======
 "babel-plugin-transform-async-to-promises@npm:^0.8.15, babel-plugin-transform-async-to-promises@npm:^0.8.18":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"babel-plugin-transform-async-to-promises@npm:^0.8.18":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 0.8.18
   resolution: "babel-plugin-transform-async-to-promises@npm:0.8.18"
   checksum: dcc345359eb33f55c42c49894166c9a5c65635e1a6e0518a00beef4f1ead7dec3409f5b3050844c1870470627b21248b0947ee884835881961b731b638156377
@@ -18472,6 +18128,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "babel-plugin-transform-typescript-metadata@npm:^0.3.1":
   version: 0.3.2
@@ -18483,6 +18140,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "babel-preset-current-node-syntax@npm:^1.0.0":
   version: 1.0.1
   resolution: "babel-preset-current-node-syntax@npm:1.0.1"
@@ -18644,6 +18303,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "basic-auth@npm:^1.0.3":
   version: 1.1.0
@@ -18653,6 +18313,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "batch-processor@npm:1.0.0":
   version: 1.0.0
   resolution: "batch-processor@npm:1.0.0"
@@ -18701,6 +18363,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "bcrypt-pbkdf@npm:^1.0.0":
   version: 1.0.2
@@ -18712,6 +18375,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "better-opn@npm:^2.1.1":
   version: 2.1.1
   resolution: "better-opn@npm:2.1.1"
@@ -18871,6 +18536,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "bluebird@npm:3.7.1":
   version: 3.7.1
@@ -18880,6 +18546,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "bluebird@npm:^3.3.5, bluebird@npm:^3.5.5, bluebird@npm:^3.7.1":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
@@ -19168,6 +18836,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "browser-process-hrtime@npm:^1.0.0":
   version: 1.0.0
   resolution: "browser-process-hrtime@npm:1.0.0"
@@ -19199,6 +18868,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "browser-process-hrtime@npm:^1.0.0":
   version: 1.0.0
   resolution: "browser-process-hrtime@npm:1.0.0"
@@ -19485,6 +19156,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "builtins@npm:^1.0.3":
   version: 1.0.3
   resolution: "builtins@npm:1.0.3"
@@ -19493,6 +19165,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "bytes@npm:3.0.0":
   version: 3.0.0
   resolution: "bytes@npm:3.0.0"
@@ -19577,6 +19251,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "cacache@npm:^13.0.1":
   version: 13.0.1
@@ -19605,6 +19280,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "cacache@npm:^15.0.5, cacache@npm:^15.2.0":
   version: 15.3.0
   resolution: "cacache@npm:15.3.0"
@@ -19842,6 +19519,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001125, caniuse-lite@npm:^1.0.30001286, caniuse-lite@npm:^1.0.30001297, caniuse-lite@npm:^1.0.30001304":
   version: 1.0.30001311
   resolution: "caniuse-lite@npm:1.0.30001311"
@@ -19865,6 +19543,9 @@ __metadata:
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001125, caniuse-lite@npm:^1.0.30001251, caniuse-lite@npm:^1.0.30001286, caniuse-lite@npm:^1.0.30001297, caniuse-lite@npm:^1.0.30001304":
+=======
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001125, caniuse-lite@npm:^1.0.30001286, caniuse-lite@npm:^1.0.30001297, caniuse-lite@npm:^1.0.30001304":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.0.30001309
   resolution: "caniuse-lite@npm:1.0.30001309"
   checksum: 95093d01dc0880a371fe6aaf54cccb01a979933181a3aad6fc08e80c4601e27e1578a44d8ab6c1d3d58526ed2a917ce5e643c0e8299a0330cdac7bc8a7b5d7f0
@@ -19889,6 +19570,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "caseless@npm:~0.12.0":
   version: 0.12.0
@@ -19898,6 +19580,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "ccount@npm:^1.0.0, ccount@npm:^1.0.3":
   version: 1.1.0
   resolution: "ccount@npm:1.1.0"
@@ -19906,10 +19590,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "chalk@npm:2.4.2, chalk@npm:^2.0.0, chalk@npm:^2.0.1, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
 =======
 "chalk@npm:2.4.2, chalk@npm:^2.0.0, chalk@npm:^2.0.1, chalk@npm:^2.3.0, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"chalk@npm:2.4.2, chalk@npm:^2.0.0, chalk@npm:^2.0.1, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -20025,6 +19713,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.4.0, chokidar@npm:^3.4.1, chokidar@npm:^3.4.2, chokidar@npm:^3.5.1":
   version: 3.5.3
@@ -20046,6 +19735,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "chokidar@npm:^2.1.8":
   version: 2.1.8
   resolution: "chokidar@npm:2.1.8"
@@ -20100,8 +19791,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "chownr@npm:^1.1.1, chownr@npm:^1.1.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"chokidar@npm:^3.4.0, chokidar@npm:^3.4.1, chokidar@npm:^3.4.2, chokidar@npm:^3.5.1":
+  version: 3.5.3
+  resolution: "chokidar@npm:3.5.3"
+  dependencies:
+    anymatch: ~3.1.2
+    braces: ~3.0.2
+    fsevents: ~2.3.2
+    glob-parent: ~5.1.2
+    is-binary-path: ~2.1.0
+    is-glob: ~4.0.1
+    normalize-path: ~3.0.0
+    readdirp: ~3.6.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  checksum: b49fcde40176ba007ff361b198a2d35df60d9bb2a5aab228279eb810feae9294a6b4649ab15981304447afe1e6ffbf4788ad5db77235dc770ab777c6e771980c
+  languageName: node
+  linkType: hard
+
+"chownr@npm:^1.1.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.1.4
   resolution: "chownr@npm:1.1.4"
   checksum: 115648f8eb38bac5e41c3857f3e663f9c39ed6480d1349977c4d96c95a47266fcacc5a5aabf3cb6c481e22d72f41992827db47301851766c4fd77ac21a4f081d
@@ -20178,6 +19892,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "circular-dependency-plugin@npm:5.2.0":
   version: 5.2.0
@@ -20189,6 +19904,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "cjs-module-lexer@npm:^1.0.0":
   version: 1.2.2
   resolution: "cjs-module-lexer@npm:1.2.2"
@@ -20216,6 +19933,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "clean-css@npm:4.2.1":
   version: 4.2.1
@@ -20227,6 +19945,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "clean-css@npm:^4.2.3":
   version: 4.2.4
   resolution: "clean-css@npm:4.2.4"
@@ -20425,6 +20145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "clone@npm:^2.1.1":
   version: 2.1.2
   resolution: "clone@npm:2.1.2"
@@ -20433,6 +20154,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "clsx@npm:^1.0.4, clsx@npm:^1.1.1":
   version: 1.1.1
   resolution: "clsx@npm:1.1.1"
@@ -20468,6 +20191,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "code-point-at@npm:^1.0.0":
   version: 1.1.0
@@ -20477,6 +20201,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "collapse-white-space@npm:^1.0.2":
   version: 1.0.6
   resolution: "collapse-white-space@npm:1.0.6"
@@ -20598,10 +20324,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "colorette@npm:^1.0.7, colorette@npm:^1.2.2":
 =======
 "colorette@npm:^1.0.7, colorette@npm:^1.1.0, colorette@npm:^1.2.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"colorette@npm:^1.0.7, colorette@npm:^1.2.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.4.0
   resolution: "colorette@npm:1.4.0"
   checksum: 01c3c16058b182a4ab4c126a65a75faa4d38a20fa7c845090b25453acec6c371bb2c5dceb0a2338511f17902b9d1a9af0cadd8509c9403894b79311032c256c3
@@ -20630,10 +20360,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "combined-stream@npm:^1.0.8":
 =======
 "combined-stream@npm:^1.0.6, combined-stream@npm:^1.0.8, combined-stream@npm:~1.0.6":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"combined-stream@npm:^1.0.8":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.0.8
   resolution: "combined-stream@npm:1.0.8"
   dependencies:
@@ -20799,6 +20533,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "concat-with-sourcemaps@npm:^1.1.0":
   version: 1.1.0
@@ -20810,6 +20545,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "configstore@npm:^5.0.1":
   version: 5.0.1
   resolution: "configstore@npm:5.0.1"
@@ -20865,10 +20602,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "console-control-strings@npm:^1.0.0, console-control-strings@npm:^1.1.0":
 =======
 "console-control-strings@npm:^1.0.0, console-control-strings@npm:^1.1.0, console-control-strings@npm:~1.1.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"console-control-strings@npm:^1.0.0, console-control-strings@npm:^1.1.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
   checksum: 8755d76787f94e6cf79ce4666f0c5519906d7f5b02d4b884cf41e11dcd759ed69c57da0670afd9236d229a46e0f9cf519db0cd829c6dca820bb5a5c3def584ed
@@ -20973,6 +20714,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "copy-webpack-plugin@npm:6.4.1":
   version: 6.4.1
@@ -20996,6 +20738,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "copy-webpack-plugin@npm:^9.0.0":
   version: 9.1.0
   resolution: "copy-webpack-plugin@npm:9.1.0"
@@ -21077,14 +20821,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "core-js@npm:^3.0.1, core-js@npm:^3.0.4, core-js@npm:^3.14.0, core-js@npm:^3.16.2, core-js@npm:^3.6.5, core-js@npm:^3.8.2, core-js@npm:^3.9.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"core-js@npm:^3.0.4, core-js@npm:^3.14.0, core-js@npm:^3.16.2, core-js@npm:^3.6.5, core-js@npm:^3.8.2, core-js@npm:^3.9.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.21.0
   resolution: "core-js@npm:3.21.0"
   checksum: 87df49aa2c5d0a521c52102b6669842dd30b334742e86dd4e0173c51230bc48d610060ab6de0f149766d188325b8c1b84598f901cf455674fe6c03ccc5c8026f
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 "core-util-is@npm:1.0.2":
@@ -21095,6 +20844,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "core-util-is@npm:~1.0.0":
   version: 1.0.3
   resolution: "core-util-is@npm:1.0.3"
@@ -21102,6 +20853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 "corser@npm:^2.0.1":
@@ -21124,6 +20876,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "cosmiconfig@npm:^5.0.5, cosmiconfig@npm:^5.1.0":
   version: 5.2.1
   resolution: "cosmiconfig@npm:5.2.1"
@@ -21313,10 +21067,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "cross-spawn@npm:^6.0.0":
 =======
 "cross-spawn@npm:^6.0.0, cross-spawn@npm:^6.0.5":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"cross-spawn@npm:^6.0.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 6.0.5
   resolution: "cross-spawn@npm:6.0.5"
   dependencies:
@@ -21429,6 +21187,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "css-loader@npm:6.2.0":
   version: 6.2.0
   resolution: "css-loader@npm:6.2.0"
@@ -21448,9 +21209,12 @@ __metadata:
   linkType: hard
 
 "css-loader@npm:^3.6.0":
+<<<<<<< HEAD
 =======
 "css-loader@npm:3.6.0, css-loader@npm:^3.6.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.6.0
   resolution: "css-loader@npm:3.6.0"
   dependencies:
@@ -21474,6 +21238,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "css-loader@npm:6.2.0":
   version: 6.2.0
@@ -21494,6 +21259,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "css-loader@npm:^5.0.1, css-loader@npm:^5.1.1":
   version: 5.2.7
   resolution: "css-loader@npm:5.2.7"
@@ -21540,6 +21307,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "css-parse@npm:1.7.x":
   version: 1.7.0
@@ -21549,6 +21317,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "css-select-base-adapter@npm:^0.1.1":
   version: 0.1.1
   resolution: "css-select-base-adapter@npm:0.1.1"
@@ -21857,10 +21627,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "cssnano@npm:^5.0.4, cssnano@npm:^5.0.6":
 =======
 "cssnano@npm:^5.0.1, cssnano@npm:^5.0.4, cssnano@npm:^5.0.6":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"cssnano@npm:^5.0.4, cssnano@npm:^5.0.6":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 5.0.17
   resolution: "cssnano@npm:5.0.17"
   dependencies:
@@ -22200,6 +21974,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "dashdash@npm:^1.12.0":
   version: 1.14.1
   resolution: "dashdash@npm:1.14.1"
@@ -22210,6 +21985,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "data-urls@npm:^2.0.0":
   version: 2.0.0
   resolution: "data-urls@npm:2.0.0"
@@ -22228,6 +22005,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 "dd-trace@npm:^2.1.1":
   version: 2.2.0
@@ -22302,6 +22080,8 @@ __metadata:
     ms: 2.0.0
   checksum: 0b52718ab957254a5b3ca07fc34543bc778f358620c206a08452251eb7fc193c3ea3505072acbf4350219c14e2d71ceb7bdaa0d3370aa630b50da790458d08b3
 =======
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "debug@npm:2.6.9, debug@npm:^2.2.0, debug@npm:^2.3.3, debug@npm:^2.6.0, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -22311,13 +22091,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4.1.1":
-  version: 4.1.1
-  resolution: "debug@npm:4.1.1"
+"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
+  version: 4.3.3
+  resolution: "debug@npm:4.3.3"
   dependencies:
+<<<<<<< HEAD
     ms: ^2.1.1
   checksum: 1e681f5cce94ba10f8dde74b20b42e4d8cf0d2a6700f4c165bb3bb6885565ef5ca5885bf07e704974a835f2415ff095a63164f539988a1f07e8a69fe8b1d65ad
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+    ms: 2.1.2
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 14472d56fe4a94dbcfaa6dbed2dd3849f1d72ba78104a1a328047bb564643ca49df0224c3a17fa63533fd11dd3d4c8636cd861191232a2c6735af00cc2d4de16
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   languageName: node
   linkType: hard
 
@@ -22710,8 +22498,11 @@ __metadata:
 =======
     "@mdx-js/react": ^1.6.22
     "@nrwl/cli": ^13.4.3
+<<<<<<< HEAD
     "@nrwl/react-native": ^12.10.1
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
     "@nrwl/tao": ^13.4.3
     "@nrwl/workspace": ^13.4.3
     "@pmmmwh/react-refresh-webpack-plugin": 0.4.3
@@ -23337,6 +23128,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "duplexer@npm:0.1.1":
   version: 0.1.1
@@ -23346,6 +23138,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "duplexer@npm:^0.1.1, duplexer@npm:^0.1.2":
   version: 0.1.2
   resolution: "duplexer@npm:0.1.2"
@@ -23365,6 +23159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 "ee-first@npm:1.1.1":
   version: 1.1.1
@@ -23406,6 +23201,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "ee-first@npm:1.1.1":
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
@@ -23497,6 +23294,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "emojis-list@npm:^2.0.0":
   version: 2.1.0
@@ -23506,6 +23304,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "emojis-list@npm:^3.0.0":
   version: 3.0.0
   resolution: "emojis-list@npm:3.0.0"
@@ -23571,10 +23371,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "enhanced-resolve@npm:^4.1.0, enhanced-resolve@npm:^4.5.0":
 =======
 "enhanced-resolve@npm:^4.0.0, enhanced-resolve@npm:^4.1.0, enhanced-resolve@npm:^4.5.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"enhanced-resolve@npm:^4.1.0, enhanced-resolve@npm:^4.5.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.5.0
   resolution: "enhanced-resolve@npm:4.5.0"
   dependencies:
@@ -23586,6 +23390,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "enhanced-resolve@npm:^5.8.3":
   version: 5.9.0
   resolution: "enhanced-resolve@npm:5.9.0"
@@ -23595,6 +23400,9 @@ __metadata:
   checksum: 06435f52670229eb7fd8d92ea2d988a275f9a1b8c08b9023ba45767c6ed844bc87aa9c9c7e6d044eef99ad73fc3b066b78101163696e5c53121909e5bf8efe8b
 =======
 "enhanced-resolve@npm:^5.7.0, enhanced-resolve@npm:^5.8.3":
+=======
+"enhanced-resolve@npm:^5.8.3":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 5.9.0
   resolution: "enhanced-resolve@npm:5.9.0"
   dependencies:
@@ -23656,10 +23464,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "errno@npm:^0.1.3, errno@npm:~0.1.7":
 =======
 "errno@npm:^0.1.1, errno@npm:^0.1.3, errno@npm:~0.1.7":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"errno@npm:^0.1.3, errno@npm:~0.1.7":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 0.1.8
   resolution: "errno@npm:0.1.8"
   dependencies:
@@ -23973,10 +23785,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "eslint-plugin-import@npm:^2.25.3":
 =======
 "eslint-plugin-import@npm:^2.22.1, eslint-plugin-import@npm:^2.25.3":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"eslint-plugin-import@npm:^2.25.3":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.25.4
   resolution: "eslint-plugin-import@npm:2.25.4"
   dependencies:
@@ -24017,10 +23833,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "eslint-plugin-jsx-a11y@npm:^6.5.1":
 =======
 "eslint-plugin-jsx-a11y@npm:^6.4.1, eslint-plugin-jsx-a11y@npm:^6.5.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"eslint-plugin-jsx-a11y@npm:^6.5.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 6.5.1
   resolution: "eslint-plugin-jsx-a11y@npm:6.5.1"
   dependencies:
@@ -24058,10 +23878,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "eslint-plugin-react-hooks@npm:^4.3.0":
 =======
 "eslint-plugin-react-hooks@npm:^4.2.0, eslint-plugin-react-hooks@npm:^4.3.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"eslint-plugin-react-hooks@npm:^4.3.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.3.0
   resolution: "eslint-plugin-react-hooks@npm:4.3.0"
   peerDependencies:
@@ -24112,10 +23936,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "eslint-plugin-react@npm:^7.27.1":
 =======
 "eslint-plugin-react@npm:^7.23.1, eslint-plugin-react@npm:^7.27.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"eslint-plugin-react@npm:^7.27.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.28.0
   resolution: "eslint-plugin-react@npm:7.28.0"
   dependencies:
@@ -24430,10 +24258,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "eventemitter3@npm:^4.0.0":
 =======
 "eventemitter3@npm:^4.0.0, eventemitter3@npm:^4.0.4":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"eventemitter3@npm:^4.0.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
   checksum: 1875311c42fcfe9c707b2712c32664a245629b42bb0a5a84439762dd0fd637fc54d078155ea83c2af9e0323c9ac13687e03cfba79b03af9f40c89b4960099374
@@ -24660,10 +24492,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "extend@npm:^3.0.0":
 =======
 "extend@npm:^3.0.0, extend@npm:~3.0.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"extend@npm:^3.0.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.0.2
   resolution: "extend@npm:3.0.2"
   checksum: a50a8309ca65ea5d426382ff09f33586527882cf532931cb08ca786ea3146c0553310bda688710ff61d7668eba9f96b923fe1420cdf56a2c3eaf30fcab87b515
@@ -24698,6 +24534,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "extsprintf@npm:1.3.0":
   version: 1.3.0
@@ -24714,6 +24551,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "fast-deep-equal@npm:^3.1.1, fast-deep-equal@npm:^3.1.3":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
@@ -24773,10 +24612,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
 =======
 "fast-glob@npm:^3.0.3, fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.4, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
   dependencies:
@@ -24955,6 +24798,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "file-loader@npm:4.2.0":
   version: 4.2.0
@@ -24969,6 +24813,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "file-loader@npm:^6.2.0":
   version: 6.2.0
   resolution: "file-loader@npm:6.2.0"
@@ -25016,6 +24862,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "filesize@npm:^6.1.0":
   version: 6.4.0
@@ -25025,6 +24872,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "filesize@npm:^8.0.7":
   version: 8.0.7
   resolution: "filesize@npm:8.0.7"
@@ -25299,6 +25148,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "forever-agent@npm:~0.6.1":
   version: 0.6.1
@@ -25308,6 +25158,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "fork-ts-checker-webpack-plugin@npm:4.1.6, fork-ts-checker-webpack-plugin@npm:^4.1.6":
   version: 4.1.6
   resolution: "fork-ts-checker-webpack-plugin@npm:4.1.6"
@@ -25323,6 +25175,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 "fork-ts-checker-webpack-plugin@npm:6.2.10":
@@ -25347,6 +25200,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "fork-ts-checker-webpack-plugin@npm:^6.0.4":
   version: 6.5.0
   resolution: "fork-ts-checker-webpack-plugin@npm:6.5.0"
@@ -25390,6 +25245,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "form-data@npm:~2.3.2":
   version: 2.3.3
@@ -25403,6 +25259,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "format@npm:^0.2.0":
   version: 0.2.2
   resolution: "format@npm:0.2.2"
@@ -25478,6 +25336,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "fs-extra@npm:8.1.0, fs-extra@npm:^8.1.0":
   version: 8.1.0
@@ -25491,6 +25350,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "fs-extra@npm:^0.30.0":
   version: 0.30.0
   resolution: "fs-extra@npm:0.30.0"
@@ -25527,6 +25388,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "fs-extra@npm:^8.1.0":
   version: 8.1.0
   resolution: "fs-extra@npm:8.1.0"
@@ -25538,8 +25402,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "fs-extra@npm:^9.0.0, fs-extra@npm:^9.0.1, fs-extra@npm:^9.1.0":
   version: 9.1.0
   resolution: "fs-extra@npm:9.1.0"
@@ -25564,10 +25431,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "fs-minipass@npm:^2.0.0":
 =======
 "fs-minipass@npm:^2.0.0, fs-minipass@npm:^2.1.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"fs-minipass@npm:^2.0.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
   dependencies:
@@ -25724,6 +25595,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "gauge@npm:~2.7.3":
   version: 2.7.4
@@ -25751,6 +25623,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "gensync@npm:^1.0.0-beta.1, gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
@@ -25833,6 +25707,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "getpass@npm:^0.1.1":
   version: 0.1.7
@@ -25844,6 +25719,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "github-slugger@npm:^1.0.0, github-slugger@npm:^1.3.0":
   version: 1.4.0
   resolution: "github-slugger@npm:1.4.0"
@@ -25862,10 +25739,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "glob-parent@npm:^5.1.0, glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
 =======
 "glob-parent@npm:^5.1.1, glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 5.1.2
   resolution: "glob-parent@npm:5.1.2"
   dependencies:
@@ -25909,6 +25790,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "glob@npm:7.0.x":
   version: 7.0.6
@@ -25925,6 +25807,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "glob@npm:7.1.4":
   version: 7.1.4
   resolution: "glob@npm:7.1.4"
@@ -26018,6 +25902,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "globby@npm:10.0.1":
   version: 10.0.1
@@ -26036,6 +25921,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "globby@npm:11.0.1":
   version: 11.0.1
   resolution: "globby@npm:11.0.1"
@@ -26113,10 +26000,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.15, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.3, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.1.9, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
 =======
 "graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.15, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.3, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.1.9, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.2, graceful-fs@npm:^4.2.3, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.15, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.3, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.1.9, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.2.9
   resolution: "graceful-fs@npm:4.2.9"
   checksum: 68ea4e07ff2c041ada184f9278b830375f8e0b75154e3f080af6b70f66172fabb4108d19b3863a96b53fc068a310b9b6493d86d1291acc5f3861eb4b79d26ad6
@@ -26200,6 +26091,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "har-schema@npm:^2.0.0":
   version: 2.0.0
@@ -26219,6 +26111,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "harmony-reflect@npm:^1.4.6":
   version: 1.6.2
   resolution: "harmony-reflect@npm:1.6.2"
@@ -26273,10 +26167,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "has-unicode@npm:^2.0.1":
 =======
 "has-unicode@npm:^2.0.0, has-unicode@npm:^2.0.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"has-unicode@npm:^2.0.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.0.1
   resolution: "has-unicode@npm:2.0.1"
   checksum: 1eab07a7436512db0be40a710b29b5dc21fa04880b7f63c9980b706683127e3c1b57cb80ea96d47991bdae2dfe479604f6a1ba410106ee1046a41d1bd0814400
@@ -26465,10 +26363,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "he@npm:^1.2.0":
 =======
 "he@npm:^1.1.1, he@npm:^1.2.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"he@npm:^1.2.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.2.0
   resolution: "he@npm:1.2.0"
   bin:
@@ -26574,6 +26476,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "hosted-git-info@npm:^4.0.1":
   version: 4.1.0
@@ -26585,6 +26488,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "hpack.js@npm:^2.1.6":
   version: 2.1.6
   resolution: "hpack.js@npm:2.1.6"
@@ -26817,10 +26722,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "http-proxy@npm:^1.17.0":
 =======
 "http-proxy@npm:^1.17.0, http-proxy@npm:^1.18.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"http-proxy@npm:^1.17.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.18.1
   resolution: "http-proxy@npm:1.18.1"
   dependencies:
@@ -26831,6 +26740,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 "http-server@npm:0.12.3":
@@ -26866,6 +26776,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "https-browserify@npm:^1.0.0":
   version: 1.0.0
   resolution: "https-browserify@npm:1.0.0"
@@ -26951,6 +26863,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "icss-replace-symbols@npm:^1.1.0":
   version: 1.1.0
@@ -26960,6 +26873,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "icss-utils@npm:^4.0.0, icss-utils@npm:^4.1.1":
   version: 4.1.1
   resolution: "icss-utils@npm:4.1.1"
@@ -27009,6 +26924,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "ignore-walk@npm:^3.0.3":
   version: 3.0.4
@@ -27020,6 +26936,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "ignore-walk@npm:^4.0.1":
   version: 4.0.1
   resolution: "ignore-walk@npm:4.0.1"
@@ -27037,10 +26955,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "ignore@npm:^5.0.4, ignore@npm:^5.1.4, ignore@npm:^5.1.8, ignore@npm:^5.2.0":
 =======
 "ignore@npm:^5.0.4, ignore@npm:^5.1.1, ignore@npm:^5.1.4, ignore@npm:^5.1.8, ignore@npm:^5.2.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"ignore@npm:^5.0.4, ignore@npm:^5.1.4, ignore@npm:^5.1.8, ignore@npm:^5.2.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 5.2.0
   resolution: "ignore@npm:5.2.0"
   checksum: 6b1f926792d614f64c6c83da3a1f9c83f6196c2839aa41e1e32dd7b8d174cef2e329d75caabb62cb61ce9dc432f75e67d07d122a037312db7caa73166a1bdb77
@@ -27057,6 +26979,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "image-size@npm:~0.5.0":
   version: 0.5.5
@@ -27068,6 +26991,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "immer@npm:8.0.1":
   version: 8.0.1
   resolution: "immer@npm:8.0.1"
@@ -27075,6 +27000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 "immutable@npm:^4.0.0":
@@ -27094,6 +27020,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "import-fresh@npm:^2.0.0":
   version: 2.0.0
   resolution: "import-fresh@npm:2.0.0"
@@ -27115,6 +27043,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "import-in-the-middle@npm:^1.1.2":
   version: 1.2.0
   resolution: "import-in-the-middle@npm:1.2.0"
@@ -27132,6 +27061,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "import-lazy@npm:^2.1.0":
   version: 2.1.0
   resolution: "import-lazy@npm:2.1.0"
@@ -27692,6 +27623,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "is-fullwidth-code-point@npm:^1.0.0":
   version: 1.0.0
@@ -27703,6 +27635,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "is-fullwidth-code-point@npm:^2.0.0":
   version: 2.0.0
   resolution: "is-fullwidth-code-point@npm:2.0.0"
@@ -27916,6 +27850,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "is-plain-obj@npm:^1.0.0":
   version: 1.1.0
@@ -27925,6 +27860,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "is-plain-obj@npm:^2.0.0":
   version: 2.1.0
   resolution: "is-plain-obj@npm:2.1.0"
@@ -27949,6 +27886,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "is-plain-object@npm:^3.0.0":
   version: 3.0.1
@@ -27958,6 +27896,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "is-potential-custom-element-name@npm:^1.0.1":
   version: 1.0.1
   resolution: "is-potential-custom-element-name@npm:1.0.1"
@@ -28058,10 +27998,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "is-typedarray@npm:^1.0.0":
 =======
 "is-typedarray@npm:^1.0.0, is-typedarray@npm:~1.0.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"is-typedarray@npm:^1.0.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.0.0
   resolution: "is-typedarray@npm:1.0.0"
   checksum: 3508c6cd0a9ee2e0df2fa2e9baabcdc89e911c7bd5cf64604586697212feec525aa21050e48affb5ffc3df20f0f5d2e2cf79b08caa64e1ccc9578e251763aef7
@@ -28197,6 +28141,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "isstream@npm:~0.1.2":
   version: 0.1.2
@@ -28206,6 +28151,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "istanbul-lib-coverage@npm:^3.0.0, istanbul-lib-coverage@npm:^3.0.1, istanbul-lib-coverage@npm:^3.2.0":
   version: 3.2.0
   resolution: "istanbul-lib-coverage@npm:3.2.0"
@@ -29664,6 +29611,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "jest-worker@npm:^25.4.0":
   version: 25.5.0
   resolution: "jest-worker@npm:25.5.0"
@@ -29675,6 +29623,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "jest-worker@npm:^26.0.0, jest-worker@npm:^26.5.0, jest-worker@npm:^26.6.2":
   version: 26.6.2
   resolution: "jest-worker@npm:26.6.2"
@@ -29807,10 +29757,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "js-yaml@npm:^3.13.1":
 =======
 "js-yaml@npm:^3.13.1, js-yaml@npm:^3.9.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"js-yaml@npm:^3.13.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.14.1
   resolution: "js-yaml@npm:3.14.1"
   dependencies:
@@ -29834,6 +29788,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "jsbn@npm:~0.1.0":
   version: 0.1.1
@@ -29843,6 +29798,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "jsc-android@npm:^250230.2.1":
   version: 250230.2.1
   resolution: "jsc-android@npm:250230.2.1"
@@ -29978,6 +29935,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "json-schema@npm:0.4.0":
   version: 0.4.0
@@ -29987,6 +29945,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "json-stable-stringify-without-jsonify@npm:^1.0.1":
   version: 1.0.1
   resolution: "json-stable-stringify-without-jsonify@npm:1.0.1"
@@ -29994,6 +29954,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 "json-stringify-safe@npm:~5.0.1":
@@ -30004,6 +29965,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "json2mq@npm:^0.2.0":
   version: 0.2.0
   resolution: "json2mq@npm:0.2.0"
@@ -30102,6 +30065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 "jss-plugin-camel-case@npm:^10.5.1":
   version: 10.9.0
@@ -30207,6 +30171,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "jsx-ast-utils@npm:^2.4.1 || ^3.0.0, jsx-ast-utils@npm:^3.2.1":
   version: 3.2.1
   resolution: "jsx-ast-utils@npm:3.2.1"
@@ -30356,6 +30322,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "less-loader@npm:5.0.0":
   version: 5.0.0
@@ -30405,6 +30372,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "leven@npm:^3.1.0":
   version: 3.1.0
   resolution: "leven@npm:3.1.0"
@@ -30442,6 +30411,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "lilconfig@npm:^2.0.3":
   version: 2.0.4
   resolution: "lilconfig@npm:2.0.4"
@@ -30465,6 +30435,9 @@ __metadata:
   linkType: hard
 
 "lilconfig@npm:^2.0.3, lilconfig@npm:^2.0.4":
+=======
+"lilconfig@npm:^2.0.3":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.0.4
   resolution: "lilconfig@npm:2.0.4"
   checksum: 02ae530aa49218d782eb79e92c600ea5220828987f85aa3403fa512cadc7efe38c0ac7d0cd2edf600ad3fae1f6c1752f5b4bb78c0d9950435b044d53d507c9e1
@@ -30531,6 +30504,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "load-json-file@npm:^4.0.0":
   version: 4.0.0
@@ -30545,6 +30519,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "loader-runner@npm:^2.4.0":
   version: 2.4.0
   resolution: "loader-runner@npm:2.4.0"
@@ -30560,6 +30536,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "loader-utils@npm:1.2.3":
   version: 1.2.3
@@ -30573,6 +30550,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "loader-utils@npm:2.0.0":
   version: 2.0.0
   resolution: "loader-utils@npm:2.0.0"
@@ -30585,10 +30564,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "loader-utils@npm:^1.2.3, loader-utils@npm:^1.4.0":
 =======
 "loader-utils@npm:^1.0.2, loader-utils@npm:^1.1.0, loader-utils@npm:^1.2.3, loader-utils@npm:^1.4.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"loader-utils@npm:^1.2.3, loader-utils@npm:^1.4.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.4.0
   resolution: "loader-utils@npm:1.4.0"
   dependencies:
@@ -30611,6 +30594,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "loader-utils@npm:^3.2.0":
   version: 3.2.0
@@ -30620,6 +30604,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "locate-path@npm:^2.0.0":
   version: 2.0.0
   resolution: "locate-path@npm:2.0.0"
@@ -30673,6 +30659,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "lodash.camelcase@npm:^4.3.0":
   version: 4.3.0
@@ -30689,6 +30676,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "lodash.curry@npm:^4.0.1":
   version: 4.1.1
   resolution: "lodash.curry@npm:4.1.1"
@@ -30840,10 +30829,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.7.0, lodash@npm:~4.17.15":
 =======
 "lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.5, lodash@npm:^4.7.0, lodash@npm:~4.17.15":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.7.0, lodash@npm:~4.17.15":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -31036,6 +31029,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "make-fetch-happen@npm:^9.1.0":
 =======
 "make-fetch-happen@npm:^9.0.1, make-fetch-happen@npm:^9.1.0":
@@ -31043,6 +31037,9 @@ __metadata:
 =======
 "make-fetch-happen@npm:^9.0.1, make-fetch-happen@npm:^9.1.0":
 >>>>>>> b3e859a (Update yarn.lock.)
+=======
+"make-fetch-happen@npm:^9.1.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 9.1.0
   resolution: "make-fetch-happen@npm:9.1.0"
   dependencies:
@@ -31281,6 +31278,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "memorystream@npm:^0.3.1":
   version: 0.3.1
@@ -31290,6 +31288,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "merge-descriptors@npm:1.0.1":
   version: 1.0.1
   resolution: "merge-descriptors@npm:1.0.1"
@@ -31544,10 +31544,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "metro-resolver@npm:0.66.2, metro-resolver@npm:^0.66.1":
 =======
 "metro-resolver@npm:0.66.2, metro-resolver@npm:^0.66.1, metro-resolver@npm:^0.66.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"metro-resolver@npm:0.66.2, metro-resolver@npm:^0.66.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 0.66.2
   resolution: "metro-resolver@npm:0.66.2"
   dependencies:
@@ -31906,6 +31910,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "mime-types@npm:^2.1.12, mime-types@npm:^2.1.27, mime-types@npm:^2.1.30, mime-types@npm:~2.1.17, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
   version: 2.1.34
   resolution: "mime-types@npm:2.1.34"
@@ -31916,6 +31921,9 @@ __metadata:
 >>>>>>> 7775f22 (Fails, but need some help.)
 =======
 "mime-types@npm:^2.1.12, mime-types@npm:^2.1.27, mime-types@npm:^2.1.30, mime-types@npm:~2.1.17, mime-types@npm:~2.1.19, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
+=======
+"mime-types@npm:^2.1.12, mime-types@npm:^2.1.27, mime-types@npm:^2.1.30, mime-types@npm:~2.1.17, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.1.34
   resolution: "mime-types@npm:2.1.34"
 >>>>>>> 99201f6 (Tmp configs.)
@@ -31927,10 +31935,14 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "mime@npm:1.6.0":
 =======
 "mime@npm:1.6.0, mime@npm:^1.4.1, mime@npm:^1.6.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"mime@npm:1.6.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.6.0
   resolution: "mime@npm:1.6.0"
   bin:
@@ -32113,6 +32125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "mini-css-extract-plugin@npm:0.8.0":
   version: 0.8.0
   resolution: "mini-css-extract-plugin@npm:0.8.0"
@@ -32128,6 +32141,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "mini-css-extract-plugin@npm:2.2.0":
   version: 2.2.0
   resolution: "mini-css-extract-plugin@npm:2.2.0"
@@ -32166,6 +32181,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "mini-svg-data-uri@npm:^1.2.3":
   version: 1.4.3
@@ -32177,6 +32193,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "minimalistic-assert@npm:^1.0.0, minimalistic-assert@npm:^1.0.1":
   version: 1.0.1
   resolution: "minimalistic-assert@npm:1.0.1"
@@ -32214,6 +32232,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "minimist@npm:^1.1.1, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
   version: 1.2.5
   resolution: "minimist@npm:1.2.5"
@@ -32243,6 +32262,9 @@ __metadata:
 >>>>>>> 7775f22 (Fails, but need some help.)
 =======
 "minimist@npm:^1.1.0, minimist@npm:^1.1.1, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
+=======
+"minimist@npm:^1.1.1, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.2.5
   resolution: "minimist@npm:1.2.5"
   checksum: 86706ce5b36c16bfc35c5fe3dbb01d5acdc9a22f2b6cc810b6680656a1d2c0e44a0159c9a3ba51fb072bb5c203e49e10b51dcd0eec39c481f4c42086719bae52
@@ -32260,10 +32282,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "minipass-fetch@npm:^1.3.2":
 =======
 "minipass-fetch@npm:^1.3.0, minipass-fetch@npm:^1.3.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"minipass-fetch@npm:^1.3.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.4.1
   resolution: "minipass-fetch@npm:1.4.1"
   dependencies:
@@ -32288,6 +32314,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "minipass-json-stream@npm:^1.0.1":
   version: 1.0.1
@@ -32300,6 +32327,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "minipass-pipeline@npm:^1.2.2, minipass-pipeline@npm:^1.2.4":
   version: 1.2.4
   resolution: "minipass-pipeline@npm:1.2.4"
@@ -32399,10 +32428,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "mkdirp@npm:^0.5.1, mkdirp@npm:^0.5.3, mkdirp@npm:^0.5.4, mkdirp@npm:^0.5.5, mkdirp@npm:~0.5.1":
 =======
 "mkdirp@npm:0.5.x, mkdirp@npm:^0.5.1, mkdirp@npm:^0.5.3, mkdirp@npm:^0.5.5, mkdirp@npm:~0.5.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"mkdirp@npm:^0.5.1, mkdirp@npm:^0.5.3, mkdirp@npm:^0.5.5, mkdirp@npm:~0.5.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 0.5.5
   resolution: "mkdirp@npm:0.5.5"
   dependencies:
@@ -32629,6 +32662,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "native-request@npm:^1.0.5":
   version: 1.1.0
@@ -32638,6 +32672,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "native-url@npm:^0.2.6":
   version: 0.2.6
   resolution: "native-url@npm:0.2.6"
@@ -32722,10 +32758,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "node-addon-api@npm:^3.2.1":
 =======
 "node-addon-api@npm:^3.0.2, node-addon-api@npm:^3.2.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"node-addon-api@npm:^3.2.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.2.1
   resolution: "node-addon-api@npm:3.2.1"
   dependencies:
@@ -32789,6 +32829,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "node-gyp-build@npm:^3.9.0":
   version: 3.9.0
   resolution: "node-gyp-build@npm:3.9.0"
@@ -32804,6 +32845,9 @@ __metadata:
 =======
 "node-gyp-build@npm:^4.2.3, node-gyp-build@npm:^4.3.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"node-gyp-build@npm:^4.3.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.3.0
   resolution: "node-gyp-build@npm:4.3.0"
   bin:
@@ -32859,6 +32903,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "node-gyp@npm:^7.1.0":
   version: 7.1.2
   resolution: "node-gyp@npm:7.1.2"
@@ -32880,6 +32925,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "node-gyp@npm:latest":
   version: 8.4.1
   resolution: "node-gyp@npm:8.4.1"
@@ -33033,10 +33080,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "normalize-package-data@npm:^2.5.0":
 =======
 "normalize-package-data@npm:^2.3.2, normalize-package-data@npm:^2.5.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"normalize-package-data@npm:^2.5.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.5.0
   resolution: "normalize-package-data@npm:2.5.0"
   dependencies:
@@ -33072,6 +33123,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "normalize-url@npm:1.9.1":
   version: 1.9.1
@@ -33086,6 +33138,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "normalize-url@npm:^4.1.0":
   version: 4.5.1
   resolution: "normalize-url@npm:4.5.1"
@@ -33133,44 +33187,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-install-checks@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "npm-install-checks@npm:4.0.0"
-  dependencies:
-    semver: ^7.1.1
-  checksum: 8308ff48e61e0863d7f148f62543e1f6c832525a7d8002ea742d5e478efa8b29bf65a87f9fb82786e15232e4b3d0362b126c45afdceed4c051c0d3c227dd0ace
-  languageName: node
-  linkType: hard
-
 "npm-normalize-package-bin@npm:^1.0.1":
   version: 1.0.1
   resolution: "npm-normalize-package-bin@npm:1.0.1"
   checksum: ae7f15155a1e3ace2653f12ddd1ee8eaa3c84452fdfbf2f1943e1de264e4b079c86645e2c55931a51a0a498cba31f70022a5219d5665fbcb221e99e58bc70122
-  languageName: node
-  linkType: hard
-
-"npm-package-arg@npm:^8.0.0, npm-package-arg@npm:^8.0.1, npm-package-arg@npm:^8.1.2":
-  version: 8.1.5
-  resolution: "npm-package-arg@npm:8.1.5"
-  dependencies:
-    hosted-git-info: ^4.0.1
-    semver: ^7.3.4
-    validate-npm-package-name: ^3.0.0
-  checksum: ae76afbcebb4ea8d0b849b8b18ed1b0491030fb04a0af5d75f1b8390cc50bec186ced9fbe60f47d939eab630c7c0db0919d879ac56a87d3782267dfe8eec60d3
-  languageName: node
-  linkType: hard
-
-"npm-packlist@npm:^2.1.4":
-  version: 2.2.2
-  resolution: "npm-packlist@npm:2.2.2"
-  dependencies:
-    glob: ^7.1.6
-    ignore-walk: ^3.0.3
-    npm-bundled: ^1.1.1
-    npm-normalize-package-bin: ^1.0.1
-  bin:
-    npm-packlist: bin/index.js
-  checksum: 799ce94b077e4dc366a9a5bcc5f006669263bb1a48d6948161aed915fd2f11dea8a7cf516a63fc78e5df059915591dade5928f0738baadc99a8ab4685d8b58c3
   languageName: node
   linkType: hard
 
@@ -33188,6 +33208,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "npm-pick-manifest@npm:^6.0.0, npm-pick-manifest@npm:^6.1.1":
   version: 6.1.1
   resolution: "npm-pick-manifest@npm:6.1.1"
@@ -33236,6 +33257,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "npm-run-path@npm:^2.0.0":
   version: 2.0.2
   resolution: "npm-run-path@npm:2.0.2"
@@ -33255,6 +33278,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "npmlog@npm:^4.1.2":
   version: 4.1.2
@@ -33269,6 +33293,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "npmlog@npm:^5.0.1":
   version: 5.0.1
   resolution: "npmlog@npm:5.0.1"
@@ -33348,6 +33374,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "number-is-nan@npm:^1.0.0":
   version: 1.0.1
@@ -33357,6 +33384,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "nwsapi@npm:^2.2.0":
   version: 2.2.0
   resolution: "nwsapi@npm:2.2.0"
@@ -33364,6 +33393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 "nx@npm:13.8.1":
   version: 13.8.1
@@ -33385,6 +33415,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "nx@npm:13.8.0":
   version: 13.8.0
   resolution: "nx@npm:13.8.0"
@@ -33396,6 +33428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "oauth-sign@npm:~0.9.0":
   version: 0.9.0
   resolution: "oauth-sign@npm:0.9.0"
@@ -33404,6 +33437,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "ob1@npm:0.66.2":
   version: 0.66.2
   resolution: "ob1@npm:0.66.2"
@@ -33617,10 +33652,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "open@npm:^7.0.2, open@npm:^7.0.3":
 =======
 "open@npm:^7.0.2, open@npm:^7.0.3, open@npm:^7.4.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"open@npm:^7.0.2, open@npm:^7.0.3":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 7.4.2
   resolution: "open@npm:7.4.2"
   dependencies:
@@ -33651,10 +33690,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "opener@npm:^1.5.2":
 =======
 "opener@npm:^1.5.1, opener@npm:^1.5.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"opener@npm:^1.5.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.5.2
   resolution: "opener@npm:1.5.2"
   bin:
@@ -33880,10 +33923,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "p-limit@npm:^2.0.0, p-limit@npm:^2.2.0":
 =======
 "p-limit@npm:^2.0.0, p-limit@npm:^2.2.0, p-limit@npm:^2.3.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"p-limit@npm:^2.0.0, p-limit@npm:^2.2.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.3.0
   resolution: "p-limit@npm:2.3.0"
   dependencies:
@@ -34117,6 +34164,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "p-queue@npm:^6.6.2":
   version: 6.6.2
@@ -34129,6 +34177,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "p-retry@npm:^3.0.1":
   version: 3.0.1
   resolution: "p-retry@npm:3.0.1"
@@ -34152,8 +34202,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "p-timeout@npm:^3.1.0, p-timeout@npm:^3.2.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"p-timeout@npm:^3.1.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.2.0
   resolution: "p-timeout@npm:3.2.0"
   dependencies:
@@ -34270,6 +34324,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "pacote@npm:^11.2.7":
   version: 11.3.5
@@ -34301,6 +34356,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "pako@npm:~1.0.5":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
@@ -34750,6 +34807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "locate-path@npm:^2.0.0":
   version: 2.0.0
   resolution: "locate-path@npm:2.0.0"
@@ -34785,6 +34843,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "parse5@npm:6.0.1, parse5@npm:^6.0.0, parse5@npm:^6.0.1":
   version: 6.0.1
   resolution: "parse5@npm:6.0.1"
@@ -35406,6 +35466,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "pify@npm:^2.0.0":
 =======
 "pidtree@npm:^0.3.0":
@@ -35419,6 +35480,9 @@ __metadata:
 
 "pify@npm:^2.0.0, pify@npm:^2.3.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"pify@npm:^2.0.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.3.0
   resolution: "pify@npm:2.3.0"
   checksum: 9503aaeaf4577acc58642ad1d25c45c6d90288596238fb68f82811c08104c800e5a7870398e9f015d82b44ecbcbef3dc3d4251a1cbb582f6e5959fe09884b2ba
@@ -35436,13 +35500,6 @@ __metadata:
   version: 4.0.1
   resolution: "pify@npm:4.0.1"
   checksum: 9c4e34278cb09987685fa5ef81499c82546c033713518f6441778fbec623fc708777fe8ac633097c72d88470d5963094076c7305cafc7ad340aae27cfacd856b
-  languageName: node
-  linkType: hard
-
-"pify@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "pify@npm:5.0.0"
-  checksum: 443e3e198ad6bfa8c0c533764cf75c9d5bc976387a163792fb553ffe6ce923887cf14eebf5aea9b7caa8eab930da8c33612990ae85bd8c2bc18bedb9eae94ecb
   languageName: node
   linkType: hard
 
@@ -35616,6 +35673,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "popper.js@npm:1.16.1-lts":
   version: 1.16.1-lts
   resolution: "popper.js@npm:1.16.1-lts"
@@ -35627,6 +35685,9 @@ __metadata:
 =======
 "portfinder@npm:^1.0.25, portfinder@npm:^1.0.26":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"portfinder@npm:^1.0.26":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.0.28
   resolution: "portfinder@npm:1.0.28"
   dependencies:
@@ -35778,6 +35839,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "postcss-import@npm:14.0.2":
   version: 14.0.2
@@ -35824,6 +35886,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "postcss-loader@npm:^4.2.0":
   version: 4.3.0
   resolution: "postcss-loader@npm:4.3.0"
@@ -36088,6 +36152,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "postcss-modules@npm:^4.0.0":
   version: 4.3.0
@@ -36108,6 +36173,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "postcss-normalize-charset@npm:^5.0.3":
   version: 5.0.3
   resolution: "postcss-normalize-charset@npm:5.0.3"
@@ -36448,10 +36515,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
 =======
 "postcss-value-parser@npm:^4.0.0, postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 819ffab0c9d51cf0acbabf8996dffbfafbafa57afc0e4c98db88b67f2094cb44488758f06e5da95d7036f19556a4a732525e84289a425f4f6fd8e412a9d7442f
@@ -36468,6 +36539,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "postcss@npm:8.3.0":
   version: 8.3.0
@@ -36481,6 +36553,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "postcss@npm:^7.0.14, postcss@npm:^7.0.26, postcss@npm:^7.0.32, postcss@npm:^7.0.36, postcss@npm:^7.0.5, postcss@npm:^7.0.6":
   version: 7.0.39
   resolution: "postcss@npm:7.0.39"
@@ -36517,6 +36591,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "prepend-http@npm:^1.0.0":
   version: 1.0.4
@@ -36526,6 +36601,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "prepend-http@npm:^2.0.0":
   version: 2.0.0
   resolution: "prepend-http@npm:2.0.0"
@@ -36896,6 +36973,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "promise.series@npm:^0.2.0":
   version: 0.2.0
   resolution: "promise.series@npm:0.2.0"
@@ -36904,6 +36982,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "promise@npm:^7.1.1":
   version: 7.3.1
   resolution: "promise@npm:7.3.1"
@@ -37065,10 +37145,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "psl@npm:^1.1.33":
 =======
 "psl@npm:^1.1.28, psl@npm:^1.1.33":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"psl@npm:^1.1.33":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.8.0
   resolution: "psl@npm:1.8.0"
   checksum: 6150048ed2da3f919478bee8a82f3828303bc0fc730fb015a48f83c9977682c7b28c60ab01425a72d82a2891a1681627aa530a991d50c086b48a3be27744bde7
@@ -37201,7 +37285,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0, qs@npm:^6.4.0":
+"qs@npm:^6.10.0":
   version: 6.10.3
   resolution: "qs@npm:6.10.3"
   dependencies:
@@ -37210,6 +37294,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "qs@npm:~6.5.2":
   version: 6.5.3
   resolution: "qs@npm:6.5.3"
@@ -37228,6 +37313,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "query-string@npm:^6.13.6":
   version: 6.14.1
   resolution: "query-string@npm:6.14.1"
@@ -37434,6 +37521,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "raw-loader@npm:3.1.0":
   version: 3.1.0
@@ -37448,6 +37536,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "raw-loader@npm:^4.0.2":
   version: 4.0.2
   resolution: "raw-loader@npm:4.0.2"
@@ -38902,6 +38992,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "react-refresh@npm:^0.9.0":
   version: 0.9.0
@@ -38911,6 +39002,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "react-router-config@npm:^5.1.1":
   version: 5.1.1
   resolution: "react-router-config@npm:5.1.1"
@@ -39159,6 +39252,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "read-pkg-up@npm:^7.0.1":
   version: 7.0.1
   resolution: "read-pkg-up@npm:7.0.1"
@@ -39208,6 +39302,8 @@ __metadata:
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "read-pkg-up@npm:^7.0.1":
   version: 7.0.1
   resolution: "read-pkg-up@npm:7.0.1"
@@ -39219,6 +39315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 >>>>>>> 99201f6 (Tmp configs.)
 "read-pkg@npm:^3.0.0":
   version: 3.0.0
@@ -39235,6 +39332,8 @@ __metadata:
 "readable-stream@npm:1 || 2, readable-stream@npm:^2.0.0, readable-stream@npm:^2.0.1, readable-stream@npm:^2.0.2, readable-stream@npm:^2.0.6, readable-stream@npm:^2.1.5, readable-stream@npm:^2.2.2, readable-stream@npm:^2.3.3, readable-stream@npm:^2.3.6, readable-stream@npm:~2.3.6":
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "read-pkg@npm:^5.2.0":
   version: 5.2.0
   resolution: "read-pkg@npm:5.2.0"
@@ -39247,8 +39346,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "readable-stream@npm:1 || 2, readable-stream@npm:^2.0.0, readable-stream@npm:^2.0.1, readable-stream@npm:^2.0.2, readable-stream@npm:^2.0.6, readable-stream@npm:^2.1.5, readable-stream@npm:^2.2.2, readable-stream@npm:^2.3.3, readable-stream@npm:^2.3.6, readable-stream@npm:~2.3.6":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"readable-stream@npm:1 || 2, readable-stream@npm:^2.0.0, readable-stream@npm:^2.0.1, readable-stream@npm:^2.0.2, readable-stream@npm:^2.1.5, readable-stream@npm:^2.2.2, readable-stream@npm:^2.3.3, readable-stream@npm:^2.3.6, readable-stream@npm:~2.3.6":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.3.7
   resolution: "readable-stream@npm:2.3.7"
   dependencies:
@@ -39781,34 +39884,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"request@npm:^2.88.2":
-  version: 2.88.2
-  resolution: "request@npm:2.88.2"
-  dependencies:
-    aws-sign2: ~0.7.0
-    aws4: ^1.8.0
-    caseless: ~0.12.0
-    combined-stream: ~1.0.6
-    extend: ~3.0.2
-    forever-agent: ~0.6.1
-    form-data: ~2.3.2
-    har-validator: ~5.1.3
-    http-signature: ~1.2.0
-    is-typedarray: ~1.0.0
-    isstream: ~0.1.2
-    json-stringify-safe: ~5.0.1
-    mime-types: ~2.1.19
-    oauth-sign: ~0.9.0
-    performance-now: ^2.1.0
-    qs: ~6.5.2
-    safe-buffer: ^5.1.2
-    tough-cookie: ~2.5.0
-    tunnel-agent: ^0.6.0
-    uuid: ^3.3.2
-  checksum: 4e112c087f6eabe7327869da2417e9d28fcd0910419edd2eb17b6acfc4bfa1dad61954525949c228705805882d8a98a86a0ea12d7f739c01ee92af7062996983
-  languageName: node
-  linkType: hard
-
 "require-directory@npm:^2.1.1":
   version: 2.1.1
   resolution: "require-directory@npm:2.1.1"
@@ -39817,10 +39892,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "require-from-string@npm:^2.0.1":
 =======
 "require-from-string@npm:^2.0.1, require-from-string@npm:^2.0.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"require-from-string@npm:^2.0.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.0.2
   resolution: "require-from-string@npm:2.0.2"
   checksum: a03ef6895445f33a4015300c426699bc66b2b044ba7b670aa238610381b56d3f07c686251740d575e22f4c87531ba662d06937508f0f3c0f1ddc04db3130560b
@@ -39933,6 +40012,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "resolve@npm:^1.1.6, resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.13.1, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.22.0, resolve@npm:^1.3.2, resolve@npm:^1.9.0":
 =======
 =======
@@ -39957,6 +40037,9 @@ __metadata:
 =======
 "resolve@npm:^1.1.6, resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.13.1, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.22.0, resolve@npm:^1.3.2, resolve@npm:^1.9.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"resolve@npm:^1.1.6, resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.13.1, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.22.0, resolve@npm:^1.3.2, resolve@npm:^1.9.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.22.0
   resolution: "resolve@npm:1.22.0"
   dependencies:
@@ -40000,6 +40083,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
 =======
 =======
@@ -40024,6 +40108,9 @@ __metadata:
 =======
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.22.0
   resolution: "resolve@patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b"
   dependencies:
@@ -40127,6 +40214,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "rimraf@npm:^2.2.8, rimraf@npm:^2.5.4, rimraf@npm:^2.6.3":
 =======
 "rimraf@npm:^2.5.4, rimraf@npm:^2.6.3, rimraf@npm:^2.7.1":
@@ -40134,6 +40222,9 @@ __metadata:
 =======
 "rimraf@npm:^2.2.8, rimraf@npm:^2.5.4, rimraf@npm:^2.6.3, rimraf@npm:^2.7.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"rimraf@npm:^2.2.8, rimraf@npm:^2.5.4, rimraf@npm:^2.6.3":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.7.1
   resolution: "rimraf@npm:2.7.1"
   dependencies:
@@ -40193,6 +40284,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "rollup-plugin-copy@npm:^3.4.0":
   version: 3.4.0
   resolution: "rollup-plugin-copy@npm:3.4.0"
@@ -40230,6 +40322,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "rollup-plugin-node-externals@npm:^2.2.0":
   version: 2.2.0
   resolution: "rollup-plugin-node-externals@npm:2.2.0"
@@ -40241,15 +40335,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-peer-deps-external@npm:^2.2.4":
-  version: 2.2.4
-  resolution: "rollup-plugin-peer-deps-external@npm:2.2.4"
-  peerDependencies:
-    rollup: "*"
-  checksum: 597bc7631f4e3cfc066a7da4e09e507258aba932008148328c1a4b48e7ffa755592ef4bcf0165320bbd5019afbdd326f569cd0c68406d820da9ab52e971c009b
-  languageName: node
-  linkType: hard
-
 "rollup-plugin-polyfill-node@npm:^0.8.0":
   version: 0.8.0
   resolution: "rollup-plugin-polyfill-node@npm:0.8.0"
@@ -40258,45 +40343,6 @@ __metadata:
   peerDependencies:
     rollup: ^1.20.0 || ^2.0.0
   checksum: ad6e451b1ae91f7b4370ab7b5dd03f578a67ebd42bcd3eec198ae6d4cd7caa1c454bd020ff8e80f3dcb02cdd9357da2b752c0aac3f84c56a28c23a6c0ffeffd5
-  languageName: node
-  linkType: hard
-
-"rollup-plugin-postcss@npm:^4.0.1":
-  version: 4.0.2
-  resolution: "rollup-plugin-postcss@npm:4.0.2"
-  dependencies:
-    chalk: ^4.1.0
-    concat-with-sourcemaps: ^1.1.0
-    cssnano: ^5.0.1
-    import-cwd: ^3.0.0
-    p-queue: ^6.6.2
-    pify: ^5.0.0
-    postcss-load-config: ^3.0.0
-    postcss-modules: ^4.0.0
-    promise.series: ^0.2.0
-    resolve: ^1.19.0
-    rollup-pluginutils: ^2.8.2
-    safe-identifier: ^0.4.2
-    style-inject: ^0.3.0
-  peerDependencies:
-    postcss: 8.x
-  checksum: 67875e024fa36ba4bd43604dc50d02eabba0c93626cc372588260ae42aae3f98015ea1b0c3a78bcbd345ebea465ef636e5cb0f60dbc8b2e94fbe2514384395f0
-  languageName: node
-  linkType: hard
-
-"rollup-plugin-typescript2@npm:^0.30.0":
-  version: 0.30.0
-  resolution: "rollup-plugin-typescript2@npm:0.30.0"
-  dependencies:
-    "@rollup/pluginutils": ^4.1.0
-    find-cache-dir: ^3.3.1
-    fs-extra: 8.1.0
-    resolve: 1.20.0
-    tslib: 2.1.0
-  peerDependencies:
-    rollup: ">=1.26.3"
-    typescript: ">=2.4.0"
-  checksum: e3097bb25c00e78cca556ed6a77b3bdf2330e5e5647847d1f967ade67dc6b66009b52bb8810de2b2c40857310693e4e663900a13da4f711f082fabac5165091a
   languageName: node
   linkType: hard
 
@@ -40318,6 +40364,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "rollup-pluginutils@npm:^2.4.1":
 =======
 "rollup-pluginutils@npm:^2.8.2":
@@ -40325,6 +40372,9 @@ __metadata:
 =======
 "rollup-pluginutils@npm:^2.4.1, rollup-pluginutils@npm:^2.8.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"rollup-pluginutils@npm:^2.4.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.8.2
   resolution: "rollup-pluginutils@npm:2.8.2"
   dependencies:
@@ -40333,6 +40383,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 "rollup@npm:^2.67.0":
@@ -40345,6 +40396,9 @@ __metadata:
 >>>>>>> 51427f2 (A super simple mobile-playground working.)
 =======
 "rollup@npm:^2.56.2, rollup@npm:^2.67.0":
+=======
+"rollup@npm:^2.67.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.67.1
   resolution: "rollup@npm:2.67.1"
 >>>>>>> 99201f6 (Tmp configs.)
@@ -40484,13 +40538,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safe-identifier@npm:^0.4.2":
-  version: 0.4.2
-  resolution: "safe-identifier@npm:0.4.2"
-  checksum: 67e28ed89a74cf20b827419003d3cb60a0ebaec0771c2c818f4b2239bf4f96e01ad90aa8db6dc57ee90c0c438b6f46323e4b5a3d955d18d8c4e158ea035cabdd
-  languageName: node
-  linkType: hard
-
 "safe-regex@npm:^1.1.0":
   version: 1.1.0
   resolution: "safe-regex@npm:1.1.0"
@@ -40502,6 +40549,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.1.0":
 =======
 "safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.0.2, safer-buffer@npm:^2.1.0, safer-buffer@npm:~2.1.0":
@@ -40509,6 +40557,9 @@ __metadata:
 =======
 "safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.0.2, safer-buffer@npm:^2.1.0, safer-buffer@npm:~2.1.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.1.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
@@ -40534,6 +40585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -40583,6 +40635,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "sax@npm:^1.2.1, sax@npm:^1.2.4, sax@npm:~1.2.4":
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
@@ -40632,10 +40686,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "schema-utils@npm:^2.6.5, schema-utils@npm:^2.7.0":
 =======
 "schema-utils@npm:^2.0.0, schema-utils@npm:^2.0.1, schema-utils@npm:^2.5.0, schema-utils@npm:^2.6.1, schema-utils@npm:^2.6.5, schema-utils@npm:^2.6.6, schema-utils@npm:^2.7.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"schema-utils@npm:^2.6.5, schema-utils@npm:^2.7.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 2.7.1
   resolution: "schema-utils@npm:2.7.1"
   dependencies:
@@ -40813,13 +40871,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"secure-compare@npm:3.0.1":
-  version: 3.0.1
-  resolution: "secure-compare@npm:3.0.1"
-  checksum: 0a8d8d3e54d5772d2cf1c02325f01fc7366d0bd33f964a08a84fe3ee5f34d46435a6ae729c1d239c750e160ef9b58c764d3efb945a1d07faf47978a8e4161594
-  languageName: node
-  linkType: hard
-
 "select-hose@npm:^2.0.0":
   version: 2.0.0
   resolution: "select-hose@npm:2.0.0"
@@ -40848,8 +40899,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "semver@npm:2 || 3 || 4 || 5, semver@npm:^5.0.1, semver@npm:^5.4.1, semver@npm:^5.5.0, semver@npm:^5.6.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"semver@npm:2 || 3 || 4 || 5, semver@npm:^5.4.1, semver@npm:^5.5.0, semver@npm:^5.6.0":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
   bin:
@@ -40878,7 +40933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.3.5, semver@npm:^7.1.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:~7.3.0":
+"semver@npm:7.3.5, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:~7.3.0":
   version: 7.3.5
   resolution: "semver@npm:7.3.5"
   dependencies:
@@ -41050,7 +41105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-blocking@npm:^2.0.0, set-blocking@npm:~2.0.0":
+"set-blocking@npm:^2.0.0":
   version: 2.0.0
   resolution: "set-blocking@npm:2.0.0"
   checksum: 6e65a05f7cf7ebdf8b7c75b101e18c0b7e3dff4940d480efed8aad3a36a4005140b660fa1d804cb8bce911cac290441dc728084a30504d3516ac2ff7ad607b02
@@ -41403,6 +41458,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "source-list-map@npm:^2.0.0":
   version: 2.0.1
   resolution: "source-list-map@npm:2.0.1"
@@ -41428,6 +41484,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "source-list-map@npm:^2.0.0":
   version: 2.0.1
   resolution: "source-list-map@npm:2.0.1"
@@ -41436,30 +41494,17 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "source-map-js@npm:>=0.6.2 <2.0.0":
 =======
 "source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.0.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"source-map-js@npm:^1.0.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.0.2
   resolution: "source-map-js@npm:1.0.2"
   checksum: c049a7fc4deb9a7e9b481ae3d424cc793cb4845daa690bc5a05d428bf41bf231ced49b4cf0c9e77f9d42fdb3d20d6187619fc586605f5eabe995a316da8d377c
-  languageName: node
-  linkType: hard
-
-"source-map-js@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "source-map-js@npm:0.6.2"
-  checksum: 9c8151a29e00fd8d3ba87709fdf9a9ce48313d653f4a29a39b4ae53d346ac79e005de624796ff42eff55cbaf26d2e87f4466001ca87831d400d818c5cf146a0e
-  languageName: node
-  linkType: hard
-
-"source-map-loader@npm:0.2.4":
-  version: 0.2.4
-  resolution: "source-map-loader@npm:0.2.4"
-  dependencies:
-    async: ^2.5.0
-    loader-utils: ^1.1.0
-  checksum: ec67c402ba4559641af01bdf351816ae2fcfee2e0b5948477f86bc59dbc06d791eaca64e34428469b2c8a88e6ea7ec14c540daee706925a75a0b7ba2152e984c
   languageName: node
   linkType: hard
 
@@ -41505,6 +41550,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "source-map@npm:^0.5.0, source-map@npm:^0.5.6, source-map@npm:^0.5.7":
 =======
 =======
@@ -41529,6 +41575,8 @@ __metadata:
 "source-map@npm:^0.5.0, source-map@npm:^0.5.6":
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "source-map@npm:^0.5.0, source-map@npm:^0.5.6, source-map@npm:^0.5.7":
 >>>>>>> 99201f6 (Tmp configs.)
   version: 0.5.7
@@ -41545,6 +41593,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "source-map@npm:^0.7.3, source-map@npm:~0.7.2":
   version: 0.7.3
   resolution: "source-map@npm:0.7.3"
@@ -41552,8 +41603,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "sourcemap-codec@npm:^1.4.4":
   version: 1.4.8
   resolution: "sourcemap-codec@npm:1.4.8"
@@ -41679,6 +41733,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 99201f6 (Tmp configs.)
@@ -41707,6 +41762,8 @@ __metadata:
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "ssri@npm:^6.0.1":
   version: 6.0.2
   resolution: "ssri@npm:6.0.2"
@@ -41716,6 +41773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -41735,6 +41793,8 @@ __metadata:
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "ssri@npm:^8.0.0, ssri@npm:^8.0.1":
   version: 8.0.1
   resolution: "ssri@npm:8.0.1"
@@ -41947,6 +42007,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "streamsearch@npm:0.1.2":
   version: 0.1.2
   resolution: "streamsearch@npm:0.1.2"
@@ -42009,6 +42070,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "strict-uri-encode@npm:^2.0.0":
   version: 2.0.0
   resolution: "strict-uri-encode@npm:2.0.0"
@@ -42031,6 +42094,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "string-hash@npm:^1.1.1":
   version: 1.1.3
@@ -42040,6 +42104,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "string-length@npm:^4.0.1":
   version: 4.0.2
   resolution: "string-length@npm:4.0.2"
@@ -42047,17 +42113,6 @@ __metadata:
     char-regex: ^1.0.2
     strip-ansi: ^6.0.0
   checksum: ce85533ef5113fcb7e522bcf9e62cb33871aa99b3729cec5595f4447f660b0cefd542ca6df4150c97a677d58b0cb727a3fe09ac1de94071d05526c73579bf505
-  languageName: node
-  linkType: hard
-
-"string-width@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "string-width@npm:1.0.2"
-  dependencies:
-    code-point-at: ^1.0.0
-    is-fullwidth-code-point: ^1.0.0
-    strip-ansi: ^3.0.0
-  checksum: 5c79439e95bc3bd7233a332c5f5926ab2ee90b23816ed4faa380ce3b2576d7800b0a5bb15ae88ed28737acc7ea06a518c2eef39142dd727adad0e45c776cd37e
   languageName: node
   linkType: hard
 
@@ -42237,10 +42292,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "strip-ansi@npm:^3.0.1":
 =======
 "strip-ansi@npm:^3.0.0, strip-ansi@npm:^3.0.1":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"strip-ansi@npm:^3.0.1":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 3.0.1
   resolution: "strip-ansi@npm:3.0.1"
   dependencies:
@@ -42347,6 +42406,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "style-inject@npm:^0.3.0":
   version: 0.3.0
@@ -42368,6 +42428,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "style-loader@npm:^1.3.0":
   version: 1.3.0
   resolution: "style-loader@npm:1.3.0"
@@ -42486,6 +42548,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 >>>>>>> 99201f6 (Tmp configs.)
 "stylus-loader@npm:3.0.2":
   version: 3.0.2
@@ -42520,6 +42583,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "sudo-prompt@npm:^9.0.0":
   version: 9.2.1
   resolution: "sudo-prompt@npm:9.2.1"
@@ -42717,6 +42782,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "tar@npm:^6.0.2, tar@npm:^6.1.11, tar@npm:^6.1.2":
 =======
 "tar@npm:^6.0.2, tar@npm:^6.1.0, tar@npm:^6.1.2":
@@ -42724,6 +42790,9 @@ __metadata:
 =======
 "tar@npm:^6.0.2, tar@npm:^6.1.0, tar@npm:^6.1.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"tar@npm:^6.0.2, tar@npm:^6.1.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 6.1.11
   resolution: "tar@npm:6.1.11"
   dependencies:
@@ -42791,6 +42860,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "terser-webpack-plugin@npm:2.3.8":
   version: 2.3.8
@@ -42812,6 +42882,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "terser-webpack-plugin@npm:^1.4.3":
   version: 1.4.5
   resolution: "terser-webpack-plugin@npm:1.4.5"
@@ -42923,6 +42995,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "terser@npm:4.3.8":
   version: 4.3.8
   resolution: "terser@npm:4.3.8"
@@ -42949,6 +43022,9 @@ __metadata:
 
 "terser@npm:^4.1.2, terser@npm:^4.6.12, terser@npm:^4.6.3":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"terser@npm:^4.1.2, terser@npm:^4.6.3":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.8.0
   resolution: "terser@npm:4.8.0"
   dependencies:
@@ -42962,11 +43038,15 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "terser@npm:^5.6.0":
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
 "terser@npm:^5.10.0, terser@npm:^5.3.4, terser@npm:^5.6.0, terser@npm:^5.7.2":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"terser@npm:^5.10.0, terser@npm:^5.3.4, terser@npm:^5.7.2":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 5.10.0
   resolution: "terser@npm:5.10.0"
   dependencies:
@@ -43225,6 +43305,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "tough-cookie@npm:~2.5.0":
   version: 2.5.0
@@ -43237,6 +43318,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "tr46@npm:^2.1.0":
   version: 2.1.0
   resolution: "tr46@npm:2.1.0"
@@ -43283,6 +43366,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "ts-node@npm:^10.0.0":
   version: 10.5.0
   resolution: "ts-node@npm:10.5.0"
@@ -43317,6 +43401,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "ts-node@npm:^10.0.0":
   version: 10.5.0
   resolution: "ts-node@npm:10.5.0"
@@ -43404,6 +43490,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "tsconfig-paths@npm:3.9.0":
   version: 3.9.0
   resolution: "tsconfig-paths@npm:3.9.0"
@@ -43431,6 +43518,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "tsconfig-paths@npm:^3.12.0, tsconfig-paths@npm:^3.9.0":
   version: 3.12.0
   resolution: "tsconfig-paths@npm:3.12.0"
@@ -43443,6 +43532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -43459,6 +43549,8 @@ __metadata:
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "tslib@npm:^1.10.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -43513,6 +43605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 >>>>>>> 99201f6 (Tmp configs.)
 "tunnel-agent@npm:^0.6.0":
   version: 0.6.0
@@ -43534,6 +43627,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -43801,15 +43896,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"union@npm:~0.5.0":
-  version: 0.5.0
-  resolution: "union@npm:0.5.0"
-  dependencies:
-    qs: ^6.4.0
-  checksum: 021530d02363fb7470ce45d4cb06ae28a97d5a245666e6d0fca6bab0673bea8c7988e7d2f8046acfbab120908cedcb099ca216b357d4483bcd96518b39101be0
-  languageName: node
-  linkType: hard
-
 "unique-filename@npm:^1.1.1":
   version: 1.1.1
   resolution: "unique-filename@npm:1.1.1"
@@ -44007,6 +44093,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "url-loader@npm:4.1.1, url-loader@npm:^4.1.1":
   version: 4.1.1
   resolution: "url-loader@npm:4.1.1"
@@ -44026,6 +44113,8 @@ __metadata:
   resolution: "url-loader@npm:3.0.0"
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "url-loader@npm:4.1.1, url-loader@npm:^4.1.1":
   version: 4.1.1
   resolution: "url-loader@npm:4.1.1"
@@ -44043,6 +44132,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "url-loader@npm:^3.0.0":
   version: 3.0.0
   resolution: "url-loader@npm:3.0.0"
@@ -44061,6 +44151,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "url-parse-lax@npm:^3.0.0":
   version: 3.0.0
   resolution: "url-parse-lax@npm:3.0.0"
@@ -44349,6 +44441,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 99201f6 (Tmp configs.)
@@ -44365,6 +44458,8 @@ __metadata:
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "validator@npm:^13.7.0":
   version: 13.7.0
   resolution: "validator@npm:13.7.0"
@@ -44388,6 +44483,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 "verror@npm:1.10.0":
   version: 1.10.0
@@ -44401,6 +44497,8 @@ __metadata:
   linkType: hard
 
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "vfile-location@npm:^3.0.0, vfile-location@npm:^3.2.0":
   version: 3.2.0
   resolution: "vfile-location@npm:3.2.0"
@@ -44737,6 +44835,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "webpack-dev-server@npm:^3.11.0, webpack-dev-server@npm:^3.11.2":
   version: 3.11.3
   resolution: "webpack-dev-server@npm:3.11.3"
@@ -44813,6 +44912,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "webpack-dev-server@npm:^3.11.0, webpack-dev-server@npm:^3.11.2":
   version: 3.11.3
   resolution: "webpack-dev-server@npm:3.11.3"
@@ -44905,6 +45006,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "webpack-merge@npm:^5.7.3, webpack-merge@npm:^5.8.0":
   version: 5.8.0
   resolution: "webpack-merge@npm:5.8.0"
@@ -44936,6 +45038,8 @@ __metadata:
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "webpack-merge@npm:^5.7.3, webpack-merge@npm:^5.8.0":
   version: 5.8.0
   resolution: "webpack-merge@npm:5.8.0"
@@ -44946,6 +45050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 >>>>>>> 99201f6 (Tmp configs.)
 "webpack-node-externals@npm:1.7.2":
   version: 1.7.2
@@ -44959,6 +45064,9 @@ __metadata:
 >>>>>>> adc9058 (Hooked up fonts.)
 =======
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"webpack-sources@npm:^1.1.0, webpack-sources@npm:^1.4.0, webpack-sources@npm:^1.4.1, webpack-sources@npm:^1.4.3":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 1.4.3
   resolution: "webpack-sources@npm:1.4.3"
   dependencies:
@@ -44979,6 +45087,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 "webpack-virtual-modules@npm:^0.2.2":
   version: 0.2.2
@@ -45004,6 +45113,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "webpack-virtual-modules@npm:^0.2.2":
   version: 0.2.2
   resolution: "webpack-virtual-modules@npm:0.2.2"
@@ -45022,10 +45133,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "webpack@npm:4":
 =======
 "webpack@npm:4, webpack@npm:4.46.0":
 >>>>>>> 99201f6 (Tmp configs.)
+=======
+"webpack@npm:4":
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
   version: 4.46.0
   resolution: "webpack@npm:4.46.0"
   dependencies:
@@ -45226,13 +45341,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"when@npm:~3.6.x":
-  version: 3.6.4
-  resolution: "when@npm:3.6.4"
-  checksum: fc36ebd79d6f50d55763e5f9aedab2535ff0bb2fc95d9efd72691a819f8da1376ea00716bd70ae02d05591bf1a19784342ce47d5d49afa34a1a7accb8bafaf87
-  languageName: node
-  linkType: hard
-
 "which-boxed-primitive@npm:^1.0.2":
   version: 1.0.2
   resolution: "which-boxed-primitive@npm:1.0.2"
@@ -45289,7 +45397,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wide-align@npm:^1.1.0, wide-align@npm:^1.1.2":
+"wide-align@npm:^1.1.2":
   version: 1.1.5
   resolution: "wide-align@npm:1.1.5"
   dependencies:
@@ -45351,6 +45459,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "worker-rpc@npm:^0.1.0":
   version: 0.1.1
   resolution: "worker-rpc@npm:0.1.1"
@@ -45374,6 +45483,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 046d9dc (Attempting to hookup fonts.)
 "worker-rpc@npm:^0.1.0":
   version: 0.1.1
   resolution: "worker-rpc@npm:0.1.1"

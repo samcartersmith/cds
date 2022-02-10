@@ -2,7 +2,16 @@ platform :ios, '11.0'
 inhibit_all_warnings!
 
 node_modules = "../../../node_modules"
-config = JSON.parse(`cd ../../.. && RN_PROJECT=app npx react-native config`)
+# config = JSON.parse(`RN_PROJECT=app npx react-native config`)
+
+# `yarn react-native link` only links to the 1st target on xcode project.
+# https://github.com/facebook/react-native/issues/22162
+# we need to make sure that the `app` target is at the top to link assets like font.
+# xcodegen doesn't support target ordering, so using xcodeproj to sort them here.
+require 'xcodeproj'
+project = Xcodeproj::Project.open('MobilePlayground.xcodeproj')
+project.sort
+project.save
 
 require_relative "#{node_modules}/react-native/scripts/react_native_pods"
 require_relative "#{node_modules}/@react-native-community/cli-platform-ios/native_modules"
@@ -14,7 +23,7 @@ target 'MobilePlayground' do
     # to enable hermes on iOS, change `false` to `true` and then install pods
     :hermes_enabled => false
   )
-  use_native_modules!(config)
+  use_native_modules!()
 
   # Enables Flipper.
   #
