@@ -3,22 +3,21 @@ import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common/palett
 import { createThemeConfigForSpectrum } from './createThemeConfigForSpectrum';
 import { CreateThemeConfigParams } from './ThemeConfig';
 
-export const getCacheKey = ({
+const getCacheKey = ({
   name,
   parentThemeConfig,
-  hasFrontier,
-}: Omit<CreateThemeConfigParams, 'palette'>) => {
-  const parentPrefix = parentThemeConfig ? `${parentThemeConfig.name}-` : '';
-  const frontierSuffix = hasFrontier ? `with-frontier` : 'without-frontier';
-  return `${parentPrefix}${name}-${frontierSuffix}`;
+}: Pick<CreateThemeConfigParams, 'name' | 'parentThemeConfig'>) => {
+  const parent = parentThemeConfig ? `${parentThemeConfig.name}-` : '';
+  return `${parent}${name}`;
 };
 
 export const createThemeConfig = memoize(function createThemeConfig({
   palette,
   parentThemeConfig,
-  name,
+  name: nameProp,
   hasFrontier,
 }: CreateThemeConfigParams) {
+  const name = getCacheKey({ name: nameProp, parentThemeConfig });
   return {
     name,
     light: createThemeConfigForSpectrum({

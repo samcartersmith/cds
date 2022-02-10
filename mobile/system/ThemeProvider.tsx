@@ -1,5 +1,9 @@
 import React, { memo, useContext, useMemo } from 'react';
-import { NewPartialPaletteConfig, SystemProviderProps } from '@cbhq/cds-common';
+import {
+  frontierSpectrumPalette,
+  NewPartialPaletteConfig,
+  SystemProviderProps,
+} from '@cbhq/cds-common';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
@@ -24,14 +28,24 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = memo(function ThemePr
         parentThemeConfig,
         palette,
         hasFrontier,
-        name,
+        name: hasFrontier ? `${name}-frontier` : name,
       });
     }
     // This means this is the root ThemeProvider
     if (parentThemeConfigContext === undefined) return parentThemeConfig;
+    // If frontier was updated we need ThemeConfigContext to update activeConfig
+    if (hasFrontier)
+      return createThemeConfig({
+        parentThemeConfig,
+        palette: frontierSpectrumPalette,
+        hasFrontier,
+        name: `${name}-frontier`,
+      });
+    // If only spectrum was overwritten we need ThemeConfigContext to update activeConfig
+    if (spectrum) return parentThemeConfig;
     // Skip rendering ThemeConfigProvider if there are no changes
     return undefined;
-  }, [hasFrontier, name, palette, parentThemeConfigContext]);
+  }, [hasFrontier, name, palette, parentThemeConfigContext, spectrum]);
   const skipThemeConfig = config === undefined;
   return (
     <ScaleProvider value={scale}>

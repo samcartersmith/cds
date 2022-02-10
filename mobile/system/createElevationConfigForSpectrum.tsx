@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { Platform, ViewStyle } from 'react-native';
-import { memoize } from '@cbhq/cds-common/utils/memoize';
 import {
   BorderWidth,
   ElevationLevels,
@@ -19,7 +18,6 @@ import {
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { createThemeConfig } from './createThemeConfig';
-import { getCacheKey } from './createThemeConfigForSpectrum';
 
 type ElevationLevel = Exclude<ElevationLevels, 0>;
 export type ElevationConfigForSpectrum = {
@@ -62,12 +60,12 @@ const elevations = {
 } as const;
 /** Merges a parentThemeConfig with elevation palette to generate theme config to be used in components with elevation
  */
-export const createElevationConfigForSpectrum = memoize(function createElevationConfigForSpectrum({
+export const createElevationConfigForSpectrum = ({
   name,
   spectrum,
   parentThemeConfig,
   hasFrontier,
-}: CreateElevationConfigForSpectrumParams): ElevationConfigForSpectrum {
+}: CreateElevationConfigForSpectrumParams): ElevationConfigForSpectrum => {
   const { level, palette, childrenName, childrenPalette, styles } = elevations[name];
   const config = createThemeConfig({
     hasFrontier,
@@ -145,5 +143,4 @@ export const createElevationConfigForSpectrum = memoize(function createElevation
       activeConfig,
     },
   };
-},
-getCacheKey);
+};
