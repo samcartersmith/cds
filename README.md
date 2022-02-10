@@ -50,7 +50,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 - [x] mobile
 - [x] web
 - [x] lottie-files
-- [ ] static css
+- [x] static css
 
 #### Storybook
 
@@ -76,6 +76,8 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 - [ ] Build release script to auto update package.json's
 - [ ] Enable npm publish to verdaccio
+- [ ] Upload css to cloud
+- [ ] Update service worker cache
 
 #### Buildkite
 
