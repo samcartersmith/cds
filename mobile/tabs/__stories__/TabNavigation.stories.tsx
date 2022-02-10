@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
-import { useState } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { TabProps } from '@cbhq/cds-common';
-import { TextLabel1 } from '../../typography';
 import { TabNavigation } from '../TabNavigation';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
@@ -11,7 +9,6 @@ const tabs: TabProps[] = [
   {
     id: 'first_item',
     label: 'First item',
-    onPress: console.warn,
   },
   {
     id: 'second_item',
@@ -20,7 +17,6 @@ const tabs: TabProps[] = [
   {
     id: 'third_item',
     label: 'Third item',
-    onPress: console.warn,
   },
   {
     id: 'fourth_item',
@@ -33,23 +29,18 @@ const tabs: TabProps[] = [
 ];
 
 const TabNavigationScreen = () => {
-  const [activeTabOne, setActiveTabOne] = useState<string>();
-  const [activeTabTwo, setActiveTabTwo] = useState<string>();
-  const [activeTabThree, setActiveTabThree] = useState<string>();
+  const handleChange = console.warn;
 
   return (
     <ExampleScreen>
       <Example title="Tab Navigation" spacing={gutter} overflow="visible">
-        <TabNavigation onChange={setActiveTabOne} tabs={tabs} />
-        <TextLabel1 color="primary">{activeTabOne}</TextLabel1>
+        <TabNavigation tabs={tabs} onChange={handleChange} />
       </Example>
       <Example title="Tab Navigation (with Default Tab)" spacing={gutter} overflow="visible">
-        <TabNavigation defaultTab="second_item" onChange={setActiveTabTwo} tabs={tabs} />
-        <TextLabel1 color="primary">{activeTabTwo}</TextLabel1>
+        <TabNavigation defaultTab="second_item" onChange={handleChange} tabs={tabs} />
       </Example>
       <Example title="Tab Navigation (Secondary)" spacing={gutter} overflow="visible">
-        <TabNavigation variant="secondary" onChange={setActiveTabThree} tabs={tabs} />
-        <TextLabel1 color="primary">{activeTabThree}</TextLabel1>
+        <TabNavigation variant="secondary" onChange={handleChange} tabs={tabs} />
       </Example>
     </ExampleScreen>
   );

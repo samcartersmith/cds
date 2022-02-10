@@ -63,6 +63,7 @@ export const routes = {
   SpotSquare: () => require('../illustrations/__stories__/SpotSquare.stories').default,
   Switch: () => require('../controls/__stories__/Switch.stories').default,
   TabIndicator: () => require('../tabs/__stories__/TabIndicator.stories').default,
+  TabLabel: () => require('../tabs/__stories__/TabLabel.stories').default,
   TabNavigation: () => require('../tabs/__stories__/TabNavigation.stories').default,
   Tabs: () => require('../tabs/__stories__/Tabs.stories').default,
   Text: () => require('../typography/__stories__/Text.stories').default,

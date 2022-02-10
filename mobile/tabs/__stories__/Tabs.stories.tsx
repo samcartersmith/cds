@@ -1,38 +1,71 @@
-/* eslint-disable react-native/no-raw-text */
+/* eslint-disable no-console */
+import { useState } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { TabIndicator } from '../TabIndicator';
 
-import { Tab, Tabs, TabLabel } from '..';
+import { TabProps } from '@cbhq/cds-common';
+import { TabNavigation } from '../TabNavigation';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { HStack, VStack } from '../../layout';
-import { TextBody } from '../../typography';
+import { VStack } from '../../layout/VStack';
+import { TextLabel1, TextTitle2 } from '../../typography';
 
-const TabsScreen = () => {
+const tabs: TabProps[] = [
+  {
+    id: 'first_item',
+    label: 'First item',
+    onPress: console.warn,
+  },
+  {
+    id: 'second_item',
+    label: 'Second item',
+  },
+  {
+    id: 'third_item',
+    label: 'Third item',
+    onPress: console.warn,
+  },
+  {
+    id: 'fourth_item',
+    label: 'Fourth item',
+  },
+  {
+    id: 'fifth_item',
+    label: 'Fifth item',
+  },
+];
+
+// TODO update once _Tabs_ component is complete
+const TabScreen = () => {
+  const [activeTabOne, setActiveTabOne] = useState<string>();
+  const [activeTabTwo, setActiveTabTwo] = useState<string>();
+
   return (
     <ExampleScreen>
-      <Example title="Tabs" spacing={gutter} overflow="visible">
-        <Tabs>
-          <VStack>
-            <HStack gap={4}>
-              <TabLabel active>Primary TabLabel</TabLabel>
-              <TabLabel>Primary TabLabel</TabLabel>
-            </HStack>
-            <TabIndicator width={138} xPosition={0} />
-          </VStack>
-          <Tab id="tab-1" label="Tab one">
-            <HStack>
-              <TextBody>This is the first tab</TextBody>
-            </HStack>
-          </Tab>
-          <Tab id="tab-2" label="Tab Two">
-            <HStack>
-              <TextBody>This is the second tab</TextBody>
-            </HStack>
-          </Tab>
-        </Tabs>
+      <Example title="Tab System" spacing={gutter} overflow="visible">
+        <TabNavigation onChange={setActiveTabOne} tabs={tabs} />
+        <VStack
+          background="backgroundAlternate"
+          alignItems="center"
+          justifyContent="center"
+          spacingVertical={6}
+        >
+          <TextLabel1>Static preview</TextLabel1>
+          <TextTitle2 color="primary">{activeTabOne}</TextTitle2>
+        </VStack>
+      </Example>
+      <Example title="Tab System (Secondary)" spacing={gutter} overflow="visible">
+        <TabNavigation variant="secondary" onChange={setActiveTabTwo} tabs={tabs} />
+        <VStack
+          background="backgroundAlternate"
+          alignItems="center"
+          justifyContent="center"
+          spacingVertical={6}
+        >
+          <TextLabel1>Static preview</TextLabel1>
+          <TextTitle2 color="primary">{activeTabTwo}</TextTitle2>
+        </VStack>
       </Example>
     </ExampleScreen>
   );
 };
 
-export default TabsScreen;
+export default TabScreen;
