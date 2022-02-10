@@ -2,7 +2,7 @@ import { ExecutorContext } from '@nrwl/devkit';
 import path from 'path';
 import fs from 'fs';
 import chalk from 'chalk';
-import execa from 'execa';
+import { createDir, deleteDir, runLocalCommand } from '../utils';
 
 type BuildPackageOptions = {
   destinationDir: string;
@@ -48,22 +48,6 @@ type TscArgs = {
    */
   configFile: string;
 };
-
-function getProjectPath(context: ExecutorContext): string {
-  return context.workspace.projects[context.projectName as string].root;
-}
-
-async function runLocalCommand(context: ExecutorContext, bin: string, args: string[]) {
-  const cwd = path.join(context.root, getProjectPath(context));
-  console.log(chalk.gray(`Running \`${bin} ${args.join(' ')}\` in .${cwd}`));
-
-  const result = await execa(bin, args, {
-    cwd,
-    stdio: 'inherit',
-  });
-
-  return Promise.resolve({ success: result.exitCode === 0 });
-}
 
 // babel --config-file ../../babel.build.config.js  --extensions .ts,.tsx --ignore "**/*.js","**/*.test.ts","**/*.test.tsx","dist/**" --source-maps --out-dir dist ./
 async function runBabel(
@@ -145,26 +129,9 @@ export default async function buildPackage(options: BuildPackageOptions, context
 
   const destinationDir = path.join(context.root, dest);
 
-  console.log(`deleting ${destinationDir}`);
+  await deleteDir(destinationDir);
 
-  if (fs.existsSync(destinationDir)) {
-    await new Promise((resolve) => {
-      fs.rm(destinationDir, { recursive: true }, (err) => {
-        if (err) {
-          console.log(`error while trying to delete ${destinationDir}: ${err?.message}`);
-          process.exit(1);
-        }
-
-        console.log(`${destinationDir} is deleted!`);
-        resolve(null);
-      });
-    });
-  }
-
-  console.log(`creating ${destinationDir}`);
-  if (!fs.existsSync(destinationDir)) {
-    fs.mkdirSync(destinationDir, { recursive: true });
-  }
+  await createDir(destinationDir);
 
   const babelArgs: BabelArgs = {
     configFile: babelConfig,

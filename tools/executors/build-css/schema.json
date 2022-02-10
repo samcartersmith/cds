@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "fontsOutputDir": {
+      "type": "string",
+      "description": "directory with the built fonts"
+    },
+    "webOutputDir": {
+      "type": "string",
+      "description": "directory with the built web output"
+    },
+    "outputDir": {
+      "type": "string",
+      "description": "output directory for css"
+    }
+  }
+}

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-babel ./tools/executors/build-package/impl.ts --config-file ./babel.build.config.js --extensions .ts --out-dir ./tools/executors/build-package/
+babel ./tools/executors --config-file ./babel.build.config.js --extensions .ts --out-dir ./tools/executors
 nx run web-utils:build-package
