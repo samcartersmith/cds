@@ -25,6 +25,8 @@ export type TabProps<T extends string = string> = PropsWithChildren<{
   variant?: 'primary' | 'secondary';
   /** Full length accessibility label when the child text is not descriptive enough. */
   accessibilityLabel?: string;
+  /** Callback to fire when pressed */
+  onPress?: (id: T) => void;
 }> &
   SharedProps;
 
@@ -48,4 +50,19 @@ export type TabIndicatorProps = {
   width: number;
   /** The xPosition of the active TabLabel. */
   xPosition: number;
+} & SharedProps;
+
+export type TabNavigationProps<T extends string = string> = {
+  /** Which tab should mount on the initial render? This is useful if you're building a navigable tab system
+   *  @default children[0]
+   */
+  defaultTab?: T;
+  /** Children should be TabLabels. If you only have one child, don't use tabs 🤪 */
+  tabs: Omit<TabProps, 'children'>[];
+  /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
+  onChange?: (tabId: T) => void;
+  /** See the Tabs TDD to understand which variant should be used.
+   *  @default 'primary'
+   */
+  variant?: 'primary' | 'secondary';
 } & SharedProps;

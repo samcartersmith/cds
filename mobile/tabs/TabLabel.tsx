@@ -29,8 +29,8 @@ export const TabLabel = memo(({ active, variant = 'primary', ...props }: TabLabe
     () =>
       // Only primary tabs need special spacing
       variant === 'primary' && {
-        marginTop: spacing[2],
-        marginBottom: spacing[2] - 2, // Account for the 2px TabIndicator
+        paddingTop: spacing[2],
+        paddingBottom: spacing[2] - 2, // Account for the 2px TabIndicator
       },
     [spacing, variant],
   );
