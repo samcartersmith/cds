@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.6 (2/10/2022, 01:05 PM PST)
+
+#### 🚀 Updates
+
+- Tab component stories for mobile. [#53680](https://github.cbhq.net/mono/repo/pull/53680)
+- **[Tabs]** Create TabNavigation component and useTabLabels hook. [#53394](https://github.cbhq.net/mono/repo/pull/53394), [CDS-2026](https://jira.coinbase-corp.com/browse/CDS-2026)
+- **[Accordion]** CDS Accordion mobile. [#52690](https://github.cbhq.net/mono/repo/pull/52690), [CDS-1878](https://jira.coinbase-corp.com/browse/CDS-1878)
+
+#### 🐞 Fixes
+
+- Feb 10th, 2022 Illo Publication. [#53756](https://github.cbhq.net/mono/repo/pull/53756)
+- Mobile theming and caching logic + add tests. [#53647](https://github.cbhq.net/mono/repo/pull/53647), [CDS-2039](https://jira.coinbase-corp.com/browse/CDS-2039)
+- Deprecate wip components. [#53146](https://github.cbhq.net/mono/repo/pull/53146)
+
+#### 📘 Misc
+
+- **[Tooltip]** Fix bug bash issues. [#53050](https://github.cbhq.net/mono/repo/pull/53050)
+
 ## 0.39.5 (2/8/2022, 02:41 PM PST)
 
 #### 🚀 Updates

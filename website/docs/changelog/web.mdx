@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.10 (2/10/2022, 01:05 PM PST)
+
+#### 🐞 Fixes
+
+- Feb 10th, 2022 Illo Publication. [#53756](https://github.cbhq.net/mono/repo/pull/53756)
+- Deprecate wip components. [#53146](https://github.cbhq.net/mono/repo/pull/53146)
+
+#### 📘 Misc
+
+- **[Tooltip]** Fix bug bash issues. [#53050](https://github.cbhq.net/mono/repo/pull/53050)
+
 ## 0.34.9 (2/8/2022, 02:41 PM PST)
 
 #### 🚀 Updates
