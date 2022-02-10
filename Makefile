@@ -39,6 +39,7 @@ Help:
   $$ make build.web                 -- Build the `web` package.
   $$ make build.lottie              -- Build the `lottie` package.
   $$ make build.utils               -- Build the `utils` package.
+  $$ make build.css                 -- Build the static css.
   $$ make build.all                 -- Build all packages.
 
 endef
@@ -172,11 +173,15 @@ build.lottie:
 build.utils:
 	nx run utils:build-package
 
+.PHONY: build.css
+build.css: build.web build.fonts
+	nx run web:build-css
+
 .PHONY: build.all
 build.all:
 	make build.common
-	make build.fonts
 	make build.mobile
-	make build.web
 	make build.lottie
 	make build.utils
+	#includes build.web and build.fonts as a dep
+	make build.css
