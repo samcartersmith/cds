@@ -6,7 +6,7 @@ import {
   overlayHiddenOpacity,
 } from '@cbhq/cds-common/animation/overlay';
 
-import { MotionBaseSpec, MotionDuration } from '@cbhq/cds-common';
+import { MotionDuration } from '@cbhq/cds-common';
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 
 /**
@@ -14,24 +14,32 @@ import { convertMotionConfig } from '../../animation/convertMotionConfig';
  * If only a custom enter animation duration value is provided, it will be used for both enter and exit animations
  */
 export const useOverlayAnimation = (
-  animateInDuration?: MotionDuration,
+  animateInDuration: MotionDuration = animateInOpacityConfig.duration,
   animateOutDuration?: MotionDuration,
 ): [Animated.Value, Animated.CompositeAnimation, Animated.CompositeAnimation] => {
   const overlayAnim = useRef(new Animated.Value(overlayHiddenOpacity));
-  const customAnimateInConfig = {
-    ...animateInOpacityConfig,
-    duration: animateInDuration,
-  } as MotionBaseSpec;
-  const customAnimateOutConfig = {
-    ...animateOutOpacityConfig,
-    duration: animateOutDuration ?? animateInDuration,
-  } as MotionBaseSpec;
 
-  const animateInConfig = convertMotionConfig(
-    animateInDuration ? customAnimateInConfig : animateInOpacityConfig,
+  const animateInConfig = useMemo(
+    () =>
+      convertMotionConfig({
+        easing: animateInOpacityConfig.easing,
+        toValue: animateInOpacityConfig.toValue,
+        fromValue: animateInOpacityConfig.fromValue,
+        duration: animateInDuration,
+      } as const),
+    [animateInDuration],
   );
-  const animateOutConfig = convertMotionConfig(
-    animateOutDuration ?? animateInDuration ? customAnimateOutConfig : animateOutOpacityConfig,
+
+  const animateOutConfig = useMemo(
+    () =>
+      convertMotionConfig({
+        easing: animateOutOpacityConfig.easing,
+        toValue: animateOutOpacityConfig.toValue,
+        fromValue: animateOutOpacityConfig.fromValue,
+        // custom animate out duration > animate in duration > fallback
+        duration: animateOutDuration ?? animateInDuration ?? animateOutOpacityConfig.duration,
+      } as const),
+    [animateOutDuration, animateInDuration],
   );
 
   return useMemo(() => {
