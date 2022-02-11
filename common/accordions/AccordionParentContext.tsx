@@ -2,9 +2,11 @@ import React, { createContext, useContext, useState, useCallback, useMemo } from
 import { AccordionBaseProps } from '../types';
 
 export const AccordionParentContext = createContext<{
+  defaultActiveKey: AccordionBaseProps['defaultActiveKey'];
   activeKey: AccordionBaseProps['defaultActiveKey'];
   onItemPress: (key: string) => void;
 }>({
+  defaultActiveKey: undefined,
   activeKey: undefined,
   onItemPress: () => {},
 });
@@ -29,8 +31,12 @@ export const AccordionParentProvider = ({
   );
 
   const contextValue = useMemo(
-    () => ({ activeKey, onItemPress: handleItemPress }),
-    [activeKey, handleItemPress],
+    () => ({
+      defaultActiveKey,
+      activeKey,
+      onItemPress: handleItemPress,
+    }),
+    [defaultActiveKey, activeKey, handleItemPress],
   );
 
   return (

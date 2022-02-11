@@ -42,7 +42,7 @@ export const LoremIpsum = ({ title, color, concise, repeat }: LoremIpsumProps) =
   );
 };
 
-type ExampleProps = {
+export type ExampleProps = {
   children: React.ReactNode;
   inline?: boolean;
   title?: string;

@@ -4,13 +4,16 @@ import type {
   AccordionItemBaseProps,
   TextBaseProps,
   CellMediaProps,
+  TextInputBaseProps,
 } from '../types';
+import { loremIpsum } from './data/loremIpsum';
 
 export type CreateAccordionProps = {
   Accordion: React.ComponentType<AccordionBaseProps>;
   AccordionItem: React.ComponentType<AccordionItemBaseProps>;
   TextBody: React.ComponentType<TextBaseProps & { as?: string }>;
   CellMedia: React.ComponentType<CellMediaProps>;
+  TextInput: React.ComponentType<TextInputBaseProps>;
 };
 
 type OnPress = (key: string) => void;
@@ -25,7 +28,96 @@ export function accordionBuilder({
   AccordionItem,
   TextBody,
   CellMedia,
+  TextInput,
 }: CreateAccordionProps) {
+  // eslint-disable-next-line no-console
+  const handlePress = console.log;
+
+  const BasicAccordion = () => {
+    return (
+      <Accordion defaultActiveKey="2" onItemPress={handlePress}>
+        <AccordionItem
+          itemKey="1"
+          title="Accordion #1"
+          subtitle="subtitle1"
+          media={<CellMedia type="icon" name="wallet" />}
+        >
+          <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+        </AccordionItem>
+        <AccordionItem
+          itemKey="2"
+          title="Accordion #2"
+          subtitle="subtitle2"
+          media={<CellMedia type="icon" name="wallet" />}
+          onPress={handlePress}
+        >
+          <TextBody>Accordion Content</TextBody>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
+  const NoMedia = () => {
+    return (
+      <Accordion onItemPress={handlePress}>
+        <AccordionItem itemKey="1" title="Accordion #1" subtitle="subtitle1">
+          <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+        </AccordionItem>
+        <AccordionItem itemKey="2" title="Accordion #2" subtitle="subtitle2" onPress={handlePress}>
+          <TextBody>Accordion Content</TextBody>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
+  const NoSubtitle = () => {
+    return (
+      <Accordion defaultActiveKey="1" onItemPress={handlePress}>
+        <AccordionItem
+          itemKey="1"
+          title="Accordion #1"
+          media={<CellMedia type="icon" name="wallet" />}
+        >
+          <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+        </AccordionItem>
+        <AccordionItem
+          itemKey="2"
+          title="Accordion #2"
+          media={<CellMedia type="icon" name="wallet" />}
+          onPress={handlePress}
+        >
+          <TextBody>Accordion Content</TextBody>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
+  const TitleOnly = () => {
+    return (
+      <Accordion defaultActiveKey="2" onItemPress={handlePress}>
+        <AccordionItem itemKey="1" title="Accordion #1">
+          <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+        </AccordionItem>
+        <AccordionItem itemKey="2" title="Accordion #2" onPress={handlePress}>
+          <TextBody>Accordion Content</TextBody>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
+  const LongContent = () => {
+    return (
+      <Accordion defaultActiveKey="2" onItemPress={handlePress}>
+        <AccordionItem itemKey="1" title="Accordion #1">
+          <TextBody>{loremIpsum.repeat(10)}</TextBody>
+        </AccordionItem>
+        <AccordionItem itemKey="2" title="Accordion #2" onPress={handlePress}>
+          <TextBody>Accordion Content</TextBody>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
   const MockAccordion = ({ onItemPress, onPress1, onPress2 }: MockAccordionProps) => {
     return (
       <Accordion defaultActiveKey="2" onItemPress={onItemPress} testID="mock-accordion">
@@ -54,6 +146,11 @@ export function accordionBuilder({
   };
 
   return {
+    BasicAccordion,
+    NoMedia,
+    NoSubtitle,
+    TitleOnly,
+    LongContent,
     MockAccordion,
   };
 }

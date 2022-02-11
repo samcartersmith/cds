@@ -11,8 +11,9 @@ export type AccordionItemProps = AccordionItemBaseProps;
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const AccordionItem = memo(
   ({ itemKey, title, subtitle, children, onPress, media, testID }: AccordionItemProps) => {
-    const { activeKey } = useAccordionParent();
+    const { activeKey, defaultActiveKey } = useAccordionParent();
     const expanded = activeKey === itemKey;
+    const defaultExpanded = defaultActiveKey === itemKey;
 
     return (
       <VStack>
@@ -25,7 +26,12 @@ export const AccordionItem = memo(
           expanded={expanded}
           testID={testID && `${testID}-header`}
         />
-        <AccordionPanel expanded={expanded} itemKey={itemKey} testID={testID && `${testID}-panel`}>
+        <AccordionPanel
+          defaultExpanded={defaultExpanded}
+          expanded={expanded}
+          itemKey={itemKey}
+          testID={testID && `${testID}-panel`}
+        >
           {children}
         </AccordionPanel>
       </VStack>

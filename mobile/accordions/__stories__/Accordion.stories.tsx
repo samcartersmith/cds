@@ -1,38 +1,47 @@
 import React from 'react';
+import { accordionBuilder } from '@cbhq/cds-common/internal/accordionBuilder';
 
 import { Accordion, AccordionItem } from '..';
 import { CellMedia } from '../../cells';
 import { TextInput } from '../../controls';
 import { TextBody } from '../../typography';
 
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Example, ExampleProps, ExampleScreen } from '../../examples/ExampleScreen';
+
+const { BasicAccordion, NoMedia, NoSubtitle, TitleOnly, LongContent } = accordionBuilder({
+  Accordion,
+  AccordionItem,
+  TextBody,
+  CellMedia,
+  TextInput,
+});
+
+const AccordionExample = ({ children, title }: ExampleProps) => {
+  return (
+    <Example spacing={0} title={title} titleSpacing={{ spacingHorizontal: 3, spacingTop: 2 }}>
+      {children}
+    </Example>
+  );
+};
 
 const AccordionScreen = () => {
-  // eslint-disable-next-line no-console
-  const handlePress = console.log;
   return (
     <ExampleScreen>
-      <Example inline title="Basic Accordion">
-        <Accordion defaultActiveKey="2" onItemPress={handlePress}>
-          <AccordionItem
-            itemKey="1"
-            title="Accordion #1"
-            subtitle="subtitle1"
-            media={<CellMedia type="icon" name="wallet" />}
-          >
-            <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
-          </AccordionItem>
-          <AccordionItem
-            itemKey="2"
-            title="Accordion #2"
-            subtitle="subtitle2"
-            media={<CellMedia type="icon" name="wallet" />}
-            onPress={handlePress}
-          >
-            <TextBody>Accordion Content</TextBody>
-          </AccordionItem>
-        </Accordion>
-      </Example>
+      <AccordionExample title="Basic Accordion">
+        <BasicAccordion />
+      </AccordionExample>
+      <AccordionExample inline title="Long content">
+        <LongContent />
+      </AccordionExample>
+      <AccordionExample inline title="No media + collapsed">
+        <NoMedia />
+      </AccordionExample>
+      <AccordionExample inline title="No subtitle">
+        <NoSubtitle />
+      </AccordionExample>
+      <AccordionExample inline title="Title only">
+        <TitleOnly />
+      </AccordionExample>
     </ExampleScreen>
   );
 };
