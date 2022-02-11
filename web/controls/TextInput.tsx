@@ -96,7 +96,7 @@ export const TextInput = memo(
           variant={variant}
           borderRadius={borderRadius}
           height={height}
-          labelNode={!compact && !!label && <InputLabel for={label}>{label}</InputLabel>}
+          labelNode={!compact && !!label && <InputLabel htmlFor={label}>{label}</InputLabel>}
           inputNode={
             <NativeInput
               align={align}

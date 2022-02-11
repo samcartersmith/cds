@@ -4,6 +4,9 @@ import { css } from 'linaria';
 import { TextLabel1 } from '../typography/TextLabel1';
 import { TextProps } from '../typography/TextProps';
 
+type NativeLabelProps = Omit<JSX.IntrinsicElements['label'], 'style' | 'className'>;
+export type InputLabelProps = TextProps & NativeLabelProps;
+
 const labelStyle = css`
   && {
     display: block;
@@ -11,7 +14,7 @@ const labelStyle = css`
 `;
 
 export const InputLabel = memo(
-  ({ color = 'foreground', disabled = false, ...props }: TextProps & { for?: string }) => (
+  ({ color = 'foreground', disabled = false, ...props }: InputLabelProps) => (
     <TextLabel1
       dangerouslySetClassName={labelStyle}
       spacingVertical={0.5}
