@@ -19,7 +19,7 @@ export function createConfigs<WrapperProps>({
     title: 'Send a crypto gift',
     description: 'Share the gift of crypto this holiday season',
     spotSquare: 'coinbaseCardSparkle',
-    action: 'Start gifting today',
+    action: 'Start gifting',
     onActionPress: onPressConsole,
   } as const;
 

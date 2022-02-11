@@ -8,8 +8,8 @@ export function getProjectPath(context: ExecutorContext): string {
   return context.workspace.projects[context.projectName as string].root;
 }
 
-export async function runLocalCommand(context: ExecutorContext, bin: string, args: string[]) {
-  const cwd = path.join(context.root, getProjectPath(context));
+export async function runLocalCommand(context: ExecutorContext, bin: string, args: string[], cwdOverride?: string) {
+  const cwd = cwdOverride ?? path.join(context.root, getProjectPath(context));
   console.log(chalk.gray(`Running \`${bin} ${args.join(' ')}\` in .${cwd}`));
 
   const result = await execa(bin, args, {

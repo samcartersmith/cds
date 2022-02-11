@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -29,7 +29,7 @@ Visually remove the ThemeProviders box and replace it with its content. Conceptu
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['contents']}
+  webOptions={["contents"]}
 />
 
 <ComponentDetails componentName="ThemeProvider" templateName="prop-display" />
@@ -44,10 +44,10 @@ Takes a configurable palette. If a partial palette is provided it will be merged
   required={false}
   defaultValue=""
   mobileOptions={[
-    'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 5 more ... | secondaryForeground, PaletteValue>>>',
+    "Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 5 more ... | secondaryForeground, PaletteValue>>>",
   ]}
   webOptions={[
-    'Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 5 more ... | secondaryForeground, PaletteValue>>>',
+    "Partial<ReadonlyObjectDeep<Record<foreground | foregroundMuted | background | backgroundAlternate | backgroundOverlay | line | lineHeavy | primary | primaryWash | primaryForeground | ... 5 more ... | secondaryForeground, PaletteValue>>>",
   ]}
 />
 
@@ -62,8 +62,24 @@ Determines which sizes to pull for typography, spacing, icons, and layout, and i
   propertyName="scale"
   required={false}
   defaultValue="large"
-  mobileOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
-  webOptions={['large', 'medium', 'small', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+  mobileOptions={[
+    "large",
+    "medium",
+    "small",
+    "xLarge",
+    "xSmall",
+    "xxLarge",
+    "xxxLarge",
+  ]}
+  webOptions={[
+    "large",
+    "medium",
+    "small",
+    "xLarge",
+    "xSmall",
+    "xxLarge",
+    "xxxLarge",
+  ]}
 />
 
 <ComponentDetails componentName="ThemeProvider" templateName="prop-scale" />
@@ -77,8 +93,8 @@ Determines which spectrum a palette will pull from. For example, in the light sp
   propertyName="spectrum"
   required={false}
   defaultValue="light"
-  mobileOptions={['dark', 'light', 'null']}
-  webOptions={['dark', 'light', 'null']}
+  mobileOptions={["dark", "light", "null"]}
+  webOptions={["dark", "light", "null"]}
 />
 
 <ComponentDetails componentName="ThemeProvider" templateName="prop-spectrum" />

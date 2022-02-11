@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-accessibilityHint" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-accessibilityHint"
+/>
 
 ### accessibilityLabel
 
@@ -43,11 +46,14 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy <Badge variant="web" />
 
@@ -61,10 +67,13 @@ Accessibility prop that describes the component that labels it by its `id`
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### as <Badge variant="web" />
 
@@ -76,7 +85,12 @@ Element or component to render the container as.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['ComponentClass<any, any>', 'FunctionComponent<any>', 'a', 'button']}
+  webOptions={[
+    "ComponentClass<any, any>",
+    "FunctionComponent<any>",
+    "a",
+    "button",
+  ]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-as" />
@@ -91,46 +105,49 @@ Background color of the overlay (element being interacted with).
   required={true}
   defaultValue=""
   mobileOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'foreground',
-    'foregroundMuted',
-    'line',
-    'lineHeavy',
-    'negative',
-    'negativeForeground',
-    'positive',
-    'positiveForeground',
-    'primary',
-    'primaryForeground',
-    'primaryWash',
-    'secondary',
-    'secondaryForeground',
-    'transparent',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "foreground",
+    "foregroundMuted",
+    "line",
+    "lineHeavy",
+    "negative",
+    "negativeForeground",
+    "positive",
+    "positiveForeground",
+    "primary",
+    "primaryForeground",
+    "primaryWash",
+    "secondary",
+    "secondaryForeground",
+    "transparent",
   ]}
   webOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'foreground',
-    'foregroundMuted',
-    'line',
-    'lineHeavy',
-    'negative',
-    'negativeForeground',
-    'positive',
-    'positiveForeground',
-    'primary',
-    'primaryForeground',
-    'primaryWash',
-    'secondary',
-    'secondaryForeground',
-    'transparent',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "foreground",
+    "foregroundMuted",
+    "line",
+    "lineHeavy",
+    "negative",
+    "negativeForeground",
+    "positive",
+    "positiveForeground",
+    "primary",
+    "primaryForeground",
+    "primaryWash",
+    "secondary",
+    "secondaryForeground",
+    "transparent",
   ]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-backgroundColor" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-backgroundColor"
+/>
 
 ### block
 
@@ -141,8 +158,8 @@ Set element to block and expand to 100% width.
   propertyName="block"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-block" />
@@ -157,24 +174,24 @@ Border color of the element being interacted with.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'line',
-    'lineHeavy',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'transparent',
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "transparent",
   ]}
   webOptions={[
-    'line',
-    'lineHeavy',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'transparent',
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "transparent",
   ]}
 />
 
@@ -190,30 +207,30 @@ Border radius of the element being interacted with. Number should only be used i
   required={false}
   defaultValue=""
   mobileOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'number',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "number",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
   webOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'number',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "number",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
 />
 
@@ -228,8 +245,26 @@ Width of the border.
   propertyName="borderWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['button', 'card', 'checkbox', 'focusRing', 'input', 'none', 'radio', 'sparkline']}
-  webOptions={['button', 'card', 'checkbox', 'focusRing', 'input', 'none', 'radio', 'sparkline']}
+  mobileOptions={[
+    "button",
+    "card",
+    "checkbox",
+    "focusRing",
+    "input",
+    "none",
+    "radio",
+    "sparkline",
+  ]}
+  webOptions={[
+    "button",
+    "card",
+    "checkbox",
+    "focusRing",
+    "input",
+    "none",
+    "radio",
+    "sparkline",
+  ]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-borderWidth" />
@@ -244,7 +279,7 @@ Apply class names to the outer container.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-className" />
@@ -258,7 +293,7 @@ Apply animated styles to the inner container.
   propertyName="contentStyle"
   required={false}
   defaultValue=""
-  mobileOptions={['ViewStyle', 'false', 'null']}
+  mobileOptions={["ViewStyle", "false", "null"]}
   webOptions={[]}
 />
 
@@ -273,8 +308,8 @@ Is the element currently disabled.
   propertyName="disabled"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-disabled" />
@@ -288,11 +323,14 @@ React Native is historically trash at debouncing touch events. This can cause a 
   propertyName="disableDebounce"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-disableDebounce" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-disableDebounce"
+/>
 
 ### elevation
 
@@ -303,8 +341,8 @@ Is the element elevated.
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '1', '2']}
-  webOptions={['0', '1', '2']}
+  mobileOptions={["0", "1", "2"]}
+  webOptions={["0", "1", "2"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-elevation" />
@@ -318,7 +356,7 @@ Haptic feedback to trigger when being pressed.
   propertyName="feedback"
   required={false}
   defaultValue="none"
-  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  mobileOptions={["heavy", "light", "none", "normal"]}
   webOptions={[]}
 />
 
@@ -333,8 +371,8 @@ Is the element currenty loading.
   propertyName="loading"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-loading" />
@@ -348,11 +386,14 @@ Dont scale element on press.
   propertyName="noScaleOnPress"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-noScaleOnPress" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-noScaleOnPress"
+/>
 
 ### onKeyPress <Badge variant="web" />
 
@@ -364,7 +405,7 @@ Callback fired when a key is pressed
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['KeyboardEventHandler<Element>']}
+  webOptions={["KeyboardEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-onKeyPress" />
@@ -378,8 +419,8 @@ Callback fired when the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
-  webOptions={['MouseEventHandler<Element>']}
+  mobileOptions={["(event: GestureResponderEvent) => void", "null"]}
+  webOptions={["MouseEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-onPress" />
@@ -393,7 +434,7 @@ Callback fired before `onPress` when button is pressed.
   propertyName="onPressIn"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
+  mobileOptions={["(event: GestureResponderEvent) => void"]}
   webOptions={[]}
 />
 
@@ -408,7 +449,7 @@ Callback fired before `onPress` when button is released.
   propertyName="onPressOut"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
+  mobileOptions={["(event: GestureResponderEvent) => void"]}
   webOptions={[]}
 />
 
@@ -422,14 +463,14 @@ Callback fired before `onPress` when button is released.
   required={false}
   defaultValue=""
   mobileOptions={[
-    '(state: PressableStateCallbackType) => StyleProp<ViewStyle>',
-    'RecursiveArray<Falsy | ViewStyle | RegisteredStyle<ViewStyle>>',
-    'RegisteredStyle<ViewStyle>',
-    'ViewStyle',
-    'false',
-    'null',
+    "(state: PressableStateCallbackType) => StyleProp<ViewStyle>",
+    "RecursiveArray<Falsy | ViewStyle | RegisteredStyle<ViewStyle>>",
+    "RegisteredStyle<ViewStyle>",
+    "ViewStyle",
+    "false",
+    "null",
   ]}
-  webOptions={['CSSProperties']}
+  webOptions={["CSSProperties"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-style" />
@@ -444,7 +485,7 @@ Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['number']}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-tabIndex" />
@@ -458,8 +499,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-testID" />
@@ -474,7 +515,7 @@ URL that this links to when pressed.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Pressable" templateName="prop-to" />
@@ -488,11 +529,14 @@ Mark the background and border as transparent until the element is interacted wi
   propertyName="transparentWhileInactive"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-transparentWhileInactive" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-transparentWhileInactive"
+/>
 
 ### wrapWithLayeredElements <Badge variant="web" />
 
@@ -504,9 +548,12 @@ Inject and wrap the content with overlay and underlay elements.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="Pressable" templateName="prop-wrapWithLayeredElements" />
+<ComponentDetails
+  componentName="Pressable"
+  templateName="prop-wrapWithLayeredElements"
+/>
 
 <ComponentDetails componentName="Pressable" templateName="outro" />

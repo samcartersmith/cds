@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -30,18 +30,21 @@ Set the background color for this entire row to some CDS Palette background colo
   defaultValue="undefined"
   mobileOptions={[]}
   webOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
   ]}
 />
 
-<ComponentDetails componentName="TableRow" templateName="prop-backgroundColor" />
+<ComponentDetails
+  componentName="TableRow"
+  templateName="prop-backgroundColor"
+/>
 
 ### children <Badge variant="web" />
 
@@ -54,17 +57,17 @@ Children are required, and should always include TableCell | TableCell[].
   defaultValue="undefined"
   mobileOptions={[]}
   webOptions={[
-    'ReactElement<TableCellProps | TableCellFallbackProps, string | JSXElementConstructor<any>>',
-    'ReactElement<TableCellProps | TableCellFallbackProps[], string | JSXElementConstructor<any>>',
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactNode[]',
-    'ReactPortal',
-    'false',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<TableCellProps | TableCellFallbackProps, string | JSXElementConstructor<any>>",
+    "ReactElement<TableCellProps | TableCellFallbackProps[], string | JSXElementConstructor<any>>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactNode[]",
+    "ReactPortal",
+    "false",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -81,16 +84,16 @@ Set the text color for this entire row to some CDS Palette foreground color name
   defaultValue="undefined"
   mobileOptions={[]}
   webOptions={[
-    'foreground',
-    'foregroundMuted',
-    'negative',
-    'negativeForeground',
-    'positive',
-    'positiveForeground',
-    'primary',
-    'primaryForeground',
-    'secondary',
-    'secondaryForeground',
+    "foreground",
+    "foregroundMuted",
+    "negative",
+    "negativeForeground",
+    "positive",
+    "positiveForeground",
+    "primary",
+    "primaryForeground",
+    "secondary",
+    "secondaryForeground",
   ]}
 />
 
@@ -106,10 +109,13 @@ When set, well set a hover background color of palette.backgroundAlternate for t
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="TableRow" templateName="prop-disableHoverIndicator" />
+<ComponentDetails
+  componentName="TableRow"
+  templateName="prop-disableHoverIndicator"
+/>
 
 ### fullWidth <Badge variant="web" />
 
@@ -121,7 +127,7 @@ Should this row span the entire width of the table? Useful for treating a row as
   required={false}
   defaultValue="undefined"
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="TableRow" templateName="prop-fullWidth" />
@@ -136,7 +142,7 @@ Callback to fire when pressed
   required={false}
   defaultValue="noop"
   mobileOptions={[]}
-  webOptions={['() => void', 'MouseEventHandler<Element>']}
+  webOptions={["() => void", "MouseEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="TableRow" templateName="prop-onPress" />
@@ -151,7 +157,7 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="TableRow" templateName="prop-testID" />

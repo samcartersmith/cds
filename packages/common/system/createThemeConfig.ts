@@ -1,4 +1,5 @@
 import { paletteConfigToHexValues } from '../palette/paletteConfigToHexValues';
+import { paletteConfigToInteractableTokens } from '../palette/paletteConfigToInteractableTokens';
 import { paletteConfigToRgbaStrings } from '../palette/paletteConfigToRgbaStrings';
 import { PartialPaletteConfig, PartialThemeConfig } from '../types';
 
@@ -32,13 +33,15 @@ export function createThemeConfig({
       palette,
       rgbaStrings: paletteConfigToRgbaStrings(palette, 'light', hasFrontier),
       hexValues: paletteConfigToHexValues(palette, 'light', hasFrontier),
-      name: `${name}-light${hasFrontier ? '-frontier' : ''}`,
+      interactableTokens: paletteConfigToInteractableTokens(palette, 'light'),
+      name: `${name}-light`,
     },
     dark: {
       palette,
       rgbaStrings: paletteConfigToRgbaStrings(palette, 'dark', hasFrontier),
       hexValues: paletteConfigToHexValues(palette, 'dark', hasFrontier),
-      name: `${name}-dark${hasFrontier ? '-frontier' : ''}`,
+      interactableTokens: paletteConfigToInteractableTokens(palette, 'dark'),
+      name: `${name}-dark`,
     },
   };
 

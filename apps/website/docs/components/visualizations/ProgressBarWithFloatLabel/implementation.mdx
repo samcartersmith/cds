@@ -1,21 +1,30 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
 > [@cbhq/cds-(web|mobile)/visualizations/ProgressBarWithFloatLabel](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/visualizations/ProgressBarWithFloatLabel.tsx)
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="intro" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="intro"
+/>
 
 ## Usage
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="usage" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="usage"
+/>
 
 ## Accessibility
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="a11y" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="a11y"
+/>
 
 ## Props
 
@@ -28,11 +37,14 @@ Toggle used to show a disabled progress visualization
   propertyName="disabled"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="prop-disabled" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="prop-disabled"
+/>
 
 ### label
 
@@ -44,16 +56,19 @@ Label that is floated at the end of the filled in bar. If a number is used then 
   required={true}
   defaultValue=""
   mobileOptions={[
-    'number',
-    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+    "number",
+    "{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }",
   ]}
   webOptions={[
-    'number',
-    '{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }',
+    "number",
+    "{ value: number; render: (num: number, disabled?: boolean | undefined) => ReactNode; }",
   ]}
 />
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="prop-label" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="prop-label"
+/>
 
 ### labelPlacement
 
@@ -64,11 +79,14 @@ Position of label relative to the bar
   propertyName="labelPlacement"
   required={false}
   defaultValue="above"
-  mobileOptions={['above', 'below']}
-  webOptions={['above', 'below']}
+  mobileOptions={["above", "below"]}
+  webOptions={["above", "below"]}
 />
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="prop-labelPlacement" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="prop-labelPlacement"
+/>
 
 ### progress
 
@@ -83,7 +101,10 @@ Number between 0-1 representing the progress percentage
   webOptions={[]}
 />
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="prop-progress" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="prop-progress"
+/>
 
 ### testID
 
@@ -94,10 +115,16 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="prop-testID" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="prop-testID"
+/>
 
-<ComponentDetails componentName="ProgressBarWithFloatLabel" templateName="outro" />
+<ComponentDetails
+  componentName="ProgressBarWithFloatLabel"
+  templateName="outro"
+/>

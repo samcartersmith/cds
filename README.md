@@ -35,12 +35,25 @@ The task list below is needed to get the hello world of the poly repo. There are
 - [x] web
 - [x] web utils (webpack, jest, etc.)
 - [x] website
-- [ ] codegen
+- [x] codegen
 - [ ] codemod
 
 #### Stylelint
 
 - [ ] web
+
+#### Codegen tasks
+
+- [ ] adoption tracker
+- [ ] codegen
+- [x] docgen
+- [ ] changelog
+- [ ] sync_icons
+- [ ] build_icons
+- [ ] build_illustrations
+- [ ] prepare_adoption
+- [ ] prepare_mobile_routes
+
 
 #### npm package building
 

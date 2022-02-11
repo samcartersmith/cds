@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Prevents the Drawer from capturing pan gestures on children. Set to true when us
   propertyName="disableCapturePanGestureToDismiss"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Tray" templateName="prop-disableCapturePanGestureToDismiss" />
+<ComponentDetails
+  componentName="Tray"
+  templateName="prop-disableCapturePanGestureToDismiss"
+/>
 
 ### hideHandleBar <Badge variant="mobile" />
 
@@ -43,7 +46,7 @@ The HandleBar by default only is used for a bottom pinned drawer. This removes i
   propertyName="hideHandleBar"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
@@ -73,7 +76,7 @@ Optional callback that, if provided, will be triggered when the Tray is toggled 
   propertyName="onVisibilityChange"
   required={false}
   defaultValue=""
-  mobileOptions={['(context: visible | hidden) => void']}
+  mobileOptions={["(context: visible | hidden) => void"]}
   webOptions={[]}
 />
 
@@ -88,11 +91,14 @@ Prevents a user from dismissing the drawer by pressing the overlay or swiping
   propertyName="preventDismissGestures"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Tray" templateName="prop-preventDismissGestures" />
+<ComponentDetails
+  componentName="Tray"
+  templateName="prop-preventDismissGestures"
+/>
 
 ### testID <Badge variant="mobile" />
 
@@ -103,7 +109,7 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
+  mobileOptions={["string"]}
   webOptions={[]}
 />
 
@@ -118,7 +124,7 @@ Optional Tray title, text only
   propertyName="title"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
+  mobileOptions={["string"]}
   webOptions={[]}
 />
 

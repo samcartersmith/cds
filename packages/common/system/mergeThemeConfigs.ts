@@ -1,4 +1,4 @@
-import { paletteConfigToInteractableTokens } from '../palette/paletteConfigToInteractableTokens';
+/* eslint-disable prefer-object-spread */
 import {
   PartialDarkThemeConfig,
   PartialLightThemeConfig,
@@ -28,32 +28,31 @@ export function mergeThemeConfigs(config1: ThemeConfig, config2: PartialThemeCon
   }
   const hasLightConfig = isLightConfig(config2);
   const hasDarkConfig = isDarkConfig(config2);
-
-  const lightPalette = hasLightConfig
-    ? { ...config1.light.palette, ...config2.light.palette }
-    : config1.light.palette;
-
-  const darkPalette = hasDarkConfig
-    ? { ...config1.dark.palette, ...config2.dark.palette }
-    : config1.dark.palette;
-
   const mergedConfig = {
     name,
     light: hasLightConfig
       ? {
-          palette: lightPalette,
-          rgbaStrings: { ...config1.light.rgbaStrings, ...config2.light.rgbaStrings },
-          hexValues: { ...config1.light.hexValues, ...config2.light.hexValues },
-          interactableTokens: paletteConfigToInteractableTokens(lightPalette, 'light'),
+          palette: Object.assign({}, config1.light.palette, config2.light.palette),
+          rgbaStrings: Object.assign({}, config1.light.rgbaStrings, config2.light.rgbaStrings),
+          hexValues: Object.assign({}, config1.light.hexValues, config2.light.hexValues),
+          interactableTokens: Object.assign(
+            {},
+            config1.light.interactableTokens,
+            config2.light.interactableTokens,
+          ),
           name: `${name}-light`,
         }
       : config1.light,
     dark: hasDarkConfig
       ? {
-          palette: darkPalette,
-          rgbaStrings: { ...config1.dark.rgbaStrings, ...config2.dark.rgbaStrings },
-          hexValues: { ...config1.dark.hexValues, ...config2.dark.hexValues },
-          interactableTokens: paletteConfigToInteractableTokens(darkPalette, 'dark'),
+          palette: Object.assign({}, config1.dark.palette, config2.dark.palette),
+          rgbaStrings: Object.assign({}, config1.dark.rgbaStrings, config2.dark.rgbaStrings),
+          hexValues: Object.assign({}, config1.dark.hexValues, config2.dark.hexValues),
+          interactableTokens: Object.assign(
+            {},
+            config1.dark.interactableTokens,
+            config2.dark.interactableTokens,
+          ),
           name: `${name}-dark`,
         }
       : config1.dark,

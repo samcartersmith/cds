@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Default label, changing this prop has no effect once the default is rendered.
   propertyName="defaultLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="ChartHeader" templateName="prop-defaultLabel" />
+<ComponentDetails
+  componentName="ChartHeader"
+  templateName="prop-defaultLabel"
+/>
 
 ### defaultSubHead
 
@@ -43,11 +46,14 @@ Default SubHead, changing this prop has no effect once the default is rendered.
   propertyName="defaultSubHead"
   required={false}
   defaultValue=""
-  mobileOptions={['ChartSubHead']}
-  webOptions={['ChartSubHead']}
+  mobileOptions={["ChartSubHead"]}
+  webOptions={["ChartSubHead"]}
 />
 
-<ComponentDetails componentName="ChartHeader" templateName="prop-defaultSubHead" />
+<ComponentDetails
+  componentName="ChartHeader"
+  templateName="prop-defaultSubHead"
+/>
 
 ### defaultTitle
 
@@ -62,7 +68,10 @@ Default title, changing this prop has no effect once the default is rendered.
   webOptions={[]}
 />
 
-<ComponentDetails componentName="ChartHeader" templateName="prop-defaultTitle" />
+<ComponentDetails
+  componentName="ChartHeader"
+  templateName="prop-defaultTitle"
+/>
 
 ### testID
 
@@ -73,8 +82,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="ChartHeader" templateName="prop-testID" />

@@ -11,7 +11,6 @@ export function performanceBenchmarkBuilder(
       divs.push(<HTMLComponent key={i} />);
     }
 
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{divs}</>;
   }
 
@@ -22,7 +21,6 @@ export function performanceBenchmarkBuilder(
       components.push(<CDSComponent key={i} />);
     }
 
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{components}</>;
   }
 

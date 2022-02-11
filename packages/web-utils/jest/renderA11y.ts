@@ -2,7 +2,9 @@ import { render, RenderResult } from '@testing-library/react';
 import type axe from 'axe-core';
 import { axe as runAxe, toHaveNoViolations } from 'jest-axe';
 
-expect.extend(toHaveNoViolations);
+if (typeof expect !== 'undefined') {
+  expect.extend(toHaveNoViolations);
+}
 
 export async function renderA11y(
   element: React.ReactElement,

@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="DotSymbol" templateName="prop-accessibilityHint" />
+<ComponentDetails
+  componentName="DotSymbol"
+  templateName="prop-accessibilityHint"
+/>
 
 ### accessibilityLabel
 
@@ -43,11 +46,14 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="DotSymbol" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="DotSymbol"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy
 
@@ -60,11 +66,14 @@ Accessibility prop that describes the component that labels it by its `id`
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="DotSymbol" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="DotSymbol"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### children
 
@@ -76,26 +85,26 @@ children of where the dot will anchor to
   required={false}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -110,8 +119,8 @@ Used for a11y to indicate the relationship between a controlled element and its 
   propertyName="id"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="DotSymbol" templateName="prop-id" />
@@ -125,8 +134,8 @@ Position of dot relative to its parent
   propertyName="pin"
   required={false}
   defaultValue=""
-  mobileOptions={['bottom-end', 'bottom-start', 'top-end', 'top-start']}
-  webOptions={['bottom-end', 'bottom-start', 'top-end', 'top-start']}
+  mobileOptions={["bottom-end", "bottom-start", "top-end", "top-start"]}
+  webOptions={["bottom-end", "bottom-start", "top-end", "top-start"]}
 />
 
 <ComponentDetails componentName="DotSymbol" templateName="prop-pin" />
@@ -140,8 +149,8 @@ Size of dot
   propertyName="size"
   required={false}
   defaultValue=""
-  mobileOptions={['l', 'm', 's']}
-  webOptions={['l', 'm', 's']}
+  mobileOptions={["l", "m", "s"]}
+  webOptions={["l", "m", "s"]}
 />
 
 <ComponentDetails componentName="DotSymbol" templateName="prop-size" />
@@ -153,7 +162,7 @@ Size of dot
   propertyName="source"
   required={true}
   defaultValue=""
-  mobileOptions={['ImageURISource', 'ImageURISource[]', 'number', 'string']}
+  mobileOptions={["ImageURISource", "ImageURISource[]", "number", "string"]}
   webOptions={[]}
 />
 
@@ -168,8 +177,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="DotSymbol" templateName="prop-testID" />

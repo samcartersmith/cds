@@ -33,6 +33,7 @@ export type PartialThemeConfigForSpectrum = {
   palette?: PartialPaletteConfig;
   rgbaStrings: { [key in PaletteAlias]?: string };
   hexValues: { [key in PaletteAlias]?: string };
+  interactableTokens: { [key in PaletteAlias]?: InteractableTokensConfig };
 };
 
 export type PartialLightThemeConfig = {

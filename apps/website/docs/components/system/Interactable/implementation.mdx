@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -29,10 +29,13 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-accessibilityHint" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-accessibilityHint"
+/>
 
 ### accessibilityLabel <Badge variant="web" />
 
@@ -44,10 +47,13 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy <Badge variant="web" />
 
@@ -61,10 +67,13 @@ Accessibility prop that describes the component that labels it by its `id`
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### as <Badge variant="web" />
 
@@ -77,16 +86,16 @@ Element or component to render the container as.
   defaultValue=""
   mobileOptions={[]}
   webOptions={[
-    'ComponentClass<any, any>',
-    'FunctionComponent<any>',
-    'a',
-    'button',
-    'div',
-    'input',
-    'label',
-    'select',
-    'span',
-    'textarea',
+    "ComponentClass<any, any>",
+    "FunctionComponent<any>",
+    "a",
+    "button",
+    "div",
+    "input",
+    "label",
+    "select",
+    "span",
+    "textarea",
   ]}
 />
 
@@ -102,46 +111,49 @@ Background color of the overlay (element being interacted with).
   required={true}
   defaultValue=""
   mobileOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'foreground',
-    'foregroundMuted',
-    'line',
-    'lineHeavy',
-    'negative',
-    'negativeForeground',
-    'positive',
-    'positiveForeground',
-    'primary',
-    'primaryForeground',
-    'primaryWash',
-    'secondary',
-    'secondaryForeground',
-    'transparent',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "foreground",
+    "foregroundMuted",
+    "line",
+    "lineHeavy",
+    "negative",
+    "negativeForeground",
+    "positive",
+    "positiveForeground",
+    "primary",
+    "primaryForeground",
+    "primaryWash",
+    "secondary",
+    "secondaryForeground",
+    "transparent",
   ]}
   webOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'foreground',
-    'foregroundMuted',
-    'line',
-    'lineHeavy',
-    'negative',
-    'negativeForeground',
-    'positive',
-    'positiveForeground',
-    'primary',
-    'primaryForeground',
-    'primaryWash',
-    'secondary',
-    'secondaryForeground',
-    'transparent',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "foreground",
+    "foregroundMuted",
+    "line",
+    "lineHeavy",
+    "negative",
+    "negativeForeground",
+    "positive",
+    "positiveForeground",
+    "primary",
+    "primaryForeground",
+    "primaryWash",
+    "secondary",
+    "secondaryForeground",
+    "transparent",
   ]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-backgroundColor" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-backgroundColor"
+/>
 
 ### block
 
@@ -152,8 +164,8 @@ Set element to block and expand to 100% width.
   propertyName="block"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-block" />
@@ -168,28 +180,31 @@ Border color of the element being interacted with.
   required={false}
   defaultValue="transparent"
   mobileOptions={[
-    'line',
-    'lineHeavy',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'transparent',
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "transparent",
   ]}
   webOptions={[
-    'line',
-    'lineHeavy',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'transparent',
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "transparent",
   ]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-borderColor" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-borderColor"
+/>
 
 ### borderRadius
 
@@ -201,34 +216,37 @@ Border radius of the element being interacted with. Number should only be used i
   required={false}
   defaultValue=""
   mobileOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'number',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "number",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
   webOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'number',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "number",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-borderRadius" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-borderRadius"
+/>
 
 ### borderWidth
 
@@ -239,11 +257,32 @@ Width of the border.
   propertyName="borderWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['button', 'card', 'checkbox', 'focusRing', 'input', 'none', 'radio', 'sparkline']}
-  webOptions={['button', 'card', 'checkbox', 'focusRing', 'input', 'none', 'radio', 'sparkline']}
+  mobileOptions={[
+    "button",
+    "card",
+    "checkbox",
+    "focusRing",
+    "input",
+    "none",
+    "radio",
+    "sparkline",
+  ]}
+  webOptions={[
+    "button",
+    "card",
+    "checkbox",
+    "focusRing",
+    "input",
+    "none",
+    "radio",
+    "sparkline",
+  ]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-borderWidth" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-borderWidth"
+/>
 
 ### className <Badge variant="web" />
 
@@ -255,7 +294,7 @@ Apply class names to the outer container.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-className" />
@@ -269,11 +308,14 @@ Apply animated styles to the inner container.
   propertyName="contentStyle"
   required={false}
   defaultValue=""
-  mobileOptions={['ViewStyle', 'false', 'null']}
+  mobileOptions={["ViewStyle", "false", "null"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-contentStyle" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-contentStyle"
+/>
 
 ### disabled
 
@@ -284,8 +326,8 @@ Is the element currently disabled.
   propertyName="disabled"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-disabled" />
@@ -299,8 +341,8 @@ Is the element elevated.
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '1', '2']}
-  webOptions={['0', '1', '2']}
+  mobileOptions={["0", "1", "2"]}
+  webOptions={["0", "1", "2"]}
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-elevation" />
@@ -314,8 +356,8 @@ Is the element being pressed. Primarily a mobile feature, but can be used on the
   propertyName="pressed"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-pressed" />
@@ -328,9 +370,9 @@ Is the element being pressed. Primarily a mobile feature, but can be used on the
   required={false}
   defaultValue=""
   mobileOptions={[
-    '(false | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | null | undefined)[]',
+    "(false | Value | AnimatedInterpolation | WithAnimatedObject<ViewStyle> | null | undefined)[]",
   ]}
-  webOptions={['CSSProperties']}
+  webOptions={["CSSProperties"]}
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-style" />
@@ -344,8 +386,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Interactable" templateName="prop-testID" />
@@ -359,11 +401,14 @@ Mark the background and border as transparent until the element is interacted wi
   propertyName="transparentWhileInactive"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-transparentWhileInactive" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-transparentWhileInactive"
+/>
 
 ### wrapWithLayeredElements <Badge variant="web" />
 
@@ -375,9 +420,12 @@ Inject and wrap the content with overlay and underlay elements.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="Interactable" templateName="prop-wrapWithLayeredElements" />
+<ComponentDetails
+  componentName="Interactable"
+  templateName="prop-wrapWithLayeredElements"
+/>
 
 <ComponentDetails componentName="Interactable" templateName="outro" />

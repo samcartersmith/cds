@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,8 +28,8 @@ Absolute or Relative to Avatar
   propertyName="avatarUrl"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="FeedCard" templateName="prop-avatarUrl" />
@@ -47,7 +47,10 @@ Text to be displayed in TextBody
   webOptions={[]}
 />
 
-<ComponentDetails componentName="FeedCard" templateName="prop-bodyDescription" />
+<ComponentDetails
+  componentName="FeedCard"
+  templateName="prop-bodyDescription"
+/>
 
 ### bodyMediaUrl
 
@@ -73,11 +76,14 @@ Vertical places media above text content, Horizontal places media to the side of
   propertyName="bodyOrientation"
   required={true}
   defaultValue=""
-  mobileOptions={['horizontal', 'vertical']}
-  webOptions={['horizontal', 'vertical']}
+  mobileOptions={["horizontal", "vertical"]}
+  webOptions={["horizontal", "vertical"]}
 />
 
-<ComponentDetails componentName="FeedCard" templateName="prop-bodyOrientation" />
+<ComponentDetails
+  componentName="FeedCard"
+  templateName="prop-bodyOrientation"
+/>
 
 ### bodyTitle
 
@@ -88,8 +94,8 @@ Text to be displayed in TextHeadline
   propertyName="bodyTitle"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="FeedCard" templateName="prop-bodyTitle" />
@@ -104,26 +110,26 @@ ReactNode that should be one or more actions
   required={true}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -139,30 +145,33 @@ IconButton ReactNode
   required={true}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
-<ComponentDetails componentName="FeedCard" templateName="prop-headerActionNode" />
+<ComponentDetails
+  componentName="FeedCard"
+  templateName="prop-headerActionNode"
+/>
 
 ### headerDescription
 
@@ -177,7 +186,10 @@ Text to be displayed in TextCaption
   webOptions={[]}
 />
 
-<ComponentDetails componentName="FeedCard" templateName="prop-headerDescription" />
+<ComponentDetails
+  componentName="FeedCard"
+  templateName="prop-headerDescription"
+/>
 
 ### headerMetaData
 
@@ -188,8 +200,8 @@ Meta Data Text to be displayed in TextLegal
   propertyName="headerMetaData"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="FeedCard" templateName="prop-headerMetaData" />
@@ -203,8 +215,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="FeedCard" templateName="prop-testID" />

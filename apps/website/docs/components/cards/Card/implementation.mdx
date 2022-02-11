@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,7 +28,7 @@ If value is `true` then style prop can take animated values.
   propertyName="animated"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
@@ -44,26 +44,26 @@ Set the background color of the Card. Passing `true` will enable the default bac
   required={false}
   defaultValue=""
   mobileOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'true',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "true",
   ]}
   webOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'true',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "true",
   ]}
 />
 
@@ -79,20 +79,23 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'AnimatedInterpolation',
-    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
-    'RegisteredStyle<ViewStyle>',
-    'Value',
-    'ViewStyle',
-    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'WithAnimatedObject<ViewStyle>',
-    'false',
-    'null',
+    "AnimatedInterpolation",
+    "RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>",
+    "RegisteredStyle<ViewStyle>",
+    "Value",
+    "ViewStyle",
+    "WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
+    "WithAnimatedObject<ViewStyle>",
+    "false",
+    "null",
   ]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Card" templateName="prop-dangerouslySetStyle" />
+<ComponentDetails
+  componentName="Card"
+  templateName="prop-dangerouslySetStyle"
+/>
 
 ### elevation
 
@@ -103,8 +106,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '1', '2']}
-  webOptions={['0', '1', '2']}
+  mobileOptions={["0", "1", "2"]}
+  webOptions={["0", "1", "2"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-elevation" />
@@ -118,8 +121,8 @@ Set a fixed height.
   propertyName="height"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-height" />
@@ -133,8 +136,8 @@ Set a maximum height.
   propertyName="maxHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-maxHeight" />
@@ -148,8 +151,8 @@ Set a maximum width.
   propertyName="maxWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-maxWidth" />
@@ -163,8 +166,8 @@ Set a minimum height.
   propertyName="minHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-minHeight" />
@@ -178,8 +181,8 @@ Set a minimum width.
   propertyName="minWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-minWidth" />
@@ -193,8 +196,21 @@ Apply negative outer spacing on all sides.
   propertyName="offset"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-offset" />
@@ -208,8 +224,21 @@ Apply negative outer spacing on the bottom side.
   propertyName="offsetBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-offsetBottom" />
@@ -223,8 +252,21 @@ Apply negative outer spacing on the trailing side.
   propertyName="offsetEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-offsetEnd" />
@@ -238,8 +280,21 @@ Apply negative outer spacing on the leading and trailing sides.
   propertyName="offsetHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-offsetHorizontal" />
@@ -253,8 +308,21 @@ Apply negative outer spacing on the leading side.
   propertyName="offsetStart"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-offsetStart" />
@@ -268,8 +336,21 @@ Apply negative outer spacing on the top side.
   propertyName="offsetTop"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-offsetTop" />
@@ -283,8 +364,21 @@ Apply negative outer spacing on the top and bottom sides.
   propertyName="offsetVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-offsetVertical" />
@@ -299,7 +393,7 @@ Callback fired when a key is pressed
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['KeyboardEventHandler<Element>']}
+  webOptions={["KeyboardEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-onKeyPress" />
@@ -313,8 +407,8 @@ Callback fired when the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
-  webOptions={['MouseEventHandler<Element>']}
+  mobileOptions={["(event: GestureResponderEvent) => void", "null"]}
+  webOptions={["MouseEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-onPress" />
@@ -329,14 +423,14 @@ Opacity of element
   required={false}
   defaultValue=""
   mobileOptions={[
-    'AnimatedInterpolation',
-    'RegisteredStyle<ViewStyle>',
-    'Value',
-    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'WithAnimatedObject<ViewStyle>',
-    'false',
-    'null',
-    'number',
+    "AnimatedInterpolation",
+    "RegisteredStyle<ViewStyle>",
+    "Value",
+    "WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
+    "WithAnimatedObject<ViewStyle>",
+    "false",
+    "null",
+    "number",
   ]}
   webOptions={[]}
 />
@@ -352,8 +446,8 @@ Direction in which to absolutely pin the box.
   propertyName="pin"
   required={false}
   defaultValue=""
-  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
-  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+  mobileOptions={["all", "bottom", "left", "right", "top"]}
+  webOptions={["all", "bottom", "left", "right", "top"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-pin" />
@@ -367,8 +461,8 @@ Size of the card. Small and medium have fixed widths and large grows with its ch
   propertyName="size"
   required={false}
   defaultValue=""
-  mobileOptions={['large', 'medium', 'small']}
-  webOptions={['large', 'medium', 'small']}
+  mobileOptions={["large", "medium", "small"]}
+  webOptions={["large", "medium", "small"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-size" />
@@ -382,8 +476,21 @@ Apply inner spacing on all sides.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-spacing" />
@@ -397,8 +504,21 @@ Apply inner spacing on the bottom side.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-spacingBottom" />
@@ -412,8 +532,21 @@ Apply inner spacing on the trailing side.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-spacingEnd" />
@@ -427,8 +560,21 @@ Apply inner spacing on the leading and trailing sides.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-spacingHorizontal" />
@@ -442,8 +588,21 @@ Apply inner spacing on the leading side.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-spacingStart" />
@@ -457,8 +616,21 @@ Apply inner spacing on the top side.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-spacingTop" />
@@ -472,8 +644,21 @@ Apply inner spacing on the top and bottom sides.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-spacingVertical" />
@@ -487,8 +672,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-testID" />
@@ -503,7 +688,7 @@ URL that this links to when pressed.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-to" />
@@ -517,8 +702,8 @@ Set a fixed width.
   propertyName="width"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Card" templateName="prop-width" />

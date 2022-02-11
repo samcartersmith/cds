@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="Lottie"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy
 
@@ -45,11 +48,14 @@ Accessibility prop that describes the component that labels it by its `id`
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="Lottie"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### alignItems
 
@@ -60,8 +66,8 @@ Set the alignment of all direct children on the cross-axis.
   propertyName="alignItems"
   required={false}
   defaultValue="stretch"
-  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  mobileOptions={["baseline", "center", "flex-end", "flex-start", "stretch"]}
+  webOptions={["baseline", "center", "flex-end", "flex-start", "stretch"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-alignItems" />
@@ -75,8 +81,22 @@ Override the parents defined item alignment for this element alone.
   propertyName="alignSelf"
   required={false}
   defaultValue="auto"
-  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  mobileOptions={[
+    "auto",
+    "baseline",
+    "center",
+    "flex-end",
+    "flex-start",
+    "stretch",
+  ]}
+  webOptions={[
+    "auto",
+    "baseline",
+    "center",
+    "flex-end",
+    "flex-start",
+    "stretch",
+  ]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-alignSelf" />
@@ -90,7 +110,7 @@ If value is `true` then style prop can take animated values.
   propertyName="animated"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
@@ -105,8 +125,8 @@ A boolean flag indicating whether or not the animation should start automaticall
   propertyName="autoplay"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-autoplay" />
@@ -121,26 +141,26 @@ Set the background color of the box. Passing `true` will enable the default back
   required={false}
   defaultValue=""
   mobileOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'true',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "true",
   ]}
   webOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'true',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "true",
   ]}
 />
 
@@ -156,15 +176,23 @@ Adds a custom border color from the palette
   required={false}
   defaultValue=""
   mobileOptions={[
-    'line',
-    'lineHeavy',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
   ]}
-  webOptions={['line', 'lineHeavy', 'negative', 'positive', 'primary', 'primaryWash', 'secondary']}
+  webOptions={[
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+  ]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-borderColor" />
@@ -178,8 +206,8 @@ Add a border around all sides of the box.
   propertyName="bordered"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-bordered" />
@@ -193,8 +221,8 @@ Add a border to the bottom side of the box.
   propertyName="borderedBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-borderedBottom" />
@@ -208,8 +236,8 @@ Add a border to the trailing side of the box.
   propertyName="borderedEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-borderedEnd" />
@@ -223,11 +251,14 @@ Add a border to the leading and trailing sides of the box.
   propertyName="borderedHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="prop-borderedHorizontal" />
+<ComponentDetails
+  componentName="Lottie"
+  templateName="prop-borderedHorizontal"
+/>
 
 ### borderedStart
 
@@ -238,8 +269,8 @@ Add a border to the leading side of the box.
   propertyName="borderedStart"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-borderedStart" />
@@ -253,8 +284,8 @@ Add a border to the top side of the box.
   propertyName="borderedTop"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-borderedTop" />
@@ -268,8 +299,8 @@ Add a border to the top and bottom sides of the box.
   propertyName="borderedVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-borderedVertical" />
@@ -284,28 +315,28 @@ Leverage one of the borderRadius styles we offer to round the corners of the box
   required={false}
   defaultValue=""
   mobileOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
   webOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
 />
 
@@ -320,8 +351,8 @@ Position the box to the bottom edge.
   propertyName="bottom"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-bottom" />
@@ -336,26 +367,26 @@ Content to render within the box.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -370,7 +401,7 @@ An array of layers you want to override its color filter.
   propertyName="colorFilters"
   required={false}
   defaultValue=""
-  mobileOptions={['{ keypath: string; color: string; }[]']}
+  mobileOptions={["{ keypath: string; color: string; }[]"]}
   webOptions={[]}
 />
 
@@ -385,11 +416,14 @@ This is a migration escape hatch. It is not intended to be used normally.
   propertyName="dangerouslySetBackground"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="prop-dangerouslySetBackground" />
+<ComponentDetails
+  componentName="Lottie"
+  templateName="prop-dangerouslySetBackground"
+/>
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -401,20 +435,23 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'AnimatedInterpolation',
-    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
-    'RegisteredStyle<ViewStyle>',
-    'Value',
-    'ViewStyle',
-    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'WithAnimatedObject<ViewStyle>',
-    'false',
-    'null',
+    "AnimatedInterpolation",
+    "RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>",
+    "RegisteredStyle<ViewStyle>",
+    "Value",
+    "ViewStyle",
+    "WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
+    "WithAnimatedObject<ViewStyle>",
+    "false",
+    "null",
   ]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="prop-dangerouslySetStyle" />
+<ComponentDetails
+  componentName="Lottie"
+  templateName="prop-dangerouslySetStyle"
+/>
 
 ### elevation
 
@@ -425,8 +462,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '1', '2']}
-  webOptions={['0', '1', '2']}
+  mobileOptions={["0", "1", "2"]}
+  webOptions={["0", "1", "2"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-elevation" />
@@ -441,7 +478,7 @@ In order to render drop shadows, the filter size needs to be set to increase the
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['FilterSizeConfig']}
+  webOptions={["FilterSizeConfig"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-filterSize" />
@@ -455,8 +492,8 @@ Sets the initial main flex size.
   propertyName="flexBasis"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-flexBasis" />
@@ -470,8 +507,8 @@ Set the grow factor of this flex item.
   propertyName="flexGrow"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={["number"]}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-flexGrow" />
@@ -485,8 +522,8 @@ Set the shrink factor of this flex item.
   propertyName="flexShrink"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={["number"]}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-flexShrink" />
@@ -499,7 +536,7 @@ Set the shrink factor of this flex item.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['LottieEventHandlersMap']}
+  webOptions={["LottieEventHandlersMap"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-handlers" />
@@ -513,8 +550,8 @@ Set a fixed height.
   propertyName="height"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-height" />
@@ -528,8 +565,8 @@ This should only be used for accessibility purposes, eg: aria-controls https://a
   propertyName="id"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-id" />
@@ -543,8 +580,8 @@ Position the box to the left edge.
   propertyName="left"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-left" />
@@ -558,8 +595,8 @@ A boolean flag indicating whether or not the animation should loop.
   propertyName="loop"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-loop" />
@@ -573,8 +610,8 @@ Set a maximum height.
   propertyName="maxHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-maxHeight" />
@@ -588,8 +625,8 @@ Set a maximum width.
   propertyName="maxWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-maxWidth" />
@@ -603,8 +640,8 @@ Set a minimum height.
   propertyName="minHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-minHeight" />
@@ -618,8 +655,8 @@ Set a minimum width.
   propertyName="minWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-minWidth" />
@@ -633,8 +670,21 @@ Apply negative outer spacing on all sides.
   propertyName="offset"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-offset" />
@@ -648,8 +698,21 @@ Apply negative outer spacing on the bottom side.
   propertyName="offsetBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-offsetBottom" />
@@ -663,8 +726,21 @@ Apply negative outer spacing on the trailing side.
   propertyName="offsetEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-offsetEnd" />
@@ -678,8 +754,21 @@ Apply negative outer spacing on the leading and trailing sides.
   propertyName="offsetHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-offsetHorizontal" />
@@ -693,8 +782,21 @@ Apply negative outer spacing on the leading side.
   propertyName="offsetStart"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-offsetStart" />
@@ -708,8 +810,21 @@ Apply negative outer spacing on the top side.
   propertyName="offsetTop"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-offsetTop" />
@@ -723,8 +838,21 @@ Apply negative outer spacing on the top and bottom sides.
   propertyName="offsetVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-offsetVertical" />
@@ -738,11 +866,14 @@ A callback function which will be called when animation is finished. Note that o
   propertyName="onAnimationFinish"
   required={false}
   defaultValue=""
-  mobileOptions={['() => void']}
-  webOptions={['() => void']}
+  mobileOptions={["() => void"]}
+  webOptions={["() => void"]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="prop-onAnimationFinish" />
+<ComponentDetails
+  componentName="Lottie"
+  templateName="prop-onAnimationFinish"
+/>
 
 ### opacity <Badge variant="mobile" />
 
@@ -754,14 +885,14 @@ Opacity of element
   required={false}
   defaultValue=""
   mobileOptions={[
-    'AnimatedInterpolation',
-    'RegisteredStyle<ViewStyle>',
-    'Value',
-    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'WithAnimatedObject<ViewStyle>',
-    'false',
-    'null',
-    'number',
+    "AnimatedInterpolation",
+    "RegisteredStyle<ViewStyle>",
+    "Value",
+    "WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
+    "WithAnimatedObject<ViewStyle>",
+    "false",
+    "null",
+    "number",
   ]}
   webOptions={[]}
 />
@@ -777,8 +908,8 @@ Direction in which to absolutely pin the box.
   propertyName="pin"
   required={false}
   defaultValue=""
-  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
-  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+  mobileOptions={["all", "bottom", "left", "right", "top"]}
+  webOptions={["all", "bottom", "left", "right", "top"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-pin" />
@@ -792,8 +923,8 @@ How to position the box within its parent.
   propertyName="position"
   required={false}
   defaultValue=""
-  mobileOptions={['absolute', 'relative']}
-  webOptions={['absolute', 'relative']}
+  mobileOptions={["absolute", "relative"]}
+  webOptions={["absolute", "relative"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-position" />
@@ -807,7 +938,7 @@ A number between 0 and 1, or an `Animated` number between 0 and 1. This number r
   propertyName="progress"
   required={false}
   defaultValue=""
-  mobileOptions={['AnimatedInterpolation', 'Value', 'number']}
+  mobileOptions={["AnimatedInterpolation", "Value", "number"]}
   webOptions={[]}
 />
 
@@ -822,8 +953,8 @@ Determines how to resize the animated view when the frame doesnt match the raw i
   propertyName="resizeMode"
   required={false}
   defaultValue="contain"
-  mobileOptions={['center', 'contain', 'cover']}
-  webOptions={['center', 'contain', 'cover']}
+  mobileOptions={["center", "contain", "cover"]}
+  webOptions={["center", "contain", "cover"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-resizeMode" />
@@ -837,8 +968,8 @@ Position the box to the right edge.
   propertyName="right"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-right" />
@@ -867,8 +998,21 @@ Apply inner spacing on all sides.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-spacing" />
@@ -882,8 +1026,21 @@ Apply inner spacing on the bottom side.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-spacingBottom" />
@@ -897,8 +1054,21 @@ Apply inner spacing on the trailing side.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-spacingEnd" />
@@ -912,11 +1082,27 @@ Apply inner spacing on the leading and trailing sides.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="Lottie" templateName="prop-spacingHorizontal" />
+<ComponentDetails
+  componentName="Lottie"
+  templateName="prop-spacingHorizontal"
+/>
 
 ### spacingStart
 
@@ -927,8 +1113,21 @@ Apply inner spacing on the leading side.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-spacingStart" />
@@ -942,8 +1141,21 @@ Apply inner spacing on the top side.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-spacingTop" />
@@ -957,8 +1169,21 @@ Apply inner spacing on the top and bottom sides.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-spacingVertical" />
@@ -972,8 +1197,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-testID" />
@@ -987,8 +1212,8 @@ Position the box to the top edge.
   propertyName="top"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-top" />
@@ -1002,8 +1227,8 @@ Set a fixed width.
   propertyName="width"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-width" />
@@ -1017,8 +1242,8 @@ Adjust the z-index positioning layer.
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={["number"]}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="Lottie" templateName="prop-zIndex" />

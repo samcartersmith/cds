@@ -1,0 +1,108 @@
+{
+  "latest": {
+    "date": "12/15/2021",
+    "cdsPercent": 0.15765765765765766,
+    "cds": 175,
+    "presentational": 935,
+    "totalCdsAndPresentational": 1110,
+    "totalOther": 979
+  },
+  "previous": [
+    {
+      "date": "9/27/2021",
+      "cdsPercent": 0.10393258426966293,
+      "cds": 111,
+      "presentational": 957,
+      "totalCdsAndPresentational": 1068,
+      "totalOther": 1014
+    },
+    {
+      "date": "10/5/2021",
+      "cdsPercent": 0.1152073732718894,
+      "cds": 125,
+      "presentational": 960,
+      "totalCdsAndPresentational": 1085,
+      "totalOther": 1003
+    },
+    {
+      "date": "10/7/2021",
+      "cdsPercent": 0.1152073732718894,
+      "cds": 125,
+      "presentational": 960,
+      "totalCdsAndPresentational": 1085,
+      "totalOther": 1003
+    },
+    {
+      "date": "10/11/2021",
+      "cdsPercent": 0.12157221206581353,
+      "cds": 133,
+      "presentational": 961,
+      "totalCdsAndPresentational": 1094,
+      "totalOther": 1006
+    },
+    {
+      "date": "10/11/2021",
+      "cdsPercent": 0.12146118721461187,
+      "cds": 133,
+      "presentational": 962,
+      "totalCdsAndPresentational": 1095,
+      "totalOther": 1007
+    },
+    {
+      "date": "10/20/2021",
+      "cdsPercent": 0.1206581352833638,
+      "cds": 132,
+      "presentational": 962,
+      "totalCdsAndPresentational": 1094,
+      "totalOther": 1007
+    },
+    {
+      "date": "10/27/2021",
+      "cdsPercent": 0.1292083712465878,
+      "cds": 142,
+      "presentational": 957,
+      "totalCdsAndPresentational": 1099,
+      "totalOther": 1005
+    },
+    {
+      "date": "11/8/2021",
+      "cdsPercent": 0.12897366030881016,
+      "cds": 142,
+      "presentational": 959,
+      "totalCdsAndPresentational": 1101,
+      "totalOther": 1006
+    },
+    {
+      "date": "11/19/2021",
+      "cdsPercent": 0.13278388278388278,
+      "cds": 145,
+      "presentational": 947,
+      "totalCdsAndPresentational": 1092,
+      "totalOther": 992
+    },
+    {
+      "date": "11/24/2021",
+      "cdsPercent": 0.13278388278388278,
+      "cds": 145,
+      "presentational": 947,
+      "totalCdsAndPresentational": 1092,
+      "totalOther": 990
+    },
+    {
+      "date": "12/3/2021",
+      "cdsPercent": 0.13987284287011809,
+      "cds": 154,
+      "presentational": 947,
+      "totalCdsAndPresentational": 1101,
+      "totalOther": 989
+    },
+    {
+      "date": "12/9/2021",
+      "cdsPercent": 0.1550179211469534,
+      "cds": 173,
+      "presentational": 943,
+      "totalCdsAndPresentational": 1116,
+      "totalOther": 993
+    }
+  ]
+}

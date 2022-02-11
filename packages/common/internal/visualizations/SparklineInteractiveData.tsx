@@ -1,12 +1,12 @@
 import { ChartDataPoint } from '../../types/Chart';
 import assetJSON from '../data/asset';
 
-type DataType = {
-  price: string;
-  timestamp: string | null;
-};
-
-const transformAndFilterPrices = (data?: DataType[]): ChartDataPoint[] => {
+const transformAndFilterPrices = (
+  data?: readonly {
+    price: string;
+    timestamp: string | null;
+  }[],
+): ChartDataPoint[] => {
   // Filters out null timestamps and corrects the type
   const filterNullTimestamps = (value: { price: string; timestamp: string | null }) => {
     if (!value.timestamp) {
@@ -20,17 +20,13 @@ const transformAndFilterPrices = (data?: DataType[]): ChartDataPoint[] => {
     ];
   };
 
-  const points = (data ?? [])
-    .flatMap<DataType>(filterNullTimestamps)
-    .map((point: DataType) => ({
+  return (data ?? [])
+    .flatMap(filterNullTimestamps)
+    .map((point) => ({
       value: parseFloat(point.price),
-      date: new Date(point.timestamp as string),
+      date: new Date(point.timestamp),
     }))
-    .sort(
-      (a: { date: Date }, b: { date: Date }) => a.date.getTime() - b.date.getTime(),
-    ) as ChartDataPoint[];
-
-  return points;
+    .sort((a, b) => a.date.getTime() - b.date.getTime());
 };
 
 export const sparklineInteractiveData = (() => {

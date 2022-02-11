@@ -37,7 +37,6 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   };
 
   const PortalAlert = () => {
-    // eslint-disable-next-line react/no-unstable-nested-components
     function AlertExample() {
       const alert = useAlert();
 

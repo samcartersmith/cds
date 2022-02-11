@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="SearchInput" templateName="prop-accessibilityHint" />
+<ComponentDetails
+  componentName="SearchInput"
+  templateName="prop-accessibilityHint"
+/>
 
 ### accessibilityLabel
 
@@ -43,11 +46,14 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="SearchInput" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="SearchInput"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy
 
@@ -60,11 +66,14 @@ Accessibility prop that describes the component that labels it by its `id`
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="SearchInput" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="SearchInput"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### compact
 
@@ -75,8 +84,8 @@ Enables compact variation
   propertyName="compact"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-compact" />
@@ -90,8 +99,8 @@ Toggles input interactability and opacity
   propertyName="disabled"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-disabled" />
@@ -105,8 +114,8 @@ Used for a11y to indicate the relationship between a controlled element and its 
   propertyName="id"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-id" />
@@ -122,7 +131,10 @@ Used for a11y to indicate the relationship between a controlled element and its 
   webOptions={[]}
 />
 
-<ComponentDetails componentName="SearchInput" templateName="prop-onChangeText" />
+<ComponentDetails
+  componentName="SearchInput"
+  templateName="prop-onChangeText"
+/>
 
 ### onClear
 
@@ -131,8 +143,8 @@ Used for a11y to indicate the relationship between a controlled element and its 
   propertyName="onClear"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
-  webOptions={['MouseEventHandler<Element>']}
+  mobileOptions={["(event: GestureResponderEvent) => void"]}
+  webOptions={["MouseEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-onClear" />
@@ -144,8 +156,8 @@ Used for a11y to indicate the relationship between a controlled element and its 
   propertyName="onSearch"
   required={false}
   defaultValue=""
-  mobileOptions={['(str: string) => void']}
-  webOptions={['(text: string) => void']}
+  mobileOptions={["(str: string) => void"]}
+  webOptions={["(text: string) => void"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-onSearch" />
@@ -159,8 +171,8 @@ Placeholder text displayed inside of the input. Will be replaced if there is a v
   propertyName="placeholder"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-placeholder" />
@@ -174,8 +186,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-testID" />
@@ -189,8 +201,8 @@ Width of input as a percentage string.
   propertyName="width"
   required={false}
   defaultValue="100%"
-  mobileOptions={['`${number}%`', 'number']}
-  webOptions={['`${number}%` & string', 'number']}
+  mobileOptions={["`${number}%`", "number"]}
+  webOptions={["`${number}%` & string", "number"]}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-width" />

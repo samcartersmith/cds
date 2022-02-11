@@ -42,6 +42,8 @@ Help:
   $$ make build.css                 -- Build the static css.
   $$ make build.all                 -- Build all packages.
 
+  $$ make docgen                    -- Generate docs for CDS website.
+
 endef
 export HELP_TEXT
 
@@ -185,3 +187,8 @@ build.all:
 	make build.utils
 	#includes build.web and build.fonts as a dep
 	make build.css
+
+.PHONY: docgen
+docgen:
+	nx run codegen:docgen
+	nx run website:lint --fix

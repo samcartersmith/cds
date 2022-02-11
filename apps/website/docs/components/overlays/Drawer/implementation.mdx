@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -29,60 +29,60 @@ Component to render as the Modal content
   required={false}
   defaultValue=""
   mobileOptions={[
-    'DrawerRenderChildren',
-    'DrawerRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>',
-    'DrawerRenderChildren & ReactNodeArray',
-    'DrawerRenderChildren & ReactPortal',
-    'DrawerRenderChildren & false',
-    'DrawerRenderChildren & number',
-    'DrawerRenderChildren & string',
-    'DrawerRenderChildren & true',
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactElement<any, string | JSXElementConstructor<any>> & ReactNodeArray',
-    'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
-    'ReactElement<any, string | JSXElementConstructor<any>> & false',
-    'ReactElement<any, string | JSXElementConstructor<any>> & number',
-    'ReactElement<any, string | JSXElementConstructor<any>> & string',
-    'ReactElement<any, string | JSXElementConstructor<any>> & true',
-    'ReactNodeArray',
-    'ReactNodeArray & ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray & ReactPortal',
-    'ReactNodeArray & false',
-    'ReactNodeArray & number',
-    'ReactNodeArray & string',
-    'ReactNodeArray & true',
-    'ReactPortal',
-    'ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactPortal & ReactNodeArray',
-    'ReactPortal & false',
-    'ReactPortal & number',
-    'ReactPortal & string',
-    'ReactPortal & true',
-    'false',
-    'false & ReactElement<any, string | JSXElementConstructor<any>>',
-    'false & ReactNodeArray',
-    'false & ReactPortal',
-    'false & {}',
-    'number',
-    'number & ReactElement<any, string | JSXElementConstructor<any>>',
-    'number & ReactNodeArray',
-    'number & ReactPortal',
-    'number & {}',
-    'string',
-    'string & ReactElement<any, string | JSXElementConstructor<any>>',
-    'string & ReactNodeArray',
-    'string & ReactPortal',
-    'string & {}',
-    'true',
-    'true & ReactElement<any, string | JSXElementConstructor<any>>',
-    'true & ReactNodeArray',
-    'true & ReactPortal',
-    'true & {}',
-    '{}',
-    '{} & false',
-    '{} & number',
-    '{} & string',
-    '{} & true',
+    "DrawerRenderChildren",
+    "DrawerRenderChildren & Iterable<ReactNode>",
+    "DrawerRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>",
+    "DrawerRenderChildren & ReactPortal",
+    "DrawerRenderChildren & false",
+    "DrawerRenderChildren & number",
+    "DrawerRenderChildren & string",
+    "DrawerRenderChildren & true",
+    "Iterable<ReactNode>",
+    "Iterable<ReactNode> & ReactElement<any, string | JSXElementConstructor<any>>",
+    "Iterable<ReactNode> & ReactPortal",
+    "Iterable<ReactNode> & false",
+    "Iterable<ReactNode> & number",
+    "Iterable<ReactNode> & string",
+    "Iterable<ReactNode> & true",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactElement<any, string | JSXElementConstructor<any>> & Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal",
+    "ReactElement<any, string | JSXElementConstructor<any>> & false",
+    "ReactElement<any, string | JSXElementConstructor<any>> & number",
+    "ReactElement<any, string | JSXElementConstructor<any>> & string",
+    "ReactElement<any, string | JSXElementConstructor<any>> & true",
+    "ReactPortal",
+    "ReactPortal & Iterable<ReactNode>",
+    "ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal & false",
+    "ReactPortal & number",
+    "ReactPortal & string",
+    "ReactPortal & true",
+    "false",
+    "false & Iterable<ReactNode>",
+    "false & ReactElement<any, string | JSXElementConstructor<any>>",
+    "false & ReactPortal",
+    "false & {}",
+    "number",
+    "number & Iterable<ReactNode>",
+    "number & ReactElement<any, string | JSXElementConstructor<any>>",
+    "number & ReactPortal",
+    "number & {}",
+    "string",
+    "string & Iterable<ReactNode>",
+    "string & ReactElement<any, string | JSXElementConstructor<any>>",
+    "string & ReactPortal",
+    "string & {}",
+    "true",
+    "true & Iterable<ReactNode>",
+    "true & ReactElement<any, string | JSXElementConstructor<any>>",
+    "true & ReactPortal",
+    "true & {}",
+    "{}",
+    "{} & false",
+    "{} & number",
+    "{} & string",
+    "{} & true",
   ]}
   webOptions={[]}
 />
@@ -98,11 +98,14 @@ Prevents the Drawer from capturing pan gestures on children. Set to true when us
   propertyName="disableCapturePanGestureToDismiss"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Drawer" templateName="prop-disableCapturePanGestureToDismiss" />
+<ComponentDetails
+  componentName="Drawer"
+  templateName="prop-disableCapturePanGestureToDismiss"
+/>
 
 ### hideHandleBar <Badge variant="mobile" />
 
@@ -113,7 +116,7 @@ The HandleBar by default only is used for a bottom pinned drawer. This removes i
   propertyName="hideHandleBar"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
@@ -143,7 +146,7 @@ Pin the modal to one side of the screen
   propertyName="pin"
   required={true}
   defaultValue="bottom"
-  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
+  mobileOptions={["all", "bottom", "left", "right", "top"]}
   webOptions={[]}
 />
 
@@ -158,11 +161,14 @@ Prevents a user from dismissing the drawer by pressing the overlay or swiping
   propertyName="preventDismissGestures"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="Drawer" templateName="prop-preventDismissGestures" />
+<ComponentDetails
+  componentName="Drawer"
+  templateName="prop-preventDismissGestures"
+/>
 
 ### testID <Badge variant="mobile" />
 
@@ -173,7 +179,7 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
+  mobileOptions={["string"]}
   webOptions={[]}
 />
 

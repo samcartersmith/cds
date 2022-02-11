@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "ts-script": {
+      "implementation": "./impl",
+      "schema": "./schema.json",
+      "description": "Runs a ts-node script"
+    }
+  }
+}
