@@ -2,7 +2,7 @@ import { withStoryLabel } from ':cds-storybook/decorators/withStoryLabel';
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 
 import { StoryExample } from '../__fixtures__/StoryExample';
-import { Tooltip } from '../Tooltip';
+import { Tooltip } from '../Deprecated/Tooltip';
 
 <Meta title="Core Components/Tooltip" component={Tooltip} argTypes={{}} />
 
@@ -14,35 +14,35 @@ import { Tooltip } from '../Tooltip';
     decorators={[withStoryLabel('Top')]}
     args={{ placement: 'top' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Bottom placement"
     decorators={[withStoryLabel('Bottom')]}
     args={{ placement: 'bottom' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Left-start placement"
     decorators={[withStoryLabel('Left-start')]}
     args={{ placement: 'left-start' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Right-end placement"
     decorators={[withStoryLabel('Right-end')]}
     args={{ placement: 'right-end' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Disabled"
     decorators={[withStoryLabel('Disabled')]}
     args={{ disabled: true, placement: 'top' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
 </Canvas>
 

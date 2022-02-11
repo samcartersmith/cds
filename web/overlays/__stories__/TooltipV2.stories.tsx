@@ -2,11 +2,11 @@ import {
   ComponentMeta,
   ComponentStory,
 } from '@storybook/react/dist/ts3.9/client/preview/types-6-3';
-import { TooltipProps } from '../TooltipV2/TooltipProps';
+import { TooltipProps } from '../Tooltip/TooltipProps';
 import { VStack } from '../../layout/VStack';
 import { HStack } from '../../layout/HStack';
 import { Button } from '../../buttons/Button';
-import { Tooltip } from '../TooltipV2/Tooltip';
+import { Tooltip } from '../Tooltip/Tooltip';
 import { IconButton } from '../../buttons/IconButton';
 import { TextLabel1 } from '../../typography';
 import { PortalProvider } from '../PortalProvider';

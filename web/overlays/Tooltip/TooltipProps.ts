@@ -13,8 +13,8 @@ export type TooltipProps = {
   /** Position of tooltip in relation to the subject. */
   placement?: TooltipPlacement;
   /**
-   * @danger By setting this to true you are essentially opting out of CDS zIndex management.
-   * By default the subject is rendered in a portal. If set to true the subject will be rendered in the DOM hierarchy of the parent component.
+   * @danger
+   * By setting this to true you are essentially opting out of CDS zIndex management. By default the subject is rendered in a portal. If set to true the subject will be rendered in the DOM hierarchy of the parent component.
    * @default false
    */
   disablePortal?: boolean;

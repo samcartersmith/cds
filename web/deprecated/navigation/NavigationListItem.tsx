@@ -8,7 +8,7 @@ import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Badge } from '../../icons/Badge';
 import { NavigationIcon } from '../../icons/NavigationIcon';
 import { Box, HStack } from '../../layout';
-import { Tooltip } from '../../overlays/Tooltip';
+import { Tooltip as DeprecatedTooltip } from '../../overlays/Deprecated/Tooltip';
 import { getFlexStyles } from '../../styles/flex';
 import { Pressable, PressableProps } from '../../system/Pressable';
 import { TextHeadline } from '../../typography/TextHeadline';
@@ -101,7 +101,11 @@ export const NavigationListItem = memo(
 
     return (
       <li>
-        <Tooltip content={label} disabled={isMobileMenuVisible || isExpanded} placement="right">
+        <DeprecatedTooltip
+          content={label}
+          disabled={isMobileMenuVisible || isExpanded}
+          placement="right"
+        >
           {(tooltipProps) => {
             const enhancedProps = {
               ...tooltipProps,
@@ -124,7 +128,7 @@ export const NavigationListItem = memo(
               </Pressable>
             );
           }}
-        </Tooltip>
+        </DeprecatedTooltip>
       </li>
     );
   },

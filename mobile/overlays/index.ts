@@ -7,4 +7,5 @@ export * from './Modal/ModalHeader';
 export * from './Overlay/Overlay';
 export * from './Overlay/useOverlayAnimation';
 export * from './Toast';
+export * from './Tooltip/Tooltip';
 export * from './Tray/Tray';

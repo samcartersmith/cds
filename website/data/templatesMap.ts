@@ -1568,6 +1568,12 @@ export const Toast = {
 };
 
 export const Tooltip = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/design.mdx'
+      ),
+  ),
   implementation: React.lazy(
     async () =>
       import(

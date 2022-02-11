@@ -6,7 +6,7 @@ export * from './Modal/ModalHeader';
 export * from './Overlay/Overlay';
 export * from './PopoverMenu/PopoverMenu';
 export * from './Toast';
-export * from './Tooltip';
+export * from './Tooltip/Tooltip';
 export * from './PopoverMenu/SectionTitle';
 export * from './PopoverMenu/MenuItem';
 export * from './PopoverMenu/PopoverTrigger';

@@ -1,16 +1,30 @@
 ```jsx live
-<ButtonGroup>
-  <Tooltip content="This is the content in the tooltip!" placement="top">
-    {props => <Button {...props}>Top</Button>}
-  </Tooltip>
-  <Tooltip content="This is the content in the tooltip!" placement="right">
-    {props => <Button {...props}>Right</Button>}
-  </Tooltip>
-  <Tooltip content="This is the content in the tooltip!" placement="bottom">
-    {props => <Button {...props}>Bottom</Button>}
-  </Tooltip>
-  <Tooltip content="This is the content in the tooltip!" placement="left">
-    {props => <Button {...props}>Left</Button>}
-  </Tooltip>
-</ButtonGroup>
+function DefaultSelect() {
+  const content = 'This is the tooltip Content';
+  return (
+    <ThemeProvider spectrum="light">
+      <PortalProvider>
+        <VStack spacingHorizontal={8} spacingVertical={2} gap={5} background>
+          <HStack spacingHorizontal={2} gap={2} justifyContent="space-around">
+            <Tooltip content={content}>
+              <Button>Default</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="top">
+              <Button>Top</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="left">
+              <Button>Left</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="right">
+              <Button>Right</Button>
+            </Tooltip>
+            <Tooltip content={content} placement="bottom">
+              <Button>Bottom</Button>
+            </Tooltip>
+          </HStack>
+        </VStack>
+      </PortalProvider>
+    </ThemeProvider>
+  );
+}
 ```

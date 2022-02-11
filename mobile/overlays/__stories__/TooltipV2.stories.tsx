@@ -7,7 +7,7 @@ import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
 import { TextLabel2 } from '../../typography';
 import { Modal as CDSModal } from '../Modal/Modal';
-import { Tooltip } from '../TooltipV2/Tooltip';
+import { Tooltip } from '../Tooltip/Tooltip';
 
 const topTextSubject = 'TOP';
 const bottomTextSubject = 'BOTTOM';

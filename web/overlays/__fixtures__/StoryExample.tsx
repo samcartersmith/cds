@@ -2,7 +2,7 @@ import React from 'react';
 import { Placement } from '@popperjs/core';
 
 import { Button } from '../../buttons/Button';
-import { Tooltip } from '../Tooltip';
+import { Tooltip as DeprecatedTooltip } from '../Deprecated/Tooltip';
 
 export const StoryExample = ({
   disabled,
@@ -12,7 +12,7 @@ export const StoryExample = ({
   placement?: Placement;
 }) => {
   return (
-    <Tooltip
+    <DeprecatedTooltip
       content="This is the content in the tooltip!"
       disabled={disabled}
       placement={placement}
@@ -22,6 +22,6 @@ export const StoryExample = ({
           Button
         </Button>
       )}
-    </Tooltip>
+    </DeprecatedTooltip>
   );
 };

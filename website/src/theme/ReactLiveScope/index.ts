@@ -35,6 +35,7 @@ import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import * as CDSMedia from '@cbhq/cds-web/media';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import * as CDSTables from '@cbhq/cds-web/tables';
+import { Tooltip as DeprecatedTooltip } from '@cbhq/cds-web/overlays/Deprecated/Tooltip';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
@@ -144,6 +145,7 @@ const ReactLiveScope = {
   ...CDSNavigation,
   ...CDSOverlays,
   ...CDSSystem,
+  DeprecatedTooltip,
   ...CDSTables,
   ...CDSTypography,
   ...CDSIllustrations,
