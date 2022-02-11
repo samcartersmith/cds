@@ -80,11 +80,8 @@
 module.exports = {
   project: {
     ios: {
-      project: './ios/MobilePlayground.xcodeproj',
-    },
-    android: {
-      project: './android',
+      project: './apps/mobile-playground/ios/MobilePlayground.xcodeproj',
     },
   },
-  assets: ['../../packages/fonts/native', '../../packages/mobile/icons/font'],
+  assets: ['./packages/fonts/native', './packages/mobile/icons/font'],
 };
