@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="TextInput" templateName="prop-accessibilityHint" />
+<ComponentDetails
+  componentName="TextInput"
+  templateName="prop-accessibilityHint"
+/>
 
 ### accessibilityLabel
 
@@ -43,11 +46,14 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="TextInput" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="TextInput"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy
 
@@ -60,11 +66,14 @@ Accessibility prop that describes the component that labels it by its `id`
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="TextInput" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="TextInput"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### align
 
@@ -75,8 +84,8 @@ Aligns text inside input and helperText
   propertyName="align"
   required={false}
   defaultValue="start"
-  mobileOptions={['center', 'end', 'justify', 'start']}
-  webOptions={['center', 'end', 'justify', 'start']}
+  mobileOptions={["center", "end", "justify", "start"]}
+  webOptions={["center", "end", "justify", "start"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-align" />
@@ -90,8 +99,8 @@ Leverage one of the borderRadius styles we offer to round the corners of the inp
   propertyName="borderRadius"
   required={false}
   defaultValue="input"
-  mobileOptions={['input', 'search']}
-  webOptions={['input', 'search']}
+  mobileOptions={["input", "search"]}
+  webOptions={["input", "search"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-borderRadius" />
@@ -105,8 +114,8 @@ Enables compact variation
   propertyName="compact"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-compact" />
@@ -120,8 +129,8 @@ Toggles input interactability and opacity
   propertyName="disabled"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-disabled" />
@@ -136,26 +145,26 @@ Adds content to the end of the inner input. Refer to diagram for location of end
   required={false}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -170,8 +179,8 @@ For cases where label is not enough information to describe what the text input 
   propertyName="helperText"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-helperText" />
@@ -185,8 +194,8 @@ Used for a11y to indicate the relationship between a controlled element and its 
   propertyName="id"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-id" />
@@ -200,8 +209,8 @@ Short messageArea indicating purpose of input
   propertyName="label"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-label" />
@@ -216,7 +225,7 @@ Callback fired when pressed/clicked
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['MouseEventHandler<Element>']}
+  webOptions={["MouseEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-onPress" />
@@ -230,8 +239,8 @@ Placeholder text displayed inside of the input. Will be replaced if there is a v
   propertyName="placeholder"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-placeholder" />
@@ -246,26 +255,26 @@ Adds content to the start of the inner input. Refer to diagram for location of s
   required={false}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -280,8 +289,8 @@ Adds suffix text to the end of input
   propertyName="suffix"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-suffix" />
@@ -295,8 +304,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-testID" />
@@ -310,8 +319,20 @@ Determines the sentiment of the input. Because we allow startContent and endCont
   propertyName="variant"
   required={false}
   defaultValue="foregroundMuted"
-  mobileOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
-  webOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
+  mobileOptions={[
+    "foreground",
+    "foregroundMuted",
+    "negative",
+    "positive",
+    "primary",
+  ]}
+  webOptions={[
+    "foreground",
+    "foregroundMuted",
+    "negative",
+    "positive",
+    "primary",
+  ]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-variant" />
@@ -325,8 +346,8 @@ Width of input as a percentage string.
   propertyName="width"
   required={false}
   defaultValue="100%"
-  mobileOptions={['`${number}%`', 'number']}
-  webOptions={['`${number}%`', 'number']}
+  mobileOptions={["`${number}%`", "number"]}
+  webOptions={["`${number}%`", "number"]}
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-width" />

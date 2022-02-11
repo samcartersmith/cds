@@ -14,6 +14,12 @@ const config = {
     palette: { secondary: ['gray5', 0] },
     rgbaStrings: { secondary: 'rgba(20,21,25,0)' },
     hexValues: { secondary: '#000000' },
+    interactableTokens: {
+      secondary: {
+        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(14, 15, 18)' },
+        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(39, 40, 43)' },
+      },
+    },
     name: 'elevation1Children-dark',
   },
 } as const;

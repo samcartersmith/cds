@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-accessibilityHint" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-accessibilityHint"
+/>
 
 ### accessibilityLabel
 
@@ -43,11 +46,14 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy <Badge variant="web" />
 
@@ -61,10 +67,13 @@ Accessibility prop that describes the component that labels it by its `id`
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### as <Badge variant="web" />
 
@@ -76,7 +85,12 @@ Element or component to render the container as.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['ComponentClass<any, any>', 'FunctionComponent<any>', 'a', 'button']}
+  webOptions={[
+    "ComponentClass<any, any>",
+    "FunctionComponent<any>",
+    "a",
+    "button",
+  ]}
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-as" />
@@ -90,8 +104,8 @@ Set element to block and expand to 100% width.
   propertyName="block"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-block" />
@@ -106,10 +120,13 @@ Apply class names to the outer container.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-className" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-className"
+/>
 
 ### contentStyle <Badge variant="mobile" />
 
@@ -120,11 +137,14 @@ Apply animated styles to the inner container.
   propertyName="contentStyle"
   required={false}
   defaultValue=""
-  mobileOptions={['ViewStyle', 'false', 'null']}
+  mobileOptions={["ViewStyle", "false", "null"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-contentStyle" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-contentStyle"
+/>
 
 ### disabled
 
@@ -135,11 +155,14 @@ Is the element currently disabled.
   propertyName="disabled"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-disabled" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-disabled"
+/>
 
 ### disableDebounce <Badge variant="mobile" />
 
@@ -150,11 +173,14 @@ React Native is historically trash at debouncing touch events. This can cause a 
   propertyName="disableDebounce"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-disableDebounce" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-disableDebounce"
+/>
 
 ### elevation
 
@@ -165,11 +191,14 @@ Is the element elevated.
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '1', '2']}
-  webOptions={['0', '1', '2']}
+  mobileOptions={["0", "1", "2"]}
+  webOptions={["0", "1", "2"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-elevation" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-elevation"
+/>
 
 ### feedback <Badge variant="mobile" />
 
@@ -180,11 +209,14 @@ Haptic feedback to trigger when being pressed.
   propertyName="feedback"
   required={false}
   defaultValue="none"
-  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  mobileOptions={["heavy", "light", "none", "normal"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-feedback" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-feedback"
+/>
 
 ### loading
 
@@ -195,11 +227,14 @@ Is the element currenty loading.
   propertyName="loading"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-loading" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-loading"
+/>
 
 ### noScaleOnPress
 
@@ -210,11 +245,14 @@ Dont scale element on press.
   propertyName="noScaleOnPress"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-noScaleOnPress" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-noScaleOnPress"
+/>
 
 ### onKeyPress <Badge variant="web" />
 
@@ -226,10 +264,13 @@ Callback fired when a key is pressed
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['KeyboardEventHandler<Element>']}
+  webOptions={["KeyboardEventHandler<Element>"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-onKeyPress" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-onKeyPress"
+/>
 
 ### onPress
 
@@ -240,11 +281,14 @@ Callback fired when the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
-  webOptions={['MouseEventHandler<Element>']}
+  mobileOptions={["(event: GestureResponderEvent) => void", "null"]}
+  webOptions={["MouseEventHandler<Element>"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-onPress" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-onPress"
+/>
 
 ### onPressIn <Badge variant="mobile" />
 
@@ -255,11 +299,14 @@ Callback fired before `onPress` when button is pressed.
   propertyName="onPressIn"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
+  mobileOptions={["(event: GestureResponderEvent) => void"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-onPressIn" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-onPressIn"
+/>
 
 ### onPressOut <Badge variant="mobile" />
 
@@ -270,11 +317,14 @@ Callback fired before `onPress` when button is released.
   propertyName="onPressOut"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void']}
+  mobileOptions={["(event: GestureResponderEvent) => void"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-onPressOut" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-onPressOut"
+/>
 
 ### style
 
@@ -284,14 +334,14 @@ Callback fired before `onPress` when button is released.
   required={false}
   defaultValue=""
   mobileOptions={[
-    '(state: PressableStateCallbackType) => StyleProp<ViewStyle>',
-    'RecursiveArray<Falsy | ViewStyle | RegisteredStyle<ViewStyle>>',
-    'RegisteredStyle<ViewStyle>',
-    'ViewStyle',
-    'false',
-    'null',
+    "(state: PressableStateCallbackType) => StyleProp<ViewStyle>",
+    "RecursiveArray<Falsy | ViewStyle | RegisteredStyle<ViewStyle>>",
+    "RegisteredStyle<ViewStyle>",
+    "ViewStyle",
+    "false",
+    "null",
   ]}
-  webOptions={['CSSProperties']}
+  webOptions={["CSSProperties"]}
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-style" />
@@ -306,10 +356,13 @@ Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['number']}
+  webOptions={["number"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-tabIndex" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-tabIndex"
+/>
 
 ### testID
 
@@ -320,8 +373,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-testID" />
@@ -336,7 +389,7 @@ URL that this links to when pressed.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="PressableOpacity" templateName="prop-to" />
@@ -351,9 +404,12 @@ Inject and wrap the content with overlay and underlay elements.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="PressableOpacity" templateName="prop-wrapWithLayeredElements" />
+<ComponentDetails
+  componentName="PressableOpacity"
+  templateName="prop-wrapWithLayeredElements"
+/>
 
 <ComponentDetails componentName="PressableOpacity" templateName="outro" />

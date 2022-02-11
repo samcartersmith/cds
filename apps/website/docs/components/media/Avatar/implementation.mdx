@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -44,15 +44,23 @@ Adds a border to the Avatar
   required={false}
   defaultValue=""
   mobileOptions={[
-    'line',
-    'lineHeavy',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
   ]}
-  webOptions={['line', 'lineHeavy', 'negative', 'positive', 'primary', 'primaryWash', 'secondary']}
+  webOptions={[
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+  ]}
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-borderColor" />
@@ -67,10 +75,13 @@ Adds a className to the Avatar. If you pass in a className make sure your styles
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="Avatar" templateName="prop-dangerouslySetClassName" />
+<ComponentDetails
+  componentName="Avatar"
+  templateName="prop-dangerouslySetClassName"
+/>
 
 ### dangerouslySetSize <Badge variant="danger" order={1} />
 
@@ -82,11 +93,14 @@ Creates a custom Avatar size. The size prop should be used in most circumstances
   propertyName="dangerouslySetSize"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={["number"]}
+  webOptions={["number"]}
 />
 
-<ComponentDetails componentName="Avatar" templateName="prop-dangerouslySetSize" />
+<ComponentDetails
+  componentName="Avatar"
+  templateName="prop-dangerouslySetSize"
+/>
 
 ### shape
 
@@ -97,8 +111,8 @@ Shape of Avatar
   propertyName="shape"
   required={false}
   defaultValue=""
-  mobileOptions={['circle', 'square']}
-  webOptions={['circle', 'square']}
+  mobileOptions={["circle", "square"]}
+  webOptions={["circle", "square"]}
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-shape" />
@@ -112,8 +126,8 @@ Size for a given avatar.
   propertyName="size"
   required={false}
   defaultValue=""
-  mobileOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
-  webOptions={['l', 'm', 'xl', 'xxl', 'xxxl']}
+  mobileOptions={["l", "m", "xl", "xxl", "xxxl"]}
+  webOptions={["l", "m", "xl", "xxl", "xxxl"]}
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-size" />
@@ -127,8 +141,8 @@ Absolute url to the image that should be shown in the Avatar. If no src is provi
   propertyName="src"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-src" />
@@ -142,8 +156,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="Avatar" templateName="prop-testID" />

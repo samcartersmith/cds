@@ -1,0 +1,17 @@
+---
+title: <%- data.displayName %>
+slug: <%- data.slug %>
+---
+
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+
+<% if (data.importPath && data.sourceUrl){ %>
+  > [<%- data.importPath %>](<%- data.sourceUrl %>)
+<% } %>
+
+<ComponentDetails componentName="<%- data.displayName %>" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="<%- data.displayName %>" templateName="usage" />

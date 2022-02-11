@@ -1,0 +1,27 @@
+{
+  "root": "packages/codegen",
+  "sourceRoot": "packages/codegen",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "docgen": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/website/build.ts"
+      }
+    }
+  }
+}
+

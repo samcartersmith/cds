@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -29,10 +29,13 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy <Badge variant="web" />
 
@@ -46,10 +49,13 @@ Accessibility prop that describes the component that labels it by its `id`
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### align <Badge variant="web" />
 
@@ -63,7 +69,7 @@ Specifies text alignment. On mobile, the value `justify` is only supported on iO
   required={false}
   defaultValue="start"
   mobileOptions={[]}
-  webOptions={['center', 'end', 'justify', 'start']}
+  webOptions={["center", "end", "justify", "start"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-align" />
@@ -79,17 +85,17 @@ Foreground text color. Accepts a valid `PaletteForeground` alias.
   defaultValue="foreground"
   mobileOptions={[]}
   webOptions={[
-    'currentColor',
-    'foreground',
-    'foregroundMuted',
-    'negative',
-    'negativeForeground',
-    'positive',
-    'positiveForeground',
-    'primary',
-    'primaryForeground',
-    'secondary',
-    'secondaryForeground',
+    "currentColor",
+    "foreground",
+    "foregroundMuted",
+    "negative",
+    "negativeForeground",
+    "positive",
+    "positiveForeground",
+    "primary",
+    "primaryForeground",
+    "secondary",
+    "secondaryForeground",
   ]}
 />
 
@@ -105,10 +111,13 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-dangerouslySetClassName" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-dangerouslySetClassName"
+/>
 
 ### dangerouslySetColor <Badge variant="web" /> <Badge variant="danger" order={2} />
 
@@ -120,10 +129,13 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-dangerouslySetColor" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-dangerouslySetColor"
+/>
 
 ### disabled <Badge variant="web" />
 
@@ -135,10 +147,13 @@ Add disabled opacity style to text
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-disabled" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-disabled"
+/>
 
 ### display <Badge variant="web" />
 
@@ -150,7 +165,7 @@ Set CSS display attribute.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['block', 'initial', 'inline']}
+  webOptions={["block", "initial", "inline"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-display" />
@@ -165,7 +180,7 @@ Used to associate a label with a control
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-id" />
@@ -180,7 +195,7 @@ Should the Text component inherit styles of parent
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-inherit" />
@@ -195,7 +210,7 @@ Use CoinbaseMono font
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-mono" />
@@ -212,7 +227,7 @@ Set text to be in a single line.
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-noWrap" />
@@ -229,10 +244,13 @@ Set overflow behavior.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['clip', 'truncate']}
+  webOptions={["clip", "truncate"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-overflow" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-overflow"
+/>
 
 ### selectable <Badge variant="web" />
 
@@ -246,10 +264,13 @@ Set select behavior. On mobile, selectable is binary, none will be not selectabl
   required={false}
   defaultValue="'text' for web, 'none' for mobile"
   mobileOptions={[]}
-  webOptions={['all', 'none', 'text']}
+  webOptions={["all", "none", "text"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-selectable" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-selectable"
+/>
 
 ### slashedZero <Badge variant="web" />
 
@@ -263,10 +284,13 @@ Use character for number zero with a slash through it to differentiate it from t
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-slashedZero" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-slashedZero"
+/>
 
 ### spacing <Badge variant="web" />
 
@@ -278,7 +302,7 @@ Apply inner spacing on all sides.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-spacing" />
@@ -293,10 +317,13 @@ Apply inner spacing on the bottom side.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-spacingBottom" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-spacingBottom"
+/>
 
 ### spacingEnd <Badge variant="web" />
 
@@ -308,10 +335,13 @@ Apply inner spacing on the trailing side.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-spacingEnd" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-spacingEnd"
+/>
 
 ### spacingHorizontal <Badge variant="web" />
 
@@ -323,10 +353,13 @@ Apply inner spacing on the leading and trailing sides.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-spacingHorizontal" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-spacingHorizontal"
+/>
 
 ### spacingStart <Badge variant="web" />
 
@@ -338,10 +371,13 @@ Apply inner spacing on the leading side.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-spacingStart" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-spacingStart"
+/>
 
 ### spacingTop <Badge variant="web" />
 
@@ -353,10 +389,13 @@ Apply inner spacing on the top side.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-spacingTop" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-spacingTop"
+/>
 
 ### spacingVertical <Badge variant="web" />
 
@@ -368,10 +407,13 @@ Apply inner spacing on the top and bottom sides.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-spacingVertical" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-spacingVertical"
+/>
 
 ### tabularNumbers <Badge variant="web" />
 
@@ -385,10 +427,13 @@ Activates the set of figures where numbers are all of the same size, allowing th
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-tabularNumbers" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-tabularNumbers"
+/>
 
 ### testID <Badge variant="web" />
 
@@ -400,7 +445,7 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="NavigationTitle" templateName="prop-testID" />
@@ -417,10 +462,13 @@ Transform text to all uppercase, all lowercase, or capitalized. This is not avai
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['capitalize', 'lowercase', 'uppercase']}
+  webOptions={["capitalize", "lowercase", "uppercase"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-transform" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-transform"
+/>
 
 ### underline <Badge variant="web" />
 
@@ -434,9 +482,12 @@ Set text decoration to underline.
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="NavigationTitle" templateName="prop-underline" />
+<ComponentDetails
+  componentName="NavigationTitle"
+  templateName="prop-underline"
+/>
 
 <ComponentDetails componentName="NavigationTitle" templateName="outro" />

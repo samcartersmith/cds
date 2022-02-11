@@ -8,6 +8,7 @@
     "utils": "packages/utils",
     "web": "packages/web",
     "web-utils": "packages/web-utils",
+    "codegen": "packages/codegen",
     "website": "apps/website"
   }
 }

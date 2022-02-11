@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Accessibility label describing the group of items. Accessibility label describin
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### accessibilityLabelledBy
 
@@ -45,11 +48,14 @@ Accessibility prop that describes the component that labels it by its `id`
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-accessibilityLabelledBy" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-accessibilityLabelledBy"
+/>
 
 ### alignContent
 
@@ -60,8 +66,22 @@ Set the distribution of space between and around content items along the cross-a
   propertyName="alignContent"
   required={false}
   defaultValue="flex-start"
-  mobileOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
-  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'stretch']}
+  mobileOptions={[
+    "center",
+    "flex-end",
+    "flex-start",
+    "space-around",
+    "space-between",
+    "stretch",
+  ]}
+  webOptions={[
+    "center",
+    "flex-end",
+    "flex-start",
+    "space-around",
+    "space-between",
+    "stretch",
+  ]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-alignContent" />
@@ -75,8 +95,8 @@ Set the alignment of all direct children on the cross-axis.
   propertyName="alignItems"
   required={false}
   defaultValue="stretch"
-  mobileOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-  webOptions={['baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  mobileOptions={["baseline", "center", "flex-end", "flex-start", "stretch"]}
+  webOptions={["baseline", "center", "flex-end", "flex-start", "stretch"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-alignItems" />
@@ -90,8 +110,22 @@ Override the parents defined item alignment for this element alone.
   propertyName="alignSelf"
   required={false}
   defaultValue="auto"
-  mobileOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
-  webOptions={['auto', 'baseline', 'center', 'flex-end', 'flex-start', 'stretch']}
+  mobileOptions={[
+    "auto",
+    "baseline",
+    "center",
+    "flex-end",
+    "flex-start",
+    "stretch",
+  ]}
+  webOptions={[
+    "auto",
+    "baseline",
+    "center",
+    "flex-end",
+    "flex-start",
+    "stretch",
+  ]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-alignSelf" />
@@ -105,7 +139,7 @@ If value is `true` then style prop can take animated values.
   propertyName="animated"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
@@ -121,7 +155,7 @@ The semantic element to render the box as. Is necessary for accessibility suppor
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['div']}
+  webOptions={["div"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-as" />
@@ -135,7 +169,7 @@ Aspect ratio controls the size of the undefined dimension of a node. Aspect rati
   propertyName="aspectRatio"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
+  mobileOptions={["number"]}
   webOptions={[]}
 />
 
@@ -151,26 +185,26 @@ Set the background color of the box. Passing `true` will enable the default back
   required={false}
   defaultValue=""
   mobileOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'true',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "true",
   ]}
   webOptions={[
-    'background',
-    'backgroundAlternate',
-    'backgroundOverlay',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
-    'true',
+    "background",
+    "backgroundAlternate",
+    "backgroundOverlay",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+    "true",
   ]}
 />
 
@@ -186,15 +220,23 @@ Adds a custom border color from the palette
   required={false}
   defaultValue=""
   mobileOptions={[
-    'line',
-    'lineHeavy',
-    'negative',
-    'positive',
-    'primary',
-    'primaryWash',
-    'secondary',
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
   ]}
-  webOptions={['line', 'lineHeavy', 'negative', 'positive', 'primary', 'primaryWash', 'secondary']}
+  webOptions={[
+    "line",
+    "lineHeavy",
+    "negative",
+    "positive",
+    "primary",
+    "primaryWash",
+    "secondary",
+  ]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-borderColor" />
@@ -208,8 +250,8 @@ Add a border around all sides of the box.
   propertyName="bordered"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-bordered" />
@@ -223,11 +265,14 @@ Add a border to the bottom side of the box.
   propertyName="borderedBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-borderedBottom" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-borderedBottom"
+/>
 
 ### borderedEnd
 
@@ -238,8 +283,8 @@ Add a border to the trailing side of the box.
   propertyName="borderedEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-borderedEnd" />
@@ -253,11 +298,14 @@ Add a border to the leading and trailing sides of the box.
   propertyName="borderedHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-borderedHorizontal" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-borderedHorizontal"
+/>
 
 ### borderedStart
 
@@ -268,8 +316,8 @@ Add a border to the leading side of the box.
   propertyName="borderedStart"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-borderedStart" />
@@ -283,8 +331,8 @@ Add a border to the top side of the box.
   propertyName="borderedTop"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-borderedTop" />
@@ -298,11 +346,14 @@ Add a border to the top and bottom sides of the box.
   propertyName="borderedVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-borderedVertical" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-borderedVertical"
+/>
 
 ### borderRadius
 
@@ -314,28 +365,28 @@ Leverage one of the borderRadius styles we offer to round the corners of the box
   required={false}
   defaultValue=""
   mobileOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
   webOptions={[
-    'badge',
-    'compact',
-    'input',
-    'none',
-    'pill',
-    'popover',
-    'round',
-    'search',
-    'standard',
-    'tooltip',
+    "badge",
+    "compact",
+    "input",
+    "none",
+    "pill",
+    "popover",
+    "round",
+    "search",
+    "standard",
+    "tooltip",
   ]}
 />
 
@@ -350,8 +401,8 @@ Position the box to the bottom edge.
   propertyName="bottom"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-bottom" />
@@ -366,26 +417,26 @@ Items to render in a group. Content to render within the box.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'null',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "null",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -400,11 +451,14 @@ This is a migration escape hatch. It is not intended to be used normally.
   propertyName="dangerouslySetBackground"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-dangerouslySetBackground" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-dangerouslySetBackground"
+/>
 
 ### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
 
@@ -416,10 +470,13 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-dangerouslySetClassName" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-dangerouslySetClassName"
+/>
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -431,20 +488,23 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
-    'AnimatedInterpolation',
-    'RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>',
-    'RegisteredStyle<ViewStyle>',
-    'Value',
-    'ViewStyle',
-    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'WithAnimatedObject<ViewStyle>',
-    'false',
-    'null',
+    "AnimatedInterpolation",
+    "RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>>",
+    "RegisteredStyle<ViewStyle>",
+    "Value",
+    "ViewStyle",
+    "WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
+    "WithAnimatedObject<ViewStyle>",
+    "false",
+    "null",
   ]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-dangerouslySetStyle" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-dangerouslySetStyle"
+/>
 
 ### direction
 
@@ -455,8 +515,8 @@ Direction a group of components should flow.
   propertyName="direction"
   required={false}
   defaultValue="vertical"
-  mobileOptions={['horizontal', 'vertical']}
-  webOptions={['horizontal', 'vertical']}
+  mobileOptions={["horizontal", "vertical"]}
+  webOptions={["horizontal", "vertical"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-direction" />
@@ -471,7 +531,7 @@ The display value to uss in CSS display attribute.
   required={false}
   defaultValue="flex"
   mobileOptions={[]}
-  webOptions={['contents', 'flex', 'inline-flex']}
+  webOptions={["contents", "flex", "inline-flex"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-display" />
@@ -485,8 +545,8 @@ Divider Component to include between each item in a group.
   propertyName="divider"
   required={false}
   defaultValue=""
-  mobileOptions={['ComponentClass<{}, any>', 'FunctionComponent<{}>', 'null']}
-  webOptions={['ComponentClass<{}, any>', 'FunctionComponent<{}>', 'null']}
+  mobileOptions={["ComponentClass<{}, any>", "FunctionComponent<{}>", "null"]}
+  webOptions={["ComponentClass<{}, any>", "FunctionComponent<{}>", "null"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-divider" />
@@ -500,8 +560,8 @@ Determines box shadow styles. Parent should have overflow set to visible to ensu
   propertyName="elevation"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '1', '2']}
-  webOptions={['0', '1', '2']}
+  mobileOptions={["0", "1", "2"]}
+  webOptions={["0", "1", "2"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-elevation" />
@@ -515,8 +575,8 @@ Sets the initial main flex size.
   propertyName="flexBasis"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-flexBasis" />
@@ -530,8 +590,8 @@ Order children on the main-axis in this direction.
   propertyName="flexDirection"
   required={false}
   defaultValue=""
-  mobileOptions={['column', 'column-reverse', 'row', 'row-reverse']}
-  webOptions={['column', 'column-reverse', 'row', 'row-reverse']}
+  mobileOptions={["column", "column-reverse", "row", "row-reverse"]}
+  webOptions={["column", "column-reverse", "row", "row-reverse"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-flexDirection" />
@@ -545,8 +605,8 @@ Set the grow factor of this flex item.
   propertyName="flexGrow"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={["number"]}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-flexGrow" />
@@ -560,8 +620,8 @@ Set the shrink factor of this flex item.
   propertyName="flexShrink"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={["number"]}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-flexShrink" />
@@ -575,8 +635,8 @@ How should children wrap when overflowing.
   propertyName="flexWrap"
   required={false}
   defaultValue="nowrap"
-  mobileOptions={['nowrap', 'wrap', 'wrap-reverse']}
-  webOptions={['nowrap', 'wrap', 'wrap-reverse']}
+  mobileOptions={["nowrap", "wrap", "wrap-reverse"]}
+  webOptions={["nowrap", "wrap", "wrap-reverse"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-flexWrap" />
@@ -590,8 +650,21 @@ Gap to insert between siblings.
   propertyName="gap"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-gap" />
@@ -605,8 +678,8 @@ Set a fixed height.
   propertyName="height"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-height" />
@@ -620,8 +693,8 @@ Stack items horizontally instead of vertically.
   propertyName="horizontal"
   required={false}
   defaultValue="false"
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-horizontal" />
@@ -635,8 +708,8 @@ This should only be used for accessibility purposes, eg: aria-controls https://a
   propertyName="id"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-id" />
@@ -651,17 +724,27 @@ Set the distribution of space between and around content items along the main-ax
   required={false}
   defaultValue="flex-start"
   mobileOptions={[
-    'center',
-    'flex-end',
-    'flex-start',
-    'space-around',
-    'space-between',
-    'space-evenly',
+    "center",
+    "flex-end",
+    "flex-start",
+    "space-around",
+    "space-between",
+    "space-evenly",
   ]}
-  webOptions={['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']}
+  webOptions={[
+    "center",
+    "flex-end",
+    "flex-start",
+    "space-around",
+    "space-between",
+    "space-evenly",
+  ]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-justifyContent" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-justifyContent"
+/>
 
 ### left
 
@@ -672,8 +755,8 @@ Position the box to the left edge.
   propertyName="left"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-left" />
@@ -687,8 +770,8 @@ Set a maximum height.
   propertyName="maxHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-maxHeight" />
@@ -702,8 +785,8 @@ Set a maximum width.
   propertyName="maxWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-maxWidth" />
@@ -717,8 +800,8 @@ Set a minimum height.
   propertyName="minHeight"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-minHeight" />
@@ -732,8 +815,8 @@ Set a minimum width.
   propertyName="minWidth"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-minWidth" />
@@ -747,8 +830,21 @@ Apply negative outer spacing on all sides.
   propertyName="offset"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-offset" />
@@ -762,8 +858,21 @@ Apply negative outer spacing on the bottom side.
   propertyName="offsetBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-offsetBottom" />
@@ -777,8 +886,21 @@ Apply negative outer spacing on the trailing side.
   propertyName="offsetEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-offsetEnd" />
@@ -792,11 +914,27 @@ Apply negative outer spacing on the leading and trailing sides.
   propertyName="offsetHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-offsetHorizontal" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-offsetHorizontal"
+/>
 
 ### offsetStart
 
@@ -807,8 +945,21 @@ Apply negative outer spacing on the leading side.
   propertyName="offsetStart"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-offsetStart" />
@@ -822,8 +973,21 @@ Apply negative outer spacing on the top side.
   propertyName="offsetTop"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-offsetTop" />
@@ -837,11 +1001,27 @@ Apply negative outer spacing on the top and bottom sides.
   propertyName="offsetVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-offsetVertical" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-offsetVertical"
+/>
 
 ### opacity
 
@@ -853,16 +1033,16 @@ Sets the opacity of the box
   required={false}
   defaultValue=""
   mobileOptions={[
-    'AnimatedInterpolation',
-    'RegisteredStyle<ViewStyle>',
-    'Value',
-    'WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
-    'WithAnimatedObject<ViewStyle>',
-    'false',
-    'null',
-    'number',
+    "AnimatedInterpolation",
+    "RegisteredStyle<ViewStyle>",
+    "Value",
+    "WithAnimatedArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle> | RecursiveArray<ViewStyle | Falsy | RegisteredStyle<ViewStyle>> | readonly (ViewStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
+    "WithAnimatedObject<ViewStyle>",
+    "false",
+    "null",
+    "number",
   ]}
-  webOptions={['number']}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-opacity" />
@@ -876,8 +1056,8 @@ Control how the content should overflow.
   propertyName="overflow"
   required={false}
   defaultValue=""
-  mobileOptions={['gradient', 'hidden', 'visible']}
-  webOptions={['auto', 'hidden', 'scroll', 'visible']}
+  mobileOptions={["gradient", "hidden", "visible"]}
+  webOptions={["auto", "hidden", "scroll", "visible"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-overflow" />
@@ -891,8 +1071,8 @@ Direction in which to absolutely pin the box.
   propertyName="pin"
   required={false}
   defaultValue=""
-  mobileOptions={['all', 'bottom', 'left', 'right', 'top']}
-  webOptions={['all', 'bottom', 'left', 'right', 'top']}
+  mobileOptions={["all", "bottom", "left", "right", "top"]}
+  webOptions={["all", "bottom", "left", "right", "top"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-pin" />
@@ -906,8 +1086,8 @@ How to position the box within its parent.
   propertyName="position"
   required={false}
   defaultValue=""
-  mobileOptions={['absolute', 'relative']}
-  webOptions={['absolute', 'fixed', 'relative', 'static', 'sticky']}
+  mobileOptions={["absolute", "relative"]}
+  webOptions={["absolute", "fixed", "relative", "static", "sticky"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-position" />
@@ -922,10 +1102,10 @@ Control the layout of each item in a group. @example `renderItem={({item, Wrappe
   required={false}
   defaultValue="Box component for given platform"
   mobileOptions={[
-    '(info: { Wrapper: ComponentType<BoxProps>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild',
+    "(info: { Wrapper: ComponentType<BoxProps>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild",
   ]}
   webOptions={[
-    '(info: { Wrapper: ComponentType<BoxProps<div>>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild',
+    "(info: { Wrapper: ComponentType<BoxProps<div>>; item: ReactChild; index: number; isFirst: boolean; isLast: boolean; }) => ReactChild",
   ]}
 />
 
@@ -940,8 +1120,8 @@ Position the box to the right edge.
   propertyName="right"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-right" />
@@ -956,7 +1136,7 @@ Semantic role whole using a non-semantic element.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-role" />
@@ -970,8 +1150,21 @@ Apply inner spacing on all sides.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-spacing" />
@@ -985,8 +1178,21 @@ Apply inner spacing on the bottom side.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-spacingBottom" />
@@ -1000,8 +1206,21 @@ Apply inner spacing on the trailing side.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-spacingEnd" />
@@ -1015,11 +1234,27 @@ Apply inner spacing on the leading and trailing sides.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-spacingHorizontal" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-spacingHorizontal"
+/>
 
 ### spacingStart
 
@@ -1030,8 +1265,21 @@ Apply inner spacing on the leading side.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-spacingStart" />
@@ -1045,8 +1293,21 @@ Apply inner spacing on the top side.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-spacingTop" />
@@ -1060,11 +1321,27 @@ Apply inner spacing on the top and bottom sides.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
-  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  mobileOptions={[
+    "0",
+    "0.5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+  ]}
+  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
 />
 
-<ComponentDetails componentName="CardGroup" templateName="prop-spacingVertical" />
+<ComponentDetails
+  componentName="CardGroup"
+  templateName="prop-spacingVertical"
+/>
 
 ### testID
 
@@ -1075,8 +1352,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-testID" />
@@ -1090,8 +1367,8 @@ Position the box to the top edge.
   propertyName="top"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-top" />
@@ -1105,8 +1382,8 @@ Set a fixed width.
   propertyName="width"
   required={false}
   defaultValue=""
-  mobileOptions={['number', 'string']}
-  webOptions={['number', 'string']}
+  mobileOptions={["number", "string"]}
+  webOptions={["number", "string"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-width" />
@@ -1120,8 +1397,8 @@ Adjust the z-index positioning layer.
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={['number']}
-  webOptions={['number']}
+  mobileOptions={["number"]}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="CardGroup" templateName="prop-zIndex" />

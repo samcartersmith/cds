@@ -1,21 +1,30 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
 > [@cbhq/cds-(web|mobile)/system/DevicePreferencesProvider](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/system/DevicePreferencesProvider.tsx)
 
-<ComponentDetails componentName="DevicePreferencesProvider" templateName="intro" />
+<ComponentDetails
+  componentName="DevicePreferencesProvider"
+  templateName="intro"
+/>
 
 ## Usage
 
-<ComponentDetails componentName="DevicePreferencesProvider" templateName="usage" />
+<ComponentDetails
+  componentName="DevicePreferencesProvider"
+  templateName="usage"
+/>
 
 ## Accessibility
 
-<ComponentDetails componentName="DevicePreferencesProvider" templateName="a11y" />
+<ComponentDetails
+  componentName="DevicePreferencesProvider"
+  templateName="a11y"
+/>
 
 ## Props
 
@@ -28,11 +37,32 @@ Only use if you are passing in a value from a user preference since this will ov
   propertyName="scale"
   required={false}
   defaultValue=""
-  mobileOptions={['large', 'medium', 'small', 'system', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
-  webOptions={['large', 'medium', 'small', 'system', 'xLarge', 'xSmall', 'xxLarge', 'xxxLarge']}
+  mobileOptions={[
+    "large",
+    "medium",
+    "small",
+    "system",
+    "xLarge",
+    "xSmall",
+    "xxLarge",
+    "xxxLarge",
+  ]}
+  webOptions={[
+    "large",
+    "medium",
+    "small",
+    "system",
+    "xLarge",
+    "xSmall",
+    "xxLarge",
+    "xxxLarge",
+  ]}
 />
 
-<ComponentDetails componentName="DevicePreferencesProvider" templateName="prop-scale" />
+<ComponentDetails
+  componentName="DevicePreferencesProvider"
+  templateName="prop-scale"
+/>
 
 ### spectrum
 
@@ -43,10 +73,16 @@ Pass in value from React Natives useColorScheme or some other user preference. Y
   propertyName="spectrum"
   required={false}
   defaultValue=""
-  mobileOptions={['dark', 'light', 'system']}
-  webOptions={['dark', 'light', 'system']}
+  mobileOptions={["dark", "light", "system"]}
+  webOptions={["dark", "light", "system"]}
 />
 
-<ComponentDetails componentName="DevicePreferencesProvider" templateName="prop-spectrum" />
+<ComponentDetails
+  componentName="DevicePreferencesProvider"
+  templateName="prop-spectrum"
+/>
 
-<ComponentDetails componentName="DevicePreferencesProvider" templateName="outro" />
+<ComponentDetails
+  componentName="DevicePreferencesProvider"
+  templateName="outro"
+/>

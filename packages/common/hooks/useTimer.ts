@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { NoopFn } from '../types';
 
@@ -54,13 +54,10 @@ export const useTimer = () => {
     };
   }, [clear]);
 
-  return useMemo(
-    () => ({
-      start,
-      clear,
-      pause,
-      resume,
-    }),
-    [start, clear, pause, resume],
-  );
+  return {
+    start,
+    clear,
+    pause,
+    resume,
+  };
 };

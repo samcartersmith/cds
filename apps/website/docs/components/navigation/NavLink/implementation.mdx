@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -29,10 +29,13 @@ Full length accessibility label when the child text is not descriptive enough.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="NavLink" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="NavLink"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### active <Badge variant="web" />
 
@@ -42,7 +45,7 @@ Full length accessibility label when the child text is not descriptive enough.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="NavLink" templateName="prop-active" />
@@ -58,14 +61,14 @@ Children to render within the link.
   defaultValue=""
   mobileOptions={[]}
   webOptions={[
-    'ReactElement<any, string | JSXElementConstructor<any>>',
-    'ReactNodeArray',
-    'ReactPortal',
-    'false',
-    'number',
-    'string',
-    'true',
-    '{}',
+    "Iterable<ReactNode>",
+    "ReactElement<any, string | JSXElementConstructor<any>>",
+    "ReactPortal",
+    "false",
+    "number",
+    "string",
+    "true",
+    "{}",
   ]}
 />
 
@@ -81,10 +84,13 @@ Adds a className to the Link. If you pass in a className make sure your styles o
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="NavLink" templateName="prop-dangerouslySetClassName" />
+<ComponentDetails
+  componentName="NavLink"
+  templateName="prop-dangerouslySetClassName"
+/>
 
 ### mono <Badge variant="web" />
 
@@ -96,7 +102,7 @@ Use CoinbaseMono font
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="NavLink" templateName="prop-mono" />
@@ -111,7 +117,7 @@ Callback fired when the element is clicked.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['OnPress<HTMLAnchorElement>']}
+  webOptions={["OnPress<HTMLAnchorElement>"]}
 />
 
 <ComponentDetails componentName="NavLink" templateName="prop-onPress" />
@@ -126,7 +132,7 @@ If true, it opens the link in a new window. If false, it replaces the current sc
   required={false}
   defaultValue="true"
   mobileOptions={[]}
-  webOptions={['false', 'true']}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="NavLink" templateName="prop-openInNewWindow" />
@@ -141,7 +147,7 @@ Callback for custom Link component
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['(props: HTMLAttributes<HTMLAnchorElement>) => Element']}
+  webOptions={["(props: HTMLAttributes<HTMLAnchorElement>) => Element"]}
 />
 
 <ComponentDetails componentName="NavLink" templateName="prop-renderContainer" />
@@ -156,7 +162,7 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="NavLink" templateName="prop-testID" />
@@ -171,7 +177,7 @@ URL that this link goes to when pressed.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="NavLink" templateName="prop-to" />

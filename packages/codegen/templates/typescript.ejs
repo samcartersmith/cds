@@ -1,0 +1,27 @@
+<% if(data.imports){ %>
+  <%_ Object.values(data.imports).map(item => { _%>
+    <%- item %>
+  <%_ }) _%>
+<% } %>
+
+<% if(data.types){ %>
+  <%_ Object.entries(data.types).map(([name, value]) => { _%>
+    <% if(typeof value === 'object' && value.length){ %>
+      export type <%- name %> = <%- value.map(format).join('|') -%>;
+    <% } %>
+    <% if(typeof value === 'string'){ %>
+      export type <%- name %> = <%- value %>;
+    <% } %>
+
+  <%_ }) _%>
+<% } %>
+
+<% if(data.interfaces){ %>
+  <%_ Object.entries(data.interfaces).map(([name, value]) => { _%>
+    export interface <%- name %> {
+    <%_ Object.entries(value).map(([field, type]) => { _%>
+      <%- field %>: <%- type %>;
+    <%_ }) _%>
+    }
+  <%_ }) _%>
+<% } %>

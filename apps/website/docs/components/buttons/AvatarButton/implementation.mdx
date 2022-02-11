@@ -1,7 +1,7 @@
-import { ApiDetails } from ':cds-website/components/ApiDetails';
-import { Badge } from ':cds-website/components/Badge';
-import { ComponentDetails } from ':cds-website/components/ComponentDetails';
-import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+import { ApiDetails } from ":cds-website/components/ApiDetails";
+import { Badge } from ":cds-website/components/Badge";
+import { ComponentDetails } from ":cds-website/components/ComponentDetails";
+import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
 
 <RightSidebar toc={toc} />
 
@@ -28,11 +28,14 @@ Full length accessibility label when the child text is not descriptive enough.
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
-<ComponentDetails componentName="AvatarButton" templateName="prop-accessibilityLabel" />
+<ComponentDetails
+  componentName="AvatarButton"
+  templateName="prop-accessibilityLabel"
+/>
 
 ### alt
 
@@ -58,8 +61,8 @@ This is the name associated with the entity in the Avatar. This is used in the i
   defaultValue=""
   mobileOptions={[]}
   webOptions={[
-    'ComponentClass<HTMLAttributes<HTMLElement>, any>',
-    'FunctionComponent<HTMLAttributes<HTMLElement>>',
+    "ComponentClass<HTMLAttributes<HTMLElement>, any>",
+    "FunctionComponent<HTMLAttributes<HTMLElement>>",
   ]}
 />
 
@@ -74,8 +77,8 @@ Reduce the inner padding within the button itself.
   propertyName="compact"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-compact" />
@@ -89,11 +92,14 @@ React Native is historically trash at debouncing touch events. This can cause a 
   propertyName="disableDebounce"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
   webOptions={[]}
 />
 
-<ComponentDetails componentName="AvatarButton" templateName="prop-disableDebounce" />
+<ComponentDetails
+  componentName="AvatarButton"
+  templateName="prop-disableDebounce"
+/>
 
 ### feedback <Badge variant="mobile" />
 
@@ -104,7 +110,7 @@ Haptic feedback to trigger when being pressed.
   propertyName="feedback"
   required={false}
   defaultValue="none"
-  mobileOptions={['heavy', 'light', 'none', 'normal']}
+  mobileOptions={["heavy", "light", "none", "normal"]}
   webOptions={[]}
 />
 
@@ -119,8 +125,8 @@ Is the element currenty loading.
   propertyName="loading"
   required={false}
   defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={['false', 'true']}
+  mobileOptions={["false", "true"]}
+  webOptions={["false", "true"]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-loading" />
@@ -135,7 +141,9 @@ Callback fired when a key is pressed
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['KeyboardEventHandler<Element> & KeyboardEventHandler<HTMLButtonElement>']}
+  webOptions={[
+    "KeyboardEventHandler<Element> & KeyboardEventHandler<HTMLButtonElement>",
+  ]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-onKeyPress" />
@@ -149,8 +157,8 @@ Callback fired when the element is pressed.
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
-  webOptions={['MouseEventHandler<Element>']}
+  mobileOptions={["(event: GestureResponderEvent) => void", "null"]}
+  webOptions={["MouseEventHandler<Element>"]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-onPress" />
@@ -164,8 +172,8 @@ Absolute url to the image that should be shown in the Avatar. If no src is provi
   propertyName="src"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-src" />
@@ -180,7 +188,7 @@ Necessary to control roving tabindex for accessibility https://www.w3.org/TR/wai
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['number']}
+  webOptions={["number"]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-tabIndex" />
@@ -194,8 +202,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={['string']}
-  webOptions={['string']}
+  mobileOptions={["string"]}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-testID" />
@@ -210,7 +218,7 @@ URL that this links to when pressed.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={['string']}
+  webOptions={["string"]}
 />
 
 <ComponentDetails componentName="AvatarButton" templateName="prop-to" />
