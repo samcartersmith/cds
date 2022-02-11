@@ -8,7 +8,7 @@ A `Drawer` is an elevated container that is pinned to one side of the screen. It
 
 By default, they are pinned to the bottom of the screen, however, you can pin a `Drawer` to any side of the screen. Bottom pinned `Drawer`s are called `Tray`s and have a `HandleBar` which is used to drag the `Tray` on and off the screen.
 
-`Drawer`s can render anything as children, however we recommend passing a callback as a child, and taking advantage of the exposed `closeDrawer` prop so children can toggle the visibility of the `Drawer`.
+`Drawer`s can render anything as children, however we recommend passing a callback as a child, and taking advantage of the exposed `handleClose` prop so children can toggle the visibility of the `Drawer`.
 
 ```jsx
 function DefaultDrawer() {
@@ -18,10 +18,10 @@ function DefaultDrawer() {
       <Button onPress={toggleOn}>Open</Button>
       {visible && (
         <Drawer pin={pin} onCloseComplete={toggleOff}>
-          {({ closeDrawer }) => (
+          {({ handleClose }) => (
             <VStack spacing={2}>
               <LoremIpsum />
-              <Button onPress={closeDrawer}>Close Drawer</Button>
+              <Button onPress={handleClose}>Close Drawer</Button>
             </VStack>
           )}
         </Drawer>
@@ -35,7 +35,7 @@ function DefaultDrawer() {
 
 `Drawer`s do not allow scrolling by default, to allow for pan gestures to work. However, you can enable scrolling by passing `disableCapturePanGestureToDismiss` and wrapping `children` in a `ScrollView`.
 
-**Please note:** when `disableCapturePanGestureToDismiss` is enabled, you will not be able to use pan gestures to close the `Drawer` within the `Drawer` container. However, you can still use the `HandleBar` to drag to close.
+**Please note:** when `disableCapturePanGestureToDismiss` is enabled, you will not be able to use pan gestures to close the `Drawer` within the `Drawer` container. However, you can still use the `HandleBar` and title area (if `title` prop is provided) to drag to close.
 
 ```jsx
 function ScrollableDrawer() {
@@ -45,11 +45,11 @@ function ScrollableDrawer() {
       <Button onPress={toggleOn}>Open</Button>
       {visible && (
         <Drawer pin={pin} onCloseComplete={toggleOff} disableCapturePanGestureToDismiss>
-          {({ closeDrawer }) => (
+          {({ handleClose }) => (
             <ScrollView>
               <VStack spacing={2}>
                 <LoremIpsum />
-                <Button onPress={closeDrawer}>Close Drawer</Button>
+                <Button onPress={handleClose}>Close Drawer</Button>
               </VStack>
             </ScrollView>
           )}

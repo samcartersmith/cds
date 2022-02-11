@@ -8,3 +8,4 @@ export * from './InputIconButton';
 export * from './Select';
 export * from './SelectOption';
 export * from './SearchInput';
+export * from './Menu';

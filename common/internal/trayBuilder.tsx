@@ -1,11 +1,14 @@
-import React, { useCallback, useState } from 'react';
+import React, { useRef, useCallback, useState, MutableRefObject, useMemo } from 'react';
 import type {
   BoxBaseProps,
   ButtonBaseProps,
+  DrawerRefBaseProps,
   FeedCardBaseProps,
   IconButtonBaseProps,
   IllustrationPictogramNames,
+  NoopFn,
   PictogramProps,
+  SelectBaseProps,
   SelectOptionBaseProps,
   SharedProps,
   StackBaseProps,
@@ -14,114 +17,170 @@ import type {
 import { useToggler } from '../hooks/useToggler';
 import { prices } from './data/prices';
 import { navigationOptions } from './data/navigation';
+import { loremIpsum } from './data/loremIpsum';
 
 const options: string[] = prices.slice(0, 4);
 const lotsOfOptions: string[] = prices.slice(0, 30);
 const simpleOptions: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];
 
-type LinkableProps = {
-  onPress?: null | ((event: unknown) => void) | undefined;
+type PressableProps = {
+  onPress?: NoopFn;
+};
+
+type SelectOptionProps = {
+  value: string;
+} & PressableProps &
+  Omit<SelectOptionBaseProps, 'compact'>;
+
+type TextProps = {
+  children: string;
+};
+
+type TrayProps = {
+  ref?: MutableRefObject<DrawerRefBaseProps | undefined>;
+} & TrayBaseProps;
+
+type RenderItemProps = {
+  index: number;
+  item: string;
+};
+
+type FlatListProps = {
+  data: string[];
+  renderItem: (item: RenderItemProps) => void;
+  contentContainerStyle: Record<string, string | number>;
 };
 
 export type CreateTrayProps = {
-  Tray: React.ComponentType<TrayBaseProps>;
+  Tray: React.ComponentType<TrayProps>;
   Button: React.ComponentType<ButtonBaseProps & SharedProps & { onPress?: () => void }>;
-  SelectOption: React.ComponentType<Omit<SelectOptionBaseProps, 'compact'> & LinkableProps>;
-  ScrollView: React.ComponentType;
+  SelectOption: React.ComponentType<SelectOptionProps>;
+  FlatList: React.ComponentType<FlatListProps>;
   FeedCard: React.ComponentType<FeedCardBaseProps>;
-  IconButton: React.ComponentType<IconButtonBaseProps & LinkableProps>;
+  IconButton: React.ComponentType<IconButtonBaseProps & PressableProps>;
   Pictogram: React.ComponentType<PictogramProps>;
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  TextBody: React.ComponentType<TextProps>;
+  Menu: React.ComponentType<React.PropsWithChildren<Pick<SelectBaseProps, 'onChange' | 'value'>>>;
 };
 
 type DefaultTrayTypes = {
   title?: string;
 };
 
+// eslint-disable-next-line no-console
+const handleNoop = () => console.log('pressed');
+
 export const trayBuilder = ({
   Tray,
   Button,
   SelectOption,
-  ScrollView,
+  FlatList,
   FeedCard,
   IconButton,
   Pictogram,
   HStack,
+  TextBody,
+  Menu,
 }: CreateTrayProps) => {
   const DefaultTray = ({ title }: DefaultTrayTypes) => {
-    const [isTrayVisible, toggleTray] = useToggler(false);
+    const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+      useToggler(false);
     const [value, setValue] = useState<string>();
+    const trayRef = useRef<DrawerRefBaseProps | undefined>(undefined);
+
+    const handleOptionPress = () => {
+      trayRef.current?.handleClose();
+    };
+
     return (
       <>
-        {/* eslint-disable-next-line react-perf/jsx-no-new-function-as-prop */}
-        <Button onPress={() => toggleTray.toggle()}>Open</Button>
+        <Button onPress={handleOpenTray}>Open</Button>
         {isTrayVisible && (
-          // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-          <Tray title={title} onCloseComplete={() => toggleTray.toggleOff()}>
-            {({ closeTray }) =>
-              options.map((option: string) => (
+          <Tray title={title} onCloseComplete={handlehandleClose} ref={trayRef}>
+            <Menu value={value} onChange={setValue}>
+              {options.map((option: string) => (
                 <SelectOption
                   key={option}
                   title={option}
-                  description="Price"
-                  selected={option === value}
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  onPress={() => {
-                    setValue(option);
-                    closeTray();
-                  }}
+                  description="BTC"
+                  onPress={handleOptionPress}
+                  value={option}
                 />
-              ))
-            }
+              ))}
+            </Menu>
           </Tray>
         )}
       </>
     );
   };
   const ScrollableTray = ({ title }: DefaultTrayTypes) => {
-    const [isTrayVisible, toggleTray] = useToggler(false);
+    const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+      useToggler(false);
     const [value, setValue] = useState<string>();
+    const trayRef = useRef<DrawerRefBaseProps>();
+
+    const spacingStyles = useMemo(
+      () => ({
+        paddingBottom: 200,
+      }),
+      [],
+    );
+
+    const handleOptionPress = useCallback(() => {
+      trayRef.current?.handleClose();
+    }, []);
+
+    const renderItem = useCallback(
+      ({ index, item }: RenderItemProps) => {
+        return (
+          <SelectOption
+            key={index}
+            title={item}
+            description="BTC"
+            onPress={handleOptionPress}
+            value={item}
+          />
+        );
+      },
+      [handleOptionPress],
+    );
+
     return (
       <>
-        {/* eslint-disable-next-line react-perf/jsx-no-new-function-as-prop */}
-        <Button onPress={() => toggleTray.toggle()}>Open</Button>
+        <Button onPress={handleOpenTray}>Open</Button>
         {isTrayVisible && (
           <Tray
             title={title}
-            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-            onCloseComplete={() => toggleTray.toggleOff()}
+            onCloseComplete={handlehandleClose}
             disableCapturePanGestureToDismiss
+            ref={trayRef}
           >
-            {({ closeTray }) => {
-              return (
-                <ScrollView>
-                  {lotsOfOptions.map((option: string) => (
-                    <SelectOption
-                      key={option}
-                      title={option}
-                      description="Price"
-                      selected={option === value}
-                      // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                      onPress={() => {
-                        setValue(option);
-                        closeTray();
-                      }}
-                    />
-                  ))}
-                </ScrollView>
-              );
-            }}
+            <Menu value={value} onChange={setValue}>
+              <FlatList
+                data={lotsOfOptions}
+                renderItem={renderItem}
+                contentContainerStyle={spacingStyles}
+              />
+            </Menu>
           </Tray>
         )}
       </>
     );
   };
   const FeedCardTray = () => {
-    const [isTrayVisible, toggleTray] = useToggler(false);
+    const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+      useToggler(false);
     const [value, setValue] = useState<string>();
+    const trayRef = useRef<DrawerRefBaseProps>();
+
+    const handleOptionPress = useCallback(() => {
+      trayRef.current?.handleClose();
+    }, []);
+
     const handleFeedCardHeaderButtonPress = useCallback(() => {
-      toggleTray.toggleOn();
-    }, [toggleTray]);
+      handleOpenTray();
+    }, [handleOpenTray]);
     return (
       <>
         <FeedCard
@@ -146,44 +205,44 @@ export const trayBuilder = ({
           }
         />
         {isTrayVisible && (
-          // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-          <Tray onCloseComplete={() => toggleTray.toggleOff()}>
-            {({ closeTray }) =>
-              simpleOptions.map((option: string) => (
+          <Tray onCloseComplete={handlehandleClose} ref={trayRef}>
+            <Menu value={value} onChange={setValue}>
+              {simpleOptions.map((option: string) => (
                 <SelectOption
                   key={option}
                   description={option}
-                  selected={option === value}
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  onPress={() => {
-                    setValue(option);
-                    closeTray();
-                  }}
+                  onPress={handleOptionPress}
+                  value={option}
                 />
-              ))
-            }
+              ))}
+            </Menu>
           </Tray>
         )}
       </>
     );
   };
   const NavigationTray = () => {
-    const [isTrayVisible, toggleTray] = useToggler(false);
+    const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+      useToggler(false);
     const [value, setValue] = useState<string>();
+    const trayRef = useRef<DrawerRefBaseProps>();
+
+    const handleOptionPress = useCallback(() => {
+      trayRef.current?.handleClose();
+    }, []);
     const handleAppSwitcherPress = useCallback(() => {
-      toggleTray.toggleOn();
-    }, [toggleTray]);
+      handleOpenTray();
+    }, [handleOpenTray]);
     return (
       <>
         <HStack justifyContent="flex-end" minHeight={200} gap={2}>
           <IconButton name="hamburger" onPress={handleAppSwitcherPress} />
-          <IconButton name="profile" />
+          <IconButton name="profile" onPress={handleNoop} />
         </HStack>
         {isTrayVisible && (
-          // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-          <Tray onCloseComplete={() => toggleTray.toggleOff()}>
-            {({ closeTray }) =>
-              navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
+          <Tray onCloseComplete={handlehandleClose}>
+            <Menu onChange={setValue} value={value}>
+              {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                 <SelectOption
                   key={optionValue}
                   title={name}
@@ -191,15 +250,65 @@ export const trayBuilder = ({
                   media={
                     <Pictogram dimension="48x48" name={mediaName as IllustrationPictogramNames} />
                   }
-                  selected={value === optionValue}
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  onPress={() => {
-                    setValue(optionValue);
-                    closeTray();
-                  }}
+                  onPress={handleOptionPress}
+                  value={optionValue}
                 />
-              ))
-            }
+              ))}
+            </Menu>
+          </Tray>
+        )}
+      </>
+    );
+  };
+  const TrayWithinTray = ({ title }: DefaultTrayTypes) => {
+    const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+      useToggler(false);
+    const [
+      isInceptionTrayVisible,
+      { toggleOff: handleCloseInceptionTray, toggleOn: handleOpenInceptionTray },
+    ] = useToggler(false);
+    const isBlurred = useRef<boolean>(false);
+
+    const onTrayClose = useCallback(() => {
+      handlehandleClose();
+      if (!isBlurred.current) {
+        handleOpenInceptionTray();
+      }
+      isBlurred.current = false;
+    }, [handleOpenInceptionTray, handlehandleClose, isBlurred]);
+
+    const handleBlur = useCallback(() => {
+      isBlurred.current = true;
+    }, []);
+
+    return (
+      <>
+        <Button onPress={handleOpenTray}>Open</Button>
+        {isTrayVisible && (
+          <Tray title={title} onCloseComplete={onTrayClose} onBlur={handleBlur}>
+            {({ handleClose }) => {
+              return (
+                <>
+                  <HStack spacing={3}>
+                    <TextBody>{loremIpsum.repeat(3)}</TextBody>
+                  </HStack>
+                  <HStack justifyContent="center">
+                    <Button onPress={handleClose}>More options</Button>
+                  </HStack>
+                </>
+              );
+            }}
+          </Tray>
+        )}
+        {isInceptionTrayVisible && (
+          <Tray title={title} onCloseComplete={handleCloseInceptionTray}>
+            {() => {
+              return (
+                <HStack spacing={3}>
+                  <TextBody>{loremIpsum.repeat(3)}</TextBody>
+                </HStack>
+              );
+            }}
           </Tray>
         )}
       </>
@@ -210,5 +319,6 @@ export const trayBuilder = ({
     ScrollableTray,
     FeedCardTray,
     NavigationTray,
+    TrayWithinTray,
   };
 };

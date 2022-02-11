@@ -13,8 +13,6 @@ import { HStack } from '../layout/HStack';
 
 export type SelectProps = {
   children: ReactElement<MenuItemProps & LinkableProps>[];
-  /** Callback that is fired whenever a select option is selected */
-  onChange?: (newValue: string) => void;
 } & SelectBaseProps;
 
 export const Select = memo(

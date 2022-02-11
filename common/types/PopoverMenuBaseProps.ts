@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { NoopFn } from './Helpers';
 import { SharedProps } from './SharedProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SetState } from './React';
 
 export type PopoverPositionConfig = {
   offset: [number, number];
@@ -27,7 +28,7 @@ export type PopoverPositionConfig = {
 export type PopoverMenuBaseProps = {
   children: ReactNode[];
   /** Callback that is fired whenever a select option is selected */
-  onChange?: (newValue: string) => void;
+  onChange?: ((newValue: string) => void) | SetState<string>;
   /** Default selected value, or preselected value */
   value?: string;
   /**

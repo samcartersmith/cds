@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { trayBuilder, CreateTrayProps } from '@cbhq/cds-common/internal/trayBuilder';
 
 import { Button } from '../../buttons/Button';
@@ -12,19 +12,25 @@ import { IconButton } from '../../buttons/IconButton';
 import { FeedCard } from '../../cards/FeedCard';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { HStack } from '../../layout/HStack';
+import { TextBody } from '../../typography';
+import { Menu } from '../../controls/Menu';
 
 const TrayScreen = () => {
-  const { DefaultTray, ScrollableTray, FeedCardTray, NavigationTray } = trayBuilder({
-    Tray,
-    Button,
-    SelectOption,
-    ScrollView,
-    View,
-    IconButton,
-    FeedCard,
-    Pictogram,
-    HStack,
-  } as CreateTrayProps);
+  const { DefaultTray, ScrollableTray, FeedCardTray, NavigationTray, TrayWithinTray } = trayBuilder(
+    {
+      Tray,
+      Button,
+      SelectOption,
+      FlatList,
+      View,
+      IconButton,
+      FeedCard,
+      Pictogram,
+      HStack,
+      TextBody,
+      Menu,
+    } as unknown as CreateTrayProps,
+  );
 
   return (
     <ExampleScreen>
@@ -42,6 +48,9 @@ const TrayScreen = () => {
       </Example>
       <Example title="Navigation with Tray">
         <NavigationTray />
+      </Example>
+      <Example title="Tray within a Tray">
+        <TrayWithinTray />
       </Example>
     </ExampleScreen>
   );

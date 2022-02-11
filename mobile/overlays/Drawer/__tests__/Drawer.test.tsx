@@ -36,10 +36,10 @@ const MockDrawer: React.FC<Partial<DrawerBaseProps>> = ({ onCloseComplete, pin =
       </Button>
       {isVisible ? (
         <Drawer visible={isVisible} onCloseComplete={handleRequestClose} pin={pin}>
-          {({ closeDrawer }) => (
+          {({ handleClose }) => (
             <VStack spacing={2}>
               <LoremIpsum />
-              <Button testID="close-drawer-button" onPress={closeDrawer}>
+              <Button testID="close-drawer-button" onPress={handleClose}>
                 Close Drawer
               </Button>
             </VStack>

@@ -3,7 +3,7 @@ import { NoopFn } from './Helpers';
 import { PinningDirection } from './BoxBaseProps';
 import { SharedProps } from './SharedProps';
 
-export type DrawerRenderChildren = (props: { closeDrawer: NoopFn }) => NonNullable<ReactNode>;
+export type DrawerRenderChildren = (props: { handleClose: NoopFn }) => NonNullable<ReactNode>;
 
 export type DrawerBaseProps = {
   /** Component to render as the Modal content */
@@ -30,9 +30,11 @@ export type DrawerBaseProps = {
    * @default false
    */
   disableCapturePanGestureToDismiss?: boolean;
+  /** Callback fired when the overlay is pressed, or swipe to close */
+  onBlur?: NoopFn;
 } & SharedProps;
 
 export type DrawerRefBaseProps = {
   /** ref callback that animates out the drawer */
-  handleDrawerClose: NoopFn;
+  handleClose: NoopFn;
 };

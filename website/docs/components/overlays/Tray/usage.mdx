@@ -12,7 +12,11 @@ By default, `Tray`s have a `HandleBar` which is used to drag the `Tray` on and o
 
 `Tray`s can have a title.
 
-`Tray`s can render anything as children, however we recommend passing a callback as a child, and taking advantage of the exposed `closeTray` prop so children can toggle the visibility of the `Tray`.
+### Render methods
+
+#### Callback as children
+
+`Tray`s can render anything as children, however we recommend passing a callback as a child, and taking advantage of the exposed `handleClose` prop so children can toggle the visibility of the `Tray`.
 
 ```jsx
 function DefaultTray() {
@@ -22,10 +26,10 @@ function DefaultTray() {
       <Button onPress={toggleOn}>Open</Button>
       {visible && (
         <Tray title="Example Title" onCloseComplete={toggleOff}>
-          {({ closeTray }) => (
+          {({ handleClose }) => (
             <VStack spacing={2}>
               <LoremIpsum />
-              <Button onPress={closeTray}>Close Tray</Button>
+              <Button onPress={handleClose}>Close Tray</Button>
             </VStack>
           )}
         </Tray>
@@ -33,6 +37,35 @@ function DefaultTray() {
     </>
   );
 }
+```
+
+#### Close with a ref
+
+If you don't want to render children inside of a callback, you can also use the `handlehandleClose` method exposed through a `ref` on the `Tray`.
+
+```jsx
+const TrayWithRef = () => {
+  const [visible, { toggleOn, toggleOff }] = useToggler(false);
+  const trayRef = useRef(undefined);
+
+  const handleOptionPress = () => {
+    trayRef.current?.handleClose();
+  };
+
+  return (
+    <>
+      <Button onPress={toggleOn}>Open</Button>
+      {visible && (
+        <Tray title={title} onCloseComplete={toggleOff} ref={trayRef}>
+          <VStack spacing={2}>
+            <LoremIpsum />
+            <Button onPress={handleClose}>Close Tray</Button>
+          </VStack>
+        </Tray>
+      )}
+    </>
+  );
+};
 ```
 
 ### Overflow
@@ -49,11 +82,11 @@ function ScrollableTray() {
       <Button onPress={toggleOn}>Open</Button>
       {visible && (
         <Tray pin={pin} onCloseComplete={toggleOff} disableCapturePanGestureToDismiss>
-          {({ closeTray }) => (
+          {({ handleClose }) => (
             <ScrollView>
               <VStack spacing={2}>
                 <LoremIpsum />
-                <Button onPress={closeTray}>Close Drawer</Button>
+                <Button onPress={handleClose}>Close Drawer</Button>
               </VStack>
             </ScrollView>
           )}
@@ -62,4 +95,44 @@ function ScrollableTray() {
     </>
   );
 }
+```
+
+### As a menu
+
+If you want to render a list of `SelectOption`s as children of a `Tray`, you will need to wrap them in a `Menu` component. On mobile, this acts as a controlled input that keeps track of the currently selected value.
+
+```jsx
+const TrayMenu = () => {
+  const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+    useToggler(false);
+  const [value, setValue] = useState();
+  const trayRef = useRef(undefined);
+
+  const handleOptionPress = () => {
+    trayRef.current?.handleClose();
+  };
+
+  return (
+    <>
+      <Button onPress={handleOpenTray}>Open</Button>
+      {isTrayVisible && (
+        <Tray title={title} onCloseComplete={handlehandleClose} ref={trayRef}>
+          {/* Make sure you pass both a value and onChange handler to Menu */}
+          <Menu value={value} onChange={setValue}>
+            {/* children can be anything, but in order to make it work like a select, you need to pass some SelectOptions */}
+            {options.map((option: string) => (
+              <SelectOption
+                key={option}
+                title={option}
+                description="BTC"
+                onPress={handleOptionPress}
+                value={option}
+              />
+            ))}
+          </Menu>
+        </Tray>
+      )}
+    </>
+  );
+};
 ```

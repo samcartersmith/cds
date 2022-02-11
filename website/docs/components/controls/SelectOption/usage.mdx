@@ -42,22 +42,21 @@ function DefaultSelect() {
 function DefaultSelectMobile() {
   const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
   const [value, setValue] = useState();
-  const options = ['666', '2387', '4542', '54534', '5435', '77', '123', '4345345', '6544'];
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];
   return (
     <Select value={value} onPress={toggleOn}>
       {isTrayVisible && (
         <Tray title={trayTitle} onCloseComplete={toggleOff}>
-          {({ closeTray }) =>
+          {({ handleClose }) =>
             options.map((option) => {
               return (
                 <SelectOption
-                  title={option.label}
-                  key={option.value}
-                  onPress={() => {
-                    setValue(option.value);
-                    closeTray();
-                  }}
-                  selected={value === option.value}
+                  title={option}
+                  key={option}
+                  onPress={handleClose}
+                  onChange={setValue}
+                  value={option}
+                  selected={value === option}
                 />
               );
             })

@@ -10,16 +10,21 @@ export default function SelectOptionScreen() {
   return (
     <ExampleScreen>
       <Example title="Default">
-        <SelectOption description="Description" onPress={handleOptionPress} />
+        <SelectOption value="Title" description="Description" onPress={handleOptionPress} />
       </Example>
       <Example title="Default with description">
-        <SelectOption title="Title" description="Description" onPress={handleOptionPress} />
+        <SelectOption
+          value="Title"
+          title="Title"
+          description="Description"
+          onPress={handleOptionPress}
+        />
       </Example>
       <Example title="Default with description and selected">
         <SelectOption
+          value="Title"
           title="Title"
           description="Description"
-          selected
           onPress={handleOptionPress}
         />
       </Example>

@@ -177,7 +177,6 @@ export const popoverMenuBuilder = ({
               title={option}
               description="BTC"
               testID={`option-${option}`}
-              selected={value === option}
             />
           ))}
           <Divider />
@@ -189,7 +188,6 @@ export const popoverMenuBuilder = ({
               title={option}
               description="BTC"
               testID={`option-${option}`}
-              selected={value === option}
             />
           ))}
         </PopoverMenu>
@@ -235,7 +233,6 @@ export const popoverMenuBuilder = ({
                     title={name}
                     description={description}
                     media={<Pictogram dimension="48x48" name={mediaName} />}
-                    selected={value === optionValue}
                   />
                 ))}
               </PopoverMenu>
@@ -284,7 +281,6 @@ export const popoverMenuBuilder = ({
                 key={option}
                 title={option}
                 testID={`option-${option}`}
-                selected={value === option}
               />
             ))}
           </PopoverMenu>
@@ -333,13 +329,7 @@ export const popoverMenuBuilder = ({
           </PopoverTriggerWrapper>
           <SectionTitle text="Manage your profile" />
           {accountOptions.map((option) => (
-            <SelectOption
-              value={option}
-              key={option}
-              title={option}
-              testID={`option-${option}`}
-              selected={value === option}
-            />
+            <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
           ))}
         </PopoverMenu>
       </VStack>
@@ -380,7 +370,6 @@ export const popoverMenuBuilder = ({
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
-                selected={value === option}
               />
             ))}
             <Divider />
@@ -392,7 +381,6 @@ export const popoverMenuBuilder = ({
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
-                selected={value === option}
               />
             ))}
           </PopoverMenu>

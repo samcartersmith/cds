@@ -26,11 +26,10 @@ type MenuItemProps = {
   selected?: boolean;
 } & LinkableProps;
 
-type SelectOptionProps = SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key' | 'selected'>;
+type SelectOptionProps = SelectOptionBaseProps & Pick<MenuItemProps, 'value' | 'key'>;
 
 export type SelectProps = {
   children: ReactElement<MenuItemProps>[];
-  onChange?: (newValue: string) => void;
   onBlur?: NoopFn;
 } & SelectBaseProps;
 
@@ -57,6 +56,15 @@ export const priceOptions = [
   '874',
   '675765',
   '65655',
+];
+
+export const exampleOptions = [
+  'Option 1',
+  'Option 2',
+  'Option 3',
+  'Option 4',
+  'Option 5',
+  'Option 6',
 ];
 
 export const selectBuilder = ({
@@ -105,14 +113,13 @@ export const selectBuilder = ({
             helperText={helperText}
             onBlur={onBlur}
           >
-            {priceOptions.map((option) => (
+            {exampleOptions.map((option) => (
               <SelectOption
                 value={option}
                 key={option}
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
-                selected={value === option}
               />
             ))}
           </Select>
@@ -134,14 +141,13 @@ export const selectBuilder = ({
             helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
             startNode={<InputIcon name="calendar" />}
           >
-            {priceOptions.map((option) => (
+            {exampleOptions.map((option) => (
               <SelectOption
                 value={option}
                 key={option}
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
-                selected={value === option}
               />
             ))}
           </Select>
@@ -163,14 +169,13 @@ export const selectBuilder = ({
             helperText="You can only choose one option"
             disabled
           >
-            {priceOptions.map((option) => (
+            {exampleOptions.map((option) => (
               <SelectOption
                 value={option}
                 key={option}
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
-                selected={value === option}
               />
             ))}
           </Select>
@@ -192,7 +197,7 @@ export const selectBuilder = ({
             label="How many would you like? "
             helperText="You only get one choice"
           >
-            {priceOptions.map((option) => (
+            {exampleOptions.map((option) => (
               <SelectOption
                 value={option}
                 key={option}
@@ -200,7 +205,6 @@ export const selectBuilder = ({
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
-                selected={value === option}
               />
             ))}
           </Select>
@@ -228,23 +232,21 @@ export const selectBuilder = ({
   };
 };
 
+type SelectOptionMobileProps = {
+  onPress?: NoopFn;
+} & Omit<SelectOptionBaseProps, 'compact'>;
+
 export type CreateSelectProps = {
   Select: ComponentType<SelectBaseProps>;
   Tray: ComponentType<TrayBaseProps>;
-  SelectOption: ComponentType<SelectOptionBaseProps & LinkableProps>;
+  SelectOption: ComponentType<SelectOptionMobileProps>;
   ScrollView: ComponentType;
   HStack: ComponentType<BoxBaseProps & StackBaseProps>;
   VStack: ComponentType<BoxBaseProps & StackBaseProps>;
   TextInput: ComponentType<TextInputBaseProps>;
 };
 
-type OptionProps = {
-  label: string;
-  value: string;
-};
-
 type DefaultSelectTypes = {
-  options: OptionProps[];
   trayTitle?: string;
   hasDescription?: boolean;
   compactSelectOption?: boolean;
@@ -261,18 +263,15 @@ export const selectBuilderMobile = ({
   TextInput,
 }: CreateSelectProps) => {
   const DefaultSelect = ({
-    options,
-    value: initialValue,
     trayTitle,
     hasDescription,
-    compactSelectOption,
     hideHandleBar,
     ...props
   }: DefaultSelectTypes) => {
     const [isTrayVisible, { toggleOff, toggleOn }] = useToggler(false);
-    const [value, setValue] = useState<string | undefined>(initialValue);
+    const [selectedValue, setValue] = useState<string | undefined>();
     return (
-      <Select value={value} onPress={toggleOn} {...props}>
+      <Select value={selectedValue} onPress={toggleOn} onChange={setValue} {...props}>
         {isTrayVisible && (
           <Tray
             title={trayTitle}
@@ -280,21 +279,15 @@ export const selectBuilderMobile = ({
             hideHandleBar={hideHandleBar}
             testID="select-input-tray"
           >
-            {({ closeTray }) =>
-              options.map((option) => {
-                // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                const onPress = () => {
-                  setValue(option.value);
-                  closeTray();
-                };
+            {({ handleClose }) =>
+              exampleOptions.map((option) => {
                 return (
                   <SelectOption
-                    title={option.label}
-                    compact={compactSelectOption}
-                    key={option.value}
-                    description={hasDescription && 'BTC'}
-                    onPress={onPress}
-                    selected={value === option.value}
+                    title={option}
+                    key={option}
+                    description={hasDescription && 'Description'}
+                    onPress={handleClose}
+                    value={option}
                   />
                 );
               })
@@ -305,36 +298,23 @@ export const selectBuilderMobile = ({
     );
   };
 
-  const ScrollableSelect = ({
-    options,
-    value: initialValue,
-    trayTitle,
-    hasDescription,
-    compactSelectOption,
-    ...props
-  }: DefaultSelectTypes) => {
+  const ScrollableSelect = ({ trayTitle, hasDescription, ...props }: DefaultSelectTypes) => {
     const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
-    const [value, setValue] = useState<string | undefined>(initialValue);
+    const [selectedValue, setValue] = useState<string | undefined>(exampleOptions[2]);
     return (
-      <Select value={value} onPress={toggleOn} {...props}>
+      <Select value={selectedValue} onPress={toggleOn} onChange={setValue} {...props}>
         {isTrayVisible && (
           <Tray disableCapturePanGestureToDismiss title={trayTitle} onCloseComplete={toggleOff}>
-            {({ closeTray }) => (
+            {({ handleClose }) => (
               <ScrollView>
-                {options.map((option) => {
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  const onPress = () => {
-                    setValue(option.value);
-                    closeTray();
-                  };
+                {exampleOptions.map((option) => {
                   return (
                     <SelectOption
-                      title={option.label}
-                      compact={compactSelectOption}
-                      key={option.value}
-                      description={hasDescription && 'BTC'}
-                      onPress={onPress}
-                      selected={value === option.value}
+                      title={option}
+                      key={option}
+                      description={hasDescription && 'Description'}
+                      onPress={handleClose}
+                      value={option}
                     />
                   );
                 })}
@@ -347,8 +327,8 @@ export const selectBuilderMobile = ({
   };
 
   const SelectFilter = () => {
-    const [year, setYear] = useState<string>();
-    const [asset, setAsset] = useState<string>();
+    const [year, setYear] = useState<string | undefined>();
+    const [asset, setAsset] = useState<string | undefined>();
     const [yearTrayVisible, handleYearTrayVisibility] = useToggler(false);
     const [assetTrayVisible, handleAssetTrayVisibility] = useToggler(false);
 
@@ -370,22 +350,18 @@ export const selectBuilderMobile = ({
           placeholder="All years"
           value={year}
           onPress={handleYearTrayVisibility.toggle}
+          onChange={setYear}
         >
           {yearTrayVisible && (
             <Tray onCloseComplete={handleYearTrayVisibility.toggleOff}>
-              {({ closeTray }) =>
+              {({ handleClose }) =>
                 years.map((option) => {
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  const onPress = () => {
-                    setYear(option);
-                    closeTray();
-                  };
                   return (
                     <SelectOption
                       title={option}
                       key={option}
-                      onPress={onPress}
-                      selected={year === option}
+                      onPress={handleClose}
+                      value={option}
                     />
                   );
                 })
@@ -398,22 +374,18 @@ export const selectBuilderMobile = ({
           placeholder="All assets"
           value={asset}
           onPress={handleAssetTrayVisibility.toggle}
+          onChange={setAsset}
         >
           {assetTrayVisible && (
             <Tray onCloseComplete={handleAssetTrayVisibility.toggleOff}>
-              {({ closeTray }) =>
+              {({ handleClose }) =>
                 assets.map((option) => {
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  const onPress = () => {
-                    setAsset(option);
-                    closeTray();
-                  };
                   return (
                     <SelectOption
                       title={option}
                       key={option}
-                      onPress={onPress}
-                      selected={asset === option}
+                      onPress={handleClose}
+                      value={option}
                     />
                   );
                 })
@@ -427,29 +399,24 @@ export const selectBuilderMobile = ({
   const SelectForm = () => {
     const accountTypeOptions = ['Savings Account', 'Checking Account'];
 
-    const [accountType, setAccountType] = useState(accountTypeOptions[0]);
+    const [accountType, setAccountType] = useState<string | undefined>(accountTypeOptions[0]);
     const [visible, handleTrayVisibility] = useToggler(false);
 
     return (
       <VStack gap={2} minHeight={400} background="background">
         <TextInput label="Account number" />
         <TextInput label="Re-enter account number" />
-        <Select value={accountType} onPress={handleTrayVisibility.toggle}>
+        <Select value={accountType} onPress={handleTrayVisibility.toggle} onChange={setAccountType}>
           {visible && (
             <Tray onCloseComplete={handleTrayVisibility.toggleOff}>
-              {({ closeTray }) =>
+              {({ handleClose }) =>
                 accountTypeOptions.map((option) => {
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  const onPress = () => {
-                    setAccountType(option);
-                    closeTray();
-                  };
                   return (
                     <SelectOption
                       title={option}
                       key={option}
-                      onPress={onPress}
-                      selected={accountType === option}
+                      onPress={handleClose}
+                      value={option}
                     />
                   );
                 })

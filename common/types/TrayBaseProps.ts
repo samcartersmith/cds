@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { DrawerBaseProps } from './DrawerBaseProps';
 import { NoopFn } from './Helpers';
 
-export type TrayRenderChildren = (props: { closeTray: NoopFn }) => NonNullable<ReactNode>;
+export type TrayRenderChildren = (props: { handleClose: NoopFn }) => NonNullable<ReactNode>;
 
 export type TrayBaseProps = {
   children: NonNullable<ReactNode> | TrayRenderChildren;

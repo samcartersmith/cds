@@ -1,8 +1,13 @@
 import React, { RefObject, forwardRef, memo } from 'react';
 import { ForwardedRef, InputVariant, SelectBaseProps } from '@cbhq/cds-common';
 import { css } from 'linaria';
-import { labelTextColor } from '@cbhq/cds-common/tokens/select';
+import {
+  labelTextColor,
+  selectTriggerCompactMinHeight,
+  selectTriggerMinHeight,
+} from '@cbhq/cds-common/tokens/select';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { TextBody } from '../typography/TextBody';
 import { InputIcon } from './InputIcon';
 import { PressableOpacity } from '../system';
@@ -16,7 +21,7 @@ import { TextInputFocusVariantContext } from './context';
 export type SelectTriggerProps = {
   rotateAnimationRef: RefObject<HTMLDivElement>;
   triggerHasFocus: boolean;
-} & Omit<SelectBaseProps, 'children' | 'focused' | 'width'> &
+} & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange'> &
   Omit<PopoverTriggerProps, 'children' | 'focused'>;
 
 const pressableOverrides = css`
@@ -51,6 +56,9 @@ export const SelectTrigger = memo(
     const accessibilityLabelId = useA11yId();
     const accessibilityDescriptionId = useA11yId();
     const focusedVariant = useInputVariant(triggerHasFocus, variant as InputVariant);
+    const minHeight = useScaleConditional(
+      compact ? selectTriggerCompactMinHeight : selectTriggerMinHeight,
+    );
 
     return (
       <SelectStack
@@ -66,7 +74,12 @@ export const SelectTrigger = memo(
       >
         <PopoverTrigger onPress={onPress}>
           <PressableOpacity width="100%" noScaleOnPress className={pressableOverrides} {...props}>
-            <HStack width="100%" minWidth={0} spacingStart={startNode ? 0 : 2}>
+            <HStack
+              minHeight={minHeight}
+              width="100%"
+              minWidth={0}
+              spacingStart={startNode ? 0 : 2}
+            >
               {!!startNode && (
                 <HStack alignItems="center" justifyContent="center" minWidth={0}>
                   {startNode}

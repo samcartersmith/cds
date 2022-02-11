@@ -1,5 +1,4 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { Select } from '@cbhq/cds-web/controls/Select';
 import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
@@ -28,17 +27,6 @@ const SelectExample = () => {
   const [value, setValue] = useState('');
   const [valueRight, setValueRight] = useState('');
 
-  const handleOnChange = useCallback(
-    (selectedValue: string, side?: 'right' | 'left') => {
-      if (side === 'right') {
-        setValueRight(selectedValue);
-      } else {
-        setValue(selectedValue);
-      }
-    },
-    [setValue, setValueRight],
-  );
-
   return (
     <VStack spacingBottom={4}>
       <VStack
@@ -58,7 +46,7 @@ const SelectExample = () => {
                 value={value}
                 label="Designer"
                 placeholder="Select your designer"
-                onChange={(selectedValue) => handleOnChange(selectedValue)}
+                onChange={setValue}
               >
                 {design.map((option) => (
                   <SelectOption description={option} value={option} />
@@ -71,7 +59,7 @@ const SelectExample = () => {
                 value={valueRight}
                 label="Engineer"
                 placeholder="Select your engineer"
-                onChange={(selectedValue) => handleOnChange(selectedValue, 'right')}
+                onChange={setValueRight}
               >
                 {eng.map((option) => (
                   <SelectOption description={option} value={option} />

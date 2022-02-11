@@ -6,15 +6,10 @@ import { Cell, overflowClassName } from '../cells/Cell';
 import { VStack } from '../layout/VStack';
 import { TextHeadline, TextBody } from '../typography';
 import { CellAccessory } from '../cells/CellAccessory';
-import { MenuItem, MenuItemProps } from '../overlays/PopoverMenu/MenuItem';
+import { MenuItem } from '../overlays/PopoverMenu/MenuItem';
 import { usePopoverContext } from '../overlays/PopoverMenu/PopoverContext';
 
-// I know this looks weird.. but I got syntax errors whenever I tried to inline this
-type SelectOptionWebProps = Omit<SelectOptionBaseProps, 'selected'>;
-
-export type SelectOptionProps = SelectOptionWebProps &
-  Pick<MenuItemProps, 'value'> &
-  RefAttributes<HTMLElement>;
+export type SelectOptionProps = SelectOptionBaseProps & RefAttributes<HTMLElement>;
 
 const selectOptionMinHeight: Record<ScaleDensity, number> = {
   normal: 48,

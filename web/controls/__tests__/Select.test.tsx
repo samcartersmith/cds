@@ -3,7 +3,7 @@ import { renderA11y } from '@cbhq/jest-utils';
 import {
   selectBuilder,
   CreateSelectStoriesProps,
-  priceOptions,
+  exampleOptions,
 } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { Select } from '../Select';
@@ -52,7 +52,7 @@ describe('Select', () => {
     expect(onPressSpy).toHaveBeenCalled();
 
     // expect Menu and SelectOption to render
-    expect(getByText(priceOptions[0])).toBeDefined();
+    expect(getByText(exampleOptions[0])).toBeDefined();
   });
   it('closes the Menu when an option is pressed and fires onChange', async () => {
     const onChangeSpy = jest.fn();
@@ -66,7 +66,7 @@ describe('Select', () => {
     fireEvent.click(placeholder);
 
     // expect Menu and SelectOption to render
-    const firstSelectOption = await waitFor(() => getByText(priceOptions[0]));
+    const firstSelectOption = await waitFor(() => getByText(exampleOptions[0]));
 
     // select the first option
     fireEvent.click(firstSelectOption);
@@ -84,10 +84,10 @@ describe('Select', () => {
     fireEvent.click(placeholder);
 
     // expect Menu and SelectOption to render
-    const secondSelectOption = await waitFor(() => getByText(priceOptions[1]));
+    const secondSelectOption = await waitFor(() => getByText(exampleOptions[1]));
     fireEvent.click(secondSelectOption);
 
-    expect(getAllByText(priceOptions[1])).toBeDefined();
+    expect(getAllByText(exampleOptions[1])).toBeDefined();
     expect(queryByText(mockPlaceholder)).toBeNull();
   });
 });

@@ -3,6 +3,7 @@ import { NoopFn } from './Helpers';
 import { InputStackBaseProps, SharedInputProps } from './InputBaseProps';
 import { SharedProps } from './SharedProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SetState } from './React';
 
 export type SelectRenderMenu = (props: { closeMenu: NoopFn }) => JSX.Element;
 
@@ -14,6 +15,8 @@ export type SelectBaseProps = {
   onPress?: NoopFn;
   /** Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input */
   label?: string;
+  /** Callback that is fired whenever a select option is selected */
+  onChange?: ((newValue: string) => void) | SetState<string>;
 } & SharedProps &
   Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused' | 'startNode'> &
   Pick<

@@ -52,10 +52,10 @@ const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
       <Button onPress={toggleOn}>Open</Button>
       {isVisible && (
         <Drawer pin={pin} onCloseComplete={toggleOff}>
-          {({ closeDrawer }) => (
+          {({ handleClose }) => (
             <VStack spacing={2}>
               <LoremIpsum />
-              <Button variant="secondary" onPress={closeDrawer}>
+              <Button variant="secondary" onPress={handleClose}>
                 Close Drawer
               </Button>
             </VStack>
@@ -73,21 +73,21 @@ const SideDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
       <Button onPress={toggleOn}>Open</Button>
       {isVisible && (
         <Drawer pin={pin} onCloseComplete={toggleOff}>
-          {({ closeDrawer }) => (
+          {({ handleClose }) => (
             <VStack spacing={2} justifyContent="space-between" height="100%" spacingBottom={4}>
               <VStack alignItems="center">
                 <Avatar alt="CDS" size="xxl" />
                 <VStack spacing={2}>
                   <TextTitle3>Test User</TextTitle3>
                 </VStack>
-                <Button compact block variant="secondary" onPress={closeDrawer}>
+                <Button compact block variant="secondary" onPress={handleClose}>
                   Profile & Settings
                 </Button>
                 <VStack spacingVertical={2}>
                   {navOptions.map(({ label, icon }) => (
                     <ListCell
                       compact
-                      onPress={closeDrawer}
+                      onPress={handleClose}
                       title={label}
                       key={label}
                       media={<Icon size="s" name={icon} color="foreground" />}
@@ -95,7 +95,7 @@ const SideDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
                   ))}
                 </VStack>
               </VStack>
-              <Button compact block variant="secondary" onPress={closeDrawer}>
+              <Button compact block variant="secondary" onPress={handleClose}>
                 Sign out
               </Button>
             </VStack>
