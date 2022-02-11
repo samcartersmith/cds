@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.10 (2/11/2022, 11:32 AM PST)
+
+#### 🚀 Updates
+
+- **[Accordion]** Accordion mobile ui and animation. [#53693](https://github.cbhq.net/mono/repo/pull/53693), [CDS-1878](https://jira.coinbase-corp.com/browse/CDS-1878)
+
 ## 0.33.9 (2/10/2022, 01:05 PM PST)
 
 #### 🚀 Updates

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.11 (2/11/2022, 11:32 AM PST)
+
+#### 🐞 Fixes
+
+- Breaking (Tooltip): Deprecate CDS Web Tooltip v1; add Tooltip v2 docs. [#53303](https://github.cbhq.net/mono/repo/pull/53303)
+
 ## 0.34.10 (2/10/2022, 01:05 PM PST)
 
 #### 🐞 Fixes

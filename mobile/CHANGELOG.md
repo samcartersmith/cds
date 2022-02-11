@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.7 (2/11/2022, 11:32 AM PST)
+
+#### 🚀 Updates
+
+- **[Accordion]** Accordion mobile ui and animation. [#53693](https://github.cbhq.net/mono/repo/pull/53693), [CDS-1878](https://jira.coinbase-corp.com/browse/CDS-1878)
+
+#### 🐞 Fixes
+
+- Breaking (Tooltip): Deprecate CDS Web Tooltip v1; add Tooltip v2 docs. [#53303](https://github.cbhq.net/mono/repo/pull/53303)
+- Fix perf for overlay animation. [#53950](https://github.cbhq.net/mono/repo/pull/53950)
+
 ## 0.39.6 (2/10/2022, 01:05 PM PST)
 
 #### 🚀 Updates
