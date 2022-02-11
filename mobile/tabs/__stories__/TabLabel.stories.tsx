@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-raw-text */
+import React from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { TabLabel } from '../TabLabel';

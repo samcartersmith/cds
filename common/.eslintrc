@@ -9,5 +9,14 @@
       }
     ],
     "no-process-env": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/**"],
+      "excludedFiles": ["*.test.ts", "*.test.tsx"],
+      "rules": {
+        "react/react-in-jsx-scope": "error"
+      }
+    }
+  ]
 }

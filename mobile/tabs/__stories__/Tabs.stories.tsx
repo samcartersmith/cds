@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { TabProps } from '@cbhq/cds-common';

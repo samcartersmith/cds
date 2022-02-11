@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { TabIndicator } from '../TabIndicator';
 
@@ -11,11 +11,10 @@ const TabIndicatorScreen = () => {
   const [width, setWidth] = useState(120);
   const [xPosition, setXPosition] = useState(120);
 
-  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-  const handlePress = () => {
+  const handlePress = useCallback(() => {
     setWidth(getRandomNumber());
     setXPosition(getRandomNumber());
-  };
+  }, []);
 
   return (
     <ExampleScreen>
