@@ -53,7 +53,7 @@ const ProgressBarFloatLabel = memo(({ label, disabled, progress }: ProgressBarFl
 
       textContainerRef.current.style.transformOrigin = isRtl() ? 'left' : 'right';
 
-      Animated.timing(textContainerRef, {
+      void Animated.timing(textContainerRef, {
         property: 'transform',
         fromValue: `translateX(${startLeftTranslate}px)`,
         toValue: `translateX(${endLeftTranslate}px)`,

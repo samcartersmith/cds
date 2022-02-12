@@ -16,7 +16,7 @@ const ChartMarkerDate: FunctionComponent<{
   const [xPos, setXPos] = useState<number>(0);
   const setupRef = useCallback((ref: HTMLSpanElement) => {
     if (ref) {
-      setXPos(ref?.offsetLeft + ref?.offsetWidth / 2);
+      setXPos(ref.offsetLeft + ref.offsetWidth / 2);
     }
   }, []);
 

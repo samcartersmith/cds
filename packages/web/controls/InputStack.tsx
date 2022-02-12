@@ -100,11 +100,13 @@ export const InputStack = memo(
 
     return (
       <VStack testID={testID} width={width} gap={0.5} {...props}>
-        {!!labelNode && (
-          <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
+        {!!labelNode && typeof labelNode === 'string' ? (
+          <InputLabel>{labelNode}</InputLabel>
+        ) : (
+          labelNode
         )}
         <HStack opacity={disabled ? opacityDisabled : 1}>
-          {!!prependNode && <>{prependNode}</>}
+          {!!prependNode && prependNode}
           <Interactable
             as="span"
             backgroundColor="background"
@@ -117,13 +119,13 @@ export const InputStack = memo(
             style={defaultBorderStyles}
             className={cx(inputBaseAreaStyles, borderStyle, focused && persistedFocusStyles)}
           >
-            {!!startNode && <>{startNode}</>}
+            {!!startNode && startNode}
             {inputNode}
-            {!!endNode && <>{endNode}</>}
+            {!!endNode && endNode}
           </Interactable>
-          {!!appendNode && <>{appendNode}</>}
+          {!!appendNode && appendNode}
         </HStack>
-        {!!helperTextNode && <>{helperTextNode}</>}
+        {!!helperTextNode && helperTextNode}
       </VStack>
     );
   }),

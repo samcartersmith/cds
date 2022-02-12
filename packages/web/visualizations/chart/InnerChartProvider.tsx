@@ -16,5 +16,5 @@ export const InnerChartProvider = ({ width, height, children }: InnerChartProvid
     setHeight(height);
   }, [width, height, setWidth, setHeight]);
 
-  return <>{children}</>;
+  return children;
 };

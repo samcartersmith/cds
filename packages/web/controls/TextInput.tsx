@@ -125,7 +125,7 @@ export const TextInput = memo(
             (compact || !!start) && (
               <HStack onClick={handleNodePress} alignItems="center" justifyContent="center" gap={2}>
                 {compact && !!label && <InputLabel spacingStart={2}>{label}</InputLabel>}
-                {!!start && <>{start}</>}
+                {!!start && start}
               </HStack>
             )
           }
@@ -137,7 +137,7 @@ export const TextInput = memo(
                     {suffix}
                   </TextLabel1>
                 )}
-                {!!end && <>{end}</>}
+                {!!end && end}
               </HStack>
             )
           }

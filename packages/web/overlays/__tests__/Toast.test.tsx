@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Animated } from '../../animation/Animated';
@@ -42,23 +42,4 @@ describe('Toast', () => {
     expect(animationParallelSpy).toHaveBeenCalled();
     expect(animationTimingSpy).toHaveBeenCalled();
   });
-
-  /*
-  // TODO migration error
-  it('fires callbacks on close', async () => {
-    const text = 'Toast copy';
-    const onWillHide = jest.fn();
-    const onDidHide = jest.fn();
-
-    jest.useFakeTimers('legacy');
-
-    const { getByTestId } = render(
-      <Toast text={text} onWillHide={onWillHide} onDidHide={onDidHide} />,
-    );
-
-    fireEvent.click(getByTestId('toast-close-button'));
-
-    expect(onWillHide).toHaveBeenCalledTimes(1);
-    await waitFor(() => expect(onDidHide).toHaveBeenCalledTimes(1));
-  }); */
 });

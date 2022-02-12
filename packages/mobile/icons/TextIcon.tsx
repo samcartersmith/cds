@@ -41,5 +41,5 @@ export const TextIcon = ({
       </Text>
     );
   }
-  return <>{null}</>;
+  return null;
 };

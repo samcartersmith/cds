@@ -114,7 +114,7 @@ export const MenuItem = memo(
                   hideMenu?.();
                 }
               } else if (event.key === 'ArrowDown') {
-                if (focusedOptionIndex !== selectOptions?.length - 1) {
+                if (focusedOptionIndex !== selectOptions.length - 1) {
                   // focus the next option
                   selectOptions[focusedOptionIndex + 1].focus();
                 } else {

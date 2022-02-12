@@ -6,7 +6,7 @@ const TEST_ID = 'search';
 const ROLE = 'search';
 
 describe('Search', () => {
-  let SearchComponent = <></>;
+  let SearchComponent: JSX.Element;
   const onClearSpy = jest.fn();
   const onChangeTextSpy = jest.fn();
   const onSearchSpy = jest.fn();

@@ -68,7 +68,7 @@ export const Card: React.FC<CardProps> = memo(
         overflow="hidden"
         {...props}
       >
-        <>{children}</>
+        {children}
       </VStack>
     );
 

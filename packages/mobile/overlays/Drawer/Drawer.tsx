@@ -134,22 +134,26 @@ export const Drawer = memo(
       );
 
       // this hack clips internal content from overflowing the borderRadius, but also make sure the handlebar still shows if handlebar is enabled
-      const Content = () => {
-        if (shouldShowHandleBar) {
+      const Content = useMemo(() => {
+        return () => {
+          if (shouldShowHandleBar) {
+            return (
+              <>
+                <HandleBar />
+                <Box
+                  borderRadius="pill"
+                  dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
+                >
+                  {typeof children === 'function' ? children(renderChildrenProps) : children}
+                </Box>
+              </>
+            );
+          }
           return (
-            <>
-              <HandleBar />
-              <Box
-                borderRadius="pill"
-                dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
-              >
-                {typeof children === 'function' ? children(renderChildrenProps) : children}
-              </Box>
-            </>
-          );
-        }
-        return <>{typeof children === 'function' ? children(renderChildrenProps) : children}</>;
-      };
+            typeof children === 'function' ? children(renderChildrenProps) : children
+          ) as React.ReactElement;
+        };
+      }, [cardStyles.overflowStyles, children, renderChildrenProps, shouldShowHandleBar]);
 
       return (
         <Modal

@@ -10,6 +10,7 @@ describe('TableRow', () => {
       await renderA11y(
         <TableBody>
           <TableRow>
+            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
             <>Child</>
           </TableRow>
         </TableBody>,
@@ -21,9 +22,11 @@ describe('TableRow', () => {
     const { findByTestId } = render(
       <TableBody>
         <TableRow data-row="my-first-row" testID="first-row">
+          {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
           <>First child</>
         </TableRow>
         <TableRow data-row="my-second-row" testID="second-row">
+          {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
           <>Second child</>
         </TableRow>
       </TableBody>,

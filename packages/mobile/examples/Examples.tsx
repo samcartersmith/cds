@@ -198,6 +198,7 @@ export function useExampleScreenOptions() {
                     {isSearch ? (
                       <TextInput
                         accessibilityLabel="Text input field"
+                        accessibilityHint="Text input field"
                         start={<IconButton transparent name="backArrow" onPress={goBack} />}
                         label=""
                         placeholder="Search"

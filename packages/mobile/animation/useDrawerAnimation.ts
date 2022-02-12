@@ -59,6 +59,13 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
             outputRange: [-drawerDimension * horizontalDrawerPercentageOfView, -MAX_OVER_DRAG],
           }),
         };
+      case 'right':
+        return {
+          translateX: drawerAnimation.current.interpolate({
+            inputRange: [0, 1],
+            outputRange: [drawerDimension * horizontalDrawerPercentageOfView, MAX_OVER_DRAG],
+          }),
+        };
       case 'bottom':
       default:
         return {
@@ -68,13 +75,6 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
               (drawerDimension + handleBarOffset) * verticalDrawerPercentageOfView,
               MAX_OVER_DRAG,
             ],
-          }),
-        };
-      case 'right':
-        return {
-          translateX: drawerAnimation.current.interpolate({
-            inputRange: [0, 1],
-            outputRange: [drawerDimension * horizontalDrawerPercentageOfView, MAX_OVER_DRAG],
           }),
         };
     }

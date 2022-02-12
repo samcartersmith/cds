@@ -1,4 +1,12 @@
-import React, { createContext, memo, useCallback, useContext, useRef, useState } from 'react';
+import React, {
+  createContext,
+  memo,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Animated } from 'react-native';
 import { Value } from 'react-native-reanimated';
 import { noop } from '@cbhq/cds-utils';
@@ -67,31 +75,46 @@ export const ChartProvider = memo(({ children, compact = false }: ChartProviderP
     setIsFallbackVisible(false);
   }, [animateChartIn, animateMinMaxIn]);
 
-  return (
-    <ChartContext.Provider
-      value={{
-        isFallbackVisible,
-        markerXPosition,
-        markerGestureState,
-        showFallback,
-        hideFallback,
-        chartOpacity,
-        animateChartIn,
-        markerOpacity,
-        animateMarkerIn,
-        animateMarkerOut,
-        minMaxOpacity,
-        animateMinMaxIn,
-        animateMinxMaxOut,
-        hoverDateOpacity,
-        animateHoverDateIn,
-        animateHoverDateOut,
-        compact,
-      }}
-    >
-      {children}
-    </ChartContext.Provider>
-  );
+  const value = useMemo(() => {
+    return {
+      isFallbackVisible,
+      markerXPosition,
+      markerGestureState,
+      showFallback,
+      hideFallback,
+      chartOpacity,
+      animateChartIn,
+      markerOpacity,
+      animateMarkerIn,
+      animateMarkerOut,
+      minMaxOpacity,
+      animateMinMaxIn,
+      animateMinxMaxOut,
+      hoverDateOpacity,
+      animateHoverDateIn,
+      animateHoverDateOut,
+      compact,
+    };
+  }, [
+    animateChartIn,
+    animateHoverDateIn,
+    animateHoverDateOut,
+    animateMarkerIn,
+    animateMarkerOut,
+    animateMinMaxIn,
+    animateMinxMaxOut,
+    chartOpacity,
+    compact,
+    hideFallback,
+    hoverDateOpacity,
+    isFallbackVisible,
+    markerGestureState,
+    markerOpacity,
+    markerXPosition,
+    minMaxOpacity,
+    showFallback,
+  ]);
+  return <ChartContext.Provider value={value}>{children}</ChartContext.Provider>;
 });
 
 export function useChartContext() {

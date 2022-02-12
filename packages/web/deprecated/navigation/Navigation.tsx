@@ -58,12 +58,6 @@ const NavigationContent: React.FC<NavigationProps> = memo(
       onResize: ({ currentBreakpoint }) => {
         // Triggered when breakpoint is changed
         switch (currentBreakpoint) {
-          case 'desktop':
-          default:
-            setSidebarLayout('expanded');
-            toggleMobileMenuHidden();
-            setShowDisplayTitle(true);
-            break;
           case 'tablet':
             setSidebarLayout('condensed');
             toggleMobileMenuHidden();
@@ -73,6 +67,12 @@ const NavigationContent: React.FC<NavigationProps> = memo(
             setSidebarLayout('hidden');
             // Hide Big displayTitle in mobile
             setShowDisplayTitle(false);
+            break;
+          case 'desktop':
+          default:
+            setSidebarLayout('expanded');
+            toggleMobileMenuHidden();
+            setShowDisplayTitle(true);
             break;
         }
       },

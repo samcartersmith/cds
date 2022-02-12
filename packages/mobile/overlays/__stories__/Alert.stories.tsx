@@ -22,6 +22,7 @@ const { BasicAlert, SingleActionAlert, PortalAlert } = alertBuilder({
 
 const AlertScreen = () => {
   // demo multiple modals inside portal provider, mobile only
+  // eslint-disable-next-line react/no-unstable-nested-components
   const AlertOnModal = () => {
     const { openModal, closeModal } = useModal();
     const alert = useAlert();

@@ -7,6 +7,7 @@ describe('Table', () => {
     expect(
       await renderA11y(
         <Table>
+          {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
           <>Child</>
         </Table>,
       ),

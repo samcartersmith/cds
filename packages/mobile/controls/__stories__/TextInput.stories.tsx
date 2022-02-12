@@ -29,6 +29,7 @@ const MockComplexInput = () => {
     <HStack justifyContent="center">
       <TextInput
         accessibilityLabel="Text input field"
+        accessibilityHint="Text input field"
         width="50%"
         label="Test"
         onChangeText={onChangeText}

@@ -54,7 +54,7 @@ export const TableRow = memo(
             {children}
           </TableCell>
         )}
-        {!fullWidth && <>{children}</>}
+        {!fullWidth && children}
       </tr>
     );
   },

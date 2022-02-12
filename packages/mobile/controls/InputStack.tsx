@@ -93,22 +93,22 @@ export const InputStack = memo(function InputStack({
 
   return (
     <VStack testID={testID} width={width} gap={0.5} {...props}>
-      {!!labelNode && <>{labelNode}</>}
+      {!!labelNode && labelNode}
       <HStack opacity={disabled ? opacityDisabled : 1}>
         {focused && <Animated.View style={borderFocusedStyles} />}
-        {!!prependNode && <>{prependNode}</>}
+        {!!prependNode && prependNode}
         <Animated.View
           onLayout={onInputAreaLayout}
           testID={testID && `${testID}-input-area`}
           style={inputAreaStyles}
         >
-          {!!startNode && <>{startNode}</>}
+          {!!startNode && startNode}
           {inputNode}
-          {!!endNode && <>{endNode}</>}
+          {!!endNode && endNode}
         </Animated.View>
-        {!!appendNode && <>{appendNode}</>}
+        {!!appendNode && appendNode}
       </HStack>
-      {!!helperTextNode && <>{helperTextNode}</>}
+      {!!helperTextNode && helperTextNode}
     </VStack>
   );
 });

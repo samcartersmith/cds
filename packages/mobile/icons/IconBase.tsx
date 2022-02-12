@@ -97,5 +97,5 @@ export const IconBase = ({
       </Box>
     );
   }
-  return <>{null}</>;
+  return null;
 };

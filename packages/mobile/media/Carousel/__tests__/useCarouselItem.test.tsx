@@ -49,6 +49,7 @@ describe('useCarouselItem', () => {
   it('returns an object with dismiss and id', () => {
     const dismissSpy = jest.fn();
     const Wrapper: React.FC = ({ children }) => (
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
       <CarouselItemContext.Provider value={{ id: 'item1', dismiss: dismissSpy }}>
         {children}
       </CarouselItemContext.Provider>
@@ -77,6 +78,7 @@ describe('useCarouselItem', () => {
       );
     };
     const result = render(
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
       <CarouselItemContext.Provider value={{ id: 'item1', dismiss: dismissSpy }}>
         <ChildWithPressable />
       </CarouselItemContext.Provider>,

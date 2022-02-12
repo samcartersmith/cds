@@ -111,6 +111,7 @@ const ChartHoverDateWithGeneric = forwardRef(
         >
           <TextInput
             accessibilityLabel="Text input field"
+            accessibilityHint="Text input field"
             style={[label2Styles, labelStyles]}
             ref={textInputRef}
           />
