@@ -28,7 +28,7 @@ steps:
     parallelism: 1
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci build
+      - yarn mono-pipeline run-ci build-package
 
   - label: Lint
     <<: *shared_step

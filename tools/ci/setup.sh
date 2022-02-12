@@ -10,6 +10,6 @@ yarn install --immutable
 
 echo "---- Building required packages"
 
-yarn build
+yarn setup
 
 echo "---- Setup complete, running jobs"
