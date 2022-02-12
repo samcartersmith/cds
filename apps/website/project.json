@@ -16,7 +16,7 @@
       "executor": "@cbhq/mono-tasks:start-docusaurus"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "./tools/executors/typecheck:typecheck"
     }
   }
 }

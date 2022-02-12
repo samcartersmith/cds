@@ -14,7 +14,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "./tools/executors/typecheck:typecheck"
     },
     "build": {
       "executor": "./tools/executors/build-package:build-package",

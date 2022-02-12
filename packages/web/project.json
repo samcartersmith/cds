@@ -14,7 +14,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "./tools/executors/typecheck:typecheck"
     },
     "start-storybook": {
       "executor": "@cbhq/mono-tasks:start-storybook"

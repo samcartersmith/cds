@@ -14,7 +14,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "./tools/executors/typecheck:typecheck"
     },
     "docgen": {
       "executor": "./tools/executors/ts-script:ts-script",

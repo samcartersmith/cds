@@ -1,11 +1,17 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/apps/website"
+    "outDir": "../../.nx/dist/app/website",
+    "rootDir": "./"
   },
-  "include": ["**/*"],
+  "include": [
+    "**/*"
+  ],
   "exclude": [
-    "dts/**/*",
+    "dist",
+    "jest.config.js",
+    "babel.config.js",
+    "babel.build.config.js"
   ],
   "references": [
     {

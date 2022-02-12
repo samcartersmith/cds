@@ -181,12 +181,7 @@ build.css: build.web build.fonts
 
 .PHONY: build.all
 build.all:
-	make build.common
-	make build.mobile
-	make build.lottie
-	make build.utils
-	#includes build.web and build.fonts as a dep
-	make build.css
+	nx affected --target=build --all
 
 .PHONY: docgen
 docgen:

@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "typecheck": {
+      "implementation": "./impl",
+      "schema": "./schema.json",
+      "description": "Runs typecheck"
+    }
+  }
+}
