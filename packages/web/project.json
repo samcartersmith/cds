@@ -22,7 +22,7 @@
     "build-storybook": {
       "executor": "@cbhq/mono-tasks:build-storybook"
     },
-    "build-package": {
+    "build": {
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/web",

@@ -153,27 +153,27 @@ start.website:
 
 .PHONY: build.common
 build.common:
-	nx run common:build-package
+	nx run common:build
 
 .PHONY: build.fonts
 build.fonts:
-	nx run fonts:build-package
+	nx run fonts:build
 
 .PHONY: build.mobile
 build.mobile:
-	nx run mobile:build-package
+	nx run mobile:build
 
 .PHONY: build.web
 build.web:
-	nx run web:build-package
+	nx run web:build
 
 .PHONY: build.lottie
 build.lottie:
-	nx run lottie-files:build-package
+	nx run lottie-files:build
 
 .PHONY: build.utils
 build.utils:
-	nx run utils:build-package
+	nx run utils:build
 
 .PHONY: build.css
 build.css: build.web build.fonts

@@ -13,7 +13,7 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "build-package": {
+    "build": {
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": "packages/web-utils/dist",

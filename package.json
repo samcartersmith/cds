@@ -6,6 +6,7 @@
   "repository": "git@github.cbhq.net:jonathan-rossi/design-system.git",
   "scripts": {
     "validate": "nx workspace-lint",
+    "codeowners": "mono-pipeline sync-codeowners",
     "setup": "./setup.sh"
   },
   "resolutions": {
@@ -72,7 +73,7 @@
     "@cbhq/jest-preset": "^0.1.0",
     "@cbhq/jest-preset-mobile": "0.1.0",
     "@cbhq/mono-env": "^0.1.0",
-    "@cbhq/mono-pipeline": "^0.1.0",
+    "@cbhq/mono-pipeline": "^0.2.0",
     "@cbhq/mono-tasks": "^0.1.0",
     "@cbhq/mono-templates": "^0.1.0",
     "@docusaurus/core": "2.0.0-beta.6",

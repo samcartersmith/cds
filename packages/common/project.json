@@ -16,7 +16,7 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "build-package": {
+    "build": {
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/common",
