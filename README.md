@@ -80,11 +80,6 @@ The task list below is needed to get the hello world of the poly repo. There are
 - [ ] deploy dev website
 - [ ] deploy prod website
 
-#### Code generation
-
-- [ ] docgen
-- [ ] codegen
-
 #### Releases
 
 - [ ] Build release script to auto update package.json's
@@ -94,7 +89,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 #### Buildkite
 
-- [ ] Hook up buildkite
+- [x] Hook up buildkite
 
 ## Repo migration cutover items
 
