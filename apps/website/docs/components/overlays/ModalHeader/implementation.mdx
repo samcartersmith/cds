@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -28,14 +28,11 @@ Handles back button press
   propertyName="onBackButtonPress"
   required={false}
   defaultValue=""
-  mobileOptions={["((event: GestureResponderEvent) => void) & NoopFn"]}
-  webOptions={["MouseEventHandler<Element>"]}
+  mobileOptions={['((event: GestureResponderEvent) => void) & NoopFn']}
+  webOptions={['MouseEventHandler<Element>']}
 />
 
-<ComponentDetails
-  componentName="ModalHeader"
-  templateName="prop-onBackButtonPress"
-/>
+<ComponentDetails componentName="ModalHeader" templateName="prop-onBackButtonPress" />
 
 ### testID
 
@@ -46,8 +43,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="ModalHeader" templateName="prop-testID" />
@@ -61,8 +58,8 @@ Title of the Modal
   propertyName="title"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="ModalHeader" templateName="prop-title" />

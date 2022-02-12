@@ -23,7 +23,7 @@ function Example() {
         key: 'col3',
       },
     ],
-    []
+    [],
   );
 
   return (
@@ -36,7 +36,7 @@ function Example() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {accounts.map(account => {
+        {accounts.map((account) => {
           return (
             <TableRow key={`row--${account.name}`}>
               <TableCell
@@ -59,7 +59,7 @@ function Example() {
       <TableFooter>
         <TableRow fullWidth>
           <TableCell direction="horizontal">
-            {[1, 2, 3, 4, 5].map(pg => (
+            {[1, 2, 3, 4, 5].map((pg) => (
               <Button
                 compact
                 variant={page === pg ? 'primary' : 'secondary'}

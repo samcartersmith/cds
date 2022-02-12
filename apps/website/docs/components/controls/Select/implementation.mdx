@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -28,14 +28,11 @@ Accessibility hint for assisted devices when focused. Message should indicate th
   propertyName="accessibilityHint"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Select"
-  templateName="prop-accessibilityHint"
-/>
+<ComponentDetails componentName="Select" templateName="prop-accessibilityHint" />
 
 ### accessibilityLabel
 
@@ -46,14 +43,11 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Select"
-  templateName="prop-accessibilityLabel"
-/>
+<ComponentDetails componentName="Select" templateName="prop-accessibilityLabel" />
 
 ### accessibilityLabelledBy
 
@@ -66,14 +60,11 @@ Accessibility prop that describes the component that labels it by its `id`
   propertyName="accessibilityLabelledBy"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Select"
-  templateName="prop-accessibilityLabelledBy"
-/>
+<ComponentDetails componentName="Select" templateName="prop-accessibilityLabelledBy" />
 
 ### compact
 
@@ -84,8 +75,8 @@ Enables compact variation
   propertyName="compact"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-compact" />
@@ -99,8 +90,8 @@ Toggles input interactability and opacity
   propertyName="disabled"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-disabled" />
@@ -114,8 +105,8 @@ This should only be used when focused styles need to be persisted
   propertyName="focused"
   required={false}
   defaultValue=""
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-focused" />
@@ -129,8 +120,8 @@ For cases where label is not enough information to describe what the text input 
   propertyName="helperText"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-helperText" />
@@ -144,8 +135,8 @@ Used for a11y to indicate the relationship between a controlled element and its 
   propertyName="id"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-id" />
@@ -159,8 +150,8 @@ Optional string placed above the input (or within if compact is enabled) to indi
   propertyName="label"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-label" />
@@ -175,7 +166,7 @@ Callback that is fired whenever a select option is selected
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["(newValue: string) => void"]}
+  webOptions={['(newValue: string) => void']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-onChange" />
@@ -189,8 +180,8 @@ Event handler for when the Select Input trigger is pressed
   propertyName="onPress"
   required={false}
   defaultValue=""
-  mobileOptions={["NoopFn"]}
-  webOptions={["NoopFn"]}
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-onPress" />
@@ -204,8 +195,8 @@ Placeholder text displayed inside of the input. Will be replaced if there is a v
   propertyName="placeholder"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-placeholder" />
@@ -219,8 +210,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-testID" />
@@ -234,8 +225,8 @@ Pass a value that will prepopulate the select input. This will replace the place
   propertyName="value"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-value" />
@@ -249,20 +240,8 @@ Determines the sentiment of the input. Because we allow startContent and endCont
   propertyName="variant"
   required={false}
   defaultValue="foregroundMuted"
-  mobileOptions={[
-    "foreground",
-    "foregroundMuted",
-    "negative",
-    "positive",
-    "primary",
-  ]}
-  webOptions={[
-    "foreground",
-    "foregroundMuted",
-    "negative",
-    "positive",
-    "primary",
-  ]}
+  mobileOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
+  webOptions={['foreground', 'foregroundMuted', 'negative', 'positive', 'primary']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-variant" />
@@ -276,8 +255,8 @@ Width of input as a percentage string.
   propertyName="width"
   required={false}
   defaultValue="100%"
-  mobileOptions={["`${number}%`", "number"]}
-  webOptions={["`${number}%`", "number"]}
+  mobileOptions={['`${number}%`', 'number']}
+  webOptions={['`${number}%`', 'number']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-width" />

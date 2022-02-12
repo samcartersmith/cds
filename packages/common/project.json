@@ -27,18 +27,10 @@
           "project.json"
         ],
         "babelConfig": "./babel.build.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/common/tsconfig.build.json"
       }
     }
   }
 }
-

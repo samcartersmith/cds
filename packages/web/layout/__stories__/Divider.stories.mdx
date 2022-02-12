@@ -15,14 +15,14 @@ import { HStack } from '../HStack';
     decorators={[withStoryLabel('Horizontal')]}
     args={{ direction: 'horizontal' }}
   >
-    {args => <Divider {...args} />}
+    {(args) => <Divider {...args} />}
   </Story>
   <Story
     name="Vertical direction"
     decorators={[withStoryLabel('Vertical')]}
     args={{ direction: 'vertical' }}
   >
-    {args => (
+    {(args) => (
       <div style={{ height: 100, display: 'flex' }}>
         <Divider {...args} />
       </div>
@@ -34,14 +34,14 @@ import { HStack } from '../HStack';
 
 <Canvas withToolbar>
   <Story name="Light color" decorators={[withStoryLabel('Light')]} args={{ color: 'line' }}>
-    {args => <Divider {...args} />}
+    {(args) => <Divider {...args} />}
   </Story>
   <Story
     name="Heavy color"
     decorators={[withStoryLabel('Heavy')]}
     args={{ direction: 'vertical', color: 'lineHeavy' }}
   >
-    {args => (
+    {(args) => (
       <HStack>
         <Box height={100} width={100} background="backgroundAlternate" />
         <Divider {...args} />

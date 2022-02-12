@@ -51,9 +51,9 @@ export const textComponents = [
     decorators={[withStoryLabel('Normal (Large)')]}
     args={{ as: 'b', display: 'block' }}
   >
-    {args => (
+    {(args) => (
       <>
-        {textComponents.map(Component => {
+        {textComponents.map((Component) => {
           const name = Component.displayName.slice(4);
           return (
             <Component key={name} {...args}>
@@ -69,9 +69,9 @@ export const textComponents = [
     decorators={[withStoryLabel('Dense (xSmall)')]}
     args={{ as: 'p', display: 'block' }}
   >
-    {args => (
+    {(args) => (
       <ThemeProvider scale="xSmall">
-        {textComponents.map(Component => {
+        {textComponents.map((Component) => {
           const name = Component.displayName.slice(4);
           return (
             <Component key={name} {...args}>
@@ -92,9 +92,9 @@ export const textComponents = [
     decorators={[withStoryLabel('Frontier Normal (Large)')]}
     args={{ as: 'b', display: 'block' }}
   >
-    {args => (
+    {(args) => (
       <FeatureFlagProvider frontierTypography>
-        {textComponents.map(Component => {
+        {textComponents.map((Component) => {
           const name = Component.displayName.slice(4);
           return (
             <Component key={name} {...args}>
@@ -110,10 +110,10 @@ export const textComponents = [
     decorators={[withStoryLabel('Frontier Dense (xSmall)')]}
     args={{ as: 'p', display: 'block' }}
   >
-    {args => (
+    {(args) => (
       <FeatureFlagProvider frontierTypography>
         <ThemeProvider scale="xSmall">
-          {textComponents.map(Component => {
+          {textComponents.map((Component) => {
             const name = Component.displayName.slice(4);
             return (
               <Component key={name} {...args}>
@@ -131,9 +131,9 @@ export const textComponents = [
 
 <Canvas>
   <Story name="Mono font" decorators={[withStoryLabel('Mono font')]} args={{ as: 'p', mono: true }}>
-    {args => (
+    {(args) => (
       <>
-        {textComponents.map(Component => {
+        {textComponents.map((Component) => {
           const name = Component.displayName.slice(4);
           return (
             <Component key={name} {...args}>
@@ -154,14 +154,14 @@ export const textComponents = [
     decorators={[withStoryLabel('Slashed Zero')]}
     args={{ as: 'p', slashedZero: true }}
   >
-    {args => <TextBody {...args}>{args.children || 'OZY28019'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'OZY28019'}</TextBody>}
   </Story>
   <Story
     name="Tabular numbers"
     decorators={[withStoryLabel('Tabular numbers (align end)')]}
     args={{ as: 'p', tabularNumbers: true, align: 'end' }}
   >
-    {args => (
+    {(args) => (
       <>
         <TextBody {...args}>{args.children || '91.23450'}</TextBody>
         <TextBody {...args}>{args.children || '11.98762'}</TextBody>
@@ -178,21 +178,21 @@ export const textComponents = [
     decorators={[withStoryLabel('None')]}
     args={{ as: 'p', selectable: 'none' }}
   >
-    {args => <TextBody {...args}>{args.children || 'BTC'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'BTC'}</TextBody>}
   </Story>
   <Story
     name="Selectable text"
     decorators={[withStoryLabel('Text')]}
     args={{ as: 'p', selectable: 'text' }}
   >
-    {args => <TextBody {...args}>{args.children || 'Balance: 1,820,29.56'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'Balance: 1,820,29.56'}</TextBody>}
   </Story>
   <Story
     name="Selectable all"
     decorators={[withStoryLabel('All')]}
     args={{ as: 'p', selectable: 'all', slashedZero: true }}
   >
-    {args => (
+    {(args) => (
       <TextBody {...args}>{args.children || 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh'}</TextBody>
     )}
   </Story>
@@ -206,16 +206,16 @@ export const textComponents = [
     decorators={[withStoryLabel('Underline')]}
     args={{ as: 'p', underline: true }}
   >
-    {args => <TextBody {...args}>{args.children || 'Learn more'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'Learn more'}</TextBody>}
   </Story>
   <Story name="Strikethrough" decorators={[withStoryLabel('Text')]} args={{ as: 's' }}>
-    {args => <TextBody {...args}>{args.children || 'Manual verification'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'Manual verification'}</TextBody>}
   </Story>
 </Canvas>
 
 ## No Wrap and Overflow
 
-export const MediumContainer = props => (
+export const MediumContainer = (props) => (
   <div
     style={{ width: '35%', height: '50px', backgroundColor: 'var(--background-alternate)' }}
     {...props}
@@ -224,7 +224,7 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="No wrap" decorators={[withStoryLabel('No wrap')]} args={{ as: 'p', noWrap: true }}>
-    {args => (
+    {(args) => (
       <MediumContainer>
         <TextBody {...args}>
           {args.children || 'As with any asset, the value of Digital Currencies can'}
@@ -237,7 +237,7 @@ export const MediumContainer = props => (
     decorators={[withStoryLabel('Overflow ellipsis')]}
     args={{ as: 'p', overflow: 'truncate' }}
   >
-    {args => (
+    {(args) => (
       <MediumContainer>
         <TextBody {...args}>
           {args.children ||
@@ -251,7 +251,7 @@ export const MediumContainer = props => (
     decorators={[withStoryLabel('Overflow clip')]}
     args={{ as: 'p', overflow: 'clip' }}
   >
-    {args => (
+    {(args) => (
       <MediumContainer>
         <TextBody {...args}>
           {args.children ||
@@ -266,13 +266,13 @@ export const MediumContainer = props => (
 
 <Canvas>
   <Story name="Uppercase" args={{ as: 'p', transform: 'uppercase' }}>
-    {args => <TextBody {...args}>{args.children || 'uppercase'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'uppercase'}</TextBody>}
   </Story>
   <Story name="Lowercase" args={{ as: 'p', transform: 'lowercase' }}>
-    {args => <TextBody {...args}>{args.children || 'Lowercase'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'Lowercase'}</TextBody>}
   </Story>
   <Story name="Capitalize" args={{ as: 'p', transform: 'capitalize' }}>
-    {args => <TextBody {...args}>{args.children || 'capitalize'}</TextBody>}
+    {(args) => <TextBody {...args}>{args.children || 'capitalize'}</TextBody>}
   </Story>
 </Canvas>
 

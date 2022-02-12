@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -29,7 +29,7 @@ Display end shimmer with a shape according to type.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["asset", "avatar", "icon", "image", "pictogram"]}
+  webOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
 />
 
 <ComponentDetails componentName="TableCellFallback" templateName="prop-end" />
@@ -44,7 +44,7 @@ Display start shimmer with a shape according to type.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["asset", "avatar", "icon", "image", "pictogram"]}
+  webOptions={['asset', 'avatar', 'icon', 'image', 'pictogram']}
 />
 
 <ComponentDetails componentName="TableCellFallback" templateName="prop-start" />
@@ -59,13 +59,10 @@ Display subtitle shimmer.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails
-  componentName="TableCellFallback"
-  templateName="prop-subtitle"
-/>
+<ComponentDetails componentName="TableCellFallback" templateName="prop-subtitle" />
 
 ### testID <Badge variant="web" />
 
@@ -77,13 +74,10 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="TableCellFallback"
-  templateName="prop-testID"
-/>
+<ComponentDetails componentName="TableCellFallback" templateName="prop-testID" />
 
 ### title <Badge variant="web" />
 
@@ -95,7 +89,7 @@ Display title shimmer.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="TableCellFallback" templateName="prop-title" />
@@ -110,7 +104,7 @@ HTML width attribute to help with column layout
   required={false}
   defaultValue="undefined"
   mobileOptions={[]}
-  webOptions={["number", "string"]}
+  webOptions={['number', 'string']}
 />
 
 <ComponentDetails componentName="TableCellFallback" templateName="prop-width" />

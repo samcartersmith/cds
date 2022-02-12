@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -39,14 +39,11 @@ import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
   propertyName="description"
   required={true}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="FeatureEntryCard"
-  templateName="prop-description"
-/>
+<ComponentDetails componentName="FeatureEntryCard" templateName="prop-description" />
 
 ### onActionPress
 
@@ -55,14 +52,11 @@ import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
   propertyName="onActionPress"
   required={true}
   defaultValue=""
-  mobileOptions={["(event: GestureResponderEvent) => void", "null"]}
+  mobileOptions={['(event: GestureResponderEvent) => void', 'null']}
   webOptions={[]}
 />
 
-<ComponentDetails
-  componentName="FeatureEntryCard"
-  templateName="prop-onActionPress"
-/>
+<ComponentDetails componentName="FeatureEntryCard" templateName="prop-onActionPress" />
 
 ### spotSquare
 
@@ -72,127 +66,124 @@ import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
   required={true}
   defaultValue=""
   mobileOptions={[
-    "addMultipleCrypto",
-    "addPasswordProtection",
-    "algoStaking",
-    "announcementAdvancedTrading",
-    "assetForward",
-    "assetRefresh",
-    "borrowLimitsAddressed",
-    "bullishCase",
-    "cardAnnouncement",
-    "cardShipped",
-    "coinbaseCardSparkle",
-    "coinbaseOneLogoSpotSquare",
-    "confirmAddress",
-    "confirmEmail",
-    "confirmIDCard",
-    "confirmSocialSecurity",
-    "cosmosStaking",
-    "daiRewards",
-    "darkModeIntroduction",
-    "defiEarnAnnouncement",
-    "defiNfts",
-    "directDepositExcitement",
-    "ethereumStaking",
-    "fileYourCryptoTaxesCheckOther",
-    "fileYourCryptoTaxesOther",
-    "giftBoxCrypto",
-    "gifting",
-    "givingTogetherSmall",
-    "guideBullCase",
-    "guideCryptoBeginner",
-    "guideFiveThings",
-    "guideNftDefi",
-    "guideStartInvesting",
-    "interestForYou",
-    "moneyRewards",
-    "nft",
-    "nuxChecklist",
-    "nuxEarnCrypto",
-    "nuxEarnYield",
-    "nuxPopularAssets",
-    "nuxRecurringBuys",
-    "phoneNotifications",
-    "priceAlerts",
-    "refreshMobileApp",
-    "rewardExpiring",
-    "saveTheDate",
-    "sparkleToken",
-    "starToken",
-    "switchReward",
-    "tezosStakingRewards",
-    "transferringCrypto",
-    "waitlistNft",
-    "waitlistSignup",
-    "walletApp",
-    "yieldCenter",
-    "yieldCenterUSDC",
+    'addMultipleCrypto',
+    'addPasswordProtection',
+    'algoStaking',
+    'announcementAdvancedTrading',
+    'assetForward',
+    'assetRefresh',
+    'borrowLimitsAddressed',
+    'bullishCase',
+    'cardAnnouncement',
+    'cardShipped',
+    'coinbaseCardSparkle',
+    'coinbaseOneLogoSpotSquare',
+    'confirmAddress',
+    'confirmEmail',
+    'confirmIDCard',
+    'confirmSocialSecurity',
+    'cosmosStaking',
+    'daiRewards',
+    'darkModeIntroduction',
+    'defiEarnAnnouncement',
+    'defiNfts',
+    'directDepositExcitement',
+    'ethereumStaking',
+    'fileYourCryptoTaxesCheckOther',
+    'fileYourCryptoTaxesOther',
+    'giftBoxCrypto',
+    'gifting',
+    'givingTogetherSmall',
+    'guideBullCase',
+    'guideCryptoBeginner',
+    'guideFiveThings',
+    'guideNftDefi',
+    'guideStartInvesting',
+    'interestForYou',
+    'moneyRewards',
+    'nft',
+    'nuxChecklist',
+    'nuxEarnCrypto',
+    'nuxEarnYield',
+    'nuxPopularAssets',
+    'nuxRecurringBuys',
+    'phoneNotifications',
+    'priceAlerts',
+    'refreshMobileApp',
+    'rewardExpiring',
+    'saveTheDate',
+    'sparkleToken',
+    'starToken',
+    'switchReward',
+    'tezosStakingRewards',
+    'transferringCrypto',
+    'waitlistNft',
+    'waitlistSignup',
+    'walletApp',
+    'yieldCenter',
+    'yieldCenterUSDC',
   ]}
   webOptions={[
-    "addMultipleCrypto",
-    "addPasswordProtection",
-    "algoStaking",
-    "announcementAdvancedTrading",
-    "assetForward",
-    "assetRefresh",
-    "borrowLimitsAddressed",
-    "bullishCase",
-    "cardAnnouncement",
-    "cardShipped",
-    "coinbaseCardSparkle",
-    "coinbaseOneLogoSpotSquare",
-    "confirmAddress",
-    "confirmEmail",
-    "confirmIDCard",
-    "confirmSocialSecurity",
-    "cosmosStaking",
-    "daiRewards",
-    "darkModeIntroduction",
-    "defiEarnAnnouncement",
-    "defiNfts",
-    "directDepositExcitement",
-    "ethereumStaking",
-    "fileYourCryptoTaxesCheckOther",
-    "fileYourCryptoTaxesOther",
-    "giftBoxCrypto",
-    "gifting",
-    "givingTogetherSmall",
-    "guideBullCase",
-    "guideCryptoBeginner",
-    "guideFiveThings",
-    "guideNftDefi",
-    "guideStartInvesting",
-    "interestForYou",
-    "moneyRewards",
-    "nft",
-    "nuxChecklist",
-    "nuxEarnCrypto",
-    "nuxEarnYield",
-    "nuxPopularAssets",
-    "nuxRecurringBuys",
-    "phoneNotifications",
-    "priceAlerts",
-    "refreshMobileApp",
-    "rewardExpiring",
-    "saveTheDate",
-    "sparkleToken",
-    "starToken",
-    "switchReward",
-    "tezosStakingRewards",
-    "transferringCrypto",
-    "waitlistNft",
-    "waitlistSignup",
-    "walletApp",
-    "yieldCenter",
-    "yieldCenterUSDC",
+    'addMultipleCrypto',
+    'addPasswordProtection',
+    'algoStaking',
+    'announcementAdvancedTrading',
+    'assetForward',
+    'assetRefresh',
+    'borrowLimitsAddressed',
+    'bullishCase',
+    'cardAnnouncement',
+    'cardShipped',
+    'coinbaseCardSparkle',
+    'coinbaseOneLogoSpotSquare',
+    'confirmAddress',
+    'confirmEmail',
+    'confirmIDCard',
+    'confirmSocialSecurity',
+    'cosmosStaking',
+    'daiRewards',
+    'darkModeIntroduction',
+    'defiEarnAnnouncement',
+    'defiNfts',
+    'directDepositExcitement',
+    'ethereumStaking',
+    'fileYourCryptoTaxesCheckOther',
+    'fileYourCryptoTaxesOther',
+    'giftBoxCrypto',
+    'gifting',
+    'givingTogetherSmall',
+    'guideBullCase',
+    'guideCryptoBeginner',
+    'guideFiveThings',
+    'guideNftDefi',
+    'guideStartInvesting',
+    'interestForYou',
+    'moneyRewards',
+    'nft',
+    'nuxChecklist',
+    'nuxEarnCrypto',
+    'nuxEarnYield',
+    'nuxPopularAssets',
+    'nuxRecurringBuys',
+    'phoneNotifications',
+    'priceAlerts',
+    'refreshMobileApp',
+    'rewardExpiring',
+    'saveTheDate',
+    'sparkleToken',
+    'starToken',
+    'switchReward',
+    'tezosStakingRewards',
+    'transferringCrypto',
+    'waitlistNft',
+    'waitlistSignup',
+    'walletApp',
+    'yieldCenter',
+    'yieldCenterUSDC',
   ]}
 />
 
-<ComponentDetails
-  componentName="FeatureEntryCard"
-  templateName="prop-spotSquare"
-/>
+<ComponentDetails componentName="FeatureEntryCard" templateName="prop-spotSquare" />
 
 ### title
 
@@ -201,8 +192,8 @@ import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
   propertyName="title"
   required={true}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="FeatureEntryCard" templateName="prop-title" />

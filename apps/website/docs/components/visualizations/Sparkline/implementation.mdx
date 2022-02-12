@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -28,8 +28,8 @@ Only use if you have a non CDS color powering the background color that a Sparkl
   propertyName="background"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Sparkline" templateName="prop-background" />
@@ -44,16 +44,16 @@ an optional SparklineArea that can be used to fill in the Sparkline
   required={false}
   defaultValue=""
   mobileOptions={[
-    "OptionalElement<SparklineAreaBaseProps>[]",
-    "ReactElement<SparklineAreaBaseProps, string | JSXElementConstructor<any>>",
-    "false",
-    "null",
+    'OptionalElement<SparklineAreaBaseProps>[]',
+    'ReactElement<SparklineAreaBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
   ]}
   webOptions={[
-    "OptionalElement<SparklineAreaBaseProps>[]",
-    "ReactElement<SparklineAreaBaseProps, string | JSXElementConstructor<any>>",
-    "false",
-    "null",
+    'OptionalElement<SparklineAreaBaseProps>[]',
+    'ReactElement<SparklineAreaBaseProps, string | JSXElementConstructor<any>>',
+    'false',
+    'null',
   ]}
 />
 
@@ -98,8 +98,8 @@ Svg path as string. CDS offers a `useSparklinePath` which is useful to generate 
   propertyName="path"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Sparkline" templateName="prop-path" />
@@ -113,8 +113,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Sparkline" templateName="prop-testID" />
@@ -143,13 +143,10 @@ Scales the sparkline to show more or less variance. Use a number less than 1 for
   propertyName="yAxisScalingFactor"
   required={false}
   defaultValue=""
-  mobileOptions={["number"]}
-  webOptions={["number"]}
+  mobileOptions={['number']}
+  webOptions={['number']}
 />
 
-<ComponentDetails
-  componentName="Sparkline"
-  templateName="prop-yAxisScalingFactor"
-/>
+<ComponentDetails componentName="Sparkline" templateName="prop-yAxisScalingFactor" />
 
 <ComponentDetails componentName="Sparkline" templateName="outro" />

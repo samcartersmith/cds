@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -28,8 +28,8 @@ Toggles the active and inactive state of the navigation icon
   propertyName="active"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-active" />
@@ -43,7 +43,7 @@ If value is `true` then style prop can take animated values.
   propertyName="animated"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
   webOptions={[]}
 />
 
@@ -58,10 +58,8 @@ Add a badge to the top right of an icon
   propertyName="badge"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "ReactElement<BadgeProps, string | JSXElementConstructor<any>>",
-  ]}
-  webOptions={["ReactElement<BadgeProps, string | JSXElementConstructor<any>>"]}
+  mobileOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
 />
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-badge" />
@@ -76,13 +74,10 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-dangerouslySetColor"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-dangerouslySetColor" />
 
 ### labeledBy <Badge variant="web" />
 
@@ -94,13 +89,10 @@ If the icon is labelled by an independent element, then provide that elements id
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-labeledBy"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-labeledBy" />
 
 ### name
 
@@ -112,62 +104,62 @@ Navigation icon names
   required={true}
   defaultValue=""
   mobileOptions={[
-    "addPeople",
-    "appSwitcher",
-    "application",
-    "bell",
-    "caretUp",
-    "cash",
-    "chartBar",
-    "chartCandles",
-    "chartPie",
-    "dashboard",
-    "defi",
-    "directDeposit",
-    "earn",
-    "gab",
-    "giftBox",
-    "home",
-    "invoice",
-    "newsfeed",
-    "pay",
-    "planet",
-    "scanQrCode",
-    "settings",
-    "shoppingCart",
-    "support",
-    "tag",
-    "trading",
-    "wallet",
+    'addPeople',
+    'appSwitcher',
+    'application',
+    'bell',
+    'caretUp',
+    'cash',
+    'chartBar',
+    'chartCandles',
+    'chartPie',
+    'dashboard',
+    'defi',
+    'directDeposit',
+    'earn',
+    'gab',
+    'giftBox',
+    'home',
+    'invoice',
+    'newsfeed',
+    'pay',
+    'planet',
+    'scanQrCode',
+    'settings',
+    'shoppingCart',
+    'support',
+    'tag',
+    'trading',
+    'wallet',
   ]}
   webOptions={[
-    "addPeople",
-    "appSwitcher",
-    "application",
-    "bell",
-    "caretUp",
-    "cash",
-    "chartBar",
-    "chartCandles",
-    "chartPie",
-    "dashboard",
-    "defi",
-    "directDeposit",
-    "earn",
-    "gab",
-    "giftBox",
-    "home",
-    "invoice",
-    "newsfeed",
-    "pay",
-    "planet",
-    "scanQrCode",
-    "settings",
-    "shoppingCart",
-    "support",
-    "tag",
-    "trading",
-    "wallet",
+    'addPeople',
+    'appSwitcher',
+    'application',
+    'bell',
+    'caretUp',
+    'cash',
+    'chartBar',
+    'chartCandles',
+    'chartPie',
+    'dashboard',
+    'defi',
+    'directDeposit',
+    'earn',
+    'gab',
+    'giftBox',
+    'home',
+    'invoice',
+    'newsfeed',
+    'pay',
+    'planet',
+    'scanQrCode',
+    'settings',
+    'shoppingCart',
+    'support',
+    'tag',
+    'trading',
+    'wallet',
   ]}
 />
 
@@ -183,14 +175,14 @@ Opacity of element
   required={false}
   defaultValue=""
   mobileOptions={[
-    "AnimatedInterpolation",
-    "RegisteredStyle<TextStyle>",
-    "Value",
-    "WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
-    "WithAnimatedObject<TextStyle>",
-    "false",
-    "null",
-    "number",
+    'AnimatedInterpolation',
+    'RegisteredStyle<TextStyle>',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+    'number',
   ]}
   webOptions={[]}
 />
@@ -206,8 +198,8 @@ Size of navigation Icon
   propertyName="size"
   required={false}
   defaultValue="l"
-  mobileOptions={["l", "m", "s"]}
-  webOptions={["l", "m", "s"]}
+  mobileOptions={['l', 'm', 's']}
+  webOptions={['l', 'm', 's']}
 />
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-size" />
@@ -221,21 +213,8 @@ Apply inner spacing on all sides.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-spacing" />
@@ -249,27 +228,11 @@ Apply inner spacing on the bottom side.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-spacingBottom"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-spacingBottom" />
 
 ### spacingEnd
 
@@ -280,27 +243,11 @@ Apply inner spacing on the trailing side.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-spacingEnd"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-spacingEnd" />
 
 ### spacingHorizontal
 
@@ -311,27 +258,11 @@ Apply inner spacing on the leading and trailing sides.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-spacingHorizontal"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-spacingHorizontal" />
 
 ### spacingStart
 
@@ -342,27 +273,11 @@ Apply inner spacing on the leading side.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-spacingStart"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-spacingStart" />
 
 ### spacingTop
 
@@ -373,27 +288,11 @@ Apply inner spacing on the top side.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-spacingTop"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-spacingTop" />
 
 ### spacingVertical
 
@@ -404,27 +303,11 @@ Apply inner spacing on the top and bottom sides.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
-<ComponentDetails
-  componentName="NavigationIcon"
-  templateName="prop-spacingVertical"
-/>
+<ComponentDetails componentName="NavigationIcon" templateName="prop-spacingVertical" />
 
 ### testID
 
@@ -435,8 +318,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-testID" />
@@ -451,7 +334,7 @@ Give the icon a description. It will show up in a tooltip after hovering over th
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="NavigationIcon" templateName="prop-title" />

@@ -1,9 +1,7 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  "stories": [
-      path.resolve(__dirname, `../**/*.stories.@(tsx|mdx)`),
-  ],
+  stories: [path.resolve(__dirname, `../**/*.stories.@(tsx|mdx)`)],
   addons: [
     '@storybook/addon-backgrounds',
     {
@@ -24,7 +22,7 @@ module.exports = {
     'storybook-addon-performance/register',
     // 'storybook-addon-pseudo-states', enable when addon/docs is removed
   ],
-  "core": {
-    "builder": "webpack5"
-  }
-}
+  core: {
+    builder: 'webpack5',
+  },
+};

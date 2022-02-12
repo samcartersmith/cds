@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -29,7 +29,7 @@ When set, the sidebar will auto collapse at or below the tablet breakpoint (curr
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Sidebar" templateName="prop-autoCollapse" />
@@ -45,14 +45,14 @@ Children are expected to be an array of SidebarItems
   defaultValue="undefined"
   mobileOptions={[]}
   webOptions={[
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[]",
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & Iterable<ReactNode>",
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & ReactElement<any, string | JSXElementConstructor<any>>",
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & ReactPortal",
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & false",
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & number",
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & string",
-    "ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & true",
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[]',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & Iterable<ReactNode>',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & ReactPortal',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & false',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & number',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & string',
+    'ReactElement<SidebarItemProps, string | JSXElementConstructor<any>>[] & true',
   ]}
 />
 
@@ -68,7 +68,7 @@ Use collapsed to show only the logo
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Sidebar" templateName="prop-collapsed" />

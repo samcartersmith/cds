@@ -19,21 +19,10 @@
       "executor": "./tools/executors/build-package:build-package",
       "options": {
         "destinationDir": ".nx/dist/packages/utils",
-        "staticFilesToIgnore": [
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "project.json"
-        ],
+        "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
         "babelConfig": "./babel.build.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/utils/tsconfig.build.json"
       }
     }

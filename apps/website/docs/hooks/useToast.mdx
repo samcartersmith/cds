@@ -3,6 +3,7 @@
 Consumes `PortalProvider` and returns `show()`, `hide()`, and `clearQueue()` to control toast.
 
 ## Prerequisite
+
 Component should be wrapped by `PortalProvider`.
 
 ## API
@@ -14,6 +15,7 @@ If no toast is showing, it will display a toast.
 If a toast is showing, it will add a new toast to the queue that will be displayed later.
 
 **Example usage:**
+
 ```jsx
 const toast = useToast();
 
@@ -29,11 +31,13 @@ toast.show('Toast copy', {
   },
 });
 ```
+
 ### `hide()`
 
 Hide the current toast.
 
 **Example usage:**
+
 ```jsx
 const toast = useToast();
 
@@ -45,6 +49,7 @@ toast.hide();
 Hide the current toast and clear queued toasts.
 
 **Example usage:**
+
 ```jsx
 const toast = useToast();
 

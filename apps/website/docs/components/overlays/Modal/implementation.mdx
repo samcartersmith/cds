@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -28,14 +28,11 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-accessibilityLabel"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-accessibilityLabel" />
 
 ### accessibilityLabelledBy <Badge variant="web" />
 
@@ -49,13 +46,10 @@ Accessibility prop that describes the component that labels it by its `id`
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-accessibilityLabelledBy"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-accessibilityLabelledBy" />
 
 ### children
 
@@ -67,116 +61,116 @@ Component to render as the Modal content
   required={false}
   defaultValue=""
   mobileOptions={[
-    "Iterable<ReactNode>",
-    "Iterable<ReactNode> & ReactElement<any, string | JSXElementConstructor<any>>",
-    "Iterable<ReactNode> & ReactPortal",
-    "Iterable<ReactNode> & false",
-    "Iterable<ReactNode> & number",
-    "Iterable<ReactNode> & string",
-    "Iterable<ReactNode> & true",
-    "ModalRenderChildren",
-    "ModalRenderChildren & Iterable<ReactNode>",
-    "ModalRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>",
-    "ModalRenderChildren & ReactPortal",
-    "ModalRenderChildren & false",
-    "ModalRenderChildren & number",
-    "ModalRenderChildren & string",
-    "ModalRenderChildren & true",
-    "ReactElement<any, string | JSXElementConstructor<any>>",
-    "ReactElement<any, string | JSXElementConstructor<any>> & Iterable<ReactNode>",
-    "ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal",
-    "ReactElement<any, string | JSXElementConstructor<any>> & false",
-    "ReactElement<any, string | JSXElementConstructor<any>> & number",
-    "ReactElement<any, string | JSXElementConstructor<any>> & string",
-    "ReactElement<any, string | JSXElementConstructor<any>> & true",
-    "ReactPortal",
-    "ReactPortal & Iterable<ReactNode>",
-    "ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>",
-    "ReactPortal & false",
-    "ReactPortal & number",
-    "ReactPortal & string",
-    "ReactPortal & true",
-    "false",
-    "false & Iterable<ReactNode>",
-    "false & ReactElement<any, string | JSXElementConstructor<any>>",
-    "false & ReactPortal",
-    "false & {}",
-    "number",
-    "number & Iterable<ReactNode>",
-    "number & ReactElement<any, string | JSXElementConstructor<any>>",
-    "number & ReactPortal",
-    "number & {}",
-    "string",
-    "string & Iterable<ReactNode>",
-    "string & ReactElement<any, string | JSXElementConstructor<any>>",
-    "string & ReactPortal",
-    "string & {}",
-    "true",
-    "true & Iterable<ReactNode>",
-    "true & ReactElement<any, string | JSXElementConstructor<any>>",
-    "true & ReactPortal",
-    "true & {}",
-    "{}",
-    "{} & false",
-    "{} & number",
-    "{} & string",
-    "{} & true",
+    'Iterable<ReactNode>',
+    'Iterable<ReactNode> & ReactElement<any, string | JSXElementConstructor<any>>',
+    'Iterable<ReactNode> & ReactPortal',
+    'Iterable<ReactNode> & false',
+    'Iterable<ReactNode> & number',
+    'Iterable<ReactNode> & string',
+    'Iterable<ReactNode> & true',
+    'ModalRenderChildren',
+    'ModalRenderChildren & Iterable<ReactNode>',
+    'ModalRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ModalRenderChildren & ReactPortal',
+    'ModalRenderChildren & false',
+    'ModalRenderChildren & number',
+    'ModalRenderChildren & string',
+    'ModalRenderChildren & true',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactElement<any, string | JSXElementConstructor<any>> & Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
+    'ReactElement<any, string | JSXElementConstructor<any>> & false',
+    'ReactElement<any, string | JSXElementConstructor<any>> & number',
+    'ReactElement<any, string | JSXElementConstructor<any>> & string',
+    'ReactElement<any, string | JSXElementConstructor<any>> & true',
+    'ReactPortal',
+    'ReactPortal & Iterable<ReactNode>',
+    'ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal & false',
+    'ReactPortal & number',
+    'ReactPortal & string',
+    'ReactPortal & true',
+    'false',
+    'false & Iterable<ReactNode>',
+    'false & ReactElement<any, string | JSXElementConstructor<any>>',
+    'false & ReactPortal',
+    'false & {}',
+    'number',
+    'number & Iterable<ReactNode>',
+    'number & ReactElement<any, string | JSXElementConstructor<any>>',
+    'number & ReactPortal',
+    'number & {}',
+    'string',
+    'string & Iterable<ReactNode>',
+    'string & ReactElement<any, string | JSXElementConstructor<any>>',
+    'string & ReactPortal',
+    'string & {}',
+    'true',
+    'true & Iterable<ReactNode>',
+    'true & ReactElement<any, string | JSXElementConstructor<any>>',
+    'true & ReactPortal',
+    'true & {}',
+    '{}',
+    '{} & false',
+    '{} & number',
+    '{} & string',
+    '{} & true',
   ]}
   webOptions={[
-    "Iterable<ReactNode>",
-    "Iterable<ReactNode> & ReactElement<any, string | JSXElementConstructor<any>>",
-    "Iterable<ReactNode> & ReactPortal",
-    "Iterable<ReactNode> & false",
-    "Iterable<ReactNode> & number",
-    "Iterable<ReactNode> & string",
-    "Iterable<ReactNode> & true",
-    "ModalRenderChildren",
-    "ModalRenderChildren & Iterable<ReactNode>",
-    "ModalRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>",
-    "ModalRenderChildren & ReactPortal",
-    "ModalRenderChildren & false",
-    "ModalRenderChildren & number",
-    "ModalRenderChildren & string",
-    "ModalRenderChildren & true",
-    "ReactElement<any, string | JSXElementConstructor<any>>",
-    "ReactElement<any, string | JSXElementConstructor<any>> & Iterable<ReactNode>",
-    "ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal",
-    "ReactElement<any, string | JSXElementConstructor<any>> & false",
-    "ReactElement<any, string | JSXElementConstructor<any>> & number",
-    "ReactElement<any, string | JSXElementConstructor<any>> & string",
-    "ReactElement<any, string | JSXElementConstructor<any>> & true",
-    "ReactPortal",
-    "ReactPortal & Iterable<ReactNode>",
-    "ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>",
-    "ReactPortal & false",
-    "ReactPortal & number",
-    "ReactPortal & string",
-    "ReactPortal & true",
-    "false",
-    "false & Iterable<ReactNode>",
-    "false & ReactElement<any, string | JSXElementConstructor<any>>",
-    "false & ReactPortal",
-    "false & {}",
-    "number",
-    "number & Iterable<ReactNode>",
-    "number & ReactElement<any, string | JSXElementConstructor<any>>",
-    "number & ReactPortal",
-    "number & {}",
-    "string",
-    "string & Iterable<ReactNode>",
-    "string & ReactElement<any, string | JSXElementConstructor<any>>",
-    "string & ReactPortal",
-    "string & {}",
-    "true",
-    "true & Iterable<ReactNode>",
-    "true & ReactElement<any, string | JSXElementConstructor<any>>",
-    "true & ReactPortal",
-    "true & {}",
-    "{}",
-    "{} & false",
-    "{} & number",
-    "{} & string",
-    "{} & true",
+    'Iterable<ReactNode>',
+    'Iterable<ReactNode> & ReactElement<any, string | JSXElementConstructor<any>>',
+    'Iterable<ReactNode> & ReactPortal',
+    'Iterable<ReactNode> & false',
+    'Iterable<ReactNode> & number',
+    'Iterable<ReactNode> & string',
+    'Iterable<ReactNode> & true',
+    'ModalRenderChildren',
+    'ModalRenderChildren & Iterable<ReactNode>',
+    'ModalRenderChildren & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ModalRenderChildren & ReactPortal',
+    'ModalRenderChildren & false',
+    'ModalRenderChildren & number',
+    'ModalRenderChildren & string',
+    'ModalRenderChildren & true',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactElement<any, string | JSXElementConstructor<any>> & Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>> & ReactPortal',
+    'ReactElement<any, string | JSXElementConstructor<any>> & false',
+    'ReactElement<any, string | JSXElementConstructor<any>> & number',
+    'ReactElement<any, string | JSXElementConstructor<any>> & string',
+    'ReactElement<any, string | JSXElementConstructor<any>> & true',
+    'ReactPortal',
+    'ReactPortal & Iterable<ReactNode>',
+    'ReactPortal & ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal & false',
+    'ReactPortal & number',
+    'ReactPortal & string',
+    'ReactPortal & true',
+    'false',
+    'false & Iterable<ReactNode>',
+    'false & ReactElement<any, string | JSXElementConstructor<any>>',
+    'false & ReactPortal',
+    'false & {}',
+    'number',
+    'number & Iterable<ReactNode>',
+    'number & ReactElement<any, string | JSXElementConstructor<any>>',
+    'number & ReactPortal',
+    'number & {}',
+    'string',
+    'string & Iterable<ReactNode>',
+    'string & ReactElement<any, string | JSXElementConstructor<any>>',
+    'string & ReactPortal',
+    'string & {}',
+    'true',
+    'true & Iterable<ReactNode>',
+    'true & ReactElement<any, string | JSXElementConstructor<any>>',
+    'true & ReactPortal',
+    'true & {}',
+    '{}',
+    '{} & false',
+    '{} & number',
+    '{} & string',
+    '{} & true',
   ]}
 />
 
@@ -193,13 +187,10 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-dangerouslyDisableResponsiveness"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-dangerouslyDisableResponsiveness" />
 
 ### dangerouslySetClassName <Badge variant="web" /> <Badge variant="danger" order={2} />
 
@@ -211,13 +202,10 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-dangerouslySetClassName"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-dangerouslySetClassName" />
 
 ### dangerouslySetPosition <Badge variant="web" /> <Badge variant="danger" order={2} />
 
@@ -230,13 +218,10 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["absolute", "fixed", "relative", "static", "sticky"]}
+  webOptions={['absolute', 'fixed', 'relative', 'static', 'sticky']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-dangerouslySetPosition"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-dangerouslySetPosition" />
 
 ### dangerouslySetWidth <Badge variant="danger" order={1} />
 
@@ -247,14 +232,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   propertyName="dangerouslySetWidth"
   required={false}
   defaultValue=""
-  mobileOptions={["number"]}
-  webOptions={["number"]}
+  mobileOptions={['number']}
+  webOptions={['number']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-dangerouslySetWidth"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-dangerouslySetWidth" />
 
 ### disableOverlayPress <Badge variant="web" />
 
@@ -266,13 +248,10 @@ Disable overlay click that closes the Modal
   required={false}
   defaultValue="false"
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-disableOverlayPress"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-disableOverlayPress" />
 
 ### disablePortal <Badge variant="web" />
 
@@ -284,7 +263,7 @@ Disable React portal integration
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-disablePortal" />
@@ -298,8 +277,8 @@ Hide the close icon on the top right
   propertyName="hideCloseButton"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-hideCloseButton" />
@@ -313,8 +292,8 @@ Hide top and bottom dividers inside Modal body
   propertyName="hideDividers"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-hideDividers" />
@@ -329,7 +308,7 @@ Used for a11y to indicate the relationship between a controlled element and its 
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-id" />
@@ -343,8 +322,8 @@ Callback function fired when modal is closed.
   propertyName="onRequestClose"
   required={false}
   defaultValue=""
-  mobileOptions={["NoopFn"]}
-  webOptions={["NoopFn"]}
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-onRequestClose" />
@@ -359,13 +338,10 @@ If pressing the esc key should close the modal
   required={false}
   defaultValue="true"
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails
-  componentName="Modal"
-  templateName="prop-shouldCloseOnEscPress"
-/>
+<ComponentDetails componentName="Modal" templateName="prop-shouldCloseOnEscPress" />
 
 ### testID
 
@@ -376,8 +352,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-testID" />
@@ -391,8 +367,8 @@ Controls visibility of the Modal
   propertyName="visible"
   required={true}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-visible" />
@@ -406,8 +382,8 @@ Adjust the z-index positioning layer.
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={["number"]}
-  webOptions={["number"]}
+  mobileOptions={['number']}
+  webOptions={['number']}
 />
 
 <ComponentDetails componentName="Modal" templateName="prop-zIndex" />

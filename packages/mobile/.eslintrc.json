@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "../../.eslintrc.js",
-    "plugin:@cbhq/react-native"
-  ],
+  "extends": ["../../.eslintrc.js", "plugin:@cbhq/react-native"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],

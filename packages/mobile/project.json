@@ -29,15 +29,8 @@
           "project.json"
         ],
         "babelConfig": "./packages/mobile/babel.build.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
+        "babelExtensions": [".ts", ".tsx"],
+        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
         "typescriptConfig": "packages/mobile/tsconfig.build.json"
       }
     }

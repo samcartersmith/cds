@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "../../.eslintrc.js"
-  ],
+  "extends": ["../../.eslintrc.js"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],

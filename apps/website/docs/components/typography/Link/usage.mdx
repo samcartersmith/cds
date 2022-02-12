@@ -6,7 +6,7 @@ Default Link text will inherit parent text styles.
 
 ```jsx live
 <VStack alignItems="flex-start" gap={3}>
-  {['body', 'caption', 'label1', 'label2', 'legal', 'title1', 'title2', 'title3'].map(variant => (
+  {['body', 'caption', 'label1', 'label2', 'legal', 'title1', 'title2', 'title3'].map((variant) => (
     <Link variant={variant} to="https://www.google.com/" openInNewWindow>
       {`${variant} link`}
     </Link>
@@ -61,7 +61,7 @@ Default Link text will inherit parent text styles.
   variant="body"
   color="primary"
   onPress={console.log}
-  renderContainer={props => <ReactRouterLink {...props} to="/introduction/getting-started" />}
+  renderContainer={(props) => <ReactRouterLink {...props} to="/introduction/getting-started" />}
 >
   Use React Router Link via renderContainer
 </Link>

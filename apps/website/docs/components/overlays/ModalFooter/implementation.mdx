@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -32,10 +32,7 @@ Primary action button
   webOptions={[]}
 />
 
-<ComponentDetails
-  componentName="ModalFooter"
-  templateName="prop-primaryAction"
-/>
+<ComponentDetails componentName="ModalFooter" templateName="prop-primaryAction" />
 
 ### secondaryAction
 
@@ -46,18 +43,11 @@ Secondary action button
   propertyName="secondaryAction"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "ReactElement<ButtonBaseProps, string | JSXElementConstructor<any>>",
-  ]}
-  webOptions={[
-    "ReactElement<ButtonBaseProps, string | JSXElementConstructor<any>>",
-  ]}
+  mobileOptions={['ReactElement<ButtonBaseProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<ButtonBaseProps, string | JSXElementConstructor<any>>']}
 />
 
-<ComponentDetails
-  componentName="ModalFooter"
-  templateName="prop-secondaryAction"
-/>
+<ComponentDetails componentName="ModalFooter" templateName="prop-secondaryAction" />
 
 ### testID
 
@@ -68,8 +58,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="ModalFooter" templateName="prop-testID" />
@@ -83,7 +73,7 @@ Stack buttons vertically instead of horizontally.
   propertyName="vertical"
   required={false}
   defaultValue=""
-  mobileOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
   webOptions={[]}
 />
 

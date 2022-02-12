@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -26,14 +26,11 @@ import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
   propertyName="foreground"
   required={false}
   defaultValue=""
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
-<ComponentDetails
-  componentName="SubBrandLogoWordmark"
-  templateName="prop-foreground"
-/>
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="prop-foreground" />
 
 ### type
 
@@ -42,13 +39,10 @@ import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
   propertyName="type"
   required={true}
   defaultValue=""
-  mobileOptions={["analytics", "assetHub", "commerce", "ventures", "wallet"]}
-  webOptions={["analytics", "assetHub", "commerce", "ventures", "wallet"]}
+  mobileOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
+  webOptions={['analytics', 'assetHub', 'commerce', 'ventures', 'wallet']}
 />
 
-<ComponentDetails
-  componentName="SubBrandLogoWordmark"
-  templateName="prop-type"
-/>
+<ComponentDetails componentName="SubBrandLogoWordmark" templateName="prop-type" />
 
 <ComponentDetails componentName="SubBrandLogoWordmark" templateName="outro" />

@@ -14,35 +14,35 @@ import { Tooltip } from '../Tooltip';
     decorators={[withStoryLabel('Top')]}
     args={{ placement: 'top' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Bottom placement"
     decorators={[withStoryLabel('Bottom')]}
     args={{ placement: 'bottom' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Left-start placement"
     decorators={[withStoryLabel('Left-start')]}
     args={{ placement: 'left-start' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Right-end placement"
     decorators={[withStoryLabel('Right-end')]}
     args={{ placement: 'right-end' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
   <Story
     name="Disabled"
     decorators={[withStoryLabel('Disabled')]}
     args={{ disabled: true, placement: 'top' }}
   >
-    {args => <StoryExample {...args} />}
+    {(args) => <StoryExample {...args} />}
   </Story>
 </Canvas>
 

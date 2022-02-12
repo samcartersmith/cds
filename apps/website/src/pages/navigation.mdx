@@ -6,11 +6,14 @@ import SidebarItemExample from ':cds-website/docs/components/navigation/SidebarI
 import NavLinkExample from ':cds-website/docs/components/navigation/NavLink/_example.mdx';
 
 # New Navigation Components
+
 These are the new navigation components. Read about the release process and motivation at [go/cds-nav-doc](http://go/cds-nav-doc).
 
 ## NavigationBar
+
 Until the Navigation system and all it's parts are locked in, NavigationBar
 is simply providing a bit of structure.
+
 <NavigationBarExample />
 
 > This API will likely get _much_ simpler when UA is locked in with something like:
@@ -21,31 +24,38 @@ is simply providing a bit of structure.
   avatarUrl={user.photoUrl}
   onBackPress={canGoBack && handleBack}
   onMenuOpen={handleMenuOpen}
-  onAppSwitch={handleAppSwitch} />
+  onAppSwitch={handleAppSwitch}
+/>
 ```
 
 ## NavLink
+
 The NavLink
+
 > Say stuff about this component
 
 <NavLinkExample />
 
 ## Sidebar
+
 The Sidebar
 
 <SidebarExample />
 
 ## SidebarItem
+
 This component is to be used inside a Sidebar. Clients can use the `compact` prop for smaller breakpoints
 
 <SidebarItemExample />
 
 ## NavigationTitle
+
 This is the page title component
 
 <NavigationTitle />
 
 ## NavigationTitle Select
+
 You can easily compose a NavigationTitle select
 
 <NavigationTitleSelectExample />
@@ -56,7 +66,7 @@ You can easily compose a NavigationTitle select
 function fullExample() {
   const [activeIndex, setActiveIndex] = useState(0);
   const items = mocks.product.navigationItems;
-  const {name, avatar} = mocks.users[1];
+  const { name, avatar } = mocks.users[1];
 
   return (
     <ExampleWithThemeToggles>
@@ -82,7 +92,10 @@ function fullExample() {
             end={
               <HStack gap={1} alignItems="center">
                 <IconButton name="bell" onPress={() => handlePress('Notifications')} />
-                <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
+                <Pressable
+                  backgroundColor="transparent"
+                  onPress={() => handlePress('Avatar group')}
+                >
                   <HStack gap={1} alignItems="center">
                     <Avatar alt="Kat" src={avatar} size="xl" />
                     <TextHeadline as="h2">{name}</TextHeadline>

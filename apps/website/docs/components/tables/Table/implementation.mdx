@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -29,7 +29,7 @@ When provided, well apply a bordered around the entire table
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Table" templateName="prop-bordered" />
@@ -45,8 +45,8 @@ Children are required, and should always include a TableBody. TableHeader and Ta
   defaultValue=""
   mobileOptions={[]}
   webOptions={[
-    "ReactElement<TableSectionProps, string | JSXElementConstructor<any>>",
-    "ReactElement<TableSectionProps, string | JSXElementConstructor<any>>[]",
+    'ReactElement<TableSectionProps, string | JSXElementConstructor<any>>',
+    'ReactElement<TableSectionProps, string | JSXElementConstructor<any>>[]',
   ]}
 />
 
@@ -62,7 +62,7 @@ Use tableLayout=fixed if you need full control over cell width
   required={false}
   defaultValue="'auto'"
   mobileOptions={[]}
-  webOptions={["auto", "fixed"]}
+  webOptions={['auto', 'fixed']}
 />
 
 <ComponentDetails componentName="Table" templateName="prop-tableLayout" />
@@ -77,7 +77,7 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Table" templateName="prop-testID" />
@@ -92,7 +92,7 @@ The variant prop allows clients to use a CDS approved style for their Table.
   required={false}
   defaultValue="undefined"
   mobileOptions={[]}
-  webOptions={["default", "graph", "ruled"]}
+  webOptions={['default', 'graph', 'ruled']}
 />
 
 <ComponentDetails componentName="Table" templateName="prop-variant" />

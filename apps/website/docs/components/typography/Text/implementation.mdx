@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -28,8 +28,8 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   propertyName="accessibilityLabel"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-accessibilityLabel" />
@@ -46,13 +46,10 @@ Accessibility prop that describes the component that labels it by its `id`
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Text"
-  templateName="prop-accessibilityLabelledBy"
-/>
+<ComponentDetails componentName="Text" templateName="prop-accessibilityLabelledBy" />
 
 ### align
 
@@ -65,8 +62,8 @@ Specifies text alignment. On mobile, the value `justify` is only supported on iO
   propertyName="align"
   required={false}
   defaultValue="start"
-  mobileOptions={["center", "end", "justify", "start"]}
-  webOptions={["center", "end", "justify", "start"]}
+  mobileOptions={['center', 'end', 'justify', 'start']}
+  webOptions={['center', 'end', 'justify', 'start']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-align" />
@@ -80,7 +77,7 @@ If value is `true` then style prop can take animated values.
   propertyName="animated"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
   webOptions={[]}
 />
 
@@ -97,27 +94,27 @@ A semantic HTML element or a React component to be rendered. All native HTML att
   defaultValue=""
   mobileOptions={[]}
   webOptions={[
-    "abbr",
-    "code",
-    "dd",
-    "del",
-    "div",
-    "dl",
-    "dt",
-    "ins",
-    "kbd",
-    "label",
-    "li",
-    "output",
-    "p",
-    "pre",
-    "q",
-    "s",
-    "span",
-    "strong",
-    "sub",
-    "sup",
-    "time",
+    'abbr',
+    'code',
+    'dd',
+    'del',
+    'div',
+    'dl',
+    'dt',
+    'ins',
+    'kbd',
+    'label',
+    'li',
+    'output',
+    'p',
+    'pre',
+    'q',
+    's',
+    'span',
+    'strong',
+    'sub',
+    'sup',
+    'time',
   ]}
 />
 
@@ -133,29 +130,29 @@ Foreground text color. Accepts a valid `PaletteForeground` alias.
   required={false}
   defaultValue="foreground"
   mobileOptions={[
-    "foreground",
-    "foregroundMuted",
-    "negative",
-    "negativeForeground",
-    "positive",
-    "positiveForeground",
-    "primary",
-    "primaryForeground",
-    "secondary",
-    "secondaryForeground",
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
   ]}
   webOptions={[
-    "currentColor",
-    "foreground",
-    "foregroundMuted",
-    "negative",
-    "negativeForeground",
-    "positive",
-    "positiveForeground",
-    "primary",
-    "primaryForeground",
-    "secondary",
-    "secondaryForeground",
+    'currentColor',
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
   ]}
 />
 
@@ -171,13 +168,10 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Text"
-  templateName="prop-dangerouslySetClassName"
-/>
+<ComponentDetails componentName="Text" templateName="prop-dangerouslySetClassName" />
 
 ### dangerouslySetColor <Badge variant="danger" order={1} />
 
@@ -188,14 +182,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   propertyName="dangerouslySetColor"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Text"
-  templateName="prop-dangerouslySetColor"
-/>
+<ComponentDetails componentName="Text" templateName="prop-dangerouslySetColor" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -207,23 +198,20 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
-    "AnimatedInterpolation",
-    "RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>>",
-    "RegisteredStyle<TextStyle>",
-    "TextStyle",
-    "Value",
-    "WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
-    "WithAnimatedObject<TextStyle>",
-    "false",
-    "null",
+    'AnimatedInterpolation',
+    'RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>>',
+    'RegisteredStyle<TextStyle>',
+    'TextStyle',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
   ]}
   webOptions={[]}
 />
 
-<ComponentDetails
-  componentName="Text"
-  templateName="prop-dangerouslySetStyle"
-/>
+<ComponentDetails componentName="Text" templateName="prop-dangerouslySetStyle" />
 
 ### deprecatedLineHeight <Badge variant="mobile" /> <Badge variant="deprecated" order={2} />
 
@@ -234,14 +222,11 @@ Override line-height. This is deprecated since overriding this prevents line hei
   propertyName="deprecatedLineHeight"
   required={false}
   defaultValue=""
-  mobileOptions={["none", "number"]}
+  mobileOptions={['none', 'number']}
   webOptions={[]}
 />
 
-<ComponentDetails
-  componentName="Text"
-  templateName="prop-deprecatedLineHeight"
-/>
+<ComponentDetails componentName="Text" templateName="prop-deprecatedLineHeight" />
 
 ### disabled
 
@@ -252,8 +237,8 @@ Add disabled opacity style to text
   propertyName="disabled"
   required={false}
   defaultValue=""
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-disabled" />
@@ -268,7 +253,7 @@ Set CSS display attribute.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["block", "initial", "inline"]}
+  webOptions={['block', 'initial', 'inline']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-display" />
@@ -284,7 +269,7 @@ Choose ellipsize mode.
   propertyName="ellipsize"
   required={false}
   defaultValue=""
-  mobileOptions={["clip", "head", "middle", "tail"]}
+  mobileOptions={['clip', 'head', 'middle', 'tail']}
   webOptions={[]}
 />
 
@@ -300,7 +285,7 @@ Used to associate a label with a control
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-id" />
@@ -314,8 +299,8 @@ Should the Text component inherit styles of parent
   propertyName="inherit"
   required={false}
   defaultValue=""
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-inherit" />
@@ -329,8 +314,8 @@ Use CoinbaseMono font
   propertyName="mono"
   required={false}
   defaultValue=""
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-mono" />
@@ -346,8 +331,8 @@ Set text to be in a single line.
   propertyName="noWrap"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-noWrap" />
@@ -362,14 +347,14 @@ Opacity of element
   required={false}
   defaultValue=""
   mobileOptions={[
-    "AnimatedInterpolation",
-    "RegisteredStyle<TextStyle>",
-    "Value",
-    "WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
-    "WithAnimatedObject<TextStyle>",
-    "false",
-    "null",
-    "number",
+    'AnimatedInterpolation',
+    'RegisteredStyle<TextStyle>',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+    'number',
   ]}
   webOptions={[]}
 />
@@ -388,7 +373,7 @@ Set overflow behavior.
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["clip", "truncate"]}
+  webOptions={['clip', 'truncate']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-overflow" />
@@ -404,8 +389,8 @@ Set select behavior. On mobile, selectable is binary, none will be not selectabl
   propertyName="selectable"
   required={false}
   defaultValue="'text' for web, 'none' for mobile"
-  mobileOptions={["all", "none", "text"]}
-  webOptions={["all", "none", "text"]}
+  mobileOptions={['all', 'none', 'text']}
+  webOptions={['all', 'none', 'text']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-selectable" />
@@ -421,8 +406,8 @@ Use character for number zero with a slash through it to differentiate it from t
   propertyName="slashedZero"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-slashedZero" />
@@ -436,21 +421,8 @@ Apply inner spacing on all sides.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-spacing" />
@@ -464,21 +436,8 @@ Apply inner spacing on the bottom side.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-spacingBottom" />
@@ -492,21 +451,8 @@ Apply inner spacing on the trailing side.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-spacingEnd" />
@@ -520,21 +466,8 @@ Apply inner spacing on the leading and trailing sides.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-spacingHorizontal" />
@@ -548,21 +481,8 @@ Apply inner spacing on the leading side.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-spacingStart" />
@@ -576,21 +496,8 @@ Apply inner spacing on the top side.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-spacingTop" />
@@ -604,21 +511,8 @@ Apply inner spacing on the top and bottom sides.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-spacingVertical" />
@@ -634,8 +528,8 @@ Activates the set of figures where numbers are all of the same size, allowing th
   propertyName="tabularNumbers"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-tabularNumbers" />
@@ -649,8 +543,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-testID" />
@@ -666,8 +560,8 @@ Transform text to all uppercase, all lowercase, or capitalized. This is not avai
   propertyName="transform"
   required={false}
   defaultValue=""
-  mobileOptions={["capitalize", "lowercase", "uppercase"]}
-  webOptions={["capitalize", "lowercase", "uppercase"]}
+  mobileOptions={['capitalize', 'lowercase', 'uppercase']}
+  webOptions={['capitalize', 'lowercase', 'uppercase']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-transform" />
@@ -683,8 +577,8 @@ Set text decoration to underline.
   propertyName="underline"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Text" templateName="prop-underline" />

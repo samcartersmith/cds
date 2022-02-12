@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -29,13 +29,10 @@ Accessibility label describing the control. If no accessibilityLabel, it will se
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Alert"
-  templateName="prop-accessibilityLabel"
-/>
+<ComponentDetails componentName="Alert" templateName="prop-accessibilityLabel" />
 
 ### accessibilityLabelledBy <Badge variant="web" />
 
@@ -49,13 +46,10 @@ Accessibility prop that describes the component that labels it by its `id`
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Alert"
-  templateName="prop-accessibilityLabelledBy"
-/>
+<ComponentDetails componentName="Alert" templateName="prop-accessibilityLabelledBy" />
 
 ### actionLayout
 
@@ -66,8 +60,8 @@ Layout of the actions
   propertyName="actionLayout"
   required={false}
   defaultValue="horizontal"
-  mobileOptions={["horizontal", "vertical"]}
-  webOptions={["horizontal", "vertical"]}
+  mobileOptions={['horizontal', 'vertical']}
+  webOptions={['horizontal', 'vertical']}
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-actionLayout" />
@@ -98,26 +92,26 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
-    "Iterable<ReactNode>",
-    "ReactElement<any, string | JSXElementConstructor<any>>",
-    "ReactPortal",
-    "false",
-    "null",
-    "number",
-    "string",
-    "true",
-    "{}",
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
   webOptions={[
-    "Iterable<ReactNode>",
-    "ReactElement<any, string | JSXElementConstructor<any>>",
-    "ReactPortal",
-    "false",
-    "null",
-    "number",
-    "string",
-    "true",
-    "{}",
+    'Iterable<ReactNode>',
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactPortal',
+    'false',
+    'null',
+    'number',
+    'string',
+    'true',
+    '{}',
   ]}
 />
 
@@ -133,7 +127,7 @@ Disable React portal integration
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-disablePortal" />
@@ -147,14 +141,11 @@ Label of the dimiss action
   propertyName="dismissActionLabel"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Alert"
-  templateName="prop-dismissActionLabel"
-/>
+<ComponentDetails componentName="Alert" templateName="prop-dismissActionLabel" />
 
 ### onDismissActionPress
 
@@ -165,14 +156,11 @@ Callback function fired when the dismiss action is pressed
   propertyName="onDismissActionPress"
   required={false}
   defaultValue=""
-  mobileOptions={["NoopFn"]}
-  webOptions={["NoopFn"]}
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
 />
 
-<ComponentDetails
-  componentName="Alert"
-  templateName="prop-onDismissActionPress"
-/>
+<ComponentDetails componentName="Alert" templateName="prop-onDismissActionPress" />
 
 ### onPreferredActionPress
 
@@ -187,10 +175,7 @@ Callback function fired when the preferred action is pressed
   webOptions={[]}
 />
 
-<ComponentDetails
-  componentName="Alert"
-  templateName="prop-onPreferredActionPress"
-/>
+<ComponentDetails componentName="Alert" templateName="prop-onPreferredActionPress" />
 
 ### onRequestClose
 
@@ -201,8 +186,8 @@ Callback function fired when modal is closed.
   propertyName="onRequestClose"
   required={false}
   defaultValue=""
-  mobileOptions={["NoopFn"]}
-  webOptions={["NoopFn"]}
+  mobileOptions={['NoopFn']}
+  webOptions={['NoopFn']}
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-onRequestClose" />
@@ -217,290 +202,290 @@ Illustration pictogram name for alert
   required={false}
   defaultValue=""
   mobileOptions={[
-    "2fa",
-    "add",
-    "addCard",
-    "addPayment",
-    "addPhone",
-    "addToWatchlist",
-    "addWallet",
-    "addressBook",
-    "advancedTradingDesktop",
-    "alerts",
-    "applyForHigherLimits",
-    "authenticationApp",
-    "authenticator",
-    "authenticatorAlt",
-    "authenticatorProgress",
-    "barChart",
-    "bitcoinPizza",
-    "bitcoinWhitePaper",
-    "browser",
-    "browserTransaction",
-    "bundle",
-    "bundleGray",
-    "calendar",
-    "cardBlocked",
-    "cardDeclined",
-    "chart",
-    "chat",
-    "checkmark",
-    "clock",
-    "coinbaseOneAuthenticator",
-    "coinbaseOneChat",
-    "coinbaseOneEarnCoins",
-    "coinbaseOneFiat",
-    "coinbaseOneLogoPictogram",
-    "coinbaseOneRefreshed",
-    "coinbaseOneShield",
-    "coinbaseOneTrusted",
-    "commerceCheckout",
-    "commerceInvoice",
-    "commerceNoPaymentsGray",
-    "contactInfo",
-    "creditCard",
-    "cryptoCard",
-    "defiEarnMoment",
-    "delegate",
-    "done",
-    "doneGray",
-    "earnCoins",
-    "easyToUse",
-    "email",
-    "enableVoting",
-    "envelope",
-    "error",
-    "explore",
-    "exploreGray",
-    "fast",
-    "fiat",
-    "formDownload",
-    "gem",
-    "giftbox",
-    "googleAuthenticator",
-    "graphsGray",
-    "higherLimits",
-    "idVerification",
-    "identityCard",
-    "increaseLimits",
-    "institutions",
-    "internet",
-    "key",
-    "laptop",
-    "laptopCharts",
-    "laptopVideo",
-    "learn",
-    "listingFees",
-    "lock",
-    "lowFees",
-    "mobileCharts",
-    "mobileNotifcation",
-    "moneyEarn",
-    "moneySwift",
-    "moreThanBitcoin",
-    "multiPlatform",
-    "multipleAssets",
-    "newUserChecklistBuyCrypto",
-    "newUserChecklistCompleteAccount",
-    "newUserChecklistVerifyId",
-    "noAnnualFee",
-    "noNotificationsGray",
-    "noTransactions",
-    "noVisibility",
-    "noWiFi",
-    "notifications",
-    "orders",
-    "ordersGray",
-    "partialCoins",
-    "paypal",
-    "pendingApprovalGray",
-    "phone",
-    "pieChart",
-    "pizza",
-    "predictionMarkets",
-    "priceTracking",
-    "receipt",
-    "recurringPurchases",
-    "restaking",
-    "reviewAndAdd",
-    "safe",
-    "security",
-    "settings",
-    "settled",
-    "shield",
-    "smsAuthenticate",
-    "stacking",
-    "startToday",
-    "strongInfo",
-    "strongWarning",
-    "successPhone",
-    "support",
-    "supportChat",
-    "takeQuiz",
-    "target",
-    "taxBeta",
-    "taxSeason",
-    "taxes",
-    "tokenBaskets",
-    "trading",
-    "transferSend",
-    "transistor",
-    "trusted",
-    "tryAgainLater",
-    "typeScript",
-    "ubiKey",
-    "usaProduct",
-    "waiting",
-    "waitingForConsensus",
-    "wallet",
-    "walletDeposit",
-    "walletExchange",
-    "walletWarning",
-    "warning",
-    "worldwide",
+    '2fa',
+    'add',
+    'addCard',
+    'addPayment',
+    'addPhone',
+    'addToWatchlist',
+    'addWallet',
+    'addressBook',
+    'advancedTradingDesktop',
+    'alerts',
+    'applyForHigherLimits',
+    'authenticationApp',
+    'authenticator',
+    'authenticatorAlt',
+    'authenticatorProgress',
+    'barChart',
+    'bitcoinPizza',
+    'bitcoinWhitePaper',
+    'browser',
+    'browserTransaction',
+    'bundle',
+    'bundleGray',
+    'calendar',
+    'cardBlocked',
+    'cardDeclined',
+    'chart',
+    'chat',
+    'checkmark',
+    'clock',
+    'coinbaseOneAuthenticator',
+    'coinbaseOneChat',
+    'coinbaseOneEarnCoins',
+    'coinbaseOneFiat',
+    'coinbaseOneLogoPictogram',
+    'coinbaseOneRefreshed',
+    'coinbaseOneShield',
+    'coinbaseOneTrusted',
+    'commerceCheckout',
+    'commerceInvoice',
+    'commerceNoPaymentsGray',
+    'contactInfo',
+    'creditCard',
+    'cryptoCard',
+    'defiEarnMoment',
+    'delegate',
+    'done',
+    'doneGray',
+    'earnCoins',
+    'easyToUse',
+    'email',
+    'enableVoting',
+    'envelope',
+    'error',
+    'explore',
+    'exploreGray',
+    'fast',
+    'fiat',
+    'formDownload',
+    'gem',
+    'giftbox',
+    'googleAuthenticator',
+    'graphsGray',
+    'higherLimits',
+    'idVerification',
+    'identityCard',
+    'increaseLimits',
+    'institutions',
+    'internet',
+    'key',
+    'laptop',
+    'laptopCharts',
+    'laptopVideo',
+    'learn',
+    'listingFees',
+    'lock',
+    'lowFees',
+    'mobileCharts',
+    'mobileNotifcation',
+    'moneyEarn',
+    'moneySwift',
+    'moreThanBitcoin',
+    'multiPlatform',
+    'multipleAssets',
+    'newUserChecklistBuyCrypto',
+    'newUserChecklistCompleteAccount',
+    'newUserChecklistVerifyId',
+    'noAnnualFee',
+    'noNotificationsGray',
+    'noTransactions',
+    'noVisibility',
+    'noWiFi',
+    'notifications',
+    'orders',
+    'ordersGray',
+    'partialCoins',
+    'paypal',
+    'pendingApprovalGray',
+    'phone',
+    'pieChart',
+    'pizza',
+    'predictionMarkets',
+    'priceTracking',
+    'receipt',
+    'recurringPurchases',
+    'restaking',
+    'reviewAndAdd',
+    'safe',
+    'security',
+    'settings',
+    'settled',
+    'shield',
+    'smsAuthenticate',
+    'stacking',
+    'startToday',
+    'strongInfo',
+    'strongWarning',
+    'successPhone',
+    'support',
+    'supportChat',
+    'takeQuiz',
+    'target',
+    'taxBeta',
+    'taxSeason',
+    'taxes',
+    'tokenBaskets',
+    'trading',
+    'transferSend',
+    'transistor',
+    'trusted',
+    'tryAgainLater',
+    'typeScript',
+    'ubiKey',
+    'usaProduct',
+    'waiting',
+    'waitingForConsensus',
+    'wallet',
+    'walletDeposit',
+    'walletExchange',
+    'walletWarning',
+    'warning',
+    'worldwide',
   ]}
   webOptions={[
-    "2fa",
-    "add",
-    "addCard",
-    "addPayment",
-    "addPhone",
-    "addToWatchlist",
-    "addWallet",
-    "addressBook",
-    "advancedTradingDesktop",
-    "alerts",
-    "applyForHigherLimits",
-    "authenticationApp",
-    "authenticator",
-    "authenticatorAlt",
-    "authenticatorProgress",
-    "barChart",
-    "bitcoinPizza",
-    "bitcoinWhitePaper",
-    "browser",
-    "browserTransaction",
-    "bundle",
-    "bundleGray",
-    "calendar",
-    "cardBlocked",
-    "cardDeclined",
-    "chart",
-    "chat",
-    "checkmark",
-    "clock",
-    "coinbaseOneAuthenticator",
-    "coinbaseOneChat",
-    "coinbaseOneEarnCoins",
-    "coinbaseOneFiat",
-    "coinbaseOneLogoPictogram",
-    "coinbaseOneRefreshed",
-    "coinbaseOneShield",
-    "coinbaseOneTrusted",
-    "commerceCheckout",
-    "commerceInvoice",
-    "commerceNoPaymentsGray",
-    "contactInfo",
-    "creditCard",
-    "cryptoCard",
-    "defiEarnMoment",
-    "delegate",
-    "done",
-    "doneGray",
-    "earnCoins",
-    "easyToUse",
-    "email",
-    "enableVoting",
-    "envelope",
-    "error",
-    "explore",
-    "exploreGray",
-    "fast",
-    "fiat",
-    "formDownload",
-    "gem",
-    "giftbox",
-    "googleAuthenticator",
-    "graphsGray",
-    "higherLimits",
-    "idVerification",
-    "identityCard",
-    "increaseLimits",
-    "institutions",
-    "internet",
-    "key",
-    "laptop",
-    "laptopCharts",
-    "laptopVideo",
-    "learn",
-    "listingFees",
-    "lock",
-    "lowFees",
-    "mobileCharts",
-    "mobileNotifcation",
-    "moneyEarn",
-    "moneySwift",
-    "moreThanBitcoin",
-    "multiPlatform",
-    "multipleAssets",
-    "newUserChecklistBuyCrypto",
-    "newUserChecklistCompleteAccount",
-    "newUserChecklistVerifyId",
-    "noAnnualFee",
-    "noNotificationsGray",
-    "noTransactions",
-    "noVisibility",
-    "noWiFi",
-    "notifications",
-    "orders",
-    "ordersGray",
-    "partialCoins",
-    "paypal",
-    "pendingApprovalGray",
-    "phone",
-    "pieChart",
-    "pizza",
-    "predictionMarkets",
-    "priceTracking",
-    "receipt",
-    "recurringPurchases",
-    "restaking",
-    "reviewAndAdd",
-    "safe",
-    "security",
-    "settings",
-    "settled",
-    "shield",
-    "smsAuthenticate",
-    "stacking",
-    "startToday",
-    "strongInfo",
-    "strongWarning",
-    "successPhone",
-    "support",
-    "supportChat",
-    "takeQuiz",
-    "target",
-    "taxBeta",
-    "taxSeason",
-    "taxes",
-    "tokenBaskets",
-    "trading",
-    "transferSend",
-    "transistor",
-    "trusted",
-    "tryAgainLater",
-    "typeScript",
-    "ubiKey",
-    "usaProduct",
-    "waiting",
-    "waitingForConsensus",
-    "wallet",
-    "walletDeposit",
-    "walletExchange",
-    "walletWarning",
-    "warning",
-    "worldwide",
+    '2fa',
+    'add',
+    'addCard',
+    'addPayment',
+    'addPhone',
+    'addToWatchlist',
+    'addWallet',
+    'addressBook',
+    'advancedTradingDesktop',
+    'alerts',
+    'applyForHigherLimits',
+    'authenticationApp',
+    'authenticator',
+    'authenticatorAlt',
+    'authenticatorProgress',
+    'barChart',
+    'bitcoinPizza',
+    'bitcoinWhitePaper',
+    'browser',
+    'browserTransaction',
+    'bundle',
+    'bundleGray',
+    'calendar',
+    'cardBlocked',
+    'cardDeclined',
+    'chart',
+    'chat',
+    'checkmark',
+    'clock',
+    'coinbaseOneAuthenticator',
+    'coinbaseOneChat',
+    'coinbaseOneEarnCoins',
+    'coinbaseOneFiat',
+    'coinbaseOneLogoPictogram',
+    'coinbaseOneRefreshed',
+    'coinbaseOneShield',
+    'coinbaseOneTrusted',
+    'commerceCheckout',
+    'commerceInvoice',
+    'commerceNoPaymentsGray',
+    'contactInfo',
+    'creditCard',
+    'cryptoCard',
+    'defiEarnMoment',
+    'delegate',
+    'done',
+    'doneGray',
+    'earnCoins',
+    'easyToUse',
+    'email',
+    'enableVoting',
+    'envelope',
+    'error',
+    'explore',
+    'exploreGray',
+    'fast',
+    'fiat',
+    'formDownload',
+    'gem',
+    'giftbox',
+    'googleAuthenticator',
+    'graphsGray',
+    'higherLimits',
+    'idVerification',
+    'identityCard',
+    'increaseLimits',
+    'institutions',
+    'internet',
+    'key',
+    'laptop',
+    'laptopCharts',
+    'laptopVideo',
+    'learn',
+    'listingFees',
+    'lock',
+    'lowFees',
+    'mobileCharts',
+    'mobileNotifcation',
+    'moneyEarn',
+    'moneySwift',
+    'moreThanBitcoin',
+    'multiPlatform',
+    'multipleAssets',
+    'newUserChecklistBuyCrypto',
+    'newUserChecklistCompleteAccount',
+    'newUserChecklistVerifyId',
+    'noAnnualFee',
+    'noNotificationsGray',
+    'noTransactions',
+    'noVisibility',
+    'noWiFi',
+    'notifications',
+    'orders',
+    'ordersGray',
+    'partialCoins',
+    'paypal',
+    'pendingApprovalGray',
+    'phone',
+    'pieChart',
+    'pizza',
+    'predictionMarkets',
+    'priceTracking',
+    'receipt',
+    'recurringPurchases',
+    'restaking',
+    'reviewAndAdd',
+    'safe',
+    'security',
+    'settings',
+    'settled',
+    'shield',
+    'smsAuthenticate',
+    'stacking',
+    'startToday',
+    'strongInfo',
+    'strongWarning',
+    'successPhone',
+    'support',
+    'supportChat',
+    'takeQuiz',
+    'target',
+    'taxBeta',
+    'taxSeason',
+    'taxes',
+    'tokenBaskets',
+    'trading',
+    'transferSend',
+    'transistor',
+    'trusted',
+    'tryAgainLater',
+    'typeScript',
+    'ubiKey',
+    'usaProduct',
+    'waiting',
+    'waitingForConsensus',
+    'wallet',
+    'walletDeposit',
+    'walletExchange',
+    'walletWarning',
+    'warning',
+    'worldwide',
   ]}
 />
 
@@ -519,10 +504,7 @@ Label of the preferred action
   webOptions={[]}
 />
 
-<ComponentDetails
-  componentName="Alert"
-  templateName="prop-preferredActionLabel"
-/>
+<ComponentDetails componentName="Alert" templateName="prop-preferredActionLabel" />
 
 ### preferredActionVariant
 
@@ -533,14 +515,11 @@ Button variant of the preferred action
   propertyName="preferredActionVariant"
   required={false}
   defaultValue="primary"
-  mobileOptions={["negative", "primary"]}
-  webOptions={["negative", "primary"]}
+  mobileOptions={['negative', 'primary']}
+  webOptions={['negative', 'primary']}
 />
 
-<ComponentDetails
-  componentName="Alert"
-  templateName="prop-preferredActionVariant"
-/>
+<ComponentDetails componentName="Alert" templateName="prop-preferredActionVariant" />
 
 ### stacked <Badge variant="web" />
 
@@ -552,7 +531,7 @@ Indicating if Alert is stacked on top of Modal
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["false", "true"]}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-stacked" />
@@ -566,8 +545,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-testID" />
@@ -596,8 +575,8 @@ Controls visibility of the Modal
   propertyName="visible"
   required={true}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-visible" />
@@ -611,8 +590,8 @@ Adjust the z-index positioning layer.
   propertyName="zIndex"
   required={false}
   defaultValue=""
-  mobileOptions={["number"]}
-  webOptions={["number"]}
+  mobileOptions={['number']}
+  webOptions={['number']}
 />
 
 <ComponentDetails componentName="Alert" templateName="prop-zIndex" />

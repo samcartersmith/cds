@@ -1,4 +1,5 @@
 ### Default Alert
+
 Controled using `visible` and `onRequestClose`.
 
 ```jsx live
@@ -29,26 +30,28 @@ function DefaultAlertExample() {
 ```
 
 ### Portal Alert
+
 Controlled programmatically using the `useAlert` hook.
 
 ```jsx live
 function PortalAlertExample() {
   function PortalAlert() {
     const alert = useAlert();
-  
-    const showAlert = () => alert.open(
-      <Alert
-        title="Alert title"
-        body="Alert body type that can run over multiple lines, but should be kept short."
-        pictogram="warning"
-        visible
-        onRequestClose={() => console.log('Alert dimissed!')}
-        preferredActionLabel="Save"
-        onPreferredActionPress={() => console.log('Save pressed')}
-      />
-    );
 
-    return <Button onPress={showAlert}>Show Alert</Button>
+    const showAlert = () =>
+      alert.open(
+        <Alert
+          title="Alert title"
+          body="Alert body type that can run over multiple lines, but should be kept short."
+          pictogram="warning"
+          visible
+          onRequestClose={() => console.log('Alert dimissed!')}
+          preferredActionLabel="Save"
+          onPreferredActionPress={() => console.log('Save pressed')}
+        />,
+      );
+
+    return <Button onPress={showAlert}>Show Alert</Button>;
   }
 
   return (
@@ -62,6 +65,7 @@ function PortalAlertExample() {
 ```
 
 ### Alert over Modal
+
 Alert displays on top of a Modal.
 
 ```jsx live
@@ -69,7 +73,7 @@ function AlertOnModalExample() {
   function AlertOnModal() {
     const { openModal, closeModal } = useModal();
     const alert = useAlert();
-  
+
     const showAlert = () =>
       alert.open(
         <Alert
@@ -84,7 +88,7 @@ function AlertOnModalExample() {
           stacked
         />,
       );
-  
+
     const handlePress = () => {
       openModal(
         <Modal visible>
@@ -95,10 +99,10 @@ function AlertOnModalExample() {
             primaryAction={<Button onPress={closeModal}>Save</Button>}
             secondaryAction={<Button onPress={showAlert}>Cancel</Button>}
           />
-        </Modal>
+        </Modal>,
       );
     };
-  
+
     return <Button onPress={handlePress}>Open Modal</Button>;
   }
 

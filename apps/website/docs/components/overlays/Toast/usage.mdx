@@ -1,7 +1,9 @@
 ### Get Started
+
 1. Add `PortalProvider` to the root of your app if it doesn't exist.
 2. Import the [useToast](/hooks/useToast) hook: `import { useToast } from '@cbhq/cds-web/overlays/useToast';`
 3. Show a toast
+
 ```jsx
 const toast = useToast();
 
@@ -9,8 +11,8 @@ toast.show('Copied to clipboard');
 ```
 
 ### Examples
-```jsx live
 
+```jsx live
 function ToastExample() {
   function BasicToast() {
     const toast = useToast();
@@ -30,11 +32,11 @@ function ToastExample() {
     }, [toast, toastText]);
 
     const handleNoAction = () => toast.show(toastText);
-    
+
     const handleNoClose = () =>
       toast.show(toastText, {
         action: { label: 'Action', onPress: () => console.log('action pressed') },
-        hideCloseButton: true
+        hideCloseButton: true,
       });
 
     const handleTextOnly = () => toast.show(toastText, { hideCloseButton: true });
@@ -57,7 +59,7 @@ function ToastExample() {
         </HStack>
       </>
     );
-  };
+  }
 
   return (
     <ExampleWithThemeToggles>
@@ -65,6 +67,6 @@ function ToastExample() {
         <BasicToast />
       </PortalProvider>
     </ExampleWithThemeToggles>
-  )
+  );
 }
 ```

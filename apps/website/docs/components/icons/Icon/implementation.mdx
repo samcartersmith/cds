@@ -1,7 +1,7 @@
-import { ApiDetails } from ":cds-website/components/ApiDetails";
-import { Badge } from ":cds-website/components/Badge";
-import { ComponentDetails } from ":cds-website/components/ComponentDetails";
-import { RightSidebar } from ":cds-website/src/theme/RightSidebar";
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
 
 <RightSidebar toc={toc} />
 
@@ -28,7 +28,7 @@ If value is `true` then style prop can take animated values.
   propertyName="animated"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
   webOptions={[]}
 />
 
@@ -43,10 +43,8 @@ Add a badge to the top right of an icon
   propertyName="badge"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "ReactElement<BadgeProps, string | JSXElementConstructor<any>>",
-  ]}
-  webOptions={["ReactElement<BadgeProps, string | JSXElementConstructor<any>>"]}
+  mobileOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
+  webOptions={['ReactElement<BadgeProps, string | JSXElementConstructor<any>>']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-badge" />
@@ -60,8 +58,8 @@ A boolean flag indicating whether or not a border should be shown around an icon
   propertyName="bordered"
   required={false}
   defaultValue="false"
-  mobileOptions={["false", "true"]}
-  webOptions={["false", "true"]}
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-bordered" />
@@ -76,29 +74,29 @@ Color of the icon when used as a foreground.
   required={false}
   defaultValue=""
   mobileOptions={[
-    "foreground",
-    "foregroundMuted",
-    "negative",
-    "negativeForeground",
-    "positive",
-    "positiveForeground",
-    "primary",
-    "primaryForeground",
-    "secondary",
-    "secondaryForeground",
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
   ]}
   webOptions={[
-    "currentColor",
-    "foreground",
-    "foregroundMuted",
-    "negative",
-    "negativeForeground",
-    "positive",
-    "positiveForeground",
-    "primary",
-    "primaryForeground",
-    "secondary",
-    "secondaryForeground",
+    'currentColor',
+    'foreground',
+    'foregroundMuted',
+    'negative',
+    'negativeForeground',
+    'positive',
+    'positiveForeground',
+    'primary',
+    'primaryForeground',
+    'secondary',
+    'secondaryForeground',
   ]}
 />
 
@@ -113,14 +111,11 @@ This is a migration escape hatch. It is not intended to be used normally.
   propertyName="dangerouslySetColor"
   required={false}
   defaultValue=""
-  mobileOptions={["AnimatedInterpolation", "string"]}
-  webOptions={["string"]}
+  mobileOptions={['AnimatedInterpolation', 'string']}
+  webOptions={['string']}
 />
 
-<ComponentDetails
-  componentName="Icon"
-  templateName="prop-dangerouslySetColor"
-/>
+<ComponentDetails componentName="Icon" templateName="prop-dangerouslySetColor" />
 
 ### dangerouslySetStyle <Badge variant="mobile" /> <Badge variant="danger" order={2} />
 
@@ -132,23 +127,20 @@ This is a migration escape hatch. It is not intended to be used normally.
   required={false}
   defaultValue=""
   mobileOptions={[
-    "AnimatedInterpolation",
-    "RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>>",
-    "RegisteredStyle<TextStyle>",
-    "TextStyle",
-    "Value",
-    "WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
-    "WithAnimatedObject<TextStyle>",
-    "false",
-    "null",
+    'AnimatedInterpolation',
+    'RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>>',
+    'RegisteredStyle<TextStyle>',
+    'TextStyle',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
   ]}
   webOptions={[]}
 />
 
-<ComponentDetails
-  componentName="Icon"
-  templateName="prop-dangerouslySetStyle"
-/>
+<ComponentDetails componentName="Icon" templateName="prop-dangerouslySetStyle" />
 
 ### labeledBy <Badge variant="web" />
 
@@ -160,7 +152,7 @@ If the icon is labelled by an independent element, then provide that elements id
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-labeledBy" />
@@ -175,370 +167,370 @@ Name of the icon, as defined in Figma.
   required={true}
   defaultValue=""
   mobileOptions={[
-    "add",
-    "airdrop",
-    "allTimeHigh",
-    "annotation",
-    "api",
-    "arrowDown",
-    "arrowLeft",
-    "arrowRight",
-    "arrowUp",
-    "arrowsHorizontal",
-    "arrowsVertical",
-    "avatar",
-    "average",
-    "backArrow",
-    "bank",
-    "bell",
-    "blockchain",
-    "bookmarkActive",
-    "bookmarkInactive",
-    "calendar",
-    "camera",
-    "card",
-    "caretDown",
-    "caretLeft",
-    "caretRight",
-    "caretUp",
-    "cash",
-    "cashEUR",
-    "cashGBP",
-    "cashJPY",
-    "cashRupee",
-    "cashUSD",
-    "chainLink",
-    "chartBar",
-    "chartCandles",
-    "chartLine",
-    "chartPie",
-    "chartPieCircle",
-    "chartVolume",
-    "chatBubble",
-    "checkbox",
-    "checkboxChecked",
-    "checkboxEmpty",
-    "checkmark",
-    "circleCheckmark",
-    "circleCross",
-    "circulatingSupply",
-    "clipboard",
-    "clock",
-    "clockOutline",
-    "close",
-    "closeCaption",
-    "collapse",
-    "continuous",
-    "convert",
-    "copy",
-    "crossTrade",
-    "currencies",
-    "defi",
-    "deposit",
-    "dex",
-    "diagonalDownArrow",
-    "diagonalRightArrow",
-    "diagonalUpArrow",
-    "document",
-    "dot",
-    "doubleChevronRight",
-    "downArrow",
-    "download",
-    "drag",
-    "email",
-    "error",
-    "ethereum",
-    "exclamationMark",
-    "expand",
-    "expandAddress",
-    "expandAll",
-    "externalLink",
-    "fib",
-    "filter",
-    "flame",
-    "followActive",
-    "followInactive",
-    "fork",
-    "forwardArrow",
-    "gauge",
-    "gavel",
-    "gear",
-    "giftBox",
-    "giftCard",
-    "globe",
-    "hamburger",
-    "heartActive",
-    "heartInactive",
-    "home",
-    "horizontalLine",
-    "ideal",
-    "identityCard",
-    "info",
-    "initiator",
-    "keyboard",
-    "laptop",
-    "lightningBolt",
-    "list",
-    "lock",
-    "marketCap",
-    "minus",
-    "more",
-    "newsFeed",
-    "nft",
-    "noWifi",
-    "orderHistory",
-    "outline",
-    "paperAirplane",
-    "paperclip",
-    "pause",
-    "pay",
-    "paypal",
-    "pencil",
-    "percentage",
-    "phone",
-    "pin",
-    "play",
-    "profile",
-    "protection",
-    "pulse",
-    "pyramid",
-    "qrCode",
-    "questionMark",
-    "reCenter",
-    "rectangle",
-    "recurring",
-    "regulated",
-    "reportActive",
-    "reportInactive",
-    "safe",
-    "search",
-    "setPinCode",
-    "share",
-    "shield",
-    "smartContract",
-    "sofort",
-    "sortDown",
-    "sortDownCenter",
-    "sortUp",
-    "sortUpCenter",
-    "soundOff",
-    "soundOn",
-    "sparkle",
-    "speaker",
-    "stake",
-    "starActive",
-    "starInactive",
-    "statusDot",
-    "step0",
-    "step1",
-    "step2",
-    "step3",
-    "step4",
-    "step5",
-    "step6",
-    "step7",
-    "step8",
-    "step9",
-    "telephone",
-    "thumbsDown",
-    "thumbsUp",
-    "trashCan",
-    "trophy",
-    "undo",
-    "unknown",
-    "upArrow",
-    "upload",
-    "verticalLine",
-    "visibleActive",
-    "visibleInactive",
-    "wallet",
-    "warning",
-    "wifi",
-    "wireTransfer",
-    "withdraw",
+    'add',
+    'airdrop',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'bookmarkActive',
+    'bookmarkInactive',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cash',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashRupee',
+    'cashUSD',
+    'chainLink',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'chatBubble',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clipboard',
+    'clock',
+    'clockOutline',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'currencies',
+    'defi',
+    'deposit',
+    'dex',
+    'diagonalDownArrow',
+    'diagonalRightArrow',
+    'diagonalUpArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'downArrow',
+    'download',
+    'drag',
+    'email',
+    'error',
+    'ethereum',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'flame',
+    'followActive',
+    'followInactive',
+    'fork',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'keyboard',
+    'laptop',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'nft',
+    'noWifi',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'paperclip',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'pin',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'pyramid',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'reportActive',
+    'reportInactive',
+    'safe',
+    'search',
+    'setPinCode',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'telephone',
+    'thumbsDown',
+    'thumbsUp',
+    'trashCan',
+    'trophy',
+    'undo',
+    'unknown',
+    'upArrow',
+    'upload',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'warning',
+    'wifi',
+    'wireTransfer',
+    'withdraw',
   ]}
   webOptions={[
-    "add",
-    "airdrop",
-    "allTimeHigh",
-    "annotation",
-    "api",
-    "arrowDown",
-    "arrowLeft",
-    "arrowRight",
-    "arrowUp",
-    "arrowsHorizontal",
-    "arrowsVertical",
-    "avatar",
-    "average",
-    "backArrow",
-    "bank",
-    "bell",
-    "blockchain",
-    "bookmarkActive",
-    "bookmarkInactive",
-    "calendar",
-    "camera",
-    "card",
-    "caretDown",
-    "caretLeft",
-    "caretRight",
-    "caretUp",
-    "cash",
-    "cashEUR",
-    "cashGBP",
-    "cashJPY",
-    "cashRupee",
-    "cashUSD",
-    "chainLink",
-    "chartBar",
-    "chartCandles",
-    "chartLine",
-    "chartPie",
-    "chartPieCircle",
-    "chartVolume",
-    "chatBubble",
-    "checkbox",
-    "checkboxChecked",
-    "checkboxEmpty",
-    "checkmark",
-    "circleCheckmark",
-    "circleCross",
-    "circulatingSupply",
-    "clipboard",
-    "clock",
-    "clockOutline",
-    "close",
-    "closeCaption",
-    "collapse",
-    "continuous",
-    "convert",
-    "copy",
-    "crossTrade",
-    "currencies",
-    "defi",
-    "deposit",
-    "dex",
-    "diagonalDownArrow",
-    "diagonalRightArrow",
-    "diagonalUpArrow",
-    "document",
-    "dot",
-    "doubleChevronRight",
-    "downArrow",
-    "download",
-    "drag",
-    "email",
-    "error",
-    "ethereum",
-    "exclamationMark",
-    "expand",
-    "expandAddress",
-    "expandAll",
-    "externalLink",
-    "fib",
-    "filter",
-    "flame",
-    "followActive",
-    "followInactive",
-    "fork",
-    "forwardArrow",
-    "gauge",
-    "gavel",
-    "gear",
-    "giftBox",
-    "giftCard",
-    "globe",
-    "hamburger",
-    "heartActive",
-    "heartInactive",
-    "home",
-    "horizontalLine",
-    "ideal",
-    "identityCard",
-    "info",
-    "initiator",
-    "keyboard",
-    "laptop",
-    "lightningBolt",
-    "list",
-    "lock",
-    "marketCap",
-    "minus",
-    "more",
-    "newsFeed",
-    "nft",
-    "noWifi",
-    "orderHistory",
-    "outline",
-    "paperAirplane",
-    "paperclip",
-    "pause",
-    "pay",
-    "paypal",
-    "pencil",
-    "percentage",
-    "phone",
-    "pin",
-    "play",
-    "profile",
-    "protection",
-    "pulse",
-    "pyramid",
-    "qrCode",
-    "questionMark",
-    "reCenter",
-    "rectangle",
-    "recurring",
-    "regulated",
-    "reportActive",
-    "reportInactive",
-    "safe",
-    "search",
-    "setPinCode",
-    "share",
-    "shield",
-    "smartContract",
-    "sofort",
-    "sortDown",
-    "sortDownCenter",
-    "sortUp",
-    "sortUpCenter",
-    "soundOff",
-    "soundOn",
-    "sparkle",
-    "speaker",
-    "stake",
-    "starActive",
-    "starInactive",
-    "statusDot",
-    "step0",
-    "step1",
-    "step2",
-    "step3",
-    "step4",
-    "step5",
-    "step6",
-    "step7",
-    "step8",
-    "step9",
-    "telephone",
-    "thumbsDown",
-    "thumbsUp",
-    "trashCan",
-    "trophy",
-    "undo",
-    "unknown",
-    "upArrow",
-    "upload",
-    "verticalLine",
-    "visibleActive",
-    "visibleInactive",
-    "wallet",
-    "warning",
-    "wifi",
-    "wireTransfer",
-    "withdraw",
+    'add',
+    'airdrop',
+    'allTimeHigh',
+    'annotation',
+    'api',
+    'arrowDown',
+    'arrowLeft',
+    'arrowRight',
+    'arrowUp',
+    'arrowsHorizontal',
+    'arrowsVertical',
+    'avatar',
+    'average',
+    'backArrow',
+    'bank',
+    'bell',
+    'blockchain',
+    'bookmarkActive',
+    'bookmarkInactive',
+    'calendar',
+    'camera',
+    'card',
+    'caretDown',
+    'caretLeft',
+    'caretRight',
+    'caretUp',
+    'cash',
+    'cashEUR',
+    'cashGBP',
+    'cashJPY',
+    'cashRupee',
+    'cashUSD',
+    'chainLink',
+    'chartBar',
+    'chartCandles',
+    'chartLine',
+    'chartPie',
+    'chartPieCircle',
+    'chartVolume',
+    'chatBubble',
+    'checkbox',
+    'checkboxChecked',
+    'checkboxEmpty',
+    'checkmark',
+    'circleCheckmark',
+    'circleCross',
+    'circulatingSupply',
+    'clipboard',
+    'clock',
+    'clockOutline',
+    'close',
+    'closeCaption',
+    'collapse',
+    'continuous',
+    'convert',
+    'copy',
+    'crossTrade',
+    'currencies',
+    'defi',
+    'deposit',
+    'dex',
+    'diagonalDownArrow',
+    'diagonalRightArrow',
+    'diagonalUpArrow',
+    'document',
+    'dot',
+    'doubleChevronRight',
+    'downArrow',
+    'download',
+    'drag',
+    'email',
+    'error',
+    'ethereum',
+    'exclamationMark',
+    'expand',
+    'expandAddress',
+    'expandAll',
+    'externalLink',
+    'fib',
+    'filter',
+    'flame',
+    'followActive',
+    'followInactive',
+    'fork',
+    'forwardArrow',
+    'gauge',
+    'gavel',
+    'gear',
+    'giftBox',
+    'giftCard',
+    'globe',
+    'hamburger',
+    'heartActive',
+    'heartInactive',
+    'home',
+    'horizontalLine',
+    'ideal',
+    'identityCard',
+    'info',
+    'initiator',
+    'keyboard',
+    'laptop',
+    'lightningBolt',
+    'list',
+    'lock',
+    'marketCap',
+    'minus',
+    'more',
+    'newsFeed',
+    'nft',
+    'noWifi',
+    'orderHistory',
+    'outline',
+    'paperAirplane',
+    'paperclip',
+    'pause',
+    'pay',
+    'paypal',
+    'pencil',
+    'percentage',
+    'phone',
+    'pin',
+    'play',
+    'profile',
+    'protection',
+    'pulse',
+    'pyramid',
+    'qrCode',
+    'questionMark',
+    'reCenter',
+    'rectangle',
+    'recurring',
+    'regulated',
+    'reportActive',
+    'reportInactive',
+    'safe',
+    'search',
+    'setPinCode',
+    'share',
+    'shield',
+    'smartContract',
+    'sofort',
+    'sortDown',
+    'sortDownCenter',
+    'sortUp',
+    'sortUpCenter',
+    'soundOff',
+    'soundOn',
+    'sparkle',
+    'speaker',
+    'stake',
+    'starActive',
+    'starInactive',
+    'statusDot',
+    'step0',
+    'step1',
+    'step2',
+    'step3',
+    'step4',
+    'step5',
+    'step6',
+    'step7',
+    'step8',
+    'step9',
+    'telephone',
+    'thumbsDown',
+    'thumbsUp',
+    'trashCan',
+    'trophy',
+    'undo',
+    'unknown',
+    'upArrow',
+    'upload',
+    'verticalLine',
+    'visibleActive',
+    'visibleInactive',
+    'wallet',
+    'warning',
+    'wifi',
+    'wireTransfer',
+    'withdraw',
   ]}
 />
 
@@ -554,14 +546,14 @@ Opacity of element
   required={false}
   defaultValue=""
   mobileOptions={[
-    "AnimatedInterpolation",
-    "RegisteredStyle<TextStyle>",
-    "Value",
-    "WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>",
-    "WithAnimatedObject<TextStyle>",
-    "false",
-    "null",
-    "number",
+    'AnimatedInterpolation',
+    'RegisteredStyle<TextStyle>',
+    'Value',
+    'WithAnimatedArray<TextStyle | Falsy | RegisteredStyle<TextStyle> | RecursiveArray<TextStyle | Falsy | RegisteredStyle<TextStyle>> | readonly (TextStyle | ... 1 more ... | RegisteredStyle<...>)[]>',
+    'WithAnimatedObject<TextStyle>',
+    'false',
+    'null',
+    'number',
   ]}
   webOptions={[]}
 />
@@ -577,8 +569,8 @@ Size for a given icon.
   propertyName="size"
   required={true}
   defaultValue=""
-  mobileOptions={["l", "m", "s", "xs"]}
-  webOptions={["l", "m", "s", "xs"]}
+  mobileOptions={['l', 'm', 's', 'xs']}
+  webOptions={['l', 'm', 's', 'xs']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-size" />
@@ -592,21 +584,8 @@ Apply inner spacing on all sides.
   propertyName="spacing"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacing" />
@@ -620,21 +599,8 @@ Apply inner spacing on the bottom side.
   propertyName="spacingBottom"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacingBottom" />
@@ -648,21 +614,8 @@ Apply inner spacing on the trailing side.
   propertyName="spacingEnd"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacingEnd" />
@@ -676,21 +629,8 @@ Apply inner spacing on the leading and trailing sides.
   propertyName="spacingHorizontal"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacingHorizontal" />
@@ -704,21 +644,8 @@ Apply inner spacing on the leading side.
   propertyName="spacingStart"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacingStart" />
@@ -732,21 +659,8 @@ Apply inner spacing on the top side.
   propertyName="spacingTop"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacingTop" />
@@ -760,21 +674,8 @@ Apply inner spacing on the top and bottom sides.
   propertyName="spacingVertical"
   required={false}
   defaultValue=""
-  mobileOptions={[
-    "0",
-    "0.5",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-  ]}
-  webOptions={["0", "0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+  mobileOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+  webOptions={['0', '0.5', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-spacingVertical" />
@@ -788,8 +689,8 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
   propertyName="testID"
   required={false}
   defaultValue=""
-  mobileOptions={["string"]}
-  webOptions={["string"]}
+  mobileOptions={['string']}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-testID" />
@@ -804,7 +705,7 @@ Give the icon a description. It will show up in a tooltip after hovering over th
   required={false}
   defaultValue=""
   mobileOptions={[]}
-  webOptions={["string"]}
+  webOptions={['string']}
 />
 
 <ComponentDetails componentName="Icon" templateName="prop-title" />

@@ -2,7 +2,7 @@
 title: Component Composition
 ---
 
-import {UnknownIcon} from '../../components/InlineIcons';
+import { UnknownIcon } from '../../components/InlineIcons';
 
 ## Component composition <UnknownIcon size="m" />
 
@@ -23,7 +23,7 @@ const header = [
   {
     title: 'Age',
     sortable: true,
-    defaultSort: 'ascending'
+    defaultSort: 'ascending',
   },
   {
     title: 'Address',
@@ -31,13 +31,11 @@ const header = [
 ];
 
 <Table header={header}>
-    <TableRow>...</TableRow>
-    <TableRow>...</TableRow>
-</Table>
-
+  <TableRow>...</TableRow>
+  <TableRow>...</TableRow>
+</Table>;
 ```
 
 ## Code sharing between mobile and web <UnknownIcon size="m" />
 
 A description of how we share code between web and mobile should live here. We should discuss how to re-use code as much as possible.
-

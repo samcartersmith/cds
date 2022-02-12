@@ -6,6 +6,9 @@
 dts/
 lib/
 esm/
+dist/
 package.json
 tsconfig.json
 tsconfig.*.json
+.docusaurus
+.nx
