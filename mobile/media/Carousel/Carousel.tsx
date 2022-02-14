@@ -6,18 +6,27 @@ import React, {
   useMemo,
   useState,
   useRef,
-  Children,
   useImperativeHandle,
 } from 'react';
 
 import { SpacingScale, SharedProps } from '@cbhq/cds-common';
+import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animation/carousel';
 import { emptyObject } from '@cbhq/cds-utils';
 import { Animated, Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 
+import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { useScrollTo, ScrollToParams } from '../../hooks/useScrollTo';
 import { CarouselItem } from './CarouselItem';
-import type { CarouselLayoutMap, CarouselRef, CarouselOnReady, CarouselItemId } from './types';
-import { useDismissCarouselItem } from './useDismissCarouselItem';
+import type {
+  CarouselLayoutMap,
+  CarouselRef,
+  CarouselDismissItemParams,
+  CarouselOnReady,
+  CarouselItemId,
+} from './types';
+
+const opacityConfig = convertMotionConfig(animateOpacityConfig);
+const sizeConfig = convertMotionConfig(animateSizeConfig);
 
 export type CarouselProps = {
   items: React.ReactElement[];
@@ -42,19 +51,40 @@ export const Carousel = memo(
       const [scrollRef, { scrollTo, scrollToEnd }] = useScrollTo(forwardedRef);
       /** Guarantees we only fire onReady once. */
       const hasFiredOnReady = useRef(false);
+      /** Prevent multiple dismissals at once. */
+      const isAnimating = useRef(false);
+      const [dismissedItems, setDismissedItems] = useState<Set<CarouselItemId>>(() => new Set());
+      const resetDismissedItems = useCallback(() => {
+        setDismissedItems(new Set());
+      }, []);
+
+      const itemsArray = useMemo(
+        () => items.filter((item) => !!item.key && !dismissedItems.has(item.key)),
+        [items, dismissedItems],
+      );
       /** The number of of CarouselItems */
-      const childrenLength = Children.count(items);
-      /** Dismiss a CarouselItem. */
-      const {
-        dismiss,
-        dismissedItems,
-        resetDismissedItems,
-        onLayout,
-        onContentSizeChange,
-        onScroll,
-      } = useDismissCarouselItem(childrenLength, scrollTo);
+      const childrenLength = itemsArray.length;
+
+      const getDismissHandler = useCallback((shouldAnimateHeight: boolean) => {
+        return ({ height, opacity, width, id, callbackFn }: CarouselDismissItemParams) => {
+          if (isAnimating.current) return;
+          isAnimating.current = true;
+          const opacityMotion = Animated.timing(opacity, opacityConfig);
+          const widthMotion = Animated.timing(width, sizeConfig);
+          const heightMotion = Animated.timing(height, sizeConfig);
+          Animated.parallel([
+            opacityMotion,
+            shouldAnimateHeight ? heightMotion : widthMotion,
+          ]).start(() => {
+            isAnimating.current = false;
+            setDismissedItems((prev) => new Set(prev).add(id));
+            callbackFn?.();
+          });
+        };
+      }, []);
+
       /** Array of x coordinates for snapping the wrapping ScrollView on gesture */
-      const snapPoints = Object.values(layoutMap);
+      const snapPoints = useMemo(() => Object.values(layoutMap), [layoutMap]);
       /** This is fired in onLayout of CarouselItem. */
       const updateLayoutMap = useCallback((value: CarouselLayoutMap) => {
         setLayoutMap((prev) => ({ ...prev, ...value }));
@@ -98,23 +128,23 @@ export const Carousel = memo(
       /** Loop over our children and create CarouselItem component. */
       const content = useMemo(
         () =>
-          Children.map(items, (child, index) => {
+          itemsArray.map((child, index) => {
             const key = child.key ?? index;
-            const isLast = index === childrenLength - 1;
-            const isDismissed = dismissedItems.has(key);
-            return isDismissed ? null : (
+            const shouldAnimateHeight = itemsArray.length === 1;
+            const isLastItem = index === itemsArray.length - 1;
+            return (
               <CarouselItem
-                dismiss={dismiss}
+                dismiss={getDismissHandler(shouldAnimateHeight)}
                 id={key}
                 key={`carousel-item-${key}`}
-                spacingEnd={isLast ? 0 : gap}
+                spacingEnd={isLastItem ? 0 : gap}
                 updateLayoutMap={updateLayoutMap}
               >
                 {child}
               </CarouselItem>
             );
           }),
-        [items, childrenLength, dismiss, dismissedItems, gap, updateLayoutMap],
+        [itemsArray, getDismissHandler, gap, updateLayoutMap],
       );
 
       return (
@@ -129,9 +159,6 @@ export const Carousel = memo(
           snapToOffsets={snapPoints}
           style={styles.carousel}
           testID={testID}
-          onLayout={onLayout}
-          onContentSizeChange={onContentSizeChange}
-          onScroll={onScroll}
         >
           {content}
         </Animated.ScrollView>
