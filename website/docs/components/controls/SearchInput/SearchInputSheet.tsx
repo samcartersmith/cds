@@ -8,7 +8,12 @@ export const SearchInputSheet = () => {
     <div
       style={{ display: 'flex', margin: 'auto', paddingTop: 20, paddingBottom: 40, width: '40%' }}
     >
-      <SearchInput value={text} placeholder="Placeholder" onChangeText={setText} />
+      <SearchInput
+        value={text}
+        accessibilityLabel="Search Bar"
+        placeholder="Placeholder"
+        onChangeText={setText}
+      />
     </div>
   );
 };

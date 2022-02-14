@@ -141,7 +141,7 @@ Optional string placed above the input (or within if compact is enabled) to indi
 
 <ComponentDetails componentName="Select" templateName="prop-label" />
 
-### onChange <Badge variant="web" />
+### onChange
 
 Callback that is fired whenever a select option is selected
 
@@ -150,8 +150,8 @@ Callback that is fired whenever a select option is selected
   propertyName="onChange"
   required={false}
   defaultValue=""
-  mobileOptions={[]}
-  webOptions={['(newValue: string) => void']}
+  mobileOptions={['(newValue: string) => void', 'SetState<string>']}
+  webOptions={['(newValue: string) => void', 'SetState<string>']}
 />
 
 <ComponentDetails componentName="Select" templateName="prop-onChange" />

@@ -15,8 +15,24 @@ import { InputIconButton } from './InputIconButton';
 
 export type SearchInputProps = SearchInputBaseProps &
   RNTextInputProps & {
+    /**
+     * Callback is fired when a user hits enter/go on the keyboard. Can obtain the query
+     * through str parameter
+     */
     onSearch?: (str: string) => void;
+    /** Callback is fired when the clear icon is pressed */
     onClear?: (event: GestureResponderEvent) => void;
+    /**
+     * Callback is fired when backArrow is pressed.
+     * If disableBackArrow is true, this will do nothing
+     * */
+    onBack?: (event: GestureResponderEvent) => void;
+    /**
+     * If this is set to true, the start icon won't toggle between backArrow and Search.
+     * The start icon will always be a search icon
+     * @default false
+     * */
+    disableBackArrow?: boolean;
   } & Required<Pick<RNTextInputProps, 'onChangeText' | 'value'>>;
 
 export const SearchInput = memo(
@@ -26,11 +42,13 @@ export const SearchInput = memo(
         value,
         testID,
         onSearch,
+        onBack,
         onChangeText,
         onClear,
         onFocus,
         onBlur,
         disabled,
+        disableBackArrow = false,
         ...props
       }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -42,9 +60,12 @@ export const SearchInput = memo(
       const handleOnFocus = useCallback(
         (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
           onFocus?.(e);
-          setStartIconName('backArrow');
+
+          if (!disableBackArrow) {
+            setStartIconName('backArrow');
+          }
         },
-        [onFocus],
+        [disableBackArrow, onFocus],
       );
 
       const handleOnBlur = useCallback(
@@ -91,7 +112,7 @@ export const SearchInput = memo(
               testID={testID && `${testID}-searchinput-iconbtn`}
               accessibilityLabel={startIconName}
               accessibilityHint={startIconName}
-              onPress={handleOnSearch}
+              onPress={startIconName === 'backArrow' ? onBack : handleOnSearch}
               disabled={disabled}
               name={startIconName}
             />

@@ -297,6 +297,19 @@ Allow the description to span multiple lines. This _will_ break fixed height req
 
 <ComponentDetails componentName="SelectOption" templateName="prop-multiline" />
 
+### onPress <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="SelectOption"
+  propertyName="onPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void', 'NoopFn']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SelectOption" templateName="prop-onPress" />
+
 ### outerSpacing
 
 The spacing to use on the parent wrapper of Cell
@@ -326,21 +339,6 @@ Which piece of content has the highest priority in regards to text truncation, g
 />
 
 <ComponentDetails componentName="SelectOption" templateName="prop-priority" />
-
-### selected <Badge variant="mobile" />
-
-Is the cell selected? Will apply a background and selected accessory.
-
-<ApiDetails
-  componentName="SelectOption"
-  propertyName="selected"
-  required={false}
-  defaultValue=""
-  mobileOptions={['false', 'true']}
-  webOptions={[]}
-/>
-
-<ComponentDetails componentName="SelectOption" templateName="prop-selected" />
 
 ### shouldOverflow
 
@@ -405,9 +403,9 @@ Title of content. Max 1 line (with description) or 2 lines (without), otherwise 
 
 <ComponentDetails componentName="SelectOption" templateName="prop-title" />
 
-### value <Badge variant="web" />
+### value
 
-automatically focus a select option if its already been selected
+Unique identifier for each option
 
 <ApiDetails
   componentName="SelectOption"

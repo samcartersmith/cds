@@ -81,6 +81,21 @@ Enables compact variation
 
 <ComponentDetails componentName="SearchInput" templateName="prop-compact" />
 
+### disableBackArrow <Badge variant="mobile" />
+
+If this is set to true, the start icon wont toggle between backArrow and Search. The start icon will always be a search icon
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="disableBackArrow"
+  required={false}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SearchInput" templateName="prop-disableBackArrow" />
+
 ### disabled
 
 Toggles input interactability and opacity
@@ -95,6 +110,21 @@ Toggles input interactability and opacity
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-disabled" />
+
+### onBack <Badge variant="mobile" />
+
+Callback is fired when backArrow is pressed. If disableBackArrow is true, this will do nothing
+
+<ApiDetails
+  componentName="SearchInput"
+  propertyName="onBack"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(event: GestureResponderEvent) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="SearchInput" templateName="prop-onBack" />
 
 ### onChangeText
 

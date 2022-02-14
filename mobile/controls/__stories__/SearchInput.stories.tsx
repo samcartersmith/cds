@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useRef, useCallback } from 'react';
 import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
@@ -24,13 +25,36 @@ export const OnChangeExample = () => {
   const [text, setText] = useState('');
 
   const handleOnChange = useCallback((e: NativeSyntheticEvent<TextInputChangeEventData>) => {
-    // eslint-disable-next-line no-console
     console.log(e.nativeEvent.text);
+  }, []);
+
+  const handleOnBack = useCallback(() => {
+    console.log('onBack callback fired');
   }, []);
 
   return (
     <>
-      <SearchInput value={text} onChange={handleOnChange} onChangeText={setText} />
+      <SearchInput
+        value={text}
+        onBack={handleOnBack}
+        onChange={handleOnChange}
+        onChangeText={setText}
+      />
+      <TextLabel1>{text}</TextLabel1>
+    </>
+  );
+};
+
+export const DisableShowBackArrow = () => {
+  const [text, setText] = useState('');
+
+  const handleOnSearch = useCallback((str: string) => {
+    console.log(str);
+  }, []);
+
+  return (
+    <>
+      <SearchInput value={text} disableBackArrow onSearch={handleOnSearch} onChangeText={setText} />
       <TextLabel1>{text}</TextLabel1>
     </>
   );
@@ -41,6 +65,9 @@ const SearchInputScreen = () => {
     <ExampleScreen>
       <Example title="OnChangeExample">
         <OnChangeExample />
+      </Example>
+      <Example title="Set disableBackArrow=true">
+        <DisableShowBackArrow />
       </Example>
       <Example title="Basic">
         <Basic />

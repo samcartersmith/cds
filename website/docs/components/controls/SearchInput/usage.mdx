@@ -8,10 +8,10 @@ function SearchExample() {
 	const [text, setText] = useState('');
 
 	return (
-		<Box spacing={2}>
+		<VStack spacing={2}>
 			<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
 			<TextLabel1 as="p">{text}</TextLabel1>
-		</Box>
+		</VStack>
 	);
 }
 ```
