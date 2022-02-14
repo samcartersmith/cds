@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.39.8 (2/14/2022, 08:31 AM PST)
+
+#### 🚀 Updates
+
+- Add useScrollOffset hook. [#54206](https://github.cbhq.net/mono/repo/pull/54206), [CDS-2060](https://jira.coinbase-corp.com/browse/CDS-2060)
+- **[OverflowGradient]** To work with other pin values. [#54208](https://github.cbhq.net/mono/repo/pull/54208), [CDS-2061](https://jira.coinbase-corp.com/browse/CDS-2061)
+
+#### 🐞 Fixes
+
+- Add Eslint if JSX and no react import. [#54026](https://github.cbhq.net/mono/repo/pull/54026)
+
 ## 0.39.7 (2/11/2022, 11:32 AM PST)
 
 #### 🚀 Updates

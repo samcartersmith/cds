@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.12 (2/14/2022, 08:31 AM PST)
+
+#### 🐞 Fixes
+
+- **[TextInputLabel]** Invalid for prop changes to htmlFor. [#54041](https://github.cbhq.net/mono/repo/pull/54041)
+- Add Eslint if JSX and no react import. [#54026](https://github.cbhq.net/mono/repo/pull/54026)
+
 ## 0.34.11 (2/11/2022, 11:32 AM PST)
 
 #### 🐞 Fixes
