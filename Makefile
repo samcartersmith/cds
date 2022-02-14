@@ -34,6 +34,15 @@ Help:
   $$ make build.website             -- Build website.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  $$ make clean.ios                 -- Clean ios build
+  $$ make setup.mobile              -- Setup mobile dependencies 
+  $$ make build.ios                 -- Build the playground ios app.
+  $$ make build.android             -- Build the playground android app.
+  $$ make start.mobile              -- Start metro server.
+
+>>>>>>> 746ce03 (Update Makefile.)
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.common              -- Build the `common` package.
   $$ make build.mobile              -- Build the `mobile` package.
@@ -157,6 +166,29 @@ build.website:
 start.website:
 	nx run website:start
 
+<<<<<<< HEAD
+=======
+.PHONY: clean.ios
+clean.ios:
+	rm -rf ~/Library/Developer/Xcode/DerivedData && rm -rf apps/mobile-playground/ios/Pods && rm -rf apps/mobile-playground/ios/build && rm -rf apps/mobile-playground/ios/app.xc*
+
+.PHONY: setup.mobile
+setup.mobile:
+	cd apps/mobile-playground/ios && rm -rf MobilePlayground.* && xcodegen generate && pod install && cd ../../ && yarn react-native link 
+
+.PHONY: build.ios
+build.ios:
+	yarn react-native run-ios --project-path apps/mobile-playground/ios	
+
+.PHONY: build.android
+build.android:
+	yarn react-native run-android 
+
+.PHONY: start.mobile
+start.mobile:
+	yarn react-native start --reset-cache --projectRoot apps/mobile-playground --config apps/mobile-playground/metro.config.js	
+
+>>>>>>> 746ce03 (Update Makefile.)
 .PHONY: build.common
 build.common:
 	nx run common:build
