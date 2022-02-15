@@ -44,15 +44,16 @@ describe('Select', () => {
 
     expect(getByTestId(mockTestID)).toBeDefined();
   });
-  it('opens the Menu when the Select is pressed', () => {
+  it('opens the Menu when the Select is pressed', async () => {
     const onPressSpy = jest.fn();
     const { getByText } = render(<MockSelect placeholder={mockPlaceholder} onPress={onPressSpy} />);
 
     fireEvent.click(getByText(mockPlaceholder));
     expect(onPressSpy).toHaveBeenCalled();
 
+    const firstOption = await waitFor(() => getByText(exampleOptions[0]));
     // expect Menu and SelectOption to render
-    expect(getByText(exampleOptions[0])).toBeDefined();
+    expect(firstOption).toBeDefined();
   });
   it('closes the Menu when an option is pressed and fires onChange', async () => {
     const onChangeSpy = jest.fn();
