@@ -1,10 +1,41 @@
-import { TabIndicatorProps } from '@cbhq/cds-common';
-import React, { memo } from 'react';
-import { VStack } from '../layout';
+import { TabIndicatorProps, ForwardedRef } from '@cbhq/cds-common';
+import React, { forwardRef, memo, useRef } from 'react';
+import { useAnimateTabIndicator } from './hooks/useAnimateTabIndicator';
+import { Box } from '../layout';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const TabIndicator = memo((props: TabIndicatorProps) => {
-  return <VStack {...props} />;
-});
+export const TabIndicator = memo(
+  forwardRef(
+    (
+      { width, xPosition, testID, ...props }: TabIndicatorProps,
+      forwardedRef: ForwardedRef<HTMLElement>,
+    ) => {
+      const positionRef = useRef<HTMLElement>(null);
+      const widthRef = useRef<HTMLElement>(null);
+      useAnimateTabIndicator({ width, xPosition, positionRef, widthRef });
+
+      return (
+        <Box ref={forwardedRef} testID={testID} {...props} overflow="hidden">
+          <Box
+            ref={positionRef}
+            testID="cds-tab-indicator-inner-bar-container"
+            flexGrow={1}
+            height={2}
+            overflow="hidden"
+            background="primary"
+          >
+            <Box
+              ref={widthRef}
+              testID="cds-tab-indicator-inner-bar"
+              height={2}
+              width="100%"
+              background="background"
+            />
+          </Box>
+        </Box>
+      );
+    },
+  ),
+);
 
 TabIndicator.displayName = 'TabIndicator';
