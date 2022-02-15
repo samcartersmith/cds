@@ -5,10 +5,22 @@ import { css } from 'linaria';
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusSize';
 import { cx } from '../utils/linaria';
 
+const resizeModes = {
+  cover: css`
+    && {
+      object-fit: cover;
+    }
+  `,
+  contain: css`
+    && {
+      object-fit: contain;
+    }
+  `,
+};
+
 const image = css`
   && {
     display: block;
-    object-fit: cover;
   }
 `;
 
@@ -26,6 +38,7 @@ type BaseRemoteImageProps = {
   alt?: string;
   source: string;
   dangerouslySetClassName?: string;
+  resizeMode?: keyof typeof resizeModes;
 } & Omit<
   React.ImgHTMLAttributes<HTMLImageElement>,
   'className' | 'style' | 'height' | 'width' | 'source'
@@ -59,6 +72,7 @@ export const RemoteImage = memo(function RemoteImage({
   source,
   alt,
   dangerouslySetClassName,
+  resizeMode = 'cover',
   ...props
 }: RemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
@@ -79,7 +93,12 @@ export const RemoteImage = memo(function RemoteImage({
       src={source}
       width={width}
       height={height}
-      className={cx(image, aspectRatio && imageRatio, dangerouslySetClassName)}
+      className={cx(
+        image,
+        aspectRatio && imageRatio,
+        resizeModes[resizeMode],
+        dangerouslySetClassName,
+      )}
       style={styles}
     />
   );
