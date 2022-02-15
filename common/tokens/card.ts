@@ -1,3 +1,5 @@
+import { getDefaultSizeObjectForIllustration } from '../utils/getDefaultSizeObjectForIllustration';
+
 export const cardSizes = {
   small: {
     width: 136,
@@ -12,3 +14,19 @@ export const cardSizes = {
     height: undefined,
   },
 } as const;
+
+export const cardVariantMediaDefaults = {
+  announcement: 'spotSquare',
+  feed: 'spotRectangle',
+  feature: 'spotSquare',
+} as const;
+
+export const cardRemoteImageProps = {
+  height: 'auto',
+  width: '100%',
+  resizeMode: 'cover',
+} as const;
+
+export const announcementCardMinHeight = getDefaultSizeObjectForIllustration(
+  cardVariantMediaDefaults.announcement,
+).height;
