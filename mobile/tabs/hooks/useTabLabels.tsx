@@ -1,9 +1,7 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
-import React, { useEffect, createElement, useCallback, useState, useMemo } from 'react';
+import React, { useEffect, useCallback, useState, useMemo, createElement } from 'react';
 import { TabIndicatorProps, TabNavigationProps } from '@cbhq/cds-common';
-import { LayoutChangeEvent } from 'react-native';
+import { View, LayoutChangeEvent } from 'react-native';
 import { TabLabel } from '../TabLabel';
-import { Box } from '../../layout/Box';
 import { PressableOpacity } from '../../system/PressableOpacity';
 
 type LayoutMap = Record<string, { width: number; xPosition: number }>;
@@ -26,7 +24,7 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
 
   // When each item renders, calculate it's coords and save them
   const [layoutMap, updateLayoutMap] = useState<LayoutMap>({});
-  const onLayout = useCallback(
+  const handleLayout = useCallback(
     (key: string, { nativeEvent }: LayoutChangeEvent) => {
       updateLayoutMap({
         ...layoutMap,
@@ -55,28 +53,28 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
   const tabLabels = useMemo(
     () =>
       tabs.filter(Boolean).map(({ id, onPress, label, accessibilityLabel = label }, idx) => {
+        // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
         const handleTabPress = () => {
           setActiveId(id); // Track state
           onPress?.(id); // handle callback
         };
 
-        return createElement(Box, {
-          key: id,
-          children: (
-            <PressableOpacity
-              accessibilityLabel={accessibilityLabel}
-              accessibilityHint={accessibilityLabel}
-              onPress={handleTabPress}
-            >
-              <TabLabel active={activeId ? activeId === id : idx === 0} variant={variant}>
-                {label}
-              </TabLabel>
-            </PressableOpacity>
-          ),
-          onLayout: (props: LayoutChangeEvent) => onLayout(id, props),
-        });
+        const onLayout = (props: LayoutChangeEvent) => handleLayout(id, props);
+        const children = (
+          <PressableOpacity
+            accessibilityLabel={accessibilityLabel}
+            accessibilityHint={accessibilityLabel}
+            onPress={handleTabPress}
+          >
+            <TabLabel active={activeId ? activeId === id : idx === 0} variant={variant}>
+              {label}
+            </TabLabel>
+          </PressableOpacity>
+        );
+
+        return createElement(View, { key: id, onLayout }, children);
       }),
-    [tabs, variant, activeId, onLayout, setActiveId],
+    [tabs, variant, activeId, handleLayout, setActiveId],
   );
 
   return useMemo(() => ({ tabLabels, tabIndicatorProps }), [tabLabels, tabIndicatorProps]);
