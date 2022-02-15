@@ -2,7 +2,6 @@ import { useCallback, useMemo } from 'react';
 import {
   Animated,
   GestureResponderEvent,
-  LayoutRectangle,
   PanResponder,
   PanResponderGestureState,
   useWindowDimensions,
@@ -20,6 +19,7 @@ import {
   handleBarHeight,
   handleBarOffset,
   horizontalDrawerPercentageOfView,
+  verticalDrawerPercentageOfView,
   normalizeDrawerPanDistanceMultiplier,
 } from '@cbhq/cds-common/tokens/drawer';
 
@@ -28,7 +28,6 @@ type UseDrawerPanResponderParams = {
   animateDrawerIn: Animated.CompositeAnimation;
   pin: PinningDirection;
   disableCapturePanGestureToDismiss: boolean;
-  drawerDimensions: LayoutRectangle;
   onBlur?: NoopFn;
   handleSwipeToClose: NoopFn;
   opacityAnimation: Animated.Value;
@@ -46,27 +45,19 @@ export const useDrawerPanResponder = ({
   drawerAnimation,
   animateDrawerIn,
   disableCapturePanGestureToDismiss,
-  drawerDimensions,
   onBlur,
   handleSwipeToClose,
   opacityAnimation,
 }: UseDrawerPanResponderParams) => {
   // drawer dimensions
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const drawerWidth = width * horizontalDrawerPercentageOfView + MAX_OVER_DRAG;
   const handleBarTotalHeight = handleBarOffset + handleBarHeight;
   const drawerHeight =
     pin === 'bottom'
-      ? drawerDimensions.height + handleBarTotalHeight + MAX_OVER_DRAG
-      : drawerDimensions.height + MAX_OVER_DRAG;
+      ? height * verticalDrawerPercentageOfView + handleBarTotalHeight + MAX_OVER_DRAG
+      : height * verticalDrawerPercentageOfView + MAX_OVER_DRAG;
   const isHorizontalDrawer = pin === 'left' || pin === 'right';
-
-  // dismissal vars
-  const minDrawerWidthToDismiss = drawerWidth * DISMISSAL_DRAG_THRESHOLD;
-  const minDrawerHeightToDismiss = drawerHeight * DISMISSAL_DRAG_THRESHOLD;
-  const dismissalThreshold = isHorizontalDrawer
-    ? minDrawerWidthToDismiss
-    : minDrawerHeightToDismiss;
 
   /** calculates whether gesture was great enough to warrant a response */
   const shouldHandleGesture = useCallback(
@@ -173,14 +164,14 @@ export const useDrawerPanResponder = ({
       switch (pin) {
         case 'top':
         case 'left':
-          return distance <= -dismissalThreshold;
+          return distance <= -DISMISSAL_DRAG_THRESHOLD;
         case 'bottom':
         case 'right':
         default:
-          return distance >= dismissalThreshold;
+          return distance >= DISMISSAL_DRAG_THRESHOLD;
       }
     },
-    [pin, dismissalThreshold],
+    [pin],
   );
 
   const shouldDismiss = useCallback(
@@ -240,12 +231,11 @@ export const useDrawerPanResponder = ({
         }
       },
       onPanResponderRelease: (_, gestureState) => {
+        drawerAnimation.flattenOffset();
         if (shouldDismiss(gestureState)) {
-          drawerAnimation.flattenOffset();
           onBlur?.();
           return handleSwipeToClose();
         }
-        drawerAnimation.flattenOffset();
         return animateDrawerIn.start();
       },
     });

@@ -24,171 +24,164 @@ import { HandleBar } from '../HandleBar/HandleBar';
 import { Box } from '../../layout/Box';
 import { useOverlayAnimation } from '../Overlay/useOverlayAnimation';
 import { Overlay } from '../Overlay/Overlay';
-import { useLayout } from '../../hooks/useLayout';
 
 export type DrawerProps = DrawerBaseProps & Omit<ModalProps, 'onRequestClose' | 'children'>;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Drawer = memo(
-  forwardRef<DrawerRefBaseProps, PropsWithChildren<DrawerProps>>(
-    (
-      {
-        children,
-        pin = 'bottom',
-        onCloseComplete,
-        preventDismissGestures = false,
-        hideHandleBar = false,
-        disableCapturePanGestureToDismiss = false,
-        onBlur,
-        ...props
-      },
-      ref,
-    ) => {
-      const { width, height } = useWindowDimensions();
-      const [drawerDimensions, onLayout] = useLayout();
-
-      const {
-        drawerAnimation,
-        animateDrawerOut,
-        animateDrawerIn,
-        drawerAnimationStyles,
-        hasDrawerRendered,
-        animateSwipeToClose,
-      } = useDrawerAnimation(pin, drawerDimensions);
-      const [opacityAnimation, animateOverlayIn, animateOverlayOut] = useOverlayAnimation(
-        drawerAnimationDefaultDuration,
-      );
-      const scheme = useSpectrum();
-      const spacingStyles = useDrawerSpacing(pin);
-      const isMounted = useRef(false);
-
-      const handleClose = useCallback(() => {
-        Animated.parallel([animateDrawerOut, animateOverlayOut]).start(({ finished }) => {
-          if (finished) {
-            isMounted.current = false;
-            onCloseComplete?.();
-          }
-        });
-      }, [animateDrawerOut, animateOverlayOut, onCloseComplete]);
-
-      const handleSwipeToClose = useCallback(() => {
-        Animated.parallel([animateSwipeToClose, animateOverlayOut]).start(({ finished }) => {
-          if (finished) {
-            isMounted.current = false;
-            onCloseComplete?.();
-          }
-        });
-      }, [animateOverlayOut, onCloseComplete, animateSwipeToClose]);
-
-      useEffect(() => {
-        if (hasDrawerRendered) {
-          if (!isMounted.current) {
-            isMounted.current = true;
-            drawerAnimation.flattenOffset();
-            Animated.parallel([animateOverlayIn, animateDrawerIn]).start();
-          }
-        }
-      }, [drawerAnimation, animateOverlayIn, animateDrawerIn, hasDrawerRendered]);
-
-      const panGestureHandlers = useDrawerPanResponder({
-        pin,
-        drawerAnimation,
-        animateDrawerIn,
-        disableCapturePanGestureToDismiss,
-        drawerDimensions,
-        onBlur,
-        handleSwipeToClose,
-        opacityAnimation,
-      });
-
-      const isPinHorizontal = pin === 'left' || pin === 'right';
-      const shouldShowHandleBar = !hideHandleBar && pin === 'bottom';
-
-      // leave 15% of the screenwidth as open area for menu drawer
-      const horizontalDrawerWidth = useMemo(
-        () => width * horizontalDrawerPercentageOfView + MAX_OVER_DRAG,
-        [width],
-      );
-      // drawer will automatically size itself based on content, but will cap at 75% of viewport height
-      const verticalDrawerMaxHeight = useMemo(
-        () => height * verticalDrawerPercentageOfView + MAX_OVER_DRAG,
-        [height],
-      );
-
-      const getPanGestureHandlers =
-        !preventDismissGestures && hasDrawerRendered ? panGestureHandlers.panHandlers : undefined;
-
-      const handleOverlayPress = useCallback(() => {
-        if (!preventDismissGestures) {
-          onBlur?.();
-          handleClose();
-        }
-      }, [handleClose, preventDismissGestures, onBlur]);
-
-      const cardStyles = StyleSheet.create({
-        spacing: {
-          ...spacingStyles,
-        },
-        overflowStyles: {
-          overflow: 'hidden',
-        },
-      });
-
-      const combinedStyles = [cardStyles.spacing, drawerAnimationStyles];
-
-      useImperativeHandle(
-        ref,
-        () => ({
-          handleClose,
-        }),
-        [handleClose],
-      );
-
-      // this hack clips internal content from overflowing the borderRadius, but also make sure the handlebar still shows if handlebar is enabled
-      const content = useMemo(() => {
-        if (shouldShowHandleBar) {
-          return (
-            <>
-              <HandleBar />
-              <Box
-                borderRadius="pill"
-                dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
-              >
-                {typeof children === 'function' ? children({ handleClose }) : children}
-              </Box>
-            </>
-          );
-        }
-        return <>{typeof children === 'function' ? children({ handleClose }) : children}</>;
-      }, [shouldShowHandleBar, cardStyles, children, handleClose]);
-
-      return (
-        <Modal
-          transparent
-          onRequestClose={handleClose}
-          hardwareAccelerated
-          visible
-          animationType="none"
-          {...props}
-        >
-          <DrawerStatusBar pin={pin} visible />
-          <Overlay opacity={opacityAnimation} onTouchStart={handleOverlayPress} />
-          <Box
-            {...getPanGestureHandlers}
-            background="background"
-            borderRadius={isPinHorizontal ? 'none' : 'pill'}
-            bordered={scheme === 'dark'}
-            elevation={scheme === 'dark' ? 2 : 0}
-            pin={pin}
-            animated
-            maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
-            width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
-            dangerouslySetStyle={combinedStyles}
-          >
-            <View onLayout={onLayout}>{content}</View>
-          </Box>
-        </Modal>
-      );
+  forwardRef<DrawerRefBaseProps, PropsWithChildren<DrawerProps>>(function Drawer(
+    {
+      children,
+      pin = 'bottom',
+      onCloseComplete,
+      preventDismissGestures = false,
+      hideHandleBar = false,
+      disableCapturePanGestureToDismiss = false,
+      onBlur,
+      ...props
     },
-  ),
+    ref,
+  ) {
+    const { width, height } = useWindowDimensions();
+
+    const {
+      drawerAnimation,
+      animateDrawerOut,
+      animateDrawerIn,
+      drawerAnimationStyles,
+      animateSwipeToClose,
+    } = useDrawerAnimation(pin);
+    const [opacityAnimation, animateOverlayIn, animateOverlayOut] = useOverlayAnimation(
+      drawerAnimationDefaultDuration,
+    );
+    const scheme = useSpectrum();
+    const spacingStyles = useDrawerSpacing(pin);
+    const isMounted = useRef(false);
+
+    const handleClose = useCallback(() => {
+      Animated.parallel([animateDrawerOut, animateOverlayOut]).start(({ finished }) => {
+        if (finished) {
+          isMounted.current = false;
+          onCloseComplete?.();
+        }
+      });
+    }, [animateDrawerOut, animateOverlayOut, onCloseComplete]);
+
+    const handleSwipeToClose = useCallback(() => {
+      Animated.parallel([animateSwipeToClose, animateOverlayOut]).start(({ finished }) => {
+        if (finished) {
+          isMounted.current = false;
+          onCloseComplete?.();
+        }
+      });
+    }, [animateOverlayOut, onCloseComplete, animateSwipeToClose]);
+
+    useEffect(() => {
+      if (!isMounted.current) {
+        isMounted.current = true;
+        drawerAnimation.flattenOffset();
+        Animated.parallel([animateOverlayIn, animateDrawerIn]).start();
+      }
+    }, [drawerAnimation, animateOverlayIn, animateDrawerIn]);
+
+    const panGestureHandlers = useDrawerPanResponder({
+      pin,
+      drawerAnimation,
+      animateDrawerIn,
+      disableCapturePanGestureToDismiss,
+      onBlur,
+      handleSwipeToClose,
+      opacityAnimation,
+    });
+
+    const isPinHorizontal = pin === 'left' || pin === 'right';
+    const shouldShowHandleBar = !hideHandleBar && pin === 'bottom';
+
+    // leave 15% of the screenwidth as open area for menu drawer
+    const horizontalDrawerWidth = useMemo(
+      () => width * horizontalDrawerPercentageOfView + MAX_OVER_DRAG,
+      [width],
+    );
+    // drawer will automatically size itself based on content, but will cap at 75% of viewport height
+    const verticalDrawerMaxHeight = useMemo(
+      () => height * verticalDrawerPercentageOfView + MAX_OVER_DRAG,
+      [height],
+    );
+
+    const getPanGestureHandlers = !preventDismissGestures
+      ? panGestureHandlers.panHandlers
+      : undefined;
+
+    const handleOverlayPress = useCallback(() => {
+      if (!preventDismissGestures) {
+        onBlur?.();
+        handleClose();
+      }
+    }, [handleClose, preventDismissGestures, onBlur]);
+
+    const cardStyles = StyleSheet.create({
+      spacing: {
+        ...spacingStyles,
+      },
+      overflowStyles: {
+        overflow: 'hidden',
+      },
+    });
+
+    const combinedStyles = [cardStyles.spacing, drawerAnimationStyles];
+
+    useImperativeHandle(
+      ref,
+      () => ({
+        handleClose,
+      }),
+      [handleClose],
+    );
+
+    // this hack clips internal content from overflowing the borderRadius, but also make sure the handlebar still shows if handlebar is enabled
+    const content = useMemo(() => {
+      if (shouldShowHandleBar) {
+        return (
+          <View>
+            <HandleBar />
+            <Box
+              borderRadius="pill"
+              dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
+            >
+              {typeof children === 'function' ? children({ handleClose }) : children}
+            </Box>
+          </View>
+        );
+      }
+      return <View>{typeof children === 'function' ? children({ handleClose }) : children}</View>;
+    }, [shouldShowHandleBar, cardStyles, children, handleClose]);
+
+    return (
+      <Modal
+        transparent
+        onRequestClose={handleClose}
+        hardwareAccelerated
+        visible
+        animationType="none"
+        {...props}
+      >
+        <DrawerStatusBar pin={pin} visible />
+        <Overlay opacity={opacityAnimation} onTouchStart={handleOverlayPress} />
+        <Box
+          {...getPanGestureHandlers}
+          background="background"
+          borderRadius={isPinHorizontal ? 'none' : 'pill'}
+          bordered={scheme === 'dark'}
+          elevation={scheme === 'dark' ? 2 : 0}
+          pin={pin}
+          animated
+          maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
+          width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
+          dangerouslySetStyle={combinedStyles}
+        >
+          {content}
+        </Box>
+      </Modal>
+    );
+  }),
 );

@@ -1,14 +1,13 @@
 import { useMemo, useRef } from 'react';
 
 import { MotionBaseSpec, PinningDirection } from '@cbhq/cds-common';
-import { Animated, Easing, LayoutRectangle, useWindowDimensions } from 'react-native';
+import { Animated, Easing, useWindowDimensions } from 'react-native';
 import {
   animateDrawerInConfig,
   animateDrawerOutConfig,
   MAX_OVER_DRAG,
 } from '@cbhq/cds-common/animation/drawer';
 import {
-  drawerHeightThreshold,
   verticalDrawerPercentageOfView,
   horizontalDrawerPercentageOfView,
   handleBarOffset,
@@ -17,61 +16,23 @@ import {
 import { durations } from '@cbhq/cds-common/tokens/motion';
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 
-const animateLargeDrawer = {
-  animateIn: convertMotionConfig({
-    ...animateDrawerInConfig,
-    duration: 'slow2',
-  } as MotionBaseSpec),
-  animateOut: convertMotionConfig({
-    ...animateDrawerOutConfig,
-    duration: 'slow2',
-  } as MotionBaseSpec),
+const animateDrawer = {
+  animateIn: convertMotionConfig(animateDrawerInConfig as MotionBaseSpec),
+  animateOut: convertMotionConfig(animateDrawerOutConfig as MotionBaseSpec),
 };
 
-const animateSmallDrawer = {
-  animateIn: convertMotionConfig({
-    ...animateDrawerInConfig,
-    duration: 'moderate3',
-  } as MotionBaseSpec),
-  animateOut: convertMotionConfig({
-    ...animateDrawerOutConfig,
-    duration: 'moderate3',
-  } as MotionBaseSpec),
-};
-
-export const useDrawerAnimation = (
-  pin: PinningDirection | undefined = 'bottom',
-  drawerDimensions: LayoutRectangle,
-) => {
+export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom') => {
   const windowDimensions = useWindowDimensions();
 
   const isPinVertical = pin === 'top' || pin === 'bottom';
-  const dimension = isPinVertical ? 'height' : 'width';
-  const drawerDimension = drawerDimensions[dimension]
-    ? drawerDimensions[dimension]
-    : windowDimensions[dimension];
-  const drawerPercentOfScreen = drawerDimension / windowDimensions[dimension];
-  const hasDrawerRendered = drawerDimensions[dimension] > 0;
-  const isLargeVerticalDrawer = isPinVertical && drawerPercentOfScreen > drawerHeightThreshold;
+  const drawerDimension = isPinVertical
+    ? windowDimensions.height * verticalDrawerPercentageOfView
+    : windowDimensions.width * horizontalDrawerPercentageOfView;
 
   const drawerAnimation = useRef(new Animated.Value(0));
 
-  const animateDrawerIn = useMemo(
-    () =>
-      Animated.timing(
-        drawerAnimation.current,
-        isLargeVerticalDrawer ? animateLargeDrawer.animateIn : animateSmallDrawer.animateIn,
-      ),
-    [isLargeVerticalDrawer],
-  );
-  const animateDrawerOut = useMemo(
-    () =>
-      Animated.timing(
-        drawerAnimation.current,
-        isLargeVerticalDrawer ? animateLargeDrawer.animateOut : animateSmallDrawer.animateOut,
-      ),
-    [isLargeVerticalDrawer],
-  );
+  const animateDrawerIn = Animated.timing(drawerAnimation.current, animateDrawer.animateIn);
+  const animateDrawerOut = Animated.timing(drawerAnimation.current, animateDrawer.animateOut);
 
   /** custom animation config for swipe and fling to close that has no friction and is faster */
   const animateSwipeToClose = useMemo(
@@ -128,8 +89,7 @@ export const useDrawerAnimation = (
       animateDrawerOut,
       animateDrawerIn,
       drawerAnimationStyles: { transform: [translation] },
-      hasDrawerRendered,
       animateSwipeToClose,
     };
-  }, [animateDrawerOut, animateDrawerIn, translation, hasDrawerRendered, animateSwipeToClose]);
+  }, [animateDrawerOut, animateDrawerIn, translation, animateSwipeToClose]);
 };

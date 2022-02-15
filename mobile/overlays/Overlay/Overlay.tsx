@@ -11,7 +11,7 @@ export type OverlayProps = {
   opacity: Animated.Value;
 } & Omit<VStackProps, 'opacity'>;
 
-export const Overlay = memo(({ opacity, ...props }: OverlayProps) => {
+export const Overlay = memo(function Overlay({ opacity, ...props }: OverlayProps) {
   return (
     <ThemeProvider name="overlay" palette={overlayPalette}>
       <VStack
