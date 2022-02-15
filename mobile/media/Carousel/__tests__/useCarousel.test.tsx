@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react-native';
+import { cleanup, fireEvent, render } from '@testing-library/react-native';
 import { ScrollView } from 'react-native';
 
 import { Button } from '../../../buttons';
@@ -38,7 +38,7 @@ describe('useCarousel', () => {
 
     return (
       <>
-        <Button testID="LogLength" onPress={handleLogLength}>
+        <Button testID="LogLength" onPress={handleLogLength} disableDebounce>
           Log Length
         </Button>
         <Button testID="ScrollTo" onPress={handleScrollTo}>
@@ -60,11 +60,8 @@ describe('useCarousel', () => {
 
     rerender(<MockCarousel length={4} />);
 
-    // Wait a sec so we get around the debounce
-    void waitFor(() => {
-      fireEvent.press(getByTestId('LogLength'));
-      expect(spy).toHaveBeenCalledWith('Carousel length: 4');
-    });
+    fireEvent.press(getByTestId('LogLength'));
+    expect(spy).toHaveBeenCalledWith('Carousel length: 4');
   });
 
   it('exposes scrollToId', async () => {
