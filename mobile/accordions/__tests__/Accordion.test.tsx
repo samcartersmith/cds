@@ -5,12 +5,14 @@ import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
 import { CellMedia } from '../../cells/CellMedia';
 import { TextBody } from '../../typography';
+import { TextInput } from '../../controls';
 
 const { MockAccordion } = accordionBuilder({
   Accordion,
   AccordionItem,
   CellMedia,
   TextBody,
+  TextInput,
 });
 
 describe('Accordion', () => {
@@ -54,5 +56,12 @@ describe('Accordion', () => {
 
     expect(getByTestId('mock-accordion-item1-media')).toBeTruthy();
     expect(getByTestId('mock-accordion-item2-media')).toBeTruthy();
+  });
+
+  it('renders children', () => {
+    const { getByText } = render(<MockAccordion />);
+
+    expect(getByText('Accordion Content1')).toBeTruthy();
+    expect(getByText('Accordion Content2')).toBeTruthy();
   });
 });

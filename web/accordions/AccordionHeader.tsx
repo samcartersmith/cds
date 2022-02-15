@@ -6,7 +6,9 @@ import type {
   AccordionIconBaseProps,
 } from '@cbhq/cds-common/types';
 import { useAccordionParent } from '@cbhq/cds-common/accordions/AccordionParentContext';
-import { accordionSpacing } from '@cbhq/cds-common/accordions/accordionStyles';
+import { listHeight } from '@cbhq/cds-common/tokens/cell';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 
 import { VStack, Box, HStack } from '../layout';
 import { TextTitle4, TextBody } from '../typography';
@@ -14,6 +16,7 @@ import { Pressable } from '../system/Pressable';
 import { Icon } from '../icons';
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 import { typographyResets } from '../typography/createText';
+import { iconStyles } from './accordionStyles';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 
@@ -39,14 +42,27 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
 ));
 
 export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => (
-  <Box justifyContent="flex-end">
-    <Icon name={expanded ? 'caretUp' : 'caretDown'} size="s" color="foregroundMuted" />
+  <Box
+    justifyContent="flex-end"
+    dangerouslySetClassName={expanded ? iconStyles.expanded : iconStyles.collapsed}
+  >
+    <Icon name="caretUp" size="s" color="foregroundMuted" />
   </Box>
 ));
 
 export const AccordionHeader = memo(
-  ({ itemKey, title, subtitle, onPress, media, expanded, testID }: AccordionHeaderProps) => {
+  ({
+    itemKey,
+    title,
+    subtitle,
+    onPress,
+    media,
+    expanded = false,
+    testID,
+  }: AccordionHeaderProps) => {
     const { onItemPress } = useAccordionParent();
+    const spacing = useCellSpacing();
+    const minHeight = useScaleConditional(listHeight);
 
     const handlePress = useCallback(() => {
       onPress?.(itemKey);
@@ -67,7 +83,7 @@ export const AccordionHeader = memo(
           aria-controls={getAccordionPanelId(itemKey)}
           id={getAccordionHeaderId(itemKey)}
         >
-          <HStack width="100%" alignItems="center" gap={2} {...accordionSpacing.header}>
+          <HStack width="100%" alignItems="center" gap={2} minHeight={minHeight} {...spacing.outer}>
             {!!media && <AccordionMedia media={media} />}
             <AccordionTitle title={title} subtitle={subtitle} />
             <AccordionIcon expanded={expanded} />

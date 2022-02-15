@@ -11,7 +11,13 @@ export const AccordionParentContext = createContext<{
   onItemPress: () => {},
 });
 
-export const useAccordionParent = () => useContext(AccordionParentContext);
+export const useAccordionParent = () => {
+  const context = useContext(AccordionParentContext);
+  if (context === undefined) {
+    throw new Error('useAccordionParent must be used within a AccordionParentProvider');
+  }
+  return context;
+};
 
 export const AccordionParentProvider = ({
   children,

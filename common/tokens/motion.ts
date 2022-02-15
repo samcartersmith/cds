@@ -1,4 +1,4 @@
-type EasingArray = [number, number, number, number];
+export type EasingArray = [number, number, number, number];
 
 export const curves = {
   global: [0.6, 0, 0.15, 1] as EasingArray,

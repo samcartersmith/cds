@@ -1,6 +1,8 @@
 import { RefObject } from 'react';
 import { MotionBaseSpec } from '@cbhq/cds-common';
 import { isStorybook } from '@cbhq/cds-utils';
+import { curves, durations } from '@cbhq/cds-common/tokens/motion';
+
 import { convertMotionConfig } from './convertMotionConfig';
 
 type MotionSpec = {
@@ -12,6 +14,10 @@ type AnimationCompleteCallback = ({ finished }: { finished: boolean }) => void;
 
 export type TimingReturnValues = {
   start: (cb?: AnimationCompleteCallback) => Promise<{ finished: boolean }>;
+};
+
+type TransitionReturnValue = {
+  transition: string;
 };
 
 export class Animated {
@@ -53,5 +59,27 @@ export class Animated {
         return allFinished;
       },
     };
+  }
+
+  /**
+   * Convert motion configs to CSS transition property
+   * @param configs Motion configs
+   * @returns CSS transition property in object
+   */
+  static toTransition(configs: MotionSpec[]): TransitionReturnValue {
+    return configs.reduce(
+      (acc, config, index) => {
+        const isLast = index === configs.length - 1;
+
+        return {
+          ...acc,
+          [config.property]: config.toValue,
+          transition: `${acc.transition} ${config.property} ${
+            durations[config.duration]
+          }ms cubic-bezier(${curves[config.easing].join(',')}) ${isLast ? '' : ','}`,
+        };
+      },
+      { transition: '' },
+    );
   }
 }

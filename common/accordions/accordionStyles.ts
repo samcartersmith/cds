@@ -8,5 +8,3 @@ export const accordionSpacing: Record<string, SpacingProps> = {
     spacing: 4,
   },
 };
-
-export const accordionPanelMaxHeight = 300;

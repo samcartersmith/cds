@@ -11,7 +11,7 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { listHeight } from '@cbhq/cds-common/tokens/cell';
 
 import { VStack, Box, HStack } from '../layout';
-import { TextHeadline, TextBody } from '../typography';
+import { TextTitle4, TextBody } from '../typography';
 import { Pressable } from '../system/Pressable';
 import { Icon } from '../icons';
 import { useAccordionIconAnimation } from './useAccordionIconAnimation';
@@ -24,7 +24,7 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => <Box>
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
   <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
-      <TextHeadline ellipsize="tail">{title}</TextHeadline>
+      <TextTitle4 ellipsize="tail">{title}</TextTitle4>
       {!!subtitle && <TextBody color="foregroundMuted">{subtitle}</TextBody>}
     </VStack>
   </Box>

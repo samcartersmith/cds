@@ -27,8 +27,8 @@ export const useAccordionIconAnimation = (): AccordionIconAnimation => {
   const animateOut = Animated.timing(accordionIconRotate.current, rotateOutConfig);
 
   const rotateValue = accordionIconRotate.current.interpolate({
-    inputRange: [accordionHiddenRotate, accordionVisibleRotate],
-    outputRange: ['0deg', '-180deg'],
+    inputRange: [0, 1],
+    outputRange: [`${accordionHiddenRotate}deg`, `${accordionVisibleRotate}deg`],
   });
 
   return useMemo(

@@ -1,29 +1,39 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useCallback } from 'react';
 import type { AccordionPanelBaseProps } from '@cbhq/cds-common/types';
-import {
-  accordionSpacing,
-  accordionPanelMaxHeight,
-} from '@cbhq/cds-common/accordions/accordionStyles';
+import { accordionSpacing } from '@cbhq/cds-common/accordions/accordionStyles';
+import { cx } from 'linaria';
 
 import { Box } from '../layout';
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
-import { display } from '../styles/display';
+import { panelStyles } from './accordionStyles';
+import { overflow } from '../styles/overflow';
 
 export const AccordionPanel = memo(
   ({ children, expanded, itemKey, testID }: AccordionPanelBaseProps) => {
+    const [shouldAttachOverflow, setShouldAttachOverflow] = useState(false);
+
+    const handleTransistionEnd = useCallback(() => {
+      setShouldAttachOverflow(expanded);
+    }, [setShouldAttachOverflow, expanded]);
+
     return (
       <Box
-        {...accordionSpacing.panel}
+        dangerouslySetClassName={cx(
+          overflow.hidden,
+          expanded
+            ? cx(panelStyles.expanded, shouldAttachOverflow && overflow.auto)
+            : panelStyles.collapsed,
+        )}
         role="region"
-        dangerouslySetClassName={expanded ? undefined : display.none}
         testID={testID}
-        maxHeight={accordionPanelMaxHeight}
-        overflow="auto"
         // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
         accessibilityLabelledBy={getAccordionHeaderId(itemKey)}
         id={getAccordionPanelId(itemKey)}
+        // attach overflow:auto after transition end to
+        // prevent flickering scrollbar when animating in
+        onTransitionEnd={handleTransistionEnd}
       >
-        {children}
+        <Box {...accordionSpacing.panel}>{children}</Box>
       </Box>
     );
   },

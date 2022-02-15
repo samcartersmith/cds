@@ -51,7 +51,7 @@ export function accordionBuilder({
           media={<CellMedia type="icon" name="wallet" />}
           onPress={handlePress}
         >
-          <TextBody>Accordion Content</TextBody>
+          <TextBody as="p">Accordion Content</TextBody>
         </AccordionItem>
       </Accordion>
     );
@@ -64,7 +64,7 @@ export function accordionBuilder({
           <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
         </AccordionItem>
         <AccordionItem itemKey="2" title="Accordion #2" subtitle="subtitle2" onPress={handlePress}>
-          <TextBody>Accordion Content</TextBody>
+          <TextBody as="p">Accordion Content</TextBody>
         </AccordionItem>
       </Accordion>
     );
@@ -86,7 +86,7 @@ export function accordionBuilder({
           media={<CellMedia type="icon" name="wallet" />}
           onPress={handlePress}
         >
-          <TextBody>Accordion Content</TextBody>
+          <TextBody as="p">Accordion Content</TextBody>
         </AccordionItem>
       </Accordion>
     );
@@ -99,7 +99,7 @@ export function accordionBuilder({
           <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
         </AccordionItem>
         <AccordionItem itemKey="2" title="Accordion #2" onPress={handlePress}>
-          <TextBody>Accordion Content</TextBody>
+          <TextBody as="p">Accordion Content</TextBody>
         </AccordionItem>
       </Accordion>
     );
@@ -109,10 +109,10 @@ export function accordionBuilder({
     return (
       <Accordion defaultActiveKey="2" onItemPress={handlePress}>
         <AccordionItem itemKey="1" title="Accordion #1">
-          <TextBody>{loremIpsum.repeat(10)}</TextBody>
+          <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
         </AccordionItem>
         <AccordionItem itemKey="2" title="Accordion #2" onPress={handlePress}>
-          <TextBody>Accordion Content</TextBody>
+          <TextBody as="p">Accordion Content</TextBody>
         </AccordionItem>
       </Accordion>
     );
@@ -129,7 +129,7 @@ export function accordionBuilder({
           testID="mock-accordion-item1"
           onPress={onPress1}
         >
-          <TextBody as="p">Accordion Content</TextBody>
+          <TextBody as="p">Accordion Content1</TextBody>
         </AccordionItem>
         <AccordionItem
           itemKey="2"
@@ -139,7 +139,7 @@ export function accordionBuilder({
           onPress={onPress2}
           testID="mock-accordion-item2"
         >
-          <TextBody as="p">Accordion Content</TextBody>
+          <TextBody as="p">Accordion Content2</TextBody>
         </AccordionItem>
       </Accordion>
     );

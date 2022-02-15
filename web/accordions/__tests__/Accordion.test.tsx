@@ -1,47 +1,22 @@
 import { render, fireEvent } from '@testing-library/react';
 import { renderA11y } from '@cbhq/jest-utils';
+import { accordionBuilder, CreateAccordionProps } from '@cbhq/cds-common/internal/accordionBuilder';
 
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
 import { CellMedia } from '../../cells/CellMedia';
 import { TextBody } from '../../typography';
+import { TextInput } from '../../controls';
+
 import { getAccordionHeaderId, getAccordionPanelId } from '../utils';
 
-type OnPress = (key: string) => void;
-const MockAccordion = ({
-  onItemPress,
-  onPress1,
-  onPress2,
-}: {
-  onItemPress?: OnPress;
-  onPress1?: OnPress;
-  onPress2?: OnPress;
-}) => {
-  return (
-    <Accordion defaultActiveKey="2" onItemPress={onItemPress} testID="mock-accordion">
-      <AccordionItem
-        itemKey="1"
-        title="Accordion #1"
-        subtitle="subtitle1"
-        media={<CellMedia type="icon" name="wallet" testID="mock-accordion-item1-media" />}
-        testID="mock-accordion-item1"
-        onPress={onPress1}
-      >
-        <TextBody as="p">Accordion Content</TextBody>
-      </AccordionItem>
-      <AccordionItem
-        itemKey="2"
-        title="Accordion #2"
-        subtitle="subtitle2"
-        media={<CellMedia type="icon" name="wallet" testID="mock-accordion-item2-media" />}
-        onPress={onPress2}
-        testID="mock-accordion-item2"
-      >
-        <TextBody as="p">Accordion Content</TextBody>
-      </AccordionItem>
-    </Accordion>
-  );
-};
+const { MockAccordion } = accordionBuilder({
+  Accordion,
+  AccordionItem,
+  CellMedia,
+  TextBody,
+  TextInput,
+} as CreateAccordionProps);
 
 describe('Accordion', () => {
   it('passes accessibility', async () => {
@@ -95,7 +70,7 @@ describe('Accordion', () => {
     const { getByTestId } = render(<MockAccordion />);
 
     expect(getByTestId('mock-accordion-item1-panel')).toBeInTheDocument();
-    expect(getByTestId('mock-accordion-item1-panel')).toHaveClass('none');
+    expect(getByTestId('mock-accordion-item1-panel')).toHaveClass('collapsed');
     expect(getByTestId('mock-accordion-item2-panel')).toBeInTheDocument();
   });
 
@@ -107,8 +82,8 @@ describe('Accordion', () => {
     expect(getByTestId('mock-accordion-item1-header')).toHaveAttribute('aria-expanded', 'true');
     expect(getByTestId('mock-accordion-item2-header')).toHaveAttribute('aria-expanded', 'false');
 
-    expect(getByTestId('mock-accordion-item1-panel')).not.toHaveClass('none');
-    expect(getByTestId('mock-accordion-item2-panel')).toHaveClass('none');
+    expect(getByTestId('mock-accordion-item1-panel')).not.toHaveClass('collapsed');
+    expect(getByTestId('mock-accordion-item2-panel')).toHaveClass('collapsed');
   });
 
   it('renders titles', () => {
@@ -125,5 +100,12 @@ describe('Accordion', () => {
 
     expect(getByTestId('mock-accordion-item1-media')).toBeTruthy();
     expect(getByTestId('mock-accordion-item2-media')).toBeTruthy();
+  });
+
+  it('renders children', () => {
+    const { getByText } = render(<MockAccordion />);
+
+    expect(getByText('Accordion Content1')).toBeTruthy();
+    expect(getByText('Accordion Content2')).toBeTruthy();
   });
 });
