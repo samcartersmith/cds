@@ -1,13 +1,24 @@
 import React from 'react';
-
+import { CardMediaProps, createCardMedia } from '@cbhq/cds-common/cards/createCardMedia';
 import {
   IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
   IllustrationPictogramNames,
 } from '@cbhq/cds-common/types/IllustrationNames';
+import { CardRemoteImage } from './CardRemoteImage';
+import { Illustration } from '../illustrations/Illustration';
+
 import { SpotRectangle, SpotSquare, Pictogram } from '../illustrations';
 import { VStack } from '../layout/VStack';
 
+export type { CardMediaProps };
+
+export const CardMedia = createCardMedia({
+  CardRemoteImage,
+  Illustration,
+});
+
+/** @deprecated Please use CardMedia moving forward */
 export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNames }) => {
   return (
     <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
@@ -16,6 +27,7 @@ export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNam
   );
 };
 
+/** @deprecated Please use CardMedia moving forward */
 export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) => {
   return (
     <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
@@ -24,6 +36,7 @@ export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) 
   );
 };
 
+/** @deprecated Please use CardMedia moving forward */
 export const CardPictogram = ({ name }: { name: IllustrationPictogramNames }) => {
   return (
     <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>

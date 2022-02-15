@@ -2,9 +2,12 @@ import type { FlexStyles, PinningDirection } from './BoxBaseProps';
 import type { DimensionStyles } from './DimensionStyles';
 import type { ElevationLevels } from './ElevationLevels';
 import type { GroupBaseProps } from './GroupBaseProps';
+import type { IllustrationVariant } from './IllustrationNames';
 import type { PaletteBackground } from './Palette';
 import type { SharedProps } from './SharedProps';
 import type { OffsetProps, SpacingProps } from './SpacingProps';
+
+export type CardVariant = 'announcement' | 'feed' | 'feature';
 
 export type CardBaseProps = {
   /** Set the background color of the Card. Passing `true` will enable the default background, otherwise a custom palette alias can be passed. */
@@ -81,3 +84,10 @@ export type FeedCardBaseProps = {
 } & SharedProps;
 
 export type CardGroupBaseProps<BoxProps> = GroupBaseProps<BoxProps>;
+
+export type CardRemoteImageProps = {
+  /** The url to the image asset */
+  src: string;
+  /** The Illustration component the RemoteImage should mimic sizing from. */
+  size: IllustrationVariant;
+} & SharedProps;
