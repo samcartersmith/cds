@@ -299,42 +299,6 @@ describe('PopoverMenu', () => {
     // expect first option to be focused
     expect(firstOption).toHaveFocus();
   });
-  it('selects a value with keyboard navigation and focuses on the already selected value when the menu is reopened', async () => {
-    const { getByTestId, getAllByRole } = render(
-      <MockPopoverMenu triggerTestID={mockTriggerTestID} />,
-    );
-
-    // open the menu
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
-      key: 'Enter',
-      code: 'Enter',
-    });
-
-    const firstOption = await waitFor(() => getAllByRole('menuitem')[0]);
-    const secondOption = getAllByRole('menuitem')[1];
-
-    // choose the second option
-    fireEvent.keyDown(firstOption, {
-      key: 'ArrowDown',
-      code: 'ArrowDown',
-    });
-    fireEvent.keyDown(secondOption, {
-      key: 'Enter',
-      code: 'Enter',
-    });
-
-    // open the menu
-    fireEvent.keyDown(getByTestId(mockTriggerTestID), {
-      key: 'Enter',
-      code: 'Enter',
-    });
-
-    setTimeout(() => {
-      // expect selected option be focused
-      const secondOptionRerendered = getAllByRole('menuitem')[1];
-      expect(secondOptionRerendered).toHaveFocus();
-    }, 1000);
-  });
   // escape to close
   it('closes the menu when a menu item is focused and the user types Escape', async () => {
     const { getByTestId, getAllByRole } = render(
