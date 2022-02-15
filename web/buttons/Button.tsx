@@ -50,6 +50,7 @@ export const Button = forwardRef(function Button(
     flush,
     type = 'button',
     variant = 'primary',
+    noScaleOnPress,
     ...props
   }: ButtonProps,
   ref: React.Ref<HTMLButtonElement>,
@@ -93,6 +94,7 @@ export const Button = forwardRef(function Button(
       type={type}
       ref={ref}
       to={to}
+      noScaleOnPress={noScaleOnPress}
     >
       {startIcon && (
         <span className={hasFrontier ? buttonStyles.frontierStartIcon : buttonStyles.startIcon}>

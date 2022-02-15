@@ -643,6 +643,36 @@ Uniquely identify the button within a form.
 
 <ComponentDetails componentName="Button" templateName="prop-name" />
 
+### noScaleOnPress
+
+Dont scale element on press.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="noScaleOnPress"
+  required={false}
+  defaultValue=""
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Button" templateName="prop-noScaleOnPress" />
+
+### numberOfLines <Badge variant="mobile" />
+
+When provided the Button text will not truncate and will wrap until the number of lines provided is met.
+
+<ApiDetails
+  componentName="Button"
+  propertyName="numberOfLines"
+  required={false}
+  defaultValue="1"
+  mobileOptions={['number']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="Button" templateName="prop-numberOfLines" />
+
 ### onKeyPress <Badge variant="web" />
 
 Callback fired when a key is pressed

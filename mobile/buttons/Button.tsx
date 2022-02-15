@@ -16,7 +16,14 @@ import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
 
-export type ButtonProps = ButtonBaseProps & PressableProps;
+export type ButtonProps = ButtonBaseProps &
+  PressableProps & {
+    /**
+     * When provided the Button text will not truncate and will wrap until the number of lines provided is met.
+     * @default 1
+     */
+    numberOfLines?: number;
+  };
 
 export const Button = memo(function Button({
   block,
@@ -29,6 +36,8 @@ export const Button = memo(function Button({
   transparent,
   flush,
   variant = 'primary',
+  numberOfLines = 1,
+  noScaleOnPress,
   ...props
 }: ButtonProps) {
   const palette = usePalette();
@@ -49,7 +58,7 @@ export const Button = memo(function Button({
     ? 'flex-start'
     : styles.button.justifyContent;
   const buttonStyles = useMemo(
-    () => [styles.button, { height }, { justifyContent }, spacingStyles],
+    () => [styles.button, { minHeight: height }, { justifyContent }, spacingStyles],
     [height, spacingStyles, justifyContent],
   );
   const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
@@ -66,6 +75,7 @@ export const Button = memo(function Button({
       feedback={feedback ?? (compact ? 'light' : 'normal')}
       loading={loading}
       style={pressableStyles}
+      noScaleOnPress={noScaleOnPress}
       {...props}
     >
       <View style={[buttonStyles, frontierButtonStyles]}>
@@ -78,7 +88,7 @@ export const Button = memo(function Button({
                 <Icon name={startIcon} size={iconSize} color={color} />
               </View>
             )}
-            <TextHeadline color={color} selectable="none" noWrap>
+            <TextHeadline color={color} selectable="none" numberOfLines={numberOfLines}>
               {children}
             </TextHeadline>
             {!!endIcon && (
