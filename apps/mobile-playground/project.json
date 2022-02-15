@@ -9,11 +9,8 @@
     "lint": {
       "executor": "@cbhq/mono-tasks:lint"
     },
-    "test": {
-      "executor": "@cbhq/mono-tasks:test"
-    },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "./tools/executors/typecheck:typecheck"
     }
   },
   "tags": []

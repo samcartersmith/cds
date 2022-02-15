@@ -9,5 +9,5 @@
     },
   ],
   "include": ["**/*"],
-  "exclude": ["dts/**/*"]
+  "exclude": ["dts/**/*", "babel.config.js", "metro.config.js"]
 }
