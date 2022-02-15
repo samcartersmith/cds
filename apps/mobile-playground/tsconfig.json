@@ -6,7 +6,7 @@
   "references": [
     {
       "path": "../../packages/mobile"
-    }
+    },
   ],
   "include": ["**/*"],
   "exclude": ["dts/**/*"]

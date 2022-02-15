@@ -40,7 +40,7 @@
   "devDependencies": {
     "@storybook/react": "^6.4.17"
   },
-  "main": "./index.ts",
+  "main": "./index.js",
   "typings": "./index.d.ts",
   "scripts": {
     "storybook": "start-storybook -p 6006",

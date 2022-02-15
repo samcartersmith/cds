@@ -29,5 +29,6 @@
     "react": "17.0.2"
   },
   "types": "./index.d.ts",
+  "react-native": "./index.ts",
   "main": "./index.js"
 }

@@ -33,16 +33,12 @@ Help:
   $$ make start.website             -- Start website local dev server.
   $$ make build.website             -- Build website.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   $$ make clean.ios                 -- Clean ios build
   $$ make setup.mobile              -- Setup mobile dependencies 
   $$ make build.ios                 -- Build the playground ios app.
   $$ make build.android             -- Build the playground android app.
   $$ make start.mobile              -- Start metro server.
 
->>>>>>> 746ce03 (Update Makefile.)
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.common              -- Build the `common` package.
   $$ make build.mobile              -- Build the `mobile` package.
@@ -53,11 +49,6 @@ Help:
   $$ make build.all                 -- Build all packages.
 
   $$ make docgen                    -- Generate docs for CDS website.
-=======
-  $$ make clean.ios                 -- Clean ios build
-  $$ make build.ios                 -- Build the playground ios app.
-  $$ make start.mobile              -- Start react native packager.
->>>>>>> 99201f6 (Tmp configs.)
 
 endef
 export HELP_TEXT
@@ -166,8 +157,6 @@ build.website:
 start.website:
 	nx run website:start
 
-<<<<<<< HEAD
-=======
 .PHONY: clean.ios
 clean.ios:
 	rm -rf ~/Library/Developer/Xcode/DerivedData && rm -rf apps/mobile-playground/ios/Pods && rm -rf apps/mobile-playground/ios/build && rm -rf apps/mobile-playground/ios/app.xc*
@@ -186,9 +175,8 @@ build.android:
 
 .PHONY: start.mobile
 start.mobile:
-	yarn react-native start --reset-cache --projectRoot apps/mobile-playground --config apps/mobile-playground/metro.config.js	
+	yarn react-native start --projectRoot apps/mobile-playground --config apps/mobile-playground/metro.config.js	
 
->>>>>>> 746ce03 (Update Makefile.)
 .PHONY: build.common
 build.common:
 	nx run common:build
@@ -225,20 +213,3 @@ build.all:
 docgen:
 	nx run codegen:docgen
 	nx run website:lint --fix
-.PHONY: clean.ios
-clean.ios:
-	rm -rf ~/Library/Developer/Xcode/DerivedData && rm -rf apps/mobile-playground/ios/Pods && rm -rf apps/mobile-playground/ios/build && rm -rf apps/mobile-playground/ios/app.xc*
-
-.PHONY: build.ios
-build.ios:
-	nx run mobile-playground:start-ios 
-
-.PHONY: start.mobile
-start.mobile:
-	nx run mobile-playground:start-metro
-	make build.common
-	make build.fonts
-	make build.mobile
-	make build.web
-	make build.lottie
-	make build.utils
