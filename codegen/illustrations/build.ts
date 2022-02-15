@@ -10,6 +10,7 @@ import { getSourcePath } from '../utils/getSourcePath';
 
 import { FigmaClient, CDS_PERSONAL_ACCESS_TOKEN } from '../figma/client';
 import { writeFile } from '../utils/writeFile';
+import { createDescriptionGraph } from '../utils/createDescriptionGraph';
 import {
   IllustrationSummary,
   IllustrationProps,
@@ -666,6 +667,19 @@ const createMobileSpectrumMap = async (names: IllustrationNamesMap, outDirPath: 
   spinner.stop();
 };
 
+const createIllustrationDescriptionGraph = async (destPath: string) => {
+  const illustrationDescriptionGraph = createDescriptionGraph(localManifestData.svg);
+  await writeFile({
+    template: 'objectMap.ejs',
+    data: { illustrationDescriptionGraph },
+    config: { disableAsConst: true },
+    types: {
+      illustrationDescriptionGraph: 'Record<string, string[]>',
+    },
+    dest: destPath,
+  });
+};
+
 const main = async (deleteImgsDir = false) => {
   try {
     const svgOptCfgFullPath = await getSourcePath('codegen/configs/svgo.config.js');
@@ -697,6 +711,9 @@ const main = async (deleteImgsDir = false) => {
     await createManifestFile('codegen/illustrations/illustration_manifest.ts');
     const versionNumManifest = await createVersionNumManifest(
       'web/illustrations/versionNumManifest.ts',
+    );
+    await createIllustrationDescriptionGraph(
+      'common/internal/data/illustrationDescriptionGraph.ts',
     );
     checkLightModeExistsForAllAssets(versionNumManifest);
 

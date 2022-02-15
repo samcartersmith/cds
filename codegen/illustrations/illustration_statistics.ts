@@ -9,13 +9,6 @@ export const illustrationMetadata = {
   spotRectangleCount: 34,
   heroSquareCount: 151,
   pictogramCount: 143,
-  newIllustration: [
-    'linkCoinbaseWalletSmall-dark',
-    'linkCoinbaseWalletSmall-light',
-    'taxDocuments-dark',
-    'taxDocuments-light',
-    'transferFunds-dark',
-    'transferFunds-light',
-  ],
+  newIllustration: [],
   modifiedIllustrations: [],
 };

@@ -1,5 +1,3 @@
-import { iconManifest } from './iconManifest';
-
 type DescriptionType = Record<string, string[]>;
 
 /**
@@ -27,19 +25,17 @@ const addNode = (graph: DescriptionType, description: string, name: string) => {
  * i.e cash could be used in cashJPY or cashEUR
  * @returns
  */
-export const createDescriptionGraph = () => {
+export const createDescriptionGraph = (
+  manifest: Record<string, { name: string; description: string }>,
+) => {
   const graph: DescriptionType = {};
 
-  for (const [, value] of Object.entries(iconManifest)) {
+  for (const [, value] of Object.entries(manifest)) {
     const { name, description } = value;
-
-    // This assumes that iconManifest dataset is cleaned
-    // and correctly formated. <Type>/<IconName>_<Size>
-    const cleanedIconName = name.split('/')[1].split('_')[0];
 
     const descriptions = description.split(',').map((token) => token.trim());
 
-    descriptions.forEach((des) => addNode(graph, des, cleanedIconName));
+    descriptions.forEach((des) => addNode(graph, des, name));
   }
 
   return graph;

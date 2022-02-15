@@ -25,6 +25,7 @@ import {
   spotSquareNames,
   pictogramNames,
 } from '@cbhq/cds-common/internal/data/illustrationData';
+import { illustrationDescriptionGraph } from '@cbhq/cds-common/internal/data/illustrationDescriptionGraph';
 
 const variantToNamesMap: Record<
   string,
@@ -39,6 +40,19 @@ const variantToNamesMap: Record<
   spotRectangle: spotRectangleNames,
   spotSquare: spotSquareNames,
   pictogram: pictogramNames,
+};
+
+const queryMatchesName = (query: string, name: string) => {
+  const queryRe = new RegExp(query.trim().toLowerCase(), 'gi');
+  const nameRe = new RegExp(name.toLowerCase(), 'gi');
+
+  const matchedIconNames: string[] = [];
+
+  if (query in illustrationDescriptionGraph) {
+    matchedIconNames.push(...illustrationDescriptionGraph[query]);
+  }
+
+  return name.match(queryRe) !== null || matchedIconNames.join(' ').match(nameRe) !== null;
 };
 
 export const IllustrationSheet = function IllustrationSheet({
@@ -75,7 +89,9 @@ export const IllustrationSheet = function IllustrationSheet({
             <TabItem key={dim} value={dim}>
               <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
                 {names
-                  .filter((name) => name.includes(query))
+                  .filter((name) => {
+                    return queryMatchesName(query, name);
+                  })
                   .map((filteredName) => (
                     <VStack spacing={3} alignItems="center" key={filteredName}>
                       <Illustration name={filteredName} dimension={dim} />
