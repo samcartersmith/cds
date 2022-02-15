@@ -236,7 +236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:^7.14.3, @babel/cli@npm:^7.16.7":
+"@babel/cli@npm:^7.14.3, @babel/cli@npm:^7.16.8":
   version: 7.17.0
   resolution: "@babel/cli@npm:7.17.0"
   dependencies:
@@ -312,7 +312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.1.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.16, @babel/core@npm:^7.12.3, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.3, @babel/core@npm:^7.15.0, @babel/core@npm:^7.15.5, @babel/core@npm:^7.16.7, @babel/core@npm:^7.17.2, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.1.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.16, @babel/core@npm:^7.12.3, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.3, @babel/core@npm:^7.15.0, @babel/core@npm:^7.15.5, @babel/core@npm:^7.16.12, @babel/core@npm:^7.17.2, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
   version: 7.17.2
   resolution: "@babel/core@npm:7.17.2"
   dependencies:
@@ -1673,7 +1673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.12.16, @babel/preset-env@npm:^7.14.4, @babel/preset-env@npm:^7.15.0, @babel/preset-env@npm:^7.16.11, @babel/preset-env@npm:^7.16.7":
+"@babel/preset-env@npm:^7.12.1, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.12.16, @babel/preset-env@npm:^7.14.4, @babel/preset-env@npm:^7.15.0, @babel/preset-env@npm:^7.16.11":
   version: 7.16.11
   resolution: "@babel/preset-env@npm:7.16.11"
   dependencies:
@@ -2077,6 +2077,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/cca@npm:^3.6.1":
+  version: 3.8.0
+  resolution: "@cbhq/cca@npm:3.8.0"
+  dependencies:
+    babel-plugin-search-and-replace: ^1.1.0
+    idb: ^7.0.0
+    md5: ^2.3.0
+    perfume.js: ^6.3.0
+    ua-parser-js: ^0.7.30
+  peerDependencies:
+    react: ">=16.13"
+  checksum: 6a6d931938470446570a6a49faedd9f355a59ebfc1d7070b16a0934fa3d5b492861519d27e02b30c041db87bec2dedb603f9ddfaf04e880a158a784bd224e7f3
+  languageName: node
+  linkType: hard
+
 "@cbhq/cds-common@0.33.0, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
@@ -2291,42 +2306,52 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-tasks@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@cbhq/mono-tasks@npm:0.1.0"
+"@cbhq/mono-tasks@npm:^0.1.0":
+  version: 0.1.14
+  resolution: "@cbhq/mono-tasks@npm:0.1.14"
   dependencies:
-    "@babel/cli": ^7.16.7
-    "@babel/core": ^7.16.7
-    "@babel/preset-env": ^7.16.7
+    "@babel/cli": ^7.16.8
+    "@babel/core": ^7.16.12
+    "@babel/preset-env": ^7.16.11
     "@babel/preset-flow": ^7.16.7
     "@babel/preset-react": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
-    "@cbhq/eslint-plugin": ^1.4.0
-    "@nrwl/devkit": ^13.4.3
+    "@cbhq/cca": ^3.6.1
+    "@nrwl/devkit": ^13.7.1
     babel-jest: ^27.4.6
     chalk: ^4.1.2
     execa: ^5.1.1
-    packemon: ^1.10.0
+    node-fetch: ^2.6.7
+    packemon: ^1.12.0
     tsconfig-paths: ^3.12.0
   peerDependencies:
     "@docusaurus/core": ^2.0.0-beta.14
     "@storybook/react": ^6.4.0
+    danger: ^10.7.0
+    detox: ^19.0.0
     eslint: ^8.0.0
     jest: ^27.0.0
     prettier: ^2.0.0
     react-native: ">=0.64.0"
     stylelint: ^14.0.0
     typescript: ^4.0.0
+    webpack: ^5.67.0
   peerDependenciesMeta:
     "@docusaurus/core":
       optional: true
     "@storybook/react":
       optional: true
+    danger:
+      optional: true
+    detox:
+      optional: true
     react-native:
       optional: true
     stylelint:
       optional: true
-  checksum: bd8d939439dec4a88a3714b0249bb4310743c2c42d3937f91a9908317932420249a276935f0352240d0539cd9f0ee62782dbf46060af9a07f3152d68773759ec
+    webpack:
+      optional: true
+  checksum: 820885eace861ee7fe7050f65f3b0f8ba5664c7fad8aab4c25ff0a907feb56db6ef3036130b31b1c4bbc24716bf954a3417a2b5949176c56faf1d750d188cb3a
   languageName: node
   linkType: hard
 
@@ -4000,7 +4025,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/devkit@npm:13.8.1, @nrwl/devkit@npm:^13.4.3, @nrwl/devkit@npm:^13.7.1":
+"@nrwl/devkit@npm:13.8.1, @nrwl/devkit@npm:^13.7.1":
   version: 13.8.1
   resolution: "@nrwl/devkit@npm:13.8.1"
   dependencies:
@@ -9687,6 +9712,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-plugin-search-and-replace@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "babel-plugin-search-and-replace@npm:1.1.0"
+  checksum: 489784ff4a117b50eb3ce36f700366a44b1bc52499c25bd64975f1a0798618ba9b3a4bd85a6392c52785168cadee93b6b49cbe5499ebd3d63f6e1077c2aa98ba
+  languageName: node
+  linkType: hard
+
 "babel-plugin-styled-components@npm:>= 1.12.0":
   version: 2.0.2
   resolution: "babel-plugin-styled-components@npm:2.0.2"
@@ -10667,6 +10699,13 @@ __metadata:
   version: 0.7.0
   resolution: "chardet@npm:0.7.0"
   checksum: 6fd5da1f5d18ff5712c1e0aed41da200d7c51c28f11b36ee3c7b483f3696dabc08927fc6b227735eb8f0e1215c9a8abd8154637f3eff8cada5959df7f58b024d
+  languageName: node
+  linkType: hard
+
+"charenc@npm:0.0.2":
+  version: 0.0.2
+  resolution: "charenc@npm:0.0.2"
+  checksum: 81dcadbe57e861d527faf6dd3855dc857395a1c4d6781f4847288ab23cffb7b3ee80d57c15bba7252ffe3e5e8019db767757ee7975663ad2ca0939bb8fcaf2e5
   languageName: node
   linkType: hard
 
@@ -11653,6 +11692,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypt@npm:0.0.2":
+  version: 0.0.2
+  resolution: "crypt@npm:0.0.2"
+  checksum: baf4c7bbe05df656ec230018af8cf7dbe8c14b36b98726939cef008d473f6fe7a4fad906cfea4062c93af516f1550a3f43ceb4d6615329612c6511378ed9fe34
+  languageName: node
+  linkType: hard
+
 "crypto-browserify@npm:^3.11.0, crypto-browserify@npm:^3.12.0":
   version: 3.12.0
   resolution: "crypto-browserify@npm:3.12.0"
@@ -12627,7 +12673,7 @@ __metadata:
     "@cbhq/jest-preset-mobile": 0.1.0
     "@cbhq/mono-env": ^0.1.0
     "@cbhq/mono-pipeline": ^0.2.0
-    "@cbhq/mono-tasks": 0.1.0
+    "@cbhq/mono-tasks": ^0.1.0
     "@cbhq/mono-templates": ^0.1.0
     "@docusaurus/core": 2.0.0-beta.6
     "@docusaurus/module-type-aliases": 2.0.0-beta.6
@@ -16604,6 +16650,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"idb@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "idb@npm:7.0.0"
+  checksum: 561ccdfa0c5c799ac1abb946058dfbbd954e3df97b3efceb864069893f040f8169f44a64d6b1c496c3d70ebe9d8180c0f6bf50bff0e41423bc6b147c621f94f1
+  languageName: node
+  linkType: hard
+
 "identity-obj-proxy@npm:3.0.0, identity-obj-proxy@npm:^3.0.0":
   version: 3.0.0
   resolution: "identity-obj-proxy@npm:3.0.0"
@@ -17138,7 +17191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-buffer@npm:^1.1.5":
+"is-buffer@npm:^1.1.5, is-buffer@npm:~1.1.6":
   version: 1.1.6
   resolution: "is-buffer@npm:1.1.6"
   checksum: 4a186d995d8bbf9153b4bd9ff9fd04ae75068fe695d29025d25e592d9488911eeece84eefbd8fa41b8ddcc0711058a71d4c466dcf6f1f6e1d83830052d8ca707
@@ -19898,6 +19951,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"md5@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "md5@npm:2.3.0"
+  dependencies:
+    charenc: 0.0.2
+    crypt: 0.0.2
+    is-buffer: ~1.1.6
+  checksum: a63cacf4018dc9dee08c36e6f924a64ced735b37826116c905717c41cebeb41a522f7a526ba6ad578f9c80f02cb365033ccd67fe186ffbcc1a1faeb75daa9b6e
+  languageName: node
+  linkType: hard
+
 "mdast-squeeze-paragraphs@npm:^4.0.0":
   version: 4.0.0
   resolution: "mdast-squeeze-paragraphs@npm:4.0.0"
@@ -21993,7 +22057,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"packemon@npm:^1.10.0":
+"packemon@npm:^1.10.0, packemon@npm:^1.12.0":
   version: 1.13.0
   resolution: "packemon@npm:1.13.0"
   dependencies:
@@ -22369,6 +22433,13 @@ __metadata:
   version: 2.1.0
   resolution: "performance-now@npm:2.1.0"
   checksum: 534e641aa8f7cba160f0afec0599b6cecefbb516a2e837b512be0adbe6c1da5550e89c78059c7fabc5c9ffdf6627edabe23eb7c518c4500067a898fa65c2b550
+  languageName: node
+  linkType: hard
+
+"perfume.js@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "perfume.js@npm:6.3.0"
+  checksum: 6570fcafaa524c618f63ff83a68f962756006d71628a5a8b715da27e58fec52a34b6ca43430741ec7b2e38aec810ea1e8950ea434861b048be067f2e80e292af
   languageName: node
   linkType: hard
 
