@@ -55,10 +55,6 @@
     "type-fest": "1.2.0",
     "url-parse": "1.5.1"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "devDependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
