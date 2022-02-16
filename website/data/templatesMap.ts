@@ -4,6 +4,48 @@
  */
 import React from 'react';
 
+export const Accordion = {
+  accordion: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/accordions/Accordion/accordion.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/accordions/Accordion/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/accordions/Accordion/usage.mdx'
+      ),
+  ),
+};
+
+export const AccordionItem = {
+  'accordion-item': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/accordions/AccordionItem/accordion-item.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/accordions/AccordionItem/implementation.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/accordions/AccordionItem/usage.mdx'
+      ),
+  ),
+};
+
 export const Lottie = {
   implementation: React.lazy(
     async () =>

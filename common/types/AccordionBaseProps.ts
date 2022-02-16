@@ -4,8 +4,8 @@ import { SharedProps } from './SharedProps';
 
 export type AccordionBaseProps = {
   /**
-   * Default active accordion item key
-   * If not specified or doesn't exist in the accordion items,
+   * Default active accordion item key.
+   * If not specified or does not exist in the accordion items,
    * all items will be closed on mount
    */
   defaultActiveKey?: string;

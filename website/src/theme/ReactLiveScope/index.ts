@@ -24,6 +24,7 @@ import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValue
 import * as CDSControls from '@cbhq/cds-web/controls';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
+import * as CDSAccordion from '@cbhq/cds-web/accordions';
 import * as CDSIcons from '@cbhq/cds-web/icons';
 import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSLayout from '@cbhq/cds-web/layout';
@@ -132,6 +133,7 @@ const ReactLiveScope = {
   useToast,
   // CDS Components
   Text: CDSTypography.TextBody,
+  ...CDSAccordion,
   ...CDSAnimation,
   ...CDSButtons,
   ...CDSCardElements,

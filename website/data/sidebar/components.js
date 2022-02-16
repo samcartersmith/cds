@@ -7,6 +7,15 @@ module.exports = {
   components: [
     {
       type: 'category',
+      label: 'Accordions',
+      collapsed: true,
+      items: [
+        'components/accordions/Accordion/accordion',
+        'components/accordions/AccordionItem/accordion-item',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Animation',
       collapsed: true,
       items: [

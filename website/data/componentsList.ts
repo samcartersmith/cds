@@ -4,6 +4,8 @@
  */
 
 export const components = [
+  'Accordion',
+  'AccordionItem',
   'Lottie',
   'LottieStatusAnimation',
   'AvatarButton',
