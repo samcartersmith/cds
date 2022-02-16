@@ -45,7 +45,7 @@ export const OnChangeExample = () => {
   );
 };
 
-export const DisableShowBackArrow = () => {
+export const DisableBackArrow = () => {
   const [text, setText] = useState('');
 
   const handleOnSearch = useCallback((str: string) => {
@@ -67,7 +67,7 @@ const SearchInputScreen = () => {
         <OnChangeExample />
       </Example>
       <Example title="Set disableBackArrow=true">
-        <DisableShowBackArrow />
+        <DisableBackArrow />
       </Example>
       <Example title="Basic">
         <Basic />

@@ -54,8 +54,18 @@ If value is `true` then style prop can take animated values.
   propertyName="aspectRatio"
   required={false}
   defaultValue=""
-  mobileOptions={['AspectRatio']}
-  webOptions={['AspectRatio']}
+  mobileOptions={[
+    '[number, number]',
+    '[number, number] & readonly [number, number]',
+    'readonly [number, number]',
+    'readonly [number, number] & [number, number]',
+  ]}
+  webOptions={[
+    '[number, number]',
+    '[number, number] & readonly [number, number]',
+    'readonly [number, number]',
+    'readonly [number, number] & [number, number]',
+  ]}
 />
 
 <ComponentDetails componentName="RemoteImage" templateName="prop-aspectRatio" />
@@ -121,6 +131,19 @@ Opacity of element
 />
 
 <ComponentDetails componentName="RemoteImage" templateName="prop-opacity" />
+
+### resizeMode
+
+<ApiDetails
+  componentName="RemoteImage"
+  propertyName="resizeMode"
+  required={false}
+  defaultValue=""
+  mobileOptions={['center', 'contain', 'cover', 'repeat', 'stretch']}
+  webOptions={['contain', 'cover']}
+/>
+
+<ComponentDetails componentName="RemoteImage" templateName="prop-resizeMode" />
 
 ### shape
 

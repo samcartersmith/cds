@@ -14,7 +14,6 @@ export type SearchInputProps = SearchInputBaseProps &
   React.InputHTMLAttributes<HTMLInputElement> & {
     onClear?: React.MouseEventHandler;
     onChangeText: (text: string) => void;
-    onSearch?: (text: string) => void;
   } & Required<Pick<HTMLInputElement, 'value'>>;
 
 export const SearchInput = memo(

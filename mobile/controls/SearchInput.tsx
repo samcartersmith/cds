@@ -15,11 +15,6 @@ import { InputIconButton } from './InputIconButton';
 
 export type SearchInputProps = SearchInputBaseProps &
   RNTextInputProps & {
-    /**
-     * Callback is fired when a user hits enter/go on the keyboard. Can obtain the query
-     * through str parameter
-     */
-    onSearch?: (str: string) => void;
     /** Callback is fired when the clear icon is pressed */
     onClear?: (event: GestureResponderEvent) => void;
     /**
@@ -83,12 +78,8 @@ export const SearchInput = memo(
       const handleOnSearch = useCallback(() => {
         onSearch?.(value?.toString() ?? '');
 
-        if (startIconName === 'backArrow') {
-          internalRef.current?.blur();
-        } else {
-          internalRef.current?.focus();
-        }
-      }, [onSearch, startIconName, value]);
+        internalRef.current?.focus();
+      }, [onSearch, value]);
 
       const handleOnClear = useCallback(
         (e: GestureResponderEvent) => {
@@ -98,6 +89,14 @@ export const SearchInput = memo(
           onSearch?.('');
         },
         [onClear, onChangeText, onSearch],
+      );
+
+      const handleOnBack = useCallback(
+        (e: GestureResponderEvent) => {
+          onBack?.(e);
+          internalRef.current?.blur();
+        },
+        [onBack],
       );
 
       return (
@@ -112,7 +111,7 @@ export const SearchInput = memo(
               testID={testID && `${testID}-searchinput-iconbtn`}
               accessibilityLabel={startIconName}
               accessibilityHint={startIconName}
-              onPress={startIconName === 'backArrow' ? onBack : handleOnSearch}
+              onPress={startIconName === 'backArrow' ? handleOnBack : handleOnSearch}
               disabled={disabled}
               name={startIconName}
             />

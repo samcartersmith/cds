@@ -154,13 +154,15 @@ Callback is fired when backArrow is pressed. If disableBackArrow is true, this w
 
 ### onSearch
 
+Callback is fired when a user hits enter on the keyboard. Can obtain the query through str parameter
+
 <ApiDetails
   componentName="SearchInput"
   propertyName="onSearch"
   required={false}
   defaultValue=""
   mobileOptions={['(str: string) => void']}
-  webOptions={['(text: string) => void']}
+  webOptions={['(str: string) => void']}
 />
 
 <ComponentDetails componentName="SearchInput" templateName="prop-onSearch" />
