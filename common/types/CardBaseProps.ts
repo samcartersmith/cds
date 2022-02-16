@@ -1,4 +1,4 @@
-import type { FlexStyles, PinningDirection } from './BoxBaseProps';
+import type { BorderedStyles, FlexStyles, PinningDirection, StackBaseProps } from './BoxBaseProps';
 import type { DimensionStyles } from './DimensionStyles';
 import type { ElevationLevels } from './ElevationLevels';
 import type { GroupBaseProps } from './GroupBaseProps';
@@ -8,6 +8,13 @@ import type { SharedProps } from './SharedProps';
 import type { OffsetProps, SpacingProps } from './SpacingProps';
 
 export type CardVariant = 'announcement' | 'feed' | 'feature';
+export type CardBoxProps = SharedProps &
+  SpacingProps &
+  FlexStyles &
+  OffsetProps &
+  DimensionStyles &
+  StackBaseProps &
+  BorderedStyles;
 
 export type CardBaseProps = {
   /** Set the background color of the Card. Passing `true` will enable the default background, otherwise a custom palette alias can be passed. */
