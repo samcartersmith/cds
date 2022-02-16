@@ -8,6 +8,31 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.0 (2/16/2022, 02:33 PM PST)
+
+#### 💥 Breaking
+
+- **[SearchInput]** Fix backArrow not functioning properly. Modify onSearch so mobile and web have 1:1 API. [#54702](https://github.cbhq.net/mono/repo/pull/54702)
+
+#### 🚀 Updates
+
+- **[NativeTextArea, TextInput]** Add NativeTextArea. Add a dangerous inputNode prop. [#54805](https://github.cbhq.net/mono/repo/pull/54805), [CDS-2051](https://jira.coinbase-corp.com/browse/CDS-2051)
+- **[Button]** Types to include noScaleOnPress + numberOfLines option on mobile. [#54640](https://github.cbhq.net/mono/repo/pull/54640), [CDS-2087](https://jira.coinbase-corp.com/browse/CDS-2087)
+- CardMedia for mobile and web. [#54602](https://github.cbhq.net/mono/repo/pull/54602), [CDS-2058](https://jira.coinbase-corp.com/browse/CDS-2058)
+- **[Accordion]** CDS Accordion web ui and animation. [#54459](https://github.cbhq.net/mono/repo/pull/54459), [CDS-1878](https://jira.coinbase-corp.com/browse/CDS-1878)
+- Create TabIndicator component for web. [#54381](https://github.cbhq.net/mono/repo/pull/54381), [CDS-2070](https://jira.coinbase-corp.com/browse/CDS-2070)
+- **[RemoteImage]** Add resizeMode prop. [#54427](https://github.cbhq.net/mono/repo/pull/54427)
+
+#### 🐞 Fixes
+
+- **[Accordion]** CDS Accordion fixes. [#54668](https://github.cbhq.net/mono/repo/pull/54668)
+- Fixed act warnings for popover and select web. [#54535](https://github.cbhq.net/mono/repo/pull/54535)
+- **[SearchInput]** SearchInput accessibility improvements. Added disableBackArrow and onBack props. [#51758](https://github.cbhq.net/mono/repo/pull/51758)
+
+#### 📘 Misc
+
+- Removed popover flakey test. [#54661](https://github.cbhq.net/mono/repo/pull/54661)
+
 ## 0.34.12 (2/14/2022, 08:31 AM PST)
 
 #### 🐞 Fixes

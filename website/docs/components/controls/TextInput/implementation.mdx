@@ -176,6 +176,22 @@ For cases where label is not enough information to describe what the text input 
 
 <ComponentDetails componentName="TextInput" templateName="prop-helperText" />
 
+### inputNode <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+to render the input area as a <textarea />, <input /> etc... By default, the input area will be rendered as an <input />. Use this at your own risk, and dont use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc.. Our default input handles all of the UI/Accessibility needs for your out of the box, but inputNode will not include those.
+Customize the element which the input area will be rendered as. Adds ability
+
+<ApiDetails
+  componentName="TextInput"
+  propertyName="inputNode"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['ReactElement<any, string | JSXElementConstructor<any>>']}
+/>
+
+<ComponentDetails componentName="TextInput" templateName="prop-inputNode" />
+
 ### label
 
 Short messageArea indicating purpose of input

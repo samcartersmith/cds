@@ -18,6 +18,7 @@ export const components = [
   'CardFooter',
   'CardGroup',
   'CardHeader',
+  'CardMedia',
   'FeatureEntryCard',
   'FeedCard',
   'CellMedia',
@@ -28,6 +29,7 @@ export const components = [
   'Checkbox',
   'InputIcon',
   'InputIconButton',
+  'NativeTextArea',
   'RadioGroup',
   'SearchInput',
   'Select',
@@ -96,6 +98,6 @@ export const components = [
   'ProgressCircle',
   'Sparkline',
   'SparklineGradient',
-  'SparklineInteractiveHeader',
   'SparklineInteractive',
+  'SparklineInteractiveHeader',
 ] as const;

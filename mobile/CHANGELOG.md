@@ -8,6 +8,33 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.40.0 (2/16/2022, 02:33 PM PST)
+
+#### 💥 Breaking
+
+- **[SearchInput]** Fix backArrow not functioning properly. Modify onSearch so mobile and web have 1:1 API. [#54702](https://github.cbhq.net/mono/repo/pull/54702)
+
+#### 🚀 Updates
+
+- Added more prototypes for drawer and tray. [#54972](https://github.cbhq.net/mono/repo/pull/54972)
+- **[TextInput]** Added TextArea Example for mobile to docsite and storybook. [#54563](https://github.cbhq.net/mono/repo/pull/54563)
+- **[Button]** Types to include noScaleOnPress + numberOfLines option on mobile. [#54640](https://github.cbhq.net/mono/repo/pull/54640), [CDS-2087](https://jira.coinbase-corp.com/browse/CDS-2087)
+- CardMedia for mobile and web. [#54602](https://github.cbhq.net/mono/repo/pull/54602), [CDS-2058](https://jira.coinbase-corp.com/browse/CDS-2058)
+- **[Accordion]** CDS Accordion web ui and animation. [#54459](https://github.cbhq.net/mono/repo/pull/54459), [CDS-1878](https://jira.coinbase-corp.com/browse/CDS-1878)
+
+#### 🐞 Fixes
+
+- Clean up animations. [#54694](https://github.cbhq.net/mono/repo/pull/54694)
+- **[Accordion]** CDS Accordion fixes. [#54668](https://github.cbhq.net/mono/repo/pull/54668)
+- Children shouldn't be a prop for React.createElement. [#54564](https://github.cbhq.net/mono/repo/pull/54564)
+- Performance enhancements for drawer/tray. [#54241](https://github.cbhq.net/mono/repo/pull/54241)
+- : fix(Carousel): Carousel size calculations and children length. [#54204](https://github.cbhq.net/mono/repo/pull/54204), [CDS-2057](https://jira.coinbase-corp.com/browse/CDS-2057)
+- **[SearchInput]** SearchInput accessibility improvements. Added disableBackArrow and onBack props. [#51758](https://github.cbhq.net/mono/repo/pull/51758)
+
+#### 📘 Misc
+
+- UseCarousel disableDebounce in Button for logging in test. [#54651](https://github.cbhq.net/mono/repo/pull/54651)
+
 ## 0.39.8 (2/14/2022, 08:31 AM PST)
 
 #### 🚀 Updates

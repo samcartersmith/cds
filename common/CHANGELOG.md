@@ -8,6 +8,33 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.0 (2/16/2022, 02:33 PM PST)
+
+#### 💥 Breaking
+
+- **[SearchInput]** Fix backArrow not functioning properly. Modify onSearch so mobile and web have 1:1 API. [#54702](https://github.cbhq.net/mono/repo/pull/54702)
+
+#### 🚀 Updates
+
+- Added more prototypes for drawer and tray. [#54972](https://github.cbhq.net/mono/repo/pull/54972)
+- CreateCardFooter HOC. [#54666](https://github.cbhq.net/mono/repo/pull/54666), [CDS-2076](https://jira.coinbase-corp.com/browse/CDS-2076)
+- **[Button]** Types to include noScaleOnPress + numberOfLines option on mobile. [#54640](https://github.cbhq.net/mono/repo/pull/54640), [CDS-2087](https://jira.coinbase-corp.com/browse/CDS-2087)
+- CardMedia for mobile and web. [#54602](https://github.cbhq.net/mono/repo/pull/54602), [CDS-2058](https://jira.coinbase-corp.com/browse/CDS-2058)
+- CreateCardHeader HOC. [#54667](https://github.cbhq.net/mono/repo/pull/54667), [CDS-2077](https://jira.coinbase-corp.com/browse/CDS-2077)
+- **[Accordion]** CDS Accordion web ui and animation. [#54459](https://github.cbhq.net/mono/repo/pull/54459), [CDS-1878](https://jira.coinbase-corp.com/browse/CDS-1878)
+- Illustration size utils and mock data for cards. [#54432](https://github.cbhq.net/mono/repo/pull/54432)
+
+#### 🐞 Fixes
+
+- Clean up animations. [#54694](https://github.cbhq.net/mono/repo/pull/54694)
+- **[Accordion]** CDS Accordion fixes. [#54668](https://github.cbhq.net/mono/repo/pull/54668)
+- Performance enhancements for drawer/tray. [#54241](https://github.cbhq.net/mono/repo/pull/54241)
+
+#### 📘 Misc
+
+- **[Accordion]** CDS Accordion doc. [#54624](https://github.cbhq.net/mono/repo/pull/54624)
+- Add support for keyword searching for illustrations. [#54191](https://github.cbhq.net/mono/repo/pull/54191)
+
 ## 0.33.11 (2/14/2022, 08:31 AM PST)
 
 #### 🐞 Fixes
