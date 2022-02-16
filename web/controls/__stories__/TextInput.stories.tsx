@@ -1,10 +1,14 @@
-import { useState, useCallback } from 'react';
+import { useRef, useMemo, useState, useCallback } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
+import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { css } from 'linaria';
 import { TextInput } from '../TextInput';
 import { HStack } from '../../layout';
 import { Link } from '../../typography';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
+import { NativeTextArea } from '../NativeTextArea';
+import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 
 /* eslint-disable no-console */
 
@@ -12,6 +16,16 @@ export default {
   title: 'Core Components/Inputs/TextInput',
   component: TextInput,
 };
+
+const nativeInputCustomCSS = css`
+  &:focus {
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  background-color: transparent;
+`;
 
 /**
  * DEFAULT TEXT INPUT VARIATIONS
@@ -107,13 +121,13 @@ export const BorderRadius = function BorderRadius() {
 
   return (
     <>
-      {borderRadiuses.map((borderRadius) => (
+      {borderRadiuses.map((localborderRadius) => (
         <TextInput
-          key={`border-radius-${borderRadius}`}
-          label={`BorderRadius: ${borderRadius}`}
+          key={`border-radius-${localborderRadius}`}
+          label={`BorderRadius: ${localborderRadius}`}
           placeholder="placeholder"
           helperText="helperText"
-          borderRadius={borderRadius}
+          borderRadius={localborderRadius}
         />
       ))}
     </>
@@ -221,6 +235,137 @@ export const InputOnChange = function InputOnChange() {
   return (
     <div>
       <TextInput onChange={onChange} helperText={inputText} label="Label" />
+    </div>
+  );
+};
+
+export const RenderInputDefault = () => {
+  const [inputText, setInputText] = useState('Test');
+  const ref = useRef<HTMLInputElement>(null);
+
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value);
+  }, []);
+
+  const renderInput = (
+    <input
+      className={nativeInputCustomCSS}
+      style={{ width: '100%', borderRadius: `${borderRadius.input}px` }}
+      onChange={onChange}
+    />
+  );
+
+  return (
+    <div>
+      <TextInput ref={ref} inputNode={renderInput} helperText={inputText} label="Label" />
+    </div>
+  );
+};
+
+export const RenderInputDisabled = () => {
+  const [inputText, setInputText] = useState('Test');
+  const ref = useRef<HTMLInputElement>(null);
+
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value);
+  }, []);
+
+  const renderInput = (
+    <input
+      className={nativeInputCustomCSS}
+      style={{ width: '100%', borderRadius: `${borderRadius.input}px` }}
+      onChange={onChange}
+      value="Custom Input"
+    />
+  );
+
+  return (
+    <div>
+      <TextInput ref={ref} disabled inputNode={renderInput} helperText={inputText} label="Label" />
+    </div>
+  );
+};
+
+export const RenderInputCompact = () => {
+  const [inputText, setInputText] = useState('Test');
+  const ref = useRef<HTMLInputElement>(null);
+
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value);
+  }, []);
+
+  const renderInput = (
+    <input
+      className={nativeInputCustomCSS}
+      style={{ width: '100%', borderRadius: `${borderRadius.input}px` }}
+      onChange={onChange}
+    />
+  );
+
+  return (
+    <div>
+      <TextInput ref={ref} compact inputNode={renderInput} helperText={inputText} label="Label" />
+    </div>
+  );
+};
+
+export const RenderNativeTextArea = () => {
+  const [inputText, setInputText] = useState('Test');
+
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value);
+  }, []);
+
+  const customNativeTextAreaCSS = useMemo(() => {
+    return {
+      resize: 'none',
+    } as const;
+  }, []);
+
+  return (
+    <div>
+      <TextInput
+        inputNode={<NativeTextArea style={customNativeTextAreaCSS} rows={7} cols={5} />}
+        onChange={onChange}
+        helperText={inputText}
+        label="Label"
+      />
+    </div>
+  );
+};
+
+export const RenderNativeTextAreaCustomSpacing = () => {
+  const [inputText, setInputText] = useState('Test');
+
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value);
+  }, []);
+
+  const customNativeTextAreaCSS = useMemo(() => {
+    return {
+      resize: 'none',
+    } as const;
+  }, []);
+
+  const customContainerSpacing = useSpacingStyles({
+    spacing: 4,
+  });
+
+  return (
+    <div>
+      <TextInput
+        inputNode={
+          <NativeTextArea
+            containerSpacing={customContainerSpacing}
+            style={customNativeTextAreaCSS}
+            rows={7}
+            cols={5}
+          />
+        }
+        onChange={onChange}
+        helperText={inputText}
+        label="Label"
+      />
     </div>
   );
 };

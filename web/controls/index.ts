@@ -3,6 +3,7 @@ export * from './CheckboxGroup';
 export * from './RadioGroup';
 export * from './Switch';
 export * from './TextInput';
+export * from './NativeTextArea';
 export * from './InputIcon';
 export * from './InputIconButton';
 export * from './Select';

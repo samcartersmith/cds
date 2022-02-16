@@ -1,6 +1,14 @@
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import React, { useCallback, useState, memo, forwardRef, useRef } from 'react';
+import React, {
+  useMemo,
+  cloneElement,
+  useCallback,
+  useState,
+  memo,
+  forwardRef,
+  useRef,
+} from 'react';
 
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 
@@ -22,6 +30,15 @@ export type TextInputProps = {
    * Callback fired when pressed/clicked
    */
   onPress?: React.MouseEventHandler;
+  /**
+   * @danger Customize the element which the input area will be rendered as. Adds ability
+   * to render the input area as a <textarea />, <input /> etc...
+   * By default, the input area will be rendered as an <input />.
+   * Use this at your own risk, and don't use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc..
+   * Our default input handles all of the UI/Accessibility needs for your out of the box, but inputNode will not include
+   * those.
+   * */
+  inputNode?: React.ReactElement;
 } & TextInputBaseProps &
   Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width'>;
 
@@ -44,6 +61,7 @@ export const TextInput = memo(
       onBlur,
       borderRadius = 'input',
       height,
+      inputNode,
       ...htmlInputElmProps
     }: TextInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -87,6 +105,51 @@ export const TextInput = memo(
       spacingEnd: 2,
     });
 
+    const inputNodeCloned = useMemo(() => {
+      /** Ensures that the renderedInput has the blurring, focusing, disabled features */
+      if (inputNode) {
+        const clonedElm = cloneElement(inputNode, {
+          onFocus: handleOnFocus,
+          onBlur: handleOnBlur,
+          ref: refs,
+          disabled,
+        });
+
+        return clonedElm;
+      }
+
+      // By default, it will use the NativeInput
+      return (
+        <NativeInput
+          align={align}
+          accessibilityLabel={accessibilityLabel ?? label}
+          accessibilityHint={helperTextId}
+          containerSpacing={start ? startSpacing : undefined}
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
+          disabled={disabled}
+          compact={compact}
+          ref={refs}
+          id={label}
+          {...htmlInputElmProps}
+        />
+      );
+    }, [
+      accessibilityLabel,
+      align,
+      compact,
+      disabled,
+      handleOnBlur,
+      handleOnFocus,
+      helperTextId,
+      htmlInputElmProps,
+      label,
+      refs,
+      inputNode,
+      start,
+      startSpacing,
+    ]);
+
     return (
       <TextInputFocusVariantContext.Provider value={focused ? focusedVariant : undefined}>
         <InputStack
@@ -97,21 +160,7 @@ export const TextInput = memo(
           borderRadius={borderRadius}
           height={height}
           labelNode={!compact && !!label && <InputLabel htmlFor={label}>{label}</InputLabel>}
-          inputNode={
-            <NativeInput
-              align={align}
-              accessibilityLabel={accessibilityLabel ?? label}
-              accessibilityHint={helperTextId}
-              containerSpacing={start ? startSpacing : undefined}
-              onFocus={handleOnFocus}
-              onBlur={handleOnBlur}
-              disabled={disabled}
-              compact={compact}
-              ref={refs}
-              id={label}
-              {...htmlInputElmProps}
-            />
-          }
+          inputNode={inputNodeCloned}
           helperTextNode={
             !!helperText && (
               <HelperText
