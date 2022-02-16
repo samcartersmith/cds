@@ -25,6 +25,8 @@ export const AccordionPanel = memo(
         <ScrollView
           scrollEnabled={shouldEnableScroll}
           onContentSizeChange={handleContentSizeChange}
+          // for Android
+          nestedScrollEnabled
         >
           <Box {...accordionSpacing.panel}>{children}</Box>
         </ScrollView>
