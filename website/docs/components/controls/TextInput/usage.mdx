@@ -1,3 +1,5 @@
+import { Badge } from ':cds-website/components/Badge';
+
 **Note** TextField extends props from HTMLInputElement on web. On mobile, it extends TextInputProps from react-native.
 
 ### Input Label
@@ -296,6 +298,38 @@ function CopyTextField() {
     <TextInput label="Label" compact disabled />
   </VStack>
 </ExampleWithThemeToggles>
+```
+
+### TextArea Example <Badge variant="mobile" /> 
+
+On mobile, TextInput is versatile enough to support 
+a "TextArea" as well. You just need to add multiline prop. 
+Here is an example 
+
+```jsx 
+  const [text, onChangeText] = useState('');
+
+  <MockTextInput
+    onChangeText={onChangeText}
+    value={text}
+    label="Textarea"
+    helperText="Write about yourself"
+    variant="foregroundMuted"
+    multiline
+    value="
+      A really really really really
+      long piece 
+      of text
+      displayed. A really really really really
+      long piece 
+      of text
+      displayed. 
+      A really really really really
+      long piece 
+      of text
+      displayed
+    "
+  />
 ```
 
 ### Example of a Form  

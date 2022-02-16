@@ -84,6 +84,28 @@ export default function InputScreen() {
           placeholder="ex. Bitcoin"
         />
       </Example>
+      <Example inline title="TextArea">
+        <MockTextInput
+          label="Textarea"
+          helperText="Write about yourself"
+          variant="foregroundMuted"
+          multiline
+          value="
+            A really really really really
+            long piece 
+            of text
+            displayed. A really really really really
+            long piece 
+            of text
+            displayed. 
+            A really really really really
+            long piece 
+            of text
+            displayed
+          "
+          placeholder="I am amazing!"
+        />
+      </Example>
       <Example inline title="TextInput endNode 50%">
         <MockTextInput
           end={<InputIcon name="lightningBolt" />}

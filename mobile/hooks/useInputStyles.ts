@@ -16,7 +16,7 @@ export const useInputTextStyles = (textColor: InputVariant) => {
     return {
       fontSize,
       fontFamily,
-      height: lineHeight,
+      minHeight: lineHeight,
       padding: 0,
       margin: 0,
       color: palette[textColor],
