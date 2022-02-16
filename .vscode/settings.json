@@ -15,7 +15,7 @@
   "typescript.preferences.quoteStyle": "single",
 
   // ESLint
-  "eslint.options": { "extensions": [".js", ".jsx", ".ts", ".tsx", ".mjs"] },
+  "eslint.options": { "extensions": [".js", ".jsx", ".ts", ".tsx", ".mjs", ".yml", ".json"] },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.packageManager": "yarn",
   "eslint.format.enable": false,
