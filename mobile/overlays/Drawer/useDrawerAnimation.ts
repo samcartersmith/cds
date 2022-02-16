@@ -6,6 +6,7 @@ import {
   animateDrawerInConfig,
   animateDrawerOutConfig,
   MAX_OVER_DRAG,
+  drawerAnimationDefaultDuration,
 } from '@cbhq/cds-common/animation/drawer';
 import {
   verticalDrawerPercentageOfView,
@@ -40,7 +41,7 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
       Animated.timing(drawerAnimation.current, {
         toValue: animateDrawerOutConfig.toValue,
         useNativeDriver: true,
-        duration: durations.moderate3,
+        duration: durations[drawerAnimationDefaultDuration],
         easing: Easing.ease,
       }),
     [],
@@ -52,14 +53,14 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
         return {
           translateY: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [-drawerDimension * verticalDrawerPercentageOfView, -MAX_OVER_DRAG],
+            outputRange: [-drawerDimension, -MAX_OVER_DRAG],
           }),
         };
       case 'left':
         return {
           translateX: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [-drawerDimension * horizontalDrawerPercentageOfView, -MAX_OVER_DRAG],
+            outputRange: [-drawerDimension, -MAX_OVER_DRAG],
           }),
         };
       case 'bottom':
@@ -67,17 +68,14 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
         return {
           translateY: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [
-              (drawerDimension + handleBarOffset) * verticalDrawerPercentageOfView,
-              MAX_OVER_DRAG,
-            ],
+            outputRange: [drawerDimension + handleBarOffset, MAX_OVER_DRAG],
           }),
         };
       case 'right':
         return {
           translateX: drawerAnimation.current.interpolate({
             inputRange: [0, 1],
-            outputRange: [drawerDimension * horizontalDrawerPercentageOfView, MAX_OVER_DRAG],
+            outputRange: [drawerDimension, MAX_OVER_DRAG],
           }),
         };
     }

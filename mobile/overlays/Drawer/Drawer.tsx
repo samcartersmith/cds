@@ -78,11 +78,13 @@ export const Drawer = memo(
 
     useEffect(() => {
       if (!isMounted.current) {
-        isMounted.current = true;
-        drawerAnimation.flattenOffset();
-        Animated.parallel([animateOverlayIn, animateDrawerIn]).start();
+        Animated.parallel([animateOverlayIn, animateDrawerIn]).start(({ finished }) => {
+          if (finished) {
+            isMounted.current = true;
+          }
+        });
       }
-    }, [drawerAnimation, animateOverlayIn, animateDrawerIn]);
+    }, [drawerAnimation, animateDrawerIn, animateOverlayIn]);
 
     const panGestureHandlers = useDrawerPanResponder({
       pin,

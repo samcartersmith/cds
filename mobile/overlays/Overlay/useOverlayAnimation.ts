@@ -14,10 +14,13 @@ import { convertMotionConfig } from '../../animation/convertMotionConfig';
  * If only a custom enter animation duration value is provided, it will be used for both enter and exit animations
  */
 export const useOverlayAnimation = (
-  animateInDuration: MotionDuration = animateInOpacityConfig.duration,
+  animateInDuration?: MotionDuration,
   animateOutDuration?: MotionDuration,
 ): [Animated.Value, Animated.CompositeAnimation, Animated.CompositeAnimation] => {
   const overlayAnim = useRef(new Animated.Value(overlayHiddenOpacity));
+  // custom animate out duration > animate in duration > fallback
+  const getAnimateOutDuration =
+    animateOutDuration ?? animateInDuration ?? animateOutOpacityConfig.duration;
 
   const animateInConfig = useMemo(
     () =>
@@ -25,7 +28,7 @@ export const useOverlayAnimation = (
         easing: animateInOpacityConfig.easing,
         toValue: animateInOpacityConfig.toValue,
         fromValue: animateInOpacityConfig.fromValue,
-        duration: animateInDuration,
+        duration: animateInDuration ?? animateInOpacityConfig.duration,
       } as const),
     [animateInDuration],
   );
@@ -36,10 +39,9 @@ export const useOverlayAnimation = (
         easing: animateOutOpacityConfig.easing,
         toValue: animateOutOpacityConfig.toValue,
         fromValue: animateOutOpacityConfig.fromValue,
-        // custom animate out duration > animate in duration > fallback
-        duration: animateOutDuration ?? animateInDuration ?? animateOutOpacityConfig.duration,
+        duration: getAnimateOutDuration,
       } as const),
-    [animateOutDuration, animateInDuration],
+    [getAnimateOutDuration],
   );
 
   return useMemo(() => {

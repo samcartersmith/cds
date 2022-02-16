@@ -8,4 +8,4 @@ export const drawerHeightThreshold = 0.4;
 export const handleBarOffset = 60;
 export const handleBarHeight = 4;
 /** Based on trial and error this seems to normalize the relationship between pan gesture distance and drawer translation */
-export const normalizeDrawerPanDistanceMultiplier = 1.5;
+export const normalizeDrawerPanDistanceMultiplier = 1.1;

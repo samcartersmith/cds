@@ -10,10 +10,10 @@ export const drawerAnimationDefaultDuration = 'moderate3';
 export const animateDrawerInConfig = {
   toValue: 1,
   easing: 'enterFunctional',
-  duration: 'moderate3',
+  duration: drawerAnimationDefaultDuration,
 };
 export const animateDrawerOutConfig = {
   toValue: 0,
   easing: 'exitFunctional',
-  duration: 'moderate3',
+  duration: drawerAnimationDefaultDuration,
 };

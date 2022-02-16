@@ -232,11 +232,13 @@ export const useDrawerPanResponder = ({
       },
       onPanResponderRelease: (_, gestureState) => {
         drawerAnimation.flattenOffset();
+        opacityAnimation.flattenOffset();
         if (shouldDismiss(gestureState)) {
           onBlur?.();
-          return handleSwipeToClose();
+          handleSwipeToClose();
+        } else {
+          animateDrawerIn.start();
         }
-        return animateDrawerIn.start();
       },
     });
   }, [
