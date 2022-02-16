@@ -11,7 +11,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { IconButton } from '../../buttons/IconButton';
 import { FeedCard } from '../../cards/FeedCard';
 import { Pictogram } from '../../illustrations/Pictogram';
-import { HStack } from '../../layout/HStack';
+import { HStack, Fallback, VStack } from '../../layout';
 import { TextBody } from '../../typography';
 import { Menu } from '../../controls/Menu';
 
@@ -27,8 +27,10 @@ const TrayScreen = () => {
       FeedCard,
       Pictogram,
       HStack,
+      VStack,
       TextBody,
       Menu,
+      Fallback,
     } as unknown as CreateTrayProps,
   );
 
@@ -51,6 +53,9 @@ const TrayScreen = () => {
       </Example>
       <Example title="Tray within a Tray">
         <TrayWithinTray />
+      </Example>
+      <Example title="Tray with Fallback">
+        <ScrollableTray title="You are going to be waiting awhile..." fallbackEnabled />
       </Example>
     </ExampleScreen>
   );

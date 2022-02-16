@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import type { DrawerBaseProps, IconName } from '@cbhq/cds-common/types';
+import type { DrawerBaseProps, DrawerRefBaseProps, IconName, NoopFn } from '@cbhq/cds-common/types';
+import { prices } from '@cbhq/cds-common/internal/data/prices';
+import { FlatList } from 'react-native';
 import { Avatar } from '../../media/Avatar';
 
 import { Button } from '../../buttons/Button';
-import { VStack } from '../../layout';
+import { VStack, Fallback, Spacer } from '../../layout';
 
 import { Drawer } from '../Drawer/Drawer';
 
@@ -12,6 +14,7 @@ import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen
 import { TextTitle3 } from '../../typography';
 import { Icon } from '../../icons/Icon';
 import { ListCell } from '../../cells/ListCell';
+import { SelectOption, Menu } from '../../controls';
 
 type NavOptionProps = {
   label: string;
@@ -66,6 +69,40 @@ const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
   );
 };
 
+type SideDrawerContentProps = {
+  handleClose: NoopFn;
+};
+
+const SideDrawerContent = ({ handleClose }: SideDrawerContentProps) => {
+  return (
+    <VStack spacing={2} justifyContent="space-between" height="100%" spacingBottom={4}>
+      <VStack alignItems="center">
+        <Avatar alt="CDS" size="xxl" />
+        <VStack spacing={2}>
+          <TextTitle3>Test User</TextTitle3>
+        </VStack>
+        <Button compact block variant="secondary" onPress={handleClose}>
+          Profile & Settings
+        </Button>
+        <VStack spacingVertical={2}>
+          {navOptions.map(({ label, icon }) => (
+            <ListCell
+              compact
+              onPress={handleClose}
+              title={label}
+              key={label}
+              media={<Icon size="s" name={icon} color="foreground" />}
+            />
+          ))}
+        </VStack>
+      </VStack>
+      <Button compact block variant="secondary" onPress={handleClose}>
+        Sign out
+      </Button>
+    </VStack>
+  );
+};
+
 const SideDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
   const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
   return (
@@ -73,33 +110,106 @@ const SideDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
       <Button onPress={toggleOn}>Open</Button>
       {isVisible && (
         <Drawer pin={pin} onCloseComplete={toggleOff}>
-          {({ handleClose }) => (
-            <VStack spacing={2} justifyContent="space-between" height="100%" spacingBottom={4}>
-              <VStack alignItems="center">
-                <Avatar alt="CDS" size="xxl" />
-                <VStack spacing={2}>
-                  <TextTitle3>Test User</TextTitle3>
-                </VStack>
-                <Button compact block variant="secondary" onPress={handleClose}>
-                  Profile & Settings
-                </Button>
-                <VStack spacingVertical={2}>
-                  {navOptions.map(({ label, icon }) => (
-                    <ListCell
-                      compact
-                      onPress={handleClose}
-                      title={label}
-                      key={label}
-                      media={<Icon size="s" name={icon} color="foreground" />}
-                    />
-                  ))}
-                </VStack>
-              </VStack>
-              <Button compact block variant="secondary" onPress={handleClose}>
-                Sign out
-              </Button>
-            </VStack>
-          )}
+          {({ handleClose }) => <SideDrawerContent handleClose={handleClose} />}
+        </Drawer>
+      )}
+    </>
+  );
+};
+
+const lotsOfOptions: string[] = prices.slice(0, 30);
+
+type RenderItemProps = {
+  index: number;
+  item: string;
+};
+
+const SideDrawerScrollableContent = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
+  const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
+  const drawerRef = useRef<DrawerRefBaseProps>(null);
+  const [value, setValue] = useState<string>();
+
+  const handleOptionPress = useCallback(() => {
+    drawerRef.current?.handleClose();
+  }, []);
+
+  const renderItem = useCallback(
+    ({ index, item }: RenderItemProps) => {
+      return (
+        <SelectOption
+          key={index}
+          title={item}
+          description="BTC"
+          onPress={handleOptionPress}
+          value={item}
+        />
+      );
+    },
+    [handleOptionPress],
+  );
+  return (
+    <>
+      <Button onPress={toggleOn}>Open</Button>
+      {isVisible && (
+        <Drawer
+          disableCapturePanGestureToDismiss
+          pin={pin}
+          onCloseComplete={toggleOff}
+          ref={drawerRef}
+        >
+          <Menu value={value} onChange={setValue}>
+            <FlatList data={lotsOfOptions} renderItem={renderItem} />
+          </Menu>
+        </Drawer>
+      )}
+    </>
+  );
+};
+
+const SidebarDrawerContentFallback = () => {
+  return (
+    <VStack spacing={2} justifyContent="space-between" height="100%" spacingBottom={4}>
+      <VStack alignItems="center" gap={2}>
+        <Fallback width={50} height={50} shape="circle" />
+        <VStack spacing={2} alignItems="center">
+          <Fallback width={150} height={30} shape="square" />
+        </VStack>
+        <Fallback width="100%" height={50} shape="squircle" />
+        <Spacer />
+        {navOptions.map(({ label }) => (
+          <Fallback key={label} width="100%" height={30} shape="square" />
+        ))}
+      </VStack>
+      <Fallback width="100%" height={50} shape="squircle" />
+    </VStack>
+  );
+};
+
+const SideDrawerWithFallback = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
+  const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
+  const [isLoading, toggleIsLoading] = useToggler(true);
+
+  useEffect(() => {
+    if (isVisible) {
+      toggleIsLoading.toggleOn();
+      setTimeout(() => {
+        toggleIsLoading.toggleOff();
+      }, 2000);
+    }
+  }, [toggleIsLoading, isVisible]);
+
+  return (
+    <>
+      <Button onPress={toggleOn}>Open</Button>
+      {isVisible && (
+        <Drawer pin={pin} onCloseComplete={toggleOff}>
+          {({ handleClose }) =>
+            isLoading ? (
+              <SidebarDrawerContentFallback />
+            ) : (
+              <SideDrawerContent handleClose={handleClose} />
+            )
+          }
         </Drawer>
       )}
     </>
@@ -120,6 +230,12 @@ const DrawerScreen = () => {
       </Example>
       <Example title="Top Drawer">
         <DefaultDrawer pin="top" />
+      </Example>
+      <Example title="Side Drawer with Fallback">
+        <SideDrawerWithFallback pin="left" />
+      </Example>
+      <Example title="Side Drawer with Scrollable Content">
+        <SideDrawerScrollableContent pin="left" />
       </Example>
     </ExampleScreen>
   );

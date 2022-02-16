@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, MutableRefObject, useMemo } from 'react';
+import React, { useEffect, useRef, useCallback, useState, MutableRefObject, useMemo } from 'react';
 import type {
   BoxBaseProps,
   ButtonBaseProps,
@@ -60,12 +60,15 @@ export type CreateTrayProps = {
   IconButton: React.ComponentType<IconButtonBaseProps & PressableProps>;
   Pictogram: React.ComponentType<PictogramProps>;
   HStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
+  Fallback: React.ComponentType<BoxBaseProps & StackBaseProps>;
   TextBody: React.ComponentType<TextProps>;
   Menu: React.ComponentType<React.PropsWithChildren<Pick<SelectBaseProps, 'onChange' | 'value'>>>;
 };
 
 type DefaultTrayTypes = {
   title?: string;
+  fallbackEnabled?: boolean;
 };
 
 // eslint-disable-next-line no-console
@@ -80,6 +83,8 @@ export const trayBuilder = ({
   IconButton,
   Pictogram,
   HStack,
+  VStack,
+  Fallback,
   TextBody,
   Menu,
 }: CreateTrayProps) => {
@@ -114,11 +119,32 @@ export const trayBuilder = ({
       </>
     );
   };
-  const ScrollableTray = ({ title }: DefaultTrayTypes) => {
+
+  const TrayFallbackContent = () => {
+    return (
+      <VStack gap={2} alignItems="center">
+        {lotsOfOptions.map((item) => (
+          <Fallback key={item} height={30} width="90%" />
+        ))}
+      </VStack>
+    );
+  };
+
+  const ScrollableTray = ({ title, fallbackEnabled }: DefaultTrayTypes) => {
     const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
       useToggler(false);
     const [value, setValue] = useState<string>();
     const trayRef = useRef<DrawerRefBaseProps>();
+    const [isLoading, toggleIsLoading] = useToggler(true);
+
+    useEffect(() => {
+      if (isTrayVisible && fallbackEnabled) {
+        toggleIsLoading.toggleOn();
+        setTimeout(() => {
+          toggleIsLoading.toggleOff();
+        }, 2000);
+      }
+    }, [toggleIsLoading, isTrayVisible, fallbackEnabled]);
 
     const spacingStyles = useMemo(
       () => ({
@@ -156,13 +182,17 @@ export const trayBuilder = ({
             disableCapturePanGestureToDismiss
             ref={trayRef}
           >
-            <Menu value={value} onChange={setValue}>
-              <FlatList
-                data={lotsOfOptions}
-                renderItem={renderItem}
-                contentContainerStyle={spacingStyles}
-              />
-            </Menu>
+            {isLoading ? (
+              <TrayFallbackContent />
+            ) : (
+              <Menu value={value} onChange={setValue}>
+                <FlatList
+                  data={lotsOfOptions}
+                  renderItem={renderItem}
+                  contentContainerStyle={spacingStyles}
+                />
+              </Menu>
+            )}
           </Tray>
         )}
       </>

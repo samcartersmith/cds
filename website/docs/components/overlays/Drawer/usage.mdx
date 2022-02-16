@@ -35,7 +35,7 @@ function DefaultDrawer() {
 
 `Drawer`s do not allow scrolling by default, to allow for pan gestures to work. However, you can enable scrolling by passing `disableCapturePanGestureToDismiss` and wrapping `children` in a `ScrollView`.
 
-**Please note:** when `disableCapturePanGestureToDismiss` is enabled, you will not be able to use pan gestures to close the `Drawer` within the `Drawer` container. However, you can still use the `HandleBar` and title area (if `title` prop is provided) to drag to close.
+**Please note:** when `disableCapturePanGestureToDismiss` is enabled, you will not be able to use pan gestures to close the `Drawer` within the `Drawer` container. However, you can still use the `HandleBar` and `StatusBar` to drag to close.
 
 ```jsx
 function ScrollableDrawer() {
