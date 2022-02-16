@@ -72,7 +72,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 #### Mobile Playground
 
-- [ ] Deploy mobile playground with mobile stories
+- [x] Deploy mobile playground with mobile stories
 
 #### Website
 
