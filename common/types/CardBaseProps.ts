@@ -25,12 +25,11 @@ export type CardBaseProps = {
   pin?: PinningDirection;
   /** Size of the card. Small and medium have fixed widths and large grows with its children. */
   size?: 'small' | 'medium' | 'large';
-} & DimensionStyles &
-  OffsetProps &
-  SharedProps &
-  SpacingProps &
-  FlexStyles &
-  SharedProps;
+  /** How content should overflow if it exceeds a Card's fixed width/height */
+  overflow?: 'hidden' | 'visible';
+  /** Don't scale Card on press. */
+  noScaleOnPress?: boolean;
+} & CardBoxProps;
 
 export type CardHeaderBaseProps = {
   /** Absolute or Relative path to Avatar */

@@ -34,7 +34,7 @@ export type ButtonBaseProps = {
    * @default primary
    */
   variant?: Exclude<ButtonVariant, 'foregroundMuted'>;
-  /** Dont scale element on press. */
+  /** Don't scale element on press. */
   noScaleOnPress?: boolean;
 };
 
