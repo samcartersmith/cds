@@ -34,6 +34,7 @@ module.exports = {
         { type: 'doc', id: 'adoption-tracker/unified-accounts', label: 'Unified Accounts' },
         { type: 'doc', id: 'adoption-tracker/umo', label: 'Unified Mobile Onboarding' },
         { type: 'doc', id: 'adoption-tracker/uwo', label: 'Unified Web Onboarding' },
+        { type: 'doc', id: 'adoption-tracker/retail-web-identity', label: 'Identity' },
         {
           type: 'doc',
           id: 'adoption-tracker/unified-business-onboarding',

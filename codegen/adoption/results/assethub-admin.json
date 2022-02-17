@@ -31,8 +31,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 109,
-      "totalCallSites": 73,
+      "totalInstances": 112,
+      "totalCallSites": 75,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -71,6 +71,10 @@
         },
         {
           "aliasPath": "@assethub/admin/components/Campaigns/CampaignLessonForm.tsx",
+          "callSites": ["@assethub/admin/pages/Campaign/CampaignLessonDetail.tsx"]
+        },
+        {
+          "aliasPath": "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx",
           "callSites": ["@assethub/admin/pages/Campaign/CampaignLessonDetail.tsx"]
         },
         {
@@ -212,6 +216,7 @@
         "@assethub/admin/components/Campaigns/CampaignFormControl.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignImagesForm.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignInfoForm.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 2,
         "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignLessonForm.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
@@ -261,14 +266,15 @@
         "@assethub/shared/components/Stepper/Stepper.tsx": 1,
         "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 3,
         "@assethub/shared/components/Charts/ChartErrorBoundary/ChartErrorBoundary.tsx": 1,
+        "@assethub/shared/components/Charts/ChartTooltip/ChartInfoTip.tsx": 1,
         "@assethub/shared/components/Charts/ChartTooltip/ChartTooltip.tsx": 1,
         "@assethub/shared/components/Charts/ChartTooltip/LineChartTooltip.tsx": 1,
         "@assethub/shared/components/DataTable/cells/DateTimeCell.tsx": 1,
         "@assethub/shared/components/DataTable/controls/HeaderConfigButton.tsx": 2,
         "@assethub/shared/components/Inputs/FileUpload/FileUpload.tsx": 2,
-        "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1,
         "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
-        "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1
+        "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1,
+        "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1
       },
       "propsWithCallSites": {
         "minHeight": {
@@ -341,6 +347,7 @@
         "spacingStart": {
           "@assethub/admin/components/ApplicationDetails/QuestionsList.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignContentDisplay.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
           "@assethub/admin/pages/User/UserPage.tsx": 1,
           "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
           "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1
@@ -361,6 +368,7 @@
           "@assethub/shared/components/ErrorPage404/ErrorPage404.tsx": 1,
           "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1,
           "@assethub/shared/components/Modal/Modal.tsx": 1,
+          "@assethub/shared/components/Charts/ChartTooltip/ChartInfoTip.tsx": 1,
           "@assethub/shared/components/Inputs/FileUpload/FileUpload.tsx": 2
         },
         "spacing": {
@@ -389,14 +397,15 @@
           "@assethub/shared/components/Modal/Modal.tsx": 2,
           "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
           "@assethub/shared/components/Inputs/FileUpload/FileUpload.tsx": 2,
-          "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1
+          "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
+          "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1
         },
         "spacingBottom": {
           "@assethub/admin/components/CampaignWizard/CampaignWizardView.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignCardsForm.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignInfoForm.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 2,
           "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
           "@assethub/admin/components/Comments/CommentCard.tsx": 1,
           "@assethub/admin/components/HistoryItem/HistoryItem.tsx": 1,
@@ -404,6 +413,11 @@
           "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1,
           "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1,
           "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1
+        },
+        "as": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/RoleList.tsx": 1,
+          "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1
         },
         "spacingHorizontal": {
           "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 1,
@@ -456,10 +470,6 @@
           "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
           "@assethub/admin/pages/Application/Sidebar/ReviewsModule.tsx": 1,
           "@assethub/shared/components/DataTable/controls/HeaderConfigButton.tsx": 1
-        },
-        "as": {
-          "@assethub/admin/components/ManageUsersTable/modals/RoleList.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1
         },
         "offsetTop": { "@assethub/shared/components/Alert/Alert.tsx": 1 },
         "testID": { "@assethub/shared/components/BulletedList/BulletedList.tsx": 1 },
@@ -518,7 +528,8 @@
           "aliasPath": "@assethub/admin/components/Campaigns/CampaignContentDisplay.tsx",
           "callSites": [
             "@assethub/admin/components/Campaigns/CampaignCardDisplay.tsx",
-            "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx"
+            "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx",
+            "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx"
           ]
         },
         {
@@ -571,10 +582,6 @@
             "@assethub/shared/components/DataTable/DataTablePagination.tsx"
           ]
         },
-        {
-          "aliasPath": "@assethub/shared/components/SimplePagination/SimplePagination.tsx",
-          "callSites": ["@assethub/admin/pages/Campaigns/CampaignListPage.tsx"]
-        },
         { "aliasPath": "@assethub/shared/components/Inputs/Date/DateSelect.tsx", "callSites": [] },
         {
           "aliasPath": "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx",
@@ -623,7 +630,6 @@
         "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 2,
         "@assethub/shared/components/Pagination/Pagination.tsx": 4,
         "@assethub/shared/components/Progress/LinearProgress.tsx": 1,
-        "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
         "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
         "@assethub/shared/components/Charts/ChartCard/ChartCard.tsx": 1,
         "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 2,
@@ -632,7 +638,8 @@
         "@assethub/shared/components/Inputs/Date/DateSelect.tsx": 1,
         "@assethub/shared/components/Inputs/FileUpload/FileUpload.tsx": 1,
         "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
-        "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1
+        "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1,
+        "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
       },
       "propsWithCallSites": {
         "justifyContent": {
@@ -662,9 +669,9 @@
           "@assethub/shared/components/Form/FormControl.tsx": 1,
           "@assethub/shared/components/Modal/Modal.tsx": 1,
           "@assethub/shared/components/Pagination/Pagination.tsx": 2,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
-          "@assethub/shared/components/Inputs/Date/DateSelect.tsx": 1
+          "@assethub/shared/components/Inputs/Date/DateSelect.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "alignItems": {
           "@assethub/admin/components/Page.tsx": 1,
@@ -702,7 +709,8 @@
           "@assethub/shared/components/Charts/ChartCard/ChartCard.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1,
           "@assethub/shared/components/DataTable/menus/SortMenuItem.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1
+          "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "flexGrow": {
           "@assethub/admin/components/ResourceListTable.tsx": 1,
@@ -715,10 +723,10 @@
           "@assethub/shared/components/Form/FormControl.tsx": 1,
           "@assethub/shared/components/Pagination/Pagination.tsx": 1,
           "@assethub/shared/components/Progress/LinearProgress.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1,
           "@assethub/shared/components/Inputs/Date/DateSelect.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1
+          "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "spacingTop": {
           "@assethub/admin/components/ApplicationDetails/QuestionAnswerText.tsx": 1,
@@ -974,8 +982,8 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 29,
-      "totalCallSites": 28,
+      "totalInstances": 32,
+      "totalCallSites": 29,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "aliasedCdsComponents": [
         {
@@ -997,6 +1005,7 @@
         "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 1,
         "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
         "@assethub/admin/components/CampaignTable/CampaignTable.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 3,
         "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
         "@assethub/admin/components/Comments/CommentCard.tsx": 1,
@@ -1028,6 +1037,7 @@
           "@assethub/admin/components/ApplicationTeamReview/TeamReviewCtas.tsx": 1,
           "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
           "@assethub/admin/components/CampaignTable/CampaignTable.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 3,
           "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
           "@assethub/admin/components/Comments/CommentCard.tsx": 1,
@@ -1058,6 +1068,7 @@
         },
         "spacingBottom": {
           "@assethub/admin/components/PageErrorBoundary.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 3,
           "@assethub/admin/components/SearchResults/SearchResults.tsx": 2,
           "@assethub/admin/pages/Campaigns/CampaignListPage.tsx": 1,
           "@assethub/shared/components/DataTable/DataTableBodyEmpty.tsx": 1
@@ -1082,8 +1093,8 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 53,
-      "totalCallSites": 36,
+      "totalInstances": 56,
+      "totalCallSites": 37,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "aliasedCdsComponents": [
         {
@@ -1117,6 +1128,7 @@
         "@assethub/admin/components/Campaigns/CampaignContentDisplay.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignFormControl.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 3,
         "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 2,
         "@assethub/admin/components/Comments/CommentCard.tsx": 1,
@@ -1195,6 +1207,7 @@
           "@assethub/admin/components/Campaigns/CampaignContentDisplay.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignFormControl.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 3,
           "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 2,
           "@assethub/admin/components/Comments/CommentCard.tsx": 1,
@@ -1237,6 +1250,7 @@
           "@assethub/admin/components/Campaigns/CampaignCardsForm.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignFormControl.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 3,
           "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 2,
           "@assethub/admin/pages/Campaign/CampaignLessonsList.tsx": 1,
@@ -1290,8 +1304,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 56,
-      "totalCallSites": 43,
+      "totalInstances": 57,
+      "totalCallSites": 44,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "@assethub/admin/components/PageErrorBoundary.tsx": 1,
@@ -1300,6 +1314,7 @@
         "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
         "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 3,
         "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
@@ -1330,13 +1345,13 @@
         "@assethub/shared/components/PageErrorFallback/PageErrorFallback.tsx": 1,
         "@assethub/shared/components/Pagination/PageSelector.tsx": 1,
         "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 1,
-        "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
         "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 2,
         "@assethub/shared/components/DataTable/cells/DateTimeCell.tsx": 1,
         "@assethub/shared/components/DataTable/controls/HeaderConfigButton.tsx": 1,
         "@assethub/shared/components/DataTable/menus/SortMenuItem.tsx": 1,
         "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
-        "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1
+        "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1,
+        "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -1346,6 +1361,7 @@
           "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
           "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 3,
           "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
@@ -1376,13 +1392,13 @@
           "@assethub/shared/components/PageErrorFallback/PageErrorFallback.tsx": 1,
           "@assethub/shared/components/Pagination/PageSelector.tsx": 1,
           "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 2,
           "@assethub/shared/components/DataTable/cells/DateTimeCell.tsx": 1,
           "@assethub/shared/components/DataTable/controls/HeaderConfigButton.tsx": 1,
           "@assethub/shared/components/DataTable/menus/SortMenuItem.tsx": 1,
           "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1
+          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "align": {
           "@assethub/admin/components/PageErrorBoundary.tsx": 1,
@@ -1404,9 +1420,9 @@
           "@assethub/shared/components/DropdownMenu/DropdownMenu.tsx": 1,
           "@assethub/shared/components/Form/FormControl.tsx": 3,
           "@assethub/shared/components/Pagination/PageSelector.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1
+          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "spacingBottom": {
           "@assethub/admin/components/PageErrorBoundary.tsx": 1,
@@ -1430,7 +1446,10 @@
           "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
           "@assethub/admin/components/GlobalSearch/GlobalSearchResults.tsx": 2
         },
-        "spacingVertical": { "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 1 },
+        "spacingVertical": {
+          "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1
+        },
         "spacingHorizontal": {
           "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1
@@ -1672,8 +1691,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 73,
-      "totalCallSites": 44,
+      "totalInstances": 69,
+      "totalCallSites": 43,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -1746,7 +1765,7 @@
         "@assethub/admin/components/ApplicationTeamReview/TeamReviewSplashPage.tsx": 1,
         "@assethub/admin/components/CampaignTable/CampaignTable.tsx": 4,
         "@assethub/admin/components/CampaignTable/CampaignTableCells.tsx": 2,
-        "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 2,
+        "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 2,
         "@assethub/admin/components/Comments/CommentInput.tsx": 2,
@@ -1776,14 +1795,13 @@
         "@assethub/shared/components/Navbar/Navbar.tsx": 1,
         "@assethub/shared/components/Pagination/PageSelector.tsx": 5,
         "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 1,
-        "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-        "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 4,
         "@assethub/shared/components/Spinner/Spinner.tsx": 1,
         "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1,
         "@assethub/shared/components/DataTable/controls/HeaderConfigButton.tsx": 1,
         "@assethub/shared/components/Inputs/Date/DateSelect.tsx": 3,
         "@assethub/shared/components/Progress/ProgressList/ProgressStep.tsx": 1,
-        "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1
+        "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1,
+        "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
       },
       "propsWithCallSites": {
         "alignSelf": { "@assethub/admin/components/ApplicationDetails/QuestionAnswerImage.tsx": 1 },
@@ -1822,11 +1840,10 @@
           "@assethub/shared/components/Alert/Alert.tsx": 2,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/Spinner/Spinner.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1
+          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "flexGrow": {
           "@assethub/admin/components/ApplicationTable/ApplicationTableCells.tsx": 1,
@@ -1855,7 +1872,6 @@
           "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1,
           "@assethub/admin/pages/Campaigns/CampaignSummaryPage.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1
         },
         "maxWidth": {
@@ -1874,7 +1890,8 @@
           "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
           "@assethub/admin/pages/Campaign/CampaignWizardLayout.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
-          "@assethub/shared/components/DividedList/DividedList.tsx": 1
+          "@assethub/shared/components/DividedList/DividedList.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
         },
         "background": {
           "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
@@ -1913,11 +1930,10 @@
           "@assethub/shared/components/Alert/Alert.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/Modal/ModalTitle.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
           "@assethub/shared/components/Spinner/Spinner.tsx": 1,
           "@assethub/shared/components/Charts/ChartKey/ChartKey.tsx": 1,
-          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1
+          "@assethub/shared/components/Progress/ProgressList/ProgressStepLabel.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "minHeight": {
           "@assethub/admin/components/ApplicationTeamReview/components/ProductStatusSelect.tsx": 1,
@@ -1937,8 +1953,7 @@
           "@assethub/shared/components/Alert/Alert.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/Pagination/PageSelector.tsx": 4,
-          "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 2
+          "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 1
         },
         "offsetEnd": {
           "@assethub/shared/components/Alert/Alert.tsx": 1,
@@ -2024,8 +2039,8 @@
     {
       "name": "IconButton",
       "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 8,
-      "totalCallSites": 8,
+      "totalInstances": 10,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/buttons/IconButton",
       "callSites": {
         "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 1,
@@ -2035,7 +2050,8 @@
         "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 1,
         "@assethub/admin/pages/Campaign/CampaignLessonsList.tsx": 1,
         "@assethub/shared/components/Modal/Modal.tsx": 1,
-        "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1
+        "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1,
+        "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
       },
       "propsWithCallSites": {
         "name": {
@@ -2046,7 +2062,8 @@
           "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 1,
           "@assethub/admin/pages/Campaign/CampaignLessonsList.tsx": 1,
           "@assethub/shared/components/Modal/Modal.tsx": 1,
-          "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1
+          "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
         },
         "variant": {
           "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 1,
@@ -2066,21 +2083,32 @@
           "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 1,
           "@assethub/admin/pages/Campaign/CampaignLessonsList.tsx": 1,
           "@assethub/shared/components/Modal/Modal.tsx": 1,
-          "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1
+          "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
         },
         "transparent": {
           "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 1,
           "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 1,
-          "@assethub/shared/components/Modal/Modal.tsx": 1
+          "@assethub/shared/components/Modal/Modal.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
         },
-        "disabled": { "@assethub/admin/components/Comments/CommentInput.tsx": 1 }
+        "disabled": {
+          "@assethub/admin/components/Comments/CommentInput.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
+        },
+        "testID": {
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
+        },
+        "compact": {
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 2
+        }
       }
     },
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 31,
-      "totalCallSites": 27,
+      "totalInstances": 30,
+      "totalCallSites": 26,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         "@assethub/admin/components/AssetSearch/AssetSearch.tsx": 1,
@@ -2103,7 +2131,6 @@
         "@assethub/shared/components/ListNumber/ListNumber.tsx": 1,
         "@assethub/shared/components/NavLink/NavLink.tsx": 1,
         "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 2,
-        "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
         "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
         "@assethub/shared/components/Charts/ChartErrorBoundary/ChartErrorBoundary.tsx": 1,
         "@assethub/shared/components/DataTable/menus/SortMenuItem.tsx": 1,
@@ -2133,7 +2160,6 @@
           "@assethub/shared/components/ListNumber/ListNumber.tsx": 1,
           "@assethub/shared/components/NavLink/NavLink.tsx": 1,
           "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 2,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
           "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
           "@assethub/shared/components/Charts/ChartErrorBoundary/ChartErrorBoundary.tsx": 1,
           "@assethub/shared/components/DataTable/menus/SortMenuItem.tsx": 1,
@@ -2162,7 +2188,6 @@
           "@assethub/shared/components/ListNumber/ListNumber.tsx": 1,
           "@assethub/shared/components/NavLink/NavLink.tsx": 1,
           "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 2,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
           "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
           "@assethub/shared/components/Charts/ChartErrorBoundary/ChartErrorBoundary.tsx": 1,
           "@assethub/shared/components/DataTable/menus/SortMenuItem.tsx": 1,
@@ -2186,7 +2211,6 @@
           "@assethub/shared/components/ListNumber/ListNumber.tsx": 1,
           "@assethub/shared/components/NavLink/NavLink.tsx": 1,
           "@assethub/shared/components/Pagination/PageSizeSelector.tsx": 2,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
           "@assethub/shared/components/DataTable/menus/SortMenuItem.tsx": 1,
           "@assethub/shared/components/Inputs/FileUpload/FileUpload.tsx": 2,
           "@assethub/shared/components/Inputs/Select/Select.tsx": 1,
@@ -2273,13 +2297,14 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 15,
-      "totalCallSites": 13,
+      "totalInstances": 20,
+      "totalCallSites": 14,
       "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
         "@assethub/admin/components/Campaigns/CampaignContentDisplay.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
         "@assethub/admin/components/Campaigns/CampaignFormControl.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 5,
         "@assethub/admin/components/Campaigns/CreateCampaignModal.tsx": 1,
         "@assethub/admin/pages/Application/NeedsMoreInfoPage.tsx": 3,
         "@assethub/admin/pages/Campaign/CampaignLessonsList.tsx": 1,
@@ -2296,6 +2321,7 @@
           "@assethub/admin/components/Campaigns/CampaignContentDisplay.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignFormControl.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 5,
           "@assethub/admin/components/Campaigns/CreateCampaignModal.tsx": 1,
           "@assethub/admin/pages/Application/NeedsMoreInfoPage.tsx": 3,
           "@assethub/admin/pages/Campaign/CampaignLessonsList.tsx": 1,
@@ -2311,6 +2337,7 @@
           "@assethub/admin/components/Campaigns/CampaignContentDisplay.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignFormControl.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 5,
           "@assethub/admin/components/Campaigns/CreateCampaignModal.tsx": 1,
           "@assethub/shared/components/DebouncedInput/DebouncedInput.tsx": 1
         },
@@ -2356,26 +2383,144 @@
       }
     },
     {
+      "name": "Modal",
+      "sourceFile": "@cbhq/cds-web/overlays/Modal",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/overlays/Modal",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx",
+          "callSites": ["@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx"]
+        },
+        {
+          "aliasPath": "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx",
+          "callSites": ["@assethub/admin/components/ManageUsersTable/ManageUsersTable.tsx"]
+        },
+        {
+          "aliasPath": "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx",
+          "callSites": ["@assethub/admin/components/ManageUsersTable/ManageUsersTable.tsx"]
+        },
+        {
+          "aliasPath": "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx",
+          "callSites": ["@assethub/admin/components/ManageUsersTable/ManageUsersTable.tsx"]
+        },
+        {
+          "aliasPath": "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx",
+          "callSites": [
+            "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNotice.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+        "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
+        "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "visible": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+          "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
+          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+        },
+        "ref": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+          "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
+          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+        },
+        "hideDividers": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+        },
+        "onRequestClose": {
+          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1
+        },
+        "hideCloseButton": {
+          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+        },
+        "disableOverlayPress": {
+          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+        },
+        "shouldCloseOnEscPress": {
+          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ModalHeader",
+      "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/overlays/ModalHeader",
+      "callSites": {
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+        "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
+        "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+          "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
+          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
+          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "@cbhq/cds-web/overlays/ModalBody",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/overlays/ModalBody",
+      "callSites": {
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+        "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
+        "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
+        "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
+      }
+    },
+    {
       "name": "TextLegal",
       "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 5,
-      "totalCallSites": 3,
+      "totalInstances": 7,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/typography/TextLegal",
       "callSites": {
         "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 3,
         "@assethub/admin/pages/Application/NeedsMoreInfoPage.tsx": 1,
-        "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1
+        "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1,
+        "@assethub/shared/components/Charts/ChartTooltip/ChartInfoTip.tsx": 2
       },
       "propsWithCallSites": {
         "as": {
           "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 3,
           "@assethub/admin/pages/Application/NeedsMoreInfoPage.tsx": 1,
-          "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1
+          "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1,
+          "@assethub/shared/components/Charts/ChartTooltip/ChartInfoTip.tsx": 2
         },
         "color": {
           "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 3,
           "@assethub/admin/pages/Application/NeedsMoreInfoPage.tsx": 1,
-          "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1
+          "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1,
+          "@assethub/shared/components/Charts/ChartTooltip/ChartInfoTip.tsx": 1
         },
         "spacingHorizontal": { "@assethub/admin/components/Campaigns/CampaignLesson.tsx": 1 }
       }
@@ -2456,62 +2601,6 @@
       }
     },
     {
-      "name": "Tooltip",
-      "sourceFile": "@cbhq/cds-web/overlays/Tooltip",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/overlays/Tooltip",
-      "callSites": {
-        "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
-        "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
-        "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
-        "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1
-      },
-      "propsWithCallSites": {
-        "placement": {
-          "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
-          "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
-          "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
-          "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1
-        },
-        "content": {
-          "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1,
-          "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
-          "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
-          "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1
-        },
-        "disabled": {
-          "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
-          "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Interactable",
-      "sourceFile": "@cbhq/cds-web/system/Interactable",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/system/Interactable",
-      "propsWithCallSites": {
-        "as": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 },
-        "backgroundColor": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 },
-        "disabled": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 }
-      }
-    },
-    {
-      "name": "RadioGroup",
-      "sourceFile": "@cbhq/cds-web/controls/RadioGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/controls/RadioGroup",
-      "propsWithCallSites": {
-        "name": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 },
-        "options": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 },
-        "onChange": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 },
-        "selectedValue": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 }
-      }
-    },
-    {
       "name": "Switch",
       "sourceFile": "@cbhq/cds-web/controls/Switch",
       "totalInstances": 1,
@@ -2523,31 +2612,52 @@
       }
     },
     {
+      "name": "Tooltip",
+      "sourceFile": "@cbhq/cds-web/overlays/Deprecated/Tooltip",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/overlays/Deprecated/Tooltip",
+      "callSites": {
+        "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
+        "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1
+      },
+      "propsWithCallSites": {
+        "disabled": {
+          "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1
+        },
+        "placement": {
+          "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
+          "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1
+        },
+        "content": {
+          "@assethub/admin/components/Campaigns/CampaignStatus.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
+          "@assethub/shared/components/InfoTooltip/InfoTooltip.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Pressable",
       "sourceFile": "@cbhq/cds-web/system/Pressable",
-      "totalInstances": 12,
-      "totalCallSites": 11,
+      "totalInstances": 11,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/system/Pressable",
       "presentationalProps": [
         { "prop": "className", "callSite": "@assethub/shared/components/NavLink/NavLink.tsx" },
         {
           "prop": "className",
-          "callSite": "@assethub/shared/components/SimplePagination/SimplePagination.tsx"
+          "callSite": "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx"
         },
         {
           "prop": "className",
-          "callSite": "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx"
+          "callSite": "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx"
         }
       ],
       "aliasedCdsComponents": [
-        { "aliasPath": "@assethub/shared/components/NavLink/NavLink.tsx", "callSites": [] },
-        {
-          "aliasPath": "@assethub/shared/components/SimplePagination/PageArrowButton.tsx",
-          "callSites": [
-            "@assethub/shared/components/SimplePagination/SimplePagination.tsx",
-            "@assethub/shared/components/SimplePagination/SimplePagination.tsx"
-          ]
-        }
+        { "aliasPath": "@assethub/shared/components/NavLink/NavLink.tsx", "callSites": [] }
       ],
       "callSites": {
         "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
@@ -2558,9 +2668,8 @@
         "@assethub/shared/components/Banner/Banner.tsx": 1,
         "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNotice.tsx": 1,
         "@assethub/shared/components/NavLink/NavLink.tsx": 1,
-        "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-        "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
-        "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1
+        "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
+        "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
       },
       "propsWithCallSites": {
         "backgroundColor": {
@@ -2572,14 +2681,12 @@
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNotice.tsx": 1,
           "@assethub/shared/components/NavLink/NavLink.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
-          "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1
+          "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "disabled": {
           "@assethub/admin/components/Campaigns/CampaignSummary.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "as": {
           "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 2,
@@ -2592,8 +2699,7 @@
           "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 2,
           "@assethub/shared/components/Alert/Alert.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "onPress": {
           "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 2,
@@ -2603,9 +2709,8 @@
           "@assethub/shared/components/Banner/Banner.tsx": 1,
           "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNotice.tsx": 1,
           "@assethub/shared/components/NavLink/NavLink.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
-          "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1
+          "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "noScaleOnPress": {
           "@assethub/admin/components/ManageUsersTable/SettingsActions.tsx": 2,
@@ -2616,8 +2721,7 @@
         "testID": {
           "@assethub/shared/components/Alert/Alert.tsx": 1,
           "@assethub/shared/components/Banner/Banner.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         },
         "borderWidth": {
           "@assethub/shared/components/Alert/Alert.tsx": 1,
@@ -2625,17 +2729,12 @@
         },
         "transparentWhileInactive": {
           "@assethub/shared/components/Alert/Alert.tsx": 1,
-          "@assethub/shared/components/Banner/Banner.tsx": 1,
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1
+          "@assethub/shared/components/Banner/Banner.tsx": 1
         },
         "className": {
           "@assethub/shared/components/NavLink/NavLink.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1,
-          "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1
-        },
-        "width": {
-          "@assethub/shared/components/SimplePagination/PageArrowButton.tsx": 1,
-          "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 1
+          "@assethub/shared/components/VerticalAccordion/VerticalAccordion.tsx": 1,
+          "@assethub/shared/components/Pagination/SimplePagination/SimplePagination.tsx": 1
         }
       }
     },
@@ -2766,110 +2865,6 @@
         "key": {
           "@assethub/admin/components/ApplicationTeamReview/modals/sections/ReviewRisksSection.tsx": 1
         }
-      }
-    },
-    {
-      "name": "Modal",
-      "sourceFile": "@cbhq/cds-web/overlays/Modal",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/overlays/Modal",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx",
-          "callSites": ["@assethub/admin/components/ManageUsersTable/ManageUsersTable.tsx"]
-        },
-        {
-          "aliasPath": "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx",
-          "callSites": ["@assethub/admin/components/ManageUsersTable/ManageUsersTable.tsx"]
-        },
-        {
-          "aliasPath": "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx",
-          "callSites": ["@assethub/admin/components/ManageUsersTable/ManageUsersTable.tsx"]
-        },
-        {
-          "aliasPath": "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx",
-          "callSites": [
-            "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNotice.tsx"
-          ]
-        }
-      ],
-      "callSites": {
-        "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
-        "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "ref": {
-          "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
-          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-        },
-        "visible": {
-          "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
-          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-        },
-        "onRequestClose": {
-          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1
-        },
-        "hideDividers": {
-          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-        },
-        "hideCloseButton": {
-          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-        },
-        "disableOverlayPress": {
-          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-        },
-        "shouldCloseOnEscPress": {
-          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ModalHeader",
-      "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/overlays/ModalHeader",
-      "callSites": {
-        "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
-        "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-      },
-      "propsWithCallSites": {
-        "title": {
-          "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
-          "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
-          "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ModalBody",
-      "sourceFile": "@cbhq/cds-web/overlays/ModalBody",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/overlays/ModalBody",
-      "callSites": {
-        "@assethub/admin/components/ApplicationTeamReview/modals/ReviewModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/ChangeAccessModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/InvitationModal.tsx": 1,
-        "@assethub/admin/components/ManageUsersTable/modals/RemoveAccessModal.tsx": 1,
-        "@assethub/shared/components/ConfidentialityNotice/ConfidentialityNoticeModal.tsx": 1
       }
     },
     {
@@ -3476,11 +3471,22 @@
       }
     },
     {
-      "name": "RadioWrapper",
-      "sourceFile": "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
+      "name": "CampaignQuizRadioGroup",
+      "sourceFile": "@assethub/admin/components/Campaigns/CampaignQuizRadioGroup",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "presentationalElement": "RadioWrapper",
+      "callSites": {
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "selectedValue": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1
+        },
+        "onChange": { "@assethub/admin/components/Campaigns/CampaignQuizForm.tsx": 1 }
+      }
     },
     {
       "name": "span",
@@ -3688,13 +3694,6 @@
       }
     },
     {
-      "name": "StyledButtonGroup",
-      "sourceFile": "@assethub/shared/components/Button/ButtonGroup.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "StyledCard",
       "sourceFile": "@assethub/shared/components/Card/Card.tsx",
       "totalInstances": 1,
@@ -3710,6 +3709,13 @@
         "hidden": { "@assethub/shared/components/Card/Card.tsx": 1 },
         "rounded": { "@assethub/shared/components/Card/Card.tsx": 1 }
       }
+    },
+    {
+      "name": "StyledButtonGroup",
+      "sourceFile": "@assethub/shared/components/Button/ButtonGroup.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
     },
     {
       "name": "div",
@@ -4335,6 +4341,48 @@
       }
     },
     {
+      "name": "TextArea",
+      "sourceFile": "@assethub/shared/components/Inputs/Text/TextArea.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Text/TextArea.tsx" }
+      ],
+      "styledComponent": "Input",
+      "propsWithCallSites": {
+        "as": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "className": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "name": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "placeholder": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "title": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "value": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "rows": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "resizable": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "readOnly": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "disabled": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "required": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "hasError": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "onFocus": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "onBlur": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
+        "onChange": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "className": { "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1 }
+      }
+    },
+    {
       "name": "InputContainer",
       "sourceFile": "@assethub/shared/components/Inputs/Url/UrlListInput.tsx",
       "totalInstances": 2,
@@ -4390,48 +4438,6 @@
       "styledComponent": "div",
       "propsWithCallSites": {
         "hidden": { "@assethub/shared/components/Inputs/Url/UrlListInput.tsx": 1 }
-      }
-    },
-    {
-      "name": "TextArea",
-      "sourceFile": "@assethub/shared/components/Inputs/Text/TextArea.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        { "prop": "className", "callSite": "@assethub/shared/components/Inputs/Text/TextArea.tsx" }
-      ],
-      "styledComponent": "Input",
-      "propsWithCallSites": {
-        "as": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "className": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "name": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "placeholder": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "title": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "value": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "rows": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "resizable": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "readOnly": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "disabled": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "required": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "hasError": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "onFocus": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "onBlur": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 },
-        "onChange": { "@assethub/shared/components/Inputs/Text/TextArea.tsx": 1 }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "className": { "@assethub/shared/components/Progress/ProgressList/ProgressStepList.tsx": 1 }
       }
     }
   ],
@@ -5380,16 +5386,18 @@
     {
       "name": "CampaignContentDisplay",
       "sourceFile": "@assethub/admin/components/Campaigns/CampaignContentDisplay",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "@assethub/admin/components/Campaigns/CampaignCardDisplay.tsx": 1,
-        "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1
+        "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
+        "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1
       },
       "propsWithCallSites": {
         "contentResource": {
           "@assethub/admin/components/Campaigns/CampaignCardDisplay.tsx": 1,
-          "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1
+          "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1
         },
         "onDelete": {
           "@assethub/admin/components/Campaigns/CampaignCardDisplay.tsx": 1,
@@ -5399,7 +5407,13 @@
           "@assethub/admin/components/Campaigns/CampaignCardDisplay.tsx": 1,
           "@assethub/admin/components/Campaigns/CampaignContentUpload.tsx": 1
         },
-        "fallbackIcon": { "@assethub/admin/components/Campaigns/CampaignCardDisplay.tsx": 1 }
+        "fallbackIcon": {
+          "@assethub/admin/components/Campaigns/CampaignCardDisplay.tsx": 1,
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1
+        },
+        "key": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1
+        }
       }
     },
     {
@@ -5558,6 +5572,17 @@
         "placeholder": { "@assethub/admin/components/Campaigns/CampaignInfoForm.tsx": 1 },
         "debounceInterval": { "@assethub/admin/components/Campaigns/CampaignInfoForm.tsx": 1 },
         "onChange": { "@assethub/admin/components/Campaigns/CampaignInfoForm.tsx": 1 }
+      }
+    },
+    {
+      "name": "QuizAnswerListItem",
+      "sourceFile": "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal.tsx": 1
+        }
       }
     },
     {
@@ -6277,8 +6302,7 @@
         },
         "disableNextButton": {
           "@assethub/admin/pages/Campaign/CampaignDetail.tsx": 1,
-          "@assethub/admin/pages/Campaign/CampaignLessonDetail.tsx": 2,
-          "@assethub/admin/pages/Campaign/CampaignTranslations.tsx": 1
+          "@assethub/admin/pages/Campaign/CampaignLessonDetail.tsx": 2
         },
         "isNextButtonLoading": {
           "@assethub/admin/pages/Campaign/CampaignLessonDetail.tsx": 1,
@@ -6358,6 +6382,16 @@
           "@assethub/admin/pages/Campaign/CampaignReview.tsx": 1,
           "@assethub/admin/pages/Campaigns/CampaignSummaryPage.tsx": 1
         }
+      }
+    },
+    {
+      "name": "CampaignInternationalizationReviewModal",
+      "sourceFile": "@assethub/admin/components/Campaigns/CampaignInternationalizationReviewModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": { "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1 },
+        "lesson": { "@assethub/admin/pages/Campaign/CampaignTranslationSummary.tsx": 1 }
       }
     },
     {
@@ -6496,7 +6530,7 @@
     },
     {
       "name": "SimplePagination",
-      "sourceFile": "@assethub/shared/components/SimplePagination",
+      "sourceFile": "@assethub/shared/components/Pagination/SimplePagination",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -7181,12 +7215,6 @@
       }
     },
     {
-      "name": "br",
-      "sourceFile": "@assethub/shared/components/ErrorPage404/ErrorPage404.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "Fallback",
       "sourceFile": "@assethub/shared/components/ErrorBoundary/ErrorBoundary.tsx",
       "totalInstances": 1,
@@ -7196,6 +7224,12 @@
         "errorHash": { "@assethub/shared/components/ErrorBoundary/ErrorBoundary.tsx": 1 },
         "onDismiss": { "@assethub/shared/components/ErrorBoundary/ErrorBoundary.tsx": 1 }
       }
+    },
+    {
+      "name": "br",
+      "sourceFile": "@assethub/shared/components/ErrorPage404/ErrorPage404.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Tag",
@@ -7294,19 +7328,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "progress": { "@assethub/shared/components/Progress/LinearProgress.tsx": 1 }
-      }
-    },
-    {
-      "name": "PageArrowButton",
-      "sourceFile": "@assethub/shared/components/SimplePagination/PageArrowButton",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": { "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 2 },
-      "propsWithCallSites": {
-        "disabled": { "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 2 },
-        "onPress": { "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 2 },
-        "content": { "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 2 },
-        "testID": { "@assethub/shared/components/SimplePagination/SimplePagination.tsx": 2 }
       }
     },
     {

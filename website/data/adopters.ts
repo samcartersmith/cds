@@ -14,6 +14,7 @@ export const adopters = [
   { id: 'unified-accounts', pillar: 'Platform' },
   { id: 'umo', pillar: 'Platform' },
   { id: 'uwo', pillar: 'Platform' },
+  { id: 'retail-web-identity', pillar: 'Platform' },
   { id: 'unified-business-onboarding', pillar: 'Platform' },
   { id: 'unified-login', pillar: 'Platform' },
   { id: 'two-factor-web', pillar: 'Platform' },

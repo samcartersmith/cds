@@ -101,7 +101,7 @@
     {
       "name": "VStack",
       "sourceFile": "@uwo/components/common/VStack",
-      "totalInstances": 16,
+      "totalInstances": 17,
       "totalCallSites": 11,
       "presentationalProps": [
         { "prop": "className", "callSite": "@uwo/components/common/form/Date/DateFields.tsx" }
@@ -116,7 +116,7 @@
         "@uwo/businessApplicationScenes/FormComponents/MultipleAnswer/AnswerCollapsible.tsx": 1,
         "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
         "@uwo/components/common/form/Date/DateFields.tsx": 1,
-        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+        "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
         "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
       },
       "propsWithCallSites": {
@@ -129,7 +129,7 @@
           "@uwo/businessApplicationScenes/FormComponents/FileUploadWrapper/FileUploadWrapper.tsx": 1,
           "@uwo/experiences/nationality/Nationality/NationalityPresentation.tsx": 1,
           "@uwo/components/common/form/Date/DateFields.tsx": 1,
-          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1,
+          "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 2,
           "@uwo/experiences/phone/scenes/VerifyPhoneNumber/VerifyPhoneNumberPresentation.tsx": 1
         },
         "key": {
@@ -141,7 +141,9 @@
           "@uwo/commonScenes/PersonalInfo/PersonalInfoPresentation.tsx": 1,
           "@uwo/components/common/form/Date/DateFields.tsx": 1
         },
-        "className": { "@uwo/components/common/form/Date/DateFields.tsx": 1 }
+        "className": { "@uwo/components/common/form/Date/DateFields.tsx": 1 },
+        "flexGrow": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 },
+        "minWidth": { "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx": 1 }
       }
     },
     {
@@ -1615,6 +1617,20 @@
       "presentationalElement": "svg"
     },
     {
+      "name": "SelectBoxWrapper",
+      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CollapsibleWrapper",
+      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "FaceCaptureCameraDisplay",
       "sourceFile": "@uwo/experiences/idv/scenes/components/FaceCaptureCameraDisplay",
       "totalInstances": 1,
@@ -1743,20 +1759,6 @@
         "ref": { "@uwo/experiences/idv/scenes/components/Video.tsx": 1 },
         "id": { "@uwo/experiences/idv/scenes/components/Video.tsx": 1 }
       }
-    },
-    {
-      "name": "SelectBoxWrapper",
-      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CollapsibleWrapper",
-      "sourceFile": "@uwo/experiences/phone/scenes/PhoneNumber/PhoneNumberPresentation.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
     },
     {
       "name": "ResetButton",

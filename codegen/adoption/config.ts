@@ -116,6 +116,13 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
+        root: path.join(tempDir, retailWebGit, 'identity'),
+        github: retailWebGit,
+        id: 'retail-web-identity',
+        label: 'Identity',
+        type: 'doc',
+      },
+      {
         root: path.join(tempDir, unifiedAccountsGit),
         github: unifiedAccountsGit,
         id: 'unified-business-onboarding',
