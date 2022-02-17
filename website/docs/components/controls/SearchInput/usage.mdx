@@ -120,6 +120,21 @@ function BorderlessSearchExample() {
 		<Box spacing={2}>
 			<SearchInput bordered={false} value={text} onChangeText={setText} placeholder="Placeholder" />
 		</Box>
+```
+
+## hideStartIcon 
+There may be search experiences where you don't want to show the search icon. You can hide it 
+by using this prop. 
+
+```jsx live 
+function hideStartIcon() {
+	const [text, setText] = useState('');
+
+	return (
+		<HStack spacing={2} gap={1}>
+		  <IconButton name="backArrow" transparent />
+		  <SearchInput hideStartIcon value={text} compact onChangeText={setText} placeholder="Placeholder" />
+		</HStack>
 	)
 }
 ```

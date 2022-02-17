@@ -45,6 +45,14 @@ describe('Search', () => {
     expect(result.getByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeDefined();
   });
 
+  it('does not render a startIcon when hideStartIcon=true', () => {
+    const result = render(
+      <SearchInput value="value" testID={TEST_ID} placeholder="Placeholder" hideStartIcon />,
+    );
+
+    expect(result.queryByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeNull();
+  });
+
   it('renders a close icon button at the end node', () => {
     const result = render(SearchComponent);
 

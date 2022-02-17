@@ -44,6 +44,7 @@ export const SearchInput = memo(
         onBlur,
         disabled,
         disableBackArrow = false,
+        hideStartIcon = false,
         ...props
       }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -107,14 +108,16 @@ export const SearchInput = memo(
           onChangeText={onChangeText}
           disabled={disabled}
           start={
-            <InputIconButton
-              testID={testID && `${testID}-searchinput-iconbtn`}
-              accessibilityLabel={startIconName}
-              accessibilityHint={startIconName}
-              onPress={startIconName === 'backArrow' ? handleOnBack : handleOnSearch}
-              disabled={disabled}
-              name={startIconName}
-            />
+            !hideStartIcon && (
+              <InputIconButton
+                testID={testID && `${testID}-searchinput-iconbtn`}
+                accessibilityLabel={startIconName}
+                accessibilityHint={startIconName}
+                onPress={startIconName === 'backArrow' ? handleOnBack : handleOnSearch}
+                disabled={disabled}
+                name={startIconName}
+              />
+            )
           }
           borderRadius="search"
           ref={refs}

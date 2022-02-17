@@ -2,6 +2,7 @@
 import React, { useCallback, useState, ComponentType } from 'react';
 import { TextInputBaseProps } from '../types/TextInputBaseProps';
 import { TextBaseProps } from '../types/TextBaseProps';
+import { SearchInputBaseProps } from '../types/SearchInputBaseProps';
 
 type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'start' | 'end'> & {
   onFocus?: () => void;
@@ -11,7 +12,7 @@ type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'star
   onChangeText: (str: string) => void;
   value: string;
   bordered?: boolean;
-};
+} & SearchInputBaseProps;
 
 export function searchInputBuilder(
   SearchInput: ComponentType<SearchInputProps>,
@@ -31,6 +32,12 @@ export function searchInputBuilder(
         <SearchInput bordered={false} value={text} onChangeText={setText} />
       </>
     );
+  };
+
+  const HideStartIcon = () => {
+    const [text, setText] = useState('');
+
+    return <SearchInput value={text} hideStartIcon onChangeText={setText} />;
   };
 
   const OnClear = () => {
@@ -136,5 +143,6 @@ export function searchInputBuilder(
     Disabled,
     Compact,
     DisplayValue,
+    HideStartIcon,
   };
 }

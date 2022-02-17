@@ -6,8 +6,17 @@ import { SearchInput } from '../SearchInput';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextLabel1 } from '../../typography/TextLabel1';
 
-const { Basic, OnBlur, OnFocus, OnClear, OnSearch, Disabled, Compact, DisplayValue } =
-  searchInputBuilder(SearchInput, TextLabel1);
+const {
+  Basic,
+  OnBlur,
+  OnFocus,
+  OnClear,
+  OnSearch,
+  Disabled,
+  Compact,
+  DisplayValue,
+  HideStartIcon,
+} = searchInputBuilder(SearchInput, TextLabel1);
 
 const CustomRef = () => {
   const ref = useRef(null);
@@ -65,6 +74,9 @@ const SearchInputScreen = () => {
     <ExampleScreen>
       <Example title="OnChangeExample">
         <OnChangeExample />
+      </Example>
+      <Example title="hideStartIcon">
+        <HideStartIcon />
       </Example>
       <Example title="Set disableBackArrow=true">
         <DisableBackArrow />

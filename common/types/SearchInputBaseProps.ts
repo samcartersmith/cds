@@ -6,6 +6,11 @@ export type SearchInputBaseProps = {
    * through str parameter
    */
   onSearch?: (str: string) => void;
+  /**
+   * hide the start icon
+   * @default false
+   */
+  hideStartIcon?: boolean;
 } & Omit<
   TextInputBaseProps,
   | 'helperText'

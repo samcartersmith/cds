@@ -32,6 +32,7 @@ export const SearchInput = memo(
       value,
       compact,
       bordered = true,
+      hideStartIcon = false,
       ...props
     }: SearchInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -71,7 +72,9 @@ export const SearchInput = memo(
 
     return (
       <TextInput
-        start={<InputIcon testID={testID && `${testID}-search-icon`} name="search" />}
+        start={
+          !hideStartIcon && <InputIcon testID={testID && `${testID}-search-icon`} name="search" />
+        }
         height={height}
         bordered={bordered}
         end={

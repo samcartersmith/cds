@@ -2,6 +2,8 @@ import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder
 import { useRef, useState, useCallback } from 'react';
 import { SearchInput } from '../SearchInput';
 import { TextLabel1 } from '../../typography/TextLabel1';
+import { HStack } from '../../layout/HStack';
+import { IconButton } from '../../buttons/IconButton';
 
 export default {
   title: 'Core Components/Inputs/SearchInput',
@@ -18,6 +20,7 @@ export const {
   Disabled,
   Compact,
   DisplayValue,
+  HideStartIcon,
 } = searchInputBuilder(SearchInput, (props) => <TextLabel1 as="p" {...props} />);
 
 export const CustomRef = () => {
@@ -47,5 +50,22 @@ export const OnChangeExample = () => {
       <SearchInput value={text} onChange={handleOnChange} onChangeText={setText} />
       <p>{text}</p>
     </>
+  );
+};
+
+export const HideStartIconSearchExample = function HideStartIconSearchExample() {
+  const [text, setText] = useState('');
+
+  return (
+    <HStack spacing={2} gap={1}>
+      <IconButton name="backArrow" transparent />
+      <SearchInput
+        hideStartIcon
+        value={text}
+        compact
+        onChangeText={setText}
+        placeholder="Placeholder"
+      />
+    </HStack>
   );
 };

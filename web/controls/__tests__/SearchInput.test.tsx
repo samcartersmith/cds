@@ -17,6 +17,7 @@ describe('Search', () => {
     expect(
       await renderA11y(
         <SearchInput
+          value="value"
           onChangeText={onChangeTextSpy}
           placeholder="Placeholder"
           accessibilityLabel="Search Assets"
@@ -36,7 +37,12 @@ describe('Search', () => {
   /** Testing for existence of components */
   it('renders a search', () => {
     const { queryByRole } = render(
-      <SearchInput onChangeText={onChangeTextSpy} testID={TEST_ID} placeholder="Placeholder" />,
+      <SearchInput
+        value="value"
+        onChangeText={onChangeTextSpy}
+        testID={TEST_ID}
+        placeholder="Placeholder"
+      />,
     );
     const search = queryByRole(ROLE);
     expect(search).toBeDefined();
@@ -44,10 +50,28 @@ describe('Search', () => {
 
   it('renders a Search IconButton at the start node', () => {
     const { getByTestId } = render(
-      <SearchInput onChangeText={onChangeTextSpy} testID={TEST_ID} placeholder="Placeholder" />,
+      <SearchInput
+        value="value"
+        onChangeText={onChangeTextSpy}
+        testID={TEST_ID}
+        placeholder="Placeholder"
+      />,
     );
     const searchIconBtn = getByTestId(`${TEST_ID}-search-icon`);
     expect(searchIconBtn).toBeDefined();
+  });
+
+  it('does not render a Search IconButton when hideStartIcon=true', () => {
+    const { queryByTestId } = render(
+      <SearchInput
+        value="value"
+        onChangeText={onChangeTextSpy}
+        testID={TEST_ID}
+        hideStartIcon
+        placeholder="Placeholder"
+      />,
+    );
+    expect(queryByTestId(`${TEST_ID}-search-icon`)).toBeNull();
   });
 
   it('renders a Close IconButton at the end node when there is value', () => {
