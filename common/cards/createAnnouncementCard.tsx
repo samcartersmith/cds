@@ -1,88 +1,35 @@
 import React, { memo } from 'react';
 
-import {
-  ButtonBaseProps,
-  CardHeaderBaseProps,
-  CardBaseProps,
-  CardBodyBaseProps,
-  IconName,
-  IconButtonBaseProps,
-  IllustrationPictogramNames,
-  PictogramProps,
-} from '../types';
+import type { CardBaseProps } from '../types';
+import { announcementCardMinHeight } from '../tokens/card';
+import type { CardBodyBaseProps } from './createCardBody';
 
-type CreateAnnouncementCardParams<T> = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: T }>;
-  CardHeader: React.ComponentType<CardHeaderBaseProps>;
-  Card: React.ComponentType<CardBaseProps>;
-  CardBody: React.ComponentType<CardBodyBaseProps>;
-  IconButton: React.ComponentType<IconButtonBaseProps & { onPress?: T }>;
-  Pictogram: React.ComponentType<PictogramProps>;
+type CreateAnnouncementCardParams<OnPressFn> = {
+  Card: React.ComponentType<CardBaseProps & { onPress?: OnPressFn }>;
+  CardBody: React.ComponentType<CardBodyBaseProps<OnPressFn>>;
 };
 
-export type AnnouncementCardProps<T> = {
-  title: CardBodyBaseProps['title'];
-  description: CardBodyBaseProps['description'];
-  pictogram?: IllustrationPictogramNames;
-  headerDescription?: CardHeaderBaseProps['description'];
-  headerMetaData?: CardHeaderBaseProps['metaData'];
-  headerAvatarUrl: CardHeaderBaseProps['avatarUrl'];
-  headerAction?: IconName;
-  footerAction: string;
-  onHeaderActionPress: T;
-  onFooterActionPress: T;
+export type AnnouncementCardBaseProps<T> = Omit<CardBodyBaseProps<T>, 'orientation' | 'variant'> & {
+  onPress?: T;
 };
 
-export function createAnnouncementCard<T>({
-  Button,
+export function createAnnouncementCard<OnPressFn>({
   Card,
-  CardHeader,
   CardBody,
-  IconButton,
-  Pictogram,
-}: CreateAnnouncementCardParams<T>) {
-  const AnnouncementCard = memo(
-    ({
-      title,
-      description,
-      pictogram,
-      headerAvatarUrl,
-      headerDescription,
-      headerMetaData,
-      headerAction = 'more',
-      footerAction,
-      onHeaderActionPress,
-      onFooterActionPress,
-    }: AnnouncementCardProps<T>) => {
-      return (
-        <Card>
-          <CardHeader
-            avatarUrl={headerAvatarUrl}
-            description={headerDescription}
-            metaData={headerMetaData}
-            action={<IconButton name={headerAction} onPress={onHeaderActionPress} transparent />}
-          />
-          <CardBody
-            title={title}
-            description={description}
-            orientation="horizontal"
-            media={pictogram && <Pictogram name={pictogram} dimension="64x64" />}
-          >
-            <Button
-              compact
-              flush="start"
-              transparent
-              variant="primary"
-              onPress={onFooterActionPress}
-              endIcon="forwardArrow"
-            >
-              {footerAction}
-            </Button>
-          </CardBody>
-        </Card>
-      );
-    },
-  );
+}: CreateAnnouncementCardParams<OnPressFn>) {
+  const AnnouncementCard = memo(function AnnouncementCard({
+    onPress,
+    width,
+    minHeight = announcementCardMinHeight,
+    ...props
+  }: AnnouncementCardBaseProps<OnPressFn>) {
+    return (
+      <Card onPress={onPress} width={width} testID={props.testID} flexShrink={0}>
+        <CardBody variant="announcement" minHeight={minHeight} {...props} />
+      </Card>
+    );
+  });
+
   AnnouncementCard.displayName = 'AnnouncementCard';
   return AnnouncementCard;
 }
