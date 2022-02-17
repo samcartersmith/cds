@@ -7,14 +7,11 @@ import { useTabIndicatorStyles } from './hooks/useTabIndicatorStyles';
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabIndicator = memo(
   forwardRef(
-    (
-      { width, xPosition, testID, ...props }: TabIndicatorProps,
-      forwardedRef: ForwardedRef<View>,
-    ) => {
-      const { widthStyle, positionStyle } = useTabIndicatorStyles({ width, xPosition });
+    ({ width, x, testID, ...props }: TabIndicatorProps, forwardedRef: ForwardedRef<View>) => {
+      const { widthStyle, xStyle } = useTabIndicatorStyles({ width, x });
 
       return (
-        <Animated.View testID={testID} ref={forwardedRef} style={positionStyle} {...props}>
+        <Animated.View testID={testID} ref={forwardedRef} style={xStyle} {...props}>
           <Box
             testID="cds-tab-indicator-inner-bar-container"
             justifyContent="center"

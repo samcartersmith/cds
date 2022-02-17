@@ -15,11 +15,11 @@ export default {
 const getRandomNumber = () => Math.random() * 100 + 100;
 export const TabIndicatorExample: Story = () => {
   const [width, setWidth] = useState(120);
-  const [position, setPosition] = useState(120);
+  const [x, setX] = useState(120);
 
   const handlePress = () => {
     setWidth(getRandomNumber());
-    setPosition(getRandomNumber());
+    setX(getRandomNumber());
   };
 
   return (
@@ -28,7 +28,7 @@ export const TabIndicatorExample: Story = () => {
         <Button onPress={handlePress} block>
           Randomize
         </Button>
-        <TabIndicator width={width} xPosition={position} />
+        <TabIndicator width={width} x={x} />
       </VStack>
     </ThemeProvider>
   );

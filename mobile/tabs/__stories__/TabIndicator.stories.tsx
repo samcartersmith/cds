@@ -9,11 +9,11 @@ import { Button } from '../../buttons';
 const getRandomNumber = () => Math.random() * 100 + 100;
 const TabIndicatorScreen = () => {
   const [width, setWidth] = useState(120);
-  const [xPosition, setXPosition] = useState(120);
+  const [x, setX] = useState(120);
 
   const handlePress = useCallback(() => {
     setWidth(getRandomNumber());
-    setXPosition(getRandomNumber());
+    setX(getRandomNumber());
   }, []);
 
   return (
@@ -21,7 +21,7 @@ const TabIndicatorScreen = () => {
       <Example title="Tab Indicator" spacing={gutter} overflow="visible">
         <VStack gap={2}>
           <Button onPress={handlePress}>Randomize</Button>
-          <TabIndicator width={width} xPosition={xPosition} />
+          <TabIndicator width={width} x={x} />
         </VStack>
       </Example>
     </ExampleScreen>

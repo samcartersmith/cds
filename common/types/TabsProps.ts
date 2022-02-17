@@ -49,7 +49,7 @@ export type TabIndicatorProps = {
   /** The width of the active TabLabel. */
   width: number;
   /** The xPosition of the active TabLabel. */
-  xPosition: number;
+  x: number;
 } & SharedProps;
 
 export type TabNavigationProps<T extends string = string> = {

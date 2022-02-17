@@ -3,15 +3,12 @@ import { animateTabIndicatorBaseSpec } from '@cbhq/cds-common/animation/tabs';
 import { useAnimatedTransition } from '../../hooks/useAnimatedTransition';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const useTabIndicatorStyles = ({
-  width,
-  xPosition,
-}: Pick<TabIndicatorProps, 'width' | 'xPosition'>) => {
+export const useTabIndicatorStyles = ({ width, x }: Pick<TabIndicatorProps, 'width' | 'x'>) => {
   const animatedWidth = useAnimatedTransition(width, animateTabIndicatorBaseSpec);
   const widthStyle = { transform: [{ translateX: animatedWidth }] };
 
-  const animatedPosition = useAnimatedTransition(xPosition, animateTabIndicatorBaseSpec);
-  const positionStyle = { transform: [{ translateX: animatedPosition }] };
+  const animatedX = useAnimatedTransition(x, animateTabIndicatorBaseSpec);
+  const xStyle = { transform: [{ translateX: animatedX }] };
 
-  return { widthStyle, positionStyle };
+  return { widthStyle, xStyle };
 };

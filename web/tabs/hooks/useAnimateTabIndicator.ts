@@ -6,22 +6,17 @@ import { Animated } from '../../animation/Animated';
 
 type UseAnimateTabIndicator = {
   widthRef: RefObject<HTMLElement>;
-  positionRef: RefObject<HTMLElement>;
-} & Pick<TabIndicatorProps, 'width' | 'xPosition'>;
+  xRef: RefObject<HTMLElement>;
+} & Pick<TabIndicatorProps, 'width' | 'x'>;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const useAnimateTabIndicator = ({
-  widthRef,
-  width,
-  positionRef,
-  xPosition,
-}: UseAnimateTabIndicator) => {
+export const useAnimateTabIndicator = ({ widthRef, width, xRef, x }: UseAnimateTabIndicator) => {
   const { getPreviousValue: getPreviousWidth, addPreviousValue: addPreviousWidth } =
     usePreviousValues<number>([0]);
-  const { getPreviousValue: getPreviousPosition, addPreviousValue: addPreviousPosition } =
+  const { getPreviousValue: getPreviousX, addPreviousValue: addPreviousX } =
     usePreviousValues<number>([0]);
   addPreviousWidth(width);
-  addPreviousPosition(xPosition);
+  addPreviousX(x);
 
   useEffect(() => {
     Animated.parallel([
@@ -31,12 +26,12 @@ export const useAnimateTabIndicator = ({
         toValue: `translateX(${width}px)`,
         ...animateTabIndicatorBaseSpec,
       }),
-      Animated.timing(positionRef, {
+      Animated.timing(xRef, {
         property: 'transform',
-        fromValue: `translateX(${getPreviousPosition()}px)`,
-        toValue: `translateX(${xPosition}px)`,
+        fromValue: `translateX(${getPreviousX()}px)`,
+        toValue: `translateX(${x}px)`,
         ...animateTabIndicatorBaseSpec,
       }),
     ])?.start();
-  }, [getPreviousPosition, getPreviousWidth, positionRef, widthRef, width, xPosition]);
+  }, [getPreviousX, getPreviousWidth, xRef, widthRef, width, x]);
 };

@@ -4,7 +4,7 @@ import { View, LayoutChangeEvent } from 'react-native';
 import { TabLabel } from '../TabLabel';
 import { PressableOpacity } from '../../system/PressableOpacity';
 
-type LayoutMap = Record<string, { width: number; xPosition: number }>;
+type LayoutMap = Record<string, { width: number; x: number }>;
 type UseTabLabelsProps = Required<
   Pick<TabNavigationProps, 'tabs' | 'defaultTab' | 'variant' | 'onChange'>
 >;
@@ -30,7 +30,7 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
         ...layoutMap,
         [key]: {
           width: nativeEvent.layout.width,
-          xPosition: nativeEvent.layout.x,
+          x: nativeEvent.layout.x,
         },
       });
     },
@@ -40,12 +40,12 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
   // State for the TabIndicator props
   const [tabIndicatorProps, setTabIndicatorProps] = useState<TabIndicatorProps>({
     width: layoutMap[activeId]?.width ?? 0,
-    xPosition: layoutMap[activeId]?.xPosition ?? 0,
+    x: layoutMap[activeId]?.x ?? 0,
   });
   useEffect(() => {
     setTabIndicatorProps({
       width: layoutMap[activeId]?.width,
-      xPosition: layoutMap[activeId]?.xPosition,
+      x: layoutMap[activeId]?.x,
     });
   }, [activeId, layoutMap]);
 

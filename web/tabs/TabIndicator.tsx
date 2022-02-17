@@ -7,17 +7,17 @@ import { Box } from '../layout';
 export const TabIndicator = memo(
   forwardRef(
     (
-      { width, xPosition, testID, ...props }: TabIndicatorProps,
+      { width, x, testID, ...props }: TabIndicatorProps,
       forwardedRef: ForwardedRef<HTMLElement>,
     ) => {
-      const positionRef = useRef<HTMLElement>(null);
+      const xRef = useRef<HTMLElement>(null);
       const widthRef = useRef<HTMLElement>(null);
-      useAnimateTabIndicator({ width, xPosition, positionRef, widthRef });
+      useAnimateTabIndicator({ width, x, xRef, widthRef });
 
       return (
         <Box ref={forwardedRef} testID={testID} {...props} overflow="hidden">
           <Box
-            ref={positionRef}
+            ref={xRef}
             testID="cds-tab-indicator-inner-bar-container"
             flexGrow={1}
             height={2}
