@@ -1,59 +1,34 @@
 import React, { memo } from 'react';
 
-import {
-  ButtonBaseProps,
-  CardBaseProps,
-  CardBodyBaseProps,
-  IllustrationSpotSquareNames,
-  SpotSquareProps,
-} from '../types';
+import { CardBaseProps } from '../types';
+import { CardBodyBaseProps } from './createCardBody';
 
-type CreateFeatureEntryCardParams<T> = {
-  Button: React.ComponentType<ButtonBaseProps & { onPress?: T }>;
-  Card: React.ComponentType<CardBaseProps>;
-  CardBody: React.ComponentType<CardBodyBaseProps>;
-  SpotSquare: React.ComponentType<SpotSquareProps>;
+type CreateFeatureEntryCardParams<OnPressFn> = {
+  Card: React.ComponentType<CardBaseProps & { onPress?: OnPressFn }>;
+  CardBody: React.ComponentType<CardBodyBaseProps<OnPressFn>>;
 };
 
-export type FeatureEntryCardProps<T> = {
-  title: CardBodyBaseProps['title'];
-  description: CardBodyBaseProps['description'];
-  spotSquare: IllustrationSpotSquareNames;
-  action: string;
-  onActionPress: T;
+export type FeatureEntryCardBaseProps<T> = Omit<CardBodyBaseProps<T>, 'orientation' | 'variant'> & {
+  /** The callback function to trigger when the entire Card is pressed. This will not be used if Card has an onActionPress. */
+  onPress?: T;
 };
 
-export function createFeatureEntryCard<T>({
-  Button,
+export function createFeatureEntryCard<OnPressFn>({
   Card,
   CardBody,
-  SpotSquare,
-}: CreateFeatureEntryCardParams<T>) {
-  const FeatureEntryCard = memo(
-    ({ title, description, spotSquare, action, onActionPress }: FeatureEntryCardProps<T>) => {
-      return (
-        <Card>
-          <CardBody
-            title={title}
-            description={description}
-            media={<SpotSquare name={spotSquare} />}
-            orientation="horizontal"
-          >
-            <Button
-              flush="start"
-              compact
-              variant="primary"
-              transparent
-              onPress={onActionPress}
-              endIcon="forwardArrow"
-            >
-              {action}
-            </Button>
-          </CardBody>
-        </Card>
-      );
-    },
-  );
+}: CreateFeatureEntryCardParams<OnPressFn>) {
+  const FeatureEntryCard = memo(function FeatureEntryCard({
+    onPress,
+    width,
+    ...props
+  }: FeatureEntryCardBaseProps<OnPressFn>) {
+    return (
+      <Card testID={props.testID} onPress={onPress} flexShrink={0}>
+        <CardBody variant="feature" {...props} />
+      </Card>
+    );
+  });
+
   FeatureEntryCard.displayName = 'FeatureEntryCard';
   return FeatureEntryCard;
 }
