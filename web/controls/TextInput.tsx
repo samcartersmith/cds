@@ -13,6 +13,7 @@ import React, {
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { css } from 'linaria';
 import { TextLabel1 } from '../typography';
 import { NativeInput } from './NativeInput';
 import { HelperText } from './HelperText';
@@ -25,20 +26,29 @@ import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { TextInputFocusVariantContext } from './context';
 import { useA11yId } from '../hooks/useA11yId';
 
+const borderlessStyle = css`
+  border-width: 0;
+`;
+
 export type TextInputProps = {
   /**
    * Callback fired when pressed/clicked
    */
   onPress?: React.MouseEventHandler;
   /**
-   * @danger Customize the element which the input area will be rendered as. Adds ability
-   * to render the input area as a <textarea />, <input /> etc...
-   * By default, the input area will be rendered as an <input />.
-   * Use this at your own risk, and don't use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc..
+   * Customize the element which the input area will be rendered as. Adds ability to render the input area
+   * as a `<textarea />`, `<input />` etc...
+   * By default, the input area will be rendered as an `<input />`.
+   * @danger Use this at your own risk, and don't use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc..
    * Our default input handles all of the UI/Accessibility needs for your out of the box, but inputNode will not include
    * those.
    * */
   inputNode?: React.ReactElement;
+  /**
+   * Adds border to input
+   * @default true
+   */
+  bordered?: boolean;
 } & TextInputBaseProps &
   Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width'>;
 
@@ -62,6 +72,7 @@ export const TextInput = memo(
       borderRadius = 'input',
       height,
       inputNode,
+      bordered = true,
       ...htmlInputElmProps
     }: TextInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -159,6 +170,10 @@ export const TextInput = memo(
           variant={variant}
           borderRadius={borderRadius}
           height={height}
+          borderStyle={!bordered ? borderlessStyle : ''}
+          // If bordered is true, we want disableFocusedStyle = false
+          // If bordered is false, we want disableFocusedStyle = true
+          disableFocusedStyle={!bordered}
           labelNode={!compact && !!label && <InputLabel htmlFor={label}>{label}</InputLabel>}
           inputNode={inputNodeCloned}
           helperTextNode={

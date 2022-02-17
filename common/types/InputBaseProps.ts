@@ -56,6 +56,11 @@ export type InputStackBaseProps = {
    * @default input
    */
   borderRadius?: InputStackBorderRadius;
+  /**
+   * Disable default focus styles
+   * @default false
+   */
+  disableFocusedStyle?: boolean;
 } & SharedProps;
 
 export type SharedInputProps = {

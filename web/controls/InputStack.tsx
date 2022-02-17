@@ -64,6 +64,7 @@ export const InputStack = memo(
       focused = false,
       borderRadius = 'input',
       height,
+      disableFocusedStyle = false,
       ...props
     }: InputStackProps,
     ref: ForwardedRef<HTMLElement>,
@@ -88,15 +89,26 @@ export const InputStack = memo(
       };
     }, [prependNode, appendNode]);
 
+    const borderColorFocused = useMemo(() => {
+      if (disableFocusedStyle) {
+        return 'transparent';
+      }
+
+      if (variant !== 'positive' && variant !== 'negative') {
+        return palette.primary;
+      }
+
+      return palette[variant];
+    }, [disableFocusedStyle, palette, variant]);
+
     const defaultBorderStyles = useMemo(() => {
       return {
         '--border-color-unfocused':
           variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant],
-        '--border-color-focused':
-          variant !== 'positive' && variant !== 'negative' ? palette.primary : palette[variant],
+        '--border-color-focused': borderColorFocused,
         ...inputBorderRadius,
       };
-    }, [variant, palette, inputBorderRadius]);
+    }, [variant, palette, borderColorFocused, inputBorderRadius]);
 
     return (
       <VStack testID={testID} width={width} gap={0.5} {...props}>

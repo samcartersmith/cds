@@ -14,6 +14,11 @@ export type SearchInputProps = SearchInputBaseProps &
   React.InputHTMLAttributes<HTMLInputElement> & {
     onClear?: React.MouseEventHandler;
     onChangeText: (text: string) => void;
+    /**
+     * Adds border to input
+     * @default true
+     */
+    bordered?: boolean;
   } & Required<Pick<HTMLInputElement, 'value'>>;
 
 export const SearchInput = memo(
@@ -26,6 +31,7 @@ export const SearchInput = memo(
       testID,
       value,
       compact,
+      bordered = true,
       ...props
     }: SearchInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -67,6 +73,7 @@ export const SearchInput = memo(
       <TextInput
         start={<InputIcon testID={testID && `${testID}-search-icon`} name="search" />}
         height={height}
+        bordered={bordered}
         end={
           !!value && (
             <Box spacingEnd={0.5}>

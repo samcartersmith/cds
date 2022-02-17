@@ -1,3 +1,5 @@
+import { Badge } from ':cds-website/components/Badge';
+
 ## Default 
 The onChangeText is required for this to work. You must maintain your own
 value state using useState, and pass the state to the value prop. Below is 
@@ -101,6 +103,22 @@ function CompactSearchExample() {
 	return (
 		<Box spacing={2}>
 			<SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />
+		</Box>
+	)
+}
+```
+
+### Borderless SearchInput <Badge variant="web" /> 
+A borderless SearchInput SHOULD NOT be used alone. It should be used 
+with a TypeAhead component.  
+
+```jsx live
+function BorderlessSearchExample() {
+	const [text, setText] = useState('');
+
+	return (
+		<Box spacing={2}>
+			<SearchInput bordered={false} value={text} onChangeText={setText} placeholder="Placeholder" />
 		</Box>
 	)
 }

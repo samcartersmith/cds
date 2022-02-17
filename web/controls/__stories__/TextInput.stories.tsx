@@ -134,6 +134,19 @@ export const BorderRadius = function BorderRadius() {
   );
 };
 
+export const Borderless = function Borderless() {
+  return (
+    <>
+      <TextInput
+        label="borderless"
+        placeholder="placeholder"
+        helperText="helperText"
+        bordered={false}
+      />
+    </>
+  );
+};
+
 export const Disabled = function Disabled() {
   return (
     <>

@@ -8,8 +8,17 @@ export default {
   component: SearchInput,
 };
 
-export const { Basic, OnClear, OnSearch, OnFocus, OnBlur, Disabled, Compact, DisplayValue } =
-  searchInputBuilder(SearchInput, (props) => <TextLabel1 as="p" {...props} />);
+export const {
+  Basic,
+  Borderless,
+  OnClear,
+  OnSearch,
+  OnFocus,
+  OnBlur,
+  Disabled,
+  Compact,
+  DisplayValue,
+} = searchInputBuilder(SearchInput, (props) => <TextLabel1 as="p" {...props} />);
 
 export const CustomRef = () => {
   const ref = useRef(null);

@@ -10,6 +10,7 @@ type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'star
   onClear?: () => void;
   onChangeText: (str: string) => void;
   value: string;
+  bordered?: boolean;
 };
 
 export function searchInputBuilder(
@@ -20,6 +21,16 @@ export function searchInputBuilder(
     const [text, setText] = useState('Value');
 
     return <SearchInput placeholder="Placeholder" onChangeText={setText} value={text} />;
+  };
+
+  const Borderless = () => {
+    const [text, setText] = useState('');
+
+    return (
+      <>
+        <SearchInput bordered={false} value={text} onChangeText={setText} />
+      </>
+    );
   };
 
   const OnClear = () => {
@@ -117,6 +128,7 @@ export function searchInputBuilder(
 
   return {
     Basic,
+    Borderless,
     OnClear,
     OnBlur,
     OnFocus,

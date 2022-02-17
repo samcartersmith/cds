@@ -81,6 +81,21 @@ Aligns text inside input and helperText
 
 <ComponentDetails componentName="TextInput" templateName="prop-align" />
 
+### bordered <Badge variant="web" />
+
+Adds border to input
+
+<ApiDetails
+  componentName="TextInput"
+  propertyName="bordered"
+  required={false}
+  defaultValue="true"
+  mobileOptions={[]}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="TextInput" templateName="prop-bordered" />
+
 ### borderRadius
 
 Leverage one of the borderRadius styles we offer to round the corners of the input.
@@ -178,8 +193,8 @@ For cases where label is not enough information to describe what the text input 
 
 ### inputNode <Badge variant="web" /> <Badge variant="danger" order={2} />
 
-to render the input area as a <textarea />, <input /> etc... By default, the input area will be rendered as an <input />. Use this at your own risk, and dont use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc.. Our default input handles all of the UI/Accessibility needs for your out of the box, but inputNode will not include those.
-Customize the element which the input area will be rendered as. Adds ability
+Customize the element which the input area will be rendered as. Adds ability to render the input area as a `<textarea />`, `<input />` etc... By default, the input area will be rendered as an `<input />`. Our default input handles all of the UI/Accessibility needs for your out of the box, but inputNode will not include those.
+Use this at your own risk, and don't use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc..
 
 <ApiDetails
   componentName="TextInput"

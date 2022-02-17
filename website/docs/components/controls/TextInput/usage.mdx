@@ -46,6 +46,21 @@ Default composition of Inputs.
 </ExampleWithThemeToggles>
 ```
 
+### Borderless TextInput <Badge variant="web" />
+A borderless TextInput SHOULD NOT be used alone. It should be used 
+with a TypeAhead component.  
+
+```jsx live
+<HStack spacing={2}>
+  <TextInput
+    label="Borderless TextInput"
+    placeholder="placeholder"
+    helperText="helperText"
+    bordered={false}
+  />
+</HStack>  
+```
+
 ### Helper Text
 
 #### Default Sentiment
