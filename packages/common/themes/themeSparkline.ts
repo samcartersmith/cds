@@ -18,7 +18,10 @@ const config = {
     hexValues: { line: '#bfc4cf' },
     interactableTokens: {
       line: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(231, 233, 237)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(231, 233, 237)',
+        },
         pressed: { contentOpacity: 0.9, backgroundColor: 'rgb(173, 178, 188)' },
       },
     },

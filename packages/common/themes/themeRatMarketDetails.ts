@@ -30,8 +30,14 @@ const config = {
     hexValues: { background: '#8a919e' },
     interactableTokens: {
       background: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(138, 145, 158)' },
-        pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(154, 160, 172)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(138, 145, 158)',
+        },
+        pressed: {
+          contentOpacity: 0.86,
+          backgroundColor: 'rgb(154, 160, 172)',
+        },
       },
     },
     name: 'ratMarketDetails-dark',

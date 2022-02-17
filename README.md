@@ -47,7 +47,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 #### Codegen tasks
 
 - [ ] adoption tracker
-- [ ] codegen
+- [x] codegen
 - [x] docgen
 - [ ] changelog
 - [ ] sync_icons

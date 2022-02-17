@@ -16,7 +16,10 @@ const config = {
     hexValues: { backgroundOverlay: '#32353d' },
     interactableTokens: {
       backgroundOverlay: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(177, 178, 181)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(177, 178, 181)',
+        },
         pressed: { contentOpacity: 0.84, backgroundColor: 'rgb(83, 85, 92)' },
       },
     },

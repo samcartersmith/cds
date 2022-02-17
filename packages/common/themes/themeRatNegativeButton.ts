@@ -18,7 +18,10 @@ const config = {
     hexValues: { primary: '#cf202f' },
     interactableTokens: {
       primary: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(237, 170, 176)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(237, 170, 176)',
+        },
         pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(179, 29, 42)' },
       },
     },
@@ -31,7 +34,10 @@ const config = {
     interactableTokens: {
       primary: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(97, 44, 49)' },
-        pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(242, 119, 129)' },
+        pressed: {
+          contentOpacity: 0.86,
+          backgroundColor: 'rgb(242, 119, 129)',
+        },
       },
     },
     name: 'ratNegativeButton-dark',

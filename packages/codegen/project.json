@@ -21,6 +21,12 @@
       "options": {
         "scriptPath": "packages/codegen/website/build.ts"
       }
+    },
+    "codegen": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/main.ts"
+      }
     }
   }
 }

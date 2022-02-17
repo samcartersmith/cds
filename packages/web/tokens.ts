@@ -52,4 +52,6 @@ export const fontFamily = {
   mono: 'var(--cds-font-mono)',
 } as const;
 
-export const mediaQueries = { supportsHover: '@media (any-hover: hover)' } as const;
+export const mediaQueries = {
+  supportsHover: '@media (any-hover: hover)',
+} as const;

@@ -16,8 +16,14 @@ const config = {
     hexValues: { secondary: '#eef0f3' },
     interactableTokens: {
       secondary: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(249, 249, 250)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(220, 222, 225)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(249, 249, 250)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(220, 222, 225)',
+        },
       },
     },
     name: 'frontier-light',

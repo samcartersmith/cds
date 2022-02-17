@@ -66,67 +66,136 @@ const config = {
     },
     interactableTokens: {
       foreground: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(162, 162, 163)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(162, 162, 163)',
+        },
         pressed: { contentOpacity: 0.82, backgroundColor: 'rgb(54, 55, 57)' },
       },
       foregroundMuted: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(193, 195, 200)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(193, 195, 200)',
+        },
         pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(80, 85, 96)' },
       },
       background: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(255, 255, 255)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(235, 235, 236)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(255, 255, 255)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(235, 235, 236)',
+        },
       },
       backgroundAlternate: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(249, 249, 250)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(220, 222, 225)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(249, 249, 250)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(220, 222, 225)',
+        },
       },
       backgroundOverlay: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(177, 178, 181)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(177, 178, 181)',
+        },
         pressed: { contentOpacity: 0.84, backgroundColor: 'rgb(83, 85, 92)' },
       },
       line: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(193, 195, 200)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(193, 195, 200)',
+        },
         pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(80, 85, 96)' },
       },
       lineHeavy: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(193, 195, 200)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(193, 195, 200)',
+        },
         pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(80, 85, 96)' },
       },
       primary: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(158, 189, 255)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(158, 189, 255)',
+        },
         pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(1, 72, 221)' },
       },
       primaryWash: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(251, 252, 255)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(226, 229, 236)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(251, 252, 255)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(226, 229, 236)',
+        },
       },
       primaryForeground: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(255, 255, 255)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(235, 235, 236)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(255, 255, 255)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(235, 235, 236)',
+        },
       },
       negative: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(237, 170, 176)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(237, 170, 176)',
+        },
         pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(179, 29, 42)' },
       },
       negativeForeground: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(255, 255, 255)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(235, 235, 236)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(255, 255, 255)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(235, 235, 236)',
+        },
       },
       positive: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(162, 209, 189)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(162, 209, 189)',
+        },
         pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(9, 116, 71)' },
       },
       positiveForeground: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(255, 255, 255)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(235, 235, 236)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(255, 255, 255)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(235, 235, 236)',
+        },
       },
       secondary: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(255, 255, 255)' },
-        pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(235, 235, 236)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(255, 255, 255)',
+        },
+        pressed: {
+          contentOpacity: 0.92,
+          backgroundColor: 'rgb(235, 235, 236)',
+        },
       },
       secondaryForeground: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(162, 162, 163)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(162, 162, 163)',
+        },
         pressed: { contentOpacity: 0.82, backgroundColor: 'rgb(54, 55, 57)' },
       },
     },
@@ -172,12 +241,21 @@ const config = {
     },
     interactableTokens: {
       foreground: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(103, 104, 105)' },
-        pressed: { contentOpacity: 0.82, backgroundColor: 'rgb(211, 211, 211)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(103, 104, 105)',
+        },
+        pressed: {
+          contentOpacity: 0.82,
+          backgroundColor: 'rgb(211, 211, 211)',
+        },
       },
       foregroundMuted: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(59, 62, 68)' },
-        pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(154, 160, 172)' },
+        pressed: {
+          contentOpacity: 0.86,
+          backgroundColor: 'rgb(154, 160, 172)',
+        },
       },
       background: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(10, 11, 13)' },
@@ -189,15 +267,24 @@ const config = {
       },
       backgroundOverlay: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(80, 82, 87)' },
-        pressed: { contentOpacity: 0.84, backgroundColor: 'rgb(164, 168, 176)' },
+        pressed: {
+          contentOpacity: 0.84,
+          backgroundColor: 'rgb(164, 168, 176)',
+        },
       },
       line: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(59, 62, 68)' },
-        pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(154, 160, 172)' },
+        pressed: {
+          contentOpacity: 0.86,
+          backgroundColor: 'rgb(154, 160, 172)',
+        },
       },
       lineHeavy: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(59, 62, 68)' },
-        pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(154, 160, 172)' },
+        pressed: {
+          contentOpacity: 0.86,
+          backgroundColor: 'rgb(154, 160, 172)',
+        },
       },
       primary: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(27, 51, 101)' },
@@ -213,7 +300,10 @@ const config = {
       },
       negative: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(97, 44, 49)' },
-        pressed: { contentOpacity: 0.86, backgroundColor: 'rgb(242, 119, 129)' },
+        pressed: {
+          contentOpacity: 0.86,
+          backgroundColor: 'rgb(242, 119, 129)',
+        },
       },
       negativeForeground: {
         disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(10, 11, 13)' },
@@ -232,8 +322,14 @@ const config = {
         pressed: { contentOpacity: 0.92, backgroundColor: 'rgb(30, 31, 32)' },
       },
       secondaryForeground: {
-        disabled: { contentOpacity: 0.38, backgroundColor: 'rgb(103, 104, 105)' },
-        pressed: { contentOpacity: 0.82, backgroundColor: 'rgb(211, 211, 211)' },
+        disabled: {
+          contentOpacity: 0.38,
+          backgroundColor: 'rgb(103, 104, 105)',
+        },
+        pressed: {
+          contentOpacity: 0.82,
+          backgroundColor: 'rgb(211, 211, 211)',
+        },
       },
     },
     name: 'base-dark',

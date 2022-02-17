@@ -55,7 +55,7 @@ Help:
   $$ make build.all                 -- Build all packages.
 
   $$ make docgen                    -- Generate docs for CDS website.
-
+  $$ make codegen                   -- Generate code in design system.
 endef
 export HELP_TEXT
 
@@ -242,3 +242,11 @@ build.all:
 docgen:
 	nx run codegen:docgen
 	nx run website:lint --fix
+
+.PHONY: codegen
+codegen:
+	nx run codegen:codegen
+	nx run codegen:docgen
+	nx affected --target=lint --all --skip-nx-cache --fix
+	nx affected --target=format --all --skip-nx-cache
+	nx affected --target=lint-styles --all --skip-nx-cache --fix

@@ -75,7 +75,7 @@ export const xSmall = css`
   --legal-text-transform: none;
   --legal-font-weight: 400;
   --legal-font-family: var(--cds-font-text);
-  --spacing-0: 0;
+  --spacing-0: 0px;
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
   --spacing-2: 12px;
@@ -165,7 +165,7 @@ export const small = css`
   --legal-text-transform: none;
   --legal-font-weight: 400;
   --legal-font-family: var(--cds-font-text);
-  --spacing-0: 0;
+  --spacing-0: 0px;
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
   --spacing-2: 12px;
@@ -255,7 +255,7 @@ export const medium = css`
   --legal-text-transform: none;
   --legal-font-weight: 400;
   --legal-font-family: var(--cds-font-text);
-  --spacing-0: 0;
+  --spacing-0: 0px;
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
   --spacing-2: 12px;
@@ -345,7 +345,7 @@ export const large = css`
   --legal-text-transform: none;
   --legal-font-weight: 400;
   --legal-font-family: var(--cds-font-text);
-  --spacing-0: 0;
+  --spacing-0: 0px;
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
   --spacing-2: 16px;
@@ -435,7 +435,7 @@ export const xLarge = css`
   --legal-text-transform: none;
   --legal-font-weight: 400;
   --legal-font-family: var(--cds-font-sans);
-  --spacing-0: 0;
+  --spacing-0: 0px;
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
   --spacing-2: 16px;
@@ -525,7 +525,7 @@ export const xxLarge = css`
   --legal-text-transform: none;
   --legal-font-weight: 400;
   --legal-font-family: var(--cds-font-sans);
-  --spacing-0: 0;
+  --spacing-0: 0px;
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
   --spacing-2: 16px;
@@ -615,7 +615,7 @@ export const xxxLarge = css`
   --legal-text-transform: none;
   --legal-font-weight: 400;
   --legal-font-family: var(--cds-font-sans);
-  --spacing-0: 0;
+  --spacing-0: 0px;
   --spacing-0\\.5: 4px;
   --spacing-1: 8px;
   --spacing-2: 16px;

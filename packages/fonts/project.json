@@ -25,6 +25,9 @@
         ],
         "typescriptConfig": "packages/fonts/tsconfig.build.json"
       }
+    },
+    "lint-styles": {
+      "executor": "./tools/executors/lint-styles:lint-styles"
     }
   }
 }
