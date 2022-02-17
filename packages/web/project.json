@@ -10,6 +10,9 @@
     "lint": {
       "executor": "@cbhq/mono-tasks:lint"
     },
+    "lint-styles": {
+      "executor": "./tools/executors/lint-styles:lint-styles"
+    },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
     },

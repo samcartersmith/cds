@@ -40,7 +40,9 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 #### Stylelint
 
-- [ ] web
+- [x] web
+- [x] common
+- [x] website
 
 #### Codegen tasks
 

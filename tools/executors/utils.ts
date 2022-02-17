@@ -44,3 +44,15 @@ export function createDir(path: string) {
     fs.mkdirSync(path, { recursive: true });
   }
 }
+
+export function getRootFilePath(context: ExecutorContext, ...parts: string[]): string {
+  return path.join(context.root, ...parts);
+}
+
+export function getCachePath(context: ExecutorContext, ...parts: string[]): string {
+  return getRootFilePath(context, '.nx/cache', ...parts);
+}
+
+export function getProjectCachePath(context: ExecutorContext, ...parts: string[]): string {
+  return getCachePath(context, 'projects', getProjectPath(context), ...parts);
+}

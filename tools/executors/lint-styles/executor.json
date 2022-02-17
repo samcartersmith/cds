@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "lint-styles": {
+      "implementation": "./impl",
+      "schema": "./schema.json",
+      "description": "Runs stylelint"
+    }
+  }
+}

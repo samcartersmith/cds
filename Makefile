@@ -15,6 +15,12 @@ Help:
   $$ make lint                      -- lint all of the affected packages
   $$ make lint.fix                  -- lint all of the affected packages and fix errors
 
+  $$ make stylelint.web             -- Stylelint web package
+  $$ make stylelint.common          -- Stylelint common package
+  $$ make stylelint.website         -- Stylelint website
+  $$ make stylelint                 -- Stylelint all affected packages
+  $$ make stylelint.fix             -- Stylelint and fix all affected packages
+
   $$ make test.common               -- test the `common` package.
   $$ make test.utils                -- test the `utils` package.
   $$ make test.mobile               -- test the `mobile` package.
@@ -100,6 +106,29 @@ lint:
 .PHONY: lint.fix
 lint.fix:
 	nx affected --target=lint --all --fix
+
+
+.PHONY: stylelint.common
+stylelint.common:
+	nx lint-styles common
+
+.PHONY: stylelint.web
+stylelint.web:
+	nx lint-styles web
+
+.PHONY: stylelint.website
+stylelint.website:
+	nx lint-styles website
+
+.PHONY: stylelint
+stylelint:
+	nx affected --target=lint-styles --all
+
+.PHONY: stylelint.fix
+stylelint.fix:
+	nx affected --target=lint-styles --all --fix
+
+
 
 .PHONY: test.common
 test.common:
