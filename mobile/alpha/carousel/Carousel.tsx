@@ -26,6 +26,7 @@ import type {
   CarouselId,
   CarouselRef,
   CarouselOnDismissItem,
+  CarouselOnDismissLastItem,
   CarouselItemAnimatedStyles,
   CarouselMountedItemsInfo,
 } from './types';
@@ -33,14 +34,21 @@ import type {
 export type { CarouselId, CarouselRef };
 
 export type CarouselProps = {
+  /** Determines whether progress indicators are shown in top left of Carousel. */
   showProgress?: boolean;
+  /** Determines where dismiss IconButton is shown in each Carousel slide. */
   showDismiss?: boolean;
+  /** An array of React.Elements to use as child for each Carousel slide. A unique key, not based on index must be provided. */
   items: React.ReactElement[];
   /** Return value from useCarousel hook. Allows access to certain internal data/methods of Carousel. */
   carouselRef?: React.MutableRefObject<CarouselRef | undefined>;
   /** Gap to insert between siblings. The last item will exclude additional spacing. */
   gap?: SpacingScale;
+  /** Optional callback function which will run after a Carousel item is dismissed. */
   onDismissItem?: CarouselOnDismissItem;
+  /** Optional callback function which will run after the last item is dismissed and Carousel height is collapsed. */
+  onDismissLastItem?: CarouselOnDismissLastItem;
+  /** The width of each Carousel item. */
   itemWidth?: number;
 } & Omit<ScrollViewProps, 'style'> &
   SharedProps;
@@ -54,6 +62,7 @@ export const Carousel = memo(
         gap = 0,
         testID = 'Carousel',
         onDismissItem,
+        onDismissLastItem,
         showProgress = false,
         showDismiss = false,
         itemWidth: itemWidthProp,
@@ -110,9 +119,9 @@ export const Carousel = memo(
       /** The number of of CarouselItems */
       const childrenLength = visibleItems.length;
 
-      const getDismissHandler = useCallback(
-        (id: CarouselId) => {
-          return () => {
+      const getDismissItemHandler = useCallback(
+        function getDismissItemHandler(id: CarouselId) {
+          return function handleDismissItem() {
             setDismissedItems((prev) => new Set(prev).add(id));
             onDismissItem?.(id);
           };
@@ -120,14 +129,27 @@ export const Carousel = memo(
         [onDismissItem],
       );
 
-      const getOnMountHandler = useCallback((id: CarouselId, index: number) => {
-        return (animatedStyles: CarouselItemAnimatedStyles) => {
+      const getOnDismissLastItemHandler = useCallback(
+        function getOnDismissLastItemHandler(id: CarouselId) {
+          return function handleOnDismissLastItem() {
+            onDismissLastItem?.({ id, resetDismissedItems });
+          };
+        },
+        [onDismissLastItem, resetDismissedItems],
+      );
+
+      const getOnMountItemHandler = useCallback(function getOnMountItemHandler(
+        id: CarouselId,
+        index: number,
+      ) {
+        return function handleOnMountItem(animatedStyles: CarouselItemAnimatedStyles) {
           setMountedItemsInfo((prev) => ({
             ...prev,
             [id]: { animatedStyles, id, index },
           }));
         };
-      }, []);
+      },
+      []);
 
       /** Imperatively handling scrolling Carousel to an item. LayoutMap has the index to x coordinate mapping. */
       const scrollToId = useCallback(
@@ -147,9 +169,10 @@ export const Carousel = memo(
           dismissedItems,
           resetDismissedItems,
           scrollToId,
+          scrollTo,
           scrollToEnd,
         }),
-        [childrenLength, dismissedItems, resetDismissedItems, scrollToId, scrollToEnd],
+        [childrenLength, dismissedItems, resetDismissedItems, scrollToId, scrollTo, scrollToEnd],
       );
 
       /**
@@ -179,8 +202,9 @@ export const Carousel = memo(
               totalItems={visibleItems.length}
               width={itemWidth}
               progressOpacity={indicatorsOpacity.current}
-              onDismiss={getDismissHandler(id)}
-              onMount={getOnMountHandler(id, index)}
+              onDismiss={getDismissItemHandler(id)}
+              onDismissLastItem={getOnDismissLastItemHandler(id)}
+              onMount={getOnMountItemHandler(id, index)}
             >
               {children}
             </CarouselItem>
@@ -192,8 +216,9 @@ export const Carousel = memo(
         showDismiss,
         xOffset,
         itemWidth,
-        getDismissHandler,
-        getOnMountHandler,
+        getDismissItemHandler,
+        getOnMountItemHandler,
+        getOnDismissLastItemHandler,
       ]);
 
       const progressSpacingEnd = useSpacingValue(0.5);

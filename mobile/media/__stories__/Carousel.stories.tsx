@@ -11,8 +11,8 @@ import { useCarouselItem } from '../Carousel/useCarouselItem';
 import { RemoteImage } from '../RemoteImage';
 import { TextHeadline } from '../../typography/TextHeadline';
 import { TextLabel1 } from '../../typography/TextLabel1';
-
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { ProgressBarsExample } from './CarouselAlphaExample';
 
 const ExampleCarouselItem = memo(() => {
   const { dismiss, id } = useCarouselItem();
@@ -146,6 +146,7 @@ const DynamicItemsExample = () => {
 const CarouselScreen = () => {
   return (
     <ExampleScreen>
+      <ProgressBarsExample />
       <DynamicItemsExample />
       <SimpleExample />
       <UpdateOnMountExample />

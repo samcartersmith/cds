@@ -1,6 +1,6 @@
 import type { NoopFn } from '@cbhq/cds-common';
 import { Animated } from 'react-native';
-import { ScrollToParams, ScrollToEndFn } from '../../hooks/useScrollTo';
+import { ScrollToParams, ScrollToFn, ScrollToEndFn } from '../../hooks/useScrollTo';
 
 export type CarouselId = React.Key;
 export type CarouselScrollToId = (id: CarouselId, params?: ScrollToParams | undefined) => void;
@@ -10,6 +10,7 @@ export type CarouselRef = {
   length: number;
   resetDismissedItems: NoopFn;
   scrollToId: CarouselScrollToId;
+  scrollTo: ScrollToFn;
   scrollToEnd: ScrollToEndFn;
 };
 
@@ -28,4 +29,8 @@ export type CarouselMountedItemInfo = {
 export type CarouselMountedItemsInfo = Record<CarouselId, CarouselMountedItemInfo>;
 export type CarouselOnItemMount = (params: CarouselItemAnimatedStyles) => void;
 export type CarouselOnDismissItem = (id: CarouselId) => void;
+export type CarouselOnDismissLastItem = (params: {
+  id: CarouselId;
+  resetDismissedItems: NoopFn;
+}) => void;
 export type CarouselHandleDismissItem = (callbackFn?: CarouselOnDismissItem) => void;

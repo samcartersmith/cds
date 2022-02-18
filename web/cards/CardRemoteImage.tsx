@@ -1,6 +1,5 @@
 import React, { memo, useMemo } from 'react';
 import type { CardRemoteImageProps } from '@cbhq/cds-common/types';
-import { cardRemoteImageProps } from '@cbhq/cds-common/tokens/card';
 import { getDefaultAspectRatioForIllustration } from '@cbhq/cds-common/utils/getDefaultAspectRatioForIllustration';
 
 import { RemoteImage } from '../media/RemoteImage';
@@ -8,8 +7,8 @@ import { RemoteImage } from '../media/RemoteImage';
 export type { CardRemoteImageProps };
 
 export const CardRemoteImage = memo(function CardRemoteImage({ src, size }: CardRemoteImageProps) {
-  const aspectRatio = useMemo(() => getDefaultAspectRatioForIllustration(size), [size]);
-  return <RemoteImage {...cardRemoteImageProps} source={src} aspectRatio={aspectRatio} />;
+  const [width, height] = useMemo(() => getDefaultAspectRatioForIllustration(size), [size]);
+  return <RemoteImage source={src} width={width} height={height} />;
 });
 
 CardRemoteImage.displayName = 'CardRemoteImage';

@@ -22,6 +22,7 @@ export const useCarousel = () => {
     length: 0,
     resetDismissedItems: noop,
     scrollToId: noop,
+    scrollTo: noop,
     scrollToEnd: noop,
   });
 };

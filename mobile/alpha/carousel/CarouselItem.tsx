@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo, useRef, createContext, useState } from 'react';
 
-import { SpacingScale } from '@cbhq/cds-common';
+import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { Animated, View } from 'react-native';
 import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animation/carousel';
 
@@ -41,10 +41,16 @@ type CarouselItemProps = {
   showDismiss?: boolean;
   /** x position of the Carousel scroll view. Used to interpolate opacity of dimiss button when showDismiss is true. */
   xOffset: Animated.Value;
+  /** The total number of slides in a Carousel. Is used to understand certain conditions such as if is the last or only item. */
   totalItems: number;
+  /** The width for Carousel slide. */
   width: number;
+  /** The animated opacity for progress indicators. When the second to last item is dismissed we want to fade out progress indicators. */
   progressOpacity?: Animated.Value;
-  onDismiss?: CarouselOnDismissItem;
+  /** Optional callback function which will run after a Carousel item is dismissed. */
+  onDismiss?: NoopFn;
+  /** Optional callback function which will run after the last item is dismissed and Carousel height is collapsed. */
+  onDismissLastItem?: NoopFn;
   onMount: CarouselOnItemMount;
 };
 
@@ -60,6 +66,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
     width,
     progressOpacity,
     onDismiss,
+    onDismissLastItem,
     onMount,
   }) => {
     const snapPoint = width * index;
@@ -90,7 +97,6 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
       };
     }, [isFirstItem, isLastItem, snapPoint, xOffset]);
 
-    /** Dismiss a CarouselItem. We pass the item's index and opacity to Carousel to manage playback because Carousel has checks to guarantee we don't play multiple animations at once. */
     const handleDismiss = useCallback(
       (callbackFn?: CarouselOnDismissItem) => {
         innerBox.current?.measureInWindow((_x, _y, innerWidth, innerHeight) => {
@@ -116,12 +122,15 @@ export const CarouselItem: React.FC<CarouselItemProps> = memo(
           Animated.parallel(animations).start(() => {
             isAnimating.current = false;
             callbackFn?.(id);
-            onDismiss?.(id);
+            onDismiss?.();
             onMount(stylesToAnimate);
+            if (isOnlyItem) {
+              onDismissLastItem?.();
+            }
           });
         });
       },
-      [isOnlyItem, progressOpacity, totalItems, id, onDismiss, onMount],
+      [isOnlyItem, progressOpacity, totalItems, id, onDismiss, onMount, onDismissLastItem],
     );
 
     const handleDismissPress = useCallback(() => {

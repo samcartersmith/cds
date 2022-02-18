@@ -21,12 +21,6 @@ export const cardVariantMediaDefaults = {
   feature: 'spotSquare',
 } as const;
 
-export const cardRemoteImageProps = {
-  height: 'auto',
-  width: '100%',
-  resizeMode: 'cover',
-} as const;
-
 export const announcementCardMinHeight = getDefaultSizeObjectForIllustration(
   cardVariantMediaDefaults.announcement,
 ).height;
