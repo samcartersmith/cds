@@ -1,12 +1,10 @@
-import { emptyObject, entries, isProduction } from '@cbhq/cds-utils';
+import { emptyObject, isProduction } from '@cbhq/cds-utils';
 import React, { useReducer, memo, useMemo } from 'react';
 import {
   FeatureFlagContext,
   FeatureFlagDispatcherContext,
   FeatureFlagDispatcherAction,
-  FeatureFlag,
   FeatureFlagsPartial,
-  frontierFeaturesOn,
   FeatureFlagsOnChange,
 } from './FeatureFlagContext';
 import { useFeatureFlags } from './useFeatureFlags';
@@ -37,55 +35,58 @@ function featureFlagReducer(state: FeatureFlagsPartial, action: FeatureFlagDispa
 export const FeatureFlagProvider: React.FC<FeatureFlagProviderProps> = memo(
   ({
     children,
-    frontierTypography,
-    frontierButton,
-    frontierColor,
-    frontierCard,
-    frontierSparkline,
-    frontier,
+    frontier: frontierProp,
+    frontierTypography: frontierTypographyProp,
+    frontierButton: frontierButtonProp,
+    frontierColor: frontierColorProp,
+    frontierCard: frontierCardProp,
+    frontierSparkline: frontierSparklineProp,
     onChange,
   }) => {
+    const {
+      frontier: frontierContext,
+      frontierTypography: frontierTypographyContext,
+      frontierButton: frontierButtonContext,
+      frontierColor: frontierColorContext,
+      frontierCard: frontierCardContext,
+      frontierSparkline: frontierSparklineContext,
+    } = useFeatureFlags();
+
     const [featureFlagsState, dispatch] = useReducer(featureFlagReducer, emptyObject);
-    // Deep merge if nesting FeatureFlagProviders
-    const defaultFeatureFlags = useFeatureFlags();
-    const value = useMemo(() => {
-      let featureFlags = defaultFeatureFlags;
-      const props: { [key in FeatureFlag]: boolean | undefined } = {
-        frontier,
-        frontierButton,
-        frontierCard,
-        frontierColor,
-        frontierSparkline,
-        frontierTypography,
+
+    const contextValue = useMemo(() => {
+      const { frontier, ...otherFeatureFlagsState } = featureFlagsState;
+      const hasFrontier = frontier ?? frontierProp ?? frontierContext;
+      return {
+        frontier: hasFrontier,
+        frontierTypography: frontierTypographyProp ?? (hasFrontier || frontierTypographyContext),
+        frontierButton: frontierButtonProp ?? (hasFrontier || frontierButtonContext),
+        frontierColor: frontierColorProp ?? (hasFrontier || frontierColorContext),
+        frontierCard: frontierCardProp ?? (hasFrontier || frontierCardContext),
+        frontierSparkline: frontierSparklineProp ?? (hasFrontier || frontierSparklineContext),
+        ...otherFeatureFlagsState,
       };
-      // Shorthand to update all frontier flags to on/off if `frontier` is present in props or state
-      if (frontier ?? featureFlagsState?.frontier) {
-        featureFlags = { ...featureFlags, ...frontierFeaturesOn };
-      }
-      // Apply prop values
-      for (const [prop, propValue] of entries(props)) {
-        if (propValue !== undefined) {
-          featureFlags[prop] = propValue;
-        }
-      }
-      // Apply values which were updated imperatively
-      return { ...featureFlags, ...featureFlagsState };
     }, [
-      defaultFeatureFlags,
       featureFlagsState,
-      frontier,
-      frontierButton,
-      frontierCard,
-      frontierColor,
-      frontierSparkline,
-      frontierTypography,
+      frontierButtonContext,
+      frontierButtonProp,
+      frontierCardContext,
+      frontierCardProp,
+      frontierColorContext,
+      frontierColorProp,
+      frontierContext,
+      frontierProp,
+      frontierSparklineContext,
+      frontierSparklineProp,
+      frontierTypographyContext,
+      frontierTypographyProp,
     ]);
 
     const dispatcherValue = useMemo(() => ({ onChange, dispatch }), [onChange]);
 
     return (
       <FeatureFlagDispatcherContext.Provider value={dispatcherValue}>
-        <FeatureFlagContext.Provider value={value}>{children}</FeatureFlagContext.Provider>
+        <FeatureFlagContext.Provider value={contextValue}>{children}</FeatureFlagContext.Provider>
       </FeatureFlagDispatcherContext.Provider>
     );
   },
