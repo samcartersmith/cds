@@ -23,7 +23,6 @@ export type SelectOptionProps = {
   onPress?: NoopFn | ((event: GestureResponderEvent) => void);
 } & Omit<SelectOptionBaseProps, 'compact'>;
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const SelectOption = memo(function SelectOption({
   title,
   description,

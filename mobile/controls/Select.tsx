@@ -24,7 +24,6 @@ import { TextInputFocusVariantContext } from './context';
 import { SelectProvider } from './SelectContext';
 import { useSelect } from './useSelect';
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Select = memo(
   forwardRef(
     (

@@ -8,7 +8,6 @@ type RenderTrayProps = {
   handleClose: NoopFn;
 };
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const Tray = memo(
   forwardRef<DrawerRefBaseProps, PropsWithChildren<TrayBaseProps>>(function Tray(
     { children, title, ...props },

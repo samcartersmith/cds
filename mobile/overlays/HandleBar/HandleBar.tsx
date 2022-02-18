@@ -5,7 +5,6 @@ import { handleBarOffset, handleBarHeight } from '@cbhq/cds-common/tokens/drawer
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
-/** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const HandleBar = () => {
   const colors = usePalette();
   const handleBarBackgroundColor = useSpectrumConditional({
