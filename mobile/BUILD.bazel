@@ -13,7 +13,6 @@ DEPS = [
     "@npm//@cbhq/cds-lottie-files",
     "@npm//@cbhq/cds-utils",
     "@npm//lodash",
-    "@npm//url-parse",
 ]
 
 PEER_DEPS = [
@@ -35,7 +34,6 @@ DEV_DEPS = [
     "@npm//@types/lodash",
     "@npm//@types/react",
     "@npm//@types/react-native",
-    "@npm//@types/url-parse",
     "@npm//type-fest",
     "@npm//@types/d3-interpolate-path",
 ]
