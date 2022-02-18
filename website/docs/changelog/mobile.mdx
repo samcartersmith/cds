@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.40.1 (2/18/2022, 10:02 AM PST)
+
+#### 🚀 Updates
+
+- Undeprecate drawer tray select for mobile. [#55404](https://github.cbhq.net/mono/repo/pull/55404)
+- **[Carousel Alpha]** Add example to debug menu. [#55409](https://github.cbhq.net/mono/repo/pull/55409), [CDS-2105](https://jira.coinbase-corp.com/browse/CDS-2105)
+- **[Carousel]** Alpha version in Frontier style. [#55351](https://github.cbhq.net/mono/repo/pull/55351), [CDS-2103](https://jira.coinbase-corp.com/browse/CDS-2103)
+- Move new Cards to mobile/alpha. [#55349](https://github.cbhq.net/mono/repo/pull/55349), [CDS-2102](https://jira.coinbase-corp.com/browse/CDS-2102)
+- Create TabNavigation for web. [#54674](https://github.cbhq.net/mono/repo/pull/54674), [CDS-2069](https://jira.coinbase-corp.com/browse/CDS-2069)
+- **[SearchInput]** Add hideStartIcon to searchinput. [#55068](https://github.cbhq.net/mono/repo/pull/55068)
+- CreateFeedCard HOC. [#55218](https://github.cbhq.net/mono/repo/pull/55218), [CDS-2078](https://jira.coinbase-corp.com/browse/CDS-2078)
+- CreateFeatureEntryCard HOC. [#55192](https://github.cbhq.net/mono/repo/pull/55192), [CDS-2079](https://jira.coinbase-corp.com/browse/CDS-2079)
+- Add new mobile cards to cards/new. [#55169](https://github.cbhq.net/mono/repo/pull/55169), [CDS-2099](https://jira.coinbase-corp.com/browse/CDS-2099)
+- UseSpacingValue - takes spacing alias & returns pixel value. [#55139](https://github.cbhq.net/mono/repo/pull/55139), [CDS-2097](https://jira.coinbase-corp.com/browse/CDS-2097)
+- CreateAnnouncementCard HOC. [#55123](https://github.cbhq.net/mono/repo/pull/55123), [CDS-2080](https://jira.coinbase-corp.com/browse/CDS-2080)
+- ProgressIndicator for new Carousel. [#55131](https://github.cbhq.net/mono/repo/pull/55131), [CDS-2085](https://jira.coinbase-corp.com/browse/CDS-2085)
+
+#### 🐞 Fixes
+
+- **[CardBody]** Color to be foregroundMuted. [#55353](https://github.cbhq.net/mono/repo/pull/55353)
+- **[Link]** Remove url-parse from cds-mobile dependency. [#55321](https://github.cbhq.net/mono/repo/pull/55321)
+
+#### 📘 Misc
+
+- Tray fixes. [#55403](https://github.cbhq.net/mono/repo/pull/55403)
+
 ## 0.40.0 (2/16/2022, 02:33 PM PST)
 
 #### 💥 Breaking

@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.1 (2/18/2022, 10:02 AM PST)
+
+#### 🚀 Updates
+
+- **[Carousel Alpha]** Add example to debug menu. [#55409](https://github.cbhq.net/mono/repo/pull/55409), [CDS-2105](https://jira.coinbase-corp.com/browse/CDS-2105)
+- Create TabNavigation for web. [#54674](https://github.cbhq.net/mono/repo/pull/54674), [CDS-2069](https://jira.coinbase-corp.com/browse/CDS-2069)
+- **[SearchInput]** Add hideStartIcon to searchinput. [#55068](https://github.cbhq.net/mono/repo/pull/55068)
+- CreateFeedCard HOC. [#55218](https://github.cbhq.net/mono/repo/pull/55218), [CDS-2078](https://jira.coinbase-corp.com/browse/CDS-2078)
+- CreateFeatureEntryCard HOC. [#55192](https://github.cbhq.net/mono/repo/pull/55192), [CDS-2079](https://jira.coinbase-corp.com/browse/CDS-2079)
+- Add new mobile cards to cards/new. [#55169](https://github.cbhq.net/mono/repo/pull/55169), [CDS-2099](https://jira.coinbase-corp.com/browse/CDS-2099)
+- **[Card]** Widen props to match closer to Box. [#55175](https://github.cbhq.net/mono/repo/pull/55175), [CDS-2035](https://jira.coinbase-corp.com/browse/CDS-2035)
+- **[TextInput, SearchInput]** Add bordered prop to TextInput and SearchInput (Web Only). [#55080](https://github.cbhq.net/mono/repo/pull/55080)
+- CreateAnnouncementCard HOC. [#55123](https://github.cbhq.net/mono/repo/pull/55123), [CDS-2080](https://jira.coinbase-corp.com/browse/CDS-2080)
+- CreateCardBody HOC. [#55032](https://github.cbhq.net/mono/repo/pull/55032), [CDS-2075](https://jira.coinbase-corp.com/browse/CDS-2075)
+
+#### 🐞 Fixes
+
+- **[FeatureFlagProvider]** Nested FeatureFlagProviders sideEffects. [#55408](https://github.cbhq.net/mono/repo/pull/55408), [CDS-2104](https://jira.coinbase-corp.com/browse/CDS-2104)
+
+#### 📘 Misc
+
+- Tray fixes. [#55403](https://github.cbhq.net/mono/repo/pull/55403)
+
 ## 0.34.0 (2/16/2022, 02:33 PM PST)
 
 #### 💥 Breaking

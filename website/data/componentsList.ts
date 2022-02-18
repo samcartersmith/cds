@@ -65,7 +65,6 @@ export const components = [
   'SidebarMoreMenu',
   'Alert',
   'Toast',
-  'Tooltip',
   'Modal',
   'ModalBody',
   'ModalFooter',
@@ -75,6 +74,7 @@ export const components = [
   'PopoverTrigger',
   'PopoverTriggerWrapper',
   'SectionTitle',
+  'Tooltip',
   'Drawer',
   'Tray',
   'DevicePreferencesProvider',
@@ -98,6 +98,6 @@ export const components = [
   'ProgressCircle',
   'Sparkline',
   'SparklineGradient',
-  'SparklineInteractiveHeader',
   'SparklineInteractive',
+  'SparklineInteractiveHeader',
 ] as const;

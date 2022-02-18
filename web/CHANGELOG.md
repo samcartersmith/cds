@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.1 (2/18/2022, 10:02 AM PST)
+
+#### 🚀 Updates
+
+- **[Carousel Alpha]** Add example to debug menu. [#55409](https://github.cbhq.net/mono/repo/pull/55409), [CDS-2105](https://jira.coinbase-corp.com/browse/CDS-2105)
+- Create TabNavigation for web. [#54674](https://github.cbhq.net/mono/repo/pull/54674), [CDS-2069](https://jira.coinbase-corp.com/browse/CDS-2069)
+- **[SearchInput]** Add hideStartIcon to searchinput. [#55068](https://github.cbhq.net/mono/repo/pull/55068)
+- CreateFeatureEntryCard HOC. [#55192](https://github.cbhq.net/mono/repo/pull/55192), [CDS-2079](https://jira.coinbase-corp.com/browse/CDS-2079)
+- **[TextInput, SearchInput]** Add bordered prop to TextInput and SearchInput (Web Only). [#55080](https://github.cbhq.net/mono/repo/pull/55080)
+- CreateAnnouncementCard HOC. [#55123](https://github.cbhq.net/mono/repo/pull/55123), [CDS-2080](https://jira.coinbase-corp.com/browse/CDS-2080)
+
 ## 0.35.0 (2/16/2022, 02:33 PM PST)
 
 #### 💥 Breaking
