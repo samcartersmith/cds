@@ -1,5 +1,5 @@
 import { createCardFooter, CardFooterProps } from '@cbhq/cds-common/cards/createCardFooter';
-import { HStack } from '../../layout/HStack';
+import { HStack } from '../layout/HStack';
 
 export type { CardFooterProps };
 

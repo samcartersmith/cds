@@ -1,7 +1,7 @@
 import { FeedCardProps, createFeedCard } from '@cbhq/cds-common/cards/createFeedCard';
 
-import { Card } from '../Card';
-import { CardMedia } from '../CardMedia';
+import { Card } from '../cards/Card';
+import { CardMedia } from './CardMedia';
 import { CardHeader } from './CardHeader';
 import { CardBody } from './CardBody';
 import { CardFooter } from './CardFooter';

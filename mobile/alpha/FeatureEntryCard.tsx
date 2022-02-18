@@ -3,8 +3,8 @@ import {
   FeatureEntryCardBaseProps,
 } from '@cbhq/cds-common/cards/createFeatureEntryCard';
 
-import { ButtonProps } from '../../buttons/Button';
-import { Card } from '../Card';
+import { ButtonProps } from '../buttons/Button';
+import { Card } from '../cards/Card';
 import { CardBody } from './CardBody';
 
 type OnPress = ButtonProps['onPress'];
