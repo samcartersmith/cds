@@ -23,7 +23,7 @@ export const CardBody: React.FC<CardBodyProps> = memo(
         <TextHeadline numberOfLines={numberOfLines} ellipsizeMode="tail">
           {title}
         </TextHeadline>
-        <TextBody numberOfLines={numberOfLines} ellipsizeMode="tail">
+        <TextBody numberOfLines={numberOfLines} ellipsizeMode="tail" color="foregroundMuted">
           {description}
         </TextBody>
       </>
