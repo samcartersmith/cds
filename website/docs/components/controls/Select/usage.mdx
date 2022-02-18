@@ -114,40 +114,45 @@ function Variant() {
 
 ### Mobile Implementation <Badge variant="comingSoon" />
 
-The mobile version of `Select` is quite different from web. When you interact with the trigger, it will toggle the visibility of a `Tray` which contains all the `SelectOption`s.
+The mobile version of `Select` is quite different from web; where on mobile, `Select` is just the trigger to toggle the visibility of a `Menu` that is contained in a `Tray`.
 
-You can add a `title` as a prop to the`Tray`.
-
-**Note**: `Tray` exposes a `handleClose` method as a prop to child functions. We recommend using the pattern shown below to control the visibility of the `Tray`.
+On mobile, all `SelectOption`s must be wrapped in a `Menu`. Think of it as a controlled `Select` on web, where you pass it the `value` and `onChange` handler.
 
 #### Default Composition
 
 ```jsx
-function DefaultSelectMobile() {
-  const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
+const SelectMobile = () => {
+  const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+    useToggler(false);
   const [value, setValue] = useState();
+  const trayRef = useRef(undefined);
+
   const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];
+
+  const handleOptionPress = () => {
+    trayRef.current?.handleClose();
+  };
+
   return (
-    <Select value={value} onPress={toggleOn}>
+    <>
+      <Select value={value} onPress={handleOpenTray} />
       {isTrayVisible && (
-        <Tray title={trayTitle} onCloseComplete={toggleOff}>
-          {({ handleClose }) =>
-            options.map((option) => {
-              return (
-                <SelectOption
-                  title={option.label}
-                  key={option.value}
-                  onPress={handleClose}
-                  onChange={setValue}
-                  value={option}
-                  selected={value === option.value}
-                />
-              );
-            })
-          }
+        <Tray title={title} onCloseComplete={handlehandleClose} ref={trayRef}>
+          {/* You must wrap options in Menu. Treat it as a Select on web */}
+          <Menu value={value} onChange={setValue}>
+            {options.map((option: string) => (
+              <SelectOption
+                key={option}
+                title={option}
+                description="BTC"
+                onPress={handleOptionPress}
+                value={option}
+              />
+            ))}
+          </Menu>
         </Tray>
       )}
-    </Select>
+    </>
   );
-}
+};
 ```

@@ -135,7 +135,7 @@ export const trayBuilder = ({
       useToggler(false);
     const [value, setValue] = useState<string>();
     const trayRef = useRef<DrawerRefBaseProps>();
-    const [isLoading, toggleIsLoading] = useToggler(true);
+    const [isLoading, toggleIsLoading] = useToggler(fallbackEnabled);
 
     useEffect(() => {
       if (isTrayVisible && fallbackEnabled) {

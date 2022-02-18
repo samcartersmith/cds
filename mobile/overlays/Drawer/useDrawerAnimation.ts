@@ -41,10 +41,10 @@ export const useDrawerAnimation = (pin: PinningDirection | undefined = 'bottom')
       Animated.timing(drawerAnimation.current, {
         toValue: animateDrawerOutConfig.toValue,
         useNativeDriver: true,
-        duration: durations[drawerAnimationDefaultDuration],
+        duration: isPinVertical ? durations.fast3 : durations[drawerAnimationDefaultDuration],
         easing: Easing.ease,
       }),
-    [],
+    [isPinVertical],
   );
 
   const translation = useMemo(() => {
