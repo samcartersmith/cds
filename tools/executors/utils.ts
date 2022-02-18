@@ -15,6 +15,7 @@ export async function runLocalCommand(context: ExecutorContext, bin: string, arg
   const result = await execa(bin, args, {
     cwd,
     stdio: 'inherit',
+    preferLocal: true,
   });
 
   return Promise.resolve({ success: result.exitCode === 0 });
