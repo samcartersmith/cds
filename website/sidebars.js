@@ -7,8 +7,6 @@ const sectionsToExcludeByLabel = new Set(['Accordions']);
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
-  'components/overlays/Drawer/drawer',
-  'components/overlays/Tray/tray',
   'components/navigation/SidebarMoreMenu/sidebar-more-menu',
 ]);
 
