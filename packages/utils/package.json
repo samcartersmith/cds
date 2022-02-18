@@ -10,7 +10,7 @@
   "authors": "Coinbase",
   "dependencies": {
     "humps": "^2.0.1",
-    "type-fest": "1.2.0"
+    "type-fest": "^1.2.0"
   },
   "types": "./index.d.ts",
   "main": "./index.ts"

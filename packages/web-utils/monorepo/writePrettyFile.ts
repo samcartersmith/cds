@@ -1,5 +1,6 @@
 import chalk from 'chalk';
 import fs from 'fs';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import prettier from 'prettier';
 
 export async function writePrettyFile({

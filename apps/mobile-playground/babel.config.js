@@ -14,12 +14,6 @@ module.exports = {
       {
         root: ['./'],
         alias: {
-          '@cbhq/cds-common': '../../packages/common',
-          '@cbhq/cds-utils': '../../packages/utils',
-          '@cbhq/cds-lottie-files': '../../packages/lottie-files',
-          '@cbhq/cds-fonts': '../../packages/fonts',
-          '@cbhq/cds-web-utils': '../../packages/web-utils',
-          '@cbhq/cds-web': '../../packages/web',
           ':cds-website': './',
         },
       },

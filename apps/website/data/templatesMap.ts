@@ -2347,33 +2347,6 @@ export const SparklineGradient = {
   ),
 };
 
-export const ChartHeader = {
-  'chart-header': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/chart-header.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/implementation.mdx'
-      ),
-  ),
-  intro: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/intro.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/usage.mdx'
-      ),
-  ),
-};
-
 export const SparklineInteractive = {
   implementation: React.lazy(
     async () =>
@@ -2397,6 +2370,33 @@ export const SparklineInteractive = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/SparklineInteractive/usage.mdx'
+      ),
+  ),
+};
+
+export const ChartHeader = {
+  'chart-header': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/chart-header.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/implementation.mdx'
+      ),
+  ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/intro.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/visualizations/ChartHeader/usage.mdx'
       ),
   ),
 };

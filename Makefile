@@ -40,10 +40,9 @@ Help:
   $$ make build.website             -- Build website.
 
   $$ make clean.ios                 -- Clean ios build
-  $$ make setup.mobile              -- Setup mobile dependencies 
+  $$ make clean.android             -- Clean android build
   $$ make build.ios                 -- Build the playground ios app.
   $$ make build.android             -- Build the playground android app.
-  $$ make start.mobile              -- Start metro server.
 
   $$ make build.fonts               -- Build the `fonts` package.
   $$ make build.common              -- Build the `common` package.
@@ -188,23 +187,19 @@ start.website:
 
 .PHONY: clean.ios
 clean.ios:
-	rm -rf ~/Library/Developer/Xcode/DerivedData && rm -rf apps/mobile-playground/ios/Pods && rm -rf apps/mobile-playground/ios/build && rm -rf apps/mobile-playground/ios/app.xc*
+	nx run mobile-playground:ios --clean
 
-.PHONY: setup.mobile
-setup.mobile:
-	cd apps/mobile-playground/ios && rm -rf MobilePlayground.* && xcodegen generate && pod install && cd ../../ && yarn react-native link 
+.PHONY: clean.android
+clean.android:
+	nx run mobile-playground:android --clean
 
 .PHONY: build.ios
 build.ios:
-	yarn react-native run-ios --project-path apps/mobile-playground/ios	
+	nx run mobile-playground:ios
 
 .PHONY: build.android
 build.android:
-	yarn react-native run-android 
-
-.PHONY: start.mobile
-start.mobile:
-	yarn react-native start --projectRoot apps/mobile-playground --config apps/mobile-playground/metro.config.js	
+	nx run mobile-playground:android
 
 .PHONY: build.common
 build.common:

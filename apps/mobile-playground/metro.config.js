@@ -3,13 +3,7 @@ const blacklist = require('metro-config/src/defaults/exclusionList');
 
 const projectRoot = __dirname;
 
-const extraNodeModules = {
-  react: path.join(projectRoot, '../../node_modules/react'),
-  'react-native': path.join(projectRoot, '../../node_modules/react-native'),
-};
-
 const metroConfig = {
-  projectRoot,
   resetCache: true,
   watchFolders: [
     path.resolve(projectRoot, '../../node_modules'),
@@ -20,8 +14,6 @@ const metroConfig = {
     blacklistRE: blacklist([/dist\/@cb\/.*/, /dist\/package.json/]),
     resolveMainFields: ['react-native', 'browser', 'main'],
     sourceExts: ['cjs', 'ts', 'tsx', 'js', 'jsx', 'json', 'd.ts'],
-    useWatchman: false,
-    extraNodeModules,
   },
   transformer: {
     getTransformOptions: async () => ({

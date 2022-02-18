@@ -4,7 +4,7 @@ import fs, { existsSync, readFileSync, renameSync, unlink } from 'fs';
 import { reduce } from 'lodash';
 import ora, { Ora } from 'ora';
 import path from 'path';
-import { loadConfig, optimize, OptimizeOptions } from 'svgo';
+import { loadConfig, optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
 import { camelCase, pascalCase, renameKeys } from '@cbhq/cds-utils';
 
 import { CDS_PERSONAL_ACCESS_TOKEN, FigmaClient } from '../figma/client';
@@ -221,7 +221,7 @@ const loadOneImage = async (
   if (fileStatus === 'modified' && !modified.includes(nameAndSpectrum)) return;
 
   const optimizedSVG = optimize(String(svgRes.data), svgOptimizerConfig);
-  fs.writeFileSync(fileNameFullPath, optimizedSVG.data, ENCODING);
+  fs.writeFileSync(fileNameFullPath, (optimizedSVG as OptimizedSvg).data, ENCODING);
 
   /** Enable to recreate all the js files  */
   // createSvgXML({
@@ -254,7 +254,7 @@ const loadOneImage = async (
     // the illustration was changed or it is new.
     createSvgXML({
       outPath: newJsOutFullPath,
-      svgStr: optimizedSVG.data,
+      svgStr: (optimizedSVG as OptimizedSvg).data,
       fileName: newJsFileName,
       fileStatus,
     });

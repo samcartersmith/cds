@@ -64,7 +64,7 @@ async function runBabel(
     '--extensions',
     extensions.join(','),
     '--ignore',
-    ignore.join(','),
+    [...ignore, 'node_modules'].join(','),
     //'--source-maps',
     '--out-dir',
     destinationDir,

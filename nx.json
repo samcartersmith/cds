@@ -4,7 +4,8 @@
     "defaultBase": "master"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/workspace",
+    "packageManager": "yarn"
   },
   "implicitDependencies": {
     "*.config.js": "*",
@@ -21,7 +22,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheDirectory": ".nx/cache",
+        "cacheDirectory": "./.nx/cache",
         "cacheableOperations": ["build", "lint", "test", "e2e", "build-storybook"],
         "captureStderr": true
       }

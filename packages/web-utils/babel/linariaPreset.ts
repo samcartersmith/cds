@@ -22,7 +22,7 @@ export default function linariaPreset(
       // bazel-out/darwin-fastbuild/bin/eng/shared/design-system/<package>/lib
       outDir: argv.outDir,
       // /private/var/tmp/<hash>/sandbox/darwin-sandbox/execroot/coinbazel/eng/shared/design-system/<package>
-      sandboxDir: path.join(cwd, path.basename(argv._[0])),
+      sandboxDir: path.join(cwd, path.basename(String(argv._[0]))),
     },
   ];
 
