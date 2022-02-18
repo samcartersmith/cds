@@ -47,25 +47,34 @@ export const interactableTransparent = css`
   border-color: transparent;
 `;
 
+const transparentActiveStyles = {
+  background: 'rgba(var(--interactable-overlay), var(--interactable-opacity, 1))',
+  position: 'absolute',
+  content: "''",
+  width: 'calc(100% + 5px)',
+  height: 'calc(100% + 5px)',
+  'pointer-events': 'none',
+};
+
 // Go from a transparent background to a solid when interacted with.
 export const interactableTransparentActive = css`
   &:active {
-    background-image: linear-gradient(
-      to right,
-      rgba(var(--interactable-overlay), var(--interactable-opacity, 1)),
-      rgba(var(--interactable-overlay), var(--interactable-opacity, 1))
-    );
     background-color: var(--interactable-underlay);
   }
 
   ${mediaQueries.supportsHover} {
     &:hover {
-      background-image: linear-gradient(
-        to right,
-        rgba(var(--interactable-overlay), var(--interactable-opacity, 1)),
-        rgba(var(--interactable-overlay), var(--interactable-opacity, 1))
-      );
       background-color: var(--interactable-underlay);
+    }
+  }
+
+  &:active::before {
+    ${transparentActiveStyles}
+  }
+
+  ${mediaQueries.supportsHover} {
+    &:hover::before {
+      ${transparentActiveStyles}
     }
   }
 `;
