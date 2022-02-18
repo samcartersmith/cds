@@ -1,6 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, StyleSheet, StyleProp, View, ViewStyle } from 'react-native';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
 import { Box, BoxProps } from '../layout/Box';
 import { usePalette } from '../hooks/usePalette';
 
@@ -21,7 +20,6 @@ export const ProgressIndicator = memo(
     ref,
   ) {
     const { line, foreground } = usePalette();
-    const wrapperHeight = useInteractableHeight(true);
     const outerStyles = useMemo(() => [styles.dash, { backgroundColor: line }], [line]);
     const innerStyles = useMemo(
       () => [
@@ -45,7 +43,6 @@ export const ProgressIndicator = memo(
       <Box
         ref={ref}
         animated
-        height={wrapperHeight}
         alignItems="center"
         justifyContent="center"
         dangerouslySetStyle={dangerouslySetStyle}

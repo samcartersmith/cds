@@ -20,7 +20,6 @@ export const CarouselControlsWrapper = memo(function CarouselControlsWrapper({
       left={0}
       right={0}
       spacingHorizontal={gutter}
-      alignItems="center"
       zIndex={zIndex.interactable}
       animated
       opacity={opacity}
