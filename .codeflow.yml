@@ -4,6 +4,7 @@ secure:
     - master
 build:
   engines:
-    - BaldurNode:
-        name: package-example
-        path: ./packages/example/publish.Dockerfile
+    # Apps
+    - BaldurECR:
+        name: cds-website-docs
+        path: ./apps/website/production.Dockerfile
