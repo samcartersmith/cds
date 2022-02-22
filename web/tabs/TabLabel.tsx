@@ -35,6 +35,7 @@ export type TabLabelProps = CommonTabLabelProps & TextProps;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabLabel = memo(({ id, active, variant = 'primary', ...props }: TabLabelProps) => {
+  const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
   const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
   const TextElement = useMemo(() => {
     if (variant === 'primary') return TextHeadline;
@@ -45,10 +46,10 @@ export const TabLabel = memo(({ id, active, variant = 'primary', ...props }: Tab
 
   return (
     <>
-      {!active && variant !== 'primary' ? (
+      {shouldMeasureElement ? (
         <span className={containerClassName}>
           <TextElement as="h2" color={color} {...props} />
-          {/* This element is used to ensure the element with doens't change when we change font-weight */}
+          {/* This element is used to ensure the element width doesn't change when we change font-weight */}
           <TextTitle3
             as="h2"
             {...props}
