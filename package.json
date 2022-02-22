@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Coinbase design system",
-  "repository": "git@github.cbhq.net:jonathan-rossi/design-system.git",
+  "repository": "git@github.cbhq.net:frontend/cds.git",
   "scripts": {
     "validate": "nx workspace-lint",
     "codeowners": "mono-pipeline sync-codeowners",
