@@ -3,7 +3,6 @@ import { Story, Meta } from '@storybook/react';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
 import { VStack } from '../../layout/VStack';
 
-import { TabIndicator } from '..';
 import { ThemeProvider } from '../../system';
 import { TabNavigation } from '../TabNavigation';
 import { Select, SelectOption } from '../../controls';
@@ -33,7 +32,7 @@ const tabs: TabProps[] = [
 
 export default {
   title: 'Core Components/Tabs/TabNavigation',
-  component: TabIndicator,
+  component: TabNavigation,
 } as Meta;
 
 export const TabIndicatorPrimary: Story = () => {

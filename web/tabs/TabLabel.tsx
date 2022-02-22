@@ -5,7 +5,7 @@ import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
 import { TextProps } from '../typography/TextProps';
 import { spacing } from '../tokens';
 
-const className = css`
+export const tabLabelSpacingClassName = css`
   padding-top: ${spacing[2]};
   padding-bottom: calc(${spacing[2]} - 2px); // Account for the 2px TabIndicator
 `;
@@ -61,7 +61,7 @@ export const TabLabel = memo(({ id, active, variant = 'primary', ...props }: Tab
           as="h2"
           color={color}
           {...props}
-          dangerouslySetClassName={variant === 'primary' ? className : undefined}
+          dangerouslySetClassName={variant === 'primary' ? tabLabelSpacingClassName : undefined}
         />
       )}
     </>
