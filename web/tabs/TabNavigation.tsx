@@ -9,18 +9,11 @@ import { useTabLabels } from './hooks/useTabLabels';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabNavigation = memo(
-  ({
-    tabs,
-    defaultTab = '',
-    variant = 'primary',
-    testID,
-    onChange = noop,
-    ...rest
-  }: TabNavigationProps) => {
+  ({ tabs, value, variant = 'primary', testID, onChange = noop, ...rest }: TabNavigationProps) => {
     const isDense = useScaleDensity() === 'dense';
     const isPrimary = useMemo(() => variant === 'primary', [variant]);
     const shouldOverrideScale = useMemo(() => isDense && isPrimary, [isDense, isPrimary]);
-    const { tabLabels, tabIndicatorProps } = useTabLabels({ tabs, defaultTab, variant, onChange });
+    const { tabLabels, tabIndicatorProps } = useTabLabels({ tabs, value, variant, onChange });
 
     return (
       <VStack testID={testID} {...rest} spacing={0}>

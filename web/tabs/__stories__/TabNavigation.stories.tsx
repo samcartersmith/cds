@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
-import { TabProps } from '@cbhq/cds-common/types';
+import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
 import { VStack } from '../../layout/VStack';
 
 import { TabIndicator } from '..';
 import { ThemeProvider } from '../../system';
 import { TabNavigation } from '../TabNavigation';
-
-// eslint-disable-next-line no-console
-const handleChange = console.log;
+import { Select, SelectOption } from '../../controls';
 
 const tabs: TabProps[] = [
   {
@@ -39,22 +37,29 @@ export default {
 } as Meta;
 
 export const TabIndicatorPrimary: Story = () => {
+  const [currentLightTab, setCurrentLightTab] = useState<TabNavigationProps['value']>(tabs[2].id);
+  const [currentDarkTab, setCurrentDarkTab] = useState<TabNavigationProps['value']>();
+
   return (
     <>
       <ThemeProvider spectrum="light">
         <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} onChange={handleChange} />
-        </VStack>
-        <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} defaultTab="second_item" onChange={handleChange} />
+          <TabNavigation tabs={tabs} onChange={setCurrentLightTab} value={currentLightTab} />
+          <Select value={currentLightTab} onChange={setCurrentLightTab} label="Select a tab">
+            {tabs.map((option) => (
+              <SelectOption value={option.id} title={option.label} key={option.id} />
+            ))}
+          </Select>
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">
         <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} onChange={handleChange} />
-        </VStack>
-        <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} defaultTab="second_item" onChange={handleChange} />
+          <TabNavigation tabs={tabs} onChange={setCurrentDarkTab} value={currentDarkTab} />
+          <Select value={currentDarkTab} onChange={setCurrentDarkTab} label="Select a tab">
+            {tabs.map((option) => (
+              <SelectOption value={option.id} title={option.label} key={option.id} />
+            ))}
+          </Select>
         </VStack>
       </ThemeProvider>
     </>
@@ -62,31 +67,43 @@ export const TabIndicatorPrimary: Story = () => {
 };
 
 export const TabIndicatorSecondary: Story = () => {
+  const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>();
+
   return (
     <>
       <ThemeProvider spectrum="light">
         <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} variant="secondary" onChange={handleChange} />
+          <TabNavigation
+            value={currentTab}
+            tabs={tabs}
+            variant="secondary"
+            onChange={setCurrentTab}
+          />
         </VStack>
         <VStack spacing={2} gap={2} background="background">
           <TabNavigation
             tabs={tabs}
             variant="secondary"
-            defaultTab="second_item"
-            onChange={handleChange}
+            value={currentTab}
+            onChange={setCurrentTab}
           />
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">
         <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} variant="secondary" onChange={handleChange} />
+          <TabNavigation
+            value={currentTab}
+            tabs={tabs}
+            variant="secondary"
+            onChange={setCurrentTab}
+          />
         </VStack>
         <VStack spacing={2} gap={2} background="background">
           <TabNavigation
             tabs={tabs}
             variant="secondary"
-            defaultTab="second_item"
-            onChange={handleChange}
+            value={currentTab}
+            onChange={setCurrentTab}
           />
         </VStack>
       </ThemeProvider>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
-import { TabProps } from '@cbhq/cds-common';
+import { TabNavigationProps, TabProps } from '@cbhq/cds-common';
 import { TabNavigation } from '../TabNavigation';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
@@ -35,13 +35,13 @@ const tabs: TabProps[] = [
 
 // TODO update once _Tabs_ component is complete
 const TabScreen = () => {
-  const [activeTabOne, setActiveTabOne] = useState<string>();
-  const [activeTabTwo, setActiveTabTwo] = useState<string>();
+  const [activeTabOne, setActiveTabOne] = useState<TabNavigationProps['value']>(tabs[0].id);
+  const [activeTabTwo, setActiveTabTwo] = useState<TabNavigationProps['value']>(tabs[1].id);
 
   return (
     <ExampleScreen>
       <Example title="Tab System" spacing={gutter} overflow="visible">
-        <TabNavigation onChange={setActiveTabOne} tabs={tabs} />
+        <TabNavigation onChange={setActiveTabOne} value={activeTabOne} tabs={tabs} />
         <VStack
           background="backgroundAlternate"
           alignItems="center"
@@ -53,7 +53,12 @@ const TabScreen = () => {
         </VStack>
       </Example>
       <Example title="Tab System (Secondary)" spacing={gutter} overflow="visible">
-        <TabNavigation variant="secondary" onChange={setActiveTabTwo} tabs={tabs} />
+        <TabNavigation
+          variant="secondary"
+          value={activeTabTwo}
+          onChange={setActiveTabTwo}
+          tabs={tabs}
+        />
         <VStack
           background="backgroundAlternate"
           alignItems="center"

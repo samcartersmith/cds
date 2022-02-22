@@ -5,23 +5,16 @@ import { TabLabel } from '../TabLabel';
 import { PressableOpacity } from '../../system/PressableOpacity';
 
 type LayoutMap = Record<string, { width: number; x: number }>;
-type UseTabLabelsProps = Required<
-  Pick<TabNavigationProps, 'tabs' | 'defaultTab' | 'variant' | 'onChange'>
->;
+type UseTabLabelsProps = Required<Pick<TabNavigationProps, 'tabs' | 'variant' | 'onChange'>> &
+  Pick<TabNavigationProps, 'value'>;
 
 /** This hook provides decorated TabLabels and animated props for a TabIndicator - and handles onChange events */
-export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTabLabelsProps) => {
-  // Keep track of the active item
-  const [activeId, setActiveId] = useState(defaultTab);
-  useEffect(() => {
-    if (!defaultTab) setActiveId(tabs[0].id);
-  }, [tabs, defaultTab]);
-
-  // Broadcast the change event
-  useEffect(() => {
-    onChange?.(activeId);
-  }, [activeId, onChange]);
-
+export const useTabLabels = ({
+  tabs,
+  value = tabs[0].id,
+  variant,
+  onChange,
+}: UseTabLabelsProps) => {
   // When each item renders, calculate it's coords and save them
   const [layoutMap, updateLayoutMap] = useState<LayoutMap>({});
   const handleLayout = useCallback(
@@ -39,23 +32,23 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
 
   // State for the TabIndicator props
   const [tabIndicatorProps, setTabIndicatorProps] = useState<TabIndicatorProps>({
-    width: layoutMap[activeId]?.width ?? 0,
-    x: layoutMap[activeId]?.x ?? 0,
+    width: layoutMap[value]?.width ?? 0,
+    x: layoutMap[value]?.x ?? 0,
   });
   useEffect(() => {
     setTabIndicatorProps({
-      width: layoutMap[activeId]?.width,
-      x: layoutMap[activeId]?.x,
+      width: layoutMap[value]?.width,
+      x: layoutMap[value]?.x,
     });
-  }, [activeId, layoutMap]);
+  }, [value, layoutMap]);
 
   // Iterate over the tabs and create Pressable TabLabels
   const tabLabels = useMemo(
     () =>
-      tabs.filter(Boolean).map(({ id, onPress, label, accessibilityLabel = label }, idx) => {
+      tabs.filter(Boolean).map(({ id, onPress, label, accessibilityLabel = label }) => {
         // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
         const handleTabPress = () => {
-          setActiveId(id); // Track state
+          onChange?.(id);
           onPress?.(id); // handle callback
         };
 
@@ -66,7 +59,7 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
             accessibilityHint={accessibilityLabel}
             onPress={handleTabPress}
           >
-            <TabLabel active={activeId ? activeId === id : idx === 0} variant={variant}>
+            <TabLabel active={value === id} variant={variant}>
               {label}
             </TabLabel>
           </PressableOpacity>
@@ -74,7 +67,7 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
 
         return createElement(View, { key: id, onLayout }, children);
       }),
-    [tabs, variant, activeId, handleLayout, setActiveId],
+    [tabs, value, variant, onChange, handleLayout],
   );
 
   return useMemo(() => ({ tabLabels, tabIndicatorProps }), [tabLabels, tabIndicatorProps]);

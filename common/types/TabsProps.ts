@@ -1,20 +1,20 @@
 import { PropsWithChildren, ReactElement } from 'react';
+import { SetState } from './React';
 import { SharedProps } from './SharedProps';
 
-export type TabsProps<T extends string = string> = {
-  /** Which tab should mount on the initial render? This is useful if you're building a navigable tab system
-   *  @default children[0]
-   */
-  defaultTab?: T;
+type OnChange<T extends string | undefined = string> = ((tabId: T) => void) | SetState<T>;
+export type TabsProps<T extends string | undefined = string> = {
+  /** The active tabId */
+  value?: T;
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
-  onChange?: (tabId: T) => void;
+  onChange?: OnChange<T>;
   /** Children should only be Tab's. If you only have one child, don't use tabs 🤪 */
   children: ReactElement[];
   /** Use the disableSwipe prop to prevent swiping to change tabs */
   disableSwipe?: boolean;
 } & SharedProps;
 
-export type TabProps<T extends string = string> = PropsWithChildren<{
+export type TabProps<T extends string | undefined = string> = PropsWithChildren<{
   /** The id should be a meaningful and useful identifier like "watchlist" or "forSale" */
   id: T;
   /** Define a label for this Tab */
@@ -52,15 +52,15 @@ export type TabIndicatorProps = {
   x: number;
 } & SharedProps;
 
-export type TabNavigationProps<T extends string = string> = {
-  /** Which tab should mount on the initial render? This is useful if you're building a navigable tab system
-   *  @default children[0]
+export type TabNavigationProps<T extends string | undefined = string> = {
+  /** The active tabId
+   *  @default tabs[0].id
    */
-  defaultTab?: T;
+  value?: T;
   /** Children should be TabLabels. If you only have one child, don't use tabs 🤪 */
   tabs: Omit<TabProps, 'children'>[];
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
-  onChange?: (tabId: T) => void;
+  onChange: OnChange<T>;
   /** See the Tabs TDD to understand which variant should be used.
    *  @default 'primary'
    */

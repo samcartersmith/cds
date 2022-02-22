@@ -23,45 +23,38 @@ const pressableClass = css`
   white-space: nowrap;
 `;
 
-type UseTabLabelsProps = Required<
-  Pick<TabNavigationProps, 'tabs' | 'defaultTab' | 'variant' | 'onChange'>
->;
+type UseTabLabelsProps = Required<Pick<TabNavigationProps, 'tabs' | 'variant' | 'onChange'>> &
+  Pick<TabNavigationProps, 'value'>;
 
 /** This hook provides decorated TabLabels and animated props for a TabIndicator - and handles onChange events */
-export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTabLabelsProps) => {
+export const useTabLabels = ({
+  tabs,
+  value = tabs[0].id,
+  variant,
+  onChange,
+}: UseTabLabelsProps) => {
   const layoutRefs = useRef<Record<string, DOMRect | undefined>>({});
   const offsetRef = useRef<number>(0);
-
-  // Keep track of the active item
-  const [activeId, setActiveId] = useState<string>(defaultTab);
-  useEffect(() => {
-    if (!defaultTab) setActiveId(tabs[0].id);
-  }, [tabs, defaultTab]);
-
-  // Broadcast the change event
-  useEffect(() => {
-    onChange?.(activeId);
-  }, [activeId, onChange]);
 
   // State for the TabIndicator props
   const [tabIndicatorProps, setTabIndicatorProps] = useState<TabIndicatorProps>(initialCoords);
   useEffect(() => {
     // Calculate offset using the first item in the list
-    const { width, x } = layoutRefs?.current?.[activeId] ?? initialCoords;
+    const { width, x } = layoutRefs?.current?.[value] ?? initialCoords;
     setTabIndicatorProps({ width, x: x - offsetRef?.current });
-  }, [activeId]);
+  }, [value]);
 
   // Iterate over the tabs and create Pressable TabLabels
   const tabLabels = useMemo(
     () =>
       tabs?.filter(Boolean)?.map(({ id, onPress, label, accessibilityLabel = label }, idx) => {
         const handleTabPress = () => {
-          setActiveId(id); // Track state
+          onChange(id);
           onPress?.(id); // handle callback
         };
 
         const children = (
-          <TabLabel active={activeId ? activeId === id : idx === 0} variant={variant}>
+          <TabLabel active={value === id} variant={variant}>
             {label}
           </TabLabel>
         );
@@ -87,7 +80,7 @@ export const useTabLabels = ({ tabs, defaultTab = '', variant, onChange }: UseTa
           children,
         );
       }),
-    [tabs, activeId, variant],
+    [onChange, tabs, value, variant],
   );
 
   return useMemo(() => ({ tabLabels, tabIndicatorProps }), [tabLabels, tabIndicatorProps]);

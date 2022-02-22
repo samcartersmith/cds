@@ -14,21 +14,14 @@ export const TabIndicator = memo(
         <Animated.View testID={testID} ref={forwardedRef} style={xStyle} {...props}>
           <Box
             testID="cds-tab-indicator-inner-bar-container"
-            justifyContent="center"
-            alignItems="flex-start"
             flexGrow={1}
-            flexShrink={1}
             height={2}
             overflow="hidden"
             background="primary"
           >
             <Box
               testID="cds-tab-indicator-inner-bar"
-              justifyContent="center"
-              alignItems="flex-start"
               height={2}
-              flexShrink={0}
-              flexGrow={0}
               width="100%"
               animated
               dangerouslySetStyle={widthStyle}

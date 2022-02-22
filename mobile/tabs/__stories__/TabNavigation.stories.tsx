@@ -1,8 +1,7 @@
-/* eslint-disable no-console */
-import React from 'react';
+import React, { useState } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
-import { TabProps } from '@cbhq/cds-common';
+import { TabNavigationProps, TabProps } from '@cbhq/cds-common';
 import { TabNavigation } from '../TabNavigation';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 
@@ -30,18 +29,25 @@ const tabs: TabProps[] = [
 ];
 
 const TabNavigationScreen = () => {
-  const handleChange = console.warn;
+  const [currentTabOne, setCurrentTabOne] = useState<TabNavigationProps['value']>();
+  const [currentTabTwo, setCurrentTabTwo] = useState<TabNavigationProps['value']>(tabs[2].id);
+  const [currentTabThree, setCurrentTabThree] = useState<TabNavigationProps['value']>();
 
   return (
     <ExampleScreen>
       <Example title="Tab Navigation" spacing={gutter} overflow="visible">
-        <TabNavigation tabs={tabs} onChange={handleChange} />
+        <TabNavigation tabs={tabs} value={currentTabOne} onChange={setCurrentTabOne} />
       </Example>
       <Example title="Tab Navigation (with Default Tab)" spacing={gutter} overflow="visible">
-        <TabNavigation defaultTab="second_item" onChange={handleChange} tabs={tabs} />
+        <TabNavigation value={currentTabTwo} onChange={setCurrentTabTwo} tabs={tabs} />
       </Example>
       <Example title="Tab Navigation (Secondary)" spacing={gutter} overflow="visible">
-        <TabNavigation variant="secondary" onChange={handleChange} tabs={tabs} />
+        <TabNavigation
+          variant="secondary"
+          value={currentTabThree}
+          onChange={setCurrentTabThree}
+          tabs={tabs}
+        />
       </Example>
     </ExampleScreen>
   );
