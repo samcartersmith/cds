@@ -1,14 +1,18 @@
 import { useEffect } from 'react';
 import { Animated } from 'react-native';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
-import type { AccordionCommonProps } from '@cbhq/cds-common/types';
+import type { CollapseBaseProps } from '@cbhq/cds-common/types';
 
-type AccordionAnimation = {
+type CollapsibleAnimation = {
   animateIn: Animated.CompositeAnimation;
   animateOut: Animated.CompositeAnimation;
-} & Pick<AccordionCommonProps, 'expanded'>;
+} & Pick<CollapseBaseProps, 'expanded'>;
 
-export const useAccordionAnimation = ({ expanded, animateIn, animateOut }: AccordionAnimation) => {
+export const useCollapsibleAnimation = ({
+  expanded,
+  animateIn,
+  animateOut,
+}: CollapsibleAnimation) => {
   const previousExpanded = usePreviousValue(expanded);
 
   useEffect(() => {

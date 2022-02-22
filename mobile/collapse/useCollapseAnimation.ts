@@ -5,15 +5,14 @@ import {
   animateOutOpacityConfig,
   animateInMaxHeightConfig,
   animateOutMaxHeightConfig,
-  accordionHiddenOpacity,
-  accordionHiddenMaxHeight,
-  accordionVisibleMaxHeight,
-} from '@cbhq/cds-common/animation/accordion';
+  collapseHiddenOpacity,
+  collapseHiddenMaxHeight,
+} from '@cbhq/cds-common/animation/collapse';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import type { AnimationHookProps } from '../animation/AnimationProps';
 
-type AccordionPanelAnimation = AnimationHookProps<{
+type CollapseAnimation = AnimationHookProps<{
   opacity: Animated.Value;
   maxHeight: Animated.Value;
 }>;
@@ -32,32 +31,35 @@ const heightOutConfig = convertMotionConfig({
   useNativeDriver: false,
 });
 
-export const useAccordionPanelAnimation = (defaultExpanded: boolean): AccordionPanelAnimation => {
+export const useCollapseAnimation = (
+  defaultExpanded: boolean,
+  animateToHeight: number,
+): CollapseAnimation => {
   const isDefaultExpanded = useRef(defaultExpanded);
 
-  const accordionOpacity = useRef(new Animated.Value(accordionHiddenOpacity));
-  const accordionHeight = useRef(new Animated.Value(accordionHiddenMaxHeight));
+  const collapseOpacity = useRef(new Animated.Value(collapseHiddenOpacity));
+  const collapseHeight = useRef(new Animated.Value(collapseHiddenMaxHeight));
 
   // if it's expanded by default, fast forward the animated value to skip the animation
-  if (isDefaultExpanded.current) {
-    accordionOpacity.current.setValue(1);
-    accordionHeight.current.setValue(accordionVisibleMaxHeight);
+  if (isDefaultExpanded.current && animateToHeight > 0) {
+    collapseOpacity.current.setValue(1);
+    collapseHeight.current.setValue(animateToHeight);
     isDefaultExpanded.current = false;
   }
 
   const animateIn = Animated.parallel([
-    Animated.timing(accordionOpacity.current, opacityInConfig),
-    Animated.timing(accordionHeight.current, heightInConfig),
+    Animated.timing(collapseOpacity.current, opacityInConfig),
+    Animated.timing(collapseHeight.current, { ...heightInConfig, toValue: animateToHeight }),
   ]);
 
   const animateOut = Animated.parallel([
-    Animated.timing(accordionOpacity.current, opacityOutConfig),
-    Animated.timing(accordionHeight.current, heightOutConfig),
+    Animated.timing(collapseOpacity.current, opacityOutConfig),
+    Animated.timing(collapseHeight.current, heightOutConfig),
   ]);
 
   return useMemo(() => {
     return {
-      animatedStyles: { opacity: accordionOpacity.current, maxHeight: accordionHeight.current },
+      animatedStyles: { opacity: collapseOpacity.current, maxHeight: collapseHeight.current },
       animateIn,
       animateOut,
     };

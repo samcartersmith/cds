@@ -1,6 +1,7 @@
-import { ReactNode, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { ListCellBaseProps } from './CellBaseProps';
 import { SharedProps } from './SharedProps';
+import { CollapseBaseProps } from './CollapseBaseProps';
 
 export type AccordionBaseProps = {
   /**
@@ -31,12 +32,7 @@ export type AccordionHeaderBaseProps = {
   AccordionTitleBaseProps &
   AccordionIconBaseProps;
 
-export type AccordionPanelBaseProps = {
-  /**
-   * Content of the accordion item
-   */
-  children: NonNullable<ReactNode>;
-} & AccordionCommonProps;
+export type AccordionPanelBaseProps = Omit<CollapseBaseProps, 'maxHeight'> & AccordionCommonProps;
 
 export type AccordionMediaBaseProps = Pick<ListCellBaseProps, 'media'>;
 export type AccordionTitleBaseProps = {
@@ -49,7 +45,7 @@ export type AccordionTitleBaseProps = {
    */
   subtitle?: string;
 };
-export type AccordionIconBaseProps = Pick<AccordionCommonProps, 'expanded'>;
+export type AccordionIconBaseProps = Pick<CollapseBaseProps, 'expanded'>;
 
 export type AccordionCommonProps = {
   /**
@@ -58,9 +54,4 @@ export type AccordionCommonProps = {
    * unless you want multiple items to be controlled at the same time.
    */
   itemKey: string;
-  /**
-   * Expand/collapse state of the accordion item.
-   * @default false
-   */
-  expanded: boolean;
 } & SharedProps;

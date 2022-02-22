@@ -15,7 +15,7 @@ import { TextTitle4, TextBody } from '../typography';
 import { Pressable } from '../system/Pressable';
 import { Icon } from '../icons';
 import { useAccordionIconAnimation } from './useAccordionIconAnimation';
-import { useAccordionAnimation } from './useAccordionAnimation';
+import { useCollapsibleAnimation } from '../collapse/useCollapsibleAnimation';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 
@@ -32,7 +32,7 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
 
 export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => {
   const { animatedStyles, animateIn, animateOut } = useAccordionIconAnimation();
-  useAccordionAnimation({ expanded, animateIn, animateOut });
+  useCollapsibleAnimation({ expanded, animateIn, animateOut });
 
   return (
     <Box justifyContent="flex-end">

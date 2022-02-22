@@ -9,6 +9,7 @@ export * from './CardBaseProps';
 export * from './CellBaseProps';
 export * from './Chart';
 export * from './CheckboxGroupBaseProps';
+export * from './CollapseBaseProps';
 export * from './Color';
 export * from './ControlBaseProps';
 export * from './DimensionStyles';

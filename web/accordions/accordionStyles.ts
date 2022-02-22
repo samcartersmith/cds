@@ -1,9 +1,5 @@
 import { css } from 'linaria';
 import {
-  animateInOpacityConfig,
-  animateOutOpacityConfig,
-  animateInMaxHeightConfig,
-  animateOutMaxHeightConfig,
   animateInRotateConfig,
   animateOutRotateConfig,
   accordionVisibleRotate,
@@ -24,14 +20,5 @@ export const iconStyles = {
         toValue: `rotateZ(${accordionHiddenRotate}deg)`,
       },
     ])}
-  `,
-};
-
-export const panelStyles = {
-  expanded: css`
-    ${Animated.toTransition([animateInOpacityConfig, animateInMaxHeightConfig])}
-  `,
-  collapsed: css`
-    ${Animated.toTransition([animateOutOpacityConfig, animateOutMaxHeightConfig])}
   `,
 };
