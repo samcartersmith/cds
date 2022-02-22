@@ -15,6 +15,7 @@ import { Haptics } from '../utils/haptics';
 import { Interactable, InteractableProps } from './Interactable';
 
 export type LinkableProps = Pick<BasePressableProps, 'onPress'>;
+export type OnPress = PressableProps['onPress'];
 
 export type PressableProps = {
   /**

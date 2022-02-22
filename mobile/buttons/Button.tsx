@@ -15,6 +15,7 @@ import { getFlushStyles } from '../styles/getFlushStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
+import { Button as FrontierButton } from '../alpha/Button';
 
 export type ButtonProps = ButtonBaseProps &
   PressableProps & {
@@ -25,7 +26,7 @@ export type ButtonProps = ButtonBaseProps &
     numberOfLines?: number;
   };
 
-export const Button = memo(function Button({
+export const DeprecatedButton = memo(function DeprecatedButton({
   block,
   children,
   compact,
@@ -44,16 +45,11 @@ export const Button = memo(function Button({
   const height = useInteractableHeight(compact);
   const borderRadius = useButtonBorderRadius(compact);
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-  const hasIcon = Boolean(startIcon ?? endIcon);
-  const hasFrontier = useFeatureFlag('frontierButton');
   const iconSize = useButtonIconSize(compact);
   const spacingStyles = useButtonSpacing({ flush, compact, startIcon, endIcon });
   const flushStyles = getFlushStyles({ flush, spacing: spacingStyles });
   const layoutStyles = block ? styles.block : styles.inline;
   const pressableStyles = useMemo(() => [layoutStyles, flushStyles], [layoutStyles, flushStyles]);
-  const frontierButtonStyles = hasFrontier && hasIcon && styles.frontierButton;
-  const startIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierStartIcon];
-  const endIconFrontierStyles = hasFrontier && [styles.frontierIcon, styles.frontierEndIcon];
   const justifyContent: ViewStyle['justifyContent'] = flush
     ? 'flex-start'
     : styles.button.justifyContent;
@@ -78,13 +74,13 @@ export const Button = memo(function Button({
       noScaleOnPress={noScaleOnPress}
       {...props}
     >
-      <View style={[buttonStyles, frontierButtonStyles]}>
+      <View style={buttonStyles}>
         {loading ? (
           <ActivityIndicator size="small" color={palette[color]} />
         ) : (
           <>
             {!!startIcon && (
-              <View style={[startIconStyles, startIconFrontierStyles]}>
+              <View style={startIconStyles}>
                 <Icon name={startIcon} size={iconSize} color={color} />
               </View>
             )}
@@ -92,7 +88,7 @@ export const Button = memo(function Button({
               {children}
             </TextHeadline>
             {!!endIcon && (
-              <View style={[endIconStyles, endIconFrontierStyles]}>
+              <View style={endIconStyles}>
                 <Icon name={endIcon} size={iconSize} color={color} />
               </View>
             )}
@@ -101,6 +97,11 @@ export const Button = memo(function Button({
       </View>
     </Pressable>
   );
+});
+
+export const Button = memo(function Button(props: ButtonProps) {
+  const hasFrontier = useFeatureFlag('frontierButton');
+  return hasFrontier ? <FrontierButton {...props} /> : <DeprecatedButton {...props} />;
 });
 
 export const styles = StyleSheet.create({
@@ -118,21 +119,5 @@ export const styles = StyleSheet.create({
   block: {
     width: '100%',
     maxWidth: '100%',
-  },
-  // Frontier specific styles
-  frontierButton: {
-    justifyContent: 'space-between',
-  },
-  frontierIcon: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexGrow: 1,
-    flexShrink: 0,
-  },
-  frontierStartIcon: {
-    justifyContent: 'flex-start',
-  },
-  frontierEndIcon: {
-    justifyContent: 'flex-end',
   },
 });
