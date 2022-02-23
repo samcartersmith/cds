@@ -19,6 +19,7 @@ import * as lottieFiles from '@cbhq/cds-lottie-files';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
 import * as CDSCells from '@cbhq/cds-web/cells';
+import { Cell } from '@cbhq/cds-web/cells/Cell';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import * as CDSControls from '@cbhq/cds-web/controls';
@@ -152,6 +153,7 @@ const ReactLiveScope = {
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSVisualizations,
+  Cell,
   // context
   PortalProvider,
   // Utils

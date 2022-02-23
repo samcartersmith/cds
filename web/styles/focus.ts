@@ -4,6 +4,7 @@ import { css } from 'linaria';
 import { palette } from '../tokens';
 
 const FOCUS_RING_PADDING = 4;
+export const focusVisibleClassName = 'focus-visible';
 
 /**
  * focusRing uses the focus-visible polyfill (since Safari does not yet support focus-visible)
@@ -17,7 +18,7 @@ export const focusRing = css`
   &:focus {
     outline: none;
   }
-  &.focus-visible {
+  &.${focusVisibleClassName} {
     &::before {
       content: '';
       position: absolute;
@@ -46,7 +47,7 @@ export const insetFocusRing = css`
   &:focus {
     outline: none;
   }
-  &.focus-visible {
+  &.${focusVisibleClassName} {
     &::before {
       content: '';
       position: absolute;

@@ -79,8 +79,9 @@ const frontierVariants: ButtonVariantConfig = {
 export const useButtonVariant = (
   variant: ButtonVariant,
   transparent?: boolean,
+  enableFrontier?: boolean,
 ): ButtonVariantStyles => {
-  const hasFrontier = useFeatureFlag('frontierColor');
+  const hasFrontier = useFeatureFlag('frontierColor') || enableFrontier;
   const nonTransparentVariants = hasFrontier ? frontierVariants : variants;
   return useMemo(
     () => (transparent ? transparentVariants : nonTransparentVariants)[variant],

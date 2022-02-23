@@ -19,6 +19,11 @@ export type IconButtonProps = {
   SharedProps &
   Omit<React.HTMLAttributes<HTMLButtonElement>, 'className' | 'style' | 'dangerouslySetInnerHTML'>;
 
+const flexStyles = getFlexStyles({
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
 export const IconButton = forwardRef(
   (
     {
@@ -35,10 +40,6 @@ export const IconButton = forwardRef(
     }: IconButtonProps,
     ref: React.Ref<HTMLButtonElement>,
   ) => {
-    const flexStyles = getFlexStyles({
-      alignItems: 'center',
-      justifyContent: 'center',
-    });
     const height = useInteractableHeight(compact);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
     const style = useMemo(() => ({ '--interactable-height': `${height}px` }), [height]);
