@@ -1,15 +1,10 @@
 import React, { memo } from 'react';
 
 import { gutter } from '../tokens/sizing';
-import type { SpacingProps, CardBoxProps, SharedProps } from '../types';
+import type { CardBoxProps, CardFooterProps } from '../types/alpha';
 
 type CreateCardFooterParams = {
-  HStack: React.ComponentType<SpacingProps & SharedProps>;
-};
-
-export type CardFooterProps = CardBoxProps & {
-  /** CardFooter takes one or many actions as children */
-  children: React.ReactNode;
+  HStack: React.ComponentType<CardBoxProps>;
 };
 
 export function createCardFooter({ HStack }: CreateCardFooterParams) {

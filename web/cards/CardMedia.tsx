@@ -1,22 +1,12 @@
 import React from 'react';
-import { CardMediaProps, createCardMedia } from '@cbhq/cds-common/cards/createCardMedia';
 import {
   IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
   IllustrationPictogramNames,
 } from '@cbhq/cds-common/types/IllustrationNames';
-import { CardRemoteImage } from './CardRemoteImage';
-import { Illustration } from '../illustrations/Illustration';
 
 import { SpotRectangle, SpotSquare, Pictogram } from '../illustrations';
 import { VStack } from '../layout/VStack';
-
-export type { CardMediaProps };
-
-export const CardMedia = createCardMedia({
-  CardRemoteImage,
-  Illustration,
-});
 
 /** @deprecated Please use CardMedia moving forward */
 export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNames }) => {

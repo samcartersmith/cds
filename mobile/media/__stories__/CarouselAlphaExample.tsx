@@ -1,12 +1,15 @@
 import React, { useCallback } from 'react';
-import { IllustrationNames } from '@cbhq/cds-common';
 import { feedImages } from '@cbhq/cds-common/internal/data/feedImages';
-import { AnnouncementCard } from '../../alpha/AnnouncementCard';
+import { AnnouncementCard, AnnouncementCardProps } from '../../alpha/AnnouncementCard';
 import { Carousel, CarouselId } from '../../alpha/carousel/Carousel';
 import { Divider } from '../../layout/Divider';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 
-export function CarouselItem({ illustration }: { illustration: IllustrationNames }) {
+export function CarouselItem({
+  illustration,
+}: {
+  illustration: NonNullable<AnnouncementCardProps['illustration']>;
+}) {
   const handleOnPress = useCallback(() => {
     // eslint-disable-next-line no-console
     console.log('pressed card');
@@ -57,9 +60,9 @@ export function ProgressBarsExample() {
         onDismissItem={onDismissItem}
         onDismissLastItem={onDismissLastItem}
         items={[
-          <CarouselItem key="item1" illustration="selectReward" />,
-          <CarouselItem key="item2" illustration="powerOfCrypto" />,
-          <CarouselItem key="item3" illustration="sendingCrypto" />,
+          <CarouselItem key="item1" illustration="adaStaking" />,
+          <CarouselItem key="item2" illustration="addressBook" />,
+          <CarouselItem key="item3" illustration="announcementAdvancedTrading" />,
           <CarouselItem key="item4" illustration="worldwide" />,
         ]}
       />

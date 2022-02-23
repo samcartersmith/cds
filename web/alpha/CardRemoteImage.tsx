@@ -1,7 +1,7 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 import type { CardRemoteImageProps } from '@cbhq/cds-common/types/alpha';
 
-import { RemoteImage, getSource } from '../media/RemoteImage';
+import { RemoteImage } from '../media/RemoteImage';
 
 export type { CardRemoteImageProps };
 
@@ -9,8 +9,7 @@ export const CardRemoteImage = memo(function CardRemoteImage({
   src,
   ...props
 }: CardRemoteImageProps) {
-  const source = useMemo(() => getSource(src), [src]);
-  return <RemoteImage {...props} source={source} resizeMode="cover" />;
+  return <RemoteImage {...props} source={src} resizeMode="cover" />;
 });
 
 CardRemoteImage.displayName = 'CardRemoteImage';

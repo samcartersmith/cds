@@ -1,58 +1,110 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
-import type { CardBaseProps, FeedCardBaseProps } from '../types';
-import type { CardHeaderProps } from './createCardHeader';
-import type { CardFooterProps } from './createCardFooter';
-import type { CardMediaProps } from './createCardMedia';
-import type { CardBodyBaseProps } from './createCardBody';
+import type {
+  ButtonBaseProps,
+  IconButtonBaseProps,
+  CardBaseProps,
+  CardBodyBaseProps,
+  CardBoxProps,
+  CardFooterProps,
+  CardHeaderProps,
+  CdsPlatform,
+  FeedCardBaseProps,
+  LikeButtonBaseProps,
+} from '../types/alpha';
 
-export type FeedCardProps = FeedCardBaseProps;
-
-type CreateFeedCardParams<CardBodyProps> = {
-  Card: React.ComponentType<CardBaseProps>;
-  CardBody: React.ComponentType<CardBodyBaseProps<CardBodyProps>>;
+type CreateFeedCardParams<OnPressFn> = {
+  Button: React.ComponentType<ButtonBaseProps<OnPressFn>>;
+  Card: React.ComponentType<CardBaseProps<OnPressFn>>;
+  CardBody: React.ComponentType<CardBodyBaseProps<OnPressFn>>;
   CardHeader: React.ComponentType<CardHeaderProps>;
   CardFooter: React.ComponentType<CardFooterProps>;
-  CardMedia: React.ComponentType<CardMediaProps>;
+  HStack: React.ComponentType<CardBoxProps>;
+  IconButton: React.ComponentType<IconButtonBaseProps<OnPressFn>>;
+  LikeButton: React.ComponentType<LikeButtonBaseProps<OnPressFn>>;
+  platform: CdsPlatform;
 };
 
-export function createFeedCard<CardBodyProps>({
+export function createFeedCard<OnPressFn>({
+  Button,
   Card,
   CardHeader,
   CardBody,
   CardFooter,
-  CardMedia,
-}: CreateFeedCardParams<CardBodyProps>) {
+  HStack,
+  IconButton,
+  LikeButton,
+  platform,
+}: CreateFeedCardParams<OnPressFn>) {
   const FeedCard = memo(function FeedCard({
-    testID,
-    avatarUrl,
-    headerMetaData,
-    headerDescription,
-    headerActionNode,
-    bodyTitle,
-    bodyDescription,
-    bodyMediaUrl,
-    footerActions,
-  }: FeedCardProps) {
+    testID = 'feed-card',
+    avatar,
+    author,
+    metadata,
+    illustration,
+    image,
+    mediaPlacement = platform === 'web' ? 'start' : 'above',
+    title,
+    description,
+    headerAction,
+    like,
+    comment,
+    share,
+    cta,
+  }: FeedCardBaseProps<OnPressFn>) {
+    const footer = useMemo(() => {
+      const hasFooterActions = Boolean(like ?? comment ?? share ?? cta);
+      const hasFooter = hasFooterActions || Boolean(cta);
+      if (hasFooter) {
+        return (
+          <CardFooter testID={testID} justifyContent="space-between">
+            {hasFooterActions && (
+              <HStack gap={0.5}>
+                {like && <LikeButton testID={`${testID}-like`} {...like} />}
+                {comment && (
+                  <IconButton
+                    transparent
+                    name="annotation"
+                    testID={`${testID}-comment`}
+                    {...comment}
+                  />
+                )}
+                {share && (
+                  <IconButton transparent name="share" testID={`${testID}-share`} {...share} />
+                )}
+              </HStack>
+            )}
+            {cta && <Button compact transparent variant="secondary" flush="end" {...cta} />}
+          </CardFooter>
+        );
+      }
+      return null;
+    }, [comment, cta, like, share, testID]);
+
     return (
       <Card testID={testID} gap={2}>
         <CardHeader
-          avatarUrl={avatarUrl}
-          metaData={headerMetaData}
-          description={headerDescription}
-          action={headerActionNode}
+          testID={`${testID}-header`}
+          avatar={avatar}
+          metadata={metadata}
+          author={author}
+          action={headerAction && <IconButton transparent flush="end" {...headerAction} />}
         />
         <CardBody
-          title={bodyTitle}
-          description={bodyDescription}
-          media={<CardMedia type="image" variant="feed" src={bodyMediaUrl} />}
-          spacingVertical={0}
+          title={title}
+          description={description}
+          illustration={illustration}
+          image={image}
+          mediaPlacement={mediaPlacement}
+          /** Only override default CardBody spacing if footer is present */
+          spacingVertical={footer === null ? undefined : 0}
         />
-        <CardFooter>{footerActions}</CardFooter>
+        {footer}
       </Card>
     );
   });
 
   FeedCard.displayName = 'FeedCard';
+
   return FeedCard;
 }

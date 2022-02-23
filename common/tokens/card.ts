@@ -1,4 +1,4 @@
-import { getDefaultSizeObjectForIllustration } from '../utils/getDefaultSizeObjectForIllustration';
+import { convertDimensionToSize } from '../utils/convertDimensionToSize';
 
 export const cardSizes = {
   small: {
@@ -15,12 +15,5 @@ export const cardSizes = {
   },
 } as const;
 
-export const cardVariantMediaDefaults = {
-  announcement: 'spotSquare',
-  feed: 'spotRectangle',
-  feature: 'spotSquare',
-} as const;
-
-export const announcementCardMinHeight = getDefaultSizeObjectForIllustration(
-  cardVariantMediaDefaults.announcement,
-).height;
+export const defaultMediaDimension = '96x96';
+export const defaultMediaSize = convertDimensionToSize(defaultMediaDimension);

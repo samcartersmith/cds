@@ -1,30 +1,12 @@
 import React, { memo } from 'react';
 
 import { gutter } from '../tokens/sizing';
-import type {
-  FlexStyles,
-  SharedProps,
-  AvatarBaseProps,
-  SpacingProps,
-  StackBaseProps,
-  TextBaseProps,
-  PaletteForeground,
-} from '../types';
-
-export type CardHeaderProps = {
-  /** Image url for Avatar */
-  avatarUrl?: string;
-  /** Meta Data Text to be displayed in TextLegal */
-  metaData?: string;
-  /** Text to be displayed in TextCaption */
-  description?: string;
-  /** IconButton ReactNode */
-  action?: React.ReactNode;
-} & SharedProps;
+import type { AvatarBaseProps, TextBaseProps, PaletteForeground } from '../types';
+import type { CardBoxProps, CardHeaderProps } from '../types/alpha';
 
 type CreateCardHeaderParams<T> = {
-  HStack: React.ComponentType<SpacingProps & FlexStyles & StackBaseProps & SharedProps>;
-  VStack: React.ComponentType<SpacingProps & FlexStyles & StackBaseProps & SharedProps>;
+  HStack: React.ComponentType<CardBoxProps>;
+  VStack: React.ComponentType<CardBoxProps>;
   Avatar: React.ComponentType<AvatarBaseProps>;
   TextLabel1: React.ComponentType<TextBaseProps>;
   TextLegal: React.ComponentType<
@@ -40,9 +22,9 @@ export function createCardHeader<T>({
   TextLegal,
 }: CreateCardHeaderParams<T>) {
   const CardHeader = memo(function CardHeader({
-    avatarUrl,
-    metaData,
-    description,
+    avatar,
+    metadata,
+    author,
     action,
     testID,
   }: CardHeaderProps) {
@@ -55,12 +37,10 @@ export function createCardHeader<T>({
         testID={testID}
       >
         <HStack flexGrow={1} alignItems="center" gap={1}>
-          {avatarUrl ? (
-            <Avatar alt={description ?? avatarUrl} src={avatarUrl} size="xl" shape="circle" />
-          ) : null}
+          {avatar ? <Avatar alt={author ?? avatar} src={avatar} size="xl" shape="circle" /> : null}
           <VStack>
-            {!!description && <TextLabel1>{description}</TextLabel1>}
-            {!!metaData && <TextLegal color="foregroundMuted">{metaData}</TextLegal>}
+            {author ? <TextLabel1>{author}</TextLabel1> : null}
+            {metadata ? <TextLegal color="foregroundMuted">{metadata}</TextLegal> : null}
           </VStack>
         </HStack>
         {action}
