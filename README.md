@@ -79,8 +79,8 @@ The task list below is needed to get the hello world of the poly repo. There are
 #### Website
 
 - [x] deploy website locally
-- [ ] deploy dev website
-- [ ] deploy prod website
+- [x] deploy dev website
+- [x] deploy prod website
 
 #### Releases
 
