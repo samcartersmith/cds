@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.5.1 (2/22/2022, 07:45 PM PST)
+
+#### 🐞 Fixes
+
+- Hooked up codegen. [#8](https://github.cbhq.net/mono/repo/pull/8)
+- Testing buildkite.
+- Build updates.
+- More builds.
+- Font package build.
+- Storybook hookup.
+- Storybook hookup.
+- Ported fonts.
+
 ## 0.5.0 (1/10/2022, 09:23 AM PST)
 
 #### 💥 Breaking

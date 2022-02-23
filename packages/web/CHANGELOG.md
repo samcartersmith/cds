@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.2 (2/22/2022, 07:45 PM PST)
+
+#### 🐞 Fixes
+
+- Port all Codegen functionalities. [#10](https://github.cbhq.net/mono/repo/pull/10)
+- Enable Yarn workspaces, clean up deps, and update mobile playground. [#11](https://github.cbhq.net/mono/repo/pull/11)
+- Hooked up codegen. [#8](https://github.cbhq.net/mono/repo/pull/8)
+- Added stylelint functionality. [#7](https://github.cbhq.net/mono/repo/pull/7)
+- Fix metro resolver.
+- Applied formatter.
+- Fixed typecheck error.
+- Fixed linter errors.
+- Fixed typecheck errors.
+- Testing buildkite.
+- Build updates.
+- Build updates.
+- Update linaria preset with cds specific one.
+- More builds.
+- Storybook hookup.
+- Storybook hookup.
+- Web migration.
+
 ## 0.34.1 (1/14/2022, 10:30 AM PST)
 
 #### 🚀 Updates

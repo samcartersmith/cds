@@ -8,6 +8,37 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.38.2 (2/22/2022, 07:45 PM PST)
+
+#### 🐞 Fixes
+
+- Port all Codegen functionalities. [#10](https://github.cbhq.net/mono/repo/pull/10)
+- Enable Yarn workspaces, clean up deps, and update mobile playground. [#11](https://github.cbhq.net/mono/repo/pull/11)
+- Moved babel config from mobile to mobile-playground.
+- Remove generated dist file.
+- Fix metro resolver.
+- Tmp configs.
+- Hooked up fonts.
+- Applied formatter.
+- Fixed linter errors.
+- Fixed typecheck errors.
+- Testing buildkite.
+- Build updates.
+- More builds.
+- Storybook hookup.
+- Storybook hookup.
+- Web migration.
+- Fix mobile tests, complete lottie-files migration, README update.
+- Merge pull request #4 from jonathan-rossi/module-resolution-fix.
+- Remove build tasks and nested src directories.
+- - Fix resolution for dependent types.
+- - Synched up config with the nx template - Removed root dependencies in package.json - Setup yarn workspaces.
+- Added plugin:@cbhq/imports and put parserOptions in the root lint config.
+- Comma.
+- Eslint fix.
+- Got mobile tests and builds running.
+- Imported mobile and lottie-files.
+
 ## 0.38.1 (1/14/2022, 10:30 AM PST)
 
 #### 🚀 Updates

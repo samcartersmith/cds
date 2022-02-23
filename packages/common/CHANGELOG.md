@@ -8,6 +8,49 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.33.1 (2/22/2022, 07:45 PM PST)
+
+#### 🐞 Fixes
+
+- Port all Codegen functionalities. [#10](https://github.cbhq.net/mono/repo/pull/10)
+- Update repo url. [#16](https://github.cbhq.net/mono/repo/pull/16)
+- Enable Yarn workspaces, clean up deps, and update mobile playground. [#11](https://github.cbhq.net/mono/repo/pull/11)
+- Hooked up codegen. [#8](https://github.cbhq.net/mono/repo/pull/8)
+- Added stylelint functionality. [#7](https://github.cbhq.net/mono/repo/pull/7)
+- Fix metro resolver.
+- Applied formatter.
+- Fixed linter errors.
+- Fixed typecheck errors.
+- Testing buildkite.
+- Codegen migration.
+- Build updates.
+- More builds.
+- Font package build.
+- Added package build executor and hooked it up for the common package.
+- Storybook hookup.
+- Storybook hookup.
+- Web migration.
+- Fix mobile tests, complete lottie-files migration, README update.
+- Remove build tasks and nested src directories.
+- - Synched up config with the nx template - Removed root dependencies in package.json - Setup yarn workspaces.
+- Added plugin:@cbhq/imports and put parserOptions in the root lint config.
+- Eslint fix.
+- Got mobile tests and builds running.
+- Imported mobile and lottie-files.
+- Cleaned up unused nx dependencies.
+- Added Makefile.
+- Setup package building in common.
+- Added mono-tasks for common linter, test and typecheck.
+- Got eslint in common to resolve.
+- Fix timers and add d3-shape and humps.
+- Fix utils errors when running tests.
+- Added utils and missing common files.
+- Added common files.
+- Delete common in preparation to migration.
+- Add common-2 with errors.
+- Bulk load common files with errors.
+- Created common project.
+
 ## 0.33.0 (1/12/2022, 03:10 PM PST)
 
 #### 💥 Breaking

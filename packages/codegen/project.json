@@ -28,6 +28,13 @@
         "scriptPath": "packages/codegen/main.ts"
       }
     },
+    "release": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/releasePackages.ts",
+        "args": ["--packages=packages/(fonts|web|lottie-files|mobile|utils|common)/package.json"]
+      }
+    },
     "changelog": {
       "executor": "./tools/executors/ts-script:ts-script",
       "options": {

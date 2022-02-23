@@ -60,6 +60,7 @@ Help:
   $$ make mobile.routes             -- Create routes for mobile-playgrounds from screens directory.
   $$ make prepare.adoption          -- Prepare adoption numbers
   $$ make debug.adoption            -- Debug adoption tracker script
+  $$ make release                   -- Automatically update CHANGELOG based on PR titles 
 
 endef
 export HELP_TEXT
@@ -278,3 +279,7 @@ prepare.adoption:
 .PHONY: debug.adoption
 debug.adoption:
 	nx run codegen:debug_adoption
+
+.PHONY: release 
+release:
+	nx run codegen:release

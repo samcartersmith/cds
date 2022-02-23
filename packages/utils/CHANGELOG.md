@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.1 (2/22/2022, 07:45 PM PST)
+
+#### 🐞 Fixes
+
+- Enable Yarn workspaces, clean up deps, and update mobile playground. [#11](https://github.cbhq.net/mono/repo/pull/11)
+- Applied formatter.
+- Fixed typecheck errors.
+- Testing buildkite.
+- Build updates.
+- More builds.
+- Storybook hookup.
+- Storybook hookup.
+- Web migration.
+- Remove build tasks and nested src directories.
+- - Synched up config with the nx template - Removed root dependencies in package.json - Setup yarn workspaces.
+- Added plugin:@cbhq/imports and put parserOptions in the root lint config.
+- Eslint fix.
+- Setup utils.
+- Setup package building in common.
+- Added mono-tasks for common linter, test and typecheck.
+- Hooked up cbhq jest preset.
+- Got eslint working for utils.
+- Fix utils errors when running tests.
+- Added utils and missing common files - unversioned.
+- Added utils and missing common files.
+
 ## 0.3.0 (1/12/2022, 05:27 AM PST)
 
 #### 💥 Breaking

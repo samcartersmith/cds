@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.21 (2/22/2022, 07:45 PM PST)
+
+#### 🐞 Fixes
+
+- Update repo url. [#16](https://github.cbhq.net/mono/repo/pull/16)
+- Enable Yarn workspaces, clean up deps, and update mobile playground. [#11](https://github.cbhq.net/mono/repo/pull/11)
+- Fix metro resolver.
+- Applied formatter.
+- Fixed typecheck errors.
+- Testing buildkite.
+- Build updates.
+- More builds.
+- Storybook hookup.
+- Web migration.
+- Fix mobile tests, complete lottie-files migration, README update.
+- Remove build tasks and nested src directories.
+- - Synched up config with the nx template - Removed root dependencies in package.json - Setup yarn workspaces.
+- Added plugin:@cbhq/imports and put parserOptions in the root lint config.
+- Eslint fix.
+- Got mobile tests and builds running.
+- Imported mobile and lottie-files.
+
 ## 0.2.20 (11/5/2021, 10:52 AM PST)
 
 #### 🚀 Updates
