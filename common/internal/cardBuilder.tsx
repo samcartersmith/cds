@@ -34,9 +34,9 @@ const pinnedSharedWrapperProps = {
 export type CreateCardProps = {
   Box: React.ComponentType<BoxBaseProps>;
   Card: React.ComponentType<CardBaseProps & BoxBaseProps>;
-  CardBody: React.ComponentType<CardBodyBaseProps>;
-  SpotSquare: React.ComponentType<SpotSquareProps & BoxBaseProps>;
-  FeedCard: React.ComponentType<FeedCardBaseProps>;
+  CardBody?: React.ComponentType<CardBodyBaseProps>;
+  SpotSquare?: React.ComponentType<SpotSquareProps & BoxBaseProps>;
+  FeedCard?: React.ComponentType<FeedCardBaseProps>;
   IconButton: React.ComponentType<IconButtonBaseProps>;
   VStack: React.ComponentType<BoxBaseProps & StackBaseProps>;
   LoremIpsum: React.ComponentType<{ title: string; color?: PaletteForeground; concise?: boolean }>;
@@ -206,37 +206,47 @@ export function cardBuilder({
     </ThemeProvider>
   );
 
-  const FeedCardExample = () => (
-    <ThemeProvider>
-      <FeedCard
-        avatarUrl="https://via.placeholder.com/350x220"
-        headerDescription="Earn crypto"
-        headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
-        bodyTitle="LEARN AMP. EARN $3 IN AMP."
-        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-        bodyMediaUrl="https://via.placeholder.com/350x220"
-        bodyOrientation="vertical"
-        footerActions={
-          <Button compact variant="secondary">
-            Actions
-          </Button>
-        }
-      />
-    </ThemeProvider>
-  );
+  const FeedCardExample = () => {
+    if (FeedCard) {
+      return (
+        <ThemeProvider>
+          <FeedCard
+            avatarUrl="https://via.placeholder.com/350x220"
+            headerDescription="Earn crypto"
+            headerActionNode={<IconButton name="more" variant="foregroundMuted" transparent />}
+            bodyTitle="LEARN AMP. EARN $3 IN AMP."
+            bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+            bodyMediaUrl="https://via.placeholder.com/350x220"
+            bodyOrientation="vertical"
+            footerActions={
+              <Button compact variant="secondary">
+                Actions
+              </Button>
+            }
+          />
+        </ThemeProvider>
+      );
+    }
+    return null;
+  };
 
-  const SpotSquareExample = () => (
-    <ThemeProvider>
-      <Card>
-        <CardBody
-          title="Title/Headline"
-          description="You can fit up to fifty two chararcters on 2 lines"
-          media={<SpotSquare name="addMultipleCrypto" />}
-          orientation="horizontal"
-        />
-      </Card>
-    </ThemeProvider>
-  );
+  const SpotSquareExample = () => {
+    if (CardBody && SpotSquare) {
+      return (
+        <ThemeProvider>
+          <Card>
+            <CardBody
+              title="Title/Headline"
+              description="You can fit up to fifty two chararcters on 2 lines"
+              media={<SpotSquare name="addMultipleCrypto" />}
+              orientation="horizontal"
+            />
+          </Card>
+        </ThemeProvider>
+      );
+    }
+    return null;
+  };
 
   return {
     ListCellCard,

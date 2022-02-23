@@ -1,45 +1,26 @@
 import React from 'react';
 import { cardBuilder } from '@cbhq/cds-common/internal/cardBuilder';
-import { createConfigs as createFeatureEntryProps } from '@cbhq/cds-common/internal/cards/featureEntryCardBuilder';
-import { createConfigs as createAnnouncementCardProps } from '@cbhq/cds-common/internal/cards/announcementCardBuilder';
-import { createConfigs as createFeedCardProps } from '@cbhq/cds-common/internal/cards/feedCardBuilder';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { feedCards } from '@cbhq/cds-common/internal/data/feedCards';
+import { announcementCards } from '@cbhq/cds-common/internal/data/announcementCards';
+import { featureEntryCards } from '@cbhq/cds-common/internal/data/featureEntryCards';
+
+import { FeedCard } from '../../alpha/FeedCard';
+import { AnnouncementCard } from '../../alpha/AnnouncementCard';
+import { FeatureEntryCard } from '../../alpha/FeatureEntryCard';
+import { CardGroup } from '../../alpha/CardGroup';
+import { TextHeadline } from '../../typography/TextHeadline';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
 import { ListCell } from '../../cells/ListCell';
 import { CellMedia } from '../../cells/CellMedia';
-import { SpotSquare } from '../../illustrations/SpotSquare';
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 
 import { Card } from '../Card';
-import { CardGroup, CardGroupRenderItem } from '../CardGroup';
-import { AnnouncementCard } from '../AnnouncementCard';
-import { FeedCard } from '../FeedCard';
-import { FeatureEntryCard } from '../FeatureEntryCard';
-import { CardBody } from '../CardBody';
 
 import { Example, ExampleScreen, LoremIpsum } from '../../examples/ExampleScreen';
-
-const renderHorizontalItem: CardGroupRenderItem = ({ item, Wrapper }) => (
-  <Wrapper width={250}>{item}</Wrapper>
-);
-
-const { exampleProps: announcementCardProps } = createAnnouncementCardProps({
-  CardGroup,
-  renderHorizontalItem,
-});
-const { exampleProps: featureEntryProps } = createFeatureEntryProps({
-  CardGroup,
-  renderHorizontalItem,
-});
-const { exampleProps: feedCardProps } = createFeedCardProps({
-  Button,
-  CardGroup,
-  IconButton,
-  renderHorizontalItem,
-});
 
 const {
   ListCellCard,
@@ -51,14 +32,10 @@ const {
   PinnedRightCard,
   PinnedBottomCard,
   PinnedLeftCard,
-  SpotSquareExample,
 } = cardBuilder({
   Box,
   Button,
   Card,
-  FeedCard,
-  CardBody,
-  SpotSquare,
   IconButton,
   VStack,
   ListCell,
@@ -70,27 +47,26 @@ const {
 const CardScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="FeedCard" spacing={gutter} overflow="visible">
-        <CardGroup>
-          <FeedCard {...feedCardProps} />
-          <FeedCard {...feedCardProps} />
-        </CardGroup>
-      </Example>
-      <Example title="AnnouncementCard" spacing={gutter} overflow="visible">
-        <CardGroup>
-          <AnnouncementCard {...announcementCardProps} />
-          <AnnouncementCard {...announcementCardProps} />
-        </CardGroup>
-      </Example>
-      <Example title="FeatureEntryCard" spacing={gutter} overflow="visible">
-        <CardGroup>
-          <FeatureEntryCard {...featureEntryProps} />
-          <FeatureEntryCard {...featureEntryProps} />
-        </CardGroup>
-      </Example>
-      <Example title="Card with SpotSquare">
-        <SpotSquareExample />
-      </Example>
+      <CardGroup spacingHorizontal={gutter}>
+        <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
+          <TextHeadline>Feed Cards</TextHeadline>
+        </Box>
+        {feedCards.map(({ like: getLikeProps, ...item }) => (
+          <FeedCard {...item} like={getLikeProps()} />
+        ))}
+        <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
+          <TextHeadline>Announcement Cards</TextHeadline>
+        </Box>
+        {announcementCards.map((item) => (
+          <AnnouncementCard {...item} />
+        ))}
+        <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
+          <TextHeadline>Feature Entry Cards</TextHeadline>
+        </Box>
+        {featureEntryCards.map((item) => (
+          <FeatureEntryCard {...item} />
+        ))}
+      </CardGroup>
       <Example title="Card with ListCells">
         <ListCellCard />
       </Example>

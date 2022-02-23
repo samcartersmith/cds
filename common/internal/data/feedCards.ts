@@ -1,12 +1,55 @@
+import { loremIpsum } from './loremIpsum';
+import { avatars } from './avatars';
+import { feedImages } from './feedImages';
+import { likeCounter } from '../utils/likeCounter';
+
+const onPress = () => {
+  // eslint-disable-next-line no-console
+  console.log('pressed');
+};
+
+const defaultProps = {
+  avatar: avatars[0],
+  author: 'Author Name',
+  metadata: 'News • Dec 18',
+  title: 'Title',
+  description: loremIpsum,
+  image: feedImages[0],
+  headerAction: {
+    name: 'more',
+    onPress,
+  },
+  like: likeCounter({
+    liked: false,
+    count: 10,
+  }),
+  share: { onPress },
+  cta: {
+    onPress,
+    children: 'View ETH',
+  },
+} as const;
+
 export const feedCards = [
   {
-    avatarUrl:
-      'https://images.unsplash.com/photo-1644332237946-897c42ae5d88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60https://images.unsplash.com/photo-1644332237946-897c42ae5d88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    headerDescription: 'Earn crypto',
-    headerMetaData: 'News • Dec 18',
-    bodyTitle: `Ethereum just activated a major change called the 'London hard fork' - here's why it's a big deal`,
-    bodyDescription: `Ethereum's much-hyped and somewhat controversial “London” hard fork has just activated. So far, news of the successful upgra...`,
-    bodyMediaUrl:
-      'https://images.unsplash.com/photo-1644325781920-a41ee5b914b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80',
+    ...defaultProps,
+    key: 'card1',
+    title: 'Russia Values Local Crypto at $200 Billion as Rules Near',
+  },
+  {
+    ...defaultProps,
+    key: 'card2',
+    avatar: avatars[1],
+    image: feedImages[1],
+    title: 'Reddit co-founder raises $500 million fund for crypto startups: report',
+    description:
+      '776 Management, the VC firm owned by Reddit co-founder Alexis Ohanian, has raised $500 million for two new funds primarily focused on...',
+    like: likeCounter({
+      liked: true,
+      count: 3,
+    }),
+    comment: {
+      onPress,
+    },
   },
 ] as const;
