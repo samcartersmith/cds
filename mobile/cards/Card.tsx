@@ -1,14 +1,20 @@
 import React, { memo, useMemo } from 'react';
+import { ViewStyle } from 'react-native';
 
+import type { CardBaseProps } from '@cbhq/cds-common/types';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
+import { Card as FrontierCard } from '../alpha/Card';
 import { usePinStyles } from '../hooks/usePinStyles';
-import { Pressable } from '../system/Pressable';
+import { Pressable, PressableProps } from '../system/Pressable';
 import { VStack } from '../layout/VStack';
 import { useFeatureFlag } from '../system/useFeatureFlag';
-import { CardProps, FrontierCard } from './FrontierCard';
+import { DangerouslySetStyle } from '../types';
 
-export type { CardProps };
+export type CardProps = {
+  onPress?: PressableProps['onPress'];
+} & CardBaseProps &
+  DangerouslySetStyle<ViewStyle>;
 
 const OldCard: React.FC<CardProps> = memo(function OldCard({
   children,
