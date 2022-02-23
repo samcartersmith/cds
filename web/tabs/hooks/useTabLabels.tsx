@@ -42,44 +42,46 @@ export const useTabLabels = ({
     // Calculate offset using the first item in the list
     const { width, x } = layoutRefs?.current?.[value] ?? initialCoords;
     setTabIndicatorProps({ width, x: x - offsetRef?.current });
-  }, [value]);
+  }, [value, tabs]);
 
   // Iterate over the tabs and create Pressable TabLabels
   const tabLabels = useMemo(
     () =>
-      tabs?.filter(Boolean)?.map(({ id, onPress, label, accessibilityLabel = label }, idx) => {
-        const handleTabPress = () => {
-          onChange(id);
-          onPress?.(id); // handle callback
-        };
+      tabs
+        ?.filter(Boolean)
+        ?.map(({ id, onPress, label, accessibilityLabel = label, count }, idx) => {
+          const handleTabPress = () => {
+            onChange(id);
+            onPress?.(id); // handle callback
+          };
 
-        const children = (
-          <TabLabel active={value === id} variant={variant}>
-            {label}
-          </TabLabel>
-        );
+          const children = (
+            <TabLabel active={value === id} variant={variant} count={count}>
+              {label}
+            </TabLabel>
+          );
 
-        return createElement(
-          PressableOpacityWithoutChildren,
-          {
-            key: `${id}--button`,
-            ref: (el) => {
-              // Track offset
-              if (idx === 0) offsetRef.current = el?.getBoundingClientRect().left ?? 0;
+          return createElement(
+            PressableOpacityWithoutChildren,
+            {
+              key: `${id}--button`,
+              ref: (el) => {
+                // Track offset
+                if (idx === 0) offsetRef.current = el?.getBoundingClientRect().left ?? 0;
 
-              // Update refs
-              layoutRefs.current[id] = el?.getBoundingClientRect();
-              return el;
+                // Update refs
+                layoutRefs.current[id] = el?.getBoundingClientRect();
+                return el;
+              },
+              role: 'tab',
+              accessibilityLabel,
+              accessibilityHint: accessibilityLabel,
+              onPress: handleTabPress,
+              className: pressableClass,
             },
-            role: 'tab',
-            accessibilityLabel,
-            accessibilityHint: accessibilityLabel,
-            onPress: handleTabPress,
-            className: pressableClass,
-          },
-          children,
-        );
-      }),
+            children,
+          );
+        }),
     [onChange, tabs, value, variant],
   );
 

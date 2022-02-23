@@ -13,6 +13,7 @@ const tabs: TabProps[] = [
   {
     id: 'second_item',
     label: 'Second item',
+    count: 1,
   },
   {
     id: 'third_item',

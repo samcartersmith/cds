@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
+import { useToggler } from '@cbhq/cds-common';
 import { VStack } from '../../layout/VStack';
 
 import { ThemeProvider } from '../../system';
 import { TabNavigation } from '../TabNavigation';
 import { Select, SelectOption } from '../../controls';
+import { Button } from '../../buttons';
 
 const tabs: TabProps[] = [
   {
@@ -15,6 +17,7 @@ const tabs: TabProps[] = [
   {
     id: 'second_item',
     label: 'Second item',
+    count: 1,
   },
   {
     id: 'third_item',
@@ -38,17 +41,26 @@ export default {
 export const TabIndicatorPrimary: Story = () => {
   const [currentLightTab, setCurrentLightTab] = useState<TabNavigationProps['value']>(tabs[2].id);
   const [currentDarkTab, setCurrentDarkTab] = useState<TabNavigationProps['value']>();
-
+  const [withCount, { toggle: toggleCount }] = useToggler();
+  const tabsWithCount = useMemo(
+    () => tabs.map((tab, idx) => (idx === 1 ? { ...tab, count: withCount ? 2 : 0 } : tab)),
+    [withCount],
+  );
   return (
     <>
       <ThemeProvider spectrum="light">
         <VStack spacing={2} gap={2} background="background">
-          <TabNavigation tabs={tabs} onChange={setCurrentLightTab} value={currentLightTab} />
+          <TabNavigation
+            value={currentLightTab}
+            tabs={tabsWithCount}
+            onChange={setCurrentLightTab}
+          />
           <Select value={currentLightTab} onChange={setCurrentLightTab} label="Select a tab">
-            {tabs.map((option) => (
+            {tabsWithCount.map((option) => (
               <SelectOption value={option.id} title={option.label} key={option.id} />
             ))}
           </Select>
+          <Button onPress={toggleCount}>Toggle Badge</Button>
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">

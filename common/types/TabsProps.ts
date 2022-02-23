@@ -1,4 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
+import { DotCountBaseProps } from './DotCountBaseProps';
 import { SetState } from './React';
 import { SharedProps } from './SharedProps';
 
@@ -28,22 +29,18 @@ export type TabProps<T extends string | undefined = string> = PropsWithChildren<
   /** Callback to fire when pressed */
   onPress?: (id: T) => void;
 }> &
+  Partial<Pick<DotCountBaseProps, 'count'>> &
   SharedProps;
 
 export type TabLabelProps = {
-  /** Full length accessibility label when the child text is not descriptive enough. */
-  accessibilityLabel?: string;
   /** Identify the active tab */
   active?: boolean;
-  /** Select a tab variant.
-   *  @default 'primary'
-   */
-  variant?: 'primary' | 'secondary';
   /** Display title to render as the TabLabel. */
   children: string;
   /** Callback to fire when pressed */
   onPress?: () => void;
-} & SharedProps;
+} & Pick<TabProps, 'variant' | 'count' | 'accessibilityLabel'> &
+  SharedProps;
 
 export type TabIndicatorProps = {
   /** The width of the active TabLabel. */
@@ -61,8 +58,5 @@ export type TabNavigationProps<T extends string | undefined = string> = {
   tabs: Omit<TabProps, 'children'>[];
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
   onChange: OnChange<T>;
-  /** See the Tabs TDD to understand which variant should be used.
-   *  @default 'primary'
-   */
-  variant?: 'primary' | 'secondary';
-} & SharedProps;
+} & Pick<TabProps, 'variant'> &
+  SharedProps;

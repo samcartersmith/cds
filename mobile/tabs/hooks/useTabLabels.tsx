@@ -45,7 +45,7 @@ export const useTabLabels = ({
   // Iterate over the tabs and create Pressable TabLabels
   const tabLabels = useMemo(
     () =>
-      tabs.filter(Boolean).map(({ id, onPress, label, accessibilityLabel = label }) => {
+      tabs.filter(Boolean).map(({ id, onPress, label, accessibilityLabel = label, count }) => {
         // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
         const handleTabPress = () => {
           onChange?.(id);
@@ -59,7 +59,7 @@ export const useTabLabels = ({
             accessibilityHint={accessibilityLabel}
             onPress={handleTabPress}
           >
-            <TabLabel active={value === id} variant={variant}>
+            <TabLabel active={value === id} variant={variant} count={count}>
               {label}
             </TabLabel>
           </PressableOpacity>

@@ -1,9 +1,11 @@
 import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import { css } from 'linaria';
-import React, { useMemo, memo } from 'react';
-import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
-import { TextProps } from '../typography/TextProps';
+import React, { useMemo, memo, useRef, useEffect } from 'react';
+import { TextHeadline, TextTitle3, TextTitle4, TextProps } from '../typography';
 import { spacing } from '../tokens';
+import { DotCount } from '../dots/DotCount';
+import { Box, HStack } from '../layout';
+import { useDotAnimation } from './hooks/useDotAnimation';
 
 export const tabLabelSpacingClassName = css`
   padding-top: ${spacing[2]};
@@ -34,39 +36,61 @@ const COLORS = {
 export type TabLabelProps = CommonTabLabelProps & TextProps;
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export const TabLabel = memo(({ id, active, variant = 'primary', ...props }: TabLabelProps) => {
-  const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
-  const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
-  const TextElement = useMemo(() => {
-    if (variant === 'primary') return TextHeadline;
-    if (active) return TextTitle3;
+export const TabLabel = memo(
+  ({ id, active, variant = 'primary', count = 0, ...props }: TabLabelProps) => {
+    const didMount = useRef(false);
+    const { animateIn, animateOut, ref: dotRef } = useDotAnimation();
+    const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
+    const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
+    const TextElement = useMemo(() => {
+      if (variant === 'primary') return TextHeadline;
+      if (active) return TextTitle3;
 
-    return TextTitle4;
-  }, [active, variant]);
+      return TextTitle4;
+    }, [active, variant]);
 
-  return (
-    <>
-      {shouldMeasureElement ? (
-        <span className={containerClassName}>
-          <TextElement as="h2" color={color} {...props} />
-          {/* This element is used to ensure the element width doesn't change when we change font-weight */}
-          <TextTitle3
+    // ⚡️ Side effects
+    useEffect(() => {
+      // Animate dotBadge in
+      if (count) {
+        if (!didMount.current) {
+          didMount.current = true;
+          animateIn();
+        }
+        // Animate dotBadge Out
+      } else {
+        didMount.current = false;
+        animateOut();
+      }
+    }, [count, animateIn, animateOut]);
+
+    return (
+      <HStack alignItems="center">
+        {shouldMeasureElement ? (
+          <span className={containerClassName}>
+            <TextElement as="h2" color={color} {...props} />
+            {/* This element is used to ensure the element width doesn't change when we change font-weight */}
+            <TextTitle3
+              as="h2"
+              {...props}
+              dangerouslySetClassName={hiddenClassName}
+              aria-hidden="true"
+            />
+          </span>
+        ) : (
+          <TextElement
             as="h2"
+            color={color}
             {...props}
-            dangerouslySetClassName={hiddenClassName}
-            aria-hidden="true"
+            dangerouslySetClassName={variant === 'primary' ? tabLabelSpacingClassName : undefined}
           />
-        </span>
-      ) : (
-        <TextElement
-          as="h2"
-          color={color}
-          {...props}
-          dangerouslySetClassName={variant === 'primary' ? tabLabelSpacingClassName : undefined}
-        />
-      )}
-    </>
-  );
-});
+        )}
+        <Box ref={dotRef} spacingStart={count ? 1 : 0}>
+          <DotCount count={count} />
+        </Box>
+      </HStack>
+    );
+  },
+);
 
 TabLabel.displayName = 'TabLabel';
