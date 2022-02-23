@@ -1,8 +1,8 @@
-const { extendDefaultPlugins } = require('svgo');
-
 module.exports = {
   multipass: true,
-  plugins: extendDefaultPlugins([
+  plugins: [
+    // set of built-in plugins enabled by default
+    'preset-default',
     {
       name: 'cleanupListOfValues',
       active: true,
@@ -24,10 +24,6 @@ module.exports = {
       active: true,
     },
     {
-      name: 'removeAttrs',
-      active: true,
-    },
-    {
       name: 'removeElementsByAttr',
       active: true,
     },
@@ -41,5 +37,5 @@ module.exports = {
         floatPrecision: 2,
       },
     },
-  ]),
+  ],
 };

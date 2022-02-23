@@ -3,19 +3,36 @@ import path from 'path';
 import chalk from 'chalk';
 import execa from 'execa';
 import fs from 'fs';
+import { reduce } from 'lodash';
 
 export function getProjectPath(context: ExecutorContext): string {
   return context.workspace.projects[context.projectName as string].root;
 }
 
-export async function runLocalCommand(context: ExecutorContext, bin: string, args: string[], cwdOverride?: string) {
+/**
+ * 
+ * @param context 
+ * @param bin 
+ * @param args 
+ * @param envs Environment key-value pairs. Extends automatically from process.env. Set extendEnv to false if you don't want this. 
+ * @param cwdOverride 
+ * @returns 
+ */
+export async function runLocalCommand(context: ExecutorContext, bin: string, args: string[], envs = {}, cwdOverride?: string) {
   const cwd = cwdOverride ?? path.join(context.root, getProjectPath(context));
-  console.log(chalk.gray(`Running \`${bin} ${args.join(' ')}\` in .${cwd}`));
+  console.log(chalk.gray(`Running \`${reduce(
+    envs, 
+    function(result, value, key) {
+      return result + `${key}="${value}" `; 
+    },
+    ""
+  )} ${bin} ${args.join(' ')}\` in .${cwd}`));
 
   const result = await execa(bin, args, {
     cwd,
     stdio: 'inherit',
     preferLocal: true,
+    env: envs, 
   });
 
   return Promise.resolve({ success: result.exitCode === 0 });

@@ -55,6 +55,12 @@ Help:
 
   $$ make docgen                    -- Generate docs for CDS website.
   $$ make codegen                   -- Generate code in design system.
+  $$ make prepare.icons             -- Prepare icons
+  $$ make prepare.illustrations     -- Prepare illustrations
+  $$ make mobile.routes             -- Create routes for mobile-playgrounds from screens directory.
+  $$ make prepare.adoption          -- Prepare adoption numbers
+  $$ make debug.adoption            -- Debug adoption tracker script
+
 endef
 export HELP_TEXT
 
@@ -169,6 +175,7 @@ typecheck.web:
 typecheck.all:
 	nx affected --target=typecheck --all
 
+
 .PHONY: build.story
 build.story:
 	nx run web:build-storybook
@@ -200,6 +207,7 @@ build.ios:
 .PHONY: build.android
 build.android:
 	nx run mobile-playground:android
+
 
 .PHONY: build.common
 build.common:
@@ -233,6 +241,7 @@ build.css: build.web build.fonts
 build.all:
 	nx affected --target=build --all
 
+
 .PHONY: docgen
 docgen:
 	nx run codegen:docgen
@@ -245,3 +254,27 @@ codegen:
 	nx affected --target=lint --all --skip-nx-cache --fix
 	nx affected --target=format --all --skip-nx-cache
 	nx affected --target=lint-styles --all --skip-nx-cache --fix
+
+.PHONY: prepare.illustrations
+prepare.illustrations:
+	nx run codegen:build_illustrations
+	make docgen
+
+.PHONY: prepare.icons
+prepare.icons:
+	nx run codegen:sync_icons
+	yarn svgo packages/codegen/icons/svg/*.svg --config=packages/codegen/configs/svgo.config.js
+	nx run codegen:build_icons
+	make docgen
+
+.PHONY: mobile.routes
+mobile.routes:
+	nx run codegen:prepare_mobile_routes
+
+.PHONY: prepare.adoption
+prepare.adoption:
+	nx run codegen:prepare_adoption 
+
+.PHONY: debug.adoption
+debug.adoption:
+	nx run codegen:debug_adoption

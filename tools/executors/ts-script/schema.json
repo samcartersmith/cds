@@ -6,6 +6,14 @@
     "scriptPath": {
       "type": "string",
       "description": "Path to the nodejs script"
+    },
+    "args": {
+      "type": "array",
+      "description": "An array of additional ts-node arguments"
+    },
+    "envs": {
+      "type": "object",
+      "description": "Allows additional environment variables"
     }
   }
 }

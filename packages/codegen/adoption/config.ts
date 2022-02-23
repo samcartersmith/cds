@@ -10,7 +10,9 @@ const { tempDir } = argv as Record<string, string>;
 const monorepoGit = 'mono/repo';
 const retailMobileGit = 'consumer/react-native';
 const retailWebGit = 'frontend/coinbase-www';
-const walletGit = 'wallet/wallet-mobile';
+// Disabling this for now, so I can get the script running. Will
+// look into this later
+// const walletGit = 'wallet/wallet-mobile';
 const unifiedAccountsGit = 'frontend/unified-identity-accounts';
 const mauiGit = 'frontend/maui';
 const primeMobileGit = 'prime/mobile';
@@ -177,14 +179,16 @@ export const config: AdoptersConfig[] = [
         label: 'Retail Web Shared',
         type: 'doc',
       },
-      {
-        root: path.join(tempDir, walletGit, 'apps/wallet-extension'),
-        github: walletGit,
-        id: 'wallet-extension',
-        label: 'Wallet Chrome Extension',
-        ignoreDirs: ['src/debug/**'],
-        type: 'doc',
-      },
+      // Disabling this for now, so I can get the script running. Will
+      // look into this later
+      // {
+      //   root: path.join(tempDir, walletGit, 'apps/wallet-extension'),
+      //   github: walletGit,
+      //   id: 'wallet-extension',
+      //   label: 'Wallet Chrome Extension',
+      //   ignoreDirs: ['src/debug/**'],
+      //   type: 'doc',
+      // },
     ],
   },
   {

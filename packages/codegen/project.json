@@ -27,6 +27,56 @@
       "options": {
         "scriptPath": "packages/codegen/main.ts"
       }
+    },
+    "changelog": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/website/changelog.ts"
+      }
+    },
+    "sync_icons": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/icons/syncSvgsFromFigma.ts"
+      }
+    },
+    "build_icons": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/icons/build.ts"
+      }
+    },
+    "build_illustrations": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/illustrations/build.ts"
+      }
+    },
+    "prepare_mobile_routes": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/playground/prepareRoutes.ts"
+      }
+    },
+    "prepare_adoption": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/adoption/prepare.ts",
+        "args": ["--tempDir=packages/codegen/adoption/temp"],
+        "envs": {
+          "NODE_OPTIONS": "--trace-deprecation --abort-on-uncaught-exception --max-old-space-size=4096"
+        }
+      }
+    },
+    "debug_adoption": {
+      "executor": "./tools/executors/ts-script:ts-script",
+      "options": {
+        "scriptPath": "packages/codegen/adoption/prepare.ts",
+        "args": ["--tempDir=packages/codegen/adoption/temp", "debug=1"],
+        "envs": {
+          "NODE_OPTIONS": "--trace-deprecation --abort-on-uncaught-exception --max-old-space-size=4096"
+        }
+      }
     }
   }
 }

@@ -10,6 +10,10 @@ import type { IllustrationNames } from '@cbhq/cds-common/types/IllustrationProps
 type IllustrationSpectrumMap = { light: () => string; dark: null | (() => string) };
 
 export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpectrumMap> = {
+  adaStaking: {
+    light: () => require('./images/light/adaStaking-0').content,
+    dark: () => require('./images/dark/adaStaking-0').content,
+  },
   addMultipleCrypto: {
     light: () => require('./images/light/addMultipleCrypto-1').content,
     dark: () => require('./images/dark/addMultipleCrypto-1').content,
@@ -45,6 +49,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   cardAnnouncement: {
     light: () => require('./images/light/cardAnnouncement-1').content,
     dark: () => require('./images/dark/cardAnnouncement-1').content,
+  },
+  cardAutoReload: {
+    light: () => require('./images/light/cardAutoReload-0').content,
+    dark: () => require('./images/dark/cardAutoReload-0').content,
   },
   cardShipped: {
     light: () => require('./images/light/cardShipped-2').content,
@@ -146,6 +154,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/interestForYou-1').content,
     dark: () => require('./images/dark/interestForYou-0').content,
   },
+  linkCoinbaseWalletSmall: {
+    light: () => require('./images/light/linkCoinbaseWalletSmall-0').content,
+    dark: () => require('./images/dark/linkCoinbaseWalletSmall-0').content,
+  },
   moneyRewards: {
     light: () => require('./images/light/moneyRewards-1').content,
     dark: () => require('./images/dark/moneyRewards-1').content,
@@ -173,6 +185,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   nuxRecurringBuys: {
     light: () => require('./images/light/nuxRecurringBuys-2').content,
     dark: () => require('./images/dark/nuxRecurringBuys-2').content,
+  },
+  performanceSpotSquare: {
+    light: () => require('./images/light/performanceSpotSquare-0').content,
+    dark: () => require('./images/dark/performanceSpotSquare-0').content,
   },
   phoneNotifications: {
     light: () => require('./images/light/phoneNotifications-1').content,
@@ -205,6 +221,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   switchReward: {
     light: () => require('./images/light/switchReward-0').content,
     dark: () => require('./images/dark/switchReward-0').content,
+  },
+  taxDocuments: {
+    light: () => require('./images/light/taxDocuments-0').content,
+    dark: () => require('./images/dark/taxDocuments-0').content,
   },
   tezosStakingRewards: {
     light: () => require('./images/light/tezosStakingRewards-1').content,
@@ -270,6 +290,14 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/downloadCoinbaseWalletArrow-0').content,
     dark: () => require('./images/dark/downloadCoinbaseWalletArrow-0').content,
   },
+  downloadingStatement: {
+    light: () => require('./images/light/downloadingStatement-0').content,
+    dark: () => require('./images/dark/downloadingStatement-0').content,
+  },
+  ethAddress: {
+    light: () => require('./images/light/ethAddress-0').content,
+    dark: () => require('./images/dark/ethAddress-0').content,
+  },
   fileYourCryptoTaxesAlt: {
     light: () => require('./images/light/fileYourCryptoTaxesAlt-2').content,
     dark: () => require('./images/dark/fileYourCryptoTaxesAlt-2').content,
@@ -289,6 +317,14 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   highFees: {
     light: () => require('./images/light/highFees-1').content,
     dark: () => require('./images/dark/highFees-1').content,
+  },
+  ledgerFailed: {
+    light: () => require('./images/light/ledgerFailed-0').content,
+    dark: () => require('./images/dark/ledgerFailed-0').content,
+  },
+  ledgerSignatureRejected: {
+    light: () => require('./images/light/ledgerSignatureRejected-0').content,
+    dark: () => require('./images/dark/ledgerSignatureRejected-0').content,
   },
   linkCoinbaseWallet: {
     light: () => require('./images/light/linkCoinbaseWallet-2').content,
@@ -314,6 +350,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/referralsBonusGray-1').content,
     dark: () => require('./images/dark/referralsBonusGray-1').content,
   },
+  sendCryptoFasterHorizontal: {
+    light: () => require('./images/light/sendCryptoFasterHorizontal-0').content,
+    dark: null,
+  },
   sendingCrypto: {
     light: () => require('./images/light/sendingCrypto-1').content,
     dark: () => require('./images/dark/sendingCrypto-1').content,
@@ -333,6 +373,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   transferEth: {
     light: () => require('./images/light/transferEth-2').content,
     dark: () => require('./images/dark/transferEth-2').content,
+  },
+  transferFunds: {
+    light: () => require('./images/light/transferFunds-0').content,
+    dark: () => require('./images/dark/transferFunds-0').content,
   },
   walletReconnect: {
     light: () => require('./images/light/walletReconnect-2').content,
@@ -575,8 +619,8 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     dark: () => require('./images/dark/desktopUnknown-0').content,
   },
   directDepositPhone: {
-    light: () => require('./images/light/directDepositPhone-5').content,
-    dark: () => require('./images/dark/directDepositPhone-5').content,
+    light: () => require('./images/light/directDepositPhone-6').content,
+    dark: () => require('./images/dark/directDepositPhone-6').content,
   },
   docError: {
     light: () => require('./images/light/docError-1').content,
@@ -593,6 +637,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   downloadCoinbaseWallet: {
     light: () => require('./images/light/downloadCoinbaseWallet-1').content,
     dark: () => require('./images/dark/downloadCoinbaseWallet-2').content,
+  },
+  earnCryptoCard: {
+    light: () => require('./images/light/earnCryptoCard-0').content,
+    dark: () => require('./images/dark/earnCryptoCard-0').content,
   },
   earnGrowth: {
     light: () => require('./images/light/earnGrowth-0').content,
@@ -649,6 +697,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   estimatedAmount: {
     light: () => require('./images/light/estimatedAmount-1').content,
     dark: () => require('./images/dark/estimatedAmount-1').content,
+  },
+  ethStakingUpsell: {
+    light: () => require('./images/light/ethStakingUpsell-0').content,
+    dark: () => require('./images/dark/ethStakingUpsell-0').content,
   },
   exploreDecentralizedApps: {
     light: () => require('./images/light/exploreDecentralizedApps-1').content,
@@ -726,6 +778,14 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/japanVerifyId-1').content,
     dark: () => require('./images/dark/japanVerifyId-1').content,
   },
+  ledgerAccess: {
+    light: () => require('./images/light/ledgerAccess-0').content,
+    dark: () => require('./images/dark/ledgerAccess-0').content,
+  },
+  ledgerPlugin: {
+    light: () => require('./images/light/ledgerPlugin-0').content,
+    dark: () => require('./images/dark/ledgerPlugin-0').content,
+  },
   limitOrders: {
     light: () => require('./images/light/limitOrders-1').content,
     dark: () => require('./images/dark/limitOrders-1').content,
@@ -769,6 +829,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   pending: {
     light: () => require('./images/light/pending-2').content,
     dark: () => require('./images/dark/pending-2').content,
+  },
+  performance: {
+    light: () => require('./images/light/performance-0').content,
+    dark: () => require('./images/dark/performance-0').content,
   },
   phoneNumber: {
     light: () => require('./images/light/phoneNumber-1').content,
@@ -1114,7 +1178,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
     light: () => require('./images/light/done-1').content,
     dark: () => require('./images/dark/done-1').content,
   },
-  doneGray: { light: () => require('./images/light/doneGray-0').content, dark: null },
+  doneGray: {
+    light: () => require('./images/light/doneGray-0').content,
+    dark: () => require('./images/dark/doneGray-0').content,
+  },
   earnCoins: {
     light: () => require('./images/light/earnCoins-1').content,
     dark: () => require('./images/dark/earnCoins-1').content,
@@ -1174,6 +1241,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   graphsGray: {
     light: () => require('./images/light/graphsGray-1').content,
     dark: () => require('./images/dark/graphsGray-1').content,
+  },
+  hardwareWallet: {
+    light: () => require('./images/light/hardwareWallet-0').content,
+    dark: () => require('./images/dark/hardwareWallet-0').content,
   },
   higherLimits: {
     light: () => require('./images/light/higherLimits-1').content,
@@ -1358,6 +1429,10 @@ export const illustrationSpectrumMap: Record<IllustrationNames, IllustrationSpec
   security: {
     light: () => require('./images/light/security-1').content,
     dark: () => require('./images/dark/security-1').content,
+  },
+  seedPhrase: {
+    light: () => require('./images/light/seedPhrase-0').content,
+    dark: () => require('./images/dark/seedPhrase-0').content,
   },
   settings: {
     light: () => require('./images/light/settings-1').content,

@@ -398,6 +398,234 @@ export const iconManifest = {
       'non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮',
     documentationLinks: [],
   },
+  '8123:150': {
+    key: '4c8934701a7edfd9cbbccae127426b52e652a21e',
+    name: 'NavigationIcon/account_24/inactive',
+    description: 'navigation, speciality, profile, account, person, individual',
+    documentationLinks: [],
+  },
+  '8123:147': {
+    key: 'acc04cf76e52f313b8010c1bdc53fe9d6691ed21',
+    name: 'NavigationIcon/account_24/active',
+    description: 'navigation, speciality, profile, account, person, individual',
+    documentationLinks: [],
+  },
+  '8123:159': {
+    key: '1b8f06844c2176b7e1bfcd24099d8c51c2155008',
+    name: 'NavigationIcon/securityShield_24/active',
+    description:
+      'navigation, speciality, shield, protection, guard, defense, cover, safety, security',
+    documentationLinks: [],
+  },
+  '8123:167': {
+    key: '2be46f797896eb408272d805311db919a5de6b05',
+    name: 'NavigationIcon/eye_24/active',
+    description: 'navigation, speciality, eye, privacy, protection, personal',
+    documentationLinks: [],
+  },
+  '8123:157': {
+    key: '1c6e441ea8c22f302b60e632d1d965fdd92c237e',
+    name: 'NavigationIcon/securityShield_24/inactive',
+    description:
+      'navigation, speciality, shield, protection, guard, defense, cover, safety, security',
+    documentationLinks: [],
+  },
+  '8123:165': {
+    key: '20ff3508c138941f7b56cbbcef1a141c183074ac',
+    name: 'NavigationIcon/eye_24/inactive',
+    description: 'navigation, speciality, eye, privacy, protection, personal',
+    documentationLinks: [],
+  },
+  '8123:194': {
+    key: '56a0226cf51ae9576d5fa232496230b1a2ea3b6b',
+    name: 'NavigationIcon/taxes_24/inactive',
+    description: 'navigation, speciality, percentage, tax, tax season, document, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:193': {
+    key: '9c378c3b308e1044174da66f1e2e6ff4b95148b5',
+    name: 'NavigationIcon/taxes_24/active',
+    description: 'navigation, speciality, percentage, tax, tax season, document, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:186': {
+    key: '8c3c9c430f0e47b5f5e5da8ebdb8ca8a435a662e',
+    name: 'NavigationIcon/documentation_24/inactive',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:185': {
+    key: '0f204660e8fac0506a1d44e44637e27456838683',
+    name: 'NavigationIcon/documentation_24/active',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:177': {
+    key: '9e84f01f4bd61e4a27de34065c98c6c15eaeaa55',
+    name: 'NavigationIcon/paymentCard_24/inactive',
+    description: 'navigation, speciality, card, pay, credit, debit, money, 💳, 🏦, 🏧',
+    documentationLinks: [],
+  },
+  '8123:173': {
+    key: '395c718455956e4483b8f890bb8886229374b2f8',
+    name: 'NavigationIcon/paymentCard_24/active',
+    description: 'navigation, speciality, card, pay, credit, debit, money, 💳, 🏦, 🏧',
+    documentationLinks: [],
+  },
+  '8123:158': {
+    key: '954c477ad31f471ac806564fea3e91a79a9b3a66',
+    name: 'NavigationIcon/securityShield_16/inactive',
+    description:
+      'navigation, speciality, shield, protection, guard, defense, cover, safety, security',
+    documentationLinks: [],
+  },
+  '8123:146': {
+    key: '692b69cf09caa57dd6825bce3b6cb43616bcf3c1',
+    name: 'NavigationIcon/account_16/inactive',
+    description: 'navigation, speciality, profile, account, person, individual',
+    documentationLinks: [],
+  },
+  '8123:156': {
+    key: 'bed9c59434910ffdcc2415fd043904b5fe348958',
+    name: 'NavigationIcon/securityShield_16/active',
+    description:
+      'navigation, speciality, shield, protection, guard, defense, cover, safety, security',
+    documentationLinks: [],
+  },
+  '8123:184': {
+    key: 'f2eb934a42f44a8049e72f4a278ba9d4a2770b4d',
+    name: 'NavigationIcon/documentation_12/inactive',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:190': {
+    key: '66bd33bbfc32c0f397746a768d90f21aec8e9613',
+    name: 'NavigationIcon/taxes_16/inactive',
+    description: 'navigation, speciality, percentage, tax, tax season, document, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:191': {
+    key: '50ded69ab615b3ad2b7ac6f624d274d547d884e3',
+    name: 'NavigationIcon/taxes_16/active',
+    description: 'navigation, speciality, percentage, tax, tax season, document, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:166': {
+    key: '87a1e70f5d023170086dc54e7c1bafc3c1f7208d',
+    name: 'NavigationIcon/eye_16/inactive',
+    description: 'navigation, speciality, eye, privacy, protection, personal',
+    documentationLinks: [],
+  },
+  '8123:176': {
+    key: '0223380f6f1360423e0ab77324343c83b669c45f',
+    name: 'NavigationIcon/paymentCard_16/inactive',
+    description: 'navigation, speciality, card, pay, credit, debit, money, 💳, 🏦, 🏧',
+    documentationLinks: [],
+  },
+  '8123:183': {
+    key: 'ccd16c7902139d5be1fd6c349281d7b487345482',
+    name: 'NavigationIcon/documentation_16/active',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:174': {
+    key: '098a7eceeeb4ad50ffb9383509ecabef74aa0187',
+    name: 'NavigationIcon/paymentCard_16/active',
+    description: 'navigation, speciality, card, pay, credit, debit, money, 💳, 🏦, 🏧',
+    documentationLinks: [],
+  },
+  '8123:155': {
+    key: '744f22901eee6608a2f119fd66b916653d172382',
+    name: 'NavigationIcon/securityShield_12/inactive',
+    description:
+      'navigation, speciality, shield, protection, guard, defense, cover, safety, security',
+    documentationLinks: [],
+  },
+  '8123:149': {
+    key: 'a86325a64cd32a1d4d9ece46e50cd6caf3a4c0ee',
+    name: 'NavigationIcon/account_16/active',
+    description: 'navigation, speciality, profile, account, person, individual',
+    documentationLinks: [],
+  },
+  '8123:154': {
+    key: 'e4554880a20a81311ea2ca1233ec0335203f4d78',
+    name: 'NavigationIcon/securityShield_12/active',
+    description:
+      'navigation, speciality, shield, protection, guard, defense, cover, safety, security',
+    documentationLinks: [],
+  },
+  '8123:163': {
+    key: 'fe026bcf41682e594b5eff25e5636accebcee84a',
+    name: 'NavigationIcon/eye_16/active',
+    description: 'navigation, speciality, eye, privacy, protection, personal',
+    documentationLinks: [],
+  },
+  '8123:182': {
+    key: '4d64a0fcb0f4b93a7c2d3fa0d2eb91b13e9a8e05',
+    name: 'NavigationIcon/documentation_16/inactive',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:192': {
+    key: 'd91d90ac00e253bf52d25160e8a7daeb7b69346b',
+    name: 'NavigationIcon/taxes_12/inactive',
+    description: 'navigation, speciality, percentage, tax, tax season, document, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:189': {
+    key: '4c68a49b7b7ae3a0dffd3482b619df9f9a35ec7e',
+    name: 'NavigationIcon/taxes_12/active',
+    description: 'navigation, speciality, percentage, tax, tax season, document, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:148': {
+    key: '274ddf584b1bc07a81e06ef84fd8dae0fe527328',
+    name: 'NavigationIcon/account_12/inactive',
+    description: 'navigation, speciality, profile, account, person, individual',
+    documentationLinks: [],
+  },
+  '8123:164': {
+    key: 'ccfea76e729658bc2c4ba537c525070013343561',
+    name: 'NavigationIcon/eye_12/inactive',
+    description: 'navigation, speciality, eye, privacy, protection, personal',
+    documentationLinks: [],
+  },
+  '8123:175': {
+    key: '4ce4d22f5e21ca13f83daf43fcd7dd126d63791b',
+    name: 'NavigationIcon/paymentCard_12/inactive',
+    description: 'navigation, speciality, card, pay, credit, debit, money, 💳, 🏦, 🏧',
+    documentationLinks: [],
+  },
+  '8123:181': {
+    key: '9fa38519876072232b7c8d65cdf8a5f8bfe2d6d6',
+    name: 'NavigationIcon/documentation_12/active',
+    description:
+      'navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑',
+    documentationLinks: [],
+  },
+  '8123:172': {
+    key: 'fe755398b880c5ed47cfb2035809f9898733c3ba',
+    name: 'NavigationIcon/paymentCard_12/active',
+    description: 'navigation, speciality, card, pay, credit, debit, money, 💳, 🏦, 🏧',
+    documentationLinks: [],
+  },
+  '8123:145': {
+    key: 'f197940f68bf0d1ac388eb655c803faef2670f0d',
+    name: 'NavigationIcon/account_12/active',
+    description: 'navigation, speciality, profile, account, person, individual',
+    documentationLinks: [],
+  },
+  '8123:162': {
+    key: '12754e3bd1fd3f8cb7332e10927eba737d85696a',
+    name: 'NavigationIcon/eye_12/active',
+    description: 'navigation, speciality, eye, privacy, protection, personal',
+    documentationLinks: [],
+  },
   '6726:68': {
     key: '60dc4a1722ec00ab8812ef6da75ce2e0825cb6d7',
     name: 'Icon/cash_24',
@@ -4325,6 +4553,123 @@ export const iconManifest = {
     key: '1595616879d8addfaca083b78f010c40ad83f161',
     name: 'NavigationIcon/shoppingCart_12/active',
     description: 'navigation, speciality, shopping, cart, checkout, trolley, groceries, 🛒',
+    documentationLinks: [],
+  },
+  '8167:259': {
+    key: 'e97c63202c8f584f79724a76475a80c216cf96b1',
+    name: 'NavigationIcon/trophyCup_24/inactive',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:257': {
+    key: 'bef4ae132c8f90784260a20107faec759874421f',
+    name: 'NavigationIcon/trophyCup_24/active',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:256': {
+    key: '72181b77c623ccd76d685bd11f810fe3c2f1111b',
+    name: 'NavigationIcon/trophyCup_12/inactive',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:255': {
+    key: 'd49f2ab0664572b7081fd94bfaa739f79f3c8938',
+    name: 'NavigationIcon/trophyCup_12/active',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:254': {
+    key: '5a4fe2e53c4013feb2f43ab407edfb6ab4936c94',
+    name: 'NavigationIcon/trophyCup_16/inactive',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8167:258': {
+    key: '6c2597fe60803a93bd91bc366463b6d6db71d799',
+    name: 'NavigationIcon/trophyCup_16/active',
+    description:
+      'navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅',
+    documentationLinks: [],
+  },
+  '8178:145': {
+    key: 'a928c5e9378357a8edf290a6a71bc5341009d9b5',
+    name: 'NavigationIcon/moreVertical_24/inactive',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:143': {
+    key: 'c6ce26e0b3e5e45b1b26e7512f56c0d664bd6af2',
+    name: 'NavigationIcon/moreVertical_24/active',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:146': {
+    key: '367efbb67b6b087d94684f237d45647b16cfeb99',
+    name: 'NavigationIcon/moreVertical_16/inactive',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:144': {
+    key: '948849de7ac9029101261d8966bc25d7e02ee711',
+    name: 'NavigationIcon/moreVertical_16/active',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:147': {
+    key: 'b8f98075eda0344de83df8e279d19a4e25d75c1f',
+    name: 'NavigationIcon/moreVertical_12/inactive',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8178:142': {
+    key: '72dc4226d49e1e1487c7f0577929d265c4a91146',
+    name: 'NavigationIcon/moreVertical_12/active',
+    description: 'navigation, speciality, more, kebab, mochi, additional, added, extra, filter, 🍡',
+    documentationLinks: [],
+  },
+  '8242:89': {
+    key: '22c75303ae78d0b4de97980cddc2120893df8ec1',
+    name: 'Icon/seen_24/active',
+    description: 'seen, read, checkmark, double checkmark, send receipts, ✅, 🤓',
+    documentationLinks: [],
+  },
+  '8242:87': {
+    key: '86a1097a924b807b2715134c4ec4a051dd671702',
+    name: 'Icon/seen_16/active',
+    description: 'seen, read, checkmark, double checkmark, send receipts, ✅, 🤓',
+    documentationLinks: [],
+  },
+  '8242:88': {
+    key: '76336a5c6a68cd7b773cb1a340f3fd7528e984f0',
+    name: 'Icon/seen_12/active',
+    description: 'seen, read, checkmark, double checkmark, send receipts, ✅, 🤓',
+    documentationLinks: [],
+  },
+  '8242:106': {
+    key: 'd1805d226bff9eb062da675a483e603a3bab6c3b',
+    name: 'Icon/saturn_24/active',
+    description:
+      'space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '8242:105': {
+    key: '08e691df8c90e4d7d2178e3c417eb182d775d4ff',
+    name: 'Icon/saturn_16/active',
+    description:
+      'planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
+    documentationLinks: [],
+  },
+  '8242:104': {
+    key: '90adf680bc5fb4b0a254a42d08b0eac5c1140cce',
+    name: 'Icon/saturn_12/active',
+    description:
+      'planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏',
     documentationLinks: [],
   },
 };

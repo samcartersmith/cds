@@ -96,7 +96,7 @@ const mocks = {
 };
 
 // Add react-live imports you need here
-const ReactLiveScope = {
+const ReactLiveScope: unknown = {
   React,
   ...React,
   // Docusaurus

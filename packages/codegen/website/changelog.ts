@@ -6,7 +6,7 @@ import { getSourcePath } from '../utils/getSourcePath';
 
 type CdsPackage = typeof cdsPackages[number];
 const cdsPackages = ['common', 'fonts', 'lottie-files', 'mobile', 'utils', 'web'] as const;
-const changelogOutputDir = 'website/docs/changelog';
+const changelogOutputDir = '../apps/website/docs/changelog';
 
 async function copyChangelogs() {
   const spinner = ora(`Starting to copy CHANGELOG files`).start();

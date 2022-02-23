@@ -1,11 +1,30 @@
-import { buildTemplates } from '../utils/buildTemplates';
+import { reduce } from 'lodash';
 
-import { createDescriptionGraph } from './createDescriptionGraph';
+import { buildTemplates } from '../utils/buildTemplates';
+import { createDescriptionGraph } from '../utils/createDescriptionGraph';
+
 import { createIconFont, removeSVGs } from './createIconFont';
+import { iconManifest } from './iconManifest';
 
 async function buildIcons() {
   const iconData = await createIconFont();
-  const iconDescriptionGraph = createDescriptionGraph();
+  const iconDescriptionGraph = createDescriptionGraph(
+    reduce(
+      iconManifest,
+      (result, value, key) => {
+        // An icon comes in this form <Type>/<IconName>_<Size>
+        // we need to clean this data so we only extract the IconName
+        // i.e transform navigationIcon/add_xs -> add
+        // eslint-disable-next-line no-param-reassign
+        result[key] = {
+          ...value,
+          name: value.name.split('/')[1].split('_')[0],
+        };
+        return result;
+      },
+      {} as Record<string, { name: string; description: string }>,
+    ),
+  );
 
   const templates = {
     'objectMap.ejs': [

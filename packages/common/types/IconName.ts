@@ -184,9 +184,17 @@ export type IconName =
   | 'download'
   | 'setPinCode'
   | 'diagonalUpArrow'
-  | 'diagonalDownArrow';
+  | 'diagonalDownArrow'
+  | 'seenActive'
+  | 'saturnActive';
 
 export type NavigationIconName =
+  | 'account'
+  | 'securityShield'
+  | 'eye'
+  | 'taxes'
+  | 'documentation'
+  | 'paymentCard'
   | 'chartCandles'
   | 'trading'
   | 'bell'
@@ -213,9 +221,23 @@ export type NavigationIconName =
   | 'planet'
   | 'application'
   | 'appSwitcher'
-  | 'shoppingCart';
+  | 'shoppingCart'
+  | 'trophyCup'
+  | 'moreVertical';
 
 export type NavigationIconInternalName =
+  | 'accountInactive'
+  | 'accountActive'
+  | 'securityShieldActive'
+  | 'eyeActive'
+  | 'securityShieldInactive'
+  | 'eyeInactive'
+  | 'taxesInactive'
+  | 'taxesActive'
+  | 'documentationInactive'
+  | 'documentationActive'
+  | 'paymentCardInactive'
+  | 'paymentCardActive'
   | 'chartCandlesInactive'
   | 'tradingInactive'
   | 'bellInactive'
@@ -269,4 +291,8 @@ export type NavigationIconInternalName =
   | 'appSwitcherInactive'
   | 'appSwitcherActive'
   | 'shoppingCartInactive'
-  | 'shoppingCartActive';
+  | 'shoppingCartActive'
+  | 'trophyCupInactive'
+  | 'trophyCupActive'
+  | 'moreVerticalInactive'
+  | 'moreVerticalActive';

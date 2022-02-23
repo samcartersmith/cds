@@ -21,6 +21,5 @@ export const adopters = [
   { id: 'retail-mobile-design-system', pillar: 'Retail' },
   { id: 'retail-web-logged-in', pillar: 'Retail' },
   { id: 'retail-web-shared', pillar: 'Retail' },
-  { id: 'wallet-extension', pillar: 'Retail' },
   { id: 'retail-web-logged-out', pillar: 'Growth' },
 ] as const;

@@ -46,15 +46,15 @@ The task list below is needed to get the hello world of the poly repo. There are
 
 #### Codegen tasks
 
-- [ ] adoption tracker
+- [x] adoption tracker
 - [x] codegen
 - [x] docgen
-- [ ] changelog
-- [ ] sync_icons
-- [ ] build_icons
-- [ ] build_illustrations
-- [ ] prepare_adoption
-- [ ] prepare_mobile_routes
+- [x] changelog
+- [x] sync_icons
+- [x] build_icons
+- [x] build_illustrations
+- [x] prepare_adoption (One issue with Wallet, might need to modify code to handle. Will look into it later)
+- [x] prepare_mobile_routes
 
 
 #### npm package building

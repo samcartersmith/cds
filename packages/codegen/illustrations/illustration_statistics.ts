@@ -4,11 +4,11 @@
  */
 
 export const illustrationMetadata = {
-  numIllustrations: 743,
-  spotSquareCount: 56,
-  spotRectangleCount: 28,
-  heroSquareCount: 146,
-  pictogramCount: 141,
+  numIllustrations: 780,
+  spotSquareCount: 61,
+  spotRectangleCount: 34,
+  heroSquareCount: 151,
+  pictogramCount: 143,
   newIllustration: [],
-  modifiedIllustrations: ['downloadCoinbaseWalletArrow-dark'],
+  modifiedIllustrations: [],
 };

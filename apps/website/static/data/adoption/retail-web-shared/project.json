@@ -4,7 +4,7 @@
   "githubUrl": "https://github.cbhq.net/frontend/coinbase-www/tree/master",
   "id": "retail-web-shared",
   "label": "Retail Web Shared",
-  "totalParsedFiles": 1283,
+  "totalParsedFiles": 1239,
   "baseUrl": "frontend/coinbase-www/shared/src",
   "tsAliases": {
     "@cb/shared": "shared/dist",
@@ -16,12 +16,13 @@
     "@cb/shared/validators": "shared/src/validators",
     "@cb/shared/resources": "shared/src/resources",
     "@cb/shared/hooks": "shared/src/hooks",
-    "@cb/shared/components": "shared/src/components"
+    "@cb/shared/components": "shared/src/components",
+    "@cb/shared/styles": "shared/src/styles"
   },
   "dependencies": {
     "@bugsnag/js": "6.5.2",
     "@cb/types": "^0.0.5",
-    "@cbhq/cca": "^3.5.0",
+    "@cbhq/cca": "^3.6.0",
     "@rest-hooks/legacy": "2.0.0-j.1",
     "@testing-library/react": "8.0.1",
     "@testing-library/react-hooks": "2.0.1",

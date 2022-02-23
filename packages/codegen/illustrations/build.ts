@@ -2,12 +2,13 @@ import axios from 'axios';
 import chalk from 'chalk';
 import fs, { existsSync, readFileSync, renameSync, unlink } from 'fs';
 import { reduce } from 'lodash';
-import ora, { Ora } from 'ora';
+import ora from 'ora';
 import path from 'path';
 import { loadConfig, optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
 import { camelCase, pascalCase, renameKeys } from '@cbhq/cds-utils';
 
 import { CDS_PERSONAL_ACCESS_TOKEN, FigmaClient } from '../figma/client';
+import { createDescriptionGraph } from '../utils/createDescriptionGraph';
 import { getSourcePath } from '../utils/getSourcePath';
 import { writeFile } from '../utils/writeFile';
 
@@ -155,7 +156,6 @@ const loadOneImage = async (
   pngURL: string,
   nodeId: string,
   outDirPath: string,
-  spinner: Ora,
 ): Promise<void> => {
   const imageMetadata = localManifestData[FILE_FORMAT][nodeId];
   const imageName = imageMetadata.name;
@@ -169,7 +169,7 @@ const loadOneImage = async (
     if (!fs.existsSync(jsOutFullPath)) fs.mkdirSync(jsOutFullPath, { recursive: true });
     if (!fs.existsSync(pngOutFullPath)) fs.mkdirSync(pngOutFullPath, { recursive: true });
   } catch (err) {
-    errMsg(spinner, (err as Error).message);
+    console.error((err as Error).message);
   }
 
   const fileName = createFileName(imageName, versionNum, FILE_FORMAT);
@@ -183,16 +183,12 @@ const loadOneImage = async (
       },
     })
     .catch((err) => {
-      console.error(`${fileName} cannot be fetched`);
-      errMsg(spinner, (err as Error).message);
+      console.error(`${fileName} cannot be fetched - ${(err as Error).message}`);
     });
 
   if (!svgRes) return;
 
   const fileNameFullPath = path.join(imageOutFullPath, fileName);
-
-  const pngFileName = createFileName(imageName, versionNum, 'png');
-  void downloadPNG(pngURL, pngFileName, path.join(pngOutFullPath, pngFileName));
 
   const nameAndSpectrum = `${imageName}-${spectrum}`;
   const ENCODING = 'utf8';
@@ -259,11 +255,15 @@ const loadOneImage = async (
       fileStatus,
     });
 
+    const pngFileName = createFileName(imageName, newVersionNum, 'png');
+    await downloadPNG(pngURL, pngFileName, path.join(pngOutFullPath, pngFileName));
+
     if (fileStatus === 'new') {
       newIllustrations.push(nameAndSpectrum);
     }
 
     console.log(`Created ${newFileName} at ${newJsOutFullPath}, File Status: ${fileStatus}`);
+    console.log(`Created ${pngFileName} at ${pngOutFullPath}, File Status: ${fileStatus}`);
   } else {
     console.log(`File: ${fileName} has not changed`);
   }
@@ -300,34 +300,36 @@ const createNewImgsDirIfDNE = (outDirPath: string) => {
 };
 
 const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
-  const spinner = ora(
-    `Getting image urls for ${nodeIds.length} illustrations from Figma\n`,
-  ).start();
-
+  console.log(`Getting image urls for ${nodeIds.length} illustrations from Figma\n`);
   createNewImgsDirIfDNE(outDirPath);
 
   // Fetching SVG Images
   const svgImageResponse = await figmaClient
     .fileImages(ILLUSTRATION_FILE_ID, nodeIds, 'svg', 1)
-    .catch((err) => errMsg(spinner, (err as Error).message));
+    .catch((err) => console.error(err.message));
 
   // Fetching PNG Images
   const pngImageResponse = await figmaClient
     .fileImages(ILLUSTRATION_FILE_ID, nodeIds, 'png', 1)
-    .catch((err) => errMsg(spinner, (err as Error).message));
+    .catch((err) => console.error(err.message));
 
-  if (!svgImageResponse || !pngImageResponse) {
-    console.error('Empty image file');
+  if (!svgImageResponse) {
+    console.error('SVG Image is not loading');
+    return undefined;
+  }
+
+  if (!pngImageResponse) {
+    console.error('PNG Image is not loading');
     return undefined;
   }
 
   if (svgImageResponse.data.err) {
-    errMsg(spinner, svgImageResponse.data.err);
+    console.error(svgImageResponse.data.err);
     return undefined;
   }
 
   if (pngImageResponse.data.err) {
-    errMsg(spinner, pngImageResponse.data.err);
+    console.error(pngImageResponse.data.err);
     return undefined;
   }
 
@@ -335,7 +337,7 @@ const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
   const pngResponseKeys = Object.keys(pngImageResponse.data.images);
 
   if (svgResponseKeys.length !== pngResponseKeys.length) {
-    errMsg(spinner, 'Number of SVGs does not equal number of PNGs');
+    console.error('Number of SVGs does not equal number of PNGs');
     return undefined;
   }
 
@@ -347,7 +349,7 @@ const loadImagesLocally = async (nodeIds: string[], outDirPath: string) => {
 
     if (!nodeId || !localManifestData) return undefined;
 
-    loadImagePromiseArr.push(loadOneImage(svgURL, pngURL, nodeId, outDirPath, spinner));
+    loadImagePromiseArr.push(loadOneImage(svgURL, pngURL, nodeId, outDirPath));
   }
 
   return Promise.all(loadImagePromiseArr);
@@ -666,6 +668,19 @@ const createMobileSpectrumMap = async (names: IllustrationNamesMap, outDirPath: 
   spinner.stop();
 };
 
+const createIllustrationDescriptionGraph = async (destPath: string) => {
+  const illustrationDescriptionGraph = createDescriptionGraph(localManifestData.svg);
+  await writeFile({
+    template: 'objectMap.ejs',
+    data: { illustrationDescriptionGraph },
+    config: { disableAsConst: true },
+    types: {
+      illustrationDescriptionGraph: 'Record<string, string[]>',
+    },
+    dest: destPath,
+  });
+};
+
 const main = async (deleteImgsDir = false) => {
   try {
     const svgOptCfgFullPath = await getSourcePath('codegen/configs/svgo.config.js');
@@ -677,7 +692,7 @@ const main = async (deleteImgsDir = false) => {
 
     // Deletes all the images that are stored locally
     if (deleteImgsDir && fs.existsSync(outDirPath)) {
-      fs.rmdirSync(outDirPath, { recursive: true });
+      fs.rmSync(outDirPath, { recursive: true });
     }
 
     if (!components) return;
@@ -697,6 +712,9 @@ const main = async (deleteImgsDir = false) => {
     await createManifestFile('codegen/illustrations/illustration_manifest.ts');
     const versionNumManifest = await createVersionNumManifest(
       'web/illustrations/versionNumManifest.ts',
+    );
+    await createIllustrationDescriptionGraph(
+      'common/internal/data/illustrationDescriptionGraph.ts',
     );
     checkLightModeExistsForAllAssets(versionNumManifest);
 
