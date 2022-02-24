@@ -4,6 +4,7 @@ import InAppBrowser, { InAppBrowserOptions } from 'react-native-inappbrowser-reb
 
 import { CustomTabsHelper } from './customTabsHelper';
 import { paletteValueToHex } from './palette';
+import { isValidURL } from './isValidURL';
 
 // react-native-inappbrowser-reborn does not export these types
 // so I have to copy it here instead
@@ -55,6 +56,7 @@ export type OpenWebBrowserOptions = {
   spectrum: Spectrum;
   preventRedirectionIntoApp?: boolean;
   forceOpenOutsideApp?: boolean;
+  onInvalidURL?: () => void;
 } & Omit<InAppBrowseriOSOptions, 'preferredBarTintColor' | 'preferredControlTintColor'> &
   Omit<InAppBrowserAndroidOptions, 'toolbarColor' | 'secondaryToolbarColor'>;
 
@@ -94,10 +96,17 @@ export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions
   });
 
   try {
-    if (!forceOpenOutsideApp && (await InAppBrowser.isAvailable())) {
-      await InAppBrowser.open(url, browserConfig);
+    if (isValidURL(url)) {
+      if (!forceOpenOutsideApp && (await InAppBrowser.isAvailable())) {
+        await InAppBrowser.open(url, browserConfig);
+      } else {
+        const canOpenURL = await Linking.canOpenURL(url);
+        if (canOpenURL) {
+          await Linking.openURL(url);
+        }
+      }
     } else {
-      await Linking.openURL(url);
+      options.onInvalidURL?.();
     }
   } catch (err) {
     // TODO: Should output this to Bugsnag

@@ -247,4 +247,16 @@ describe('openWebBrowser', () => {
       },
     });
   });
+
+  it('should trigger onInvalidURL callback', async () => {
+    const onInvalidURL = jest.fn();
+
+    await openWebBrowser('/earn/something', {
+      spectrum: 'dark',
+      preventRedirectionIntoApp: true,
+      onInvalidURL,
+    });
+
+    expect(onInvalidURL).toHaveBeenCalledTimes(1);
+  });
 });
