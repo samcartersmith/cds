@@ -2,6 +2,7 @@ import { RefObject } from 'react';
 import { MotionBaseSpec } from '@cbhq/cds-common';
 import { isStorybook } from '@cbhq/cds-utils';
 import { curves, durations } from '@cbhq/cds-common/tokens/motion';
+import { TargetAndTransition } from 'framer-motion';
 
 import { convertMotionConfig } from './convertMotionConfig';
 
@@ -63,10 +64,10 @@ export class Animated {
 
   /**
    * Convert motion configs to CSS transition property
-   * @param configs Motion configs
+   * @param configs CDS Motion configs
    * @returns CSS transition property in object
    */
-  static toTransition(configs: MotionSpec[]): TransitionReturnValue {
+  static toCssTransition(configs: MotionSpec[]): TransitionReturnValue {
     return configs.reduce(
       (acc, config, index) => {
         const isLast = index === configs.length - 1;
@@ -82,4 +83,28 @@ export class Animated {
       { transition: '' },
     );
   }
+
+  /**
+   * Convert motion configs to framer-motion transition styles
+   * @param configs CDS Motion Configs
+   * @returns framer-motion transition styles
+   */
+  static toFramerTransition = (configs: MotionSpec[]): TargetAndTransition => {
+    return configs.reduce(
+      (acc, config) => {
+        return {
+          ...acc,
+          [config.property]: config.toValue,
+          transition: {
+            ...acc.transition,
+            [config.property]: {
+              ease: curves[config.easing],
+              duration: durations[config.duration] / 1000,
+            },
+          },
+        };
+      },
+      { transition: {} },
+    );
+  };
 }

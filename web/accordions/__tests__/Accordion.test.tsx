@@ -70,7 +70,6 @@ describe('Accordion', () => {
     const { getByTestId } = render(<MockAccordion />);
 
     expect(getByTestId('mock-accordion-item1-panel')).toBeInTheDocument();
-    expect(getByTestId('mock-accordion-item1-panel')).toHaveClass('collapsed');
     expect(getByTestId('mock-accordion-item2-panel')).toBeInTheDocument();
   });
 
@@ -81,9 +80,6 @@ describe('Accordion', () => {
 
     expect(getByTestId('mock-accordion-item1-header')).toHaveAttribute('aria-expanded', 'true');
     expect(getByTestId('mock-accordion-item2-header')).toHaveAttribute('aria-expanded', 'false');
-
-    expect(getByTestId('mock-accordion-item1-panel')).not.toHaveClass('collapsed');
-    expect(getByTestId('mock-accordion-item2-panel')).toHaveClass('collapsed');
   });
 
   it('renders titles', () => {

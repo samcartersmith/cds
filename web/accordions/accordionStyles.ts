@@ -9,12 +9,12 @@ import { Animated } from '../animation/Animated';
 
 export const iconStyles = {
   expanded: css`
-    ${Animated.toTransition([
+    ${Animated.toCssTransition([
       { ...animateInRotateConfig, toValue: `rotateZ(${accordionVisibleRotate}deg)` },
     ])}
   `,
   collapsed: css`
-    ${Animated.toTransition([
+    ${Animated.toCssTransition([
       {
         ...animateOutRotateConfig,
         toValue: `rotateZ(${accordionHiddenRotate}deg)`,
