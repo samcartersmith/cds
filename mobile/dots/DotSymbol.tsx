@@ -4,6 +4,7 @@ import { DotBaseProps, useIconSize } from '@cbhq/cds-common';
 import { RemoteImage } from '../media/RemoteImage';
 import { getTransform } from './dotStyles';
 import { useLayout } from '../hooks/useLayout';
+import { usePalette } from '../hooks/usePalette';
 
 export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
   source: ImageSourcePropType | string;
@@ -12,6 +13,7 @@ export type DotSymbolProps = Omit<DotBaseProps, 'variant'> & {
 export const DotSymbol = memo(({ children, pin, source, size = 's', ...props }: DotSymbolProps) => {
   const { iconSize } = useIconSize(size);
   const [layoutSize, onLayout] = useLayout();
+  const palette = usePalette();
 
   const pinStyles = useMemo(() => {
     // If pin placement exist, we compute the right
@@ -30,10 +32,10 @@ export const DotSymbol = memo(({ children, pin, source, size = 's', ...props }: 
 
   const imageBorderStyle = useMemo(() => {
     return {
-      borderColor: 'white',
+      borderColor: palette.secondary,
       borderWidth: 1,
     };
-  }, []);
+  }, [palette.secondary]);
 
   return (
     <View onLayout={onLayout} {...props}>
@@ -42,6 +44,7 @@ export const DotSymbol = memo(({ children, pin, source, size = 's', ...props }: 
         <RemoteImage
           shape="circle"
           testID="dotsymbol-remote-image"
+          shouldApplyDarkModeEnhacements
           dangerouslySetStyle={imageBorderStyle}
           source={typeof source === 'string' ? { uri: source } : source}
           width={iconSize}

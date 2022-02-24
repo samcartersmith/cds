@@ -5,7 +5,6 @@ export const dotOuterContainerStyles = {
   justifyContent: 'center',
   display: 'flex',
   borderWidth: borderWidth.button,
-  borderColor: 'white',
 } as const;
 
 export const dotCountContent = {

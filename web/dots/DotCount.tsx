@@ -35,6 +35,7 @@ export const DotCount = memo(
     const styles = useMemo(() => {
       return {
         backgroundColor: palette[variant],
+        borderColor: palette.secondary,
         ...pinStyles,
       };
     }, [palette, pinStyles, variant]);

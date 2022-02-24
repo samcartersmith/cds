@@ -2,6 +2,9 @@ import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { render, fireEvent } from '@testing-library/react-native';
 
 import { normalScaleMap } from '@cbhq/cds-common/hooks/useIconSize';
+import { paletteAliasToRgbaString } from '../../utils/palette';
+import { ThemeProvider } from '../../system/ThemeProvider';
+import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { DotCount } from '../DotCount';
 import { Icon } from '../../icons/Icon';
 
@@ -16,11 +19,39 @@ describe('DotCount', () => {
     expect(getByTestId(DOTCOUNT_TESTID)).toBeTruthy();
   });
 
-  it('renders a white border', () => {
+  it('renders a secondary border in light mode', () => {
     const { getByTestId } = render(<DotCount variant="negative" count={1} />);
 
     expect(getByTestId('dotcount-inner-container')).toHaveStyle({
-      borderColor: 'white',
+      borderColor: paletteAliasToRgbaString('secondary', 'light'),
+      borderWidth: borderWidth.button,
+    });
+  });
+
+  it('renders a secondary border in dark mode', () => {
+    const { getByTestId } = render(
+      <ThemeProvider spectrum="dark" name="dotcount-theme-provider">
+        <DotCount variant="negative" count={1} />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('dotcount-inner-container')).toHaveStyle({
+      borderColor: paletteAliasToRgbaString('secondary', 'dark', false),
+      borderWidth: borderWidth.button,
+    });
+  });
+
+  it('renders a secondary border in dark and frontier mode', () => {
+    const { getByTestId } = render(
+      <FeatureFlagProvider frontier>
+        <ThemeProvider spectrum="dark" name="dotcount-theme-provider">
+          <DotCount variant="negative" count={1} />
+        </ThemeProvider>
+      </FeatureFlagProvider>,
+    );
+
+    expect(getByTestId('dotcount-inner-container')).toHaveStyle({
+      borderColor: paletteAliasToRgbaString('secondary', 'dark', true),
       borderWidth: borderWidth.button,
     });
   });

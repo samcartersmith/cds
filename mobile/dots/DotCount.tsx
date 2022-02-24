@@ -42,6 +42,7 @@ export const DotCount = memo(
         dotOuterContainerStyles,
         {
           backgroundColor: palette[variant],
+          borderColor: palette.secondary,
         },
       ];
     }, [palette, pinStyles, variant]);

@@ -20,7 +20,6 @@ describe('DotSymbol', () => {
 
     expect(getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
   });
-
   it('renders an image when source is a string', () => {
     const { getByTestId } = render(<DotSymbol source={src} />);
 
