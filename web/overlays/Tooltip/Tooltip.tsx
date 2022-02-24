@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Options as PopperOptions } from '@popperjs/core';
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 import React, { cloneElement, useLayoutEffect, useMemo, useState } from 'react';
 import { usePopper } from 'react-popper';
+
 import { PopperTooltip, tooltipId } from './PopperTooltip';
 import { TooltipPortal } from './TooltipPortal';
 import { TooltipProps } from './TooltipProps';
@@ -71,7 +72,7 @@ export const Tooltip = ({
     <div onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
       <div
         ref={setSubject}
-        className={cx(subjectStyle)}
+        className={subjectStyle}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         onMouseDown={onPreventMouseDown}
