@@ -2168,7 +2168,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-utils@*, @cbhq/cds-web-utils@workspace:packages/web-utils":
+"@cbhq/cds-web-utils@workspace:*, @cbhq/cds-web-utils@workspace:packages/web-utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web-utils@workspace:packages/web-utils"
   dependencies:
@@ -2204,7 +2204,7 @@ __metadata:
     "@cbhq/cds-fonts": "workspace:*"
     "@cbhq/cds-lottie-files": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
-    "@cbhq/cds-web-utils": "*"
+    "@cbhq/cds-web-utils": "workspace:*"
     "@popperjs/core": ^2.9.0
     "@storybook/addon-a11y": ^6.4.17
     "@storybook/addon-actions": ^6.4.17

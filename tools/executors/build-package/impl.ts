@@ -49,6 +49,14 @@ type TscArgs = {
   configFile: string;
 };
 
+type PackageJson = {
+  version: string;
+  name: string;
+  dependencies?: Record<string, string>;
+  peerDependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+};
+
 // babel --config-file ../../babel.build.config.js  --extensions .ts,.tsx --ignore "**/*.js","**/*.test.ts","**/*.test.tsx","dist/**" --source-maps --out-dir dist ./
 async function runBabel(
   context: ExecutorContext,
@@ -117,6 +125,56 @@ async function removeIgnoredFiles(
   };
 }
 
+// packages with versions to replace in the output
+const packageVersionReplacePathMap: Record<string, string> = {
+  '@cbhq/cds-common': 'packages/common',
+  '@cbhq/cds-fonts': 'packages/fonts',
+  '@cbhq/cds-lottie-files': 'packages/lottie-files',
+  '@cbhq/cds-mobile': 'packages/mobile',
+  '@cbhq/cds-utils': 'packages/utils',
+  '@cbhq/cds-web': 'packages/web',
+};
+
+async function getPackageVersion(pkgJsonPath: string) {
+  const pkgJson = JSON.parse(await fs.promises.readFile(pkgJsonPath, 'utf8')) as PackageJson;
+  return pkgJson.version;
+}
+
+function replaceDeps(context: ExecutorContext, pkgJson: PackageJson, deps: Record<string, string>) {
+  const promises: Promise<void>[] = [];
+  for (const dep of Object.keys(deps || {})) {
+    if (packageVersionReplacePathMap[dep]) {
+      promises.push(
+        getPackageVersion(path.join(context.root, packageVersionReplacePathMap[dep], 'package.json')).then(
+          (version: string) => {
+            deps[dep] = version;
+          },
+        ),
+      );
+    }
+  }
+
+  return promises;
+}
+
+async function replacePackageVersions(context: ExecutorContext, destinationDir: string) {
+  const pkgJsonPath = path.join(destinationDir, 'package.json');
+  const pkgJson = JSON.parse(await fs.promises.readFile(pkgJsonPath, 'utf8')) as PackageJson;
+
+  const promises: Promise<void>[] = [
+    ...replaceDeps(context, pkgJson, pkgJson.dependencies ?? {}),
+    ...replaceDeps(context, pkgJson, pkgJson.peerDependencies ?? {}),
+  ];
+
+  await Promise.all(promises);
+
+  if (pkgJson.devDependencies) {
+    delete pkgJson.devDependencies;
+  }
+
+  await fs.promises.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2));
+}
+
 export default async function buildPackage(options: BuildPackageOptions, context: ExecutorContext) {
   const {
     destinationDir: dest,
@@ -154,6 +212,8 @@ export default async function buildPackage(options: BuildPackageOptions, context
   success = success
     ? (await removeIgnoredFiles(context, destinationDir, staticFilesToIgnore)).success
     : success;
+
+  await replacePackageVersions(context, destinationDir);
 
   return Promise.resolve({ success });
 }
