@@ -25,7 +25,9 @@ const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilde
 
 const strokeColor = '#F7931A';
 export const Default = () => (
-  <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+  <React.StrictMode>
+    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+  </React.StrictMode>
 );
 
 export const Compact = () => (
@@ -57,7 +59,9 @@ export const yAxisScaling = () => (
 );
 
 export const Fill = () => (
-  <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} fill />
+  <React.StrictMode>
+    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} fill />
+  </React.StrictMode>
 );
 
 export const FallbackPositive = () => <SparklineInteractiveBuild strokeColor={strokeColor} />;

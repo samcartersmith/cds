@@ -26,17 +26,21 @@ export const SparklineInteractiveAnimatedPath = memo(
     const { isFallbackVisible, hideFallback } = useSparklineInteractiveContext();
 
     // Only tween animation on period changes
-    const { hasNotChanged: skipAnimation } = useValueChanges(selectedPeriod);
+    const { hasNotChanged: skipAnimation, addPreviousValue: addPreviousPeriod } =
+      useValueChanges(selectedPeriod);
+
     const {
       previousValue: previousPath,
       newValue: newPath,
       hasChanged: shouldUpdatePath,
+      addPreviousValue: addPreviousPath,
     } = useValueChanges(d);
 
     const {
       previousValue: previousArea,
       newValue: newArea,
       hasChanged: shouldUpdateArea,
+      addPreviousValue: addPreviousArea,
     } = useValueChanges(area ?? '');
 
     const pathInterpolator = useMemo(
@@ -79,6 +83,14 @@ export const SparklineInteractiveAnimatedPath = memo(
     }, [area, d]);
 
     useEffect(() => {
+      addPreviousPeriod(selectedPeriod);
+    }, [addPreviousPeriod, selectedPeriod]);
+
+    useEffect(() => {
+      // only update these values when they are used
+      addPreviousArea(newArea);
+      addPreviousPath(newPath);
+
       if (shouldUpdatePath) {
         if (isFallbackVisible) {
           hideFallback();
@@ -92,8 +104,12 @@ export const SparklineInteractiveAnimatedPath = memo(
         updatePathWithoutAnimation();
       }
     }, [
+      addPreviousArea,
+      addPreviousPath,
       hideFallback,
       isFallbackVisible,
+      newArea,
+      newPath,
       playAnimation,
       shouldUpdateArea,
       shouldUpdatePath,

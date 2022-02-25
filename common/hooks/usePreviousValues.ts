@@ -17,17 +17,20 @@ export function usePreviousValues<T>(initialValues: T[] = []) {
     [previousValues],
   );
 
-  const getPreviousValue = useCallback(() => {
-    if (previousValues.current.length > 1) {
-      return previousValues.current[previousValues.current.length - 2];
-    }
+  const getPreviousValue = useCallback(
+    (allowDuplicates?: boolean) => {
+      if (previousValues.current.length > 1 && !allowDuplicates) {
+        return previousValues.current[previousValues.current.length - 2];
+      }
 
-    if (previousValues.current.length > 0) {
-      return previousValues.current[previousValues.current.length - 1];
-    }
+      if (previousValues.current.length > 0) {
+        return previousValues.current[previousValues.current.length - 1];
+      }
 
-    return undefined;
-  }, [previousValues]);
+      return undefined;
+    },
+    [previousValues],
+  );
 
   return {
     addPreviousValue,

@@ -97,7 +97,10 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {
-      const xPos = Math.max(0, event.clientX - (containerRef.current?.offsetLeft ?? 0));
+      const xPos = Math.max(
+        0,
+        event.clientX - (containerRef.current?.getBoundingClientRect().left ?? 0),
+      );
 
       const dataPoint = getMarker(xPos);
 
