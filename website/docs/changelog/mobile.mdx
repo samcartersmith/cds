@@ -8,6 +8,30 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.40.2 (2/25/2022, 08:38 AM PST)
+
+#### 🚀 Updates
+
+- **[Collapse]** CDS Collapse stories and tests. [#56415](https://github.cbhq.net/mono/repo/pull/56415)
+- **[Card]** Update the mobile card examples. [#56048](https://github.cbhq.net/mono/repo/pull/56048), [CDS-2109](https://jira.coinbase-corp.com/browse/CDS-2109)
+- TabLabels support DotBadges. [#55831](https://github.cbhq.net/mono/repo/pull/55831), [CDS-2112](https://jira.coinbase-corp.com/browse/CDS-2112)
+- **[Cards]** Update createCard HOCs to use alpha types. [#55918](https://github.cbhq.net/mono/repo/pull/55918), [CDS-2122](https://jira.coinbase-corp.com/browse/CDS-2122)
+- **[CardGroup]** Pull CardGroup (alpha) if frontier is true. [#55872](https://github.cbhq.net/mono/repo/pull/55872), [CDS-2126](https://jira.coinbase-corp.com/browse/CDS-2126)
+- **[Card]** Pull Card (alpha) if frontier is true. [#55905](https://github.cbhq.net/mono/repo/pull/55905), [CDS-2125](https://jira.coinbase-corp.com/browse/CDS-2125)
+- **[IconButton]** Use alpha IconButton in Frontier. [#55841](https://github.cbhq.net/mono/repo/pull/55841), [CDS-2118](https://jira.coinbase-corp.com/browse/CDS-2118)
+- LikeButton for FeedCard. [#55825](https://github.cbhq.net/mono/repo/pull/55825), [CDS-2114](https://jira.coinbase-corp.com/browse/CDS-2114)
+- **[Button]** To pull alpha Button if frontier. [#55711](https://github.cbhq.net/mono/repo/pull/55711), [CDS-2118](https://jira.coinbase-corp.com/browse/CDS-2118)
+- **[Collapse]** CDS Collapse mobile and web. [#55287](https://github.cbhq.net/mono/repo/pull/55287)
+- **[TextIcon]** Add animated and dangerouslySetStyle props. [#55691](https://github.cbhq.net/mono/repo/pull/55691), [CDS-2115](https://jira.coinbase-corp.com/browse/CDS-2115)
+
+#### 🐞 Fixes
+
+- SparklineInteractiveAnimatedPath should handle double renders. [#56613](https://github.cbhq.net/mono/repo/pull/56613)
+- **[DotSymbol, DotCount]** Change border color of DotSymbol and DotCount depending on spectrum. [#56054](https://github.cbhq.net/mono/repo/pull/56054)
+- Check url validity before open. [#56214](https://github.cbhq.net/mono/repo/pull/56214), [CDS-2130](https://jira.coinbase-corp.com/browse/CDS-2130)
+- Ensure secondary tabs use correct font-weight on mobile. [#55645](https://github.cbhq.net/mono/repo/pull/55645)
+- Convert TabNavigation to an uncontrolled component. [#55499](https://github.cbhq.net/mono/repo/pull/55499)
+
 ## 0.40.1 (2/18/2022, 10:02 AM PST)
 
 #### 🚀 Updates

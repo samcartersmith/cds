@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.2 (2/25/2022, 08:38 AM PST)
+
+#### 🚀 Updates
+
+- **[Collapse]** CDS Collapse stories and tests. [#56415](https://github.cbhq.net/mono/repo/pull/56415)
+- **[Collapse]** CDS Collapse motion enhancement. [#55937](https://github.cbhq.net/mono/repo/pull/55937)
+- Added NavigationIconButton. [#56088](https://github.cbhq.net/mono/repo/pull/56088)
+- **[Card]** Update the mobile card examples. [#56048](https://github.cbhq.net/mono/repo/pull/56048), [CDS-2109](https://jira.coinbase-corp.com/browse/CDS-2109)
+- TabLabels support DotBadges. [#55831](https://github.cbhq.net/mono/repo/pull/55831), [CDS-2112](https://jira.coinbase-corp.com/browse/CDS-2112)
+- **[Cards]** Update createCard HOCs to use alpha types. [#55918](https://github.cbhq.net/mono/repo/pull/55918), [CDS-2122](https://jira.coinbase-corp.com/browse/CDS-2122)
+- LikeButton for FeedCard. [#55825](https://github.cbhq.net/mono/repo/pull/55825), [CDS-2114](https://jira.coinbase-corp.com/browse/CDS-2114)
+- **[Collapse]** CDS Collapse mobile and web. [#55287](https://github.cbhq.net/mono/repo/pull/55287)
+- TabNavigation should overflow nicely on web. [#55708](https://github.cbhq.net/mono/repo/pull/55708), [CDS-2088](https://jira.coinbase-corp.com/browse/CDS-2088)
+- Add alpha types to common/types/alpha. [#55692](https://github.cbhq.net/mono/repo/pull/55692), [CDS-2113](https://jira.coinbase-corp.com/browse/CDS-2113)
+
+#### 🐞 Fixes
+
+- SparklineInteractiveAnimatedPath should handle double renders. [#56613](https://github.cbhq.net/mono/repo/pull/56613)
+- **[DotSymbol, DotCount]** Change border color of DotSymbol and DotCount depending on spectrum. [#56054](https://github.cbhq.net/mono/repo/pull/56054)
+- Convert TabNavigation to an uncontrolled component. [#55499](https://github.cbhq.net/mono/repo/pull/55499)
+
 ## 0.34.1 (2/18/2022, 10:02 AM PST)
 
 #### 🚀 Updates
