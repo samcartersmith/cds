@@ -1,5 +1,3 @@
-import { Suspense } from 'react';
-
 import * as templatesMap from ':cds-website/data/templatesMap';
 
 /*
@@ -13,7 +11,7 @@ type ExampleProps<T extends ComponentName> = {
   templateName: keyof ExamplesMap[T];
 };
 
-export const ComponentDetailsInner = <T extends ComponentName>({
+export const ComponentDetails = <T extends ComponentName>({
   componentName,
   templateName,
 }: ExampleProps<T>) => {
@@ -23,9 +21,3 @@ export const ComponentDetailsInner = <T extends ComponentName>({
   }
   return null;
 };
-
-export const ComponentDetails = <T extends ComponentName>(props: ExampleProps<T>) => (
-  <Suspense fallback={null}>
-    <ComponentDetailsInner {...props} />
-  </Suspense>
-);
