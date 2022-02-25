@@ -8,7 +8,10 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "isolatedModules": true,
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -17,7 +20,9 @@
     "strict": true,
     "target": "ES2020",
     "paths": {
-      ":cds-website/*": ["apps/website/*"]
+      ":cds-website/*": [
+        "apps/website/*"
+      ]
     }
   }
 }

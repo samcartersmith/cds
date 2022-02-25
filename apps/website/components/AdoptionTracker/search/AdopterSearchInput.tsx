@@ -2,7 +2,7 @@ import './ant-styles.css';
 
 import React, { memo, useCallback, useContext, useState } from 'react';
 import { Select, Tag } from 'antd';
-import { CustomTagProps } from 'rc-select/lib/BaseSelect';
+import { CustomTagProps } from 'rc-select/lib/interface/generator';
 import { Box } from '@cbhq/cds-web/layout';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 
@@ -47,7 +47,6 @@ const tagStyle = {
 };
 
 function tagRender(props: CustomTagProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { value, closable, onClose } = props;
 
   const { type, val } = getSearchResultFromId(value as string);

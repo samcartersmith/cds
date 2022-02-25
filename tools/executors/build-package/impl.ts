@@ -157,6 +157,16 @@ function replaceDeps(context: ExecutorContext, pkgJson: PackageJson, deps: Recor
   return promises;
 }
 
+function deletePackages(packagesToDelete: string[], deps?: Record<string, string>) {
+  if (deps === undefined) return; 
+
+  for(const pkg of packagesToDelete) {
+    if (pkg in deps) {
+      delete deps[pkg];
+    }
+  }
+}
+
 async function replacePackageVersions(context: ExecutorContext, destinationDir: string) {
   const pkgJsonPath = path.join(destinationDir, 'package.json');
   const pkgJson = JSON.parse(await fs.promises.readFile(pkgJsonPath, 'utf8')) as PackageJson;
@@ -167,6 +177,8 @@ async function replacePackageVersions(context: ExecutorContext, destinationDir: 
   ];
 
   await Promise.all(promises);
+
+  deletePackages(['@cbhq/cds-web-utils'], pkgJson.dependencies);
 
   if (pkgJson.devDependencies) {
     delete pkgJson.devDependencies;

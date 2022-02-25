@@ -6,12 +6,15 @@ Help:
   $$ make format.utils              -- Format the `utils` package.
   $$ make format.mobile             -- Format the `mobile` package.
   $$ make format.web                -- Format the `web` package.
+  $$ make format.playground         -- Format the `mobile-playground` 
+  $$ make format.website            -- Format the `website` 
   $$ make format.all                -- Format all of the affected packages
 
   $$ make lint.common               -- lint the `common` package.
   $$ make lint.utils                -- lint the `utils` package.
   $$ make lint.mobile               -- lint the `mobile` package.
   $$ make lint.web                  -- lint the `web` package.
+  $$ make lint.website              -- lint the `website`. 
   $$ make lint                      -- lint all of the affected packages
   $$ make lint.fix                  -- lint all of the affected packages and fix errors
 
@@ -85,6 +88,14 @@ format.mobile:
 format.web:
 	nx format web
 
+.PHONY: format.playground
+format.playground:
+	nx format mobile-playground
+
+.PHONY: format.website
+format.website:
+	nx format website
+
 .PHONY: format.all
 format.all:
 	nx affected --target=format --all
@@ -104,6 +115,10 @@ lint.mobile:
 .PHONY: lint.web
 lint.web:
 	nx lint web
+
+.PHONY: lint.website
+lint.website:
+	nx lint website
 
 .PHONY: lint
 lint:

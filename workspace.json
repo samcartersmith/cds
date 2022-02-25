@@ -1,15 +1,15 @@
 {
   "version": 2,
   "projects": {
+    "codegen": "packages/codegen",
     "common": "packages/common",
     "fonts": "packages/fonts",
-    "web": "packages/web",
-    "web-utils": "packages/web-utils",
-    "codegen": "packages/codegen",
-    "website": "apps/website",
     "lottie-files": "packages/lottie-files",
     "mobile": "packages/mobile",
     "mobile-playground": "apps/mobile-playground",
-    "utils": "packages/utils"
+    "utils": "packages/utils",
+    "web": "packages/web",
+    "web-utils": "packages/web-utils",
+    "website": "apps/website"
   }
 }

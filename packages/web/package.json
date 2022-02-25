@@ -21,6 +21,7 @@
     "@cbhq/cds-fonts": "workspace:*",
     "@cbhq/cds-lottie-files": "workspace:*",
     "@cbhq/cds-utils": "workspace:*",
+    "@cbhq/cds-web-utils": "workspace:*",
     "@popperjs/core": "^2.9.0",
     "d3-interpolate-path": "^2.2.2",
     "d3-selection": "^1.4.2",
