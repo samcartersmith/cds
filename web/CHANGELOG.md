@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.2 (2/25/2022, 08:38 AM PST)
+
+#### 🚀 Updates
+
+- **[Collapse]** CDS Collapse stories and tests. [#56415](https://github.cbhq.net/mono/repo/pull/56415)
+- **[Collapse]** CDS Collapse motion enhancement. [#55937](https://github.cbhq.net/mono/repo/pull/55937)
+- Added NavigationIconButton. [#56088](https://github.cbhq.net/mono/repo/pull/56088)
+- TabLabels support DotBadges. [#55831](https://github.cbhq.net/mono/repo/pull/55831), [CDS-2112](https://jira.coinbase-corp.com/browse/CDS-2112)
+- **[Cards]** Update createCard HOCs to use alpha types. [#55918](https://github.cbhq.net/mono/repo/pull/55918), [CDS-2122](https://jira.coinbase-corp.com/browse/CDS-2122)
+- **[Collapse]** CDS Collapse mobile and web. [#55287](https://github.cbhq.net/mono/repo/pull/55287)
+- TabNavigation should overflow nicely on web. [#55708](https://github.cbhq.net/mono/repo/pull/55708), [CDS-2088](https://jira.coinbase-corp.com/browse/CDS-2088)
+
+#### 🐞 Fixes
+
+- SparklineInteractiveAnimatedPath should handle double renders. [#56613](https://github.cbhq.net/mono/repo/pull/56613)
+- **[Tooltip]** Remove unnecessary cx. [#56469](https://github.cbhq.net/mono/repo/pull/56469)
+- **[DotSymbol, DotCount]** Change border color of DotSymbol and DotCount depending on spectrum. [#56054](https://github.cbhq.net/mono/repo/pull/56054)
+- Revert " fix: Web - CDS buttons have some anti-alias clipping issues (#55480)". [#56010](https://github.cbhq.net/mono/repo/pull/56010), [CDS-2063](https://jira.coinbase-corp.com/browse/CDS-2063)
+- Ensure secondary tabs use correct font-weight on mobile. [#55645](https://github.cbhq.net/mono/repo/pull/55645)
+- Convert TabNavigation to an uncontrolled component. [#55499](https://github.cbhq.net/mono/repo/pull/55499)
+- Web - CDS buttons have some anti-alias clipping issues. [#55480](https://github.cbhq.net/mono/repo/pull/55480), [CDS-2063](https://jira.coinbase-corp.com/browse/CDS-2063)
+
 ## 0.35.1 (2/18/2022, 10:02 AM PST)
 
 #### 🚀 Updates
