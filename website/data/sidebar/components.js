@@ -32,6 +32,7 @@ module.exports = {
         'components/buttons/Button/button',
         'components/buttons/ButtonGroup/button-group',
         'components/buttons/IconButton/icon-button',
+        'components/buttons/NavigationIconButton/navigation-icon-button',
       ],
     },
     {
@@ -45,7 +46,6 @@ module.exports = {
         'components/cards/CardFooter/card-footer',
         'components/cards/CardGroup/card-group',
         'components/cards/CardHeader/card-header',
-        'components/cards/CardMedia/card-media',
         'components/cards/FeatureEntryCard/feature-entry-card',
         'components/cards/FeedCard/feed-card',
       ],
@@ -158,6 +158,7 @@ module.exports = {
       items: [
         'components/overlays/Alert/alert',
         'components/overlays/Toast/toast',
+        'components/overlays/Tooltip/tooltip',
         'components/overlays/Modal/modal',
         'components/overlays/ModalBody/modal-body',
         'components/overlays/ModalFooter/modal-footer',
@@ -167,7 +168,6 @@ module.exports = {
         'components/overlays/PopoverTrigger/popover-trigger',
         'components/overlays/PopoverTriggerWrapper/popover-trigger-wrapper',
         'components/overlays/SectionTitle/section-title',
-        'components/overlays/Tooltip/tooltip',
         'components/overlays/Drawer/drawer',
         'components/overlays/Tray/tray',
       ],

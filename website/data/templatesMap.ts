@@ -220,6 +220,21 @@ export const IconButton = {
   ),
 };
 
+export const NavigationIconButton = {
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/NavigationIconButton/implementation.mdx'
+      ),
+  ),
+  'navigation-icon-button': React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/buttons/NavigationIconButton/navigation-icon-button.mdx'
+      ),
+  ),
+};
+
 export const AnnouncementCard = {
   a11y: React.lazy(
     async () =>
@@ -360,21 +375,6 @@ export const CardHeader = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/CardHeader/usage.mdx'
-      ),
-  ),
-};
-
-export const CardMedia = {
-  'card-media': React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/CardMedia/card-media.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/cards/CardMedia/implementation.mdx'
       ),
   ),
 };
@@ -680,10 +680,22 @@ export const NativeTextArea = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/NativeTextArea/implementation.mdx'
       ),
   ),
+  intro: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/NativeTextArea/intro.mdx'
+      ),
+  ),
   'native-text-area': React.lazy(
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/NativeTextArea/native-text-area.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/controls/NativeTextArea/usage.mdx'
       ),
   ),
 };
@@ -1639,6 +1651,33 @@ export const Toast = {
   ),
 };
 
+export const Tooltip = {
+  design: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/design.mdx'
+      ),
+  ),
+  implementation: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/implementation.mdx'
+      ),
+  ),
+  tooltip: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/tooltip.mdx'
+      ),
+  ),
+  usage: React.lazy(
+    async () =>
+      import(
+        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/usage.mdx'
+      ),
+  ),
+};
+
 export const Modal = {
   a11y: React.lazy(
     async () =>
@@ -1836,33 +1875,6 @@ export const SectionTitle = {
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/SectionTitle/usage.mdx'
-      ),
-  ),
-};
-
-export const Tooltip = {
-  design: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/design.mdx'
-      ),
-  ),
-  implementation: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/implementation.mdx'
-      ),
-  ),
-  tooltip: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/tooltip.mdx'
-      ),
-  ),
-  usage: React.lazy(
-    async () =>
-      import(
-        /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/usage.mdx'
       ),
   ),
 };

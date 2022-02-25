@@ -2,12 +2,13 @@ const { components } = require('./data/sidebar/components');
 const { adopters } = require('./data/sidebar/adopters');
 
 // Removes unfinished categories from side bar
-const sectionsToExcludeByLabel = new Set(['Accordions']);
+const sectionsToExcludeByLabel = new Set(['Accordions', 'NavigationIconButton']);
 
 // Removes unfinished components from section in side bar
 // Please alphabetize to avoid merge conflicts
 const componentsToExcludeByLabel = new Set([
   'components/navigation/SidebarMoreMenu/sidebar-more-menu',
+  'components/buttons/NavigationIconButton/navigation-icon-button',
 ]);
 
 // Filter sidebar components
