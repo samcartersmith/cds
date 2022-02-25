@@ -13,6 +13,7 @@ yarn
 - [Web Development](#web-development)
 - [React Native Development](#react-native-development)
 - [The CDS Website Development](#cds-website-development)
+- [Release Workflows](#release-and-cds-consumers)
 - [Testing](#testing)
 - [Miscellaneous](#miscellaneous)
 
@@ -334,15 +335,17 @@ const componentsToExcludeByLabel = new Set([
 
 This is useful when you are prototyping the component and don't want it to be visible to consumers.
 
-# Miscellaneous
+## Miscellaneous
 
 For any usage examples, you can use all imports defined in `website/src/theme/ReactLiveScope/index.ts` directly without importing them in your jsx live.
 
 For adding new imports, simply import in the same file and add it to the `ReactLiveScope` object.
 
-# Release and CDS Consumers
+# Release Workflows
 
-You will often hear CDS team members refer to retail, prime, assetHub (and others) as consumers. CDS consumers are any teams at Coinbase that leverage CDS.
+CDS regularly has to cut releases to expose our library through packages or assets (via a CDN) so our consumers can use them in their applications. You will often hear CDS team members refer to retail, prime, assetHub (and others) as consumers. CDS consumers are any teams at Coinbase that leverage CDS.
+
+## Release through Verdaccio
 
 We release our packages to consumers through Coinbase's internal NPM registry (Verdaccio - https://publish-npm.cbhq.net/). Each package includes source TypeScript files for all typings information, and Babel transpiled ES modules at `lib/`. To split up the CSS code, we wrote a custom Babel plugin to take Linaria transpiled styles and put them into `.css` files corresponding to the `.js` files.
 
@@ -394,9 +397,15 @@ ash deploy -p eng/shared/design-system/cloud
 
 You will also need to verify that the CSS was deployed to AWS. If web was bumped, verify `upload_css` was deployed to AWS (i.e. https://assets.coinbase.com/cds/web/version-0.18.0.css). Verify `upload_css_sw_cache` deployed to aws was bumped (ie: https://assets.coinbase.com/assets/sw-cache/web/version-0.30.8.css) which should be mapped to https://coinbase.com/assets/sw-cache/web/version-0.30.8.css
 
-### Manually Release to CB Alpha
+## Manually Release to CB Alpha
 
 Sometimes we want to test updates to the `@cbhq/cds-mobile` package in the `react-native` retail app. You can deploy a branch to CB Alpha without merging to `master` via [firebase](https://buildkite.com/coinbase/retail-rn-ios-firebase-delivery). Follow the directions [here](https://confluence.coinbase-corp.com/pages/viewpage.action?pageId=1243176705#:~:text=scheduled%20release%20train.-,Alpha%20Builds%20from%20custom%20branches,-Sometimes%2C%20it%20is).
+
+## CDS Illustration Release
+
+Follow the steps in [How to make an illustration release](https://docs.google.com/document/d/1dp5doJ8EzLpeE1PG8KscBwD-azM54hQRG0JW0HVdDnI/edit#heading=h.ng5jyeh1c16v), which will show you how to upload the assets to the [static-assets](https://github.cbhq.net/engineering/static-assets) repository (this is how we deploy assets to our production CDN).
+
+Once the PR is merged, deploy the assets on [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits).
 
 # Miscellaneous
 
