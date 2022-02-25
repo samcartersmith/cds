@@ -26,15 +26,6 @@ function configureForDocusaurus(config) {
     }
   });
 
-  config.resolve.alias['@cbhq/cds-common'] = path.resolve(__dirname, '../../packages/common');
-  config.resolve.alias['@cbhq/cds-lottie-files'] = path.resolve(
-    __dirname,
-    '../../packages/lottie-files',
-  );
-  config.resolve.alias['@cbhq/cds-fonts'] = path.resolve(__dirname, '../../packages/fonts');
-  config.resolve.alias['@cbhq/cds-utils'] = path.resolve(__dirname, '../../packages/utils');
-  config.resolve.alias['@cbhq/cds-web-utils'] = path.resolve(__dirname, '../../packages/web-utils');
-  config.resolve.alias['@cbhq/cds-web'] = path.resolve(__dirname, '../../packages/web');
   config.resolve.alias[':cds-website'] = path.resolve(__dirname, './');
 
   return {};

@@ -85,7 +85,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 #### Releases
 
 - [x] Build release script to auto update package.json's
-- [ ] Enable npm publish to verdaccio
+- [x] Enable npm publish to verdaccio
 - [ ] Upload css to cloud
 - [ ] Update service worker cache
 

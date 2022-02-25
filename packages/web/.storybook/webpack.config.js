@@ -60,11 +60,5 @@ module.exports = ({ config, environmentFile }) => {
     }
   });
 
-  config.resolve.alias['@cbhq/cds-common'] = path.resolve(__dirname, '../../common');
-  config.resolve.alias['@cbhq/cds-lottie-files'] = path.resolve(__dirname, '../../lottie-files');
-  config.resolve.alias['@cbhq/cds-fonts'] = path.resolve(__dirname, '../../fonts');
-  config.resolve.alias['@cbhq/cds-utils'] = path.resolve(__dirname, '../../utils');
-  config.resolve.alias['@cbhq/cds-web-utils'] = path.resolve(__dirname, '../../web-utils');
-
   return config;
 };
