@@ -6,7 +6,7 @@ import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { css } from 'linaria';
 import { HStack, VStack } from '../layout';
 import { TabIndicator } from './TabIndicator';
-import { useTabLabels } from './hooks/useTabLabels';
+import { useTabNavigation } from './hooks/useTabNavigation';
 import { Paddle } from './Paddle';
 import { useDimensions } from '../hooks/useDimensions';
 
@@ -28,7 +28,7 @@ export const TabNavigation = memo(
     const isDense = useScaleDensity() === 'dense';
     const isPrimary = useMemo(() => variant === 'primary', [variant]);
     const shouldOverrideScale = useMemo(() => isDense && isPrimary, [isDense, isPrimary]);
-    const { tabLabels, tabIndicatorProps } = useTabLabels({ tabs, value, variant, onChange });
+    const { tabLabels, tabIndicatorProps } = useTabNavigation({ tabs, value, variant, onChange });
 
     const handleOnScroll = useCallback(() => {
       const scrollDistance = Number(scrollRef.current?.scrollLeft);

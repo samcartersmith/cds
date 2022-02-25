@@ -1,45 +1,51 @@
-import React, { useEffect, useCallback, useState, useMemo, createElement } from 'react';
+import React, { useRef, useEffect, useCallback, useState, useMemo, createElement } from 'react';
 import { TabIndicatorProps, TabNavigationProps } from '@cbhq/cds-common';
-import { View, LayoutChangeEvent } from 'react-native';
+import { View, LayoutChangeEvent, ScrollView } from 'react-native';
 import { TabLabel } from '../TabLabel';
 import { PressableOpacity } from '../../system/PressableOpacity';
 
 type LayoutMap = Record<string, { width: number; x: number }>;
-type UseTabLabelsProps = Required<Pick<TabNavigationProps, 'tabs' | 'variant' | 'onChange'>> &
+type UseTabNavigationProps = Required<Pick<TabNavigationProps, 'tabs' | 'variant' | 'onChange'>> &
   Pick<TabNavigationProps, 'value'>;
 
 /** This hook provides decorated TabLabels and animated props for a TabIndicator - and handles onChange events */
-export const useTabLabels = ({
+export const useTabNavigation = ({
   tabs,
   value = tabs[0].id,
   variant,
   onChange,
-}: UseTabLabelsProps) => {
+}: UseTabNavigationProps) => {
   // When each item renders, calculate it's coords and save them
   const [layoutMap, updateLayoutMap] = useState<LayoutMap>({});
+  const scrollRef = useRef<ScrollView>(null);
+
   const handleLayout = useCallback(
-    (key: string, { nativeEvent }: LayoutChangeEvent) => {
-      updateLayoutMap({
-        ...layoutMap,
-        [key]: {
-          width: nativeEvent.layout.width,
-          x: nativeEvent.layout.x,
-        },
-      });
+    (key: string, { nativeEvent: { layout } }: LayoutChangeEvent) => {
+      const widthDidUpdate = layoutMap?.[key]?.width !== layout?.width;
+      const xDidUpdate = layoutMap?.[key]?.x !== layout?.x;
+
+      if (widthDidUpdate || xDidUpdate) {
+        updateLayoutMap({
+          ...layoutMap,
+          [key]: {
+            width: layout.width,
+            x: layout.x,
+          },
+        });
+      }
     },
     [layoutMap],
   );
 
-  // State for the TabIndicator props
-  const [tabIndicatorProps, setTabIndicatorProps] = useState<TabIndicatorProps>({
-    width: layoutMap[value]?.width ?? 0,
-    x: layoutMap[value]?.x ?? 0,
-  });
   useEffect(() => {
-    setTabIndicatorProps({
-      width: layoutMap[value]?.width,
-      x: layoutMap[value]?.x,
-    });
+    scrollRef.current?.scrollTo({ x: layoutMap[value]?.x, animated: true });
+  }, [value, layoutMap]);
+
+  const tabIndicatorProps: TabIndicatorProps = useMemo(() => {
+    // Bail early
+    if (!layoutMap?.[value]) return { width: 0, x: 0 };
+
+    return { width: layoutMap[value]?.width, x: layoutMap[value]?.x };
   }, [value, layoutMap]);
 
   // Iterate over the tabs and create Pressable TabLabels
@@ -70,5 +76,8 @@ export const useTabLabels = ({
     [tabs, value, variant, onChange, handleLayout],
   );
 
-  return useMemo(() => ({ tabLabels, tabIndicatorProps }), [tabLabels, tabIndicatorProps]);
+  return useMemo(
+    () => ({ tabLabels, tabIndicatorProps, scrollRef }),
+    [tabLabels, tabIndicatorProps, scrollRef],
+  );
 };

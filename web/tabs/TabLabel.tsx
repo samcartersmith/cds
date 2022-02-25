@@ -1,6 +1,6 @@
 import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import { css } from 'linaria';
-import React, { useMemo, memo, useRef, useEffect } from 'react';
+import React, { useLayoutEffect, useMemo, memo, useRef, useEffect } from 'react';
 import { TextHeadline, TextTitle3, TextTitle4, TextProps } from '../typography';
 import { spacing } from '../tokens';
 import { DotCount } from '../dots/DotCount';
@@ -32,13 +32,16 @@ const COLORS = {
   },
 } as const;
 
+export type LayoutChangeEvent = DOMRect | undefined;
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
-export type TabLabelProps = CommonTabLabelProps & TextProps;
+export type TabLabelProps = CommonTabLabelProps &
+  TextProps & { onLayout?: (props: LayoutChangeEvent) => void };
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabLabel = memo(
-  ({ id, active, variant = 'primary', count = 0, ...props }: TabLabelProps) => {
+  ({ id, active, variant = 'primary', count = 0, onLayout, ...props }: TabLabelProps) => {
     const didMount = useRef(false);
+    const layoutRef = useRef<HTMLElement>(null);
     const { animateIn, animateOut, ref: dotRef } = useDotAnimation();
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
@@ -64,8 +67,12 @@ export const TabLabel = memo(
       }
     }, [count, animateIn, animateOut]);
 
+    useLayoutEffect(() => {
+      onLayout?.(layoutRef.current?.getBoundingClientRect());
+    }, [onLayout]);
+
     return (
-      <HStack alignItems="center">
+      <HStack alignItems="center" ref={layoutRef}>
         {shouldMeasureElement ? (
           <span className={containerClassName}>
             <TextElement as="h2" color={color} {...props} />

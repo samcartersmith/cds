@@ -5,7 +5,7 @@ import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { Box, HStack, VStack } from '../layout';
 import { TabIndicator } from './TabIndicator';
-import { useTabLabels } from './hooks/useTabLabels';
+import { useTabNavigation } from './hooks/useTabNavigation';
 
 /** @deprecated DO NOT USE: This is an unreleased component and is unstable */
 export const TabNavigation = memo(
@@ -13,11 +13,17 @@ export const TabNavigation = memo(
     const isDense = useScaleDensity() === 'dense';
     const isPrimary = useMemo(() => variant === 'primary', [variant]);
     const shouldOverrideScale = useMemo(() => isDense && isPrimary, [isDense, isPrimary]);
-    const { tabLabels, tabIndicatorProps } = useTabLabels({ tabs, value, variant, onChange });
+    const tabNavigationProps = { tabs, value, variant, onChange };
+    const { tabLabels, tabIndicatorProps, scrollRef } = useTabNavigation(tabNavigationProps);
 
     return (
       <Box testID={testID} overflow="gradient" {...rest}>
-        <ScrollView horizontal scrollEventThrottle={1} showsHorizontalScrollIndicator={false}>
+        <ScrollView
+          horizontal
+          scrollEventThrottle={1}
+          showsHorizontalScrollIndicator={false}
+          ref={scrollRef}
+        >
           <VStack>
             {shouldOverrideScale ? (
               <ScaleProvider value="large">
