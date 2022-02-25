@@ -1,0 +1,61 @@
+### Basic Collapse
+```jsx live
+function BasicCollapse() {
+  const [expanded, { toggle }] = useToggler();
+
+  return (
+    <ExampleWithThemeToggles>
+      <Button onPress={toggle}>Click me!</Button>
+      <Collapse expanded={expanded}>
+        <TextInput
+          compact
+          type="number"
+          step="0.01"
+          label="Amount"
+          placeholder="8293323.23"
+          suffix="USD"
+        />
+      </Collapse>
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
+### Reveal Top
+```jsx live
+function RevealTop() {
+  const [expanded, { toggle }] = useToggler();
+
+  return (
+    <ExampleWithThemeToggles>
+      <Collapse expanded={expanded}>
+        <TextInput
+          compact
+          type="number"
+          step="0.01"
+          label="Amount"
+          placeholder="8293323.23"
+          suffix="USD"
+        />
+      </Collapse>
+      <Button onPress={toggle}>Click me!</Button>
+    </ExampleWithThemeToggles>
+  )
+}
+```
+
+### Scroll Content
+```jsx live
+function Scroll() {
+  const [expanded, { toggle }] = useToggler();
+
+  return (
+    <ExampleWithThemeToggles>
+      <Button onPress={toggle}>Click me!</Button>
+      <Collapse expanded={expanded} maxHeight={400}>
+        <TextBody as="p">{loremIpsum.repeat(30)}</TextBody>
+      </Collapse>
+    </ExampleWithThemeToggles>
+  )
+}
+```

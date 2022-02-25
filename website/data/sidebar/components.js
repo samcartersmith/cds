@@ -64,6 +64,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Collapse',
+      collapsed: true,
+      items: ['components/collapse/Collapse/collapse'],
+    },
+    {
+      type: 'category',
       label: 'Controls',
       collapsed: true,
       items: [
@@ -216,8 +222,8 @@ module.exports = {
         'components/visualizations/ProgressCircle/progress-circle',
         'components/visualizations/Sparkline/sparkline',
         'components/visualizations/SparklineGradient/sparkline-gradient',
-        'components/visualizations/SparklineInteractive/sparkline-interactive',
         'components/visualizations/SparklineInteractiveHeader/sparkline-interactive-header',
+        'components/visualizations/SparklineInteractive/sparkline-interactive',
       ],
     },
   ],

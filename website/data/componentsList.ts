@@ -26,6 +26,7 @@ export const components = [
   'ContentCellFallback',
   'ListCell',
   'ListCellFallback',
+  'Collapse',
   'Checkbox',
   'InputIcon',
   'InputIconButton',
@@ -98,6 +99,6 @@ export const components = [
   'ProgressCircle',
   'Sparkline',
   'SparklineGradient',
-  'SparklineInteractive',
   'SparklineInteractiveHeader',
+  'SparklineInteractive',
 ] as const;

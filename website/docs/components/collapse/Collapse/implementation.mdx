@@ -1,0 +1,147 @@
+import { ApiDetails } from ':cds-website/components/ApiDetails';
+import { Badge } from ':cds-website/components/Badge';
+import { ComponentDetails } from ':cds-website/components/ComponentDetails';
+import { RightSidebar } from ':cds-website/src/theme/RightSidebar';
+
+<RightSidebar toc={toc} />
+
+> [@cbhq/cds-(web|mobile)/collapse/Collapse](https://github.cbhq.net/mono/repo/blob/master/eng/shared/design-system/web/collapse/Collapse.tsx)
+
+<ComponentDetails componentName="Collapse" templateName="intro" />
+
+## Usage
+
+<ComponentDetails componentName="Collapse" templateName="usage" />
+
+## Accessibility
+
+<ComponentDetails componentName="Collapse" templateName="a11y" />
+
+## Props
+
+### accessibilityLabelledBy <Badge variant="web" />
+
+Accessibility prop that describes the component that labels it by its `id`
+
+**https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute**
+
+<ApiDetails
+  componentName="Collapse"
+  propertyName="accessibilityLabelledBy"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Collapse" templateName="prop-accessibilityLabelledBy" />
+
+### children
+
+Collapsible content
+
+<ApiDetails
+  componentName="Collapse"
+  propertyName="children"
+  required={true}
+  defaultValue=""
+  mobileOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+  webOptions={[
+    'ReactElement<any, string | JSXElementConstructor<any>>',
+    'ReactNodeArray',
+    'ReactPortal',
+    'false',
+    'number',
+    'string',
+    'true',
+    '{}',
+  ]}
+/>
+
+<ComponentDetails componentName="Collapse" templateName="prop-children" />
+
+### expanded
+
+Expand/collapse state of the content.
+
+<ApiDetails
+  componentName="Collapse"
+  propertyName="expanded"
+  required={true}
+  defaultValue="false"
+  mobileOptions={['false', 'true']}
+  webOptions={['false', 'true']}
+/>
+
+<ComponentDetails componentName="Collapse" templateName="prop-expanded" />
+
+### id <Badge variant="web" /> <Badge variant="danger" order={2} />
+
+This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls
+
+<ApiDetails
+  componentName="Collapse"
+  propertyName="id"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Collapse" templateName="prop-id" />
+
+### maxHeight
+
+Max height of the content. Overflow content will be scrollable.
+
+<ApiDetails
+  componentName="Collapse"
+  propertyName="maxHeight"
+  required={false}
+  defaultValue=""
+  mobileOptions={['number']}
+  webOptions={['number']}
+/>
+
+<ComponentDetails componentName="Collapse" templateName="prop-maxHeight" />
+
+### role <Badge variant="web" />
+
+Semantic role whole using a non-semantic element.
+
+<ApiDetails
+  componentName="Collapse"
+  propertyName="role"
+  required={false}
+  defaultValue=""
+  mobileOptions={[]}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Collapse" templateName="prop-role" />
+
+### testID
+
+Used to locate this element in unit and end-to-end tests. Under the hood, testID translates to data-testid on Web. On Mobile, testID stays the same - testID
+
+<ApiDetails
+  componentName="Collapse"
+  propertyName="testID"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Collapse" templateName="prop-testID" />
+
+<ComponentDetails componentName="Collapse" templateName="outro" />

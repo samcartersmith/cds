@@ -3,7 +3,7 @@ Check [here](/components/accordion-item) for AccordionItem Props.
 ### Simple Accordion
 ```jsx live
 <ExampleWithThemeToggles>
-  <Accordion defaultActiveKey="2" onItemPress={(itemKey) => console.log(itemKey)}>
+  <Accordion defaultActiveKey="1" onItemPress={(itemKey) => console.log(itemKey)}>
     <AccordionItem
       itemKey="1"
       title="Accordion #1"
@@ -38,7 +38,7 @@ Check [here](/components/accordion-item) for AccordionItem Props.
       }
       onPress={(itemKey) => console.log(itemKey)}
     >
-      <TextBody as="p">Accordion Content</TextBody>
+      <TextBody as="p">{loremIpsum.repeat(20)}</TextBody>
     </AccordionItem>
   </Accordion>
 </ExampleWithThemeToggles>
