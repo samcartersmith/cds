@@ -12,6 +12,7 @@ import { selectKeys } from '@cbhq/cds-common/tokens/menu';
 import { usePopoverContext } from './PopoverContext';
 import { HStack } from '../../layout/HStack';
 import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
+import { SearchInputProps } from '../../controls/SearchInput';
 
 export type PopoverTriggerHOCProps = {
   children: ReactElement;
@@ -19,6 +20,13 @@ export type PopoverTriggerHOCProps = {
    * Optional callback that will be fired when the trigger is pressed
    */
   onPress?: NoopFn;
+};
+
+export type ClonedPopoverTriggerRef = {
+  /**
+   * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
+   */
+  ref: MutableRefObject<HTMLButtonElement | null>;
 };
 
 export type PopoverTriggerProps = {
@@ -37,10 +45,6 @@ export type PopoverTriggerProps = {
   /**
    * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
    */
-  ref?: MutableRefObject<HTMLButtonElement | null>;
-  /**
-   * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
-   */
   value?: string;
   /**
    * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
@@ -55,7 +59,7 @@ export type PopoverTriggerProps = {
    * @link https://reactjs.org/docs/forwarding-refs.html
    */
   children: RefAttributes<HTMLButtonElement>;
-};
+} & ClonedPopoverTriggerRef;
 
 export const PopoverTrigger = memo(function PopoverTrigger({
   children,
@@ -70,6 +74,7 @@ export const PopoverTrigger = memo(function PopoverTrigger({
     setTrigger,
     flush,
     onBlur,
+    searchEnabled,
   } = usePopoverContext();
 
   const handleOnPopoverMenuTriggerPress = useCallback(() => {
@@ -111,9 +116,24 @@ export const PopoverTrigger = memo(function PopoverTrigger({
     ],
   );
 
+  const renderSearchInputTrigger = useCallback(
+    (child: ReactElement<SearchInputProps & ClonedPopoverTriggerRef>) => {
+      return cloneElement(child, {
+        ...child.props,
+        ref: triggerRef,
+        disabled,
+      });
+    },
+    [triggerRef, disabled],
+  );
+
   return (
     <HStack width={flush ? '100%' : 'auto'} ref={setTrigger}>
-      {renderPopoverMenuTrigger(children as ReactElement<PopoverTriggerProps>)}
+      {searchEnabled
+        ? renderSearchInputTrigger(
+            children as ReactElement<SearchInputProps & ClonedPopoverTriggerRef>,
+          )
+        : renderPopoverMenuTrigger(children as ReactElement<PopoverTriggerProps>)}
     </HStack>
   );
 });

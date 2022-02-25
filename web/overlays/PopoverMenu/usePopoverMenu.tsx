@@ -17,6 +17,7 @@ export const usePopoverMenu = ({
   minWidth,
   maxWidth,
   popoverPositionConfig,
+  searchEnabled,
   ...props
 }: Omit<PopoverMenuBaseProps, 'children'>) => {
   // TODO: These are necessary callback refs to make PopperJS work. They are causing double renders, will be looking at another third party solution in separate PR
@@ -69,7 +70,7 @@ export const usePopoverMenu = ({
   }, [triggerRef, animateOutAndCloseMenu]);
 
   const handlePopoverMenuBlur = useCallback(
-    (event: FocusEvent<HTMLButtonElement>) => {
+    (event: FocusEvent<HTMLElement>) => {
       const eventIsBlur = event?.type === 'blur';
       const isOptionFocused = popoverMenuRef.current?.contains(event.relatedTarget as Node | null);
       const isTriggerFocused = triggerRef.current === event.relatedTarget;
@@ -98,6 +99,7 @@ export const usePopoverMenu = ({
       maxWidth,
       visible,
       popoverPositionConfig,
+      searchEnabled,
       // state
       setTrigger,
       setPopper,
@@ -112,6 +114,7 @@ export const usePopoverMenu = ({
       handlePopoverMenuBlur,
       onChange,
       onBlur,
+      openMenu,
       ...props,
     }),
     [
@@ -125,6 +128,7 @@ export const usePopoverMenu = ({
       maxWidth,
       visible,
       popoverPositionConfig,
+      searchEnabled,
       setTrigger,
       setPopper,
       togglePopoverMenuVisibility,
@@ -136,6 +140,7 @@ export const usePopoverMenu = ({
       handlePopoverMenuBlur,
       onChange,
       onBlur,
+      openMenu,
       props,
     ],
   );

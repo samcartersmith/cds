@@ -40,6 +40,8 @@ const defaultContext: PopoverContextType = {
   onBlur: () => null,
   popoverPositionConfig: defaultPopoverPositionConfig,
   visible: false,
+  searchEnabled: false,
+  openMenu: () => null,
 };
 
 const errorMessage =

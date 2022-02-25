@@ -15,6 +15,10 @@ export type SearchInputProps = SearchInputBaseProps &
     onClear?: React.MouseEventHandler;
     onChangeText: (text: string) => void;
     /**
+     * Callback fired when pressed/clicked
+     */
+    onPress?: React.MouseEventHandler;
+    /**
      * Adds border to input
      * @default true
      */

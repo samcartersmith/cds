@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, FocusEvent } from 'react';
 import { NoopFn } from './Helpers';
 import { SharedProps } from './SharedProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
@@ -71,8 +71,19 @@ export type PopoverMenuBaseProps = {
    * @internal this property is for internal use only!
    */
   popoverPositionConfig?: PopoverPositionConfig;
+  /**
+   * Enable when PopoverMenu is used with a SearchInput as the trigger. Applies
+   * relevant focus behaviors and keyboard events
+   * @default false
+   */
+  searchEnabled?: boolean;
 } & SharedProps &
   Pick<
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   >;
+
+export type PopoverMenuRefProps = {
+  handlePopoverMenuBlur: (event: FocusEvent<HTMLElement>) => void;
+  focusSelectOption: NoopFn;
+};

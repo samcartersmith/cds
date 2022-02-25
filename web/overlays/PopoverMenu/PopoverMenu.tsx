@@ -1,7 +1,14 @@
-import React, { forwardRef, memo, useEffect, useRef } from 'react';
+import React, {
+  useCallback,
+  forwardRef,
+  memo,
+  useEffect,
+  useRef,
+  useImperativeHandle,
+} from 'react';
 import { createPortal } from 'react-dom';
 import { popoverMenuMaxHeight } from '@cbhq/cds-common/tokens/menu';
-import { ForwardedRef, PopoverMenuBaseProps } from '@cbhq/cds-common/types';
+import { ForwardedRef, PopoverMenuBaseProps, PopoverMenuRefProps } from '@cbhq/cds-common/types';
 import { generateRandomId, isDevelopment } from '@cbhq/cds-utils';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { isSSR } from '../../utils/browser';
@@ -27,9 +34,10 @@ export const PopoverMenu = memo(
       popoverPositionConfig,
       minWidth,
       maxWidth,
+      searchEnabled = false,
       ...props
     }: PopoverMenuBaseProps,
-    ref: ForwardedRef<HTMLElement>,
+    ref: ForwardedRef<PopoverMenuRefProps>,
   ) {
     const { triggerNode, childNodes } = usePopoverChildren(children);
     const context = usePopoverMenu({
@@ -44,28 +52,34 @@ export const PopoverMenu = memo(
       popoverPositionConfig,
       minWidth,
       maxWidth,
+      searchEnabled,
       ...props,
     });
-    const { popoverMenuRef, selectOptionRef } = context;
+    const { handlePopoverMenuBlur, selectOptionRef, popoverMenuRef } = context;
 
     const containerPrefix = 'cds-popover-menu-container-';
     // have to store it in a ref because PopperJS renders twice on mount causing issues with createPortal grabbing the id
     const containerId = useRef<string>(generateRandomId(containerPrefix));
     const popoverPortalZIndex = zIndex.overlays.portal + zIndex.overlays.popoverMenu;
 
-    // when menu is opened, focuses already selected option or first option
-    useEffect(() => {
-      if (visible) {
-        if (selectOptionRef.current) {
-          selectOptionRef.current.focus();
-        } else if (popoverMenuRef.current) {
-          const selectOptions = popoverMenuRef.current?.querySelectorAll('[role="menuitem"]');
-          if (selectOptions.length) {
-            (selectOptions[0] as HTMLButtonElement).focus();
-          }
+    const focusSelectOption = useCallback(() => {
+      if (selectOptionRef.current) {
+        selectOptionRef.current.focus();
+      } else if (popoverMenuRef.current) {
+        const selectOptions = popoverMenuRef.current?.querySelectorAll('[role="menuitem"]');
+        if (selectOptions.length) {
+          (selectOptions[0] as HTMLButtonElement).focus();
         }
       }
-    }, [popoverMenuRef, selectOptionRef, visible]);
+    }, [selectOptionRef, popoverMenuRef]);
+
+    // when menu is opened, focuses already selected option or first option
+    useEffect(() => {
+      // disable for when searchEnabled is true because trigger needs to maintain focus
+      if (visible && !searchEnabled) {
+        focusSelectOption();
+      }
+    }, [focusSelectOption, searchEnabled, visible]);
 
     const renderContent = () => {
       if (isSSR() || disablePortal || !document.getElementById(containerId.current)) {
@@ -77,6 +91,15 @@ export const PopoverMenu = memo(
       );
     };
 
+    useImperativeHandle(
+      ref,
+      () => ({
+        handlePopoverMenuBlur,
+        focusSelectOption,
+      }),
+      [handlePopoverMenuBlur, focusSelectOption],
+    );
+
     if (isDevelopment() && !triggerNode) {
       throw Error('Popover requires a trigger element to be wrapped in PopoverTrigger');
     }
@@ -86,13 +109,7 @@ export const PopoverMenu = memo(
 
     return (
       <PopoverProvider value={context}>
-        <HStack
-          position="relative"
-          height="100%"
-          width={flush ? '100%' : 'auto'}
-          ref={ref}
-          {...props}
-        >
+        <HStack position="relative" height="100%" width={flush ? '100%' : 'auto'} {...props}>
           {triggerNode}
           <div id={containerId.current} style={{ zIndex: popoverPortalZIndex }}>
             {visible && renderContent()}
