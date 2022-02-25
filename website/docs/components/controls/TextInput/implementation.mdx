@@ -222,6 +222,32 @@ Short messageArea indicating purpose of input
 
 <ComponentDetails componentName="TextInput" templateName="prop-label" />
 
+### onChange
+
+<ApiDetails
+  componentName="TextInput"
+  propertyName="onChange"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(e: NativeSyntheticEvent<TextInputChangeEventData>) => void']}
+  webOptions={['ChangeEventHandler<HTMLInputElement>']}
+/>
+
+<ComponentDetails componentName="TextInput" templateName="prop-onChange" />
+
+### onChangeText <Badge variant="mobile" />
+
+<ApiDetails
+  componentName="TextInput"
+  propertyName="onChangeText"
+  required={false}
+  defaultValue=""
+  mobileOptions={['(text: string) => void']}
+  webOptions={[]}
+/>
+
+<ComponentDetails componentName="TextInput" templateName="prop-onChangeText" />
+
 ### onPress <Badge variant="web" />
 
 Callback fired when pressed/clicked
@@ -316,6 +342,19 @@ Used to locate this element in unit and end-to-end tests. Under the hood, testID
 />
 
 <ComponentDetails componentName="TextInput" templateName="prop-testID" />
+
+### value
+
+<ApiDetails
+  componentName="TextInput"
+  propertyName="value"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['number', 'readonly string[]', 'string']}
+/>
+
+<ComponentDetails componentName="TextInput" templateName="prop-value" />
 
 ### variant
 

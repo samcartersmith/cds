@@ -24,12 +24,16 @@ import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography/TextLabel1';
 import { TextInputFocusVariantContext } from './context';
 
-export type TextInputProps = TextInputBaseProps &
+export type TextInputProps = {
+  value?: RNTextInputProps['value'];
+  onChange?: RNTextInputProps['onChange'];
+  onChangeText?: RNTextInputProps['onChangeText'];
+} & TextInputBaseProps &
   Pick<
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   > &
-  RNTextInputProps;
+  Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText'>;
 
 export const TextInput = memo(
   forwardRef(

@@ -49,8 +49,10 @@ export type TextInputProps = {
    * @default true
    */
   bordered?: boolean;
+  value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
+  onChange?: React.InputHTMLAttributes<HTMLInputElement>['onChange'];
 } & TextInputBaseProps &
-  Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width'>;
+  Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width' | 'value' | 'onChange'>;
 
 export const TextInput = memo(
   forwardRef(function TextInput(
