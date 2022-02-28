@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.35.3 (2/28/2022, 06:37 AM PST)
+
+#### 🚀 Updates
+
+- **[Tabs]** Add scrollTo feature for mobile. [#56112](https://github.cbhq.net/mono/repo/pull/56112), [CDS-2066](https://jira.coinbase-corp.com/browse/CDS-2066)
+- Search Enabled PopoverMenu (web). [#55352](https://github.cbhq.net/mono/repo/pull/55352)
+
+#### 📘 Misc
+
+- **[TextInput]** Add key native props to doc. [#56722](https://github.cbhq.net/mono/repo/pull/56722), [CDS-2044](https://jira.coinbase-corp.com/browse/CDS-2044)
+
 ## 0.35.2 (2/25/2022, 08:38 AM PST)
 
 #### 🚀 Updates

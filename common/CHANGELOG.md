@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.34.3 (2/28/2022, 06:37 AM PST)
+
+#### 🚀 Updates
+
+- Search Enabled PopoverMenu (web). [#55352](https://github.cbhq.net/mono/repo/pull/55352)
+
 ## 0.34.2 (2/25/2022, 08:38 AM PST)
 
 #### 🚀 Updates
