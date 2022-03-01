@@ -51,6 +51,13 @@ export const Button = memo(function Button({
     [block, spacingStyles],
   );
 
+  const justifyContent = useMemo(() => {
+    if (block) {
+      return startIcon || endIcon ? 'space-between' : 'space-around';
+    }
+    return 'flex-start';
+  }, [block, endIcon, startIcon]);
+
   return (
     <Pressable
       transparentWhileInactive={transparent}
@@ -66,7 +73,7 @@ export const Button = memo(function Button({
       {...props}
     >
       <HStack
-        justifyContent={block ? 'space-between' : 'flex-start'}
+        justifyContent={justifyContent}
         alignItems="center"
         flexWrap="nowrap"
         minHeight={minHeight}
