@@ -32,15 +32,19 @@ const getIconStyles = memoize(function getIconStyles({
     flush,
   });
   const spacingStyles = getSpacingStyles({ isInverted: true, horizontal: offsetHorizontal, scale });
+  const sizingStyles = {
+    height: minHeight,
+    width: minHeight,
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  } as const;
   return {
     pressableStyles: {
       ...spacingStyles,
-      height: minHeight,
-      width: minHeight,
-      alignItems: 'center',
-      flexDirection: 'column',
-      justifyContent: 'center',
+      ...sizingStyles,
     },
+    iconStyles: sizingStyles,
     iconSize,
   } as const;
 },
@@ -57,7 +61,7 @@ export const IconButton = memo(function IconButton({
 }: IconButtonProps) {
   const scale = useScale();
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-  const { pressableStyles, iconSize } = useMemo(
+  const { pressableStyles, iconSize, iconStyles } = useMemo(
     () => getIconStyles({ compact, flush, scale }),
     [compact, flush, scale],
   );
@@ -73,7 +77,7 @@ export const IconButton = memo(function IconButton({
       style={pressableStyles}
       {...props}
     >
-      <Icon name={name} size={iconSize} color={color} />
+      <Icon name={name} size={iconSize} color={color} dangerouslySetStyle={iconStyles} />
     </Pressable>
   );
 });
