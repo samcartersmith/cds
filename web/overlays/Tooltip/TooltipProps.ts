@@ -3,7 +3,6 @@ import {
   TooltipBaseProps,
   GapSpacing,
   BaseTooltipPlacement,
-  SetState,
   PositionStyles,
 } from '@cbhq/cds-common/types';
 
@@ -26,11 +25,6 @@ export type TooltipProps = {
 } & TooltipBaseProps;
 
 export type PopperTooltipProps = {
-  setPopper: SetState<HTMLDivElement | null>;
-  popperStyles: Record<string, React.CSSProperties>;
-  popperAttributes: Record<string, Record<string, string> | undefined>;
   gap: GapSpacing;
   animateIn: NoopFn;
 } & Pick<TooltipProps, 'content' | 'testID' | 'zIndex'>;
-
-export type PortalProps = Pick<TooltipProps, 'disablePortal'>;

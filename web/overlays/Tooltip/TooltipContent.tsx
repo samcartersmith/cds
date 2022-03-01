@@ -8,18 +8,9 @@ import { PopperTooltipProps } from './TooltipProps';
 
 export const tooltipId = 'tooltipId';
 
-export const PopperTooltip = forwardRef(
+export const TooltipContent = forwardRef(
   (
-    {
-      setPopper,
-      content,
-      popperStyles,
-      popperAttributes,
-      gap,
-      animateIn,
-      testID,
-      zIndex,
-    }: PopperTooltipProps,
+    { content, gap, animateIn, testID, zIndex }: PopperTooltipProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
     const didMount = useRef(false);
@@ -33,15 +24,14 @@ export const PopperTooltip = forwardRef(
 
     const outerStyle = useMemo(
       () => ({
-        ...popperStyles.popper,
         padding: spacing[gap],
         zIndex: zIndex ?? cdsZIndex.overlays.tooltip,
       }),
-      [gap, popperStyles.popper, zIndex],
+      [gap, zIndex],
     );
 
     return (
-      <div ref={setPopper} style={outerStyle} {...popperAttributes.popper}>
+      <div style={outerStyle}>
         <Box
           ref={ref}
           spacingHorizontal={spacingHorizontal}

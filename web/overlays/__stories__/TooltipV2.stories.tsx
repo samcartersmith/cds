@@ -2,6 +2,7 @@ import {
   ComponentMeta,
   ComponentStory,
 } from '@storybook/react/dist/ts3.9/client/preview/types-6-3';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { TooltipProps } from '../Tooltip/TooltipProps';
 import { VStack } from '../../layout/VStack';
 import { HStack } from '../../layout/HStack';
@@ -10,6 +11,7 @@ import { Tooltip } from '../Tooltip/Tooltip';
 import { IconButton } from '../../buttons/IconButton';
 import { TextLabel1 } from '../../typography';
 import { PortalProvider } from '../PortalProvider';
+import { DotSymbol } from '../../dots/DotSymbol';
 
 export default {
   title: 'Core Components/TooltipV2',
@@ -46,15 +48,27 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
         </VStack>
 
         <VStack spacingHorizontal={2} gap={3}>
-          <Tooltip content={content}>
+          <Tooltip
+            content={
+              <VStack gap={2}>
+                <Button>Btn 1</Button>
+                <Button>Btn 2</Button>
+                <Button>Btn 3</Button>
+              </VStack>
+            }
+          >
             <VStack spacing={2}>
-              <IconButton name="bell" variant="secondary" />
+              <DotSymbol size="m" pin="bottom-start" source={assets.eth.imageUrl}>
+                <IconButton name="bell" variant="secondary" />
+              </DotSymbol>
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="left">
-            <VStack spacing={2}>
-              <IconButton name="bell" variant="secondary" />
-            </VStack>
+            <DotSymbol size="s" pin="top-end" source={assets.ada.imageUrl}>
+              <VStack spacing={2}>
+                <IconButton name="bell" variant="secondary" />
+              </VStack>
+            </DotSymbol>
           </Tooltip>
           <Tooltip content={content} placement="right">
             <VStack spacing={2}>
@@ -74,7 +88,11 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
           </Tooltip>
           <Tooltip content={content} placement="left">
             <VStack spacing={2}>
-              <TextLabel1 as="p">left</TextLabel1>
+              <DotSymbol size="s" pin="top-end" source={assets.ada.imageUrl}>
+                <VStack spacing={2}>
+                  <TextLabel1 as="p">left</TextLabel1>
+                </VStack>
+              </DotSymbol>
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="right">
