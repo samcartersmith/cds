@@ -6,4 +6,4 @@
  * You will also need to set blacklistOn parameter to true for updateManifest and getIllustrationNamesAndVariants
  */
 
-export const blacklist: string[] = [];
+export const blacklist: string[] = ['assetMovement-light'];
