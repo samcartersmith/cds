@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.40.4 (3/1/2022, 08:48 AM PST)
+
+#### 🐞 Fixes
+
+- **[IconButton]** Frontier styles for alpha. [#57251](https://github.cbhq.net/mono/repo/pull/57251)
+- **[Button]** Full width bug on frontierfix full width bug. [#57162](https://github.cbhq.net/mono/repo/pull/57162)
+
 ## 0.40.3 (2/28/2022, 06:37 AM PST)
 
 #### 🚀 Updates
