@@ -10,10 +10,12 @@ function SearchExample() {
 	const [text, setText] = useState('');
 
 	return (
-		<VStack spacing={2}>
-			<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
-			<TextLabel1 as="p">{text}</TextLabel1>
-		</VStack>
+		<ExampleWithThemeToggles>
+			<VStack spacing={2}>
+				<SearchInput value={text} onChangeText={setText}  placeholder="Placeholder" />
+				<TextLabel1 as="p">{text}</TextLabel1>
+			</VStack>
+		</ExampleWithThemeToggles>
 	);
 }
 ```
@@ -54,10 +56,12 @@ function OnSearchExample() {
 	)
 
 	return (
-		<Box spacing={2}>
-			<SearchInput value={text} onChangeText={setText} onSearch={handleOnSearch} placeholder="Hit Enter" />
-			<TextLabel1 as="p">{text}</TextLabel1>
-		</Box>
+		<ExampleWithThemeToggles>
+			<VStack spacing={2}>
+				<SearchInput value={text} onChangeText={setText} onSearch={handleOnSearch} placeholder="Hit Enter" />
+				<TextLabel1 as="p">{text}</TextLabel1>
+			</VStack>
+		</ExampleWithThemeToggles>
 	)
 }
 ```
@@ -70,14 +74,16 @@ function OnClearExample() {
 	const [text, setText] = useState('');
 
 	return (
-		<Box spacing={2}>
-			<SearchInput 
-				onClear={() => console.log('Clearing...')} 
-				onChangeText={setText}
-				value={text}
-				placeholder="Placeholder" 
-			/>
-		</Box>
+		<ExampleWithThemeToggles>
+			<VStack spacing={2}>
+				<SearchInput 
+					onClear={() => console.log('Clearing...')} 
+					onChangeText={setText}
+					value={text}
+					placeholder="Placeholder" 
+				/>
+			</VStack>
+		</ExampleWithThemeToggles>
 	)
 }
 ```
@@ -101,9 +107,12 @@ function CompactSearchExample() {
 	const [text, setText] = useState('');
 
 	return (
-		<Box spacing={2}>
-			<SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />
-		</Box>
+		<ExampleWithThemeToggles>
+			<Box spacing={2}>
+				<SearchInput value={text} compact onChangeText={setText} placeholder="Placeholder" />
+			</Box>
+		</ExampleWithThemeToggles>
+		
 	)
 }
 ```
@@ -117,9 +126,12 @@ function BorderlessSearchExample() {
 	const [text, setText] = useState('');
 
 	return (
-		<Box spacing={2}>
-			<SearchInput bordered={false} value={text} onChangeText={setText} placeholder="Placeholder" />
-		</Box>
+		<ExampleWithThemeToggles>
+			<Box spacing={2}>
+				<SearchInput bordered={false} value={text} onChangeText={setText} placeholder="Placeholder" />
+			</Box>
+		</ExampleWithThemeToggles>
+		
 	)
 }
 ```
@@ -133,10 +145,13 @@ function hideStartIcon() {
 	const [text, setText] = useState('');
 
 	return (
-		<HStack spacing={2} gap={1}>
-		  <IconButton name="backArrow" transparent />
-		  <SearchInput hideStartIcon value={text} compact onChangeText={setText} placeholder="Placeholder" />
-		</HStack>
+		<ExampleWithThemeToggles>
+			<HStack spacing={2} gap={1}>
+				<IconButton name="backArrow" transparent />
+				<SearchInput hideStartIcon value={text} compact onChangeText={setText} placeholder="Placeholder" />
+			</HStack>
+		</ExampleWithThemeToggles>
+		
 	)
 }
 ```

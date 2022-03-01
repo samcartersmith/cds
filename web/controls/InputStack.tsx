@@ -119,7 +119,7 @@ export const InputStack = memo(
           {!!prependNode && <>{prependNode}</>}
           <Interactable
             as="span"
-            backgroundColor="background"
+            backgroundColor="transparent"
             borderWidth="input"
             ref={ref}
             height={height}

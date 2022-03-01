@@ -64,7 +64,7 @@ export const InputStack = memo(function InputStack({
         variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant ?? 'lineHeavy'],
       flexDirection: 'row',
       flex: 1,
-      backgroundColor: palette.secondary,
+      backgroundColor: 'transparent',
       borderRadius: borderRadiusTokens[borderRadius],
       ...inputBorderRadius,
     };
