@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo, useState } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback, useMemo, useState } from 'react';
 
 import { emptyArray } from '@cbhq/cds-utils';
 import {
@@ -6,6 +6,7 @@ import {
   GestureResponderEvent,
   Pressable as BasePressable,
   PressableProps as BasePressableProps,
+  View,
 } from 'react-native';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
@@ -53,107 +54,113 @@ export type PressableInternalProps = {
 } & PressableProps &
   Omit<InteractableProps, 'pressed' | 'style'>;
 
-export const Pressable = memo(function Pressable({
-  children,
-  disabled,
-  feedback = 'none',
-  loading,
-  onPress,
-  onPressIn,
-  onPressOut,
-  noScaleOnPress,
-  // Interactable
-  backgroundColor,
-  block,
-  borderColor,
-  borderRadius,
-  borderWidth,
-  disableDebounce,
-  elevation,
-  style = emptyArray,
-  contentStyle,
-  transparentWhileInactive,
-  ...props
-}: PressableInternalProps) {
-  const [pressIn, pressOut, pressScale] = usePressAnimation();
-  const [pressed, setPressed] = useState(false);
+export const Pressable = memo(
+  forwardRef(function Pressable(
+    {
+      children,
+      disabled,
+      feedback = 'none',
+      loading,
+      onPress,
+      onPressIn,
+      onPressOut,
+      noScaleOnPress,
+      // Interactable
+      backgroundColor,
+      block,
+      borderColor,
+      borderRadius,
+      borderWidth,
+      disableDebounce,
+      elevation,
+      style = emptyArray,
+      contentStyle,
+      transparentWhileInactive,
+      ...props
+    }: PressableInternalProps,
+    forwardedRef: ForwardedRef<View>,
+  ) {
+    const [pressIn, pressOut, pressScale] = usePressAnimation();
+    const [pressed, setPressed] = useState(false);
 
-  const onPressHandler = useMemo(
-    () => (event: GestureResponderEvent) => {
-      if (feedback === 'light') {
-        void Haptics.lightImpact();
-      } else if (feedback === 'normal') {
-        void Haptics.normalImpact();
-      } else if (feedback === 'heavy') {
-        void Haptics.heavyImpact();
-      }
+    const onPressHandler = useMemo(
+      () => (event: GestureResponderEvent) => {
+        if (feedback === 'light') {
+          void Haptics.lightImpact();
+        } else if (feedback === 'normal') {
+          void Haptics.normalImpact();
+        } else if (feedback === 'heavy') {
+          void Haptics.heavyImpact();
+        }
 
-      if (onPress) {
-        onPress(event);
-      }
-    },
-    [feedback, onPress],
-  );
+        if (onPress) {
+          onPress(event);
+        }
+      },
+      [feedback, onPress],
+    );
 
-  const debouncedOnPressHandler = useMemo(() => debounce(onPressHandler), [onPressHandler]);
+    const debouncedOnPressHandler = useMemo(() => debounce(onPressHandler), [onPressHandler]);
 
-  const handlePress = useCallback(
-    (event: GestureResponderEvent) => {
-      if (!disableDebounce) {
-        debouncedOnPressHandler(event);
-      } else {
-        onPressHandler(event);
-      }
-    },
-    [debouncedOnPressHandler, onPressHandler, disableDebounce],
-  );
+    const handlePress = useCallback(
+      (event: GestureResponderEvent) => {
+        if (!disableDebounce) {
+          debouncedOnPressHandler(event);
+        } else {
+          onPressHandler(event);
+        }
+      },
+      [debouncedOnPressHandler, onPressHandler, disableDebounce],
+    );
 
-  const handlePressIn = useCallback(
-    (event: GestureResponderEvent) => {
-      setPressed(true);
-      pressIn(event);
-      onPressIn?.(event);
-    },
-    [pressIn, onPressIn],
-  );
+    const handlePressIn = useCallback(
+      (event: GestureResponderEvent) => {
+        setPressed(true);
+        pressIn(event);
+        onPressIn?.(event);
+      },
+      [pressIn, onPressIn],
+    );
 
-  const handlePressOut = useCallback(
-    (event: GestureResponderEvent) => {
-      setPressed(false);
-      pressOut(event);
-      onPressOut?.(event);
-    },
-    [pressOut, onPressOut],
-  );
+    const handlePressOut = useCallback(
+      (event: GestureResponderEvent) => {
+        setPressed(false);
+        pressOut(event);
+        onPressOut?.(event);
+      },
+      [pressOut, onPressOut],
+    );
 
-  return (
-    <BasePressable
-      accessibilityRole="button"
-      accessibilityState={{ busy: loading, disabled: !!disabled }}
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-      disabled={disabled || loading}
-      onPress={handlePress}
-      onPressIn={handlePressIn}
-      onPressOut={handlePressOut}
-      style={style}
-      {...props}
-    >
-      <Interactable
-        backgroundColor={backgroundColor}
-        block={block}
-        borderColor={borderColor}
-        borderRadius={borderRadius}
-        borderWidth={borderWidth}
+    return (
+      <BasePressable
+        accessibilityRole="button"
+        accessibilityState={{ busy: loading, disabled: !!disabled }}
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         disabled={disabled || loading}
-        elevation={elevation}
-        pressed={pressed}
-        style={!noScaleOnPress ? [{ transform: [{ scale: pressScale }] }] : undefined}
-        contentStyle={contentStyle}
-        transparentWhileInactive={transparentWhileInactive}
+        onPress={handlePress}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        style={style}
+        ref={forwardedRef}
+        {...props}
       >
-        {children}
-      </Interactable>
-    </BasePressable>
-  );
-});
+        <Interactable
+          backgroundColor={backgroundColor}
+          block={block}
+          borderColor={borderColor}
+          borderRadius={borderRadius}
+          borderWidth={borderWidth}
+          // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+          disabled={disabled || loading}
+          elevation={elevation}
+          pressed={pressed}
+          style={!noScaleOnPress ? [{ transform: [{ scale: pressScale }] }] : undefined}
+          contentStyle={contentStyle}
+          transparentWhileInactive={transparentWhileInactive}
+        >
+          {children}
+        </Interactable>
+      </BasePressable>
+    );
+  }),
+);

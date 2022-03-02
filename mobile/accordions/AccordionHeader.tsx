@@ -1,4 +1,5 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, forwardRef, ForwardedRef } from 'react';
+import { View } from 'react-native';
 import type {
   AccordionHeaderBaseProps,
   AccordionMediaBaseProps,
@@ -48,30 +49,36 @@ export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => {
 });
 
 export const AccordionHeader = memo(
-  ({ itemKey, title, subtitle, onPress, media, expanded, testID }: AccordionHeaderProps) => {
-    const { onItemPress } = useAccordionParent();
-    const spacing = useCellSpacing();
-    const minHeight = useScaleConditional(listHeight);
+  forwardRef(
+    (
+      { itemKey, title, subtitle, onPress, media, expanded, testID }: AccordionHeaderProps,
+      forwardedRef: ForwardedRef<View>,
+    ) => {
+      const { onItemPress } = useAccordionParent();
+      const spacing = useCellSpacing();
+      const minHeight = useScaleConditional(listHeight);
 
-    const handlePress = useCallback(() => {
-      onPress?.(itemKey);
-      onItemPress?.(itemKey);
-    }, [onPress, onItemPress, itemKey]);
+      const handlePress = useCallback(() => {
+        onPress?.(itemKey);
+        onItemPress?.(itemKey);
+      }, [onPress, onItemPress, itemKey]);
 
-    return (
-      <Pressable
-        noScaleOnPress
-        transparentWhileInactive
-        backgroundColor="background"
-        onPress={handlePress}
-        testID={testID}
-      >
-        <HStack width="100%" alignItems="center" gap={2} minHeight={minHeight} {...spacing.outer}>
-          {!!media && <AccordionMedia media={media} />}
-          <AccordionTitle title={title} subtitle={subtitle} />
-          <AccordionIcon expanded={expanded} />
-        </HStack>
-      </Pressable>
-    );
-  },
+      return (
+        <Pressable
+          noScaleOnPress
+          transparentWhileInactive
+          backgroundColor="background"
+          onPress={handlePress}
+          testID={testID}
+          ref={forwardedRef}
+        >
+          <HStack width="100%" alignItems="center" gap={2} minHeight={minHeight} {...spacing.outer}>
+            {!!media && <AccordionMedia media={media} />}
+            <AccordionTitle title={title} subtitle={subtitle} />
+            <AccordionIcon expanded={expanded} />
+          </HStack>
+        </Pressable>
+      );
+    },
+  ),
 );

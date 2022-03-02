@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { forwardRef, memo, useCallback, ForwardedRef } from 'react';
 import type {
   AccordionHeaderBaseProps,
   AccordionMediaBaseProps,
@@ -51,45 +51,49 @@ export const AccordionIcon = memo(({ expanded }: AccordionIconBaseProps) => (
 ));
 
 export const AccordionHeader = memo(
-  ({
-    itemKey,
-    title,
-    subtitle,
-    onPress,
-    media,
-    expanded = false,
-    testID,
-  }: AccordionHeaderProps) => {
-    const { onItemPress } = useAccordionParent();
-    const spacing = useCellSpacing();
-    const minHeight = useScaleConditional(listHeight);
+  forwardRef(
+    (
+      { itemKey, title, subtitle, onPress, media, expanded = false, testID }: AccordionHeaderProps,
+      forwardedRef: ForwardedRef<HTMLButtonElement>,
+    ) => {
+      const { onItemPress } = useAccordionParent();
+      const spacing = useCellSpacing();
+      const minHeight = useScaleConditional(listHeight);
 
-    const handlePress = useCallback(() => {
-      onPress?.(itemKey);
-      onItemPress?.(itemKey);
-    }, [onPress, onItemPress, itemKey]);
+      const handlePress = useCallback(() => {
+        onPress?.(itemKey);
+        onItemPress?.(itemKey);
+      }, [onPress, onItemPress, itemKey]);
 
-    return (
-      <h2 className={typographyResets}>
-        <Pressable
-          noScaleOnPress
-          transparentWhileInactive
-          backgroundColor="background"
-          onPress={handlePress}
-          width="100%"
-          testID={testID}
-          // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
-          aria-expanded={expanded}
-          aria-controls={getAccordionPanelId(itemKey)}
-          id={getAccordionHeaderId(itemKey)}
-        >
-          <HStack width="100%" alignItems="center" gap={2} minHeight={minHeight} {...spacing.outer}>
-            {!!media && <AccordionMedia media={media} />}
-            <AccordionTitle title={title} subtitle={subtitle} />
-            <AccordionIcon expanded={expanded} />
-          </HStack>
-        </Pressable>
-      </h2>
-    );
-  },
+      return (
+        <h2 className={typographyResets}>
+          <Pressable
+            noScaleOnPress
+            transparentWhileInactive
+            backgroundColor="background"
+            onPress={handlePress}
+            width="100%"
+            testID={testID}
+            ref={forwardedRef}
+            // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
+            aria-expanded={expanded}
+            aria-controls={getAccordionPanelId(itemKey)}
+            id={getAccordionHeaderId(itemKey)}
+          >
+            <HStack
+              width="100%"
+              alignItems="center"
+              gap={2}
+              minHeight={minHeight}
+              {...spacing.outer}
+            >
+              {!!media && <AccordionMedia media={media} />}
+              <AccordionTitle title={title} subtitle={subtitle} />
+              <AccordionIcon expanded={expanded} />
+            </HStack>
+          </Pressable>
+        </h2>
+      );
+    },
+  ),
 );
