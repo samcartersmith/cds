@@ -31,6 +31,7 @@ module.exports = {
       collapsed: false,
       items: [
         'cds/overview',
+        'cds/whats-happening',
         'cds/getting-started',
         'cds/support',
         {
