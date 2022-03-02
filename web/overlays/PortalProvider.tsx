@@ -5,6 +5,7 @@ import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
 import { usePortalState, PortalNode } from '@cbhq/cds-common/overlays/usePortalState';
 import { ToastProvider } from '@cbhq/cds-common/overlays/ToastProvider';
 
+import { isBrowser } from '../utils/browser';
 import { ThemeProvider } from '../system';
 
 export const portalRootId = 'portalRoot';
@@ -61,7 +62,7 @@ export const PortalProvider: React.FC = memo(({ children }) => {
   return (
     <PortalContext.Provider value={portalState}>
       <ToastProvider>
-        {!!window?.document && <PortalHost />}
+        {isBrowser() && <PortalHost />}
         {portalState.nodes.map((node: PortalNode) => node.element)}
         {children}
       </ToastProvider>
