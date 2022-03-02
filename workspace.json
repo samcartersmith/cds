@@ -6,10 +6,11 @@
     "fonts": "packages/fonts",
     "lottie-files": "packages/lottie-files",
     "mobile": "packages/mobile",
-    "mobile-playground": "apps/mobile-playground",
-    "utils": "packages/utils",
     "web": "packages/web",
+    "utils": "packages/utils",
     "web-utils": "packages/web-utils",
+    "mobile-playground": "apps/mobile-playground",
+    "storybook": "apps/storybook",
     "website": "apps/website"
   }
 }

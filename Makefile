@@ -194,11 +194,11 @@ typecheck.all:
 
 .PHONY: build.story
 build.story:
-	nx run web:build-storybook
+	nx run storybook:build
 
 .PHONY: start.story
 start.story:
-	nx run web:start-storybook
+	nx run storybook:start
 
 .PHONY: build.website
 build.website:

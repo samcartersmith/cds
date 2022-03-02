@@ -1,0 +1,30 @@
+{
+  "root": "apps/storybook",
+  "sourceRoot": "apps/storybook",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "lint-styles": {
+      "executor": "./tools/executors/lint-styles:lint-styles"
+    },
+    "typecheck": {
+      "executor": "./tools/executors/typecheck:typecheck"
+    },
+    "start": {
+      "executor": "@cbhq/mono-tasks:start-storybook"
+    },
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-storybook"
+    },
+    "percy": {
+      "executor": "@cbhq/mono-tasks:run-percy",
+      "dependsOn": [{ "target": "build", "projects": "self" }]
+    }
+  }
+}

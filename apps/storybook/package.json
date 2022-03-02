@@ -1,0 +1,40 @@
+{
+  "name": "@cds/storybook",
+  "version": "0.0.0",
+  "dependencies": {
+    "@cbhq/cds-fonts": "workspace:*",
+    "@cbhq/cds-web": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@cbhq/cds-web-utils": "workspace:*",
+    "@percy/cli": "^1.0.0-beta.75",
+    "@percy/storybook": "^4.1.0",
+    "@storybook/addon-a11y": "^6.4.17",
+    "@storybook/addon-actions": "^6.4.17",
+    "@storybook/addon-backgrounds": "^6.4.17",
+    "@storybook/addon-controls": "^6.4.17",
+    "@storybook/addon-docs": "^6.4.17",
+    "@storybook/addon-essentials": "^6.4.17",
+    "@storybook/addon-links": "^6.4.17",
+    "@storybook/addon-toolbars": "^6.4.17",
+    "@storybook/addon-viewport": "^6.4.17",
+    "@storybook/addons": "^6.4.17",
+    "@storybook/builder-webpack5": "^6.4.17",
+    "@storybook/manager-webpack5": "^6.4.17",
+    "@storybook/react": "^6.4.17",
+    "@storybook/theming": "^6.4.17",
+    "storybook-addon-designs": "^6.0.1",
+    "storybook-addon-performance": "^0.16.0",
+    "storybook-addon-pseudo-states": "^1.0.0"
+  },
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}

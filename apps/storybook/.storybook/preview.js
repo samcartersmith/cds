@@ -1,10 +1,10 @@
 // These have been expanded from './globalStyles'
 import 'focus-visible';
 import '@cbhq/cds-fonts/fonts.css';
-import '../styles/icon-font.css';
-import { globalStyles } from '../styles/global';
+import '@cbhq/cds-web/styles/icon-font.css';
+import { globalStyles } from '@cbhq/cds-web/styles/global';
 import { withPerformance } from 'storybook-addon-performance';
-import { StoryContainer } from '../storybook-decorators/StoryContainer';
+import { StoryContainer } from '@cbhq/cds-web/storybook-decorators/StoryContainer';
 
 export const decorators = [StoryContainer, withPerformance];
 
