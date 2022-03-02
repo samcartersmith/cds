@@ -1,11 +1,9 @@
-
-
 # Coinbase design system
 
 This project was generated using [Nx](https://nx.dev).
 
-This repo is currently a prototype of the new design system polyrepo. 
-The existing CDS code used in this repo is a snapshot from https://github.cbhq.net/mono/repo/pull/49327. 
+This repo is currently a prototype of the new design system polyrepo.
+The existing CDS code used in this repo is a snapshot from https://github.cbhq.net/mono/repo/pull/49327.
 Do not commit the latest CDS master code to this repo.
 
 ## Running Nx
@@ -56,7 +54,6 @@ The task list below is needed to get the hello world of the poly repo. There are
 - [x] prepare_adoption (One issue with Wallet, might need to modify code to handle. Will look into it later)
 - [x] prepare_mobile_routes
 
-
 #### npm package building
 
 - [x] common
@@ -70,7 +67,7 @@ The task list below is needed to get the hello world of the poly repo. There are
 #### Storybook
 
 - [x] Deploy storybook locally with web stories
-- [ ] Hook up Percy
+- [x] Hook up Percy
 
 #### Mobile Playground
 
@@ -102,5 +99,3 @@ The task list below is needed to get the hello world of the poly repo. There are
 ## Understand your workspace
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-
