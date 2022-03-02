@@ -8,6 +8,8 @@ import { IllustrationVariant } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { versionNumManifest } from './versionNumManifest';
 
+let loggedWarning = false;
+
 export function createIllustration<T extends IllustrationVariant>(variant?: T) {
   const defaultSize = getDefaultSizeObjectForIllustration(variant);
 
@@ -17,6 +19,14 @@ export function createIllustration<T extends IllustrationVariant>(variant?: T) {
     scaleMultiplier,
     testID,
   }: IllustrationBaseProps<T>) {
+    if (!loggedWarning) {
+      /* eslint-disable-next-line no-console */
+      console.warn(
+        'SpotSquare will soon be deprecating its size 120x120. Instead it will use 96x96 as default. Please check screens that use SpotSquare to ensure there are no visual regression.',
+      );
+      loggedWarning = true;
+    }
+
     const spectrum = useSpectrumConditional({ light: 'light', dark: 'dark' }) ?? 'light';
     const imgPath = useMemo(() => {
       const nameAndSpectrum = `${name}-${spectrum}`;
