@@ -8,6 +8,11 @@ yarn config set enableGlobalCache false
 # Immutable is the same as a frozen lockfile
 yarn install --immutable
 
+echo "--- Updating local 'master' branch"
+
+# Required for correct NX affected project resolution
+git fetch -f --no-tags origin master:master
+
 echo "--- Building required packages"
 
 yarn setup
