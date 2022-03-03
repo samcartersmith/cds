@@ -20,6 +20,7 @@ export const Select = memo(
     {
       children,
       value,
+      valueLabel,
       variant = 'foregroundMuted',
       disabled = false,
       width = '100%',
@@ -73,7 +74,7 @@ export const Select = memo(
               <SelectTrigger
                 disabled={disabled}
                 rotateAnimationRef={rotateAnimationRef}
-                value={sanitizedValue}
+                value={valueLabel ?? sanitizedValue}
                 variant={variant}
                 triggerHasFocus={triggerHasFocus}
                 onPress={handleOnSelectPress}

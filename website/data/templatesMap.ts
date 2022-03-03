@@ -1769,7 +1769,7 @@ export const Tooltip = {
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/tooltip.mdx'
       ),
   ),
-  usage: React.lazy(
+  'modal-header': React.lazy(
     async () =>
       import(
         /* webpackChunkName: "cds-component-template", webpackPrefetch: true */ '../docs/components/overlays/Tooltip/usage.mdx'

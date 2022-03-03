@@ -34,6 +34,7 @@ export const Select = memo(
         helperText,
         variant = 'foregroundMuted',
         value: defaultValue,
+        valueLabel,
         disabled = false,
         testID,
         width = '100%',
@@ -130,7 +131,7 @@ export const Select = memo(
                       disabled={disabled}
                       align={compact ? 'end' : 'start'}
                     >
-                      {value ?? placeholder ?? (!compact && label)}
+                      {valueLabel ?? value ?? placeholder ?? (!compact && label)}
                     </TextBody>
                   </HStack>
                 }

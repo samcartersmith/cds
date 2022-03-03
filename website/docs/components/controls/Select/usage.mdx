@@ -24,6 +24,39 @@ function DefaultSelect() {
 }
 ```
 
+#### Value/Label Object Model
+
+Sometimes you may want to surface a label instead of the select value. You can pass a `valueLabel` prop with the currently selected value's corresponding label, which will appear to be the value of the Select.
+
+```jsx live
+function DefaultSelect() {
+  const [value, setValue] = useState();
+  const options = [
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+    { value: '3', label: 'Option 3' },
+    { value: '4', label: 'Option 4' },
+  ];
+  const selectedValueLabel = options.find((option) => option.value === value).label;
+  return (
+    <ExampleWithThemeToggles>
+      <VStack spacing={2} background minHeight={400}>
+        <Select
+          value={value}
+          valueLabel={selectedValueLabel}
+          placeholder="Choose something..."
+          onChange={setValue}
+        >
+          {options.map((option) => (
+            <SelectOption value={option} key={option} title={option} description="Description" />
+          ))}
+        </Select>
+      </VStack>
+    </ExampleWithThemeToggles>
+  );
+}
+```
+
 ### Input Stack Options
 
 The `Select` trigger can be customized similar to `TextInput`. These options are also available for mobile implementations.

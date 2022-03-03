@@ -11,6 +11,8 @@ export type SelectBaseProps = {
   children?: ReactNode;
   /** Pass a value that will prepopulate the select input. This will replace the placeholder text. */
   value?: string;
+  /** Optional label for selected value when using a value/label object model */
+  valueLabel?: string;
   /** Event handler for when the Select Input trigger is pressed */
   onPress?: NoopFn;
   /** Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input */

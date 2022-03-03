@@ -251,6 +251,21 @@ Pass a value that will prepopulate the select input. This will replace the place
 
 <ComponentDetails componentName="Select" templateName="prop-value" />
 
+### valueLabel
+
+Optional label for selected value when using a value/label object model
+
+<ApiDetails
+  componentName="Select"
+  propertyName="valueLabel"
+  required={false}
+  defaultValue=""
+  mobileOptions={['string']}
+  webOptions={['string']}
+/>
+
+<ComponentDetails componentName="Select" templateName="prop-valueLabel" />
+
 ### variant
 
 Determines the sentiment of the input. Because we allow startContent and endContent to be custom ReactNode, the content placed inside these slots will not change colors according to the variant. You will have to add that yourself
