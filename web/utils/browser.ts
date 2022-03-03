@@ -1,11 +1,15 @@
 import { NoopFn } from '@cbhq/cds-common';
 
-export function isSSR() {
-  return !(typeof globalThis.window !== 'undefined' && globalThis.window.document);
+/**
+ * @todo Add fbjs utils as dependency and replace with canUseDOM
+ * @link https://github.com/facebook/fbjs/blob/main/packages/fbjs/src/core/ExecutionEnvironment.js
+ */
+export function isBrowser() {
+  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 }
 
-export function isBrowser() {
-  return !isSSR();
+export function isSSR() {
+  return !isBrowser();
 }
 
 export function onSSR(callback: NoopFn, otherwise?: NoopFn) {
